@@ -17,6 +17,8 @@ import {
   QrCode,
   Mail,
   HardDrive,
+  ImageDown,
+  Layers,
 } from "lucide-react"
 
 const categories = [
@@ -65,6 +67,13 @@ const categories = [
         icon: Presentation,
         href: "/pdf-to-powerpoint",
         tier: "PRO" as const,
+      },
+      {
+        name: "Extract Images",
+        description: "Pull out photos, logos, and graphics from PDFs.",
+        icon: ImageDown,
+        href: "/extract-images-from-pdf",
+        tier: "FREE" as const,
       },
     ],
   },
@@ -121,7 +130,13 @@ const categories = [
         href: "/rotate-pdf",
         tier: "FREE" as const,
       },
-
+      {
+        name: "Flatten PDF",
+        description: "Lock form fields and annotations into a flat PDF.",
+        icon: Layers,
+        href: "/flatten-pdf",
+        tier: "FREE" as const,
+      },
     ],
   },
   {
