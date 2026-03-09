@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useCallback, useEffect, useRef } from "react"
+import { useState, useCallback, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import {
@@ -10,36 +10,154 @@ import {
 import { cn } from "@/lib/utils"
 import { TrustBadges } from "@/components/trust-badges"
 
-type ViewMode = "side-by-side" | "overlay" | "diff"
+type ViewMode = "text-diff" | "side-by-side" | "highlights"
+
+interface DiffLine {
+  type: "same" | "added" | "removed" | "changed"
+  lineA?: string
+  lineB?: string
+}
+
+interface PageDiff {
+  lines: DiffLine[]
+  addedCount: number
+  removedCount: number
+  changedCount: number
+  sameCount: number
+}
+
+// Simple LCS-based diff algorithm
+function computeLineDiff(linesA: string[], linesB: string[]): DiffLine[] {
+  const m = linesA.length
+  const n = linesB.length
+
+  // Build LCS table
+  const dp: number[][] = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0))
+  for (let i = 1; i <= m; i++) {
+    for (let j = 1; j <= n; j++) {
+      if (linesA[i - 1].trim() === linesB[j - 1].trim()) {
+        dp[i][j] = dp[i - 1][j - 1] + 1
+      } else {
+        dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1])
+      }
+    }
+  }
+
+  // Backtrack to build diff
+  const result: DiffLine[] = []
+  let i = m, j = n
+  const temp: DiffLine[] = []
+
+  while (i > 0 || j > 0) {
+    if (i > 0 && j > 0 && linesA[i - 1].trim() === linesB[j - 1].trim()) {
+      temp.push({ type: "same", lineA: linesA[i - 1], lineB: linesB[j - 1] })
+      i--
+      j--
+    } else if (j > 0 && (i === 0 || dp[i][j - 1] >= dp[i - 1][j])) {
+      temp.push({ type: "added", lineB: linesB[j - 1] })
+      j--
+    } else {
+      temp.push({ type: "removed", lineA: linesA[i - 1] })
+      i--
+    }
+  }
+
+  temp.reverse()
+
+  // Merge adjacent removed+added into "changed" pairs
+  for (let k = 0; k < temp.length; k++) {
+    if (
+      temp[k].type === "removed" &&
+      k + 1 < temp.length &&
+      temp[k + 1].type === "added"
+    ) {
+      result.push({
+        type: "changed",
+        lineA: temp[k].lineA,
+        lineB: temp[k + 1].lineB,
+      })
+      k++ // skip the added line
+    } else {
+      result.push(temp[k])
+    }
+  }
+
+  return result
+}
+
+// Highlight character-level differences within a changed line
+function highlightWordDiff(oldText: string, newText: string): { oldParts: { text: string; changed: boolean }[]; newParts: { text: string; changed: boolean }[] } {
+  const oldWords = oldText.split(/(\s+)/)
+  const newWords = newText.split(/(\s+)/)
+
+  // Simple word-level LCS
+  const m = oldWords.length
+  const n = newWords.length
+  const dp: number[][] = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0))
+
+  for (let i = 1; i <= m; i++) {
+    for (let j = 1; j <= n; j++) {
+      if (oldWords[i - 1] === newWords[j - 1]) {
+        dp[i][j] = dp[i - 1][j - 1] + 1
+      } else {
+        dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1])
+      }
+    }
+  }
+
+  const oldParts: { text: string; changed: boolean }[] = []
+  const newParts: { text: string; changed: boolean }[] = []
+
+  let i = m, j = n
+  const oldTemp: { text: string; changed: boolean }[] = []
+  const newTemp: { text: string; changed: boolean }[] = []
+
+  while (i > 0 || j > 0) {
+    if (i > 0 && j > 0 && oldWords[i - 1] === newWords[j - 1]) {
+      oldTemp.push({ text: oldWords[i - 1], changed: false })
+      newTemp.push({ text: newWords[j - 1], changed: false })
+      i--
+      j--
+    } else if (j > 0 && (i === 0 || dp[i][j - 1] >= dp[i - 1][j])) {
+      newTemp.push({ text: newWords[j - 1], changed: true })
+      j--
+    } else {
+      oldTemp.push({ text: oldWords[i - 1], changed: true })
+      i--
+    }
+  }
+
+  oldTemp.reverse()
+  newTemp.reverse()
+
+  oldParts.push(...oldTemp)
+  newParts.push(...newTemp)
+
+  return { oldParts, newParts }
+}
 
 export function PdfCompareInterface() {
   const router = useRouter()
-  const canvasLeftRef = useRef<HTMLCanvasElement>(null)
-  const canvasRightRef = useRef<HTMLCanvasElement>(null)
-  const canvasDiffRef = useRef<HTMLCanvasElement>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
 
   const [userPlan, setUserPlan] = useState<string>("free")
   const [fileA, setFileA] = useState<File | null>(null)
   const [fileB, setFileB] = useState<File | null>(null)
   const [isDragOverA, setIsDragOverA] = useState(false)
   const [isDragOverB, setIsDragOverB] = useState(false)
-  const [pagesA, setPagesA] = useState<string[]>([])
-  const [pagesB, setPagesB] = useState<string[]>([])
-  const [currentPage, setCurrentPage] = useState(0)
+  const [textPagesA, setTextPagesA] = useState<string[][]>([])
+  const [textPagesB, setTextPagesB] = useState<string[][]>([])
   const [totalPagesA, setTotalPagesA] = useState(0)
   const [totalPagesB, setTotalPagesB] = useState(0)
+  const [currentPage, setCurrentPage] = useState(0)
   const [isLoading, setIsLoading] = useState(false)
-  const [viewMode, setViewMode] = useState<ViewMode>("side-by-side")
-  const [diffPercentages, setDiffPercentages] = useState<number[]>([])
-  const [diffRegionsMap, setDiffRegionsMap] = useState<Map<number, { x: number; y: number; w: number; h: number }[]>>(new Map())
-  const [diffImagesMap, setDiffImagesMap] = useState<Map<number, string>>(new Map())
+  const [viewMode, setViewMode] = useState<ViewMode>("text-diff")
+  const [pageDiffs, setPageDiffs] = useState<PageDiff[]>([])
   const [hasError, setHasError] = useState(false)
   const [errorMessage, setErrorMessage] = useState("")
 
   const isBusinessUser = userPlan === "business"
   const maxPages = Math.max(totalPagesA, totalPagesB)
-  const isReady = pagesA.length > 0 && pagesB.length > 0
+  const isReady = textPagesA.length > 0 && textPagesB.length > 0
 
   useEffect(() => {
     fetch("/api/user-plan")
@@ -48,29 +166,38 @@ export function PdfCompareInterface() {
       .catch(() => setUserPlan("free"))
   }, [])
 
-  // Load PDF into page images
-  const loadPdf = useCallback(async (pdfFile: File): Promise<string[]> => {
+  // Extract text lines from each PDF page
+  const extractText = useCallback(async (pdfFile: File): Promise<string[][]> => {
     const pdfjsLib = await import("pdfjs-dist")
     pdfjsLib.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs"
 
     const arrayBuffer = await pdfFile.arrayBuffer()
     const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise
 
-    const images: string[] = []
+    const pages: string[][] = []
     for (let i = 1; i <= pdf.numPages; i++) {
       const page = await pdf.getPage(i)
-      const viewport = page.getViewport({ scale: 1.5 })
+      const content = await page.getTextContent()
 
-      const offscreen = document.createElement("canvas")
-      offscreen.width = viewport.width
-      offscreen.height = viewport.height
-      const ctx = offscreen.getContext("2d")!
+      // Group text items into lines by y-position
+      const lineMap = new Map<number, string[]>()
+      for (const item of content.items) {
+        if ("str" in item && item.str.trim()) {
+          // Round y to group items on the same line (within 3px)
+          const y = Math.round((item as any).transform[5] / 3) * 3
+          if (!lineMap.has(y)) lineMap.set(y, [])
+          lineMap.get(y)!.push(item.str)
+        }
+      }
 
-      await page.render({ canvasContext: ctx, viewport }).promise
-      images.push(offscreen.toDataURL("image/png"))
+      // Sort by y position (top to bottom = descending y in PDF coords)
+      const sortedYs = Array.from(lineMap.keys()).sort((a, b) => b - a)
+      const lines = sortedYs.map((y) => lineMap.get(y)!.join(" ").trim()).filter((l) => l.length > 0)
+
+      pages.push(lines)
     }
 
-    return images
+    return pages
   }, [])
 
   const handleFileA = useCallback(async (file: File) => {
@@ -78,295 +205,55 @@ export function PdfCompareInterface() {
     setIsLoading(true)
     setHasError(false)
     try {
-      const images = await loadPdf(file)
-      setPagesA(images)
-      setTotalPagesA(images.length)
+      const pages = await extractText(file)
+      setTextPagesA(pages)
+      setTotalPagesA(pages.length)
       setCurrentPage(0)
-    } catch (err) {
+    } catch {
       setHasError(true)
       setErrorMessage("Failed to load the first PDF. It may be corrupted or password-protected.")
     }
     setIsLoading(false)
-  }, [loadPdf])
+  }, [extractText])
 
   const handleFileB = useCallback(async (file: File) => {
     setFileB(file)
     setIsLoading(true)
     setHasError(false)
     try {
-      const images = await loadPdf(file)
-      setPagesB(images)
-      setTotalPagesB(images.length)
+      const pages = await extractText(file)
+      setTextPagesB(pages)
+      setTotalPagesB(pages.length)
       setCurrentPage(0)
-    } catch (err) {
+    } catch {
       setHasError(true)
       setErrorMessage("Failed to load the second PDF. It may be corrupted or password-protected.")
     }
     setIsLoading(false)
-  }, [loadPdf])
+  }, [extractText])
 
-  // Compute pixel diff between two images and find bounding boxes of changed regions
-  const computeDiff = useCallback((imgA: HTMLImageElement, imgB: HTMLImageElement): { diffDataUrl: string; diffPercent: number; diffRegions: { x: number; y: number; w: number; h: number }[] } => {
-    const w = Math.max(imgA.width, imgB.width)
-    const h = Math.max(imgA.height, imgB.height)
-
-    const canvasA = document.createElement("canvas")
-    canvasA.width = w
-    canvasA.height = h
-    const ctxA = canvasA.getContext("2d")!
-    ctxA.fillStyle = "white"
-    ctxA.fillRect(0, 0, w, h)
-    ctxA.drawImage(imgA, 0, 0, imgA.width, imgA.height)
-
-    const canvasB = document.createElement("canvas")
-    canvasB.width = w
-    canvasB.height = h
-    const ctxB = canvasB.getContext("2d")!
-    ctxB.fillStyle = "white"
-    ctxB.fillRect(0, 0, w, h)
-    ctxB.drawImage(imgB, 0, 0, imgB.width, imgB.height)
-
-    const dataA = ctxA.getImageData(0, 0, w, h)
-    const dataB = ctxB.getImageData(0, 0, w, h)
-
-    const diffCanvas = document.createElement("canvas")
-    diffCanvas.width = w
-    diffCanvas.height = h
-    const ctxDiff = diffCanvas.getContext("2d")!
-    const diffData = ctxDiff.createImageData(w, h)
-
-    // Track which pixels are different using a grid for region detection
-    const blockSize = 16
-    const gridW = Math.ceil(w / blockSize)
-    const gridH = Math.ceil(h / blockSize)
-    const diffGrid: boolean[][] = Array.from({ length: gridH }, () => Array(gridW).fill(false))
-
-    let diffPixels = 0
-    const totalPixels = w * h
-    const threshold = 30
-
-    for (let i = 0; i < dataA.data.length; i += 4) {
-      const rDiff = Math.abs(dataA.data[i] - dataB.data[i])
-      const gDiff = Math.abs(dataA.data[i + 1] - dataB.data[i + 1])
-      const bDiff = Math.abs(dataA.data[i + 2] - dataB.data[i + 2])
-
-      const pixelIndex = i / 4
-      const px = pixelIndex % w
-      const py = Math.floor(pixelIndex / w)
-
-      if (rDiff > threshold || gDiff > threshold || bDiff > threshold) {
-        // Highlight difference in red
-        diffData.data[i] = 255
-        diffData.data[i + 1] = 50
-        diffData.data[i + 2] = 50
-        diffData.data[i + 3] = 200
-        diffPixels++
-        diffGrid[Math.floor(py / blockSize)][Math.floor(px / blockSize)] = true
-      } else {
-        // Keep original but dimmed
-        diffData.data[i] = Math.round(dataA.data[i] * 0.3 + 200 * 0.7)
-        diffData.data[i + 1] = Math.round(dataA.data[i + 1] * 0.3 + 200 * 0.7)
-        diffData.data[i + 2] = Math.round(dataA.data[i + 2] * 0.3 + 200 * 0.7)
-        diffData.data[i + 3] = 255
-      }
-    }
-
-    ctxDiff.putImageData(diffData, 0, 0)
-
-    // Find bounding boxes of changed regions using connected components on the grid
-    const visited: boolean[][] = Array.from({ length: gridH }, () => Array(gridW).fill(false))
-    const regions: { x: number; y: number; w: number; h: number }[] = []
-
-    for (let gy = 0; gy < gridH; gy++) {
-      for (let gx = 0; gx < gridW; gx++) {
-        if (diffGrid[gy][gx] && !visited[gy][gx]) {
-          // Flood fill to find the full region
-          let minX = gx, maxX = gx, minY = gy, maxY = gy
-          const queue: [number, number][] = [[gx, gy]]
-          visited[gy][gx] = true
-
-          while (queue.length > 0) {
-            const [cx, cy] = queue.shift()!
-            for (const [dx, dy] of [[-1,0],[1,0],[0,-1],[0,1],[-1,-1],[-1,1],[1,-1],[1,1]]) {
-              const nx = cx + dx
-              const ny = cy + dy
-              if (nx >= 0 && nx < gridW && ny >= 0 && ny < gridH && diffGrid[ny][nx] && !visited[ny][nx]) {
-                visited[ny][nx] = true
-                queue.push([nx, ny])
-                minX = Math.min(minX, nx)
-                maxX = Math.max(maxX, nx)
-                minY = Math.min(minY, ny)
-                maxY = Math.max(maxY, ny)
-              }
-            }
-          }
-
-          // Convert grid coordinates to pixel coordinates with padding
-          const pad = blockSize
-          regions.push({
-            x: Math.max(0, minX * blockSize - pad),
-            y: Math.max(0, minY * blockSize - pad),
-            w: Math.min(w, (maxX + 1) * blockSize + pad) - Math.max(0, minX * blockSize - pad),
-            h: Math.min(h, (maxY + 1) * blockSize + pad) - Math.max(0, minY * blockSize - pad),
-          })
-        }
-      }
-    }
-
-    return {
-      diffDataUrl: diffCanvas.toDataURL("image/png"),
-      diffPercent: totalPixels > 0 ? (diffPixels / totalPixels) * 100 : 0,
-      diffRegions: regions,
-    }
-  }, [])
-
-  // Render comparison when both PDFs are loaded
+  // Compute text diffs for all pages when both are loaded
   useEffect(() => {
     if (!isReady) return
 
-    // Compute diff percentages, regions, and diff images for all pages
-    const diffs: number[] = []
-    const regionsMap = new Map<number, { x: number; y: number; w: number; h: number }[]>()
-    const imagesMap = new Map<number, string>()
+    const diffs: PageDiff[] = []
+    for (let i = 0; i < maxPages; i++) {
+      const linesA = textPagesA[i] || []
+      const linesB = textPagesB[i] || []
+      const diffLines = computeLineDiff(linesA, linesB)
 
-    const processPages = async () => {
-      for (let i = 0; i < maxPages; i++) {
-        if (pagesA[i] && pagesB[i]) {
-          const imgA = new window.Image()
-          const imgB = new window.Image()
-
-          await Promise.all([
-            new Promise<void>((resolve) => { imgA.onload = () => resolve(); imgA.src = pagesA[i] }),
-            new Promise<void>((resolve) => { imgB.onload = () => resolve(); imgB.src = pagesB[i] }),
-          ])
-
-          const { diffPercent, diffRegions, diffDataUrl } = computeDiff(imgA, imgB)
-          diffs.push(diffPercent)
-          regionsMap.set(i, diffRegions)
-          imagesMap.set(i, diffDataUrl)
-        } else {
-          diffs.push(100)
-          regionsMap.set(i, [])
-          imagesMap.set(i, "")
-        }
+      let addedCount = 0, removedCount = 0, changedCount = 0, sameCount = 0
+      for (const d of diffLines) {
+        if (d.type === "added") addedCount++
+        else if (d.type === "removed") removedCount++
+        else if (d.type === "changed") changedCount++
+        else sameCount++
       }
-      setDiffPercentages(diffs)
-      setDiffRegionsMap(regionsMap)
-      setDiffImagesMap(imagesMap)
+
+      diffs.push({ lines: diffLines, addedCount, removedCount, changedCount, sameCount })
     }
-
-    processPages()
-  }, [isReady, pagesA, pagesB, maxPages, computeDiff])
-
-  // Helper: draw red highlight rectangles around diff regions
-  const drawDiffHighlights = (ctx: CanvasRenderingContext2D, regions: { x: number; y: number; w: number; h: number }[], scaleX: number, scaleY: number) => {
-    ctx.strokeStyle = "rgba(255, 0, 0, 0.8)"
-    ctx.lineWidth = 3
-    ctx.fillStyle = "rgba(255, 0, 0, 0.08)"
-    for (const r of regions) {
-      const rx = r.x * scaleX
-      const ry = r.y * scaleY
-      const rw = r.w * scaleX
-      const rh = r.h * scaleY
-      ctx.fillRect(rx, ry, rw, rh)
-      ctx.strokeRect(rx, ry, rw, rh)
-    }
-  }
-
-  // Draw current page comparison
-  useEffect(() => {
-    if (!isReady) return
-
-    const regions = diffRegionsMap.get(currentPage) || []
-
-    const drawImageWithHighlights = (canvas: HTMLCanvasElement | null, src: string | undefined, showHighlights: boolean) => {
-      if (!canvas || !src) return
-      const ctx = canvas.getContext("2d")
-      if (!ctx) return
-
-      const img = new window.Image()
-      img.onload = () => {
-        const container = containerRef.current
-        const maxWidth = container ? (container.clientWidth / (viewMode === "side-by-side" ? 2 : 1)) - 16 : 500
-        const scale = Math.min(maxWidth / img.width, 1)
-        canvas.width = img.width * scale
-        canvas.height = img.height * scale
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
-
-        if (showHighlights && regions.length > 0) {
-          const scaleX = canvas.width / img.width
-          const scaleY = canvas.height / img.height
-          drawDiffHighlights(ctx, regions, scaleX, scaleY)
-        }
-      }
-      img.src = src
-    }
-
-    if (viewMode === "side-by-side") {
-      drawImageWithHighlights(canvasLeftRef.current, pagesA[currentPage], true)
-      drawImageWithHighlights(canvasRightRef.current, pagesB[currentPage], true)
-    } else if (viewMode === "overlay") {
-      const canvas = canvasLeftRef.current
-      if (!canvas) return
-      const ctx = canvas.getContext("2d")
-      if (!ctx) return
-
-      const imgA = new window.Image()
-      imgA.onload = () => {
-        const container = containerRef.current
-        const maxWidth = container ? container.clientWidth - 32 : 800
-        const scale = Math.min(maxWidth / imgA.width, 1)
-        canvas.width = imgA.width * scale
-        canvas.height = imgA.height * scale
-        ctx.drawImage(imgA, 0, 0, canvas.width, canvas.height)
-
-        if (pagesB[currentPage]) {
-          const imgB = new window.Image()
-          imgB.onload = () => {
-            ctx.globalAlpha = 0.5
-            ctx.drawImage(imgB, 0, 0, canvas.width, canvas.height)
-            ctx.globalAlpha = 1.0
-
-            // Draw highlights on overlay
-            if (regions.length > 0) {
-              const scaleX = canvas.width / imgA.width
-              const scaleY = canvas.height / imgA.height
-              drawDiffHighlights(ctx, regions, scaleX, scaleY)
-            }
-          }
-          imgB.src = pagesB[currentPage]
-        }
-      }
-      imgA.src = pagesA[currentPage] || ""
-    } else if (viewMode === "diff") {
-      const canvas = canvasLeftRef.current
-      const diffSrc = diffImagesMap.get(currentPage)
-      if (!canvas || !diffSrc) return
-
-      const diffImg = new window.Image()
-      diffImg.onload = () => {
-        const container = containerRef.current
-        const maxWidth = container ? container.clientWidth - 32 : 800
-        const scale = Math.min(maxWidth / diffImg.width, 1)
-        canvas.width = diffImg.width * scale
-        canvas.height = diffImg.height * scale
-        const ctx = canvas.getContext("2d")!
-        ctx.drawImage(diffImg, 0, 0, canvas.width, canvas.height)
-
-        // Draw region boxes on diff view too
-        if (regions.length > 0) {
-          const scaleX = canvas.width / diffImg.width
-          const scaleY = canvas.height / diffImg.height
-          ctx.strokeStyle = "rgba(255, 255, 0, 0.9)"
-          ctx.lineWidth = 2
-          for (const r of regions) {
-            ctx.strokeRect(r.x * scaleX, r.y * scaleY, r.w * scaleX, r.h * scaleY)
-          }
-        }
-      }
-      diffImg.src = diffSrc
-    }
-  }, [isReady, currentPage, viewMode, pagesA, pagesB, diffRegionsMap, diffImagesMap])
+    setPageDiffs(diffs)
+  }, [isReady, textPagesA, textPagesB, maxPages])
 
   const handleDropA = (e: React.DragEvent) => {
     e.preventDefault()
@@ -385,22 +272,23 @@ export function PdfCompareInterface() {
   const resetInterface = useCallback(() => {
     setFileA(null)
     setFileB(null)
-    setPagesA([])
-    setPagesB([])
+    setTextPagesA([])
+    setTextPagesB([])
     setCurrentPage(0)
     setTotalPagesA(0)
     setTotalPagesB(0)
-    setDiffPercentages([])
-    setDiffRegionsMap(new Map())
-    setDiffImagesMap(new Map())
+    setPageDiffs([])
     setHasError(false)
     setErrorMessage("")
   }, [])
 
   const downloadDiffReport = useCallback(() => {
-    const identicalPages = diffPercentages.filter((p) => p < 0.1).length
-    const changedPages = diffPercentages.filter((p) => p >= 0.1).length
-    const avgDiff = diffPercentages.length > 0 ? diffPercentages.reduce((a, b) => a + b, 0) / diffPercentages.length : 0
+    let totalAdded = 0, totalRemoved = 0, totalChanged = 0
+    for (const d of pageDiffs) {
+      totalAdded += d.addedCount
+      totalRemoved += d.removedCount
+      totalChanged += d.changedCount
+    }
 
     let report = "PDF COMPARE REPORT\n"
     report += "===================\n\n"
@@ -409,31 +297,38 @@ export function PdfCompareInterface() {
     report += "SUMMARY\n"
     report += "-------\n"
     report += `Total pages compared: ${maxPages}\n`
-    report += `Identical pages:      ${identicalPages}\n`
-    report += `Changed pages:        ${changedPages}\n`
-    report += `Average difference:   ${avgDiff.toFixed(2)}%\n`
-    report += `Overall verdict:      ${changedPages === 0 ? "Documents are identical" : changedPages <= 2 ? "Minor revisions detected" : "Significant revisions detected"}\n\n`
-    report += "PAGE-BY-PAGE BREAKDOWN\n"
-    report += "----------------------\n"
+    report += `Lines added:          ${totalAdded}\n`
+    report += `Lines removed:        ${totalRemoved}\n`
+    report += `Lines changed:        ${totalChanged}\n\n`
 
-    for (let i = 0; i < maxPages; i++) {
-      const pct = diffPercentages[i]
-      const regions = diffRegionsMap.get(i) || []
+    report += "PAGE-BY-PAGE DETAILS\n"
+    report += "--------------------\n\n"
 
-      if (pct !== undefined) {
-        const status = pct < 0.1 ? "IDENTICAL" : pct < 5 ? "MINOR CHANGES" : pct < 20 ? "MODERATE CHANGES" : "MAJOR CHANGES"
-        const marker = pct < 0.1 ? "  " : ">>"
-        report += `${marker} Page ${i + 1}: ${pct.toFixed(2)}% different — ${status}`
-        if (regions.length > 0) {
-          report += ` (${regions.length} changed region${regions.length > 1 ? "s" : ""} detected)`
+    for (let i = 0; i < pageDiffs.length; i++) {
+      const d = pageDiffs[i]
+      const hasChanges = d.addedCount + d.removedCount + d.changedCount > 0
+      report += `--- Page ${i + 1} ${hasChanges ? "(MODIFIED)" : "(IDENTICAL)"} ---\n`
+
+      if (hasChanges) {
+        report += `  +${d.addedCount} added, -${d.removedCount} removed, ~${d.changedCount} changed\n\n`
+
+        for (const line of d.lines) {
+          if (line.type === "removed") {
+            report += `  - ${line.lineA}\n`
+          } else if (line.type === "added") {
+            report += `  + ${line.lineB}\n`
+          } else if (line.type === "changed") {
+            report += `  - ${line.lineA}\n`
+            report += `  + ${line.lineB}\n`
+          }
         }
         report += "\n"
       } else {
-        report += `   Page ${i + 1}: Not analyzed\n`
+        report += "  No text differences detected.\n\n"
       }
     }
 
-    report += "\n---\nGenerated by OmnisPDF PDF Compare (omnispdf.com/pdf-compare)\n"
+    report += "---\nGenerated by OmnisPDF PDF Compare (omnispdf.com/pdf-compare)\n"
 
     const blob = new Blob([report], { type: "text/plain" })
     const url = URL.createObjectURL(blob)
@@ -442,9 +337,10 @@ export function PdfCompareInterface() {
     link.download = "pdf-compare-report.txt"
     link.click()
     URL.revokeObjectURL(url)
-  }, [fileA, fileB, totalPagesA, totalPagesB, maxPages, diffPercentages, diffRegionsMap])
+  }, [fileA, fileB, totalPagesA, totalPagesB, maxPages, pageDiffs])
 
-  // Not Business user
+  // --- Render states ---
+
   if (!isBusinessUser && userPlan !== "loading") {
     return (
       <section className="py-16">
@@ -469,7 +365,6 @@ export function PdfCompareInterface() {
     )
   }
 
-  // Error state
   if (hasError) {
     return (
       <section className="py-16">
@@ -489,41 +384,34 @@ export function PdfCompareInterface() {
     )
   }
 
-  // Loading state
   if (isLoading) {
     return (
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <Loader2 className="h-10 w-10 text-indigo-600 animate-spin mx-auto mb-4" />
-            <p className="text-slate-600 font-medium">Loading PDF pages...</p>
+            <p className="text-slate-600 font-medium">Extracting text from PDFs...</p>
           </div>
         </div>
       </section>
     )
   }
 
-  // Upload state — need both files
+  // Upload state
   if (!isReady) {
     return (
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* File A */}
               <div>
                 <h3 className="font-bold text-slate-900 mb-3 text-center">Original PDF</h3>
-                {fileA && pagesA.length > 0 ? (
+                {fileA && textPagesA.length > 0 ? (
                   <div className="border-2 border-green-400 bg-green-50 rounded-xl p-6 text-center">
                     <CheckCircle className="h-10 w-10 text-green-600 mx-auto mb-3" />
                     <p className="font-bold text-slate-900 truncate">{fileA.name}</p>
                     <p className="text-sm text-slate-500">{totalPagesA} page{totalPagesA !== 1 ? "s" : ""}</p>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="mt-3 text-xs"
-                      onClick={() => { setFileA(null); setPagesA([]); setTotalPagesA(0) }}
-                    >
+                    <Button size="sm" variant="outline" className="mt-3 text-xs" onClick={() => { setFileA(null); setTextPagesA([]); setTotalPagesA(0) }}>
                       <X className="h-3 w-3 mr-1" /> Remove
                     </Button>
                   </div>
@@ -543,29 +431,17 @@ export function PdfCompareInterface() {
                     <p className="text-sm text-slate-500">Drag and drop or click to browse</p>
                   </div>
                 )}
-                <input
-                  id="compare-file-a"
-                  type="file"
-                  accept=".pdf"
-                  className="hidden"
-                  onChange={(e) => { if (e.target.files?.[0]) handleFileA(e.target.files[0]) }}
-                />
+                <input id="compare-file-a" type="file" accept=".pdf" className="hidden" onChange={(e) => { if (e.target.files?.[0]) handleFileA(e.target.files[0]) }} />
               </div>
 
-              {/* File B */}
               <div>
                 <h3 className="font-bold text-slate-900 mb-3 text-center">Modified PDF</h3>
-                {fileB && pagesB.length > 0 ? (
+                {fileB && textPagesB.length > 0 ? (
                   <div className="border-2 border-green-400 bg-green-50 rounded-xl p-6 text-center">
                     <CheckCircle className="h-10 w-10 text-green-600 mx-auto mb-3" />
                     <p className="font-bold text-slate-900 truncate">{fileB.name}</p>
                     <p className="text-sm text-slate-500">{totalPagesB} page{totalPagesB !== 1 ? "s" : ""}</p>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="mt-3 text-xs"
-                      onClick={() => { setFileB(null); setPagesB([]); setTotalPagesB(0) }}
-                    >
+                    <Button size="sm" variant="outline" className="mt-3 text-xs" onClick={() => { setFileB(null); setTextPagesB([]); setTotalPagesB(0) }}>
                       <X className="h-3 w-3 mr-1" /> Remove
                     </Button>
                   </div>
@@ -585,16 +461,9 @@ export function PdfCompareInterface() {
                     <p className="text-sm text-slate-500">Drag and drop or click to browse</p>
                   </div>
                 )}
-                <input
-                  id="compare-file-b"
-                  type="file"
-                  accept=".pdf"
-                  className="hidden"
-                  onChange={(e) => { if (e.target.files?.[0]) handleFileB(e.target.files[0]) }}
-                />
+                <input id="compare-file-b" type="file" accept=".pdf" className="hidden" onChange={(e) => { if (e.target.files?.[0]) handleFileB(e.target.files[0]) }} />
               </div>
             </div>
-
             <TrustBadges />
           </div>
         </div>
@@ -603,9 +472,10 @@ export function PdfCompareInterface() {
   }
 
   // Comparison view
-  const currentDiff = diffPercentages[currentPage]
-  const diffLabel = currentDiff === undefined ? "Analyzing..." : currentDiff < 0.1 ? "Identical" : currentDiff < 5 ? "Minor changes" : currentDiff < 20 ? "Moderate changes" : "Major changes"
-  const diffColor = currentDiff === undefined ? "text-slate-500" : currentDiff < 0.1 ? "text-green-600" : currentDiff < 5 ? "text-yellow-600" : currentDiff < 20 ? "text-orange-600" : "text-red-600"
+  const currentDiff = pageDiffs[currentPage]
+  const totalChanges = currentDiff ? currentDiff.addedCount + currentDiff.removedCount + currentDiff.changedCount : 0
+  const diffLabel = totalChanges === 0 ? "Identical" : totalChanges <= 3 ? "Minor changes" : totalChanges <= 10 ? "Moderate changes" : "Major changes"
+  const diffColor = totalChanges === 0 ? "text-green-600" : totalChanges <= 3 ? "text-yellow-600" : totalChanges <= 10 ? "text-orange-600" : "text-red-600"
 
   return (
     <section className="py-8">
@@ -626,12 +496,11 @@ export function PdfCompareInterface() {
               </div>
             </div>
 
-            {/* View mode */}
             <div className="flex gap-1 bg-gray-100 rounded-lg p-1">
               {[
+                { mode: "text-diff" as ViewMode, label: "Text Diff", icon: Eye },
                 { mode: "side-by-side" as ViewMode, label: "Side by Side", icon: ArrowLeftRight },
-                { mode: "overlay" as ViewMode, label: "Overlay", icon: Layers },
-                { mode: "diff" as ViewMode, label: "Differences", icon: Eye },
+                { mode: "highlights" as ViewMode, label: "Highlights", icon: Layers },
               ].map((v) => (
                 <button
                   key={v.mode}
@@ -652,7 +521,7 @@ export function PdfCompareInterface() {
             </Button>
           </div>
 
-          {/* Page navigation + diff info */}
+          {/* Page navigation */}
           <div className="bg-white border border-gray-200 rounded-xl p-3 mb-4 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Button variant="outline" size="sm" disabled={currentPage === 0} onClick={() => setCurrentPage((p) => p - 1)}>
@@ -667,12 +536,10 @@ export function PdfCompareInterface() {
             </div>
 
             <div className="flex items-center gap-3">
-              <span className={cn("text-sm font-bold", diffColor)}>
-                {diffLabel}
-              </span>
-              {currentDiff !== undefined && currentDiff >= 0.1 && (
+              <span className={cn("text-sm font-bold", diffColor)}>{diffLabel}</span>
+              {totalChanges > 0 && (
                 <span className="text-xs text-slate-500">
-                  ({currentDiff.toFixed(1)}% different)
+                  (+{currentDiff?.addedCount || 0} -{currentDiff?.removedCount || 0} ~{currentDiff?.changedCount || 0})
                 </span>
               )}
             </div>
@@ -682,58 +549,205 @@ export function PdfCompareInterface() {
             </Button>
           </div>
 
-          {/* Canvas area */}
-          <div ref={containerRef} className="bg-gray-100 rounded-xl border border-gray-200 overflow-hidden p-4">
-            {viewMode === "side-by-side" ? (
-              <div className="grid grid-cols-2 gap-4">
-                <div className="text-center">
-                  <p className="text-xs font-bold text-blue-600 mb-2">Original</p>
-                  {pagesA[currentPage] ? (
-                    <canvas ref={canvasLeftRef} className="w-full rounded border border-gray-200 bg-white" />
-                  ) : (
-                    <div className="bg-gray-200 rounded p-12 text-sm text-slate-500">No page</div>
-                  )}
-                </div>
-                <div className="text-center">
-                  <p className="text-xs font-bold text-purple-600 mb-2">Modified</p>
-                  {pagesB[currentPage] ? (
-                    <canvas ref={canvasRightRef} className="w-full rounded border border-gray-200 bg-white" />
-                  ) : (
-                    <div className="bg-gray-200 rounded p-12 text-sm text-slate-500">No page</div>
-                  )}
-                </div>
+          {/* Legend */}
+          <div className="flex flex-wrap gap-4 mb-4 text-xs font-medium">
+            <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-red-100 border border-red-300"></span> Removed</span>
+            <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-green-100 border border-green-300"></span> Added</span>
+            <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-yellow-100 border border-yellow-300"></span> Changed</span>
+            <span className="flex items-center gap-1.5"><span className="w-3 h-3 rounded bg-white border border-gray-200"></span> Unchanged</span>
+          </div>
+
+          {/* Diff content */}
+          <div className="bg-white border border-gray-200 rounded-xl overflow-hidden">
+            {currentDiff && viewMode === "text-diff" && (
+              <div className="divide-y divide-gray-100 font-mono text-sm max-h-[600px] overflow-y-auto">
+                {currentDiff.lines.map((line, idx) => (
+                  <div
+                    key={idx}
+                    className={cn(
+                      "px-4 py-2 flex items-start gap-3",
+                      line.type === "removed" && "bg-red-50",
+                      line.type === "added" && "bg-green-50",
+                      line.type === "changed" && "bg-yellow-50",
+                    )}
+                  >
+                    <span className={cn(
+                      "flex-shrink-0 w-5 text-center font-bold",
+                      line.type === "removed" && "text-red-500",
+                      line.type === "added" && "text-green-500",
+                      line.type === "changed" && "text-yellow-600",
+                      line.type === "same" && "text-gray-300",
+                    )}>
+                      {line.type === "removed" ? "−" : line.type === "added" ? "+" : line.type === "changed" ? "~" : " "}
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      {line.type === "changed" ? (
+                        <div className="space-y-1">
+                          <div className="text-red-700 line-through">
+                            {(() => {
+                              const { oldParts } = highlightWordDiff(line.lineA || "", line.lineB || "")
+                              return oldParts.map((p, i) => (
+                                <span key={i} className={p.changed ? "bg-red-200 px-0.5 rounded" : ""}>
+                                  {p.text}
+                                </span>
+                              ))
+                            })()}
+                          </div>
+                          <div className="text-green-700">
+                            {(() => {
+                              const { newParts } = highlightWordDiff(line.lineA || "", line.lineB || "")
+                              return newParts.map((p, i) => (
+                                <span key={i} className={p.changed ? "bg-green-200 px-0.5 rounded" : ""}>
+                                  {p.text}
+                                </span>
+                              ))
+                            })()}
+                          </div>
+                        </div>
+                      ) : (
+                        <span className={cn(
+                          line.type === "removed" && "text-red-700",
+                          line.type === "added" && "text-green-700",
+                          line.type === "same" && "text-slate-600",
+                        )}>
+                          {line.lineA || line.lineB}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                ))}
+                {currentDiff.lines.length === 0 && (
+                  <div className="px-4 py-8 text-center text-slate-400">No text content on this page.</div>
+                )}
               </div>
-            ) : (
-              <div className="text-center">
-                <p className="text-xs font-bold text-indigo-600 mb-2">
-                  {viewMode === "overlay" ? "Overlay View" : "Differences Highlighted in Red"}
-                </p>
-                <canvas ref={canvasLeftRef} className="mx-auto rounded border border-gray-200 bg-white max-w-full" />
+            )}
+
+            {currentDiff && viewMode === "side-by-side" && (
+              <div className="max-h-[600px] overflow-y-auto">
+                <div className="grid grid-cols-2 divide-x divide-gray-200 sticky top-0 bg-gray-50 border-b border-gray-200 z-10">
+                  <div className="px-4 py-2 text-xs font-bold text-blue-600">Original</div>
+                  <div className="px-4 py-2 text-xs font-bold text-purple-600">Modified</div>
+                </div>
+                {currentDiff.lines.map((line, idx) => (
+                  <div key={idx} className="grid grid-cols-2 divide-x divide-gray-200">
+                    <div className={cn(
+                      "px-4 py-1.5 text-sm font-mono break-words",
+                      line.type === "removed" && "bg-red-50 text-red-700",
+                      line.type === "changed" && "bg-yellow-50 text-red-700",
+                      line.type === "same" && "text-slate-600",
+                      line.type === "added" && "bg-gray-50 text-gray-300",
+                    )}>
+                      {line.type === "changed" ? (
+                        (() => {
+                          const { oldParts } = highlightWordDiff(line.lineA || "", line.lineB || "")
+                          return oldParts.map((p, i) => (
+                            <span key={i} className={p.changed ? "bg-red-200 px-0.5 rounded" : ""}>{p.text}</span>
+                          ))
+                        })()
+                      ) : line.type === "added" ? (
+                        <span className="italic">—</span>
+                      ) : (
+                        line.lineA
+                      )}
+                    </div>
+                    <div className={cn(
+                      "px-4 py-1.5 text-sm font-mono break-words",
+                      line.type === "added" && "bg-green-50 text-green-700",
+                      line.type === "changed" && "bg-yellow-50 text-green-700",
+                      line.type === "same" && "text-slate-600",
+                      line.type === "removed" && "bg-gray-50 text-gray-300",
+                    )}>
+                      {line.type === "changed" ? (
+                        (() => {
+                          const { newParts } = highlightWordDiff(line.lineA || "", line.lineB || "")
+                          return newParts.map((p, i) => (
+                            <span key={i} className={p.changed ? "bg-green-200 px-0.5 rounded" : ""}>{p.text}</span>
+                          ))
+                        })()
+                      ) : line.type === "removed" ? (
+                        <span className="italic">—</span>
+                      ) : (
+                        line.lineB
+                      )}
+                    </div>
+                  </div>
+                ))}
+                {currentDiff.lines.length === 0 && (
+                  <div className="px-4 py-8 text-center text-slate-400 col-span-2">No text content on this page.</div>
+                )}
+              </div>
+            )}
+
+            {currentDiff && viewMode === "highlights" && (
+              <div className="max-h-[600px] overflow-y-auto p-6 space-y-1 text-sm leading-relaxed">
+                {currentDiff.lines.map((line, idx) => {
+                  if (line.type === "same") {
+                    return <p key={idx} className="text-slate-700">{line.lineA}</p>
+                  }
+                  if (line.type === "removed") {
+                    return (
+                      <p key={idx} className="bg-red-100 border-l-4 border-red-500 px-3 py-1 text-red-800 line-through">
+                        {line.lineA}
+                      </p>
+                    )
+                  }
+                  if (line.type === "added") {
+                    return (
+                      <p key={idx} className="bg-green-100 border-l-4 border-green-500 px-3 py-1 text-green-800">
+                        {line.lineB}
+                      </p>
+                    )
+                  }
+                  if (line.type === "changed") {
+                    const { oldParts, newParts } = highlightWordDiff(line.lineA || "", line.lineB || "")
+                    return (
+                      <div key={idx} className="space-y-1">
+                        <p className="bg-red-100 border-l-4 border-red-500 px-3 py-1 text-red-800 line-through">
+                          {oldParts.map((p, i) => (
+                            <span key={i} className={p.changed ? "bg-red-300 px-0.5 rounded font-semibold" : ""}>{p.text}</span>
+                          ))}
+                        </p>
+                        <p className="bg-green-100 border-l-4 border-green-500 px-3 py-1 text-green-800">
+                          {newParts.map((p, i) => (
+                            <span key={i} className={p.changed ? "bg-green-300 px-0.5 rounded font-semibold" : ""}>{p.text}</span>
+                          ))}
+                        </p>
+                      </div>
+                    )
+                  }
+                  return null
+                })}
+                {currentDiff.lines.length === 0 && (
+                  <div className="text-center text-slate-400 py-8">No text content on this page.</div>
+                )}
               </div>
             )}
           </div>
 
           {/* Page summary */}
-          {diffPercentages.length > 0 && (
+          {pageDiffs.length > 0 && (
             <div className="bg-white border border-gray-200 rounded-xl p-4 mt-4">
               <h3 className="font-bold text-slate-900 text-sm mb-3">Page Summary</h3>
               <div className="flex flex-wrap gap-2">
-                {diffPercentages.map((pct, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setCurrentPage(i)}
-                    className={cn(
-                      "text-xs font-medium px-3 py-1.5 rounded-lg border transition-colors",
-                      currentPage === i ? "ring-2 ring-indigo-500" : "",
-                      pct < 0.1 ? "bg-green-50 border-green-200 text-green-700" :
-                      pct < 5 ? "bg-yellow-50 border-yellow-200 text-yellow-700" :
-                      pct < 20 ? "bg-orange-50 border-orange-200 text-orange-700" :
-                      "bg-red-50 border-red-200 text-red-700"
-                    )}
-                  >
-                    P{i + 1}: {pct < 0.1 ? "Same" : `${pct.toFixed(1)}%`}
-                  </button>
-                ))}
+                {pageDiffs.map((d, i) => {
+                  const changes = d.addedCount + d.removedCount + d.changedCount
+                  return (
+                    <button
+                      key={i}
+                      onClick={() => setCurrentPage(i)}
+                      className={cn(
+                        "text-xs font-medium px-3 py-1.5 rounded-lg border transition-colors",
+                        currentPage === i ? "ring-2 ring-indigo-500" : "",
+                        changes === 0 ? "bg-green-50 border-green-200 text-green-700" :
+                        changes <= 3 ? "bg-yellow-50 border-yellow-200 text-yellow-700" :
+                        changes <= 10 ? "bg-orange-50 border-orange-200 text-orange-700" :
+                        "bg-red-50 border-red-200 text-red-700"
+                      )}
+                    >
+                      P{i + 1}: {changes === 0 ? "Same" : `${changes} change${changes > 1 ? "s" : ""}`}
+                    </button>
+                  )
+                })}
               </div>
             </div>
           )}
