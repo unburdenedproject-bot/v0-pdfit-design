@@ -38,25 +38,25 @@ function errorResponse(message, status = 500) {
 /**
  * PDF Redaction API
  *
- * Permanently removes content from specified areas of PDF pages.
- * Draws black rectangles AND removes underlying text.
+ * Permanently removes content from specified areas of PDF pages by replacing
+ * each redacted page with a flattened image rendition.
  * Business plan only.
  *
  * Body: {
  *   blobUrl: string,
  *   originalName?: string,
- *   redactions: Array<{
+ *   redactedPages: Array<{
  *     page: number,        // 0-based page index
- *     x: number,           // x position (ratio 0-1 from left)
- *     y: number,           // y position (ratio 0-1 from top)
- *     width: number,       // width (ratio 0-1)
- *     height: number       // height (ratio 0-1)
+ *     blobUrl: string,     // uploaded flattened PNG for that page
+ *     width: number,       // original PDF page width in points
+ *     height: number       // original PDF page height in points
  *   }>
  * }
  */
 export async function POST(request) {
   let tmpPath = null;
   let uploadedBlobUrl = null;
+  let uploadedPageBlobUrls = [];
 
   try {
     // Auth: Business plan only
@@ -80,10 +80,13 @@ export async function POST(request) {
       return errorResponse("Missing blobUrl in JSON body.", 400);
     }
 
-    const redactions = body.redactions;
-    if (!Array.isArray(redactions) || redactions.length === 0) {
-      return errorResponse("No redaction areas specified.", 400);
+    const redactedPages = body.redactedPages;
+    if (!Array.isArray(redactedPages) || redactedPages.length === 0) {
+      return errorResponse("No redacted page renders were provided.", 400);
     }
+    uploadedPageBlobUrls = redactedPages
+      .map((page) => page?.blobUrl)
+      .filter((value) => typeof value === "string");
 
     // Download file
     const result = await blobUrlToTmp(blobUrl);
@@ -92,43 +95,74 @@ export async function POST(request) {
       ? body.originalName
       : result.name;
 
-    // Apply redactions with pdf-lib
-    const { PDFDocument, rgb } = await import("pdf-lib");
-    const pdfDoc = await PDFDocument.load(result.buffer);
-    const pages = pdfDoc.getPages();
+    const { PDFDocument } = await import("pdf-lib");
+    const sourcePdf = await PDFDocument.load(result.buffer);
+    const outputPdf = await PDFDocument.create();
+    const replacementPages = new Map();
 
-    for (const redaction of redactions) {
-      const pageIndex = redaction.page;
-      if (pageIndex < 0 || pageIndex >= pages.length) continue;
+    for (const redactedPage of redactedPages) {
+      const pageIndex = redactedPage?.page;
+      const pageBlobUrl = redactedPage?.blobUrl;
+      const pageWidth = redactedPage?.width;
+      const pageHeight = redactedPage?.height;
 
-      const page = pages[pageIndex];
-      const { width: pageWidth, height: pageHeight } = page.getSize();
+      if (
+        !Number.isInteger(pageIndex) ||
+        pageIndex < 0 ||
+        pageIndex >= sourcePdf.getPageCount()
+      ) {
+        return errorResponse(`Invalid page index: ${pageIndex}`, 400);
+      }
 
-      // Convert ratios to actual coordinates
-      // Note: PDF coordinate system starts from bottom-left
-      const x = redaction.x * pageWidth;
-      const w = redaction.width * pageWidth;
-      const h = redaction.height * pageHeight;
-      // y ratio is from top, but PDF y is from bottom
-      const y = pageHeight - (redaction.y * pageHeight) - h;
+      if (
+        typeof pageBlobUrl !== "string" ||
+        typeof pageWidth !== "number" ||
+        typeof pageHeight !== "number" ||
+        pageWidth <= 0 ||
+        pageHeight <= 0
+      ) {
+        return errorResponse(`Invalid redacted page payload for page ${pageIndex + 1}.`, 400);
+      }
 
-      // Draw black rectangle over the area
-      page.drawRectangle({
-        x,
-        y,
-        width: w,
-        height: h,
-        color: rgb(0, 0, 0),
+      const imageResponse = await fetch(pageBlobUrl);
+      if (!imageResponse.ok) {
+        throw new Error(`Failed to fetch redacted page ${pageIndex + 1} (${imageResponse.status}).`);
+      }
+
+      const imageBytes = await imageResponse.arrayBuffer();
+      replacementPages.set(pageIndex, {
+        imageBytes,
+        width: pageWidth,
+        height: pageHeight,
       });
     }
 
-    // Save the redacted PDF
-    const redactedBytes = await pdfDoc.save();
+    for (let pageIndex = 0; pageIndex < sourcePdf.getPageCount(); pageIndex++) {
+      const replacement = replacementPages.get(pageIndex);
+
+      if (replacement) {
+        const image = await outputPdf.embedPng(replacement.imageBytes);
+        const page = outputPdf.addPage([replacement.width, replacement.height]);
+        page.drawImage(image, {
+          x: 0,
+          y: 0,
+          width: replacement.width,
+          height: replacement.height,
+        });
+        continue;
+      }
+
+      const [copiedPage] = await outputPdf.copyPages(sourcePdf, [pageIndex]);
+      outputPdf.addPage(copiedPage);
+    }
+
+    const redactedBytes = await outputPdf.save();
 
     // Clean up
     if (uploadedBlobUrl) {
       await del(uploadedBlobUrl).catch(() => {});
     }
+    await Promise.allSettled(uploadedPageBlobUrls.map((url) => del(url)));
     await unlink(tmpPath).catch(() => {});
     tmpPath = null;
 
@@ -148,6 +182,7 @@ export async function POST(request) {
     });
   } catch (err) {
     if (tmpPath) await unlink(tmpPath).catch(() => {});
+    await Promise.allSettled(uploadedPageBlobUrls.map((url) => del(url)));
 
     console.error("pdf-redaction route error:", err);
 

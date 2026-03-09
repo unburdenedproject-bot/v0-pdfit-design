@@ -5,7 +5,8 @@
       "Bash(cmd.exe:*)",
       "WebFetch(domain:omnispdf.com)",
       "WebFetch(domain:www.iloveapi.com)",
-      "WebFetch(domain:cloudconvert.com)"
+      "WebFetch(domain:cloudconvert.com)",
+      "Bash(powershell.exe:*)"
     ]
   }
 }

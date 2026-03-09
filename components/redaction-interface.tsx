@@ -8,7 +8,7 @@ import {
   Shield, Crown, ChevronLeft, ChevronRight, Trash2, Eye,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { uploadFileToBlob } from "@/lib/upload-to-blob"
+import { uploadBlobToBlob, uploadFileToBlob } from "@/lib/upload-to-blob"
 import { TrustBadges } from "@/components/trust-badges"
 
 interface RedactionRect {
@@ -28,7 +28,6 @@ export function RedactionInterface() {
   const [userPlan, setUserPlan] = useState<string>("free")
   const [file, setFile] = useState<File | null>(null)
   const [isDragOver, setIsDragOver] = useState(false)
-  const [pdfPages, setPdfPages] = useState<ImageData[]>([])
   const [pageImages, setPageImages] = useState<string[]>([])
   const [pageSizes, setPageSizes] = useState<{ width: number; height: number }[]>([])
   const [currentPage, setCurrentPage] = useState(0)
@@ -129,6 +128,7 @@ export function RedactionInterface() {
 
       for (let i = 1; i <= pdf.numPages; i++) {
         const page = await pdf.getPage(i)
+        const pageSize = page.getViewport({ scale: 1 })
         const viewport = page.getViewport({ scale: 2 })
 
         const offscreen = document.createElement("canvas")
@@ -139,7 +139,7 @@ export function RedactionInterface() {
         await page.render({ canvasContext: ctx, viewport }).promise
 
         images.push(offscreen.toDataURL("image/png"))
-        sizes.push({ width: viewport.width, height: viewport.height })
+        sizes.push({ width: pageSize.width, height: pageSize.height })
       }
 
       setPageImages(images)
@@ -237,6 +237,59 @@ export function RedactionInterface() {
     setRedactions((prev) => prev.filter((r) => r.page !== currentPage))
   }, [currentPage])
 
+  const createRedactedPageBlob = useCallback(async (pageIndex: number) => {
+    const pageImage = pageImages[pageIndex]
+    const pageSize = pageSizes[pageIndex]
+
+    if (!pageImage || !pageSize) {
+      throw new Error(`Missing rendered page data for page ${pageIndex + 1}.`)
+    }
+
+    const img = new Image()
+    img.src = pageImage
+    await new Promise<void>((resolve, reject) => {
+      img.onload = () => resolve()
+      img.onerror = () => reject(new Error(`Failed to render page ${pageIndex + 1}.`))
+    })
+
+    const canvas = document.createElement("canvas")
+    canvas.width = img.width
+    canvas.height = img.height
+
+    const ctx = canvas.getContext("2d")
+    if (!ctx) {
+      throw new Error("Failed to create image canvas.")
+    }
+
+    ctx.drawImage(img, 0, 0)
+    ctx.fillStyle = "rgb(0, 0, 0)"
+
+    for (const redaction of redactions.filter((item) => item.page === pageIndex)) {
+      ctx.fillRect(
+        redaction.x * canvas.width,
+        redaction.y * canvas.height,
+        redaction.width * canvas.width,
+        redaction.height * canvas.height
+      )
+    }
+
+    const blob = await new Promise<Blob>((resolve, reject) => {
+      canvas.toBlob((value) => {
+        if (value) {
+          resolve(value)
+          return
+        }
+        reject(new Error(`Failed to export page ${pageIndex + 1}.`))
+      }, "image/png")
+    })
+
+    return {
+      blob,
+      width: pageSize.width,
+      height: pageSize.height,
+    }
+  }, [pageImages, pageSizes, redactions])
+
   const applyRedactions = useCallback(async () => {
     if (!file || redactions.length === 0) return
 
@@ -245,6 +298,21 @@ export function RedactionInterface() {
 
     try {
       const inputUrl = await uploadFileToBlob(file)
+      const redactedPageIndexes = Array.from(new Set(redactions.map((item) => item.page))).sort((a, b) => a - b)
+      const redactedPages = []
+
+      for (const pageIndex of redactedPageIndexes) {
+        const { blob, width, height } = await createRedactedPageBlob(pageIndex)
+        const baseName = file.name.replace(/\.[^/.]+$/, "")
+        const blobUrl = await uploadBlobToBlob(blob, `${baseName}-redacted-page-${pageIndex + 1}.png`)
+
+        redactedPages.push({
+          page: pageIndex,
+          blobUrl,
+          width,
+          height,
+        })
+      }
 
       const response = await fetch("/api/pdf-redaction", {
         method: "POST",
@@ -252,13 +320,7 @@ export function RedactionInterface() {
         body: JSON.stringify({
           blobUrl: inputUrl,
           originalName: file.name,
-          redactions: redactions.map((r) => ({
-            page: r.page,
-            x: r.x,
-            y: r.y,
-            width: r.width,
-            height: r.height,
-          })),
+          redactedPages,
         }),
       })
 
@@ -287,7 +349,7 @@ export function RedactionInterface() {
       setErrorMessage(error instanceof Error ? error.message : "An unknown error occurred")
       setIsProcessing(false)
     }
-  }, [file, redactions, router])
+  }, [createRedactedPageBlob, file, redactions, router])
 
   const downloadResult = useCallback(() => {
     const link = document.createElement("a")

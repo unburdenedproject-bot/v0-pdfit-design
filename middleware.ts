@@ -1,20 +1,26 @@
 import { updateSession } from "@/lib/supabase/middleware"
 import { type NextRequest, NextResponse } from "next/server"
 import { Ratelimit } from "@upstash/ratelimit"
-import { Redis } from "@upstash/redis"
+import { Redis } from "@upstash/redis/cloudflare"
 
-const ratelimit = new Ratelimit({
-  redis: new Redis({
-    url: process.env.KV_REST_API_URL!,
-    token: process.env.KV_REST_API_TOKEN!,
-  }),
-  limiter: Ratelimit.slidingWindow(100, "1 m"),
-  analytics: true,
-})
+const kvUrl = process.env.KV_REST_API_URL
+const kvToken = process.env.KV_REST_API_TOKEN
+
+const ratelimit =
+  kvUrl && kvToken
+    ? new Ratelimit({
+        redis: new Redis({
+          url: kvUrl,
+          token: kvToken,
+        }),
+        limiter: Ratelimit.slidingWindow(100, "1 m"),
+        analytics: true,
+      })
+    : null
 
 export async function middleware(request: NextRequest) {
   // Apply rate limiting only to /api/ routes
-  if (request.nextUrl.pathname.startsWith("/api/")) {
+  if (request.nextUrl.pathname.startsWith("/api/") && ratelimit) {
     const ip = request.ip ?? request.headers.get("x-forwarded-for") ?? "127.0.0.1"
     const { success } = await ratelimit.limit(ip)
 
