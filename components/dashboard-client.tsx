@@ -47,7 +47,8 @@ export function DashboardClient({
   const [isBillingLoading, setIsBillingLoading] = useState(false)
   const [billingError, setBillingError] = useState<string | null>(null)
 
-  const isPro = plan === "pro"
+  const isPro = plan === "pro" || plan === "business"
+  const planLabel = plan === "business" ? "Business" : "Pro"
 
   useEffect(() => {
     if (searchParams.get("success") === "true") {
@@ -137,9 +138,9 @@ export function DashboardClient({
           <div className="flex items-center justify-between">
             <CardTitle className="text-lg text-slate-800">Your Plan</CardTitle>
             {isPro ? (
-              <Badge className="bg-orange-500 text-white hover:bg-orange-500">
+              <Badge className={plan === "business" ? "bg-indigo-600 text-white hover:bg-indigo-600" : "bg-orange-500 text-white hover:bg-orange-500"}>
                 <Crown className="mr-1 h-3 w-3" />
-                Pro
+                {planLabel}
               </Badge>
             ) : (
               <Badge variant="secondary" className="bg-slate-100 text-slate-600">
@@ -149,7 +150,7 @@ export function DashboardClient({
           </div>
           <CardDescription className="text-slate-500">
             {isPro
-              ? "Unlimited conversions with your Pro subscription."
+              ? `Unlimited conversions with your ${planLabel} subscription.`
               : "You have 10 free conversions per day with your account."}
           </CardDescription>
         </CardHeader>
