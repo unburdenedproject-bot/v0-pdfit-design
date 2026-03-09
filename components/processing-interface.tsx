@@ -17,6 +17,7 @@ interface ProcessingInterfaceProps {
   outputFormat: string
   processingMessage: string
   successMessage: string
+  compressionLevel?: string
 }
 
 interface ProcessedFile {
@@ -66,6 +67,7 @@ export function ProcessingInterface({
   outputFormat,
   processingMessage,
   successMessage,
+  compressionLevel,
 }: ProcessingInterfaceProps) {
   const router = useRouter()
   const [isDragOver, setIsDragOver] = useState(false)
@@ -286,7 +288,7 @@ export function ProcessingInterface({
           const response = await fetch("/api/compress-pdf", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ blobUrl: inputUrl, compression_level: "recommended" }),
+            body: JSON.stringify({ blobUrl: inputUrl, compression_level: compressionLevel || "recommended" }),
           })
 
           if (!response.ok) {
