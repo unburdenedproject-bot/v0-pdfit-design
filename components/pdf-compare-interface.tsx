@@ -161,6 +161,16 @@ function extractParagraphs(items: TextItemLike[]): string[] {
     return fallback ? [fallback] : []
   }
 
+  // If we ended up with a single giant paragraph (50+ words), it's likely a table/invoice
+  // where gap detection didn't find breaks. Split by label-value patterns.
+  if (result.length === 1 && countWords(result[0]) >= 50) {
+    // Match all-caps labels (2+ chars) optionally followed by a colon/number,
+    // e.g. "INVOICE 8342" or "DUE DATE: 01/21/2026" or "TOTAL $500.00"
+    const labelPattern = /(?=\b[A-Z][A-Z /]+(?:[:#]|\b))/g
+    const parts = result[0].split(labelPattern).map((s) => s.trim()).filter(Boolean)
+    if (parts.length > 1) return parts
+  }
+
   return result
 }
 
@@ -426,11 +436,18 @@ export function PdfCompareInterface() {
       if (changes > 0) {
         page.paragraphs.forEach((para, pIdx) => {
           if (!para.changed) return
-          const leftText = para.leftTokens.map((t) => t.text).join("")
-          const rightText = para.rightTokens.map((t) => t.text).join("")
+          const removed = para.leftTokens
+            .filter((t) => t.highlight === "removed")
+            .map((t) => `[${t.text.trim()}]`)
+            .join(" ")
+          const added = para.rightTokens
+            .filter((t) => t.highlight === "added")
+            .map((t) => `[${t.text.trim()}]`)
+            .join(" ")
           report += `  Paragraph ${pIdx + 1}:\n`
-          report += `    - ${leftText}\n`
-          report += `    + ${rightText}\n\n`
+          if (removed) report += `    - removed: ${removed}\n`
+          if (added) report += `    + added: ${added}\n`
+          report += "\n"
         })
       }
     })
