@@ -1,7 +1,7 @@
 export const runtime = "nodejs";
 
 import { NextResponse } from "next/server";
-import { writeFile, unlink } from "fs/promises";
+import { readFile, writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
@@ -34,6 +34,107 @@ function errorResponse(message, status = 500) {
   return Response.json({ error: message }, { status });
 }
 
+/**
+ * Convert PDF to XLSX using CloudConvert REST API.
+ */
+async function convertWithCloudConvert(fileBuffer, fileName) {
+  const apiKey = process.env.CLOUDCONVERT_API_KEY;
+  if (!apiKey) {
+    throw new Error("Server is not configured with CloudConvert credentials.");
+  }
+
+  // Step 1: Create the job
+  const jobRes = await fetch("https://api.cloudconvert.com/v2/jobs", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      tasks: {
+        "import-1": { operation: "import/upload" },
+        "convert-1": {
+          operation: "convert",
+          input: "import-1",
+          input_format: "pdf",
+          output_format: "xlsx",
+        },
+        "export-1": {
+          operation: "export/url",
+          input: "convert-1",
+        },
+      },
+    }),
+  });
+
+  if (!jobRes.ok) {
+    const err = await jobRes.json().catch(() => ({}));
+    throw new Error(`CloudConvert job creation failed: ${err.message || jobRes.status}`);
+  }
+
+  const job = await jobRes.json();
+  const importTask = job.data.tasks.find((t) => t.name === "import-1");
+  if (!importTask || !importTask.result || !importTask.result.form) {
+    throw new Error("CloudConvert did not return an upload URL.");
+  }
+
+  // Step 2: Upload the file
+  const form = importTask.result.form;
+  const uploadUrl = form.url;
+  const formData = new FormData();
+  for (const [key, value] of Object.entries(form.parameters || {})) {
+    formData.append(key, value);
+  }
+  formData.append("file", new Blob([fileBuffer]), fileName);
+
+  const uploadRes = await fetch(uploadUrl, { method: "POST", body: formData });
+  if (!uploadRes.ok && uploadRes.status !== 201 && uploadRes.status !== 204) {
+    throw new Error(`CloudConvert upload failed (${uploadRes.status})`);
+  }
+
+  // Step 3: Poll for job completion
+  const jobId = job.data.id;
+  let finished = null;
+  for (let i = 0; i < 60; i++) {
+    await new Promise((r) => setTimeout(r, 2000));
+
+    const pollRes = await fetch(`https://api.cloudconvert.com/v2/jobs/${jobId}`, {
+      headers: { Authorization: `Bearer ${apiKey}` },
+    });
+    if (!pollRes.ok) continue;
+
+    const pollData = await pollRes.json();
+    const status = pollData.data.status;
+
+    if (status === "finished") {
+      finished = pollData.data;
+      break;
+    }
+    if (status === "error") {
+      const failedTask = pollData.data.tasks.find((t) => t.status === "error");
+      throw new Error(`CloudConvert conversion failed: ${failedTask?.message || "unknown error"}`);
+    }
+  }
+
+  if (!finished) {
+    throw new Error("CloudConvert conversion timed out.");
+  }
+
+  // Step 4: Download the result
+  const exportTask = finished.tasks.find((t) => t.name === "export-1");
+  const fileUrl = exportTask?.result?.files?.[0]?.url;
+  if (!fileUrl) {
+    throw new Error("CloudConvert did not return a download URL.");
+  }
+
+  const downloadRes = await fetch(fileUrl);
+  if (!downloadRes.ok) {
+    throw new Error(`Failed to download converted file (${downloadRes.status})`);
+  }
+
+  return Buffer.from(await downloadRes.arrayBuffer());
+}
+
 export async function POST(request) {
   let tmpPath = null;
   let uploadedBlobUrl = null;
@@ -43,13 +144,6 @@ export async function POST(request) {
     const usage = await checkUsageAndAuth("pdf-to-excel");
     if (!usage.allowed) {
       return NextResponse.json({ error: usage.error || "Daily limit reached." }, { status: 403 });
-    }
-
-    const publicKey = process.env.ILOVEAPI_PUBLIC_KEY;
-    const secretKey = process.env.ILOVEAPI_SECRET_KEY;
-
-    if (!publicKey || !secretKey) {
-      return errorResponse("Server is not configured with iLoveAPI credentials.", 500);
     }
 
     const contentType = request.headers.get("content-type") || "";
@@ -85,25 +179,12 @@ export async function POST(request) {
       await writeFile(tmpPath, buffer);
     }
 
-    const ILovePDFApi = (await import("@ilovepdf/ilovepdf-nodejs")).default;
-    const ILovePDFFile = (await import("@ilovepdf/ilovepdf-nodejs/ILovePDFFile")).default;
-
-    const instance = new ILovePDFApi(publicKey, secretKey);
-    const task = instance.newTask("pdfoffice");
-
-    await task.start();
-
-    const pdfFile = new ILovePDFFile(tmpPath);
-    await task.addFile(pdfFile);
-
-    await task.process({ pdfoffice_mode: "excel" });
-
-    const data = await task.download();
+    const fileBuffer = await readFile(tmpPath);
+    const data = await convertWithCloudConvert(fileBuffer, originalName);
 
     if (uploadedBlobUrl) {
       await del(uploadedBlobUrl).catch(() => {});
     }
-
     await unlink(tmpPath).catch(() => {});
     tmpPath = null;
 
