@@ -20,6 +20,10 @@ import {
   ImageDown,
   Layers,
   Upload,
+  PenTool,
+  Receipt,
+  ArrowLeftRight,
+  Repeat,
 } from "lucide-react"
 
 const categories = [
@@ -230,12 +234,60 @@ const categories = [
       },
     ],
   },
+  {
+    name: "Business Tools",
+    description: "Advanced tools for teams and professionals",
+    tools: [
+      {
+        name: "Workflow Automation",
+        description: "Chain multiple PDF tools into one automated workflow.",
+        icon: Repeat,
+        href: "/workflow-automation",
+        tier: "BUSINESS" as const,
+      },
+      {
+        name: "Table Extraction",
+        description: "Extract tables from PDFs directly into Excel spreadsheets.",
+        icon: FileSpreadsheet,
+        href: "/table-extraction",
+        tier: "BUSINESS" as const,
+      },
+      {
+        name: "PDF Compare",
+        description: "Compare two PDFs side-by-side and highlight differences.",
+        icon: ArrowLeftRight,
+        href: "/pdf-compare",
+        tier: "BUSINESS" as const,
+      },
+      {
+        name: "eSign Documents",
+        description: "Add legally binding electronic signatures to PDFs.",
+        icon: PenTool,
+        href: "/esign",
+        tier: "BUSINESS" as const,
+      },
+      {
+        name: "Invoice Generator",
+        description: "Create professional PDF invoices from a simple form.",
+        icon: Receipt,
+        href: "/invoice-generator",
+        tier: "BUSINESS" as const,
+      },
+    ],
+  },
 ]
 
-function TierBadge({ tier }: { tier: "FREE" | "PRO" }) {
+function TierBadge({ tier }: { tier: "FREE" | "PRO" | "BUSINESS" }) {
+  if (tier === "BUSINESS") {
+    return (
+      <span className="bg-indigo-100 text-indigo-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
+        Business
+      </span>
+    )
+  }
   if (tier === "PRO") {
     return (
-      <span className="bg-orange-100 text-orange-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
+      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide" style={{ backgroundColor: "#FDE7C7", color: "#B45309" }}>
         Pro
       </span>
     )
@@ -255,7 +307,7 @@ function PricingCTA() {
           Need unlimited conversions or larger files?
         </h3>
         <p className="text-slate-300 text-sm mb-5 max-w-lg mx-auto leading-relaxed">
-          Go Pro for unlimited conversions, files up to 200MB, OCR, Watermark, and all advanced tools — $7.99/month.
+          Go Pro for unlimited conversions, batch processing, and all tools — $7.99/month. Need eSign, invoices, and workflow automation? Try Business at $13.99/month.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link

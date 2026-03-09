@@ -135,6 +135,7 @@ export default function PricingPage() {
                   </div>
 
                   <div className="space-y-4 mb-8">
+                    <p className="text-sm text-slate-500 font-medium">Everything in Free, plus:</p>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                         <Check className="h-3 w-3 text-green-600" />
@@ -157,7 +158,13 @@ export default function PricingPage() {
                       <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                         <Check className="h-3 w-3 text-green-600" />
                       </div>
-                      <span className="text-slate-700 text-lg font-medium">QR Code generator</span>
+                      <span className="text-slate-700 text-lg font-medium">Batch processing</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-green-600" />
+                      </div>
+                      <span className="text-slate-700 text-lg font-medium">Advanced controls</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
@@ -195,17 +202,24 @@ export default function PricingPage() {
                   </div>
 
                   <div className="space-y-4 mb-8">
+                    <p className="text-sm text-slate-500 font-medium">Everything in Pro, plus:</p>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                         <Check className="h-3 w-3 text-green-600" />
                       </div>
-                      <span className="text-slate-700 text-lg font-medium">Everything in Pro</span>
+                      <span className="text-slate-700 text-lg font-medium">Workflow automation</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                         <Check className="h-3 w-3 text-green-600" />
                       </div>
-                      <span className="text-slate-700 text-lg font-medium">Invoice generator</span>
+                      <span className="text-slate-700 text-lg font-medium">Table extraction to Excel</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-green-600" />
+                      </div>
+                      <span className="text-slate-700 text-lg font-medium">PDF comparison</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
@@ -217,7 +231,7 @@ export default function PricingPage() {
                       <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                         <Check className="h-3 w-3 text-green-600" />
                       </div>
-                      <span className="text-slate-700 text-lg font-medium">Priority support</span>
+                      <span className="text-slate-700 text-lg font-medium">Invoice generator</span>
                     </div>
                   </div>
 
