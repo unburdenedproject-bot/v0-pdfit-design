@@ -126,7 +126,7 @@ export function OcrPdfInterface() {
         try {
           const errorData = JSON.parse(rawBody)
           if (errorData.error) message = errorData.error
-          if (message.includes("upgrade_required")) { router.push("/pro"); return }
+          if (message.includes("upgrade_required")) { router.push("/pricing?source=ocr"); return }
           if (errorData.details) {
             details = typeof errorData.details === "string"
               ? errorData.details

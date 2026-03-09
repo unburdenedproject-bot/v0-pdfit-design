@@ -274,7 +274,7 @@ export function ProcessingInterface({
               const errorData = await response.json()
               if (errorData.error) message = errorData.error
               if (message.includes("signup_required")) { router.push("/signup-required"); return }
-              if (message.includes("upgrade_required")) { router.push("/pro"); return }
+              if (message.includes("upgrade_required")) { router.push("/pricing"); return }
               if (message.includes("daily_limit_reached")) { message = "daily_limit_reached_anon" }
             } catch { }
             throw new Error(message)
@@ -371,7 +371,7 @@ export function ProcessingInterface({
               const errorData = await response.json()
               if (errorData.error) message = errorData.error
               if (message.includes("signup_required")) { router.push("/signup-required"); return }
-              if (message.includes("upgrade_required")) { router.push("/pro"); return }
+              if (message.includes("upgrade_required")) { router.push("/pricing"); return }
               if (message.includes("daily_limit_reached")) { message = "daily_limit_reached_anon" }
             } catch { }
             throw new Error(message)
@@ -463,7 +463,7 @@ export function ProcessingInterface({
             try {
               const errorData = await response.json()
               if (errorData.error) message = errorData.error
-              if (message.includes("upgrade_required")) { router.push("/pro"); return }
+              if (message.includes("upgrade_required")) { router.push("/pricing"); return }
               if (message.includes("signup_required")) { router.push("/signup-required"); return }
               if (message.includes("daily_limit_reached")) { message = "daily_limit_reached_anon" }
             } catch { }
