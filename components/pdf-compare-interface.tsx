@@ -5,7 +5,6 @@ import * as Diff from "diff"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import {
-  AlertCircle,
   ArrowLeftRight,
   CheckCircle,
   ChevronLeft,
@@ -74,6 +73,13 @@ function extractParagraphs(items: TextItemLike[]): string[] {
     }))
 
   if (filtered.length === 0) return []
+
+  // Fallback: if all items lack valid transform data, just join as one block
+  const hasValidPositions = filtered.some((item) => item.x !== 0 || item.y !== 0)
+  if (!hasValidPositions) {
+    const text = filtered.map((item) => item.text).join(" ").replace(/\s+/g, " ").trim()
+    return text ? [text] : []
+  }
 
   // Sort top-to-bottom, left-to-right
   filtered.sort((a, b) => {
@@ -146,7 +152,16 @@ function extractParagraphs(items: TextItemLike[]): string[] {
     paragraphs.push(buffer.join(" ").replace(/\s+/g, " ").trim())
   }
 
-  return paragraphs.filter((p) => p.length > 0)
+  const result = paragraphs.filter((p) => p.length > 0)
+
+  // Fallback: if smart paragraph detection returned nothing but we had text items,
+  // join all items as a single text block so the diff still works
+  if (result.length === 0 && filtered.length > 0) {
+    const fallback = filtered.map((item) => item.text).join(" ").replace(/\s+/g, " ").trim()
+    return fallback ? [fallback] : []
+  }
+
+  return result
 }
 
 // ──────────────────────────────────────────────
@@ -302,7 +317,8 @@ export function PdfCompareInterface() {
   const [paraPagesA, setParaPagesA] = useState<string[][]>([])
   const [paraPagesB, setParaPagesB] = useState<string[][]>([])
   const [currentPage, setCurrentPage] = useState(0)
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoadingA, setIsLoadingA] = useState(false)
+  const [isLoadingB, setIsLoadingB] = useState(false)
   const [errorMessage, setErrorMessage] = useState("")
 
   const totalPagesA = paraPagesA.length
@@ -341,11 +357,17 @@ export function PdfCompareInterface() {
         return
       }
 
-      setIsLoading(true)
+      const setLoading = side === "left" ? setIsLoadingA : setIsLoadingB
+      setLoading(true)
       setErrorMessage("")
 
       try {
         const pages = await extractPages(file)
+
+        if (pages.length === 0) {
+          setErrorMessage(`The ${side === "left" ? "original" : "modified"} PDF has no readable pages.`)
+          return
+        }
 
         if (side === "left") {
           setFileA(file)
@@ -359,7 +381,7 @@ export function PdfCompareInterface() {
       } catch {
         setErrorMessage(`Failed to read the ${side === "left" ? "original" : "modified"} PDF.`)
       } finally {
-        setIsLoading(false)
+        setLoading(false)
       }
     },
     [extractPages]
@@ -381,6 +403,8 @@ export function PdfCompareInterface() {
     setParaPagesA([])
     setParaPagesB([])
     setCurrentPage(0)
+    setIsLoadingA(false)
+    setIsLoadingB(false)
     setErrorMessage("")
   }, [])
 
@@ -461,19 +485,6 @@ export function PdfCompareInterface() {
     )
   }
 
-  if (isLoading) {
-    return (
-      <section className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto text-center">
-            <Loader2 className="h-10 w-10 text-indigo-600 animate-spin mx-auto mb-4" />
-            <p className="text-slate-600 font-medium">Extracting text and comparing paragraphs...</p>
-          </div>
-        </div>
-      </section>
-    )
-  }
-
   if (!hasBothFiles) {
     return (
       <section className="py-16">
@@ -488,7 +499,12 @@ export function PdfCompareInterface() {
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               <div>
                 <h3 className="font-bold text-slate-900 mb-3 text-center">Original PDF</h3>
-                {fileA && totalPagesA > 0 ? (
+                {isLoadingA ? (
+                  <div className="border-2 border-indigo-300 bg-indigo-50 rounded-xl p-8 text-center">
+                    <Loader2 className="h-10 w-10 text-indigo-600 animate-spin mx-auto mb-3" />
+                    <p className="font-medium text-slate-700">Extracting text...</p>
+                  </div>
+                ) : fileA && totalPagesA > 0 ? (
                   <div className="border-2 border-green-400 bg-green-50 rounded-xl p-6 text-center">
                     <CheckCircle className="h-10 w-10 text-green-600 mx-auto mb-3" />
                     <p className="font-bold text-slate-900 truncate">{fileA.name}</p>
@@ -523,7 +539,12 @@ export function PdfCompareInterface() {
 
               <div>
                 <h3 className="font-bold text-slate-900 mb-3 text-center">Modified PDF</h3>
-                {fileB && totalPagesB > 0 ? (
+                {isLoadingB ? (
+                  <div className="border-2 border-indigo-300 bg-indigo-50 rounded-xl p-8 text-center">
+                    <Loader2 className="h-10 w-10 text-indigo-600 animate-spin mx-auto mb-3" />
+                    <p className="font-medium text-slate-700">Extracting text...</p>
+                  </div>
+                ) : fileB && totalPagesB > 0 ? (
                   <div className="border-2 border-green-400 bg-green-50 rounded-xl p-6 text-center">
                     <CheckCircle className="h-10 w-10 text-green-600 mx-auto mb-3" />
                     <p className="font-bold text-slate-900 truncate">{fileB.name}</p>
