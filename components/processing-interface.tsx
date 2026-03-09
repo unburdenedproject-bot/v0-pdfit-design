@@ -659,10 +659,10 @@ export function ProcessingInterface({
               <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Crown className="h-10 w-10 text-orange-500" />
               </div>
-              <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-2">{"You're out of free downloads"}</h2>
+              <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-2">{"You're out of free conversions"}</h2>
               <p className="text-xl sm:text-2xl font-bold text-orange-600 mb-4">Upgrade to Pro</p>
               <p className="text-base sm:text-lg text-slate-600 mb-8">
-                {"Free includes 10 downloads per day. Upgrade to keep downloading instantly."}
+                {"Free includes 10 conversions per day. Upgrade for unlimited conversions."}
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <Button

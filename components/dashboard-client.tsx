@@ -149,8 +149,8 @@ export function DashboardClient({
           </div>
           <CardDescription className="text-slate-500">
             {isPro
-              ? "Unlimited downloads with your Pro subscription."
-              : "You have 10 free downloads included with your account."}
+              ? "Unlimited conversions with your Pro subscription."
+              : "You have 10 free conversions per day with your account."}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -159,7 +159,7 @@ export function DashboardClient({
               <div className="flex items-center gap-2 mb-4">
                 <FileText className="h-4 w-4 text-slate-400" />
                 <span className="text-sm text-slate-600">
-                  Downloads used: <strong className="text-slate-800">{usageCount} / 10</strong>
+                  Conversions used today: <strong className="text-slate-800">{usageCount} / 10</strong>
                 </span>
               </div>
               <Button
@@ -177,7 +177,7 @@ export function DashboardClient({
                 <div className="flex items-center gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500" />
                   <span className="text-sm text-slate-600">
-                    Unlimited downloads active
+                    Unlimited conversions active
                   </span>
                 </div>
                 <Button

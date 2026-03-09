@@ -122,7 +122,7 @@ export default async function AdminLimitsPage() {
               <span className="text-lg font-bold text-green-700">ON</span>
             </div>
             <p className="text-xs text-slate-400 mt-1">
-              Free users limited to 10 downloads/day
+              Free users limited to 10 conversions/day
             </p>
           </div>
         </div>

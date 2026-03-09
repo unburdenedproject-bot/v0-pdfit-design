@@ -105,7 +105,7 @@ export default function SignUpPage() {
               </div>
               <CardTitle className="text-xl text-slate-800">Create your account</CardTitle>
               <CardDescription className="text-slate-500">
-                Get 10 free downloads per day
+                Get 10 free conversions per day
               </CardDescription>
             </CardHeader>
             <CardContent>
