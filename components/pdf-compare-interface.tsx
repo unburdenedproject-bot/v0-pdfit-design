@@ -32,6 +32,8 @@ export function PdfCompareInterface() {
   const [isLoading, setIsLoading] = useState(false)
   const [viewMode, setViewMode] = useState<ViewMode>("side-by-side")
   const [diffPercentages, setDiffPercentages] = useState<number[]>([])
+  const [diffRegionsMap, setDiffRegionsMap] = useState<Map<number, { x: number; y: number; w: number; h: number }[]>>(new Map())
+  const [diffImagesMap, setDiffImagesMap] = useState<Map<number, string>>(new Map())
   const [hasError, setHasError] = useState(false)
   const [errorMessage, setErrorMessage] = useState("")
 
@@ -103,8 +105,8 @@ export function PdfCompareInterface() {
     setIsLoading(false)
   }, [loadPdf])
 
-  // Compute pixel diff between two images
-  const computeDiff = useCallback((imgA: HTMLImageElement, imgB: HTMLImageElement): { diffDataUrl: string; diffPercent: number } => {
+  // Compute pixel diff between two images and find bounding boxes of changed regions
+  const computeDiff = useCallback((imgA: HTMLImageElement, imgB: HTMLImageElement): { diffDataUrl: string; diffPercent: number; diffRegions: { x: number; y: number; w: number; h: number }[] } => {
     const w = Math.max(imgA.width, imgB.width)
     const h = Math.max(imgA.height, imgB.height)
 
@@ -133,6 +135,12 @@ export function PdfCompareInterface() {
     const ctxDiff = diffCanvas.getContext("2d")!
     const diffData = ctxDiff.createImageData(w, h)
 
+    // Track which pixels are different using a grid for region detection
+    const blockSize = 16
+    const gridW = Math.ceil(w / blockSize)
+    const gridH = Math.ceil(h / blockSize)
+    const diffGrid: boolean[][] = Array.from({ length: gridH }, () => Array(gridW).fill(false))
+
     let diffPixels = 0
     const totalPixels = w * h
     const threshold = 30
@@ -142,6 +150,10 @@ export function PdfCompareInterface() {
       const gDiff = Math.abs(dataA.data[i + 1] - dataB.data[i + 1])
       const bDiff = Math.abs(dataA.data[i + 2] - dataB.data[i + 2])
 
+      const pixelIndex = i / 4
+      const px = pixelIndex % w
+      const py = Math.floor(pixelIndex / w)
+
       if (rDiff > threshold || gDiff > threshold || bDiff > threshold) {
         // Highlight difference in red
         diffData.data[i] = 255
@@ -149,6 +161,7 @@ export function PdfCompareInterface() {
         diffData.data[i + 2] = 50
         diffData.data[i + 3] = 200
         diffPixels++
+        diffGrid[Math.floor(py / blockSize)][Math.floor(px / blockSize)] = true
       } else {
         // Keep original but dimmed
         diffData.data[i] = Math.round(dataA.data[i] * 0.3 + 200 * 0.7)
@@ -160,9 +173,50 @@ export function PdfCompareInterface() {
 
     ctxDiff.putImageData(diffData, 0, 0)
 
+    // Find bounding boxes of changed regions using connected components on the grid
+    const visited: boolean[][] = Array.from({ length: gridH }, () => Array(gridW).fill(false))
+    const regions: { x: number; y: number; w: number; h: number }[] = []
+
+    for (let gy = 0; gy < gridH; gy++) {
+      for (let gx = 0; gx < gridW; gx++) {
+        if (diffGrid[gy][gx] && !visited[gy][gx]) {
+          // Flood fill to find the full region
+          let minX = gx, maxX = gx, minY = gy, maxY = gy
+          const queue: [number, number][] = [[gx, gy]]
+          visited[gy][gx] = true
+
+          while (queue.length > 0) {
+            const [cx, cy] = queue.shift()!
+            for (const [dx, dy] of [[-1,0],[1,0],[0,-1],[0,1],[-1,-1],[-1,1],[1,-1],[1,1]]) {
+              const nx = cx + dx
+              const ny = cy + dy
+              if (nx >= 0 && nx < gridW && ny >= 0 && ny < gridH && diffGrid[ny][nx] && !visited[ny][nx]) {
+                visited[ny][nx] = true
+                queue.push([nx, ny])
+                minX = Math.min(minX, nx)
+                maxX = Math.max(maxX, nx)
+                minY = Math.min(minY, ny)
+                maxY = Math.max(maxY, ny)
+              }
+            }
+          }
+
+          // Convert grid coordinates to pixel coordinates with padding
+          const pad = blockSize
+          regions.push({
+            x: Math.max(0, minX * blockSize - pad),
+            y: Math.max(0, minY * blockSize - pad),
+            w: Math.min(w, (maxX + 1) * blockSize + pad) - Math.max(0, minX * blockSize - pad),
+            h: Math.min(h, (maxY + 1) * blockSize + pad) - Math.max(0, minY * blockSize - pad),
+          })
+        }
+      }
+    }
+
     return {
       diffDataUrl: diffCanvas.toDataURL("image/png"),
       diffPercent: totalPixels > 0 ? (diffPixels / totalPixels) * 100 : 0,
+      diffRegions: regions,
     }
   }, [])
 
@@ -170,8 +224,10 @@ export function PdfCompareInterface() {
   useEffect(() => {
     if (!isReady) return
 
-    // Compute diff percentages for all pages
+    // Compute diff percentages, regions, and diff images for all pages
     const diffs: number[] = []
+    const regionsMap = new Map<number, { x: number; y: number; w: number; h: number }[]>()
+    const imagesMap = new Map<number, string>()
 
     const processPages = async () => {
       for (let i = 0; i < maxPages; i++) {
@@ -184,23 +240,46 @@ export function PdfCompareInterface() {
             new Promise<void>((resolve) => { imgB.onload = () => resolve(); imgB.src = pagesB[i] }),
           ])
 
-          const { diffPercent } = computeDiff(imgA, imgB)
+          const { diffPercent, diffRegions, diffDataUrl } = computeDiff(imgA, imgB)
           diffs.push(diffPercent)
+          regionsMap.set(i, diffRegions)
+          imagesMap.set(i, diffDataUrl)
         } else {
-          diffs.push(100) // Page only exists in one document
+          diffs.push(100)
+          regionsMap.set(i, [])
+          imagesMap.set(i, "")
         }
       }
       setDiffPercentages(diffs)
+      setDiffRegionsMap(regionsMap)
+      setDiffImagesMap(imagesMap)
     }
 
     processPages()
   }, [isReady, pagesA, pagesB, maxPages, computeDiff])
 
+  // Helper: draw red highlight rectangles around diff regions
+  const drawDiffHighlights = (ctx: CanvasRenderingContext2D, regions: { x: number; y: number; w: number; h: number }[], scaleX: number, scaleY: number) => {
+    ctx.strokeStyle = "rgba(255, 0, 0, 0.8)"
+    ctx.lineWidth = 3
+    ctx.fillStyle = "rgba(255, 0, 0, 0.08)"
+    for (const r of regions) {
+      const rx = r.x * scaleX
+      const ry = r.y * scaleY
+      const rw = r.w * scaleX
+      const rh = r.h * scaleY
+      ctx.fillRect(rx, ry, rw, rh)
+      ctx.strokeRect(rx, ry, rw, rh)
+    }
+  }
+
   // Draw current page comparison
   useEffect(() => {
     if (!isReady) return
 
-    const drawImage = (canvas: HTMLCanvasElement | null, src: string | undefined) => {
+    const regions = diffRegionsMap.get(currentPage) || []
+
+    const drawImageWithHighlights = (canvas: HTMLCanvasElement | null, src: string | undefined, showHighlights: boolean) => {
       if (!canvas || !src) return
       const ctx = canvas.getContext("2d")
       if (!ctx) return
@@ -213,15 +292,20 @@ export function PdfCompareInterface() {
         canvas.width = img.width * scale
         canvas.height = img.height * scale
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
+
+        if (showHighlights && regions.length > 0) {
+          const scaleX = canvas.width / img.width
+          const scaleY = canvas.height / img.height
+          drawDiffHighlights(ctx, regions, scaleX, scaleY)
+        }
       }
       img.src = src
     }
 
     if (viewMode === "side-by-side") {
-      drawImage(canvasLeftRef.current, pagesA[currentPage])
-      drawImage(canvasRightRef.current, pagesB[currentPage])
+      drawImageWithHighlights(canvasLeftRef.current, pagesA[currentPage], true)
+      drawImageWithHighlights(canvasRightRef.current, pagesB[currentPage], true)
     } else if (viewMode === "overlay") {
-      // Draw A then B with transparency
       const canvas = canvasLeftRef.current
       if (!canvas) return
       const ctx = canvas.getContext("2d")
@@ -242,38 +326,47 @@ export function PdfCompareInterface() {
             ctx.globalAlpha = 0.5
             ctx.drawImage(imgB, 0, 0, canvas.width, canvas.height)
             ctx.globalAlpha = 1.0
+
+            // Draw highlights on overlay
+            if (regions.length > 0) {
+              const scaleX = canvas.width / imgA.width
+              const scaleY = canvas.height / imgA.height
+              drawDiffHighlights(ctx, regions, scaleX, scaleY)
+            }
           }
           imgB.src = pagesB[currentPage]
         }
       }
       imgA.src = pagesA[currentPage] || ""
     } else if (viewMode === "diff") {
-      // Show diff view
       const canvas = canvasLeftRef.current
-      if (!canvas || !pagesA[currentPage] || !pagesB[currentPage]) return
+      const diffSrc = diffImagesMap.get(currentPage)
+      if (!canvas || !diffSrc) return
 
-      const imgA = new window.Image()
-      const imgB = new window.Image()
+      const diffImg = new window.Image()
+      diffImg.onload = () => {
+        const container = containerRef.current
+        const maxWidth = container ? container.clientWidth - 32 : 800
+        const scale = Math.min(maxWidth / diffImg.width, 1)
+        canvas.width = diffImg.width * scale
+        canvas.height = diffImg.height * scale
+        const ctx = canvas.getContext("2d")!
+        ctx.drawImage(diffImg, 0, 0, canvas.width, canvas.height)
 
-      Promise.all([
-        new Promise<void>((resolve) => { imgA.onload = () => resolve(); imgA.src = pagesA[currentPage] }),
-        new Promise<void>((resolve) => { imgB.onload = () => resolve(); imgB.src = pagesB[currentPage] }),
-      ]).then(() => {
-        const { diffDataUrl } = computeDiff(imgA, imgB)
-        const diffImg = new window.Image()
-        diffImg.onload = () => {
-          const container = containerRef.current
-          const maxWidth = container ? container.clientWidth - 32 : 800
-          const scale = Math.min(maxWidth / diffImg.width, 1)
-          canvas.width = diffImg.width * scale
-          canvas.height = diffImg.height * scale
-          const ctx = canvas.getContext("2d")!
-          ctx.drawImage(diffImg, 0, 0, canvas.width, canvas.height)
+        // Draw region boxes on diff view too
+        if (regions.length > 0) {
+          const scaleX = canvas.width / diffImg.width
+          const scaleY = canvas.height / diffImg.height
+          ctx.strokeStyle = "rgba(255, 255, 0, 0.9)"
+          ctx.lineWidth = 2
+          for (const r of regions) {
+            ctx.strokeRect(r.x * scaleX, r.y * scaleY, r.w * scaleX, r.h * scaleY)
+          }
         }
-        diffImg.src = diffDataUrl
-      })
+      }
+      diffImg.src = diffSrc
     }
-  }, [isReady, currentPage, viewMode, pagesA, pagesB, computeDiff])
+  }, [isReady, currentPage, viewMode, pagesA, pagesB, diffRegionsMap, diffImagesMap])
 
   const handleDropA = (e: React.DragEvent) => {
     e.preventDefault()
@@ -298,29 +391,49 @@ export function PdfCompareInterface() {
     setTotalPagesA(0)
     setTotalPagesB(0)
     setDiffPercentages([])
+    setDiffRegionsMap(new Map())
+    setDiffImagesMap(new Map())
     setHasError(false)
     setErrorMessage("")
   }, [])
 
   const downloadDiffReport = useCallback(() => {
-    let report = "PDF Compare Report\n"
-    report += "==================\n\n"
-    report += `Document A: ${fileA?.name || "Unknown"}\n`
-    report += `Document B: ${fileB?.name || "Unknown"}\n`
-    report += `Pages in A: ${totalPagesA}\n`
-    report += `Pages in B: ${totalPagesB}\n\n`
-    report += "Page-by-Page Differences:\n"
-    report += "-------------------------\n"
+    const identicalPages = diffPercentages.filter((p) => p < 0.1).length
+    const changedPages = diffPercentages.filter((p) => p >= 0.1).length
+    const avgDiff = diffPercentages.length > 0 ? diffPercentages.reduce((a, b) => a + b, 0) / diffPercentages.length : 0
+
+    let report = "PDF COMPARE REPORT\n"
+    report += "===================\n\n"
+    report += `Original:  ${fileA?.name || "Unknown"} (${totalPagesA} pages)\n`
+    report += `Modified:  ${fileB?.name || "Unknown"} (${totalPagesB} pages)\n\n`
+    report += "SUMMARY\n"
+    report += "-------\n"
+    report += `Total pages compared: ${maxPages}\n`
+    report += `Identical pages:      ${identicalPages}\n`
+    report += `Changed pages:        ${changedPages}\n`
+    report += `Average difference:   ${avgDiff.toFixed(2)}%\n`
+    report += `Overall verdict:      ${changedPages === 0 ? "Documents are identical" : changedPages <= 2 ? "Minor revisions detected" : "Significant revisions detected"}\n\n`
+    report += "PAGE-BY-PAGE BREAKDOWN\n"
+    report += "----------------------\n"
 
     for (let i = 0; i < maxPages; i++) {
       const pct = diffPercentages[i]
+      const regions = diffRegionsMap.get(i) || []
+
       if (pct !== undefined) {
-        const status = pct < 0.1 ? "Identical" : pct < 5 ? "Minor changes" : pct < 20 ? "Moderate changes" : "Major changes"
-        report += `Page ${i + 1}: ${pct.toFixed(2)}% different — ${status}\n`
+        const status = pct < 0.1 ? "IDENTICAL" : pct < 5 ? "MINOR CHANGES" : pct < 20 ? "MODERATE CHANGES" : "MAJOR CHANGES"
+        const marker = pct < 0.1 ? "  " : ">>"
+        report += `${marker} Page ${i + 1}: ${pct.toFixed(2)}% different — ${status}`
+        if (regions.length > 0) {
+          report += ` (${regions.length} changed region${regions.length > 1 ? "s" : ""} detected)`
+        }
+        report += "\n"
       } else {
-        report += `Page ${i + 1}: Analyzing...\n`
+        report += `   Page ${i + 1}: Not analyzed\n`
       }
     }
+
+    report += "\n---\nGenerated by OmnisPDF PDF Compare (omnispdf.com/pdf-compare)\n"
 
     const blob = new Blob([report], { type: "text/plain" })
     const url = URL.createObjectURL(blob)
@@ -329,7 +442,7 @@ export function PdfCompareInterface() {
     link.download = "pdf-compare-report.txt"
     link.click()
     URL.revokeObjectURL(url)
-  }, [fileA, fileB, totalPagesA, totalPagesB, maxPages, diffPercentages])
+  }, [fileA, fileB, totalPagesA, totalPagesB, maxPages, diffPercentages, diffRegionsMap])
 
   // Not Business user
   if (!isBusinessUser && userPlan !== "loading") {
