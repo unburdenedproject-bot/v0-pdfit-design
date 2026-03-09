@@ -2,10 +2,10 @@
 
 import type React from "react"
 
-import { useState, useCallback } from "react"
+import { useState, useCallback, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Upload, FileText, X, Download, CheckCircle, Loader2, AlertCircle, Shield, Crown, Pencil } from "lucide-react"
+import { Upload, FileText, X, Download, CheckCircle, Loader2, AlertCircle, Shield, Crown, Pencil, Layers } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { FileProcessor } from "@/lib/file-processor"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
@@ -79,6 +79,17 @@ export function ProcessingInterface({
   const [progress, setProgress] = useState(0)
   const [processedFiles, setProcessedFiles] = useState<ProcessedFile[]>([])
   const [editedNames, setEditedNames] = useState<Record<number, string>>({})
+  const [userPlan, setUserPlan] = useState<string>("free")
+  const [processingIndex, setProcessingIndex] = useState(0)
+
+  const isPaidUser = userPlan === "pro" || userPlan === "business"
+
+  useEffect(() => {
+    fetch("/api/user-plan")
+      .then((res) => res.json())
+      .then((data) => setUserPlan(data.plan || "free"))
+      .catch(() => setUserPlan("free"))
+  }, [])
 
   const handleDragOver = useCallback((e: React.DragEvent) => {
     e.preventDefault()
@@ -95,15 +106,24 @@ export function ProcessingInterface({
     setIsDragOver(false)
 
     const droppedFiles = Array.from(e.dataTransfer.files)
-    setFiles((prev) => [...prev, ...droppedFiles])
-  }, [])
+    if (isPaidUser) {
+      setFiles((prev) => [...prev, ...droppedFiles])
+    } else {
+      // Free users: only keep the first file
+      setFiles(droppedFiles.slice(0, 1))
+    }
+  }, [isPaidUser])
 
   const handleFileSelect = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       const selectedFiles = Array.from(e.target.files)
-      setFiles((prev) => [...prev, ...selectedFiles])
+      if (isPaidUser) {
+        setFiles((prev) => [...prev, ...selectedFiles])
+      } else {
+        setFiles(selectedFiles.slice(0, 1))
+      }
     }
-  }, [])
+  }, [isPaidUser])
 
   const removeFile = useCallback((index: number) => {
     setFiles((prev) => prev.filter((_, i) => i !== index))
@@ -126,6 +146,7 @@ export function ProcessingInterface({
 
         // Step 1: Upload all files to Vercel Blob
         for (let i = 0; i < files.length; i++) {
+          setProcessingIndex(i)
           const url = await uploadFileToBlob(files[i])
           inputBlobUrls.push(url)
           setProgress(10 + ((i + 1) / files.length) * 30)
@@ -178,6 +199,7 @@ export function ProcessingInterface({
       } else if (toolName === "PDF to JPG") {
         // Call the real server-side API for PDF to JPG
         for (let i = 0; i < files.length; i++) {
+          setProcessingIndex(i)
           const file = files[i]
           setProgress(((i / files.length) * 60) + 10)
 
@@ -231,6 +253,7 @@ export function ProcessingInterface({
       } else if (toolName === "Word to PDF" || toolName === "Excel to PDF" || toolName === "PowerPoint to PDF") {
         // Call the real server-side API for office-to-pdf (iLoveAPI officepdf)
         for (let i = 0; i < files.length; i++) {
+          setProcessingIndex(i)
           const file = files[i]
           setProgress(((i / files.length) * 60) + 10)
 
@@ -277,6 +300,7 @@ export function ProcessingInterface({
       } else if (toolName === "Compress PDF") {
         // Call the real server-side API for compress-pdf (iLoveAPI compress)
         for (let i = 0; i < files.length; i++) {
+          setProcessingIndex(i)
           const file = files[i]
           setProgress(((i / files.length) * 60) + 10)
 
@@ -322,6 +346,7 @@ export function ProcessingInterface({
       } else if (toolName === "Watermark PDF") {
         // Call the real server-side API for watermark-pdf (iLoveAPI watermark)
         for (let i = 0; i < files.length; i++) {
+          setProcessingIndex(i)
           const file = files[i]
           setProgress(((i / files.length) * 60) + 10)
 
@@ -371,6 +396,7 @@ export function ProcessingInterface({
         setProgress(100)
       } else if (toolName === "PDF to PNG") {
         for (let i = 0; i < files.length; i++) {
+          setProcessingIndex(i)
           const file = files[i]
           setProgress(((i / files.length) * 60) + 10)
 
@@ -419,6 +445,7 @@ export function ProcessingInterface({
         const { endpoint, ext, suffix } = apiMap[toolName]!
 
         for (let i = 0; i < files.length; i++) {
+          setProcessingIndex(i)
           const file = files[i]
           setProgress(((i / files.length) * 60) + 10)
 
@@ -460,6 +487,7 @@ export function ProcessingInterface({
         setProgress(100)
       } else if (toolName === "Upload Ready PDF") {
         for (let i = 0; i < files.length; i++) {
+          setProcessingIndex(i)
           const file = files[i]
           setProgress(((i / files.length) * 60) + 10)
 
@@ -500,6 +528,7 @@ export function ProcessingInterface({
         setProgress(100)
       } else if (toolName === "Extract Images from PDF") {
         for (let i = 0; i < files.length; i++) {
+          setProcessingIndex(i)
           const file = files[i]
           setProgress(((i / files.length) * 60) + 10)
 
@@ -541,6 +570,7 @@ export function ProcessingInterface({
         setProgress(100)
       } else if (toolName === "Flatten PDF") {
         for (let i = 0; i < files.length; i++) {
+          setProcessingIndex(i)
           const file = files[i]
           setProgress(((i / files.length) * 60) + 10)
 
@@ -581,6 +611,7 @@ export function ProcessingInterface({
         setProgress(100)
       } else if (toolName === "PDF to TXT") {
         for (let i = 0; i < files.length; i++) {
+          setProcessingIndex(i)
           const file = files[i]
           setProgress(((i / files.length) * 60) + 10)
 
@@ -627,6 +658,7 @@ export function ProcessingInterface({
       } else {
         // Process files individually with client-side FileProcessor
         for (let i = 0; i < files.length; i++) {
+          setProcessingIndex(i)
           const file = files[i]
 
           setProgress((i / files.length) * 90)
@@ -954,6 +986,33 @@ export function ProcessingInterface({
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              {processedFiles.length > 1 && (
+                <Button
+                  className="bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-3"
+                  onClick={async () => {
+                    const JSZip = (await import("jszip")).default
+                    const zip = new JSZip()
+                    for (const pf of processedFiles) {
+                      const res = await fetch(pf.url)
+                      const blob = await res.blob()
+                      zip.file(editedNames[processedFiles.indexOf(pf)] ?? pf.name, blob)
+                    }
+                    const zipBlob = await zip.generateAsync({ type: "blob", compression: "DEFLATE" })
+                    const objectUrl = URL.createObjectURL(zipBlob)
+                    const link = document.createElement("a")
+                    link.href = objectUrl
+                    link.download = `omnispdf-batch-${Date.now()}.zip`
+                    link.style.display = "none"
+                    document.body.appendChild(link)
+                    link.click()
+                    document.body.removeChild(link)
+                    URL.revokeObjectURL(objectUrl)
+                  }}
+                >
+                  <Download className="h-4 w-4 mr-2" />
+                  Download All as ZIP
+                </Button>
+              )}
               <Button
                 onClick={resetInterface}
                 variant="outline"
@@ -996,7 +1055,11 @@ export function ProcessingInterface({
               <Loader2 className="h-10 w-10 text-orange-600 animate-spin" />
             </div>
             <h2 className="text-3xl font-bold text-slate-900 mb-4">{processingMessage}</h2>
-            <p className="text-slate-600 mb-8">This will only take a few seconds...</p>
+            {files.length > 1 ? (
+              <p className="text-slate-600 mb-8">Processing file {processingIndex + 1} of {files.length}...</p>
+            ) : (
+              <p className="text-slate-600 mb-8">This will only take a few seconds...</p>
+            )}
 
             <div className="w-full bg-gray-200 rounded-full h-3 mb-8">
               <div
@@ -1007,8 +1070,11 @@ export function ProcessingInterface({
 
             <div className="space-y-2">
               {files.map((file, index) => (
-                <div key={index} className="flex items-center justify-center gap-3 text-slate-600">
-                  <FileText className="h-4 w-4" />
+                <div key={index} className={cn(
+                  "flex items-center justify-center gap-3",
+                  index < processingIndex ? "text-green-600" : index === processingIndex ? "text-orange-600 font-medium" : "text-slate-400"
+                )}>
+                  {index < processingIndex ? <CheckCircle className="h-4 w-4" /> : index === processingIndex ? <Loader2 className="h-4 w-4 animate-spin" /> : <FileText className="h-4 w-4" />}
                   <span>{file.name}</span>
                 </div>
               ))}
@@ -1050,11 +1116,28 @@ export function ProcessingInterface({
           <input
             id="file-upload"
             type="file"
-            multiple
+            multiple={isPaidUser}
             accept={acceptedFiles}
             className="hidden"
             onChange={handleFileSelect}
           />
+
+          {!isPaidUser && files.length > 0 && (
+            <div className="mt-6 bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200 rounded-xl p-4 flex items-center justify-between gap-4">
+              <div>
+                <p className="text-sm font-bold text-slate-900">Want to process multiple files at once?</p>
+                <p className="text-xs text-slate-600">Upgrade to Pro for batch processing — convert up to 50 files in one go.</p>
+              </div>
+              <Button
+                size="sm"
+                className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs px-4 flex-shrink-0"
+                onClick={(e) => { e.stopPropagation(); window.location.href = "/pricing?source=batch" }}
+              >
+                <Crown className="h-3 w-3 mr-1" />
+                Upgrade
+              </Button>
+            </div>
+          )}
 
           {files.length > 0 && (
             <div className="mt-8 space-y-4">
