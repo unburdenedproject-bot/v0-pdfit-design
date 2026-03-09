@@ -19,6 +19,7 @@ import {
   HardDrive,
   ImageDown,
   Layers,
+  Upload,
 } from "lucide-react"
 
 const categories = [
@@ -197,6 +198,13 @@ const categories = [
         description: "Fit PDFs within Gmail, Outlook, and Yahoo limits.",
         icon: Mail,
         href: "/compress-pdf-for-email",
+        tier: "FREE" as const,
+      },
+      {
+        name: "Upload-Ready PDF",
+        description: "Fix and optimize PDFs for any upload portal in one click.",
+        icon: Upload,
+        href: "/upload-ready-pdf",
         tier: "FREE" as const,
       },
       {

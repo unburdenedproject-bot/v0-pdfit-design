@@ -458,6 +458,46 @@ export function ProcessingInterface({
           })
         }
         setProgress(100)
+      } else if (toolName === "Upload Ready PDF") {
+        for (let i = 0; i < files.length; i++) {
+          const file = files[i]
+          setProgress(((i / files.length) * 60) + 10)
+
+          const inputUrl = await uploadFileToBlob(file)
+          inputBlobUrls.push(inputUrl)
+
+          const response = await fetch("/api/upload-ready-pdf", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ blobUrl: inputUrl, originalName: file.name }),
+          })
+
+          if (!response.ok) {
+            let message = `Optimization failed (HTTP ${response.status})`
+            try {
+              const errorData = await response.json()
+              if (errorData.error) message = errorData.error
+              if (message.includes("signup_required")) { router.push("/signup-required"); return }
+              if (message.includes("daily_limit_reached")) { message = "daily_limit_reached_anon" }
+            } catch { }
+            throw new Error(message)
+          }
+
+          const baseName = file.name.replace(/\.[^/.]+$/, "")
+          const fileName = deriveFilename(response, `${baseName}-upload-ready`, false)
+          const blob = await response.blob()
+          const localUrl = URL.createObjectURL(blob)
+          const resultBlobUrl = await uploadResultToBlob(blob, fileName)
+
+          processed.push({
+            name: fileName,
+            url: resultBlobUrl ? `/api/download/${encodeURIComponent(fileName)}?url=${encodeURIComponent(resultBlobUrl)}` : localUrl,
+            blobUrl: resultBlobUrl ?? undefined,
+            inputBlobUrls: [inputUrl],
+            size: blob.size,
+          })
+        }
+        setProgress(100)
       } else if (toolName === "Extract Images from PDF") {
         for (let i = 0; i < files.length; i++) {
           const file = files[i]
