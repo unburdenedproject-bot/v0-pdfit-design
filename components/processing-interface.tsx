@@ -408,6 +408,53 @@ export function ProcessingInterface({
           })
         }
         setProgress(100)
+      } else if (toolName === "PDF to Word" || toolName === "PDF to Excel" || toolName === "PDF to PowerPoint") {
+        const apiMap: Record<string, { endpoint: string; ext: string; suffix: string }> = {
+          "PDF to Word": { endpoint: "/api/pdf-to-word", ext: "docx", suffix: "" },
+          "PDF to Excel": { endpoint: "/api/pdf-to-excel", ext: "xlsx", suffix: "" },
+          "PDF to PowerPoint": { endpoint: "/api/pdf-to-powerpoint", ext: "pptx", suffix: "" },
+        }
+        const { endpoint, ext, suffix } = apiMap[toolName]!
+
+        for (let i = 0; i < files.length; i++) {
+          const file = files[i]
+          setProgress(((i / files.length) * 60) + 10)
+
+          const inputUrl = await uploadFileToBlob(file)
+          inputBlobUrls.push(inputUrl)
+
+          const response = await fetch(endpoint, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ blobUrl: inputUrl, originalName: file.name }),
+          })
+
+          if (!response.ok) {
+            let message = `Conversion failed (HTTP ${response.status})`
+            try {
+              const errorData = await response.json()
+              if (errorData.error) message = errorData.error
+              if (message.includes("signup_required")) { router.push("/signup-required"); return }
+              if (message.includes("daily_limit_reached")) { message = "daily_limit_reached_anon" }
+            } catch { }
+            throw new Error(message)
+          }
+
+          const baseName = file.name.replace(/\.[^/.]+$/, "")
+          const fileName = deriveFilename(response, baseName, false) || `${baseName}${suffix}.${ext}`
+          const blob = await response.blob()
+          const localUrl = URL.createObjectURL(blob)
+          const resultBlobUrl = await uploadResultToBlob(blob, fileName)
+
+          processed.push({
+            name: fileName,
+            url: resultBlobUrl ? `/api/download/${encodeURIComponent(fileName)}?url=${encodeURIComponent(resultBlobUrl)}` : localUrl,
+            blobUrl: resultBlobUrl ?? undefined,
+            inputBlobUrls: [inputUrl],
+            size: blob.size,
+          })
+        }
+        setProgress(100)
       } else if (toolName === "PDF to TXT") {
         for (let i = 0; i < files.length; i++) {
           const file = files[i]
@@ -464,15 +511,6 @@ export function ProcessingInterface({
 
           // Route to appropriate processor based on tool name
           switch (toolName) {
-            case "PDF to Word":
-              processedBlob = await FileProcessor.convertPDFToWord(file)
-              break
-            case "PDF to Excel":
-              processedBlob = await FileProcessor.convertPDFToExcel(file)
-              break
-            case "PDF to PowerPoint":
-              processedBlob = await FileProcessor.convertPDFToPowerPoint(file)
-              break
             case "Word to PDF":
             case "Excel to PDF":
             case "PowerPoint to PDF":

@@ -2,7 +2,7 @@ import Script from "next/script"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { PDFToWordInterface } from "@/components/pdf-to-word-interface"
+import { ProcessingInterface } from "@/components/processing-interface"
 import { FileText, Zap, Shield, Download } from "lucide-react"
 
 export const metadata = {
@@ -88,7 +88,13 @@ export default function PDFToWordPage() {
         </section>
 
         {/* Processing Interface */}
-        <PDFToWordInterface />
+        <ProcessingInterface
+          acceptedFiles=".pdf"
+          toolName="PDF to Word"
+          outputFormat="DOCX"
+          processingMessage="Converting your PDF to Word..."
+          successMessage="Your Word document is ready!"
+        />
 
         {/* About */}
         <section className="py-16 bg-gray-50">

@@ -91,7 +91,7 @@ export default function PDFToExcelPage() {
         <ProcessingInterface
           acceptedFiles=".pdf"
           toolName="PDF to Excel"
-          outputFormat="CSV"
+          outputFormat="XLSX"
           processingMessage="Converting your PDF to Excel..."
           successMessage="Your Excel file is ready!"
         />
