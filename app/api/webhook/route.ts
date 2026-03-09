@@ -58,12 +58,30 @@ export async function POST(request: NextRequest) {
 
     const email = session.customer_details?.email || session.customer_email
 
+    // Determine plan based on Stripe price ID
+    let plan = "pro"
+    if (subscriptionId) {
+      try {
+        const subscription = await stripeClient.subscriptions.retrieve(subscriptionId)
+        const priceId = subscription.items.data[0]?.price?.id
+        const businessPriceIds = [
+          process.env.STRIPE_PRICE_ID_BUSINESS,
+          process.env.STRIPE_PRICE_ID_BUSINESS_ANNUAL,
+        ].filter(Boolean)
+        if (priceId && businessPriceIds.includes(priceId)) {
+          plan = "business"
+        }
+      } catch (e) {
+        console.error("Failed to retrieve subscription for plan detection:", e)
+      }
+    }
+
     if (userId && email) {
       const { error } = await supabaseAdmin.from("users").upsert(
         {
           id: userId,
           email,
-          plan: "pro",
+          plan,
           stripe_customer_id: customerId || null,
           stripe_subscription_id: subscriptionId || null,
           cancel_at_period_end: false,
@@ -102,8 +120,19 @@ export async function POST(request: NextRequest) {
           ? new Date(rawPeriodEnd * 1000).toISOString()
           : null
 
+        // Detect plan from price ID
+        let plan = "pro"
+        const priceId = subscription.items?.data?.[0]?.price?.id
+        const businessPriceIds = [
+          process.env.STRIPE_PRICE_ID_BUSINESS,
+          process.env.STRIPE_PRICE_ID_BUSINESS_ANNUAL,
+        ].filter(Boolean)
+        if (priceId && businessPriceIds.includes(priceId)) {
+          plan = "business"
+        }
+
         const { error } = await supabaseAdmin.from("users").update({
-          plan: "pro",
+          plan,
           stripe_customer_id: customerId,
           stripe_subscription_id: subscription.id,
           cancel_at_period_end: subscription.cancel_at_period_end ?? false,

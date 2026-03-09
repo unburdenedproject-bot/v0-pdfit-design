@@ -7,10 +7,11 @@ export const runtime = "nodejs"
 export default async function UpgradePage({
   searchParams,
 }: {
-  searchParams: Promise<{ billing?: string }>
+  searchParams: Promise<{ billing?: string; plan?: string }>
 }) {
-  const { billing } = await searchParams
+  const { billing, plan } = await searchParams
   const isAnnual = billing === "annual"
+  const isBusiness = plan === "business"
 
   const supabase = await createClient()
   const { data: { user }, error } = await supabase.auth.getUser()
@@ -20,7 +21,14 @@ export default async function UpgradePage({
   }
 
   let priceId: string | undefined
-  if (isAnnual) {
+  if (isBusiness) {
+    priceId = isAnnual
+      ? process.env.STRIPE_PRICE_ID_BUSINESS_ANNUAL
+      : process.env.STRIPE_PRICE_ID_BUSINESS
+    if (!priceId) {
+      redirect("/pricing?error=business_price_not_configured")
+    }
+  } else if (isAnnual) {
     priceId = process.env.STRIPE_PRICE_ID_ANNUAL
     if (!priceId) {
       redirect("/pricing?error=annual_price_not_configured")

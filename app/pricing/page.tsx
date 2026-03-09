@@ -185,20 +185,58 @@ export default function PricingPage() {
                 </div>
 
                 {/* Business Plan */}
-                <div className="bg-white rounded-2xl border-2 border-slate-400 p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 relative">
-                  {/* Coming Soon Badge */}
+                <div className="bg-white rounded-2xl border-2 border-indigo-400 p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 relative">
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-slate-700 text-white px-6 py-2 rounded-full text-sm font-bold flex items-center gap-2 shadow-lg">
-                      Coming Soon
+                    <div className="bg-indigo-600 text-white px-6 py-2 rounded-full text-sm font-bold flex items-center gap-2 shadow-lg">
+                      Best for Teams
                     </div>
                   </div>
 
-                  <div className="text-center mb-8 mt-4">
+                  <div className="text-center mb-6 mt-4">
                     <h2 className="text-3xl font-black text-slate-900 mb-4">Business</h2>
-                    <div className="mb-2">
-                      <span className="text-5xl font-black text-slate-700">$13.99</span>
-                      <span className="text-xl text-slate-600">/month</span>
+
+                    {/* Billing Toggle */}
+                    <div className="inline-flex items-center bg-slate-100 rounded-full p-1 mb-6">
+                      <button
+                        type="button"
+                        onClick={() => setBilling("monthly")}
+                        className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
+                          billing === "monthly"
+                            ? "bg-white text-slate-900 shadow-sm"
+                            : "text-slate-500 hover:text-slate-700"
+                        }`}
+                      >
+                        Monthly
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setBilling("annual")}
+                        className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 flex items-center gap-2 ${
+                          billing === "annual"
+                            ? "bg-white text-slate-900 shadow-sm"
+                            : "text-slate-500 hover:text-slate-700"
+                        }`}
+                      >
+                        Annual
+                        <span className="bg-indigo-100 text-indigo-600 text-xs font-bold px-2 py-0.5 rounded-full">
+                          Save 2 months
+                        </span>
+                      </button>
                     </div>
+
+                    <div className="mb-2">
+                      <span className="text-5xl font-black text-indigo-600">
+                        {billing === "monthly" ? "$13.99" : "$139.90"}
+                      </span>
+                      <span className="text-xl text-slate-600">
+                        {billing === "monthly" ? "/month" : "/year"}
+                      </span>
+                    </div>
+                    {billing === "annual" && (
+                      <p className="text-sm text-slate-500">
+                        Equivalent to $11.66/mo billed annually
+                      </p>
+                    )}
                   </div>
 
                   <div className="space-y-4 mb-8">
@@ -231,15 +269,17 @@ export default function PricingPage() {
                       <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                         <Check className="h-3 w-3 text-green-600" />
                       </div>
-                      <span className="text-slate-700 text-lg font-medium">Invoice generator</span>
+                      <span className="text-slate-700 text-lg font-medium">PDF redaction</span>
                     </div>
                   </div>
 
                   <Button
-                    className="w-full bg-slate-300 text-slate-500 font-bold py-4 text-lg rounded-xl cursor-not-allowed"
-                    disabled
+                    className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                    asChild
                   >
-                    Coming Soon
+                    <Link href={billing === "monthly" ? "/upgrade?plan=business" : "/upgrade?plan=business&billing=annual"}>
+                      {billing === "monthly" ? "Upgrade to Business" : "Upgrade Annually (save 2 months)"}
+                    </Link>
                   </Button>
                 </div>
               </div>
