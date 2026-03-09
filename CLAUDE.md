@@ -44,7 +44,8 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - hCaptcha integration (signup + login pages)
 - Batch processing (Pro/Business: multi-file select, per-file progress, Download All as ZIP; Free: single file + upgrade banner)
 - Pricing page updated (Free / Pro $7.99 / Business $13.99)
-- Business tools "Coming Soon" pages (workflow-automation, table-extraction, pdf-compare, esign, invoice-generator)
+- Business tools LIVE: /workflow-automation, /pdf-redaction, /esign
+- Business tools Coming Soon: /table-extraction, /pdf-compare
 
 ### SEO Pages Done
 - /compress-pdf-to-5mb, /compress-pdf-to-2mb, /compress-pdf-for-email
@@ -59,18 +60,19 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - omnispdf.com/ocr-scanner, /qr-code
 - omnispdf.com/compress-pdf-to-5mb, /compress-pdf-to-2mb, /compress-pdf-for-email
 - omnispdf.com/extract-images-from-pdf, /flatten-pdf, /upload-ready-pdf
+- omnispdf.com/pdf-redaction
 - omnispdf.com/pricing, /about, /privacy-policy, /terms-conditions
 
 ---
 
 ## TODO — By Priority
 
-### Priority 1: Build Business Tools (5 tools)
+### Priority 1: Build Remaining Business Tools (2 left)
 These justify the $13.99/month Business tier.
-1. Workflow Automation — chain existing tools, no new APIs needed (easiest)
-2. PDF Redaction — permanently remove sensitive text, use pdf-lib (easy-medium)
-3. eSign Documents — signature capture + stamp on PDF, use canvas + pdf-lib (medium)
-4. PDF Compare — render pages with pdf.js, compare visually (medium)
+1. ~~Workflow Automation~~ — DONE, live at /workflow-automation
+2. ~~PDF Redaction~~ — DONE, live at /pdf-redaction
+3. ~~eSign Documents~~ — DONE, live at /esign
+4. PDF Compare — render pages with pdf.js, compare visually (medium, no API needed)
 5. Table Extraction to Excel — needs Google Document AI API (hardest, paid API)
 
 ### Priority 2: Long Tail SEO Pages (~80 /learn/ articles)

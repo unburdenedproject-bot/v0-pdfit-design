@@ -2,7 +2,6 @@
 
 import type React from "react"
 import { useState, useCallback, useEffect } from "react"
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -73,21 +72,10 @@ export function WatermarkPdfInterface() {
   const [processedFile, setProcessedFile] = useState<ProcessedFile | null>(null)
 
   useEffect(() => {
-    async function fetchUserPlan() {
-      const supabase = createClientComponentClient()
-      const { data: { session } } = await supabase.auth.getSession()
-      if (!session) {
-        setUserPlan("free")
-        return
-      }
-      const { data: profile } = await supabase
-        .from("users")
-        .select("plan")
-        .eq("id", session.user.id)
-        .single()
-      setUserPlan(profile?.plan || "free")
-    }
-    fetchUserPlan()
+    fetch("/api/user-plan")
+      .then((res) => res.json())
+      .then((data) => setUserPlan(data.plan || "free"))
+      .catch(() => setUserPlan("free"))
   }, [])
 
   const handleDragOver = useCallback((e: React.DragEvent) => {
