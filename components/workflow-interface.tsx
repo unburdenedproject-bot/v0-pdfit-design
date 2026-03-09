@@ -114,6 +114,15 @@ function StepConfig({ step, onChange }: { step: WorkflowStep; onChange: (params:
             className="w-full"
           />
         </div>
+        <div>
+          <label className="text-xs text-slate-500 block mb-1">Color</label>
+          <input
+            type="color"
+            value={(step.params.fontColor as string) || "#000000"}
+            onChange={(e) => onChange({ ...step.params, fontColor: e.target.value })}
+            className="h-8 w-16 border border-gray-200 rounded-lg cursor-pointer"
+          />
+        </div>
       </div>
     )
   }
