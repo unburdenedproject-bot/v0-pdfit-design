@@ -55,7 +55,7 @@ export default async function AdminLimitsPage() {
 
   const dailyCount = usage?.count ?? 0
   const plan = profile?.plan || "free"
-  const limit = plan === "pro" ? "Unlimited" : "10"
+  const limit = (plan === "pro" || plan === "business") ? "Unlimited" : "10"
 
   // Fetch last 20 download attempts from usage_logs
   const { data: logs } = await admin
