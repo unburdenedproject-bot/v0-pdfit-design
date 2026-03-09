@@ -21,7 +21,7 @@ import {
   Layers,
   Upload,
   PenTool,
-  Receipt,
+  Shield,
   ArrowLeftRight,
   Repeat,
 } from "lucide-react"
@@ -267,10 +267,10 @@ const categories = [
         tier: "BUSINESS" as const,
       },
       {
-        name: "Invoice Generator",
-        description: "Create professional PDF invoices from a simple form.",
-        icon: Receipt,
-        href: "/invoice-generator",
+        name: "PDF Redaction",
+        description: "Permanently remove sensitive text and data from PDFs.",
+        icon: Shield,
+        href: "/pdf-redaction",
         tier: "BUSINESS" as const,
       },
     ],
