@@ -140,10 +140,17 @@ export async function POST(request) {
   let uploadedBlobUrl = null;
 
   try {
-    const { checkUsageAndAuth, logUsage } = await import("@/lib/usage-check");
-    const usage = await checkUsageAndAuth("pdf-to-excel");
-    if (!usage.allowed) {
-      return NextResponse.json({ error: usage.error || "Daily limit reached." }, { status: 403 });
+    // Pro/Business-only gate
+    const { createClient } = await import("@/lib/supabase/server");
+    const { logUsage } = await import("@/lib/usage-check");
+    const supabase = await createClient();
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) {
+      return NextResponse.json({ error: "upgrade_required" }, { status: 403 });
+    }
+    const { data: profile } = await supabase.from("users").select("plan").eq("id", user.id).single();
+    if (profile?.plan !== "pro" && profile?.plan !== "business") {
+      return NextResponse.json({ error: "upgrade_required" }, { status: 403 });
     }
 
     const contentType = request.headers.get("content-type") || "";
@@ -190,7 +197,7 @@ export async function POST(request) {
 
     const baseName = originalName.replace(/\.[^/.]+$/, "").replace(/-[a-zA-Z0-9]{20,}$/g, "");
 
-    if (usage) await logUsage(usage.userId, "pdf-to-excel");
+    await logUsage(user.id, "pdf-to-excel");
 
     const res = new NextResponse(data, {
       status: 200,
@@ -200,9 +207,6 @@ export async function POST(request) {
         "Cache-Control": "no-store",
       },
     });
-    if (usage?.anonCookie) {
-      res.cookies.set(usage.anonCookie.name, usage.anonCookie.value, usage.anonCookie.options);
-    }
     return res;
   } catch (err) {
     if (tmpPath) {
