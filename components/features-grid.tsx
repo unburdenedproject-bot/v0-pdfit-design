@@ -15,6 +15,8 @@ import {
   Type,
   Crown,
   QrCode,
+  Mail,
+  HardDrive,
 } from "lucide-react"
 
 const categories = [
@@ -159,6 +161,27 @@ const categories = [
         description: "Reduce file size without losing quality.",
         icon: Compress,
         href: "/compress-pdf",
+        tier: "FREE" as const,
+      },
+      {
+        name: "Compress to 5MB",
+        description: "Shrink PDFs for upload portals and submissions.",
+        icon: HardDrive,
+        href: "/compress-pdf-to-5mb",
+        tier: "FREE" as const,
+      },
+      {
+        name: "Compress to 2MB",
+        description: "Meet strict size limits for forms and applications.",
+        icon: HardDrive,
+        href: "/compress-pdf-to-2mb",
+        tier: "FREE" as const,
+      },
+      {
+        name: "Compress for Email",
+        description: "Fit PDFs within Gmail, Outlook, and Yahoo limits.",
+        icon: Mail,
+        href: "/compress-pdf-for-email",
         tier: "FREE" as const,
       },
       {
