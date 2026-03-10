@@ -6,9 +6,9 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Ro
 import Link from "next/link"
 
 export const metadata = {
-  title: "Compress PDF to 1MB Online — Free PDF Size Reducer | OmnisPDF",
+  title: "Compress PDF for 1MB Upload Limits — Free Extreme Compression | OmnisPDF",
   description:
-    "Compress PDF files to under 1MB with OmnisPDF. Reduce PDF size for strict upload limits, forms, and mobile sharing — fast, browser-based, no login required.",
+    "Apply extreme PDF compression to reduce file size for portals with 1MB limits. Maximum compression for visa forms, government uploads, and mobile sharing — fast, browser-based, free.",
 }
 
 const faqSchema = {
@@ -17,13 +17,13 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How do I compress a PDF to 1MB?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF and click Compress. The tool applies extreme compression to reduce image resolution and optimize internal structures, getting your file as close to 1MB as possible." }
+      "name": "How do I compress a PDF for a 1MB upload limit?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF and click Compress. The tool applies extreme compression to reduce image resolution and optimize internal structures, drastically reducing file size. Results depend on the content of your PDF." }
     },
     {
       "@type": "Question",
-      "name": "Can any PDF be compressed to under 1MB?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Most PDFs under 10MB can be compressed to under 1MB. Very large or image-heavy files may not reach 1MB in a single pass. In that case, split the PDF first and compress each part separately." }
+      "name": "Will my PDF definitely be under 1MB after compression?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Extreme compression drastically reduces file size, but results depend on the PDF content. Text-heavy PDFs compress very well. Image-heavy files may need to be split first, then each part compressed separately." }
     },
     {
       "@type": "Question",
@@ -65,9 +65,9 @@ export default function CompressPDFTo1MBPage() {
               <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Compress className="h-10 w-10 text-white" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Compress PDF to 1MB</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Compress PDF for 1MB Upload Limits</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Shrink your PDF to under 1MB for strict upload limits, visa applications, government forms, and mobile sharing. Extreme compression, instant results.
+                Apply extreme compression to drastically reduce your PDF size for portals with 1MB limits. Perfect for visa applications, government forms, and mobile sharing.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Extreme Compression</span></div>
@@ -91,12 +91,12 @@ export default function CompressPDFTo1MBPage() {
         {/* About */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-4">Why Compress a PDF to 1MB?</h2>
+            <h2 className="text-2xl font-black text-slate-900 mb-4">Why Compress a PDF for 1MB Limits?</h2>
             <p className="text-lg text-slate-600 mb-8">
-              Many platforms enforce a strict 1MB file size limit. Visa applications, government ID submissions, scholarship forms, and some job portals all require documents under 1MB. OmnisPDF applies extreme compression to get your PDF under this limit without making it unreadable.
+              Many platforms enforce a strict 1MB file size limit. Visa applications, government ID submissions, scholarship forms, and some job portals all require small documents. OmnisPDF applies extreme compression to drastically reduce your PDF size, helping you meet tight upload requirements.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
-              <li>&#10003; Extreme compression to target under 1MB</li>
+              <li>&#10003; Extreme compression for maximum size reduction</li>
               <li>&#10003; Perfect for visa, passport, and government form uploads</li>
               <li>&#10003; Text stays sharp and readable</li>
               <li>&#10003; Works on Mac, Windows, iOS, Android, and Linux</li>
@@ -141,12 +141,12 @@ export default function CompressPDFTo1MBPage() {
         {/* How To */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Compress a PDF to 1MB</h2>
+            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Compress a PDF for 1MB Limits</h2>
             <div className="space-y-4">
               {[
                 "Upload or drag and drop your PDF into OmnisPDF.",
                 "Click Compress PDF — extreme compression is applied automatically.",
-                "Download your smaller PDF. If it is still over 1MB, try splitting the file first.",
+                "Download your smaller PDF. If still over 1MB, try splitting the file first, then compress each part.",
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
                   <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
@@ -216,12 +216,12 @@ export default function CompressPDFTo1MBPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I compress a PDF to 1MB?", a: "Upload your PDF to OmnisPDF and click Compress. The tool applies extreme compression to reduce image resolution and optimize internal structures, getting your file as close to 1MB as possible." },
-                { q: "Can any PDF be compressed to under 1MB?", a: "Most PDFs under 10MB can be compressed to under 1MB. Very large or image-heavy files may not reach 1MB in a single pass. In that case, split the PDF first and compress each part separately." },
+                { q: "How do I compress a PDF for a 1MB upload limit?", a: "Upload your PDF to OmnisPDF and click Compress. The tool applies extreme compression to reduce image resolution and optimize internal structures, drastically reducing file size. Results depend on the content of your PDF." },
+                { q: "Will my PDF definitely be under 1MB after compression?", a: "Extreme compression drastically reduces file size, but results depend on the PDF content. Text-heavy PDFs compress very well. Image-heavy files may need to be split first, then each part compressed separately." },
                 { q: "Will my PDF still be readable after compressing to 1MB?", a: "Yes. Text remains sharp and fully readable. Images may lose some detail at extreme compression levels, but the document stays usable for most purposes." },
                 { q: "Why would I need a PDF under 1MB?", a: "Many online forms, government portals, visa applications, and mobile messaging apps have strict size limits of 1MB. Compressing to 1MB ensures your document uploads without issues." },
                 { q: "Can I compress a PDF to 1MB on my phone?", a: "Yes. OmnisPDF works in any mobile browser. Upload your PDF, compress it, and download the smaller file directly on iPhone or Android." },
-                { q: "What if my PDF is still over 1MB after compression?", a: "Try splitting the PDF into smaller parts with our Split PDF tool, then compress each part individually. You can also flatten the PDF or remove unnecessary pages to reduce size further." },
+                { q: "What if my PDF is still too large after compression?", a: "Try splitting the PDF into smaller parts with our Split PDF tool, then compress each part individually. You can also flatten the PDF or remove unnecessary pages to reduce size further." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
@@ -235,9 +235,9 @@ export default function CompressPDFTo1MBPage() {
         {/* CTA */}
         <section className="py-16 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-            <h2 className="text-2xl font-black mb-4">Need to Compress Below 1MB?</h2>
+            <h2 className="text-2xl font-black mb-4">Need Extreme PDF Compression?</h2>
             <p className="text-slate-300 text-lg mb-8">
-              Upload your PDF and get it under 1MB in seconds. No signup, no installation, no waiting.
+              Upload your PDF and apply maximum compression in seconds. No signup, no installation, no waiting.
             </p>
             <Link
               href="/compress-pdf-to-1mb"

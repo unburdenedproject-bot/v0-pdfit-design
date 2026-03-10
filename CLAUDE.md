@@ -39,13 +39,15 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - /ocr-scanner (Pro), /qr-code (Pro)
 - /extract-images-from-pdf, /flatten-pdf
 - /upload-ready-pdf (Blue Ocean #1 — chains flatten + compress)
+- /phone-scan-cleanup (Blue Ocean #2 — Sharp image processing, free with limits)
 
 ### Infrastructure Done
 - hCaptcha integration (signup + login pages)
 - Batch processing (Pro/Business: multi-file select, per-file progress, Download All as ZIP; Free: single file + upgrade banner)
 - Pricing page updated (Free / Pro $7.99 / Business $13.99)
 - Business tools LIVE: /workflow-automation, /pdf-redaction, /esign
-- Business tools Coming Soon: /table-extraction, /pdf-compare
+- Business tools LIVE: /pdf-compare
+- Business tools Coming Soon: /table-extraction
 
 ### SEO Pages Done
 - /compress-pdf-to-5mb, /compress-pdf-to-2mb, /compress-pdf-for-email
@@ -62,37 +64,30 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - omnispdf.com/extract-images-from-pdf, /flatten-pdf, /upload-ready-pdf
 - omnispdf.com/pdf-redaction
 - omnispdf.com/phone-scan-cleanup
+- omnispdf.com/pdf-compare
 - omnispdf.com/pricing, /about, /privacy-policy, /terms-conditions
 
 ---
 
 ## TODO — By Priority
 
-### Priority 1: Build Remaining Business Tools (2 left)
-These justify the $13.99/month Business tier.
-1. ~~Workflow Automation~~ — DONE, live at /workflow-automation
-2. ~~PDF Redaction~~ — DONE, live at /pdf-redaction
-3. ~~eSign Documents~~ — DONE, live at /esign
-4. PDF Compare — render pages with pdf.js, compare visually (medium, no API needed)
-5. Table Extraction to Excel — needs Google Document AI API (hardest, paid API)
-
-### Priority 2: Long Tail SEO Pages (~80 /learn/ articles)
+### Priority 1: Long Tail SEO Pages (~80 /learn/ articles)
 Full plan in LONG-TAIL-PAGES.md. Covers all 16 tool categories.
 Build BEFORE Spanish layer so template is ready to duplicate.
+
+### Priority 2: Spanish Layer
+Duplicate all tool pages + long tail pages into Spanish for LATAM market.
+The sooner Spanish is live, the sooner Google starts indexing.
 
 ### Priority 3: SEO Cluster Pages (~100 tool pages)
 Full plan in SEO-MAP.md. 6 clusters: Compression, Conversion, Editing, Organization, Security, Extraction.
 ~22 of ~120 pages built so far.
 
-### Priority 4: Spanish Layer
-Duplicate all tool pages + long tail pages into Spanish for LATAM market.
-The sooner Spanish is live, the sooner Google starts indexing.
+### Priority 4: Remaining Tools
+- Table Extraction to Excel — needs Google Document AI API (hardest, paid API, Business tier)
+- Resume ATS Optimizer (OpenAI API, Blue Ocean)
 
-### Priority 5: Blue Ocean Tools
-- ~~Phone Scan Cleanup~~ — DONE, live at /phone-scan-cleanup (Sharp image processing, free tier with limits)
-- Resume ATS Optimizer (OpenAI API)
-
-### Priority 6: Infrastructure Migration
+### Priority 5: Infrastructure Migration
 Full plan in INFRASTRUCTURE.md.
 Move from Vercel serverless → R2 storage → Redis/BullMQ queue → Worker processors (Fly.io).
 Processing libraries: Ghostscript, PDFium, Poppler, OpenCV, Tesseract.

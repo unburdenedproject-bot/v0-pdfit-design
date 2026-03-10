@@ -6,9 +6,9 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download } from "lucide-react
 import Link from "next/link"
 
 export const metadata = {
-  title: "Compress PDF to 5MB Online — Free PDF Size Reducer | OmnisPDF",
+  title: "Compress PDF for 5MB Upload Limits — Free Extreme Compression | OmnisPDF",
   description:
-    "Compress PDF files to under 5MB with OmnisPDF. Reduce PDF size for uploads, portals, and submissions — fast, browser-based, no login required.",
+    "Apply extreme PDF compression to reduce file size for portals with 5MB upload limits. Maximum compression for submissions, applications, and uploads — fast, browser-based, free.",
 }
 
 const faqSchema = {
@@ -17,13 +17,13 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How do I compress a PDF to 5MB?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF, click Compress, and download the reduced file. OmnisPDF uses extreme compression to get your file as small as possible." }
+      "name": "How do I compress a PDF for a 5MB upload limit?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF, click Compress, and download the reduced file. OmnisPDF uses extreme compression to drastically reduce file size. Results depend on the content of your PDF." }
     },
     {
       "@type": "Question",
-      "name": "Can I guarantee my PDF will be under 5MB?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF applies maximum compression to shrink your file as much as possible. Most PDFs under 20MB will compress to under 5MB. Very image-heavy files may need to be split first." }
+      "name": "Will my PDF definitely be under 5MB after compression?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Extreme compression drastically reduces file size. Most PDFs under 20MB will compress significantly. Very image-heavy files may need to be split first, then each part compressed separately." }
     },
     {
       "@type": "Question",
@@ -65,9 +65,9 @@ export default function CompressPDFTo5MBPage() {
               <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Compress className="h-10 w-10 text-white" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Compress PDF to 5MB</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Compress PDF for 5MB Upload Limits</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Reduce your PDF to under 5MB for upload portals, applications, and submissions. Maximum compression, browser-based, instant results.
+                Apply extreme compression to drastically reduce your PDF size for portals with 5MB upload limits. Browser-based, instant results.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Maximum Compression</span></div>
@@ -92,10 +92,10 @@ export default function CompressPDFTo5MBPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Need to upload a PDF but the portal says "file too large"? OmnisPDF compresses your PDF with maximum strength to get it under 5MB — perfect for government forms, university submissions, job applications, and any site with a 5MB upload limit.
+              Need to upload a PDF but the portal says "file too large"? OmnisPDF applies extreme compression to drastically reduce your PDF size — perfect for government forms, university submissions, job applications, and any site with a 5MB upload limit.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
-              <li>✓ Extreme compression to shrink PDFs under 5MB</li>
+              <li>&#10003; Extreme compression for maximum size reduction</li>
               <li>✓ Perfect for upload portals with size limits</li>
               <li>✓ Text stays sharp and readable</li>
               <li>✓ Works on Mac, Windows, iOS, Android, and Linux</li>
@@ -110,7 +110,7 @@ export default function CompressPDFTo5MBPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Meet Upload Portal Size Limits</h2>
               <p className="text-slate-600">
-                Government portals, university applications, and job sites often cap uploads at 5MB. OmnisPDF applies maximum compression so your PDF fits without splitting or removing pages.
+                Government portals, university applications, and job sites often cap uploads at 5MB. OmnisPDF applies extreme compression to drastically reduce your file size, helping you meet these requirements.
               </p>
             </div>
             <div>
@@ -131,7 +131,7 @@ export default function CompressPDFTo5MBPage() {
         {/* How To */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Compress a PDF to 5MB</h2>
+            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Compress a PDF for 5MB Limits</h2>
             <div className="space-y-4">
               {[
                 "Upload or drag and drop your PDF into OmnisPDF.",
@@ -179,8 +179,8 @@ export default function CompressPDFTo5MBPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I compress a PDF to 5MB?", a: "Upload your PDF to OmnisPDF, click Compress, and download the reduced file. OmnisPDF uses extreme compression to get your file as small as possible." },
-                { q: "Can I guarantee my PDF will be under 5MB?", a: "OmnisPDF applies maximum compression to shrink your file as much as possible. Most PDFs under 20MB will compress to under 5MB. Very image-heavy files may need to be split first." },
+                { q: "How do I compress a PDF for a 5MB upload limit?", a: "Upload your PDF to OmnisPDF, click Compress, and download the reduced file. OmnisPDF uses extreme compression to drastically reduce file size. Results depend on the content of your PDF." },
+                { q: "Will my PDF definitely be under 5MB after compression?", a: "Extreme compression drastically reduces file size. Most PDFs under 20MB will compress significantly. Very image-heavy files may need to be split first, then each part compressed separately." },
                 { q: "Will the text still be readable after compression?", a: "Yes. Text remains sharp and readable. Image quality may be slightly reduced, but pages stay usable." },
                 { q: "Why do upload portals have a 5MB limit?", a: "Many government, university, and job application portals set a 5MB limit to manage storage and bandwidth. Compressing your PDF ensures it meets these requirements." },
                 { q: "Can I compress a PDF to 5MB on my phone?", a: "Yes. OmnisPDF works in mobile browsers — upload, compress, and download on iPhone or Android." },

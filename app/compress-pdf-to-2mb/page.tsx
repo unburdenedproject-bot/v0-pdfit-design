@@ -6,9 +6,9 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download } from "lucide-react
 import Link from "next/link"
 
 export const metadata = {
-  title: "Compress PDF to 2MB Online — Free PDF Size Reducer | OmnisPDF",
+  title: "Compress PDF for 2MB Upload Limits — Free Extreme Compression | OmnisPDF",
   description:
-    "Compress PDF files to under 2MB with OmnisPDF. Shrink PDFs for strict upload limits, forms, and applications — fast, browser-based, no login required.",
+    "Apply extreme PDF compression to reduce file size for portals with 2MB upload limits. Maximum compression for government forms, visa applications, and exam uploads — fast, browser-based, free.",
 }
 
 const faqSchema = {
@@ -17,13 +17,13 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How do I compress a PDF to 2MB?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF, click Compress, and download the reduced file. OmnisPDF uses extreme compression to get your file as small as possible." }
+      "name": "How do I compress a PDF for a 2MB upload limit?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF, click Compress, and download the reduced file. OmnisPDF uses extreme compression to drastically reduce file size. Results depend on the content of your PDF." }
     },
     {
       "@type": "Question",
-      "name": "Can I guarantee my PDF will be under 2MB?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF applies maximum compression. Most PDFs under 10MB will compress to under 2MB. Very large or image-heavy files may need to be split first." }
+      "name": "Will my PDF definitely be under 2MB after compression?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Extreme compression drastically reduces file size. Most PDFs under 10MB will compress significantly. Very image-heavy files may need to be split first, then each part compressed separately." }
     },
     {
       "@type": "Question",
@@ -65,9 +65,9 @@ export default function CompressPDFTo2MBPage() {
               <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Compress className="h-10 w-10 text-white" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Compress PDF to 2MB</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Compress PDF for 2MB Upload Limits</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Shrink your PDF to under 2MB for strict upload limits. Maximum compression for government forms, visa applications, and exam submissions.
+                Apply extreme compression to drastically reduce your PDF size for portals with 2MB upload limits. Perfect for government forms, visa applications, and exam submissions.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Maximum Compression</span></div>
@@ -92,10 +92,10 @@ export default function CompressPDFTo2MBPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Many official portals require PDFs under 2MB — visa applications, government forms, exam uploads, and HR systems. OmnisPDF applies extreme compression to shrink your PDF as much as possible so it meets the strictest size limits.
+              Many official portals require PDFs under 2MB — visa applications, government forms, exam uploads, and HR systems. OmnisPDF applies extreme compression to drastically reduce your PDF size, helping you meet strict upload requirements.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
-              <li>✓ Extreme compression to shrink PDFs under 2MB</li>
+              <li>&#10003; Extreme compression for maximum size reduction</li>
               <li>✓ Perfect for visa, government, and exam portals</li>
               <li>✓ Text stays sharp and readable</li>
               <li>✓ Works on Mac, Windows, iOS, Android, and Linux</li>
@@ -131,7 +131,7 @@ export default function CompressPDFTo2MBPage() {
         {/* How To */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Compress a PDF to 2MB</h2>
+            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Compress a PDF for 2MB Limits</h2>
             <div className="space-y-4">
               {[
                 "Upload or drag and drop your PDF into OmnisPDF.",
@@ -179,8 +179,8 @@ export default function CompressPDFTo2MBPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I compress a PDF to 2MB?", a: "Upload your PDF to OmnisPDF, click Compress, and download the reduced file. OmnisPDF uses extreme compression to get your file as small as possible." },
-                { q: "Can I guarantee my PDF will be under 2MB?", a: "OmnisPDF applies maximum compression. Most PDFs under 10MB will compress to under 2MB. Very large or image-heavy files may need to be split first." },
+                { q: "How do I compress a PDF for a 2MB upload limit?", a: "Upload your PDF to OmnisPDF, click Compress, and download the reduced file. OmnisPDF uses extreme compression to drastically reduce file size. Results depend on the content of your PDF." },
+                { q: "Will my PDF definitely be under 2MB after compression?", a: "Extreme compression drastically reduces file size. Most PDFs under 10MB will compress significantly. Very image-heavy files may need to be split first, then each part compressed separately." },
                 { q: "Will the quality be affected by compressing to 2MB?", a: "Text remains sharp and fully readable. Images may be slightly reduced in quality, but pages stay clear and usable for most purposes." },
                 { q: "What types of portals require a 2MB PDF?", a: "Many government forms, visa applications, exam submissions, and HR portals require PDFs under 2MB. OmnisPDF helps you meet these strict requirements." },
                 { q: "Can I compress a PDF to 2MB on my phone?", a: "Yes. OmnisPDF works in mobile browsers — upload, compress, and download on iPhone or Android." },
