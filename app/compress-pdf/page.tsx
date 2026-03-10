@@ -85,6 +85,7 @@ export default function CompressPDFPage() {
           outputFormat="PDF"
           processingMessage="Compressing your PDF..."
           successMessage="Your compressed PDF is ready!"
+          showCompressionSelector
         />
 
         {/* About */}
@@ -134,8 +135,8 @@ export default function CompressPDFPage() {
             <div className="space-y-4">
               {[
                 "Upload or drag and drop your PDF into OmnisPDF.",
-                "Click Compress PDF.",
-                "Download your smaller PDF.",
+                "Choose your compression level: Light (best quality), Medium (balanced), or Extreme (maximum reduction).",
+                "Click Compress PDF and download your smaller file.",
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
                   <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">

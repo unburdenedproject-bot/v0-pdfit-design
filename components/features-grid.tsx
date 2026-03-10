@@ -13,6 +13,7 @@ import {
   Droplets,
   Scan,
   Camera,
+  Mail,
   Type,
   Crown,
   QrCode,
@@ -180,6 +181,13 @@ const categories = [
         description: "Reduce file size with Light, Medium, or Extreme compression.",
         icon: Compress,
         href: "/compress-pdf",
+        tier: "FREE" as const,
+      },
+      {
+        name: "Compress for Email",
+        description: "Shrink PDFs to fit Gmail, Outlook, and Yahoo attachment limits.",
+        icon: Mail,
+        href: "/compress-pdf-for-email",
         tier: "FREE" as const,
       },
       {

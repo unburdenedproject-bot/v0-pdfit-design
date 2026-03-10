@@ -18,6 +18,7 @@ interface ProcessingInterfaceProps {
   processingMessage: string
   successMessage: string
   compressionLevel?: string
+  showCompressionSelector?: boolean
 }
 
 interface ProcessedFile {
@@ -67,7 +68,8 @@ export function ProcessingInterface({
   outputFormat,
   processingMessage,
   successMessage,
-  compressionLevel,
+  compressionLevel: compressionLevelProp,
+  showCompressionSelector,
 }: ProcessingInterfaceProps) {
   const router = useRouter()
   const [isDragOver, setIsDragOver] = useState(false)
@@ -81,7 +83,9 @@ export function ProcessingInterface({
   const [editedNames, setEditedNames] = useState<Record<number, string>>({})
   const [userPlan, setUserPlan] = useState<string>("free")
   const [processingIndex, setProcessingIndex] = useState(0)
+  const [selectedCompressionLevel, setSelectedCompressionLevel] = useState(compressionLevelProp || "recommended")
 
+  const compressionLevel = showCompressionSelector ? selectedCompressionLevel : (compressionLevelProp || "recommended")
   const isPaidUser = userPlan === "pro" || userPlan === "business"
 
   useEffect(() => {
@@ -1164,6 +1168,38 @@ export function ProcessingInterface({
                   </Button>
                 </div>
               ))}
+              {showCompressionSelector && (
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-3">Compression Level:</h3>
+                  <div className="grid grid-cols-3 gap-3">
+                    {[
+                      { value: "low", label: "Light", desc: "Smaller reduction, best quality" },
+                      { value: "recommended", label: "Medium", desc: "Balanced size and quality" },
+                      { value: "extreme", label: "Extreme", desc: "Maximum compression" },
+                    ].map((level) => (
+                      <button
+                        key={level.value}
+                        type="button"
+                        onClick={() => setSelectedCompressionLevel(level.value)}
+                        className={cn(
+                          "flex flex-col items-center gap-1 rounded-xl border-2 p-4 transition-all",
+                          selectedCompressionLevel === level.value
+                            ? "border-orange-500 bg-orange-50 shadow-sm"
+                            : "border-gray-200 hover:border-orange-300 hover:bg-gray-50"
+                        )}
+                      >
+                        <span className={cn(
+                          "font-bold text-sm",
+                          selectedCompressionLevel === level.value ? "text-orange-700" : "text-slate-700"
+                        )}>
+                          {level.label}
+                        </span>
+                        <span className="text-xs text-slate-500 text-center">{level.desc}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
               <Button
                 onClick={processFiles}
                 className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold"
