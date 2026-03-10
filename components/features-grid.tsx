@@ -12,6 +12,7 @@ import {
   Unlock,
   Droplets,
   Scan,
+  Camera,
   Type,
   Crown,
   QrCode,
@@ -218,7 +219,13 @@ const categories = [
         href: "/ocr-scanner",
         tier: "PRO" as const,
       },
-
+      {
+        name: "Phone Scan Cleanup",
+        description: "Turn phone photos of documents into clean, professional PDFs.",
+        icon: Camera,
+        href: "/phone-scan-cleanup",
+        tier: "FREE" as const,
+      },
     ],
   },
   {
