@@ -61,6 +61,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - omnispdf.com/compress-pdf-to-5mb, /compress-pdf-to-2mb, /compress-pdf-for-email
 - omnispdf.com/extract-images-from-pdf, /flatten-pdf, /upload-ready-pdf
 - omnispdf.com/pdf-redaction
+- omnispdf.com/phone-scan-cleanup
 - omnispdf.com/pricing, /about, /privacy-policy, /terms-conditions
 
 ---
@@ -88,7 +89,7 @@ Duplicate all tool pages + long tail pages into Spanish for LATAM market.
 The sooner Spanish is live, the sooner Google starts indexing.
 
 ### Priority 5: Blue Ocean Tools
-- Phone Scan Cleanup (OpenCV + Tesseract) — huge in LATAM
+- ~~Phone Scan Cleanup~~ — DONE, live at /phone-scan-cleanup (Sharp image processing, free tier with limits)
 - Resume ATS Optimizer (OpenAI API)
 
 ### Priority 6: Infrastructure Migration
