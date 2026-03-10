@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react"
 import * as Diff from "diff"
+import { PDFDocument, StandardFonts, rgb } from "pdf-lib"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import {
@@ -415,52 +416,298 @@ export function PdfCompareInterface() {
     setCurrentPage(0)
     setIsLoadingA(false)
     setIsLoadingB(false)
+    setIsGeneratingReport(false)
     setErrorMessage("")
   }, [])
 
-  const downloadDiffReport = useCallback(() => {
-    const totalAdded = pageResults.reduce((sum, page) => sum + page.addedWords, 0)
-    const totalRemoved = pageResults.reduce((sum, page) => sum + page.removedWords, 0)
+  const [isGeneratingReport, setIsGeneratingReport] = useState(false)
 
-    let report = "PDF COMPARE REPORT\n"
-    report += "===================\n\n"
-    report += `Original: ${fileA?.name || "Unknown"} (${totalPagesA} pages)\n`
-    report += `Modified: ${fileB?.name || "Unknown"} (${totalPagesB} pages)\n\n`
-    report += `Added words:   ${totalAdded}\n`
-    report += `Removed words: ${totalRemoved}\n\n`
+  const downloadDiffReport = useCallback(async () => {
+    setIsGeneratingReport(true)
+    try {
+      const totalAdded = pageResults.reduce((sum, page) => sum + page.addedWords, 0)
+      const totalRemoved = pageResults.reduce((sum, page) => sum + page.removedWords, 0)
+      const totalChanges = totalAdded + totalRemoved
+      const overallLabel =
+        totalChanges === 0 ? "Identical" :
+        totalChanges <= 40 ? "Minor changes" :
+        totalChanges <= 150 ? "Moderate changes" : "Major changes"
 
-    pageResults.forEach((page, pageIdx) => {
-      const changes = page.addedWords + page.removedWords
-      report += `--- Page ${pageIdx + 1} ${changes === 0 ? "(IDENTICAL)" : `(+${page.addedWords} / -${page.removedWords})`} ---\n`
+      const pdfDoc = await PDFDocument.create()
+      const helvetica = await pdfDoc.embedFont(StandardFonts.Helvetica)
+      const helveticaBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold)
+      const courier = await pdfDoc.embedFont(StandardFonts.Courier)
 
-      if (changes > 0) {
+      const W = 612 // Letter width in points
+      const H = 792 // Letter height
+      const MARGIN = 50
+      const CONTENT_W = W - MARGIN * 2
+
+      const BRAND_COLOR = rgb(0.31, 0.31, 0.82)  // indigo
+      const RED = rgb(0.8, 0.15, 0.15)
+      const GREEN = rgb(0.1, 0.55, 0.1)
+      const DARK = rgb(0.15, 0.15, 0.2)
+      const GRAY = rgb(0.4, 0.4, 0.45)
+      const LIGHT_GRAY = rgb(0.92, 0.92, 0.94)
+      const WHITE = rgb(1, 1, 1)
+
+      // ── Helper: sanitize text to WinAnsi-safe characters ──
+      // pdf-lib standard fonts only support WinAnsi encoding.
+      // Replace unsupported characters so drawText never crashes.
+      function safe(text: string): string {
+        return text
+          .replace(/[\u2014\u2013]/g, "-")     // em/en dash -> hyphen
+          .replace(/[\u2018\u2019]/g, "'")     // smart single quotes
+          .replace(/[\u201C\u201D]/g, '"')     // smart double quotes
+          .replace(/\u2026/g, "...")            // ellipsis
+          .replace(/\u2022/g, "-")             // bullet
+          .replace(/[^\x00-\xFF]/g, "?")       // anything outside Latin-1 -> ?
+      }
+
+      // ── Helper: wrap text into lines that fit a given width ──
+      function wrapText(text: string, font: typeof helvetica, fontSize: number, maxWidth: number): string[] {
+        const words = safe(text).split(/\s+/)
+        const lines: string[] = []
+        let currentLine = ""
+
+        for (const word of words) {
+          const testLine = currentLine ? `${currentLine} ${word}` : word
+          const testWidth = font.widthOfTextAtSize(testLine, fontSize)
+          if (testWidth > maxWidth && currentLine) {
+            lines.push(currentLine)
+            currentLine = word
+          } else {
+            currentLine = testLine
+          }
+        }
+        if (currentLine) lines.push(currentLine)
+        return lines.length > 0 ? lines : [""]
+      }
+
+      // ── Helper: draw a rectangle with optional border ──
+      function drawBox(page: ReturnType<typeof pdfDoc.addPage>, x: number, y: number, w: number, h: number, color: ReturnType<typeof rgb>, borderColor?: ReturnType<typeof rgb>) {
+        page.drawRectangle({ x, y, width: w, height: h, color })
+        if (borderColor) {
+          page.drawRectangle({ x, y, width: w, height: h, borderColor, borderWidth: 0.5 })
+        }
+      }
+
+      // ── Helper: add footer to a page ──
+      function addFooter(page: ReturnType<typeof pdfDoc.addPage>, pageNum: number, totalPages: number) {
+        const footerY = 30
+        page.drawLine({ start: { x: MARGIN, y: footerY + 12 }, end: { x: W - MARGIN, y: footerY + 12 }, thickness: 0.5, color: LIGHT_GRAY })
+        page.drawText("omnispdf.com/pdf-compare", { x: MARGIN, y: footerY, size: 7, font: helvetica, color: GRAY })
+        const pageLabel = `Page ${pageNum} of ${totalPages}`
+        const pageLabelWidth = helvetica.widthOfTextAtSize(pageLabel, 7)
+        page.drawText(pageLabel, { x: W - MARGIN - pageLabelWidth, y: footerY, size: 7, font: helvetica, color: GRAY })
+      }
+
+      // ── Helper: draw the table header row ──
+      function drawTableHeader(page: ReturnType<typeof pdfDoc.addPage>, atY: number) {
+        drawBox(page, MARGIN, atY - 18, CONTENT_W, 18, BRAND_COLOR)
+        page.drawText("Page", { x: MARGIN + 10, y: atY - 13, size: 8, font: helveticaBold, color: WHITE })
+        page.drawText("Status", { x: MARGIN + 80, y: atY - 13, size: 8, font: helveticaBold, color: WHITE })
+        page.drawText("Added", { x: MARGIN + 260, y: atY - 13, size: 8, font: helveticaBold, color: WHITE })
+        page.drawText("Removed", { x: MARGIN + 340, y: atY - 13, size: 8, font: helveticaBold, color: WHITE })
+        page.drawText("Total", { x: MARGIN + 430, y: atY - 13, size: 8, font: helveticaBold, color: WHITE })
+      }
+
+      // ════════════════════════════════════════════════
+      // PAGE 1: Cover / Summary
+      // ════════════════════════════════════════════════
+      let currentCoverPage = pdfDoc.addPage([W, H])
+
+      // Header bar
+      drawBox(currentCoverPage, 0, H - 80, W, 80, BRAND_COLOR)
+      currentCoverPage.drawText("PDF COMPARISON REPORT", { x: MARGIN, y: H - 52, size: 20, font: helveticaBold, color: WHITE })
+      currentCoverPage.drawText("Generated by OmnisPDF", { x: MARGIN, y: H - 68, size: 9, font: helvetica, color: rgb(0.8, 0.8, 1) })
+
+      let y = H - 120
+
+      // Date
+      const dateStr = new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit" })
+      currentCoverPage.drawText(dateStr, { x: MARGIN, y, size: 9, font: helvetica, color: GRAY })
+      y -= 30
+
+      // Document info box
+      const nameA = safe(fileA?.name || "Unknown")
+      const nameB = safe(fileB?.name || "Unknown")
+      drawBox(currentCoverPage, MARGIN, y - 70, CONTENT_W, 70, rgb(0.97, 0.97, 0.99), LIGHT_GRAY)
+      currentCoverPage.drawText("DOCUMENTS COMPARED", { x: MARGIN + 15, y: y - 18, size: 8, font: helveticaBold, color: BRAND_COLOR })
+      currentCoverPage.drawText("Original:", { x: MARGIN + 15, y: y - 35, size: 9, font: helveticaBold, color: DARK })
+      currentCoverPage.drawText(`${nameA}  (${totalPagesA} page${totalPagesA !== 1 ? "s" : ""})`, { x: MARGIN + 75, y: y - 35, size: 9, font: helvetica, color: DARK })
+      currentCoverPage.drawText("Modified:", { x: MARGIN + 15, y: y - 52, size: 9, font: helveticaBold, color: DARK })
+      currentCoverPage.drawText(`${nameB}  (${totalPagesB} page${totalPagesB !== 1 ? "s" : ""})`, { x: MARGIN + 75, y: y - 52, size: 9, font: helvetica, color: DARK })
+      y -= 100
+
+      // Summary stats
+      currentCoverPage.drawText("SUMMARY", { x: MARGIN, y, size: 11, font: helveticaBold, color: DARK })
+      y -= 20
+
+      // Stats boxes (3 columns)
+      const boxW = (CONTENT_W - 20) / 3
+      const statsData = [
+        { label: "Assessment", value: overallLabel, color: totalChanges === 0 ? GREEN : totalChanges <= 150 ? rgb(0.75, 0.55, 0) : RED },
+        { label: "Words Added", value: `+${totalAdded}`, color: GREEN },
+        { label: "Words Removed", value: `-${totalRemoved}`, color: RED },
+      ]
+      statsData.forEach((stat, i) => {
+        const bx = MARGIN + i * (boxW + 10)
+        drawBox(currentCoverPage, bx, y - 50, boxW, 50, rgb(0.97, 0.97, 0.99), LIGHT_GRAY)
+        currentCoverPage.drawText(stat.label, { x: bx + 10, y: y - 18, size: 7, font: helveticaBold, color: GRAY })
+        currentCoverPage.drawText(stat.value, { x: bx + 10, y: y - 38, size: 16, font: helveticaBold, color: stat.color })
+      })
+      y -= 80
+
+      // Page-by-page overview table
+      currentCoverPage.drawText("PAGE-BY-PAGE OVERVIEW", { x: MARGIN, y, size: 11, font: helveticaBold, color: DARK })
+      y -= 20
+
+      // Table header
+      drawTableHeader(currentCoverPage, y)
+      y -= 18
+
+      pageResults.forEach((page, idx) => {
+        const changes = page.addedWords + page.removedWords
+        const status =
+          changes === 0 ? "Identical" :
+          changes <= 20 ? "Minor changes" :
+          changes <= 80 ? "Moderate changes" : "Major changes"
+        const statusColor = changes === 0 ? GREEN : changes <= 80 ? rgb(0.75, 0.55, 0) : RED
+        const rowBg = idx % 2 === 0 ? rgb(0.98, 0.98, 1) : WHITE
+
+        // Overflow to new page if needed
+        if (y < 60) {
+          currentCoverPage = pdfDoc.addPage([W, H])
+          y = H - 50
+          drawTableHeader(currentCoverPage, y)
+          y -= 18
+        }
+
+        drawBox(currentCoverPage, MARGIN, y - 18, CONTENT_W, 18, rowBg)
+        currentCoverPage.drawText(`Page ${idx + 1}`, { x: MARGIN + 10, y: y - 13, size: 8, font: helvetica, color: DARK })
+        currentCoverPage.drawText(status, { x: MARGIN + 80, y: y - 13, size: 8, font: helveticaBold, color: statusColor })
+        currentCoverPage.drawText(`+${page.addedWords}`, { x: MARGIN + 260, y: y - 13, size: 8, font: courier, color: GREEN })
+        currentCoverPage.drawText(`-${page.removedWords}`, { x: MARGIN + 340, y: y - 13, size: 8, font: courier, color: RED })
+        currentCoverPage.drawText(`${changes}`, { x: MARGIN + 430, y: y - 13, size: 8, font: courier, color: DARK })
+        y -= 18
+      })
+
+      // ════════════════════════════════════════════════
+      // DETAIL PAGES: One per compared page with changes
+      // ════════════════════════════════════════════════
+
+      pageResults.forEach((page, pageIdx) => {
+        const changes = page.addedWords + page.removedWords
+        if (changes === 0) return
+
+        let dp = pdfDoc.addPage([W, H])
+
+        // Detail page header helper
+        function drawDetailHeader(p: typeof dp, label: string) {
+          drawBox(p, 0, H - 50, W, 50, rgb(0.95, 0.95, 0.98))
+          p.drawLine({ start: { x: 0, y: H - 50 }, end: { x: W, y: H - 50 }, thickness: 2, color: BRAND_COLOR })
+          p.drawText(safe(label), { x: MARGIN, y: H - 35, size: 13, font: helveticaBold, color: DARK })
+
+          const sLabel =
+            changes <= 20 ? "Minor changes" :
+            changes <= 80 ? "Moderate changes" : "Major changes"
+          const sColor = changes <= 80 ? rgb(0.75, 0.55, 0) : RED
+          const sW = helveticaBold.widthOfTextAtSize(sLabel, 9)
+          p.drawText(sLabel, { x: W - MARGIN - sW, y: H - 35, size: 9, font: helveticaBold, color: sColor })
+        }
+
+        drawDetailHeader(dp, `Page ${pageIdx + 1} - Detailed Changes`)
+
+        let dy = H - 75
+
+        // Stats line
+        dp.drawText(`+${page.addedWords} added`, { x: MARGIN, y: dy, size: 8, font: helveticaBold, color: GREEN })
+        dp.drawText(`-${page.removedWords} removed`, { x: MARGIN + 80, y: dy, size: 8, font: helveticaBold, color: RED })
+        dy -= 20
+
         page.paragraphs.forEach((para, pIdx) => {
           if (!para.changed) return
-          const removed = para.leftTokens
-            .filter((t) => t.highlight === "removed")
-            .map((t) => `[${t.text.trim()}]`)
-            .join(" ")
-          const added = para.rightTokens
-            .filter((t) => t.highlight === "added")
-            .map((t) => `[${t.text.trim()}]`)
-            .join(" ")
-          report += `  Paragraph ${pIdx + 1}:\n`
-          if (removed) report += `    - removed: ${removed}\n`
-          if (added) report += `    + added: ${added}\n`
-          report += "\n"
+
+          const removedTokens = para.leftTokens.filter((t) => t.highlight === "removed")
+          const addedTokens = para.rightTokens.filter((t) => t.highlight === "added")
+          if (removedTokens.length === 0 && addedTokens.length === 0) return
+
+          // Check if we need a new page
+          if (dy < 100) {
+            dp = pdfDoc.addPage([W, H])
+            drawDetailHeader(dp, `Page ${pageIdx + 1} - Detailed Changes (continued)`)
+            dy = H - 75
+          }
+
+          // Section label
+          dp.drawText(`Change ${pIdx + 1}`, { x: MARGIN, y: dy, size: 9, font: helveticaBold, color: DARK })
+          dy -= 5
+
+          // Removed text block
+          if (removedTokens.length > 0) {
+            const removedText = removedTokens.map((t) => t.text.trim()).join("  ")
+            const removedLines = wrapText(removedText, helvetica, 8, CONTENT_W - 30)
+
+            const blockH = Math.max(22, removedLines.length * 12 + 10)
+            if (dy - blockH < 60) {
+              dp = pdfDoc.addPage([W, H])
+              drawDetailHeader(dp, `Page ${pageIdx + 1} - Detailed Changes (continued)`)
+              dy = H - 75
+            }
+
+            drawBox(dp, MARGIN, dy - blockH, CONTENT_W, blockH, rgb(1, 0.95, 0.95), rgb(0.9, 0.8, 0.8))
+            dp.drawText("REMOVED", { x: MARGIN + 8, y: dy - 12, size: 6, font: helveticaBold, color: RED })
+            removedLines.forEach((line, li) => {
+              dp.drawText(line, { x: MARGIN + 8, y: dy - 22 - li * 12, size: 8, font: helvetica, color: rgb(0.5, 0.1, 0.1) })
+            })
+            dy -= blockH + 5
+          }
+
+          // Added text block
+          if (addedTokens.length > 0) {
+            const addedText = addedTokens.map((t) => t.text.trim()).join("  ")
+            const addedLines = wrapText(addedText, helvetica, 8, CONTENT_W - 30)
+
+            const blockH = Math.max(22, addedLines.length * 12 + 10)
+            if (dy - blockH < 60) {
+              dp = pdfDoc.addPage([W, H])
+              drawDetailHeader(dp, `Page ${pageIdx + 1} - Detailed Changes (continued)`)
+              dy = H - 75
+            }
+
+            drawBox(dp, MARGIN, dy - blockH, CONTENT_W, blockH, rgb(0.95, 1, 0.95), rgb(0.8, 0.9, 0.8))
+            dp.drawText("ADDED", { x: MARGIN + 8, y: dy - 12, size: 6, font: helveticaBold, color: GREEN })
+            addedLines.forEach((line, li) => {
+              dp.drawText(line, { x: MARGIN + 8, y: dy - 22 - li * 12, size: 8, font: helvetica, color: rgb(0.1, 0.35, 0.1) })
+            })
+            dy -= blockH + 5
+          }
+
+          dy -= 10
         })
-      }
-    })
+      })
 
-    report += "---\nGenerated by OmnisPDF PDF Compare (omnispdf.com/pdf-compare)\n"
+      // Add footers to all pages
+      const allPages = pdfDoc.getPages()
+      const totalDocPages = allPages.length
+      allPages.forEach((p, i) => addFooter(p, i + 1, totalDocPages))
 
-    const blob = new Blob([report], { type: "text/plain" })
-    const url = URL.createObjectURL(blob)
-    const link = document.createElement("a")
-    link.href = url
-    link.download = "pdf-compare-report.txt"
-    link.click()
-    URL.revokeObjectURL(url)
+      // Download
+      const pdfBytes = await pdfDoc.save()
+      const blob = new Blob([pdfBytes], { type: "application/pdf" })
+      const url = URL.createObjectURL(blob)
+      const link = document.createElement("a")
+      link.href = url
+      link.download = "PDF-Comparison-Report.pdf"
+      link.click()
+      URL.revokeObjectURL(url)
+    } catch (err) {
+      console.error("Report generation failed:", err)
+      setErrorMessage("Failed to generate the comparison report. Please try again.")
+    } finally {
+      setIsGeneratingReport(false)
+    }
   }, [fileA, fileB, pageResults, totalPagesA, totalPagesB])
 
   // ──── Render states ────
@@ -636,14 +883,24 @@ export function PdfCompareInterface() {
             </div>
 
             <div className="flex items-center gap-3">
-              <Button variant="outline" size="sm" onClick={downloadDiffReport} className="text-xs">
-                <Download className="h-3 w-3 mr-1" /> Report
+              <Button variant="outline" size="sm" onClick={downloadDiffReport} disabled={isGeneratingReport} className="text-xs">
+                {isGeneratingReport ? (
+                  <><Loader2 className="h-3 w-3 mr-1 animate-spin" /> Generating...</>
+                ) : (
+                  <><Download className="h-3 w-3 mr-1" /> Report</>
+                )}
               </Button>
               <Button variant="outline" size="sm" onClick={resetInterface} className="text-xs">
                 <X className="h-3 w-3 mr-1" /> New Compare
               </Button>
             </div>
           </div>
+
+          {errorMessage && (
+            <div className="mb-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+              {errorMessage}
+            </div>
+          )}
 
           {/* Page navigation */}
           <div className="bg-white border border-gray-200 rounded-xl p-3 mb-4 flex items-center justify-between">
