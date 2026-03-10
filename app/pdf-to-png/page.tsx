@@ -1,3 +1,4 @@
+import Script from "next/script"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ProcessingInterface } from "@/components/processing-interface"
@@ -10,9 +11,46 @@ export const metadata = {
     "Convert PDF to PNG in seconds with OmnisPDF. Export each page as a high-quality PNG image—great for sharp text, graphics, and transparency.",
 }
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I convert a multi-page PDF to PNG?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF converts each PDF page into its own PNG image so you can download pages individually." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why should I use PNG instead of JPG?",
+      "acceptedAnswer": { "@type": "Answer", "text": "PNG is better for sharp text, charts, and graphics because it doesn't use aggressive compression. JPG is usually smaller and better for photo-heavy pages." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I convert PDF to PNG on iPhone or Android?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in mobile browsers — upload, convert, and download your PNG images." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do my PNG files look blurry?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Blurry PNGs usually come from a low-quality source PDF, especially scanned documents. Try our OCR Scanner for scanned PDFs." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it safe to upload my PDF?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. All transfers are SSL encrypted and your files are deleted immediately after your session." }
+    }
+  ]
+}
+
 export default function PDFToPNGPage() {
   return (
     <div className="min-h-screen bg-white">
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Header />
       <main>
         {/* Hero */}
