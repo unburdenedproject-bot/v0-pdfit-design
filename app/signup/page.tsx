@@ -19,7 +19,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
 export default function SignUpPage() {
-  const [fullName, setFullName] = useState("")
+  const [firstName, setFirstName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("")
@@ -37,6 +37,12 @@ export default function SignUpPage() {
 
     if (!supabase) {
       setError("Authentication is not configured.")
+      setIsLoading(false)
+      return
+    }
+
+    if (!firstName.trim()) {
+      setError("Please enter your first name")
       setIsLoading(false)
       return
     }
@@ -76,7 +82,7 @@ export default function SignUpPage() {
           {
             id: data.user.id,
             email: data.user.email,
-            full_name: fullName.trim(),
+            full_name: firstName.trim(),
             plan: "free",
             updated_at: new Date().toISOString(),
           },
@@ -112,15 +118,15 @@ export default function SignUpPage() {
               <form onSubmit={handleSignUp}>
                 <div className="flex flex-col gap-4">
                   <div className="grid gap-2">
-                    <Label htmlFor="full-name" className="text-slate-700">Full Name</Label>
+                    <Label htmlFor="first-name" className="text-slate-700">First Name <span className="text-red-500">*</span></Label>
                     <Input
-                      id="full-name"
+                      id="first-name"
                       type="text"
-                      placeholder="Your full name"
+                      placeholder="Your first name"
                       required
-                      autoComplete="off"
-                      value={fullName}
-                      onChange={(e) => setFullName(e.target.value)}
+                      autoComplete="given-name"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
                       className="border-slate-200 focus-visible:ring-orange-500"
                     />
                   </div>

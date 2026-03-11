@@ -90,8 +90,8 @@ export function Header() {
             </Link>
 
             {/* Language switcher */}
-            <Link href="/es" className="text-slate-500 hover:text-slate-700 text-sm font-medium transition-colors" title="Cambiar a Español">
-              ES
+            <Link href="/es" className="text-slate-500 hover:text-slate-700 text-sm font-medium transition-colors flex items-center gap-1.5" title="Cambiar a Español">
+              <span className="text-base leading-none">🇲🇽</span> ES
             </Link>
 
             {/* Auth links */}
@@ -174,6 +174,14 @@ export function Header() {
               className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors"
             >
               All Tools
+            </Link>
+
+            <Link
+              href="/es"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-slate-500 hover:text-slate-700 text-sm font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+            >
+              <span className="text-base leading-none">🇲🇽</span> Español
             </Link>
 
             {!loading && (

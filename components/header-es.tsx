@@ -87,8 +87,8 @@ export function HeaderEs() {
             </Link>
 
             {/* Language switcher */}
-            <Link href="/" className="text-slate-500 hover:text-slate-700 text-sm font-medium transition-colors" title="Switch to English">
-              EN
+            <Link href="/" className="text-slate-500 hover:text-slate-700 text-sm font-medium transition-colors flex items-center gap-1.5" title="Switch to English">
+              <span className="text-base leading-none">🇺🇸</span> EN
             </Link>
 
             {!loading && (
@@ -173,9 +173,9 @@ export function HeaderEs() {
             <Link
               href="/"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-slate-500 hover:text-slate-700 text-sm font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors"
+              className="text-slate-500 hover:text-slate-700 text-sm font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
             >
-              English
+              <span className="text-base leading-none">🇺🇸</span> English
             </Link>
 
             {!loading && (
