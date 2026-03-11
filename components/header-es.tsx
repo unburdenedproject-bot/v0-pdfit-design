@@ -87,8 +87,13 @@ export function HeaderEs() {
             </Link>
 
             {/* Language switcher */}
-            <Link href="/" className="text-slate-500 hover:text-slate-700 text-sm font-medium transition-colors flex items-center gap-1.5" title="Switch to English">
-              <span className="text-base leading-none">🇺🇸</span> EN
+            <Link href="/" className="hover:opacity-80 transition-opacity" title="Switch to English">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7410 3900" className="w-6 h-4 rounded-sm shadow-sm border border-gray-200">
+                <rect width="7410" height="3900" fill="#B22234"/>
+                <path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" strokeWidth="300"/>
+                <rect width="2964" height="2100" fill="#3C3B6E"/>
+                <g fill="#fff"><g id="s18"><g id="s9"><g id="s5"><g id="s4"><path id="s" d="M247,90 317.534230,307.082039 132.873218,172.917961H361.126782L176.465770,307.082039z"/><use href="#s" y="420"/><use href="#s" y="840"/><use href="#s" y="1260"/></g><use href="#s" y="1680"/></g><use href="#s4" x="247" y="210"/></g><use href="#s9" x="494"/></g><use href="#s18" x="988"/><use href="#s9" x="1976"/></g>
+              </svg>
             </Link>
 
             {!loading && (
@@ -173,9 +178,15 @@ export function HeaderEs() {
             <Link
               href="/"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-slate-500 hover:text-slate-700 text-sm font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5"
+              className="flex items-center gap-2 text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors"
             >
-              <span className="text-base leading-none">🇺🇸</span> English
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7410 3900" className="w-6 h-4 rounded-sm shadow-sm border border-gray-200">
+                <rect width="7410" height="3900" fill="#B22234"/>
+                <path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" strokeWidth="300"/>
+                <rect width="2964" height="2100" fill="#3C3B6E"/>
+                <g fill="#fff"><g id="ms18"><g id="ms9"><g id="ms5"><g id="ms4"><path id="ms" d="M247,90 317.534230,307.082039 132.873218,172.917961H361.126782L176.465770,307.082039z"/><use href="#ms" y="420"/><use href="#ms" y="840"/><use href="#ms" y="1260"/></g><use href="#ms" y="1680"/></g><use href="#ms4" x="247" y="210"/></g><use href="#ms9" x="494"/></g><use href="#ms18" x="988"/><use href="#ms9" x="1976"/></g>
+              </svg>
+              English
             </Link>
 
             {!loading && (
