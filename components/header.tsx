@@ -89,9 +89,8 @@ export function Header() {
             {/* Language switcher */}
             <Link href="/es" className="hover:opacity-80 transition-opacity" title="Cambiar a Español">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500" className="w-6 h-4 rounded-sm shadow-sm border border-gray-200">
-                <rect width="250" height="500" fill="#006341"/>
-                <rect x="250" width="250" height="500" fill="#fff"/>
-                <rect x="500" width="250" height="500" fill="#CE1126"/>
+                <rect width="750" height="500" fill="#c60b1e"/>
+                <rect y="125" width="750" height="250" fill="#ffc400"/>
               </svg>
             </Link>
 
@@ -181,9 +180,8 @@ export function Header() {
               className="flex items-center gap-2 text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500" className="w-6 h-4 rounded-sm shadow-sm border border-gray-200">
-                <rect width="250" height="500" fill="#006341"/>
-                <rect x="250" width="250" height="500" fill="#fff"/>
-                <rect x="500" width="250" height="500" fill="#CE1126"/>
+                <rect width="750" height="500" fill="#c60b1e"/>
+                <rect y="125" width="750" height="250" fill="#ffc400"/>
               </svg>
               Español
             </Link>

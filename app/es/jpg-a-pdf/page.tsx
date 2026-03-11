@@ -202,8 +202,8 @@ export default function JpgToPdfPageEs() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Más Herramientas PDF</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
               {[
+                { name: "PNG a PDF", desc: "Convierte imágenes PNG a PDF.", href: "/es/png-a-pdf", icon: ImageIcon },
                 { name: "PDF a JPG", desc: "Convierte páginas PDF a imágenes JPG.", href: "/es/pdf-a-jpg", icon: FileText },
-                { name: "PDF a PNG", desc: "Convierte páginas PDF a imágenes PNG.", href: "/es/pdf-a-png", icon: ImageIcon },
                 { name: "Unir PDF", desc: "Combina varios PDFs en uno solo.", href: "/es/unir-pdf", icon: Merge },
                 { name: "Comprimir PDF", desc: "Reduce el tamaño del archivo PDF.", href: "/es/comprimir-pdf", icon: FileText },
                 { name: "Limpiar Escaneo", desc: "Convierte fotos del teléfono en PDFs limpios.", href: "/es/limpiar-escaneo", icon: Camera },
