@@ -61,10 +61,14 @@ for (const [en, es] of Object.entries(routeMap)) {
 
 /** Given the current pathname, return the equivalent path in the other language. */
 export function getAlternateRoute(pathname: string): string {
+  // Normalize: strip trailing slash (except for root "/")
+  const normalized = pathname.length > 1 && pathname.endsWith("/")
+    ? pathname.slice(0, -1)
+    : pathname
   // English → Spanish
-  if (routeMap[pathname]) return routeMap[pathname]
+  if (routeMap[normalized]) return routeMap[normalized]
   // Spanish → English
-  if (reverseMap[pathname]) return reverseMap[pathname]
+  if (reverseMap[normalized]) return reverseMap[normalized]
   // Fallback: if on a Spanish page, go to English home; otherwise go to Spanish home
-  return pathname.startsWith("/es") ? "/" : "/es"
+  return normalized.startsWith("/es") ? "/" : "/es"
 }
