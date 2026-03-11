@@ -34,6 +34,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - /compress-pdf, /compress-pdf-to-5mb, /compress-pdf-to-2mb, /compress-pdf-for-email
 - /protect-pdf, /unlock-pdf, /watermark-pdf (Pro)
 - /pdf-to-jpg, /pdf-to-png, /pdf-to-txt
+- /jpg-to-pdf, /png-to-pdf
 - /word-to-pdf, /excel-to-pdf, /powerpoint-to-pdf, /office-to-pdf
 - /pdf-to-word (Pro, CloudConvert), /pdf-to-excel (Pro, CloudConvert), /pdf-to-powerpoint (Pro, CloudConvert)
 - /ocr-scanner (Pro), /qr-code (Pro)
@@ -50,6 +51,24 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - Business tools Coming Soon: /table-extraction
 - SEO cluster pages: all 6 clusters built (~100 pages)
 - Long-tail /learn/ articles: ~82 articles built across 16 categories
+
+### Spanish Layer (Partial — In Progress)
+- Spanish homepage (/es) with full tool grid and correct /es/ routes
+- Spanish header (header-es.tsx) and footer (footer-es.tsx)
+- Dynamic language switcher: flag links navigate to equivalent page in other language (lib/route-map.ts)
+- Spain flag for Spanish, US flag for English
+- Spanish auth pages: /es/login, /es/registro, /es/registro/exito, /es/registro-requerido, /es/auth/confirmar, /es/auth/error
+- Spanish legal pages: /es/politica-de-privacidad, /es/terminos-y-condiciones
+- Spanish dashboard: /es/dashboard (dashboard-client-es.tsx)
+- Spanish static pages: /es/acerca, /es/contacto, /es/precios, /es/herramientas
+- Spanish tool pages DONE: /es/jpg-a-pdf, /es/png-a-pdf
+- Spanish tool pages MISSING: Most tool pages are linked from the homepage but don't have actual page files yet (will 404)
+
+### Signup & Auth Fixes Done
+- First name required on signup (validation + stored in Supabase user_metadata)
+- Stripe webhook no longer overwrites user names (changed upsert → update)
+- Suspense boundary fix for useSearchParams() in auth/confirm pages
+- All PDF.it branding removed, replaced with OmnisPDF
 
 ### SEO Cluster Pages Done (All 6 Clusters — ~100 pages)
 - Cluster 1 (Compression): 18 pages built
@@ -71,6 +90,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - omnispdf.com/merge-pdf, /split-pdf, /rotate-pdf
 - omnispdf.com/protect-pdf, /unlock-pdf, /watermark-pdf
 - omnispdf.com/pdf-to-jpg, /pdf-to-png, /pdf-to-txt
+- omnispdf.com/jpg-to-pdf, /png-to-pdf
 - omnispdf.com/word-to-pdf, /excel-to-pdf, /powerpoint-to-pdf, /office-to-pdf
 - omnispdf.com/ocr-scanner, /qr-code
 - omnispdf.com/compress-pdf-to-5mb, /compress-pdf-to-2mb, /compress-pdf-for-email
@@ -84,9 +104,11 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 
 ## TODO — By Priority
 
-### Priority 1: Spanish Layer
-Duplicate all tool pages + long tail pages into Spanish for LATAM market.
-The sooner Spanish is live, the sooner Google starts indexing.
+### Priority 1: Spanish Tool Pages (NEXT)
+Spanish infrastructure is done (header, footer, homepage, auth, legal, dashboard, language switcher).
+Now need to create actual Spanish tool pages for all tools linked from the homepage.
+Missing pages will 404 — these are the ones that need to be built next.
+After tool pages: translate SEO cluster pages and /learn/ articles into Spanish.
 
 ### Priority 2: Remaining Tools
 - Table Extraction to Excel — needs Google Document AI API (hardest, paid API, Business tier)
@@ -107,11 +129,19 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 - LONG-TAIL-PAGES.md — 80 /learn/ articles plan (16 tool categories)
 - GROWTH-STRATEGY.md — Pricing funnel, upgrade triggers, revenue model
 
+## Architecture Notes
+- Spanish homepage (app/es/page.tsx) has its OWN inline categories array — does NOT use FeaturesGridEs component
+- FeaturesGridEs is only used by /es/herramientas (All Tools page)
+- When adding tools, update BOTH app/es/page.tsx AND components/features-grid-es.tsx
+- Route map for language switcher: lib/route-map.ts (must be updated when adding new pages)
+- All Spanish tool hrefs must use /es/ prefix with translated slugs
+
 ## Rules - Always Follow
 - Never break already indexed pages
 - Use iLoveAPI for PDF processing (except pdf-to-word/excel/powerpoint which use CloudConvert)
 - Target both USA and LATAM markets
-- Keep Spanish SEO in mind for future
+- When adding new pages, always add to BOTH English and Spanish layers
+- When adding new pages, update lib/route-map.ts for the language switcher
 - Paula is non-technical — explain things simply
 
 ## Deployment Process
