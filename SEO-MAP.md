@@ -157,11 +157,13 @@ Target: 100k–500k monthly visitors → 1k–10k subscribers
 
 | Category | Pages | Done |
 |----------|-------|------|
-| Compression | 18 | 3 |
-| Conversion | 20 | 9 |
-| Editing | 18 | 1 |
-| Organization | 14 | 2 |
-| Security | 12 | 4 |
-| Extraction | 18 | 2 |
-| Blue Ocean | 7 | 1 |
-| **Total** | **~107–120** | **~22** |
+| Compression | 18 | 18 ✅ |
+| Conversion | 20 | 20 ✅ |
+| Editing | 18 | 7 |
+| Organization | 14 | 13 ✅ |
+| Security | 12 | 11 ✅ |
+| Extraction | 18 | 11 |
+| Blue Ocean | 7 | 5 |
+| **Total** | **~107–120** | **~85** |
+
+Note: All 6 clusters have been built with core pages. Remaining pages are lower-priority editing tools (edit-pdf, annotate, highlight, draw, resize, crop) and some extraction/blue ocean pages.

@@ -48,10 +48,23 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - Business tools LIVE: /workflow-automation, /pdf-redaction, /esign
 - Business tools LIVE: /pdf-compare
 - Business tools Coming Soon: /table-extraction
+- SEO cluster pages: all 6 clusters built (~100 pages)
+- Long-tail /learn/ articles: ~82 articles built across 16 categories
 
-### SEO Pages Done
-- /compress-pdf-to-5mb, /compress-pdf-to-2mb, /compress-pdf-for-email
-- /extract-images-from-pdf, /flatten-pdf, /upload-ready-pdf
+### SEO Cluster Pages Done (All 6 Clusters — ~100 pages)
+- Cluster 1 (Compression): 18 pages built
+- Cluster 2 (Conversion): 20 pages built
+- Cluster 3 (Document Editing): 6 pages built
+- Cluster 4 (Organization): 11 pages built
+- Cluster 5 (Security): 7 pages built
+- Cluster 6 (Data Extraction): 9 pages built
+
+### Long-Tail SEO Articles Done (~82 /learn/ articles)
+- PDF to JPG (5), PDF to PNG (5), PDF to TXT (5)
+- Word to PDF (5), Excel to PDF (5), PowerPoint to PDF (5)
+- Office to PDF (5), Merge PDF (5), Split PDF (6)
+- Rotate PDF (4), Protect PDF (4), Unlock PDF (4), Watermark PDF (5)
+- Compress PDF (5), OCR PDF (6), QR Code (7)
 
 ### Pages Already Indexed (DO NOT BREAK)
 - omnispdf.com
@@ -71,23 +84,15 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 
 ## TODO — By Priority
 
-### Priority 1: Long Tail SEO Pages (~80 /learn/ articles)
-Full plan in LONG-TAIL-PAGES.md. Covers all 16 tool categories.
-Build BEFORE Spanish layer so template is ready to duplicate.
-
-### Priority 2: Spanish Layer
+### Priority 1: Spanish Layer
 Duplicate all tool pages + long tail pages into Spanish for LATAM market.
 The sooner Spanish is live, the sooner Google starts indexing.
 
-### Priority 3: SEO Cluster Pages (~100 tool pages)
-Full plan in SEO-MAP.md. 6 clusters: Compression, Conversion, Editing, Organization, Security, Extraction.
-~22 of ~120 pages built so far.
-
-### Priority 4: Remaining Tools
+### Priority 2: Remaining Tools
 - Table Extraction to Excel — needs Google Document AI API (hardest, paid API, Business tier)
 - Resume ATS Optimizer (OpenAI API, Blue Ocean)
 
-### Priority 5: Infrastructure Migration
+### Priority 3: Infrastructure Migration
 Full plan in INFRASTRUCTURE.md.
 Move from Vercel serverless → R2 storage → Redis/BullMQ queue → Worker processors (Fly.io).
 Processing libraries: Ghostscript, PDFium, Poppler, OpenCV, Tesseract.
