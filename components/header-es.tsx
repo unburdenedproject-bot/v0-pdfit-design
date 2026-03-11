@@ -105,7 +105,7 @@ export function HeaderEs() {
                   </Button>
                 </Link>
               ) : (
-                <Link href="/login">
+                <Link href="/es/login">
                   <Button size="sm" variant="outline" className="border-slate-200 text-slate-700 hover:text-slate-900">
                     <LogIn className="mr-1.5 h-4 w-4" />
                     Iniciar Sesión
@@ -199,7 +199,7 @@ export function HeaderEs() {
                     </Button>
                   </Link>
                 ) : (
-                  <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
+                  <Link href="/es/login" onClick={() => setMobileMenuOpen(false)}>
                     <Button size="sm" variant="outline" className="w-full border-slate-200 text-slate-700 hover:text-slate-900">
                       <LogIn className="mr-1.5 h-4 w-4" />
                       Iniciar Sesión

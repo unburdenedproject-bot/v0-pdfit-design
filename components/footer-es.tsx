@@ -86,12 +86,12 @@ export function FooterEs() {
             <h3 className="font-bold text-white mb-4 mt-6">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/privacy-policy" className="text-slate-400 hover:text-white transition-colors text-sm">
+                <Link href="/es/politica-de-privacidad" className="text-slate-400 hover:text-white transition-colors text-sm">
                   Política de Privacidad
                 </Link>
               </li>
               <li>
-                <Link href="/terms-conditions" className="text-slate-400 hover:text-white transition-colors text-sm">
+                <Link href="/es/terminos-y-condiciones" className="text-slate-400 hover:text-white transition-colors text-sm">
                   Términos y Condiciones
                 </Link>
               </li>
@@ -117,10 +117,10 @@ export function FooterEs() {
         <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-slate-400 text-sm">© {new Date().getFullYear()} OmnisPDF. Todos los derechos reservados.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/privacy-policy" className="text-slate-400 hover:text-white text-sm transition-colors">
+            <Link href="/es/politica-de-privacidad" className="text-slate-400 hover:text-white text-sm transition-colors">
               Privacidad
             </Link>
-            <Link href="/terms-conditions" className="text-slate-400 hover:text-white text-sm transition-colors">
+            <Link href="/es/terminos-y-condiciones" className="text-slate-400 hover:text-white text-sm transition-colors">
               Términos
             </Link>
             <Link href="/" className="text-slate-400 hover:text-white text-sm transition-colors">

@@ -18,14 +18,14 @@ function ConfirmForm() {
       const redirectTo = searchParams.get("redirect_to")
 
       if (!tokenHash || !type) {
-        setErrorMessage("Missing confirmation parameters. Please check your email link.")
+        setErrorMessage("Faltan parámetros de confirmación. Por favor revisa el enlace en tu correo.")
         setStatus("error")
         return
       }
 
       const supabase = createClient()
       if (!supabase) {
-        setErrorMessage("Unable to connect to authentication service.")
+        setErrorMessage("No se pudo conectar al servicio de autenticación.")
         setStatus("error")
         return
       }
@@ -36,16 +36,15 @@ function ConfirmForm() {
       })
 
       if (error) {
-        setErrorMessage(error.message || "Confirmation failed. The link may have expired.")
+        setErrorMessage(error.message || "La confirmación falló. El enlace puede haber expirado.")
         setStatus("error")
         return
       }
 
       setStatus("success")
 
-      // Redirect after a brief pause so the user sees the success state
       setTimeout(() => {
-        let destination = "/"
+        let destination = "/es"
         if (redirectTo) {
           try {
             const url = new URL(redirectTo, window.location.origin)
@@ -53,7 +52,7 @@ function ConfirmForm() {
               destination = redirectTo
             }
           } catch {
-            // Invalid URL — fall back to "/"
+            // URL inválida — usar "/"
           }
         }
         window.location.href = destination
@@ -68,29 +67,29 @@ function ConfirmForm() {
       {status === "loading" && (
         <>
           <Loader2 className="h-10 w-10 animate-spin text-orange-500 mx-auto mb-4" />
-          <h1 className="text-xl font-bold text-slate-800 mb-1">Confirming your email</h1>
-          <p className="text-sm text-slate-500">Please wait a moment...</p>
+          <h1 className="text-xl font-bold text-slate-800 mb-1">Confirmando tu correo</h1>
+          <p className="text-sm text-slate-500">Por favor espera un momento...</p>
         </>
       )}
 
       {status === "success" && (
         <>
           <CheckCircle2 className="h-10 w-10 text-green-500 mx-auto mb-4" />
-          <h1 className="text-xl font-bold text-slate-800 mb-1">Email confirmed</h1>
-          <p className="text-sm text-slate-500">Redirecting you now...</p>
+          <h1 className="text-xl font-bold text-slate-800 mb-1">Correo confirmado</h1>
+          <p className="text-sm text-slate-500">Redirigiendo ahora...</p>
         </>
       )}
 
       {status === "error" && (
         <>
           <AlertCircle className="h-10 w-10 text-red-500 mx-auto mb-4" />
-          <h1 className="text-xl font-bold text-slate-800 mb-1">Confirmation failed</h1>
+          <h1 className="text-xl font-bold text-slate-800 mb-1">La confirmación falló</h1>
           <p className="text-sm text-slate-500 mb-4">{errorMessage}</p>
           <a
-            href="/login"
+            href="/es/login"
             className="text-sm font-medium text-orange-500 hover:text-orange-600 underline underline-offset-2"
           >
-            Back to Sign In
+            Volver a iniciar sesión
           </a>
         </>
       )}
@@ -98,7 +97,7 @@ function ConfirmForm() {
   )
 }
 
-export default function AuthConfirmPage() {
+export default function AuthConfirmPageEs() {
   return (
     <div className="min-h-screen bg-slate-50 flex items-center justify-center px-4">
       <Suspense fallback={null}>
