@@ -73,6 +73,9 @@ export default function SignUpPage() {
           emailRedirectTo:
             process.env.NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL ||
             `${window.location.origin}/dashboard`,
+          data: {
+            full_name: firstName.trim(),
+          },
         },
       })
       if (error) throw error
@@ -107,7 +110,7 @@ export default function SignUpPage() {
           <Card className="border-slate-200 shadow-sm">
             <CardHeader className="text-center">
               <div className="mx-auto mb-2 text-2xl font-black text-slate-800">
-                {"PDF"}<span className="text-orange-500">{".it"}</span>
+                Omnis<span className="text-orange-500">PDF</span>
               </div>
               <CardTitle className="text-xl text-slate-800">Create your account</CardTitle>
               <CardDescription className="text-slate-500">

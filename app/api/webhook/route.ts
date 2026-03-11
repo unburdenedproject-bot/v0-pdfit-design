@@ -77,19 +77,14 @@ export async function POST(request: NextRequest) {
     }
 
     if (userId && email) {
-      const { error } = await supabaseAdmin.from("users").upsert(
-        {
-          id: userId,
-          email,
-          plan,
-          stripe_customer_id: customerId || null,
-          stripe_subscription_id: subscriptionId || null,
-          cancel_at_period_end: false,
-          current_period_end: null,
-          updated_at: new Date().toISOString(),
-        },
-        { onConflict: "id" }
-      )
+      const { error } = await supabaseAdmin.from("users").update({
+        plan,
+        stripe_customer_id: customerId || null,
+        stripe_subscription_id: subscriptionId || null,
+        cancel_at_period_end: false,
+        current_period_end: null,
+        updated_at: new Date().toISOString(),
+      }).eq("id", userId)
 
       if (error) {
         console.error("Failed to update user plan:", error)
