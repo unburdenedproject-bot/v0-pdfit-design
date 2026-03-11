@@ -67,12 +67,9 @@ export function HeaderEs() {
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={handleToolsClick}
-              className="text-slate-700 hover:text-slate-900 font-medium transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 rounded-md px-2 py-1"
-            >
-              Herramientas
-            </button>
+            <Link href="/es" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
+              Inicio
+            </Link>
             <Link href="/es/acerca" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
               Nosotros
             </Link>
@@ -137,15 +134,13 @@ export function HeaderEs() {
       {mobileMenuOpen && (
         <nav className="fixed top-16 left-0 right-0 z-40 bg-white border-b border-gray-100 shadow-lg md:hidden">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-3">
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false)
-                handleToolsClick()
-              }}
-              className="text-left text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors"
+            <Link
+              href="/es"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors"
             >
-              Herramientas
-            </button>
+              Inicio
+            </Link>
             <Link
               href="/es/acerca"
               onClick={() => setMobileMenuOpen(false)}

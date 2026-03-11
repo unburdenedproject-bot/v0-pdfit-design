@@ -70,12 +70,9 @@ export function Header() {
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={handleToolsClick}
-              className="text-slate-700 hover:text-slate-900 font-medium transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 rounded-md px-2 py-1"
-            >
-              Tools
-            </button>
+            <Link href="/" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
+              Home
+            </Link>
             <Link href="/about" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
               About
             </Link>
@@ -142,15 +139,13 @@ export function Header() {
       {mobileMenuOpen && (
         <nav className="fixed top-16 left-0 right-0 z-40 bg-white border-b border-gray-100 shadow-lg md:hidden">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-3">
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false)
-                handleToolsClick()
-              }}
-              className="text-left text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors"
+            <Link
+              href="/"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors"
             >
-              Tools
-            </button>
+              Home
+            </Link>
             <Link
               href="/about"
               onClick={() => setMobileMenuOpen(false)}
