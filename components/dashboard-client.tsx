@@ -224,13 +224,13 @@ export function DashboardClient({
                 </Button>
               </Link>
               <Link href="/merge-pdf">
-                <Button className="bg-transparent border border-white/30 text-white hover:bg-white/10 font-bold">
+                <Button className="bg-orange-500 hover:bg-orange-600 text-white font-bold">
                   <Merge className="mr-2 h-4 w-4" />
                   Merge PDF
                 </Button>
               </Link>
               <Link href="/pdf-to-jpg">
-                <Button className="bg-transparent border border-white/30 text-white hover:bg-white/10 font-bold">
+                <Button className="bg-orange-500 hover:bg-orange-600 text-white font-bold">
                   <Image className="mr-2 h-4 w-4" />
                   PDF to JPG
                 </Button>
