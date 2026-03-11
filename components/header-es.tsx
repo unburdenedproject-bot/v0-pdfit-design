@@ -8,7 +8,7 @@ import { useEffect, useState } from "react"
 import { createClient } from "@/lib/supabase/client"
 import type { User as SupabaseUser } from "@supabase/supabase-js"
 
-export function Header() {
+export function HeaderEs() {
   const router = useRouter()
   const pathname = usePathname()
   const [user, setUser] = useState<SupabaseUser | null>(null)
@@ -18,19 +18,16 @@ export function Header() {
   useEffect(() => {
     const supabase = createClient()
 
-    // Skip auth when Supabase is not configured (e.g. v0 sandbox)
     if (!supabase) {
       setLoading(false)
       return
     }
 
-    // Get initial session
     supabase.auth.getUser().then(({ data }) => {
       setUser(data.user)
       setLoading(false)
     })
 
-    // Listen for auth changes
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
@@ -41,8 +38,8 @@ export function Header() {
   }, [])
 
   const handleToolsClick = () => {
-    if (pathname !== "/") {
-      router.push("/#tools")
+    if (pathname !== "/es") {
+      router.push("/es#tools")
       return
     }
 
@@ -63,7 +60,7 @@ export function Header() {
     <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/es" className="flex items-center space-x-2">
             <div className="text-2xl font-black">
               <span style={{color: '#1E3A8A'}}>Omnis</span><span style={{color: '#F97316'}}>PDF</span>
             </div>
@@ -74,40 +71,39 @@ export function Header() {
               onClick={handleToolsClick}
               className="text-slate-700 hover:text-slate-900 font-medium transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 rounded-md px-2 py-1"
             >
-              Tools
+              Herramientas
             </button>
-            <Link href="/about" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
-              About
+            <Link href="/es/acerca" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
+              Nosotros
             </Link>
-            <Link href="/contact" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
-              Contact
+            <Link href="/es/contacto" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
+              Contacto
             </Link>
-            <Link href="/pricing" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
-              Pricing
+            <Link href="/es/precios" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
+              Precios
             </Link>
-            <Link href="/tools" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
-              All Tools
+            <Link href="/es/herramientas" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
+              Todas las Herramientas
             </Link>
 
             {/* Language switcher */}
-            <Link href="/es" className="text-slate-500 hover:text-slate-700 text-sm font-medium transition-colors" title="Cambiar a Español">
-              ES
+            <Link href="/" className="text-slate-500 hover:text-slate-700 text-sm font-medium transition-colors" title="Switch to English">
+              EN
             </Link>
 
-            {/* Auth links */}
             {!loading && (
               user ? (
                 <Link href="/dashboard">
                   <Button size="sm" className="bg-orange-500 hover:bg-orange-600 text-white">
                     <User className="mr-1.5 h-4 w-4" />
-                    Dashboard
+                    Mi Cuenta
                   </Button>
                 </Link>
               ) : (
                 <Link href="/login">
                   <Button size="sm" variant="outline" className="border-slate-200 text-slate-700 hover:text-slate-900">
                     <LogIn className="mr-1.5 h-4 w-4" />
-                    Sign In
+                    Iniciar Sesión
                   </Button>
                 </Link>
               )
@@ -119,14 +115,13 @@ export function Header() {
             size="sm"
             className="md:hidden relative z-50"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
         </div>
       </div>
 
-      {/* Mobile menu overlay */}
       {mobileMenuOpen && (
         <div
           className="fixed inset-0 z-40 bg-black/20 md:hidden"
@@ -134,7 +129,6 @@ export function Header() {
         />
       )}
 
-      {/* Mobile menu panel */}
       {mobileMenuOpen && (
         <nav className="fixed top-16 left-0 right-0 z-40 bg-white border-b border-gray-100 shadow-lg md:hidden">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-3">
@@ -145,35 +139,43 @@ export function Header() {
               }}
               className="text-left text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors"
             >
-              Tools
+              Herramientas
             </button>
             <Link
-              href="/about"
+              href="/es/acerca"
               onClick={() => setMobileMenuOpen(false)}
               className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors"
             >
-              About
+              Nosotros
             </Link>
             <Link
-              href="/contact"
+              href="/es/contacto"
               onClick={() => setMobileMenuOpen(false)}
               className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors"
             >
-              Contact
+              Contacto
             </Link>
             <Link
-              href="/pricing"
+              href="/es/precios"
               onClick={() => setMobileMenuOpen(false)}
               className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors"
             >
-              Pricing
+              Precios
             </Link>
             <Link
-              href="/tools"
+              href="/es/herramientas"
               onClick={() => setMobileMenuOpen(false)}
               className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors"
             >
-              All Tools
+              Todas las Herramientas
+            </Link>
+
+            <Link
+              href="/"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-slate-500 hover:text-slate-700 text-sm font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors"
+            >
+              English
             </Link>
 
             {!loading && (
@@ -182,14 +184,14 @@ export function Header() {
                   <Link href="/dashboard" onClick={() => setMobileMenuOpen(false)}>
                     <Button size="sm" className="w-full bg-orange-500 hover:bg-orange-600 text-white">
                       <User className="mr-1.5 h-4 w-4" />
-                      Dashboard
+                      Mi Cuenta
                     </Button>
                   </Link>
                 ) : (
                   <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
                     <Button size="sm" variant="outline" className="w-full border-slate-200 text-slate-700 hover:text-slate-900">
                       <LogIn className="mr-1.5 h-4 w-4" />
-                      Sign In
+                      Iniciar Sesión
                     </Button>
                   </Link>
                 )}
