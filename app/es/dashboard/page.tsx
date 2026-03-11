@@ -4,11 +4,11 @@ export const revalidate = 0
 import { redirect } from "next/navigation"
 import { Suspense } from "react"
 import { createClient } from "@/lib/supabase/server"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { DashboardClient } from "@/components/dashboard-client"
+import { HeaderEs } from "@/components/header-es"
+import { FooterEs } from "@/components/footer-es"
+import { DashboardClientEs } from "@/components/dashboard-client-es"
 
-export default async function DashboardPage() {
+export default async function DashboardPageEs() {
   const supabase = await createClient()
   const { data, error } = await supabase.auth.getUser()
   if (error || !data?.user) redirect("/login")
@@ -31,19 +31,16 @@ export default async function DashboardPage() {
   // Auto-populate full_name if missing
   let fullName = profile?.full_name?.trim() || ""
   if (!fullName) {
-    // Try auth metadata
     fullName =
       (data.user.user_metadata?.full_name as string)?.trim() ||
       (data.user.user_metadata?.name as string)?.trim() ||
       ""
-    // Fallback: derive from email (before @, title case, dots/underscores become spaces)
     if (!fullName && data.user.email) {
       const local = data.user.email.split("@")[0]
       fullName = local
         .replace(/[._]/g, " ")
         .replace(/\b\w/g, (c) => c.toUpperCase())
     }
-    // Persist so we only do this once
     if (fullName) {
       await supabase
         .from("users")
@@ -54,8 +51,7 @@ export default async function DashboardPage() {
     }
   }
 
-  // Extract first name for the greeting
-  const firstName = fullName.split(" ")[0] || "there"
+  const firstName = fullName.split(" ")[0] || "amigo"
 
   const today = new Date().toISOString().split("T")[0]
   const { data: usage } = await supabase
@@ -89,10 +85,10 @@ export default async function DashboardPage() {
 
   return (
     <div className="flex min-h-screen flex-col bg-slate-50">
-      <Header />
+      <HeaderEs />
       <main className="flex-1">
         <Suspense>
-          <DashboardClient
+          <DashboardClientEs
             user={data.user}
             plan={plan}
             usageCount={usageCount}
@@ -104,7 +100,7 @@ export default async function DashboardPage() {
           />
         </Suspense>
       </main>
-      <Footer />
+      <FooterEs />
     </div>
   )
 }

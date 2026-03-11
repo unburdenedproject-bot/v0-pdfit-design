@@ -39,7 +39,7 @@ interface RecentActivity {
   created_at: string
 }
 
-interface DashboardClientProps {
+interface DashboardClientEsProps {
   user: User
   plan?: string
   usageCount?: number
@@ -51,49 +51,49 @@ interface DashboardClientProps {
 }
 
 const toolDisplayNames: Record<string, { label: string; icon: typeof FileText }> = {
-  "merge-pdf": { label: "Merge PDF", icon: Merge },
-  "split-pdf": { label: "Split PDF", icon: Split },
-  "rotate-pdf": { label: "Rotate PDF", icon: RotateCw },
-  "compress-pdf": { label: "Compress PDF", icon: Compress },
-  "protect-pdf": { label: "Protect PDF", icon: Lock },
-  "unlock-pdf": { label: "Unlock PDF", icon: Unlock },
-  "flatten-pdf": { label: "Flatten PDF", icon: Layers },
-  "pdf-to-jpg": { label: "PDF to JPG", icon: Image },
-  "pdf-to-png": { label: "PDF to PNG", icon: Image },
-  "pdf-to-txt": { label: "PDF to TXT", icon: FileText },
-  "pdf-to-word": { label: "PDF to Word", icon: FileText },
-  "pdf-to-excel": { label: "PDF to Excel", icon: FileText },
-  "pdf-to-powerpoint": { label: "PDF to PowerPoint", icon: FileText },
-  "word-to-pdf": { label: "Word to PDF", icon: FileText },
-  "excel-to-pdf": { label: "Excel to PDF", icon: FileText },
-  "powerpoint-to-pdf": { label: "PowerPoint to PDF", icon: FileText },
-  "extract-images-from-pdf": { label: "Extract Images", icon: Image },
-  "upload-ready-pdf": { label: "Upload-Ready PDF", icon: Upload },
-  "ocr-pdf": { label: "OCR Scanner", icon: Scan },
-  "phone-scan-cleanup": { label: "Phone Scan Cleanup", icon: Camera },
-  "watermark-pdf": { label: "Watermark PDF", icon: FileText },
+  "merge-pdf": { label: "Unir PDF", icon: Merge },
+  "split-pdf": { label: "Dividir PDF", icon: Split },
+  "rotate-pdf": { label: "Rotar PDF", icon: RotateCw },
+  "compress-pdf": { label: "Comprimir PDF", icon: Compress },
+  "protect-pdf": { label: "Proteger PDF", icon: Lock },
+  "unlock-pdf": { label: "Desbloquear PDF", icon: Unlock },
+  "flatten-pdf": { label: "Aplanar PDF", icon: Layers },
+  "pdf-to-jpg": { label: "PDF a JPG", icon: Image },
+  "pdf-to-png": { label: "PDF a PNG", icon: Image },
+  "pdf-to-txt": { label: "PDF a TXT", icon: FileText },
+  "pdf-to-word": { label: "PDF a Word", icon: FileText },
+  "pdf-to-excel": { label: "PDF a Excel", icon: FileText },
+  "pdf-to-powerpoint": { label: "PDF a PowerPoint", icon: FileText },
+  "word-to-pdf": { label: "Word a PDF", icon: FileText },
+  "excel-to-pdf": { label: "Excel a PDF", icon: FileText },
+  "powerpoint-to-pdf": { label: "PowerPoint a PDF", icon: FileText },
+  "extract-images-from-pdf": { label: "Extraer Imágenes", icon: Image },
+  "upload-ready-pdf": { label: "PDF Listo para Subir", icon: Upload },
+  "ocr-pdf": { label: "Escáner OCR", icon: Scan },
+  "phone-scan-cleanup": { label: "Limpiar Escaneo", icon: Camera },
+  "watermark-pdf": { label: "Marca de Agua", icon: FileText },
 }
 
 const quickTools = [
-  { label: "Merge PDF", href: "/merge-pdf", icon: Merge },
-  { label: "Split PDF", href: "/split-pdf", icon: Split },
-  { label: "Compress PDF", href: "/compress-pdf", icon: Compress },
-  { label: "Rotate PDF", href: "/rotate-pdf", icon: RotateCw },
-  { label: "PDF to JPG", href: "/pdf-to-jpg", icon: Image },
-  { label: "PDF to Word", href: "/pdf-to-word", icon: FileText },
-  { label: "Protect PDF", href: "/protect-pdf", icon: Lock },
-  { label: "Unlock PDF", href: "/unlock-pdf", icon: Unlock },
-  { label: "OCR Scanner", href: "/ocr-scanner", icon: Scan },
-  { label: "Flatten PDF", href: "/flatten-pdf", icon: Layers },
-  { label: "Upload-Ready", href: "/upload-ready-pdf", icon: Upload },
-  { label: "Scan Cleanup", href: "/phone-scan-cleanup", icon: Camera },
+  { label: "Unir PDF", href: "/es/unir-pdf", icon: Merge },
+  { label: "Dividir PDF", href: "/es/dividir-pdf", icon: Split },
+  { label: "Comprimir PDF", href: "/es/comprimir-pdf", icon: Compress },
+  { label: "Rotar PDF", href: "/es/rotar-pdf", icon: RotateCw },
+  { label: "PDF a JPG", href: "/es/pdf-a-jpg", icon: Image },
+  { label: "PDF a Word", href: "/es/pdf-a-word", icon: FileText },
+  { label: "Proteger PDF", href: "/es/proteger-pdf", icon: Lock },
+  { label: "Desbloquear PDF", href: "/es/desbloquear-pdf", icon: Unlock },
+  { label: "Escáner OCR", href: "/es/escaner-ocr", icon: Scan },
+  { label: "Aplanar PDF", href: "/es/aplanar-pdf", icon: Layers },
+  { label: "Listo para Subir", href: "/es/pdf-listo-para-subir", icon: Upload },
+  { label: "Limpiar Escaneo", href: "/es/limpiar-escaneo", icon: Camera },
 ]
 
 const tips = [
-  { text: "Combine multiple PDFs into one using Merge PDF", href: "/merge-pdf" },
-  { text: "Reduce file size for email with Compress PDF", href: "/compress-pdf" },
-  { text: "Make scanned documents searchable with OCR Scanner", href: "/ocr-scanner" },
-  { text: "Fix and optimize files for upload portals with Upload-Ready PDF", href: "/upload-ready-pdf" },
+  { text: "Combina varios PDFs en uno solo usando Unir PDF", href: "/es/unir-pdf" },
+  { text: "Reduce el tamaño de archivos para email con Comprimir PDF", href: "/es/comprimir-pdf" },
+  { text: "Haz que documentos escaneados sean buscables con el Escáner OCR", href: "/es/escaner-ocr" },
+  { text: "Arregla y optimiza archivos para portales de carga con PDF Listo para Subir", href: "/es/pdf-listo-para-subir" },
 ]
 
 function formatTimeAgo(dateStr: string): string {
@@ -104,15 +104,15 @@ function formatTimeAgo(dateStr: string): string {
   const diffHours = Math.floor(diffMs / 3600000)
   const diffDays = Math.floor(diffMs / 86400000)
 
-  if (diffMins < 1) return "Just now"
-  if (diffMins < 60) return `${diffMins}m ago`
-  if (diffHours < 24) return `${diffHours}h ago`
-  if (diffDays === 1) return "Yesterday"
-  if (diffDays < 7) return `${diffDays}d ago`
-  return date.toLocaleDateString("en-US", { month: "short", day: "numeric" })
+  if (diffMins < 1) return "Ahora"
+  if (diffMins < 60) return `hace ${diffMins}m`
+  if (diffHours < 24) return `hace ${diffHours}h`
+  if (diffDays === 1) return "Ayer"
+  if (diffDays < 7) return `hace ${diffDays}d`
+  return date.toLocaleDateString("es-MX", { month: "short", day: "numeric" })
 }
 
-export function DashboardClient({
+export function DashboardClientEs({
   user,
   plan = "free",
   usageCount = 0,
@@ -121,7 +121,7 @@ export function DashboardClient({
   displayName,
   recentActivity = [],
   monthlyCount = 0,
-}: DashboardClientProps) {
+}: DashboardClientEsProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [statusMessage, setStatusMessage] = useState<{
@@ -132,7 +132,7 @@ export function DashboardClient({
   const [billingError, setBillingError] = useState<string | null>(null)
 
   const isPro = plan === "pro" || plan === "business"
-  const planLabel = plan === "business" ? "Business" : plan === "pro" ? "Pro" : "Free"
+  const planLabel = plan === "business" ? "Business" : plan === "pro" ? "Pro" : "Gratis"
   const dailyLimit = 10
   const usagePercent = isPro ? 100 : Math.min((usageCount / dailyLimit) * 100, 100)
 
@@ -140,12 +140,12 @@ export function DashboardClient({
     if (searchParams.get("success") === "true") {
       setStatusMessage({
         type: "success",
-        text: "Payment successful! Your Pro plan is now active.",
+        text: "¡Pago exitoso! Tu plan Pro ya está activo.",
       })
     } else if (searchParams.get("canceled") === "true") {
       setStatusMessage({
         type: "canceled",
-        text: "Checkout was canceled. You can try again anytime.",
+        text: "El pago fue cancelado. Puedes intentarlo de nuevo cuando quieras.",
       })
     }
   }, [searchParams])
@@ -155,7 +155,7 @@ export function DashboardClient({
     if (supabase) {
       await supabase.auth.signOut()
     }
-    router.push("/")
+    router.push("/es")
     router.refresh()
   }
 
@@ -183,17 +183,17 @@ export function DashboardClient({
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-8">
         <div>
           <h1 className="text-3xl font-black text-slate-900">
-            Welcome back, {displayName || "there"}
+            Bienvenido, {displayName || "amigo"}
           </h1>
           <p className="text-slate-500 mt-1">
-            What do you need to fix today?
+            ¿Qué necesitas arreglar hoy?
           </p>
         </div>
         <div className="flex items-center gap-3">
-          <Link href="/tools">
+          <Link href="/es/herramientas">
             <Button className="bg-orange-500 hover:bg-orange-600 text-white">
               <Zap className="mr-2 h-4 w-4" />
-              All Tools
+              Todas las Herramientas
             </Button>
           </Link>
           <Button
@@ -203,7 +203,7 @@ export function DashboardClient({
             className="border-slate-200 text-slate-500 hover:text-slate-700"
           >
             <LogOut className="mr-2 h-4 w-4" />
-            Sign Out
+            Salir
           </Button>
         </div>
       </div>
@@ -212,27 +212,27 @@ export function DashboardClient({
       {usageCount === 0 && recentActivity.length === 0 && (
         <div className="mb-8 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 p-8 text-white">
           <div className="max-w-2xl">
-            <h2 className="text-2xl font-black mb-2">Get started with your first tool</h2>
+            <h2 className="text-2xl font-black mb-2">Comienza con tu primera herramienta</h2>
             <p className="text-slate-300 mb-6">
-              Pick a tool below to convert, compress, or organize your PDF. It only takes a few seconds.
+              Elige una herramienta para convertir, comprimir u organizar tu PDF. Solo toma unos segundos.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link href="/compress-pdf">
+              <Link href="/es/comprimir-pdf">
                 <Button className="bg-orange-500 hover:bg-orange-600 text-white font-bold">
                   <Compress className="mr-2 h-4 w-4" />
-                  Compress PDF
+                  Comprimir PDF
                 </Button>
               </Link>
-              <Link href="/merge-pdf">
+              <Link href="/es/unir-pdf">
                 <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 font-bold">
                   <Merge className="mr-2 h-4 w-4" />
-                  Merge PDF
+                  Unir PDF
                 </Button>
               </Link>
-              <Link href="/pdf-to-jpg">
+              <Link href="/es/pdf-a-jpg">
                 <Button variant="outline" className="border-white/20 text-white hover:bg-white/10 font-bold">
                   <Image className="mr-2 h-4 w-4" />
-                  PDF to JPG
+                  PDF a JPG
                 </Button>
               </Link>
             </div>
@@ -250,7 +250,7 @@ export function DashboardClient({
                 <Zap className="h-5 w-5 text-orange-600" />
               </div>
               <div>
-                <p className="text-xs font-medium text-slate-500 uppercase tracking-wide">Today</p>
+                <p className="text-xs font-medium text-slate-500 uppercase tracking-wide">Hoy</p>
                 <p className="text-2xl font-black text-slate-900">
                   {isPro ? usageCount : `${usageCount}/${dailyLimit}`}
                 </p>
@@ -267,7 +267,7 @@ export function DashboardClient({
               </div>
             )}
             {isPro && (
-              <p className="text-xs text-slate-500">Unlimited conversions</p>
+              <p className="text-xs text-slate-500">Conversiones ilimitadas</p>
             )}
           </CardContent>
         </Card>
@@ -280,11 +280,11 @@ export function DashboardClient({
                 <BarChart3 className="h-5 w-5 text-blue-600" />
               </div>
               <div>
-                <p className="text-xs font-medium text-slate-500 uppercase tracking-wide">This Month</p>
+                <p className="text-xs font-medium text-slate-500 uppercase tracking-wide">Este Mes</p>
                 <p className="text-2xl font-black text-slate-900">{monthlyCount}</p>
               </div>
             </div>
-            <p className="text-xs text-slate-500 mt-3">Files processed</p>
+            <p className="text-xs text-slate-500 mt-3">Archivos procesados</p>
           </CardContent>
         </Card>
 
@@ -306,18 +306,18 @@ export function DashboardClient({
             </div>
             {!isPro && (
               <Button
-                onClick={() => router.push("/pricing?source=dashboard")}
+                onClick={() => router.push("/es/precios?source=dashboard")}
                 size="sm"
                 className="mt-3 w-full bg-orange-500 hover:bg-orange-600 text-white text-xs"
               >
                 <Crown className="mr-1.5 h-3.5 w-3.5" />
-                Upgrade to Pro
+                Actualizar a Pro
               </Button>
             )}
             {isPro && !cancelAtPeriodEnd && currentPeriodEnd && (
               <p className="text-xs text-slate-500 mt-3">
-                Renews {new Date(currentPeriodEnd).toLocaleDateString("en-US", {
-                  month: "short", day: "numeric", year: "numeric",
+                Se renueva el {new Date(currentPeriodEnd).toLocaleDateString("es-MX", {
+                  day: "numeric", month: "short", year: "numeric",
                 })}
               </p>
             )}
@@ -325,8 +325,8 @@ export function DashboardClient({
               <div className="flex items-center gap-1.5 mt-3">
                 <AlertTriangle className="h-3.5 w-3.5 text-amber-500" />
                 <p className="text-xs text-amber-700">
-                  Ends {new Date(currentPeriodEnd).toLocaleDateString("en-US", {
-                    month: "short", day: "numeric",
+                  Termina el {new Date(currentPeriodEnd).toLocaleDateString("es-MX", {
+                    day: "numeric", month: "short",
                   })}
                 </p>
               </div>
@@ -342,9 +342,9 @@ export function DashboardClient({
           <Card className="border-slate-200 shadow-sm h-full">
             <CardHeader className="pb-4">
               <div className="flex items-center justify-between">
-                <CardTitle className="text-lg font-bold text-slate-900">Quick Tools</CardTitle>
-                <Link href="/tools" className="text-sm text-orange-500 hover:text-orange-600 font-medium flex items-center gap-1">
-                  View all <ArrowRight className="h-3.5 w-3.5" />
+                <CardTitle className="text-lg font-bold text-slate-900">Herramientas Rápidas</CardTitle>
+                <Link href="/es/herramientas" className="text-sm text-orange-500 hover:text-orange-600 font-medium flex items-center gap-1">
+                  Ver todas <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
             </CardHeader>
@@ -373,7 +373,7 @@ export function DashboardClient({
             <CardHeader className="pb-4">
               <CardTitle className="text-lg font-bold text-slate-900 flex items-center gap-2">
                 <Clock className="h-4 w-4 text-slate-400" />
-                Recent Activity
+                Actividad Reciente
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -382,9 +382,9 @@ export function DashboardClient({
                   <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center mx-auto mb-3">
                     <FileText className="h-6 w-6 text-slate-300" />
                   </div>
-                  <p className="text-sm text-slate-500 font-medium">No activity yet</p>
+                  <p className="text-sm text-slate-500 font-medium">Sin actividad aún</p>
                   <p className="text-xs text-slate-400 mt-1">
-                    Your recent conversions will appear here
+                    Tus conversiones recientes aparecerán aquí
                   </p>
                 </div>
               ) : (
@@ -426,7 +426,7 @@ export function DashboardClient({
         {/* Plan & Billing */}
         <Card className="border-slate-200 shadow-sm">
           <CardHeader className="pb-4">
-            <CardTitle className="text-lg font-bold text-slate-900">Plan & Billing</CardTitle>
+            <CardTitle className="text-lg font-bold text-slate-900">Plan y Facturación</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
@@ -443,16 +443,16 @@ export function DashboardClient({
                 </Badge>
               </div>
               <div className="flex items-center justify-between py-2 border-b border-slate-100">
-                <span className="text-sm text-slate-500">Status</span>
+                <span className="text-sm text-slate-500">Estado</span>
                 <span className="text-sm font-medium text-green-600 flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-green-500" />
-                  Active
+                  Activo
                 </span>
               </div>
               <div className="flex items-center justify-between py-2 border-b border-slate-100">
-                <span className="text-sm text-slate-500">Conversions</span>
+                <span className="text-sm text-slate-500">Conversiones</span>
                 <span className="text-sm font-medium text-slate-700">
-                  {isPro ? "Unlimited" : `${dailyLimit}/day`}
+                  {isPro ? "Ilimitadas" : `${dailyLimit}/día`}
                 </span>
               </div>
               <div className="flex items-center justify-between py-2 border-b border-slate-100">
@@ -473,10 +473,10 @@ export function DashboardClient({
                     try {
                       const res = await fetch("/api/create-portal-session", { method: "POST" })
                       const data = await res.json()
-                      if (!res.ok) throw new Error(data.error || "Something went wrong")
+                      if (!res.ok) throw new Error(data.error || "Algo salió mal")
                       if (data.url) window.location.href = data.url
                     } catch (err) {
-                      setBillingError(err instanceof Error ? err.message : "Could not open billing portal.")
+                      setBillingError(err instanceof Error ? err.message : "No se pudo abrir el portal de facturación.")
                       setIsBillingLoading(false)
                     }
                   }}
@@ -485,19 +485,19 @@ export function DashboardClient({
                   {isBillingLoading ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Opening...
+                      Abriendo...
                     </>
                   ) : (
-                    "Manage Billing"
+                    "Administrar Facturación"
                   )}
                 </Button>
               ) : (
                 <Button
-                  onClick={() => router.push("/pricing?source=dashboard")}
+                  onClick={() => router.push("/es/precios?source=dashboard")}
                   className="w-full bg-orange-500 hover:bg-orange-600 text-white"
                 >
                   <Crown className="mr-2 h-4 w-4" />
-                  Upgrade to Pro — $7.99/mo
+                  Actualizar a Pro — $7.99/mes
                 </Button>
               )}
               {billingError && (
@@ -512,7 +512,7 @@ export function DashboardClient({
           <CardHeader className="pb-4">
             <CardTitle className="text-lg font-bold text-slate-900 flex items-center gap-2">
               <Lightbulb className="h-4 w-4 text-amber-500" />
-              Tips
+              Consejos
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -539,17 +539,17 @@ export function DashboardClient({
       {!isPro && usageCount >= 5 && (
         <div className="mt-8 rounded-2xl bg-gradient-to-r from-orange-500 to-orange-600 p-6 text-white text-center">
           <h3 className="text-lg font-black mb-1">
-            You've used {usageCount} of {dailyLimit} free conversions today
+            Has usado {usageCount} de {dailyLimit} conversiones gratis hoy
           </h3>
           <p className="text-orange-100 text-sm mb-4">
-            Upgrade to Pro for unlimited conversions, all tools, and files up to 200MB.
+            Actualiza a Pro para conversiones ilimitadas, todas las herramientas y archivos hasta 200MB.
           </p>
           <Button
-            onClick={() => router.push("/pricing?source=dashboard")}
+            onClick={() => router.push("/es/precios?source=dashboard")}
             className="bg-white text-orange-600 hover:bg-orange-50 font-bold"
           >
             <Crown className="mr-2 h-4 w-4" />
-            Upgrade to Pro — $7.99/mo
+            Actualizar a Pro — $7.99/mes
           </Button>
         </div>
       )}

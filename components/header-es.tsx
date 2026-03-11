@@ -98,7 +98,7 @@ export function HeaderEs() {
 
             {!loading && (
               user ? (
-                <Link href="/dashboard">
+                <Link href="/es/dashboard">
                   <Button size="sm" className="bg-orange-500 hover:bg-orange-600 text-white">
                     <User className="mr-1.5 h-4 w-4" />
                     Mi Cuenta
@@ -192,7 +192,7 @@ export function HeaderEs() {
             {!loading && (
               <div className="pt-2 border-t border-gray-100">
                 {user ? (
-                  <Link href="/dashboard" onClick={() => setMobileMenuOpen(false)}>
+                  <Link href="/es/dashboard" onClick={() => setMobileMenuOpen(false)}>
                     <Button size="sm" className="w-full bg-orange-500 hover:bg-orange-600 text-white">
                       <User className="mr-1.5 h-4 w-4" />
                       Mi Cuenta
