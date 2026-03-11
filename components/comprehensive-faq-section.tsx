@@ -144,10 +144,7 @@ function FAQItem({ question, answer, isOpen, onToggle, questionId }: FAQItemProp
           <p
             className="text-slate-700 text-xs leading-relaxed"
             dangerouslySetInnerHTML={{
-              __html: answer.replace(
-                /contact@pdf\.it\.com/g,
-                '<a href="mailto:contact@omnispdf.com" class="text-orange-500 hover:text-orange-600 font-medium underline">contact@omnispdf.com</a>',
-              ),
+              __html: answer,
             }}
           />
         </div>

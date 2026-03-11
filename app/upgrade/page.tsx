@@ -40,7 +40,7 @@ export default async function UpgradePage({
     }
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://pdf.it.com"
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://omnispdf.com"
 
   const session = await getStripe().checkout.sessions.create({
     mode: "subscription",

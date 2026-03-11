@@ -107,6 +107,20 @@ const categories = [
         href: "/es/powerpoint-a-pdf",
         tier: "PRO" as const,
       },
+      {
+        name: "JPG a PDF",
+        description: "Convierte imágenes JPG a documentos PDF.",
+        icon: Image,
+        href: "/es/jpg-a-pdf",
+        tier: "FREE" as const,
+      },
+      {
+        name: "PNG a PDF",
+        description: "Convierte imágenes PNG a documentos PDF.",
+        icon: Image,
+        href: "/es/png-a-pdf",
+        tier: "FREE" as const,
+      },
     ],
   },
   {
