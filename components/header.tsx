@@ -6,6 +6,7 @@ import { Menu, X, User, LogIn } from "lucide-react"
 import { useRouter, usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
 import { createClient } from "@/lib/supabase/client"
+import { getAlternateRoute } from "@/lib/route-map"
 import type { User as SupabaseUser } from "@supabase/supabase-js"
 
 export function Header() {
@@ -87,7 +88,7 @@ export function Header() {
             </Link>
 
             {/* Language switcher */}
-            <Link href="/es" className="hover:opacity-80 transition-opacity" title="Cambiar a Español">
+            <Link href={getAlternateRoute(pathname)} className="hover:opacity-80 transition-opacity" title="Cambiar a Español">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500" className="w-6 h-4 rounded-sm shadow-sm border border-gray-200">
                 <rect width="750" height="500" fill="#c60b1e"/>
                 <rect y="125" width="750" height="250" fill="#ffc400"/>
@@ -175,7 +176,7 @@ export function Header() {
             </Link>
 
             <Link
-              href="/es"
+              href={getAlternateRoute(pathname)}
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center gap-2 text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors"
             >
