@@ -16,6 +16,7 @@ import {
   Eye,
   EyeOff,
   Unlock,
+  Crown,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
@@ -162,6 +163,53 @@ export function UnlockPdfInterface() {
 
   // Error state
   if (hasError) {
+    const isUpgradeError = (errorMessage || "").includes("upgrade_required")
+    const isLimitError = (errorMessage || "").toLowerCase().includes("daily limit reached") || (errorMessage || "").includes("daily_limit_reached")
+    const isSignupError = (errorMessage || "").includes("signup_required")
+
+    if (isSignupError) {
+      window.location.href = "/signup-required"
+      return null
+    }
+
+    if (isUpgradeError || isLimitError) {
+      return (
+        <section className="py-16">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-2xl mx-auto text-center">
+              <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Crown className="h-10 w-10 text-orange-500" />
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-2">
+                {isUpgradeError ? "This Feature Requires an Upgrade" : "You're out of free conversions"}
+              </h2>
+              <p className="text-xl sm:text-2xl font-bold text-orange-600 mb-4">Upgrade to Pro</p>
+              <p className="text-base sm:text-lg text-slate-600 mb-8">
+                {isUpgradeError
+                  ? "This tool is available on the Pro plan. Upgrade to unlock unlimited access to all PDF tools."
+                  : "Free includes 10 conversions per day. Upgrade for unlimited conversions."}
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <Button
+                  onClick={() => window.location.href = "/pricing"}
+                  className="bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl px-6 py-3"
+                >
+                  Upgrade to Pro
+                </Button>
+                <Button
+                  onClick={resetInterface}
+                  variant="outline"
+                  className="border border-slate-200 text-slate-700 rounded-xl px-6 py-3"
+                >
+                  Go Back
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+      )
+    }
+
     return (
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

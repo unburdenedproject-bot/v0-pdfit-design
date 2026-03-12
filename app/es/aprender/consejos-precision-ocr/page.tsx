@@ -189,7 +189,7 @@ export default function ConsejoPrecisionOCRPage() {
                 <li>&#10003; <strong>Endereza paginas torcidas.</strong> Incluso una inclinacion de 2-3 grados puede causar errores OCR. Si tu escaneo se ve ligeramente inclinado, usa <Link href="/es/rotar-pdf" className="text-orange-600 hover:underline">Rotar PDF</Link> para corregir la orientacion antes de ejecutar el OCR.</li>
                 <li>&#10003; <strong>Corrige paginas al reves.</strong> Si alguna pagina de tu PDF esta rotada 180 grados, el OCR fallara completamente o producira texto sin sentido. Rotalas al derecho primero.</li>
                 <li>&#10003; <strong>Maneja orientaciones mixtas.</strong> Algunos documentos mezclan paginas verticales y horizontales. Asegurate de que cada pagina este orientada para que el texto se lea de izquierda a derecha, de arriba a abajo antes de procesar.</li>
-                <li>&#10003; <strong>Usa la Limpieza de Escaneo para correccion automatica.</strong> La herramienta de <Link href="/es/limpieza-escaneo-telefono" className="text-orange-600 hover:underline">Limpieza de Escaneo</Link> detecta y corrige automaticamente la inclinacion en documentos capturados con telefono, ahorrandote el esfuerzo manual.</li>
+                <li>&#10003; <strong>Usa la Limpieza de Escaneo para correccion automatica.</strong> La herramienta de <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo</Link> detecta y corrige automaticamente la inclinacion en documentos capturados con telefono, ahorrandote el esfuerzo manual.</li>
               </ul>
             </section>
 
@@ -231,7 +231,7 @@ export default function ConsejoPrecisionOCRPage() {
                 <li>&#10003; <strong>Limpia el vidrio del escaner.</strong> El polvo, manchas y huellas dactilares en el vidrio del escaner aparecen como ruido en el escaneo y pueden ser confundidos con caracteres o puntuacion por el motor OCR.</li>
                 <li>&#10003; <strong>Usa la mejor copia disponible.</strong> Si tienes acceso a multiples copias de un documento (original, fotocopia, fax), siempre escanea la que tenga el texto mas nitido y oscuro.</li>
                 <li>&#10003; <strong>Quita grapas y clips.</strong> Estos crean sombras y pueden causar que la pagina se asiente de manera desigual en el escaner, produciendo escaneos torcidos.</li>
-                <li>&#10003; <strong>Considera el formato de salida.</strong> Si necesitas extraer datos a una hoja de calculo despues del OCR, usa <Link href="/es/pdf-a-excel" className="text-orange-600 hover:underline">PDF a Excel</Link>. Para texto editable, usa <Link href="/es/pdf-a-word" className="text-orange-600 hover:underline">PDF a Word</Link>. Para texto sin formato, usa <Link href="/es/pdf-a-txt" className="text-orange-600 hover:underline">PDF a TXT</Link>.</li>
+                <li>&#10003; <strong>Considera el formato de salida.</strong> Si necesitas extraer datos a una hoja de calculo despues del OCR, usa <Link href="/es/pdf-a-excel" className="text-orange-600 hover:underline">PDF a Excel</Link>. Para texto editable, usa <Link href="/es/pdf-a-word" className="text-orange-600 hover:underline">PDF a Word</Link>. Para texto sin formato, usa <Link href="/es/pdf-a-texto" className="text-orange-600 hover:underline">PDF a TXT</Link>.</li>
               </ul>
             </section>
 

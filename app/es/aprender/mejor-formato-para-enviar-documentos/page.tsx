@@ -204,7 +204,7 @@ export default function MejorFormatoParaEnviarDocumentosPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Texto Plano (.txt)</h3>
                   <p className="text-slate-600">
-                    Los archivos de texto plano no tienen formato — sin negritas, sin imagenes, sin tablas. Son utiles para codigo, registros o notas rapidas, pero nunca para documentos profesionales. Si necesitas extraer texto de un PDF, usa la herramienta <Link href="/es/pdf-a-txt" className="text-orange-600 hover:underline">PDF a TXT</Link> de OmnisPDF.
+                    Los archivos de texto plano no tienen formato — sin negritas, sin imagenes, sin tablas. Son utiles para codigo, registros o notas rapidas, pero nunca para documentos profesionales. Si necesitas extraer texto de un PDF, usa la herramienta <Link href="/es/pdf-a-texto" className="text-orange-600 hover:underline">PDF a TXT</Link> de OmnisPDF.
                   </p>
                 </div>
                 <div>

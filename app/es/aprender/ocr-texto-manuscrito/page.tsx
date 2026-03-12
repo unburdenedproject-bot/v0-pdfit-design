@@ -76,7 +76,7 @@ export default function OCRTextoManuscritoPage() {
             <ul className="space-y-2 text-slate-700">
               <li>&#10003; <strong>Usa tinta oscura sobre papel blanco.</strong> Tinta negra o azul oscuro sobre papel blanco limpio crea el mayor contraste.</li>
               <li>&#10003; <strong>Escanea a 400 DPI o mas.</strong> La escritura a mano necesita mas resolucion. Ve nuestra guia de <Link href="/es/aprender/consejos-precision-ocr" className="text-orange-600 hover:underline">Consejos de Precision OCR</Link>.</li>
-              <li>&#10003; <strong>Limpia el escaneo primero.</strong> Pasa los escaneos de telefono por <Link href="/es/limpieza-escaneo-telefono" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> antes del OCR.</li>
+              <li>&#10003; <strong>Limpia el escaneo primero.</strong> Pasa los escaneos de telefono por <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> antes del OCR.</li>
               <li>&#10003; <strong>Escribe en letras de imprenta.</strong> Si creas un documento que sera procesado por OCR, usa letras claras y separadas.</li>
               <li>&#10003; <strong>Deja espacio entre palabras.</strong> Escritura apretada con palabras juntas es mucho mas dificil de segmentar.</li>
               <li>&#10003; <strong>Usa papel con lineas.</strong> Mantiene tu texto recto y uniformemente espaciado.</li>

@@ -131,7 +131,7 @@ export default function RotarPDFEnIPhonePage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 font-bold mt-0.5">2.</span>
-                  <span><strong>Escaneos con camara del telefono.</strong> Usar la camara de tu iPhone o una app de escaneo puede producir paginas rotadas si no sostenias el telefono perfectamente recto. <Link href="/es/limpieza-escaneo-telefono" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> puede corregir el contraste y la calidad, pero aun puedes necesitar rotar.</span>
+                  <span><strong>Escaneos con camara del telefono.</strong> Usar la camara de tu iPhone o una app de escaneo puede producir paginas rotadas si no sostenias el telefono perfectamente recto. <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> puede corregir el contraste y la calidad, pero aun puedes necesitar rotar.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 font-bold mt-0.5">3.</span>
@@ -208,7 +208,7 @@ export default function RotarPDFEnIPhonePage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Convertir Fotos a PDF</h3>
                   <p className="text-slate-600">
-                    Tomaste fotos de un documento con tu iPhone? Convierte imagenes a PDF usando <Link href="/es/word-a-pdf" className="text-orange-600 hover:underline">nuestras herramientas de conversion</Link> o limpia las fotos con <Link href="/es/limpieza-escaneo-telefono" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> para resultados con aspecto profesional.
+                    Tomaste fotos de un documento con tu iPhone? Convierte imagenes a PDF usando <Link href="/es/word-a-pdf" className="text-orange-600 hover:underline">nuestras herramientas de conversion</Link> o limpia las fotos con <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> para resultados con aspecto profesional.
                   </p>
                 </div>
               </div>

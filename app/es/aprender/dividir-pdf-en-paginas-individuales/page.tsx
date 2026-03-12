@@ -127,7 +127,7 @@ export default function DividirPDFEnPaginasIndividualesPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Extraer texto de páginas específicas</h3>
-                  <p className="text-slate-600">¿Necesitas el texto de solo una página? Conviértela usando <Link href="/es/pdf-a-txt" className="text-orange-600 hover:underline">PDF a TXT</Link> para obtener una versión de texto plano que puedes copiar, editar o pegar en otro lugar.</p>
+                  <p className="text-slate-600">¿Necesitas el texto de solo una página? Conviértela usando <Link href="/es/pdf-a-texto" className="text-orange-600 hover:underline">PDF a TXT</Link> para obtener una versión de texto plano que puedes copiar, editar o pegar en otro lugar.</p>
                 </div>
               </div>
             </section>

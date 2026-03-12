@@ -244,7 +244,7 @@ export default function DesbloquearPDFEnMovilPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Limpieza de Escaneo de Telefono</h3>
                   <p className="text-slate-600">
-                    Tomaste una foto de un documento con la camara de tu telefono? Usa <Link href="/es/limpieza-escaneo-telefono" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> para enderezar, mejorar y convertirla en un PDF limpio y profesional.
+                    Tomaste una foto de un documento con la camara de tu telefono? Usa <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> para enderezar, mejorar y convertirla en un PDF limpio y profesional.
                   </p>
                 </div>
 

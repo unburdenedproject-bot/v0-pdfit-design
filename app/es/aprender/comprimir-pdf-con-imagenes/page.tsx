@@ -154,7 +154,7 @@ export default function ComprimirPDFConImagenesPage() {
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Usa compresión Media o Extrema.</strong> El texto escaneado se mantiene legible incluso a resoluciones más bajas porque nuestros ojos pueden llenar los vacíos. La compresión Media típicamente reduce un documento escaneado de 20MB a 3-5MB.</li>
                 <li>&#10003; <strong>Ejecuta OCR primero.</strong> Usa el <Link href="/es/escaner-ocr" className="text-orange-600 hover:underline">Escáner OCR</Link> para convertir imágenes escaneadas a texto con búsqueda. Esto hace el documento más útil y puede mejorar la eficiencia de la compresión.</li>
-                <li>&#10003; <strong>Limpia escaneos de teléfono.</strong> Si el documento fue escaneado con la cámara del teléfono, usa <Link href="/es/limpieza-escaneo-telefono" className="text-orange-600 hover:underline">Limpieza de Escaneo</Link> primero para eliminar sombras y enderezar páginas, luego comprime.</li>
+                <li>&#10003; <strong>Limpia escaneos de teléfono.</strong> Si el documento fue escaneado con la cámara del teléfono, usa <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo</Link> primero para eliminar sombras y enderezar páginas, luego comprime.</li>
                 <li>&#10003; <strong>Aplana anotaciones.</strong> Si has anotado el PDF escaneado, <Link href="/es/aplanar-pdf" className="text-orange-600 hover:underline">aplánalo primero</Link> para fusionar las anotaciones en la página antes de comprimir.</li>
               </ul>
             </section>

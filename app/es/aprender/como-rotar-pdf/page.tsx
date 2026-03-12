@@ -139,7 +139,7 @@ export default function ComoRotarPDFPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>Escaneos con camara del telefono.</strong> Tomar fotos de documentos con tu telefono puede resultar en paginas rotadas dependiendo de como sostenias el dispositivo. Herramientas como <Link href="/es/limpieza-escaneo-telefono" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> pueden ayudar, pero aun puedes necesitar rotar.</span>
+                  <span><strong>Escaneos con camara del telefono.</strong> Tomar fotos de documentos con tu telefono puede resultar en paginas rotadas dependiendo de como sostenias el dispositivo. Herramientas como <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> pueden ayudar, pero aun puedes necesitar rotar.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 font-bold mt-0.5">4.</span>

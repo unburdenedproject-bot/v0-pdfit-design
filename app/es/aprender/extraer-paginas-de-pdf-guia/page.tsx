@@ -135,7 +135,7 @@ export default function ExtraerPaginasDePDFGuiaPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Convertir a otro formato</h3>
-                  <p className="text-slate-600">¿Necesitas las páginas extraídas como imágenes? Usa <Link href="/es/pdf-a-jpg" className="text-orange-600 hover:underline">PDF a JPG</Link> o <Link href="/es/pdf-a-png" className="text-orange-600 hover:underline">PDF a PNG</Link> para convertirlas. Si necesitas texto editable, prueba <Link href="/es/pdf-a-txt" className="text-orange-600 hover:underline">PDF a TXT</Link>.</p>
+                  <p className="text-slate-600">¿Necesitas las páginas extraídas como imágenes? Usa <Link href="/es/pdf-a-jpg" className="text-orange-600 hover:underline">PDF a JPG</Link> o <Link href="/es/pdf-a-png" className="text-orange-600 hover:underline">PDF a PNG</Link> para convertirlas. Si necesitas texto editable, prueba <Link href="/es/pdf-a-texto" className="text-orange-600 hover:underline">PDF a TXT</Link>.</p>
                 </div>
               </div>
             </section>

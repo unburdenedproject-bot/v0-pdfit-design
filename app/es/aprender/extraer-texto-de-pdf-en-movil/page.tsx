@@ -226,7 +226,7 @@ export default function ExtraerTextoDePdfEnMovilPage() {
                 <li>&#x2713; Descarga el texto extraído o un PDF con búsqueda</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                <strong>Consejo:</strong> Si acabas de tomar una foto de un documento con la cámara de tu teléfono, usa <Link href="/es/limpieza-escaneo-telefono" className="text-orange-600 hover:underline">Limpieza de Escaneo de Teléfono</Link> primero para mejorar la calidad de imagen, luego ejecuta OCR para mayor precisión.
+                <strong>Consejo:</strong> Si acabas de tomar una foto de un documento con la cámara de tu teléfono, usa <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo de Teléfono</Link> primero para mejorar la calidad de imagen, luego ejecuta OCR para mayor precisión.
               </p>
             </section>
 

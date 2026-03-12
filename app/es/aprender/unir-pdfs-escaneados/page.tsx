@@ -164,7 +164,7 @@ export default function UnirPDFsEscaneadosPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">Limpiar Escaneos de Teléfono Antes de Unir</h2>
               <p className="text-slate-600 mb-4">Los documentos escaneados con teléfono frecuentemente tienen sombras, iluminación desigual y alineación torcida. Antes de unir, límpialos:</p>
               <ul className="space-y-2 text-slate-700">
-                <li>✓ <strong>Usa <Link href="/es/limpieza-escaneo-telefono" className="text-orange-600 hover:underline">Limpieza de Escaneo de Teléfono</Link></strong> para corregir automáticamente iluminación, eliminar sombras, enderezar páginas y mejorar el contraste.</li>
+                <li>✓ <strong>Usa <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo de Teléfono</Link></strong> para corregir automáticamente iluminación, eliminar sombras, enderezar páginas y mejorar el contraste.</li>
                 <li>✓ <strong>Procesa cada escaneo individualmente</strong> antes de unirlos en un documento.</li>
                 <li>✓ <strong>La herramienta de limpieza es gratuita</strong> con límites diarios — los usuarios Pro obtienen procesamiento ilimitado.</li>
               </ul>

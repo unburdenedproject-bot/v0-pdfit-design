@@ -222,7 +222,7 @@ export default function ComoComprimirUnPDFPage() {
                 <li>&#10003; <strong>Divide el PDF</strong> en partes más pequeñas usando <Link href="/es/dividir-pdf" className="text-orange-600 hover:underline">Dividir PDF</Link>, luego comprime cada parte por separado.</li>
                 <li>&#10003; <strong>Aplana el PDF</strong> primero con <Link href="/es/aplanar-pdf" className="text-orange-600 hover:underline">Aplanar PDF</Link> para eliminar campos de formulario y anotaciones antes de comprimir.</li>
                 <li>&#10003; <strong>Prueba la compresión Extrema</strong> si no lo has hecho — da la máxima reducción de tamaño.</li>
-                <li>&#10003; <strong>Elimina páginas innecesarias</strong> usando <Link href="/es/eliminar-paginas-pdf" className="text-orange-600 hover:underline">Eliminar Páginas</Link> antes de comprimir.</li>
+                <li>&#10003; <strong>Elimina páginas innecesarias</strong> usando <Link href="/es/eliminar-paginas-de-pdf" className="text-orange-600 hover:underline">Eliminar Páginas</Link> antes de comprimir.</li>
               </ul>
             </section>
 

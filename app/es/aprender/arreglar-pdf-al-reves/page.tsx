@@ -138,7 +138,7 @@ export default function ArreglarPDFAlRevesPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>Orientacion de camara del telefono.</strong> Tomar una foto de un documento mientras sostienes tu telefono al reves (o en un angulo de 180°) produce una imagen invertida. Incluso <Link href="/es/limpieza-escaneo-telefono" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> no siempre puede detectar esto automaticamente.</span>
+                  <span><strong>Orientacion de camara del telefono.</strong> Tomar una foto de un documento mientras sostienes tu telefono al reves (o en un angulo de 180°) produce una imagen invertida. Incluso <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> no siempre puede detectar esto automaticamente.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 font-bold mt-0.5">4.</span>

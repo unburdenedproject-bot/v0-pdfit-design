@@ -93,7 +93,7 @@ export default function OCRPDFEnMovilPage() {
           <section className="mb-12">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Mejores Resultados de OCR en Movil</h2>
             <ul className="space-y-2 text-slate-700">
-              <li>&#10003; <strong>Usa Limpieza de Escaneo de Telefono primero.</strong> Antes de ejecutar OCR, sube tu escaneo de telefono a <Link href="/es/limpieza-escaneo-telefono" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> de OmnisPDF.</li>
+              <li>&#10003; <strong>Usa Limpieza de Escaneo de Telefono primero.</strong> Antes de ejecutar OCR, sube tu escaneo de telefono a <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> de OmnisPDF.</li>
               <li>&#10003; <strong>Escanea con buena iluminacion.</strong> Luz natural funciona mejor. Evita escanear bajo luces fluorescentes y nunca uses flash.</li>
               <li>&#10003; <strong>Sostiene el telefono directamente arriba.</strong> Fotografiar en angulo crea distorsion de perspectiva que reduce la precision del OCR.</li>
               <li>&#10003; <strong>Usa las apps de escaner integradas.</strong> Notas (iPhone) y Google Drive (Android) tienen modos de escaneo que recortan, enderezan y mejoran automaticamente.</li>

@@ -52,7 +52,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - SEO cluster pages: all 6 clusters built (~100 pages)
 - Long-tail /learn/ articles: ~82 articles built across 16 categories
 
-### Spanish Layer (Partial — In Progress)
+### Spanish Layer (COMPLETE)
 - Spanish homepage (/es) with full tool grid and correct /es/ routes
 - Spanish header (header-es.tsx) and footer (footer-es.tsx)
 - Dynamic language switcher: flag links navigate to equivalent page in other language (lib/route-map.ts)
@@ -61,8 +61,12 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - Spanish legal pages: /es/politica-de-privacidad, /es/terminos-y-condiciones
 - Spanish dashboard: /es/dashboard (dashboard-client-es.tsx)
 - Spanish static pages: /es/acerca, /es/contacto, /es/precios, /es/herramientas
-- Spanish tool pages DONE: /es/jpg-a-pdf, /es/png-a-pdf
-- Spanish tool pages MISSING: Most tool pages are linked from the homepage but don't have actual page files yet (will 404)
+- Spanish core tool pages: ALL tool pages from the homepage have Spanish equivalents
+- Spanish Business tool pages: /es/automatizacion, /es/comparar-pdf, /es/firma-electronica, /es/redaccion-pdf, /es/extraccion-de-tablas
+- Spanish SEO cluster pages: 48 pages across 7 clusters (compression, merge, split, extract, security, edit, conversion)
+- Spanish /es/aprender/ articles: 81 articles across 16 categories (mirrors English /learn/)
+- Route map (lib/route-map.ts): 100+ bidirectional EN↔ES route pairs
+- Sitemaps submitted to Google Search Console — 200 pages discovered
 
 ### Signup & Auth Fixes Done
 - First name required on signup (validation + stored in Supabase user_metadata)
@@ -85,36 +89,20 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - Rotate PDF (4), Protect PDF (4), Unlock PDF (4), Watermark PDF (5)
 - Compress PDF (5), OCR PDF (6), QR Code (7)
 
-### Pages Already Indexed (DO NOT BREAK)
-- omnispdf.com
-- omnispdf.com/merge-pdf, /split-pdf, /rotate-pdf
-- omnispdf.com/protect-pdf, /unlock-pdf, /watermark-pdf
-- omnispdf.com/pdf-to-jpg, /pdf-to-png, /pdf-to-txt
-- omnispdf.com/jpg-to-pdf, /png-to-pdf
-- omnispdf.com/word-to-pdf, /excel-to-pdf, /powerpoint-to-pdf, /office-to-pdf
-- omnispdf.com/ocr-scanner, /qr-code
-- omnispdf.com/compress-pdf-to-5mb, /compress-pdf-to-2mb, /compress-pdf-for-email
-- omnispdf.com/extract-images-from-pdf, /flatten-pdf, /upload-ready-pdf
-- omnispdf.com/pdf-redaction
-- omnispdf.com/phone-scan-cleanup
-- omnispdf.com/pdf-compare
-- omnispdf.com/pricing, /about, /privacy-policy, /terms-conditions
+### Google Search Console Status
+- Sitemaps submitted, 200 pages discovered
+- DO NOT break any existing indexed pages
+- Both English and Spanish pages are being crawled
 
 ---
 
 ## TODO — By Priority
 
-### Priority 1: Spanish Tool Pages (NEXT)
-Spanish infrastructure is done (header, footer, homepage, auth, legal, dashboard, language switcher).
-Now need to create actual Spanish tool pages for all tools linked from the homepage.
-Missing pages will 404 — these are the ones that need to be built next.
-After tool pages: translate SEO cluster pages and /learn/ articles into Spanish.
-
-### Priority 2: Remaining Tools
+### Priority 1: Remaining Tools
 - Table Extraction to Excel — needs Google Document AI API (hardest, paid API, Business tier)
 - Resume ATS Optimizer (OpenAI API, Blue Ocean)
 
-### Priority 3: Infrastructure Migration
+### Priority 2: Infrastructure Migration
 Full plan in INFRASTRUCTURE.md.
 Move from Vercel serverless → R2 storage → Redis/BullMQ queue → Worker processors (Fly.io).
 Processing libraries: Ghostscript, PDFium, Poppler, OpenCV, Tesseract.

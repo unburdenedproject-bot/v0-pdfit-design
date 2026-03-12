@@ -152,14 +152,14 @@ export default function ConvertirPdfEscaneadoATextoPage() {
                 </table>
               </div>
               <p className="text-slate-600 mt-4">
-                <strong>Prueba rapida:</strong> Abre tu PDF e intenta resaltar una sola palabra. Si las palabras individuales se resaltan, es digital — usa <Link href="/es/pdf-a-txt" className="text-orange-600 hover:underline">PDF a TXT</Link>. Si toda la pagina se selecciona como un bloque, o nada se resalta, es escaneado — necesitas OCR.
+                <strong>Prueba rapida:</strong> Abre tu PDF e intenta resaltar una sola palabra. Si las palabras individuales se resaltan, es digital — usa <Link href="/es/pdf-a-texto" className="text-orange-600 hover:underline">PDF a TXT</Link>. Si toda la pagina se selecciona como un bloque, o nada se resalta, es escaneado — necesitas OCR.
               </p>
             </section>
 
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que PDF a TXT Estandar Falla en Documentos Escaneados</h2>
               <p className="text-slate-600 mb-4">
-                Las herramientas estandar de extraccion de texto como <Link href="/es/pdf-a-txt" className="text-orange-600 hover:underline">PDF a TXT</Link> leen los datos de texto incrustados en un archivo PDF. Buscan codigos de caracteres, fuentes y datos de posicionamiento.
+                Las herramientas estandar de extraccion de texto como <Link href="/es/pdf-a-texto" className="text-orange-600 hover:underline">PDF a TXT</Link> leen los datos de texto incrustados en un archivo PDF. Buscan codigos de caracteres, fuentes y datos de posicionamiento.
               </p>
               <p className="text-slate-600 mb-4">
                 En un PDF escaneado, no hay datos de texto — solo datos de imagen. Cada pagina es una imagen similar a JPEG o PNG del papel original. La herramienta no encuentra caracteres para extraer, asi que produce un archivo vacio o solo espacios en blanco.
@@ -210,7 +210,7 @@ export default function ConvertirPdfEscaneadoATextoPage() {
               <p className="text-slate-600 mb-4">La precision del OCR depende en gran medida de la calidad del escaneo. Asi es como obtener los mejores resultados:</p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Escanea a 300 DPI o mas.</strong> Los escaneos de baja resolucion (150 DPI o menos) producen texto borroso que el OCR tiene dificultad para leer. 300 DPI es el punto ideal para documentos de texto.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Usa buena iluminacion para escaneos de telefono.</strong> Sombras, iluminacion desigual y reflejos reducen la precision. Si escaneas con tu telefono, usa <Link href="/es/limpieza-escaneo-telefono" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> para mejorar la imagen antes del OCR.</span></li>
+                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Usa buena iluminacion para escaneos de telefono.</strong> Sombras, iluminacion desigual y reflejos reducen la precision. Si escaneas con tu telefono, usa <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> para mejorar la imagen antes del OCR.</span></li>
                 <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Mantiene la pagina plana y recta.</strong> Las paginas curvadas (de lomos de libros) y los escaneos inclinados reducen la precision. Aplana el documento lo mas posible.</span></li>
                 <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Escanea documentos de texto en blanco y negro.</strong> Para documentos solo de texto, el modo escala de grises o blanco y negro produce texto mas nitido con mejor contraste para OCR.</span></li>
                 <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">5.</span><span><strong>Limpia antes del OCR.</strong> Elimina manchas de cafe, marcas de dobleces y ruido de fondo si es posible. Una entrada mas limpia produce un resultado mas preciso.</span></li>
