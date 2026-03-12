@@ -9,22 +9,22 @@ export function FooterEs() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="text-2xl font-black mb-4">
-              <span style={{color: '#FFFFFF'}}>Omnis</span><span style={{color: '#F97316'}}>PDF</span>
+              <span style={{color: '#FFFFFF'}}>Omnis</span><span style={{color: '#FB923C'}}>PDF</span>
             </div>
             <p className="text-slate-400 mb-6 leading-relaxed">
               Convierte, comprime, une, divide, escanea y protege archivos PDF en segundos. Herramientas simples que funcionan en cualquier dispositivo.
             </p>
             <div className="flex space-x-4">
-              <Link href="#" className="text-slate-400 hover:text-orange-500 transition-colors">
+              <Link href="#" className="text-slate-400 hover:text-orange-400 transition-colors" aria-label="Síguenos en Facebook">
                 <Facebook className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-slate-400 hover:text-orange-500 transition-colors">
+              <Link href="#" className="text-slate-400 hover:text-orange-400 transition-colors" aria-label="Síguenos en Twitter">
                 <Twitter className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-slate-400 hover:text-orange-500 transition-colors">
+              <Link href="#" className="text-slate-400 hover:text-orange-400 transition-colors" aria-label="Síguenos en Instagram">
                 <Instagram className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-slate-400 hover:text-orange-500 transition-colors">
+              <Link href="#" className="text-slate-400 hover:text-orange-400 transition-colors" aria-label="Síguenos en LinkedIn">
                 <Linkedin className="h-5 w-5" />
               </Link>
             </div>
@@ -109,7 +109,7 @@ export function FooterEs() {
                 <Mail className="h-4 w-4 group-hover:scale-110 transition-transform" />
                 <span>contact@omnispdf.com</span>
               </a>
-              <p className="text-slate-500 text-xs">Respondemos en menos de 24 horas</p>
+              <p className="text-slate-400 text-xs">Respondemos en menos de 24 horas</p>
             </div>
           </div>
         </div>

@@ -21,7 +21,7 @@ export default function SignupRequiredPagePt() {
           </p>
           <Link
             href="/br/cadastro"
-            className="block w-full bg-[#F97316] hover:bg-[#EA580C] text-white font-bold py-3 px-6 rounded-xl text-center transition-colors mb-3"
+            className="block w-full bg-[#EA580C] hover:bg-[#C2410C] text-white font-bold py-3 px-6 rounded-xl text-center transition-colors mb-3"
           >
             Criar Conta Gratis
           </Link>

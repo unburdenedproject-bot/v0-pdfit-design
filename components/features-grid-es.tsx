@@ -291,7 +291,7 @@ function TierBadge({ tier }: { tier: "FREE" | "PRO" | "BUSINESS" }) {
   }
   if (tier === "PRO") {
     return (
-      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide" style={{ backgroundColor: "#FDE7C7", color: "#B45309" }}>
+      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide" style={{ backgroundColor: "#FDE7C7", color: "#92400E" }}>
         Pro
       </span>
     )

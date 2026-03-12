@@ -63,7 +63,7 @@ export function HeaderEs() {
         <div className="flex items-center justify-between h-16">
           <Link href="/es" className="flex items-center space-x-2">
             <div className="text-2xl font-black">
-              <span style={{color: '#1E3A8A'}}>Omnis</span><span style={{color: '#F97316'}}>PDF</span>
+              <span style={{color: '#1E3A8A'}}>Omnis</span><span style={{color: '#EA580C'}}>PDF</span>
             </div>
           </Link>
 
