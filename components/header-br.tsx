@@ -40,7 +40,7 @@ export function HeaderBr() {
 
   const handleToolsClick = () => {
     if (pathname !== "/br") {
-      router.push("/pt#tools")
+      router.push("/br#tools")
       return
     }
 

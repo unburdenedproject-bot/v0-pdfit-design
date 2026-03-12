@@ -61,7 +61,7 @@ export default function PrecosPage() {
                     className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                     asChild
                   >
-                    <Link href="/dashboard">Comecar Gratis</Link>
+                    <Link href="/br/painel">Comecar Gratis</Link>
                   </Button>
                 </div>
 

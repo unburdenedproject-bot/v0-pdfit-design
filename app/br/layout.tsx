@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   description:
     "Converta, comprima, una, divida e edite arquivos PDF instantaneamente. Sem cadastro. Processamento ultrarapido.",
   alternates: {
-    canonical: "https://omnispdf.com/pt",
+    canonical: "https://omnispdf.com/br",
     languages: {
       "en": "https://omnispdf.com",
       "es": "https://omnispdf.com/es",
-      "pt": "https://omnispdf.com/pt",
+      "pt": "https://omnispdf.com/br",
     },
   },
 }

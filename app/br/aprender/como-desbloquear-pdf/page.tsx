@@ -49,7 +49,7 @@ export default function ComoDesbloquearPdfPage() {
               <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Voce protegeu e agora precisa editar.</strong> Voce mesmo colocou a senha e agora quer remover para editar ou compartilhar sem restricoes.</span></li>
               <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Precisa imprimir um PDF restrito.</strong> O PDF abre normalmente mas nao permite imprimir. Veja nosso guia de <Link href="/br/aprender/desbloquear-pdf-para-imprimir" className="text-orange-600 hover:underline">desbloquear PDF para imprimir</Link>.</span></li>
               <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Copiar texto bloqueado.</strong> O PDF tem senha de permissoes que impede copiar texto.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Combinar com outros PDFs.</strong> Voce precisa <Link href="/br/juntar-pdf" className="text-orange-600 hover:underline">juntar PDFs</Link> mas um deles esta protegido.</span></li>
+              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Combinar com outros PDFs.</strong> Voce precisa <Link href="/br/unir-pdf" className="text-orange-600 hover:underline">juntar PDFs</Link> mas um deles esta protegido.</span></li>
             </ul>
           </section>
 
@@ -98,7 +98,7 @@ export default function ComoDesbloquearPdfPage() {
             <ul className="space-y-2 text-slate-700">
               <li>&#10003; <Link href="/br/aprender/desbloquear-pdf-para-imprimir" className="text-orange-600 hover:underline">Imprimir o PDF</Link> sem restricoes.</li>
               <li>&#10003; Copiar texto livremente.</li>
-              <li>&#10003; <Link href="/br/juntar-pdf" className="text-orange-600 hover:underline">Juntar com outros PDFs</Link>.</li>
+              <li>&#10003; <Link href="/br/unir-pdf" className="text-orange-600 hover:underline">Juntar com outros PDFs</Link>.</li>
               <li>&#10003; <Link href="/br/dividir-pdf" className="text-orange-600 hover:underline">Dividir o PDF</Link> em partes.</li>
               <li>&#10003; Se necessario, <Link href="/br/aprender/como-proteger-pdf-com-senha" className="text-orange-600 hover:underline">adicionar uma nova senha</Link>.</li>
             </ul>

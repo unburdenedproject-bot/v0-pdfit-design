@@ -113,7 +113,7 @@ export default function CodigoQRPage() {
                   </div>
                   <h2 className="text-xl font-bold text-slate-800 mb-2">O Gerador de Código QR é uma função Pro.</h2>
                   <p className="text-sm text-slate-500 mb-6">Atualize seu plano para desbloquear esta ferramenta e mais.</p>
-                  <Link href="/pricing">
+                  <Link href="/br/precos">
                     <Button className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 rounded-xl">
                       <Crown className="mr-2 h-4 w-4" />
                       Atualizar para Pro

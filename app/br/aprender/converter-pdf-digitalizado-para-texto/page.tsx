@@ -113,7 +113,7 @@ export default function ConverterPdfDigitalizadoParaTextoPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Melhore a Imagem Antes</h3>
-                  <p className="text-slate-600">Se o PDF está escuro ou com baixo contraste, use <Link href="/br/limpeza-de-scan" className="text-orange-600 hover:underline">Limpeza de Scan</Link> para melhorar a imagem antes de aplicar OCR.</p>
+                  <p className="text-slate-600">Se o PDF está escuro ou com baixo contraste, use <Link href="/br/limpeza-digitalizacao" className="text-orange-600 hover:underline">Limpeza de Scan</Link> para melhorar a imagem antes de aplicar OCR.</p>
                 </div>
               </div>
             </section>

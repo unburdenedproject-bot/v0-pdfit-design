@@ -157,7 +157,7 @@ export default function SobrePage() {
                 <p className="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
                   Nao precisa de conta para as ferramentas gratuitas. Atualize para Pro quando precisar de acesso ilimitado e funcoes avancadas.
                 </p>
-                <Link href="/pt#tools">
+                <Link href="/br#tools">
                   <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-xl text-lg transition-colors">
                     Comecar Gratis &rarr;
                   </button>
