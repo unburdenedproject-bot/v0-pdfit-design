@@ -65,8 +65,23 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - Spanish Business tool pages: /es/automatizacion, /es/comparar-pdf, /es/firma-electronica, /es/redaccion-pdf, /es/extraccion-de-tablas
 - Spanish SEO cluster pages: 48 pages across 7 clusters (compression, merge, split, extract, security, edit, conversion)
 - Spanish /es/aprender/ articles: 81 articles across 16 categories (mirrors English /learn/)
-- Route map (lib/route-map.ts): 100+ bidirectional EN↔ES route pairs
+- Route map (lib/route-map.ts): 111 trilingual EN↔ES↔BR route triplets
 - Sitemaps submitted to Google Search Console — 200 pages discovered
+
+### Brazilian Layer (COMPLETE)
+- Brazilian homepage (/br) with full tool grid and correct /br/ routes
+- Brazilian header (header-br.tsx) and footer (footer-br.tsx)
+- Trilingual language switcher: all 3 headers show 2 flags for the other 2 languages
+- Brazil flag for Portuguese, Spain flag for Spanish, US flag for English
+- Brazilian auth pages: /br/login, /br/cadastro, /br/cadastro/sucesso, /br/cadastro-necessario, /br/auth/confirmar, /br/auth/erro
+- Brazilian legal pages: /br/politica-de-privacidade, /br/termos-e-condicoes
+- Brazilian dashboard: /br/painel (dashboard-client-br.tsx)
+- Brazilian static pages: /br/sobre, /br/contato, /br/precos, /br/ferramentas
+- Brazilian core tool pages: ALL tool pages from the homepage have Brazilian equivalents
+- Brazilian Business tool pages: /br/automacao, /br/comparar-pdf, /br/assinatura-eletronica, /br/redacao-pdf, /br/extracao-de-tabelas
+- Brazilian SEO cluster pages: 54 pages across 7 clusters (compression, merge, split, extract, security, edit, conversion)
+- Brazilian /br/aprender/ articles: 81 articles across 16 categories (mirrors English /learn/ and Spanish /es/aprender/)
+- Total: 180 Brazilian pages
 
 ### Signup & Auth Fixes Done
 - First name required on signup (validation + stored in Supabase user_metadata)
@@ -93,6 +108,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - Sitemaps submitted, 200 pages discovered
 - DO NOT break any existing indexed pages
 - Both English and Spanish pages are being crawled
+- Brazilian /br pages need sitemaps submitted
 
 ---
 
@@ -119,16 +135,21 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 
 ## Architecture Notes
 - Spanish homepage (app/es/page.tsx) has its OWN inline categories array — does NOT use FeaturesGridEs component
+- Brazilian homepage (app/br/page.tsx) has its OWN inline categories array — does NOT use FeaturesGridBr component
 - FeaturesGridEs is only used by /es/herramientas (All Tools page)
-- When adding tools, update BOTH app/es/page.tsx AND components/features-grid-es.tsx
-- Route map for language switcher: lib/route-map.ts (must be updated when adding new pages)
+- FeaturesGridBr is only used by /br/ferramentas (All Tools page)
+- When adding tools, update app/es/page.tsx, app/br/page.tsx, components/features-grid-es.tsx, AND components/features-grid-br.tsx
+- Route map for language switcher: lib/route-map.ts (must be updated when adding new pages — trilingual [EN, ES, BR] tuples)
 - All Spanish tool hrefs must use /es/ prefix with translated slugs
+- All Brazilian tool hrefs must use /br/ prefix with Portuguese slugs
+- Components: header-br.tsx, footer-br.tsx, features-grid-br.tsx, dashboard-client-br.tsx
 
 ## Rules - Always Follow
 - Never break already indexed pages
 - Use iLoveAPI for PDF processing (except pdf-to-word/excel/powerpoint which use CloudConvert)
-- Target both USA and LATAM markets
-- When adding new pages, always add to BOTH English and Spanish layers
+- Target USA, LATAM, and Brazil markets
+- When adding new pages, always add to ALL THREE layers: English, Spanish, and Brazilian Portuguese
+- Brazilian pages use /br/ prefix (NOT /pt/) — targeting Brazil specifically
 - When adding new pages, update lib/route-map.ts for the language switcher
 - Paula is non-technical — explain things simply
 
