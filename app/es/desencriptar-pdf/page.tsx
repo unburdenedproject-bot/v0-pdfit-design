@@ -1,0 +1,228 @@
+import Script from "next/script"
+import { HeaderEs } from "@/components/header-es"
+import { FooterEs } from "@/components/footer-es"
+import { ProcessingInterface } from "@/components/processing-interface"
+import { Unlock, Zap, Shield, Download } from "lucide-react"
+import Link from "next/link"
+
+export const metadata = {
+  title: "Desencriptar PDF — Quita la Protección de un PDF | OmnisPDF",
+  description:
+    "Desencripta un PDF protegido con contraseña usando OmnisPDF. Quita la encriptación cuando conoces la contraseña y descarga un PDF sin protección en segundos.",
+  alternates: {
+    languages: {
+      en: "/unlock-pdf",
+      es: "/es/desencriptar-pdf",
+    },
+  },
+}
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué significa desencriptar un PDF?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Desencriptar un PDF significa quitar la encriptación y la protección con contraseña del archivo, generando una nueva versión del PDF que se puede abrir libremente sin necesidad de ingresar contraseña." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Necesito la contraseña para desencriptar un PDF?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF requiere la contraseña correcta del PDF. No puede recuperar, adivinar ni omitir contraseñas desconocidas." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Es legal desencriptar un PDF?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Solo debes desencriptar PDFs que sean tuyos o para los que tengas permiso explícito del propietario. OmnisPDF está diseñado para usos legítimos." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El PDF desencriptado mantiene su contenido intacto?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Desencriptar un PDF solo quita la protección con contraseña. Todo el contenido, formato, imágenes y estructura del documento permanecen exactamente iguales." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo volver a encriptar el PDF después?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Usa la herramienta Proteger PDF o Encriptar PDF de OmnisPDF para agregar una nueva contraseña cuando lo necesites." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Es seguro subir un PDF encriptado a OmnisPDF?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Todas las transferencias están encriptadas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." }
+    }
+  ]
+}
+
+export default function DesencriptarPDFPage() {
+  return (
+    <div className="min-h-screen bg-white">
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <HeaderEs />
+      <main>
+        {/* Hero */}
+        <section className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-16">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Unlock className="h-10 w-10 text-white" />
+              </div>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Desencriptar PDF</h1>
+              <p className="text-xl text-slate-300 mb-8">
+                Quita la encriptación y la protección con contraseña de tu PDF con OmnisPDF. Ingresa la contraseña que ya conoces y descarga una versión sin restricciones para editar, imprimir o compartir libremente.
+              </p>
+              <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Desencriptación Instantánea</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-orange-500" /><span>Archivos Eliminados Después de la Sesión</span></div>
+                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-orange-500" /><span>Sin Registro</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Processing Interface */}
+        <ProcessingInterface
+          acceptedFiles=".pdf"
+          toolName="Unlock PDF"
+          outputFormat="PDF"
+          processingMessage="Desencriptando tu PDF..."
+          successMessage="¡Tu PDF desencriptado está listo!"
+        />
+
+        {/* About */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <p className="text-lg text-slate-600 mb-8">
+              Usa la herramienta Desencriptar PDF de OmnisPDF para quitar la encriptación de archivos PDF protegidos con contraseña. Ideal para PDFs propios cuya contraseña olvidaste dónde guardaste, documentos de trabajo que necesitas editar, archivos heredados o PDFs que quieres compartir sin restricciones.
+            </p>
+            <ul className="space-y-2 text-slate-700 mb-8">
+              <li>✓ Desencripta archivos PDF cuando conoces la contraseña</li>
+              <li>✓ Quita la protección para editar, imprimir o compartir</li>
+              <li>✓ El contenido del PDF se mantiene intacto</li>
+              <li>✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
+              <li>✓ Sin instalación — desencripta PDFs desde tu navegador</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Feature Sections */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
+            <div>
+              <h2 className="text-2xl font-black text-slate-900 mb-3">Recupera el Acceso a tus PDFs Propios</h2>
+              <p className="text-slate-600">
+                ¿Encriptaste un PDF hace tiempo y ahora necesitas una versión sin contraseña? Ingresa la contraseña original y OmnisPDF genera un nuevo PDF libre de protección que puedes usar sin restricciones.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-2xl font-black text-slate-900 mb-3">Facilita el Trabajo con Documentos Protegidos</h2>
+              <p className="text-slate-600">
+                A veces necesitas editar, firmar, unir o comprimir un PDF que está encriptado. Desencríptalo primero para poder usar otras herramientas PDF sin restricciones.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-2xl font-black text-slate-900 mb-3">Comparte PDFs sin Restricciones</h2>
+              <p className="text-slate-600">
+                Cuando ya no necesitas la protección con contraseña — por ejemplo, para archivos heredados o documentos aprobados — desencripta el PDF para compartirlo libremente con tu equipo o clientes.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* How To */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Desencriptar un PDF</h2>
+            <div className="space-y-4">
+              {[
+                "Sube tu PDF encriptado a OmnisPDF.",
+                "Ingresa la contraseña correcta del PDF.",
+                "Haz clic en Desencriptar PDF y descarga el archivo sin protección.",
+              ].map((step, i) => (
+                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
+                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    {i + 1}
+                  </div>
+                  <p className="text-slate-700 pt-1">{step}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Related Tools */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <h2 className="text-2xl font-black text-slate-900 mb-6 text-center">Herramientas Relacionadas</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {[
+                { name: "Desbloquear PDF", href: "/es/desbloquear-pdf", desc: "Quita la contraseña de un PDF" },
+                { name: "Proteger PDF", href: "/es/proteger-pdf", desc: "Agrega contraseña a tu PDF" },
+                { name: "Encriptar PDF", href: "/es/encriptar-pdf", desc: "Cifra tu PDF con contraseña" },
+                { name: "Redacción PDF", href: "/es/redaccion-pdf", desc: "Oculta información sensible" },
+                { name: "Aplanar PDF", href: "/es/aplanar-pdf", desc: "Bloquea formularios y capas" },
+                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamaño del archivo" },
+                { name: "Unir PDF", href: "/es/unir-pdf", desc: "Combina varios PDFs en uno" },
+                { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Separa páginas de un PDF" },
+              ].map((tool) => (
+                <Link
+                  key={tool.href}
+                  href={tool.href}
+                  className="border border-orange-200 bg-orange-50 rounded-xl p-4 hover:border-orange-400 hover:bg-orange-100 transition-all text-center flex flex-col justify-center min-h-[80px]"
+                >
+                  <div className="font-bold text-orange-600 text-sm mb-1">{tool.name}</div>
+                  <div className="text-xs text-slate-500">{tool.desc}</div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
+            <div className="space-y-6">
+              {[
+                {
+                  q: "¿Qué significa desencriptar un PDF?",
+                  a: "Desencriptar un PDF significa quitar la encriptación y la protección con contraseña del archivo, generando una nueva versión del PDF que se puede abrir libremente sin necesidad de ingresar contraseña.",
+                },
+                {
+                  q: "¿Necesito la contraseña para desencriptar un PDF?",
+                  a: "Sí. OmnisPDF requiere la contraseña correcta del PDF. No puede recuperar, adivinar ni omitir contraseñas desconocidas.",
+                },
+                {
+                  q: "¿Es legal desencriptar un PDF?",
+                  a: "Solo debes desencriptar PDFs que sean tuyos o para los que tengas permiso explícito del propietario. OmnisPDF está diseñado para usos legítimos.",
+                },
+                {
+                  q: "¿El PDF desencriptado mantiene su contenido intacto?",
+                  a: "Sí. Desencriptar un PDF solo quita la protección con contraseña. Todo el contenido, formato, imágenes y estructura del documento permanecen exactamente iguales.",
+                },
+                {
+                  q: "¿Puedo volver a encriptar el PDF después?",
+                  a: "Sí. Usa la herramienta Proteger PDF o Encriptar PDF de OmnisPDF para agregar una nueva contraseña cuando lo necesites.",
+                },
+                {
+                  q: "¿Es seguro subir un PDF encriptado a OmnisPDF?",
+                  a: "Sí. Todas las transferencias están encriptadas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos.",
+                },
+              ].map((faq, i) => (
+                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
+                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
+                  <p className="text-slate-600 text-sm">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+      <FooterEs />
+    </div>
+  )
+}
