@@ -9,7 +9,7 @@ import { createClient } from "@/lib/supabase/client"
 import { getAlternateRoute } from "@/lib/route-map"
 import type { User as SupabaseUser } from "@supabase/supabase-js"
 
-export function HeaderEs() {
+export function HeaderPt() {
   const router = useRouter()
   const pathname = usePathname()
   const [user, setUser] = useState<SupabaseUser | null>(null)
@@ -39,8 +39,8 @@ export function HeaderEs() {
   }, [])
 
   const handleToolsClick = () => {
-    if (pathname !== "/es") {
-      router.push("/es#tools")
+    if (pathname !== "/pt") {
+      router.push("/pt#tools")
       return
     }
 
@@ -61,27 +61,27 @@ export function HeaderEs() {
     <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/es" className="flex items-center space-x-2">
+          <Link href="/pt" className="flex items-center space-x-2">
             <div className="text-2xl font-black">
               <span style={{color: '#1E3A8A'}}>Omnis</span><span style={{color: '#F97316'}}>PDF</span>
             </div>
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/es" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
+            <Link href="/pt" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
               Inicio
             </Link>
-            <Link href="/es/acerca" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
-              Nosotros
+            <Link href="/pt/sobre" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
+              Sobre
             </Link>
-            <Link href="/es/contacto" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
-              Contacto
+            <Link href="/pt/contato" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
+              Contato
             </Link>
-            <Link href="/es/precios" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
-              Precios
+            <Link href="/pt/precos" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
+              Precos
             </Link>
-            <Link href="/es/herramientas" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
-              Todas las Herramientas
+            <Link href="/pt/ferramentas" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
+              Todas as Ferramentas
             </Link>
 
             {/* Language switcher */}
@@ -91,31 +91,30 @@ export function HeaderEs() {
                   <rect width="7410" height="3900" fill="#B22234"/>
                   <path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" strokeWidth="300"/>
                   <rect width="2964" height="2100" fill="#3C3B6E"/>
-                  <g fill="#fff"><g id="s18"><g id="s9"><g id="s5"><g id="s4"><path id="s" d="M247,90 317.534230,307.082039 132.873218,172.917961H361.126782L176.465770,307.082039z"/><use href="#s" y="420"/><use href="#s" y="840"/><use href="#s" y="1260"/></g><use href="#s" y="1680"/></g><use href="#s4" x="247" y="210"/></g><use href="#s9" x="494"/></g><use href="#s18" x="988"/><use href="#s9" x="1976"/></g>
+                  <g fill="#fff"><g id="ps18"><g id="ps9"><g id="ps5"><g id="ps4"><path id="ps" d="M247,90 317.534230,307.082039 132.873218,172.917961H361.126782L176.465770,307.082039z"/><use href="#ps" y="420"/><use href="#ps" y="840"/><use href="#ps" y="1260"/></g><use href="#ps" y="1680"/></g><use href="#ps4" x="247" y="210"/></g><use href="#ps9" x="494"/></g><use href="#ps18" x="988"/><use href="#ps9" x="1976"/></g>
                 </svg>
               </Link>
-              <Link href={getAlternateRoute(pathname, "pt")} className="hover:opacity-80 transition-opacity" title="Mudar para Português">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 504" className="w-6 h-4 rounded-sm shadow-sm border border-gray-200">
-                  <rect width="720" height="504" fill="#009B3A"/>
-                  <polygon points="360,42 692,252 360,462 28,252" fill="#FEDF00"/>
-                  <circle cx="360" cy="252" r="115" fill="#002776"/>
+              <Link href={getAlternateRoute(pathname, "es")} className="hover:opacity-80 transition-opacity" title="Cambiar a Español">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500" className="w-6 h-4 rounded-sm shadow-sm border border-gray-200">
+                  <rect width="750" height="500" fill="#c60b1e"/>
+                  <rect y="125" width="750" height="250" fill="#ffc400"/>
                 </svg>
               </Link>
             </div>
 
             {!loading && (
               user ? (
-                <Link href="/es/dashboard">
+                <Link href="/pt/painel">
                   <Button size="sm" className="bg-orange-500 hover:bg-orange-600 text-white">
                     <User className="mr-1.5 h-4 w-4" />
-                    Mi Cuenta
+                    Painel
                   </Button>
                 </Link>
               ) : (
-                <Link href="/es/login">
+                <Link href="/pt/login">
                   <Button size="sm" variant="outline" className="border-slate-200 text-slate-700 hover:text-slate-900">
                     <LogIn className="mr-1.5 h-4 w-4" />
-                    Iniciar Sesión
+                    Entrar
                   </Button>
                 </Link>
               )
@@ -127,7 +126,7 @@ export function HeaderEs() {
             size="sm"
             className="md:hidden relative z-50"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
@@ -145,39 +144,39 @@ export function HeaderEs() {
         <nav className="fixed top-16 left-0 right-0 z-40 bg-white border-b border-gray-100 shadow-lg md:hidden">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-3">
             <Link
-              href="/es"
+              href="/pt"
               onClick={() => setMobileMenuOpen(false)}
               className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors"
             >
               Inicio
             </Link>
             <Link
-              href="/es/acerca"
+              href="/pt/sobre"
               onClick={() => setMobileMenuOpen(false)}
               className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors"
             >
-              Nosotros
+              Sobre
             </Link>
             <Link
-              href="/es/contacto"
+              href="/pt/contato"
               onClick={() => setMobileMenuOpen(false)}
               className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors"
             >
-              Contacto
+              Contato
             </Link>
             <Link
-              href="/es/precios"
+              href="/pt/precos"
               onClick={() => setMobileMenuOpen(false)}
               className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors"
             >
-              Precios
+              Precos
             </Link>
             <Link
-              href="/es/herramientas"
+              href="/pt/ferramentas"
               onClick={() => setMobileMenuOpen(false)}
               className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors"
             >
-              Todas las Herramientas
+              Todas as Ferramentas
             </Link>
 
             <Link
@@ -189,37 +188,36 @@ export function HeaderEs() {
                 <rect width="7410" height="3900" fill="#B22234"/>
                 <path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" strokeWidth="300"/>
                 <rect width="2964" height="2100" fill="#3C3B6E"/>
-                <g fill="#fff"><g id="ms18"><g id="ms9"><g id="ms5"><g id="ms4"><path id="ms" d="M247,90 317.534230,307.082039 132.873218,172.917961H361.126782L176.465770,307.082039z"/><use href="#ms" y="420"/><use href="#ms" y="840"/><use href="#ms" y="1260"/></g><use href="#ms" y="1680"/></g><use href="#ms4" x="247" y="210"/></g><use href="#ms9" x="494"/></g><use href="#ms18" x="988"/><use href="#ms9" x="1976"/></g>
+                <g fill="#fff"><g id="mps18"><g id="mps9"><g id="mps5"><g id="mps4"><path id="mps" d="M247,90 317.534230,307.082039 132.873218,172.917961H361.126782L176.465770,307.082039z"/><use href="#mps" y="420"/><use href="#mps" y="840"/><use href="#mps" y="1260"/></g><use href="#mps" y="1680"/></g><use href="#mps4" x="247" y="210"/></g><use href="#mps9" x="494"/></g><use href="#mps18" x="988"/><use href="#mps9" x="1976"/></g>
               </svg>
               English
             </Link>
             <Link
-              href={getAlternateRoute(pathname, "pt")}
+              href={getAlternateRoute(pathname, "es")}
               onClick={() => setMobileMenuOpen(false)}
               className="flex items-center gap-2 text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 504" className="w-6 h-4 rounded-sm shadow-sm border border-gray-200">
-                <rect width="720" height="504" fill="#009B3A"/>
-                <polygon points="360,42 692,252 360,462 28,252" fill="#FEDF00"/>
-                <circle cx="360" cy="252" r="115" fill="#002776"/>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500" className="w-6 h-4 rounded-sm shadow-sm border border-gray-200">
+                <rect width="750" height="500" fill="#c60b1e"/>
+                <rect y="125" width="750" height="250" fill="#ffc400"/>
               </svg>
-              Português
+              Español
             </Link>
 
             {!loading && (
               <div className="pt-2 border-t border-gray-100">
                 {user ? (
-                  <Link href="/es/dashboard" onClick={() => setMobileMenuOpen(false)}>
+                  <Link href="/pt/painel" onClick={() => setMobileMenuOpen(false)}>
                     <Button size="sm" className="w-full bg-orange-500 hover:bg-orange-600 text-white">
                       <User className="mr-1.5 h-4 w-4" />
-                      Mi Cuenta
+                      Painel
                     </Button>
                   </Link>
                 ) : (
-                  <Link href="/es/login" onClick={() => setMobileMenuOpen(false)}>
+                  <Link href="/pt/login" onClick={() => setMobileMenuOpen(false)}>
                     <Button size="sm" variant="outline" className="w-full border-slate-200 text-slate-700 hover:text-slate-900">
                       <LogIn className="mr-1.5 h-4 w-4" />
-                      Iniciar Sesión
+                      Entrar
                     </Button>
                   </Link>
                 )}
