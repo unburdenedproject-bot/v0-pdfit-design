@@ -148,13 +148,8 @@ export function ImageToPdfInterface({
           try {
             const errorData = JSON.parse(rawBody)
             if (errorData.error) message = errorData.error
-            if (
-              message.includes("upgrade_required") ||
-              message.includes("signup_required")
-            ) {
-              router.push(`/pricing?source=${formatLabel.toLowerCase()}-to-pdf`)
-              return
-            }
+            if (message.includes("upgrade_required")) { router.push(`/pricing?source=${formatLabel.toLowerCase()}-to-pdf`); return }
+            if (message.includes("signup_required")) { router.push("/signup-required"); return }
           } catch {
             if (rawBody) message = rawBody
           }

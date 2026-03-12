@@ -29,12 +29,12 @@ export default function CodigoQRPage() {
     if (supabase) {
       const { data: { user } } = await supabase.auth.getUser()
       if (!user) {
-        router.push("/pricing?source=qr-code")
+        router.push("/es/precios?source=qr-code")
         return
       }
       const { data: profile } = await supabase.from("users").select("plan").eq("id", user.id).single()
       if (profile?.plan !== "pro" && profile?.plan !== "business") {
-        router.push("/pricing?source=qr-code")
+        router.push("/es/precios?source=qr-code")
         return
       }
     }
@@ -113,7 +113,7 @@ export default function CodigoQRPage() {
                   </div>
                   <h2 className="text-xl font-bold text-slate-800 mb-2">El Generador de Codigo QR es una funcion Pro.</h2>
                   <p className="text-sm text-slate-500 mb-6">Actualiza tu plan para desbloquear esta herramienta y mas.</p>
-                  <Link href="/pricing">
+                  <Link href="/es/precios">
                     <Button className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 rounded-xl">
                       <Crown className="mr-2 h-4 w-4" />
                       Actualizar a Pro

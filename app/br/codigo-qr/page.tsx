@@ -29,12 +29,12 @@ export default function CodigoQRPage() {
     if (supabase) {
       const { data: { user } } = await supabase.auth.getUser()
       if (!user) {
-        router.push("/pricing?source=qr-code")
+        router.push("/br/precos?source=qr-code")
         return
       }
       const { data: profile } = await supabase.from("users").select("plan").eq("id", user.id).single()
       if (profile?.plan !== "pro" && profile?.plan !== "business") {
-        router.push("/pricing?source=qr-code")
+        router.push("/br/precos?source=qr-code")
         return
       }
     }

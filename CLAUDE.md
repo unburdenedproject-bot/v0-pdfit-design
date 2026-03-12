@@ -105,10 +105,9 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - Compress PDF (5), OCR PDF (6), QR Code (7)
 
 ### Google Search Console Status
-- Sitemaps submitted, 200 pages discovered
+- Sitemap rewritten with 520 URLs across EN/ES/BR — submitted 2026-03-12
 - DO NOT break any existing indexed pages
-- Both English and Spanish pages are being crawled
-- Brazilian /br pages need sitemaps submitted
+- English, Spanish, and Brazilian pages all included in sitemap
 
 ---
 

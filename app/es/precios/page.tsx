@@ -61,7 +61,7 @@ export default function PreciosPage() {
                     className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                     asChild
                   >
-                    <Link href="/dashboard">Empezar Gratis</Link>
+                    <Link href="/es/dashboard">Empezar Gratis</Link>
                   </Button>
                 </div>
 

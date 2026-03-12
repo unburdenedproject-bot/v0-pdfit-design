@@ -2,6 +2,7 @@
 
 import type React from "react"
 import { useState, useCallback, useEffect } from "react"
+import { usePathname } from "next/navigation"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -57,6 +58,8 @@ const POSITIONS = [
 ]
 
 export function WatermarkPdfInterface() {
+  const pathname = usePathname()
+  const pricingUrl = pathname.startsWith("/es") ? "/es/precios" : pathname.startsWith("/br") ? "/br/precos" : "/pricing"
   const [isDragOver, setIsDragOver] = useState(false)
   const [file, setFile] = useState<File | null>(null)
   const [text, setText] = useState("CONFIDENTIAL")
@@ -251,7 +254,7 @@ export function WatermarkPdfInterface() {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <Button
-                  onClick={() => window.location.href = "/pricing"}
+                  onClick={() => window.location.href = pricingUrl}
                   className="bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl px-6 py-3"
                 >
                   Upgrade to Pro
@@ -376,7 +379,7 @@ export function WatermarkPdfInterface() {
                     Files up to 200MB
                   </span>
                 </div>
-                <Link href="/pricing">
+                <Link href={pricingUrl}>
                   <Button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3">
                     Upgrade to Pro
                   </Button>

@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState, useCallback, useEffect } from "react"
-import { useRouter } from "next/navigation"
+import { useRouter, usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Upload, FileText, X, Download, CheckCircle, Loader2, AlertCircle, Shield, Crown, Pencil, Layers } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -72,6 +72,11 @@ export function ProcessingInterface({
   showCompressionSelector,
 }: ProcessingInterfaceProps) {
   const router = useRouter()
+  const pathname = usePathname()
+  const localePrefix = pathname.startsWith("/es") ? "/es" : pathname.startsWith("/br") ? "/br" : ""
+  const pricingUrl = localePrefix === "/es" ? "/es/precios" : localePrefix === "/br" ? "/br/precos" : "/pricing"
+  const signupRequiredUrl = localePrefix === "/es" ? "/es/registro-requerido" : localePrefix === "/br" ? "/br/cadastro-necessario" : "/signup-required"
+  const dashboardUrl = localePrefix === "/es" ? "/es/dashboard" : localePrefix === "/br" ? "/br/painel" : "/dashboard"
   const [isDragOver, setIsDragOver] = useState(false)
   const [files, setFiles] = useState<File[]>([])
   const [isProcessing, setIsProcessing] = useState(false)
@@ -169,8 +174,9 @@ export function ProcessingInterface({
             const errorData = await response.json()
             if (errorData.error) message = errorData.error
             if (errorData.details) message += `: ${errorData.details}`
+            if (message.includes("upgrade_required")) { router.push(pricingUrl); return }
             if (message.includes("signup_required")) {
-              router.push("/signup-required")
+              router.push(signupRequiredUrl)
               return
             }
             if (message.includes("daily_limit_reached")) {
@@ -223,8 +229,9 @@ export function ProcessingInterface({
             try {
               const errorData = await response.json()
               if (errorData.error) message = errorData.error
+              if (message.includes("upgrade_required")) { router.push(pricingUrl); return }
               if (message.includes("signup_required")) {
-                router.push("/signup-required")
+                router.push(signupRequiredUrl)
                 return
               }
               if (message.includes("daily_limit_reached")) {
@@ -277,8 +284,8 @@ export function ProcessingInterface({
             try {
               const errorData = await response.json()
               if (errorData.error) message = errorData.error
-              if (message.includes("signup_required")) { router.push("/signup-required"); return }
-              if (message.includes("upgrade_required")) { router.push("/pricing"); return }
+              if (message.includes("signup_required")) { router.push(signupRequiredUrl); return }
+              if (message.includes("upgrade_required")) { router.push(pricingUrl); return }
               if (message.includes("daily_limit_reached")) { message = "daily_limit_reached_anon" }
             } catch { }
             throw new Error(message)
@@ -324,7 +331,8 @@ export function ProcessingInterface({
             try {
               const errorData = await response.json()
               if (errorData.error) message = errorData.error
-              if (message.includes("signup_required")) { router.push("/signup-required"); return }
+              if (message.includes("upgrade_required")) { router.push(pricingUrl); return }
+              if (message.includes("signup_required")) { router.push(signupRequiredUrl); return }
               if (message.includes("daily_limit_reached")) { message = "daily_limit_reached_anon" }
             } catch { }
             throw new Error(message)
@@ -374,8 +382,8 @@ export function ProcessingInterface({
             try {
               const errorData = await response.json()
               if (errorData.error) message = errorData.error
-              if (message.includes("signup_required")) { router.push("/signup-required"); return }
-              if (message.includes("upgrade_required")) { router.push("/pricing"); return }
+              if (message.includes("signup_required")) { router.push(signupRequiredUrl); return }
+              if (message.includes("upgrade_required")) { router.push(pricingUrl); return }
               if (message.includes("daily_limit_reached")) { message = "daily_limit_reached_anon" }
             } catch { }
             throw new Error(message)
@@ -418,7 +426,8 @@ export function ProcessingInterface({
             try {
               const errorData = await response.json()
               if (errorData.error) message = errorData.error
-              if (message.includes("signup_required")) { router.push("/signup-required"); return }
+              if (message.includes("upgrade_required")) { router.push(pricingUrl); return }
+              if (message.includes("signup_required")) { router.push(signupRequiredUrl); return }
               if (message.includes("daily_limit_reached")) { message = "daily_limit_reached_anon" }
             } catch { }
             throw new Error(message)
@@ -467,8 +476,8 @@ export function ProcessingInterface({
             try {
               const errorData = await response.json()
               if (errorData.error) message = errorData.error
-              if (message.includes("upgrade_required")) { router.push("/pricing"); return }
-              if (message.includes("signup_required")) { router.push("/signup-required"); return }
+              if (message.includes("upgrade_required")) { router.push(pricingUrl); return }
+              if (message.includes("signup_required")) { router.push(signupRequiredUrl); return }
               if (message.includes("daily_limit_reached")) { message = "daily_limit_reached_anon" }
             } catch { }
             throw new Error(message)
@@ -509,7 +518,8 @@ export function ProcessingInterface({
             try {
               const errorData = await response.json()
               if (errorData.error) message = errorData.error
-              if (message.includes("signup_required")) { router.push("/signup-required"); return }
+              if (message.includes("upgrade_required")) { router.push(pricingUrl); return }
+              if (message.includes("signup_required")) { router.push(signupRequiredUrl); return }
               if (message.includes("daily_limit_reached")) { message = "daily_limit_reached_anon" }
             } catch { }
             throw new Error(message)
@@ -550,7 +560,8 @@ export function ProcessingInterface({
             try {
               const errorData = await response.json()
               if (errorData.error) message = errorData.error
-              if (message.includes("signup_required")) { router.push("/signup-required"); return }
+              if (message.includes("upgrade_required")) { router.push(pricingUrl); return }
+              if (message.includes("signup_required")) { router.push(signupRequiredUrl); return }
               if (message.includes("daily_limit_reached")) { message = "daily_limit_reached_anon" }
             } catch { }
             throw new Error(message)
@@ -592,7 +603,8 @@ export function ProcessingInterface({
             try {
               const errorData = await response.json()
               if (errorData.error) message = errorData.error
-              if (message.includes("signup_required")) { router.push("/signup-required"); return }
+              if (message.includes("upgrade_required")) { router.push(pricingUrl); return }
+              if (message.includes("signup_required")) { router.push(signupRequiredUrl); return }
               if (message.includes("daily_limit_reached")) { message = "daily_limit_reached_anon" }
             } catch { }
             throw new Error(message)
@@ -633,8 +645,9 @@ export function ProcessingInterface({
             try {
               const errorData = await response.json()
               if (errorData.error) message = errorData.error
+              if (message.includes("upgrade_required")) { router.push(pricingUrl); return }
               if (message.includes("signup_required")) {
-                router.push("/signup-required")
+                router.push(signupRequiredUrl)
                 return
               }
               if (message.includes("daily_limit_reached")) {
@@ -807,6 +820,44 @@ export function ProcessingInterface({
   // Error state
   if (hasError) {
     const isLimitError = (errorMessage || "").toLowerCase().includes("daily limit reached") || (errorMessage || "").includes("daily_limit_reached_anon")
+    const isUpgradeError = (errorMessage || "").includes("upgrade_required")
+
+    if (isUpgradeError) {
+      return (
+        <section className="py-16">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-2xl mx-auto text-center">
+              <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Crown className="h-10 w-10 text-orange-500" />
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-2">This is a Pro Feature</h2>
+              <p className="text-xl sm:text-2xl font-bold text-orange-600 mb-4">Upgrade to Pro</p>
+              <p className="text-base sm:text-lg text-slate-600 mb-8">
+                Upgrade to unlock this tool and get unlimited conversions, batch processing, and more.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <Button
+                  onClick={() => {
+                    const toolSlug = encodeURIComponent(toolName.toLowerCase().trim().replace(/\s+/g, "-"))
+                    router.push(`${pricingUrl}?source=upgrade&tool=${toolSlug}`)
+                  }}
+                  className="bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl px-6 py-3"
+                >
+                  Upgrade to Pro
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={resetInterface}
+                  className="border border-slate-200 text-slate-700 rounded-xl px-6 py-3"
+                >
+                  Go Back
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+      )
+    }
 
     if (isLimitError) {
       return (
@@ -825,7 +876,7 @@ export function ProcessingInterface({
                 <Button
                   onClick={() => {
                     const toolSlug = encodeURIComponent(toolName.toLowerCase().trim().replace(/\s+/g, "-"))
-                    router.push(`/pricing?source=limit&tool=${toolSlug}`)
+                    router.push(`${pricingUrl}?source=limit&tool=${toolSlug}`)
                   }}
                   className="bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl px-6 py-3"
                 >
@@ -833,7 +884,7 @@ export function ProcessingInterface({
                 </Button>
                 <Button
                   variant="outline"
-                  onClick={() => router.push("/dashboard")}
+                  onClick={() => router.push(dashboardUrl)}
                   className="border border-slate-200 text-slate-700 rounded-xl px-6 py-3"
                 >
                   Back to Dashboard
@@ -1135,7 +1186,7 @@ export function ProcessingInterface({
               <Button
                 size="sm"
                 className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs px-4 flex-shrink-0"
-                onClick={(e) => { e.stopPropagation(); window.location.href = "/pricing?source=batch" }}
+                onClick={(e) => { e.stopPropagation(); window.location.href = `${pricingUrl}?source=batch` }}
               >
                 <Crown className="h-3 w-3 mr-1" />
                 Upgrade
