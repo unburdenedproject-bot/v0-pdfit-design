@@ -109,9 +109,7 @@ export default function SignUpPagePt() {
         <div className="w-full max-w-md">
           <Card className="border-slate-200 shadow-sm">
             <CardHeader className="text-center">
-              <div className="mx-auto mb-2 text-2xl font-black text-slate-800">
-                Omnis<span className="text-orange-500">PDF</span>
-              </div>
+              <img src="/logo.svg" alt="OmnisPDF" className="mx-auto mb-2 h-8 w-auto" />
               <CardTitle className="text-xl text-slate-800">Crie sua conta</CardTitle>
               <CardDescription className="text-slate-500">
                 Receba 10 conversoes gratis por dia
