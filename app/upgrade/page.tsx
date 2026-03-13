@@ -46,6 +46,7 @@ export default async function UpgradePage({
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://omnispdf.com"
 
+  let checkoutUrl: string | null = null
   try {
     const session = await getStripe().checkout.sessions.create({
       mode: "subscription",
@@ -58,15 +59,14 @@ export default async function UpgradePage({
         supabase_user_id: user.id,
       },
     })
-
-    if (!session.url) {
-      redirect("/pricing?error=checkout_session_failed")
-    }
-
-    redirect(session.url)
+    checkoutUrl = session.url
   } catch (e) {
-    const msg = e instanceof Error ? e.message : "unknown"
-    console.error("Stripe checkout error:", msg, "priceId:", priceId)
-    redirect(`/pricing?error=checkout_failed&detail=${encodeURIComponent(msg)}`)
+    console.error("Stripe checkout error:", e)
   }
+
+  if (!checkoutUrl) {
+    redirect("/pricing?error=checkout_session_failed")
+  }
+
+  redirect(checkoutUrl)
 }
