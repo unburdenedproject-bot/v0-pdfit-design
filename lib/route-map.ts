@@ -9,6 +9,7 @@ const routes: [string, string, string][] = [
   ["/privacy-policy", "/es/politica-de-privacidad", "/br/politica-de-privacidade"],
   ["/terms-conditions", "/es/terminos-y-condiciones", "/br/termos-e-condicoes"],
   ["/tools", "/es/herramientas", "/br/ferramentas"],
+  ["/tools-a-z", "/es/herramientas-a-z", "/br/ferramentas-a-z"],
   ["/dashboard", "/es/dashboard", "/br/painel"],
   ["/login", "/es/login", "/br/login"],
   ["/signup", "/es/registro", "/br/cadastro"],

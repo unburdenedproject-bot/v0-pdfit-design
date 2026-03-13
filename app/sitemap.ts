@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
     { url: `${baseUrl}/pricing`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/tools`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${baseUrl}/tools-a-z`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
 
     // Core tool pages
     { url: `${baseUrl}/merge-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
@@ -244,6 +245,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/es/contacto`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
     { url: `${baseUrl}/es/precios`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/es/herramientas`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${baseUrl}/es/herramientas-a-z`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
 
     // Core tool pages
     { url: `${baseUrl}/es/comprimir-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
@@ -471,6 +473,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/br/contato`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
     { url: `${baseUrl}/br/precos`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/br/ferramentas`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${baseUrl}/br/ferramentas-a-z`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
 
     // Core tool pages
     { url: `${baseUrl}/br/comprimir-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
