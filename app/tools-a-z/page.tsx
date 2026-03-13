@@ -147,7 +147,7 @@ export default function ToolsAZPage() {
               return (
                 <div key={letter} id={`letter-${letter}`} className="mb-12 scroll-mt-20">
                   <div className="flex items-center gap-4 mb-5">
-                    <div className="w-12 h-12 bg-slate-900 text-white rounded-2xl flex items-center justify-center font-black text-xl flex-shrink-0">
+                    <div className="w-12 h-12 bg-blue-900 text-white rounded-2xl flex items-center justify-center font-black text-xl flex-shrink-0">
                       {letter}
                     </div>
                     <div className="h-px flex-1 bg-gradient-to-r from-slate-200 to-transparent" />
