@@ -18,7 +18,6 @@ import {
   Camera,
   Mail,
   Type,
-  Crown,
   QrCode,
   ImageDown,
   Layers,
@@ -27,6 +26,8 @@ import {
   Shield,
   ArrowLeftRight,
   Repeat,
+  ArrowRight,
+  Search,
 } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -88,28 +89,48 @@ function TierBadge({ tier }: { tier: string }) {
 
 export default function ToolsAZPage() {
   const letters = [...new Set(tools.map((t) => t.name[0].toUpperCase()))].sort()
+  const totalFree = tools.filter((t) => t.tier === "FREE").length
+  const totalPro = tools.filter((t) => t.tier === "PRO").length
+  const totalBusiness = tools.filter((t) => t.tier === "BUSINESS").length
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50">
       <Header />
       <main>
-        <section className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-16">
+        {/* Hero */}
+        <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl lg:text-5xl font-black mb-4">All Tools A–Z</h1>
-            <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-              Every OmnisPDF tool in one place, sorted alphabetically. Find exactly what you need.
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-6">
+              <Search className="h-4 w-4 text-orange-400" />
+              <span className="text-sm font-medium text-slate-300">{tools.length} tools available</span>
+            </div>
+            <h1 className="text-4xl lg:text-5xl font-black mb-4">All PDF Tools A–Z</h1>
+            <p className="text-lg text-slate-400 max-w-xl mx-auto mb-8">
+              Every tool in one place, sorted alphabetically. Click a letter to jump.
             </p>
+            <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
+              <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-4 py-2">
+                <span className="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">{totalFree} Free</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-4 py-2">
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase" style={{ backgroundColor: "#FDE7C7", color: "#92400E" }}>{totalPro} Pro</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-4 py-2">
+                <span className="bg-indigo-100 text-indigo-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">{totalBusiness} Business</span>
+              </div>
+            </div>
           </div>
         </section>
 
-        <nav className="sticky top-0 z-10 bg-white border-b border-gray-200 shadow-sm">
+        {/* Sticky letter nav */}
+        <nav className="sticky top-0 z-10 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-wrap gap-1 py-3 justify-center">
+            <div className="flex flex-wrap gap-0.5 py-3 justify-center">
               {letters.map((letter) => (
                 <a
                   key={letter}
                   href={`#letter-${letter}`}
-                  className="w-9 h-9 flex items-center justify-center rounded-lg text-sm font-bold text-slate-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                  className="w-10 h-10 flex items-center justify-center rounded-xl text-sm font-black text-slate-500 hover:bg-orange-500 hover:text-white transition-all duration-200"
                 >
                   {letter}
                 </a>
@@ -118,32 +139,40 @@ export default function ToolsAZPage() {
           </div>
         </nav>
 
+        {/* Tool listing */}
         <section className="py-12">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
             {letters.map((letter) => {
               const letterTools = tools.filter((t) => t.name[0].toUpperCase() === letter)
               return (
-                <div key={letter} id={`letter-${letter}`} className="mb-10">
-                  <h2 className="text-2xl font-black text-slate-900 mb-4 border-b-2 border-orange-500 pb-2 inline-block">{letter}</h2>
-                  <div className="grid gap-3">
+                <div key={letter} id={`letter-${letter}`} className="mb-12 scroll-mt-20">
+                  <div className="flex items-center gap-4 mb-5">
+                    <div className="w-12 h-12 bg-slate-900 text-white rounded-2xl flex items-center justify-center font-black text-xl flex-shrink-0">
+                      {letter}
+                    </div>
+                    <div className="h-px flex-1 bg-gradient-to-r from-slate-200 to-transparent" />
+                    <span className="text-xs font-medium text-slate-400 uppercase tracking-wider">{letterTools.length} tool{letterTools.length !== 1 ? "s" : ""}</span>
+                  </div>
+                  <div className="grid sm:grid-cols-2 gap-3">
                     {letterTools.map((tool) => {
                       const Icon = tool.icon
                       return (
                         <Link
                           key={tool.href}
                           href={tool.href}
-                          className="flex items-center gap-4 bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                          className="flex items-start gap-4 bg-white rounded-2xl p-5 border border-gray-200 hover:border-orange-300 hover:shadow-lg hover:shadow-orange-500/5 transition-all duration-300 group"
                         >
-                          <div className="w-10 h-10 bg-slate-100 group-hover:bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors">
-                            <Icon className="h-5 w-5 text-slate-600 group-hover:text-orange-600 transition-colors" />
+                          <div className="w-11 h-11 bg-gradient-to-br from-slate-50 to-slate-100 group-hover:from-orange-50 group-hover:to-orange-100 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 border border-slate-200 group-hover:border-orange-200">
+                            <Icon className="h-5 w-5 text-slate-500 group-hover:text-orange-600 transition-colors duration-300" />
                           </div>
                           <div className="flex-1 min-w-0">
-                            <div className="flex items-center gap-2 mb-0.5">
+                            <div className="flex items-center gap-2 mb-1">
                               <span className="font-bold text-slate-900 group-hover:text-orange-600 transition-colors">{tool.name}</span>
                               <TierBadge tier={tool.tier} />
                             </div>
-                            <p className="text-sm text-slate-500 truncate">{tool.description}</p>
+                            <p className="text-sm text-slate-500 leading-relaxed">{tool.description}</p>
                           </div>
+                          <ArrowRight className="h-4 w-4 text-slate-300 group-hover:text-orange-500 flex-shrink-0 mt-1 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1" />
                         </Link>
                       )
                     })}
@@ -151,6 +180,22 @@ export default function ToolsAZPage() {
                 </div>
               )
             })}
+          </div>
+        </section>
+
+        {/* Bottom CTA */}
+        <section className="py-16 bg-gradient-to-br from-slate-900 to-slate-800">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
+            <h2 className="text-2xl font-black text-white mb-3">Ready to get started?</h2>
+            <p className="text-slate-400 mb-6">Pick any tool above or start with the most popular ones.</p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Link href="/compress-pdf" className="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-xl transition-colors">
+                Compress PDF <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link href="/merge-pdf" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-6 rounded-xl border border-white/20 transition-colors">
+                Merge PDF <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </section>
       </main>
