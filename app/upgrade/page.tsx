@@ -65,7 +65,8 @@ export default async function UpgradePage({
 
     redirect(session.url)
   } catch (e) {
-    console.error("Stripe checkout error:", e)
-    redirect("/pricing?error=checkout_session_failed")
+    const msg = e instanceof Error ? e.message : "unknown"
+    console.error("Stripe checkout error:", msg, "priceId:", priceId)
+    redirect(`/pricing?error=checkout_failed&detail=${encodeURIComponent(msg)}`)
   }
 }
