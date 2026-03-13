@@ -68,8 +68,14 @@ export async function POST(request: NextRequest) {
           process.env.STRIPE_PRICE_ID_BUSINESS,
           process.env.STRIPE_PRICE_ID_BUSINESS_ANNUAL,
         ].filter(Boolean)
+        const proPriceIds = [
+          process.env.STRIPE_PRICE_ID,
+          process.env.STRIPE_PRICE_ID_ANNUAL,
+        ].filter(Boolean)
         if (priceId && businessPriceIds.includes(priceId)) {
           plan = "business"
+        } else if (priceId && proPriceIds.includes(priceId)) {
+          plan = "pro"
         }
       } catch (e) {
         console.error("Failed to retrieve subscription for plan detection:", e)
@@ -122,8 +128,14 @@ export async function POST(request: NextRequest) {
           process.env.STRIPE_PRICE_ID_BUSINESS,
           process.env.STRIPE_PRICE_ID_BUSINESS_ANNUAL,
         ].filter(Boolean)
+        const proPriceIds = [
+          process.env.STRIPE_PRICE_ID,
+          process.env.STRIPE_PRICE_ID_ANNUAL,
+        ].filter(Boolean)
         if (priceId && businessPriceIds.includes(priceId)) {
           plan = "business"
+        } else if (priceId && proPriceIds.includes(priceId)) {
+          plan = "pro"
         }
 
         const { error } = await supabaseAdmin.from("users").update({

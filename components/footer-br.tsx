@@ -8,9 +8,8 @@ export function FooterBr() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2.5 mb-4">
-              <img src="/icon.svg" alt="" className="h-9 w-9" />
-              <span className="text-2xl font-black"><span className="text-white">Omnis</span><span style={{color: '#FB923C'}}>PDF</span></span>
+            <div className="mb-4">
+              <img src="/logo-white.svg" alt="OmnisPDF" className="h-8 w-auto" />
             </div>
             <p className="text-slate-400 mb-6 leading-relaxed">
               Converta, comprima, una, divida, digitalize e proteja arquivos PDF em segundos. Ferramentas simples que funcionam em qualquer dispositivo.
