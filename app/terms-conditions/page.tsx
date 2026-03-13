@@ -83,22 +83,31 @@ export default function TermsConditionsPage() {
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-4">7. Termination</h3>
+                    <h3 className="text-xl font-bold text-slate-900 mb-4">7. Refunds</h3>
+                    <p className="text-slate-700">We offer full refunds within 7 days of purchase, no questions asked. To request a refund, contact us at{" "}
+                      <a href="mailto:contact@omnispdf.com" className="text-orange-500 hover:text-orange-600 font-medium">
+                        contact@omnispdf.com
+                      </a>.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-4">8. Termination</h3>
                     <p className="text-slate-700">We may suspend or terminate access to the Service if we believe you have violated these Terms, abused the Service, or created risk for OmnisPDF or other users.</p>
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-4">8. Third-Party Services and Links</h3>
+                    <h3 className="text-xl font-bold text-slate-900 mb-4">9. Third-Party Services and Links</h3>
                     <p className="text-slate-700">The Service may include third-party services (such as analytics or advertising) and links to third-party websites. We are not responsible for third-party content, policies, or practices.</p>
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-4">9. Changes to These Terms</h3>
+                    <h3 className="text-xl font-bold text-slate-900 mb-4">10. Changes to These Terms</h3>
                     <p className="text-slate-700">We may update these Terms from time to time. Changes take effect when posted. Continued use of the Service after changes become effective constitutes acceptance of the revised Terms.</p>
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-4">10. Contact</h3>
+                    <h3 className="text-xl font-bold text-slate-900 mb-4">11. Contact</h3>
                     <p className="text-slate-700">
                       Questions about these Terms? Contact us at{" "}
                       <a href="mailto:contact@omnispdf.com" className="text-orange-500 hover:text-orange-600 font-medium">

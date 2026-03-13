@@ -83,22 +83,31 @@ export default function TermsConditionsPagePt() {
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-4">7. Rescisao</h3>
+                    <h3 className="text-xl font-bold text-slate-900 mb-4">7. Reembolsos</h3>
+                    <p className="text-slate-700">Oferecemos reembolsos completos dentro de 7 dias apos a compra, sem perguntas. Para solicitar um reembolso, entre em contato conosco em{" "}
+                      <a href="mailto:contact@omnispdf.com" className="text-orange-500 hover:text-orange-600 font-medium">
+                        contact@omnispdf.com
+                      </a>.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-4">8. Rescisao</h3>
                     <p className="text-slate-700">Podemos suspender ou encerrar o acesso ao Servico se acreditarmos que voce violou estes Termos, abusou do Servico ou criou risco para o OmnisPDF ou outros usuarios.</p>
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-4">8. Servicos e Links de Terceiros</h3>
+                    <h3 className="text-xl font-bold text-slate-900 mb-4">9. Servicos e Links de Terceiros</h3>
                     <p className="text-slate-700">O Servico pode incluir servicos de terceiros (como analiticas ou publicidade) e links para sites de terceiros. Nao somos responsaveis pelo conteudo, politicas ou praticas de terceiros.</p>
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-4">9. Alteracoes a Estes Termos</h3>
+                    <h3 className="text-xl font-bold text-slate-900 mb-4">10. Alteracoes a Estes Termos</h3>
                     <p className="text-slate-700">Podemos atualizar estes Termos periodicamente. As alteracoes entram em vigor quando publicadas. O uso continuado do Servico apos a publicacao das alteracoes constitui aceitacao dos Termos revisados.</p>
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-4">10. Contato</h3>
+                    <h3 className="text-xl font-bold text-slate-900 mb-4">11. Contato</h3>
                     <p className="text-slate-700">
                       Duvidas sobre estes Termos? Entre em contato conosco em{" "}
                       <a href="mailto:suporte@omnispdf.com" className="text-orange-500 hover:text-orange-600 font-medium">
