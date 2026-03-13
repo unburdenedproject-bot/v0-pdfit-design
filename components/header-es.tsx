@@ -61,10 +61,8 @@ export function HeaderEs() {
     <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/es" className="flex items-center space-x-2">
-            <div className="text-2xl font-black">
-              <span style={{color: '#1E3A8A'}}>Omnis</span><span style={{color: '#EA580C'}}>PDF</span>
-            </div>
+          <Link href="/es" className="flex items-center">
+            <img src="/logo.svg" alt="OmnisPDF" className="h-8 w-auto" />
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
