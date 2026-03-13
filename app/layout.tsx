@@ -1,7 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { ScrollToTop } from "@/components/scroll-to-top"
-import { GoogleAnalytics } from "@/components/google-analytics"
+import { GoogleTagManager, GoogleTagManagerNoScript } from "@/components/google-analytics"
 import { Suspense } from "react"
 import "./globals.css"
 
@@ -20,9 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <GoogleAnalytics />
+        <GoogleTagManager />
       </head>
       <body>
+        <GoogleTagManagerNoScript />
         <Suspense fallback={null}>
           <ScrollToTop />
         </Suspense>
