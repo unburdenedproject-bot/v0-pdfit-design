@@ -40,23 +40,32 @@ export default async function UpgradePage({
     }
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://omnispdf.com"
-
-  const session = await getStripe().checkout.sessions.create({
-    mode: "subscription",
-    line_items: [{ price: priceId, quantity: 1 }],
-    success_url: `${siteUrl}/dashboard?success=true`,
-    cancel_url: `${siteUrl}/pricing?canceled=true`,
-    client_reference_id: user.id,
-    customer_email: user.email || undefined,
-    metadata: {
-      supabase_user_id: user.id,
-    },
-  })
-
-  if (!session.url) {
-    redirect("/pricing?error=checkout_session_failed")
+  if (!process.env.STRIPE_SECRET_KEY) {
+    redirect("/pricing?error=stripe_not_configured")
   }
 
-  redirect(session.url)
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://omnispdf.com"
+
+  try {
+    const session = await getStripe().checkout.sessions.create({
+      mode: "subscription",
+      line_items: [{ price: priceId, quantity: 1 }],
+      success_url: `${siteUrl}/dashboard?success=true`,
+      cancel_url: `${siteUrl}/pricing?canceled=true`,
+      client_reference_id: user.id,
+      customer_email: user.email || undefined,
+      metadata: {
+        supabase_user_id: user.id,
+      },
+    })
+
+    if (!session.url) {
+      redirect("/pricing?error=checkout_session_failed")
+    }
+
+    redirect(session.url)
+  } catch (e) {
+    console.error("Stripe checkout error:", e)
+    redirect("/pricing?error=checkout_session_failed")
+  }
 }
