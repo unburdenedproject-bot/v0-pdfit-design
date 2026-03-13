@@ -245,6 +245,12 @@ export default function PricingPage() {
                       <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                         <Check className="h-3 w-3 text-green-600" />
                       </div>
+                      <span className="text-slate-700 text-lg font-medium">Files up to 1GB</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-green-600" />
+                      </div>
                       <span className="text-slate-700 text-lg font-medium">Workflow automation</span>
                     </div>
                     <div className="flex items-center gap-3">

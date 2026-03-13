@@ -11,7 +11,7 @@ const faqCategories = [
       {
         question: "Is OmnisPDF free to use?",
         answer:
-          "Yes. OmnisPDF offers a free tier with 10 conversions per day and files up to 25MB. No account is required for free tools. Upgrade to Pro ($7.99/month) for unlimited conversions, all tools, and files up to 200MB.",
+          "Yes. OmnisPDF offers a free tier with 10 conversions per day and files up to 25MB. No account is required for free tools. Upgrade to Pro ($7.99/month) for unlimited conversions, all tools, and files up to 200MB. Business ($13.99/month) supports files up to 1GB.",
       },
       {
         question: "Do I need to create an account?",
@@ -61,7 +61,7 @@ const faqCategories = [
       {
         question: "What is the maximum file size?",
         answer:
-          "Free accounts can upload files up to 25MB. Pro and Business accounts can upload files up to 200MB.",
+          "Free accounts can upload files up to 25MB. Pro accounts can upload files up to 200MB. Business accounts can upload files up to 1GB — ideal for legal, accounting, and enterprise documents.",
       },
       {
         question: "Do you preserve formatting and quality?",
@@ -86,7 +86,7 @@ const faqCategories = [
       {
         question: "What does Pro include?",
         answer:
-          "Pro ($7.99/month) includes unlimited conversions, all PDF tools (including OCR, Watermark, and Office to PDF), and files up to 200MB. Business ($13.99/month) adds the Invoice Generator and additional features.",
+          "Pro ($7.99/month) includes unlimited conversions, all PDF tools (including OCR, Watermark, and Office to PDF), and files up to 200MB. Business ($13.99/month) adds files up to 1GB, workflow automation, table extraction, PDF comparison, eSign, and PDF redaction.",
       },
     ],
   },

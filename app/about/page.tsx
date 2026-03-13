@@ -74,6 +74,18 @@ export default function AboutPage() {
                   <li>• OCR, Watermark, Word/Excel/PPT to PDF</li>
                 </ul>
               </div>
+              <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <Crown className="h-6 w-6 text-indigo-600" />
+                  <h3 className="text-xl font-bold text-indigo-900">Business — $13.99/month</h3>
+                </div>
+                <ul className="space-y-2 text-indigo-800 text-sm">
+                  <li>• Everything in Pro</li>
+                  <li>• Files up to 1GB</li>
+                  <li>• Workflow automation</li>
+                  <li>• Table extraction, PDF comparison, eSign, redaction</li>
+                </ul>
+              </div>
             </div>
 
             {/* Our Mission */}

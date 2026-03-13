@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "What is the maximum file size for merging?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Free accounts can upload files up to 25MB each. Pro and Business accounts can upload files up to 200MB each." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Free accounts can upload files up to 25MB each. Pro accounts can upload files up to 200MB. Business accounts can upload files up to 1GB each." }
     }
   ]
 }
@@ -201,7 +201,7 @@ export default function MergePDFPage() {
                 },
                 {
                   q: "What is the maximum file size for merging?",
-                  a: "Free accounts can upload files up to 25MB each. Pro and Business accounts can upload files up to 200MB each.",
+                  a: "Free accounts can upload files up to 25MB each. Pro accounts can upload files up to 200MB. Business accounts can upload files up to 1GB each.",
                 },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

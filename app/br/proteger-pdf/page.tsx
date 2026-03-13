@@ -52,7 +52,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Qual é o tamanho máximo de arquivo que posso proteger?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Contas gratuitas podem enviar arquivos de até 25MB. Contas Pro e Business podem enviar até 200MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Contas gratuitas podem enviar arquivos de até 25MB. Contas Pro podem enviar até 200MB. Contas Business podem enviar até 1GB." }
     }
   ]
 }
@@ -187,7 +187,7 @@ export default function ProtegerPDFPage() {
                 { q: "Posso remover a senha depois?", a: "Sim. Use a ferramenta Desbloquear PDF do OmnisPDF para remover a proteção com senha de qualquer PDF do qual você tenha a senha." },
                 { q: "Posso proteger um PDF pelo celular?", a: "Sim. O OmnisPDF funciona em navegadores móveis — envie o PDF, defina uma senha e baixe o arquivo protegido." },
                 { q: "É seguro enviar PDFs confidenciais?", a: "Sim. Todas as transferências são criptografadas com SSL e seus arquivos são removidos imediatamente após sua sessão. Nunca armazenamos nem compartilhamos seus documentos." },
-                { q: "Qual é o tamanho máximo de arquivo que posso proteger?", a: "Contas gratuitas podem enviar arquivos de até 25MB. Contas Pro e Business podem enviar até 200MB." },
+                { q: "Qual é o tamanho máximo de arquivo que posso proteger?", a: "Contas gratuitas podem enviar arquivos de até 25MB. Contas Pro podem enviar até 200MB. Contas Business podem enviar até 1GB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

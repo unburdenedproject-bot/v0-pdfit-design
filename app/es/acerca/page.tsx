@@ -79,6 +79,18 @@ export default function AcercaPage() {
                   <li>• OCR, Marca de Agua, Word/Excel/PPT a PDF</li>
                 </ul>
               </div>
+              <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <Crown className="h-6 w-6 text-indigo-600" />
+                  <h3 className="text-xl font-bold text-indigo-900">Business — $13.99/mes</h3>
+                </div>
+                <ul className="space-y-2 text-indigo-800 text-sm">
+                  <li>• Todo en Pro</li>
+                  <li>• Archivos hasta 1GB</li>
+                  <li>• Automatización de flujos de trabajo</li>
+                  <li>• Extracción de tablas, comparación de PDFs, firma electrónica, redacción</li>
+                </ul>
+              </div>
             </div>
 
             {/* Mission */}

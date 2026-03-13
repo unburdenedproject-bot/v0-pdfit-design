@@ -50,7 +50,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Qual é o tamanho máximo de PDF que posso comprimir?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Contas gratuitas podem enviar arquivos de até 25MB. Contas Pro e Business podem enviar até 200MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Contas gratuitas podem enviar arquivos de até 25MB. Contas Pro podem enviar até 200MB. Contas Business podem enviar até 1GB." }
     }
   ]
 }
@@ -208,7 +208,7 @@ export default function ComprimirPDFPage() {
                 },
                 {
                   q: "Qual é o tamanho máximo de PDF que posso comprimir?",
-                  a: "Contas gratuitas podem enviar arquivos de até 25MB. Contas Pro e Business podem enviar até 200MB.",
+                  a: "Contas gratuitas podem enviar arquivos de até 25MB. Contas Pro podem enviar até 200MB. Contas Business podem enviar até 1GB.",
                 },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

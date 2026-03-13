@@ -44,7 +44,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "What is the maximum file size I can rotate?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Free accounts can upload files up to 25MB. Pro and Business accounts can upload files up to 200MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Free accounts can upload files up to 25MB. Pro accounts can upload files up to 200MB. Business accounts can upload files up to 1GB." }
     }
   ]
 }
@@ -197,7 +197,7 @@ export default function RotatePDFPage() {
                 },
                 {
                   q: "What is the maximum file size I can rotate?",
-                  a: "Free accounts can upload files up to 25MB. Pro and Business accounts can upload files up to 200MB.",
+                  a: "Free accounts can upload files up to 25MB. Pro accounts can upload files up to 200MB. Business accounts can upload files up to 1GB.",
                 },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

@@ -19,7 +19,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 ## Pricing Tiers
 - Free: 10 conversions/day (3 anonymous, then must log in), files up to 25MB, basic PDF tools, single file, standard processing
 - Pro ($7.99/month): Unlimited conversions, files up to 200MB, all PDF tools, batch processing, advanced controls, priority support
-- Business ($13.99/month): Everything in Pro + workflow automation, table extraction to Excel, PDF comparison, eSign, PDF redaction
+- Business ($13.99/month): Everything in Pro + files up to 1GB, workflow automation, table extraction to Excel, PDF comparison, eSign, PDF redaction
 
 ## Packaging Strategy
 - Free: Flatten PDF, basic Extract Images, single file, moderate size limits
@@ -122,6 +122,18 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - Footer small text: text-slate-500 → text-slate-400 on dark bg — 3 footers
 - Orange button contrast: Tailwind config updated — orange-500 now #EA580C (4.6:1 on white, passes WCAG AA)
 - Hardcoded #F97316 buttons updated in signup-required, registro-requerido, cadastro-necessario, pro pages
+
+### Branding & Logo (COMPLETE)
+- Professional logo SVG integrated site-wide (public/logo.svg — viewBox cropped to 75 230 680 140)
+- Swirl icon for footers and small contexts (public/icon.svg)
+- Favicon: app/favicon.ico
+- Apple touch icon: app/apple-icon.png
+- OG/Twitter social sharing image: public/og-logo.png (1200x630)
+- Headers (all 3 languages): use `<img src="/logo.svg">` — h-8 w-auto
+- Footers (all 3 languages): use icon.svg + styled "OmnisPDF" text on dark bg
+- Login pages (EN/ES/BR): use logo.svg centered above form
+- Signup pages (EN/ES/BR): use logo.svg centered above form
+- app/layout.tsx: full metadata with favicon, apple-icon, OG image, Twitter card
 
 ### Analytics (COMPLETE)
 - Replaced GA4 snippet with Google Tag Manager (GTM-T7LDGB3J)

@@ -4,7 +4,7 @@ import Link from "next/link"
 const stats = [
   { icon: Shield, label: "Security", value: "HTTPS", description: "Secure TLS encrypted transfer" },
   { icon: Zap, label: "Processing Speed", value: "Fast", description: "Seconds for most files" },
-  { icon: Globe, label: "Free File Limit", value: "25MB", description: "200MB with Pro" },
+  { icon: Globe, label: "Free File Limit", value: "25MB", description: "200MB Pro · 1GB Business" },
   { icon: Gift, label: "Free Conversions", value: "10/day", description: "Unlimited with Pro" },
 ]
 

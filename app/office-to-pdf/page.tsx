@@ -450,7 +450,7 @@ export default function OfficeToPDFPage() {
                 },
                 {
                   q: "What is the maximum file size I can convert?",
-                  a: "Pro and Business accounts can upload files up to 200MB.",
+                  a: "Pro accounts can upload files up to 200MB. Business accounts can upload files up to 1GB.",
                 },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

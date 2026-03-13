@@ -51,7 +51,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Qual e o tamanho maximo de PDF que posso dividir?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Contas gratuitas podem enviar arquivos de ate 25MB. Contas Pro e Business podem enviar ate 200MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Contas gratuitas podem enviar arquivos de ate 25MB. Contas Pro podem enviar ate 200MB. Contas Business podem enviar ate 1GB." }
     }
   ]
 }
@@ -187,7 +187,7 @@ export default function DividirPDFPage() {
                 { q: "Posso dividir um PDF no celular?", a: "Sim. O OmnisPDF funciona em navegadores moveis — envie, selecione paginas, divida e baixe." },
                 { q: "Posso dividir PDFs protegidos com senha?", a: "Voce precisa desbloquear o PDF antes de dividi-lo. Use nossa ferramenta Desbloquear PDF primeiro." },
                 { q: "E seguro enviar meu PDF?", a: "Sim. Todas as transferencias sao criptografadas com SSL e seus arquivos sao eliminados imediatamente apos sua sessao. Nunca armazenamos nem compartilhamos seus documentos." },
-                { q: "Qual e o tamanho maximo de PDF que posso dividir?", a: "Contas gratuitas podem enviar arquivos de ate 25MB. Contas Pro e Business podem enviar ate 200MB." },
+                { q: "Qual e o tamanho maximo de PDF que posso dividir?", a: "Contas gratuitas podem enviar arquivos de ate 25MB. Contas Pro podem enviar ate 200MB. Contas Business podem enviar ate 1GB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

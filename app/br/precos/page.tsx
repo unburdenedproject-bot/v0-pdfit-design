@@ -194,6 +194,7 @@ export default function PrecosPage() {
                   <div className="space-y-4 mb-8">
                     <p className="text-sm text-slate-500 font-medium">Tudo no Pro, mais:</p>
                     {[
+                      "Arquivos ate 1GB",
                       "Automacao de fluxos de trabalho",
                       "Extracao de tabelas para Excel",
                       "Comparacao de PDFs",

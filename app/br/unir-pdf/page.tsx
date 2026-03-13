@@ -50,7 +50,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Qual e o tamanho maximo de arquivo para unir?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Contas gratuitas podem enviar arquivos de ate 25MB cada. Contas Pro e Business podem enviar arquivos de ate 200MB cada." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Contas gratuitas podem enviar arquivos de ate 25MB cada. Contas Pro podem enviar arquivos de ate 200MB. Contas Business podem enviar ate 1GB cada." }
     }
   ]
 }
@@ -191,7 +191,7 @@ export default function UnirPDFPage() {
                 { q: "Posso unir PDFs no celular?", a: "Sim. O OmnisPDF funciona em navegadores moveis — envie, una e baixe do seu iPhone ou Android." },
                 { q: "Posso unir PDFs protegidos com senha?", a: "PDFs protegidos com senha precisam ser desbloqueados antes de uni-los. Use nossa ferramenta Desbloquear PDF primeiro." },
                 { q: "E seguro enviar meus PDFs?", a: "Sim. Todas as transferencias sao criptografadas com SSL e seus arquivos sao eliminados imediatamente apos sua sessao. Nunca armazenamos nem compartilhamos seus documentos." },
-                { q: "Qual e o tamanho maximo de arquivo para unir?", a: "Contas gratuitas podem enviar arquivos de ate 25MB cada. Contas Pro e Business podem enviar arquivos de ate 200MB cada." },
+                { q: "Qual e o tamanho maximo de arquivo para unir?", a: "Contas gratuitas podem enviar arquivos de ate 25MB cada. Contas Pro podem enviar arquivos de ate 200MB. Contas Business podem enviar ate 1GB cada." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

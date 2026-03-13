@@ -16,7 +16,7 @@ export default function ProPage() {
             This is a Pro feature
           </h1>
           <p className="text-lg text-[#6B7280] mb-8">
-            Upgrade to Pro to unlock this tool — unlimited conversions, 200MB files, and all Pro features.
+            Upgrade to Pro to unlock this tool — unlimited conversions, files up to 200MB, and all Pro features. Need even larger files? Business supports up to 1GB.
           </p>
           <Link
             href="/pricing"

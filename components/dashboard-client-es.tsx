@@ -542,7 +542,7 @@ export function DashboardClientEs({
             Has usado {usageCount} de {dailyLimit} conversiones gratis hoy
           </h3>
           <p className="text-orange-100 text-sm mb-4">
-            Actualiza a Pro para conversiones ilimitadas, todas las herramientas y archivos hasta 200MB.
+            Actualiza a Pro para conversiones ilimitadas, todas las herramientas y archivos hasta 200MB. Business soporta archivos hasta 1GB.
           </p>
           <Button
             onClick={() => router.push("/es/precios?source=dashboard")}

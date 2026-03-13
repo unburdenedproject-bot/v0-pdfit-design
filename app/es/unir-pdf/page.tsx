@@ -49,7 +49,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cuál es el tamaño máximo de archivo para unir?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Las cuentas gratuitas pueden subir archivos de hasta 25MB cada uno. Las cuentas Pro y Business pueden subir archivos de hasta 200MB cada uno." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Las cuentas gratuitas pueden subir archivos de hasta 25MB cada uno. Las cuentas Pro pueden subir archivos de hasta 200MB. Las cuentas Business pueden subir archivos de hasta 1GB." }
     }
   ]
 }
@@ -207,7 +207,7 @@ export default function UnirPDFPage() {
                 },
                 {
                   q: "¿Cuál es el tamaño máximo de archivo para unir?",
-                  a: "Las cuentas gratuitas pueden subir archivos de hasta 25MB cada uno. Las cuentas Pro y Business pueden subir archivos de hasta 200MB cada uno.",
+                  a: "Las cuentas gratuitas pueden subir archivos de hasta 25MB cada uno. Las cuentas Pro pueden subir archivos de hasta 200MB. Las cuentas Business pueden subir archivos de hasta 1GB.",
                 },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

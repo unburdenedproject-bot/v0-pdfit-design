@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "What is the maximum file size I can convert?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Pro and Business accounts can upload files up to 200MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Pro accounts can upload files up to 200MB. Business accounts can upload files up to 1GB." }
     }
   ]
 }
@@ -192,7 +192,7 @@ export default function PDFToPowerPointPage() {
                 { q: "Can I edit the slides after conversion?", a: "Yes. The output is a fully editable .pptx file you can open in PowerPoint, Google Slides, or Keynote." },
                 { q: "Is PDF to PowerPoint free?", a: "PDF to PowerPoint is a Pro feature. Free users can try other tools like PDF to JPG or PDF to PNG." },
                 { q: "Can I convert PDF to PowerPoint on my phone?", a: "Yes. OmnisPDF works in mobile browsers — upload, convert, and download on iPhone or Android." },
-                { q: "What is the maximum file size I can convert?", a: "Pro and Business accounts can upload files up to 200MB." },
+                { q: "What is the maximum file size I can convert?", a: "Pro accounts can upload files up to 200MB. Business accounts can upload files up to 1GB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

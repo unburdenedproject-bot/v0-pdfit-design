@@ -51,7 +51,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cuál es el tamaño máximo de archivo que puedo proteger?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Las cuentas gratuitas pueden subir archivos de hasta 25MB. Las cuentas Pro y Business pueden subir hasta 200MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Las cuentas gratuitas pueden subir archivos de hasta 25MB. Las cuentas Pro pueden subir hasta 200MB. Las cuentas Business pueden subir hasta 1GB." }
     }
   ]
 }
@@ -203,7 +203,7 @@ export default function ProtegerPDFPage() {
                 },
                 {
                   q: "¿Cuál es el tamaño máximo de archivo que puedo proteger?",
-                  a: "Las cuentas gratuitas pueden subir archivos de hasta 25MB. Las cuentas Pro y Business pueden subir hasta 200MB.",
+                  a: "Las cuentas gratuitas pueden subir archivos de hasta 25MB. Las cuentas Pro pueden subir hasta 200MB. Las cuentas Business pueden subir hasta 1GB.",
                 },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

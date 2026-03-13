@@ -8,8 +8,9 @@ import { upload } from "@vercel/blob/client"
  *
  * Returns the public Blob URL.
  */
-const FREE_MAX_BYTES = 25 * 1024 * 1024   // 25 MB
-const PRO_MAX_BYTES  = 200 * 1024 * 1024  // 200 MB
+const FREE_MAX_BYTES     = 25 * 1024 * 1024    // 25 MB
+const PRO_MAX_BYTES      = 200 * 1024 * 1024   // 200 MB
+const BUSINESS_MAX_BYTES = 1024 * 1024 * 1024  // 1 GB
 
 export async function uploadFileToBlob(file: File): Promise<string> {
   const maxBytes = await getMaxUploadBytes()
@@ -31,14 +32,18 @@ async function getMaxUploadBytes(): Promise<{ maxBytes: number; errorMessage: st
   // Fetch the user's plan to determine the size limit
   const planRes = await fetch("/api/user-plan")
   const { plan } = (await planRes.json()) as { plan: string }
-  const hasLargeFileAccess = plan === "pro" || plan === "business"
-  const maxBytes = hasLargeFileAccess ? PRO_MAX_BYTES : FREE_MAX_BYTES
-  const maxLabel = hasLargeFileAccess ? "200MB" : "25MB"
-  const planLabel = hasLargeFileAccess ? (plan === "business" ? "Business" : "Pro") : "Free"
+  const maxBytes = plan === "business" ? BUSINESS_MAX_BYTES : plan === "pro" ? PRO_MAX_BYTES : FREE_MAX_BYTES
+  const maxLabel = plan === "business" ? "1GB" : plan === "pro" ? "200MB" : "25MB"
+  const planLabel = plan === "business" ? "Business" : plan === "pro" ? "Pro" : "Free"
+  const upgradeHint = plan === "pro"
+    ? " Upgrade to Business for files up to 1GB."
+    : plan === "free" || !plan
+      ? " Upgrade to Pro for files up to 200MB, or Business for up to 1GB."
+      : ""
 
   return {
     maxBytes,
-    errorMessage: `File exceeds the ${maxLabel} limit for your ${planLabel} plan. Please choose a smaller file${hasLargeFileAccess ? "" : " or upgrade to Pro"}.`,
+    errorMessage: `File exceeds the ${maxLabel} limit for your ${planLabel} plan. Please choose a smaller file.${upgradeHint}`,
   }
 }
 

@@ -68,7 +68,7 @@ const faqSchema = {
       name: "Qual e o tamanho maximo de arquivo que posso converter?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Contas gratuitas podem enviar arquivos de ate 25MB. Contas Pro e Business podem enviar arquivos de ate 200MB.",
+        text: "Contas gratuitas podem enviar arquivos de ate 25MB. Contas Pro podem enviar arquivos de ate 200MB. Contas Business podem enviar ate 1GB.",
       },
     },
   ],
@@ -224,7 +224,7 @@ export default function PDFparaExcelPage() {
                 { q: "Posso converter um PDF escaneado para Excel?", a: "PDFs escaneados requerem OCR para extrair texto e tabelas. Use primeiro a ferramenta Scanner OCR do OmnisPDF e depois converta para Excel." },
                 { q: "Posso converter PDF para Excel no celular?", a: "Sim. O OmnisPDF funciona em navegadores moveis — envie, converta e baixe do iPhone ou Android." },
                 { q: "E seguro enviar meu PDF?", a: "Sim. Todas as transferencias sao criptografadas com SSL e seus arquivos sao eliminados imediatamente apos sua sessao. Nunca armazenamos nem compartilhamos seus documentos." },
-                { q: "Qual e o tamanho maximo de arquivo que posso converter?", a: "Contas gratuitas podem enviar arquivos de ate 25MB. Contas Pro e Business podem enviar arquivos de ate 200MB." },
+                { q: "Qual e o tamanho maximo de arquivo que posso converter?", a: "Contas gratuitas podem enviar arquivos de ate 25MB. Contas Pro podem enviar arquivos de ate 200MB. Contas Business podem enviar ate 1GB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

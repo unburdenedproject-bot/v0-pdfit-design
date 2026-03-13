@@ -69,7 +69,7 @@ const faqSchema = {
       name: "Qual é o tamanho máximo de arquivo para OCR?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Contas Pro e Business podem enviar arquivos de até 200MB.",
+        text: "Contas Pro podem enviar arquivos de até 200MB. Contas Business podem enviar até 1GB.",
       },
     },
   ],
@@ -211,7 +211,7 @@ export default function ScannerOCRPage() {
                 { q: "Quão preciso é o OCR do OmnisPDF?", a: "A precisão depende da clareza do escaneamento, resolução e fonte. Escaneamentos limpos e de alta resolução produzem os melhores resultados. Escaneamentos borrados ou tortos reduzem a precisão." },
                 { q: "Quais idiomas o Scanner OCR suporta?", a: "O Scanner OCR suporta mais de 16 idiomas incluindo português, inglês, espanhol, francês, alemão, italiano, holandês e mais." },
                 { q: "É seguro enviar documentos escaneados?", a: "Sim. Todas as transferências são criptografadas com SSL e seus arquivos são removidos imediatamente após sua sessão. Nunca armazenamos nem compartilhamos seus documentos." },
-                { q: "Qual é o tamanho máximo de arquivo para OCR?", a: "Contas Pro e Business podem enviar arquivos de até 200MB." },
+                { q: "Qual é o tamanho máximo de arquivo para OCR?", a: "Contas Pro podem enviar arquivos de até 200MB. Contas Business podem enviar até 1GB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

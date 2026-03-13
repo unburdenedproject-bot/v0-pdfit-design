@@ -68,7 +68,7 @@ const faqSchema = {
       name: "Qual e o tamanho maximo de arquivo que posso converter?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Contas gratuitas podem enviar arquivos de ate 25MB. Contas Pro e Business podem enviar ate 200MB.",
+        text: "Contas gratuitas podem enviar arquivos de ate 25MB. Contas Pro podem enviar ate 200MB. Contas Business podem enviar ate 1GB.",
       },
     },
   ],
@@ -235,7 +235,7 @@ export default function PDFparaPNGPage() {
                 },
                 {
                   q: "Qual e o tamanho maximo de arquivo que posso converter?",
-                  a: "Contas gratuitas podem enviar arquivos de ate 25MB. Contas Pro e Business podem enviar ate 200MB.",
+                  a: "Contas gratuitas podem enviar arquivos de ate 25MB. Contas Pro podem enviar ate 200MB. Contas Business podem enviar ate 1GB.",
                 },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

@@ -22,7 +22,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How many PDFs can I merge at once with batch processing?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Pro users can upload and merge dozens of PDF files in a single batch operation. There is no fixed file count limit — the main constraint is the total file size, which can be up to 200MB per file for Pro users." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Pro users can upload and merge dozens of PDF files in a single batch operation. There is no fixed file count limit — the main constraint is the total file size, which can be up to 200MB per file for Pro users, or up to 1GB per file for Business users." }
     },
     {
       "@type": "Question",
@@ -32,7 +32,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "What is the maximum file size for batch merging?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Pro users can upload files up to 200MB each. Free users are limited to 25MB per file. For very large documents, consider compressing them first with OmnisPDF's Compress PDF tool." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Pro users can upload files up to 200MB each. Business users can upload files up to 1GB each. Free users are limited to 25MB per file. For very large documents, consider compressing them first with OmnisPDF's Compress PDF tool." }
     },
     {
       "@type": "Question",
@@ -102,7 +102,7 @@ export default function BatchMergePDFPage() {
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Upload and merge multiple PDFs simultaneously</li>
               <li>&#10003; Arrange files in any order before merging</li>
-              <li>&#10003; Files up to 200MB each with Pro</li>
+              <li>&#10003; Files up to 200MB each with Pro, 1GB with Business</li>
               <li>&#10003; Per-file progress tracking and Download All as ZIP</li>
               <li>&#10003; Works on Mac, Windows, iOS, Android, and Linux</li>
             </ul>
@@ -185,9 +185,9 @@ export default function BatchMergePDFPage() {
             <div className="space-y-6">
               {[
                 { q: "How do I batch merge multiple PDFs at once?", a: "With OmnisPDF Pro, upload multiple PDF files simultaneously to the Merge PDF tool. Select all the files you want to combine, arrange them in order, and merge them into a single document in one operation." },
-                { q: "How many PDFs can I merge at once with batch processing?", a: "Pro users can upload and merge dozens of PDF files in a single batch operation. There is no fixed file count limit — the main constraint is the total file size, which can be up to 200MB per file for Pro users." },
+                { q: "How many PDFs can I merge at once with batch processing?", a: "Pro users can upload and merge dozens of PDF files in a single batch operation. There is no fixed file count limit — the main constraint is the total file size, which can be up to 200MB per file for Pro users, or up to 1GB per file for Business users." },
                 { q: "Is batch merge available on the free plan?", a: "Free users can merge files one at a time with files up to 25MB. Batch processing — uploading and merging multiple files simultaneously — is a Pro feature available for $7.99/month." },
-                { q: "What is the maximum file size for batch merging?", a: "Pro users can upload files up to 200MB each. Free users are limited to 25MB per file. For very large documents, consider compressing them first with OmnisPDF's Compress PDF tool." },
+                { q: "What is the maximum file size for batch merging?", a: "Pro users can upload files up to 200MB each. Business users can upload files up to 1GB each. Free users are limited to 25MB per file. For very large documents, consider compressing them first with OmnisPDF's Compress PDF tool." },
                 { q: "Can I choose the order of merged PDFs in a batch?", a: "Yes. When you upload multiple files for batch merging, you can arrange them in your preferred order before combining. The final merged PDF will follow the sequence you set." },
                 { q: "Does batch merging affect PDF quality?", a: "No. Batch merging preserves the original quality of all your PDF files. Text, images, formatting, fonts, and interactive elements remain unchanged in the merged output." },
               ].map((faq, i) => (

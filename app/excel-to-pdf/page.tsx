@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "What is the maximum file size I can convert?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Pro and Business accounts can upload files up to 200MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Pro accounts can upload files up to 200MB. Business accounts can upload files up to 1GB." }
     }
   ]
 }
@@ -200,7 +200,7 @@ export default function ExcelToPDFPage() {
                 },
                 {
                   q: "What is the maximum file size I can convert?",
-                  a: "Pro and Business accounts can upload files up to 200MB.",
+                  a: "Pro accounts can upload files up to 200MB. Business accounts can upload files up to 1GB.",
                 },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

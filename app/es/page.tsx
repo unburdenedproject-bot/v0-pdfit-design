@@ -255,7 +255,7 @@ export default function HomePageEs() {
               {[
                 { icon: Shield, label: "Seguridad", value: "HTTPS", description: "Transferencia cifrada con TLS" },
                 { icon: Zap, label: "Velocidad", value: "Rápido", description: "Segundos para la mayoría de archivos" },
-                { icon: Globe, label: "Límite Gratis", value: "25MB", description: "200MB con Pro" },
+                { icon: Globe, label: "Límite Gratis", value: "25MB", description: "200MB Pro · 1GB Business" },
                 { icon: Gift, label: "Conversiones Gratis", value: "10/día", description: "Ilimitadas con Pro" },
               ].map((stat, index) => (
                 <div key={index} className="text-center">
@@ -345,7 +345,7 @@ export default function HomePageEs() {
                   { q: "¿Necesito crear una cuenta?", a: "No necesitas cuenta para usar las herramientas gratuitas — solo sube tu archivo y convierte. Se necesita cuenta para funciones Pro y administrar tu suscripción." },
                   { q: "¿Es seguro subir mis archivos?", a: "Sí. Todas las transferencias usan cifrado SSL/HTTPS. Los archivos se procesan de forma segura y se eliminan automáticamente cuando termina tu sesión. No almacenamos, revisamos ni compartimos tus documentos." },
                   { q: "¿Qué formatos de archivo soportan?", a: "OmnisPDF soporta PDF, JPG, PNG, TXT y formatos de Office (Word, Excel, PowerPoint). Las herramientas incluyen convertir, comprimir, unir, dividir, rotar, proteger, desbloquear, marca de agua y OCR." },
-                  { q: "¿Cuál es el tamaño máximo de archivo?", a: "Las cuentas gratuitas pueden subir archivos hasta 25MB. Las cuentas Pro y Business pueden subir hasta 200MB." },
+                  { q: "¿Cuál es el tamaño máximo de archivo?", a: "Las cuentas gratuitas pueden subir archivos hasta 25MB. Las cuentas Pro pueden subir hasta 200MB. Las cuentas Business pueden subir hasta 1GB." },
                   { q: "¿Qué incluye el plan Pro?", a: "Pro ($7.99/mes) incluye conversiones ilimitadas, todas las herramientas PDF (incluyendo OCR, Marca de Agua y Office a PDF), y archivos hasta 200MB. Business ($13.99/mes) agrega firma electrónica, automatización y más." },
                   { q: "¿Funciona en celular?", a: "Sí. OmnisPDF funciona en navegadores modernos incluyendo Chrome, Firefox, Safari y Edge en computadora, tablet y celular." },
                   { q: "¿Cómo puedo obtener ayuda?", a: "Visita nuestra página de Contacto o escríbenos a contact@omnispdf.com. Respondemos en menos de un día hábil." },

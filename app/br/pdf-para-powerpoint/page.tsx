@@ -68,7 +68,7 @@ const faqSchema = {
       name: "Qual e o tamanho maximo de arquivo que posso converter?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Contas Pro e Business podem enviar arquivos de ate 200MB.",
+        text: "Contas Pro podem enviar arquivos de ate 200MB. Contas Business podem enviar ate 1GB.",
       },
     },
   ],
@@ -223,7 +223,7 @@ export default function PDFparaPowerPointPage() {
                 { q: "Posso editar os slides apos a conversao?", a: "Sim. O resultado e um arquivo .pptx completamente editavel que voce pode abrir no PowerPoint, Google Slides ou Keynote." },
                 { q: "PDF para PowerPoint e gratis?", a: "PDF para PowerPoint e uma funcao Pro. Usuarios gratuitos podem experimentar outras ferramentas como PDF para JPG ou PDF para PNG." },
                 { q: "Posso converter PDF para PowerPoint no celular?", a: "Sim. O OmnisPDF funciona em navegadores moveis — envie, converta e baixe do iPhone ou Android." },
-                { q: "Qual e o tamanho maximo de arquivo que posso converter?", a: "Contas Pro e Business podem enviar arquivos de ate 200MB." },
+                { q: "Qual e o tamanho maximo de arquivo que posso converter?", a: "Contas Pro podem enviar arquivos de ate 200MB. Contas Business podem enviar ate 1GB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

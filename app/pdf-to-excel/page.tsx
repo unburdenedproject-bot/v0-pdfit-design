@@ -42,7 +42,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "What is the maximum file size I can convert?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Free accounts can upload files up to 25MB. Pro and Business accounts can upload files up to 200MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Free accounts can upload files up to 25MB. Pro accounts can upload files up to 200MB. Business accounts can upload files up to 1GB." }
     }
   ]
 }
@@ -144,7 +144,7 @@ export default function PDFToExcelPage() {
                 { q: "Can I convert a scanned PDF to Excel?", a: "Scanned PDFs require OCR to extract text and tables. Use OmnisPDF's OCR Scanner tool first, then convert to Excel." },
                 { q: "Can I convert PDF to Excel on my phone?", a: "Yes. OmnisPDF works in mobile browsers — upload, convert, and download on iPhone or Android." },
                 { q: "Is it safe to upload my PDF?", a: "Yes. All transfers are SSL encrypted and your files are deleted immediately after your session. We never store or share your documents." },
-                { q: "What is the maximum file size I can convert?", a: "Free accounts can upload files up to 25MB. Pro and Business accounts can upload files up to 200MB." },
+                { q: "What is the maximum file size I can convert?", a: "Free accounts can upload files up to 25MB. Pro accounts can upload files up to 200MB. Business accounts can upload files up to 1GB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

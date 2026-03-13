@@ -833,7 +833,7 @@ export function ProcessingInterface({
               <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-2">This is a Pro Feature</h2>
               <p className="text-xl sm:text-2xl font-bold text-orange-600 mb-4">Upgrade to Pro</p>
               <p className="text-base sm:text-lg text-slate-600 mb-8">
-                Upgrade to unlock this tool and get unlimited conversions, batch processing, and more.
+                Upgrade to unlock this tool and get unlimited conversions, files up to 200MB, batch processing, and more. Need files up to 1GB? Try Business.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <Button

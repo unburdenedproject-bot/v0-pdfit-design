@@ -542,7 +542,7 @@ export function DashboardClient({
             You've used {usageCount} of {dailyLimit} free conversions today
           </h3>
           <p className="text-orange-100 text-sm mb-4">
-            Upgrade to Pro for unlimited conversions, all tools, and files up to 200MB.
+            Upgrade to Pro for unlimited conversions, all tools, and files up to 200MB. Business supports files up to 1GB.
           </p>
           <Button
             onClick={() => router.push("/pricing?source=dashboard")}

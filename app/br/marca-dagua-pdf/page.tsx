@@ -52,7 +52,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Qual é o tamanho máximo de arquivo ao qual posso adicionar marca d'água?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Contas Pro e Business podem enviar arquivos de até 200MB. Esta ferramenta está disponível para usuários Pro e Business." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Contas Pro podem enviar arquivos de até 200MB. Contas Business podem enviar até 1GB. Esta ferramenta está disponível para usuários Pro e Business." }
     }
   ]
 }
@@ -187,7 +187,7 @@ export default function MarcaDaguaPDFPage() {
                 { q: "A marca d'água aparece em todas as páginas?", a: "Sim. A marca d'água é aplicada em todas as páginas do PDF por padrão." },
                 { q: "A marca d'água afeta o conteúdo do meu PDF?", a: "Não. Adicionar uma marca d'água apenas sobrepõe o texto ou imagem selecionado nas suas páginas. Todo o conteúdo existente permanece intacto." },
                 { q: "É seguro enviar meu PDF?", a: "Sim. Todas as transferências são criptografadas com SSL e seus arquivos são removidos imediatamente após sua sessão. Nunca armazenamos nem compartilhamos seus documentos." },
-                { q: "Qual é o tamanho máximo de arquivo ao qual posso adicionar marca d'água?", a: "Contas Pro e Business podem enviar arquivos de até 200MB. Esta ferramenta está disponível para usuários Pro e Business." },
+                { q: "Qual é o tamanho máximo de arquivo ao qual posso adicionar marca d'água?", a: "Contas Pro podem enviar arquivos de até 200MB. Contas Business podem enviar até 1GB. Esta ferramenta está disponível para usuários Pro e Business." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

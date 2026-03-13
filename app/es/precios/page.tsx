@@ -194,6 +194,7 @@ export default function PreciosPage() {
                   <div className="space-y-4 mb-8">
                     <p className="text-sm text-slate-500 font-medium">Todo en Pro, más:</p>
                     {[
+                      "Archivos hasta 1GB",
                       "Automatización de flujos de trabajo",
                       "Extracción de tablas a Excel",
                       "Comparación de PDFs",

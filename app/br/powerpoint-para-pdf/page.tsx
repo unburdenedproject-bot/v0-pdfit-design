@@ -51,7 +51,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Qual e o tamanho maximo de arquivo que posso converter?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Contas Pro e Business podem enviar arquivos de ate 200MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Contas Pro podem enviar arquivos de ate 200MB. Contas Business podem enviar ate 1GB." }
     }
   ]
 }
@@ -191,7 +191,7 @@ export default function PowerPointParaPDFPage() {
                 { q: "As animacoes e transicoes sao transferidas para o PDF?", a: "Nao. Um PDF e um formato estatico, entao as animacoes e transicoes nao sao reproduzidas — os slides sao exportados como paginas fixas." },
                 { q: "Posso converter PowerPoint para PDF no celular?", a: "Sim. O OmnisPDF funciona em navegadores moveis — envie sua apresentacao e baixe o PDF." },
                 { q: "E seguro enviar meu arquivo PowerPoint?", a: "Sim. Todas as transferencias sao criptografadas com SSL e seus arquivos sao eliminados imediatamente apos sua sessao. Nunca armazenamos nem compartilhamos seus documentos." },
-                { q: "Qual e o tamanho maximo de arquivo que posso converter?", a: "Contas Pro e Business podem enviar arquivos de ate 200MB." },
+                { q: "Qual e o tamanho maximo de arquivo que posso converter?", a: "Contas Pro podem enviar arquivos de ate 200MB. Contas Business podem enviar ate 1GB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

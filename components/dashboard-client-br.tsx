@@ -542,7 +542,7 @@ export function DashboardClientBr({
             Voce usou {usageCount} de {dailyLimit} conversoes gratis hoje
           </h3>
           <p className="text-orange-100 text-sm mb-4">
-            Atualize para Pro para conversoes ilimitadas, todas as ferramentas e arquivos ate 200MB.
+            Atualize para Pro para conversoes ilimitadas, todas as ferramentas e arquivos ate 1GB com Business.
           </p>
           <Button
             onClick={() => router.push("/br/precos?source=dashboard")}
