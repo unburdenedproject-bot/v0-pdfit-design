@@ -14,6 +14,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - Auth: Custom signup/login with hCaptcha
 - Payments: Stripe
 - Storage: Vercel Blob (migrating to Cloudflare R2)
+- Analytics: Google Tag Manager (GTM-T7LDGB3J) → GA4 (G-PWD4YNY710)
 
 ## Pricing Tiers
 - Free: 10 conversions/day (3 anonymous, then must log in), files up to 25MB, basic PDF tools, single file, standard processing
@@ -103,6 +104,29 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - Office to PDF (5), Merge PDF (5), Split PDF (6)
 - Rotate PDF (4), Protect PDF (4), Unlock PDF (4), Watermark PDF (5)
 - Compress PDF (5), OCR PDF (6), QR Code (7)
+
+### Error Handling & Locale-Aware Routing (COMPLETE)
+- processing-interface.tsx: All 11 tool branches now handle upgrade_required (redirects to /pricing)
+- processing-interface.tsx: All redirects (pricing, signup-required, dashboard) are locale-aware — ES users stay on /es/, BR users stay on /br/
+- phone-scan-cleanup-interface.tsx: Fixed signup_required redirect (was /pricing, now /signup-required)
+- image-to-pdf-interface.tsx: Same fix
+- watermark-pdf-interface.tsx: Pricing links are locale-aware
+- Fallback upgrade UI with Crown icon added to processing-interface error render
+- Fixed hardcoded English links in /es/codigo-qr, /br/codigo-qr, /es/precios pages
+
+### Accessibility Fixes (COMPLETE)
+- PRO badge contrast: text darkened from #B45309 to #92400E (5.5:1 ratio) — 5 files
+- Footer logo "PDF" contrast: #F97316 → #FB923C on dark bg (5.7:1 ratio) — 3 footers
+- Header logo "PDF" contrast: #F97316 → #EA580C on white bg (4.6:1 ratio) — 3 headers
+- Social media icons: aria-label added to all 12 icons across 3 footers (EN/ES/BR)
+- Footer small text: text-slate-500 → text-slate-400 on dark bg — 3 footers
+- Orange button contrast: Tailwind config updated — orange-500 now #EA580C (4.6:1 on white, passes WCAG AA)
+- Hardcoded #F97316 buttons updated in signup-required, registro-requerido, cadastro-necessario, pro pages
+
+### Analytics (COMPLETE)
+- Replaced GA4 snippet with Google Tag Manager (GTM-T7LDGB3J)
+- GA4 measurement ID G-PWD4YNY710 should be configured inside GTM as a GA4 tag
+- GTM loads in <head> with <noscript> fallback in <body>
 
 ### Google Search Console Status
 - Sitemap rewritten with 520 URLs across EN/ES/BR — submitted 2026-03-12
