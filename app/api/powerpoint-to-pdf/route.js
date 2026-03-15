@@ -164,7 +164,8 @@ export async function POST(request) {
     const baseName = originalName.replace(/\.[^/.]+$/, "").replace(/-[a-zA-Z0-9]{20,}$/, "");
 
     // Log successful usage
-    if (usage) await logUsage(usage.userId, "powerpoint-to-pdf");
+    const { logUsage } = await import("@/lib/usage-check");
+    await logUsage(user.id, "powerpoint-to-pdf");
 
     return new Response(data, {
       status: 200,

@@ -45,10 +45,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <GoogleTagManager />
-      </head>
+      <head />
       <body>
+        <GoogleTagManager />
         <GoogleTagManagerNoScript />
         <Suspense fallback={null}>
           <ScrollToTop />
