@@ -2,13 +2,61 @@ export const runtime = "nodejs";
 export const maxDuration = 120;
 
 import { NextResponse } from "next/server";
-import { writeFile, unlink, readFile } from "fs/promises";
+import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
 
+// Monthly page limit for table extraction (Business tier)
+// At $0.065/page, 200 pages = $13.00 — stays under $13.99/month revenue
+const MONTHLY_PAGE_LIMIT = 200;
+
 function errorResponse(message, status = 500) {
   return Response.json({ error: message }, { status });
+}
+
+/**
+ * Get how many table extraction pages the user has consumed this month.
+ */
+async function getMonthlyPageCount(serviceClient, userId) {
+  const now = new Date();
+  const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1).toISOString();
+
+  const { data, error } = await serviceClient
+    .from("usage_logs")
+    .select("id")
+    .eq("user_id", userId)
+    .eq("tool", "table-extraction-page")
+    .gte("created_at", startOfMonth);
+
+  if (error) {
+    console.error("[getMonthlyPageCount] error:", error);
+    return 0;
+  }
+
+  return data?.length ?? 0;
+}
+
+/**
+ * Log the number of pages processed for monthly tracking.
+ */
+async function logPageUsage(serviceClient, userId, pageCount) {
+  if (!serviceClient) return;
+
+  const rows = [];
+  for (let i = 0; i < pageCount; i++) {
+    rows.push({
+      user_id: userId,
+      tool: "table-extraction-page",
+      allowed: true,
+      block_reason: null,
+    });
+  }
+
+  const { error } = await serviceClient.from("usage_logs").insert(rows);
+  if (error) {
+    console.error("[logPageUsage] insert error:", error);
+  }
 }
 
 export async function POST(request) {
@@ -40,6 +88,24 @@ export async function POST(request) {
       );
     }
 
+    // Check monthly page limit
+    const { createClient: createServiceClient } = await import("@supabase/supabase-js");
+    const serviceUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    let serviceClient = null;
+
+    if (serviceUrl && serviceKey) {
+      serviceClient = createServiceClient(serviceUrl, serviceKey);
+      const usedPages = await getMonthlyPageCount(serviceClient, user.id);
+
+      if (usedPages >= MONTHLY_PAGE_LIMIT) {
+        return errorResponse(
+          `Monthly limit reached. You have used ${usedPages} of ${MONTHLY_PAGE_LIMIT} table extraction pages this month. Your limit resets on the 1st of next month.`,
+          429
+        );
+      }
+    }
+
     // Parse request
     const body = await request.json();
     const blobUrl = body.blobUrl;
@@ -59,46 +125,70 @@ export async function POST(request) {
     tmpPath = join("/tmp", `${id}-input.pdf`);
     await writeFile(tmpPath, buffer);
 
-    // Call Google Document AI
-    const { DocumentProcessorServiceClient } = await import(
-      "@google-cloud/documentai"
-    );
-
+    // Call Google Document AI using REST API (avoids gRPC private key issues)
     const projectId = process.env.GOOGLE_CLOUD_PROJECT_ID;
     const location = process.env.GOOGLE_CLOUD_LOCATION || "us";
     const processorId = process.env.GOOGLE_CLOUD_PROCESSOR_ID;
+    const clientEmail = process.env.GOOGLE_CLOUD_CLIENT_EMAIL;
+    const privateKey = process.env.GOOGLE_CLOUD_PRIVATE_KEY?.replace(
+      /\\n/g,
+      "\n"
+    );
 
-    if (!projectId || !processorId) {
+    if (!projectId || !processorId || !clientEmail || !privateKey) {
       throw new Error("Google Cloud Document AI is not configured.");
     }
 
-    const client = new DocumentProcessorServiceClient({
-      credentials: {
-        client_email: process.env.GOOGLE_CLOUD_CLIENT_EMAIL,
-        private_key: process.env.GOOGLE_CLOUD_PRIVATE_KEY?.replace(
-          /\\n/g,
-          "\n"
-        ),
-      },
-      projectId,
-    });
+    // Generate JWT access token
+    const accessToken = await getAccessToken(clientEmail, privateKey);
 
-    const name = `projects/${projectId}/locations/${location}/processors/${processorId}`;
+    const endpoint = `https://${location}-documentai.googleapis.com/v1/projects/${projectId}/locations/${location}/processors/${processorId}:process`;
 
     const encodedDocument = buffer.toString("base64");
 
-    const [result] = await client.processDocument({
-      name,
-      rawDocument: {
-        content: encodedDocument,
-        mimeType: "application/pdf",
+    const docAiResponse = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${accessToken}`,
+        "Content-Type": "application/json",
       },
+      body: JSON.stringify({
+        rawDocument: {
+          content: encodedDocument,
+          mimeType: "application/pdf",
+        },
+      }),
     });
 
-    const { document } = result;
+    if (!docAiResponse.ok) {
+      const errBody = await docAiResponse.text();
+      console.error("Document AI API error:", docAiResponse.status, errBody);
+      throw new Error(`Document AI API error (${docAiResponse.status}): ${errBody.substring(0, 200)}`);
+    }
+
+    const result = await docAiResponse.json();
+    const document = result.document;
 
     if (!document) {
       throw new Error("Document AI returned no document.");
+    }
+
+    // Check page count against remaining monthly limit
+    const pageCount = (document.pages || []).length;
+
+    if (serviceClient) {
+      const usedPages = await getMonthlyPageCount(serviceClient, user.id);
+      const remaining = MONTHLY_PAGE_LIMIT - usedPages;
+
+      if (pageCount > remaining) {
+        // Clean up
+        if (uploadedBlobUrl) await del(uploadedBlobUrl).catch(() => {});
+        if (tmpPath) await unlink(tmpPath).catch(() => {});
+        return errorResponse(
+          `This PDF has ${pageCount} pages but you only have ${remaining} table extraction pages remaining this month (${MONTHLY_PAGE_LIMIT}/month limit). Try a smaller document or wait until the 1st of next month.`,
+          429
+        );
+      }
     }
 
     // Extract tables from Document AI response
@@ -220,6 +310,11 @@ export async function POST(request) {
     // Write to buffer
     const excelBuffer = await workbook.xlsx.writeBuffer();
 
+    // Log page usage for monthly tracking
+    if (serviceClient) {
+      await logPageUsage(serviceClient, user.id, pageCount);
+    }
+
     // Clean up
     if (uploadedBlobUrl) await del(uploadedBlobUrl).catch(() => {});
     if (tmpPath) {
@@ -275,4 +370,48 @@ function extractTextFromLayout(layout, fullText) {
     text += fullText.substring(startIndex, endIndex);
   }
   return text;
+}
+
+/**
+ * Generate a Google OAuth2 access token from a service account.
+ * Uses JWT → token exchange via REST (no gRPC, no native crypto issues).
+ */
+async function getAccessToken(clientEmail, privateKey) {
+  const crypto = await import("crypto");
+
+  const now = Math.floor(Date.now() / 1000);
+  const header = { alg: "RS256", typ: "JWT" };
+  const payload = {
+    iss: clientEmail,
+    scope: "https://www.googleapis.com/auth/cloud-platform",
+    aud: "https://oauth2.googleapis.com/token",
+    iat: now,
+    exp: now + 3600,
+  };
+
+  const encode = (obj) =>
+    Buffer.from(JSON.stringify(obj))
+      .toString("base64url");
+
+  const unsignedToken = `${encode(header)}.${encode(payload)}`;
+
+  const sign = crypto.createSign("RSA-SHA256");
+  sign.update(unsignedToken);
+  const signature = sign.sign(privateKey, "base64url");
+
+  const jwt = `${unsignedToken}.${signature}`;
+
+  const tokenResponse = await fetch("https://oauth2.googleapis.com/token", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: `grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&assertion=${jwt}`,
+  });
+
+  if (!tokenResponse.ok) {
+    const errText = await tokenResponse.text();
+    throw new Error(`Failed to get access token: ${errText}`);
+  }
+
+  const tokenData = await tokenResponse.json();
+  return tokenData.access_token;
 }
