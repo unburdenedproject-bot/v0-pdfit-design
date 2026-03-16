@@ -9,22 +9,42 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 
 ## Tech Stack
 - Frontend: Next.js (built in V0)
-- Hosting: Vercel
+- Hosting: Vercel (Pro plan)
 - PDF Processing: iLoveAPI (except pdf-to-word, pdf-to-excel, pdf-to-powerpoint which use CloudConvert)
+- Table Extraction: Google Document AI Form Parser ($0.03/page)
 - Auth: Custom signup/login with hCaptcha
 - Payments: Stripe
-- Storage: Vercel Blob (migrating to Cloudflare R2)
-- Analytics: Google Tag Manager (GTM-T7LDGB3J) → GA4 (G-PWD4YNY710)
+- Storage: Vercel Blob
+- Analytics: Google Tag Manager (GTM-T7LDGB3J) + GA4 direct (G-PWD4YNY710)
+- Database: Supabase (users, usage tracking)
+- Rate Limiting: Upstash Redis
 
 ## Pricing Tiers
 - Free: 10 conversions/day (3 anonymous, then must log in), files up to 25MB, basic PDF tools, single file, standard processing
-- Pro ($7.99/month): Unlimited conversions, files up to 200MB, all PDF tools, batch processing, advanced controls, priority support
-- Business ($13.99/month): Everything in Pro + files up to 1GB, workflow automation, table extraction to Excel, PDF comparison, eSign, PDF redaction
+- Pro ($7.99/month, $79.90/year): Unlimited conversions, files up to 200MB, all PDF tools (OCR, QR, PDF to Word/Excel/PPT), batch processing, priority speed
+- Business ($13.99/month, $139.90/year): Everything in Pro + files up to 1GB, workflow automation, table extraction to Excel (200 pages/month), PDF comparison, eSign, PDF redaction
+- Enterprise ($49.99/month, $499.90/year): Everything in Business + table extraction (2,000 pages/month), 5 enterprise workflow templates, priority processing queue, dedicated email support, early access to new features
+
+## Stripe Price IDs
+- Pro monthly: price_1TAcV8HNTg4nAWfEglc1IwOo
+- Pro annual: price_1TAcWMHNTg4nAWfER2mhVnPs
+- Business monthly: price_1T8ynmHNTg4nAWfEcMl8vQj3
+- Business annual: price_1T8ynmHNTg4nAWfEt4wU7Kgk
+- Enterprise monthly: price_1TBZdtHNTg4nAWfEm8KPJDFU
+- Enterprise annual: price_1TBZeQHNTg4nAWfE0fSRwNWp
 
 ## Packaging Strategy
 - Free: Flatten PDF, basic Extract Images, single file, moderate size limits
 - Paid: batch processing, larger files, faster queue, higher limits, bulk download/export options
-- We can't give everything for free — free tools are funnels to Pro/Business
+- Enterprise: industry-specific workflow templates (Legal, Court Filing, Invoice Archive, Draft Review, Lab Report)
+- We can't give everything for free — free tools are funnels to Pro/Business/Enterprise
+
+## Cost Structure (at scale)
+- iLoveAPI: ~$0.04-0.10 per conversion (2,500 free credits/month)
+- Google Document AI: $0.03/page (Form Parser)
+- CloudConvert: ~$0.02 per conversion (PDF to Word/Excel/PPT)
+- Vercel Pro: $20/month base + bandwidth overage at $0.15/GB after 1TB
+- At 10K subscribers: ~$2,500-4,300/month costs vs ~$157,900/month revenue (97% margin)
 
 ---
 
@@ -43,15 +63,31 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - /upload-ready-pdf (Blue Ocean #1 — chains flatten + compress)
 - /phone-scan-cleanup (Blue Ocean #2 — Sharp image processing, free with limits)
 
+### Business & Enterprise Tools (All Working)
+- /workflow-automation — chain tools (flatten, compress, watermark, rotate, protect), 4 preset workflows for Business + 5 Enterprise-only templates (Legal Doc Prep, Court Filing, Invoice Archive, Draft Review, Lab Report)
+- /table-extraction — Google Document AI Form Parser → ExcelJS, Business: 200 pages/month, Enterprise: 2,000 pages/month, monthly tracking via usage_logs table
+- /pdf-compare — client-side text diff, side-by-side/overlay/differences views
+- /esign — canvas-based signature placement (draw, type, upload)
+- /pdf-redaction — canvas-based area selection, flattened image replacement
+
+### Enterprise Tier (COMPLETE)
+- Pricing page: 4 tiers with dark premium Enterprise card (amber/gold accent)
+- Full comparison table with 15 feature rows on pricing pages (EN/ES/BR)
+- Stripe checkout integration (monthly + annual)
+- Webhook detects Enterprise subscriptions → sets plan="enterprise" in Supabase
+- All 13 API routes recognize "enterprise" plan
+- Table extraction: 2,000 pages/month for Enterprise (vs 200 for Business)
+- 5 Enterprise-only workflow templates with gold badge
+- Homepage feature grids show Enterprise tools with amber badge
+- Upload limits, usage checks, dashboard labels all support Enterprise
+- Billing toggle in hero section controls all paid tiers
+
 ### Infrastructure Done
 - hCaptcha integration (signup + login pages)
-- Batch processing (Pro/Business: multi-file select, per-file progress, Download All as ZIP; Free: single file + upgrade banner)
-- Pricing page updated (Free / Pro $7.99 / Business $13.99)
-- Business tools LIVE: /workflow-automation, /pdf-redaction, /esign
-- Business tools LIVE: /pdf-compare
-- Business tools Coming Soon: /table-extraction
-- SEO cluster pages: all 6 clusters built (~100 pages)
-- Long-tail /learn/ articles: ~82 articles built across 16 categories
+- Batch processing (Pro/Business/Enterprise: multi-file select, per-file progress, Download All as ZIP; Free: single file + upgrade banner)
+- Pricing page: 4 tiers (Free / Pro $7.99 / Business $13.99 / Enterprise $49.99) with comparison table
+- Rate limiting: 100 req/min per IP via Upstash Redis middleware
+- Usage logging: daily counts in usage table, monthly page tracking in usage_logs for table extraction
 
 ### Spanish Layer (COMPLETE)
 - Spanish homepage (/es) with full tool grid and correct /es/ routes
@@ -136,12 +172,17 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - app/layout.tsx: full metadata with favicon, apple-icon, OG image, Twitter card
 
 ### Analytics (COMPLETE)
-- Replaced GA4 snippet with Google Tag Manager (GTM-T7LDGB3J)
-- GA4 measurement ID G-PWD4YNY710 should be configured inside GTM as a GA4 tag
-- GTM loads in <head> with <noscript> fallback in <body>
+- Google Tag Manager (GTM-T7LDGB3J) loads via next/script with afterInteractive strategy
+- GA4 (G-PWD4YNY710) loads directly alongside GTM for redundancy
+- google-analytics.tsx is a "use client" component for proper Next.js App Router hydration
+- GTM noscript fallback in body
+
+### Usage Logging Fixes (COMPLETE)
+- Fixed broken logging in excel-to-pdf, office-to-pdf, powerpoint-to-pdf routes (undefined `usage` variable)
+- All Pro/Business routes now properly import and call logUsage with user.id
 
 ### Google Search Console Status
-- Sitemap rewritten with 520 URLs across EN/ES/BR — submitted 2026-03-12
+- Sitemap with 520+ URLs across EN/ES/BR — submitted 2026-03-12
 - DO NOT break any existing indexed pages
 - English, Spanish, and Brazilian pages all included in sitemap
 
@@ -149,8 +190,16 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 
 ## TODO — By Priority
 
+### Priority 0: Pre-Launch Fixes
+- Contact form is fake (simulates submission, doesn't send) — needs real backend
+- Stripe portal fallback domain is pdfit.io — needs NEXT_PUBLIC_SITE_URL=https://omnispdf.com on Vercel
+- Verify ILOVEAPI_SECRET_KEY is set on Vercel (not in .env.local)
+- Add robots.txt to public/
+- Verify GA4 is actually recording data in Realtime report
+- Test full payment flow: signup → upgrade → manage subscription → cancel (all 3 paid tiers)
+- Test table extraction end-to-end with a real PDF
+
 ### Priority 1: Remaining Tools
-- Table Extraction to Excel — needs Google Document AI API (hardest, paid API, Business tier)
 - Resume ATS Optimizer (OpenAI API, Blue Ocean)
 
 ### Priority 2: Infrastructure Migration
@@ -178,14 +227,18 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 - All Spanish tool hrefs must use /es/ prefix with translated slugs
 - All Brazilian tool hrefs must use /br/ prefix with Portuguese slugs
 - Components: header-br.tsx, footer-br.tsx, features-grid-br.tsx, dashboard-client-br.tsx
+- Table extraction uses REST API to Document AI (not gRPC) to avoid private key format issues on Vercel
+- Enterprise workflow templates are gated by userPlan in workflow-interface.tsx (enterpriseOnly flag)
 
 ## Rules - Always Follow
 - Never break already indexed pages
 - Use iLoveAPI for PDF processing (except pdf-to-word/excel/powerpoint which use CloudConvert)
+- Table extraction uses Google Document AI Form Parser
 - Target USA, LATAM, and Brazil markets
 - When adding new pages, always add to ALL THREE layers: English, Spanish, and Brazilian Portuguese
 - Brazilian pages use /br/ prefix (NOT /pt/) — targeting Brazil specifically
 - When adding new pages, update lib/route-map.ts for the language switcher
+- Enterprise users must have access to ALL Business features — check for both "business" AND "enterprise" in tier gates
 - Paula is non-technical — explain things simply
 
 ## Deployment Process
@@ -196,3 +249,10 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 - After git push, Vercel deploys automatically
 - Always give Paula the exact commit message to use
 - Never assume she knows when to deploy — always tell her explicitly
+
+## Google Cloud Credentials
+- Service Account: omnispdf-docai@project-5fe73bdf-4333-442f-840.iam.gserviceaccount.com
+- Project ID: project-5fe73bdf-4333-442f-840
+- Processor ID: 41cccb5fc88aa541 (Form Parser)
+- Location: us
+- JSON key stored in: C:\Users\paula\Dropbox\Paula\V. A. M. Outfitters, LLC\OmnisPDF\Credentials_Google Cloud
