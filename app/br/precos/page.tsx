@@ -74,32 +74,32 @@ export default function PrecosPage() {
 
                   <div className="space-y-3 mb-8 flex-grow">
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="h-3 w-3 text-green-600" />
+                      <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-blue-600" />
                       </div>
                       <span className="text-slate-700">10 conversoes por dia</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="h-3 w-3 text-green-600" />
+                      <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-blue-600" />
                       </div>
                       <span className="text-slate-700">Arquivos ate 25MB</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="h-3 w-3 text-green-600" />
+                      <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-blue-600" />
                       </div>
                       <span className="text-slate-700">Ferramentas PDF basicas (comprimir, unir, dividir, girar, converter)</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="h-3 w-3 text-green-600" />
+                      <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-blue-600" />
                       </div>
                       <span className="text-slate-700">Processamento de arquivo unico</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="h-3 w-3 text-green-600" />
+                      <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-blue-600" />
                       </div>
                       <span className="text-slate-700">Velocidade padrao</span>
                     </div>
@@ -144,32 +144,32 @@ export default function PrecosPage() {
                   <div className="space-y-3 mb-8 flex-grow">
                     <p className="text-sm text-slate-500 font-medium">Tudo no Gratis, mais:</p>
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="h-3 w-3 text-green-600" />
+                      <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-blue-600" />
                       </div>
                       <span className="text-slate-700 font-medium">Conversoes ilimitadas</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="h-3 w-3 text-green-600" />
+                      <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-blue-600" />
                       </div>
                       <span className="text-slate-700 font-medium">Arquivos ate 200MB</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="h-3 w-3 text-green-600" />
+                      <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-blue-600" />
                       </div>
                       <span className="text-slate-700 font-medium">Todas as ferramentas PDF (OCR, QR code, PDF para Word/Excel/PowerPoint)</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="h-3 w-3 text-green-600" />
+                      <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-blue-600" />
                       </div>
                       <span className="text-slate-700 font-medium">Processamento em lote (varios arquivos)</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="h-3 w-3 text-green-600" />
+                      <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-blue-600" />
                       </div>
                       <span className="text-slate-700 font-medium">Velocidade de processamento prioritaria</span>
                     </div>
@@ -215,38 +215,38 @@ export default function PrecosPage() {
                   <div className="space-y-3 mb-8 flex-grow">
                     <p className="text-sm text-slate-500 font-medium">Tudo no Pro, mais:</p>
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="h-3 w-3 text-green-600" />
+                      <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-blue-600" />
                       </div>
                       <span className="text-slate-700 font-medium">Arquivos ate 1GB</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="h-3 w-3 text-green-600" />
+                      <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-blue-600" />
                       </div>
                       <span className="text-slate-700 font-medium">Extracao de tabelas para Excel (200 paginas/mes)</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="h-3 w-3 text-green-600" />
+                      <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-blue-600" />
                       </div>
                       <span className="text-slate-700 font-medium">Automacao de fluxos de trabalho (encadear ferramentas)</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="h-3 w-3 text-green-600" />
+                      <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-blue-600" />
                       </div>
                       <span className="text-slate-700 font-medium">Comparacao de PDFs (diferenca lado a lado)</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="h-3 w-3 text-green-600" />
+                      <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-blue-600" />
                       </div>
                       <span className="text-slate-700 font-medium">Assinatura eletronica de documentos</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="h-3 w-3 text-green-600" />
+                      <div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-blue-600" />
                       </div>
                       <span className="text-slate-700 font-medium">Redacao de PDFs (remocao permanente)</span>
                     </div>
@@ -372,45 +372,45 @@ export default function PrecosPage() {
                     </tr>
                     <tr className="border-b border-slate-200 bg-white">
                       <td className="py-4 px-4 text-slate-700 font-medium">Ferramentas PDF basicas</td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
                     </tr>
                     <tr className="border-b border-slate-200 bg-slate-50">
                       <td className="py-4 px-4 text-slate-700 font-medium">PDF para Word/Excel/PowerPoint</td>
                       <td className="py-4 px-4 text-center text-slate-400">—</td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
                     </tr>
                     <tr className="border-b border-slate-200 bg-white">
                       <td className="py-4 px-4 text-slate-700 font-medium">Scanner OCR</td>
                       <td className="py-4 px-4 text-center text-slate-400">—</td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
                     </tr>
                     <tr className="border-b border-slate-200 bg-slate-50">
                       <td className="py-4 px-4 text-slate-700 font-medium">Gerador de codigos QR</td>
                       <td className="py-4 px-4 text-center text-slate-400">—</td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
                     </tr>
                     <tr className="border-b border-slate-200 bg-white">
                       <td className="py-4 px-4 text-slate-700 font-medium">Processamento em lote</td>
                       <td className="py-4 px-4 text-center text-slate-400">—</td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
                     </tr>
                     <tr className="border-b border-slate-200 bg-slate-50">
                       <td className="py-4 px-4 text-slate-700 font-medium">Automacao de fluxos</td>
                       <td className="py-4 px-4 text-center text-slate-400">—</td>
                       <td className="py-4 px-4 text-center text-slate-400">—</td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
                     </tr>
                     <tr className="border-b border-slate-200 bg-white">
                       <td className="py-4 px-4 text-slate-700 font-medium">Extracao de tabelas</td>
@@ -423,43 +423,43 @@ export default function PrecosPage() {
                       <td className="py-4 px-4 text-slate-700 font-medium">Comparacao de PDFs</td>
                       <td className="py-4 px-4 text-center text-slate-400">—</td>
                       <td className="py-4 px-4 text-center text-slate-400">—</td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
                     </tr>
                     <tr className="border-b border-slate-200 bg-white">
                       <td className="py-4 px-4 text-slate-700 font-medium">Assinatura eletronica</td>
                       <td className="py-4 px-4 text-center text-slate-400">—</td>
                       <td className="py-4 px-4 text-center text-slate-400">—</td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
                     </tr>
                     <tr className="border-b border-slate-200 bg-slate-50">
                       <td className="py-4 px-4 text-slate-700 font-medium">Redacao de PDFs</td>
                       <td className="py-4 px-4 text-center text-slate-400">—</td>
                       <td className="py-4 px-4 text-center text-slate-400">—</td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
                     </tr>
                     <tr className="border-b border-slate-200 bg-white">
                       <td className="py-4 px-4 text-slate-700 font-medium">Processamento prioritario</td>
                       <td className="py-4 px-4 text-center text-slate-400">—</td>
                       <td className="py-4 px-4 text-center text-slate-400">—</td>
                       <td className="py-4 px-4 text-center text-slate-400">—</td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
                     </tr>
                     <tr className="border-b border-slate-200 bg-slate-50">
                       <td className="py-4 px-4 text-slate-700 font-medium">Suporte dedicado</td>
                       <td className="py-4 px-4 text-center text-slate-400">—</td>
                       <td className="py-4 px-4 text-center text-slate-400">—</td>
                       <td className="py-4 px-4 text-center text-slate-400">—</td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
                     </tr>
                     <tr className="border-b border-slate-200 bg-white">
                       <td className="py-4 px-4 text-slate-700 font-medium">Acesso antecipado</td>
                       <td className="py-4 px-4 text-center text-slate-400">—</td>
                       <td className="py-4 px-4 text-center text-slate-400">—</td>
                       <td className="py-4 px-4 text-center text-slate-400">—</td>
-                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-green-500 mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-blue-600 mx-auto" /></td>
                     </tr>
                   </tbody>
                 </table>
@@ -476,21 +476,12 @@ export default function PrecosPage() {
               <p className="text-xl text-slate-600 mb-8">
                 Comece com 10 conversoes gratis por dia. Sem cartao de credito.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 text-lg rounded-xl"
-                  asChild
-                >
-                  <Link href="/br">Experimentar Ferramentas Gratis</Link>
-                </Button>
-                <Button
-                  variant="outline"
-                  className="bg-white text-slate-800 border-slate-300 hover:bg-slate-50 font-bold py-3 px-8 text-lg rounded-xl"
-                  asChild
-                >
-                  <Link href="/br/contato">Contatar Vendas</Link>
-                </Button>
-              </div>
+              <Button
+                className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 text-lg rounded-xl"
+                asChild
+              >
+                <Link href="/br">Experimentar Ferramentas Gratis</Link>
+              </Button>
             </div>
           </div>
         </section>

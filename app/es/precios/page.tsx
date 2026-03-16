@@ -66,7 +66,7 @@ export default function PreciosPage() {
                   </div>
                   <div className="space-y-3 mb-8 flex-grow">
                     {["10 conversiones por dia","Archivos hasta 25MB","Herramientas PDF basicas (comprimir, unir, dividir, rotar, convertir)","Procesamiento de un solo archivo","Velocidad estandar"].map((f,i)=>(
-                      <div key={i} className="flex items-center gap-3"><div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0"><Check className="h-3 w-3 text-green-600" /></div><span className="text-slate-700">{f}</span></div>
+                      <div key={i} className="flex items-center gap-3"><div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0"><Check className="h-3 w-3 text-blue-600" /></div><span className="text-slate-700">{f}</span></div>
                     ))}
                   </div>
                   <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" asChild><Link href="/es/dashboard">Empezar Gratis</Link></Button>
@@ -84,7 +84,7 @@ export default function PreciosPage() {
                   <div className="space-y-3 mb-8 flex-grow">
                     <p className="text-sm text-slate-500 font-medium">Todo en Gratis, mas:</p>
                     {["Conversiones ilimitadas","Archivos hasta 200MB","Todas las herramientas PDF (OCR, codigo QR, PDF a Word/Excel/PowerPoint)","Procesamiento por lotes (multiples archivos a la vez)","Velocidad de procesamiento prioritaria"].map((f,i)=>(
-                      <div key={i} className="flex items-center gap-3"><div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0"><Check className="h-3 w-3 text-green-600" /></div><span className="text-slate-700 font-medium">{f}</span></div>
+                      <div key={i} className="flex items-center gap-3"><div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0"><Check className="h-3 w-3 text-blue-600" /></div><span className="text-slate-700 font-medium">{f}</span></div>
                     ))}
                   </div>
                   <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" asChild><Link href={billing === "monthly" ? "/upgrade" : "/upgrade?billing=annual"}>{billing === "monthly" ? "Actualizar a Pro" : "Actualizar Anual (ahorra 2 meses)"}</Link></Button>
@@ -102,7 +102,7 @@ export default function PreciosPage() {
                   <div className="space-y-3 mb-8 flex-grow">
                     <p className="text-sm text-slate-500 font-medium">Todo en Pro, mas:</p>
                     {["Archivos hasta 1GB","Extraccion de tablas a Excel (200 paginas/mes)","Automatizacion de flujos (encadena herramientas)","Comparacion de PDFs (diferencias lado a lado)","Firma electronica de documentos","Redaccion de PDFs (eliminacion permanente)"].map((f,i)=>(
-                      <div key={i} className="flex items-center gap-3"><div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0"><Check className="h-3 w-3 text-green-600" /></div><span className="text-slate-700 font-medium">{f}</span></div>
+                      <div key={i} className="flex items-center gap-3"><div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0"><Check className="h-3 w-3 text-blue-600" /></div><span className="text-slate-700 font-medium">{f}</span></div>
                     ))}
                   </div>
                   <Button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" asChild><Link href={billing === "monthly" ? "/upgrade?plan=business" : "/upgrade?plan=business&billing=annual"}>{billing === "monthly" ? "Actualizar a Business" : "Actualizar Anual (ahorra 2 meses)"}</Link></Button>
@@ -154,7 +154,7 @@ export default function PreciosPage() {
                           <td key={plan} className="text-center py-4 px-4">
                             {typeof row[plan] === "boolean" ? (
                               row[plan] ? (
-                                <div className="flex justify-center"><div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center"><Check className="h-4 w-4 text-green-600" /></div></div>
+                                <div className="flex justify-center"><div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center"><Check className="h-4 w-4 text-blue-600" /></div></div>
                               ) : (
                                 <span className="text-slate-300 text-lg">—</span>
                               )
@@ -180,14 +180,9 @@ export default function PreciosPage() {
               <p className="text-xl text-slate-300 mb-8">
                 Empieza con 10 conversiones gratis al dia. Sin tarjeta de credito.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" asChild>
-                  <Link href="/es">Probar Herramientas Gratis</Link>
-                </Button>
-                <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-slate-900 font-bold py-4 px-8 text-lg rounded-xl transition-all duration-300" asChild>
-                  <Link href="/es/contacto">Contactar Ventas</Link>
-                </Button>
-              </div>
+              <Button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" asChild>
+                <Link href="/es">Probar Herramientas Gratis</Link>
+              </Button>
             </div>
           </div>
         </section>
