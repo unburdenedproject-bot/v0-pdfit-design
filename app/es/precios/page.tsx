@@ -87,7 +87,7 @@ export default function PreciosPage() {
                       <div key={i} className="flex items-center gap-3"><div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0"><Check className="h-3 w-3 text-blue-600" /></div><span className="text-slate-700 font-medium">{f}</span></div>
                     ))}
                   </div>
-                  <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" asChild><Link href={billing === "monthly" ? "/upgrade" : "/upgrade?billing=annual"}>{billing === "monthly" ? "Actualizar a Pro" : "Actualizar Anual (ahorra 2 meses)"}</Link></Button>
+                  <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" asChild><Link href={billing === "monthly" ? "/upgrade" : "/upgrade?billing=annual"}>{billing === "monthly" ? "Actualizar a Pro" : "Ahorra 2 Meses — Anual"}</Link></Button>
                 </div>
 
                 {/* Business */}
@@ -105,7 +105,7 @@ export default function PreciosPage() {
                       <div key={i} className="flex items-center gap-3"><div className="w-5 h-5 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0"><Check className="h-3 w-3 text-blue-600" /></div><span className="text-slate-700 font-medium">{f}</span></div>
                     ))}
                   </div>
-                  <Button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" asChild><Link href={billing === "monthly" ? "/upgrade?plan=business" : "/upgrade?plan=business&billing=annual"}>{billing === "monthly" ? "Actualizar a Business" : "Actualizar Anual (ahorra 2 meses)"}</Link></Button>
+                  <Button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" asChild><Link href={billing === "monthly" ? "/upgrade?plan=business" : "/upgrade?plan=business&billing=annual"}>{billing === "monthly" ? "Actualizar a Business" : "Ahorra 2 Meses — Anual"}</Link></Button>
                 </div>
 
                 {/* Enterprise */}
@@ -123,7 +123,7 @@ export default function PreciosPage() {
                       <div key={i} className="flex items-center gap-3"><div className="w-5 h-5 bg-amber-500/20 rounded-full flex items-center justify-center flex-shrink-0"><Check className="h-3 w-3 text-amber-500" /></div><span className="text-slate-200 font-medium">{f}</span></div>
                     ))}
                   </div>
-                  <Button className="w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" asChild><Link href={billing === "monthly" ? "/upgrade?plan=enterprise" : "/upgrade?plan=enterprise&billing=annual"}>{billing === "monthly" ? "Actualizar a Enterprise" : "Actualizar Anual (ahorra 2 meses)"}</Link></Button>
+                  <Button className="w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" asChild><Link href={billing === "monthly" ? "/upgrade?plan=enterprise" : "/upgrade?plan=enterprise&billing=annual"}>{billing === "monthly" ? "Actualizar a Enterprise" : "Ahorra 2 Meses — Anual"}</Link></Button>
                 </div>
               </div>
             </div>

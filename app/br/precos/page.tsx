@@ -180,7 +180,7 @@ export default function PrecosPage() {
                     asChild
                   >
                     <Link href={billing === "monthly" ? "/upgrade" : "/upgrade?billing=annual"}>
-                      {billing === "monthly" ? "Atualizar para Pro" : "Atualizar Anual (economize 2 meses)"}
+                      {billing === "monthly" ? "Atualizar para Pro" : "Economize 2 Meses — Anual"}
                     </Link>
                   </Button>
                 </div>
@@ -257,7 +257,7 @@ export default function PrecosPage() {
                     asChild
                   >
                     <Link href={billing === "monthly" ? "/upgrade?plan=business" : "/upgrade?plan=business&billing=annual"}>
-                      {billing === "monthly" ? "Atualizar para Business" : "Atualizar Anual (economize 2 meses)"}
+                      {billing === "monthly" ? "Atualizar para Business" : "Economize 2 Meses — Anual"}
                     </Link>
                   </Button>
                 </div>
@@ -329,7 +329,7 @@ export default function PrecosPage() {
                     asChild
                   >
                     <Link href={billing === "monthly" ? "/upgrade?plan=enterprise" : "/upgrade?plan=enterprise&billing=annual"}>
-                      {billing === "monthly" ? "Atualizar para Enterprise" : "Atualizar Anual (economize 2 meses)"}
+                      {billing === "monthly" ? "Atualizar para Enterprise" : "Economize 2 Meses — Anual"}
                     </Link>
                   </Button>
                 </div>

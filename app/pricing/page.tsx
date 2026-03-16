@@ -180,7 +180,7 @@ export default function PricingPage() {
                     asChild
                   >
                     <Link href={billing === "monthly" ? "/upgrade" : "/upgrade?billing=annual"}>
-                      {billing === "monthly" ? "Upgrade to Pro" : "Upgrade Annually (save 2 months)"}
+                      {billing === "monthly" ? "Upgrade to Pro" : "Save 2 Months — Annual"}
                     </Link>
                   </Button>
                 </div>
@@ -257,7 +257,7 @@ export default function PricingPage() {
                     asChild
                   >
                     <Link href={billing === "monthly" ? "/upgrade?plan=business" : "/upgrade?plan=business&billing=annual"}>
-                      {billing === "monthly" ? "Upgrade to Business" : "Upgrade Annually (save 2 months)"}
+                      {billing === "monthly" ? "Upgrade to Business" : "Save 2 Months — Annual"}
                     </Link>
                   </Button>
                 </div>
@@ -329,7 +329,7 @@ export default function PricingPage() {
                     asChild
                   >
                     <Link href={billing === "monthly" ? "/upgrade?plan=enterprise" : "/upgrade?plan=enterprise&billing=annual"}>
-                      {billing === "monthly" ? "Upgrade to Enterprise" : "Upgrade Annually (save 2 months)"}
+                      {billing === "monthly" ? "Upgrade to Enterprise" : "Save 2 Months — Annual"}
                     </Link>
                   </Button>
                 </div>
