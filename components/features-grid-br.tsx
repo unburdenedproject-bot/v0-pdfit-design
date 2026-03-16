@@ -89,19 +89,28 @@ const categories = [
     ],
   },
   {
-    name: "Ferramentas Empresariais",
-    description: "Ferramentas avancadas para equipes e profissionais",
+    name: "Ferramentas Business e Enterprise",
+    description: "Ferramentas avancadas para profissionais, equipes, escritorios e laboratorios",
     tools: [
       { name: "Automacao de Fluxos", description: "Encadeie multiplas ferramentas PDF em um fluxo automatizado.", icon: Repeat, href: "/br/automacao", tier: "BUSINESS" as const },
       { name: "Extracao de Tabelas", description: "Extraia tabelas de PDFs diretamente para planilhas Excel.", icon: FileSpreadsheet, href: "/br/extracao-de-tabelas", tier: "BUSINESS" as const },
       { name: "Comparar PDF", description: "Compare dois PDFs lado a lado e destaque as diferencas.", icon: ArrowLeftRight, href: "/br/comparar-pdf", tier: "BUSINESS" as const },
       { name: "Assinatura Eletronica", description: "Adicione assinaturas eletronicas legalmente validas a PDFs.", icon: PenTool, href: "/br/assinatura-eletronica", tier: "BUSINESS" as const },
       { name: "Redacao de PDF", description: "Remova permanentemente texto e dados sensiveis de PDFs.", icon: Shield, href: "/br/redacao-pdf", tier: "BUSINESS" as const },
+      { name: "Modelos de Fluxo", description: "Fluxos predefinidos para documentos juridicos, contabeis e de laboratorio.", icon: Layers, href: "/br/automacao", tier: "ENTERPRISE" as const },
+      { name: "Extracao de Alto Volume", description: "Extraia ate 2.000 paginas de tabelas por mes para Excel.", icon: FileSpreadsheet, href: "/br/extracao-de-tabelas", tier: "ENTERPRISE" as const },
     ],
   },
 ]
 
-function TierBadge({ tier }: { tier: "FREE" | "PRO" | "BUSINESS" }) {
+function TierBadge({ tier }: { tier: "FREE" | "PRO" | "BUSINESS" | "ENTERPRISE" }) {
+  if (tier === "ENTERPRISE") {
+    return (
+      <span className="bg-amber-100 text-amber-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
+        Enterprise
+      </span>
+    )
+  }
   if (tier === "BUSINESS") {
     return (
       <span className="bg-indigo-100 text-indigo-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
@@ -131,7 +140,7 @@ function PricingCTA() {
           Precisa de conversoes ilimitadas ou arquivos maiores?
         </h3>
         <p className="text-slate-300 text-sm mb-5 max-w-lg mx-auto leading-relaxed">
-          Atualize para Pro para conversoes ilimitadas, processamento em lote e todas as ferramentas — $7.99/mes. Precisa de assinatura eletronica, faturas e automacao? Experimente Business por $13.99/mes.
+          Atualize para Pro para conversoes ilimitadas e todas as ferramentas — $7.99/mes. Precisa de assinatura eletronica e automacao? Experimente Business por $13.99/mes. Escritorios e contadores escolhem Enterprise por $49.99/mes.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link

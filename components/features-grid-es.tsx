@@ -239,8 +239,8 @@ const categories = [
     ],
   },
   {
-    name: "Herramientas Empresariales",
-    description: "Herramientas avanzadas para equipos y profesionales",
+    name: "Herramientas Business y Enterprise",
+    description: "Herramientas avanzadas para profesionales, equipos, bufetes y laboratorios",
     tools: [
       {
         name: "Automatización de Flujos",
@@ -277,11 +277,32 @@ const categories = [
         href: "/es/redaccion-pdf",
         tier: "BUSINESS" as const,
       },
+      {
+        name: "Plantillas de Flujos",
+        description: "Flujos predefinidos para documentos legales, contables y de laboratorio.",
+        icon: Layers,
+        href: "/es/automatizacion",
+        tier: "ENTERPRISE" as const,
+      },
+      {
+        name: "Extracción de Alto Volumen",
+        description: "Extrae hasta 2,000 páginas de tablas al mes a Excel.",
+        icon: FileSpreadsheet,
+        href: "/es/extraccion-de-tablas",
+        tier: "ENTERPRISE" as const,
+      },
     ],
   },
 ]
 
-function TierBadge({ tier }: { tier: "FREE" | "PRO" | "BUSINESS" }) {
+function TierBadge({ tier }: { tier: "FREE" | "PRO" | "BUSINESS" | "ENTERPRISE" }) {
+  if (tier === "ENTERPRISE") {
+    return (
+      <span className="bg-amber-100 text-amber-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
+        Enterprise
+      </span>
+    )
+  }
   if (tier === "BUSINESS") {
     return (
       <span className="bg-indigo-100 text-indigo-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
@@ -311,7 +332,7 @@ function PricingCTA() {
           ¿Necesitas conversiones ilimitadas o archivos más grandes?
         </h3>
         <p className="text-slate-300 text-sm mb-5 max-w-lg mx-auto leading-relaxed">
-          Hazte Pro para conversiones ilimitadas, procesamiento por lotes y todas las herramientas — $7.99/mes. ¿Necesitas firma electrónica, facturas y automatización? Prueba Business a $13.99/mes.
+          Hazte Pro para conversiones ilimitadas y todas las herramientas — $7.99/mes. ¿Necesitas firma electrónica y automatización? Prueba Business a $13.99/mes. Bufetes y contadores eligen Enterprise a $49.99/mes.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link

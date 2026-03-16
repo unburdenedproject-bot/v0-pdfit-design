@@ -240,8 +240,8 @@ const categories = [
     ],
   },
   {
-    name: "Business Tools",
-    description: "Advanced tools for teams and professionals",
+    name: "Business & Enterprise Tools",
+    description: "Advanced tools for professionals, teams, law firms, and labs",
     tools: [
       {
         name: "Workflow Automation",
@@ -278,11 +278,32 @@ const categories = [
         href: "/pdf-redaction",
         tier: "BUSINESS" as const,
       },
+      {
+        name: "Workflow Templates",
+        description: "Pre-built workflows for legal, accounting, and lab documents.",
+        icon: Layers,
+        href: "/workflow-automation",
+        tier: "ENTERPRISE" as const,
+      },
+      {
+        name: "High-Volume Table Extraction",
+        description: "Extract up to 2,000 pages of tables per month to Excel.",
+        icon: FileSpreadsheet,
+        href: "/table-extraction",
+        tier: "ENTERPRISE" as const,
+      },
     ],
   },
 ]
 
-function TierBadge({ tier }: { tier: "FREE" | "PRO" | "BUSINESS" }) {
+function TierBadge({ tier }: { tier: "FREE" | "PRO" | "BUSINESS" | "ENTERPRISE" }) {
+  if (tier === "ENTERPRISE") {
+    return (
+      <span className="bg-amber-100 text-amber-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
+        Enterprise
+      </span>
+    )
+  }
   if (tier === "BUSINESS") {
     return (
       <span className="bg-indigo-100 text-indigo-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
@@ -312,7 +333,7 @@ function PricingCTA() {
           Need unlimited conversions or larger files?
         </h3>
         <p className="text-slate-300 text-sm mb-5 max-w-lg mx-auto leading-relaxed">
-          Go Pro for unlimited conversions, batch processing, and all tools — $7.99/month. Need eSign, invoices, and workflow automation? Try Business at $13.99/month.
+          Go Pro for unlimited conversions and all tools — $7.99/month. Need eSign and workflow automation? Try Business at $13.99/month. Law firms and accountants love Enterprise at $49.99/month.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link

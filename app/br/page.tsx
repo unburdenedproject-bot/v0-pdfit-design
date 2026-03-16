@@ -11,7 +11,14 @@ import {
   Type, QrCode, ImageDown, Layers, Upload, PenTool, ArrowLeftRight, Repeat,
 } from "lucide-react"
 
-function TierBadge({ tier }: { tier: "FREE" | "PRO" | "BUSINESS" }) {
+function TierBadge({ tier }: { tier: "FREE" | "PRO" | "BUSINESS" | "ENTERPRISE" }) {
+  if (tier === "ENTERPRISE") {
+    return (
+      <span className="bg-amber-100 text-amber-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
+        Enterprise
+      </span>
+    )
+  }
   if (tier === "BUSINESS") {
     return (
       <span className="bg-indigo-100 text-indigo-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
@@ -96,14 +103,16 @@ const categories = [
     ],
   },
   {
-    name: "Business",
-    description: "Ferramentas avancadas para equipes e profissionais",
+    name: "Business e Enterprise",
+    description: "Ferramentas avancadas para profissionais, equipes, escritorios e laboratorios",
     tools: [
       { name: "Automacao", description: "Encadeie varias ferramentas PDF em um fluxo automatico.", icon: Repeat, href: "/br/automacao", tier: "BUSINESS" as const },
       { name: "Extracao de Tabelas", description: "Extraia tabelas de PDFs diretamente para Excel.", icon: FileSpreadsheet, href: "/br/extracao-de-tabelas", tier: "BUSINESS" as const },
       { name: "Comparar PDF", description: "Compare dois PDFs lado a lado e destaque diferencas.", icon: ArrowLeftRight, href: "/br/comparar-pdf", tier: "BUSINESS" as const },
       { name: "Assinatura Eletronica", description: "Adicione assinaturas eletronicas legais a PDFs.", icon: PenTool, href: "/br/assinatura-eletronica", tier: "BUSINESS" as const },
       { name: "Redacao de PDF", description: "Remova permanentemente texto sensivel de PDFs.", icon: Shield, href: "/br/redacao-pdf", tier: "BUSINESS" as const },
+      { name: "Modelos de Fluxo", description: "Fluxos predefinidos para documentos juridicos, contabeis e de laboratorio.", icon: Layers, href: "/br/automacao", tier: "ENTERPRISE" as const },
+      { name: "Extracao de Alto Volume", description: "Extraia ate 2.000 paginas de tabelas por mes para Excel.", icon: FileSpreadsheet, href: "/br/extracao-de-tabelas", tier: "ENTERPRISE" as const },
     ],
   },
 ]
