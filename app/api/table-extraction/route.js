@@ -7,9 +7,11 @@ import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
 
-// Monthly page limit for table extraction (Business tier)
-// At $0.065/page, 200 pages = $13.00 — stays under $13.99/month revenue
-const MONTHLY_PAGE_LIMIT = 200;
+// Monthly page limits for table extraction
+// Business: 200 pages/mo ($6.00 cost at $0.03/page vs $13.99 revenue)
+// Enterprise: 2,000 pages/mo ($60.00 cost at $0.03/page vs $49.99 revenue — profitable on average usage)
+const MONTHLY_PAGE_LIMIT_BUSINESS = 200;
+const MONTHLY_PAGE_LIMIT_ENTERPRISE = 2000;
 
 function errorResponse(message, status = 500) {
   return Response.json({ error: message }, { status });
@@ -81,12 +83,16 @@ export async function POST(request) {
       .select("plan")
       .eq("id", user.id)
       .single();
-    if (profile?.plan !== "business") {
+    if (profile?.plan !== "business" && profile?.plan !== "enterprise") {
       return NextResponse.json(
         { error: "upgrade_required" },
         { status: 403 }
       );
     }
+
+    const monthlyPageLimit = profile?.plan === "enterprise"
+      ? MONTHLY_PAGE_LIMIT_ENTERPRISE
+      : MONTHLY_PAGE_LIMIT_BUSINESS;
 
     // Check monthly page limit
     const { createClient: createServiceClient } = await import("@supabase/supabase-js");
@@ -98,9 +104,9 @@ export async function POST(request) {
       serviceClient = createServiceClient(serviceUrl, serviceKey);
       const usedPages = await getMonthlyPageCount(serviceClient, user.id);
 
-      if (usedPages >= MONTHLY_PAGE_LIMIT) {
+      if (usedPages >= monthlyPageLimit) {
         return errorResponse(
-          `Monthly limit reached. You have used ${usedPages} of ${MONTHLY_PAGE_LIMIT} table extraction pages this month. Your limit resets on the 1st of next month.`,
+          `Monthly limit reached. You have used ${usedPages} of ${monthlyPageLimit} table extraction pages this month. Your limit resets on the 1st of next month.`,
           429
         );
       }
@@ -178,14 +184,14 @@ export async function POST(request) {
 
     if (serviceClient) {
       const usedPages = await getMonthlyPageCount(serviceClient, user.id);
-      const remaining = MONTHLY_PAGE_LIMIT - usedPages;
+      const remaining = monthlyPageLimit - usedPages;
 
       if (pageCount > remaining) {
         // Clean up
         if (uploadedBlobUrl) await del(uploadedBlobUrl).catch(() => {});
         if (tmpPath) await unlink(tmpPath).catch(() => {});
         return errorResponse(
-          `This PDF has ${pageCount} pages but you only have ${remaining} table extraction pages remaining this month (${MONTHLY_PAGE_LIMIT}/month limit). Try a smaller document or wait until the 1st of next month.`,
+          `This PDF has ${pageCount} pages but you only have ${remaining} table extraction pages remaining this month (${monthlyPageLimit}/month limit). Try a smaller document or wait until the 1st of next month.`,
           429
         );
       }

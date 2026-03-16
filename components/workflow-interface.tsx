@@ -178,7 +178,7 @@ export function WorkflowInterface() {
   const [resultName, setResultName] = useState("")
   const [showCustom, setShowCustom] = useState(false)
 
-  const isBusinessUser = userPlan === "business"
+  const isBusinessUser = userPlan === "business" || userPlan === "enterprise"
 
   useEffect(() => {
     fetch("/api/user-plan")

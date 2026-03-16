@@ -314,7 +314,7 @@ export function WatermarkPdfInterface() {
               </p>
             </div>
 
-            {userPlan === "pro" || userPlan === "business" ? (
+            {userPlan === "pro" || userPlan === "business" || userPlan === "enterprise" ? (
               <div className="bg-card border border-border rounded-xl p-6 hover:shadow-md transition-shadow mb-8">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">

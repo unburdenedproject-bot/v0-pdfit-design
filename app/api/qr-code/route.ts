@@ -22,7 +22,7 @@ export async function POST(request: Request) {
       .eq("id", user.id)
       .single()
 
-    if (!profile || (profile.plan !== "pro" && profile.plan !== "business")) {
+    if (!profile || (profile.plan !== "pro" && profile.plan !== "business" && profile.plan !== "enterprise")) {
       return NextResponse.json(
         { error: "This tool requires a Pro or Business plan." },
         { status: 403 }

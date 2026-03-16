@@ -64,6 +64,10 @@ export async function POST(request: NextRequest) {
       try {
         const subscription = await stripeClient.subscriptions.retrieve(subscriptionId)
         const priceId = subscription.items.data[0]?.price?.id
+        const enterprisePriceIds = [
+          process.env.STRIPE_PRICE_ID_ENTERPRISE,
+          process.env.STRIPE_PRICE_ID_ENTERPRISE_ANNUAL,
+        ].filter(Boolean)
         const businessPriceIds = [
           process.env.STRIPE_PRICE_ID_BUSINESS,
           process.env.STRIPE_PRICE_ID_BUSINESS_ANNUAL,
@@ -72,7 +76,9 @@ export async function POST(request: NextRequest) {
           process.env.STRIPE_PRICE_ID,
           process.env.STRIPE_PRICE_ID_ANNUAL,
         ].filter(Boolean)
-        if (priceId && businessPriceIds.includes(priceId)) {
+        if (priceId && enterprisePriceIds.includes(priceId)) {
+          plan = "enterprise"
+        } else if (priceId && businessPriceIds.includes(priceId)) {
           plan = "business"
         } else if (priceId && proPriceIds.includes(priceId)) {
           plan = "pro"
@@ -124,6 +130,10 @@ export async function POST(request: NextRequest) {
         // Detect plan from price ID
         let plan = "pro"
         const priceId = subscription.items?.data?.[0]?.price?.id
+        const enterprisePriceIds = [
+          process.env.STRIPE_PRICE_ID_ENTERPRISE,
+          process.env.STRIPE_PRICE_ID_ENTERPRISE_ANNUAL,
+        ].filter(Boolean)
         const businessPriceIds = [
           process.env.STRIPE_PRICE_ID_BUSINESS,
           process.env.STRIPE_PRICE_ID_BUSINESS_ANNUAL,
@@ -132,7 +142,9 @@ export async function POST(request: NextRequest) {
           process.env.STRIPE_PRICE_ID,
           process.env.STRIPE_PRICE_ID_ANNUAL,
         ].filter(Boolean)
-        if (priceId && businessPriceIds.includes(priceId)) {
+        if (priceId && enterprisePriceIds.includes(priceId)) {
+          plan = "enterprise"
+        } else if (priceId && businessPriceIds.includes(priceId)) {
           plan = "business"
         } else if (priceId && proPriceIds.includes(priceId)) {
           plan = "pro"

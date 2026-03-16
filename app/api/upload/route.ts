@@ -26,8 +26,8 @@ export async function POST(request: NextRequest) {
       .eq("id", user.id)
       .single()
     const plan = profile?.plan || "free"
-    if (plan === "business") {
-      maximumSizeInBytes = 1024 * 1024 * 1024 // 1GB for Business
+    if (plan === "enterprise" || plan === "business") {
+      maximumSizeInBytes = 1024 * 1024 * 1024 // 1GB for Business/Enterprise
     } else if (plan === "pro") {
       maximumSizeInBytes = 200 * 1024 * 1024  // 200MB for Pro
     }

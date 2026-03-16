@@ -149,7 +149,7 @@ export async function POST(request) {
       return NextResponse.json({ error: "upgrade_required" }, { status: 403 });
     }
     const { data: profile } = await supabase.from("users").select("plan").eq("id", user.id).single();
-    if (profile?.plan !== "pro" && profile?.plan !== "business") {
+    if (profile?.plan !== "pro" && profile?.plan !== "business" && profile?.plan !== "enterprise") {
       return NextResponse.json({ error: "upgrade_required" }, { status: 403 });
     }
 

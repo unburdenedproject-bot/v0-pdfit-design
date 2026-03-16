@@ -99,7 +99,7 @@ export async function checkUsageAndAuth(toolName: string) {
     .eq("id", user.id)
     .single()
 
-  if (profile?.plan === "pro" || profile?.plan === "business") return { allowed: true, userId: user.id }
+  if (profile?.plan === "pro" || profile?.plan === "business" || profile?.plan === "enterprise") return { allowed: true, userId: user.id }
 
   const today = new Date().toISOString().split("T")[0]
 

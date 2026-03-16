@@ -54,7 +54,7 @@ export function TableExtractionInterface() {
       .catch(() => setUserPlan("free"))
   }, [])
 
-  const isBusinessUser = userPlan === "business"
+  const isBusinessUser = userPlan === "business" || userPlan === "enterprise"
 
   const handleDrop = useCallback((e: React.DragEvent) => {
     e.preventDefault()

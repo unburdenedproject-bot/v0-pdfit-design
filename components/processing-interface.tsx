@@ -91,7 +91,7 @@ export function ProcessingInterface({
   const [selectedCompressionLevel, setSelectedCompressionLevel] = useState(compressionLevelProp || "recommended")
 
   const compressionLevel = showCompressionSelector ? selectedCompressionLevel : (compressionLevelProp || "recommended")
-  const isPaidUser = userPlan === "pro" || userPlan === "business"
+  const isPaidUser = userPlan === "pro" || userPlan === "business" || userPlan === "enterprise"
 
   useEffect(() => {
     fetch("/api/user-plan")

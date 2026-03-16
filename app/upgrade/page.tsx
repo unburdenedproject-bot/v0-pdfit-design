@@ -11,6 +11,7 @@ export default async function UpgradePage({
 }) {
   const { billing, plan } = await searchParams
   const isAnnual = billing === "annual"
+  const isEnterprise = plan === "enterprise"
   const isBusiness = plan === "business"
 
   const supabase = await createClient()
@@ -21,7 +22,14 @@ export default async function UpgradePage({
   }
 
   let priceId: string | undefined
-  if (isBusiness) {
+  if (isEnterprise) {
+    priceId = isAnnual
+      ? process.env.STRIPE_PRICE_ID_ENTERPRISE_ANNUAL
+      : process.env.STRIPE_PRICE_ID_ENTERPRISE
+    if (!priceId) {
+      redirect("/pricing?error=enterprise_price_not_configured")
+    }
+  } else if (isBusiness) {
     priceId = isAnnual
       ? process.env.STRIPE_PRICE_ID_BUSINESS_ANNUAL
       : process.env.STRIPE_PRICE_ID_BUSINESS

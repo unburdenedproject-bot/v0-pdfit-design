@@ -336,7 +336,7 @@ export function PdfCompareInterface() {
   const totalPagesB = paraPagesB.length
   const maxPages = Math.max(totalPagesA, totalPagesB)
   const hasBothFiles = totalPagesA > 0 && totalPagesB > 0
-  const isBusinessUser = userPlan === "business"
+  const isBusinessUser = userPlan === "business" || userPlan === "enterprise"
 
   useEffect(() => {
     fetch("/api/user-plan")

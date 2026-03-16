@@ -131,8 +131,8 @@ export function DashboardClientBr({
   const [isBillingLoading, setIsBillingLoading] = useState(false)
   const [billingError, setBillingError] = useState<string | null>(null)
 
-  const isPro = plan === "pro" || plan === "business"
-  const planLabel = plan === "business" ? "Business" : plan === "pro" ? "Pro" : "Gratis"
+  const isPro = plan === "pro" || plan === "business" || plan === "enterprise"
+  const planLabel = plan === "enterprise" ? "Enterprise" : plan === "business" ? "Business" : plan === "pro" ? "Pro" : "Gratis"
   const dailyLimit = 10
   const usagePercent = isPro ? 100 : Math.min((usageCount / dailyLimit) * 100, 100)
 

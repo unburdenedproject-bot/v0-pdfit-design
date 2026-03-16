@@ -44,7 +44,7 @@ export function RedactionInterface() {
   const [resultUrl, setResultUrl] = useState("")
   const [resultName, setResultName] = useState("")
 
-  const isBusinessUser = userPlan === "business"
+  const isBusinessUser = userPlan === "business" || userPlan === "enterprise"
 
   useEffect(() => {
     fetch("/api/user-plan")
