@@ -22,6 +22,7 @@ interface PresetWorkflow {
   name: string
   description: string
   steps: WorkflowStep[]
+  enterpriseOnly?: boolean
 }
 
 const TOOL_OPTIONS = [
@@ -68,6 +69,62 @@ const PRESET_WORKFLOWS: PresetWorkflow[] = [
     steps: [
       { tool: "watermark", params: { text: "", transparency: 30 } },
       { tool: "compress", params: { compression_level: "recommended" } },
+    ],
+  },
+  // Enterprise-only templates
+  {
+    id: "legal-doc-prep",
+    name: "Legal Document Prep",
+    description: "Flatten, compress, mark confidential, and lock with password",
+    enterpriseOnly: true,
+    steps: [
+      { tool: "flatten", params: {} },
+      { tool: "compress", params: { compression_level: "recommended" } },
+      { tool: "watermark", params: { text: "CONFIDENTIAL", transparency: 40 } },
+      { tool: "protect", params: { password: "" } },
+    ],
+  },
+  {
+    id: "court-filing",
+    name: "Court Filing Ready",
+    description: "Flatten forms and compress to meet court upload requirements",
+    enterpriseOnly: true,
+    steps: [
+      { tool: "flatten", params: {} },
+      { tool: "compress", params: { compression_level: "extreme" } },
+    ],
+  },
+  {
+    id: "invoice-archive",
+    name: "Invoice Archive",
+    description: "Flatten, compress to minimum size, and password-protect for storage",
+    enterpriseOnly: true,
+    steps: [
+      { tool: "flatten", params: {} },
+      { tool: "compress", params: { compression_level: "extreme" } },
+      { tool: "protect", params: { password: "" } },
+    ],
+  },
+  {
+    id: "draft-review",
+    name: "Draft for Review",
+    description: "Mark as DRAFT with watermark and compress for easy sharing",
+    enterpriseOnly: true,
+    steps: [
+      { tool: "watermark", params: { text: "DRAFT", transparency: 50 } },
+      { tool: "compress", params: { compression_level: "recommended" } },
+    ],
+  },
+  {
+    id: "lab-report",
+    name: "Lab Report Finalize",
+    description: "Flatten data, add lab watermark, compress, and protect",
+    enterpriseOnly: true,
+    steps: [
+      { tool: "flatten", params: {} },
+      { tool: "watermark", params: { text: "", transparency: 25 } },
+      { tool: "compress", params: { compression_level: "recommended" } },
+      { tool: "protect", params: { password: "" } },
     ],
   },
 ]
@@ -541,19 +598,38 @@ export function WorkflowInterface() {
             <div className="mb-10">
               <h3 className="text-xl font-bold text-slate-900 mb-4 text-center">Choose a Preset Workflow</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                {PRESET_WORKFLOWS.map((preset) => (
+                {PRESET_WORKFLOWS
+                  .filter((preset) => !preset.enterpriseOnly || userPlan === "enterprise")
+                  .map((preset) => (
                   <button
                     key={preset.id}
                     onClick={() => selectPreset(preset)}
-                    className="text-left border border-gray-200 rounded-xl p-5 hover:border-indigo-300 hover:bg-indigo-50/40 transition-all"
+                    className={cn(
+                      "text-left border rounded-xl p-5 transition-all",
+                      preset.enterpriseOnly
+                        ? "border-amber-300 bg-amber-50/30 hover:border-amber-400 hover:bg-amber-50/60"
+                        : "border-gray-200 hover:border-indigo-300 hover:bg-indigo-50/40"
+                    )}
                   >
-                    <div className="font-bold text-slate-900 mb-1">{preset.name}</div>
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="font-bold text-slate-900">{preset.name}</div>
+                      {preset.enterpriseOnly && (
+                        <span className="bg-amber-500 text-slate-900 text-[10px] font-bold px-2 py-0.5 rounded-full">
+                          Enterprise
+                        </span>
+                      )}
+                    </div>
                     <p className="text-sm text-slate-500 mb-3">{preset.description}</p>
                     <div className="flex flex-wrap gap-1.5">
                       {preset.steps.map((s, i) => {
                         const toolInfo = TOOL_OPTIONS.find((t) => t.value === s.tool)
                         return (
-                          <span key={i} className="bg-indigo-100 text-indigo-700 text-[10px] font-bold px-2 py-0.5 rounded-full">
+                          <span key={i} className={cn(
+                            "text-[10px] font-bold px-2 py-0.5 rounded-full",
+                            preset.enterpriseOnly
+                              ? "bg-amber-100 text-amber-700"
+                              : "bg-indigo-100 text-indigo-700"
+                          )}>
                             {toolInfo?.label}
                           </span>
                         )
