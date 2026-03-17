@@ -6,10 +6,10 @@ export function HeroSection() {
     <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-14 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl lg:text-7xl font-black mb-4 leading-tight text-balance">
+          <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black mb-4 leading-tight text-balance">
             PDF Tools Built for Legal, Accounting, Business Teams <span className="text-orange-500">and for Your Everyday Student</span>
           </h1>
-          <p className="text-xl lg:text-2xl text-slate-300 mb-6 font-medium leading-relaxed max-w-3xl mx-auto text-pretty">
+          <p className="text-lg sm:text-xl lg:text-2xl text-slate-300 mb-6 font-medium leading-relaxed max-w-3xl mx-auto text-pretty">
             Compress, convert, extract tables, sign, and redact — in English, Spanish, and Portuguese. Trusted by professionals across the world.
           </p>
 
