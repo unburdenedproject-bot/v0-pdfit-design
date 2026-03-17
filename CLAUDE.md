@@ -11,7 +11,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - Frontend: Next.js (built in V0)
 - Hosting: Vercel (Pro plan)
 - PDF Processing: iLoveAPI (except pdf-to-word, pdf-to-excel, pdf-to-powerpoint which use CloudConvert)
-- URL to PDF: Puppeteer + @sparticuz/chromium-min (headless Chrome, no API cost)
+- URL to PDF: CloudConvert capture-website (Chrome engine, ~$0.02/conversion, public URLs only)
 - Table Extraction: Google Document AI Form Parser ($0.03/page)
 - Auth: Custom signup/login with hCaptcha
 - Payments: Stripe
@@ -44,7 +44,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - iLoveAPI: ~$0.04-0.10 per conversion (2,500 free credits/month)
 - Google Document AI: $0.03/page (Form Parser)
 - CloudConvert: ~$0.02 per conversion (PDF to Word/Excel/PPT)
-- URL to PDF: $0 (Puppeteer runs on Vercel serverless, no external API)
+- URL to PDF: ~$0.02 per conversion (CloudConvert capture-website, public URLs only — login-protected pages won't work)
 - Vercel Pro: $20/month base + bandwidth overage at $0.15/GB after 1TB
 - At 10K subscribers: ~$2,500-4,300/month costs vs ~$157,900/month revenue (97% margin)
 
@@ -61,7 +61,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - /word-to-pdf, /excel-to-pdf, /powerpoint-to-pdf, /office-to-pdf
 - /pdf-to-word (Pro, CloudConvert), /pdf-to-excel (Pro, CloudConvert), /pdf-to-powerpoint (Pro, CloudConvert)
 - /ocr-scanner (Pro), /qr-code (Pro)
-- /url-to-pdf (Pro — Puppeteer headless Chrome, renders full multi-page content, no iLoveAPI credits)
+- /url-to-pdf (Pro — CloudConvert capture-website with Chrome engine, public URLs only, ~$0.02/conversion)
 - /extract-images-from-pdf, /flatten-pdf
 - /upload-ready-pdf (Blue Ocean #1 — chains flatten + compress)
 - /phone-scan-cleanup (Blue Ocean #2 — Sharp image processing, free with limits)
@@ -179,6 +179,12 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - GA4 (G-DQRW3BJMX1) loads directly alongside GTM for redundancy
 - google-analytics.tsx is a "use client" component for proper Next.js App Router hydration
 - GTM noscript fallback in body
+
+### Hero Section (UPDATED 2026-03-17)
+- Headline: "PDF Tools Built for Legal, Accounting, Business Teams and for Your Everyday Student"
+- Subtitle: "Compress, convert, extract tables, sign, and redact — in English, Spanish, and Portuguese. Trusted by professionals across the world."
+- Responsive text: text-3xl (mobile) → text-4xl (sm) → text-6xl (lg)
+- Translated to ES and BR with same structure
 
 ### Usage Logging Fixes (COMPLETE)
 - Fixed broken logging in excel-to-pdf, office-to-pdf, powerpoint-to-pdf routes (undefined `usage` variable)
