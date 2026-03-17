@@ -81,6 +81,29 @@ export default async function UpgradePage({
           proration_behavior: "create_prorations",
         })
 
+        // Determine the new plan from the price ID
+        const enterprisePriceIds = [
+          process.env.STRIPE_PRICE_ID_ENTERPRISE,
+          process.env.STRIPE_PRICE_ID_ENTERPRISE_ANNUAL,
+        ].filter(Boolean)
+        const businessPriceIds = [
+          process.env.STRIPE_PRICE_ID_BUSINESS,
+          process.env.STRIPE_PRICE_ID_BUSINESS_ANNUAL,
+        ].filter(Boolean)
+
+        let newPlan = "pro"
+        if (enterprisePriceIds.includes(priceId!)) {
+          newPlan = "enterprise"
+        } else if (businessPriceIds.includes(priceId!)) {
+          newPlan = "business"
+        }
+
+        // Update Supabase directly (don't rely solely on webhook)
+        await supabase.from("users").update({
+          plan: newPlan,
+          updated_at: new Date().toISOString(),
+        }).eq("id", user.id)
+
         // Redirect to dashboard with success
         redirect(`${siteUrl}/dashboard?success=true&upgraded=true`)
       }
