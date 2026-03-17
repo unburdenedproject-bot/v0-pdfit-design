@@ -15,7 +15,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - Auth: Custom signup/login with hCaptcha
 - Payments: Stripe
 - Storage: Vercel Blob
-- Analytics: Google Tag Manager (GTM-T7LDGB3J) + GA4 direct (G-PWD4YNY710)
+- Analytics: Google Tag Manager (GTM-T7LDGB3J) + GA4 direct (G-DQRW3BJMX1)
 - Database: Supabase (users, usage tracking)
 - Rate Limiting: Upstash Redis
 
@@ -173,7 +173,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 
 ### Analytics (COMPLETE)
 - Google Tag Manager (GTM-T7LDGB3J) loads via next/script with afterInteractive strategy
-- GA4 (G-PWD4YNY710) loads directly alongside GTM for redundancy
+- GA4 (G-DQRW3BJMX1) loads directly alongside GTM for redundancy
 - google-analytics.tsx is a "use client" component for proper Next.js App Router hydration
 - GTM noscript fallback in body
 

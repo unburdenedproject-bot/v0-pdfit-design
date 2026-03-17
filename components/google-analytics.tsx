@@ -21,7 +21,7 @@ export const GoogleTagManager = () => {
       <Script
         id="ga4-script"
         strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=G-PWD4YNY710"
+        src="https://www.googletagmanager.com/gtag/js?id=G-DQRW3BJMX1"
       />
       <Script
         id="ga4-config"
@@ -31,7 +31,7 @@ export const GoogleTagManager = () => {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-PWD4YNY710');
+            gtag('config', 'G-DQRW3BJMX1');
           `,
         }}
       />
