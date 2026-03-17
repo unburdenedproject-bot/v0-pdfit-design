@@ -63,6 +63,7 @@ const categories = [
       { name: "PowerPoint a PDF", description: "Convierte presentaciones a PDF.", icon: Presentation, href: "/es/powerpoint-a-pdf", tier: "PRO" as const },
       { name: "JPG a PDF", description: "Convierte imágenes JPG a documentos PDF.", icon: Image, href: "/es/jpg-a-pdf", tier: "FREE" as const },
       { name: "PNG a PDF", description: "Convierte imágenes PNG a documentos PDF.", icon: Image, href: "/es/png-a-pdf", tier: "FREE" as const },
+      { name: "URL a PDF", description: "Convierte cualquier pagina web en un PDF.", icon: Globe, href: "/es/url-a-pdf", tier: "PRO" as const },
     ],
   },
   {

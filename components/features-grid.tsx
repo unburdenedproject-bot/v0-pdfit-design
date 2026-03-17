@@ -24,6 +24,7 @@ import {
   Shield,
   ArrowLeftRight,
   Repeat,
+  Globe,
 } from "lucide-react"
 
 const categories = [
@@ -120,6 +121,13 @@ const categories = [
         icon: Image,
         href: "/png-to-pdf",
         tier: "FREE" as const,
+      },
+      {
+        name: "URL to PDF",
+        description: "Convert any webpage to a PDF document.",
+        icon: Globe,
+        href: "/url-to-pdf",
+        tier: "PRO" as const,
       },
     ],
   },

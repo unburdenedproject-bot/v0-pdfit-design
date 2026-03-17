@@ -24,6 +24,7 @@ import {
   Shield,
   ArrowLeftRight,
   Repeat,
+  Globe,
 } from "lucide-react"
 
 const categories = [
@@ -49,6 +50,7 @@ const categories = [
       { name: "PowerPoint para PDF", description: "Converta apresentacoes para formato PDF.", icon: Presentation, href: "/br/powerpoint-para-pdf", tier: "PRO" as const },
       { name: "JPG para PDF", description: "Converta imagens JPG em documentos PDF.", icon: Image, href: "/br/jpg-para-pdf", tier: "FREE" as const },
       { name: "PNG para PDF", description: "Converta imagens PNG em documentos PDF.", icon: Image, href: "/br/png-para-pdf", tier: "FREE" as const },
+      { name: "URL para PDF", description: "Converta qualquer pagina web em um documento PDF.", icon: Globe, href: "/br/url-para-pdf", tier: "PRO" as const },
     ],
   },
   {
