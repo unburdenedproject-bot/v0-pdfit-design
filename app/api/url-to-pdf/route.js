@@ -60,7 +60,7 @@ export async function POST(request) {
       return errorResponse("Server is not configured with CloudConvert credentials.", 500);
     }
 
-    // Step 1: Create CloudConvert job — import URL → convert html to pdf → export
+    // Step 1: Create CloudConvert job — capture website as PDF → export
     const jobRes = await fetch("https://api.cloudconvert.com/v2/jobs", {
       method: "POST",
       headers: {
@@ -69,15 +69,9 @@ export async function POST(request) {
       },
       body: JSON.stringify({
         tasks: {
-          "import-1": {
-            operation: "import/url",
+          "capture-1": {
+            operation: "capture-website",
             url: url,
-            filename: "webpage.html",
-          },
-          "convert-1": {
-            operation: "convert",
-            input: "import-1",
-            input_format: "html",
             output_format: "pdf",
             engine: "chrome",
             page_orientation: "portrait",
@@ -87,10 +81,12 @@ export async function POST(request) {
             margin_left: 10,
             margin_right: 10,
             print_background: true,
+            wait_until: "networkidle0",
+            wait_time: 3000,
           },
           "export-1": {
             operation: "export/url",
-            input: "convert-1",
+            input: "capture-1",
           },
         },
       }),
