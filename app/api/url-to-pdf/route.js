@@ -8,8 +8,6 @@ function errorResponse(message, status = 500) {
 }
 
 export async function POST(request) {
-  let browser = null;
-
   try {
     // Auth: Pro/Business/Enterprise only
     const { createClient } = await import("@/lib/supabase/server");
@@ -57,44 +55,98 @@ export async function POST(request) {
       return errorResponse("Invalid URL format.", 400);
     }
 
-    // Launch headless Chrome via Puppeteer
-    const chromium = await import("@sparticuz/chromium-min");
-    const puppeteer = await import("puppeteer-core");
+    const apiKey = process.env.CLOUDCONVERT_API_KEY;
+    if (!apiKey) {
+      return errorResponse("Server is not configured with CloudConvert credentials.", 500);
+    }
 
-    browser = await puppeteer.default.launch({
-      args: chromium.default.args,
-      defaultViewport: chromium.default.defaultViewport,
-      executablePath: await chromium.default.executablePath(
-        "https://github.com/Sparticuz/chromium/releases/download/v143.0.0/chromium-v143.0.0-pack.tar"
-      ),
-      headless: chromium.default.headless,
-    });
-
-    const page = await browser.newPage();
-
-    // Set a reasonable timeout and navigate
-    await page.goto(url, {
-      waitUntil: "networkidle2",
-      timeout: 30000,
-    });
-
-    // Wait a moment for any lazy-loaded content
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    // Generate PDF with full page content
-    const pdfBuffer = await page.pdf({
-      format: "A4",
-      printBackground: true,
-      margin: {
-        top: "10mm",
-        right: "10mm",
-        bottom: "10mm",
-        left: "10mm",
+    // Step 1: Create CloudConvert job — import URL → convert html to pdf → export
+    const jobRes = await fetch("https://api.cloudconvert.com/v2/jobs", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
       },
+      body: JSON.stringify({
+        tasks: {
+          "import-1": {
+            operation: "import/url",
+            url: url,
+            filename: "webpage.html",
+          },
+          "convert-1": {
+            operation: "convert",
+            input: "import-1",
+            input_format: "html",
+            output_format: "pdf",
+            engine: "chrome",
+            page_orientation: "portrait",
+            page_size: "A4",
+            margin_top: 10,
+            margin_bottom: 10,
+            margin_left: 10,
+            margin_right: 10,
+            print_background: true,
+          },
+          "export-1": {
+            operation: "export/url",
+            input: "convert-1",
+          },
+        },
+      }),
     });
 
-    await browser.close();
-    browser = null;
+    if (!jobRes.ok) {
+      const err = await jobRes.json().catch(() => ({}));
+      throw new Error(`CloudConvert job creation failed: ${err.message || jobRes.status}`);
+    }
+
+    const job = await jobRes.json();
+    const jobId = job.data.id;
+
+    // Step 2: Poll for job completion
+    let finished = null;
+    for (let i = 0; i < 60; i++) {
+      await new Promise((r) => setTimeout(r, 2000));
+
+      const pollRes = await fetch(
+        `https://api.cloudconvert.com/v2/jobs/${jobId}`,
+        { headers: { Authorization: `Bearer ${apiKey}` } }
+      );
+      if (!pollRes.ok) continue;
+
+      const pollData = await pollRes.json();
+      const status = pollData.data.status;
+
+      if (status === "finished") {
+        finished = pollData.data;
+        break;
+      }
+      if (status === "error") {
+        const failedTask = pollData.data.tasks?.find((t) => t.status === "error");
+        throw new Error(
+          `Conversion failed: ${failedTask?.message || "Unknown error"}`
+        );
+      }
+    }
+
+    if (!finished) {
+      throw new Error("Conversion timed out. Please try again.");
+    }
+
+    // Step 3: Download the result
+    const exportTask = finished.tasks.find((t) => t.name === "export-1");
+    const fileUrl = exportTask?.result?.files?.[0]?.url;
+    if (!fileUrl) {
+      throw new Error("No output file was produced.");
+    }
+
+    const fileRes = await fetch(fileUrl);
+    if (!fileRes.ok) {
+      throw new Error(`Failed to download converted file (${fileRes.status})`);
+    }
+
+    const pdfBuffer = await fileRes.arrayBuffer();
 
     // Log usage
     const { logUsage } = await import("@/lib/usage-check");
@@ -118,10 +170,6 @@ export async function POST(request) {
       },
     });
   } catch (err) {
-    if (browser) {
-      try { await browser.close(); } catch {}
-    }
-
     console.error("url-to-pdf route error:", err);
 
     const message =
