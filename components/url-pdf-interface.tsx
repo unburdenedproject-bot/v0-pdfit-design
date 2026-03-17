@@ -18,9 +18,6 @@ export function UrlPdfInterface() {
   const pathname = usePathname()
 
   const [url, setUrl] = useState("")
-  const [orientation, setOrientation] = useState("portrait")
-  const [pageSize, setPageSize] = useState("A4")
-  const [margin, setMargin] = useState(10)
   const [isProcessing, setIsProcessing] = useState(false)
   const [isComplete, setIsComplete] = useState(false)
   const [hasError, setHasError] = useState(false)
@@ -62,7 +59,7 @@ export function UrlPdfInterface() {
       const response = await fetch("/api/url-to-pdf", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ url, orientation, pageSize, margin }),
+        body: JSON.stringify({ url }),
       })
 
       if (!response.ok) {
@@ -96,7 +93,7 @@ export function UrlPdfInterface() {
     } finally {
       setIsProcessing(false)
     }
-  }, [url, orientation, pageSize, margin, pricingUrl, router])
+  }, [url, pricingUrl, router])
 
   const handleDownload = useCallback(() => {
     if (!resultUrl) return
@@ -132,11 +129,6 @@ export function UrlPdfInterface() {
           upgradeDesc:
             "Convertir URL a PDF esta disponible en los planes Pro, Business y Enterprise.",
           upgradeBtn: "Ver Planes",
-          orientation: "Orientacion",
-          portrait: "Vertical",
-          landscape: "Horizontal",
-          pageSize: "Tamano de pagina",
-          margin: "Margen",
         }
       : localePrefix === "/br"
         ? {
@@ -150,11 +142,6 @@ export function UrlPdfInterface() {
             upgradeDesc:
               "Converter URL para PDF esta disponivel nos planos Pro, Business e Enterprise.",
             upgradeBtn: "Ver Planos",
-            orientation: "Orientacao",
-            portrait: "Retrato",
-            landscape: "Paisagem",
-            pageSize: "Tamanho da pagina",
-            margin: "Margem",
           }
         : {
             urlPlaceholder: "https://example.com",
@@ -167,11 +154,6 @@ export function UrlPdfInterface() {
             upgradeDesc:
               "URL to PDF is available on the Pro, Business, and Enterprise plans.",
             upgradeBtn: "View Plans",
-            orientation: "Orientation",
-            portrait: "Portrait",
-            landscape: "Landscape",
-            pageSize: "Page size",
-            margin: "Margin",
           }
 
   if (!isPaidUser) {
@@ -247,51 +229,6 @@ export function UrlPdfInterface() {
                     onChange={(e) => setUrl(e.target.value)}
                     placeholder={labels.urlPlaceholder}
                     className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 text-slate-800"
-                  />
-                </div>
-              </div>
-
-              {/* Options */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-                <div>
-                  <label className="block text-xs font-semibold text-slate-500 mb-1">
-                    {labels.orientation}
-                  </label>
-                  <select
-                    value={orientation}
-                    onChange={(e) => setOrientation(e.target.value)}
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm"
-                  >
-                    <option value="portrait">{labels.portrait}</option>
-                    <option value="landscape">{labels.landscape}</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold text-slate-500 mb-1">
-                    {labels.pageSize}
-                  </label>
-                  <select
-                    value={pageSize}
-                    onChange={(e) => setPageSize(e.target.value)}
-                    className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm"
-                  >
-                    <option value="A4">A4</option>
-                    <option value="Letter">Letter</option>
-                    <option value="A3">A3</option>
-                    <option value="A5">A5</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold text-slate-500 mb-1">
-                    {labels.margin} ({margin}mm)
-                  </label>
-                  <input
-                    type="range"
-                    min="0"
-                    max="50"
-                    value={margin}
-                    onChange={(e) => setMargin(Number(e.target.value))}
-                    className="w-full mt-2"
                   />
                 </div>
               </div>

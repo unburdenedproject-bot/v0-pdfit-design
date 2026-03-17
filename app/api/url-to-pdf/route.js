@@ -50,9 +50,6 @@ export async function POST(request) {
     // Parse request
     const body = await request.json();
     const url = body.url;
-    const orientation = body.orientation || "portrait";
-    const pageSize = body.pageSize || "A4";
-    const margin = body.margin ?? 10;
 
     if (!url || typeof url !== "string") {
       return errorResponse("Missing URL.", 400);
@@ -79,13 +76,8 @@ export async function POST(request) {
     // Add URL to the task
     await task.addFile(url);
 
-    // Process with options
-    await task.process({
-      page_orientation: orientation,
-      page_size: pageSize,
-      page_margin: margin,
-      single_page: false,
-    });
+    // Process (htmlpdf has no extra parameters)
+    await task.process();
 
     const data = await task.download();
 
