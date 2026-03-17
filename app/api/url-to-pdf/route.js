@@ -8,6 +8,8 @@ function errorResponse(message, status = 500) {
 }
 
 export async function POST(request) {
+  let browser = null;
+
   try {
     // Auth: Pro/Business/Enterprise only
     const { createClient } = await import("@/lib/supabase/server");
@@ -37,16 +39,6 @@ export async function POST(request) {
       );
     }
 
-    const publicKey = process.env.ILOVEAPI_PUBLIC_KEY;
-    const secretKey = process.env.ILOVEAPI_SECRET_KEY;
-
-    if (!publicKey || !secretKey) {
-      return errorResponse(
-        "Server is not configured with iLoveAPI credentials.",
-        500
-      );
-    }
-
     // Parse request
     const body = await request.json();
     const url = body.url;
@@ -65,21 +57,44 @@ export async function POST(request) {
       return errorResponse("Invalid URL format.", 400);
     }
 
-    // Create iLoveAPI htmlpdf task
-    const ILovePDFApi = (await import("@ilovepdf/ilovepdf-nodejs")).default;
+    // Launch headless Chrome via Puppeteer
+    const chromium = await import("@sparticuz/chromium-min");
+    const puppeteer = await import("puppeteer-core");
 
-    const instance = new ILovePDFApi(publicKey, secretKey);
-    const task = instance.newTask("htmlpdf");
+    browser = await puppeteer.default.launch({
+      args: chromium.default.args,
+      defaultViewport: { width: 1280, height: 900 },
+      executablePath: await chromium.default.executablePath(
+        "https://github.com/nichochar/chromium-binaries/raw/refs/heads/main/chromium-v143.0.0-pack.tar"
+      ),
+      headless: "shell",
+    });
 
-    await task.start();
+    const page = await browser.newPage();
 
-    // Add URL to the task
-    await task.addFile(url);
+    // Set a reasonable timeout and navigate
+    await page.goto(url, {
+      waitUntil: "networkidle2",
+      timeout: 30000,
+    });
 
-    // Process (htmlpdf has no extra parameters)
-    await task.process();
+    // Wait a moment for any lazy-loaded content
+    await new Promise((resolve) => setTimeout(resolve, 1500));
 
-    const data = await task.download();
+    // Generate PDF with full page content
+    const pdfBuffer = await page.pdf({
+      format: "A4",
+      printBackground: true,
+      margin: {
+        top: "10mm",
+        right: "10mm",
+        bottom: "10mm",
+        left: "10mm",
+      },
+    });
+
+    await browser.close();
+    browser = null;
 
     // Log usage
     const { logUsage } = await import("@/lib/usage-check");
@@ -94,7 +109,7 @@ export async function POST(request) {
       // keep default
     }
 
-    return new NextResponse(data, {
+    return new NextResponse(Buffer.from(pdfBuffer), {
       status: 200,
       headers: {
         "Content-Type": "application/pdf",
@@ -103,6 +118,10 @@ export async function POST(request) {
       },
     });
   } catch (err) {
+    if (browser) {
+      try { await browser.close(); } catch {}
+    }
+
     console.error("url-to-pdf route error:", err);
 
     const message =
