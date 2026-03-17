@@ -53,20 +53,67 @@ export default async function UpgradePage({
   }
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://omnispdf.com"
+  const stripe = getStripe()
 
+  // Check if user already has an active subscription
+  const { data: profile } = await supabase
+    .from("users")
+    .select("stripe_subscription_id, stripe_customer_id")
+    .eq("id", user.id)
+    .single()
+
+  // If user has an existing subscription, update it to the new price
+  if (profile?.stripe_subscription_id) {
+    try {
+      const subscription = await stripe.subscriptions.retrieve(
+        profile.stripe_subscription_id
+      )
+
+      if (subscription.status === "active" || subscription.status === "trialing") {
+        // Update the existing subscription to the new price
+        await stripe.subscriptions.update(profile.stripe_subscription_id, {
+          items: [
+            {
+              id: subscription.items.data[0].id,
+              price: priceId,
+            },
+          ],
+          proration_behavior: "create_prorations",
+        })
+
+        // Redirect to dashboard with success
+        redirect(`${siteUrl}/dashboard?success=true&upgraded=true`)
+      }
+    } catch (e) {
+      console.error("Stripe subscription update error:", e)
+      // Fall through to create new checkout if update fails
+    }
+  }
+
+  // No existing subscription — create a new checkout session
   let checkoutUrl: string | null = null
   try {
-    const session = await getStripe().checkout.sessions.create({
+    const sessionParams: Record<string, unknown> = {
       mode: "subscription",
       line_items: [{ price: priceId, quantity: 1 }],
       success_url: `${siteUrl}/dashboard?success=true`,
       cancel_url: `${siteUrl}/pricing?canceled=true`,
       client_reference_id: user.id,
-      customer_email: user.email || undefined,
       metadata: {
         supabase_user_id: user.id,
       },
-    })
+    }
+
+    // If user already has a Stripe customer ID, use it (prevents duplicate customers)
+    if (profile?.stripe_customer_id) {
+      sessionParams.customer = profile.stripe_customer_id
+    } else {
+      sessionParams.customer_email = user.email || undefined
+    }
+
+    const session = await stripe.checkout.sessions.create(
+      sessionParams as Parameters<typeof stripe.checkout.sessions.create>[0]
+    )
     checkoutUrl = session.url
   } catch (e) {
     console.error("Stripe checkout error:", e)
