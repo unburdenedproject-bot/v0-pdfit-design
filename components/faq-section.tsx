@@ -8,49 +8,54 @@ const faqData = [
   {
     question: "Is OmnisPDF free to use?",
     answer:
-      "Yes! All core tools like PDF conversion, merging, splitting, and compression are 100% free. Some advanced features will be available under a low-cost Pro plan.",
+      "Yes! Core tools like PDF compression, merging, splitting, rotating, and image conversion are completely free with up to 10 conversions per day. Advanced tools like OCR, PDF to Word, and batch processing are available with Pro ($7.99/month).",
   },
   {
     question: "Do I need to create an account?",
     answer:
-      "Yes, a free account is required to use our tools. Signing up is quick and easy, and free users get up to 10 conversions per day. Upgrade to Pro for unlimited conversions and priority support.",
+      "You can try 3 conversions without an account. After that, a free account is required — signing up takes 30 seconds. Free users get 10 conversions per day. Upgrade to Pro for unlimited conversions.",
   },
   {
     question: "Is it safe to upload my files to OmnisPDF?",
     answer:
-      "Yes. Your privacy is a priority. Files are processed securely and are never stored permanently on our servers.",
+      "Yes. Your files are processed securely and deleted after your session. We never store your documents permanently. All transfers are encrypted.",
   },
   {
     question: "What file types are supported?",
-    answer: "We support PDF, Word (DOC/DOCX), Excel (XLS/XLSX), PowerPoint (PPT/PPTX), JPG, PNG, and more.",
+    answer: "We support PDF, Word (DOC/DOCX), Excel (XLS/XLSX), PowerPoint (PPT/PPTX), JPG, PNG, and more. Pro users can also convert PDFs back to Word, Excel, and PowerPoint formats.",
   },
   {
-    question: "Can I compress large PDF files?",
+    question: "What are the file size limits?",
     answer:
-      "Yes, you can compress files up to 5MB for free. Higher limits and more compression control will be available in the Pro plan.",
+      "Free users can upload files up to 25MB. Pro users get up to 200MB. Business and Enterprise users can upload files up to 1GB.",
   },
   {
     question: "How do I merge multiple PDFs?",
     answer:
-      'Just select the Merge tool, upload your files, arrange them in order, and click "Merge PDF." A new combined file will be generated instantly.',
+      'Select the Merge tool, upload your files, arrange them in order, and click "Merge PDF." Pro and Business users can batch-process multiple files at once.',
   },
   {
-    question: "Do you offer digital signatures or secure links?",
+    question: "Do you offer eSign and document redaction?",
     answer:
-      "These features are coming soon. You'll be able to request signatures, protect access, and set link expirations with OmnisPDF Pro.",
+      "Yes! eSign lets you add electronic signatures to PDFs, and PDF Redaction permanently removes sensitive text and data. Both are available on the Business plan ($13.99/month) and Enterprise plan ($49.99/month).",
+  },
+  {
+    question: "Can I extract tables from PDFs to Excel?",
+    answer:
+      "Yes. Table Extraction uses AI to detect tables in your PDFs and export them as formatted Excel spreadsheets. Available on Business (200 pages/month) and Enterprise (2,000 pages/month) plans.",
   },
   {
     question: "Can I use OmnisPDF on my phone or tablet?",
-    answer: "Absolutely. OmnisPDF is fully mobile-friendly and works on any modern device.",
+    answer: "Absolutely. OmnisPDF is fully mobile-friendly and works on any modern device — no app download needed.",
   },
   {
-    question: "What's the difference between Free and Pro?",
+    question: "What's the difference between the plans?",
     answer:
-      "Free gives you unlimited access to basic tools. Pro unlocks advanced tools like file locking, batch processing, expiration links, and removes ads.",
+      "Free: 10 conversions/day, basic tools, 25MB files. Pro ($7.99/mo): unlimited conversions, all tools, 200MB files, batch processing. Business ($13.99/mo): adds eSign, redaction, workflow automation, table extraction, 1GB files. Enterprise ($49.99/mo): 2,000 table extraction pages/month, priority processing, dedicated support, workflow templates for legal, accounting, and labs.",
   },
   {
     question: "How can I get support?",
-    answer: "Visit our Contact page or email us at contact@omnispdf.com. We're happy to help!",
+    answer: "Visit our Contact page or email us at contact@omnispdf.com. Enterprise users get dedicated email support with 24-hour response times.",
   },
 ]
 
