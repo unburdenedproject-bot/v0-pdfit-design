@@ -143,10 +143,10 @@ export default function HomePagePt() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-5xl lg:text-7xl font-black mb-4 leading-tight text-balance">
-                Resolva Qualquer Problema com Documentos. <span className="text-orange-500">Instantaneamente.</span>
+                Ferramentas PDF para <span className="text-orange-500">Profissionais</span>
               </h1>
               <p className="text-xl lg:text-2xl text-slate-300 mb-6 font-medium leading-relaxed max-w-3xl mx-auto text-pretty">
-                Converta, comprima, una, divida e proteja PDFs — sem instalar nada.
+                Comprima, converta, extraia tabelas, assine e redija — em ingles, espanhol e portugues. A ferramenta de confianca de profissionais em todo o mundo.
               </p>
 
               <div className="flex flex-wrap justify-center gap-6 mb-6 text-sm font-semibold">

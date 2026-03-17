@@ -143,10 +143,10 @@ export default function HomePageEs() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-5xl lg:text-7xl font-black mb-4 leading-tight text-balance">
-                Tu Kit Completo de <span className="text-orange-500">PDF</span>
+                Herramientas PDF para <span className="text-orange-500">Profesionales</span>
               </h1>
               <p className="text-xl lg:text-2xl text-slate-300 mb-6 font-medium leading-relaxed max-w-3xl mx-auto text-pretty">
-                Comprime, une, divide, convierte y protege PDFs — sin instalar nada.
+                Comprime, convierte, extrae tablas, firma y redacta — en ingles, espanol y portugues. La herramienta de confianza de profesionales en todo el mundo.
               </p>
 
               <div className="flex flex-wrap justify-center gap-6 mb-6 text-sm font-semibold">

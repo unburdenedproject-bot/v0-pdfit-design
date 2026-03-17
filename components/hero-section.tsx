@@ -7,10 +7,10 @@ export function HeroSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl lg:text-7xl font-black mb-4 leading-tight text-balance">
-            The Complete PDF <span className="text-orange-500">Toolkit</span>
+            PDF Tools Built for <span className="text-orange-500">Professionals</span>
           </h1>
           <p className="text-xl lg:text-2xl text-slate-300 mb-6 font-medium leading-relaxed max-w-3xl mx-auto text-pretty">
-            Compress, merge, split, convert and protect PDFs — no installation required.
+            Compress, convert, extract tables, sign, and redact — in English, Spanish, and Portuguese. Trusted by professionals across the world.
           </p>
 
           <div className="flex flex-wrap justify-center gap-6 mb-6 text-sm font-semibold">
