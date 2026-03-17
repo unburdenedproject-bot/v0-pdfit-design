@@ -11,6 +11,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - Frontend: Next.js (built in V0)
 - Hosting: Vercel (Pro plan)
 - PDF Processing: iLoveAPI (except pdf-to-word, pdf-to-excel, pdf-to-powerpoint which use CloudConvert)
+- URL to PDF: Puppeteer + @sparticuz/chromium-min (headless Chrome, no API cost)
 - Table Extraction: Google Document AI Form Parser ($0.03/page)
 - Auth: Custom signup/login with hCaptcha
 - Payments: Stripe
@@ -43,6 +44,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - iLoveAPI: ~$0.04-0.10 per conversion (2,500 free credits/month)
 - Google Document AI: $0.03/page (Form Parser)
 - CloudConvert: ~$0.02 per conversion (PDF to Word/Excel/PPT)
+- URL to PDF: $0 (Puppeteer runs on Vercel serverless, no external API)
 - Vercel Pro: $20/month base + bandwidth overage at $0.15/GB after 1TB
 - At 10K subscribers: ~$2,500-4,300/month costs vs ~$157,900/month revenue (97% margin)
 
@@ -59,6 +61,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - /word-to-pdf, /excel-to-pdf, /powerpoint-to-pdf, /office-to-pdf
 - /pdf-to-word (Pro, CloudConvert), /pdf-to-excel (Pro, CloudConvert), /pdf-to-powerpoint (Pro, CloudConvert)
 - /ocr-scanner (Pro), /qr-code (Pro)
+- /url-to-pdf (Pro — Puppeteer headless Chrome, renders full multi-page content, no iLoveAPI credits)
 - /extract-images-from-pdf, /flatten-pdf
 - /upload-ready-pdf (Blue Ocean #1 — chains flatten + compress)
 - /phone-scan-cleanup (Blue Ocean #2 — Sharp image processing, free with limits)
@@ -182,7 +185,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - All Pro/Business routes now properly import and call logUsage with user.id
 
 ### Google Search Console Status
-- Sitemap with 520+ URLs across EN/ES/BR — submitted 2026-03-12
+- Sitemap with 588+ pages across EN/ES/BR — submitted 2026-03-12
 - DO NOT break any existing indexed pages
 - English, Spanish, and Brazilian pages all included in sitemap
 
@@ -191,13 +194,16 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 ## TODO — By Priority
 
 ### Priority 0: Pre-Launch Fixes
-- Contact form is fake (simulates submission, doesn't send) — needs real backend
-- Stripe portal fallback domain is pdfit.io — needs NEXT_PUBLIC_SITE_URL=https://omnispdf.com on Vercel
-- Verify ILOVEAPI_SECRET_KEY is set on Vercel (not in .env.local)
-- Add robots.txt to public/
+- ~~Contact form~~ DONE — saves to Supabase contact_messages table
+- ~~Stripe portal fallback domain~~ DONE — changed from pdfit.io to omnispdf.com
+- ~~ILOVEAPI_SECRET_KEY~~ DONE — confirmed on Vercel
+- ~~robots.txt~~ DONE — app/robots.ts already existed
+- ~~FAQ section~~ DONE — updated with current product info (all 4 tiers, eSign, table extraction)
+- ~~GA4 measurement ID~~ DONE — updated to G-DQRW3BJMX1
 - Verify GA4 is actually recording data in Realtime report
 - Test full payment flow: signup → upgrade → manage subscription → cancel (all 3 paid tiers)
 - Test table extraction end-to-end with a real PDF
+- Test URL to PDF end-to-end
 
 ### Priority 1: Remaining Tools
 - Resume ATS Optimizer (OpenAI API, Blue Ocean)
