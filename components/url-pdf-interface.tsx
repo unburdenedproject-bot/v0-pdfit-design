@@ -129,6 +129,7 @@ export function UrlPdfInterface() {
           upgradeDesc:
             "Convertir URL a PDF esta disponible en los planes Pro, Business y Enterprise.",
           upgradeBtn: "Ver Planes",
+          publicNote: "Funciona con paginas web publicas. Para paginas con inicio de sesion (facturas, paneles), usa Imprimir > Guardar como PDF en tu navegador.",
         }
       : localePrefix === "/br"
         ? {
@@ -142,6 +143,7 @@ export function UrlPdfInterface() {
             upgradeDesc:
               "Converter URL para PDF esta disponivel nos planos Pro, Business e Enterprise.",
             upgradeBtn: "Ver Planos",
+            publicNote: "Funciona com paginas web publicas. Para paginas com login (faturas, paineis), use Imprimir > Salvar como PDF no seu navegador.",
           }
         : {
             urlPlaceholder: "https://example.com",
@@ -154,6 +156,7 @@ export function UrlPdfInterface() {
             upgradeDesc:
               "URL to PDF is available on the Pro, Business, and Enterprise plans.",
             upgradeBtn: "View Plans",
+            publicNote: "Works with public webpages. For pages that require login (invoices, dashboards), use your browser's Print > Save as PDF.",
           }
 
   if (!isPaidUser) {
@@ -217,7 +220,7 @@ export function UrlPdfInterface() {
           ) : (
             <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8">
               {/* URL Input */}
-              <div className="mb-6">
+              <div className="mb-4">
                 <label className="block text-sm font-bold text-slate-700 mb-2">
                   URL
                 </label>
@@ -231,6 +234,9 @@ export function UrlPdfInterface() {
                     className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 text-slate-800"
                   />
                 </div>
+                <p className="text-xs text-slate-400 mt-2">
+                  {labels.publicNote}
+                </p>
               </div>
 
               {/* Error */}
