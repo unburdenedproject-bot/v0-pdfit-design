@@ -63,11 +63,11 @@ export async function POST(request) {
 
     browser = await puppeteer.default.launch({
       args: chromium.default.args,
-      defaultViewport: { width: 1280, height: 900 },
+      defaultViewport: chromium.default.defaultViewport,
       executablePath: await chromium.default.executablePath(
-        "https://github.com/nichochar/chromium-binaries/raw/refs/heads/main/chromium-v143.0.0-pack.tar"
+        "https://github.com/Sparticuz/chromium/releases/download/v143.0.0/chromium-v143.0.0-pack.tar"
       ),
-      headless: "shell",
+      headless: chromium.default.headless,
     });
 
     const page = await browser.newPage();
