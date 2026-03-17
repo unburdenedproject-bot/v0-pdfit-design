@@ -143,7 +143,7 @@ export default function HomePageEs() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-5xl lg:text-7xl font-black mb-4 leading-tight text-balance">
-                Herramientas PDF para <span className="text-orange-500">Profesionales</span>
+                Herramientas PDF para Equipos Legales, Contables, Empresariales <span className="text-orange-500">y para el Estudiante de Todos los Dias</span>
               </h1>
               <p className="text-xl lg:text-2xl text-slate-300 mb-6 font-medium leading-relaxed max-w-3xl mx-auto text-pretty">
                 Comprime, convierte, extrae tablas, firma y redacta — en ingles, espanol y portugues. La herramienta de confianza de profesionales en todo el mundo.
