@@ -70,7 +70,7 @@ export default async function UpgradePage({
       )
 
       if (subscription.status === "active" || subscription.status === "trialing") {
-        // Update the existing subscription to the new price
+        // Update the existing subscription to the new price — effective immediately
         await stripe.subscriptions.update(profile.stripe_subscription_id, {
           items: [
             {
@@ -78,7 +78,8 @@ export default async function UpgradePage({
               price: priceId,
             },
           ],
-          proration_behavior: "create_prorations",
+          proration_behavior: "always_invoice",
+          payment_behavior: "error_if_incomplete",
         })
 
         // Determine the new plan from the price ID
