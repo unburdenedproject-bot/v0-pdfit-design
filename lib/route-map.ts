@@ -8,6 +8,7 @@ const routes: [string, string, string][] = [
   ["/pricing", "/es/precios", "/br/precos"],
   ["/privacy-policy", "/es/politica-de-privacidad", "/br/politica-de-privacidade"],
   ["/terms-conditions", "/es/terminos-y-condiciones", "/br/termos-e-condicoes"],
+  ["/blog", "/es/blog", "/br/blog"],
   ["/tools", "/es/herramientas", "/br/ferramentas"],
   ["/tools-a-z", "/es/herramientas-a-z", "/br/ferramentas-a-z"],
   ["/dashboard", "/es/dashboard", "/br/painel"],

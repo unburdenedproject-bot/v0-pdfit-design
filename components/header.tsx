@@ -87,6 +87,9 @@ export function Header() {
             <Link href="/tools-a-z" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
               A–Z Index
             </Link>
+            <Link href="/blog" className="text-slate-700 hover:text-slate-900 font-medium transition-colors">
+              Blog
+            </Link>
 
             {/* Language switcher */}
             <div className="flex items-center gap-1.5">
@@ -190,6 +193,13 @@ export function Header() {
               className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors"
             >
               A–Z Index
+            </Link>
+            <Link
+              href="/blog"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-slate-50 transition-colors"
+            >
+              Blog
             </Link>
 
             <Link
