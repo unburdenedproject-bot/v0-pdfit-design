@@ -26,11 +26,11 @@ interface PresetWorkflow {
 }
 
 const TOOL_OPTIONS = [
-  { value: "flatten", label: "Flatten PDF", icon: Layers, description: "Merge form fields and annotations" },
-  { value: "compress", label: "Compress", icon: Compress, description: "Reduce file size" },
-  { value: "watermark", label: "Watermark", icon: Droplets, description: "Add text watermark" },
-  { value: "rotate", label: "Rotate", icon: RotateCw, description: "Rotate pages" },
-  { value: "protect", label: "Password Protect", icon: Lock, description: "Add password (must be last)" },
+  { value: "flatten", label: "Flatten PDF", icon: Layers, description: "Lock form fields and annotations" },
+  { value: "compress", label: "Compress PDF", icon: Compress, description: "Reduce file size" },
+  { value: "watermark", label: "Add Watermark", icon: Droplets, description: "Stamp text on every page" },
+  { value: "rotate", label: "Rotate Pages", icon: RotateCw, description: "Change page orientation" },
+  { value: "protect", label: "Password Protect", icon: Lock, description: "Must be the last step" },
 ]
 
 const PRESET_WORKFLOWS: PresetWorkflow[] = [
