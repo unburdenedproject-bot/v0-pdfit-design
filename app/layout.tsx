@@ -45,7 +45,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head />
+      <head>
+        <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+      </head>
       <body>
         <GoogleTagManager />
         <GoogleTagManagerNoScript />

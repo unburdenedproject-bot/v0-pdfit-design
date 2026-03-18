@@ -22,7 +22,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="mb-4">
-              <img src="/logo-white.svg" alt="OmnisPDF" className="h-8 w-auto" />
+              <img src="/logo-white.svg" alt="OmnisPDF" className="h-8 w-auto" width="180" height="32" loading="lazy" />
             </div>
             <p className="text-slate-400 mb-6 leading-relaxed">
               Convert, compress, merge, split, OCR, and protect PDFs in seconds. Simple, browser-based tools that work on any device.

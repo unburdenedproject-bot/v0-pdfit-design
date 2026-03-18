@@ -9,7 +9,7 @@ export function FooterBr() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="mb-4">
-              <img src="/logo-white.svg" alt="OmnisPDF" className="h-8 w-auto" />
+              <img src="/logo-white.svg" alt="OmnisPDF" className="h-8 w-auto" width="180" height="32" loading="lazy" />
             </div>
             <p className="text-slate-400 mb-6 leading-relaxed">
               Converta, comprima, una, divida, digitalize e proteja arquivos PDF em segundos. Ferramentas simples que funcionam em qualquer dispositivo.
