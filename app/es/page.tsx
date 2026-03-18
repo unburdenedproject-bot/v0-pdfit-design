@@ -279,6 +279,30 @@ export default function HomePageEs() {
               ))}
             </div>
 
+            {/* Social Proof */}
+            <div className="bg-slate-50 rounded-2xl p-6 mb-10 border border-slate-100">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+                <div>
+                  <div className="text-2xl font-black text-slate-900">30+</div>
+                  <div className="text-sm text-slate-600">Herramientas PDF en un solo lugar</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-black text-slate-900">3 Idiomas</div>
+                  <div className="text-sm text-slate-600">Ingles, espanol, portugues</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-black text-slate-900">4 Planes</div>
+                  <div className="text-sm text-slate-600">Gratis, Pro, Business, Enterprise</div>
+                </div>
+              </div>
+              <div className="mt-4 flex flex-wrap justify-center gap-3 text-xs text-slate-500">
+                <span className="bg-white px-3 py-1.5 rounded-full border border-slate-200">Equipos legales</span>
+                <span className="bg-white px-3 py-1.5 rounded-full border border-slate-200">Profesionales contables</span>
+                <span className="bg-white px-3 py-1.5 rounded-full border border-slate-200">Laboratorios de investigacion</span>
+                <span className="bg-white px-3 py-1.5 rounded-full border border-slate-200">Estudiantes en todo el mundo</span>
+              </div>
+            </div>
+
             <div className="text-center mb-6">
               <h2 className="text-2xl lg:text-3xl font-black text-slate-900 mb-2 text-balance">
                 ¿Por Qué OmnisPDF?

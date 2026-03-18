@@ -49,6 +49,30 @@ export function TrustSection() {
           ))}
         </div>
 
+        {/* Social Proof */}
+        <div className="bg-slate-50 rounded-2xl p-6 mb-10 border border-slate-100">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+            <div>
+              <div className="text-2xl font-black text-slate-900">30+</div>
+              <div className="text-sm text-slate-600">PDF tools in one place</div>
+            </div>
+            <div>
+              <div className="text-2xl font-black text-slate-900">3 Languages</div>
+              <div className="text-sm text-slate-600">English, Spanish, Portuguese</div>
+            </div>
+            <div>
+              <div className="text-2xl font-black text-slate-900">4 Plans</div>
+              <div className="text-sm text-slate-600">Free, Pro, Business, Enterprise</div>
+            </div>
+          </div>
+          <div className="mt-4 flex flex-wrap justify-center gap-3 text-xs text-slate-500">
+            <span className="bg-white px-3 py-1.5 rounded-full border border-slate-200">Used by legal teams</span>
+            <span className="bg-white px-3 py-1.5 rounded-full border border-slate-200">Accounting professionals</span>
+            <span className="bg-white px-3 py-1.5 rounded-full border border-slate-200">Research labs</span>
+            <span className="bg-white px-3 py-1.5 rounded-full border border-slate-200">Students worldwide</span>
+          </div>
+        </div>
+
         {/* Features */}
         <div className="text-center mb-6">
           <h2 className="text-2xl lg:text-3xl font-black text-slate-900 mb-2 text-balance">

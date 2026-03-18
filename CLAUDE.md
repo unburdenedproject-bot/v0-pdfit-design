@@ -186,12 +186,28 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - Responsive text: text-3xl (mobile) → text-4xl (sm) → text-6xl (lg)
 - Translated to ES and BR with same structure
 
+### Performance Optimization (COMPLETE — 2026-03-18)
+- Lighthouse Mobile: FCP 1.3s, LCP 1.8s, TBT 260ms, CLS 0, Speed Index 1.3s
+- Lighthouse Desktop: FCP 0.4s, LCP 0.4s, TBT 0ms, CLS 0.005, Speed Index 0.4s
+- Removed global * transition rule (caused 420ms→130ms TBT improvement)
+- Added width/height to all logo images (eliminated CLS)
+- Added fetchPriority="high" to header logos, loading="lazy" to footer logos
+- Preload logo.svg and dns-prefetch googletagmanager in layout head
+- Converted homepage from client to server component (reduced first load JS by 7KB)
+- Homepage uses ScrollToTools tiny client component for hash navigation
+
+### URL to PDF Tool (COMPLETE — 2026-03-17)
+- Uses CloudConvert capture-website with Chrome engine (~$0.02/conversion)
+- Public URLs only — login-protected pages won't work (noted in interface)
+- Pro/Business/Enterprise tier
+- Pages: /url-to-pdf, /es/url-a-pdf, /br/url-para-pdf
+
 ### Usage Logging Fixes (COMPLETE)
 - Fixed broken logging in excel-to-pdf, office-to-pdf, powerpoint-to-pdf routes (undefined `usage` variable)
 - All Pro/Business routes now properly import and call logUsage with user.id
 
 ### Google Search Console Status
-- Sitemap with 588+ pages across EN/ES/BR — submitted 2026-03-12
+- Sitemap with 1,122 URLs across EN/ES/BR — submitted 2026-03-12, updated 2026-03-18 (added URL to PDF)
 - DO NOT break any existing indexed pages
 - English, Spanish, and Brazilian pages all included in sitemap
 
@@ -199,17 +215,27 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 
 ## TODO — By Priority
 
-### Priority 0: Pre-Launch Fixes
+### Priority 0: Pre-Launch Fixes (ALL DONE)
 - ~~Contact form~~ DONE — saves to Supabase contact_messages table
 - ~~Stripe portal fallback domain~~ DONE — changed from pdfit.io to omnispdf.com
 - ~~ILOVEAPI_SECRET_KEY~~ DONE — confirmed on Vercel
 - ~~robots.txt~~ DONE — app/robots.ts already existed
 - ~~FAQ section~~ DONE — updated with current product info (all 4 tiers, eSign, table extraction)
 - ~~GA4 measurement ID~~ DONE — updated to G-DQRW3BJMX1
-- Verify GA4 is actually recording data in Realtime report
-- Test full payment flow: signup → upgrade → manage subscription → cancel (all 3 paid tiers)
-- Test table extraction end-to-end with a real PDF
-- Test URL to PDF end-to-end
+- ~~Sitemap~~ DONE — 1,122 URLs including URL to PDF
+- ~~Performance~~ DONE — Mobile LCP 1.8s, Desktop LCP 0.4s, CLS 0
+- ~~Upgrade flow~~ DONE — existing subscribers upgrade instantly with proration
+- ~~Database constraint~~ DONE — added "enterprise" to users_plan_check
+- ~~All API timeouts~~ DONE — 26 routes at 300s for Enterprise large files
+- ~~Workflow validation~~ DONE — inline warnings instead of "Workflow Failed"
+- ~~Social proof~~ DONE — added to homepage
+
+### Still needs Paula's verification:
+- Verify GA4 Realtime is recording data
+- Test full payment flow end-to-end
+- Test table extraction with a real PDF
+- Verify NEXT_PUBLIC_SITE_URL=https://omnispdf.com on Vercel
+- Verify Stripe webhook endpoint is https://omnispdf.com/api/webhook
 
 ### Priority 1: Remaining Tools
 - Resume ATS Optimizer (OpenAI API, Blue Ocean)
