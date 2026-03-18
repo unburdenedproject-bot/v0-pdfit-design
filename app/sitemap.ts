@@ -50,6 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/esign`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/workflow-automation`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/table-extraction`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${baseUrl}/url-to-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/jpg-to-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/png-to-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/tools/qr-code`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
@@ -277,6 +278,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/es/firma-electronica`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/es/automatizacion`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/es/extraccion-de-tablas`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${baseUrl}/es/url-a-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/es/jpg-a-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/es/png-a-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
 
@@ -505,6 +507,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/br/assinatura-eletronica`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/br/automacao`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/br/extracao-de-tabelas`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${baseUrl}/br/url-para-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/br/jpg-para-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/br/png-para-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
 
