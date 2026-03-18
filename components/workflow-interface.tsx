@@ -231,6 +231,7 @@ export function WorkflowInterface() {
   const [isComplete, setIsComplete] = useState(false)
   const [hasError, setHasError] = useState(false)
   const [errorMessage, setErrorMessage] = useState("")
+  const [validationMessage, setValidationMessage] = useState("")
   const [resultUrl, setResultUrl] = useState("")
   const [resultName, setResultName] = useState("")
   const [showCustom, setShowCustom] = useState(false)
@@ -297,29 +298,27 @@ export function WorkflowInterface() {
     // Validate protect is last if present
     const protectIndex = steps.findIndex((s) => s.tool === "protect")
     if (protectIndex !== -1 && protectIndex !== steps.length - 1) {
-      setHasError(true)
-      setErrorMessage("Password protection must be the last step.")
+      setValidationMessage("Password protection must be the last step. Please reorder your steps.")
       return
     }
 
     // Validate watermark has text
     const watermarkStep = steps.find((s) => s.tool === "watermark")
     if (watermarkStep && !(watermarkStep.params.text as string)?.trim()) {
-      setHasError(true)
-      setErrorMessage("Please enter watermark text.")
+      setValidationMessage("Please enter your watermark text before running the workflow.")
       return
     }
 
     // Validate protect has password
     const protectStep = steps.find((s) => s.tool === "protect")
     if (protectStep && !(protectStep.params.password as string)?.trim()) {
-      setHasError(true)
-      setErrorMessage("Please enter a password for protection.")
+      setValidationMessage("Please enter a password for the protection step before running the workflow.")
       return
     }
 
     setIsProcessing(true)
     setHasError(false)
+    setValidationMessage("")
     setProcessingStep(0)
 
     try {
@@ -780,6 +779,13 @@ export function WorkflowInterface() {
                 className="hidden"
                 onChange={handleFileSelect}
               />
+
+              {validationMessage && (
+                <div className="mt-4 bg-amber-50 border border-amber-200 rounded-xl p-4 flex items-start gap-3">
+                  <AlertCircle className="h-5 w-5 text-amber-500 mt-0.5 flex-shrink-0" />
+                  <p className="text-sm text-amber-800">{validationMessage}</p>
+                </div>
+              )}
 
               {file && (
                 <Button
