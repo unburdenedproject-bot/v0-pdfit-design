@@ -26,6 +26,23 @@ interface SectionScore {
   feedback: string
 }
 
+interface FormatRisk {
+  severity: string
+  issue: string
+}
+
+interface BulletFeedback {
+  original: string
+  problem: string
+  improved: string
+}
+
+interface RewriteSuggestion {
+  section: string
+  original: string
+  improved: string
+}
+
 interface ATSAnalysis {
   score: number
   summary: string
@@ -39,6 +56,10 @@ interface ATSAnalysis {
   }
   improvements: string[]
   missing_keywords: string[]
+  matched_keywords?: string[]
+  format_risks?: FormatRisk[]
+  bullet_feedback?: BulletFeedback[]
+  rewrite_suggestions?: RewriteSuggestion[]
 }
 
 function ScoreCircle({ score }: { score: number }) {
@@ -499,6 +520,100 @@ export function AtsOptimizerInterface() {
                       </button>
                     )
                   })}
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Matched Keywords */}
+            {analysis.matched_keywords && analysis.matched_keywords.length > 0 && (
+              <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 mb-6">
+                <h3 className="text-lg font-bold text-slate-900 mb-1 flex items-center gap-2">
+                  <CheckCircle className="h-5 w-5 text-green-500" />
+                  Keywords Found in Your Resume
+                </h3>
+                <p className="text-xs text-slate-400 mb-4">These keywords from the job description were found in your resume.</p>
+                <div className="flex flex-wrap gap-2">
+                  {analysis.matched_keywords.map((kw, i) => (
+                    <span key={i} className="bg-green-50 text-green-700 text-sm font-medium px-3 py-1.5 rounded-full border border-green-200">
+                      {kw}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Format Risks */}
+            {analysis.format_risks && analysis.format_risks.length > 0 && (
+              <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 mb-6">
+                <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                  <AlertTriangle className="h-5 w-5 text-amber-500" />
+                  Formatting Risks
+                </h3>
+                <div className="space-y-3">
+                  {analysis.format_risks.map((risk, i) => (
+                    <div key={i} className={cn(
+                      "p-4 rounded-xl border flex items-start gap-3",
+                      risk.severity === "high" ? "bg-red-50 border-red-200" : risk.severity === "medium" ? "bg-amber-50 border-amber-200" : "bg-slate-50 border-slate-200"
+                    )}>
+                      <span className={cn(
+                        "text-[10px] font-bold px-2 py-0.5 rounded-full uppercase flex-shrink-0 mt-0.5",
+                        risk.severity === "high" ? "bg-red-200 text-red-700" : risk.severity === "medium" ? "bg-amber-200 text-amber-700" : "bg-slate-200 text-slate-600"
+                      )}>{risk.severity}</span>
+                      <span className="text-sm text-slate-700">{risk.issue}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Bullet Feedback */}
+            {analysis.bullet_feedback && analysis.bullet_feedback.length > 0 && (
+              <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 mb-6">
+                <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                  <FileText className="h-5 w-5 text-purple-500" />
+                  Weak Bullets — Before & After
+                </h3>
+                <div className="space-y-4">
+                  {analysis.bullet_feedback.map((bf, i) => (
+                    <div key={i} className="border border-slate-200 rounded-xl overflow-hidden">
+                      <div className="bg-red-50 px-4 py-3 border-b border-slate-200">
+                        <div className="text-xs font-bold text-red-600 mb-1">Original</div>
+                        <p className="text-sm text-slate-700">{bf.original}</p>
+                        <p className="text-xs text-red-500 mt-1">{bf.problem}</p>
+                      </div>
+                      <div className="bg-green-50 px-4 py-3">
+                        <div className="text-xs font-bold text-green-600 mb-1">Improved</div>
+                        <p className="text-sm text-slate-700">{bf.improved}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Rewrite Suggestions */}
+            {analysis.rewrite_suggestions && analysis.rewrite_suggestions.length > 0 && (
+              <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 mb-6">
+                <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                  <Sparkles className="h-5 w-5 text-blue-500" />
+                  Section Rewrites
+                </h3>
+                <div className="space-y-4">
+                  {analysis.rewrite_suggestions.map((rs, i) => (
+                    <div key={i} className="border border-slate-200 rounded-xl overflow-hidden">
+                      <div className="bg-slate-100 px-4 py-2 border-b border-slate-200">
+                        <span className="text-xs font-bold text-slate-600 uppercase">{rs.section}</span>
+                      </div>
+                      <div className="bg-red-50 px-4 py-3 border-b border-slate-200">
+                        <div className="text-xs font-bold text-red-600 mb-1">Current</div>
+                        <p className="text-sm text-slate-700">{rs.original}</p>
+                      </div>
+                      <div className="bg-green-50 px-4 py-3">
+                        <div className="text-xs font-bold text-green-600 mb-1">Suggested</div>
+                        <p className="text-sm text-slate-700">{rs.improved}</p>
+                      </div>
+                    </div>
                   ))}
                 </div>
               </div>

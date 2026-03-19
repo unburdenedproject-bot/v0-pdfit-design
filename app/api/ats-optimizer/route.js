@@ -114,34 +114,37 @@ export async function POST(request) {
     }
 
     // Analyze with OpenAI
-    const systemPrompt = `You are an expert ATS (Applicant Tracking System) resume analyzer. Analyze the resume text provided and return a JSON object with this exact structure:
+    const systemPrompt = `You are an expert resume and ATS analyzer. Return ONLY valid JSON matching this schema exactly.
 
 {
-  "score": <number 0-100>,
-  "summary": "<2-3 sentence overall assessment>",
+  "score": <0-100>,
+  "summary": "<2-3 sentences>",
   "sections": {
-    "contact_info": { "score": <0-100>, "feedback": "<specific feedback>" },
-    "formatting": { "score": <0-100>, "feedback": "<specific feedback>" },
-    "keywords": { "score": <0-100>, "feedback": "<specific feedback>" },
-    "experience": { "score": <0-100>, "feedback": "<specific feedback>" },
-    "education": { "score": <0-100>, "feedback": "<specific feedback>" },
-    "skills": { "score": <0-100>, "feedback": "<specific feedback>" }
+    "contact_info": {"score":<0-100>,"feedback":"<1 sentence>"},
+    "formatting": {"score":<0-100>,"feedback":"<1 sentence>"},
+    "keywords": {"score":<0-100>,"feedback":"<1 sentence>"},
+    "experience": {"score":<0-100>,"feedback":"<1 sentence>"},
+    "education": {"score":<0-100>,"feedback":"<1 sentence>"},
+    "skills": {"score":<0-100>,"feedback":"<1 sentence>"}
   },
-  "improvements": ["<improvement 1>", "<improvement 2>", "<improvement 3>", "<improvement 4>", "<improvement 5>"],
-  "missing_keywords": ["<keyword 1>", "<keyword 2>", "<keyword 3>"]
+  "improvements": ["<action 1>","<action 2>","<action 3>","<action 4>","<action 5>"],
+  "missing_keywords": ["<keyword not in resume>"],
+  "matched_keywords": ["<keyword found in resume>"],
+  "format_risks": [{"severity":"high|medium|low","issue":"<1 sentence>"}],
+  "bullet_feedback": [{"original":"<exact bullet from resume>","problem":"<why it's weak>","improved":"<rewritten with metrics>"}],
+  "rewrite_suggestions": [{"section":"<section name>","original":"<current text>","improved":"<better version>"}]
 }
 
-Score criteria:
-- 90-100: Excellent ATS compatibility, well-structured, keyword-rich
-- 70-89: Good but needs minor improvements
-- 50-69: Needs significant work — missing sections or poor formatting
-- 0-49: Major issues — likely to be rejected by ATS systems
-
-Check for: clear section headings, consistent date formatting, quantified achievements, relevant keywords, no tables/columns/graphics (ATS can't read them), proper contact info, skills section, standard section names (Experience, Education, Skills).
-
-${jobDescription ? `The candidate is applying for this role: "${jobDescription}". Tailor your keyword analysis to this specific job.` : "No specific job description provided — give general ATS optimization advice."}
-
-Return ONLY valid JSON. No markdown, no code blocks, no explanation outside the JSON.`
+Rules:
+- Score 90-100: excellent. 70-89: good. 50-69: needs work. 0-49: major issues.
+- matched_keywords: 3-6 keywords FROM the resume that match the job or are strong.
+- missing_keywords: 3-6 important keywords NOT in the resume.
+- format_risks: 1-3 formatting/parsing risks (columns, tables, graphics, inconsistent dates, missing headings).
+- bullet_feedback: pick the 3 weakest bullets. Show original, problem, and improved version with quantified impact.
+- rewrite_suggestions: pick 2-3 sections that need the most improvement. Show original text and improved version.
+- Keep all text concise. No long paragraphs.
+${jobDescription ? `\nTARGET JOB: "${jobDescription}". Match keywords and tailor analysis to this role.` : "\nNo job description provided — give general optimization advice."}
+Return ONLY valid JSON. No markdown, no code blocks.`
 
     // Call OpenAI with retry for rate limits
     let openaiRes;
@@ -159,7 +162,7 @@ Return ONLY valid JSON. No markdown, no code blocks, no explanation outside the 
             { role: "user", content: `Resume text:\n\n${resumeText.substring(0, 8000)}` },
           ],
           temperature: 0.3,
-          max_tokens: 2000,
+          max_tokens: 2500,
         }),
       });
 
