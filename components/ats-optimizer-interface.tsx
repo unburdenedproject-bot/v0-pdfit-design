@@ -31,6 +31,11 @@ interface FormatRisk {
   issue: string
 }
 
+interface ParsingRisk extends FormatRisk {
+  type: string
+  fix: string
+}
+
 interface BulletFeedback {
   original: string
   problem: string
@@ -43,9 +48,33 @@ interface RewriteSuggestion {
   improved: string
 }
 
+interface SectionImprovement {
+  section: string
+  priority: string
+  issue: string
+  fix: string
+}
+
+interface ScoreBreakdown {
+  formatting: number
+  keyword_match: number
+  experience_quality: number
+  section_completeness: number
+  parsing_clarity: number
+}
+
+interface KeywordAnalysis {
+  matched: string[]
+  missing: string[]
+  partial: string[]
+}
+
 interface ATSAnalysis {
+  version?: string
+  job_description_provided?: boolean
   score: number
   summary: string
+  score_breakdown?: ScoreBreakdown
   sections: {
     contact_info: SectionScore
     formatting: SectionScore
@@ -57,9 +86,12 @@ interface ATSAnalysis {
   improvements: string[]
   missing_keywords: string[]
   matched_keywords?: string[]
+  keyword_analysis?: KeywordAnalysis
+  parsing_risks?: ParsingRisk[]
   format_risks?: FormatRisk[]
   bullet_feedback?: BulletFeedback[]
   rewrite_suggestions?: RewriteSuggestion[]
+  section_improvements?: SectionImprovement[]
 }
 
 function ScoreCircle({ score }: { score: number }) {
@@ -103,6 +135,14 @@ function SectionBar({ name, section }: { name: string; section: SectionScore }) 
       <p className="text-xs text-slate-500">{section.feedback}</p>
     </div>
   )
+}
+
+const defaultScoreBreakdown: ScoreBreakdown = {
+  formatting: 0,
+  keyword_match: 0,
+  experience_quality: 0,
+  section_completeness: 0,
+  parsing_clarity: 0,
 }
 
 export function AtsOptimizerInterface() {
@@ -379,6 +419,10 @@ export function AtsOptimizerInterface() {
           scoreLabel: "Puntuacion ATS",
           improvements: "Mejoras Recomendadas",
           missingKeywords: "Palabras Clave Faltantes",
+          matchedKeywords: "Palabras Clave Encontradas",
+          partialKeywords: "Coincidencias Parciales",
+          scoreBreakdown: "Desglose de Puntuacion",
+          sectionImprovements: "Mejoras por Seccion",
           sections: { contact_info: "Informacion de Contacto", formatting: "Formato", keywords: "Palabras Clave", experience: "Experiencia", education: "Educacion", skills: "Habilidades" },
         }
       : localePrefix === "/br"
@@ -401,6 +445,10 @@ export function AtsOptimizerInterface() {
             scoreLabel: "Pontuacao ATS",
             improvements: "Melhorias Recomendadas",
             missingKeywords: "Palavras-Chave Faltantes",
+            matchedKeywords: "Palavras-Chave Encontradas",
+            partialKeywords: "Correspondencias Parciais",
+            scoreBreakdown: "Detalhamento da Pontuacao",
+            sectionImprovements: "Melhorias por Secao",
             sections: { contact_info: "Informacoes de Contato", formatting: "Formatacao", keywords: "Palavras-Chave", experience: "Experiencia", education: "Educacao", skills: "Habilidades" },
           }
         : {
@@ -422,6 +470,10 @@ export function AtsOptimizerInterface() {
             scoreLabel: "ATS Score",
             improvements: "Recommended Improvements",
             missingKeywords: "Missing Keywords",
+            matchedKeywords: "Keywords Found in Your Resume",
+            partialKeywords: "Partial Matches",
+            scoreBreakdown: "Score Breakdown",
+            sectionImprovements: "Section-Level Improvements",
             sections: { contact_info: "Contact Info", formatting: "Formatting", keywords: "Keywords", experience: "Experience", education: "Education", skills: "Skills" },
           }
 
@@ -448,6 +500,16 @@ export function AtsOptimizerInterface() {
 
   // Results view
   if (analysis) {
+    const keywordAnalysis = analysis.keyword_analysis ?? {
+      matched: analysis.matched_keywords ?? [],
+      missing: analysis.missing_keywords,
+      partial: [],
+    }
+    const scoreBreakdown = analysis.score_breakdown ?? defaultScoreBreakdown
+    const displayFormatRisks = analysis.parsing_risks?.length
+      ? analysis.parsing_risks
+      : (analysis.format_risks ?? [])
+
     return (
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -457,6 +519,20 @@ export function AtsOptimizerInterface() {
               <h2 className="text-lg font-bold text-slate-700 mb-4">{labels.scoreLabel}</h2>
               <ScoreCircle score={analysis.score} />
               <p className="text-slate-600 mt-4 max-w-lg mx-auto">{analysis.summary}</p>
+              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left">
+                {[
+                  { label: "Formatting", value: scoreBreakdown.formatting },
+                  { label: "Keyword Match", value: scoreBreakdown.keyword_match },
+                  { label: "Experience Quality", value: scoreBreakdown.experience_quality },
+                  { label: "Section Completeness", value: scoreBreakdown.section_completeness },
+                  { label: "Parsing Clarity", value: scoreBreakdown.parsing_clarity },
+                ].map((item) => (
+                  <div key={item.label} className="bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 flex items-center justify-between">
+                    <span className="text-sm font-medium text-slate-600">{item.label}</span>
+                    <span className="text-sm font-bold text-slate-900">{item.value}/100</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Section Scores */}
@@ -498,7 +574,7 @@ export function AtsOptimizerInterface() {
             </div>
 
             {/* Missing Keywords — selectable */}
-            {analysis.missing_keywords.length > 0 && (
+            {keywordAnalysis.missing.length > 0 && (
               <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 mb-6">
                 <h3 className="text-lg font-bold text-slate-900 mb-1 flex items-center gap-2">
                   <Target className="h-5 w-5 text-blue-500" />
@@ -506,7 +582,7 @@ export function AtsOptimizerInterface() {
                 </h3>
                 <p className="text-xs text-slate-400 mb-4">Click to select which keywords the AI should add to your resume.</p>
                 <div className="flex flex-wrap gap-2">
-                  {analysis.missing_keywords.map((kw, i) => {
+                  {keywordAnalysis.missing.map((kw, i) => {
                     const isSelected = selectedKeywords.includes(kw)
                     return (
                       <button key={i}
@@ -520,21 +596,32 @@ export function AtsOptimizerInterface() {
                       </button>
                     )
                   })}
-                  ))}
                 </div>
+                {keywordAnalysis.partial.length > 0 && (
+                  <div className="mt-5">
+                    <h4 className="text-sm font-bold text-slate-800 mb-2">{labels.partialKeywords}</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {keywordAnalysis.partial.map((kw, i) => (
+                        <span key={i} className="bg-amber-50 text-amber-700 text-sm font-medium px-3 py-1.5 rounded-full border border-amber-200">
+                          {kw}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             )}
 
             {/* Matched Keywords */}
-            {analysis.matched_keywords && analysis.matched_keywords.length > 0 && (
+            {keywordAnalysis.matched.length > 0 && (
               <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 mb-6">
                 <h3 className="text-lg font-bold text-slate-900 mb-1 flex items-center gap-2">
                   <CheckCircle className="h-5 w-5 text-green-500" />
-                  Keywords Found in Your Resume
+                  {labels.matchedKeywords}
                 </h3>
                 <p className="text-xs text-slate-400 mb-4">These keywords from the job description were found in your resume.</p>
                 <div className="flex flex-wrap gap-2">
-                  {analysis.matched_keywords.map((kw, i) => (
+                  {keywordAnalysis.matched.map((kw, i) => (
                     <span key={i} className="bg-green-50 text-green-700 text-sm font-medium px-3 py-1.5 rounded-full border border-green-200">
                       {kw}
                     </span>
@@ -544,14 +631,14 @@ export function AtsOptimizerInterface() {
             )}
 
             {/* Format Risks */}
-            {analysis.format_risks && analysis.format_risks.length > 0 && (
+            {displayFormatRisks.length > 0 && (
               <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 mb-6">
                 <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
                   <AlertTriangle className="h-5 w-5 text-amber-500" />
                   Formatting Risks
                 </h3>
                 <div className="space-y-3">
-                  {analysis.format_risks.map((risk, i) => (
+                  {displayFormatRisks.map((risk, i) => (
                     <div key={i} className={cn(
                       "p-4 rounded-xl border flex items-start gap-3",
                       risk.severity === "high" ? "bg-red-50 border-red-200" : risk.severity === "medium" ? "bg-amber-50 border-amber-200" : "bg-slate-50 border-slate-200"
@@ -560,7 +647,39 @@ export function AtsOptimizerInterface() {
                         "text-[10px] font-bold px-2 py-0.5 rounded-full uppercase flex-shrink-0 mt-0.5",
                         risk.severity === "high" ? "bg-red-200 text-red-700" : risk.severity === "medium" ? "bg-amber-200 text-amber-700" : "bg-slate-200 text-slate-600"
                       )}>{risk.severity}</span>
-                      <span className="text-sm text-slate-700">{risk.issue}</span>
+                      <div>
+                        <p className="text-sm text-slate-700">{risk.issue}</p>
+                        {"fix" in risk && typeof risk.fix === "string" && risk.fix && (
+                          <p className="text-xs text-slate-500 mt-1">{risk.fix}</p>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Section Improvements */}
+            {analysis.section_improvements && analysis.section_improvements.length > 0 && (
+              <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 mb-6">
+                <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                  <AlertCircle className="h-5 w-5 text-orange-500" />
+                  {labels.sectionImprovements}
+                </h3>
+                <div className="space-y-3">
+                  {analysis.section_improvements.map((item, i) => (
+                    <div key={i} className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-xs font-bold uppercase text-slate-500">{item.section}</span>
+                        <span className={cn(
+                          "text-[10px] font-bold px-2 py-0.5 rounded-full uppercase",
+                          item.priority === "high" ? "bg-red-100 text-red-700" : item.priority === "medium" ? "bg-amber-100 text-amber-700" : "bg-slate-200 text-slate-600"
+                        )}>
+                          {item.priority}
+                        </span>
+                      </div>
+                      <p className="text-sm text-slate-700">{item.issue}</p>
+                      <p className="text-xs text-slate-500 mt-1">{item.fix}</p>
                     </div>
                   ))}
                 </div>

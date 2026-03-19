@@ -11,6 +11,131 @@ function errorResponse(message, status = 500) {
   return Response.json({ error: message }, { status });
 }
 
+const MAX_RESUME_TEXT_CHARS = 7000;
+
+function clampScore(value, fallback = 0) {
+  const num = Number(value);
+  if (!Number.isFinite(num)) return fallback;
+  return Math.max(0, Math.min(100, Math.round(num)));
+}
+
+function cleanString(value, fallback = "") {
+  return typeof value === "string" ? value.trim() : fallback;
+}
+
+function cleanStringArray(value, maxItems) {
+  if (!Array.isArray(value)) return [];
+
+  const seen = new Set();
+  const items = [];
+
+  for (const entry of value) {
+    const cleaned = cleanString(entry);
+    const key = cleaned.toLowerCase();
+    if (!cleaned || seen.has(key)) continue;
+    seen.add(key);
+    items.push(cleaned);
+    if (items.length >= maxItems) break;
+  }
+
+  return items;
+}
+
+function normalizeSection(value, fallbackFeedback) {
+  return {
+    score: clampScore(value?.score),
+    feedback: cleanString(value?.feedback, fallbackFeedback),
+  };
+}
+
+function normalizeAnalysis(rawAnalysis, jobDescriptionProvided) {
+  const keywordAnalysis = {
+    matched: cleanStringArray(rawAnalysis?.keyword_analysis?.matched ?? rawAnalysis?.matched_keywords, 8),
+    missing: cleanStringArray(rawAnalysis?.keyword_analysis?.missing ?? rawAnalysis?.missing_keywords, 8),
+    partial: cleanStringArray(rawAnalysis?.keyword_analysis?.partial, 5),
+  };
+
+  const parsingRisks = Array.isArray(rawAnalysis?.parsing_risks)
+    ? rawAnalysis.parsing_risks
+        .map((risk) => ({
+          severity: ["high", "medium", "low"].includes(risk?.severity) ? risk.severity : "medium",
+          type: ["tables", "columns", "headers", "footers", "graphics", "dates", "file_format", "unknown"].includes(risk?.type)
+            ? risk.type
+            : "unknown",
+          issue: cleanString(risk?.issue),
+          fix: cleanString(risk?.fix),
+        }))
+        .filter((risk) => risk.issue)
+        .slice(0, 4)
+    : [];
+
+  const formatRisks = [
+    ...parsingRisks.map((risk) => ({
+      severity: risk.severity,
+      issue: risk.issue,
+    })),
+    ...(Array.isArray(rawAnalysis?.format_risks) ? rawAnalysis.format_risks : [])
+      .map((risk) => ({
+        severity: ["high", "medium", "low"].includes(risk?.severity) ? risk.severity : "medium",
+        issue: cleanString(risk?.issue),
+      }))
+      .filter((risk) => risk.issue),
+  ].slice(0, 4);
+
+  return {
+    version: "ats_v1_1",
+    job_description_provided: jobDescriptionProvided,
+    score: clampScore(rawAnalysis?.score),
+    summary: cleanString(rawAnalysis?.summary, "ATS analysis completed."),
+    score_breakdown: {
+      formatting: clampScore(rawAnalysis?.score_breakdown?.formatting),
+      keyword_match: clampScore(rawAnalysis?.score_breakdown?.keyword_match),
+      experience_quality: clampScore(rawAnalysis?.score_breakdown?.experience_quality),
+      section_completeness: clampScore(rawAnalysis?.score_breakdown?.section_completeness),
+      parsing_clarity: clampScore(rawAnalysis?.score_breakdown?.parsing_clarity),
+    },
+    sections: {
+      contact_info: normalizeSection(rawAnalysis?.sections?.contact_info, "Contact details are usable."),
+      formatting: normalizeSection(rawAnalysis?.sections?.formatting, "Formatting is acceptable for ATS."),
+      keywords: normalizeSection(rawAnalysis?.sections?.keywords, "Keyword coverage is acceptable."),
+      experience: normalizeSection(rawAnalysis?.sections?.experience, "Experience section needs review."),
+      education: normalizeSection(rawAnalysis?.sections?.education, "Education section is acceptable."),
+      skills: normalizeSection(rawAnalysis?.sections?.skills, "Skills section needs refinement."),
+    },
+    improvements: cleanStringArray(rawAnalysis?.improvements, 6),
+    keyword_analysis: keywordAnalysis,
+    missing_keywords: keywordAnalysis.missing,
+    matched_keywords: keywordAnalysis.matched,
+    parsing_risks: parsingRisks,
+    format_risks: formatRisks,
+    bullet_feedback: (Array.isArray(rawAnalysis?.bullet_feedback) ? rawAnalysis.bullet_feedback : [])
+      .map((item) => ({
+        original: cleanString(item?.original),
+        problem: cleanString(item?.problem),
+        improved: cleanString(item?.improved),
+      }))
+      .filter((item) => item.original && item.problem && item.improved)
+      .slice(0, 3),
+    rewrite_suggestions: (Array.isArray(rawAnalysis?.rewrite_suggestions) ? rawAnalysis.rewrite_suggestions : [])
+      .map((item) => ({
+        section: cleanString(item?.section, "section"),
+        original: cleanString(item?.original),
+        improved: cleanString(item?.improved),
+      }))
+      .filter((item) => item.original && item.improved)
+      .slice(0, 3),
+    section_improvements: (Array.isArray(rawAnalysis?.section_improvements) ? rawAnalysis.section_improvements : [])
+      .map((item) => ({
+        section: cleanString(item?.section, "section"),
+        priority: ["high", "medium", "low"].includes(item?.priority) ? item.priority : "medium",
+        issue: cleanString(item?.issue),
+        fix: cleanString(item?.fix),
+      }))
+      .filter((item) => item.issue && item.fix)
+      .slice(0, 6),
+  };
+}
+
 export async function POST(request) {
   let tmpPath = null;
   let uploadedBlobUrl = null;
@@ -113,38 +238,97 @@ export async function POST(request) {
       uploadedBlobUrl = null;
     }
 
-    // Analyze with OpenAI
-    const systemPrompt = `You are an expert resume and ATS analyzer. Return ONLY valid JSON matching this schema exactly.
+    // Analyze with OpenAI using a compact JSON contract.
+    const systemPrompt = "You are an ATS resume analyzer. Return only valid JSON. No markdown. No commentary. No code fences. Be concise. If evidence is weak, use fewer items rather than guessing.";
+    const userPrompt = `Analyze this resume for ATS compatibility.
 
+Output JSON matching this structure exactly:
 {
-  "score": <0-100>,
-  "summary": "<2-3 sentences>",
-  "sections": {
-    "contact_info": {"score":<0-100>,"feedback":"<1 sentence>"},
-    "formatting": {"score":<0-100>,"feedback":"<1 sentence>"},
-    "keywords": {"score":<0-100>,"feedback":"<1 sentence>"},
-    "experience": {"score":<0-100>,"feedback":"<1 sentence>"},
-    "education": {"score":<0-100>,"feedback":"<1 sentence>"},
-    "skills": {"score":<0-100>,"feedback":"<1 sentence>"}
+  "version": "ats_v1_1",
+  "job_description_provided": boolean,
+  "score": integer,
+  "summary": string,
+  "score_breakdown": {
+    "formatting": integer,
+    "keyword_match": integer,
+    "experience_quality": integer,
+    "section_completeness": integer,
+    "parsing_clarity": integer
   },
-  "improvements": ["<action 1>","<action 2>","<action 3>","<action 4>","<action 5>"],
-  "missing_keywords": ["<keyword not in resume>"],
-  "matched_keywords": ["<keyword found in resume>"],
-  "format_risks": [{"severity":"high|medium|low","issue":"<1 sentence>"}],
-  "bullet_feedback": [{"original":"<exact bullet from resume>","problem":"<why it's weak>","improved":"<rewritten with metrics>"}],
-  "rewrite_suggestions": [{"section":"<section name>","original":"<current text>","improved":"<better version>"}]
+  "sections": {
+    "contact_info": { "score": integer, "feedback": string },
+    "formatting": { "score": integer, "feedback": string },
+    "keywords": { "score": integer, "feedback": string },
+    "experience": { "score": integer, "feedback": string },
+    "education": { "score": integer, "feedback": string },
+    "skills": { "score": integer, "feedback": string }
+  },
+  "improvements": [string],
+  "keyword_analysis": {
+    "matched": [string],
+    "missing": [string],
+    "partial": [string]
+  },
+  "missing_keywords": [string],
+  "matched_keywords": [string],
+  "parsing_risks": [
+    {
+      "severity": "high|medium|low",
+      "type": "tables|columns|headers|footers|graphics|dates|file_format|unknown",
+      "issue": string,
+      "fix": string
+    }
+  ],
+  "format_risks": [
+    {
+      "severity": "high|medium|low",
+      "issue": string
+    }
+  ],
+  "bullet_feedback": [
+    {
+      "original": string,
+      "problem": string,
+      "improved": string
+    }
+  ],
+  "rewrite_suggestions": [
+    {
+      "section": string,
+      "original": string,
+      "improved": string
+    }
+  ],
+  "section_improvements": [
+    {
+      "section": string,
+      "priority": "high|medium|low",
+      "issue": string,
+      "fix": string
+    }
+  ]
 }
 
 Rules:
-- Score 90-100: excellent. 70-89: good. 50-69: needs work. 0-49: major issues.
-- matched_keywords: 3-6 keywords FROM the resume that match the job or are strong.
-- missing_keywords: 3-6 important keywords NOT in the resume.
-- format_risks: 1-3 formatting/parsing risks (columns, tables, graphics, inconsistent dates, missing headings).
-- bullet_feedback: pick the 3 weakest bullets. Show original, problem, and improved version with quantified impact.
-- rewrite_suggestions: pick 2-3 sections that need the most improvement. Show original text and improved version.
-- Keep all text concise. No long paragraphs.
-${jobDescription ? `\nTARGET JOB: "${jobDescription}". Match keywords and tailor analysis to this role.` : "\nNo job description provided — give general optimization advice."}
-Return ONLY valid JSON. No markdown, no code blocks.`
+- score and all subscores are integers 0-100.
+- summary: max 240 chars.
+- improvements: 3 to 6 items, action-oriented.
+- matched keywords: 0 to 8 items.
+- missing keywords: 0 to 8 items.
+- partial keywords: 0 to 5 items.
+- parsing risks: 0 to 4 items.
+- bullet feedback: 0 to 3 items, only if strong evidence exists.
+- rewrite suggestions: 0 to 3 items.
+- section improvements: 0 to 6 items.
+- Keep strings short and production-safe.
+- missing_keywords must equal keyword_analysis.missing.
+- matched_keywords must equal keyword_analysis.matched.
+
+JOB DESCRIPTION:
+${jobDescription.trim() || "(none)"}
+
+RESUME TEXT:
+${resumeText.substring(0, MAX_RESUME_TEXT_CHARS)}`;
 
     // Call OpenAI with retry for rate limits
     let openaiRes;
@@ -159,10 +343,10 @@ Return ONLY valid JSON. No markdown, no code blocks.`
           model: "gpt-4o-mini",
           messages: [
             { role: "system", content: systemPrompt },
-            { role: "user", content: `Resume text:\n\n${resumeText.substring(0, 8000)}` },
+            { role: "user", content: userPrompt },
           ],
-          temperature: 0.3,
-          max_tokens: 2500,
+          temperature: 0.1,
+          max_tokens: 1800,
         }),
       });
 
@@ -193,9 +377,8 @@ Return ONLY valid JSON. No markdown, no code blocks.`
     // Parse the JSON response
     let analysis;
     try {
-      // Strip markdown code blocks if present
       const cleaned = content.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
-      analysis = JSON.parse(cleaned);
+      analysis = normalizeAnalysis(JSON.parse(cleaned), Boolean(jobDescription.trim()));
     } catch {
       console.error("Failed to parse AI response:", content);
       throw new Error("AI returned invalid analysis format.");
