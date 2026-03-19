@@ -14,6 +14,8 @@ import {
   Target,
   TrendingUp,
   AlertCircle,
+  Sparkles,
+  FilePlus,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
@@ -96,7 +98,12 @@ export function AtsOptimizerInterface() {
   const [userPlan, setUserPlan] = useState<string>("free")
   const [resumeText, setResumeText] = useState("")
   const [showBuildForm, setShowBuildForm] = useState(false)
+  const [showFixForm, setShowFixForm] = useState(false)
   const [isGenerating, setIsGenerating] = useState(false)
+  const [fixExtras, setFixExtras] = useState({
+    addExperience: "", addEducation: "", addSkills: "",
+    addCertifications: "", addLanguages: "", addOther: "",
+  })
   const [buildInfo, setBuildInfo] = useState({
     fullName: "", email: "", phone: "", location: "", linkedin: "",
     summary: "", experience: "", education: "", skills: "",
@@ -198,41 +205,28 @@ export function AtsOptimizerInterface() {
     setErrorMessage("")
     setAnalysis(null)
     setShowBuildForm(false)
+    setShowFixForm(false)
     setResumeText("")
+    setFixExtras({ addExperience: "", addEducation: "", addSkills: "", addCertifications: "", addLanguages: "", addOther: "" })
   }, [])
 
-  const handleFixResume = useCallback(async () => {
+  const handleFixResume = useCallback(() => {
+    setShowFixForm(true)
+    setHasError(false)
+  }, [])
+
+  const handleSubmitFix = useCallback(async () => {
     if (!file) return
     setIsGenerating(true)
     setHasError(false)
 
-    let blobUrl: string | null = null
-    try {
-      // Re-upload to get text extracted on server
-      blobUrl = await uploadFileToBlob(file)
-
-      // First extract text
-      const extractRes = await fetch("/api/ats-optimizer", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ blobUrl, jobDescription: jobDescription.trim() }),
-      })
-      // We don't need the analysis — we need the text. Let's use the generate endpoint directly
-      // The generate endpoint will re-extract text from a separate call
-    } catch {} finally {
-      if (blobUrl) deleteBlobUrl(blobUrl)
-    }
-
-    // Use the analysis feedback to guide the rewrite
     try {
       const feedbackSummary = analysis
         ? `Score: ${analysis.score}/100. ${analysis.summary}. Improvements needed: ${analysis.improvements.join(". ")}. Missing keywords: ${analysis.missing_keywords.join(", ")}.`
         : ""
 
-      // We need to re-upload the file for text extraction in the generate endpoint
       const blobUrl2 = await uploadFileToBlob(file)
 
-      // First extract text via a lightweight call
       const txtRes = await fetch("/api/pdf-to-txt", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -249,12 +243,25 @@ export function AtsOptimizerInterface() {
         throw new Error("Could not extract text from the resume for rewriting.")
       }
 
+      // Append extra info the user wants to add
+      const extras = []
+      if (fixExtras.addExperience.trim()) extras.push(`ADDITIONAL EXPERIENCE:\n${fixExtras.addExperience}`)
+      if (fixExtras.addEducation.trim()) extras.push(`ADDITIONAL EDUCATION:\n${fixExtras.addEducation}`)
+      if (fixExtras.addSkills.trim()) extras.push(`ADDITIONAL SKILLS:\n${fixExtras.addSkills}`)
+      if (fixExtras.addCertifications.trim()) extras.push(`ADDITIONAL CERTIFICATIONS:\n${fixExtras.addCertifications}`)
+      if (fixExtras.addLanguages.trim()) extras.push(`ADDITIONAL LANGUAGES:\n${fixExtras.addLanguages}`)
+      if (fixExtras.addOther.trim()) extras.push(`ADDITIONAL INFORMATION:\n${fixExtras.addOther}`)
+
+      const extraText = extras.length > 0
+        ? `\n\nThe candidate wants to ADD the following information to their resume:\n${extras.join("\n\n")}`
+        : ""
+
       const response = await fetch("/api/generate-resume", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           mode: "rewrite",
-          resumeText: extractedText,
+          resumeText: extractedText + extraText,
           jobDescription: jobDescription.trim(),
           analysisFeedback: feedbackSummary,
         }),
@@ -281,7 +288,7 @@ export function AtsOptimizerInterface() {
     } finally {
       setIsGenerating(false)
     }
-  }, [file, analysis, jobDescription])
+  }, [file, analysis, jobDescription, fixExtras])
 
   const handleBuildResume = useCallback(async () => {
     setIsGenerating(true)
@@ -472,6 +479,56 @@ export function AtsOptimizerInterface() {
                 <Loader2 className="h-8 w-8 text-orange-500 animate-spin mx-auto mb-3" />
                 <p className="text-slate-700 font-medium">{labels.generating}</p>
               </div>
+            ) : showFixForm ? (
+              <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8">
+                <h3 className="text-xl font-black text-slate-900 mb-2">{labels.fixResume}</h3>
+                <p className="text-sm text-slate-500 mb-6">Your uploaded resume will be rewritten by AI. Add any missing information below — leave blank if nothing to add.</p>
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-xs font-bold text-slate-600 mb-1">Add Experience</label>
+                    <textarea value={fixExtras.addExperience} onChange={(e) => setFixExtras({ ...fixExtras, addExperience: e.target.value })} rows={4} className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm resize-vertical" placeholder={"New Job Title — Company (2024–Present)\n- Key achievement\n- Another achievement"} />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-600 mb-1">Add Education</label>
+                    <textarea value={fixExtras.addEducation} onChange={(e) => setFixExtras({ ...fixExtras, addEducation: e.target.value })} rows={2} className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm resize-vertical" placeholder="Master of Business Administration — University Name, 2024" />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-600 mb-1">Add Skills</label>
+                    <textarea value={fixExtras.addSkills} onChange={(e) => setFixExtras({ ...fixExtras, addSkills: e.target.value })} rows={2} className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm resize-vertical" placeholder="Python, Data Analysis, Tableau, SQL..." />
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-bold text-slate-600 mb-1">Add Certifications</label>
+                      <textarea value={fixExtras.addCertifications} onChange={(e) => setFixExtras({ ...fixExtras, addCertifications: e.target.value })} rows={2} className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm resize-vertical" placeholder="PMP, AWS Certified, etc." />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-slate-600 mb-1">Add Languages</label>
+                      <textarea value={fixExtras.addLanguages} onChange={(e) => setFixExtras({ ...fixExtras, addLanguages: e.target.value })} rows={2} className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm resize-vertical" placeholder="French (conversational), German (basic)" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-600 mb-1">Anything Else to Add</label>
+                    <textarea value={fixExtras.addOther} onChange={(e) => setFixExtras({ ...fixExtras, addOther: e.target.value })} rows={2} className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm resize-vertical" placeholder="Volunteer work, publications, awards..." />
+                  </div>
+
+                  {hasError && (
+                    <div className="bg-red-50 border border-red-200 rounded-xl p-4 flex items-start gap-3">
+                      <AlertTriangle className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+                      <p className="text-sm text-red-700">{errorMessage}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <Button onClick={handleSubmitFix} className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl" disabled={isGenerating}>
+                      {isGenerating ? <Loader2 className="h-4 w-4 mr-2 animate-spin" /> : <Sparkles className="h-4 w-4 mr-2" />}
+                      {isGenerating ? labels.generating : labels.fixResume}
+                    </Button>
+                    <Button onClick={() => setShowFixForm(false)} variant="outline" className="font-bold py-3 px-6 rounded-xl">
+                      Back
+                    </Button>
+                  </div>
+                </div>
+              </div>
             ) : !showBuildForm ? (
               <div className="space-y-4">
                 {hasError && (
@@ -482,11 +539,11 @@ export function AtsOptimizerInterface() {
                 )}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <Button onClick={handleFixResume} className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl" disabled={isGenerating}>
-                    <FileText className="h-4 w-4 mr-2" />
+                    <Sparkles className="h-4 w-4 mr-2" />
                     {labels.fixResume}
                   </Button>
                   <Button onClick={() => setShowBuildForm(true)} className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl">
-                    <Upload className="h-4 w-4 mr-2" />
+                    <FilePlus className="h-4 w-4 mr-2" />
                     {labels.buildResume}
                   </Button>
                 </div>
