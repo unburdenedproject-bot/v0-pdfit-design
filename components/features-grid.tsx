@@ -249,16 +249,9 @@ const categories = [
         tier: "PRO" as const,
       },
       {
-        name: "Resume Optimizer",
-        description: "AI scores your resume and tells you exactly what to fix.",
+        name: "Optimize Your Resume",
+        description: "Upload your resume, get a score, and AI fixes it for you.",
         icon: Target,
-        href: "/ats-optimizer",
-        tier: "PRO" as const,
-      },
-      {
-        name: "Fix Your Resume",
-        description: "Upload your resume and AI rewrites it for ATS compatibility.",
-        icon: Sparkles,
         href: "/ats-optimizer",
         tier: "PRO" as const,
       },

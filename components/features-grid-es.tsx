@@ -248,16 +248,9 @@ const categories = [
         tier: "PRO" as const,
       },
       {
-        name: "Optimizador de Curriculum",
-        description: "La IA analiza tu curriculum y te dice exactamente que mejorar.",
+        name: "Optimiza Tu Curriculum",
+        description: "Sube tu curriculum, recibe una puntuacion y la IA lo arregla.",
         icon: Target,
-        href: "/es/optimizador-ats",
-        tier: "PRO" as const,
-      },
-      {
-        name: "Arreglar Curriculum",
-        description: "Sube tu curriculum y la IA lo reescribe optimizado para ATS.",
-        icon: Sparkles,
         href: "/es/optimizador-ats",
         tier: "PRO" as const,
       },

@@ -91,8 +91,7 @@ const categories = [
     description: "Ferramentas com inteligencia artificial para criar e otimizar documentos",
     tools: [
       { name: "Gerador de Codigo QR", description: "Gere codigos QR a partir de qualquer URL ou texto instantaneamente.", icon: QrCode, href: "/br/codigo-qr", tier: "PRO" as const },
-      { name: "Otimizador de Curriculo", description: "A IA analisa seu curriculo e diz exatamente o que melhorar.", icon: Target, href: "/br/otimizador-ats", tier: "PRO" as const },
-      { name: "Corrigir Curriculo", description: "Envie seu curriculo e a IA reescreve otimizado.", icon: Sparkles, href: "/br/otimizador-ats", tier: "PRO" as const },
+      { name: "Otimize Seu Curriculo", description: "Envie seu curriculo, receba uma pontuacao e a IA corrige.", icon: Target, href: "/br/otimizador-ats", tier: "PRO" as const },
       { name: "Criar Curriculo", description: "Construa um curriculo profissional do zero com IA. Baixe em Word.", icon: FilePlus, href: "/br/criar-curriculo", tier: "PRO" as const },
     ],
   },
