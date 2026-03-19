@@ -38,7 +38,7 @@ async function callOpenAI(apiKey, prompt) {
 
 function buildDocx(resumeText, coverLetterText) {
   // Dynamic import inside function to avoid bundling issues
-  return import("docx").then(({ Document, Paragraph, TextRun, HeadingLevel, AlignmentType, BorderStyle, Packer, Tab, TabStopType }) => {
+  return import("docx").then(({ Document, Paragraph, TextRun, AlignmentType, BorderStyle, Packer, SectionType }) => {
     const sections = [];
 
     // Parse resume text into document sections
@@ -146,6 +146,7 @@ function buildDocx(resumeText, coverLetterText) {
 
       sections.push({
         properties: {
+          type: SectionType.NEXT_PAGE,
           page: {
             margin: { top: 720, right: 720, bottom: 720, left: 720 },
           },

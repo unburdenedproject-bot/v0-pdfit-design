@@ -358,7 +358,7 @@ export function AtsOptimizerInterface() {
     } finally {
       setIsGenerating(false)
     }
-  }, [file, analysis, jobDescription, fixExtras])
+  }, [file, analysis, jobDescription, fixExtras, includeCoverLetter, selectedImprovements, selectedKeywords])
 
   const handleBuildResume = useCallback(async () => {
     setIsGenerating(true)
@@ -396,7 +396,7 @@ export function AtsOptimizerInterface() {
     } finally {
       setIsGenerating(false)
     }
-  }, [buildInfo])
+  }, [buildInfo, includeCoverLetter])
 
   const labels =
     localePrefix === "/es"
