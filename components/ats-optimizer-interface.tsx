@@ -94,6 +94,14 @@ export function AtsOptimizerInterface() {
   const [errorMessage, setErrorMessage] = useState("")
   const [analysis, setAnalysis] = useState<ATSAnalysis | null>(null)
   const [userPlan, setUserPlan] = useState<string>("free")
+  const [resumeText, setResumeText] = useState("")
+  const [showBuildForm, setShowBuildForm] = useState(false)
+  const [isGenerating, setIsGenerating] = useState(false)
+  const [buildInfo, setBuildInfo] = useState({
+    fullName: "", email: "", phone: "", location: "", linkedin: "",
+    summary: "", experience: "", education: "", skills: "",
+    certifications: "", languages: "", additional: "", jobTarget: "",
+  })
 
   const localePrefix = pathname.startsWith("/es")
     ? "/es"
@@ -189,7 +197,128 @@ export function AtsOptimizerInterface() {
     setHasError(false)
     setErrorMessage("")
     setAnalysis(null)
+    setShowBuildForm(false)
+    setResumeText("")
   }, [])
+
+  const handleFixResume = useCallback(async () => {
+    if (!file) return
+    setIsGenerating(true)
+    setHasError(false)
+
+    let blobUrl: string | null = null
+    try {
+      // Re-upload to get text extracted on server
+      blobUrl = await uploadFileToBlob(file)
+
+      // First extract text
+      const extractRes = await fetch("/api/ats-optimizer", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ blobUrl, jobDescription: jobDescription.trim() }),
+      })
+      // We don't need the analysis — we need the text. Let's use the generate endpoint directly
+      // The generate endpoint will re-extract text from a separate call
+    } catch {} finally {
+      if (blobUrl) deleteBlobUrl(blobUrl)
+    }
+
+    // Use the analysis feedback to guide the rewrite
+    try {
+      const feedbackSummary = analysis
+        ? `Score: ${analysis.score}/100. ${analysis.summary}. Improvements needed: ${analysis.improvements.join(". ")}. Missing keywords: ${analysis.missing_keywords.join(", ")}.`
+        : ""
+
+      // We need to re-upload the file for text extraction in the generate endpoint
+      const blobUrl2 = await uploadFileToBlob(file)
+
+      // First extract text via a lightweight call
+      const txtRes = await fetch("/api/pdf-to-txt", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ blobUrl: blobUrl2 }),
+      })
+
+      let extractedText = ""
+      if (txtRes.ok) {
+        const txtBlob = await txtRes.blob()
+        extractedText = await txtBlob.text()
+      }
+
+      if (!extractedText || extractedText.length < 30) {
+        throw new Error("Could not extract text from the resume for rewriting.")
+      }
+
+      const response = await fetch("/api/generate-resume", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          mode: "rewrite",
+          resumeText: extractedText,
+          jobDescription: jobDescription.trim(),
+          analysisFeedback: feedbackSummary,
+        }),
+      })
+
+      if (!response.ok) {
+        const err = await response.json().catch(() => ({}))
+        throw new Error(err.error || "Resume generation failed.")
+      }
+
+      const blob = await response.blob()
+      const url = URL.createObjectURL(blob)
+      const link = document.createElement("a")
+      link.href = url
+      link.download = "resume-optimized.pdf"
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      URL.revokeObjectURL(url)
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "An unexpected error occurred."
+      setHasError(true)
+      setErrorMessage(msg)
+    } finally {
+      setIsGenerating(false)
+    }
+  }, [file, analysis, jobDescription])
+
+  const handleBuildResume = useCallback(async () => {
+    setIsGenerating(true)
+    setHasError(false)
+
+    try {
+      const response = await fetch("/api/generate-resume", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          mode: "build",
+          info: buildInfo,
+        }),
+      })
+
+      if (!response.ok) {
+        const err = await response.json().catch(() => ({}))
+        throw new Error(err.error || "Resume generation failed.")
+      }
+
+      const blob = await response.blob()
+      const url = URL.createObjectURL(blob)
+      const link = document.createElement("a")
+      link.href = url
+      link.download = "resume-new.pdf"
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      URL.revokeObjectURL(url)
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "An unexpected error occurred."
+      setHasError(true)
+      setErrorMessage(msg)
+    } finally {
+      setIsGenerating(false)
+    }
+  }, [buildInfo])
 
   const labels =
     localePrefix === "/es"
@@ -202,6 +331,10 @@ export function AtsOptimizerInterface() {
           analyze: "Analizar Curriculum",
           analyzing: "Analizando con IA...",
           analyzeAnother: "Analizar otro",
+          fixResume: "Arreglar Mi Curriculum con IA",
+          buildResume: "Crear Curriculum Nuevo",
+          generating: "Generando...",
+          buildFormTitle: "Crear Curriculum Nuevo desde Cero",
           upgradeTitle: "Funcion Pro",
           upgradeDesc: "El Optimizador ATS esta disponible en los planes Pro, Business y Enterprise.",
           upgradeBtn: "Ver Planes",
@@ -220,6 +353,10 @@ export function AtsOptimizerInterface() {
             analyze: "Analisar Curriculo",
             analyzing: "Analisando com IA...",
             analyzeAnother: "Analisar outro",
+            fixResume: "Corrigir Meu Curriculo com IA",
+            buildResume: "Criar Curriculo Novo",
+            generating: "Gerando...",
+            buildFormTitle: "Criar Curriculo Novo do Zero",
             upgradeTitle: "Funcao Pro",
             upgradeDesc: "O Otimizador ATS esta disponivel nos planos Pro, Business e Enterprise.",
             upgradeBtn: "Ver Planos",
@@ -237,6 +374,10 @@ export function AtsOptimizerInterface() {
             analyze: "Analyze Resume",
             analyzing: "Analyzing with AI...",
             analyzeAnother: "Analyze another",
+            fixResume: "Fix My Resume with AI",
+            buildResume: "Build New Resume",
+            generating: "Generating...",
+            buildFormTitle: "Build a New Resume from Scratch",
             upgradeTitle: "Pro Feature",
             upgradeDesc: "The ATS Optimizer is available on the Pro, Business, and Enterprise plans.",
             upgradeBtn: "View Plans",
@@ -326,11 +467,115 @@ export function AtsOptimizerInterface() {
             )}
 
             {/* Actions */}
-            <div className="text-center">
-              <Button onClick={handleReset} className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3 rounded-xl">
-                {labels.analyzeAnother}
-              </Button>
-            </div>
+            {isGenerating ? (
+              <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 text-center">
+                <Loader2 className="h-8 w-8 text-orange-500 animate-spin mx-auto mb-3" />
+                <p className="text-slate-700 font-medium">{labels.generating}</p>
+              </div>
+            ) : !showBuildForm ? (
+              <div className="space-y-4">
+                {hasError && (
+                  <div className="bg-red-50 border border-red-200 rounded-xl p-4 flex items-start gap-3">
+                    <AlertTriangle className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+                    <p className="text-sm text-red-700">{errorMessage}</p>
+                  </div>
+                )}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <Button onClick={handleFixResume} className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl" disabled={isGenerating}>
+                    <FileText className="h-4 w-4 mr-2" />
+                    {labels.fixResume}
+                  </Button>
+                  <Button onClick={() => setShowBuildForm(true)} className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl">
+                    <Upload className="h-4 w-4 mr-2" />
+                    {labels.buildResume}
+                  </Button>
+                </div>
+                <div className="text-center">
+                  <Button onClick={handleReset} variant="outline" className="font-bold px-8 py-3 rounded-xl">
+                    {labels.analyzeAnother}
+                  </Button>
+                </div>
+              </div>
+            ) : (
+              <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8">
+                <h3 className="text-xl font-black text-slate-900 mb-6">{labels.buildFormTitle}</h3>
+                <div className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-bold text-slate-600 mb-1">Full Name *</label>
+                      <input type="text" value={buildInfo.fullName} onChange={(e) => setBuildInfo({ ...buildInfo, fullName: e.target.value })} className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm" placeholder="John Doe" />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-slate-600 mb-1">Email *</label>
+                      <input type="email" value={buildInfo.email} onChange={(e) => setBuildInfo({ ...buildInfo, email: e.target.value })} className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm" placeholder="john@example.com" />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-slate-600 mb-1">Phone</label>
+                      <input type="tel" value={buildInfo.phone} onChange={(e) => setBuildInfo({ ...buildInfo, phone: e.target.value })} className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm" placeholder="+1 (555) 123-4567" />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-slate-600 mb-1">Location</label>
+                      <input type="text" value={buildInfo.location} onChange={(e) => setBuildInfo({ ...buildInfo, location: e.target.value })} className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm" placeholder="City, State" />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-slate-600 mb-1">LinkedIn URL</label>
+                      <input type="url" value={buildInfo.linkedin} onChange={(e) => setBuildInfo({ ...buildInfo, linkedin: e.target.value })} className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm" placeholder="linkedin.com/in/yourname" />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-slate-600 mb-1">Target Job Title</label>
+                      <input type="text" value={buildInfo.jobTarget} onChange={(e) => setBuildInfo({ ...buildInfo, jobTarget: e.target.value })} className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm" placeholder="Software Engineer" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-600 mb-1">Professional Summary</label>
+                    <textarea value={buildInfo.summary} onChange={(e) => setBuildInfo({ ...buildInfo, summary: e.target.value })} rows={3} className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm resize-vertical" placeholder="Brief overview of your career and goals (or leave blank for AI to generate)" />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-600 mb-1">Work Experience *</label>
+                    <textarea value={buildInfo.experience} onChange={(e) => setBuildInfo({ ...buildInfo, experience: e.target.value })} rows={6} className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm resize-vertical" placeholder={"Job Title — Company Name (2020–Present)\n- Managed team of 5 engineers\n- Increased revenue by 30%\n\nPrevious Job — Company (2018–2020)\n- Key achievement here"} />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-600 mb-1">Education *</label>
+                    <textarea value={buildInfo.education} onChange={(e) => setBuildInfo({ ...buildInfo, education: e.target.value })} rows={3} className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm resize-vertical" placeholder={"Bachelor of Science in Computer Science\nUniversity Name — 2018"} />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-600 mb-1">Skills *</label>
+                    <textarea value={buildInfo.skills} onChange={(e) => setBuildInfo({ ...buildInfo, skills: e.target.value })} rows={2} className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm resize-vertical" placeholder="JavaScript, Python, Project Management, Data Analysis, Excel..." />
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-bold text-slate-600 mb-1">Certifications</label>
+                      <textarea value={buildInfo.certifications} onChange={(e) => setBuildInfo({ ...buildInfo, certifications: e.target.value })} rows={2} className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm resize-vertical" placeholder="PMP, AWS Certified, etc." />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-slate-600 mb-1">Languages</label>
+                      <textarea value={buildInfo.languages} onChange={(e) => setBuildInfo({ ...buildInfo, languages: e.target.value })} rows={2} className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm resize-vertical" placeholder="English (native), Spanish (fluent)" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-slate-600 mb-1">Additional Information</label>
+                    <textarea value={buildInfo.additional} onChange={(e) => setBuildInfo({ ...buildInfo, additional: e.target.value })} rows={2} className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm resize-vertical" placeholder="Volunteer work, publications, awards..." />
+                  </div>
+
+                  {hasError && (
+                    <div className="bg-red-50 border border-red-200 rounded-xl p-4 flex items-start gap-3">
+                      <AlertTriangle className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+                      <p className="text-sm text-red-700">{errorMessage}</p>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <Button onClick={handleBuildResume} className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl" disabled={isGenerating || !buildInfo.fullName || !buildInfo.experience}>
+                      {isGenerating ? <Loader2 className="h-4 w-4 mr-2 animate-spin" /> : <FileText className="h-4 w-4 mr-2" />}
+                      {isGenerating ? labels.generating : labels.buildResume}
+                    </Button>
+                    <Button onClick={() => setShowBuildForm(false)} variant="outline" className="font-bold py-3 px-6 rounded-xl">
+                      Back
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
