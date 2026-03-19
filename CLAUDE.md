@@ -62,7 +62,15 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - /pdf-to-word (Pro, CloudConvert), /pdf-to-excel (Pro, CloudConvert), /pdf-to-powerpoint (Pro, CloudConvert)
 - /ocr-scanner (Pro), /qr-code (Pro)
 - /url-to-pdf (Pro — CloudConvert capture-website with Chrome engine, public URLs only, ~$0.02/conversion)
-- /ats-optimizer (Pro — Blue Ocean #3, OpenAI GPT-4o-mini, iLoveAPI extract for text, ~$0.02/analysis)
+- /ats-optimizer (Pro — "Optimize Your Resume", OpenAI GPT-4o-mini, iLoveAPI extract for text, ~$0.03/analysis)
+  - Analysis returns: score, 6 section scores, improvements, missing/matched keywords, format risks, bullet rewrites, section rewrites
+  - Selectable improvements and keywords — user toggles which ones AI applies
+  - "Fix My Resume" button → form to add extra experience/education/skills → AI rewrites → Word .docx download
+  - Cover letter checkbox generates matching cover letter as second page
+- /create-resume (Pro — "Create a Resume", standalone page, no upload needed)
+  - Full form: name, email, phone, location, LinkedIn, target job, summary, experience, education, skills, certifications, languages, additional
+  - AI generates resume as Word .docx, optional cover letter
+  - Uses /api/generate-resume with mode "build"
 - /extract-images-from-pdf, /flatten-pdf
 - /upload-ready-pdf (Blue Ocean #1 — chains flatten + compress)
 - /phone-scan-cleanup (Blue Ocean #2 — Sharp image processing, free with limits)
@@ -208,7 +216,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - All Pro/Business routes now properly import and call logUsage with user.id
 
 ### Google Search Console Status
-- Sitemap with 1,122 URLs across EN/ES/BR — submitted 2026-03-12, updated 2026-03-18 (added URL to PDF)
+- Sitemap with 1,130+ URLs across EN/ES/BR — submitted 2026-03-12, updated 2026-03-18 (added URL to PDF)
 - DO NOT break any existing indexed pages
 - English, Spanish, and Brazilian pages all included in sitemap
 
@@ -223,7 +231,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - ~~robots.txt~~ DONE — app/robots.ts already existed
 - ~~FAQ section~~ DONE — updated with current product info (all 4 tiers, eSign, table extraction)
 - ~~GA4 measurement ID~~ DONE — updated to G-DQRW3BJMX1
-- ~~Sitemap~~ DONE — 1,122 URLs including URL to PDF
+- ~~Sitemap~~ DONE — 1,130+ URLs including URL to PDF
 - ~~Performance~~ DONE — Mobile LCP 1.8s, Desktop LCP 0.4s, CLS 0
 - ~~Upgrade flow~~ DONE — existing subscribers upgrade instantly with proration
 - ~~Database constraint~~ DONE — added "enterprise" to users_plan_check
@@ -239,7 +247,10 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - Verify Stripe webhook endpoint is https://omnispdf.com/api/webhook
 
 ### Priority 1: Remaining Tools
-- ~~Resume ATS Optimizer~~ DONE — /ats-optimizer, OpenAI GPT-4o-mini + iLoveAPI extract
+- ~~Resume ATS Optimizer~~ DONE — /ats-optimizer (Optimize Your Resume) + /create-resume (Create a Resume)
+  - v1.1 upgrade: matched keywords, format risks, bullet rewrites, section rewrites, Word .docx output, cover letter generation
+  - Standalone resume builder at /create-resume (no upload needed)
+  - Uses /api/ats-optimizer (analysis) and /api/generate-resume (rewrite/build, Word output via docx npm package)
 
 ### Priority 2: Infrastructure Migration
 Full plan in INFRASTRUCTURE.md.
@@ -268,6 +279,11 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 - Components: header-br.tsx, footer-br.tsx, features-grid-br.tsx, dashboard-client-br.tsx
 - Table extraction uses REST API to Document AI (not gRPC) to avoid private key format issues on Vercel
 - Enterprise workflow templates are gated by userPlan in workflow-interface.tsx (enterpriseOnly flag)
+- Resume tools: /ats-optimizer (analyze+fix) and /create-resume (build from scratch) are separate pages with separate interfaces
+- Resume output is Word .docx via docx npm package (not PDF) — editable by users
+- /api/generate-resume handles both "rewrite" and "build" modes, optional cover letter as second page
+- Homepage shows 2 resume tools: "Optimize Your Resume" → /ats-optimizer, "Create a Resume" → /create-resume
+- Total pages: 602 (EN/ES/BR combined)
 
 ## Rules - Always Follow
 - Never break already indexed pages
