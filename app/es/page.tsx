@@ -8,7 +8,7 @@ import {
   Shield, ArrowRight, Crown, Gift, Zap, Globe, Award, HelpCircle,
   FileText, FileSpreadsheet, Presentation, Image, Merge, Split, RotateCw,
   FileArchiveIcon as Compress, Lock, Unlock, Droplets, Scan, Camera, Mail,
-  Type, QrCode, ImageDown, Layers, Upload, PenTool, ArrowLeftRight, Repeat,
+  Type, QrCode, ImageDown, Layers, Upload, PenTool, ArrowLeftRight, Repeat, Target,
 } from "lucide-react"
 
 function TierBadge({ tier }: { tier: "FREE" | "PRO" | "BUSINESS" | "ENTERPRISE" }) {
@@ -101,6 +101,7 @@ const categories = [
     description: "Crea recursos útiles al instante",
     tools: [
       { name: "Generador de QR", description: "Genera códigos QR desde cualquier URL o texto.", icon: QrCode, href: "/es/codigo-qr", tier: "PRO" as const },
+      { name: "Optimizador ATS", description: "Analisis de curriculum con IA y puntuacion ATS.", icon: Target, href: "/es/optimizador-ats", tier: "PRO" as const },
     ],
   },
   {

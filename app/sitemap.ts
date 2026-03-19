@@ -53,6 +53,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/url-to-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
 
     // Blog
+    { url: `${baseUrl}/ats-optimizer`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.7 },
     { url: `${baseUrl}/blog/welcome-to-omnispdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
     { url: `${baseUrl}/blog/table-extraction-excel`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
@@ -285,6 +286,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/es/automatizacion`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/es/extraccion-de-tablas`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/es/url-a-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${baseUrl}/es/optimizador-ats`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/es/blog`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.7 },
     { url: `${baseUrl}/es/jpg-a-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/es/png-a-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
@@ -515,6 +517,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/br/automacao`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/br/extracao-de-tabelas`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/br/url-para-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${baseUrl}/br/otimizador-ats`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/br/blog`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.7 },
     { url: `${baseUrl}/br/jpg-para-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/br/png-para-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },

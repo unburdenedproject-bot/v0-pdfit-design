@@ -9,6 +9,7 @@ const routes: [string, string, string][] = [
   ["/privacy-policy", "/es/politica-de-privacidad", "/br/politica-de-privacidade"],
   ["/terms-conditions", "/es/terminos-y-condiciones", "/br/termos-e-condicoes"],
   ["/blog", "/es/blog", "/br/blog"],
+  ["/ats-optimizer", "/es/optimizador-ats", "/br/otimizador-ats"],
   ["/tools", "/es/herramientas", "/br/ferramentas"],
   ["/tools-a-z", "/es/herramientas-a-z", "/br/ferramentas-a-z"],
   ["/dashboard", "/es/dashboard", "/br/painel"],

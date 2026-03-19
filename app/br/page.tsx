@@ -8,7 +8,7 @@ import {
   Shield, ArrowRight, Crown, Gift, Zap, Globe, Award, HelpCircle,
   FileText, FileSpreadsheet, Presentation, Image, Merge, Split, RotateCw,
   FileArchiveIcon as Compress, Lock, Unlock, Droplets, Scan, Camera, Mail,
-  Type, QrCode, ImageDown, Layers, Upload, PenTool, ArrowLeftRight, Repeat,
+  Type, QrCode, ImageDown, Layers, Upload, PenTool, ArrowLeftRight, Repeat, Target,
 } from "lucide-react"
 
 function TierBadge({ tier }: { tier: "FREE" | "PRO" | "BUSINESS" | "ENTERPRISE" }) {
@@ -101,6 +101,7 @@ const categories = [
       { name: "Scanner OCR", description: "Extraia texto de PDFs digitalizados.", icon: Scan, href: "/br/scanner-ocr", tier: "PRO" as const },
       { name: "Limpeza de Digitalizacao", description: "Converta fotos de documentos em PDFs profissionais.", icon: Camera, href: "/br/limpeza-digitalizacao", tier: "FREE" as const },
       { name: "Codigo QR", description: "Gere codigos QR a partir de qualquer URL ou texto.", icon: QrCode, href: "/br/codigo-qr", tier: "PRO" as const },
+      { name: "Otimizador ATS", description: "Analise de curriculo com IA e pontuacao ATS.", icon: Target, href: "/br/otimizador-ats", tier: "PRO" as const },
     ],
   },
   {

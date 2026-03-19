@@ -25,6 +25,7 @@ import {
   ArrowLeftRight,
   Repeat,
   Globe,
+  Target,
 } from "lucide-react"
 
 const categories = [
@@ -242,6 +243,13 @@ const categories = [
         description: "Genera códigos QR desde cualquier URL o texto al instante.",
         icon: QrCode,
         href: "/es/codigo-qr",
+        tier: "PRO" as const,
+      },
+      {
+        name: "Optimizador ATS",
+        description: "Analisis de curriculum con IA y puntuacion de compatibilidad ATS.",
+        icon: Target,
+        href: "/es/optimizador-ats",
         tier: "PRO" as const,
       },
     ],
