@@ -26,6 +26,8 @@ import {
   Repeat,
   Globe,
   Target,
+  Sparkles,
+  FilePlus,
 } from "lucide-react"
 
 const categories = [
@@ -85,11 +87,13 @@ const categories = [
     ],
   },
   {
-    name: "Gerar",
-    description: "Crie recursos uteis instantaneamente",
+    name: "Gerar e Ferramentas IA",
+    description: "Ferramentas com inteligencia artificial para criar e otimizar documentos",
     tools: [
       { name: "Gerador de Codigo QR", description: "Gere codigos QR a partir de qualquer URL ou texto instantaneamente.", icon: QrCode, href: "/br/codigo-qr", tier: "PRO" as const },
       { name: "Otimizador ATS", description: "Analise de curriculo com IA e pontuacao de compatibilidade ATS.", icon: Target, href: "/br/otimizador-ats", tier: "PRO" as const },
+      { name: "Corrigir Curriculo", description: "Envie seu curriculo e a IA reescreve otimizado para ATS.", icon: Sparkles, href: "/br/otimizador-ats", tier: "PRO" as const },
+      { name: "Criar Curriculo", description: "Construa um curriculo profissional do zero com IA.", icon: FilePlus, href: "/br/otimizador-ats", tier: "PRO" as const },
     ],
   },
   {

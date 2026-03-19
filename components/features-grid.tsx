@@ -26,6 +26,8 @@ import {
   Repeat,
   Globe,
   Target,
+  Sparkles,
+  FilePlus,
 } from "lucide-react"
 
 const categories = [
@@ -236,8 +238,8 @@ const categories = [
     ],
   },
   {
-    name: "Generate",
-    description: "Create useful assets instantly",
+    name: "Generate & AI Tools",
+    description: "AI-powered tools to create and optimize documents",
     tools: [
       {
         name: "QR Code Generator",
@@ -250,6 +252,20 @@ const categories = [
         name: "Resume ATS Optimizer",
         description: "AI-powered resume analysis with ATS compatibility score.",
         icon: Target,
+        href: "/ats-optimizer",
+        tier: "PRO" as const,
+      },
+      {
+        name: "Fix Your Resume",
+        description: "Upload your resume and AI rewrites it for ATS compatibility.",
+        icon: Sparkles,
+        href: "/ats-optimizer",
+        tier: "PRO" as const,
+      },
+      {
+        name: "Create a Resume",
+        description: "Build a professional ATS-optimized resume from scratch with AI.",
+        icon: FilePlus,
         href: "/ats-optimizer",
         tier: "PRO" as const,
       },
