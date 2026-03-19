@@ -80,7 +80,7 @@ export async function POST(request) {
       const ILovePDFFile = (await import("@ilovepdf/ilovepdf-nodejs/ILovePDFFile")).default;
 
       const instance = new ILovePDFApi(publicKey, secretKey);
-      const task = instance.newTask("pdftxt");
+      const task = instance.newTask("extract");
       await task.start();
       const pdfFile = new ILovePDFFile(tmpPath);
       await task.addFile(pdfFile);
