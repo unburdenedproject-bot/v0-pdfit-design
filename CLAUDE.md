@@ -62,6 +62,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - /pdf-to-word (Pro, CloudConvert), /pdf-to-excel (Pro, CloudConvert), /pdf-to-powerpoint (Pro, CloudConvert)
 - /ocr-scanner (Pro), /qr-code (Pro)
 - /url-to-pdf (Pro — CloudConvert capture-website with Chrome engine, public URLs only, ~$0.02/conversion)
+- /ats-optimizer (Pro — Blue Ocean #3, OpenAI GPT-4o-mini, iLoveAPI extract for text, ~$0.02/analysis)
 - /extract-images-from-pdf, /flatten-pdf
 - /upload-ready-pdf (Blue Ocean #1 — chains flatten + compress)
 - /phone-scan-cleanup (Blue Ocean #2 — Sharp image processing, free with limits)
@@ -238,7 +239,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - Verify Stripe webhook endpoint is https://omnispdf.com/api/webhook
 
 ### Priority 1: Remaining Tools
-- Resume ATS Optimizer (OpenAI API, Blue Ocean)
+- ~~Resume ATS Optimizer~~ DONE — /ats-optimizer, OpenAI GPT-4o-mini + iLoveAPI extract
 
 ### Priority 2: Infrastructure Migration
 Full plan in INFRASTRUCTURE.md.
@@ -287,6 +288,34 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 - After git push, Vercel deploys automatically
 - Always give Paula the exact commit message to use
 - Never assume she knows when to deploy — always tell her explicitly
+
+## Vercel Environment Variables (confirmed 2026-03-18)
+All set on Vercel for Production and Preview:
+- STRIPE_SECRET_KEY (sensitive, Production+Preview)
+- NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY (all environments)
+- STRIPE_WEBHOOK_SECRET (all environments)
+- STRIPE_PRICE_ID (Pro monthly)
+- STRIPE_PRICE_ID_ANNUAL (Pro annual)
+- STRIPE_PRICE_ID_BUSINESS (Business monthly)
+- STRIPE_PRICE_ID_BUSINESS_ANNUAL (Business annual)
+- STRIPE_PRICE_ID_ENTERPRISE (Enterprise monthly)
+- STRIPE_PRICE_ID_ENTERPRISE_ANNUAL (Enterprise annual)
+- NEXT_PUBLIC_SITE_URL (Production only)
+- SUPABASE_SERVICE_ROLE_KEY (sensitive, Production+Preview)
+- NEXT_PUBLIC_SUPABASE_ANON_KEY (all environments)
+- NEXT_PUBLIC_SUPABASE_URL (all environments)
+- BLOB_READ_WRITE_TOKEN (all environments)
+- ILOVEAPI_SECRET_KEY (sensitive, Production+Preview)
+- ILOVEAPI_PUBLIC_KEY (all environments)
+- CLOUDCONVERT_API_KEY (all environments)
+- OPENAI_API_KEY (for ATS optimizer)
+- GOOGLE_CLOUD_PROJECT_ID
+- GOOGLE_CLOUD_CLIENT_EMAIL
+- GOOGLE_CLOUD_PRIVATE_KEY
+- GOOGLE_CLOUD_LOCATION
+- GOOGLE_CLOUD_PROCESSOR_ID
+- HCAPTCHA_SECRET_KEY
+- NEXT_PUBLIC_HCAPTCHA_SITE_KEY
 
 ## Google Cloud Credentials
 - Service Account: omnispdf-docai@project-5fe73bdf-4333-442f-840.iam.gserviceaccount.com
