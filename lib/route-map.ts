@@ -10,6 +10,7 @@ const routes: [string, string, string][] = [
   ["/terms-conditions", "/es/terminos-y-condiciones", "/br/termos-e-condicoes"],
   ["/blog", "/es/blog", "/br/blog"],
   ["/ats-optimizer", "/es/optimizador-ats", "/br/otimizador-ats"],
+  ["/create-resume", "/es/crear-curriculum", "/br/criar-curriculo"],
   ["/tools", "/es/herramientas", "/br/ferramentas"],
   ["/tools-a-z", "/es/herramientas-a-z", "/br/ferramentas-a-z"],
   ["/dashboard", "/es/dashboard", "/br/painel"],

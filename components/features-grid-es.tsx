@@ -248,8 +248,8 @@ const categories = [
         tier: "PRO" as const,
       },
       {
-        name: "Optimizador ATS",
-        description: "Analisis de curriculum con IA y puntuacion de compatibilidad ATS.",
+        name: "Optimizador de Curriculum",
+        description: "La IA analiza tu curriculum y te dice exactamente que mejorar.",
         icon: Target,
         href: "/es/optimizador-ats",
         tier: "PRO" as const,
@@ -263,9 +263,9 @@ const categories = [
       },
       {
         name: "Crear Curriculum",
-        description: "Construye un curriculum profesional desde cero con IA.",
+        description: "Construye un curriculum profesional desde cero con IA. Descarga en Word.",
         icon: FilePlus,
-        href: "/es/optimizador-ats",
+        href: "/es/crear-curriculum",
         tier: "PRO" as const,
       },
     ],

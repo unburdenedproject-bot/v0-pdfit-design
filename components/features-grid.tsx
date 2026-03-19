@@ -249,8 +249,8 @@ const categories = [
         tier: "PRO" as const,
       },
       {
-        name: "Resume ATS Optimizer",
-        description: "AI-powered resume analysis with ATS compatibility score.",
+        name: "Resume Optimizer",
+        description: "AI scores your resume and tells you exactly what to fix.",
         icon: Target,
         href: "/ats-optimizer",
         tier: "PRO" as const,
@@ -264,9 +264,9 @@ const categories = [
       },
       {
         name: "Create a Resume",
-        description: "Build a professional ATS-optimized resume from scratch with AI.",
+        description: "Build a professional resume from scratch with AI. Download as Word.",
         icon: FilePlus,
-        href: "/ats-optimizer",
+        href: "/create-resume",
         tier: "PRO" as const,
       },
     ],

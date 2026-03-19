@@ -101,9 +101,9 @@ const categories = [
     description: "Crea recursos útiles al instante",
     tools: [
       { name: "Generador de QR", description: "Genera códigos QR desde cualquier URL o texto.", icon: QrCode, href: "/es/codigo-qr", tier: "PRO" as const },
-      { name: "Optimizador ATS", description: "Analisis de curriculum con IA y puntuacion ATS.", icon: Target, href: "/es/optimizador-ats", tier: "PRO" as const },
-      { name: "Arreglar Curriculum", description: "La IA reescribe tu curriculum optimizado para ATS.", icon: Sparkles, href: "/es/optimizador-ats", tier: "PRO" as const },
-      { name: "Crear Curriculum", description: "Construye un curriculum profesional desde cero con IA.", icon: FilePlus, href: "/es/optimizador-ats", tier: "PRO" as const },
+      { name: "Optimizador de Curriculum", description: "La IA analiza tu curriculum y te dice que mejorar.", icon: Target, href: "/es/optimizador-ats", tier: "PRO" as const },
+      { name: "Arreglar Curriculum", description: "Sube tu curriculum y la IA lo reescribe optimizado.", icon: Sparkles, href: "/es/optimizador-ats", tier: "PRO" as const },
+      { name: "Crear Curriculum", description: "Construye un curriculum profesional desde cero. Descarga en Word.", icon: FilePlus, href: "/es/crear-curriculum", tier: "PRO" as const },
     ],
   },
   {
