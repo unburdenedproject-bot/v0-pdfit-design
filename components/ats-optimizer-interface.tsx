@@ -100,6 +100,9 @@ export function AtsOptimizerInterface() {
   const [showBuildForm, setShowBuildForm] = useState(false)
   const [showFixForm, setShowFixForm] = useState(false)
   const [isGenerating, setIsGenerating] = useState(false)
+  const [includeCoverLetter, setIncludeCoverLetter] = useState(false)
+  const [selectedImprovements, setSelectedImprovements] = useState<string[]>([])
+  const [selectedKeywords, setSelectedKeywords] = useState<string[]>([])
   const [fixExtras, setFixExtras] = useState({
     addExperience: "", addEducation: "", addSkills: "",
     addCertifications: "", addLanguages: "", addOther: "",
@@ -187,6 +190,9 @@ export function AtsOptimizerInterface() {
 
       const data = await response.json()
       setAnalysis(data)
+      // Auto-select all improvements and keywords
+      setSelectedImprovements(data.improvements || [])
+      setSelectedKeywords(data.missing_keywords || [])
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : "An unexpected error occurred."
       setHasError(true)
@@ -264,6 +270,9 @@ export function AtsOptimizerInterface() {
           resumeText: extractedText + extraText,
           jobDescription: jobDescription.trim(),
           analysisFeedback: feedbackSummary,
+          selectedImprovements,
+          selectedKeywords,
+          includeCoverLetter,
         }),
       })
 
@@ -276,7 +285,7 @@ export function AtsOptimizerInterface() {
       const url = URL.createObjectURL(blob)
       const link = document.createElement("a")
       link.href = url
-      link.download = "resume-optimized.pdf"
+      link.download = includeCoverLetter ? "resume-and-cover-letter.docx" : "resume-optimized.docx"
       document.body.appendChild(link)
       link.click()
       document.body.removeChild(link)
@@ -301,6 +310,7 @@ export function AtsOptimizerInterface() {
         body: JSON.stringify({
           mode: "build",
           info: buildInfo,
+          includeCoverLetter,
         }),
       })
 
@@ -313,7 +323,7 @@ export function AtsOptimizerInterface() {
       const url = URL.createObjectURL(blob)
       const link = document.createElement("a")
       link.href = url
-      link.download = "resume-new.pdf"
+      link.download = includeCoverLetter ? "resume-and-cover-letter.docx" : "resume-new.docx"
       document.body.appendChild(link)
       link.click()
       document.body.removeChild(link)
@@ -438,36 +448,57 @@ export function AtsOptimizerInterface() {
               <SectionBar name={labels.sections.skills} section={analysis.sections.skills} />
             </div>
 
-            {/* Improvements */}
+            {/* Improvements — selectable */}
             <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 mb-6">
-              <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+              <h3 className="text-lg font-bold text-slate-900 mb-1 flex items-center gap-2">
                 <TrendingUp className="h-5 w-5 text-orange-500" />
                 {labels.improvements}
               </h3>
-              <ul className="space-y-3">
-                {analysis.improvements.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-xs font-bold text-orange-600">{i + 1}</span>
-                    </div>
-                    <span className="text-slate-700 text-sm">{item}</span>
-                  </li>
-                ))}
+              <p className="text-xs text-slate-400 mb-4">Click to select which improvements the AI should apply when fixing your resume.</p>
+              <ul className="space-y-2">
+                {analysis.improvements.map((item, i) => {
+                  const isSelected = selectedImprovements.includes(item)
+                  return (
+                    <li key={i}
+                      onClick={() => setSelectedImprovements(prev => isSelected ? prev.filter(s => s !== item) : [...prev, item])}
+                      className={cn(
+                        "flex items-start gap-3 p-3 rounded-xl cursor-pointer transition-all border",
+                        isSelected ? "bg-orange-50 border-orange-300" : "bg-slate-50 border-slate-200 opacity-60"
+                      )}
+                    >
+                      <div className={cn("w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5", isSelected ? "bg-orange-500" : "bg-slate-300")}>
+                        {isSelected && <CheckCircle className="h-3.5 w-3.5 text-white" />}
+                      </div>
+                      <span className="text-slate-700 text-sm">{item}</span>
+                    </li>
+                  )
+                })}
               </ul>
             </div>
 
-            {/* Missing Keywords */}
+            {/* Missing Keywords — selectable */}
             {analysis.missing_keywords.length > 0 && (
               <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 mb-6">
-                <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <h3 className="text-lg font-bold text-slate-900 mb-1 flex items-center gap-2">
                   <Target className="h-5 w-5 text-blue-500" />
                   {labels.missingKeywords}
                 </h3>
+                <p className="text-xs text-slate-400 mb-4">Click to select which keywords the AI should add to your resume.</p>
                 <div className="flex flex-wrap gap-2">
-                  {analysis.missing_keywords.map((kw, i) => (
-                    <span key={i} className="bg-blue-50 text-blue-700 text-sm font-medium px-3 py-1.5 rounded-full border border-blue-200">
-                      {kw}
-                    </span>
+                  {analysis.missing_keywords.map((kw, i) => {
+                    const isSelected = selectedKeywords.includes(kw)
+                    return (
+                      <button key={i}
+                        onClick={() => setSelectedKeywords(prev => isSelected ? prev.filter(s => s !== kw) : [...prev, kw])}
+                        className={cn(
+                          "text-sm font-medium px-3 py-1.5 rounded-full border transition-all",
+                          isSelected ? "bg-blue-100 text-blue-700 border-blue-300" : "bg-slate-100 text-slate-400 border-slate-200"
+                        )}
+                      >
+                        {kw}
+                      </button>
+                    )
+                  })}
                   ))}
                 </div>
               </div>
@@ -510,6 +541,15 @@ export function AtsOptimizerInterface() {
                     <label className="block text-xs font-bold text-slate-600 mb-1">Anything Else to Add</label>
                     <textarea value={fixExtras.addOther} onChange={(e) => setFixExtras({ ...fixExtras, addOther: e.target.value })} rows={2} className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm resize-vertical" placeholder="Volunteer work, publications, awards..." />
                   </div>
+
+                  {/* Cover letter checkbox */}
+                  <label className="flex items-center gap-3 p-3 bg-emerald-50 border border-emerald-200 rounded-xl cursor-pointer">
+                    <input type="checkbox" checked={includeCoverLetter} onChange={(e) => setIncludeCoverLetter(e.target.checked)} className="w-4 h-4 rounded text-emerald-600" />
+                    <div>
+                      <span className="text-sm font-bold text-emerald-800">Include a cover letter</span>
+                      <p className="text-xs text-emerald-600">AI generates a matching cover letter on the second page</p>
+                    </div>
+                  </label>
 
                   {hasError && (
                     <div className="bg-red-50 border border-red-200 rounded-xl p-4 flex items-start gap-3">
@@ -613,6 +653,15 @@ export function AtsOptimizerInterface() {
                     <label className="block text-xs font-bold text-slate-600 mb-1">Additional Information</label>
                     <textarea value={buildInfo.additional} onChange={(e) => setBuildInfo({ ...buildInfo, additional: e.target.value })} rows={2} className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm resize-vertical" placeholder="Volunteer work, publications, awards..." />
                   </div>
+
+                  {/* Cover letter checkbox */}
+                  <label className="flex items-center gap-3 p-3 bg-emerald-50 border border-emerald-200 rounded-xl cursor-pointer">
+                    <input type="checkbox" checked={includeCoverLetter} onChange={(e) => setIncludeCoverLetter(e.target.checked)} className="w-4 h-4 rounded text-emerald-600" />
+                    <div>
+                      <span className="text-sm font-bold text-emerald-800">Include a cover letter</span>
+                      <p className="text-xs text-emerald-600">AI generates a matching cover letter on the second page</p>
+                    </div>
+                  </label>
 
                   {hasError && (
                     <div className="bg-red-50 border border-red-200 rounded-xl p-4 flex items-start gap-3">
