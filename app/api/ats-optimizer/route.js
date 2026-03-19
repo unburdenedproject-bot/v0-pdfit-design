@@ -143,26 +143,40 @@ ${jobDescription ? `The candidate is applying for this role: "${jobDescription}"
 
 Return ONLY valid JSON. No markdown, no code blocks, no explanation outside the JSON.`
 
-    const openaiRes = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model: "gpt-4o-mini",
-        messages: [
-          { role: "system", content: systemPrompt },
-          { role: "user", content: `Resume text:\n\n${resumeText.substring(0, 8000)}` },
-        ],
-        temperature: 0.3,
-        max_tokens: 2000,
-      }),
-    });
+    // Call OpenAI with retry for rate limits
+    let openaiRes;
+    for (let attempt = 0; attempt < 3; attempt++) {
+      openaiRes = await fetch("https://api.openai.com/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          model: "gpt-4o-mini",
+          messages: [
+            { role: "system", content: systemPrompt },
+            { role: "user", content: `Resume text:\n\n${resumeText.substring(0, 8000)}` },
+          ],
+          temperature: 0.3,
+          max_tokens: 2000,
+        }),
+      });
+
+      if (openaiRes.ok || openaiRes.status !== 429) break;
+
+      // Rate limited — wait and retry
+      const waitMs = (attempt + 1) * 5000;
+      console.log(`OpenAI rate limited, retrying in ${waitMs}ms...`);
+      await new Promise((r) => setTimeout(r, waitMs));
+    }
 
     if (!openaiRes.ok) {
       const errBody = await openaiRes.text();
       console.error("OpenAI API error:", openaiRes.status, errBody);
+      if (openaiRes.status === 429) {
+        throw new Error("AI service is temporarily busy. Please try again in a few seconds.");
+      }
       throw new Error(`AI analysis failed (${openaiRes.status})`);
     }
 

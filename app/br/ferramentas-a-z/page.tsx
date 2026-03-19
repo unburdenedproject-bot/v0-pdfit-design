@@ -28,6 +28,8 @@ import {
   Repeat,
   ArrowRight,
   Search,
+  Globe,
+  Target,
 } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -46,6 +48,7 @@ export const metadata: Metadata = {
 
 const tools = [
   { name: "Achatar PDF", description: "Trava campos de formulario e anotacoes em um PDF plano.", icon: Layers, href: "/br/achatar-pdf", tier: "FREE" },
+  { name: "Analisador ATS de Curriculo", description: "Analise de curriculo com IA e pontuacao de compatibilidade ATS.", icon: Target, href: "/br/otimizador-ats", tier: "PRO" },
   { name: "Assinatura Eletronica", description: "Adicione assinaturas eletronicas legalmente vinculantes a PDFs.", icon: PenTool, href: "/br/assinatura-eletronica", tier: "BUSINESS" },
   { name: "Automacao de Fluxos", description: "Encadeie multiplas ferramentas PDF em um fluxo automatizado.", icon: Repeat, href: "/br/automacao", tier: "BUSINESS" },
   { name: "Codigo QR", description: "Gere codigos QR a partir de qualquer URL ou texto instantaneamente.", icon: QrCode, href: "/br/codigo-qr", tier: "PRO" },
@@ -75,9 +78,13 @@ const tools = [
   { name: "Redacao PDF", description: "Remova permanentemente texto e dados sensiveis de PDFs.", icon: Shield, href: "/br/redacao-pdf", tier: "BUSINESS" },
   { name: "Scanner OCR", description: "Extraia texto pesquisavel de PDFs digitalizados.", icon: Scan, href: "/br/scanner-ocr", tier: "PRO" },
   { name: "Unir PDF", description: "Combine multiplos PDFs em um unico arquivo.", icon: Merge, href: "/br/unir-pdf", tier: "FREE" },
+  { name: "URL para PDF", description: "Converta qualquer pagina web publica em um documento PDF.", icon: Globe, href: "/br/url-para-pdf", tier: "PRO" },
 ]
 
 function TierBadge({ tier }: { tier: string }) {
+  if (tier === "ENTERPRISE") {
+    return <span className="bg-amber-100 text-amber-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Enterprise</span>
+  }
   if (tier === "BUSINESS") {
     return <span className="bg-indigo-100 text-indigo-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Business</span>
   }

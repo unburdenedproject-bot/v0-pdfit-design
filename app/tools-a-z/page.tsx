@@ -28,6 +28,8 @@ import {
   Repeat,
   ArrowRight,
   Search,
+  Globe,
+  Target,
 } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -45,6 +47,7 @@ export const metadata: Metadata = {
 }
 
 const tools = [
+  { name: "ATS Resume Optimizer", description: "AI-powered resume analysis with ATS compatibility score and keyword suggestions.", icon: Target, href: "/ats-optimizer", tier: "PRO" },
   { name: "Compress PDF", description: "Reduce file size with Light, Medium, or Extreme compression.", icon: Compress, href: "/compress-pdf", tier: "FREE" },
   { name: "Compress PDF for Email", description: "Shrink PDFs to fit Gmail, Outlook, and Yahoo attachment limits.", icon: Mail, href: "/compress-pdf-for-email", tier: "FREE" },
   { name: "eSign Documents", description: "Add legally binding electronic signatures to PDFs.", icon: PenTool, href: "/esign", tier: "BUSINESS" },
@@ -72,12 +75,16 @@ const tools = [
   { name: "Table Extraction", description: "Extract tables from PDFs directly into Excel spreadsheets.", icon: FileSpreadsheet, href: "/table-extraction", tier: "BUSINESS" },
   { name: "Unlock PDF", description: "Remove password restrictions from a PDF.", icon: Unlock, href: "/unlock-pdf", tier: "FREE" },
   { name: "Upload-Ready PDF", description: "Fix and optimize PDFs for any upload portal in one click.", icon: Upload, href: "/upload-ready-pdf", tier: "FREE" },
+  { name: "URL to PDF", description: "Convert any public webpage to a high-quality PDF document.", icon: Globe, href: "/url-to-pdf", tier: "PRO" },
   { name: "Watermark PDF", description: "Add text or image watermarks to PDFs.", icon: Droplets, href: "/watermark-pdf", tier: "PRO" },
   { name: "Word to PDF", description: "Convert Word documents to PDF instantly.", icon: FileText, href: "/word-to-pdf", tier: "PRO" },
   { name: "Workflow Automation", description: "Chain multiple PDF tools into one automated workflow.", icon: Repeat, href: "/workflow-automation", tier: "BUSINESS" },
 ]
 
 function TierBadge({ tier }: { tier: string }) {
+  if (tier === "ENTERPRISE") {
+    return <span className="bg-amber-100 text-amber-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Enterprise</span>
+  }
   if (tier === "BUSINESS") {
     return <span className="bg-indigo-100 text-indigo-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Business</span>
   }
@@ -92,6 +99,7 @@ export default function ToolsAZPage() {
   const totalFree = tools.filter((t) => t.tier === "FREE").length
   const totalPro = tools.filter((t) => t.tier === "PRO").length
   const totalBusiness = tools.filter((t) => t.tier === "BUSINESS").length
+  const totalEnterprise = tools.filter((t) => t.tier === "ENTERPRISE").length
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -117,6 +125,9 @@ export default function ToolsAZPage() {
               </div>
               <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-4 py-2">
                 <span className="bg-indigo-100 text-indigo-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">{totalBusiness} Business</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-4 py-2">
+                <span className="bg-amber-100 text-amber-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">{totalEnterprise} Enterprise</span>
               </div>
             </div>
           </div>

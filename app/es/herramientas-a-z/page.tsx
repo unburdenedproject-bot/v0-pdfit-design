@@ -28,6 +28,8 @@ import {
   Repeat,
   ArrowRight,
   Search,
+  Globe,
+  Target,
 } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -45,6 +47,7 @@ export const metadata: Metadata = {
 }
 
 const tools = [
+  { name: "Analizador ATS de Curriculum", description: "Analisis de curriculum con IA y puntuacion de compatibilidad ATS.", icon: Target, href: "/es/optimizador-ats", tier: "PRO" },
   { name: "Automatizacion de Flujos", description: "Encadena multiples herramientas PDF en un flujo automatizado.", icon: Repeat, href: "/es/automatizacion", tier: "BUSINESS" },
   { name: "Codigo QR", description: "Genera codigos QR desde cualquier URL o texto al instante.", icon: QrCode, href: "/es/codigo-qr", tier: "PRO" },
   { name: "Comparar PDF", description: "Compara dos PDFs lado a lado y resalta las diferencias.", icon: ArrowLeftRight, href: "/es/comparar-pdf", tier: "BUSINESS" },
@@ -75,9 +78,13 @@ const tools = [
   { name: "Redaccion PDF", description: "Elimina permanentemente texto y datos sensibles de PDFs.", icon: Shield, href: "/es/redaccion-pdf", tier: "BUSINESS" },
   { name: "Rotar PDF", description: "Corrige la orientacion de las paginas al instante.", icon: RotateCw, href: "/es/rotar-pdf", tier: "FREE" },
   { name: "Unir PDF", description: "Combina multiples PDFs en un solo archivo.", icon: Merge, href: "/es/unir-pdf", tier: "FREE" },
+  { name: "URL a PDF", description: "Convierte cualquier pagina web publica en un documento PDF.", icon: Globe, href: "/es/url-a-pdf", tier: "PRO" },
 ]
 
 function TierBadge({ tier }: { tier: string }) {
+  if (tier === "ENTERPRISE") {
+    return <span className="bg-amber-100 text-amber-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Enterprise</span>
+  }
   if (tier === "BUSINESS") {
     return <span className="bg-indigo-100 text-indigo-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Business</span>
   }
