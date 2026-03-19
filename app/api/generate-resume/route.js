@@ -168,105 +168,155 @@ Return the complete resume as plain text with clear section headings. Do not inc
       throw new Error("AI returned no content.");
     }
 
-    // Generate PDF from the resume text
+    // Generate professional PDF from the resume text
     const { PDFDocument, StandardFonts, rgb } = await import("pdf-lib");
     const pdfDoc = await PDFDocument.create();
-    const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+    const fontRegular = await pdfDoc.embedFont(StandardFonts.Helvetica);
     const fontBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
 
-    const fontSize = 10;
-    const headingSize = 13;
-    const lineHeight = fontSize * 1.5;
-    const headingHeight = headingSize * 1.8;
-    const margin = 50;
-    const pageWidth = 612; // Letter
+    const margin = 55;
+    const pageWidth = 612;
     const pageHeight = 792;
     const contentWidth = pageWidth - margin * 2;
 
-    const lines = resumeContent.split("\n");
+    const nameSize = 20;
+    const headingSize = 11;
+    const bodySize = 9.5;
+    const contactSize = 9;
+    const bodyLineHeight = bodySize * 1.6;
+    const headingLineHeight = headingSize * 2.2;
+
+    const accentColor = rgb(0.16, 0.24, 0.42); // dark navy
+    const textColor = rgb(0.12, 0.12, 0.12);
+    const lightColor = rgb(0.45, 0.45, 0.45);
+
+    const rawLines = resumeContent.split("\n");
     let page = pdfDoc.addPage([pageWidth, pageHeight]);
     let y = pageHeight - margin;
+    let isFirstLine = true;
+    let isContactBlock = true;
 
-    for (const rawLine of lines) {
-      const line = rawLine.trim();
-
-      // Check if we need a new page
-      if (y < margin + 30) {
+    function ensureSpace(needed) {
+      if (y < margin + needed) {
         page = pdfDoc.addPage([pageWidth, pageHeight]);
         y = pageHeight - margin;
       }
+    }
 
-      // Detect section headings (ALL CAPS or lines ending with :)
-      const isHeading =
-        (line === line.toUpperCase() && line.length > 3 && /[A-Z]/.test(line)) ||
-        (line.endsWith(":") && line.length < 40);
+    function drawWrappedText(text, x, font, size, color, maxWidth, leading) {
+      const words = text.split(" ");
+      let currentLine = "";
+      for (const word of words) {
+        const testLine = currentLine ? `${currentLine} ${word}` : word;
+        const testWidth = font.widthOfTextAtSize(testLine, size);
+        if (testWidth > maxWidth && currentLine) {
+          ensureSpace(leading);
+          page.drawText(currentLine, { x, y, size, font, color });
+          y -= leading;
+          currentLine = word;
+        } else {
+          currentLine = testLine;
+        }
+      }
+      if (currentLine) {
+        ensureSpace(leading);
+        page.drawText(currentLine, { x, y, size, font, color });
+        y -= leading;
+      }
+    }
+
+    for (const rawLine of rawLines) {
+      const line = rawLine.trim();
 
       if (line === "") {
-        y -= lineHeight * 0.5;
+        y -= bodyLineHeight * 0.4;
+        continue;
+      }
+
+      // First non-empty line = name
+      if (isFirstLine) {
+        ensureSpace(nameSize + 10);
+        // Center the name
+        const nameWidth = fontBold.widthOfTextAtSize(line, nameSize);
+        const nameX = (pageWidth - nameWidth) / 2;
+        page.drawText(line, { x: nameX, y, size: nameSize, font: fontBold, color: accentColor });
+        y -= nameSize + 8;
+
+        // Draw a thin accent line under name
+        page.drawLine({
+          start: { x: margin + 60, y },
+          end: { x: pageWidth - margin - 60, y },
+          thickness: 1.2,
+          color: accentColor,
+        });
+        y -= 10;
+
+        isFirstLine = false;
+        continue;
+      }
+
+      // Contact info lines (right after name, before first heading)
+      const isHeading =
+        line === line.toUpperCase() && line.length > 3 && /[A-Z]{3,}/.test(line) && !line.includes("@") && !line.includes("(");
+
+      if (isContactBlock && !isHeading) {
+        // Center contact info
+        const contactWidth = fontRegular.widthOfTextAtSize(line, contactSize);
+        const contactX = (pageWidth - contactWidth) / 2;
+        ensureSpace(contactSize + 4);
+        page.drawText(line, { x: contactX, y, size: contactSize, font: fontRegular, color: lightColor });
+        y -= contactSize + 4;
         continue;
       }
 
       if (isHeading) {
-        y -= 5;
-        // Draw a thin line under heading
+        isContactBlock = false;
+        y -= 8; // Space before heading
+
+        ensureSpace(headingLineHeight + 6);
+
+        // Draw heading text
+        page.drawText(line, { x: margin, y, size: headingSize, font: fontBold, color: accentColor });
+        y -= headingSize + 3;
+
+        // Draw accent line under heading
         page.drawLine({
-          start: { x: margin, y: y - 2 },
-          end: { x: pageWidth - margin, y: y - 2 },
-          thickness: 0.5,
-          color: rgb(0.7, 0.7, 0.7),
+          start: { x: margin, y },
+          end: { x: pageWidth - margin, y },
+          thickness: 0.8,
+          color: accentColor,
         });
-        y -= 4;
-
-        // Word wrap heading
-        const words = line.split(" ");
-        let currentLine = "";
-        for (const word of words) {
-          const testLine = currentLine ? `${currentLine} ${word}` : word;
-          const testWidth = fontBold.widthOfTextAtSize(testLine, headingSize);
-          if (testWidth > contentWidth && currentLine) {
-            page.drawText(currentLine, { x: margin, y, size: headingSize, font: fontBold, color: rgb(0.1, 0.1, 0.1) });
-            y -= headingHeight;
-            currentLine = word;
-          } else {
-            currentLine = testLine;
-          }
-        }
-        if (currentLine) {
-          page.drawText(currentLine, { x: margin, y, size: headingSize, font: fontBold, color: rgb(0.1, 0.1, 0.1) });
-          y -= headingHeight;
-        }
-      } else {
-        // Word wrap body text
-        const isBullet = line.startsWith("•") || line.startsWith("-") || line.startsWith("*");
-        const indent = isBullet ? 15 : 0;
-        const textToRender = isBullet ? "• " + line.substring(1).trim() : line;
-        const words = textToRender.split(" ");
-        let currentLine = "";
-
-        for (const word of words) {
-          const testLine = currentLine ? `${currentLine} ${word}` : word;
-          const testWidth = font.widthOfTextAtSize(testLine, fontSize);
-          if (testWidth > contentWidth - indent && currentLine) {
-            if (y < margin + 20) {
-              page = pdfDoc.addPage([pageWidth, pageHeight]);
-              y = pageHeight - margin;
-            }
-            page.drawText(currentLine, { x: margin + indent, y, size: fontSize, font, color: rgb(0.15, 0.15, 0.15) });
-            y -= lineHeight;
-            currentLine = word;
-          } else {
-            currentLine = testLine;
-          }
-        }
-        if (currentLine) {
-          if (y < margin + 20) {
-            page = pdfDoc.addPage([pageWidth, pageHeight]);
-            y = pageHeight - margin;
-          }
-          page.drawText(currentLine, { x: margin + indent, y, size: fontSize, font, color: rgb(0.15, 0.15, 0.15) });
-          y -= lineHeight;
-        }
+        y -= 8;
+        continue;
       }
+
+      isContactBlock = false;
+
+      // Detect sub-headings (job title lines — typically contain dates or dashes)
+      const isSubHeading = (
+        (line.includes("–") || line.includes("—") || line.includes(" - ")) &&
+        !line.startsWith("•") && !line.startsWith("-") && line.length < 120
+      );
+
+      if (isSubHeading) {
+        y -= 3;
+        ensureSpace(bodySize + 6);
+        drawWrappedText(line, margin, fontBold, bodySize + 0.5, textColor, contentWidth, bodyLineHeight);
+        continue;
+      }
+
+      // Bullet points
+      const isBullet = line.startsWith("•") || (line.startsWith("-") && line.length > 2 && line[1] === " ");
+      if (isBullet) {
+        const bulletText = line.substring(1).trim();
+        ensureSpace(bodyLineHeight);
+        page.drawText("•", { x: margin + 8, y, size: bodySize, font: fontRegular, color: textColor });
+        drawWrappedText(bulletText, margin + 20, fontRegular, bodySize, textColor, contentWidth - 20, bodyLineHeight);
+        continue;
+      }
+
+      // Regular text
+      drawWrappedText(line, margin, fontRegular, bodySize, textColor, contentWidth, bodyLineHeight);
     }
 
     const pdfBytes = await pdfDoc.save();
