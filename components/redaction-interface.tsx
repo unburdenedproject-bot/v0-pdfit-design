@@ -11,6 +11,153 @@ import { cn } from "@/lib/utils"
 import { uploadBlobToBlob, uploadFileToBlob } from "@/lib/upload-to-blob"
 import { TrustBadges } from "@/components/trust-badges"
 
+type ToolLocale = "en" | "es" | "br"
+
+const REDACTION_COPY = {
+  en: {
+    pricingPath: "/pricing",
+    pricingSourcePath: "/pricing?source=redaction",
+    signupPath: "/signup-required",
+    homePath: "/",
+    businessFeature: "Business Feature",
+    businessDescription: "PDF Redaction is available on the Business plan. Permanently remove sensitive information from your documents.",
+    upgradeButton: "Upgrade to Business — $13.99/mo",
+    upgradeTitle: "This Feature Requires an Upgrade",
+    limitTitle: "You're out of free conversions",
+    upgradeLabel: "Upgrade to Business",
+    upgradeDescription: "This tool is available on the Business plan. Upgrade to unlock unlimited access to all PDF tools.",
+    limitDescription: "Free includes 10 conversions per day. Upgrade for unlimited conversions.",
+    goBack: "Go Back",
+    failedTitle: "Redaction Failed",
+    tryAgain: "Try Again",
+    completeTitle: "Redaction Complete!",
+    permanentWarning: "The underlying text has been permanently removed and cannot be recovered.",
+    readyForDownload: "Ready for download",
+    download: "Download",
+    redactAnother: "Redact Another PDF",
+    backToTools: "Back to Tools",
+    filesDeleted: "Files are automatically deleted after 1 hour.",
+    applyingTitle: "Applying Redactions...",
+    applyingDescription: "Permanently removing {count} selected {areaLabel}...",
+    loadingPdf: "Loading PDF pages...",
+    uploadTitle: "Upload your PDF to redact",
+    uploadHelp: "or click to browse files",
+    choosePdf: "Choose PDF",
+    supportedFormat: "Supported format: .pdf",
+    toolbarNewFile: "New File",
+    toolbarClearPage: "Clear Page",
+    pageOf: "Page {current} of {total}",
+    instruction: "Click and drag on the PDF to draw black redaction boxes. Navigate pages to redact across the entire document.",
+    totalRedactions: "{count} {redactionLabel} total",
+    onThisPage: "({count} on this page)",
+    area: "Area",
+    applyButton: "Apply Redaction ({count} {areaLabel})",
+    actionPermanent: "This action is permanent. Redacted content cannot be recovered.",
+    loadFailed: "Failed to load PDF. The file may be corrupted or password-protected.",
+    unknownError: "An unknown error occurred",
+    areaSingular: "area",
+    areaPlural: "areas",
+    redactionSingular: "redaction",
+    redactionPlural: "redactions",
+  },
+  es: {
+    pricingPath: "/es/precios",
+    pricingSourcePath: "/es/precios?source=redaction",
+    signupPath: "/es/registro-requerido",
+    homePath: "/es",
+    businessFeature: "Función Business",
+    businessDescription: "Redacción PDF está disponible en el plan Business. Elimina de forma permanente información sensible de tus documentos.",
+    upgradeButton: "Mejorar a Business — $13.99/mes",
+    upgradeTitle: "Esta función requiere una mejora",
+    limitTitle: "Ya no tienes conversiones gratis",
+    upgradeLabel: "Mejorar a Business",
+    upgradeDescription: "Esta herramienta está disponible en el plan Business. Mejora para desbloquear acceso ilimitado a todas las herramientas PDF.",
+    limitDescription: "Free incluye 10 conversiones por día. Mejora para conversiones ilimitadas.",
+    goBack: "Volver",
+    failedTitle: "La redacción falló",
+    tryAgain: "Intentar de nuevo",
+    completeTitle: "¡Redacción completada!",
+    permanentWarning: "El texto subyacente fue eliminado permanentemente y no se puede recuperar.",
+    readyForDownload: "Listo para descargar",
+    download: "Descargar",
+    redactAnother: "Redactar otro PDF",
+    backToTools: "Volver a herramientas",
+    filesDeleted: "Los archivos se eliminan automáticamente después de 1 hora.",
+    applyingTitle: "Aplicando redacciones...",
+    applyingDescription: "Eliminando permanentemente {count} {areaLabel} seleccionada{suffix}...",
+    loadingPdf: "Cargando páginas del PDF...",
+    uploadTitle: "Sube tu PDF para redactar",
+    uploadHelp: "o haz clic para explorar archivos",
+    choosePdf: "Elegir PDF",
+    supportedFormat: "Formato compatible: .pdf",
+    toolbarNewFile: "Nuevo archivo",
+    toolbarClearPage: "Limpiar página",
+    pageOf: "Página {current} de {total}",
+    instruction: "Haz clic y arrastra sobre el PDF para dibujar cajas negras de redacción. Navega por las páginas para redactar todo el documento.",
+    totalRedactions: "{count} {redactionLabel} en total",
+    onThisPage: "({count} en esta página)",
+    area: "Área",
+    applyButton: "Aplicar redacción ({count} {areaLabel})",
+    actionPermanent: "Esta acción es permanente. El contenido redactado no se puede recuperar.",
+    loadFailed: "No se pudo cargar el PDF. El archivo puede estar dañado o protegido con contraseña.",
+    unknownError: "Ocurrió un error desconocido",
+    areaSingular: "área",
+    areaPlural: "áreas",
+    redactionSingular: "redacción",
+    redactionPlural: "redacciones",
+  },
+  br: {
+    pricingPath: "/br/precos",
+    pricingSourcePath: "/br/precos?source=redaction",
+    signupPath: "/br/cadastro-obrigatorio",
+    homePath: "/br",
+    businessFeature: "Recurso Business",
+    businessDescription: "Redação PDF está disponível no plano Business. Remova permanentemente informações sensíveis dos seus documentos.",
+    upgradeButton: "Fazer upgrade para Business — $13.99/mês",
+    upgradeTitle: "Este recurso exige upgrade",
+    limitTitle: "Você ficou sem conversões gratuitas",
+    upgradeLabel: "Fazer upgrade para Business",
+    upgradeDescription: "Esta ferramenta está disponível no plano Business. Faça upgrade para desbloquear acesso ilimitado a todas as ferramentas PDF.",
+    limitDescription: "Free inclui 10 conversões por dia. Faça upgrade para conversões ilimitadas.",
+    goBack: "Voltar",
+    failedTitle: "A redação falhou",
+    tryAgain: "Tentar novamente",
+    completeTitle: "Redação concluída!",
+    permanentWarning: "O texto subjacente foi removido permanentemente e não pode ser recuperado.",
+    readyForDownload: "Pronto para download",
+    download: "Baixar",
+    redactAnother: "Redigir outro PDF",
+    backToTools: "Voltar para ferramentas",
+    filesDeleted: "Os arquivos são excluídos automaticamente após 1 hora.",
+    applyingTitle: "Aplicando redações...",
+    applyingDescription: "Removendo permanentemente {count} {areaLabel} selecionada{suffix}...",
+    loadingPdf: "Carregando páginas do PDF...",
+    uploadTitle: "Envie seu PDF para redigir",
+    uploadHelp: "ou clique para procurar arquivos",
+    choosePdf: "Escolher PDF",
+    supportedFormat: "Formato compatível: .pdf",
+    toolbarNewFile: "Novo arquivo",
+    toolbarClearPage: "Limpar página",
+    pageOf: "Página {current} de {total}",
+    instruction: "Clique e arraste no PDF para desenhar caixas pretas de redação. Navegue pelas páginas para redigir todo o documento.",
+    totalRedactions: "{count} {redactionLabel} no total",
+    onThisPage: "({count} nesta página)",
+    area: "Área",
+    applyButton: "Aplicar redação ({count} {areaLabel})",
+    actionPermanent: "Esta ação é permanente. O conteúdo redigido não pode ser recuperado.",
+    loadFailed: "Falha ao carregar o PDF. O arquivo pode estar corrompido ou protegido por senha.",
+    unknownError: "Ocorreu um erro desconhecido",
+    areaSingular: "área",
+    areaPlural: "áreas",
+    redactionSingular: "redação",
+    redactionPlural: "redações",
+  },
+} as const
+
+function formatCopy(template: string, values: Record<string, string | number>) {
+  return template.replace(/\{(\w+)\}/g, (_, key) => String(values[key] ?? ""))
+}
+
 interface RedactionRect {
   page: number
   x: number
@@ -20,8 +167,9 @@ interface RedactionRect {
   id: string
 }
 
-export function RedactionInterface() {
+export function RedactionInterface({ locale = "en" }: { locale?: ToolLocale }) {
   const router = useRouter()
+  const copy = REDACTION_COPY[locale]
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -149,10 +297,10 @@ export function RedactionInterface() {
     } catch (err) {
       console.error("Failed to load PDF:", err)
       setHasError(true)
-      setErrorMessage("Failed to load PDF. The file may be corrupted or password-protected.")
+      setErrorMessage(copy.loadFailed)
       setIsLoadingPdf(false)
     }
-  }, [])
+  }, [copy.loadFailed])
 
   const handleDrop = useCallback((e: React.DragEvent) => {
     e.preventDefault()
@@ -330,7 +478,7 @@ export function RedactionInterface() {
           const errorData = await response.json()
           if (errorData.error) message = errorData.error
           if (message.includes("upgrade_required")) {
-            router.push("/pricing?source=redaction")
+            router.push(copy.pricingSourcePath)
             return
           }
         } catch { }
@@ -346,10 +494,10 @@ export function RedactionInterface() {
       setIsProcessing(false)
     } catch (error) {
       setHasError(true)
-      setErrorMessage(error instanceof Error ? error.message : "An unknown error occurred")
+      setErrorMessage(error instanceof Error ? error.message : copy.unknownError)
       setIsProcessing(false)
     }
-  }, [createRedactedPageBlob, file, redactions, router])
+  }, [copy.pricingSourcePath, copy.unknownError, createRedactedPageBlob, file, redactions, router])
 
   const downloadResult = useCallback(() => {
     const link = document.createElement("a")
@@ -386,15 +534,15 @@ export function RedactionInterface() {
             <div className="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <Crown className="h-10 w-10 text-indigo-600" />
             </div>
-            <h2 className="text-3xl font-black text-slate-900 mb-4">Business Feature</h2>
+            <h2 className="text-3xl font-black text-slate-900 mb-4">{copy.businessFeature}</h2>
             <p className="text-lg text-slate-600 mb-8">
-              PDF Redaction is available on the Business plan. Permanently remove sensitive information from your documents.
+              {copy.businessDescription}
             </p>
             <Button
               className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl px-8 py-3 text-lg"
-              onClick={() => router.push("/pricing?source=redaction")}
+              onClick={() => router.push(copy.pricingSourcePath)}
             >
-              Upgrade to Business — $13.99/mo
+              {copy.upgradeButton}
             </Button>
           </div>
         </div>
@@ -409,7 +557,7 @@ export function RedactionInterface() {
     const isSignupError = (errorMessage || "").includes("signup_required")
 
     if (isSignupError) {
-      router.push("/signup-required")
+      router.push(copy.signupPath)
       return null
     }
 
@@ -422,27 +570,27 @@ export function RedactionInterface() {
                 <Crown className="h-10 w-10 text-orange-500" />
               </div>
               <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-2">
-                {isUpgradeError ? "This Feature Requires an Upgrade" : "You're out of free conversions"}
+                {isUpgradeError ? copy.upgradeTitle : copy.limitTitle}
               </h2>
-              <p className="text-xl sm:text-2xl font-bold text-orange-600 mb-4">Upgrade to Business</p>
+              <p className="text-xl sm:text-2xl font-bold text-orange-600 mb-4">{copy.upgradeLabel}</p>
               <p className="text-base sm:text-lg text-slate-600 mb-8">
                 {isUpgradeError
-                  ? "This tool is available on the Business plan. Upgrade to unlock unlimited access to all PDF tools."
-                  : "Free includes 10 conversions per day. Upgrade for unlimited conversions."}
+                  ? copy.upgradeDescription
+                  : copy.limitDescription}
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <Button
-                  onClick={() => router.push("/pricing")}
+                  onClick={() => router.push(copy.pricingPath)}
                   className="bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl px-6 py-3"
                 >
-                  Upgrade to Business
+                  {copy.upgradeLabel}
                 </Button>
                 <Button
                   onClick={resetInterface}
                   variant="outline"
                   className="border border-slate-200 text-slate-700 rounded-xl px-6 py-3"
                 >
-                  Go Back
+                  {copy.goBack}
                 </Button>
               </div>
             </div>
@@ -458,10 +606,10 @@ export function RedactionInterface() {
             <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <AlertCircle className="h-10 w-10 text-red-600" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Redaction Failed</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">{copy.failedTitle}</h2>
             <p className="text-slate-600 mb-8">{errorMessage}</p>
             <Button onClick={resetInterface} className="bg-orange-500 hover:bg-orange-600 text-white">
-              Try Again
+              {copy.tryAgain}
             </Button>
           </div>
         </div>
@@ -478,12 +626,12 @@ export function RedactionInterface() {
             <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <CheckCircle className="h-10 w-10 text-green-600" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Redaction Complete!</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">{copy.completeTitle}</h2>
             <p className="text-slate-600 mb-2">
-              {redactions.length} area{redactions.length > 1 ? "s" : ""} permanently redacted across {new Set(redactions.map((r) => r.page)).size} page{new Set(redactions.map((r) => r.page)).size > 1 ? "s" : ""}.
+              {redactions.length} {redactions.length === 1 ? copy.areaSingular : copy.areaPlural} permanently redacted across {new Set(redactions.map((r) => r.page)).size} {new Set(redactions.map((r) => r.page)).size === 1 ? (locale === "en" ? "page" : "página") : (locale === "en" ? "pages" : "páginas")}.
             </p>
             <p className="text-sm text-red-600 font-medium mb-8">
-              The underlying text has been permanently removed and cannot be recovered.
+              {copy.permanentWarning}
             </p>
 
             <div className="bg-white border border-gray-200 rounded-xl p-6 mb-8">
@@ -492,22 +640,22 @@ export function RedactionInterface() {
                   <FileText className="h-6 w-6 text-green-600" />
                   <div className="text-left">
                     <div className="font-bold text-slate-900">{resultName}</div>
-                    <div className="text-sm text-green-600">Ready for download</div>
+                    <div className="text-sm text-green-600">{copy.readyForDownload}</div>
                   </div>
                 </div>
                 <Button onClick={downloadResult} className="bg-green-600 hover:bg-green-700 text-white font-bold">
                   <Download className="h-4 w-4 mr-2" />
-                  Download
+                  {copy.download}
                 </Button>
               </div>
             </div>
 
             <div className="flex gap-4 justify-center">
               <Button onClick={resetInterface} variant="outline" className="border-slate-300">
-                Redact Another PDF
+                {copy.redactAnother}
               </Button>
-              <Button onClick={() => (window.location.href = "/")} className="bg-orange-500 hover:bg-orange-600 text-white">
-                Back to Tools
+              <Button onClick={() => (window.location.href = copy.homePath)} className="bg-orange-500 hover:bg-orange-600 text-white">
+                {copy.backToTools}
               </Button>
             </div>
 
@@ -515,7 +663,7 @@ export function RedactionInterface() {
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-md mx-auto">
                 <div className="flex items-center justify-center gap-2 text-blue-800 text-sm">
                   <Shield className="h-4 w-4" />
-                  <span className="font-medium">Files are automatically deleted after 1 hour.</span>
+                  <span className="font-medium">{copy.filesDeleted}</span>
                 </div>
               </div>
             </div>
@@ -534,8 +682,8 @@ export function RedactionInterface() {
             <div className="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <Loader2 className="h-10 w-10 text-indigo-600 animate-spin" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Applying Redactions...</h2>
-            <p className="text-slate-600">Permanently removing {redactions.length} selected area{redactions.length > 1 ? "s" : ""}...</p>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">{copy.applyingTitle}</h2>
+            <p className="text-slate-600">{formatCopy(copy.applyingDescription, { count: redactions.length, areaLabel: redactions.length === 1 ? copy.areaSingular : copy.areaPlural, suffix: redactions.length === 1 ? "" : locale === "en" ? "" : "s" })}</p>
           </div>
         </div>
       </section>
@@ -551,7 +699,7 @@ export function RedactionInterface() {
             {isLoadingPdf ? (
               <div className="text-center py-16">
                 <Loader2 className="h-10 w-10 text-indigo-600 animate-spin mx-auto mb-4" />
-                <p className="text-slate-600 font-medium">Loading PDF pages...</p>
+                <p className="text-slate-600 font-medium">{copy.loadingPdf}</p>
               </div>
             ) : (
               <>
@@ -566,12 +714,12 @@ export function RedactionInterface() {
                   onClick={() => document.getElementById("redaction-file-upload")?.click()}
                 >
                   <Upload className="h-12 w-12 text-indigo-500 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">Upload your PDF to redact</h3>
-                  <p className="text-slate-600 mb-6">or click to browse files</p>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">{copy.uploadTitle}</h3>
+                  <p className="text-slate-600 mb-6">{copy.uploadHelp}</p>
                   <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8">
-                    Choose PDF
+                    {copy.choosePdf}
                   </Button>
-                  <p className="text-sm text-slate-500 mt-4">Supported format: .pdf</p>
+                  <p className="text-sm text-slate-500 mt-4">{copy.supportedFormat}</p>
                 </div>
                 <input
                   id="redaction-file-upload"
@@ -615,7 +763,7 @@ export function RedactionInterface() {
                 <ChevronLeft className="h-4 w-4" />
               </Button>
               <span className="text-sm font-medium text-slate-700 min-w-[80px] text-center">
-                Page {currentPage + 1} of {totalPages}
+                {formatCopy(copy.pageOf, { current: currentPage + 1, total: totalPages })}
               </span>
               <Button
                 variant="outline"
@@ -636,7 +784,7 @@ export function RedactionInterface() {
                   className="text-red-600 border-red-200 hover:bg-red-50 text-xs"
                 >
                   <Trash2 className="h-3 w-3 mr-1" />
-                  Clear Page
+                  {copy.toolbarClearPage}
                 </Button>
               )}
               <Button
@@ -646,7 +794,7 @@ export function RedactionInterface() {
                 className="text-xs"
               >
                 <X className="h-3 w-3 mr-1" />
-                New File
+                {copy.toolbarNewFile}
               </Button>
             </div>
           </div>
@@ -654,7 +802,7 @@ export function RedactionInterface() {
           {/* Instructions */}
           <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-3 mb-4 text-center">
             <p className="text-sm text-indigo-800 font-medium">
-              Click and drag on the PDF to draw black redaction boxes. Navigate pages to redact across the entire document.
+              {copy.instruction}
             </p>
           </div>
 
@@ -676,9 +824,9 @@ export function RedactionInterface() {
               <div className="flex items-center gap-3">
                 <Eye className="h-5 w-5 text-slate-500" />
                 <span className="text-sm text-slate-700">
-                  <strong>{totalRedactions}</strong> redaction{totalRedactions !== 1 ? "s" : ""} total
+                  <strong>{totalRedactions}</strong> {totalRedactions === 1 ? copy.redactionSingular : copy.redactionPlural} {locale === "en" ? "total" : locale === "es" ? "en total" : "no total"}
                   {pageRedactions.length > 0 && (
-                    <span className="text-slate-400"> ({pageRedactions.length} on this page)</span>
+                    <span className="text-slate-400"> {formatCopy(copy.onThisPage, { count: pageRedactions.length })}</span>
                   )}
                 </span>
               </div>
@@ -691,7 +839,7 @@ export function RedactionInterface() {
                     key={r.id}
                     className="inline-flex items-center gap-1 bg-slate-100 text-slate-700 text-xs font-medium px-2 py-1 rounded-full"
                   >
-                    Area {i + 1}
+                    {copy.area} {i + 1}
                     <button onClick={() => removeRedaction(r.id)} className="text-red-400 hover:text-red-600">
                       <X className="h-3 w-3" />
                     </button>
@@ -709,11 +857,11 @@ export function RedactionInterface() {
             size="lg"
           >
             <Shield className="h-5 w-5 mr-2" />
-            Apply Redaction ({totalRedactions} area{totalRedactions !== 1 ? "s" : ""})
+            {formatCopy(copy.applyButton, { count: totalRedactions, areaLabel: totalRedactions === 1 ? copy.areaSingular : copy.areaPlural })}
           </Button>
 
           <p className="text-center text-xs text-red-500 mt-2 font-medium">
-            This action is permanent. Redacted content cannot be recovered.
+            {copy.actionPermanent}
           </p>
         </div>
       </div>

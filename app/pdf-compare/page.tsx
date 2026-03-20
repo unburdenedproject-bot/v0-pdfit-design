@@ -85,7 +85,7 @@ export default function PdfComparePage() {
         </section>
 
         {/* Compare Interface */}
-        <PdfCompareInterface />
+        <PdfCompareInterface locale="en" />
 
         {/* How It Works */}
         <section className="py-16 bg-gray-50">

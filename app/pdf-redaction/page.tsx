@@ -90,7 +90,7 @@ export default function PdfRedactionPage() {
         </section>
 
         {/* Redaction Interface */}
-        <RedactionInterface />
+        <RedactionInterface locale="en" />
 
         {/* How It Works */}
         <section className="py-16 bg-gray-50">

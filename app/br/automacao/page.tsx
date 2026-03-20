@@ -71,7 +71,7 @@ export default function AutomacaoFluxosPagePt() {
         </section>
 
         {/* Workflow Interface */}
-        <WorkflowInterface />
+        <WorkflowInterface locale="br" />
 
         {/* How It Works */}
         <section className="py-16 bg-gray-50">

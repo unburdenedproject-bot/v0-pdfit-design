@@ -12,6 +12,138 @@ import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
 import { TrustBadges } from "@/components/trust-badges"
 
+type ToolLocale = "en" | "es" | "br"
+
+const WORKFLOW_COPY = {
+  en: {
+    pricingPath: "/pricing",
+    pricingSourcePath: "/pricing?source=workflow",
+    signupPath: "/signup-required",
+    homePath: "/",
+    businessFeature: "Business Feature",
+    businessDescription: "Workflow Automation is available on the Business plan. Chain multiple PDF tools into one automated workflow.",
+    upgradeButton: "Upgrade to Business — $13.99/mo",
+    upgradeTitle: "This Feature Requires an Upgrade",
+    limitTitle: "You're out of free conversions",
+    upgradeLabel: "Upgrade to Business",
+    upgradeDescription: "This tool is available on the Business plan. Upgrade to unlock unlimited access to all PDF tools.",
+    limitDescription: "Free includes 10 conversions per day. Upgrade for unlimited conversions.",
+    goBack: "Go Back",
+    failedTitle: "Workflow Failed",
+    tryAgain: "Try Again",
+    completeTitle: "Workflow Complete!",
+    readyForDownload: "Ready for download",
+    download: "Download",
+    runAnother: "Run Another Workflow",
+    backToTools: "Back to Tools",
+    filesDeleted: "Files are automatically deleted after 1 hour.",
+    runningTitle: "Running Workflow...",
+    processingStep: "Processing step {current} of {total}",
+    choosePreset: "Choose a Preset Workflow",
+    enterprise: "Enterprise",
+    buildCustom: "Build Custom Workflow",
+    workflowSteps: "Workflow Steps",
+    backToPresets: "Back to Presets",
+    noSteps: "No steps yet. Add at least 2 steps to create a workflow.",
+    uploadPdf: "Upload Your PDF",
+    dropPdf: "Drop your PDF here",
+    browse: "or click to browse",
+    addTwoSteps: "Add at least 2 steps to create a workflow.",
+    runWorkflow: "Run Workflow ({count} steps)",
+    workflowSuccess: "{count} steps processed successfully.",
+    unknownError: "An unknown error occurred",
+    protectLast: "Password protection must be the last step. Please reorder your steps.",
+    watermarkRequired: "Please enter your watermark text before running the workflow.",
+    passwordRequired: "Please enter a password for the protection step before running the workflow.",
+  },
+  es: {
+    pricingPath: "/es/precios",
+    pricingSourcePath: "/es/precios?source=workflow",
+    signupPath: "/es/registro-requerido",
+    homePath: "/es",
+    businessFeature: "Función Business",
+    businessDescription: "Automatización de Flujos está disponible en el plan Business. Encadena varias herramientas PDF en un flujo automatizado.",
+    upgradeButton: "Mejorar a Business — $13.99/mes",
+    upgradeTitle: "Esta función requiere una mejora",
+    limitTitle: "Ya no tienes conversiones gratis",
+    upgradeLabel: "Mejorar a Business",
+    upgradeDescription: "Esta herramienta está disponible en el plan Business. Mejora para desbloquear acceso ilimitado a todas las herramientas PDF.",
+    limitDescription: "Free incluye 10 conversiones por día. Mejora para conversiones ilimitadas.",
+    goBack: "Volver",
+    failedTitle: "El flujo falló",
+    tryAgain: "Intentar de nuevo",
+    completeTitle: "¡Flujo completado!",
+    readyForDownload: "Listo para descargar",
+    download: "Descargar",
+    runAnother: "Ejecutar otro flujo",
+    backToTools: "Volver a herramientas",
+    filesDeleted: "Los archivos se eliminan automáticamente después de 1 hora.",
+    runningTitle: "Ejecutando flujo...",
+    processingStep: "Procesando paso {current} de {total}",
+    choosePreset: "Elige un flujo predefinido",
+    enterprise: "Enterprise",
+    buildCustom: "Crear flujo personalizado",
+    workflowSteps: "Pasos del flujo",
+    backToPresets: "Volver a predefinidos",
+    noSteps: "Todavía no hay pasos. Agrega al menos 2 pasos para crear un flujo.",
+    uploadPdf: "Sube tu PDF",
+    dropPdf: "Suelta tu PDF aquí",
+    browse: "o haz clic para explorar",
+    addTwoSteps: "Agrega al menos 2 pasos para crear un flujo.",
+    runWorkflow: "Ejecutar flujo ({count} pasos)",
+    workflowSuccess: "{count} pasos procesados correctamente.",
+    unknownError: "Ocurrió un error desconocido",
+    protectLast: "La protección con contraseña debe ser el último paso. Reordena los pasos.",
+    watermarkRequired: "Ingresa el texto de la marca de agua antes de ejecutar el flujo.",
+    passwordRequired: "Ingresa una contraseña para el paso de protección antes de ejecutar el flujo.",
+  },
+  br: {
+    pricingPath: "/br/precos",
+    pricingSourcePath: "/br/precos?source=workflow",
+    signupPath: "/br/cadastro-obrigatorio",
+    homePath: "/br",
+    businessFeature: "Recurso Business",
+    businessDescription: "Automação de Fluxos está disponível no plano Business. Encadeie várias ferramentas PDF em um fluxo automatizado.",
+    upgradeButton: "Fazer upgrade para Business — $13.99/mês",
+    upgradeTitle: "Este recurso exige upgrade",
+    limitTitle: "Você ficou sem conversões gratuitas",
+    upgradeLabel: "Fazer upgrade para Business",
+    upgradeDescription: "Esta ferramenta está disponível no plano Business. Faça upgrade para desbloquear acesso ilimitado a todas as ferramentas PDF.",
+    limitDescription: "Free inclui 10 conversões por dia. Faça upgrade para conversões ilimitadas.",
+    goBack: "Voltar",
+    failedTitle: "O fluxo falhou",
+    tryAgain: "Tentar novamente",
+    completeTitle: "Fluxo concluído!",
+    readyForDownload: "Pronto para download",
+    download: "Baixar",
+    runAnother: "Executar outro fluxo",
+    backToTools: "Voltar para ferramentas",
+    filesDeleted: "Os arquivos são excluídos automaticamente após 1 hora.",
+    runningTitle: "Executando fluxo...",
+    processingStep: "Processando etapa {current} de {total}",
+    choosePreset: "Escolha um fluxo predefinido",
+    enterprise: "Enterprise",
+    buildCustom: "Criar fluxo personalizado",
+    workflowSteps: "Etapas do fluxo",
+    backToPresets: "Voltar para predefinidos",
+    noSteps: "Ainda não há etapas. Adicione pelo menos 2 etapas para criar um fluxo.",
+    uploadPdf: "Envie seu PDF",
+    dropPdf: "Solte seu PDF aqui",
+    browse: "ou clique para procurar",
+    addTwoSteps: "Adicione pelo menos 2 etapas para criar um fluxo.",
+    runWorkflow: "Executar fluxo ({count} etapas)",
+    workflowSuccess: "{count} etapas processadas com sucesso.",
+    unknownError: "Ocorreu um erro desconhecido",
+    protectLast: "A proteção por senha deve ser a última etapa. Reordene as etapas.",
+    watermarkRequired: "Digite o texto da marca d'água antes de executar o fluxo.",
+    passwordRequired: "Digite uma senha para a etapa de proteção antes de executar o fluxo.",
+  },
+} as const
+
+function formatCopy(template: string, values: Record<string, string | number>) {
+  return template.replace(/\{(\w+)\}/g, (_, key) => String(values[key] ?? ""))
+}
+
 interface WorkflowStep {
   tool: string
   params: Record<string, unknown>
@@ -129,7 +261,7 @@ const PRESET_WORKFLOWS: PresetWorkflow[] = [
   },
 ]
 
-function StepConfig({ step, onChange }: { step: WorkflowStep; onChange: (params: Record<string, unknown>) => void }) {
+function StepConfig({ step, onChange, locale }: { step: WorkflowStep; onChange: (params: Record<string, unknown>) => void; locale: ToolLocale }) {
   if (step.tool === "compress") {
     return (
       <div className="mt-2">
@@ -220,8 +352,9 @@ function StepConfig({ step, onChange }: { step: WorkflowStep; onChange: (params:
   return null
 }
 
-export function WorkflowInterface() {
+export function WorkflowInterface({ locale = "en" }: { locale?: ToolLocale }) {
   const router = useRouter()
+  const copy = WORKFLOW_COPY[locale]
   const [userPlan, setUserPlan] = useState<string>("free")
   const [steps, setSteps] = useState<WorkflowStep[]>([])
   const [file, setFile] = useState<File | null>(null)
@@ -298,21 +431,21 @@ export function WorkflowInterface() {
     // Validate protect is last if present
     const protectIndex = steps.findIndex((s) => s.tool === "protect")
     if (protectIndex !== -1 && protectIndex !== steps.length - 1) {
-      setValidationMessage("Password protection must be the last step. Please reorder your steps.")
+      setValidationMessage(copy.protectLast)
       return
     }
 
     // Validate watermark has text
     const watermarkStep = steps.find((s) => s.tool === "watermark")
     if (watermarkStep && !(watermarkStep.params.text as string)?.trim()) {
-      setValidationMessage("Please enter your watermark text before running the workflow.")
+      setValidationMessage(copy.watermarkRequired)
       return
     }
 
     // Validate protect has password
     const protectStep = steps.find((s) => s.tool === "protect")
     if (protectStep && !(protectStep.params.password as string)?.trim()) {
-      setValidationMessage("Please enter a password for the protection step before running the workflow.")
+      setValidationMessage(copy.passwordRequired)
       return
     }
 
@@ -349,7 +482,7 @@ export function WorkflowInterface() {
           const errorData = await response.json()
           if (errorData.error) message = errorData.error
           if (message.includes("upgrade_required")) {
-            router.push("/pricing?source=workflow")
+            router.push(copy.pricingSourcePath)
             return
           }
         } catch { }
@@ -365,10 +498,10 @@ export function WorkflowInterface() {
       setIsProcessing(false)
     } catch (error) {
       setHasError(true)
-      setErrorMessage(error instanceof Error ? error.message : "An unknown error occurred")
+      setErrorMessage(error instanceof Error ? error.message : copy.unknownError)
       setIsProcessing(false)
     }
-  }, [file, steps, router])
+  }, [copy.passwordRequired, copy.pricingSourcePath, copy.protectLast, copy.unknownError, copy.watermarkRequired, file, router, steps])
 
   const downloadResult = useCallback(() => {
     const link = document.createElement("a")
@@ -403,15 +536,15 @@ export function WorkflowInterface() {
             <div className="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <Crown className="h-10 w-10 text-indigo-600" />
             </div>
-            <h2 className="text-3xl font-black text-slate-900 mb-4">Business Feature</h2>
+            <h2 className="text-3xl font-black text-slate-900 mb-4">{copy.businessFeature}</h2>
             <p className="text-lg text-slate-600 mb-8">
-              Workflow Automation is available on the Business plan. Chain multiple PDF tools into one automated workflow.
+              {copy.businessDescription}
             </p>
             <Button
               className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl px-8 py-3 text-lg"
-              onClick={() => router.push("/pricing?source=workflow")}
+              onClick={() => router.push(copy.pricingSourcePath)}
             >
-              Upgrade to Business — $13.99/mo
+              {copy.upgradeButton}
             </Button>
           </div>
         </div>
@@ -426,7 +559,7 @@ export function WorkflowInterface() {
     const isSignupError = (errorMessage || "").includes("signup_required")
 
     if (isSignupError) {
-      router.push("/signup-required")
+      router.push(copy.signupPath)
       return null
     }
 
@@ -439,27 +572,27 @@ export function WorkflowInterface() {
                 <Crown className="h-10 w-10 text-orange-500" />
               </div>
               <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-2">
-                {isUpgradeError ? "This Feature Requires an Upgrade" : "You're out of free conversions"}
+                {isUpgradeError ? copy.upgradeTitle : copy.limitTitle}
               </h2>
-              <p className="text-xl sm:text-2xl font-bold text-orange-600 mb-4">Upgrade to Business</p>
+              <p className="text-xl sm:text-2xl font-bold text-orange-600 mb-4">{copy.upgradeLabel}</p>
               <p className="text-base sm:text-lg text-slate-600 mb-8">
                 {isUpgradeError
-                  ? "This tool is available on the Business plan. Upgrade to unlock unlimited access to all PDF tools."
-                  : "Free includes 10 conversions per day. Upgrade for unlimited conversions."}
+                  ? copy.upgradeDescription
+                  : copy.limitDescription}
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <Button
-                  onClick={() => router.push("/pricing")}
+                  onClick={() => router.push(copy.pricingPath)}
                   className="bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl px-6 py-3"
                 >
-                  Upgrade to Business
+                  {copy.upgradeLabel}
                 </Button>
                 <Button
                   onClick={resetInterface}
                   variant="outline"
                   className="border border-slate-200 text-slate-700 rounded-xl px-6 py-3"
                 >
-                  Go Back
+                  {copy.goBack}
                 </Button>
               </div>
             </div>
@@ -475,10 +608,10 @@ export function WorkflowInterface() {
             <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <AlertCircle className="h-10 w-10 text-red-600" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Workflow Failed</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">{copy.failedTitle}</h2>
             <p className="text-slate-600 mb-8">{errorMessage}</p>
             <Button onClick={resetInterface} className="bg-orange-500 hover:bg-orange-600 text-white">
-              Try Again
+              {copy.tryAgain}
             </Button>
           </div>
         </div>
@@ -495,9 +628,9 @@ export function WorkflowInterface() {
             <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <CheckCircle className="h-10 w-10 text-green-600" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Workflow Complete!</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">{copy.completeTitle}</h2>
             <p className="text-slate-600 mb-2">
-              {steps.length} steps processed successfully.
+              {formatCopy(copy.workflowSuccess, { count: steps.length })}
             </p>
             <div className="flex flex-wrap justify-center gap-2 mb-8">
               {steps.map((s, i) => {
@@ -516,22 +649,22 @@ export function WorkflowInterface() {
                   <FileText className="h-6 w-6 text-green-600" />
                   <div className="text-left">
                     <div className="font-bold text-slate-900">{resultName}</div>
-                    <div className="text-sm text-green-600">Ready for download</div>
+                    <div className="text-sm text-green-600">{copy.readyForDownload}</div>
                   </div>
                 </div>
                 <Button onClick={downloadResult} className="bg-green-600 hover:bg-green-700 text-white font-bold">
                   <Download className="h-4 w-4 mr-2" />
-                  Download
+                  {copy.download}
                 </Button>
               </div>
             </div>
 
             <div className="flex gap-4 justify-center">
               <Button onClick={resetInterface} variant="outline" className="border-slate-300">
-                Run Another Workflow
+                {copy.runAnother}
               </Button>
-              <Button onClick={() => (window.location.href = "/")} className="bg-orange-500 hover:bg-orange-600 text-white">
-                Back to Tools
+              <Button onClick={() => (window.location.href = copy.homePath)} className="bg-orange-500 hover:bg-orange-600 text-white">
+                {copy.backToTools}
               </Button>
             </div>
 
@@ -539,7 +672,7 @@ export function WorkflowInterface() {
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-md mx-auto">
                 <div className="flex items-center justify-center gap-2 text-blue-800 text-sm">
                   <Shield className="h-4 w-4" />
-                  <span className="font-medium">Files are automatically deleted after 1 hour.</span>
+                  <span className="font-medium">{copy.filesDeleted}</span>
                 </div>
               </div>
             </div>
@@ -558,8 +691,8 @@ export function WorkflowInterface() {
             <div className="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <Loader2 className="h-10 w-10 text-indigo-600 animate-spin" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Running Workflow...</h2>
-            <p className="text-slate-600 mb-8">Processing step {Math.min(processingStep + 1, steps.length)} of {steps.length}</p>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">{copy.runningTitle}</h2>
+            <p className="text-slate-600 mb-8">{formatCopy(copy.processingStep, { current: Math.min(processingStep + 1, steps.length), total: steps.length })}</p>
 
             <div className="space-y-3 max-w-md mx-auto">
               {steps.map((s, i) => {
@@ -595,7 +728,7 @@ export function WorkflowInterface() {
           {/* Preset Workflows */}
           {!showCustom && (
             <div className="mb-10">
-              <h3 className="text-xl font-bold text-slate-900 mb-4 text-center">Choose a Preset Workflow</h3>
+              <h3 className="text-xl font-bold text-slate-900 mb-4 text-center">{copy.choosePreset}</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                 {PRESET_WORKFLOWS
                   .filter((preset) => !preset.enterpriseOnly || userPlan === "enterprise")
@@ -614,7 +747,7 @@ export function WorkflowInterface() {
                       <div className="font-bold text-slate-900">{preset.name}</div>
                       {preset.enterpriseOnly && (
                         <span className="bg-amber-500 text-slate-900 text-[10px] font-bold px-2 py-0.5 rounded-full">
-                          Enterprise
+                          {copy.enterprise}
                         </span>
                       )}
                     </div>
@@ -644,7 +777,7 @@ export function WorkflowInterface() {
                   className="border-slate-300 text-slate-700"
                 >
                   <Plus className="h-4 w-4 mr-2" />
-                  Build Custom Workflow
+                  {copy.buildCustom}
                 </Button>
               </div>
             </div>
@@ -654,20 +787,20 @@ export function WorkflowInterface() {
           {showCustom && (
             <div className="mb-8">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold text-slate-900">Workflow Steps</h3>
+                <h3 className="text-xl font-bold text-slate-900">{copy.workflowSteps}</h3>
                 <Button
                   variant="ghost"
                   size="sm"
                   onClick={() => { setSteps([]); setShowCustom(false) }}
                   className="text-slate-500 text-sm"
                 >
-                  Back to Presets
+                  {copy.backToPresets}
                 </Button>
               </div>
 
               {steps.length === 0 && (
                 <div className="text-center py-8 border-2 border-dashed border-gray-200 rounded-xl mb-4">
-                  <p className="text-slate-500">No steps yet. Add at least 2 steps to create a workflow.</p>
+                  <p className="text-slate-500">{copy.noSteps}</p>
                 </div>
               )}
 
@@ -711,7 +844,7 @@ export function WorkflowInterface() {
                           </button>
                         </div>
                       </div>
-                      <StepConfig step={step} onChange={(params) => updateStepParams(index, params)} />
+                      <StepConfig step={step} onChange={(params) => updateStepParams(index, params)} locale={locale} />
                     </div>
                   )
                 })}
@@ -740,7 +873,7 @@ export function WorkflowInterface() {
           {/* File Upload */}
           {showCustom && steps.length >= 2 && (
             <div className="mb-8">
-              <h3 className="text-lg font-bold text-slate-900 mb-3">Upload Your PDF</h3>
+              <h3 className="text-lg font-bold text-slate-900 mb-3">{copy.uploadPdf}</h3>
 
               {!file ? (
                 <div
@@ -754,8 +887,8 @@ export function WorkflowInterface() {
                   onClick={() => document.getElementById("workflow-file-upload")?.click()}
                 >
                   <Upload className="h-10 w-10 text-indigo-500 mx-auto mb-3" />
-                  <p className="text-slate-900 font-bold mb-1">Drop your PDF here</p>
-                  <p className="text-sm text-slate-500">or click to browse</p>
+                  <p className="text-slate-900 font-bold mb-1">{copy.dropPdf}</p>
+                  <p className="text-sm text-slate-500">{copy.browse}</p>
                 </div>
               ) : (
                 <div className="flex items-center justify-between bg-white border border-gray-200 rounded-xl p-4">
@@ -794,7 +927,7 @@ export function WorkflowInterface() {
                   size="lg"
                 >
                   <Play className="h-5 w-5 mr-2" />
-                  Run Workflow ({steps.length} steps)
+                  {formatCopy(copy.runWorkflow, { count: steps.length })}
                 </Button>
               )}
             </div>
@@ -802,7 +935,7 @@ export function WorkflowInterface() {
 
           {showCustom && steps.length < 2 && steps.length > 0 && (
             <p className="text-center text-sm text-amber-600 font-medium mb-4">
-              Add at least 2 steps to create a workflow.
+              {copy.addTwoSteps}
             </p>
           )}
 

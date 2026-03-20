@@ -80,7 +80,7 @@ export default function RedacaoPdfPagePt() {
         </section>
 
         {/* Redaction Interface */}
-        <RedactionInterface />
+        <RedactionInterface locale="br" />
 
         {/* How It Works */}
         <section className="py-16 bg-gray-50">

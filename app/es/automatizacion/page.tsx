@@ -71,7 +71,7 @@ export default function WorkflowAutomationPageEs() {
         </section>
 
         {/* Workflow Interface */}
-        <WorkflowInterface />
+        <WorkflowInterface locale="es" />
 
         {/* How It Works */}
         <section className="py-16 bg-gray-50">
