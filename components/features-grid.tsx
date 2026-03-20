@@ -239,7 +239,7 @@ const categories = [
   },
   {
     name: "Generate & AI Tools",
-    description: "AI-powered tools to create and optimize documents",
+    description: "AI-powered resume tools for ATS optimization, resume writing, and document generation",
     tools: [
       {
         name: "QR Code Generator",
@@ -389,7 +389,7 @@ export function FeaturesGrid() {
             All Tools
           </h2>
           <p className="text-base text-slate-600 max-w-2xl mx-auto">
-            Everything you need to work with PDFs in seconds.
+            PDF tools plus AI resume tools to optimize resumes for ATS and build new resumes fast.
           </p>
         </div>
 
