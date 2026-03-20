@@ -102,10 +102,10 @@ export default function PdfParaPngParaDesignPage() {
                 <table className="w-full text-sm border border-gray-200 rounded-xl overflow-hidden">
                   <thead><tr className="bg-slate-900 text-white"><th className="text-left py-3 px-4 font-bold">Ferramenta</th><th className="text-left py-3 px-4 font-bold">DPI Recomendado</th><th className="text-left py-3 px-4 font-bold">Dica</th></tr></thead>
                   <tbody className="text-slate-700">
-                    <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold">Canva</td><td className="py-3 px-4 text-orange-600 font-semibold">300 DPI</td><td className="py-3 px-4">Use Upload > Faça upload de mídia</td></tr>
+                    <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold">Canva</td><td className="py-3 px-4 text-orange-600 font-semibold">300 DPI</td><td className="py-3 px-4">Use Upload &gt; Faça upload de mídia</td></tr>
                     <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold">Figma</td><td className="py-3 px-4 text-orange-600 font-semibold">300 DPI</td><td className="py-3 px-4">Arraste direto para o canvas</td></tr>
                     <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold">Photoshop</td><td className="py-3 px-4 text-orange-600 font-semibold">300 DPI</td><td className="py-3 px-4">Abra como nova camada</td></tr>
-                    <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold">Google Slides</td><td className="py-3 px-4 text-orange-600 font-semibold">200 DPI</td><td className="py-3 px-4">Inserir > Imagem</td></tr>
+                    <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold">Google Slides</td><td className="py-3 px-4 text-orange-600 font-semibold">200 DPI</td><td className="py-3 px-4">Inserir &gt; Imagem</td></tr>
                   </tbody>
                 </table>
               </div>

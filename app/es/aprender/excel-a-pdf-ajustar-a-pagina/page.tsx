@@ -15,13 +15,13 @@ const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainE
   { "@type": "Question", "name": "Cual es la diferencia entre 'Ajustar hoja en una pagina' y 'Ajustar todas las columnas en una pagina'?", "acceptedAnswer": { "@type": "Answer", "text": "Ajustar hoja en una pagina reduce todo (ancho y alto) para que quepa en una sola pagina — ideal para conjuntos de datos pequenos. Ajustar todas las columnas en una pagina solo restringe el ancho, dejando que las filas fluyan a paginas adicionales — mejor para hojas de calculo largas." } },
   { "@type": "Question", "name": "Debo usar horizontal o vertical para Excel a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Usa horizontal para hojas de calculo con muchas columnas (mas de 8 columnas). Usa vertical para hojas con muchas filas pero pocas columnas. Revisa la Vista previa de impresion para ver cual se ve mejor antes de convertir." } },
   { "@type": "Question", "name": "Que margenes debo usar para la conversion de Excel a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Margenes estrechos (0.25 pulgadas) dan mas espacio para los datos. Para hojas muy anchas, usa Margenes personalizados y establece todos los lados en 0.2 pulgadas. Los margenes predeterminados (0.7 pulgadas) desperdician demasiado espacio para la mayoria de las hojas." } },
-  { "@type": "Question", "name": "Como verifico si mi Excel cabe en la pagina antes de convertir a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Usa Vista previa de impresion (Ctrl+P en Windows, Cmd+P en Mac) o cambia a vista Diseno de pagina (Vista > Diseno de pagina). Ambas muestran exactamente como se vera tu hoja al imprimirse o convertirse a PDF, incluyendo saltos de pagina." } },
+  { "@type": "Question", "name": "Como verifico si mi Excel cabe en la pagina antes de convertir a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Usa Vista previa de impresion (Ctrl+P en Windows, Cmd+P en Mac) o cambia a vista Diseno de pagina (Vista &gt; Diseno de pagina). Ambas muestran exactamente como se vera tu hoja al imprimirse o convertirse a PDF, incluyendo saltos de pagina." } },
   { "@type": "Question", "name": "Por que mi Excel se reduce a texto diminuto cuando uso Ajustar a pagina?", "acceptedAnswer": { "@type": "Answer", "text": "Ajustar a pagina escala todo proporcionalmente. Si tu hoja tiene demasiadas columnas o filas, el texto queda muy pequeno. Solucionalo ajustando solo columnas a una pagina (no filas), reduciendo el numero de columnas o dividiendo la hoja en secciones." } }
 ] }
 
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como configurar las opciones de impresion de Excel para conversion a PDF", "description": "Configura tu hoja de calculo Excel para que se ajuste perfectamente a una pagina antes de convertir a PDF.", "step": [
   { "@type": "HowToStep", "name": "Establece area de impresion y orientacion", "text": "Selecciona tu rango de datos, ve a Diseno de pagina > Area de impresion > Establecer area de impresion. Luego elige Horizontal o Vertical en Diseno de pagina > Orientacion segun la forma de tus datos." },
-  { "@type": "HowToStep", "name": "Configura escalado y margenes", "text": "Ve a Diseno de pagina > Ajustar a y establece Ancho en 1 pagina. Establece margenes en Estrecho (Diseno de pagina > Margenes > Estrecho). Verifica en Vista previa de impresion que el texto siga siendo legible." },
+  { "@type": "HowToStep", "name": "Configura escalado y margenes", "text": "Ve a Diseno de pagina > Ajustar a y establece Ancho en 1 pagina. Establece margenes en Estrecho (Diseno de pagina &gt; Margenes &gt; Estrecho). Verifica en Vista previa de impresion que el texto siga siendo legible." },
   { "@type": "HowToStep", "name": "Convierte a PDF", "text": "Sube tu archivo Excel preparado a la herramienta Excel a PDF de OmnisPDF. El convertidor respeta tus configuraciones de impresion, produciendo un PDF limpio y correctamente ajustado." }
 ] }
 
@@ -91,8 +91,8 @@ export default function ExcelAPdfAjustarAPaginaPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-4">Configuraciones de margenes que te dan mas espacio</h2>
             <p className="text-slate-600 mb-4">Los margenes predeterminados (0.7" en cada lado) desperdician espacio valioso en la pagina. Para hojas con muchos datos, margenes mas estrechos hacen una gran diferencia:</p>
             <ul className="space-y-2 text-slate-700">
-              <li>&#10003; <strong>Preajuste Estrecho</strong> (Diseno de pagina > Margenes > Estrecho) — establece margenes de 0.25" en todos los lados. Suficiente para la mayoria de los casos.</li>
-              <li>&#10003; <strong>Margenes personalizados</strong> (Diseno de pagina > Margenes > Margenes personalizados) — establece 0.2" en todos los lados para maximo espacio de datos. Asegurate de tambien establecer los margenes de encabezado/pie de pagina en 0.15".</li>
+              <li>&#10003; <strong>Preajuste Estrecho</strong> (Diseno de pagina &gt; Margenes &gt; Estrecho) — establece margenes de 0.25" en todos los lados. Suficiente para la mayoria de los casos.</li>
+              <li>&#10003; <strong>Margenes personalizados</strong> (Diseno de pagina &gt; Margenes &gt; Margenes personalizados) — establece 0.2" en todos los lados para maximo espacio de datos. Asegurate de tambien establecer los margenes de encabezado/pie de pagina en 0.15".</li>
               <li>&#10003; <strong>Centrar en pagina</strong> — en el dialogo de Margenes personalizados, marca "Horizontalmente" en Centrar en pagina. Esto evita que los datos se peguen al borde izquierdo.</li>
             </ul>
           </section>
@@ -126,7 +126,7 @@ export default function ExcelAPdfAjustarAPaginaPage() {
             <ul className="space-y-2 text-slate-700">
               <li>&#10003; <strong>Windows:</strong> Presiona Ctrl+P para abrir Vista previa de impresion</li>
               <li>&#10003; <strong>Mac:</strong> Presiona Cmd+P para abrir Vista previa de impresion</li>
-              <li>&#10003; <strong>Alternativa:</strong> Ve a Vista > Diseno de pagina para una vista previa dentro de la hoja</li>
+              <li>&#10003; <strong>Alternativa:</strong> Ve a Vista &gt; Diseno de pagina para una vista previa dentro de la hoja</li>
             </ul>
             <p className="text-slate-600 mt-4">Busca: todas las columnas visibles, texto legible (no diminuto), sin datos cortados en los bordes y saltos de pagina logicos. Si algo se ve mal, ajusta tus configuraciones y verifica de nuevo antes de subir al convertidor.</p>
           </section>
