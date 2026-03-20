@@ -17,7 +17,7 @@ import {
   ChevronRight,
   Trash2,
   Plus,
-  FolderSignature,
+  Signature,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob } from "@/lib/upload-to-blob"
@@ -607,7 +607,7 @@ export function EsignInterface() {
 
                   {sessionSignatures.length === 0 ? (
                     <div className="rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-8 text-center">
-                      <FolderSignature className="h-8 w-8 text-slate-400 mx-auto mb-3" />
+                      <Signature className="h-8 w-8 text-slate-400 mx-auto mb-3" />
                       <p className="font-semibold text-slate-900">No signatures created yet</p>
                       <p className="text-sm text-slate-500 mt-1">Create a signature style, drawing, or upload to sign this PDF.</p>
                     </div>
