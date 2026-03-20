@@ -68,6 +68,7 @@ const tools = [
   { name: "Dividir PDF", description: "Divide un PDF en archivos separados.", icon: Split, href: "/es/dividir-pdf", tier: "FREE" },
   { name: "Escanear OCR", description: "Extrae texto buscable de PDFs escaneados.", icon: Scan, href: "/es/escaner-ocr", tier: "PRO" },
   { name: "Extraccion de Tablas", description: "Extrae tablas de PDFs directamente a hojas de calculo Excel.", icon: FileSpreadsheet, href: "/es/extraccion-de-tablas", tier: "BUSINESS" },
+  { name: "Extraccion de Alto Volumen", description: "Extrae hasta 2,000 paginas de tablas al mes a Excel.", icon: FileSpreadsheet, href: "/es/extraccion-de-tablas", tier: "ENTERPRISE" },
   { name: "Extraer Imagenes", description: "Extrae fotos, logos y graficos de PDFs.", icon: ImageDown, href: "/es/extraer-imagenes-de-pdf", tier: "FREE" },
   { name: "Firma Electronica", description: "Agrega firmas electronicas legalmente vinculantes a PDFs.", icon: PenTool, href: "/es/firma-electronica", tier: "BUSINESS" },
   { name: "Limpiar Escaneo", description: "Convierte fotos de documentos del celular en PDFs limpios y profesionales.", icon: Camera, href: "/es/limpieza-escaneo", tier: "FREE" },
@@ -79,6 +80,7 @@ const tools = [
   { name: "Rotar PDF", description: "Corrige la orientacion de las paginas al instante.", icon: RotateCw, href: "/es/rotar-pdf", tier: "FREE" },
   { name: "Unir PDF", description: "Combina multiples PDFs en un solo archivo.", icon: Merge, href: "/es/unir-pdf", tier: "FREE" },
   { name: "URL a PDF", description: "Convierte cualquier pagina web publica en un documento PDF.", icon: Globe, href: "/es/url-a-pdf", tier: "PRO" },
+  { name: "Plantillas de Flujos", description: "Flujos predefinidos para documentos legales, contables y de laboratorio.", icon: Layers, href: "/es/automatizacion", tier: "ENTERPRISE" },
 ]
 
 function TierBadge({ tier }: { tier: string }) {

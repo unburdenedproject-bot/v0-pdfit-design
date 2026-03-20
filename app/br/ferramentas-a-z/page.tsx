@@ -69,6 +69,7 @@ const tools = [
   { name: "Desbloquear PDF", description: "Remova restricoes de senha de um PDF.", icon: Unlock, href: "/br/desbloquear-pdf", tier: "FREE" },
   { name: "Dividir PDF", description: "Divida um PDF em arquivos separados.", icon: Split, href: "/br/dividir-pdf", tier: "FREE" },
   { name: "Extracao de Tabelas", description: "Extraia tabelas de PDFs diretamente para planilhas Excel.", icon: FileSpreadsheet, href: "/br/extracao-de-tabelas", tier: "BUSINESS" },
+  { name: "Extracao de Alto Volume", description: "Extraia ate 2.000 paginas de tabelas por mes para Excel.", icon: FileSpreadsheet, href: "/br/extracao-de-tabelas", tier: "ENTERPRISE" },
   { name: "Extrair Imagens", description: "Extraia fotos, logos e graficos de PDFs.", icon: ImageDown, href: "/br/extrair-imagens-de-pdf", tier: "FREE" },
   { name: "Girar PDF", description: "Corrija a orientacao das paginas instantaneamente.", icon: RotateCw, href: "/br/girar-pdf", tier: "FREE" },
   { name: "Limpeza de Digitalizacao", description: "Transforme fotos de documentos do celular em PDFs limpos e profissionais.", icon: Camera, href: "/br/limpeza-digitalizacao", tier: "FREE" },
@@ -79,6 +80,7 @@ const tools = [
   { name: "Scanner OCR", description: "Extraia texto pesquisavel de PDFs digitalizados.", icon: Scan, href: "/br/scanner-ocr", tier: "PRO" },
   { name: "Unir PDF", description: "Combine multiplos PDFs em um unico arquivo.", icon: Merge, href: "/br/unir-pdf", tier: "FREE" },
   { name: "URL para PDF", description: "Converta qualquer pagina web publica em um documento PDF.", icon: Globe, href: "/br/url-para-pdf", tier: "PRO" },
+  { name: "Modelos de Fluxo", description: "Fluxos predefinidos para documentos juridicos, contabeis e de laboratorio.", icon: Layers, href: "/br/automacao", tier: "ENTERPRISE" },
 ]
 
 function TierBadge({ tier }: { tier: string }) {

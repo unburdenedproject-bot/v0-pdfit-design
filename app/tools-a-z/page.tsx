@@ -73,12 +73,14 @@ const tools = [
   { name: "Rotate PDF", description: "Fix page orientation instantly.", icon: RotateCw, href: "/rotate-pdf", tier: "FREE" },
   { name: "Split PDF", description: "Divide a PDF into separate files.", icon: Split, href: "/split-pdf", tier: "FREE" },
   { name: "Table Extraction", description: "Extract tables from PDFs directly into Excel spreadsheets.", icon: FileSpreadsheet, href: "/table-extraction", tier: "BUSINESS" },
+  { name: "High-Volume Table Extraction", description: "Extract up to 2,000 pages of tables per month to Excel.", icon: FileSpreadsheet, href: "/table-extraction", tier: "ENTERPRISE" },
   { name: "Unlock PDF", description: "Remove password restrictions from a PDF.", icon: Unlock, href: "/unlock-pdf", tier: "FREE" },
   { name: "Upload-Ready PDF", description: "Fix and optimize PDFs for any upload portal in one click.", icon: Upload, href: "/upload-ready-pdf", tier: "FREE" },
   { name: "URL to PDF", description: "Convert any public webpage to a high-quality PDF document.", icon: Globe, href: "/url-to-pdf", tier: "PRO" },
   { name: "Watermark PDF", description: "Add text or image watermarks to PDFs.", icon: Droplets, href: "/watermark-pdf", tier: "PRO" },
   { name: "Word to PDF", description: "Convert Word documents to PDF instantly.", icon: FileText, href: "/word-to-pdf", tier: "PRO" },
   { name: "Workflow Automation", description: "Chain multiple PDF tools into one automated workflow.", icon: Repeat, href: "/workflow-automation", tier: "BUSINESS" },
+  { name: "Workflow Templates", description: "Pre-built workflows for legal, accounting, and lab documents.", icon: Layers, href: "/workflow-automation", tier: "ENTERPRISE" },
 ]
 
 function TierBadge({ tier }: { tier: string }) {
