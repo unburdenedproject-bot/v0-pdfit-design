@@ -1,57 +1,60 @@
 "use client"
 
-import { useState, useCallback, useEffect, useRef } from "react"
+import { useState, useCallback, useEffect, useMemo, useRef } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import {
-  Upload, FileText, X, Download, CheckCircle, Loader2, AlertCircle,
-  PenTool, Crown, ChevronLeft, ChevronRight, Trash2, Type, ImageIcon,
+  Upload,
+  FileText,
+  X,
+  Download,
+  CheckCircle,
+  Loader2,
+  AlertCircle,
+  PenTool,
+  Crown,
+  ChevronLeft,
+  ChevronRight,
+  Trash2,
+  Plus,
+  FolderSignature,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { uploadBlobToBlob, uploadFileToBlob } from "@/lib/upload-to-blob"
+import { uploadFileToBlob } from "@/lib/upload-to-blob"
 import { TrustBadges } from "@/components/trust-badges"
-
-type SignatureMode = "draw" | "type" | "upload"
+import { CreateSignatureModal } from "@/components/esign/create-signature-modal"
+import { useSignatureLibrary } from "@/hooks/use-signature-library"
+import type { SignatureAssetRecord } from "@/lib/esign/types"
 
 interface PlacedSignature {
   id: string
   page: number
-  x: number      // ratio 0-1
-  y: number      // ratio 0-1
-  width: number   // ratio 0-1
-  height: number  // ratio 0-1
-  imageDataUrl: string
+  x: number
+  y: number
+  width: number
+  height: number
+  assetId: string
+  assetUrl: string
+  kind: "signature" | "initials"
 }
 
 export function EsignInterface() {
   const router = useRouter()
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
-  const sigCanvasRef = useRef<HTMLCanvasElement>(null)
 
   const [userPlan, setUserPlan] = useState<string>("free")
   const [file, setFile] = useState<File | null>(null)
   const [isDragOver, setIsDragOver] = useState(false)
   const [pageImages, setPageImages] = useState<string[]>([])
-  const [pageSizes, setPageSizes] = useState<{ width: number; height: number }[]>([])
   const [currentPage, setCurrentPage] = useState(0)
   const [totalPages, setTotalPages] = useState(0)
   const [isLoadingPdf, setIsLoadingPdf] = useState(false)
-
-  // Signature creation
-  const [signatureMode, setSignatureMode] = useState<SignatureMode>("draw")
-  const [signatureReady, setSignatureReady] = useState(false)
-  const [signatureDataUrl, setSignatureDataUrl] = useState<string>("")
-  const [isDrawingSig, setIsDrawingSig] = useState(false)
-  const [typedName, setTypedName] = useState("")
-  const [signatureFont, setSignatureFont] = useState("cursive")
-
-  // Placing signatures on PDF
+  const [selectedSignatureId, setSelectedSignatureId] = useState<string>("")
+  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false)
   const [placedSignatures, setPlacedSignatures] = useState<PlacedSignature[]>([])
   const [isPlacing, setIsPlacing] = useState(false)
   const [placingPreview, setPlacingPreview] = useState<{ x: number; y: number } | null>(null)
-
-  // Processing
   const [isProcessing, setIsProcessing] = useState(false)
   const [isComplete, setIsComplete] = useState(false)
   const [hasError, setHasError] = useState(false)
@@ -60,6 +63,13 @@ export function EsignInterface() {
   const [resultName, setResultName] = useState("")
 
   const isBusinessUser = userPlan === "business" || userPlan === "enterprise"
+  const {
+    signatures,
+    isLoading: isLoadingSignatures,
+    error: signatureLoadError,
+    fetchSignatures,
+    deleteSignature,
+  } = useSignatureLibrary(isBusinessUser)
 
   useEffect(() => {
     fetch("/api/user-plan")
@@ -68,7 +78,17 @@ export function EsignInterface() {
       .catch(() => setUserPlan("free"))
   }, [])
 
-  // Render current page with placed signatures
+  useEffect(() => {
+    if (!selectedSignatureId && signatures.length > 0) {
+      setSelectedSignatureId(signatures[0].id)
+    }
+  }, [signatures, selectedSignatureId])
+
+  const selectedSignature = useMemo(
+    () => signatures.find((signature) => signature.id === selectedSignatureId) ?? null,
+    [signatures, selectedSignatureId]
+  )
+
   const renderPage = useCallback(() => {
     const canvas = canvasRef.current
     const container = containerRef.current
@@ -87,39 +107,39 @@ export function EsignInterface() {
       canvas.width = displayWidth
       canvas.height = displayHeight
 
+      ctx.clearRect(0, 0, displayWidth, displayHeight)
       ctx.drawImage(img, 0, 0, displayWidth, displayHeight)
 
-      // Draw placed signatures for this page
-      const pageSigs = placedSignatures.filter((s) => s.page === currentPage)
-      for (const sig of pageSigs) {
+      const pageSigs = placedSignatures.filter((signature) => signature.page === currentPage)
+      for (const signature of pageSigs) {
         const sigImg = new window.Image()
         sigImg.onload = () => {
           ctx.drawImage(
             sigImg,
-            sig.x * displayWidth,
-            sig.y * displayHeight,
-            sig.width * displayWidth,
-            sig.height * displayHeight
+            signature.x * displayWidth,
+            signature.y * displayHeight,
+            signature.width * displayWidth,
+            signature.height * displayHeight
           )
         }
-        sigImg.src = sig.imageDataUrl
+        sigImg.src = signature.assetUrl
       }
 
-      // Draw placing preview
-      if (isPlacing && placingPreview && signatureDataUrl) {
+      if (isPlacing && placingPreview && selectedSignature?.asset_url) {
         const previewImg = new window.Image()
         previewImg.onload = () => {
-          const sigW = 200
-          const sigH = 80
+          const sigW = selectedSignature.kind === "initials" ? 140 : 220
+          const sigH = selectedSignature.kind === "initials" ? 70 : 90
           ctx.globalAlpha = 0.6
           ctx.drawImage(previewImg, placingPreview.x - sigW / 2, placingPreview.y - sigH / 2, sigW, sigH)
-          ctx.globalAlpha = 1.0
+          ctx.globalAlpha = 1
         }
-        previewImg.src = signatureDataUrl
+        previewImg.src = selectedSignature.asset_url
       }
     }
+
     img.src = pageImages[currentPage]
-  }, [pageImages, currentPage, placedSignatures, isPlacing, placingPreview, signatureDataUrl])
+  }, [pageImages, currentPage, placedSignatures, isPlacing, placingPreview, selectedSignature])
 
   useEffect(() => {
     renderPage()
@@ -131,9 +151,10 @@ export function EsignInterface() {
     return () => window.removeEventListener("resize", handleResize)
   }, [renderPage])
 
-  // Load PDF
   const loadPdf = useCallback(async (pdfFile: File) => {
     setIsLoadingPdf(true)
+    setHasError(false)
+
     try {
       const pdfjsLib = await import("pdfjs-dist")
       pdfjsLib.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs"
@@ -144,202 +165,122 @@ export function EsignInterface() {
       setTotalPages(pdf.numPages)
 
       const images: string[] = []
-      const sizes: { width: number; height: number }[] = []
-
       for (let i = 1; i <= pdf.numPages; i++) {
         const page = await pdf.getPage(i)
-        const pageSize = page.getViewport({ scale: 1 })
         const viewport = page.getViewport({ scale: 2 })
-
         const offscreen = document.createElement("canvas")
         offscreen.width = viewport.width
         offscreen.height = viewport.height
-        const ctx = offscreen.getContext("2d")!
+        const ctx = offscreen.getContext("2d")
+        if (!ctx) continue
 
         await page.render({ canvasContext: ctx, viewport }).promise
-
         images.push(offscreen.toDataURL("image/png"))
-        sizes.push({ width: pageSize.width, height: pageSize.height })
       }
 
       setPageImages(images)
-      setPageSizes(sizes)
       setCurrentPage(0)
-      setIsLoadingPdf(false)
     } catch (err) {
       console.error("Failed to load PDF:", err)
       setHasError(true)
       setErrorMessage("Failed to load PDF. The file may be corrupted or password-protected.")
+    } finally {
       setIsLoadingPdf(false)
     }
   }, [])
 
-  const handleDrop = useCallback((e: React.DragEvent) => {
-    e.preventDefault()
-    setIsDragOver(false)
-    const droppedFiles = Array.from(e.dataTransfer.files)
-    if (droppedFiles.length > 0) {
-      setFile(droppedFiles[0])
-      loadPdf(droppedFiles[0])
-    }
-  }, [loadPdf])
+  const handleDrop = useCallback(
+    (event: React.DragEvent) => {
+      event.preventDefault()
+      setIsDragOver(false)
+      const droppedFiles = Array.from(event.dataTransfer.files)
+      if (droppedFiles.length > 0) {
+        setFile(droppedFiles[0])
+        loadPdf(droppedFiles[0])
+      }
+    },
+    [loadPdf]
+  )
 
-  const handleFileSelect = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length > 0) {
-      setFile(e.target.files[0])
-      loadPdf(e.target.files[0])
-    }
-  }, [loadPdf])
+  const handleFileSelect = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      if (event.target.files && event.target.files.length > 0) {
+        setFile(event.target.files[0])
+        loadPdf(event.target.files[0])
+      }
+    },
+    [loadPdf]
+  )
 
-  // --- Signature Drawing ---
-  const initSigCanvas = useCallback(() => {
-    const canvas = sigCanvasRef.current
-    if (!canvas) return
-    const ctx = canvas.getContext("2d")
-    if (!ctx) return
-    ctx.fillStyle = "white"
-    ctx.fillRect(0, 0, canvas.width, canvas.height)
-  }, [])
-
-  useEffect(() => {
-    if (signatureMode === "draw") {
-      setTimeout(initSigCanvas, 100)
-    }
-  }, [signatureMode, initSigCanvas])
-
-  const handleSigMouseDown = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    setIsDrawingSig(true)
-    const canvas = sigCanvasRef.current
-    if (!canvas) return
-    const ctx = canvas.getContext("2d")
-    if (!ctx) return
-    const rect = canvas.getBoundingClientRect()
-    ctx.beginPath()
-    ctx.moveTo(e.clientX - rect.left, e.clientY - rect.top)
-    ctx.strokeStyle = "#1a1a2e"
-    ctx.lineWidth = 3
-    ctx.lineCap = "round"
-    ctx.lineJoin = "round"
-  }
-
-  const handleSigMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    if (!isDrawingSig) return
-    const canvas = sigCanvasRef.current
-    if (!canvas) return
-    const ctx = canvas.getContext("2d")
-    if (!ctx) return
-    const rect = canvas.getBoundingClientRect()
-    ctx.lineTo(e.clientX - rect.left, e.clientY - rect.top)
-    ctx.stroke()
-  }
-
-  const handleSigMouseUp = () => {
-    setIsDrawingSig(false)
-  }
-
-  const clearSigCanvas = () => {
-    initSigCanvas()
-    setSignatureReady(false)
-    setSignatureDataUrl("")
-  }
-
-  const confirmDrawnSignature = () => {
-    const canvas = sigCanvasRef.current
-    if (!canvas) return
-    const dataUrl = canvas.toDataURL("image/png")
-    setSignatureDataUrl(dataUrl)
-    setSignatureReady(true)
-  }
-
-  // --- Typed Signature ---
-  const confirmTypedSignature = useCallback(() => {
-    if (!typedName.trim()) return
-    const canvas = document.createElement("canvas")
-    canvas.width = 400
-    canvas.height = 160
-    const ctx = canvas.getContext("2d")
-    if (!ctx) return
-
-    ctx.fillStyle = "white"
-    ctx.fillRect(0, 0, 400, 160)
-
-    const fontFamily = signatureFont === "cursive"
-      ? "'Brush Script MT', 'Segoe Script', cursive"
-      : signatureFont === "serif"
-        ? "'Times New Roman', Georgia, serif"
-        : "'Courier New', monospace"
-
-    ctx.font = `48px ${fontFamily}`
-    ctx.fillStyle = "#1a1a2e"
-    ctx.textBaseline = "middle"
-    ctx.textAlign = "center"
-    ctx.fillText(typedName, 200, 80)
-
-    const dataUrl = canvas.toDataURL("image/png")
-    setSignatureDataUrl(dataUrl)
-    setSignatureReady(true)
-  }, [typedName, signatureFont])
-
-  // --- Upload Signature Image ---
-  const handleSigImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const uploadedFile = e.target.files?.[0]
-    if (!uploadedFile) return
-
-    const reader = new FileReader()
-    reader.onload = () => {
-      const dataUrl = reader.result as string
-      setSignatureDataUrl(dataUrl)
-      setSignatureReady(true)
-    }
-    reader.readAsDataURL(uploadedFile)
-  }
-
-  // --- Place signature on PDF ---
-  const getCanvasCoords = (e: React.MouseEvent<HTMLCanvasElement>) => {
+  const getCanvasCoords = (event: React.MouseEvent<HTMLCanvasElement>) => {
     const canvas = canvasRef.current
     if (!canvas) return { x: 0, y: 0 }
     const rect = canvas.getBoundingClientRect()
     return {
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
+      x: event.clientX - rect.left,
+      y: event.clientY - rect.top,
     }
   }
 
-  const handlePdfClick = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    if (!isPlacing || !signatureDataUrl) return
+  const handlePdfClick = (event: React.MouseEvent<HTMLCanvasElement>) => {
+    if (!isPlacing || !selectedSignature) return
     const canvas = canvasRef.current
     if (!canvas) return
 
-    const coords = getCanvasCoords(e)
-    const sigW = 200
-    const sigH = 80
+    const coords = getCanvasCoords(event)
+    const baseWidth = selectedSignature.kind === "initials" ? 150 : 220
+    const ratio = selectedSignature.width / selectedSignature.height
+    const sigWidth = baseWidth
+    const sigHeight = sigWidth / ratio
 
-    const newSig: PlacedSignature = {
+    const newSignature: PlacedSignature = {
       id: crypto.randomUUID(),
       page: currentPage,
-      x: (coords.x - sigW / 2) / canvas.width,
-      y: (coords.y - sigH / 2) / canvas.height,
-      width: sigW / canvas.width,
-      height: sigH / canvas.height,
-      imageDataUrl: signatureDataUrl,
+      x: (coords.x - sigWidth / 2) / canvas.width,
+      y: (coords.y - sigHeight / 2) / canvas.height,
+      width: sigWidth / canvas.width,
+      height: sigHeight / canvas.height,
+      assetId: selectedSignature.id,
+      assetUrl: selectedSignature.asset_url,
+      kind: selectedSignature.kind,
     }
 
-    setPlacedSignatures((prev) => [...prev, newSig])
+    setPlacedSignatures((prev) => [...prev, newSignature])
     setIsPlacing(false)
     setPlacingPreview(null)
   }
 
-  const handlePdfMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
+  const handlePdfMouseMove = (event: React.MouseEvent<HTMLCanvasElement>) => {
     if (!isPlacing) return
-    const coords = getCanvasCoords(e)
-    setPlacingPreview(coords)
+    setPlacingPreview(getCanvasCoords(event))
   }
 
-  const removeSignature = useCallback((id: string) => {
-    setPlacedSignatures((prev) => prev.filter((s) => s.id !== id))
+  const removePlacedSignature = useCallback((id: string) => {
+    setPlacedSignatures((prev) => prev.filter((signature) => signature.id !== id))
   }, [])
 
-  // --- Apply signatures ---
+  const handleDeleteSavedSignature = useCallback(
+    async (signature: SignatureAssetRecord) => {
+      if (placedSignatures.some((placed) => placed.assetId === signature.id)) {
+        setHasError(true)
+        setErrorMessage("Remove this signature from the current PDF before deleting it from your saved library.")
+        return
+      }
+
+      try {
+        await deleteSignature(signature.id)
+        if (selectedSignatureId === signature.id) {
+          setSelectedSignatureId("")
+          setIsPlacing(false)
+        }
+      } catch (err) {
+        setHasError(true)
+        setErrorMessage(err instanceof Error ? err.message : "Failed to delete signature.")
+      }
+    },
+    [deleteSignature, placedSignatures, selectedSignatureId]
+  )
+
   const applySignatures = useCallback(async () => {
     if (!file || placedSignatures.length === 0) return
 
@@ -348,60 +289,50 @@ export function EsignInterface() {
 
     try {
       const inputUrl = await uploadFileToBlob(file)
-
-      // Upload each unique signature image
-      const sigImageMap = new Map<string, string>()
-      for (const sig of placedSignatures) {
-        if (!sigImageMap.has(sig.imageDataUrl)) {
-          const response = await fetch(sig.imageDataUrl)
-          const blob = await response.blob()
-          const blobUrl = await uploadBlobToBlob(blob, `signature-${sigImageMap.size + 1}.png`)
-          sigImageMap.set(sig.imageDataUrl, blobUrl)
-        }
-      }
-
-      const signatures = placedSignatures.map((sig) => ({
-        page: sig.page,
-        x: sig.x,
-        y: sig.y,
-        width: sig.width,
-        height: sig.height,
-        signatureBlobUrl: sigImageMap.get(sig.imageDataUrl)!,
+      const signaturesPayload = placedSignatures.map((signature) => ({
+        page: signature.page,
+        x: signature.x,
+        y: signature.y,
+        width: signature.width,
+        height: signature.height,
+        signatureBlobUrl: signature.assetUrl,
       }))
 
-      const res = await fetch("/api/esign", {
+      const response = await fetch("/api/esign", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           blobUrl: inputUrl,
           originalName: file.name,
-          signatures,
+          signatures: signaturesPayload,
         }),
       })
 
-      if (!res.ok) {
-        let message = `Signing failed (HTTP ${res.status})`
+      if (!response.ok) {
+        let message = `Signing failed (HTTP ${response.status})`
         try {
-          const errorData = await res.json()
+          const errorData = await response.json()
           if (errorData.error) message = errorData.error
           if (message.includes("upgrade_required")) {
             router.push("/pricing?source=esign")
             return
           }
-        } catch { }
+        } catch {
+          // ignore JSON parse failure
+        }
         throw new Error(message)
       }
 
-      const blob = await res.blob()
+      const blob = await response.blob()
       const url = URL.createObjectURL(blob)
       const baseName = file.name.replace(/\.[^/.]+$/, "")
       setResultUrl(url)
       setResultName(`${baseName}-signed.pdf`)
       setIsComplete(true)
-      setIsProcessing(false)
     } catch (error) {
       setHasError(true)
       setErrorMessage(error instanceof Error ? error.message : "An unknown error occurred")
+    } finally {
       setIsProcessing(false)
     }
   }, [file, placedSignatures, router])
@@ -420,13 +351,9 @@ export function EsignInterface() {
     if (resultUrl) URL.revokeObjectURL(resultUrl)
     setFile(null)
     setPageImages([])
-    setPageSizes([])
     setCurrentPage(0)
     setTotalPages(0)
     setPlacedSignatures([])
-    setSignatureReady(false)
-    setSignatureDataUrl("")
-    setTypedName("")
     setIsPlacing(false)
     setPlacingPreview(null)
     setIsProcessing(false)
@@ -437,9 +364,6 @@ export function EsignInterface() {
     setResultName("")
   }, [resultUrl])
 
-  // --- Render states ---
-
-  // Not Business user
   if (!isBusinessUser && userPlan !== "loading") {
     return (
       <section className="py-16">
@@ -450,12 +374,9 @@ export function EsignInterface() {
             </div>
             <h2 className="text-3xl font-black text-slate-900 mb-4">Business Feature</h2>
             <p className="text-lg text-slate-600 mb-8">
-              eSign Documents is available on the Business plan. Add electronic signatures to your PDFs with a visual editor.
+              eSign Documents is available on the Business plan. Add electronic signatures to your PDFs with a reusable signature library.
             </p>
-            <Button
-              className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl px-8 py-3 text-lg"
-              onClick={() => router.push("/pricing?source=esign")}
-            >
+            <Button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl px-8 py-3 text-lg" onClick={() => router.push("/pricing?source=esign")}>
               Upgrade to Business — $13.99/mo
             </Button>
           </div>
@@ -464,7 +385,6 @@ export function EsignInterface() {
     )
   }
 
-  // Error state
   if (hasError) {
     const isUpgradeError = (errorMessage || "").includes("upgrade_required")
     const isLimitError = (errorMessage || "").toLowerCase().includes("daily limit reached") || (errorMessage || "").includes("daily_limit_reached")
@@ -493,17 +413,10 @@ export function EsignInterface() {
                   : "Free includes 10 conversions per day. Upgrade for unlimited conversions."}
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <Button
-                  onClick={() => router.push("/pricing")}
-                  className="bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl px-6 py-3"
-                >
+                <Button onClick={() => router.push("/pricing")} className="bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl px-6 py-3">
                   Upgrade to Business
                 </Button>
-                <Button
-                  onClick={resetInterface}
-                  variant="outline"
-                  className="border border-slate-200 text-slate-700 rounded-xl px-6 py-3"
-                >
+                <Button onClick={resetInterface} variant="outline" className="border border-slate-200 text-slate-700 rounded-xl px-6 py-3">
                   Go Back
                 </Button>
               </div>
@@ -531,7 +444,6 @@ export function EsignInterface() {
     )
   }
 
-  // Success state
   if (isComplete) {
     return (
       <section className="py-16">
@@ -542,7 +454,7 @@ export function EsignInterface() {
             </div>
             <h2 className="text-3xl font-bold text-slate-900 mb-4">Document Signed!</h2>
             <p className="text-slate-600 mb-2">
-              {placedSignatures.length} signature{placedSignatures.length > 1 ? "s" : ""} applied across {new Set(placedSignatures.map((s) => s.page)).size} page{new Set(placedSignatures.map((s) => s.page)).size > 1 ? "s" : ""}.
+              {placedSignatures.length} signature{placedSignatures.length > 1 ? "s" : ""} applied across {new Set(placedSignatures.map((signature) => signature.page)).size} page{new Set(placedSignatures.map((signature) => signature.page)).size > 1 ? "s" : ""}.
             </p>
 
             <div className="bg-white border border-gray-200 rounded-xl p-6 mb-8 mt-6">
@@ -575,7 +487,6 @@ export function EsignInterface() {
     )
   }
 
-  // Processing state
   if (isProcessing) {
     return (
       <section className="py-16">
@@ -592,7 +503,6 @@ export function EsignInterface() {
     )
   }
 
-  // Upload state
   if (!file || pageImages.length === 0) {
     return (
       <section className="py-16">
@@ -610,8 +520,14 @@ export function EsignInterface() {
                     "border-2 border-dashed rounded-xl p-12 transition-all duration-200 cursor-pointer text-center",
                     isDragOver ? "border-indigo-500 bg-indigo-50" : "border-gray-300 hover:border-indigo-400 hover:bg-gray-50"
                   )}
-                  onDragOver={(e) => { e.preventDefault(); setIsDragOver(true) }}
-                  onDragLeave={(e) => { e.preventDefault(); setIsDragOver(false) }}
+                  onDragOver={(event) => {
+                    event.preventDefault()
+                    setIsDragOver(true)
+                  }}
+                  onDragLeave={(event) => {
+                    event.preventDefault()
+                    setIsDragOver(false)
+                  }}
                   onDrop={handleDrop}
                   onClick={() => document.getElementById("esign-file-upload")?.click()}
                 >
@@ -623,13 +539,7 @@ export function EsignInterface() {
                   </Button>
                   <p className="text-sm text-slate-500 mt-4">Supported format: .pdf</p>
                 </div>
-                <input
-                  id="esign-file-upload"
-                  type="file"
-                  accept=".pdf"
-                  className="hidden"
-                  onChange={handleFileSelect}
-                />
+                <input id="esign-file-upload" type="file" accept=".pdf" className="hidden" onChange={handleFileSelect} />
                 <TrustBadges />
               </>
             )}
@@ -639,243 +549,197 @@ export function EsignInterface() {
     )
   }
 
-  // Editor state — PDF loaded
-  const pageSigs = placedSignatures.filter((s) => s.page === currentPage)
-  const totalSigs = placedSignatures.length
+  const pageSignatures = placedSignatures.filter((signature) => signature.page === currentPage)
+  const totalPlaced = placedSignatures.length
 
   return (
-    <section className="py-8">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <>
+      <CreateSignatureModal
+        open={isCreateModalOpen}
+        onOpenChange={setIsCreateModalOpen}
+        onSaved={(signature) => {
+          void fetchSignatures()
+          setSelectedSignatureId(signature.id)
+        }}
+      />
 
-            {/* Left: Signature Panel */}
-            <div className="lg:col-span-1 space-y-4">
-              {/* Signature Creator */}
-              {!signatureReady ? (
-                <div className="bg-white border border-gray-200 rounded-xl p-4">
-                  <h3 className="font-bold text-slate-900 mb-3 text-sm">Create Your Signature</h3>
-
-                  {/* Mode tabs */}
-                  <div className="flex gap-1 mb-4 bg-gray-100 rounded-lg p-1">
-                    <button
-                      className={cn("flex-1 text-xs font-semibold py-2 px-2 rounded-md transition-colors flex items-center justify-center gap-1",
-                        signatureMode === "draw" ? "bg-white text-indigo-700 shadow-sm" : "text-slate-500 hover:text-slate-700"
-                      )}
-                      onClick={() => setSignatureMode("draw")}
-                    >
-                      <PenTool className="h-3 w-3" /> Draw
-                    </button>
-                    <button
-                      className={cn("flex-1 text-xs font-semibold py-2 px-2 rounded-md transition-colors flex items-center justify-center gap-1",
-                        signatureMode === "type" ? "bg-white text-indigo-700 shadow-sm" : "text-slate-500 hover:text-slate-700"
-                      )}
-                      onClick={() => setSignatureMode("type")}
-                    >
-                      <Type className="h-3 w-3" /> Type
-                    </button>
-                    <button
-                      className={cn("flex-1 text-xs font-semibold py-2 px-2 rounded-md transition-colors flex items-center justify-center gap-1",
-                        signatureMode === "upload" ? "bg-white text-indigo-700 shadow-sm" : "text-slate-500 hover:text-slate-700"
-                      )}
-                      onClick={() => setSignatureMode("upload")}
-                    >
-                      <ImageIcon className="h-3 w-3" /> Upload
-                    </button>
+      <section className="py-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-[360px_1fr] gap-6">
+              <div className="space-y-4">
+                <div className="bg-white border border-gray-200 rounded-2xl p-4">
+                  <div className="flex items-start justify-between gap-4 mb-4">
+                    <div>
+                      <h3 className="font-bold text-slate-900">Reusable Signatures</h3>
+                      <p className="text-sm text-slate-500 mt-1">
+                        Create and save a signature or initials for electronic signing.
+                      </p>
+                    </div>
+                    <Button onClick={() => setIsCreateModalOpen(true)} className="bg-slate-900 hover:bg-slate-800 text-white">
+                      <Plus className="h-4 w-4 mr-2" />
+                      Create
+                    </Button>
                   </div>
 
-                  {/* Draw mode */}
-                  {signatureMode === "draw" && (
-                    <div>
-                      <canvas
-                        ref={sigCanvasRef}
-                        width={320}
-                        height={140}
-                        className="w-full border border-gray-300 rounded-lg cursor-crosshair bg-white"
-                        onMouseDown={handleSigMouseDown}
-                        onMouseMove={handleSigMouseMove}
-                        onMouseUp={handleSigMouseUp}
-                        onMouseLeave={handleSigMouseUp}
-                      />
-                      <div className="flex gap-2 mt-3">
-                        <Button size="sm" variant="outline" onClick={clearSigCanvas} className="flex-1 text-xs">
-                          Clear
-                        </Button>
-                        <Button size="sm" onClick={confirmDrawnSignature} className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white text-xs">
-                          Use Signature
-                        </Button>
-                      </div>
-                    </div>
-                  )}
+                  <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 mb-4">
+                    <p className="text-xs text-slate-500">
+                      By placing a saved signature on a PDF, you are applying it as an electronic signature to that document.
+                    </p>
+                  </div>
 
-                  {/* Type mode */}
-                  {signatureMode === "type" && (
-                    <div>
-                      <input
-                        type="text"
-                        placeholder="Type your name..."
-                        value={typedName}
-                        onChange={(e) => setTypedName(e.target.value)}
-                        className="w-full border border-gray-300 rounded-lg px-3 py-2 text-lg mb-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                        style={{ fontFamily: signatureFont === "cursive" ? "'Brush Script MT', 'Segoe Script', cursive" : signatureFont === "serif" ? "'Times New Roman', Georgia, serif" : "'Courier New', monospace" }}
-                      />
-                      <div className="flex gap-2 mb-3">
-                        {["cursive", "serif", "monospace"].map((font) => (
+                  {signatureLoadError && <p className="text-sm text-red-600 mb-3">{signatureLoadError}</p>}
+
+                  {isLoadingSignatures ? (
+                    <div className="py-8 text-center">
+                      <Loader2 className="h-5 w-5 text-slate-500 animate-spin mx-auto mb-2" />
+                      <p className="text-sm text-slate-500">Loading saved signatures...</p>
+                    </div>
+                  ) : signatures.length === 0 ? (
+                    <div className="rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-8 text-center">
+                      <FolderSignature className="h-8 w-8 text-slate-400 mx-auto mb-3" />
+                      <p className="font-semibold text-slate-900">No saved signatures yet</p>
+                      <p className="text-sm text-slate-500 mt-1">Create a reusable signature to start signing PDFs.</p>
+                    </div>
+                  ) : (
+                    <div className="space-y-3 max-h-[520px] overflow-y-auto pr-1">
+                      {signatures.map((signature) => (
+                        <div
+                          key={signature.id}
+                          className={cn(
+                            "rounded-2xl border p-4 transition-colors",
+                            selectedSignatureId === signature.id ? "border-slate-900 bg-slate-50" : "border-slate-200 bg-white"
+                          )}
+                        >
                           <button
-                            key={font}
-                            onClick={() => setSignatureFont(font)}
-                            className={cn(
-                              "flex-1 text-xs py-1.5 rounded-md border transition-colors",
-                              signatureFont === font ? "border-indigo-500 bg-indigo-50 text-indigo-700" : "border-gray-200 text-slate-500 hover:border-gray-300"
-                            )}
-                            style={{ fontFamily: font === "cursive" ? "cursive" : font === "serif" ? "serif" : "monospace" }}
+                            type="button"
+                            onClick={() => setSelectedSignatureId(signature.id)}
+                            className="w-full text-left"
                           >
-                            {font === "cursive" ? "Script" : font === "serif" ? "Serif" : "Mono"}
+                            <div className="mb-3 flex items-center justify-between">
+                              <div className="flex gap-2">
+                                <span className="rounded-full bg-slate-900 text-white px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide">
+                                  {signature.kind}
+                                </span>
+                                <span className="rounded-full bg-slate-100 text-slate-700 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide">
+                                  {signature.method}
+                                </span>
+                              </div>
+                              {selectedSignatureId === signature.id && <CheckCircle className="h-4 w-4 text-slate-900" />}
+                            </div>
+
+                            <div className="rounded-xl border border-dashed border-slate-200 bg-white p-4 min-h-[100px] flex items-center justify-center">
+                              <img src={signature.preview_url || signature.asset_url} alt={`${signature.kind} preview`} className="max-h-16 w-auto" />
+                            </div>
+
+                            <p className="mt-3 text-xs text-slate-500">
+                              Saved {new Date(signature.updated_at).toLocaleString()}
+                            </p>
                           </button>
-                        ))}
-                      </div>
-                      <Button
-                        size="sm"
-                        onClick={confirmTypedSignature}
-                        disabled={!typedName.trim()}
-                        className="w-full bg-indigo-600 hover:bg-indigo-700 text-white text-xs disabled:opacity-50"
-                      >
-                        Use Signature
-                      </Button>
-                    </div>
-                  )}
 
-                  {/* Upload mode */}
-                  {signatureMode === "upload" && (
-                    <div>
-                      <label className="block border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer hover:border-indigo-400 hover:bg-gray-50 transition-colors">
-                        <ImageIcon className="h-8 w-8 text-slate-400 mx-auto mb-2" />
-                        <p className="text-sm text-slate-600 mb-1">Upload signature image</p>
-                        <p className="text-xs text-slate-400">PNG, JPG, or SVG</p>
-                        <input
-                          type="file"
-                          accept="image/*"
-                          className="hidden"
-                          onChange={handleSigImageUpload}
-                        />
-                      </label>
+                          <div className="mt-3 flex gap-2">
+                            <Button
+                              size="sm"
+                              className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white"
+                              onClick={() => {
+                                setSelectedSignatureId(signature.id)
+                                setIsPlacing(true)
+                              }}
+                            >
+                              <PenTool className="h-4 w-4 mr-2" />
+                              Place on PDF
+                            </Button>
+                            <Button size="sm" variant="outline" onClick={() => handleDeleteSavedSignature(signature)}>
+                              <Trash2 className="h-4 w-4" />
+                            </Button>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   )}
                 </div>
-              ) : (
-                <div className="bg-white border border-gray-200 rounded-xl p-4">
-                  <h3 className="font-bold text-slate-900 mb-3 text-sm">Your Signature</h3>
-                  <div className="border border-gray-200 rounded-lg p-2 bg-gray-50 mb-3">
-                    <img src={signatureDataUrl} alt="Your signature" className="max-h-20 mx-auto" />
+
+                {totalPlaced > 0 && (
+                  <div className="bg-white border border-gray-200 rounded-2xl p-4">
+                    <h3 className="font-bold text-slate-900 mb-3">Placed Signatures ({totalPlaced})</h3>
+                    <div className="space-y-2 max-h-48 overflow-y-auto">
+                      {placedSignatures.map((signature, index) => (
+                        <div key={signature.id} className="flex items-center justify-between bg-slate-50 rounded-lg px-3 py-2">
+                          <span className="text-xs text-slate-600">
+                            {signature.kind === "initials" ? "Initials" : "Signature"} {index + 1} — Page {signature.page + 1}
+                          </span>
+                          <button onClick={() => removePlacedSignature(signature.id)} className="text-red-400 hover:text-red-600">
+                            <Trash2 className="h-3.5 w-3.5" />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <div className="flex gap-2">
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      onClick={() => { setSignatureReady(false); setSignatureDataUrl("") }}
-                      className="flex-1 text-xs"
-                    >
-                      Change
-                    </Button>
-                    <Button
-                      size="sm"
-                      onClick={() => setIsPlacing(true)}
-                      className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white text-xs"
-                    >
-                      <PenTool className="h-3 w-3 mr-1" />
-                      Place on PDF
-                    </Button>
-                  </div>
-                </div>
-              )}
+                )}
 
-              {/* Placed signatures list */}
-              {totalSigs > 0 && (
-                <div className="bg-white border border-gray-200 rounded-xl p-4">
-                  <h3 className="font-bold text-slate-900 mb-3 text-sm">
-                    Placed Signatures ({totalSigs})
-                  </h3>
-                  <div className="space-y-2 max-h-48 overflow-y-auto">
-                    {placedSignatures.map((sig, i) => (
-                      <div key={sig.id} className="flex items-center justify-between bg-gray-50 rounded-lg px-3 py-2">
-                        <span className="text-xs text-slate-600">
-                          Signature {i + 1} — Page {sig.page + 1}
-                        </span>
-                        <button onClick={() => removeSignature(sig.id)} className="text-red-400 hover:text-red-600">
-                          <Trash2 className="h-3.5 w-3.5" />
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Apply Button */}
-              <Button
-                onClick={applySignatures}
-                disabled={totalSigs === 0}
-                className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-base py-3 disabled:opacity-50"
-                size="lg"
-              >
-                <PenTool className="h-5 w-5 mr-2" />
-                Apply {totalSigs} Signature{totalSigs !== 1 ? "s" : ""}
-              </Button>
-            </div>
-
-            {/* Right: PDF Preview */}
-            <div className="lg:col-span-2">
-              {/* Toolbar */}
-              <div className="bg-white border border-gray-200 rounded-xl p-3 mb-3 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <FileText className="h-4 w-4 text-indigo-600" />
-                  <span className="font-bold text-slate-900 text-sm truncate max-w-[180px]">{file.name}</span>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <Button variant="outline" size="sm" disabled={currentPage === 0} onClick={() => setCurrentPage((p) => p - 1)}>
-                    <ChevronLeft className="h-4 w-4" />
-                  </Button>
-                  <span className="text-sm font-medium text-slate-700 min-w-[80px] text-center">
-                    Page {currentPage + 1} of {totalPages}
-                  </span>
-                  <Button variant="outline" size="sm" disabled={currentPage === totalPages - 1} onClick={() => setCurrentPage((p) => p + 1)}>
-                    <ChevronRight className="h-4 w-4" />
-                  </Button>
-                </div>
-
-                <Button variant="outline" size="sm" onClick={resetInterface} className="text-xs">
-                  <X className="h-3 w-3 mr-1" /> New File
+                <Button
+                  onClick={applySignatures}
+                  disabled={totalPlaced === 0}
+                  className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-base py-3 disabled:opacity-50"
+                  size="lg"
+                >
+                  <PenTool className="h-5 w-5 mr-2" />
+                  Apply {totalPlaced} Signature{totalPlaced !== 1 ? "s" : ""}
                 </Button>
               </div>
 
-              {/* Placing instruction */}
-              {isPlacing && (
-                <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-3 mb-3 text-center">
-                  <p className="text-sm text-indigo-800 font-medium">
-                    Click on the PDF where you want to place your signature.
-                  </p>
+              <div>
+                <div className="bg-white border border-gray-200 rounded-xl p-3 mb-3 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <FileText className="h-4 w-4 text-indigo-600" />
+                    <span className="font-bold text-slate-900 text-sm truncate max-w-[220px]">{file.name}</span>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <Button variant="outline" size="sm" disabled={currentPage === 0} onClick={() => setCurrentPage((page) => page - 1)}>
+                      <ChevronLeft className="h-4 w-4" />
+                    </Button>
+                    <span className="text-sm font-medium text-slate-700 min-w-[92px] text-center">
+                      Page {currentPage + 1} of {totalPages}
+                    </span>
+                    <Button variant="outline" size="sm" disabled={currentPage === totalPages - 1} onClick={() => setCurrentPage((page) => page + 1)}>
+                      <ChevronRight className="h-4 w-4" />
+                    </Button>
+                  </div>
+
+                  <Button variant="outline" size="sm" onClick={resetInterface} className="text-xs">
+                    <X className="h-3 w-3 mr-1" />
+                    New File
+                  </Button>
                 </div>
-              )}
 
-              {/* Canvas */}
-              <div ref={containerRef} className="bg-gray-100 rounded-xl border border-gray-200 overflow-hidden">
-                <canvas
-                  ref={canvasRef}
-                  className={cn("w-full block", isPlacing ? "cursor-pointer" : "cursor-default")}
-                  onClick={handlePdfClick}
-                  onMouseMove={handlePdfMouseMove}
-                />
+                {isPlacing && (
+                  <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-3 mb-3 text-center">
+                    <p className="text-sm text-indigo-800 font-medium">
+                      Click on the PDF where you want to place your {selectedSignature?.kind === "initials" ? "initials" : "signature"}.
+                    </p>
+                  </div>
+                )}
+
+                <div ref={containerRef} className="bg-gray-100 rounded-xl border border-gray-200 overflow-hidden">
+                  <canvas
+                    ref={canvasRef}
+                    className={cn("w-full block", isPlacing ? "cursor-pointer" : "cursor-default")}
+                    onClick={handlePdfClick}
+                    onMouseMove={handlePdfMouseMove}
+                  />
+                </div>
+
+                {pageSignatures.length > 0 && (
+                  <p className="text-xs text-slate-500 mt-2 text-center">
+                    {pageSignatures.length} signature{pageSignatures.length !== 1 ? "s" : ""} on this page
+                  </p>
+                )}
               </div>
-
-              {pageSigs.length > 0 && (
-                <p className="text-xs text-slate-500 mt-2 text-center">
-                  {pageSigs.length} signature{pageSigs.length !== 1 ? "s" : ""} on this page
-                </p>
-              )}
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }

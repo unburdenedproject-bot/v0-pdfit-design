@@ -57,7 +57,6 @@ function errorResponse(message, status = 500) {
 export async function POST(request) {
   let tmpPath = null;
   let uploadedBlobUrl = null;
-  const signatureBlobUrls = [];
 
   try {
     // Auth: Business plan only
@@ -84,13 +83,6 @@ export async function POST(request) {
     const signatures = body.signatures;
     if (!Array.isArray(signatures) || signatures.length === 0) {
       return errorResponse("No signatures specified.", 400);
-    }
-
-    // Collect signature blob URLs for cleanup
-    for (const sig of signatures) {
-      if (sig.signatureBlobUrl && typeof sig.signatureBlobUrl === "string") {
-        signatureBlobUrls.push(sig.signatureBlobUrl);
-      }
     }
 
     // Download PDF
@@ -150,7 +142,6 @@ export async function POST(request) {
     if (uploadedBlobUrl) {
       await del(uploadedBlobUrl).catch(() => {});
     }
-    await Promise.allSettled(signatureBlobUrls.map((url) => del(url)));
     await unlink(tmpPath).catch(() => {});
     tmpPath = null;
 
@@ -170,7 +161,6 @@ export async function POST(request) {
     });
   } catch (err) {
     if (tmpPath) await unlink(tmpPath).catch(() => {});
-    await Promise.allSettled(signatureBlobUrls.map((url) => del(url)));
 
     console.error("esign route error:", err);
 
