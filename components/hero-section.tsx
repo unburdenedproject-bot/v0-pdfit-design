@@ -26,7 +26,8 @@ export function HeroSection() {
             PDF Tools Built for Legal, Accounting, Business Teams <span className="text-orange-500">and for Your Everyday Student</span>
           </h1>
           <p className="text-lg sm:text-xl lg:text-2xl text-slate-300 mb-6 font-medium leading-relaxed max-w-3xl mx-auto text-pretty">
-            Compress, convert, extract tables, sign, and redact - in English, Spanish, and Portuguese. Now with AI ATS resume optimization and an AI resume builder.
+            Compress, convert, extract tables, sign, and redact - in English, Spanish, and Portuguese.{" "}
+            <span className="text-orange-400">Now with AI ATS resume optimization and an AI resume builder.</span>
           </p>
 
           <div className="flex flex-wrap justify-center gap-6 mb-6 text-sm font-semibold">
