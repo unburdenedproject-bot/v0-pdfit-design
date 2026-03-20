@@ -86,52 +86,74 @@ export function EsignInterface() {
     const canvas = canvasRef.current
     const container = containerRef.current
     if (!canvas || !container || pageImages.length === 0) return
+    const pageImage = pageImages[currentPage]
+    if (!pageImage) return
 
     const ctx = canvas.getContext("2d")
     if (!ctx) return
 
     const img = new window.Image()
     img.onload = () => {
-      const containerWidth = container.clientWidth
-      const scale = containerWidth / img.width
-      const displayWidth = containerWidth
-      const displayHeight = img.height * scale
+      try {
+        const containerWidth = container.clientWidth
+        if (!containerWidth || !img.width || !img.height) return
 
-      canvas.width = displayWidth
-      canvas.height = displayHeight
+        const scale = containerWidth / img.width
+        const displayWidth = containerWidth
+        const displayHeight = img.height * scale
 
-      ctx.clearRect(0, 0, displayWidth, displayHeight)
-      ctx.drawImage(img, 0, 0, displayWidth, displayHeight)
+        canvas.width = displayWidth
+        canvas.height = displayHeight
 
-      const pageSigs = placedSignatures.filter((signature) => signature.page === currentPage)
-      for (const signature of pageSigs) {
-        const sigImg = new window.Image()
-        sigImg.onload = () => {
-          ctx.drawImage(
-            sigImg,
-            signature.x * displayWidth,
-            signature.y * displayHeight,
-            signature.width * displayWidth,
-            signature.height * displayHeight
-          )
+        ctx.clearRect(0, 0, displayWidth, displayHeight)
+        ctx.drawImage(img, 0, 0, displayWidth, displayHeight)
+
+        const pageSigs = placedSignatures.filter((signature) => signature.page === currentPage)
+        for (const signature of pageSigs) {
+          const sigImg = new window.Image()
+          sigImg.onload = () => {
+            try {
+              ctx.drawImage(
+                sigImg,
+                signature.x * displayWidth,
+                signature.y * displayHeight,
+                signature.width * displayWidth,
+                signature.height * displayHeight
+              )
+            } catch (error) {
+              console.error("Failed to render placed signature preview:", error)
+            }
+          }
+          sigImg.src = signature.assetUrl
         }
-        sigImg.src = signature.assetUrl
-      }
 
-      if (isPlacing && placingPreview && selectedSignature?.assetUrl) {
-        const previewImg = new window.Image()
-        previewImg.onload = () => {
-          const sigW = selectedSignature.kind === "initials" ? 140 : 220
-          const sigH = selectedSignature.kind === "initials" ? 70 : 90
-          ctx.globalAlpha = 0.6
-          ctx.drawImage(previewImg, placingPreview.x - sigW / 2, placingPreview.y - sigH / 2, sigW, sigH)
-          ctx.globalAlpha = 1
+        if (isPlacing && placingPreview && selectedSignature?.assetUrl) {
+          const previewImg = new window.Image()
+          previewImg.onload = () => {
+            try {
+              const sigW = selectedSignature.kind === "initials" ? 140 : 220
+              const sigH = selectedSignature.kind === "initials" ? 70 : 90
+              ctx.globalAlpha = 0.6
+              ctx.drawImage(previewImg, placingPreview.x - sigW / 2, placingPreview.y - sigH / 2, sigW, sigH)
+              ctx.globalAlpha = 1
+            } catch (error) {
+              console.error("Failed to render active signature preview:", error)
+            }
+          }
+          previewImg.src = selectedSignature.assetUrl
         }
-        previewImg.src = selectedSignature.assetUrl
+      } catch (error) {
+        console.error("Failed to render PDF page preview:", error)
+        setHasError(true)
+        setErrorMessage("Failed to render the PDF preview.")
       }
     }
+    img.onerror = () => {
+      setHasError(true)
+      setErrorMessage("Failed to load the PDF page preview.")
+    }
 
-    img.src = pageImages[currentPage]
+    img.src = pageImage
   }, [pageImages, currentPage, placedSignatures, isPlacing, placingPreview, selectedSignature])
 
   useEffect(() => {
@@ -147,8 +169,13 @@ export function EsignInterface() {
   const loadPdf = useCallback(async (pdfFile: File) => {
     setIsLoadingPdf(true)
     setHasError(false)
+    setErrorMessage("")
 
     try {
+      if (pdfFile.type && pdfFile.type !== "application/pdf") {
+        throw new Error("Please upload a valid PDF file.")
+      }
+
       const pdfjsLib = await import("pdfjs-dist")
       pdfjsLib.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs"
 
