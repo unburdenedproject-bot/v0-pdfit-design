@@ -23,10 +23,10 @@ export function HeroSection() {
             </Link>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black mb-4 leading-tight text-balance">
-            AI PDF Tools, <span className="text-orange-500">ATS Resume Optimizer</span>, and AI Resume Builder
+            PDF Tools Built for Legal, Accounting, Business Teams <span className="text-orange-500">and for Your Everyday Student</span>
           </h1>
           <p className="text-lg sm:text-xl lg:text-2xl text-slate-300 mb-6 font-medium leading-relaxed max-w-3xl mx-auto text-pretty">
-            Compress, convert, merge, split, and edit PDFs online. Score your resume with AI ATS analysis or build a professional ATS-friendly resume in minutes.
+            Compress, convert, extract tables, sign, and redact - in English, Spanish, and Portuguese. Now with AI ATS resume optimization and an AI resume builder.
           </p>
 
           <div className="flex flex-wrap justify-center gap-6 mb-6 text-sm font-semibold">
@@ -49,7 +49,7 @@ export function HeroSection() {
           </div>
 
           <p className="text-sm text-slate-400 mb-8 max-w-xl mx-auto leading-relaxed">
-            Get 10 free conversions per day. Upgrade for unlimited PDF tools, AI resume writing, and AI ATS resume optimization.
+            Get 10 free conversions per day. Upgrade for unlimited access, larger files, and AI resume tools.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
