@@ -19,10 +19,137 @@ interface CreateSignatureModalProps {
   open: boolean
   onOpenChange: (open: boolean) => void
   onSaved: (signature: SignatureSessionAsset) => void
+  locale?: "en" | "es" | "br"
 }
 
-export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSignatureModalProps) {
+export function CreateSignatureModal({ open, onOpenChange, onSaved, locale = "en" }: CreateSignatureModalProps) {
   const padRef = useRef<SignaturePadHandle>(null)
+  const modalCopy =
+    locale === "es"
+      ? {
+          title: "Crear Firma",
+          description: "Crea una firma electrónica o iniciales para este PDF. OmniSPDF no guarda datos de firma después de tu sesión.",
+          signature: "Firma",
+          initials: "Iniciales",
+          type: "Escribir",
+          draw: "Dibujar",
+          upload: "Subir",
+          fullName: "Nombre completo",
+          initialsLabel: "Iniciales",
+          fullNamePlaceholder: "Escribe tu nombre completo",
+          initialsPlaceholder: "Escribe tus iniciales",
+          inkColor: "Color de tinta",
+          strokeWeight: "Grosor del trazo",
+          enterPreviewName: "Escribe tu nombre para ver la vista previa",
+          enterPreviewInitials: "Escribe tus iniciales para ver la vista previa",
+          undo: "Deshacer",
+          clear: "Limpiar",
+          retry: "Reintentar",
+          uploadTitle: "Sube una imagen de tu firma",
+          scale: "Escala",
+          horizontalFit: "Ajuste horizontal",
+          verticalFit: "Ajuste vertical",
+          previewArea: "Área de vista previa",
+          documentPreview: "Vista previa del documento",
+          confirmation: "Confirmación de firma electrónica",
+          consent: "Al continuar, aceptas usar esto como tu firma electrónica.",
+          invalidUpload: "Sube una imagen de firma en PNG, JPG, JPEG o WEBP.",
+          typedRequired: "Escribe tu nombre completo para crear una firma.",
+          initialsRequired: "Escribe iniciales para crearlas.",
+          drawSignatureRequired: "Dibuja tu firma antes de continuar.",
+          drawInitialsRequired: "Dibuja tus iniciales antes de continuar.",
+          uploadSignatureRequired: "Sube una imagen de tu firma antes de continuar.",
+          uploadInitialsRequired: "Sube una imagen de tus iniciales antes de continuar.",
+          prepareFailed: "No se pudo preparar la firma.",
+          useSignature: "Usar firma",
+          useInitials: "Usar iniciales",
+          preparingSignature: "Preparando firma",
+          preparingInitials: "Preparando iniciales",
+          cancel: "Cancelar",
+        }
+      : locale === "br"
+        ? {
+            title: "Criar Assinatura",
+            description: "Crie uma assinatura eletrônica ou iniciais para este PDF. OmniSPDF não armazena dados de assinatura após a sua sessão.",
+            signature: "Assinatura",
+            initials: "Iniciais",
+            type: "Digitar",
+            draw: "Desenhar",
+            upload: "Enviar",
+            fullName: "Nome completo",
+            initialsLabel: "Iniciais",
+            fullNamePlaceholder: "Digite seu nome completo",
+            initialsPlaceholder: "Digite suas iniciais",
+            inkColor: "Cor da tinta",
+            strokeWeight: "Espessura do traço",
+            enterPreviewName: "Digite seu nome para ver a prévia",
+            enterPreviewInitials: "Digite suas iniciais para ver a prévia",
+            undo: "Desfazer",
+            clear: "Limpar",
+            retry: "Tentar novamente",
+            uploadTitle: "Envie uma imagem da assinatura",
+            scale: "Escala",
+            horizontalFit: "Ajuste horizontal",
+            verticalFit: "Ajuste vertical",
+            previewArea: "Área de pré-visualização",
+            documentPreview: "Prévia do documento",
+            confirmation: "Confirmação de assinatura eletrônica",
+            consent: "Ao continuar, você concorda em usar isso como sua assinatura eletrônica.",
+            invalidUpload: "Envie uma imagem de assinatura em PNG, JPG, JPEG ou WEBP.",
+            typedRequired: "Digite seu nome completo para criar uma assinatura.",
+            initialsRequired: "Digite iniciais para criá-las.",
+            drawSignatureRequired: "Desenhe sua assinatura antes de continuar.",
+            drawInitialsRequired: "Desenhe suas iniciais antes de continuar.",
+            uploadSignatureRequired: "Envie uma imagem da sua assinatura antes de continuar.",
+            uploadInitialsRequired: "Envie uma imagem das suas iniciais antes de continuar.",
+            prepareFailed: "Não foi possível preparar a assinatura.",
+            useSignature: "Usar assinatura",
+            useInitials: "Usar iniciais",
+            preparingSignature: "Preparando assinatura",
+            preparingInitials: "Preparando iniciais",
+            cancel: "Cancelar",
+          }
+        : {
+            title: "Create Signature",
+            description: "Create an electronic signature or initials for this PDF. OmniSPDF does not store signature data after your session.",
+            signature: "Signature",
+            initials: "Initials",
+            type: "Type",
+            draw: "Draw",
+            upload: "Upload",
+            fullName: "Full name",
+            initialsLabel: "Initials",
+            fullNamePlaceholder: "Enter your full name",
+            initialsPlaceholder: "Enter your initials",
+            inkColor: "Ink color",
+            strokeWeight: "Stroke weight",
+            enterPreviewName: "Enter your name to preview",
+            enterPreviewInitials: "Enter your initials to preview",
+            undo: "Undo",
+            clear: "Clear",
+            retry: "Retry",
+            uploadTitle: "Upload a signature image",
+            scale: "Scale",
+            horizontalFit: "Horizontal fit",
+            verticalFit: "Vertical fit",
+            previewArea: "Preview area",
+            documentPreview: "Document Preview",
+            confirmation: "Electronic signature confirmation",
+            consent: "By continuing, you agree to use this as your electronic signature.",
+            invalidUpload: "Please upload a PNG, JPG, JPEG, or WEBP signature image.",
+            typedRequired: "Enter your full name to create a signature.",
+            initialsRequired: "Enter initials to create initials.",
+            drawSignatureRequired: "Draw your signature before continuing.",
+            drawInitialsRequired: "Draw your initials before continuing.",
+            uploadSignatureRequired: "Upload an image of your signature before continuing.",
+            uploadInitialsRequired: "Upload an image of your initials before continuing.",
+            prepareFailed: "Failed to prepare signature.",
+            useSignature: "Use signature",
+            useInitials: "Use initials",
+            preparingSignature: "Preparing signature",
+            preparingInitials: "Preparing initials",
+            cancel: "Cancel",
+          }
 
   const [activeTab, setActiveTab] = useState<SignatureTab>("type")
   const [signatureKind, setSignatureKind] = useState<SignatureKind>("signature")
@@ -87,7 +214,7 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
     if (!file) return
 
     if (!["image/png", "image/jpeg", "image/jpg", "image/webp"].includes(file.type)) {
-      setError("Please upload a PNG, JPG, JPEG, or WEBP signature image.")
+      setError(modalCopy.invalidUpload)
       return
     }
 
@@ -117,7 +244,7 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
 
       if (activeTab === "type") {
         if (!normalizedTypedValue || !typedPreviewMarkup) {
-          throw new Error(signatureKind === "signature" ? "Enter your full name to create a signature." : "Enter initials to create initials.")
+          throw new Error(signatureKind === "signature" ? modalCopy.typedRequired : modalCopy.initialsRequired)
         }
         pngBlob = await svgMarkupToPngBlob(typedPreviewMarkup, width, height)
         method = "typed"
@@ -130,7 +257,7 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
         }
       } else if (activeTab === "draw") {
         if (!padRef.current?.hasSignature()) {
-          throw new Error(`Draw your ${signatureKind} before continuing.`)
+          throw new Error(signatureKind === "signature" ? modalCopy.drawSignatureRequired : modalCopy.drawInitialsRequired)
         }
         const drawnAsset = await padRef.current.exportSignature()
         pngBlob = drawnAsset.pngBlob
@@ -140,7 +267,7 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
         height = drawnAsset.height
       } else {
         if (!uploadPreview) {
-          throw new Error(`Upload an image of your ${signatureKind} before continuing.`)
+          throw new Error(signatureKind === "signature" ? modalCopy.uploadSignatureRequired : modalCopy.uploadInitialsRequired)
         }
         pngBlob = await exportUploadPreviewToBlob({
           source: uploadPreview,
@@ -182,7 +309,7 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
       onSaved(signature)
       handleClose(false)
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to prepare signature.")
+      setError(err instanceof Error ? err.message : modalCopy.prepareFailed)
     } finally {
       setIsSaving(false)
     }
@@ -192,9 +319,9 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
     <Dialog open={open} onOpenChange={handleClose}>
       <DialogContent className="max-w-5xl max-h-[92vh] p-0 overflow-hidden">
         <DialogHeader className="border-b border-slate-200 px-6 py-5">
-          <DialogTitle className="text-2xl font-black text-slate-900">Create Signature</DialogTitle>
+          <DialogTitle className="text-2xl font-black text-slate-900">{modalCopy.title}</DialogTitle>
           <DialogDescription className="text-slate-600">
-            Create an electronic signature or initials for this PDF. OmniSPDF does not store signature data after your session.
+            {modalCopy.description}
           </DialogDescription>
         </DialogHeader>
 
@@ -211,7 +338,7 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
                     signatureKind === kind ? "bg-white text-slate-900 shadow-sm" : "text-slate-500 hover:text-slate-700"
                   )}
                 >
-                  {kind === "signature" ? "Signature" : "Initials"}
+                  {kind === "signature" ? modalCopy.signature : modalCopy.initials}
                 </button>
               ))}
             </div>
@@ -220,34 +347,34 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
               <TabsList className="grid w-full grid-cols-3 bg-slate-100">
                 <TabsTrigger value="type" className="gap-2">
                   <Type className="h-4 w-4" />
-                  Type
+                  {modalCopy.type}
                 </TabsTrigger>
                 <TabsTrigger value="draw" className="gap-2">
                   <PenLine className="h-4 w-4" />
-                  Draw
+                  {modalCopy.draw}
                 </TabsTrigger>
                 <TabsTrigger value="upload" className="gap-2">
                   <ImagePlus className="h-4 w-4" />
-                  Upload
+                  {modalCopy.upload}
                 </TabsTrigger>
               </TabsList>
 
               <TabsContent value="type" className="mt-5 space-y-5">
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-slate-700">
-                    {signatureKind === "signature" ? "Full name" : "Initials"}
+                    {signatureKind === "signature" ? modalCopy.fullName : modalCopy.initialsLabel}
                   </label>
                   <Input
                     value={typedValue}
                     onChange={(event) => setTypedValue(event.target.value)}
-                    placeholder={signatureKind === "signature" ? "Enter your full name" : "Enter your initials"}
+                    placeholder={signatureKind === "signature" ? modalCopy.fullNamePlaceholder : modalCopy.initialsPlaceholder}
                     className="h-12 text-base"
                   />
                 </div>
 
                 <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-end">
                   <div className="space-y-2">
-                    <p className="text-sm font-semibold text-slate-700">Ink color</p>
+                    <p className="text-sm font-semibold text-slate-700">{modalCopy.inkColor}</p>
                     <div className="flex gap-2">
                       {SIGNATURE_COLORS.map((color) => (
                         <button
@@ -267,7 +394,7 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
                   </div>
 
                   <div className="w-full md:w-48 space-y-2">
-                    <p className="text-sm font-semibold text-slate-700">Stroke weight</p>
+                    <p className="text-sm font-semibold text-slate-700">{modalCopy.strokeWeight}</p>
                     <Slider value={[strokeWidth]} min={1.4} max={4} step={0.2} onValueChange={(values) => setStrokeWidth(values[0] ?? 2.2)} />
                   </div>
                 </div>
@@ -302,7 +429,7 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
                           {variantSvg ? (
                             <img src={svgToDataUrl(variantSvg)} alt={variant.label} className="max-h-20 w-auto" />
                           ) : (
-                            <span className="text-sm text-slate-400">Enter {signatureKind === "signature" ? "your name" : "your initials"} to preview</span>
+                            <span className="text-sm text-slate-400">{signatureKind === "signature" ? modalCopy.enterPreviewName : modalCopy.enterPreviewInitials}</span>
                           )}
                         </div>
                       </button>
@@ -314,7 +441,7 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
               <TabsContent value="draw" className="mt-5 space-y-5">
                 <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-end">
                   <div className="space-y-2">
-                    <p className="text-sm font-semibold text-slate-700">Ink color</p>
+                    <p className="text-sm font-semibold text-slate-700">{modalCopy.inkColor}</p>
                     <div className="flex gap-2">
                       {SIGNATURE_COLORS.map((color) => (
                         <button
@@ -334,7 +461,7 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
                   </div>
 
                   <div className="w-full md:w-48 space-y-2">
-                    <p className="text-sm font-semibold text-slate-700">Stroke weight</p>
+                    <p className="text-sm font-semibold text-slate-700">{modalCopy.strokeWeight}</p>
                     <Slider value={[strokeWidth]} min={1.6} max={4.8} step={0.2} onValueChange={(values) => setStrokeWidth(values[0] ?? 2.2)} />
                   </div>
                 </div>
@@ -351,15 +478,15 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
                 <div className="flex flex-wrap gap-2">
                   <Button type="button" variant="outline" onClick={() => padRef.current?.undo()} className="gap-2">
                     <Undo2 className="h-4 w-4" />
-                    Undo
+                    {modalCopy.undo}
                   </Button>
                   <Button type="button" variant="outline" onClick={() => padRef.current?.clear()} className="gap-2">
                     <Eraser className="h-4 w-4" />
-                    Clear
+                    {modalCopy.clear}
                   </Button>
                   <Button type="button" variant="outline" onClick={() => padRef.current?.clear()} className="gap-2">
                     <RotateCcw className="h-4 w-4" />
-                    Retry
+                    {modalCopy.retry}
                   </Button>
                 </div>
               </TabsContent>
@@ -370,7 +497,7 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
                     <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-white border border-slate-200">
                       <ImagePlus className="h-5 w-5 text-slate-600" />
                     </div>
-                    <p className="font-semibold text-slate-900">Upload a signature image</p>
+                    <p className="font-semibold text-slate-900">{modalCopy.uploadTitle}</p>
                     <p className="mt-1 text-sm text-slate-500">PNG, JPG, JPEG, or WEBP. Transparent PNG works best.</p>
                     <input type="file" accept="image/png,image/jpeg,image/jpg,image/webp" className="hidden" onChange={handleUploadFile} />
                   </label>
@@ -378,21 +505,21 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
 
                 <div className="grid gap-4 md:grid-cols-3">
                   <div className="space-y-2">
-                    <p className="text-sm font-semibold text-slate-700">Scale</p>
+                    <p className="text-sm font-semibold text-slate-700">{modalCopy.scale}</p>
                     <Slider value={[uploadScale]} min={0.7} max={2.2} step={0.05} onValueChange={(values) => setUploadScale(values[0] ?? 1)} />
                   </div>
                   <div className="space-y-2">
-                    <p className="text-sm font-semibold text-slate-700">Horizontal fit</p>
+                    <p className="text-sm font-semibold text-slate-700">{modalCopy.horizontalFit}</p>
                     <Slider value={[uploadOffsetX]} min={-180} max={180} step={2} onValueChange={(values) => setUploadOffsetX(values[0] ?? 0)} />
                   </div>
                   <div className="space-y-2">
-                    <p className="text-sm font-semibold text-slate-700">Vertical fit</p>
+                    <p className="text-sm font-semibold text-slate-700">{modalCopy.verticalFit}</p>
                     <Slider value={[uploadOffsetY]} min={-90} max={90} step={2} onValueChange={(values) => setUploadOffsetY(values[0] ?? 0)} />
                   </div>
                 </div>
 
                 <div className="rounded-2xl border border-slate-200 bg-white p-4">
-                  <div className="mb-2 text-sm font-semibold text-slate-700">Preview area</div>
+                  <div className="mb-2 text-sm font-semibold text-slate-700">{modalCopy.previewArea}</div>
                   <div className="relative flex h-48 items-center justify-center overflow-hidden rounded-xl border border-dashed border-slate-300 bg-slate-50">
                     {uploadPreview ? (
                       <img
@@ -417,7 +544,7 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
 
           <aside className="bg-slate-50 px-6 py-5 lg:overflow-y-auto">
             <div className="rounded-2xl border border-slate-200 bg-white p-5">
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Document Preview</h3>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">{modalCopy.documentPreview}</h3>
               <p className="text-sm text-slate-500 mb-4">
                 This signature is prepared locally in your browser and used only for the current PDF signing session.
               </p>
@@ -440,11 +567,11 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
               </div>
 
               <div className="space-y-3 rounded-xl border border-slate-200 bg-slate-50 p-4">
-                <p className="text-sm font-semibold text-slate-800">Electronic signature confirmation</p>
+                <p className="text-sm font-semibold text-slate-800">{modalCopy.confirmation}</p>
                 <div className="flex items-start gap-3">
                   <Checkbox id="signature-consent" checked={consentChecked} onCheckedChange={(value) => setConsentChecked(Boolean(value))} />
                   <label htmlFor="signature-consent" className="text-sm leading-6 text-slate-600">
-                    By saving this signature, you agree to use it as your electronic signature.
+                    {modalCopy.consent}
                   </label>
                 </div>
                 <p className="text-xs text-slate-500">
@@ -459,14 +586,14 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
                   {isSaving ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Preparing {signatureKind}
+                      {signatureKind === "signature" ? modalCopy.preparingSignature : modalCopy.preparingInitials}
                     </>
                   ) : (
-                    `Use ${signatureKind}`
+                    signatureKind === "signature" ? modalCopy.useSignature : modalCopy.useInitials
                   )}
                 </Button>
                 <Button variant="outline" onClick={() => handleClose(false)} disabled={isSaving}>
-                  Cancel
+                  {modalCopy.cancel}
                 </Button>
               </div>
             </div>

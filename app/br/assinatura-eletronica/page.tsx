@@ -40,6 +40,16 @@ const faqSchema = {
       "name": "A Assinatura Eletrônica é grátis?",
       "acceptedAnswer": { "@type": "Answer", "text": "A Assinatura Eletrônica está disponível como função do plano Business por $13,99/mês. Inclui o editor de assinaturas junto com outras ferramentas Business como Automação de Fluxos, Redação de PDF, Comparar PDF e Extração de Tabelas." }
     },
+    {
+      "@type": "Question",
+      "name": "Como adiciono uma assinatura a um PDF?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF, crie sua assinatura desenhando, digitando ou enviando uma imagem. Depois clique em Posicionar no PDF e clique no ponto do documento onde deseja que a assinatura apareça. Quando terminar, clique em Aplicar assinaturas para incorporá-las e baixar o PDF assinado." }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso remover uma assinatura posicionada antes de aplicar?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Antes de aplicar as assinaturas, você pode remover qualquer assinatura posicionada pela lista lateral. Depois de aplicar e baixar, as assinaturas ficam incorporadas permanentemente." }
+    },
   ]
 }
 
@@ -80,7 +90,7 @@ export default function AssinaturaEletronicaPagePt() {
         </section>
 
         {/* eSign Interface */}
-        <EsignInterface />
+        <EsignInterface locale="br" />
 
         {/* How It Works */}
         <section className="py-16 bg-gray-50">
@@ -163,6 +173,8 @@ export default function AssinaturaEletronicaPagePt() {
                 { q: "Posso assinar múltiplas páginas?", a: "Sim. Você pode navegar por todas as páginas e colocar assinaturas em qualquer página. Também pode colocar múltiplas assinaturas em uma única página." },
                 { q: "Quais opções de assinatura existem?", a: "Você pode desenhar à mão livre, digitar seu nome e escolher uma fonte, ou enviar uma imagem da sua assinatura manuscrita." },
                 { q: "É grátis?", a: "A Assinatura Eletrônica está disponível como função do plano Business por $13,99/mês." },
+                { q: "Como adiciono uma assinatura a um PDF?", a: "Envie seu PDF, crie sua assinatura desenhando, digitando ou enviando uma imagem. Clique em Posicionar no PDF e depois no local onde deseja a assinatura. Quando terminar, clique em Aplicar assinaturas para incorporá-las e baixar o PDF assinado." },
+                { q: "Posso remover uma assinatura posicionada antes de aplicar?", a: "Sim. Antes de aplicar as assinaturas, você pode remover qualquer assinatura posicionada pela lista lateral. Depois de aplicar e baixar, as assinaturas ficam incorporadas permanentemente." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

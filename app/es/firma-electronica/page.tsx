@@ -40,6 +40,16 @@ const faqSchema = {
       "name": "¿La Firma Electrónica es gratis?",
       "acceptedAnswer": { "@type": "Answer", "text": "La Firma Electrónica está disponible como función del plan Business por $13.99/mes. Incluye el editor de firmas junto con otras herramientas Business como Automatización de Flujos, Redacción de PDF, Comparar PDF y Extracción de Tablas." }
     },
+    {
+      "@type": "Question",
+      "name": "¿Cómo agrego una firma a un PDF?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF, crea tu firma dibujando, escribiendo o subiendo una imagen. Luego haz clic en Colocar en PDF y haz clic en el lugar del documento donde quieres que aparezca la firma. Cuando termines, haz clic en Aplicar firmas para incrustarlas y descargar tu PDF firmado." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo quitar una firma colocada antes de aplicar?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Antes de aplicar las firmas, puedes eliminar cualquier firma colocada desde la lista lateral. Una vez aplicadas y descargadas, las firmas quedan incrustadas permanentemente." }
+    },
   ]
 }
 
@@ -80,7 +90,7 @@ export default function EsignPageEs() {
         </section>
 
         {/* eSign Interface */}
-        <EsignInterface />
+        <EsignInterface locale="es" />
 
         {/* How It Works */}
         <section className="py-16 bg-gray-50">
@@ -163,6 +173,8 @@ export default function EsignPageEs() {
                 { q: "¿Puedo firmar múltiples páginas?", a: "Sí. Puedes navegar por todas las páginas y colocar firmas en cualquier página. También puedes colocar múltiples firmas en una sola página." },
                 { q: "¿Qué opciones de firma hay?", a: "Puedes dibujar a mano alzada, escribir tu nombre y elegir una fuente, o subir una imagen de tu firma manuscrita." },
                 { q: "¿Es gratis?", a: "La Firma Electrónica está disponible como función del plan Business por $13.99/mes." },
+                { q: "¿Cómo agrego una firma a un PDF?", a: "Sube tu PDF, crea tu firma dibujando, escribiendo o subiendo una imagen. Haz clic en Colocar en PDF y luego en el lugar donde quieres la firma. Cuando termines, haz clic en Aplicar firmas para incrustarlas y descargar el PDF firmado." },
+                { q: "¿Puedo quitar una firma colocada antes de aplicar?", a: "Sí. Antes de aplicar las firmas, puedes quitar cualquier firma colocada desde la lista lateral. Una vez aplicadas y descargadas, las firmas quedan incrustadas permanentemente." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

@@ -90,7 +90,7 @@ export default function EsignPage() {
         </section>
 
         {/* eSign Interface */}
-        <EsignInterface />
+        <EsignInterface locale="en" />
 
         {/* How It Works */}
         <section className="py-16 bg-gray-50">

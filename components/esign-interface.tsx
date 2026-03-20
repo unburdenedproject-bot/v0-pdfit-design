@@ -25,6 +25,161 @@ import { TrustBadges } from "@/components/trust-badges"
 import { CreateSignatureModal } from "@/components/esign/create-signature-modal"
 import type { SignatureSessionAsset } from "@/lib/esign/types"
 
+type EsignLocale = "en" | "es" | "br"
+
+const ESIGN_COPY: Record<EsignLocale, Record<string, string>> = {
+  en: {
+    pricingPath: "/pricing?source=esign",
+    signupRequiredPath: "/signup-required",
+    homePath: "/",
+    businessFeature: "Business Feature",
+    businessBody: "eSign Documents is available on the Business plan. Create signatures in-session and place them directly onto your PDFs.",
+    upgradeCta: "Upgrade to Business — $13.99/mo",
+    upgradeRequiredTitle: "This Feature Requires an Upgrade",
+    outOfFreeTitle: "You're out of free conversions",
+    upgradeHeading: "Upgrade to Business",
+    upgradeBody: "This tool is available on the Business plan. Upgrade to unlock unlimited access to all PDF tools.",
+    limitBody: "Free includes 10 conversions per day. Upgrade for unlimited conversions.",
+    upgradeButton: "Upgrade to Business",
+    goBack: "Go Back",
+    signingFailed: "Signing Failed",
+    tryAgain: "Try Again",
+    documentSigned: "Document Signed!",
+    readyDownload: "Ready for download",
+    download: "Download",
+    signAnother: "Sign Another PDF",
+    backToTools: "Back to Tools",
+    applying: "Applying Signatures...",
+    embedding: "Embedding",
+    uploadTitle: "Upload your PDF to sign",
+    uploadBrowse: "or click to browse files",
+    choosePdf: "Choose PDF",
+    supportedFormat: "Supported format: .pdf",
+    loadingPdf: "Loading PDF pages...",
+    signatureChoices: "Signature Choices",
+    signatureChoicesBody: "Create a signature or initials for this document. Nothing is stored after your session.",
+    create: "Create",
+    signatureNotice: "By placing a signature on a PDF, you are applying it as your electronic signature to the current document.",
+    noSignatures: "No signatures created yet",
+    noSignaturesBody: "Create a signature style, drawing, or upload to sign this PDF.",
+    created: "Created",
+    placeOnPdf: "Place on PDF",
+    placedSignatures: "Placed Signatures",
+    initials: "Initials",
+    signature: "Signature",
+    applyButton: "Apply",
+    newFile: "New File",
+    page: "Page",
+    of: "of",
+    placeHintPrefix: "Click on the PDF where you want to place your",
+    pdfPreviewRenderError: "Failed to render the PDF preview.",
+    pdfPreviewLoadError: "Failed to load the PDF page preview.",
+    invalidPdf: "Please upload a valid PDF file.",
+    failedLoadPdf: "Failed to load PDF. The file may be corrupted or password-protected.",
+    removeSessionSig: "Remove this signature from the current PDF before deleting it from this session.",
+  },
+  es: {
+    pricingPath: "/es/precios?source=esign",
+    signupRequiredPath: "/es/registro-requerido",
+    homePath: "/es",
+    businessFeature: "Función Business",
+    businessBody: "La firma electrónica está disponible en el plan Business. Crea firmas dentro de la sesión y colócalas directamente en tus PDFs.",
+    upgradeCta: "Actualizar a Business — $13.99/mes",
+    upgradeRequiredTitle: "Esta función requiere actualización",
+    outOfFreeTitle: "Te quedaste sin conversiones gratis",
+    upgradeHeading: "Actualizar a Business",
+    upgradeBody: "Esta herramienta está disponible en el plan Business. Actualiza para desbloquear acceso ilimitado a todas las herramientas PDF.",
+    limitBody: "El plan gratis incluye 10 conversiones por día. Actualiza para conversiones ilimitadas.",
+    upgradeButton: "Actualizar a Business",
+    goBack: "Volver",
+    signingFailed: "La firma falló",
+    tryAgain: "Intentar de nuevo",
+    documentSigned: "¡Documento firmado!",
+    readyDownload: "Listo para descargar",
+    download: "Descargar",
+    signAnother: "Firmar otro PDF",
+    backToTools: "Volver a herramientas",
+    applying: "Aplicando firmas...",
+    embedding: "Insertando",
+    uploadTitle: "Sube tu PDF para firmar",
+    uploadBrowse: "o haz clic para buscar archivos",
+    choosePdf: "Elegir PDF",
+    supportedFormat: "Formato compatible: .pdf",
+    loadingPdf: "Cargando páginas del PDF...",
+    signatureChoices: "Opciones de firma",
+    signatureChoicesBody: "Crea una firma o iniciales para este documento. Nada se guarda después de tu sesión.",
+    create: "Crear",
+    signatureNotice: "Al colocar una firma en un PDF, la estás aplicando como tu firma electrónica al documento actual.",
+    noSignatures: "Aún no hay firmas creadas",
+    noSignaturesBody: "Crea un estilo de firma, dibuja o sube una imagen para firmar este PDF.",
+    created: "Creada",
+    placeOnPdf: "Colocar en PDF",
+    placedSignatures: "Firmas colocadas",
+    initials: "Iniciales",
+    signature: "Firma",
+    applyButton: "Aplicar",
+    newFile: "Nuevo archivo",
+    page: "Página",
+    of: "de",
+    placeHintPrefix: "Haz clic en el PDF donde quieres colocar tus",
+    pdfPreviewRenderError: "No se pudo renderizar la vista previa del PDF.",
+    pdfPreviewLoadError: "No se pudo cargar la vista previa de la página del PDF.",
+    invalidPdf: "Sube un archivo PDF válido.",
+    failedLoadPdf: "No se pudo cargar el PDF. El archivo puede estar dañado o protegido con contraseña.",
+    removeSessionSig: "Quita esta firma del PDF actual antes de eliminarla de esta sesión.",
+  },
+  br: {
+    pricingPath: "/br/precos?source=esign",
+    signupRequiredPath: "/br/cadastro-necessario",
+    homePath: "/br",
+    businessFeature: "Função Business",
+    businessBody: "A assinatura eletrônica está disponível no plano Business. Crie assinaturas durante a sessão e posicione-as diretamente nos seus PDFs.",
+    upgradeCta: "Fazer upgrade para Business — $13.99/mês",
+    upgradeRequiredTitle: "Este recurso exige upgrade",
+    outOfFreeTitle: "Suas conversões grátis acabaram",
+    upgradeHeading: "Fazer upgrade para Business",
+    upgradeBody: "Esta ferramenta está disponível no plano Business. Faça upgrade para desbloquear acesso ilimitado a todas as ferramentas PDF.",
+    limitBody: "O plano grátis inclui 10 conversões por dia. Faça upgrade para conversões ilimitadas.",
+    upgradeButton: "Fazer upgrade para Business",
+    goBack: "Voltar",
+    signingFailed: "A assinatura falhou",
+    tryAgain: "Tentar novamente",
+    documentSigned: "Documento assinado!",
+    readyDownload: "Pronto para download",
+    download: "Baixar",
+    signAnother: "Assinar outro PDF",
+    backToTools: "Voltar às ferramentas",
+    applying: "Aplicando assinaturas...",
+    embedding: "Inserindo",
+    uploadTitle: "Envie seu PDF para assinar",
+    uploadBrowse: "ou clique para procurar arquivos",
+    choosePdf: "Escolher PDF",
+    supportedFormat: "Formato compatível: .pdf",
+    loadingPdf: "Carregando páginas do PDF...",
+    signatureChoices: "Opções de assinatura",
+    signatureChoicesBody: "Crie uma assinatura ou iniciais para este documento. Nada é salvo após a sua sessão.",
+    create: "Criar",
+    signatureNotice: "Ao posicionar uma assinatura em um PDF, você a está aplicando como sua assinatura eletrônica ao documento atual.",
+    noSignatures: "Nenhuma assinatura criada ainda",
+    noSignaturesBody: "Crie um estilo de assinatura, desenhe ou envie uma imagem para assinar este PDF.",
+    created: "Criada",
+    placeOnPdf: "Posicionar no PDF",
+    placedSignatures: "Assinaturas posicionadas",
+    initials: "Iniciais",
+    signature: "Assinatura",
+    applyButton: "Aplicar",
+    newFile: "Novo arquivo",
+    page: "Página",
+    of: "de",
+    placeHintPrefix: "Clique no PDF onde deseja posicionar sua",
+    pdfPreviewRenderError: "Não foi possível renderizar a prévia do PDF.",
+    pdfPreviewLoadError: "Não foi possível carregar a prévia da página do PDF.",
+    invalidPdf: "Envie um arquivo PDF válido.",
+    failedLoadPdf: "Não foi possível carregar o PDF. O arquivo pode estar corrompido ou protegido por senha.",
+    removeSessionSig: "Remova esta assinatura do PDF atual antes de excluí-la desta sessão.",
+  },
+}
+
 interface PlacedSignature {
   id: string
   page: number
@@ -37,8 +192,9 @@ interface PlacedSignature {
   kind: "signature" | "initials"
 }
 
-export function EsignInterface() {
+export function EsignInterface({ locale = "en" }: { locale?: EsignLocale }) {
   const router = useRouter()
+  const copy = ESIGN_COPY[locale]
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -145,12 +301,12 @@ export function EsignInterface() {
       } catch (error) {
         console.error("Failed to render PDF page preview:", error)
         setHasError(true)
-        setErrorMessage("Failed to render the PDF preview.")
+        setErrorMessage(copy.pdfPreviewRenderError)
       }
     }
     img.onerror = () => {
       setHasError(true)
-      setErrorMessage("Failed to load the PDF page preview.")
+      setErrorMessage(copy.pdfPreviewLoadError)
     }
 
     img.src = pageImage
@@ -173,7 +329,7 @@ export function EsignInterface() {
 
     try {
       if (pdfFile.type && pdfFile.type !== "application/pdf") {
-        throw new Error("Please upload a valid PDF file.")
+        throw new Error(copy.invalidPdf)
       }
 
       const pdfjsLib = await import("pdfjs-dist")
@@ -203,11 +359,11 @@ export function EsignInterface() {
     } catch (err) {
       console.error("Failed to load PDF:", err)
       setHasError(true)
-      setErrorMessage("Failed to load PDF. The file may be corrupted or password-protected.")
+      setErrorMessage(copy.failedLoadPdf)
     } finally {
       setIsLoadingPdf(false)
     }
-  }, [])
+  }, [copy.failedLoadPdf, copy.invalidPdf])
 
   const handleDrop = useCallback(
     (event: React.DragEvent) => {
@@ -283,7 +439,7 @@ export function EsignInterface() {
     (signatureId: string) => {
       if (placedSignatures.some((placed) => placed.assetId === signatureId)) {
         setHasError(true)
-        setErrorMessage("Remove this signature from the current PDF before deleting it from this session.")
+        setErrorMessage(copy.removeSessionSig)
         return
       }
 
@@ -293,7 +449,7 @@ export function EsignInterface() {
         setIsPlacing(false)
       }
     },
-    [placedSignatures, selectedSignatureId]
+    [copy.removeSessionSig, placedSignatures, selectedSignatureId]
   )
 
   const applySignatures = useCallback(async () => {
@@ -389,12 +545,12 @@ export function EsignInterface() {
             <div className="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <Crown className="h-10 w-10 text-indigo-600" />
             </div>
-            <h2 className="text-3xl font-black text-slate-900 mb-4">Business Feature</h2>
+            <h2 className="text-3xl font-black text-slate-900 mb-4">{copy.businessFeature}</h2>
             <p className="text-lg text-slate-600 mb-8">
-              eSign Documents is available on the Business plan. Create signatures in-session and place them directly onto your PDFs.
+              {copy.businessBody}
             </p>
-            <Button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl px-8 py-3 text-lg" onClick={() => router.push("/pricing?source=esign")}>
-              Upgrade to Business — $13.99/mo
+            <Button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl px-8 py-3 text-lg" onClick={() => router.push(copy.pricingPath)}>
+              {copy.upgradeCta}
             </Button>
           </div>
         </div>
@@ -408,7 +564,7 @@ export function EsignInterface() {
     const isSignupError = (errorMessage || "").includes("signup_required")
 
     if (isSignupError) {
-      router.push("/signup-required")
+      router.push(copy.signupRequiredPath)
       return null
     }
 
@@ -421,20 +577,20 @@ export function EsignInterface() {
                 <Crown className="h-10 w-10 text-orange-500" />
               </div>
               <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-2">
-                {isUpgradeError ? "This Feature Requires an Upgrade" : "You're out of free conversions"}
+                {isUpgradeError ? copy.upgradeRequiredTitle : copy.outOfFreeTitle}
               </h2>
-              <p className="text-xl sm:text-2xl font-bold text-orange-600 mb-4">Upgrade to Business</p>
+              <p className="text-xl sm:text-2xl font-bold text-orange-600 mb-4">{copy.upgradeHeading}</p>
               <p className="text-base sm:text-lg text-slate-600 mb-8">
                 {isUpgradeError
-                  ? "This tool is available on the Business plan. Upgrade to unlock unlimited access to all PDF tools."
-                  : "Free includes 10 conversions per day. Upgrade for unlimited conversions."}
+                  ? copy.upgradeBody
+                  : copy.limitBody}
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <Button onClick={() => router.push("/pricing")} className="bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl px-6 py-3">
-                  Upgrade to Business
+                <Button onClick={() => router.push(copy.pricingPath)} className="bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl px-6 py-3">
+                  {copy.upgradeButton}
                 </Button>
                 <Button onClick={resetInterface} variant="outline" className="border border-slate-200 text-slate-700 rounded-xl px-6 py-3">
-                  Go Back
+                  {copy.goBack}
                 </Button>
               </div>
             </div>
@@ -450,10 +606,10 @@ export function EsignInterface() {
             <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <AlertCircle className="h-10 w-10 text-red-600" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Signing Failed</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">{copy.signingFailed}</h2>
             <p className="text-slate-600 mb-8">{errorMessage}</p>
             <Button onClick={resetInterface} className="bg-orange-500 hover:bg-orange-600 text-white">
-              Try Again
+              {copy.tryAgain}
             </Button>
           </div>
         </div>
@@ -469,7 +625,7 @@ export function EsignInterface() {
             <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <CheckCircle className="h-10 w-10 text-green-600" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Document Signed!</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">{copy.documentSigned}</h2>
             <p className="text-slate-600 mb-2">
               {placedSignatures.length} signature{placedSignatures.length > 1 ? "s" : ""} applied across {new Set(placedSignatures.map((signature) => signature.page)).size} page{new Set(placedSignatures.map((signature) => signature.page)).size > 1 ? "s" : ""}.
             </p>
@@ -480,22 +636,22 @@ export function EsignInterface() {
                   <FileText className="h-6 w-6 text-green-600" />
                   <div className="text-left">
                     <div className="font-bold text-slate-900">{resultName}</div>
-                    <div className="text-sm text-green-600">Ready for download</div>
+                    <div className="text-sm text-green-600">{copy.readyDownload}</div>
                   </div>
                 </div>
                 <Button onClick={downloadResult} className="bg-green-600 hover:bg-green-700 text-white font-bold">
                   <Download className="h-4 w-4 mr-2" />
-                  Download
+                  {copy.download}
                 </Button>
               </div>
             </div>
 
             <div className="flex gap-4 justify-center">
               <Button onClick={resetInterface} variant="outline" className="border-slate-300">
-                Sign Another PDF
+                {copy.signAnother}
               </Button>
-              <Button onClick={() => (window.location.href = "/")} className="bg-orange-500 hover:bg-orange-600 text-white">
-                Back to Tools
+              <Button onClick={() => (window.location.href = copy.homePath)} className="bg-orange-500 hover:bg-orange-600 text-white">
+                {copy.backToTools}
               </Button>
             </div>
           </div>
@@ -512,8 +668,8 @@ export function EsignInterface() {
             <div className="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <Loader2 className="h-10 w-10 text-indigo-600 animate-spin" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Applying Signatures...</h2>
-            <p className="text-slate-600">Embedding {placedSignatures.length} signature{placedSignatures.length > 1 ? "s" : ""} into your PDF...</p>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">{copy.applying}</h2>
+            <p className="text-slate-600">{copy.embedding} {placedSignatures.length} {copy.signature.toLowerCase()}{placedSignatures.length > 1 ? "s" : ""}...</p>
           </div>
         </div>
       </section>
@@ -528,7 +684,7 @@ export function EsignInterface() {
             {isLoadingPdf ? (
               <div className="text-center py-16">
                 <Loader2 className="h-10 w-10 text-indigo-600 animate-spin mx-auto mb-4" />
-                <p className="text-slate-600 font-medium">Loading PDF pages...</p>
+                <p className="text-slate-600 font-medium">{copy.loadingPdf}</p>
               </div>
             ) : (
               <>
@@ -549,12 +705,12 @@ export function EsignInterface() {
                   onClick={() => document.getElementById("esign-file-upload")?.click()}
                 >
                   <Upload className="h-12 w-12 text-indigo-500 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">Upload your PDF to sign</h3>
-                  <p className="text-slate-600 mb-6">or click to browse files</p>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">{copy.uploadTitle}</h3>
+                  <p className="text-slate-600 mb-6">{copy.uploadBrowse}</p>
                   <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8">
-                    Choose PDF
+                    {copy.choosePdf}
                   </Button>
-                  <p className="text-sm text-slate-500 mt-4">Supported format: .pdf</p>
+                  <p className="text-sm text-slate-500 mt-4">{copy.supportedFormat}</p>
                 </div>
                 <input id="esign-file-upload" type="file" accept=".pdf" className="hidden" onChange={handleFileSelect} />
                 <TrustBadges />
@@ -574,6 +730,7 @@ export function EsignInterface() {
       <CreateSignatureModal
         open={isCreateModalOpen}
         onOpenChange={setIsCreateModalOpen}
+        locale={locale}
         onSaved={(signature) => {
           setSessionSignatures((prev) => [signature, ...prev.filter((item) => item.id !== signature.id)])
           setSelectedSignatureId(signature.id)
@@ -588,28 +745,28 @@ export function EsignInterface() {
                 <div className="bg-white border border-gray-200 rounded-2xl p-4">
                   <div className="flex items-start justify-between gap-4 mb-4">
                     <div>
-                      <h3 className="font-bold text-slate-900">Signature Choices</h3>
+                      <h3 className="font-bold text-slate-900">{copy.signatureChoices}</h3>
                       <p className="text-sm text-slate-500 mt-1">
-                        Create a signature or initials for this document. Nothing is stored after your session.
+                        {copy.signatureChoicesBody}
                       </p>
                     </div>
                     <Button onClick={() => setIsCreateModalOpen(true)} className="bg-slate-900 hover:bg-slate-800 text-white">
                       <Plus className="h-4 w-4 mr-2" />
-                      Create
+                      {copy.create}
                     </Button>
                   </div>
 
                   <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 mb-4">
                     <p className="text-xs text-slate-500">
-                      By placing a signature on a PDF, you are applying it as your electronic signature to the current document.
+                      {copy.signatureNotice}
                     </p>
                   </div>
 
                   {sessionSignatures.length === 0 ? (
                     <div className="rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-8 text-center">
                       <Signature className="h-8 w-8 text-slate-400 mx-auto mb-3" />
-                      <p className="font-semibold text-slate-900">No signatures created yet</p>
-                      <p className="text-sm text-slate-500 mt-1">Create a signature style, drawing, or upload to sign this PDF.</p>
+                      <p className="font-semibold text-slate-900">{copy.noSignatures}</p>
+                      <p className="text-sm text-slate-500 mt-1">{copy.noSignaturesBody}</p>
                     </div>
                   ) : (
                     <div className="space-y-3 max-h-[520px] overflow-y-auto pr-1">
@@ -643,7 +800,7 @@ export function EsignInterface() {
                             </div>
 
                             <p className="mt-3 text-xs text-slate-500">
-                              Created {new Date(signature.createdAt).toLocaleTimeString()}
+                              {copy.created} {new Date(signature.createdAt).toLocaleTimeString()}
                             </p>
                           </button>
 
@@ -657,7 +814,7 @@ export function EsignInterface() {
                               }}
                             >
                               <PenTool className="h-4 w-4 mr-2" />
-                              Place on PDF
+                              {copy.placeOnPdf}
                             </Button>
                             <Button size="sm" variant="outline" onClick={() => handleDeleteSessionSignature(signature.id)}>
                               <Trash2 className="h-4 w-4" />
@@ -671,12 +828,12 @@ export function EsignInterface() {
 
                 {totalPlaced > 0 && (
                   <div className="bg-white border border-gray-200 rounded-2xl p-4">
-                    <h3 className="font-bold text-slate-900 mb-3">Placed Signatures ({totalPlaced})</h3>
+                    <h3 className="font-bold text-slate-900 mb-3">{copy.placedSignatures} ({totalPlaced})</h3>
                     <div className="space-y-2 max-h-48 overflow-y-auto">
                       {placedSignatures.map((signature, index) => (
                         <div key={signature.id} className="flex items-center justify-between bg-slate-50 rounded-lg px-3 py-2">
                           <span className="text-xs text-slate-600">
-                            {signature.kind === "initials" ? "Initials" : "Signature"} {index + 1} — Page {signature.page + 1}
+                            {signature.kind === "initials" ? copy.initials : copy.signature} {index + 1} — {copy.page} {signature.page + 1}
                           </span>
                           <button onClick={() => removePlacedSignature(signature.id)} className="text-red-400 hover:text-red-600">
                             <Trash2 className="h-3.5 w-3.5" />
@@ -694,7 +851,7 @@ export function EsignInterface() {
                   size="lg"
                 >
                   <PenTool className="h-5 w-5 mr-2" />
-                  Apply {totalPlaced} Signature{totalPlaced !== 1 ? "s" : ""}
+                  {copy.applyButton} {totalPlaced} {copy.signature}{totalPlaced !== 1 ? "s" : ""}
                 </Button>
               </div>
 
@@ -710,7 +867,7 @@ export function EsignInterface() {
                       <ChevronLeft className="h-4 w-4" />
                     </Button>
                     <span className="text-sm font-medium text-slate-700 min-w-[92px] text-center">
-                      Page {currentPage + 1} of {totalPages}
+                      {copy.page} {currentPage + 1} {copy.of} {totalPages}
                     </span>
                     <Button variant="outline" size="sm" disabled={currentPage === totalPages - 1} onClick={() => setCurrentPage((page) => page + 1)}>
                       <ChevronRight className="h-4 w-4" />
@@ -719,14 +876,14 @@ export function EsignInterface() {
 
                   <Button variant="outline" size="sm" onClick={resetInterface} className="text-xs">
                     <X className="h-3 w-3 mr-1" />
-                    New File
+                    {copy.newFile}
                   </Button>
                 </div>
 
                 {isPlacing && (
                   <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-3 mb-3 text-center">
                     <p className="text-sm text-indigo-800 font-medium">
-                      Click on the PDF where you want to place your {selectedSignature?.kind === "initials" ? "initials" : "signature"}.
+                      {copy.placeHintPrefix} {selectedSignature?.kind === "initials" ? copy.initials.toLowerCase() : copy.signature.toLowerCase()}.
                     </p>
                   </div>
                 )}

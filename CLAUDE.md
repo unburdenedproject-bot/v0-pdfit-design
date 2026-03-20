@@ -79,7 +79,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - /workflow-automation — chain tools (flatten, compress, watermark, rotate, protect), 4 preset workflows for Business + 5 Enterprise-only templates (Legal Doc Prep, Court Filing, Invoice Archive, Draft Review, Lab Report)
 - /table-extraction — Google Document AI Form Parser → ExcelJS, Business: 200 pages/month, Enterprise: 2,000 pages/month, monthly tracking via usage_logs table
 - /pdf-compare — client-side text diff, side-by-side/overlay/differences views
-- /esign — canvas-based signature placement (draw, type, upload)
+- /esign — session-only eSign flow with typed styles, draw, upload, and PDF placement
 - /pdf-redaction — canvas-based area selection, flattened image replacement
 
 ### Enterprise Tier (COMPLETE)
@@ -283,6 +283,8 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 - Resume output is Word .docx via docx npm package (not PDF) — editable by users
 - /api/generate-resume handles both "rewrite" and "build" modes, optional cover letter as second page
 - Homepage shows 2 resume tools: "Optimize Your Resume" → /ats-optimizer, "Create a Resume" → /create-resume
+- eSign signatures are privacy-first and session-only: never persist reusable signature libraries server-side
+- Shared business-tool components must be locale-aware when mounted under EN / ES / BR routes; do not rely on translated page wrappers alone
 - Total pages: 602 (EN/ES/BR combined)
 
 ## Rules - Always Follow
