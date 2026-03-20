@@ -83,7 +83,7 @@ const tools = [
 
 function TierBadge({ tier }: { tier: string }) {
   if (tier === "ENTERPRISE") {
-    return <span className="bg-amber-100 text-amber-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Enterprise</span>
+    return <span className="bg-slate-900 text-white border border-slate-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Enterprise</span>
   }
   if (tier === "BUSINESS") {
     return <span className="bg-indigo-100 text-indigo-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Business</span>
@@ -99,6 +99,7 @@ export default function FerramentasAZPage() {
   const totalFree = tools.filter((t) => t.tier === "FREE").length
   const totalPro = tools.filter((t) => t.tier === "PRO").length
   const totalBusiness = tools.filter((t) => t.tier === "BUSINESS").length
+  const totalEnterprise = tools.filter((t) => t.tier === "ENTERPRISE").length
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -123,6 +124,9 @@ export default function FerramentasAZPage() {
               </div>
               <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-4 py-2">
                 <span className="bg-indigo-100 text-indigo-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">{totalBusiness} Business</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-4 py-2">
+                <span className="bg-slate-900 text-white border border-slate-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">{totalEnterprise} Enterprise</span>
               </div>
             </div>
           </div>
