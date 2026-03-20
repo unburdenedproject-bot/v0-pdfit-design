@@ -23,8 +23,7 @@ import { cn } from "@/lib/utils"
 import { uploadFileToBlob } from "@/lib/upload-to-blob"
 import { TrustBadges } from "@/components/trust-badges"
 import { CreateSignatureModal } from "@/components/esign/create-signature-modal"
-import { useSignatureLibrary } from "@/hooks/use-signature-library"
-import type { SignatureAssetRecord } from "@/lib/esign/types"
+import type { SignatureSessionAsset } from "@/lib/esign/types"
 
 interface PlacedSignature {
   id: string
@@ -52,6 +51,7 @@ export function EsignInterface() {
   const [isLoadingPdf, setIsLoadingPdf] = useState(false)
   const [selectedSignatureId, setSelectedSignatureId] = useState<string>("")
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false)
+  const [sessionSignatures, setSessionSignatures] = useState<SignatureSessionAsset[]>([])
   const [placedSignatures, setPlacedSignatures] = useState<PlacedSignature[]>([])
   const [isPlacing, setIsPlacing] = useState(false)
   const [placingPreview, setPlacingPreview] = useState<{ x: number; y: number } | null>(null)
@@ -63,13 +63,6 @@ export function EsignInterface() {
   const [resultName, setResultName] = useState("")
 
   const isBusinessUser = userPlan === "business" || userPlan === "enterprise"
-  const {
-    signatures,
-    isLoading: isLoadingSignatures,
-    error: signatureLoadError,
-    fetchSignatures,
-    deleteSignature,
-  } = useSignatureLibrary(isBusinessUser)
 
   useEffect(() => {
     fetch("/api/user-plan")
@@ -79,14 +72,14 @@ export function EsignInterface() {
   }, [])
 
   useEffect(() => {
-    if (!selectedSignatureId && signatures.length > 0) {
-      setSelectedSignatureId(signatures[0].id)
+    if (!selectedSignatureId && sessionSignatures.length > 0) {
+      setSelectedSignatureId(sessionSignatures[0].id)
     }
-  }, [signatures, selectedSignatureId])
+  }, [sessionSignatures, selectedSignatureId])
 
   const selectedSignature = useMemo(
-    () => signatures.find((signature) => signature.id === selectedSignatureId) ?? null,
-    [signatures, selectedSignatureId]
+    () => sessionSignatures.find((signature) => signature.id === selectedSignatureId) ?? null,
+    [sessionSignatures, selectedSignatureId]
   )
 
   const renderPage = useCallback(() => {
@@ -125,7 +118,7 @@ export function EsignInterface() {
         sigImg.src = signature.assetUrl
       }
 
-      if (isPlacing && placingPreview && selectedSignature?.asset_url) {
+      if (isPlacing && placingPreview && selectedSignature?.assetUrl) {
         const previewImg = new window.Image()
         previewImg.onload = () => {
           const sigW = selectedSignature.kind === "initials" ? 140 : 220
@@ -134,7 +127,7 @@ export function EsignInterface() {
           ctx.drawImage(previewImg, placingPreview.x - sigW / 2, placingPreview.y - sigH / 2, sigW, sigH)
           ctx.globalAlpha = 1
         }
-        previewImg.src = selectedSignature.asset_url
+        previewImg.src = selectedSignature.assetUrl
       }
     }
 
@@ -241,7 +234,7 @@ export function EsignInterface() {
       width: sigWidth / canvas.width,
       height: sigHeight / canvas.height,
       assetId: selectedSignature.id,
-      assetUrl: selectedSignature.asset_url,
+      assetUrl: selectedSignature.assetUrl,
       kind: selectedSignature.kind,
     }
 
@@ -259,26 +252,21 @@ export function EsignInterface() {
     setPlacedSignatures((prev) => prev.filter((signature) => signature.id !== id))
   }, [])
 
-  const handleDeleteSavedSignature = useCallback(
-    async (signature: SignatureAssetRecord) => {
-      if (placedSignatures.some((placed) => placed.assetId === signature.id)) {
+  const handleDeleteSessionSignature = useCallback(
+    (signatureId: string) => {
+      if (placedSignatures.some((placed) => placed.assetId === signatureId)) {
         setHasError(true)
-        setErrorMessage("Remove this signature from the current PDF before deleting it from your saved library.")
+        setErrorMessage("Remove this signature from the current PDF before deleting it from this session.")
         return
       }
 
-      try {
-        await deleteSignature(signature.id)
-        if (selectedSignatureId === signature.id) {
-          setSelectedSignatureId("")
-          setIsPlacing(false)
-        }
-      } catch (err) {
-        setHasError(true)
-        setErrorMessage(err instanceof Error ? err.message : "Failed to delete signature.")
+      setSessionSignatures((prev) => prev.filter((signature) => signature.id !== signatureId))
+      if (selectedSignatureId === signatureId) {
+        setSelectedSignatureId("")
+        setIsPlacing(false)
       }
     },
-    [deleteSignature, placedSignatures, selectedSignatureId]
+    [placedSignatures, selectedSignatureId]
   )
 
   const applySignatures = useCallback(async () => {
@@ -295,7 +283,7 @@ export function EsignInterface() {
         y: signature.y,
         width: signature.width,
         height: signature.height,
-        signatureBlobUrl: signature.assetUrl,
+        signatureSource: signature.assetUrl,
       }))
 
       const response = await fetch("/api/esign", {
@@ -353,6 +341,8 @@ export function EsignInterface() {
     setPageImages([])
     setCurrentPage(0)
     setTotalPages(0)
+    setSessionSignatures([])
+    setSelectedSignatureId("")
     setPlacedSignatures([])
     setIsPlacing(false)
     setPlacingPreview(null)
@@ -374,7 +364,7 @@ export function EsignInterface() {
             </div>
             <h2 className="text-3xl font-black text-slate-900 mb-4">Business Feature</h2>
             <p className="text-lg text-slate-600 mb-8">
-              eSign Documents is available on the Business plan. Add electronic signatures to your PDFs with a reusable signature library.
+              eSign Documents is available on the Business plan. Create signatures in-session and place them directly onto your PDFs.
             </p>
             <Button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl px-8 py-3 text-lg" onClick={() => router.push("/pricing?source=esign")}>
               Upgrade to Business — $13.99/mo
@@ -558,7 +548,7 @@ export function EsignInterface() {
         open={isCreateModalOpen}
         onOpenChange={setIsCreateModalOpen}
         onSaved={(signature) => {
-          void fetchSignatures()
+          setSessionSignatures((prev) => [signature, ...prev.filter((item) => item.id !== signature.id)])
           setSelectedSignatureId(signature.id)
         }}
       />
@@ -571,9 +561,9 @@ export function EsignInterface() {
                 <div className="bg-white border border-gray-200 rounded-2xl p-4">
                   <div className="flex items-start justify-between gap-4 mb-4">
                     <div>
-                      <h3 className="font-bold text-slate-900">Reusable Signatures</h3>
+                      <h3 className="font-bold text-slate-900">Signature Choices</h3>
                       <p className="text-sm text-slate-500 mt-1">
-                        Create and save a signature or initials for electronic signing.
+                        Create a signature or initials for this document. Nothing is stored after your session.
                       </p>
                     </div>
                     <Button onClick={() => setIsCreateModalOpen(true)} className="bg-slate-900 hover:bg-slate-800 text-white">
@@ -584,26 +574,19 @@ export function EsignInterface() {
 
                   <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 mb-4">
                     <p className="text-xs text-slate-500">
-                      By placing a saved signature on a PDF, you are applying it as an electronic signature to that document.
+                      By placing a signature on a PDF, you are applying it as your electronic signature to the current document.
                     </p>
                   </div>
 
-                  {signatureLoadError && <p className="text-sm text-red-600 mb-3">{signatureLoadError}</p>}
-
-                  {isLoadingSignatures ? (
-                    <div className="py-8 text-center">
-                      <Loader2 className="h-5 w-5 text-slate-500 animate-spin mx-auto mb-2" />
-                      <p className="text-sm text-slate-500">Loading saved signatures...</p>
-                    </div>
-                  ) : signatures.length === 0 ? (
+                  {sessionSignatures.length === 0 ? (
                     <div className="rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-8 text-center">
                       <FolderSignature className="h-8 w-8 text-slate-400 mx-auto mb-3" />
-                      <p className="font-semibold text-slate-900">No saved signatures yet</p>
-                      <p className="text-sm text-slate-500 mt-1">Create a reusable signature to start signing PDFs.</p>
+                      <p className="font-semibold text-slate-900">No signatures created yet</p>
+                      <p className="text-sm text-slate-500 mt-1">Create a signature style, drawing, or upload to sign this PDF.</p>
                     </div>
                   ) : (
                     <div className="space-y-3 max-h-[520px] overflow-y-auto pr-1">
-                      {signatures.map((signature) => (
+                      {sessionSignatures.map((signature) => (
                         <div
                           key={signature.id}
                           className={cn(
@@ -629,11 +612,11 @@ export function EsignInterface() {
                             </div>
 
                             <div className="rounded-xl border border-dashed border-slate-200 bg-white p-4 min-h-[100px] flex items-center justify-center">
-                              <img src={signature.preview_url || signature.asset_url} alt={`${signature.kind} preview`} className="max-h-16 w-auto" />
+                              <img src={signature.previewUrl || signature.assetUrl} alt={`${signature.kind} preview`} className="max-h-16 w-auto" />
                             </div>
 
                             <p className="mt-3 text-xs text-slate-500">
-                              Saved {new Date(signature.updated_at).toLocaleString()}
+                              Created {new Date(signature.createdAt).toLocaleTimeString()}
                             </p>
                           </button>
 
@@ -649,7 +632,7 @@ export function EsignInterface() {
                               <PenTool className="h-4 w-4 mr-2" />
                               Place on PDF
                             </Button>
-                            <Button size="sm" variant="outline" onClick={() => handleDeleteSavedSignature(signature)}>
+                            <Button size="sm" variant="outline" onClick={() => handleDeleteSessionSignature(signature.id)}>
                               <Trash2 className="h-4 w-4" />
                             </Button>
                           </div>

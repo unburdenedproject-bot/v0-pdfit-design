@@ -349,6 +349,15 @@ export async function canvasToBlob(canvas: HTMLCanvasElement, type = "image/png"
   })
 }
 
+export async function blobToDataUrl(blob: Blob) {
+  return await new Promise<string>((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onload = () => resolve(String(reader.result))
+    reader.onerror = () => reject(new Error("Unable to read signature asset."))
+    reader.readAsDataURL(blob)
+  })
+}
+
 export async function getBlobImageDimensions(blob: Blob) {
   const objectUrl = URL.createObjectURL(blob)
 

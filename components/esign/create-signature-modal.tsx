@@ -10,22 +10,19 @@ import { Slider } from "@/components/ui/slider"
 import { Checkbox } from "@/components/ui/checkbox"
 import { cn } from "@/lib/utils"
 import { SignaturePad, type SignaturePadHandle } from "@/components/esign/signature-pad"
-import { uploadBlobToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
-import { SIGNATURE_COLORS, TYPED_SIGNATURE_VARIANTS, createSignatureFilename, createTypedSignatureSvg, exportUploadPreviewToBlob, getBlobImageDimensions, normalizeSignatureText, svgMarkupToPngBlob, svgToDataUrl } from "@/lib/esign/signature-utils"
-import type { SignatureAssetRecord, SignatureKind, SignatureMethod } from "@/lib/esign/types"
-import { useSignatureLibrary } from "@/hooks/use-signature-library"
+import { SIGNATURE_COLORS, TYPED_SIGNATURE_VARIANTS, blobToDataUrl, createTypedSignatureSvg, exportUploadPreviewToBlob, getBlobImageDimensions, normalizeSignatureText, svgMarkupToPngBlob, svgToDataUrl } from "@/lib/esign/signature-utils"
+import type { SignatureKind, SignatureMethod, SignatureSessionAsset } from "@/lib/esign/types"
 
 type SignatureTab = "type" | "draw" | "upload"
 
 interface CreateSignatureModalProps {
   open: boolean
   onOpenChange: (open: boolean) => void
-  onSaved: (signature: SignatureAssetRecord) => void
+  onSaved: (signature: SignatureSessionAsset) => void
 }
 
 export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSignatureModalProps) {
   const padRef = useRef<SignaturePadHandle>(null)
-  const { saveSignature } = useSignatureLibrary(false)
 
   const [activeTab, setActiveTab] = useState<SignatureTab>("type")
   const [signatureKind, setSignatureKind] = useState<SignatureKind>("signature")
@@ -109,7 +106,6 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
     setError("")
     setIsSaving(true)
 
-    let uploadedUrl = ""
     try {
       let pngBlob: Blob
       let method: SignatureMethod
@@ -134,7 +130,7 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
         }
       } else if (activeTab === "draw") {
         if (!padRef.current?.hasSignature()) {
-          throw new Error(`Draw your ${signatureKind} before saving.`)
+          throw new Error(`Draw your ${signatureKind} before continuing.`)
         }
         const drawnAsset = await padRef.current.exportSignature()
         pngBlob = drawnAsset.pngBlob
@@ -144,7 +140,7 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
         height = drawnAsset.height
       } else {
         if (!uploadPreview) {
-          throw new Error(`Upload an image of your ${signatureKind} before saving.`)
+          throw new Error(`Upload an image of your ${signatureKind} before continuing.`)
         }
         pngBlob = await exportUploadPreviewToBlob({
           source: uploadPreview,
@@ -163,31 +159,30 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
       const assetDimensions = await getBlobImageDimensions(pngBlob)
       width = assetDimensions.width
       height = assetDimensions.height
-
-      uploadedUrl = await uploadBlobToBlob(pngBlob, createSignatureFilename(signatureKind, activeTab))
-
-      const signature = await saveSignature({
+      const assetUrl = await blobToDataUrl(pngBlob)
+      const createdAt = new Date().toISOString()
+      const signature: SignatureSessionAsset = {
+        id: crypto.randomUUID(),
         kind: signatureKind,
         method,
-        assetUrl: uploadedUrl,
-        previewUrl: uploadedUrl,
+        assetUrl,
+        previewUrl: activeTab === "type" ? typedPreviewUrl || assetUrl : assetUrl,
         assetMime: "image/png",
         width,
         height,
+        aspectRatio: Number((width / height).toFixed(4)),
         color: method === "uploaded" ? undefined : selectedColor,
         fontFamily,
         strokeWidth,
         svgMarkup,
+        createdAt,
         metadata,
-      })
+      }
 
       onSaved(signature)
       handleClose(false)
     } catch (err) {
-      if (uploadedUrl) {
-        await deleteBlobUrl(uploadedUrl)
-      }
-      setError(err instanceof Error ? err.message : "Failed to save signature.")
+      setError(err instanceof Error ? err.message : "Failed to prepare signature.")
     } finally {
       setIsSaving(false)
     }
@@ -199,7 +194,7 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
         <DialogHeader className="border-b border-slate-200 px-6 py-5">
           <DialogTitle className="text-2xl font-black text-slate-900">Create Signature</DialogTitle>
           <DialogDescription className="text-slate-600">
-            Create and save a reusable electronic signature or initials for signing PDF documents.
+            Create an electronic signature or initials for this PDF. OmniSPDF does not store signature data after your session.
           </DialogDescription>
         </DialogHeader>
 
@@ -422,9 +417,9 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
 
           <aside className="bg-slate-50 px-6 py-5 lg:overflow-y-auto">
             <div className="rounded-2xl border border-slate-200 bg-white p-5">
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Save Preview</h3>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">Document Preview</h3>
               <p className="text-sm text-slate-500 mb-4">
-                This saved asset will be reusable in the PDF signing flow and prepared for clean placement on exported PDFs.
+                This signature is prepared locally in your browser and used only for the current PDF signing session.
               </p>
 
               <div className="mb-4 rounded-2xl border border-dashed border-slate-300 bg-slate-50 min-h-[200px] flex items-center justify-center p-4">
@@ -438,9 +433,9 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
                     style={{ transform: `translate(${uploadOffsetX * 0.3}px, ${uploadOffsetY * 0.3}px) scale(${uploadScale})` }}
                   />
                 ) : activeTab === "draw" ? (
-                  <span className="text-sm text-slate-400 text-center">Your drawn {signatureKind} will be trimmed and saved with a transparent background.</span>
+                  <span className="text-sm text-slate-400 text-center">Your drawn {signatureKind} will be trimmed locally with a transparent background.</span>
                 ) : (
-                  <span className="text-sm text-slate-400 text-center">Create a {signatureKind} to preview it here before saving.</span>
+                  <span className="text-sm text-slate-400 text-center">Create a {signatureKind} to preview it here before placing it on the document.</span>
                 )}
               </div>
 
@@ -453,7 +448,7 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
                   </label>
                 </div>
                 <p className="text-xs text-slate-500">
-                  OmniSPDF records the save timestamp and signature method to support future audit trail integration.
+                  OmniSPDF does not store this signature. It is generated in-session so you can place it directly on the current document.
                 </p>
               </div>
 
@@ -464,10 +459,10 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved }: CreateSign
                   {isSaving ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Saving {signatureKind}
+                      Preparing {signatureKind}
                     </>
                   ) : (
-                    `Save ${signatureKind}`
+                    `Use ${signatureKind}`
                   )}
                 </Button>
                 <Button variant="outline" onClick={() => handleClose(false)} disabled={isSaving}>

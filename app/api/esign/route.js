@@ -50,7 +50,7 @@ function errorResponse(message, status = 500) {
  *     y: number,                 // y position (ratio 0-1 from top)
  *     width: number,             // width (ratio 0-1)
  *     height: number,            // height (ratio 0-1)
- *     signatureBlobUrl: string   // uploaded signature image blob URL
+ *     signatureSource: string    // data URL or public image URL
  *   }>
  * }
  */
@@ -104,12 +104,7 @@ export async function POST(request) {
       const page = pages[pageIndex];
       const { width: pageWidth, height: pageHeight } = page.getSize();
 
-      // Fetch the signature image
-      const sigRes = await fetch(sig.signatureBlobUrl);
-      if (!sigRes.ok) {
-        throw new Error(`Failed to fetch signature image (${sigRes.status})`);
-      }
-      const sigBytes = new Uint8Array(await sigRes.arrayBuffer());
+      const sigBytes = await signatureSourceToBytes(sig.signatureSource);
 
       // Embed as PNG (signatures are uploaded as PNG)
       let sigImage;
@@ -170,4 +165,22 @@ export async function POST(request) {
 
     return errorResponse(message, 500);
   }
+}
+
+async function signatureSourceToBytes(signatureSource) {
+  if (!signatureSource || typeof signatureSource !== "string") {
+    throw new Error("Missing signature image data.");
+  }
+
+  if (signatureSource.startsWith("data:")) {
+    const [, encoded = ""] = signatureSource.split(",", 2);
+    return Uint8Array.from(Buffer.from(encoded, "base64"));
+  }
+
+  const sigRes = await fetch(signatureSource);
+  if (!sigRes.ok) {
+    throw new Error(`Failed to fetch signature image (${sigRes.status})`);
+  }
+
+  return new Uint8Array(await sigRes.arrayBuffer());
 }
