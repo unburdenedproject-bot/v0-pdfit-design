@@ -97,6 +97,7 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 - COMPLETED.md — All accomplished work (tools, layers, fixes, SEO)
 - ENVIRONMENT.md — Vercel environment variables and Google Cloud credentials
 - LOCALIZATION.md — Localization patterns, route map rules, language-specific components, trilingual build instructions
+- BRAND.md — Target audience, brand voice, positioning, color system, design rules
 
 ## Architecture Notes
 - Table extraction uses REST API to Document AI (not gRPC) to avoid private key format issues on Vercel
