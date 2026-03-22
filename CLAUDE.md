@@ -96,17 +96,9 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 - GROWTH-STRATEGY.md — Pricing funnel, upgrade triggers, revenue model
 - COMPLETED.md — All accomplished work (tools, layers, fixes, SEO)
 - ENVIRONMENT.md — Vercel environment variables and Google Cloud credentials
+- LOCALIZATION.md — Localization patterns, route map rules, language-specific components, trilingual build instructions
 
 ## Architecture Notes
-- Spanish homepage (app/es/page.tsx) has its OWN inline categories array — does NOT use FeaturesGridEs component
-- Brazilian homepage (app/br/page.tsx) has its OWN inline categories array — does NOT use FeaturesGridBr component
-- FeaturesGridEs is only used by /es/herramientas (All Tools page)
-- FeaturesGridBr is only used by /br/ferramentas (All Tools page)
-- When adding tools, update app/es/page.tsx, app/br/page.tsx, components/features-grid-es.tsx, AND components/features-grid-br.tsx
-- Route map for language switcher: lib/route-map.ts (must be updated when adding new pages — trilingual [EN, ES, BR] tuples)
-- All Spanish tool hrefs must use /es/ prefix with translated slugs
-- All Brazilian tool hrefs must use /br/ prefix with Portuguese slugs
-- Components: header-br.tsx, footer-br.tsx, features-grid-br.tsx, dashboard-client-br.tsx
 - Table extraction uses REST API to Document AI (not gRPC) to avoid private key format issues on Vercel
 - Enterprise workflow templates are gated by userPlan in workflow-interface.tsx (enterpriseOnly flag)
 - Resume tools: /ats-optimizer (analyze+fix) and /create-resume (build from scratch) are separate pages with separate interfaces
@@ -114,17 +106,13 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 - /api/generate-resume handles both "rewrite" and "build" modes, optional cover letter as second page
 - Homepage shows 2 resume tools: "Optimize Your Resume" → /ats-optimizer, "Create a Resume" → /create-resume
 - eSign signatures are privacy-first and session-only: never persist reusable signature libraries server-side
-- Shared business-tool components must be locale-aware when mounted under EN / ES / BR routes; do not rely on translated page wrappers alone
-- Total pages: 602 (EN/ES/BR combined)
+- See LOCALIZATION.md
 
 ## Rules - Always Follow
 - Never break already indexed pages
 - Use iLoveAPI for PDF processing (except pdf-to-word/excel/powerpoint which use CloudConvert)
 - Table extraction uses Google Document AI Form Parser
-- Target USA, LATAM, and Brazil markets
-- When adding new pages, always add to ALL THREE layers: English, Spanish, and Brazilian Portuguese
-- Brazilian pages use /br/ prefix (NOT /pt/) — targeting Brazil specifically
-- When adding new pages, update lib/route-map.ts for the language switcher
+- See LOCALIZATION.md
 - Enterprise users must have access to ALL Business features — check for both "business" AND "enterprise" in tier gates
 - Paula is non-technical — explain things simply
 
