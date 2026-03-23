@@ -163,6 +163,14 @@
 - Fixed broken logging in excel-to-pdf, office-to-pdf, powerpoint-to-pdf routes (undefined `usage` variable)
 - All Pro/Business routes now properly import and call logUsage with user.id
 
+## Bug Fixes — March 23 2026
+- **Enterprise locked out of QR Code (all 3 languages)** — `app/tools/qr-code/page.tsx`, `app/es/codigo-qr/page.tsx`, `app/br/codigo-qr/page.tsx`: client-side plan check was missing `"enterprise"`, blocking $49.99/month subscribers from accessing the tool
+- **pdf-to-txt missing maxDuration** — `app/api/pdf-to-txt/route.ts`: added `maxDuration = 300` to match all other processing routes; without it Vercel defaulted to 60s and Business/Enterprise users with large files would time out
+- **qr-code API wrong error format for unauthenticated users** — `app/api/qr-code/route.ts`: changed response from `{ error: "You must be logged in..." }` / 401 to `{ error: "upgrade_required" }` / 403 so the frontend correctly redirects to /pricing
+- **qr-code API missing logUsage** — `app/api/qr-code/route.ts`: added `logUsage(user.id, "qr-code")` after successful generation; Pro/Business/Enterprise QR code usage was invisible in the database
+- **Admin limits page showed "10" for Enterprise users** — `app/admin/limits/page.tsx`: added `"enterprise"` to the Unlimited condition; Enterprise subscribers saw "10 daily conversions" instead of "Unlimited"
+- **Table extraction charged Document AI before enforcing page cap** — `app/api/table-extraction/route.js`: added pdf-lib pre-flight page count after buffer download; if the PDF exceeds the user's remaining monthly quota it now rejects before calling Document AI instead of after, eliminating wasted API cost (~$0.03/page)
+
 ## Google Search Console Status
 - Sitemap with 1,130+ URLs across EN/ES/BR — submitted 2026-03-12, updated 2026-03-18 (added URL to PDF)
 - DO NOT break any existing indexed pages
