@@ -33,7 +33,7 @@ export default function QRCodePage() {
         return
       }
       const { data: profile } = await supabase.from("users").select("plan").eq("id", user.id).single()
-      if (profile?.plan !== "pro" && profile?.plan !== "business") {
+      if (profile?.plan !== "pro" && profile?.plan !== "business" && profile?.plan !== "enterprise") {
         router.push("/pricing?source=qr-code")
         return
       }

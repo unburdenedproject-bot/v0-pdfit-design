@@ -99,14 +99,15 @@ export async function POST(request) {
     const serviceUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
     const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
     let serviceClient = null;
+    let usedPagesAtStart = 0;
 
     if (serviceUrl && serviceKey) {
       serviceClient = createServiceClient(serviceUrl, serviceKey);
-      const usedPages = await getMonthlyPageCount(serviceClient, user.id);
+      usedPagesAtStart = await getMonthlyPageCount(serviceClient, user.id);
 
-      if (usedPages >= monthlyPageLimit) {
+      if (usedPagesAtStart >= monthlyPageLimit) {
         return errorResponse(
-          `Monthly limit reached. You have used ${usedPages} of ${monthlyPageLimit} table extraction pages this month. Your limit resets on the 1st of next month.`,
+          `Monthly limit reached. You have used ${usedPagesAtStart} of ${monthlyPageLimit} table extraction pages this month. Your limit resets on the 1st of next month.`,
           429
         );
       }
@@ -130,6 +131,31 @@ export async function POST(request) {
     const id = randomUUID();
     tmpPath = join("/tmp", `${id}-input.pdf`);
     await writeFile(tmpPath, buffer);
+
+    // Pre-flight page count: reject before calling Document AI if the PDF exceeds
+    // the user's remaining monthly quota. Uses pdf-lib to count pages from the buffer
+    // so we don't pay for a Document AI call we'd immediately discard.
+    if (serviceClient) {
+      try {
+        const { PDFDocument } = await import("pdf-lib");
+        const pdfDoc = await PDFDocument.load(buffer, { ignoreEncryption: true });
+        const pdfPageCount = pdfDoc.getPageCount();
+        const remaining = monthlyPageLimit - usedPagesAtStart;
+
+        if (pdfPageCount > remaining) {
+          if (uploadedBlobUrl) await del(uploadedBlobUrl).catch(() => {});
+          if (tmpPath) await unlink(tmpPath).catch(() => {});
+          tmpPath = null;
+          return errorResponse(
+            `This PDF has ${pdfPageCount} pages but you only have ${remaining} table extraction pages remaining this month (${monthlyPageLimit}/month limit). Try a smaller document or wait until the 1st of next month.`,
+            429
+          );
+        }
+      } catch {
+        // If pdf-lib can't parse the PDF, proceed to Document AI —
+        // the post-processing check on line ~185 still applies as a safety net.
+      }
+    }
 
     // Call Google Document AI using REST API (avoids gRPC private key issues)
     const projectId = process.env.GOOGLE_CLOUD_PROJECT_ID;

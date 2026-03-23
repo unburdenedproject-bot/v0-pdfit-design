@@ -10,8 +10,8 @@ export async function POST(request: Request) {
 
     if (!user) {
       return NextResponse.json(
-        { error: "You must be logged in to use this tool." },
-        { status: 401 }
+        { error: "upgrade_required" },
+        { status: 403 }
       )
     }
 
@@ -44,6 +44,9 @@ export async function POST(request: Request) {
         light: "#ffffff",
       },
     })
+
+    const { logUsage } = await import("@/lib/usage-check")
+    await logUsage(user.id, "qr-code")
 
     return NextResponse.json({ image })
   } catch (error) {
