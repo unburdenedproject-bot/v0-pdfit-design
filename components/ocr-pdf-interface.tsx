@@ -95,6 +95,15 @@ export function OcrPdfInterface() {
 
   const removeFile = useCallback(() => {
     setFile(null)
+    setIsProcessing(false)
+    setIsComplete(false)
+    setHasError(false)
+    setErrorMessage("")
+    setProgress(0)
+    setProcessedFile(null)
+    // Reset file input so the same file can be re-uploaded
+    const input = document.getElementById("ocr-file-upload") as HTMLInputElement
+    if (input) input.value = ""
   }, [])
 
   const processFile = useCallback(async () => {
@@ -194,6 +203,8 @@ export function OcrPdfInterface() {
     setHasError(false)
     setErrorMessage("")
     setProgress(0)
+    const input = document.getElementById("ocr-file-upload") as HTMLInputElement
+    if (input) input.value = ""
   }, [processedFile])
 
   // Error state
@@ -427,6 +438,7 @@ export function OcrPdfInterface() {
             type="file"
             accept="application/pdf,.pdf"
             className="hidden"
+            onClick={(e) => { (e.target as HTMLInputElement).value = "" }}
             onChange={handleFileSelect}
           />
 

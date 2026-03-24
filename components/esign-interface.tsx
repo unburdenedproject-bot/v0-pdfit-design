@@ -712,7 +712,7 @@ export function EsignInterface({ locale = "en" }: { locale?: EsignLocale }) {
                   </Button>
                   <p className="text-sm text-slate-500 mt-4">{copy.supportedFormat}</p>
                 </div>
-                <input id="esign-file-upload" type="file" accept=".pdf" className="hidden" onChange={handleFileSelect} />
+                <input id="esign-file-upload" type="file" accept=".pdf" className="hidden" onClick={(e) => { (e.target as HTMLInputElement).value = "" }} onChange={handleFileSelect} />
                 <TrustBadges />
               </>
             )}

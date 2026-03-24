@@ -394,6 +394,7 @@ export function ProtectPdfInterface() {
             type="file"
             accept=".pdf"
             className="hidden"
+            onClick={(e) => { (e.target as HTMLInputElement).value = "" }}
             onChange={handleFileSelect}
           />
 

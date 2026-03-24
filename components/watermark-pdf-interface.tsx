@@ -495,6 +495,7 @@ export function WatermarkPdfInterface() {
             type="file"
             accept="application/pdf,.pdf"
             className="hidden"
+            onClick={(e) => { (e.target as HTMLInputElement).value = "" }}
             onChange={handleFileSelect}
           />
 

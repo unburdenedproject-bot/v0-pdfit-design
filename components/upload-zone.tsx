@@ -70,6 +70,7 @@ export function UploadZone() {
         multiple
         accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.jpg,.jpeg,.png"
         className="hidden"
+        onClick={(e) => { (e.target as HTMLInputElement).value = "" }}
         onChange={handleFileSelect}
       />
 

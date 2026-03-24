@@ -726,6 +726,7 @@ export function RedactionInterface({ locale = "en" }: { locale?: ToolLocale }) {
                   type="file"
                   accept=".pdf"
                   className="hidden"
+                  onClick={(e) => { (e.target as HTMLInputElement).value = "" }}
                   onChange={handleFileSelect}
                 />
                 <TrustBadges />

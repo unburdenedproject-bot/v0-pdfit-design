@@ -189,12 +189,12 @@ function LoginForm() {
                         required
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        className="border-slate-200 focus-visible:ring-orange-500 pr-10"
+                        className="border-slate-200 focus-visible:ring-orange-500 pr-10 [&::-ms-reveal]:hidden [&::-webkit-credentials-auto-fill-button]:hidden"
                       />
                       <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 z-10"
                         aria-label={showPassword ? "Ocultar senha" : "Mostrar senha"}
                       >
                         {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}

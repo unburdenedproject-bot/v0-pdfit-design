@@ -419,6 +419,7 @@ export function PhoneScanCleanupInterface() {
             type="file"
             accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp"
             className="hidden"
+            onClick={(e) => { (e.target as HTMLInputElement).value = "" }}
             onChange={handleFileSelect}
           />
 

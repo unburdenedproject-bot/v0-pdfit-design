@@ -1191,6 +1191,7 @@ export function ProcessingInterface({
             multiple={allowMultiple}
             accept={acceptedFiles}
             className="hidden"
+            onClick={(e) => { (e.target as HTMLInputElement).value = "" }}
             onChange={handleFileSelect}
           />
 
