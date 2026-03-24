@@ -24,10 +24,33 @@ function LoginForm() {
   const [error, setError] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [captchaToken, setCaptchaToken] = useState<string | null>(null)
+  const [forgotPassword, setForgotPassword] = useState(false)
+  const [resetEmail, setResetEmail] = useState("")
+  const [resetSent, setResetSent] = useState(false)
+  const [resetError, setResetError] = useState<string | null>(null)
+  const [resetLoading, setResetLoading] = useState(false)
   const captchaRef = useRef<HCaptcha>(null)
   const router = useRouter()
   const searchParams = useSearchParams()
   const redirectTo = searchParams.get("redirect") || "/es/dashboard"
+
+  const handleResetPassword = async (e: React.FormEvent) => {
+    e.preventDefault()
+    const supabase = createClient()
+    setResetLoading(true)
+    setResetError(null)
+    try {
+      const { error } = await supabase.auth.resetPasswordForEmail(resetEmail, {
+        redirectTo: `${window.location.origin}/es/dashboard`,
+      })
+      if (error) throw error
+      setResetSent(true)
+    } catch (error: unknown) {
+      setResetError(error instanceof Error ? error.message : "Ocurrió un error")
+    } finally {
+      setResetLoading(false)
+    }
+  }
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -62,6 +85,65 @@ function LoginForm() {
     }
   }
 
+  if (forgotPassword) {
+    return (
+      <Card className="border-slate-200 shadow-sm">
+        <CardHeader className="text-center">
+          <CardTitle className="text-xl text-slate-800">Restablecer contraseña</CardTitle>
+          <CardDescription className="text-slate-500">
+            {resetSent
+              ? "Revisa tu correo para el enlace de restablecimiento."
+              : "Ingresa tu correo y te enviaremos un enlace para restablecer tu contraseña."}
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          {!resetSent ? (
+            <form onSubmit={handleResetPassword}>
+              <div className="flex flex-col gap-4">
+                <div className="grid gap-2">
+                  <Label htmlFor="reset-email" className="text-slate-700">Correo electrónico</Label>
+                  <Input
+                    id="reset-email"
+                    type="email"
+                    placeholder="tu@ejemplo.com"
+                    required
+                    value={resetEmail}
+                    onChange={(e) => setResetEmail(e.target.value)}
+                    className="border-slate-200 focus-visible:ring-orange-500"
+                  />
+                </div>
+                {resetError && (
+                  <p className="text-sm text-red-600 bg-red-50 rounded-md px-3 py-2">
+                    {resetError}
+                  </p>
+                )}
+                <Button
+                  type="submit"
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-white"
+                  disabled={resetLoading}
+                >
+                  {resetLoading ? "Enviando..." : "Enviar enlace"}
+                </Button>
+              </div>
+            </form>
+          ) : (
+            <p className="text-center text-sm text-green-600 bg-green-50 rounded-md px-3 py-3">
+              Si existe una cuenta con ese correo, recibirás un enlace de restablecimiento.
+            </p>
+          )}
+          <div className="mt-4 text-center">
+            <button
+              onClick={() => { setForgotPassword(false); setResetSent(false); setResetError(null) }}
+              className="text-sm text-orange-500 hover:text-orange-600 font-medium underline underline-offset-4"
+            >
+              Volver a iniciar sesión
+            </button>
+          </div>
+        </CardContent>
+      </Card>
+    )
+  }
+
   return (
           <Card className="border-slate-200 shadow-sm">
             <CardHeader className="text-center">
@@ -87,7 +169,16 @@ function LoginForm() {
                     />
                   </div>
                   <div className="grid gap-2">
-                    <Label htmlFor="password" className="text-slate-700">Contraseña</Label>
+                    <div className="flex items-center justify-between">
+                      <Label htmlFor="password" className="text-slate-700">Contraseña</Label>
+                      <button
+                        type="button"
+                        onClick={() => setForgotPassword(true)}
+                        className="text-xs text-orange-500 hover:text-orange-600 font-medium underline underline-offset-4"
+                      >
+                        ¿Olvidaste tu contraseña?
+                      </button>
+                    </div>
                     <Input
                       id="password"
                       type="password"

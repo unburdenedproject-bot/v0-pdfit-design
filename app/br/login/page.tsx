@@ -24,10 +24,33 @@ function LoginForm() {
   const [error, setError] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [captchaToken, setCaptchaToken] = useState<string | null>(null)
+  const [forgotPassword, setForgotPassword] = useState(false)
+  const [resetEmail, setResetEmail] = useState("")
+  const [resetSent, setResetSent] = useState(false)
+  const [resetError, setResetError] = useState<string | null>(null)
+  const [resetLoading, setResetLoading] = useState(false)
   const captchaRef = useRef<HCaptcha>(null)
   const router = useRouter()
   const searchParams = useSearchParams()
   const redirectTo = searchParams.get("redirect") || "/br/painel"
+
+  const handleResetPassword = async (e: React.FormEvent) => {
+    e.preventDefault()
+    const supabase = createClient()
+    setResetLoading(true)
+    setResetError(null)
+    try {
+      const { error } = await supabase.auth.resetPasswordForEmail(resetEmail, {
+        redirectTo: `${window.location.origin}/br/painel`,
+      })
+      if (error) throw error
+      setResetSent(true)
+    } catch (error: unknown) {
+      setResetError(error instanceof Error ? error.message : "Ocorreu um erro")
+    } finally {
+      setResetLoading(false)
+    }
+  }
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -62,6 +85,65 @@ function LoginForm() {
     }
   }
 
+  if (forgotPassword) {
+    return (
+      <Card className="border-slate-200 shadow-sm">
+        <CardHeader className="text-center">
+          <CardTitle className="text-xl text-slate-800">Redefinir senha</CardTitle>
+          <CardDescription className="text-slate-500">
+            {resetSent
+              ? "Verifique seu email para o link de redefinição."
+              : "Digite seu email e enviaremos um link para redefinir sua senha."}
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          {!resetSent ? (
+            <form onSubmit={handleResetPassword}>
+              <div className="flex flex-col gap-4">
+                <div className="grid gap-2">
+                  <Label htmlFor="reset-email" className="text-slate-700">Email</Label>
+                  <Input
+                    id="reset-email"
+                    type="email"
+                    placeholder="seu@exemplo.com"
+                    required
+                    value={resetEmail}
+                    onChange={(e) => setResetEmail(e.target.value)}
+                    className="border-slate-200 focus-visible:ring-orange-500"
+                  />
+                </div>
+                {resetError && (
+                  <p className="text-sm text-red-600 bg-red-50 rounded-md px-3 py-2">
+                    {resetError}
+                  </p>
+                )}
+                <Button
+                  type="submit"
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-white"
+                  disabled={resetLoading}
+                >
+                  {resetLoading ? "Enviando..." : "Enviar link"}
+                </Button>
+              </div>
+            </form>
+          ) : (
+            <p className="text-center text-sm text-green-600 bg-green-50 rounded-md px-3 py-3">
+              Se existir uma conta com esse email, você receberá um link de redefinição.
+            </p>
+          )}
+          <div className="mt-4 text-center">
+            <button
+              onClick={() => { setForgotPassword(false); setResetSent(false); setResetError(null) }}
+              className="text-sm text-orange-500 hover:text-orange-600 font-medium underline underline-offset-4"
+            >
+              Voltar para o login
+            </button>
+          </div>
+        </CardContent>
+      </Card>
+    )
+  }
+
   return (
           <Card className="border-slate-200 shadow-sm">
             <CardHeader className="text-center">
@@ -87,7 +169,16 @@ function LoginForm() {
                     />
                   </div>
                   <div className="grid gap-2">
-                    <Label htmlFor="password" className="text-slate-700">Senha</Label>
+                    <div className="flex items-center justify-between">
+                      <Label htmlFor="password" className="text-slate-700">Senha</Label>
+                      <button
+                        type="button"
+                        onClick={() => setForgotPassword(true)}
+                        className="text-xs text-orange-500 hover:text-orange-600 font-medium underline underline-offset-4"
+                      >
+                        Esqueceu a senha?
+                      </button>
+                    </div>
                     <Input
                       id="password"
                       type="password"
