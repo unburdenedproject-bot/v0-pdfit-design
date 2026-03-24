@@ -62,7 +62,7 @@ export function HeaderBr() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/br" className="flex items-center">
-            <img src="/logo.svg" alt="PDF.it" className="h-8 w-auto" width="180" height="32" fetchPriority="high" />
+            <img src="/PDF_it_LOGO_Vector.svg" alt="PDF.it" className="h-8 w-auto" />
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">

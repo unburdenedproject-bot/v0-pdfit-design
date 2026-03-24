@@ -9,7 +9,7 @@ export function FooterEs() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="mb-4">
-              <span className="text-2xl font-black tracking-tight"><span className="text-white">PDF</span><span style={{ color: "#14D8C4" }}>.it</span></span>
+              <img src="/PDF_it_LOGO_Vector.svg" alt="PDF.it" className="h-8 w-auto" />
             </div>
             <p className="text-[#A5B4FC] mb-6 leading-relaxed">
               Convierte, comprime, une, divide, escanea y protege archivos PDF en segundos. Herramientas simples que funcionan en cualquier dispositivo.
