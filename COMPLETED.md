@@ -1,4 +1,4 @@
-# OmnisPDF - Accomplished Work
+# PDF.it - Accomplished Work
 
 ## Core Tools (All Working)
 - /merge-pdf, /split-pdf, /rotate-pdf
@@ -84,7 +84,7 @@
 - First name required on signup (validation + stored in Supabase user_metadata)
 - Stripe webhook no longer overwrites user names (changed upsert → update)
 - Suspense boundary fix for useSearchParams() in auth/confirm pages
-- All PDF.it branding removed, replaced with OmnisPDF
+- All OmnisPDF branding removed, replaced with PDF.it
 
 ## SEO Cluster Pages Done (All 6 Clusters — ~100 pages)
 - Cluster 1 (Compression): 18 pages built
@@ -126,14 +126,14 @@
 - Apple touch icon: app/apple-icon.png
 - OG/Twitter social sharing image: public/og-logo.png (1200x630)
 - Headers (all 3 languages): use `<img src="/logo.svg">` — h-8 w-auto
-- Footers (all 3 languages): use icon.svg + styled "OmnisPDF" text on dark bg
+- Footers (all 3 languages): use icon.svg + styled "PDF.it" text on dark bg
 - Login pages (EN/ES/BR): use logo.svg centered above form
 - Signup pages (EN/ES/BR): use logo.svg centered above form
 - app/layout.tsx: full metadata with favicon, apple-icon, OG image, Twitter card
 
 ## Analytics (COMPLETE)
-- Google Tag Manager (GTM-T7LDGB3J) loads via next/script with afterInteractive strategy
-- GA4 (G-DQRW3BJMX1) loads directly alongside GTM for redundancy
+- Google Tag Manager (GTM-PNR9LXC2) loads via next/script with afterInteractive strategy
+- GA4 (G-PWD4YNY710) loads directly alongside GTM for redundancy
 - google-analytics.tsx is a "use client" component for proper Next.js App Router hydration
 - GTM noscript fallback in body
 
@@ -170,6 +170,41 @@
 - **qr-code API missing logUsage** — `app/api/qr-code/route.ts`: added `logUsage(user.id, "qr-code")` after successful generation; Pro/Business/Enterprise QR code usage was invisible in the database
 - **Admin limits page showed "10" for Enterprise users** — `app/admin/limits/page.tsx`: added `"enterprise"` to the Unlimited condition; Enterprise subscribers saw "10 daily conversions" instead of "Unlimited"
 - **Table extraction charged Document AI before enforcing page cap** — `app/api/table-extraction/route.js`: added pdf-lib pre-flight page count after buffer download; if the PDF exceeds the user's remaining monthly quota it now rejects before calling Document AI instead of after, eliminating wasted API cost (~$0.03/page)
+
+## Bug Fixes — March 24 2026 (QA Report — Critical)
+- **SB-01: Signup confirmation email failing** — Added `captchaToken` to `supabase.auth.signUp()` options in all 3 signup pages (EN/ES/BR); without it Supabase rejected the request server-side when hCaptcha was enabled
+- **SB-15/22: Missing Forgot Password on login** — Added "Forgot Password" button with `resetPasswordForEmail` flow to all 3 login pages; created `app/reset-password/page.tsx` for new password entry; also fixed missing `captchaToken` in `signInWithPassword()` on all 3 login pages
+- **SB-28: Missing password eye icon on signup** — Added Eye/EyeOff visibility toggle to Password and Confirm Password fields on all 3 signup pages
+- **SB-11: Merge PDF only allows 1 file** — Fixed `processing-interface.tsx`: free users now get 2 files for merge (was 1), paid users unlimited; `multiple` attribute enabled on file input for merge tool
+- **SB-27: "Email Us Directly" button not working** — Added explicit `onClick` with `window.location.href` for mailto on all 3 homepage FAQ buttons; fixed BR page from `suporte@` to `contact@pdf.it.com`
+- **SB-30: Captcha misaligned on login** — Added `overflow-hidden` to hCaptcha wrapper div on all 3 login pages
+
+## Bug Fixes — March 24 2026 (QA Report — Medium)
+- **SB-02: OCR Scanner blank after removing file** — `removeFile()` in `ocr-pdf-interface.tsx` now resets all state variables (processing, error, complete, progress, processedFile), not just the file
+- **SB-03: Same file cannot be re-uploaded after deletion** — Added `input.value = ""` reset in OCR `removeFile()` and `resetInterface()`; added `onClick` value reset to all 12 file input components project-wide
+- **SB-06: Password eye icon disappears after full entry** — Hidden native browser password reveal buttons (`[&::-ms-reveal]:hidden`, `[&::-webkit-credentials-auto-fill-button]:hidden`) and added `z-10` to custom eye button on all 3 login pages
+- **SB-09: Split PDF fails on single-page PDF** — Already had pdf-lib pre-check in `split-pdf-interface.tsx` (validates page count before upload, shows "This PDF has only 1 page and cannot be split")
+- **SB-29: Selected file removed when canceling file dialog** — Added `onClick={(e) => { (e.target as HTMLInputElement).value = "" }}` to all 12 file input elements; resets value before dialog opens so cancel doesn't trigger onChange
+
+## Bug Fixes — March 24 2026 (QA Report — Low Priority)
+- **SB-05/07: Social media footer icons scroll to top** — Converted `Link` to `<a>` with `target="_blank"` `rel="noopener noreferrer"` and `onClick={(e) => e.preventDefault()}` in all 3 footers
+- **SB-08: Vague error messages on upload** — Added specific messages in `processing-interface.tsx` catch block: file too large, unsupported format, network error
+- **SB-17: Screen flickers on nav click** — Added placeholder `div` with matching dimensions in all 3 headers while auth state loads, preventing layout shift
+- **SB-24: Yearly plan resets to monthly** — Billing toggle selection now persists to `localStorage` and restores on page load in `app/pricing/page.tsx`
+- **SB-19: Download button misaligned on mobile** — Changed file result card to `flex-col sm:flex-row` layout; download button goes full-width on mobile (`w-full sm:w-auto`)
+- **SB-32/33: Contact form fields cut off** — Changed name/email grid from `md:grid-cols-2` to single column to prevent placeholder truncation
+- **SB-35/36: Email and filename overflow on mobile** — Added `truncate`, `max-w-[200px]`, and `break-all` to file names and email addresses
+- **SB-37: UI distorted on mobile after conversion** — Added `overflow-x-hidden` on success state section in `processing-interface.tsx`
+
+## PDF.it Rebrand (COMPLETE — March 24 2026)
+- Global find-and-replace: OmnisPDF → PDF.it across all pages, components, metadata
+- Tailwind config: remapped `orange` color key to teal (#14D8C4) hex values
+- Background color: replaced all `bg-slate-50`/`bg-white` page wrappers with `#F3F4FF`
+- Header: text wordmark with "PDF" in dark indigo (#191B4D) + ".it" in teal (#14D8C4)
+- Footer: text wordmark with "PDF" in white + ".it" in teal on dark (#0E0F1E) background
+- Fonts: Sora (headings), Inter (body) via BRAND.md
+- GA4 measurement ID updated to G-PWD4YNY710
+- GTM container ID updated to GTM-PNR9LXC2
 
 ## Google Search Console Status
 - Sitemap with 1,130+ URLs across EN/ES/BR — submitted 2026-03-12, updated 2026-03-18 (added URL to PDF)
