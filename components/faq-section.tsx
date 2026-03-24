@@ -168,19 +168,19 @@ export function FAQSection() {
 
             {/* Bottom CTA */}
             <div className="mt-16 text-center">
-              <div className="bg-gradient-to-r from-orange-50 to-orange-100 border border-orange-200 rounded-2xl p-8">
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">Still have questions?</h3>
-                <p className="text-slate-700 mb-6">Our support team is here to help you get the most out of PDF.it.</p>
+              <div className="bg-[#191B4D] border border-[#252A6A] rounded-2xl p-8">
+                <h3 className="text-2xl font-bold text-white mb-4">Still have questions?</h3>
+                <p className="text-slate-300 mb-6">Our support team is here to help you get the most out of PDF.it.</p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
                     href="/contact"
-                    className="inline-flex items-center justify-center px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg transition-colors duration-200"
+                    className="inline-flex items-center justify-center px-6 py-3 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-semibold rounded-lg transition-colors duration-200"
                   >
                     Contact Support
                   </a>
                   <a
                     href="mailto:contact@pdf.it.com"
-                    className="inline-flex items-center justify-center px-6 py-3 bg-[#F3F4FF] hover:bg-gray-50 text-slate-700 font-semibold rounded-lg border border-gray-300 transition-colors duration-200"
+                    className="inline-flex items-center justify-center px-6 py-3 bg-transparent hover:bg-[#252A6A] text-white font-semibold rounded-lg border border-[#252A6A] transition-colors duration-200"
                   >
                     Email Us
                   </a>

@@ -172,7 +172,7 @@ export default function AcercaPage() {
 
             <div className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Nuestra Mision</h2>
-              <div className="bg-gradient-to-r from-orange-50 to-orange-100 border border-orange-200 rounded-xl p-8">
+              <div className="bg-[#191B4D] border border-[#252A6A] rounded-xl p-8">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Target className="h-6 w-6 text-white" />

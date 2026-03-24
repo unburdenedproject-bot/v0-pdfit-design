@@ -394,9 +394,9 @@ export default function HomePagePt() {
               </div>
 
               <div className="mt-8 text-center">
-                <div className="bg-gradient-to-r from-orange-50 to-orange-100 border border-orange-200 rounded-2xl p-6">
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">Ainda tem perguntas?</h3>
-                  <p className="text-slate-700 text-xs mb-4 max-w-xl mx-auto leading-relaxed">
+                <div className="bg-[#191B4D] border border-[#252A6A] rounded-2xl p-6">
+                  <h3 className="text-lg font-bold text-white mb-2">Ainda tem perguntas?</h3>
+                  <p className="text-slate-300 text-xs mb-4 max-w-xl mx-auto leading-relaxed">
                     Nossa equipe de suporte esta aqui para ajudar voce a aproveitar o PDF.it ao maximo.
                   </p>
                   <div className="flex justify-center">
@@ -406,7 +406,7 @@ export default function HomePagePt() {
                         e.preventDefault()
                         window.location.href = "mailto:contact@pdf.it.com"
                       }}
-                      className="inline-flex items-center justify-center px-5 py-2.5 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl text-sm transition-colors duration-200 shadow-lg hover:shadow-xl"
+                      className="inline-flex items-center justify-center px-5 py-2.5 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold rounded-xl text-sm transition-colors duration-200 shadow-lg hover:shadow-xl"
                     >
                       Escreva para Nos
                     </a>

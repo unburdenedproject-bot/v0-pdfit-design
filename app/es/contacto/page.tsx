@@ -68,22 +68,22 @@ export default function ContactoPage() {
                   <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
                     <h2 className="text-2xl font-bold text-slate-900 mb-6">Información de Contacto</h2>
 
-                    <div className="bg-gradient-to-r from-orange-50 to-orange-100 border border-orange-200 rounded-xl p-6 mb-6">
+                    <div className="bg-[#191B4D] border border-[#252A6A] rounded-xl p-6 mb-6">
                       <div className="flex items-center gap-4 mb-3">
                         <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
                           <Mail className="h-6 w-6 text-white" />
                         </div>
                         <div>
-                          <h3 className="text-lg font-bold text-orange-900 mb-1">Soporte por Email</h3>
+                          <h3 className="text-lg font-bold text-white mb-1">Soporte por Email</h3>
                           <a
                             href="mailto:contact@pdf.it.com"
-                            className="text-2xl font-bold text-orange-600 hover:text-orange-700 transition-colors"
+                            className="text-2xl font-bold text-[#14D8C4] hover:text-[#2EE6D6] transition-colors"
                           >
                             contact@pdf.it.com
                           </a>
                         </div>
                       </div>
-                      <div className="flex items-center gap-2 text-orange-800">
+                      <div className="flex items-center gap-2 text-slate-300">
                         <Clock className="h-4 w-4" />
                         <span className="text-sm font-medium">Respondemos en menos de 24 horas</span>
                       </div>
