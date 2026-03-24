@@ -753,7 +753,15 @@ export function ProcessingInterface({
       setIsComplete(true)
     } catch (error) {
       setHasError(true)
-      setErrorMessage(error instanceof Error ? error.message : "An unknown error occurred")
+      let message = error instanceof Error ? error.message : "An unknown error occurred"
+      if (message.includes("413") || message.toLowerCase().includes("too large") || message.toLowerCase().includes("payload")) {
+        message = "Your file exceeds the size limit. Please use a smaller file."
+      } else if (message.toLowerCase().includes("unsupported") || message.toLowerCase().includes("format") || message.includes("415")) {
+        message = "This file format is not supported. Please upload a PDF."
+      } else if (message.toLowerCase().includes("failed to fetch") || message.toLowerCase().includes("network") || message.toLowerCase().includes("econnrefused")) {
+        message = "Connection failed. Please check your internet and try again."
+      }
+      setErrorMessage(message)
       setIsProcessing(false)
     }
   }, [files, toolName])
@@ -986,12 +994,12 @@ export function ProcessingInterface({
                     key={index}
                     className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow"
                   >
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                      <div className="flex items-center gap-4 min-w-0">
+                        <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
                           <FileText className="h-6 w-6 text-green-600" />
                         </div>
-                        <div>
+                        <div className="min-w-0">
                           <div className="flex items-center gap-2">
                             <input
                               type="text"
@@ -1001,17 +1009,17 @@ export function ProcessingInterface({
                             />
                             <Pencil className="h-4 w-4 text-orange-400 flex-shrink-0" />
                           </div>
-                          <div className="flex items-center gap-4 text-sm text-slate-500 mt-1">
+                          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-slate-500 mt-1">
                             <span>{(convertedSize / 1024 / 1024).toFixed(2)} MB</span>
-                            <span>•</span>
+                            <span className="hidden sm:inline">•</span>
                             <span className="text-green-600 font-medium">✓ Conversion successful</span>
-                            <span>•</span>
+                            <span className="hidden sm:inline">•</span>
                             <span>Ready for download</span>
                           </div>
                         </div>
                       </div>
                       <Button
-                        className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3"
+                        className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 w-full sm:w-auto flex-shrink-0"
                         onClick={() => {
                           const name = editedNames[index] ?? file.name
                           if ((toolName === "PDF to JPG" || toolName === "PDF to PNG") && file.rawBlob) {

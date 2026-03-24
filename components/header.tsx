@@ -109,7 +109,9 @@ export function Header() {
             </div>
 
             {/* Auth links */}
-            {!loading && (
+            {loading ? (
+              <div className="w-[100px] h-9" />
+            ) : (
               user ? (
                 <Link href="/dashboard">
                   <Button size="sm" className="bg-orange-500 hover:bg-orange-600 text-white">
@@ -226,25 +228,25 @@ export function Header() {
               Português
             </Link>
 
-            {!loading && (
-              <div className="pt-2 border-t border-gray-100">
-                {user ? (
-                  <Link href="/dashboard" onClick={() => setMobileMenuOpen(false)}>
-                    <Button size="sm" className="w-full bg-orange-500 hover:bg-orange-600 text-white">
-                      <User className="mr-1.5 h-4 w-4" />
-                      Dashboard
-                    </Button>
-                  </Link>
-                ) : (
-                  <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
-                    <Button size="sm" variant="outline" className="w-full border-slate-200 text-slate-700 hover:text-slate-900">
-                      <LogIn className="mr-1.5 h-4 w-4" />
-                      Sign In
-                    </Button>
-                  </Link>
-                )}
-              </div>
-            )}
+            <div className="pt-2 border-t border-gray-100">
+              {loading ? (
+                <div className="h-9" />
+              ) : user ? (
+                <Link href="/dashboard" onClick={() => setMobileMenuOpen(false)}>
+                  <Button size="sm" className="w-full bg-orange-500 hover:bg-orange-600 text-white">
+                    <User className="mr-1.5 h-4 w-4" />
+                    Dashboard
+                  </Button>
+                </Link>
+              ) : (
+                <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
+                  <Button size="sm" variant="outline" className="w-full border-slate-200 text-slate-700 hover:text-slate-900">
+                    <LogIn className="mr-1.5 h-4 w-4" />
+                    Sign In
+                  </Button>
+                </Link>
+              )}
+            </div>
           </div>
         </nav>
       )}
