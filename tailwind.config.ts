@@ -51,18 +51,34 @@ const config: Config = {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
-        // Custom brand colors
-        slate: {
-          800: "#1a365d",
-          900: "#0f172a",
+        // PDF.it brand colors
+        brand: {
+          dark: "#191B4D",
+          secondary: "#252A6A",
         },
+        teal: {
+          300: "#2EE6D6",
+          400: "#14D8C4",
+          500: "#14D8C4",
+          600: "#2EE6D6",
+        },
+        // Legacy orange keys remapped to teal for compatibility
         orange: {
-          300: "#FB923C",
-          400: "#F97316",
-          500: "#EA580C",
-          600: "#C2410C",
-          700: "#9A3412",
+          300: "#2EE6D6",
+          400: "#14D8C4",
+          500: "#14D8C4",
+          600: "#2EE6D6",
+          700: "#0FBFB0",
         },
+        // Legacy slate keys remapped to brand palette for compatibility
+        slate: {
+          800: "#191B4D",
+          900: "#252A6A",
+        },
+        support: {
+          blue: "#6B7CFF",
+        },
+        surface: "#F5F7FB",
       },
       borderRadius: {
         lg: "var(--radius)",
