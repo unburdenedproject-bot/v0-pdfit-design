@@ -92,6 +92,9 @@ export function ProcessingInterface({
 
   const compressionLevel = showCompressionSelector ? selectedCompressionLevel : (compressionLevelProp || "recommended")
   const isPaidUser = userPlan === "pro" || userPlan === "business" || userPlan === "enterprise"
+  const isMergeTool = toolName === "Merge PDF"
+  const allowMultiple = isPaidUser || isMergeTool
+  const freeFileLimit = isMergeTool ? 2 : 1
 
   useEffect(() => {
     fetch("/api/user-plan")
@@ -118,10 +121,10 @@ export function ProcessingInterface({
     if (isPaidUser) {
       setFiles((prev) => [...prev, ...droppedFiles])
     } else {
-      // Free users: only keep the first file
-      setFiles(droppedFiles.slice(0, 1))
+      // Free users: limit files (2 for merge, 1 for others)
+      setFiles((prev) => [...prev, ...droppedFiles].slice(0, freeFileLimit))
     }
-  }, [isPaidUser])
+  }, [isPaidUser, freeFileLimit])
 
   const handleFileSelect = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
@@ -129,10 +132,10 @@ export function ProcessingInterface({
       if (isPaidUser) {
         setFiles((prev) => [...prev, ...selectedFiles])
       } else {
-        setFiles(selectedFiles.slice(0, 1))
+        setFiles((prev) => [...prev, ...selectedFiles].slice(0, freeFileLimit))
       }
     }
-  }, [isPaidUser])
+  }, [isPaidUser, freeFileLimit])
 
   const removeFile = useCallback((index: number) => {
     setFiles((prev) => prev.filter((_, i) => i !== index))
@@ -1171,7 +1174,7 @@ export function ProcessingInterface({
           <input
             id="file-upload"
             type="file"
-            multiple={isPaidUser}
+            multiple={allowMultiple}
             accept={acceptedFiles}
             className="hidden"
             onChange={handleFileSelect}
