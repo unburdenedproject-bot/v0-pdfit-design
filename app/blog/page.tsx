@@ -10,7 +10,7 @@ export const metadata = {
 
 const posts = [
   {
-    slug: "welcome-to-omnispdf",
+    slug: "welcome-to-pdfit",
     title: "Welcome to PDF.it — PDF Tools Built for Professionals",
     excerpt: "We built PDF.it because professionals deserve better PDF tools. Here's our story and what makes us different.",
     date: "2026-04-01",

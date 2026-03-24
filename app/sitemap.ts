@@ -56,13 +56,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/ats-optimizer`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/create-resume`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.7 },
-    { url: `${baseUrl}/blog/welcome-to-omnispdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
+    { url: `${baseUrl}/blog/welcome-to-pdfit`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
     { url: `${baseUrl}/blog/table-extraction-excel`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
     { url: `${baseUrl}/blog/why-three-languages`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
     { url: `${baseUrl}/jpg-to-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${baseUrl}/png-to-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
-    { url: `${baseUrl}/tools/qr-code`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
-    { url: `${baseUrl}/tools/word-to-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
 
     // SEO cluster pages (compression)
     { url: `${baseUrl}/compress-pdf-to-1mb`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },

@@ -126,8 +126,74 @@
 **Why it matters:** Saves hundreds of file edits and prevents missed references. The config is the single source of truth for colors, so changing it once propagates everywhere.
 **Apply when:** Any full-codebase rebrand where one color family replaces another — remap in tailwind.config.ts first, then only do targeted edits for hardcoded hex values or cases where the semantic meaning needs to change.
 
+## 2026-03-24 — SVG files dropped into the project root don't serve from Next.js
+
+**What:** A logo SVG placed in the project root (`PDF.it LOGO_Vector.svg`) won't load in the browser. It must be in the `public/` folder and referenced as `/filename.svg`. The filename also can't contain spaces or dots (other than the extension) — rename to underscores before copying.
+**Why it matters:** The file existed locally and git showed it as untracked, but the deployed site returned a 404 because Next.js only serves static files from `public/`.
+**Apply when:** Any time adding a static asset (image, font, SVG) — always place it in `public/` and verify the path matches the `src` attribute exactly.
+
+## 2026-03-24 — Use text wordmark as fallback when SVG logo fails to load
+
+**What:** When an SVG logo can't be confirmed working, replace the `<img>` tag with a styled text wordmark (`<span>` with inline styles) as a reliable fallback. Revert to `<img>` once the final file is verified.
+**Why it matters:** A broken `<img>` renders as a missing image icon — worse than no logo. A text wordmark looks intentional and keeps the brand visible.
+**Apply when:** Any time a logo file change is unverified or a designer hasn't delivered the final asset yet.
+
+## 2026-03-24 — Header logo text color must match the header background
+
+**What:** When the header background switched from dark (`#0E0F1E`) to light (`#F3F4FF`), the text wordmark color for "PDF" had to change from `#ffffff` (invisible on light) to `#191B4D` (dark indigo). The `.it` teal stays the same on both.
+**Why it matters:** Logo color is tied to the surface it sits on — a color that works on dark will be invisible on light.
+**Apply when:** Any time the header background color changes — always check that the wordmark colors have sufficient contrast against the new background.
+
+## 2026-03-24 — For codebase-wide color replacements, target semantic patterns not raw class names
+
+**What:** Rather than replacing all `bg-white` (which would break cards, modals, and form inputs), targeted the page-level patterns: `min-h-screen bg-white` (page wrappers) and `py-N bg-white` / `bg-white py-N` (section backgrounds). Also updated the named `surface` color in `tailwind.config.ts` to propagate via `bg-surface`.
+**Why it matters:** `bg-white` appears 500+ times in this codebase across elements that should stay white (cards on dark backgrounds, input fields, modals). A blanket replace would break the UI.
+**Apply when:** Any codebase-wide background color swap — identify the structural patterns (page wrappers, section containers) and target those specifically, not the raw class.
+
 ## 2026-03-24 — Lock brand identity in CLAUDE.md and BRAND.md before building UI
 
 **What:** Updated CLAUDE.md Brand section and fully rewrote BRAND.md to reflect the final locked PDF.it palette (#0E0F1E dark, #14D8C4 CTA, iridescent wave gradient, Sora/Inter fonts, GTM/GA4 IDs). BRAND.md now has a role-tagged color table instead of a list.
 **Why it matters:** Without a single locked source of truth, color values drift across components as new UI is built. CLAUDE.md and BRAND.md together are the authoritative reference — all future UI work should pull from here, not from memory.
 **Apply when:** Before any new page, component, or design pass — verify hex values against BRAND.md. If a color decision changes, update BRAND.md and CLAUDE.md first, then propagate to code.
+
+## 2026-03-24 — Applying the same QA fixes across two sibling projects requires checking existing state
+
+**What:** OmnisPDF and PDF.it are sibling codebases with the same architecture but different drift. When applying 6 critical + 5 medium QA bugs from OmnisPDF to PDF.it, 3 of the 6 critical bugs were already partially fixed in PDF.it (eye icons, forgot password, merge multi-file) and 1 of the 5 medium bugs was already done (split single-page validation). Blindly applying all fixes would have created duplicates or conflicts.
+**Why it matters:** The two projects are maintained separately and diverge over time. Always read the target file before editing — never assume the same bug exists in both projects.
+**Apply when:** Any time porting fixes between OmnisPDF and PDF.it — check each file's current state first, skip what's already done.
+
+## 2026-03-24 — removeFile in custom interfaces must reset ALL state, not just the file
+
+**What:** The OCR interface's `removeFile()` only called `setFile(null)`, leaving `hasError`, `isProcessing`, `isComplete`, `progress`, and `processedFile` in their previous state. If any of those were truthy, the component rendered the wrong UI branch (error screen, processing screen, or success screen) instead of the upload drop zone.
+**Why it matters:** React components that use state flags to switch between UI branches (upload → processing → success → error) must reset ALL flags when returning to the initial state, not just the data that changed.
+**Apply when:** Any custom tool interface with `removeFile`/`resetInterface` — verify every state variable is reset. Use `resetInterface` as the reference pattern and make `removeFile` match it.
+
+## 2026-03-24 — Reset file input value onClick, not onRemove, to fix both re-upload and cancel bugs
+
+**What:** Adding `onClick={(e) => { (e.target as HTMLInputElement).value = "" }}` to the `<input type="file">` element solves two bugs at once: (1) re-uploading the same file after deletion, and (2) canceling the file dialog not clearing existing selections. The value is cleared before the dialog opens, so onChange only fires when a file is actually selected.
+**Why it matters:** The previous approach (resetting in `removeFile`) only fixed re-upload. The onClick approach fixes both and is simpler — one line on the input element instead of getElementById calls scattered across handlers.
+**Apply when:** Every `<input type="file">` in the project should have this onClick handler. There are 12 file input components total.
+
+## 2026-03-24 — Browser native password reveal buttons overlap custom eye icons
+
+**What:** Edge's `::-ms-reveal` and Chrome's `::-webkit-credentials-auto-fill-button` pseudo-elements render native password toggle buttons that overlap custom Eye/EyeOff icons. Fix with `[&::-ms-reveal]:hidden [&::-webkit-credentials-auto-fill-button]:hidden` on the input and `z-10` on the custom button.
+**Why it matters:** The custom eye icon "disappears" only after the user types — because the browser's native button appears on top. QA reports this as "eye icon disappears after full entry" which is misleading.
+**Apply when:** Any password field with a custom visibility toggle — always add the CSS to suppress native browser reveal buttons.
+
+## 2026-03-24 — Auth loading placeholder prevents nav layout shift (flicker)
+
+**What:** The header conditionally renders the Sign In / Dashboard button only when `loading` is false. During the auth check (~100-300ms), nothing renders in that spot, causing all nav items to shift right then snap back. Fix: render a fixed-size placeholder `<div className="w-[100px] h-9" />` while loading.
+**Why it matters:** QA reported this as "screen flickers when clicking navigation" — a vague symptom. The root cause is a Cumulative Layout Shift from the auth button appearing after hydration.
+**Apply when:** Any sticky header with conditional auth UI — always reserve space with a placeholder during loading state. Match the placeholder width to the widest possible button text (e.g., 120px for "Iniciar Sesión" in ES).
+
+## 2026-03-24 — Persist pricing billing toggle in localStorage
+
+**What:** The pricing page's monthly/annual toggle used `useState("monthly")` which reset on every navigation. Wrapping it with a `useEffect` that reads from `localStorage` on mount and a setter that writes on change preserves the user's selection.
+**Why it matters:** Users who select "Annual" and then navigate away lose their selection, which feels broken and biases toward the monthly (lower-revenue) option.
+**Apply when:** Any toggle or preference that the user explicitly sets and expects to persist across page navigations — use localStorage.
+
+## 2026-03-24 — COMPLETED.md must be updated with brand-correct references
+
+**What:** After the OmnisPDF → PDF.it rebrand, COMPLETED.md still had "OmnisPDF" in the header and stale GA4/GTM IDs. Line 87 ("All PDF.it branding removed, replaced with OmnisPDF") describes the *original* v0-generated project's state and must stay as-is — reversing it changes the historical meaning.
+**Why it matters:** A global find-and-replace on "OmnisPDF" → "PDF.it" in COMPLETED.md inverts the meaning of historical entries that describe what *was* replaced. Historical notes should reflect what happened at that time, not the current brand.
+**Apply when:** When updating documentation after a rebrand — only change the document header and forward-looking sections. Leave historical entries that describe past actions as they were.
