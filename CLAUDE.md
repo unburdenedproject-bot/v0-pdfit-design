@@ -101,12 +101,15 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 
 ## Brand
 - Fonts: Sora (headings), Inter (body)
-- Brand dark: #191B4D
-- Brand secondary: #252A6A
-- Primary CTA: #14D8C4
+- Background dark: #0E0F1E (hero, headers, footer, nav)
+- Background secondary: #13152A (cards on dark, hover states)
+- Surface light: #F5F7FB (tool pages, content sections)
+- Primary CTA: #14D8C4 (buttons, icons, logo ".it")
 - CTA hover: #2EE6D6
-- Support blue: #6B7CFF
-- Surface: #F5F7FB
+- Support blue: #6B7CFF (links, badges)
+- Wave colors: #0A4A5C → #1E6FD9 → #E8813A (iridescent)
+- GTM ID: GTM-PNR9LXC2
+- GA4: G-PWD4YNY710
 
 ## Architecture Notes
 - Table extraction uses REST API to Document AI (not gRPC) to avoid private key format issues on Vercel

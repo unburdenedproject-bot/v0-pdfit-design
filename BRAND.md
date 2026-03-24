@@ -1,4 +1,4 @@
-# OmnisPDF — Brand Identity
+# PDF.it — Brand Identity
 
 ## Positioning
 **Tagline:** "Fix any document problem instantly"
@@ -27,28 +27,33 @@ All three languages are **equal, first-class identities** — not translations o
 Copy written for each locale should feel native, not localized.
 
 ## Color System
-**Brand palette (custom, defined in tailwind.config.ts):**
-| Role | Color | Hex |
-|------|-------|-----|
-| Brand dark background | Slate 900 | `#0f172a` |
-| Brand dark accent | Slate 800 | `#1a365d` |
-| CTA / highlight | Orange 400 | `#F97316` |
-| CTA hover | Orange 500 | `#EA580C` |
-| CTA strong | Orange 600 | `#C2410C` |
-| CTA pressed | Orange 700 | `#9A3412` |
-| Soft orange | Orange 300 | `#FB923C` |
+**Brand palette (locked):**
+| Role | Hex | Usage |
+|------|-----|-------|
+| Background dark | `#0E0F1E` | Hero, headers, footer, nav |
+| Background secondary | `#13152A` | Cards on dark, hover states |
+| Surface light | `#F5F7FB` | Tool pages, content sections |
+| Primary CTA | `#14D8C4` | Buttons, icons, logo ".it" |
+| CTA hover | `#2EE6D6` | Button hover state |
+| Support blue | `#6B7CFF` | Links, badges |
+| Wave start | `#0A4A5C` | Iridescent wave gradient |
+| Wave mid | `#1E6FD9` | Iridescent wave gradient |
+| Wave end | `#E8813A` | Iridescent wave gradient |
 
-**UI base (CSS variables, light/dark mode via shadcn/ui):**
-- Background: white (`hsl(0 0% 100%)`) / dark: deep navy (`hsl(222.2 84% 4.9%)`)
-- Primary: dark navy `hsl(222.2 47.4% 11.2%)`
-- Border radius: `0.5rem`
-- Font: system-ui stack (no custom web font)
+**Typography:**
+- Headings: **Sora**
+- Body: **Inter**
 
 ## Key Design Rules
-- Orange is the action color — CTAs, upload buttons, conversion triggers
-- Dark navy backgrounds for hero sections and marketing surfaces
-- White/light gray for tool interfaces — keep them clean and utilitarian
+- Teal (`#14D8C4`) is the action color — CTAs, upload buttons, conversion triggers, logo ".it"
+- Dark navy (`#0E0F1E`) for hero sections, headers, footer, and nav
+- Light surface (`#F5F7FB`) for tool interfaces — keep them clean and utilitarian
+- Iridescent wave gradient (`#0A4A5C → #1E6FD9 → #E8813A`) for decorative wave elements
 - Smooth scroll, 8px custom scrollbar, `scroll-behavior: smooth`
 - Mobile-first — LCP target: under 2s mobile, under 0.5s desktop
 - Never hide tools behind a login wall before the 3-free-anonymous-conversion limit
 - Free tier is a funnel, not a full product — scarcity drives Pro upgrades
+
+## Analytics
+- GTM ID: GTM-PNR9LXC2
+- GA4: G-PWD4YNY710
