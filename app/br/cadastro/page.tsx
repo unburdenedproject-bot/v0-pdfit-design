@@ -14,6 +14,7 @@ import { Label } from "@/components/ui/label"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState, useRef } from "react"
+import { Eye, EyeOff } from "lucide-react"
 import HCaptcha from "@hcaptcha/react-hcaptcha"
 import { HeaderBr } from "@/components/header-br"
 import { FooterBr } from "@/components/footer-br"
@@ -25,6 +26,8 @@ export default function SignUpPagePt() {
   const [confirmPassword, setConfirmPassword] = useState("")
   const [error, setError] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(false)
+  const [showPassword, setShowPassword] = useState(false)
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const [captchaToken, setCaptchaToken] = useState<string | null>(null)
   const captchaRef = useRef<HCaptcha>(null)
   const router = useRouter()
@@ -145,25 +148,45 @@ export default function SignUpPagePt() {
                   </div>
                   <div className="grid gap-2">
                     <Label htmlFor="password" className="text-slate-700">Senha</Label>
-                    <Input
-                      id="password"
-                      type="password"
-                      required
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      className="border-slate-200 focus-visible:ring-orange-500"
-                    />
+                    <div className="relative">
+                      <Input
+                        id="password"
+                        type={showPassword ? "text" : "password"}
+                        required
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        className="border-slate-200 focus-visible:ring-orange-500 pr-10"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowPassword(!showPassword)}
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                        aria-label={showPassword ? "Ocultar senha" : "Mostrar senha"}
+                      >
+                        {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                      </button>
+                    </div>
                   </div>
                   <div className="grid gap-2">
                     <Label htmlFor="confirm-password" className="text-slate-700">Confirmar Senha</Label>
-                    <Input
-                      id="confirm-password"
-                      type="password"
-                      required
-                      value={confirmPassword}
-                      onChange={(e) => setConfirmPassword(e.target.value)}
-                      className="border-slate-200 focus-visible:ring-orange-500"
-                    />
+                    <div className="relative">
+                      <Input
+                        id="confirm-password"
+                        type={showConfirmPassword ? "text" : "password"}
+                        required
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        className="border-slate-200 focus-visible:ring-orange-500 pr-10"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                        aria-label={showConfirmPassword ? "Ocultar senha" : "Mostrar senha"}
+                      >
+                        {showConfirmPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                      </button>
+                    </div>
                   </div>
                   <HCaptcha
                     sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY!}
