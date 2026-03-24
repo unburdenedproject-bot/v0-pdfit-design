@@ -1,7 +1,7 @@
-# OmnisPDF - Project Memory
+# PDF.it - Project Memory
 
 ## What This Project Is
-OmnisPDF (omnispdf.com) is a PDF tools SaaS competing with SmallPDF.
+PDF.it (pdf.it.com) is a PDF tools SaaS competing with SmallPDF.
 Built with Next.js, deployed on Vercel, using iLoveAPI for PDF processing.
 Owner: Paula Vargas (paula.vargas3@gmail.com)
 Goal: 10,000 paid subscribers
@@ -16,7 +16,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - Auth: Custom signup/login with hCaptcha
 - Payments: Stripe
 - Storage: Vercel Blob
-- Analytics: Google Tag Manager (GTM-T7LDGB3J) + GA4 direct (G-DQRW3BJMX1)
+- Analytics: Google Tag Manager (GTM-T7LDGB3J) + GA4 direct (G-PWD4YNY710)
 - Database: Supabase (users, usage tracking)
 - Rate Limiting: Upstash Redis
 
@@ -54,11 +54,11 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 
 ### Priority 0: Pre-Launch Fixes (ALL DONE)
 - ~~Contact form~~ DONE — saves to Supabase contact_messages table
-- ~~Stripe portal fallback domain~~ DONE — changed from pdfit.io to omnispdf.com
+- ~~Stripe portal fallback domain~~ DONE — changed from pdfit.io to pdf.it.com
 - ~~ILOVEAPI_SECRET_KEY~~ DONE — confirmed on Vercel
 - ~~robots.txt~~ DONE — app/robots.ts already existed
 - ~~FAQ section~~ DONE — updated with current product info (all 4 tiers, eSign, table extraction)
-- ~~GA4 measurement ID~~ DONE — updated to G-DQRW3BJMX1
+- ~~GA4 measurement ID~~ DONE — updated to G-PWD4YNY710
 - ~~Sitemap~~ DONE — 1,130+ URLs including URL to PDF
 - ~~Performance~~ DONE — Mobile LCP 1.8s, Desktop LCP 0.4s, CLS 0
 - ~~Upgrade flow~~ DONE — existing subscribers upgrade instantly with proration
@@ -71,8 +71,8 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - Verify GA4 Realtime is recording data
 - Test full payment flow end-to-end
 - Test table extraction with a real PDF
-- Verify NEXT_PUBLIC_SITE_URL=https://omnispdf.com on Vercel
-- Verify Stripe webhook endpoint is https://omnispdf.com/api/webhook
+- Verify NEXT_PUBLIC_SITE_URL=https://pdf.it.com on Vercel
+- Verify Stripe webhook endpoint is https://pdf.it.com/api/webhook
 
 ### Priority 1: Remaining Tools
 - ~~Resume ATS Optimizer~~ DONE — /ats-optimizer (Optimize Your Resume) + /create-resume (Create a Resume)
@@ -98,6 +98,15 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 - ENVIRONMENT.md — Vercel environment variables and Google Cloud credentials
 - LOCALIZATION.md — Localization patterns, route map rules, language-specific components, trilingual build instructions
 - BRAND.md — Target audience, brand voice, positioning, color system, design rules
+
+## Brand
+- Fonts: Sora (headings), Inter (body)
+- Brand dark: #191B4D
+- Brand secondary: #252A6A
+- Primary CTA: #14D8C4
+- CTA hover: #2EE6D6
+- Support blue: #6B7CFF
+- Surface: #F5F7FB
 
 ## Architecture Notes
 - Table extraction uses REST API to Document AI (not gRPC) to avoid private key format issues on Vercel
