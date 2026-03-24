@@ -9,7 +9,7 @@ export const metadata = {
     "PDF.it launch announcement: discover why we built a trilingual PDF platform with 30+ tools, 4 pricing tiers, and enterprise features for legal, accounting, and business teams.",
 }
 
-export default function WelcomeToPDF.itPage() {
+export default function WelcomeToPDFitPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
