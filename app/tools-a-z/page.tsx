@@ -104,7 +104,7 @@ export default function ToolsAZPage() {
   const totalEnterprise = tools.filter((t) => t.tier === "ENTERPRISE").length
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <Header />
       <main>
         {/* Hero */}
