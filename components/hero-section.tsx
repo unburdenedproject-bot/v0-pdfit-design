@@ -5,7 +5,16 @@ import Link from "next/link"
 
 export function HeroSection() {
   return (
-    <section style={{ background: "#0E0F1E" }} className="relative text-white pt-16 lg:pt-24 overflow-hidden">
+    <section
+      style={{
+        background: `
+          radial-gradient(ellipse 80% 60% at 50% 30%, rgba(20,216,196,0.04) 0%, transparent 70%),
+          radial-gradient(ellipse 60% 50% at 75% 40%, rgba(107,124,255,0.025) 0%, transparent 65%),
+          #0E0F1E
+        `,
+      }}
+      className="relative text-white pt-16 lg:pt-24 overflow-hidden"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
 
