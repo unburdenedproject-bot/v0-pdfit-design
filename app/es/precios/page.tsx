@@ -32,7 +32,7 @@ export default function PreciosPage() {
     <div className="min-h-screen bg-white">
       <HeaderEs />
       <main>
-        <section className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-16">
+        <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Elige Tu Plan</h1>
@@ -173,7 +173,7 @@ export default function PreciosPage() {
         </section>
 
         {/* Bottom CTA */}
-        <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+        <section className="py-20 bg-[#191B4D] text-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl lg:text-4xl font-black mb-4">Listo para empezar?</h2>

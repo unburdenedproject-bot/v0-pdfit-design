@@ -15,7 +15,7 @@ export default function PrecosPage() {
       <HeaderBr />
       <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-16">
+        <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Escolha Seu Plano</h1>

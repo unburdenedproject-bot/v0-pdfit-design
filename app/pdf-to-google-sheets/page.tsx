@@ -57,7 +57,7 @@ export default function PDFToGoogleSheetsPage() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-16">
+        <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
               <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -252,7 +252,7 @@ export default function PDFToGoogleSheetsPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-16 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+        <section className="py-16 bg-[#191B4D] text-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <h2 className="text-2xl font-black mb-4">Ready to Get Your PDF Data into Google Sheets?</h2>
             <p className="text-slate-300 text-lg mb-8">

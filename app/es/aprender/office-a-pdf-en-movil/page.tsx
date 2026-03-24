@@ -32,7 +32,7 @@ export default function OfficeAPdfEnMovilPage() {
       <Script id="howto-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <HeaderEs />
       <main>
-        <section className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
+        <section className="bg-[#191B4D] text-white py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
           <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Office a PDF</p>
           <h1 className="text-4xl lg:text-5xl font-black mb-4">Convertir archivos Office a PDF en movil (iPhone y Android)</h1>
           <p className="text-xl text-slate-300">Estas en tu telefono, alguien acaba de pedir una version PDF de tu documento, y no tienes una computadora cerca. No hay problema — aqui te mostramos como convertir cualquier archivo Office a PDF directamente desde tu telefono.</p>
@@ -102,7 +102,7 @@ export default function OfficeAPdfEnMovilPage() {
           </section>
         </div></article>
 
-        <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
+        <section className="py-12 bg-[#191B4D]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
           <h2 className="text-2xl font-black text-white mb-3">Convierte archivos Office en tu telefono</h2>
           <p className="text-slate-300 mb-6">Sin app necesaria. Abre PDF.it en tu navegador movil, sube tu archivo y obtiene un PDF en segundos.</p>
           <Link href="/es/office-a-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><FileText className="h-5 w-5" /> Convertir a PDF Ahora</Link>

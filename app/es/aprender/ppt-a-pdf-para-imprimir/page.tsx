@@ -32,7 +32,7 @@ export default function PptAPdfParaImprimirPage() {
       <Script id="howto-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <HeaderEs />
       <main>
-        <section className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
+        <section className="bg-[#191B4D] text-white py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
           <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PowerPoint a PDF</p>
           <h1 className="text-4xl lg:text-5xl font-black mb-4">PPT a PDF para imprimir: mejores consejos de diseno y calidad</h1>
           <p className="text-xl text-slate-300">Convertir una presentacion para imprimir es diferente a compartirla en pantalla. Aqui te mostramos como obtener diapositivas impresas nitidas y de calidad profesional desde tu archivo PowerPoint.</p>
@@ -125,7 +125,7 @@ export default function PptAPdfParaImprimirPage() {
           </section>
         </div></article>
 
-        <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
+        <section className="py-12 bg-[#191B4D]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
           <h2 className="text-2xl font-black text-white mb-3">Listo para crear un PDF listo para imprimir?</h2>
           <p className="text-slate-300 mb-6">Sube tu PowerPoint y obtiene un PDF de alta calidad — gratis, sin registro.</p>
           <Link href="/es/powerpoint-a-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><Printer className="h-5 w-5" /> Convertir PPT a PDF Ahora</Link>

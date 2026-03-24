@@ -32,7 +32,7 @@ export default function PptAPdfAnimacionesPage() {
       <Script id="howto-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <HeaderEs />
       <main>
-        <section className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
+        <section className="bg-[#191B4D] text-white py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
           <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PowerPoint a PDF</p>
           <h1 className="text-4xl lg:text-5xl font-black mb-4">Las animaciones de PowerPoint funcionan en PDF? Que se convierte (y que no)</h1>
           <p className="text-xl text-slate-300">Creaste una presentacion con animaciones impresionantes y transiciones. Pero cuando la conviertas a PDF, sobrevivira algo de eso? Aqui esta la respuesta honesta — y que puedes hacer al respecto.</p>
@@ -114,7 +114,7 @@ export default function PptAPdfAnimacionesPage() {
           </section>
         </div></article>
 
-        <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
+        <section className="py-12 bg-[#191B4D]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
           <h2 className="text-2xl font-black text-white mb-3">Listo para convertir tu PowerPoint?</h2>
           <p className="text-slate-300 mb-6">Animaciones aparte, tu contenido se vera perfecto. Sube y convierte en segundos.</p>
           <Link href="/es/powerpoint-a-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><PlayCircle className="h-5 w-5" /> Convertir PPT a PDF Ahora</Link>

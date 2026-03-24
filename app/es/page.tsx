@@ -141,7 +141,7 @@ export default function HomePageEs() {
       <HeaderEs />
       <main>
         {/* Hero */}
-        <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-14 lg:py-20">
+        <section className="bg-[#191B4D] text-white py-14 lg:py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black mb-4 leading-tight text-balance">
@@ -232,7 +232,7 @@ export default function HomePageEs() {
 
               {/* Pricing CTA */}
               <div className="max-w-2xl mx-auto my-8">
-                <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 text-center">
+                <div className="bg-[#191B4D] rounded-2xl p-8 text-center">
                   <h3 className="text-xl font-black text-white mb-2 text-balance">
                     ¿Necesitas conversiones ilimitadas o archivos más grandes?
                   </h3>
@@ -322,7 +322,7 @@ export default function HomePageEs() {
                 { icon: Award, title: "Alta Calidad", description: "Diseñado para mantener texto claro, diseño limpio y formato intacto." },
               ].map((feature, index) => (
                 <div key={index} className="text-center">
-                  <div className="w-11 h-11 bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <div className="w-11 h-11 bg-[#191B4D] rounded-lg flex items-center justify-center mx-auto mb-3">
                     <feature.icon className="h-5 w-5 text-orange-500" />
                   </div>
                   <h3 className="text-base font-bold text-slate-900 mb-1">{feature.title}</h3>
@@ -332,7 +332,7 @@ export default function HomePageEs() {
             </div>
 
             <div className="text-center">
-              <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 max-w-3xl mx-auto">
+              <div className="bg-[#191B4D] rounded-2xl p-8 max-w-3xl mx-auto">
                 <h3 className="text-xl font-black text-white mb-2 text-balance">¿Listo para convertir tu primer archivo?</h3>
                 <p className="text-slate-300 text-sm mb-5 max-w-xl mx-auto leading-relaxed">
                   10 conversiones gratis al día. Sin cuenta necesaria para herramientas gratuitas. Actualiza cuando quieras.

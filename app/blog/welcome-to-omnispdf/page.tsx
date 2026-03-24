@@ -15,7 +15,7 @@ export default function WelcomeToPDFitPage() {
       <Header />
       <main>
         {/* Hero */}
-        <section className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-12">
+        <section className="bg-[#191B4D] text-white py-12">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
               <Link

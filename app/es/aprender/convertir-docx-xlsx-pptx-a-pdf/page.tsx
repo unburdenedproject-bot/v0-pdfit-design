@@ -32,7 +32,7 @@ export default function ConvertirDocxXlsxPptxAPdfPage() {
       <Script id="howto-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <HeaderEs />
       <main>
-        <section className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
+        <section className="bg-[#191B4D] text-white py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
           <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Office a PDF</p>
           <h1 className="text-4xl lg:text-5xl font-black mb-4">Convertir DOCX, XLSX y PPTX a PDF — Todos los formatos Office</h1>
           <p className="text-xl text-slate-300">Deja de usar tres convertidores diferentes. Ya sea que tengas un documento Word, una hoja de calculo Excel o una presentacion PowerPoint, PDF.it convierte cualquier archivo Office en un PDF limpio en segundos.</p>
@@ -99,7 +99,7 @@ export default function ConvertirDocxXlsxPptxAPdfPage() {
           </section>
         </div></article>
 
-        <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
+        <section className="py-12 bg-[#191B4D]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
           <h2 className="text-2xl font-black text-white mb-3">Listo para convertir tus archivos Office?</h2>
           <p className="text-slate-300 mb-6">Sube cualquier archivo Word, Excel o PowerPoint y obtiene un PDF perfecto en segundos — gratis, sin registro.</p>
           <Link href="/es/office-a-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><FileText className="h-5 w-5" /> Convertir a PDF Ahora</Link>

@@ -152,7 +152,7 @@ function PricingCTA() {
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link
             href="/br/precos"
-            className="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors shadow-lg hover:shadow-xl"
+            className="inline-flex items-center justify-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors shadow-lg hover:shadow-xl"
           >
             <Crown className="h-4 w-4" />
             Atualizar para Pro
@@ -199,13 +199,13 @@ export function FeaturesGridBr() {
                   <Link
                     key={toolIndex}
                     href={tool.href}
-                    className="group flex flex-col items-center text-center rounded-xl border border-gray-200 bg-white p-4 hover:border-orange-200 hover:bg-orange-50/40 hover:shadow-md transition-all duration-200"
+                    className="group flex flex-col items-center text-center rounded-xl border border-gray-200 bg-white p-4 hover:border-[#14D8C4]/30 hover:bg-[#191B4D]/5 hover:shadow-md transition-all duration-200"
                   >
-                    <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200 shadow-sm">
-                      <tool.icon className="h-5 w-5 text-white" />
+                    <div className="w-10 h-10 bg-[#191B4D] rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200 shadow-sm">
+                      <tool.icon className="h-5 w-5 text-[#14D8C4]" />
                     </div>
                     <div className="flex items-center gap-1.5 mb-1">
-                      <h4 className="text-sm font-bold text-slate-900 group-hover:text-orange-600 transition-colors">
+                      <h4 className="text-sm font-bold text-slate-900 group-hover:text-[#14D8C4] transition-colors">
                         {tool.name}
                       </h4>
                       <TierBadge tier={tool.tier} />

@@ -39,7 +39,7 @@ export default function AcercaPage() {
     <div className="min-h-screen bg-white">
       <HeaderEs />
       <main>
-        <section className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-16">
+        <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
               <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -255,7 +255,7 @@ export default function AcercaPage() {
             </div>
 
             <div className="text-center">
-              <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-white">
+              <div className="bg-[#191B4D] rounded-2xl p-8 md:p-12 text-white">
                 <h3 className="text-2xl md:text-3xl font-black text-white mb-4">
                   Empieza a convertir gratis
                 </h3>

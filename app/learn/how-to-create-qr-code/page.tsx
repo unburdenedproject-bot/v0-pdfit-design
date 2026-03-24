@@ -88,7 +88,7 @@ export default function HowToCreateQRCodePage() {
       <Header />
       <main>
         {/* Hero */}
-        <section className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-16">
+        <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
               <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / QR Code</p>
@@ -253,7 +253,7 @@ export default function HowToCreateQRCodePage() {
         </article>
 
         {/* Tool CTA */}
-        <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800">
+        <section className="py-12 bg-[#191B4D]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Ready to Create Your QR Code?</h2>
             <p className="text-slate-300 mb-6">Generate a QR code for any URL, text, or data in seconds. Pro feature — upgrade to unlock unlimited QR codes.</p>

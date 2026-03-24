@@ -108,7 +108,7 @@ export default function ToolsAZPage() {
       <Header />
       <main>
         {/* Hero */}
-        <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20">
+        <section className="bg-[#191B4D] text-white py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-6">
               <Search className="h-4 w-4 text-orange-400" />
@@ -197,7 +197,7 @@ export default function ToolsAZPage() {
         </section>
 
         {/* Bottom CTA */}
-        <section className="py-16 bg-gradient-to-br from-slate-900 to-slate-800">
+        <section className="py-16 bg-[#191B4D]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Ready to get started?</h2>
             <p className="text-slate-400 mb-6">Pick any tool above or start with the most popular ones.</p>
