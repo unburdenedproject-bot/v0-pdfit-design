@@ -14,14 +14,14 @@ export const GoogleTagManager = () => {
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-T7LDGB3J');
+            })(window,document,'script','dataLayer','GTM-PNR9LXC2');
           `,
         }}
       />
       <Script
         id="ga4-script"
         strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=G-DQRW3BJMX1"
+        src="https://www.googletagmanager.com/gtag/js?id=G-PWD4YNY710"
       />
       <Script
         id="ga4-config"
@@ -31,7 +31,7 @@ export const GoogleTagManager = () => {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-DQRW3BJMX1');
+            gtag('config', 'G-PWD4YNY710');
           `,
         }}
       />
@@ -43,7 +43,7 @@ export const GoogleTagManagerNoScript = () => {
   return (
     <noscript>
       <iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-T7LDGB3J"
+        src="https://www.googletagmanager.com/ns.html?id=GTM-PNR9LXC2"
         height="0"
         width="0"
         style={{ display: "none", visibility: "hidden" }}
