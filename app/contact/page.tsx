@@ -89,7 +89,7 @@ export default function ContactPage() {
                           <h3 className="text-lg font-bold text-orange-900 mb-1">Email Support</h3>
                           <a
                             href="mailto:contact@pdf.it.com"
-                            className="text-2xl font-bold text-orange-600 hover:text-orange-700 transition-colors"
+                            className="text-lg sm:text-2xl font-bold text-orange-600 hover:text-orange-700 transition-colors break-all"
                           >
                             contact@pdf.it.com
                           </a>
@@ -157,7 +157,7 @@ export default function ContactPage() {
                       </div>
                     ) : (
                       <form onSubmit={handleSubmit} className="space-y-6">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 gap-6">
                           <div>
                             <label htmlFor="name" className="block text-sm font-bold text-slate-900 mb-2">
                               Your Name <span className="text-red-500">*</span>
@@ -170,7 +170,7 @@ export default function ContactPage() {
                               onChange={handleInputChange}
                               required
                               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
-                              placeholder="Enter your full name"
+                              placeholder="Full name"
                             />
                           </div>
 
@@ -186,7 +186,7 @@ export default function ContactPage() {
                               onChange={handleInputChange}
                               required
                               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
-                              placeholder="Enter your email address"
+                              placeholder="Email address"
                             />
                           </div>
                         </div>

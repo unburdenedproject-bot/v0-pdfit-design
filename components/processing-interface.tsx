@@ -840,6 +840,10 @@ export function ProcessingInterface({
     setHasError(false)
     setErrorMessage("")
     setProgress(0)
+    // Scroll to upload area on mobile
+    setTimeout(() => {
+      document.getElementById("file-upload-zone")?.scrollIntoView({ behavior: "smooth", block: "center" })
+    }, 100)
   }, [processedFiles])
 
   // Error state
@@ -942,7 +946,7 @@ export function ProcessingInterface({
   // Success state
   if (isComplete) {
     return (
-      <section className="py-16">
+      <section className="py-16 overflow-x-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             {/* Success Header */}
@@ -958,8 +962,8 @@ export function ProcessingInterface({
             </div>
 
             {/* Processing Summary */}
-            <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-xl p-6 mb-8">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-xl p-4 sm:p-6 mb-8 overflow-hidden">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
                 <div>
                   <div className="text-2xl font-black text-green-600 mb-1">{files.length}</div>
                   <div className="text-sm font-medium text-green-700">Files Processed</div>
@@ -992,7 +996,7 @@ export function ProcessingInterface({
                 return (
                   <div
                     key={index}
-                    className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow"
+                    className="bg-white border border-gray-200 rounded-xl p-4 sm:p-6 hover:shadow-md transition-shadow overflow-hidden"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                       <div className="flex items-center gap-4 min-w-0">
@@ -1005,7 +1009,7 @@ export function ProcessingInterface({
                               type="text"
                               value={editedNames[index] ?? file.name}
                               onChange={(e) => setEditedNames((prev) => ({ ...prev, [index]: e.target.value }))}
-                              className="font-bold text-slate-900 text-lg border-b border-dashed border-slate-300 focus:border-orange-500 focus:outline-none bg-transparent w-full max-w-sm"
+                              className="font-bold text-slate-900 text-base sm:text-lg border-b border-dashed border-slate-300 focus:border-orange-500 focus:outline-none bg-transparent w-full max-w-[200px] sm:max-w-sm truncate"
                             />
                             <Pencil className="h-4 w-4 text-orange-400 flex-shrink-0" />
                           </div>
@@ -1171,6 +1175,7 @@ export function ProcessingInterface({
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto">
           <div
+            id="file-upload-zone"
             className={cn(
               "border-2 border-dashed rounded-xl p-12 transition-all duration-200 cursor-pointer",
               isDragOver
@@ -1231,7 +1236,7 @@ export function ProcessingInterface({
                   <div className="flex items-center gap-3">
                     <FileText className="h-5 w-5 text-orange-500" />
                     <div>
-                      <div className="font-medium text-slate-900">{file.name}</div>
+                      <div className="font-medium text-slate-900 truncate max-w-[200px] sm:max-w-xs">{file.name}</div>
                       <div className="text-sm text-slate-500">{(file.size / 1024 / 1024).toFixed(1)} MB</div>
                     </div>
                   </div>
