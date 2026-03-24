@@ -131,6 +131,9 @@ export function HeroSection() {
                 75%  { d: path("M0,110 C240,60 480,160 720,110 C960,60 1200,160 1440,110 L1440,160 L0,160 Z"); }
                 100% { d: path("M0,100 C240,50 480,150 720,100 C960,50 1200,150 1440,100 L1440,160 L0,160 Z"); }
               }
+              @media (prefers-reduced-motion: reduce) {
+                path { animation: none !important; }
+              }
             `}</style>
           </defs>
           <path
