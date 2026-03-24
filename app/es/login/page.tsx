@@ -188,12 +188,14 @@ function LoginForm() {
                       className="border-slate-200 focus-visible:ring-orange-500"
                     />
                   </div>
-                  <HCaptcha
-                    sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY!}
-                    onVerify={(token) => setCaptchaToken(token)}
-                    onExpire={() => setCaptchaToken(null)}
-                    ref={captchaRef}
-                  />
+                  <div className="flex justify-center min-h-[78px]">
+                    <HCaptcha
+                      sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY!}
+                      onVerify={(token) => setCaptchaToken(token)}
+                      onExpire={() => setCaptchaToken(null)}
+                      ref={captchaRef}
+                    />
+                  </div>
                   {error && (
                     <p className="text-sm text-red-600 bg-red-50 rounded-md px-3 py-2">
                       {error}
