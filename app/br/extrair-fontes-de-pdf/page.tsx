@@ -6,15 +6,15 @@ import { Type, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Extrair Fontes de PDF — Descubra as Fontes Usadas no PDF | OmnisPDF",
+  title: "Extrair Fontes de PDF — Descubra as Fontes Usadas no PDF | PDF.it",
   description:
-    "Extraia e identifique todas as fontes usadas em arquivos PDF com o OmnisPDF. Descubra nomes de fontes, estilos e tamanhos — rápido, no navegador, sem cadastro.",
+    "Extraia e identifique todas as fontes usadas em arquivos PDF com o PDF.it. Descubra nomes de fontes, estilos e tamanhos — rápido, no navegador, sem cadastro.",
   alternates: {
-    canonical: "https://omnispdf.com/br/extrair-fontes-de-pdf",
+    canonical: "https://pdf.it.com/br/extrair-fontes-de-pdf",
     languages: {
-      en: "https://omnispdf.com/extract-fonts-from-pdf",
-      es: "https://omnispdf.com/es/extraer-fuentes-de-pdf",
-      pt: "https://omnispdf.com/br/extrair-fontes-de-pdf",
+      en: "https://pdf.it.com/extract-fonts-from-pdf",
+      es: "https://pdf.it.com/es/extraer-fuentes-de-pdf",
+      pt: "https://pdf.it.com/br/extrair-fontes-de-pdf",
     },
   },
 }
@@ -26,12 +26,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como extraio fontes de um PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o OmnisPDF e a ferramenta identificará automaticamente todas as fontes usadas no documento, incluindo nomes, estilos e tamanhos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o PDF.it e a ferramenta identificará automaticamente todas as fontes usadas no documento, incluindo nomes, estilos e tamanhos." }
     },
     {
       "@type": "Question",
       "name": "Posso saber quais fontes foram usadas em um PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O extrator de fontes do OmnisPDF analisa o PDF e lista todas as fontes incorporadas ou referenciadas no documento." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O extrator de fontes do PDF.it analisa o PDF e lista todas as fontes incorporadas ou referenciadas no documento." }
     },
     {
       "@type": "Question",
@@ -46,7 +46,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso extrair fontes de um PDF pelo celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em navegadores móveis — envie seu PDF e veja as fontes identificadas de qualquer dispositivo." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em navegadores móveis — envie seu PDF e veja as fontes identificadas de qualquer dispositivo." }
     },
     {
       "@type": "Question",
@@ -99,7 +99,7 @@ export default function ExtrairFontesDePDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Precisa saber quais fontes foram usadas em um PDF? O extrator de fontes do OmnisPDF analisa seu documento e identifica todas as fontes incorporadas ou referenciadas, incluindo nomes, famílias tipográficas e estilos utilizados.
+              Precisa saber quais fontes foram usadas em um PDF? O extrator de fontes do PDF.it analisa seu documento e identifica todas as fontes incorporadas ou referenciadas, incluindo nomes, famílias tipográficas e estilos utilizados.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Identifique todas as fontes usadas em qualquer PDF</li>
@@ -141,7 +141,7 @@ export default function ExtrairFontesDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Extrair Fontes de um PDF</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste seu PDF para o OmnisPDF.",
+                "Envie ou arraste seu PDF para o PDF.it.",
                 "Clique em Extrair — as fontes são identificadas automaticamente.",
                 "Veja a lista completa de fontes usadas no documento.",
               ].map((step, i) => (
@@ -188,11 +188,11 @@ export default function ExtrairFontesDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como extraio fontes de um PDF?", a: "Envie seu PDF para o OmnisPDF e a ferramenta identificará automaticamente todas as fontes usadas no documento, incluindo nomes, estilos e tamanhos." },
-                { q: "Posso saber quais fontes foram usadas em um PDF?", a: "Sim. O extrator de fontes do OmnisPDF analisa o PDF e lista todas as fontes incorporadas ou referenciadas no documento." },
+                { q: "Como extraio fontes de um PDF?", a: "Envie seu PDF para o PDF.it e a ferramenta identificará automaticamente todas as fontes usadas no documento, incluindo nomes, estilos e tamanhos." },
+                { q: "Posso saber quais fontes foram usadas em um PDF?", a: "Sim. O extrator de fontes do PDF.it analisa o PDF e lista todas as fontes incorporadas ou referenciadas no documento." },
                 { q: "Funciona com fontes incorporadas e não incorporadas?", a: "Sim. A ferramenta detecta tanto fontes incorporadas quanto referenciadas no PDF, mostrando informações disponíveis sobre cada uma." },
                 { q: "É seguro enviar meu PDF para extrair fontes?", a: "Sim. Todos os arquivos são processados com segurança e eliminados automaticamente após a sessão. Nunca armazenamos seus documentos." },
-                { q: "Posso extrair fontes de um PDF pelo celular?", a: "Sim. O OmnisPDF funciona em navegadores móveis — envie seu PDF e veja as fontes identificadas de qualquer dispositivo." },
+                { q: "Posso extrair fontes de um PDF pelo celular?", a: "Sim. O PDF.it funciona em navegadores móveis — envie seu PDF e veja as fontes identificadas de qualquer dispositivo." },
                 { q: "É grátis extrair fontes de um PDF?", a: "Sim. Contas gratuitas têm 10 extrações por dia. Contas Pro têm extrações ilimitadas." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

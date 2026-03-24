@@ -6,9 +6,9 @@ import { Scissors, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Dividir PDF por Lotes — Divide Múltiples PDFs a la Vez | OmnisPDF",
+  title: "Dividir PDF por Lotes — Divide Múltiples PDFs a la Vez | PDF.it",
   description:
-    "Divide múltiples PDFs a la vez con OmnisPDF Pro. Procesamiento por lotes para equipos legales, RRHH y archivos digitales — rápido, seguro y en tu navegador.",
+    "Divide múltiples PDFs a la vez con PDF.it Pro. Procesamiento por lotes para equipos legales, RRHH y archivos digitales — rápido, seguro y en tu navegador.",
   alternates: {
     languages: {
       en: "/batch-split-pdf",
@@ -73,7 +73,7 @@ export default function DividirPDFPorLotesPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Dividir PDF por Lotes</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Divide múltiples PDFs a la vez con el procesamiento por lotes de OmnisPDF Pro. Sube varios archivos, aplica la configuración de división y descarga todos los resultados en un ZIP.
+                Divide múltiples PDFs a la vez con el procesamiento por lotes de PDF.it Pro. Sube varios archivos, aplica la configuración de división y descarga todos los resultados en un ZIP.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Procesamiento Masivo</span></div>
@@ -91,7 +91,7 @@ export default function DividirPDFPorLotesPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              La división por lotes de OmnisPDF te permite procesar múltiples PDFs simultáneamente. En lugar de dividir archivos uno por uno, sube un lote completo, define la configuración de división y descarga todos los resultados en un archivo ZIP. Función exclusiva para usuarios Pro y Business.
+              La división por lotes de PDF.it te permite procesar múltiples PDFs simultáneamente. En lugar de dividir archivos uno por uno, sube un lote completo, define la configuración de división y descarga todos los resultados en un archivo ZIP. Función exclusiva para usuarios Pro y Business.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Divide múltiples PDFs en una sola operación</li>
@@ -139,7 +139,7 @@ export default function DividirPDFPorLotesPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Dividir PDFs por Lotes</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra múltiples PDFs a OmnisPDF.",
+                "Sube o arrastra múltiples PDFs a PDF.it.",
                 "Define la configuración de división para el lote.",
                 "Haz clic en Dividir PDFs y descarga el archivo ZIP con todos los resultados.",
               ].map((step, i) => (

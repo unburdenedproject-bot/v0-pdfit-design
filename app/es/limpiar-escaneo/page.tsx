@@ -6,7 +6,7 @@ import { PhoneScanCleanupInterface } from "@/components/phone-scan-cleanup-inter
 import { Camera, Zap, Shield, ScanLine, FileText, Merge, RotateCw, Scissors, Lock } from "lucide-react"
 
 export const metadata = {
-  title: "Limpiar Escaneo de Celular — Mejorar Fotos de Documentos | OmnisPDF",
+  title: "Limpiar Escaneo de Celular — Mejorar Fotos de Documentos | PDF.it",
   description:
     "Sube una foto de un documento tomada con tu celular y obtén un PDF limpio y profesional. Endereza, elimina sombras y mejora el contraste. Herramienta online gratis.",
   alternates: {

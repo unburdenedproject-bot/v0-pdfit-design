@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Merge, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "How to Merge Scanned PDFs (And Keep Them Readable) | OmnisPDF",
+  title: "How to Merge Scanned PDFs (And Keep Them Readable) | PDF.it",
   description:
     "Learn how to merge scanned PDF files without losing readability. Fix orientation, reduce file size, and add OCR for searchable text — step-by-step guide.",
   keywords: "merge scanned pdfs, combine scanned documents, merge scanned pdf pages, scanned pdf into one",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I merge scanned PDFs like regular PDFs?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Scanned PDFs merge the same way as regular PDFs — upload them to OmnisPDF's Merge tool, arrange the order, and click Merge. The difference is that scanned PDFs are usually much larger because each page is stored as a full-page image." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Scanned PDFs merge the same way as regular PDFs — upload them to PDF.it's Merge tool, arrange the order, and click Merge. The difference is that scanned PDFs are usually much larger because each page is stored as a full-page image." }
     },
     {
       "@type": "Question",
@@ -28,12 +28,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I fix rotated pages in a scanned PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Use OmnisPDF's Rotate PDF tool to fix any pages that are upside down or sideways before merging. Scanners sometimes capture pages in the wrong orientation, especially when using an automatic document feeder." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Use PDF.it's Rotate PDF tool to fix any pages that are upside down or sideways before merging. Scanners sometimes capture pages in the wrong orientation, especially when using an automatic document feeder." }
     },
     {
       "@type": "Question",
       "name": "Can I make a scanned PDF searchable after merging?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Run the merged file through OmnisPDF's OCR Scanner tool. OCR (Optical Character Recognition) reads the text in the scanned images and adds a searchable text layer, so you can search, copy, and select text in the document." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Run the merged file through PDF.it's OCR Scanner tool. OCR (Optical Character Recognition) reads the text in the scanned images and adds a searchable text layer, so you can search, copy, and select text in the document." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I clean up phone-scanned PDFs before merging?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Use OmnisPDF's Phone Scan Cleanup tool to fix lighting, remove shadows, straighten pages, and improve contrast. Clean up each scan first, then merge the improved files into one document." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Use PDF.it's Phone Scan Cleanup tool to fix lighting, remove shadows, straighten pages, and improve contrast. Clean up each scan first, then merge the improved files into one document." }
     }
   ]
 }
@@ -52,7 +52,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Merge Scanned PDFs",
-  "description": "Combine scanned PDF documents into one readable file using OmnisPDF.",
+  "description": "Combine scanned PDF documents into one readable file using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
@@ -62,7 +62,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Upload and merge the scanned files",
-      "text": "Upload all scanned PDFs to OmnisPDF's Merge tool, arrange them in the correct order, and click Merge to combine them into one document."
+      "text": "Upload all scanned PDFs to PDF.it's Merge tool, arrange them in the correct order, and click Merge to combine them into one document."
     },
     {
       "@type": "HowToStep",
@@ -159,7 +159,7 @@ export default function MergeScannedPDFsPage() {
                   },
                   {
                     title: "Upload all scans and arrange them in order",
-                    desc: "Upload all your scanned PDFs to OmnisPDF's Merge tool. Drag and drop to arrange them in the correct order. Double-check that no file is misplaced — especially if files have generic names like 'Scan_001.pdf'.",
+                    desc: "Upload all your scanned PDFs to PDF.it's Merge tool. Drag and drop to arrange them in the correct order. Double-check that no file is misplaced — especially if files have generic names like 'Scan_001.pdf'.",
                   },
                   {
                     title: "Merge, then compress and OCR",
@@ -305,12 +305,12 @@ export default function MergeScannedPDFsPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "Can I merge scanned PDFs like regular PDFs?", a: "Yes. Scanned PDFs merge the same way as regular PDFs — upload them to OmnisPDF's Merge tool, arrange the order, and click Merge. The difference is that scanned PDFs are usually much larger because each page is stored as a full-page image." },
+                { q: "Can I merge scanned PDFs like regular PDFs?", a: "Yes. Scanned PDFs merge the same way as regular PDFs — upload them to PDF.it's Merge tool, arrange the order, and click Merge. The difference is that scanned PDFs are usually much larger because each page is stored as a full-page image." },
                 { q: "Why is my merged scanned PDF so large?", a: "Scanned pages are stored as images (often 2-5MB per page). When you merge multiple scanned documents, the file size adds up quickly. A 20-page merged scan can easily be 40-100MB. Compress the merged file afterward to reduce the size significantly." },
-                { q: "How do I fix rotated pages in a scanned PDF?", a: "Use OmnisPDF's Rotate PDF tool to fix any pages that are upside down or sideways before merging. Scanners sometimes capture pages in the wrong orientation, especially when using an automatic document feeder." },
-                { q: "Can I make a scanned PDF searchable after merging?", a: "Yes. Run the merged file through OmnisPDF's OCR Scanner tool. OCR reads the text in the scanned images and adds a searchable text layer, so you can search, copy, and select text in the document." },
+                { q: "How do I fix rotated pages in a scanned PDF?", a: "Use PDF.it's Rotate PDF tool to fix any pages that are upside down or sideways before merging. Scanners sometimes capture pages in the wrong orientation, especially when using an automatic document feeder." },
+                { q: "Can I make a scanned PDF searchable after merging?", a: "Yes. Run the merged file through PDF.it's OCR Scanner tool. OCR reads the text in the scanned images and adds a searchable text layer, so you can search, copy, and select text in the document." },
                 { q: "Should I compress before or after merging scanned PDFs?", a: "Compress after merging. This is more efficient because the compression tool can optimize the entire document at once. If individual files are too large to upload (over 25MB on the free plan), compress them individually first, then merge." },
-                { q: "How do I clean up phone-scanned PDFs before merging?", a: "Use OmnisPDF's Phone Scan Cleanup tool to fix lighting, remove shadows, straighten pages, and improve contrast. Clean up each scan first, then merge the improved files into one document." },
+                { q: "How do I clean up phone-scanned PDFs before merging?", a: "Use PDF.it's Phone Scan Cleanup tool to fix lighting, remove shadows, straighten pages, and improve contrast. Clean up each scan first, then merge the improved files into one document." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

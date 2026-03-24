@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Merge, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Cómo Unir PDFs en iPhone (Método Rápido por Navegador) | OmnisPDF",
+  title: "Cómo Unir PDFs en iPhone (Método Rápido por Navegador) | PDF.it",
   description: "Aprende cómo unir PDFs en iPhone usando Safari o Chrome — sin app necesaria. Guía paso a paso para combinar PDFs en tu teléfono gratis.",
   keywords: "unir pdf en iphone, combinar pdfs iphone, unir pdf ios, unir pdf en teléfono gratis",
 }
@@ -13,20 +13,20 @@ export const metadata = {
 const faqSchema = {
   "@context": "https://schema.org", "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "¿Puedo unir PDFs en mi iPhone sin una app?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona directamente en Safari o Chrome en tu iPhone. Ve a omnispdf.com/merge-pdf, sube tus archivos, ordénalos y descarga el PDF unido — sin necesidad de instalar ninguna app." } },
+    { "@type": "Question", "name": "¿Puedo unir PDFs en mi iPhone sin una app?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona directamente en Safari o Chrome en tu iPhone. Ve a pdf.it.com/merge-pdf, sube tus archivos, ordénalos y descarga el PDF unido — sin necesidad de instalar ninguna app." } },
     { "@type": "Question", "name": "¿Dónde encuentro los PDFs en mi iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Los PDFs en iPhone típicamente están en la app Archivos (bajo 'En Mi iPhone' o iCloud Drive), en adjuntos de email, en apps de mensajería (WhatsApp, iMessage) o en la carpeta Descargas de Safari. Usa la app Archivos para explorar todas las ubicaciones." } },
-    { "@type": "Question", "name": "¿Cómo subo PDFs desde mi iPhone a OmnisPDF?", "acceptedAnswer": { "@type": "Answer", "text": "Cuando tocas el área de carga en OmnisPDF, tu iPhone mostrará un selector de archivos. Puedes explorar la app Archivos, descargas recientes, iCloud Drive u otro almacenamiento en la nube. Selecciona los PDFs que quieres unir y se subirán automáticamente." } },
+    { "@type": "Question", "name": "¿Cómo subo PDFs desde mi iPhone a PDF.it?", "acceptedAnswer": { "@type": "Answer", "text": "Cuando tocas el área de carga en PDF.it, tu iPhone mostrará un selector de archivos. Puedes explorar la app Archivos, descargas recientes, iCloud Drive u otro almacenamiento en la nube. Selecciona los PDFs que quieres unir y se subirán automáticamente." } },
     { "@type": "Question", "name": "¿Dónde se descarga el PDF unido en iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "El PDF unido se descarga a la carpeta Descargas de tu iPhone, accesible a través de la app Archivos. En Safari, también puedes encontrar descargas recientes tocando el icono de flecha de descarga en la barra de dirección." } },
     { "@type": "Question", "name": "¿Puedo compartir el PDF unido directamente desde mi iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Después de descargar, abre el PDF unido desde la app Archivos, toca el botón compartir y envíalo por email, AirDrop, WhatsApp, iMessage o cualquier otra opción de compartir en tu iPhone." } },
-    { "@type": "Question", "name": "¿Hay un límite de tamaño al unir PDFs en iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Los usuarios gratuitos pueden subir archivos de hasta 25MB cada uno. Los usuarios Pro pueden subir archivos de hasta 200MB. Si tu archivo unido es muy grande, usa la herramienta Comprimir PDF de OmnisPDF para reducir el tamaño antes de compartir." } }
+    { "@type": "Question", "name": "¿Hay un límite de tamaño al unir PDFs en iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Los usuarios gratuitos pueden subir archivos de hasta 25MB cada uno. Los usuarios Pro pueden subir archivos de hasta 200MB. Si tu archivo unido es muy grande, usa la herramienta Comprimir PDF de PDF.it para reducir el tamaño antes de compartir." } }
   ]
 }
 
 const howToSchema = {
   "@context": "https://schema.org", "@type": "HowTo", "name": "Cómo Unir Archivos PDF en iPhone",
-  "description": "Combina múltiples PDFs en un solo archivo en tu iPhone usando Safari y OmnisPDF.",
+  "description": "Combina múltiples PDFs en un solo archivo en tu iPhone usando Safari y PDF.it.",
   "step": [
-    { "@type": "HowToStep", "name": "Abre OmnisPDF en Safari", "text": "Abre Safari en tu iPhone y ve a omnispdf.com/merge-pdf. Toca el área de carga para abrir el selector de archivos." },
+    { "@type": "HowToStep", "name": "Abre PDF.it en Safari", "text": "Abre Safari en tu iPhone y ve a pdf.it.com/merge-pdf. Toca el área de carga para abrir el selector de archivos." },
     { "@type": "HowToStep", "name": "Sube y ordena tus PDFs", "text": "Selecciona los archivos PDF que quieres unir desde la app Archivos, iCloud Drive o tu carpeta de Descargas. Ordénalos correctamente arrastrando." },
     { "@type": "HowToStep", "name": "Une y descarga", "text": "Toca Unir PDF y espera unos segundos. Descarga el archivo unido — se guarda en tu carpeta de Descargas en la app Archivos. Compártelo por email, AirDrop o cualquier app de mensajería." }
   ]
@@ -63,9 +63,9 @@ export default function UnirPDFEnIPhonePage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">¿Por Qué Usar un Navegador en Vez de una App?</h2>
               <p className="text-slate-600 mb-4">Podrías descargar una app de PDF del App Store, pero hay buenas razones para no hacerlo:</p>
               <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Sin instalación necesaria.</strong> La mayoría de apps de PDF pesan 50-200MB y requieren crear otra cuenta más. OmnisPDF funciona instantáneamente en Safari.</span></li>
+                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Sin instalación necesaria.</strong> La mayoría de apps de PDF pesan 50-200MB y requieren crear otra cuenta más. PDF.it funciona instantáneamente en Safari.</span></li>
                 <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Sin espacio desperdiciado.</strong> El almacenamiento de tu iPhone se mantiene limpio. La herramienta del navegador no ocupa espacio en tu dispositivo.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Sin trampas de suscripción.</strong> Muchas apps &quot;gratuitas&quot; de PDF bloquean funciones básicas detrás de suscripciones semanales. OmnisPDF te permite unir archivos gratis sin costos ocultos.</span></li>
+                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Sin trampas de suscripción.</strong> Muchas apps &quot;gratuitas&quot; de PDF bloquean funciones básicas detrás de suscripciones semanales. PDF.it te permite unir archivos gratis sin costos ocultos.</span></li>
                 <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Funciona en cualquier dispositivo.</strong> La misma herramienta funciona en tu iPhone, iPad, teléfono Android o computadora — sin cambiar entre apps.</span></li>
               </ul>
             </section>
@@ -86,7 +86,7 @@ export default function UnirPDFEnIPhonePage() {
               <h2 className="text-2xl font-black text-slate-900 mb-6">Cómo Unir PDFs en iPhone (Paso a Paso)</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Abre Safari y ve a OmnisPDF", desc: "Abre Safari en tu iPhone y navega a omnispdf.com/merge-pdf. La página está completamente optimizada para móvil — funciona perfectamente en cualquier tamaño de pantalla de iPhone." },
+                  { title: "Abre Safari y ve a PDF.it", desc: "Abre Safari en tu iPhone y navega a pdf.it.com/merge-pdf. La página está completamente optimizada para móvil — funciona perfectamente en cualquier tamaño de pantalla de iPhone." },
                   { title: "Sube tus archivos PDF", desc: "Toca el área de carga. Tu iPhone mostrará un selector de archivos donde puedes explorar la app Archivos, iCloud Drive o descargas recientes. Selecciona todos los PDFs que quieres unir. Puedes subirlos uno a la vez o seleccionar múltiples archivos." },
                   { title: "Ordena los archivos y toca Unir", desc: "Arrastra los archivos al orden correcto. El primer archivo en la lista se convierte en las primeras páginas del documento unido. Cuando el orden esté correcto, toca Unir PDF. El archivo unido se descargará a tu carpeta de Descargas en la app Archivos." },
                 ].map((step, i) => (
@@ -125,14 +125,14 @@ export default function UnirPDFEnIPhonePage() {
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Comprímelo.</strong> Ve a <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> en Safari y sube el archivo unido. La compresión puede reducir el tamaño en 50-80%.</li>
                 <li>&#10003; <strong>Divídelo si es necesario.</strong> Si la compresión no es suficiente, usa <Link href="/es/dividir-pdf" className="text-orange-600 hover:underline">Dividir PDF</Link> para separar el documento en partes más pequeñas.</li>
-                <li>&#10003; <strong>Todo desde tu iPhone.</strong> Cada herramienta de OmnisPDF funciona en Safari — no necesitas cambiar a una computadora.</li>
+                <li>&#10003; <strong>Todo desde tu iPhone.</strong> Cada herramienta de PDF.it funciona en Safari — no necesitas cambiar a una computadora.</li>
               </ul>
             </section>
 
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Consejos Específicos para iPhone</h2>
               <div className="space-y-6">
-                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Guarda Primero los Adjuntos de Email</h3><p className="text-slate-600">Si tus PDFs están en el email, guárdalos en la app Archivos antes de unir. Abre el email, mantén presionado el adjunto PDF y toca &quot;Guardar en Archivos&quot;. Elige una carpeta que recuerdes (como Descargas). Luego podrás encontrarlos fácilmente al subir a OmnisPDF.</p></div>
+                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Guarda Primero los Adjuntos de Email</h3><p className="text-slate-600">Si tus PDFs están en el email, guárdalos en la app Archivos antes de unir. Abre el email, mantén presionado el adjunto PDF y toca &quot;Guardar en Archivos&quot;. Elige una carpeta que recuerdes (como Descargas). Luego podrás encontrarlos fácilmente al subir a PDF.it.</p></div>
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">Usa Modo Horizontal para Mejor Control</h3><p className="text-slate-600">Al ordenar archivos en la herramienta de unir, girar tu iPhone de lado te da más espacio en pantalla para ver los nombres de archivo y arrastrarlos al orden correcto.</p></div>
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">Verifica Tu Trabajo en la App Archivos</h3><p className="text-slate-600">Después de descargar el PDF unido, ábrelo en la app Archivos y desplázate por cada página. El visor de PDF integrado del iPhone muestra una tira de miniaturas de páginas que facilita verificar que el orden sea correcto.</p></div>
               </div>
@@ -172,9 +172,9 @@ export default function UnirPDFEnIPhonePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Puedo unir PDFs en mi iPhone sin una app?", a: "Sí. OmnisPDF funciona directamente en Safari o Chrome en tu iPhone. Ve a omnispdf.com/merge-pdf, sube tus archivos, ordénalos y descarga el PDF unido — sin necesidad de instalar ninguna app." },
+                { q: "¿Puedo unir PDFs en mi iPhone sin una app?", a: "Sí. PDF.it funciona directamente en Safari o Chrome en tu iPhone. Ve a pdf.it.com/merge-pdf, sube tus archivos, ordénalos y descarga el PDF unido — sin necesidad de instalar ninguna app." },
                 { q: "¿Dónde encuentro los PDFs en mi iPhone?", a: "Los PDFs en iPhone típicamente están en la app Archivos (bajo 'En Mi iPhone' o iCloud Drive), en adjuntos de email, en apps de mensajería (WhatsApp, iMessage) o en la carpeta Descargas de Safari." },
-                { q: "¿Cómo subo PDFs desde mi iPhone a OmnisPDF?", a: "Cuando tocas el área de carga en OmnisPDF, tu iPhone mostrará un selector de archivos. Puedes explorar la app Archivos, descargas recientes, iCloud Drive u otro almacenamiento en la nube." },
+                { q: "¿Cómo subo PDFs desde mi iPhone a PDF.it?", a: "Cuando tocas el área de carga en PDF.it, tu iPhone mostrará un selector de archivos. Puedes explorar la app Archivos, descargas recientes, iCloud Drive u otro almacenamiento en la nube." },
                 { q: "¿Dónde se descarga el PDF unido en iPhone?", a: "El PDF unido se descarga a la carpeta Descargas de tu iPhone, accesible a través de la app Archivos. En Safari, también puedes encontrar descargas recientes tocando el icono de flecha de descarga." },
                 { q: "¿Puedo compartir el PDF unido directamente desde mi iPhone?", a: "Sí. Después de descargar, abre el PDF unido desde la app Archivos, toca el botón compartir y envíalo por email, AirDrop, WhatsApp, iMessage o cualquier otra opción." },
                 { q: "¿Hay un límite de tamaño al unir PDFs en iPhone?", a: "Los usuarios gratuitos pueden subir archivos de hasta 25MB cada uno. Los usuarios Pro pueden subir archivos de hasta 200MB. Si tu archivo unido es muy grande, usa la herramienta Comprimir PDF para reducir el tamaño." },

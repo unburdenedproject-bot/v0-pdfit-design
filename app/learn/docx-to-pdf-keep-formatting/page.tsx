@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "DOCX to PDF Without Formatting Issues (Fonts, Spacing, Images) | OmnisPDF",
+  title: "DOCX to PDF Without Formatting Issues (Fonts, Spacing, Images) | PDF.it",
   description:
     "Fix formatting issues when converting DOCX to PDF. Learn how to prevent font substitution, spacing changes, and image shifts so your PDF looks exactly like your Word document.",
   keywords: "docx to pdf keep formatting, word to pdf formatting issues, docx to pdf fonts wrong, word to pdf spacing changes, preserve formatting word to pdf",
@@ -28,12 +28,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Why are my images blurry in the converted PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Some conversion tools compress images aggressively to reduce file size. OmnisPDF preserves original image quality by default. If images were inserted at low resolution in Word, they'll be low resolution in the PDF too — replace them with higher-resolution versions before converting." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Some conversion tools compress images aggressively to reduce file size. PDF.it preserves original image quality by default. If images were inserted at low resolution in Word, they'll be low resolution in the PDF too — replace them with higher-resolution versions before converting." }
     },
     {
       "@type": "Question",
       "name": "Can I convert DOCX to PDF without losing hyperlinks?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF preserves clickable hyperlinks during conversion. Make sure links are properly formatted in Word (right-click > Hyperlink) rather than just pasted as plain text." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it preserves clickable hyperlinks during conversion. Make sure links are properly formatted in Word (right-click > Hyperlink) rather than just pasted as plain text." }
     },
     {
       "@type": "Question",
@@ -52,7 +52,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Convert DOCX to PDF Without Formatting Issues",
-  "description": "Preserve fonts, spacing, and images when converting Word to PDF using OmnisPDF.",
+  "description": "Preserve fonts, spacing, and images when converting Word to PDF using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
@@ -61,8 +61,8 @@ const howToSchema = {
     },
     {
       "@type": "HowToStep",
-      "name": "Convert with OmnisPDF",
-      "text": "Upload your .docx file to OmnisPDF's Word to PDF tool and click Convert. The tool preserves formatting, fonts, and image quality."
+      "name": "Convert with PDF.it",
+      "text": "Upload your .docx file to PDF.it's Word to PDF tool and click Convert. The tool preserves formatting, fonts, and image quality."
     },
     {
       "@type": "HowToStep",
@@ -197,8 +197,8 @@ export default function DocxToPdfKeepFormattingPage() {
                     desc: "Check fonts (use standard or embed custom ones), set explicit spacing, and anchor images. Review the document in Print Preview to see exactly how it will look.",
                   },
                   {
-                    title: "Upload and convert with OmnisPDF",
-                    desc: "Go to the Word to PDF tool and upload your .docx file. OmnisPDF's conversion engine handles fonts, spacing, and images accurately — click Convert and wait a few seconds.",
+                    title: "Upload and convert with PDF.it",
+                    desc: "Go to the Word to PDF tool and upload your .docx file. PDF.it's conversion engine handles fonts, spacing, and images accurately — click Convert and wait a few seconds.",
                   },
                   {
                     title: "Compare the output",
@@ -222,7 +222,7 @@ export default function DocxToPdfKeepFormattingPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Common Pitfalls to Avoid</h2>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Don't use Word's "Save as PDF."</strong> Word's built-in export can produce inconsistent results depending on your Word version and operating system. A dedicated converter like <Link href="/word-to-pdf" className="text-orange-600 hover:underline">OmnisPDF's Word to PDF</Link> gives more reliable output.</li>
+                <li>&#10003; <strong>Don't use Word's "Save as PDF."</strong> Word's built-in export can produce inconsistent results depending on your Word version and operating system. A dedicated converter like <Link href="/word-to-pdf" className="text-orange-600 hover:underline">PDF.it's Word to PDF</Link> gives more reliable output.</li>
                 <li>&#10003; <strong>Avoid "Print to PDF" on Windows.</strong> The Microsoft Print to PDF driver often changes margins and can drop hyperlinks. It's a last resort, not a first choice.</li>
                 <li>&#10003; <strong>Don't mix Office formats.</strong> If your Word document has embedded Excel charts or PowerPoint slides, convert each element separately and use <Link href="/office-to-pdf" className="text-orange-600 hover:underline">Office to PDF</Link> for the best results.</li>
               </ul>
@@ -294,8 +294,8 @@ export default function DocxToPdfKeepFormattingPage() {
               {[
                 { q: "Why does my DOCX look different after converting to PDF?", a: "The most common cause is font substitution. If the conversion tool doesn't have the same font installed, it replaces it with a similar font that may have different character widths and spacing. This causes text to reflow, changing line breaks and page layout." },
                 { q: "How do I keep fonts the same when converting Word to PDF?", a: "Use standard system fonts like Arial, Calibri, or Times New Roman. These are available on virtually all systems and conversion tools. If you must use a custom font, embed it in the Word document before converting (File > Options > Save > Embed fonts in the file)." },
-                { q: "Why are my images blurry in the converted PDF?", a: "Some conversion tools compress images aggressively to reduce file size. OmnisPDF preserves original image quality by default. If images were inserted at low resolution in Word, they'll be low resolution in the PDF too — replace them with higher-resolution versions before converting." },
-                { q: "Can I convert DOCX to PDF without losing hyperlinks?", a: "Yes. OmnisPDF preserves clickable hyperlinks during conversion. Make sure links are properly formatted in Word (right-click > Hyperlink) rather than just pasted as plain text." },
+                { q: "Why are my images blurry in the converted PDF?", a: "Some conversion tools compress images aggressively to reduce file size. PDF.it preserves original image quality by default. If images were inserted at low resolution in Word, they'll be low resolution in the PDF too — replace them with higher-resolution versions before converting." },
+                { q: "Can I convert DOCX to PDF without losing hyperlinks?", a: "Yes. PDF.it preserves clickable hyperlinks during conversion. Make sure links are properly formatted in Word (right-click > Hyperlink) rather than just pasted as plain text." },
                 { q: "Why did my table formatting break in the PDF?", a: "Complex table layouts with merged cells, nested tables, or auto-fit columns are the most common source of formatting breaks. Simplify your tables where possible — use fixed column widths instead of auto-fit, and avoid deeply nested tables." },
                 { q: "How do I check if my PDF matches the original Word document?", a: "Open both files side by side and compare page by page. Pay special attention to the last line on each page (text reflow often pushes content to the next page), table alignments, and image positions. Check headers and footers separately." },
               ].map((faq, i) => (

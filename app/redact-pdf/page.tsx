@@ -5,9 +5,9 @@ import { Shield, Zap, Lock, FileCheck } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Redact PDF Online — Permanently Remove Sensitive Information | OmnisPDF",
+  title: "Redact PDF Online — Permanently Remove Sensitive Information | PDF.it",
   description:
-    "Redact sensitive text and data from PDFs with OmnisPDF. Permanently black out confidential information before sharing — secure, fast, and browser-based.",
+    "Redact sensitive text and data from PDFs with PDF.it. Permanently black out confidential information before sharing — secure, fast, and browser-based.",
 }
 
 const faqSchema = {
@@ -36,13 +36,13 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Does OmnisPDF offer PDF redaction?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF Redaction is available on OmnisPDF's Business plan ($13.99/month). It permanently removes sensitive text, images, and metadata from your documents directly in your browser." }
+      "name": "Does PDF.it offer PDF redaction?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF Redaction is available on PDF.it's Business plan ($13.99/month). It permanently removes sensitive text, images, and metadata from your documents directly in your browser." }
     },
     {
       "@type": "Question",
       "name": "What types of content can be redacted from a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "You can redact text (names, addresses, account numbers), images (photos, signatures, logos), and metadata (author name, creation date, software info). OmnisPDF's redaction tool handles all three types." }
+      "acceptedAnswer": { "@type": "Answer", "text": "You can redact text (names, addresses, account numbers), images (photos, signatures, logos), and metadata (author name, creation date, software info). PDF.it's redaction tool handles all three types." }
     }
   ]
 }
@@ -96,7 +96,7 @@ export default function RedactPDFPage() {
         {/* CTA */}
         <section className="py-12 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
-            <h2 className="text-2xl font-black text-slate-900 mb-4">Redact PDFs with OmnisPDF</h2>
+            <h2 className="text-2xl font-black text-slate-900 mb-4">Redact PDFs with PDF.it</h2>
             <p className="text-slate-600 mb-6">PDF Redaction is available on our Business plan. Permanently remove sensitive text, images, and metadata from your documents.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/pdf-redaction" className="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors">
@@ -127,7 +127,7 @@ export default function RedactPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Permanent vs. Visual Redaction</h2>
               <p className="text-slate-600">
-                Visual redaction (placing a black rectangle over text) is a common mistake. The text remains in the file and can be copied, searched, or extracted using free tools. True redaction permanently deletes the data from the PDF. OmnisPDF uses true redaction to ensure your sensitive information is completely gone.
+                Visual redaction (placing a black rectangle over text) is a common mistake. The text remains in the file and can be copied, searched, or extracted using free tools. True redaction permanently deletes the data from the PDF. PDF.it uses true redaction to ensure your sensitive information is completely gone.
               </p>
             </div>
           </div>
@@ -139,7 +139,7 @@ export default function RedactPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Redact a PDF</h2>
             <div className="space-y-4">
               {[
-                "Upload your PDF to OmnisPDF's PDF Redaction tool.",
+                "Upload your PDF to PDF.it's PDF Redaction tool.",
                 "Select the text, images, or areas you want to permanently remove.",
                 "Apply redaction — the selected content is permanently deleted from the file.",
                 "Download your redacted PDF, ready to share securely.",
@@ -189,8 +189,8 @@ export default function RedactPDFPage() {
                 { q: "Is PDF redaction truly permanent?", a: "Yes. Unlike simply placing a black rectangle over text, true redaction permanently deletes the underlying data from the file. The redacted content cannot be recovered, copied, or searched." },
                 { q: "What is the difference between redaction and hiding text?", a: "Hiding text with a black box is purely visual — the text is still in the file and can be copied or extracted. Redaction permanently removes the data from the PDF, making it impossible to recover." },
                 { q: "Is PDF redaction required for HIPAA and GDPR compliance?", a: "Yes. HIPAA requires that protected health information (PHI) be permanently removed before sharing documents. GDPR requires that personal data be properly anonymized. PDF redaction is the standard method for meeting both requirements." },
-                { q: "Does OmnisPDF offer PDF redaction?", a: "Yes. PDF Redaction is available on OmnisPDF's Business plan ($13.99/month). It permanently removes sensitive text, images, and metadata from your documents directly in your browser." },
-                { q: "What types of content can be redacted from a PDF?", a: "You can redact text (names, addresses, account numbers), images (photos, signatures, logos), and metadata (author name, creation date, software info). OmnisPDF's redaction tool handles all three types." },
+                { q: "Does PDF.it offer PDF redaction?", a: "Yes. PDF Redaction is available on PDF.it's Business plan ($13.99/month). It permanently removes sensitive text, images, and metadata from your documents directly in your browser." },
+                { q: "What types of content can be redacted from a PDF?", a: "You can redact text (names, addresses, account numbers), images (photos, signatures, logos), and metadata (author name, creation date, software info). PDF.it's redaction tool handles all three types." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

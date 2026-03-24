@@ -6,15 +6,15 @@ import { Lock, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Criptografar PDF — Proteja seu PDF com Senha | OmnisPDF",
+  title: "Criptografar PDF — Proteja seu PDF com Senha | PDF.it",
   description:
-    "Criptografe seu PDF com senha usando o OmnisPDF. Proteja documentos confidenciais com criptografia segura online — rápido, sem cadastro e direto do navegador.",
+    "Criptografe seu PDF com senha usando o PDF.it. Proteja documentos confidenciais com criptografia segura online — rápido, sem cadastro e direto do navegador.",
   alternates: {
-    canonical: "https://omnispdf.com/br/criptografar-pdf",
+    canonical: "https://pdf.it.com/br/criptografar-pdf",
     languages: {
-      en: "https://omnispdf.com/encrypt-pdf",
-      es: "https://omnispdf.com/es/encriptar-pdf",
-      pt: "https://omnispdf.com/br/criptografar-pdf",
+      en: "https://pdf.it.com/encrypt-pdf",
+      es: "https://pdf.it.com/es/encriptar-pdf",
+      pt: "https://pdf.it.com/br/criptografar-pdf",
     },
   },
 }
@@ -31,17 +31,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Quais tipos de senha existem para um PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Existem dois tipos: a senha de abertura (impede abrir o PDF sem ela) e a senha de permissões (restringe ações como imprimir, copiar ou editar). O OmnisPDF aplica uma senha de abertura para máxima proteção." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Existem dois tipos: a senha de abertura (impede abrir o PDF sem ela) e a senha de permissões (restringe ações como imprimir, copiar ou editar). O PDF.it aplica uma senha de abertura para máxima proteção." }
     },
     {
       "@type": "Question",
       "name": "Qual é o nível de segurança da criptografia?",
-      "acceptedAnswer": { "@type": "Answer", "text": "O OmnisPDF utiliza criptografia padrão da indústria para proteger seus PDFs. O arquivo resultante requer a senha correta para ser aberto em qualquer leitor de PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "O PDF.it utiliza criptografia padrão da indústria para proteger seus PDFs. O arquivo resultante requer a senha correta para ser aberto em qualquer leitor de PDF." }
     },
     {
       "@type": "Question",
       "name": "Posso descriptografar o PDF depois?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Use a ferramenta Desbloquear PDF do OmnisPDF para remover a senha de qualquer PDF criptografado, desde que você conheça a senha original." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Use a ferramenta Desbloquear PDF do PDF.it para remover a senha de qualquer PDF criptografado, desde que você conheça a senha original." }
     },
     {
       "@type": "Question",
@@ -51,7 +51,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso criptografar um PDF pelo celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em navegadores móveis — envie seu PDF, defina uma senha e baixe o arquivo criptografado de qualquer dispositivo." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em navegadores móveis — envie seu PDF, defina uma senha e baixe o arquivo criptografado de qualquer dispositivo." }
     }
   ]
 }
@@ -75,7 +75,7 @@ export default function CriptografarPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Criptografar PDF</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Proteja seu PDF com senha e criptografia usando o OmnisPDF. Cifre documentos confidenciais antes de enviá-los, armazená-los ou compartilhá-los — rápido, seguro e direto do navegador.
+                Proteja seu PDF com senha e criptografia usando o PDF.it. Cifre documentos confidenciais antes de enviá-los, armazená-los ou compartilhá-los — rápido, seguro e direto do navegador.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Criptografia Segura</span></div>
@@ -99,7 +99,7 @@ export default function CriptografarPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use a ferramenta Criptografar PDF do OmnisPDF para cifrar e proteger com senha qualquer arquivo PDF em segundos. Ideal para proteger documentos confidenciais, informações financeiras, contratos legais e dados pessoais antes de enviá-los por e-mail ou armazená-los na nuvem.
+              Use a ferramenta Criptografar PDF do PDF.it para cifrar e proteger com senha qualquer arquivo PDF em segundos. Ideal para proteger documentos confidenciais, informações financeiras, contratos legais e dados pessoais antes de enviá-los por e-mail ou armazená-los na nuvem.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Criptografe arquivos PDF com senha online</li>
@@ -141,7 +141,7 @@ export default function CriptografarPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Criptografar um PDF</h2>
             <div className="space-y-4">
               {[
-                "Envie seu PDF para o OmnisPDF.",
+                "Envie seu PDF para o PDF.it.",
                 "Digite uma senha segura e confirme.",
                 "Clique em Criptografar PDF e baixe seu arquivo protegido.",
               ].map((step, i) => (
@@ -189,11 +189,11 @@ export default function CriptografarPDFPage() {
             <div className="space-y-6">
               {[
                 { q: "O que significa criptografar um PDF?", a: "Criptografar um PDF significa aplicar um algoritmo de cifragem que protege o conteúdo do arquivo com uma senha. Somente as pessoas que conhecerem a senha poderão abrir e visualizar o documento." },
-                { q: "Quais tipos de senha existem para um PDF?", a: "Existem dois tipos: a senha de abertura (impede abrir o PDF sem ela) e a senha de permissões (restringe ações como imprimir, copiar ou editar). O OmnisPDF aplica uma senha de abertura para máxima proteção." },
-                { q: "Qual é o nível de segurança da criptografia?", a: "O OmnisPDF utiliza criptografia padrão da indústria para proteger seus PDFs. O arquivo resultante requer a senha correta para ser aberto em qualquer leitor de PDF." },
-                { q: "Posso descriptografar o PDF depois?", a: "Sim. Use a ferramenta Desbloquear PDF do OmnisPDF para remover a senha de qualquer PDF criptografado, desde que você conheça a senha original." },
+                { q: "Quais tipos de senha existem para um PDF?", a: "Existem dois tipos: a senha de abertura (impede abrir o PDF sem ela) e a senha de permissões (restringe ações como imprimir, copiar ou editar). O PDF.it aplica uma senha de abertura para máxima proteção." },
+                { q: "Qual é o nível de segurança da criptografia?", a: "O PDF.it utiliza criptografia padrão da indústria para proteger seus PDFs. O arquivo resultante requer a senha correta para ser aberto em qualquer leitor de PDF." },
+                { q: "Posso descriptografar o PDF depois?", a: "Sim. Use a ferramenta Desbloquear PDF do PDF.it para remover a senha de qualquer PDF criptografado, desde que você conheça a senha original." },
                 { q: "É seguro enviar documentos confidenciais para criptografá-los?", a: "Sim. Todas as transferências são criptografadas com SSL e seus arquivos são eliminados imediatamente após a sessão. Nunca armazenamos nem compartilhamos seus documentos." },
-                { q: "Posso criptografar um PDF pelo celular?", a: "Sim. O OmnisPDF funciona em navegadores móveis — envie seu PDF, defina uma senha e baixe o arquivo criptografado de qualquer dispositivo." },
+                { q: "Posso criptografar um PDF pelo celular?", a: "Sim. O PDF.it funciona em navegadores móveis — envie seu PDF, defina uma senha e baixe o arquivo criptografado de qualquer dispositivo." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ImageIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Converter PDF para JPG Online (Rápido e Alta Qualidade) | OmnisPDF",
+  title: "Como Converter PDF para JPG Online (Rápido e Alta Qualidade) | PDF.it",
   description:
     "Aprenda como converter PDF para JPG online em segundos. Guia passo a passo com configuração de qualidade, conversão em lote e quando usar JPG vs PNG — grátis, sem software.",
   keywords: "converter pdf para jpg online, pdf para jpg, pdf para imagem, converter pdf para imagem, pdf para jpeg",
@@ -15,12 +15,12 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Como converto um PDF para JPG grátis?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para a ferramenta PDF para JPG do OmnisPDF, escolha a configuração de qualidade, clique em Converter e baixe suas imagens JPG. Não é necessário cadastro para seus primeiros 3 arquivos." } },
+    { "@type": "Question", "name": "Como converto um PDF para JPG grátis?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para a ferramenta PDF para JPG do PDF.it, escolha a configuração de qualidade, clique em Converter e baixe suas imagens JPG. Não é necessário cadastro para seus primeiros 3 arquivos." } },
     { "@type": "Question", "name": "Converter PDF para JPG perde qualidade?", "acceptedAnswer": { "@type": "Answer", "text": "JPG usa compressão com perda, então sempre há alguma perda de qualidade comparado ao PDF original. No entanto, com configurações de alta qualidade (200-300 DPI), a diferença é quase imperceptível para a maioria dos usos como apresentações, redes sociais ou páginas web." } },
     { "@type": "Question", "name": "Qual DPI devo usar para PDF para JPG?", "acceptedAnswer": { "@type": "Answer", "text": "Para visualização em tela e uso web, 150 DPI é suficiente. Para apresentações e documentos, 200 DPI funciona bem. Para impressão ou quando precisa de máximo detalhe, use 300 DPI. Maior DPI significa arquivos maiores." } },
-    { "@type": "Question", "name": "Posso converter um PDF de várias páginas para JPG?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Quando você converte um PDF de várias páginas, cada página se torna uma imagem JPG separada. O OmnisPDF converte todas as páginas de uma vez e permite baixá-las individualmente ou como arquivo ZIP." } },
+    { "@type": "Question", "name": "Posso converter um PDF de várias páginas para JPG?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Quando você converte um PDF de várias páginas, cada página se torna uma imagem JPG separada. O PDF.it converte todas as páginas de uma vez e permite baixá-las individualmente ou como arquivo ZIP." } },
     { "@type": "Question", "name": "Devo converter para JPG ou PNG?", "acceptedAnswer": { "@type": "Answer", "text": "Use JPG para fotos, documentos digitalizados e quando o tamanho do arquivo importa. Use PNG para páginas com muito texto, diagramas, capturas de tela ou quando precisa de transparência. Arquivos PNG são maiores mas sem perda de qualidade." } },
-    { "@type": "Question", "name": "Posso converter PDF para JPG no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em qualquer navegador móvel incluindo Safari no iPhone e Chrome no Android. Envie seu PDF, converta e salve as imagens JPG diretamente no seu celular. Não precisa de nenhum app." } }
+    { "@type": "Question", "name": "Posso converter PDF para JPG no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em qualquer navegador móvel incluindo Safari no iPhone e Chrome no Android. Envie seu PDF, converta e salve as imagens JPG diretamente no seu celular. Não precisa de nenhum app." } }
   ]
 }
 
@@ -28,9 +28,9 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Converter PDF para JPG Online",
-  "description": "Converta as páginas do seu PDF para imagens JPG de alta qualidade em 3 passos simples usando o OmnisPDF.",
+  "description": "Converta as páginas do seu PDF para imagens JPG de alta qualidade em 3 passos simples usando o PDF.it.",
   "step": [
-    { "@type": "HowToStep", "name": "Envie seu PDF", "text": "Vá para a ferramenta PDF para JPG do OmnisPDF e envie seu arquivo clicando ou arrastando para a área de upload." },
+    { "@type": "HowToStep", "name": "Envie seu PDF", "text": "Vá para a ferramenta PDF para JPG do PDF.it e envie seu arquivo clicando ou arrastando para a área de upload." },
     { "@type": "HowToStep", "name": "Escolha a configuração de qualidade", "text": "Selecione seu DPI preferido (150 para web, 200 para apresentações, 300 para impressão) e escolha quais páginas converter." },
     { "@type": "HowToStep", "name": "Baixe suas imagens JPG", "text": "Clique em Converter e baixe seus arquivos JPG. Cada página do PDF se torna uma imagem JPG separada. Baixe individualmente ou como arquivo ZIP." }
   ]
@@ -143,7 +143,7 @@ export default function ConverterPdfParaJpgPage() {
 
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Conversão em Lote: Múltiplos PDFs de Uma Vez</h2>
-              <p className="text-slate-600 mb-4">Se você tem vários PDFs para converter, fazer um por um é tedioso. Usuários Pro do OmnisPDF podem enviar múltiplos PDFs e convertê-los todos para JPG em um único lote:</p>
+              <p className="text-slate-600 mb-4">Se você tem vários PDFs para converter, fazer um por um é tedioso. Usuários Pro do PDF.it podem enviar múltiplos PDFs e convertê-los todos para JPG em um único lote:</p>
               <ul className="space-y-2 text-slate-700">
                 <li>- Selecione múltiplos arquivos PDF de uma vez (ou arraste uma pasta inteira)</li>
                 <li>- Cada PDF é convertido para imagens JPG com suas configurações escolhidas</li>
@@ -208,12 +208,12 @@ export default function ConverterPdfParaJpgPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como converto um PDF para JPG grátis?", a: "Envie seu PDF para a ferramenta PDF para JPG do OmnisPDF, escolha a configuração de qualidade, clique em Converter e baixe suas imagens JPG. Não é necessário cadastro para seus primeiros 3 arquivos." },
+                { q: "Como converto um PDF para JPG grátis?", a: "Envie seu PDF para a ferramenta PDF para JPG do PDF.it, escolha a configuração de qualidade, clique em Converter e baixe suas imagens JPG. Não é necessário cadastro para seus primeiros 3 arquivos." },
                 { q: "Converter PDF para JPG perde qualidade?", a: "JPG usa compressão com perda, então sempre há alguma perda de qualidade comparado ao PDF original. No entanto, com configurações de alta qualidade (200-300 DPI), a diferença é quase imperceptível para a maioria dos usos." },
                 { q: "Qual DPI devo usar para PDF para JPG?", a: "Para visualização em tela e uso web, 150 DPI é suficiente. Para apresentações e documentos, 200 DPI funciona bem. Para impressão ou quando precisa de máximo detalhe, use 300 DPI." },
-                { q: "Posso converter um PDF de várias páginas para JPG?", a: "Sim. Quando você converte um PDF de várias páginas, cada página se torna uma imagem JPG separada. O OmnisPDF converte todas as páginas de uma vez e permite baixá-las individualmente ou como arquivo ZIP." },
+                { q: "Posso converter um PDF de várias páginas para JPG?", a: "Sim. Quando você converte um PDF de várias páginas, cada página se torna uma imagem JPG separada. O PDF.it converte todas as páginas de uma vez e permite baixá-las individualmente ou como arquivo ZIP." },
                 { q: "Devo converter para JPG ou PNG?", a: "Use JPG para fotos, documentos digitalizados e quando o tamanho do arquivo importa. Use PNG para páginas com muito texto, diagramas, capturas de tela ou quando precisa de transparência." },
-                { q: "Posso converter PDF para JPG no celular?", a: "Sim. O OmnisPDF funciona em qualquer navegador móvel incluindo Safari no iPhone e Chrome no Android. Envie seu PDF, converta e salve as imagens JPG diretamente no seu celular. Não precisa de nenhum app." },
+                { q: "Posso converter PDF para JPG no celular?", a: "Sim. O PDF.it funciona em qualquer navegador móvel incluindo Safari no iPhone e Chrome no Android. Envie seu PDF, converta e salve as imagens JPG diretamente no seu celular. Não precisa de nenhum app." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

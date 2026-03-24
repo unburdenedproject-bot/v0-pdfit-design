@@ -5,20 +5,20 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Converter DOCX, XLSX, PPTX para PDF de Uma Vez | OmnisPDF",
+  title: "Converter DOCX, XLSX, PPTX para PDF de Uma Vez | PDF.it",
   description: "Aprenda a converter multiplos arquivos do Office (Word, Excel, PowerPoint) para PDF de uma vez. Processamento em lote para usuarios Pro.",
   keywords: "converter docx para pdf, converter xlsx para pdf, converter pptx para pdf, office para pdf lote, converter varios arquivos pdf",
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-  { "@type": "Question", "name": "Posso converter DOCX, XLSX e PPTX para PDF ao mesmo tempo?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Usuarios Pro do OmnisPDF podem usar o processamento em lote para enviar multiplos arquivos de diferentes formatos e converte-los todos para PDF simultaneamente." } },
+  { "@type": "Question", "name": "Posso converter DOCX, XLSX e PPTX para PDF ao mesmo tempo?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Usuarios Pro do PDF.it podem usar o processamento em lote para enviar multiplos arquivos de diferentes formatos e converte-los todos para PDF simultaneamente." } },
   { "@type": "Question", "name": "Qual a diferenca entre converter cada formato separadamente?", "acceptedAnswer": { "@type": "Answer", "text": "O resultado e o mesmo. A ferramenta Office para PDF aceita todos os formatos em uma unica interface. Mas se voce precisa de opcoes especificas para cada formato, use as ferramentas dedicadas (Word para PDF, Excel para PDF, PowerPoint para PDF)." } },
   { "@type": "Question", "name": "Quantos arquivos posso converter de uma vez?", "acceptedAnswer": { "@type": "Answer", "text": "Usuarios gratuitos convertem um arquivo por vez. Usuarios Pro podem enviar multiplos arquivos e baixar todos os PDFs em um arquivo ZIP." } },
   { "@type": "Question", "name": "Os arquivos originais sao preservados?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. A conversao gera novos arquivos PDF — seus arquivos originais DOCX, XLSX e PPTX nao sao alterados." } }
 ] }
 
-const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como converter DOCX, XLSX e PPTX para PDF", "description": "Converta multiplos formatos do Office para PDF usando o OmnisPDF.", "step": [
-  { "@type": "HowToStep", "name": "Acesse a ferramenta Office para PDF", "text": "Va ate omnispdf.com/br/office-para-pdf no seu navegador." },
+const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como converter DOCX, XLSX e PPTX para PDF", "description": "Converta multiplos formatos do Office para PDF usando o PDF.it.", "step": [
+  { "@type": "HowToStep", "name": "Acesse a ferramenta Office para PDF", "text": "Va ate pdf.it.com/br/office-para-pdf no seu navegador." },
   { "@type": "HowToStep", "name": "Envie seus arquivos", "text": "Arraste ou selecione seus arquivos DOCX, XLSX e/ou PPTX. Usuarios Pro podem enviar multiplos arquivos." },
   { "@type": "HowToStep", "name": "Baixe os PDFs", "text": "Clique em Converter e baixe os PDFs individualmente ou todos em um ZIP." }
 ] }
@@ -44,7 +44,7 @@ export default function ConverterDocxXlsxPptxParaPdfPage() {
         <article className="py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
           <section className="mb-12">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Todos os formatos do Office em uma ferramenta</h2>
-            <p className="text-slate-600 mb-4">O OmnisPDF aceita todos os principais formatos do Microsoft Office. Nao importa se voce tem documentos Word, planilhas Excel ou apresentacoes PowerPoint — tudo pode ser convertido para PDF:</p>
+            <p className="text-slate-600 mb-4">O PDF.it aceita todos os principais formatos do Microsoft Office. Nao importa se voce tem documentos Word, planilhas Excel ou apresentacoes PowerPoint — tudo pode ser convertido para PDF:</p>
             <div className="overflow-x-auto">
               <table className="w-full text-sm border border-gray-200 rounded-xl overflow-hidden">
                 <thead><tr className="bg-slate-900 text-white">
@@ -66,7 +66,7 @@ export default function ConverterDocxXlsxPptxParaPdfPage() {
             <div className="space-y-4">
               {[
                 { title: "Envie seus arquivos", desc: "Acesse a ferramenta Office para PDF e arraste seus arquivos DOCX, XLSX e/ou PPTX para a area de upload. Usuarios Pro podem enviar multiplos arquivos de uma vez." },
-                { title: "Converta todos", desc: "O OmnisPDF detecta automaticamente o tipo de cada arquivo e aplica a conversao ideal. Cada arquivo gera um PDF separado." },
+                { title: "Converta todos", desc: "O PDF.it detecta automaticamente o tipo de cada arquivo e aplica a conversao ideal. Cada arquivo gera um PDF separado." },
                 { title: "Baixe os PDFs", desc: "Baixe cada PDF individualmente ou, se converteu multiplos arquivos (Pro), baixe todos em um unico ZIP. Perfeito para enviar por email." },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -79,7 +79,7 @@ export default function ConverterDocxXlsxPptxParaPdfPage() {
 
           <section className="mb-12">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Ferramentas dedicadas vs. ferramenta universal</h2>
-            <p className="text-slate-600 mb-4">O OmnisPDF oferece tanto a ferramenta universal (Office para PDF) quanto ferramentas dedicadas para cada formato:</p>
+            <p className="text-slate-600 mb-4">O PDF.it oferece tanto a ferramenta universal (Office para PDF) quanto ferramentas dedicadas para cada formato:</p>
             <ul className="space-y-2 text-slate-700">
               <li>&#10003; <Link href="/br/word-para-pdf" className="text-orange-600 hover:underline">Word para PDF</Link> — otimizada para documentos de texto com cabecalhos, rodapes e indice.</li>
               <li>&#10003; <Link href="/br/excel-para-pdf" className="text-orange-600 hover:underline">Excel para PDF</Link> — preserva tabelas, graficos e areas de impressao.</li>

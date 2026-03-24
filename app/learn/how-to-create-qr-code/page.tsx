@@ -5,9 +5,9 @@ import Link from "next/link"
 import { QrCode, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "How to Create a QR Code Online (Free Generator) | OmnisPDF",
+  title: "How to Create a QR Code Online (Free Generator) | PDF.it",
   description:
-    "Learn how to create a QR code online for URLs, text, WiFi, and contact info. Step-by-step guide to generating QR codes instantly with OmnisPDF's free QR code tool.",
+    "Learn how to create a QR code online for URLs, text, WiFi, and contact info. Step-by-step guide to generating QR codes instantly with PDF.it's free QR code tool.",
   keywords: "create qr code, qr code generator, make qr code online, free qr code",
 }
 
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I create a QR code online for free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Go to OmnisPDF's QR Code generator, enter your URL, text, or other data, customize the style if needed, and download your QR code as a PNG or SVG image. Free users get up to 10 QR codes per day." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Go to PDF.it's QR Code generator, enter your URL, text, or other data, customize the style if needed, and download your QR code as a PNG or SVG image. Free users get up to 10 QR codes per day." }
     },
     {
       "@type": "Question",
@@ -33,7 +33,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I customize the color of my QR code?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF's QR Code tool lets you change foreground and background colors. Just make sure there's enough contrast between them — dark foreground on light background works best for reliable scanning." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it's QR Code tool lets you change foreground and background colors. Just make sure there's enough contrast between them — dark foreground on light background works best for reliable scanning." }
     },
     {
       "@type": "Question",
@@ -42,8 +42,8 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Is the QR Code tool free on OmnisPDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The QR Code generator is a Pro feature on OmnisPDF. Pro users ($7.99/month) get unlimited QR code generation along with all other premium PDF tools." }
+      "name": "Is the QR Code tool free on PDF.it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The QR Code generator is a Pro feature on PDF.it. Pro users ($7.99/month) get unlimited QR code generation along with all other premium PDF tools." }
     }
   ]
 }
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Create a QR Code Online",
-  "description": "Generate a QR code for any URL, text, or data in 3 simple steps using OmnisPDF.",
+  "description": "Generate a QR code for any URL, text, or data in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Choose your QR code type",
-      "text": "Go to OmnisPDF's QR Code tool and select the type of QR code you want — URL, text, WiFi, vCard, or other supported formats."
+      "text": "Go to PDF.it's QR Code tool and select the type of QR code you want — URL, text, WiFi, vCard, or other supported formats."
     },
     {
       "@type": "HowToStep",
@@ -132,7 +132,7 @@ export default function HowToCreateQRCodePage() {
                 QR codes are used everywhere today. Restaurants use them for digital menus. Businesses put them on cards and flyers. Event organizers use them for ticketing. Marketers embed them in print ads to bridge physical and digital experiences.
               </p>
               <p className="text-slate-600">
-                The best part? Creating a QR code takes less than 30 seconds with the right tool. OmnisPDF's <Link href="/qr-code" className="text-orange-600 hover:underline">QR Code generator</Link> (Pro feature) lets you create QR codes for URLs, text, WiFi, vCards, and more — then download them as high-quality PNG or SVG files ready for print or digital use.
+                The best part? Creating a QR code takes less than 30 seconds with the right tool. PDF.it's <Link href="/qr-code" className="text-orange-600 hover:underline">QR Code generator</Link> (Pro feature) lets you create QR codes for URLs, text, WiFi, vCards, and more — then download them as high-quality PNG or SVG files ready for print or digital use.
               </p>
             </section>
 
@@ -225,7 +225,7 @@ export default function HowToCreateQRCodePage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Choose the Right File Format</h3>
                   <p className="text-slate-600">
-                    Download PNG for screens and digital media. Download SVG for print materials — SVG is a vector format that scales to any size without pixelation. If you need to convert your QR code image later, OmnisPDF also offers tools like <Link href="/pdf-to-png" className="text-orange-600 hover:underline">PDF to PNG</Link> and <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">PDF to JPG</Link>.
+                    Download PNG for screens and digital media. Download SVG for print materials — SVG is a vector format that scales to any size without pixelation. If you need to convert your QR code image later, PDF.it also offers tools like <Link href="/pdf-to-png" className="text-orange-600 hover:underline">PDF to PNG</Link> and <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">PDF to JPG</Link>.
                   </p>
                 </div>
               </div>
@@ -298,12 +298,12 @@ export default function HowToCreateQRCodePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I create a QR code online for free?", a: "Go to OmnisPDF's QR Code generator, enter your URL, text, or other data, customize the style if needed, and download your QR code as a PNG or SVG image. Free users get up to 10 QR codes per day." },
+                { q: "How do I create a QR code online for free?", a: "Go to PDF.it's QR Code generator, enter your URL, text, or other data, customize the style if needed, and download your QR code as a PNG or SVG image. Free users get up to 10 QR codes per day." },
                 { q: "What types of QR codes can I create?", a: "You can create QR codes for URLs, plain text, WiFi credentials, vCard contact info, email addresses, phone numbers, and more. Each type encodes different data that phones and scanners can read." },
                 { q: "Do QR codes expire?", a: "Static QR codes never expire — the data is encoded directly in the pattern. However, if your QR code links to a URL and that URL goes down, the QR code will still work but the destination won't load." },
-                { q: "Can I customize the color of my QR code?", a: "Yes. OmnisPDF's QR Code tool lets you change foreground and background colors. Just make sure there's enough contrast between them — dark foreground on light background works best for reliable scanning." },
+                { q: "Can I customize the color of my QR code?", a: "Yes. PDF.it's QR Code tool lets you change foreground and background colors. Just make sure there's enough contrast between them — dark foreground on light background works best for reliable scanning." },
                 { q: "What file format should I download my QR code in?", a: "Use PNG for digital use (websites, emails, social media). Use SVG if you need to print the QR code at large sizes without losing quality — SVG scales infinitely without pixelation." },
-                { q: "Is the QR Code tool free on OmnisPDF?", a: "The QR Code generator is a Pro feature on OmnisPDF. Pro users ($7.99/month) get unlimited QR code generation along with all other premium PDF tools." },
+                { q: "Is the QR Code tool free on PDF.it?", a: "The QR Code generator is a Pro feature on PDF.it. Pro users ($7.99/month) get unlimited QR code generation along with all other premium PDF tools." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

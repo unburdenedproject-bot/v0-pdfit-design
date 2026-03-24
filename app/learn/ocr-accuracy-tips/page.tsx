@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ScanText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "OCR Accuracy Tips (Get Better Text Recognition Results) | OmnisPDF",
+  title: "OCR Accuracy Tips (Get Better Text Recognition Results) | PDF.it",
   description:
     "Learn how to improve OCR accuracy with better scan quality, resolution, contrast, and language settings. Get cleaner text recognition from scanned PDFs every time.",
   keywords: "ocr accuracy, improve ocr results, ocr quality tips, better text recognition",
@@ -33,7 +33,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I improve OCR results on a document I already scanned?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can improve an existing scan by adjusting contrast, straightening skewed pages, and removing noise using image editing software or OmnisPDF's Phone Scan Cleanup tool. Then re-run OCR on the improved version." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can improve an existing scan by adjusting contrast, straightening skewed pages, and removing noise using image editing software or PDF.it's Phone Scan Cleanup tool. Then re-run OCR on the improved version." }
     },
     {
       "@type": "Question",
@@ -107,7 +107,7 @@ export default function OCRAccuracyTipsPage() {
               <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
                 <ScanText className="h-5 w-5 text-white" />
               </div>
-              <p className="text-slate-700 font-semibold">Apply these tips and try OmnisPDF's OCR Scanner (Pro).</p>
+              <p className="text-slate-700 font-semibold">Apply these tips and try PDF.it's OCR Scanner (Pro).</p>
             </div>
             <Link
               href="/ocr-scanner"
@@ -163,7 +163,7 @@ export default function OCRAccuracyTipsPage() {
                   },
                   {
                     title: "Clean up phone scans first",
-                    desc: "Phone cameras introduce perspective distortion, shadows, and uneven exposure. Before running OCR, use OmnisPDF's Phone Scan Cleanup tool to automatically correct these issues. The cleaned-up version will produce significantly better OCR results.",
+                    desc: "Phone cameras introduce perspective distortion, shadows, and uneven exposure. Before running OCR, use PDF.it's Phone Scan Cleanup tool to automatically correct these issues. The cleaned-up version will produce significantly better OCR results.",
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -242,7 +242,7 @@ export default function OCRAccuracyTipsPage() {
         <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Ready to Get Accurate OCR Results?</h2>
-            <p className="text-slate-300 mb-6">Apply these tips and upload your scanned PDF to OmnisPDF's OCR Scanner for the best possible text recognition.</p>
+            <p className="text-slate-300 mb-6">Apply these tips and upload your scanned PDF to PDF.it's OCR Scanner for the best possible text recognition.</p>
             <Link
               href="/ocr-scanner"
               className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
@@ -286,7 +286,7 @@ export default function OCRAccuracyTipsPage() {
                 { q: "What resolution should I scan at for OCR?", a: "Scan at 300 DPI for standard text documents. For documents with small fonts (below 10pt), scan at 400-600 DPI. Scanning below 200 DPI will produce noticeably worse OCR results." },
                 { q: "Does color vs. grayscale affect OCR accuracy?", a: "For text-only documents, grayscale or black-and-white scans often produce better OCR results because there is more contrast between the text and background. Color scans are better when the document has colored text or colored backgrounds that affect readability." },
                 { q: "Why is my OCR output full of errors?", a: "Common causes include low scan resolution (below 200 DPI), skewed or rotated pages, poor lighting causing shadows, low contrast between text and background, or selecting the wrong language in the OCR settings. Fix these issues and re-run OCR for better results." },
-                { q: "Can I improve OCR results on a document I already scanned?", a: "Yes. You can improve an existing scan by adjusting contrast, straightening skewed pages, and removing noise using image editing software or OmnisPDF's Phone Scan Cleanup tool. Then re-run OCR on the improved version." },
+                { q: "Can I improve OCR results on a document I already scanned?", a: "Yes. You can improve an existing scan by adjusting contrast, straightening skewed pages, and removing noise using image editing software or PDF.it's Phone Scan Cleanup tool. Then re-run OCR on the improved version." },
                 { q: "Does the font type affect OCR accuracy?", a: "Yes. Standard fonts like Arial, Times New Roman, and Calibri produce the highest OCR accuracy. Decorative, script, or very thin fonts are harder to recognize. Handwritten text is the most challenging — see our guide on OCR and handwriting." },
                 { q: "How accurate is modern OCR?", a: "On clean, high-resolution scans with standard printed text, modern OCR achieves 95-99% character accuracy. This means on a page of 2,000 characters, you might see 20-100 that need correction. Accuracy drops with poor scan quality, unusual fonts, or complex layouts." },
               ].map((faq, i) => (

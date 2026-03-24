@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "How to Copy Text from a PDF into Notes or Docs (Cleanly) | OmnisPDF",
+  title: "How to Copy Text from a PDF into Notes or Docs (Cleanly) | PDF.it",
   description:
     "Learn why copying text from PDFs often breaks and how to get clean, usable text into your notes, Google Docs, or Word. Step-by-step guide with free tools.",
   keywords: "copy text from pdf, paste pdf text into notes, pdf text formatting broken, copy pdf to google docs, extract text from pdf cleanly",
@@ -23,7 +23,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I copy text from a PDF without losing formatting?",
-      "acceptedAnswer": { "@type": "Answer", "text": "If you want clean plain text, convert the PDF to TXT using OmnisPDF's PDF to TXT tool — it handles reading order and removes hidden formatting. If you need formatted text, use PDF to Word to get an editable document with styling intact." }
+      "acceptedAnswer": { "@type": "Answer", "text": "If you want clean plain text, convert the PDF to TXT using PDF.it's PDF to TXT tool — it handles reading order and removes hidden formatting. If you need formatted text, use PDF to Word to get an editable document with styling intact." }
     },
     {
       "@type": "Question",
@@ -33,7 +33,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I copy a table from a PDF into a spreadsheet?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Standard copy-paste almost never preserves table structure from PDFs. Convert the PDF to Excel using OmnisPDF's PDF to Excel tool, which reconstructs rows and columns. For simple tables, PDF to Word can also preserve the structure." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Standard copy-paste almost never preserves table structure from PDFs. Convert the PDF to Excel using PDF.it's PDF to Excel tool, which reconstructs rows and columns. For simple tables, PDF to Word can also preserve the structure." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I copy text from a PDF on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes, but copy-paste on mobile is even more unreliable than on desktop. For the best results, upload your PDF to OmnisPDF's PDF to TXT tool in your mobile browser and download the clean text file." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, but copy-paste on mobile is even more unreliable than on desktop. For the best results, upload your PDF to PDF.it's PDF to TXT tool in your mobile browser and download the clean text file." }
     }
   ]
 }
@@ -52,17 +52,17 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Copy Clean Text from a PDF",
-  "description": "Get clean, usable text from any PDF in 3 simple steps using OmnisPDF.",
+  "description": "Get clean, usable text from any PDF in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Upload your PDF",
-      "text": "Go to OmnisPDF's PDF to TXT tool and upload the PDF you want to extract text from."
+      "text": "Go to PDF.it's PDF to TXT tool and upload the PDF you want to extract text from."
     },
     {
       "@type": "HowToStep",
       "name": "Convert to clean plain text",
-      "text": "Click Convert. OmnisPDF extracts the text in the correct reading order, removing hidden formatting and layout artifacts."
+      "text": "Click Convert. PDF.it extracts the text in the correct reading order, removing hidden formatting and layout artifacts."
     },
     {
       "@type": "HowToStep",
@@ -159,7 +159,7 @@ export default function CopyTextFromPdfToNotesPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-6">The Clean Way: Convert PDF to TXT First</h2>
               <p className="text-slate-600 mb-4">
-                Instead of fighting with copy-paste, convert the entire PDF to a clean TXT file using <Link href="/pdf-to-txt" className="text-orange-600 hover:underline">OmnisPDF's PDF to TXT tool</Link>. This approach gives you properly ordered text without hidden formatting:
+                Instead of fighting with copy-paste, convert the entire PDF to a clean TXT file using <Link href="/pdf-to-txt" className="text-orange-600 hover:underline">PDF.it's PDF to TXT tool</Link>. This approach gives you properly ordered text without hidden formatting:
               </p>
               <div className="space-y-4">
                 {[
@@ -329,11 +329,11 @@ export default function CopyTextFromPdfToNotesPage() {
             <div className="space-y-6">
               {[
                 { q: "Why does text from a PDF paste with weird formatting?", a: "PDFs store text as positioned characters, not flowing paragraphs. When you copy-paste, your computer tries to reconstruct the reading order but often gets confused by columns, headers, footers, and line breaks. The result is jumbled text with random line breaks and merged words." },
-                { q: "How do I copy text from a PDF without losing formatting?", a: "If you want clean plain text, convert the PDF to TXT using OmnisPDF's PDF to TXT tool — it handles reading order and removes hidden formatting. If you need formatted text, use PDF to Word to get an editable document with styling intact." },
+                { q: "How do I copy text from a PDF without losing formatting?", a: "If you want clean plain text, convert the PDF to TXT using PDF.it's PDF to TXT tool — it handles reading order and removes hidden formatting. If you need formatted text, use PDF to Word to get an editable document with styling intact." },
                 { q: "Why can't I select text in my PDF?", a: "There are two common reasons: the PDF is a scanned image (not real text), or the PDF is security-locked to prevent text copying. For scanned PDFs, use an OCR tool. For locked PDFs, use Unlock PDF if you have the password." },
-                { q: "How do I copy a table from a PDF into a spreadsheet?", a: "Standard copy-paste almost never preserves table structure from PDFs. Convert the PDF to Excel using OmnisPDF's PDF to Excel tool, which reconstructs rows and columns. For simple tables, PDF to Word can also preserve the structure." },
+                { q: "How do I copy a table from a PDF into a spreadsheet?", a: "Standard copy-paste almost never preserves table structure from PDFs. Convert the PDF to Excel using PDF.it's PDF to Excel tool, which reconstructs rows and columns. For simple tables, PDF to Word can also preserve the structure." },
                 { q: "Does converting PDF to TXT keep paragraph breaks?", a: "PDF to TXT preserves basic line breaks and paragraph spacing, but it removes all other formatting. The result is clean, readable text that you can paste into any app without hidden formatting issues." },
-                { q: "Can I copy text from a PDF on my phone?", a: "Yes, but copy-paste on mobile is even more unreliable than on desktop. For the best results, upload your PDF to OmnisPDF's PDF to TXT tool in your mobile browser and download the clean text file." },
+                { q: "Can I copy text from a PDF on my phone?", a: "Yes, but copy-paste on mobile is even more unreliable than on desktop. For the best results, upload your PDF to PDF.it's PDF to TXT tool in your mobile browser and download the clean text file." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

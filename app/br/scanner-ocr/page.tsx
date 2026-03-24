@@ -7,15 +7,15 @@ import { Scan, Zap, Shield, Download, Crown } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Scanner OCR Online — Extrair Texto de PDF Escaneado | OmnisPDF",
+  title: "Scanner OCR Online — Extrair Texto de PDF Escaneado | PDF.it",
   description:
-    "Execute OCR em um PDF com o OmnisPDF para extrair texto de escaneamentos. Torne seus PDFs pesquisáveis e copiáveis em segundos — rápido e direto do navegador.",
+    "Execute OCR em um PDF com o PDF.it para extrair texto de escaneamentos. Torne seus PDFs pesquisáveis e copiáveis em segundos — rápido e direto do navegador.",
   alternates: {
-    canonical: "https://omnispdf.com/br/scanner-ocr",
+    canonical: "https://pdf.it.com/br/scanner-ocr",
     languages: {
-      en: "https://omnispdf.com/ocr-scanner",
-      es: "https://omnispdf.com/es/escaner-ocr",
-      pt: "https://omnispdf.com/br/scanner-ocr",
+      en: "https://pdf.it.com/ocr-scanner",
+      es: "https://pdf.it.com/es/escaner-ocr",
+      pt: "https://pdf.it.com/br/scanner-ocr",
     },
   },
 }
@@ -42,7 +42,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Quão preciso é o OCR do OmnisPDF?",
+      name: "Quão preciso é o OCR do PDF.it?",
       acceptedAnswer: {
         "@type": "Answer",
         text: "A precisão depende da clareza do escaneamento, resolução e fonte. Escaneamentos limpos e de alta resolução produzem os melhores resultados. Escaneamentos borrados ou tortos reduzem a precisão.",
@@ -99,7 +99,7 @@ export default function ScannerOCRPage() {
                 </span>
               </div>
               <p className="text-xl text-slate-300 mb-8">
-                Use o OmnisPDF para executar OCR em PDFs escaneados — converta imagens em texto selecionável e pesquisável, e baixe um PDF mais limpo e útil.
+                Use o PDF.it para executar OCR em PDFs escaneados — converta imagens em texto selecionável e pesquisável, e baixe um PDF mais limpo e útil.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>16+ Idiomas Suportados</span></div>
@@ -118,7 +118,7 @@ export default function ScannerOCRPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use a ferramenta de OCR do OmnisPDF para extrair texto de PDFs escaneados e tornar seus documentos pesquisáveis e copiáveis. Perfeito para recibos, faturas, contratos, formulários e escaneamentos arquivados — envie seu PDF, execute OCR e baixe um arquivo processado em segundos.
+              Use a ferramenta de OCR do PDF.it para extrair texto de PDFs escaneados e tornar seus documentos pesquisáveis e copiáveis. Perfeito para recibos, faturas, contratos, formulários e escaneamentos arquivados — envie seu PDF, execute OCR e baixe um arquivo processado em segundos.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Converta PDFs escaneados em PDFs pesquisáveis</li>
@@ -136,7 +136,7 @@ export default function ScannerOCRPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Torne PDFs Escaneados Pesquisáveis</h2>
               <p className="text-slate-600">
-                Se seu PDF é um escaneamento, frequentemente é apenas uma imagem — você não consegue selecionar texto nem buscar palavras. O OCR do OmnisPDF reconhece o texto e cria um PDF pesquisável que você pode usar como um documento normal.
+                Se seu PDF é um escaneamento, frequentemente é apenas uma imagem — você não consegue selecionar texto nem buscar palavras. O OCR do PDF.it reconhece o texto e cria um PDF pesquisável que você pode usar como um documento normal.
               </p>
             </div>
             <div>
@@ -160,7 +160,7 @@ export default function ScannerOCRPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Fazer OCR em um PDF</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste seu PDF escaneado para o OmnisPDF.",
+                "Envie ou arraste seu PDF escaneado para o PDF.it.",
                 "Escolha o idioma de OCR se necessário.",
                 "Clique em Executar OCR.",
                 "Baixe seu PDF pesquisável.",
@@ -208,7 +208,7 @@ export default function ScannerOCRPage() {
               {[
                 { q: "O que é OCR para PDFs?", a: "OCR (Reconhecimento Óptico de Caracteres) detecta texto dentro de PDFs escaneados ou baseados em imagens e o converte em texto selecionável e pesquisável." },
                 { q: "Quando preciso de OCR em vez de PDF para TXT?", a: "Se o PDF é um escaneamento e você não consegue selecionar texto, precisa de OCR. Se o PDF já contém texto selecionável, uma conversão normal de PDF para TXT pode ser mais rápida." },
-                { q: "Quão preciso é o OCR do OmnisPDF?", a: "A precisão depende da clareza do escaneamento, resolução e fonte. Escaneamentos limpos e de alta resolução produzem os melhores resultados. Escaneamentos borrados ou tortos reduzem a precisão." },
+                { q: "Quão preciso é o OCR do PDF.it?", a: "A precisão depende da clareza do escaneamento, resolução e fonte. Escaneamentos limpos e de alta resolução produzem os melhores resultados. Escaneamentos borrados ou tortos reduzem a precisão." },
                 { q: "Quais idiomas o Scanner OCR suporta?", a: "O Scanner OCR suporta mais de 16 idiomas incluindo português, inglês, espanhol, francês, alemão, italiano, holandês e mais." },
                 { q: "É seguro enviar documentos escaneados?", a: "Sim. Todas as transferências são criptografadas com SSL e seus arquivos são removidos imediatamente após sua sessão. Nunca armazenamos nem compartilhamos seus documentos." },
                 { q: "Qual é o tamanho máximo de arquivo para OCR?", a: "Contas Pro podem enviar arquivos de até 200MB. Contas Business podem enviar até 1GB." },

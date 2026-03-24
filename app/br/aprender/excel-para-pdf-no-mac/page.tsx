@@ -5,9 +5,9 @@ import Link from "next/link"
 import { FileSpreadsheet, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Excel para PDF no Mac (Fluxo Rapido e Confiavel) | OmnisPDF",
+  title: "Excel para PDF no Mac (Fluxo Rapido e Confiavel) | PDF.it",
   description:
-    "Aprenda como converter Excel para PDF no Mac usando Excel para Mac, Preview e OmnisPDF online. Resolva problemas de fontes, colunas cortadas e formatacao.",
+    "Aprenda como converter Excel para PDF no Mac usando Excel para Mac, Preview e PDF.it online. Resolva problemas de fontes, colunas cortadas e formatacao.",
   keywords: "excel para pdf mac, converter excel pdf mac, xlsx pdf mac, planilha pdf mac, excel para mac pdf",
 }
 
@@ -15,9 +15,9 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Como converter Excel para PDF no Mac?", "acceptedAnswer": { "@type": "Answer", "text": "Tres opcoes: 1) No Excel para Mac, use Arquivo > Salvar como > PDF. 2) Use Imprimir > Salvar como PDF. 3) Faca upload do arquivo XLSX no OmnisPDF online para conversao sem instalar nada." } },
+    { "@type": "Question", "name": "Como converter Excel para PDF no Mac?", "acceptedAnswer": { "@type": "Answer", "text": "Tres opcoes: 1) No Excel para Mac, use Arquivo > Salvar como > PDF. 2) Use Imprimir > Salvar como PDF. 3) Faca upload do arquivo XLSX no PDF.it online para conversao sem instalar nada." } },
     { "@type": "Question", "name": "Por que colunas ficam cortadas no PDF?", "acceptedAnswer": { "@type": "Answer", "text": "A planilha e mais larga que a pagina. Solucoes: mude a orientacao para paisagem, ajuste a escala em Configurar Pagina, ou reduza a largura das colunas." } },
-    { "@type": "Question", "name": "O OmnisPDF funciona no Mac?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF e uma ferramenta online que funciona em qualquer navegador, incluindo Safari e Chrome no Mac." } },
+    { "@type": "Question", "name": "O PDF.it funciona no Mac?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it e uma ferramenta online que funciona em qualquer navegador, incluindo Safari e Chrome no Mac." } },
     { "@type": "Question", "name": "Fontes do Excel mudam no PDF no Mac?", "acceptedAnswer": { "@type": "Answer", "text": "Pode acontecer se voce usar fontes Windows que nao existem no Mac (como Calibri antigo). Use fontes universais como Arial ou Helvetica para resultados consistentes." } },
   ]
 }
@@ -29,7 +29,7 @@ const howToSchema = {
   "description": "Converta planilhas Excel para PDF no Mac mantendo formatacao e colunas.",
   "step": [
     { "@type": "HowToStep", "name": "Prepare a planilha", "text": "Ajuste margens, orientacao e area de impressao no Excel para Mac." },
-    { "@type": "HowToStep", "name": "Converta para PDF", "text": "Use Salvar como PDF no Excel, Imprimir > PDF, ou faca upload no OmnisPDF online." },
+    { "@type": "HowToStep", "name": "Converta para PDF", "text": "Use Salvar como PDF no Excel, Imprimir > PDF, ou faca upload no PDF.it online." },
     { "@type": "HowToStep", "name": "Verifique o resultado", "text": "Abra o PDF e confira se todas as colunas, dados e formatacao estao corretos." }
   ]
 }
@@ -46,7 +46,7 @@ export default function ExcelParaPDFMacPage() {
             <div className="max-w-3xl mx-auto">
               <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Excel para PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Excel para PDF no Mac</h1>
-              <p className="text-xl text-slate-300">Converta planilhas Excel para PDF no Mac sem colunas cortadas ou fontes trocadas. Tres metodos: Excel para Mac, Preview e OmnisPDF online.</p>
+              <p className="text-xl text-slate-300">Converta planilhas Excel para PDF no Mac sem colunas cortadas ou fontes trocadas. Tres metodos: Excel para Mac, Preview e PDF.it online.</p>
             </div>
           </div>
         </section>
@@ -82,10 +82,10 @@ export default function ExcelParaPDFMacPage() {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Metodo 2: OmnisPDF Online</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Metodo 2: PDF.it Online</h2>
               <p className="text-slate-600 mb-4">Se nao tem Excel instalado ou quer uma conversao mais consistente:</p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; Acesse <Link href="/br/excel-para-pdf" className="text-orange-600 hover:underline">Excel para PDF</Link> no OmnisPDF.</li>
+                <li>&#10003; Acesse <Link href="/br/excel-para-pdf" className="text-orange-600 hover:underline">Excel para PDF</Link> no PDF.it.</li>
                 <li>&#10003; Faca upload do arquivo .xlsx.</li>
                 <li>&#10003; Baixe o PDF convertido.</li>
                 <li>&#10003; Funciona no Safari e Chrome — sem instalacao.</li>
@@ -143,9 +143,9 @@ export default function ExcelParaPDFMacPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como converter Excel para PDF no Mac?", a: "Use Arquivo > Salvar como > PDF no Excel para Mac, ou faca upload no OmnisPDF online." },
+                { q: "Como converter Excel para PDF no Mac?", a: "Use Arquivo > Salvar como > PDF no Excel para Mac, ou faca upload no PDF.it online." },
                 { q: "Por que colunas ficam cortadas?", a: "A planilha e mais larga que a pagina. Mude para paisagem, ajuste a escala ou reduza colunas." },
-                { q: "O OmnisPDF funciona no Mac?", a: "Sim. Funciona em qualquer navegador, incluindo Safari e Chrome." },
+                { q: "O PDF.it funciona no Mac?", a: "Sim. Funciona em qualquer navegador, incluindo Safari e Chrome." },
                 { q: "Fontes mudam no PDF?", a: "Pode acontecer com fontes Windows. Use Arial ou Helvetica para resultados consistentes." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

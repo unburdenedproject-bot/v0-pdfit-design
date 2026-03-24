@@ -5,9 +5,9 @@ import { FileText, Zap, Settings, BookOpen } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Edit PDF Metadata Online — Change Title, Author & Properties | OmnisPDF",
+  title: "Edit PDF Metadata Online — Change Title, Author & Properties | PDF.it",
   description:
-    "Edit PDF metadata with OmnisPDF. Change the title, author, subject, and other document properties before sharing or publishing — fast and browser-based.",
+    "Edit PDF metadata with PDF.it. Change the title, author, subject, and other document properties before sharing or publishing — fast and browser-based.",
 }
 
 const faqSchema = {
@@ -41,7 +41,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Does OmnisPDF support PDF metadata editing?",
+      "name": "Does PDF.it support PDF metadata editing?",
       "acceptedAnswer": { "@type": "Answer", "text": "Direct metadata editing is coming soon. In the meantime, you can use Flatten PDF to clean up form fields and annotations, or Protect PDF to secure your document properties before sharing." }
     }
   ]
@@ -190,7 +190,7 @@ export default function EditPDFMetadataPage() {
                 { q: "Does PDF metadata affect SEO?", a: "Yes. Search engines can read PDF metadata. A well-written title and relevant keywords help your PDF rank better in search results. Google often uses the PDF title field as the page title in search listings." },
                 { q: "Can I change the author name on a PDF?", a: "Yes. PDF metadata editing tools let you change the author field to any name or remove it entirely. This is useful when rebranding documents or preparing files for public distribution." },
                 { q: "How does editing PDF metadata differ from editing PDF content?", a: "Metadata editing changes only the document properties (title, author, dates, keywords) — it does not alter the visible text, images, or layout of the PDF pages themselves." },
-                { q: "Does OmnisPDF support PDF metadata editing?", a: "Direct metadata editing is coming soon. In the meantime, you can use Flatten PDF to clean up form fields and annotations, or Protect PDF to secure your document properties before sharing." },
+                { q: "Does PDF.it support PDF metadata editing?", a: "Direct metadata editing is coming soon. In the meantime, you can use Flatten PDF to clean up form fields and annotations, or Protect PDF to secure your document properties before sharing." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

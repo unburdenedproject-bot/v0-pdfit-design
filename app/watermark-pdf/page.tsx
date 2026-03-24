@@ -7,9 +7,9 @@ import { Droplets, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Add Watermark to PDF — Text & Image Watermarks | OmnisPDF",
+  title: "Add Watermark to PDF — Text & Image Watermarks | PDF.it",
   description:
-    "Add a watermark to a PDF with OmnisPDF. Apply text or image watermarks like CONFIDENTIAL, set opacity, and download instantly.",
+    "Add a watermark to a PDF with PDF.it. Apply text or image watermarks like CONFIDENTIAL, set opacity, and download instantly.",
 }
 
 const faqSchema = {
@@ -19,7 +19,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I add a text watermark like CONFIDENTIAL or DRAFT?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF can apply a text watermark across your PDF pages to clearly label document status." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it can apply a text watermark across your PDF pages to clearly label document status." }
     },
     {
       "@type": "Question",
@@ -68,7 +68,7 @@ export default function WatermarkPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Add a Watermark to a PDF</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Add a text or image watermark with OmnisPDF — mark PDFs as CONFIDENTIAL, DRAFT, or add your logo for branding and protection.
+                Add a text or image watermark with PDF.it — mark PDFs as CONFIDENTIAL, DRAFT, or add your logo for branding and protection.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Text & Image Watermarks</span></div>
@@ -87,7 +87,7 @@ export default function WatermarkPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use OmnisPDF's Watermark PDF tool to add a watermark to a PDF in seconds. Apply a text watermark (CONFIDENTIAL, DRAFT, SAMPLE) or an image watermark, customize placement and transparency, and download a clean watermarked PDF ready to share.
+              Use PDF.it's Watermark PDF tool to add a watermark to a PDF in seconds. Apply a text watermark (CONFIDENTIAL, DRAFT, SAMPLE) or an image watermark, customize placement and transparency, and download a clean watermarked PDF ready to share.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Add text or image watermarks to PDFs</li>
@@ -129,7 +129,7 @@ export default function WatermarkPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Watermark a PDF</h2>
             <div className="space-y-4">
               {[
-                "Upload your PDF to OmnisPDF.",
+                "Upload your PDF to PDF.it.",
                 "Choose Text or Image watermark.",
                 "Customize settings: opacity, size, position, rotation.",
                 "Click Add Watermark and download your watermarked PDF.",
@@ -177,7 +177,7 @@ export default function WatermarkPDFPage() {
               {[
                 {
                   q: "Can I add a text watermark like CONFIDENTIAL or DRAFT?",
-                  a: "Yes. OmnisPDF can apply a text watermark across your PDF pages to clearly label document status.",
+                  a: "Yes. PDF.it can apply a text watermark across your PDF pages to clearly label document status.",
                 },
                 {
                   q: "Can I add a logo watermark to a PDF?",

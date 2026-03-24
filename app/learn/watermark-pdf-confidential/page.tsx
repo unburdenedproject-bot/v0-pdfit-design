@@ -5,9 +5,9 @@ import Link from "next/link"
 import { Stamp, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Add a 'Confidential' Watermark to a PDF (Quick Guide) | OmnisPDF",
+  title: "Add a 'Confidential' Watermark to a PDF (Quick Guide) | PDF.it",
   description:
-    "Learn how to add a CONFIDENTIAL, DRAFT, or DO NOT COPY watermark to a PDF online. Protect sensitive documents in seconds with OmnisPDF.",
+    "Learn how to add a CONFIDENTIAL, DRAFT, or DO NOT COPY watermark to a PDF online. Protect sensitive documents in seconds with PDF.it.",
   keywords: "confidential watermark pdf, draft watermark pdf, do not copy watermark, stamp pdf confidential",
 }
 
@@ -18,17 +18,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I add a Confidential watermark to a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF's Watermark PDF tool, type CONFIDENTIAL as your watermark text, adjust the opacity and angle, then click Apply. The watermark appears on every page of the document." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it's Watermark PDF tool, type CONFIDENTIAL as your watermark text, adjust the opacity and angle, then click Apply. The watermark appears on every page of the document." }
     },
     {
       "@type": "Question",
       "name": "Can I add a DRAFT watermark instead of CONFIDENTIAL?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can type any text you want — DRAFT, CONFIDENTIAL, DO NOT COPY, SAMPLE, INTERNAL ONLY, or any custom phrase. OmnisPDF lets you customize the text, color, size, and angle." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can type any text you want — DRAFT, CONFIDENTIAL, DO NOT COPY, SAMPLE, INTERNAL ONLY, or any custom phrase. PDF.it lets you customize the text, color, size, and angle." }
     },
     {
       "@type": "Question",
       "name": "Is the Confidential watermark permanent?",
-      "acceptedAnswer": { "@type": "Answer", "text": "By default, watermarks are added as overlays. To make it permanent, flatten the PDF after watermarking using OmnisPDF's Flatten PDF tool. This bakes the watermark into the page so it cannot be removed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "By default, watermarks are added as overlays. To make it permanent, flatten the PDF after watermarking using PDF.it's Flatten PDF tool. This bakes the watermark into the page so it cannot be removed." }
     },
     {
       "@type": "Question",
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Add a Confidential Watermark to a PDF",
-  "description": "Stamp any PDF with a CONFIDENTIAL watermark in 3 simple steps using OmnisPDF.",
+  "description": "Stamp any PDF with a CONFIDENTIAL watermark in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Upload your PDF",
-      "text": "Go to OmnisPDF's Watermark PDF tool and upload the document you need to mark as confidential."
+      "text": "Go to PDF.it's Watermark PDF tool and upload the document you need to mark as confidential."
     },
     {
       "@type": "HowToStep",
@@ -294,9 +294,9 @@ export default function WatermarkPDFConfidentialPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I add a Confidential watermark to a PDF?", a: "Upload your PDF to OmnisPDF's Watermark PDF tool, type CONFIDENTIAL as your watermark text, adjust the opacity and angle, then click Apply. The watermark appears on every page of the document." },
-                { q: "Can I add a DRAFT watermark instead of CONFIDENTIAL?", a: "Yes. You can type any text you want — DRAFT, CONFIDENTIAL, DO NOT COPY, SAMPLE, INTERNAL ONLY, or any custom phrase. OmnisPDF lets you customize the text, color, size, and angle." },
-                { q: "Is the Confidential watermark permanent?", a: "By default, watermarks are added as overlays. To make it permanent, flatten the PDF after watermarking using OmnisPDF's Flatten PDF tool. This bakes the watermark into the page so it cannot be removed." },
+                { q: "How do I add a Confidential watermark to a PDF?", a: "Upload your PDF to PDF.it's Watermark PDF tool, type CONFIDENTIAL as your watermark text, adjust the opacity and angle, then click Apply. The watermark appears on every page of the document." },
+                { q: "Can I add a DRAFT watermark instead of CONFIDENTIAL?", a: "Yes. You can type any text you want — DRAFT, CONFIDENTIAL, DO NOT COPY, SAMPLE, INTERNAL ONLY, or any custom phrase. PDF.it lets you customize the text, color, size, and angle." },
+                { q: "Is the Confidential watermark permanent?", a: "By default, watermarks are added as overlays. To make it permanent, flatten the PDF after watermarking using PDF.it's Flatten PDF tool. This bakes the watermark into the page so it cannot be removed." },
                 { q: "Can I watermark multiple PDFs at once?", a: "Yes. Pro and Business users can use batch processing to watermark multiple PDFs in one go. Upload all your files, configure the watermark once, and apply it to every document simultaneously." },
                 { q: "What opacity should I use for a Confidential watermark?", a: "For most documents, 15-25% opacity works well. It makes the watermark clearly visible without making the underlying text hard to read. For stronger deterrence, go up to 30-40%." },
                 { q: "Is the Watermark PDF tool free?", a: "Watermark PDF is available to Pro ($7.99/month) and Business ($13.99/month) users. Both tiers include unlimited watermarking, batch processing, and files up to 200MB." },

@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Word to PDF Formatting Changed? Fix These 7 Causes | OmnisPDF",
+  title: "Word to PDF Formatting Changed? Fix These 7 Causes | PDF.it",
   description:
     "Word to PDF formatting changed? Learn the 7 most common causes — missing fonts, broken tables, margin shifts, blurry images — and how to fix each one before converting.",
   keywords: "word to pdf formatting changed, word to pdf formatting issues, docx to pdf format problems, word pdf formatting fix, word to pdf looks different",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I get my hyperlinks to work in the converted PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Make sure hyperlinks are properly inserted using Word's hyperlink feature (Ctrl+K or right-click > Hyperlink) rather than pasted as plain text URLs. OmnisPDF preserves properly formatted hyperlinks during conversion." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Make sure hyperlinks are properly inserted using Word's hyperlink feature (Ctrl+K or right-click > Hyperlink) rather than pasted as plain text URLs. PDF.it preserves properly formatted hyperlinks during conversion." }
     }
   ]
 }
@@ -67,7 +67,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Re-convert and verify",
-      "text": "Upload the corrected document to OmnisPDF's Word to PDF tool, convert it, and compare the output again to confirm the issue is resolved."
+      "text": "Upload the corrected document to PDF.it's Word to PDF tool, convert it, and compare the output again to confirm the issue is resolved."
     }
   ]
 }
@@ -107,7 +107,7 @@ export default function WordToPdfFormattingFixesPage() {
               <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileText className="h-5 w-5 text-white" />
               </div>
-              <p className="text-slate-700 font-semibold">Need a reliable converter? OmnisPDF preserves formatting accurately.</p>
+              <p className="text-slate-700 font-semibold">Need a reliable converter? PDF.it preserves formatting accurately.</p>
             </div>
             <Link
               href="/word-to-pdf"
@@ -187,7 +187,7 @@ export default function WordToPdfFormattingFixesPage() {
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; Disable Word's auto-compression: File &gt; Options &gt; Advanced &gt; Image Size and Quality &gt; check "Do not compress images in file."</li>
                 <li>&#10003; Insert images at the exact size you need — don't resize by dragging handles.</li>
-                <li>&#10003; Use OmnisPDF for conversion — it preserves original image quality without aggressive compression.</li>
+                <li>&#10003; Use PDF.it for conversion — it preserves original image quality without aggressive compression.</li>
               </ul>
             </section>
 
@@ -221,7 +221,7 @@ export default function WordToPdfFormattingFixesPage() {
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; Insert links properly: select text &gt; right-click &gt; Hyperlink (or Ctrl+K) &gt; paste URL.</li>
                 <li>&#10003; Don't just paste URLs as text and rely on auto-linking.</li>
-                <li>&#10003; Use <Link href="/word-to-pdf" className="text-orange-600 hover:underline">OmnisPDF's Word to PDF tool</Link> instead of "Print to PDF" — it preserves hyperlinks.</li>
+                <li>&#10003; Use <Link href="/word-to-pdf" className="text-orange-600 hover:underline">PDF.it's Word to PDF tool</Link> instead of "Print to PDF" — it preserves hyperlinks.</li>
               </ul>
             </section>
 
@@ -307,7 +307,7 @@ export default function WordToPdfFormattingFixesPage() {
         <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Convert Word to PDF — Formatting Intact</h2>
-            <p className="text-slate-300 mb-6">OmnisPDF handles fonts, tables, images, and layout accurately. Try it free.</p>
+            <p className="text-slate-300 mb-6">PDF.it handles fonts, tables, images, and layout accurately. Try it free.</p>
             <Link
               href="/word-to-pdf"
               className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
@@ -352,7 +352,7 @@ export default function WordToPdfFormattingFixesPage() {
                 { q: "Why do my tables break when I convert Word to PDF?", a: "Tables break because of auto-fit column widths, merged cells, and nested tables. Fix this by setting fixed column widths (Table Properties > Column > set specific width), avoiding deeply nested tables, and keeping table layouts simple." },
                 { q: "Why are my images blurry or moved in the PDF?", a: "Images move when surrounding text reflows due to font changes. Blurriness happens when Word or the converter compresses images. Fix positioning by using 'In Line with Text' wrapping, and prevent blurriness by inserting high-resolution images and avoiding Word's built-in compression." },
                 { q: "How do I prevent margin changes when converting Word to PDF?", a: "Set explicit custom margins in Page Layout > Margins > Custom Margins instead of using presets. Avoid 'Mirror margins' unless you specifically need them for booklet printing, as some converters don't handle them well." },
-                { q: "Can I get my hyperlinks to work in the converted PDF?", a: "Yes. Make sure hyperlinks are properly inserted using Word's hyperlink feature (Ctrl+K or right-click > Hyperlink) rather than pasted as plain text URLs. OmnisPDF preserves properly formatted hyperlinks during conversion." },
+                { q: "Can I get my hyperlinks to work in the converted PDF?", a: "Yes. Make sure hyperlinks are properly inserted using Word's hyperlink feature (Ctrl+K or right-click > Hyperlink) rather than pasted as plain text URLs. PDF.it preserves properly formatted hyperlinks during conversion." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

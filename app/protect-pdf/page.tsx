@@ -7,9 +7,9 @@ import { Lock, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Protect PDF With Password — Encrypt PDF Online | OmnisPDF",
+  title: "Protect PDF With Password — Encrypt PDF Online | PDF.it",
   description:
-    "Protect a PDF with a password using OmnisPDF. Encrypt your PDF online, restrict access, and download a secured file in seconds.",
+    "Protect a PDF with a password using PDF.it. Encrypt your PDF online, restrict access, and download a secured file in seconds.",
 }
 
 const faqSchema = {
@@ -24,17 +24,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "What happens if I forget the password?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Password-protected PDFs generally can't be recovered without the password. OmnisPDF can't retrieve it — store it somewhere safe." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Password-protected PDFs generally can't be recovered without the password. PDF.it can't retrieve it — store it somewhere safe." }
     },
     {
       "@type": "Question",
       "name": "Can I remove the password later?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use OmnisPDF's Unlock PDF tool to remove password protection from any PDF you own the password for." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use PDF.it's Unlock PDF tool to remove password protection from any PDF you own the password for." }
     },
     {
       "@type": "Question",
       "name": "Can I protect a PDF on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in mobile browsers — upload the PDF, set a password, and download the secured file." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in mobile browsers — upload the PDF, set a password, and download the secured file." }
     },
     {
       "@type": "Question",
@@ -68,7 +68,7 @@ export default function ProtectPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Protect a PDF With a Password</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Add a password to a PDF with OmnisPDF. Encrypt your document for safer sharing, storage, and submissions — fast and browser-based.
+                Add a password to a PDF with PDF.it. Encrypt your document for safer sharing, storage, and submissions — fast and browser-based.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Strong Encryption</span></div>
@@ -87,7 +87,7 @@ export default function ProtectPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use OmnisPDF's Protect PDF tool to password protect and encrypt a PDF in seconds. Add a password before emailing, uploading, or storing sensitive files like contracts, bank statements, invoices, or personal documents.
+              Use PDF.it's Protect PDF tool to password protect and encrypt a PDF in seconds. Add a password before emailing, uploading, or storing sensitive files like contracts, bank statements, invoices, or personal documents.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Password protect PDF files online</li>
@@ -105,7 +105,7 @@ export default function ProtectPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Add a Password to a PDF</h2>
               <p className="text-slate-600">
-                Set a password to restrict who can open your PDF. OmnisPDF secures the file using standard PDF password protection so the contents are not accessible without the password.
+                Set a password to restrict who can open your PDF. PDF.it secures the file using standard PDF password protection so the contents are not accessible without the password.
               </p>
             </div>
             <div>
@@ -129,7 +129,7 @@ export default function ProtectPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Password Protect a PDF</h2>
             <div className="space-y-4">
               {[
-                "Upload your PDF to OmnisPDF.",
+                "Upload your PDF to PDF.it.",
                 "Enter a strong password and confirm it.",
                 "Click Protect PDF.",
                 "Download your password-protected PDF.",
@@ -181,15 +181,15 @@ export default function ProtectPDFPage() {
                 },
                 {
                   q: "What happens if I forget the password?",
-                  a: "Password-protected PDFs generally can't be recovered without the password. OmnisPDF can't retrieve it — store it somewhere safe.",
+                  a: "Password-protected PDFs generally can't be recovered without the password. PDF.it can't retrieve it — store it somewhere safe.",
                 },
                 {
                   q: "Can I remove the password later?",
-                  a: "Yes. Use OmnisPDF's Unlock PDF tool to remove password protection from any PDF you own the password for.",
+                  a: "Yes. Use PDF.it's Unlock PDF tool to remove password protection from any PDF you own the password for.",
                 },
                 {
                   q: "Can I protect a PDF on my phone?",
-                  a: "Yes. OmnisPDF works in mobile browsers — upload the PDF, set a password, and download the secured file.",
+                  a: "Yes. PDF.it works in mobile browsers — upload the PDF, set a password, and download the secured file.",
                 },
                 {
                   q: "Is it safe to upload sensitive PDFs?",

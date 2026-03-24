@@ -5,23 +5,23 @@ import Link from "next/link"
 import { Lock, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Proteger un PDF Antes de Enviar por Correo | OmnisPDF",
+  title: "Como Proteger un PDF Antes de Enviar por Correo | PDF.it",
   description: "Aprende como asegurar un PDF antes de enviarlo por correo electronico. Guia paso a paso que cubre proteccion con contrasena, aplanamiento, eliminacion de metadatos y compresion para compartir de forma segura.",
   keywords: "proteger pdf antes de enviar, asegurar pdf para correo, bloquear pdf antes de compartir, seguridad pdf para email",
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-  { "@type": "Question", "name": "Como protejo un PDF antes de enviarlo por correo?", "acceptedAnswer": { "@type": "Answer", "text": "Usa la herramienta Proteger PDF de OmnisPDF para agregar una contrasena, aplana cualquier campo de formulario o anotacion, y comprime el archivo para cumplir con los limites de tamano del correo. Comparte la contrasena por separado por mensaje de texto o llamada." } },
+  { "@type": "Question", "name": "Como protejo un PDF antes de enviarlo por correo?", "acceptedAnswer": { "@type": "Answer", "text": "Usa la herramienta Proteger PDF de PDF.it para agregar una contrasena, aplana cualquier campo de formulario o anotacion, y comprime el archivo para cumplir con los limites de tamano del correo. Comparte la contrasena por separado por mensaje de texto o llamada." } },
   { "@type": "Question", "name": "Debo aplanar mi PDF antes de enviarlo?", "acceptedAnswer": { "@type": "Answer", "text": "Si. El aplanamiento elimina campos de formulario interactivos, anotaciones y capas, integrando todo en la pagina. Esto evita que los destinatarios editen o extraigan datos ocultos de tu documento." } },
   { "@type": "Question", "name": "Los adjuntos de correo pueden ser interceptados?", "acceptedAnswer": { "@type": "Answer", "text": "Si. El correo estandar no esta encriptado de extremo a extremo. Los adjuntos pueden ser interceptados durante la transmision o accedidos si la cuenta de correo del destinatario esta comprometida. Proteger tu PDF con contrasena agrega una capa esencial de seguridad." } },
-  { "@type": "Question", "name": "Cual es el tamano maximo de PDF que puedo enviar por correo?", "acceptedAnswer": { "@type": "Answer", "text": "La mayoria de los proveedores de correo limitan los adjuntos a 25MB (Gmail, Outlook, Yahoo). Si tu PDF es mas grande, usa la herramienta Comprimir PDF de OmnisPDF para reducir el tamano antes de enviar." } },
+  { "@type": "Question", "name": "Cual es el tamano maximo de PDF que puedo enviar por correo?", "acceptedAnswer": { "@type": "Answer", "text": "La mayoria de los proveedores de correo limitan los adjuntos a 25MB (Gmail, Outlook, Yahoo). Si tu PDF es mas grande, usa la herramienta Comprimir PDF de PDF.it para reducir el tamano antes de enviar." } },
   { "@type": "Question", "name": "Como debo compartir la contrasena con el destinatario?", "acceptedAnswer": { "@type": "Answer", "text": "Nunca incluyas la contrasena en el mismo correo que el PDF. Enviala por un canal diferente — un mensaje de texto, llamada telefonica o app de mensajeria encriptada como Signal o WhatsApp." } },
-  { "@type": "Question", "name": "OmnisPDF elimina los metadatos de los PDFs?", "acceptedAnswer": { "@type": "Answer", "text": "Aplanar un PDF con OmnisPDF elimina elementos interactivos y datos embebidos. Para limpieza adicional de metadatos, aplana el archivo y luego vuelve a protegerlo para crear una version limpia y segura." } }
+  { "@type": "Question", "name": "PDF.it elimina los metadatos de los PDFs?", "acceptedAnswer": { "@type": "Answer", "text": "Aplanar un PDF con PDF.it elimina elementos interactivos y datos embebidos. Para limpieza adicional de metadatos, aplana el archivo y luego vuelve a protegerlo para crear una version limpia y segura." } }
 ] }
 
-const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como Proteger un PDF Antes de Enviar por Correo", "description": "Asegura tu PDF para compartir por correo en 3 pasos usando OmnisPDF.", "step": [
-  { "@type": "HowToStep", "name": "Aplana y limpia el PDF", "text": "Sube tu PDF a la herramienta Aplanar PDF de OmnisPDF para eliminar campos de formulario, anotaciones y capas. Esto evita que se extraigan datos ocultos." },
-  { "@type": "HowToStep", "name": "Agrega proteccion con contrasena", "text": "Sube el archivo aplanado a la herramienta Proteger PDF de OmnisPDF. Establece una contrasena fuerte de apertura y elige encriptacion AES de 256 bits para maxima seguridad." },
+const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como Proteger un PDF Antes de Enviar por Correo", "description": "Asegura tu PDF para compartir por correo en 3 pasos usando PDF.it.", "step": [
+  { "@type": "HowToStep", "name": "Aplana y limpia el PDF", "text": "Sube tu PDF a la herramienta Aplanar PDF de PDF.it para eliminar campos de formulario, anotaciones y capas. Esto evita que se extraigan datos ocultos." },
+  { "@type": "HowToStep", "name": "Agrega proteccion con contrasena", "text": "Sube el archivo aplanado a la herramienta Proteger PDF de PDF.it. Establece una contrasena fuerte de apertura y elige encriptacion AES de 256 bits para maxima seguridad." },
   { "@type": "HowToStep", "name": "Comprime y envia", "text": "Si el archivo excede 25MB, comprimelo usando la herramienta Comprimir PDF. Adjunta el PDF protegido a tu correo y envia la contrasena por separado por texto o llamada." }
 ] }
 
@@ -60,7 +60,7 @@ export default function ProtegerPDFAntesDeEnviarPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-6">Como Asegurar un PDF Antes de Enviar (Paso a Paso)</h2>
             <div className="space-y-4">
               {[
-                { title: "Aplana tu PDF primero", desc: "Antes de agregar una contrasena, elimina cualquier elemento interactivo que pueda filtrar datos. Usa la herramienta Aplanar PDF de OmnisPDF para integrar campos de formulario, comentarios y anotaciones en la pagina. Esto evita que alguien extraiga informacion oculta." },
+                { title: "Aplana tu PDF primero", desc: "Antes de agregar una contrasena, elimina cualquier elemento interactivo que pueda filtrar datos. Usa la herramienta Aplanar PDF de PDF.it para integrar campos de formulario, comentarios y anotaciones en la pagina. Esto evita que alguien extraiga informacion oculta." },
                 { title: "Agrega proteccion con contrasena", desc: "Sube el archivo aplanado a la herramienta Proteger PDF. Establece una contrasena fuerte de apertura (al menos 12 caracteres con mayusculas, minusculas, numeros y simbolos). Elige encriptacion AES de 256 bits para maxima seguridad. Opcionalmente restringe la impresion y copia." },
                 { title: "Comprime para correo y envia", desc: "La mayoria de los proveedores de correo limitan los adjuntos a 25MB. Si tu PDF protegido es muy grande, usa Comprimir PDF para reducirlo. Adjunta el archivo a tu correo, luego envia la contrasena por separado por mensaje de texto o llamada." },
               ].map((step, i) => (
@@ -144,12 +144,12 @@ export default function ProtegerPDFAntesDeEnviarPage() {
           <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
           <div className="space-y-6">
             {[
-              { q: "Como protejo un PDF antes de enviarlo por correo?", a: "Usa la herramienta Proteger PDF de OmnisPDF para agregar una contrasena, aplana cualquier campo de formulario o anotacion, y comprime el archivo para cumplir con los limites de tamano del correo. Comparte la contrasena por separado por mensaje de texto o llamada." },
+              { q: "Como protejo un PDF antes de enviarlo por correo?", a: "Usa la herramienta Proteger PDF de PDF.it para agregar una contrasena, aplana cualquier campo de formulario o anotacion, y comprime el archivo para cumplir con los limites de tamano del correo. Comparte la contrasena por separado por mensaje de texto o llamada." },
               { q: "Debo aplanar mi PDF antes de enviarlo?", a: "Si. El aplanamiento elimina campos de formulario interactivos, anotaciones y capas, integrando todo en la pagina. Esto evita que los destinatarios editen o extraigan datos ocultos de tu documento." },
               { q: "Los adjuntos de correo pueden ser interceptados?", a: "Si. El correo estandar no esta encriptado de extremo a extremo. Los adjuntos pueden ser interceptados durante la transmision o accedidos si la cuenta del destinatario esta comprometida. Proteger tu PDF con contrasena agrega una capa esencial de seguridad." },
-              { q: "Cual es el tamano maximo de PDF que puedo enviar por correo?", a: "La mayoria de los proveedores de correo limitan los adjuntos a 25MB (Gmail, Outlook, Yahoo). Si tu PDF es mas grande, usa la herramienta Comprimir PDF de OmnisPDF para reducir el tamano antes de enviar." },
+              { q: "Cual es el tamano maximo de PDF que puedo enviar por correo?", a: "La mayoria de los proveedores de correo limitan los adjuntos a 25MB (Gmail, Outlook, Yahoo). Si tu PDF es mas grande, usa la herramienta Comprimir PDF de PDF.it para reducir el tamano antes de enviar." },
               { q: "Como debo compartir la contrasena con el destinatario?", a: "Nunca incluyas la contrasena en el mismo correo que el PDF. Enviala por un canal diferente — un mensaje de texto, llamada telefonica o app de mensajeria encriptada como Signal o WhatsApp." },
-              { q: "OmnisPDF elimina los metadatos de los PDFs?", a: "Aplanar un PDF con OmnisPDF elimina elementos interactivos y datos embebidos. Para limpieza adicional de metadatos, aplana el archivo y luego vuelve a protegerlo para crear una version limpia y segura." },
+              { q: "PDF.it elimina los metadatos de los PDFs?", a: "Aplanar un PDF con PDF.it elimina elementos interactivos y datos embebidos. Para limpieza adicional de metadatos, aplana el archivo y luego vuelve a protegerlo para crear una version limpia y segura." },
             ].map((faq, i) => (
               <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200"><h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3><p className="text-slate-600 text-sm">{faq.a}</p></div>
             ))}

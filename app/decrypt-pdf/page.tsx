@@ -6,9 +6,9 @@ import { Unlock, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Decrypt PDF Online — Remove PDF Encryption | OmnisPDF",
+  title: "Decrypt PDF Online — Remove PDF Encryption | PDF.it",
   description:
-    "Decrypt a password-protected PDF with OmnisPDF. Enter the password to remove encryption and download an unprotected file — fast, free, and browser-based.",
+    "Decrypt a password-protected PDF with PDF.it. Enter the password to remove encryption and download an unprotected file — fast, free, and browser-based.",
 }
 
 const faqSchema = {
@@ -18,17 +18,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "What is the difference between decrypting and unlocking a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "They are the same thing. Decrypting a PDF means removing its password-based encryption so the file can be opened without entering a password. OmnisPDF's Unlock PDF tool performs this exact operation." }
+      "acceptedAnswer": { "@type": "Answer", "text": "They are the same thing. Decrypting a PDF means removing its password-based encryption so the file can be opened without entering a password. PDF.it's Unlock PDF tool performs this exact operation." }
     },
     {
       "@type": "Question",
       "name": "Do I need the password to decrypt a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF requires you to enter the correct password to decrypt the file. It does not crack, bypass, or brute-force passwords — this ensures only authorized users can remove encryption." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it requires you to enter the correct password to decrypt the file. It does not crack, bypass, or brute-force passwords — this ensures only authorized users can remove encryption." }
     },
     {
       "@type": "Question",
       "name": "Is decrypting a PDF safe?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Your files are processed securely and deleted from OmnisPDF servers after your session ends. We never store your passwords or share your documents." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Your files are processed securely and deleted from PDF.it servers after your session ends. We never store your passwords or share your documents." }
     },
     {
       "@type": "Question",
@@ -38,12 +38,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I decrypt a PDF on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in mobile browsers on iPhone and Android. Upload your encrypted PDF, enter the password, and download the decrypted file — no app installation needed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in mobile browsers on iPhone and Android. Upload your encrypted PDF, enter the password, and download the decrypted file — no app installation needed." }
     },
     {
       "@type": "Question",
       "name": "Can I re-encrypt a PDF after decrypting it?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. After decrypting your PDF, you can use OmnisPDF's Protect PDF tool to add a new password. This is useful if you want to change the password or share the file with a different recipient." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. After decrypting your PDF, you can use PDF.it's Protect PDF tool to add a new password. This is useful if you want to change the password or share the file with a different recipient." }
     }
   ]
 }
@@ -67,7 +67,7 @@ export default function DecryptPdfPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Decrypt PDF</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Remove encryption from a password-protected PDF. Enter the password you already know, and OmnisPDF will strip the encryption so your file opens freely — no password prompts, no restrictions.
+                Remove encryption from a password-protected PDF. Enter the password you already know, and PDF.it will strip the encryption so your file opens freely — no password prompts, no restrictions.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Instant Decryption</span></div>
@@ -85,7 +85,7 @@ export default function DecryptPdfPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Encrypted PDFs require a password every time you open them. If you have the password and want to remove the encryption permanently, OmnisPDF makes it simple — upload, enter the password, and download a clean, unencrypted copy of your document.
+              Encrypted PDFs require a password every time you open them. If you have the password and want to remove the encryption permanently, PDF.it makes it simple — upload, enter the password, and download a clean, unencrypted copy of your document.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Remove PDF encryption permanently</li>
@@ -127,7 +127,7 @@ export default function DecryptPdfPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Decrypt a PDF</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your encrypted PDF into OmnisPDF.",
+                "Upload or drag and drop your encrypted PDF into PDF.it.",
                 "Enter the current password when prompted.",
                 "Click Unlock PDF — the encryption is removed instantly.",
                 "Download your decrypted PDF and use it without restrictions.",
@@ -173,12 +173,12 @@ export default function DecryptPdfPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "What is the difference between decrypting and unlocking a PDF?", a: "They are the same thing. Decrypting a PDF means removing its password-based encryption so the file can be opened without entering a password. OmnisPDF's Unlock PDF tool performs this exact operation." },
-                { q: "Do I need the password to decrypt a PDF?", a: "Yes. OmnisPDF requires you to enter the correct password to decrypt the file. It does not crack, bypass, or brute-force passwords — this ensures only authorized users can remove encryption." },
-                { q: "Is decrypting a PDF safe?", a: "Yes. Your files are processed securely and deleted from OmnisPDF servers after your session ends. We never store your passwords or share your documents." },
+                { q: "What is the difference between decrypting and unlocking a PDF?", a: "They are the same thing. Decrypting a PDF means removing its password-based encryption so the file can be opened without entering a password. PDF.it's Unlock PDF tool performs this exact operation." },
+                { q: "Do I need the password to decrypt a PDF?", a: "Yes. PDF.it requires you to enter the correct password to decrypt the file. It does not crack, bypass, or brute-force passwords — this ensures only authorized users can remove encryption." },
+                { q: "Is decrypting a PDF safe?", a: "Yes. Your files are processed securely and deleted from PDF.it servers after your session ends. We never store your passwords or share your documents." },
                 { q: "Will decrypting a PDF change its content?", a: "No. Decryption removes the password requirement without altering the content, images, formatting, or quality of the PDF. The document remains identical." },
-                { q: "Can I decrypt a PDF on my phone?", a: "Yes. OmnisPDF works in mobile browsers on iPhone and Android. Upload your encrypted PDF, enter the password, and download the decrypted file — no app installation needed." },
-                { q: "Can I re-encrypt a PDF after decrypting it?", a: "Yes. After decrypting your PDF, you can use OmnisPDF's Protect PDF tool to add a new password. This is useful if you want to change the password or share the file with a different recipient." },
+                { q: "Can I decrypt a PDF on my phone?", a: "Yes. PDF.it works in mobile browsers on iPhone and Android. Upload your encrypted PDF, enter the password, and download the decrypted file — no app installation needed." },
+                { q: "Can I re-encrypt a PDF after decrypting it?", a: "Yes. After decrypting your PDF, you can use PDF.it's Protect PDF tool to add a new password. This is useful if you want to change the password or share the file with a different recipient." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

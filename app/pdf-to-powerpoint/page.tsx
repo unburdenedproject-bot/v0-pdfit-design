@@ -6,9 +6,9 @@ import { Presentation, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "PDF to PowerPoint Converter Online — Convert PDF to PPTX | OmnisPDF",
+  title: "PDF to PowerPoint Converter Online — Convert PDF to PPTX | PDF.it",
   description:
-    "Convert PDF files to editable PowerPoint presentations with OmnisPDF. Turn static PDFs into slides you can edit, present, and share — fast and browser-based.",
+    "Convert PDF files to editable PowerPoint presentations with PDF.it. Turn static PDFs into slides you can edit, present, and share — fast and browser-based.",
 }
 
 const faqSchema = {
@@ -18,12 +18,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I convert a PDF to PowerPoint?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF, click Convert, and download the editable PowerPoint file. The conversion preserves layout, text, and images." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it, click Convert, and download the editable PowerPoint file. The conversion preserves layout, text, and images." }
     },
     {
       "@type": "Question",
       "name": "Will the formatting be preserved?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF preserves text, images, and layout as closely as possible. Complex designs may need minor adjustments in PowerPoint." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it preserves text, images, and layout as closely as possible. Complex designs may need minor adjustments in PowerPoint." }
     },
     {
       "@type": "Question",
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I convert PDF to PowerPoint on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in mobile browsers — upload, convert, and download on iPhone or Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in mobile browsers — upload, convert, and download on iPhone or Android." }
     },
     {
       "@type": "Question",
@@ -100,7 +100,7 @@ export default function PDFToPowerPointPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use OmnisPDF to convert PDF files into editable PowerPoint presentations. Perfect for repurposing reports, proposals, and documents into slides you can present and customize.
+              Use PDF.it to convert PDF files into editable PowerPoint presentations. Perfect for repurposing reports, proposals, and documents into slides you can present and customize.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Convert PDF pages to editable PowerPoint slides</li>
@@ -124,7 +124,7 @@ export default function PDFToPowerPointPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Preserve Layout and Images</h2>
               <p className="text-slate-600">
-                OmnisPDF keeps text, images, and page structure intact so your slides look professional from the start. Minor adjustments may be needed for complex designs.
+                PDF.it keeps text, images, and page structure intact so your slides look professional from the start. Minor adjustments may be needed for complex designs.
               </p>
             </div>
             <div>
@@ -142,7 +142,7 @@ export default function PDFToPowerPointPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Convert PDF to PowerPoint</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PDF into OmnisPDF.",
+                "Upload or drag and drop your PDF into PDF.it.",
                 "Click Convert PDF to PowerPoint.",
                 "Download your editable .pptx file and open it in PowerPoint or Google Slides.",
               ].map((step, i) => (
@@ -187,11 +187,11 @@ export default function PDFToPowerPointPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I convert a PDF to PowerPoint?", a: "Upload your PDF to OmnisPDF, click Convert, and download the editable PowerPoint file. The conversion preserves layout, text, and images." },
-                { q: "Will the formatting be preserved?", a: "OmnisPDF preserves text, images, and layout as closely as possible. Complex designs may need minor adjustments in PowerPoint." },
+                { q: "How do I convert a PDF to PowerPoint?", a: "Upload your PDF to PDF.it, click Convert, and download the editable PowerPoint file. The conversion preserves layout, text, and images." },
+                { q: "Will the formatting be preserved?", a: "PDF.it preserves text, images, and layout as closely as possible. Complex designs may need minor adjustments in PowerPoint." },
                 { q: "Can I edit the slides after conversion?", a: "Yes. The output is a fully editable .pptx file you can open in PowerPoint, Google Slides, or Keynote." },
                 { q: "Is PDF to PowerPoint free?", a: "PDF to PowerPoint is a Pro feature. Free users can try other tools like PDF to JPG or PDF to PNG." },
-                { q: "Can I convert PDF to PowerPoint on my phone?", a: "Yes. OmnisPDF works in mobile browsers — upload, convert, and download on iPhone or Android." },
+                { q: "Can I convert PDF to PowerPoint on my phone?", a: "Yes. PDF.it works in mobile browsers — upload, convert, and download on iPhone or Android." },
                 { q: "What is the maximum file size I can convert?", a: "Pro accounts can upload files up to 200MB. Business accounts can upload files up to 1GB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

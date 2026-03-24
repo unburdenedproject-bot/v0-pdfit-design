@@ -6,9 +6,9 @@ import { FilePlus, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Agregar Página a PDF — Inserta Páginas en tu Documento PDF | OmnisPDF",
+  title: "Agregar Página a PDF — Inserta Páginas en tu Documento PDF | PDF.it",
   description:
-    "Agrega páginas a un PDF existente con OmnisPDF. Inserta portadas, apéndices, firmas o páginas adicionales a cualquier documento PDF — rápido, gratis y en tu navegador.",
+    "Agrega páginas a un PDF existente con PDF.it. Inserta portadas, apéndices, firmas o páginas adicionales a cualquier documento PDF — rápido, gratis y en tu navegador.",
   alternates: {
     languages: {
       en: "/merge-pdf",
@@ -24,7 +24,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo agrego una página a un PDF existente?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF original y el archivo con las páginas que deseas agregar. OmnisPDF los combina en un solo documento, insertando las nuevas páginas donde las necesites." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF original y el archivo con las páginas que deseas agregar. PDF.it los combina en un solo documento, insertando las nuevas páginas donde las necesites." }
     },
     {
       "@type": "Question",
@@ -39,7 +39,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo agregar páginas desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en navegadores móviles — sube tus PDFs, agrega páginas y descarga el resultado desde iPhone o Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube tus PDFs, agrega páginas y descarga el resultado desde iPhone o Android." }
     },
     {
       "@type": "Question",
@@ -97,7 +97,7 @@ export default function AgregarPaginaAPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              La herramienta Agregar Página de OmnisPDF te permite insertar páginas adicionales en un documento PDF existente. Combina múltiples archivos PDF en uno solo, agregando portadas, apéndices, páginas de firmas o cualquier contenido adicional que necesites.
+              La herramienta Agregar Página de PDF.it te permite insertar páginas adicionales en un documento PDF existente. Combina múltiples archivos PDF en uno solo, agregando portadas, apéndices, páginas de firmas o cualquier contenido adicional que necesites.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Inserta páginas en cualquier posición del documento</li>
@@ -145,7 +145,7 @@ export default function AgregarPaginaAPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Agregar Páginas a un PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF original a OmnisPDF.",
+                "Sube o arrastra tu PDF original a PDF.it.",
                 "Agrega el archivo PDF con las páginas que deseas insertar.",
                 "Haz clic en Unir PDF y descarga tu documento actualizado.",
               ].map((step, i) => (
@@ -194,10 +194,10 @@ export default function AgregarPaginaAPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo agrego una página a un PDF existente?", a: "Sube tu PDF original y el archivo con las páginas que deseas agregar. OmnisPDF los combina en un solo documento, insertando las nuevas páginas donde las necesites." },
+                { q: "¿Cómo agrego una página a un PDF existente?", a: "Sube tu PDF original y el archivo con las páginas que deseas agregar. PDF.it los combina en un solo documento, insertando las nuevas páginas donde las necesites." },
                 { q: "¿Puedo insertar una página en una posición específica?", a: "Sí. Puedes elegir dónde insertar las nuevas páginas — al inicio, al final, o entre páginas específicas de tu documento PDF." },
                 { q: "¿Se mantiene la calidad del PDF original?", a: "Sí. Las páginas originales se mantienen exactamente como están — sin recodificación, sin pérdida de calidad en texto, imágenes o formato." },
-                { q: "¿Puedo agregar páginas desde mi celular?", a: "Sí. OmnisPDF funciona en navegadores móviles — sube tus PDFs, agrega páginas y descarga el resultado desde iPhone o Android." },
+                { q: "¿Puedo agregar páginas desde mi celular?", a: "Sí. PDF.it funciona en navegadores móviles — sube tus PDFs, agrega páginas y descarga el resultado desde iPhone o Android." },
                 { q: "¿Es seguro subir mi PDF?", a: "Sí. Todas las transferencias están encriptadas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." },
                 { q: "¿Es gratis agregar páginas a un PDF?", a: "Sí. Puedes agregar páginas a PDFs de hasta 25MB gratis. Para archivos más grandes y procesamiento por lotes, actualiza a Pro." },
               ].map((faq, i) => (

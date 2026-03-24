@@ -134,7 +134,7 @@ All pages have been seamlessly combined into a single, professional document.`
   static async convertPDFToPowerPoint(file: File): Promise<Blob> {
     await new Promise((resolve) => setTimeout(resolve, 2000))
 
-    const demoContent = `OmnisPDF PowerPoint Conversion Demo
+    const demoContent = `PDF.it PowerPoint Conversion Demo
 
 Original File: ${file.name}
 File Size: ${(file.size / 1024 / 1024).toFixed(2)} MB
@@ -149,7 +149,7 @@ Features:
 - Text formatting retention
 - Layout optimization
 
-Thank you for trying OmnisPDF!`
+Thank you for trying PDF.it!`
 
     return new Blob([demoContent], { type: "text/plain" })
   }
@@ -157,7 +157,7 @@ Thank you for trying OmnisPDF!`
   static async convertWordToPDF(file: File): Promise<Blob> {
     await new Promise((resolve) => setTimeout(resolve, 1500))
 
-    const demoContent = `OmnisPDF Word to PDF Demo
+    const demoContent = `PDF.it Word to PDF Demo
 
 Original File: ${file.name}
 File Size: ${(file.size / 1024 / 1024).toFixed(2)} MB
@@ -172,7 +172,7 @@ Features:
 - Header and footer conversion
 - Professional quality output
 
-Thank you for trying OmnisPDF!`
+Thank you for trying PDF.it!`
 
     return new Blob([demoContent], { type: "text/plain" })
   }
@@ -180,7 +180,7 @@ Thank you for trying OmnisPDF!`
   static async splitPDF(file: File): Promise<Blob> {
     await new Promise((resolve) => setTimeout(resolve, 1200))
 
-    const demoContent = `OmnisPDF Split PDF Demo
+    const demoContent = `PDF.it Split PDF Demo
 
 Original File: ${file.name}
 File Size: ${(file.size / 1024 / 1024).toFixed(2)} MB
@@ -195,7 +195,7 @@ Features:
 - Batch splitting
 - Quality preservation
 
-Thank you for trying OmnisPDF!`
+Thank you for trying PDF.it!`
 
     return new Blob([demoContent], { type: "text/plain" })
   }
@@ -262,7 +262,7 @@ The extracted text is now ready for analysis, processing, or integration
 into other applications and workflows.
 
 ---
-Extracted by OmnisPDF Text Extraction Tool`
+Extracted by PDF.it Text Extraction Tool`
 
     return new Blob([extractedText], { type: "text/plain" })
   }

@@ -5,7 +5,7 @@ import Link from "next/link"
 import { QrCode, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Codigo QR para Cardapio de Restaurante | OmnisPDF",
+  title: "Codigo QR para Cardapio de Restaurante | PDF.it",
   description:
     "Crie um codigo QR para o cardapio digital do seu restaurante. Clientes acessam o menu pelo celular sem tocar em nada. Facil de atualizar precos e pratos.",
   keywords: "codigo qr cardapio, qr code restaurante, cardapio digital qr, menu qr code restaurante",
@@ -15,7 +15,7 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Como criar um QR code para cardapio?", "acceptedAnswer": { "@type": "Answer", "text": "Crie o cardapio em PDF, hospede online (Google Drive, Dropbox ou site) e use o gerador de QR do OmnisPDF para criar um codigo que direciona para o link do cardapio." } },
+    { "@type": "Question", "name": "Como criar um QR code para cardapio?", "acceptedAnswer": { "@type": "Answer", "text": "Crie o cardapio em PDF, hospede online (Google Drive, Dropbox ou site) e use o gerador de QR do PDF.it para criar um codigo que direciona para o link do cardapio." } },
     { "@type": "Question", "name": "Posso atualizar o cardapio sem trocar o QR?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Se voce substituir o PDF no mesmo link, o QR continuara funcionando com o cardapio atualizado. Nao precisa reimprimir os QR codes." } },
     { "@type": "Question", "name": "O cliente precisa instalar algum app?", "acceptedAnswer": { "@type": "Answer", "text": "Nao. Celulares modernos (iPhone e Android) leem QR codes direto pela camera. O cardapio abre no navegador automaticamente." } },
     { "@type": "Question", "name": "Onde colocar o QR code no restaurante?", "acceptedAnswer": { "@type": "Answer", "text": "Nas mesas (adesivo ou display de acrilico), na vitrine, na fachada, no balcao e em materiais promocionais. Adicione o texto 'Escaneie para ver o cardapio'." } },
@@ -30,7 +30,7 @@ const howToSchema = {
   "step": [
     { "@type": "HowToStep", "name": "Crie o cardapio em PDF", "text": "Monte o cardapio em Word, Google Docs ou Canva e exporte como PDF." },
     { "@type": "HowToStep", "name": "Hospede online", "text": "Faca upload para Google Drive ou Dropbox e obtenha o link publico." },
-    { "@type": "HowToStep", "name": "Gere o QR e imprima", "text": "Cole o link no gerador de QR do OmnisPDF, baixe e imprima para colocar nas mesas." }
+    { "@type": "HowToStep", "name": "Gere o QR e imprima", "text": "Cole o link no gerador de QR do PDF.it, baixe e imprima para colocar nas mesas." }
   ]
 }
 
@@ -75,9 +75,9 @@ export default function CodigoQRCardapioPage() {
               <div className="space-y-4">
                 {[
                   { title: "Monte o cardapio", desc: "Use Word, Google Docs, Canva ou qualquer editor. Inclua nomes dos pratos, descricoes, precos e fotos se possivel. Exporte como PDF." },
-                  { title: "Otimize o PDF", desc: "Use o OmnisPDF para comprimir o PDF e garantir carregamento rapido no celular. Um cardapio de 2-3 MB ja e grande para celulares com conexao lenta." },
+                  { title: "Otimize o PDF", desc: "Use o PDF.it para comprimir o PDF e garantir carregamento rapido no celular. Um cardapio de 2-3 MB ja e grande para celulares com conexao lenta." },
                   { title: "Hospede o cardapio online", desc: "Faca upload para Google Drive, Dropbox ou seu site. Configure o link como publico para que qualquer pessoa possa acessar." },
-                  { title: "Gere o QR code", desc: "No gerador de Codigo QR do OmnisPDF, selecione tipo URL e cole o link do cardapio. Personalize cores se desejar." },
+                  { title: "Gere o QR code", desc: "No gerador de Codigo QR do PDF.it, selecione tipo URL e cole o link do cardapio. Personalize cores se desejar." },
                   { title: "Imprima e distribua", desc: "Baixe em SVG para impressao de alta qualidade. Imprima adesivos ou cartoes e coloque nas mesas, no balcao e na vitrine." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -92,7 +92,7 @@ export default function CodigoQRCardapioPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">Dicas para um Cardapio Digital Eficaz</h2>
               <div className="space-y-6">
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">Design Responsivo</h3><p className="text-slate-600">O cardapio sera visto em telas de celular. Use fontes grandes (minimo 14pt), espacamento generoso e layout vertical. Evite tabelas largas que exigem rolagem horizontal.</p></div>
-                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Comprima o PDF</h3><p className="text-slate-600">Use <Link href="/br/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> do OmnisPDF para reduzir o tamanho. Cardapios com fotos podem ficar pesados — comprima para menos de 1MB se possivel.</p></div>
+                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Comprima o PDF</h3><p className="text-slate-600">Use <Link href="/br/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> do PDF.it para reduzir o tamanho. Cardapios com fotos podem ficar pesados — comprima para menos de 1MB se possivel.</p></div>
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">Adicione Texto ao QR</h3><p className="text-slate-600">Proximo ao QR, coloque &quot;Escaneie para ver o cardapio&quot; ou &quot;Aponte a camera para o menu&quot;. Nem todos sabem o que e um QR code.</p></div>
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">QR de WiFi Tambem</h3><p className="text-slate-600">Considere colocar um <Link href="/br/aprender/codigo-qr-para-wifi" className="text-orange-600 hover:underline">QR de WiFi</Link> ao lado do QR do cardapio. Clientes apreciam a conveniencia.</p></div>
               </div>
@@ -142,7 +142,7 @@ export default function CodigoQRCardapioPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como criar um QR para cardapio?", a: "Crie o cardapio em PDF, hospede online e use o gerador de QR do OmnisPDF com o link do cardapio." },
+                { q: "Como criar um QR para cardapio?", a: "Crie o cardapio em PDF, hospede online e use o gerador de QR do PDF.it com o link do cardapio." },
                 { q: "Posso atualizar sem trocar o QR?", a: "Sim. Substitua o PDF no mesmo link e o QR continuara funcionando com o cardapio atualizado." },
                 { q: "O cliente precisa de app?", a: "Nao. Celulares modernos leem QR codes direto pela camera." },
                 { q: "Onde colocar o QR no restaurante?", a: "Nas mesas, vitrine, balcao e materiais promocionais. Adicione texto 'Escaneie para ver o cardapio'." },

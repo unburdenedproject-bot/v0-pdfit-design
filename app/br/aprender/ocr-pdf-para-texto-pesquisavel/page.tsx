@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ScanText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "OCR: PDF para Texto Pesquisavel (Encontre Texto em PDFs Digitalizados) | OmnisPDF",
+  title: "OCR: PDF para Texto Pesquisavel (Encontre Texto em PDFs Digitalizados) | PDF.it",
   description:
     "Converta PDFs digitalizados em documentos pesquisaveis com OCR. Aprenda como encontrar texto, copiar conteudo e indexar PDFs que antes eram apenas imagens.",
   keywords: "ocr pdf texto pesquisavel, pdf digitalizado pesquisavel, buscar texto pdf digitalizado, ocr pdf online",
@@ -18,7 +18,7 @@ const faqSchema = {
     { "@type": "Question", "name": "O que e um PDF pesquisavel?", "acceptedAnswer": { "@type": "Answer", "text": "Um PDF pesquisavel contem uma camada de texto invisivel sobre as imagens digitalizadas. Isso permite usar Ctrl+F para buscar palavras, selecionar e copiar texto, mesmo que visualmente o documento pareca identico a digitalizacao original." } },
     { "@type": "Question", "name": "Como o OCR torna um PDF pesquisavel?", "acceptedAnswer": { "@type": "Answer", "text": "O OCR analisa as imagens do PDF, reconhece letras e palavras, e adiciona uma camada de texto transparente alinhada sobre a imagem original. O documento mantem a aparencia visual, mas agora o texto pode ser buscado e copiado." } },
     { "@type": "Question", "name": "O PDF original e alterado?", "acceptedAnswer": { "@type": "Answer", "text": "Nao. A aparencia visual do PDF permanece identica. O OCR apenas adiciona uma camada de texto invisivel por tras da imagem, sem modificar as paginas originais." } },
-    { "@type": "Question", "name": "Posso converter o PDF pesquisavel em texto puro?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Apos aplicar OCR, voce pode usar a ferramenta PDF para Texto do OmnisPDF para extrair o conteudo em formato texto simples." } },
+    { "@type": "Question", "name": "Posso converter o PDF pesquisavel em texto puro?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Apos aplicar OCR, voce pode usar a ferramenta PDF para Texto do PDF.it para extrair o conteudo em formato texto simples." } },
   ]
 }
 
@@ -26,7 +26,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Converter PDF Digitalizado em Texto Pesquisavel",
-  "description": "Torne qualquer PDF digitalizado pesquisavel em 3 passos com o Scanner OCR do OmnisPDF.",
+  "description": "Torne qualquer PDF digitalizado pesquisavel em 3 passos com o Scanner OCR do PDF.it.",
   "step": [
     { "@type": "HowToStep", "name": "Faca upload do PDF digitalizado", "text": "Acesse o Scanner OCR e faca upload do PDF que contem paginas digitalizadas (somente imagem)." },
     { "@type": "HowToStep", "name": "Selecione o idioma e processe", "text": "Escolha o idioma do texto e clique em processar para iniciar o reconhecimento OCR." },
@@ -75,7 +75,7 @@ export default function OCRPDFTextoPesquisavelPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-6">Como Converter para Texto Pesquisavel</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Faca upload do PDF digitalizado", desc: "Acesse o Scanner OCR do OmnisPDF e selecione o PDF. A ferramenta detecta automaticamente quais paginas sao somente imagem." },
+                  { title: "Faca upload do PDF digitalizado", desc: "Acesse o Scanner OCR do PDF.it e selecione o PDF. A ferramenta detecta automaticamente quais paginas sao somente imagem." },
                   { title: "Selecione o idioma do documento", desc: "Escolha portugues, ingles ou outro idioma. O motor OCR usa dicionarios especificos de cada idioma para melhorar a precisao do reconhecimento." },
                   { title: "Processe e baixe", desc: "Clique em processar. Em poucos segundos, o PDF pesquisavel estara pronto para download com toda a camada de texto incorporada." },
                 ].map((step, i) => (
@@ -108,7 +108,7 @@ export default function OCRPDFTextoPesquisavelPage() {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Recursos do Scanner OCR do OmnisPDF</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Recursos do Scanner OCR do PDF.it</h2>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; Deteccao automatica de paginas somente imagem.</li>
                 <li>&#10003; Suporte a dezenas de idiomas incluindo portugues.</li>
@@ -156,7 +156,7 @@ export default function OCRPDFTextoPesquisavelPage() {
                 { q: "O que e um PDF pesquisavel?", a: "Um PDF pesquisavel contem uma camada de texto invisivel sobre as imagens digitalizadas, permitindo buscar palavras, selecionar e copiar texto." },
                 { q: "Como o OCR torna um PDF pesquisavel?", a: "O OCR analisa as imagens, reconhece letras e palavras, e adiciona uma camada de texto transparente alinhada sobre a imagem original." },
                 { q: "O PDF original e alterado?", a: "Nao. A aparencia visual permanece identica. O OCR apenas adiciona uma camada de texto invisivel sem modificar as paginas originais." },
-                { q: "Posso converter o PDF pesquisavel em texto puro?", a: "Sim. Apos aplicar OCR, use a ferramenta PDF para Texto do OmnisPDF para extrair o conteudo em texto simples." },
+                { q: "Posso converter o PDF pesquisavel em texto puro?", a: "Sim. Apos aplicar OCR, use a ferramenta PDF para Texto do PDF.it para extrair o conteudo em texto simples." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

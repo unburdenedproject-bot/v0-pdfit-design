@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "DOCX a PDF sin problemas de formato (fuentes, espaciado, imagenes) | OmnisPDF",
+  title: "DOCX a PDF sin problemas de formato (fuentes, espaciado, imagenes) | PDF.it",
   description:
     "Soluciona problemas de formato al convertir DOCX a PDF. Aprende a evitar la sustitucion de fuentes, cambios de espaciado y desplazamiento de imagenes para que tu PDF luzca exactamente como tu documento de Word.",
   keywords: "docx a pdf mantener formato, word a pdf problemas de formato, docx a pdf fuentes incorrectas, word a pdf cambios de espaciado, preservar formato word a pdf",
@@ -28,12 +28,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Por que mis imagenes se ven borrosas en el PDF convertido?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Algunas herramientas de conversion comprimen las imagenes agresivamente para reducir el tamano del archivo. OmnisPDF preserva la calidad original de las imagenes por defecto. Si las imagenes se insertaron a baja resolucion en Word, tendran baja resolucion en el PDF tambien: reemplazalas con versiones de mayor resolucion antes de convertir." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Algunas herramientas de conversion comprimen las imagenes agresivamente para reducir el tamano del archivo. PDF.it preserva la calidad original de las imagenes por defecto. Si las imagenes se insertaron a baja resolucion en Word, tendran baja resolucion en el PDF tambien: reemplazalas con versiones de mayor resolucion antes de convertir." }
     },
     {
       "@type": "Question",
       "name": "Puedo convertir DOCX a PDF sin perder los hipervinculos?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. OmnisPDF preserva los hipervinculos clicables durante la conversion. Asegurate de que los enlaces esten correctamente formateados en Word (clic derecho > Hipervinculo) en lugar de simplemente pegados como texto plano." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it preserva los hipervinculos clicables durante la conversion. Asegurate de que los enlaces esten correctamente formateados en Word (clic derecho > Hipervinculo) en lugar de simplemente pegados como texto plano." }
     },
     {
       "@type": "Question",
@@ -52,7 +52,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como convertir DOCX a PDF sin problemas de formato",
-  "description": "Preserva fuentes, espaciado e imagenes al convertir Word a PDF usando OmnisPDF.",
+  "description": "Preserva fuentes, espaciado e imagenes al convertir Word a PDF usando PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
@@ -61,8 +61,8 @@ const howToSchema = {
     },
     {
       "@type": "HowToStep",
-      "name": "Convierte con OmnisPDF",
-      "text": "Sube tu archivo .docx a la herramienta Word a PDF de OmnisPDF y haz clic en Convertir. La herramienta preserva el formato, las fuentes y la calidad de las imagenes."
+      "name": "Convierte con PDF.it",
+      "text": "Sube tu archivo .docx a la herramienta Word a PDF de PDF.it y haz clic en Convertir. La herramienta preserva el formato, las fuentes y la calidad de las imagenes."
     },
     {
       "@type": "HowToStep",
@@ -192,8 +192,8 @@ export default function DocxAPdfMantenerFormatoPage() {
                     desc: "Revisa las fuentes (usa estandar o incrusta personalizadas), establece espaciado explicito y ancla las imagenes. Revisa el documento en Vista previa de impresion para ver exactamente como se vera.",
                   },
                   {
-                    title: "Sube y convierte con OmnisPDF",
-                    desc: "Ve a la herramienta Word a PDF y sube tu archivo .docx. El motor de conversion de OmnisPDF maneja fuentes, espaciado e imagenes con precision: haz clic en Convertir y espera unos segundos.",
+                    title: "Sube y convierte con PDF.it",
+                    desc: "Ve a la herramienta Word a PDF y sube tu archivo .docx. El motor de conversion de PDF.it maneja fuentes, espaciado e imagenes con precision: haz clic en Convertir y espera unos segundos.",
                   },
                   {
                     title: "Compara el resultado",
@@ -216,7 +216,7 @@ export default function DocxAPdfMantenerFormatoPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Errores comunes a evitar</h2>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>No uses "Guardar como PDF" de Word.</strong> La exportacion integrada de Word puede producir resultados inconsistentes dependiendo de tu version de Word y sistema operativo. Un convertidor dedicado como <Link href="/es/word-a-pdf" className="text-orange-600 hover:underline">Word a PDF de OmnisPDF</Link> da resultados mas confiables.</li>
+                <li>&#10003; <strong>No uses "Guardar como PDF" de Word.</strong> La exportacion integrada de Word puede producir resultados inconsistentes dependiendo de tu version de Word y sistema operativo. Un convertidor dedicado como <Link href="/es/word-a-pdf" className="text-orange-600 hover:underline">Word a PDF de PDF.it</Link> da resultados mas confiables.</li>
                 <li>&#10003; <strong>Evita "Imprimir a PDF" en Windows.</strong> El controlador Microsoft Print to PDF a menudo cambia los margenes y puede eliminar hipervinculos. Es un ultimo recurso, no una primera opcion.</li>
                 <li>&#10003; <strong>No mezcles formatos de Office.</strong> Si tu documento de Word tiene graficos de Excel o diapositivas de PowerPoint incrustados, convierte cada elemento por separado y usa <Link href="/es/office-a-pdf" className="text-orange-600 hover:underline">Office a PDF</Link> para mejores resultados.</li>
               </ul>
@@ -287,8 +287,8 @@ export default function DocxAPdfMantenerFormatoPage() {
               {[
                 { q: "Por que mi DOCX se ve diferente despues de convertirlo a PDF?", a: "La causa mas comun es la sustitucion de fuentes. Si la herramienta de conversion no tiene la misma fuente instalada, la reemplaza con una similar que puede tener anchos de caracteres y espaciado diferentes. Esto hace que el texto se redistribuya, cambiando los saltos de linea y el diseno de la pagina." },
                 { q: "Como mantengo las fuentes iguales al convertir Word a PDF?", a: "Usa fuentes estandar del sistema como Arial, Calibri o Times New Roman. Estas estan disponibles en practicamente todos los sistemas y herramientas de conversion. Si debes usar una fuente personalizada, incrustala en el documento de Word antes de convertir (Archivo > Opciones > Guardar > Incrustar fuentes en el archivo)." },
-                { q: "Por que mis imagenes se ven borrosas en el PDF convertido?", a: "Algunas herramientas de conversion comprimen las imagenes agresivamente para reducir el tamano del archivo. OmnisPDF preserva la calidad original de las imagenes por defecto. Si las imagenes se insertaron a baja resolucion en Word, tendran baja resolucion en el PDF tambien." },
-                { q: "Puedo convertir DOCX a PDF sin perder los hipervinculos?", a: "Si. OmnisPDF preserva los hipervinculos clicables durante la conversion. Asegurate de que los enlaces esten correctamente formateados en Word (clic derecho > Hipervinculo) en lugar de simplemente pegados como texto plano." },
+                { q: "Por que mis imagenes se ven borrosas en el PDF convertido?", a: "Algunas herramientas de conversion comprimen las imagenes agresivamente para reducir el tamano del archivo. PDF.it preserva la calidad original de las imagenes por defecto. Si las imagenes se insertaron a baja resolucion en Word, tendran baja resolucion en el PDF tambien." },
+                { q: "Puedo convertir DOCX a PDF sin perder los hipervinculos?", a: "Si. PDF.it preserva los hipervinculos clicables durante la conversion. Asegurate de que los enlaces esten correctamente formateados en Word (clic derecho > Hipervinculo) en lugar de simplemente pegados como texto plano." },
                 { q: "Por que se rompio el formato de mi tabla en el PDF?", a: "Los disenos de tablas complejos con celdas combinadas, tablas anidadas o columnas de ajuste automatico son la fuente mas comun de problemas de formato. Simplifica tus tablas cuando sea posible: usa anchos de columna fijos en lugar de ajuste automatico y evita las tablas profundamente anidadas." },
                 { q: "Como verifico si mi PDF coincide con el documento original de Word?", a: "Abre ambos archivos lado a lado y compara pagina por pagina. Presta especial atencion a la ultima linea de cada pagina (la redistribucion del texto a menudo empuja contenido a la siguiente pagina), alineaciones de tablas y posiciones de imagenes." },
               ].map((faq, i) => (

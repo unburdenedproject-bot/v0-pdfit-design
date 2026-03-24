@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Stamp, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Marca d'Agua em PDF no Celular (iPhone e Android) | OmnisPDF",
+  title: "Marca d'Agua em PDF no Celular (iPhone e Android) | PDF.it",
   description:
     "Aprenda como adicionar marca d'agua a um PDF direto do celular. Funciona no iPhone e Android sem instalar nenhum aplicativo — use o navegador.",
   keywords: "marca dagua pdf celular, marca dagua pdf iphone, marca dagua pdf android, marca dagua pdf online celular",
@@ -15,9 +15,9 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Posso adicionar marca d'agua a um PDF no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona no navegador do celular. Basta acessar a ferramenta Marca d'Agua em PDF, fazer upload do arquivo e configurar o texto desejado." } },
-    { "@type": "Question", "name": "Preciso instalar algum app?", "acceptedAnswer": { "@type": "Answer", "text": "Nao. O OmnisPDF e uma ferramenta online que funciona diretamente no navegador do seu celular, sem necessidade de instalar aplicativos." } },
-    { "@type": "Question", "name": "Funciona no iPhone e no Android?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em qualquer navegador moderno, incluindo Safari no iPhone e Chrome no Android." } },
+    { "@type": "Question", "name": "Posso adicionar marca d'agua a um PDF no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona no navegador do celular. Basta acessar a ferramenta Marca d'Agua em PDF, fazer upload do arquivo e configurar o texto desejado." } },
+    { "@type": "Question", "name": "Preciso instalar algum app?", "acceptedAnswer": { "@type": "Answer", "text": "Nao. O PDF.it e uma ferramenta online que funciona diretamente no navegador do seu celular, sem necessidade de instalar aplicativos." } },
+    { "@type": "Question", "name": "Funciona no iPhone e no Android?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em qualquer navegador moderno, incluindo Safari no iPhone e Chrome no Android." } },
     { "@type": "Question", "name": "O arquivo fica salvo no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Apos o processamento, voce pode baixar o PDF com marca d'agua diretamente para a pasta de downloads do seu celular." } },
   ]
 }
@@ -28,7 +28,7 @@ const howToSchema = {
   "name": "Como Adicionar Marca d'Agua em PDF no Celular",
   "description": "Adicione marca d'agua a um PDF usando seu celular em 3 passos simples.",
   "step": [
-    { "@type": "HowToStep", "name": "Abra o OmnisPDF no navegador", "text": "No navegador do celular, acesse omnispdf.com e va para a ferramenta Marca d'Agua em PDF." },
+    { "@type": "HowToStep", "name": "Abra o PDF.it no navegador", "text": "No navegador do celular, acesse pdf.it.com e va para a ferramenta Marca d'Agua em PDF." },
     { "@type": "HowToStep", "name": "Faca upload e configure", "text": "Selecione o PDF da galeria ou pasta de arquivos. Digite o texto da marca d'agua e ajuste cor, tamanho e opacidade." },
     { "@type": "HowToStep", "name": "Baixe o resultado", "text": "Toque em aplicar e baixe o PDF com marca d'agua para seu celular." }
   ]
@@ -67,7 +67,7 @@ export default function MarcaDaguaCelularPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que Adicionar Marca d&apos;Agua pelo Celular?</h2>
               <p className="text-slate-600 mb-4">Nem sempre voce esta no computador quando precisa proteger um documento. Pode ser um contrato que chegou por e-mail, um relatorio que voce precisa enviar urgente ou um documento que recebeu pelo WhatsApp.</p>
-              <p className="text-slate-600 mb-4">Com o OmnisPDF, voce pode adicionar marca d&apos;agua a qualquer PDF direto do navegador do celular — Safari, Chrome ou qualquer outro. Nao precisa instalar nenhum aplicativo.</p>
+              <p className="text-slate-600 mb-4">Com o PDF.it, voce pode adicionar marca d&apos;agua a qualquer PDF direto do navegador do celular — Safari, Chrome ou qualquer outro. Nao precisa instalar nenhum aplicativo.</p>
               <p className="text-slate-600">O processo e identico ao do computador: faca upload, configure o texto e baixe o resultado.</p>
             </section>
 
@@ -75,7 +75,7 @@ export default function MarcaDaguaCelularPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-6">Passo a Passo no Celular</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Abra o OmnisPDF no navegador", desc: "No Safari (iPhone) ou Chrome (Android), acesse omnispdf.com e toque em Marca d'Agua PDF no menu de ferramentas." },
+                  { title: "Abra o PDF.it no navegador", desc: "No Safari (iPhone) ou Chrome (Android), acesse pdf.it.com e toque em Marca d'Agua PDF no menu de ferramentas." },
                   { title: "Selecione o PDF", desc: "Toque no botao de upload e escolha o PDF da sua galeria, pasta de downloads ou aplicativo de arquivos. No iPhone, use o app Arquivos; no Android, o gerenciador de arquivos." },
                   { title: "Configure a marca d'agua", desc: "Digite o texto desejado (ex: CONFIDENCIAL, RASCUNHO). Ajuste cor, tamanho da fonte, opacidade e angulo. A visualizacao mostra como ficara." },
                   { title: "Aplique e baixe", desc: "Toque em aplicar e aguarde o processamento. O PDF com marca d'agua sera baixado automaticamente para a pasta de downloads do celular." },
@@ -99,7 +99,7 @@ export default function MarcaDaguaCelularPage() {
 
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">iPhone vs Android</h2>
-              <p className="text-slate-600 mb-4">O OmnisPDF funciona de forma identica em ambos os sistemas. A unica diferenca e onde o arquivo fica salvo apos o download:</p>
+              <p className="text-slate-600 mb-4">O PDF.it funciona de forma identica em ambos os sistemas. A unica diferenca e onde o arquivo fica salvo apos o download:</p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>iPhone:</strong> O PDF e salvo no app Arquivos, na pasta Downloads. Abra o app Arquivos para encontrar.</li>
                 <li>&#10003; <strong>Android:</strong> O PDF vai para a pasta Downloads padrao. Acesse pelo gerenciador de arquivos ou pela notificacao de download.</li>
@@ -139,9 +139,9 @@ export default function MarcaDaguaCelularPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Posso adicionar marca d'agua a um PDF no celular?", a: "Sim. O OmnisPDF funciona no navegador do celular. Basta acessar a ferramenta Marca d'Agua em PDF, fazer upload do arquivo e configurar o texto desejado." },
-                { q: "Preciso instalar algum app?", a: "Nao. O OmnisPDF e uma ferramenta online que funciona diretamente no navegador do seu celular, sem necessidade de instalar aplicativos." },
-                { q: "Funciona no iPhone e no Android?", a: "Sim. O OmnisPDF funciona em qualquer navegador moderno, incluindo Safari no iPhone e Chrome no Android." },
+                { q: "Posso adicionar marca d'agua a um PDF no celular?", a: "Sim. O PDF.it funciona no navegador do celular. Basta acessar a ferramenta Marca d'Agua em PDF, fazer upload do arquivo e configurar o texto desejado." },
+                { q: "Preciso instalar algum app?", a: "Nao. O PDF.it e uma ferramenta online que funciona diretamente no navegador do seu celular, sem necessidade de instalar aplicativos." },
+                { q: "Funciona no iPhone e no Android?", a: "Sim. O PDF.it funciona em qualquer navegador moderno, incluindo Safari no iPhone e Chrome no Android." },
                 { q: "O arquivo fica salvo no celular?", a: "Sim. Apos o processamento, voce pode baixar o PDF com marca d'agua diretamente para a pasta de downloads do seu celular." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

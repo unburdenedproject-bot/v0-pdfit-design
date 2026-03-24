@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Merge, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Cómo Unir PDFs en el Orden Correcto (Sin Errores de Páginas) | OmnisPDF",
+  title: "Cómo Unir PDFs en el Orden Correcto (Sin Errores de Páginas) | PDF.it",
   description:
     "Aprende cómo unir PDFs en el orden correcto cada vez. Consejos de nombres de archivos, arrastrar y soltar, y evitar errores de páginas al combinar PDFs.",
   keywords: "unir pdfs en orden, combinar pdfs en orden correcto, unir pdf páginas en secuencia, ordenar pdf antes de unir",
@@ -14,20 +14,20 @@ export const metadata = {
 const faqSchema = {
   "@context": "https://schema.org", "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "¿Cómo uno PDFs en un orden específico?", "acceptedAnswer": { "@type": "Answer", "text": "Sube todos tus PDFs a la herramienta Unir de OmnisPDF, luego arrastra y suelta los archivos en el orden exacto que deseas. El primer archivo en la lista aparecerá primero en el documento unido. Haz clic en Unir cuando el orden sea correcto." } },
+    { "@type": "Question", "name": "¿Cómo uno PDFs en un orden específico?", "acceptedAnswer": { "@type": "Answer", "text": "Sube todos tus PDFs a la herramienta Unir de PDF.it, luego arrastra y suelta los archivos en el orden exacto que deseas. El primer archivo en la lista aparecerá primero en el documento unido. Haz clic en Unir cuando el orden sea correcto." } },
     { "@type": "Question", "name": "¿Por qué mi PDF unido salió en el orden incorrecto?", "acceptedAnswer": { "@type": "Answer", "text": "La mayoría de las herramientas de unión procesan archivos en el orden en que fueron subidos o alfabéticamente por nombre de archivo. Si subiste archivos en un orden aleatorio sin reorganizarlos, las páginas pueden estar fuera de secuencia. Siempre verifica el orden de los archivos antes de hacer clic en Unir." } },
-    { "@type": "Question", "name": "¿Puedo reorganizar páginas después de unir?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Si notas que el orden es incorrecto después de unir, usa la herramienta Dividir PDF de OmnisPDF para extraer páginas individuales, luego únelas nuevamente en el orden correcto. También puedes usar la herramienta Reordenar Páginas PDF para reorganizar páginas dentro de un solo PDF." } },
+    { "@type": "Question", "name": "¿Puedo reorganizar páginas después de unir?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Si notas que el orden es incorrecto después de unir, usa la herramienta Dividir PDF de PDF.it para extraer páginas individuales, luego únelas nuevamente en el orden correcto. También puedes usar la herramienta Reordenar Páginas PDF para reorganizar páginas dentro de un solo PDF." } },
     { "@type": "Question", "name": "¿Cómo debo nombrar mis archivos para ordenarlos fácilmente?", "acceptedAnswer": { "@type": "Answer", "text": "Usa un prefijo numérico como 01-, 02-, 03- al inicio de cada nombre de archivo. Por ejemplo: '01-carta-presentacion.pdf', '02-curriculum.pdf', '03-referencias.pdf'. Esto asegura que los archivos se ordenen correctamente en cualquier administrador de archivos." } },
-    { "@type": "Question", "name": "¿OmnisPDF me permite previsualizar antes de unir?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Puedes ver la lista de archivos subidos y su orden antes de hacer clic en Unir. Arrastra y suelta para reorganizarlos hasta que el orden sea exactamente correcto, luego procede con la unión." } },
-    { "@type": "Question", "name": "¿Puedo unir PDFs en orden desde mi teléfono?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en navegadores móviles. Sube tus archivos, reorganízalos arrastrando al orden correcto, y únelos — todo desde el navegador de tu teléfono sin instalar ninguna app." } }
+    { "@type": "Question", "name": "¿PDF.it me permite previsualizar antes de unir?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Puedes ver la lista de archivos subidos y su orden antes de hacer clic en Unir. Arrastra y suelta para reorganizarlos hasta que el orden sea exactamente correcto, luego procede con la unión." } },
+    { "@type": "Question", "name": "¿Puedo unir PDFs en orden desde mi teléfono?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles. Sube tus archivos, reorganízalos arrastrando al orden correcto, y únelos — todo desde el navegador de tu teléfono sin instalar ninguna app." } }
   ]
 }
 
 const howToSchema = {
   "@context": "https://schema.org", "@type": "HowTo", "name": "Cómo Unir PDFs en el Orden Correcto",
-  "description": "Combina múltiples PDFs en un orden específico sin errores de páginas usando OmnisPDF.",
+  "description": "Combina múltiples PDFs en un orden específico sin errores de páginas usando PDF.it.",
   "step": [
-    { "@type": "HowToStep", "name": "Sube y nombra tus archivos lógicamente", "text": "Antes de subir, renombra tus archivos con prefijos numéricos (01-, 02-, 03-) para que se ordenen correctamente. Luego sube todos los archivos a la herramienta Unir de OmnisPDF." },
+    { "@type": "HowToStep", "name": "Sube y nombra tus archivos lógicamente", "text": "Antes de subir, renombra tus archivos con prefijos numéricos (01-, 02-, 03-) para que se ordenen correctamente. Luego sube todos los archivos a la herramienta Unir de PDF.it." },
     { "@type": "HowToStep", "name": "Arrastra los archivos al orden correcto", "text": "Usa arrastrar y soltar para organizar los archivos en la secuencia exacta que deseas. El archivo superior se convierte en las primeras páginas del PDF unido." },
     { "@type": "HowToStep", "name": "Une y verifica el resultado", "text": "Haz clic en Unir PDF, descarga el resultado, y revisa cada página para confirmar que el orden sea correcto antes de enviarlo." }
   ]
@@ -104,7 +104,7 @@ export default function UnirPDFsEnOrdenPage() {
               <div className="space-y-4">
                 {[
                   { title: "Renombra tus archivos con prefijos numéricos", desc: "Antes de subir, renombra cada archivo con un prefijo numérico (01-, 02-, 03-). Esto asegura que se ordenen correctamente sin importar cómo la herramienta los organice inicialmente." },
-                  { title: "Sube y reorganiza en OmnisPDF", desc: "Sube todos los archivos a la herramienta Unir PDF. Usa arrastrar y soltar para verificar el orden — el primer archivo en la lista aparecerá primero en el documento unido. Mueve cualquier archivo fuera de lugar a la posición correcta." },
+                  { title: "Sube y reorganiza en PDF.it", desc: "Sube todos los archivos a la herramienta Unir PDF. Usa arrastrar y soltar para verificar el orden — el primer archivo en la lista aparecerá primero en el documento unido. Mueve cualquier archivo fuera de lugar a la posición correcta." },
                   { title: "Une, descarga y verifica", desc: "Haz clic en Unir PDF, descarga el resultado, y revisa cada página para confirmar que todo está en el orden correcto. Esta verificación final toma 30 segundos y previene errores de envío." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -183,12 +183,12 @@ export default function UnirPDFsEnOrdenPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo uno PDFs en un orden específico?", a: "Sube todos tus PDFs a la herramienta Unir de OmnisPDF, luego arrastra y suelta los archivos en el orden exacto que deseas. El primer archivo en la lista aparecerá primero en el documento unido. Haz clic en Unir cuando el orden sea correcto." },
+                { q: "¿Cómo uno PDFs en un orden específico?", a: "Sube todos tus PDFs a la herramienta Unir de PDF.it, luego arrastra y suelta los archivos en el orden exacto que deseas. El primer archivo en la lista aparecerá primero en el documento unido. Haz clic en Unir cuando el orden sea correcto." },
                 { q: "¿Por qué mi PDF unido salió en el orden incorrecto?", a: "La mayoría de las herramientas de unión procesan archivos en el orden en que fueron subidos o alfabéticamente por nombre de archivo. Si subiste archivos en un orden aleatorio sin reorganizarlos, las páginas pueden estar fuera de secuencia. Siempre verifica el orden de los archivos antes de hacer clic en Unir." },
-                { q: "¿Puedo reorganizar páginas después de unir?", a: "Sí. Si notas que el orden es incorrecto después de unir, usa la herramienta Dividir PDF de OmnisPDF para extraer páginas individuales, luego únelas nuevamente en el orden correcto." },
+                { q: "¿Puedo reorganizar páginas después de unir?", a: "Sí. Si notas que el orden es incorrecto después de unir, usa la herramienta Dividir PDF de PDF.it para extraer páginas individuales, luego únelas nuevamente en el orden correcto." },
                 { q: "¿Cómo debo nombrar mis archivos para ordenarlos fácilmente?", a: "Usa un prefijo numérico como 01-, 02-, 03- al inicio de cada nombre de archivo. Por ejemplo: '01-carta-presentacion.pdf', '02-curriculum.pdf', '03-referencias.pdf'. Esto asegura que los archivos se ordenen correctamente en cualquier administrador de archivos." },
-                { q: "¿OmnisPDF me permite previsualizar antes de unir?", a: "Sí. Puedes ver la lista de archivos subidos y su orden antes de hacer clic en Unir. Arrastra y suelta para reorganizarlos hasta que el orden sea exactamente correcto, luego procede con la unión." },
-                { q: "¿Puedo unir PDFs en orden desde mi teléfono?", a: "Sí. OmnisPDF funciona en navegadores móviles. Sube tus archivos, reorganízalos arrastrando al orden correcto, y únelos — todo desde el navegador de tu teléfono sin instalar ninguna app." },
+                { q: "¿PDF.it me permite previsualizar antes de unir?", a: "Sí. Puedes ver la lista de archivos subidos y su orden antes de hacer clic en Unir. Arrastra y suelta para reorganizarlos hasta que el orden sea exactamente correcto, luego procede con la unión." },
+                { q: "¿Puedo unir PDFs en orden desde mi teléfono?", a: "Sí. PDF.it funciona en navegadores móviles. Sube tus archivos, reorganízalos arrastrando al orden correcto, y únelos — todo desde el navegador de tu teléfono sin instalar ninguna app." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

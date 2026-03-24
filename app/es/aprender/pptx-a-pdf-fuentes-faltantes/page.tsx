@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Type, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "PPTX a PDF fuentes faltantes? Soluciona incrustacion y sustituciones | OmnisPDF",
+  title: "PPTX a PDF fuentes faltantes? Soluciona incrustacion y sustituciones | PDF.it",
   description: "Soluciona fuentes faltantes al convertir PowerPoint a PDF. Aprende por que se sustituyen las fuentes, como incrustar fuentes en PPTX y cuales fuentes seguras siempre se convierten correctamente.",
   keywords: "pptx a pdf fuentes faltantes, powerpoint a pdf problemas fuentes, incrustar fuentes powerpoint, sustitucion fuentes pdf, pptx fuentes no aparecen",
 }
@@ -21,7 +21,7 @@ const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainE
 
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como solucionar fuentes faltantes al convertir PPTX a PDF", "description": "Previene la sustitucion de fuentes y obtiene una salida PDF perfecta desde tus presentaciones PowerPoint.", "step": [
   { "@type": "HowToStep", "name": "Incrusta fuentes en tu archivo PowerPoint", "text": "Abre tu PPTX en PowerPoint. Ve a Archivo > Opciones > Guardar. Marca 'Incrustar fuentes en el archivo' y selecciona 'Incrustar todos los caracteres.' Guarda el archivo." },
-  { "@type": "HowToStep", "name": "Convierte a PDF", "text": "Sube tu PPTX (con fuentes incrustadas) a la herramienta PowerPoint a PDF de OmnisPDF y haz clic en Convertir. Las fuentes incrustadas aseguran un renderizado correcto." },
+  { "@type": "HowToStep", "name": "Convierte a PDF", "text": "Sube tu PPTX (con fuentes incrustadas) a la herramienta PowerPoint a PDF de PDF.it y haz clic en Convertir. Las fuentes incrustadas aseguran un renderizado correcto." },
   { "@type": "HowToStep", "name": "Verifica la salida", "text": "Abre el PDF y comparalo con tu PowerPoint original. Revisa titulos, texto del cuerpo y fuentes decorativas. Si una fuente sigue viendose mal, puede tener restricciones de licencia — cambia a una alternativa segura y reconvierte." }
 ] }
 
@@ -50,7 +50,7 @@ export default function PptxAPdfFuentesFaltantesPage() {
             <ul className="space-y-3 text-slate-700">
               <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Fuentes personalizadas no incrustadas.</strong> Fuentes decorativas, de marca o compradas solo estan en tu maquina. Sin incrustar, no viajan con el archivo.</span></li>
               <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Fuentes especificas del sistema.</strong> Algunas fuentes solo existen en Windows (ej. Segoe UI) o solo en Mac (ej. San Francisco). Conversiones multiplataforma pueden provocar sustituciones.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Herramientas de conversion en linea.</strong> Cuando subes un PPTX a un convertidor en linea (incluyendo OmnisPDF), el servidor puede no tener tus fuentes personalizadas. Incrustar lo soluciona.</span></li>
+              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Herramientas de conversion en linea.</strong> Cuando subes un PPTX a un convertidor en linea (incluyendo PDF.it), el servidor puede no tener tus fuentes personalizadas. Incrustar lo soluciona.</span></li>
               <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Restricciones de licencia de fuentes.</strong> Algunas fuentes comerciales bloquean la incrustacion debido a sus terminos de licencia. PowerPoint no las incluira aunque marques la opcion de incrustar.</span></li>
             </ul>
           </section>
@@ -61,7 +61,7 @@ export default function PptxAPdfFuentesFaltantesPage() {
               {[
                 { title: "Abre tu presentacion en PowerPoint", desc: "Abre el archivo PPTX en la computadora donde se ve correcto (donde todas las fuentes estan instaladas y se muestran correctamente)." },
                 { title: "Activa la incrustacion de fuentes", desc: "Ve a Archivo > Opciones > Guardar. Marca 'Incrustar fuentes en el archivo.' Selecciona 'Incrustar todos los caracteres (mejor para edicion por otras personas)' para incrustacion completa. Haz clic en Aceptar." },
-                { title: "Guarda y convierte", desc: "Guarda el archivo. El PPTX ahora sera mas grande (los datos de fuente estan incluidos). Subelo a la herramienta PowerPoint a PDF de OmnisPDF — las fuentes incrustadas se renderizaran correctamente durante la conversion." },
+                { title: "Guarda y convierte", desc: "Guarda el archivo. El PPTX ahora sera mas grande (los datos de fuente estan incluidos). Subelo a la herramienta PowerPoint a PDF de PDF.it — las fuentes incrustadas se renderizaran correctamente durante la conversion." },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
                   <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>

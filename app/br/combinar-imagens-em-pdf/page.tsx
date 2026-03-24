@@ -6,9 +6,9 @@ import { Merge, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Combinar Imagens em PDF — Converta e Una Fotos em Um PDF | OmnisPDF",
+  title: "Combinar Imagens em PDF — Converta e Una Fotos em Um PDF | PDF.it",
   description:
-    "Combine imagens JPG e PNG em um unico arquivo PDF com OmnisPDF. Perfeito para criar albuns, portfolios e documentos a partir de fotos — rapido, gratis e online.",
+    "Combine imagens JPG e PNG em um unico arquivo PDF com PDF.it. Perfeito para criar albuns, portfolios e documentos a partir de fotos — rapido, gratis e online.",
   alternates: {
     languages: {
       en: "/combine-images-into-pdf",
@@ -25,12 +25,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Quais formatos de imagem posso combinar em PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "O OmnisPDF aceita imagens JPG, JPEG e PNG, alem de arquivos PDF. Voce pode misturar imagens e PDFs em um unico documento." }
+      "acceptedAnswer": { "@type": "Answer", "text": "O PDF.it aceita imagens JPG, JPEG e PNG, alem de arquivos PDF. Voce pode misturar imagens e PDFs em um unico documento." }
     },
     {
       "@type": "Question",
       "name": "As imagens perdem qualidade ao serem convertidas para PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Nao. O OmnisPDF insere as imagens no PDF mantendo a resolucao original. Suas fotos ficam com a mesma qualidade no documento final." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Nao. O PDF.it insere as imagens no PDF mantendo a resolucao original. Suas fotos ficam com a mesma qualidade no documento final." }
     },
     {
       "@type": "Question",
@@ -45,12 +45,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso combinar imagens em PDF no celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em navegadores moveis. Tire fotos com seu celular e combine-as em um PDF diretamente — perfeito para digitalizar documentos rapidamente." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em navegadores moveis. Tire fotos com seu celular e combine-as em um PDF diretamente — perfeito para digitalizar documentos rapidamente." }
     },
     {
       "@type": "Question",
-      "name": "E seguro enviar minhas fotos para o OmnisPDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF usa conexoes criptografadas e exclui todas as imagens enviadas apos sua sessao. Suas fotos nunca sao armazenadas permanentemente." }
+      "name": "E seguro enviar minhas fotos para o PDF.it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it usa conexoes criptografadas e exclui todas as imagens enviadas apos sua sessao. Suas fotos nunca sao armazenadas permanentemente." }
     }
   ]
 }
@@ -98,7 +98,7 @@ export default function CombinarImagensEmPdfPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Precisa transformar varias fotos em um documento PDF? O OmnisPDF converte e combina imagens JPG, JPEG e PNG em um unico PDF organizado. Ideal para portfolios visuais, documentacao fotografica, comprovantes e muito mais.
+              Precisa transformar varias fotos em um documento PDF? O PDF.it converte e combina imagens JPG, JPEG e PNG em um unico PDF organizado. Ideal para portfolios visuais, documentacao fotografica, comprovantes e muito mais.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Aceita imagens JPG, JPEG, PNG e PDFs misturados</li>
@@ -140,7 +140,7 @@ export default function CombinarImagensEmPdfPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Combinar Imagens em PDF</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste suas imagens (JPG, PNG) ou PDFs para o OmnisPDF.",
+                "Envie ou arraste suas imagens (JPG, PNG) ou PDFs para o PDF.it.",
                 "Organize as imagens na ordem desejada.",
                 "Clique em Combinar e baixe seu PDF com todas as imagens.",
               ].map((step, i) => (
@@ -187,12 +187,12 @@ export default function CombinarImagensEmPdfPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Quais formatos de imagem posso combinar em PDF?", a: "O OmnisPDF aceita imagens JPG, JPEG e PNG, alem de arquivos PDF. Voce pode misturar imagens e PDFs em um unico documento." },
-                { q: "As imagens perdem qualidade ao serem convertidas para PDF?", a: "Nao. O OmnisPDF insere as imagens no PDF mantendo a resolucao original. Suas fotos ficam com a mesma qualidade no documento final." },
+                { q: "Quais formatos de imagem posso combinar em PDF?", a: "O PDF.it aceita imagens JPG, JPEG e PNG, alem de arquivos PDF. Voce pode misturar imagens e PDFs em um unico documento." },
+                { q: "As imagens perdem qualidade ao serem convertidas para PDF?", a: "Nao. O PDF.it insere as imagens no PDF mantendo a resolucao original. Suas fotos ficam com a mesma qualidade no documento final." },
                 { q: "Posso escolher a ordem das imagens no PDF?", a: "Sim. Apos enviar suas imagens, voce pode arrastar e soltar para organiza-las na ordem desejada antes de gerar o PDF." },
                 { q: "Quantas imagens posso combinar em um PDF?", a: "Usuarios gratuitos podem enviar varias imagens de ate 25MB no total. Usuarios Pro podem processar imagens de ate 200MB para criar PDFs maiores." },
-                { q: "Posso combinar imagens em PDF no celular?", a: "Sim. O OmnisPDF funciona em navegadores moveis. Tire fotos com seu celular e combine-as em um PDF diretamente — perfeito para digitalizar documentos rapidamente." },
-                { q: "E seguro enviar minhas fotos para o OmnisPDF?", a: "Sim. O OmnisPDF usa conexoes criptografadas e exclui todas as imagens enviadas apos sua sessao. Suas fotos nunca sao armazenadas permanentemente." },
+                { q: "Posso combinar imagens em PDF no celular?", a: "Sim. O PDF.it funciona em navegadores moveis. Tire fotos com seu celular e combine-as em um PDF diretamente — perfeito para digitalizar documentos rapidamente." },
+                { q: "E seguro enviar minhas fotos para o PDF.it?", a: "Sim. O PDF.it usa conexoes criptografadas e exclui todas as imagens enviadas apos sua sessao. Suas fotos nunca sao armazenadas permanentemente." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

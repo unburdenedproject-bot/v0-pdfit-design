@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Ro
 import Link from "next/link"
 
 export const metadata = {
-  title: "Compress PDF for Attachment — Shrink PDFs for Sending | OmnisPDF",
+  title: "Compress PDF for Attachment — Shrink PDFs for Sending | PDF.it",
   description:
     "Compress your PDF for attaching to emails, support tickets, forms, and messages. Recommended compression keeps quality high while reducing file size — free and browser-based.",
 }
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I compress a PDF for an attachment?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF and click Compress. Recommended compression reduces the file size while keeping text and images looking good, so your attachment uploads quickly and is easy to open." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it and click Compress. Recommended compression reduces the file size while keeping text and images looking good, so your attachment uploads quickly and is easy to open." }
     },
     {
       "@type": "Question",
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I compress a PDF attachment on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in any mobile browser. Upload your PDF, compress it, and attach the smaller file — all from your iPhone or Android device without installing an app." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in any mobile browser. Upload your PDF, compress it, and attach the smaller file — all from your iPhone or Android device without installing an app." }
     },
     {
       "@type": "Question",
@@ -144,7 +144,7 @@ export default function CompressPDFForAttachmentPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Compress a PDF for Attachments</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PDF into OmnisPDF.",
+                "Upload or drag and drop your PDF into PDF.it.",
                 "Click Compress PDF — recommended compression is applied to reduce size while preserving quality.",
                 "Download your smaller PDF and attach it. If still too large, try splitting the file first, then compress each part.",
               ].map((step, i) => (
@@ -198,11 +198,11 @@ export default function CompressPDFForAttachmentPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I compress a PDF for an attachment?", a: "Upload your PDF to OmnisPDF and click Compress. Recommended compression reduces the file size while keeping text and images looking good, so your attachment uploads quickly and is easy to open." },
+                { q: "How do I compress a PDF for an attachment?", a: "Upload your PDF to PDF.it and click Compress. Recommended compression reduces the file size while keeping text and images looking good, so your attachment uploads quickly and is easy to open." },
                 { q: "Why do my PDF attachments get rejected?", a: "Many systems have file size limits for attachments — email providers, support ticket platforms, CRMs, and project management tools all enforce caps. Compressing your PDF reduces its size so it fits within these limits." },
                 { q: "Will the compressed PDF still look professional?", a: "Yes. Recommended compression preserves visual quality. Text stays sharp and clear, and images retain good detail. The document will look professional when the recipient opens it." },
                 { q: "What file size limits do common platforms have?", a: "Gmail allows 25MB attachments, Outlook allows 20MB, Zendesk and Freshdesk typically cap at 20-50MB, and many CRMs have limits between 10-25MB. Compressing your PDF helps ensure it fits within any of these limits." },
-                { q: "Can I compress a PDF attachment on my phone?", a: "Yes. OmnisPDF works in any mobile browser. Upload your PDF, compress it, and attach the smaller file — all from your iPhone or Android device without installing an app." },
+                { q: "Can I compress a PDF attachment on my phone?", a: "Yes. PDF.it works in any mobile browser. Upload your PDF, compress it, and attach the smaller file — all from your iPhone or Android device without installing an app." },
                 { q: "What if my PDF is still too large after compression?", a: "Try splitting the PDF into smaller parts with our Split PDF tool, then compress and attach each part separately. You can also flatten the PDF or remove unnecessary pages before compressing." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

@@ -6,9 +6,9 @@ import { TableExtractionInterface } from "@/components/table-extraction-interfac
 import { Table2, Zap, Shield, FileText, Lock, Layers, Merge, Repeat, ArrowLeftRight, PenTool } from "lucide-react"
 
 export const metadata = {
-  title: "Extraer Tablas de PDF a Excel Online | OmnisPDF",
+  title: "Extraer Tablas de PDF a Excel Online | PDF.it",
   description:
-    "Extrae tablas de documentos PDF y conviertelas en hojas de calculo Excel. Detecta y exporta datos tabulares automaticamente — rapido y preciso. Funcion Business de OmnisPDF.",
+    "Extrae tablas de documentos PDF y conviertelas en hojas de calculo Excel. Detecta y exporta datos tabulares automaticamente — rapido y preciso. Funcion Business de PDF.it.",
 }
 
 const faqSchema = {
@@ -68,7 +68,7 @@ export default function TableExtractionPageEs() {
                 Extrae tablas de documentos PDF y conviertelas en hojas de calculo Excel editables. Detecta automaticamente datos tabulares en reportes, facturas, estados financieros y documentos cientificos.
               </p>
               <p className="text-lg text-slate-400 mb-8">
-                Deja de copiar datos manualmente — deja que OmnisPDF extraiga tus tablas con precision.
+                Deja de copiar datos manualmente — deja que PDF.it extraiga tus tablas con precision.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Table2 className="h-4 w-4 text-indigo-400" /><span>Deteccion Automatica</span></div>
@@ -89,7 +89,7 @@ export default function TableExtractionPageEs() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {[
                 { step: "1", title: "Sube tu PDF", desc: "Arrastra y suelta tu PDF que contiene tablas en la zona de carga." },
-                { step: "2", title: "Deteccion Automatica", desc: "OmnisPDF detecta automaticamente todas las tablas en el documento usando reconocimiento con inteligencia artificial." },
+                { step: "2", title: "Deteccion Automatica", desc: "PDF.it detecta automaticamente todas las tablas en el documento usando reconocimiento con inteligencia artificial." },
                 { step: "3", title: "Descarga el Excel", desc: "Descarga las tablas extraidas como archivo Excel (.xlsx) listo para edicion y analisis." },
               ].map((item) => (
                 <div key={item.step} className="bg-white border border-gray-200 rounded-xl p-6 text-center">

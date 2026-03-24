@@ -6,9 +6,9 @@ import { Unlock, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Remove Password from PDF Online — Unlock Protected PDFs | OmnisPDF",
+  title: "Remove Password from PDF Online — Unlock Protected PDFs | PDF.it",
   description:
-    "Remove password protection from a PDF with OmnisPDF. Enter the password, unlock your file, and download an unprotected PDF — fast, free, and browser-based.",
+    "Remove password protection from a PDF with PDF.it. Enter the password, unlock your file, and download an unprotected PDF — fast, free, and browser-based.",
 }
 
 const faqSchema = {
@@ -18,12 +18,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is it legal to remove a password from a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes, as long as you are the owner of the document or have authorization to access it. OmnisPDF requires you to enter the correct password before removing protection — it does not bypass or crack passwords." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, as long as you are the owner of the document or have authorization to access it. PDF.it requires you to enter the correct password before removing protection — it does not bypass or crack passwords." }
     },
     {
       "@type": "Question",
       "name": "Do I need to know the password to remove it?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF requires you to enter the current password to unlock the PDF. It cannot remove passwords you don't know — this ensures your use is authorized." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it requires you to enter the current password to unlock the PDF. It cannot remove passwords you don't know — this ensures your use is authorized." }
     },
     {
       "@type": "Question",
@@ -33,17 +33,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I remove passwords from multiple PDFs at once?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF Pro supports batch processing, so you can unlock multiple password-protected PDFs in one session. Free users can process one file at a time." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it Pro supports batch processing, so you can unlock multiple password-protected PDFs in one session. Free users can process one file at a time." }
     },
     {
       "@type": "Question",
       "name": "Can I remove a PDF password on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in mobile browsers on iPhone and Android — upload your PDF, enter the password, and download the unlocked file." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in mobile browsers on iPhone and Android — upload your PDF, enter the password, and download the unlocked file." }
     },
     {
       "@type": "Question",
       "name": "What happens to my file after I remove the password?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Your files are processed securely and deleted from OmnisPDF servers after your session ends. We never store or share your documents." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Your files are processed securely and deleted from PDF.it servers after your session ends. We never store or share your documents." }
     }
   ]
 }
@@ -67,7 +67,7 @@ export default function RemovePasswordFromPdfPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Remove Password from PDF</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Enter the password you already know, and OmnisPDF will remove the protection so you can freely share, edit, and print your PDF without restrictions.
+                Enter the password you already know, and PDF.it will remove the protection so you can freely share, edit, and print your PDF without restrictions.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Instant Unlock</span></div>
@@ -85,7 +85,7 @@ export default function RemovePasswordFromPdfPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Password-protected PDFs are great for security, but they can become a hassle when you need to share, print, or edit the file freely. OmnisPDF lets you remove the password from any PDF — as long as you know the current password — so you can work with your document without restrictions.
+              Password-protected PDFs are great for security, but they can become a hassle when you need to share, print, or edit the file freely. PDF.it lets you remove the password from any PDF — as long as you know the current password — so you can work with your document without restrictions.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Remove password protection in seconds</li>
@@ -127,7 +127,7 @@ export default function RemovePasswordFromPdfPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Remove a Password from a PDF</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your password-protected PDF into OmnisPDF.",
+                "Upload or drag and drop your password-protected PDF into PDF.it.",
                 "Enter the current password when prompted.",
                 "Click Unlock PDF — the password protection is removed instantly.",
                 "Download your unprotected PDF and use it freely.",
@@ -173,12 +173,12 @@ export default function RemovePasswordFromPdfPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "Is it legal to remove a password from a PDF?", a: "Yes, as long as you are the owner of the document or have authorization to access it. OmnisPDF requires you to enter the correct password before removing protection — it does not bypass or crack passwords." },
-                { q: "Do I need to know the password to remove it?", a: "Yes. OmnisPDF requires you to enter the current password to unlock the PDF. It cannot remove passwords you don't know — this ensures your use is authorized." },
+                { q: "Is it legal to remove a password from a PDF?", a: "Yes, as long as you are the owner of the document or have authorization to access it. PDF.it requires you to enter the correct password before removing protection — it does not bypass or crack passwords." },
+                { q: "Do I need to know the password to remove it?", a: "Yes. PDF.it requires you to enter the current password to unlock the PDF. It cannot remove passwords you don't know — this ensures your use is authorized." },
                 { q: "Will removing the password affect the quality of my PDF?", a: "No. Removing password protection does not alter the content, formatting, or quality of your PDF. The file remains identical — only the password restriction is removed." },
-                { q: "Can I remove passwords from multiple PDFs at once?", a: "Yes. OmnisPDF Pro supports batch processing, so you can unlock multiple password-protected PDFs in one session. Free users can process one file at a time." },
-                { q: "Can I remove a PDF password on my phone?", a: "Yes. OmnisPDF works in mobile browsers on iPhone and Android — upload your PDF, enter the password, and download the unlocked file." },
-                { q: "What happens to my file after I remove the password?", a: "Your files are processed securely and deleted from OmnisPDF servers after your session ends. We never store or share your documents." },
+                { q: "Can I remove passwords from multiple PDFs at once?", a: "Yes. PDF.it Pro supports batch processing, so you can unlock multiple password-protected PDFs in one session. Free users can process one file at a time." },
+                { q: "Can I remove a PDF password on my phone?", a: "Yes. PDF.it works in mobile browsers on iPhone and Android — upload your PDF, enter the password, and download the unlocked file." },
+                { q: "What happens to my file after I remove the password?", a: "Your files are processed securely and deleted from PDF.it servers after your session ends. We never store or share your documents." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

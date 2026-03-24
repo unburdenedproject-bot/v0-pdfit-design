@@ -5,9 +5,9 @@ import Link from "next/link"
 import { QrCode, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Criar Codigo QR Online (Gerador Gratuito) | OmnisPDF",
+  title: "Como Criar Codigo QR Online (Gerador Gratuito) | PDF.it",
   description:
-    "Aprenda como criar um codigo QR online para URLs, texto, WiFi e informacoes de contato. Guia passo a passo para gerar codigos QR instantaneamente com o OmnisPDF.",
+    "Aprenda como criar um codigo QR online para URLs, texto, WiFi e informacoes de contato. Guia passo a passo para gerar codigos QR instantaneamente com o PDF.it.",
   keywords: "como criar codigo qr, gerar codigo qr, codigo qr online, gerador codigo qr gratis",
 }
 
@@ -15,10 +15,10 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Como criar um codigo QR gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Acesse o gerador de Codigo QR do OmnisPDF, selecione o tipo (URL, texto, WiFi, contato), insira as informacoes e baixe a imagem do QR code. E gratuito e sem necessidade de cadastro." } },
-    { "@type": "Question", "name": "Preciso pagar para gerar um codigo QR?", "acceptedAnswer": { "@type": "Answer", "text": "O gerador de Codigo QR do OmnisPDF e uma ferramenta Pro. Com o plano Pro ($7.99/mes) voce pode gerar codigos QR ilimitados com todas as opcoes de personalizacao." } },
+    { "@type": "Question", "name": "Como criar um codigo QR gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Acesse o gerador de Codigo QR do PDF.it, selecione o tipo (URL, texto, WiFi, contato), insira as informacoes e baixe a imagem do QR code. E gratuito e sem necessidade de cadastro." } },
+    { "@type": "Question", "name": "Preciso pagar para gerar um codigo QR?", "acceptedAnswer": { "@type": "Answer", "text": "O gerador de Codigo QR do PDF.it e uma ferramenta Pro. Com o plano Pro ($7.99/mes) voce pode gerar codigos QR ilimitados com todas as opcoes de personalizacao." } },
     { "@type": "Question", "name": "O codigo QR expira?", "acceptedAnswer": { "@type": "Answer", "text": "Um codigo QR estatico nunca expira — ele simplesmente codifica a informacao diretamente na imagem. Enquanto a imagem existir, o QR funciona." } },
-    { "@type": "Question", "name": "Posso personalizar as cores do QR?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. No OmnisPDF voce pode alterar a cor do codigo e do fundo. Mantenha bom contraste para garantir que scanners consigam ler o codigo." } },
+    { "@type": "Question", "name": "Posso personalizar as cores do QR?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. No PDF.it voce pode alterar a cor do codigo e do fundo. Mantenha bom contraste para garantir que scanners consigam ler o codigo." } },
     { "@type": "Question", "name": "Qual formato baixar?", "acceptedAnswer": { "@type": "Answer", "text": "PNG e ideal para uso digital (sites, redes sociais). SVG e melhor para impressao em alta qualidade pois nao perde resolucao ao redimensionar." } },
   ]
 }
@@ -27,7 +27,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Criar um Codigo QR",
-  "description": "Gere um codigo QR em 3 passos simples usando o gerador do OmnisPDF.",
+  "description": "Gere um codigo QR em 3 passos simples usando o gerador do PDF.it.",
   "step": [
     { "@type": "HowToStep", "name": "Selecione o tipo de QR", "text": "Escolha entre URL, texto, WiFi, contato (vCard) ou outro tipo de conteudo para o seu codigo QR." },
     { "@type": "HowToStep", "name": "Insira as informacoes", "text": "Digite a URL, texto, credenciais WiFi ou dados de contato que deseja codificar no QR." },
@@ -56,7 +56,7 @@ export default function ComoCriarCodigoQRPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><QrCode className="h-5 w-5 text-white" /></div>
-              <p className="text-slate-700 font-semibold">Crie seu codigo QR agora com o OmnisPDF.</p>
+              <p className="text-slate-700 font-semibold">Crie seu codigo QR agora com o PDF.it.</p>
             </div>
             <Link href="/br/codigo-qr" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Gerador QR <ArrowRight className="h-4 w-4" /></Link>
           </div>
@@ -111,7 +111,7 @@ export default function ComoCriarCodigoQRPage() {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Gerador de QR do OmnisPDF</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Gerador de QR do PDF.it</h2>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; Suporte a URL, texto, WiFi, contato (vCard), e-mail e telefone.</li>
                 <li>&#10003; Personalizacao de cores do codigo e fundo.</li>
@@ -156,7 +156,7 @@ export default function ComoCriarCodigoQRPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como criar um codigo QR gratis?", a: "Acesse o gerador de Codigo QR do OmnisPDF, selecione o tipo, insira as informacoes e baixe a imagem. Disponivel no plano Pro." },
+                { q: "Como criar um codigo QR gratis?", a: "Acesse o gerador de Codigo QR do PDF.it, selecione o tipo, insira as informacoes e baixe a imagem. Disponivel no plano Pro." },
                 { q: "O codigo QR expira?", a: "Um codigo QR estatico nunca expira. Ele codifica a informacao diretamente na imagem. Enquanto a imagem existir, o QR funciona." },
                 { q: "Posso personalizar as cores?", a: "Sim. Voce pode alterar a cor do codigo e do fundo. Mantenha bom contraste para garantir a leitura." },
                 { q: "PNG ou SVG?", a: "PNG para uso digital. SVG para impressao em alta qualidade, pois nao perde resolucao ao redimensionar." },

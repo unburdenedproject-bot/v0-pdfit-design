@@ -6,9 +6,9 @@ import { Merge, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Merge PDF Files Online — Combine PDFs Into One | OmnisPDF",
+  title: "Merge PDF Files Online — Combine PDFs Into One | PDF.it",
   description:
-    "Merge PDF files into one document with OmnisPDF. Combine PDFs online, reorder pages, and download a single PDF—fast and simple.",
+    "Merge PDF files into one document with PDF.it. Combine PDFs online, reorder pages, and download a single PDF—fast and simple.",
 }
 
 const faqSchema = {
@@ -18,17 +18,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I merge multiple PDF files into one?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDFs to OmnisPDF, reorder them as needed, then click Merge PDFs to download one combined file." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDFs to PDF.it, reorder them as needed, then click Merge PDFs to download one combined file." }
     },
     {
       "@type": "Question",
       "name": "Can I reorder PDFs before merging?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Upload your files and sort them into the correct order — OmnisPDF merges them in that sequence." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Upload your files and sort them into the correct order — PDF.it merges them in that sequence." }
     },
     {
       "@type": "Question",
       "name": "Can I merge PDFs on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in mobile browsers — upload, merge, and download on iPhone or Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in mobile browsers — upload, merge, and download on iPhone or Android." }
     },
     {
       "@type": "Question",
@@ -67,7 +67,7 @@ export default function MergePDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Merge PDF Files Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Combine multiple PDFs into a single file with OmnisPDF. Upload, reorder, merge, and download — quick, clean, and browser-based.
+                Combine multiple PDFs into a single file with PDF.it. Upload, reorder, merge, and download — quick, clean, and browser-based.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Unlimited Files</span></div>
@@ -91,7 +91,7 @@ export default function MergePDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use OmnisPDF's Merge PDF tool to combine PDFs into one file in seconds. Upload multiple PDF documents, arrange them in the right order, and download a single merged PDF — perfect for submissions, contracts, invoices, and reports.
+              Use PDF.it's Merge PDF tool to combine PDFs into one file in seconds. Upload multiple PDF documents, arrange them in the right order, and download a single merged PDF — perfect for submissions, contracts, invoices, and reports.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Merge multiple PDF files into one PDF</li>
@@ -115,7 +115,7 @@ export default function MergePDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Reorder PDF Files Before Merging</h2>
               <p className="text-slate-600">
-                Upload your files and sort them into the exact order you want. OmnisPDF merges them in the sequence you choose.
+                Upload your files and sort them into the exact order you want. PDF.it merges them in the sequence you choose.
               </p>
             </div>
             <div>
@@ -133,7 +133,7 @@ export default function MergePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Merge PDFs</h2>
             <div className="space-y-4">
               {[
-                "Upload two or more PDF files to OmnisPDF.",
+                "Upload two or more PDF files to PDF.it.",
                 "Drag to reorder them in the correct sequence.",
                 "Click Merge PDFs.",
                 "Download the combined PDF.",
@@ -181,15 +181,15 @@ export default function MergePDFPage() {
               {[
                 {
                   q: "How do I merge multiple PDF files into one?",
-                  a: "Upload your PDFs to OmnisPDF, reorder them as needed, then click Merge PDFs to download one combined file.",
+                  a: "Upload your PDFs to PDF.it, reorder them as needed, then click Merge PDFs to download one combined file.",
                 },
                 {
                   q: "Can I reorder PDFs before merging?",
-                  a: "Yes. Upload your files and sort them into the correct order — OmnisPDF merges them in that sequence.",
+                  a: "Yes. Upload your files and sort them into the correct order — PDF.it merges them in that sequence.",
                 },
                 {
                   q: "Can I merge PDFs on my phone?",
-                  a: "Yes. OmnisPDF works in mobile browsers — upload, merge, and download on iPhone or Android.",
+                  a: "Yes. PDF.it works in mobile browsers — upload, merge, and download on iPhone or Android.",
                 },
                 {
                   q: "Can I merge password-protected PDFs?",

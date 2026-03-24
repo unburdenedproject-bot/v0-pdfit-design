@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Lock, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Proteger un PDF con Contrasena Online (Paso a Paso) | OmnisPDF",
+  title: "Como Proteger un PDF con Contrasena Online (Paso a Paso) | PDF.it",
   description:
     "Aprende como agregar proteccion con contrasena a cualquier PDF en linea. Guia paso a paso que cubre contrasenas de apertura, contrasenas de permisos y niveles de encriptacion — gratis, sin software.",
   keywords: "proteger pdf con contrasena, agregar contrasena a pdf, bloquear pdf con contrasena, asegurar pdf online",
@@ -15,12 +15,12 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Como protejo un PDF con contrasena gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Proteger PDF de OmnisPDF, ingresa una contrasena, elige tu nivel de encriptacion y haz clic en Proteger. Descarga el archivo bloqueado — no se requiere registro para tus primeros 3 archivos." } },
+    { "@type": "Question", "name": "Como protejo un PDF con contrasena gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Proteger PDF de PDF.it, ingresa una contrasena, elige tu nivel de encriptacion y haz clic en Proteger. Descarga el archivo bloqueado — no se requiere registro para tus primeros 3 archivos." } },
     { "@type": "Question", "name": "Cual es la diferencia entre una contrasena de apertura y una contrasena de permisos?", "acceptedAnswer": { "@type": "Answer", "text": "Una contrasena de apertura (contrasena de usuario) impide que cualquiera abra el PDF sin la contrasena. Una contrasena de permisos (contrasena de propietario) permite que las personas abran el archivo pero restringe acciones como imprimir, copiar o editar." } },
-    { "@type": "Question", "name": "Puedo quitar la contrasena de un PDF protegido despues?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Si conoces la contrasena, puedes usar la herramienta Desbloquear PDF de OmnisPDF para quitar la contrasena y crear una copia sin proteccion del archivo." } },
+    { "@type": "Question", "name": "Puedo quitar la contrasena de un PDF protegido despues?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Si conoces la contrasena, puedes usar la herramienta Desbloquear PDF de PDF.it para quitar la contrasena y crear una copia sin proteccion del archivo." } },
     { "@type": "Question", "name": "Que nivel de encriptacion debo elegir?", "acceptedAnswer": { "@type": "Answer", "text": "Para la mayoria de propositos, la encriptacion AES de 128 bits es suficiente. Para documentos altamente sensibles como archivos legales o financieros, elige encriptacion AES de 256 bits para maxima seguridad." } },
     { "@type": "Question", "name": "Proteger un PDF con contrasena cambiara su contenido?", "acceptedAnswer": { "@type": "Answer", "text": "No. La proteccion con contrasena agrega una capa de encriptacion alrededor del archivo pero no altera el contenido, formato o diseno de tu PDF de ninguna manera." } },
-    { "@type": "Question", "name": "Puedo proteger un PDF con contrasena en mi telefono?", "acceptedAnswer": { "@type": "Answer", "text": "Si. OmnisPDF funciona en cualquier navegador movil. Sube tu PDF, establece una contrasena y descarga el archivo protegido directamente en tu telefono — no necesitas app." } }
+    { "@type": "Question", "name": "Puedo proteger un PDF con contrasena en mi telefono?", "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en cualquier navegador movil. Sube tu PDF, establece una contrasena y descarga el archivo protegido directamente en tu telefono — no necesitas app." } }
   ]
 }
 
@@ -28,9 +28,9 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Proteger un PDF con Contrasena Online",
-  "description": "Agrega proteccion con contrasena a cualquier PDF en 3 simples pasos usando OmnisPDF.",
+  "description": "Agrega proteccion con contrasena a cualquier PDF en 3 simples pasos usando PDF.it.",
   "step": [
-    { "@type": "HowToStep", "name": "Sube tu PDF", "text": "Ve a la herramienta Proteger PDF de OmnisPDF y sube el archivo que quieres proteger haciendo clic o arrastrandolo al area de carga." },
+    { "@type": "HowToStep", "name": "Sube tu PDF", "text": "Ve a la herramienta Proteger PDF de PDF.it y sube el archivo que quieres proteger haciendo clic o arrastrandolo al area de carga." },
     { "@type": "HowToStep", "name": "Establece tu contrasena y opciones", "text": "Ingresa una contrasena fuerte y elige tu nivel de encriptacion. Opcionalmente establece una contrasena de permisos para restringir la impresion, copia o edicion." },
     { "@type": "HowToStep", "name": "Descarga el PDF protegido", "text": "Haz clic en Proteger PDF y descarga tu archivo bloqueado con contrasena. Compartelo de forma segura — solo las personas con la contrasena podran abrirlo." }
   ]
@@ -105,7 +105,7 @@ export default function ComoProtegerPDFConContrasenaPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Usar Ambas Juntas</h3>
-                  <p className="text-slate-600">Para maxima seguridad, puedes establecer tanto una contrasena de apertura como una de permisos. El visor necesita la contrasena de apertura para acceder al archivo, y aun asi no puede imprimir ni copiar texto a menos que tambien tenga la contrasena de permisos. La herramienta <Link href="/es/proteger-pdf" className="text-orange-600 hover:underline">Proteger PDF</Link> de OmnisPDF soporta ambas opciones.</p>
+                  <p className="text-slate-600">Para maxima seguridad, puedes establecer tanto una contrasena de apertura como una de permisos. El visor necesita la contrasena de apertura para acceder al archivo, y aun asi no puede imprimir ni copiar texto a menos que tambien tenga la contrasena de permisos. La herramienta <Link href="/es/proteger-pdf" className="text-orange-600 hover:underline">Proteger PDF</Link> de PDF.it soporta ambas opciones.</p>
                 </div>
               </div>
             </section>
@@ -166,12 +166,12 @@ export default function ComoProtegerPDFConContrasenaPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como protejo un PDF con contrasena gratis?", a: "Sube tu PDF a la herramienta Proteger PDF de OmnisPDF, ingresa una contrasena, elige tu nivel de encriptacion y haz clic en Proteger. Descarga el archivo bloqueado — no se requiere registro para tus primeros 3 archivos." },
+                { q: "Como protejo un PDF con contrasena gratis?", a: "Sube tu PDF a la herramienta Proteger PDF de PDF.it, ingresa una contrasena, elige tu nivel de encriptacion y haz clic en Proteger. Descarga el archivo bloqueado — no se requiere registro para tus primeros 3 archivos." },
                 { q: "Cual es la diferencia entre una contrasena de apertura y una contrasena de permisos?", a: "Una contrasena de apertura (contrasena de usuario) impide que cualquiera abra el PDF sin la contrasena. Una contrasena de permisos (contrasena de propietario) permite que las personas abran el archivo pero restringe acciones como imprimir, copiar o editar." },
-                { q: "Puedo quitar la contrasena de un PDF protegido despues?", a: "Si. Si conoces la contrasena, puedes usar la herramienta Desbloquear PDF de OmnisPDF para quitar la contrasena y crear una copia sin proteccion del archivo." },
+                { q: "Puedo quitar la contrasena de un PDF protegido despues?", a: "Si. Si conoces la contrasena, puedes usar la herramienta Desbloquear PDF de PDF.it para quitar la contrasena y crear una copia sin proteccion del archivo." },
                 { q: "Que nivel de encriptacion debo elegir?", a: "Para la mayoria de propositos, la encriptacion AES de 128 bits es suficiente. Para documentos altamente sensibles como archivos legales o financieros, elige encriptacion AES de 256 bits para maxima seguridad." },
                 { q: "Proteger un PDF con contrasena cambiara su contenido?", a: "No. La proteccion con contrasena agrega una capa de encriptacion alrededor del archivo pero no altera el contenido, formato o diseno de tu PDF de ninguna manera." },
-                { q: "Puedo proteger un PDF con contrasena en mi telefono?", a: "Si. OmnisPDF funciona en cualquier navegador movil. Sube tu PDF, establece una contrasena y descarga el archivo protegido directamente en tu telefono — no necesitas app." },
+                { q: "Puedo proteger un PDF con contrasena en mi telefono?", a: "Si. PDF.it funciona en cualquier navegador movil. Sube tu PDF, establece una contrasena y descarga el archivo protegido directamente en tu telefono — no necesitas app." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

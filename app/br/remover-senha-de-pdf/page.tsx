@@ -6,15 +6,15 @@ import { KeyRound, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Remover Senha de PDF — Tire a Senha do seu PDF | OmnisPDF",
+  title: "Remover Senha de PDF — Tire a Senha do seu PDF | PDF.it",
   description:
-    "Remova a senha de arquivos PDF com o OmnisPDF. Desbloqueie PDFs protegidos por senha — rápido, no navegador, sem cadastro.",
+    "Remova a senha de arquivos PDF com o PDF.it. Desbloqueie PDFs protegidos por senha — rápido, no navegador, sem cadastro.",
   alternates: {
-    canonical: "https://omnispdf.com/br/remover-senha-de-pdf",
+    canonical: "https://pdf.it.com/br/remover-senha-de-pdf",
     languages: {
-      en: "https://omnispdf.com/remove-password-from-pdf",
-      es: "https://omnispdf.com/es/eliminar-contrasena-de-pdf",
-      pt: "https://omnispdf.com/br/remover-senha-de-pdf",
+      en: "https://pdf.it.com/remove-password-from-pdf",
+      es: "https://pdf.it.com/es/eliminar-contrasena-de-pdf",
+      pt: "https://pdf.it.com/br/remover-senha-de-pdf",
     },
   },
 }
@@ -26,7 +26,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como removo a senha de um PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF protegido para o OmnisPDF, insira a senha atual do documento e a ferramenta gerará um novo PDF sem proteção por senha." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF protegido para o PDF.it, insira a senha atual do documento e a ferramenta gerará um novo PDF sem proteção por senha." }
     },
     {
       "@type": "Question",
@@ -46,7 +46,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso remover a senha de um PDF pelo celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em navegadores móveis — envie seu PDF, insira a senha e baixe o arquivo desbloqueado de qualquer dispositivo." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em navegadores móveis — envie seu PDF, insira a senha e baixe o arquivo desbloqueado de qualquer dispositivo." }
     },
     {
       "@type": "Question",
@@ -75,7 +75,7 @@ export default function RemoverSenhaDePDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Remover Senha de PDF</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Remova a proteção por senha do seu PDF com o OmnisPDF. Desbloqueie documentos protegidos para acessá-los livremente — rápido, seguro e direto do navegador.
+                Remova a proteção por senha do seu PDF com o PDF.it. Desbloqueie documentos protegidos para acessá-los livremente — rápido, seguro e direto do navegador.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Remoção Instantânea</span></div>
@@ -99,7 +99,7 @@ export default function RemoverSenhaDePDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Precisa remover a senha de um PDF? A ferramenta do OmnisPDF permite tirar a proteção por senha de qualquer arquivo PDF em segundos, gerando um documento limpo que pode ser aberto sem senha. Ideal quando você não precisa mais da proteção ou quando quer compartilhar o documento livremente.
+              Precisa remover a senha de um PDF? A ferramenta do PDF.it permite tirar a proteção por senha de qualquer arquivo PDF em segundos, gerando um documento limpo que pode ser aberto sem senha. Ideal quando você não precisa mais da proteção ou quando quer compartilhar o documento livremente.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Remova a senha de qualquer PDF protegido</li>
@@ -141,7 +141,7 @@ export default function RemoverSenhaDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Remover a Senha de um PDF</h2>
             <div className="space-y-4">
               {[
-                "Envie seu PDF protegido por senha para o OmnisPDF.",
+                "Envie seu PDF protegido por senha para o PDF.it.",
                 "Insira a senha atual do documento.",
                 "Clique em Remover Senha e baixe o PDF desbloqueado.",
               ].map((step, i) => (
@@ -188,11 +188,11 @@ export default function RemoverSenhaDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como removo a senha de um PDF?", a: "Envie seu PDF protegido para o OmnisPDF, insira a senha atual do documento e a ferramenta gerará um novo PDF sem proteção por senha." },
+                { q: "Como removo a senha de um PDF?", a: "Envie seu PDF protegido para o PDF.it, insira a senha atual do documento e a ferramenta gerará um novo PDF sem proteção por senha." },
                 { q: "Preciso saber a senha atual para removê-la?", a: "Sim. Para remover a senha de abertura de um PDF, você precisa fornecer a senha correta. Não oferecemos remoção de senha sem autorização." },
                 { q: "O conteúdo do PDF é alterado ao remover a senha?", a: "Não. O conteúdo do PDF permanece exatamente o mesmo. A única diferença é que o arquivo resultante não exigirá mais uma senha para ser aberto." },
                 { q: "É seguro enviar meu PDF protegido?", a: "Sim. Todas as transferências são protegidas com SSL e seus arquivos são eliminados imediatamente após a sessão. Nunca armazenamos seus documentos." },
-                { q: "Posso remover a senha de um PDF pelo celular?", a: "Sim. O OmnisPDF funciona em navegadores móveis — envie seu PDF, insira a senha e baixe o arquivo desbloqueado de qualquer dispositivo." },
+                { q: "Posso remover a senha de um PDF pelo celular?", a: "Sim. O PDF.it funciona em navegadores móveis — envie seu PDF, insira a senha e baixe o arquivo desbloqueado de qualquer dispositivo." },
                 { q: "É grátis remover a senha de um PDF?", a: "Sim. Contas gratuitas têm 10 operações por dia. Contas Pro têm operações ilimitadas." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

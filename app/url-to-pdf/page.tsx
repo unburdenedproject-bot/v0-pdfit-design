@@ -6,9 +6,9 @@ import { UrlPdfInterface } from "@/components/url-pdf-interface"
 import { Globe, Zap, Shield, FileText, Merge, Scan, Lock, Type } from "lucide-react"
 
 export const metadata = {
-  title: "Convert URL to PDF Online — Save Any Webpage as PDF | OmnisPDF",
+  title: "Convert URL to PDF Online — Save Any Webpage as PDF | PDF.it",
   description:
-    "Convert any webpage to a high-quality PDF. Enter a URL and download a perfectly formatted PDF. Supports custom page size, orientation, and margins. OmnisPDF Pro feature.",
+    "Convert any webpage to a high-quality PDF. Enter a URL and download a perfectly formatted PDF. Supports custom page size, orientation, and margins. PDF.it Pro feature.",
 }
 
 const faqSchema = {
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I convert a URL to PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Paste the webpage URL into OmnisPDF, choose your page size, orientation, and margin settings, then click Convert. Your PDF will be ready to download in seconds." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Paste the webpage URL into PDF.it, choose your page size, orientation, and margin settings, then click Convert. Your PDF will be ready to download in seconds." }
     },
     {
       "@type": "Question",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Will the PDF keep the original formatting?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF captures the webpage layout, images, and text formatting as closely as possible. You can customize the page size, orientation, and margins to get the best result for your specific page." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it captures the webpage layout, images, and text formatting as closely as possible. You can customize the page size, orientation, and margins to get the best result for your specific page." }
     },
     {
       "@type": "Question",
@@ -85,7 +85,7 @@ export default function UrlToPdfPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-6 text-center">How It Works</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {[
-                { step: "1", title: "Enter URL", desc: "Paste the webpage address you want to convert. OmnisPDF fetches the page content, images, and layout automatically." },
+                { step: "1", title: "Enter URL", desc: "Paste the webpage address you want to convert. PDF.it fetches the page content, images, and layout automatically." },
                 { step: "2", title: "Choose Settings", desc: "Select your preferred page size (A4, Letter, Legal), orientation (portrait or landscape), and margin settings for the perfect layout." },
                 { step: "3", title: "Download PDF", desc: "Click Convert and your PDF is generated in seconds. Download the file and use it offline, share it, or archive it for later." },
               ].map((item) => (
@@ -155,9 +155,9 @@ export default function UrlToPdfPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I convert a URL to PDF?", a: "Paste the webpage URL into OmnisPDF, choose your page size, orientation, and margin settings, then click Convert. Your PDF will be ready to download in seconds." },
+                { q: "How do I convert a URL to PDF?", a: "Paste the webpage URL into PDF.it, choose your page size, orientation, and margin settings, then click Convert. Your PDF will be ready to download in seconds." },
                 { q: "Can I convert any website to PDF?", a: "You can convert most publicly accessible webpages to PDF. Pages that require login or have heavy JavaScript rendering may not convert perfectly. Static content pages, articles, and blog posts convert best." },
-                { q: "Will the PDF keep the original formatting?", a: "OmnisPDF captures the webpage layout, images, and text formatting as closely as possible. You can customize the page size, orientation, and margins to get the best result for your specific page." },
+                { q: "Will the PDF keep the original formatting?", a: "PDF.it captures the webpage layout, images, and text formatting as closely as possible. You can customize the page size, orientation, and margins to get the best result for your specific page." },
                 { q: "Is URL to PDF free?", a: "URL to PDF is a Pro feature available for $7.99/month. Pro accounts also include OCR, QR code generation, batch processing, and all other premium PDF tools." },
                 { q: "Can I save a webpage as PDF for offline reading?", a: "Yes. Converting a URL to PDF creates a permanent, offline copy of the webpage. You can read it anytime without an internet connection, share it as a file, or print it." },
               ].map((faq, i) => (

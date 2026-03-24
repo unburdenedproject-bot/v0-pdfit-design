@@ -5,9 +5,9 @@ import { WorkflowInterface } from "@/components/workflow-interface"
 import { Repeat, Zap, Shield, Layers } from "lucide-react"
 
 export const metadata = {
-  title: "Automatización de Flujos PDF — Encadena Herramientas en Un Clic | OmnisPDF",
+  title: "Automatización de Flujos PDF — Encadena Herramientas en Un Clic | PDF.it",
   description:
-    "Automatiza flujos de trabajo PDF de múltiples pasos. Aplana, comprime, agrega marca de agua, rota y protege — todo en un clic. Función Business de OmnisPDF.",
+    "Automatiza flujos de trabajo PDF de múltiples pasos. Aplana, comprime, agrega marca de agua, rota y protege — todo en un clic. Función Business de PDF.it.",
 }
 
 const faqSchema = {

@@ -5,7 +5,7 @@ import Link from "next/link"
 import { PlayCircle, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Do PowerPoint Animations Work in PDF? What Converts (and What Doesn't) | OmnisPDF",
+  title: "Do PowerPoint Animations Work in PDF? What Converts (and What Doesn't) | PDF.it",
   description:
     "Find out what happens to PowerPoint animations, transitions, and embedded videos when you convert to PDF. Learn what transfers, what gets lost, and the best alternatives.",
   keywords: "powerpoint animations to pdf, ppt animations in pdf, do animations work in pdf, powerpoint transitions pdf, pptx to pdf animations",
@@ -67,7 +67,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Convert to PDF",
-      "text": "Upload your PPTX to OmnisPDF's PowerPoint to PDF tool and convert. Each slide is captured in its final animated state, preserving all visible content without the motion effects."
+      "text": "Upload your PPTX to PDF.it's PowerPoint to PDF tool and convert. Each slide is captured in its final animated state, preserving all visible content without the motion effects."
     }
   ]
 }
@@ -197,7 +197,7 @@ export default function PPTToPDFAnimationsPage() {
                   },
                   {
                     title: "For static sharing, convert to PDF",
-                    desc: "If content matters more than motion, convert to PDF using OmnisPDF. All text, images, charts, and layouts are preserved. Your audience can read the deck on any device without PowerPoint.",
+                    desc: "If content matters more than motion, convert to PDF using PDF.it. All text, images, charts, and layouts are preserved. Your audience can read the deck on any device without PowerPoint.",
                   },
                   {
                     title: "For animated sharing, export as video",

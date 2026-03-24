@@ -33,15 +33,15 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Todas las Herramientas PDF A–Z | OmnisPDF",
+  title: "Todas las Herramientas PDF A–Z | PDF.it",
   description:
-    "Explora todas las herramientas de OmnisPDF en orden alfabetico. Convierte, comprime, une, divide, protege y mas.",
+    "Explora todas las herramientas de PDF.it en orden alfabetico. Convierte, comprime, une, divide, protege y mas.",
   alternates: {
-    canonical: "https://omnispdf.com/es/herramientas-a-z",
+    canonical: "https://pdf.it.com/es/herramientas-a-z",
     languages: {
-      en: "https://omnispdf.com/tools-a-z",
-      es: "https://omnispdf.com/es/herramientas-a-z",
-      pt: "https://omnispdf.com/br/ferramentas-a-z",
+      en: "https://pdf.it.com/tools-a-z",
+      es: "https://pdf.it.com/es/herramientas-a-z",
+      pt: "https://pdf.it.com/br/ferramentas-a-z",
     },
   },
 }

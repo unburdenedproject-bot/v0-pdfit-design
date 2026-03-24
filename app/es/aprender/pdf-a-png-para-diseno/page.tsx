@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Image, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Convertir PDF a PNG para Diseño (Figma, Canva, Web) | OmnisPDF",
+  title: "Convertir PDF a PNG para Diseño (Figma, Canva, Web) | PDF.it",
   description:
     "Aprende cómo convertir PDF a PNG para Figma, Canva y proyectos web. Cubre resolución, transparencia, ajustes de DPI y mejores prácticas para usar contenido PDF en flujos de trabajo de diseño.",
   keywords: "pdf a png para diseño, pdf a png figma, pdf a png canva, pdf a png para web, convertir pdf a imagen para diseño",
@@ -23,7 +23,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo importar un PDF directamente a Figma?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Figma no soporta importación de PDF nativamente. El mejor flujo de trabajo es convertir tu PDF a PNG primero usando OmnisPDF, luego arrastrar las imágenes PNG a tu proyecto de Figma. Esto te da control total sobre resolución y calidad." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Figma no soporta importación de PDF nativamente. El mejor flujo de trabajo es convertir tu PDF a PNG primero usando PDF.it, luego arrastrar las imágenes PNG a tu proyecto de Figma. Esto te da control total sobre resolución y calidad." }
     },
     {
       "@type": "Question",
@@ -38,12 +38,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo uso contenido PDF en Canva?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Canva puede importar PDFs directamente, pero para mejor control sobre calidad y posición, convierte tu PDF a PNG primero usando OmnisPDF. Luego sube el PNG a Canva como imagen — puedes redimensionar, recortar y superponer libremente." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Canva puede importar PDFs directamente, pero para mejor control sobre calidad y posición, convierte tu PDF a PNG primero usando PDF.it. Luego sube el PNG a Canva como imagen — puedes redimensionar, recortar y superponer libremente." }
     },
     {
       "@type": "Question",
       "name": "¿Debo extraer imágenes del PDF en lugar de convertir páginas?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si solo necesitas imágenes específicas incrustadas en el PDF (fotos, logos, gráficos), usa la herramienta Extraer Imágenes de OmnisPDF. Si necesitas el diseño completo de la página como imagen, convierte la página a PNG. Ambos enfoques tienen su lugar en flujos de trabajo de diseño." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si solo necesitas imágenes específicas incrustadas en el PDF (fotos, logos, gráficos), usa la herramienta Extraer Imágenes de PDF.it. Si necesitas el diseño completo de la página como imagen, convierte la página a PNG. Ambos enfoques tienen su lugar en flujos de trabajo de diseño." }
     }
   ]
 }
@@ -57,7 +57,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Sube tu PDF",
-      "text": "Ve a la herramienta PDF a PNG de OmnisPDF y sube el PDF que contiene los activos de diseño o páginas que necesitas."
+      "text": "Ve a la herramienta PDF a PNG de PDF.it y sube el PDF que contiene los activos de diseño o páginas que necesitas."
     },
     {
       "@type": "HowToStep",
@@ -239,7 +239,7 @@ export default function PdfAPngParaDisenoPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Convierte a 300 DPI para flexibilidad</h3>
                   <p className="text-slate-600">
-                    Usa el <Link href="/es/pdf-a-png" className="text-orange-600 hover:underline">convertidor de OmnisPDF</Link> a 300 DPI. Esto te da suficiente resolución para escalar la imagen hacia arriba o abajo dentro de Figma sin perder calidad. Una página A4 a 300 DPI produce un PNG de aproximadamente 2480 x 3508 píxeles.
+                    Usa el <Link href="/es/pdf-a-png" className="text-orange-600 hover:underline">convertidor de PDF.it</Link> a 300 DPI. Esto te da suficiente resolución para escalar la imagen hacia arriba o abajo dentro de Figma sin perder calidad. Una página A4 a 300 DPI produce un PNG de aproximadamente 2480 x 3508 píxeles.
                   </p>
                 </div>
                 <div>
@@ -272,7 +272,7 @@ export default function PdfAPngParaDisenoPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Sube PNGs a tu carpeta de Uploads en Canva</h3>
                   <p className="text-slate-600">
-                    Después de convertir con OmnisPDF, sube las imágenes PNG a la sección "Subidas" de Canva. Desde ahí, arrástralas a cualquier diseño de Canva — presentaciones, publicaciones sociales, posters o documentos.
+                    Después de convertir con PDF.it, sube las imágenes PNG a la sección "Subidas" de Canva. Desde ahí, arrástralas a cualquier diseño de Canva — presentaciones, publicaciones sociales, posters o documentos.
                   </p>
                 </div>
               </div>
@@ -313,7 +313,7 @@ export default function PdfAPngParaDisenoPage() {
               <ul className="space-y-2 text-slate-700">
                 <li>- <strong>¿Necesitas un logo de un PDF?</strong> Usa <Link href="/es/extraer-imagenes-de-pdf" className="text-orange-600 hover:underline">Extraer Imágenes de PDF</Link> para extraer imágenes individuales en su resolución original.</li>
                 <li>- <strong>¿Necesitas el diseño completo de la página?</strong> Usa <Link href="/es/pdf-a-png" className="text-orange-600 hover:underline">PDF a PNG</Link> para capturar la página completa tal como se renderiza.</li>
-                <li>- <strong>¿Necesitas ambos?</strong> Extrae imágenes individuales para activos de logos y fotos, luego convierte páginas completas para referencia de diseño. Ambas herramientas son gratuitas en OmnisPDF.</li>
+                <li>- <strong>¿Necesitas ambos?</strong> Extrae imágenes individuales para activos de logos y fotos, luego convierte páginas completas para referencia de diseño. Ambas herramientas son gratuitas en PDF.it.</li>
               </ul>
             </section>
 
@@ -365,11 +365,11 @@ export default function PdfAPngParaDisenoPage() {
             <div className="space-y-6">
               {[
                 { q: "¿Qué resolución debo usar para PDF a PNG en trabajo de diseño?", a: "Para diseño web, 150 DPI generalmente es suficiente. Para proyectos de Figma y Canva que pueden imprimirse, usa 300 DPI. Para impresiones de gran formato, considera 300-600 DPI." },
-                { q: "¿Puedo importar un PDF directamente a Figma?", a: "Figma no soporta importación de PDF nativamente. El mejor flujo de trabajo es convertir tu PDF a PNG primero usando OmnisPDF, luego arrastrar las imágenes PNG a tu proyecto de Figma." },
+                { q: "¿Puedo importar un PDF directamente a Figma?", a: "Figma no soporta importación de PDF nativamente. El mejor flujo de trabajo es convertir tu PDF a PNG primero usando PDF.it, luego arrastrar las imágenes PNG a tu proyecto de Figma." },
                 { q: "¿Convertir PDF a PNG preserva la transparencia?", a: "PNG soporta transparencia, así que si tu PDF tiene elementos transparentes pueden preservarse. Sin embargo, la mayoría de las páginas PDF tienen fondo blanco por defecto." },
                 { q: "¿Por qué PNG es mejor que JPG para trabajo de diseño?", a: "PNG usa compresión sin pérdida, así que los bordes se mantienen nítidos y los colores precisos. JPG crea artefactos visibles alrededor de texto, logos y bordes duros. PNG también soporta transparencia." },
-                { q: "¿Cómo uso contenido PDF en Canva?", a: "Canva puede importar PDFs directamente, pero para mejor control sobre calidad y posición, convierte tu PDF a PNG primero usando OmnisPDF. Luego sube el PNG a Canva como imagen." },
-                { q: "¿Debo extraer imágenes del PDF en lugar de convertir páginas?", a: "Si solo necesitas imágenes específicas incrustadas en el PDF (fotos, logos), usa la herramienta Extraer Imágenes de OmnisPDF. Si necesitas el diseño completo de la página como imagen, convierte la página a PNG." },
+                { q: "¿Cómo uso contenido PDF en Canva?", a: "Canva puede importar PDFs directamente, pero para mejor control sobre calidad y posición, convierte tu PDF a PNG primero usando PDF.it. Luego sube el PNG a Canva como imagen." },
+                { q: "¿Debo extraer imágenes del PDF en lugar de convertir páginas?", a: "Si solo necesitas imágenes específicas incrustadas en el PDF (fotos, logos), usa la herramienta Extraer Imágenes de PDF.it. Si necesitas el diseño completo de la página como imagen, convierte la página a PNG." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

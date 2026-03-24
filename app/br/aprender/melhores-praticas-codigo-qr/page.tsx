@@ -5,7 +5,7 @@ import Link from "next/link"
 import { QrCode, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Melhores Praticas para Codigo QR (Guia Completo) | OmnisPDF",
+  title: "Melhores Praticas para Codigo QR (Guia Completo) | PDF.it",
   description:
     "Descubra as melhores praticas para criar, imprimir e usar codigos QR. Tamanho, contraste, posicao, teste e erros comuns a evitar.",
   keywords: "melhores praticas codigo qr, dicas qr code, como usar qr code, erros qr code, tamanho qr code",
@@ -55,7 +55,7 @@ export default function MelhoresPraticasQRPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><QrCode className="h-5 w-5 text-white" /></div>
-              <p className="text-slate-700 font-semibold">Crie QR codes profissionais com o OmnisPDF.</p>
+              <p className="text-slate-700 font-semibold">Crie QR codes profissionais com o PDF.it.</p>
             </div>
             <Link href="/br/codigo-qr" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Gerador QR <ArrowRight className="h-4 w-4" /></Link>
           </div>

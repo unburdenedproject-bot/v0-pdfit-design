@@ -5,21 +5,21 @@ import Link from "next/link"
 import { Lock, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Proteger PDF com Senha — Guia Completo | OmnisPDF",
+  title: "Como Proteger PDF com Senha — Guia Completo | PDF.it",
   description: "Aprenda a proteger seus arquivos PDF com senha em segundos. Guia passo a passo para adicionar senha de abertura e senha de permissoes ao seu PDF.",
   keywords: "proteger pdf com senha, senha pdf, criptografar pdf, pdf com senha, proteger documento pdf",
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-  { "@type": "Question", "name": "Como coloco senha em um PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para a ferramenta Proteger PDF do OmnisPDF, defina uma senha e clique em Proteger. O PDF sera criptografado e so podera ser aberto com a senha que voce definiu." } },
+  { "@type": "Question", "name": "Como coloco senha em um PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para a ferramenta Proteger PDF do PDF.it, defina uma senha e clique em Proteger. O PDF sera criptografado e so podera ser aberto com a senha que voce definiu." } },
   { "@type": "Question", "name": "Qual a diferenca entre senha de abertura e senha de permissoes?", "acceptedAnswer": { "@type": "Answer", "text": "A senha de abertura impede que o PDF seja aberto sem a senha. A senha de permissoes permite abrir o PDF mas restringe acoes como imprimir, copiar texto ou editar. Voce pode usar uma ou ambas." } },
-  { "@type": "Question", "name": "A protecao com senha e segura?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF usa criptografia AES-256, o mesmo padrao usado por bancos e governos. Uma senha forte (12+ caracteres, letras, numeros e simbolos) torna o PDF praticamente impossivel de quebrar." } },
-  { "@type": "Question", "name": "Posso remover a senha depois?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Se voce sabe a senha, pode usar a ferramenta Desbloquear PDF do OmnisPDF para remover a protecao. Veja nosso guia de como desbloquear PDF." } },
-  { "@type": "Question", "name": "Proteger PDF e gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. A protecao basica com senha e gratuita no OmnisPDF para seus primeiros arquivos. Usuarios Pro tem acesso ilimitado e processamento em lote." } }
+  { "@type": "Question", "name": "A protecao com senha e segura?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it usa criptografia AES-256, o mesmo padrao usado por bancos e governos. Uma senha forte (12+ caracteres, letras, numeros e simbolos) torna o PDF praticamente impossivel de quebrar." } },
+  { "@type": "Question", "name": "Posso remover a senha depois?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Se voce sabe a senha, pode usar a ferramenta Desbloquear PDF do PDF.it para remover a protecao. Veja nosso guia de como desbloquear PDF." } },
+  { "@type": "Question", "name": "Proteger PDF e gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. A protecao basica com senha e gratuita no PDF.it para seus primeiros arquivos. Usuarios Pro tem acesso ilimitado e processamento em lote." } }
 ] }
 
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como proteger PDF com senha", "description": "Adicione senha ao seu PDF em 3 passos simples.", "step": [
-  { "@type": "HowToStep", "name": "Envie seu PDF", "text": "Acesse a ferramenta Proteger PDF do OmnisPDF e envie o arquivo que deseja proteger." },
+  { "@type": "HowToStep", "name": "Envie seu PDF", "text": "Acesse a ferramenta Proteger PDF do PDF.it e envie o arquivo que deseja proteger." },
   { "@type": "HowToStep", "name": "Defina a senha", "text": "Digite a senha desejada. Use uma senha forte com pelo menos 12 caracteres, combinando letras, numeros e simbolos." },
   { "@type": "HowToStep", "name": "Baixe o PDF protegido", "text": "Clique em Proteger e baixe o PDF criptografado. Agora so quem tem a senha pode abrir o arquivo." }
 ] }
@@ -60,7 +60,7 @@ export default function ComoProtegerPdfComSenhaPage() {
               {[
                 { title: "Envie seu PDF", desc: "Acesse a ferramenta Proteger PDF e arraste seu arquivo para a area de upload, ou clique para selecionar. Arquivos ate 25MB sao gratis." },
                 { title: "Defina uma senha forte", desc: "Digite sua senha. Use pelo menos 12 caracteres, combinando letras maiusculas e minusculas, numeros e simbolos. Veja nossas dicas de melhores praticas para senhas de PDF." },
-                { title: "Baixe o PDF protegido", desc: "Clique em Proteger. O OmnisPDF criptografa seu PDF com AES-256 e voce pode baixar o arquivo protegido. Compartilhe a senha separadamente (nunca no mesmo email do PDF)." },
+                { title: "Baixe o PDF protegido", desc: "Clique em Proteger. O PDF.it criptografa seu PDF com AES-256 e voce pode baixar o arquivo protegido. Compartilhe a senha separadamente (nunca no mesmo email do PDF)." },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
                   <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
@@ -95,7 +95,7 @@ export default function ComoProtegerPdfComSenhaPage() {
               <li>&#10003; <strong>Use senhas unicas</strong> para cada documento. Nunca reutilize senhas.</li>
               <li>&#10003; <strong>Considere adicionar uma marca d agua</strong> alem da senha. Veja como <Link href="/br/aprender/como-adicionar-marca-dagua-em-pdf" className="text-orange-600 hover:underline">adicionar marca d agua ao PDF</Link>.</li>
               <li>&#10003; Leia nossas <Link href="/br/aprender/melhores-praticas-senha-pdf" className="text-orange-600 hover:underline">melhores praticas para senhas de PDF</Link>.</li>
-              <li>&#10003; Se precisar <Link href="/br/aprender/como-desbloquear-pdf" className="text-orange-600 hover:underline">desbloquear um PDF</Link> depois, o OmnisPDF tambem tem essa ferramenta.</li>
+              <li>&#10003; Se precisar <Link href="/br/aprender/como-desbloquear-pdf" className="text-orange-600 hover:underline">desbloquear um PDF</Link> depois, o PDF.it tambem tem essa ferramenta.</li>
             </ul>
           </section>
         </div></article>

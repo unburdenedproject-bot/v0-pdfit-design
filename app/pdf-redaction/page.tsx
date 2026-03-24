@@ -6,9 +6,9 @@ import { RedactionInterface } from "@/components/redaction-interface"
 import { Shield, Zap, Eye, Lock, FileText, Merge, Layers, Repeat, ArrowLeftRight } from "lucide-react"
 
 export const metadata = {
-  title: "Redact PDFs Online — Permanently Remove Sensitive Information | OmnisPDF",
+  title: "Redact PDFs Online — Permanently Remove Sensitive Information | PDF.it",
   description:
-    "Permanently redact sensitive text, SSNs, addresses, and confidential data from PDFs. Visual redaction editor — draw boxes directly on your document. Upload, redact, and download securely. OmnisPDF Business feature.",
+    "Permanently redact sensitive text, SSNs, addresses, and confidential data from PDFs. Visual redaction editor — draw boxes directly on your document. Upload, redact, and download securely. PDF.it Business feature.",
 }
 
 const faqSchema = {

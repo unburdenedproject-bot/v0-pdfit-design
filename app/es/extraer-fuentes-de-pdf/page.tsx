@@ -6,14 +6,14 @@ import { Type, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Extraer Fuentes de PDF — Identifica las Fuentes Usadas en un PDF | OmnisPDF",
+  title: "Extraer Fuentes de PDF — Identifica las Fuentes Usadas en un PDF | PDF.it",
   description:
-    "Identifica y extrae la información de fuentes tipográficas de cualquier PDF con OmnisPDF. Descubre qué fuentes se usaron — rápido, desde tu navegador, sin registro.",
+    "Identifica y extrae la información de fuentes tipográficas de cualquier PDF con PDF.it. Descubre qué fuentes se usaron — rápido, desde tu navegador, sin registro.",
   alternates: {
-    canonical: "https://omnispdf.com/es/extraer-fuentes-de-pdf",
+    canonical: "https://pdf.it.com/es/extraer-fuentes-de-pdf",
     languages: {
-      en: "https://omnispdf.com/extract-fonts-from-pdf",
-      es: "https://omnispdf.com/es/extraer-fuentes-de-pdf",
+      en: "https://pdf.it.com/extract-fonts-from-pdf",
+      es: "https://pdf.it.com/es/extraer-fuentes-de-pdf",
     },
   },
 }
@@ -25,7 +25,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo identifico las fuentes de un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a OmnisPDF y la herramienta analizará el documento para identificar todas las fuentes tipográficas utilizadas, incluyendo nombre, estilo y tamaño." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it y la herramienta analizará el documento para identificar todas las fuentes tipográficas utilizadas, incluyendo nombre, estilo y tamaño." }
     },
     {
       "@type": "Question",
@@ -35,7 +35,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo descargar las fuentes extraídas?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF identifica los nombres y estilos de las fuentes usadas en el PDF. Para descargar las fuentes, necesitarás buscarlas en sitios de tipografía como Google Fonts o Adobe Fonts." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it identifica los nombres y estilos de las fuentes usadas en el PDF. Para descargar las fuentes, necesitarás buscarlas en sitios de tipografía como Google Fonts o Adobe Fonts." }
     },
     {
       "@type": "Question",
@@ -98,7 +98,7 @@ export default function ExtraerFuentesDePDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              ¿Necesitas saber qué fuentes tipográficas se usaron en un PDF? El extractor de fuentes de OmnisPDF analiza tu documento y te muestra todas las fuentes utilizadas — nombres, estilos, tamaños y si están incrustadas en el archivo.
+              ¿Necesitas saber qué fuentes tipográficas se usaron en un PDF? El extractor de fuentes de PDF.it analiza tu documento y te muestra todas las fuentes utilizadas — nombres, estilos, tamaños y si están incrustadas en el archivo.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Identifica todas las fuentes tipográficas del PDF</li>
@@ -140,7 +140,7 @@ export default function ExtraerFuentesDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Extraer Fuentes de un PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Haz clic en Analizar Fuentes — todas las tipografías se detectan automáticamente.",
                 "Descarga el reporte con todas las fuentes identificadas.",
               ].map((step, i) => (
@@ -185,9 +185,9 @@ export default function ExtraerFuentesDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo identifico las fuentes de un PDF?", a: "Sube tu PDF a OmnisPDF y la herramienta analizará el documento para identificar todas las fuentes tipográficas utilizadas, incluyendo nombre, estilo y tamaño." },
+                { q: "¿Cómo identifico las fuentes de un PDF?", a: "Sube tu PDF a PDF.it y la herramienta analizará el documento para identificar todas las fuentes tipográficas utilizadas, incluyendo nombre, estilo y tamaño." },
                 { q: "¿Para qué sirve extraer las fuentes de un PDF?", a: "Es útil para diseñadores gráficos que necesitan recrear un documento, mantener la consistencia de marca o identificar tipografías específicas usadas en materiales existentes." },
-                { q: "¿Puedo descargar las fuentes extraídas?", a: "OmnisPDF identifica los nombres y estilos de las fuentes usadas en el PDF. Para descargar las fuentes, necesitarás buscarlas en sitios de tipografía como Google Fonts o Adobe Fonts." },
+                { q: "¿Puedo descargar las fuentes extraídas?", a: "PDF.it identifica los nombres y estilos de las fuentes usadas en el PDF. Para descargar las fuentes, necesitarás buscarlas en sitios de tipografía como Google Fonts o Adobe Fonts." },
                 { q: "¿Qué información de fuentes se extrae?", a: "Se extrae el nombre de la fuente, el estilo (regular, bold, italic), el tamaño utilizado y si la fuente está incrustada en el documento." },
                 { q: "¿Funciona con PDFs escaneados?", a: "Los PDFs escaneados no contienen información de fuentes ya que son imágenes. Para estos casos, puedes usar herramientas de reconocimiento de fuentes basadas en imágenes." },
                 { q: "¿Es gratis extraer fuentes de un PDF?", a: "Sí. Las cuentas gratuitas tienen 10 extracciones por día. Las cuentas Pro tienen extracciones ilimitadas." },

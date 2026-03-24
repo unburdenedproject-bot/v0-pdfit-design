@@ -6,14 +6,14 @@ import { Link2, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Extraer Enlaces de PDF — Obtén Todos los URLs de un PDF | OmnisPDF",
+  title: "Extraer Enlaces de PDF — Obtén Todos los URLs de un PDF | PDF.it",
   description:
-    "Extrae todos los hipervínculos y URLs de archivos PDF con OmnisPDF. Obtén una lista completa de enlaces — rápido, desde tu navegador, sin registro.",
+    "Extrae todos los hipervínculos y URLs de archivos PDF con PDF.it. Obtén una lista completa de enlaces — rápido, desde tu navegador, sin registro.",
   alternates: {
-    canonical: "https://omnispdf.com/es/extraer-enlaces-de-pdf",
+    canonical: "https://pdf.it.com/es/extraer-enlaces-de-pdf",
     languages: {
-      en: "https://omnispdf.com/extract-links-from-pdf",
-      es: "https://omnispdf.com/es/extraer-enlaces-de-pdf",
+      en: "https://pdf.it.com/extract-links-from-pdf",
+      es: "https://pdf.it.com/es/extraer-enlaces-de-pdf",
     },
   },
 }
@@ -25,7 +25,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo extraigo los enlaces de un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a OmnisPDF, haz clic en Extraer y descarga un archivo TXT con todos los hipervínculos y URLs encontrados en tu documento." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it, haz clic en Extraer y descarga un archivo TXT con todos los hipervínculos y URLs encontrados en tu documento." }
     },
     {
       "@type": "Question",
@@ -40,7 +40,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo verificar si los enlaces extraídos funcionan?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF extrae los enlaces del PDF. Para verificar si funcionan, puedes abrir cada enlace en tu navegador o usar una herramienta de verificación de enlaces." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it extrae los enlaces del PDF. Para verificar si funcionan, puedes abrir cada enlace en tu navegador o usar una herramienta de verificación de enlaces." }
     },
     {
       "@type": "Question",
@@ -98,7 +98,7 @@ export default function ExtraerEnlacesDePDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              ¿Necesitas obtener todos los enlaces de un documento PDF? El extractor de enlaces de OmnisPDF analiza tu PDF y te entrega una lista completa de todas las URLs e hipervínculos — perfecta para auditorías, verificación de referencias o migración de contenido.
+              ¿Necesitas obtener todos los enlaces de un documento PDF? El extractor de enlaces de PDF.it analiza tu PDF y te entrega una lista completa de todas las URLs e hipervínculos — perfecta para auditorías, verificación de referencias o migración de contenido.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Extrae todos los hipervínculos y URLs del PDF</li>
@@ -140,7 +140,7 @@ export default function ExtraerEnlacesDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Extraer Enlaces de un PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Haz clic en Extraer Enlaces — todos los hipervínculos se detectan automáticamente.",
                 "Descarga el archivo TXT con la lista completa de enlaces.",
               ].map((step, i) => (
@@ -185,10 +185,10 @@ export default function ExtraerEnlacesDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo extraigo los enlaces de un PDF?", a: "Sube tu PDF a OmnisPDF, haz clic en Extraer y descarga un archivo TXT con todos los hipervínculos y URLs encontrados en tu documento." },
+                { q: "¿Cómo extraigo los enlaces de un PDF?", a: "Sube tu PDF a PDF.it, haz clic en Extraer y descarga un archivo TXT con todos los hipervínculos y URLs encontrados en tu documento." },
                 { q: "¿Qué tipo de enlaces se pueden extraer?", a: "Se extraen todos los hipervínculos del documento: URLs web (http/https), enlaces a correos electrónicos (mailto) y enlaces internos del documento." },
                 { q: "¿Para qué sirve extraer enlaces de un PDF?", a: "Es útil para auditorías de documentos, verificar que los enlaces funcionen, migrar contenido web, recopilar referencias bibliográficas o analizar las fuentes citadas en un documento." },
-                { q: "¿Puedo verificar si los enlaces extraídos funcionan?", a: "OmnisPDF extrae los enlaces del PDF. Para verificar si funcionan, puedes abrir cada enlace en tu navegador o usar una herramienta de verificación de enlaces." },
+                { q: "¿Puedo verificar si los enlaces extraídos funcionan?", a: "PDF.it extrae los enlaces del PDF. Para verificar si funcionan, puedes abrir cada enlace en tu navegador o usar una herramienta de verificación de enlaces." },
                 { q: "¿Funciona con PDFs escaneados?", a: "Los PDFs escaneados no contienen hipervínculos activos — son imágenes. Solo los PDFs con texto seleccionable contienen enlaces que se pueden extraer." },
                 { q: "¿Es gratis extraer enlaces de un PDF?", a: "Sí. Las cuentas gratuitas tienen 10 extracciones por día. Las cuentas Pro tienen extracciones ilimitadas." },
               ].map((faq, i) => (

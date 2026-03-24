@@ -5,9 +5,9 @@ import Link from "next/link"
 import { Stamp, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "PDF Watermark Best Practices (Size, Opacity & Placement) | OmnisPDF",
+  title: "PDF Watermark Best Practices (Size, Opacity & Placement) | PDF.it",
   description:
-    "Learn the best practices for watermarking PDFs — optimal opacity, font size, placement, color, and when to use diagonal vs center watermarks. Professional tips from OmnisPDF.",
+    "Learn the best practices for watermarking PDFs — optimal opacity, font size, placement, color, and when to use diagonal vs center watermarks. Professional tips from PDF.it.",
   keywords: "pdf watermark best practices, watermark opacity, watermark placement, professional pdf watermark",
 }
 
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I make a watermark that cannot be removed?",
-      "acceptedAnswer": { "@type": "Answer", "text": "After adding your watermark, flatten the PDF using OmnisPDF's Flatten PDF tool. This merges the watermark into the page content permanently. Then password-protect the file to prevent further editing." }
+      "acceptedAnswer": { "@type": "Answer", "text": "After adding your watermark, flatten the PDF using PDF.it's Flatten PDF tool. This merges the watermark into the page content permanently. Then password-protect the file to prevent further editing." }
     },
     {
       "@type": "Question",
@@ -52,7 +52,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Create a Professional PDF Watermark",
-  "description": "Follow these best practices to add a clean, professional watermark to any PDF using OmnisPDF.",
+  "description": "Follow these best practices to add a clean, professional watermark to any PDF using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
@@ -298,7 +298,7 @@ export default function WatermarkPDFBestPracticesPage() {
                 { q: "Should I use a diagonal or centered watermark?", a: "Diagonal watermarks (45 degrees) are best for security stamps like DRAFT or CONFIDENTIAL — they are hard to crop out. Centered watermarks at low opacity work better for branding with logos. Corner placement is ideal for subtle, professional marks." },
                 { q: "What font size works best for text watermarks?", a: "For diagonal watermarks spanning the page, use a large font (60-100pt) so the text stretches across the entire page. For corner stamps, use a smaller font (24-36pt). The goal is readability without overwhelming the document content." },
                 { q: "What color should my watermark be?", a: "Gray is the most common and professional choice for text watermarks. Red works well for CONFIDENTIAL or urgent stamps. For logo watermarks, use your brand colors at reduced opacity. Avoid colors that clash with the document content." },
-                { q: "How do I make a watermark that cannot be removed?", a: "After adding your watermark, flatten the PDF using OmnisPDF's Flatten PDF tool. This merges the watermark into the page content permanently. Then password-protect the file to prevent further editing." },
+                { q: "How do I make a watermark that cannot be removed?", a: "After adding your watermark, flatten the PDF using PDF.it's Flatten PDF tool. This merges the watermark into the page content permanently. Then password-protect the file to prevent further editing." },
                 { q: "Is the Watermark PDF tool free?", a: "Watermark PDF is available to Pro ($7.99/month) and Business ($13.99/month) users. Both tiers include unlimited watermarking, batch processing, and files up to 200MB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

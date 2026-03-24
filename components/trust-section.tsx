@@ -76,7 +76,7 @@ export function TrustSection() {
         {/* Features */}
         <div className="text-center mb-6">
           <h2 className="text-2xl lg:text-3xl font-black text-slate-900 mb-2 text-balance">
-            Why OmnisPDF
+            Why PDF.it
           </h2>
           <p className="text-base text-slate-600 max-w-2xl mx-auto">
             Online PDF tools with Pro features when you need them — convert, compress, merge, split, and OCR in your browser.

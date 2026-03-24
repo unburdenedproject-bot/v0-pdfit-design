@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileSpreadsheet, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Excel a PDF ajustar a pagina: mejores configuraciones de impresion | OmnisPDF",
+  title: "Excel a PDF ajustar a pagina: mejores configuraciones de impresion | PDF.it",
   description: "Aprende las mejores configuraciones de impresion de Excel para ajustar tu hoja de calculo en una pagina antes de convertir a PDF. Cubre escalado, margenes, orientacion, area de impresion y vista previa.",
   keywords: "excel a pdf ajustar a pagina, excel ajustar a pagina, configuraciones impresion excel pdf, escalar excel ajustar pagina, diseno pagina excel pdf",
 }
@@ -22,7 +22,7 @@ const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainE
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como configurar las opciones de impresion de Excel para conversion a PDF", "description": "Configura tu hoja de calculo Excel para que se ajuste perfectamente a una pagina antes de convertir a PDF.", "step": [
   { "@type": "HowToStep", "name": "Establece area de impresion y orientacion", "text": "Selecciona tu rango de datos, ve a Diseno de pagina > Area de impresion > Establecer area de impresion. Luego elige Horizontal o Vertical en Diseno de pagina > Orientacion segun la forma de tus datos." },
   { "@type": "HowToStep", "name": "Configura escalado y margenes", "text": "Ve a Diseno de pagina > Ajustar a y establece Ancho en 1 pagina. Establece margenes en Estrecho (Diseno de pagina &gt; Margenes &gt; Estrecho). Verifica en Vista previa de impresion que el texto siga siendo legible." },
-  { "@type": "HowToStep", "name": "Convierte a PDF", "text": "Sube tu archivo Excel preparado a la herramienta Excel a PDF de OmnisPDF. El convertidor respeta tus configuraciones de impresion, produciendo un PDF limpio y correctamente ajustado." }
+  { "@type": "HowToStep", "name": "Convierte a PDF", "text": "Sube tu archivo Excel preparado a la herramienta Excel a PDF de PDF.it. El convertidor respeta tus configuraciones de impresion, produciendo un PDF limpio y correctamente ajustado." }
 ] }
 
 export default function ExcelAPdfAjustarAPaginaPage() {
@@ -46,7 +46,7 @@ export default function ExcelAPdfAjustarAPaginaPage() {
         <article className="py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
           <section className="mb-12">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Por que importan las configuraciones de impresion para la conversion a PDF</h2>
-            <p className="text-slate-600 mb-4">Cuando conviertes un archivo Excel a PDF — ya sea a traves de la exportacion integrada de Excel o una herramienta en linea como <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">OmnisPDF</Link> — el convertidor usa tus configuraciones de impresion para determinar como los datos se distribuyen en las paginas.</p>
+            <p className="text-slate-600 mb-4">Cuando conviertes un archivo Excel a PDF — ya sea a traves de la exportacion integrada de Excel o una herramienta en linea como <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">PDF.it</Link> — el convertidor usa tus configuraciones de impresion para determinar como los datos se distribuyen en las paginas.</p>
             <p className="text-slate-600 mb-4">Si no has configurado estos ajustes, Excel usa valores predeterminados: orientacion vertical, margenes estandar, sin escalado. Para cualquier cosa mas alla de una tabla simple de 5 columnas, estos valores predeterminados producen PDFs con columnas cortadas, saltos de pagina incomodos o espacio en blanco desperdiciado.</p>
             <p className="text-slate-600">Tomar 60 segundos para ajustar tus configuraciones de Diseno de pagina antes de convertir te ahorra de rehacer la conversion multiples veces.</p>
           </section>
@@ -117,7 +117,7 @@ export default function ExcelAPdfAjustarAPaginaPage() {
                 </ul>
               </div>
             </div>
-            <p className="text-slate-600 mt-4">No estas seguro? Prueba ambas en Vista previa de impresion y ve cual produce un resultado mas limpio. Siempre puedes verificar antes de convertir con <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">OmnisPDF</Link>.</p>
+            <p className="text-slate-600 mt-4">No estas seguro? Prueba ambas en Vista previa de impresion y ve cual produce un resultado mas limpio. Siempre puedes verificar antes de convertir con <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">PDF.it</Link>.</p>
           </section>
 
           <section className="mb-12">

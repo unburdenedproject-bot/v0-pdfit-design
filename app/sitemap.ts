@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://omnispdf.com"
+  const baseUrl = "https://pdf.it.com"
 
   return [
     // ============================================================

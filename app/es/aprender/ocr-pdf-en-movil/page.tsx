@@ -5,22 +5,22 @@ import Link from "next/link"
 import { ScanText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "OCR un PDF en Tu Telefono (iPhone y Android) | OmnisPDF",
-  description: "Aprende como ejecutar OCR en un PDF desde tu telefono. Sin app necesaria — usa OmnisPDF en Safari o Chrome en iPhone y Android para hacer PDFs escaneados buscables.",
+  title: "OCR un PDF en Tu Telefono (iPhone y Android) | PDF.it",
+  description: "Aprende como ejecutar OCR en un PDF desde tu telefono. Sin app necesaria — usa PDF.it en Safari o Chrome en iPhone y Android para hacer PDFs escaneados buscables.",
   keywords: "ocr pdf en telefono, ocr pdf iphone, escanear documento ocr android, ocr pdf movil",
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-  { "@type": "Question", "name": "Puedo ejecutar OCR en mi iPhone sin una app?", "acceptedAnswer": { "@type": "Answer", "text": "Si. El Escaner OCR de OmnisPDF funciona en Safari, Chrome o cualquier navegador movil en iPhone. Sube tu PDF escaneado, selecciona el idioma, ejecuta OCR y descarga la version buscable — todo sin instalar ninguna app." } },
-  { "@type": "Question", "name": "Funciona el OCR en telefonos Android?", "acceptedAnswer": { "@type": "Answer", "text": "Si. OmnisPDF funciona en Android en Chrome, Firefox o cualquier otro navegador movil. El proceso es el mismo — sube tu PDF, ejecuta OCR y descarga el resultado buscable." } },
-  { "@type": "Question", "name": "Puedo escanear un documento con la camara de mi telefono y hacerle OCR?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Usa el escaner integrado de tu telefono (Notas en iPhone, Google Drive en Android) para capturar el documento como PDF, luego subelo al Escaner OCR de OmnisPDF." } },
-  { "@type": "Question", "name": "Que tamano de archivo puedo hacer OCR en movil?", "acceptedAnswer": { "@type": "Answer", "text": "Los usuarios Pro de OmnisPDF pueden procesar PDFs hasta 200MB en cualquier dispositivo, incluyendo movil." } },
-  { "@type": "Question", "name": "El OCR en movil sera mas lento que en computadora?", "acceptedAnswer": { "@type": "Answer", "text": "No. El procesamiento OCR ocurre en los servidores de OmnisPDF, no en tu dispositivo. La velocidad es la misma ya sea que uses telefono, tableta o computadora." } },
-  { "@type": "Question", "name": "El OCR en movil es una funcion gratuita?", "acceptedAnswer": { "@type": "Answer", "text": "El Escaner OCR es una funcion Pro en OmnisPDF, disponible por $7.99/mes. Esto aplica tanto para uso movil como de escritorio." } }
+  { "@type": "Question", "name": "Puedo ejecutar OCR en mi iPhone sin una app?", "acceptedAnswer": { "@type": "Answer", "text": "Si. El Escaner OCR de PDF.it funciona en Safari, Chrome o cualquier navegador movil en iPhone. Sube tu PDF escaneado, selecciona el idioma, ejecuta OCR y descarga la version buscable — todo sin instalar ninguna app." } },
+  { "@type": "Question", "name": "Funciona el OCR en telefonos Android?", "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en Android en Chrome, Firefox o cualquier otro navegador movil. El proceso es el mismo — sube tu PDF, ejecuta OCR y descarga el resultado buscable." } },
+  { "@type": "Question", "name": "Puedo escanear un documento con la camara de mi telefono y hacerle OCR?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Usa el escaner integrado de tu telefono (Notas en iPhone, Google Drive en Android) para capturar el documento como PDF, luego subelo al Escaner OCR de PDF.it." } },
+  { "@type": "Question", "name": "Que tamano de archivo puedo hacer OCR en movil?", "acceptedAnswer": { "@type": "Answer", "text": "Los usuarios Pro de PDF.it pueden procesar PDFs hasta 200MB en cualquier dispositivo, incluyendo movil." } },
+  { "@type": "Question", "name": "El OCR en movil sera mas lento que en computadora?", "acceptedAnswer": { "@type": "Answer", "text": "No. El procesamiento OCR ocurre en los servidores de PDF.it, no en tu dispositivo. La velocidad es la misma ya sea que uses telefono, tableta o computadora." } },
+  { "@type": "Question", "name": "El OCR en movil es una funcion gratuita?", "acceptedAnswer": { "@type": "Answer", "text": "El Escaner OCR es una funcion Pro en PDF.it, disponible por $7.99/mes. Esto aplica tanto para uso movil como de escritorio." } }
 ] }
 
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como Hacer OCR a un PDF en Tu Telefono", "description": "Haz un PDF escaneado buscable desde tu iPhone o Android en 3 pasos.", "step": [
-  { "@type": "HowToStep", "name": "Abre OmnisPDF en tu navegador movil", "text": "Ve a omnispdf.com/ocr-scanner en Safari (iPhone) o Chrome (Android). No necesitas instalar ninguna app." },
+  { "@type": "HowToStep", "name": "Abre PDF.it en tu navegador movil", "text": "Ve a pdf.it.com/ocr-scanner en Safari (iPhone) o Chrome (Android). No necesitas instalar ninguna app." },
   { "@type": "HowToStep", "name": "Sube tu PDF escaneado y ejecuta OCR", "text": "Toca el area de carga, selecciona tu PDF escaneado, elige el idioma del documento y toca el boton OCR." },
   { "@type": "HowToStep", "name": "Descarga el PDF buscable", "text": "Una vez que termine el procesamiento, descarga tu PDF buscable. Ahora puedes buscar texto, copiar contenido y compartir el documento mejorado." }
 ] }
@@ -61,8 +61,8 @@ export default function OCRPDFEnMovilPage() {
             <div className="space-y-4">
               {[
                 { title: "Escanea o selecciona tu documento", desc: "Usa el escaner integrado de tu telefono (Notas en iPhone, Google Drive en Android) para capturar un PDF limpio. O selecciona un PDF escaneado existente de tu app de Archivos. Para mejores resultados, pasa el escaneo por Limpieza de Escaneo de Telefono primero." },
-                { title: "Abre el Escaner OCR de OmnisPDF", desc: "Ve a omnispdf.com/ocr-scanner en Safari (iPhone) o Chrome (Android). Toca el area de carga y selecciona tu PDF. Elige el idioma del documento del menu desplegable." },
-                { title: "Procesa y descarga", desc: "Toca el boton OCR. El procesamiento ocurre en los servidores de OmnisPDF, asi que es rapido sin importar tu modelo de telefono. Cuando termine, toca Descargar para guardar el PDF buscable en tu dispositivo." },
+                { title: "Abre el Escaner OCR de PDF.it", desc: "Ve a pdf.it.com/ocr-scanner en Safari (iPhone) o Chrome (Android). Toca el area de carga y selecciona tu PDF. Elige el idioma del documento del menu desplegable." },
+                { title: "Procesa y descarga", desc: "Toca el boton OCR. El procesamiento ocurre en los servidores de PDF.it, asi que es rapido sin importar tu modelo de telefono. Cuando termine, toca Descargar para guardar el PDF buscable en tu dispositivo." },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
                   <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
@@ -76,8 +76,8 @@ export default function OCRPDFEnMovilPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-4">Consejos de OCR para Usuarios de iPhone</h2>
             <div className="space-y-6">
               <div><h3 className="text-lg font-bold text-slate-900 mb-2">Escanea con la App de Notas</h3><p className="text-slate-600">Abre Notas, crea una nueva nota, toca el icono de camara y selecciona &quot;Escanear Documentos.&quot; El escaner integrado detecta automaticamente bordes de pagina, corrige perspectiva y guarda como PDF limpio.</p></div>
-              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Guarda en Archivos para Facil Carga</h3><p className="text-slate-600">Despues de escanear en Notas, comparte el escaneo y guardalo en Archivos. Cuando abras el Escaner OCR de OmnisPDF en Safari, puedes navegar Archivos directamente para seleccionar tu PDF.</p></div>
-              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Usa Safari para Mejor Compatibilidad</h3><p className="text-slate-600">Aunque OmnisPDF funciona en cualquier navegador, Safari es el predeterminado en iPhone y ofrece la experiencia de carga de archivos mas fluida.</p></div>
+              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Guarda en Archivos para Facil Carga</h3><p className="text-slate-600">Despues de escanear en Notas, comparte el escaneo y guardalo en Archivos. Cuando abras el Escaner OCR de PDF.it en Safari, puedes navegar Archivos directamente para seleccionar tu PDF.</p></div>
+              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Usa Safari para Mejor Compatibilidad</h3><p className="text-slate-600">Aunque PDF.it funciona en cualquier navegador, Safari es el predeterminado en iPhone y ofrece la experiencia de carga de archivos mas fluida.</p></div>
             </div>
           </section>
 
@@ -85,7 +85,7 @@ export default function OCRPDFEnMovilPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-4">Consejos de OCR para Usuarios de Android</h2>
             <div className="space-y-6">
               <div><h3 className="text-lg font-bold text-slate-900 mb-2">Escanea con Google Drive</h3><p className="text-slate-600">Abre Google Drive, toca el boton + y selecciona &quot;Escanear.&quot; El escaner de Google Drive tiene excelente deteccion de bordes y mejora automatica de imagen.</p></div>
-              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Usa Chrome para Cargas de Archivos</h3><p className="text-slate-600">Chrome en Android maneja cargas de archivos de forma confiable. Cuando toques el area de carga en OmnisPDF, puedes navegar tu carpeta de Descargas o Google Drive.</p></div>
+              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Usa Chrome para Cargas de Archivos</h3><p className="text-slate-600">Chrome en Android maneja cargas de archivos de forma confiable. Cuando toques el area de carga en PDF.it, puedes navegar tu carpeta de Descargas o Google Drive.</p></div>
               <div><h3 className="text-lg font-bold text-slate-900 mb-2">Revisa tus Descargas</h3><p className="text-slate-600">Despues del procesamiento OCR, el PDF buscable se descarga a tu carpeta de Descargas por defecto. Puedes compartirlo via correo, WhatsApp o cualquier otra app directamente.</p></div>
             </div>
           </section>
@@ -93,7 +93,7 @@ export default function OCRPDFEnMovilPage() {
           <section className="mb-12">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Mejores Resultados de OCR en Movil</h2>
             <ul className="space-y-2 text-slate-700">
-              <li>&#10003; <strong>Usa Limpieza de Escaneo de Telefono primero.</strong> Antes de ejecutar OCR, sube tu escaneo de telefono a <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> de OmnisPDF.</li>
+              <li>&#10003; <strong>Usa Limpieza de Escaneo de Telefono primero.</strong> Antes de ejecutar OCR, sube tu escaneo de telefono a <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> de PDF.it.</li>
               <li>&#10003; <strong>Escanea con buena iluminacion.</strong> Luz natural funciona mejor. Evita escanear bajo luces fluorescentes y nunca uses flash.</li>
               <li>&#10003; <strong>Sostiene el telefono directamente arriba.</strong> Fotografiar en angulo crea distorsion de perspectiva que reduce la precision del OCR.</li>
               <li>&#10003; <strong>Usa las apps de escaner integradas.</strong> Notas (iPhone) y Google Drive (Android) tienen modos de escaneo que recortan, enderezan y mejoran automaticamente.</li>
@@ -104,7 +104,7 @@ export default function OCRPDFEnMovilPage() {
 
         <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
           <h2 className="text-2xl font-black text-white mb-3">OCR Cualquier PDF Desde Tu Telefono</h2>
-          <p className="text-slate-300 mb-6">Abre OmnisPDF en tu navegador movil, sube un PDF escaneado y obtiene una version buscable en segundos. Sin app necesaria.</p>
+          <p className="text-slate-300 mb-6">Abre PDF.it en tu navegador movil, sube un PDF escaneado y obtiene una version buscable en segundos. Sin app necesaria.</p>
           <Link href="/es/escaner-ocr" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><ScanText className="h-5 w-5" /> Probar Escaner OCR (Pro)</Link>
         </div></section>
 
@@ -130,12 +130,12 @@ export default function OCRPDFEnMovilPage() {
           <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
           <div className="space-y-6">
             {[
-              { q: "Puedo ejecutar OCR en mi iPhone sin una app?", a: "Si. El Escaner OCR de OmnisPDF funciona en Safari, Chrome o cualquier navegador movil. Sube tu PDF, ejecuta OCR y descarga — todo sin instalar apps." },
-              { q: "Funciona el OCR en telefonos Android?", a: "Si. OmnisPDF funciona en Android en Chrome, Firefox o cualquier navegador. El proceso es el mismo." },
+              { q: "Puedo ejecutar OCR en mi iPhone sin una app?", a: "Si. El Escaner OCR de PDF.it funciona en Safari, Chrome o cualquier navegador movil. Sube tu PDF, ejecuta OCR y descarga — todo sin instalar apps." },
+              { q: "Funciona el OCR en telefonos Android?", a: "Si. PDF.it funciona en Android en Chrome, Firefox o cualquier navegador. El proceso es el mismo." },
               { q: "Puedo escanear un documento con mi telefono y hacerle OCR?", a: "Si. Usa el escaner integrado de tu telefono (Notas en iPhone, Google Drive en Android) para capturar como PDF, luego sube al Escaner OCR." },
               { q: "Que tamano de archivo puedo hacer OCR en movil?", a: "Los usuarios Pro pueden procesar PDFs hasta 200MB en cualquier dispositivo, incluyendo movil." },
-              { q: "El OCR en movil es mas lento que en computadora?", a: "No. El procesamiento ocurre en los servidores de OmnisPDF. La velocidad es la misma en cualquier dispositivo." },
-              { q: "El OCR en movil es gratuito?", a: "El Escaner OCR es una funcion Pro en OmnisPDF, disponible por $7.99/mes. Aplica tanto para uso movil como de escritorio." },
+              { q: "El OCR en movil es mas lento que en computadora?", a: "No. El procesamiento ocurre en los servidores de PDF.it. La velocidad es la misma en cualquier dispositivo." },
+              { q: "El OCR en movil es gratuito?", a: "El Escaner OCR es una funcion Pro en PDF.it, disponible por $7.99/mes. Aplica tanto para uso movil como de escritorio." },
             ].map((faq, i) => (
               <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                 <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

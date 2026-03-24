@@ -5,7 +5,7 @@ import Link from "next/link"
 import { TableIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Excel para PDF — Como Ajustar à Página (Sem Cortar Dados) | OmnisPDF",
+  title: "Excel para PDF — Como Ajustar à Página (Sem Cortar Dados) | PDF.it",
   description:
     "Aprenda como usar a função Ajustar à Página no Excel para garantir que toda a planilha caiba perfeitamente na página do PDF. Guia passo a passo.",
   keywords: "excel ajustar à página, excel caber na página, excel para pdf ajustar, escalar planilha pdf, excel fit to page pdf",
@@ -29,7 +29,7 @@ const howToSchema = {
   "step": [
     { "@type": "HowToStep", "name": "Abra o Excel", "text": "Abra a planilha que deseja converter para PDF." },
     { "@type": "HowToStep", "name": "Configure Escalar para Ajustar", "text": "Vá em Layout da Página > Escalar para Ajustar. Configure Largura: 1 página." },
-    { "@type": "HowToStep", "name": "Converta para PDF", "text": "Envie o arquivo para o OmnisPDF e converta para PDF com as colunas ajustadas." }
+    { "@type": "HowToStep", "name": "Converta para PDF", "text": "Envie o arquivo para o PDF.it e converta para PDF com as colunas ajustadas." }
   ]
 }
 
@@ -83,7 +83,7 @@ export default function ExcelParaPdfAjustarAPaginaPage() {
                   { title: "Encontre 'Escalar para Ajustar'", desc: "No grupo 'Escalar para Ajustar' (Scale to Fit), você verá três opções: Largura, Altura e Escala." },
                   { title: "Configure a Largura", desc: "Mude 'Largura' para '1 página'. Isso força todas as colunas a caberem na largura de uma página. Mantenha 'Altura' como 'Automático' para permitir múltiplas páginas na vertical." },
                   { title: "Verifique o resultado", desc: "Use 'Visualização de Impressão' (Ctrl+P) para ver como ficará. Se o texto ficou muito pequeno, considere usar orientação Paisagem ou remover colunas desnecessárias." },
-                  { title: "Salve e converta", desc: "Salve o arquivo Excel e envie para a ferramenta Excel para PDF do OmnisPDF. As configurações de escala serão respeitadas na conversão." },
+                  { title: "Salve e converta", desc: "Salve o arquivo Excel e envie para a ferramenta Excel para PDF do PDF.it. As configurações de escala serão respeitadas na conversão." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
                     <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>

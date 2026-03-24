@@ -5,14 +5,14 @@ import Link from "next/link"
 import { Unlock, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Desbloquear PDF com Senha Esquecida — O Que Fazer? | OmnisPDF",
+  title: "Desbloquear PDF com Senha Esquecida — O Que Fazer? | PDF.it",
   description: "Esqueceu a senha do PDF? Descubra suas opcoes para recuperar acesso a documentos PDF protegidos com senha. Dicas para senha de abertura e senha de permissoes.",
   keywords: "desbloquear pdf senha esquecida, esqueci senha pdf, recuperar senha pdf, pdf senha perdida, abrir pdf sem senha",
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
   { "@type": "Question", "name": "E possivel abrir um PDF se esqueci a senha de abertura?", "acceptedAnswer": { "@type": "Answer", "text": "Se o PDF usa criptografia forte (AES-256), recuperar a senha e praticamente impossivel sem ferramentas especializadas. Tente lembrar variações da senha, verifique emails antigos onde a senha possa ter sido compartilhada, ou procure uma versao nao protegida do documento." } },
-  { "@type": "Question", "name": "E se o PDF so tem senha de permissoes (consigo abrir mas nao imprimir)?", "acceptedAnswer": { "@type": "Answer", "text": "Se voce consegue abrir o PDF mas esta bloqueado para imprimir, copiar ou editar, a ferramenta Desbloquear PDF do OmnisPDF pode remover essas restricoes sem precisar da senha de permissoes." } },
+  { "@type": "Question", "name": "E se o PDF so tem senha de permissoes (consigo abrir mas nao imprimir)?", "acceptedAnswer": { "@type": "Answer", "text": "Se voce consegue abrir o PDF mas esta bloqueado para imprimir, copiar ou editar, a ferramenta Desbloquear PDF do PDF.it pode remover essas restricoes sem precisar da senha de permissoes." } },
   { "@type": "Question", "name": "Existem programas para quebrar senha de PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Existem ferramentas de forca bruta, mas elas so funcionam com senhas curtas e fracas. Senhas fortes com AES-256 levariam milhoes de anos para serem quebradas. Essas ferramentas tambem podem ter riscos de seguranca." } },
   { "@type": "Question", "name": "Como evitar esquecer a senha no futuro?", "acceptedAnswer": { "@type": "Answer", "text": "Use um gerenciador de senhas como 1Password, Bitwarden ou LastPass. Eles armazenam senhas de forma segura e voce so precisa lembrar de uma senha mestra." } }
 ] }
@@ -20,7 +20,7 @@ const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainE
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "O que fazer quando esquece a senha do PDF", "description": "Passos para tentar recuperar acesso ao seu PDF protegido.", "step": [
   { "@type": "HowToStep", "name": "Tente variacoes da senha", "text": "Tente variacoes comuns: maiusculas/minusculas diferentes, com/sem numeros no final, senhas que voce usa frequentemente." },
   { "@type": "HowToStep", "name": "Verifique comunicacoes anteriores", "text": "Procure em emails, mensagens ou anotacoes onde a senha possa ter sido registrada." },
-  { "@type": "HowToStep", "name": "Use o OmnisPDF para restricoes de permissao", "text": "Se o PDF abre mas tem restricoes, use a ferramenta Desbloquear PDF para remover as permissoes." }
+  { "@type": "HowToStep", "name": "Use o PDF.it para restricoes de permissao", "text": "Se o PDF abre mas tem restricoes, use a ferramenta Desbloquear PDF para remover as permissoes." }
 ] }
 
 export default function DesbloquearPdfSenhaEsquecidaPage() {
@@ -47,7 +47,7 @@ export default function DesbloquearPdfSenhaEsquecidaPage() {
             <p className="text-slate-600 mb-4">O que voce pode fazer depende de qual tipo de senha o PDF tem:</p>
             <ul className="space-y-3 text-slate-700">
               <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">A.</span><span><strong>Senha de abertura (nao consigo abrir o PDF).</strong> Esse e o caso mais dificil. O PDF e criptografado e sem a senha correta, o conteudo e inacessivel.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">B.</span><span><strong>Senha de permissoes (consigo abrir mas nao imprimir/copiar).</strong> Esse caso tem solucao! A ferramenta Desbloquear PDF do OmnisPDF pode remover essas restricoes.</span></li>
+              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">B.</span><span><strong>Senha de permissoes (consigo abrir mas nao imprimir/copiar).</strong> Esse caso tem solucao! A ferramenta Desbloquear PDF do PDF.it pode remover essas restricoes.</span></li>
             </ul>
           </section>
 
@@ -71,8 +71,8 @@ export default function DesbloquearPdfSenhaEsquecidaPage() {
             <p className="text-slate-600 mb-4">Boa noticia! Esse tipo de restricao pode ser removido facilmente:</p>
             <div className="space-y-4">
               {[
-                { title: "Envie o PDF para o OmnisPDF", desc: "Acesse a ferramenta Desbloquear PDF e envie o arquivo. Como o PDF abre sem senha, voce nao precisa digitar nenhuma senha." },
-                { title: "Remova as restricoes", desc: "O OmnisPDF detecta as restricoes de permissao e as remove automaticamente." },
+                { title: "Envie o PDF para o PDF.it", desc: "Acesse a ferramenta Desbloquear PDF e envie o arquivo. Como o PDF abre sem senha, voce nao precisa digitar nenhuma senha." },
+                { title: "Remova as restricoes", desc: "O PDF.it detecta as restricoes de permissao e as remove automaticamente." },
                 { title: "Baixe o PDF desbloqueado", desc: "Agora voce pode imprimir, copiar texto e fazer tudo que estava bloqueado." },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">

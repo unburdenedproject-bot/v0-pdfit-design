@@ -5,9 +5,9 @@ import Link from "next/link"
 import { Stamp, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Agregar una Marca de Agua a un PDF en Tu Telefono (iPhone y Android) | OmnisPDF",
+  title: "Agregar una Marca de Agua a un PDF en Tu Telefono (iPhone y Android) | PDF.it",
   description:
-    "Aprende como agregar una marca de agua a un PDF desde tu iPhone o telefono Android. Sin necesidad de aplicacion — usa OmnisPDF en tu navegador movil para estampar PDF donde estes.",
+    "Aprende como agregar una marca de agua a un PDF desde tu iPhone o telefono Android. Sin necesidad de aplicacion — usa PDF.it en tu navegador movil para estampar PDF donde estes.",
   keywords: "marca de agua pdf en telefono, agregar marca de agua pdf iphone, marca de agua pdf android, marca de agua pdf movil",
 }
 
@@ -18,22 +18,22 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Puedo agregar una marca de agua a un PDF en mi telefono?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. OmnisPDF funciona en cualquier navegador movil — Safari en iPhone, Chrome en Android o cualquier otro navegador. Sube tu PDF, agrega una marca de agua de texto o imagen, y descarga el resultado directamente en tu telefono." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en cualquier navegador movil — Safari en iPhone, Chrome en Android o cualquier otro navegador. Sube tu PDF, agrega una marca de agua de texto o imagen, y descarga el resultado directamente en tu telefono." }
     },
     {
       "@type": "Question",
       "name": "Necesito descargar una aplicacion para agregar marca de agua a un PDF en movil?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF es una herramienta basada en web que funciona completamente en tu navegador. Sin instalacion de aplicacion, sin cuenta requerida para funciones basicas. Solo abre omnispdf.com en tu telefono y comienza a agregar marcas de agua." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it es una herramienta basada en web que funciona completamente en tu navegador. Sin instalacion de aplicacion, sin cuenta requerida para funciones basicas. Solo abre pdf.it.com en tu telefono y comienza a agregar marcas de agua." }
     },
     {
       "@type": "Question",
       "name": "Funciona igual en iPhone y Android?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. OmnisPDF es completamente responsivo y funciona de manera identica en iPhone (Safari, Chrome) y Android (Chrome, Firefox, Samsung Internet). La interfaz se adapta automaticamente al tamano de tu pantalla." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it es completamente responsivo y funciona de manera identica en iPhone (Safari, Chrome) y Android (Chrome, Firefox, Samsung Internet). La interfaz se adapta automaticamente al tamano de tu pantalla." }
     },
     {
       "@type": "Question",
       "name": "Puedo subir un logo como marca de agua desde la galeria de mi telefono?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. Cuando seleccionas Marca de Agua de Imagen en OmnisPDF, tu telefono te permitira explorar tu galeria o archivos. Selecciona tu imagen de logo (PNG recomendado para mejores resultados) y se usara como marca de agua." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. Cuando seleccionas Marca de Agua de Imagen en PDF.it, tu telefono te permitira explorar tu galeria o archivos. Selecciona tu imagen de logo (PNG recomendado para mejores resultados) y se usara como marca de agua." }
     },
     {
       "@type": "Question",
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Agregar una Marca de Agua a un PDF en Tu Telefono",
-  "description": "Agrega una marca de agua a cualquier PDF desde tu iPhone o Android en 3 simples pasos usando OmnisPDF en tu navegador movil.",
+  "description": "Agrega una marca de agua a cualquier PDF desde tu iPhone o Android en 3 simples pasos usando PDF.it en tu navegador movil.",
   "step": [
     {
       "@type": "HowToStep",
-      "name": "Abre OmnisPDF en tu telefono",
-      "text": "Abre Safari, Chrome o cualquier navegador en tu telefono y ve a omnispdf.com. Toca la herramienta Marca de Agua PDF."
+      "name": "Abre PDF.it en tu telefono",
+      "text": "Abre Safari, Chrome o cualquier navegador en tu telefono y ve a pdf.it.com. Toca la herramienta Marca de Agua PDF."
     },
     {
       "@type": "HowToStep",
@@ -94,7 +94,7 @@ export default function MarcaDeAguaPDFEnMovilPage() {
               <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Marca de Agua PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Agregar una Marca de Agua a un PDF en Tu Telefono (iPhone y Android)</h1>
               <p className="text-xl text-slate-300">
-                Necesitas agregar una marca de agua a un PDF pero no tienes tu computadora? OmnisPDF funciona en cualquier navegador movil — sin necesidad de descargar aplicaciones. Aqui te explicamos como estampar un PDF desde tu telefono en menos de un minuto.
+                Necesitas agregar una marca de agua a un PDF pero no tienes tu computadora? PDF.it funciona en cualquier navegador movil — sin necesidad de descargar aplicaciones. Aqui te explicamos como estampar un PDF desde tu telefono en menos de un minuto.
               </p>
             </div>
           </div>
@@ -157,8 +157,8 @@ export default function MarcaDeAguaPDFEnMovilPage() {
               <div className="space-y-4">
                 {[
                   {
-                    title: "Abre OmnisPDF en tu navegador movil",
-                    desc: "Abre Safari (iPhone), Chrome (Android) o cualquier navegador movil y navega a omnispdf.com. Toca la herramienta Marca de Agua PDF desde la pagina principal o el menu de herramientas. La interfaz es completamente responsiva y disenada para pantallas tactiles.",
+                    title: "Abre PDF.it en tu navegador movil",
+                    desc: "Abre Safari (iPhone), Chrome (Android) o cualquier navegador movil y navega a pdf.it.com. Toca la herramienta Marca de Agua PDF desde la pagina principal o el menu de herramientas. La interfaz es completamente responsiva y disenada para pantallas tactiles.",
                   },
                   {
                     title: "Sube tu PDF y configura la marca de agua",
@@ -206,7 +206,7 @@ export default function MarcaDeAguaPDFEnMovilPage() {
                 <li>&#10003; <strong>Sube desde cualquier lugar.</strong> Tocar el area de carga abre tu selector de archivos, que te da acceso al almacenamiento local, Google Drive, OneDrive y otros proveedores de nube. Selecciona tu PDF desde cualquier ubicacion.</li>
                 <li>&#10003; <strong>Revisa la barra de notificaciones.</strong> Despues de que el PDF con marca de agua sea procesado, Chrome mostrara una notificacion de descarga. Tocala para abrir el archivo directamente, o encuentralo en tu carpeta Descargas.</li>
                 <li>&#10003; <strong>Comparte por cualquier aplicacion.</strong> Abre el archivo descargado y usa el menu de compartir de Android para enviarlo a traves de Gmail, WhatsApp, Slack o cualquier aplicacion instalada.</li>
-                <li>&#10003; <strong>Funciona en Samsung Internet tambien.</strong> Si usas el navegador predeterminado de Samsung en lugar de Chrome, OmnisPDF funciona igual. La herramienta es compatible con todos los navegadores moviles modernos.</li>
+                <li>&#10003; <strong>Funciona en Samsung Internet tambien.</strong> Si usas el navegador predeterminado de Samsung en lugar de Chrome, PDF.it funciona igual. La herramienta es compatible con todos los navegadores moviles modernos.</li>
               </ul>
             </section>
 
@@ -214,7 +214,7 @@ export default function MarcaDeAguaPDFEnMovilPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Otras Herramientas de PDF que Puedes Usar en Movil</h2>
               <p className="text-slate-600 mb-4">
-                OmnisPDF esta disenado para funcionar completamente en movil con todas sus herramientas, no solo marcas de agua. Aqui hay algunas herramientas que combinan bien con marcas de agua en tu telefono:
+                PDF.it esta disenado para funcionar completamente en movil con todas sus herramientas, no solo marcas de agua. Aqui hay algunas herramientas que combinan bien con marcas de agua en tu telefono:
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Aplana tu marca de agua.</strong> Despues de agregar la marca de agua, usa <Link href="/es/aplanar-pdf" className="text-orange-600 hover:underline">Aplanar PDF</Link> en tu telefono para hacer la marca de agua permanente — todo desde la misma sesion del navegador.</li>
@@ -235,7 +235,7 @@ export default function MarcaDeAguaPDFEnMovilPage() {
         <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Agrega una Marca de Agua a un PDF Desde Tu Telefono</h2>
-            <p className="text-slate-300 mb-6">Abre OmnisPDF en tu navegador movil, sube tu PDF y agrega una marca de agua en segundos. Sin necesidad de descargar aplicaciones. Disponible para usuarios Pro y Business.</p>
+            <p className="text-slate-300 mb-6">Abre PDF.it en tu navegador movil, sube tu PDF y agrega una marca de agua en segundos. Sin necesidad de descargar aplicaciones. Disponible para usuarios Pro y Business.</p>
             <Link
               href="/es/marca-de-agua-pdf"
               className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
@@ -274,10 +274,10 @@ export default function MarcaDeAguaPDFEnMovilPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Puedo agregar una marca de agua a un PDF en mi telefono?", a: "Si. OmnisPDF funciona en cualquier navegador movil — Safari en iPhone, Chrome en Android o cualquier otro navegador. Sube tu PDF, agrega una marca de agua de texto o imagen, y descarga el resultado directamente en tu telefono." },
-                { q: "Necesito descargar una aplicacion para agregar marca de agua a un PDF en movil?", a: "No. OmnisPDF es una herramienta basada en web que funciona completamente en tu navegador. Sin instalacion de aplicacion, sin cuenta requerida para funciones basicas. Solo abre omnispdf.com en tu telefono y comienza a agregar marcas de agua." },
-                { q: "Funciona igual en iPhone y Android?", a: "Si. OmnisPDF es completamente responsivo y funciona de manera identica en iPhone (Safari, Chrome) y Android (Chrome, Firefox, Samsung Internet). La interfaz se adapta automaticamente al tamano de tu pantalla." },
-                { q: "Puedo subir un logo como marca de agua desde la galeria de mi telefono?", a: "Si. Cuando seleccionas Marca de Agua de Imagen en OmnisPDF, tu telefono te permitira explorar tu galeria o archivos. Selecciona tu imagen de logo (PNG recomendado para mejores resultados) y se usara como marca de agua." },
+                { q: "Puedo agregar una marca de agua a un PDF en mi telefono?", a: "Si. PDF.it funciona en cualquier navegador movil — Safari en iPhone, Chrome en Android o cualquier otro navegador. Sube tu PDF, agrega una marca de agua de texto o imagen, y descarga el resultado directamente en tu telefono." },
+                { q: "Necesito descargar una aplicacion para agregar marca de agua a un PDF en movil?", a: "No. PDF.it es una herramienta basada en web que funciona completamente en tu navegador. Sin instalacion de aplicacion, sin cuenta requerida para funciones basicas. Solo abre pdf.it.com en tu telefono y comienza a agregar marcas de agua." },
+                { q: "Funciona igual en iPhone y Android?", a: "Si. PDF.it es completamente responsivo y funciona de manera identica en iPhone (Safari, Chrome) y Android (Chrome, Firefox, Samsung Internet). La interfaz se adapta automaticamente al tamano de tu pantalla." },
+                { q: "Puedo subir un logo como marca de agua desde la galeria de mi telefono?", a: "Si. Cuando seleccionas Marca de Agua de Imagen en PDF.it, tu telefono te permitira explorar tu galeria o archivos. Selecciona tu imagen de logo (PNG recomendado para mejores resultados) y se usara como marca de agua." },
                 { q: "Donde se guarda el PDF con marca de agua en mi telefono?", a: "El PDF con marca de agua se descarga en la ubicacion de descarga predeterminada de tu telefono. En iPhone, revisa la aplicacion Archivos en Descargas. En Android, revisa la carpeta Descargas o el gestor de descargas de tu navegador." },
                 { q: "La herramienta Marca de Agua PDF es gratis en movil?", a: "Marca de Agua PDF esta disponible para usuarios Pro ($7.99/mes) y Business ($13.99/mes) en todos los dispositivos, incluyendo movil. Ambos niveles incluyen marcas de agua ilimitadas y archivos de hasta 200MB." },
               ].map((faq, i) => (

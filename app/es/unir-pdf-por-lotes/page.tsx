@@ -5,9 +5,9 @@ import { Merge, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Unir PDF por Lotes — Combina PDFs en Masa | OmnisPDF",
+  title: "Unir PDF por Lotes — Combina PDFs en Masa | PDF.it",
   description:
-    "Une múltiples archivos PDF a la vez con OmnisPDF Pro. Sube docenas de PDFs y combínalos en un solo documento en una sola operación — rápido y eficiente.",
+    "Une múltiples archivos PDF a la vez con PDF.it Pro. Sube docenas de PDFs y combínalos en un solo documento en una sola operación — rápido y eficiente.",
   alternates: {
     languages: {
       en: "/batch-merge-pdf",
@@ -38,12 +38,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Qué tan rápido es el procesamiento por lotes?",
-      "acceptedAnswer": { "@type": "Answer", "text": "El procesamiento por lotes es significativamente más rápido que unir archivos uno por uno. OmnisPDF procesa todos los archivos en paralelo, ahorrándote horas de trabajo manual." }
+      "acceptedAnswer": { "@type": "Answer", "text": "El procesamiento por lotes es significativamente más rápido que unir archivos uno por uno. PDF.it procesa todos los archivos en paralelo, ahorrándote horas de trabajo manual." }
     },
     {
       "@type": "Question",
       "name": "¿Cuál es el tamaño máximo de archivo para unir por lotes?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Los usuarios Pro pueden subir archivos de hasta 200MB cada uno. Los usuarios gratuitos están limitados a 25MB por archivo. Para documentos muy grandes, considera comprimirlos primero con la herramienta Comprimir PDF de OmnisPDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Los usuarios Pro pueden subir archivos de hasta 200MB cada uno. Los usuarios gratuitos están limitados a 25MB por archivo. Para documentos muy grandes, considera comprimirlos primero con la herramienta Comprimir PDF de PDF.it." }
     },
     {
       "@type": "Question",
@@ -72,7 +72,7 @@ export default function UnirPDFPorLotesPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Unir PDF por Lotes</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Combina múltiples archivos PDF a la vez con OmnisPDF Pro. Sube docenas de documentos y únelos en un solo PDF en una sola operación — ahorra horas de trabajo manual.
+                Combina múltiples archivos PDF a la vez con PDF.it Pro. Sube docenas de documentos y únelos en un solo PDF en una sola operación — ahorra horas de trabajo manual.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Procesa Múltiples Archivos</span></div>
@@ -103,7 +103,7 @@ export default function UnirPDFPorLotesPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Cuando necesitas combinar docenas de archivos PDF en un solo documento, hacerlo uno a la vez es extremadamente lento. La función de unión por lotes de OmnisPDF Pro te permite subir múltiples archivos a la vez, ordenarlos y unirlos todos en una sola operación.
+              Cuando necesitas combinar docenas de archivos PDF en un solo documento, hacerlo uno a la vez es extremadamente lento. La función de unión por lotes de PDF.it Pro te permite subir múltiples archivos a la vez, ordenarlos y unirlos todos en una sola operación.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Sube y une múltiples PDFs simultáneamente</li>
@@ -193,8 +193,8 @@ export default function UnirPDFPorLotesPage() {
                 { q: "¿Cuántos PDFs puedo unir por lotes?", a: "Los usuarios Pro pueden subir y unir docenas de archivos PDF en una sola operación por lotes. No hay un límite fijo de archivos — la principal restricción es el tamaño total, que puede ser de hasta 200MB por archivo para usuarios Pro." },
                 { q: "¿La unión por lotes está disponible en el plan gratuito?", a: "Los usuarios gratuitos pueden unir archivos uno a la vez con archivos de hasta 25MB. El procesamiento por lotes — subir y unir múltiples archivos simultáneamente — es una función Pro disponible por $7.99/mes." },
                 { q: "¿Puedo elegir el orden de los PDFs unidos por lotes?", a: "Sí. Cuando subes múltiples archivos para unión por lotes, puedes ordenarlos como prefieras antes de combinar. El PDF final seguirá la secuencia que establezcas." },
-                { q: "¿Qué tan rápido es el procesamiento por lotes?", a: "El procesamiento por lotes es significativamente más rápido que unir archivos uno por uno. OmnisPDF procesa todos los archivos en paralelo, ahorrándote horas de trabajo manual." },
-                { q: "¿Cuál es el tamaño máximo de archivo para unir por lotes?", a: "Los usuarios Pro pueden subir archivos de hasta 200MB cada uno. Los usuarios gratuitos están limitados a 25MB por archivo. Para documentos muy grandes, considera comprimirlos primero con la herramienta Comprimir PDF de OmnisPDF." },
+                { q: "¿Qué tan rápido es el procesamiento por lotes?", a: "El procesamiento por lotes es significativamente más rápido que unir archivos uno por uno. PDF.it procesa todos los archivos en paralelo, ahorrándote horas de trabajo manual." },
+                { q: "¿Cuál es el tamaño máximo de archivo para unir por lotes?", a: "Los usuarios Pro pueden subir archivos de hasta 200MB cada uno. Los usuarios gratuitos están limitados a 25MB por archivo. Para documentos muy grandes, considera comprimirlos primero con la herramienta Comprimir PDF de PDF.it." },
                 { q: "¿La unión por lotes afecta la calidad del PDF?", a: "No. La unión por lotes preserva la calidad original de todos tus archivos PDF. Texto, imágenes, formato, fuentes y elementos interactivos permanecen sin cambios en el resultado final." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

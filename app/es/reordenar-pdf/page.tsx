@@ -6,9 +6,9 @@ import { ArrowUpDown, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Reordenar PDF — Cambia el Orden de las Páginas de tu PDF | OmnisPDF",
+  title: "Reordenar PDF — Cambia el Orden de las Páginas de tu PDF | PDF.it",
   description:
-    "Reordena las páginas de tu PDF con OmnisPDF. Cambia el orden, mueve páginas y reorganiza tu documento — rápido, gratis y en tu navegador.",
+    "Reordena las páginas de tu PDF con PDF.it. Cambia el orden, mueve páginas y reorganiza tu documento — rápido, gratis y en tu navegador.",
   alternates: {
     languages: {
       en: "/reorder-pdf",
@@ -24,7 +24,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo reordeno las páginas de un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a OmnisPDF, usa la función de arrastrar y soltar para mover las páginas al orden deseado, y descarga el PDF con el nuevo orden de páginas." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it, usa la función de arrastrar y soltar para mover las páginas al orden deseado, y descarga el PDF con el nuevo orden de páginas." }
     },
     {
       "@type": "Question",
@@ -39,7 +39,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo reordenar un PDF desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en navegadores móviles — sube tu PDF, reordena las páginas y descarga el resultado desde iPhone o Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube tu PDF, reordena las páginas y descarga el resultado desde iPhone o Android." }
     },
     {
       "@type": "Question",
@@ -97,7 +97,7 @@ export default function ReordenarPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              La herramienta Reordenar PDF de OmnisPDF te permite cambiar el orden de las páginas de cualquier documento PDF. Usa arrastrar y soltar para mover páginas individuales o secciones completas — perfecto para corregir documentos escaneados, reorganizar capítulos o preparar archivos para impresión.
+              La herramienta Reordenar PDF de PDF.it te permite cambiar el orden de las páginas de cualquier documento PDF. Usa arrastrar y soltar para mover páginas individuales o secciones completas — perfecto para corregir documentos escaneados, reorganizar capítulos o preparar archivos para impresión.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Cambia el orden de las páginas con arrastrar y soltar</li>
@@ -145,7 +145,7 @@ export default function ReordenarPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Reordenar un PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Arrastra y suelta las páginas para cambiar su orden.",
                 "Haz clic en Reordenar PDF y descarga tu documento con el nuevo orden.",
               ].map((step, i) => (
@@ -194,10 +194,10 @@ export default function ReordenarPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo reordeno las páginas de un PDF?", a: "Sube tu PDF a OmnisPDF, usa la función de arrastrar y soltar para mover las páginas al orden deseado, y descarga el PDF con el nuevo orden de páginas." },
+                { q: "¿Cómo reordeno las páginas de un PDF?", a: "Sube tu PDF a PDF.it, usa la función de arrastrar y soltar para mover las páginas al orden deseado, y descarga el PDF con el nuevo orden de páginas." },
                 { q: "¿Puedo mover una página a cualquier posición?", a: "Sí. Puedes mover cualquier página a cualquier posición dentro del documento. Simplemente arrastra la página a su nueva ubicación." },
                 { q: "¿Se mantiene la calidad al reordenar?", a: "Sí. Reordenar páginas no afecta la calidad del contenido — texto, imágenes y formato se mantienen exactamente como en el original." },
-                { q: "¿Puedo reordenar un PDF desde mi celular?", a: "Sí. OmnisPDF funciona en navegadores móviles — sube tu PDF, reordena las páginas y descarga el resultado desde iPhone o Android." },
+                { q: "¿Puedo reordenar un PDF desde mi celular?", a: "Sí. PDF.it funciona en navegadores móviles — sube tu PDF, reordena las páginas y descarga el resultado desde iPhone o Android." },
                 { q: "¿Es seguro subir mi PDF?", a: "Sí. Todas las transferencias están encriptadas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." },
                 { q: "¿Es gratis reordenar un PDF?", a: "Sí. Puedes reordenar PDFs de hasta 25MB gratis. Para archivos más grandes y procesamiento por lotes, actualiza a Pro." },
               ].map((faq, i) => (

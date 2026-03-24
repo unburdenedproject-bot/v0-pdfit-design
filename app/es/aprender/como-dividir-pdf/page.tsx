@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Scissors, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Cómo Dividir un PDF en Línea (Extraer Páginas o Rangos) | OmnisPDF",
+  title: "Cómo Dividir un PDF en Línea (Extraer Páginas o Rangos) | PDF.it",
   description:
     "Aprende cómo dividir un PDF en archivos separados por rangos de páginas. Guía paso a paso para extraer capítulos, eliminar páginas y organizar documentos — gratis, en línea, sin software.",
   keywords: "dividir pdf en línea, dividir pdf por páginas, extraer páginas de pdf, dividir pdf en partes, cómo dividir un pdf",
@@ -14,20 +14,20 @@ export const metadata = {
 const faqSchema = {
   "@context": "https://schema.org", "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "¿Cómo divido un PDF en línea gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a OmnisPDF, ingresa los rangos de páginas que quieres extraer (ej. 1-5, 8, 10-15), haz clic en Dividir, y descarga tus nuevos archivos. No se requiere registro para tus primeros 3 archivos." } },
+    { "@type": "Question", "name": "¿Cómo divido un PDF en línea gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it, ingresa los rangos de páginas que quieres extraer (ej. 1-5, 8, 10-15), haz clic en Dividir, y descarga tus nuevos archivos. No se requiere registro para tus primeros 3 archivos." } },
     { "@type": "Question", "name": "¿Puedo dividir un PDF en rangos de páginas específicos?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Puedes ingresar cualquier combinación de rangos de páginas y páginas individuales. Por ejemplo, '1-3, 7, 10-15' creará un archivo con las páginas 1 a 3, página 7, y páginas 10 a 15." } },
     { "@type": "Question", "name": "¿Dividir un PDF cambia el archivo original?", "acceptedAnswer": { "@type": "Answer", "text": "No. Dividir crea nuevos archivos con las páginas que seleccionas. Tu PDF original permanece exactamente como estaba — nada se modifica ni se elimina." } },
-    { "@type": "Question", "name": "¿Puedo dividir un PDF en páginas individuales?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Ingresa cada número de página separado por comas (ej. 1, 2, 3, 4) o usa la opción 'dividir cada página' de OmnisPDF para crear un archivo separado por cada página automáticamente." } },
+    { "@type": "Question", "name": "¿Puedo dividir un PDF en páginas individuales?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Ingresa cada número de página separado por comas (ej. 1, 2, 3, 4) o usa la opción 'dividir cada página' de PDF.it para crear un archivo separado por cada página automáticamente." } },
     { "@type": "Question", "name": "¿Cómo divido un PDF grande para email?", "acceptedAnswer": { "@type": "Answer", "text": "Divide tu PDF en partes más pequeñas que quepan bajo el límite de adjuntos de tu proveedor de email (generalmente 20-25MB). Divide el PDF en rangos de 2-3 páginas, luego comprime cada parte por separado si es necesario." } },
-    { "@type": "Question", "name": "¿Es posible dividir un PDF protegido con contraseña?", "acceptedAnswer": { "@type": "Answer", "text": "Necesitas desbloquear el PDF primero. Usa la herramienta Desbloquear PDF de OmnisPDF para eliminar la contraseña, luego divide el archivo desbloqueado en las páginas o rangos que necesites." } }
+    { "@type": "Question", "name": "¿Es posible dividir un PDF protegido con contraseña?", "acceptedAnswer": { "@type": "Answer", "text": "Necesitas desbloquear el PDF primero. Usa la herramienta Desbloquear PDF de PDF.it para eliminar la contraseña, luego divide el archivo desbloqueado en las páginas o rangos que necesites." } }
   ]
 }
 
 const howToSchema = {
   "@context": "https://schema.org", "@type": "HowTo", "name": "Cómo Dividir un PDF en Línea",
-  "description": "Divide tu PDF en archivos separados por rangos de páginas en 3 simples pasos usando OmnisPDF.",
+  "description": "Divide tu PDF en archivos separados por rangos de páginas en 3 simples pasos usando PDF.it.",
   "step": [
-    { "@type": "HowToStep", "name": "Sube tu PDF", "text": "Ve a la herramienta Dividir PDF de OmnisPDF y sube tu archivo haciendo clic o arrastrándolo al área de carga." },
+    { "@type": "HowToStep", "name": "Sube tu PDF", "text": "Ve a la herramienta Dividir PDF de PDF.it y sube tu archivo haciendo clic o arrastrándolo al área de carga." },
     { "@type": "HowToStep", "name": "Ingresa los rangos de páginas", "text": "Escribe las páginas o rangos que quieres extraer — por ejemplo, 1-5, 8, 10-15. Cada rango crea un archivo de salida separado." },
     { "@type": "HowToStep", "name": "Descarga tus archivos divididos", "text": "Haz clic en Dividir PDF y descarga los archivos resultantes. Si dividiste en múltiples partes, puedes descargarlos individualmente o como un ZIP." }
   ]
@@ -107,7 +107,7 @@ export default function ComoDividirPDFPage() {
 
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Entendiendo la Sintaxis de Rangos de Páginas</h2>
-              <p className="text-slate-600 mb-4">OmnisPDF usa una sintaxis simple para definir qué páginas quieres. Aquí hay ejemplos comunes:</p>
+              <p className="text-slate-600 mb-4">PDF.it usa una sintaxis simple para definir qué páginas quieres. Aquí hay ejemplos comunes:</p>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm border border-gray-200 rounded-xl overflow-hidden">
                   <thead>
@@ -141,7 +141,7 @@ export default function ComoDividirPDFPage() {
 
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">¿Qué Pasa con el PDF Original?</h2>
-              <p className="text-slate-600 mb-4">Nada. Dividir es una operación no destructiva. OmnisPDF crea <strong>nuevos archivos</strong> con las páginas que seleccionas — tu PDF original nunca se modifica, renombra ni elimina. Piensa en ello como fotocopiar páginas específicas de un libro. El libro permanece intacto.</p>
+              <p className="text-slate-600 mb-4">Nada. Dividir es una operación no destructiva. PDF.it crea <strong>nuevos archivos</strong> con las páginas que seleccionas — tu PDF original nunca se modifica, renombra ni elimina. Piensa en ello como fotocopiar páginas específicas de un libro. El libro permanece intacto.</p>
               <p className="text-slate-600">Si más tarde te das cuenta de que necesitas esas páginas juntas de nuevo, usa <Link href="/es/unir-pdf" className="text-orange-600 hover:underline">Unir PDF</Link> para combinar archivos en un documento.</p>
             </section>
 
@@ -174,7 +174,7 @@ export default function ComoDividirPDFPage() {
                 <li>✓ <strong>Dividir</strong> separa un PDF en múltiples partes (múltiples archivos de salida de una entrada).</li>
                 <li>✓ <strong>Extraer</strong> saca páginas específicas en un solo archivo nuevo (un archivo de salida con páginas seleccionadas).</li>
               </ul>
-              <p className="text-slate-600 mt-4">La herramienta <Link href="/es/dividir-pdf" className="text-orange-600 hover:underline">Dividir PDF</Link> de OmnisPDF maneja ambos — ingresa un rango para extracción, o múltiples rangos para dividir en partes. También puedes usar la herramienta dedicada <Link href="/es/dividir-pdf" className="text-orange-600 hover:underline">Extraer Páginas</Link> para una interfaz más simple enfocada en sacar páginas específicas.</p>
+              <p className="text-slate-600 mt-4">La herramienta <Link href="/es/dividir-pdf" className="text-orange-600 hover:underline">Dividir PDF</Link> de PDF.it maneja ambos — ingresa un rango para extracción, o múltiples rangos para dividir en partes. También puedes usar la herramienta dedicada <Link href="/es/dividir-pdf" className="text-orange-600 hover:underline">Extraer Páginas</Link> para una interfaz más simple enfocada en sacar páginas específicas.</p>
             </section>
 
           </div>
@@ -214,12 +214,12 @@ export default function ComoDividirPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo divido un PDF en línea gratis?", a: "Sube tu PDF a OmnisPDF, ingresa los rangos de páginas que quieres extraer (ej. 1-5, 8, 10-15), haz clic en Dividir, y descarga tus nuevos archivos. No se requiere registro para tus primeros 3 archivos." },
+                { q: "¿Cómo divido un PDF en línea gratis?", a: "Sube tu PDF a PDF.it, ingresa los rangos de páginas que quieres extraer (ej. 1-5, 8, 10-15), haz clic en Dividir, y descarga tus nuevos archivos. No se requiere registro para tus primeros 3 archivos." },
                 { q: "¿Puedo dividir un PDF en rangos de páginas específicos?", a: "Sí. Puedes ingresar cualquier combinación de rangos de páginas y páginas individuales. Por ejemplo, '1-3, 7, 10-15' creará un archivo con las páginas 1 a 3, página 7, y páginas 10 a 15." },
                 { q: "¿Dividir un PDF cambia el archivo original?", a: "No. Dividir crea nuevos archivos con las páginas que seleccionas. Tu PDF original permanece exactamente como estaba — nada se modifica ni se elimina." },
-                { q: "¿Puedo dividir un PDF en páginas individuales?", a: "Sí. Ingresa cada número de página separado por comas (ej. 1, 2, 3, 4) o usa la opción 'dividir cada página' de OmnisPDF para crear un archivo separado por cada página automáticamente." },
+                { q: "¿Puedo dividir un PDF en páginas individuales?", a: "Sí. Ingresa cada número de página separado por comas (ej. 1, 2, 3, 4) o usa la opción 'dividir cada página' de PDF.it para crear un archivo separado por cada página automáticamente." },
                 { q: "¿Cómo divido un PDF grande para email?", a: "Divide tu PDF en partes más pequeñas que quepan bajo el límite de adjuntos de tu proveedor de email (generalmente 20-25MB). Divide el PDF en rangos de 2-3 páginas, luego comprime cada parte por separado si es necesario." },
-                { q: "¿Es posible dividir un PDF protegido con contraseña?", a: "Necesitas desbloquear el PDF primero. Usa la herramienta Desbloquear PDF de OmnisPDF para eliminar la contraseña, luego divide el archivo desbloqueado en las páginas o rangos que necesites." },
+                { q: "¿Es posible dividir un PDF protegido con contraseña?", a: "Necesitas desbloquear el PDF primero. Usa la herramienta Desbloquear PDF de PDF.it para eliminar la contraseña, luego divide el archivo desbloqueado en las páginas o rangos que necesites." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

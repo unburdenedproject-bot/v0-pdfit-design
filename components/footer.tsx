@@ -22,7 +22,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="mb-4">
-              <img src="/logo-white.svg" alt="OmnisPDF" className="h-8 w-auto" width="180" height="32" loading="lazy" />
+              <img src="/logo-white.svg" alt="PDF.it" className="h-8 w-auto" width="180" height="32" loading="lazy" />
             </div>
             <p className="text-slate-400 mb-6 leading-relaxed">
               Convert, compress, merge, split, OCR, and protect PDFs in seconds. Simple, browser-based tools that work on any device.
@@ -112,11 +112,11 @@ export function Footer() {
             <h3 className="font-bold text-white mb-4">Contact Us</h3>
             <div className="space-y-3">
               <a
-                href="mailto:contact@omnispdf.com"
+                href="mailto:contact@pdf.it.com"
                 className="flex items-center gap-2 text-slate-400 hover:text-orange-500 transition-colors text-sm group"
               >
                 <Mail className="h-4 w-4 group-hover:scale-110 transition-transform" />
-                <span>contact@omnispdf.com</span>
+                <span>contact@pdf.it.com</span>
               </a>
               <p className="text-slate-400 text-xs">We typically respond within 24 hours</p>
             </div>
@@ -124,7 +124,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-slate-400 text-sm">© {new Date().getFullYear()} OmnisPDF. All rights reserved.</p>
+          <p className="text-slate-400 text-sm">© {new Date().getFullYear()} PDF.it. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/privacy-policy" className="text-slate-400 hover:text-white text-sm transition-colors">
               Privacy Policy
@@ -133,7 +133,7 @@ export function Footer() {
               Terms & Conditions
             </Link>
             <a
-              href="mailto:contact@omnispdf.com"
+              href="mailto:contact@pdf.it.com"
               className="text-slate-400 hover:text-orange-500 text-sm transition-colors"
             >
               Contact

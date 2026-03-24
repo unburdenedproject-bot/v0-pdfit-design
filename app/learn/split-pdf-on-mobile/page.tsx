@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Scissors, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "How to Split a PDF on Your Phone (iPhone & Android) | OmnisPDF",
+  title: "How to Split a PDF on Your Phone (iPhone & Android) | PDF.it",
   description:
     "Learn how to split a PDF on your phone using just your browser. Works on iPhone and Android — no app download needed. Free, fast, and easy step-by-step guide.",
   keywords: "split pdf on phone, split pdf iphone, split pdf android, split pdf mobile free",
@@ -18,22 +18,22 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I split a PDF on my phone without an app?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works entirely in your phone's browser — Safari on iPhone, Chrome on Android, or any other mobile browser. No app installation needed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works entirely in your phone's browser — Safari on iPhone, Chrome on Android, or any other mobile browser. No app installation needed." }
     },
     {
       "@type": "Question",
       "name": "How do I split a PDF on iPhone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Open Safari, go to omnispdf.com/split-pdf, tap to upload your PDF from Files or iCloud Drive, select the pages you want, and download the split files." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Open Safari, go to pdf.it.com/split-pdf, tap to upload your PDF from Files or iCloud Drive, select the pages you want, and download the split files." }
     },
     {
       "@type": "Question",
       "name": "How do I split a PDF on Android?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Open Chrome or your preferred browser, go to omnispdf.com/split-pdf, tap to upload your PDF from your device storage or Google Drive, select pages, and download." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Open Chrome or your preferred browser, go to pdf.it.com/split-pdf, tap to upload your PDF from your device storage or Google Drive, select pages, and download." }
     },
     {
       "@type": "Question",
       "name": "Is it free to split a PDF on mobile?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF offers free PDF splitting with files up to 25MB. You get 3 free operations without an account, and 10 per day with a free account." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it offers free PDF splitting with files up to 25MB. You get 3 free operations without an account, and 10 per day with a free account." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I split a large PDF on mobile?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Free users can split PDFs up to 25MB on mobile. Pro users can handle files up to 200MB. The processing happens on OmnisPDF's servers, so your phone's storage and speed don't affect the result." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Free users can split PDFs up to 25MB on mobile. Pro users can handle files up to 200MB. The processing happens on PDF.it's servers, so your phone's storage and speed don't affect the result." }
     }
   ]
 }
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Split a PDF on Your Phone",
-  "description": "Split a PDF into separate files on iPhone or Android in 3 simple steps using OmnisPDF in your mobile browser.",
+  "description": "Split a PDF into separate files on iPhone or Android in 3 simple steps using PDF.it in your mobile browser.",
   "step": [
     {
       "@type": "HowToStep",
-      "name": "Open OmnisPDF in your mobile browser",
-      "text": "Open Safari (iPhone) or Chrome (Android) and go to omnispdf.com/split-pdf. The tool works the same way on mobile as on desktop."
+      "name": "Open PDF.it in your mobile browser",
+      "text": "Open Safari (iPhone) or Chrome (Android) and go to pdf.it.com/split-pdf. The tool works the same way on mobile as on desktop."
     },
     {
       "@type": "HowToStep",
@@ -94,7 +94,7 @@ export default function SplitPDFOnMobilePage() {
               <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Split PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">How to Split a PDF on Your Phone (iPhone & Android)</h1>
               <p className="text-xl text-slate-300">
-                Need to split a PDF but only have your phone? No problem. OmnisPDF works right in your mobile browser — no app download, no account required.
+                Need to split a PDF but only have your phone? No problem. PDF.it works right in your mobile browser — no app download, no account required.
               </p>
             </div>
           </div>
@@ -154,8 +154,8 @@ export default function SplitPDFOnMobilePage() {
               <div className="space-y-4">
                 {[
                   {
-                    title: "Open Safari and go to omnispdf.com/split-pdf",
-                    desc: "Type omnispdf.com/split-pdf in Safari's address bar. The page loads with the same full-featured split tool you would see on a computer. No app needed.",
+                    title: "Open Safari and go to pdf.it.com/split-pdf",
+                    desc: "Type pdf.it.com/split-pdf in Safari's address bar. The page loads with the same full-featured split tool you would see on a computer. No app needed.",
                   },
                   {
                     title: "Tap to upload your PDF",
@@ -185,8 +185,8 @@ export default function SplitPDFOnMobilePage() {
               <div className="space-y-4">
                 {[
                   {
-                    title: "Open Chrome and go to omnispdf.com/split-pdf",
-                    desc: "Open Chrome (or your preferred browser) and navigate to omnispdf.com/split-pdf. The tool loads instantly — no app download or Google Play Store visit required.",
+                    title: "Open Chrome and go to pdf.it.com/split-pdf",
+                    desc: "Open Chrome (or your preferred browser) and navigate to pdf.it.com/split-pdf. The tool loads instantly — no app download or Google Play Store visit required.",
                   },
                   {
                     title: "Tap to upload your PDF",
@@ -216,7 +216,7 @@ export default function SplitPDFOnMobilePage() {
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Use a stable connection.</strong> Upload and download work best on Wi-Fi. Cellular data works too, but large files may take longer on slower connections.</li>
                 <li>&#10003; <strong>Check your Downloads folder.</strong> On iPhone, files go to the Files app. On Android, check your Downloads folder or notification tray.</li>
-                <li>&#10003; <strong>Bookmark the tool.</strong> Add omnispdf.com/split-pdf to your home screen for instant access. On iPhone, tap Share then &quot;Add to Home Screen.&quot; On Android, tap the browser menu and &quot;Add to Home screen.&quot;</li>
+                <li>&#10003; <strong>Bookmark the tool.</strong> Add pdf.it.com/split-pdf to your home screen for instant access. On iPhone, tap Share then &quot;Add to Home Screen.&quot; On Android, tap the browser menu and &quot;Add to Home screen.&quot;</li>
                 <li>&#10003; <strong>Compress if still too large.</strong> After splitting, if individual parts are still big, use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> from your phone to shrink them further.</li>
                 <li>&#10003; <strong>Works with cloud storage.</strong> You can upload PDFs directly from iCloud Drive, Google Drive, Dropbox, or OneDrive — no need to download to your phone first.</li>
               </ul>
@@ -226,7 +226,7 @@ export default function SplitPDFOnMobilePage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Other PDF Tools You Can Use on Your Phone</h2>
               <p className="text-slate-600 mb-4">
-                OmnisPDF is fully mobile-friendly. Every tool works in your phone's browser, just like the split tool. Here are some you might need after splitting:
+                PDF.it is fully mobile-friendly. Every tool works in your phone's browser, just like the split tool. Here are some you might need after splitting:
               </p>
               <div className="space-y-6">
                 <div>
@@ -303,12 +303,12 @@ export default function SplitPDFOnMobilePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "Can I split a PDF on my phone without an app?", a: "Yes. OmnisPDF works entirely in your phone's browser — Safari on iPhone, Chrome on Android, or any other mobile browser. No app installation needed." },
-                { q: "How do I split a PDF on iPhone?", a: "Open Safari, go to omnispdf.com/split-pdf, tap to upload your PDF from Files or iCloud Drive, select the pages you want, and download the split files." },
-                { q: "How do I split a PDF on Android?", a: "Open Chrome or your preferred browser, go to omnispdf.com/split-pdf, tap to upload your PDF from your device storage or Google Drive, select pages, and download." },
-                { q: "Is it free to split a PDF on mobile?", a: "Yes. OmnisPDF offers free PDF splitting with files up to 25MB. You get 3 free operations without an account, and 10 per day with a free account." },
+                { q: "Can I split a PDF on my phone without an app?", a: "Yes. PDF.it works entirely in your phone's browser — Safari on iPhone, Chrome on Android, or any other mobile browser. No app installation needed." },
+                { q: "How do I split a PDF on iPhone?", a: "Open Safari, go to pdf.it.com/split-pdf, tap to upload your PDF from Files or iCloud Drive, select the pages you want, and download the split files." },
+                { q: "How do I split a PDF on Android?", a: "Open Chrome or your preferred browser, go to pdf.it.com/split-pdf, tap to upload your PDF from your device storage or Google Drive, select pages, and download." },
+                { q: "Is it free to split a PDF on mobile?", a: "Yes. PDF.it offers free PDF splitting with files up to 25MB. You get 3 free operations without an account, and 10 per day with a free account." },
                 { q: "Where does the split PDF download to on my phone?", a: "On iPhone, split files download to your Files app (usually in the Downloads folder). On Android, files go to your Downloads folder, accessible through the Files app or notification tray." },
-                { q: "Can I split a large PDF on mobile?", a: "Yes. Free users can split PDFs up to 25MB on mobile. Pro users can handle files up to 200MB. The processing happens on OmnisPDF's servers, so your phone's storage and speed don't affect the result." },
+                { q: "Can I split a large PDF on mobile?", a: "Yes. Free users can split PDFs up to 25MB on mobile. Pro users can handle files up to 200MB. The processing happens on PDF.it's servers, so your phone's storage and speed don't affect the result." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

@@ -5,7 +5,7 @@ import Link from "next/link"
 import { RotateCw, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Arreglar un PDF al Reves (Rotar 180° al Instante) | OmnisPDF",
+  title: "Arreglar un PDF al Reves (Rotar 180° al Instante) | PDF.it",
   description:
     "Aprende como arreglar un PDF al reves rotandolo 180°. Comun con documentos escaneados — corrige la orientacion al instante en linea, sin software.",
   keywords: "arreglar pdf al reves, pdf invertido, rotar pdf 180, voltear pdf",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como arreglo un PDF al reves?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube el PDF a la herramienta Rotar PDF de OmnisPDF, selecciona las paginas al reves, elige rotacion de 180° y descarga el archivo corregido. La correccion toma segundos y es gratis para archivos de hasta 25MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube el PDF a la herramienta Rotar PDF de PDF.it, selecciona las paginas al reves, elige rotacion de 180° y descarga el archivo corregido. La correccion toma segundos y es gratis para archivos de hasta 25MB." }
     },
     {
       "@type": "Question",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Puedo arreglar solo las paginas al reves sin afectar el resto?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. OmnisPDF te permite seleccionar paginas individuales para rotar. Puedes corregir solo las paginas al reves mientras dejas las paginas correctamente orientadas sin tocar." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it te permite seleccionar paginas individuales para rotar. Puedes corregir solo las paginas al reves mientras dejas las paginas correctamente orientadas sin tocar." }
     },
     {
       "@type": "Question",
@@ -38,12 +38,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Puedo arreglar un PDF al reves en mi telefono?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. OmnisPDF funciona en cualquier navegador movil. Abre omnispdf.com/rotate-pdf en Safari o Chrome, sube el PDF, rota 180° y descarga la version corregida directamente en tu telefono." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en cualquier navegador movil. Abre pdf.it.com/rotate-pdf en Safari o Chrome, sube el PDF, rota 180° y descarga la version corregida directamente en tu telefono." }
     },
     {
       "@type": "Question",
       "name": "Como se si mi PDF esta al reves o solo de lado?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si el texto se lee de abajo hacia arriba (completamente invertido), esta al reves y necesita una rotacion de 180°. Si el texto se lee de lado, esta de costado y necesita una rotacion de 90°. La vista previa de OmnisPDF te muestra la orientacion actual antes de aplicar la correccion." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si el texto se lee de abajo hacia arriba (completamente invertido), esta al reves y necesita una rotacion de 180°. Si el texto se lee de lado, esta de costado y necesita una rotacion de 90°. La vista previa de PDF.it te muestra la orientacion actual antes de aplicar la correccion." }
     }
   ]
 }
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Arreglar un PDF al Reves",
-  "description": "Rota un PDF al reves 180° en 3 simples pasos usando OmnisPDF.",
+  "description": "Rota un PDF al reves 180° en 3 simples pasos usando PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Sube el PDF al reves",
-      "text": "Ve a la herramienta Rotar PDF de OmnisPDF y sube el archivo con paginas al reves haciendo clic o arrastrandolo al area de carga."
+      "text": "Ve a la herramienta Rotar PDF de PDF.it y sube el archivo con paginas al reves haciendo clic o arrastrandolo al area de carga."
     },
     {
       "@type": "HowToStep",
@@ -210,9 +210,9 @@ export default function ArreglarPDFAlRevesPage() {
                 Uno de los escenarios mas molestos es cuando un escaneo a doble cara produce orientaciones alternadas — las paginas impares estan correctas pero las pares estan al reves, o viceversa. Asi puedes manejarlo:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Selecciona solo las paginas al reves.</strong> En OmnisPDF, puedes hacer clic en las miniaturas de paginas individuales para seleccionar solo las paginas invertidas. Luego aplica rotacion de 180° solo a esas paginas.</li>
+                <li>&#10003; <strong>Selecciona solo las paginas al reves.</strong> En PDF.it, puedes hacer clic en las miniaturas de paginas individuales para seleccionar solo las paginas invertidas. Luego aplica rotacion de 180° solo a esas paginas.</li>
                 <li>&#10003; <strong>Verifica el patron.</strong> Con escaneres ADF, el problema generalmente es consistente — cada otra pagina esta volteada. Selecciona todas las paginas pares (o todas las impares, las que esten mal) y rotalas juntas.</li>
-                <li>&#10003; <strong>Re-escanea si es posible.</strong> Si tienes acceso a los documentos originales y al escaner, puede ser mas rapido re-escanear con la configuracion duplex correcta. Pero si los originales no estan disponibles, OmnisPDF lo corrige al instante.</li>
+                <li>&#10003; <strong>Re-escanea si es posible.</strong> Si tienes acceso a los documentos originales y al escaner, puede ser mas rapido re-escanear con la configuracion duplex correcta. Pero si los originales no estan disponibles, PDF.it lo corrige al instante.</li>
                 <li>&#10003; <strong>Ejecuta OCR despues de corregir.</strong> Si el documento escaneado necesita texto buscable, corrige la rotacion primero, luego usa <Link href="/es/escaner-ocr" className="text-orange-600 hover:underline">Escaner OCR</Link>. El OCR funciona mucho mejor cuando las paginas estan correctamente orientadas.</li>
               </ul>
             </section>
@@ -277,12 +277,12 @@ export default function ArreglarPDFAlRevesPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como arreglo un PDF al reves?", a: "Sube el PDF a la herramienta Rotar PDF de OmnisPDF, selecciona las paginas al reves, elige rotacion de 180° y descarga el archivo corregido. La correccion toma segundos y es gratis para archivos de hasta 25MB." },
+                { q: "Como arreglo un PDF al reves?", a: "Sube el PDF a la herramienta Rotar PDF de PDF.it, selecciona las paginas al reves, elige rotacion de 180° y descarga el archivo corregido. La correccion toma segundos y es gratis para archivos de hasta 25MB." },
                 { q: "Por que mi PDF esta al reves?", a: "Esto generalmente sucede cuando un documento se coloca boca abajo o en el angulo incorrecto en un escaner. Tambien puede ocurrir con el escaneo a doble cara cuando las paginas traseras se voltean, o cuando el software de exportacion de PDF tiene un error de rotacion." },
-                { q: "Puedo arreglar solo las paginas al reves sin afectar el resto?", a: "Si. OmnisPDF te permite seleccionar paginas individuales para rotar. Puedes corregir solo las paginas al reves mientras dejas las paginas correctamente orientadas sin tocar." },
+                { q: "Puedo arreglar solo las paginas al reves sin afectar el resto?", a: "Si. PDF.it te permite seleccionar paginas individuales para rotar. Puedes corregir solo las paginas al reves mientras dejas las paginas correctamente orientadas sin tocar." },
                 { q: "Arreglar la rotacion afectara la calidad del PDF?", a: "No. Rotar un PDF solo cambia los metadatos de orientacion — no re-renderiza, comprime ni modifica el contenido real. El texto, las imagenes y el formato permanecen identicos." },
-                { q: "Puedo arreglar un PDF al reves en mi telefono?", a: "Si. OmnisPDF funciona en cualquier navegador movil. Abre omnispdf.com/rotate-pdf en Safari o Chrome, sube el PDF, rota 180° y descarga la version corregida directamente en tu telefono." },
-                { q: "Como se si mi PDF esta al reves o solo de lado?", a: "Si el texto se lee de abajo hacia arriba (completamente invertido), esta al reves y necesita una rotacion de 180°. Si el texto se lee de lado, esta de costado y necesita una rotacion de 90°. La vista previa de OmnisPDF te muestra la orientacion actual antes de aplicar la correccion." },
+                { q: "Puedo arreglar un PDF al reves en mi telefono?", a: "Si. PDF.it funciona en cualquier navegador movil. Abre pdf.it.com/rotate-pdf en Safari o Chrome, sube el PDF, rota 180° y descarga la version corregida directamente en tu telefono." },
+                { q: "Como se si mi PDF esta al reves o solo de lado?", a: "Si el texto se lee de abajo hacia arriba (completamente invertido), esta al reves y necesita una rotacion de 180°. Si el texto se lee de lado, esta de costado y necesita una rotacion de 90°. La vista previa de PDF.it te muestra la orientacion actual antes de aplicar la correccion." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

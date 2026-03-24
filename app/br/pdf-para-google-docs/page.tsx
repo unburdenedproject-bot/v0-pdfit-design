@@ -6,15 +6,15 @@ import { ProcessingInterface } from "@/components/processing-interface"
 import { FileText, Zap, Shield, Download } from "lucide-react"
 
 export const metadata = {
-  title: "PDF para Google Docs — Converta PDF para Editar no Google Docs | OmnisPDF",
+  title: "PDF para Google Docs — Converta PDF para Editar no Google Docs | PDF.it",
   description:
-    "Converta PDF para Google Docs com o OmnisPDF. Transforme seu PDF em documento editavel compativel com Google Docs — rapido, gratuito e no navegador.",
+    "Converta PDF para Google Docs com o PDF.it. Transforme seu PDF em documento editavel compativel com Google Docs — rapido, gratuito e no navegador.",
   alternates: {
-    canonical: "https://omnispdf.com/br/pdf-para-google-docs",
+    canonical: "https://pdf.it.com/br/pdf-para-google-docs",
     languages: {
-      en: "https://omnispdf.com/pdf-to-google-docs",
-      es: "https://omnispdf.com/es/pdf-a-google-docs",
-      pt: "https://omnispdf.com/br/pdf-para-google-docs",
+      en: "https://pdf.it.com/pdf-to-google-docs",
+      es: "https://pdf.it.com/es/pdf-a-google-docs",
+      pt: "https://pdf.it.com/br/pdf-para-google-docs",
     },
   },
 }
@@ -28,7 +28,7 @@ const faqSchema = {
       name: "Como converter PDF para Google Docs?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Suba seu PDF no OmnisPDF para converte-lo em formato DOCX. Depois, suba o arquivo .docx para o Google Drive e abra com o Google Docs para editar diretamente no navegador.",
+        text: "Suba seu PDF no PDF.it para converte-lo em formato DOCX. Depois, suba o arquivo .docx para o Google Drive e abra com o Google Docs para editar diretamente no navegador.",
       },
     },
     {
@@ -44,7 +44,7 @@ const faqSchema = {
       name: "A formatacao e mantida no Google Docs?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "O OmnisPDF preserva o layout, fontes e estrutura ao converter para DOCX. O Google Docs mantem a maioria da formatacao ao abrir o arquivo, embora ajustes menores possam ser necessarios.",
+        text: "O PDF.it preserva o layout, fontes e estrutura ao converter para DOCX. O Google Docs mantem a maioria da formatacao ao abrir o arquivo, embora ajustes menores possam ser necessarios.",
       },
     },
     {
@@ -60,7 +60,7 @@ const faqSchema = {
       name: "E gratuito converter PDF para Google Docs?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "A conversao de PDF para DOCX (compativel com Google Docs) e um recurso Pro do OmnisPDF. Voce pode testar com arquivos de ate 25MB na versao gratuita.",
+        text: "A conversao de PDF para DOCX (compativel com Google Docs) e um recurso Pro do PDF.it. Voce pode testar com arquivos de ate 25MB na versao gratuita.",
       },
     },
   ],
@@ -114,7 +114,7 @@ export default function PDFParaGoogleDocsPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              O OmnisPDF converte seu PDF em formato DOCX, que e totalmente compativel com o Google Docs. Suba o arquivo convertido para o Google Drive, abra com o Google Docs e comece a editar. A formatacao, fontes e estrutura do documento sao preservadas durante a conversao.
+              O PDF.it converte seu PDF em formato DOCX, que e totalmente compativel com o Google Docs. Suba o arquivo convertido para o Google Drive, abra com o Google Docs e comece a editar. A formatacao, fontes e estrutura do documento sao preservadas durante a conversao.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Converta PDF para formato compativel com Google Docs</li>
@@ -162,8 +162,8 @@ export default function PDFParaGoogleDocsPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Converter PDF para Google Docs</h2>
             <div className="space-y-4">
               {[
-                "Suba ou arraste seu PDF para o OmnisPDF.",
-                "Clique em Converter — o OmnisPDF gera um arquivo .docx compativel.",
+                "Suba ou arraste seu PDF para o PDF.it.",
+                "Clique em Converter — o PDF.it gera um arquivo .docx compativel.",
                 "Baixe o .docx, suba para o Google Drive e abra com o Google Docs.",
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
@@ -209,11 +209,11 @@ export default function PDFParaGoogleDocsPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como converter PDF para Google Docs?", a: "Suba seu PDF no OmnisPDF para converte-lo em formato DOCX. Depois, suba o arquivo .docx para o Google Drive e abra com o Google Docs para editar diretamente no navegador." },
+                { q: "Como converter PDF para Google Docs?", a: "Suba seu PDF no PDF.it para converte-lo em formato DOCX. Depois, suba o arquivo .docx para o Google Drive e abra com o Google Docs para editar diretamente no navegador." },
                 { q: "Por que converter para DOCX e nao diretamente para Google Docs?", a: "O Google Docs nao tem um formato proprio de arquivo — ele usa DOCX como formato de importacao. Ao converter seu PDF para DOCX, voce obtem o formato ideal para abrir e editar no Google Docs." },
-                { q: "A formatacao e mantida no Google Docs?", a: "O OmnisPDF preserva o layout, fontes e estrutura ao converter para DOCX. O Google Docs mantem a maioria da formatacao ao abrir o arquivo, embora ajustes menores possam ser necessarios." },
+                { q: "A formatacao e mantida no Google Docs?", a: "O PDF.it preserva o layout, fontes e estrutura ao converter para DOCX. O Google Docs mantem a maioria da formatacao ao abrir o arquivo, embora ajustes menores possam ser necessarios." },
                 { q: "Posso colaborar no documento apos a conversao?", a: "Sim. Apos subir o arquivo DOCX para o Google Drive, voce pode compartilhar e colaborar em tempo real com outras pessoas, assim como qualquer documento do Google Docs." },
-                { q: "E gratuito converter PDF para Google Docs?", a: "A conversao de PDF para DOCX (compativel com Google Docs) e um recurso Pro do OmnisPDF. Voce pode testar com arquivos de ate 25MB na versao gratuita." },
+                { q: "E gratuito converter PDF para Google Docs?", a: "A conversao de PDF para DOCX (compativel com Google Docs) e um recurso Pro do PDF.it. Voce pode testar com arquivos de ate 25MB na versao gratuita." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

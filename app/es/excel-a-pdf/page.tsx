@@ -6,14 +6,14 @@ import { Table, CheckCircle, Zap, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Convertir Excel a PDF Online — XLSX a PDF Gratis | OmnisPDF",
+  title: "Convertir Excel a PDF Online — XLSX a PDF Gratis | PDF.it",
   description:
-    "Convierte Excel a PDF en segundos con OmnisPDF. Transforma hojas de calculo XLS o XLSX en un PDF limpio y listo para compartir — rapido, facil y desde tu navegador.",
+    "Convierte Excel a PDF en segundos con PDF.it. Transforma hojas de calculo XLS o XLSX en un PDF limpio y listo para compartir — rapido, facil y desde tu navegador.",
   alternates: {
-    canonical: "https://omnispdf.com/es/excel-a-pdf",
+    canonical: "https://pdf.it.com/es/excel-a-pdf",
     languages: {
-      en: "https://omnispdf.com/excel-to-pdf",
-      es: "https://omnispdf.com/es/excel-a-pdf",
+      en: "https://pdf.it.com/excel-to-pdf",
+      es: "https://pdf.it.com/es/excel-a-pdf",
     },
   },
 }
@@ -24,10 +24,10 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "¿OmnisPDF puede convertir tanto XLS como XLSX a PDF?",
+      name: "¿PDF.it puede convertir tanto XLS como XLSX a PDF?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Si. OmnisPDF soporta ambos formatos de archivo .xls y .xlsx.",
+        text: "Si. PDF.it soporta ambos formatos de archivo .xls y .xlsx.",
       },
     },
     {
@@ -51,7 +51,7 @@ const faqSchema = {
       name: "¿Puedo convertir Excel a PDF en mi celular?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Si. OmnisPDF funciona en navegadores moviles — sube el archivo XLSX y descarga el PDF.",
+        text: "Si. PDF.it funciona en navegadores moviles — sube el archivo XLSX y descarga el PDF.",
       },
     },
     {
@@ -92,7 +92,7 @@ export default function ExcelaPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convertir Excel a PDF Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Convierte XLS/XLSX a PDF con OmnisPDF — ideal para compartir reportes, facturas y hojas de calculo en un formato consistente y listo para imprimir.
+                Convierte XLS/XLSX a PDF con PDF.it — ideal para compartir reportes, facturas y hojas de calculo en un formato consistente y listo para imprimir.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2">
@@ -125,7 +125,7 @@ export default function ExcelaPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Usa el convertidor de Excel a PDF de OmnisPDF para transformar una hoja de calculo XLS o XLSX en un PDF que puedes compartir con cualquier persona. Ideal para reportes, impresion, envio por correo y entrega de archivos — convierte en segundos y descarga tu PDF al instante.
+              Usa el convertidor de Excel a PDF de PDF.it para transformar una hoja de calculo XLS o XLSX en un PDF que puedes compartir con cualquier persona. Ideal para reportes, impresion, envio por correo y entrega de archivos — convierte en segundos y descarga tu PDF al instante.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Convierte Excel a PDF online en segundos</li>
@@ -155,7 +155,7 @@ export default function ExcelaPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Mantiene las Tablas Legibles</h2>
               <p className="text-slate-600">
-                OmnisPDF convierte tus hojas en un PDF optimizado para visualizacion e impresion estandar, manteniendo tus datos claros y organizados.
+                PDF.it convierte tus hojas en un PDF optimizado para visualizacion e impresion estandar, manteniendo tus datos claros y organizados.
               </p>
             </div>
           </div>
@@ -167,7 +167,7 @@ export default function ExcelaPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Convertir Excel a PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu archivo XLS/XLSX a OmnisPDF.",
+                "Sube o arrastra tu archivo XLS/XLSX a PDF.it.",
                 "Haz clic en Convertir Excel a PDF.",
                 "Descarga tu PDF.",
               ].map((step, i) => (
@@ -213,8 +213,8 @@ export default function ExcelaPDFPage() {
             <div className="space-y-6">
               {[
                 {
-                  q: "¿OmnisPDF puede convertir tanto XLS como XLSX a PDF?",
-                  a: "Si. OmnisPDF soporta ambos formatos de archivo .xls y .xlsx.",
+                  q: "¿PDF.it puede convertir tanto XLS como XLSX a PDF?",
+                  a: "Si. PDF.it soporta ambos formatos de archivo .xls y .xlsx.",
                 },
                 {
                   q: "¿El formato de mi Excel se mantendra en el PDF?",
@@ -226,7 +226,7 @@ export default function ExcelaPDFPage() {
                 },
                 {
                   q: "¿Puedo convertir Excel a PDF en mi celular?",
-                  a: "Si. OmnisPDF funciona en navegadores moviles — sube el archivo XLSX y descarga el PDF.",
+                  a: "Si. PDF.it funciona en navegadores moviles — sube el archivo XLSX y descarga el PDF.",
                 },
                 {
                   q: "¿Es seguro subir mi archivo Excel?",

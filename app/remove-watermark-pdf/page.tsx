@@ -5,9 +5,9 @@ import { Droplets, Zap, AlertTriangle, FileCheck } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Remove Watermark from PDF — How to Delete PDF Watermarks | OmnisPDF",
+  title: "Remove Watermark from PDF — How to Delete PDF Watermarks | PDF.it",
   description:
-    "Learn how to handle watermarked PDFs. OmnisPDF offers tools to add watermarks, but removing watermarks from PDFs you don't own may violate copyright.",
+    "Learn how to handle watermarked PDFs. PDF.it offers tools to add watermarks, but removing watermarks from PDFs you don't own may violate copyright.",
 }
 
 const faqSchema = {
@@ -16,8 +16,8 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Can OmnisPDF remove watermarks from PDFs?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF does not offer watermark removal because it could enable copyright infringement and piracy. Instead, OmnisPDF offers tools to add your own watermarks to protect your documents." }
+      "name": "Can PDF.it remove watermarks from PDFs?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it does not offer watermark removal because it could enable copyright infringement and piracy. Instead, PDF.it offers tools to add your own watermarks to protect your documents." }
     },
     {
       "@type": "Question",
@@ -36,8 +36,8 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Can I add my own watermark to a PDF with OmnisPDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF's Watermark PDF tool (available on the Pro plan) lets you add custom text or image watermarks to your PDFs. You can control the position, opacity, rotation, and size of the watermark." }
+      "name": "Can I add my own watermark to a PDF with PDF.it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it's Watermark PDF tool (available on the Pro plan) lets you add custom text or image watermarks to your PDFs. You can control the position, opacity, rotation, and size of the watermark." }
     },
     {
       "@type": "Question",
@@ -81,7 +81,7 @@ export default function RemoveWatermarkPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              PDF watermarks are text or image overlays placed on document pages to indicate ownership, status, or licensing. While there are legitimate reasons to remove a watermark from your own documents, OmnisPDF does not offer watermark removal as a tool because it could facilitate copyright infringement. This page explains your options.
+              PDF watermarks are text or image overlays placed on document pages to indicate ownership, status, or licensing. While there are legitimate reasons to remove a watermark from your own documents, PDF.it does not offer watermark removal as a tool because it could facilitate copyright infringement. This page explains your options.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Understand why PDFs have watermarks</li>
@@ -127,7 +127,7 @@ export default function RemoveWatermarkPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Alternatives to Watermark Removal</h2>
               <p className="text-slate-600">
-                Instead of trying to remove someone else's watermark, consider these alternatives: purchase the full licensed version of the content, contact the document owner for an unwatermarked copy, use the watermarked version for preview purposes only, or create your own original content. If you need to protect your own documents, use OmnisPDF's Watermark PDF tool.
+                Instead of trying to remove someone else's watermark, consider these alternatives: purchase the full licensed version of the content, contact the document owner for an unwatermarked copy, use the watermarked version for preview purposes only, or create your own original content. If you need to protect your own documents, use PDF.it's Watermark PDF tool.
               </p>
             </div>
           </div>
@@ -142,7 +142,7 @@ export default function RemoveWatermarkPDFPage() {
                 "Determine who owns the document and why the watermark was added.",
                 "If you own the source file, re-export the PDF without the watermark.",
                 "If it is licensed content, purchase the full version to receive clean files.",
-                "To protect your own documents, use OmnisPDF's Watermark PDF tool to add custom watermarks.",
+                "To protect your own documents, use PDF.it's Watermark PDF tool to add custom watermarks.",
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
                   <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
@@ -185,11 +185,11 @@ export default function RemoveWatermarkPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "Can OmnisPDF remove watermarks from PDFs?", a: "No. OmnisPDF does not offer watermark removal because it could enable copyright infringement and piracy. Instead, OmnisPDF offers tools to add your own watermarks to protect your documents." },
+                { q: "Can PDF.it remove watermarks from PDFs?", a: "No. PDF.it does not offer watermark removal because it could enable copyright infringement and piracy. Instead, PDF.it offers tools to add your own watermarks to protect your documents." },
                 { q: "Is it legal to remove a watermark from a PDF?", a: "It depends. If you own the original document and added the watermark yourself, you can remove it. However, removing watermarks from documents you do not own — such as stock photos, licensed content, or trial software — typically violates copyright law and terms of service." },
                 { q: "Why do PDFs have watermarks?", a: "Watermarks serve several purposes: protecting intellectual property, marking documents as drafts or confidential, branding documents with a company logo, deterring unauthorized copying, and indicating the document's status (e.g., SAMPLE, DRAFT, APPROVED)." },
                 { q: "How can I get a PDF without the watermark?", a: "The legitimate way is to purchase or license the full version of the document. For draft watermarks, ask the author for the final version. For trial watermarks, purchase the software license. For stock content, buy the full-resolution version." },
-                { q: "Can I add my own watermark to a PDF with OmnisPDF?", a: "Yes. OmnisPDF's Watermark PDF tool (available on the Pro plan) lets you add custom text or image watermarks to your PDFs. You can control the position, opacity, rotation, and size of the watermark." },
+                { q: "Can I add my own watermark to a PDF with PDF.it?", a: "Yes. PDF.it's Watermark PDF tool (available on the Pro plan) lets you add custom text or image watermarks to your PDFs. You can control the position, opacity, rotation, and size of the watermark." },
                 { q: "What should I do if I accidentally watermarked my own PDF?", a: "If you added a watermark to your own document and still have the original unwatermarked file, simply use that version. If you only have the watermarked version, you may need to recreate the document from the source file (Word, PowerPoint, etc.) and export a new PDF without the watermark." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Ro
 import Link from "next/link"
 
 export const metadata = {
-  title: "Compress Scanned PDF — Reduce Scan File Size | OmnisPDF",
+  title: "Compress Scanned PDF — Reduce Scan File Size | PDF.it",
   description:
     "Compress scanned PDFs with extreme compression to dramatically reduce file size. Perfect for scanned contracts, archived documents, receipts, and ID scans — fast, browser-based, free.",
 }
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I compress a multi-page scanned PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF compresses all pages in your scanned PDF at once. Multi-page scans often see the largest size reductions because every page contains a full image that can be optimized." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it compresses all pages in your scanned PDF at once. Multi-page scans often see the largest size reductions because every page contains a full image that can be optimized." }
     },
     {
       "@type": "Question",
@@ -93,7 +93,7 @@ export default function CompressScannedPDFPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Why Are Scanned PDFs So Large?</h2>
             <p className="text-lg text-slate-600 mb-8">
-              Unlike native PDFs that store text as vector data, scanned PDFs store every page as a high-resolution image. A 10-page scanned document can easily reach 30-50MB. OmnisPDF applies extreme compression that targets these embedded images, dramatically reducing file size while keeping text legible.
+              Unlike native PDFs that store text as vector data, scanned PDFs store every page as a high-resolution image. A 10-page scanned document can easily reach 30-50MB. PDF.it applies extreme compression that targets these embedded images, dramatically reducing file size while keeping text legible.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Extreme compression targets large embedded scan images</li>
@@ -144,7 +144,7 @@ export default function CompressScannedPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Compress a Scanned PDF</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your scanned PDF into OmnisPDF.",
+                "Upload or drag and drop your scanned PDF into PDF.it.",
                 "Click Compress PDF — extreme compression is applied automatically to target embedded images.",
                 "Download your smaller PDF. If still too large, try splitting the file first, then compress each part.",
               ].map((step, i) => (
@@ -200,7 +200,7 @@ export default function CompressScannedPDFPage() {
               {[
                 { q: "Why are scanned PDFs so large?", a: "Scanned PDFs contain full-page images instead of text. Each page is essentially a high-resolution photograph, which is why scanned documents are typically 10-50MB or more. Compression targets these embedded images to dramatically reduce file size." },
                 { q: "Will compression make my scanned document unreadable?", a: "Text in scanned documents remains legible after compression. Extreme compression reduces image resolution, but printed text stays readable for most purposes. If you need perfect image quality, consider using recommended compression instead." },
-                { q: "Can I compress a multi-page scanned PDF?", a: "Yes. OmnisPDF compresses all pages in your scanned PDF at once. Multi-page scans often see the largest size reductions because every page contains a full image that can be optimized." },
+                { q: "Can I compress a multi-page scanned PDF?", a: "Yes. PDF.it compresses all pages in your scanned PDF at once. Multi-page scans often see the largest size reductions because every page contains a full image that can be optimized." },
                 { q: "How much can a scanned PDF be compressed?", a: "Results vary depending on the scan resolution and number of pages. Scanned PDFs typically compress very well — reductions of 50-80% are common, though exact results depend on your specific document." },
                 { q: "Does compressing a scanned PDF affect OCR text?", a: "If your scanned PDF already has an OCR text layer, compression preserves it. The text layer is separate from the image layer, so you can still search and copy text after compression." },
                 { q: "What if my scanned PDF is still too large after compression?", a: "Try splitting the PDF into smaller sections with our Split PDF tool, then compress each part individually. You can also remove unnecessary pages before compressing to reduce the overall size further." },

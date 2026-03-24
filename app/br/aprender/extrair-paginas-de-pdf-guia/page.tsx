@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Scissors, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Extrair Paginas de PDF — Guia Completo | OmnisPDF",
+  title: "Extrair Paginas de PDF — Guia Completo | PDF.it",
   description:
     "Guia completo sobre como extrair paginas de PDF. Aprenda todas as tecnicas: selecao individual, intervalos, extracao em lote e mais — online, gratis.",
   keywords: "extrair paginas pdf guia, como extrair paginas pdf, selecionar paginas pdf, guia extrair pdf completo",
@@ -23,7 +23,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso extrair paginas de varios PDFs ao mesmo tempo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "O OmnisPDF processa um PDF por vez. Para combinar paginas de diferentes PDFs, extraia as paginas de cada um separadamente e depois use Unir PDF para combinar os resultados." }
+      "acceptedAnswer": { "@type": "Answer", "text": "O PDF.it processa um PDF por vez. Para combinar paginas de diferentes PDFs, extraia as paginas de cada um separadamente e depois use Unir PDF para combinar os resultados." }
     },
     {
       "@type": "Question",
@@ -112,7 +112,7 @@ export default function ExtrairPaginasDePDFGuiaPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Formas de Selecionar Paginas</h2>
               <p className="text-slate-600 mb-4">
-                O OmnisPDF oferece varias formas de selecionar as paginas que deseja extrair:
+                O PDF.it oferece varias formas de selecionar as paginas que deseja extrair:
               </p>
               <div className="space-y-4">
                 <div className="bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -244,7 +244,7 @@ export default function ExtrairPaginasDePDFGuiaPage() {
             <div className="space-y-6">
               {[
                 { q: "Posso extrair paginas nao consecutivas?", a: "Sim. Voce pode selecionar qualquer combinacao de paginas, como 1, 5, 8-12, 15. As paginas extraidas aparecerao no novo PDF na ordem em que foram selecionadas." },
-                { q: "Posso extrair paginas de varios PDFs ao mesmo tempo?", a: "O OmnisPDF processa um PDF por vez. Extraia as paginas de cada PDF separadamente e depois use Unir PDF para combinar os resultados." },
+                { q: "Posso extrair paginas de varios PDFs ao mesmo tempo?", a: "O PDF.it processa um PDF por vez. Extraia as paginas de cada PDF separadamente e depois use Unir PDF para combinar os resultados." },
                 { q: "Posso mudar a ordem das paginas extraidas?", a: "As paginas sao extraidas na ordem em que voce as seleciona. Se precisar reordenar, extraia primeiro e depois use a ferramenta de reorganizar paginas." },
                 { q: "A extracao mantem a qualidade das paginas?", a: "Sim. Extrair paginas nao envolve compressao — as paginas extraidas mantem exatamente a mesma qualidade do PDF original." },
               ].map((faq, i) => (

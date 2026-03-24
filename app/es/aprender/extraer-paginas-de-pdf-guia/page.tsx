@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Scissors, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Cómo Extraer Páginas de un PDF (Conserva Solo Lo Que Necesitas) | OmnisPDF",
+  title: "Cómo Extraer Páginas de un PDF (Conserva Solo Lo Que Necesitas) | PDF.it",
   description:
     "Aprende cómo extraer páginas específicas de un PDF y guardarlas como un nuevo archivo. Guía paso a paso para sacar páginas de documentos grandes — gratis, sin software.",
   keywords: "extraer páginas de pdf, sacar páginas de pdf, obtener páginas específicas de pdf, extraer páginas pdf en línea",
@@ -14,20 +14,20 @@ export const metadata = {
 const faqSchema = {
   "@context": "https://schema.org", "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "¿Cómo extraigo páginas específicas de un PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Dividir PDF de OmnisPDF, selecciona los números de página que quieres conservar, y descarga un nuevo PDF que contiene solo esas páginas. No se necesita instalar software." } },
-    { "@type": "Question", "name": "¿Puedo extraer páginas de un PDF sin perder calidad?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF extrae páginas sin re-codificarlas, así que tu texto, imágenes y formato permanecen idénticos al documento original." } },
-    { "@type": "Question", "name": "¿Es gratis extraer páginas de un PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF te permite extraer páginas gratis con archivos de hasta 25MB. Obtienes 3 operaciones gratuitas sin registrarte, y 10 por día con una cuenta gratuita." } },
-    { "@type": "Question", "name": "¿Puedo extraer páginas no consecutivas de un PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Puedes seleccionar cualquier combinación de páginas — por ejemplo páginas 1, 3, 7 y 12 — y OmnisPDF las combinará en un solo nuevo PDF en el orden que especificaste." } },
-    { "@type": "Question", "name": "¿Cómo extraigo páginas de un PDF protegido con contraseña?", "acceptedAnswer": { "@type": "Answer", "text": "Primero, usa la herramienta Desbloquear PDF de OmnisPDF para eliminar la protección con contraseña, luego usa la herramienta Dividir PDF para extraer las páginas que necesitas." } },
-    { "@type": "Question", "name": "¿Puedo extraer páginas de un PDF en mi teléfono?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en cualquier navegador móvil. Sube tu PDF, selecciona las páginas a extraer, y descarga el resultado — sin app necesaria." } }
+    { "@type": "Question", "name": "¿Cómo extraigo páginas específicas de un PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Dividir PDF de PDF.it, selecciona los números de página que quieres conservar, y descarga un nuevo PDF que contiene solo esas páginas. No se necesita instalar software." } },
+    { "@type": "Question", "name": "¿Puedo extraer páginas de un PDF sin perder calidad?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it extrae páginas sin re-codificarlas, así que tu texto, imágenes y formato permanecen idénticos al documento original." } },
+    { "@type": "Question", "name": "¿Es gratis extraer páginas de un PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it te permite extraer páginas gratis con archivos de hasta 25MB. Obtienes 3 operaciones gratuitas sin registrarte, y 10 por día con una cuenta gratuita." } },
+    { "@type": "Question", "name": "¿Puedo extraer páginas no consecutivas de un PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Puedes seleccionar cualquier combinación de páginas — por ejemplo páginas 1, 3, 7 y 12 — y PDF.it las combinará en un solo nuevo PDF en el orden que especificaste." } },
+    { "@type": "Question", "name": "¿Cómo extraigo páginas de un PDF protegido con contraseña?", "acceptedAnswer": { "@type": "Answer", "text": "Primero, usa la herramienta Desbloquear PDF de PDF.it para eliminar la protección con contraseña, luego usa la herramienta Dividir PDF para extraer las páginas que necesitas." } },
+    { "@type": "Question", "name": "¿Puedo extraer páginas de un PDF en mi teléfono?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, selecciona las páginas a extraer, y descarga el resultado — sin app necesaria." } }
   ]
 }
 
 const howToSchema = {
   "@context": "https://schema.org", "@type": "HowTo", "name": "Cómo Extraer Páginas de un PDF",
-  "description": "Saca páginas específicas de un PDF y guárdalas como un nuevo archivo en 3 simples pasos usando OmnisPDF.",
+  "description": "Saca páginas específicas de un PDF y guárdalas como un nuevo archivo en 3 simples pasos usando PDF.it.",
   "step": [
-    { "@type": "HowToStep", "name": "Sube tu PDF", "text": "Ve a la herramienta Dividir PDF de OmnisPDF y sube el documento del que quieres extraer páginas haciendo clic o arrastrándolo al área de carga." },
+    { "@type": "HowToStep", "name": "Sube tu PDF", "text": "Ve a la herramienta Dividir PDF de PDF.it y sube el documento del que quieres extraer páginas haciendo clic o arrastrándolo al área de carga." },
     { "@type": "HowToStep", "name": "Selecciona las páginas a extraer", "text": "Ingresa los números de página o rangos de páginas que quieres conservar. Puedes seleccionar páginas individuales como 1, 3, 5 o rangos como 1-5, 10-15." },
     { "@type": "HowToStep", "name": "Descarga tus páginas extraídas", "text": "Haz clic en Dividir PDF y descarga tu nuevo documento que contiene solo las páginas que seleccionaste. El archivo original permanece sin cambios." }
   ]
@@ -94,7 +94,7 @@ export default function ExtraerPaginasDePDFGuiaPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-6">Cómo Extraer Páginas de un PDF (Paso a Paso)</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Sube tu PDF", desc: "Ve a la herramienta Dividir PDF de OmnisPDF y arrastra tu archivo al área de carga, o haz clic para buscar. Archivos hasta 25MB son gratis — usuarios Pro pueden subir archivos hasta 200MB." },
+                  { title: "Sube tu PDF", desc: "Ve a la herramienta Dividir PDF de PDF.it y arrastra tu archivo al área de carga, o haz clic para buscar. Archivos hasta 25MB son gratis — usuarios Pro pueden subir archivos hasta 200MB." },
                   { title: "Selecciona las páginas que quieres conservar", desc: "Ingresa los números de página o rangos que necesitas. Por ejemplo, escribe \"1, 3, 7-12\" para extraer las páginas 1, 3, y 7 a 12. También puedes hacer clic en las miniaturas de páginas para seleccionarlas visualmente." },
                   { title: "Descarga tu nuevo PDF", desc: "Haz clic en Dividir PDF y descarga el resultado. Tu nuevo archivo contiene solo las páginas que seleccionaste, en el orden que especificaste. El archivo original no se modifica." },
                 ].map((step, i) => (
@@ -118,7 +118,7 @@ export default function ExtraerPaginasDePDFGuiaPage() {
                 <li>&#10003; <strong>Página 15</strong> — la cláusula de responsabilidad</li>
                 <li>&#10003; <strong>Página 30</strong> — la página de firmas</li>
               </ul>
-              <p className="text-slate-600 mt-4">En OmnisPDF, ingresarías <strong>&quot;1, 5-8, 15, 30&quot;</strong> y obtendrías un PDF limpio de 7 páginas con exactamente lo que necesitas. Esto es mucho más eficiente que imprimir todo el documento o intentar navegar por él durante una reunión.</p>
+              <p className="text-slate-600 mt-4">En PDF.it, ingresarías <strong>&quot;1, 5-8, 15, 30&quot;</strong> y obtendrías un PDF limpio de 7 páginas con exactamente lo que necesitas. Esto es mucho más eficiente que imprimir todo el documento o intentar navegar por él durante una reunión.</p>
             </section>
 
             <section className="mb-12">
@@ -188,12 +188,12 @@ export default function ExtraerPaginasDePDFGuiaPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo extraigo páginas específicas de un PDF?", a: "Sube tu PDF a la herramienta Dividir PDF de OmnisPDF, selecciona los números de página que quieres conservar, y descarga un nuevo PDF que contiene solo esas páginas. No se necesita instalar software." },
-                { q: "¿Puedo extraer páginas de un PDF sin perder calidad?", a: "Sí. OmnisPDF extrae páginas sin re-codificarlas, así que tu texto, imágenes y formato permanecen idénticos al documento original." },
-                { q: "¿Es gratis extraer páginas de un PDF?", a: "Sí. OmnisPDF te permite extraer páginas gratis con archivos de hasta 25MB. Obtienes 3 operaciones gratuitas sin registrarte, y 10 por día con una cuenta gratuita." },
-                { q: "¿Puedo extraer páginas no consecutivas de un PDF?", a: "Sí. Puedes seleccionar cualquier combinación de páginas — por ejemplo páginas 1, 3, 7 y 12 — y OmnisPDF las combinará en un solo nuevo PDF en el orden que especificaste." },
-                { q: "¿Cómo extraigo páginas de un PDF protegido con contraseña?", a: "Primero, usa la herramienta Desbloquear PDF de OmnisPDF para eliminar la protección con contraseña, luego usa la herramienta Dividir PDF para extraer las páginas que necesitas." },
-                { q: "¿Puedo extraer páginas de un PDF en mi teléfono?", a: "Sí. OmnisPDF funciona en cualquier navegador móvil. Sube tu PDF, selecciona las páginas a extraer, y descarga el resultado — sin app necesaria." },
+                { q: "¿Cómo extraigo páginas específicas de un PDF?", a: "Sube tu PDF a la herramienta Dividir PDF de PDF.it, selecciona los números de página que quieres conservar, y descarga un nuevo PDF que contiene solo esas páginas. No se necesita instalar software." },
+                { q: "¿Puedo extraer páginas de un PDF sin perder calidad?", a: "Sí. PDF.it extrae páginas sin re-codificarlas, así que tu texto, imágenes y formato permanecen idénticos al documento original." },
+                { q: "¿Es gratis extraer páginas de un PDF?", a: "Sí. PDF.it te permite extraer páginas gratis con archivos de hasta 25MB. Obtienes 3 operaciones gratuitas sin registrarte, y 10 por día con una cuenta gratuita." },
+                { q: "¿Puedo extraer páginas no consecutivas de un PDF?", a: "Sí. Puedes seleccionar cualquier combinación de páginas — por ejemplo páginas 1, 3, 7 y 12 — y PDF.it las combinará en un solo nuevo PDF en el orden que especificaste." },
+                { q: "¿Cómo extraigo páginas de un PDF protegido con contraseña?", a: "Primero, usa la herramienta Desbloquear PDF de PDF.it para eliminar la protección con contraseña, luego usa la herramienta Dividir PDF para extraer las páginas que necesitas." },
+                { q: "¿Puedo extraer páginas de un PDF en mi teléfono?", a: "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, selecciona las páginas a extraer, y descarga el resultado — sin app necesaria." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

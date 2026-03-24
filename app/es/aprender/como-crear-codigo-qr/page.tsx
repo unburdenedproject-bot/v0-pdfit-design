@@ -5,9 +5,9 @@ import Link from "next/link"
 import { QrCode, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Crear un Codigo QR en Linea (Generador Gratuito) | OmnisPDF",
+  title: "Como Crear un Codigo QR en Linea (Generador Gratuito) | PDF.it",
   description:
-    "Aprende como crear un codigo QR en linea para URLs, texto, WiFi e informacion de contacto. Guia paso a paso para generar codigos QR al instante con la herramienta gratuita de OmnisPDF.",
+    "Aprende como crear un codigo QR en linea para URLs, texto, WiFi e informacion de contacto. Guia paso a paso para generar codigos QR al instante con la herramienta gratuita de PDF.it.",
   keywords: "crear codigo qr, generador codigo qr, hacer codigo qr en linea, codigo qr gratis",
 }
 
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como creo un codigo QR en linea gratis?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Ve al generador de Codigo QR de OmnisPDF, ingresa tu URL, texto u otros datos, personaliza el estilo si deseas, y descarga tu codigo QR como imagen PNG o SVG. Los usuarios gratuitos obtienen hasta 10 codigos QR por dia." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Ve al generador de Codigo QR de PDF.it, ingresa tu URL, texto u otros datos, personaliza el estilo si deseas, y descarga tu codigo QR como imagen PNG o SVG. Los usuarios gratuitos obtienen hasta 10 codigos QR por dia." }
     },
     {
       "@type": "Question",
@@ -33,7 +33,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Puedo personalizar el color de mi codigo QR?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. La herramienta de Codigo QR de OmnisPDF te permite cambiar los colores de primer plano y fondo. Solo asegurate de que haya suficiente contraste entre ellos — primer plano oscuro sobre fondo claro funciona mejor para un escaneo confiable." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. La herramienta de Codigo QR de PDF.it te permite cambiar los colores de primer plano y fondo. Solo asegurate de que haya suficiente contraste entre ellos — primer plano oscuro sobre fondo claro funciona mejor para un escaneo confiable." }
     },
     {
       "@type": "Question",
@@ -42,8 +42,8 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "La herramienta de Codigo QR es gratuita en OmnisPDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "El generador de Codigo QR es una funcion Pro en OmnisPDF. Los usuarios Pro ($7.99/mes) obtienen generacion ilimitada de codigos QR junto con todas las demas herramientas premium de PDF." }
+      "name": "La herramienta de Codigo QR es gratuita en PDF.it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El generador de Codigo QR es una funcion Pro en PDF.it. Los usuarios Pro ($7.99/mes) obtienen generacion ilimitada de codigos QR junto con todas las demas herramientas premium de PDF." }
     }
   ]
 }
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Crear un Codigo QR en Linea",
-  "description": "Genera un codigo QR para cualquier URL, texto o dato en 3 simples pasos usando OmnisPDF.",
+  "description": "Genera un codigo QR para cualquier URL, texto o dato en 3 simples pasos usando PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Elige tu tipo de codigo QR",
-      "text": "Ve a la herramienta de Codigo QR de OmnisPDF y selecciona el tipo de codigo QR que quieres — URL, texto, WiFi, vCard u otros formatos soportados."
+      "text": "Ve a la herramienta de Codigo QR de PDF.it y selecciona el tipo de codigo QR que quieres — URL, texto, WiFi, vCard u otros formatos soportados."
     },
     {
       "@type": "HowToStep",
@@ -132,7 +132,7 @@ export default function ComoCrearCodigoQRPage() {
                 Los codigos QR se usan en todas partes hoy en dia. Los restaurantes los usan para menus digitales. Los negocios los ponen en tarjetas y volantes. Los organizadores de eventos los usan para boletos. Los profesionales de marketing los integran en anuncios impresos para conectar experiencias fisicas y digitales.
               </p>
               <p className="text-slate-600">
-                La mejor parte? Crear un codigo QR toma menos de 30 segundos con la herramienta correcta. El <Link href="/es/codigo-qr" className="text-orange-600 hover:underline">generador de Codigo QR</Link> de OmnisPDF (funcion Pro) te permite crear codigos QR para URLs, texto, WiFi, vCards y mas — luego descargarlos como archivos PNG o SVG de alta calidad listos para imprimir o uso digital.
+                La mejor parte? Crear un codigo QR toma menos de 30 segundos con la herramienta correcta. El <Link href="/es/codigo-qr" className="text-orange-600 hover:underline">generador de Codigo QR</Link> de PDF.it (funcion Pro) te permite crear codigos QR para URLs, texto, WiFi, vCards y mas — luego descargarlos como archivos PNG o SVG de alta calidad listos para imprimir o uso digital.
               </p>
             </section>
 
@@ -225,7 +225,7 @@ export default function ComoCrearCodigoQRPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Elige el Formato de Archivo Correcto</h3>
                   <p className="text-slate-600">
-                    Descarga PNG para pantallas y medios digitales. Descarga SVG para materiales impresos — SVG es un formato vectorial que escala a cualquier tamano sin pixelacion. Si necesitas convertir tu imagen de codigo QR mas tarde, OmnisPDF tambien ofrece herramientas como <Link href="/es/pdf-a-png" className="text-orange-600 hover:underline">PDF a PNG</Link> y <Link href="/es/pdf-a-jpg" className="text-orange-600 hover:underline">PDF a JPG</Link>.
+                    Descarga PNG para pantallas y medios digitales. Descarga SVG para materiales impresos — SVG es un formato vectorial que escala a cualquier tamano sin pixelacion. Si necesitas convertir tu imagen de codigo QR mas tarde, PDF.it tambien ofrece herramientas como <Link href="/es/pdf-a-png" className="text-orange-600 hover:underline">PDF a PNG</Link> y <Link href="/es/pdf-a-jpg" className="text-orange-600 hover:underline">PDF a JPG</Link>.
                   </p>
                 </div>
               </div>
@@ -298,12 +298,12 @@ export default function ComoCrearCodigoQRPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como creo un codigo QR en linea gratis?", a: "Ve al generador de Codigo QR de OmnisPDF, ingresa tu URL, texto u otros datos, personaliza el estilo si deseas, y descarga tu codigo QR como imagen PNG o SVG. Los usuarios gratuitos obtienen hasta 10 codigos QR por dia." },
+                { q: "Como creo un codigo QR en linea gratis?", a: "Ve al generador de Codigo QR de PDF.it, ingresa tu URL, texto u otros datos, personaliza el estilo si deseas, y descarga tu codigo QR como imagen PNG o SVG. Los usuarios gratuitos obtienen hasta 10 codigos QR por dia." },
                 { q: "Que tipos de codigos QR puedo crear?", a: "Puedes crear codigos QR para URLs, texto plano, credenciales WiFi, informacion de contacto vCard, direcciones de correo electronico, numeros de telefono y mas. Cada tipo codifica diferentes datos que telefonos y escaneres pueden leer." },
                 { q: "Los codigos QR expiran?", a: "Los codigos QR estaticos nunca expiran — los datos estan codificados directamente en el patron. Sin embargo, si tu codigo QR enlaza a una URL y esa URL deja de funcionar, el codigo QR seguira funcionando pero el destino no cargara." },
-                { q: "Puedo personalizar el color de mi codigo QR?", a: "Si. La herramienta de Codigo QR de OmnisPDF te permite cambiar los colores de primer plano y fondo. Solo asegurate de que haya suficiente contraste entre ellos — primer plano oscuro sobre fondo claro funciona mejor." },
+                { q: "Puedo personalizar el color de mi codigo QR?", a: "Si. La herramienta de Codigo QR de PDF.it te permite cambiar los colores de primer plano y fondo. Solo asegurate de que haya suficiente contraste entre ellos — primer plano oscuro sobre fondo claro funciona mejor." },
                 { q: "En que formato de archivo debo descargar mi codigo QR?", a: "Usa PNG para uso digital (sitios web, correos, redes sociales). Usa SVG si necesitas imprimir el codigo QR en tamanos grandes sin perder calidad — SVG escala infinitamente sin pixelacion." },
-                { q: "La herramienta de Codigo QR es gratuita en OmnisPDF?", a: "El generador de Codigo QR es una funcion Pro en OmnisPDF. Los usuarios Pro ($7.99/mes) obtienen generacion ilimitada de codigos QR junto con todas las demas herramientas premium de PDF." },
+                { q: "La herramienta de Codigo QR es gratuita en PDF.it?", a: "El generador de Codigo QR es una funcion Pro en PDF.it. Los usuarios Pro ($7.99/mes) obtienen generacion ilimitada de codigos QR junto con todas las demas herramientas premium de PDF." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

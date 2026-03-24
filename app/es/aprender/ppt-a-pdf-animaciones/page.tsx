@@ -5,7 +5,7 @@ import Link from "next/link"
 import { PlayCircle, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Las animaciones de PowerPoint funcionan en PDF? Que se convierte (y que no) | OmnisPDF",
+  title: "Las animaciones de PowerPoint funcionan en PDF? Que se convierte (y que no) | PDF.it",
   description: "Descubre que sucede con las animaciones, transiciones y videos incrustados de PowerPoint al convertir a PDF. Aprende que se transfiere, que se pierde y las mejores alternativas.",
   keywords: "animaciones powerpoint a pdf, ppt animaciones en pdf, funcionan animaciones en pdf, transiciones powerpoint pdf, pptx a pdf animaciones",
 }
@@ -22,7 +22,7 @@ const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainE
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como manejar animaciones de PowerPoint al convertir a PDF", "description": "Entiende que sucede con las animaciones y aprende el mejor enfoque para convertir presentaciones animadas.", "step": [
   { "@type": "HowToStep", "name": "Revisa tu presentacion en busca de animaciones", "text": "Abre tu PowerPoint y revisa cada diapositiva. Anota cuales diapositivas tienen animaciones, transiciones o videos incrustados. Decide si estos elementos son esenciales para tu audiencia." },
   { "@type": "HowToStep", "name": "Elige tu formato de exportacion", "text": "Si las animaciones son criticas, exporta como video MP4 en lugar de PDF. Si las animaciones son solo decorativas y el contenido importa mas, convierte a PDF — todo el texto, imagenes y graficos se preservaran." },
-  { "@type": "HowToStep", "name": "Convierte a PDF", "text": "Sube tu PPTX a la herramienta PowerPoint a PDF de OmnisPDF y convierte. Cada diapositiva se captura en su estado animado final, preservando todo el contenido visible sin los efectos de movimiento." }
+  { "@type": "HowToStep", "name": "Convierte a PDF", "text": "Sube tu PPTX a la herramienta PowerPoint a PDF de PDF.it y convierte. Cada diapositiva se captura en su estado animado final, preservando todo el contenido visible sin los efectos de movimiento." }
 ] }
 
 export default function PptAPdfAnimacionesPage() {
@@ -74,7 +74,7 @@ export default function PptAPdfAnimacionesPage() {
             <div className="space-y-4">
               {[
                 { title: "Decide si las animaciones son esenciales", desc: "Preguntate: la audiencia necesita ver el movimiento, o solo el contenido? Si las animaciones son decorativas (ej. puntos apareciendo), PDF funciona bien. Si las animaciones cuentan una historia (ej. un diagrama de proceso construyendose paso a paso), considera exportar como video." },
-                { title: "Para compartir estatico, convierte a PDF", desc: "Si el contenido importa mas que el movimiento, convierte a PDF usando OmnisPDF. Todo el texto, imagenes, graficos y disenos se preservan. Tu audiencia puede leer la presentacion en cualquier dispositivo sin PowerPoint." },
+                { title: "Para compartir estatico, convierte a PDF", desc: "Si el contenido importa mas que el movimiento, convierte a PDF usando PDF.it. Todo el texto, imagenes, graficos y disenos se preservan. Tu audiencia puede leer la presentacion en cualquier dispositivo sin PowerPoint." },
                 { title: "Para compartir animado, exporta como video", desc: "En PowerPoint, ve a Archivo > Exportar > Crear un video. Elige Full HD (1080p) para calidad. Esto crea un MP4 que incluye todas las animaciones, transiciones y hasta tiempos de narracion." },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">

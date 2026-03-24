@@ -6,9 +6,9 @@ import { Scan, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Convert Scanned PDF to Searchable Text — OCR Online | OmnisPDF",
+  title: "Convert Scanned PDF to Searchable Text — OCR Online | PDF.it",
   description:
-    "Convert scanned PDFs into searchable, editable documents with OmnisPDF's OCR technology. Turn image-based PDFs into text you can copy and search — fast and browser-based.",
+    "Convert scanned PDFs into searchable, editable documents with PDF.it's OCR technology. Turn image-based PDFs into text you can copy and search — fast and browser-based.",
 }
 
 const faqSchema = {
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I convert a scanned PDF to searchable text?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your scanned PDF to OmnisPDF, select the document language, and click Run OCR. OmnisPDF's OCR engine reads the text from the scanned images and produces a searchable, copyable PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your scanned PDF to PDF.it, select the document language, and click Run OCR. PDF.it's OCR engine reads the text from the scanned images and produces a searchable, copyable PDF." }
     },
     {
       "@type": "Question",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I convert the scanned PDF to an editable Word document?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. First, use OmnisPDF's OCR to make your scanned PDF searchable. Then use the PDF to Word tool to convert it into an editable Word document you can modify freely." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. First, use PDF.it's OCR to make your scanned PDF searchable. Then use the PDF to Word tool to convert it into an editable Word document you can modify freely." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I convert a scanned PDF on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in mobile browsers — upload your scanned PDF, run OCR conversion, and download the searchable result on iPhone or Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in mobile browsers — upload your scanned PDF, run OCR conversion, and download the searchable result on iPhone or Android." }
     }
   ]
 }
@@ -85,7 +85,7 @@ export default function ConvertScannedPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Scanned PDFs look like regular documents, but they are actually images — you cannot select, search, or copy any text. OmnisPDF's OCR converts these image-based PDFs into fully searchable, copyable documents you can work with.
+              Scanned PDFs look like regular documents, but they are actually images — you cannot select, search, or copy any text. PDF.it's OCR converts these image-based PDFs into fully searchable, copyable documents you can work with.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Convert scanned PDFs into searchable, selectable text</li>
@@ -115,7 +115,7 @@ export default function ConvertScannedPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Prepare Scanned PDFs for Editing</h2>
               <p className="text-slate-600">
-                Want to edit a scanned document? First convert it with OCR to make the text selectable, then use OmnisPDF's PDF to Word tool to create an editable document you can modify in Microsoft Word or Google Docs.
+                Want to edit a scanned document? First convert it with OCR to make the text selectable, then use PDF.it's PDF to Word tool to create an editable document you can modify in Microsoft Word or Google Docs.
               </p>
             </div>
           </div>
@@ -127,7 +127,7 @@ export default function ConvertScannedPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Convert a Scanned PDF</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your scanned PDF into OmnisPDF.",
+                "Upload or drag and drop your scanned PDF into PDF.it.",
                 "Select the document language and click Run OCR.",
                 "Download your searchable PDF or convert it further to Word or TXT.",
               ].map((step, i) => (
@@ -172,12 +172,12 @@ export default function ConvertScannedPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I convert a scanned PDF to searchable text?", a: "Upload your scanned PDF to OmnisPDF, select the document language, and click Run OCR. OmnisPDF's OCR engine reads the text from the scanned images and produces a searchable, copyable PDF." },
+                { q: "How do I convert a scanned PDF to searchable text?", a: "Upload your scanned PDF to PDF.it, select the document language, and click Run OCR. PDF.it's OCR engine reads the text from the scanned images and produces a searchable, copyable PDF." },
                 { q: "What is the quality of OCR conversion?", a: "Conversion quality depends on scan resolution and clarity. High-resolution, well-lit scans produce excellent results. Low-quality scans, handwritten text, or unusual fonts may reduce accuracy." },
-                { q: "Can I convert the scanned PDF to an editable Word document?", a: "Yes. First, use OmnisPDF's OCR to make your scanned PDF searchable. Then use the PDF to Word tool to convert it into an editable Word document you can modify freely." },
+                { q: "Can I convert the scanned PDF to an editable Word document?", a: "Yes. First, use PDF.it's OCR to make your scanned PDF searchable. Then use the PDF to Word tool to convert it into an editable Word document you can modify freely." },
                 { q: "Can I batch convert multiple scanned PDFs?", a: "Batch OCR conversion is available for Pro subscribers. Upload multiple scanned PDFs at once and convert them all to searchable documents with a single click." },
                 { q: "Does OCR work on handwritten documents?", a: "OCR works best on printed text. Handwritten documents may produce limited or inaccurate results depending on handwriting clarity. Neatly printed handwriting may work, but cursive is generally not supported." },
-                { q: "Can I convert a scanned PDF on my phone?", a: "Yes. OmnisPDF works in mobile browsers — upload your scanned PDF, run OCR conversion, and download the searchable result on iPhone or Android." },
+                { q: "Can I convert a scanned PDF on my phone?", a: "Yes. PDF.it works in mobile browsers — upload your scanned PDF, run OCR conversion, and download the searchable result on iPhone or Android." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

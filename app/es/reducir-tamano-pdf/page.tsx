@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Sc
 import Link from "next/link"
 
 export const metadata = {
-  title: "Reducir Tamano de PDF — Haz tu PDF Mas Pequeno | OmnisPDF",
+  title: "Reducir Tamano de PDF — Haz tu PDF Mas Pequeno | PDF.it",
   description:
     "Reduce el tamano de cualquier archivo PDF en linea. Compresion rapida y facil para hacer tus PDFs mas pequenos sin perder calidad.",
   alternates: {
@@ -24,7 +24,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo reduzco el tamaño de un archivo PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a OmnisPDF y haz clic en Comprimir. La herramienta analiza tu documento y aplica compresión inteligente — optimizando imágenes, fuentes y estructuras internas para reducir el tamaño del archivo de forma significativa." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it y haz clic en Comprimir. La herramienta analiza tu documento y aplica compresión inteligente — optimizando imágenes, fuentes y estructuras internas para reducir el tamaño del archivo de forma significativa." }
     },
     {
       "@type": "Question",
@@ -34,17 +34,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Reducir el tamaño del PDF afecta la calidad?",
-      "acceptedAnswer": { "@type": "Answer", "text": "La compresión recomendada de OmnisPDF está diseñada para preservar la calidad visual. El texto permanece nítido y completamente legible. Las imágenes se optimizan de forma inteligente con diferencias prácticamente imperceptibles." }
+      "acceptedAnswer": { "@type": "Answer", "text": "La compresión recomendada de PDF.it está diseñada para preservar la calidad visual. El texto permanece nítido y completamente legible. Las imágenes se optimizan de forma inteligente con diferencias prácticamente imperceptibles." }
     },
     {
       "@type": "Question",
       "name": "¿Es seguro reducir el tamaño de mi PDF en línea?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF procesa tu archivo en el navegador y elimina todos los archivos después de la sesión. No almacenamos ni accedemos al contenido de tus documentos. Tu privacidad está protegida." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it procesa tu archivo en el navegador y elimina todos los archivos después de la sesión. No almacenamos ni accedemos al contenido de tus documentos. Tu privacidad está protegida." }
     },
     {
       "@type": "Question",
       "name": "¿Puedo reducir el tamaño de un PDF desde mi teléfono?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en cualquier navegador móvil — iPhone, Android, iPad. Sube tu PDF, reduce su tamaño y descarga el archivo más pequeño directamente en tu dispositivo." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en cualquier navegador móvil — iPhone, Android, iPad. Sube tu PDF, reduce su tamaño y descarga el archivo más pequeño directamente en tu dispositivo." }
     },
     {
       "@type": "Question",
@@ -73,7 +73,7 @@ export default function ReducirTamanoPDFPageEs() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Reducir Tamano de PDF</h1>
               <p className="text-xl text-slate-300 mb-8">
-                ¿Tu PDF es demasiado grande para compartir, subir o almacenar? OmnisPDF reduce el tamano de cualquier archivo PDF de forma rapida y facil — optimizando imagenes, fuentes y estructuras internas para hacer tu documento mas pequeno sin perder calidad visible.
+                ¿Tu PDF es demasiado grande para compartir, subir o almacenar? PDF.it reduce el tamano de cualquier archivo PDF de forma rapida y facil — optimizando imagenes, fuentes y estructuras internas para hacer tu documento mas pequeno sin perder calidad visible.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Reduccion Rapida</span></div>
@@ -99,7 +99,7 @@ export default function ReducirTamanoPDFPageEs() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-4">¿Por Que los PDFs Se Hacen Tan Grandes?</h2>
             <p className="text-lg text-slate-600 mb-8">
-              Los PDFs pueden crecer por muchas razones. Entender por que tu archivo es grande te ayuda a elegir la mejor estrategia para reducirlo. OmnisPDF analiza y optimiza todos estos componentes automaticamente.
+              Los PDFs pueden crecer por muchas razones. Entender por que tu archivo es grande te ayuda a elegir la mejor estrategia para reducirlo. PDF.it analiza y optimiza todos estos componentes automaticamente.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="bg-white rounded-xl p-6 border border-gray-200">
@@ -173,7 +173,7 @@ export default function ReducirTamanoPDFPageEs() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Reducir el Tamano de un PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra y suelta tu PDF en OmnisPDF.",
+                "Sube o arrastra y suelta tu PDF en PDF.it.",
                 "Haz clic en Comprimir PDF — la compresion inteligente se aplica automaticamente para reducir el tamano.",
                 "Descarga tu PDF reducido. Si aun es muy grande, intenta dividir el archivo primero y luego comprime cada parte.",
               ].map((step, i) => (
@@ -227,11 +227,11 @@ export default function ReducirTamanoPDFPageEs() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Como reduzco el tamano de un archivo PDF?", a: "Sube tu PDF a OmnisPDF y haz clic en Comprimir. La herramienta analiza tu documento y aplica compresion inteligente — optimizando imagenes, fuentes y estructuras internas para reducir el tamano del archivo de forma significativa." },
+                { q: "¿Como reduzco el tamano de un archivo PDF?", a: "Sube tu PDF a PDF.it y haz clic en Comprimir. La herramienta analiza tu documento y aplica compresion inteligente — optimizando imagenes, fuentes y estructuras internas para reducir el tamano del archivo de forma significativa." },
                 { q: "¿Cuanto se puede reducir el tamano de un PDF?", a: "Los resultados dependen del contenido de tu PDF. Los documentos con muchas imagenes tipicamente ven reducciones del 50-80%. Los PDFs con mas texto suelen reducirse entre un 20-40%. Cada documento es diferente." },
-                { q: "¿Reducir el tamano del PDF afecta la calidad?", a: "La compresion recomendada de OmnisPDF esta disenada para preservar la calidad visual. El texto permanece nitido y completamente legible. Las imagenes se optimizan de forma inteligente con diferencias practicamente imperceptibles." },
-                { q: "¿Es seguro reducir el tamano de mi PDF en linea?", a: "Si. OmnisPDF procesa tu archivo en el navegador y elimina todos los archivos despues de la sesion. No almacenamos ni accedemos al contenido de tus documentos. Tu privacidad esta protegida." },
-                { q: "¿Puedo reducir el tamano de un PDF desde mi telefono?", a: "Si. OmnisPDF funciona en cualquier navegador movil — iPhone, Android, iPad. Sube tu PDF, reduce su tamano y descarga el archivo mas pequeno directamente en tu dispositivo." },
+                { q: "¿Reducir el tamano del PDF afecta la calidad?", a: "La compresion recomendada de PDF.it esta disenada para preservar la calidad visual. El texto permanece nitido y completamente legible. Las imagenes se optimizan de forma inteligente con diferencias practicamente imperceptibles." },
+                { q: "¿Es seguro reducir el tamano de mi PDF en linea?", a: "Si. PDF.it procesa tu archivo en el navegador y elimina todos los archivos despues de la sesion. No almacenamos ni accedemos al contenido de tus documentos. Tu privacidad esta protegida." },
+                { q: "¿Puedo reducir el tamano de un PDF desde mi telefono?", a: "Si. PDF.it funciona en cualquier navegador movil — iPhone, Android, iPad. Sube tu PDF, reduce su tamano y descarga el archivo mas pequeno directamente en tu dispositivo." },
                 { q: "¿Que hago si mi PDF sigue siendo muy grande despues de reducirlo?", a: "Prueba dividir el PDF en secciones mas pequenas con nuestra herramienta Dividir PDF y comprime cada parte. Tambien puedes aplanar el PDF para eliminar capas ocultas, o eliminar paginas innecesarias para reducir aun mas el tamano." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

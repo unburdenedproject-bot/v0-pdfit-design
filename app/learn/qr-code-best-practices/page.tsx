@@ -5,7 +5,7 @@ import Link from "next/link"
 import { QrCode, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "QR Code Best Practices (Size, Placement & Testing) | OmnisPDF",
+  title: "QR Code Best Practices (Size, Placement & Testing) | PDF.it",
   description:
     "Learn QR code best practices for size, contrast, placement, error correction, and testing. Make sure your QR codes scan reliably every time with these essential tips.",
   keywords: "qr code best practices, qr code size, qr code placement, qr code design tips",
@@ -52,7 +52,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Create a Reliable QR Code",
-  "description": "Follow these 3 steps to create a QR code that scans perfectly every time using OmnisPDF.",
+  "description": "Follow these 3 steps to create a QR code that scans perfectly every time using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",

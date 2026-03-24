@@ -6,15 +6,15 @@ import { ProcessingInterface } from "@/components/processing-interface"
 import { FileText, Zap, Shield, Download } from "lucide-react"
 
 export const metadata = {
-  title: "Remover Metadados de PDF — Elimine Informacoes Ocultas | OmnisPDF",
+  title: "Remover Metadados de PDF — Elimine Informacoes Ocultas | PDF.it",
   description:
-    "Remova metadados de um PDF com o OmnisPDF. Elimine titulo, autor, data de criacao e outras informacoes ocultas do seu documento — rapido, gratuito e seguro.",
+    "Remova metadados de um PDF com o PDF.it. Elimine titulo, autor, data de criacao e outras informacoes ocultas do seu documento — rapido, gratuito e seguro.",
   alternates: {
-    canonical: "https://omnispdf.com/br/remover-metadados-pdf",
+    canonical: "https://pdf.it.com/br/remover-metadados-pdf",
     languages: {
-      en: "https://omnispdf.com/remove-metadata-pdf",
-      es: "https://omnispdf.com/es/eliminar-metadatos-pdf",
-      pt: "https://omnispdf.com/br/remover-metadados-pdf",
+      en: "https://pdf.it.com/remove-metadata-pdf",
+      es: "https://pdf.it.com/es/eliminar-metadatos-pdf",
+      pt: "https://pdf.it.com/br/remover-metadados-pdf",
     },
   },
 }
@@ -36,7 +36,7 @@ const faqSchema = {
       name: "Quais informacoes sao removidas?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "O OmnisPDF remove titulo, autor, assunto, palavras-chave, data de criacao, data de modificacao, software criador e outros campos de metadados padrao do PDF.",
+        text: "O PDF.it remove titulo, autor, assunto, palavras-chave, data de criacao, data de modificacao, software criador e outros campos de metadados padrao do PDF.",
       },
     },
     {
@@ -52,7 +52,7 @@ const faqSchema = {
       name: "Posso remover metadados de varios PDFs ao mesmo tempo?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sim. Com o plano Pro do OmnisPDF voce pode processar varios arquivos em lote, removendo metadados de multiplos PDFs simultaneamente.",
+        text: "Sim. Com o plano Pro do PDF.it voce pode processar varios arquivos em lote, removendo metadados de multiplos PDFs simultaneamente.",
       },
     },
     {
@@ -109,7 +109,7 @@ export default function RemoverMetadadosPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Metadados de PDF podem revelar informacoes sensiveis sobre voce e sua organizacao. O OmnisPDF remove todos os campos de metadados do seu documento, garantindo que nenhuma informacao oculta seja compartilhada involuntariamente.
+              Metadados de PDF podem revelar informacoes sensiveis sobre voce e sua organizacao. O PDF.it remove todos os campos de metadados do seu documento, garantindo que nenhuma informacao oculta seja compartilhada involuntariamente.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Remove titulo, autor, assunto e palavras-chave</li>
@@ -157,7 +157,7 @@ export default function RemoverMetadadosPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Remover Metadados de um PDF</h2>
             <div className="space-y-4">
               {[
-                "Suba ou arraste seu PDF para o OmnisPDF.",
+                "Suba ou arraste seu PDF para o PDF.it.",
                 "Clique em Remover Metadados para limpar todas as informacoes ocultas.",
                 "Baixe seu PDF limpo, sem metadados.",
               ].map((step, i) => (
@@ -205,9 +205,9 @@ export default function RemoverMetadadosPDFPage() {
             <div className="space-y-6">
               {[
                 { q: "Por que devo remover metadados de um PDF?", a: "Metadados podem conter informacoes sensiveis como nome do autor, software usado, datas de edicao e ate localizacao. Remover metadados protege sua privacidade ao compartilhar documentos." },
-                { q: "Quais informacoes sao removidas?", a: "O OmnisPDF remove titulo, autor, assunto, palavras-chave, data de criacao, data de modificacao, software criador e outros campos de metadados padrao do PDF." },
+                { q: "Quais informacoes sao removidas?", a: "O PDF.it remove titulo, autor, assunto, palavras-chave, data de criacao, data de modificacao, software criador e outros campos de metadados padrao do PDF." },
                 { q: "Remover metadados altera o conteudo do PDF?", a: "Nao. Remover metadados so elimina as informacoes descritivas ocultas. O conteudo visivel do PDF — texto, imagens, formatacao — permanece exatamente igual." },
-                { q: "Posso remover metadados de varios PDFs ao mesmo tempo?", a: "Sim. Com o plano Pro do OmnisPDF voce pode processar varios arquivos em lote, removendo metadados de multiplos PDFs simultaneamente." },
+                { q: "Posso remover metadados de varios PDFs ao mesmo tempo?", a: "Sim. Com o plano Pro do PDF.it voce pode processar varios arquivos em lote, removendo metadados de multiplos PDFs simultaneamente." },
                 { q: "E gratuito remover metadados de um PDF?", a: "Sim. Voce pode remover metadados de PDFs de ate 25MB gratuitamente. Para arquivos maiores e processamento em lote, atualize para o plano Pro." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

@@ -6,15 +6,15 @@ import { ProcessingInterface } from "@/components/processing-interface"
 import { FileText, Zap, Shield, Download } from "lucide-react"
 
 export const metadata = {
-  title: "Organizar PDF — Reordene, Remova e Gerencie Paginas | OmnisPDF",
+  title: "Organizar PDF — Reordene, Remova e Gerencie Paginas | PDF.it",
   description:
-    "Organize seu PDF com o OmnisPDF. Reordene paginas, remova as desnecessarias e gerencie seu documento — rapido, gratuito e direto no navegador.",
+    "Organize seu PDF com o PDF.it. Reordene paginas, remova as desnecessarias e gerencie seu documento — rapido, gratuito e direto no navegador.",
   alternates: {
-    canonical: "https://omnispdf.com/br/organizar-pdf",
+    canonical: "https://pdf.it.com/br/organizar-pdf",
     languages: {
-      en: "https://omnispdf.com/organize-pdf",
-      es: "https://omnispdf.com/es/organizar-pdf",
-      pt: "https://omnispdf.com/br/organizar-pdf",
+      en: "https://pdf.it.com/organize-pdf",
+      es: "https://pdf.it.com/es/organizar-pdf",
+      pt: "https://pdf.it.com/br/organizar-pdf",
     },
   },
 }
@@ -36,7 +36,7 @@ const faqSchema = {
       name: "Posso remover paginas especificas do PDF?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sim. O OmnisPDF permite selecionar e remover paginas individuais do seu PDF. Voce pode excluir paginas em branco, duplicadas ou desnecessarias.",
+        text: "Sim. O PDF.it permite selecionar e remover paginas individuais do seu PDF. Voce pode excluir paginas em branco, duplicadas ou desnecessarias.",
       },
     },
     {
@@ -52,7 +52,7 @@ const faqSchema = {
       name: "Posso organizar PDFs pelo celular?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sim. O OmnisPDF funciona em navegadores moveis. Suba seu PDF, organize as paginas e baixe o resultado pelo iPhone ou Android.",
+        text: "Sim. O PDF.it funciona em navegadores moveis. Suba seu PDF, organize as paginas e baixe o resultado pelo iPhone ou Android.",
       },
     },
     {
@@ -109,7 +109,7 @@ export default function OrganizarPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              O organizador de PDF do OmnisPDF permite gerenciar as paginas do seu documento de forma visual e intuitiva. Reordene, remova paginas desnecessarias, gire paginas individuais e exporte o resultado — tudo direto no navegador.
+              O organizador de PDF do PDF.it permite gerenciar as paginas do seu documento de forma visual e intuitiva. Reordene, remova paginas desnecessarias, gire paginas individuais e exporte o resultado — tudo direto no navegador.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Reordene paginas arrastando e soltando</li>
@@ -157,7 +157,7 @@ export default function OrganizarPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Organizar um PDF</h2>
             <div className="space-y-4">
               {[
-                "Suba ou arraste seu PDF para o OmnisPDF.",
+                "Suba ou arraste seu PDF para o PDF.it.",
                 "Arraste e solte as paginas para reordena-las. Remova as desnecessarias.",
                 "Clique em Salvar e baixe seu PDF organizado.",
               ].map((step, i) => (
@@ -205,9 +205,9 @@ export default function OrganizarPDFPage() {
             <div className="space-y-6">
               {[
                 { q: "O que significa organizar um PDF?", a: "Organizar um PDF significa reordenar paginas, remover paginas desnecessarias, girar paginas e gerenciar a estrutura do documento para que fique exatamente como voce precisa." },
-                { q: "Posso remover paginas especificas do PDF?", a: "Sim. O OmnisPDF permite selecionar e remover paginas individuais do seu PDF. Voce pode excluir paginas em branco, duplicadas ou desnecessarias." },
+                { q: "Posso remover paginas especificas do PDF?", a: "Sim. O PDF.it permite selecionar e remover paginas individuais do seu PDF. Voce pode excluir paginas em branco, duplicadas ou desnecessarias." },
                 { q: "A qualidade do PDF muda ao reorganizar paginas?", a: "Nao. Reorganizar paginas nao altera a qualidade do conteudo. Texto, imagens e formatacao de cada pagina permanecem identicos." },
-                { q: "Posso organizar PDFs pelo celular?", a: "Sim. O OmnisPDF funciona em navegadores moveis. Suba seu PDF, organize as paginas e baixe o resultado pelo iPhone ou Android." },
+                { q: "Posso organizar PDFs pelo celular?", a: "Sim. O PDF.it funciona em navegadores moveis. Suba seu PDF, organize as paginas e baixe o resultado pelo iPhone ou Android." },
                 { q: "E gratuito organizar um PDF?", a: "Sim. Voce pode organizar PDFs de ate 25MB gratuitamente. Para arquivos maiores e processamento em lote, atualize para o plano Pro." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

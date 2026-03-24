@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ScanIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "PDF com Texto Ilegível — Solução (Como Recuperar o Texto) | OmnisPDF",
+  title: "PDF com Texto Ilegível — Solução (Como Recuperar o Texto) | PDF.it",
   description:
     "Seu PDF mostra texto ilegível, caracteres estranhos ou símbolos? Descubra as causas e como recuperar o texto usando OCR e outras ferramentas.",
   keywords: "pdf texto ilegível, pdf caracteres estranhos, pdf texto quebrado, recuperar texto pdf, pdf ilegível solução",
@@ -16,7 +16,7 @@ const faqSchema = {
   "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "Por que meu PDF mostra caracteres estranhos?", "acceptedAnswer": { "@type": "Answer", "text": "Isso geralmente acontece quando as fontes do PDF não estão incorporadas, quando o PDF foi criado com codificação incompatível, ou quando o texto foi copiado de uma imagem sem OCR adequado." } },
-    { "@type": "Question", "name": "Como recuperar texto ilegível de um PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Use o Scanner OCR do OmnisPDF. Mesmo quando o texto parece ilegível no PDF, o OCR pode reconhecer os caracteres visuais e extrair o texto corretamente." } },
+    { "@type": "Question", "name": "Como recuperar texto ilegível de um PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Use o Scanner OCR do PDF.it. Mesmo quando o texto parece ilegível no PDF, o OCR pode reconhecer os caracteres visuais e extrair o texto corretamente." } },
     { "@type": "Question", "name": "O que causa texto quebrado em PDF?", "acceptedAnswer": { "@type": "Answer", "text": "As causas mais comuns são: fontes não incorporadas, codificação de caracteres incorreta, PDF corrompido ou digitalização de baixa qualidade." } }
   ]
 }
@@ -28,7 +28,7 @@ const howToSchema = {
   "description": "Recupere texto de PDFs com caracteres estranhos ou ilegíveis.",
   "step": [
     { "@type": "HowToStep", "name": "Identifique o problema", "text": "Verifique se o texto é selecionável (problema de fonte) ou se é imagem (precisa de OCR)." },
-    { "@type": "HowToStep", "name": "Use OCR", "text": "Envie o PDF para o Scanner OCR do OmnisPDF para reconhecer o texto visual." },
+    { "@type": "HowToStep", "name": "Use OCR", "text": "Envie o PDF para o Scanner OCR do PDF.it para reconhecer o texto visual." },
     { "@type": "HowToStep", "name": "Extraia o texto", "text": "O OCR gera texto legível que você pode copiar ou baixar." }
   ]
 }
@@ -97,7 +97,7 @@ export default function PdfTextoIlegivelSolucaoPage() {
               <div className="space-y-4">
                 {[
                   { title: "Tente outro leitor de PDF", desc: "Às vezes o problema é do leitor. Tente abrir o PDF no navegador (Chrome ou Edge) ou baixe o Adobe Acrobat Reader. Se o texto aparecer corretamente, era problema do leitor." },
-                  { title: "Use OCR para reconhecer o texto", desc: "Se o texto continua ilegível, envie o PDF para o Scanner OCR do OmnisPDF. O OCR analisa a aparência visual dos caracteres e extrai o texto, ignorando problemas de fontes e codificação." },
+                  { title: "Use OCR para reconhecer o texto", desc: "Se o texto continua ilegível, envie o PDF para o Scanner OCR do PDF.it. O OCR analisa a aparência visual dos caracteres e extrai o texto, ignorando problemas de fontes e codificação." },
                   { title: "Melhore a imagem se necessário", desc: "Se o PDF é escaneado e a qualidade é ruim, use Limpeza de Scan primeiro para melhorar o contraste e nitidez, depois aplique OCR." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -176,7 +176,7 @@ export default function PdfTextoIlegivelSolucaoPage() {
             <div className="space-y-6">
               {[
                 { q: "Por que meu PDF mostra caracteres estranhos?", a: "Isso acontece quando as fontes não estão incorporadas, a codificação é incompatível ou o PDF foi corrompido. Use OCR para extrair o texto visualmente." },
-                { q: "Como recuperar texto ilegível de um PDF?", a: "Use o Scanner OCR do OmnisPDF. O OCR reconhece os caracteres visuais e extrai o texto corretamente, ignorando problemas internos do PDF." },
+                { q: "Como recuperar texto ilegível de um PDF?", a: "Use o Scanner OCR do PDF.it. O OCR reconhece os caracteres visuais e extrai o texto corretamente, ignorando problemas internos do PDF." },
                 { q: "O que causa texto quebrado em PDF?", a: "Fontes não incorporadas, codificação incorreta, PDF corrompido ou digitalização de baixa qualidade são as causas mais comuns." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

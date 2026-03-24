@@ -5,19 +5,19 @@ import Link from "next/link"
 import { Smartphone, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Proteger PDF no Celular — Android e iPhone | OmnisPDF",
+  title: "Proteger PDF no Celular — Android e iPhone | PDF.it",
   description: "Aprenda a adicionar senha em PDF direto no celular. Guia para Android e iPhone, sem app necessario. Proteja documentos confidenciais em segundos.",
   keywords: "proteger pdf celular, senha pdf android, proteger pdf iphone, criptografar pdf celular, pdf com senha celular",
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-  { "@type": "Question", "name": "Preciso instalar app para proteger PDF no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Nao. O OmnisPDF funciona direto no navegador do celular. Acesse o site, envie o PDF, defina a senha e baixe o arquivo protegido. Funciona em Chrome (Android) e Safari (iPhone)." } },
-  { "@type": "Question", "name": "A protecao feita no celular e tao segura quanto no computador?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O processamento e feito nos servidores do OmnisPDF com criptografia AES-256. A seguranca e identica independente do dispositivo usado." } },
+  { "@type": "Question", "name": "Preciso instalar app para proteger PDF no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Nao. O PDF.it funciona direto no navegador do celular. Acesse o site, envie o PDF, defina a senha e baixe o arquivo protegido. Funciona em Chrome (Android) e Safari (iPhone)." } },
+  { "@type": "Question", "name": "A protecao feita no celular e tao segura quanto no computador?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O processamento e feito nos servidores do PDF.it com criptografia AES-256. A seguranca e identica independente do dispositivo usado." } },
   { "@type": "Question", "name": "Posso proteger e enviar direto pelo WhatsApp?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Apos proteger o PDF, use o botao compartilhar do celular para enviar diretamente pelo WhatsApp, Telegram, email ou qualquer app. Lembre-se de enviar a senha por outro canal." } }
 ] }
 
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como proteger PDF no celular", "description": "Adicione senha ao seu PDF usando o celular em 3 passos.", "step": [
-  { "@type": "HowToStep", "name": "Abra o OmnisPDF no navegador", "text": "No celular, abra Chrome ou Safari e acesse a ferramenta Proteger PDF do OmnisPDF." },
+  { "@type": "HowToStep", "name": "Abra o PDF.it no navegador", "text": "No celular, abra Chrome ou Safari e acesse a ferramenta Proteger PDF do PDF.it." },
   { "@type": "HowToStep", "name": "Envie o PDF e defina a senha", "text": "Toque na area de upload, selecione o PDF e digite a senha desejada." },
   { "@type": "HowToStep", "name": "Baixe e compartilhe", "text": "Toque em Proteger, baixe o PDF criptografado e compartilhe pelo app desejado." }
 ] }
@@ -47,7 +47,7 @@ export default function ProtegerPdfNoCelularPage() {
             <ul className="space-y-3 text-slate-700">
               <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Urgencia.</strong> Voce recebe um pedido urgente para enviar um documento protegido e nao tem acesso ao computador.</span></li>
               <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Mobilidade.</strong> Profissionais que trabalham em campo frequentemente precisam enviar documentos sensiveis pelo celular.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Praticidade.</strong> Com o OmnisPDF, voce protege, baixa e compartilha pelo WhatsApp em menos de 1 minuto.</span></li>
+              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Praticidade.</strong> Com o PDF.it, voce protege, baixa e compartilha pelo WhatsApp em menos de 1 minuto.</span></li>
             </ul>
           </section>
 
@@ -55,7 +55,7 @@ export default function ProtegerPdfNoCelularPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-6">No Android (Chrome)</h2>
             <div className="space-y-4">
               {[
-                { title: "Abra o Chrome", desc: "Acesse omnispdf.com/br/proteger-pdf. O site se adapta automaticamente a tela do celular." },
+                { title: "Abra o Chrome", desc: "Acesse pdf.it.com/br/proteger-pdf. O site se adapta automaticamente a tela do celular." },
                 { title: "Envie o PDF e defina a senha", desc: "Toque na area de upload, selecione o PDF do armazenamento interno ou Google Drive. Digite uma senha forte." },
                 { title: "Proteja e compartilhe", desc: "Toque em Proteger. Baixe o PDF protegido e use o menu Compartilhar para enviar por WhatsApp, Telegram, email ou salvar no Google Drive." },
               ].map((step, i) => (
@@ -71,7 +71,7 @@ export default function ProtegerPdfNoCelularPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-6">No iPhone (Safari)</h2>
             <div className="space-y-4">
               {[
-                { title: "Abra o Safari", desc: "Acesse omnispdf.com/br/proteger-pdf no Safari. Dica: adicione o site a Tela de Inicio para acesso rapido." },
+                { title: "Abra o Safari", desc: "Acesse pdf.it.com/br/proteger-pdf no Safari. Dica: adicione o site a Tela de Inicio para acesso rapido." },
                 { title: "Selecione o PDF e defina a senha", desc: "Toque na area de upload, escolha o PDF do iCloud Drive, app Arquivos ou outra fonte. Digite sua senha." },
                 { title: "Proteja e compartilhe", desc: "Toque em Proteger, baixe o PDF e use o botao Compartilhar para enviar via AirDrop, WhatsApp, email ou salvar no iCloud." },
               ].map((step, i) => (

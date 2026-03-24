@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ScanText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Consejos de Precision OCR (Mejores Resultados de Reconocimiento de Texto) | OmnisPDF",
+  title: "Consejos de Precision OCR (Mejores Resultados de Reconocimiento de Texto) | PDF.it",
   description:
     "Aprende como mejorar la precision del OCR con mejor calidad de escaneo, resolucion, contraste y configuracion de idioma. Obtiene reconocimiento de texto mas limpio en PDFs escaneados.",
   keywords: "precision ocr, mejorar resultados ocr, consejos calidad ocr, mejor reconocimiento de texto",
@@ -33,7 +33,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Puedo mejorar los resultados OCR de un documento que ya escanee?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. Puedes mejorar un escaneo existente ajustando el contraste, enderezando paginas torcidas y eliminando ruido usando software de edicion de imagenes o la herramienta de Limpieza de Escaneo de OmnisPDF. Luego vuelve a ejecutar el OCR en la version mejorada." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. Puedes mejorar un escaneo existente ajustando el contraste, enderezando paginas torcidas y eliminando ruido usando software de edicion de imagenes o la herramienta de Limpieza de Escaneo de PDF.it. Luego vuelve a ejecutar el OCR en la version mejorada." }
     },
     {
       "@type": "Question",
@@ -107,7 +107,7 @@ export default function ConsejoPrecisionOCRPage() {
               <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
                 <ScanText className="h-5 w-5 text-white" />
               </div>
-              <p className="text-slate-700 font-semibold">Aplica estos consejos y prueba el Escaner OCR de OmnisPDF (Pro).</p>
+              <p className="text-slate-700 font-semibold">Aplica estos consejos y prueba el Escaner OCR de PDF.it (Pro).</p>
             </div>
             <Link
               href="/es/escaner-ocr"
@@ -163,7 +163,7 @@ export default function ConsejoPrecisionOCRPage() {
                   },
                   {
                     title: "Limpia los escaneos de telefono primero",
-                    desc: "Las camaras de telefono introducen distorsion de perspectiva, sombras y exposicion desigual. Antes de ejecutar el OCR, usa la herramienta de Limpieza de Escaneo de OmnisPDF para corregir automaticamente estos problemas. La version limpia producira resultados OCR significativamente mejores.",
+                    desc: "Las camaras de telefono introducen distorsion de perspectiva, sombras y exposicion desigual. Antes de ejecutar el OCR, usa la herramienta de Limpieza de Escaneo de PDF.it para corregir automaticamente estos problemas. La version limpia producira resultados OCR significativamente mejores.",
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -242,7 +242,7 @@ export default function ConsejoPrecisionOCRPage() {
         <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Listo para Obtener Resultados OCR Precisos?</h2>
-            <p className="text-slate-300 mb-6">Aplica estos consejos y sube tu PDF escaneado al Escaner OCR de OmnisPDF para el mejor reconocimiento de texto posible.</p>
+            <p className="text-slate-300 mb-6">Aplica estos consejos y sube tu PDF escaneado al Escaner OCR de PDF.it para el mejor reconocimiento de texto posible.</p>
             <Link
               href="/es/escaner-ocr"
               className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
@@ -286,7 +286,7 @@ export default function ConsejoPrecisionOCRPage() {
                 { q: "A que resolucion debo escanear para OCR?", a: "Escanea a 300 DPI para documentos de texto estandar. Para documentos con fuentes pequenas (menores a 10pt), escanea a 400-600 DPI. Escanear por debajo de 200 DPI producira resultados OCR notablemente peores." },
                 { q: "El color vs. escala de grises afecta la precision del OCR?", a: "Para documentos solo de texto, los escaneos en escala de grises o blanco y negro a menudo producen mejores resultados OCR porque hay mas contraste entre el texto y el fondo. Los escaneos en color son mejores cuando el documento tiene texto o fondos de colores que afectan la legibilidad." },
                 { q: "Por que mi resultado OCR esta lleno de errores?", a: "Las causas comunes incluyen baja resolucion de escaneo (menos de 200 DPI), paginas torcidas o rotadas, mala iluminacion que causa sombras, bajo contraste entre texto y fondo, o seleccionar el idioma incorrecto en la configuracion OCR." },
-                { q: "Puedo mejorar los resultados OCR de un documento ya escaneado?", a: "Si. Puedes mejorar un escaneo existente ajustando el contraste, enderezando paginas torcidas y eliminando ruido usando software de edicion de imagenes o la herramienta de Limpieza de Escaneo de OmnisPDF. Luego vuelve a ejecutar el OCR." },
+                { q: "Puedo mejorar los resultados OCR de un documento ya escaneado?", a: "Si. Puedes mejorar un escaneo existente ajustando el contraste, enderezando paginas torcidas y eliminando ruido usando software de edicion de imagenes o la herramienta de Limpieza de Escaneo de PDF.it. Luego vuelve a ejecutar el OCR." },
                 { q: "El tipo de fuente afecta la precision del OCR?", a: "Si. Fuentes estandar como Arial, Times New Roman y Calibri producen la mayor precision OCR. Las fuentes decorativas, cursivas o muy delgadas son mas dificiles de reconocer. El texto manuscrito es el mas desafiante — consulta nuestra guia sobre OCR y escritura a mano." },
                 { q: "Que tan preciso es el OCR moderno?", a: "En escaneos limpios y de alta resolucion con texto impreso estandar, el OCR moderno alcanza una precision del 95-99% por caracter. Esto significa que en una pagina de 2,000 caracteres, podrias ver 20-100 que necesitan correccion." },
               ].map((faq, i) => (

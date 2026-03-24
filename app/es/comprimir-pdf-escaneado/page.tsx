@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Sc
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF Escaneado — Reduce el Tamano de Documentos Escaneados | OmnisPDF",
+  title: "Comprimir PDF Escaneado — Reduce el Tamano de Documentos Escaneados | PDF.it",
   description:
     "Comprime documentos PDF escaneados. Los escaneos suelen ser archivos grandes — reduce su tamano significativamente manteniendo la legibilidad.",
   alternates: {
@@ -29,7 +29,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿La compresión hará que mi documento escaneado sea ilegible?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. La compresión recomendada de OmnisPDF está diseñada para preservar la legibilidad. El texto impreso se mantiene nítido y claro. Las imágenes se optimizan de forma inteligente sin degradar la calidad visible del documento." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. La compresión recomendada de PDF.it está diseñada para preservar la legibilidad. El texto impreso se mantiene nítido y claro. Las imágenes se optimizan de forma inteligente sin degradar la calidad visible del documento." }
     },
     {
       "@type": "Question",
@@ -44,7 +44,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo comprimir un PDF escaneado de muchas páginas?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF comprime todas las páginas de tu PDF escaneado a la vez. Los escaneos de muchas páginas a menudo ven las mayores reducciones porque cada página contiene una imagen completa que puede optimizarse." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it comprime todas las páginas de tu PDF escaneado a la vez. Los escaneos de muchas páginas a menudo ven las mayores reducciones porque cada página contiene una imagen completa que puede optimizarse." }
     },
     {
       "@type": "Question",
@@ -73,7 +73,7 @@ export default function ComprimirPDFEscaneadoPageEs() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF Escaneado</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Los documentos escaneados son notoriamente pesados — cada pagina es una imagen de alta resolucion que puede pesar varios megabytes. OmnisPDF comprime las imagenes incrustadas de forma inteligente, reduciendo significativamente el tamano de tus escaneos mientras mantiene el contenido legible.
+                Los documentos escaneados son notoriamente pesados — cada pagina es una imagen de alta resolucion que puede pesar varios megabytes. PDF.it comprime las imagenes incrustadas de forma inteligente, reduciendo significativamente el tamano de tus escaneos mientras mantiene el contenido legible.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Compresion Inteligente</span></div>
@@ -173,7 +173,7 @@ export default function ComprimirPDFEscaneadoPageEs() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Comprimir un PDF Escaneado</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra y suelta tu PDF escaneado en OmnisPDF.",
+                "Sube o arrastra y suelta tu PDF escaneado en PDF.it.",
                 "Haz clic en Comprimir PDF — la compresion inteligente se aplica automaticamente a las imagenes incrustadas.",
                 "Descarga tu PDF mas pequeno. Si aun es muy grande, intenta dividir el archivo primero y luego comprime cada parte.",
               ].map((step, i) => (
@@ -228,10 +228,10 @@ export default function ComprimirPDFEscaneadoPageEs() {
             <div className="space-y-6">
               {[
                 { q: "¿Por que los PDFs escaneados son tan grandes?", a: "Los PDFs escaneados contienen imagenes de pagina completa en alta resolucion en lugar de texto vectorial. Cada pagina es esencialmente una fotografia, por lo que un documento de 10 paginas puede pesar 30-50MB facilmente. La compresion se enfoca en optimizar estas imagenes para reducir drasticamente el tamano." },
-                { q: "¿La compresion hara que mi documento escaneado sea ilegible?", a: "No. La compresion recomendada de OmnisPDF esta disenada para preservar la legibilidad. El texto impreso se mantiene nitido y claro. Las imagenes se optimizan de forma inteligente sin degradar la calidad visible del documento." },
+                { q: "¿La compresion hara que mi documento escaneado sea ilegible?", a: "No. La compresion recomendada de PDF.it esta disenada para preservar la legibilidad. El texto impreso se mantiene nitido y claro. Las imagenes se optimizan de forma inteligente sin degradar la calidad visible del documento." },
                 { q: "¿Comprimir un PDF escaneado afecta el texto OCR?", a: "Si tu PDF escaneado ya tiene una capa de texto OCR, la compresion la preserva completamente. La capa de texto es independiente de la capa de imagen, por lo que puedes seguir buscando y copiando texto despues de la compresion." },
                 { q: "¿Cuanto se puede comprimir un PDF escaneado?", a: "Los PDFs escaneados tipicamente se comprimen muy bien debido a que estan compuestos principalmente de imagenes. Reducciones del 50-80% son comunes, aunque los resultados exactos dependen de la resolucion del escaneo y el numero de paginas." },
-                { q: "¿Puedo comprimir un PDF escaneado de muchas paginas?", a: "Si. OmnisPDF comprime todas las paginas de tu PDF escaneado a la vez. Los escaneos de muchas paginas a menudo ven las mayores reducciones porque cada pagina contiene una imagen completa que puede optimizarse." },
+                { q: "¿Puedo comprimir un PDF escaneado de muchas paginas?", a: "Si. PDF.it comprime todas las paginas de tu PDF escaneado a la vez. Los escaneos de muchas paginas a menudo ven las mayores reducciones porque cada pagina contiene una imagen completa que puede optimizarse." },
                 { q: "¿Que pasa si mi PDF escaneado sigue siendo muy grande despues de la compresion?", a: "Intenta dividir el PDF en secciones mas pequenas con nuestra herramienta Dividir PDF, luego comprime cada parte individualmente. Tambien puedes eliminar paginas innecesarias antes de comprimir o usar el Escaner OCR para convertir las imagenes en texto buscable y mas ligero." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

@@ -6,9 +6,9 @@ import { Scissors, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Dividir PDF por Páginas — Elige Qué Páginas Separar | OmnisPDF",
+  title: "Dividir PDF por Páginas — Elige Qué Páginas Separar | PDF.it",
   description:
-    "Divide un PDF por páginas específicas con OmnisPDF. Elige exactamente qué páginas extraer en archivos separados — rápido, gratis y en tu navegador.",
+    "Divide un PDF por páginas específicas con PDF.it. Elige exactamente qué páginas extraer en archivos separados — rápido, gratis y en tu navegador.",
   alternates: {
     languages: {
       en: "/split-pdf-by-pages",
@@ -24,12 +24,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo elegir rangos personalizados de páginas?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Puedes especificar rangos como 1-5, 8-12, 15-20 y OmnisPDF creará un PDF separado para cada rango que definas." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Puedes especificar rangos como 1-5, 8-12, 15-20 y PDF.it creará un PDF separado para cada rango que definas." }
     },
     {
       "@type": "Question",
       "name": "¿Puedo extraer una sola página de un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Simplemente selecciona el número de página que necesitas y OmnisPDF creará un nuevo PDF con solo esa página." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Simplemente selecciona el número de página que necesitas y PDF.it creará un nuevo PDF con solo esa página." }
     },
     {
       "@type": "Question",
@@ -39,7 +39,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo dividir un PDF por páginas desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en navegadores móviles — sube tu PDF, selecciona las páginas y descarga los archivos desde iPhone o Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube tu PDF, selecciona las páginas y descarga los archivos desde iPhone o Android." }
     },
     {
       "@type": "Question",
@@ -91,7 +91,7 @@ export default function DividirPDFPorPaginasPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Con la herramienta de Dividir PDF por Páginas de OmnisPDF, tienes control total sobre qué páginas extraer. Selecciona páginas individuales, define rangos personalizados o combina ambos métodos para crear los archivos PDF exactos que necesitas.
+              Con la herramienta de Dividir PDF por Páginas de PDF.it, tienes control total sobre qué páginas extraer. Selecciona páginas individuales, define rangos personalizados o combina ambos métodos para crear los archivos PDF exactos que necesitas.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Selecciona páginas individuales o rangos personalizados</li>
@@ -139,7 +139,7 @@ export default function DividirPDFPorPaginasPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Dividir un PDF por Páginas</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Selecciona las páginas o rangos que quieres extraer.",
                 "Haz clic en Dividir PDF y descarga tus nuevos archivos.",
               ].map((step, i) => (
@@ -188,10 +188,10 @@ export default function DividirPDFPorPaginasPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Puedo elegir rangos personalizados de páginas?", a: "Sí. Puedes especificar rangos como 1-5, 8-12, 15-20 y OmnisPDF creará un PDF separado para cada rango que definas." },
-                { q: "¿Puedo extraer una sola página de un PDF?", a: "Sí. Simplemente selecciona el número de página que necesitas y OmnisPDF creará un nuevo PDF con solo esa página." },
+                { q: "¿Puedo elegir rangos personalizados de páginas?", a: "Sí. Puedes especificar rangos como 1-5, 8-12, 15-20 y PDF.it creará un PDF separado para cada rango que definas." },
+                { q: "¿Puedo extraer una sola página de un PDF?", a: "Sí. Simplemente selecciona el número de página que necesitas y PDF.it creará un nuevo PDF con solo esa página." },
                 { q: "¿Se mantiene la calidad al dividir por páginas?", a: "Sí. Las páginas se extraen directamente del PDF original sin recodificar. El texto, las imágenes y el formato permanecen intactos." },
-                { q: "¿Puedo dividir un PDF por páginas desde mi celular?", a: "Sí. OmnisPDF funciona en navegadores móviles — sube tu PDF, selecciona las páginas y descarga los archivos desde iPhone o Android." },
+                { q: "¿Puedo dividir un PDF por páginas desde mi celular?", a: "Sí. PDF.it funciona en navegadores móviles — sube tu PDF, selecciona las páginas y descarga los archivos desde iPhone o Android." },
                 { q: "¿Cuántas páginas puedo seleccionar?", a: "No hay límite en la cantidad de páginas o rangos que puedes seleccionar. Puedes extraer tantas páginas como necesites en archivos separados." },
                 { q: "¿Es gratis dividir PDFs por páginas?", a: "Sí. Puedes dividir PDFs de hasta 25MB gratis. Para archivos más grandes y procesamiento por lotes, actualiza a Pro." },
               ].map((faq, i) => (

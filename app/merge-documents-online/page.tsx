@@ -6,9 +6,9 @@ import { Merge, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Merge Documents Online — Combine Files Into One PDF | OmnisPDF",
+  title: "Merge Documents Online — Combine Files Into One PDF | PDF.it",
   description:
-    "Merge documents online with OmnisPDF. Combine multiple files into a single PDF for sharing, printing, or archiving — fast, free, and browser-based.",
+    "Merge documents online with PDF.it. Combine multiple files into a single PDF for sharing, printing, or archiving — fast, free, and browser-based.",
 }
 
 const faqSchema = {
@@ -18,22 +18,22 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I merge documents online?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF documents to OmnisPDF, arrange them in order, and click Merge. Your combined document will be ready to download in seconds — no software needed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF documents to PDF.it, arrange them in order, and click Merge. Your combined document will be ready to download in seconds — no software needed." }
     },
     {
       "@type": "Question",
       "name": "What document types can I merge?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF merges PDF files directly. If you have Word, Excel, or PowerPoint files, use OmnisPDF's conversion tools to convert them to PDF first, then merge them into one document." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it merges PDF files directly. If you have Word, Excel, or PowerPoint files, use PDF.it's conversion tools to convert them to PDF first, then merge them into one document." }
     },
     {
       "@type": "Question",
       "name": "Is merging documents online safe?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF uses encrypted connections and deletes all uploaded files after your session ends. Your documents are never stored permanently on our servers." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it uses encrypted connections and deletes all uploaded files after your session ends. Your documents are never stored permanently on our servers." }
     },
     {
       "@type": "Question",
       "name": "Can I merge documents without installing software?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF is 100% browser-based. No downloads, no plugins, no desktop software — just upload, merge, and download." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it is 100% browser-based. No downloads, no plugins, no desktop software — just upload, merge, and download." }
     },
     {
       "@type": "Question",
@@ -91,7 +91,7 @@ export default function MergeDocumentsOnlinePage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Stop juggling multiple files. OmnisPDF lets you merge documents online into a single PDF — perfect for combining reports, contracts, presentations, and reference materials into one professional file. No desktop software, no subscriptions, no hassle.
+              Stop juggling multiple files. PDF.it lets you merge documents online into a single PDF — perfect for combining reports, contracts, presentations, and reference materials into one professional file. No desktop software, no subscriptions, no hassle.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Merge any PDF documents into one file</li>
@@ -133,7 +133,7 @@ export default function MergeDocumentsOnlinePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Merge Documents Online</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PDF documents into OmnisPDF.",
+                "Upload or drag and drop your PDF documents into PDF.it.",
                 "Arrange the documents in your preferred order.",
                 "Click Merge and download your combined PDF document.",
               ].map((step, i) => (
@@ -178,10 +178,10 @@ export default function MergeDocumentsOnlinePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I merge documents online?", a: "Upload your PDF documents to OmnisPDF, arrange them in order, and click Merge. Your combined document will be ready to download in seconds — no software needed." },
-                { q: "What document types can I merge?", a: "OmnisPDF merges PDF files directly. If you have Word, Excel, or PowerPoint files, use OmnisPDF's conversion tools to convert them to PDF first, then merge them into one document." },
-                { q: "Is merging documents online safe?", a: "Yes. OmnisPDF uses encrypted connections and deletes all uploaded files after your session ends. Your documents are never stored permanently on our servers." },
-                { q: "Can I merge documents without installing software?", a: "Yes. OmnisPDF is 100% browser-based. No downloads, no plugins, no desktop software — just upload, merge, and download." },
+                { q: "How do I merge documents online?", a: "Upload your PDF documents to PDF.it, arrange them in order, and click Merge. Your combined document will be ready to download in seconds — no software needed." },
+                { q: "What document types can I merge?", a: "PDF.it merges PDF files directly. If you have Word, Excel, or PowerPoint files, use PDF.it's conversion tools to convert them to PDF first, then merge them into one document." },
+                { q: "Is merging documents online safe?", a: "Yes. PDF.it uses encrypted connections and deletes all uploaded files after your session ends. Your documents are never stored permanently on our servers." },
+                { q: "Can I merge documents without installing software?", a: "Yes. PDF.it is 100% browser-based. No downloads, no plugins, no desktop software — just upload, merge, and download." },
                 { q: "Is there a file size limit for merging documents?", a: "Free users can upload files up to 25MB each. Pro users get a 200MB per-file limit for handling large documents like presentations, reports, and manuals." },
                 { q: "Why should I merge documents online instead of using desktop software?", a: "Online merging is faster, requires no installation, and works on any device. You can merge documents from your phone, tablet, or any computer with a browser — no Adobe Acrobat or paid software needed." },
               ].map((faq, i) => (

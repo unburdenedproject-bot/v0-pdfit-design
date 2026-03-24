@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Ro
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF a 1MB Online — Reducir Tamaño de PDF | OmnisPDF",
+  title: "Comprimir PDF a 1MB Online — Reducir Tamaño de PDF | PDF.it",
   description:
     "Comprime tu PDF para cumplir con límites de 1MB. Compresión extrema para solicitudes de visa, formularios gubernamentales y envío por mensajería — rápido, desde tu navegador, gratis.",
   alternates: {
@@ -24,7 +24,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo comprimo un PDF para un límite de 1MB?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a OmnisPDF y haz clic en Comprimir. La herramienta aplica compresión extrema para reducir la resolución de imágenes y optimizar la estructura interna, reduciendo drásticamente el tamaño del archivo. Los resultados dependen del contenido de tu PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it y haz clic en Comprimir. La herramienta aplica compresión extrema para reducir la resolución de imágenes y optimizar la estructura interna, reduciendo drásticamente el tamaño del archivo. Los resultados dependen del contenido de tu PDF." }
     },
     {
       "@type": "Question",
@@ -44,7 +44,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo comprimir un PDF a 1MB desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en cualquier navegador móvil. Sube tu PDF, comprímelo y descarga el archivo más pequeño directamente en tu iPhone o Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, comprímelo y descarga el archivo más pequeño directamente en tu iPhone o Android." }
     },
     {
       "@type": "Question",
@@ -99,7 +99,7 @@ export default function ComprimirPDFA1MBPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-4">¿Por Qué Comprimir un PDF para Límites de 1MB?</h2>
             <p className="text-lg text-slate-600 mb-8">
-              Muchas plataformas exigen un límite estricto de 1MB. Solicitudes de visa, entregas de identificación gubernamental, formularios de becas y algunos portales de empleo requieren documentos pequeños. OmnisPDF aplica compresión extrema para reducir drásticamente el tamaño de tu PDF y ayudarte a cumplir con los requisitos de subida más estrictos.
+              Muchas plataformas exigen un límite estricto de 1MB. Solicitudes de visa, entregas de identificación gubernamental, formularios de becas y algunos portales de empleo requieren documentos pequeños. PDF.it aplica compresión extrema para reducir drásticamente el tamaño de tu PDF y ayudarte a cumplir con los requisitos de subida más estrictos.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Compresión extrema para máxima reducción de tamaño</li>
@@ -150,7 +150,7 @@ export default function ComprimirPDFA1MBPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Comprimir un PDF para Límites de 1MB</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Haz clic en Comprimir PDF — la compresión extrema se aplica automáticamente.",
                 "Descarga tu PDF más pequeño. Si sigue superando 1MB, intenta dividir el archivo primero y luego comprime cada parte.",
               ].map((step, i) => (
@@ -222,11 +222,11 @@ export default function ComprimirPDFA1MBPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo comprimo un PDF para un límite de 1MB?", a: "Sube tu PDF a OmnisPDF y haz clic en Comprimir. La herramienta aplica compresión extrema para reducir la resolución de imágenes y optimizar la estructura interna, reduciendo drásticamente el tamaño del archivo. Los resultados dependen del contenido de tu PDF." },
+                { q: "¿Cómo comprimo un PDF para un límite de 1MB?", a: "Sube tu PDF a PDF.it y haz clic en Comprimir. La herramienta aplica compresión extrema para reducir la resolución de imágenes y optimizar la estructura interna, reduciendo drásticamente el tamaño del archivo. Los resultados dependen del contenido de tu PDF." },
                 { q: "¿Mi PDF quedará definitivamente debajo de 1MB después de comprimirlo?", a: "La compresión extrema reduce drásticamente el tamaño del archivo, pero los resultados dependen del contenido del PDF. Los PDFs con mucho texto se comprimen muy bien. Los archivos con muchas imágenes pueden necesitar dividirse primero y luego comprimir cada parte por separado." },
                 { q: "¿Mi PDF seguirá siendo legible después de comprimirlo a 1MB?", a: "Sí. El texto se mantiene nítido y completamente legible. Las imágenes pueden perder algo de detalle con la compresión extrema, pero el documento sigue siendo utilizable para la mayoría de los propósitos." },
                 { q: "¿Por qué necesitaría un PDF de menos de 1MB?", a: "Muchos formularios en línea, portales gubernamentales, solicitudes de visa y apps de mensajería tienen límites estrictos de 1MB. Comprimir a 1MB asegura que tu documento se suba sin problemas." },
-                { q: "¿Puedo comprimir un PDF a 1MB desde mi celular?", a: "Sí. OmnisPDF funciona en cualquier navegador móvil. Sube tu PDF, comprímelo y descarga el archivo más pequeño directamente en tu iPhone o Android." },
+                { q: "¿Puedo comprimir un PDF a 1MB desde mi celular?", a: "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, comprímelo y descarga el archivo más pequeño directamente en tu iPhone o Android." },
                 { q: "¿Qué hago si mi PDF sigue siendo demasiado grande después de comprimirlo?", a: "Intenta dividir el PDF en partes más pequeñas con nuestra herramienta Dividir PDF y luego comprime cada parte individualmente. También puedes aplanar el PDF o eliminar páginas innecesarias para reducir aún más el tamaño." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

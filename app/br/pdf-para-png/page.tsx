@@ -6,15 +6,15 @@ import { FileImage, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Converter PDF para PNG Online — Gratis e Sem Cadastro | OmnisPDF",
+  title: "Converter PDF para PNG Online — Gratis e Sem Cadastro | PDF.it",
   description:
-    "Converta PDF para PNG em segundos com o OmnisPDF. Exporte cada pagina como imagem PNG de alta qualidade — ideal para texto nitido, graficos e transparencia.",
+    "Converta PDF para PNG em segundos com o PDF.it. Exporte cada pagina como imagem PNG de alta qualidade — ideal para texto nitido, graficos e transparencia.",
   alternates: {
-    canonical: "https://omnispdf.com/br/pdf-para-png",
+    canonical: "https://pdf.it.com/br/pdf-para-png",
     languages: {
-      en: "https://omnispdf.com/pdf-to-png",
-      es: "https://omnispdf.com/es/pdf-a-png",
-      pt: "https://omnispdf.com/br/pdf-para-png",
+      en: "https://pdf.it.com/pdf-to-png",
+      es: "https://pdf.it.com/es/pdf-a-png",
+      pt: "https://pdf.it.com/br/pdf-para-png",
     },
   },
 }
@@ -28,7 +28,7 @@ const faqSchema = {
       name: "Posso converter um PDF de varias paginas para PNG?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sim. O OmnisPDF converte cada pagina do PDF em uma imagem PNG individual que voce pode baixar separadamente.",
+        text: "Sim. O PDF.it converte cada pagina do PDF em uma imagem PNG individual que voce pode baixar separadamente.",
       },
     },
     {
@@ -44,7 +44,7 @@ const faqSchema = {
       name: "Posso converter PDF para PNG no celular?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sim. O OmnisPDF funciona em navegadores moveis — envie seu PDF, converta e baixe suas imagens PNG.",
+        text: "Sim. O PDF.it funciona em navegadores moveis — envie seu PDF, converta e baixe suas imagens PNG.",
       },
     },
     {
@@ -126,7 +126,7 @@ export default function PDFparaPNGPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use o conversor de PDF para PNG do OmnisPDF para exportar paginas de PDF como imagens PNG — rapido. PNG e ideal quando voce precisa de texto nitido, graficos limpos e qualidade consistente para apresentacoes, documentos e uso na web. Envie seu PDF, converta e baixe seus PNGs na hora.
+              Use o conversor de PDF para PNG do PDF.it para exportar paginas de PDF como imagens PNG — rapido. PNG e ideal quando voce precisa de texto nitido, graficos limpos e qualidade consistente para apresentacoes, documentos e uso na web. Envie seu PDF, converta e baixe seus PNGs na hora.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Converte PDF para PNG com resultados nitidos e legiveis</li>
@@ -168,7 +168,7 @@ export default function PDFparaPNGPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Converter PDF para PNG</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste seu PDF para o OmnisPDF.",
+                "Envie ou arraste seu PDF para o PDF.it.",
                 "Clique em Converter PDF para PNG.",
                 "Baixe suas imagens PNG — uma por pagina.",
               ].map((step, i) => (
@@ -215,7 +215,7 @@ export default function PDFparaPNGPage() {
               {[
                 {
                   q: "Posso converter um PDF de varias paginas para PNG?",
-                  a: "Sim. O OmnisPDF converte cada pagina do PDF em uma imagem PNG individual que voce pode baixar separadamente.",
+                  a: "Sim. O PDF.it converte cada pagina do PDF em uma imagem PNG individual que voce pode baixar separadamente.",
                 },
                 {
                   q: "Por que escolher PNG em vez de JPG?",
@@ -223,7 +223,7 @@ export default function PDFparaPNGPage() {
                 },
                 {
                   q: "Posso converter PDF para PNG no celular?",
-                  a: "Sim. O OmnisPDF funciona em navegadores moveis — envie seu PDF, converta e baixe suas imagens PNG.",
+                  a: "Sim. O PDF.it funciona em navegadores moveis — envie seu PDF, converta e baixe suas imagens PNG.",
                 },
                 {
                   q: "Por que meus arquivos PNG ficam borrados?",

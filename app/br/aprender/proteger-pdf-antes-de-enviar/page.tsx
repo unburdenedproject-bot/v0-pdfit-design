@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Shield, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Proteger PDF Antes de Enviar por Email | OmnisPDF",
+  title: "Proteger PDF Antes de Enviar por Email | PDF.it",
   description: "Aprenda a proteger documentos PDF com senha antes de enviar por email. Dicas de seguranca para compartilhar arquivos confidenciais de forma segura.",
   keywords: "proteger pdf antes de enviar, pdf seguro email, enviar pdf protegido, pdf com senha email, seguranca pdf email",
 }
@@ -13,12 +13,12 @@ export const metadata = {
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
   { "@type": "Question", "name": "Por que devo proteger o PDF antes de enviar por email?", "acceptedAnswer": { "@type": "Answer", "text": "Emails podem ser interceptados, encaminhados ou acessados por pessoas nao autorizadas. Proteger o PDF com senha garante que apenas o destinatario correto possa abrir o documento, mesmo se o email for acessado por outra pessoa." } },
   { "@type": "Question", "name": "Como envio a senha para o destinatario?", "acceptedAnswer": { "@type": "Answer", "text": "Nunca envie a senha no mesmo email do PDF. Use um canal diferente: SMS, WhatsApp, ligacao telefonica ou mensagem em outro app. Isso garante que mesmo se o email for interceptado, o PDF nao possa ser aberto." } },
-  { "@type": "Question", "name": "Posso proteger o PDF e comprimir ao mesmo tempo?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Primeiro comprima o PDF com o compressor do OmnisPDF para reduzir o tamanho, depois proteja com senha. Ou proteja primeiro e comprima depois — ambas as ordens funcionam." } },
+  { "@type": "Question", "name": "Posso proteger o PDF e comprimir ao mesmo tempo?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Primeiro comprima o PDF com o compressor do PDF.it para reduzir o tamanho, depois proteja com senha. Ou proteja primeiro e comprima depois — ambas as ordens funcionam." } },
   { "@type": "Question", "name": "O destinatario precisa de algum software especial para abrir?", "acceptedAnswer": { "@type": "Answer", "text": "Nao. Qualquer leitor de PDF (Adobe Reader, Preview, navegador) consegue abrir PDFs protegidos com senha. O destinatario so precisa digitar a senha quando abrir o arquivo." } }
 ] }
 
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como proteger PDF antes de enviar por email", "description": "Proteja seu documento PDF antes de enviar por email em 4 passos.", "step": [
-  { "@type": "HowToStep", "name": "Acesse a ferramenta Proteger PDF", "text": "Va ate omnispdf.com/br/proteger-pdf no navegador." },
+  { "@type": "HowToStep", "name": "Acesse a ferramenta Proteger PDF", "text": "Va ate pdf.it.com/br/proteger-pdf no navegador." },
   { "@type": "HowToStep", "name": "Envie e proteja o PDF", "text": "Envie seu PDF, defina uma senha forte e clique em Proteger." },
   { "@type": "HowToStep", "name": "Anexe o PDF protegido ao email", "text": "Baixe o PDF protegido e anexe-o ao seu email normalmente." },
   { "@type": "HowToStep", "name": "Envie a senha separadamente", "text": "Envie a senha para o destinatario por outro canal (SMS, WhatsApp, telefone)." }
@@ -59,7 +59,7 @@ export default function ProtegerPdfAntesDeEnviarPage() {
             <div className="space-y-4">
               {[
                 { title: "Prepare seu documento", desc: "Se o documento esta em Word, Excel ou PowerPoint, primeiro converta para PDF usando nosso conversor Office para PDF. Se ja e PDF, pule para o proximo passo." },
-                { title: "Proteja com senha", desc: "Acesse a ferramenta Proteger PDF, envie o arquivo e defina uma senha forte. O OmnisPDF criptografa com AES-256." },
+                { title: "Proteja com senha", desc: "Acesse a ferramenta Proteger PDF, envie o arquivo e defina uma senha forte. O PDF.it criptografa com AES-256." },
                 { title: "Anexe ao email", desc: "Baixe o PDF protegido e anexe-o ao seu email normalmente. Escreva no corpo do email que o documento e protegido por senha." },
                 { title: "Envie a senha por outro canal", desc: "Envie a senha por SMS, WhatsApp, Telegram ou ligacao. NUNCA coloque a senha no mesmo email do PDF." },
               ].map((step, i) => (

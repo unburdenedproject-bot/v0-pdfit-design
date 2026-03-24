@@ -6,9 +6,9 @@ import { Merge, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Unir PDF em Lote — Combine Dezenas de PDFs de Uma Vez | OmnisPDF",
+  title: "Unir PDF em Lote — Combine Dezenas de PDFs de Uma Vez | PDF.it",
   description:
-    "Una PDFs em lote com OmnisPDF. Envie dezenas de arquivos PDF e combine todos em um unico documento — processamento em lote rapido, gratis e online.",
+    "Una PDFs em lote com PDF.it. Envie dezenas de arquivos PDF e combine todos em um unico documento — processamento em lote rapido, gratis e online.",
   alternates: {
     languages: {
       en: "/batch-merge-pdf",
@@ -45,7 +45,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "E seguro enviar muitos arquivos de uma vez?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF usa conexoes criptografadas e exclui todos os arquivos apos sua sessao. Nenhum arquivo e armazenado permanentemente em nossos servidores." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it usa conexoes criptografadas e exclui todos os arquivos apos sua sessao. Nenhum arquivo e armazenado permanentemente em nossos servidores." }
     },
     {
       "@type": "Question",
@@ -98,7 +98,7 @@ export default function UnirPdfEmLotePage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Quando voce tem dezenas ou centenas de PDFs para combinar, unir um por um nao e viavel. O OmnisPDF oferece uniao em lote — envie todos os arquivos de uma vez, organize a ordem e gere um unico PDF consolidado em segundos.
+              Quando voce tem dezenas ou centenas de PDFs para combinar, unir um por um nao e viavel. O PDF.it oferece uniao em lote — envie todos os arquivos de uma vez, organize a ordem e gere um unico PDF consolidado em segundos.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Envie muitos PDFs de uma so vez</li>
@@ -140,7 +140,7 @@ export default function UnirPdfEmLotePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Unir PDFs em Lote</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste todos os seus arquivos PDF para o OmnisPDF.",
+                "Envie ou arraste todos os seus arquivos PDF para o PDF.it.",
                 "Organize os arquivos na ordem desejada.",
                 "Clique em Unir e baixe seu PDF consolidado.",
               ].map((step, i) => (
@@ -191,7 +191,7 @@ export default function UnirPdfEmLotePage() {
                 { q: "Quantos PDFs posso unir em lote?", a: "Usuarios gratuitos podem unir varios PDFs de ate 25MB cada. Usuarios Pro tem acesso a processamento em lote avancado com arquivos de ate 200MB cada." },
                 { q: "O processamento em lote e gratis?", a: "A uniao basica de multiplos PDFs e gratuita. Para processamento em lote avancado com arquivos maiores e sem limites, faca upgrade para o plano Pro." },
                 { q: "Posso escolher a ordem dos arquivos no lote?", a: "Sim. Apos enviar todos os arquivos, voce pode arrastar e soltar para definir a ordem exata antes de unir." },
-                { q: "E seguro enviar muitos arquivos de uma vez?", a: "Sim. O OmnisPDF usa conexoes criptografadas e exclui todos os arquivos apos sua sessao. Nenhum arquivo e armazenado permanentemente em nossos servidores." },
+                { q: "E seguro enviar muitos arquivos de uma vez?", a: "Sim. O PDF.it usa conexoes criptografadas e exclui todos os arquivos apos sua sessao. Nenhum arquivo e armazenado permanentemente em nossos servidores." },
                 { q: "Quanto tempo leva para unir PDFs em lote?", a: "A maioria dos lotes e processada em segundos. Lotes muito grandes podem levar um pouco mais, mas o processo e muito mais rapido que software de desktop." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

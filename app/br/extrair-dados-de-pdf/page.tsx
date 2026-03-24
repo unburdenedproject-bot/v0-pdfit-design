@@ -6,15 +6,15 @@ import { Database, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Extrair Dados de PDF — Obtenha Informações de Documentos PDF | OmnisPDF",
+  title: "Extrair Dados de PDF — Obtenha Informações de Documentos PDF | PDF.it",
   description:
-    "Extraia dados, texto e informações de arquivos PDF com o OmnisPDF. Obtenha os dados que precisa de qualquer documento PDF — rápido, no navegador, sem cadastro.",
+    "Extraia dados, texto e informações de arquivos PDF com o PDF.it. Obtenha os dados que precisa de qualquer documento PDF — rápido, no navegador, sem cadastro.",
   alternates: {
-    canonical: "https://omnispdf.com/br/extrair-dados-de-pdf",
+    canonical: "https://pdf.it.com/br/extrair-dados-de-pdf",
     languages: {
-      en: "https://omnispdf.com/extract-data-from-pdf",
-      es: "https://omnispdf.com/es/extraer-datos-de-pdf",
-      pt: "https://omnispdf.com/br/extrair-dados-de-pdf",
+      en: "https://pdf.it.com/extract-data-from-pdf",
+      es: "https://pdf.it.com/es/extraer-datos-de-pdf",
+      pt: "https://pdf.it.com/br/extrair-dados-de-pdf",
     },
   },
 }
@@ -26,7 +26,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como extraio dados de um PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o OmnisPDF, clique em Extrair e baixe um arquivo TXT com todos os dados e texto encontrados no seu documento PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o PDF.it, clique em Extrair e baixe um arquivo TXT com todos os dados e texto encontrados no seu documento PDF." }
     },
     {
       "@type": "Question",
@@ -46,7 +46,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso extrair dados de um PDF pelo celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em navegadores móveis — envie, extraia e baixe do seu iPhone ou Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em navegadores móveis — envie, extraia e baixe do seu iPhone ou Android." }
     },
     {
       "@type": "Question",
@@ -99,7 +99,7 @@ export default function ExtrairDadosDePDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Precisa obter informações de um documento PDF? O extrator de dados do OmnisPDF permite extrair todo o conteúdo textual — parágrafos, números, datas, listas — e baixá-lo como texto simples para usar em qualquer outro programa ou sistema.
+              Precisa obter informações de um documento PDF? O extrator de dados do PDF.it permite extrair todo o conteúdo textual — parágrafos, números, datas, listas — e baixá-lo como texto simples para usar em qualquer outro programa ou sistema.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Extraia todo o texto e dados de qualquer PDF</li>
@@ -141,7 +141,7 @@ export default function ExtrairDadosDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Extrair Dados de um PDF</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste seu PDF para o OmnisPDF.",
+                "Envie ou arraste seu PDF para o PDF.it.",
                 "Clique em Extrair Dados — todo o conteúdo é processado automaticamente.",
                 "Baixe o arquivo TXT com todos os dados extraídos.",
               ].map((step, i) => (
@@ -188,11 +188,11 @@ export default function ExtrairDadosDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como extraio dados de um PDF?", a: "Envie seu PDF para o OmnisPDF, clique em Extrair e baixe um arquivo TXT com todos os dados e texto encontrados no seu documento PDF." },
+                { q: "Como extraio dados de um PDF?", a: "Envie seu PDF para o PDF.it, clique em Extrair e baixe um arquivo TXT com todos os dados e texto encontrados no seu documento PDF." },
                 { q: "Que tipo de dados posso extrair de um PDF?", a: "Você pode extrair texto, números, tabelas, datas e qualquer informação textual contida no seu PDF. Para tabelas estruturadas, use nossa ferramenta de extração de tabelas." },
                 { q: "Posso extrair dados de um PDF digitalizado?", a: "Para PDFs digitalizados, você precisa usar primeiro nosso Scanner OCR para converter as imagens em texto. Depois pode extrair os dados do resultado." },
                 { q: "É seguro extrair dados dos meus PDFs?", a: "Sim. Todos os arquivos são processados no seu navegador e eliminados automaticamente após a sessão. Nunca armazenamos seus documentos." },
-                { q: "Posso extrair dados de um PDF pelo celular?", a: "Sim. O OmnisPDF funciona em navegadores móveis — envie, extraia e baixe do seu iPhone ou Android." },
+                { q: "Posso extrair dados de um PDF pelo celular?", a: "Sim. O PDF.it funciona em navegadores móveis — envie, extraia e baixe do seu iPhone ou Android." },
                 { q: "É grátis extrair dados de um PDF?", a: "Sim. Contas gratuitas têm 10 extrações por dia. Contas Pro têm extrações ilimitadas." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

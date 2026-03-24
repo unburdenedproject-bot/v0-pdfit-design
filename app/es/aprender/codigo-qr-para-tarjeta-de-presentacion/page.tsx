@@ -5,9 +5,9 @@ import Link from "next/link"
 import { QrCode, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Codigo QR para Tarjetas de Presentacion (Enlaza a Tu Sitio Web o vCard) | OmnisPDF",
+  title: "Codigo QR para Tarjetas de Presentacion (Enlaza a Tu Sitio Web o vCard) | PDF.it",
   description:
-    "Aprende como agregar un codigo QR a tu tarjeta de presentacion que enlace a tu sitio web, LinkedIn o informacion de contacto vCard. Genera codigos QR para tarjetas con OmnisPDF.",
+    "Aprende como agregar un codigo QR a tu tarjeta de presentacion que enlace a tu sitio web, LinkedIn o informacion de contacto vCard. Genera codigos QR para tarjetas con PDF.it.",
   keywords: "codigo qr tarjeta de presentacion, codigo qr para contacto, generador codigo qr tarjeta, codigo qr vcard",
 }
 
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "El generador de Codigo QR es una funcion Pro?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. La herramienta de Codigo QR de OmnisPDF es una funcion Pro disponible por $7.99/mes. Los usuarios Pro obtienen generacion ilimitada de codigos QR mas todas las herramientas premium de PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. La herramienta de Codigo QR de PDF.it es una funcion Pro disponible por $7.99/mes. Los usuarios Pro obtienen generacion ilimitada de codigos QR mas todas las herramientas premium de PDF." }
     }
   ]
 }
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Crear un Codigo QR para Tu Tarjeta de Presentacion",
-  "description": "Genera un codigo QR profesional para tu tarjeta de presentacion en 3 simples pasos usando OmnisPDF.",
+  "description": "Genera un codigo QR profesional para tu tarjeta de presentacion en 3 simples pasos usando PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Elige tipo vCard o URL",
-      "text": "Abre la herramienta de Codigo QR de OmnisPDF y selecciona vCard (para codificar tu informacion de contacto completa) o URL (para enlazar a tu sitio web o perfil de LinkedIn)."
+      "text": "Abre la herramienta de Codigo QR de PDF.it y selecciona vCard (para codificar tu informacion de contacto completa) o URL (para enlazar a tu sitio web o perfil de LinkedIn)."
     },
     {
       "@type": "HowToStep",
@@ -159,7 +159,7 @@ export default function CodigoQRParaTarjetaPresentacionPage() {
                   },
                   {
                     title: "Genera el codigo QR",
-                    desc: "Abre la herramienta de Codigo QR de OmnisPDF (funcion Pro), selecciona tu tipo e ingresa tus datos. Para vCard, llena tu nombre, titulo, empresa, telefono, correo y direccion. Para URL, pega tu enlace. Manten los datos minimos para un codigo mas limpio y escaneable.",
+                    desc: "Abre la herramienta de Codigo QR de PDF.it (funcion Pro), selecciona tu tipo e ingresa tus datos. Para vCard, llena tu nombre, titulo, empresa, telefono, correo y direccion. Para URL, pega tu enlace. Manten los datos minimos para un codigo mas limpio y escaneable.",
                   },
                   {
                     title: "Descarga como SVG y agrega a tu tarjeta",
@@ -287,7 +287,7 @@ export default function CodigoQRParaTarjetaPresentacionPage() {
                 { q: "Que tamano debe tener un codigo QR en una tarjeta de presentacion?", a: "Al menos 2cm x 2cm (aproximadamente 0.8 x 0.8 pulgadas). Los codigos QR mas pequenos son mas dificiles de leer para las camaras, especialmente con poca luz. Si el diseno de tu tarjeta lo permite, hazlo mas grande — 2.5cm es ideal." },
                 { q: "Donde debo colocar el codigo QR en mi tarjeta?", a: "Colocalo en la parte trasera de la tarjeta para mantener el frente limpio y profesional. Si va en el frente, ponlo en una esquina con suficiente espacio blanco alrededor. Nunca dejes que texto o graficos se superpongan al codigo QR." },
                 { q: "Puedo actualizar el destino del codigo QR mas tarde?", a: "Los codigos QR estaticos no se pueden actualizar — la URL o datos estan integrados en el patron. Si crees que podrias cambiar la URL de tu sitio web, usa un servicio de enlaces cortos que te permita redirigir el destino sin cambiar el codigo QR." },
-                { q: "El generador de Codigo QR es una funcion Pro?", a: "Si. La herramienta de Codigo QR de OmnisPDF es una funcion Pro disponible por $7.99/mes. Los usuarios Pro obtienen generacion ilimitada de codigos QR mas todas las herramientas premium de PDF." },
+                { q: "El generador de Codigo QR es una funcion Pro?", a: "Si. La herramienta de Codigo QR de PDF.it es una funcion Pro disponible por $7.99/mes. Los usuarios Pro obtienen generacion ilimitada de codigos QR mas todas las herramientas premium de PDF." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

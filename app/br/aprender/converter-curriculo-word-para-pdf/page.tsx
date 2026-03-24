@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Converter Curriculo Word para PDF (Dicas para ATS) | OmnisPDF",
+  title: "Converter Curriculo Word para PDF (Dicas para ATS) | PDF.it",
   description:
     "Converta seu curriculo de Word para PDF mantendo compatibilidade com sistemas ATS. Fontes, layout e formatacao que ajudam seu curriculo a passar pelos filtros automaticos.",
   keywords: "converter curriculo word pdf, curriculo pdf ats, curriculo word para pdf, cv word para pdf formatacao",
@@ -18,7 +18,7 @@ const faqSchema = {
     { "@type": "Question", "name": "Devo enviar curriculo em Word ou PDF?", "acceptedAnswer": { "@type": "Answer", "text": "PDF e a melhor opcao na maioria dos casos. Mantem a formatacao identica em qualquer dispositivo e sistema operacional. Envie em Word apenas se a vaga pedir explicitamente formato .docx." } },
     { "@type": "Question", "name": "O que e ATS e por que importa?", "acceptedAnswer": { "@type": "Answer", "text": "ATS (Applicant Tracking System) e o software que empresas usam para filtrar curriculos automaticamente. Se o PDF nao for compativel com ATS, seu curriculo pode ser rejeitado antes de um humano le-lo." } },
     { "@type": "Question", "name": "Como tornar meu curriculo PDF compativel com ATS?", "acceptedAnswer": { "@type": "Answer", "text": "Use fontes padrao (Arial, Calibri), evite tabelas complexas, nao coloque informacoes em cabecalhos/rodapes, evite imagens e graficos para dados importantes, e use titulos de secao simples." } },
-    { "@type": "Question", "name": "O OmnisPDF mantem a formatacao do curriculo?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O conversor Word para PDF do OmnisPDF preserva fontes, espacamento e layout. Se o curriculo estiver bem formatado no Word, o PDF ficara identico." } },
+    { "@type": "Question", "name": "O PDF.it mantem a formatacao do curriculo?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O conversor Word para PDF do PDF.it preserva fontes, espacamento e layout. Se o curriculo estiver bem formatado no Word, o PDF ficara identico." } },
   ]
 }
 
@@ -29,7 +29,7 @@ const howToSchema = {
   "description": "Converta seu curriculo mantendo formatacao e compatibilidade ATS.",
   "step": [
     { "@type": "HowToStep", "name": "Prepare o curriculo no Word", "text": "Use fontes padrao, layout simples, evite tabelas complexas e imagens para dados criticos." },
-    { "@type": "HowToStep", "name": "Converta para PDF", "text": "Use o conversor Word para PDF do OmnisPDF para gerar o PDF com formatacao preservada." },
+    { "@type": "HowToStep", "name": "Converta para PDF", "text": "Use o conversor Word para PDF do PDF.it para gerar o PDF com formatacao preservada." },
     { "@type": "HowToStep", "name": "Verifique o resultado", "text": "Abra o PDF, selecione todo o texto (Ctrl+A) para confirmar que e selecionavel — essencial para ATS." }
   ]
 }
@@ -97,7 +97,7 @@ export default function ConverterCurriculoWordPDFPage() {
 
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Convertendo para PDF</h2>
-              <p className="text-slate-600 mb-4">Com o curriculo preparado no Word, use o <Link href="/br/word-para-pdf" className="text-orange-600 hover:underline">conversor Word para PDF</Link> do OmnisPDF:</p>
+              <p className="text-slate-600 mb-4">Com o curriculo preparado no Word, use o <Link href="/br/word-para-pdf" className="text-orange-600 hover:underline">conversor Word para PDF</Link> do PDF.it:</p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; Faca upload do arquivo DOCX.</li>
                 <li>&#10003; A conversao preserva fontes, espacamento e layout.</li>
@@ -154,7 +154,7 @@ export default function ConverterCurriculoWordPDFPage() {
                 { q: "Devo enviar curriculo em Word ou PDF?", a: "PDF e a melhor opcao na maioria dos casos. Mantem formatacao em qualquer dispositivo. Envie em Word apenas se a vaga pedir explicitamente." },
                 { q: "O que e ATS?", a: "Software que empresas usam para filtrar curriculos automaticamente. Se o ATS nao ler seu PDF, seu curriculo pode ser rejeitado antes de um humano ve-lo." },
                 { q: "Como tornar o PDF compativel com ATS?", a: "Fontes padrao, layout simples, sem tabelas complexas, informacoes no corpo (nao cabecalho/rodape), titulos de secao claros." },
-                { q: "O OmnisPDF mantem a formatacao?", a: "Sim. Se o documento Word estiver bem formatado, o PDF sera identico ao original." },
+                { q: "O PDF.it mantem a formatacao?", a: "Sim. Se o documento Word estiver bem formatado, o PDF sera identico ao original." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ScanText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "OCR para Documento Digitalizado (Passo a Passo) | OmnisPDF",
+  title: "OCR para Documento Digitalizado (Passo a Passo) | PDF.it",
   description:
     "Aprenda como aplicar OCR em documentos digitalizados para torna-los pesquisaveis e editaveis. Guia passo a passo com dicas para melhores resultados.",
   keywords: "ocr documento digitalizado, ocr pdf digitalizado, como fazer ocr, documento digitalizado pesquisavel",
@@ -16,7 +16,7 @@ const faqSchema = {
   "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "O que e OCR em documento digitalizado?", "acceptedAnswer": { "@type": "Answer", "text": "OCR (Reconhecimento Optico de Caracteres) e o processo de converter a imagem de um documento digitalizado em texto pesquisavel e editavel, permitindo buscar palavras, copiar trechos e indexar o conteudo." } },
-    { "@type": "Question", "name": "Meu documento digitalizado precisa estar em PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, para usar o Scanner OCR do OmnisPDF, o documento deve estar em formato PDF. Se voce tem uma imagem, primeiro converta para PDF usando as ferramentas JPG para PDF ou PNG para PDF." } },
+    { "@type": "Question", "name": "Meu documento digitalizado precisa estar em PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, para usar o Scanner OCR do PDF.it, o documento deve estar em formato PDF. Se voce tem uma imagem, primeiro converta para PDF usando as ferramentas JPG para PDF ou PNG para PDF." } },
     { "@type": "Question", "name": "Qual resolucao e ideal para OCR?", "acceptedAnswer": { "@type": "Answer", "text": "A resolucao ideal e 300 DPI ou superior. Digitalizacoes abaixo de 200 DPI podem resultar em menor precisao do OCR." } },
     { "@type": "Question", "name": "O OCR funciona em documentos coloridos?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O motor OCR converte internamente para escala de cinza durante o processamento. Documentos com bom contraste entre texto e fundo produzem os melhores resultados." } },
   ]
@@ -26,10 +26,10 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Aplicar OCR em Documento Digitalizado",
-  "description": "Converta um documento digitalizado em texto pesquisavel usando o Scanner OCR do OmnisPDF.",
+  "description": "Converta um documento digitalizado em texto pesquisavel usando o Scanner OCR do PDF.it.",
   "step": [
     { "@type": "HowToStep", "name": "Prepare o documento", "text": "Certifique-se de que a digitalizacao esta em formato PDF com pelo menos 300 DPI de resolucao para melhores resultados." },
-    { "@type": "HowToStep", "name": "Faca upload e selecione o idioma", "text": "Acesse o Scanner OCR do OmnisPDF, faca upload do PDF e selecione o idioma principal do documento." },
+    { "@type": "HowToStep", "name": "Faca upload e selecione o idioma", "text": "Acesse o Scanner OCR do PDF.it, faca upload do PDF e selecione o idioma principal do documento." },
     { "@type": "HowToStep", "name": "Execute o OCR e baixe", "text": "Clique em processar e baixe o PDF pesquisavel com a camada de texto invisivel sobre a digitalizacao original." }
   ]
 }
@@ -76,7 +76,7 @@ export default function OCRDocumentoDigitalizadoPage() {
               <div className="space-y-4">
                 {[
                   { title: "Prepare a digitalizacao", desc: "Digitalize o documento a 300 DPI ou mais, em cores ou preto e branco. Certifique-se de que o texto esta nitido, sem sombras e com o documento alinhado." },
-                  { title: "Faca upload no OmnisPDF", desc: "Acesse o Scanner OCR do OmnisPDF e faca upload do PDF digitalizado. A ferramenta aceita arquivos ate 200MB no plano Pro." },
+                  { title: "Faca upload no PDF.it", desc: "Acesse o Scanner OCR do PDF.it e faca upload do PDF digitalizado. A ferramenta aceita arquivos ate 200MB no plano Pro." },
                   { title: "Selecione o idioma", desc: "Escolha o idioma principal do documento (portugues, ingles, etc.). Isso ajuda o motor OCR a reconhecer caracteres com maior precisao." },
                   { title: "Execute o OCR", desc: "Clique em processar. O motor OCR vai analisar cada pagina, identificar o texto e adicionar a camada pesquisavel." },
                   { title: "Baixe e verifique", desc: "Baixe o PDF pesquisavel. Abra o documento e use Ctrl+F para verificar se o texto foi reconhecido corretamente." },
@@ -156,7 +156,7 @@ export default function OCRDocumentoDigitalizadoPage() {
             <div className="space-y-6">
               {[
                 { q: "O que e OCR em documento digitalizado?", a: "OCR (Reconhecimento Optico de Caracteres) e o processo de converter a imagem de um documento digitalizado em texto pesquisavel e editavel." },
-                { q: "Meu documento digitalizado precisa estar em PDF?", a: "Sim, para usar o Scanner OCR do OmnisPDF. Se voce tem uma imagem, primeiro converta para PDF usando as ferramentas JPG para PDF ou PNG para PDF." },
+                { q: "Meu documento digitalizado precisa estar em PDF?", a: "Sim, para usar o Scanner OCR do PDF.it. Se voce tem uma imagem, primeiro converta para PDF usando as ferramentas JPG para PDF ou PNG para PDF." },
                 { q: "Qual resolucao e ideal para OCR?", a: "A resolucao ideal e 300 DPI ou superior. Digitalizacoes abaixo de 200 DPI podem resultar em menor precisao." },
                 { q: "O OCR funciona em documentos coloridos?", a: "Sim. O motor OCR converte internamente para escala de cinza. Documentos com bom contraste entre texto e fundo produzem os melhores resultados." },
               ].map((faq, i) => (

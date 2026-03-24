@@ -90,7 +90,7 @@ export default function QRCodePage() {
                 </span>
               </div>
               <p className="text-xl text-slate-300">
-                Create QR codes instantly with OmnisPDF — generate a QR code for a link, text, Wi-Fi, email, or contact info and download it in seconds.
+                Create QR codes instantly with PDF.it — generate a QR code for a link, text, Wi-Fi, email, or contact info and download it in seconds.
               </p>
             </div>
           </div>
@@ -200,7 +200,7 @@ export default function QRCodePage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use OmnisPDF's QR code generator to create a QR code for a website link, text, contact details, or Wi-Fi credentials. Generate a QR code instantly and download it for flyers, packaging, menus, business cards, presentations, and social media.
+              Use PDF.it's QR code generator to create a QR code for a website link, text, contact details, or Wi-Fi credentials. Generate a QR code instantly and download it for flyers, packaging, menus, business cards, presentations, and social media.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Generate QR codes for URLs, text, email, and phone numbers</li>
@@ -287,7 +287,7 @@ export default function QRCodePage() {
             <div className="space-y-6">
               {[
                 {
-                  q: "How do I create a QR code with OmnisPDF?",
+                  q: "How do I create a QR code with PDF.it?",
                   a: "Enter your URL or text, click Generate QR Code, then download the QR code image.",
                 },
                 {
@@ -304,7 +304,7 @@ export default function QRCodePage() {
                 },
                 {
                   q: "Is the QR Code Generator free?",
-                  a: "QR Code Generator is a Pro feature, available on the OmnisPDF Pro plan at $7.99/month.",
+                  a: "QR Code Generator is a Pro feature, available on the PDF.it Pro plan at $7.99/month.",
                 },
                 {
                   q: "Is my data stored when I generate a QR code?",

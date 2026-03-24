@@ -39,7 +39,7 @@ export default function NotFound() {
                   Browse Tools
                 </Link>
                 <a
-                  href="mailto:contact@omnispdf.com"
+                  href="mailto:contact@pdf.it.com"
                   className="flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-slate-700 font-semibold py-3 px-6 rounded-lg border border-gray-300 transition-colors"
                 >
                   <Mail className="h-4 w-4" />
@@ -74,10 +74,10 @@ export default function NotFound() {
                 <p className="text-blue-700">
                   Contact us at{" "}
                   <a
-                    href="mailto:contact@omnispdf.com"
+                    href="mailto:contact@pdf.it.com"
                     className="text-blue-600 hover:text-blue-800 font-medium underline"
                   >
-                    contact@omnispdf.com
+                    contact@pdf.it.com
                   </a>{" "}
                   and we'll help you find what you're looking for.
                 </p>

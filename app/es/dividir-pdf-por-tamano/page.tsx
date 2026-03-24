@@ -6,9 +6,9 @@ import { Scissors, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Dividir PDF por Tamaño — Separa PDFs en Archivos de Tamaño Específico | OmnisPDF",
+  title: "Dividir PDF por Tamaño — Separa PDFs en Archivos de Tamaño Específico | PDF.it",
   description:
-    "Divide un PDF en archivos de un tamaño específico con OmnisPDF. Separa PDFs para que cada parte sea menor a 5MB, 10MB o el límite que necesites — rápido y gratis.",
+    "Divide un PDF en archivos de un tamaño específico con PDF.it. Separa PDFs para que cada parte sea menor a 5MB, 10MB o el límite que necesites — rápido y gratis.",
   alternates: {
     languages: {
       en: "/split-pdf-by-size",
@@ -24,12 +24,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Qué tamaños objetivo puedo elegir?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Puedes definir el tamaño máximo que deseas para cada archivo resultante — por ejemplo, 5MB, 10MB o 25MB. OmnisPDF dividirá el PDF en partes que no excedan ese límite." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Puedes definir el tamaño máximo que deseas para cada archivo resultante — por ejemplo, 5MB, 10MB o 25MB. PDF.it dividirá el PDF en partes que no excedan ese límite." }
     },
     {
       "@type": "Question",
       "name": "¿Qué tan precisa es la división por tamaño?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF divide por páginas completas, por lo que cada archivo resultante estará lo más cerca posible del tamaño objetivo sin excederlo. El tamaño exacto depende del contenido de cada página." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it divide por páginas completas, por lo que cada archivo resultante estará lo más cerca posible del tamaño objetivo sin excederlo. El tamaño exacto depende del contenido de cada página." }
     },
     {
       "@type": "Question",
@@ -44,7 +44,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Funciona en celulares?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en navegadores móviles — sube, divide y descarga desde iPhone o Android sin instalar ninguna app." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube, divide y descarga desde iPhone o Android sin instalar ninguna app." }
     },
     {
       "@type": "Question",
@@ -73,7 +73,7 @@ export default function DividirPDFPorTamanoPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Dividir PDF por Tamaño</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Separa un PDF en archivos de un tamaño específico. Define el límite máximo por archivo — por ejemplo, cada uno menor a 5MB — y OmnisPDF se encarga del resto.
+                Separa un PDF en archivos de un tamaño específico. Define el límite máximo por archivo — por ejemplo, cada uno menor a 5MB — y PDF.it se encarga del resto.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Tamaño Objetivo Personalizado</span></div>
@@ -91,7 +91,7 @@ export default function DividirPDFPorTamanoPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Muchas plataformas y servicios tienen límites de tamaño para archivos. Con la herramienta de Dividir PDF por Tamaño de OmnisPDF, puedes definir un tamaño máximo y el sistema dividirá tu PDF en partes que no excedan ese límite — sin perder calidad ni formato.
+              Muchas plataformas y servicios tienen límites de tamaño para archivos. Con la herramienta de Dividir PDF por Tamaño de PDF.it, puedes definir un tamaño máximo y el sistema dividirá tu PDF en partes que no excedan ese límite — sin perder calidad ni formato.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Define el tamaño máximo por archivo (5MB, 10MB, 25MB, etc.)</li>
@@ -139,7 +139,7 @@ export default function DividirPDFPorTamanoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Dividir un PDF por Tamaño</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Define el tamaño máximo para cada archivo resultante.",
                 "Haz clic en Dividir PDF y descarga tus archivos.",
               ].map((step, i) => (
@@ -188,11 +188,11 @@ export default function DividirPDFPorTamanoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Qué tamaños objetivo puedo elegir?", a: "Puedes definir el tamaño máximo que deseas para cada archivo resultante — por ejemplo, 5MB, 10MB o 25MB. OmnisPDF dividirá el PDF en partes que no excedan ese límite." },
-                { q: "¿Qué tan precisa es la división por tamaño?", a: "OmnisPDF divide por páginas completas, por lo que cada archivo resultante estará lo más cerca posible del tamaño objetivo sin excederlo. El tamaño exacto depende del contenido de cada página." },
+                { q: "¿Qué tamaños objetivo puedo elegir?", a: "Puedes definir el tamaño máximo que deseas para cada archivo resultante — por ejemplo, 5MB, 10MB o 25MB. PDF.it dividirá el PDF en partes que no excedan ese límite." },
+                { q: "¿Qué tan precisa es la división por tamaño?", a: "PDF.it divide por páginas completas, por lo que cada archivo resultante estará lo más cerca posible del tamaño objetivo sin excederlo. El tamaño exacto depende del contenido de cada página." },
                 { q: "¿Se mantiene la calidad al dividir por tamaño?", a: "Sí. Las páginas se extraen directamente del PDF original sin recodificar ni comprimir. El texto, las imágenes y el formato permanecen intactos." },
                 { q: "¿Puedo dividir un PDF para enviarlo por WhatsApp?", a: "Sí. WhatsApp tiene un límite de 100MB para documentos. Si tu PDF excede ese límite, divídelo en partes más pequeñas y envía cada una por separado." },
-                { q: "¿Funciona en celulares?", a: "Sí. OmnisPDF funciona en navegadores móviles — sube, divide y descarga desde iPhone o Android sin instalar ninguna app." },
+                { q: "¿Funciona en celulares?", a: "Sí. PDF.it funciona en navegadores móviles — sube, divide y descarga desde iPhone o Android sin instalar ninguna app." },
                 { q: "¿Es gratis dividir PDFs por tamaño?", a: "Sí. Puedes dividir PDFs de hasta 25MB gratis. Para archivos más grandes (hasta 200MB), actualiza a Pro." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

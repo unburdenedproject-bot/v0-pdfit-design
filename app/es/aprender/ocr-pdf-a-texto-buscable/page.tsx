@@ -5,22 +5,22 @@ import Link from "next/link"
 import { ScanText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "OCR un PDF para Hacerlo Buscable (Encontrar Texto en PDFs Escaneados) | OmnisPDF",
+  title: "OCR un PDF para Hacerlo Buscable (Encontrar Texto en PDFs Escaneados) | PDF.it",
   description: "Aprende como usar OCR para convertir PDFs escaneados en documentos buscables. Encuentra texto en PDFs solo de imagen, copia contenido y haz que tus archivos escaneados sean completamente funcionales.",
   keywords: "ocr pdf buscable, hacer pdf escaneado buscable, buscar texto en pdf escaneado, ocr pdf texto",
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
   { "@type": "Question", "name": "Por que no puedo buscar texto en mi PDF escaneado?", "acceptedAnswer": { "@type": "Answer", "text": "Los PDFs escaneados son solo imagenes — contienen fotos de texto, no datos de texto reales. Tu computadora los ve como imagenes planas, asi que Ctrl+F no tiene nada que buscar. Ejecutar OCR agrega una capa de texto invisible que hace el contenido buscable." } },
-  { "@type": "Question", "name": "Como hago un PDF escaneado buscable?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF escaneado al Escaner OCR de OmnisPDF (funcion Pro), selecciona el idioma del documento y procesalo. La herramienta agrega una capa de texto buscable sobre el escaneo original." } },
+  { "@type": "Question", "name": "Como hago un PDF escaneado buscable?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF escaneado al Escaner OCR de PDF.it (funcion Pro), selecciona el idioma del documento y procesalo. La herramienta agrega una capa de texto buscable sobre el escaneo original." } },
   { "@type": "Question", "name": "El OCR cambiara la apariencia de mi PDF?", "acceptedAnswer": { "@type": "Answer", "text": "No. OCR agrega una capa de texto invisible detras de la imagen visible del escaneo. El documento se ve exactamente igual — pero ahora puedes buscar, seleccionar y copiar texto." } },
-  { "@type": "Question", "name": "Puedo hacer OCR a un PDF con multiples paginas?", "acceptedAnswer": { "@type": "Answer", "text": "Si. El Escaner OCR de OmnisPDF procesa todas las paginas de tu PDF a la vez. Ya sea que tu documento tenga 1 pagina o 100 paginas, cada pagina recibe una capa de texto OCR." } },
-  { "@type": "Question", "name": "Que limites de tamano de archivo aplican para OCR?", "acceptedAnswer": { "@type": "Answer", "text": "Los usuarios Pro pueden procesar PDFs hasta 200MB con el Escaner OCR. Si tu archivo es mas grande, usa la herramienta Comprimir PDF de OmnisPDF primero." } },
+  { "@type": "Question", "name": "Puedo hacer OCR a un PDF con multiples paginas?", "acceptedAnswer": { "@type": "Answer", "text": "Si. El Escaner OCR de PDF.it procesa todas las paginas de tu PDF a la vez. Ya sea que tu documento tenga 1 pagina o 100 paginas, cada pagina recibe una capa de texto OCR." } },
+  { "@type": "Question", "name": "Que limites de tamano de archivo aplican para OCR?", "acceptedAnswer": { "@type": "Answer", "text": "Los usuarios Pro pueden procesar PDFs hasta 200MB con el Escaner OCR. Si tu archivo es mas grande, usa la herramienta Comprimir PDF de PDF.it primero." } },
   { "@type": "Question", "name": "Puedo convertir un PDF buscable a Word despues del OCR?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Una vez que tu PDF tiene una capa de texto del OCR, puedes convertirlo a Word. La conversion sera mucho mas precisa porque la capa de texto le da al convertidor texto real con el que trabajar." } }
 ] }
 
-const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como Hacer OCR a un PDF para Hacerlo Buscable", "description": "Convierte un PDF escaneado en un documento buscable en 3 pasos usando el Escaner OCR de OmnisPDF.", "step": [
-  { "@type": "HowToStep", "name": "Sube tu PDF escaneado", "text": "Ve a la herramienta Escaner OCR de OmnisPDF y sube el PDF que contiene paginas escaneadas o solo imagenes." },
+const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como Hacer OCR a un PDF para Hacerlo Buscable", "description": "Convierte un PDF escaneado en un documento buscable en 3 pasos usando el Escaner OCR de PDF.it.", "step": [
+  { "@type": "HowToStep", "name": "Sube tu PDF escaneado", "text": "Ve a la herramienta Escaner OCR de PDF.it y sube el PDF que contiene paginas escaneadas o solo imagenes." },
   { "@type": "HowToStep", "name": "Selecciona el idioma y ejecuta OCR", "text": "Elige el idioma del texto en tu documento para mejor precision, luego haz clic en el boton OCR para iniciar el procesamiento." },
   { "@type": "HowToStep", "name": "Descarga el PDF buscable", "text": "Descarga tu nuevo PDF buscable. Ahora puedes usar Ctrl+F para encontrar texto, seleccionar y copiar contenido, y convertir a otros formatos." }
 ] }
@@ -63,8 +63,8 @@ export default function OCRPDFATextoBuscablePage() {
               <h2 className="text-2xl font-black text-slate-900 mb-6">Como Hacer un PDF Escaneado Buscable (Paso a Paso)</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Sube tu PDF escaneado", desc: "Abre el Escaner OCR de OmnisPDF y sube tu archivo. La herramienta acepta PDFs hasta 200MB para usuarios Pro. Si tu archivo es muy grande, comprimelo primero usando la herramienta Comprimir PDF." },
-                  { title: "Selecciona el idioma del documento", desc: "Elige el idioma principal de tu documento. Esto ayuda al motor OCR a reconocer caracteres con mayor precision. OmnisPDF soporta docenas de idiomas incluyendo espanol, ingles, frances, aleman y portugues." },
+                  { title: "Sube tu PDF escaneado", desc: "Abre el Escaner OCR de PDF.it y sube tu archivo. La herramienta acepta PDFs hasta 200MB para usuarios Pro. Si tu archivo es muy grande, comprimelo primero usando la herramienta Comprimir PDF." },
+                  { title: "Selecciona el idioma del documento", desc: "Elige el idioma principal de tu documento. Esto ayuda al motor OCR a reconocer caracteres con mayor precision. PDF.it soporta docenas de idiomas incluyendo espanol, ingles, frances, aleman y portugues." },
                   { title: "Descarga el PDF buscable", desc: "Haz clic en el boton OCR y espera el procesamiento. Descarga tu nuevo PDF — se ve identico al original pero ahora puedes buscar, seleccionar, copiar y resaltar texto en todo el documento." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -137,9 +137,9 @@ export default function OCRPDFATextoBuscablePage() {
             <div className="space-y-6">
               {[
                 { q: "Por que no puedo buscar texto en mi PDF escaneado?", a: "Los PDFs escaneados son solo imagenes — contienen fotos de texto, no datos de texto reales. Ejecutar OCR agrega una capa de texto invisible que hace el contenido buscable." },
-                { q: "Como hago un PDF escaneado buscable?", a: "Sube tu PDF escaneado al Escaner OCR de OmnisPDF (funcion Pro), selecciona el idioma del documento y procesalo. La herramienta agrega una capa de texto buscable sobre el escaneo original." },
+                { q: "Como hago un PDF escaneado buscable?", a: "Sube tu PDF escaneado al Escaner OCR de PDF.it (funcion Pro), selecciona el idioma del documento y procesalo. La herramienta agrega una capa de texto buscable sobre el escaneo original." },
                 { q: "El OCR cambiara la apariencia de mi PDF?", a: "No. OCR agrega una capa de texto invisible. El documento se ve exactamente igual — pero ahora puedes buscar, seleccionar y copiar texto." },
-                { q: "Puedo hacer OCR a un PDF con multiples paginas?", a: "Si. El Escaner OCR de OmnisPDF procesa todas las paginas de tu PDF a la vez." },
+                { q: "Puedo hacer OCR a un PDF con multiples paginas?", a: "Si. El Escaner OCR de PDF.it procesa todas las paginas de tu PDF a la vez." },
                 { q: "Que limites de tamano de archivo aplican para OCR?", a: "Los usuarios Pro pueden procesar PDFs hasta 200MB con el Escaner OCR." },
                 { q: "Puedo convertir un PDF buscable a Word despues del OCR?", a: "Si. Una vez que tu PDF tiene una capa de texto del OCR, la conversion a Word sera mucho mas precisa." },
               ].map((faq, i) => (

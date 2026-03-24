@@ -6,15 +6,15 @@ import { ProcessingInterface } from "@/components/processing-interface"
 import { FileText, Zap, Shield, Download, Crown } from "lucide-react"
 
 export const metadata = {
-  title: "Converter PDF para Word Online — PDF para DOCX Editavel | OmnisPDF",
+  title: "Converter PDF para Word Online — PDF para DOCX Editavel | PDF.it",
   description:
-    "Converta PDF para Word editavel com o OmnisPDF. Transforme seus arquivos PDF em documentos DOCX que voce pode editar na hora — rapido, seguro e direto do navegador.",
+    "Converta PDF para Word editavel com o PDF.it. Transforme seus arquivos PDF em documentos DOCX que voce pode editar na hora — rapido, seguro e direto do navegador.",
   alternates: {
-    canonical: "https://omnispdf.com/br/pdf-para-word",
+    canonical: "https://pdf.it.com/br/pdf-para-word",
     languages: {
-      en: "https://omnispdf.com/pdf-to-word",
-      es: "https://omnispdf.com/es/pdf-a-word",
-      pt: "https://omnispdf.com/br/pdf-para-word",
+      en: "https://pdf.it.com/pdf-to-word",
+      es: "https://pdf.it.com/es/pdf-a-word",
+      pt: "https://pdf.it.com/br/pdf-para-word",
     },
   },
 }
@@ -28,7 +28,7 @@ const faqSchema = {
       name: "Como converto um PDF para Word?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Envie seu PDF para o OmnisPDF, clique em Converter e baixe seu documento Word editavel.",
+        text: "Envie seu PDF para o PDF.it, clique em Converter e baixe seu documento Word editavel.",
       },
     },
     {
@@ -36,7 +36,7 @@ const faqSchema = {
       name: "A formatacao e mantida apos a conversao?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "O OmnisPDF preserva o layout, fontes e estrutura da melhor forma possivel. Formatacoes complexas podem variar dependendo do PDF original.",
+        text: "O PDF.it preserva o layout, fontes e estrutura da melhor forma possivel. Formatacoes complexas podem variar dependendo do PDF original.",
       },
     },
     {
@@ -44,7 +44,7 @@ const faqSchema = {
       name: "Posso converter um PDF escaneado para Word?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "PDFs escaneados requerem OCR para extrair o texto. Use primeiro a ferramenta Scanner OCR do OmnisPDF e depois converta para Word.",
+        text: "PDFs escaneados requerem OCR para extrair o texto. Use primeiro a ferramenta Scanner OCR do PDF.it e depois converta para Word.",
       },
     },
     {
@@ -52,7 +52,7 @@ const faqSchema = {
       name: "Posso converter PDF para Word no celular?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sim. O OmnisPDF funciona em navegadores moveis — envie, converta e baixe do iPhone ou Android.",
+        text: "Sim. O PDF.it funciona em navegadores moveis — envie, converta e baixe do iPhone ou Android.",
       },
     },
     {
@@ -132,7 +132,7 @@ export default function PDFparaWordPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use a ferramenta PDF para Word do OmnisPDF para converter arquivos PDF em documentos Word editaveis em segundos. Envie seu PDF, converta e baixe um arquivo .docx pronto para editar — sem precisar instalar nenhum software.
+              Use a ferramenta PDF para Word do PDF.it para converter arquivos PDF em documentos Word editaveis em segundos. Envie seu PDF, converta e baixe um arquivo .docx pronto para editar — sem precisar instalar nenhum software.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Converte PDF para documentos Word editaveis online</li>
@@ -156,7 +156,7 @@ export default function PDFparaWordPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Formatacao Preservada com Precisao</h2>
               <p className="text-slate-600">
-                O OmnisPDF mantem o layout, fontes e imagens do PDF original para que seu documento Word fique profissional desde o primeiro momento.
+                O PDF.it mantem o layout, fontes e imagens do PDF original para que seu documento Word fique profissional desde o primeiro momento.
               </p>
             </div>
             <div>
@@ -174,7 +174,7 @@ export default function PDFparaWordPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Converter PDF para Word</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste seu PDF para o OmnisPDF.",
+                "Envie ou arraste seu PDF para o PDF.it.",
                 "Clique em Converter PDF para Word.",
                 "Baixe seu arquivo .docx editavel e abra no Word ou Google Docs.",
               ].map((step, i) => (
@@ -219,10 +219,10 @@ export default function PDFparaWordPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como converto um PDF para Word?", a: "Envie seu PDF para o OmnisPDF, clique em Converter e baixe seu documento Word editavel." },
-                { q: "A formatacao e mantida apos a conversao?", a: "O OmnisPDF preserva o layout, fontes e estrutura da melhor forma possivel. Formatacoes complexas podem variar dependendo do PDF original." },
-                { q: "Posso converter um PDF escaneado para Word?", a: "PDFs escaneados requerem OCR para extrair o texto. Use primeiro a ferramenta Scanner OCR do OmnisPDF e depois converta para Word." },
-                { q: "Posso converter PDF para Word no celular?", a: "Sim. O OmnisPDF funciona em navegadores moveis — envie, converta e baixe do iPhone ou Android." },
+                { q: "Como converto um PDF para Word?", a: "Envie seu PDF para o PDF.it, clique em Converter e baixe seu documento Word editavel." },
+                { q: "A formatacao e mantida apos a conversao?", a: "O PDF.it preserva o layout, fontes e estrutura da melhor forma possivel. Formatacoes complexas podem variar dependendo do PDF original." },
+                { q: "Posso converter um PDF escaneado para Word?", a: "PDFs escaneados requerem OCR para extrair o texto. Use primeiro a ferramenta Scanner OCR do PDF.it e depois converta para Word." },
+                { q: "Posso converter PDF para Word no celular?", a: "Sim. O PDF.it funciona em navegadores moveis — envie, converta e baixe do iPhone ou Android." },
                 { q: "E seguro enviar meu PDF?", a: "Sim. Todas as transferencias sao criptografadas com SSL e seus arquivos sao eliminados imediatamente apos sua sessao. Nunca armazenamos nem compartilhamos seus documentos." },
                 { q: "Qual e o tamanho maximo de arquivo que posso converter?", a: "Contas gratuitas podem enviar arquivos de ate 25MB. Contas Pro podem enviar arquivos de ate 200MB. Contas Business podem enviar ate 1GB." },
               ].map((faq, i) => (

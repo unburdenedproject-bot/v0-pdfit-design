@@ -6,15 +6,15 @@ import { Table, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Extrair Tabelas de PDF — Converta Tabelas PDF para Excel/CSV | OmnisPDF",
+  title: "Extrair Tabelas de PDF — Converta Tabelas PDF para Excel/CSV | PDF.it",
   description:
-    "Extraia tabelas de arquivos PDF com o OmnisPDF. Converta tabelas de PDF para Excel ou CSV — rápido, no navegador, sem cadastro.",
+    "Extraia tabelas de arquivos PDF com o PDF.it. Converta tabelas de PDF para Excel ou CSV — rápido, no navegador, sem cadastro.",
   alternates: {
-    canonical: "https://omnispdf.com/br/extrair-tabelas-de-pdf",
+    canonical: "https://pdf.it.com/br/extrair-tabelas-de-pdf",
     languages: {
-      en: "https://omnispdf.com/extract-tables-from-pdf",
-      es: "https://omnispdf.com/es/extraer-tablas-de-pdf",
-      pt: "https://omnispdf.com/br/extrair-tabelas-de-pdf",
+      en: "https://pdf.it.com/extract-tables-from-pdf",
+      es: "https://pdf.it.com/es/extraer-tablas-de-pdf",
+      pt: "https://pdf.it.com/br/extrair-tabelas-de-pdf",
     },
   },
 }
@@ -26,7 +26,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como extraio tabelas de um PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o OmnisPDF, clique em Extrair e a ferramenta detectará automaticamente as tabelas no documento e as converterá para um formato editável." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o PDF.it, clique em Extrair e a ferramenta detectará automaticamente as tabelas no documento e as converterá para um formato editável." }
     },
     {
       "@type": "Question",
@@ -46,7 +46,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso extrair tabelas de um PDF pelo celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em navegadores móveis — envie seu PDF e extraia tabelas de qualquer dispositivo." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em navegadores móveis — envie seu PDF e extraia tabelas de qualquer dispositivo." }
     },
     {
       "@type": "Question",
@@ -99,7 +99,7 @@ export default function ExtrairTabelasDePDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Precisa extrair tabelas de um documento PDF? O extrator de tabelas do OmnisPDF detecta automaticamente tabelas no seu PDF e converte os dados tabulares em formato editável que você pode usar em planilhas, bancos de dados ou outros sistemas.
+              Precisa extrair tabelas de um documento PDF? O extrator de tabelas do PDF.it detecta automaticamente tabelas no seu PDF e converte os dados tabulares em formato editável que você pode usar em planilhas, bancos de dados ou outros sistemas.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Extraia tabelas de qualquer PDF automaticamente</li>
@@ -141,7 +141,7 @@ export default function ExtrairTabelasDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Extrair Tabelas de um PDF</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste seu PDF para o OmnisPDF.",
+                "Envie ou arraste seu PDF para o PDF.it.",
                 "Clique em Extrair — as tabelas são detectadas automaticamente.",
                 "Baixe os dados tabulares extraídos do documento.",
               ].map((step, i) => (
@@ -188,11 +188,11 @@ export default function ExtrairTabelasDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como extraio tabelas de um PDF?", a: "Envie seu PDF para o OmnisPDF, clique em Extrair e a ferramenta detectará automaticamente as tabelas no documento e as converterá para um formato editável." },
+                { q: "Como extraio tabelas de um PDF?", a: "Envie seu PDF para o PDF.it, clique em Extrair e a ferramenta detectará automaticamente as tabelas no documento e as converterá para um formato editável." },
                 { q: "Em que formato posso obter as tabelas extraídas?", a: "As tabelas podem ser extraídas em formato de texto estruturado. Para exportação direta para Excel ou CSV, use nossas ferramentas especializadas." },
                 { q: "Funciona com tabelas complexas?", a: "Sim. A ferramenta detecta tabelas com múltiplas colunas, cabeçalhos e linhas mescladas. Tabelas muito complexas podem precisar de ajuste manual após a extração." },
                 { q: "É seguro enviar meu PDF para extrair tabelas?", a: "Sim. Todos os arquivos são processados com segurança e eliminados automaticamente após a sessão. Nunca armazenamos seus documentos." },
-                { q: "Posso extrair tabelas de um PDF pelo celular?", a: "Sim. O OmnisPDF funciona em navegadores móveis — envie seu PDF e extraia tabelas de qualquer dispositivo." },
+                { q: "Posso extrair tabelas de um PDF pelo celular?", a: "Sim. O PDF.it funciona em navegadores móveis — envie seu PDF e extraia tabelas de qualquer dispositivo." },
                 { q: "É grátis extrair tabelas de um PDF?", a: "Sim. Contas gratuitas têm 10 extrações por dia. Contas Pro têm extrações ilimitadas." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

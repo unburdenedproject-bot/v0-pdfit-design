@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileSpreadsheet, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Excel to PDF Fit to Page: Best Print Settings Before Converting | OmnisPDF",
+  title: "Excel to PDF Fit to Page: Best Print Settings Before Converting | PDF.it",
   description:
     "Learn the best Excel print settings to fit your spreadsheet on one page before converting to PDF. Covers scaling, margins, orientation, print area, and print preview tips.",
   keywords: "excel to pdf fit to page, excel fit to page, excel print settings pdf, scale excel to fit page, excel page layout pdf",
@@ -67,7 +67,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Convert to PDF",
-      "text": "Upload your prepared Excel file to OmnisPDF's Excel to PDF tool. The converter respects your print settings, producing a clean, properly-fitted PDF."
+      "text": "Upload your prepared Excel file to PDF.it's Excel to PDF tool. The converter respects your print settings, producing a clean, properly-fitted PDF."
     }
   ]
 }
@@ -126,7 +126,7 @@ export default function ExcelToPDFFitToPagePage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Why Print Settings Matter for PDF Conversion</h2>
               <p className="text-slate-600 mb-4">
-                When you convert an Excel file to PDF — whether through Excel's built-in export or an online tool like <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">OmnisPDF</Link> — the converter uses your print settings to determine how the data maps to pages.
+                When you convert an Excel file to PDF — whether through Excel's built-in export or an online tool like <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">PDF.it</Link> — the converter uses your print settings to determine how the data maps to pages.
               </p>
               <p className="text-slate-600 mb-4">
                 If you haven't configured these settings, Excel uses defaults: portrait orientation, standard margins, no scaling. For anything beyond a simple 5-column table, these defaults produce PDFs with cut-off columns, awkward page breaks, or wasted whitespace.
@@ -241,7 +241,7 @@ export default function ExcelToPDFFitToPagePage() {
                 </div>
               </div>
               <p className="text-slate-600 mt-4">
-                Not sure? Try both in Print Preview and see which produces cleaner output. You can always check before converting with <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">OmnisPDF</Link>.
+                Not sure? Try both in Print Preview and see which produces cleaner output. You can always check before converting with <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">PDF.it</Link>.
               </p>
             </section>
 

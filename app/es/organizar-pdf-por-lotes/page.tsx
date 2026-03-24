@@ -6,9 +6,9 @@ import { Layers, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Organizar PDF por Lotes — Organiza Múltiples PDFs a la Vez | OmnisPDF",
+  title: "Organizar PDF por Lotes — Organiza Múltiples PDFs a la Vez | PDF.it",
   description:
-    "Organiza múltiples PDFs a la vez con OmnisPDF. Reordena páginas y estructura documentos por lotes — ideal para equipos, departamentos legales y archivos corporativos.",
+    "Organiza múltiples PDFs a la vez con PDF.it. Reordena páginas y estructura documentos por lotes — ideal para equipos, departamentos legales y archivos corporativos.",
   alternates: {
     languages: {
       en: "/batch-organize-pdf",
@@ -24,7 +24,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Qué es la organización por lotes de PDFs?",
-      "acceptedAnswer": { "@type": "Answer", "text": "La organización por lotes te permite reorganizar las páginas de múltiples archivos PDF simultáneamente. En vez de procesar cada documento individualmente, sube varios PDFs y OmnisPDF los organiza todos a la vez." }
+      "acceptedAnswer": { "@type": "Answer", "text": "La organización por lotes te permite reorganizar las páginas de múltiples archivos PDF simultáneamente. En vez de procesar cada documento individualmente, sube varios PDFs y PDF.it los organiza todos a la vez." }
     },
     {
       "@type": "Question",
@@ -97,7 +97,7 @@ export default function OrganizarPDFPorLotesPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              La organización por lotes de OmnisPDF te permite procesar múltiples documentos PDF simultáneamente. Sube varios archivos, reorganiza las páginas de cada uno y descarga todos los documentos organizados en un archivo ZIP — ahorrando tiempo en flujos de trabajo con muchos documentos.
+              La organización por lotes de PDF.it te permite procesar múltiples documentos PDF simultáneamente. Sube varios archivos, reorganiza las páginas de cada uno y descarga todos los documentos organizados en un archivo ZIP — ahorrando tiempo en flujos de trabajo con muchos documentos.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Organiza múltiples PDFs en una sola sesión</li>
@@ -145,7 +145,7 @@ export default function OrganizarPDFPorLotesPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Organizar PDFs por Lotes</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra múltiples archivos PDF a OmnisPDF.",
+                "Sube o arrastra múltiples archivos PDF a PDF.it.",
                 "Reorganiza las páginas de cada documento según tus necesidades.",
                 "Haz clic en Organizar Todo y descarga tus PDFs organizados como ZIP.",
               ].map((step, i) => (
@@ -194,7 +194,7 @@ export default function OrganizarPDFPorLotesPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Qué es la organización por lotes de PDFs?", a: "La organización por lotes te permite reorganizar las páginas de múltiples archivos PDF simultáneamente. En vez de procesar cada documento individualmente, sube varios PDFs y OmnisPDF los organiza todos a la vez." },
+                { q: "¿Qué es la organización por lotes de PDFs?", a: "La organización por lotes te permite reorganizar las páginas de múltiples archivos PDF simultáneamente. En vez de procesar cada documento individualmente, sube varios PDFs y PDF.it los organiza todos a la vez." },
                 { q: "¿Cuántos PDFs puedo organizar a la vez?", a: "Las cuentas Pro y Business pueden procesar múltiples archivos por lotes. El límite depende del tamaño total de los archivos — hasta 200MB por sesión." },
                 { q: "¿La organización por lotes es una función Pro?", a: "Sí. El procesamiento por lotes está disponible para cuentas Pro ($7.99/mes) y Business ($13.99/mes). Las cuentas gratuitas pueden organizar un PDF a la vez." },
                 { q: "¿Se mantiene la calidad de los documentos?", a: "Sí. La reorganización de páginas no afecta la calidad del contenido — texto, imágenes y formato se mantienen exactamente como en los originales." },

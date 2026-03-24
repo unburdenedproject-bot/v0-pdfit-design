@@ -6,14 +6,14 @@ import { ProcessingInterface } from "@/components/processing-interface"
 import { FileText, Zap, Shield, Download } from "lucide-react"
 
 export const metadata = {
-  title: "PDF a DOCX — Convierte PDF a Documento Word Editable | OmnisPDF",
+  title: "PDF a DOCX — Convierte PDF a Documento Word Editable | PDF.it",
   description:
-    "Convierte PDF a DOCX con OmnisPDF. Transforma tus archivos PDF en documentos Word .docx editables al instante — rapido, seguro y desde tu navegador.",
+    "Convierte PDF a DOCX con PDF.it. Transforma tus archivos PDF en documentos Word .docx editables al instante — rapido, seguro y desde tu navegador.",
   alternates: {
-    canonical: "https://omnispdf.com/es/pdf-a-docx",
+    canonical: "https://pdf.it.com/es/pdf-a-docx",
     languages: {
-      en: "https://omnispdf.com/pdf-to-docx",
-      es: "https://omnispdf.com/es/pdf-a-docx",
+      en: "https://pdf.it.com/pdf-to-docx",
+      es: "https://pdf.it.com/es/pdf-a-docx",
     },
   },
 }
@@ -35,7 +35,7 @@ const faqSchema = {
       name: "¿Se mantiene el formato del PDF al convertir a DOCX?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "OmnisPDF preserva el diseno, fuentes, imagenes y estructura lo mejor posible. Formatos complejos pueden variar dependiendo del PDF original.",
+        text: "PDF.it preserva el diseno, fuentes, imagenes y estructura lo mejor posible. Formatos complejos pueden variar dependiendo del PDF original.",
       },
     },
     {
@@ -123,7 +123,7 @@ export default function PDFaDOCXPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Usa la herramienta de PDF a DOCX de OmnisPDF para convertir archivos PDF en documentos Word editables en segundos. El formato DOCX es el estandar de Microsoft Word — compatible con Word, Google Docs, LibreOffice y mas. Sube tu PDF, convierte y descarga un archivo .docx listo para editar.
+              Usa la herramienta de PDF a DOCX de PDF.it para convertir archivos PDF en documentos Word editables en segundos. El formato DOCX es el estandar de Microsoft Word — compatible con Word, Google Docs, LibreOffice y mas. Sube tu PDF, convierte y descarga un archivo .docx listo para editar.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Convierte PDF a formato DOCX editable</li>
@@ -171,7 +171,7 @@ export default function PDFaDOCXPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Convertir PDF a DOCX</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Haz clic en Convertir PDF a DOCX.",
                 "Descarga tu archivo .docx editable y abrelo en Word o Google Docs.",
               ].map((step, i) => (
@@ -221,7 +221,7 @@ export default function PDFaDOCXPage() {
             <div className="space-y-6">
               {[
                 { q: "¿Cual es la diferencia entre PDF a Word y PDF a DOCX?", a: "Son lo mismo. DOCX es el formato nativo de Microsoft Word. Al convertir PDF a DOCX obtienes un archivo .docx que puedes abrir y editar en Word, Google Docs o cualquier procesador de texto compatible." },
-                { q: "¿Se mantiene el formato del PDF al convertir a DOCX?", a: "OmnisPDF preserva el diseno, fuentes, imagenes y estructura lo mejor posible. Formatos complejos pueden variar dependiendo del PDF original." },
+                { q: "¿Se mantiene el formato del PDF al convertir a DOCX?", a: "PDF.it preserva el diseno, fuentes, imagenes y estructura lo mejor posible. Formatos complejos pueden variar dependiendo del PDF original." },
                 { q: "¿Puedo editar el archivo DOCX en Google Docs?", a: "Si. Descarga el archivo .docx, subelo a Google Drive y abrelo con Google Docs para editarlo directamente en tu navegador." },
                 { q: "¿Es seguro subir mi PDF?", a: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." },
                 { q: "¿Cual es el tamano maximo de archivo que puedo convertir?", a: "Las cuentas gratuitas pueden subir archivos de hasta 25MB. Las cuentas Pro y Business pueden subir archivos de hasta 200MB." },

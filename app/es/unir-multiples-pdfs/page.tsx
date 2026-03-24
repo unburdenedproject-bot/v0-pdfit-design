@@ -6,9 +6,9 @@ import { Merge, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Unir Múltiples PDFs — Combina Varios PDFs en Uno | OmnisPDF",
+  title: "Unir Múltiples PDFs — Combina Varios PDFs en Uno | PDF.it",
   description:
-    "Une múltiples archivos PDF en un solo documento con OmnisPDF. Combina 2, 5 o 10+ PDFs en un archivo — rápido, gratis y desde tu navegador.",
+    "Une múltiples archivos PDF en un solo documento con PDF.it. Combina 2, 5 o 10+ PDFs en un archivo — rápido, gratis y desde tu navegador.",
   alternates: {
     languages: {
       en: "/merge-multiple-pdfs",
@@ -29,12 +29,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Se mantiene el orden de los archivos al unirlos?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF preserva el orden exacto que tú estableces. Arrastra y suelta tus archivos para reorganizarlos antes de unir." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it preserva el orden exacto que tú estableces. Arrastra y suelta tus archivos para reorganizarlos antes de unir." }
     },
     {
       "@type": "Question",
       "name": "¿Se pierde calidad al unir múltiples PDFs?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF une tus PDFs sin recomprimirlos. Cada página conserva su calidad original, fuentes y formato." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it une tus PDFs sin recomprimirlos. Cada página conserva su calidad original, fuentes y formato." }
     },
     {
       "@type": "Question",
@@ -44,7 +44,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo unir PDFs desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF es completamente basado en navegador y funciona en iPhone, iPad, Android y cualquier dispositivo con un navegador moderno." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it es completamente basado en navegador y funciona en iPhone, iPad, Android y cualquier dispositivo con un navegador moderno." }
     },
     {
       "@type": "Question",
@@ -97,7 +97,7 @@ export default function UnirMultiplesPDFsPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Ya sea que necesites unir dos contratos o combinar docenas de capítulos de un informe, OmnisPDF lo maneja todo. Sube tus archivos PDF, ordénalos correctamente y obtén un documento unido limpio. Los usuarios Pro desbloquean el procesamiento por lotes para unir grandes cantidades de archivos a la vez.
+              Ya sea que necesites unir dos contratos o combinar docenas de capítulos de un informe, PDF.it lo maneja todo. Sube tus archivos PDF, ordénalos correctamente y obtén un documento unido limpio. Los usuarios Pro desbloquean el procesamiento por lotes para unir grandes cantidades de archivos a la vez.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Une 2, 5, 10 o 50+ PDFs en un solo documento</li>
@@ -121,13 +121,13 @@ export default function UnirMultiplesPDFsPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Combina Capítulos de Libros y Documentación de Proyectos</h2>
               <p className="text-slate-600">
-                Después de subir tus archivos, arrastra y suelta para establecer la secuencia exacta. OmnisPDF preserva tu orden elegido para que cada capítulo, sección o apéndice aparezca exactamente donde debe.
+                Después de subir tus archivos, arrastra y suelta para establecer la secuencia exacta. PDF.it preserva tu orden elegido para que cada capítulo, sección o apéndice aparezca exactamente donde debe.
               </p>
             </div>
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Une y Comprime Facturas Mensuales</h2>
               <p className="text-slate-600">
-                Unir muchos PDFs puede resultar en un archivo grande. Después de combinar, usa la herramienta Comprimir PDF de OmnisPDF para reducir el resultado para email, subidas o almacenamiento en la nube sin perder calidad.
+                Unir muchos PDFs puede resultar en un archivo grande. Después de combinar, usa la herramienta Comprimir PDF de PDF.it para reducir el resultado para email, subidas o almacenamiento en la nube sin perder calidad.
               </p>
             </div>
           </div>
@@ -139,7 +139,7 @@ export default function UnirMultiplesPDFsPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Unir Múltiples PDFs</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra todos tus archivos PDF a OmnisPDF.",
+                "Sube o arrastra todos tus archivos PDF a PDF.it.",
                 "Arrastra los archivos para reordenarlos en tu secuencia preferida.",
                 "Haz clic en Unir y descarga tu PDF combinado.",
               ].map((step, i) => (
@@ -185,10 +185,10 @@ export default function UnirMultiplesPDFsPage() {
             <div className="space-y-6">
               {[
                 { q: "¿Cuántos PDFs puedo unir a la vez?", a: "Los usuarios Pro pueden unir grandes lotes de PDFs con procesamiento por lotes. Los usuarios gratuitos pueden unir archivos uno a la vez y combinar los resultados." },
-                { q: "¿Se mantiene el orden de los archivos al unirlos?", a: "Sí. OmnisPDF preserva el orden exacto que tú estableces. Arrastra y suelta tus archivos para reorganizarlos antes de unir." },
-                { q: "¿Se pierde calidad al unir múltiples PDFs?", a: "No. OmnisPDF une tus PDFs sin recomprimirlos. Cada página conserva su calidad original, fuentes y formato." },
+                { q: "¿Se mantiene el orden de los archivos al unirlos?", a: "Sí. PDF.it preserva el orden exacto que tú estableces. Arrastra y suelta tus archivos para reorganizarlos antes de unir." },
+                { q: "¿Se pierde calidad al unir múltiples PDFs?", a: "No. PDF.it une tus PDFs sin recomprimirlos. Cada página conserva su calidad original, fuentes y formato." },
                 { q: "¿Puedo unir PDFs en lote con el plan gratuito?", a: "Los usuarios gratuitos pueden unir archivos uno a la vez. El procesamiento por lotes — subir y unir múltiples archivos simultáneamente — es una función Pro disponible por $7.99/mes." },
-                { q: "¿Puedo unir PDFs desde mi celular?", a: "Sí. OmnisPDF es completamente basado en navegador y funciona en iPhone, iPad, Android y cualquier dispositivo con un navegador moderno." },
+                { q: "¿Puedo unir PDFs desde mi celular?", a: "Sí. PDF.it es completamente basado en navegador y funciona en iPhone, iPad, Android y cualquier dispositivo con un navegador moderno." },
                 { q: "¿Cuál es el tamaño máximo por archivo?", a: "Los usuarios gratuitos pueden subir archivos de hasta 25MB cada uno. Los usuarios Pro tienen un límite de 200MB por archivo, ideal para documentos grandes." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

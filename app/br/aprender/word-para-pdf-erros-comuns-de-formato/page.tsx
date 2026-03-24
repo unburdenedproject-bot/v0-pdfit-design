@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Word para PDF — Erros Comuns de Formato (E Como Resolver) | OmnisPDF",
+  title: "Word para PDF — Erros Comuns de Formato (E Como Resolver) | PDF.it",
   description:
     "Seu Word para PDF ficou com formatação errada? Descubra os erros mais comuns (fontes, imagens, tabelas) e como garantir uma conversão perfeita.",
   keywords: "word para pdf formatação errada, word para pdf erros, pdf formatação diferente, fontes erradas pdf, word pdf problemas",
@@ -29,7 +29,7 @@ const howToSchema = {
   "step": [
     { "@type": "HowToStep", "name": "Use fontes comuns", "text": "Prefira Arial, Calibri ou Times New Roman. Fontes personalizadas devem ser incorporadas." },
     { "@type": "HowToStep", "name": "Verifique o layout", "text": "Revise margens, tabelas e posição de imagens antes de converter." },
-    { "@type": "HowToStep", "name": "Converta e verifique", "text": "Use o OmnisPDF para converter e verifique o resultado antes de enviar." }
+    { "@type": "HowToStep", "name": "Converta e verifique", "text": "Use o PDF.it para converter e verifique o resultado antes de enviar." }
   ]
 }
 
@@ -138,7 +138,7 @@ export default function WordParaPdfErrosComunsDeFormatoPage() {
         <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Converta com Formatação Perfeita</h2>
-            <p className="text-slate-300 mb-6">O OmnisPDF preserva fontes, imagens e layout do seu Word.</p>
+            <p className="text-slate-300 mb-6">O PDF.it preserva fontes, imagens e layout do seu Word.</p>
             <Link href="/br/word-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors">
               <FileIcon className="h-5 w-5" /> Converter Word para PDF
             </Link>

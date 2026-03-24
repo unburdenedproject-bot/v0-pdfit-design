@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Lock, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "How to Password-Protect a PDF Online (Step-by-Step) | OmnisPDF",
+  title: "How to Password-Protect a PDF Online (Step-by-Step) | PDF.it",
   description:
     "Learn how to add password protection to any PDF online. Step-by-step guide covering open passwords, permission passwords, and encryption levels — free, no software needed.",
   keywords: "password protect pdf, add password to pdf, lock pdf with password, secure pdf online",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I password-protect a PDF for free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF's Protect PDF tool, enter a password, choose your encryption level, and click Protect. Download the locked file — no signup required for your first 3 files." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it's Protect PDF tool, enter a password, choose your encryption level, and click Protect. Download the locked file — no signup required for your first 3 files." }
     },
     {
       "@type": "Question",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I remove the password from a protected PDF later?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. If you know the password, you can use OmnisPDF's Unlock PDF tool to remove the password and create an unprotected copy of the file." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. If you know the password, you can use PDF.it's Unlock PDF tool to remove the password and create an unprotected copy of the file." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I password-protect a PDF on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in any mobile browser. Upload your PDF, set a password, and download the protected file directly on your phone — no app needed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in any mobile browser. Upload your PDF, set a password, and download the protected file directly on your phone — no app needed." }
     }
   ]
 }
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Password-Protect a PDF Online",
-  "description": "Add password protection to any PDF in 3 simple steps using OmnisPDF.",
+  "description": "Add password protection to any PDF in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Upload your PDF",
-      "text": "Go to OmnisPDF's Protect PDF tool and upload the file you want to protect by clicking or dragging it into the upload area."
+      "text": "Go to PDF.it's Protect PDF tool and upload the file you want to protect by clicking or dragging it into the upload area."
     },
     {
       "@type": "HowToStep",
@@ -205,7 +205,7 @@ export default function HowToPasswordProtectPDFPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Using Both Together</h3>
                   <p className="text-slate-600">
-                    For maximum security, you can set both an open password and a permissions password. The viewer needs the open password to access the file, and even then, they cannot print or copy text unless they also have the permissions password. OmnisPDF's <Link href="/protect-pdf" className="text-orange-600 hover:underline">Protect PDF tool</Link> supports both options.
+                    For maximum security, you can set both an open password and a permissions password. The viewer needs the open password to access the file, and even then, they cannot print or copy text unless they also have the permissions password. PDF.it's <Link href="/protect-pdf" className="text-orange-600 hover:underline">Protect PDF tool</Link> supports both options.
                   </p>
                 </div>
               </div>
@@ -288,12 +288,12 @@ export default function HowToPasswordProtectPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I password-protect a PDF for free?", a: "Upload your PDF to OmnisPDF's Protect PDF tool, enter a password, choose your encryption level, and click Protect. Download the locked file — no signup required for your first 3 files." },
+                { q: "How do I password-protect a PDF for free?", a: "Upload your PDF to PDF.it's Protect PDF tool, enter a password, choose your encryption level, and click Protect. Download the locked file — no signup required for your first 3 files." },
                 { q: "What is the difference between an open password and a permissions password?", a: "An open password (user password) prevents anyone from opening the PDF without the password. A permissions password (owner password) lets people open the file but restricts actions like printing, copying, or editing." },
-                { q: "Can I remove the password from a protected PDF later?", a: "Yes. If you know the password, you can use OmnisPDF's Unlock PDF tool to remove the password and create an unprotected copy of the file." },
+                { q: "Can I remove the password from a protected PDF later?", a: "Yes. If you know the password, you can use PDF.it's Unlock PDF tool to remove the password and create an unprotected copy of the file." },
                 { q: "What encryption level should I choose?", a: "For most purposes, 128-bit AES encryption is sufficient. For highly sensitive documents like legal or financial files, choose 256-bit AES encryption for maximum security." },
                 { q: "Will password-protecting a PDF change its contents?", a: "No. Password protection adds an encryption layer around the file but does not alter the content, formatting, or layout of your PDF in any way." },
-                { q: "Can I password-protect a PDF on my phone?", a: "Yes. OmnisPDF works in any mobile browser. Upload your PDF, set a password, and download the protected file directly on your phone — no app needed." },
+                { q: "Can I password-protect a PDF on my phone?", a: "Yes. PDF.it works in any mobile browser. Upload your PDF, set a password, and download the protected file directly on your phone — no app needed." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

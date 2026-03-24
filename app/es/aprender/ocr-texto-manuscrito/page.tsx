@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ScanText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Puede el OCR Leer Texto Manuscrito? (Que Esperar) | OmnisPDF",
+  title: "Puede el OCR Leer Texto Manuscrito? (Que Esperar) | PDF.it",
   description: "Aprende sobre las limitaciones del OCR con la escritura a mano: que funciona, que no, y consejos para obtener mejores resultados de documentos manuscritos.",
   keywords: "ocr texto manuscrito, ocr escritura a mano, puede ocr leer manuscrito, documento manuscrito ocr",
 }
@@ -21,7 +21,7 @@ const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainE
 
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como Hacer OCR a Texto Manuscrito", "description": "Obtiene los mejores resultados de OCR en documentos manuscritos en 3 pasos.", "step": [
   { "@type": "HowToStep", "name": "Prepara un escaneo de alta calidad", "text": "Escanea a 400 DPI o mas. Usa Limpieza de Escaneo de Telefono para mejorar contraste si escaneaste con telefono." },
-  { "@type": "HowToStep", "name": "Ejecuta OCR con el idioma correcto", "text": "Sube al Escaner OCR de OmnisPDF, selecciona el idioma y procesa el archivo." },
+  { "@type": "HowToStep", "name": "Ejecuta OCR con el idioma correcto", "text": "Sube al Escaner OCR de PDF.it, selecciona el idioma y procesa el archivo." },
   { "@type": "HowToStep", "name": "Revisa y corrige el resultado", "text": "Descarga y revisa cuidadosamente el texto reconocido. Corrige errores manualmente." }
 ] }
 

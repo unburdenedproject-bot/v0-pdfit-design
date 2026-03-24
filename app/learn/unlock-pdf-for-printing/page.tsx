@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Unlock, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Unlock a PDF for Printing (Remove Print Restrictions) | OmnisPDF",
+  title: "Unlock a PDF for Printing (Remove Print Restrictions) | PDF.it",
   description:
     "Can't print a PDF? Learn how to remove print restrictions from a PDF file online. Step-by-step guide to unlocking PDFs for printing — fast, free, no software.",
   keywords: "unlock pdf for printing, pdf wont print, remove print restriction pdf, enable pdf printing",
@@ -23,12 +23,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I remove print restrictions from a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload the PDF to OmnisPDF's Unlock PDF tool. It will automatically detect and remove the print restriction. Download the unlocked file and print it normally from any PDF reader." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload the PDF to PDF.it's Unlock PDF tool. It will automatically detect and remove the print restriction. Download the unlocked file and print it normally from any PDF reader." }
     },
     {
       "@type": "Question",
       "name": "Do I need the password to unlock a PDF for printing?",
-      "acceptedAnswer": { "@type": "Answer", "text": "If the PDF only has permissions restrictions (you can view but not print), OmnisPDF can often remove the print restriction without needing a password. If the PDF requires a password to open, you'll need that password first." }
+      "acceptedAnswer": { "@type": "Answer", "text": "If the PDF only has permissions restrictions (you can view but not print), PDF.it can often remove the print restriction without needing a password. If the PDF requires a password to open, you'll need that password first." }
     },
     {
       "@type": "Question",
@@ -38,12 +38,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I unlock a PDF for printing on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in any mobile browser. Upload the PDF, unlock it, and download the printable version. You can then print it using your phone's built-in print feature or transfer it to a computer." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in any mobile browser. Upload the PDF, unlock it, and download the printable version. You can then print it using your phone's built-in print feature or transfer it to a computer." }
     },
     {
       "@type": "Question",
       "name": "Is it legal to remove print restrictions from a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "If you have legitimate access to the document and need to print it for personal, educational, or business use, removing the print restriction is legal. OmnisPDF is designed for users who need to print their own documents or files shared with them." }
+      "acceptedAnswer": { "@type": "Answer", "text": "If you have legitimate access to the document and need to print it for personal, educational, or business use, removing the print restriction is legal. PDF.it is designed for users who need to print their own documents or files shared with them." }
     }
   ]
 }
@@ -52,17 +52,17 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Unlock a PDF for Printing",
-  "description": "Remove print restrictions from a PDF in 3 simple steps using OmnisPDF.",
+  "description": "Remove print restrictions from a PDF in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Upload the restricted PDF",
-      "text": "Go to OmnisPDF's Unlock PDF tool and upload the PDF file that won't let you print."
+      "text": "Go to PDF.it's Unlock PDF tool and upload the PDF file that won't let you print."
     },
     {
       "@type": "HowToStep",
       "name": "Remove the print restriction",
-      "text": "OmnisPDF automatically detects the print restriction and removes it. If the file has an open password, enter it when prompted."
+      "text": "PDF.it automatically detects the print restriction and removes it. If the file has an open password, enter it when prompted."
     },
     {
       "@type": "HowToStep",
@@ -150,7 +150,7 @@ export default function UnlockPDFForPrintingPage() {
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
-                The good news: this is a software restriction, not a hardware problem. OmnisPDF can remove it in seconds.
+                The good news: this is a software restriction, not a hardware problem. PDF.it can remove it in seconds.
               </p>
             </section>
 
@@ -161,11 +161,11 @@ export default function UnlockPDFForPrintingPage() {
                 {[
                   {
                     title: "Upload the restricted PDF",
-                    desc: "Go to OmnisPDF's Unlock PDF tool and drag your file into the upload area. The tool accepts files up to 25MB for free — Pro users can upload files up to 200MB.",
+                    desc: "Go to PDF.it's Unlock PDF tool and drag your file into the upload area. The tool accepts files up to 25MB for free — Pro users can upload files up to 200MB.",
                   },
                   {
-                    title: "Let OmnisPDF remove the restriction",
-                    desc: "OmnisPDF automatically detects the print restriction and removes it. If the PDF also requires a password to open (not just to print), you'll need to enter that password. Most print-restricted PDFs don't require an open password.",
+                    title: "Let PDF.it remove the restriction",
+                    desc: "PDF.it automatically detects the print restriction and removes it. If the PDF also requires a password to open (not just to print), you'll need to enter that password. Most print-restricted PDFs don't require an open password.",
                   },
                   {
                     title: "Download and print",
@@ -300,11 +300,11 @@ export default function UnlockPDFForPrintingPage() {
             <div className="space-y-6">
               {[
                 { q: "Why can't I print my PDF?", a: "Your PDF likely has a permissions restriction set by the creator that disables printing. This is done through PDF security settings and prevents all users from printing the document, even though they can view it on screen." },
-                { q: "How do I remove print restrictions from a PDF?", a: "Upload the PDF to OmnisPDF's Unlock PDF tool. It will automatically detect and remove the print restriction. Download the unlocked file and print it normally from any PDF reader." },
-                { q: "Do I need the password to unlock a PDF for printing?", a: "If the PDF only has permissions restrictions (you can view but not print), OmnisPDF can often remove the print restriction without needing a password. If the PDF requires a password to open, you'll need that password first." },
+                { q: "How do I remove print restrictions from a PDF?", a: "Upload the PDF to PDF.it's Unlock PDF tool. It will automatically detect and remove the print restriction. Download the unlocked file and print it normally from any PDF reader." },
+                { q: "Do I need the password to unlock a PDF for printing?", a: "If the PDF only has permissions restrictions (you can view but not print), PDF.it can often remove the print restriction without needing a password. If the PDF requires a password to open, you'll need that password first." },
                 { q: "Will the print quality change after unlocking?", a: "No. Unlocking a PDF only removes the security restriction — it doesn't change the content, resolution, or quality. Your printed document will look exactly as the creator intended." },
-                { q: "Can I unlock a PDF for printing on my phone?", a: "Yes. OmnisPDF works in any mobile browser. Upload the PDF, unlock it, and download the printable version. You can then print it using your phone's built-in print feature or transfer it to a computer." },
-                { q: "Is it legal to remove print restrictions from a PDF?", a: "If you have legitimate access to the document and need to print it for personal, educational, or business use, removing the print restriction is legal. OmnisPDF is designed for users who need to print their own documents or files shared with them." },
+                { q: "Can I unlock a PDF for printing on my phone?", a: "Yes. PDF.it works in any mobile browser. Upload the PDF, unlock it, and download the printable version. You can then print it using your phone's built-in print feature or transfer it to a computer." },
+                { q: "Is it legal to remove print restrictions from a PDF?", a: "If you have legitimate access to the document and need to print it for personal, educational, or business use, removing the print restriction is legal. PDF.it is designed for users who need to print their own documents or files shared with them." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

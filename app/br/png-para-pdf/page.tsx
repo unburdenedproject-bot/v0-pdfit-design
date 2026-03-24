@@ -6,7 +6,7 @@ import { ImageToPdfInterface } from "@/components/image-to-pdf-interface"
 import { Image as ImageIcon, Zap, Shield, Upload, FileText, Merge, RotateCw, Lock, ScanLine, Camera } from "lucide-react"
 
 export const metadata = {
-  title: "PNG para PDF — Converta Imagens PNG para PDF Online | OmnisPDF",
+  title: "PNG para PDF — Converta Imagens PNG para PDF Online | PDF.it",
   description:
     "Converta imagens PNG para documentos PDF online gratis. Envie uma ou varias imagens e obtenha um PDF profissional na hora. Sem software para instalar.",
 }
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como converto um PNG para PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie sua imagem PNG para o OmnisPDF, clique em Converter para PDF e baixe o resultado. Voce pode enviar varias imagens PNG de uma vez e cada uma sera convertida em seu proprio arquivo PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie sua imagem PNG para o PDF.it, clique em Converter para PDF e baixe o resultado. Voce pode enviar varias imagens PNG de uma vez e cada uma sera convertida em seu proprio arquivo PDF." }
     },
     {
       "@type": "Question",
@@ -33,7 +33,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Converter PNG para PDF reduz a qualidade da imagem?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Nao. O OmnisPDF preserva a resolucao, transparencia e qualidade original da sua imagem PNG ao converte-la para PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Nao. O PDF.it preserva a resolucao, transparencia e qualidade original da sua imagem PNG ao converte-la para PDF." }
     },
     {
       "@type": "Question",
@@ -162,7 +162,7 @@ export default function PngParaPdfPage() {
                 { q: "Como converto um PNG para PDF?", a: "Envie sua imagem PNG, clique em Converter para PDF e baixe. Voce pode enviar varias imagens e cada uma sera convertida em seu proprio PDF." },
                 { q: "Posso converter varias imagens PNG de uma vez?", a: "Sim. Selecione varios arquivos PNG e cada um sera convertido em um PDF separado. Baixe-os individualmente ou como um arquivo ZIP." },
                 { q: "E gratis?", a: "Voce pode converter varias imagens gratis por dia. Para conversoes ilimitadas e arquivos maiores, atualize para Pro por $7.99/mes." },
-                { q: "A conversao reduz a qualidade?", a: "Nao. O OmnisPDF preserva a resolucao e qualidade total da sua imagem PNG no PDF resultante." },
+                { q: "A conversao reduz a qualidade?", a: "Nao. O PDF.it preserva a resolucao e qualidade total da sua imagem PNG no PDF resultante." },
                 { q: "A transparencia e mantida?", a: "Imagens PNG com fundo transparente sao convertidas para PDF com fundo branco, pois PDF nao suporta transparencia da mesma forma que PNG." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

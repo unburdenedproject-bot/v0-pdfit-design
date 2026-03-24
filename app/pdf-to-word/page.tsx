@@ -6,8 +6,8 @@ import { ProcessingInterface } from "@/components/processing-interface"
 import { FileText, Zap, Shield, Download } from "lucide-react"
 
 export const metadata = {
-  title: "PDF to Word Converter Online — Free & No Login | OmnisPDF",
-  description: "Convert PDF to editable Word documents with OmnisPDF. Fast, browser-based PDF to Word conversion — no login required.",
+  title: "PDF to Word Converter Online — Free & No Login | PDF.it",
+  description: "Convert PDF to editable Word documents with PDF.it. Fast, browser-based PDF to Word conversion — no login required.",
 }
 
 const faqSchema = {
@@ -17,22 +17,22 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I convert a PDF to Word?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF, click Convert, and download your editable Word document." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it, click Convert, and download your editable Word document." }
     },
     {
       "@type": "Question",
       "name": "Will the formatting be preserved after conversion?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF preserves layout, fonts, and structure as closely as possible. Complex formatting may vary depending on the original PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it preserves layout, fonts, and structure as closely as possible. Complex formatting may vary depending on the original PDF." }
     },
     {
       "@type": "Question",
       "name": "Can I convert a scanned PDF to Word?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Scanned PDFs require OCR to extract text. Use OmnisPDF's OCR Scanner tool first, then convert to Word." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Scanned PDFs require OCR to extract text. Use PDF.it's OCR Scanner tool first, then convert to Word." }
     },
     {
       "@type": "Question",
       "name": "Can I convert PDF to Word on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in mobile browsers — upload, convert, and download on iPhone or Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in mobile browsers — upload, convert, and download on iPhone or Android." }
     },
     {
       "@type": "Question",
@@ -100,7 +100,7 @@ export default function PDFToWordPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use OmnisPDF's PDF to Word tool to convert PDF files into editable Word documents in seconds. Upload your PDF, convert it, and download a .docx file ready to edit — no software required.
+              Use PDF.it's PDF to Word tool to convert PDF files into editable Word documents in seconds. Upload your PDF, convert it, and download a .docx file ready to edit — no software required.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Convert PDF to editable Word documents online</li>
@@ -142,10 +142,10 @@ export default function PDFToWordPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I convert a PDF to Word?", a: "Upload your PDF to OmnisPDF, click Convert, and download your editable Word document." },
-                { q: "Will the formatting be preserved after conversion?", a: "OmnisPDF preserves layout, fonts, and structure as closely as possible. Complex formatting may vary depending on the original PDF." },
-                { q: "Can I convert a scanned PDF to Word?", a: "Scanned PDFs require OCR to extract text. Use OmnisPDF's OCR Scanner tool first, then convert to Word." },
-                { q: "Can I convert PDF to Word on my phone?", a: "Yes. OmnisPDF works in mobile browsers — upload, convert, and download on iPhone or Android." },
+                { q: "How do I convert a PDF to Word?", a: "Upload your PDF to PDF.it, click Convert, and download your editable Word document." },
+                { q: "Will the formatting be preserved after conversion?", a: "PDF.it preserves layout, fonts, and structure as closely as possible. Complex formatting may vary depending on the original PDF." },
+                { q: "Can I convert a scanned PDF to Word?", a: "Scanned PDFs require OCR to extract text. Use PDF.it's OCR Scanner tool first, then convert to Word." },
+                { q: "Can I convert PDF to Word on my phone?", a: "Yes. PDF.it works in mobile browsers — upload, convert, and download on iPhone or Android." },
                 { q: "Is it safe to upload my PDF?", a: "Yes. All transfers are SSL encrypted and your files are deleted immediately after your session. We never store or share your documents." },
                 { q: "What is the maximum file size I can convert?", a: "Free accounts can upload files up to 25MB. Pro accounts can upload files up to 200MB. Business accounts can upload files up to 1GB." },
               ].map((faq, i) => (

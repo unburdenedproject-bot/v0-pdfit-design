@@ -6,9 +6,9 @@ import { Merge, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Merge Multiple PDFs Into One File — Free Online Tool | OmnisPDF",
+  title: "Merge Multiple PDFs Into One File — Free Online Tool | PDF.it",
   description:
-    "Merge multiple PDF files into a single document with OmnisPDF. Combine 2, 5, or 10+ PDFs into one file — fast, free, and browser-based.",
+    "Merge multiple PDF files into a single document with PDF.it. Combine 2, 5, or 10+ PDFs into one file — fast, free, and browser-based.",
 }
 
 const faqSchema = {
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I merge multiple PDFs into one file?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload all your PDF files to OmnisPDF, arrange them in the order you want, and click Merge. Your combined PDF will be ready to download in seconds." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload all your PDF files to PDF.it, arrange them in the order you want, and click Merge. Your combined PDF will be ready to download in seconds." }
     },
     {
       "@type": "Question",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Does merging PDFs change the file order?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF preserves the exact order you set. Drag and drop your files to rearrange them before merging." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it preserves the exact order you set. Drag and drop your files to rearrange them before merging." }
     },
     {
       "@type": "Question",
@@ -38,12 +38,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Will the merged PDF be too large to email?",
-      "acceptedAnswer": { "@type": "Answer", "text": "It depends on the total size of your files. If the merged PDF is too large, use OmnisPDF's Compress PDF tool to reduce the file size before sending." }
+      "acceptedAnswer": { "@type": "Answer", "text": "It depends on the total size of your files. If the merged PDF is too large, use PDF.it's Compress PDF tool to reduce the file size before sending." }
     },
     {
       "@type": "Question",
       "name": "Can I merge PDFs on my phone or tablet?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF is fully browser-based and works on iPhone, iPad, Android, and any device with a modern browser." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it is fully browser-based and works on iPhone, iPad, Android, and any device with a modern browser." }
     }
   ]
 }
@@ -91,7 +91,7 @@ export default function MergeMultiplePDFsPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Whether you need to merge two contracts or combine dozens of report chapters, OmnisPDF handles it all. Upload your PDF files, arrange them in the right order, and get one clean merged document. Pro users unlock batch processing for merging large numbers of files at once.
+              Whether you need to merge two contracts or combine dozens of report chapters, PDF.it handles it all. Upload your PDF files, arrange them in the right order, and get one clean merged document. Pro users unlock batch processing for merging large numbers of files at once.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Merge 2, 5, 10, or 50+ PDFs into one document</li>
@@ -115,13 +115,13 @@ export default function MergeMultiplePDFsPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Keep Your Pages in the Right Order</h2>
               <p className="text-slate-600">
-                After uploading, drag and drop files to set the exact sequence. OmnisPDF preserves your chosen order so every chapter, section, or appendix appears exactly where it should.
+                After uploading, drag and drop files to set the exact sequence. PDF.it preserves your chosen order so every chapter, section, or appendix appears exactly where it should.
               </p>
             </div>
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Merge Then Compress for Easy Sharing</h2>
               <p className="text-slate-600">
-                Merging many PDFs can result in a large file. After combining, use OmnisPDF's Compress PDF tool to shrink the result for email, uploads, or cloud storage without losing quality.
+                Merging many PDFs can result in a large file. After combining, use PDF.it's Compress PDF tool to shrink the result for email, uploads, or cloud storage without losing quality.
               </p>
             </div>
           </div>
@@ -133,7 +133,7 @@ export default function MergeMultiplePDFsPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Merge Multiple PDFs</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop all your PDF files into OmnisPDF.",
+                "Upload or drag and drop all your PDF files into PDF.it.",
                 "Drag files to rearrange them in your preferred order.",
                 "Click Merge and download your single combined PDF.",
               ].map((step, i) => (
@@ -178,12 +178,12 @@ export default function MergeMultiplePDFsPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I merge multiple PDFs into one file?", a: "Upload all your PDF files to OmnisPDF, arrange them in the order you want, and click Merge. Your combined PDF will be ready to download in seconds." },
+                { q: "How do I merge multiple PDFs into one file?", a: "Upload all your PDF files to PDF.it, arrange them in the order you want, and click Merge. Your combined PDF will be ready to download in seconds." },
                 { q: "Can I merge more than 10 PDFs at once?", a: "Yes. Pro users can merge large batches of PDFs with batch processing. Free users can merge files one at a time and combine the results." },
-                { q: "Does merging PDFs change the file order?", a: "No. OmnisPDF preserves the exact order you set. Drag and drop your files to rearrange them before merging." },
+                { q: "Does merging PDFs change the file order?", a: "No. PDF.it preserves the exact order you set. Drag and drop your files to rearrange them before merging." },
                 { q: "Is there a file size limit when merging multiple PDFs?", a: "Free users can upload files up to 25MB each. Pro users get a 200MB per-file limit, which handles even the largest documents." },
-                { q: "Will the merged PDF be too large to email?", a: "It depends on the total size of your files. If the merged PDF is too large, use OmnisPDF's Compress PDF tool to reduce the file size before sending." },
-                { q: "Can I merge PDFs on my phone or tablet?", a: "Yes. OmnisPDF is fully browser-based and works on iPhone, iPad, Android, and any device with a modern browser." },
+                { q: "Will the merged PDF be too large to email?", a: "It depends on the total size of your files. If the merged PDF is too large, use PDF.it's Compress PDF tool to reduce the file size before sending." },
+                { q: "Can I merge PDFs on my phone or tablet?", a: "Yes. PDF.it is fully browser-based and works on iPhone, iPad, Android, and any device with a modern browser." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

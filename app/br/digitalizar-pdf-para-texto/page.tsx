@@ -6,15 +6,15 @@ import { ScanLine, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Digitalizar PDF para Texto — OCR de PDF Digitalizado | OmnisPDF",
+  title: "Digitalizar PDF para Texto — OCR de PDF Digitalizado | PDF.it",
   description:
-    "Converta PDFs digitalizados em texto editável com OCR do OmnisPDF. Extraia texto de documentos escaneados — rápido, no navegador, sem cadastro.",
+    "Converta PDFs digitalizados em texto editável com OCR do PDF.it. Extraia texto de documentos escaneados — rápido, no navegador, sem cadastro.",
   alternates: {
-    canonical: "https://omnispdf.com/br/digitalizar-pdf-para-texto",
+    canonical: "https://pdf.it.com/br/digitalizar-pdf-para-texto",
     languages: {
-      en: "https://omnispdf.com/scan-pdf-to-text",
-      es: "https://omnispdf.com/es/escanear-pdf-a-texto",
-      pt: "https://omnispdf.com/br/digitalizar-pdf-para-texto",
+      en: "https://pdf.it.com/scan-pdf-to-text",
+      es: "https://pdf.it.com/es/escanear-pdf-a-texto",
+      pt: "https://pdf.it.com/br/digitalizar-pdf-para-texto",
     },
   },
 }
@@ -26,7 +26,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como converto um PDF digitalizado em texto?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF digitalizado para o OmnisPDF. A tecnologia OCR reconhecerá o texto nas imagens e o converterá em texto editável que pode ser copiado e usado." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF digitalizado para o PDF.it. A tecnologia OCR reconhecerá o texto nas imagens e o converterá em texto editável que pode ser copiado e usado." }
     },
     {
       "@type": "Question",
@@ -41,7 +41,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Quais idiomas são suportados pelo OCR?",
-      "acceptedAnswer": { "@type": "Answer", "text": "O OCR do OmnisPDF suporta vários idiomas incluindo português, inglês, espanhol, francês, alemão e muitos outros." }
+      "acceptedAnswer": { "@type": "Answer", "text": "O OCR do PDF.it suporta vários idiomas incluindo português, inglês, espanhol, francês, alemão e muitos outros." }
     },
     {
       "@type": "Question",
@@ -99,7 +99,7 @@ export default function DigitalizarPDFParaTextoPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Tem um PDF digitalizado e precisa do texto? O Scanner OCR do OmnisPDF usa tecnologia de reconhecimento óptico de caracteres para converter imagens de texto em texto editável e pesquisável. Perfeito para documentos escaneados, fotos de documentos e PDFs baseados em imagem.
+              Tem um PDF digitalizado e precisa do texto? O Scanner OCR do PDF.it usa tecnologia de reconhecimento óptico de caracteres para converter imagens de texto em texto editável e pesquisável. Perfeito para documentos escaneados, fotos de documentos e PDFs baseados em imagem.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Converta PDFs digitalizados em texto editável</li>
@@ -141,7 +141,7 @@ export default function DigitalizarPDFParaTextoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Digitalizar PDF para Texto</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste seu PDF digitalizado para o OmnisPDF.",
+                "Envie ou arraste seu PDF digitalizado para o PDF.it.",
                 "O OCR reconhece automaticamente o texto nas imagens.",
                 "Baixe o arquivo com o texto extraído do documento.",
               ].map((step, i) => (
@@ -188,10 +188,10 @@ export default function DigitalizarPDFParaTextoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como converto um PDF digitalizado em texto?", a: "Envie seu PDF digitalizado para o OmnisPDF. A tecnologia OCR reconhecerá o texto nas imagens e o converterá em texto editável que pode ser copiado e usado." },
+                { q: "Como converto um PDF digitalizado em texto?", a: "Envie seu PDF digitalizado para o PDF.it. A tecnologia OCR reconhecerá o texto nas imagens e o converterá em texto editável que pode ser copiado e usado." },
                 { q: "O que é OCR?", a: "OCR (Reconhecimento Óptico de Caracteres) é uma tecnologia que identifica texto em imagens e PDFs digitalizados e o converte em texto editável e pesquisável." },
                 { q: "Funciona com documentos de baixa qualidade?", a: "O OCR funciona melhor com imagens nítidas e boa resolução. Documentos de baixa qualidade, com manchas ou texto muito pequeno podem resultar em menor precisão." },
-                { q: "Quais idiomas são suportados pelo OCR?", a: "O OCR do OmnisPDF suporta vários idiomas incluindo português, inglês, espanhol, francês, alemão e muitos outros." },
+                { q: "Quais idiomas são suportados pelo OCR?", a: "O OCR do PDF.it suporta vários idiomas incluindo português, inglês, espanhol, francês, alemão e muitos outros." },
                 { q: "É seguro enviar meu PDF digitalizado?", a: "Sim. Todos os arquivos são processados com segurança e eliminados automaticamente após a sessão. Nunca armazenamos seus documentos." },
                 { q: "É grátis digitalizar PDF para texto?", a: "O Scanner OCR está disponível para contas Pro. Contas gratuitas podem testar com funcionalidade limitada." },
               ].map((faq, i) => (

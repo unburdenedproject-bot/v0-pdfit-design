@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download } from "lucide-react
 import Link from "next/link"
 
 export const metadata = {
-  title: "Compress PDF for 5MB Upload Limits — Free Extreme Compression | OmnisPDF",
+  title: "Compress PDF for 5MB Upload Limits — Free Extreme Compression | PDF.it",
   description:
     "Apply extreme PDF compression to reduce file size for portals with 5MB upload limits. Maximum compression for submissions, applications, and uploads — fast, browser-based, free.",
 }
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I compress a PDF for a 5MB upload limit?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF, click Compress, and download the reduced file. OmnisPDF uses extreme compression to drastically reduce file size. Results depend on the content of your PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it, click Compress, and download the reduced file. PDF.it uses extreme compression to drastically reduce file size. Results depend on the content of your PDF." }
     },
     {
       "@type": "Question",
@@ -38,12 +38,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I compress a PDF to 5MB on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in mobile browsers — upload, compress, and download on iPhone or Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in mobile browsers — upload, compress, and download on iPhone or Android." }
     },
     {
       "@type": "Question",
       "name": "What if my PDF is still over 5MB after compression?",
-      "acceptedAnswer": { "@type": "Answer", "text": "If the file is still too large, try splitting it into smaller parts using OmnisPDF's Split PDF tool, then compress each part individually." }
+      "acceptedAnswer": { "@type": "Answer", "text": "If the file is still too large, try splitting it into smaller parts using PDF.it's Split PDF tool, then compress each part individually." }
     }
   ]
 }
@@ -92,7 +92,7 @@ export default function CompressPDFTo5MBPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Need to upload a PDF but the portal says "file too large"? OmnisPDF applies extreme compression to drastically reduce your PDF size — perfect for government forms, university submissions, job applications, and any site with a 5MB upload limit.
+              Need to upload a PDF but the portal says "file too large"? PDF.it applies extreme compression to drastically reduce your PDF size — perfect for government forms, university submissions, job applications, and any site with a 5MB upload limit.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Extreme compression for maximum size reduction</li>
@@ -110,19 +110,19 @@ export default function CompressPDFTo5MBPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Meet Upload Portal Size Limits</h2>
               <p className="text-slate-600">
-                Government portals, university applications, and job sites often cap uploads at 5MB. OmnisPDF applies extreme compression to drastically reduce your file size, helping you meet these requirements.
+                Government portals, university applications, and job sites often cap uploads at 5MB. PDF.it applies extreme compression to drastically reduce your file size, helping you meet these requirements.
               </p>
             </div>
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Compress Scanned Documents and Forms</h2>
               <p className="text-slate-600">
-                Scanned PDFs are often 10-30MB. OmnisPDF's extreme compression mode reduces image data aggressively to bring the file under 5MB while keeping text readable.
+                Scanned PDFs are often 10-30MB. PDF.it's extreme compression mode reduces image data aggressively to bring the file under 5MB while keeping text readable.
               </p>
             </div>
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Still Too Large? Split Then Compress</h2>
               <p className="text-slate-600">
-                If your PDF is still over 5MB after compression, use OmnisPDF's Split PDF tool to break it into smaller parts, then compress each one individually.
+                If your PDF is still over 5MB after compression, use PDF.it's Split PDF tool to break it into smaller parts, then compress each one individually.
               </p>
             </div>
           </div>
@@ -134,7 +134,7 @@ export default function CompressPDFTo5MBPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Compress a PDF for 5MB Limits</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PDF into OmnisPDF.",
+                "Upload or drag and drop your PDF into PDF.it.",
                 "Click Compress PDF — extreme compression is applied automatically.",
                 "Download your smaller PDF and upload it to your portal.",
               ].map((step, i) => (
@@ -179,12 +179,12 @@ export default function CompressPDFTo5MBPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I compress a PDF for a 5MB upload limit?", a: "Upload your PDF to OmnisPDF, click Compress, and download the reduced file. OmnisPDF uses extreme compression to drastically reduce file size. Results depend on the content of your PDF." },
+                { q: "How do I compress a PDF for a 5MB upload limit?", a: "Upload your PDF to PDF.it, click Compress, and download the reduced file. PDF.it uses extreme compression to drastically reduce file size. Results depend on the content of your PDF." },
                 { q: "Will my PDF definitely be under 5MB after compression?", a: "Extreme compression drastically reduces file size. Most PDFs under 20MB will compress significantly. Very image-heavy files may need to be split first, then each part compressed separately." },
                 { q: "Will the text still be readable after compression?", a: "Yes. Text remains sharp and readable. Image quality may be slightly reduced, but pages stay usable." },
                 { q: "Why do upload portals have a 5MB limit?", a: "Many government, university, and job application portals set a 5MB limit to manage storage and bandwidth. Compressing your PDF ensures it meets these requirements." },
-                { q: "Can I compress a PDF to 5MB on my phone?", a: "Yes. OmnisPDF works in mobile browsers — upload, compress, and download on iPhone or Android." },
-                { q: "What if my PDF is still over 5MB after compression?", a: "If the file is still too large, try splitting it into smaller parts using OmnisPDF's Split PDF tool, then compress each part individually." },
+                { q: "Can I compress a PDF to 5MB on my phone?", a: "Yes. PDF.it works in mobile browsers — upload, compress, and download on iPhone or Android." },
+                { q: "What if my PDF is still over 5MB after compression?", a: "If the file is still too large, try splitting it into smaller parts using PDF.it's Split PDF tool, then compress each part individually." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

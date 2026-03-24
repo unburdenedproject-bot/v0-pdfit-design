@@ -6,8 +6,8 @@ import { ProcessingInterface } from "@/components/processing-interface"
 import { FileText, Zap, Shield, Download, FileSpreadsheet, Image, Lock, Scissors, Merge, RotateCw, ScanLine } from "lucide-react"
 
 export const metadata = {
-  title: "PDF to DOCX — Convert PDF to Word Document | OmnisPDF",
-  description: "Convert PDF to DOCX online with OmnisPDF. Transform any PDF into an editable Word .docx file — preserves formatting, tables, and images. Fast, secure, no installation.",
+  title: "PDF to DOCX — Convert PDF to Word Document | PDF.it",
+  description: "Convert PDF to DOCX online with PDF.it. Transform any PDF into an editable Word .docx file — preserves formatting, tables, and images. Fast, secure, no installation.",
 }
 
 const faqSchema = {
@@ -17,12 +17,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "What is the difference between DOCX and DOC?",
-      "acceptedAnswer": { "@type": "Answer", "text": "DOCX is the modern Word format introduced with Microsoft Office 2007. It uses XML-based compression, making files smaller and more compatible than the older DOC format. OmnisPDF converts PDFs to DOCX for maximum compatibility with modern word processors." }
+      "acceptedAnswer": { "@type": "Answer", "text": "DOCX is the modern Word format introduced with Microsoft Office 2007. It uses XML-based compression, making files smaller and more compatible than the older DOC format. PDF.it converts PDFs to DOCX for maximum compatibility with modern word processors." }
     },
     {
       "@type": "Question",
       "name": "How do I convert a PDF to DOCX?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF, click Convert, and download your editable DOCX file. The conversion preserves layout, fonts, tables, and images as closely as possible." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it, click Convert, and download your editable DOCX file. The conversion preserves layout, fonts, tables, and images as closely as possible." }
     },
     {
       "@type": "Question",
@@ -32,7 +32,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Will tables and images be preserved in the DOCX?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF preserves tables, images, headers, footers, and text formatting during conversion. Complex layouts with overlapping elements may require minor adjustments after conversion." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it preserves tables, images, headers, footers, and text formatting during conversion. Complex layouts with overlapping elements may require minor adjustments after conversion." }
     },
     {
       "@type": "Question",
@@ -42,7 +42,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I convert a scanned PDF to DOCX?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Scanned PDFs contain images of text rather than actual text. Use OmnisPDF's OCR Scanner tool first to extract the text, then convert the result to DOCX for editing." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Scanned PDFs contain images of text rather than actual text. Use PDF.it's OCR Scanner tool first to extract the text, then convert the result to DOCX for editing." }
     }
   ]
 }
@@ -100,7 +100,7 @@ export default function PDFToDocxPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Why Convert PDF to DOCX?</h2>
             <p className="text-lg text-slate-600 mb-8">
-              DOCX is the modern Word document format used by Microsoft Word, Google Docs, and LibreOffice. Unlike the older DOC format, DOCX files are smaller, more secure, and universally compatible. When you convert a PDF to DOCX with OmnisPDF, you get a fully editable document that opens in any modern word processor — ready for editing, commenting, and collaboration.
+              DOCX is the modern Word document format used by Microsoft Word, Google Docs, and LibreOffice. Unlike the older DOC format, DOCX files are smaller, more secure, and universally compatible. When you convert a PDF to DOCX with PDF.it, you get a fully editable document that opens in any modern word processor — ready for editing, commenting, and collaboration.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Convert PDF to editable DOCX format online</li>
@@ -151,7 +151,7 @@ export default function PDFToDocxPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Convert PDF to DOCX</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PDF into OmnisPDF.",
+                "Upload or drag and drop your PDF into PDF.it.",
                 "Click Convert — your PDF is transformed into an editable DOCX file.",
                 "Download your DOCX and open it in Word, Google Docs, or any compatible editor.",
               ].map((step, i) => (
@@ -205,12 +205,12 @@ export default function PDFToDocxPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "What is the difference between DOCX and DOC?", a: "DOCX is the modern Word format introduced with Microsoft Office 2007. It uses XML-based compression, making files smaller and more compatible than the older DOC format. OmnisPDF converts PDFs to DOCX for maximum compatibility with modern word processors." },
-                { q: "How do I convert a PDF to DOCX?", a: "Upload your PDF to OmnisPDF, click Convert, and download your editable DOCX file. The conversion preserves layout, fonts, tables, and images as closely as possible." },
+                { q: "What is the difference between DOCX and DOC?", a: "DOCX is the modern Word format introduced with Microsoft Office 2007. It uses XML-based compression, making files smaller and more compatible than the older DOC format. PDF.it converts PDFs to DOCX for maximum compatibility with modern word processors." },
+                { q: "How do I convert a PDF to DOCX?", a: "Upload your PDF to PDF.it, click Convert, and download your editable DOCX file. The conversion preserves layout, fonts, tables, and images as closely as possible." },
                 { q: "Can I edit the DOCX file after conversion?", a: "Yes. The DOCX file is fully editable in Microsoft Word, Google Docs, LibreOffice Writer, Apple Pages, and any other word processor that supports the DOCX format." },
-                { q: "Will tables and images be preserved in the DOCX?", a: "OmnisPDF preserves tables, images, headers, footers, and text formatting during conversion. Complex layouts with overlapping elements may require minor adjustments after conversion." },
+                { q: "Will tables and images be preserved in the DOCX?", a: "PDF.it preserves tables, images, headers, footers, and text formatting during conversion. Complex layouts with overlapping elements may require minor adjustments after conversion." },
                 { q: "Is the PDF to DOCX converter free?", a: "PDF to DOCX conversion is available to Pro and Business subscribers. Free accounts can use basic PDF tools, while Pro unlocks advanced conversions including PDF to DOCX, XLSX, and PPTX." },
-                { q: "Can I convert a scanned PDF to DOCX?", a: "Scanned PDFs contain images of text rather than actual text. Use OmnisPDF's OCR Scanner tool first to extract the text, then convert the result to DOCX for editing." },
+                { q: "Can I convert a scanned PDF to DOCX?", a: "Scanned PDFs contain images of text rather than actual text. Use PDF.it's OCR Scanner tool first to extract the text, then convert the result to DOCX for editing." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

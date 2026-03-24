@@ -6,9 +6,9 @@ import { Scissors, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Extraer Páginas de PDF — Saca Páginas Específicas de un PDF | OmnisPDF",
+  title: "Extraer Páginas de PDF — Saca Páginas Específicas de un PDF | PDF.it",
   description:
-    "Extrae páginas específicas de un PDF con OmnisPDF. Selecciona las páginas que necesitas y crea un nuevo archivo PDF — rápido, gratis y en tu navegador.",
+    "Extrae páginas específicas de un PDF con PDF.it. Selecciona las páginas que necesitas y crea un nuevo archivo PDF — rápido, gratis y en tu navegador.",
   alternates: {
     languages: {
       en: "/extract-pdf-pages",
@@ -39,12 +39,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo extraer páginas de un PDF desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en navegadores móviles — sube tu PDF, selecciona las páginas y descarga el nuevo archivo desde iPhone o Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube tu PDF, selecciona las páginas y descarga el nuevo archivo desde iPhone o Android." }
     },
     {
       "@type": "Question",
       "name": "¿El PDF original se modifica?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF crea un nuevo PDF con las páginas seleccionadas. El archivo original permanece intacto y sin cambios." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it crea un nuevo PDF con las páginas seleccionadas. El archivo original permanece intacto y sin cambios." }
     },
     {
       "@type": "Question",
@@ -91,7 +91,7 @@ export default function ExtraerPaginasDePDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              La herramienta Extraer Páginas de OmnisPDF te permite sacar páginas específicas de un PDF y guardarlas como un nuevo archivo. No necesitas enviar un documento completo cuando solo necesitas ciertas páginas — extrae exactamente lo que necesitas.
+              La herramienta Extraer Páginas de PDF.it te permite sacar páginas específicas de un PDF y guardarlas como un nuevo archivo. No necesitas enviar un documento completo cuando solo necesitas ciertas páginas — extrae exactamente lo que necesitas.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Extrae una o múltiples páginas de cualquier PDF</li>
@@ -139,7 +139,7 @@ export default function ExtraerPaginasDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Extraer Páginas de un PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Selecciona las páginas que quieres extraer.",
                 "Haz clic en Extraer Páginas y descarga tu nuevo PDF.",
               ].map((step, i) => (
@@ -191,8 +191,8 @@ export default function ExtraerPaginasDePDFPage() {
                 { q: "¿Puedo extraer una sola página o varias a la vez?", a: "Ambas opciones. Puedes extraer una sola página o seleccionar múltiples páginas y rangos para crear un nuevo PDF con todas ellas." },
                 { q: "¿Las páginas extraídas mantienen el orden original?", a: "Sí. Las páginas se incluyen en el nuevo PDF en el mismo orden en que aparecen en el documento original. También puedes reordenarlas si lo necesitas." },
                 { q: "¿Se mantiene la calidad al extraer páginas?", a: "Sí. Las páginas se extraen directamente del PDF original sin recodificar. El texto, las imágenes, los enlaces y el formato permanecen intactos." },
-                { q: "¿Puedo extraer páginas de un PDF desde mi celular?", a: "Sí. OmnisPDF funciona en navegadores móviles — sube tu PDF, selecciona las páginas y descarga el nuevo archivo desde iPhone o Android." },
-                { q: "¿El PDF original se modifica?", a: "No. OmnisPDF crea un nuevo PDF con las páginas seleccionadas. El archivo original permanece intacto y sin cambios." },
+                { q: "¿Puedo extraer páginas de un PDF desde mi celular?", a: "Sí. PDF.it funciona en navegadores móviles — sube tu PDF, selecciona las páginas y descarga el nuevo archivo desde iPhone o Android." },
+                { q: "¿El PDF original se modifica?", a: "No. PDF.it crea un nuevo PDF con las páginas seleccionadas. El archivo original permanece intacto y sin cambios." },
                 { q: "¿Es gratis extraer páginas de un PDF?", a: "Sí. Puedes extraer páginas de PDFs de hasta 25MB gratis. Para archivos más grandes y procesamiento por lotes, actualiza a Pro." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

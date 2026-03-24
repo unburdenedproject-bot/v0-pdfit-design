@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ImageIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "How to Save One PDF Page as a JPG (Windows, Mac, Mobile) | OmnisPDF",
+  title: "How to Save One PDF Page as a JPG (Windows, Mac, Mobile) | PDF.it",
   description:
     "Learn how to extract and save a single PDF page as a JPG image on any device. Step-by-step guide for Windows, Mac, iPhone, and Android — no software needed.",
   keywords: "save pdf page as jpg, extract pdf page as image, pdf single page to jpg, save one page of pdf as image",
@@ -18,22 +18,22 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I save just one page of a PDF as a JPG?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF's PDF to JPG tool, select the specific page you want, and convert just that page. Download the single JPG image — no need to convert the entire document." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it's PDF to JPG tool, select the specific page you want, and convert just that page. Download the single JPG image — no need to convert the entire document." }
     },
     {
       "@type": "Question",
       "name": "Can I save a PDF page as a JPG on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open OmnisPDF in your phone's browser (Safari or Chrome), upload your PDF, select the page you need, and download the JPG. It saves directly to your phone's photo library." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open PDF.it in your phone's browser (Safari or Chrome), upload your PDF, select the page you need, and download the JPG. It saves directly to your phone's photo library." }
     },
     {
       "@type": "Question",
       "name": "How do I save a PDF page as a JPG on Windows?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The fastest way is to use an online tool like OmnisPDF — no software installation needed. Alternatively, you can take a screenshot with Snipping Tool, but this gives lower quality than a proper conversion at 200-300 DPI." }
+      "acceptedAnswer": { "@type": "Answer", "text": "The fastest way is to use an online tool like PDF.it — no software installation needed. Alternatively, you can take a screenshot with Snipping Tool, but this gives lower quality than a proper conversion at 200-300 DPI." }
     },
     {
       "@type": "Question",
       "name": "How do I save a PDF page as a JPG on Mac?",
-      "acceptedAnswer": { "@type": "Answer", "text": "On Mac, you can open the PDF in Preview and export as JPEG (File > Export). However, this only works for single pages and quality settings are limited. OmnisPDF gives you more control over DPI and quality." }
+      "acceptedAnswer": { "@type": "Answer", "text": "On Mac, you can open the PDF in Preview and export as JPEG (File > Export). However, this only works for single pages and quality settings are limited. PDF.it gives you more control over DPI and quality." }
     },
     {
       "@type": "Question",
@@ -57,7 +57,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Upload your PDF",
-      "text": "Go to OmnisPDF's PDF to JPG tool and upload the PDF that contains the page you want to save as an image."
+      "text": "Go to PDF.it's PDF to JPG tool and upload the PDF that contains the page you want to save as an image."
     },
     {
       "@type": "HowToStep",
@@ -190,7 +190,7 @@ export default function SavePdfPageAsJpgPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Windows</h3>
                   <p className="text-slate-600 mb-2">
-                    <strong>Option 1 (Recommended):</strong> Use <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">OmnisPDF's online tool</Link> in your browser — no installation needed and you get proper high-DPI output.
+                    <strong>Option 1 (Recommended):</strong> Use <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">PDF.it's online tool</Link> in your browser — no installation needed and you get proper high-DPI output.
                   </p>
                   <p className="text-slate-600 mb-2">
                     <strong>Option 2:</strong> Use the Snipping Tool (Win + Shift + S) to screenshot the page. This is quick but gives you screen-resolution quality, which may look blurry if you zoom in or print.
@@ -206,21 +206,21 @@ export default function SavePdfPageAsJpgPage() {
                     <strong>Option 1:</strong> Open in Preview, go to the page you want, then File &gt; Export and select JPEG. Set the quality slider and click Save. This works for single pages.
                   </p>
                   <p className="text-slate-600">
-                    <strong>Option 2:</strong> Use <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">OmnisPDF online</Link> for more control over DPI and to handle multiple pages at once.
+                    <strong>Option 2:</strong> Use <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">PDF.it online</Link> for more control over DPI and to handle multiple pages at once.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">iPhone and iPad</h3>
                   <p className="text-slate-600">
-                    iOS doesn't have a built-in way to convert PDF pages to JPG. The easiest method is to open OmnisPDF in Safari, upload your PDF, select the page, and save the resulting JPG to your Photos app. No app download required. See our detailed guide: <Link href="/learn/pdf-to-jpg-on-iphone" className="text-orange-600 hover:underline">Convert PDF to JPG on iPhone</Link>.
+                    iOS doesn't have a built-in way to convert PDF pages to JPG. The easiest method is to open PDF.it in Safari, upload your PDF, select the page, and save the resulting JPG to your Photos app. No app download required. See our detailed guide: <Link href="/learn/pdf-to-jpg-on-iphone" className="text-orange-600 hover:underline">Convert PDF to JPG on iPhone</Link>.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Android</h3>
                   <p className="text-slate-600">
-                    Similar to iPhone — open OmnisPDF in Chrome, upload your PDF, and download the converted JPG. You can also take a screenshot of the page, but the quality will be limited to your screen resolution.
+                    Similar to iPhone — open PDF.it in Chrome, upload your PDF, and download the converted JPG. You can also take a screenshot of the page, but the quality will be limited to your screen resolution.
                   </p>
                 </div>
               </div>
@@ -305,10 +305,10 @@ export default function SavePdfPageAsJpgPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I save just one page of a PDF as a JPG?", a: "Upload your PDF to OmnisPDF's PDF to JPG tool, select the specific page you want, and convert just that page. Download the single JPG image — no need to convert the entire document." },
-                { q: "Can I save a PDF page as a JPG on my phone?", a: "Yes. Open OmnisPDF in your phone's browser (Safari or Chrome), upload your PDF, select the page you need, and download the JPG. It saves directly to your phone's photo library." },
-                { q: "How do I save a PDF page as a JPG on Windows?", a: "The fastest way is to use an online tool like OmnisPDF — no software installation needed. Alternatively, you can take a screenshot with Snipping Tool, but this gives lower quality than a proper conversion at 200-300 DPI." },
-                { q: "How do I save a PDF page as a JPG on Mac?", a: "On Mac, you can open the PDF in Preview and export as JPEG (File > Export). However, this only works for single pages and quality settings are limited. OmnisPDF gives you more control over DPI and quality." },
+                { q: "How do I save just one page of a PDF as a JPG?", a: "Upload your PDF to PDF.it's PDF to JPG tool, select the specific page you want, and convert just that page. Download the single JPG image — no need to convert the entire document." },
+                { q: "Can I save a PDF page as a JPG on my phone?", a: "Yes. Open PDF.it in your phone's browser (Safari or Chrome), upload your PDF, select the page you need, and download the JPG. It saves directly to your phone's photo library." },
+                { q: "How do I save a PDF page as a JPG on Windows?", a: "The fastest way is to use an online tool like PDF.it — no software installation needed. Alternatively, you can take a screenshot with Snipping Tool, but this gives lower quality than a proper conversion at 200-300 DPI." },
+                { q: "How do I save a PDF page as a JPG on Mac?", a: "On Mac, you can open the PDF in Preview and export as JPEG (File > Export). However, this only works for single pages and quality settings are limited. PDF.it gives you more control over DPI and quality." },
                 { q: "What quality should I use when saving a PDF page as JPG?", a: "For most uses (email, social media, messaging), 150 DPI is plenty. For inserting into documents or presentations, use 200 DPI. For printing, use 300 DPI. Higher DPI means sharper images but larger files." },
                 { q: "Can I save multiple specific pages as separate JPGs?", a: "Yes. You can select multiple individual pages (for example, pages 1, 3, and 7) and convert just those to JPGs. Each selected page becomes its own JPG file that you can download separately." },
               ].map((faq, i) => (

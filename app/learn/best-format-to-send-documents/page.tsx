@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Best Format to Send Documents (PDF vs DOCX vs Other) | OmnisPDF",
+  title: "Best Format to Send Documents (PDF vs DOCX vs Other) | PDF.it",
   description:
     "PDF vs DOCX — which format should you use to send documents? Learn why PDF is the best choice for email, job applications, invoices, and professional sharing.",
   keywords: "best format to send documents, pdf vs docx, send documents as pdf, document format for email, best file format for sharing",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I convert my documents to PDF for free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF lets you convert Word, Excel, and PowerPoint files to PDF for free — up to 10 conversions per day with files up to 25MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it lets you convert Word, Excel, and PowerPoint files to PDF for free — up to 10 conversions per day with files up to 25MB." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I make sure my PDF looks right before sending?",
-      "acceptedAnswer": { "@type": "Answer", "text": "After converting to PDF, open the file and check every page for formatting issues. Use OmnisPDF's flatten tool to remove form fields or layers that might display differently on other devices." }
+      "acceptedAnswer": { "@type": "Answer", "text": "After converting to PDF, open the file and check every page for formatting issues. Use PDF.it's flatten tool to remove form fields or layers that might display differently on other devices." }
     }
   ]
 }
@@ -62,7 +62,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Convert your file to PDF",
-      "text": "Upload your Word, Excel, or PowerPoint file to OmnisPDF's Office to PDF converter. The tool preserves your formatting, fonts, and images automatically."
+      "text": "Upload your Word, Excel, or PowerPoint file to PDF.it's Office to PDF converter. The tool preserves your formatting, fonts, and images automatically."
     },
     {
       "@type": "HowToStep",
@@ -191,7 +191,7 @@ export default function BestFormatToSendDocumentsPage() {
                 <li>&#10003; <strong>When explicitly requested.</strong> Some job applications or government forms specifically ask for .docx. Follow their instructions, even though PDF is usually superior.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                For everything else — final versions, formal submissions, client deliverables — convert to PDF first. You can use OmnisPDF&#39;s <Link href="/word-to-pdf" className="text-orange-600 hover:underline">Word to PDF</Link>, <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">Excel to PDF</Link>, or <Link href="/powerpoint-to-pdf" className="text-orange-600 hover:underline">PowerPoint to PDF</Link> tools.
+                For everything else — final versions, formal submissions, client deliverables — convert to PDF first. You can use PDF.it&#39;s <Link href="/word-to-pdf" className="text-orange-600 hover:underline">Word to PDF</Link>, <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">Excel to PDF</Link>, or <Link href="/powerpoint-to-pdf" className="text-orange-600 hover:underline">PowerPoint to PDF</Link> tools.
               </p>
             </section>
 
@@ -208,7 +208,7 @@ export default function BestFormatToSendDocumentsPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Plain Text (.txt)</h3>
                   <p className="text-slate-600">
-                    Plain text files have zero formatting — no bold, no images, no tables. They are useful for code, logs, or quick notes, but never for professional documents. If you need to extract text from a PDF, use OmnisPDF&#39;s <Link href="/pdf-to-txt" className="text-orange-600 hover:underline">PDF to TXT</Link> tool.
+                    Plain text files have zero formatting — no bold, no images, no tables. They are useful for code, logs, or quick notes, but never for professional documents. If you need to extract text from a PDF, use PDF.it&#39;s <Link href="/pdf-to-txt" className="text-orange-600 hover:underline">PDF to TXT</Link> tool.
                   </p>
                 </div>
                 <div>
@@ -283,10 +283,10 @@ export default function BestFormatToSendDocumentsPage() {
               {[
                 { q: "Is PDF or DOCX better for sending documents?", a: "PDF is better for sending final documents because it preserves formatting across all devices, cannot be accidentally edited, and looks professional. DOCX is better when you need the recipient to make edits." },
                 { q: "Why do employers prefer PDF resumes?", a: "PDF resumes look the same on every screen, do not shift formatting based on the reader's software or fonts, and appear more polished and professional than editable Word files." },
-                { q: "Can I convert my documents to PDF for free?", a: "Yes. OmnisPDF lets you convert Word, Excel, and PowerPoint files to PDF for free — up to 10 conversions per day with files up to 25MB." },
+                { q: "Can I convert my documents to PDF for free?", a: "Yes. PDF.it lets you convert Word, Excel, and PowerPoint files to PDF for free — up to 10 conversions per day with files up to 25MB." },
                 { q: "What format should I use for invoices?", a: "Always send invoices as PDF. This prevents the recipient from modifying amounts or terms, preserves your branding and layout, and looks professional." },
                 { q: "Should I send documents as PDF or Google Docs link?", a: "For final documents, PDF is better — it does not require internet access or a Google account to view. Google Docs links are better for collaborative editing where multiple people need to make changes." },
-                { q: "How do I make sure my PDF looks right before sending?", a: "After converting to PDF, open the file and check every page for formatting issues. Use OmnisPDF's flatten tool to remove form fields or layers that might display differently on other devices." },
+                { q: "How do I make sure my PDF looks right before sending?", a: "After converting to PDF, open the file and check every page for formatting issues. Use PDF.it's flatten tool to remove form fields or layers that might display differently on other devices." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

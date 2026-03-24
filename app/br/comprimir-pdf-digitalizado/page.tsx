@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Sc
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF Digitalizado — Reduza o Tamanho de Documentos Digitalizados | OmnisPDF",
+  title: "Comprimir PDF Digitalizado — Reduza o Tamanho de Documentos Digitalizados | PDF.it",
   description:
     "Comprima documentos PDF digitalizados. Digitalizacoes costumam ser arquivos grandes — reduza o tamanho significativamente mantendo a legibilidade.",
   alternates: {
@@ -30,7 +30,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "A compressao tornara meu documento digitalizado ilegivel?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Nao. A compressao recomendada do OmnisPDF e projetada para preservar a legibilidade. O texto impresso permanece nitido e claro. As imagens sao otimizadas de forma inteligente sem degradar a qualidade visivel do documento." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Nao. A compressao recomendada do PDF.it e projetada para preservar a legibilidade. O texto impresso permanece nitido e claro. As imagens sao otimizadas de forma inteligente sem degradar a qualidade visivel do documento." }
     },
     {
       "@type": "Question",
@@ -45,7 +45,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso comprimir um PDF digitalizado de muitas paginas?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF comprime todas as paginas do seu PDF digitalizado de uma vez. Digitalizacoes de muitas paginas frequentemente veem as maiores reducoes porque cada pagina contem uma imagem completa que pode ser otimizada." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it comprime todas as paginas do seu PDF digitalizado de uma vez. Digitalizacoes de muitas paginas frequentemente veem as maiores reducoes porque cada pagina contem uma imagem completa que pode ser otimizada." }
     },
     {
       "@type": "Question",
@@ -74,7 +74,7 @@ export default function ComprimirPDFDigitalizadoPagePt() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF Digitalizado</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Documentos digitalizados sao notoriamente pesados — cada pagina e uma imagem de alta resolucao que pode pesar varios megabytes. O OmnisPDF comprime as imagens incorporadas de forma inteligente, reduzindo significativamente o tamanho das suas digitalizacoes enquanto mantem o conteudo legivel.
+                Documentos digitalizados sao notoriamente pesados — cada pagina e uma imagem de alta resolucao que pode pesar varios megabytes. O PDF.it comprime as imagens incorporadas de forma inteligente, reduzindo significativamente o tamanho das suas digitalizacoes enquanto mantem o conteudo legivel.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Compressao Inteligente</span></div>
@@ -141,7 +141,7 @@ export default function ComprimirPDFDigitalizadoPagePt() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Comprimir um PDF Digitalizado</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste e solte seu PDF digitalizado no OmnisPDF.",
+                "Envie ou arraste e solte seu PDF digitalizado no PDF.it.",
                 "Clique em Comprimir PDF — a compressao inteligente e aplicada automaticamente as imagens incorporadas.",
                 "Baixe seu PDF menor. Se ainda estiver muito grande, tente dividir o arquivo primeiro e comprima cada parte.",
               ].map((step, i) => (
@@ -189,7 +189,7 @@ export default function ComprimirPDFDigitalizadoPagePt() {
                 { q: "A compressao tornara meu documento ilegivel?", a: "Nao. A compressao recomendada preserva a legibilidade. O texto impresso permanece nitido e claro. As imagens sao otimizadas sem degradar a qualidade visivel." },
                 { q: "Comprimir afeta o texto OCR?", a: "Se seu PDF ja tem camada de texto OCR, a compressao a preserva completamente. Voce pode continuar buscando e copiando texto apos comprimir." },
                 { q: "Quanto pode ser comprimido um PDF digitalizado?", a: "Reducoes de 50-80% sao comuns para PDFs digitalizados, que sao compostos principalmente de imagens." },
-                { q: "Posso comprimir um PDF digitalizado de muitas paginas?", a: "Sim. O OmnisPDF comprime todas as paginas de uma vez. Digitalizacoes de muitas paginas veem as maiores reducoes." },
+                { q: "Posso comprimir um PDF digitalizado de muitas paginas?", a: "Sim. O PDF.it comprime todas as paginas de uma vez. Digitalizacoes de muitas paginas veem as maiores reducoes." },
                 { q: "O que faco se continuar muito grande?", a: "Divida o PDF em secoes menores e comprima cada parte. Remova paginas desnecessarias ou use o Scanner OCR para converter imagens em texto mais leve." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200"><h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3><p className="text-slate-600 text-sm">{faq.a}</p></div>

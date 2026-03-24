@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Scissors, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Dividir un PDF en Páginas Individuales (Un Archivo por Página) | OmnisPDF",
+  title: "Dividir un PDF en Páginas Individuales (Un Archivo por Página) | PDF.it",
   description:
     "Aprende cómo dividir un PDF de múltiples páginas en archivos separados de una sola página. Guía paso a paso para separar un PDF en un archivo por página — gratis, sin software.",
   keywords: "dividir pdf en páginas individuales, una página por pdf, separar páginas pdf, pdf a páginas individuales",
@@ -14,20 +14,20 @@ export const metadata = {
 const faqSchema = {
   "@context": "https://schema.org", "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "¿Cómo divido un PDF en páginas individuales?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Dividir PDF de OmnisPDF, selecciona la opción de dividir cada página en su propio archivo, y descarga un ZIP que contiene todos los archivos de páginas individuales." } },
-    { "@type": "Question", "name": "¿Puedo dividir un PDF en un archivo por página gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF te permite dividir PDFs gratis con archivos de hasta 25MB. Obtienes 3 operaciones gratuitas sin registrarte, y 10 por día con una cuenta gratuita." } },
-    { "@type": "Question", "name": "¿En qué formato se guardan las páginas individuales?", "acceptedAnswer": { "@type": "Answer", "text": "Cada página se guarda como su propio archivo PDF. Si necesitas imágenes en su lugar, puedes convertir las páginas divididas a JPG o PNG usando las herramientas de conversión de OmnisPDF." } },
-    { "@type": "Question", "name": "¿Puedo dividir un PDF de 100 páginas en 100 archivos separados?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF puede dividir cualquier PDF en páginas individuales sin importar el conteo de páginas. Los archivos resultantes se empaquetan en una descarga ZIP para fácil manejo." } },
+    { "@type": "Question", "name": "¿Cómo divido un PDF en páginas individuales?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Dividir PDF de PDF.it, selecciona la opción de dividir cada página en su propio archivo, y descarga un ZIP que contiene todos los archivos de páginas individuales." } },
+    { "@type": "Question", "name": "¿Puedo dividir un PDF en un archivo por página gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it te permite dividir PDFs gratis con archivos de hasta 25MB. Obtienes 3 operaciones gratuitas sin registrarte, y 10 por día con una cuenta gratuita." } },
+    { "@type": "Question", "name": "¿En qué formato se guardan las páginas individuales?", "acceptedAnswer": { "@type": "Answer", "text": "Cada página se guarda como su propio archivo PDF. Si necesitas imágenes en su lugar, puedes convertir las páginas divididas a JPG o PNG usando las herramientas de conversión de PDF.it." } },
+    { "@type": "Question", "name": "¿Puedo dividir un PDF de 100 páginas en 100 archivos separados?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it puede dividir cualquier PDF en páginas individuales sin importar el conteo de páginas. Los archivos resultantes se empaquetan en una descarga ZIP para fácil manejo." } },
     { "@type": "Question", "name": "¿Dividir un PDF reducirá la calidad de cada página?", "acceptedAnswer": { "@type": "Answer", "text": "No. Dividir un PDF simplemente separa páginas en archivos individuales sin re-codificar. Texto, imágenes y formato permanecen exactamente iguales." } },
-    { "@type": "Question", "name": "¿Cómo se nombran los archivos de páginas individuales?", "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF automáticamente nombra cada archivo con el nombre del archivo original más el número de página (ej., documento_pagina1.pdf, documento_pagina2.pdf). Puedes renombrarlos después de descargar." } }
+    { "@type": "Question", "name": "¿Cómo se nombran los archivos de páginas individuales?", "acceptedAnswer": { "@type": "Answer", "text": "PDF.it automáticamente nombra cada archivo con el nombre del archivo original más el número de página (ej., documento_pagina1.pdf, documento_pagina2.pdf). Puedes renombrarlos después de descargar." } }
   ]
 }
 
 const howToSchema = {
   "@context": "https://schema.org", "@type": "HowTo", "name": "Cómo Dividir un PDF en Páginas Individuales",
-  "description": "Separa un PDF de múltiples páginas en un archivo por página en 3 simples pasos usando OmnisPDF.",
+  "description": "Separa un PDF de múltiples páginas en un archivo por página en 3 simples pasos usando PDF.it.",
   "step": [
-    { "@type": "HowToStep", "name": "Sube tu PDF de múltiples páginas", "text": "Ve a la herramienta Dividir PDF de OmnisPDF y sube el documento que quieres dividir en páginas individuales." },
+    { "@type": "HowToStep", "name": "Sube tu PDF de múltiples páginas", "text": "Ve a la herramienta Dividir PDF de PDF.it y sube el documento que quieres dividir en páginas individuales." },
     { "@type": "HowToStep", "name": "Elige dividir cada página", "text": "Selecciona la opción de dividir cada página en su propio archivo PDF separado. Cada página se convierte en un documento independiente." },
     { "@type": "HowToStep", "name": "Descarga el archivo ZIP", "text": "Haz clic en Dividir PDF y descarga el archivo ZIP que contiene todos los archivos de páginas individuales. Extrae el ZIP para acceder a cada página por separado." }
   ]
@@ -94,9 +94,9 @@ export default function DividirPDFEnPaginasIndividualesPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-6">Cómo Dividir un PDF en Páginas Individuales (Paso a Paso)</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Sube tu PDF", desc: "Ve a la herramienta Dividir PDF de OmnisPDF y arrastra tu archivo al área de carga. Puedes subir PDFs de hasta 25MB gratis, o hasta 200MB con una cuenta Pro." },
-                  { title: "Selecciona 'Dividir cada página'", desc: "Elige la opción de dividir cada página en un archivo separado. OmnisPDF creará un archivo PDF por página. Verás una vista previa de todas las páginas antes de confirmar." },
-                  { title: "Descarga el archivo ZIP", desc: "Haz clic en Dividir PDF. OmnisPDF empaqueta todos los archivos de páginas individuales en una sola descarga ZIP. Extrae el ZIP en tu computadora para acceder a cada archivo de página por separado." },
+                  { title: "Sube tu PDF", desc: "Ve a la herramienta Dividir PDF de PDF.it y arrastra tu archivo al área de carga. Puedes subir PDFs de hasta 25MB gratis, o hasta 200MB con una cuenta Pro." },
+                  { title: "Selecciona 'Dividir cada página'", desc: "Elige la opción de dividir cada página en un archivo separado. PDF.it creará un archivo PDF por página. Verás una vista previa de todas las páginas antes de confirmar." },
+                  { title: "Descarga el archivo ZIP", desc: "Haz clic en Dividir PDF. PDF.it empaqueta todos los archivos de páginas individuales en una sola descarga ZIP. Extrae el ZIP en tu computadora para acceder a cada archivo de página por separado." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
                     <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
@@ -136,7 +136,7 @@ export default function DividirPDFEnPaginasIndividualesPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">Dividir PDFs Grandes (50+ Páginas)</h2>
               <p className="text-slate-600 mb-4">Dividir un documento grande en docenas o cientos de archivos individuales es sencillo, pero hay algunas cosas a tener en cuenta:</p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>La descarga ZIP es tu amiga.</strong> OmnisPDF empaqueta todos los archivos en un solo ZIP, así no tienes que descargar 100 archivos uno por uno.</li>
+                <li>&#10003; <strong>La descarga ZIP es tu amiga.</strong> PDF.it empaqueta todos los archivos en un solo ZIP, así no tienes que descargar 100 archivos uno por uno.</li>
                 <li>&#10003; <strong>Los archivos se nombran secuencialmente.</strong> Cada archivo se nombra automáticamente con el número de página (pagina_1.pdf, pagina_2.pdf, etc.) para que se ordenen correctamente en tu administrador de archivos.</li>
                 <li>&#10003; <strong>Los usuarios Pro obtienen procesamiento más rápido.</strong> Dividir archivos grandes con muchas páginas es más rápido con una cuenta Pro gracias al procesamiento prioritario.</li>
                 <li>&#10003; <strong>Organiza en carpetas después de extraer.</strong> Después de descargar y extraer el ZIP, considera ordenar las páginas en carpetas por sección o categoría.</li>
@@ -191,12 +191,12 @@ export default function DividirPDFEnPaginasIndividualesPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo divido un PDF en páginas individuales?", a: "Sube tu PDF a la herramienta Dividir PDF de OmnisPDF, selecciona la opción de dividir cada página en su propio archivo, y descarga un ZIP que contiene todos los archivos de páginas individuales." },
-                { q: "¿Puedo dividir un PDF en un archivo por página gratis?", a: "Sí. OmnisPDF te permite dividir PDFs gratis con archivos de hasta 25MB. Obtienes 3 operaciones gratuitas sin registrarte, y 10 por día con una cuenta gratuita." },
-                { q: "¿En qué formato se guardan las páginas individuales?", a: "Cada página se guarda como su propio archivo PDF. Si necesitas imágenes en su lugar, puedes convertir las páginas divididas a JPG o PNG usando las herramientas de conversión de OmnisPDF." },
-                { q: "¿Puedo dividir un PDF de 100 páginas en 100 archivos separados?", a: "Sí. OmnisPDF puede dividir cualquier PDF en páginas individuales sin importar el conteo de páginas. Los archivos resultantes se empaquetan en una descarga ZIP para fácil manejo." },
+                { q: "¿Cómo divido un PDF en páginas individuales?", a: "Sube tu PDF a la herramienta Dividir PDF de PDF.it, selecciona la opción de dividir cada página en su propio archivo, y descarga un ZIP que contiene todos los archivos de páginas individuales." },
+                { q: "¿Puedo dividir un PDF en un archivo por página gratis?", a: "Sí. PDF.it te permite dividir PDFs gratis con archivos de hasta 25MB. Obtienes 3 operaciones gratuitas sin registrarte, y 10 por día con una cuenta gratuita." },
+                { q: "¿En qué formato se guardan las páginas individuales?", a: "Cada página se guarda como su propio archivo PDF. Si necesitas imágenes en su lugar, puedes convertir las páginas divididas a JPG o PNG usando las herramientas de conversión de PDF.it." },
+                { q: "¿Puedo dividir un PDF de 100 páginas en 100 archivos separados?", a: "Sí. PDF.it puede dividir cualquier PDF en páginas individuales sin importar el conteo de páginas. Los archivos resultantes se empaquetan en una descarga ZIP para fácil manejo." },
                 { q: "¿Dividir un PDF reducirá la calidad de cada página?", a: "No. Dividir un PDF simplemente separa páginas en archivos individuales sin re-codificar. Texto, imágenes y formato permanecen exactamente iguales." },
-                { q: "¿Cómo se nombran los archivos de páginas individuales?", a: "OmnisPDF automáticamente nombra cada archivo con el nombre del archivo original más el número de página (ej., documento_pagina1.pdf, documento_pagina2.pdf). Puedes renombrarlos después de descargar." },
+                { q: "¿Cómo se nombran los archivos de páginas individuales?", a: "PDF.it automáticamente nombra cada archivo con el nombre del archivo original más el número de página (ej., documento_pagina1.pdf, documento_pagina2.pdf). Puedes renombrarlos después de descargar." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

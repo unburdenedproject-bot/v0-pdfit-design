@@ -6,9 +6,9 @@ import { Upload, Zap, Shield, CheckCircle } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "PDF Listo para Subir — Optimizar PDF para Portales | OmnisPDF",
+  title: "PDF Listo para Subir — Optimizar PDF para Portales | PDF.it",
   description:
-    "Prepara tu PDF para subir con un clic. OmnisPDF aplana formularios, comprime el tamaño y corrige errores comunes — funciona con cualquier portal, sin registro.",
+    "Prepara tu PDF para subir con un clic. PDF.it aplana formularios, comprime el tamaño y corrige errores comunes — funciona con cualquier portal, sin registro.",
   alternates: {
     languages: {
       en: "/upload-ready-pdf",
@@ -119,7 +119,7 @@ export default function PDFListoParaSubirPage() {
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              ¿Cansado de que los portales rechacen tu PDF? La herramienta PDF Listo para Subir de OmnisPDF corrige los problemas más comunes en un clic — archivos demasiado grandes, campos de formulario en blanco, anotaciones no compatibles y funciones PDF incompatibles. El resultado es un PDF limpio y universalmente compatible que funciona en todas partes.
+              ¿Cansado de que los portales rechacen tu PDF? La herramienta PDF Listo para Subir de PDF.it corrige los problemas más comunes en un clic — archivos demasiado grandes, campos de formulario en blanco, anotaciones no compatibles y funciones PDF incompatibles. El resultado es un PDF limpio y universalmente compatible que funciona en todas partes.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Aplana automáticamente campos de formulario para que los datos se muestren correctamente</li>
@@ -161,7 +161,7 @@ export default function PDFListoParaSubirPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Preparar un PDF para Subir</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Haz clic en PDF Listo para Subir — el aplanado y la compresión se aplican automáticamente.",
                 "Descarga tu PDF optimizado y súbelo a cualquier portal.",
               ].map((step, i) => (

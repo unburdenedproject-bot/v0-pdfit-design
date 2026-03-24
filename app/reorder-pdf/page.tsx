@@ -5,9 +5,9 @@ import { ArrowLeftRight, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Reorder PDF Online — Rearrange PDF Pages in Any Order | OmnisPDF",
+  title: "Reorder PDF Online — Rearrange PDF Pages in Any Order | PDF.it",
   description:
-    "Rearrange PDF pages in any order with OmnisPDF. Use Split and Merge tools to reorganize your document — fast, free, and browser-based.",
+    "Rearrange PDF pages in any order with PDF.it. Use Split and Merge tools to reorganize your document — fast, free, and browser-based.",
 }
 
 const faqSchema = {
@@ -17,17 +17,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I reorder pages in a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Use OmnisPDF's Split PDF tool to separate your document into individual pages, then use Merge PDF to combine them in your desired order. It's fast, free, and works entirely in your browser." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Use PDF.it's Split PDF tool to separate your document into individual pages, then use Merge PDF to combine them in your desired order. It's fast, free, and works entirely in your browser." }
     },
     {
       "@type": "Question",
       "name": "Can I drag and drop PDF pages to rearrange them?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF uses a split-and-merge workflow to reorder pages. Split your PDF into individual pages, then upload them to Merge PDF in the order you want. This gives you full control over page arrangement." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it uses a split-and-merge workflow to reorder pages. Split your PDF into individual pages, then upload them to Merge PDF in the order you want. This gives you full control over page arrangement." }
     },
     {
       "@type": "Question",
       "name": "Will reordering pages affect the quality of my PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. Splitting and merging PDFs with OmnisPDF preserves the original quality of your pages, including text, images, formatting, and embedded fonts." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Splitting and merging PDFs with PDF.it preserves the original quality of your pages, including text, images, formatting, and embedded fonts." }
     },
     {
       "@type": "Question",
@@ -42,7 +42,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I reorder PDF pages on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in any mobile browser on iPhone or Android. Split your PDF, then merge the pages in your preferred order — no app installation needed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in any mobile browser on iPhone or Android. Split your PDF, then merge the pages in your preferred order — no app installation needed." }
     }
   ]
 }
@@ -66,7 +66,7 @@ export default function ReorderPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Reorder PDF Pages Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Rearrange PDF pages in any order using OmnisPDF's Split and Merge tools. Fix page order mistakes, reorganize presentations, and sort scanned documents — fast, free, and browser-based.
+                Rearrange PDF pages in any order using PDF.it's Split and Merge tools. Fix page order mistakes, reorganize presentations, and sort scanned documents — fast, free, and browser-based.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>No Software Needed</span></div>
@@ -97,7 +97,7 @@ export default function ReorderPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Need to rearrange pages in a PDF? OmnisPDF makes it simple with a two-step workflow: split your document into individual pages, then merge them back together in any order. No software to install, no account required.
+              Need to rearrange pages in a PDF? PDF.it makes it simple with a two-step workflow: split your document into individual pages, then merge them back together in any order. No software to install, no account required.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Rearrange pages in any order you need</li>
@@ -115,7 +115,7 @@ export default function ReorderPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Fix Page Order Mistakes</h2>
               <p className="text-slate-600">
-                Scanned a stack of papers in the wrong order? Received a PDF with pages out of sequence? Use OmnisPDF to split the document into individual pages, then merge them back in the correct order. No need to re-scan or ask the sender for a new copy.
+                Scanned a stack of papers in the wrong order? Received a PDF with pages out of sequence? Use PDF.it to split the document into individual pages, then merge them back in the correct order. No need to re-scan or ask the sender for a new copy.
               </p>
             </div>
             <div>
@@ -184,12 +184,12 @@ export default function ReorderPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I reorder pages in a PDF?", a: "Use OmnisPDF's Split PDF tool to separate your document into individual pages, then use Merge PDF to combine them in your desired order. It's fast, free, and works entirely in your browser." },
-                { q: "Can I drag and drop PDF pages to rearrange them?", a: "OmnisPDF uses a split-and-merge workflow to reorder pages. Split your PDF into individual pages, then upload them to Merge PDF in the order you want. This gives you full control over page arrangement." },
-                { q: "Will reordering pages affect the quality of my PDF?", a: "No. Splitting and merging PDFs with OmnisPDF preserves the original quality of your pages, including text, images, formatting, and embedded fonts." },
+                { q: "How do I reorder pages in a PDF?", a: "Use PDF.it's Split PDF tool to separate your document into individual pages, then use Merge PDF to combine them in your desired order. It's fast, free, and works entirely in your browser." },
+                { q: "Can I drag and drop PDF pages to rearrange them?", a: "PDF.it uses a split-and-merge workflow to reorder pages. Split your PDF into individual pages, then upload them to Merge PDF in the order you want. This gives you full control over page arrangement." },
+                { q: "Will reordering pages affect the quality of my PDF?", a: "No. Splitting and merging PDFs with PDF.it preserves the original quality of your pages, including text, images, formatting, and embedded fonts." },
                 { q: "Can I reorder pages in a scanned PDF?", a: "Yes. Scanned PDFs work the same way — split the document into pages, then merge them back in the correct order. The scanned images remain unchanged." },
                 { q: "Is there a page limit for reordering PDFs?", a: "Free users can process files up to 25MB. Pro users get files up to 200MB with batch processing for handling large documents with many pages." },
-                { q: "Can I reorder PDF pages on my phone?", a: "Yes. OmnisPDF works in any mobile browser on iPhone or Android. Split your PDF, then merge the pages in your preferred order — no app installation needed." },
+                { q: "Can I reorder PDF pages on my phone?", a: "Yes. PDF.it works in any mobile browser on iPhone or Android. Split your PDF, then merge the pages in your preferred order — no app installation needed." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Ro
 import Link from "next/link"
 
 export const metadata = {
-  title: "Compress PDF for Upload Portals — Reduce PDF Size | OmnisPDF",
+  title: "Compress PDF for Upload Portals — Reduce PDF Size | PDF.it",
   description:
     "Compress your PDF to meet upload portal size limits. Extreme compression for government forms, university admissions, job applications, and insurance claims — free and browser-based.",
 }
@@ -18,12 +18,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I compress a PDF for an upload portal?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF and click Compress. Extreme compression reduces image resolution and optimizes the file structure, drastically reducing file size to help meet portal upload limits." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it and click Compress. Extreme compression reduces image resolution and optimizes the file structure, drastically reducing file size to help meet portal upload limits." }
     },
     {
       "@type": "Question",
       "name": "Will my compressed PDF be accepted by government portals?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF produces standard PDF files that are accepted by all major portals. Text remains sharp and readable, and the file structure stays valid for any system that accepts PDFs." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it produces standard PDF files that are accepted by all major portals. Text remains sharp and readable, and the file structure stays valid for any system that accepts PDFs." }
     },
     {
       "@type": "Question",
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I compress PDFs for upload on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in any mobile browser. Upload your PDF, compress it, and download the smaller file directly on iPhone or Android — no app installation needed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in any mobile browser. Upload your PDF, compress it, and download the smaller file directly on iPhone or Android — no app installation needed." }
     },
     {
       "@type": "Question",
@@ -93,7 +93,7 @@ export default function CompressPDFForUploadPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Why Compress a PDF for Upload Portals?</h2>
             <p className="text-lg text-slate-600 mb-8">
-              Government websites, university admissions systems, job application portals, and insurance claim forms often enforce strict file size limits — sometimes as low as 1MB or 2MB. If your PDF exceeds the limit, the upload fails. OmnisPDF applies extreme compression to drastically reduce your file size, helping you submit your documents without issues.
+              Government websites, university admissions systems, job application portals, and insurance claim forms often enforce strict file size limits — sometimes as low as 1MB or 2MB. If your PDF exceeds the limit, the upload fails. PDF.it applies extreme compression to drastically reduce your file size, helping you submit your documents without issues.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Extreme compression for maximum size reduction</li>
@@ -144,7 +144,7 @@ export default function CompressPDFForUploadPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Compress a PDF for Upload Portals</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PDF into OmnisPDF.",
+                "Upload or drag and drop your PDF into PDF.it.",
                 "Click Compress PDF — extreme compression is applied automatically to minimize file size.",
                 "Download your smaller PDF and upload it to the portal. If still too large, try splitting the file first, then compress each part.",
               ].map((step, i) => (
@@ -198,11 +198,11 @@ export default function CompressPDFForUploadPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I compress a PDF for an upload portal?", a: "Upload your PDF to OmnisPDF and click Compress. Extreme compression reduces image resolution and optimizes the file structure, drastically reducing file size to help meet portal upload limits." },
-                { q: "Will my compressed PDF be accepted by government portals?", a: "Yes. OmnisPDF produces standard PDF files that are accepted by all major portals. Text remains sharp and readable, and the file structure stays valid for any system that accepts PDFs." },
+                { q: "How do I compress a PDF for an upload portal?", a: "Upload your PDF to PDF.it and click Compress. Extreme compression reduces image resolution and optimizes the file structure, drastically reducing file size to help meet portal upload limits." },
+                { q: "Will my compressed PDF be accepted by government portals?", a: "Yes. PDF.it produces standard PDF files that are accepted by all major portals. Text remains sharp and readable, and the file structure stays valid for any system that accepts PDFs." },
                 { q: "Can I compress a PDF to meet a specific size limit?", a: "Extreme compression drastically reduces file size, but the exact result depends on your PDF content. Text-heavy documents compress very well. If the file is still too large, try splitting it into parts and compressing each one." },
                 { q: "Will the document quality be affected?", a: "Text stays sharp and fully readable. Images may lose some detail at extreme compression levels, but the document remains usable for submissions and uploads." },
-                { q: "Can I compress PDFs for upload on my phone?", a: "Yes. OmnisPDF works in any mobile browser. Upload your PDF, compress it, and download the smaller file directly on iPhone or Android — no app installation needed." },
+                { q: "Can I compress PDFs for upload on my phone?", a: "Yes. PDF.it works in any mobile browser. Upload your PDF, compress it, and download the smaller file directly on iPhone or Android — no app installation needed." },
                 { q: "What if my PDF is still too large after compression?", a: "Try splitting the PDF into smaller sections with our Split PDF tool, then compress each part separately. You can also flatten the PDF or remove unnecessary pages before compressing." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

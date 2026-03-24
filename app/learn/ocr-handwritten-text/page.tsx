@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ScanText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Can OCR Read Handwritten Text? (What to Expect) | OmnisPDF",
+  title: "Can OCR Read Handwritten Text? (What to Expect) | PDF.it",
   description:
     "Learn about OCR limitations with handwriting — what works, what doesn't, and tips for getting better results from handwritten documents. Honest expectations for handwriting OCR.",
   keywords: "ocr handwritten text, ocr handwriting, can ocr read handwriting, handwritten document ocr",
@@ -52,7 +52,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to OCR Handwritten Text",
-  "description": "Get the best possible OCR results from handwritten documents in 3 steps using OmnisPDF.",
+  "description": "Get the best possible OCR results from handwritten documents in 3 steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
@@ -62,7 +62,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Run OCR with the correct language",
-      "text": "Upload to OmnisPDF's OCR Scanner, select the document language, and process the file. The OCR engine will attempt to recognize handwritten characters."
+      "text": "Upload to PDF.it's OCR Scanner, select the document language, and process the file. The OCR engine will attempt to recognize handwritten characters."
     },
     {
       "@type": "HowToStep",

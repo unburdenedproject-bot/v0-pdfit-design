@@ -6,9 +6,9 @@ import { FileImage, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "PDF to PNG Converter — Free & No Login Required | OmnisPDF",
+  title: "PDF to PNG Converter — Free & No Login Required | PDF.it",
   description:
-    "Convert PDF to PNG in seconds with OmnisPDF. Export each page as a high-quality PNG image—great for sharp text, graphics, and transparency.",
+    "Convert PDF to PNG in seconds with PDF.it. Export each page as a high-quality PNG image—great for sharp text, graphics, and transparency.",
 }
 
 const faqSchema = {
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I convert a multi-page PDF to PNG?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF converts each PDF page into its own PNG image so you can download pages individually." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it converts each PDF page into its own PNG image so you can download pages individually." }
     },
     {
       "@type": "Question",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I convert PDF to PNG on iPhone or Android?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in mobile browsers — upload, convert, and download your PNG images." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in mobile browsers — upload, convert, and download your PNG images." }
     },
     {
       "@type": "Question",
@@ -95,7 +95,7 @@ export default function PDFToPNGPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use OmnisPDF's PDF to PNG converter to export PDF pages as PNG images — fast. PNG is ideal when you need crisp text, clean graphics, and consistent quality for presentations, documents, and web use. Upload your PDF, convert, and download your PNGs instantly.
+              Use PDF.it's PDF to PNG converter to export PDF pages as PNG images — fast. PNG is ideal when you need crisp text, clean graphics, and consistent quality for presentations, documents, and web use. Upload your PDF, convert, and download your PNGs instantly.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Convert PDF to PNG with sharp, readable results</li>
@@ -143,7 +143,7 @@ export default function PDFToPNGPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Convert PDF to PNG</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PDF into OmnisPDF.",
+                "Upload or drag and drop your PDF into PDF.it.",
                 "Click Convert PDF to PNG.",
                 "Download your PNG images — one per page.",
               ].map((step, i) => (
@@ -190,7 +190,7 @@ export default function PDFToPNGPage() {
               {[
                 {
                   q: "Can I convert a multi-page PDF to PNG?",
-                  a: "Yes. OmnisPDF converts each PDF page into its own PNG image so you can download pages individually.",
+                  a: "Yes. PDF.it converts each PDF page into its own PNG image so you can download pages individually.",
                 },
                 {
                   q: "Why should I use PNG instead of JPG?",
@@ -198,7 +198,7 @@ export default function PDFToPNGPage() {
                 },
                 {
                   q: "Can I convert PDF to PNG on iPhone or Android?",
-                  a: "Yes. OmnisPDF works in mobile browsers — upload, convert, and download your PNG images.",
+                  a: "Yes. PDF.it works in mobile browsers — upload, convert, and download your PNG images.",
                 },
                 {
                   q: "Why do my PNG files look blurry?",

@@ -6,9 +6,9 @@ import { Type, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Extract Text from PDF Online — Copy Text from Any PDF | OmnisPDF",
+  title: "Extract Text from PDF Online — Copy Text from Any PDF | PDF.it",
   description:
-    "Extract text from PDF files with OmnisPDF. Pull plain text from any PDF for copying, editing, and reuse — fast, free, and browser-based.",
+    "Extract text from PDF files with PDF.it. Pull plain text from any PDF for copying, editing, and reuse — fast, free, and browser-based.",
 }
 
 const faqSchema = {
@@ -18,27 +18,27 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I extract text from a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF, click Extract, and download a plain text file containing all the text from your PDF. You can then copy, edit, or paste it anywhere." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it, click Extract, and download a plain text file containing all the text from your PDF. You can then copy, edit, or paste it anywhere." }
     },
     {
       "@type": "Question",
       "name": "Does extracting text preserve the original formatting?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF extracts the raw text content from your PDF. Basic paragraph structure is preserved, but complex formatting like tables, columns, and fonts may not carry over to the plain text output." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it extracts the raw text content from your PDF. Basic paragraph structure is preserved, but complex formatting like tables, columns, and fonts may not carry over to the plain text output." }
     },
     {
       "@type": "Question",
       "name": "Can I extract text from a scanned PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Scanned PDFs contain images instead of selectable text. To extract text from scans, use OmnisPDF's OCR Scanner tool, which uses optical character recognition to read text from images." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Scanned PDFs contain images instead of selectable text. To extract text from scans, use PDF.it's OCR Scanner tool, which uses optical character recognition to read text from images." }
     },
     {
       "@type": "Question",
       "name": "What languages are supported for text extraction?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF can extract text from PDFs in any language, including English, Spanish, French, German, Chinese, Japanese, Arabic, and more — as long as the PDF contains selectable text." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it can extract text from PDFs in any language, including English, Spanish, French, German, Chinese, Japanese, Arabic, and more — as long as the PDF contains selectable text." }
     },
     {
       "@type": "Question",
       "name": "Can I extract text from a PDF on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in mobile browsers — upload your PDF, extract the text, and download or copy it on iPhone or Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in mobile browsers — upload your PDF, extract the text, and download or copy it on iPhone or Android." }
     },
     {
       "@type": "Question",
@@ -91,7 +91,7 @@ export default function ExtractTextFromPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Need the text from a PDF without the layout, images, or formatting? OmnisPDF extracts all selectable text from your PDF and delivers it as a clean plain text file you can copy, edit, or paste anywhere.
+              Need the text from a PDF without the layout, images, or formatting? PDF.it extracts all selectable text from your PDF and delivers it as a clean plain text file you can copy, edit, or paste anywhere.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Extract all selectable text from any PDF</li>
@@ -133,7 +133,7 @@ export default function ExtractTextFromPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Extract Text from a PDF</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PDF into OmnisPDF.",
+                "Upload or drag and drop your PDF into PDF.it.",
                 "Click Extract Text — all selectable text is pulled from your PDF automatically.",
                 "Download the plain text file or copy the text directly.",
               ].map((step, i) => (
@@ -178,11 +178,11 @@ export default function ExtractTextFromPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I extract text from a PDF?", a: "Upload your PDF to OmnisPDF, click Extract, and download a plain text file containing all the text from your PDF. You can then copy, edit, or paste it anywhere." },
-                { q: "Does extracting text preserve the original formatting?", a: "OmnisPDF extracts the raw text content from your PDF. Basic paragraph structure is preserved, but complex formatting like tables, columns, and fonts may not carry over to the plain text output." },
-                { q: "Can I extract text from a scanned PDF?", a: "Scanned PDFs contain images instead of selectable text. To extract text from scans, use OmnisPDF's OCR Scanner tool, which uses optical character recognition to read text from images." },
-                { q: "What languages are supported for text extraction?", a: "OmnisPDF can extract text from PDFs in any language, including English, Spanish, French, German, Chinese, Japanese, Arabic, and more — as long as the PDF contains selectable text." },
-                { q: "Can I extract text from a PDF on my phone?", a: "Yes. OmnisPDF works in mobile browsers — upload your PDF, extract the text, and download or copy it on iPhone or Android." },
+                { q: "How do I extract text from a PDF?", a: "Upload your PDF to PDF.it, click Extract, and download a plain text file containing all the text from your PDF. You can then copy, edit, or paste it anywhere." },
+                { q: "Does extracting text preserve the original formatting?", a: "PDF.it extracts the raw text content from your PDF. Basic paragraph structure is preserved, but complex formatting like tables, columns, and fonts may not carry over to the plain text output." },
+                { q: "Can I extract text from a scanned PDF?", a: "Scanned PDFs contain images instead of selectable text. To extract text from scans, use PDF.it's OCR Scanner tool, which uses optical character recognition to read text from images." },
+                { q: "What languages are supported for text extraction?", a: "PDF.it can extract text from PDFs in any language, including English, Spanish, French, German, Chinese, Japanese, Arabic, and more — as long as the PDF contains selectable text." },
+                { q: "Can I extract text from a PDF on my phone?", a: "Yes. PDF.it works in mobile browsers — upload your PDF, extract the text, and download or copy it on iPhone or Android." },
                 { q: "Is it free to extract text from a PDF?", a: "Yes. Free accounts get 10 extractions per day. Pro accounts get unlimited extractions with no daily limits." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

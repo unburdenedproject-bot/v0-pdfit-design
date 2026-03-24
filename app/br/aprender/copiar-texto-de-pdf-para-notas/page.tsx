@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileTextIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Copiar Texto de PDF para Notas (iPhone, Android, PC) | OmnisPDF",
+  title: "Como Copiar Texto de PDF para Notas (iPhone, Android, PC) | PDF.it",
   description:
     "Aprenda como copiar texto de um PDF para o app Notas do iPhone, Google Keep, OneNote ou qualquer editor de texto. Métodos para celular e computador.",
   keywords: "copiar texto de pdf, pdf para notas, copiar texto pdf iphone, extrair texto pdf para notas, pdf para google keep",
@@ -15,8 +15,8 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Por que não consigo copiar texto do PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Se não consegue selecionar texto no PDF, provavelmente é um PDF digitalizado (imagem) ou está protegido contra cópia. Use o OmnisPDF para extrair o texto automaticamente." } },
-    { "@type": "Question", "name": "Como copiar texto de PDF para Notas no iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Use a ferramenta PDF para Texto do OmnisPDF no Safari, converta o PDF, copie o texto extraído e cole no app Notas. Funciona sem instalar apps." } },
+    { "@type": "Question", "name": "Por que não consigo copiar texto do PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Se não consegue selecionar texto no PDF, provavelmente é um PDF digitalizado (imagem) ou está protegido contra cópia. Use o PDF.it para extrair o texto automaticamente." } },
+    { "@type": "Question", "name": "Como copiar texto de PDF para Notas no iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Use a ferramenta PDF para Texto do PDF.it no Safari, converta o PDF, copie o texto extraído e cole no app Notas. Funciona sem instalar apps." } },
     { "@type": "Question", "name": "Funciona com PDF protegido?", "acceptedAnswer": { "@type": "Answer", "text": "Se o PDF está protegido contra cópia, a ferramenta PDF para Texto pode conseguir extrair o conteúdo. Para PDFs com senha, use Desbloquear PDF primeiro." } }
   ]
 }
@@ -27,7 +27,7 @@ const howToSchema = {
   "name": "Copiar Texto de PDF para Notas",
   "description": "Extraia texto de qualquer PDF e copie para seu app de notas favorito.",
   "step": [
-    { "@type": "HowToStep", "name": "Converta o PDF para texto", "text": "Use a ferramenta PDF para Texto do OmnisPDF para extrair o conteúdo do PDF." },
+    { "@type": "HowToStep", "name": "Converta o PDF para texto", "text": "Use a ferramenta PDF para Texto do PDF.it para extrair o conteúdo do PDF." },
     { "@type": "HowToStep", "name": "Copie o texto", "text": "Selecione e copie o texto extraído (Ctrl+C no PC, ou toque longo no celular)." },
     { "@type": "HowToStep", "name": "Cole nas suas notas", "text": "Abra seu app de notas e cole o texto (Ctrl+V no PC, ou Cole no celular)." }
   ]
@@ -75,7 +75,7 @@ export default function CopiarTextoDePdfParaNotasPage() {
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>PDF digitalizado.</strong> O documento foi escaneado e o texto é na verdade uma imagem. Use <Link href="/br/scanner-ocr" className="text-orange-600 hover:underline">Scanner OCR</Link> para reconhecer o texto.</span></li>
                 <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>PDF protegido.</strong> O autor bloqueou a cópia de texto. Use <Link href="/br/desbloquear-pdf" className="text-orange-600 hover:underline">Desbloquear PDF</Link> se tiver permissão para acessar o conteúdo.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>App do celular limitado.</strong> Alguns leitores de PDF no celular não permitem selecionar texto facilmente. Use o OmnisPDF para extrair tudo de uma vez.</span></li>
+                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>App do celular limitado.</strong> Alguns leitores de PDF no celular não permitem selecionar texto facilmente. Use o PDF.it para extrair tudo de uma vez.</span></li>
               </ul>
             </section>
 
@@ -83,7 +83,7 @@ export default function CopiarTextoDePdfParaNotasPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-6">Como Copiar Texto de PDF para Notas</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Acesse o OmnisPDF", desc: "Abra o navegador (Safari no iPhone, Chrome no Android ou PC) e vá para a ferramenta PDF para Texto do OmnisPDF." },
+                  { title: "Acesse o PDF.it", desc: "Abra o navegador (Safari no iPhone, Chrome no Android ou PC) e vá para a ferramenta PDF para Texto do PDF.it." },
                   { title: "Envie o PDF e converta", desc: "Envie seu PDF e clique em Converter. O texto será extraído em segundos e exibido na tela." },
                   { title: "Copie o texto", desc: "Selecione o texto extraído e copie. No celular: toque longo > Selecionar Tudo > Copiar. No PC: Ctrl+A > Ctrl+C." },
                   { title: "Cole no app de notas", desc: "Abra o Notas (iPhone), Google Keep (Android), OneNote ou qualquer editor e cole o texto. No celular: toque longo > Colar. No PC: Ctrl+V." },
@@ -101,11 +101,11 @@ export default function CopiarTextoDePdfParaNotasPage() {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">iPhone (Notas)</h3>
-                  <p className="text-slate-600">Use o Safari para acessar o OmnisPDF. Após converter, toque longo no texto, selecione tudo e copie. Abra o Notas e cole. O texto fica sincronizado via iCloud.</p>
+                  <p className="text-slate-600">Use o Safari para acessar o PDF.it. Após converter, toque longo no texto, selecione tudo e copie. Abra o Notas e cole. O texto fica sincronizado via iCloud.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Android (Google Keep / Samsung Notes)</h3>
-                  <p className="text-slate-600">Use o Chrome para acessar o OmnisPDF. Copie o texto extraído e cole no Google Keep, Samsung Notes ou qualquer app de notas.</p>
+                  <p className="text-slate-600">Use o Chrome para acessar o PDF.it. Copie o texto extraído e cole no Google Keep, Samsung Notes ou qualquer app de notas.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">PC / Mac (OneNote / Notion)</h3>
@@ -151,8 +151,8 @@ export default function CopiarTextoDePdfParaNotasPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Por que não consigo copiar texto do PDF?", a: "Provavelmente é um PDF digitalizado (imagem) ou protegido contra cópia. Use o OmnisPDF para extrair o texto automaticamente." },
-                { q: "Como copiar texto de PDF para Notas no iPhone?", a: "Use a ferramenta PDF para Texto do OmnisPDF no Safari, converta o PDF, copie o texto extraído e cole no app Notas." },
+                { q: "Por que não consigo copiar texto do PDF?", a: "Provavelmente é um PDF digitalizado (imagem) ou protegido contra cópia. Use o PDF.it para extrair o texto automaticamente." },
+                { q: "Como copiar texto de PDF para Notas no iPhone?", a: "Use a ferramenta PDF para Texto do PDF.it no Safari, converta o PDF, copie o texto extraído e cole no app Notas." },
                 { q: "Funciona com PDF protegido?", a: "Se o PDF está protegido contra cópia, a ferramenta PDF para Texto pode conseguir extrair o conteúdo. Para PDFs com senha, use Desbloquear PDF primeiro." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

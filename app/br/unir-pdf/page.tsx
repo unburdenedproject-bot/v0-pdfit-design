@@ -6,9 +6,9 @@ import { Merge, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Unir PDF Online — Combinar Arquivos PDF em Um | OmnisPDF",
+  title: "Unir PDF Online — Combinar Arquivos PDF em Um | PDF.it",
   description:
-    "Una arquivos PDF em um unico documento com o OmnisPDF. Combine PDFs online, reordene paginas e baixe um unico PDF — rapido e simples.",
+    "Una arquivos PDF em um unico documento com o PDF.it. Combine PDFs online, reordene paginas e baixe um unico PDF — rapido e simples.",
   alternates: {
     languages: {
       en: "/merge-pdf",
@@ -25,17 +25,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como uno varios arquivos PDF em um so?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seus PDFs para o OmnisPDF, reordene-os como precisar e clique em Unir PDFs para baixar um unico arquivo combinado." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie seus PDFs para o PDF.it, reordene-os como precisar e clique em Unir PDFs para baixar um unico arquivo combinado." }
     },
     {
       "@type": "Question",
       "name": "Posso reordenar os PDFs antes de uni-los?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Envie seus arquivos e ordene-os na sequencia correta — o OmnisPDF os une nessa ordem." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Envie seus arquivos e ordene-os na sequencia correta — o PDF.it os une nessa ordem." }
     },
     {
       "@type": "Question",
       "name": "Posso unir PDFs no celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em navegadores moveis — envie, una e baixe do seu iPhone ou Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em navegadores moveis — envie, una e baixe do seu iPhone ou Android." }
     },
     {
       "@type": "Question",
@@ -74,7 +74,7 @@ export default function UnirPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Unir Arquivos PDF Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Combine varios PDFs em um unico arquivo com o OmnisPDF. Envie, reordene, una e baixe — rapido, limpo e direto do navegador.
+                Combine varios PDFs em um unico arquivo com o PDF.it. Envie, reordene, una e baixe — rapido, limpo e direto do navegador.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Arquivos Ilimitados</span></div>
@@ -98,7 +98,7 @@ export default function UnirPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use a ferramenta Unir PDF do OmnisPDF para combinar PDFs em um unico arquivo em segundos. Envie varios documentos PDF, ordene-os corretamente e baixe um unico PDF unido — perfeito para entregas, contratos, faturas e relatorios.
+              Use a ferramenta Unir PDF do PDF.it para combinar PDFs em um unico arquivo em segundos. Envie varios documentos PDF, ordene-os corretamente e baixe um unico PDF unido — perfeito para entregas, contratos, faturas e relatorios.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Una varios arquivos PDF em um unico PDF</li>
@@ -122,7 +122,7 @@ export default function UnirPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Reordene Arquivos PDF Antes de Unir</h2>
               <p className="text-slate-600">
-                Envie seus arquivos e ordene-os na ordem exata que desejar. O OmnisPDF os une na sequencia que voce escolher.
+                Envie seus arquivos e ordene-os na ordem exata que desejar. O PDF.it os une na sequencia que voce escolher.
               </p>
             </div>
             <div>
@@ -140,7 +140,7 @@ export default function UnirPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Unir PDFs</h2>
             <div className="space-y-4">
               {[
-                "Envie dois ou mais arquivos PDF para o OmnisPDF.",
+                "Envie dois ou mais arquivos PDF para o PDF.it.",
                 "Arraste para reordena-los na sequencia correta.",
                 "Clique em Unir PDFs.",
                 "Baixe o PDF combinado.",
@@ -186,9 +186,9 @@ export default function UnirPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como uno varios arquivos PDF em um so?", a: "Envie seus PDFs para o OmnisPDF, reordene-os como precisar e clique em Unir PDFs para baixar um unico arquivo combinado." },
-                { q: "Posso reordenar os PDFs antes de uni-los?", a: "Sim. Envie seus arquivos e ordene-os na sequencia correta — o OmnisPDF os une nessa ordem." },
-                { q: "Posso unir PDFs no celular?", a: "Sim. O OmnisPDF funciona em navegadores moveis — envie, una e baixe do seu iPhone ou Android." },
+                { q: "Como uno varios arquivos PDF em um so?", a: "Envie seus PDFs para o PDF.it, reordene-os como precisar e clique em Unir PDFs para baixar um unico arquivo combinado." },
+                { q: "Posso reordenar os PDFs antes de uni-los?", a: "Sim. Envie seus arquivos e ordene-os na sequencia correta — o PDF.it os une nessa ordem." },
+                { q: "Posso unir PDFs no celular?", a: "Sim. O PDF.it funciona em navegadores moveis — envie, una e baixe do seu iPhone ou Android." },
                 { q: "Posso unir PDFs protegidos com senha?", a: "PDFs protegidos com senha precisam ser desbloqueados antes de uni-los. Use nossa ferramenta Desbloquear PDF primeiro." },
                 { q: "E seguro enviar meus PDFs?", a: "Sim. Todas as transferencias sao criptografadas com SSL e seus arquivos sao eliminados imediatamente apos sua sessao. Nunca armazenamos nem compartilhamos seus documentos." },
                 { q: "Qual e o tamanho maximo de arquivo para unir?", a: "Contas gratuitas podem enviar arquivos de ate 25MB cada. Contas Pro podem enviar arquivos de ate 200MB. Contas Business podem enviar ate 1GB cada." },

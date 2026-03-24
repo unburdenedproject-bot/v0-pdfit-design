@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileArchiveIcon as Compress, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Comprimir PDF com Imagens (Fotos, Digitalizacoes, Graficos) | OmnisPDF",
+  title: "Comprimir PDF com Imagens (Fotos, Digitalizacoes, Graficos) | PDF.it",
   description:
     "Aprenda como comprimir PDFs com muitas imagens sem perder qualidade visual. Dicas para fotos, documentos digitalizados e graficos — online, gratis.",
   keywords: "comprimir pdf com imagens, comprimir pdf fotos, reduzir pdf com imagens, comprimir pdf digitalizado, compactar pdf imagens",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como comprimir um PDF com muitas imagens?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie o PDF para o OmnisPDF e escolha compressao Media ou Extrema. PDFs com muitas imagens geralmente comprimem muito bem — reducoes de 50-80% sao comuns." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie o PDF para o PDF.it e escolha compressao Media ou Extrema. PDFs com muitas imagens geralmente comprimem muito bem — reducoes de 50-80% sao comuns." }
     },
     {
       "@type": "Question",
@@ -42,7 +42,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Envie o PDF com imagens",
-      "text": "Acesse a ferramenta Comprimir PDF com Imagens do OmnisPDF e envie seu arquivo."
+      "text": "Acesse a ferramenta Comprimir PDF com Imagens do PDF.it e envie seu arquivo."
     },
     {
       "@type": "HowToStep",
@@ -131,7 +131,7 @@ export default function ComprimirPDFComImagensPage() {
                 {[
                   {
                     title: "Envie o PDF com imagens",
-                    desc: "Acesse a ferramenta Comprimir PDF e envie seu arquivo. O OmnisPDF detecta automaticamente o conteudo com imagens e otimiza a compressao.",
+                    desc: "Acesse a ferramenta Comprimir PDF e envie seu arquivo. O PDF.it detecta automaticamente o conteudo com imagens e otimiza a compressao.",
                   },
                   {
                     title: "Escolha o nivel ideal",
@@ -246,7 +246,7 @@ export default function ComprimirPDFComImagensPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como comprimir um PDF com muitas imagens?", a: "Envie o PDF para o OmnisPDF e escolha compressao Media ou Extrema. PDFs com muitas imagens geralmente comprimem muito bem — reducoes de 50-80% sao comuns." },
+                { q: "Como comprimir um PDF com muitas imagens?", a: "Envie o PDF para o PDF.it e escolha compressao Media ou Extrema. PDFs com muitas imagens geralmente comprimem muito bem — reducoes de 50-80% sao comuns." },
                 { q: "A compressao vai borrar minhas fotos no PDF?", a: "A compressao Leve mantem as fotos praticamente identicas. A Media reduz levemente a qualidade mas o resultado e bom para visualizacao em tela. A Extrema pode borrar detalhes finos em fotos." },
                 { q: "PDFs com imagens comprimem mais que PDFs de texto?", a: "Sim, muito mais. PDFs de texto puro ja sao pequenos. PDFs com imagens tem o maior potencial de reducao porque as imagens sao o componente mais pesado do arquivo." },
               ].map((faq, i) => (

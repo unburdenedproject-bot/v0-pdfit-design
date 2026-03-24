@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ImageIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "PDF para JPG vs PNG: Qual Escolher? (Comparação Completa) | OmnisPDF",
+  title: "PDF para JPG vs PNG: Qual Escolher? (Comparação Completa) | PDF.it",
   description:
     "JPG ou PNG? Descubra qual formato é melhor para converter seu PDF. Comparação de qualidade, tamanho, transparência e usos ideais para cada formato.",
   keywords: "pdf para jpg vs png, jpg ou png, diferença jpg png, melhor formato para pdf, converter pdf para imagem",
@@ -29,7 +29,7 @@ const howToSchema = {
   "step": [
     { "@type": "HowToStep", "name": "Analise o conteúdo do PDF", "text": "Verifique se seu PDF contém principalmente fotos, texto, gráficos ou uma combinação." },
     { "@type": "HowToStep", "name": "Considere o uso final", "text": "Para web e redes sociais, JPG é ideal. Para design, impressão e documentação, PNG é melhor." },
-    { "@type": "HowToStep", "name": "Converta no formato escolhido", "text": "Use a ferramenta PDF para JPG ou PDF para PNG do OmnisPDF conforme sua necessidade." }
+    { "@type": "HowToStep", "name": "Converta no formato escolhido", "text": "Use a ferramenta PDF para JPG ou PDF para PNG do PDF.it conforme sua necessidade." }
   ]
 }
 

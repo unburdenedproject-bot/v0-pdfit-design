@@ -5,7 +5,7 @@ import Link from "next/link"
 import { RotateCw, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Girar PDF Digitalizado (Corrigir Orientacao de Escaneados) | OmnisPDF",
+  title: "Girar PDF Digitalizado (Corrigir Orientacao de Escaneados) | PDF.it",
   description:
     "Aprenda como girar PDFs digitalizados que ficaram na orientacao errada. Corrija documentos escaneados de lado ou de cabeca para baixo — online, gratis.",
   keywords: "girar pdf digitalizado, girar pdf escaneado, corrigir orientacao pdf, pdf digitalizado de lado, rotacionar pdf scanner",

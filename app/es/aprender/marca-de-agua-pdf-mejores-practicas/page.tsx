@@ -5,9 +5,9 @@ import Link from "next/link"
 import { Stamp, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Mejores Practicas de Marca de Agua en PDF (Tamano, Opacidad y Ubicacion) | OmnisPDF",
+  title: "Mejores Practicas de Marca de Agua en PDF (Tamano, Opacidad y Ubicacion) | PDF.it",
   description:
-    "Aprende las mejores practicas para agregar marcas de agua a PDF — opacidad optima, tamano de fuente, ubicacion, color, y cuando usar marcas de agua diagonales vs centradas. Consejos profesionales de OmnisPDF.",
+    "Aprende las mejores practicas para agregar marcas de agua a PDF — opacidad optima, tamano de fuente, ubicacion, color, y cuando usar marcas de agua diagonales vs centradas. Consejos profesionales de PDF.it.",
   keywords: "mejores practicas marca de agua pdf, opacidad marca de agua, ubicacion marca de agua, marca de agua pdf profesional",
 }
 
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como hago una marca de agua que no se pueda eliminar?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Despues de agregar tu marca de agua, aplana el PDF usando la herramienta Aplanar PDF de OmnisPDF. Esto fusiona la marca de agua con el contenido de la pagina de forma permanente. Luego protege el archivo con contrasena para prevenir mas ediciones." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Despues de agregar tu marca de agua, aplana el PDF usando la herramienta Aplanar PDF de PDF.it. Esto fusiona la marca de agua con el contenido de la pagina de forma permanente. Luego protege el archivo con contrasena para prevenir mas ediciones." }
     },
     {
       "@type": "Question",
@@ -52,7 +52,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Crear una Marca de Agua Profesional en PDF",
-  "description": "Sigue estas mejores practicas para agregar una marca de agua limpia y profesional a cualquier PDF con OmnisPDF.",
+  "description": "Sigue estas mejores practicas para agregar una marca de agua limpia y profesional a cualquier PDF con PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
@@ -297,7 +297,7 @@ export default function MarcaDeAguaPDFMejoresPracticasPage() {
                 { q: "Debo usar una marca de agua diagonal o centrada?", a: "Las marcas de agua diagonales (45 grados) son ideales para sellos de seguridad como BORRADOR o CONFIDENCIAL — son dificiles de recortar. Las marcas de agua centradas a baja opacidad funcionan mejor para logos de marca. La ubicacion en esquina es ideal para marcas sutiles y profesionales." },
                 { q: "Que tamano de fuente funciona mejor para marcas de agua de texto?", a: "Para marcas de agua diagonales que abarcan la pagina, usa una fuente grande (60-100pt) para que el texto se extienda de esquina a esquina. Para sellos de esquina, usa una fuente mas pequena (24-36pt). El objetivo es legibilidad sin abrumar el contenido del documento." },
                 { q: "Que color debe tener mi marca de agua?", a: "El gris es la opcion mas profesional y versatil para marcas de agua de texto. El rojo funciona bien para sellos CONFIDENCIAL o urgentes. Para marcas de agua con logo, usa los colores de tu marca a opacidad reducida. Evita colores que choquen con el contenido del documento." },
-                { q: "Como hago una marca de agua que no se pueda eliminar?", a: "Despues de agregar tu marca de agua, aplana el PDF usando la herramienta Aplanar PDF de OmnisPDF. Esto fusiona la marca de agua con el contenido de la pagina de forma permanente. Luego protege el archivo con contrasena para prevenir mas ediciones." },
+                { q: "Como hago una marca de agua que no se pueda eliminar?", a: "Despues de agregar tu marca de agua, aplana el PDF usando la herramienta Aplanar PDF de PDF.it. Esto fusiona la marca de agua con el contenido de la pagina de forma permanente. Luego protege el archivo con contrasena para prevenir mas ediciones." },
                 { q: "La herramienta Marca de Agua PDF es gratis?", a: "Marca de Agua PDF esta disponible para usuarios Pro ($7.99/mes) y Business ($13.99/mes). Ambos niveles incluyen marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

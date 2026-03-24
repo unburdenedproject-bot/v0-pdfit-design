@@ -5,7 +5,7 @@ import Link from "next/link"
 import { RotateCw, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Corrigir PDF de Cabeca para Baixo (Inverter 180°) | OmnisPDF",
+  title: "Corrigir PDF de Cabeca para Baixo (Inverter 180°) | PDF.it",
   description:
     "Aprenda como corrigir um PDF que esta de cabeca para baixo. Gire 180 graus para inverter paginas e deixar o documento legivel — online, gratis.",
   keywords: "pdf de cabeca para baixo, corrigir pdf invertido, girar pdf 180 graus, inverter pdf, pdf ao contrario",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como corrigir um PDF de cabeca para baixo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie o PDF para a ferramenta Girar PDF do OmnisPDF, selecione as paginas invertidas, aplique rotacao de 180 graus e baixe o PDF corrigido. O processo leva apenas alguns segundos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie o PDF para a ferramenta Girar PDF do PDF.it, selecione as paginas invertidas, aplique rotacao de 180 graus e baixe o PDF corrigido. O processo leva apenas alguns segundos." }
     },
     {
       "@type": "Question",
@@ -245,7 +245,7 @@ export default function CorrigirPDFDeCabecaParaBaixoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como corrigir um PDF de cabeca para baixo?", a: "Envie o PDF para a ferramenta Girar PDF do OmnisPDF, selecione as paginas invertidas, aplique rotacao de 180 graus e baixe o PDF corrigido." },
+                { q: "Como corrigir um PDF de cabeca para baixo?", a: "Envie o PDF para a ferramenta Girar PDF do PDF.it, selecione as paginas invertidas, aplique rotacao de 180 graus e baixe o PDF corrigido." },
                 { q: "Por que meu PDF esta de cabeca para baixo?", a: "Isso geralmente acontece quando o documento foi digitalizado de cabeca para baixo no scanner, ou quando o app de digitalizacao nao detectou a orientacao corretamente." },
                 { q: "Posso corrigir apenas algumas paginas invertidas?", a: "Sim. Voce pode selecionar apenas as paginas que estao de cabeca para baixo e girar 180 graus, deixando as demais na orientacao original." },
                 { q: "Corrigir a orientacao afeta a qualidade?", a: "Nao. Girar 180 graus apenas inverte a orientacao sem alterar o conteudo, a resolucao ou a qualidade do documento." },

@@ -7,9 +7,9 @@ import { RotateCw, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Rotar PDF Online — Girar Páginas de PDF | OmnisPDF",
+  title: "Rotar PDF Online — Girar Páginas de PDF | PDF.it",
   description:
-    "Rota páginas de PDF online con OmnisPDF. Corrige páginas de lado o al revés, rota páginas específicas y descarga un PDF corregido al instante.",
+    "Rota páginas de PDF online con PDF.it. Corrige páginas de lado o al revés, rota páginas específicas y descarga un PDF corregido al instante.",
   alternates: {
     languages: {
       en: "/rotate-pdf",
@@ -25,7 +25,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo rotar solo una página de un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF te permite rotar páginas individuales sin modificar el resto del documento." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it te permite rotar páginas individuales sin modificar el resto del documento." }
     },
     {
       "@type": "Question",
@@ -40,7 +40,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo rotar un PDF desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en navegadores móviles — sube, rota y descarga desde tu iPhone o Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube, rota y descarga desde tu iPhone o Android." }
     },
     {
       "@type": "Question",
@@ -74,7 +74,7 @@ export default function RotarPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Rotar PDF Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Corrige páginas de lado o al revés con OmnisPDF. Rota páginas individuales de PDF o el documento completo y descarga un PDF con la orientación correcta.
+                Corrige páginas de lado o al revés con PDF.it. Rota páginas individuales de PDF o el documento completo y descarga un PDF con la orientación correcta.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>90°, 180°, 270°</span></div>
@@ -93,7 +93,7 @@ export default function RotarPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Usa la herramienta Rotar PDF de OmnisPDF para girar páginas de PDF y corregir la orientación en segundos. Rota una sola página o varias páginas 90°, 180° o 270°, y descarga un PDF limpio que sea fácil de leer, imprimir y compartir.
+              Usa la herramienta Rotar PDF de PDF.it para girar páginas de PDF y corregir la orientación en segundos. Rota una sola página o varias páginas 90°, 180° o 270°, y descarga un PDF limpio que sea fácil de leer, imprimir y compartir.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Rota PDFs de lado y corrige páginas al revés</li>
@@ -117,7 +117,7 @@ export default function RotarPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Corrige PDFs Escaneados y Documentos de Lado</h2>
               <p className="text-slate-600">
-                Los escáneres a menudo guardan las páginas rotadas de forma incorrecta. OmnisPDF te ayuda a girar las páginas rápidamente a la dirección correcta de lectura.
+                Los escáneres a menudo guardan las páginas rotadas de forma incorrecta. PDF.it te ayuda a girar las páginas rápidamente a la dirección correcta de lectura.
               </p>
             </div>
             <div>
@@ -135,7 +135,7 @@ export default function RotarPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Rotar un PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Selecciona las páginas a rotar o elige rotar todas.",
                 "Elige la dirección de rotación: 90° en sentido horario, 90° en sentido antihorario o 180°.",
                 "Haz clic en Rotar PDF y descarga el archivo actualizado.",
@@ -183,7 +183,7 @@ export default function RotarPDFPage() {
               {[
                 {
                   q: "¿Puedo rotar solo una página de un PDF?",
-                  a: "Sí. OmnisPDF te permite rotar páginas individuales sin modificar el resto del documento.",
+                  a: "Sí. PDF.it te permite rotar páginas individuales sin modificar el resto del documento.",
                 },
                 {
                   q: "¿Qué ángulos de rotación están disponibles?",
@@ -195,7 +195,7 @@ export default function RotarPDFPage() {
                 },
                 {
                   q: "¿Puedo rotar un PDF desde mi celular?",
-                  a: "Sí. OmnisPDF funciona en navegadores móviles — sube, rota y descarga desde tu iPhone o Android.",
+                  a: "Sí. PDF.it funciona en navegadores móviles — sube, rota y descarga desde tu iPhone o Android.",
                 },
                 {
                   q: "¿Es seguro subir mi PDF?",

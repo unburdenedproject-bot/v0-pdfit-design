@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Scissors, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Extrair Paginas de PDF (Selecionar e Salvar Paginas) | OmnisPDF",
+  title: "Extrair Paginas de PDF (Selecionar e Salvar Paginas) | PDF.it",
   description:
     "Aprenda como extrair paginas especificas de um PDF. Selecione as paginas que precisa e salve em um novo arquivo — online, gratis, sem software.",
   keywords: "extrair paginas pdf, selecionar paginas pdf, salvar paginas pdf, tirar paginas pdf, copiar paginas pdf",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como extrair paginas especificas de um PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie o PDF para a ferramenta Extrair Paginas do OmnisPDF, selecione as paginas desejadas (ex: 1, 3, 5-8) e clique em Extrair. Um novo PDF sera criado apenas com as paginas selecionadas." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie o PDF para a ferramenta Extrair Paginas do PDF.it, selecione as paginas desejadas (ex: 1, 3, 5-8) e clique em Extrair. Um novo PDF sera criado apenas com as paginas selecionadas." }
     },
     {
       "@type": "Question",
@@ -238,7 +238,7 @@ export default function ExtrairPaginasDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como extrair paginas especificas de um PDF?", a: "Envie o PDF para a ferramenta Extrair Paginas do OmnisPDF, selecione as paginas desejadas e clique em Extrair. Um novo PDF sera criado apenas com as paginas selecionadas." },
+                { q: "Como extrair paginas especificas de um PDF?", a: "Envie o PDF para a ferramenta Extrair Paginas do PDF.it, selecione as paginas desejadas e clique em Extrair. Um novo PDF sera criado apenas com as paginas selecionadas." },
                 { q: "Extrair paginas altera o PDF original?", a: "Nao. O PDF original permanece intacto. A ferramenta cria um novo PDF apenas com as paginas que voce selecionou." },
                 { q: "Qual a diferenca entre extrair e dividir paginas?", a: "Extrair cria um unico PDF com as paginas selecionadas. Dividir separa o PDF inteiro em multiplas partes." },
               ].map((faq, i) => (

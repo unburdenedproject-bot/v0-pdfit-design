@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Ro
 import Link from "next/link"
 
 export const metadata = {
-  title: "Compress PDF Images — Reduce Image-Heavy PDF Size | OmnisPDF",
+  title: "Compress PDF Images — Reduce Image-Heavy PDF Size | PDF.it",
   description:
     "Compress image-heavy PDFs with extreme compression to dramatically reduce file size. Perfect for photo portfolios, product catalogs, real estate listings, and marketing materials — fast, browser-based, free.",
 }
@@ -33,7 +33,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I compress a PDF with hundreds of images?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF processes all embedded images in your PDF regardless of how many there are. Documents with many images typically see the largest file size reductions." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it processes all embedded images in your PDF regardless of how many there are. Documents with many images typically see the largest file size reductions." }
     },
     {
       "@type": "Question",
@@ -93,7 +93,7 @@ export default function CompressPDFImagesPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Why Focus on Image Compression in PDFs?</h2>
             <p className="text-lg text-slate-600 mb-8">
-              Images are almost always the largest component in a PDF. A single high-resolution photo can add several megabytes. When your PDF contains dozens or hundreds of images — product photos, illustrations, charts — the file size can balloon to 50MB or more. OmnisPDF's extreme compression targets these embedded images for the most dramatic size reduction possible.
+              Images are almost always the largest component in a PDF. A single high-resolution photo can add several megabytes. When your PDF contains dozens or hundreds of images — product photos, illustrations, charts — the file size can balloon to 50MB or more. PDF.it's extreme compression targets these embedded images for the most dramatic size reduction possible.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Targets embedded images for maximum size reduction</li>
@@ -144,7 +144,7 @@ export default function CompressPDFImagesPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Compress PDF Images</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your image-heavy PDF into OmnisPDF.",
+                "Upload or drag and drop your image-heavy PDF into PDF.it.",
                 "Click Compress PDF — extreme compression targets all embedded images automatically.",
                 "Download your smaller PDF. If still too large, try splitting the file first, then compress each part.",
               ].map((step, i) => (
@@ -201,7 +201,7 @@ export default function CompressPDFImagesPage() {
                 { q: "Why are image-heavy PDFs so large?", a: "Images are the largest component in most PDFs. High-resolution photos, graphics, and illustrations can make a PDF many times larger than a text-only document. Compression targets these embedded images for the biggest size reduction." },
                 { q: "How much can image compression reduce my PDF size?", a: "Results depend on the number, resolution, and type of images in your PDF. Image-heavy documents typically see significant reductions — often 50-80% — though exact results vary by document." },
                 { q: "Will my images still look good after compression?", a: "Extreme compression reduces image resolution to achieve maximum size reduction. Images remain clear enough for on-screen viewing and most print purposes, but fine details may be softened. For quality-critical work, try recommended compression instead." },
-                { q: "Can I compress a PDF with hundreds of images?", a: "Yes. OmnisPDF processes all embedded images in your PDF regardless of how many there are. Documents with many images typically see the largest file size reductions." },
+                { q: "Can I compress a PDF with hundreds of images?", a: "Yes. PDF.it processes all embedded images in your PDF regardless of how many there are. Documents with many images typically see the largest file size reductions." },
                 { q: "Does compression affect text in my PDF?", a: "No. Text in PDFs is stored as vector data, not images. Compression targets the embedded images while leaving text, fonts, and formatting completely untouched and sharp." },
                 { q: "What if my image-heavy PDF is still too large after compression?", a: "Try splitting the PDF into smaller sections with our Split PDF tool, then compress each part individually. You can also extract only the pages you need before compressing." },
               ].map((faq, i) => (

@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Convertir Word a PDF en Línea (DOCX a PDF) | OmnisPDF",
+  title: "Convertir Word a PDF en Línea (DOCX a PDF) | PDF.it",
   description:
     "Aprende a convertir Word a PDF en línea en segundos. Guía paso a paso sobre preservación de formato, opciones gratuitas vs Pro, y por qué PDF es el formato universal para compartir.",
   keywords: "convertir word a pdf en linea, docx a pdf, word a pdf gratis, convertir docx a pdf en linea, documento word a pdf",
@@ -18,12 +18,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo convierto Word a PDF en línea gratis?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu archivo .docx o .doc a la herramienta Word a PDF de OmnisPDF, haz clic en Convertir y descarga el PDF. No necesitas registrarte para tus primeros 3 archivos — toma aproximadamente 10 segundos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu archivo .docx o .doc a la herramienta Word a PDF de PDF.it, haz clic en Convertir y descarga el PDF. No necesitas registrarte para tus primeros 3 archivos — toma aproximadamente 10 segundos." }
     },
     {
       "@type": "Question",
       "name": "¿Mi formato se mantendrá igual al convertir Word a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF preserva fuentes, espaciado, imágenes, encabezados, pies de página y diseño de página durante la conversión. Para mejores resultados, usa fuentes estándar como Arial, Calibri o Times New Roman en tu documento Word." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it preserva fuentes, espaciado, imágenes, encabezados, pies de página y diseño de página durante la conversión. Para mejores resultados, usa fuentes estándar como Arial, Calibri o Times New Roman en tu documento Word." }
     },
     {
       "@type": "Question",
@@ -33,12 +33,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cuál es la diferencia entre .doc y .docx?",
-      "acceptedAnswer": { "@type": "Answer", "text": ".doc es el formato antiguo de Microsoft Word (Word 97-2003). .docx es el formato moderno usado desde Word 2007. Ambos se pueden convertir a PDF con OmnisPDF, pero los archivos .docx generalmente producen mejores resultados con formato más preciso." }
+      "acceptedAnswer": { "@type": "Answer", "text": ".doc es el formato antiguo de Microsoft Word (Word 97-2003). .docx es el formato moderno usado desde Word 2007. Ambos se pueden convertir a PDF con PDF.it, pero los archivos .docx generalmente producen mejores resultados con formato más preciso." }
     },
     {
       "@type": "Question",
       "name": "¿Es seguro subir mi documento Word para conversión?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF procesa tu archivo de forma segura y lo elimina de los servidores después de la conversión. Tu documento nunca se almacena, comparte o usa para ningún propósito más allá de la conversión que solicitaste." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it procesa tu archivo de forma segura y lo elimina de los servidores después de la conversión. Tu documento nunca se almacena, comparte o usa para ningún propósito más allá de la conversión que solicitaste." }
     },
     {
       "@type": "Question",
@@ -52,17 +52,17 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Cómo Convertir Word a PDF en Línea",
-  "description": "Convierte tu archivo DOCX a PDF en 3 simples pasos usando OmnisPDF.",
+  "description": "Convierte tu archivo DOCX a PDF en 3 simples pasos usando PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Sube tu documento Word",
-      "text": "Ve a la herramienta Word a PDF de OmnisPDF y sube tu archivo .docx o .doc haciendo clic o arrastrándolo al área de carga."
+      "text": "Ve a la herramienta Word a PDF de PDF.it y sube tu archivo .docx o .doc haciendo clic o arrastrándolo al área de carga."
     },
     {
       "@type": "HowToStep",
       "name": "Haz clic en Convertir",
-      "text": "Haz clic en el botón Convertir a PDF. OmnisPDF procesa tu archivo en segundos, preservando todo el formato, imágenes y fuentes."
+      "text": "Haz clic en el botón Convertir a PDF. PDF.it procesa tu archivo en segundos, preservando todo el formato, imágenes y fuentes."
     },
     {
       "@type": "HowToStep",
@@ -159,7 +159,7 @@ export default function ConvertirWordAPdfPage() {
                   },
                   {
                     title: "Haz clic en Convertir a PDF",
-                    desc: "OmnisPDF convierte tu documento en segundos. Fuentes, imágenes, tablas, encabezados, pies de página y saltos de página se preservan en el PDF resultante.",
+                    desc: "PDF.it convierte tu documento en segundos. Fuentes, imágenes, tablas, encabezados, pies de página y saltos de página se preservan en el PDF resultante.",
                   },
                   {
                     title: "Descarga y verifica",
@@ -235,7 +235,7 @@ export default function ConvertirWordAPdfPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">¿Necesitas Convertir Otros Formatos de Office?</h2>
               <p className="text-slate-600 mb-4">
-                Word no es el único tipo de archivo que podrías necesitar convertir a PDF. OmnisPDF maneja la suite completa de Microsoft Office:
+                Word no es el único tipo de archivo que podrías necesitar convertir a PDF. PDF.it maneja la suite completa de Microsoft Office:
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">Excel a PDF</Link> — convierte hojas de cálculo preservando columnas, filas y gráficos.</li>
@@ -301,11 +301,11 @@ export default function ConvertirWordAPdfPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo convierto Word a PDF en línea gratis?", a: "Sube tu archivo .docx o .doc a la herramienta Word a PDF de OmnisPDF, haz clic en Convertir y descarga el PDF. No necesitas registrarte para tus primeros 3 archivos — toma aproximadamente 10 segundos." },
-                { q: "¿Mi formato se mantendrá igual al convertir Word a PDF?", a: "OmnisPDF preserva fuentes, espaciado, imágenes, encabezados, pies de página y diseño de página durante la conversión. Para mejores resultados, usa fuentes estándar como Arial, Calibri o Times New Roman en tu documento Word." },
+                { q: "¿Cómo convierto Word a PDF en línea gratis?", a: "Sube tu archivo .docx o .doc a la herramienta Word a PDF de PDF.it, haz clic en Convertir y descarga el PDF. No necesitas registrarte para tus primeros 3 archivos — toma aproximadamente 10 segundos." },
+                { q: "¿Mi formato se mantendrá igual al convertir Word a PDF?", a: "PDF.it preserva fuentes, espaciado, imágenes, encabezados, pies de página y diseño de página durante la conversión. Para mejores resultados, usa fuentes estándar como Arial, Calibri o Times New Roman en tu documento Word." },
                 { q: "¿Puedo convertir múltiples archivos Word a PDF a la vez?", a: "Sí. Los usuarios Pro pueden convertir por lotes múltiples archivos .docx a PDF en una sola sesión. Los usuarios gratuitos pueden convertir un archivo a la vez." },
-                { q: "¿Cuál es la diferencia entre .doc y .docx?", a: ".doc es el formato antiguo de Microsoft Word (Word 97-2003). .docx es el formato moderno usado desde Word 2007. Ambos se pueden convertir a PDF con OmnisPDF, pero los archivos .docx generalmente producen mejores resultados con formato más preciso." },
-                { q: "¿Es seguro subir mi documento Word para conversión?", a: "Sí. OmnisPDF procesa tu archivo de forma segura y lo elimina de los servidores después de la conversión. Tu documento nunca se almacena, comparte o usa para ningún propósito más allá de la conversión que solicitaste." },
+                { q: "¿Cuál es la diferencia entre .doc y .docx?", a: ".doc es el formato antiguo de Microsoft Word (Word 97-2003). .docx es el formato moderno usado desde Word 2007. Ambos se pueden convertir a PDF con PDF.it, pero los archivos .docx generalmente producen mejores resultados con formato más preciso." },
+                { q: "¿Es seguro subir mi documento Word para conversión?", a: "Sí. PDF.it procesa tu archivo de forma segura y lo elimina de los servidores después de la conversión. Tu documento nunca se almacena, comparte o usa para ningún propósito más allá de la conversión que solicitaste." },
                 { q: "¿Por qué debería convertir Word a PDF en lugar de compartir el archivo .docx?", a: "Los PDFs se ven igual en cada dispositivo y sistema operativo. Los documentos Word pueden cambiar de formato dependiendo de la versión de Word, las fuentes instaladas y el tamaño de pantalla. Los PDFs también previenen ediciones accidentales, siendo ideales para versiones finales de contratos, currículos e informes." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

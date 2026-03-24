@@ -6,15 +6,15 @@ import { ProcessingInterface } from "@/components/processing-interface"
 import { FileText, Zap, Shield, Download } from "lucide-react"
 
 export const metadata = {
-  title: "Organizar PDF em Lote — Reorganize Varios PDFs de Uma Vez | OmnisPDF",
+  title: "Organizar PDF em Lote — Reorganize Varios PDFs de Uma Vez | PDF.it",
   description:
-    "Organize multiplos PDFs em lote com o OmnisPDF. Reordene e gerencie paginas de varios documentos simultaneamente — rapido, seguro e no navegador.",
+    "Organize multiplos PDFs em lote com o PDF.it. Reordene e gerencie paginas de varios documentos simultaneamente — rapido, seguro e no navegador.",
   alternates: {
-    canonical: "https://omnispdf.com/br/organizar-pdf-em-lote",
+    canonical: "https://pdf.it.com/br/organizar-pdf-em-lote",
     languages: {
-      en: "https://omnispdf.com/batch-organize-pdf",
-      es: "https://omnispdf.com/es/organizar-pdf-por-lotes",
-      pt: "https://omnispdf.com/br/organizar-pdf-em-lote",
+      en: "https://pdf.it.com/batch-organize-pdf",
+      es: "https://pdf.it.com/es/organizar-pdf-por-lotes",
+      pt: "https://pdf.it.com/br/organizar-pdf-em-lote",
     },
   },
 }
@@ -36,7 +36,7 @@ const faqSchema = {
       name: "Quantos PDFs posso organizar ao mesmo tempo?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Com o plano Pro do OmnisPDF voce pode processar multiplos PDFs em lote. O limite depende do tamanho total dos arquivos — ate 200MB por arquivo no plano Pro.",
+        text: "Com o plano Pro do PDF.it voce pode processar multiplos PDFs em lote. O limite depende do tamanho total dos arquivos — ate 200MB por arquivo no plano Pro.",
       },
     },
     {
@@ -60,7 +60,7 @@ const faqSchema = {
       name: "A qualidade dos PDFs e preservada no processamento em lote?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sim. O OmnisPDF preserva a qualidade original de todos os documentos durante o processamento em lote. Texto, imagens e formatacao permanecem identicos.",
+        text: "Sim. O PDF.it preserva a qualidade original de todos os documentos durante o processamento em lote. Texto, imagens e formatacao permanecem identicos.",
       },
     },
   ],
@@ -114,7 +114,7 @@ export default function OrganizarPDFEmLotePage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Precisa organizar dezenas de PDFs? O processamento em lote do OmnisPDF permite gerenciar as paginas de multiplos documentos ao mesmo tempo. Suba seus PDFs, organize cada um e baixe todos os resultados de uma vez.
+              Precisa organizar dezenas de PDFs? O processamento em lote do PDF.it permite gerenciar as paginas de multiplos documentos ao mesmo tempo. Suba seus PDFs, organize cada um e baixe todos os resultados de uma vez.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Processe multiplos PDFs simultaneamente</li>
@@ -162,7 +162,7 @@ export default function OrganizarPDFEmLotePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Organizar PDFs em Lote</h2>
             <div className="space-y-4">
               {[
-                "Suba ou arraste todos os seus PDFs para o OmnisPDF.",
+                "Suba ou arraste todos os seus PDFs para o PDF.it.",
                 "Organize as paginas de cada documento — reordene, remova ou gire conforme necessario.",
                 "Clique em Processar Todos e baixe os PDFs organizados como ZIP.",
               ].map((step, i) => (
@@ -210,10 +210,10 @@ export default function OrganizarPDFEmLotePage() {
             <div className="space-y-6">
               {[
                 { q: "O que e organizar PDFs em lote?", a: "Organizar PDFs em lote significa processar varios documentos PDF ao mesmo tempo — reordenando paginas, removendo paginas desnecessarias e gerenciando a estrutura de multiplos arquivos simultaneamente." },
-                { q: "Quantos PDFs posso organizar ao mesmo tempo?", a: "Com o plano Pro do OmnisPDF voce pode processar multiplos PDFs em lote. O limite depende do tamanho total dos arquivos — ate 200MB por arquivo no plano Pro." },
+                { q: "Quantos PDFs posso organizar ao mesmo tempo?", a: "Com o plano Pro do PDF.it voce pode processar multiplos PDFs em lote. O limite depende do tamanho total dos arquivos — ate 200MB por arquivo no plano Pro." },
                 { q: "O processamento em lote e gratuito?", a: "O processamento em lote e um recurso Pro. Na versao gratuita voce pode organizar um PDF por vez, com arquivos de ate 25MB. Atualize para Pro para processar varios arquivos simultaneamente." },
                 { q: "Posso baixar todos os PDFs organizados de uma vez?", a: "Sim. Apos o processamento em lote, voce pode baixar todos os PDFs organizados em um unico arquivo ZIP ou individualmente." },
-                { q: "A qualidade dos PDFs e preservada no processamento em lote?", a: "Sim. O OmnisPDF preserva a qualidade original de todos os documentos durante o processamento em lote. Texto, imagens e formatacao permanecem identicos." },
+                { q: "A qualidade dos PDFs e preservada no processamento em lote?", a: "Sim. O PDF.it preserva a qualidade original de todos os documentos durante o processamento em lote. Texto, imagens e formatacao permanecem identicos." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

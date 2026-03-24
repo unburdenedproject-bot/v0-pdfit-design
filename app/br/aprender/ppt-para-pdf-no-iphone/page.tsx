@@ -5,20 +5,20 @@ import Link from "next/link"
 import { Smartphone, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Converter PPT para PDF no iPhone (Metodo Rapido) | OmnisPDF",
+  title: "Como Converter PPT para PDF no iPhone (Metodo Rapido) | PDF.it",
   description: "Aprenda a converter apresentacoes PowerPoint para PDF direto no seu iPhone. Sem app necessario — use o navegador Safari e converta PPTX para PDF em segundos.",
   keywords: "ppt para pdf iphone, converter powerpoint para pdf iphone, pptx para pdf celular, powerpoint para pdf no celular, converter ppt iphone",
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-  { "@type": "Question", "name": "Posso converter PPT para PDF no iPhone sem instalar nenhum app?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona diretamente no navegador Safari do iPhone. Basta acessar o site, enviar seu arquivo PPTX e baixar o PDF convertido. Nenhum app precisa ser instalado." } },
-  { "@type": "Question", "name": "A qualidade da conversao no iPhone e a mesma do computador?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O processamento acontece nos servidores do OmnisPDF, nao no seu dispositivo. A qualidade e identica independente de voce usar iPhone, Android ou computador." } },
+  { "@type": "Question", "name": "Posso converter PPT para PDF no iPhone sem instalar nenhum app?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona diretamente no navegador Safari do iPhone. Basta acessar o site, enviar seu arquivo PPTX e baixar o PDF convertido. Nenhum app precisa ser instalado." } },
+  { "@type": "Question", "name": "A qualidade da conversao no iPhone e a mesma do computador?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O processamento acontece nos servidores do PDF.it, nao no seu dispositivo. A qualidade e identica independente de voce usar iPhone, Android ou computador." } },
   { "@type": "Question", "name": "Qual o tamanho maximo de arquivo que posso converter no iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Usuarios gratuitos podem converter arquivos ate 25MB. Usuarios Pro podem enviar arquivos ate 200MB. Isso vale para qualquer dispositivo, incluindo iPhone." } },
   { "@type": "Question", "name": "Onde o PDF convertido fica salvo no iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "O PDF e baixado para a pasta Downloads do seu iPhone, acessivel pelo app Arquivos. Voce tambem pode compartilhar diretamente via AirDrop, WhatsApp, email ou qualquer outro app." } }
 ] }
 
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como converter PPT para PDF no iPhone", "description": "Converta PowerPoint para PDF no iPhone em 3 passos simples usando o navegador.", "step": [
-  { "@type": "HowToStep", "name": "Abra o OmnisPDF no Safari", "text": "No seu iPhone, abra o Safari e acesse a ferramenta PowerPoint para PDF do OmnisPDF." },
+  { "@type": "HowToStep", "name": "Abra o PDF.it no Safari", "text": "No seu iPhone, abra o Safari e acesse a ferramenta PowerPoint para PDF do PDF.it." },
   { "@type": "HowToStep", "name": "Envie seu arquivo PPTX", "text": "Toque na area de upload e selecione o arquivo PowerPoint do iCloud Drive, Google Drive, ou da memoria do iPhone." },
   { "@type": "HowToStep", "name": "Baixe o PDF", "text": "Toque em Converter e depois baixe o PDF. O arquivo estara disponivel na pasta Downloads do app Arquivos." }
 ] }
@@ -56,9 +56,9 @@ export default function PptParaPdfNoIphonePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-6">Como converter PPT para PDF no iPhone (passo a passo)</h2>
             <div className="space-y-4">
               {[
-                { title: "Abra o OmnisPDF no Safari", desc: "No seu iPhone, abra o Safari e acesse omnispdf.com/br/powerpoint-para-pdf. O site e totalmente responsivo e funciona perfeitamente em telas de celular." },
+                { title: "Abra o PDF.it no Safari", desc: "No seu iPhone, abra o Safari e acesse pdf.it.com/br/powerpoint-para-pdf. O site e totalmente responsivo e funciona perfeitamente em telas de celular." },
                 { title: "Envie seu arquivo PowerPoint", desc: "Toque na area de upload. Voce pode selecionar arquivos do iCloud Drive, Google Drive, Dropbox, do app Arquivos ou de qualquer lugar no seu iPhone. Formatos PPTX e PPT sao aceitos." },
-                { title: "Converta e baixe o PDF", desc: "Toque em Converter. O processamento acontece nos servidores do OmnisPDF (nao no seu iPhone), entao a conversao e rapida mesmo em conexoes mais lentas. Baixe o PDF e compartilhe diretamente." },
+                { title: "Converta e baixe o PDF", desc: "Toque em Converter. O processamento acontece nos servidores do PDF.it (nao no seu iPhone), entao a conversao e rapida mesmo em conexoes mais lentas. Baixe o PDF e compartilhe diretamente." },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
                   <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
@@ -86,7 +86,7 @@ export default function PptParaPdfNoIphonePage() {
               <li>&#10003; Toque nos tres pontos (...) &gt; <strong>Exportar</strong> &gt; <strong>PDF</strong>.</li>
               <li>&#10003; Escolha onde salvar o PDF.</li>
             </ul>
-            <p className="text-slate-600 mt-4">No entanto, se voce nao tem o app instalado ou nao quer instalar, o <Link href="/br/powerpoint-para-pdf" className="text-orange-600 hover:underline">conversor online do OmnisPDF</Link> e a opcao mais rapida.</p>
+            <p className="text-slate-600 mt-4">No entanto, se voce nao tem o app instalado ou nao quer instalar, o <Link href="/br/powerpoint-para-pdf" className="text-orange-600 hover:underline">conversor online do PDF.it</Link> e a opcao mais rapida.</p>
           </section>
         </div></article>
 

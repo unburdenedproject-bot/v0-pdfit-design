@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Unlock, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Olvidaste Tu Contrasena de PDF? Esto Es Lo Que Puedes Hacer | OmnisPDF",
+  title: "Olvidaste Tu Contrasena de PDF? Esto Es Lo Que Puedes Hacer | PDF.it",
   description:
     "Olvidaste la contrasena de tu PDF? Aprende la diferencia entre contrasenas de apertura y de permisos, y descubre tus opciones para recuperar acceso a PDF bloqueados.",
   keywords: "olvide contrasena pdf, recuperar contrasena pdf, no puedo abrir pdf, contrasena pdf perdida",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Puedo abrir un PDF si olvide la contrasena?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Depende del tipo de contrasena. Si el PDF tiene una contrasena de permisos (puedes verlo pero no editar/imprimir), OmnisPDF puede eliminar esas restricciones. Si tiene una contrasena de apertura (no puedes ver el archivo en absoluto), necesitaras recuperar o recordar la contrasena — no hay forma de eludir el cifrado fuerte." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Depende del tipo de contrasena. Si el PDF tiene una contrasena de permisos (puedes verlo pero no editar/imprimir), PDF.it puede eliminar esas restricciones. Si tiene una contrasena de apertura (no puedes ver el archivo en absoluto), necesitaras recuperar o recordar la contrasena — no hay forma de eludir el cifrado fuerte." }
     },
     {
       "@type": "Question",
@@ -27,8 +27,8 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "OmnisPDF puede descifrar una contrasena de apertura de PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF no descifra ni usa fuerza bruta en contrasenas de apertura. El cifrado moderno de PDF (AES de 256 bits) es extremadamente fuerte y no puede ser eludido. OmnisPDF solo puede eliminar restricciones de permisos o desbloquear PDF cuando proporcionas la contrasena correcta." }
+      "name": "PDF.it puede descifrar una contrasena de apertura de PDF?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it no descifra ni usa fuerza bruta en contrasenas de apertura. El cifrado moderno de PDF (AES de 256 bits) es extremadamente fuerte y no puede ser eludido. PDF.it solo puede eliminar restricciones de permisos o desbloquear PDF cuando proporcionas la contrasena correcta." }
     },
     {
       "@type": "Question",
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Puedo eliminar restricciones de permisos sin contrasena?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si, en muchos casos. Si puedes abrir y ver el PDF (sin contrasena de apertura), OmnisPDF puede eliminar las restricciones de permisos como bloqueos de impresion, copia y edicion sin necesitar la contrasena del propietario." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si, en muchos casos. Si puedes abrir y ver el PDF (sin contrasena de apertura), PDF.it puede eliminar las restricciones de permisos como bloqueos de impresion, copia y edicion sin necesitar la contrasena del propietario." }
     },
     {
       "@type": "Question",
@@ -52,7 +52,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Que Hacer Cuando Olvidas una Contrasena de PDF",
-  "description": "Pasos para recuperar acceso a un PDF protegido con contrasena usando OmnisPDF.",
+  "description": "Pasos para recuperar acceso a un PDF protegido con contrasena usando PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
@@ -61,8 +61,8 @@ const howToSchema = {
     },
     {
       "@type": "HowToStep",
-      "name": "Sube a OmnisPDF",
-      "text": "Ve a la herramienta Desbloquear PDF de OmnisPDF y sube el archivo. Para restricciones solo de permisos, OmnisPDF puede eliminarlas automaticamente."
+      "name": "Sube a PDF.it",
+      "text": "Ve a la herramienta Desbloquear PDF de PDF.it y sube el archivo. Para restricciones solo de permisos, PDF.it puede eliminarlas automaticamente."
     },
     {
       "@type": "HowToStep",
@@ -139,7 +139,7 @@ export default function DesbloquearPDFContrasenaOlvidadaPage() {
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
-                <strong>Prueba rapida:</strong> Puedes abrir y leer el PDF? Si es asi, tienes una contrasena de permisos — y la herramienta <Link href="/es/desbloquear-pdf" className="text-orange-600 hover:underline">Desbloquear PDF</Link> de OmnisPDF puede eliminar esas restricciones sin necesitar la contrasena.
+                <strong>Prueba rapida:</strong> Puedes abrir y leer el PDF? Si es asi, tienes una contrasena de permisos — y la herramienta <Link href="/es/desbloquear-pdf" className="text-orange-600 hover:underline">Desbloquear PDF</Link> de PDF.it puede eliminar esas restricciones sin necesitar la contrasena.
               </p>
             </section>
 
@@ -147,16 +147,16 @@ export default function DesbloquearPDFContrasenaOlvidadaPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-6">Si Olvidaste la Contrasena de Permisos</h2>
               <p className="text-slate-600 mb-4">
-                Buenas noticias — este es el escenario facil. Si puedes abrir y ver el PDF pero no puedes imprimir, copiar o editar, OmnisPDF puede eliminar esas restricciones:
+                Buenas noticias — este es el escenario facil. Si puedes abrir y ver el PDF pero no puedes imprimir, copiar o editar, PDF.it puede eliminar esas restricciones:
               </p>
               <div className="space-y-4">
                 {[
                   {
-                    title: "Sube el PDF a OmnisPDF",
+                    title: "Sube el PDF a PDF.it",
                     desc: "Ve a la herramienta Desbloquear PDF y sube tu archivo. Como puedes ver el PDF, no hay contrasena de apertura bloqueando el acceso.",
                   },
                   {
-                    title: "OmnisPDF elimina las restricciones",
+                    title: "PDF.it elimina las restricciones",
                     desc: "La herramienta detecta y elimina automaticamente las restricciones de permisos — no se necesita la contrasena del propietario. Esto funciona porque las contrasenas de permisos solo controlan lo que el software permite, no el cifrado real del contenido.",
                   },
                   {
@@ -227,7 +227,7 @@ export default function DesbloquearPDFContrasenaOlvidadaPage() {
 
             {/* Herramientas relacionadas */}
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Herramientas de OmnisPDF para Gestionar la Seguridad de PDF</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Herramientas de PDF.it para Gestionar la Seguridad de PDF</h2>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Desbloquear PDF — Eliminar Restricciones</h3>
@@ -259,7 +259,7 @@ export default function DesbloquearPDFContrasenaOlvidadaPage() {
         <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Necesitas Eliminar Restricciones de PDF?</h2>
-            <p className="text-slate-300 mb-6">Si tu PDF tiene restricciones de permisos (no una contrasena de apertura), OmnisPDF puede eliminarlas al instante — gratis, sin necesidad de registro.</p>
+            <p className="text-slate-300 mb-6">Si tu PDF tiene restricciones de permisos (no una contrasena de apertura), PDF.it puede eliminarlas al instante — gratis, sin necesidad de registro.</p>
             <Link
               href="/es/desbloquear-pdf"
               className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
@@ -298,11 +298,11 @@ export default function DesbloquearPDFContrasenaOlvidadaPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Puedo abrir un PDF si olvide la contrasena?", a: "Depende del tipo de contrasena. Si el PDF tiene una contrasena de permisos (puedes verlo pero no editar/imprimir), OmnisPDF puede eliminar esas restricciones. Si tiene una contrasena de apertura (no puedes ver el archivo en absoluto), necesitaras recuperar o recordar la contrasena — no hay forma de eludir el cifrado fuerte." },
+                { q: "Puedo abrir un PDF si olvide la contrasena?", a: "Depende del tipo de contrasena. Si el PDF tiene una contrasena de permisos (puedes verlo pero no editar/imprimir), PDF.it puede eliminar esas restricciones. Si tiene una contrasena de apertura (no puedes ver el archivo en absoluto), necesitaras recuperar o recordar la contrasena — no hay forma de eludir el cifrado fuerte." },
                 { q: "Cual es la diferencia entre una contrasena de apertura y una de permisos?", a: "Una contrasena de apertura impide que veas el PDF por completo — ves un mensaje de contrasena cuando intentas abrirlo. Una contrasena de permisos te permite ver el PDF pero restringe acciones como imprimir, copiar y editar. Las contrasenas de permisos son mucho mas faciles de eliminar." },
-                { q: "OmnisPDF puede descifrar una contrasena de apertura de PDF?", a: "No. OmnisPDF no descifra ni usa fuerza bruta en contrasenas de apertura. El cifrado moderno de PDF (AES de 256 bits) es extremadamente fuerte y no puede ser eludido. OmnisPDF solo puede eliminar restricciones de permisos o desbloquear PDF cuando proporcionas la contrasena correcta." },
+                { q: "PDF.it puede descifrar una contrasena de apertura de PDF?", a: "No. PDF.it no descifra ni usa fuerza bruta en contrasenas de apertura. El cifrado moderno de PDF (AES de 256 bits) es extremadamente fuerte y no puede ser eludido. PDF.it solo puede eliminar restricciones de permisos o desbloquear PDF cuando proporcionas la contrasena correcta." },
                 { q: "Como puedo recuperar una contrasena de PDF olvidada?", a: "Revisa tu correo electronico buscando el mensaje original que contenia la contrasena. Busca en las contrasenas guardadas de tu navegador. Prueba contrasenas comunes que uses. Verifica si la contrasena fue compartida en un chat o mensaje de texto. Si el PDF es de una organizacion, contactalos para obtener la contrasena." },
-                { q: "Puedo eliminar restricciones de permisos sin contrasena?", a: "Si, en muchos casos. Si puedes abrir y ver el PDF (sin contrasena de apertura), OmnisPDF puede eliminar las restricciones de permisos como bloqueos de impresion, copia y edicion sin necesitar la contrasena del propietario." },
+                { q: "Puedo eliminar restricciones de permisos sin contrasena?", a: "Si, en muchos casos. Si puedes abrir y ver el PDF (sin contrasena de apertura), PDF.it puede eliminar las restricciones de permisos como bloqueos de impresion, copia y edicion sin necesitar la contrasena del propietario." },
                 { q: "Como evito perder mi contrasena de PDF en el futuro?", a: "Usa un gestor de contrasenas para almacenar contrasenas de PDF. Mantien un registro de que archivos estan protegidos con contrasena y que contrasenas usaste. Considera usar restricciones de permisos en lugar de contrasenas de apertura cuando solo necesites controlar la edicion e impresion." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

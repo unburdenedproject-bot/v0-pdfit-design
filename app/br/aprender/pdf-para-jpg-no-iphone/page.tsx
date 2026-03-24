@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ImageIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Converter PDF para JPG no iPhone (Sem Apps) | OmnisPDF",
+  title: "Como Converter PDF para JPG no iPhone (Sem Apps) | PDF.it",
   description:
     "Aprenda como converter PDF para JPG no iPhone usando apenas o navegador. Sem apps para baixar — guia rápido e grátis para salvar páginas de PDF como imagens JPG no iOS.",
   keywords: "pdf para jpg iphone, converter pdf para jpg no iphone, pdf para imagem iphone, salvar pdf como jpg iphone",
@@ -15,9 +15,9 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Preciso baixar um app para converter PDF para JPG no iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Não. O OmnisPDF funciona diretamente no Safari ou Chrome do iPhone. Basta abrir o site, enviar seu PDF e baixar as imagens JPG — sem app necessário." } },
+    { "@type": "Question", "name": "Preciso baixar um app para converter PDF para JPG no iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Não. O PDF.it funciona diretamente no Safari ou Chrome do iPhone. Basta abrir o site, enviar seu PDF e baixar as imagens JPG — sem app necessário." } },
     { "@type": "Question", "name": "Onde ficam salvas as imagens JPG no iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "As imagens JPG são salvas na pasta Downloads do iPhone ou diretamente no app Fotos, dependendo das configurações do seu navegador. Você pode acessá-las pelo app Arquivos." } },
-    { "@type": "Question", "name": "Posso converter PDF para JPG no iPhone sem internet?", "acceptedAnswer": { "@type": "Answer", "text": "O OmnisPDF é uma ferramenta online, então precisa de conexão com a internet. No entanto, a conversão é rápida e funciona bem mesmo com conexão móvel 4G/5G." } }
+    { "@type": "Question", "name": "Posso converter PDF para JPG no iPhone sem internet?", "acceptedAnswer": { "@type": "Answer", "text": "O PDF.it é uma ferramenta online, então precisa de conexão com a internet. No entanto, a conversão é rápida e funciona bem mesmo com conexão móvel 4G/5G." } }
   ]
 }
 
@@ -27,7 +27,7 @@ const howToSchema = {
   "name": "Como Converter PDF para JPG no iPhone",
   "description": "Converta PDF para imagens JPG diretamente no iPhone em 3 passos simples.",
   "step": [
-    { "@type": "HowToStep", "name": "Abra o OmnisPDF no Safari", "text": "No seu iPhone, abra o Safari ou Chrome e vá para a ferramenta PDF para JPG do OmnisPDF." },
+    { "@type": "HowToStep", "name": "Abra o PDF.it no Safari", "text": "No seu iPhone, abra o Safari ou Chrome e vá para a ferramenta PDF para JPG do PDF.it." },
     { "@type": "HowToStep", "name": "Envie seu PDF", "text": "Toque em 'Escolher arquivo' e selecione o PDF do app Arquivos, iCloud Drive ou email." },
     { "@type": "HowToStep", "name": "Baixe as imagens JPG", "text": "Toque em Converter e baixe as imagens JPG. Elas serão salvas na pasta Downloads ou no app Fotos." }
   ]
@@ -83,7 +83,7 @@ export default function PdfParaJpgNoIphonePage() {
               <h2 className="text-2xl font-black text-slate-900 mb-6">Passo a Passo no iPhone</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Abra o OmnisPDF no Safari", desc: "No seu iPhone, abra o Safari (ou Chrome) e acesse a ferramenta PDF para JPG do OmnisPDF. O site é totalmente responsivo e funciona perfeitamente em telas pequenas." },
+                  { title: "Abra o PDF.it no Safari", desc: "No seu iPhone, abra o Safari (ou Chrome) e acesse a ferramenta PDF para JPG do PDF.it. O site é totalmente responsivo e funciona perfeitamente em telas pequenas." },
                   { title: "Envie seu PDF", desc: "Toque em 'Escolher arquivo' e selecione o PDF. Você pode escolher de Arquivos, iCloud Drive, Downloads ou até de um anexo de email salvo. Arquivos até 25MB são grátis." },
                   { title: "Converta e baixe", desc: "Escolha a qualidade (150 DPI para WhatsApp, 200 DPI para uso geral) e toque em Converter. Baixe as imagens JPG — elas vão para a pasta Downloads do iPhone." },
                 ].map((step, i) => (
@@ -161,9 +161,9 @@ export default function PdfParaJpgNoIphonePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Preciso baixar um app para converter PDF para JPG no iPhone?", a: "Não. O OmnisPDF funciona diretamente no Safari ou Chrome do iPhone. Basta abrir o site, enviar seu PDF e baixar as imagens JPG — sem app necessário." },
+                { q: "Preciso baixar um app para converter PDF para JPG no iPhone?", a: "Não. O PDF.it funciona diretamente no Safari ou Chrome do iPhone. Basta abrir o site, enviar seu PDF e baixar as imagens JPG — sem app necessário." },
                 { q: "Onde ficam salvas as imagens JPG no iPhone?", a: "As imagens JPG são salvas na pasta Downloads do iPhone ou diretamente no app Fotos, dependendo das configurações do seu navegador. Você pode acessá-las pelo app Arquivos." },
-                { q: "Posso converter PDF para JPG no iPhone sem internet?", a: "O OmnisPDF é uma ferramenta online, então precisa de conexão com a internet. No entanto, a conversão é rápida e funciona bem mesmo com conexão móvel 4G/5G." },
+                { q: "Posso converter PDF para JPG no iPhone sem internet?", a: "O PDF.it é uma ferramenta online, então precisa de conexão com a internet. No entanto, a conversão é rápida e funciona bem mesmo com conexão móvel 4G/5G." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Scissors, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Dividir un PDF para Email (Bajo Límites de Adjuntos) | OmnisPDF",
+  title: "Dividir un PDF para Email (Bajo Límites de Adjuntos) | PDF.it",
   description:
     "Aprende cómo dividir un PDF grande en archivos más pequeños que quepan bajo los límites de adjuntos de email. Funciona para Gmail (25MB), Outlook (20MB), y más — gratis, sin software.",
   keywords: "dividir pdf para email, pdf muy grande para email, reducir pdf para adjunto email, dividir pdf en archivos más pequeños",
@@ -14,12 +14,12 @@ export const metadata = {
 const faqSchema = {
   "@context": "https://schema.org", "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "¿Cómo divido un PDF que es muy grande para email?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Dividir PDF de OmnisPDF, elige dividir por tamaño de archivo o conteo de páginas, y descarga las partes más pequeñas. Cada parte estará bajo el límite de adjuntos de email." } },
+    { "@type": "Question", "name": "¿Cómo divido un PDF que es muy grande para email?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Dividir PDF de PDF.it, elige dividir por tamaño de archivo o conteo de páginas, y descarga las partes más pequeñas. Cada parte estará bajo el límite de adjuntos de email." } },
     { "@type": "Question", "name": "¿Cuál es el límite de adjuntos de Gmail?", "acceptedAnswer": { "@type": "Answer", "text": "Gmail permite adjuntos de hasta 25MB por email (total para todos los adjuntos combinados). Si tu PDF es más grande, necesitas dividirlo en archivos más pequeños o comprimirlo para reducir el tamaño." } },
     { "@type": "Question", "name": "¿Cuál es el límite de adjuntos de Outlook?", "acceptedAnswer": { "@type": "Answer", "text": "Microsoft Outlook permite adjuntos de hasta 20MB por email. Outlook.com (Hotmail) tiene el mismo límite de 20MB. Para archivos más grandes, divide o comprime tu PDF." } },
-    { "@type": "Question", "name": "¿Debo dividir o comprimir mi PDF para email?", "acceptedAnswer": { "@type": "Answer", "text": "Intenta comprimir primero — es más simple. Si el PDF comprimido sigue siendo muy grande, divídelo en partes. OmnisPDF ofrece ambas herramientas: Comprimir PDF y Dividir PDF." } },
-    { "@type": "Question", "name": "¿Puedo dividir un PDF en partes de un tamaño específico?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF te permite dividir por rangos de páginas, así puedes estimar cuántas páginas caben bajo tu tamaño objetivo. Para control preciso, divide en secciones pequeñas y verifica el tamaño de cada archivo." } },
-    { "@type": "Question", "name": "¿Cómo recombino los PDFs divididos después de enviar?", "acceptedAnswer": { "@type": "Answer", "text": "El destinatario puede usar la herramienta Unir PDF de OmnisPDF para combinar todas las partes en un solo documento. Comparte este enlace: omnispdf.com/es/unir-pdf" } }
+    { "@type": "Question", "name": "¿Debo dividir o comprimir mi PDF para email?", "acceptedAnswer": { "@type": "Answer", "text": "Intenta comprimir primero — es más simple. Si el PDF comprimido sigue siendo muy grande, divídelo en partes. PDF.it ofrece ambas herramientas: Comprimir PDF y Dividir PDF." } },
+    { "@type": "Question", "name": "¿Puedo dividir un PDF en partes de un tamaño específico?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it te permite dividir por rangos de páginas, así puedes estimar cuántas páginas caben bajo tu tamaño objetivo. Para control preciso, divide en secciones pequeñas y verifica el tamaño de cada archivo." } },
+    { "@type": "Question", "name": "¿Cómo recombino los PDFs divididos después de enviar?", "acceptedAnswer": { "@type": "Answer", "text": "El destinatario puede usar la herramienta Unir PDF de PDF.it para combinar todas las partes en un solo documento. Comparte este enlace: pdf.it.com/es/unir-pdf" } }
   ]
 }
 
@@ -27,7 +27,7 @@ const howToSchema = {
   "@context": "https://schema.org", "@type": "HowTo", "name": "Cómo Dividir un PDF para Email",
   "description": "Divide un PDF grande en archivos más pequeños que quepan bajo los límites de adjuntos de email en 3 simples pasos.",
   "step": [
-    { "@type": "HowToStep", "name": "Sube tu PDF grande", "text": "Ve a la herramienta Dividir PDF de OmnisPDF y sube el PDF que es muy grande para email." },
+    { "@type": "HowToStep", "name": "Sube tu PDF grande", "text": "Ve a la herramienta Dividir PDF de PDF.it y sube el PDF que es muy grande para email." },
     { "@type": "HowToStep", "name": "Divide por rangos de páginas", "text": "Divide el PDF en secciones que sean lo suficientemente pequeñas para enviar por email. Por ejemplo, divide un PDF de 40 páginas en dos mitades de 20 páginas." },
     { "@type": "HowToStep", "name": "Descarga y envía cada parte", "text": "Descarga los archivos divididos y adjunta cada uno a un email separado. Etiquétalos claramente (Parte 1 de 3, Parte 2 de 3, etc.)." }
   ]
@@ -80,7 +80,7 @@ export default function DividirPDFParaEmailPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-6">Cómo Dividir un PDF para Email (Paso a Paso)</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Sube tu PDF sobredimensionado", desc: "Ve a la herramienta Dividir PDF de OmnisPDF y sube tu archivo. Verás el conteo total de páginas y podrás previsualizar cada página. Los usuarios gratuitos pueden subir archivos hasta 25MB; usuarios Pro hasta 200MB." },
+                  { title: "Sube tu PDF sobredimensionado", desc: "Ve a la herramienta Dividir PDF de PDF.it y sube tu archivo. Verás el conteo total de páginas y podrás previsualizar cada página. Los usuarios gratuitos pueden subir archivos hasta 25MB; usuarios Pro hasta 200MB." },
                   { title: "Divídelo en partes amigables para email", desc: "Divide el PDF en rangos de páginas que mantengan cada parte bajo el límite de tamaño del email. Por ejemplo, divide un PDF de 60 páginas y 40MB en tres secciones de 20 páginas. Cada sección debería ser aproximadamente 13MB — bien bajo el límite de 25MB de Gmail." },
                   { title: "Descarga y envía cada parte por separado", desc: "Descarga cada archivo dividido. Adjunta la Parte 1 a tu primer email, la Parte 2 a un segundo email, y así sucesivamente. Nombra los asuntos claramente: \"Documento - Parte 1 de 3\", \"Documento - Parte 2 de 3\", etc." },
                 ].map((step, i) => (
@@ -119,7 +119,7 @@ export default function DividirPDFParaEmailPage() {
               <p className="text-slate-600 mb-4">Después de enviar PDFs divididos, el destinatario necesitará unirlos de nuevo en un documento. Incluye una nota en tu email con estas instrucciones:</p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Descarga todas las partes</strong> de cada email a la misma carpeta.</li>
-                <li>&#10003; <strong>Ve a <Link href="/es/unir-pdf" className="text-orange-600 hover:underline">OmnisPDF Unir PDF</Link></strong> y sube todas las partes.</li>
+                <li>&#10003; <strong>Ve a <Link href="/es/unir-pdf" className="text-orange-600 hover:underline">PDF.it Unir PDF</Link></strong> y sube todas las partes.</li>
                 <li>&#10003; <strong>Ordénalas</strong> (Parte 1 primero, Parte 2 segundo, etc.).</li>
                 <li>&#10003; <strong>Haz clic en Unir</strong> y descarga el documento completo.</li>
               </ul>
@@ -174,12 +174,12 @@ export default function DividirPDFParaEmailPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo divido un PDF que es muy grande para email?", a: "Sube tu PDF a la herramienta Dividir PDF de OmnisPDF, elige dividir por tamaño de archivo o conteo de páginas, y descarga las partes más pequeñas. Cada parte estará bajo el límite de adjuntos de email." },
+                { q: "¿Cómo divido un PDF que es muy grande para email?", a: "Sube tu PDF a la herramienta Dividir PDF de PDF.it, elige dividir por tamaño de archivo o conteo de páginas, y descarga las partes más pequeñas. Cada parte estará bajo el límite de adjuntos de email." },
                 { q: "¿Cuál es el límite de adjuntos de Gmail?", a: "Gmail permite adjuntos de hasta 25MB por email (total para todos los adjuntos combinados). Si tu PDF es más grande, necesitas dividirlo en archivos más pequeños o comprimirlo para reducir el tamaño." },
                 { q: "¿Cuál es el límite de adjuntos de Outlook?", a: "Microsoft Outlook permite adjuntos de hasta 20MB por email. Outlook.com (Hotmail) tiene el mismo límite de 20MB. Para archivos más grandes, divide o comprime tu PDF." },
-                { q: "¿Debo dividir o comprimir mi PDF para email?", a: "Intenta comprimir primero — es más simple. Si el PDF comprimido sigue siendo muy grande, divídelo en partes. OmnisPDF ofrece ambas herramientas: Comprimir PDF y Dividir PDF." },
-                { q: "¿Puedo dividir un PDF en partes de un tamaño específico?", a: "Sí. OmnisPDF te permite dividir por rangos de páginas, así puedes estimar cuántas páginas caben bajo tu tamaño objetivo. Para control preciso, divide en secciones pequeñas y verifica el tamaño de cada archivo." },
-                { q: "¿Cómo recombino los PDFs divididos después de enviar?", a: "El destinatario puede usar la herramienta Unir PDF de OmnisPDF para combinar todas las partes en un solo documento. Comparte este enlace: omnispdf.com/es/unir-pdf" },
+                { q: "¿Debo dividir o comprimir mi PDF para email?", a: "Intenta comprimir primero — es más simple. Si el PDF comprimido sigue siendo muy grande, divídelo en partes. PDF.it ofrece ambas herramientas: Comprimir PDF y Dividir PDF." },
+                { q: "¿Puedo dividir un PDF en partes de un tamaño específico?", a: "Sí. PDF.it te permite dividir por rangos de páginas, así puedes estimar cuántas páginas caben bajo tu tamaño objetivo. Para control preciso, divide en secciones pequeñas y verifica el tamaño de cada archivo." },
+                { q: "¿Cómo recombino los PDFs divididos después de enviar?", a: "El destinatario puede usar la herramienta Unir PDF de PDF.it para combinar todas las partes en un solo documento. Comparte este enlace: pdf.it.com/es/unir-pdf" },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

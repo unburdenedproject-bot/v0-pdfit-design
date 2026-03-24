@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Mejor Formato para Enviar Documentos (PDF vs DOCX vs Otros) | OmnisPDF",
+  title: "Mejor Formato para Enviar Documentos (PDF vs DOCX vs Otros) | PDF.it",
   description:
     "PDF vs DOCX: cual formato debes usar para enviar documentos? Descubre por que PDF es la mejor opcion para correos, solicitudes de empleo, facturas y uso profesional.",
   keywords: "mejor formato para enviar documentos, pdf vs docx, enviar documentos como pdf, formato de documento para email, mejor formato de archivo para compartir",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Puedo convertir mis documentos a PDF gratis?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. OmnisPDF te permite convertir archivos de Word, Excel y PowerPoint a PDF gratis, hasta 10 conversiones por dia con archivos de hasta 25MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it te permite convertir archivos de Word, Excel y PowerPoint a PDF gratis, hasta 10 conversiones por dia con archivos de hasta 25MB." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como me aseguro de que mi PDF se vea bien antes de enviarlo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Despues de convertir a PDF, abre el archivo y revisa cada pagina por problemas de formato. Usa la herramienta de aplanar de OmnisPDF para eliminar campos de formulario o capas que podrian mostrarse diferente en otros dispositivos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Despues de convertir a PDF, abre el archivo y revisa cada pagina por problemas de formato. Usa la herramienta de aplanar de PDF.it para eliminar campos de formulario o capas que podrian mostrarse diferente en otros dispositivos." }
     }
   ]
 }
@@ -62,7 +62,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Convierte tu archivo a PDF",
-      "text": "Sube tu archivo de Word, Excel o PowerPoint al convertidor de Office a PDF de OmnisPDF. La herramienta preserva tu formato, fuentes e imagenes automaticamente."
+      "text": "Sube tu archivo de Word, Excel o PowerPoint al convertidor de Office a PDF de PDF.it. La herramienta preserva tu formato, fuentes e imagenes automaticamente."
     },
     {
       "@type": "HowToStep",
@@ -188,7 +188,7 @@ export default function MejorFormatoParaEnviarDocumentosPage() {
                 <li>&#10003; <strong>Cuando se solicita especificamente.</strong> Algunas solicitudes de empleo o formularios gubernamentales piden especificamente .docx. Sigue sus instrucciones, aunque PDF suele ser superior.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Para todo lo demas — versiones finales, envios formales, entregables a clientes — convierte a PDF primero. Puedes usar las herramientas de OmnisPDF: <Link href="/es/word-a-pdf" className="text-orange-600 hover:underline">Word a PDF</Link>, <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">Excel a PDF</Link>, o <Link href="/es/powerpoint-a-pdf" className="text-orange-600 hover:underline">PowerPoint a PDF</Link>.
+                Para todo lo demas — versiones finales, envios formales, entregables a clientes — convierte a PDF primero. Puedes usar las herramientas de PDF.it: <Link href="/es/word-a-pdf" className="text-orange-600 hover:underline">Word a PDF</Link>, <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">Excel a PDF</Link>, o <Link href="/es/powerpoint-a-pdf" className="text-orange-600 hover:underline">PowerPoint a PDF</Link>.
               </p>
             </section>
 
@@ -204,7 +204,7 @@ export default function MejorFormatoParaEnviarDocumentosPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Texto Plano (.txt)</h3>
                   <p className="text-slate-600">
-                    Los archivos de texto plano no tienen formato — sin negritas, sin imagenes, sin tablas. Son utiles para codigo, registros o notas rapidas, pero nunca para documentos profesionales. Si necesitas extraer texto de un PDF, usa la herramienta <Link href="/es/pdf-a-texto" className="text-orange-600 hover:underline">PDF a TXT</Link> de OmnisPDF.
+                    Los archivos de texto plano no tienen formato — sin negritas, sin imagenes, sin tablas. Son utiles para codigo, registros o notas rapidas, pero nunca para documentos profesionales. Si necesitas extraer texto de un PDF, usa la herramienta <Link href="/es/pdf-a-texto" className="text-orange-600 hover:underline">PDF a TXT</Link> de PDF.it.
                   </p>
                 </div>
                 <div>
@@ -278,10 +278,10 @@ export default function MejorFormatoParaEnviarDocumentosPage() {
               {[
                 { q: "Es mejor PDF o DOCX para enviar documentos?", a: "PDF es mejor para enviar documentos finales porque preserva el formato en todos los dispositivos, no puede ser editado accidentalmente y se ve profesional. DOCX es mejor cuando necesitas que el destinatario haga ediciones." },
                 { q: "Por que los empleadores prefieren curriculos en PDF?", a: "Los curriculos en PDF se ven igual en cualquier pantalla, no cambian de formato segun el software o fuentes del lector, y lucen mas pulidos y profesionales que los archivos editables de Word." },
-                { q: "Puedo convertir mis documentos a PDF gratis?", a: "Si. OmnisPDF te permite convertir archivos de Word, Excel y PowerPoint a PDF gratis, hasta 10 conversiones por dia con archivos de hasta 25MB." },
+                { q: "Puedo convertir mis documentos a PDF gratis?", a: "Si. PDF.it te permite convertir archivos de Word, Excel y PowerPoint a PDF gratis, hasta 10 conversiones por dia con archivos de hasta 25MB." },
                 { q: "Que formato debo usar para facturas?", a: "Siempre envia facturas como PDF. Esto evita que el destinatario modifique montos o terminos, preserva tu marca y diseno, y se ve profesional." },
                 { q: "Debo enviar documentos como PDF o como enlace de Google Docs?", a: "Para documentos finales, PDF es mejor ya que no requiere acceso a internet ni una cuenta de Google para ver. Los enlaces de Google Docs son mejores para edicion colaborativa donde varias personas necesitan hacer cambios." },
-                { q: "Como me aseguro de que mi PDF se vea bien antes de enviarlo?", a: "Despues de convertir a PDF, abre el archivo y revisa cada pagina por problemas de formato. Usa la herramienta de aplanar de OmnisPDF para eliminar campos de formulario o capas que podrian mostrarse diferente en otros dispositivos." },
+                { q: "Como me aseguro de que mi PDF se vea bien antes de enviarlo?", a: "Despues de convertir a PDF, abre el archivo y revisa cada pagina por problemas de formato. Usa la herramienta de aplanar de PDF.it para eliminar campos de formulario o capas que podrian mostrarse diferente en otros dispositivos." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

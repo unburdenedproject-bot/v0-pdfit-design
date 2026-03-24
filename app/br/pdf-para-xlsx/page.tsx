@@ -6,15 +6,15 @@ import { ProcessingInterface } from "@/components/processing-interface"
 import { FileText, Zap, Shield, Download } from "lucide-react"
 
 export const metadata = {
-  title: "PDF para XLSX — Converta PDF para Planilha Excel Editavel | OmnisPDF",
+  title: "PDF para XLSX — Converta PDF para Planilha Excel Editavel | PDF.it",
   description:
-    "Converta PDF para XLSX com o OmnisPDF. Extraia tabelas e dados de PDFs para planilhas Excel editaveis — rapido, preciso e direto no navegador.",
+    "Converta PDF para XLSX com o PDF.it. Extraia tabelas e dados de PDFs para planilhas Excel editaveis — rapido, preciso e direto no navegador.",
   alternates: {
-    canonical: "https://omnispdf.com/br/pdf-para-xlsx",
+    canonical: "https://pdf.it.com/br/pdf-para-xlsx",
     languages: {
-      en: "https://omnispdf.com/pdf-to-xlsx",
-      es: "https://omnispdf.com/es/pdf-a-xlsx",
-      pt: "https://omnispdf.com/br/pdf-para-xlsx",
+      en: "https://pdf.it.com/pdf-to-xlsx",
+      es: "https://pdf.it.com/es/pdf-a-xlsx",
+      pt: "https://pdf.it.com/br/pdf-para-xlsx",
     },
   },
 }
@@ -36,7 +36,7 @@ const faqSchema = {
       name: "As tabelas do PDF sao preservadas na conversao?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sim. O OmnisPDF detecta e extrai tabelas do PDF, preservando a estrutura de linhas e colunas no arquivo XLSX resultante.",
+        text: "Sim. O PDF.it detecta e extrai tabelas do PDF, preservando a estrutura de linhas e colunas no arquivo XLSX resultante.",
       },
     },
     {
@@ -114,7 +114,7 @@ export default function PDFParaXLSXPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use a ferramenta PDF para XLSX do OmnisPDF para extrair tabelas e dados de PDFs em planilhas Excel editaveis. O formato XLSX e o padrao do Microsoft Excel — compativel com Excel, Google Sheets, LibreOffice Calc e muito mais. Suba seu PDF, converta e baixe um arquivo .xlsx pronto para analise.
+              Use a ferramenta PDF para XLSX do PDF.it para extrair tabelas e dados de PDFs em planilhas Excel editaveis. O formato XLSX e o padrao do Microsoft Excel — compativel com Excel, Google Sheets, LibreOffice Calc e muito mais. Suba seu PDF, converta e baixe um arquivo .xlsx pronto para analise.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Extraia tabelas de PDF para formato XLSX</li>
@@ -162,7 +162,7 @@ export default function PDFParaXLSXPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Converter PDF para XLSX</h2>
             <div className="space-y-4">
               {[
-                "Suba ou arraste seu PDF para o OmnisPDF.",
+                "Suba ou arraste seu PDF para o PDF.it.",
                 "Clique em Converter PDF para XLSX.",
                 "Baixe seu arquivo .xlsx editavel e abra no Excel ou Google Sheets.",
               ].map((step, i) => (
@@ -210,7 +210,7 @@ export default function PDFParaXLSXPage() {
             <div className="space-y-6">
               {[
                 { q: "Qual a diferenca entre PDF para Excel e PDF para XLSX?", a: "Sao a mesma coisa. XLSX e o formato nativo do Microsoft Excel. Ao converter PDF para XLSX voce obtem um arquivo .xlsx que pode abrir e editar no Excel, Google Sheets ou qualquer planilha compativel." },
-                { q: "As tabelas do PDF sao preservadas na conversao?", a: "Sim. O OmnisPDF detecta e extrai tabelas do PDF, preservando a estrutura de linhas e colunas no arquivo XLSX resultante." },
+                { q: "As tabelas do PDF sao preservadas na conversao?", a: "Sim. O PDF.it detecta e extrai tabelas do PDF, preservando a estrutura de linhas e colunas no arquivo XLSX resultante." },
                 { q: "Posso editar o arquivo XLSX no Google Sheets?", a: "Sim. Baixe o arquivo .xlsx, suba para o Google Drive e abra com o Google Sheets para edita-lo diretamente no navegador." },
                 { q: "Funciona com PDFs que contem apenas texto?", a: "Sim, mas o melhor resultado e obtido com PDFs que contem tabelas estruturadas. Texto corrido sera convertido, mas pode nao se organizar em colunas de forma ideal." },
                 { q: "Qual o tamanho maximo de arquivo que posso converter?", a: "Contas gratuitas podem subir arquivos de ate 25MB. Contas Pro e Business podem subir arquivos de ate 200MB." },

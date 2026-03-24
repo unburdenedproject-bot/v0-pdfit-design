@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Merge, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Unir Arquivos PDF (Juntar PDFs em Um So) | OmnisPDF",
+  title: "Como Unir Arquivos PDF (Juntar PDFs em Um So) | PDF.it",
   description:
     "Aprenda como unir varios arquivos PDF em um so documento. Guia passo a passo para combinar PDFs — online, gratis, sem instalar nada.",
   keywords: "unir pdf, juntar pdf, combinar pdf, como unir arquivos pdf, mesclar pdf online gratis",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como unir varios PDFs em um so?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Acesse a ferramenta Unir PDF do OmnisPDF, envie seus arquivos na ordem desejada, clique em Unir e baixe o PDF combinado. E gratis e nao precisa de cadastro." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Acesse a ferramenta Unir PDF do PDF.it, envie seus arquivos na ordem desejada, clique em Unir e baixe o PDF combinado. E gratis e nao precisa de cadastro." }
     },
     {
       "@type": "Question",
@@ -47,7 +47,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Envie seus PDFs",
-      "text": "Acesse a ferramenta Unir PDF do OmnisPDF e envie todos os arquivos que deseja combinar."
+      "text": "Acesse a ferramenta Unir PDF do PDF.it e envie todos os arquivos que deseja combinar."
     },
     {
       "@type": "HowToStep",
@@ -219,7 +219,7 @@ export default function ComoUnirArquivosPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como unir varios PDFs em um so?", a: "Acesse a ferramenta Unir PDF do OmnisPDF, envie seus arquivos na ordem desejada, clique em Unir e baixe o PDF combinado. E gratis e nao precisa de cadastro." },
+                { q: "Como unir varios PDFs em um so?", a: "Acesse a ferramenta Unir PDF do PDF.it, envie seus arquivos na ordem desejada, clique em Unir e baixe o PDF combinado. E gratis e nao precisa de cadastro." },
                 { q: "Posso reorganizar a ordem dos PDFs antes de unir?", a: "Sim. Depois de enviar os arquivos, voce pode arrastar e soltar para reorganizar a ordem antes de combinar." },
                 { q: "Quantos PDFs posso unir de uma vez?", a: "Usuarios gratuitos podem unir ate 3 PDFs por vez. Usuarios Pro podem unir quantos arquivos precisarem com processamento em lote." },
                 { q: "Unir PDFs altera a qualidade dos documentos?", a: "Nao. Unir PDFs simplesmente combina os arquivos — nao ha compressao ou alteracao de qualidade. O resultado mantem exatamente a mesma qualidade dos originais." },

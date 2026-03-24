@@ -209,7 +209,7 @@ The converted document is now ready for editing in Microsoft Word or any
 compatible word processing application.
 
 ---
-Processed by OmnisPDF - Professional PDF Tools
+Processed by PDF.it - Professional PDF Tools
         `.trim()
 
         const blob = new Blob([wordContent], {

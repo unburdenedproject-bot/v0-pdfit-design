@@ -7,9 +7,9 @@ import { Split, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Dividir PDF Online — Separar Paginas de um PDF | OmnisPDF",
+  title: "Dividir PDF Online — Separar Paginas de um PDF | PDF.it",
   description:
-    "Divida um PDF em paginas separadas ou PDFs menores com o OmnisPDF. Extraia paginas por intervalo e baixe na hora — rapido, simples e online.",
+    "Divida um PDF em paginas separadas ou PDFs menores com o PDF.it. Extraia paginas por intervalo e baixe na hora — rapido, simples e online.",
   alternates: {
     languages: {
       en: "/split-pdf",
@@ -26,17 +26,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como divido um PDF em varios arquivos?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o OmnisPDF, escolha as paginas ou intervalos que deseja e clique em Dividir PDF para baixar os novos arquivos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o PDF.it, escolha as paginas ou intervalos que deseja e clique em Dividir PDF para baixar os novos arquivos." }
     },
     {
       "@type": "Question",
       "name": "Posso extrair apenas certas paginas de um PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Selecione os numeros de pagina ou um intervalo de paginas e o OmnisPDF criara um novo PDF contendo apenas essas paginas." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Selecione os numeros de pagina ou um intervalo de paginas e o PDF.it criara um novo PDF contendo apenas essas paginas." }
     },
     {
       "@type": "Question",
       "name": "Posso dividir um PDF no celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em navegadores moveis — envie, selecione paginas, divida e baixe." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em navegadores moveis — envie, selecione paginas, divida e baixe." }
     },
     {
       "@type": "Question",
@@ -75,7 +75,7 @@ export default function DividirPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Dividir PDF Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Divida um PDF em arquivos menores com o OmnisPDF. Extraia paginas especificas, divida por intervalos e baixe PDFs limpos na hora.
+                Divida um PDF em arquivos menores com o PDF.it. Extraia paginas especificas, divida por intervalos e baixe PDFs limpos na hora.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Intervalos de Paginas Personalizados</span></div>
@@ -94,7 +94,7 @@ export default function DividirPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use a ferramenta Dividir PDF do OmnisPDF para extrair paginas de um PDF ou dividir um PDF grande em arquivos menores. Escolha um intervalo de paginas, divida por paginas individuais e baixe os PDFs que precisa — perfeito para compartilhar, enviar e imprimir.
+              Use a ferramenta Dividir PDF do PDF.it para extrair paginas de um PDF ou dividir um PDF grande em arquivos menores. Escolha um intervalo de paginas, divida por paginas individuais e baixe os PDFs que precisa — perfeito para compartilhar, enviar e imprimir.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Divida paginas de PDF em arquivos separados</li>
@@ -112,7 +112,7 @@ export default function DividirPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Extraia Paginas de um PDF</h2>
               <p className="text-slate-600">
-                Precisa de apenas uma parte de um documento? O OmnisPDF permite extrair as paginas que voce quer e salva-las como um novo PDF — ideal para formularios, contratos, capitulos e extratos.
+                Precisa de apenas uma parte de um documento? O PDF.it permite extrair as paginas que voce quer e salva-las como um novo PDF — ideal para formularios, contratos, capitulos e extratos.
               </p>
             </div>
             <div>
@@ -136,7 +136,7 @@ export default function DividirPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Dividir um PDF</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste seu PDF para o OmnisPDF.",
+                "Envie ou arraste seu PDF para o PDF.it.",
                 "Escolha como dividir: extrair paginas, intervalos de paginas ou paginas individuais.",
                 "Clique em Dividir PDF.",
                 "Baixe seus novos arquivos PDF.",
@@ -182,9 +182,9 @@ export default function DividirPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como divido um PDF em varios arquivos?", a: "Envie seu PDF para o OmnisPDF, escolha as paginas ou intervalos que deseja e clique em Dividir PDF para baixar os novos arquivos." },
-                { q: "Posso extrair apenas certas paginas de um PDF?", a: "Sim. Selecione os numeros de pagina ou um intervalo de paginas e o OmnisPDF criara um novo PDF contendo apenas essas paginas." },
-                { q: "Posso dividir um PDF no celular?", a: "Sim. O OmnisPDF funciona em navegadores moveis — envie, selecione paginas, divida e baixe." },
+                { q: "Como divido um PDF em varios arquivos?", a: "Envie seu PDF para o PDF.it, escolha as paginas ou intervalos que deseja e clique em Dividir PDF para baixar os novos arquivos." },
+                { q: "Posso extrair apenas certas paginas de um PDF?", a: "Sim. Selecione os numeros de pagina ou um intervalo de paginas e o PDF.it criara um novo PDF contendo apenas essas paginas." },
+                { q: "Posso dividir um PDF no celular?", a: "Sim. O PDF.it funciona em navegadores moveis — envie, selecione paginas, divida e baixe." },
                 { q: "Posso dividir PDFs protegidos com senha?", a: "Voce precisa desbloquear o PDF antes de dividi-lo. Use nossa ferramenta Desbloquear PDF primeiro." },
                 { q: "E seguro enviar meu PDF?", a: "Sim. Todas as transferencias sao criptografadas com SSL e seus arquivos sao eliminados imediatamente apos sua sessao. Nunca armazenamos nem compartilhamos seus documentos." },
                 { q: "Qual e o tamanho maximo de PDF que posso dividir?", a: "Contas gratuitas podem enviar arquivos de ate 25MB. Contas Pro podem enviar ate 200MB. Contas Business podem enviar ate 1GB." },

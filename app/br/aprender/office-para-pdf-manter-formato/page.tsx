@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Office para PDF — Como Manter o Formato Original | OmnisPDF",
+  title: "Office para PDF — Como Manter o Formato Original | PDF.it",
   description: "Aprenda a converter documentos do Office para PDF sem perder formatacao. Dicas para preservar fontes, tabelas, graficos e layout em Word, Excel e PowerPoint.",
   keywords: "office para pdf manter formato, converter sem perder formatacao, pdf formatacao original, word para pdf layout, excel para pdf tabelas",
 }
@@ -20,7 +20,7 @@ const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainE
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como manter a formatacao ao converter Office para PDF", "description": "Garanta que seu documento do Office fique identico no PDF seguindo estas etapas.", "step": [
   { "@type": "HowToStep", "name": "Incorpore fontes e verifique layout", "text": "Incorpore fontes no documento e verifique margens, quebras de pagina e tamanho de papel." },
   { "@type": "HowToStep", "name": "Use visualizacao de impressao", "text": "Antes de converter, use Ctrl+P para ver como o documento ficara no PDF." },
-  { "@type": "HowToStep", "name": "Converta com OmnisPDF", "text": "Envie o documento preparado para o OmnisPDF e baixe o PDF com formatacao preservada." }
+  { "@type": "HowToStep", "name": "Converta com PDF.it", "text": "Envie o documento preparado para o PDF.it e baixe o PDF com formatacao preservada." }
 ] }
 
 export default function OfficeParaPdfManterFormatoPage() {
@@ -100,7 +100,7 @@ export default function OfficeParaPdfManterFormatoPage() {
 
         <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
           <h2 className="text-2xl font-black text-white mb-3">Converta com formatacao perfeita</h2>
-          <p className="text-slate-300 mb-6">Prepare seu documento, envie para o OmnisPDF e obtenha um PDF identico ao original — gratis.</p>
+          <p className="text-slate-300 mb-6">Prepare seu documento, envie para o PDF.it e obtenha um PDF identico ao original — gratis.</p>
           <Link href="/br/office-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><FileText className="h-5 w-5" /> Converter Office para PDF Agora</Link>
         </div></section>
 

@@ -6,15 +6,15 @@ import { ProcessingInterface } from "@/components/processing-interface"
 import { FileText, Zap, Shield, Download } from "lucide-react"
 
 export const metadata = {
-  title: "Adicionar Pagina ao PDF — Insira Novas Paginas em Qualquer PDF | OmnisPDF",
+  title: "Adicionar Pagina ao PDF — Insira Novas Paginas em Qualquer PDF | PDF.it",
   description:
-    "Adicione paginas a um PDF com o OmnisPDF. Insira paginas extras de outro PDF no seu documento — rapido, gratuito e direto no navegador.",
+    "Adicione paginas a um PDF com o PDF.it. Insira paginas extras de outro PDF no seu documento — rapido, gratuito e direto no navegador.",
   alternates: {
-    canonical: "https://omnispdf.com/br/adicionar-pagina-ao-pdf",
+    canonical: "https://pdf.it.com/br/adicionar-pagina-ao-pdf",
     languages: {
-      en: "https://omnispdf.com/add-page-to-pdf",
-      es: "https://omnispdf.com/es/agregar-pagina-a-pdf",
-      pt: "https://omnispdf.com/br/adicionar-pagina-ao-pdf",
+      en: "https://pdf.it.com/add-page-to-pdf",
+      es: "https://pdf.it.com/es/agregar-pagina-a-pdf",
+      pt: "https://pdf.it.com/br/adicionar-pagina-ao-pdf",
     },
   },
 }
@@ -28,7 +28,7 @@ const faqSchema = {
       name: "Como adicionar uma pagina a um PDF?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Suba seu PDF principal no OmnisPDF, depois suba o segundo PDF com as paginas que deseja inserir. Escolha a posicao e clique em Mesclar. O resultado sera um unico PDF com todas as paginas combinadas.",
+        text: "Suba seu PDF principal no PDF.it, depois suba o segundo PDF com as paginas que deseja inserir. Escolha a posicao e clique em Mesclar. O resultado sera um unico PDF com todas as paginas combinadas.",
       },
     },
     {
@@ -36,7 +36,7 @@ const faqSchema = {
       name: "Posso adicionar paginas no meio de um PDF?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sim. A ferramenta de mesclagem do OmnisPDF permite combinar PDFs e reorganizar as paginas na ordem desejada, inserindo paginas em qualquer posicao do documento.",
+        text: "Sim. A ferramenta de mesclagem do PDF.it permite combinar PDFs e reorganizar as paginas na ordem desejada, inserindo paginas em qualquer posicao do documento.",
       },
     },
     {
@@ -44,7 +44,7 @@ const faqSchema = {
       name: "A qualidade do PDF muda ao adicionar paginas?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Nao. O OmnisPDF preserva a qualidade original de ambos os documentos. Texto, imagens e formatacao permanecem identicos apos a mesclagem.",
+        text: "Nao. O PDF.it preserva a qualidade original de ambos os documentos. Texto, imagens e formatacao permanecem identicos apos a mesclagem.",
       },
     },
     {
@@ -109,7 +109,7 @@ export default function AdicionarPaginaAoPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Precisa inserir paginas extras em um PDF? O OmnisPDF permite combinar paginas de diferentes documentos PDF em um unico arquivo. Suba seus PDFs, organize as paginas na ordem desejada e baixe o documento completo.
+              Precisa inserir paginas extras em um PDF? O PDF.it permite combinar paginas de diferentes documentos PDF em um unico arquivo. Suba seus PDFs, organize as paginas na ordem desejada e baixe o documento completo.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Adicione paginas de um ou varios PDFs</li>
@@ -157,7 +157,7 @@ export default function AdicionarPaginaAoPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Adicionar Paginas a um PDF</h2>
             <div className="space-y-4">
               {[
-                "Suba ou arraste seu PDF principal para o OmnisPDF.",
+                "Suba ou arraste seu PDF principal para o PDF.it.",
                 "Suba o segundo PDF com as paginas que deseja adicionar.",
                 "Organize as paginas na ordem desejada e clique em Mesclar para baixar o resultado.",
               ].map((step, i) => (
@@ -204,9 +204,9 @@ export default function AdicionarPaginaAoPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como adicionar uma pagina a um PDF?", a: "Suba seu PDF principal no OmnisPDF, depois suba o segundo PDF com as paginas que deseja inserir. Escolha a posicao e clique em Mesclar. O resultado sera um unico PDF com todas as paginas combinadas." },
-                { q: "Posso adicionar paginas no meio de um PDF?", a: "Sim. A ferramenta de mesclagem do OmnisPDF permite combinar PDFs e reorganizar as paginas na ordem desejada, inserindo paginas em qualquer posicao do documento." },
-                { q: "A qualidade do PDF muda ao adicionar paginas?", a: "Nao. O OmnisPDF preserva a qualidade original de ambos os documentos. Texto, imagens e formatacao permanecem identicos apos a mesclagem." },
+                { q: "Como adicionar uma pagina a um PDF?", a: "Suba seu PDF principal no PDF.it, depois suba o segundo PDF com as paginas que deseja inserir. Escolha a posicao e clique em Mesclar. O resultado sera um unico PDF com todas as paginas combinadas." },
+                { q: "Posso adicionar paginas no meio de um PDF?", a: "Sim. A ferramenta de mesclagem do PDF.it permite combinar PDFs e reorganizar as paginas na ordem desejada, inserindo paginas em qualquer posicao do documento." },
+                { q: "A qualidade do PDF muda ao adicionar paginas?", a: "Nao. O PDF.it preserva a qualidade original de ambos os documentos. Texto, imagens e formatacao permanecem identicos apos a mesclagem." },
                 { q: "Posso adicionar paginas de diferentes PDFs?", a: "Sim. Voce pode combinar paginas de multiplos PDFs em um unico documento. Suba todos os arquivos e organize as paginas na ordem desejada." },
                 { q: "E gratuito adicionar paginas a um PDF?", a: "Sim. Voce pode adicionar paginas a PDFs de ate 25MB gratuitamente. Para arquivos maiores e processamento em lote, atualize para o plano Pro." },
               ].map((faq, i) => (

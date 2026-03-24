@@ -5,7 +5,7 @@ import Link from "next/link"
 import { QrCode, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Codigo QR para Cartao de Visita (vCard Digital) | OmnisPDF",
+  title: "Codigo QR para Cartao de Visita (vCard Digital) | PDF.it",
   description:
     "Crie um codigo QR para cartao de visita que salva seus dados de contato direto na agenda do celular. Nome, telefone, e-mail e empresa em um toque.",
   keywords: "codigo qr cartao de visita, qr code vcard, cartao digital qr, contato qr code",
@@ -28,7 +28,7 @@ const howToSchema = {
   "name": "Como Criar QR Code para Cartao de Visita",
   "description": "Crie um QR de contato que salva seus dados na agenda do celular.",
   "step": [
-    { "@type": "HowToStep", "name": "Selecione tipo Contato/vCard", "text": "No gerador de QR do OmnisPDF, selecione o tipo 'Contato' ou 'vCard'." },
+    { "@type": "HowToStep", "name": "Selecione tipo Contato/vCard", "text": "No gerador de QR do PDF.it, selecione o tipo 'Contato' ou 'vCard'." },
     { "@type": "HowToStep", "name": "Preencha seus dados", "text": "Insira nome, telefone, e-mail, empresa, cargo e site." },
     { "@type": "HowToStep", "name": "Gere e adicione ao cartao", "text": "Baixe o QR em SVG e envie ao designer do cartao de visita para inclusao no layout." }
   ]
@@ -75,7 +75,7 @@ export default function CodigoQRCartaoVisitaPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-6">Como Criar (Passo a Passo)</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Selecione tipo Contato/vCard", desc: "No gerador de Codigo QR do OmnisPDF, escolha o tipo 'Contato' ou 'vCard' na lista de opcoes." },
+                  { title: "Selecione tipo Contato/vCard", desc: "No gerador de Codigo QR do PDF.it, escolha o tipo 'Contato' ou 'vCard' na lista de opcoes." },
                   { title: "Preencha seus dados", desc: "Nome completo, telefone (com DDD), e-mail profissional, nome da empresa, cargo, site e endereco (opcional)." },
                   { title: "Revise as informacoes", desc: "Verifique todos os dados. Um numero de telefone errado no QR e pior do que nao ter QR." },
                   { title: "Gere e baixe em SVG", desc: "Baixe em formato SVG para impressao de alta qualidade. Envie ao designer do cartao para inclusao no layout." },

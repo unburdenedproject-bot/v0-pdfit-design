@@ -6,14 +6,14 @@ import { ProcessingInterface } from "@/components/processing-interface"
 import { FileSpreadsheet, Zap, Shield, Download } from "lucide-react"
 
 export const metadata = {
-  title: "PDF a XLSX — Convierte PDF a Hoja de Cálculo Excel | OmnisPDF",
+  title: "PDF a XLSX — Convierte PDF a Hoja de Cálculo Excel | PDF.it",
   description:
-    "Convierte PDF a XLSX con OmnisPDF. Extrae tablas y datos de tus archivos PDF en hojas de calculo Excel .xlsx editables — rapido, seguro y desde tu navegador.",
+    "Convierte PDF a XLSX con PDF.it. Extrae tablas y datos de tus archivos PDF en hojas de calculo Excel .xlsx editables — rapido, seguro y desde tu navegador.",
   alternates: {
-    canonical: "https://omnispdf.com/es/pdf-a-xlsx",
+    canonical: "https://pdf.it.com/es/pdf-a-xlsx",
     languages: {
-      en: "https://omnispdf.com/pdf-to-xlsx",
-      es: "https://omnispdf.com/es/pdf-a-xlsx",
+      en: "https://pdf.it.com/pdf-to-xlsx",
+      es: "https://pdf.it.com/es/pdf-a-xlsx",
     },
   },
 }
@@ -35,7 +35,7 @@ const faqSchema = {
       name: "¿Se extraen las tablas con precision?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "OmnisPDF extrae tablas y datos estructurados con la mayor precision posible. Los resultados pueden variar dependiendo de como fue creado el PDF original.",
+        text: "PDF.it extrae tablas y datos estructurados con la mayor precision posible. Los resultados pueden variar dependiendo de como fue creado el PDF original.",
       },
     },
     {
@@ -123,7 +123,7 @@ export default function PDFaXLSXPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Usa la herramienta de PDF a XLSX de OmnisPDF para extraer tablas y datos de archivos PDF en hojas de calculo Excel editables. El formato XLSX es el estandar de Microsoft Excel — compatible con Excel, Google Sheets, LibreOffice Calc y mas. Sube tu PDF, convierte y descarga un archivo .xlsx listo para analizar.
+              Usa la herramienta de PDF a XLSX de PDF.it para extraer tablas y datos de archivos PDF en hojas de calculo Excel editables. El formato XLSX es el estandar de Microsoft Excel — compatible con Excel, Google Sheets, LibreOffice Calc y mas. Sube tu PDF, convierte y descarga un archivo .xlsx listo para analizar.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Convierte tablas y datos de PDF a formato XLSX</li>
@@ -171,7 +171,7 @@ export default function PDFaXLSXPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Convertir PDF a XLSX</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Haz clic en Convertir PDF a XLSX.",
                 "Descarga tu archivo .xlsx y abrelo en Excel o Google Sheets.",
               ].map((step, i) => (
@@ -221,7 +221,7 @@ export default function PDFaXLSXPage() {
             <div className="space-y-6">
               {[
                 { q: "¿Cual es la diferencia entre PDF a Excel y PDF a XLSX?", a: "Son lo mismo. XLSX es el formato nativo de Microsoft Excel. Al convertir PDF a XLSX obtienes un archivo .xlsx que puedes abrir y editar en Excel, Google Sheets o cualquier hoja de calculo compatible." },
-                { q: "¿Se extraen las tablas con precision?", a: "OmnisPDF extrae tablas y datos estructurados con la mayor precision posible. Los resultados pueden variar dependiendo de como fue creado el PDF original." },
+                { q: "¿Se extraen las tablas con precision?", a: "PDF.it extrae tablas y datos estructurados con la mayor precision posible. Los resultados pueden variar dependiendo de como fue creado el PDF original." },
                 { q: "¿Puedo abrir el archivo XLSX en Google Sheets?", a: "Si. Descarga el archivo .xlsx, subelo a Google Drive y abrelo con Google Sheets para editarlo directamente en tu navegador." },
                 { q: "¿Es seguro subir mi PDF?", a: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." },
                 { q: "¿Cual es el tamano maximo de archivo que puedo convertir?", a: "Las cuentas gratuitas pueden subir archivos de hasta 25MB. Las cuentas Pro y Business pueden subir archivos de hasta 200MB." },

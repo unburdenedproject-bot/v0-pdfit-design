@@ -5,9 +5,9 @@ import { Shield, Zap, Eye, FileCheck } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Remove Metadata from PDF — Strip Hidden Data from PDFs | OmnisPDF",
+  title: "Remove Metadata from PDF — Strip Hidden Data from PDFs | PDF.it",
   description:
-    "Remove hidden metadata from PDF files with OmnisPDF. Strip author names, timestamps, GPS data, and software info before sharing — protect your privacy.",
+    "Remove hidden metadata from PDF files with PDF.it. Strip author names, timestamps, GPS data, and software info before sharing — protect your privacy.",
 }
 
 const faqSchema = {
@@ -139,7 +139,7 @@ export default function RemoveMetadataPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Remove Metadata from a PDF</h2>
             <div className="space-y-4">
               {[
-                "Upload your PDF to OmnisPDF.",
+                "Upload your PDF to PDF.it.",
                 "Use Flatten PDF to remove form fields, annotations, and layers.",
                 "For thorough metadata removal, use PDF Redaction (Business plan) to strip all hidden data.",
                 "Download your cleaned PDF, ready to share safely.",

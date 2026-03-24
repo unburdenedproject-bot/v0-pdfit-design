@@ -5,23 +5,23 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Office a PDF convertidor: DOCX, XLSX, PPTX a PDF | OmnisPDF",
+  title: "Office a PDF convertidor: DOCX, XLSX, PPTX a PDF | PDF.it",
   description: "Convierte archivos Word, Excel y PowerPoint a PDF en un solo lugar. Aprende cuando usar el convertidor todo-en-uno Office a PDF vs herramientas individuales, formatos soportados y consejos de calidad.",
   keywords: "office a pdf convertidor, convertir office a pdf, docx a pdf, xlsx a pdf, pptx a pdf, archivos office a pdf en linea",
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-  { "@type": "Question", "name": "Que formatos Office puedo convertir a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF soporta DOCX (Word), XLSX (Excel), PPTX (PowerPoint), DOC, XLS, PPT y otros formatos comunes de Microsoft Office. Sube cualquier archivo Office y obtiene un PDF en segundos." } },
+  { "@type": "Question", "name": "Que formatos Office puedo convertir a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "PDF.it soporta DOCX (Word), XLSX (Excel), PPTX (PowerPoint), DOC, XLS, PPT y otros formatos comunes de Microsoft Office. Sube cualquier archivo Office y obtiene un PDF en segundos." } },
   { "@type": "Question", "name": "Es gratuito el convertidor Office a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Puedes convertir hasta 10 archivos por dia gratis (3 sin cuenta, luego registrate para mas). Los usuarios Pro obtienen conversiones ilimitadas y limites de tamano de archivo mayores." } },
-  { "@type": "Question", "name": "Se preservara mi formato al convertir a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "En la mayoria de los casos, si. OmnisPDF usa un motor de conversion de alta fidelidad que preserva fuentes, tablas, imagenes y diseno. Si notas problemas, verifica que tus fuentes sean fuentes estandar del sistema y tus margenes esten configurados correctamente." } },
+  { "@type": "Question", "name": "Se preservara mi formato al convertir a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "En la mayoria de los casos, si. PDF.it usa un motor de conversion de alta fidelidad que preserva fuentes, tablas, imagenes y diseno. Si notas problemas, verifica que tus fuentes sean fuentes estandar del sistema y tus margenes esten configurados correctamente." } },
   { "@type": "Question", "name": "Debo usar el convertidor todo-en-uno o herramientas individuales?", "acceptedAnswer": { "@type": "Answer", "text": "Usa la herramienta todo-en-uno Office a PDF cuando tengas tipos de archivo mixtos (Word + Excel + PowerPoint) para convertir en un lote. Usa herramientas individuales (Word a PDF, Excel a PDF, etc.) cuando necesites configuraciones especificas del formato como ajuste de pagina de Excel u orientacion de diapositivas de PowerPoint." } },
   { "@type": "Question", "name": "Puedo convertir multiples archivos Office a PDF a la vez?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Los usuarios Pro pueden convertir por lotes multiples archivos Office en una sola carga. Cada archivo se convierte independientemente y puedes descargarlos todos como un archivo ZIP." } },
-  { "@type": "Question", "name": "Necesito Microsoft Office instalado para convertir archivos?", "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF es una herramienta completamente en linea — todo se ejecuta en la nube. No necesitas Office, LibreOffice ni ningun software instalado. Solo sube tu archivo desde cualquier navegador." } }
+  { "@type": "Question", "name": "Necesito Microsoft Office instalado para convertir archivos?", "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it es una herramienta completamente en linea — todo se ejecuta en la nube. No necesitas Office, LibreOffice ni ningun software instalado. Solo sube tu archivo desde cualquier navegador." } }
 ] }
 
-const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como convertir archivos Office a PDF en linea", "description": "Convierte cualquier documento de Microsoft Office a PDF en 3 simples pasos usando OmnisPDF.", "step": [
-  { "@type": "HowToStep", "name": "Sube tu archivo Office", "text": "Ve a la herramienta Office a PDF de OmnisPDF y sube tu archivo Word, Excel o PowerPoint haciendo clic o arrastrandolo al area de carga." },
-  { "@type": "HowToStep", "name": "Convierte a PDF", "text": "Haz clic en Convertir a PDF. OmnisPDF procesa el archivo en la nube, preservando tu formato original, fuentes y diseno." },
+const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como convertir archivos Office a PDF en linea", "description": "Convierte cualquier documento de Microsoft Office a PDF en 3 simples pasos usando PDF.it.", "step": [
+  { "@type": "HowToStep", "name": "Sube tu archivo Office", "text": "Ve a la herramienta Office a PDF de PDF.it y sube tu archivo Word, Excel o PowerPoint haciendo clic o arrastrandolo al area de carga." },
+  { "@type": "HowToStep", "name": "Convierte a PDF", "text": "Haz clic en Convertir a PDF. PDF.it procesa el archivo en la nube, preservando tu formato original, fuentes y diseno." },
   { "@type": "HowToStep", "name": "Descarga tu PDF", "text": "Una vez completada la conversion, descarga tu PDF. Tambien puedes comprimirlo, unirlo con otros PDFs o agregar proteccion con contrasena." }
 ] }
 
@@ -47,7 +47,7 @@ export default function OfficeAPdfConvertidorPage() {
           <section className="mb-12">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Que es un convertidor Office a PDF?</h2>
             <p className="text-slate-600 mb-4">Un convertidor Office a PDF toma archivos de Microsoft Office — <strong>DOCX, XLSX, PPTX</strong> (y sus equivalentes antiguos DOC, XLS, PPT) — y los convierte en documentos PDF universalmente legibles. Los PDFs se ven igual en cualquier dispositivo y no pueden ser editados accidentalmente, lo que los hace el estandar para compartir versiones finales de documentos.</p>
-            <p className="text-slate-600">El <Link href="/es/office-a-pdf" className="text-orange-600 hover:underline">convertidor Office a PDF</Link> de OmnisPDF maneja los tres formatos en un solo lugar. Sube un documento Word, una hoja Excel o una presentacion PowerPoint — obtendras un PDF correctamente formateado en segundos.</p>
+            <p className="text-slate-600">El <Link href="/es/office-a-pdf" className="text-orange-600 hover:underline">convertidor Office a PDF</Link> de PDF.it maneja los tres formatos en un solo lugar. Sube un documento Word, una hoja Excel o una presentacion PowerPoint — obtendras un PDF correctamente formateado en segundos.</p>
           </section>
 
           <section className="mb-12">
@@ -70,7 +70,7 @@ export default function OfficeAPdfConvertidorPage() {
 
           <section className="mb-12">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Convertidor todo-en-uno vs. herramientas individuales</h2>
-            <p className="text-slate-600 mb-4">OmnisPDF ofrece tanto una herramienta unificada <Link href="/es/office-a-pdf" className="text-orange-600 hover:underline">Office a PDF</Link> como herramientas separadas para cada formato. Aqui te decimos cuando usar cual:</p>
+            <p className="text-slate-600 mb-4">PDF.it ofrece tanto una herramienta unificada <Link href="/es/office-a-pdf" className="text-orange-600 hover:underline">Office a PDF</Link> como herramientas separadas para cada formato. Aqui te decimos cuando usar cual:</p>
             <ul className="space-y-3 text-slate-700">
               <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Usa el convertidor todo-en-uno</strong> cuando tengas una mezcla de archivos Word, Excel y PowerPoint para convertir en un solo lote. Una carga, multiples formatos, todos convertidos a la vez.</span></li>
               <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Usa <Link href="/es/word-a-pdf" className="text-orange-600 hover:underline">Word a PDF</Link></strong> cuando necesites opciones especificas de formato Word o quieras ajustar margenes y diseno.</span></li>
@@ -85,7 +85,7 @@ export default function OfficeAPdfConvertidorPage() {
               {[
                 { title: "Sube tu archivo Office", desc: "Ve a la herramienta Office a PDF y arrastra tu archivo al area de carga, o haz clic para buscar. Acepta .docx, .xlsx, .pptx y sus equivalentes antiguos. Usuarios gratuitos pueden subir archivos hasta 25MB." },
                 { title: "Convierte a PDF", desc: "Haz clic en Convertir a PDF. La conversion se ejecuta en la nube — sin software necesario. Tu formato, fuentes, imagenes y diseno se preservan automaticamente." },
-                { title: "Descarga tu PDF", desc: "Descarga el PDF convertido. Desde aqui puedes comprimirlo, unirlo con otros archivos, agregar contrasena o compartirlo — todo dentro de OmnisPDF." },
+                { title: "Descarga tu PDF", desc: "Descarga el PDF convertido. Desde aqui puedes comprimirlo, unirlo con otros archivos, agregar contrasena o compartirlo — todo dentro de PDF.it." },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
                   <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>

@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ImageIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Why Your PDF to JPG Looks Blurry (And How to Fix It) | OmnisPDF",
+  title: "Why Your PDF to JPG Looks Blurry (And How to Fix It) | PDF.it",
   description:
     "PDF to JPG conversion looking blurry? Learn the 5 most common causes and how to fix each one. Get sharp, high-quality JPG images from your PDFs every time.",
   keywords: "pdf to jpg blurry, pdf to jpg low quality, blurry pdf conversion, pdf to image quality, fix blurry pdf to jpg",
@@ -62,7 +62,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Use a high-quality converter",
-      "text": "Upload your PDF to OmnisPDF's PDF to JPG tool, which lets you choose DPI settings and produces high-quality output."
+      "text": "Upload your PDF to PDF.it's PDF to JPG tool, which lets you choose DPI settings and produces high-quality output."
     },
     {
       "@type": "HowToStep",
@@ -136,7 +136,7 @@ export default function WhyPdfToJpgLooksBlurryPage() {
                     DPI stands for "dots per inch" — it controls how many pixels make up each inch of the image. Many free tools convert at 72 or 96 DPI by default. At 72 DPI, a standard letter-size page becomes only about 612 x 792 pixels — that's tiny by today's standards.
                   </p>
                   <p className="text-slate-600">
-                    <strong>The fix:</strong> Convert at 200 DPI minimum. For print or presentations, use 300 DPI. OmnisPDF's <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">PDF to JPG tool</Link> lets you choose your DPI before converting.
+                    <strong>The fix:</strong> Convert at 200 DPI minimum. For print or presentations, use 300 DPI. PDF.it's <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">PDF to JPG tool</Link> lets you choose your DPI before converting.
                   </p>
                 </div>
 

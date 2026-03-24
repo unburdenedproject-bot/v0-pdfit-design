@@ -5,9 +5,9 @@ import { WorkflowInterface } from "@/components/workflow-interface"
 import { Repeat, Zap, Shield, Layers } from "lucide-react"
 
 export const metadata = {
-  title: "Workflow Automation — Chain PDF Tools in One Click | OmnisPDF",
+  title: "Workflow Automation — Chain PDF Tools in One Click | PDF.it",
   description:
-    "Automate multi-step PDF workflows. Flatten, compress, watermark, rotate, and protect — all in one click. OmnisPDF Business feature.",
+    "Automate multi-step PDF workflows. Flatten, compress, watermark, rotate, and protect — all in one click. PDF.it Business feature.",
 }
 
 const faqSchema = {

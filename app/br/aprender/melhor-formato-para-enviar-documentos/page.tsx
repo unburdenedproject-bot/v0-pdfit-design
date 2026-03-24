@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Send, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Melhor Formato para Enviar Documentos Profissionais | OmnisPDF",
+  title: "Melhor Formato para Enviar Documentos Profissionais | PDF.it",
   description: "PDF, DOCX, ou outro formato? Descubra qual o melhor formato para enviar documentos por email, WhatsApp e plataformas profissionais. Comparacao completa.",
   keywords: "melhor formato enviar documentos, pdf ou docx, formato documento email, enviar documento profissional, pdf vs word",
 }
@@ -19,8 +19,8 @@ const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainE
 
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como escolher o melhor formato para enviar documentos", "description": "Escolha o formato ideal para cada situacao profissional.", "step": [
   { "@type": "HowToStep", "name": "Avalie se o destinatario precisa editar", "text": "Se sim, envie no formato editavel (DOCX, XLSX, PPTX). Se nao, converta para PDF." },
-  { "@type": "HowToStep", "name": "Converta para PDF", "text": "Use o OmnisPDF para converter qualquer arquivo do Office para PDF preservando a formatacao." },
-  { "@type": "HowToStep", "name": "Comprima se necessario", "text": "Se o PDF for grande, use o compressor de PDF do OmnisPDF para reduzir o tamanho antes de enviar." }
+  { "@type": "HowToStep", "name": "Converta para PDF", "text": "Use o PDF.it para converter qualquer arquivo do Office para PDF preservando a formatacao." },
+  { "@type": "HowToStep", "name": "Comprima se necessario", "text": "Se o PDF for grande, use o compressor de PDF do PDF.it para reduzir o tamanho antes de enviar." }
 ] }
 
 export default function MelhorFormatoParaEnviarDocumentosPage() {
@@ -88,7 +88,7 @@ export default function MelhorFormatoParaEnviarDocumentosPage() {
 
           <section className="mb-12">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Como converter para PDF antes de enviar</h2>
-            <p className="text-slate-600 mb-4">Com o OmnisPDF, converter qualquer documento do Office para PDF e simples:</p>
+            <p className="text-slate-600 mb-4">Com o PDF.it, converter qualquer documento do Office para PDF e simples:</p>
             <ul className="space-y-2 text-slate-700">
               <li>&#10003; <Link href="/br/word-para-pdf" className="text-orange-600 hover:underline">Word para PDF</Link> — para documentos DOCX e DOC.</li>
               <li>&#10003; <Link href="/br/excel-para-pdf" className="text-orange-600 hover:underline">Excel para PDF</Link> — para planilhas XLSX e XLS.</li>

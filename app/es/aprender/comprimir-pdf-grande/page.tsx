@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileDown, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Cómo Comprimir un PDF Grande (50MB, 100MB o Más) | OmnisPDF",
+  title: "Cómo Comprimir un PDF Grande (50MB, 100MB o Más) | PDF.it",
   description:
     "Aprende cómo comprimir PDFs muy grandes — 50MB, 100MB o más. Estrategias paso a paso para reducir archivos enormes incluyendo división, múltiples pasadas y optimización de imágenes.",
   keywords: "comprimir pdf grande, reducir tamaño pdf grande, comprimir pdf 100mb, achicar pdf pesado",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo comprimo un PDF de más de 100MB?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Súbelo a la herramienta Comprimir PDF de OmnisPDF (los usuarios Pro pueden subir archivos de hasta 200MB). Usa compresión Extrema para la máxima reducción. Si sigue siendo muy grande, divide el PDF en secciones más pequeñas primero, luego comprime cada parte por separado." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Súbelo a la herramienta Comprimir PDF de PDF.it (los usuarios Pro pueden subir archivos de hasta 200MB). Usa compresión Extrema para la máxima reducción. Si sigue siendo muy grande, divide el PDF en secciones más pequeñas primero, luego comprime cada parte por separado." }
     },
     {
       "@type": "Question",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo comprimir un PDF grande gratis?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Los usuarios gratuitos pueden comprimir archivos de hasta 25MB. Para archivos mayores de 25MB, necesitas OmnisPDF Pro que soporta archivos de hasta 200MB e incluye procesamiento por lotes." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Los usuarios gratuitos pueden comprimir archivos de hasta 25MB. Para archivos mayores de 25MB, necesitas PDF.it Pro que soporta archivos de hasta 200MB e incluye procesamiento por lotes." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo comprimir un PDF grande en mi teléfono?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí, pero subir archivos grandes en móvil puede ser lento dependiendo de tu conexión. OmnisPDF funciona en cualquier navegador móvil — no necesitas instalar ninguna app." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, pero subir archivos grandes en móvil puede ser lento dependiendo de tu conexión. PDF.it funciona en cualquier navegador móvil — no necesitas instalar ninguna app." }
     }
   ]
 }
@@ -57,7 +57,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Sube tu PDF grande",
-      "text": "Ve a la herramienta Comprimir PDF de OmnisPDF y sube tu archivo. Los usuarios Pro pueden subir archivos de hasta 200MB."
+      "text": "Ve a la herramienta Comprimir PDF de PDF.it y sube tu archivo. Los usuarios Pro pueden subir archivos de hasta 200MB."
     },
     {
       "@type": "HowToStep",
@@ -318,12 +318,12 @@ export default function ComprimirPDFGrandePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo comprimo un PDF de más de 100MB?", a: "Súbelo a la herramienta Comprimir PDF de OmnisPDF (los usuarios Pro pueden subir archivos de hasta 200MB). Usa compresión Extrema para la máxima reducción. Si sigue siendo muy grande, divide el PDF en secciones más pequeñas primero, luego comprime cada parte por separado." },
+                { q: "¿Cómo comprimo un PDF de más de 100MB?", a: "Súbelo a la herramienta Comprimir PDF de PDF.it (los usuarios Pro pueden subir archivos de hasta 200MB). Usa compresión Extrema para la máxima reducción. Si sigue siendo muy grande, divide el PDF en secciones más pequeñas primero, luego comprime cada parte por separado." },
                 { q: "¿Por qué mi PDF pesa más de 50MB?", a: "Los PDFs grandes casi siempre son causados por imágenes de alta resolución o páginas escaneadas. Una sola página escaneada puede pesar 2-5MB, así que un documento escaneado de 20 páginas puede alcanzar fácilmente 50-100MB." },
-                { q: "¿Puedo comprimir un PDF grande gratis?", a: "Los usuarios gratuitos pueden comprimir archivos de hasta 25MB. Para archivos mayores de 25MB, necesitas OmnisPDF Pro que soporta archivos de hasta 200MB e incluye procesamiento por lotes." },
+                { q: "¿Puedo comprimir un PDF grande gratis?", a: "Los usuarios gratuitos pueden comprimir archivos de hasta 25MB. Para archivos mayores de 25MB, necesitas PDF.it Pro que soporta archivos de hasta 200MB e incluye procesamiento por lotes." },
                 { q: "¿Debería dividir un PDF grande antes de comprimir?", a: "Sí, si la compresión sola no reduce el archivo lo suficiente. Divide en secciones, comprime cada una por separado, luego únelas de nuevo. Esto frecuentemente produce mejores resultados que comprimir el archivo completo de una vez." },
                 { q: "¿Cuánto tarda comprimir un PDF de 100MB?", a: "Típicamente 30-90 segundos dependiendo del número de páginas y tipo de contenido. Los archivos con muchas imágenes tardan más. Los usuarios Pro obtienen procesamiento prioritario para resultados más rápidos." },
-                { q: "¿Puedo comprimir un PDF grande en mi teléfono?", a: "Sí, pero subir archivos grandes en móvil puede ser lento dependiendo de tu conexión. OmnisPDF funciona en cualquier navegador móvil — no necesitas instalar ninguna app." },
+                { q: "¿Puedo comprimir un PDF grande en mi teléfono?", a: "Sí, pero subir archivos grandes en móvil puede ser lento dependiendo de tu conexión. PDF.it funciona en cualquier navegador móvil — no necesitas instalar ninguna app." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

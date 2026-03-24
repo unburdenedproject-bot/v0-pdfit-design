@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Printer, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "PPT to PDF for Printing: Best Layout + Quality Tips | OmnisPDF",
+  title: "PPT to PDF for Printing: Best Layout + Quality Tips | PDF.it",
   description:
     "Learn how to convert PowerPoint to PDF for high-quality printing. Tips on slide size, resolution, bleed, margins, and getting print-shop-ready PDFs from your presentations.",
   keywords: "ppt to pdf for printing, powerpoint to pdf print quality, pptx to pdf high resolution, print powerpoint slides, pdf print settings",
@@ -62,7 +62,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Convert to PDF",
-      "text": "Upload your PPTX to OmnisPDF's PowerPoint to PDF tool and click Convert. The tool preserves your high-resolution images and fonts."
+      "text": "Upload your PPTX to PDF.it's PowerPoint to PDF tool and click Convert. The tool preserves your high-resolution images and fonts."
     },
     {
       "@type": "HowToStep",
@@ -176,8 +176,8 @@ export default function PPTToPDFForPrintingPage() {
                     desc: "Match your slide size to the paper you'll print on. Then go to File > Options > Advanced and set 'Default resolution' to High Fidelity (330 PPI) so images aren't compressed during export.",
                   },
                   {
-                    title: "Convert to PDF using OmnisPDF",
-                    desc: "Upload your PPTX to the PowerPoint to PDF tool. OmnisPDF preserves your high-resolution images, embedded fonts, and layout — giving you a print-ready PDF file.",
+                    title: "Convert to PDF using PDF.it",
+                    desc: "Upload your PPTX to the PowerPoint to PDF tool. PDF.it preserves your high-resolution images, embedded fonts, and layout — giving you a print-ready PDF file.",
                   },
                   {
                     title: "Review the PDF at 100% zoom",

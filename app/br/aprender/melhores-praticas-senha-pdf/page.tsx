@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Key, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Melhores Praticas para Senha de PDF — Guia de Seguranca | OmnisPDF",
+  title: "Melhores Praticas para Senha de PDF — Guia de Seguranca | PDF.it",
   description: "Aprenda a criar senhas fortes para proteger seus PDFs. Dicas de seguranca, erros comuns e como compartilhar senhas de forma segura.",
   keywords: "melhores praticas senha pdf, senha forte pdf, seguranca pdf, como criar senha pdf, dicas senha documento",
 }

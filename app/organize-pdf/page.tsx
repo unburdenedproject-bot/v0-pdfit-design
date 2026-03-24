@@ -5,9 +5,9 @@ import { Layers, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Organize PDF Pages Online — Sort, Rearrange & Manage PDFs | OmnisPDF",
+  title: "Organize PDF Pages Online — Sort, Rearrange & Manage PDFs | PDF.it",
   description:
-    "Organize your PDF pages with OmnisPDF. Split, merge, rotate, and rearrange pages to create perfectly ordered documents — fast, free, and browser-based.",
+    "Organize your PDF pages with PDF.it. Split, merge, rotate, and rearrange pages to create perfectly ordered documents — fast, free, and browser-based.",
 }
 
 const faqSchema = {
@@ -16,8 +16,8 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What tools does OmnisPDF offer for organizing PDF pages?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF offers four key tools for organizing PDFs: Split PDF to extract pages or sections, Merge PDF to combine multiple files into one, Rotate PDF to fix page orientation, and Reorder Pages to rearrange the page sequence." }
+      "name": "What tools does PDF.it offer for organizing PDF pages?",
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it offers four key tools for organizing PDFs: Split PDF to extract pages or sections, Merge PDF to combine multiple files into one, Rotate PDF to fix page orientation, and Reorder Pages to rearrange the page sequence." }
     },
     {
       "@type": "Question",
@@ -32,12 +32,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I organize PDF pages on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. All OmnisPDF tools work in mobile browsers — split, merge, rotate, and reorder your PDF pages on iPhone or Android without installing any app." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. All PDF.it tools work in mobile browsers — split, merge, rotate, and reorder your PDF pages on iPhone or Android without installing any app." }
     },
     {
       "@type": "Question",
       "name": "Is organizing PDF pages free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF's Split, Merge, and Rotate tools are free to use with no login required. Free users can process single files up to 25MB. Pro users get batch processing and larger file limits." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it's Split, Merge, and Rotate tools are free to use with no login required. Free users can process single files up to 25MB. Pro users get batch processing and larger file limits." }
     },
     {
       "@type": "Question",
@@ -66,7 +66,7 @@ export default function OrganizePDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Organize PDF Pages Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Sort, rearrange, and manage your PDF pages with OmnisPDF. Split, merge, rotate, and reorder pages to create perfectly organized documents — all in your browser.
+                Sort, rearrange, and manage your PDF pages with PDF.it. Split, merge, rotate, and reorder pages to create perfectly organized documents — all in your browser.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Multiple Tools</span></div>
@@ -103,7 +103,7 @@ export default function OrganizePDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Disorganized PDFs waste time and look unprofessional. Whether you need to remove extra pages, fix sideways scans, reorder chapters, or combine files from different sources, OmnisPDF gives you the tools to get your document in order — without installing any software.
+              Disorganized PDFs waste time and look unprofessional. Whether you need to remove extra pages, fix sideways scans, reorder chapters, or combine files from different sources, PDF.it gives you the tools to get your document in order — without installing any software.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Split PDFs to extract or remove specific pages</li>
@@ -190,11 +190,11 @@ export default function OrganizePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "What tools does OmnisPDF offer for organizing PDF pages?", a: "OmnisPDF offers four key tools for organizing PDFs: Split PDF to extract pages or sections, Merge PDF to combine multiple files into one, Rotate PDF to fix page orientation, and Reorder Pages to rearrange the page sequence." },
+                { q: "What tools does PDF.it offer for organizing PDF pages?", a: "PDF.it offers four key tools for organizing PDFs: Split PDF to extract pages or sections, Merge PDF to combine multiple files into one, Rotate PDF to fix page orientation, and Reorder Pages to rearrange the page sequence." },
                 { q: "How do I rearrange pages in a PDF?", a: "Use the Reorder Pages tool to rearrange your PDF pages. You can also split your PDF into individual pages with Split PDF, then merge them back in any order using Merge PDF." },
                 { q: "Can I remove specific pages from a PDF?", a: "Yes. Use Split PDF to extract only the pages you want to keep, leaving out the pages you want to remove. Then merge the remaining pages into a clean document." },
-                { q: "Can I organize PDF pages on my phone?", a: "Yes. All OmnisPDF tools work in mobile browsers — split, merge, rotate, and reorder your PDF pages on iPhone or Android without installing any app." },
-                { q: "Is organizing PDF pages free?", a: "Yes. OmnisPDF's Split, Merge, and Rotate tools are free to use with no login required. Free users can process single files up to 25MB. Pro users get batch processing and larger file limits." },
+                { q: "Can I organize PDF pages on my phone?", a: "Yes. All PDF.it tools work in mobile browsers — split, merge, rotate, and reorder your PDF pages on iPhone or Android without installing any app." },
+                { q: "Is organizing PDF pages free?", a: "Yes. PDF.it's Split, Merge, and Rotate tools are free to use with no login required. Free users can process single files up to 25MB. Pro users get batch processing and larger file limits." },
                 { q: "Can I combine organizing steps into a workflow?", a: "Yes. You can chain multiple tools together — for example, split a PDF to remove unwanted pages, rotate any sideways pages, then merge everything back into a single organized document." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

@@ -5,9 +5,9 @@ import { FileSpreadsheet, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Extract Tables from PDF — Pull Tables into Excel | OmnisPDF",
+  title: "Extract Tables from PDF — Pull Tables into Excel | PDF.it",
   description:
-    "Extract tables from PDF files with OmnisPDF. Pull structured data from PDFs into Excel spreadsheets for editing and analysis — fast and browser-based.",
+    "Extract tables from PDF files with PDF.it. Pull structured data from PDFs into Excel spreadsheets for editing and analysis — fast and browser-based.",
 }
 
 const faqSchema = {
@@ -17,7 +17,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How accurate is table extraction from PDFs?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF uses advanced parsing to detect table structures, borders, and cell alignment. Accuracy depends on the PDF — well-structured tables with clear borders extract with high fidelity, while scanned or image-based tables may need OCR first." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it uses advanced parsing to detect table structures, borders, and cell alignment. Accuracy depends on the PDF — well-structured tables with clear borders extract with high fidelity, while scanned or image-based tables may need OCR first." }
     },
     {
       "@type": "Question",
@@ -27,7 +27,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I extract tables from scanned PDFs?",
-      "acceptedAnswer": { "@type": "Answer", "text": "For scanned PDFs, run them through OmnisPDF's OCR Scanner first to convert images to searchable text, then extract the tables. This two-step process works well for most scanned documents." }
+      "acceptedAnswer": { "@type": "Answer", "text": "For scanned PDFs, run them through PDF.it's OCR Scanner first to convert images to searchable text, then extract the tables. This two-step process works well for most scanned documents." }
     },
     {
       "@type": "Question",
@@ -42,7 +42,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Does table extraction preserve formatting like merged cells?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF preserves cell structure, column alignment, and data types. Complex formatting like merged cells is handled best by the Business-tier Table Extraction tool, which uses advanced layout analysis." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it preserves cell structure, column alignment, and data types. Complex formatting like merged cells is handled best by the Business-tier Table Extraction tool, which uses advanced layout analysis." }
     }
   ]
 }
@@ -93,7 +93,7 @@ export default function ExtractTablesFromPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              PDFs lock your data inside static pages. When you need to analyze financial tables, update pricing lists, or import invoice data into a spreadsheet, manually retyping wastes hours. OmnisPDF extracts tables from PDFs and converts them into editable Excel files you can work with immediately.
+              PDFs lock your data inside static pages. When you need to analyze financial tables, update pricing lists, or import invoice data into a spreadsheet, manually retyping wastes hours. PDF.it extracts tables from PDFs and converts them into editable Excel files you can work with immediately.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Extract tables with rows, columns, and cell data intact</li>
@@ -111,7 +111,7 @@ export default function ExtractTablesFromPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Extract Financial Tables from PDF Reports</h2>
               <p className="text-slate-600">
-                Annual reports, quarterly earnings, and balance sheets are often distributed as PDFs. OmnisPDF pulls the numbers out of those tables so you can drop them straight into your financial models and spreadsheets.
+                Annual reports, quarterly earnings, and balance sheets are often distributed as PDFs. PDF.it pulls the numbers out of those tables so you can drop them straight into your financial models and spreadsheets.
               </p>
             </div>
             <div>
@@ -135,7 +135,7 @@ export default function ExtractTablesFromPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Extract Tables from a PDF</h2>
             <div className="space-y-4">
               {[
-                "Upload your PDF containing tables to OmnisPDF.",
+                "Upload your PDF containing tables to PDF.it.",
                 "Choose PDF to Excel (Pro) or Table Extraction (Business).",
                 "Download your extracted data as an Excel spreadsheet.",
               ].map((step, i) => (
@@ -180,12 +180,12 @@ export default function ExtractTablesFromPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How accurate is table extraction from PDFs?", a: "OmnisPDF uses advanced parsing to detect table structures, borders, and cell alignment. Accuracy depends on the PDF — well-structured tables with clear borders extract with high fidelity, while scanned or image-based tables may need OCR first." },
+                { q: "How accurate is table extraction from PDFs?", a: "PDF.it uses advanced parsing to detect table structures, borders, and cell alignment. Accuracy depends on the PDF — well-structured tables with clear borders extract with high fidelity, while scanned or image-based tables may need OCR first." },
                 { q: "What formats can I export extracted tables to?", a: "With PDF to Excel (Pro), you get .xlsx files. With Table Extraction (Business), you can export structured data to Excel, CSV, and other formats suitable for databases and data analysis tools." },
-                { q: "Can I extract tables from scanned PDFs?", a: "For scanned PDFs, run them through OmnisPDF's OCR Scanner first to convert images to searchable text, then extract the tables. This two-step process works well for most scanned documents." },
+                { q: "Can I extract tables from scanned PDFs?", a: "For scanned PDFs, run them through PDF.it's OCR Scanner first to convert images to searchable text, then extract the tables. This two-step process works well for most scanned documents." },
                 { q: "What is the difference between Pro and Business for table extraction?", a: "Pro includes PDF to Excel conversion, which works well for basic table extraction. Business includes advanced Table Extraction with better structure detection, multi-table support, and direct export to multiple formats." },
                 { q: "Can I extract multiple tables from a single PDF?", a: "Yes. Both PDF to Excel and Table Extraction can handle multiple tables across different pages. Business-tier Table Extraction is better at separating distinct tables on the same page." },
-                { q: "Does table extraction preserve formatting like merged cells?", a: "OmnisPDF preserves cell structure, column alignment, and data types. Complex formatting like merged cells is handled best by the Business-tier Table Extraction tool, which uses advanced layout analysis." },
+                { q: "Does table extraction preserve formatting like merged cells?", a: "PDF.it preserves cell structure, column alignment, and data types. Complex formatting like merged cells is handled best by the Business-tier Table Extraction tool, which uses advanced layout analysis." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ScanLine, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Convertir PDF Escaneado a Texto: Cuando Necesitas OCR | OmnisPDF",
+  title: "Convertir PDF Escaneado a Texto: Cuando Necesitas OCR | PDF.it",
   description:
     "Aprende como convertir PDFs escaneados a texto editable usando OCR. Entiende cuando PDF a TXT funciona vs cuando necesitas OCR, mas consejos para mejorar la calidad del escaneo.",
   keywords: "convertir pdf escaneado a texto, pdf escaneado a texto, ocr pdf, pdf escaneado ocr, extraer texto de pdf escaneado",
@@ -38,12 +38,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Puedo hacer OCR a una foto de telefono de un documento?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si, pero las fotos de telefono suelen tener distorsion de perspectiva, sombras y menor resolucion que los escaneos de escaner plano. Usa la herramienta de Limpieza de Escaneo de Telefono de OmnisPDF primero para enderezar y mejorar la imagen, luego ejecuta OCR para mejores resultados." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si, pero las fotos de telefono suelen tener distorsion de perspectiva, sombras y menor resolucion que los escaneos de escaner plano. Usa la herramienta de Limpieza de Escaneo de Telefono de PDF.it primero para enderezar y mejorar la imagen, luego ejecuta OCR para mejores resultados." }
     },
     {
       "@type": "Question",
-      "name": "El OCR es gratis en OmnisPDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "El Escaner OCR es una funcion Pro en OmnisPDF. Los usuarios gratuitos pueden probar PDF a TXT basico (que funciona en PDFs digitales). Para documentos escaneados que requieren OCR, una suscripcion Pro ($7.99/mes) desbloquea el Escaner OCR con conversiones ilimitadas." }
+      "name": "El OCR es gratis en PDF.it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "El Escaner OCR es una funcion Pro en PDF.it. Los usuarios gratuitos pueden probar PDF a TXT basico (que funciona en PDFs digitales). Para documentos escaneados que requieren OCR, una suscripcion Pro ($7.99/mes) desbloquea el Escaner OCR con conversiones ilimitadas." }
     }
   ]
 }
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Convertir un PDF Escaneado a Texto con OCR",
-  "description": "Extrae texto editable de PDFs escaneados en 3 simples pasos usando el Escaner OCR de OmnisPDF.",
+  "description": "Extrae texto editable de PDFs escaneados en 3 simples pasos usando el Escaner OCR de PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Sube tu PDF escaneado",
-      "text": "Ve al Escaner OCR de OmnisPDF y sube tu PDF escaneado. La herramienta acepta PDFs con cualquier numero de paginas escaneadas."
+      "text": "Ve al Escaner OCR de PDF.it y sube tu PDF escaneado. La herramienta acepta PDFs con cualquier numero de paginas escaneadas."
     },
     {
       "@type": "HowToStep",
@@ -165,7 +165,7 @@ export default function ConvertirPdfEscaneadoATextoPage() {
                 En un PDF escaneado, no hay datos de texto — solo datos de imagen. Cada pagina es una imagen similar a JPEG o PNG del papel original. La herramienta no encuentra caracteres para extraer, asi que produce un archivo vacio o solo espacios en blanco.
               </p>
               <p className="text-slate-600">
-                Esto no es una limitacion especifica de OmnisPDF — <em>ninguna</em> herramienta estandar de extraccion de texto puede leer texto de imagenes. Necesitas una tecnologia completamente diferente: OCR.
+                Esto no es una limitacion especifica de PDF.it — <em>ninguna</em> herramienta estandar de extraccion de texto puede leer texto de imagenes. Necesitas una tecnologia completamente diferente: OCR.
               </p>
             </section>
 
@@ -175,7 +175,7 @@ export default function ConvertirPdfEscaneadoATextoPage() {
                 OCR (Reconocimiento Optico de Caracteres) es una tecnologia que lee texto de imagenes. En lugar de buscar datos de texto en el archivo PDF, analiza la apariencia visual de cada pagina y reconoce formas de letras, palabras y oraciones.
               </p>
               <p className="text-slate-600 mb-4">
-                Los motores OCR modernos (como el que usa OmnisPDF) pueden:
+                Los motores OCR modernos (como el que usa PDF.it) pueden:
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#x2713; Reconocer texto en mas de 100 idiomas</li>
@@ -278,7 +278,7 @@ export default function ConvertirPdfEscaneadoATextoPage() {
                 { q: "Cual es la diferencia entre un PDF escaneado y un PDF digital?", a: "Un PDF digital fue creado electronicamente y contiene datos de texto reales que puedes seleccionar y buscar. Un PDF escaneado es una fotografia de papel: cada pagina es una imagen sin datos de texto." },
                 { q: "Como mejoro la precision del OCR en mis documentos escaneados?", a: "Escanea a 300 DPI o mas, usa buena iluminacion, mantiene el documento plano y alineado, escanea en blanco y negro para documentos solo de texto, y limpia los escaneos de telefono antes del OCR." },
                 { q: "Puedo hacer OCR a una foto de telefono de un documento?", a: "Si, pero las fotos de telefono suelen tener distorsion de perspectiva, sombras y menor resolucion. Usa la herramienta de Limpieza de Escaneo de Telefono primero para enderezar y mejorar la imagen." },
-                { q: "El OCR es gratis en OmnisPDF?", a: "El Escaner OCR es una funcion Pro en OmnisPDF. Los usuarios gratuitos pueden probar PDF a TXT basico. Para documentos escaneados que requieren OCR, una suscripcion Pro ($7.99/mes) desbloquea el Escaner OCR con conversiones ilimitadas." },
+                { q: "El OCR es gratis en PDF.it?", a: "El Escaner OCR es una funcion Pro en PDF.it. Los usuarios gratuitos pueden probar PDF a TXT basico. Para documentos escaneados que requieren OCR, una suscripcion Pro ($7.99/mes) desbloquea el Escaner OCR con conversiones ilimitadas." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

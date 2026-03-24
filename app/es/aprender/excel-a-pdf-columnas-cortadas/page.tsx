@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileSpreadsheet, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Excel a PDF corta columnas? Asi se soluciona | OmnisPDF",
+  title: "Excel a PDF corta columnas? Asi se soluciona | PDF.it",
   description: "Soluciona columnas cortadas al convertir Excel a PDF. Aprende 5 soluciones probadas: ajustar area de impresion, usar modo horizontal, escalar a ajustar, reducir margenes y dividir hojas anchas.",
   keywords: "excel a pdf columnas cortadas, excel a pdf columnas faltantes, excel pdf problemas de formato, arreglar excel a pdf diseno",
 }
@@ -15,14 +15,14 @@ const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainE
   { "@type": "Question", "name": "Como establezco el area de impresion en Excel para evitar columnas cortadas?", "acceptedAnswer": { "@type": "Answer", "text": "Selecciona todas las celdas que quieres en tu PDF, luego ve a Diseno de pagina > Area de impresion > Establecer area de impresion. Esto le dice a Excel (y cualquier convertidor) exactamente que columnas y filas incluir." } },
   { "@type": "Question", "name": "El modo horizontal soluciona columnas cortadas en Excel a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Frecuentemente si. Horizontal te da aproximadamente 40% mas espacio horizontal. Ve a Diseno de pagina > Orientacion > Horizontal. Esto solo soluciona el problema para la mayoria de hojas de calculo con 10-15 columnas." } },
   { "@type": "Question", "name": "Que hace 'Ajustar todas las columnas en una pagina' en Excel?", "acceptedAnswer": { "@type": "Answer", "text": "Escala el ancho completo de tu hoja de calculo para que quepa en una sola pagina. Ve a Diseno de pagina > Ajustar a > Ancho: 1 pagina. Excel encoge todas las columnas proporcionalmente. Si el texto queda muy pequeno para leer, necesitaras dividir la hoja." } },
-  { "@type": "Question", "name": "Puedo dividir una hoja Excel ancha en multiples PDFs?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Convierte tu archivo Excel a PDF usando OmnisPDF, luego usa la herramienta Dividir PDF para separar paginas. Alternativamente, en Excel, divide manualmente tus datos en dos hojas (columnas A-J en Hoja 1, columnas K-T en Hoja 2) antes de convertir." } },
+  { "@type": "Question", "name": "Puedo dividir una hoja Excel ancha en multiples PDFs?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Convierte tu archivo Excel a PDF usando PDF.it, luego usa la herramienta Dividir PDF para separar paginas. Alternativamente, en Excel, divide manualmente tus datos en dos hojas (columnas A-J en Hoja 1, columnas K-T en Hoja 2) antes de convertir." } },
   { "@type": "Question", "name": "Por que mis columnas se ven bien en Excel pero se cortan en el PDF?", "acceptedAnswer": { "@type": "Answer", "text": "La vista normal de Excel no muestra los limites de pagina. Cambia a vista Diseno de pagina (Vista > Diseno de pagina) o usa Vista previa de impresion (Ctrl+P) para ver exactamente donde caen los saltos de pagina." } }
 ] }
 
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como solucionar columnas cortadas al convertir Excel a PDF", "description": "Previene que las columnas se corten al convertir hojas de calculo Excel a PDF.", "step": [
   { "@type": "HowToStep", "name": "Establece area de impresion y cambia a horizontal", "text": "En Excel, selecciona todas las celdas que necesitas, ve a Diseno de pagina > Area de impresion > Establecer area de impresion. Luego cambia a orientacion Horizontal." },
   { "@type": "HowToStep", "name": "Escala para ajustar a un ancho de pagina", "text": "Ve a Diseno de pagina > Ajustar a y establece Ancho en 1 pagina. Esto encoge todas las columnas para que quepan en un ancho de pagina mientras las filas fluyen a paginas adicionales." },
-  { "@type": "HowToStep", "name": "Convierte a PDF", "text": "Sube tu archivo Excel preparado a la herramienta Excel a PDF de OmnisPDF y convierte. Todas las columnas ahora apareceran correctamente en el PDF." }
+  { "@type": "HowToStep", "name": "Convierte a PDF", "text": "Sube tu archivo Excel preparado a la herramienta Excel a PDF de PDF.it y convierte. Todas las columnas ahora apareceran correctamente en el PDF." }
 ] }
 
 export default function ExcelAPdfColumnasCortadasPage() {
@@ -66,7 +66,7 @@ export default function ExcelAPdfColumnasCortadasPage() {
                   <li>Ve a <strong>Diseno de pagina &gt; Area de impresion &gt; Establecer area de impresion</strong></li>
                   <li>Verifica con <strong>Vista previa de impresion (Ctrl+P)</strong> que todas las columnas aparezcan</li>
                 </ol>
-                <p className="text-slate-600 mt-2">Una vez establecida el area de impresion, convierte usando la <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">herramienta Excel a PDF de OmnisPDF</Link>.</p>
+                <p className="text-slate-600 mt-2">Una vez establecida el area de impresion, convierte usando la <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">herramienta Excel a PDF de PDF.it</Link>.</p>
               </div>
               <div>
                 <h3 className="text-lg font-bold text-slate-900 mb-2">Solucion 2: Cambia a modo horizontal</h3>
@@ -107,13 +107,13 @@ export default function ExcelAPdfColumnasCortadasPage() {
           <section className="mb-12">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Sigues teniendo problemas?</h2>
             <p className="text-slate-600 mb-4">Si las columnas siguen cortandose despues de probar estas soluciones, el problema podria ser con la herramienta de conversion que estas usando.</p>
-            <p className="text-slate-600">Intenta convertir con la <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">herramienta Excel a PDF de OmnisPDF</Link>: usa renderizado del lado del servidor que coincide de cerca con la salida propia de Excel. Tambien puedes probar nuestro <Link href="/es/office-a-pdf" className="text-orange-600 hover:underline">convertidor Office a PDF</Link> general.</p>
+            <p className="text-slate-600">Intenta convertir con la <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">herramienta Excel a PDF de PDF.it</Link>: usa renderizado del lado del servidor que coincide de cerca con la salida propia de Excel. Tambien puedes probar nuestro <Link href="/es/office-a-pdf" className="text-orange-600 hover:underline">convertidor Office a PDF</Link> general.</p>
           </section>
         </div></article>
 
         <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
           <h2 className="text-2xl font-black text-white mb-3">Listo para convertir sin columnas cortadas?</h2>
-          <p className="text-slate-300 mb-6">Establece tu area de impresion, cambia a horizontal y convierte con OmnisPDF: todas las columnas incluidas.</p>
+          <p className="text-slate-300 mb-6">Establece tu area de impresion, cambia a horizontal y convierte con PDF.it: todas las columnas incluidas.</p>
           <Link href="/es/excel-a-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><FileSpreadsheet className="h-5 w-5" /> Excel a PDF Ahora</Link>
         </div></section>
 

@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Type, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "PPTX para PDF — Fontes Faltando? Como Corrigir | OmnisPDF",
+  title: "PPTX para PDF — Fontes Faltando? Como Corrigir | PDF.it",
   description: "Resolvendo o problema de fontes faltando ao converter PowerPoint para PDF. Aprenda a incorporar fontes, identificar substituicoes e garantir que seu PDF fique perfeito.",
   keywords: "pptx para pdf fontes faltando, fontes powerpoint pdf, incorporar fontes powerpoint, fontes substituidas pdf, fontes sumindo pdf",
 }
@@ -20,7 +20,7 @@ const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainE
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como corrigir fontes faltando ao converter PPTX para PDF", "description": "Corrija problemas de fontes antes de converter seu PowerPoint para PDF.", "step": [
   { "@type": "HowToStep", "name": "Identifique as fontes usadas", "text": "No PowerPoint, use Substituir Fontes (Inicio > Substituir > Substituir Fontes) para ver todas as fontes usadas na apresentacao." },
   { "@type": "HowToStep", "name": "Incorpore as fontes no arquivo", "text": "Va em Arquivo > Opcoes > Salvar e marque 'Incorporar fontes no arquivo'." },
-  { "@type": "HowToStep", "name": "Converta para PDF", "text": "Envie o arquivo com fontes incorporadas para o conversor do OmnisPDF para obter um PDF perfeito." }
+  { "@type": "HowToStep", "name": "Converta para PDF", "text": "Envie o arquivo com fontes incorporadas para o conversor do PDF.it para obter um PDF perfeito." }
 ] }
 
 export default function PptxParaPdfFontesFaltandoPage() {
@@ -58,7 +58,7 @@ export default function PptxParaPdfFontesFaltandoPage() {
               {[
                 { title: "Abra as opcoes do PowerPoint", desc: "Va em Arquivo > Opcoes > Salvar. Na secao 'Preservar fidelidade ao compartilhar', marque 'Incorporar fontes no arquivo'." },
                 { title: "Escolha o nivel de incorporacao", desc: "'Incorporar apenas os caracteres usados' reduz o tamanho do arquivo. 'Incorporar todos os caracteres' garante maxima compatibilidade — recomendado se outra pessoa pode editar o arquivo." },
-                { title: "Salve e converta", desc: "Salve o arquivo PPTX. Agora as fontes estao dentro do arquivo. Envie para o conversor do OmnisPDF e o PDF tera as fontes corretas." },
+                { title: "Salve e converta", desc: "Salve o arquivo PPTX. Agora as fontes estao dentro do arquivo. Envie para o conversor do PDF.it e o PDF tera as fontes corretas." },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
                   <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>

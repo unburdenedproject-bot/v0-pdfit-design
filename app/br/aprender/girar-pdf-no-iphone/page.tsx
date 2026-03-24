@@ -5,7 +5,7 @@ import Link from "next/link"
 import { RotateCw, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Girar PDF no iPhone (Sem Aplicativo) | OmnisPDF",
+  title: "Girar PDF no iPhone (Sem Aplicativo) | PDF.it",
   description:
     "Aprenda como girar paginas de um PDF diretamente no iPhone usando o navegador. Corrija a orientacao sem instalar nenhum app — online, gratis.",
   keywords: "girar pdf iphone, rotacionar pdf iphone, girar pdf celular, corrigir pdf iphone, girar pdf ios sem app",
@@ -18,12 +18,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como girar um PDF no iPhone sem aplicativo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Abra o Safari no iPhone, acesse omnispdf.com/br/girar-pdf, envie o PDF, selecione as paginas e a rotacao desejada, toque em Girar e baixe o resultado. Nenhum app necessario." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Abra o Safari no iPhone, acesse pdf.it.com/br/girar-pdf, envie o PDF, selecione as paginas e a rotacao desejada, toque em Girar e baixe o resultado. Nenhum app necessario." }
     },
     {
       "@type": "Question",
       "name": "Funciona no Android tambem?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em qualquer navegador movel. O processo e identico em iPhone, Android e iPad." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em qualquer navegador movel. O processo e identico em iPhone, Android e iPad." }
     },
     {
       "@type": "Question",
@@ -41,8 +41,8 @@ const howToSchema = {
   "step": [
     {
       "@type": "HowToStep",
-      "name": "Abra o OmnisPDF no Safari",
-      "text": "No iPhone, abra o Safari e acesse omnispdf.com/br/girar-pdf."
+      "name": "Abra o PDF.it no Safari",
+      "text": "No iPhone, abra o Safari e acesse pdf.it.com/br/girar-pdf."
     },
     {
       "@type": "HowToStep",
@@ -119,8 +119,8 @@ export default function GirarPDFNoIPhonePage() {
               <div className="space-y-4">
                 {[
                   {
-                    title: "Abra o Safari e acesse o OmnisPDF",
-                    desc: "No iPhone, abra o Safari (ou Chrome) e acesse omnispdf.com/br/girar-pdf. A interface e totalmente adaptada para telas moveis.",
+                    title: "Abra o Safari e acesse o PDF.it",
+                    desc: "No iPhone, abra o Safari (ou Chrome) e acesse pdf.it.com/br/girar-pdf. A interface e totalmente adaptada para telas moveis.",
                   },
                   {
                     title: "Envie o PDF",
@@ -201,8 +201,8 @@ export default function GirarPDFNoIPhonePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como girar um PDF no iPhone sem aplicativo?", a: "Abra o Safari, acesse omnispdf.com/br/girar-pdf, envie o PDF, selecione as paginas e a rotacao desejada, toque em Girar e baixe o resultado." },
-                { q: "Funciona no Android tambem?", a: "Sim. O OmnisPDF funciona em qualquer navegador movel. O processo e identico em iPhone, Android e iPad." },
+                { q: "Como girar um PDF no iPhone sem aplicativo?", a: "Abra o Safari, acesse pdf.it.com/br/girar-pdf, envie o PDF, selecione as paginas e a rotacao desejada, toque em Girar e baixe o resultado." },
+                { q: "Funciona no Android tambem?", a: "Sim. O PDF.it funciona em qualquer navegador movel. O processo e identico em iPhone, Android e iPad." },
                 { q: "Onde fica o PDF girado depois de baixar?", a: "No iPhone, o PDF vai para a pasta Downloads no app Arquivos. De la voce pode abrir, compartilhar por email ou WhatsApp." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

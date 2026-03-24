@@ -5,9 +5,9 @@ import Link from "next/link"
 import { Image, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Convert PDF to PNG on iPhone (Fast, High-Quality Export) | OmnisPDF",
+  title: "Convert PDF to PNG on iPhone (Fast, High-Quality Export) | PDF.it",
   description:
-    "Learn how to convert a PDF to PNG images on your iPhone using Safari and OmnisPDF. No app needed — just open, convert, and save to your Photos library in seconds.",
+    "Learn how to convert a PDF to PNG images on your iPhone using Safari and PDF.it. No app needed — just open, convert, and save to your Photos library in seconds.",
   keywords: "convert pdf to png iphone, pdf to png on iphone, save pdf as image iphone, pdf to picture iphone, export pdf to png ios",
 }
 
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I convert a PDF to PNG on iPhone without an app?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open Safari on your iPhone, go to OmnisPDF's PDF to PNG tool, upload your PDF, convert it, and download the PNG images directly. No app installation needed — it works entirely in your browser." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open Safari on your iPhone, go to PDF.it's PDF to PNG tool, upload your PDF, convert it, and download the PNG images directly. No app installation needed — it works entirely in your browser." }
     },
     {
       "@type": "Question",
@@ -28,22 +28,22 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is there a free PDF to PNG converter for iPhone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF is free for your first 3 conversions per day without signup. After that, create a free account for 10 conversions per day. The tool works in Safari — no app purchase needed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it is free for your first 3 conversions per day without signup. After that, create a free account for 10 conversions per day. The tool works in Safari — no app purchase needed." }
     },
     {
       "@type": "Question",
       "name": "Can I convert multiple PDF pages to PNG on iPhone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF converts every page of your PDF into a separate PNG image. You can download them individually or as a ZIP file. For multi-file batch conversion, upgrade to Pro." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it converts every page of your PDF into a separate PNG image. You can download them individually or as a ZIP file. For multi-file batch conversion, upgrade to Pro." }
     },
     {
       "@type": "Question",
       "name": "Will the PNG quality be good on iPhone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF produces high-resolution PNG images with sharp text and clean graphics. PNG uses lossless compression, so there's no quality loss during conversion. The output looks great on iPhone's Retina display." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it produces high-resolution PNG images with sharp text and clean graphics. PNG uses lossless compression, so there's no quality loss during conversion. The output looks great on iPhone's Retina display." }
     },
     {
       "@type": "Question",
       "name": "How do I share a PDF as an image on iPhone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Convert your PDF to PNG using OmnisPDF in Safari, save the images to your Photos app, then share them via iMessage, WhatsApp, email, or any other app. PNG images are universally supported." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Convert your PDF to PNG using PDF.it in Safari, save the images to your Photos app, then share them via iMessage, WhatsApp, email, or any other app. PNG images are universally supported." }
     }
   ]
 }
@@ -56,8 +56,8 @@ const howToSchema = {
   "step": [
     {
       "@type": "HowToStep",
-      "name": "Open OmnisPDF in Safari",
-      "text": "Open Safari on your iPhone and go to omnispdf.com/pdf-to-png. Tap the upload area to select your PDF from Files, iCloud, or email attachments."
+      "name": "Open PDF.it in Safari",
+      "text": "Open Safari on your iPhone and go to pdf.it.com/pdf-to-png. Tap the upload area to select your PDF from Files, iCloud, or email attachments."
     },
     {
       "@type": "HowToStep",
@@ -154,8 +154,8 @@ export default function ConvertPDFtoPNGoniPhonePage() {
               <div className="space-y-4">
                 {[
                   {
-                    title: "Open OmnisPDF in Safari",
-                    desc: "On your iPhone, open Safari and go to omnispdf.com/pdf-to-png. The tool works directly in your browser — there's nothing to download or install.",
+                    title: "Open PDF.it in Safari",
+                    desc: "On your iPhone, open Safari and go to pdf.it.com/pdf-to-png. The tool works directly in your browser — there's nothing to download or install.",
                   },
                   {
                     title: "Upload your PDF",
@@ -225,7 +225,7 @@ export default function ConvertPDFtoPNGoniPhonePage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Use Safari for the smoothest experience</h3>
                   <p className="text-slate-600">
-                    While OmnisPDF works in Chrome and other iOS browsers, Safari handles file uploads and downloads most smoothly on iPhone. The file picker integrates directly with iCloud and the Files app.
+                    While PDF.it works in Chrome and other iOS browsers, Safari handles file uploads and downloads most smoothly on iPhone. The file picker integrates directly with iCloud and the Files app.
                   </p>
                 </div>
                 <div>
@@ -310,12 +310,12 @@ export default function ConvertPDFtoPNGoniPhonePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "Can I convert a PDF to PNG on iPhone without an app?", a: "Yes. Open Safari on your iPhone, go to OmnisPDF's PDF to PNG tool, upload your PDF, convert it, and download the PNG images directly. No app installation needed." },
+                { q: "Can I convert a PDF to PNG on iPhone without an app?", a: "Yes. Open Safari on your iPhone, go to PDF.it's PDF to PNG tool, upload your PDF, convert it, and download the PNG images directly. No app installation needed." },
                 { q: "Where do converted PNG files save on iPhone?", a: "Downloaded PNG files go to your Files app by default (in the Downloads folder). You can also save them directly to your Photos app by tapping the share icon and choosing 'Save Image'." },
-                { q: "Is there a free PDF to PNG converter for iPhone?", a: "Yes. OmnisPDF is free for your first 3 conversions per day without signup. After that, create a free account for 10 conversions per day. The tool works in Safari — no app purchase needed." },
-                { q: "Can I convert multiple PDF pages to PNG on iPhone?", a: "Yes. OmnisPDF converts every page of your PDF into a separate PNG image. You can download them individually or as a ZIP file." },
-                { q: "Will the PNG quality be good on iPhone?", a: "Yes. OmnisPDF produces high-resolution PNG images with sharp text and clean graphics. PNG uses lossless compression, so there's no quality loss during conversion." },
-                { q: "How do I share a PDF as an image on iPhone?", a: "Convert your PDF to PNG using OmnisPDF in Safari, save the images to your Photos app, then share them via iMessage, WhatsApp, email, or any other app." },
+                { q: "Is there a free PDF to PNG converter for iPhone?", a: "Yes. PDF.it is free for your first 3 conversions per day without signup. After that, create a free account for 10 conversions per day. The tool works in Safari — no app purchase needed." },
+                { q: "Can I convert multiple PDF pages to PNG on iPhone?", a: "Yes. PDF.it converts every page of your PDF into a separate PNG image. You can download them individually or as a ZIP file." },
+                { q: "Will the PNG quality be good on iPhone?", a: "Yes. PDF.it produces high-resolution PNG images with sharp text and clean graphics. PNG uses lossless compression, so there's no quality loss during conversion." },
+                { q: "How do I share a PDF as an image on iPhone?", a: "Convert your PDF to PNG using PDF.it in Safari, save the images to your Photos app, then share them via iMessage, WhatsApp, email, or any other app." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

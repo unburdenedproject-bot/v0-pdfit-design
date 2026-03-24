@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Converter Word para PDF no iPhone (Sem Apps) | OmnisPDF",
+  title: "Como Converter Word para PDF no iPhone (Sem Apps) | PDF.it",
   description:
     "Aprenda como converter Word para PDF no iPhone usando apenas o navegador. Sem instalar apps — guia rápido para converter .docx para PDF no iOS.",
   keywords: "word para pdf iphone, converter word para pdf iphone, docx para pdf iphone, word para pdf ios, converter documento iphone",
@@ -15,9 +15,9 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Preciso do Microsoft Word no iPhone para converter?", "acceptedAnswer": { "@type": "Answer", "text": "Não. O OmnisPDF converte Word para PDF direto no navegador, sem precisar do app Microsoft Word instalado no iPhone." } },
-    { "@type": "Question", "name": "Onde encontro o arquivo Word no iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Arquivos Word podem estar no app Arquivos, iCloud Drive, email (anexo), WhatsApp ou Google Drive. O OmnisPDF permite selecionar de qualquer uma dessas fontes." } },
-    { "@type": "Question", "name": "A formatação é mantida no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF processa o documento no servidor, mantendo fontes, imagens e layout. O resultado é igual ao de um computador." } }
+    { "@type": "Question", "name": "Preciso do Microsoft Word no iPhone para converter?", "acceptedAnswer": { "@type": "Answer", "text": "Não. O PDF.it converte Word para PDF direto no navegador, sem precisar do app Microsoft Word instalado no iPhone." } },
+    { "@type": "Question", "name": "Onde encontro o arquivo Word no iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Arquivos Word podem estar no app Arquivos, iCloud Drive, email (anexo), WhatsApp ou Google Drive. O PDF.it permite selecionar de qualquer uma dessas fontes." } },
+    { "@type": "Question", "name": "A formatação é mantida no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it processa o documento no servidor, mantendo fontes, imagens e layout. O resultado é igual ao de um computador." } }
   ]
 }
 
@@ -27,7 +27,7 @@ const howToSchema = {
   "name": "Converter Word para PDF no iPhone",
   "description": "Converta documentos Word para PDF direto no iPhone em 3 passos.",
   "step": [
-    { "@type": "HowToStep", "name": "Abra o OmnisPDF no Safari", "text": "No iPhone, abra o Safari e acesse a ferramenta Word para PDF do OmnisPDF." },
+    { "@type": "HowToStep", "name": "Abra o PDF.it no Safari", "text": "No iPhone, abra o Safari e acesse a ferramenta Word para PDF do PDF.it." },
     { "@type": "HowToStep", "name": "Envie o arquivo Word", "text": "Toque em Escolher arquivo e selecione o .docx do app Arquivos, iCloud ou email." },
     { "@type": "HowToStep", "name": "Baixe o PDF", "text": "Toque em Converter e baixe o PDF. Ele vai para a pasta Downloads do iPhone." }
   ]
@@ -83,7 +83,7 @@ export default function WordParaPdfNoIphonePage() {
               <h2 className="text-2xl font-black text-slate-900 mb-6">Passo a Passo no iPhone</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Abra o OmnisPDF no Safari", desc: "No iPhone, abra o Safari e acesse omnispdf.com. Vá para a ferramenta Word para PDF. O site é totalmente responsivo." },
+                  { title: "Abra o PDF.it no Safari", desc: "No iPhone, abra o Safari e acesse pdf.it.com. Vá para a ferramenta Word para PDF. O site é totalmente responsivo." },
                   { title: "Envie o arquivo Word", desc: "Toque em 'Escolher arquivo'. Selecione o .docx do app Arquivos, iCloud Drive, Downloads, ou de um anexo de email salvo. Também funciona com arquivos do Google Drive." },
                   { title: "Converta e baixe o PDF", desc: "Toque em Converter. Em segundos, o PDF será gerado com toda a formatação do Word mantida. Baixe o PDF — ele vai para a pasta Downloads." },
                 ].map((step, i) => (
@@ -159,9 +159,9 @@ export default function WordParaPdfNoIphonePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Preciso do Microsoft Word no iPhone para converter?", a: "Não. O OmnisPDF converte Word para PDF direto no navegador, sem precisar do app Microsoft Word instalado." },
+                { q: "Preciso do Microsoft Word no iPhone para converter?", a: "Não. O PDF.it converte Word para PDF direto no navegador, sem precisar do app Microsoft Word instalado." },
                 { q: "Onde encontro o arquivo Word no iPhone?", a: "Arquivos Word podem estar no app Arquivos, iCloud Drive, email (anexo), WhatsApp ou Google Drive." },
-                { q: "A formatação é mantida no celular?", a: "Sim. O OmnisPDF processa o documento no servidor, mantendo fontes, imagens e layout. O resultado é igual ao de um computador." },
+                { q: "A formatação é mantida no celular?", a: "Sim. O PDF.it processa o documento no servidor, mantendo fontes, imagens e layout. O resultado é igual ao de um computador." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

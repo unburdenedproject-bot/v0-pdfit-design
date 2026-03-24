@@ -6,15 +6,15 @@ import { FileSpreadsheet, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Tabela PDF para CSV — Converta Tabelas de PDF para CSV | OmnisPDF",
+  title: "Tabela PDF para CSV — Converta Tabelas de PDF para CSV | PDF.it",
   description:
-    "Converta tabelas de PDF para CSV com o OmnisPDF. Extraia dados tabulares e exporte como arquivo CSV — rápido, no navegador, sem cadastro.",
+    "Converta tabelas de PDF para CSV com o PDF.it. Extraia dados tabulares e exporte como arquivo CSV — rápido, no navegador, sem cadastro.",
   alternates: {
-    canonical: "https://omnispdf.com/br/tabela-pdf-para-csv",
+    canonical: "https://pdf.it.com/br/tabela-pdf-para-csv",
     languages: {
-      en: "https://omnispdf.com/pdf-table-to-csv",
-      es: "https://omnispdf.com/es/tabla-pdf-a-csv",
-      pt: "https://omnispdf.com/br/tabela-pdf-para-csv",
+      en: "https://pdf.it.com/pdf-table-to-csv",
+      es: "https://pdf.it.com/es/tabla-pdf-a-csv",
+      pt: "https://pdf.it.com/br/tabela-pdf-para-csv",
     },
   },
 }
@@ -26,7 +26,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como converto uma tabela de PDF para CSV?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o OmnisPDF, clique em Converter e a ferramenta detectará as tabelas automaticamente e as exportará como arquivo CSV." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o PDF.it, clique em Converter e a ferramenta detectará as tabelas automaticamente e as exportará como arquivo CSV." }
     },
     {
       "@type": "Question",
@@ -46,7 +46,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso converter tabelas de PDF para CSV pelo celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em navegadores móveis — envie seu PDF e baixe o CSV de qualquer dispositivo." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em navegadores móveis — envie seu PDF e baixe o CSV de qualquer dispositivo." }
     },
     {
       "@type": "Question",
@@ -99,7 +99,7 @@ export default function TabelaPDFParaCSVPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Precisa converter tabelas de um PDF para CSV? O OmnisPDF detecta automaticamente tabelas no seu documento PDF e as exporta como arquivo CSV que pode ser aberto no Excel, Google Sheets, LibreOffice ou importado em bancos de dados e sistemas.
+              Precisa converter tabelas de um PDF para CSV? O PDF.it detecta automaticamente tabelas no seu documento PDF e as exporta como arquivo CSV que pode ser aberto no Excel, Google Sheets, LibreOffice ou importado em bancos de dados e sistemas.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Converta tabelas de PDF para CSV automaticamente</li>
@@ -141,7 +141,7 @@ export default function TabelaPDFParaCSVPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Converter Tabela de PDF para CSV</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste seu PDF para o OmnisPDF.",
+                "Envie ou arraste seu PDF para o PDF.it.",
                 "Clique em Converter — as tabelas são detectadas automaticamente.",
                 "Baixe o arquivo CSV com os dados tabulares extraídos.",
               ].map((step, i) => (
@@ -188,11 +188,11 @@ export default function TabelaPDFParaCSVPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como converto uma tabela de PDF para CSV?", a: "Envie seu PDF para o OmnisPDF, clique em Converter e a ferramenta detectará as tabelas automaticamente e as exportará como arquivo CSV." },
+                { q: "Como converto uma tabela de PDF para CSV?", a: "Envie seu PDF para o PDF.it, clique em Converter e a ferramenta detectará as tabelas automaticamente e as exportará como arquivo CSV." },
                 { q: "O que é um arquivo CSV?", a: "CSV (Comma-Separated Values) é um formato de texto simples que armazena dados tabulares. Pode ser aberto no Excel, Google Sheets, LibreOffice e qualquer editor de texto." },
                 { q: "Funciona com tabelas grandes e complexas?", a: "Sim. A ferramenta detecta tabelas com múltiplas colunas e linhas. Tabelas muito complexas com células mescladas podem precisar de ajuste manual após a conversão." },
                 { q: "É seguro enviar meu PDF para conversão?", a: "Sim. Todos os arquivos são processados com segurança e eliminados automaticamente após a sessão. Nunca armazenamos seus documentos." },
-                { q: "Posso converter tabelas de PDF para CSV pelo celular?", a: "Sim. O OmnisPDF funciona em navegadores móveis — envie seu PDF e baixe o CSV de qualquer dispositivo." },
+                { q: "Posso converter tabelas de PDF para CSV pelo celular?", a: "Sim. O PDF.it funciona em navegadores móveis — envie seu PDF e baixe o CSV de qualquer dispositivo." },
                 { q: "É grátis converter tabela de PDF para CSV?", a: "Sim. Contas gratuitas têm 10 conversões por dia. Contas Pro têm conversões ilimitadas." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

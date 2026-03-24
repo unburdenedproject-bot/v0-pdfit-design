@@ -27,7 +27,7 @@ export async function POST(request: Request) {
     if (!supabaseUrl || !serviceKey) {
       console.error("Supabase not configured for contact form")
       return NextResponse.json(
-        { error: "Contact form is temporarily unavailable. Please email contact@omnispdf.com directly." },
+        { error: "Contact form is temporarily unavailable. Please email contact@pdf.it.com directly." },
         { status: 500 }
       )
     }
@@ -45,7 +45,7 @@ export async function POST(request: Request) {
     if (error) {
       console.error("Failed to save contact message:", error)
       return NextResponse.json(
-        { error: "Failed to send message. Please email contact@omnispdf.com directly." },
+        { error: "Failed to send message. Please email contact@pdf.it.com directly." },
         { status: 500 }
       )
     }

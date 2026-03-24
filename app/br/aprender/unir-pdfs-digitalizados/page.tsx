@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Merge, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Unir PDFs Digitalizados (Combinar Documentos Escaneados) | OmnisPDF",
+  title: "Unir PDFs Digitalizados (Combinar Documentos Escaneados) | PDF.it",
   description:
     "Aprenda como unir PDFs digitalizados em um unico documento. Combine documentos escaneados mantendo a qualidade — online, gratis.",
   keywords: "unir pdf digitalizado, combinar pdf escaneado, juntar documentos digitalizados, mesclar pdf scanner",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como unir PDFs digitalizados?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie os PDFs digitalizados para a ferramenta Unir PDF do OmnisPDF, organize na ordem desejada e clique em Unir. O processo e o mesmo para PDFs digitalizados ou criados digitalmente." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie os PDFs digitalizados para a ferramenta Unir PDF do PDF.it, organize na ordem desejada e clique em Unir. O processo e o mesmo para PDFs digitalizados ou criados digitalmente." }
     },
     {
       "@type": "Question",
@@ -46,7 +46,7 @@ const howToSchema = {
     },
     {
       "@type": "HowToStep",
-      "name": "Envie para o OmnisPDF",
+      "name": "Envie para o PDF.it",
       "text": "Acesse Unir PDF e envie todos os PDFs digitalizados."
     },
     {
@@ -209,7 +209,7 @@ export default function UnirPDFsDigitalizadosPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como unir PDFs digitalizados?", a: "Envie os PDFs digitalizados para a ferramenta Unir PDF do OmnisPDF, organize na ordem desejada e clique em Unir. O processo e o mesmo para PDFs digitalizados ou criados digitalmente." },
+                { q: "Como unir PDFs digitalizados?", a: "Envie os PDFs digitalizados para a ferramenta Unir PDF do PDF.it, organize na ordem desejada e clique em Unir. O processo e o mesmo para PDFs digitalizados ou criados digitalmente." },
                 { q: "O arquivo combinado fica muito grande?", a: "PDFs digitalizados ja sao grandes individualmente. Ao combinar, o tamanho sera a soma dos originais. Recomendamos comprimir o resultado usando a ferramenta Comprimir PDF apos unir." },
                 { q: "Posso unir PDFs digitalizados com PDFs normais?", a: "Sim. Voce pode misturar PDFs digitalizados e PDFs criados digitalmente no mesmo documento. A qualidade de cada pagina e mantida individualmente." },
               ].map((faq, i) => (

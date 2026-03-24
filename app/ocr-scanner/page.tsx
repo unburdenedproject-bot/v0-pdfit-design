@@ -7,9 +7,9 @@ import { Scan, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "OCR PDF Online — Make Scanned PDFs Searchable | OmnisPDF",
+  title: "OCR PDF Online — Make Scanned PDFs Searchable | PDF.it",
   description:
-    "Run OCR on a PDF with OmnisPDF to extract text from scans. Make PDFs searchable and copyable in seconds—fast, browser-based.",
+    "Run OCR on a PDF with PDF.it to extract text from scans. Make PDFs searchable and copyable in seconds—fast, browser-based.",
 }
 
 const faqSchema = {
@@ -28,7 +28,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "How accurate is OmnisPDF OCR?",
+      "name": "How accurate is PDF.it OCR?",
       "acceptedAnswer": { "@type": "Answer", "text": "Accuracy depends on scan clarity, resolution, and font. Clean, high-resolution scans produce the best results. Blurry or skewed scans reduce accuracy." }
     },
     {
@@ -68,7 +68,7 @@ export default function OCRScannerPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">OCR PDF Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Use OmnisPDF to run OCR on scanned PDFs — turn images into selectable, searchable text and download a cleaner, usable PDF.
+                Use PDF.it to run OCR on scanned PDFs — turn images into selectable, searchable text and download a cleaner, usable PDF.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>16+ Languages Supported</span></div>
@@ -87,7 +87,7 @@ export default function OCRScannerPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use OmnisPDF's OCR PDF tool to extract text from scanned PDFs and make documents searchable and copyable. Perfect for receipts, invoices, contracts, forms, and archived scans — upload your PDF, run OCR, and download an OCR-processed file in seconds.
+              Use PDF.it's OCR PDF tool to extract text from scanned PDFs and make documents searchable and copyable. Perfect for receipts, invoices, contracts, forms, and archived scans — upload your PDF, run OCR, and download an OCR-processed file in seconds.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Turn scanned PDFs into searchable PDFs</li>
@@ -105,7 +105,7 @@ export default function OCRScannerPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Make Scanned PDFs Searchable</h2>
               <p className="text-slate-600">
-                If your PDF is a scan, it's often just an image — so you can't highlight text or search for words. OmnisPDF OCR recognizes the text and creates a searchable PDF you can use like a normal document.
+                If your PDF is a scan, it's often just an image — so you can't highlight text or search for words. PDF.it OCR recognizes the text and creates a searchable PDF you can use like a normal document.
               </p>
             </div>
             <div>
@@ -129,7 +129,7 @@ export default function OCRScannerPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to OCR a PDF</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your scanned PDF into OmnisPDF.",
+                "Upload or drag and drop your scanned PDF into PDF.it.",
                 "Choose OCR language if needed.",
                 "Click Run OCR.",
                 "Download your searchable PDF.",
@@ -184,7 +184,7 @@ export default function OCRScannerPage() {
                   a: "If the PDF is a scan and you can't highlight text, you need OCR. If the PDF already contains selectable text, a normal PDF to TXT conversion may be faster.",
                 },
                 {
-                  q: "How accurate is OmnisPDF OCR?",
+                  q: "How accurate is PDF.it OCR?",
                   a: "Accuracy depends on scan clarity, resolution, and font. Clean, high-resolution scans produce the best results. Blurry or skewed scans reduce accuracy.",
                 },
                 {

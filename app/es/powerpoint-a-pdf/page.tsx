@@ -6,14 +6,14 @@ import { Presentation, CheckCircle, Zap, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Convertir PowerPoint a PDF Online — PPTX a PDF | OmnisPDF",
+  title: "Convertir PowerPoint a PDF Online — PPTX a PDF | PDF.it",
   description:
-    "Convierte PPT a PDF en segundos con OmnisPDF. Transforma tus diapositivas PPT/PPTX en un PDF limpio y fácil de compartir — rápido, simple y desde el navegador.",
+    "Convierte PPT a PDF en segundos con PDF.it. Transforma tus diapositivas PPT/PPTX en un PDF limpio y fácil de compartir — rápido, simple y desde el navegador.",
   alternates: {
-    canonical: "https://omnispdf.com/es/powerpoint-a-pdf",
+    canonical: "https://pdf.it.com/es/powerpoint-a-pdf",
     languages: {
-      "en": "https://omnispdf.com/powerpoint-to-pdf",
-      "es": "https://omnispdf.com/es/powerpoint-a-pdf",
+      "en": "https://pdf.it.com/powerpoint-to-pdf",
+      "es": "https://pdf.it.com/es/powerpoint-a-pdf",
     },
   },
 }
@@ -24,8 +24,8 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿OmnisPDF puede convertir tanto PPT como PPTX a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF soporta ambos formatos de archivo .ppt y .pptx." }
+      "name": "¿PDF.it puede convertir tanto PPT como PPTX a PDF?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it soporta ambos formatos de archivo .ppt y .pptx." }
     },
     {
       "@type": "Question",
@@ -40,7 +40,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo convertir PowerPoint a PDF desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en navegadores móviles — sube tu presentación y descarga el PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube tu presentación y descarga el PDF." }
     },
     {
       "@type": "Question",
@@ -74,7 +74,7 @@ export default function PowerPointAPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convertir PPT a PDF Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Convierte PPT/PPTX a PDF con OmnisPDF — ideal para compartir diapositivas, enviar presentaciones por correo e imprimir materiales.
+                Convierte PPT/PPTX a PDF con PDF.it — ideal para compartir diapositivas, enviar presentaciones por correo e imprimir materiales.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-orange-500" /><span>Diapositivas Preservadas</span></div>
@@ -98,7 +98,7 @@ export default function PowerPointAPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Usa el convertidor de PPT a PDF de OmnisPDF para transformar un PowerPoint (PPT/PPTX) en un PDF en segundos. Exporta tus diapositivas a un formato fácil de ver en cualquier lugar — perfecto para correo electrónico, impresión y subir a portales.
+              Usa el convertidor de PPT a PDF de PDF.it para transformar un PowerPoint (PPT/PPTX) en un PDF en segundos. Exporta tus diapositivas a un formato fácil de ver en cualquier lugar — perfecto para correo electrónico, impresión y subir a portales.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Convierte PowerPoint a PDF en línea en segundos</li>
@@ -128,7 +128,7 @@ export default function PowerPointAPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Mantén el Diseño de tus Diapositivas</h2>
               <p className="text-slate-600">
-                OmnisPDF convierte las diapositivas en páginas PDF para que tu texto, imágenes y gráficos sean fáciles de leer y compartir. Nota: las animaciones y transiciones se vuelven estáticas en formato PDF.
+                PDF.it convierte las diapositivas en páginas PDF para que tu texto, imágenes y gráficos sean fáciles de leer y compartir. Nota: las animaciones y transiciones se vuelven estáticas en formato PDF.
               </p>
             </div>
           </div>
@@ -140,7 +140,7 @@ export default function PowerPointAPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Convertir PPT a PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra y suelta tu archivo PPT/PPTX en OmnisPDF.",
+                "Sube o arrastra y suelta tu archivo PPT/PPTX en PDF.it.",
                 "Haz clic en Convertir PPT a PDF.",
                 "Descarga tu PDF.",
               ].map((step, i) => (
@@ -186,8 +186,8 @@ export default function PowerPointAPDFPage() {
             <div className="space-y-6">
               {[
                 {
-                  q: "¿OmnisPDF puede convertir tanto PPT como PPTX a PDF?",
-                  a: "Sí. OmnisPDF soporta ambos formatos de archivo .ppt y .pptx.",
+                  q: "¿PDF.it puede convertir tanto PPT como PPTX a PDF?",
+                  a: "Sí. PDF.it soporta ambos formatos de archivo .ppt y .pptx.",
                 },
                 {
                   q: "¿El PDF mantiene el diseño y la disposición de mis diapositivas?",
@@ -199,7 +199,7 @@ export default function PowerPointAPDFPage() {
                 },
                 {
                   q: "¿Puedo convertir PowerPoint a PDF desde mi celular?",
-                  a: "Sí. OmnisPDF funciona en navegadores móviles — sube tu presentación y descarga el PDF.",
+                  a: "Sí. PDF.it funciona en navegadores móviles — sube tu presentación y descarga el PDF.",
                 },
                 {
                   q: "¿Es seguro subir mi archivo de PowerPoint?",

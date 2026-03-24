@@ -5,9 +5,9 @@ import Link from "next/link"
 import { ScanText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "OCR a PDF on Your Phone (iPhone & Android) | OmnisPDF",
+  title: "OCR a PDF on Your Phone (iPhone & Android) | PDF.it",
   description:
-    "Learn how to run OCR on a PDF from your phone. No app needed — use OmnisPDF in Safari or Chrome on iPhone and Android to make scanned PDFs searchable.",
+    "Learn how to run OCR on a PDF from your phone. No app needed — use PDF.it in Safari or Chrome on iPhone and Android to make scanned PDFs searchable.",
   keywords: "ocr pdf on phone, ocr pdf iphone, scan document ocr android, ocr pdf mobile",
 }
 
@@ -18,32 +18,32 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I run OCR on my iPhone without an app?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF's OCR Scanner works in Safari, Chrome, or any mobile browser on iPhone. Upload your scanned PDF, select the language, run OCR, and download the searchable version — all without installing any app." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it's OCR Scanner works in Safari, Chrome, or any mobile browser on iPhone. Upload your scanned PDF, select the language, run OCR, and download the searchable version — all without installing any app." }
     },
     {
       "@type": "Question",
       "name": "Does OCR work on Android phones?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works on Android in Chrome, Firefox, or any other mobile browser. The process is the same — upload your PDF, run OCR, and download the searchable result." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works on Android in Chrome, Firefox, or any other mobile browser. The process is the same — upload your PDF, run OCR, and download the searchable result." }
     },
     {
       "@type": "Question",
       "name": "Can I scan a document with my phone camera and OCR it?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use your phone's built-in scanner (Notes on iPhone, Google Drive on Android) to capture the document as a PDF, then upload it to OmnisPDF's OCR Scanner. For better results, run the scan through Phone Scan Cleanup first." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use your phone's built-in scanner (Notes on iPhone, Google Drive on Android) to capture the document as a PDF, then upload it to PDF.it's OCR Scanner. For better results, run the scan through Phone Scan Cleanup first." }
     },
     {
       "@type": "Question",
       "name": "How big of a file can I OCR on mobile?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF Pro users can process PDFs up to 200MB on any device, including mobile. If your file is large and your connection is slow, consider compressing the PDF first to speed up the upload." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it Pro users can process PDFs up to 200MB on any device, including mobile. If your file is large and your connection is slow, consider compressing the PDF first to speed up the upload." }
     },
     {
       "@type": "Question",
       "name": "Will OCR on mobile be slower than on a computer?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. OCR processing happens on OmnisPDF's servers, not on your device. The speed is the same whether you use a phone, tablet, or desktop computer. The only difference is upload and download speed, which depends on your internet connection." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. OCR processing happens on PDF.it's servers, not on your device. The speed is the same whether you use a phone, tablet, or desktop computer. The only difference is upload and download speed, which depends on your internet connection." }
     },
     {
       "@type": "Question",
       "name": "Is OCR on mobile a free feature?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OCR Scanner is a Pro feature on OmnisPDF, available for $7.99/month. This applies to both mobile and desktop use. Pro includes unlimited conversions, files up to 200MB, batch processing, and all advanced tools." }
+      "acceptedAnswer": { "@type": "Answer", "text": "OCR Scanner is a Pro feature on PDF.it, available for $7.99/month. This applies to both mobile and desktop use. Pro includes unlimited conversions, files up to 200MB, batch processing, and all advanced tools." }
     }
   ]
 }
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to OCR a PDF on Your Phone",
-  "description": "Make a scanned PDF searchable from your iPhone or Android in 3 steps using OmnisPDF's browser-based OCR Scanner.",
+  "description": "Make a scanned PDF searchable from your iPhone or Android in 3 steps using PDF.it's browser-based OCR Scanner.",
   "step": [
     {
       "@type": "HowToStep",
-      "name": "Open OmnisPDF in your mobile browser",
-      "text": "Go to omnispdf.com/ocr-scanner in Safari (iPhone) or Chrome (Android). No app installation is needed."
+      "name": "Open PDF.it in your mobile browser",
+      "text": "Go to pdf.it.com/ocr-scanner in Safari (iPhone) or Chrome (Android). No app installation is needed."
     },
     {
       "@type": "HowToStep",
@@ -162,12 +162,12 @@ export default function OCRPDFOnMobilePage() {
                     desc: "Use your phone's built-in scanner (Notes on iPhone, Google Drive on Android) to capture a clean PDF of your document. Or select an existing scanned PDF from your Files app. For the best results, run the scan through Phone Scan Cleanup first.",
                   },
                   {
-                    title: "Open OmnisPDF's OCR Scanner",
-                    desc: "Go to omnispdf.com/ocr-scanner in Safari (iPhone) or Chrome (Android). Tap the upload area and select your PDF. Choose the document language from the dropdown menu.",
+                    title: "Open PDF.it's OCR Scanner",
+                    desc: "Go to pdf.it.com/ocr-scanner in Safari (iPhone) or Chrome (Android). Tap the upload area and select your PDF. Choose the document language from the dropdown menu.",
                   },
                   {
                     title: "Process and download",
-                    desc: "Tap the OCR button. Processing happens on OmnisPDF's servers, so it is fast regardless of your phone model. When it finishes, tap Download to save the searchable PDF to your device.",
+                    desc: "Tap the OCR button. Processing happens on PDF.it's servers, so it is fast regardless of your phone model. When it finishes, tap Download to save the searchable PDF to your device.",
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -197,14 +197,14 @@ export default function OCRPDFOnMobilePage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Save to Files for Easy Upload</h3>
                   <p className="text-slate-600">
-                    After scanning in Notes, share the scan and save it to Files. When you open OmnisPDF's OCR Scanner in Safari, you can browse Files directly to select your PDF. This avoids the confusion of searching through your Camera Roll.
+                    After scanning in Notes, share the scan and save it to Files. When you open PDF.it's OCR Scanner in Safari, you can browse Files directly to select your PDF. This avoids the confusion of searching through your Camera Roll.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Use Safari for Best Compatibility</h3>
                   <p className="text-slate-600">
-                    While OmnisPDF works in any browser, Safari is the default on iPhone and offers the smoothest file upload experience. Chrome and Firefox also work, but Safari integrates more naturally with the Files app and iCloud Drive.
+                    While PDF.it works in any browser, Safari is the default on iPhone and offers the smoothest file upload experience. Chrome and Firefox also work, but Safari integrates more naturally with the Files app and iCloud Drive.
                   </p>
                 </div>
               </div>
@@ -224,7 +224,7 @@ export default function OCRPDFOnMobilePage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Use Chrome for File Uploads</h3>
                   <p className="text-slate-600">
-                    Chrome on Android handles file uploads reliably. When you tap the upload area on OmnisPDF, you can browse your Downloads folder, Google Drive, or any other file manager to find your scanned PDF.
+                    Chrome on Android handles file uploads reliably. When you tap the upload area on PDF.it, you can browse your Downloads folder, Google Drive, or any other file manager to find your scanned PDF.
                   </p>
                 </div>
 
@@ -244,7 +244,7 @@ export default function OCRPDFOnMobilePage() {
                 Phone-scanned documents often have quality issues that reduce OCR accuracy. Here is how to get the best results:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Use Phone Scan Cleanup first.</strong> Before running OCR, upload your phone scan to OmnisPDF&apos;s <Link href="/phone-scan-cleanup" className="text-orange-600 hover:underline">Phone Scan Cleanup</Link> tool. It automatically corrects shadows, improves contrast, and straightens the image.</li>
+                <li>&#10003; <strong>Use Phone Scan Cleanup first.</strong> Before running OCR, upload your phone scan to PDF.it&apos;s <Link href="/phone-scan-cleanup" className="text-orange-600 hover:underline">Phone Scan Cleanup</Link> tool. It automatically corrects shadows, improves contrast, and straightens the image.</li>
                 <li>&#10003; <strong>Scan in good lighting.</strong> Natural daylight works best. Avoid scanning under fluorescent lights which can create flickering shadows, and never use flash, which creates bright hotspots.</li>
                 <li>&#10003; <strong>Hold the phone directly above.</strong> Shooting at an angle creates perspective distortion that reduces OCR accuracy. Hold your phone parallel to the document surface.</li>
                 <li>&#10003; <strong>Use the built-in scanner apps.</strong> Notes (iPhone) and Google Drive (Android) have document scanning modes that automatically crop, straighten, and enhance the scan. These always produce better results than a regular camera photo.</li>
@@ -259,7 +259,7 @@ export default function OCRPDFOnMobilePage() {
         <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">OCR Any PDF From Your Phone</h2>
-            <p className="text-slate-300 mb-6">Open OmnisPDF in your mobile browser, upload a scanned PDF, and get a searchable version in seconds. No app needed.</p>
+            <p className="text-slate-300 mb-6">Open PDF.it in your mobile browser, upload a scanned PDF, and get a searchable version in seconds. No app needed.</p>
             <Link
               href="/ocr-scanner"
               className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
@@ -300,12 +300,12 @@ export default function OCRPDFOnMobilePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "Can I run OCR on my iPhone without an app?", a: "Yes. OmnisPDF's OCR Scanner works in Safari, Chrome, or any mobile browser on iPhone. Upload your scanned PDF, select the language, run OCR, and download the searchable version — all without installing any app." },
-                { q: "Does OCR work on Android phones?", a: "Yes. OmnisPDF works on Android in Chrome, Firefox, or any other mobile browser. The process is the same — upload your PDF, run OCR, and download the searchable result." },
-                { q: "Can I scan a document with my phone camera and OCR it?", a: "Yes. Use your phone's built-in scanner (Notes on iPhone, Google Drive on Android) to capture the document as a PDF, then upload it to OmnisPDF's OCR Scanner. For better results, run the scan through Phone Scan Cleanup first." },
-                { q: "How big of a file can I OCR on mobile?", a: "OmnisPDF Pro users can process PDFs up to 200MB on any device, including mobile. If your file is large and your connection is slow, consider compressing the PDF first to speed up the upload." },
-                { q: "Will OCR on mobile be slower than on a computer?", a: "No. OCR processing happens on OmnisPDF's servers, not on your device. The speed is the same whether you use a phone, tablet, or desktop computer. The only difference is upload and download speed, which depends on your internet connection." },
-                { q: "Is OCR on mobile a free feature?", a: "OCR Scanner is a Pro feature on OmnisPDF, available for $7.99/month. This applies to both mobile and desktop use. Pro includes unlimited conversions, files up to 200MB, batch processing, and all advanced tools." },
+                { q: "Can I run OCR on my iPhone without an app?", a: "Yes. PDF.it's OCR Scanner works in Safari, Chrome, or any mobile browser on iPhone. Upload your scanned PDF, select the language, run OCR, and download the searchable version — all without installing any app." },
+                { q: "Does OCR work on Android phones?", a: "Yes. PDF.it works on Android in Chrome, Firefox, or any other mobile browser. The process is the same — upload your PDF, run OCR, and download the searchable result." },
+                { q: "Can I scan a document with my phone camera and OCR it?", a: "Yes. Use your phone's built-in scanner (Notes on iPhone, Google Drive on Android) to capture the document as a PDF, then upload it to PDF.it's OCR Scanner. For better results, run the scan through Phone Scan Cleanup first." },
+                { q: "How big of a file can I OCR on mobile?", a: "PDF.it Pro users can process PDFs up to 200MB on any device, including mobile. If your file is large and your connection is slow, consider compressing the PDF first to speed up the upload." },
+                { q: "Will OCR on mobile be slower than on a computer?", a: "No. OCR processing happens on PDF.it's servers, not on your device. The speed is the same whether you use a phone, tablet, or desktop computer. The only difference is upload and download speed, which depends on your internet connection." },
+                { q: "Is OCR on mobile a free feature?", a: "OCR Scanner is a Pro feature on PDF.it, available for $7.99/month. This applies to both mobile and desktop use. Pro includes unlimited conversions, files up to 200MB, batch processing, and all advanced tools." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

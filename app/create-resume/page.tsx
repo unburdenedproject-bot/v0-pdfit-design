@@ -6,7 +6,7 @@ import { ResumeBuilderInterface } from "@/components/resume-builder-interface"
 import { Sparkles, Zap, Shield, FileText, Merge, Lock, Scan, Target } from "lucide-react"
 
 export const metadata = {
-  title: "Create a Professional Resume with AI | OmnisPDF",
+  title: "Create a Professional Resume with AI | PDF.it",
   description:
     "Build an ATS-optimized resume from scratch. Fill in your details and let AI write a polished, job-ready resume you can download as Word and edit anytime.",
   alternates: {

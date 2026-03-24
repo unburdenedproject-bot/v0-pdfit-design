@@ -6,9 +6,9 @@ import { PdfCompareInterface } from "@/components/pdf-compare-interface"
 import { ArrowLeftRight, Eye, Layers, Zap, Shield, Lock, PenTool, FileText, Merge, Repeat } from "lucide-react"
 
 export const metadata = {
-  title: "Comparar PDFs Online — Visualizador de Diferenças Lado a Lado | OmnisPDF",
+  title: "Comparar PDFs Online — Visualizador de Diferenças Lado a Lado | PDF.it",
   description:
-    "Compare dois documentos PDF lado a lado e veja exatamente o que mudou. Destaque visual de diferenças em vermelho. Vistas sobrepostas e lado a lado. Função Business do OmnisPDF.",
+    "Compare dois documentos PDF lado a lado e veja exatamente o que mudou. Destaque visual de diferenças em vermelho. Vistas sobrepostas e lado a lado. Função Business do PDF.it.",
 }
 
 const faqSchema = {

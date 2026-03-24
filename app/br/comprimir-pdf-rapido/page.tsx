@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Ro
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF Rapido — Compressao Instantanea Online | OmnisPDF",
+  title: "Comprimir PDF Rapido — Compressao Instantanea Online | PDF.it",
   description:
     "Comprima arquivos PDF instantaneamente online. Sem software, sem contas. Envie, comprima, baixe — pronto em segundos.",
   alternates: {
@@ -24,7 +24,7 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Qual a velocidade da compressao do OmnisPDF?",
+      "name": "Qual a velocidade da compressao do PDF.it?",
       "acceptedAnswer": { "@type": "Answer", "text": "A maioria dos PDFs e comprimida em apenas alguns segundos. O tempo de processamento depende do tamanho e da complexidade do arquivo, mas documentos tipicos ficam prontos para download quase imediatamente apos clicar em Comprimir." }
     },
     {
@@ -35,12 +35,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Preciso instalar algum software?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Nao. O OmnisPDF funciona inteiramente no seu navegador. Nao ha nada para baixar ou instalar. Funciona em qualquer dispositivo — Mac, Windows, iPhone, Android, Linux, Chromebook." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Nao. O PDF.it funciona inteiramente no seu navegador. Nao ha nada para baixar ou instalar. Funciona em qualquer dispositivo — Mac, Windows, iPhone, Android, Linux, Chromebook." }
     },
     {
       "@type": "Question",
       "name": "Meu PDF esta seguro quando comprimo online?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Seus arquivos sao processados de forma segura e excluidos automaticamente ao final da sua sessao. O OmnisPDF nao armazena nem compartilha seus documentos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Seus arquivos sao processados de forma segura e excluidos automaticamente ao final da sua sessao. O PDF.it nao armazena nem compartilha seus documentos." }
     },
     {
       "@type": "Question",
@@ -50,7 +50,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso comprimir PDFs pelo celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em qualquer navegador movel — Safari, Chrome, Firefox ou Samsung Internet. Envie da sua galeria ou gerenciador de arquivos, comprima e baixe o arquivo menor instantaneamente." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em qualquer navegador movel — Safari, Chrome, Firefox ou Samsung Internet. Envie da sua galeria ou gerenciador de arquivos, comprima e baixe o arquivo menor instantaneamente." }
     }
   ]
 }
@@ -98,9 +98,9 @@ export default function ComprimirPDFRapidoPagePt() {
         {/* About */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que Usar o OmnisPDF para Compressao Rapida?</h2>
+            <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que Usar o PDF.it para Compressao Rapida?</h2>
             <p className="text-lg text-slate-600 mb-8">
-              Quando voce precisa de um PDF menor agora mesmo, a ultima coisa que quer e baixar software, criar uma conta ou esperar numa fila. O OmnisPDF e uma ferramenta baseada no navegador que comprime seu PDF em segundos — sem instalacao, sem cadastro, sem complicacoes. Basta enviar, comprimir e baixar.
+              Quando voce precisa de um PDF menor agora mesmo, a ultima coisa que quer e baixar software, criar uma conta ou esperar numa fila. O PDF.it e uma ferramenta baseada no navegador que comprime seu PDF em segundos — sem instalacao, sem cadastro, sem complicacoes. Basta enviar, comprimir e baixar.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Comprima PDFs em segundos — sem espera</li>
@@ -138,7 +138,7 @@ export default function ComprimirPDFRapidoPagePt() {
               <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
                 <h3 className="text-xl font-black text-slate-900 mb-3">Compressao pelo Celular</h3>
                 <p className="text-slate-600">
-                  Longe do computador? Comprima PDFs direto do seu celular ou tablet usando qualquer navegador movel. Nao precisa baixar nenhum app — abra o OmnisPDF e pronto.
+                  Longe do computador? Comprima PDFs direto do seu celular ou tablet usando qualquer navegador movel. Nao precisa baixar nenhum app — abra o PDF.it e pronto.
                 </p>
               </div>
             </div>
@@ -151,7 +151,7 @@ export default function ComprimirPDFRapidoPagePt() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Comprimir um PDF Rapido</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste e solte seu PDF no OmnisPDF — leva apenas um segundo.",
+                "Envie ou arraste e solte seu PDF no PDF.it — leva apenas um segundo.",
                 "Clique em Comprimir PDF — seu arquivo e processado em segundos.",
                 "Baixe seu PDF menor instantaneamente. Se precisar de mais compressao, tente o modo extremo ou divida o arquivo primeiro.",
               ].map((step, i) => (
@@ -205,12 +205,12 @@ export default function ComprimirPDFRapidoPagePt() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Qual a velocidade da compressao do OmnisPDF?", a: "A maioria dos PDFs e comprimida em apenas alguns segundos. O tempo de processamento depende do tamanho e da complexidade do arquivo, mas documentos tipicos ficam prontos para download quase imediatamente apos clicar em Comprimir." },
+                { q: "Qual a velocidade da compressao do PDF.it?", a: "A maioria dos PDFs e comprimida em apenas alguns segundos. O tempo de processamento depende do tamanho e da complexidade do arquivo, mas documentos tipicos ficam prontos para download quase imediatamente apos clicar em Comprimir." },
                 { q: "Preciso criar uma conta para comprimir um PDF?", a: "Nao. Voce pode comprimir PDFs imediatamente sem se cadastrar ou fazer login. Basta enviar seu arquivo, clicar em Comprimir e baixar o resultado. Usuarios gratuitos tem ate 10 compressoes por dia." },
-                { q: "Preciso instalar algum software?", a: "Nao. O OmnisPDF funciona inteiramente no seu navegador. Nao ha nada para baixar ou instalar. Funciona em qualquer dispositivo — Mac, Windows, iPhone, Android, Linux, Chromebook." },
-                { q: "Meu PDF esta seguro quando comprimo online?", a: "Sim. Seus arquivos sao processados de forma segura e excluidos automaticamente ao final da sua sessao. O OmnisPDF nao armazena nem compartilha seus documentos." },
+                { q: "Preciso instalar algum software?", a: "Nao. O PDF.it funciona inteiramente no seu navegador. Nao ha nada para baixar ou instalar. Funciona em qualquer dispositivo — Mac, Windows, iPhone, Android, Linux, Chromebook." },
+                { q: "Meu PDF esta seguro quando comprimo online?", a: "Sim. Seus arquivos sao processados de forma segura e excluidos automaticamente ao final da sua sessao. O PDF.it nao armazena nem compartilha seus documentos." },
                 { q: "Quanto meu PDF sera comprimido?", a: "Os resultados dependem do conteudo do seu PDF. Documentos com imagens e estruturas nao otimizadas geralmente veem reducoes significativas de tamanho. PDFs ja otimizados podem ver reducoes menores." },
-                { q: "Posso comprimir PDFs pelo celular?", a: "Sim. O OmnisPDF funciona em qualquer navegador movel — Safari, Chrome, Firefox ou Samsung Internet. Envie da sua galeria ou gerenciador de arquivos, comprima e baixe o arquivo menor instantaneamente." },
+                { q: "Posso comprimir PDFs pelo celular?", a: "Sim. O PDF.it funciona em qualquer navegador movel — Safari, Chrome, Firefox ou Samsung Internet. Envie da sua galeria ou gerenciador de arquivos, comprima e baixe o arquivo menor instantaneamente." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

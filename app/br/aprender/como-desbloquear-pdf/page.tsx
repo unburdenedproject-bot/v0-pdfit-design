@@ -5,20 +5,20 @@ import Link from "next/link"
 import { Unlock, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Desbloquear PDF — Remover Senha de PDF | OmnisPDF",
+  title: "Como Desbloquear PDF — Remover Senha de PDF | PDF.it",
   description: "Aprenda a desbloquear PDF protegido com senha. Guia passo a passo para remover senha de abertura e senha de permissoes do seu PDF.",
   keywords: "desbloquear pdf, remover senha pdf, tirar senha pdf, pdf sem senha, desproteger pdf",
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-  { "@type": "Question", "name": "Como removo a senha de um PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Envie o PDF para a ferramenta Desbloquear PDF do OmnisPDF, digite a senha atual e clique em Desbloquear. O OmnisPDF remove a protecao e voce baixa o PDF sem senha." } },
+  { "@type": "Question", "name": "Como removo a senha de um PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Envie o PDF para a ferramenta Desbloquear PDF do PDF.it, digite a senha atual e clique em Desbloquear. O PDF.it remove a protecao e voce baixa o PDF sem senha." } },
   { "@type": "Question", "name": "Posso desbloquear um PDF sem saber a senha?", "acceptedAnswer": { "@type": "Answer", "text": "Para PDFs com senha de abertura (que impede abrir o arquivo), voce precisa saber a senha. Para PDFs com apenas senha de permissoes (que restringe imprimir/copiar mas permite abrir), a ferramenta pode remover as restricoes." } },
   { "@type": "Question", "name": "Desbloquear PDF e legal?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, desde que voce seja o proprietario do documento ou tenha autorizacao do proprietario. Desbloquear PDFs de terceiros sem permissao pode violar direitos autorais e leis de propriedade intelectual." } },
   { "@type": "Question", "name": "O conteudo do PDF e alterado ao desbloquear?", "acceptedAnswer": { "@type": "Answer", "text": "Nao. Desbloquear apenas remove a protecao com senha. O conteudo, formatacao, imagens e layout permanecem identicos." } }
 ] }
 
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como desbloquear PDF protegido", "description": "Remova a senha do seu PDF em 3 passos.", "step": [
-  { "@type": "HowToStep", "name": "Envie o PDF protegido", "text": "Acesse a ferramenta Desbloquear PDF do OmnisPDF e envie o arquivo protegido." },
+  { "@type": "HowToStep", "name": "Envie o PDF protegido", "text": "Acesse a ferramenta Desbloquear PDF do PDF.it e envie o arquivo protegido." },
   { "@type": "HowToStep", "name": "Digite a senha", "text": "Insira a senha atual do PDF para autorizar a remocao da protecao." },
   { "@type": "HowToStep", "name": "Baixe o PDF desbloqueado", "text": "Clique em Desbloquear e baixe o PDF sem protecao de senha." }
 ] }
@@ -57,7 +57,7 @@ export default function ComoDesbloquearPdfPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-6">Como desbloquear seu PDF (passo a passo)</h2>
             <div className="space-y-4">
               {[
-                { title: "Envie o PDF protegido", desc: "Acesse a ferramenta Desbloquear PDF e arraste o arquivo para a area de upload. O OmnisPDF detecta automaticamente o tipo de protecao." },
+                { title: "Envie o PDF protegido", desc: "Acesse a ferramenta Desbloquear PDF e arraste o arquivo para a area de upload. O PDF.it detecta automaticamente o tipo de protecao." },
                 { title: "Digite a senha (se necessario)", desc: "Se o PDF tem senha de abertura, digite-a. Se tem apenas senha de permissoes, a ferramenta pode remover as restricoes automaticamente." },
                 { title: "Baixe o PDF desbloqueado", desc: "Clique em Desbloquear. O PDF e processado e voce baixa a versao sem protecao — mesmo conteudo, sem restricoes." },
               ].map((step, i) => (

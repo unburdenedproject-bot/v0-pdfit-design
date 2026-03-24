@@ -6,15 +6,15 @@ import { LinkIcon, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Extrair Links de PDF — Obtenha Todos os URLs de um PDF | OmnisPDF",
+  title: "Extrair Links de PDF — Obtenha Todos os URLs de um PDF | PDF.it",
   description:
-    "Extraia todos os links e URLs de arquivos PDF com o OmnisPDF. Obtenha uma lista completa de hyperlinks — rápido, no navegador, sem cadastro.",
+    "Extraia todos os links e URLs de arquivos PDF com o PDF.it. Obtenha uma lista completa de hyperlinks — rápido, no navegador, sem cadastro.",
   alternates: {
-    canonical: "https://omnispdf.com/br/extrair-links-de-pdf",
+    canonical: "https://pdf.it.com/br/extrair-links-de-pdf",
     languages: {
-      en: "https://omnispdf.com/extract-links-from-pdf",
-      es: "https://omnispdf.com/es/extraer-enlaces-de-pdf",
-      pt: "https://omnispdf.com/br/extrair-links-de-pdf",
+      en: "https://pdf.it.com/extract-links-from-pdf",
+      es: "https://pdf.it.com/es/extraer-enlaces-de-pdf",
+      pt: "https://pdf.it.com/br/extrair-links-de-pdf",
     },
   },
 }
@@ -26,7 +26,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como extraio links de um PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o OmnisPDF e a ferramenta extrairá automaticamente todos os hyperlinks e URLs encontrados no documento." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o PDF.it e a ferramenta extrairá automaticamente todos os hyperlinks e URLs encontrados no documento." }
     },
     {
       "@type": "Question",
@@ -46,7 +46,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso extrair links de um PDF pelo celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em navegadores móveis — envie seu PDF e obtenha a lista de links de qualquer dispositivo." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em navegadores móveis — envie seu PDF e obtenha a lista de links de qualquer dispositivo." }
     },
     {
       "@type": "Question",
@@ -99,7 +99,7 @@ export default function ExtrairLinksDePDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Precisa obter todos os links de um documento PDF? O extrator de links do OmnisPDF analisa seu arquivo e lista todos os hyperlinks encontrados — URLs de sites, endereços de e-mail e links internos.
+              Precisa obter todos os links de um documento PDF? O extrator de links do PDF.it analisa seu arquivo e lista todos os hyperlinks encontrados — URLs de sites, endereços de e-mail e links internos.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Extraia todos os URLs e hyperlinks de qualquer PDF</li>
@@ -141,7 +141,7 @@ export default function ExtrairLinksDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Extrair Links de um PDF</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste seu PDF para o OmnisPDF.",
+                "Envie ou arraste seu PDF para o PDF.it.",
                 "Clique em Extrair — todos os links são detectados automaticamente.",
                 "Baixe a lista completa de URLs encontrados no documento.",
               ].map((step, i) => (
@@ -188,11 +188,11 @@ export default function ExtrairLinksDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como extraio links de um PDF?", a: "Envie seu PDF para o OmnisPDF e a ferramenta extrairá automaticamente todos os hyperlinks e URLs encontrados no documento." },
+                { q: "Como extraio links de um PDF?", a: "Envie seu PDF para o PDF.it e a ferramenta extrairá automaticamente todos os hyperlinks e URLs encontrados no documento." },
                 { q: "Que tipos de links são extraídos?", a: "A ferramenta extrai URLs de sites, links de e-mail (mailto), links internos do documento e qualquer outro hyperlink incorporado no PDF." },
                 { q: "Os links extraídos são clicáveis?", a: "Sim. Os URLs extraídos são apresentados em texto plano que você pode copiar e colar no navegador ou usar em planilhas e outros documentos." },
                 { q: "É seguro enviar meu PDF para extrair links?", a: "Sim. Todos os arquivos são processados com segurança e eliminados automaticamente após a sessão. Nunca armazenamos seus documentos." },
-                { q: "Posso extrair links de um PDF pelo celular?", a: "Sim. O OmnisPDF funciona em navegadores móveis — envie seu PDF e obtenha a lista de links de qualquer dispositivo." },
+                { q: "Posso extrair links de um PDF pelo celular?", a: "Sim. O PDF.it funciona em navegadores móveis — envie seu PDF e obtenha a lista de links de qualquer dispositivo." },
                 { q: "É grátis extrair links de um PDF?", a: "Sim. Contas gratuitas têm 10 extrações por dia. Contas Pro têm extrações ilimitadas." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

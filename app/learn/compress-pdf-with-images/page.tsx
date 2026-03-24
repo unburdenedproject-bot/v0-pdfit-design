@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileDown, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Compress a PDF with Images (Photos, Scans, Graphics) | OmnisPDF",
+  title: "Compress a PDF with Images (Photos, Scans, Graphics) | PDF.it",
   description:
     "Learn how to compress image-heavy PDFs — photo albums, scanned documents, and graphic-rich reports. Reduce file size while keeping images clear and readable.",
   keywords: "compress pdf with images, reduce pdf image size, compress scanned pdf, pdf with photos too large",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I compress a scanned PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Scanned PDFs compress very well because they're mostly images. Upload to OmnisPDF, choose Medium or Extreme compression, and you can typically reduce a 20MB scanned document to 2-5MB while keeping text readable." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Scanned PDFs compress very well because they're mostly images. Upload to PDF.it, choose Medium or Extreme compression, and you can typically reduce a 20MB scanned document to 2-5MB while keeping text readable." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I extract images before compressing to save more space?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use OmnisPDF's Extract Images tool to pull out oversized images, resize or compress them separately, then rebuild the PDF. This gives you precise control over which images get compressed and by how much." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use PDF.it's Extract Images tool to pull out oversized images, resize or compress them separately, then rebuild the PDF. This gives you precise control over which images get compressed and by how much." }
     }
   ]
 }
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Compress a PDF with Images",
-  "description": "Reduce the size of an image-heavy PDF in 3 simple steps using OmnisPDF.",
+  "description": "Reduce the size of an image-heavy PDF in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Upload your image-heavy PDF",
-      "text": "Go to OmnisPDF's Compress PDF tool and upload your file containing photos, scans, or graphics."
+      "text": "Go to PDF.it's Compress PDF tool and upload your file containing photos, scans, or graphics."
     },
     {
       "@type": "HowToStep",
@@ -319,10 +319,10 @@ export default function CompressPDFWithImagesPage() {
               {[
                 { q: "Why are PDFs with images so large?", a: "Images are the heaviest content type in a PDF. A single high-resolution photo can be 3-10MB. Scanned pages are stored as full-page images at 200-400 DPI, making each page 2-5MB. Text-only PDFs are tiny by comparison." },
                 { q: "Can I compress a PDF with photos without ruining them?", a: "Yes. Light compression keeps photos at their original resolution. Medium compression slightly reduces resolution but remains excellent for on-screen viewing. Only Extreme compression visibly reduces photo quality." },
-                { q: "How do I compress a scanned PDF?", a: "Scanned PDFs compress very well because they're mostly images. Upload to OmnisPDF, choose Medium or Extreme compression, and you can typically reduce a 20MB scanned document to 2-5MB while keeping text readable." },
+                { q: "How do I compress a scanned PDF?", a: "Scanned PDFs compress very well because they're mostly images. Upload to PDF.it, choose Medium or Extreme compression, and you can typically reduce a 20MB scanned document to 2-5MB while keeping text readable." },
                 { q: "Will compressing remove my images from the PDF?", a: "No. Compression reduces the resolution and file size of images, but never removes them. All your photos, charts, and graphics stay in the document — they just take up less space." },
                 { q: "What compression level is best for PDFs with photos?", a: "For sharing on-screen: Medium gives the best balance. For printing: use Light to preserve full resolution. For strict upload limits: Extreme gets the smallest file, but photos may lose some detail." },
-                { q: "Can I extract images before compressing to save more space?", a: "Yes. Use OmnisPDF's Extract Images tool to pull out oversized images, resize or compress them separately, then rebuild the PDF. This gives you precise control over which images get compressed." },
+                { q: "Can I extract images before compressing to save more space?", a: "Yes. Use PDF.it's Extract Images tool to pull out oversized images, resize or compress them separately, then rebuild the PDF. This gives you precise control over which images get compressed." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

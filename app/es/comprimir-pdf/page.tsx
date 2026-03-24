@@ -6,9 +6,9 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download } from "lucide-react
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF Online — Reducir Tamaño de PDF Gratis | OmnisPDF",
+  title: "Comprimir PDF Online — Reducir Tamaño de PDF Gratis | PDF.it",
   description:
-    "Comprime archivos PDF con OmnisPDF para reducir el tamaño del archivo rápidamente. Reduce PDFs para email y subidas manteniendo el texto legible — sin instalar nada.",
+    "Comprime archivos PDF con PDF.it para reducir el tamaño del archivo rápidamente. Reduce PDFs para email y subidas manteniendo el texto legible — sin instalar nada.",
   alternates: {
     languages: {
       en: "/compress-pdf",
@@ -23,7 +23,7 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Cómo comprimo un PDF con OmnisPDF?",
+      "name": "¿Cómo comprimo un PDF con PDF.it?",
       "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF, haz clic en Comprimir PDF y descarga el archivo más pequeño." }
     },
     {
@@ -38,13 +38,13 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "¿OmnisPDF puede comprimir PDFs escaneados?",
+      "name": "¿PDF.it puede comprimir PDFs escaneados?",
       "acceptedAnswer": { "@type": "Answer", "text": "Sí — los PDFs escaneados suelen ser los mejores candidatos para la compresión porque contienen imágenes grandes incrustadas." }
     },
     {
       "@type": "Question",
       "name": "¿Puedo comprimir un PDF desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en navegadores móviles — sube, comprime y descarga directamente desde tu iPhone o Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube, comprime y descarga directamente desde tu iPhone o Android." }
     },
     {
       "@type": "Question",
@@ -73,7 +73,7 @@ export default function ComprimirPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Reduce el tamaño de tus archivos PDF con OmnisPDF. Comprime PDFs para compartir más rápido, subir archivos más fácil y enviar adjuntos más pequeños por email — rápido y desde tu navegador.
+                Reduce el tamaño de tus archivos PDF con PDF.it. Comprime PDFs para compartir más rápido, subir archivos más fácil y enviar adjuntos más pequeños por email — rápido y desde tu navegador.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Compresión Inteligente</span></div>
@@ -98,7 +98,7 @@ export default function ComprimirPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Usa la herramienta Comprimir PDF de OmnisPDF para reducir el tamaño de tus archivos PDF en segundos. Perfecto para adjuntos de email, límites de subida y compartir archivos más rápido — sube tu PDF, comprímelo y descarga un archivo más pequeño al instante.
+              Usa la herramienta Comprimir PDF de PDF.it para reducir el tamaño de tus archivos PDF en segundos. Perfecto para adjuntos de email, límites de subida y compartir archivos más rápido — sube tu PDF, comprímelo y descarga un archivo más pequeño al instante.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Reduce el tamaño de PDFs rápidamente para email y subidas</li>
@@ -116,7 +116,7 @@ export default function ComprimirPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Reduce el Tamaño de PDF para Email y Límites de Subida</h2>
               <p className="text-slate-600">
-                Muchos servicios limitan el tamaño de los adjuntos. OmnisPDF te ayuda a reducir tus PDFs para que sean más fáciles de enviar y subir sin necesidad de dividirlos.
+                Muchos servicios limitan el tamaño de los adjuntos. PDF.it te ayuda a reducir tus PDFs para que sean más fáciles de enviar y subir sin necesidad de dividirlos.
               </p>
             </div>
             <div>
@@ -128,7 +128,7 @@ export default function ComprimirPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Compresión de PDF Rápida y Online</h2>
               <p className="text-slate-600">
-                Sube, comprime, descarga. Sin necesidad de software — OmnisPDF funciona directamente en tu navegador.
+                Sube, comprime, descarga. Sin necesidad de software — PDF.it funciona directamente en tu navegador.
               </p>
             </div>
           </div>
@@ -140,7 +140,7 @@ export default function ComprimirPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Comprimir un PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Elige tu nivel de compresión: Ligera (mejor calidad), Media (equilibrada) o Extrema (máxima reducción).",
                 "Haz clic en Comprimir PDF y descarga tu archivo más pequeño.",
               ].map((step, i) => (
@@ -186,7 +186,7 @@ export default function ComprimirPDFPage() {
             <div className="space-y-6">
               {[
                 {
-                  q: "¿Cómo comprimo un PDF con OmnisPDF?",
+                  q: "¿Cómo comprimo un PDF con PDF.it?",
                   a: "Sube tu PDF, haz clic en Comprimir PDF y descarga el archivo más pequeño.",
                 },
                 {
@@ -198,12 +198,12 @@ export default function ComprimirPDFPage() {
                   a: "Si el PDF ya está optimizado o contiene imágenes de alta resolución, el tamaño puede no reducirse mucho. Intenta dividir el PDF en partes más pequeñas.",
                 },
                 {
-                  q: "¿OmnisPDF puede comprimir PDFs escaneados?",
+                  q: "¿PDF.it puede comprimir PDFs escaneados?",
                   a: "Sí — los PDFs escaneados suelen ser los mejores candidatos para la compresión porque contienen imágenes grandes incrustadas.",
                 },
                 {
                   q: "¿Puedo comprimir un PDF desde mi celular?",
-                  a: "Sí. OmnisPDF funciona en navegadores móviles — sube, comprime y descarga directamente desde tu iPhone o Android.",
+                  a: "Sí. PDF.it funciona en navegadores móviles — sube, comprime y descarga directamente desde tu iPhone o Android.",
                 },
                 {
                   q: "¿Cuál es el tamaño máximo de PDF que puedo comprimir?",

@@ -5,9 +5,9 @@ import Link from "next/link"
 import { Stamp, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Agregar Tu Logo como Marca de Agua en un PDF | OmnisPDF",
+  title: "Agregar Tu Logo como Marca de Agua en un PDF | PDF.it",
   description:
-    "Aprende cómo agregar el logo de tu empresa como marca de agua de imagen en un PDF. Personaliza propuestas, facturas e informes con una marca de agua profesional usando OmnisPDF.",
+    "Aprende cómo agregar el logo de tu empresa como marca de agua de imagen en un PDF. Personaliza propuestas, facturas e informes con una marca de agua profesional usando PDF.it.",
   keywords: "marca de agua logo pdf, agregar logo a pdf, personalizar pdf con logo, marca de agua imagen pdf",
 }
 
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo agrego mi logo como marca de agua en un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Marca de Agua PDF de OmnisPDF, selecciona Marca de Agua de Imagen, sube tu archivo de logo (PNG o JPG), ajusta el tamaño y la opacidad, y haz clic en Aplicar. Tu logo aparecerá en cada página." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Marca de Agua PDF de PDF.it, selecciona Marca de Agua de Imagen, sube tu archivo de logo (PNG o JPG), ajusta el tamaño y la opacidad, y haz clic en Aplicar. Tu logo aparecerá en cada página." }
     },
     {
       "@type": "Question",
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Agregar una marca de agua con logo aumentará el tamaño del archivo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Ligeramente. La imagen del logo se incrusta en cada página, lo que añade algo de tamaño al archivo. Si el resultado es demasiado grande, usa la herramienta Comprimir PDF de OmnisPDF después de aplicar la marca de agua para reducir el tamaño." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Ligeramente. La imagen del logo se incrusta en cada página, lo que añade algo de tamaño al archivo. Si el resultado es demasiado grande, usa la herramienta Comprimir PDF de PDF.it después de aplicar la marca de agua para reducir el tamaño." }
     },
     {
       "@type": "Question",
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Cómo Agregar una Marca de Agua con Logo a un PDF",
-  "description": "Personaliza cualquier PDF con el logo de tu empresa en 3 simples pasos usando OmnisPDF.",
+  "description": "Personaliza cualquier PDF con el logo de tu empresa en 3 simples pasos usando PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Sube tu PDF",
-      "text": "Ve a la herramienta Marca de Agua PDF de OmnisPDF y sube el documento que quieres personalizar con tu logo."
+      "text": "Ve a la herramienta Marca de Agua PDF de PDF.it y sube el documento que quieres personalizar con tu logo."
     },
     {
       "@type": "HowToStep",
@@ -280,11 +280,11 @@ export default function MarcaDeAguaPDFConLogoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo agrego mi logo como marca de agua en un PDF?", a: "Sube tu PDF a la herramienta Marca de Agua PDF de OmnisPDF, selecciona Marca de Agua de Imagen, sube tu archivo de logo (PNG o JPG), ajusta el tamaño y la opacidad, y haz clic en Aplicar. Tu logo aparecerá en cada página." },
+                { q: "¿Cómo agrego mi logo como marca de agua en un PDF?", a: "Sube tu PDF a la herramienta Marca de Agua PDF de PDF.it, selecciona Marca de Agua de Imagen, sube tu archivo de logo (PNG o JPG), ajusta el tamaño y la opacidad, y haz clic en Aplicar. Tu logo aparecerá en cada página." },
                 { q: "¿En qué formato de imagen debe estar mi logo?", a: "PNG con fondo transparente funciona mejor. Esto asegura que solo tu logo aparezca en la página sin un rectángulo blanco alrededor. Los logos JPG funcionarán pero pueden tener un fondo visible." },
                 { q: "¿Qué tamaño y opacidad funcionan mejor para una marca de agua con logo?", a: "Para una marca de agua sutil de fondo, usa 10-20% de opacidad y escala el logo a aproximadamente 30-50% del ancho de la página. Para un sello más visible, aumenta la opacidad a 25-35%." },
                 { q: "¿Puedo poner marca de agua con mi logo en varios PDFs a la vez?", a: "Sí. Los usuarios Pro y Business pueden usar el procesamiento por lotes para aplicar la misma marca de agua con logo a múltiples PDFs simultáneamente." },
-                { q: "¿Agregar una marca de agua con logo aumentará el tamaño del archivo?", a: "Ligeramente. La imagen del logo se incrusta en cada página, lo que añade algo de tamaño. Si el resultado es demasiado grande, usa la herramienta Comprimir PDF de OmnisPDF después de aplicar la marca de agua." },
+                { q: "¿Agregar una marca de agua con logo aumentará el tamaño del archivo?", a: "Ligeramente. La imagen del logo se incrusta en cada página, lo que añade algo de tamaño. Si el resultado es demasiado grande, usa la herramienta Comprimir PDF de PDF.it después de aplicar la marca de agua." },
                 { q: "¿La herramienta Marca de Agua PDF es gratuita?", a: "Marca de Agua PDF está disponible para usuarios Pro ($7.99/mes) y Business ($13.99/mes). Ambos niveles incluyen marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

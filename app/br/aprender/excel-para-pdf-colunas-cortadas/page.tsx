@@ -5,7 +5,7 @@ import Link from "next/link"
 import { TableIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Excel para PDF — Colunas Cortadas? Como Resolver | OmnisPDF",
+  title: "Excel para PDF — Colunas Cortadas? Como Resolver | PDF.it",
   description:
     "Seu Excel para PDF cortou colunas? Descubra por que isso acontece e 5 formas de resolver para que todas as colunas caibam na página do PDF.",
   keywords: "excel para pdf colunas cortadas, planilha pdf cortada, excel pdf não cabe, colunas faltando pdf, ajustar excel para pdf",
@@ -29,7 +29,7 @@ const howToSchema = {
   "step": [
     { "@type": "HowToStep", "name": "Mude para paisagem", "text": "No Excel: Layout da Página > Orientação > Paisagem." },
     { "@type": "HowToStep", "name": "Ajuste à página", "text": "No Excel: Layout da Página > Escalar para ajustar > 1 página de largura." },
-    { "@type": "HowToStep", "name": "Converta no OmnisPDF", "text": "Envie o Excel ajustado e converta para PDF." }
+    { "@type": "HowToStep", "name": "Converta no PDF.it", "text": "Envie o Excel ajustado e converta para PDF." }
   ]
 }
 

@@ -5,9 +5,9 @@ import Link from "next/link"
 import { Stamp, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Agregar una Marca de Agua a un PDF en Linea | OmnisPDF",
+  title: "Como Agregar una Marca de Agua a un PDF en Linea | PDF.it",
   description:
-    "Aprende como agregar una marca de agua de texto o imagen a cualquier PDF en linea. Marca documentos como Borrador, Confidencial o estampa tu logo — guia paso a paso con OmnisPDF.",
+    "Aprende como agregar una marca de agua de texto o imagen a cualquier PDF en linea. Marca documentos como Borrador, Confidencial o estampa tu logo — guia paso a paso con PDF.it.",
   keywords: "agregar marca de agua a pdf, marca de agua pdf en linea, poner marca de agua en pdf, estampar pdf",
 }
 
@@ -18,12 +18,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como agrego una marca de agua a un PDF en linea?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Marca de Agua PDF de OmnisPDF, escribe tu texto de marca de agua o sube una imagen, ajusta la opacidad y posicion, luego haz clic en Aplicar. Descarga tu PDF con marca de agua en segundos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Marca de Agua PDF de PDF.it, escribe tu texto de marca de agua o sube una imagen, ajusta la opacidad y posicion, luego haz clic en Aplicar. Descarga tu PDF con marca de agua en segundos." }
     },
     {
       "@type": "Question",
       "name": "Puedo agregar una marca de agua de imagen como un logo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. OmnisPDF admite marcas de agua de texto e imagen. Sube un logo PNG o JPG, ajusta el tamano y la opacidad, y se colocara en cada pagina de tu PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it admite marcas de agua de texto e imagen. Sube un logo PNG o JPG, ajusta el tamano y la opacidad, y se colocara en cada pagina de tu PDF." }
     },
     {
       "@type": "Question",
@@ -38,12 +38,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Alguien puede quitar mi marca de agua?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Una marca de agua agregada como superposicion a veces puede eliminarse con herramientas avanzadas. Para mayor proteccion, combina la marca de agua con proteccion por contrasena usando la herramienta Proteger PDF de OmnisPDF, o aplana el PDF despues para integrar la marca de agua en el contenido de la pagina." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Una marca de agua agregada como superposicion a veces puede eliminarse con herramientas avanzadas. Para mayor proteccion, combina la marca de agua con proteccion por contrasena usando la herramienta Proteger PDF de PDF.it, o aplana el PDF despues para integrar la marca de agua en el contenido de la pagina." }
     },
     {
       "@type": "Question",
       "name": "Puedo agregar una marca de agua a un PDF desde mi telefono?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. OmnisPDF funciona en cualquier navegador movil. Sube tu PDF, agrega tu marca de agua de texto o imagen, y descarga el resultado — sin necesidad de aplicacion." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en cualquier navegador movil. Sube tu PDF, agrega tu marca de agua de texto o imagen, y descarga el resultado — sin necesidad de aplicacion." }
     }
   ]
 }
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Agregar una Marca de Agua a un PDF en Linea",
-  "description": "Agrega una marca de agua de texto o imagen a cualquier PDF en 3 simples pasos con OmnisPDF.",
+  "description": "Agrega una marca de agua de texto o imagen a cualquier PDF en 3 simples pasos con PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Sube tu PDF",
-      "text": "Ve a la herramienta Marca de Agua PDF de OmnisPDF y sube el archivo que deseas marcar haciendo clic o arrastandolo al area de carga."
+      "text": "Ve a la herramienta Marca de Agua PDF de PDF.it y sube el archivo que deseas marcar haciendo clic o arrastandolo al area de carga."
     },
     {
       "@type": "HowToStep",
@@ -170,7 +170,7 @@ export default function ComoAgregarMarcaDeAguaAPDFPage() {
                   },
                   {
                     title: "Aplica y descarga",
-                    desc: "Haz clic en Aplicar Marca de Agua. OmnisPDF estampa cada pagina de tu PDF con tu marca de agua elegida. Descarga el resultado inmediatamente.",
+                    desc: "Haz clic en Aplicar Marca de Agua. PDF.it estampa cada pagina de tu PDF con tu marca de agua elegida. Descarga el resultado inmediatamente.",
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -190,7 +190,7 @@ export default function ComoAgregarMarcaDeAguaAPDFPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Marcas de Agua de Texto vs. Marcas de Agua de Imagen</h2>
               <p className="text-slate-600 mb-4">
-                OmnisPDF admite ambos tipos. Aqui te explicamos cuando usar cada uno:
+                PDF.it admite ambos tipos. Aqui te explicamos cuando usar cada uno:
               </p>
               <div className="space-y-6">
                 <div>
@@ -292,12 +292,12 @@ export default function ComoAgregarMarcaDeAguaAPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como agrego una marca de agua a un PDF en linea?", a: "Sube tu PDF a la herramienta Marca de Agua PDF de OmnisPDF, escribe tu texto de marca de agua o sube una imagen, ajusta la opacidad y posicion, luego haz clic en Aplicar. Descarga tu PDF con marca de agua en segundos." },
-                { q: "Puedo agregar una marca de agua de imagen como un logo?", a: "Si. OmnisPDF admite marcas de agua de texto e imagen. Sube un logo PNG o JPG, ajusta el tamano y la opacidad, y se colocara en cada pagina de tu PDF." },
+                { q: "Como agrego una marca de agua a un PDF en linea?", a: "Sube tu PDF a la herramienta Marca de Agua PDF de PDF.it, escribe tu texto de marca de agua o sube una imagen, ajusta la opacidad y posicion, luego haz clic en Aplicar. Descarga tu PDF con marca de agua en segundos." },
+                { q: "Puedo agregar una marca de agua de imagen como un logo?", a: "Si. PDF.it admite marcas de agua de texto e imagen. Sube un logo PNG o JPG, ajusta el tamano y la opacidad, y se colocara en cada pagina de tu PDF." },
                 { q: "La herramienta Marca de Agua PDF es gratis?", a: "Marca de Agua PDF esta disponible para usuarios Pro y Business. Pro comienza en $7.99/mes e incluye marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." },
                 { q: "La marca de agua aparecera en todas las paginas?", a: "Si. Por defecto, la marca de agua se aplica a todas las paginas de tu PDF. Esto asegura un marcado consistente de marca o seguridad en todo el documento." },
-                { q: "Alguien puede quitar mi marca de agua?", a: "Una marca de agua agregada como superposicion a veces puede eliminarse con herramientas avanzadas. Para mayor proteccion, combina la marca de agua con proteccion por contrasena usando la herramienta Proteger PDF de OmnisPDF, o aplana el PDF despues para integrar la marca de agua en el contenido de la pagina." },
-                { q: "Puedo agregar una marca de agua a un PDF desde mi telefono?", a: "Si. OmnisPDF funciona en cualquier navegador movil. Sube tu PDF, agrega tu marca de agua de texto o imagen, y descarga el resultado — sin necesidad de aplicacion." },
+                { q: "Alguien puede quitar mi marca de agua?", a: "Una marca de agua agregada como superposicion a veces puede eliminarse con herramientas avanzadas. Para mayor proteccion, combina la marca de agua con proteccion por contrasena usando la herramienta Proteger PDF de PDF.it, o aplana el PDF despues para integrar la marca de agua en el contenido de la pagina." },
+                { q: "Puedo agregar una marca de agua a un PDF desde mi telefono?", a: "Si. PDF.it funciona en cualquier navegador movil. Sube tu PDF, agrega tu marca de agua de texto o imagen, y descarga el resultado — sin necesidad de aplicacion." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

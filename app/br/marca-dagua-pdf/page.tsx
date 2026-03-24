@@ -7,15 +7,15 @@ import { Droplets, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Adicionar Marca d'Água em PDF Online | OmnisPDF",
+  title: "Adicionar Marca d'Água em PDF Online | PDF.it",
   description:
-    "Adicione uma marca d'água a um PDF com o OmnisPDF. Aplique marcas d'água de texto ou imagem como CONFIDENCIAL, ajuste a opacidade e baixe instantaneamente.",
+    "Adicione uma marca d'água a um PDF com o PDF.it. Aplique marcas d'água de texto ou imagem como CONFIDENCIAL, ajuste a opacidade e baixe instantaneamente.",
   alternates: {
-    canonical: "https://omnispdf.com/br/marca-dagua-pdf",
+    canonical: "https://pdf.it.com/br/marca-dagua-pdf",
     languages: {
-      "en": "https://omnispdf.com/watermark-pdf",
-      "es": "https://omnispdf.com/es/marca-de-agua-pdf",
-      "pt": "https://omnispdf.com/br/marca-dagua-pdf",
+      "en": "https://pdf.it.com/watermark-pdf",
+      "es": "https://pdf.it.com/es/marca-de-agua-pdf",
+      "pt": "https://pdf.it.com/br/marca-dagua-pdf",
     },
   },
 }
@@ -27,7 +27,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso adicionar uma marca d'água de texto como CONFIDENCIAL ou RASCUNHO?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF pode aplicar uma marca d'água de texto em todas as páginas do seu PDF para indicar claramente o status do documento." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it pode aplicar uma marca d'água de texto em todas as páginas do seu PDF para indicar claramente o status do documento." }
     },
     {
       "@type": "Question",
@@ -76,7 +76,7 @@ export default function MarcaDaguaPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Adicionar Marca d'Água em PDF</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Adicione uma marca d'água de texto ou imagem com o OmnisPDF — marque seus PDFs como CONFIDENCIAL, RASCUNHO, ou adicione seu logo para branding e proteção. Disponível para usuários Pro e Business.
+                Adicione uma marca d'água de texto ou imagem com o PDF.it — marque seus PDFs como CONFIDENCIAL, RASCUNHO, ou adicione seu logo para branding e proteção. Disponível para usuários Pro e Business.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Marcas d'Água de Texto e Imagem</span></div>
@@ -95,7 +95,7 @@ export default function MarcaDaguaPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use a ferramenta Marca d'Água PDF do OmnisPDF para adicionar uma marca d'água a um PDF em segundos. Aplique uma marca d'água de texto (CONFIDENCIAL, RASCUNHO, AMOSTRA) ou uma marca d'água de imagem, personalize a posição e transparência, e baixe um PDF com marca d'água pronto para compartilhar. Esta ferramenta está disponível para usuários Pro e Business.
+              Use a ferramenta Marca d'Água PDF do PDF.it para adicionar uma marca d'água a um PDF em segundos. Aplique uma marca d'água de texto (CONFIDENCIAL, RASCUNHO, AMOSTRA) ou uma marca d'água de imagem, personalize a posição e transparência, e baixe um PDF com marca d'água pronto para compartilhar. Esta ferramenta está disponível para usuários Pro e Business.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Adicione marcas d'água de texto ou imagem a PDFs</li>
@@ -137,7 +137,7 @@ export default function MarcaDaguaPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Adicionar uma Marca d'Água a um PDF</h2>
             <div className="space-y-4">
               {[
-                "Envie seu PDF ao OmnisPDF.",
+                "Envie seu PDF ao PDF.it.",
                 "Escolha marca d'água de Texto ou Imagem e personalize as configurações: opacidade, tamanho, posição e rotação.",
                 "Clique em Adicionar Marca d'Água e baixe seu PDF com marca d'água.",
               ].map((step, i) => (
@@ -182,7 +182,7 @@ export default function MarcaDaguaPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Posso adicionar uma marca d'água de texto como CONFIDENCIAL ou RASCUNHO?", a: "Sim. O OmnisPDF pode aplicar uma marca d'água de texto em todas as páginas do seu PDF para indicar claramente o status do documento." },
+                { q: "Posso adicionar uma marca d'água de texto como CONFIDENCIAL ou RASCUNHO?", a: "Sim. O PDF.it pode aplicar uma marca d'água de texto em todas as páginas do seu PDF para indicar claramente o status do documento." },
                 { q: "Posso adicionar um logo como marca d'água em um PDF?", a: "Sim. Envie uma imagem e posicione-a como marca d'água nas páginas do seu PDF." },
                 { q: "A marca d'água aparece em todas as páginas?", a: "Sim. A marca d'água é aplicada em todas as páginas do PDF por padrão." },
                 { q: "A marca d'água afeta o conteúdo do meu PDF?", a: "Não. Adicionar uma marca d'água apenas sobrepõe o texto ou imagem selecionado nas suas páginas. Todo o conteúdo existente permanece intacto." },

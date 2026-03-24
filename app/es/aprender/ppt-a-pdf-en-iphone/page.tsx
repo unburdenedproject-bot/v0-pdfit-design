@@ -5,14 +5,14 @@ import Link from "next/link"
 import { Smartphone, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Convertir PPT a PDF en iPhone (metodo rapido) | OmnisPDF",
-  description: "Aprende como convertir PowerPoint a PDF en iPhone usando Safari y OmnisPDF. Sin app necesaria — abre tu PPTX desde email o Archivos, convierte en linea y guarda o comparte el PDF.",
+  title: "Convertir PPT a PDF en iPhone (metodo rapido) | PDF.it",
+  description: "Aprende como convertir PowerPoint a PDF en iPhone usando Safari y PDF.it. Sin app necesaria — abre tu PPTX desde email o Archivos, convierte en linea y guarda o comparte el PDF.",
   keywords: "ppt a pdf iphone, convertir powerpoint a pdf en iphone, pptx a pdf iphone, powerpoint pdf ios, convertir ppt a pdf movil",
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-  { "@type": "Question", "name": "Puedo convertir PowerPoint a PDF en mi iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Abre Safari en tu iPhone, ve a la herramienta PowerPoint a PDF de OmnisPDF, sube tu archivo PPTX y descarga el PDF convertido. No necesitas instalar ninguna app — todo funciona en el navegador." } },
-  { "@type": "Question", "name": "Necesito instalar una app para convertir PPT a PDF en iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF funciona directamente en Safari o cualquier navegador movil. No necesitas descargar ninguna app de la App Store. Solo visita el sitio web, sube tu archivo y convierte." } },
+  { "@type": "Question", "name": "Puedo convertir PowerPoint a PDF en mi iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Abre Safari en tu iPhone, ve a la herramienta PowerPoint a PDF de PDF.it, sube tu archivo PPTX y descarga el PDF convertido. No necesitas instalar ninguna app — todo funciona en el navegador." } },
+  { "@type": "Question", "name": "Necesito instalar una app para convertir PPT a PDF en iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it funciona directamente en Safari o cualquier navegador movil. No necesitas descargar ninguna app de la App Store. Solo visita el sitio web, sube tu archivo y convierte." } },
   { "@type": "Question", "name": "Como abro un archivo PPTX en iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Puedes abrir archivos PPTX desde la app Archivos, adjuntos de email, iCloud Drive, Google Drive o Dropbox. Si recibes un PPTX por email, toca el adjunto para descargarlo, luego usa el boton compartir para guardarlo en Archivos para facil acceso." } },
   { "@type": "Question", "name": "Donde se guarda el PDF convertido en iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Cuando tocas el boton de descarga en Safari, el PDF se guarda en tu carpeta Descargas en la app Archivos. Tambien puedes tocar la notificacion del archivo descargado en la barra de herramientas de Safari para abrirlo inmediatamente, luego compartir o guardar donde quieras." } },
   { "@type": "Question", "name": "Puedo compartir el PDF directamente desde mi iPhone despues de convertir?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Despues de descargar el PDF, abrelo desde la app Archivos y toca el boton compartir. Puedes enviarlo por email, iMessage, AirDrop, WhatsApp, Slack o cualquier otra app que acepte archivos." } },
@@ -20,7 +20,7 @@ const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainE
 ] }
 
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como convertir PPT a PDF en iPhone", "description": "Convierte un archivo PowerPoint a PDF directamente en tu iPhone usando Safari — sin app necesaria.", "step": [
-  { "@type": "HowToStep", "name": "Abre OmnisPDF en Safari", "text": "Abre Safari en tu iPhone y ve a omnispdf.com/es/powerpoint-a-pdf. La herramienta funciona en cualquier iPhone con iOS 15 o posterior." },
+  { "@type": "HowToStep", "name": "Abre PDF.it en Safari", "text": "Abre Safari en tu iPhone y ve a pdf.it.com/es/powerpoint-a-pdf. La herramienta funciona en cualquier iPhone con iOS 15 o posterior." },
   { "@type": "HowToStep", "name": "Sube tu archivo PPTX", "text": "Toca el area de carga y selecciona tu archivo PowerPoint desde Archivos, iCloud Drive, descargas de email o cualquier almacenamiento en la nube conectado." },
   { "@type": "HowToStep", "name": "Descarga y comparte el PDF", "text": "Toca Convertir, luego descarga el PDF. Se guarda en tu carpeta Descargas en Archivos. Abrelo y usa el boton compartir para enviar por email, iMessage, AirDrop o cualquier app." }
 ] }
@@ -59,7 +59,7 @@ export default function PptAPdfEnIphonePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-6">Como convertir PPT a PDF en iPhone (paso a paso)</h2>
             <div className="space-y-4">
               {[
-                { title: "Abre Safari y ve a OmnisPDF", desc: "Abre Safari (o Chrome) en tu iPhone y visita omnispdf.com/es/powerpoint-a-pdf. La pagina esta completamente optimizada para movil — todo funciona en la pantalla de tu telefono." },
+                { title: "Abre Safari y ve a PDF.it", desc: "Abre Safari (o Chrome) en tu iPhone y visita pdf.it.com/es/powerpoint-a-pdf. La pagina esta completamente optimizada para movil — todo funciona en la pantalla de tu telefono." },
                 { title: "Sube tu archivo PowerPoint", desc: "Toca el area de carga. Tu iPhone mostrara opciones para seleccionar un archivo desde Archivos, iCloud Drive u otro almacenamiento conectado. Si el PPTX llego por email, guardalo primero en Archivos (toca el adjunto > compartir > Guardar en Archivos)." },
                 { title: "Convierte y descarga el PDF", desc: "Toca Convertir. En unos segundos, tu PDF esta listo. Toca Descargar — el archivo se guarda en tu carpeta Descargas en la app Archivos. Puedes abrirlo inmediatamente desde el indicador de descarga de Safari." },
               ].map((step, i) => (
@@ -75,10 +75,10 @@ export default function PptAPdfEnIphonePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-4">Como obtener tu archivo PPTX en tu iPhone</h2>
             <p className="text-slate-600 mb-4">La parte mas dificil usualmente es encontrar tu archivo. Aqui te decimos donde buscar segun como lo recibiste:</p>
             <div className="space-y-6">
-              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Desde email (Gmail, Outlook, Apple Mail)</h3><p className="text-slate-600">Abre el email con el adjunto. Toca el archivo PPTX para previsualizarlo, luego toca el <strong>boton compartir</strong> y selecciona <strong>"Guardar en Archivos"</strong>. Elige una carpeta (Descargas esta bien). Ahora puedes subirlo a OmnisPDF.</p></div>
-              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Desde iCloud Drive</h3><p className="text-slate-600">Si el archivo esta en tu iCloud Drive, aparecera directamente cuando toques el area de carga en OmnisPDF. Selecciona "iCloud Drive" en el selector de archivos y navega a tu presentacion.</p></div>
-              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Desde Google Drive o Dropbox</h3><p className="text-slate-600">Si tienes la app de Google Drive o Dropbox instalada, aparecen como ubicaciones en la app Archivos del iPhone. Cuando OmnisPDF te pida elegir un archivo, navega a tu almacenamiento en la nube y selecciona el PPTX.</p></div>
-              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Desde WhatsApp o iMessage</h3><p className="text-slate-600">Si alguien envio el archivo por una app de mensajeria, mantiene presionado el archivo, luego selecciona <strong>"Compartir"</strong> y <strong>"Guardar en Archivos."</strong> Luego sube desde Archivos a OmnisPDF.</p></div>
+              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Desde email (Gmail, Outlook, Apple Mail)</h3><p className="text-slate-600">Abre el email con el adjunto. Toca el archivo PPTX para previsualizarlo, luego toca el <strong>boton compartir</strong> y selecciona <strong>"Guardar en Archivos"</strong>. Elige una carpeta (Descargas esta bien). Ahora puedes subirlo a PDF.it.</p></div>
+              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Desde iCloud Drive</h3><p className="text-slate-600">Si el archivo esta en tu iCloud Drive, aparecera directamente cuando toques el area de carga en PDF.it. Selecciona "iCloud Drive" en el selector de archivos y navega a tu presentacion.</p></div>
+              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Desde Google Drive o Dropbox</h3><p className="text-slate-600">Si tienes la app de Google Drive o Dropbox instalada, aparecen como ubicaciones en la app Archivos del iPhone. Cuando PDF.it te pida elegir un archivo, navega a tu almacenamiento en la nube y selecciona el PPTX.</p></div>
+              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Desde WhatsApp o iMessage</h3><p className="text-slate-600">Si alguien envio el archivo por una app de mensajeria, mantiene presionado el archivo, luego selecciona <strong>"Compartir"</strong> y <strong>"Guardar en Archivos."</strong> Luego sube desde Archivos a PDF.it.</p></div>
             </div>
           </section>
 
@@ -99,13 +99,13 @@ export default function PptAPdfEnIphonePage() {
               <li>&#10003; <strong>Usa Wi-Fi para archivos grandes.</strong> Si tu PPTX es mayor a 10MB, Wi-Fi sera mucho mas rapido que datos celulares.</li>
               <li>&#10003; <strong>Revisa el PDF antes de enviar.</strong> Abrelo en la app Archivos y desplazate por las paginas para asegurarte de que todo se vea bien.</li>
               <li>&#10003; <strong>Comprime si es necesario.</strong> Si el PDF es muy grande para email (mas de 20MB), usa <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> — tambien funciona en tu iPhone.</li>
-              <li>&#10003; <strong>Agrega OmnisPDF a favoritos.</strong> Agrega omnispdf.com a tu pantalla de inicio para acceso instantaneo: en Safari, toca el boton compartir y selecciona "Agregar a pantalla de inicio."</li>
+              <li>&#10003; <strong>Agrega PDF.it a favoritos.</strong> Agrega pdf.it.com a tu pantalla de inicio para acceso instantaneo: en Safari, toca el boton compartir y selecciona "Agregar a pantalla de inicio."</li>
             </ul>
           </section>
 
           <section className="mb-12">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Otras conversiones que puedes hacer en iPhone</h2>
-            <p className="text-slate-600 mb-4">Toda la suite de OmnisPDF funciona en tu telefono. Estas son las conversiones moviles mas populares:</p>
+            <p className="text-slate-600 mb-4">Toda la suite de PDF.it funciona en tu telefono. Estas son las conversiones moviles mas populares:</p>
             <ul className="space-y-2 text-slate-700">
               <li>&#10003; <Link href="/es/word-a-pdf" className="text-orange-600 hover:underline">Word a PDF</Link> — Convierte archivos DOCX a PDF en tu telefono.</li>
               <li>&#10003; <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">Excel a PDF</Link> — Convierte hojas de calculo manteniendo disenos de tablas.</li>

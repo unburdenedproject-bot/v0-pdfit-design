@@ -5,19 +5,19 @@ import Link from "next/link"
 import { Smartphone, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Desbloquear PDF no Celular — Android e iPhone | OmnisPDF",
+  title: "Desbloquear PDF no Celular — Android e iPhone | PDF.it",
   description: "Aprenda a remover senha e restricoes de PDF direto no celular. Guia para Android e iPhone, sem app necessario.",
   keywords: "desbloquear pdf celular, remover senha pdf android, desbloquear pdf iphone, tirar senha pdf celular, pdf sem senha celular",
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-  { "@type": "Question", "name": "Preciso instalar app para desbloquear PDF no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Nao. O OmnisPDF funciona direto no navegador do celular (Chrome ou Safari). Acesse o site, envie o PDF, digite a senha e baixe o arquivo desbloqueado." } },
-  { "@type": "Question", "name": "Funciona em Android e iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em qualquer navegador moderno, tanto em Android quanto em iPhone/iPad." } },
-  { "@type": "Question", "name": "Posso desbloquear um PDF recebido pelo WhatsApp?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Salve o PDF do WhatsApp no celular, depois abra o OmnisPDF no navegador e envie o arquivo salvo. Apos desbloquear, voce pode compartilhar de volta pelo WhatsApp." } }
+  { "@type": "Question", "name": "Preciso instalar app para desbloquear PDF no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Nao. O PDF.it funciona direto no navegador do celular (Chrome ou Safari). Acesse o site, envie o PDF, digite a senha e baixe o arquivo desbloqueado." } },
+  { "@type": "Question", "name": "Funciona em Android e iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em qualquer navegador moderno, tanto em Android quanto em iPhone/iPad." } },
+  { "@type": "Question", "name": "Posso desbloquear um PDF recebido pelo WhatsApp?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Salve o PDF do WhatsApp no celular, depois abra o PDF.it no navegador e envie o arquivo salvo. Apos desbloquear, voce pode compartilhar de volta pelo WhatsApp." } }
 ] }
 
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como desbloquear PDF no celular", "description": "Remova a senha do PDF usando o celular em 3 passos.", "step": [
-  { "@type": "HowToStep", "name": "Abra o OmnisPDF no navegador", "text": "No celular, abra Chrome ou Safari e acesse a ferramenta Desbloquear PDF do OmnisPDF." },
+  { "@type": "HowToStep", "name": "Abra o PDF.it no navegador", "text": "No celular, abra Chrome ou Safari e acesse a ferramenta Desbloquear PDF do PDF.it." },
   { "@type": "HowToStep", "name": "Envie o PDF e digite a senha", "text": "Toque na area de upload, selecione o PDF e digite a senha atual." },
   { "@type": "HowToStep", "name": "Baixe e compartilhe", "text": "Toque em Desbloquear, baixe o PDF sem senha e compartilhe pelo app desejado." }
 ] }
@@ -54,7 +54,7 @@ export default function DesbloquearPdfNoCelularPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-6">No Android (Chrome)</h2>
             <div className="space-y-4">
               {[
-                { title: "Abra o Chrome", desc: "Acesse omnispdf.com/br/desbloquear-pdf. O site se adapta automaticamente a tela do celular." },
+                { title: "Abra o Chrome", desc: "Acesse pdf.it.com/br/desbloquear-pdf. O site se adapta automaticamente a tela do celular." },
                 { title: "Envie o PDF", desc: "Toque na area de upload e selecione o PDF do armazenamento interno, Google Drive ou Downloads. Se o PDF foi recebido pelo WhatsApp, primeiro salve no armazenamento." },
                 { title: "Digite a senha e desbloqueie", desc: "Se o PDF tem senha de abertura, digite-a. Para restricoes de permissao, o processo pode ser automatico. Toque em Desbloquear e baixe o PDF livre." },
               ].map((step, i) => (
@@ -70,7 +70,7 @@ export default function DesbloquearPdfNoCelularPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-6">No iPhone (Safari)</h2>
             <div className="space-y-4">
               {[
-                { title: "Abra o Safari", desc: "Acesse omnispdf.com/br/desbloquear-pdf no Safari." },
+                { title: "Abra o Safari", desc: "Acesse pdf.it.com/br/desbloquear-pdf no Safari." },
                 { title: "Selecione o PDF", desc: "Toque na area de upload e escolha o PDF do iCloud Drive, app Arquivos ou outra fonte." },
                 { title: "Desbloqueie e compartilhe", desc: "Digite a senha (se necessario), toque em Desbloquear e baixe. Use o botao Compartilhar para enviar via AirDrop, WhatsApp ou email." },
               ].map((step, i) => (

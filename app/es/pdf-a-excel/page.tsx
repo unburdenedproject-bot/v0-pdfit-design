@@ -6,14 +6,14 @@ import { ProcessingInterface } from "@/components/processing-interface"
 import { FileSpreadsheet, Zap, Shield, Download, Crown } from "lucide-react"
 
 export const metadata = {
-  title: "Convertir PDF a Excel Online — Extraer Tablas de PDF | OmnisPDF",
+  title: "Convertir PDF a Excel Online — Extraer Tablas de PDF | PDF.it",
   description:
-    "Convierte PDF a Excel con OmnisPDF. Extrae tablas y datos de tus archivos PDF en hojas de calculo .xlsx editables — rapido, seguro y desde tu navegador.",
+    "Convierte PDF a Excel con PDF.it. Extrae tablas y datos de tus archivos PDF en hojas de calculo .xlsx editables — rapido, seguro y desde tu navegador.",
   alternates: {
-    canonical: "https://omnispdf.com/es/pdf-a-excel",
+    canonical: "https://pdf.it.com/es/pdf-a-excel",
     languages: {
-      en: "https://omnispdf.com/pdf-to-excel",
-      es: "https://omnispdf.com/es/pdf-a-excel",
+      en: "https://pdf.it.com/pdf-to-excel",
+      es: "https://pdf.it.com/es/pdf-a-excel",
     },
   },
 }
@@ -27,7 +27,7 @@ const faqSchema = {
       name: "¿Como convierto un PDF a Excel?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sube tu PDF a OmnisPDF, haz clic en Convertir y descarga tu hoja de calculo Excel.",
+        text: "Sube tu PDF a PDF.it, haz clic en Convertir y descarga tu hoja de calculo Excel.",
       },
     },
     {
@@ -35,7 +35,7 @@ const faqSchema = {
       name: "¿Los datos de las tablas se extraen con precision?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "OmnisPDF extrae tablas y datos estructurados con la mayor precision posible. Los resultados pueden variar dependiendo de como fue creado el PDF original.",
+        text: "PDF.it extrae tablas y datos estructurados con la mayor precision posible. Los resultados pueden variar dependiendo de como fue creado el PDF original.",
       },
     },
     {
@@ -43,7 +43,7 @@ const faqSchema = {
       name: "¿Puedo convertir un PDF escaneado a Excel?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Los PDFs escaneados requieren OCR para extraer texto y tablas. Usa primero la herramienta de Escaner OCR de OmnisPDF y luego convierte a Excel.",
+        text: "Los PDFs escaneados requieren OCR para extraer texto y tablas. Usa primero la herramienta de Escaner OCR de PDF.it y luego convierte a Excel.",
       },
     },
     {
@@ -51,7 +51,7 @@ const faqSchema = {
       name: "¿Puedo convertir PDF a Excel desde mi celular?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Si. OmnisPDF funciona en navegadores moviles — sube, convierte y descarga desde iPhone o Android.",
+        text: "Si. PDF.it funciona en navegadores moviles — sube, convierte y descarga desde iPhone o Android.",
       },
     },
     {
@@ -131,7 +131,7 @@ export default function PDFaExcelPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Usa la herramienta de PDF a Excel de OmnisPDF para extraer tablas y datos de archivos PDF en hojas de calculo editables. Sube tu PDF, convierte y descarga un archivo .xlsx listo para analizar — sin necesidad de instalar software.
+              Usa la herramienta de PDF a Excel de PDF.it para extraer tablas y datos de archivos PDF en hojas de calculo editables. Sube tu PDF, convierte y descarga un archivo .xlsx listo para analizar — sin necesidad de instalar software.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Convierte tablas y datos de PDF a hojas de calculo Excel</li>
@@ -149,7 +149,7 @@ export default function PDFaExcelPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Extrae Tablas de PDF con Precision</h2>
               <p className="text-slate-600">
-                OmnisPDF detecta y extrae tablas de tus archivos PDF, convirtiendo filas y columnas en celdas de Excel que puedes editar, filtrar y analizar.
+                PDF.it detecta y extrae tablas de tus archivos PDF, convirtiendo filas y columnas en celdas de Excel que puedes editar, filtrar y analizar.
               </p>
             </div>
             <div>
@@ -173,7 +173,7 @@ export default function PDFaExcelPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Convertir PDF a Excel</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Haz clic en Convertir PDF a Excel.",
                 "Descarga tu archivo .xlsx y abrelo en Excel o Google Sheets.",
               ].map((step, i) => (
@@ -218,10 +218,10 @@ export default function PDFaExcelPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Como convierto un PDF a Excel?", a: "Sube tu PDF a OmnisPDF, haz clic en Convertir y descarga tu hoja de calculo Excel." },
-                { q: "¿Los datos de las tablas se extraen con precision?", a: "OmnisPDF extrae tablas y datos estructurados con la mayor precision posible. Los resultados pueden variar dependiendo de como fue creado el PDF original." },
-                { q: "¿Puedo convertir un PDF escaneado a Excel?", a: "Los PDFs escaneados requieren OCR para extraer texto y tablas. Usa primero la herramienta de Escaner OCR de OmnisPDF y luego convierte a Excel." },
-                { q: "¿Puedo convertir PDF a Excel desde mi celular?", a: "Si. OmnisPDF funciona en navegadores moviles — sube, convierte y descarga desde iPhone o Android." },
+                { q: "¿Como convierto un PDF a Excel?", a: "Sube tu PDF a PDF.it, haz clic en Convertir y descarga tu hoja de calculo Excel." },
+                { q: "¿Los datos de las tablas se extraen con precision?", a: "PDF.it extrae tablas y datos estructurados con la mayor precision posible. Los resultados pueden variar dependiendo de como fue creado el PDF original." },
+                { q: "¿Puedo convertir un PDF escaneado a Excel?", a: "Los PDFs escaneados requieren OCR para extraer texto y tablas. Usa primero la herramienta de Escaner OCR de PDF.it y luego convierte a Excel." },
+                { q: "¿Puedo convertir PDF a Excel desde mi celular?", a: "Si. PDF.it funciona en navegadores moviles — sube, convierte y descarga desde iPhone o Android." },
                 { q: "¿Es seguro subir mi PDF?", a: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." },
                 { q: "¿Cual es el tamano maximo de archivo que puedo convertir?", a: "Las cuentas gratuitas pueden subir archivos de hasta 25MB. Las cuentas Pro y Business pueden subir archivos de hasta 200MB." },
               ].map((faq, i) => (

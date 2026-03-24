@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Convert a Resume from Word to PDF (ATS-Friendly Tips) | OmnisPDF",
+  title: "Convert a Resume from Word to PDF (ATS-Friendly Tips) | PDF.it",
   description:
     "Convert your resume from Word to PDF while keeping it ATS-friendly. Learn which fonts, layouts, and formatting choices help your resume pass applicant tracking systems.",
   keywords: "convert resume word to pdf, resume docx to pdf, ats friendly resume pdf, resume pdf conversion, word resume to pdf format",
@@ -33,12 +33,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Will converting my resume to PDF change the formatting?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Not if you follow best practices: use standard fonts, avoid complex layouts with text boxes or tables, and use a reliable converter like OmnisPDF. The converted PDF should look identical to your Word document." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Not if you follow best practices: use standard fonts, avoid complex layouts with text boxes or tables, and use a reliable converter like PDF.it. The converted PDF should look identical to your Word document." }
     },
     {
       "@type": "Question",
       "name": "How do I reduce my resume PDF file size?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Most text-based resumes are already small (under 500KB). If yours is larger — usually because of a photo or graphics — use OmnisPDF's Compress PDF tool to reduce the file size while keeping text sharp and readable." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Most text-based resumes are already small (under 500KB). If yours is larger — usually because of a photo or graphics — use PDF.it's Compress PDF tool to reduce the file size while keeping text sharp and readable." }
     },
     {
       "@type": "Question",
@@ -52,7 +52,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Convert a Resume from Word to PDF",
-  "description": "Convert your Word resume to an ATS-friendly PDF in 3 steps using OmnisPDF.",
+  "description": "Convert your Word resume to an ATS-friendly PDF in 3 steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
@@ -61,8 +61,8 @@ const howToSchema = {
     },
     {
       "@type": "HowToStep",
-      "name": "Convert to PDF with OmnisPDF",
-      "text": "Upload your .docx resume to OmnisPDF's Word to PDF tool and click Convert. The tool preserves formatting, fonts, and layout."
+      "name": "Convert to PDF with PDF.it",
+      "text": "Upload your .docx resume to PDF.it's Word to PDF tool and click Convert. The tool preserves formatting, fonts, and layout."
     },
     {
       "@type": "HowToStep",
@@ -206,8 +206,8 @@ export default function ConvertResumeWordToPDFPage() {
                     desc: "Check your resume against the ATS rules above. Use standard fonts, a single-column layout, and avoid text boxes, tables, and graphics. Make sure all text is in normal paragraphs, not headers/footers.",
                   },
                   {
-                    title: "Convert with OmnisPDF",
-                    desc: "Go to the Word to PDF tool and upload your .docx file. OmnisPDF converts it in seconds, preserving your formatting, fonts, and layout exactly as designed.",
+                    title: "Convert with PDF.it",
+                    desc: "Go to the Word to PDF tool and upload your .docx file. PDF.it converts it in seconds, preserving your formatting, fonts, and layout exactly as designed.",
                   },
                   {
                     title: "Test the output",
@@ -319,8 +319,8 @@ export default function ConvertResumeWordToPDFPage() {
                 { q: "Should I submit my resume as a Word document or PDF?", a: "PDF is the better choice in almost every case. PDFs preserve your formatting exactly, look the same on every device, and prevent accidental edits. The only exception is when a job posting specifically asks for a .docx file — in that case, submit Word." },
                 { q: "Can ATS systems read PDF resumes?", a: "Yes. Modern ATS systems (Greenhouse, Lever, Workday, Taleo) can read PDF resumes just as well as Word documents. The key is using a simple, single-column layout with standard fonts and no text boxes, tables, or graphics that could confuse the parser." },
                 { q: "What fonts should I use for an ATS-friendly resume?", a: "Use standard, widely available fonts: Arial, Calibri, Times New Roman, Georgia, Helvetica, or Garamond. These fonts are recognized by all ATS systems and convert perfectly to PDF without substitution issues." },
-                { q: "Will converting my resume to PDF change the formatting?", a: "Not if you follow best practices: use standard fonts, avoid complex layouts with text boxes or tables, and use a reliable converter like OmnisPDF. The converted PDF should look identical to your Word document." },
-                { q: "How do I reduce my resume PDF file size?", a: "Most text-based resumes are already small (under 500KB). If yours is larger — usually because of a photo or graphics — use OmnisPDF's Compress PDF tool to reduce the file size while keeping text sharp and readable." },
+                { q: "Will converting my resume to PDF change the formatting?", a: "Not if you follow best practices: use standard fonts, avoid complex layouts with text boxes or tables, and use a reliable converter like PDF.it. The converted PDF should look identical to your Word document." },
+                { q: "How do I reduce my resume PDF file size?", a: "Most text-based resumes are already small (under 500KB). If yours is larger — usually because of a photo or graphics — use PDF.it's Compress PDF tool to reduce the file size while keeping text sharp and readable." },
                 { q: "Should I password-protect my resume PDF?", a: "No. Password-protected PDFs cannot be parsed by ATS systems, which means your resume won't be searchable by recruiters. Only protect a resume if you're sending it directly to a specific person and don't want it forwarded." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

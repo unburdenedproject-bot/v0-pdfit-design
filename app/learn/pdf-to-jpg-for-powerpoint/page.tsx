@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ImageIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Convert PDF to JPG for PowerPoint (Best Settings + Tips) | OmnisPDF",
+  title: "Convert PDF to JPG for PowerPoint (Best Settings + Tips) | PDF.it",
   description:
     "Learn the best settings to convert PDF pages to JPG for PowerPoint presentations. Avoid blurry images, pick the right resolution, and insert JPGs into slides like a pro.",
   keywords: "pdf to jpg for powerpoint, convert pdf to image for slides, insert pdf into powerpoint, pdf to jpg resolution for presentation",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I convert the PDF directly to PowerPoint instead?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes, if you want editable slides. OmnisPDF offers a PDF to PowerPoint converter that creates a .pptx file with editable text and layouts. However, if you just want the PDF pages as static images in your slides, converting to JPG is simpler and more reliable." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, if you want editable slides. PDF.it offers a PDF to PowerPoint converter that creates a .pptx file with editable text and layouts. However, if you just want the PDF pages as static images in your slides, converting to JPG is simpler and more reliable." }
     }
   ]
 }
@@ -57,7 +57,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Convert your PDF to JPG at 200+ DPI",
-      "text": "Upload your PDF to OmnisPDF's PDF to JPG tool and select 200 DPI (or 300 DPI for print presentations). Convert all pages or select specific ones."
+      "text": "Upload your PDF to PDF.it's PDF to JPG tool and select 200 DPI (or 300 DPI for print presentations). Convert all pages or select specific ones."
     },
     {
       "@type": "HowToStep",
@@ -341,7 +341,7 @@ export default function PdfToJpgForPowerpointPage() {
                 { q: "Should I use JPG or PNG for PowerPoint?", a: "Use JPG for photo-heavy PDF pages (smaller file size). Use PNG for pages with text, diagrams, or line art (sharper edges, no compression artifacts). If the presentation will be emailed, JPG keeps the file size down." },
                 { q: "Can I insert a PDF directly into PowerPoint?", a: "PowerPoint can insert a PDF as an object, but it shows only a thumbnail and requires clicking to open. For a clean, seamless look, convert the PDF pages to JPG or PNG images and insert those as pictures instead." },
                 { q: "How do I convert a multi-page PDF for a PowerPoint presentation?", a: "Convert the entire PDF to JPG — each page becomes a separate image. Then insert each JPG onto its own PowerPoint slide. This gives you one slide per PDF page with full visual fidelity." },
-                { q: "Can I convert the PDF directly to PowerPoint instead?", a: "Yes, if you want editable slides. OmnisPDF offers a PDF to PowerPoint converter that creates a .pptx file with editable text and layouts. However, if you just want the PDF pages as static images in your slides, converting to JPG is simpler and more reliable." },
+                { q: "Can I convert the PDF directly to PowerPoint instead?", a: "Yes, if you want editable slides. PDF.it offers a PDF to PowerPoint converter that creates a .pptx file with editable text and layouts. However, if you just want the PDF pages as static images in your slides, converting to JPG is simpler and more reliable." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

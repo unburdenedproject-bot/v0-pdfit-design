@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileArchiveIcon as Compress, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Comprimir PDF para Imprimir (Manter Qualidade de Impressao) | OmnisPDF",
+  title: "Comprimir PDF para Imprimir (Manter Qualidade de Impressao) | PDF.it",
   description:
     "Aprenda como comprimir um PDF para impressao sem perder qualidade. Reduza o tamanho mantendo 300 DPI para resultados profissionais — online, gratis.",
   keywords: "comprimir pdf para imprimir, comprimir pdf qualidade impressao, reduzir pdf manter qualidade, comprimir pdf 300 dpi",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso comprimir um PDF sem perder qualidade de impressao?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Use a compressao Leve do OmnisPDF, que mantem as imagens em alta resolucao (300 DPI) e reduz o tamanho eliminando metadados desnecessarios e otimizando a estrutura do arquivo." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Use a compressao Leve do PDF.it, que mantem as imagens em alta resolucao (300 DPI) e reduz o tamanho eliminando metadados desnecessarios e otimizando a estrutura do arquivo." }
     },
     {
       "@type": "Question",
@@ -42,7 +42,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Envie seu PDF",
-      "text": "Acesse a ferramenta Comprimir PDF do OmnisPDF e envie seu arquivo para impressao."
+      "text": "Acesse a ferramenta Comprimir PDF do PDF.it e envie seu arquivo para impressao."
     },
     {
       "@type": "HowToStep",
@@ -233,7 +233,7 @@ export default function ComprimirPDFParaImprimirPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Posso comprimir um PDF sem perder qualidade de impressao?", a: "Sim. Use a compressao Leve do OmnisPDF, que mantem as imagens em alta resolucao (300 DPI) e reduz o tamanho eliminando metadados desnecessarios e otimizando a estrutura do arquivo." },
+                { q: "Posso comprimir um PDF sem perder qualidade de impressao?", a: "Sim. Use a compressao Leve do PDF.it, que mantem as imagens em alta resolucao (300 DPI) e reduz o tamanho eliminando metadados desnecessarios e otimizando a estrutura do arquivo." },
                 { q: "Qual nivel de compressao usar para impressao?", a: "Para impressao profissional, use sempre a compressao Leve. Ela reduz o tamanho do arquivo sem afetar visivelmente a qualidade das imagens e textos quando impressos." },
                 { q: "A compressao afeta a resolucao DPI?", a: "A compressao Leve mantem a resolucao original. A compressao Media pode reduzir levemente a resolucao. A Extrema reduz significativamente a resolucao e nao e recomendada para impressao profissional." },
               ].map((faq, i) => (

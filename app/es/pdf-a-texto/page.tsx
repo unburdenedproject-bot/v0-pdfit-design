@@ -6,14 +6,14 @@ import { Type, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Convertir PDF a Texto Online — Extraer Texto de PDF | OmnisPDF",
+  title: "Convertir PDF a Texto Online — Extraer Texto de PDF | PDF.it",
   description:
-    "Convierte PDF a TXT en segundos con OmnisPDF. Extrae texto plano de PDFs online para copiar, editar y compartir — sin instalar nada.",
+    "Convierte PDF a TXT en segundos con PDF.it. Extrae texto plano de PDFs online para copiar, editar y compartir — sin instalar nada.",
   alternates: {
-    canonical: "https://omnispdf.com/es/pdf-a-texto",
+    canonical: "https://pdf.it.com/es/pdf-a-texto",
     languages: {
-      en: "https://omnispdf.com/pdf-to-txt",
-      es: "https://omnispdf.com/es/pdf-a-texto",
+      en: "https://pdf.it.com/pdf-to-txt",
+      es: "https://pdf.it.com/es/pdf-a-texto",
     },
   },
 }
@@ -32,7 +32,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "¿OmnisPDF mantiene el formato del PDF?",
+      name: "¿PDF.it mantiene el formato del PDF?",
       acceptedAnswer: {
         "@type": "Answer",
         text: "TXT es texto plano, asi que el formato como fuentes, columnas y espaciado puede no conservarse. Si necesitas mantener el diseno, usa nuestra herramienta PDF a Word.",
@@ -51,7 +51,7 @@ const faqSchema = {
       name: "¿Puedo convertir PDF a TXT en mi celular?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Si. Abre OmnisPDF en tu navegador movil, sube el PDF, convierte y descarga el archivo TXT.",
+        text: "Si. Abre PDF.it en tu navegador movil, sube el PDF, convierte y descarga el archivo TXT.",
       },
     },
     {
@@ -125,7 +125,7 @@ export default function PDFaTextoPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Usa el convertidor de PDF a TXT de OmnisPDF para convertir un PDF en un archivo de texto plano (.txt) en segundos. Perfecto para copiar contenido en notas, documentos, correos o herramientas de IA — sin tener que reescribir nada. Sube tu PDF, convierte y descarga el texto extraido al instante.
+              Usa el convertidor de PDF a TXT de PDF.it para convertir un PDF en un archivo de texto plano (.txt) en segundos. Perfecto para copiar contenido en notas, documentos, correos o herramientas de IA — sin tener que reescribir nada. Sube tu PDF, convierte y descarga el texto extraido al instante.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Convierte PDF a TXT para copiar y editar rapidamente</li>
@@ -143,7 +143,7 @@ export default function PDFaTextoPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Extrae Texto de PDF a TXT</h2>
               <p className="text-slate-600">
-                Convierte paginas de PDF en un archivo de texto limpio que puedes editar en cualquier lugar. OmnisPDF exporta tu contenido como texto plano, facilitando pegarlo en Word, Google Docs, Notion, correos o editores de codigo.
+                Convierte paginas de PDF en un archivo de texto limpio que puedes editar en cualquier lugar. PDF.it exporta tu contenido como texto plano, facilitando pegarlo en Word, Google Docs, Notion, correos o editores de codigo.
               </p>
             </div>
             <div>
@@ -167,7 +167,7 @@ export default function PDFaTextoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Convertir PDF a Texto</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Haz clic en Convertir PDF a TXT.",
                 "Descarga tu archivo .txt.",
               ].map((step, i) => (
@@ -217,7 +217,7 @@ export default function PDFaTextoPage() {
                   a: "La mayoria de los PDFs con texto se convierten bien. Si tu PDF es escaneado (solo imagen), necesitaras OCR para extraer el texto.",
                 },
                 {
-                  q: "¿OmnisPDF mantiene el formato del PDF?",
+                  q: "¿PDF.it mantiene el formato del PDF?",
                   a: "TXT es texto plano, asi que el formato como fuentes, columnas y espaciado puede no conservarse. Si necesitas mantener el diseno, usa nuestra herramienta PDF a Word.",
                 },
                 {
@@ -226,7 +226,7 @@ export default function PDFaTextoPage() {
                 },
                 {
                   q: "¿Puedo convertir PDF a TXT en mi celular?",
-                  a: "Si. Abre OmnisPDF en tu navegador movil, sube el PDF, convierte y descarga el archivo TXT.",
+                  a: "Si. Abre PDF.it en tu navegador movil, sube el PDF, convierte y descarga el archivo TXT.",
                 },
                 {
                   q: "¿Es seguro subir mi PDF?",

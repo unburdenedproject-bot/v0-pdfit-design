@@ -5,22 +5,22 @@ import Link from "next/link"
 import { ScanText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Hacer OCR a un Documento Escaneado (Paso a Paso) | OmnisPDF",
+  title: "Como Hacer OCR a un Documento Escaneado (Paso a Paso) | PDF.it",
   description: "Aprende como ejecutar OCR en documentos escaneados como recibos, contratos y documentos antiguos. Guia paso a paso para digitalizar PDFs escaneados en texto buscable y copiable.",
   keywords: "ocr documento escaneado, escanear y ocr, ocr pdf escaneado, digitalizar documento escaneado",
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
   { "@type": "Question", "name": "Que tipos de documentos escaneados puede procesar el OCR?", "acceptedAnswer": { "@type": "Answer", "text": "OCR puede procesar virtualmente cualquier documento escaneado: contratos, recibos, facturas, documentos legales, libros viejos, cartas, formularios y documentos de identificacion. Mientras el texto sea impreso (no manuscrito) y el escaneo sea razonablemente claro, OCR lo reconocera." } },
-  { "@type": "Question", "name": "Necesito un escaner para usar OCR?", "acceptedAnswer": { "@type": "Answer", "text": "No. Puedes usar la camara de tu telefono para fotografiar un documento, guardarlo como PDF y luego ejecutar OCR. Para mejores resultados con documentos escaneados por telefono, usa la herramienta Limpieza de Escaneo de Telefono de OmnisPDF primero." } },
-  { "@type": "Question", "name": "Cuanto tarda el procesamiento OCR?", "acceptedAnswer": { "@type": "Answer", "text": "La mayoria de documentos se procesan en unos segundos a menos de un minuto. Documentos mas largos (50+ paginas) o archivos muy grandes pueden tomar un par de minutos. Los usuarios Pro de OmnisPDF obtienen procesamiento prioritario." } },
+  { "@type": "Question", "name": "Necesito un escaner para usar OCR?", "acceptedAnswer": { "@type": "Answer", "text": "No. Puedes usar la camara de tu telefono para fotografiar un documento, guardarlo como PDF y luego ejecutar OCR. Para mejores resultados con documentos escaneados por telefono, usa la herramienta Limpieza de Escaneo de Telefono de PDF.it primero." } },
+  { "@type": "Question", "name": "Cuanto tarda el procesamiento OCR?", "acceptedAnswer": { "@type": "Answer", "text": "La mayoria de documentos se procesan en unos segundos a menos de un minuto. Documentos mas largos (50+ paginas) o archivos muy grandes pueden tomar un par de minutos. Los usuarios Pro de PDF.it obtienen procesamiento prioritario." } },
   { "@type": "Question", "name": "Puede el OCR manejar documentos viejos o desvanecidos?", "acceptedAnswer": { "@type": "Answer", "text": "OCR puede manejar texto moderadamente desvanecido, pero documentos muy desvanecidos o danados pueden producir menor precision. Mejorar el contraste del escaneo antes de ejecutar OCR ayuda significativamente." } },
   { "@type": "Question", "name": "Se preserva el escaneo original despues del OCR?", "acceptedAnswer": { "@type": "Answer", "text": "Si. OCR agrega una capa de texto invisible sobre tu escaneo original. La apariencia visual de cada pagina permanece exactamente igual — solo cambia la capacidad de busqueda." } },
-  { "@type": "Question", "name": "Puedo hacer OCR a un documento en espanol u otro idioma?", "acceptedAnswer": { "@type": "Answer", "text": "Si. El Escaner OCR de OmnisPDF soporta docenas de idiomas incluyendo espanol, frances, aleman, portugues, italiano y muchos mas. Selecciona el idioma correcto antes de procesar para la mejor precision." } }
+  { "@type": "Question", "name": "Puedo hacer OCR a un documento en espanol u otro idioma?", "acceptedAnswer": { "@type": "Answer", "text": "Si. El Escaner OCR de PDF.it soporta docenas de idiomas incluyendo espanol, frances, aleman, portugues, italiano y muchos mas. Selecciona el idioma correcto antes de procesar para la mejor precision." } }
 ] }
 
-const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como Hacer OCR a un Documento Escaneado", "description": "Digitaliza un documento escaneado en texto buscable en 3 pasos usando el Escaner OCR de OmnisPDF.", "step": [
-  { "@type": "HowToStep", "name": "Escanea o sube tu documento", "text": "Escanea tu documento usando un escaner o camara de telefono. Guardalo como PDF, luego subelo a la herramienta Escaner OCR de OmnisPDF." },
+const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como Hacer OCR a un Documento Escaneado", "description": "Digitaliza un documento escaneado en texto buscable en 3 pasos usando el Escaner OCR de PDF.it.", "step": [
+  { "@type": "HowToStep", "name": "Escanea o sube tu documento", "text": "Escanea tu documento usando un escaner o camara de telefono. Guardalo como PDF, luego subelo a la herramienta Escaner OCR de PDF.it." },
   { "@type": "HowToStep", "name": "Selecciona el idioma y ejecuta OCR", "text": "Elige el idioma del texto en tu documento y haz clic en el boton OCR para iniciar el reconocimiento." },
   { "@type": "HowToStep", "name": "Descarga el documento digitalizado", "text": "Descarga tu PDF buscable. Ahora puedes encontrar texto, copiar contenido y convertir el documento a Word, Excel o texto plano." }
 ] }
@@ -69,7 +69,7 @@ export default function OCRDocumentoEscaneadoPage() {
               <div className="space-y-4">
                 {[
                   { title: "Escanea o fotografiael documento", desc: "Usa un escaner plano (configurado a 300 DPI para mejores resultados) o la camara de tu telefono. Guarda el escaneo como PDF. Si usaste tu telefono, pasa el archivo por Limpieza de Escaneo de Telefono primero para mejorar el contraste y enderezar la imagen." },
-                  { title: "Sube al Escaner OCR de OmnisPDF", desc: "Abre la herramienta Escaner OCR (funcion Pro) y sube tu PDF escaneado. Selecciona el idioma del documento — esto es importante para la precision, especialmente para documentos que no estan en ingles." },
+                  { title: "Sube al Escaner OCR de PDF.it", desc: "Abre la herramienta Escaner OCR (funcion Pro) y sube tu PDF escaneado. Selecciona el idioma del documento — esto es importante para la precision, especialmente para documentos que no estan en ingles." },
                   { title: "Descarga y verifica tu PDF buscable", desc: "Descarga el archivo procesado. Abrelo y prueba Ctrl+F para buscar una palabra que sabes esta en el documento. Si el texto se encuentra, OCR funciono correctamente. La apariencia visual permanece identica a tu escaneo original." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -111,7 +111,7 @@ export default function OCRDocumentoEscaneadoPage() {
                 <li>&#10003; Usa iluminacion natural y uniforme. Evita el flash, que crea puntos brillantes y reflejos.</li>
                 <li>&#10003; Coloca el documento en una superficie oscura y contrastante para que los bordes esten claramente definidos.</li>
                 <li>&#10003; Usa el escaner de documentos integrado de tu telefono (Notas en iPhone, Google Drive en Android) para recorte automatico y correccion de perspectiva.</li>
-                <li>&#10003; Pasa el resultado por la herramienta <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> de OmnisPDF antes del OCR para mejorar automaticamente el contraste y enderezar la imagen.</li>
+                <li>&#10003; Pasa el resultado por la herramienta <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> de PDF.it antes del OCR para mejorar automaticamente el contraste y enderezar la imagen.</li>
               </ul>
               <p className="text-slate-600 mt-4">Para mas sobre usar OCR en dispositivos moviles, ve nuestra guia sobre <Link href="/es/aprender/ocr-pdf-en-movil" className="text-orange-600 hover:underline">OCR un PDF en Tu Telefono</Link>.</p>
             </section>
@@ -152,11 +152,11 @@ export default function OCRDocumentoEscaneadoPage() {
             <div className="space-y-6">
               {[
                 { q: "Que tipos de documentos escaneados puede procesar el OCR?", a: "OCR puede procesar virtualmente cualquier documento escaneado: contratos, recibos, facturas, documentos legales, libros viejos, cartas, formularios y documentos de identificacion. Mientras el texto sea impreso y el escaneo sea claro, OCR lo reconocera." },
-                { q: "Necesito un escaner para usar OCR?", a: "No. Puedes usar la camara de tu telefono para fotografiar un documento, guardarlo como PDF y luego ejecutar OCR. Para mejores resultados, usa la herramienta Limpieza de Escaneo de Telefono de OmnisPDF primero." },
+                { q: "Necesito un escaner para usar OCR?", a: "No. Puedes usar la camara de tu telefono para fotografiar un documento, guardarlo como PDF y luego ejecutar OCR. Para mejores resultados, usa la herramienta Limpieza de Escaneo de Telefono de PDF.it primero." },
                 { q: "Cuanto tarda el procesamiento OCR?", a: "La mayoria de documentos se procesan en segundos a menos de un minuto. Documentos largos (50+ paginas) pueden tomar un par de minutos. Los usuarios Pro obtienen procesamiento prioritario." },
                 { q: "Puede el OCR manejar documentos viejos o desvanecidos?", a: "OCR puede manejar texto moderadamente desvanecido, pero documentos muy danados pueden producir menor precision. Mejorar el contraste antes de ejecutar OCR ayuda significativamente." },
                 { q: "Se preserva el escaneo original despues del OCR?", a: "Si. OCR agrega una capa de texto invisible sobre tu escaneo original. La apariencia visual permanece exactamente igual — solo cambia la capacidad de busqueda." },
-                { q: "Puedo hacer OCR a un documento en espanol u otro idioma?", a: "Si. El Escaner OCR de OmnisPDF soporta docenas de idiomas incluyendo espanol, frances, aleman, portugues, italiano y muchos mas." },
+                { q: "Puedo hacer OCR a un documento en espanol u otro idioma?", a: "Si. El Escaner OCR de PDF.it soporta docenas de idiomas incluyendo espanol, frances, aleman, portugues, italiano y muchos mas." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

@@ -5,21 +5,21 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Conversor Office para PDF Online — Word, Excel, PowerPoint | OmnisPDF",
+  title: "Conversor Office para PDF Online — Word, Excel, PowerPoint | PDF.it",
   description: "Converta qualquer arquivo do Microsoft Office para PDF online. Word, Excel, PowerPoint — tudo em uma unica ferramenta. Gratis, sem instalacao, preservando formatacao.",
   keywords: "conversor office para pdf, office para pdf online, converter office para pdf, word excel powerpoint para pdf, microsoft office para pdf",
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-  { "@type": "Question", "name": "Quais formatos do Office posso converter para PDF?", "acceptedAnswer": { "@type": "Answer", "text": "O OmnisPDF converte DOCX, DOC, XLSX, XLS, PPTX e PPT para PDF. Basta enviar qualquer arquivo do Microsoft Office e a ferramenta identifica o formato automaticamente." } },
+  { "@type": "Question", "name": "Quais formatos do Office posso converter para PDF?", "acceptedAnswer": { "@type": "Answer", "text": "O PDF.it converte DOCX, DOC, XLSX, XLS, PPTX e PPT para PDF. Basta enviar qualquer arquivo do Microsoft Office e a ferramenta identifica o formato automaticamente." } },
   { "@type": "Question", "name": "A formatacao do documento e mantida?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O conversor preserva texto, imagens, tabelas, graficos, fontes e layout o mais fielmente possivel. Para melhor resultado, incorpore as fontes antes de converter." } },
-  { "@type": "Question", "name": "Preciso ter o Microsoft Office instalado?", "acceptedAnswer": { "@type": "Answer", "text": "Nao. O OmnisPDF e uma ferramenta 100% online. Funciona em qualquer navegador, sem necessidade de ter Word, Excel ou PowerPoint instalado." } },
+  { "@type": "Question", "name": "Preciso ter o Microsoft Office instalado?", "acceptedAnswer": { "@type": "Answer", "text": "Nao. O PDF.it e uma ferramenta 100% online. Funciona em qualquer navegador, sem necessidade de ter Word, Excel ou PowerPoint instalado." } },
   { "@type": "Question", "name": "Posso converter varios arquivos de uma vez?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Usuarios Pro podem usar o processamento em lote para converter multiplos arquivos do Office para PDF simultaneamente. Usuarios gratuitos convertem um arquivo por vez." } }
 ] }
 
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como converter arquivos do Office para PDF", "description": "Converta Word, Excel ou PowerPoint para PDF em 3 passos.", "step": [
-  { "@type": "HowToStep", "name": "Envie seu arquivo do Office", "text": "Acesse a ferramenta Office para PDF do OmnisPDF e envie seu arquivo DOCX, XLSX ou PPTX." },
-  { "@type": "HowToStep", "name": "Converta para PDF", "text": "Clique em Converter. O OmnisPDF processa o arquivo e gera um PDF preservando a formatacao original." },
+  { "@type": "HowToStep", "name": "Envie seu arquivo do Office", "text": "Acesse a ferramenta Office para PDF do PDF.it e envie seu arquivo DOCX, XLSX ou PPTX." },
+  { "@type": "HowToStep", "name": "Converta para PDF", "text": "Clique em Converter. O PDF.it processa o arquivo e gera um PDF preservando a formatacao original." },
   { "@type": "HowToStep", "name": "Baixe o PDF", "text": "Baixe o PDF convertido, pronto para compartilhar, imprimir ou arquivar." }
 ] }
 
@@ -46,7 +46,7 @@ export default function OfficeParaPdfConversorPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-4">Por que usar um conversor Office para PDF?</h2>
             <p className="text-slate-600 mb-4">Documentos do Office sao otimos para edicao, mas PDF e o formato ideal para compartilhar e distribuir. Veja as vantagens:</p>
             <ul className="space-y-3 text-slate-700">
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Uma ferramenta para tudo.</strong> Em vez de usar conversores separados para Word, Excel e PowerPoint, o OmnisPDF aceita todos os formatos em uma unica ferramenta.</span></li>
+              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Uma ferramenta para tudo.</strong> Em vez de usar conversores separados para Word, Excel e PowerPoint, o PDF.it aceita todos os formatos em uma unica ferramenta.</span></li>
               <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Formatacao preservada.</strong> Texto, tabelas, graficos e imagens sao convertidos fielmente para PDF.</span></li>
               <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Sem software necessario.</strong> Funciona direto no navegador — nao precisa ter o Microsoft Office instalado.</span></li>
               <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Seguranca.</strong> Seus arquivos sao processados com seguranca e deletados automaticamente apos a conversao.</span></li>
@@ -58,7 +58,7 @@ export default function OfficeParaPdfConversorPage() {
             <div className="space-y-4">
               {[
                 { title: "Envie seu arquivo", desc: "Acesse a ferramenta Office para PDF e arraste qualquer arquivo do Office (DOCX, XLSX, PPTX, DOC, XLS, PPT) para a area de upload." },
-                { title: "Converta automaticamente", desc: "O OmnisPDF detecta o tipo de arquivo e aplica a conversao ideal. Word vira PDF com texto pesquisavel, Excel mantem tabelas, PowerPoint preserva slides." },
+                { title: "Converta automaticamente", desc: "O PDF.it detecta o tipo de arquivo e aplica a conversao ideal. Word vira PDF com texto pesquisavel, Excel mantem tabelas, PowerPoint preserva slides." },
                 { title: "Baixe o PDF", desc: "Baixe o PDF pronto. Compartilhe por email, envie para clientes ou imprima — o resultado e identico em qualquer dispositivo." },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">

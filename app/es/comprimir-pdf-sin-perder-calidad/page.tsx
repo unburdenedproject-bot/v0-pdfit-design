@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Sc
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF sin Perder Calidad — Compresion Inteligente | OmnisPDF",
+  title: "Comprimir PDF sin Perder Calidad — Compresion Inteligente | PDF.it",
   description:
     "Comprime PDFs sin perder calidad visible. Compresion inteligente que reduce el tamano manteniendo texto nitido e imagenes claras.",
   alternates: {
@@ -23,8 +23,8 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Cómo comprime OmnisPDF sin perder calidad?",
-      "acceptedAnswer": { "@type": "Answer", "text": "La compresión inteligente de OmnisPDF elimina metadatos innecesarios, optimiza fuentes incrustadas, reestructura datos internos del PDF y aplica compresión ligera de imágenes. Esto reduce el tamaño del archivo mientras preserva la calidad visual — texto nítido, imágenes claras y formato intacto." }
+      "name": "¿Cómo comprime PDF.it sin perder calidad?",
+      "acceptedAnswer": { "@type": "Answer", "text": "La compresión inteligente de PDF.it elimina metadatos innecesarios, optimiza fuentes incrustadas, reestructura datos internos del PDF y aplica compresión ligera de imágenes. Esto reduce el tamaño del archivo mientras preserva la calidad visual — texto nítido, imágenes claras y formato intacto." }
     },
     {
       "@type": "Question",
@@ -73,7 +73,7 @@ export default function ComprimirPDFSinPerderCalidadPageEs() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF sin Perder Calidad</h1>
               <p className="text-xl text-slate-300 mb-8">
-                La compresion inteligente de OmnisPDF reduce el tamano de tu PDF sin sacrificar la calidad visual. Elimina metadatos innecesarios, optimiza fuentes, reestructura datos internos y comprime imagenes de forma ligera — manteniendo texto nitido e imagenes claras.
+                La compresion inteligente de PDF.it reduce el tamano de tu PDF sin sacrificar la calidad visual. Elimina metadatos innecesarios, optimiza fuentes, reestructura datos internos y comprime imagenes de forma ligera — manteniendo texto nitido e imagenes claras.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Compresion Inteligente</span></div>
@@ -173,7 +173,7 @@ export default function ComprimirPDFSinPerderCalidadPageEs() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Comprimir PDF Sin Perder Calidad</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra y suelta tu PDF en OmnisPDF.",
+                "Sube o arrastra y suelta tu PDF en PDF.it.",
                 "Haz clic en Comprimir PDF — la compresion inteligente se aplica para optimizar tu archivo preservando la calidad.",
                 "Descarga tu PDF optimizado. Si necesitas archivos aun mas pequenos, prueba la compresion extrema — pero ten en cuenta que puede reducir el detalle de las imagenes.",
               ].map((step, i) => (
@@ -227,7 +227,7 @@ export default function ComprimirPDFSinPerderCalidadPageEs() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Como comprime OmnisPDF sin perder calidad?", a: "La compresion inteligente de OmnisPDF elimina metadatos innecesarios, optimiza fuentes incrustadas, reestructura datos internos del PDF y aplica compresion ligera de imagenes. Esto reduce el tamano del archivo mientras preserva la calidad visual — texto nitido, imagenes claras y formato intacto." },
+                { q: "¿Como comprime PDF.it sin perder calidad?", a: "La compresion inteligente de PDF.it elimina metadatos innecesarios, optimiza fuentes incrustadas, reestructura datos internos del PDF y aplica compresion ligera de imagenes. Esto reduce el tamano del archivo mientras preserva la calidad visual — texto nitido, imagenes claras y formato intacto." },
                 { q: "¿Las imagenes se veran diferentes despues de la compresion?", a: "Con la compresion recomendada, las imagenes se optimizan de forma inteligente. La diferencia es practicamente imperceptible para la mayoria de los documentos. El texto, graficos y diagramas permanecen nitidos y claros." },
                 { q: "¿Cuanto mas pequeno sera mi PDF sin perder calidad?", a: "Los resultados dependen del contenido de tu PDF. Los documentos con fuentes incrustadas, metadatos excesivos y estructuras sin optimizar tipicamente ven una reduccion del 20-50%. Los archivos que ya estan optimizados pueden ver reducciones menores." },
                 { q: "¿Que hace la compresion inteligente exactamente?", a: "La compresion inteligente realiza cuatro optimizaciones principales: elimina metadatos innecesarios y datos ocultos, optimiza y reduce fuentes incrustadas, reestructura los datos internos del PDF para mayor eficiencia, y aplica compresion ligera de imagenes que preserva la calidad visual." },

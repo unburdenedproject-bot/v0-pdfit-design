@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Converter Word para PDF Online (Mantendo a Formatação) | OmnisPDF",
+  title: "Como Converter Word para PDF Online (Mantendo a Formatação) | PDF.it",
   description:
     "Aprenda como converter Word (.docx) para PDF online sem perder formatação. Guia passo a passo para manter fontes, imagens e layout intactos.",
   keywords: "converter word para pdf, word para pdf online, docx para pdf, converter documento word pdf, word para pdf grátis",
@@ -15,9 +15,9 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Como converto Word para PDF grátis?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu arquivo Word (.docx ou .doc) para a ferramenta Word para PDF do OmnisPDF, clique em Converter e baixe o PDF. Não é necessário cadastro para seus primeiros 3 arquivos." } },
-    { "@type": "Question", "name": "A formatação é mantida ao converter?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF preserva fontes, imagens, tabelas, cabeçalhos, rodapés e layout do documento Word. O PDF gerado é fiel ao original." } },
-    { "@type": "Question", "name": "Posso converter Word para PDF no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em qualquer navegador móvel. Envie o arquivo Word e baixe o PDF diretamente no celular." } },
+    { "@type": "Question", "name": "Como converto Word para PDF grátis?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu arquivo Word (.docx ou .doc) para a ferramenta Word para PDF do PDF.it, clique em Converter e baixe o PDF. Não é necessário cadastro para seus primeiros 3 arquivos." } },
+    { "@type": "Question", "name": "A formatação é mantida ao converter?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it preserva fontes, imagens, tabelas, cabeçalhos, rodapés e layout do documento Word. O PDF gerado é fiel ao original." } },
+    { "@type": "Question", "name": "Posso converter Word para PDF no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em qualquer navegador móvel. Envie o arquivo Word e baixe o PDF diretamente no celular." } },
     { "@type": "Question", "name": "Qual o tamanho máximo de arquivo?", "acceptedAnswer": { "@type": "Answer", "text": "Usuários gratuitos podem converter arquivos até 25MB. Usuários Pro podem converter até 200MB e fazer conversões em lote." } }
   ]
 }
@@ -28,8 +28,8 @@ const howToSchema = {
   "name": "Como Converter Word para PDF",
   "description": "Converta documentos Word para PDF mantendo a formatação original.",
   "step": [
-    { "@type": "HowToStep", "name": "Envie o arquivo Word", "text": "Acesse a ferramenta Word para PDF do OmnisPDF e envie seu arquivo .docx ou .doc." },
-    { "@type": "HowToStep", "name": "Clique em Converter", "text": "O OmnisPDF converte o documento mantendo fontes, imagens e layout intactos." },
+    { "@type": "HowToStep", "name": "Envie o arquivo Word", "text": "Acesse a ferramenta Word para PDF do PDF.it e envie seu arquivo .docx ou .doc." },
+    { "@type": "HowToStep", "name": "Clique em Converter", "text": "O PDF.it converte o documento mantendo fontes, imagens e layout intactos." },
     { "@type": "HowToStep", "name": "Baixe o PDF", "text": "Baixe o PDF gerado. O arquivo mantém toda a formatação do documento Word original." }
   ]
 }
@@ -85,8 +85,8 @@ export default function ConverterWordParaPdfPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-6">Como Converter (Passo a Passo)</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Envie o arquivo Word", desc: "Acesse a ferramenta Word para PDF do OmnisPDF. Arraste seu arquivo .docx ou .doc para a área de upload, ou clique para selecionar. Arquivos até 25MB são grátis." },
-                  { title: "Clique em Converter", desc: "O OmnisPDF processa o documento mantendo todas as formatações: fontes, imagens, tabelas, cabeçalhos, rodapés, numeração de páginas e layout." },
+                  { title: "Envie o arquivo Word", desc: "Acesse a ferramenta Word para PDF do PDF.it. Arraste seu arquivo .docx ou .doc para a área de upload, ou clique para selecionar. Arquivos até 25MB são grátis." },
+                  { title: "Clique em Converter", desc: "O PDF.it processa o documento mantendo todas as formatações: fontes, imagens, tabelas, cabeçalhos, rodapés, numeração de páginas e layout." },
                   { title: "Baixe o PDF", desc: "Em segundos, seu PDF está pronto. Baixe e verifique que a formatação ficou correta. O resultado é fiel ao documento Word original." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -167,9 +167,9 @@ export default function ConverterWordParaPdfPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como converto Word para PDF grátis?", a: "Envie seu arquivo Word para a ferramenta Word para PDF do OmnisPDF, clique em Converter e baixe o PDF. Não é necessário cadastro para seus primeiros 3 arquivos." },
-                { q: "A formatação é mantida ao converter?", a: "Sim. O OmnisPDF preserva fontes, imagens, tabelas, cabeçalhos, rodapés e layout do documento Word." },
-                { q: "Posso converter Word para PDF no celular?", a: "Sim. O OmnisPDF funciona em qualquer navegador móvel. Envie o arquivo Word e baixe o PDF diretamente no celular." },
+                { q: "Como converto Word para PDF grátis?", a: "Envie seu arquivo Word para a ferramenta Word para PDF do PDF.it, clique em Converter e baixe o PDF. Não é necessário cadastro para seus primeiros 3 arquivos." },
+                { q: "A formatação é mantida ao converter?", a: "Sim. O PDF.it preserva fontes, imagens, tabelas, cabeçalhos, rodapés e layout do documento Word." },
+                { q: "Posso converter Word para PDF no celular?", a: "Sim. O PDF.it funciona em qualquer navegador móvel. Envie o arquivo Word e baixe o PDF diretamente no celular." },
                 { q: "Qual o tamanho máximo de arquivo?", a: "Usuários gratuitos podem converter arquivos até 25MB. Usuários Pro podem converter até 200MB e fazer conversões em lote." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

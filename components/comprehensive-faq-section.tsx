@@ -9,9 +9,9 @@ const faqCategories = [
     title: "General Use",
     questions: [
       {
-        question: "Is OmnisPDF free to use?",
+        question: "Is PDF.it free to use?",
         answer:
-          "Yes. OmnisPDF offers a free tier with 10 conversions per day and files up to 25MB. No account is required for free tools. Upgrade to Pro ($7.99/month) for unlimited conversions, all tools, and files up to 200MB. Business ($13.99/month) supports files up to 1GB.",
+          "Yes. PDF.it offers a free tier with 10 conversions per day and files up to 25MB. No account is required for free tools. Upgrade to Pro ($7.99/month) for unlimited conversions, all tools, and files up to 200MB. Business ($13.99/month) supports files up to 1GB.",
       },
       {
         question: "Do I need to create an account?",
@@ -21,7 +21,7 @@ const faqCategories = [
       {
         question: "What devices and browsers are supported?",
         answer:
-          "OmnisPDF works in modern browsers including Chrome, Firefox, Safari, and Edge on desktop, tablet, and mobile.",
+          "PDF.it works in modern browsers including Chrome, Firefox, Safari, and Edge on desktop, tablet, and mobile.",
       },
       {
         question: "How fast are the conversions?",
@@ -56,7 +56,7 @@ const faqCategories = [
       {
         question: "What file formats are supported?",
         answer:
-          "OmnisPDF supports PDF, JPG, PNG, TXT, and Office formats (Word, Excel, PowerPoint). Tools include convert, compress, merge, split, rotate, protect, unlock, watermark, and OCR.",
+          "PDF.it supports PDF, JPG, PNG, TXT, and Office formats (Word, Excel, PowerPoint). Tools include convert, compress, merge, split, rotate, protect, unlock, watermark, and OCR.",
       },
       {
         question: "What is the maximum file size?",
@@ -96,7 +96,7 @@ const faqCategories = [
       {
         question: "How can I get help?",
         answer:
-          "Visit our Contact page or email us at contact@omnispdf.com. We aim to respond within one business day.",
+          "Visit our Contact page or email us at contact@pdf.it.com. We aim to respond within one business day.",
       },
       {
         question: "Why is my PDF conversion not looking right?",
@@ -228,7 +228,7 @@ export function ComprehensiveFAQSection() {
                 Frequently Asked Questions
               </h2>
               <p className="text-sm text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                {"Everything you need to know about OmnisPDF. Can't find what you're looking for? "}
+                {"Everything you need to know about PDF.it. Can't find what you're looking for? "}
                 <a href="/contact" className="text-orange-500 hover:text-orange-600 font-medium underline">
                   Contact our support team
                 </a>
@@ -248,11 +248,11 @@ export function ComprehensiveFAQSection() {
               <div className="bg-gradient-to-r from-orange-50 to-orange-100 border border-orange-200 rounded-2xl p-6">
                 <h3 className="text-lg font-bold text-slate-900 mb-2">Still have questions?</h3>
                 <p className="text-slate-700 text-xs mb-4 max-w-xl mx-auto leading-relaxed">
-                  Our support team is here to help you get the most out of OmnisPDF.
+                  Our support team is here to help you get the most out of PDF.it.
                 </p>
                 <div className="flex justify-center">
                   <a
-                    href="mailto:contact@omnispdf.com"
+                    href="mailto:contact@pdf.it.com"
                     className="inline-flex items-center justify-center px-5 py-2.5 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl text-sm transition-colors duration-200 shadow-lg hover:shadow-xl"
                   >
                     Email Us Directly

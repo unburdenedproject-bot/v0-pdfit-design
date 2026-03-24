@@ -3,8 +3,8 @@ import { FooterEs } from "@/components/footer-es"
 import { FileText } from "lucide-react"
 
 export const metadata = {
-  title: "Términos y Condiciones — OmnisPDF",
-  description: "Términos y condiciones para usar las herramientas y servicios de OmnisPDF.",
+  title: "Términos y Condiciones — PDF.it",
+  description: "Términos y condiciones para usar las herramientas y servicios de PDF.it.",
 }
 
 export default function TermsConditionsPageEs() {
@@ -21,7 +21,7 @@ export default function TermsConditionsPageEs() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Términos y Condiciones</h1>
               <p className="text-xl text-slate-300">
-                Los términos de servicio para usar las herramientas y servicios de OmnisPDF.
+                Los términos de servicio para usar las herramientas y servicios de PDF.it.
               </p>
             </div>
           </div>
@@ -34,18 +34,18 @@ export default function TermsConditionsPageEs() {
               <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 lg:p-12">
 
                 <div className="space-y-2 mb-8">
-                  <h2 className="text-2xl font-bold text-slate-900">Términos y Condiciones — OmnisPDF</h2>
+                  <h2 className="text-2xl font-bold text-slate-900">Términos y Condiciones — PDF.it</h2>
                   <p className="text-slate-500 text-sm"><strong>Fecha de vigencia:</strong> 1 de enero de 2024</p>
                 </div>
 
                 <p className="text-slate-700 leading-relaxed mb-10">
-                  Bienvenido a OmnisPDF ("nosotros", "nos", "nuestro"). Al acceder o usar nuestro sitio web y herramientas (el "Servicio"), aceptas estos Términos y Condiciones ("Términos"). Si no estás de acuerdo, no uses el Servicio.
+                  Bienvenido a PDF.it ("nosotros", "nos", "nuestro"). Al acceder o usar nuestro sitio web y herramientas (el "Servicio"), aceptas estos Términos y Condiciones ("Términos"). Si no estás de acuerdo, no uses el Servicio.
                 </p>
 
                 <div className="space-y-10">
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 mb-4">1. Uso del Servicio</h3>
-                    <p className="text-slate-700 mb-4">OmnisPDF proporciona herramientas en línea para convertir, comprimir y procesar documentos. Aceptas usar el Servicio solo para propósitos legales y de acuerdo con estos Términos.</p>
+                    <p className="text-slate-700 mb-4">PDF.it proporciona herramientas en línea para convertir, comprimir y procesar documentos. Aceptas usar el Servicio solo para propósitos legales y de acuerdo con estos Términos.</p>
                     <p className="text-slate-700 font-semibold mb-2">No debes:</p>
                     <ul className="space-y-2 text-slate-700 list-disc list-inside">
                       <li>Usar el Servicio para violar cualquier ley o regulación</li>
@@ -63,12 +63,12 @@ export default function TermsConditionsPageEs() {
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 mb-4">3. Tu Contenido y Archivos</h3>
                     <p className="text-slate-700 mb-4">Conservas todos los derechos sobre los archivos y contenido que subes o procesas ("Contenido del Usuario"). Declaras y garantizas que tienes todos los derechos necesarios para usar tu Contenido del Usuario con el Servicio.</p>
-                    <p className="text-slate-700">Los archivos subidos a OmnisPDF se procesan de forma segura y se eliminan automáticamente después de que tu sesión termina. No almacenamos, revisamos ni compartimos el contenido de tus archivos. Consulta nuestra <a href="/es/politica-de-privacidad" className="text-orange-500 hover:text-orange-600 font-medium">Política de Privacidad</a> para más detalles.</p>
+                    <p className="text-slate-700">Los archivos subidos a PDF.it se procesan de forma segura y se eliminan automáticamente después de que tu sesión termina. No almacenamos, revisamos ni compartimos el contenido de tus archivos. Consulta nuestra <a href="/es/politica-de-privacidad" className="text-orange-500 hover:text-orange-600 font-medium">Política de Privacidad</a> para más detalles.</p>
                   </div>
 
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 mb-4">4. Propiedad Intelectual</h3>
-                    <p className="text-slate-700 mb-4">El Servicio (incluyendo el sitio web, software, diseño, logos y marca) es propiedad de OmnisPDF y está protegido por leyes de propiedad intelectual. No puedes copiar, modificar, distribuir, vender o licenciar ninguna parte del Servicio sin nuestro permiso por escrito.</p>
+                    <p className="text-slate-700 mb-4">El Servicio (incluyendo el sitio web, software, diseño, logos y marca) es propiedad de PDF.it y está protegido por leyes de propiedad intelectual. No puedes copiar, modificar, distribuir, vender o licenciar ninguna parte del Servicio sin nuestro permiso por escrito.</p>
                     <p className="text-slate-700">Tus resultados: Eres propietario de los documentos que subes y los archivos que descargas, sujeto a los derechos que ya posees sobre el contenido original.</p>
                   </div>
 
@@ -79,21 +79,21 @@ export default function TermsConditionsPageEs() {
 
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 mb-4">6. Limitación de Responsabilidad</h3>
-                    <p className="text-slate-700">En la máxima medida permitida por la ley, OmnisPDF no será responsable por daños indirectos, incidentales, especiales, consecuentes o punitivos, ni por cualquier pérdida de datos, ganancias, ingresos o negocios que surjan de tu uso (o incapacidad de usar) el Servicio.</p>
+                    <p className="text-slate-700">En la máxima medida permitida por la ley, PDF.it no será responsable por daños indirectos, incidentales, especiales, consecuentes o punitivos, ni por cualquier pérdida de datos, ganancias, ingresos o negocios que surjan de tu uso (o incapacidad de usar) el Servicio.</p>
                   </div>
 
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 mb-4">7. Reembolsos</h3>
                     <p className="text-slate-700">Ofrecemos reembolsos completos dentro de los 7 días posteriores a la compra, sin preguntas. Para solicitar un reembolso, contáctanos en{" "}
-                      <a href="mailto:contact@omnispdf.com" className="text-orange-500 hover:text-orange-600 font-medium">
-                        contact@omnispdf.com
+                      <a href="mailto:contact@pdf.it.com" className="text-orange-500 hover:text-orange-600 font-medium">
+                        contact@pdf.it.com
                       </a>.
                     </p>
                   </div>
 
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 mb-4">8. Terminación</h3>
-                    <p className="text-slate-700">Podemos suspender o terminar el acceso al Servicio si creemos que has violado estos Términos, abusado del Servicio, o creado riesgo para OmnisPDF u otros usuarios.</p>
+                    <p className="text-slate-700">Podemos suspender o terminar el acceso al Servicio si creemos que has violado estos Términos, abusado del Servicio, o creado riesgo para PDF.it u otros usuarios.</p>
                   </div>
 
                   <div>
@@ -110,8 +110,8 @@ export default function TermsConditionsPageEs() {
                     <h3 className="text-xl font-bold text-slate-900 mb-4">11. Contacto</h3>
                     <p className="text-slate-700">
                       ¿Preguntas sobre estos Términos? Contáctanos en{" "}
-                      <a href="mailto:contact@omnispdf.com" className="text-orange-500 hover:text-orange-600 font-medium">
-                        contact@omnispdf.com
+                      <a href="mailto:contact@pdf.it.com" className="text-orange-500 hover:text-orange-600 font-medium">
+                        contact@pdf.it.com
                       </a>.
                     </p>
                   </div>

@@ -7,9 +7,9 @@ import { Split, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Extract Pages from PDF Online — Pull Specific Pages | OmnisPDF",
+  title: "Extract Pages from PDF Online — Pull Specific Pages | PDF.it",
   description:
-    "Extract specific pages from a PDF with OmnisPDF. Select page numbers or ranges, then download a new PDF with only the pages you need — fast, free, and browser-based.",
+    "Extract specific pages from a PDF with PDF.it. Select page numbers or ranges, then download a new PDF with only the pages you need — fast, free, and browser-based.",
 }
 
 const faqSchema = {
@@ -19,22 +19,22 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I extract specific pages from a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF, enter the page numbers or ranges you want (e.g., 1, 3, 5-10), then click Extract Pages. A new PDF with only the selected pages will be ready to download." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it, enter the page numbers or ranges you want (e.g., 1, 3, 5-10), then click Extract Pages. A new PDF with only the selected pages will be ready to download." }
     },
     {
       "@type": "Question",
       "name": "Can I extract a range of pages from a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Enter a range like 5-15 and OmnisPDF will create a new PDF containing only those pages. You can also combine individual pages and ranges, like 1, 3, 7-12." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Enter a range like 5-15 and PDF.it will create a new PDF containing only those pages. You can also combine individual pages and ranges, like 1, 3, 7-12." }
     },
     {
       "@type": "Question",
       "name": "Does extracting pages change my original PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. Your original PDF is never modified. OmnisPDF creates a brand-new PDF with only the pages you selected. The original stays exactly as it was." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Your original PDF is never modified. PDF.it creates a brand-new PDF with only the pages you selected. The original stays exactly as it was." }
     },
     {
       "@type": "Question",
       "name": "Can I extract pages from a PDF on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in mobile browsers — upload your PDF, select pages, and download the extracted PDF on iPhone or Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in mobile browsers — upload your PDF, select pages, and download the extracted PDF on iPhone or Android." }
     },
     {
       "@type": "Question",
@@ -44,7 +44,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I extract pages from a password-protected PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "You'll need to unlock the PDF first. Use OmnisPDF's Unlock PDF tool to remove the password, then extract the pages you need." }
+      "acceptedAnswer": { "@type": "Answer", "text": "You'll need to unlock the PDF first. Use PDF.it's Unlock PDF tool to remove the password, then extract the pages you need." }
     }
   ]
 }
@@ -68,7 +68,7 @@ export default function ExtractPagesFromPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Extract Pages from PDF</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Pull specific pages from any PDF with OmnisPDF. Select page numbers or ranges, then download a new PDF with only the pages you need — fast, free, and browser-based.
+                Pull specific pages from any PDF with PDF.it. Select page numbers or ranges, then download a new PDF with only the pages you need — fast, free, and browser-based.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Select Any Pages or Ranges</span></div>
@@ -87,7 +87,7 @@ export default function ExtractPagesFromPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Need just a few pages from a long PDF? OmnisPDF lets you extract specific pages or page ranges into a brand-new PDF. Perfect for pulling chapters from a textbook, isolating pages from a contract, or creating a summary from a report.
+              Need just a few pages from a long PDF? PDF.it lets you extract specific pages or page ranges into a brand-new PDF. Perfect for pulling chapters from a textbook, isolating pages from a contract, or creating a summary from a report.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Extract individual pages or page ranges</li>
@@ -129,7 +129,7 @@ export default function ExtractPagesFromPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Extract Pages from a PDF</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PDF into OmnisPDF.",
+                "Upload or drag and drop your PDF into PDF.it.",
                 "Enter the page numbers or ranges you want to extract (e.g., 1, 3, 5-10).",
                 "Click Split PDF to extract your selected pages.",
                 "Download your new PDF with only the pages you chose.",
@@ -177,19 +177,19 @@ export default function ExtractPagesFromPDFPage() {
               {[
                 {
                   q: "How do I extract specific pages from a PDF?",
-                  a: "Upload your PDF to OmnisPDF, enter the page numbers or ranges you want (e.g., 1, 3, 5-10), then click Extract Pages. A new PDF with only the selected pages will be ready to download.",
+                  a: "Upload your PDF to PDF.it, enter the page numbers or ranges you want (e.g., 1, 3, 5-10), then click Extract Pages. A new PDF with only the selected pages will be ready to download.",
                 },
                 {
                   q: "Can I extract a range of pages from a PDF?",
-                  a: "Yes. Enter a range like 5-15 and OmnisPDF will create a new PDF containing only those pages. You can also combine individual pages and ranges, like 1, 3, 7-12.",
+                  a: "Yes. Enter a range like 5-15 and PDF.it will create a new PDF containing only those pages. You can also combine individual pages and ranges, like 1, 3, 7-12.",
                 },
                 {
                   q: "Does extracting pages change my original PDF?",
-                  a: "No. Your original PDF is never modified. OmnisPDF creates a brand-new PDF with only the pages you selected. The original stays exactly as it was.",
+                  a: "No. Your original PDF is never modified. PDF.it creates a brand-new PDF with only the pages you selected. The original stays exactly as it was.",
                 },
                 {
                   q: "Can I extract pages from a PDF on my phone?",
-                  a: "Yes. OmnisPDF works in mobile browsers — upload your PDF, select pages, and download the extracted PDF on iPhone or Android.",
+                  a: "Yes. PDF.it works in mobile browsers — upload your PDF, select pages, and download the extracted PDF on iPhone or Android.",
                 },
                 {
                   q: "Is it free to extract pages from a PDF?",
@@ -197,7 +197,7 @@ export default function ExtractPagesFromPDFPage() {
                 },
                 {
                   q: "Can I extract pages from a password-protected PDF?",
-                  a: "You'll need to unlock the PDF first. Use OmnisPDF's Unlock PDF tool to remove the password, then extract the pages you need.",
+                  a: "You'll need to unlock the PDF first. Use PDF.it's Unlock PDF tool to remove the password, then extract the pages you need.",
                 },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

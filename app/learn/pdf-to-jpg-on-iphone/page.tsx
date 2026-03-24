@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ImageIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Convert PDF to JPG on iPhone (No Apps Needed) | OmnisPDF",
+  title: "Convert PDF to JPG on iPhone (No Apps Needed) | PDF.it",
   description:
     "Learn how to convert PDF to JPG on iPhone using just Safari — no apps to download. Step-by-step guide to save PDF pages as images to your Photos app.",
   keywords: "convert pdf to jpg iphone, pdf to jpg ios, pdf to image iphone, save pdf as jpg iphone, pdf to photo iphone",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I convert PDF to JPG on iPhone without an app?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open OmnisPDF.com in Safari on your iPhone, upload your PDF, and convert it to JPG. The images download directly to your phone — no app installation needed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open PDF.it.com in Safari on your iPhone, upload your PDF, and convert it to JPG. The images download directly to your phone — no app installation needed." }
     },
     {
       "@type": "Question",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I convert PDF to JPG on iPad too?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The same process works on iPad using Safari. Open OmnisPDF.com, upload your PDF, convert, and download. iPads actually make this easier because of the larger screen." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The same process works on iPad using Safari. Open PDF.it.com, upload your PDF, convert, and download. iPads actually make this easier because of the larger screen." }
     },
     {
       "@type": "Question",
@@ -56,8 +56,8 @@ const howToSchema = {
   "step": [
     {
       "@type": "HowToStep",
-      "name": "Open OmnisPDF in Safari",
-      "text": "On your iPhone, open Safari and go to omnispdf.com/pdf-to-jpg. The tool works directly in your mobile browser."
+      "name": "Open PDF.it in Safari",
+      "text": "On your iPhone, open Safari and go to pdf.it.com/pdf-to-jpg. The tool works directly in your mobile browser."
     },
     {
       "@type": "HowToStep",
@@ -139,8 +139,8 @@ export default function PdfToJpgOnIphonePage() {
               <div className="space-y-4">
                 {[
                   {
-                    title: "Open Safari and go to OmnisPDF",
-                    desc: "Open Safari on your iPhone and navigate to omnispdf.com/pdf-to-jpg. The tool is fully mobile-optimized and works on any iPhone running iOS 14 or later.",
+                    title: "Open Safari and go to PDF.it",
+                    desc: "Open Safari on your iPhone and navigate to pdf.it.com/pdf-to-jpg. The tool is fully mobile-optimized and works on any iPhone running iOS 14 or later.",
                   },
                   {
                     title: "Upload your PDF",
@@ -308,9 +308,9 @@ export default function PdfToJpgOnIphonePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "Can I convert PDF to JPG on iPhone without an app?", a: "Yes. Open OmnisPDF.com in Safari on your iPhone, upload your PDF, and convert it to JPG. The images download directly to your phone — no app installation needed." },
+                { q: "Can I convert PDF to JPG on iPhone without an app?", a: "Yes. Open PDF.it.com in Safari on your iPhone, upload your PDF, and convert it to JPG. The images download directly to your phone — no app installation needed." },
                 { q: "Where do converted JPGs save on iPhone?", a: "Downloaded JPG files go to your Files app by default (in the Downloads folder). From there, you can open the image and tap the share button to save it to your Photos app." },
-                { q: "Can I convert PDF to JPG on iPad too?", a: "Yes. The same process works on iPad using Safari. Open OmnisPDF.com, upload your PDF, convert, and download. iPads actually make this easier because of the larger screen." },
+                { q: "Can I convert PDF to JPG on iPad too?", a: "Yes. The same process works on iPad using Safari. Open PDF.it.com, upload your PDF, convert, and download. iPads actually make this easier because of the larger screen." },
                 { q: "How do I share a converted JPG from my iPhone?", a: "After downloading the JPG, open it in Files or Photos and tap the share button. You can send it via iMessage, WhatsApp, email, AirDrop, or any other sharing option available on your iPhone." },
                 { q: "Is there a file size limit for converting on iPhone?", a: "Free users can convert PDFs up to 25MB. Pro users can handle files up to 200MB. Most PDFs people convert on their phones are well under 25MB, so the free tier works for the majority of use cases." },
                 { q: "Can I convert multiple PDF pages to JPGs on iPhone?", a: "Yes. When you convert a multi-page PDF, each page becomes a separate JPG. You can download them all as a ZIP file and then unzip it in your Files app to access each image individually." },

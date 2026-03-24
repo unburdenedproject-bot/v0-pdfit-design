@@ -5,7 +5,7 @@ import Link from "next/link"
 import { RotateCw, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Rotar un PDF Escaneado (Corregir Orientacion Despues de Escanear) | OmnisPDF",
+  title: "Rotar un PDF Escaneado (Corregir Orientacion Despues de Escanear) | PDF.it",
   description:
     "Aprende como corregir un PDF escaneado que salio rotado o de lado. Corrige problemas de orientacion horizontal vs vertical despues de escanear — herramienta online gratis.",
   keywords: "rotar pdf escaneado, pdf escaneado de lado, corregir orientacion documento escaneado, rotar paginas escaneadas",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como roto un PDF escaneado?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube el PDF escaneado a la herramienta Rotar PDF de OmnisPDF, selecciona las paginas que estan rotadas incorrectamente, elige el angulo correcto (90° o 180°) y descarga el archivo corregido. No se necesita instalar software." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube el PDF escaneado a la herramienta Rotar PDF de PDF.it, selecciona las paginas que estan rotadas incorrectamente, elige el angulo correcto (90° o 180°) y descarga el archivo corregido. No se necesita instalar software." }
     },
     {
       "@type": "Question",
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Rotar un PDF Escaneado",
-  "description": "Corrige la orientacion de un PDF escaneado en 3 simples pasos usando OmnisPDF.",
+  "description": "Corrige la orientacion de un PDF escaneado en 3 simples pasos usando PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Sube el PDF escaneado",
-      "text": "Ve a la herramienta Rotar PDF de OmnisPDF y sube el documento escaneado haciendo clic o arrastrandolo al area de carga."
+      "text": "Ve a la herramienta Rotar PDF de PDF.it y sube el documento escaneado haciendo clic o arrastrandolo al area de carga."
     },
     {
       "@type": "HowToStep",
@@ -145,7 +145,7 @@ export default function RotarPDFEscaneadoPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Paginas Mixtas Verticales y Horizontales</h3>
-                  <p className="text-slate-600">Cuando un documento tiene tanto paginas de texto vertical como graficos horizontales, necesitas rotarlos por separado. En OmnisPDF, selecciona solo las paginas horizontales, rotalas y descarga. Las paginas verticales permanecen sin tocar. Si necesitas reorganizar de forma mas compleja, <Link href="/es/dividir-pdf" className="text-orange-600 hover:underline">divide el documento</Link> primero.</p>
+                  <p className="text-slate-600">Cuando un documento tiene tanto paginas de texto vertical como graficos horizontales, necesitas rotarlos por separado. En PDF.it, selecciona solo las paginas horizontales, rotalas y descarga. Las paginas verticales permanecen sin tocar. Si necesitas reorganizar de forma mas compleja, <Link href="/es/dividir-pdf" className="text-orange-600 hover:underline">divide el documento</Link> primero.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Lote Completo Escaneado Incorrectamente</h3>
@@ -212,7 +212,7 @@ export default function RotarPDFEscaneadoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como roto un PDF escaneado?", a: "Sube el PDF escaneado a la herramienta Rotar PDF de OmnisPDF, selecciona las paginas que estan rotadas incorrectamente, elige el angulo correcto (90° o 180°) y descarga el archivo corregido. No se necesita instalar software." },
+                { q: "Como roto un PDF escaneado?", a: "Sube el PDF escaneado a la herramienta Rotar PDF de PDF.it, selecciona las paginas que estan rotadas incorrectamente, elige el angulo correcto (90° o 180°) y descarga el archivo corregido. No se necesita instalar software." },
                 { q: "Por que mi PDF escaneado salio de lado?", a: "Los escaneres no siempre detectan correctamente la orientacion de la pagina. Si el documento se coloco en el angulo incorrecto en la cama del escaner, o si el alimentador automatico de documentos jalo la pagina de lado, el escaneo estara rotado." },
                 { q: "Debo rotar antes o despues de ejecutar OCR?", a: "Siempre rota primero, luego ejecuta OCR. El reconocimiento optico de caracteres funciona mucho mejor cuando el texto esta orientado correctamente. El texto de lado o al reves produce resultados de OCR pobres con muchos errores." },
                 { q: "Rotar un PDF escaneado reducira la calidad de imagen?", a: "No. La rotacion solo cambia los metadatos de orientacion de la pagina. Los datos de imagen escaneada permanecen intactos en su resolucion y calidad original." },

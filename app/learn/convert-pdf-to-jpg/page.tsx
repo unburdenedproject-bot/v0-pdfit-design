@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ImageIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "How to Convert PDF to JPG Online (Fast & High Quality) | OmnisPDF",
+  title: "How to Convert PDF to JPG Online (Fast & High Quality) | PDF.it",
   description:
     "Learn how to convert PDF to JPG online in seconds. Step-by-step guide with quality settings, batch conversion tips, and when to use JPG vs PNG — free, no software needed.",
   keywords: "convert pdf to jpg online, pdf to jpg, pdf to image, convert pdf to image, pdf to jpeg",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I convert a PDF to JPG for free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF's PDF to JPG tool, choose your quality settings, click Convert, and download your JPG images. No signup required for your first 3 files." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it's PDF to JPG tool, choose your quality settings, click Convert, and download your JPG images. No signup required for your first 3 files." }
     },
     {
       "@type": "Question",
@@ -33,7 +33,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I convert a multi-page PDF to JPG?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. When you convert a multi-page PDF, each page becomes a separate JPG image. OmnisPDF converts all pages at once and lets you download them individually or as a ZIP file." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. When you convert a multi-page PDF, each page becomes a separate JPG image. PDF.it converts all pages at once and lets you download them individually or as a ZIP file." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I convert PDF to JPG on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in any mobile browser including Safari on iPhone and Chrome on Android. Upload your PDF, convert it, and save the JPG images directly to your phone. No app needed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in any mobile browser including Safari on iPhone and Chrome on Android. Upload your PDF, convert it, and save the JPG images directly to your phone. No app needed." }
     }
   ]
 }
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Convert PDF to JPG Online",
-  "description": "Convert your PDF pages to high-quality JPG images in 3 simple steps using OmnisPDF.",
+  "description": "Convert your PDF pages to high-quality JPG images in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Upload your PDF",
-      "text": "Go to OmnisPDF's PDF to JPG tool and upload your file by clicking or dragging it into the upload area."
+      "text": "Go to PDF.it's PDF to JPG tool and upload your file by clicking or dragging it into the upload area."
     },
     {
       "@type": "HowToStep",
@@ -255,7 +255,7 @@ export default function ConvertPdfToJpgPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Batch Conversion: Multiple PDFs at Once</h2>
               <p className="text-slate-600 mb-4">
-                If you have several PDFs to convert, doing them one at a time is tedious. OmnisPDF Pro users can upload multiple PDFs and convert them all to JPG in a single batch:
+                If you have several PDFs to convert, doing them one at a time is tedious. PDF.it Pro users can upload multiple PDFs and convert them all to JPG in a single batch:
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>- Select multiple PDF files at once (or drag a whole folder)</li>
@@ -340,12 +340,12 @@ export default function ConvertPdfToJpgPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I convert a PDF to JPG for free?", a: "Upload your PDF to OmnisPDF's PDF to JPG tool, choose your quality settings, click Convert, and download your JPG images. No signup required for your first 3 files." },
+                { q: "How do I convert a PDF to JPG for free?", a: "Upload your PDF to PDF.it's PDF to JPG tool, choose your quality settings, click Convert, and download your JPG images. No signup required for your first 3 files." },
                 { q: "Does converting PDF to JPG lose quality?", a: "JPG uses lossy compression, so there is always some quality loss compared to the original PDF. However, at high quality settings (200-300 DPI), the difference is barely noticeable for most uses like presentations, social media, or web pages." },
                 { q: "What DPI should I use for PDF to JPG?", a: "For screen viewing and web use, 150 DPI is sufficient. For presentations and documents, 200 DPI works well. For printing or when you need maximum detail, use 300 DPI. Higher DPI means larger file sizes." },
-                { q: "Can I convert a multi-page PDF to JPG?", a: "Yes. When you convert a multi-page PDF, each page becomes a separate JPG image. OmnisPDF converts all pages at once and lets you download them individually or as a ZIP file." },
+                { q: "Can I convert a multi-page PDF to JPG?", a: "Yes. When you convert a multi-page PDF, each page becomes a separate JPG image. PDF.it converts all pages at once and lets you download them individually or as a ZIP file." },
                 { q: "Should I convert to JPG or PNG?", a: "Use JPG for photos, scanned documents, and when file size matters. Use PNG for text-heavy pages, diagrams, screenshots, or when you need transparency. PNG files are larger but have no quality loss." },
-                { q: "Can I convert PDF to JPG on my phone?", a: "Yes. OmnisPDF works in any mobile browser including Safari on iPhone and Chrome on Android. Upload your PDF, convert it, and save the JPG images directly to your phone. No app needed." },
+                { q: "Can I convert PDF to JPG on my phone?", a: "Yes. PDF.it works in any mobile browser including Safari on iPhone and Chrome on Android. Upload your PDF, convert it, and save the JPG images directly to your phone. No app needed." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

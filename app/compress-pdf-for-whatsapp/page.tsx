@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Ro
 import Link from "next/link"
 
 export const metadata = {
-  title: "Compress PDF for WhatsApp — Share PDFs Easily | OmnisPDF",
+  title: "Compress PDF for WhatsApp — Share PDFs Easily | PDF.it",
   description:
     "Compress your PDF for fast WhatsApp sharing. Reduce file size so documents send and download quickly on mobile — free, browser-based, no signup required.",
 }
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I compress a PDF to send on WhatsApp?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF and click Compress. Extreme compression reduces image resolution and optimizes the file structure, making it much smaller and faster to send via WhatsApp." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it and click Compress. Extreme compression reduces image resolution and optimizes the file structure, making it much smaller and faster to send via WhatsApp." }
     },
     {
       "@type": "Question",
@@ -33,7 +33,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I compress a PDF for WhatsApp on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in any mobile browser on iPhone or Android. Compress your PDF and share it directly to WhatsApp without installing any app." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in any mobile browser on iPhone or Android. Compress your PDF and share it directly to WhatsApp without installing any app." }
     },
     {
       "@type": "Question",
@@ -144,7 +144,7 @@ export default function CompressPDFForWhatsAppPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Compress a PDF for WhatsApp</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PDF into OmnisPDF.",
+                "Upload or drag and drop your PDF into PDF.it.",
                 "Click Compress PDF — extreme compression is applied automatically to minimize file size.",
                 "Download your smaller PDF and share it on WhatsApp. If still too large, try splitting the file first, then compress each part.",
               ].map((step, i) => (
@@ -198,10 +198,10 @@ export default function CompressPDFForWhatsAppPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I compress a PDF to send on WhatsApp?", a: "Upload your PDF to OmnisPDF and click Compress. Extreme compression reduces image resolution and optimizes the file structure, making it much smaller and faster to send via WhatsApp." },
+                { q: "How do I compress a PDF to send on WhatsApp?", a: "Upload your PDF to PDF.it and click Compress. Extreme compression reduces image resolution and optimizes the file structure, making it much smaller and faster to send via WhatsApp." },
                 { q: "What is WhatsApp's file size limit for PDFs?", a: "WhatsApp allows file attachments up to 100MB. However, large PDFs are slow to upload and download on mobile networks. Compressing your PDF ensures fast delivery even on slower connections." },
                 { q: "Will the PDF still be readable after compression?", a: "Yes. Text remains sharp and fully readable. Images may lose some detail at extreme compression, but the document stays perfectly usable for sharing via WhatsApp." },
-                { q: "Can I compress a PDF for WhatsApp on my phone?", a: "Yes. OmnisPDF works in any mobile browser on iPhone or Android. Compress your PDF and share it directly to WhatsApp without installing any app." },
+                { q: "Can I compress a PDF for WhatsApp on my phone?", a: "Yes. PDF.it works in any mobile browser on iPhone or Android. Compress your PDF and share it directly to WhatsApp without installing any app." },
                 { q: "Why is my PDF too large to send on WhatsApp?", a: "PDFs with scanned images, high-resolution graphics, or embedded fonts can be very large. Compression reduces these elements while keeping the document readable, making it much easier to share." },
                 { q: "What if my PDF is still too large after compression?", a: "Try splitting the PDF into smaller parts with our Split PDF tool, then compress each part individually. You can also flatten the PDF or remove unnecessary pages to reduce size further." },
               ].map((faq, i) => (

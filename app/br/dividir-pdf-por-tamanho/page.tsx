@@ -6,9 +6,9 @@ import { Scissors, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Dividir PDF por Tamanho — Separe PDFs em Partes por MB | OmnisPDF",
+  title: "Dividir PDF por Tamanho — Separe PDFs em Partes por MB | PDF.it",
   description:
-    "Divida seu PDF por tamanho de arquivo com OmnisPDF. Separe documentos grandes em partes que respeitem limites de email e upload — rapido, gratis e online.",
+    "Divida seu PDF por tamanho de arquivo com PDF.it. Separe documentos grandes em partes que respeitem limites de email e upload — rapido, gratis e online.",
   alternates: {
     languages: {
       en: "/split-pdf-by-size",
@@ -25,7 +25,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como dividir um PDF por tamanho de arquivo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o OmnisPDF, defina o tamanho maximo desejado para cada parte (ex: 5MB, 10MB, 25MB) e clique em Dividir. O OmnisPDF divide automaticamente o documento em partes que respeitam o limite definido." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o PDF.it, defina o tamanho maximo desejado para cada parte (ex: 5MB, 10MB, 25MB) e clique em Dividir. O PDF.it divide automaticamente o documento em partes que respeitam o limite definido." }
     },
     {
       "@type": "Question",
@@ -50,7 +50,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso dividir um PDF por tamanho no celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em navegadores moveis — defina o tamanho maximo, divida e baixe as partes diretamente do seu celular." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em navegadores moveis — defina o tamanho maximo, divida e baixe as partes diretamente do seu celular." }
     }
   ]
 }
@@ -74,7 +74,7 @@ export default function DividirPdfPorTamanhoPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Dividir PDF por Tamanho</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Separe PDFs grandes em partes que respeitam limites de tamanho. Defina o tamanho maximo por arquivo e o OmnisPDF divide automaticamente — perfeito para email e uploads.
+                Separe PDFs grandes em partes que respeitam limites de tamanho. Defina o tamanho maximo por arquivo e o PDF.it divide automaticamente — perfeito para email e uploads.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Divisao por MB</span></div>
@@ -98,7 +98,7 @@ export default function DividirPdfPorTamanhoPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Muitos servicos de email e portais de upload tem limites de tamanho de arquivo. O OmnisPDF permite dividir seu PDF automaticamente em partes que respeitam esses limites — basta definir o tamanho maximo desejado e o resto e automatico.
+              Muitos servicos de email e portais de upload tem limites de tamanho de arquivo. O PDF.it permite dividir seu PDF automaticamente em partes que respeitam esses limites — basta definir o tamanho maximo desejado e o resto e automatico.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Defina o tamanho maximo por parte (ex: 5MB, 10MB, 25MB)</li>
@@ -140,7 +140,7 @@ export default function DividirPdfPorTamanhoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Dividir PDF por Tamanho</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste seu PDF para o OmnisPDF.",
+                "Envie ou arraste seu PDF para o PDF.it.",
                 "Defina o tamanho maximo desejado para cada parte.",
                 "Clique em Dividir PDF e baixe as partes resultantes.",
               ].map((step, i) => (
@@ -187,12 +187,12 @@ export default function DividirPdfPorTamanhoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como dividir um PDF por tamanho de arquivo?", a: "Envie seu PDF para o OmnisPDF, defina o tamanho maximo desejado para cada parte (ex: 5MB, 10MB, 25MB) e clique em Dividir. O OmnisPDF divide automaticamente o documento em partes que respeitam o limite definido." },
+                { q: "Como dividir um PDF por tamanho de arquivo?", a: "Envie seu PDF para o PDF.it, defina o tamanho maximo desejado para cada parte (ex: 5MB, 10MB, 25MB) e clique em Dividir. O PDF.it divide automaticamente o documento em partes que respeitam o limite definido." },
                 { q: "Para que serve dividir PDF por tamanho?", a: "E ideal quando voce precisa enviar um PDF grande por email (limite de 25MB) ou subir para um portal que tem limite de tamanho. Cada parte resultante respeita o tamanho maximo definido." },
                 { q: "Dividir por tamanho afeta a qualidade do PDF?", a: "Nao. As paginas sao extraidas sem recodificar. A qualidade, texto, imagens e formatacao permanecem iguais ao original." },
                 { q: "Qual o tamanho minimo de cada parte?", a: "O tamanho minimo depende das paginas individuais do seu PDF. Se uma unica pagina excede o tamanho definido, ela sera salva como um arquivo separado." },
                 { q: "E gratis dividir PDF por tamanho?", a: "Sim. Voce pode dividir PDFs de ate 25MB gratis. Para arquivos maiores (ate 200MB), faca upgrade para o plano Pro." },
-                { q: "Posso dividir um PDF por tamanho no celular?", a: "Sim. O OmnisPDF funciona em navegadores moveis — defina o tamanho maximo, divida e baixe as partes diretamente do seu celular." },
+                { q: "Posso dividir um PDF por tamanho no celular?", a: "Sim. O PDF.it funciona em navegadores moveis — defina o tamanho maximo, divida e baixe as partes diretamente do seu celular." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

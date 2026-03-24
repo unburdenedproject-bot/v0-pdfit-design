@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Scissors, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "How to Extract Pages from a PDF (Keep Only What You Need) | OmnisPDF",
+  title: "How to Extract Pages from a PDF (Keep Only What You Need) | PDF.it",
   description:
     "Learn how to extract specific pages from a PDF and save them as a new file. Step-by-step guide for pulling pages from large documents — free, no software needed.",
   keywords: "extract pages from pdf, pull pages from pdf, get specific pages from pdf, extract pdf pages online",
@@ -18,32 +18,32 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I extract specific pages from a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF's Split PDF tool, select the page numbers you want to keep, and download a new PDF containing only those pages. No software installation needed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it's Split PDF tool, select the page numbers you want to keep, and download a new PDF containing only those pages. No software installation needed." }
     },
     {
       "@type": "Question",
       "name": "Can I extract pages from a PDF without losing quality?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF extracts pages without re-encoding them, so your text, images, and formatting remain identical to the original document." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it extracts pages without re-encoding them, so your text, images, and formatting remain identical to the original document." }
     },
     {
       "@type": "Question",
       "name": "Is it free to extract pages from a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF lets you extract pages for free with files up to 25MB. You get 3 free operations without signing up, and 10 per day with a free account." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it lets you extract pages for free with files up to 25MB. You get 3 free operations without signing up, and 10 per day with a free account." }
     },
     {
       "@type": "Question",
       "name": "Can I extract non-consecutive pages from a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can select any combination of pages — for example pages 1, 3, 7, and 12 — and OmnisPDF will combine them into a single new PDF in the order you specified." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can select any combination of pages — for example pages 1, 3, 7, and 12 — and PDF.it will combine them into a single new PDF in the order you specified." }
     },
     {
       "@type": "Question",
       "name": "How do I extract pages from a password-protected PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "First, use OmnisPDF's Unlock PDF tool to remove the password protection, then use the Split PDF tool to extract the pages you need." }
+      "acceptedAnswer": { "@type": "Answer", "text": "First, use PDF.it's Unlock PDF tool to remove the password protection, then use the Split PDF tool to extract the pages you need." }
     },
     {
       "@type": "Question",
       "name": "Can I extract pages from a PDF on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in any mobile browser. Upload your PDF, select the pages to extract, and download the result — no app needed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in any mobile browser. Upload your PDF, select the pages to extract, and download the result — no app needed." }
     }
   ]
 }
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Extract Pages from a PDF",
-  "description": "Pull specific pages from a PDF and save them as a new file in 3 simple steps using OmnisPDF.",
+  "description": "Pull specific pages from a PDF and save them as a new file in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Upload your PDF",
-      "text": "Go to OmnisPDF's Split PDF tool and upload the document you want to extract pages from by clicking or dragging it into the upload area."
+      "text": "Go to PDF.it's Split PDF tool and upload the document you want to extract pages from by clicking or dragging it into the upload area."
     },
     {
       "@type": "HowToStep",
@@ -159,7 +159,7 @@ export default function ExtractPagesFromPDFGuidePage() {
                 {[
                   {
                     title: "Upload your PDF",
-                    desc: "Go to OmnisPDF's Split PDF tool and drag your file into the upload area, or click to browse. Files up to 25MB are free — Pro users can upload files up to 200MB.",
+                    desc: "Go to PDF.it's Split PDF tool and drag your file into the upload area, or click to browse. Files up to 25MB are free — Pro users can upload files up to 200MB.",
                   },
                   {
                     title: "Select the pages you want to keep",
@@ -196,7 +196,7 @@ export default function ExtractPagesFromPDFGuidePage() {
                 <li>&#10003; <strong>Page 30</strong> — the signature page</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                In OmnisPDF, you would enter <strong>&quot;1, 5-8, 15, 30&quot;</strong> and get a clean 7-page PDF with exactly what you need. This is much more efficient than printing the entire document or trying to scroll through it during a meeting.
+                In PDF.it, you would enter <strong>&quot;1, 5-8, 15, 30&quot;</strong> and get a clean 7-page PDF with exactly what you need. This is much more efficient than printing the entire document or trying to scroll through it during a meeting.
               </p>
             </section>
 
@@ -287,12 +287,12 @@ export default function ExtractPagesFromPDFGuidePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I extract specific pages from a PDF?", a: "Upload your PDF to OmnisPDF's Split PDF tool, select the page numbers you want to keep, and download a new PDF containing only those pages. No software installation needed." },
-                { q: "Can I extract pages from a PDF without losing quality?", a: "Yes. OmnisPDF extracts pages without re-encoding them, so your text, images, and formatting remain identical to the original document." },
-                { q: "Is it free to extract pages from a PDF?", a: "Yes. OmnisPDF lets you extract pages for free with files up to 25MB. You get 3 free operations without signing up, and 10 per day with a free account." },
-                { q: "Can I extract non-consecutive pages from a PDF?", a: "Yes. You can select any combination of pages — for example pages 1, 3, 7, and 12 — and OmnisPDF will combine them into a single new PDF in the order you specified." },
-                { q: "How do I extract pages from a password-protected PDF?", a: "First, use OmnisPDF's Unlock PDF tool to remove the password protection, then use the Split PDF tool to extract the pages you need." },
-                { q: "Can I extract pages from a PDF on my phone?", a: "Yes. OmnisPDF works in any mobile browser. Upload your PDF, select the pages to extract, and download the result — no app needed." },
+                { q: "How do I extract specific pages from a PDF?", a: "Upload your PDF to PDF.it's Split PDF tool, select the page numbers you want to keep, and download a new PDF containing only those pages. No software installation needed." },
+                { q: "Can I extract pages from a PDF without losing quality?", a: "Yes. PDF.it extracts pages without re-encoding them, so your text, images, and formatting remain identical to the original document." },
+                { q: "Is it free to extract pages from a PDF?", a: "Yes. PDF.it lets you extract pages for free with files up to 25MB. You get 3 free operations without signing up, and 10 per day with a free account." },
+                { q: "Can I extract non-consecutive pages from a PDF?", a: "Yes. You can select any combination of pages — for example pages 1, 3, 7, and 12 — and PDF.it will combine them into a single new PDF in the order you specified." },
+                { q: "How do I extract pages from a password-protected PDF?", a: "First, use PDF.it's Unlock PDF tool to remove the password protection, then use the Split PDF tool to extract the pages you need." },
+                { q: "Can I extract pages from a PDF on my phone?", a: "Yes. PDF.it works in any mobile browser. Upload your PDF, select the pages to extract, and download the result — no app needed." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download } from "lucide-react
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF a 2MB Online — Reducir Tamaño de PDF | OmnisPDF",
+  title: "Comprimir PDF a 2MB Online — Reducir Tamaño de PDF | PDF.it",
   description:
     "Comprime tu PDF para cumplir con límites de 2MB. Compresión extrema para formularios gubernamentales, solicitudes de visa y subidas a portales — rápido, desde tu navegador, gratis.",
   alternates: {
@@ -24,7 +24,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo comprimo un PDF para un límite de 2MB?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a OmnisPDF, haz clic en Comprimir y descarga el archivo reducido. OmnisPDF usa compresión extrema para reducir drásticamente el tamaño del archivo. Los resultados dependen del contenido de tu PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it, haz clic en Comprimir y descarga el archivo reducido. PDF.it usa compresión extrema para reducir drásticamente el tamaño del archivo. Los resultados dependen del contenido de tu PDF." }
     },
     {
       "@type": "Question",
@@ -39,17 +39,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Qué tipos de portales requieren un PDF de 2MB?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Muchos formularios gubernamentales, solicitudes de visa, entregas de exámenes y portales de recursos humanos requieren PDFs de menos de 2MB. OmnisPDF te ayuda a cumplir con estos requisitos estrictos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Muchos formularios gubernamentales, solicitudes de visa, entregas de exámenes y portales de recursos humanos requieren PDFs de menos de 2MB. PDF.it te ayuda a cumplir con estos requisitos estrictos." }
     },
     {
       "@type": "Question",
       "name": "¿Puedo comprimir un PDF a 2MB desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en navegadores móviles — sube, comprime y descarga desde tu iPhone o Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube, comprime y descarga desde tu iPhone o Android." }
     },
     {
       "@type": "Question",
       "name": "¿Qué hago si mi PDF sigue pesando más de 2MB después de comprimirlo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Intenta dividir el PDF en secciones más pequeñas con la herramienta Dividir PDF de OmnisPDF y luego comprime cada parte por separado." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Intenta dividir el PDF en secciones más pequeñas con la herramienta Dividir PDF de PDF.it y luego comprime cada parte por separado." }
     }
   ]
 }
@@ -98,7 +98,7 @@ export default function ComprimirPDFA2MBPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Muchos portales oficiales requieren PDFs de menos de 2MB — solicitudes de visa, formularios gubernamentales, entregas de exámenes y sistemas de recursos humanos. OmnisPDF aplica compresión extrema para reducir drásticamente el tamaño de tu PDF y ayudarte a cumplir con los requisitos estrictos de subida.
+              Muchos portales oficiales requieren PDFs de menos de 2MB — solicitudes de visa, formularios gubernamentales, entregas de exámenes y sistemas de recursos humanos. PDF.it aplica compresión extrema para reducir drásticamente el tamaño de tu PDF y ayudarte a cumplir con los requisitos estrictos de subida.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Compresión extrema para máxima reducción de tamaño</li>
@@ -116,19 +116,19 @@ export default function ComprimirPDFA2MBPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Cumple con los Requisitos Estrictos de 2MB</h2>
               <p className="text-slate-600">
-                Los portales gubernamentales, solicitudes de visa y sistemas de exámenes frecuentemente exigen un límite estricto de 2MB. El modo de compresión extrema de OmnisPDF reduce agresivamente el tamaño del archivo para que puedas enviar tu documento sin problemas.
+                Los portales gubernamentales, solicitudes de visa y sistemas de exámenes frecuentemente exigen un límite estricto de 2MB. El modo de compresión extrema de PDF.it reduce agresivamente el tamaño del archivo para que puedas enviar tu documento sin problemas.
               </p>
             </div>
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Comprime Identificaciones y Documentos Escaneados</h2>
               <p className="text-slate-600">
-                Los documentos de identidad, certificados y formularios escaneados frecuentemente superan los 2MB. OmnisPDF reduce el tamaño de las imágenes incrustadas manteniendo el texto legible para entregas oficiales.
+                Los documentos de identidad, certificados y formularios escaneados frecuentemente superan los 2MB. PDF.it reduce el tamaño de las imágenes incrustadas manteniendo el texto legible para entregas oficiales.
               </p>
             </div>
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">¿Sigue siendo muy grande? Divide y luego comprime</h2>
               <p className="text-slate-600">
-                Si tu PDF sigue superando los 2MB después de comprimirlo, usa la herramienta Dividir PDF de OmnisPDF para separarlo en páginas individuales y luego comprime cada una por separado.
+                Si tu PDF sigue superando los 2MB después de comprimirlo, usa la herramienta Dividir PDF de PDF.it para separarlo en páginas individuales y luego comprime cada una por separado.
               </p>
             </div>
           </div>
@@ -140,7 +140,7 @@ export default function ComprimirPDFA2MBPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Comprimir un PDF para Límites de 2MB</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Haz clic en Comprimir PDF — la compresión extrema se aplica automáticamente.",
                 "Descarga tu PDF más pequeño y súbelo a tu portal.",
               ].map((step, i) => (
@@ -185,12 +185,12 @@ export default function ComprimirPDFA2MBPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo comprimo un PDF para un límite de 2MB?", a: "Sube tu PDF a OmnisPDF, haz clic en Comprimir y descarga el archivo reducido. OmnisPDF usa compresión extrema para reducir drásticamente el tamaño del archivo. Los resultados dependen del contenido de tu PDF." },
+                { q: "¿Cómo comprimo un PDF para un límite de 2MB?", a: "Sube tu PDF a PDF.it, haz clic en Comprimir y descarga el archivo reducido. PDF.it usa compresión extrema para reducir drásticamente el tamaño del archivo. Los resultados dependen del contenido de tu PDF." },
                 { q: "¿Mi PDF quedará definitivamente debajo de 2MB después de comprimirlo?", a: "La compresión extrema reduce drásticamente el tamaño del archivo. La mayoría de los PDFs de menos de 10MB se comprimen significativamente. Los archivos con muchas imágenes pueden necesitar dividirse primero y luego comprimir cada parte por separado." },
                 { q: "¿Se afecta la calidad al comprimir a 2MB?", a: "El texto se mantiene nítido y completamente legible. Las imágenes pueden perder algo de calidad, pero las páginas se mantienen claras y utilizables para la mayoría de los propósitos." },
-                { q: "¿Qué tipos de portales requieren un PDF de 2MB?", a: "Muchos formularios gubernamentales, solicitudes de visa, entregas de exámenes y portales de recursos humanos requieren PDFs de menos de 2MB. OmnisPDF te ayuda a cumplir con estos requisitos estrictos." },
-                { q: "¿Puedo comprimir un PDF a 2MB desde mi celular?", a: "Sí. OmnisPDF funciona en navegadores móviles — sube, comprime y descarga desde tu iPhone o Android." },
-                { q: "¿Qué hago si mi PDF sigue pesando más de 2MB después de comprimirlo?", a: "Intenta dividir el PDF en secciones más pequeñas con la herramienta Dividir PDF de OmnisPDF y luego comprime cada parte por separado." },
+                { q: "¿Qué tipos de portales requieren un PDF de 2MB?", a: "Muchos formularios gubernamentales, solicitudes de visa, entregas de exámenes y portales de recursos humanos requieren PDFs de menos de 2MB. PDF.it te ayuda a cumplir con estos requisitos estrictos." },
+                { q: "¿Puedo comprimir un PDF a 2MB desde mi celular?", a: "Sí. PDF.it funciona en navegadores móviles — sube, comprime y descarga desde tu iPhone o Android." },
+                { q: "¿Qué hago si mi PDF sigue pesando más de 2MB después de comprimirlo?", a: "Intenta dividir el PDF en secciones más pequeñas con la herramienta Dividir PDF de PDF.it y luego comprime cada parte por separado." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

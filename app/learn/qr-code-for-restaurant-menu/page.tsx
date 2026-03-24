@@ -5,7 +5,7 @@ import Link from "next/link"
 import { QrCode, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "QR Code for Restaurant Menus (Create a Scannable Menu Link) | OmnisPDF",
+  title: "QR Code for Restaurant Menus (Create a Scannable Menu Link) | PDF.it",
   description:
     "Learn how to create a QR code for your restaurant menu. Link to a PDF menu or website so customers can scan and view your menu on their phone instantly.",
   keywords: "qr code restaurant menu, menu qr code, scannable menu, qr code for cafe menu",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I create a QR code for my restaurant menu?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your menu as a PDF to a hosting service or your website, copy the URL, then use OmnisPDF's QR Code tool to generate a QR code for that URL. Print the QR code on table tents, stickers, or signs." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your menu as a PDF to a hosting service or your website, copy the URL, then use PDF.it's QR Code tool to generate a QR code for that URL. Print the QR code on table tents, stickers, or signs." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is this a free tool?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF's QR Code generator is a Pro feature at $7.99/month. Pro includes unlimited QR codes plus all PDF tools — perfect for restaurants that also need to compress, convert, or manage PDF menus." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it's QR Code generator is a Pro feature at $7.99/month. Pro includes unlimited QR codes plus all PDF tools — perfect for restaurants that also need to compress, convert, or manage PDF menus." }
     }
   ]
 }
@@ -52,7 +52,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Create a QR Code for Your Restaurant Menu",
-  "description": "Set up a scannable menu QR code for your restaurant in 3 simple steps using OmnisPDF.",
+  "description": "Set up a scannable menu QR code for your restaurant in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
@@ -62,7 +62,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Generate the QR code",
-      "text": "Open OmnisPDF's QR Code tool, select URL type, and paste your menu link. Customize colors to match your restaurant branding if desired."
+      "text": "Open PDF.it's QR Code tool, select URL type, and paste your menu link. Customize colors to match your restaurant branding if desired."
     },
     {
       "@type": "HowToStep",
@@ -155,7 +155,7 @@ export default function QRCodeForRestaurantMenuPage() {
                 {[
                   {
                     title: "Create or digitize your menu",
-                    desc: "If you already have a PDF menu, you're ready. If your menu is only in print, photograph it or recreate it in Word/Google Docs and export as PDF. Use OmnisPDF's Word to PDF tool if needed. Make sure the text is readable on a phone screen.",
+                    desc: "If you already have a PDF menu, you're ready. If your menu is only in print, photograph it or recreate it in Word/Google Docs and export as PDF. Use PDF.it's Word to PDF tool if needed. Make sure the text is readable on a phone screen.",
                   },
                   {
                     title: "Host your menu online",
@@ -163,7 +163,7 @@ export default function QRCodeForRestaurantMenuPage() {
                   },
                   {
                     title: "Generate and print the QR code",
-                    desc: "Open OmnisPDF's QR Code tool (Pro feature), paste your menu URL, and generate the code. Download as SVG for print. Print on table tents, acrylic stands, wall signs, or stickers. Add the text 'Scan for Menu' so customers know what to do.",
+                    desc: "Open PDF.it's QR Code tool (Pro feature), paste your menu URL, and generate the code. Download as SVG for print. Print on table tents, acrylic stands, wall signs, or stickers. Add the text 'Scan for Menu' so customers know what to do.",
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -228,7 +228,7 @@ export default function QRCodeForRestaurantMenuPage() {
                 <li>&#10003; <strong>Replace the file, not the link.</strong> If you host the PDF on Google Drive, you can replace the file without changing the sharing link. Upload the new PDF with the same name to the same folder.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Need to convert your updated menu from Word or PowerPoint to PDF? Use OmnisPDF's <Link href="/word-to-pdf" className="text-orange-600 hover:underline">Word to PDF</Link> or <Link href="/powerpoint-to-pdf" className="text-orange-600 hover:underline">PowerPoint to PDF</Link> converter.
+                Need to convert your updated menu from Word or PowerPoint to PDF? Use PDF.it's <Link href="/word-to-pdf" className="text-orange-600 hover:underline">Word to PDF</Link> or <Link href="/powerpoint-to-pdf" className="text-orange-600 hover:underline">PowerPoint to PDF</Link> converter.
               </p>
             </section>
 
@@ -281,12 +281,12 @@ export default function QRCodeForRestaurantMenuPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I create a QR code for my restaurant menu?", a: "Upload your menu as a PDF to a hosting service or your website, copy the URL, then use OmnisPDF's QR Code tool to generate a QR code for that URL. Print the QR code on table tents, stickers, or signs." },
+                { q: "How do I create a QR code for my restaurant menu?", a: "Upload your menu as a PDF to a hosting service or your website, copy the URL, then use PDF.it's QR Code tool to generate a QR code for that URL. Print the QR code on table tents, stickers, or signs." },
                 { q: "Should I link to a PDF menu or a webpage?", a: "A webpage is easier to update (change prices, add items) without reprinting QR codes. A PDF menu is simpler to create and looks exactly like your printed menu. Choose based on how often your menu changes." },
                 { q: "How big should a menu QR code be?", a: "At least 3cm x 3cm for table tents and stickers. For wall signs or posters, go larger. The scanning distance matters — customers should be able to scan from at least 30cm away in restaurant lighting." },
                 { q: "Can customers scan the QR code without an app?", a: "Yes. All modern smartphones (iPhone and Android) can scan QR codes directly with their built-in camera app. No separate QR reader app is needed." },
                 { q: "How do I update my menu without reprinting QR codes?", a: "Use a URL shortener or redirect service. The QR code points to a short URL, and you change where that short URL redirects to whenever you update your menu. This way the QR code stays the same." },
-                { q: "Is this a free tool?", a: "OmnisPDF's QR Code generator is a Pro feature at $7.99/month. Pro includes unlimited QR codes plus all PDF tools — perfect for restaurants that also need to compress, convert, or manage PDF menus." },
+                { q: "Is this a free tool?", a: "PDF.it's QR Code generator is a Pro feature at $7.99/month. Pro includes unlimited QR codes plus all PDF tools — perfect for restaurants that also need to compress, convert, or manage PDF menus." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

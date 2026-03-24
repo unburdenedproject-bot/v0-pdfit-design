@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Scissors, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Dividir PDF no Celular (iPhone e Android) | OmnisPDF",
+  title: "Dividir PDF no Celular (iPhone e Android) | PDF.it",
   description:
     "Aprenda como dividir PDF diretamente no celular, sem instalar aplicativo. Funciona no iPhone e Android pelo navegador — online, gratis.",
   keywords: "dividir pdf celular, separar pdf celular, dividir pdf iphone, dividir pdf android, cortar pdf no celular",
@@ -18,12 +18,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como dividir um PDF no celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Abra o navegador do celular, acesse omnispdf.com/br/dividir-pdf, envie o PDF, escolha como dividir e baixe as partes. Funciona em qualquer iPhone ou Android, sem instalar app." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Abra o navegador do celular, acesse pdf.it.com/br/dividir-pdf, envie o PDF, escolha como dividir e baixe as partes. Funciona em qualquer iPhone ou Android, sem instalar app." }
     },
     {
       "@type": "Question",
       "name": "Preciso instalar algum aplicativo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Nao. O OmnisPDF funciona 100% no navegador. Basta acessar o site no Safari (iPhone) ou Chrome (Android) e usar a ferramenta online." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Nao. O PDF.it funciona 100% no navegador. Basta acessar o site no Safari (iPhone) ou Chrome (Android) e usar a ferramenta online." }
     },
     {
       "@type": "Question",
@@ -41,8 +41,8 @@ const howToSchema = {
   "step": [
     {
       "@type": "HowToStep",
-      "name": "Abra o OmnisPDF no navegador",
-      "text": "No celular, abra o Safari ou Chrome e acesse omnispdf.com/br/dividir-pdf."
+      "name": "Abra o PDF.it no navegador",
+      "text": "No celular, abra o Safari ou Chrome e acesse pdf.it.com/br/dividir-pdf."
     },
     {
       "@type": "HowToStep",
@@ -122,8 +122,8 @@ export default function DividirPDFNoCelularPage() {
               <div className="space-y-4">
                 {[
                   {
-                    title: "Abra o navegador e acesse o OmnisPDF",
-                    desc: "No iPhone, abra o Safari. No Android, abra o Chrome. Acesse omnispdf.com/br/dividir-pdf. A interface e totalmente otimizada para telas moveis.",
+                    title: "Abra o navegador e acesse o PDF.it",
+                    desc: "No iPhone, abra o Safari. No Android, abra o Chrome. Acesse pdf.it.com/br/dividir-pdf. A interface e totalmente otimizada para telas moveis.",
                   },
                   {
                     title: "Envie o PDF",
@@ -154,7 +154,7 @@ export default function DividirPDFNoCelularPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Dicas para Celular</h2>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Salve na tela inicial:</strong> no Safari, toque Compartilhar &gt; Adicionar a Tela de Inicio para acesso rapido ao OmnisPDF.</li>
+                <li>&#10003; <strong>Salve na tela inicial:</strong> no Safari, toque Compartilhar &gt; Adicionar a Tela de Inicio para acesso rapido ao PDF.it.</li>
                 <li>&#10003; <strong>Conexao Wi-Fi recomendada</strong> para PDFs grandes — economiza dados moveis.</li>
                 <li>&#10003; <strong>Comprima apos dividir</strong> usando <Link href="/br/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> se as partes ainda forem grandes.</li>
                 <li>&#10003; <strong>Todas as ferramentas funcionam no celular:</strong> <Link href="/br/unir-pdf" className="text-orange-600 hover:underline">Unir</Link>, <Link href="/br/girar-pdf" className="text-orange-600 hover:underline">Girar</Link>, <Link href="/br/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir</Link> e mais.</li>
@@ -205,8 +205,8 @@ export default function DividirPDFNoCelularPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como dividir um PDF no celular?", a: "Abra o navegador do celular, acesse omnispdf.com/br/dividir-pdf, envie o PDF, escolha como dividir e baixe as partes. Funciona em qualquer iPhone ou Android." },
-                { q: "Preciso instalar algum aplicativo?", a: "Nao. O OmnisPDF funciona 100% no navegador. Basta acessar o site no Safari ou Chrome e usar a ferramenta online." },
+                { q: "Como dividir um PDF no celular?", a: "Abra o navegador do celular, acesse pdf.it.com/br/dividir-pdf, envie o PDF, escolha como dividir e baixe as partes. Funciona em qualquer iPhone ou Android." },
+                { q: "Preciso instalar algum aplicativo?", a: "Nao. O PDF.it funciona 100% no navegador. Basta acessar o site no Safari ou Chrome e usar a ferramenta online." },
                 { q: "Onde ficam os arquivos divididos no celular?", a: "No iPhone, vao para a pasta Downloads no app Arquivos. No Android, vao para a pasta Downloads acessivel pelo gerenciador de arquivos." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

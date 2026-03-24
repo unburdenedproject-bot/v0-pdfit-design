@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileOutput, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Extraer Páginas de un PDF (Guardar Páginas Seleccionadas como Nuevo PDF) | OmnisPDF",
+  title: "Extraer Páginas de un PDF (Guardar Páginas Seleccionadas como Nuevo PDF) | PDF.it",
   description:
     "Aprende cómo extraer páginas específicas de un PDF y guardarlas como un nuevo archivo. Saca recibos, capítulos, formularios, o cualquier combinación de páginas — gratis, en línea, sin software.",
   keywords: "extraer páginas de pdf, guardar páginas específicas pdf, sacar páginas de pdf, extraer páginas pdf en línea, seleccionar páginas de pdf",
@@ -14,20 +14,20 @@ export const metadata = {
 const faqSchema = {
   "@context": "https://schema.org", "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "¿Cómo extraigo páginas específicas de un PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a OmnisPDF, selecciona o escribe los números de página que quieres extraer, haz clic en Extraer, y descarga un nuevo PDF que contiene solo esas páginas. El archivo original no se modifica." } },
+    { "@type": "Question", "name": "¿Cómo extraigo páginas específicas de un PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it, selecciona o escribe los números de página que quieres extraer, haz clic en Extraer, y descarga un nuevo PDF que contiene solo esas páginas. El archivo original no se modifica." } },
     { "@type": "Question", "name": "¿Puedo extraer páginas no consecutivas de un PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Puedes elegir cualquier combinación de páginas — por ejemplo, páginas 2, 5 y 11. No necesitan estar en orden ni una al lado de otra. Las páginas extraídas aparecerán en el orden que especifiques." } },
     { "@type": "Question", "name": "¿Cuál es la diferencia entre extraer y dividir un PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Extraer saca páginas seleccionadas en un nuevo archivo. Dividir separa un PDF en múltiples archivos separados. Usa extraer cuando necesites una sola salida; usa dividir cuando necesites múltiples archivos de salida." } },
     { "@type": "Question", "name": "¿Puedo extraer páginas de un PDF escaneado?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Los PDFs escaneados funcionan de la misma manera — cada página escaneada es una página en el PDF. Selecciona los números de página que necesitas y extráelos. La calidad de imagen de cada página se preserva exactamente." } },
     { "@type": "Question", "name": "¿El PDF extraído es más pequeño que el original?", "acceptedAnswer": { "@type": "Answer", "text": "Generalmente sí. El archivo extraído solo contiene las páginas que seleccionaste, así que es más pequeño que el documento completo. Si necesitas que sea aún más pequeño, comprime el archivo extraído usando la herramienta Comprimir PDF." } },
-    { "@type": "Question", "name": "¿Puedo extraer páginas de un PDF en mi teléfono?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en cualquier navegador móvil. Abre la herramienta Extraer Páginas en Safari o Chrome, sube tu PDF, selecciona las páginas, y descarga el resultado — sin app necesaria." } }
+    { "@type": "Question", "name": "¿Puedo extraer páginas de un PDF en mi teléfono?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en cualquier navegador móvil. Abre la herramienta Extraer Páginas en Safari o Chrome, sube tu PDF, selecciona las páginas, y descarga el resultado — sin app necesaria." } }
   ]
 }
 
 const howToSchema = {
   "@context": "https://schema.org", "@type": "HowTo", "name": "Cómo Extraer Páginas de un PDF",
-  "description": "Saca páginas específicas de un PDF y guárdalas como un nuevo archivo en 3 simples pasos usando OmnisPDF.",
+  "description": "Saca páginas específicas de un PDF y guárdalas como un nuevo archivo en 3 simples pasos usando PDF.it.",
   "step": [
-    { "@type": "HowToStep", "name": "Sube tu PDF", "text": "Ve a la herramienta Extraer Páginas de OmnisPDF y sube tu archivo haciendo clic o arrastrándolo al área de carga." },
+    { "@type": "HowToStep", "name": "Sube tu PDF", "text": "Ve a la herramienta Extraer Páginas de PDF.it y sube tu archivo haciendo clic o arrastrándolo al área de carga." },
     { "@type": "HowToStep", "name": "Selecciona las páginas a extraer", "text": "Haz clic en las páginas que quieres o escribe números de página (ej., 2, 5, 8-12). Las páginas seleccionadas se resaltan para que puedas ver exactamente qué estás extrayendo." },
     { "@type": "HowToStep", "name": "Descarga tu nuevo PDF", "text": "Haz clic en Extraer Páginas y descarga el nuevo archivo que contiene solo tus páginas seleccionadas. El PDF original permanece sin cambios." }
   ]
@@ -107,7 +107,7 @@ export default function ExtraerPaginasDePDFPage() {
 
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Extraer Páginas No Consecutivas</h2>
-              <p className="text-slate-600 mb-4">No tienes que extraer páginas que estén una al lado de otra. OmnisPDF te permite elegir cualquier combinación. Por ejemplo:</p>
+              <p className="text-slate-600 mb-4">No tienes que extraer páginas que estén una al lado de otra. PDF.it te permite elegir cualquier combinación. Por ejemplo:</p>
               <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 space-y-3">
                 <p className="text-slate-700"><strong>Escenario:</strong> Necesitas las páginas 3, 7 y 15-18 de un contrato de 25 páginas.</p>
                 <p className="text-slate-700"><strong>Escribe:</strong> <span className="font-mono bg-white px-2 py-1 rounded border text-orange-600">3, 7, 15-18</span></p>
@@ -187,12 +187,12 @@ export default function ExtraerPaginasDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo extraigo páginas específicas de un PDF?", a: "Sube tu PDF a OmnisPDF, selecciona o escribe los números de página que quieres extraer, haz clic en Extraer, y descarga un nuevo PDF que contiene solo esas páginas. El archivo original no se modifica." },
+                { q: "¿Cómo extraigo páginas específicas de un PDF?", a: "Sube tu PDF a PDF.it, selecciona o escribe los números de página que quieres extraer, haz clic en Extraer, y descarga un nuevo PDF que contiene solo esas páginas. El archivo original no se modifica." },
                 { q: "¿Puedo extraer páginas no consecutivas de un PDF?", a: "Sí. Puedes elegir cualquier combinación de páginas — por ejemplo, páginas 2, 5 y 11. No necesitan estar en orden ni una al lado de otra. Las páginas extraídas aparecerán en el orden que especifiques." },
                 { q: "¿Cuál es la diferencia entre extraer y dividir un PDF?", a: "Extraer saca páginas seleccionadas en un nuevo archivo. Dividir separa un PDF en múltiples archivos separados. Usa extraer cuando necesites una sola salida; usa dividir cuando necesites múltiples archivos de salida." },
                 { q: "¿Puedo extraer páginas de un PDF escaneado?", a: "Sí. Los PDFs escaneados funcionan de la misma manera — cada página escaneada es una página en el PDF. Selecciona los números de página que necesitas y extráelos. La calidad de imagen de cada página se preserva exactamente." },
                 { q: "¿El PDF extraído es más pequeño que el original?", a: "Generalmente sí. El archivo extraído solo contiene las páginas que seleccionaste, así que es más pequeño que el documento completo. Si necesitas que sea aún más pequeño, comprime el archivo extraído usando la herramienta Comprimir PDF." },
-                { q: "¿Puedo extraer páginas de un PDF en mi teléfono?", a: "Sí. OmnisPDF funciona en cualquier navegador móvil. Abre la herramienta Extraer Páginas en Safari o Chrome, sube tu PDF, selecciona las páginas, y descarga el resultado — sin app necesaria." },
+                { q: "¿Puedo extraer páginas de un PDF en mi teléfono?", a: "Sí. PDF.it funciona en cualquier navegador móvil. Abre la herramienta Extraer Páginas en Safari o Chrome, sube tu PDF, selecciona las páginas, y descarga el resultado — sin app necesaria." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

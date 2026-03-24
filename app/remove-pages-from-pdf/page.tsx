@@ -7,9 +7,9 @@ import { Split, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Remove Pages from PDF Online — Delete Unwanted Pages | OmnisPDF",
+  title: "Remove Pages from PDF Online — Delete Unwanted Pages | PDF.it",
   description:
-    "Remove unwanted pages from a PDF with OmnisPDF. Select which pages to keep, and download a clean PDF without the extras — fast, free, and browser-based.",
+    "Remove unwanted pages from a PDF with PDF.it. Select which pages to keep, and download a clean PDF without the extras — fast, free, and browser-based.",
 }
 
 const faqSchema = {
@@ -19,17 +19,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I remove pages from a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF, enter the page numbers you want to KEEP (everything else will be removed), then click Split PDF. Download the new PDF without the unwanted pages." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it, enter the page numbers you want to KEEP (everything else will be removed), then click Split PDF. Download the new PDF without the unwanted pages." }
     },
     {
       "@type": "Question",
       "name": "Does removing pages change my original PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. Your original PDF is never modified. OmnisPDF creates a brand-new PDF with only the pages you chose to keep. Your original file stays exactly as it was." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Your original PDF is never modified. PDF.it creates a brand-new PDF with only the pages you chose to keep. Your original file stays exactly as it was." }
     },
     {
       "@type": "Question",
       "name": "Can I remove blank pages from a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Identify the blank page numbers in your PDF, then enter only the non-blank page numbers in OmnisPDF. The resulting PDF will have all blank pages removed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Identify the blank page numbers in your PDF, then enter only the non-blank page numbers in PDF.it. The resulting PDF will have all blank pages removed." }
     },
     {
       "@type": "Question",
@@ -39,7 +39,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I remove pages from a PDF on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in mobile browsers — upload, select the pages to keep, and download the cleaned-up PDF on iPhone or Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in mobile browsers — upload, select the pages to keep, and download the cleaned-up PDF on iPhone or Android." }
     },
     {
       "@type": "Question",
@@ -87,7 +87,7 @@ export default function RemovePagesFromPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Got a PDF with blank pages, unnecessary cover sheets, or extra appendices? OmnisPDF lets you remove unwanted pages by selecting only the pages you want to keep. The result is a clean, trimmed PDF ready to share, upload, or print.
+              Got a PDF with blank pages, unnecessary cover sheets, or extra appendices? PDF.it lets you remove unwanted pages by selecting only the pages you want to keep. The result is a clean, trimmed PDF ready to share, upload, or print.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Remove blank pages, cover pages, or appendices</li>
@@ -129,7 +129,7 @@ export default function RemovePagesFromPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Remove Pages from a PDF</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PDF into OmnisPDF.",
+                "Upload or drag and drop your PDF into PDF.it.",
                 "Enter the page numbers or ranges you want to KEEP (e.g., 2-8, 10-15). Pages not listed will be removed.",
                 "Click Split PDF to create your trimmed document.",
                 "Download your clean PDF without the unwanted pages.",
@@ -177,15 +177,15 @@ export default function RemovePagesFromPDFPage() {
               {[
                 {
                   q: "How do I remove pages from a PDF?",
-                  a: "Upload your PDF to OmnisPDF, enter the page numbers you want to KEEP (everything else will be removed), then click Split PDF. Download the new PDF without the unwanted pages.",
+                  a: "Upload your PDF to PDF.it, enter the page numbers you want to KEEP (everything else will be removed), then click Split PDF. Download the new PDF without the unwanted pages.",
                 },
                 {
                   q: "Does removing pages change my original PDF?",
-                  a: "No. Your original PDF is never modified. OmnisPDF creates a brand-new PDF with only the pages you chose to keep. Your original file stays exactly as it was.",
+                  a: "No. Your original PDF is never modified. PDF.it creates a brand-new PDF with only the pages you chose to keep. Your original file stays exactly as it was.",
                 },
                 {
                   q: "Can I remove blank pages from a PDF?",
-                  a: "Yes. Identify the blank page numbers in your PDF, then enter only the non-blank page numbers in OmnisPDF. The resulting PDF will have all blank pages removed.",
+                  a: "Yes. Identify the blank page numbers in your PDF, then enter only the non-blank page numbers in PDF.it. The resulting PDF will have all blank pages removed.",
                 },
                 {
                   q: "Can I remove the cover page from a PDF?",
@@ -193,7 +193,7 @@ export default function RemovePagesFromPDFPage() {
                 },
                 {
                   q: "Can I remove pages from a PDF on my phone?",
-                  a: "Yes. OmnisPDF works in mobile browsers — upload, select the pages to keep, and download the cleaned-up PDF on iPhone or Android.",
+                  a: "Yes. PDF.it works in mobile browsers — upload, select the pages to keep, and download the cleaned-up PDF on iPhone or Android.",
                 },
                 {
                   q: "Is it free to remove pages from a PDF?",

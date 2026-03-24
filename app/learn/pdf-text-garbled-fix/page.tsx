@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Why PDF-to-Text Output Looks Garbled (And How to Fix It) | OmnisPDF",
+  title: "Why PDF-to-Text Output Looks Garbled (And How to Fix It) | PDF.it",
   description:
     "Getting gibberish, strange characters, or blank output when converting PDF to text? Learn the 5 most common causes and how to fix each one — step-by-step guide.",
   keywords: "pdf to text garbled, pdf text gibberish, pdf copy paste weird characters, pdf text extraction broken, fix garbled pdf text",
@@ -67,7 +67,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Extract the text",
-      "text": "Upload your PDF to the appropriate OmnisPDF tool, process it, and download the clean output. Verify the text is correct before using it."
+      "text": "Upload your PDF to the appropriate PDF.it tool, process it, and download the clean output. Verify the text is correct before using it."
     }
   ]
 }
@@ -107,7 +107,7 @@ export default function PdfTextGarbledFixPage() {
               <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileText className="h-5 w-5 text-white" />
               </div>
-              <p className="text-slate-700 font-semibold">Try extracting text with OmnisPDF — it handles most encoding issues.</p>
+              <p className="text-slate-700 font-semibold">Try extracting text with PDF.it — it handles most encoding issues.</p>
             </div>
             <Link
               href="/pdf-to-txt"
@@ -162,7 +162,7 @@ export default function PdfTextGarbledFixPage() {
                 <strong>How to check:</strong> Open the PDF and try to select a single word with your cursor. If you can only select the entire page as a block (or nothing at all), it's scanned.
               </p>
               <p className="text-slate-600">
-                <strong>The fix:</strong> Use <Link href="/ocr-scanner" className="text-orange-600 hover:underline">OCR (Optical Character Recognition)</Link>. OCR reads text visually from the page image and converts it to selectable, editable text. OmnisPDF's OCR Scanner handles this automatically — upload your scanned PDF, and it returns the extracted text.
+                <strong>The fix:</strong> Use <Link href="/ocr-scanner" className="text-orange-600 hover:underline">OCR (Optical Character Recognition)</Link>. OCR reads text visually from the page image and converts it to selectable, editable text. PDF.it's OCR Scanner handles this automatically — upload your scanned PDF, and it returns the extracted text.
               </p>
             </section>
 
@@ -201,7 +201,7 @@ export default function PdfTextGarbledFixPage() {
                 <strong>The problem:</strong> PDFs with multi-column layouts, floating text boxes, sidebars, or tables cause text extraction tools to guess the reading order wrong. The result is words in a jumbled sequence.
               </p>
               <p className="text-slate-600 mb-4">
-                <strong>The fix:</strong> OmnisPDF's <Link href="/pdf-to-txt" className="text-orange-600 hover:underline">PDF to TXT tool</Link> handles most multi-column layouts correctly. If the layout is extremely complex (like magazine pages), try <Link href="/pdf-to-word" className="text-orange-600 hover:underline">PDF to Word</Link> which preserves the visual structure, making it easier to identify and reorganize sections.
+                <strong>The fix:</strong> PDF.it's <Link href="/pdf-to-txt" className="text-orange-600 hover:underline">PDF to TXT tool</Link> handles most multi-column layouts correctly. If the layout is extremely complex (like magazine pages), try <Link href="/pdf-to-word" className="text-orange-600 hover:underline">PDF to Word</Link> which preserves the visual structure, making it easier to identify and reorganize sections.
               </p>
             </section>
 
@@ -266,7 +266,7 @@ export default function PdfTextGarbledFixPage() {
         <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Fix Your Garbled PDF Text</h2>
-            <p className="text-slate-300 mb-6">Try OmnisPDF's extraction tools — they handle encoding issues, scanned pages, and complex layouts automatically.</p>
+            <p className="text-slate-300 mb-6">Try PDF.it's extraction tools — they handle encoding issues, scanned pages, and complex layouts automatically.</p>
             <Link
               href="/pdf-to-txt"
               className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"

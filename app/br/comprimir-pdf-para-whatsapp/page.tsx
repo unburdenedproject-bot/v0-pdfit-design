@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Ro
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF para WhatsApp — Envie PDFs pelo WhatsApp | OmnisPDF",
+  title: "Comprimir PDF para WhatsApp — Envie PDFs pelo WhatsApp | PDF.it",
   description:
     "Comprima PDFs para enviar pelo WhatsApp. O WhatsApp tem limite de 100MB para documentos — reduza o tamanho do seu PDF para enviar facilmente.",
   alternates: {
@@ -25,7 +25,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como comprimo um PDF para enviar pelo WhatsApp?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF ao OmnisPDF e clique em Comprimir. A compressao recomendada reduz o tamanho do arquivo otimizando imagens e a estrutura interna, tornando-o muito menor e mais rapido de enviar pelo WhatsApp." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF ao PDF.it e clique em Comprimir. A compressao recomendada reduz o tamanho do arquivo otimizando imagens e a estrutura interna, tornando-o muito menor e mais rapido de enviar pelo WhatsApp." }
     },
     {
       "@type": "Question",
@@ -40,7 +40,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso comprimir um PDF para WhatsApp pelo celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em qualquer navegador movel no iPhone ou Android. Comprima seu PDF e compartilhe diretamente no WhatsApp sem instalar nenhum app adicional." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em qualquer navegador movel no iPhone ou Android. Comprima seu PDF e compartilhe diretamente no WhatsApp sem instalar nenhum app adicional." }
     },
     {
       "@type": "Question",
@@ -168,7 +168,7 @@ export default function ComprimirPDFParaWhatsAppPagePt() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Comprimir um PDF para WhatsApp</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste e solte seu PDF no OmnisPDF.",
+                "Envie ou arraste e solte seu PDF no PDF.it.",
                 "Clique em Comprimir PDF — a compressao recomendada e aplicada automaticamente para reduzir o tamanho do arquivo.",
                 "Baixe seu PDF menor e compartilhe no WhatsApp. Se ainda estiver muito grande, tente dividir o arquivo primeiro e comprima cada parte.",
               ].map((step, i) => (
@@ -222,10 +222,10 @@ export default function ComprimirPDFParaWhatsAppPagePt() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como comprimo um PDF para enviar pelo WhatsApp?", a: "Envie seu PDF ao OmnisPDF e clique em Comprimir. A compressao recomendada reduz o tamanho do arquivo otimizando imagens e a estrutura interna, tornando-o muito menor e mais rapido de enviar pelo WhatsApp." },
+                { q: "Como comprimo um PDF para enviar pelo WhatsApp?", a: "Envie seu PDF ao PDF.it e clique em Comprimir. A compressao recomendada reduz o tamanho do arquivo otimizando imagens e a estrutura interna, tornando-o muito menor e mais rapido de enviar pelo WhatsApp." },
                 { q: "Qual o limite de tamanho de arquivo no WhatsApp para PDFs?", a: "O WhatsApp permite anexos de documentos de ate 100MB. Porem, PDFs grandes sao lentos para subir e baixar em redes moveis. Comprimir seu PDF garante entrega rapida mesmo em conexoes lentas e economiza dados moveis." },
                 { q: "O PDF continuara legivel apos comprimir?", a: "Sim. O texto permanece nitido e completamente legivel. As imagens mantem bom detalhe com a compressao recomendada. O documento continua perfeitamente utilizavel para compartilhar pelo WhatsApp." },
-                { q: "Posso comprimir um PDF para WhatsApp pelo celular?", a: "Sim. O OmnisPDF funciona em qualquer navegador movel no iPhone ou Android. Comprima seu PDF e compartilhe diretamente no WhatsApp sem instalar nenhum app adicional." },
+                { q: "Posso comprimir um PDF para WhatsApp pelo celular?", a: "Sim. O PDF.it funciona em qualquer navegador movel no iPhone ou Android. Comprima seu PDF e compartilhe diretamente no WhatsApp sem instalar nenhum app adicional." },
                 { q: "Por que meu PDF e grande demais para enviar pelo WhatsApp?", a: "PDFs com imagens digitalizadas, graficos de alta resolucao ou fontes incorporadas podem ser muito grandes. A compressao reduz esses elementos mantendo o documento legivel, tornando-o muito mais facil de compartilhar." },
                 { q: "O que faco se meu PDF continuar muito grande apos comprimir?", a: "Tente dividir o PDF em partes menores com nossa ferramenta Dividir PDF, depois comprima cada parte individualmente. Voce tambem pode achatar o PDF ou remover paginas desnecessarias para reduzir ainda mais o tamanho." },
               ].map((faq, i) => (

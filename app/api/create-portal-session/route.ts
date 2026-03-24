@@ -33,7 +33,7 @@ export async function POST() {
 
     const session = await getStripe().billingPortal.sessions.create({
       customer: customerId,
-      return_url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://omnispdf.com"}/dashboard`,
+      return_url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://pdf.it.com"}/dashboard`,
     })
 
     return NextResponse.json({ url: session.url })

@@ -6,14 +6,14 @@ import { ProcessingInterface } from "@/components/processing-interface"
 import { FileText, Zap, Shield, Download, Crown } from "lucide-react"
 
 export const metadata = {
-  title: "Convertir PDF a Word Online — PDF a DOCX Editable | OmnisPDF",
+  title: "Convertir PDF a Word Online — PDF a DOCX Editable | PDF.it",
   description:
-    "Convierte PDF a Word editable con OmnisPDF. Transforma tus archivos PDF en documentos DOCX que puedes editar al instante — rapido, seguro y desde tu navegador.",
+    "Convierte PDF a Word editable con PDF.it. Transforma tus archivos PDF en documentos DOCX que puedes editar al instante — rapido, seguro y desde tu navegador.",
   alternates: {
-    canonical: "https://omnispdf.com/es/pdf-a-word",
+    canonical: "https://pdf.it.com/es/pdf-a-word",
     languages: {
-      en: "https://omnispdf.com/pdf-to-word",
-      es: "https://omnispdf.com/es/pdf-a-word",
+      en: "https://pdf.it.com/pdf-to-word",
+      es: "https://pdf.it.com/es/pdf-a-word",
     },
   },
 }
@@ -27,7 +27,7 @@ const faqSchema = {
       name: "¿Como convierto un PDF a Word?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sube tu PDF a OmnisPDF, haz clic en Convertir y descarga tu documento Word editable.",
+        text: "Sube tu PDF a PDF.it, haz clic en Convertir y descarga tu documento Word editable.",
       },
     },
     {
@@ -35,7 +35,7 @@ const faqSchema = {
       name: "¿Se mantiene el formato despues de la conversion?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "OmnisPDF preserva el diseno, fuentes y estructura lo mejor posible. Formatos complejos pueden variar dependiendo del PDF original.",
+        text: "PDF.it preserva el diseno, fuentes y estructura lo mejor posible. Formatos complejos pueden variar dependiendo del PDF original.",
       },
     },
     {
@@ -43,7 +43,7 @@ const faqSchema = {
       name: "¿Puedo convertir un PDF escaneado a Word?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Los PDFs escaneados requieren OCR para extraer el texto. Usa primero la herramienta de Escaner OCR de OmnisPDF y luego convierte a Word.",
+        text: "Los PDFs escaneados requieren OCR para extraer el texto. Usa primero la herramienta de Escaner OCR de PDF.it y luego convierte a Word.",
       },
     },
     {
@@ -51,7 +51,7 @@ const faqSchema = {
       name: "¿Puedo convertir PDF a Word desde mi celular?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Si. OmnisPDF funciona en navegadores moviles — sube, convierte y descarga desde iPhone o Android.",
+        text: "Si. PDF.it funciona en navegadores moviles — sube, convierte y descarga desde iPhone o Android.",
       },
     },
     {
@@ -131,7 +131,7 @@ export default function PDFaWordPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Usa la herramienta de PDF a Word de OmnisPDF para convertir archivos PDF en documentos Word editables en segundos. Sube tu PDF, convierte y descarga un archivo .docx listo para editar — sin necesidad de instalar software.
+              Usa la herramienta de PDF a Word de PDF.it para convertir archivos PDF en documentos Word editables en segundos. Sube tu PDF, convierte y descarga un archivo .docx listo para editar — sin necesidad de instalar software.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Convierte PDF a documentos Word editables online</li>
@@ -155,7 +155,7 @@ export default function PDFaWordPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Formato Preservado con Precision</h2>
               <p className="text-slate-600">
-                OmnisPDF mantiene el diseno, fuentes e imagenes del PDF original para que tu documento Word se vea profesional desde el primer momento.
+                PDF.it mantiene el diseno, fuentes e imagenes del PDF original para que tu documento Word se vea profesional desde el primer momento.
               </p>
             </div>
             <div>
@@ -173,7 +173,7 @@ export default function PDFaWordPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Convertir PDF a Word</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Haz clic en Convertir PDF a Word.",
                 "Descarga tu archivo .docx editable y abrelo en Word o Google Docs.",
               ].map((step, i) => (
@@ -218,10 +218,10 @@ export default function PDFaWordPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Como convierto un PDF a Word?", a: "Sube tu PDF a OmnisPDF, haz clic en Convertir y descarga tu documento Word editable." },
-                { q: "¿Se mantiene el formato despues de la conversion?", a: "OmnisPDF preserva el diseno, fuentes y estructura lo mejor posible. Formatos complejos pueden variar dependiendo del PDF original." },
-                { q: "¿Puedo convertir un PDF escaneado a Word?", a: "Los PDFs escaneados requieren OCR para extraer el texto. Usa primero la herramienta de Escaner OCR de OmnisPDF y luego convierte a Word." },
-                { q: "¿Puedo convertir PDF a Word desde mi celular?", a: "Si. OmnisPDF funciona en navegadores moviles — sube, convierte y descarga desde iPhone o Android." },
+                { q: "¿Como convierto un PDF a Word?", a: "Sube tu PDF a PDF.it, haz clic en Convertir y descarga tu documento Word editable." },
+                { q: "¿Se mantiene el formato despues de la conversion?", a: "PDF.it preserva el diseno, fuentes y estructura lo mejor posible. Formatos complejos pueden variar dependiendo del PDF original." },
+                { q: "¿Puedo convertir un PDF escaneado a Word?", a: "Los PDFs escaneados requieren OCR para extraer el texto. Usa primero la herramienta de Escaner OCR de PDF.it y luego convierte a Word." },
+                { q: "¿Puedo convertir PDF a Word desde mi celular?", a: "Si. PDF.it funciona en navegadores moviles — sube, convierte y descarga desde iPhone o Android." },
                 { q: "¿Es seguro subir mi PDF?", a: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." },
                 { q: "¿Cual es el tamano maximo de archivo que puedo convertir?", a: "Las cuentas gratuitas pueden subir archivos de hasta 25MB. Las cuentas Pro y Business pueden subir archivos de hasta 200MB." },
               ].map((faq, i) => (

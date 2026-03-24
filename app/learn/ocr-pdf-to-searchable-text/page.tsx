@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ScanText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "OCR a PDF to Make It Searchable (Find Text in Scanned PDFs) | OmnisPDF",
+  title: "OCR a PDF to Make It Searchable (Find Text in Scanned PDFs) | PDF.it",
   description:
     "Learn how to use OCR to convert scanned PDFs into searchable documents. Find text in image-only PDFs, copy content, and make your scanned files fully functional.",
   keywords: "ocr pdf searchable, make scanned pdf searchable, search text in scanned pdf, ocr pdf text",
@@ -23,7 +23,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I make a scanned PDF searchable?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your scanned PDF to OmnisPDF's OCR Scanner (Pro feature), select the document language, and process it. The tool adds a searchable text layer on top of the original scan. You can then use Ctrl+F to find any word in the document." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your scanned PDF to PDF.it's OCR Scanner (Pro feature), select the document language, and process it. The tool adds a searchable text layer on top of the original scan. You can then use Ctrl+F to find any word in the document." }
     },
     {
       "@type": "Question",
@@ -33,17 +33,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I OCR a PDF with multiple pages?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF's OCR Scanner processes all pages in your PDF at once. Whether your document is 1 page or 100 pages, every page gets an OCR text layer." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it's OCR Scanner processes all pages in your PDF at once. Whether your document is 1 page or 100 pages, every page gets an OCR text layer." }
     },
     {
       "@type": "Question",
       "name": "What file size limits apply for OCR?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Pro users can process PDFs up to 200MB with the OCR Scanner. If your file is larger, use OmnisPDF's Compress PDF tool first to reduce the file size, then run OCR on the compressed version." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Pro users can process PDFs up to 200MB with the OCR Scanner. If your file is larger, use PDF.it's Compress PDF tool first to reduce the file size, then run OCR on the compressed version." }
     },
     {
       "@type": "Question",
       "name": "Can I convert a searchable PDF to Word after OCR?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Once your PDF has a text layer from OCR, you can convert it to Word using OmnisPDF's PDF to Word tool (Pro). The conversion will be much more accurate because the text layer gives the converter actual text to work with." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Once your PDF has a text layer from OCR, you can convert it to Word using PDF.it's PDF to Word tool (Pro). The conversion will be much more accurate because the text layer gives the converter actual text to work with." }
     }
   ]
 }
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to OCR a PDF to Make It Searchable",
-  "description": "Convert a scanned PDF into a searchable document in 3 steps using OmnisPDF's OCR Scanner.",
+  "description": "Convert a scanned PDF into a searchable document in 3 steps using PDF.it's OCR Scanner.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Upload your scanned PDF",
-      "text": "Go to OmnisPDF's OCR Scanner tool and upload the PDF that contains scanned or image-only pages."
+      "text": "Go to PDF.it's OCR Scanner tool and upload the PDF that contains scanned or image-only pages."
     },
     {
       "@type": "HowToStep",
@@ -143,11 +143,11 @@ export default function OCRPDFToSearchableTextPage() {
                 {[
                   {
                     title: "Upload your scanned PDF",
-                    desc: "Open OmnisPDF's OCR Scanner and upload your file. The tool accepts PDFs up to 200MB for Pro users. If your file is too large, compress it first using the Compress PDF tool.",
+                    desc: "Open PDF.it's OCR Scanner and upload your file. The tool accepts PDFs up to 200MB for Pro users. If your file is too large, compress it first using the Compress PDF tool.",
                   },
                   {
                     title: "Select the document language",
-                    desc: "Choose the primary language of your document. This helps the OCR engine recognize characters more accurately. OmnisPDF supports dozens of languages including English, Spanish, French, German, and Portuguese.",
+                    desc: "Choose the primary language of your document. This helps the OCR engine recognize characters more accurately. PDF.it supports dozens of languages including English, Spanish, French, German, and Portuguese.",
                   },
                   {
                     title: "Download the searchable PDF",
@@ -284,11 +284,11 @@ export default function OCRPDFToSearchableTextPage() {
             <div className="space-y-6">
               {[
                 { q: "Why can't I search text in my scanned PDF?", a: "Scanned PDFs are image-only — they contain pictures of text, not actual text data. Your computer sees them as flat images, so Ctrl+F has nothing to search. Running OCR adds an invisible text layer that makes the content searchable." },
-                { q: "How do I make a scanned PDF searchable?", a: "Upload your scanned PDF to OmnisPDF's OCR Scanner (Pro feature), select the document language, and process it. The tool adds a searchable text layer on top of the original scan. You can then use Ctrl+F to find any word in the document." },
+                { q: "How do I make a scanned PDF searchable?", a: "Upload your scanned PDF to PDF.it's OCR Scanner (Pro feature), select the document language, and process it. The tool adds a searchable text layer on top of the original scan. You can then use Ctrl+F to find any word in the document." },
                 { q: "Will OCR change the appearance of my PDF?", a: "No. OCR adds an invisible text layer behind the visible scan image. The document looks exactly the same — but now you can search, select, and copy text from it." },
-                { q: "Can I OCR a PDF with multiple pages?", a: "Yes. OmnisPDF's OCR Scanner processes all pages in your PDF at once. Whether your document is 1 page or 100 pages, every page gets an OCR text layer." },
-                { q: "What file size limits apply for OCR?", a: "Pro users can process PDFs up to 200MB with the OCR Scanner. If your file is larger, use OmnisPDF's Compress PDF tool first to reduce the file size, then run OCR on the compressed version." },
-                { q: "Can I convert a searchable PDF to Word after OCR?", a: "Yes. Once your PDF has a text layer from OCR, you can convert it to Word using OmnisPDF's PDF to Word tool (Pro). The conversion will be much more accurate because the text layer gives the converter actual text to work with." },
+                { q: "Can I OCR a PDF with multiple pages?", a: "Yes. PDF.it's OCR Scanner processes all pages in your PDF at once. Whether your document is 1 page or 100 pages, every page gets an OCR text layer." },
+                { q: "What file size limits apply for OCR?", a: "Pro users can process PDFs up to 200MB with the OCR Scanner. If your file is larger, use PDF.it's Compress PDF tool first to reduce the file size, then run OCR on the compressed version." },
+                { q: "Can I convert a searchable PDF to Word after OCR?", a: "Yes. Once your PDF has a text layer from OCR, you can convert it to Word using PDF.it's PDF to Word tool (Pro). The conversion will be much more accurate because the text layer gives the converter actual text to work with." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

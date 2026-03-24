@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Merge, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "How to Merge PDFs in the Correct Order (No Page Mistakes) | OmnisPDF",
+  title: "How to Merge PDFs in the Correct Order (No Page Mistakes) | PDF.it",
   description:
     "Learn how to merge PDFs in the correct order every time. Tips for naming conventions, drag-and-drop sorting, and avoiding page mix-ups when combining PDFs.",
   keywords: "merge pdfs in order, combine pdfs correct order, merge pdf pages in sequence, arrange pdf before merging",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I merge PDFs in a specific order?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload all your PDFs to OmnisPDF's Merge tool, then drag and drop the files into the exact order you want. The first file in the list will appear first in the merged document. Click Merge when the order is correct." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload all your PDFs to PDF.it's Merge tool, then drag and drop the files into the exact order you want. The first file in the list will appear first in the merged document. Click Merge when the order is correct." }
     },
     {
       "@type": "Question",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I rearrange pages after merging?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. If you notice the order is wrong after merging, use OmnisPDF's Split PDF tool to extract individual pages, then merge them again in the correct order. You can also use the Reorder PDF Pages tool to rearrange pages within a single PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. If you notice the order is wrong after merging, use PDF.it's Split PDF tool to extract individual pages, then merge them again in the correct order. You can also use the Reorder PDF Pages tool to rearrange pages within a single PDF." }
     },
     {
       "@type": "Question",
@@ -37,13 +37,13 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Does OmnisPDF let me preview before merging?",
+      "name": "Does PDF.it let me preview before merging?",
       "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can see the list of uploaded files and their order before clicking Merge. Drag and drop to rearrange them until the order is exactly right, then proceed with the merge." }
     },
     {
       "@type": "Question",
       "name": "Can I merge PDFs in order on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in mobile browsers. Upload your files, rearrange them by dragging into the correct order, and merge — all from your phone's browser without installing any app." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in mobile browsers. Upload your files, rearrange them by dragging into the correct order, and merge — all from your phone's browser without installing any app." }
     }
   ]
 }
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Merge PDFs in the Correct Order",
-  "description": "Combine multiple PDFs in a specific order without page mistakes using OmnisPDF.",
+  "description": "Combine multiple PDFs in a specific order without page mistakes using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Upload and name your files logically",
-      "text": "Before uploading, rename your files with number prefixes (01-, 02-, 03-) so they sort correctly. Then upload all files to OmnisPDF's Merge tool."
+      "text": "Before uploading, rename your files with number prefixes (01-, 02-, 03-) so they sort correctly. Then upload all files to PDF.it's Merge tool."
     },
     {
       "@type": "HowToStep",
@@ -178,7 +178,7 @@ export default function MergePDFsInOrderPage() {
                     desc: "Before uploading, rename each file with a number prefix (01-, 02-, 03-). This ensures they sort correctly no matter how the tool orders them initially.",
                   },
                   {
-                    title: "Upload and rearrange in OmnisPDF",
+                    title: "Upload and rearrange in PDF.it",
                     desc: "Upload all files to the Merge PDF tool. Use drag and drop to verify the order — the first file in the list will appear first in the merged document. Move any misplaced files to the correct position.",
                   },
                   {
@@ -286,12 +286,12 @@ export default function MergePDFsInOrderPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I merge PDFs in a specific order?", a: "Upload all your PDFs to OmnisPDF's Merge tool, then drag and drop the files into the exact order you want. The first file in the list will appear first in the merged document. Click Merge when the order is correct." },
+                { q: "How do I merge PDFs in a specific order?", a: "Upload all your PDFs to PDF.it's Merge tool, then drag and drop the files into the exact order you want. The first file in the list will appear first in the merged document. Click Merge when the order is correct." },
                 { q: "Why did my merged PDF come out in the wrong order?", a: "Most merge tools process files in the order they were uploaded or alphabetically by filename. If you uploaded files in a random order without rearranging them, the pages may be out of sequence. Always check the file order before clicking Merge." },
-                { q: "Can I rearrange pages after merging?", a: "Yes. If you notice the order is wrong after merging, use OmnisPDF's Split PDF tool to extract individual pages, then merge them again in the correct order. You can also use the Reorder PDF Pages tool to rearrange pages within a single PDF." },
+                { q: "Can I rearrange pages after merging?", a: "Yes. If you notice the order is wrong after merging, use PDF.it's Split PDF tool to extract individual pages, then merge them again in the correct order. You can also use the Reorder PDF Pages tool to rearrange pages within a single PDF." },
                 { q: "How should I name my files for easy sorting?", a: "Use a number prefix like 01-, 02-, 03- at the beginning of each filename. For example: '01-cover-letter.pdf', '02-resume.pdf', '03-references.pdf'. This ensures files sort correctly in any file manager or upload tool." },
-                { q: "Does OmnisPDF let me preview before merging?", a: "Yes. You can see the list of uploaded files and their order before clicking Merge. Drag and drop to rearrange them until the order is exactly right, then proceed with the merge." },
-                { q: "Can I merge PDFs in order on my phone?", a: "Yes. OmnisPDF works in mobile browsers. Upload your files, rearrange them by dragging into the correct order, and merge — all from your phone's browser without installing any app." },
+                { q: "Does PDF.it let me preview before merging?", a: "Yes. You can see the list of uploaded files and their order before clicking Merge. Drag and drop to rearrange them until the order is exactly right, then proceed with the merge." },
+                { q: "Can I merge PDFs in order on my phone?", a: "Yes. PDF.it works in mobile browsers. Upload your files, rearrange them by dragging into the correct order, and merge — all from your phone's browser without installing any app." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

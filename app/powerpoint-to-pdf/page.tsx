@@ -6,9 +6,9 @@ import { Presentation, CheckCircle, Zap, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "PowerPoint to PDF Converter — Fast & No Login Required | OmnisPDF",
+  title: "PowerPoint to PDF Converter — Fast & No Login Required | PDF.it",
   description:
-    "Convert PPT to PDF in seconds with OmnisPDF. Turn PPT/PPTX slides into a clean, shareable PDF—fast, simple, browser-based.",
+    "Convert PPT to PDF in seconds with PDF.it. Turn PPT/PPTX slides into a clean, shareable PDF—fast, simple, browser-based.",
 }
 
 const faqSchema = {
@@ -17,8 +17,8 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Can OmnisPDF convert both PPT and PPTX to PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF supports both .ppt and .pptx file formats." }
+      "name": "Can PDF.it convert both PPT and PPTX to PDF?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it supports both .ppt and .pptx file formats." }
     },
     {
       "@type": "Question",
@@ -33,7 +33,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I convert PowerPoint to PDF on mobile?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in mobile browsers — upload your presentation and download the PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in mobile browsers — upload your presentation and download the PDF." }
     },
     {
       "@type": "Question",
@@ -67,7 +67,7 @@ export default function PowerPointToPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convert PPT to PDF Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Convert PPT/PPTX to PDF with OmnisPDF — ideal for sharing slides, sending decks by email, and printing handouts.
+                Convert PPT/PPTX to PDF with PDF.it — ideal for sharing slides, sending decks by email, and printing handouts.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-orange-500" /><span>Slides Preserved</span></div>
@@ -91,7 +91,7 @@ export default function PowerPointToPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use OmnisPDF's PPT to PDF converter to turn a PowerPoint (PPT/PPTX) into a PDF in seconds. Export slides into a format that's easy to view anywhere — perfect for email, printing, and uploading to portals.
+              Use PDF.it's PPT to PDF converter to turn a PowerPoint (PPT/PPTX) into a PDF in seconds. Export slides into a format that's easy to view anywhere — perfect for email, printing, and uploading to portals.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Convert PowerPoint to PDF online in seconds</li>
@@ -121,7 +121,7 @@ export default function PowerPointToPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Keep Slide Layout Clean</h2>
               <p className="text-slate-600">
-                OmnisPDF converts slides into PDF pages so your text, images, and charts remain easy to read and share. Note: animations and transitions become static in PDF format.
+                PDF.it converts slides into PDF pages so your text, images, and charts remain easy to read and share. Note: animations and transitions become static in PDF format.
               </p>
             </div>
           </div>
@@ -133,7 +133,7 @@ export default function PowerPointToPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Convert PPT to PDF</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PPT/PPTX file into OmnisPDF.",
+                "Upload or drag and drop your PPT/PPTX file into PDF.it.",
                 "Click Convert PPT to PDF.",
                 "Download your PDF.",
               ].map((step, i) => (
@@ -179,8 +179,8 @@ export default function PowerPointToPDFPage() {
             <div className="space-y-6">
               {[
                 {
-                  q: "Can OmnisPDF convert both PPT and PPTX to PDF?",
-                  a: "Yes. OmnisPDF supports both .ppt and .pptx file formats.",
+                  q: "Can PDF.it convert both PPT and PPTX to PDF?",
+                  a: "Yes. PDF.it supports both .ppt and .pptx file formats.",
                 },
                 {
                   q: "Will the PDF keep my slide layout and design?",
@@ -192,7 +192,7 @@ export default function PowerPointToPDFPage() {
                 },
                 {
                   q: "Can I convert PowerPoint to PDF on mobile?",
-                  a: "Yes. OmnisPDF works in mobile browsers — upload your presentation and download the PDF.",
+                  a: "Yes. PDF.it works in mobile browsers — upload your presentation and download the PDF.",
                 },
                 {
                   q: "Is it safe to upload my PowerPoint file?",

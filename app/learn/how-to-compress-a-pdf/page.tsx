@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileArchiveIcon as Compress, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "How to Compress a PDF (Reduce File Size Fast) | OmnisPDF",
+  title: "How to Compress a PDF (Reduce File Size Fast) | PDF.it",
   description:
     "Learn how to compress a PDF and reduce file size in seconds. Step-by-step guide with tips for email, uploads, and scanned documents — free, online, no software needed.",
   keywords: "compress pdf, reduce pdf file size, how to compress a pdf, shrink pdf, make pdf smaller",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I compress a PDF for free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF, choose a compression level (Light, Medium, or Extreme), click Compress, and download the smaller file. No signup required for your first 3 files." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it, choose a compression level (Light, Medium, or Extreme), click Compress, and download the smaller file. No signup required for your first 3 files." }
     },
     {
       "@type": "Question",
@@ -33,7 +33,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I compress a PDF on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in any mobile browser — upload your PDF, compress it, and download the result directly on iPhone or Android. No app needed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in any mobile browser — upload your PDF, compress it, and download the result directly on iPhone or Android. No app needed." }
     },
     {
       "@type": "Question",
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Compress a PDF Online",
-  "description": "Reduce your PDF file size in 3 simple steps using OmnisPDF.",
+  "description": "Reduce your PDF file size in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Upload your PDF",
-      "text": "Go to OmnisPDF's Compress PDF tool and upload your file by clicking or dragging it into the upload area."
+      "text": "Go to PDF.it's Compress PDF tool and upload your file by clicking or dragging it into the upload area."
     },
     {
       "@type": "HowToStep",
@@ -301,10 +301,10 @@ export default function HowToCompressPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I compress a PDF for free?", a: "Upload your PDF to OmnisPDF, choose a compression level (Light, Medium, or Extreme), click Compress, and download the smaller file. No signup required for your first 3 files." },
+                { q: "How do I compress a PDF for free?", a: "Upload your PDF to PDF.it, choose a compression level (Light, Medium, or Extreme), click Compress, and download the smaller file. No signup required for your first 3 files." },
                 { q: "Will compressing a PDF reduce the quality?", a: "Light compression keeps quality nearly identical to the original. Medium balances size and quality. Extreme compression reduces file size the most but may slightly reduce image quality. Text always stays sharp and readable." },
                 { q: "Why is my PDF so large?", a: "Large PDFs are usually caused by embedded high-resolution images, scanned pages, or embedded fonts. Scanned documents are the biggest culprit — a single scanned page can be 2-5MB." },
-                { q: "Can I compress a PDF on my phone?", a: "Yes. OmnisPDF works in any mobile browser — upload your PDF, compress it, and download the result directly on iPhone or Android. No app needed." },
+                { q: "Can I compress a PDF on my phone?", a: "Yes. PDF.it works in any mobile browser — upload your PDF, compress it, and download the result directly on iPhone or Android. No app needed." },
                 { q: "How small can I make a PDF?", a: "It depends on the content. A 10MB scanned PDF might compress to 1-3MB. A text-heavy 5MB PDF might drop to 500KB. Extreme compression gives the maximum reduction." },
                 { q: "What's the difference between Light, Medium, and Extreme compression?", a: "Light keeps images at high quality (smallest size reduction). Medium balances quality and size (good for most uses). Extreme aggressively reduces image quality for maximum file size reduction." },
               ].map((faq, i) => (

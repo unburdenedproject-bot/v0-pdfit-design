@@ -5,24 +5,24 @@ import Link from "next/link"
 import { FileSpreadsheet, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Convertir Excel a PDF en Mac (flujo de trabajo rapido y confiable) | OmnisPDF",
-  description: "Aprende como convertir Excel a PDF en Mac usando Excel para Mac, Preview y OmnisPDF en linea. Cubre problemas especificos de Mac como diferencias de fuentes, controladores de impresion y resultados consistentes.",
+  title: "Convertir Excel a PDF en Mac (flujo de trabajo rapido y confiable) | PDF.it",
+  description: "Aprende como convertir Excel a PDF en Mac usando Excel para Mac, Preview y PDF.it en linea. Cubre problemas especificos de Mac como diferencias de fuentes, controladores de impresion y resultados consistentes.",
   keywords: "excel a pdf mac, convertir excel a pdf en mac, xlsx a pdf mac, excel para mac pdf, mac hoja de calculo a pdf",
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-  { "@type": "Question", "name": "Como convierto Excel a PDF en un Mac?", "acceptedAnswer": { "@type": "Answer", "text": "Tienes tres opciones: (1) En Excel para Mac, ve a Archivo > Guardar como y elige PDF. (2) Usa el dialogo de Impresion (Cmd+P) y haz clic en 'Guardar como PDF' en la esquina inferior izquierda. (3) Sube tu archivo Excel al convertidor en linea de OmnisPDF para los resultados mas consistentes." } },
-  { "@type": "Question", "name": "Por que mi PDF de Excel se ve diferente en Mac que en Windows?", "acceptedAnswer": { "@type": "Answer", "text": "Mac y Windows usan diferentes motores de renderizado de fuentes y controladores de impresion. Las fuentes pueden aparecer ligeramente mas grandes o mas pequenas, causando que los anchos de columna se desplacen. Usar un convertidor en linea como OmnisPDF produce resultados consistentes independientemente de tu sistema operativo." } },
+  { "@type": "Question", "name": "Como convierto Excel a PDF en un Mac?", "acceptedAnswer": { "@type": "Answer", "text": "Tienes tres opciones: (1) En Excel para Mac, ve a Archivo > Guardar como y elige PDF. (2) Usa el dialogo de Impresion (Cmd+P) y haz clic en 'Guardar como PDF' en la esquina inferior izquierda. (3) Sube tu archivo Excel al convertidor en linea de PDF.it para los resultados mas consistentes." } },
+  { "@type": "Question", "name": "Por que mi PDF de Excel se ve diferente en Mac que en Windows?", "acceptedAnswer": { "@type": "Answer", "text": "Mac y Windows usan diferentes motores de renderizado de fuentes y controladores de impresion. Las fuentes pueden aparecer ligeramente mas grandes o mas pequenas, causando que los anchos de columna se desplacen. Usar un convertidor en linea como PDF.it produce resultados consistentes independientemente de tu sistema operativo." } },
   { "@type": "Question", "name": "Excel para Mac tiene las mismas configuraciones de impresion que Windows?", "acceptedAnswer": { "@type": "Answer", "text": "La mayoria de las configuraciones son iguales (area de impresion, orientacion, margenes, escala) pero las ubicaciones del menu difieren ligeramente. En Mac, las configuraciones de Diseno de pagina estan bajo la pestana Diseno de pagina, y los Titulos de impresion estan bajo Archivo > Configurar pagina." } },
-  { "@type": "Question", "name": "Puedo convertir Excel a PDF en Mac sin Microsoft Excel instalado?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Sube tu archivo .xlsx a la herramienta Excel a PDF de OmnisPDF: funciona en Safari, Chrome o cualquier navegador de Mac. No se necesita instalacion de software. Alternativamente, puedes abrir archivos .xlsx en Numbers (la app gratuita de hojas de calculo de Apple) y exportar a PDF desde alli." } },
-  { "@type": "Question", "name": "Por que mis fuentes son diferentes en el PDF generado en Mac?", "acceptedAnswer": { "@type": "Answer", "text": "Mac no incluye algunas fuentes estandar de Windows (como Calibri antes de macOS Ventura). Si Excel para Mac sustituye una fuente, los anchos de columna y el espaciado cambian. Para evitar esto, usa fuentes multiplataforma (Arial, Times New Roman, Verdana) o convierte en linea con OmnisPDF." } },
-  { "@type": "Question", "name": "Como obtengo resultados consistentes de Excel a PDF entre Mac y Windows?", "acceptedAnswer": { "@type": "Answer", "text": "Usa un convertidor en linea como OmnisPDF. Procesa el archivo del lado del servidor con fuentes y renderizado consistentes, asi que el resultado se ve igual si lo subes desde Mac, Windows o un telefono." } }
+  { "@type": "Question", "name": "Puedo convertir Excel a PDF en Mac sin Microsoft Excel instalado?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Sube tu archivo .xlsx a la herramienta Excel a PDF de PDF.it: funciona en Safari, Chrome o cualquier navegador de Mac. No se necesita instalacion de software. Alternativamente, puedes abrir archivos .xlsx en Numbers (la app gratuita de hojas de calculo de Apple) y exportar a PDF desde alli." } },
+  { "@type": "Question", "name": "Por que mis fuentes son diferentes en el PDF generado en Mac?", "acceptedAnswer": { "@type": "Answer", "text": "Mac no incluye algunas fuentes estandar de Windows (como Calibri antes de macOS Ventura). Si Excel para Mac sustituye una fuente, los anchos de columna y el espaciado cambian. Para evitar esto, usa fuentes multiplataforma (Arial, Times New Roman, Verdana) o convierte en linea con PDF.it." } },
+  { "@type": "Question", "name": "Como obtengo resultados consistentes de Excel a PDF entre Mac y Windows?", "acceptedAnswer": { "@type": "Answer", "text": "Usa un convertidor en linea como PDF.it. Procesa el archivo del lado del servidor con fuentes y renderizado consistentes, asi que el resultado se ve igual si lo subes desde Mac, Windows o un telefono." } }
 ] }
 
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como convertir Excel a PDF en Mac", "description": "Convierte tu hoja de calculo Excel a PDF en Mac usando el metodo mas confiable.", "step": [
   { "@type": "HowToStep", "name": "Prepara tu hoja de calculo", "text": "Abre tu archivo Excel en Mac. Establece el area de impresion (Diseno de pagina > Area de impresion > Establecer area de impresion), elige orientacion y ajusta margenes. Usa Vista previa de impresion (Cmd+P) para verificar el diseno." },
-  { "@type": "HowToStep", "name": "Sube a OmnisPDF", "text": "Abre Safari o Chrome, ve a la herramienta Excel a PDF de OmnisPDF y sube tu archivo .xlsx. Esto asegura resultados consistentes independientemente de las fuentes o controladores de impresion de tu Mac." },
-  { "@type": "HowToStep", "name": "Descarga tu PDF", "text": "Haz clic en Convertir y descarga el PDF. El archivo se abre en Preview por defecto. Si necesitas reducir el tamano, usa la herramienta Comprimir PDF de OmnisPDF." }
+  { "@type": "HowToStep", "name": "Sube a PDF.it", "text": "Abre Safari o Chrome, ve a la herramienta Excel a PDF de PDF.it y sube tu archivo .xlsx. Esto asegura resultados consistentes independientemente de las fuentes o controladores de impresion de tu Mac." },
+  { "@type": "HowToStep", "name": "Descarga tu PDF", "text": "Haz clic en Convertir y descarga el PDF. El archivo se abre en Preview por defecto. Si necesitas reducir el tamano, usa la herramienta Comprimir PDF de PDF.it." }
 ] }
 
 export default function ExcelAPdfEnMacPage() {
@@ -79,10 +79,10 @@ export default function ExcelAPdfEnMacPage() {
                   <p className="text-slate-600 mt-2"><strong>Pros:</strong> Funciona con cualquier app de hojas de calculo (Numbers, Google Sheets en navegador). <strong>Contras:</strong> Usa el controlador de impresion de Mac, que puede producir resultados diferentes a Windows.</p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">Metodo 3: Convertidor en linea OmnisPDF (recomendado)</h3>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">Metodo 3: Convertidor en linea PDF.it (recomendado)</h3>
                   <p className="text-slate-600 mb-2">Para los resultados mas consistentes:</p>
                   <ol className="space-y-1 text-slate-700 list-decimal list-inside ml-2">
-                    <li>Abre Safari o Chrome y ve a la <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">herramienta Excel a PDF de OmnisPDF</Link></li>
+                    <li>Abre Safari o Chrome y ve a la <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">herramienta Excel a PDF de PDF.it</Link></li>
                     <li>Sube tu archivo .xlsx</li>
                     <li>Haz clic en Convertir y descarga el PDF</li>
                   </ol>
@@ -97,7 +97,7 @@ export default function ExcelAPdfEnMacPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Sustitucion de fuentes</h3>
                   <p className="text-slate-600 mb-2">Si tu archivo Excel fue creado en Windows usando fuentes como Calibri o Cambria, Mac puede sustituir fuentes diferentes. Esto cambia los anchos de columna y puede empujar datos fuera de la pagina.</p>
-                  <p className="text-slate-700"><strong>Solucion:</strong> Usa fuentes multiplataforma (Arial, Times New Roman, Verdana) en tu hoja de calculo. O convierte en linea con <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">OmnisPDF</Link>, que usa su propia biblioteca de fuentes para renderizado consistente.</p>
+                  <p className="text-slate-700"><strong>Solucion:</strong> Usa fuentes multiplataforma (Arial, Times New Roman, Verdana) en tu hoja de calculo. O convierte en linea con <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">PDF.it</Link>, que usa su propia biblioteca de fuentes para renderizado consistente.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Saltos de pagina diferentes</h3>
@@ -107,7 +107,7 @@ export default function ExcelAPdfEnMacPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Funciones faltantes en Excel para Mac</h3>
                   <p className="text-slate-600 mb-2">Algunas funciones avanzadas de Excel se comportan diferente en Mac, particularmente graficos complejos, tablas dinamicas con formato personalizado y macros VBA.</p>
-                  <p className="text-slate-700"><strong>Solucion:</strong> Para hojas de calculo complejas, sube al <Link href="/es/office-a-pdf" className="text-orange-600 hover:underline">convertidor Office a PDF de OmnisPDF</Link>, que maneja estas funciones del lado del servidor.</p>
+                  <p className="text-slate-700"><strong>Solucion:</strong> Para hojas de calculo complejas, sube al <Link href="/es/office-a-pdf" className="text-orange-600 hover:underline">convertidor Office a PDF de PDF.it</Link>, que maneja estas funciones del lado del servidor.</p>
                 </div>
               </div>
             </section>
@@ -118,7 +118,7 @@ export default function ExcelAPdfEnMacPage() {
                 <li>&#10003; <strong>Usa fuentes estandar</strong>: Arial, Times New Roman y Verdana son opciones seguras que se renderizan identicamente en ambas plataformas.</li>
                 <li>&#10003; <strong>Establece anchos de columna explicitos</strong>: no dependas del ajuste automatico, que calcula diferente en cada plataforma.</li>
                 <li>&#10003; <strong>Define el area de impresion</strong>: esto elimina ambiguedad sobre que celdas incluir en el PDF.</li>
-                <li>&#10003; <strong>Usa un convertidor en linea</strong>: <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">OmnisPDF</Link> procesa archivos del lado del servidor, produciendo resultados identicos sin importar desde donde subas.</li>
+                <li>&#10003; <strong>Usa un convertidor en linea</strong>: <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">PDF.it</Link> procesa archivos del lado del servidor, produciendo resultados identicos sin importar desde donde subas.</li>
                 <li>&#10003; <strong>Prueba con Vista previa de impresion</strong>: siempre revisa Cmd+P antes de convertir localmente para detectar problemas de diseno temprano.</li>
               </ul>
             </section>
@@ -127,7 +127,7 @@ export default function ExcelAPdfEnMacPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">No tienes Excel instalado en tu Mac?</h2>
               <p className="text-slate-600 mb-4">No necesitas Microsoft Excel para convertir archivos .xlsx a PDF. Aqui estan tus opciones:</p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>OmnisPDF en linea</strong>: sube el archivo .xlsx directamente en <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">Excel a PDF</Link>. Sin software necesario.</li>
+                <li>&#10003; <strong>PDF.it en linea</strong>: sube el archivo .xlsx directamente en <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">Excel a PDF</Link>. Sin software necesario.</li>
                 <li>&#10003; <strong>Apple Numbers</strong>: gratis en cada Mac. Abre el archivo .xlsx en Numbers, luego ve a Archivo &gt; Exportar a &gt; PDF.</li>
                 <li>&#10003; <strong>Google Sheets</strong>: sube a Google Drive, abre en Sheets, luego Archivo &gt; Descargar &gt; PDF. El formato puede desplazarse ligeramente.</li>
               </ul>

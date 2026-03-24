@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileDown, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Comprimir un PDF con Imágenes (Fotos, Escaneos, Gráficos) | OmnisPDF",
+  title: "Comprimir un PDF con Imágenes (Fotos, Escaneos, Gráficos) | PDF.it",
   description:
     "Aprende cómo comprimir PDFs con muchas imágenes — álbumes de fotos, documentos escaneados e informes con gráficos. Reduce el tamaño del archivo manteniendo las imágenes claras y legibles.",
   keywords: "comprimir pdf con imágenes, reducir tamaño imagen pdf, comprimir pdf escaneado, pdf con fotos muy grande",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo comprimo un PDF escaneado?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Los PDFs escaneados se comprimen muy bien porque son mayormente imágenes. Sube a OmnisPDF, elige compresión Media o Extrema, y típicamente puedes reducir un documento escaneado de 20MB a 2-5MB manteniendo el texto legible." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Los PDFs escaneados se comprimen muy bien porque son mayormente imágenes. Sube a PDF.it, elige compresión Media o Extrema, y típicamente puedes reducir un documento escaneado de 20MB a 2-5MB manteniendo el texto legible." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo extraer imágenes antes de comprimir para ahorrar más espacio?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Usa la herramienta Extraer Imágenes de OmnisPDF para sacar las imágenes sobredimensionadas, redimensiónalas o comprímelas por separado, luego reconstruye el PDF. Esto te da control preciso sobre qué imágenes se comprimen y cuánto." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Usa la herramienta Extraer Imágenes de PDF.it para sacar las imágenes sobredimensionadas, redimensiónalas o comprímelas por separado, luego reconstruye el PDF. Esto te da control preciso sobre qué imágenes se comprimen y cuánto." }
     }
   ]
 }
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Cómo Comprimir un PDF con Imágenes",
-  "description": "Reduce el tamaño de un PDF con muchas imágenes en 3 simples pasos usando OmnisPDF.",
+  "description": "Reduce el tamaño de un PDF con muchas imágenes en 3 simples pasos usando PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Sube tu PDF con imágenes",
-      "text": "Ve a la herramienta Comprimir PDF de OmnisPDF y sube tu archivo que contiene fotos, escaneos o gráficos."
+      "text": "Ve a la herramienta Comprimir PDF de PDF.it y sube tu archivo que contiene fotos, escaneos o gráficos."
     },
     {
       "@type": "HowToStep",
@@ -220,10 +220,10 @@ export default function ComprimirPDFConImagenesPage() {
               {[
                 { q: "¿Por qué los PDFs con imágenes son tan grandes?", a: "Las imágenes son el tipo de contenido más pesado en un PDF. Una sola foto de alta resolución puede pesar 3-10MB. Las páginas escaneadas se almacenan como imágenes de página completa a 200-400 DPI, haciendo que cada página pese 2-5MB. Los PDFs solo de texto son diminutos en comparación." },
                 { q: "¿Puedo comprimir un PDF con fotos sin arruinarlas?", a: "Sí. La compresión Ligera mantiene las fotos en su resolución original. La compresión Media reduce ligeramente la resolución pero sigue siendo excelente para visualización en pantalla. Solo la compresión Extrema reduce visiblemente la calidad de las fotos." },
-                { q: "¿Cómo comprimo un PDF escaneado?", a: "Los PDFs escaneados se comprimen muy bien porque son mayormente imágenes. Sube a OmnisPDF, elige compresión Media o Extrema, y típicamente puedes reducir un documento escaneado de 20MB a 2-5MB manteniendo el texto legible." },
+                { q: "¿Cómo comprimo un PDF escaneado?", a: "Los PDFs escaneados se comprimen muy bien porque son mayormente imágenes. Sube a PDF.it, elige compresión Media o Extrema, y típicamente puedes reducir un documento escaneado de 20MB a 2-5MB manteniendo el texto legible." },
                 { q: "¿Comprimir eliminará mis imágenes del PDF?", a: "No. La compresión reduce la resolución y el tamaño de archivo de las imágenes, pero nunca las elimina. Todas tus fotos, gráficos y elementos visuales permanecen en el documento — solo ocupan menos espacio." },
                 { q: "¿Qué nivel de compresión es mejor para PDFs con fotos?", a: "Para compartir en pantalla: Media da el mejor equilibrio. Para impresión: usa Ligera para preservar la resolución completa. Para límites estrictos de carga: Extrema obtiene el archivo más pequeño, pero las fotos pueden perder algo de detalle." },
-                { q: "¿Puedo extraer imágenes antes de comprimir para ahorrar más espacio?", a: "Sí. Usa la herramienta Extraer Imágenes de OmnisPDF para sacar las imágenes sobredimensionadas, redimensiónalas o comprímelas por separado, luego reconstruye el PDF. Esto te da control preciso sobre qué imágenes se comprimen." },
+                { q: "¿Puedo extraer imágenes antes de comprimir para ahorrar más espacio?", a: "Sí. Usa la herramienta Extraer Imágenes de PDF.it para sacar las imágenes sobredimensionadas, redimensiónalas o comprímelas por separado, luego reconstruye el PDF. Esto te da control preciso sobre qué imágenes se comprimen." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

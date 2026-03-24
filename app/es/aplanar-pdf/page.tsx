@@ -6,9 +6,9 @@ import { Layers, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Aplanar PDF Online — Bloquear Formularios y Anotaciones | OmnisPDF",
+  title: "Aplanar PDF Online — Bloquear Formularios y Anotaciones | PDF.it",
   description:
-    "Aplana archivos PDF con OmnisPDF. Bloquea campos de formulario, anotaciones y capas en un PDF plano y no editable — rápido, desde tu navegador, sin registro.",
+    "Aplana archivos PDF con PDF.it. Bloquea campos de formulario, anotaciones y capas en un PDF plano y no editable — rápido, desde tu navegador, sin registro.",
   alternates: {
     languages: {
       en: "/flatten-pdf",
@@ -44,7 +44,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo aplanar un PDF desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en navegadores móviles — sube, aplana y descarga desde tu iPhone o Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube, aplana y descarga desde tu iPhone o Android." }
     },
     {
       "@type": "Question",
@@ -139,7 +139,7 @@ export default function AplanarPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Aplanar un PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Haz clic en Aplanar PDF — todos los campos y anotaciones se fusionan en la página.",
                 "Descarga tu PDF aplanado y no editable.",
               ].map((step, i) => (
@@ -188,7 +188,7 @@ export default function AplanarPDFPage() {
                 { q: "¿Cuándo debo aplanar un PDF?", a: "Aplana un PDF antes de enviar formularios, compartir documentos firmados, archivar registros, o cuando el destinatario ve campos en blanco. Aplanar asegura que el contenido quede bloqueado y visible." },
                 { q: "¿Aplanar cambiará cómo se ve mi PDF?", a: "No. La apariencia visual se mantiene igual. Aplanar solo elimina la capacidad de editar campos de formulario, anotaciones y elementos interactivos." },
                 { q: "¿Puedo aplanar un PDF con campos de formulario llenos?", a: "Sí. Todos los datos ingresados se preservan y se convierten en parte del contenido de la página. Los campos simplemente ya no se pueden editar." },
-                { q: "¿Puedo aplanar un PDF desde mi celular?", a: "Sí. OmnisPDF funciona en navegadores móviles — sube, aplana y descarga desde tu iPhone o Android." },
+                { q: "¿Puedo aplanar un PDF desde mi celular?", a: "Sí. PDF.it funciona en navegadores móviles — sube, aplana y descarga desde tu iPhone o Android." },
                 { q: "¿Es gratis aplanar un PDF?", a: "Sí. Las cuentas gratuitas tienen 10 conversiones por día. Las cuentas Pro tienen uso ilimitado." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

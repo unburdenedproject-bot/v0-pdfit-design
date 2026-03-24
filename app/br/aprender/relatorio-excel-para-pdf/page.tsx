@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileSpreadsheet, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Relatorio Excel para PDF (Profissional e Bem Formatado) | OmnisPDF",
+  title: "Relatorio Excel para PDF (Profissional e Bem Formatado) | PDF.it",
   description:
     "Aprenda como converter relatorios Excel para PDF com formatacao profissional. Cabecalhos, rodapes, graficos, margens e layout perfeitos para apresentacao.",
   keywords: "relatorio excel para pdf, converter relatorio excel pdf, excel pdf profissional, planilha relatorio pdf",
@@ -18,7 +18,7 @@ const faqSchema = {
     { "@type": "Question", "name": "Como criar um relatorio profissional em PDF a partir do Excel?", "acceptedAnswer": { "@type": "Answer", "text": "Configure cabecalhos e rodapes, defina margens adequadas, use Configurar Pagina para ajustar orientacao e escala, e converta para PDF. O resultado sera um documento profissional pronto para apresentacao." } },
     { "@type": "Question", "name": "Como incluir graficos no PDF do relatorio?", "acceptedAnswer": { "@type": "Answer", "text": "Certifique-se de que os graficos estao dentro da area de impressao. No Excel, use Visualizar > Quebra de Pagina para verificar. Graficos fora da area de impressao nao aparecerao no PDF." } },
     { "@type": "Question", "name": "Como numerar paginas no relatorio PDF?", "acceptedAnswer": { "@type": "Answer", "text": "No Excel, va em Inserir > Cabecalho e Rodape e adicione numero de pagina no rodape. Isso sera mantido na conversao para PDF." } },
-    { "@type": "Question", "name": "Posso converter varias abas de relatorio em um unico PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. No Excel, selecione todas as abas desejadas (Ctrl+clique) antes de salvar como PDF. No OmnisPDF, faca upload do arquivo e todas as abas serao incluidas." } },
+    { "@type": "Question", "name": "Posso converter varias abas de relatorio em um unico PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. No Excel, selecione todas as abas desejadas (Ctrl+clique) antes de salvar como PDF. No PDF.it, faca upload do arquivo e todas as abas serao incluidas." } },
   ]
 }
 
@@ -30,7 +30,7 @@ const howToSchema = {
   "step": [
     { "@type": "HowToStep", "name": "Configure o layout", "text": "Defina orientacao, margens, cabecalhos/rodapes e area de impressao no Excel." },
     { "@type": "HowToStep", "name": "Ajuste a escala", "text": "Use Configurar Pagina para ajustar a planilha a largura da pagina sem cortar colunas." },
-    { "@type": "HowToStep", "name": "Converta para PDF", "text": "Salve como PDF no Excel ou faca upload no OmnisPDF para conversao online." }
+    { "@type": "HowToStep", "name": "Converta para PDF", "text": "Salve como PDF no Excel ou faca upload no PDF.it para conversao online." }
   ]
 }
 
@@ -109,7 +109,7 @@ export default function RelatorioExcelParaPDFPage() {
               <p className="text-slate-600 mb-4">Com o relatorio preparado, voce tem duas opcoes:</p>
               <div className="space-y-6">
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">Opcao 1: No Excel</h3><p className="text-slate-600">Arquivo &gt; Salvar como &gt; PDF. Ou Arquivo &gt; Imprimir &gt; Impressora: Microsoft Print to PDF (Windows) ou Salvar como PDF (Mac).</p></div>
-                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Opcao 2: OmnisPDF Online</h3><p className="text-slate-600">Faca upload do .xlsx no <Link href="/br/excel-para-pdf" className="text-orange-600 hover:underline">Excel para PDF</Link> do OmnisPDF. Funciona em qualquer navegador, sem necessidade de ter Excel instalado.</p></div>
+                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Opcao 2: PDF.it Online</h3><p className="text-slate-600">Faca upload do .xlsx no <Link href="/br/excel-para-pdf" className="text-orange-600 hover:underline">Excel para PDF</Link> do PDF.it. Funciona em qualquer navegador, sem necessidade de ter Excel instalado.</p></div>
               </div>
             </section>
 

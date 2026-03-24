@@ -6,9 +6,9 @@ import { Merge, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Combine PDF Files Online — Merge Multiple PDFs Into One | OmnisPDF",
+  title: "Combine PDF Files Online — Merge Multiple PDFs Into One | PDF.it",
   description:
-    "Combine multiple PDF files into one document with OmnisPDF. Upload your PDFs, arrange them in order, and download a single combined file — fast, free, and browser-based.",
+    "Combine multiple PDF files into one document with PDF.it. Upload your PDFs, arrange them in order, and download a single combined file — fast, free, and browser-based.",
 }
 
 const faqSchema = {
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I combine PDF files online?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF files to OmnisPDF, arrange them in your preferred order, and click Combine. Your merged PDF will be ready to download in seconds — no software installation needed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF files to PDF.it, arrange them in your preferred order, and click Combine. Your merged PDF will be ready to download in seconds — no software installation needed." }
     },
     {
       "@type": "Question",
@@ -33,12 +33,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Will combining PDFs reduce the quality?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF combines your PDFs without re-compressing or altering the content. Every page retains its original quality, fonts, and formatting." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it combines your PDFs without re-compressing or altering the content. Every page retains its original quality, fonts, and formatting." }
     },
     {
       "@type": "Question",
       "name": "Can I combine PDFs on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in any mobile browser — upload your PDFs, combine them, and download the result on iPhone or Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in any mobile browser — upload your PDFs, combine them, and download the result on iPhone or Android." }
     },
     {
       "@type": "Question",
@@ -91,7 +91,7 @@ export default function CombinePDFFilesPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Need to combine multiple PDF files into one? OmnisPDF makes it simple. Upload your documents, arrange them in the right order, and download a single combined PDF — perfect for reports, applications, project submissions, and more.
+              Need to combine multiple PDF files into one? PDF.it makes it simple. Upload your documents, arrange them in the right order, and download a single combined PDF — perfect for reports, applications, project submissions, and more.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Combine any number of PDF files into one document</li>
@@ -121,7 +121,7 @@ export default function CombinePDFFilesPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Combine and Compress in One Workflow</h2>
               <p className="text-slate-600">
-                After combining your PDFs, the resulting file may be too large for email or upload portals. Use OmnisPDF's Compress PDF tool to reduce the combined file size without losing quality.
+                After combining your PDFs, the resulting file may be too large for email or upload portals. Use PDF.it's Compress PDF tool to reduce the combined file size without losing quality.
               </p>
             </div>
           </div>
@@ -133,7 +133,7 @@ export default function CombinePDFFilesPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Combine PDF Files Online</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PDF files into OmnisPDF.",
+                "Upload or drag and drop your PDF files into PDF.it.",
                 "Arrange the files in your preferred order.",
                 "Click Combine and download your single merged PDF.",
               ].map((step, i) => (
@@ -178,11 +178,11 @@ export default function CombinePDFFilesPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I combine PDF files online?", a: "Upload your PDF files to OmnisPDF, arrange them in your preferred order, and click Combine. Your merged PDF will be ready to download in seconds — no software installation needed." },
+                { q: "How do I combine PDF files online?", a: "Upload your PDF files to PDF.it, arrange them in your preferred order, and click Combine. Your merged PDF will be ready to download in seconds — no software installation needed." },
                 { q: "Is there a limit to how many PDFs I can combine?", a: "Free users can combine files one at a time. Pro users get batch processing to combine multiple PDFs at once, with files up to 200MB each." },
                 { q: "Can I control the order of combined PDFs?", a: "Yes. After uploading your files, you can drag and drop them into any order before combining. The final PDF follows the exact sequence you set." },
-                { q: "Will combining PDFs reduce the quality?", a: "No. OmnisPDF combines your PDFs without re-compressing or altering the content. Every page retains its original quality, fonts, and formatting." },
-                { q: "Can I combine PDFs on my phone?", a: "Yes. OmnisPDF works in any mobile browser — upload your PDFs, combine them, and download the result on iPhone or Android." },
+                { q: "Will combining PDFs reduce the quality?", a: "No. PDF.it combines your PDFs without re-compressing or altering the content. Every page retains its original quality, fonts, and formatting." },
+                { q: "Can I combine PDFs on my phone?", a: "Yes. PDF.it works in any mobile browser — upload your PDFs, combine them, and download the result on iPhone or Android." },
                 { q: "Do I need to create an account to combine PDFs?", a: "No account is needed for basic use. Free users get up to 3 anonymous conversions per day, then a free account unlocks up to 10 conversions daily." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

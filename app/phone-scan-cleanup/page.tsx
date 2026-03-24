@@ -6,7 +6,7 @@ import { PhoneScanCleanupInterface } from "@/components/phone-scan-cleanup-inter
 import { Camera, Zap, Shield, ScanLine, FileText, Merge, RotateCw, Scissors, Lock } from "lucide-react"
 
 export const metadata = {
-  title: "Phone Scan Cleanup — Turn Phone Photos into Clean PDFs | OmnisPDF",
+  title: "Phone Scan Cleanup — Turn Phone Photos into Clean PDFs | PDF.it",
   description:
     "Upload a phone photo of a document and get a clean, professional PDF. Auto-straighten, remove shadows, boost contrast. Black & white or color cleanup. Free online tool.",
 }

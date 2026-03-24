@@ -5,7 +5,7 @@ import Link from "next/link"
 import { QrCode, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Codigo QR para WiFi (Conecte Sem Digitar Senha) | OmnisPDF",
+  title: "Codigo QR para WiFi (Conecte Sem Digitar Senha) | PDF.it",
   description:
     "Crie um codigo QR para WiFi e permita que visitantes se conectem a sua rede apenas escaneando. Sem digitar senhas longas — perfeito para restaurantes, hoteis e escritorios.",
   keywords: "codigo qr wifi, qr code wifi, compartilhar wifi qr, qr wifi senha automatica",
@@ -28,7 +28,7 @@ const howToSchema = {
   "name": "Como Criar um Codigo QR para WiFi",
   "description": "Permita que visitantes se conectem ao WiFi escaneando um QR code.",
   "step": [
-    { "@type": "HowToStep", "name": "Selecione tipo WiFi", "text": "No gerador de QR do OmnisPDF, selecione o tipo 'WiFi'." },
+    { "@type": "HowToStep", "name": "Selecione tipo WiFi", "text": "No gerador de QR do PDF.it, selecione o tipo 'WiFi'." },
     { "@type": "HowToStep", "name": "Insira os dados da rede", "text": "Digite o nome da rede (SSID), selecione o tipo de seguranca (WPA/WPA2) e insira a senha." },
     { "@type": "HowToStep", "name": "Gere e imprima", "text": "Baixe o QR e coloque em local visivel no estabelecimento — recepcao, mesa, parede ou cartao." }
   ]
@@ -75,7 +75,7 @@ export default function CodigoQRWiFiPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-6">Como Criar (Passo a Passo)</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Selecione tipo WiFi no gerador", desc: "Acesse o gerador de Codigo QR do OmnisPDF e selecione o tipo 'WiFi' na lista de opcoes." },
+                  { title: "Selecione tipo WiFi no gerador", desc: "Acesse o gerador de Codigo QR do PDF.it e selecione o tipo 'WiFi' na lista de opcoes." },
                   { title: "Preencha os dados da rede", desc: "Nome da rede (SSID): exatamente como aparece nas configuracoes. Tipo de seguranca: WPA/WPA2 (o mais comum). Senha: exatamente como configurada no roteador." },
                   { title: "Personalize e gere", desc: "Ajuste cores se desejar (mantenha alto contraste). Clique em gerar para criar o QR code." },
                   { title: "Imprima e exiba", desc: "Baixe em PNG ou SVG. Imprima e coloque em local visivel: recepcao, mesas, parede proximo a entrada ou em um cartao de boas-vindas." },

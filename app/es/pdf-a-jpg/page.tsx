@@ -6,14 +6,14 @@ import { ImageIcon, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Convertir PDF a JPG Online — Gratis y Sin Registro | OmnisPDF",
+  title: "Convertir PDF a JPG Online — Gratis y Sin Registro | PDF.it",
   description:
-    "Convierte PDF a JPG en segundos con OmnisPDF. Exporta cada pagina como imagen JPEG de alta calidad y descarga al instante — sin instalar nada.",
+    "Convierte PDF a JPG en segundos con PDF.it. Exporta cada pagina como imagen JPEG de alta calidad y descarga al instante — sin instalar nada.",
   alternates: {
-    canonical: "https://omnispdf.com/es/pdf-a-jpg",
+    canonical: "https://pdf.it.com/es/pdf-a-jpg",
     languages: {
-      en: "https://omnispdf.com/pdf-to-jpg",
-      es: "https://omnispdf.com/es/pdf-a-jpg",
+      en: "https://pdf.it.com/pdf-to-jpg",
+      es: "https://pdf.it.com/es/pdf-a-jpg",
     },
   },
 }
@@ -27,7 +27,7 @@ const faqSchema = {
       name: "¿Puedo convertir un PDF de varias paginas a JPG?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Si. OmnisPDF convierte cada pagina del PDF en una imagen JPG individual que puedes descargar por separado.",
+        text: "Si. PDF.it convierte cada pagina del PDF en una imagen JPG individual que puedes descargar por separado.",
       },
     },
     {
@@ -51,7 +51,7 @@ const faqSchema = {
       name: "¿Funciona en iPhone y Android?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Si. OmnisPDF funciona en navegadores moviles — sube tu PDF, convierte y descarga tus imagenes JPG.",
+        text: "Si. PDF.it funciona en navegadores moviles — sube tu PDF, convierte y descarga tus imagenes JPG.",
       },
     },
     {
@@ -64,10 +64,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "¿OmnisPDF agrega marcas de agua?",
+      name: "¿PDF.it agrega marcas de agua?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No. OmnisPDF no agrega marcas de agua a tus archivos JPG convertidos.",
+        text: "No. PDF.it no agrega marcas de agua a tus archivos JPG convertidos.",
       },
     },
   ],
@@ -92,7 +92,7 @@ export default function PDFaJPGPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convertir PDF a JPG Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Convierte un PDF en imagenes JPG nitidas en segundos con OmnisPDF — rapido, sencillo y desde tu navegador.
+                Convierte un PDF en imagenes JPG nitidas en segundos con PDF.it — rapido, sencillo y desde tu navegador.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2">
@@ -125,7 +125,7 @@ export default function PDFaJPGPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Usa el convertidor de PDF a JPG de OmnisPDF para exportar las paginas de tu PDF como imagenes JPEG de alta calidad. Sube tu archivo, convierte en segundos y descarga cada pagina como imagen individual — perfecto para compartir, presentaciones, vistas previas y correos.
+              Usa el convertidor de PDF a JPG de PDF.it para exportar las paginas de tu PDF como imagenes JPEG de alta calidad. Sube tu archivo, convierte en segundos y descarga cada pagina como imagen individual — perfecto para compartir, presentaciones, vistas previas y correos.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Convierte paginas completas de PDF en imagenes JPG</li>
@@ -148,7 +148,7 @@ export default function PDFaJPGPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Mantiene los Disenos Limpios y Claros</h2>
               <p className="text-slate-600">
-                OmnisPDF preserva el diseno de la pagina para que tu contenido se vea legible y profesional despues de la conversion.
+                PDF.it preserva el diseno de la pagina para que tu contenido se vea legible y profesional despues de la conversion.
               </p>
             </div>
             <div>
@@ -166,7 +166,7 @@ export default function PDFaJPGPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Convertir PDF a JPG</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Haz clic en Convertir PDF a JPG.",
                 "Descarga tus imagenes JPG — una por pagina.",
               ].map((step, i) => (
@@ -213,7 +213,7 @@ export default function PDFaJPGPage() {
               {[
                 {
                   q: "¿Puedo convertir un PDF de varias paginas a JPG?",
-                  a: "Si. OmnisPDF convierte cada pagina del PDF en una imagen JPG individual que puedes descargar por separado.",
+                  a: "Si. PDF.it convierte cada pagina del PDF en una imagen JPG individual que puedes descargar por separado.",
                 },
                 {
                   q: "¿Convertir PDF a JPG reduce la calidad?",
@@ -225,15 +225,15 @@ export default function PDFaJPGPage() {
                 },
                 {
                   q: "¿Funciona en iPhone y Android?",
-                  a: "Si. OmnisPDF funciona en navegadores moviles — sube tu PDF, convierte y descarga tus imagenes JPG.",
+                  a: "Si. PDF.it funciona en navegadores moviles — sube tu PDF, convierte y descarga tus imagenes JPG.",
                 },
                 {
                   q: "¿Es seguro subir mi PDF?",
                   a: "Si. Los archivos se transfieren por HTTPS y se eliminan automaticamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos.",
                 },
                 {
-                  q: "¿OmnisPDF agrega marcas de agua?",
-                  a: "No. OmnisPDF no agrega marcas de agua a tus archivos JPG convertidos.",
+                  q: "¿PDF.it agrega marcas de agua?",
+                  a: "No. PDF.it no agrega marcas de agua a tus archivos JPG convertidos.",
                 },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

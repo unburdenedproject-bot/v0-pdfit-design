@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Scissors, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Dividir PDF em Paginas Individuais | OmnisPDF",
+  title: "Dividir PDF em Paginas Individuais | PDF.it",
   description:
     "Aprenda como dividir um PDF em paginas individuais, criando um arquivo separado para cada pagina. Ideal para documentos digitalizados e formularios — online, gratis.",
   keywords: "dividir pdf em paginas, separar paginas pdf, cada pagina um pdf, dividir pdf pagina por pagina",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como dividir um PDF em paginas individuais?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie o PDF para a ferramenta Dividir PDF por Paginas do OmnisPDF, selecione a opcao de dividir em paginas individuais e clique em Dividir. Cada pagina sera salva como um PDF separado." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie o PDF para a ferramenta Dividir PDF por Paginas do PDF.it, selecione a opcao de dividir em paginas individuais e clique em Dividir. Cada pagina sera salva como um PDF separado." }
     },
     {
       "@type": "Question",
@@ -210,7 +210,7 @@ export default function DividirPDFEmPaginasIndividuaisPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como dividir um PDF em paginas individuais?", a: "Envie o PDF para a ferramenta Dividir PDF por Paginas do OmnisPDF, selecione a opcao de dividir em paginas individuais e clique em Dividir. Cada pagina sera salva como um PDF separado." },
+                { q: "Como dividir um PDF em paginas individuais?", a: "Envie o PDF para a ferramenta Dividir PDF por Paginas do PDF.it, selecione a opcao de dividir em paginas individuais e clique em Dividir. Cada pagina sera salva como um PDF separado." },
                 { q: "Posso baixar todas as paginas de uma vez?", a: "Sim. Apos dividir, voce pode baixar cada pagina individualmente ou todas de uma vez como arquivo ZIP." },
                 { q: "Para que serve dividir em paginas individuais?", a: "E util para documentos digitalizados onde cada pagina e um documento diferente, para portais que aceitam apenas um documento por campo, ou para enviar paginas especificas por email." },
               ].map((faq, i) => (

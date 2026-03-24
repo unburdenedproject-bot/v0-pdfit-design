@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Unlock, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "How to Unlock a PDF Online (Remove Restrictions) | OmnisPDF",
+  title: "How to Unlock a PDF Online (Remove Restrictions) | PDF.it",
   description:
     "Learn how to unlock a PDF and remove restrictions like printing, copying, and editing. Step-by-step guide to removing PDF passwords online — fast and free.",
   keywords: "unlock pdf online, remove pdf restrictions, unlock pdf for editing, remove pdf password",
@@ -18,17 +18,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I unlock a PDF online for free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your locked PDF to OmnisPDF's Unlock PDF tool, enter the password if prompted, and download the unrestricted version. No software installation needed — it works right in your browser." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your locked PDF to PDF.it's Unlock PDF tool, enter the password if prompted, and download the unrestricted version. No software installation needed — it works right in your browser." }
     },
     {
       "@type": "Question",
       "name": "What PDF restrictions can be removed?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF can remove permissions restrictions that prevent printing, copying text, editing, and annotating. If the PDF has an open password (required to view the file), you'll need to enter that password first." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it can remove permissions restrictions that prevent printing, copying text, editing, and annotating. If the PDF has an open password (required to view the file), you'll need to enter that password first." }
     },
     {
       "@type": "Question",
       "name": "Is it legal to unlock a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "If you own the document or have authorization to access it, removing restrictions is perfectly legal. OmnisPDF is designed for users who need to unlock their own files — for example, when you set a password and later need to remove it." }
+      "acceptedAnswer": { "@type": "Answer", "text": "If you own the document or have authorization to access it, removing restrictions is perfectly legal. PDF.it is designed for users who need to unlock their own files — for example, when you set a password and later need to remove it." }
     },
     {
       "@type": "Question",
@@ -38,12 +38,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I unlock a PDF without the password?",
-      "acceptedAnswer": { "@type": "Answer", "text": "If the PDF only has permissions restrictions (no open password), OmnisPDF can remove those restrictions without needing a password. If the PDF requires a password to open, you'll need to provide that password." }
+      "acceptedAnswer": { "@type": "Answer", "text": "If the PDF only has permissions restrictions (no open password), PDF.it can remove those restrictions without needing a password. If the PDF requires a password to open, you'll need to provide that password." }
     },
     {
       "@type": "Question",
       "name": "Does unlocking work on all PDF files?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF works with standard PDF encryption (40-bit, 128-bit, and 256-bit AES). It handles most PDFs created by Adobe Acrobat, Microsoft Office, scanners, and other common tools." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it works with standard PDF encryption (40-bit, 128-bit, and 256-bit AES). It handles most PDFs created by Adobe Acrobat, Microsoft Office, scanners, and other common tools." }
     }
   ]
 }
@@ -52,17 +52,17 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Unlock a PDF Online",
-  "description": "Remove PDF restrictions in 3 simple steps using OmnisPDF.",
+  "description": "Remove PDF restrictions in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Upload your locked PDF",
-      "text": "Go to OmnisPDF's Unlock PDF tool and upload the PDF file that has restrictions you want to remove."
+      "text": "Go to PDF.it's Unlock PDF tool and upload the PDF file that has restrictions you want to remove."
     },
     {
       "@type": "HowToStep",
       "name": "Enter the password if required",
-      "text": "If the PDF has an open password, enter it when prompted. If it only has permissions restrictions, OmnisPDF will handle it automatically."
+      "text": "If the PDF has an open password, enter it when prompted. If it only has permissions restrictions, PDF.it will handle it automatically."
     },
     {
       "@type": "HowToStep",
@@ -139,7 +139,7 @@ export default function HowToUnlockPDFPage() {
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Most locked PDFs you encounter have permissions restrictions — you can open and read them, but you can&apos;t print or copy text. OmnisPDF&apos;s <Link href="/unlock-pdf" className="text-orange-600 hover:underline">Unlock PDF</Link> tool handles both types.
+                Most locked PDFs you encounter have permissions restrictions — you can open and read them, but you can&apos;t print or copy text. PDF.it&apos;s <Link href="/unlock-pdf" className="text-orange-600 hover:underline">Unlock PDF</Link> tool handles both types.
               </p>
             </section>
 
@@ -154,7 +154,7 @@ export default function HowToUnlockPDFPage() {
                   },
                   {
                     title: "Enter the password if needed",
-                    desc: "If the PDF has an open password, you'll be asked to enter it. If the file only has permissions restrictions (you can view it but can't print or copy), OmnisPDF removes those automatically — no password entry needed.",
+                    desc: "If the PDF has an open password, you'll be asked to enter it. If the file only has permissions restrictions (you can view it but can't print or copy), PDF.it removes those automatically — no password entry needed.",
                   },
                   {
                     title: "Download the unlocked PDF",
@@ -183,7 +183,7 @@ export default function HowToUnlockPDFPage() {
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 font-bold mt-0.5">1.</span>
-                  <span><strong>Printing for a meeting.</strong> Your colleague sent a report as a restricted PDF and you need to print copies for a presentation. Use OmnisPDF to remove the print restriction.</span>
+                  <span><strong>Printing for a meeting.</strong> Your colleague sent a report as a restricted PDF and you need to print copies for a presentation. Use PDF.it to remove the print restriction.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 font-bold mt-0.5">2.</span>
@@ -199,7 +199,7 @@ export default function HowToUnlockPDFPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 font-bold mt-0.5">5.</span>
-                  <span><strong>Converting to another format.</strong> If you need to convert a locked PDF to Word or Excel, unlock it first with OmnisPDF, then use <Link href="/pdf-to-word" className="text-orange-600 hover:underline">PDF to Word</Link> or <Link href="/pdf-to-excel" className="text-orange-600 hover:underline">PDF to Excel</Link> for the conversion.</span>
+                  <span><strong>Converting to another format.</strong> If you need to convert a locked PDF to Word or Excel, unlock it first with PDF.it, then use <Link href="/pdf-to-word" className="text-orange-600 hover:underline">PDF to Word</Link> or <Link href="/pdf-to-excel" className="text-orange-600 hover:underline">PDF to Excel</Link> for the conversion.</span>
                 </li>
               </ul>
             </section>
@@ -226,14 +226,14 @@ export default function HowToUnlockPDFPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Your Files Are Processed Securely</h3>
                   <p className="text-slate-600">
-                    OmnisPDF processes your files over an encrypted connection (HTTPS) and automatically deletes them from the server after processing. Your documents are never stored permanently or shared with anyone.
+                    PDF.it processes your files over an encrypted connection (HTTPS) and automatically deletes them from the server after processing. Your documents are never stored permanently or shared with anyone.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Legal Considerations</h3>
                   <p className="text-slate-600">
-                    Unlocking PDFs that you own or have authorization to access is completely legal. OmnisPDF is designed for legitimate use cases — removing restrictions from your own files, accessing documents shared with you by colleagues, or recovering access to files where you&apos;ve forgotten the password.
+                    Unlocking PDFs that you own or have authorization to access is completely legal. PDF.it is designed for legitimate use cases — removing restrictions from your own files, accessing documents shared with you by colleagues, or recovering access to files where you&apos;ve forgotten the password.
                   </p>
                 </div>
 
@@ -292,12 +292,12 @@ export default function HowToUnlockPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I unlock a PDF online for free?", a: "Upload your locked PDF to OmnisPDF's Unlock PDF tool, enter the password if prompted, and download the unrestricted version. No software installation needed — it works right in your browser." },
-                { q: "What PDF restrictions can be removed?", a: "OmnisPDF can remove permissions restrictions that prevent printing, copying text, editing, and annotating. If the PDF has an open password (required to view the file), you'll need to enter that password first." },
-                { q: "Is it legal to unlock a PDF?", a: "If you own the document or have authorization to access it, removing restrictions is perfectly legal. OmnisPDF is designed for users who need to unlock their own files — for example, when you set a password and later need to remove it." },
+                { q: "How do I unlock a PDF online for free?", a: "Upload your locked PDF to PDF.it's Unlock PDF tool, enter the password if prompted, and download the unrestricted version. No software installation needed — it works right in your browser." },
+                { q: "What PDF restrictions can be removed?", a: "PDF.it can remove permissions restrictions that prevent printing, copying text, editing, and annotating. If the PDF has an open password (required to view the file), you'll need to enter that password first." },
+                { q: "Is it legal to unlock a PDF?", a: "If you own the document or have authorization to access it, removing restrictions is perfectly legal. PDF.it is designed for users who need to unlock their own files — for example, when you set a password and later need to remove it." },
                 { q: "Will unlocking a PDF change its content?", a: "No. Unlocking a PDF only removes the security restrictions. The content, layout, images, and formatting remain exactly the same. Your document will look identical — it just won't have restrictions anymore." },
-                { q: "Can I unlock a PDF without the password?", a: "If the PDF only has permissions restrictions (no open password), OmnisPDF can remove those restrictions without needing a password. If the PDF requires a password to open, you'll need to provide that password." },
-                { q: "Does unlocking work on all PDF files?", a: "OmnisPDF works with standard PDF encryption (40-bit, 128-bit, and 256-bit AES). It handles most PDFs created by Adobe Acrobat, Microsoft Office, scanners, and other common tools." },
+                { q: "Can I unlock a PDF without the password?", a: "If the PDF only has permissions restrictions (no open password), PDF.it can remove those restrictions without needing a password. If the PDF requires a password to open, you'll need to provide that password." },
+                { q: "Does unlocking work on all PDF files?", a: "PDF.it works with standard PDF encryption (40-bit, 128-bit, and 256-bit AES). It handles most PDFs created by Adobe Acrobat, Microsoft Office, scanners, and other common tools." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

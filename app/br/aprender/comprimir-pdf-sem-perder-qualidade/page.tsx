@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileArchiveIcon as Compress, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Comprimir PDF Sem Perder Qualidade | OmnisPDF",
+  title: "Comprimir PDF Sem Perder Qualidade | PDF.it",
   description:
     "Aprenda como comprimir um PDF sem perder qualidade. Tecnicas para reduzir o tamanho mantendo textos nitidos e imagens claras — online, gratis, sem software.",
   keywords: "comprimir pdf sem perder qualidade, reduzir pdf sem perda, compactar pdf qualidade, comprimir pdf manter qualidade",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "E possivel comprimir um PDF sem perder qualidade?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. A compressao Leve do OmnisPDF otimiza a estrutura do arquivo, remove metadados desnecessarios e comprime imagens de forma quase imperceptivel. O resultado e um arquivo menor com qualidade visual praticamente identica ao original." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. A compressao Leve do PDF.it otimiza a estrutura do arquivo, remove metadados desnecessarios e comprime imagens de forma quase imperceptivel. O resultado e um arquivo menor com qualidade visual praticamente identica ao original." }
     },
     {
       "@type": "Question",
@@ -42,7 +42,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Envie seu PDF",
-      "text": "Acesse a ferramenta Comprimir PDF Sem Perder Qualidade do OmnisPDF e envie seu arquivo."
+      "text": "Acesse a ferramenta Comprimir PDF Sem Perder Qualidade do PDF.it e envie seu arquivo."
     },
     {
       "@type": "HowToStep",
@@ -120,7 +120,7 @@ export default function ComprimirPDFSemPerderQualidadePage() {
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
-                A compressao Leve do OmnisPDF usa principalmente tecnicas sem perda, enquanto Media e Extrema combinam ambas as abordagens.
+                A compressao Leve do PDF.it usa principalmente tecnicas sem perda, enquanto Media e Extrema combinam ambas as abordagens.
               </p>
             </section>
 
@@ -220,7 +220,7 @@ export default function ComprimirPDFSemPerderQualidadePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "E possivel comprimir um PDF sem perder qualidade?", a: "Sim. A compressao Leve do OmnisPDF otimiza a estrutura do arquivo, remove metadados desnecessarios e comprime imagens de forma quase imperceptivel. O resultado e um arquivo menor com qualidade visual praticamente identica ao original." },
+                { q: "E possivel comprimir um PDF sem perder qualidade?", a: "Sim. A compressao Leve do PDF.it otimiza a estrutura do arquivo, remove metadados desnecessarios e comprime imagens de forma quase imperceptivel. O resultado e um arquivo menor com qualidade visual praticamente identica ao original." },
                 { q: "Quanto posso reduzir sem perder qualidade?", a: "Com compressao Leve, reducoes de 15-30% sao comuns sem perda de qualidade perceptivel. Para reducoes maiores, a compressao Media oferece um bom equilibrio, com minima perda visual." },
                 { q: "A compressao sem perda funciona para todos os PDFs?", a: "A compressao sem perda e mais eficaz em PDFs que contem metadados extras, fontes duplicadas ou estrutura nao otimizada. PDFs ja otimizados terao menor reducao de tamanho." },
               ].map((faq, i) => (

@@ -6,9 +6,9 @@ import { FileArchiveIcon as Compress, Zap, Shield, Mail } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF para E-mail — Reduzir PDF para Anexar | OmnisPDF",
+  title: "Comprimir PDF para E-mail — Reduzir PDF para Anexar | PDF.it",
   description:
-    "Comprima arquivos PDF para anexos de e-mail com o OmnisPDF. Reduza PDFs para cumprir os limites do Gmail, Outlook e Yahoo — rápido, pelo navegador, sem cadastro.",
+    "Comprima arquivos PDF para anexos de e-mail com o PDF.it. Reduza PDFs para cumprir os limites do Gmail, Outlook e Yahoo — rápido, pelo navegador, sem cadastro.",
   alternates: {
     languages: {
       en: "/compress-pdf-for-email",
@@ -25,32 +25,32 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como comprimo um PDF para e-mail?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF ao OmnisPDF, clique em Comprimir e baixe um arquivo menor pronto para anexar ao seu e-mail." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF ao PDF.it, clique em Comprimir e baixe um arquivo menor pronto para anexar ao seu e-mail." }
     },
     {
       "@type": "Question",
       "name": "Qual é o tamanho máximo de anexo em e-mail?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Gmail permite 25MB, Outlook permite 20MB e Yahoo Mail permite 25MB. O OmnisPDF comprime seu PDF para caber dentro desses limites." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Gmail permite 25MB, Outlook permite 20MB e Yahoo Mail permite 25MB. O PDF.it comprime seu PDF para caber dentro desses limites." }
     },
     {
       "@type": "Question",
       "name": "O PDF vai ficar bom após a compressão?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF usa compressão inteligente que mantém o texto nítido e as páginas legíveis. A qualidade da imagem pode reduzir levemente, mas o documento continua profissional." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it usa compressão inteligente que mantém o texto nítido e as páginas legíveis. A qualidade da imagem pode reduzir levemente, mas o documento continua profissional." }
     },
     {
       "@type": "Question",
       "name": "Posso comprimir vários PDFs para e-mail?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Envie vários PDFs e o OmnisPDF comprimirá cada um individualmente. Você também pode uni-los primeiro com a ferramenta Unir PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Envie vários PDFs e o PDF.it comprimirá cada um individualmente. Você também pode uni-los primeiro com a ferramenta Unir PDF." }
     },
     {
       "@type": "Question",
       "name": "Posso comprimir um PDF para e-mail pelo celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em navegadores móveis — comprima e envie PDFs por e-mail diretamente do seu iPhone ou Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em navegadores móveis — comprima e envie PDFs por e-mail diretamente do seu iPhone ou Android." }
     },
     {
       "@type": "Question",
       "name": "O que faço se meu PDF continuar muito grande para e-mail?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Tente usar a ferramenta Dividir PDF do OmnisPDF para separar o documento em partes menores, depois comprima e envie cada parte separadamente." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Tente usar a ferramenta Dividir PDF do PDF.it para separar o documento em partes menores, depois comprima e envie cada parte separadamente." }
     }
   ]
 }
@@ -99,7 +99,7 @@ export default function ComprimirPDFParaEmailPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Anexos de e-mail têm limites de tamanho — Gmail tem limite de 25MB, Outlook de 20MB. O OmnisPDF comprime seu PDF para caber como anexo de e-mail sem perder legibilidade. Envie, comprima, baixe e anexe em segundos.
+              Anexos de e-mail têm limites de tamanho — Gmail tem limite de 25MB, Outlook de 20MB. O PDF.it comprime seu PDF para caber como anexo de e-mail sem perder legibilidade. Envie, comprima, baixe e anexe em segundos.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Comprima PDFs para cumprir os limites do Gmail, Outlook e Yahoo</li>
@@ -137,19 +137,19 @@ export default function ComprimirPDFParaEmailPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Envie Contratos e Faturas Sem Rejeição</h2>
               <p className="text-slate-600">
-                Contratos e faturas grandes com assinaturas frequentemente ultrapassam os limites de e-mail. O OmnisPDF os comprime para um tamanho enviável mantendo cada página nítida e profissional.
+                Contratos e faturas grandes com assinaturas frequentemente ultrapassam os limites de e-mail. O PDF.it os comprime para um tamanho enviável mantendo cada página nítida e profissional.
               </p>
             </div>
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Comprima Relatórios e Apresentações</h2>
               <p className="text-slate-600">
-                Relatórios com gráficos, imagens e tabelas podem ser enormes. O OmnisPDF reduz o tamanho do arquivo para que você possa enviá-los por e-mail diretamente em vez de usar links de arquivos compartilhados.
+                Relatórios com gráficos, imagens e tabelas podem ser enormes. O PDF.it reduz o tamanho do arquivo para que você possa enviá-los por e-mail diretamente em vez de usar links de arquivos compartilhados.
               </p>
             </div>
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Funciona de Qualquer Dispositivo</h2>
               <p className="text-slate-600">
-                Precisa enviar um PDF comprimido pelo celular? O OmnisPDF funciona em navegadores móveis — comprima e envie por e-mail em qualquer lugar.
+                Precisa enviar um PDF comprimido pelo celular? O PDF.it funciona em navegadores móveis — comprima e envie por e-mail em qualquer lugar.
               </p>
             </div>
           </div>
@@ -161,7 +161,7 @@ export default function ComprimirPDFParaEmailPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Comprimir um PDF para E-mail</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste seu PDF para o OmnisPDF.",
+                "Envie ou arraste seu PDF para o PDF.it.",
                 "Clique em Comprimir PDF — a compressão inteligente é aplicada automaticamente.",
                 "Baixe o PDF menor e anexe ao seu e-mail.",
               ].map((step, i) => (
@@ -206,12 +206,12 @@ export default function ComprimirPDFParaEmailPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como comprimo um PDF para e-mail?", a: "Envie seu PDF ao OmnisPDF, clique em Comprimir e baixe um arquivo menor pronto para anexar ao seu e-mail." },
-                { q: "Qual é o tamanho máximo de anexo em e-mail?", a: "Gmail permite 25MB, Outlook permite 20MB e Yahoo Mail permite 25MB. O OmnisPDF comprime seu PDF para caber dentro desses limites." },
-                { q: "O PDF vai ficar bom após a compressão?", a: "Sim. O OmnisPDF usa compressão inteligente que mantém o texto nítido e as páginas legíveis. A qualidade da imagem pode reduzir levemente, mas o documento continua profissional." },
-                { q: "Posso comprimir vários PDFs para e-mail?", a: "Sim. Envie vários PDFs e o OmnisPDF comprimirá cada um individualmente. Você também pode uni-los primeiro com a ferramenta Unir PDF." },
-                { q: "Posso comprimir um PDF para e-mail pelo celular?", a: "Sim. O OmnisPDF funciona em navegadores móveis — comprima e envie PDFs por e-mail diretamente do seu iPhone ou Android." },
-                { q: "O que faço se meu PDF continuar muito grande para e-mail?", a: "Tente usar a ferramenta Dividir PDF do OmnisPDF para separar o documento em partes menores, depois comprima e envie cada parte separadamente." },
+                { q: "Como comprimo um PDF para e-mail?", a: "Envie seu PDF ao PDF.it, clique em Comprimir e baixe um arquivo menor pronto para anexar ao seu e-mail." },
+                { q: "Qual é o tamanho máximo de anexo em e-mail?", a: "Gmail permite 25MB, Outlook permite 20MB e Yahoo Mail permite 25MB. O PDF.it comprime seu PDF para caber dentro desses limites." },
+                { q: "O PDF vai ficar bom após a compressão?", a: "Sim. O PDF.it usa compressão inteligente que mantém o texto nítido e as páginas legíveis. A qualidade da imagem pode reduzir levemente, mas o documento continua profissional." },
+                { q: "Posso comprimir vários PDFs para e-mail?", a: "Sim. Envie vários PDFs e o PDF.it comprimirá cada um individualmente. Você também pode uni-los primeiro com a ferramenta Unir PDF." },
+                { q: "Posso comprimir um PDF para e-mail pelo celular?", a: "Sim. O PDF.it funciona em navegadores móveis — comprima e envie PDFs por e-mail diretamente do seu iPhone ou Android." },
+                { q: "O que faço se meu PDF continuar muito grande para e-mail?", a: "Tente usar a ferramenta Dividir PDF do PDF.it para separar o documento em partes menores, depois comprima e envie cada parte separadamente." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

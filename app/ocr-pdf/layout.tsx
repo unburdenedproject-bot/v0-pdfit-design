@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "OCR Scanner Online — Convert Scanned PDF to Searchable Text | OmnisPDF",
+  title: "OCR Scanner Online — Convert Scanned PDF to Searchable Text | PDF.it",
   description: "Convert scanned PDFs into searchable, selectable text with AI-powered OCR. Supports 16+ languages. Fast, accurate, and works in any browser.",
 }
 

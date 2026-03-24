@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Image, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "PDF to JPG vs PNG: Which Should You Use (Quality vs Size) | OmnisPDF",
+  title: "PDF to JPG vs PNG: Which Should You Use (Quality vs Size) | PDF.it",
   description:
     "JPG or PNG — which is the right format for your PDF conversion? Detailed comparison of quality, file size, transparency, and use cases to help you choose the best option.",
   keywords: "pdf to jpg vs png, jpg vs png quality, pdf to image format, png vs jpg comparison, best image format for pdf",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I convert the same PDF to both JPG and PNG?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. With OmnisPDF you can convert the same PDF to JPG and PNG separately. This is useful when you need a high-quality PNG for design work and a smaller JPG for sharing." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. With PDF.it you can convert the same PDF to JPG and PNG separately. This is useful when you need a high-quality PNG for design work and a smaller JPG for sharing." }
     }
   ]
 }
@@ -66,8 +66,8 @@ const howToSchema = {
     },
     {
       "@type": "HowToStep",
-      "name": "Convert with OmnisPDF",
-      "text": "Upload your PDF to OmnisPDF's PDF to PNG or PDF to JPG tool, select your resolution, and download the converted images."
+      "name": "Convert with PDF.it",
+      "text": "Upload your PDF to PDF.it's PDF to PNG or PDF to JPG tool, select your resolution, and download the converted images."
     }
   ]
 }
@@ -339,7 +339,7 @@ export default function PDFtoJPGvsPNGPage() {
                 { q: "Why are PNG files larger than JPG?", a: "PNG files are larger because they preserve every pixel exactly. JPG achieves smaller sizes by approximating groups of similar pixels, which works well for photos but creates blurriness around text and hard edges." },
                 { q: "Does JPG support transparency?", a: "No. JPG does not support transparency. If your PDF has transparent elements, JPG will fill them with a white background. PNG supports full alpha transparency." },
                 { q: "Which format is better for social media?", a: "For social media posts with photos, JPG is fine and keeps file sizes small. For infographics, text-heavy images, or logos, PNG looks significantly better. Most social platforms accept both formats." },
-                { q: "Can I convert the same PDF to both JPG and PNG?", a: "Yes. With OmnisPDF you can convert the same PDF to JPG and PNG separately. This is useful when you need a high-quality PNG for design work and a smaller JPG for sharing." },
+                { q: "Can I convert the same PDF to both JPG and PNG?", a: "Yes. With PDF.it you can convert the same PDF to JPG and PNG separately. This is useful when you need a high-quality PNG for design work and a smaller JPG for sharing." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

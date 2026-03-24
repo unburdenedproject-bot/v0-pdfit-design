@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Convert Word to PDF Online (DOCX to PDF) | OmnisPDF",
+  title: "Convert Word to PDF Online (DOCX to PDF) | PDF.it",
   description:
     "Learn how to convert Word to PDF online in seconds. Step-by-step guide covering formatting preservation, free vs Pro options, and why PDF is the universal sharing format.",
   keywords: "convert word to pdf online, docx to pdf, word to pdf free, convert docx to pdf online, word document to pdf",
@@ -18,12 +18,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I convert Word to PDF online for free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your .docx or .doc file to OmnisPDF's Word to PDF tool, click Convert, and download the PDF. No signup required for your first 3 files — it takes about 10 seconds." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your .docx or .doc file to PDF.it's Word to PDF tool, click Convert, and download the PDF. No signup required for your first 3 files — it takes about 10 seconds." }
     },
     {
       "@type": "Question",
       "name": "Will my formatting stay the same when I convert Word to PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF preserves fonts, spacing, images, headers, footers, and page layout during conversion. For best results, use standard fonts like Arial, Calibri, or Times New Roman in your Word document." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it preserves fonts, spacing, images, headers, footers, and page layout during conversion. For best results, use standard fonts like Arial, Calibri, or Times New Roman in your Word document." }
     },
     {
       "@type": "Question",
@@ -33,12 +33,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "What's the difference between .doc and .docx?",
-      "acceptedAnswer": { "@type": "Answer", "text": ".doc is the older Microsoft Word format (Word 97-2003). .docx is the modern format used since Word 2007. Both can be converted to PDF with OmnisPDF, but .docx files generally produce better results with more accurate formatting." }
+      "acceptedAnswer": { "@type": "Answer", "text": ".doc is the older Microsoft Word format (Word 97-2003). .docx is the modern format used since Word 2007. Both can be converted to PDF with PDF.it, but .docx files generally produce better results with more accurate formatting." }
     },
     {
       "@type": "Question",
       "name": "Is it safe to upload my Word document for conversion?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF processes your file securely and deletes it from servers after conversion. Your document is never stored, shared, or used for any purpose beyond the conversion you requested." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it processes your file securely and deletes it from servers after conversion. Your document is never stored, shared, or used for any purpose beyond the conversion you requested." }
     },
     {
       "@type": "Question",
@@ -52,17 +52,17 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Convert Word to PDF Online",
-  "description": "Convert your DOCX file to PDF in 3 simple steps using OmnisPDF.",
+  "description": "Convert your DOCX file to PDF in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Upload your Word document",
-      "text": "Go to OmnisPDF's Word to PDF tool and upload your .docx or .doc file by clicking or dragging it into the upload area."
+      "text": "Go to PDF.it's Word to PDF tool and upload your .docx or .doc file by clicking or dragging it into the upload area."
     },
     {
       "@type": "HowToStep",
       "name": "Click Convert",
-      "text": "Click the Convert to PDF button. OmnisPDF processes your file in seconds, preserving all formatting, images, and fonts."
+      "text": "Click the Convert to PDF button. PDF.it processes your file in seconds, preserving all formatting, images, and fonts."
     },
     {
       "@type": "HowToStep",
@@ -159,7 +159,7 @@ export default function ConvertWordToPDFPage() {
                   },
                   {
                     title: "Click Convert to PDF",
-                    desc: "OmnisPDF converts your document in seconds. Fonts, images, tables, headers, footers, and page breaks are all preserved in the output PDF.",
+                    desc: "PDF.it converts your document in seconds. Fonts, images, tables, headers, footers, and page breaks are all preserved in the output PDF.",
                   },
                   {
                     title: "Download and verify",
@@ -238,7 +238,7 @@ export default function ConvertWordToPDFPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Need to Convert Other Office Formats?</h2>
               <p className="text-slate-600 mb-4">
-                Word isn't the only file type you might need to turn into a PDF. OmnisPDF handles the full Microsoft Office suite:
+                Word isn't the only file type you might need to turn into a PDF. PDF.it handles the full Microsoft Office suite:
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">Excel to PDF</Link> — convert spreadsheets while preserving columns, rows, and charts.</li>
@@ -307,11 +307,11 @@ export default function ConvertWordToPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I convert Word to PDF online for free?", a: "Upload your .docx or .doc file to OmnisPDF's Word to PDF tool, click Convert, and download the PDF. No signup required for your first 3 files — it takes about 10 seconds." },
-                { q: "Will my formatting stay the same when I convert Word to PDF?", a: "OmnisPDF preserves fonts, spacing, images, headers, footers, and page layout during conversion. For best results, use standard fonts like Arial, Calibri, or Times New Roman in your Word document." },
+                { q: "How do I convert Word to PDF online for free?", a: "Upload your .docx or .doc file to PDF.it's Word to PDF tool, click Convert, and download the PDF. No signup required for your first 3 files — it takes about 10 seconds." },
+                { q: "Will my formatting stay the same when I convert Word to PDF?", a: "PDF.it preserves fonts, spacing, images, headers, footers, and page layout during conversion. For best results, use standard fonts like Arial, Calibri, or Times New Roman in your Word document." },
                 { q: "Can I convert multiple Word files to PDF at once?", a: "Yes. Pro users can batch-convert multiple .docx files to PDF in a single session. Free users can convert one file at a time." },
-                { q: "What's the difference between .doc and .docx?", a: ".doc is the older Microsoft Word format (Word 97-2003). .docx is the modern format used since Word 2007. Both can be converted to PDF with OmnisPDF, but .docx files generally produce better results with more accurate formatting." },
-                { q: "Is it safe to upload my Word document for conversion?", a: "Yes. OmnisPDF processes your file securely and deletes it from servers after conversion. Your document is never stored, shared, or used for any purpose beyond the conversion you requested." },
+                { q: "What's the difference between .doc and .docx?", a: ".doc is the older Microsoft Word format (Word 97-2003). .docx is the modern format used since Word 2007. Both can be converted to PDF with PDF.it, but .docx files generally produce better results with more accurate formatting." },
+                { q: "Is it safe to upload my Word document for conversion?", a: "Yes. PDF.it processes your file securely and deletes it from servers after conversion. Your document is never stored, shared, or used for any purpose beyond the conversion you requested." },
                 { q: "Why should I convert Word to PDF instead of sharing the .docx file?", a: "PDFs look the same on every device and operating system. Word documents can shift formatting depending on the version of Word, installed fonts, and screen size. PDFs also prevent accidental edits, making them ideal for final versions of contracts, resumes, and reports." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

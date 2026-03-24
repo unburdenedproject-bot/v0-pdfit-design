@@ -6,9 +6,9 @@ import { Scissors, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Extrair Paginas de PDF — Tire Paginas Especificas do Seu PDF | OmnisPDF",
+  title: "Extrair Paginas de PDF — Tire Paginas Especificas do Seu PDF | PDF.it",
   description:
-    "Extraia paginas especificas de um PDF com OmnisPDF. Selecione as paginas que precisa e salve em um novo arquivo — rapido, gratis e online.",
+    "Extraia paginas especificas de um PDF com PDF.it. Selecione as paginas que precisa e salve em um novo arquivo — rapido, gratis e online.",
   alternates: {
     languages: {
       en: "/extract-pages-from-pdf",
@@ -25,7 +25,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como extrair paginas de um PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o OmnisPDF, selecione as paginas que deseja extrair (por numero ou intervalo) e clique em Extrair. As paginas selecionadas serao salvas em um novo PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o PDF.it, selecione as paginas que deseja extrair (por numero ou intervalo) e clique em Extrair. As paginas selecionadas serao salvas em um novo PDF." }
     },
     {
       "@type": "Question",
@@ -50,7 +50,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso extrair paginas de um PDF no celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em navegadores moveis — selecione as paginas, extraia e baixe diretamente do seu celular." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em navegadores moveis — selecione as paginas, extraia e baixe diretamente do seu celular." }
     }
   ]
 }
@@ -98,7 +98,7 @@ export default function ExtrairPaginasDePdfPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              As vezes voce so precisa de algumas paginas de um PDF longo. O OmnisPDF permite extrair exatamente as paginas desejadas — por numero, intervalo ou combinacao — e salvar em um novo arquivo PDF limpo e organizado.
+              As vezes voce so precisa de algumas paginas de um PDF longo. O PDF.it permite extrair exatamente as paginas desejadas — por numero, intervalo ou combinacao — e salvar em um novo arquivo PDF limpo e organizado.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Extraia paginas individuais ou intervalos</li>
@@ -140,7 +140,7 @@ export default function ExtrairPaginasDePdfPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Extrair Paginas de um PDF</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste seu PDF para o OmnisPDF.",
+                "Envie ou arraste seu PDF para o PDF.it.",
                 "Selecione as paginas ou intervalos que deseja extrair.",
                 "Clique em Extrair e baixe o novo PDF com as paginas selecionadas.",
               ].map((step, i) => (
@@ -187,12 +187,12 @@ export default function ExtrairPaginasDePdfPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como extrair paginas de um PDF?", a: "Envie seu PDF para o OmnisPDF, selecione as paginas que deseja extrair (por numero ou intervalo) e clique em Extrair. As paginas selecionadas serao salvas em um novo PDF." },
+                { q: "Como extrair paginas de um PDF?", a: "Envie seu PDF para o PDF.it, selecione as paginas que deseja extrair (por numero ou intervalo) e clique em Extrair. As paginas selecionadas serao salvas em um novo PDF." },
                 { q: "Qual a diferenca entre extrair e dividir paginas?", a: "Extrair paginas cria um novo PDF apenas com as paginas selecionadas. Dividir separa o PDF inteiro em multiplas partes. Use extrair quando precisa de paginas especificas; use dividir quando quer separar o documento todo." },
                 { q: "Extrair paginas afeta a qualidade?", a: "Nao. As paginas sao extraidas do PDF original sem recodificar. Texto, imagens e formatacao permanecem identicos ao original." },
                 { q: "Posso extrair paginas nao consecutivas?", a: "Sim. Voce pode selecionar paginas individuais (ex: 2, 5, 9) e intervalos (ex: 12-18) na mesma operacao. Todas as paginas selecionadas serao combinadas em um unico PDF." },
                 { q: "E gratis extrair paginas de um PDF?", a: "Sim. Voce pode extrair paginas de PDFs de ate 25MB gratis. Usuarios Pro podem processar arquivos de ate 200MB." },
-                { q: "Posso extrair paginas de um PDF no celular?", a: "Sim. O OmnisPDF funciona em navegadores moveis — selecione as paginas, extraia e baixe diretamente do seu celular." },
+                { q: "Posso extrair paginas de um PDF no celular?", a: "Sim. O PDF.it funciona em navegadores moveis — selecione as paginas, extraia e baixe diretamente do seu celular." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Image, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Marca d'Agua em PDF com Logo — Como Adicionar Seu Logo | OmnisPDF",
+  title: "Marca d'Agua em PDF com Logo — Como Adicionar Seu Logo | PDF.it",
   description: "Aprenda a adicionar o logo da sua empresa como marca d'agua em PDF. Dicas de formato, transparencia e posicionamento para branding profissional.",
   keywords: "marca dagua pdf logo, adicionar logo pdf, watermark logo pdf, logo marca dagua documento, branding pdf logo",
 }
@@ -13,13 +13,13 @@ export const metadata = {
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
   { "@type": "Question", "name": "Qual o melhor formato de imagem para marca d'agua com logo?", "acceptedAnswer": { "@type": "Answer", "text": "PNG com fundo transparente e o melhor formato. JPG funciona, mas adiciona um fundo branco ao redor do logo. Se seu logo so existe em JPG, considere converter para PNG com fundo transparente primeiro." } },
   { "@type": "Question", "name": "Qual a opacidade ideal para logo como marca d'agua?", "acceptedAnswer": { "@type": "Answer", "text": "Entre 20-40% e ideal para a maioria dos casos. Isso torna o logo visivel para identificacao mas sutil o suficiente para nao atrapalhar a leitura do conteudo." } },
-  { "@type": "Question", "name": "Posso posicionar o logo em um canto especifico?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF permite posicionar a marca d'agua no centro, nos cantos ou em diagonal. Para branding sutil, o canto inferior direito e a posicao mais popular." } },
+  { "@type": "Question", "name": "Posso posicionar o logo em um canto especifico?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it permite posicionar a marca d'agua no centro, nos cantos ou em diagonal. Para branding sutil, o canto inferior direito e a posicao mais popular." } },
   { "@type": "Question", "name": "A marca d'agua com logo aparece ao imprimir?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. A marca d'agua e incorporada permanentemente no PDF, entao aparece tanto na tela quanto na impressao." } }
 ] }
 
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como adicionar logo como marca d'agua em PDF", "description": "Adicione o logo da sua empresa como marca d'agua em PDF.", "step": [
   { "@type": "HowToStep", "name": "Prepare seu logo", "text": "Tenha seu logo em formato PNG com fundo transparente. Resolucao minima de 300x300 pixels para boa qualidade." },
-  { "@type": "HowToStep", "name": "Envie o PDF e o logo", "text": "Acesse a ferramenta Marca d'Agua do OmnisPDF, envie o PDF e depois selecione a opcao de marca d'agua por imagem para enviar seu logo." },
+  { "@type": "HowToStep", "name": "Envie o PDF e o logo", "text": "Acesse a ferramenta Marca d'Agua do PDF.it, envie o PDF e depois selecione a opcao de marca d'agua por imagem para enviar seu logo." },
   { "@type": "HowToStep", "name": "Ajuste e aplique", "text": "Configure posicao, tamanho e opacidade (20-40% recomendado). Aplique e baixe o PDF com seu logo." }
 ] }
 

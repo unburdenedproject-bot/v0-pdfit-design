@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Type, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "PPTX to PDF Missing Fonts? Fix Font Embedding and Substitutions | OmnisPDF",
+  title: "PPTX to PDF Missing Fonts? Fix Font Embedding and Substitutions | PDF.it",
   description:
     "Fix missing fonts when converting PowerPoint to PDF. Learn why fonts get substituted, how to embed fonts in PPTX, and which safe fonts always convert correctly.",
   keywords: "pptx to pdf missing fonts, powerpoint to pdf font problems, embed fonts in powerpoint, font substitution pdf, pptx fonts not showing",
@@ -62,7 +62,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Convert to PDF",
-      "text": "Upload your PPTX (with embedded fonts) to OmnisPDF's PowerPoint to PDF tool and click Convert. The embedded fonts ensure correct rendering."
+      "text": "Upload your PPTX (with embedded fonts) to PDF.it's PowerPoint to PDF tool and click Convert. The embedded fonts ensure correct rendering."
     },
     {
       "@type": "HowToStep",
@@ -139,7 +139,7 @@ export default function PPTXToPDFMissingFontsPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>Online conversion tools.</strong> When you upload a PPTX to an online converter (including OmnisPDF), the server may not have your custom fonts. Embedding solves this.</span>
+                  <span><strong>Online conversion tools.</strong> When you upload a PPTX to an online converter (including PDF.it), the server may not have your custom fonts. Embedding solves this.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 font-bold mt-0.5">4.</span>
@@ -163,7 +163,7 @@ export default function PPTXToPDFMissingFontsPage() {
                   },
                   {
                     title: "Save and convert",
-                    desc: "Save the file. The PPTX will now be larger (font data is included). Upload it to OmnisPDF's PowerPoint to PDF tool — the embedded fonts will render correctly during conversion.",
+                    desc: "Save the file. The PPTX will now be larger (font data is included). Upload it to PDF.it's PowerPoint to PDF tool — the embedded fonts will render correctly during conversion.",
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">

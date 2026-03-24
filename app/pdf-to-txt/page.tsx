@@ -6,9 +6,9 @@ import { Type, Zap, Shield, Download, FileText, Monitor, Copy } from "lucide-rea
 import Link from "next/link"
 
 export const metadata = {
-  title: "PDF to TXT Converter — Free & No Login Required | OmnisPDF",
+  title: "PDF to TXT Converter — Free & No Login Required | PDF.it",
   description:
-    "Convert PDF to TXT in seconds with OmnisPDF. Extract plain text from PDFs online for copying, editing, and sharing—no installs.",
+    "Convert PDF to TXT in seconds with PDF.it. Extract plain text from PDFs online for copying, editing, and sharing—no installs.",
 }
 
 const faqSchema = {
@@ -22,7 +22,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Does OmnisPDF keep the formatting from the PDF?",
+      "name": "Does PDF.it keep the formatting from the PDF?",
       "acceptedAnswer": { "@type": "Answer", "text": "TXT is plain text, so formatting like fonts, columns, and spacing may not carry over. If you need layout preserved, use a PDF to Word tool instead." }
     },
     {
@@ -33,7 +33,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I convert PDF to TXT on mobile?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open OmnisPDF in your mobile browser, upload the PDF, convert, and download the TXT file." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open PDF.it in your mobile browser, upload the PDF, convert, and download the TXT file." }
     },
     {
       "@type": "Question",
@@ -95,7 +95,7 @@ export default function PDFToTXTPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use OmnisPDF's PDF to TXT converter to turn a PDF into a plain text (.txt) file in seconds. Perfect for copying content into notes, docs, emails, or AI tools—without retyping. Upload your PDF, convert, and download the extracted text instantly.
+              Use PDF.it's PDF to TXT converter to turn a PDF into a plain text (.txt) file in seconds. Perfect for copying content into notes, docs, emails, or AI tools—without retyping. Upload your PDF, convert, and download the extracted text instantly.
             </p>
 
             <ul className="space-y-2 text-slate-700 mb-8">
@@ -114,7 +114,7 @@ export default function PDFToTXTPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Extract Text from PDF to TXT</h2>
               <p className="text-slate-600">
-                Convert PDF pages into a clean text file you can edit anywhere. OmnisPDF exports your content as plain text, making it easy to paste into Word, Google Docs, Notion, email, or code editors.
+                Convert PDF pages into a clean text file you can edit anywhere. PDF.it exports your content as plain text, making it easy to paste into Word, Google Docs, Notion, email, or code editors.
               </p>
             </div>
             <div>
@@ -138,7 +138,7 @@ export default function PDFToTXTPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Convert PDF to TXT</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PDF into OmnisPDF.",
+                "Upload or drag and drop your PDF into PDF.it.",
                 "Click Convert PDF to TXT.",
                 "Download your .txt file.",
               ].map((step, i) => (
@@ -188,7 +188,7 @@ export default function PDFToTXTPage() {
                   a: "Most text-based PDFs convert cleanly. If your PDF is scanned (image-only), you'll need OCR to extract text.",
                 },
                 {
-                  q: "Does OmnisPDF keep the formatting from the PDF?",
+                  q: "Does PDF.it keep the formatting from the PDF?",
                   a: "TXT is plain text, so formatting like fonts, columns, and spacing may not carry over. If you need layout preserved, use a PDF to Word tool instead.",
                 },
                 {
@@ -197,7 +197,7 @@ export default function PDFToTXTPage() {
                 },
                 {
                   q: "Can I convert PDF to TXT on mobile?",
-                  a: "Yes. Open OmnisPDF in your mobile browser, upload the PDF, convert, and download the TXT file.",
+                  a: "Yes. Open PDF.it in your mobile browser, upload the PDF, convert, and download the TXT file.",
                 },
                 {
                   q: "Is it safe to upload my PDF?",

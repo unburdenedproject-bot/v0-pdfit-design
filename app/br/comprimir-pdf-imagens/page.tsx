@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Image, Me
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF com Imagens — Reduza PDFs com Fotos e Imagens | OmnisPDF",
+  title: "Comprimir PDF com Imagens — Reduza PDFs com Fotos e Imagens | PDF.it",
   description:
     "Comprima PDFs que contem imagens e fotos. Reduza significativamente o tamanho sem perder a qualidade visual do documento.",
   alternates: {
@@ -24,8 +24,8 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Como o OmnisPDF comprime as imagens dentro de um PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "O OmnisPDF analisa cada imagem incorporada no seu PDF e aplica compressao inteligente que reduz a resolucao e otimiza o formato de cada imagem. O texto, as fontes e a formatacao do documento permanecem intactos." }
+      "name": "Como o PDF.it comprime as imagens dentro de um PDF?",
+      "acceptedAnswer": { "@type": "Answer", "text": "O PDF.it analisa cada imagem incorporada no seu PDF e aplica compressao inteligente que reduz a resolucao e otimiza o formato de cada imagem. O texto, as fontes e a formatacao do documento permanecem intactos." }
     },
     {
       "@type": "Question",
@@ -35,12 +35,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Ha perda de qualidade visivel nas imagens apos comprimir?",
-      "acceptedAnswer": { "@type": "Answer", "text": "A compressao recomendada do OmnisPDF e projetada para preservar a qualidade visual. As imagens sao otimizadas de forma inteligente — a diferenca e praticamente imperceptivel para a maioria dos documentos, incluindo portfolios e catalogos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "A compressao recomendada do PDF.it e projetada para preservar a qualidade visual. As imagens sao otimizadas de forma inteligente — a diferenca e praticamente imperceptivel para a maioria dos documentos, incluindo portfolios e catalogos." }
     },
     {
       "@type": "Question",
       "name": "Quais tipos de imagens sao comprimidas dentro do PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "O OmnisPDF comprime todos os tipos de imagens incorporadas: fotografias JPEG, graficos PNG, ilustracoes vetoriais rasterizadas e qualquer outro formato de imagem que seu PDF contenha." }
+      "acceptedAnswer": { "@type": "Answer", "text": "O PDF.it comprime todos os tipos de imagens incorporadas: fotografias JPEG, graficos PNG, ilustracoes vetoriais rasterizadas e qualquer outro formato de imagem que seu PDF contenha." }
     },
     {
       "@type": "Question",
@@ -50,7 +50,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso comprimir um PDF com centenas de imagens?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF processa todas as imagens incorporadas no seu PDF independente de quantas existam. Documentos com muitas imagens — catalogos, portfolios, apresentacoes — tipicamente veem as maiores reducoes de tamanho." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it processa todas as imagens incorporadas no seu PDF independente de quantas existam. Documentos com muitas imagens — catalogos, portfolios, apresentacoes — tipicamente veem as maiores reducoes de tamanho." }
     }
   ]
 }
@@ -74,7 +74,7 @@ export default function ComprimirPDFImagensPagePt() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF com Imagens</h1>
               <p className="text-xl text-slate-300 mb-8">
-                PDFs com muitas imagens — portfolios fotograficos, catalogos de produtos, apresentacoes e documentos digitalizados — costumam ser os maiores arquivos com que voce trabalha. O OmnisPDF comprime as imagens incorporadas de forma inteligente, reduzindo significativamente o tamanho sem perder a qualidade visual do documento.
+                PDFs com muitas imagens — portfolios fotograficos, catalogos de produtos, apresentacoes e documentos digitalizados — costumam ser os maiores arquivos com que voce trabalha. O PDF.it comprime as imagens incorporadas de forma inteligente, reduzindo significativamente o tamanho sem perder a qualidade visual do documento.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Compressao Inteligente de Imagens</span></div>
@@ -100,7 +100,7 @@ export default function ComprimirPDFImagensPagePt() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que Comprimir PDFs com Imagens?</h2>
             <p className="text-lg text-slate-600 mb-8">
-              As imagens sao quase sempre o componente maior em um PDF. Uma unica foto de alta resolucao pode adicionar varios megabytes. Quando seu PDF contem dezenas ou centenas de imagens — fotos de produtos, ilustracoes, graficos — o tamanho do arquivo pode inflar para 50MB ou mais. A compressao inteligente do OmnisPDF se concentra nessas imagens incorporadas, reduzindo-as significativamente enquanto preserva a qualidade visual.
+              As imagens sao quase sempre o componente maior em um PDF. Uma unica foto de alta resolucao pode adicionar varios megabytes. Quando seu PDF contem dezenas ou centenas de imagens — fotos de produtos, ilustracoes, graficos — o tamanho do arquivo pode inflar para 50MB ou mais. A compressao inteligente do PDF.it se concentra nessas imagens incorporadas, reduzindo-as significativamente enquanto preserva a qualidade visual.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Foca em imagens incorporadas para maxima reducao de tamanho</li>
@@ -151,7 +151,7 @@ export default function ComprimirPDFImagensPagePt() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Comprimir PDF com Imagens</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste e solte seu PDF com imagens no OmnisPDF.",
+                "Envie ou arraste e solte seu PDF com imagens no PDF.it.",
                 "Clique em Comprimir PDF — a compressao inteligente e aplicada automaticamente a todas as imagens incorporadas.",
                 "Baixe seu PDF menor. Se ainda estiver muito grande, tente dividir o arquivo primeiro e comprima cada parte.",
               ].map((step, i) => (
@@ -205,12 +205,12 @@ export default function ComprimirPDFImagensPagePt() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como o OmnisPDF comprime as imagens dentro de um PDF?", a: "O OmnisPDF analisa cada imagem incorporada no seu PDF e aplica compressao inteligente que reduz a resolucao e otimiza o formato de cada imagem. O texto, as fontes e a formatacao do documento permanecem intactos." },
+                { q: "Como o PDF.it comprime as imagens dentro de um PDF?", a: "O PDF.it analisa cada imagem incorporada no seu PDF e aplica compressao inteligente que reduz a resolucao e otimiza o formato de cada imagem. O texto, as fontes e a formatacao do documento permanecem intactos." },
                 { q: "Quanto pode ser reduzido um PDF com muitas imagens?", a: "PDFs com muitas imagens geralmente veem as maiores reducoes — tipicamente entre 50-80%. Os resultados exatos dependem da resolucao, quantidade e tipo de imagens no seu documento." },
-                { q: "Ha perda de qualidade visivel nas imagens apos comprimir?", a: "A compressao recomendada do OmnisPDF e projetada para preservar a qualidade visual. As imagens sao otimizadas de forma inteligente — a diferenca e praticamente imperceptivel para a maioria dos documentos, incluindo portfolios e catalogos." },
-                { q: "Quais tipos de imagens sao comprimidas dentro do PDF?", a: "O OmnisPDF comprime todos os tipos de imagens incorporadas: fotografias JPEG, graficos PNG, ilustracoes vetoriais rasterizadas e qualquer outro formato de imagem que seu PDF contenha." },
+                { q: "Ha perda de qualidade visivel nas imagens apos comprimir?", a: "A compressao recomendada do PDF.it e projetada para preservar a qualidade visual. As imagens sao otimizadas de forma inteligente — a diferenca e praticamente imperceptivel para a maioria dos documentos, incluindo portfolios e catalogos." },
+                { q: "Quais tipos de imagens sao comprimidas dentro do PDF?", a: "O PDF.it comprime todos os tipos de imagens incorporadas: fotografias JPEG, graficos PNG, ilustracoes vetoriais rasterizadas e qualquer outro formato de imagem que seu PDF contenha." },
                 { q: "A compressao afeta o texto ou as fontes do PDF?", a: "Nao. O texto nos PDFs e armazenado como dados vetoriais, completamente separado das imagens. A compressao se concentra exclusivamente nas imagens incorporadas — o texto, as fontes e a formatacao permanecem 100% intactos e nitidos." },
-                { q: "Posso comprimir um PDF com centenas de imagens?", a: "Sim. O OmnisPDF processa todas as imagens incorporadas no seu PDF independente de quantas existam. Documentos com muitas imagens — catalogos, portfolios, apresentacoes — tipicamente veem as maiores reducoes de tamanho." },
+                { q: "Posso comprimir um PDF com centenas de imagens?", a: "Sim. O PDF.it processa todas as imagens incorporadas no seu PDF independente de quantas existam. Documentos com muitas imagens — catalogos, portfolios, apresentacoes — tipicamente veem as maiores reducoes de tamanho." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

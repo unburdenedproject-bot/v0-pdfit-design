@@ -6,9 +6,9 @@ import { Scissors, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Remover Paginas de PDF — Delete Paginas Indesejadas | OmnisPDF",
+  title: "Remover Paginas de PDF — Delete Paginas Indesejadas | PDF.it",
   description:
-    "Remova paginas indesejadas de um PDF com OmnisPDF. Exclua paginas em branco, duplicadas ou desnecessarias — rapido, gratis e online.",
+    "Remova paginas indesejadas de um PDF com PDF.it. Exclua paginas em branco, duplicadas ou desnecessarias — rapido, gratis e online.",
   alternates: {
     languages: {
       en: "/remove-pages-from-pdf",
@@ -25,12 +25,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como remover paginas de um PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o OmnisPDF, selecione as paginas que deseja remover e clique em Processar. O OmnisPDF gera um novo PDF sem as paginas selecionadas." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o PDF.it, selecione as paginas que deseja remover e clique em Processar. O PDF.it gera um novo PDF sem as paginas selecionadas." }
     },
     {
       "@type": "Question",
       "name": "O arquivo original e alterado?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Nao. O OmnisPDF cria um novo PDF sem as paginas removidas. Seu arquivo original nao e modificado — voce baixa uma nova versao." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Nao. O PDF.it cria um novo PDF sem as paginas removidas. Seu arquivo original nao e modificado — voce baixa uma nova versao." }
     },
     {
       "@type": "Question",
@@ -50,7 +50,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso remover paginas de um PDF no celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em navegadores moveis — selecione as paginas indesejadas, remova e baixe o PDF limpo diretamente do seu celular." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em navegadores moveis — selecione as paginas indesejadas, remova e baixe o PDF limpo diretamente do seu celular." }
     }
   ]
 }
@@ -98,7 +98,7 @@ export default function RemoverPaginasDePdfPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              PDFs muitas vezes contem paginas desnecessarias — capas, paginas em branco, anuncios ou secoes irrelevantes. O OmnisPDF permite remover essas paginas facilmente, gerando um documento limpo e profissional.
+              PDFs muitas vezes contem paginas desnecessarias — capas, paginas em branco, anuncios ou secoes irrelevantes. O PDF.it permite remover essas paginas facilmente, gerando um documento limpo e profissional.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Remova paginas em branco ou desnecessarias</li>
@@ -140,7 +140,7 @@ export default function RemoverPaginasDePdfPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Remover Paginas de um PDF</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste seu PDF para o OmnisPDF.",
+                "Envie ou arraste seu PDF para o PDF.it.",
                 "Selecione as paginas que deseja remover.",
                 "Clique em Processar e baixe o PDF sem as paginas removidas.",
               ].map((step, i) => (
@@ -187,12 +187,12 @@ export default function RemoverPaginasDePdfPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como remover paginas de um PDF?", a: "Envie seu PDF para o OmnisPDF, selecione as paginas que deseja remover e clique em Processar. O OmnisPDF gera um novo PDF sem as paginas selecionadas." },
-                { q: "O arquivo original e alterado?", a: "Nao. O OmnisPDF cria um novo PDF sem as paginas removidas. Seu arquivo original nao e modificado — voce baixa uma nova versao." },
+                { q: "Como remover paginas de um PDF?", a: "Envie seu PDF para o PDF.it, selecione as paginas que deseja remover e clique em Processar. O PDF.it gera um novo PDF sem as paginas selecionadas." },
+                { q: "O arquivo original e alterado?", a: "Nao. O PDF.it cria um novo PDF sem as paginas removidas. Seu arquivo original nao e modificado — voce baixa uma nova versao." },
                 { q: "Posso remover paginas em branco automaticamente?", a: "Voce pode visualizar as paginas do seu PDF e selecionar manualmente quais remover, incluindo paginas em branco. Selecione todas as paginas em branco e remova-as de uma vez." },
                 { q: "Remover paginas afeta a qualidade do PDF?", a: "Nao. As paginas restantes sao mantidas exatamente como no original — texto, imagens e formatacao preservados integralmente." },
                 { q: "E gratis remover paginas de um PDF?", a: "Sim. Voce pode remover paginas de PDFs de ate 25MB gratis. Usuarios Pro podem processar arquivos de ate 200MB." },
-                { q: "Posso remover paginas de um PDF no celular?", a: "Sim. O OmnisPDF funciona em navegadores moveis — selecione as paginas indesejadas, remova e baixe o PDF limpo diretamente do seu celular." },
+                { q: "Posso remover paginas de um PDF no celular?", a: "Sim. O PDF.it funciona em navegadores moveis — selecione as paginas indesejadas, remova e baixe o PDF limpo diretamente do seu celular." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

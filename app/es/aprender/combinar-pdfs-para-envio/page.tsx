@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Merge, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Combinar PDFs para Envíos (Escuela, Visa, Portales de Empleo) | OmnisPDF",
+  title: "Combinar PDFs para Envíos (Escuela, Visa, Portales de Empleo) | PDF.it",
   description:
     "Aprende cómo combinar múltiples PDFs en un solo archivo para envíos escolares, de visa y portales de empleo. Cumple con límites de tamaño, aplana para compatibilidad y protege documentos sensibles.",
   keywords: "combinar pdfs para envío, unir pdf para visa, combinar pdf para solicitud de empleo, unir documentos para subir",
@@ -14,21 +14,21 @@ export const metadata = {
 const faqSchema = {
   "@context": "https://schema.org", "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "¿Cómo combino múltiples PDFs en uno para un envío?", "acceptedAnswer": { "@type": "Answer", "text": "Sube todos tus documentos (identificación, certificado, carta de presentación, etc.) a la herramienta Unir PDF de OmnisPDF. Ordénalos según las pautas de envío, haz clic en Unir, y descarga el archivo combinado. Si el archivo es muy grande, comprímelo después." } },
+    { "@type": "Question", "name": "¿Cómo combino múltiples PDFs en uno para un envío?", "acceptedAnswer": { "@type": "Answer", "text": "Sube todos tus documentos (identificación, certificado, carta de presentación, etc.) a la herramienta Unir PDF de PDF.it. Ordénalos según las pautas de envío, haz clic en Unir, y descarga el archivo combinado. Si el archivo es muy grande, comprímelo después." } },
     { "@type": "Question", "name": "¿En qué orden debo organizar los documentos para un envío?", "acceptedAnswer": { "@type": "Answer", "text": "Siempre sigue el orden especificado en las pautas de envío. Si no se indica un orden, una organización común es: formulario de solicitud o carta de presentación primero, luego documentos de identificación, luego documentos de respaldo (certificados, constancias, cartas), luego materiales adicionales." } },
-    { "@type": "Question", "name": "Mi PDF combinado es muy grande para el portal de carga. ¿Qué hago?", "acceptedAnswer": { "@type": "Answer", "text": "Usa la herramienta Comprimir PDF de OmnisPDF después de unir. Para límites estrictos como 2MB o 5MB, usa las herramientas dedicadas Comprimir a 2MB o Comprimir a 5MB. Si la compresión no es suficiente, intenta aplanar el PDF primero para eliminar campos de formulario y anotaciones, luego comprime de nuevo." } },
+    { "@type": "Question", "name": "Mi PDF combinado es muy grande para el portal de carga. ¿Qué hago?", "acceptedAnswer": { "@type": "Answer", "text": "Usa la herramienta Comprimir PDF de PDF.it después de unir. Para límites estrictos como 2MB o 5MB, usa las herramientas dedicadas Comprimir a 2MB o Comprimir a 5MB. Si la compresión no es suficiente, intenta aplanar el PDF primero para eliminar campos de formulario y anotaciones, luego comprime de nuevo." } },
     { "@type": "Question", "name": "¿Debo aplanar mi PDF antes de enviarlo?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, especialmente si tu PDF contiene campos de formulario editables, firmas o anotaciones. Aplanar bloquea todo en su lugar para que el documento se vea igual en cualquier dispositivo o lector de PDF. También reduce el tamaño del archivo." } },
-    { "@type": "Question", "name": "¿Puedo proteger con contraseña mi envío combinado?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Usa la herramienta Proteger PDF de OmnisPDF para agregar una contraseña después de unir. Sin embargo, solo agrega una contraseña si las pautas de envío lo permiten — algunos portales no pueden abrir archivos protegidos con contraseña." } },
+    { "@type": "Question", "name": "¿Puedo proteger con contraseña mi envío combinado?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Usa la herramienta Proteger PDF de PDF.it para agregar una contraseña después de unir. Sin embargo, solo agrega una contraseña si las pautas de envío lo permiten — algunos portales no pueden abrir archivos protegidos con contraseña." } },
     { "@type": "Question", "name": "¿Cómo combino PDFs para una solicitud de visa?", "acceptedAnswer": { "@type": "Answer", "text": "Sigue la lista de verificación de la embajada exactamente. Generalmente: formulario de solicitud, copia de pasaporte, fotos, documentos financieros (estados de cuenta bancarios), y cartas de respaldo. Únelos en ese orden, comprime para cumplir con los límites de tamaño, y aplana antes de subir." } }
   ]
 }
 
 const howToSchema = {
   "@context": "https://schema.org", "@type": "HowTo", "name": "Cómo Combinar PDFs para Envíos",
-  "description": "Une múltiples documentos en un PDF para envíos escolares, de visa o de empleo usando OmnisPDF.",
+  "description": "Une múltiples documentos en un PDF para envíos escolares, de visa o de empleo usando PDF.it.",
   "step": [
     { "@type": "HowToStep", "name": "Reúne y prepara tus documentos", "text": "Recopila todos los documentos requeridos como archivos PDF. Verifica las pautas de envío para el orden requerido y los límites de tamaño de archivo. Escanea cualquier documento en papel a PDF si es necesario." },
-    { "@type": "HowToStep", "name": "Une documentos en el orden requerido", "text": "Sube todos los PDFs a la herramienta Unir de OmnisPDF, ordénalos según las pautas de envío, y haz clic en Unir para combinarlos en un archivo." },
+    { "@type": "HowToStep", "name": "Une documentos en el orden requerido", "text": "Sube todos los PDFs a la herramienta Unir de PDF.it, ordénalos según las pautas de envío, y haz clic en Unir para combinarlos en un archivo." },
     { "@type": "HowToStep", "name": "Comprime, aplana y verifica", "text": "Si el archivo excede el límite de tamaño, comprímelo. Aplana el PDF para bloquear campos de formulario y anotaciones. Abre el archivo final y revisa cada página para confirmar que todo está correcto antes de enviar." }
   ]
 }
@@ -91,7 +91,7 @@ export default function CombinarPDFsParaEnvioPage() {
               <div className="space-y-4">
                 {[
                   { title: "Recopila todos los documentos requeridos como PDFs", desc: "Reúne cada documento listado en los requisitos de envío. Si algún documento está en formato Word, conviértelo usando Word a PDF. Si tienes documentos en papel, escanéalos a PDF usando tu teléfono o escáner." },
-                  { title: "Sube y ordena en el orden requerido", desc: "Sube todos los PDFs a la herramienta Unir de OmnisPDF. Arrastra y suelta en el orden especificado por las pautas de envío. Si no se especifica un orden, usa: solicitud/carta de presentación primero, luego identificación, luego documentos de respaldo." },
+                  { title: "Sube y ordena en el orden requerido", desc: "Sube todos los PDFs a la herramienta Unir de PDF.it. Arrastra y suelta en el orden especificado por las pautas de envío. Si no se especifica un orden, usa: solicitud/carta de presentación primero, luego identificación, luego documentos de respaldo." },
                   { title: "Une, comprime y verifica", desc: "Haz clic en Unir para combinar. Si el archivo excede el límite de tamaño, comprímelo. Abre el PDF unido y revisa cada página para confirmar que todos los documentos están presentes y en el orden correcto." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -196,11 +196,11 @@ export default function CombinarPDFsParaEnvioPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo combino múltiples PDFs en uno para un envío?", a: "Sube todos tus documentos (identificación, certificado, carta de presentación, etc.) a la herramienta Unir PDF de OmnisPDF. Ordénalos según las pautas de envío, haz clic en Unir, y descarga el archivo combinado. Si el archivo es muy grande, comprímelo después." },
+                { q: "¿Cómo combino múltiples PDFs en uno para un envío?", a: "Sube todos tus documentos (identificación, certificado, carta de presentación, etc.) a la herramienta Unir PDF de PDF.it. Ordénalos según las pautas de envío, haz clic en Unir, y descarga el archivo combinado. Si el archivo es muy grande, comprímelo después." },
                 { q: "¿En qué orden debo organizar los documentos para un envío?", a: "Siempre sigue el orden especificado en las pautas de envío. Si no se indica un orden, una organización común es: formulario de solicitud o carta de presentación primero, luego documentos de identificación, luego documentos de respaldo (certificados, constancias, cartas), luego materiales adicionales." },
-                { q: "Mi PDF combinado es muy grande para el portal de carga. ¿Qué hago?", a: "Usa la herramienta Comprimir PDF de OmnisPDF después de unir. Para límites estrictos como 2MB o 5MB, usa las herramientas dedicadas Comprimir a 2MB o Comprimir a 5MB. Si la compresión no es suficiente, intenta aplanar el PDF primero para eliminar campos de formulario y anotaciones, luego comprime de nuevo." },
+                { q: "Mi PDF combinado es muy grande para el portal de carga. ¿Qué hago?", a: "Usa la herramienta Comprimir PDF de PDF.it después de unir. Para límites estrictos como 2MB o 5MB, usa las herramientas dedicadas Comprimir a 2MB o Comprimir a 5MB. Si la compresión no es suficiente, intenta aplanar el PDF primero para eliminar campos de formulario y anotaciones, luego comprime de nuevo." },
                 { q: "¿Debo aplanar mi PDF antes de enviarlo?", a: "Sí, especialmente si tu PDF contiene campos de formulario editables, firmas o anotaciones. Aplanar bloquea todo en su lugar para que el documento se vea igual en cualquier dispositivo o lector de PDF. También reduce el tamaño del archivo." },
-                { q: "¿Puedo proteger con contraseña mi envío combinado?", a: "Sí. Usa la herramienta Proteger PDF de OmnisPDF para agregar una contraseña después de unir. Sin embargo, solo agrega una contraseña si las pautas de envío lo permiten — algunos portales no pueden abrir archivos protegidos con contraseña." },
+                { q: "¿Puedo proteger con contraseña mi envío combinado?", a: "Sí. Usa la herramienta Proteger PDF de PDF.it para agregar una contraseña después de unir. Sin embargo, solo agrega una contraseña si las pautas de envío lo permiten — algunos portales no pueden abrir archivos protegidos con contraseña." },
                 { q: "¿Cómo combino PDFs para una solicitud de visa?", a: "Sigue la lista de verificación de la embajada exactamente. Generalmente: formulario de solicitud, copia de pasaporte, fotos, documentos financieros (estados de cuenta bancarios), y cartas de respaldo. Únelos en ese orden, comprime para cumplir con los límites de tamaño, y aplana antes de subir." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

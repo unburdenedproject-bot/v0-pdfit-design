@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileSpreadsheet, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Convert Excel to PDF Online (XLSX to PDF) | OmnisPDF",
+  title: "Convert Excel to PDF Online (XLSX to PDF) | PDF.it",
   description:
     "Learn how to convert Excel spreadsheets to PDF online. Step-by-step guide covering formatting, multi-sheet handling, and tips for sharing, printing, and archiving.",
   keywords: "convert excel to pdf online, xlsx to pdf, excel to pdf, spreadsheet to pdf, convert spreadsheet to pdf online",
@@ -18,12 +18,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I convert Excel to PDF online for free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your Excel file (.xlsx or .xls) to OmnisPDF's Excel to PDF tool, click Convert, and download your PDF. No signup required for your first 3 files." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your Excel file (.xlsx or .xls) to PDF.it's Excel to PDF tool, click Convert, and download your PDF. No signup required for your first 3 files." }
     },
     {
       "@type": "Question",
       "name": "Will my Excel formatting be preserved in the PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF preserves cell borders, colors, bold/italic text, number formatting, and merged cells. For best results, set your print area and page layout in Excel before converting." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it preserves cell borders, colors, bold/italic text, number formatting, and merged cells. For best results, set your print area and page layout in Excel before converting." }
     },
     {
       "@type": "Question",
@@ -33,7 +33,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "What Excel file formats are supported?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF supports .xlsx (modern Excel), .xls (legacy Excel), .csv (comma-separated values), and .ods (OpenDocument Spreadsheet). All are converted to clean, formatted PDFs." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it supports .xlsx (modern Excel), .xls (legacy Excel), .csv (comma-separated values), and .ods (OpenDocument Spreadsheet). All are converted to clean, formatted PDFs." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I convert Excel to PDF on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in any mobile browser. Upload your Excel file, convert it, and download the PDF directly on iPhone or Android — no app needed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in any mobile browser. Upload your Excel file, convert it, and download the PDF directly on iPhone or Android — no app needed." }
     }
   ]
 }
@@ -52,22 +52,22 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Convert Excel to PDF Online",
-  "description": "Convert your Excel spreadsheet to a PDF in 3 simple steps using OmnisPDF.",
+  "description": "Convert your Excel spreadsheet to a PDF in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Upload your Excel file",
-      "text": "Go to OmnisPDF's Excel to PDF tool and upload your .xlsx, .xls, or .csv file by clicking or dragging it into the upload area."
+      "text": "Go to PDF.it's Excel to PDF tool and upload your .xlsx, .xls, or .csv file by clicking or dragging it into the upload area."
     },
     {
       "@type": "HowToStep",
       "name": "Convert to PDF",
-      "text": "Click Convert. OmnisPDF processes your spreadsheet and generates a PDF that preserves your formatting, cell borders, and colors."
+      "text": "Click Convert. PDF.it processes your spreadsheet and generates a PDF that preserves your formatting, cell borders, and colors."
     },
     {
       "@type": "HowToStep",
       "name": "Download your PDF",
-      "text": "Download the converted PDF. If the file is large, use OmnisPDF's Compress PDF tool to reduce the size before sharing."
+      "text": "Download the converted PDF. If the file is large, use PDF.it's Compress PDF tool to reduce the size before sharing."
     }
   ]
 }
@@ -163,7 +163,7 @@ export default function ConvertExcelToPDFPage() {
                   },
                   {
                     title: "Click Convert",
-                    desc: "OmnisPDF processes your spreadsheet server-side, preserving cell formatting, borders, colors, merged cells, and number formats. Multi-sheet workbooks are fully supported.",
+                    desc: "PDF.it processes your spreadsheet server-side, preserving cell formatting, borders, colors, merged cells, and number formats. Multi-sheet workbooks are fully supported.",
                   },
                   {
                     title: "Download your PDF",
@@ -205,7 +205,7 @@ export default function ConvertExcelToPDFPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Converting Multi-Sheet Workbooks</h2>
               <p className="text-slate-600 mb-4">
-                If your Excel file has multiple sheets (tabs), OmnisPDF converts all of them into a single PDF. Each sheet starts on a new page, maintaining the tab order from your workbook.
+                If your Excel file has multiple sheets (tabs), PDF.it converts all of them into a single PDF. Each sheet starts on a new page, maintaining the tab order from your workbook.
               </p>
               <p className="text-slate-600 mb-4">
                 <strong>Tip:</strong> If you only need specific sheets in the PDF, either delete the extra sheets before uploading or hide them (right-click the tab → Hide). Hidden sheets are excluded from the conversion.
@@ -244,7 +244,7 @@ export default function ConvertExcelToPDFPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Need to Convert Other Office Files?</h2>
               <p className="text-slate-600">
-                OmnisPDF handles all major Office formats. Use <Link href="/office-to-pdf" className="text-orange-600 hover:underline">Office to PDF</Link> to convert Word documents, PowerPoint presentations, and other formats. Or go directly to the specific tool you need — the conversion is fast and formatting is preserved across all file types.
+                PDF.it handles all major Office formats. Use <Link href="/office-to-pdf" className="text-orange-600 hover:underline">Office to PDF</Link> to convert Word documents, PowerPoint presentations, and other formats. Or go directly to the specific tool you need — the conversion is fast and formatting is preserved across all file types.
               </p>
             </section>
 
@@ -295,12 +295,12 @@ export default function ConvertExcelToPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I convert Excel to PDF online for free?", a: "Upload your Excel file (.xlsx or .xls) to OmnisPDF's Excel to PDF tool, click Convert, and download your PDF. No signup required for your first 3 files." },
-                { q: "Will my Excel formatting be preserved in the PDF?", a: "Yes. OmnisPDF preserves cell borders, colors, bold/italic text, number formatting, and merged cells. For best results, set your print area and page layout in Excel before converting." },
+                { q: "How do I convert Excel to PDF online for free?", a: "Upload your Excel file (.xlsx or .xls) to PDF.it's Excel to PDF tool, click Convert, and download your PDF. No signup required for your first 3 files." },
+                { q: "Will my Excel formatting be preserved in the PDF?", a: "Yes. PDF.it preserves cell borders, colors, bold/italic text, number formatting, and merged cells. For best results, set your print area and page layout in Excel before converting." },
                 { q: "Can I convert a multi-sheet Excel file to PDF?", a: "Yes. When you convert a multi-sheet Excel workbook, each sheet becomes a separate section in the PDF. All sheets are included by default." },
-                { q: "What Excel file formats are supported?", a: "OmnisPDF supports .xlsx (modern Excel), .xls (legacy Excel), .csv (comma-separated values), and .ods (OpenDocument Spreadsheet). All are converted to clean, formatted PDFs." },
+                { q: "What Excel file formats are supported?", a: "PDF.it supports .xlsx (modern Excel), .xls (legacy Excel), .csv (comma-separated values), and .ods (OpenDocument Spreadsheet). All are converted to clean, formatted PDFs." },
                 { q: "Why should I convert Excel to PDF instead of sharing the .xlsx file?", a: "PDFs look the same on every device, can't be accidentally edited, and don't require Excel to open. They're better for sharing reports, invoices, and any spreadsheet where the layout needs to stay fixed." },
-                { q: "Can I convert Excel to PDF on my phone?", a: "Yes. OmnisPDF works in any mobile browser. Upload your Excel file, convert it, and download the PDF directly on iPhone or Android — no app needed." },
+                { q: "Can I convert Excel to PDF on my phone?", a: "Yes. PDF.it works in any mobile browser. Upload your Excel file, convert it, and download the PDF directly on iPhone or Android — no app needed." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

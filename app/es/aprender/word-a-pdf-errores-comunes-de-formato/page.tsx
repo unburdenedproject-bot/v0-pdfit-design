@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Word a PDF: el formato cambio? Soluciona estas 7 causas | OmnisPDF",
+  title: "Word a PDF: el formato cambio? Soluciona estas 7 causas | PDF.it",
   description:
     "El formato de Word a PDF cambio? Aprende las 7 causas mas comunes: fuentes faltantes, tablas rotas, margenes desplazados, imagenes borrosas, y como solucionar cada una antes de convertir.",
   keywords: "word a pdf formato cambio, word a pdf problemas de formato, docx a pdf problemas de formato, word pdf solucion formato, word a pdf se ve diferente",
@@ -20,7 +20,7 @@ const faqSchema = {
     { "@type": "Question", "name": "Por que mis tablas se rompen al convertir Word a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Las tablas se rompen por anchos de columna de ajuste automatico, celdas combinadas y tablas anidadas. Soluciona esto estableciendo anchos de columna fijos (Propiedades de tabla > Columna > ancho especifico), evitando tablas profundamente anidadas y manteniendo disenos de tabla simples." } },
     { "@type": "Question", "name": "Por que mis imagenes estan borrosas o se movieron en el PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Las imagenes se mueven cuando el texto circundante se redistribuye por cambios de fuente. La borrosidad ocurre cuando Word o el convertidor comprime las imagenes. Soluciona el posicionamiento usando ajuste 'En linea con el texto' y previene la borrosidad insertando imagenes de alta resolucion." } },
     { "@type": "Question", "name": "Como prevengo cambios de margenes al convertir Word a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Establece margenes personalizados explicitos en Diseno de pagina > Margenes > Margenes personalizados en lugar de usar preajustes. Evita 'Margenes espejo' a menos que especificamente los necesites para impresion de folletos." } },
-    { "@type": "Question", "name": "Puedo hacer que mis hipervinculos funcionen en el PDF convertido?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Asegurate de que los hipervinculos esten correctamente insertados usando la funcion de hipervinculo de Word (Ctrl+K o clic derecho > Hipervinculo) en lugar de pegarlos como texto plano. OmnisPDF preserva los hipervinculos correctamente formateados durante la conversion." } }
+    { "@type": "Question", "name": "Puedo hacer que mis hipervinculos funcionen en el PDF convertido?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Asegurate de que los hipervinculos esten correctamente insertados usando la funcion de hipervinculo de Word (Ctrl+K o clic derecho > Hipervinculo) en lugar de pegarlos como texto plano. PDF.it preserva los hipervinculos correctamente formateados durante la conversion." } }
   ]
 }
 
@@ -32,7 +32,7 @@ const howToSchema = {
   "step": [
     { "@type": "HowToStep", "name": "Identifica el problema de formato", "text": "Compara tu documento de Word y PDF lado a lado. Revisa fuentes, tablas, imagenes, margenes, encabezados/pies de pagina, hipervinculos y saltos de pagina para encontrar lo que cambio." },
     { "@type": "HowToStep", "name": "Aplica la solucion especifica", "text": "Cada problema tiene una solucion especifica: incrusta fuentes para problemas de fuentes, establece anchos fijos para tablas, ancla imagenes, establece margenes explicitos, simplifica encabezados, formatea hipervinculos correctamente o inserta saltos de pagina manuales." },
-    { "@type": "HowToStep", "name": "Reconvierte y verifica", "text": "Sube el documento corregido a la herramienta Word a PDF de OmnisPDF, conviertelo y compara el resultado de nuevo para confirmar que el problema esta resuelto." }
+    { "@type": "HowToStep", "name": "Reconvierte y verifica", "text": "Sube el documento corregido a la herramienta Word a PDF de PDF.it, conviertelo y compara el resultado de nuevo para confirmar que el problema esta resuelto." }
   ]
 }
 
@@ -55,7 +55,7 @@ export default function WordAPdfErroresComunesDeFormatoPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><FileText className="h-5 w-5 text-white" /></div>
-              <p className="text-slate-700 font-semibold">Necesitas un convertidor confiable? OmnisPDF preserva el formato con precision.</p>
+              <p className="text-slate-700 font-semibold">Necesitas un convertidor confiable? PDF.it preserva el formato con precision.</p>
             </div>
             <Link href="/es/word-a-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Word a PDF Ahora <ArrowRight className="h-4 w-4" /></Link>
           </div>
@@ -107,7 +107,7 @@ export default function WordAPdfErroresComunesDeFormatoPage() {
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; Desactiva la compresion automatica de Word: Archivo &gt; Opciones &gt; Avanzado &gt; Tamano y calidad de imagen &gt; marca "No comprimir imagenes en el archivo".</li>
                 <li>&#10003; Inserta imagenes al tamano exacto que necesitas: no redimensiones arrastrando los controladores.</li>
-                <li>&#10003; Usa OmnisPDF para la conversion: preserva la calidad original de las imagenes sin compresion agresiva.</li>
+                <li>&#10003; Usa PDF.it para la conversion: preserva la calidad original de las imagenes sin compresion agresiva.</li>
               </ul>
             </section>
 
@@ -129,7 +129,7 @@ export default function WordAPdfErroresComunesDeFormatoPage() {
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; Inserta enlaces correctamente: selecciona texto &gt; clic derecho &gt; Hipervinculo (o Ctrl+K) &gt; pega la URL.</li>
                 <li>&#10003; No pegues URLs como texto y dependas del enlace automatico.</li>
-                <li>&#10003; Usa la <Link href="/es/word-a-pdf" className="text-orange-600 hover:underline">herramienta Word a PDF de OmnisPDF</Link> en lugar de "Imprimir a PDF": preserva los hipervinculos.</li>
+                <li>&#10003; Usa la <Link href="/es/word-a-pdf" className="text-orange-600 hover:underline">herramienta Word a PDF de PDF.it</Link> en lugar de "Imprimir a PDF": preserva los hipervinculos.</li>
               </ul>
             </section>
 
@@ -177,7 +177,7 @@ export default function WordAPdfErroresComunesDeFormatoPage() {
         <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Convierte Word a PDF: formato intacto</h2>
-            <p className="text-slate-300 mb-6">OmnisPDF maneja fuentes, tablas, imagenes y diseno con precision. Pruebalo gratis.</p>
+            <p className="text-slate-300 mb-6">PDF.it maneja fuentes, tablas, imagenes y diseno con precision. Pruebalo gratis.</p>
             <Link href="/es/word-a-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><FileText className="h-5 w-5" /> Word a PDF Ahora</Link>
           </div>
         </section>
@@ -211,7 +211,7 @@ export default function WordAPdfErroresComunesDeFormatoPage() {
                 { q: "Por que mis tablas se rompen al convertir Word a PDF?", a: "Las tablas se rompen por anchos de columna de ajuste automatico, celdas combinadas y tablas anidadas. Soluciona esto estableciendo anchos de columna fijos, evitando tablas anidadas y manteniendo disenos simples." },
                 { q: "Por que mis imagenes estan borrosas o se movieron en el PDF?", a: "Las imagenes se mueven cuando el texto circundante se redistribuye por cambios de fuente. La borrosidad ocurre cuando Word o el convertidor comprime las imagenes. Usa ajuste 'En linea con el texto' e inserta imagenes de alta resolucion." },
                 { q: "Como prevengo cambios de margenes al convertir Word a PDF?", a: "Establece margenes personalizados explicitos en Diseno de pagina > Margenes > Margenes personalizados en lugar de usar preajustes." },
-                { q: "Puedo hacer que mis hipervinculos funcionen en el PDF convertido?", a: "Si. Asegurate de que los hipervinculos esten correctamente insertados usando la funcion de hipervinculo de Word (Ctrl+K o clic derecho > Hipervinculo). OmnisPDF preserva los hipervinculos correctamente formateados." },
+                { q: "Puedo hacer que mis hipervinculos funcionen en el PDF convertido?", a: "Si. Asegurate de que los hipervinculos esten correctamente insertados usando la funcion de hipervinculo de Word (Ctrl+K o clic derecho > Hipervinculo). PDF.it preserva los hipervinculos correctamente formateados." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

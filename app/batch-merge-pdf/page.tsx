@@ -5,9 +5,9 @@ import { Merge, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Batch Merge PDFs — Combine Multiple Files at Once | OmnisPDF",
+  title: "Batch Merge PDFs — Combine Multiple Files at Once | PDF.it",
   description:
-    "Batch merge multiple PDF files at once with OmnisPDF Pro. Upload dozens of PDFs and combine them into one document in a single operation — fast and efficient.",
+    "Batch merge multiple PDF files at once with PDF.it Pro. Upload dozens of PDFs and combine them into one document in a single operation — fast and efficient.",
 }
 
 const faqSchema = {
@@ -17,7 +17,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I batch merge multiple PDFs at once?",
-      "acceptedAnswer": { "@type": "Answer", "text": "With OmnisPDF Pro, upload multiple PDF files simultaneously to the Merge PDF tool. Select all the files you want to combine, arrange them in order, and merge them into a single document in one operation." }
+      "acceptedAnswer": { "@type": "Answer", "text": "With PDF.it Pro, upload multiple PDF files simultaneously to the Merge PDF tool. Select all the files you want to combine, arrange them in order, and merge them into a single document in one operation." }
     },
     {
       "@type": "Question",
@@ -32,7 +32,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "What is the maximum file size for batch merging?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Pro users can upload files up to 200MB each. Business users can upload files up to 1GB each. Free users are limited to 25MB per file. For very large documents, consider compressing them first with OmnisPDF's Compress PDF tool." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Pro users can upload files up to 200MB each. Business users can upload files up to 1GB each. Free users are limited to 25MB per file. For very large documents, consider compressing them first with PDF.it's Compress PDF tool." }
     },
     {
       "@type": "Question",
@@ -66,7 +66,7 @@ export default function BatchMergePDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Batch Merge PDFs</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Combine multiple PDF files at once with OmnisPDF Pro. Upload dozens of documents and merge them into a single PDF in one operation — save hours of manual work.
+                Combine multiple PDF files at once with PDF.it Pro. Upload dozens of documents and merge them into a single PDF in one operation — save hours of manual work.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Process Multiple Files</span></div>
@@ -97,7 +97,7 @@ export default function BatchMergePDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              When you need to combine dozens of PDF files into one document, doing it one at a time is painfully slow. OmnisPDF Pro's batch merge feature lets you upload multiple files at once, arrange them in order, and merge them all in a single operation.
+              When you need to combine dozens of PDF files into one document, doing it one at a time is painfully slow. PDF.it Pro's batch merge feature lets you upload multiple files at once, arrange them in order, and merge them all in a single operation.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Upload and merge multiple PDFs simultaneously</li>
@@ -127,7 +127,7 @@ export default function BatchMergePDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Process Document Batches Efficiently</h2>
               <p className="text-slate-600">
-                Whether you're combining contracts, consolidating research papers, or assembling training materials, batch merge eliminates the tedious process of merging files one by one. Upload everything at once and let OmnisPDF handle the rest.
+                Whether you're combining contracts, consolidating research papers, or assembling training materials, batch merge eliminates the tedious process of merging files one by one. Upload everything at once and let PDF.it handle the rest.
               </p>
             </div>
           </div>
@@ -184,10 +184,10 @@ export default function BatchMergePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I batch merge multiple PDFs at once?", a: "With OmnisPDF Pro, upload multiple PDF files simultaneously to the Merge PDF tool. Select all the files you want to combine, arrange them in order, and merge them into a single document in one operation." },
+                { q: "How do I batch merge multiple PDFs at once?", a: "With PDF.it Pro, upload multiple PDF files simultaneously to the Merge PDF tool. Select all the files you want to combine, arrange them in order, and merge them into a single document in one operation." },
                 { q: "How many PDFs can I merge at once with batch processing?", a: "Pro users can upload and merge dozens of PDF files in a single batch operation. There is no fixed file count limit — the main constraint is the total file size, which can be up to 200MB per file for Pro users, or up to 1GB per file for Business users." },
                 { q: "Is batch merge available on the free plan?", a: "Free users can merge files one at a time with files up to 25MB. Batch processing — uploading and merging multiple files simultaneously — is a Pro feature available for $7.99/month." },
-                { q: "What is the maximum file size for batch merging?", a: "Pro users can upload files up to 200MB each. Business users can upload files up to 1GB each. Free users are limited to 25MB per file. For very large documents, consider compressing them first with OmnisPDF's Compress PDF tool." },
+                { q: "What is the maximum file size for batch merging?", a: "Pro users can upload files up to 200MB each. Business users can upload files up to 1GB each. Free users are limited to 25MB per file. For very large documents, consider compressing them first with PDF.it's Compress PDF tool." },
                 { q: "Can I choose the order of merged PDFs in a batch?", a: "Yes. When you upload multiple files for batch merging, you can arrange them in your preferred order before combining. The final merged PDF will follow the sequence you set." },
                 { q: "Does batch merging affect PDF quality?", a: "No. Batch merging preserves the original quality of all your PDF files. Text, images, formatting, fonts, and interactive elements remain unchanged in the merged output." },
               ].map((faq, i) => (

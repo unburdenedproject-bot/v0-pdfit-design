@@ -5,9 +5,9 @@ import Link from "next/link"
 import { Shield, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Password-Protect a PDF on Your Phone (iPhone & Android) | OmnisPDF",
+  title: "Password-Protect a PDF on Your Phone (iPhone & Android) | PDF.it",
   description:
-    "Learn how to password-protect a PDF on your iPhone or Android phone. No app required — add encryption to any PDF directly in your mobile browser with OmnisPDF.",
+    "Learn how to password-protect a PDF on your iPhone or Android phone. No app required — add encryption to any PDF directly in your mobile browser with PDF.it.",
   keywords: "protect pdf on phone, password protect pdf iphone, lock pdf android, secure pdf mobile",
 }
 
@@ -18,17 +18,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I password-protect a PDF on my iPhone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open Safari or Chrome, go to OmnisPDF's Protect PDF tool, upload your PDF from Files or iCloud Drive, set a password, and download the protected file. No app installation needed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open Safari or Chrome, go to PDF.it's Protect PDF tool, upload your PDF from Files or iCloud Drive, set a password, and download the protected file. No app installation needed." }
     },
     {
       "@type": "Question",
       "name": "Can I password-protect a PDF on Android?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open Chrome or any mobile browser, go to OmnisPDF's Protect PDF tool, upload your PDF from your device or Google Drive, set a password, and download the encrypted file." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open Chrome or any mobile browser, go to PDF.it's Protect PDF tool, upload your PDF from your device or Google Drive, set a password, and download the encrypted file." }
     },
     {
       "@type": "Question",
       "name": "Do I need to install an app to protect a PDF on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF works entirely in your mobile browser. There is nothing to install, no account required for basic use, and your files are processed securely and deleted after processing." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it works entirely in your mobile browser. There is nothing to install, no account required for basic use, and your files are processed securely and deleted after processing." }
     },
     {
       "@type": "Question",
@@ -38,11 +38,11 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I protect a PDF I received via WhatsApp or email?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Save the PDF to your phone first (tap and hold the file, then save to Files or Downloads), then upload it to OmnisPDF's Protect PDF tool in your browser." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Save the PDF to your phone first (tap and hold the file, then save to Files or Downloads), then upload it to PDF.it's Protect PDF tool in your browser." }
     },
     {
       "@type": "Question",
-      "name": "Is the mobile version of OmnisPDF free?",
+      "name": "Is the mobile version of PDF.it free?",
       "acceptedAnswer": { "@type": "Answer", "text": "Yes. You get 3 free conversions without signing up, and 10 per day with a free account. Files up to 25MB are supported on the free tier. Pro users get unlimited conversions and files up to 200MB." }
     }
   ]
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Password-Protect a PDF on Your Phone",
-  "description": "Add password protection to a PDF on iPhone or Android in 3 steps using OmnisPDF.",
+  "description": "Add password protection to a PDF on iPhone or Android in 3 steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
-      "name": "Open OmnisPDF in your mobile browser",
-      "text": "Open Safari (iPhone) or Chrome (Android) and go to omnispdf.com/protect-pdf. The tool works fully in your mobile browser — no app needed."
+      "name": "Open PDF.it in your mobile browser",
+      "text": "Open Safari (iPhone) or Chrome (Android) and go to pdf.it.com/protect-pdf. The tool works fully in your mobile browser — no app needed."
     },
     {
       "@type": "HowToStep",
@@ -154,8 +154,8 @@ export default function ProtectPDFOnMobilePage() {
               <div className="space-y-4">
                 {[
                   {
-                    title: "Open OmnisPDF in your mobile browser",
-                    desc: "Open Safari on iPhone or Chrome on Android and navigate to omnispdf.com/protect-pdf. The tool is fully responsive and works exactly the same as on desktop — no app download needed.",
+                    title: "Open PDF.it in your mobile browser",
+                    desc: "Open Safari on iPhone or Chrome on Android and navigate to pdf.it.com/protect-pdf. The tool is fully responsive and works exactly the same as on desktop — no app download needed.",
                   },
                   {
                     title: "Upload your PDF and set a password",
@@ -189,7 +189,7 @@ export default function ProtectPDFOnMobilePage() {
                 <li>&#10003; <strong>Use Safari for the best experience.</strong> Safari integrates with the Files app, making it easy to upload PDFs from iCloud Drive, On My iPhone, or third-party cloud storage.</li>
                 <li>&#10003; <strong>Find your downloads.</strong> After downloading the protected PDF, open the Files app and go to "On My iPhone" &gt; "Downloads" to find it.</li>
                 <li>&#10003; <strong>Share directly from Files.</strong> Tap the protected PDF in Files, then use the share button to send it via Mail, Messages, WhatsApp, or AirDrop.</li>
-                <li>&#10003; <strong>Protect scanned documents.</strong> If you scanned a document using the iPhone camera or Notes app, save it as a PDF first, then upload it to OmnisPDF. For better scan quality, try <Link href="/phone-scan-cleanup" className="text-orange-600 hover:underline">Phone Scan Cleanup</Link> before protecting.</li>
+                <li>&#10003; <strong>Protect scanned documents.</strong> If you scanned a document using the iPhone camera or Notes app, save it as a PDF first, then upload it to PDF.it. For better scan quality, try <Link href="/phone-scan-cleanup" className="text-orange-600 hover:underline">Phone Scan Cleanup</Link> before protecting.</li>
               </ul>
             </section>
 
@@ -200,7 +200,7 @@ export default function ProtectPDFOnMobilePage() {
                 Android gives you more flexibility with file management. Here is how to get the best experience:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Use Chrome for reliability.</strong> Chrome is the default browser on most Android devices and handles file uploads and downloads smoothly with OmnisPDF.</li>
+                <li>&#10003; <strong>Use Chrome for reliability.</strong> Chrome is the default browser on most Android devices and handles file uploads and downloads smoothly with PDF.it.</li>
                 <li>&#10003; <strong>Upload from Google Drive.</strong> When the file picker opens, you can browse Google Drive directly without downloading the file to your phone first.</li>
                 <li>&#10003; <strong>Check notifications for downloads.</strong> After the protected PDF downloads, you will see a notification in the tray. Tap it to open the file or find it in your Downloads folder.</li>
                 <li>&#10003; <strong>Share via any app.</strong> Open your Files app, long-press the protected PDF, and tap Share. Android lets you send files through Gmail, WhatsApp, Telegram, Slack, and dozens of other apps.</li>
@@ -211,7 +211,7 @@ export default function ProtectPDFOnMobilePage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Other PDF Tools That Work on Mobile</h2>
               <p className="text-slate-600 mb-4">
-                OmnisPDF is fully responsive — every tool works on your phone just like it does on desktop. Here are some tools that pair well with password protection on mobile:
+                PDF.it is fully responsive — every tool works on your phone just like it does on desktop. Here are some tools that pair well with password protection on mobile:
               </p>
               <div className="space-y-6">
                 <div>
@@ -287,12 +287,12 @@ export default function ProtectPDFOnMobilePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "Can I password-protect a PDF on my iPhone?", a: "Yes. Open Safari or Chrome, go to OmnisPDF's Protect PDF tool, upload your PDF from Files or iCloud Drive, set a password, and download the protected file. No app installation needed." },
-                { q: "Can I password-protect a PDF on Android?", a: "Yes. Open Chrome or any mobile browser, go to OmnisPDF's Protect PDF tool, upload your PDF from your device or Google Drive, set a password, and download the encrypted file." },
-                { q: "Do I need to install an app to protect a PDF on my phone?", a: "No. OmnisPDF works entirely in your mobile browser. There is nothing to install, no account required for basic use, and your files are processed securely and deleted after processing." },
+                { q: "Can I password-protect a PDF on my iPhone?", a: "Yes. Open Safari or Chrome, go to PDF.it's Protect PDF tool, upload your PDF from Files or iCloud Drive, set a password, and download the protected file. No app installation needed." },
+                { q: "Can I password-protect a PDF on Android?", a: "Yes. Open Chrome or any mobile browser, go to PDF.it's Protect PDF tool, upload your PDF from your device or Google Drive, set a password, and download the encrypted file." },
+                { q: "Do I need to install an app to protect a PDF on my phone?", a: "No. PDF.it works entirely in your mobile browser. There is nothing to install, no account required for basic use, and your files are processed securely and deleted after processing." },
                 { q: "Where do protected PDFs get saved on my phone?", a: "On iPhone, downloaded files go to the Files app in the Downloads folder. On Android, they go to the Downloads folder accessible from the Files app or notification tray." },
-                { q: "Can I protect a PDF I received via WhatsApp or email?", a: "Yes. Save the PDF to your phone first (tap and hold the file, then save to Files or Downloads), then upload it to OmnisPDF's Protect PDF tool in your browser." },
-                { q: "Is the mobile version of OmnisPDF free?", a: "Yes. You get 3 free conversions without signing up, and 10 per day with a free account. Files up to 25MB are supported on the free tier. Pro users get unlimited conversions and files up to 200MB." },
+                { q: "Can I protect a PDF I received via WhatsApp or email?", a: "Yes. Save the PDF to your phone first (tap and hold the file, then save to Files or Downloads), then upload it to PDF.it's Protect PDF tool in your browser." },
+                { q: "Is the mobile version of PDF.it free?", a: "Yes. You get 3 free conversions without signing up, and 10 per day with a free account. Files up to 25MB are supported on the free tier. Pro users get unlimited conversions and files up to 200MB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

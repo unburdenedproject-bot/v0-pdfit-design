@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileDown, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "How to Compress a PDF Without Losing Quality | OmnisPDF",
+  title: "How to Compress a PDF Without Losing Quality | PDF.it",
   description:
     "Learn how to reduce PDF file size without losing quality. Keep text sharp and images clear while shrinking your document — step-by-step guide with lossless compression tips.",
   keywords: "compress pdf without losing quality, reduce pdf size keep quality, lossless pdf compression, compress pdf no quality loss",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I compress a PDF without losing quality on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in any mobile browser. Upload your PDF, select Light compression, and download the result. No app needed — works on iPhone and Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in any mobile browser. Upload your PDF, select Light compression, and download the result. No app needed — works on iPhone and Android." }
     }
   ]
 }
@@ -57,7 +57,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Upload your PDF",
-      "text": "Go to OmnisPDF's Compress PDF tool and upload the file you want to shrink by clicking or dragging it into the upload area."
+      "text": "Go to PDF.it's Compress PDF tool and upload the file you want to shrink by clicking or dragging it into the upload area."
     },
     {
       "@type": "HowToStep",
@@ -312,7 +312,7 @@ export default function CompressPDFWithoutQualityLossPage() {
                 { q: "How much smaller will my PDF be with lossless compression?", a: "Typically 10-30% smaller. If the PDF has lots of redundant data or embedded fonts, savings can be higher. For bigger reductions you need lossy compression, which may slightly reduce image quality." },
                 { q: "Will text stay sharp after compressing?", a: "Absolutely. PDF text is stored as vector data, not images, so compression never affects text sharpness. Only embedded images can be affected, and only if you choose Medium or Extreme compression." },
                 { q: "Should I use Light or Medium compression to keep quality?", a: "Use Light if quality is your top priority — it keeps images at their original resolution. Medium is a good middle ground that slightly reduces image resolution but remains visually indistinguishable for most documents." },
-                { q: "Can I compress a PDF without losing quality on my phone?", a: "Yes. OmnisPDF works in any mobile browser. Upload your PDF, select Light compression, and download the result. No app needed — works on iPhone and Android." },
+                { q: "Can I compress a PDF without losing quality on my phone?", a: "Yes. PDF.it works in any mobile browser. Upload your PDF, select Light compression, and download the result. No app needed — works on iPhone and Android." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

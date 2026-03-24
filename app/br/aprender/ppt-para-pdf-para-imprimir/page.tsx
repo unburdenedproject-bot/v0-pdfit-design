@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Printer, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "PPT para PDF para Imprimir: Dicas de Layout e Qualidade | OmnisPDF",
+  title: "PPT para PDF para Imprimir: Dicas de Layout e Qualidade | PDF.it",
   description: "Converta PowerPoint para PDF pronto para impressao. Aprenda a configurar tamanho de slide, resolucao de imagem, margens e layout para obter impressoes perfeitas.",
   keywords: "ppt para pdf para imprimir, powerpoint para pdf impressao, converter ppt para imprimir, pdf para impressao, slides para imprimir",
 }
@@ -20,7 +20,7 @@ const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainE
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como converter PPT para PDF pronto para imprimir", "description": "Prepare sua apresentacao PowerPoint para impressao perfeita em PDF.", "step": [
   { "@type": "HowToStep", "name": "Configure o tamanho do slide", "text": "No PowerPoint, va em Design > Tamanho do Slide e escolha o formato adequado para impressao (A4, Carta ou personalizado)." },
   { "@type": "HowToStep", "name": "Verifique a resolucao das imagens", "text": "Certifique-se de que todas as imagens tem pelo menos 300 DPI para impressao de qualidade." },
-  { "@type": "HowToStep", "name": "Converta para PDF", "text": "Envie o arquivo PPTX para o conversor do OmnisPDF e baixe o PDF pronto para impressao." }
+  { "@type": "HowToStep", "name": "Converta para PDF", "text": "Envie o arquivo PPTX para o conversor do PDF.it e baixe o PDF pronto para impressao." }
 ] }
 
 export default function PptParaPdfParaImprimirPage() {

@@ -5,7 +5,7 @@ import Link from "next/link"
 import { QrCode, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Create a QR Code for WiFi (Guests Connect Instantly) | OmnisPDF",
+  title: "Create a QR Code for WiFi (Guests Connect Instantly) | PDF.it",
   description:
     "Learn how to create a WiFi QR code so guests, customers, and visitors can connect to your network instantly by scanning — no typing passwords. Step-by-step guide.",
   keywords: "qr code wifi, wifi qr code generator, share wifi qr code, wifi password qr code",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is this tool free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF's QR Code generator is a Pro feature at $7.99/month. Pro users get unlimited QR code generation including WiFi, URL, vCard, and all other types." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it's QR Code generator is a Pro feature at $7.99/month. Pro users get unlimited QR code generation including WiFi, URL, vCard, and all other types." }
     }
   ]
 }
@@ -52,7 +52,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Create a WiFi QR Code",
-  "description": "Let guests connect to your WiFi instantly by scanning a QR code. Create one in 3 steps with OmnisPDF.",
+  "description": "Let guests connect to your WiFi instantly by scanning a QR code. Create one in 3 steps with PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
@@ -62,7 +62,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Generate the WiFi QR code",
-      "text": "Open OmnisPDF's QR Code tool, select WiFi type, and enter your network name, password, and encryption type. Click Generate."
+      "text": "Open PDF.it's QR Code tool, select WiFi type, and enter your network name, password, and encryption type. Click Generate."
     },
     {
       "@type": "HowToStep",
@@ -159,7 +159,7 @@ export default function QRCodeForWiFiPage() {
                   },
                   {
                     title: "Generate the QR code",
-                    desc: "Open OmnisPDF's QR Code tool (Pro feature), select the WiFi type, and enter your SSID, password, and encryption type. If your network name has spaces or special characters, enter it exactly as it appears in your WiFi settings list.",
+                    desc: "Open PDF.it's QR Code tool (Pro feature), select the WiFi type, and enter your SSID, password, and encryption type. If your network name has spaces or special characters, enter it exactly as it appears in your WiFi settings list.",
                   },
                   {
                     title: "Print and display",
@@ -221,7 +221,7 @@ export default function QRCodeForWiFiPage() {
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Use a guest network.</strong> Most modern routers support a separate guest network. Create one with its own password and make the QR code for that network only. Your main network stays private.</li>
-                <li>&#10003; <strong>Change the guest password regularly.</strong> Especially for businesses. Update it monthly and generate a new QR code. OmnisPDF's <Link href="/qr-code" className="text-orange-600 hover:underline">QR Code tool</Link> makes this quick.</li>
+                <li>&#10003; <strong>Change the guest password regularly.</strong> Especially for businesses. Update it monthly and generate a new QR code. PDF.it's <Link href="/qr-code" className="text-orange-600 hover:underline">QR Code tool</Link> makes this quick.</li>
                 <li>&#10003; <strong>Limit guest network access.</strong> Configure your router to prevent guest network users from accessing devices on your main network (printers, NAS drives, smart home devices).</li>
                 <li>&#10003; <strong>Set bandwidth limits.</strong> If you run a business, limit the guest network bandwidth so one person streaming 4K video does not slow down everyone else.</li>
                 <li>&#10003; <strong>Do not post it publicly outside.</strong> Keep WiFi QR codes inside your premises where only actual guests and customers can scan them.</li>
@@ -297,7 +297,7 @@ export default function QRCodeForWiFiPage() {
                 { q: "Does it work on both iPhone and Android?", a: "Yes. iPhones running iOS 11 or later and Android phones running Android 10 or later can scan WiFi QR codes with their built-in camera app and connect automatically." },
                 { q: "What information do I need to create a WiFi QR code?", a: "You need three things: your network name (SSID), your WiFi password, and the encryption type (usually WPA/WPA2 for modern routers). Check your router settings or the sticker on your router." },
                 { q: "Do I need to update the QR code if I change my WiFi password?", a: "Yes. WiFi QR codes are static — the password is encoded directly in the QR code pattern. If you change your WiFi password, you need to generate a new QR code." },
-                { q: "Is this tool free?", a: "OmnisPDF's QR Code generator is a Pro feature at $7.99/month. Pro users get unlimited QR code generation including WiFi, URL, vCard, and all other types." },
+                { q: "Is this tool free?", a: "PDF.it's QR Code generator is a Pro feature at $7.99/month. Pro users get unlimited QR code generation including WiFi, URL, vCard, and all other types." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

@@ -4,9 +4,9 @@ import Link from "next/link"
 import { Calendar, ArrowLeft } from "lucide-react"
 
 export const metadata = {
-  title: "New Feature: Extract Tables from PDFs to Excel with AI | OmnisPDF Blog",
+  title: "New Feature: Extract Tables from PDFs to Excel with AI | PDF.it Blog",
   description:
-    "OmnisPDF's Table Extraction tool uses Google Document AI to detect tables in any PDF and export them as clean, formatted Excel spreadsheets. Available on Business and Enterprise plans.",
+    "PDF.it's Table Extraction tool uses Google Document AI to detect tables in any PDF and export them as clean, formatted Excel spreadsheets. Available on Business and Enterprise plans.",
 }
 
 export default function TableExtractionExcelPage() {

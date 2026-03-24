@@ -6,9 +6,9 @@ import { Merge, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Unir PDF Digitalizado — Combine PDFs Escaneados em Um Arquivo | OmnisPDF",
+  title: "Unir PDF Digitalizado — Combine PDFs Escaneados em Um Arquivo | PDF.it",
   description:
-    "Una PDFs digitalizados em um unico documento com OmnisPDF. Combine documentos escaneados, recibos e formularios — rapido, gratis e online.",
+    "Una PDFs digitalizados em um unico documento com PDF.it. Combine documentos escaneados, recibos e formularios — rapido, gratis e online.",
   alternates: {
     languages: {
       en: "/merge-scanned-pdf",
@@ -25,7 +25,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso unir PDFs digitalizados sem perder qualidade?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF combina PDFs digitalizados sem recomprimir as imagens. A qualidade original das digitalizacoes e mantida integralmente." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it combina PDFs digitalizados sem recomprimir as imagens. A qualidade original das digitalizacoes e mantida integralmente." }
     },
     {
       "@type": "Question",
@@ -35,22 +35,22 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso unir PDFs digitalizados no celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em qualquer navegador movel. Digitalize documentos com seu celular, converta para PDF e una-os diretamente." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em qualquer navegador movel. Digitalize documentos com seu celular, converta para PDF e una-os diretamente." }
     },
     {
       "@type": "Question",
       "name": "E possivel aplicar OCR nos PDFs digitalizados antes de unir?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Use a ferramenta OCR Scanner do OmnisPDF para tornar seus PDFs digitalizados pesquisaveis antes de uni-los. Assim o documento final tera texto selecionavel." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Use a ferramenta OCR Scanner do PDF.it para tornar seus PDFs digitalizados pesquisaveis antes de uni-los. Assim o documento final tera texto selecionavel." }
     },
     {
       "@type": "Question",
-      "name": "E seguro enviar documentos digitalizados para o OmnisPDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF usa conexoes criptografadas e exclui todos os arquivos apos sua sessao. Seus documentos nunca sao armazenados permanentemente." }
+      "name": "E seguro enviar documentos digitalizados para o PDF.it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it usa conexoes criptografadas e exclui todos os arquivos apos sua sessao. Seus documentos nunca sao armazenados permanentemente." }
     },
     {
       "@type": "Question",
       "name": "Posso comprimir o PDF apos unir as digitalizacoes?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Apos unir seus PDFs digitalizados, use a ferramenta Comprimir PDF do OmnisPDF para reduzir o tamanho do arquivo final, facilitando o envio por email." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Apos unir seus PDFs digitalizados, use a ferramenta Comprimir PDF do PDF.it para reduzir o tamanho do arquivo final, facilitando o envio por email." }
     }
   ]
 }
@@ -98,7 +98,7 @@ export default function UnirPdfDigitalizadoPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Documentos digitalizados costumam ficar espalhados em varios arquivos separados. O OmnisPDF permite unir todos os seus PDFs escaneados em um unico documento — mantendo a qualidade original das imagens e a ordem correta das paginas.
+              Documentos digitalizados costumam ficar espalhados em varios arquivos separados. O PDF.it permite unir todos os seus PDFs escaneados em um unico documento — mantendo a qualidade original das imagens e a ordem correta das paginas.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Una PDFs digitalizados sem perder qualidade de imagem</li>
@@ -140,7 +140,7 @@ export default function UnirPdfDigitalizadoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Unir PDFs Digitalizados</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste seus PDFs digitalizados para o OmnisPDF.",
+                "Envie ou arraste seus PDFs digitalizados para o PDF.it.",
                 "Organize os documentos na ordem desejada.",
                 "Clique em Unir e baixe seu PDF combinado.",
               ].map((step, i) => (
@@ -187,12 +187,12 @@ export default function UnirPdfDigitalizadoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Posso unir PDFs digitalizados sem perder qualidade?", a: "Sim. O OmnisPDF combina PDFs digitalizados sem recomprimir as imagens. A qualidade original das digitalizacoes e mantida integralmente." },
+                { q: "Posso unir PDFs digitalizados sem perder qualidade?", a: "Sim. O PDF.it combina PDFs digitalizados sem recomprimir as imagens. A qualidade original das digitalizacoes e mantida integralmente." },
                 { q: "PDFs digitalizados costumam ser grandes — qual o limite de tamanho?", a: "Usuarios gratuitos podem enviar arquivos de ate 25MB. Usuarios Pro tem limite de 200MB por arquivo — ideal para digitalizacoes de alta resolucao." },
-                { q: "Posso unir PDFs digitalizados no celular?", a: "Sim. O OmnisPDF funciona em qualquer navegador movel. Digitalize documentos com seu celular, converta para PDF e una-os diretamente." },
-                { q: "E possivel aplicar OCR nos PDFs digitalizados antes de unir?", a: "Sim. Use a ferramenta OCR Scanner do OmnisPDF para tornar seus PDFs digitalizados pesquisaveis antes de uni-los. Assim o documento final tera texto selecionavel." },
-                { q: "E seguro enviar documentos digitalizados para o OmnisPDF?", a: "Sim. O OmnisPDF usa conexoes criptografadas e exclui todos os arquivos apos sua sessao. Seus documentos nunca sao armazenados permanentemente." },
-                { q: "Posso comprimir o PDF apos unir as digitalizacoes?", a: "Sim. Apos unir seus PDFs digitalizados, use a ferramenta Comprimir PDF do OmnisPDF para reduzir o tamanho do arquivo final, facilitando o envio por email." },
+                { q: "Posso unir PDFs digitalizados no celular?", a: "Sim. O PDF.it funciona em qualquer navegador movel. Digitalize documentos com seu celular, converta para PDF e una-os diretamente." },
+                { q: "E possivel aplicar OCR nos PDFs digitalizados antes de unir?", a: "Sim. Use a ferramenta OCR Scanner do PDF.it para tornar seus PDFs digitalizados pesquisaveis antes de uni-los. Assim o documento final tera texto selecionavel." },
+                { q: "E seguro enviar documentos digitalizados para o PDF.it?", a: "Sim. O PDF.it usa conexoes criptografadas e exclui todos os arquivos apos sua sessao. Seus documentos nunca sao armazenados permanentemente." },
+                { q: "Posso comprimir o PDF apos unir as digitalizacoes?", a: "Sim. Apos unir seus PDFs digitalizados, use a ferramenta Comprimir PDF do PDF.it para reduzir o tamanho do arquivo final, facilitando o envio por email." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

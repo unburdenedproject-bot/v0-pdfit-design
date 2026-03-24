@@ -6,14 +6,14 @@ import { UrlPdfInterface } from "@/components/url-pdf-interface"
 import { Globe, Zap, Shield, FileText, Merge, Scan, Lock, Type } from "lucide-react"
 
 export const metadata = {
-  title: "Convertir URL a PDF Online — Guarda Cualquier Pagina Web | OmnisPDF",
+  title: "Convertir URL a PDF Online — Guarda Cualquier Pagina Web | PDF.it",
   description:
-    "Convierte cualquier pagina web en un PDF de alta calidad. Introduce una URL y descarga un PDF perfectamente formateado. Tamano, orientacion y margenes personalizables. Funcion Pro de OmnisPDF.",
+    "Convierte cualquier pagina web en un PDF de alta calidad. Introduce una URL y descarga un PDF perfectamente formateado. Tamano, orientacion y margenes personalizables. Funcion Pro de PDF.it.",
   alternates: {
-    canonical: "https://omnispdf.com/es/url-a-pdf",
+    canonical: "https://pdf.it.com/es/url-a-pdf",
     languages: {
-      en: "https://omnispdf.com/url-to-pdf",
-      es: "https://omnispdf.com/es/url-a-pdf",
+      en: "https://pdf.it.com/url-to-pdf",
+      es: "https://pdf.it.com/es/url-a-pdf",
     },
   },
 }
@@ -43,12 +43,12 @@ const faqSchema = {
       name: "El PDF conserva el diseno original de la pagina web?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "OmnisPDF renderiza la pagina web como un navegador real y captura el diseno, imagenes, fuentes y colores. El resultado es un PDF de alta fidelidad que refleja la apariencia original de la pagina.",
+        text: "PDF.it renderiza la pagina web como un navegador real y captura el diseno, imagenes, fuentes y colores. El resultado es un PDF de alta fidelidad que refleja la apariencia original de la pagina.",
       },
     },
     {
       "@type": "Question",
-      name: "Es seguro convertir paginas web a PDF con OmnisPDF?",
+      name: "Es seguro convertir paginas web a PDF con PDF.it?",
       acceptedAnswer: {
         "@type": "Answer",
         text: "Si. Todas las transferencias estan cifradas con SSL y los archivos generados se eliminan automaticamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos.",
@@ -59,7 +59,7 @@ const faqSchema = {
       name: "Necesito instalar algo para usar esta herramienta?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No. OmnisPDF funciona completamente en tu navegador. Solo introduce la URL, personaliza las opciones y descarga el PDF — sin extensiones, sin software adicional.",
+        text: "No. PDF.it funciona completamente en tu navegador. Solo introduce la URL, personaliza las opciones y descarga el PDF — sin extensiones, sin software adicional.",
       },
     },
   ],
@@ -198,15 +198,15 @@ export default function UrlAPdfPageEs() {
                 },
                 {
                   q: "El PDF conserva el diseno original de la pagina web?",
-                  a: "OmnisPDF renderiza la pagina web como un navegador real y captura el diseno, imagenes, fuentes y colores. El resultado es un PDF de alta fidelidad que refleja la apariencia original de la pagina.",
+                  a: "PDF.it renderiza la pagina web como un navegador real y captura el diseno, imagenes, fuentes y colores. El resultado es un PDF de alta fidelidad que refleja la apariencia original de la pagina.",
                 },
                 {
-                  q: "Es seguro convertir paginas web a PDF con OmnisPDF?",
+                  q: "Es seguro convertir paginas web a PDF con PDF.it?",
                   a: "Si. Todas las transferencias estan cifradas con SSL y los archivos generados se eliminan automaticamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos.",
                 },
                 {
                   q: "Necesito instalar algo para usar esta herramienta?",
-                  a: "No. OmnisPDF funciona completamente en tu navegador. Solo introduce la URL, personaliza las opciones y descarga el PDF — sin extensiones, sin software adicional.",
+                  a: "No. PDF.it funciona completamente en tu navegador. Solo introduce la URL, personaliza las opciones y descarga el PDF — sin extensiones, sin software adicional.",
                 },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

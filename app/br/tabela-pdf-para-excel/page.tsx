@@ -6,15 +6,15 @@ import { FileSpreadsheet, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Tabela PDF para Excel — Converta Tabelas de PDF para Excel | OmnisPDF",
+  title: "Tabela PDF para Excel — Converta Tabelas de PDF para Excel | PDF.it",
   description:
-    "Converta tabelas de PDF para Excel com o OmnisPDF. Extraia dados tabulares e exporte como planilha Excel — rápido, no navegador, sem cadastro.",
+    "Converta tabelas de PDF para Excel com o PDF.it. Extraia dados tabulares e exporte como planilha Excel — rápido, no navegador, sem cadastro.",
   alternates: {
-    canonical: "https://omnispdf.com/br/tabela-pdf-para-excel",
+    canonical: "https://pdf.it.com/br/tabela-pdf-para-excel",
     languages: {
-      en: "https://omnispdf.com/pdf-table-to-excel",
-      es: "https://omnispdf.com/es/tabla-pdf-a-excel",
-      pt: "https://omnispdf.com/br/tabela-pdf-para-excel",
+      en: "https://pdf.it.com/pdf-table-to-excel",
+      es: "https://pdf.it.com/es/tabla-pdf-a-excel",
+      pt: "https://pdf.it.com/br/tabela-pdf-para-excel",
     },
   },
 }
@@ -26,7 +26,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como converto uma tabela de PDF para Excel?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o OmnisPDF, clique em Converter e a ferramenta detectará as tabelas automaticamente e as exportará como planilha Excel (.xlsx)." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o PDF.it, clique em Converter e a ferramenta detectará as tabelas automaticamente e as exportará como planilha Excel (.xlsx)." }
     },
     {
       "@type": "Question",
@@ -46,7 +46,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso converter tabelas de PDF para Excel pelo celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em navegadores móveis — envie seu PDF e baixe o Excel de qualquer dispositivo." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em navegadores móveis — envie seu PDF e baixe o Excel de qualquer dispositivo." }
     },
     {
       "@type": "Question",
@@ -99,7 +99,7 @@ export default function TabelaPDFParaExcelPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Precisa converter tabelas de um PDF para Excel? O OmnisPDF detecta automaticamente tabelas no seu documento PDF e as exporta como planilha Excel (.xlsx) que pode ser aberta no Microsoft Excel, Google Sheets ou LibreOffice Calc.
+              Precisa converter tabelas de um PDF para Excel? O PDF.it detecta automaticamente tabelas no seu documento PDF e as exporta como planilha Excel (.xlsx) que pode ser aberta no Microsoft Excel, Google Sheets ou LibreOffice Calc.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Converta tabelas de PDF para Excel automaticamente</li>
@@ -141,7 +141,7 @@ export default function TabelaPDFParaExcelPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Converter Tabela de PDF para Excel</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste seu PDF para o OmnisPDF.",
+                "Envie ou arraste seu PDF para o PDF.it.",
                 "Clique em Converter — as tabelas são detectadas automaticamente.",
                 "Baixe a planilha Excel com os dados tabulares extraídos.",
               ].map((step, i) => (
@@ -188,11 +188,11 @@ export default function TabelaPDFParaExcelPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como converto uma tabela de PDF para Excel?", a: "Envie seu PDF para o OmnisPDF, clique em Converter e a ferramenta detectará as tabelas automaticamente e as exportará como planilha Excel (.xlsx)." },
+                { q: "Como converto uma tabela de PDF para Excel?", a: "Envie seu PDF para o PDF.it, clique em Converter e a ferramenta detectará as tabelas automaticamente e as exportará como planilha Excel (.xlsx)." },
                 { q: "O formato da tabela é mantido no Excel?", a: "Sim. A ferramenta preserva a estrutura de colunas e linhas da tabela original. Formatações visuais como cores e bordas podem variar." },
                 { q: "Funciona com tabelas de várias páginas?", a: "Sim. Se o PDF contiver tabelas em múltiplas páginas, a ferramenta detectará e converterá todas elas para o arquivo Excel." },
                 { q: "É seguro enviar meu PDF para conversão?", a: "Sim. Todos os arquivos são processados com segurança e eliminados automaticamente após a sessão. Nunca armazenamos seus documentos." },
-                { q: "Posso converter tabelas de PDF para Excel pelo celular?", a: "Sim. O OmnisPDF funciona em navegadores móveis — envie seu PDF e baixe o Excel de qualquer dispositivo." },
+                { q: "Posso converter tabelas de PDF para Excel pelo celular?", a: "Sim. O PDF.it funciona em navegadores móveis — envie seu PDF e baixe o Excel de qualquer dispositivo." },
                 { q: "É grátis converter tabela de PDF para Excel?", a: "Sim. Contas gratuitas têm 10 conversões por dia. Contas Pro têm conversões ilimitadas." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

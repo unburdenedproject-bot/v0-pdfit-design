@@ -5,7 +5,7 @@ import Link from "next/link"
 import { RotateCw, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "How to Rotate a PDF on iPhone (No App Needed) | OmnisPDF",
+  title: "How to Rotate a PDF on iPhone (No App Needed) | PDF.it",
   description:
     "Learn how to rotate PDF pages on your iPhone using Safari — no app download required. Fix sideways or upside-down PDFs directly from your phone in seconds.",
   keywords: "rotate pdf iphone, rotate pdf on phone, turn pdf sideways iphone, rotate pdf ios",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I rotate a PDF on my iPhone without an app?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works directly in Safari or any iPhone browser. Upload your PDF, select the rotation angle, and download the fixed file — no app installation needed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works directly in Safari or any iPhone browser. Upload your PDF, select the rotation angle, and download the fixed file — no app installation needed." }
     },
     {
       "@type": "Question",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I rotate just one page on my iPhone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF lets you select individual pages to rotate. You can fix just one sideways page while leaving the rest of your document untouched." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it lets you select individual pages to rotate. You can fix just one sideways page while leaving the rest of your document untouched." }
     },
     {
       "@type": "Question",
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Does this work on iPad too?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works on any device with a web browser — iPhone, iPad, Android phones, tablets, and desktop computers. The experience is the same across all devices." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works on any device with a web browser — iPhone, iPad, Android phones, tablets, and desktop computers. The experience is the same across all devices." }
     },
     {
       "@type": "Question",
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Rotate a PDF on iPhone",
-  "description": "Fix rotated PDF pages on your iPhone in 3 simple steps using OmnisPDF in Safari.",
+  "description": "Fix rotated PDF pages on your iPhone in 3 simple steps using PDF.it in Safari.",
   "step": [
     {
       "@type": "HowToStep",
-      "name": "Open OmnisPDF in Safari",
-      "text": "Open Safari on your iPhone and go to omnispdf.com/rotate-pdf. Tap the upload area to select your PDF from Files, iCloud, or another location."
+      "name": "Open PDF.it in Safari",
+      "text": "Open Safari on your iPhone and go to pdf.it.com/rotate-pdf. Tap the upload area to select your PDF from Files, iCloud, or another location."
     },
     {
       "@type": "HowToStep",
@@ -154,8 +154,8 @@ export default function RotatePDFOnIPhonePage() {
               <div className="space-y-4">
                 {[
                   {
-                    title: "Open OmnisPDF in Safari",
-                    desc: "Open Safari on your iPhone and navigate to omnispdf.com/rotate-pdf. Tap the upload area and select your PDF from your Files app, iCloud Drive, email attachment, or any other location on your device.",
+                    title: "Open PDF.it in Safari",
+                    desc: "Open Safari on your iPhone and navigate to pdf.it.com/rotate-pdf. Tap the upload area and select your PDF from your Files app, iCloud Drive, email attachment, or any other location on your device.",
                   },
                   {
                     title: "Select the rotation angle",
@@ -188,8 +188,8 @@ export default function RotatePDFOnIPhonePage() {
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Turn your phone to landscape</strong> for a better view of the page thumbnails when selecting which pages to rotate.</li>
                 <li>&#10003; <strong>Use the Files app</strong> to find your PDF before uploading. If the PDF is in an email, save it to Files first by long-pressing the attachment and selecting Save to Files.</li>
-                <li>&#10003; <strong>Bookmark the tool</strong> by tapping the share icon and selecting Add to Home Screen. This puts a shortcut on your home screen so you can access OmnisPDF instantly next time.</li>
-                <li>&#10003; <strong>Works on any iPhone browser</strong> — Safari, Chrome, Firefox, or Edge. OmnisPDF is a web tool, so there is nothing to install or update.</li>
+                <li>&#10003; <strong>Bookmark the tool</strong> by tapping the share icon and selecting Add to Home Screen. This puts a shortcut on your home screen so you can access PDF.it instantly next time.</li>
+                <li>&#10003; <strong>Works on any iPhone browser</strong> — Safari, Chrome, Firefox, or Edge. PDF.it is a web tool, so there is nothing to install or update.</li>
               </ul>
             </section>
 
@@ -197,7 +197,7 @@ export default function RotatePDFOnIPhonePage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Other PDF Tasks You Can Do on iPhone</h2>
               <p className="text-slate-600 mb-4">
-                Since you are already handling PDFs on your phone, here are other common tasks you can do with OmnisPDF without leaving Safari:
+                Since you are already handling PDFs on your phone, here are other common tasks you can do with PDF.it without leaving Safari:
               </p>
               <div className="space-y-6">
                 <div>
@@ -228,8 +228,8 @@ export default function RotatePDFOnIPhonePage() {
                 The App Store has dozens of PDF editing apps, but most of them have significant drawbacks:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>No storage space wasted.</strong> PDF apps can take 100-300MB of iPhone storage. OmnisPDF runs in your browser with zero storage footprint.</li>
-                <li>&#10003; <strong>No subscriptions to manage.</strong> Many PDF apps charge monthly fees for basic features like rotation. OmnisPDF lets you rotate PDFs free.</li>
+                <li>&#10003; <strong>No storage space wasted.</strong> PDF apps can take 100-300MB of iPhone storage. PDF.it runs in your browser with zero storage footprint.</li>
+                <li>&#10003; <strong>No subscriptions to manage.</strong> Many PDF apps charge monthly fees for basic features like rotation. PDF.it lets you rotate PDFs free.</li>
                 <li>&#10003; <strong>No account required.</strong> Start rotating immediately — your first 3 files need no signup at all.</li>
                 <li>&#10003; <strong>Always up to date.</strong> Web tools update automatically. No waiting for App Store updates or dealing with compatibility issues after iOS updates.</li>
               </ul>
@@ -281,11 +281,11 @@ export default function RotatePDFOnIPhonePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "Can I rotate a PDF on my iPhone without an app?", a: "Yes. OmnisPDF works directly in Safari or any iPhone browser. Upload your PDF, select the rotation angle, and download the fixed file — no app installation needed." },
+                { q: "Can I rotate a PDF on my iPhone without an app?", a: "Yes. PDF.it works directly in Safari or any iPhone browser. Upload your PDF, select the rotation angle, and download the fixed file — no app installation needed." },
                 { q: "Does rotating a PDF on iPhone reduce quality?", a: "No. Rotating only changes the page orientation metadata. Your text, images, and formatting stay exactly the same at full quality." },
-                { q: "Can I rotate just one page on my iPhone?", a: "Yes. OmnisPDF lets you select individual pages to rotate. You can fix just one sideways page while leaving the rest of your document untouched." },
+                { q: "Can I rotate just one page on my iPhone?", a: "Yes. PDF.it lets you select individual pages to rotate. You can fix just one sideways page while leaving the rest of your document untouched." },
                 { q: "Where does the rotated PDF save on iPhone?", a: "When you tap Download, Safari saves the file to your Downloads folder in the Files app. You can also choose to save it to iCloud Drive, Google Drive, or share it directly via email or Messages." },
-                { q: "Does this work on iPad too?", a: "Yes. OmnisPDF works on any device with a web browser — iPhone, iPad, Android phones, tablets, and desktop computers. The experience is the same across all devices." },
+                { q: "Does this work on iPad too?", a: "Yes. PDF.it works on any device with a web browser — iPhone, iPad, Android phones, tablets, and desktop computers. The experience is the same across all devices." },
                 { q: "Is there a file size limit on iPhone?", a: "Free users can rotate PDFs up to 25MB. Pro users get a 200MB limit. Most documents you would handle on a phone are well under 25MB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

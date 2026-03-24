@@ -307,7 +307,7 @@ export default function HomePageEs() {
 
             <div className="text-center mb-6">
               <h2 className="text-2xl lg:text-3xl font-black text-slate-900 mb-2 text-balance">
-                ¿Por Qué OmnisPDF?
+                ¿Por Qué PDF.it?
               </h2>
               <p className="text-base text-slate-600 max-w-2xl mx-auto">
                 Herramientas PDF online con funciones Pro cuando las necesites — convierte, comprime, une, divide y escanea en tu navegador.
@@ -368,7 +368,7 @@ export default function HomePageEs() {
                   Preguntas Frecuentes
                 </h2>
                 <p className="text-sm text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                  Todo lo que necesitas saber sobre OmnisPDF. ¿No encuentras lo que buscas?{" "}
+                  Todo lo que necesitas saber sobre PDF.it. ¿No encuentras lo que buscas?{" "}
                   <a href="/es/contacto" className="text-orange-500 hover:text-orange-600 font-medium underline">
                     Contáctanos
                   </a>.
@@ -377,14 +377,14 @@ export default function HomePageEs() {
 
               <div className="space-y-4">
                 {[
-                  { q: "¿OmnisPDF es gratis?", a: "Sí. OmnisPDF ofrece un plan gratuito con 10 conversiones al día y archivos hasta 25MB. No necesitas cuenta para las herramientas gratuitas. Actualiza a Pro ($7.99/mes) para conversiones ilimitadas, todas las herramientas y archivos hasta 200MB." },
+                  { q: "¿PDF.it es gratis?", a: "Sí. PDF.it ofrece un plan gratuito con 10 conversiones al día y archivos hasta 25MB. No necesitas cuenta para las herramientas gratuitas. Actualiza a Pro ($7.99/mes) para conversiones ilimitadas, todas las herramientas y archivos hasta 200MB." },
                   { q: "¿Necesito crear una cuenta?", a: "No necesitas cuenta para usar las herramientas gratuitas — solo sube tu archivo y convierte. Se necesita cuenta para funciones Pro y administrar tu suscripción." },
                   { q: "¿Es seguro subir mis archivos?", a: "Sí. Todas las transferencias usan cifrado SSL/HTTPS. Los archivos se procesan de forma segura y se eliminan automáticamente cuando termina tu sesión. No almacenamos, revisamos ni compartimos tus documentos." },
-                  { q: "¿Qué formatos de archivo soportan?", a: "OmnisPDF soporta PDF, JPG, PNG, TXT y formatos de Office (Word, Excel, PowerPoint). Las herramientas incluyen convertir, comprimir, unir, dividir, rotar, proteger, desbloquear, marca de agua y OCR." },
+                  { q: "¿Qué formatos de archivo soportan?", a: "PDF.it soporta PDF, JPG, PNG, TXT y formatos de Office (Word, Excel, PowerPoint). Las herramientas incluyen convertir, comprimir, unir, dividir, rotar, proteger, desbloquear, marca de agua y OCR." },
                   { q: "¿Cuál es el tamaño máximo de archivo?", a: "Las cuentas gratuitas pueden subir archivos hasta 25MB. Las cuentas Pro pueden subir hasta 200MB. Las cuentas Business pueden subir hasta 1GB." },
                   { q: "¿Qué incluye el plan Pro?", a: "Pro ($7.99/mes) incluye conversiones ilimitadas, todas las herramientas PDF (incluyendo OCR, Marca de Agua y Office a PDF), y archivos hasta 200MB. Business ($13.99/mes) agrega firma electrónica, automatización y más." },
-                  { q: "¿Funciona en celular?", a: "Sí. OmnisPDF funciona en navegadores modernos incluyendo Chrome, Firefox, Safari y Edge en computadora, tablet y celular." },
-                  { q: "¿Cómo puedo obtener ayuda?", a: "Visita nuestra página de Contacto o escríbenos a contact@omnispdf.com. Respondemos en menos de un día hábil." },
+                  { q: "¿Funciona en celular?", a: "Sí. PDF.it funciona en navegadores modernos incluyendo Chrome, Firefox, Safari y Edge en computadora, tablet y celular." },
+                  { q: "¿Cómo puedo obtener ayuda?", a: "Visita nuestra página de Contacto o escríbenos a contact@pdf.it.com. Respondemos en menos de un día hábil." },
                 ].map((faq, i) => (
                   <div key={i} className="bg-gray-50 rounded-xl p-5 border border-gray-200">
                     <h3 className="font-bold text-slate-900 mb-2 text-sm">{faq.q}</h3>
@@ -397,11 +397,11 @@ export default function HomePageEs() {
                 <div className="bg-gradient-to-r from-orange-50 to-orange-100 border border-orange-200 rounded-2xl p-6">
                   <h3 className="text-lg font-bold text-slate-900 mb-2">¿Aún tienes preguntas?</h3>
                   <p className="text-slate-700 text-xs mb-4 max-w-xl mx-auto leading-relaxed">
-                    Nuestro equipo de soporte está aquí para ayudarte a aprovechar OmnisPDF al máximo.
+                    Nuestro equipo de soporte está aquí para ayudarte a aprovechar PDF.it al máximo.
                   </p>
                   <div className="flex justify-center">
                     <a
-                      href="mailto:contact@omnispdf.com"
+                      href="mailto:contact@pdf.it.com"
                       className="inline-flex items-center justify-center px-5 py-2.5 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl text-sm transition-colors duration-200 shadow-lg hover:shadow-xl"
                     >
                       Escríbenos Directamente

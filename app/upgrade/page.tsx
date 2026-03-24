@@ -52,7 +52,7 @@ export default async function UpgradePage({
     redirect("/pricing?error=stripe_not_configured")
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://omnispdf.com"
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://pdf.it.com"
   const stripe = getStripe()
 
   // Check if user already has an active subscription

@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Ro
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF para 100KB Online — Reduzir Tamanho de PDF | OmnisPDF",
+  title: "Comprimir PDF para 100KB Online — Reduzir Tamanho de PDF | PDF.it",
   description:
     "Comprima seu PDF para cumprir limites de 100KB. Compressao extrema para assinaturas de email, micro-anexos, fotos de cracha e documentos otimizados para celular — rapido, pelo navegador, gratis.",
   alternates: {
@@ -25,7 +25,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como comprimo um PDF para limite de 100KB?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF ao OmnisPDF e clique em Comprimir. A ferramenta aplica compressao extrema para reduzir a resolucao de imagens e otimizar a estrutura interna, reduzindo drasticamente o tamanho do arquivo. Os resultados dependem do conteudo do seu PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF ao PDF.it e clique em Comprimir. A ferramenta aplica compressao extrema para reduzir a resolucao de imagens e otimizar a estrutura interna, reduzindo drasticamente o tamanho do arquivo. Os resultados dependem do conteudo do seu PDF." }
     },
     {
       "@type": "Question",
@@ -45,7 +45,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso comprimir um PDF para 100KB pelo celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em qualquer navegador movel. Envie seu PDF, comprima-o e baixe o arquivo menor direto no seu iPhone ou Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em qualquer navegador movel. Envie seu PDF, comprima-o e baixe o arquivo menor direto no seu iPhone ou Android." }
     },
     {
       "@type": "Question",
@@ -99,7 +99,7 @@ export default function ComprimirPDFPara100KBPagePt() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que Comprimir um PDF para Limites de 100KB?</h2>
             <p className="text-lg text-slate-600 mb-8">
-              Algumas plataformas exigem um limite de tamanho extremamente rigoroso de 100KB. Anexos de assinatura de email, upload de fotos de cracha, campos de micro-anexos e certos formularios otimizados para celular exigem arquivos muito pequenos. O OmnisPDF aplica compressao extrema para reduzir drasticamente o tamanho do seu PDF e ajuda-lo a cumprir esses requisitos de upload rigorosos.
+              Algumas plataformas exigem um limite de tamanho extremamente rigoroso de 100KB. Anexos de assinatura de email, upload de fotos de cracha, campos de micro-anexos e certos formularios otimizados para celular exigem arquivos muito pequenos. O PDF.it aplica compressao extrema para reduzir drasticamente o tamanho do seu PDF e ajuda-lo a cumprir esses requisitos de upload rigorosos.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Compressao extrema para maxima reducao de tamanho</li>
@@ -142,7 +142,7 @@ export default function ComprimirPDFPara100KBPagePt() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Comprimir um PDF para Limites de 100KB</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste seu PDF ao OmnisPDF.",
+                "Envie ou arraste seu PDF ao PDF.it.",
                 "Clique em Comprimir PDF — a compressao extrema e aplicada automaticamente.",
                 "Baixe seu PDF menor. Se continuar acima de 100KB, tente dividi-lo em uma unica pagina primeiro e comprima essa pagina.",
               ].map((step, i) => (
@@ -202,11 +202,11 @@ export default function ComprimirPDFPara100KBPagePt() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como comprimo um PDF para limite de 100KB?", a: "Envie seu PDF ao OmnisPDF e clique em Comprimir. A ferramenta aplica compressao extrema para reduzir a resolucao de imagens e otimizar a estrutura interna, reduzindo drasticamente o tamanho do arquivo." },
+                { q: "Como comprimo um PDF para limite de 100KB?", a: "Envie seu PDF ao PDF.it e clique em Comprimir. A ferramenta aplica compressao extrema para reduzir a resolucao de imagens e otimizar a estrutura interna, reduzindo drasticamente o tamanho do arquivo." },
                 { q: "Meu PDF ficara definitivamente abaixo de 100KB?", a: "A compressao extrema reduz drasticamente o tamanho, mas os resultados dependem do conteudo. Documentos simples de uma pagina com texto podem chegar abaixo de 100KB. Arquivos com muitas imagens precisarao ser divididos primeiro." },
                 { q: "Quais tipos de arquivos podem ser comprimidos para 100KB?", a: "Documentos de uma pagina com principalmente texto, assinaturas simples, fotos tamanho cracha e formularios pequenos podem ser comprimidos para menos de 100KB." },
                 { q: "O PDF continuara legivel apos comprimir para 100KB?", a: "O texto permanece nitido e legivel. Imagens perderao detalhe com compressao extrema, mas para assinaturas, crachas e documentos simples, o resultado continua utilizavel." },
-                { q: "Posso comprimir um PDF para 100KB pelo celular?", a: "Sim. O OmnisPDF funciona em qualquer navegador movel. Envie seu PDF, comprima-o e baixe o arquivo menor direto no seu iPhone ou Android." },
+                { q: "Posso comprimir um PDF para 100KB pelo celular?", a: "Sim. O PDF.it funciona em qualquer navegador movel. Envie seu PDF, comprima-o e baixe o arquivo menor direto no seu iPhone ou Android." },
                 { q: "O que faco se meu PDF continuar acima de 100KB?", a: "Divida o PDF em paginas individuais com nossa ferramenta Dividir PDF e comprima cada pagina separadamente. Fique apenas com a pagina necessaria, achate o PDF e converta imagens para escala de cinza." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

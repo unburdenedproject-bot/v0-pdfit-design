@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Scissors, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Dividir PDF (Separar Paginas Facilmente) | OmnisPDF",
+  title: "Como Dividir PDF (Separar Paginas Facilmente) | PDF.it",
   description:
     "Aprenda como dividir um PDF em partes menores ou extrair paginas especificas. Guia passo a passo para separar documentos — online, gratis, sem software.",
   keywords: "dividir pdf, separar pdf, como dividir pdf, cortar pdf, separar paginas pdf online gratis",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como dividir um PDF em partes?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie o PDF para o OmnisPDF, escolha como deseja dividir (por paginas, por intervalos ou em partes iguais), clique em Dividir e baixe os arquivos resultantes. E gratis e nao precisa de cadastro." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie o PDF para o PDF.it, escolha como deseja dividir (por paginas, por intervalos ou em partes iguais), clique em Dividir e baixe os arquivos resultantes. E gratis e nao precisa de cadastro." }
     },
     {
       "@type": "Question",
@@ -47,7 +47,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Envie seu PDF",
-      "text": "Acesse a ferramenta Dividir PDF do OmnisPDF e envie o arquivo que deseja separar."
+      "text": "Acesse a ferramenta Dividir PDF do PDF.it e envie o arquivo que deseja separar."
     },
     {
       "@type": "HowToStep",
@@ -251,7 +251,7 @@ export default function ComoDividirPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como dividir um PDF em partes?", a: "Envie o PDF para o OmnisPDF, escolha como deseja dividir (por paginas, por intervalos ou em partes iguais), clique em Dividir e baixe os arquivos resultantes." },
+                { q: "Como dividir um PDF em partes?", a: "Envie o PDF para o PDF.it, escolha como deseja dividir (por paginas, por intervalos ou em partes iguais), clique em Dividir e baixe os arquivos resultantes." },
                 { q: "Posso extrair apenas algumas paginas do PDF?", a: "Sim. Voce pode selecionar paginas especificas para extrair em um novo PDF. Use a ferramenta Extrair Paginas para isso." },
                 { q: "Dividir o PDF afeta a qualidade?", a: "Nao. Dividir um PDF simplesmente separa as paginas — nao ha compressao ou alteracao de qualidade." },
                 { q: "Posso dividir um PDF protegido com senha?", a: "Voce precisa desbloquear o PDF primeiro. Use a ferramenta Desbloquear PDF, depois divida o arquivo desbloqueado." },

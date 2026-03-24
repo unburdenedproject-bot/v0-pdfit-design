@@ -5,11 +5,11 @@ import { Heart, Target, Crown, Gift, FileText, Building, GraduationCap, Briefcas
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Sobre o OmnisPDF — Ferramentas PDF Gratis, Pro, Business e Enterprise",
+  title: "Sobre o PDF.it — Ferramentas PDF Gratis, Pro, Business e Enterprise",
   description:
-    "Conheca o OmnisPDF, suas ferramentas PDF e seus planos. Compare Gratis, Pro, Business e Enterprise para conversao de PDF, OCR, assinatura eletronica, redacao, automacao e extracao de tabelas.",
+    "Conheca o PDF.it, suas ferramentas PDF e seus planos. Compare Gratis, Pro, Business e Enterprise para conversao de PDF, OCR, assinatura eletronica, redacao, automacao e extracao de tabelas.",
   keywords: [
-    "sobre o OmnisPDF",
+    "sobre o PDF.it",
     "ferramentas PDF",
     "ferramentas PDF gratis",
     "conversor PDF",
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
   ],
   alternates: {
     languages: {
-      en: "https://omnispdf.com/about",
-      es: "https://omnispdf.com/es/acerca",
-      pt: "https://omnispdf.com/br/sobre",
+      en: "https://pdf.it.com/about",
+      es: "https://pdf.it.com/es/acerca",
+      pt: "https://pdf.it.com/br/sobre",
     },
   },
 }
@@ -45,7 +45,7 @@ export default function SobrePage() {
               <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Heart className="h-10 w-10 text-white" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Planos do OmnisPDF: Ferramentas PDF Gratis, Pro, Business e Enterprise</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Planos do PDF.it: Ferramentas PDF Gratis, Pro, Business e Enterprise</h1>
               <p className="text-xl text-slate-300">
                 Ferramentas PDF no navegador para conversao, compressao, OCR, assinatura eletronica, redacao, automacao de fluxos e processamento documental empresarial.
               </p>
@@ -56,14 +56,14 @@ export default function SobrePage() {
         <section className="py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-6">
-              O OmnisPDF ajuda pessoas, estudantes, equipes juridicas, contabeis, operacionais e empresas em crescimento a trabalhar com arquivos PDF diretamente no navegador. Voce pode converter PDF para Word, Excel, JPG, PNG e TXT, comprimir PDFs para email e limites de upload, unir e dividir documentos PDF, executar OCR em PDFs digitalizados, adicionar assinaturas eletronicas, redigir conteudo sensivel, automatizar fluxos e extrair tabelas para Excel.
+              O PDF.it ajuda pessoas, estudantes, equipes juridicas, contabeis, operacionais e empresas em crescimento a trabalhar com arquivos PDF diretamente no navegador. Voce pode converter PDF para Word, Excel, JPG, PNG e TXT, comprimir PDFs para email e limites de upload, unir e dividir documentos PDF, executar OCR em PDFs digitalizados, adicionar assinaturas eletronicas, redigir conteudo sensivel, automatizar fluxos e extrair tabelas para Excel.
             </p>
             <p className="text-lg text-slate-600 mb-8">
               Nossos planos foram pensados para crescer com o seu fluxo de trabalho. O plano Gratis cobre ferramentas PDF essenciais, o Pro libera conversao avancada e utilidades com IA, o Business adiciona fluxos documentais de nivel empresarial, e o Enterprise soma maior volume de processamento, modelos de fluxo e suporte premium para operacoes documentais mais exigentes.
             </p>
 
             <div className="bg-gray-50 rounded-xl p-8 mb-8">
-              <h2 className="text-xl font-black text-slate-900 mb-4">O que voce pode fazer com o OmnisPDF</h2>
+              <h2 className="text-xl font-black text-slate-900 mb-4">O que voce pode fazer com o PDF.it</h2>
               <ul className="space-y-2 text-slate-700">
                 <li>✓ Converter PDFs para Word, Excel, JPG/PNG, TXT e muito mais</li>
                 <li>✓ Comprimir PDFs para reduzir o tamanho do arquivo para email e uploads</li>
@@ -75,9 +75,9 @@ export default function SobrePage() {
             </div>
 
             <div className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Compare os planos do OmnisPDF</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Compare os planos do PDF.it</h2>
               <p className="text-slate-600 mb-6">
-                O OmnisPDF oferece quatro niveis de planos para que voce possa comecar com ferramentas PDF gratis e fazer upgrade apenas quando aumentarem seu volume documental, o tamanho dos arquivos, as exigencias de compliance ou a complexidade dos seus fluxos.
+                O PDF.it oferece quatro niveis de planos para que voce possa comecar com ferramentas PDF gratis e fazer upgrade apenas quando aumentarem seu volume documental, o tamanho dos arquivos, as exigencias de compliance ou a complexidade dos seus fluxos.
               </p>
             </div>
 
@@ -147,7 +147,7 @@ export default function SobrePage() {
                   <h3 className="text-lg font-bold text-slate-900">Conversao PDF Avancada</h3>
                 </div>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  O OmnisPDF cobre fluxos comuns como PDF para Word, PDF para Excel, PDF para PowerPoint, Word para PDF, Excel para PDF, JPG para PDF, PNG para PDF, URL para PDF e OCR para documentos digitalizados. Isso torna a plataforma util para limpeza, edicao, compartilhamento e arquivamento de documentos.
+                  O PDF.it cobre fluxos comuns como PDF para Word, PDF para Excel, PDF para PowerPoint, Word para PDF, Excel para PDF, JPG para PDF, PNG para PDF, URL para PDF e OCR para documentos digitalizados. Isso torna a plataforma util para limpeza, edicao, compartilhamento e arquivamento de documentos.
                 </p>
               </div>
               <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
@@ -235,7 +235,7 @@ export default function SobrePage() {
             </div>
 
             <div className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Qual plano do OmnisPDF voce deve escolher?</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Qual plano do PDF.it voce deve escolher?</h2>
               <div className="bg-white border border-slate-200 rounded-xl p-8">
                 <div className="space-y-4 text-slate-600">
                   <p>

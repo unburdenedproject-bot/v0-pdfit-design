@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ImageIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Converter PDF para PNG no iPhone (Sem Apps) | OmnisPDF",
+  title: "Como Converter PDF para PNG no iPhone (Sem Apps) | PDF.it",
   description:
     "Aprenda como converter PDF para PNG no iPhone usando apenas o navegador. Imagens de alta qualidade sem instalar apps — guia rápido e grátis.",
   keywords: "pdf para png iphone, converter pdf para png no iphone, salvar pdf como png iphone, pdf para imagem iphone",
@@ -15,8 +15,8 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Preciso de app para converter PDF para PNG no iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Não. O OmnisPDF funciona direto no Safari do iPhone. Abra o site, envie seu PDF e baixe as imagens PNG — sem app necessário." } },
-    { "@type": "Question", "name": "As imagens PNG ficam com boa qualidade no iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. PNG é um formato sem perda de qualidade. As imagens convertidas pelo OmnisPDF mantêm toda a nitidez do PDF original." } },
+    { "@type": "Question", "name": "Preciso de app para converter PDF para PNG no iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Não. O PDF.it funciona direto no Safari do iPhone. Abra o site, envie seu PDF e baixe as imagens PNG — sem app necessário." } },
+    { "@type": "Question", "name": "As imagens PNG ficam com boa qualidade no iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. PNG é um formato sem perda de qualidade. As imagens convertidas pelo PDF.it mantêm toda a nitidez do PDF original." } },
     { "@type": "Question", "name": "Onde encontro as imagens PNG baixadas no iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "As imagens ficam na pasta Downloads do app Arquivos. Se baixou como ZIP, toque no arquivo para descompactar. Para salvar no app Fotos, abra a imagem e toque em Compartilhar > Salvar Imagem." } }
   ]
 }
@@ -27,7 +27,7 @@ const howToSchema = {
   "name": "Converter PDF para PNG no iPhone",
   "description": "Converta PDF para imagens PNG de alta qualidade direto no iPhone.",
   "step": [
-    { "@type": "HowToStep", "name": "Abra o OmnisPDF no Safari", "text": "No iPhone, abra o Safari e acesse a ferramenta PDF para PNG do OmnisPDF." },
+    { "@type": "HowToStep", "name": "Abra o PDF.it no Safari", "text": "No iPhone, abra o Safari e acesse a ferramenta PDF para PNG do PDF.it." },
     { "@type": "HowToStep", "name": "Envie o PDF", "text": "Toque em Escolher arquivo e selecione o PDF dos seus Arquivos, iCloud ou email." },
     { "@type": "HowToStep", "name": "Baixe as imagens PNG", "text": "Toque em Converter e baixe as imagens PNG para o seu iPhone." }
   ]
@@ -83,7 +83,7 @@ export default function ConverterPdfParaPngNoIphonePage() {
               <h2 className="text-2xl font-black text-slate-900 mb-6">Passo a Passo no iPhone</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Abra o OmnisPDF no Safari", desc: "No iPhone, abra o Safari e acesse omnispdf.com. Vá para a ferramenta PDF para PNG. O site funciona perfeitamente no celular — totalmente responsivo." },
+                  { title: "Abra o PDF.it no Safari", desc: "No iPhone, abra o Safari e acesse pdf.it.com. Vá para a ferramenta PDF para PNG. O site funciona perfeitamente no celular — totalmente responsivo." },
                   { title: "Envie seu PDF", desc: "Toque em 'Escolher arquivo'. Selecione o PDF do app Arquivos, iCloud Drive, Downloads ou de um anexo de email salvo." },
                   { title: "Configure e converta", desc: "Escolha o DPI (200 DPI é ideal para uso geral no celular) e toque em Converter. Em segundos, suas imagens PNG estarão prontas para download." },
                   { title: "Baixe e encontre as imagens", desc: "Toque em Download. As imagens vão para a pasta Downloads no app Arquivos. Para salvar no app Fotos, abra a imagem e toque em Compartilhar > Salvar Imagem." },
@@ -158,8 +158,8 @@ export default function ConverterPdfParaPngNoIphonePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Preciso de app para converter PDF para PNG no iPhone?", a: "Não. O OmnisPDF funciona direto no Safari do iPhone. Abra o site, envie seu PDF e baixe as imagens PNG — sem app necessário." },
-                { q: "As imagens PNG ficam com boa qualidade no iPhone?", a: "Sim. PNG é um formato sem perda de qualidade. As imagens convertidas pelo OmnisPDF mantêm toda a nitidez do PDF original." },
+                { q: "Preciso de app para converter PDF para PNG no iPhone?", a: "Não. O PDF.it funciona direto no Safari do iPhone. Abra o site, envie seu PDF e baixe as imagens PNG — sem app necessário." },
+                { q: "As imagens PNG ficam com boa qualidade no iPhone?", a: "Sim. PNG é um formato sem perda de qualidade. As imagens convertidas pelo PDF.it mantêm toda a nitidez do PDF original." },
                 { q: "Onde encontro as imagens PNG baixadas no iPhone?", a: "As imagens ficam na pasta Downloads do app Arquivos. Se baixou como ZIP, toque no arquivo para descompactar. Para salvar no app Fotos, abra a imagem e toque em Compartilhar > Salvar Imagem." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

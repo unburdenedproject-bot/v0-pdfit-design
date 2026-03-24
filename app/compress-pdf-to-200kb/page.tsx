@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Ro
 import Link from "next/link"
 
 export const metadata = {
-  title: "Compress PDF for 200KB Upload Limits — Free Extreme Compression | OmnisPDF",
+  title: "Compress PDF for 200KB Upload Limits — Free Extreme Compression | PDF.it",
   description:
     "Apply extreme PDF compression to reduce file size for portals with 200KB limits. Maximum compression for passport submissions, ID uploads, signature files, and strict portals — fast, browser-based, free.",
 }
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I compress a PDF for a 200KB upload limit?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF and click Compress. The tool applies extreme compression to reduce image resolution and optimize internal structures, drastically reducing file size. Results depend on the content of your PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it and click Compress. The tool applies extreme compression to reduce image resolution and optimize internal structures, drastically reducing file size. Results depend on the content of your PDF." }
     },
     {
       "@type": "Question",
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I compress a PDF for 200KB limits on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in any mobile browser. Upload your PDF, compress it, and download the smaller file directly on iPhone or Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in any mobile browser. Upload your PDF, compress it, and download the smaller file directly on iPhone or Android." }
     },
     {
       "@type": "Question",
@@ -93,7 +93,7 @@ export default function CompressPDFTo200KBPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Why Compress a PDF for 200KB Limits?</h2>
             <p className="text-lg text-slate-600 mb-8">
-              Some platforms enforce a very tight 200KB file size limit. Passport photo portals, national ID submission systems, digital signature uploads, and strict government forms all require extremely small files. OmnisPDF applies extreme compression to drastically reduce your PDF size, helping you meet these demanding upload requirements.
+              Some platforms enforce a very tight 200KB file size limit. Passport photo portals, national ID submission systems, digital signature uploads, and strict government forms all require extremely small files. PDF.it applies extreme compression to drastically reduce your PDF size, helping you meet these demanding upload requirements.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Extreme compression for maximum size reduction</li>
@@ -144,7 +144,7 @@ export default function CompressPDFTo200KBPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Compress a PDF for 200KB Limits</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PDF into OmnisPDF.",
+                "Upload or drag and drop your PDF into PDF.it.",
                 "Click Compress PDF — extreme compression is applied automatically.",
                 "Download your smaller PDF. If still over 200KB, try splitting into individual pages first, then compress each page.",
               ].map((step, i) => (
@@ -216,11 +216,11 @@ export default function CompressPDFTo200KBPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I compress a PDF for a 200KB upload limit?", a: "Upload your PDF to OmnisPDF and click Compress. The tool applies extreme compression to reduce image resolution and optimize internal structures, drastically reducing file size. Results depend on the content of your PDF." },
+                { q: "How do I compress a PDF for a 200KB upload limit?", a: "Upload your PDF to PDF.it and click Compress. The tool applies extreme compression to reduce image resolution and optimize internal structures, drastically reducing file size. Results depend on the content of your PDF." },
                 { q: "Will my PDF definitely be under 200KB after compression?", a: "Extreme compression drastically reduces file size, but results depend on the PDF content. Single-page text documents compress very well. Multi-page or image-heavy files may need to be split first, then each part compressed separately." },
                 { q: "Which portals require PDFs under 200KB?", a: "Many passport photo submission portals, national ID upload systems, digital signature file uploads, and very strict government forms enforce a 200KB limit per file." },
                 { q: "Will my PDF still be readable after compressing for 200KB limits?", a: "Yes. Text remains sharp and fully readable. Images may lose noticeable detail at this level of compression, but the document stays usable for identification and submission purposes." },
-                { q: "Can I compress a PDF for 200KB limits on my phone?", a: "Yes. OmnisPDF works in any mobile browser. Upload your PDF, compress it, and download the smaller file directly on iPhone or Android." },
+                { q: "Can I compress a PDF for 200KB limits on my phone?", a: "Yes. PDF.it works in any mobile browser. Upload your PDF, compress it, and download the smaller file directly on iPhone or Android." },
                 { q: "What if my PDF is still over 200KB after compression?", a: "Try splitting the PDF into individual pages with our Split PDF tool, then compress each page separately. You can also flatten the PDF, remove unnecessary pages, or convert images to grayscale to reduce size further." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

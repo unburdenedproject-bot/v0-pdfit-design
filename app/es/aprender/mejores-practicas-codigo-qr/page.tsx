@@ -5,7 +5,7 @@ import Link from "next/link"
 import { QrCode, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Mejores Practicas de Codigo QR (Tamano, Ubicacion y Pruebas) | OmnisPDF",
+  title: "Mejores Practicas de Codigo QR (Tamano, Ubicacion y Pruebas) | PDF.it",
   description:
     "Aprende las mejores practicas de codigos QR para tamano, contraste, ubicacion, correccion de errores y pruebas. Asegurate de que tus codigos QR se escaneen de manera confiable cada vez con estos consejos esenciales.",
   keywords: "mejores practicas codigo qr, tamano codigo qr, ubicacion codigo qr, consejos diseno codigo qr",
@@ -52,7 +52,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Crear un Codigo QR Confiable",
-  "description": "Sigue estos 3 pasos para crear un codigo QR que se escanee perfectamente cada vez usando OmnisPDF.",
+  "description": "Sigue estos 3 pasos para crear un codigo QR que se escanee perfectamente cada vez usando PDF.it.",
   "step": [
     {
       "@type": "HowToStep",

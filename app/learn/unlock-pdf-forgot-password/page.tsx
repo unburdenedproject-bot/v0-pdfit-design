@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Unlock, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Forgot Your PDF Password? Here's What You Can Do | OmnisPDF",
+  title: "Forgot Your PDF Password? Here's What You Can Do | PDF.it",
   description:
     "Forgot the password to your PDF? Learn the difference between open passwords and permissions passwords, and discover your options for recovering access to locked PDFs.",
   keywords: "forgot pdf password, pdf password recovery, cant open pdf, lost pdf password",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I open a PDF if I forgot the password?",
-      "acceptedAnswer": { "@type": "Answer", "text": "It depends on the type of password. If the PDF has a permissions password (you can view but not edit/print), OmnisPDF can remove those restrictions. If it has an open password (you can't view the file at all), you'll need to recover or remember the password — there's no way to bypass strong encryption." }
+      "acceptedAnswer": { "@type": "Answer", "text": "It depends on the type of password. If the PDF has a permissions password (you can view but not edit/print), PDF.it can remove those restrictions. If it has an open password (you can't view the file at all), you'll need to recover or remember the password — there's no way to bypass strong encryption." }
     },
     {
       "@type": "Question",
@@ -27,8 +27,8 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Can OmnisPDF crack a PDF open password?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF does not crack or brute-force open passwords. Modern PDF encryption (256-bit AES) is extremely strong and cannot be bypassed. OmnisPDF can only remove permissions restrictions or unlock PDFs when you provide the correct password." }
+      "name": "Can PDF.it crack a PDF open password?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it does not crack or brute-force open passwords. Modern PDF encryption (256-bit AES) is extremely strong and cannot be bypassed. PDF.it can only remove permissions restrictions or unlock PDFs when you provide the correct password." }
     },
     {
       "@type": "Question",
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I remove permissions restrictions without a password?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes, in many cases. If you can open and view the PDF (no open password), OmnisPDF can remove permissions restrictions like print, copy, and edit locks without needing the owner password." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, in many cases. If you can open and view the PDF (no open password), PDF.it can remove permissions restrictions like print, copy, and edit locks without needing the owner password." }
     },
     {
       "@type": "Question",
@@ -52,7 +52,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "What to Do When You Forget a PDF Password",
-  "description": "Steps to recover access to a password-protected PDF using OmnisPDF.",
+  "description": "Steps to recover access to a password-protected PDF using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
@@ -61,8 +61,8 @@ const howToSchema = {
     },
     {
       "@type": "HowToStep",
-      "name": "Upload to OmnisPDF",
-      "text": "Go to OmnisPDF's Unlock PDF tool and upload the file. For permissions-only restrictions, OmnisPDF can remove them automatically."
+      "name": "Upload to PDF.it",
+      "text": "Go to PDF.it's Unlock PDF tool and upload the file. For permissions-only restrictions, PDF.it can remove them automatically."
     },
     {
       "@type": "HowToStep",
@@ -139,7 +139,7 @@ export default function UnlockPDFForgotPasswordPage() {
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
-                <strong>Quick test:</strong> Can you open and read the PDF? If yes, you have a permissions password — and OmnisPDF&apos;s <Link href="/unlock-pdf" className="text-orange-600 hover:underline">Unlock PDF</Link> tool can remove those restrictions without needing the password.
+                <strong>Quick test:</strong> Can you open and read the PDF? If yes, you have a permissions password — and PDF.it&apos;s <Link href="/unlock-pdf" className="text-orange-600 hover:underline">Unlock PDF</Link> tool can remove those restrictions without needing the password.
               </p>
             </section>
 
@@ -147,16 +147,16 @@ export default function UnlockPDFForgotPasswordPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-6">If You Forgot the Permissions Password</h2>
               <p className="text-slate-600 mb-4">
-                Good news — this is the easy scenario. If you can open and view the PDF but can&apos;t print, copy, or edit, OmnisPDF can remove those restrictions:
+                Good news — this is the easy scenario. If you can open and view the PDF but can&apos;t print, copy, or edit, PDF.it can remove those restrictions:
               </p>
               <div className="space-y-4">
                 {[
                   {
-                    title: "Upload the PDF to OmnisPDF",
+                    title: "Upload the PDF to PDF.it",
                     desc: "Go to the Unlock PDF tool and upload your file. Since you can view the PDF, there's no open password blocking access.",
                   },
                   {
-                    title: "OmnisPDF removes the restrictions",
+                    title: "PDF.it removes the restrictions",
                     desc: "The tool automatically detects and removes permissions restrictions — no owner password needed. This works because permissions passwords only control what software allows, not the actual content encryption.",
                   },
                   {
@@ -227,7 +227,7 @@ export default function UnlockPDFForgotPasswordPage() {
 
             {/* Related tools */}
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">OmnisPDF Tools for Managing PDF Security</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">PDF.it Tools for Managing PDF Security</h2>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Unlock PDF — Remove Restrictions</h3>
@@ -266,7 +266,7 @@ export default function UnlockPDFForgotPasswordPage() {
         <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Need to Remove PDF Restrictions?</h2>
-            <p className="text-slate-300 mb-6">If your PDF has permissions restrictions (not an open password), OmnisPDF can remove them instantly — free, no signup required.</p>
+            <p className="text-slate-300 mb-6">If your PDF has permissions restrictions (not an open password), PDF.it can remove them instantly — free, no signup required.</p>
             <Link
               href="/unlock-pdf"
               className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
@@ -305,11 +305,11 @@ export default function UnlockPDFForgotPasswordPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "Can I open a PDF if I forgot the password?", a: "It depends on the type of password. If the PDF has a permissions password (you can view but not edit/print), OmnisPDF can remove those restrictions. If it has an open password (you can't view the file at all), you'll need to recover or remember the password — there's no way to bypass strong encryption." },
+                { q: "Can I open a PDF if I forgot the password?", a: "It depends on the type of password. If the PDF has a permissions password (you can view but not edit/print), PDF.it can remove those restrictions. If it has an open password (you can't view the file at all), you'll need to recover or remember the password — there's no way to bypass strong encryption." },
                 { q: "What's the difference between an open password and a permissions password?", a: "An open password prevents you from viewing the PDF entirely — you see a password prompt when you try to open it. A permissions password lets you view the PDF but restricts actions like printing, copying, and editing. Permissions passwords are much easier to remove." },
-                { q: "Can OmnisPDF crack a PDF open password?", a: "No. OmnisPDF does not crack or brute-force open passwords. Modern PDF encryption (256-bit AES) is extremely strong and cannot be bypassed. OmnisPDF can only remove permissions restrictions or unlock PDFs when you provide the correct password." },
+                { q: "Can PDF.it crack a PDF open password?", a: "No. PDF.it does not crack or brute-force open passwords. Modern PDF encryption (256-bit AES) is extremely strong and cannot be bypassed. PDF.it can only remove permissions restrictions or unlock PDFs when you provide the correct password." },
                 { q: "How can I recover a forgotten PDF password?", a: "Check your email for the original message that contained the password. Look in your browser's saved passwords. Try common passwords you use. Check if the password was shared in a chat or text message. If the PDF is from an organization, contact them for the password." },
-                { q: "Can I remove permissions restrictions without a password?", a: "Yes, in many cases. If you can open and view the PDF (no open password), OmnisPDF can remove permissions restrictions like print, copy, and edit locks without needing the owner password." },
+                { q: "Can I remove permissions restrictions without a password?", a: "Yes, in many cases. If you can open and view the PDF (no open password), PDF.it can remove permissions restrictions like print, copy, and edit locks without needing the owner password." },
                 { q: "How do I prevent losing my PDF password in the future?", a: "Use a password manager to store PDF passwords. Keep a record of which files are password-protected and what passwords you used. Consider using permissions restrictions instead of open passwords when you only need to control editing and printing." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

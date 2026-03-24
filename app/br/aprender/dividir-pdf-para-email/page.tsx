@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Scissors, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Dividir PDF para Email (Caber no Limite de Anexo) | OmnisPDF",
+  title: "Dividir PDF para Email (Caber no Limite de Anexo) | PDF.it",
   description:
     "Aprenda como dividir um PDF grande para enviar por email. Separe em partes que cabem no limite de anexo do Gmail, Outlook e outros — online, gratis.",
   keywords: "dividir pdf para email, separar pdf email, pdf grande para email, dividir pdf gmail, dividir pdf outlook",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como dividir um PDF para caber no email?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie o PDF para o OmnisPDF, divida em partes menores (cada uma abaixo de 20-25MB) e envie cada parte como anexo separado. Outra opcao e comprimir o PDF primeiro." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie o PDF para o PDF.it, divida em partes menores (cada uma abaixo de 20-25MB) e envie cada parte como anexo separado. Outra opcao e comprimir o PDF primeiro." }
     },
     {
       "@type": "Question",
@@ -194,7 +194,7 @@ export default function DividirPDFParaEmailPage() {
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Nomeie as partes claramente:</strong> "Relatorio_Parte1de3.pdf", "Relatorio_Parte2de3.pdf".</li>
                 <li>&#10003; <strong>Informe o destinatario</strong> que o documento esta dividido e em quantas partes.</li>
-                <li>&#10003; <strong>O destinatario pode recombinar</strong> usando <Link href="/br/unir-pdf" className="text-orange-600 hover:underline">Unir PDF</Link> do OmnisPDF.</li>
+                <li>&#10003; <strong>O destinatario pode recombinar</strong> usando <Link href="/br/unir-pdf" className="text-orange-600 hover:underline">Unir PDF</Link> do PDF.it.</li>
                 <li>&#10003; <strong>Alternativa:</strong> use <Link href="/br/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> primeiro — pode ser suficiente para caber no limite sem precisar dividir.</li>
               </ul>
             </section>
@@ -243,7 +243,7 @@ export default function DividirPDFParaEmailPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como dividir um PDF para caber no email?", a: "Envie o PDF para o OmnisPDF, divida em partes menores (cada uma abaixo de 20-25MB) e envie cada parte como anexo separado." },
+                { q: "Como dividir um PDF para caber no email?", a: "Envie o PDF para o PDF.it, divida em partes menores (cada uma abaixo de 20-25MB) e envie cada parte como anexo separado." },
                 { q: "Qual o limite de anexo do Gmail?", a: "O Gmail aceita anexos de ate 25MB. O Outlook aceita ate 20MB. Se seu PDF e maior, divida em partes ou comprima antes de enviar." },
                 { q: "E melhor dividir ou comprimir para email?", a: "Depende. Se o PDF e levemente acima do limite, tente comprimir primeiro. Se for muito grande (50MB+), divida em partes." },
               ].map((faq, i) => (

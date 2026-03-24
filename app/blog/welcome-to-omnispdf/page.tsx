@@ -4,12 +4,12 @@ import Link from "next/link"
 import { Calendar, ArrowLeft } from "lucide-react"
 
 export const metadata = {
-  title: "Welcome to OmnisPDF — PDF Tools Built for Professionals | OmnisPDF Blog",
+  title: "Welcome to PDF.it — PDF Tools Built for Professionals | PDF.it Blog",
   description:
-    "OmnisPDF launch announcement: discover why we built a trilingual PDF platform with 30+ tools, 4 pricing tiers, and enterprise features for legal, accounting, and business teams.",
+    "PDF.it launch announcement: discover why we built a trilingual PDF platform with 30+ tools, 4 pricing tiers, and enterprise features for legal, accounting, and business teams.",
 }
 
-export default function WelcomeToOmnisPDFPage() {
+export default function WelcomeToPDF.itPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -35,7 +35,7 @@ export default function WelcomeToOmnisPDFPage() {
                 </div>
               </div>
               <h1 className="text-3xl sm:text-4xl font-black">
-                Welcome to OmnisPDF — PDF Tools Built for Professionals
+                Welcome to PDF.it — PDF Tools Built for Professionals
               </h1>
             </div>
           </div>
@@ -46,16 +46,16 @@ export default function WelcomeToOmnisPDFPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <article className="max-w-3xl mx-auto">
               <p className="text-slate-600 leading-relaxed mb-4 text-lg">
-                We built OmnisPDF because we saw a gap. PDF tools existed, but they were either too expensive (Adobe),
+                We built PDF.it because we saw a gap. PDF tools existed, but they were either too expensive (Adobe),
                 too limited (free tools), or English-only. We wanted something better — a platform that gives
                 professionals real power over their documents without locking them into overpriced subscriptions or
                 stripping away the features they actually need.
               </p>
 
-              <h2 className="text-2xl font-black text-slate-900 mt-10 mb-4">What Makes OmnisPDF Different</h2>
+              <h2 className="text-2xl font-black text-slate-900 mt-10 mb-4">What Makes PDF.it Different</h2>
               <p className="text-slate-600 leading-relaxed mb-4">
                 There are hundreds of PDF tools on the internet. Most of them do the same basic things — merge, split,
-                compress. OmnisPDF goes further in four key ways:
+                compress. PDF.it goes further in four key ways:
               </p>
               <ul className="list-disc list-inside space-y-2 text-slate-600 mb-4">
                 <li>
@@ -81,7 +81,7 @@ export default function WelcomeToOmnisPDFPage() {
 
               <h2 className="text-2xl font-black text-slate-900 mt-10 mb-4">Who We Built This For</h2>
               <p className="text-slate-600 leading-relaxed mb-4">
-                OmnisPDF was designed with real use cases in mind. We talked to professionals in different industries
+                PDF.it was designed with real use cases in mind. We talked to professionals in different industries
                 and built features around the problems they described:
               </p>
               <ul className="list-disc list-inside space-y-2 text-slate-600 mb-4">
@@ -109,7 +109,7 @@ export default function WelcomeToOmnisPDFPage() {
 
               <h2 className="text-2xl font-black text-slate-900 mt-10 mb-4">What&#39;s Available at Launch</h2>
               <p className="text-slate-600 leading-relaxed mb-4">
-                OmnisPDF launches with a comprehensive toolkit that covers the full document lifecycle:
+                PDF.it launches with a comprehensive toolkit that covers the full document lifecycle:
               </p>
               <ul className="list-disc list-inside space-y-2 text-slate-600 mb-4">
                 <li>30+ PDF tools — merge, split, compress, rotate, convert, protect, unlock, watermark, and more</li>
@@ -148,7 +148,7 @@ export default function WelcomeToOmnisPDFPage() {
 
               <h2 className="text-2xl font-black text-slate-900 mt-10 mb-4">Get Started</h2>
               <p className="text-slate-600 leading-relaxed mb-4">
-                OmnisPDF is live and ready to use. You can start with the free tier right now — no signup required for
+                PDF.it is live and ready to use. You can start with the free tier right now — no signup required for
                 your first 3 conversions.
               </p>
               <p className="text-slate-600 leading-relaxed mb-4">
@@ -163,7 +163,7 @@ export default function WelcomeToOmnisPDFPage() {
                 to explore all available tools.
               </p>
               <p className="text-slate-600 leading-relaxed mb-4">
-                We built OmnisPDF for you. We hope it saves you time, money, and frustration — every single day.
+                We built PDF.it for you. We hope it saves you time, money, and frustration — every single day.
               </p>
 
               {/* Back to Blog */}

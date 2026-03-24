@@ -273,7 +273,7 @@ export async function POST(request) {
     // Build Excel workbook using ExcelJS
     const ExcelJS = await import("exceljs");
     const workbook = new ExcelJS.default.Workbook();
-    workbook.creator = "OmnisPDF";
+    workbook.creator = "PDF.it";
     workbook.created = new Date();
 
     for (let i = 0; i < tables.length; i++) {

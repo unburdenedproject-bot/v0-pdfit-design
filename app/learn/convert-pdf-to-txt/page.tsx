@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Convert PDF to TXT: Extract Plain Text in Seconds | OmnisPDF",
+  title: "Convert PDF to TXT: Extract Plain Text in Seconds | PDF.it",
   description:
     "Learn how to convert PDF to TXT and extract plain text from any PDF file. Step-by-step guide for data entry, coding, note-taking, and more — free, online, no software needed.",
   keywords: "convert pdf to txt, pdf to text, extract text from pdf, pdf to plain text, pdf to txt converter",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I convert a PDF to TXT for free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF's PDF to TXT tool, click Convert, and download the plain text file. No signup required for your first 3 files." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it's PDF to TXT tool, click Convert, and download the plain text file. No signup required for your first 3 files." }
     },
     {
       "@type": "Question",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I convert a scanned PDF to TXT?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Standard PDF to TXT tools cannot extract text from scanned PDFs because the text is stored as an image. You need OCR (Optical Character Recognition) to convert scanned pages to text. OmnisPDF's OCR Scanner handles this." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Standard PDF to TXT tools cannot extract text from scanned PDFs because the text is stored as an image. You need OCR (Optical Character Recognition) to convert scanned pages to text. PDF.it's OCR Scanner handles this." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I convert a PDF to TXT on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in any mobile browser — upload your PDF, convert it to TXT, and download the text file directly on iPhone or Android. No app installation needed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in any mobile browser — upload your PDF, convert it to TXT, and download the text file directly on iPhone or Android. No app installation needed." }
     }
   ]
 }
@@ -52,17 +52,17 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Convert PDF to TXT Online",
-  "description": "Extract plain text from any PDF in 3 simple steps using OmnisPDF.",
+  "description": "Extract plain text from any PDF in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Upload your PDF",
-      "text": "Go to OmnisPDF's PDF to TXT tool and upload your file by clicking or dragging it into the upload area."
+      "text": "Go to PDF.it's PDF to TXT tool and upload your file by clicking or dragging it into the upload area."
     },
     {
       "@type": "HowToStep",
       "name": "Convert to plain text",
-      "text": "Click Convert. OmnisPDF extracts all readable text from your PDF and generates a clean TXT file."
+      "text": "Click Convert. PDF.it extracts all readable text from your PDF and generates a clean TXT file."
     },
     {
       "@type": "HowToStep",
@@ -163,7 +163,7 @@ export default function ConvertPdfToTxtPage() {
                   },
                   {
                     title: "Convert to plain text",
-                    desc: "Click Convert. OmnisPDF reads all selectable text in your PDF and generates a clean .txt file. This takes just a few seconds for most documents.",
+                    desc: "Click Convert. PDF.it reads all selectable text in your PDF and generates a clean .txt file. This takes just a few seconds for most documents.",
                   },
                   {
                     title: "Download and use your text",
@@ -254,7 +254,7 @@ export default function ConvertPdfToTxtPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Scanned PDFs</h3>
                   <p className="text-slate-600">
-                    If your PDF is a scan (photos of paper pages), there's no selectable text to extract. You need <Link href="/ocr-scanner" className="text-orange-600 hover:underline">OCR (Optical Character Recognition)</Link> to read the text from the images. OmnisPDF's OCR Scanner handles this automatically.
+                    If your PDF is a scan (photos of paper pages), there's no selectable text to extract. You need <Link href="/ocr-scanner" className="text-orange-600 hover:underline">OCR (Optical Character Recognition)</Link> to read the text from the images. PDF.it's OCR Scanner handles this automatically.
                   </p>
                 </div>
 
@@ -321,12 +321,12 @@ export default function ConvertPdfToTxtPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I convert a PDF to TXT for free?", a: "Upload your PDF to OmnisPDF's PDF to TXT tool, click Convert, and download the plain text file. No signup required for your first 3 files." },
+                { q: "How do I convert a PDF to TXT for free?", a: "Upload your PDF to PDF.it's PDF to TXT tool, click Convert, and download the plain text file. No signup required for your first 3 files." },
                 { q: "Will I lose formatting when converting PDF to TXT?", a: "Yes — TXT files contain only plain text with no formatting. Bold, italics, tables, images, and colors are all removed. If you need to keep formatting, use PDF to Word instead." },
-                { q: "Can I convert a scanned PDF to TXT?", a: "Standard PDF to TXT tools cannot extract text from scanned PDFs because the text is stored as an image. You need OCR (Optical Character Recognition) to convert scanned pages to text. OmnisPDF's OCR Scanner handles this." },
+                { q: "Can I convert a scanned PDF to TXT?", a: "Standard PDF to TXT tools cannot extract text from scanned PDFs because the text is stored as an image. You need OCR (Optical Character Recognition) to convert scanned pages to text. PDF.it's OCR Scanner handles this." },
                 { q: "What is the difference between PDF to TXT and PDF to Word?", a: "PDF to TXT extracts only the raw text content — no formatting, no images, no tables. PDF to Word preserves formatting, layout, tables, and images in an editable document. Use TXT when you just need the text; use Word when you need to edit the full document." },
                 { q: "Why is my PDF to TXT output missing text?", a: "Missing text usually means the PDF is scanned (text stored as an image) or uses custom/embedded fonts that can't be decoded. Try the OCR Scanner for scanned PDFs, or PDF to Word for documents with unusual fonts." },
-                { q: "Can I convert a PDF to TXT on my phone?", a: "Yes. OmnisPDF works in any mobile browser — upload your PDF, convert it to TXT, and download the text file directly on iPhone or Android. No app installation needed." },
+                { q: "Can I convert a PDF to TXT on my phone?", a: "Yes. PDF.it works in any mobile browser — upload your PDF, convert it to TXT, and download the text file directly on iPhone or Android. No app installation needed." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

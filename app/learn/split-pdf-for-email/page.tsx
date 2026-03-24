@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Scissors, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Split a PDF for Email (Under Attachment Size Limits) | OmnisPDF",
+  title: "Split a PDF for Email (Under Attachment Size Limits) | PDF.it",
   description:
     "Learn how to split a large PDF into smaller files that fit under email attachment limits. Works for Gmail (25MB), Outlook (20MB), and more — free, no software needed.",
   keywords: "split pdf for email, pdf too large for email, reduce pdf for email attachment, split pdf into smaller files",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I split a PDF that's too large for email?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF's Split PDF tool, choose to split by file size or page count, and download the smaller parts. Each part will be under the email attachment limit." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it's Split PDF tool, choose to split by file size or page count, and download the smaller parts. Each part will be under the email attachment limit." }
     },
     {
       "@type": "Question",
@@ -33,17 +33,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Should I split or compress my PDF for email?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Try compressing first — it's simpler. If the compressed PDF is still too large, split it into parts. OmnisPDF offers both tools: Compress PDF and Split PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Try compressing first — it's simpler. If the compressed PDF is still too large, split it into parts. PDF.it offers both tools: Compress PDF and Split PDF." }
     },
     {
       "@type": "Question",
       "name": "Can I split a PDF into parts of a specific file size?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF lets you split by page ranges, so you can estimate how many pages fit under your target size. For precise control, split into small sections and check each file's size." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it lets you split by page ranges, so you can estimate how many pages fit under your target size. For precise control, split into small sections and check each file's size." }
     },
     {
       "@type": "Question",
       "name": "How do I recombine the split PDFs after sending?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The recipient can use OmnisPDF's Merge PDF tool to combine all the parts back into a single document. Share this link with them: omnispdf.com/merge-pdf" }
+      "acceptedAnswer": { "@type": "Answer", "text": "The recipient can use PDF.it's Merge PDF tool to combine all the parts back into a single document. Share this link with them: pdf.it.com/merge-pdf" }
     }
   ]
 }
@@ -57,7 +57,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Upload your large PDF",
-      "text": "Go to OmnisPDF's Split PDF tool and upload the PDF that's too large for email."
+      "text": "Go to PDF.it's Split PDF tool and upload the PDF that's too large for email."
     },
     {
       "@type": "HowToStep",
@@ -162,7 +162,7 @@ export default function SplitPDFForEmailPage() {
                 {[
                   {
                     title: "Upload your oversized PDF",
-                    desc: "Go to OmnisPDF's Split PDF tool and upload your file. You'll see the total page count and can preview each page. Free users can upload files up to 25MB; Pro users up to 200MB.",
+                    desc: "Go to PDF.it's Split PDF tool and upload your file. You'll see the total page count and can preview each page. Free users can upload files up to 25MB; Pro users up to 200MB.",
                   },
                   {
                     title: "Divide it into email-friendly parts",
@@ -222,7 +222,7 @@ export default function SplitPDFForEmailPage() {
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Download all parts</strong> from each email to the same folder.</li>
-                <li>&#10003; <strong>Go to <Link href="/merge-pdf" className="text-orange-600 hover:underline">OmnisPDF Merge PDF</Link></strong> and upload all the parts.</li>
+                <li>&#10003; <strong>Go to <Link href="/merge-pdf" className="text-orange-600 hover:underline">PDF.it Merge PDF</Link></strong> and upload all the parts.</li>
                 <li>&#10003; <strong>Arrange them in order</strong> (Part 1 first, Part 2 second, etc.).</li>
                 <li>&#10003; <strong>Click Merge</strong> and download the complete document.</li>
               </ul>
@@ -290,12 +290,12 @@ export default function SplitPDFForEmailPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I split a PDF that's too large for email?", a: "Upload your PDF to OmnisPDF's Split PDF tool, choose to split by file size or page count, and download the smaller parts. Each part will be under the email attachment limit." },
+                { q: "How do I split a PDF that's too large for email?", a: "Upload your PDF to PDF.it's Split PDF tool, choose to split by file size or page count, and download the smaller parts. Each part will be under the email attachment limit." },
                 { q: "What is the Gmail attachment size limit?", a: "Gmail allows attachments up to 25MB per email (total for all attachments combined). If your PDF is larger, you need to either split it into smaller files or compress it to reduce the size." },
                 { q: "What is the Outlook attachment size limit?", a: "Microsoft Outlook allows attachments up to 20MB per email. Outlook.com (Hotmail) has the same 20MB limit. For larger files, split or compress your PDF." },
-                { q: "Should I split or compress my PDF for email?", a: "Try compressing first — it's simpler. If the compressed PDF is still too large, split it into parts. OmnisPDF offers both tools: Compress PDF and Split PDF." },
-                { q: "Can I split a PDF into parts of a specific file size?", a: "Yes. OmnisPDF lets you split by page ranges, so you can estimate how many pages fit under your target size. For precise control, split into small sections and check each file's size." },
-                { q: "How do I recombine the split PDFs after sending?", a: "The recipient can use OmnisPDF's Merge PDF tool to combine all the parts back into a single document. Share this link with them: omnispdf.com/merge-pdf" },
+                { q: "Should I split or compress my PDF for email?", a: "Try compressing first — it's simpler. If the compressed PDF is still too large, split it into parts. PDF.it offers both tools: Compress PDF and Split PDF." },
+                { q: "Can I split a PDF into parts of a specific file size?", a: "Yes. PDF.it lets you split by page ranges, so you can estimate how many pages fit under your target size. For precise control, split into small sections and check each file's size." },
+                { q: "How do I recombine the split PDFs after sending?", a: "The recipient can use PDF.it's Merge PDF tool to combine all the parts back into a single document. Share this link with them: pdf.it.com/merge-pdf" },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

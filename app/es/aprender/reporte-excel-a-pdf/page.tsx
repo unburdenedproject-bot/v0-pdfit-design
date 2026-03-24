@@ -5,24 +5,24 @@ import Link from "next/link"
 import { FileSpreadsheet, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Exportar reportes mensuales: Excel a PDF para email y compartir | OmnisPDF",
+  title: "Exportar reportes mensuales: Excel a PDF para email y compartir | PDF.it",
   description: "Aprende como convertir reportes de Excel a PDF para email y compartir. Cubre como establecer areas de impresion una vez, comprimir para email, agregar encabezados y pies de pagina, y crear presentaciones profesionales.",
   keywords: "exportar excel a pdf para email, reporte excel a pdf, reporte mensual pdf, excel a pdf adjunto email, compartir excel como pdf",
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-  { "@type": "Question", "name": "Como convierto un reporte de Excel a PDF para email?", "acceptedAnswer": { "@type": "Answer", "text": "Establece tu area de impresion en Excel para incluir solo los datos del reporte, ajusta el diseno de pagina, luego sube a la herramienta Excel a PDF de OmnisPDF. Despues de la conversion, usa Comprimir PDF para que el archivo quede bajo los limites de adjuntos de email (usualmente 20-25MB)." } },
+  { "@type": "Question", "name": "Como convierto un reporte de Excel a PDF para email?", "acceptedAnswer": { "@type": "Answer", "text": "Establece tu area de impresion en Excel para incluir solo los datos del reporte, ajusta el diseno de pagina, luego sube a la herramienta Excel a PDF de PDF.it. Despues de la conversion, usa Comprimir PDF para que el archivo quede bajo los limites de adjuntos de email (usualmente 20-25MB)." } },
   { "@type": "Question", "name": "Como configuro mi reporte Excel para convertirlo cada mes sin rehacer las configuraciones?", "acceptedAnswer": { "@type": "Answer", "text": "Establece tu area de impresion, orientacion de pagina, margenes y escalado una vez en tu plantilla de Excel. Guarda el archivo. Cada mes, actualiza los datos y convierte — todas tus configuraciones de impresion se conservan en el archivo guardado." } },
   { "@type": "Question", "name": "Puedo agregar encabezados y pies de pagina a mi reporte Excel antes de convertir a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Ve a Insertar &gt; Encabezado y pie de pagina en Excel. Agrega el nombre de tu empresa, titulo del reporte, fecha o numeros de pagina. Estos aparecen en cada pagina del PDF convertido." } },
-  { "@type": "Question", "name": "Como comprimo mi reporte Excel-a-PDF para email?", "acceptedAnswer": { "@type": "Answer", "text": "Despues de convertir a PDF, sube el archivo a la herramienta Comprimir PDF de OmnisPDF. Elige compresion Media para un buen balance de calidad y tamano. Para limites estrictos, usa Comprimir PDF para Email que optimiza especificamente para limites de adjuntos." } },
-  { "@type": "Question", "name": "Debo proteger con contrasena mi reporte PDF de Excel?", "acceptedAnswer": { "@type": "Answer", "text": "Si el reporte contiene datos financieros sensibles, si. Usa la herramienta Proteger PDF de OmnisPDF para agregar una contrasena despues de convertir. Esto previene acceso no autorizado si el email se reenviae o el archivo se comparte accidentalmente." } },
-  { "@type": "Question", "name": "Puedo unir multiples reportes Excel en un PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Convierte cada reporte de Excel a PDF por separado, luego usa la herramienta Unir PDF de OmnisPDF para combinarlos en un solo documento. Esto es ideal para paquetes trimestrales que incluyen multiples reportes mensuales." } }
+  { "@type": "Question", "name": "Como comprimo mi reporte Excel-a-PDF para email?", "acceptedAnswer": { "@type": "Answer", "text": "Despues de convertir a PDF, sube el archivo a la herramienta Comprimir PDF de PDF.it. Elige compresion Media para un buen balance de calidad y tamano. Para limites estrictos, usa Comprimir PDF para Email que optimiza especificamente para limites de adjuntos." } },
+  { "@type": "Question", "name": "Debo proteger con contrasena mi reporte PDF de Excel?", "acceptedAnswer": { "@type": "Answer", "text": "Si el reporte contiene datos financieros sensibles, si. Usa la herramienta Proteger PDF de PDF.it para agregar una contrasena despues de convertir. Esto previene acceso no autorizado si el email se reenviae o el archivo se comparte accidentalmente." } },
+  { "@type": "Question", "name": "Puedo unir multiples reportes Excel en un PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Convierte cada reporte de Excel a PDF por separado, luego usa la herramienta Unir PDF de PDF.it para combinarlos en un solo documento. Esto es ideal para paquetes trimestrales que incluyen multiples reportes mensuales." } }
 ] }
 
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como exportar un reporte de Excel a PDF para email", "description": "Convierte tu reporte mensual de Excel a un PDF profesional listo para email en 3 pasos.", "step": [
   { "@type": "HowToStep", "name": "Prepara tu reporte Excel", "text": "Establece el area de impresion para incluir solo los datos del reporte, agrega encabezados/pies de pagina (Insertar &gt; Encabezado y pie de pagina), y configura el diseno de pagina (horizontal, margenes estrechos, ajustar columnas a una pagina)." },
-  { "@type": "HowToStep", "name": "Convierte a PDF", "text": "Sube tu archivo Excel preparado a la herramienta Excel a PDF de OmnisPDF y haz clic en Convertir. El PDF conserva tu formato, encabezados, pies de pagina y configuraciones de diseno de pagina." },
-  { "@type": "HowToStep", "name": "Comprime y envia", "text": "Si el PDF es muy grande para email, usa la herramienta Comprimir PDF de OmnisPDF para reducir el tamano del archivo. Luego adjunta a tu email y envia." }
+  { "@type": "HowToStep", "name": "Convierte a PDF", "text": "Sube tu archivo Excel preparado a la herramienta Excel a PDF de PDF.it y haz clic en Convertir. El PDF conserva tu formato, encabezados, pies de pagina y configuraciones de diseno de pagina." },
+  { "@type": "HowToStep", "name": "Comprime y envia", "text": "Si el PDF es muy grande para email, usa la herramienta Comprimir PDF de PDF.it para reducir el tamano del archivo. Luego adjunta a tu email y envia." }
 ] }
 
 export default function ReporteExcelAPdfPage() {
@@ -50,7 +50,7 @@ export default function ReporteExcelAPdfPage() {
             <ul className="space-y-3 text-slate-700">
               <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Configuralo una vez.</strong> Configura tu area de impresion, orientacion, margenes, escalado y encabezados/pies de pagina en tu plantilla de Excel. Guarda el archivo.</span></li>
               <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Actualiza datos mensualmente.</strong> Cada mes, abre la plantilla, actualiza los numeros y guarda. Todas tus configuraciones de impresion se conservan.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Convierte a PDF.</strong> Sube a la <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">herramienta Excel a PDF de OmnisPDF</Link>. El convertidor respeta tus configuraciones de impresion guardadas.</span></li>
+              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Convierte a PDF.</strong> Sube a la <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">herramienta Excel a PDF de PDF.it</Link>. El convertidor respeta tus configuraciones de impresion guardadas.</span></li>
               <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Comprime y envia.</strong> Si el PDF excede el limite de email, <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">comprimelo</Link> antes de adjuntarlo.</span></li>
             </ul>
           </section>

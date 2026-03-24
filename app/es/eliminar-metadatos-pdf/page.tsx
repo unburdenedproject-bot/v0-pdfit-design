@@ -6,9 +6,9 @@ import { ShieldOff, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Eliminar Metadatos de PDF — Quita Información Oculta del PDF | OmnisPDF",
+  title: "Eliminar Metadatos de PDF — Quita Información Oculta del PDF | PDF.it",
   description:
-    "Elimina los metadatos ocultos de un PDF con OmnisPDF. Quita autor, título, historial de edición y datos sensibles antes de compartir — rápido, gratis y en tu navegador.",
+    "Elimina los metadatos ocultos de un PDF con PDF.it. Quita autor, título, historial de edición y datos sensibles antes de compartir — rápido, gratis y en tu navegador.",
   alternates: {
     languages: {
       en: "/remove-pdf-metadata",
@@ -44,7 +44,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo eliminar metadatos desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en navegadores móviles — sube tu PDF, elimina los metadatos y descarga el resultado desde iPhone o Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube tu PDF, elimina los metadatos y descarga el resultado desde iPhone o Android." }
     },
     {
       "@type": "Question",
@@ -97,7 +97,7 @@ export default function EliminarMetadatosPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Los archivos PDF contienen información oculta que puede revelar datos personales o corporativos. Con OmnisPDF puedes eliminar todos los metadatos de un PDF — nombre del autor, software utilizado, fechas de edición y más — antes de compartir documentos de forma segura.
+              Los archivos PDF contienen información oculta que puede revelar datos personales o corporativos. Con PDF.it puedes eliminar todos los metadatos de un PDF — nombre del autor, software utilizado, fechas de edición y más — antes de compartir documentos de forma segura.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Elimina autor, título, tema y palabras clave</li>
@@ -145,7 +145,7 @@ export default function EliminarMetadatosPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Eliminar Metadatos de un PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Haz clic en Eliminar Metadatos — toda la información oculta se elimina automáticamente.",
                 "Descarga tu PDF limpio sin metadatos.",
               ].map((step, i) => (
@@ -198,7 +198,7 @@ export default function EliminarMetadatosPDFPage() {
                 { q: "¿Por qué debería eliminar los metadatos de un PDF?", a: "Eliminar metadatos protege tu privacidad al quitar información personal como tu nombre, el software que usas, fechas de edición y otros datos que podrían revelar información sensible sobre ti o tu organización." },
                 { q: "¿Eliminar metadatos cambia el contenido del PDF?", a: "No. Eliminar metadatos solo quita la información descriptiva oculta. El contenido visible del PDF — texto, imágenes, formato — permanece exactamente igual." },
                 { q: "¿Qué metadatos se eliminan?", a: "Se eliminan todos los campos de metadatos estándar: título, autor, tema, palabras clave, creador, productor, fechas de creación y modificación, y cualquier metadato personalizado." },
-                { q: "¿Puedo eliminar metadatos desde mi celular?", a: "Sí. OmnisPDF funciona en navegadores móviles — sube tu PDF, elimina los metadatos y descarga el resultado desde iPhone o Android." },
+                { q: "¿Puedo eliminar metadatos desde mi celular?", a: "Sí. PDF.it funciona en navegadores móviles — sube tu PDF, elimina los metadatos y descarga el resultado desde iPhone o Android." },
                 { q: "¿Es gratis eliminar metadatos de un PDF?", a: "Sí. Puedes eliminar metadatos de PDFs de hasta 25MB gratis. Para archivos más grandes y procesamiento por lotes, actualiza a Pro." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Por Qué el Texto Extraído de PDF Sale Ilegible (Y Cómo Solucionarlo) | OmnisPDF",
+  title: "Por Qué el Texto Extraído de PDF Sale Ilegible (Y Cómo Solucionarlo) | PDF.it",
   description:
     "¿Obtienes texto ilegible, caracteres extraños o resultados en blanco al convertir PDF a texto? Aprende las 5 causas más comunes y cómo solucionar cada una — guía paso a paso.",
   keywords: "pdf a texto ilegible, texto pdf caracteres extraños, pdf copiar pegar caracteres raros, extraccion texto pdf rota, arreglar texto pdf ilegible",
@@ -67,7 +67,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Extrae el texto",
-      "text": "Sube tu PDF a la herramienta apropiada de OmnisPDF, procésalo y descarga la salida limpia. Verifica que el texto sea correcto antes de usarlo."
+      "text": "Sube tu PDF a la herramienta apropiada de PDF.it, procésalo y descarga la salida limpia. Verifica que el texto sea correcto antes de usarlo."
     }
   ]
 }
@@ -107,7 +107,7 @@ export default function PdfTextoIlegibleSolucionPage() {
               <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileText className="h-5 w-5 text-white" />
               </div>
-              <p className="text-slate-700 font-semibold">Prueba extraer texto con OmnisPDF — maneja la mayoría de problemas de codificación.</p>
+              <p className="text-slate-700 font-semibold">Prueba extraer texto con PDF.it — maneja la mayoría de problemas de codificación.</p>
             </div>
             <Link
               href="/es/pdf-a-texto"
@@ -162,7 +162,7 @@ export default function PdfTextoIlegibleSolucionPage() {
                 <strong>Cómo verificar:</strong> Abre el PDF e intenta seleccionar una sola palabra con tu cursor. Si solo puedes seleccionar la página completa como un bloque (o nada), es escaneado.
               </p>
               <p className="text-slate-600">
-                <strong>La solución:</strong> Usa <Link href="/es/escaner-ocr" className="text-orange-600 hover:underline">OCR (Reconocimiento Óptico de Caracteres)</Link>. OCR lee texto visualmente de la imagen de la página y lo convierte en texto seleccionable y editable. El Escáner OCR de OmnisPDF maneja esto automáticamente — sube tu PDF escaneado y devuelve el texto extraído.
+                <strong>La solución:</strong> Usa <Link href="/es/escaner-ocr" className="text-orange-600 hover:underline">OCR (Reconocimiento Óptico de Caracteres)</Link>. OCR lee texto visualmente de la imagen de la página y lo convierte en texto seleccionable y editable. El Escáner OCR de PDF.it maneja esto automáticamente — sube tu PDF escaneado y devuelve el texto extraído.
               </p>
             </section>
 
@@ -201,7 +201,7 @@ export default function PdfTextoIlegibleSolucionPage() {
                 <strong>El problema:</strong> Los PDFs con diseños de múltiples columnas, cuadros de texto flotantes, barras laterales o tablas hacen que las herramientas de extracción de texto adivinen mal el orden de lectura. El resultado son palabras en secuencia desordenada.
               </p>
               <p className="text-slate-600 mb-4">
-                <strong>La solución:</strong> La <Link href="/es/pdf-a-texto" className="text-orange-600 hover:underline">herramienta PDF a TXT</Link> de OmnisPDF maneja correctamente la mayoría de diseños de múltiples columnas. Si el diseño es extremadamente complejo (como páginas de revistas), prueba <Link href="/es/pdf-a-word" className="text-orange-600 hover:underline">PDF a Word</Link> que preserva la estructura visual, facilitando identificar y reorganizar secciones.
+                <strong>La solución:</strong> La <Link href="/es/pdf-a-texto" className="text-orange-600 hover:underline">herramienta PDF a TXT</Link> de PDF.it maneja correctamente la mayoría de diseños de múltiples columnas. Si el diseño es extremadamente complejo (como páginas de revistas), prueba <Link href="/es/pdf-a-word" className="text-orange-600 hover:underline">PDF a Word</Link> que preserva la estructura visual, facilitando identificar y reorganizar secciones.
               </p>
             </section>
 
@@ -266,7 +266,7 @@ export default function PdfTextoIlegibleSolucionPage() {
         <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Arregla Tu Texto de PDF Ilegible</h2>
-            <p className="text-slate-300 mb-6">Prueba las herramientas de extracción de OmnisPDF — manejan problemas de codificación, páginas escaneadas y diseños complejos automáticamente.</p>
+            <p className="text-slate-300 mb-6">Prueba las herramientas de extracción de PDF.it — manejan problemas de codificación, páginas escaneadas y diseños complejos automáticamente.</p>
             <Link
               href="/es/pdf-a-texto"
               className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"

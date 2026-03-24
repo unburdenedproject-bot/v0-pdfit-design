@@ -5,9 +5,9 @@ import { FileSpreadsheet, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "PDF Table to CSV — Export PDF Tables as CSV Files | OmnisPDF",
+  title: "PDF Table to CSV — Export PDF Tables as CSV Files | PDF.it",
   description:
-    "Export tables from PDFs as CSV files with OmnisPDF. Extract structured data for use in Excel, Google Sheets, databases, and data analysis tools.",
+    "Export tables from PDFs as CSV files with PDF.it. Extract structured data for use in Excel, Google Sheets, databases, and data analysis tools.",
 }
 
 const faqSchema = {
@@ -22,17 +22,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I get a CSV from a PDF table?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF's PDF to Excel tool to extract the table data, then open the Excel file and save it as CSV. Or use the Business-tier Table Extraction tool for direct structured data export." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it's PDF to Excel tool to extract the table data, then open the Excel file and save it as CSV. Or use the Business-tier Table Extraction tool for direct structured data export." }
     },
     {
       "@type": "Question",
       "name": "Will special characters and encoding be preserved in the CSV?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF exports data in UTF-8 encoding, which supports accented characters, currency symbols, and international text. Your CSV files will display correctly in Excel, Google Sheets, and most data tools." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it exports data in UTF-8 encoding, which supports accented characters, currency symbols, and international text. Your CSV files will display correctly in Excel, Google Sheets, and most data tools." }
     },
     {
       "@type": "Question",
       "name": "Can I extract large tables with hundreds of rows?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF handles tables of any size. Pro users can process files up to 200MB, and Business users get priority processing for large documents with extensive table data." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it handles tables of any size. Pro users can process files up to 200MB, and Business users get priority processing for large documents with extensive table data." }
     },
     {
       "@type": "Question",
@@ -93,7 +93,7 @@ export default function PDFTableToCSVPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              CSV is the universal format for data. When you need to import PDF table data into a database, feed it into a script, or load it into Google Sheets, CSV is the way to go. OmnisPDF helps you extract tables from PDFs and get them into CSV format for any workflow.
+              CSV is the universal format for data. When you need to import PDF table data into a database, feed it into a script, or load it into Google Sheets, CSV is the way to go. PDF.it helps you extract tables from PDFs and get them into CSV format for any workflow.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Export table data in clean, comma-separated format</li>
@@ -135,7 +135,7 @@ export default function PDFTableToCSVPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Export a PDF Table as CSV</h2>
             <div className="space-y-4">
               {[
-                "Upload your PDF to OmnisPDF's PDF to Excel converter.",
+                "Upload your PDF to PDF.it's PDF to Excel converter.",
                 "Download the extracted Excel file with your table data.",
                 "Open in Excel or Google Sheets and save as CSV (.csv).",
               ].map((step, i) => (
@@ -181,9 +181,9 @@ export default function PDFTableToCSVPage() {
             <div className="space-y-6">
               {[
                 { q: "What is the difference between CSV and Excel for table export?", a: "CSV is a plain text format with comma-separated values — it works everywhere, including databases, scripts, and data pipelines. Excel (.xlsx) preserves formatting, formulas, and multiple sheets. Use CSV when you need maximum compatibility, Excel when you need rich formatting." },
-                { q: "How do I get a CSV from a PDF table?", a: "Upload your PDF to OmnisPDF's PDF to Excel tool to extract the table data, then open the Excel file and save it as CSV. Or use the Business-tier Table Extraction tool for direct structured data export." },
-                { q: "Will special characters and encoding be preserved in the CSV?", a: "Yes. OmnisPDF exports data in UTF-8 encoding, which supports accented characters, currency symbols, and international text. Your CSV files will display correctly in Excel, Google Sheets, and most data tools." },
-                { q: "Can I extract large tables with hundreds of rows?", a: "Yes. OmnisPDF handles tables of any size. Pro users can process files up to 200MB, and Business users get priority processing for large documents with extensive table data." },
+                { q: "How do I get a CSV from a PDF table?", a: "Upload your PDF to PDF.it's PDF to Excel tool to extract the table data, then open the Excel file and save it as CSV. Or use the Business-tier Table Extraction tool for direct structured data export." },
+                { q: "Will special characters and encoding be preserved in the CSV?", a: "Yes. PDF.it exports data in UTF-8 encoding, which supports accented characters, currency symbols, and international text. Your CSV files will display correctly in Excel, Google Sheets, and most data tools." },
+                { q: "Can I extract large tables with hundreds of rows?", a: "Yes. PDF.it handles tables of any size. Pro users can process files up to 200MB, and Business users get priority processing for large documents with extensive table data." },
                 { q: "Can I use CSV files for database imports?", a: "Absolutely. CSV is the most widely supported format for database imports. Extract your PDF tables, save as CSV, and import directly into MySQL, PostgreSQL, MongoDB, or any database that accepts CSV data." },
                 { q: "Can I choose a different delimiter instead of commas?", a: "The standard export uses commas as delimiters. If you need semicolons, tabs, or other delimiters, export to Excel first, then use Excel or Google Sheets to save as CSV with your preferred delimiter settings." },
               ].map((faq, i) => (

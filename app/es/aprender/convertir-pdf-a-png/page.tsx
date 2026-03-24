@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Image, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Cómo Convertir PDF a PNG Online (Texto Nítido + Gráficos Limpios) | OmnisPDF",
+  title: "Cómo Convertir PDF a PNG Online (Texto Nítido + Gráficos Limpios) | PDF.it",
   description:
     "Aprende cómo convertir PDF a PNG online con texto nítido y gráficos limpios. Guía paso a paso sobre transparencia, resolución y cuándo PNG supera a JPG — gratis, sin software.",
   keywords: "convertir pdf a png online, pdf a png, convertidor pdf a png, guardar pdf como png, exportar pdf a png",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo convierto un PDF a PNG gratis?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta PDF a PNG de OmnisPDF, selecciona la resolución deseada, haz clic en Convertir y descarga las imágenes PNG. No se necesita registro para tus primeros 3 archivos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta PDF a PNG de PDF.it, selecciona la resolución deseada, haz clic en Convertir y descarga las imágenes PNG. No se necesita registro para tus primeros 3 archivos." }
     },
     {
       "@type": "Question",
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo convertir un PDF de múltiples páginas a PNG?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF convierte cada página de tu PDF en una imagen PNG separada. Puedes descargarlas individualmente o como archivo ZIP. Los usuarios Pro pueden convertir por lotes múltiples PDFs a la vez." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it convierte cada página de tu PDF en una imagen PNG separada. Puedes descargarlas individualmente o como archivo ZIP. Los usuarios Pro pueden convertir por lotes múltiples PDFs a la vez." }
     },
     {
       "@type": "Question",
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Cómo Convertir PDF a PNG Online",
-  "description": "Convierte tus páginas PDF en imágenes PNG nítidas en 3 simples pasos usando OmnisPDF.",
+  "description": "Convierte tus páginas PDF en imágenes PNG nítidas en 3 simples pasos usando PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Sube tu PDF",
-      "text": "Ve a la herramienta PDF a PNG de OmnisPDF y sube tu archivo haciendo clic o arrastrándolo al área de carga."
+      "text": "Ve a la herramienta PDF a PNG de PDF.it y sube tu archivo haciendo clic o arrastrándolo al área de carga."
     },
     {
       "@type": "HowToStep",
@@ -324,11 +324,11 @@ export default function ConvertirPdfAPngPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo convierto un PDF a PNG gratis?", a: "Sube tu PDF a la herramienta PDF a PNG de OmnisPDF, selecciona la resolución deseada, haz clic en Convertir y descarga las imágenes PNG. No se necesita registro para tus primeros 3 archivos." },
+                { q: "¿Cómo convierto un PDF a PNG gratis?", a: "Sube tu PDF a la herramienta PDF a PNG de PDF.it, selecciona la resolución deseada, haz clic en Convertir y descarga las imágenes PNG. No se necesita registro para tus primeros 3 archivos." },
                 { q: "¿PNG es mejor que JPG para conversiones de PDF?", a: "PNG es mejor cuando tu PDF contiene texto, gráficos, logos o arte lineal porque PNG usa compresión sin pérdida — no se pierde calidad. JPG es mejor para PDFs con muchas fotos donde el tamaño del archivo importa más que la nitidez perfecta." },
                 { q: "¿PNG soporta transparencia de PDFs?", a: "Sí. PNG soporta fondos transparentes, así que si tu PDF tiene elementos transparentes, pueden preservarse en la salida PNG. JPG no soporta transparencia — llena las áreas transparentes con blanco." },
                 { q: "¿Qué resolución debo usar para PDF a PNG?", a: "Para uso web, 150 DPI generalmente es suficiente. Para presentaciones y documentos, 200-300 DPI da resultados nítidos. Para calidad de impresión, usa 300 DPI o más." },
-                { q: "¿Puedo convertir un PDF de múltiples páginas a PNG?", a: "Sí. OmnisPDF convierte cada página de tu PDF en una imagen PNG separada. Puedes descargarlas individualmente o como archivo ZIP. Los usuarios Pro pueden convertir por lotes múltiples PDFs a la vez." },
+                { q: "¿Puedo convertir un PDF de múltiples páginas a PNG?", a: "Sí. PDF.it convierte cada página de tu PDF en una imagen PNG separada. Puedes descargarlas individualmente o como archivo ZIP. Los usuarios Pro pueden convertir por lotes múltiples PDFs a la vez." },
                 { q: "¿El texto se mantiene nítido al convertir PDF a PNG?", a: "Sí. PNG usa compresión sin pérdida, así que el texto renderizado de un PDF se mantiene nítido y legible a cualquier nivel de zoom. Esta es una de las principales ventajas que PNG tiene sobre JPG." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

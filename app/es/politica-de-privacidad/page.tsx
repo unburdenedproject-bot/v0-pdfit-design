@@ -3,8 +3,8 @@ import { FooterEs } from "@/components/footer-es"
 import { Shield } from "lucide-react"
 
 export const metadata = {
-  title: "Política de Privacidad — OmnisPDF",
-  description: "Conoce cómo OmnisPDF recopila, usa y protege tus datos.",
+  title: "Política de Privacidad — PDF.it",
+  description: "Conoce cómo PDF.it recopila, usa y protege tus datos.",
 }
 
 export default function PrivacyPolicyPageEs() {
@@ -33,19 +33,19 @@ export default function PrivacyPolicyPageEs() {
             <div className="max-w-4xl mx-auto">
               <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 lg:p-12">
                 <div className="space-y-2 mb-8">
-                  <h2 className="text-2xl font-bold text-slate-900">Política de Privacidad — OmnisPDF</h2>
+                  <h2 className="text-2xl font-bold text-slate-900">Política de Privacidad — PDF.it</h2>
                   <p className="text-slate-500 text-sm"><strong>Fecha de vigencia:</strong> 1 de enero de 2024</p>
                 </div>
 
                 <p className="text-slate-700 leading-relaxed mb-10">
-                  OmnisPDF ("nosotros", "nos", "nuestro") valora tu privacidad. Esta Política de Privacidad explica qué información recopilamos, cómo la usamos y las opciones que tienes.
+                  PDF.it ("nosotros", "nos", "nuestro") valora tu privacidad. Esta Política de Privacidad explica qué información recopilamos, cómo la usamos y las opciones que tienes.
                 </p>
 
                 <div className="space-y-10">
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 mb-4">1. Información que Recopilamos</h3>
                     <p className="text-slate-700 font-semibold mb-2">A. Datos de uso del sitio (recopilados automáticamente)</p>
-                    <p className="text-slate-700 mb-4">Cuando visitas OmnisPDF, nosotros y nuestros proveedores de servicios podemos recopilar información básica de uso como dirección IP (usada para aproximar ubicación), tipo de dispositivo y navegador, sistema operativo, páginas visitadas, URL de referencia y marcas de tiempo de sesión.</p>
+                    <p className="text-slate-700 mb-4">Cuando visitas PDF.it, nosotros y nuestros proveedores de servicios podemos recopilar información básica de uso como dirección IP (usada para aproximar ubicación), tipo de dispositivo y navegador, sistema operativo, páginas visitadas, URL de referencia y marcas de tiempo de sesión.</p>
                     <p className="text-slate-700 font-semibold mb-2">B. Información que proporcionas</p>
                     <p className="text-slate-700 mb-4">Si nos contactas, podemos recopilar tu dirección de correo electrónico y el contenido de tu mensaje.</p>
                     <p className="text-slate-700 font-semibold mb-2">C. Tus archivos</p>
@@ -82,7 +82,7 @@ export default function PrivacyPolicyPageEs() {
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 mb-4">5. Retención de Datos</h3>
                     <p className="text-slate-700 mb-2">Los archivos subidos para procesamiento se eliminan automáticamente de nuestros servidores después de que tu sesión termina.</p>
-                    <p className="text-slate-700">Los datos de uso del sitio se conservan el tiempo necesario para operar y mejorar OmnisPDF. Los mensajes de soporte se conservan según sea necesario para responder y mantener el historial de soporte.</p>
+                    <p className="text-slate-700">Los datos de uso del sitio se conservan el tiempo necesario para operar y mejorar PDF.it. Los mensajes de soporte se conservan según sea necesario para responder y mantener el historial de soporte.</p>
                   </div>
 
                   <div>
@@ -92,7 +92,7 @@ export default function PrivacyPolicyPageEs() {
 
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 mb-4">7. Privacidad de Menores</h3>
-                    <p className="text-slate-700">OmnisPDF no está destinado para menores de 13 años. No recopilamos intencionalmente información personal de menores.</p>
+                    <p className="text-slate-700">PDF.it no está destinado para menores de 13 años. No recopilamos intencionalmente información personal de menores.</p>
                   </div>
 
                   <div>
@@ -114,8 +114,8 @@ export default function PrivacyPolicyPageEs() {
                     <h3 className="text-xl font-bold text-slate-900 mb-4">10. Contáctanos</h3>
                     <p className="text-slate-700">
                       Si tienes preguntas sobre esta Política de Privacidad, contáctanos en{" "}
-                      <a href="mailto:contact@omnispdf.com" className="text-orange-500 hover:text-orange-600 font-medium">
-                        contact@omnispdf.com
+                      <a href="mailto:contact@pdf.it.com" className="text-orange-500 hover:text-orange-600 font-medium">
+                        contact@pdf.it.com
                       </a>.
                     </p>
                   </div>
@@ -128,7 +128,7 @@ export default function PrivacyPolicyPageEs() {
                       <div>
                         <h4 className="font-bold text-blue-900 mb-2">Tus Archivos se Eliminan Después de Cada Sesión</h4>
                         <p className="text-blue-800 text-sm leading-relaxed">
-                          Los archivos subidos a OmnisPDF se procesan de forma segura y se eliminan automáticamente después de que tu sesión termina. No almacenamos, revisamos ni compartimos tus documentos.
+                          Los archivos subidos a PDF.it se procesan de forma segura y se eliminan automáticamente después de que tu sesión termina. No almacenamos, revisamos ni compartimos tus documentos.
                         </p>
                       </div>
                     </div>

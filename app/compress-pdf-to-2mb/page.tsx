@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download } from "lucide-react
 import Link from "next/link"
 
 export const metadata = {
-  title: "Compress PDF for 2MB Upload Limits — Free Extreme Compression | OmnisPDF",
+  title: "Compress PDF for 2MB Upload Limits — Free Extreme Compression | PDF.it",
   description:
     "Apply extreme PDF compression to reduce file size for portals with 2MB upload limits. Maximum compression for government forms, visa applications, and exam uploads — fast, browser-based, free.",
 }
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I compress a PDF for a 2MB upload limit?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF, click Compress, and download the reduced file. OmnisPDF uses extreme compression to drastically reduce file size. Results depend on the content of your PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it, click Compress, and download the reduced file. PDF.it uses extreme compression to drastically reduce file size. Results depend on the content of your PDF." }
     },
     {
       "@type": "Question",
@@ -33,17 +33,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "What types of portals require a 2MB PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Many government forms, visa applications, exam submissions, and HR portals require PDFs under 2MB. OmnisPDF helps you meet these strict requirements." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Many government forms, visa applications, exam submissions, and HR portals require PDFs under 2MB. PDF.it helps you meet these strict requirements." }
     },
     {
       "@type": "Question",
       "name": "Can I compress a PDF to 2MB on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in mobile browsers — upload, compress, and download on iPhone or Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in mobile browsers — upload, compress, and download on iPhone or Android." }
     },
     {
       "@type": "Question",
       "name": "What if my PDF is still over 2MB after compression?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Try splitting the PDF into smaller sections using OmnisPDF's Split PDF tool, then compress each part separately." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Try splitting the PDF into smaller sections using PDF.it's Split PDF tool, then compress each part separately." }
     }
   ]
 }
@@ -92,7 +92,7 @@ export default function CompressPDFTo2MBPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Many official portals require PDFs under 2MB — visa applications, government forms, exam uploads, and HR systems. OmnisPDF applies extreme compression to drastically reduce your PDF size, helping you meet strict upload requirements.
+              Many official portals require PDFs under 2MB — visa applications, government forms, exam uploads, and HR systems. PDF.it applies extreme compression to drastically reduce your PDF size, helping you meet strict upload requirements.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Extreme compression for maximum size reduction</li>
@@ -110,19 +110,19 @@ export default function CompressPDFTo2MBPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Meet Strict 2MB Upload Requirements</h2>
               <p className="text-slate-600">
-                Government portals, visa applications, and exam systems often enforce a hard 2MB limit. OmnisPDF's extreme compression mode aggressively reduces file size to help you submit without issues.
+                Government portals, visa applications, and exam systems often enforce a hard 2MB limit. PDF.it's extreme compression mode aggressively reduces file size to help you submit without issues.
               </p>
             </div>
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Compress Scanned IDs and Documents</h2>
               <p className="text-slate-600">
-                Scanned identity documents, certificates, and forms often exceed 2MB. OmnisPDF reduces embedded image sizes while keeping text legible for official submissions.
+                Scanned identity documents, certificates, and forms often exceed 2MB. PDF.it reduces embedded image sizes while keeping text legible for official submissions.
               </p>
             </div>
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Still Too Large? Split Then Compress</h2>
               <p className="text-slate-600">
-                If your PDF is still over 2MB after compression, use OmnisPDF's Split PDF tool to break it into individual pages, then compress each one separately.
+                If your PDF is still over 2MB after compression, use PDF.it's Split PDF tool to break it into individual pages, then compress each one separately.
               </p>
             </div>
           </div>
@@ -134,7 +134,7 @@ export default function CompressPDFTo2MBPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Compress a PDF for 2MB Limits</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PDF into OmnisPDF.",
+                "Upload or drag and drop your PDF into PDF.it.",
                 "Click Compress PDF — extreme compression is applied automatically.",
                 "Download your smaller PDF and upload it to your portal.",
               ].map((step, i) => (
@@ -179,12 +179,12 @@ export default function CompressPDFTo2MBPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I compress a PDF for a 2MB upload limit?", a: "Upload your PDF to OmnisPDF, click Compress, and download the reduced file. OmnisPDF uses extreme compression to drastically reduce file size. Results depend on the content of your PDF." },
+                { q: "How do I compress a PDF for a 2MB upload limit?", a: "Upload your PDF to PDF.it, click Compress, and download the reduced file. PDF.it uses extreme compression to drastically reduce file size. Results depend on the content of your PDF." },
                 { q: "Will my PDF definitely be under 2MB after compression?", a: "Extreme compression drastically reduces file size. Most PDFs under 10MB will compress significantly. Very image-heavy files may need to be split first, then each part compressed separately." },
                 { q: "Will the quality be affected by compressing to 2MB?", a: "Text remains sharp and fully readable. Images may be slightly reduced in quality, but pages stay clear and usable for most purposes." },
-                { q: "What types of portals require a 2MB PDF?", a: "Many government forms, visa applications, exam submissions, and HR portals require PDFs under 2MB. OmnisPDF helps you meet these strict requirements." },
-                { q: "Can I compress a PDF to 2MB on my phone?", a: "Yes. OmnisPDF works in mobile browsers — upload, compress, and download on iPhone or Android." },
-                { q: "What if my PDF is still over 2MB after compression?", a: "Try splitting the PDF into smaller sections using OmnisPDF's Split PDF tool, then compress each part separately." },
+                { q: "What types of portals require a 2MB PDF?", a: "Many government forms, visa applications, exam submissions, and HR portals require PDFs under 2MB. PDF.it helps you meet these strict requirements." },
+                { q: "Can I compress a PDF to 2MB on my phone?", a: "Yes. PDF.it works in mobile browsers — upload, compress, and download on iPhone or Android." },
+                { q: "What if my PDF is still over 2MB after compression?", a: "Try splitting the PDF into smaller sections using PDF.it's Split PDF tool, then compress each part separately." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

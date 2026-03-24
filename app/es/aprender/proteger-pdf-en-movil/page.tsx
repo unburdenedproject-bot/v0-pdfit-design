@@ -5,22 +5,22 @@ import Link from "next/link"
 import { Shield, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Proteger un PDF con Contrasena en Tu Telefono (iPhone y Android) | OmnisPDF",
-  description: "Aprende como proteger un PDF con contrasena en tu iPhone o Android. Sin app requerida — agrega encriptacion a cualquier PDF directamente en tu navegador movil con OmnisPDF.",
+  title: "Proteger un PDF con Contrasena en Tu Telefono (iPhone y Android) | PDF.it",
+  description: "Aprende como proteger un PDF con contrasena en tu iPhone o Android. Sin app requerida — agrega encriptacion a cualquier PDF directamente en tu navegador movil con PDF.it.",
   keywords: "proteger pdf en telefono, proteger pdf iphone, bloquear pdf android, asegurar pdf movil",
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-  { "@type": "Question", "name": "Puedo proteger un PDF con contrasena en mi iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Abre Safari o Chrome, ve a la herramienta Proteger PDF de OmnisPDF, sube tu PDF desde Archivos o iCloud Drive, establece una contrasena y descarga el archivo protegido. No necesitas instalar ninguna app." } },
-  { "@type": "Question", "name": "Puedo proteger un PDF con contrasena en Android?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Abre Chrome o cualquier navegador movil, ve a la herramienta Proteger PDF de OmnisPDF, sube tu PDF desde tu dispositivo o Google Drive, establece una contrasena y descarga el archivo encriptado." } },
-  { "@type": "Question", "name": "Necesito instalar una app para proteger un PDF en mi telefono?", "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF funciona completamente en tu navegador movil. No hay nada que instalar, no se requiere cuenta para uso basico, y tus archivos se procesan de forma segura y se eliminan despues del procesamiento." } },
+  { "@type": "Question", "name": "Puedo proteger un PDF con contrasena en mi iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Abre Safari o Chrome, ve a la herramienta Proteger PDF de PDF.it, sube tu PDF desde Archivos o iCloud Drive, establece una contrasena y descarga el archivo protegido. No necesitas instalar ninguna app." } },
+  { "@type": "Question", "name": "Puedo proteger un PDF con contrasena en Android?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Abre Chrome o cualquier navegador movil, ve a la herramienta Proteger PDF de PDF.it, sube tu PDF desde tu dispositivo o Google Drive, establece una contrasena y descarga el archivo encriptado." } },
+  { "@type": "Question", "name": "Necesito instalar una app para proteger un PDF en mi telefono?", "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it funciona completamente en tu navegador movil. No hay nada que instalar, no se requiere cuenta para uso basico, y tus archivos se procesan de forma segura y se eliminan despues del procesamiento." } },
   { "@type": "Question", "name": "Donde se guardan los PDFs protegidos en mi telefono?", "acceptedAnswer": { "@type": "Answer", "text": "En iPhone, los archivos descargados van a la app Archivos en la carpeta Descargas. En Android, van a la carpeta Descargas accesible desde la app Archivos o la barra de notificaciones." } },
-  { "@type": "Question", "name": "Puedo proteger un PDF que recibi por WhatsApp o correo?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Guarda el PDF en tu telefono primero (mantiene presionado el archivo, luego guarda en Archivos o Descargas), luego subelo a la herramienta Proteger PDF de OmnisPDF en tu navegador." } },
-  { "@type": "Question", "name": "La version movil de OmnisPDF es gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Obtienes 3 conversiones gratis sin registrarte, y 10 por dia con una cuenta gratuita. Se soportan archivos de hasta 25MB en el nivel gratuito. Los usuarios Pro obtienen conversiones ilimitadas y archivos de hasta 200MB." } }
+  { "@type": "Question", "name": "Puedo proteger un PDF que recibi por WhatsApp o correo?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Guarda el PDF en tu telefono primero (mantiene presionado el archivo, luego guarda en Archivos o Descargas), luego subelo a la herramienta Proteger PDF de PDF.it en tu navegador." } },
+  { "@type": "Question", "name": "La version movil de PDF.it es gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Obtienes 3 conversiones gratis sin registrarte, y 10 por dia con una cuenta gratuita. Se soportan archivos de hasta 25MB en el nivel gratuito. Los usuarios Pro obtienen conversiones ilimitadas y archivos de hasta 200MB." } }
 ] }
 
-const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como Proteger un PDF con Contrasena en Tu Telefono", "description": "Agrega proteccion con contrasena a un PDF en iPhone o Android en 3 pasos usando OmnisPDF.", "step": [
-  { "@type": "HowToStep", "name": "Abre OmnisPDF en tu navegador movil", "text": "Abre Safari (iPhone) o Chrome (Android) y ve a omnispdf.com/protect-pdf. La herramienta funciona completamente en tu navegador movil — no necesitas app." },
+const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como Proteger un PDF con Contrasena en Tu Telefono", "description": "Agrega proteccion con contrasena a un PDF en iPhone o Android en 3 pasos usando PDF.it.", "step": [
+  { "@type": "HowToStep", "name": "Abre PDF.it en tu navegador movil", "text": "Abre Safari (iPhone) o Chrome (Android) y ve a pdf.it.com/protect-pdf. La herramienta funciona completamente en tu navegador movil — no necesitas app." },
   { "@type": "HowToStep", "name": "Sube tu PDF y establece una contrasena", "text": "Toca el area de carga y selecciona tu PDF de Archivos, iCloud Drive, Google Drive o tu carpeta Descargas. Ingresa una contrasena fuerte y elige tu nivel de encriptacion." },
   { "@type": "HowToStep", "name": "Descarga el archivo protegido", "text": "Toca Proteger PDF y descarga el archivo encriptado. En iPhone se guarda en Archivos > Descargas. En Android va a tu carpeta Descargas." }
 ] }
@@ -59,7 +59,7 @@ export default function ProtegerPDFEnMovilPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-6">Como Proteger un PDF en Tu Telefono (Paso a Paso)</h2>
             <div className="space-y-4">
               {[
-                { title: "Abre OmnisPDF en tu navegador movil", desc: "Abre Safari en iPhone o Chrome en Android y navega a omnispdf.com/protect-pdf. La herramienta es completamente responsiva y funciona exactamente igual que en escritorio — no necesitas descargar app." },
+                { title: "Abre PDF.it en tu navegador movil", desc: "Abre Safari en iPhone o Chrome en Android y navega a pdf.it.com/protect-pdf. La herramienta es completamente responsiva y funciona exactamente igual que en escritorio — no necesitas descargar app." },
                 { title: "Sube tu PDF y establece una contrasena", desc: "Toca el area de carga para abrir tu selector de archivos. Selecciona tu PDF de Archivos (iPhone), Google Drive, iCloud Drive o tu carpeta Descargas. Ingresa una contrasena fuerte — al menos 12 caracteres con una mezcla de letras, numeros y simbolos." },
                 { title: "Descarga el archivo protegido", desc: "Toca Proteger PDF. Tu archivo encriptado se descargara en segundos. En iPhone, encuentralo en Archivos > Descargas. En Android, revisa tu carpeta Descargas o la notificacion de descarga. Ahora puedes compartir el PDF protegido por correo, WhatsApp o cualquier otra app." },
               ].map((step, i) => (
@@ -77,14 +77,14 @@ export default function ProtegerPDFEnMovilPage() {
               <li>&#10003; <strong>Usa Safari para la mejor experiencia.</strong> Safari se integra con la app Archivos, facilitando subir PDFs desde iCloud Drive, En Mi iPhone o almacenamiento en la nube de terceros.</li>
               <li>&#10003; <strong>Encuentra tus descargas.</strong> Despues de descargar el PDF protegido, abre la app Archivos y ve a "En Mi iPhone" &gt; "Descargas" para encontrarlo.</li>
               <li>&#10003; <strong>Comparte directamente desde Archivos.</strong> Toca el PDF protegido en Archivos, luego usa el boton de compartir para enviarlo por Mail, Mensajes, WhatsApp o AirDrop.</li>
-              <li>&#10003; <strong>Protege documentos escaneados.</strong> Si escaneaste un documento usando la camara del iPhone o la app Notas, guardalo como PDF primero, luego subelo a OmnisPDF. Para mejor calidad de escaneo, prueba <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> antes de proteger.</li>
+              <li>&#10003; <strong>Protege documentos escaneados.</strong> Si escaneaste un documento usando la camara del iPhone o la app Notas, guardalo como PDF primero, luego subelo a PDF.it. Para mejor calidad de escaneo, prueba <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> antes de proteger.</li>
             </ul>
           </section>
 
           <section className="mb-12">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Consejos Especificos para Android</h2>
             <ul className="space-y-2 text-slate-700">
-              <li>&#10003; <strong>Usa Chrome para fiabilidad.</strong> Chrome es el navegador predeterminado en la mayoria de dispositivos Android y maneja cargas y descargas de archivos sin problemas con OmnisPDF.</li>
+              <li>&#10003; <strong>Usa Chrome para fiabilidad.</strong> Chrome es el navegador predeterminado en la mayoria de dispositivos Android y maneja cargas y descargas de archivos sin problemas con PDF.it.</li>
               <li>&#10003; <strong>Sube desde Google Drive.</strong> Cuando se abre el selector de archivos, puedes navegar Google Drive directamente sin descargar el archivo a tu telefono primero.</li>
               <li>&#10003; <strong>Revisa las notificaciones para descargas.</strong> Despues de que el PDF protegido se descargue, veras una notificacion en la barra. Tocala para abrir el archivo o encuentralo en tu carpeta Descargas.</li>
               <li>&#10003; <strong>Comparte por cualquier app.</strong> Abre tu app Archivos, presiona prolongadamente el PDF protegido y toca Compartir. Android te permite enviar archivos a traves de Gmail, WhatsApp, Telegram, Slack y docenas de otras apps.</li>
@@ -128,12 +128,12 @@ export default function ProtegerPDFEnMovilPage() {
           <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
           <div className="space-y-6">
             {[
-              { q: "Puedo proteger un PDF con contrasena en mi iPhone?", a: "Si. Abre Safari o Chrome, ve a la herramienta Proteger PDF de OmnisPDF, sube tu PDF desde Archivos o iCloud Drive, establece una contrasena y descarga el archivo protegido. No necesitas instalar ninguna app." },
-              { q: "Puedo proteger un PDF con contrasena en Android?", a: "Si. Abre Chrome o cualquier navegador movil, ve a la herramienta Proteger PDF de OmnisPDF, sube tu PDF desde tu dispositivo o Google Drive, establece una contrasena y descarga el archivo encriptado." },
-              { q: "Necesito instalar una app para proteger un PDF en mi telefono?", a: "No. OmnisPDF funciona completamente en tu navegador movil. No hay nada que instalar, no se requiere cuenta para uso basico, y tus archivos se procesan de forma segura y se eliminan despues del procesamiento." },
+              { q: "Puedo proteger un PDF con contrasena en mi iPhone?", a: "Si. Abre Safari o Chrome, ve a la herramienta Proteger PDF de PDF.it, sube tu PDF desde Archivos o iCloud Drive, establece una contrasena y descarga el archivo protegido. No necesitas instalar ninguna app." },
+              { q: "Puedo proteger un PDF con contrasena en Android?", a: "Si. Abre Chrome o cualquier navegador movil, ve a la herramienta Proteger PDF de PDF.it, sube tu PDF desde tu dispositivo o Google Drive, establece una contrasena y descarga el archivo encriptado." },
+              { q: "Necesito instalar una app para proteger un PDF en mi telefono?", a: "No. PDF.it funciona completamente en tu navegador movil. No hay nada que instalar, no se requiere cuenta para uso basico, y tus archivos se procesan de forma segura y se eliminan despues del procesamiento." },
               { q: "Donde se guardan los PDFs protegidos en mi telefono?", a: "En iPhone, los archivos descargados van a la app Archivos en la carpeta Descargas. En Android, van a la carpeta Descargas accesible desde la app Archivos o la barra de notificaciones." },
-              { q: "Puedo proteger un PDF que recibi por WhatsApp o correo?", a: "Si. Guarda el PDF en tu telefono primero (mantiene presionado el archivo, luego guarda en Archivos o Descargas), luego subelo a la herramienta Proteger PDF de OmnisPDF en tu navegador." },
-              { q: "La version movil de OmnisPDF es gratis?", a: "Si. Obtienes 3 conversiones gratis sin registrarte, y 10 por dia con una cuenta gratuita. Se soportan archivos de hasta 25MB en el nivel gratuito. Los usuarios Pro obtienen conversiones ilimitadas y archivos de hasta 200MB." },
+              { q: "Puedo proteger un PDF que recibi por WhatsApp o correo?", a: "Si. Guarda el PDF en tu telefono primero (mantiene presionado el archivo, luego guarda en Archivos o Descargas), luego subelo a la herramienta Proteger PDF de PDF.it en tu navegador." },
+              { q: "La version movil de PDF.it es gratis?", a: "Si. Obtienes 3 conversiones gratis sin registrarte, y 10 por dia con una cuenta gratuita. Se soportan archivos de hasta 25MB en el nivel gratuito. Los usuarios Pro obtienen conversiones ilimitadas y archivos de hasta 200MB." },
             ].map((faq, i) => (
               <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200"><h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3><p className="text-slate-600 text-sm">{faq.a}</p></div>
             ))}

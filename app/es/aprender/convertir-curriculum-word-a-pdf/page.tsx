@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Convertir curriculum de Word a PDF (consejos para ATS) | OmnisPDF",
+  title: "Convertir curriculum de Word a PDF (consejos para ATS) | PDF.it",
   description:
     "Convierte tu curriculum de Word a PDF manteniendolo compatible con ATS. Aprende que fuentes, disenos y opciones de formato ayudan a que tu curriculum pase los sistemas de seguimiento de candidatos.",
   keywords: "convertir curriculum word a pdf, curriculum docx a pdf, curriculum pdf compatible ats, conversion curriculum pdf, formato curriculum word a pdf",
@@ -33,12 +33,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Convertir mi curriculum a PDF cambiara el formato?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No si sigues las mejores practicas: usa fuentes estandar, evita disenos complejos con cuadros de texto o tablas, y usa un convertidor confiable como OmnisPDF. El PDF convertido deberia verse identico a tu documento de Word." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No si sigues las mejores practicas: usa fuentes estandar, evita disenos complejos con cuadros de texto o tablas, y usa un convertidor confiable como PDF.it. El PDF convertido deberia verse identico a tu documento de Word." }
     },
     {
       "@type": "Question",
       "name": "Como reduzco el tamano de mi curriculum en PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "La mayoria de los curriculos basados en texto ya son pequenos (menos de 500KB). Si el tuyo es mas grande, generalmente por una foto o graficos, usa la herramienta Comprimir PDF de OmnisPDF para reducir el tamano manteniendo el texto nitido y legible." }
+      "acceptedAnswer": { "@type": "Answer", "text": "La mayoria de los curriculos basados en texto ya son pequenos (menos de 500KB). Si el tuyo es mas grande, generalmente por una foto o graficos, usa la herramienta Comprimir PDF de PDF.it para reducir el tamano manteniendo el texto nitido y legible." }
     },
     {
       "@type": "Question",
@@ -52,7 +52,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como convertir un curriculum de Word a PDF",
-  "description": "Convierte tu curriculum de Word a un PDF compatible con ATS en 3 pasos usando OmnisPDF.",
+  "description": "Convierte tu curriculum de Word a un PDF compatible con ATS en 3 pasos usando PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
@@ -61,8 +61,8 @@ const howToSchema = {
     },
     {
       "@type": "HowToStep",
-      "name": "Convierte a PDF con OmnisPDF",
-      "text": "Sube tu curriculum .docx a la herramienta Word a PDF de OmnisPDF y haz clic en Convertir. La herramienta preserva el formato, las fuentes y el diseno."
+      "name": "Convierte a PDF con PDF.it",
+      "text": "Sube tu curriculum .docx a la herramienta Word a PDF de PDF.it y haz clic en Convertir. La herramienta preserva el formato, las fuentes y el diseno."
     },
     {
       "@type": "HowToStep",
@@ -184,7 +184,7 @@ export default function ConvertirCurriculumWordAPdfPage() {
               <div className="space-y-4">
                 {[
                   { title: "Prepara tu curriculum en Word", desc: "Revisa tu curriculum contra las reglas ATS anteriores. Usa fuentes estandar, un diseno de una columna, y evita cuadros de texto, tablas y graficos. Asegurate de que todo el texto este en parrafos normales, no en encabezados/pies de pagina." },
-                  { title: "Convierte con OmnisPDF", desc: "Ve a la herramienta Word a PDF y sube tu archivo .docx. OmnisPDF lo convierte en segundos, preservando tu formato, fuentes y diseno exactamente como fue disenado." },
+                  { title: "Convierte con PDF.it", desc: "Ve a la herramienta Word a PDF y sube tu archivo .docx. PDF.it lo convierte en segundos, preservando tu formato, fuentes y diseno exactamente como fue disenado." },
                   { title: "Prueba el resultado", desc: "Abre el PDF e intenta seleccionar texto con tu cursor. Si puedes resaltar y copiar texto, el PDF es legible por ATS. Si el texto no se puede seleccionar, fue convertido como una imagen (que ATS no puede leer)." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -275,8 +275,8 @@ export default function ConvertirCurriculumWordAPdfPage() {
                 { q: "Debo enviar mi curriculum como documento Word o PDF?", a: "PDF es la mejor opcion en casi todos los casos. Los PDFs preservan tu formato exactamente, se ven iguales en cualquier dispositivo y previenen ediciones accidentales. La unica excepcion es cuando una oferta de trabajo pide especificamente un archivo .docx." },
                 { q: "Pueden los sistemas ATS leer curriculos en PDF?", a: "Si. Los sistemas ATS modernos (Greenhouse, Lever, Workday, Taleo) pueden leer curriculos en PDF igual de bien que documentos de Word. La clave es usar un diseno simple de una columna con fuentes estandar." },
                 { q: "Que fuentes debo usar para un curriculum compatible con ATS?", a: "Usa fuentes estandar y ampliamente disponibles: Arial, Calibri, Times New Roman, Georgia, Helvetica o Garamond. Son reconocidas por todos los sistemas ATS y se convierten perfectamente a PDF." },
-                { q: "Convertir mi curriculum a PDF cambiara el formato?", a: "No si sigues las mejores practicas: usa fuentes estandar, evita disenos complejos con cuadros de texto o tablas, y usa un convertidor confiable como OmnisPDF. El PDF convertido deberia verse identico a tu documento de Word." },
-                { q: "Como reduzco el tamano de mi curriculum en PDF?", a: "La mayoria de los curriculos basados en texto ya son pequenos (menos de 500KB). Si el tuyo es mas grande, generalmente por una foto o graficos, usa la herramienta Comprimir PDF de OmnisPDF para reducir el tamano." },
+                { q: "Convertir mi curriculum a PDF cambiara el formato?", a: "No si sigues las mejores practicas: usa fuentes estandar, evita disenos complejos con cuadros de texto o tablas, y usa un convertidor confiable como PDF.it. El PDF convertido deberia verse identico a tu documento de Word." },
+                { q: "Como reduzco el tamano de mi curriculum en PDF?", a: "La mayoria de los curriculos basados en texto ya son pequenos (menos de 500KB). Si el tuyo es mas grande, generalmente por una foto o graficos, usa la herramienta Comprimir PDF de PDF.it para reducir el tamano." },
                 { q: "Debo proteger con contrasena mi curriculum en PDF?", a: "No. Los PDFs protegidos con contrasena no pueden ser analizados por los sistemas ATS, lo que significa que tu curriculum no sera buscable por los reclutadores." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

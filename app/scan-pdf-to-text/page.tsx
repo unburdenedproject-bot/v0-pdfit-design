@@ -6,9 +6,9 @@ import { Scan, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Scan PDF to Text — OCR for Scanned Documents | OmnisPDF",
+  title: "Scan PDF to Text — OCR for Scanned Documents | PDF.it",
   description:
-    "Convert scanned PDFs to searchable, copyable text with OmnisPDF's OCR. Extract text from scans, photos, and image-based PDFs — fast and browser-based.",
+    "Convert scanned PDFs to searchable, copyable text with PDF.it's OCR. Extract text from scans, photos, and image-based PDFs — fast and browser-based.",
 }
 
 const faqSchema = {
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How does OCR work on scanned PDFs?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OCR (Optical Character Recognition) analyzes the images in your scanned PDF and identifies letters, words, and paragraphs. OmnisPDF converts these into selectable, searchable, and copyable text." }
+      "acceptedAnswer": { "@type": "Answer", "text": "OCR (Optical Character Recognition) analyzes the images in your scanned PDF and identifies letters, words, and paragraphs. PDF.it converts these into selectable, searchable, and copyable text." }
     },
     {
       "@type": "Question",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "What languages does the OCR support?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF's OCR supports multiple languages including English, Spanish, French, German, Portuguese, Italian, and many more. Select your document's language before processing for best results." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it's OCR supports multiple languages including English, Spanish, French, German, Portuguese, Italian, and many more. Select your document's language before processing for best results." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I scan a PDF to text on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in mobile browsers — upload your scanned PDF, run OCR, and get searchable text on iPhone or Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in mobile browsers — upload your scanned PDF, run OCR, and get searchable text on iPhone or Android." }
     }
   ]
 }
@@ -85,7 +85,7 @@ export default function ScanPDFToTextPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Scanned PDFs are just images — you cannot select, search, or copy the text. OmnisPDF's OCR technology reads the text in your scanned documents and converts it into searchable, copyable, and editable text.
+              Scanned PDFs are just images — you cannot select, search, or copy the text. PDF.it's OCR technology reads the text in your scanned documents and converts it into searchable, copyable, and editable text.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Convert scanned PDFs into searchable text</li>
@@ -103,7 +103,7 @@ export default function ScanPDFToTextPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Digitize Paper Documents</h2>
               <p className="text-slate-600">
-                Scanned contracts, receipts, letters, and forms are trapped as images. OmnisPDF's OCR reads the text from these scans and makes it selectable and copyable — turning paper into digital data you can actually use.
+                Scanned contracts, receipts, letters, and forms are trapped as images. PDF.it's OCR reads the text from these scans and makes it selectable and copyable — turning paper into digital data you can actually use.
               </p>
             </div>
             <div>
@@ -127,7 +127,7 @@ export default function ScanPDFToTextPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Scan a PDF to Text</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your scanned PDF into OmnisPDF.",
+                "Upload or drag and drop your scanned PDF into PDF.it.",
                 "Select the document language and click Run OCR.",
                 "Download the searchable PDF or copy the extracted text.",
               ].map((step, i) => (
@@ -172,12 +172,12 @@ export default function ScanPDFToTextPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How does OCR work on scanned PDFs?", a: "OCR (Optical Character Recognition) analyzes the images in your scanned PDF and identifies letters, words, and paragraphs. OmnisPDF converts these into selectable, searchable, and copyable text." },
+                { q: "How does OCR work on scanned PDFs?", a: "OCR (Optical Character Recognition) analyzes the images in your scanned PDF and identifies letters, words, and paragraphs. PDF.it converts these into selectable, searchable, and copyable text." },
                 { q: "How accurate is OCR on scanned documents?", a: "OCR accuracy depends on scan quality. Clear, high-resolution scans typically produce very accurate results. Blurry, skewed, or low-contrast scans may have some errors that need manual review." },
-                { q: "What languages does the OCR support?", a: "OmnisPDF's OCR supports multiple languages including English, Spanish, French, German, Portuguese, Italian, and many more. Select your document's language before processing for best results." },
+                { q: "What languages does the OCR support?", a: "PDF.it's OCR supports multiple languages including English, Spanish, French, German, Portuguese, Italian, and many more. Select your document's language before processing for best results." },
                 { q: "What is the difference between a scanned PDF and a digital PDF?", a: "A digital PDF contains actual text data that can be selected and copied. A scanned PDF is essentially an image of a document — the text is part of the image and cannot be selected without OCR processing." },
                 { q: "Is the OCR scanner free to use?", a: "The OCR Scanner is a Pro feature. Free users can try it with limited usage. Pro subscribers get unlimited OCR processing with priority speed." },
-                { q: "Can I scan a PDF to text on my phone?", a: "Yes. OmnisPDF works in mobile browsers — upload your scanned PDF, run OCR, and get searchable text on iPhone or Android." },
+                { q: "Can I scan a PDF to text on my phone?", a: "Yes. PDF.it works in mobile browsers — upload your scanned PDF, run OCR, and get searchable text on iPhone or Android." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileDown, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "How to Compress a Large PDF (50MB, 100MB, or More) | OmnisPDF",
+  title: "How to Compress a Large PDF (50MB, 100MB, or More) | PDF.it",
   description:
     "Learn how to compress very large PDFs — 50MB, 100MB, or bigger. Step-by-step strategies for shrinking huge files including splitting, multiple passes, and image optimization.",
   keywords: "compress large pdf, reduce large pdf size, compress 100mb pdf, shrink big pdf file",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I compress a PDF that is over 100MB?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload it to OmnisPDF's Compress PDF tool (Pro users can upload files up to 200MB). Use Extreme compression for maximum reduction. If it's still too large, split the PDF into smaller sections first, then compress each part separately." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload it to PDF.it's Compress PDF tool (Pro users can upload files up to 200MB). Use Extreme compression for maximum reduction. If it's still too large, split the PDF into smaller sections first, then compress each part separately." }
     },
     {
       "@type": "Question",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I compress a large PDF for free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Free users can compress files up to 25MB. For files larger than 25MB, you need OmnisPDF Pro which supports files up to 200MB. Pro also includes batch processing for compressing multiple large files at once." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Free users can compress files up to 25MB. For files larger than 25MB, you need PDF.it Pro which supports files up to 200MB. Pro also includes batch processing for compressing multiple large files at once." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I compress a large PDF on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes, but uploading large files on mobile can be slow depending on your connection. OmnisPDF works in any mobile browser — upload, compress, and download without installing an app." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, but uploading large files on mobile can be slow depending on your connection. PDF.it works in any mobile browser — upload, compress, and download without installing an app." }
     }
   ]
 }
@@ -57,7 +57,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Upload your large PDF",
-      "text": "Go to OmnisPDF's Compress PDF tool and upload your file. Pro users can upload files up to 200MB."
+      "text": "Go to PDF.it's Compress PDF tool and upload your file. Pro users can upload files up to 200MB."
     },
     {
       "@type": "HowToStep",
@@ -323,12 +323,12 @@ export default function CompressLargePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I compress a PDF that is over 100MB?", a: "Upload it to OmnisPDF's Compress PDF tool (Pro users can upload files up to 200MB). Use Extreme compression for maximum reduction. If it's still too large, split the PDF into smaller sections first, then compress each part separately." },
+                { q: "How do I compress a PDF that is over 100MB?", a: "Upload it to PDF.it's Compress PDF tool (Pro users can upload files up to 200MB). Use Extreme compression for maximum reduction. If it's still too large, split the PDF into smaller sections first, then compress each part separately." },
                 { q: "Why is my PDF over 50MB?", a: "Large PDFs are almost always caused by high-resolution images or scanned pages. A single scanned page can be 2-5MB, so a 20-page scanned document can easily hit 50-100MB." },
-                { q: "Can I compress a large PDF for free?", a: "Free users can compress files up to 25MB. For files larger than 25MB, you need OmnisPDF Pro which supports files up to 200MB and includes batch processing." },
+                { q: "Can I compress a large PDF for free?", a: "Free users can compress files up to 25MB. For files larger than 25MB, you need PDF.it Pro which supports files up to 200MB and includes batch processing." },
                 { q: "Should I split a large PDF before compressing?", a: "Yes, if compression alone doesn't reduce the file enough. Split into sections, compress each separately, then merge them back. This often produces better results than compressing the entire file at once." },
                 { q: "How long does it take to compress a 100MB PDF?", a: "Typically 30-90 seconds depending on page count and content type. Image-heavy files take longer. Pro users get priority processing for faster results." },
-                { q: "Can I compress a large PDF on my phone?", a: "Yes, but uploading large files on mobile can be slow depending on your connection. OmnisPDF works in any mobile browser — no app installation needed." },
+                { q: "Can I compress a large PDF on my phone?", a: "Yes, but uploading large files on mobile can be slow depending on your connection. PDF.it works in any mobile browser — no app installation needed." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

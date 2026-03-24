@@ -7,14 +7,14 @@ import { Droplets, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Agregar Marca de Agua a PDF Online | OmnisPDF",
+  title: "Agregar Marca de Agua a PDF Online | PDF.it",
   description:
-    "Agrega una marca de agua a un PDF con OmnisPDF. Aplica marcas de agua de texto o imagen como CONFIDENCIAL, ajusta la opacidad y descarga al instante.",
+    "Agrega una marca de agua a un PDF con PDF.it. Aplica marcas de agua de texto o imagen como CONFIDENCIAL, ajusta la opacidad y descarga al instante.",
   alternates: {
-    canonical: "https://omnispdf.com/es/marca-de-agua-pdf",
+    canonical: "https://pdf.it.com/es/marca-de-agua-pdf",
     languages: {
-      "en": "https://omnispdf.com/watermark-pdf",
-      "es": "https://omnispdf.com/es/marca-de-agua-pdf",
+      "en": "https://pdf.it.com/watermark-pdf",
+      "es": "https://pdf.it.com/es/marca-de-agua-pdf",
     },
   },
 }
@@ -26,7 +26,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo agregar una marca de agua de texto como CONFIDENCIAL o BORRADOR?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF puede aplicar una marca de agua de texto en todas las páginas de tu PDF para indicar claramente el estado del documento." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it puede aplicar una marca de agua de texto en todas las páginas de tu PDF para indicar claramente el estado del documento." }
     },
     {
       "@type": "Question",
@@ -75,7 +75,7 @@ export default function MarcaDeAguaPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Agregar Marca de Agua a un PDF</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Agrega una marca de agua de texto o imagen con OmnisPDF — marca tus PDFs como CONFIDENCIAL, BORRADOR, o agrega tu logo para branding y protección. Disponible para usuarios Pro y Business.
+                Agrega una marca de agua de texto o imagen con PDF.it — marca tus PDFs como CONFIDENCIAL, BORRADOR, o agrega tu logo para branding y protección. Disponible para usuarios Pro y Business.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Marcas de Agua de Texto e Imagen</span></div>
@@ -94,7 +94,7 @@ export default function MarcaDeAguaPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Usa la herramienta Marca de Agua PDF de OmnisPDF para agregar una marca de agua a un PDF en segundos. Aplica una marca de agua de texto (CONFIDENCIAL, BORRADOR, MUESTRA) o una marca de agua de imagen, personaliza la ubicación y transparencia, y descarga un PDF con marca de agua listo para compartir. Esta herramienta está disponible para usuarios Pro y Business.
+              Usa la herramienta Marca de Agua PDF de PDF.it para agregar una marca de agua a un PDF en segundos. Aplica una marca de agua de texto (CONFIDENCIAL, BORRADOR, MUESTRA) o una marca de agua de imagen, personaliza la ubicación y transparencia, y descarga un PDF con marca de agua listo para compartir. Esta herramienta está disponible para usuarios Pro y Business.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Agrega marcas de agua de texto o imagen a PDFs</li>
@@ -136,7 +136,7 @@ export default function MarcaDeAguaPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Agregar una Marca de Agua a un PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube tu PDF a OmnisPDF.",
+                "Sube tu PDF a PDF.it.",
                 "Elige marca de agua de Texto o Imagen y personaliza los ajustes: opacidad, tamaño, posición y rotación.",
                 "Haz clic en Agregar Marca de Agua y descarga tu PDF con marca de agua.",
               ].map((step, i) => (
@@ -183,7 +183,7 @@ export default function MarcaDeAguaPDFPage() {
               {[
                 {
                   q: "¿Puedo agregar una marca de agua de texto como CONFIDENCIAL o BORRADOR?",
-                  a: "Sí. OmnisPDF puede aplicar una marca de agua de texto en todas las páginas de tu PDF para indicar claramente el estado del documento.",
+                  a: "Sí. PDF.it puede aplicar una marca de agua de texto en todas las páginas de tu PDF para indicar claramente el estado del documento.",
                 },
                 {
                   q: "¿Puedo agregar un logo como marca de agua a un PDF?",

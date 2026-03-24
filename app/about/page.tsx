@@ -5,11 +5,11 @@ import { Heart, Target, Crown, Gift, FileText, Building, GraduationCap, Briefcas
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "About OmnisPDF — Free, Pro, Business & Enterprise PDF Tools",
+  title: "About PDF.it — Free, Pro, Business & Enterprise PDF Tools",
   description:
-    "Learn about OmnisPDF PDF tools, pricing tiers, and features. Compare Free, Pro, Business, and Enterprise plans for PDF conversion, OCR, eSign, redaction, workflow automation, and table extraction.",
+    "Learn about PDF.it PDF tools, pricing tiers, and features. Compare Free, Pro, Business, and Enterprise plans for PDF conversion, OCR, eSign, redaction, workflow automation, and table extraction.",
   keywords: [
-    "about OmnisPDF",
+    "about PDF.it",
     "PDF tools",
     "free PDF tools",
     "PDF converter",
@@ -39,7 +39,7 @@ export default function AboutPage() {
               <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Heart className="h-10 w-10 text-white" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">OmnisPDF Plans: Free, Pro, Business & Enterprise PDF Tools</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">PDF.it Plans: Free, Pro, Business & Enterprise PDF Tools</h1>
               <p className="text-xl text-slate-300">
                 Browser-based PDF tools for conversion, compression, OCR, eSign, redaction, workflow automation, and enterprise document processing.
               </p>
@@ -51,7 +51,7 @@ export default function AboutPage() {
         <section className="py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-6">
-              OmnisPDF helps individuals, students, legal teams, accountants, operations teams, and growing businesses work with PDF files directly in the browser. You can convert PDF to Word, Excel, JPG, PNG, and TXT, compress PDF files for email and upload limits, merge and split PDF documents, run OCR on scanned PDFs, add eSignatures, redact sensitive content, automate workflows, and extract tables to Excel.
+              PDF.it helps individuals, students, legal teams, accountants, operations teams, and growing businesses work with PDF files directly in the browser. You can convert PDF to Word, Excel, JPG, PNG, and TXT, compress PDF files for email and upload limits, merge and split PDF documents, run OCR on scanned PDFs, add eSignatures, redact sensitive content, automate workflows, and extract tables to Excel.
             </p>
             <p className="text-lg text-slate-600 mb-8">
               Our pricing is designed to scale with your workflow. The Free plan covers essential PDF tools, Pro unlocks advanced conversion and AI-powered utilities, Business adds team-grade document workflows, and Enterprise adds higher-volume processing, custom workflow templates, and premium support for demanding document operations.
@@ -59,7 +59,7 @@ export default function AboutPage() {
 
             {/* What you can do */}
             <div className="bg-gray-50 rounded-xl p-8 mb-8">
-              <h2 className="text-xl font-black text-slate-900 mb-4">What you can do with OmnisPDF</h2>
+              <h2 className="text-xl font-black text-slate-900 mb-4">What you can do with PDF.it</h2>
               <ul className="space-y-2 text-slate-700">
                 <li>✓ Convert PDFs to Word, Excel, JPG/PNG, TXT, and more</li>
                 <li>✓ Compress PDFs to reduce file size for email and uploads</li>
@@ -72,9 +72,9 @@ export default function AboutPage() {
 
             {/* Tier Overview */}
             <div className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Compare OmnisPDF Plans</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Compare PDF.it Plans</h2>
               <p className="text-slate-600 mb-6">
-                OmnisPDF offers four pricing tiers so you can start with free PDF tools and upgrade only when your document volume, file size, compliance, or workflow complexity increases.
+                PDF.it offers four pricing tiers so you can start with free PDF tools and upgrade only when your document volume, file size, compliance, or workflow complexity increases.
               </p>
             </div>
 
@@ -145,7 +145,7 @@ export default function AboutPage() {
                   <h3 className="text-lg font-bold text-slate-900">Advanced PDF Conversion</h3>
                 </div>
                 <p className="text-slate-600 text-sm leading-relaxed">
-                  OmnisPDF covers common PDF workflows like PDF to Word, PDF to Excel, PDF to PowerPoint, Word to PDF, Excel to PDF, JPG to PDF, PNG to PDF, URL to PDF, and OCR for scanned documents. This makes the platform useful for document cleanup, editing, sharing, and archiving.
+                  PDF.it covers common PDF workflows like PDF to Word, PDF to Excel, PDF to PowerPoint, Word to PDF, Excel to PDF, JPG to PDF, PNG to PDF, URL to PDF, and OCR for scanned documents. This makes the platform useful for document cleanup, editing, sharing, and archiving.
                 </p>
               </div>
               <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
@@ -235,7 +235,7 @@ export default function AboutPage() {
             </div>
 
             <div className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Which OmnisPDF Plan Should You Choose?</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Which PDF.it Plan Should You Choose?</h2>
               <div className="bg-white border border-slate-200 rounded-xl p-8">
                 <div className="space-y-4 text-slate-600">
                   <p>

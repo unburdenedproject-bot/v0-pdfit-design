@@ -4,15 +4,15 @@ import { FooterBr } from "@/components/footer-br"
 import { Calendar, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Blog — OmnisPDF",
-  description: "Noticias, atualizacoes e dicas da equipe OmnisPDF.",
+  title: "Blog — PDF.it",
+  description: "Noticias, atualizacoes e dicas da equipe PDF.it.",
 }
 
 const posts = [
   {
     slug: "/blog/welcome-to-omnispdf",
-    title: "Bem-vindo ao OmnisPDF — Ferramentas PDF para Profissionais",
-    excerpt: "Criamos o OmnisPDF porque profissionais merecem ferramentas PDF melhores. Nossa historia e o que nos torna diferentes.",
+    title: "Bem-vindo ao PDF.it — Ferramentas PDF para Profissionais",
+    excerpt: "Criamos o PDF.it porque profissionais merecem ferramentas PDF melhores. Nossa historia e o que nos torna diferentes.",
     date: "2026-04-01",
     category: "Anuncio",
   },
@@ -25,8 +25,8 @@ const posts = [
   },
   {
     slug: "/blog/why-three-languages",
-    title: "Por Que o OmnisPDF Fala Ingles, Espanhol e Portugues",
-    excerpt: "A maioria das ferramentas PDF so funciona em ingles. Construimos o OmnisPDF para profissionais em todo o mundo.",
+    title: "Por Que o PDF.it Fala Ingles, Espanhol e Portugues",
+    excerpt: "A maioria das ferramentas PDF so funciona em ingles. Construimos o PDF.it para profissionais em todo o mundo.",
     date: "2026-04-01",
     category: "Empresa",
   },
@@ -41,7 +41,7 @@ export default function BlogPageBr() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Blog</h1>
-              <p className="text-xl text-slate-300">Noticias, atualizacoes e dicas da equipe OmnisPDF.</p>
+              <p className="text-xl text-slate-300">Noticias, atualizacoes e dicas da equipe PDF.it.</p>
             </div>
           </div>
         </section>

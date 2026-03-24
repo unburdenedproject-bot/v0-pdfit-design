@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ScanText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "OCR para Texto Manuscrito (O Que Esperar) | OmnisPDF",
+  title: "OCR para Texto Manuscrito (O Que Esperar) | PDF.it",
   description:
     "O OCR pode ler texto manuscrito? Descubra as limitacoes, quando funciona e dicas para obter melhores resultados ao aplicar OCR em documentos manuscritos.",
   keywords: "ocr texto manuscrito, ocr letra de mao, ocr escrita manual, reconhecimento texto manuscrito",
@@ -55,7 +55,7 @@ export default function OCRTextoManuscritoPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><ScanText className="h-5 w-5 text-white" /></div>
-              <p className="text-slate-700 font-semibold">Experimente o Scanner OCR do OmnisPDF.</p>
+              <p className="text-slate-700 font-semibold">Experimente o Scanner OCR do PDF.it.</p>
             </div>
             <Link href="/br/scanner-ocr" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Scanner OCR <ArrowRight className="h-4 w-4" /></Link>
           </div>
@@ -96,7 +96,7 @@ export default function OCRTextoManuscritoPage() {
               <div className="space-y-4">
                 {[
                   { title: "Digitalize em alta resolucao", desc: "Use 300 DPI ou mais. Para texto manuscrito pequeno, 600 DPI pode fazer diferenca significativa na precisao." },
-                  { title: "Use Limpeza de Digitalizacao", desc: "A ferramenta de Limpeza de Digitalizacao do OmnisPDF melhora contraste, remove sombras e otimiza a imagem antes do OCR." },
+                  { title: "Use Limpeza de Digitalizacao", desc: "A ferramenta de Limpeza de Digitalizacao do PDF.it melhora contraste, remove sombras e otimiza a imagem antes do OCR." },
                   { title: "Selecione o idioma correto", desc: "Mesmo para manuscrito, selecionar o idioma correto ajuda o motor OCR a usar o dicionario adequado para correcao contextual." },
                   { title: "Revise manualmente o resultado", desc: "Sempre revise o texto reconhecido. Corrija erros, especialmente em nomes proprios, numeros e termos tecnicos." },
                 ].map((step, i) => (

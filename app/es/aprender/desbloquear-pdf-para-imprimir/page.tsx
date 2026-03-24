@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Unlock, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Desbloquear un PDF para Imprimir (Quitar Restricciones de Impresion) | OmnisPDF",
+  title: "Desbloquear un PDF para Imprimir (Quitar Restricciones de Impresion) | PDF.it",
   description:
     "No puedes imprimir un PDF? Aprende como eliminar las restricciones de impresion de un archivo PDF en linea. Guia paso a paso para desbloquear PDF para imprimir — rapido, gratis, sin software.",
   keywords: "desbloquear pdf para imprimir, pdf no imprime, quitar restriccion impresion pdf, habilitar impresion pdf",
@@ -23,12 +23,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como elimino las restricciones de impresion de un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube el PDF a la herramienta Desbloquear PDF de OmnisPDF. Detectara y eliminara automaticamente la restriccion de impresion. Descarga el archivo desbloqueado e imprimelo normalmente desde cualquier lector de PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube el PDF a la herramienta Desbloquear PDF de PDF.it. Detectara y eliminara automaticamente la restriccion de impresion. Descarga el archivo desbloqueado e imprimelo normalmente desde cualquier lector de PDF." }
     },
     {
       "@type": "Question",
       "name": "Necesito la contrasena para desbloquear un PDF para imprimir?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si el PDF solo tiene restricciones de permisos (puedes ver pero no imprimir), OmnisPDF puede frecuentemente eliminar la restriccion de impresion sin necesitar una contrasena. Si el PDF requiere una contrasena para abrirse, necesitaras esa contrasena primero." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si el PDF solo tiene restricciones de permisos (puedes ver pero no imprimir), PDF.it puede frecuentemente eliminar la restriccion de impresion sin necesitar una contrasena. Si el PDF requiere una contrasena para abrirse, necesitaras esa contrasena primero." }
     },
     {
       "@type": "Question",
@@ -38,12 +38,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Puedo desbloquear un PDF para imprimir desde mi telefono?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. OmnisPDF funciona en cualquier navegador movil. Sube el PDF, desbloquealo y descarga la version imprimible. Luego puedes imprimirlo usando la funcion de impresion integrada de tu telefono o transferirlo a una computadora." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en cualquier navegador movil. Sube el PDF, desbloquealo y descarga la version imprimible. Luego puedes imprimirlo usando la funcion de impresion integrada de tu telefono o transferirlo a una computadora." }
     },
     {
       "@type": "Question",
       "name": "Es legal eliminar restricciones de impresion de un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si tienes acceso legitimo al documento y necesitas imprimirlo para uso personal, educativo o empresarial, eliminar la restriccion de impresion es legal. OmnisPDF esta disenado para usuarios que necesitan imprimir sus propios documentos o archivos compartidos con ellos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si tienes acceso legitimo al documento y necesitas imprimirlo para uso personal, educativo o empresarial, eliminar la restriccion de impresion es legal. PDF.it esta disenado para usuarios que necesitan imprimir sus propios documentos o archivos compartidos con ellos." }
     }
   ]
 }
@@ -52,17 +52,17 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Desbloquear un PDF para Imprimir",
-  "description": "Elimina las restricciones de impresion de un PDF en 3 simples pasos con OmnisPDF.",
+  "description": "Elimina las restricciones de impresion de un PDF en 3 simples pasos con PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Sube el PDF restringido",
-      "text": "Ve a la herramienta Desbloquear PDF de OmnisPDF y sube el archivo PDF que no te permite imprimir."
+      "text": "Ve a la herramienta Desbloquear PDF de PDF.it y sube el archivo PDF que no te permite imprimir."
     },
     {
       "@type": "HowToStep",
       "name": "Elimina la restriccion de impresion",
-      "text": "OmnisPDF detecta automaticamente la restriccion de impresion y la elimina. Si el archivo tiene una contrasena de apertura, ingresala cuando se te solicite."
+      "text": "PDF.it detecta automaticamente la restriccion de impresion y la elimina. Si el archivo tiene una contrasena de apertura, ingresala cuando se te solicite."
     },
     {
       "@type": "HowToStep",
@@ -150,7 +150,7 @@ export default function DesbloquearPDFParaImprimirPage() {
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
-                La buena noticia: esta es una restriccion de software, no un problema de hardware. OmnisPDF puede eliminarla en segundos.
+                La buena noticia: esta es una restriccion de software, no un problema de hardware. PDF.it puede eliminarla en segundos.
               </p>
             </section>
 
@@ -161,11 +161,11 @@ export default function DesbloquearPDFParaImprimirPage() {
                 {[
                   {
                     title: "Sube el PDF restringido",
-                    desc: "Ve a la herramienta Desbloquear PDF de OmnisPDF y arrastra tu archivo al area de carga. La herramienta acepta archivos de hasta 25MB gratis — los usuarios Pro pueden subir archivos de hasta 200MB.",
+                    desc: "Ve a la herramienta Desbloquear PDF de PDF.it y arrastra tu archivo al area de carga. La herramienta acepta archivos de hasta 25MB gratis — los usuarios Pro pueden subir archivos de hasta 200MB.",
                   },
                   {
-                    title: "Deja que OmnisPDF elimine la restriccion",
-                    desc: "OmnisPDF detecta automaticamente la restriccion de impresion y la elimina. Si el PDF tambien requiere una contrasena para abrirse (no solo para imprimir), deberas ingresar esa contrasena. La mayoria de los PDF con restriccion de impresion no requieren contrasena de apertura.",
+                    title: "Deja que PDF.it elimine la restriccion",
+                    desc: "PDF.it detecta automaticamente la restriccion de impresion y la elimina. Si el PDF tambien requiere una contrasena para abrirse (no solo para imprimir), deberas ingresar esa contrasena. La mayoria de los PDF con restriccion de impresion no requieren contrasena de apertura.",
                   },
                   {
                     title: "Descarga e imprime",
@@ -293,11 +293,11 @@ export default function DesbloquearPDFParaImprimirPage() {
             <div className="space-y-6">
               {[
                 { q: "Por que no puedo imprimir mi PDF?", a: "Tu PDF probablemente tiene una restriccion de permisos establecida por el creador que desactiva la impresion. Esto se hace a traves de la configuracion de seguridad del PDF e impide que todos los usuarios impriman el documento, aunque puedan verlo en pantalla." },
-                { q: "Como elimino las restricciones de impresion de un PDF?", a: "Sube el PDF a la herramienta Desbloquear PDF de OmnisPDF. Detectara y eliminara automaticamente la restriccion de impresion. Descarga el archivo desbloqueado e imprimelo normalmente desde cualquier lector de PDF." },
-                { q: "Necesito la contrasena para desbloquear un PDF para imprimir?", a: "Si el PDF solo tiene restricciones de permisos (puedes ver pero no imprimir), OmnisPDF puede frecuentemente eliminar la restriccion de impresion sin necesitar una contrasena. Si el PDF requiere una contrasena para abrirse, necesitaras esa contrasena primero." },
+                { q: "Como elimino las restricciones de impresion de un PDF?", a: "Sube el PDF a la herramienta Desbloquear PDF de PDF.it. Detectara y eliminara automaticamente la restriccion de impresion. Descarga el archivo desbloqueado e imprimelo normalmente desde cualquier lector de PDF." },
+                { q: "Necesito la contrasena para desbloquear un PDF para imprimir?", a: "Si el PDF solo tiene restricciones de permisos (puedes ver pero no imprimir), PDF.it puede frecuentemente eliminar la restriccion de impresion sin necesitar una contrasena. Si el PDF requiere una contrasena para abrirse, necesitaras esa contrasena primero." },
                 { q: "La calidad de impresion cambia despues de desbloquear?", a: "No. Desbloquear un PDF solo elimina la restriccion de seguridad — no cambia el contenido, la resolucion ni la calidad. Tu documento impreso se vera exactamente como el creador lo diseno." },
-                { q: "Puedo desbloquear un PDF para imprimir desde mi telefono?", a: "Si. OmnisPDF funciona en cualquier navegador movil. Sube el PDF, desbloquealo y descarga la version imprimible. Luego puedes imprimirlo usando la funcion de impresion integrada de tu telefono o transferirlo a una computadora." },
-                { q: "Es legal eliminar restricciones de impresion de un PDF?", a: "Si tienes acceso legitimo al documento y necesitas imprimirlo para uso personal, educativo o empresarial, eliminar la restriccion de impresion es legal. OmnisPDF esta disenado para usuarios que necesitan imprimir sus propios documentos o archivos compartidos con ellos." },
+                { q: "Puedo desbloquear un PDF para imprimir desde mi telefono?", a: "Si. PDF.it funciona en cualquier navegador movil. Sube el PDF, desbloquealo y descarga la version imprimible. Luego puedes imprimirlo usando la funcion de impresion integrada de tu telefono o transferirlo a una computadora." },
+                { q: "Es legal eliminar restricciones de impresion de un PDF?", a: "Si tienes acceso legitimo al documento y necesitas imprimirlo para uso personal, educativo o empresarial, eliminar la restriccion de impresion es legal. PDF.it esta disenado para usuarios que necesitan imprimir sus propios documentos o archivos compartidos con ellos." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

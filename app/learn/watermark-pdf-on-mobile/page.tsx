@@ -5,9 +5,9 @@ import Link from "next/link"
 import { Stamp, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Add a Watermark to a PDF on Your Phone (iPhone & Android) | OmnisPDF",
+  title: "Add a Watermark to a PDF on Your Phone (iPhone & Android) | PDF.it",
   description:
-    "Learn how to add a watermark to a PDF from your iPhone or Android phone. No app needed — use OmnisPDF in your mobile browser to stamp PDFs on the go.",
+    "Learn how to add a watermark to a PDF from your iPhone or Android phone. No app needed — use PDF.it in your mobile browser to stamp PDFs on the go.",
   keywords: "watermark pdf on phone, add watermark pdf iphone, watermark pdf android, watermark pdf mobile",
 }
 
@@ -18,22 +18,22 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I add a watermark to a PDF on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in any mobile browser — Safari on iPhone, Chrome on Android, or any other browser. Upload your PDF, add a text or image watermark, and download the result directly on your phone." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in any mobile browser — Safari on iPhone, Chrome on Android, or any other browser. Upload your PDF, add a text or image watermark, and download the result directly on your phone." }
     },
     {
       "@type": "Question",
       "name": "Do I need to download an app to watermark a PDF on mobile?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF is a web-based tool that runs entirely in your browser. No app installation, no account required for basic features. Just open omnispdf.com on your phone and start watermarking." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it is a web-based tool that runs entirely in your browser. No app installation, no account required for basic features. Just open pdf.it.com on your phone and start watermarking." }
     },
     {
       "@type": "Question",
       "name": "Does it work the same on iPhone and Android?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF is fully responsive and works identically on iPhone (Safari, Chrome) and Android (Chrome, Firefox, Samsung Internet). The interface adapts to your screen size automatically." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it is fully responsive and works identically on iPhone (Safari, Chrome) and Android (Chrome, Firefox, Samsung Internet). The interface adapts to your screen size automatically." }
     },
     {
       "@type": "Question",
       "name": "Can I upload a logo watermark from my phone's camera roll?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. When you select Image Watermark in OmnisPDF, your phone will let you browse your camera roll or files. Select your logo image (PNG recommended for best results) and it will be used as the watermark." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. When you select Image Watermark in PDF.it, your phone will let you browse your camera roll or files. Select your logo image (PNG recommended for best results) and it will be used as the watermark." }
     },
     {
       "@type": "Question",
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Add a Watermark to a PDF on Your Phone",
-  "description": "Watermark any PDF from your iPhone or Android in 3 simple steps using OmnisPDF in your mobile browser.",
+  "description": "Watermark any PDF from your iPhone or Android in 3 simple steps using PDF.it in your mobile browser.",
   "step": [
     {
       "@type": "HowToStep",
-      "name": "Open OmnisPDF on your phone",
-      "text": "Open Safari, Chrome, or any browser on your phone and go to omnispdf.com. Tap the Watermark PDF tool."
+      "name": "Open PDF.it on your phone",
+      "text": "Open Safari, Chrome, or any browser on your phone and go to pdf.it.com. Tap the Watermark PDF tool."
     },
     {
       "@type": "HowToStep",
@@ -94,7 +94,7 @@ export default function WatermarkPDFOnMobilePage() {
               <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Watermark PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Add a Watermark to a PDF on Your Phone (iPhone & Android)</h1>
               <p className="text-xl text-slate-300">
-                Need to watermark a PDF while away from your computer? OmnisPDF works in any mobile browser — no app download needed. Here is how to stamp a PDF from your phone in under a minute.
+                Need to watermark a PDF while away from your computer? PDF.it works in any mobile browser — no app download needed. Here is how to stamp a PDF from your phone in under a minute.
               </p>
             </div>
           </div>
@@ -157,8 +157,8 @@ export default function WatermarkPDFOnMobilePage() {
               <div className="space-y-4">
                 {[
                   {
-                    title: "Open OmnisPDF in your mobile browser",
-                    desc: "Open Safari (iPhone), Chrome (Android), or any mobile browser and navigate to omnispdf.com. Tap the Watermark PDF tool from the homepage or tools menu. The interface is fully responsive and designed for touch screens.",
+                    title: "Open PDF.it in your mobile browser",
+                    desc: "Open Safari (iPhone), Chrome (Android), or any mobile browser and navigate to pdf.it.com. Tap the Watermark PDF tool from the homepage or tools menu. The interface is fully responsive and designed for touch screens.",
                   },
                   {
                     title: "Upload your PDF and configure the watermark",
@@ -206,7 +206,7 @@ export default function WatermarkPDFOnMobilePage() {
                 <li>&#10003; <strong>Upload from anywhere.</strong> Tapping the upload area opens your file picker, which gives you access to local storage, Google Drive, OneDrive, and other cloud providers. Select your PDF from any location.</li>
                 <li>&#10003; <strong>Check the notification bar.</strong> After the watermarked PDF is processed, Chrome will show a download notification. Tap it to open the file directly, or find it in your Downloads folder.</li>
                 <li>&#10003; <strong>Share via any app.</strong> Open the downloaded file and use Android&apos;s share menu to send it through Gmail, WhatsApp, Slack, or any installed app.</li>
-                <li>&#10003; <strong>Works on Samsung Internet too.</strong> If you use Samsung&apos;s default browser instead of Chrome, OmnisPDF works just the same. The tool is compatible with all modern mobile browsers.</li>
+                <li>&#10003; <strong>Works on Samsung Internet too.</strong> If you use Samsung&apos;s default browser instead of Chrome, PDF.it works just the same. The tool is compatible with all modern mobile browsers.</li>
               </ul>
             </section>
 
@@ -214,7 +214,7 @@ export default function WatermarkPDFOnMobilePage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Other PDF Tools You Can Use on Mobile</h2>
               <p className="text-slate-600 mb-4">
-                OmnisPDF is designed to work fully on mobile for all its tools, not just watermarking. Here are some tools that pair well with watermarking on your phone:
+                PDF.it is designed to work fully on mobile for all its tools, not just watermarking. Here are some tools that pair well with watermarking on your phone:
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Flatten your watermark.</strong> After watermarking, use <Link href="/flatten-pdf" className="text-orange-600 hover:underline">Flatten PDF</Link> on your phone to make the watermark permanent — all from the same browser session.</li>
@@ -235,7 +235,7 @@ export default function WatermarkPDFOnMobilePage() {
         <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Watermark a PDF Right From Your Phone</h2>
-            <p className="text-slate-300 mb-6">Open OmnisPDF in your mobile browser, upload your PDF, and add a watermark in seconds. No app download needed. Available for Pro and Business users.</p>
+            <p className="text-slate-300 mb-6">Open PDF.it in your mobile browser, upload your PDF, and add a watermark in seconds. No app download needed. Available for Pro and Business users.</p>
             <Link
               href="/watermark-pdf"
               className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
@@ -275,10 +275,10 @@ export default function WatermarkPDFOnMobilePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "Can I add a watermark to a PDF on my phone?", a: "Yes. OmnisPDF works in any mobile browser — Safari on iPhone, Chrome on Android, or any other browser. Upload your PDF, add a text or image watermark, and download the result directly on your phone." },
-                { q: "Do I need to download an app to watermark a PDF on mobile?", a: "No. OmnisPDF is a web-based tool that runs entirely in your browser. No app installation, no account required for basic features. Just open omnispdf.com on your phone and start watermarking." },
-                { q: "Does it work the same on iPhone and Android?", a: "Yes. OmnisPDF is fully responsive and works identically on iPhone (Safari, Chrome) and Android (Chrome, Firefox, Samsung Internet). The interface adapts to your screen size automatically." },
-                { q: "Can I upload a logo watermark from my phone's camera roll?", a: "Yes. When you select Image Watermark in OmnisPDF, your phone will let you browse your camera roll or files. Select your logo image (PNG recommended for best results) and it will be used as the watermark." },
+                { q: "Can I add a watermark to a PDF on my phone?", a: "Yes. PDF.it works in any mobile browser — Safari on iPhone, Chrome on Android, or any other browser. Upload your PDF, add a text or image watermark, and download the result directly on your phone." },
+                { q: "Do I need to download an app to watermark a PDF on mobile?", a: "No. PDF.it is a web-based tool that runs entirely in your browser. No app installation, no account required for basic features. Just open pdf.it.com on your phone and start watermarking." },
+                { q: "Does it work the same on iPhone and Android?", a: "Yes. PDF.it is fully responsive and works identically on iPhone (Safari, Chrome) and Android (Chrome, Firefox, Samsung Internet). The interface adapts to your screen size automatically." },
+                { q: "Can I upload a logo watermark from my phone's camera roll?", a: "Yes. When you select Image Watermark in PDF.it, your phone will let you browse your camera roll or files. Select your logo image (PNG recommended for best results) and it will be used as the watermark." },
                 { q: "Where does the watermarked PDF get saved on my phone?", a: "The watermarked PDF downloads to your phone's default download location. On iPhone, check the Files app under Downloads. On Android, check the Downloads folder or your browser's download manager." },
                 { q: "Is the Watermark PDF tool free on mobile?", a: "Watermark PDF is available to Pro ($7.99/month) and Business ($13.99/month) users on all devices, including mobile. Both tiers include unlimited watermarking and files up to 200MB." },
               ].map((faq, i) => (

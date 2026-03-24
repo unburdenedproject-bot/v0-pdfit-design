@@ -7,14 +7,14 @@ import { Unlock, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Desbloquear PDF Online — Quitar Contraseña de PDF | OmnisPDF",
+  title: "Desbloquear PDF Online — Quitar Contraseña de PDF | PDF.it",
   description:
-    "Desbloquea un PDF protegido con contraseña usando OmnisPDF. Quita la protección de contraseña del PDF (con permiso) y descarga un PDF desbloqueado en segundos.",
+    "Desbloquea un PDF protegido con contraseña usando PDF.it. Quita la protección de contraseña del PDF (con permiso) y descarga un PDF desbloqueado en segundos.",
   alternates: {
-    canonical: "https://omnispdf.com/es/desbloquear-pdf",
+    canonical: "https://pdf.it.com/es/desbloquear-pdf",
     languages: {
-      "en": "https://omnispdf.com/unlock-pdf",
-      "es": "https://omnispdf.com/es/desbloquear-pdf",
+      "en": "https://pdf.it.com/unlock-pdf",
+      "es": "https://pdf.it.com/es/desbloquear-pdf",
     },
   },
 }
@@ -25,23 +25,23 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Puede OmnisPDF quitar la contraseña de un PDF sin conocerla?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF requiere la contraseña correcta. No puede recuperar ni omitir contraseñas desconocidas." }
+      "name": "¿Puede PDF.it quitar la contraseña de un PDF sin conocerla?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it requiere la contraseña correcta. No puede recuperar ni omitir contraseñas desconocidas." }
     },
     {
       "@type": "Question",
       "name": "¿Es legal desbloquear un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Solo debes desbloquear PDFs que sean tuyos o para los que tengas permiso explícito. OmnisPDF está diseñado para usos legítimos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Solo debes desbloquear PDFs que sean tuyos o para los que tengas permiso explícito. PDF.it está diseñado para usos legítimos." }
     },
     {
       "@type": "Question",
       "name": "¿Puedo volver a proteger mi PDF después de desbloquearlo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Usa la herramienta Proteger PDF de OmnisPDF para agregar una nueva contraseña a cualquier PDF cuando lo necesites." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Usa la herramienta Proteger PDF de PDF.it para agregar una nueva contraseña a cualquier PDF cuando lo necesites." }
     },
     {
       "@type": "Question",
       "name": "¿Puedo desbloquear un PDF desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en navegadores móviles — sube el archivo, ingresa la contraseña, desbloquea y descarga." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube el archivo, ingresa la contraseña, desbloquea y descarga." }
     },
     {
       "@type": "Question",
@@ -75,7 +75,7 @@ export default function DesbloquearPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Desbloquear PDF (Quitar Contraseña)</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Usa OmnisPDF para desbloquear un PDF protegido con contraseña cuando tengas la contraseña. Quita las restricciones y descarga un PDF desbloqueado para editar, imprimir o compartir.
+                Usa PDF.it para desbloquear un PDF protegido con contraseña cuando tengas la contraseña. Quita las restricciones y descarga un PDF desbloqueado para editar, imprimir o compartir.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Desbloqueo Instantáneo</span></div>
@@ -94,7 +94,7 @@ export default function DesbloquearPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Usa la herramienta Desbloquear PDF de OmnisPDF para quitar la protección con contraseña de un PDF cuando conozcas la contraseña. Sube el archivo, ingresa la contraseña y descarga un PDF desbloqueado que puedes editar, imprimir, unir o comprimir.
+              Usa la herramienta Desbloquear PDF de PDF.it para quitar la protección con contraseña de un PDF cuando conozcas la contraseña. Sube el archivo, ingresa la contraseña y descarga un PDF desbloqueado que puedes editar, imprimir, unir o comprimir.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Desbloquea archivos PDF que sean tuyos o tengas permiso para editar</li>
@@ -112,7 +112,7 @@ export default function DesbloquearPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Quita la Contraseña del PDF (Con Permiso)</h2>
               <p className="text-slate-600">
-                Si tienes la contraseña correcta, OmnisPDF puede desencriptar el PDF y guardar una nueva versión sin el requisito de contraseña. Esta herramienta está diseñada para archivos que son tuyos o a los que tienes acceso legítimo.
+                Si tienes la contraseña correcta, PDF.it puede desencriptar el PDF y guardar una nueva versión sin el requisito de contraseña. Esta herramienta está diseñada para archivos que son tuyos o a los que tienes acceso legítimo.
               </p>
             </div>
             <div>
@@ -136,7 +136,7 @@ export default function DesbloquearPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Desbloquear un PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube tu PDF protegido con contraseña a OmnisPDF.",
+                "Sube tu PDF protegido con contraseña a PDF.it.",
                 "Ingresa la contraseña correcta.",
                 "Haz clic en Desbloquear PDF y descarga el archivo desbloqueado.",
               ].map((step, i) => (
@@ -182,20 +182,20 @@ export default function DesbloquearPDFPage() {
             <div className="space-y-6">
               {[
                 {
-                  q: "¿Puede OmnisPDF quitar la contraseña de un PDF sin conocerla?",
-                  a: "No. OmnisPDF requiere la contraseña correcta. No puede recuperar ni omitir contraseñas desconocidas.",
+                  q: "¿Puede PDF.it quitar la contraseña de un PDF sin conocerla?",
+                  a: "No. PDF.it requiere la contraseña correcta. No puede recuperar ni omitir contraseñas desconocidas.",
                 },
                 {
                   q: "¿Es legal desbloquear un PDF?",
-                  a: "Solo debes desbloquear PDFs que sean tuyos o para los que tengas permiso explícito. OmnisPDF está diseñado para usos legítimos.",
+                  a: "Solo debes desbloquear PDFs que sean tuyos o para los que tengas permiso explícito. PDF.it está diseñado para usos legítimos.",
                 },
                 {
                   q: "¿Puedo volver a proteger mi PDF después de desbloquearlo?",
-                  a: "Sí. Usa la herramienta Proteger PDF de OmnisPDF para agregar una nueva contraseña a cualquier PDF cuando lo necesites.",
+                  a: "Sí. Usa la herramienta Proteger PDF de PDF.it para agregar una nueva contraseña a cualquier PDF cuando lo necesites.",
                 },
                 {
                   q: "¿Puedo desbloquear un PDF desde mi celular?",
-                  a: "Sí. OmnisPDF funciona en navegadores móviles — sube el archivo, ingresa la contraseña, desbloquea y descarga.",
+                  a: "Sí. PDF.it funciona en navegadores móviles — sube el archivo, ingresa la contraseña, desbloquea y descarga.",
                 },
                 {
                   q: "¿Es seguro subir un PDF protegido?",

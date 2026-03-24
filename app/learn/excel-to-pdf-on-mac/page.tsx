@@ -5,9 +5,9 @@ import Link from "next/link"
 import { FileSpreadsheet, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Convert Excel to PDF on Mac (Quick, Reliable Workflow) | OmnisPDF",
+  title: "Convert Excel to PDF on Mac (Quick, Reliable Workflow) | PDF.it",
   description:
-    "Learn how to convert Excel to PDF on Mac using Excel for Mac, Preview, and OmnisPDF online. Covers Mac-specific issues like font differences, print drivers, and consistent output.",
+    "Learn how to convert Excel to PDF on Mac using Excel for Mac, Preview, and PDF.it online. Covers Mac-specific issues like font differences, print drivers, and consistent output.",
   keywords: "excel to pdf mac, convert excel to pdf on mac, xlsx to pdf mac, excel for mac pdf, mac spreadsheet to pdf",
 }
 
@@ -18,12 +18,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I convert Excel to PDF on a Mac?",
-      "acceptedAnswer": { "@type": "Answer", "text": "You have three options: (1) In Excel for Mac, go to File → Save As and choose PDF. (2) Use the Print dialog (Cmd+P) and click 'Save as PDF' in the bottom-left corner. (3) Upload your Excel file to OmnisPDF's online converter for the most consistent results." }
+      "acceptedAnswer": { "@type": "Answer", "text": "You have three options: (1) In Excel for Mac, go to File → Save As and choose PDF. (2) Use the Print dialog (Cmd+P) and click 'Save as PDF' in the bottom-left corner. (3) Upload your Excel file to PDF.it's online converter for the most consistent results." }
     },
     {
       "@type": "Question",
       "name": "Why does my Excel PDF look different on Mac than on Windows?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Mac and Windows use different font rendering engines and print drivers. Fonts may appear slightly larger or smaller, causing column widths to shift. Using an online converter like OmnisPDF produces consistent results regardless of your operating system." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Mac and Windows use different font rendering engines and print drivers. Fonts may appear slightly larger or smaller, causing column widths to shift. Using an online converter like PDF.it produces consistent results regardless of your operating system." }
     },
     {
       "@type": "Question",
@@ -33,17 +33,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I convert Excel to PDF on Mac without Microsoft Excel installed?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Upload your .xlsx file to OmnisPDF's Excel to PDF tool — it works in Safari, Chrome, or any Mac browser. No software installation needed. Alternatively, you can open .xlsx files in Numbers (Apple's free spreadsheet app) and export to PDF from there." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Upload your .xlsx file to PDF.it's Excel to PDF tool — it works in Safari, Chrome, or any Mac browser. No software installation needed. Alternatively, you can open .xlsx files in Numbers (Apple's free spreadsheet app) and export to PDF from there." }
     },
     {
       "@type": "Question",
       "name": "Why are my fonts different in the Mac-generated PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Mac doesn't include some Windows-standard fonts (like Calibri prior to macOS Ventura). If Excel for Mac substitutes a font, the column widths and spacing change. To avoid this, use cross-platform fonts (Arial, Times New Roman, Verdana) or convert online with OmnisPDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Mac doesn't include some Windows-standard fonts (like Calibri prior to macOS Ventura). If Excel for Mac substitutes a font, the column widths and spacing change. To avoid this, use cross-platform fonts (Arial, Times New Roman, Verdana) or convert online with PDF.it." }
     },
     {
       "@type": "Question",
       "name": "How do I get consistent Excel-to-PDF output across Mac and Windows?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Use an online converter like OmnisPDF. It processes the file server-side with consistent fonts and rendering, so the output looks the same whether you upload from Mac, Windows, or a phone." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Use an online converter like PDF.it. It processes the file server-side with consistent fonts and rendering, so the output looks the same whether you upload from Mac, Windows, or a phone." }
     }
   ]
 }
@@ -61,13 +61,13 @@ const howToSchema = {
     },
     {
       "@type": "HowToStep",
-      "name": "Upload to OmnisPDF",
-      "text": "Open Safari or Chrome, go to OmnisPDF's Excel to PDF tool, and upload your .xlsx file. This ensures consistent output regardless of your Mac's fonts or print drivers."
+      "name": "Upload to PDF.it",
+      "text": "Open Safari or Chrome, go to PDF.it's Excel to PDF tool, and upload your .xlsx file. This ensures consistent output regardless of your Mac's fonts or print drivers."
     },
     {
       "@type": "HowToStep",
       "name": "Download your PDF",
-      "text": "Click Convert and download the PDF. The file opens in Preview by default. If you need to reduce the size, use OmnisPDF's Compress PDF tool."
+      "text": "Click Convert and download the PDF. The file opens in Preview by default. If you need to reduce the size, use PDF.it's Compress PDF tool."
     }
   ]
 }
@@ -163,12 +163,12 @@ export default function ExcelToPDFOnMacPage() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">Method 3: OmnisPDF Online Converter (Recommended)</h3>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">Method 3: PDF.it Online Converter (Recommended)</h3>
                   <p className="text-slate-600 mb-2">
                     For the most consistent results:
                   </p>
                   <ol className="space-y-1 text-slate-700 list-decimal list-inside ml-2">
-                    <li>Open Safari or Chrome and go to <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">OmnisPDF's Excel to PDF tool</Link></li>
+                    <li>Open Safari or Chrome and go to <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">PDF.it's Excel to PDF tool</Link></li>
                     <li>Upload your .xlsx file</li>
                     <li>Click Convert and download the PDF</li>
                   </ol>
@@ -190,7 +190,7 @@ export default function ExcelToPDFOnMacPage() {
                     If your Excel file was created on Windows using fonts like Calibri or Cambria, Mac may substitute different fonts. This changes column widths and can push data off the page.
                   </p>
                   <p className="text-slate-700">
-                    <strong>Fix:</strong> Use cross-platform fonts (Arial, Times New Roman, Verdana, Tahoma) in your spreadsheet. Or convert online with <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">OmnisPDF</Link>, which uses its own font library for consistent rendering.
+                    <strong>Fix:</strong> Use cross-platform fonts (Arial, Times New Roman, Verdana, Tahoma) in your spreadsheet. Or convert online with <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">PDF.it</Link>, which uses its own font library for consistent rendering.
                   </p>
                 </div>
 
@@ -210,7 +210,7 @@ export default function ExcelToPDFOnMacPage() {
                     Some advanced Excel features behave differently on Mac — particularly complex charts, pivot tables with custom formatting, and VBA macros.
                   </p>
                   <p className="text-slate-700">
-                    <strong>Fix:</strong> For complex spreadsheets, upload to <Link href="/office-to-pdf" className="text-orange-600 hover:underline">OmnisPDF's Office to PDF converter</Link>, which handles these features server-side.
+                    <strong>Fix:</strong> For complex spreadsheets, upload to <Link href="/office-to-pdf" className="text-orange-600 hover:underline">PDF.it's Office to PDF converter</Link>, which handles these features server-side.
                   </p>
                 </div>
 
@@ -220,7 +220,7 @@ export default function ExcelToPDFOnMacPage() {
                     Mac's Retina display can cause confusion — charts may look sharp on screen but appear blurry in the PDF if the print resolution is set too low.
                   </p>
                   <p className="text-slate-700">
-                    <strong>Fix:</strong> When using the Print dialog method, make sure your print quality is set to "Best" or "High Quality." Online converters like OmnisPDF default to high-quality output.
+                    <strong>Fix:</strong> When using the Print dialog method, make sure your print quality is set to "Best" or "High Quality." Online converters like PDF.it default to high-quality output.
                   </p>
                 </div>
               </div>
@@ -236,7 +236,7 @@ export default function ExcelToPDFOnMacPage() {
                 <li>✓ <strong>Use standard fonts</strong> — Arial, Times New Roman, and Verdana are safe choices that render identically on both platforms.</li>
                 <li>✓ <strong>Set explicit column widths</strong> — Don't rely on auto-fit, which calculates differently on each platform. Set fixed pixel widths for important columns.</li>
                 <li>✓ <strong>Define the print area</strong> — This removes ambiguity about which cells to include in the PDF.</li>
-                <li>✓ <strong>Use an online converter</strong> — <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">OmnisPDF</Link> processes files server-side, producing identical output regardless of whether you upload from Mac, Windows, or mobile.</li>
+                <li>✓ <strong>Use an online converter</strong> — <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">PDF.it</Link> processes files server-side, producing identical output regardless of whether you upload from Mac, Windows, or mobile.</li>
                 <li>✓ <strong>Test with Print Preview</strong> — Always check Cmd+P before converting locally to catch layout issues early.</li>
               </ul>
             </section>
@@ -248,7 +248,7 @@ export default function ExcelToPDFOnMacPage() {
                 You don't need Microsoft Excel to convert .xlsx files to PDF. Here are your options:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>✓ <strong>OmnisPDF online</strong> — Upload the .xlsx file directly at <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">Excel to PDF</Link>. No software needed.</li>
+                <li>✓ <strong>PDF.it online</strong> — Upload the .xlsx file directly at <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">Excel to PDF</Link>. No software needed.</li>
                 <li>✓ <strong>Apple Numbers</strong> — Free on every Mac. Open the .xlsx file in Numbers, then go to File → Export To → PDF.</li>
                 <li>✓ <strong>Google Sheets</strong> — Upload to Google Drive, open in Sheets, then File → Download → PDF. Formatting may shift slightly.</li>
               </ul>
@@ -312,12 +312,12 @@ export default function ExcelToPDFOnMacPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I convert Excel to PDF on a Mac?", a: "You have three options: (1) In Excel for Mac, go to File → Save As and choose PDF. (2) Use the Print dialog (Cmd+P) and click 'Save as PDF' in the bottom-left corner. (3) Upload your Excel file to OmnisPDF's online converter for the most consistent results." },
-                { q: "Why does my Excel PDF look different on Mac than on Windows?", a: "Mac and Windows use different font rendering engines and print drivers. Fonts may appear slightly larger or smaller, causing column widths to shift. Using an online converter like OmnisPDF produces consistent results regardless of your operating system." },
+                { q: "How do I convert Excel to PDF on a Mac?", a: "You have three options: (1) In Excel for Mac, go to File → Save As and choose PDF. (2) Use the Print dialog (Cmd+P) and click 'Save as PDF' in the bottom-left corner. (3) Upload your Excel file to PDF.it's online converter for the most consistent results." },
+                { q: "Why does my Excel PDF look different on Mac than on Windows?", a: "Mac and Windows use different font rendering engines and print drivers. Fonts may appear slightly larger or smaller, causing column widths to shift. Using an online converter like PDF.it produces consistent results regardless of your operating system." },
                 { q: "Does Excel for Mac have the same print settings as Windows?", a: "Most settings are the same (print area, orientation, margins, scaling) but the menu locations differ slightly. On Mac, Page Layout settings are under the Page Layout tab, and Print Titles are under File → Page Setup." },
-                { q: "Can I convert Excel to PDF on Mac without Microsoft Excel installed?", a: "Yes. Upload your .xlsx file to OmnisPDF's Excel to PDF tool — it works in Safari, Chrome, or any Mac browser. No software installation needed. You can also use Apple Numbers (free) to open and export .xlsx files." },
-                { q: "Why are my fonts different in the Mac-generated PDF?", a: "Mac doesn't include some Windows-standard fonts (like Calibri prior to macOS Ventura). If Excel for Mac substitutes a font, the column widths and spacing change. Use cross-platform fonts (Arial, Times New Roman) or convert online with OmnisPDF." },
-                { q: "How do I get consistent Excel-to-PDF output across Mac and Windows?", a: "Use an online converter like OmnisPDF. It processes the file server-side with consistent fonts and rendering, so the output looks the same whether you upload from Mac, Windows, or a phone." },
+                { q: "Can I convert Excel to PDF on Mac without Microsoft Excel installed?", a: "Yes. Upload your .xlsx file to PDF.it's Excel to PDF tool — it works in Safari, Chrome, or any Mac browser. No software installation needed. You can also use Apple Numbers (free) to open and export .xlsx files." },
+                { q: "Why are my fonts different in the Mac-generated PDF?", a: "Mac doesn't include some Windows-standard fonts (like Calibri prior to macOS Ventura). If Excel for Mac substitutes a font, the column widths and spacing change. Use cross-platform fonts (Arial, Times New Roman) or convert online with PDF.it." },
+                { q: "How do I get consistent Excel-to-PDF output across Mac and Windows?", a: "Use an online converter like PDF.it. It processes the file server-side with consistent fonts and rendering, so the output looks the same whether you upload from Mac, Windows, or a phone." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ImageIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Por Qué Tu PDF a JPG Se Ve Borroso (Y Cómo Solucionarlo) | OmnisPDF",
+  title: "Por Qué Tu PDF a JPG Se Ve Borroso (Y Cómo Solucionarlo) | PDF.it",
   description:
     "¿Tu conversión de PDF a JPG se ve borrosa? Aprende las 5 causas más comunes y cómo solucionar cada una. Obtén imágenes JPG nítidas y de alta calidad de tus PDFs cada vez.",
   keywords: "pdf a jpg borroso, pdf a jpg baja calidad, conversión pdf borrosa, calidad pdf a imagen, arreglar pdf a jpg borroso",
@@ -62,7 +62,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Usa un convertidor de alta calidad",
-      "text": "Sube tu PDF a la herramienta PDF a JPG de OmnisPDF, que te permite elegir configuraciones de DPI y produce resultados de alta calidad."
+      "text": "Sube tu PDF a la herramienta PDF a JPG de PDF.it, que te permite elegir configuraciones de DPI y produce resultados de alta calidad."
     },
     {
       "@type": "HowToStep",
@@ -136,7 +136,7 @@ export default function PorQuePdfAJpgSeVeBorrosoPage() {
                     DPI significa "puntos por pulgada" — controla cuántos píxeles componen cada pulgada de la imagen. Muchas herramientas gratuitas convierten a 72 o 96 DPI por defecto. A 72 DPI, una página tamaño carta estándar se convierte en solo unos 612 x 792 píxeles — eso es diminuto para los estándares actuales.
                   </p>
                   <p className="text-slate-600">
-                    <strong>La solución:</strong> Convierte a un mínimo de 200 DPI. Para impresión o presentaciones, usa 300 DPI. La herramienta <Link href="/es/pdf-a-jpg" className="text-orange-600 hover:underline">PDF a JPG</Link> de OmnisPDF te permite elegir tu DPI antes de convertir.
+                    <strong>La solución:</strong> Convierte a un mínimo de 200 DPI. Para impresión o presentaciones, usa 300 DPI. La herramienta <Link href="/es/pdf-a-jpg" className="text-orange-600 hover:underline">PDF a JPG</Link> de PDF.it te permite elegir tu DPI antes de convertir.
                   </p>
                 </div>
 

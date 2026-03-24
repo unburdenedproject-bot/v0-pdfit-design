@@ -5,7 +5,7 @@ import Link from "next/link"
 import { RotateCw, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Rotate a Scanned PDF (Fix Orientation After Scanning) | OmnisPDF",
+  title: "Rotate a Scanned PDF (Fix Orientation After Scanning) | PDF.it",
   description:
     "Learn how to fix a scanned PDF that came out rotated or sideways. Fix landscape vs portrait issues and correct orientation after scanning — free online tool.",
   keywords: "rotate scanned pdf, scanned pdf sideways, fix scanned document orientation, rotate scanned pages",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I rotate a scanned PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload the scanned PDF to OmnisPDF's Rotate PDF tool, select the pages that are rotated incorrectly, choose the correct angle (90° or 180°), and download the fixed file. No software installation needed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload the scanned PDF to PDF.it's Rotate PDF tool, select the pages that are rotated incorrectly, choose the correct angle (90° or 180°), and download the fixed file. No software installation needed." }
     },
     {
       "@type": "Question",
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Rotate a Scanned PDF",
-  "description": "Fix the orientation of a scanned PDF in 3 simple steps using OmnisPDF.",
+  "description": "Fix the orientation of a scanned PDF in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Upload the scanned PDF",
-      "text": "Go to OmnisPDF's Rotate PDF tool and upload the scanned document by clicking or dragging it into the upload area."
+      "text": "Go to PDF.it's Rotate PDF tool and upload the scanned document by clicking or dragging it into the upload area."
     },
     {
       "@type": "HowToStep",
@@ -199,7 +199,7 @@ export default function RotateScannedPDFPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Mixed Portrait and Landscape Pages</h3>
                   <p className="text-slate-600">
-                    When a document has both portrait text pages and landscape charts, you need to rotate them separately. In OmnisPDF, select only the landscape pages, rotate them, then download. The portrait pages remain untouched. If you need to do more complex rearranging, <Link href="/split-pdf" className="text-orange-600 hover:underline">split the document</Link> first.
+                    When a document has both portrait text pages and landscape charts, you need to rotate them separately. In PDF.it, select only the landscape pages, rotate them, then download. The portrait pages remain untouched. If you need to do more complex rearranging, <Link href="/split-pdf" className="text-orange-600 hover:underline">split the document</Link> first.
                   </p>
                 </div>
                 <div>
@@ -316,7 +316,7 @@ export default function RotateScannedPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I rotate a scanned PDF?", a: "Upload the scanned PDF to OmnisPDF's Rotate PDF tool, select the pages that are rotated incorrectly, choose the correct angle (90° or 180°), and download the fixed file. No software installation needed." },
+                { q: "How do I rotate a scanned PDF?", a: "Upload the scanned PDF to PDF.it's Rotate PDF tool, select the pages that are rotated incorrectly, choose the correct angle (90° or 180°), and download the fixed file. No software installation needed." },
                 { q: "Why did my scanned PDF come out sideways?", a: "Scanners do not always detect page orientation correctly. If the document was placed at the wrong angle on the scanner bed, or if the automatic document feeder pulled the page in sideways, the scan will be rotated." },
                 { q: "Should I rotate before or after running OCR?", a: "Always rotate first, then run OCR. Optical character recognition works much better when the text is oriented correctly. Sideways or upside-down text produces poor OCR results with many errors." },
                 { q: "Will rotating a scanned PDF reduce image quality?", a: "No. Rotating only changes the page orientation metadata. The scanned image data remains untouched at its original resolution and quality." },

@@ -5,9 +5,9 @@ import Link from "next/link"
 import { Image, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Guardar PDF como PNG en Mac (Métodos Rápidos + Mejores Resultados) | OmnisPDF",
+  title: "Guardar PDF como PNG en Mac (Métodos Rápidos + Mejores Resultados) | PDF.it",
   description:
-    "Aprende cómo guardar un PDF como PNG en Mac usando Vista Previa, OmnisPDF o Automator. Cubre conversión de una página y por lotes con comparación de calidad y mejores prácticas.",
+    "Aprende cómo guardar un PDF como PNG en Mac usando Vista Previa, PDF.it o Automator. Cubre conversión de una página y por lotes con comparación de calidad y mejores prácticas.",
   keywords: "guardar pdf como png mac, pdf a png mac, convertir pdf a png en mac, mac vista previa pdf a png, exportar pdf como png mac",
 }
 
@@ -23,7 +23,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo convierto todas las páginas de un PDF a PNG en Mac?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Vista Previa de Mac solo exporta una página a la vez. Para PDFs de múltiples páginas, usa el convertidor online de OmnisPDF — sube tu PDF y todas las páginas se convierten a PNG a la vez, descargables como archivo ZIP." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Vista Previa de Mac solo exporta una página a la vez. Para PDFs de múltiples páginas, usa el convertidor online de PDF.it — sube tu PDF y todas las páginas se convierten a PNG a la vez, descargables como archivo ZIP." }
     },
     {
       "@type": "Question",
@@ -33,7 +33,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Hay una forma gratuita de convertir PDF a PNG por lotes en Mac?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Puedes usar Automator de macOS para crear un flujo de trabajo, pero requiere algo de configuración. La opción gratuita más fácil es la herramienta online de OmnisPDF — sube tu PDF, convierte todas las páginas y descarga los PNGs como ZIP." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Puedes usar Automator de macOS para crear un flujo de trabajo, pero requiere algo de configuración. La opción gratuita más fácil es la herramienta online de PDF.it — sube tu PDF, convierte todas las páginas y descarga los PNGs como ZIP." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo convertir un PDF a PNG en Mac sin instalar software?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Vista Previa viene integrada en macOS y maneja exportaciones básicas de una página. Para conversiones de múltiples páginas o por lotes sin instalar nada, usa OmnisPDF en tu navegador — funciona en Safari, Chrome y Firefox." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Vista Previa viene integrada en macOS y maneja exportaciones básicas de una página. Para conversiones de múltiples páginas o por lotes sin instalar nada, usa PDF.it en tu navegador — funciona en Safari, Chrome y Firefox." }
     }
   ]
 }
@@ -57,17 +57,17 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Abre tu PDF",
-      "text": "Abre el PDF en Vista Previa de Mac (doble clic en el archivo) o navega a la herramienta PDF a PNG de OmnisPDF en tu navegador."
+      "text": "Abre el PDF en Vista Previa de Mac (doble clic en el archivo) o navega a la herramienta PDF a PNG de PDF.it en tu navegador."
     },
     {
       "@type": "HowToStep",
       "name": "Exporta como PNG",
-      "text": "En Vista Previa: Archivo > Exportar, elige formato PNG, establece resolución. En OmnisPDF: sube el archivo, selecciona resolución, haz clic en Convertir."
+      "text": "En Vista Previa: Archivo > Exportar, elige formato PNG, establece resolución. En PDF.it: sube el archivo, selecciona resolución, haz clic en Convertir."
     },
     {
       "@type": "HowToStep",
       "name": "Guarda tus archivos PNG",
-      "text": "Elige tu ubicación de guardado y descarga. OmnisPDF convierte todas las páginas a la vez y ofrece descarga como ZIP para PDFs de múltiples páginas."
+      "text": "Elige tu ubicación de guardado y descarga. PDF.it convierte todas las páginas a la vez y ofrece descarga como ZIP para PDFs de múltiples páginas."
     }
   ]
 }
@@ -161,15 +161,15 @@ export default function GuardarPdfComoPngEnMacPage() {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-6">Método 2: Usando OmnisPDF (Todas las Páginas a la Vez)</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-6">Método 2: Usando PDF.it (Todas las Páginas a la Vez)</h2>
               <p className="text-slate-600 mb-4">
-                El convertidor online de OmnisPDF maneja todo el PDF de una vez — sin necesidad de exportar página por página. Funciona en Safari, Chrome o cualquier navegador en tu Mac.
+                El convertidor online de PDF.it maneja todo el PDF de una vez — sin necesidad de exportar página por página. Funciona en Safari, Chrome o cualquier navegador en tu Mac.
               </p>
               <div className="space-y-4">
                 {[
                   {
                     title: "Abre la herramienta PDF a PNG",
-                    desc: "Ve a omnispdf.com/pdf-to-png en tu navegador. Sin software que instalar — funciona completamente online.",
+                    desc: "Ve a pdf.it.com/pdf-to-png en tu navegador. Sin software que instalar — funciona completamente online.",
                   },
                   {
                     title: "Sube tu PDF",
@@ -194,14 +194,14 @@ export default function GuardarPdfComoPngEnMacPage() {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Vista Previa vs OmnisPDF: ¿Cuál Usar?</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Vista Previa vs PDF.it: ¿Cuál Usar?</h2>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm border border-gray-200 rounded-xl overflow-hidden">
                   <thead>
                     <tr className="bg-slate-900 text-white">
                       <th className="text-left py-3 px-4 font-bold">Característica</th>
                       <th className="text-left py-3 px-4 font-bold">Vista Previa Mac</th>
-                      <th className="text-left py-3 px-4 font-bold">OmnisPDF</th>
+                      <th className="text-left py-3 px-4 font-bold">PDF.it</th>
                     </tr>
                   </thead>
                   <tbody className="text-slate-700">
@@ -262,7 +262,7 @@ export default function GuardarPdfComoPngEnMacPage() {
               </p>
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">Conversión por lotes con OmnisPDF Pro</h3>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">Conversión por lotes con PDF.it Pro</h3>
                   <p className="text-slate-600">
                     Con una suscripción Pro, puedes subir múltiples PDFs a la vez y convertirlos todos a PNG en un solo lote. Las páginas de cada PDF se exportan como PNGs separados, todo empaquetado en un ZIP descargable.
                   </p>
@@ -334,11 +334,11 @@ export default function GuardarPdfComoPngEnMacPage() {
             <div className="space-y-6">
               {[
                 { q: "¿Puedo guardar un PDF como PNG usando Vista Previa de Mac?", a: "Sí. Abre el PDF en Vista Previa, ve a Archivo > Exportar, elige PNG del menú de formato y establece tu resolución. Sin embargo, Vista Previa solo exporta una página a la vez, lo cual es lento para PDFs de múltiples páginas." },
-                { q: "¿Cómo convierto todas las páginas de un PDF a PNG en Mac?", a: "Vista Previa de Mac solo exporta una página a la vez. Para PDFs de múltiples páginas, usa el convertidor online de OmnisPDF — sube tu PDF y todas las páginas se convierten a PNG a la vez, descargables como archivo ZIP." },
+                { q: "¿Cómo convierto todas las páginas de un PDF a PNG en Mac?", a: "Vista Previa de Mac solo exporta una página a la vez. Para PDFs de múltiples páginas, usa el convertidor online de PDF.it — sube tu PDF y todas las páginas se convierten a PNG a la vez, descargables como archivo ZIP." },
                 { q: "¿Qué resolución debo usar al exportar PDF a PNG en Mac?", a: "Para uso web, 150 DPI es suficiente. Para presentaciones e impresión, usa 300 DPI. La exportación predeterminada de Vista Previa de Mac es 72 DPI lo cual puede verse borroso — auméntalo para resultados más nítidos." },
-                { q: "¿Hay una forma gratuita de convertir PDF a PNG por lotes en Mac?", a: "Puedes usar Automator de macOS para crear un flujo de trabajo, pero requiere algo de configuración. La opción gratuita más fácil es la herramienta online de OmnisPDF." },
+                { q: "¿Hay una forma gratuita de convertir PDF a PNG por lotes en Mac?", a: "Puedes usar Automator de macOS para crear un flujo de trabajo, pero requiere algo de configuración. La opción gratuita más fácil es la herramienta online de PDF.it." },
                 { q: "¿Por qué mi PDF se ve borroso al guardarlo como PNG en Mac?", a: "Esto generalmente sucede porque la resolución de exportación es muy baja. Vista Previa de Mac usa 72 DPI por defecto. Aumenta la resolución a 150 DPI (web) o 300 DPI (impresión) para resultados nítidos." },
-                { q: "¿Puedo convertir un PDF a PNG en Mac sin instalar software?", a: "Sí. Vista Previa viene integrada en macOS y maneja exportaciones básicas de una página. Para conversiones de múltiples páginas o por lotes sin instalar nada, usa OmnisPDF en tu navegador." },
+                { q: "¿Puedo convertir un PDF a PNG en Mac sin instalar software?", a: "Sí. Vista Previa viene integrada en macOS y maneja exportaciones básicas de una página. Para conversiones de múltiples páginas o por lotes sin instalar nada, usa PDF.it en tu navegador." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

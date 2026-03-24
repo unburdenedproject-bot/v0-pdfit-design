@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Unlock, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Desbloquear un PDF en Linea (Quitar Restricciones) | OmnisPDF",
+  title: "Como Desbloquear un PDF en Linea (Quitar Restricciones) | PDF.it",
   description:
     "Aprende como desbloquear un PDF y quitar restricciones de impresion, copia y edicion. Guia paso a paso para eliminar contrasenas de PDF en linea — rapido y gratis.",
   keywords: "desbloquear pdf en linea, quitar restricciones pdf, desbloquear pdf para editar, eliminar contrasena pdf",
@@ -18,17 +18,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como puedo desbloquear un PDF en linea gratis?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF bloqueado a la herramienta Desbloquear PDF de OmnisPDF, ingresa la contrasena si se te solicita, y descarga la version sin restricciones. No necesitas instalar software — funciona directamente en tu navegador." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF bloqueado a la herramienta Desbloquear PDF de PDF.it, ingresa la contrasena si se te solicita, y descarga la version sin restricciones. No necesitas instalar software — funciona directamente en tu navegador." }
     },
     {
       "@type": "Question",
       "name": "Que restricciones de PDF se pueden eliminar?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF puede eliminar restricciones de permisos que impiden imprimir, copiar texto, editar y anotar. Si el PDF tiene una contrasena de apertura (necesaria para ver el archivo), deberas ingresarla primero." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it puede eliminar restricciones de permisos que impiden imprimir, copiar texto, editar y anotar. Si el PDF tiene una contrasena de apertura (necesaria para ver el archivo), deberas ingresarla primero." }
     },
     {
       "@type": "Question",
       "name": "Es legal desbloquear un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si eres el propietario del documento o tienes autorizacion para acceder a el, eliminar las restricciones es perfectamente legal. OmnisPDF esta disenado para usuarios que necesitan desbloquear sus propios archivos — por ejemplo, cuando estableciste una contrasena y luego necesitas eliminarla." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si eres el propietario del documento o tienes autorizacion para acceder a el, eliminar las restricciones es perfectamente legal. PDF.it esta disenado para usuarios que necesitan desbloquear sus propios archivos — por ejemplo, cuando estableciste una contrasena y luego necesitas eliminarla." }
     },
     {
       "@type": "Question",
@@ -38,12 +38,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Puedo desbloquear un PDF sin la contrasena?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si el PDF solo tiene restricciones de permisos (sin contrasena de apertura), OmnisPDF puede eliminar esas restricciones sin necesitar una contrasena. Si el PDF requiere una contrasena para abrirse, deberas proporcionarla." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si el PDF solo tiene restricciones de permisos (sin contrasena de apertura), PDF.it puede eliminar esas restricciones sin necesitar una contrasena. Si el PDF requiere una contrasena para abrirse, deberas proporcionarla." }
     },
     {
       "@type": "Question",
       "name": "El desbloqueo funciona en todos los archivos PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF funciona con cifrado PDF estandar (40 bits, 128 bits y AES de 256 bits). Maneja la mayoria de los PDF creados por Adobe Acrobat, Microsoft Office, escaneres y otras herramientas comunes." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it funciona con cifrado PDF estandar (40 bits, 128 bits y AES de 256 bits). Maneja la mayoria de los PDF creados por Adobe Acrobat, Microsoft Office, escaneres y otras herramientas comunes." }
     }
   ]
 }
@@ -52,17 +52,17 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Desbloquear un PDF en Linea",
-  "description": "Elimina las restricciones de PDF en 3 simples pasos con OmnisPDF.",
+  "description": "Elimina las restricciones de PDF en 3 simples pasos con PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Sube tu PDF bloqueado",
-      "text": "Ve a la herramienta Desbloquear PDF de OmnisPDF y sube el archivo PDF que tiene restricciones que deseas eliminar."
+      "text": "Ve a la herramienta Desbloquear PDF de PDF.it y sube el archivo PDF que tiene restricciones que deseas eliminar."
     },
     {
       "@type": "HowToStep",
       "name": "Ingresa la contrasena si es necesario",
-      "text": "Si el PDF tiene una contrasena de apertura, ingresala cuando se te solicite. Si solo tiene restricciones de permisos, OmnisPDF lo manejara automaticamente."
+      "text": "Si el PDF tiene una contrasena de apertura, ingresala cuando se te solicite. Si solo tiene restricciones de permisos, PDF.it lo manejara automaticamente."
     },
     {
       "@type": "HowToStep",
@@ -139,7 +139,7 @@ export default function ComoDesbloquearPDFPage() {
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
-                La mayoria de los PDF bloqueados que encuentras tienen restricciones de permisos — puedes abrirlos y leerlos, pero no puedes imprimir o copiar texto. La herramienta <Link href="/es/desbloquear-pdf" className="text-orange-600 hover:underline">Desbloquear PDF</Link> de OmnisPDF maneja ambos tipos.
+                La mayoria de los PDF bloqueados que encuentras tienen restricciones de permisos — puedes abrirlos y leerlos, pero no puedes imprimir o copiar texto. La herramienta <Link href="/es/desbloquear-pdf" className="text-orange-600 hover:underline">Desbloquear PDF</Link> de PDF.it maneja ambos tipos.
               </p>
             </section>
 
@@ -154,7 +154,7 @@ export default function ComoDesbloquearPDFPage() {
                   },
                   {
                     title: "Ingresa la contrasena si es necesario",
-                    desc: "Si el PDF tiene una contrasena de apertura, se te pedira que la ingreses. Si el archivo solo tiene restricciones de permisos (puedes verlo pero no puedes imprimir o copiar), OmnisPDF las elimina automaticamente — no necesitas ingresar contrasena.",
+                    desc: "Si el PDF tiene una contrasena de apertura, se te pedira que la ingreses. Si el archivo solo tiene restricciones de permisos (puedes verlo pero no puedes imprimir o copiar), PDF.it las elimina automaticamente — no necesitas ingresar contrasena.",
                   },
                   {
                     title: "Descarga el PDF desbloqueado",
@@ -183,7 +183,7 @@ export default function ComoDesbloquearPDFPage() {
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 font-bold mt-0.5">1.</span>
-                  <span><strong>Imprimir para una reunion.</strong> Tu colega envio un informe como PDF restringido y necesitas imprimir copias para una presentacion. Usa OmnisPDF para eliminar la restriccion de impresion.</span>
+                  <span><strong>Imprimir para una reunion.</strong> Tu colega envio un informe como PDF restringido y necesitas imprimir copias para una presentacion. Usa PDF.it para eliminar la restriccion de impresion.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 font-bold mt-0.5">2.</span>
@@ -199,7 +199,7 @@ export default function ComoDesbloquearPDFPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 font-bold mt-0.5">5.</span>
-                  <span><strong>Convertir a otro formato.</strong> Si necesitas convertir un PDF bloqueado a Word o Excel, desbloquealo primero con OmnisPDF.</span>
+                  <span><strong>Convertir a otro formato.</strong> Si necesitas convertir un PDF bloqueado a Word o Excel, desbloquealo primero con PDF.it.</span>
                 </li>
               </ul>
             </section>
@@ -224,14 +224,14 @@ export default function ComoDesbloquearPDFPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Tus Archivos Se Procesan de Forma Segura</h3>
                   <p className="text-slate-600">
-                    OmnisPDF procesa tus archivos a traves de una conexion cifrada (HTTPS) y los elimina automaticamente del servidor despues del procesamiento. Tus documentos nunca se almacenan permanentemente ni se comparten con nadie.
+                    PDF.it procesa tus archivos a traves de una conexion cifrada (HTTPS) y los elimina automaticamente del servidor despues del procesamiento. Tus documentos nunca se almacenan permanentemente ni se comparten con nadie.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Consideraciones Legales</h3>
                   <p className="text-slate-600">
-                    Desbloquear PDF que posees o para los que tienes autorizacion de acceso es completamente legal. OmnisPDF esta disenado para casos de uso legitimos — eliminar restricciones de tus propios archivos, acceder a documentos compartidos por colegas, o recuperar acceso a archivos donde olvidaste la contrasena.
+                    Desbloquear PDF que posees o para los que tienes autorizacion de acceso es completamente legal. PDF.it esta disenado para casos de uso legitimos — eliminar restricciones de tus propios archivos, acceder a documentos compartidos por colegas, o recuperar acceso a archivos donde olvidaste la contrasena.
                   </p>
                 </div>
 
@@ -290,12 +290,12 @@ export default function ComoDesbloquearPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como puedo desbloquear un PDF en linea gratis?", a: "Sube tu PDF bloqueado a la herramienta Desbloquear PDF de OmnisPDF, ingresa la contrasena si se te solicita, y descarga la version sin restricciones. No necesitas instalar software — funciona directamente en tu navegador." },
-                { q: "Que restricciones de PDF se pueden eliminar?", a: "OmnisPDF puede eliminar restricciones de permisos que impiden imprimir, copiar texto, editar y anotar. Si el PDF tiene una contrasena de apertura (necesaria para ver el archivo), deberas ingresarla primero." },
-                { q: "Es legal desbloquear un PDF?", a: "Si eres el propietario del documento o tienes autorizacion para acceder a el, eliminar las restricciones es perfectamente legal. OmnisPDF esta disenado para usuarios que necesitan desbloquear sus propios archivos." },
+                { q: "Como puedo desbloquear un PDF en linea gratis?", a: "Sube tu PDF bloqueado a la herramienta Desbloquear PDF de PDF.it, ingresa la contrasena si se te solicita, y descarga la version sin restricciones. No necesitas instalar software — funciona directamente en tu navegador." },
+                { q: "Que restricciones de PDF se pueden eliminar?", a: "PDF.it puede eliminar restricciones de permisos que impiden imprimir, copiar texto, editar y anotar. Si el PDF tiene una contrasena de apertura (necesaria para ver el archivo), deberas ingresarla primero." },
+                { q: "Es legal desbloquear un PDF?", a: "Si eres el propietario del documento o tienes autorizacion para acceder a el, eliminar las restricciones es perfectamente legal. PDF.it esta disenado para usuarios que necesitan desbloquear sus propios archivos." },
                 { q: "Desbloquear un PDF cambia su contenido?", a: "No. Desbloquear un PDF solo elimina las restricciones de seguridad. El contenido, el diseno, las imagenes y el formato permanecen exactamente iguales." },
-                { q: "Puedo desbloquear un PDF sin la contrasena?", a: "Si el PDF solo tiene restricciones de permisos (sin contrasena de apertura), OmnisPDF puede eliminar esas restricciones sin necesitar una contrasena. Si el PDF requiere una contrasena para abrirse, deberas proporcionarla." },
-                { q: "El desbloqueo funciona en todos los archivos PDF?", a: "OmnisPDF funciona con cifrado PDF estandar (40 bits, 128 bits y AES de 256 bits). Maneja la mayoria de los PDF creados por Adobe Acrobat, Microsoft Office, escaneres y otras herramientas comunes." },
+                { q: "Puedo desbloquear un PDF sin la contrasena?", a: "Si el PDF solo tiene restricciones de permisos (sin contrasena de apertura), PDF.it puede eliminar esas restricciones sin necesitar una contrasena. Si el PDF requiere una contrasena para abrirse, deberas proporcionarla." },
+                { q: "El desbloqueo funciona en todos los archivos PDF?", a: "PDF.it funciona con cifrado PDF estandar (40 bits, 128 bits y AES de 256 bits). Maneja la mayoria de los PDF creados por Adobe Acrobat, Microsoft Office, escaneres y otras herramientas comunes." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

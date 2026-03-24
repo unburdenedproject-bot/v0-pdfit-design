@@ -6,9 +6,9 @@ import { Unlock, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Desencriptar PDF — Quita la Protección de un PDF | OmnisPDF",
+  title: "Desencriptar PDF — Quita la Protección de un PDF | PDF.it",
   description:
-    "Desencripta un PDF protegido con contraseña usando OmnisPDF. Quita la encriptación cuando conoces la contraseña y descarga un PDF sin protección en segundos.",
+    "Desencripta un PDF protegido con contraseña usando PDF.it. Quita la encriptación cuando conoces la contraseña y descarga un PDF sin protección en segundos.",
   alternates: {
     languages: {
       en: "/unlock-pdf",
@@ -29,12 +29,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Necesito la contraseña para desencriptar un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF requiere la contraseña correcta del PDF. No puede recuperar, adivinar ni omitir contraseñas desconocidas." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it requiere la contraseña correcta del PDF. No puede recuperar, adivinar ni omitir contraseñas desconocidas." }
     },
     {
       "@type": "Question",
       "name": "¿Es legal desencriptar un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Solo debes desencriptar PDFs que sean tuyos o para los que tengas permiso explícito del propietario. OmnisPDF está diseñado para usos legítimos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Solo debes desencriptar PDFs que sean tuyos o para los que tengas permiso explícito del propietario. PDF.it está diseñado para usos legítimos." }
     },
     {
       "@type": "Question",
@@ -44,11 +44,11 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo volver a encriptar el PDF después?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Usa la herramienta Proteger PDF o Encriptar PDF de OmnisPDF para agregar una nueva contraseña cuando lo necesites." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Usa la herramienta Proteger PDF o Encriptar PDF de PDF.it para agregar una nueva contraseña cuando lo necesites." }
     },
     {
       "@type": "Question",
-      "name": "¿Es seguro subir un PDF encriptado a OmnisPDF?",
+      "name": "¿Es seguro subir un PDF encriptado a PDF.it?",
       "acceptedAnswer": { "@type": "Answer", "text": "Sí. Todas las transferencias están encriptadas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." }
     }
   ]
@@ -73,7 +73,7 @@ export default function DesencriptarPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Desencriptar PDF</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Quita la encriptación y la protección con contraseña de tu PDF con OmnisPDF. Ingresa la contraseña que ya conoces y descarga una versión sin restricciones para editar, imprimir o compartir libremente.
+                Quita la encriptación y la protección con contraseña de tu PDF con PDF.it. Ingresa la contraseña que ya conoces y descarga una versión sin restricciones para editar, imprimir o compartir libremente.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Desencriptación Instantánea</span></div>
@@ -97,7 +97,7 @@ export default function DesencriptarPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Usa la herramienta Desencriptar PDF de OmnisPDF para quitar la encriptación de archivos PDF protegidos con contraseña. Ideal para PDFs propios cuya contraseña olvidaste dónde guardaste, documentos de trabajo que necesitas editar, archivos heredados o PDFs que quieres compartir sin restricciones.
+              Usa la herramienta Desencriptar PDF de PDF.it para quitar la encriptación de archivos PDF protegidos con contraseña. Ideal para PDFs propios cuya contraseña olvidaste dónde guardaste, documentos de trabajo que necesitas editar, archivos heredados o PDFs que quieres compartir sin restricciones.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Desencripta archivos PDF cuando conoces la contraseña</li>
@@ -115,7 +115,7 @@ export default function DesencriptarPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Recupera el Acceso a tus PDFs Propios</h2>
               <p className="text-slate-600">
-                ¿Encriptaste un PDF hace tiempo y ahora necesitas una versión sin contraseña? Ingresa la contraseña original y OmnisPDF genera un nuevo PDF libre de protección que puedes usar sin restricciones.
+                ¿Encriptaste un PDF hace tiempo y ahora necesitas una versión sin contraseña? Ingresa la contraseña original y PDF.it genera un nuevo PDF libre de protección que puedes usar sin restricciones.
               </p>
             </div>
             <div>
@@ -139,7 +139,7 @@ export default function DesencriptarPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Desencriptar un PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube tu PDF encriptado a OmnisPDF.",
+                "Sube tu PDF encriptado a PDF.it.",
                 "Ingresa la contraseña correcta del PDF.",
                 "Haz clic en Desencriptar PDF y descarga el archivo sin protección.",
               ].map((step, i) => (
@@ -194,11 +194,11 @@ export default function DesencriptarPDFPage() {
                 },
                 {
                   q: "¿Necesito la contraseña para desencriptar un PDF?",
-                  a: "Sí. OmnisPDF requiere la contraseña correcta del PDF. No puede recuperar, adivinar ni omitir contraseñas desconocidas.",
+                  a: "Sí. PDF.it requiere la contraseña correcta del PDF. No puede recuperar, adivinar ni omitir contraseñas desconocidas.",
                 },
                 {
                   q: "¿Es legal desencriptar un PDF?",
-                  a: "Solo debes desencriptar PDFs que sean tuyos o para los que tengas permiso explícito del propietario. OmnisPDF está diseñado para usos legítimos.",
+                  a: "Solo debes desencriptar PDFs que sean tuyos o para los que tengas permiso explícito del propietario. PDF.it está diseñado para usos legítimos.",
                 },
                 {
                   q: "¿El PDF desencriptado mantiene su contenido intacto?",
@@ -206,10 +206,10 @@ export default function DesencriptarPDFPage() {
                 },
                 {
                   q: "¿Puedo volver a encriptar el PDF después?",
-                  a: "Sí. Usa la herramienta Proteger PDF o Encriptar PDF de OmnisPDF para agregar una nueva contraseña cuando lo necesites.",
+                  a: "Sí. Usa la herramienta Proteger PDF o Encriptar PDF de PDF.it para agregar una nueva contraseña cuando lo necesites.",
                 },
                 {
-                  q: "¿Es seguro subir un PDF encriptado a OmnisPDF?",
+                  q: "¿Es seguro subir un PDF encriptado a PDF.it?",
                   a: "Sí. Todas las transferencias están encriptadas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos.",
                 },
               ].map((faq, i) => (

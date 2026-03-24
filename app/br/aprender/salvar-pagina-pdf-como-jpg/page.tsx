@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ImageIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Salvar uma Página do PDF como JPG (Windows, Mac, Celular) | OmnisPDF",
+  title: "Como Salvar uma Página do PDF como JPG (Windows, Mac, Celular) | PDF.it",
   description:
     "Aprenda como salvar uma página específica do PDF como imagem JPG em qualquer dispositivo. Guia rápido para Windows, Mac e celular.",
   keywords: "salvar pagina pdf como jpg, extrair pagina pdf como imagem, pdf pagina para jpg, converter uma pagina pdf para jpg",
@@ -15,9 +15,9 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Como salvar apenas uma página do PDF como JPG?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o OmnisPDF, selecione a página que deseja e converta para JPG. Você pode escolher páginas específicas em vez de converter o PDF inteiro." } },
-    { "@type": "Question", "name": "Posso salvar várias páginas específicas como JPG?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. No OmnisPDF, você pode selecionar múltiplas páginas específicas (ex: páginas 1, 3 e 5) para converter, em vez de converter todas as páginas." } },
-    { "@type": "Question", "name": "A qualidade da imagem é boa?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, desde que use DPI adequado. Use 150 DPI para uso web, 200 DPI para documentos e 300 DPI para impressão. No OmnisPDF, você escolhe o DPI antes de converter." } }
+    { "@type": "Question", "name": "Como salvar apenas uma página do PDF como JPG?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o PDF.it, selecione a página que deseja e converta para JPG. Você pode escolher páginas específicas em vez de converter o PDF inteiro." } },
+    { "@type": "Question", "name": "Posso salvar várias páginas específicas como JPG?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. No PDF.it, você pode selecionar múltiplas páginas específicas (ex: páginas 1, 3 e 5) para converter, em vez de converter todas as páginas." } },
+    { "@type": "Question", "name": "A qualidade da imagem é boa?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, desde que use DPI adequado. Use 150 DPI para uso web, 200 DPI para documentos e 300 DPI para impressão. No PDF.it, você escolhe o DPI antes de converter." } }
   ]
 }
 
@@ -27,7 +27,7 @@ const howToSchema = {
   "name": "Como Salvar uma Página do PDF como JPG",
   "description": "Salve páginas específicas do PDF como imagens JPG em qualquer dispositivo.",
   "step": [
-    { "@type": "HowToStep", "name": "Envie o PDF", "text": "Acesse a ferramenta PDF para JPG do OmnisPDF e envie seu arquivo PDF." },
+    { "@type": "HowToStep", "name": "Envie o PDF", "text": "Acesse a ferramenta PDF para JPG do PDF.it e envie seu arquivo PDF." },
     { "@type": "HowToStep", "name": "Selecione a página", "text": "Escolha a página específica que deseja salvar como JPG." },
     { "@type": "HowToStep", "name": "Converta e baixe", "text": "Clique em Converter e baixe a imagem JPG da página selecionada." }
   ]
@@ -84,7 +84,7 @@ export default function SalvarPaginaPdfComoJpgPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-6">Como Fazer (Funciona em Qualquer Dispositivo)</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Acesse a ferramenta PDF para JPG", desc: "Abra o OmnisPDF no navegador (funciona em Windows, Mac, iPhone, Android). Vá para a ferramenta PDF para JPG." },
+                  { title: "Acesse a ferramenta PDF para JPG", desc: "Abra o PDF.it no navegador (funciona em Windows, Mac, iPhone, Android). Vá para a ferramenta PDF para JPG." },
                   { title: "Envie seu PDF", desc: "Arraste o PDF ou clique para selecionar. Todos os PDFs até 25MB são grátis." },
                   { title: "Selecione a página desejada", desc: "Escolha qual página (ou páginas) você quer converter. Não precisa converter o PDF inteiro." },
                   { title: "Converta e baixe", desc: "Clique em Converter. Baixe o JPG da página selecionada. Rápido e simples." },
@@ -149,8 +149,8 @@ export default function SalvarPaginaPdfComoJpgPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como salvar apenas uma página do PDF como JPG?", a: "Envie seu PDF para o OmnisPDF, selecione a página que deseja e converta para JPG. Você pode escolher páginas específicas em vez de converter o PDF inteiro." },
-                { q: "Posso salvar várias páginas específicas como JPG?", a: "Sim. No OmnisPDF, você pode selecionar múltiplas páginas específicas (ex: páginas 1, 3 e 5) para converter, em vez de converter todas as páginas." },
+                { q: "Como salvar apenas uma página do PDF como JPG?", a: "Envie seu PDF para o PDF.it, selecione a página que deseja e converta para JPG. Você pode escolher páginas específicas em vez de converter o PDF inteiro." },
+                { q: "Posso salvar várias páginas específicas como JPG?", a: "Sim. No PDF.it, você pode selecionar múltiplas páginas específicas (ex: páginas 1, 3 e 5) para converter, em vez de converter todas as páginas." },
                 { q: "A qualidade da imagem é boa?", a: "Sim, desde que use DPI adequado. Use 150 DPI para uso web, 200 DPI para documentos e 300 DPI para impressão." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

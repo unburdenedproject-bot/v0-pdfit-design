@@ -6,9 +6,9 @@ import { Merge, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Unir Documentos Online — Combine Arquivos em Um Unico PDF | OmnisPDF",
+  title: "Unir Documentos Online — Combine Arquivos em Um Unico PDF | PDF.it",
   description:
-    "Una documentos online com OmnisPDF. Combine varios arquivos em um unico PDF para compartilhar, imprimir ou arquivar — rapido, gratis e no seu navegador.",
+    "Una documentos online com PDF.it. Combine varios arquivos em um unico PDF para compartilhar, imprimir ou arquivar — rapido, gratis e no seu navegador.",
   alternates: {
     languages: {
       en: "/merge-documents-online",
@@ -25,22 +25,22 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como posso unir documentos online?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seus documentos PDF para o OmnisPDF, organize-os na ordem desejada e clique em Unir. Seu documento combinado estara pronto para download em segundos — sem necessidade de software." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie seus documentos PDF para o PDF.it, organize-os na ordem desejada e clique em Unir. Seu documento combinado estara pronto para download em segundos — sem necessidade de software." }
     },
     {
       "@type": "Question",
       "name": "Quais tipos de documentos posso unir?",
-      "acceptedAnswer": { "@type": "Answer", "text": "O OmnisPDF une arquivos PDF diretamente. Se voce tem arquivos Word, Excel ou PowerPoint, use as ferramentas de conversao do OmnisPDF para converte-los em PDF primeiro e depois una-os em um unico documento." }
+      "acceptedAnswer": { "@type": "Answer", "text": "O PDF.it une arquivos PDF diretamente. Se voce tem arquivos Word, Excel ou PowerPoint, use as ferramentas de conversao do PDF.it para converte-los em PDF primeiro e depois una-os em um unico documento." }
     },
     {
       "@type": "Question",
       "name": "E seguro unir documentos online?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF usa conexoes criptografadas e exclui todos os arquivos enviados apos sua sessao. Seus documentos nunca sao armazenados permanentemente em nossos servidores." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it usa conexoes criptografadas e exclui todos os arquivos enviados apos sua sessao. Seus documentos nunca sao armazenados permanentemente em nossos servidores." }
     },
     {
       "@type": "Question",
       "name": "Posso unir documentos sem instalar software?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF e 100% baseado em navegador. Sem downloads, sem plugins, sem software de desktop — basta enviar, unir e baixar." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it e 100% baseado em navegador. Sem downloads, sem plugins, sem software de desktop — basta enviar, unir e baixar." }
     },
     {
       "@type": "Question",
@@ -98,7 +98,7 @@ export default function UnirDocumentosOnlinePage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Pare de lidar com varios arquivos separados. O OmnisPDF permite unir documentos online em um unico PDF — perfeito para combinar relatorios, contratos, apresentacoes e materiais de referencia em um unico arquivo profissional. Sem software de desktop, sem assinaturas, sem complicacoes.
+              Pare de lidar com varios arquivos separados. O PDF.it permite unir documentos online em um unico PDF — perfeito para combinar relatorios, contratos, apresentacoes e materiais de referencia em um unico arquivo profissional. Sem software de desktop, sem assinaturas, sem complicacoes.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Una qualquer documento PDF em um unico arquivo</li>
@@ -140,7 +140,7 @@ export default function UnirDocumentosOnlinePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Unir Documentos Online</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste seus documentos PDF para o OmnisPDF.",
+                "Envie ou arraste seus documentos PDF para o PDF.it.",
                 "Organize os documentos na sequencia desejada.",
                 "Clique em Unir e baixe seu documento PDF combinado.",
               ].map((step, i) => (
@@ -187,10 +187,10 @@ export default function UnirDocumentosOnlinePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como posso unir documentos online?", a: "Envie seus documentos PDF para o OmnisPDF, organize-os na ordem desejada e clique em Unir. Seu documento combinado estara pronto para download em segundos — sem necessidade de software." },
-                { q: "Quais tipos de documentos posso unir?", a: "O OmnisPDF une arquivos PDF diretamente. Se voce tem arquivos Word, Excel ou PowerPoint, use as ferramentas de conversao do OmnisPDF para converte-los em PDF primeiro e depois una-os em um unico documento." },
-                { q: "E seguro unir documentos online?", a: "Sim. O OmnisPDF usa conexoes criptografadas e exclui todos os arquivos enviados apos sua sessao. Seus documentos nunca sao armazenados permanentemente em nossos servidores." },
-                { q: "Posso unir documentos sem instalar software?", a: "Sim. O OmnisPDF e 100% baseado em navegador. Sem downloads, sem plugins, sem software de desktop — basta enviar, unir e baixar." },
+                { q: "Como posso unir documentos online?", a: "Envie seus documentos PDF para o PDF.it, organize-os na ordem desejada e clique em Unir. Seu documento combinado estara pronto para download em segundos — sem necessidade de software." },
+                { q: "Quais tipos de documentos posso unir?", a: "O PDF.it une arquivos PDF diretamente. Se voce tem arquivos Word, Excel ou PowerPoint, use as ferramentas de conversao do PDF.it para converte-los em PDF primeiro e depois una-os em um unico documento." },
+                { q: "E seguro unir documentos online?", a: "Sim. O PDF.it usa conexoes criptografadas e exclui todos os arquivos enviados apos sua sessao. Seus documentos nunca sao armazenados permanentemente em nossos servidores." },
+                { q: "Posso unir documentos sem instalar software?", a: "Sim. O PDF.it e 100% baseado em navegador. Sem downloads, sem plugins, sem software de desktop — basta enviar, unir e baixar." },
                 { q: "Existe um limite de tamanho de arquivo para unir documentos?", a: "Usuarios gratuitos podem enviar arquivos de ate 25MB cada. Usuarios Pro tem um limite de 200MB por arquivo para lidar com documentos grandes como apresentacoes, relatorios e manuais." },
                 { q: "Por que devo unir documentos online em vez de usar software de desktop?", a: "Unir online e mais rapido, nao requer instalacao e funciona em qualquer dispositivo. Voce pode unir documentos do seu celular, tablet ou qualquer computador com um navegador — sem necessidade de Adobe Acrobat ou software pago." },
               ].map((faq, i) => (

@@ -6,9 +6,9 @@ import { Lock, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Encrypt PDF Online — Add Password Protection to PDF | OmnisPDF",
+  title: "Encrypt PDF Online — Add Password Protection to PDF | PDF.it",
   description:
-    "Encrypt a PDF with password protection using OmnisPDF. Secure your documents with encryption before sharing or uploading — fast, free, and browser-based.",
+    "Encrypt a PDF with password protection using PDF.it. Secure your documents with encryption before sharing or uploading — fast, free, and browser-based.",
 }
 
 const faqSchema = {
@@ -17,8 +17,8 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What encryption does OmnisPDF use to protect PDFs?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF uses industry-standard AES encryption to protect your PDF files. This is the same encryption standard used by banks and government agencies to secure sensitive data." }
+      "name": "What encryption does PDF.it use to protect PDFs?",
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it uses industry-standard AES encryption to protect your PDF files. This is the same encryption standard used by banks and government agencies to secure sensitive data." }
     },
     {
       "@type": "Question",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I remove the encryption later?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use OmnisPDF's Unlock PDF tool to remove the password protection. You will need to enter the current password to decrypt the file." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use PDF.it's Unlock PDF tool to remove the password protection. You will need to enter the current password to decrypt the file." }
     },
     {
       "@type": "Question",
@@ -38,11 +38,11 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I encrypt a PDF on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in mobile browsers on iPhone and Android. Upload your PDF, set a password, and download the encrypted file — no app required." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in mobile browsers on iPhone and Android. Upload your PDF, set a password, and download the encrypted file — no app required." }
     },
     {
       "@type": "Question",
-      "name": "Is it safe to encrypt PDFs with OmnisPDF?",
+      "name": "Is it safe to encrypt PDFs with PDF.it?",
       "acceptedAnswer": { "@type": "Answer", "text": "Yes. Your files are processed securely and deleted from our servers after your session ends. We never store your passwords or share your documents." }
     }
   ]
@@ -85,7 +85,7 @@ export default function EncryptPdfPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Sending sensitive documents by email or uploading them to shared platforms? Encrypt your PDF with a password first. OmnisPDF adds industry-standard encryption so only people with the password can open your file — protecting contracts, financial records, medical documents, and more.
+              Sending sensitive documents by email or uploading them to shared platforms? Encrypt your PDF with a password first. PDF.it adds industry-standard encryption so only people with the password can open your file — protecting contracts, financial records, medical documents, and more.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Add strong password encryption to any PDF</li>
@@ -127,7 +127,7 @@ export default function EncryptPdfPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Encrypt a PDF with a Password</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PDF into OmnisPDF.",
+                "Upload or drag and drop your PDF into PDF.it.",
                 "Enter a strong password to protect your document.",
                 "Click Protect PDF — encryption is applied instantly.",
                 "Download your encrypted PDF and share it securely.",
@@ -173,12 +173,12 @@ export default function EncryptPdfPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "What encryption does OmnisPDF use to protect PDFs?", a: "OmnisPDF uses industry-standard AES encryption to protect your PDF files. This is the same encryption standard used by banks and government agencies to secure sensitive data." },
+                { q: "What encryption does PDF.it use to protect PDFs?", a: "PDF.it uses industry-standard AES encryption to protect your PDF files. This is the same encryption standard used by banks and government agencies to secure sensitive data." },
                 { q: "How do I open an encrypted PDF?", a: "Anyone who receives the encrypted PDF will need to enter the password you set in order to open it. Standard PDF readers like Adobe Acrobat, Preview, and Chrome's built-in viewer all support password-protected PDFs." },
-                { q: "Can I remove the encryption later?", a: "Yes. Use OmnisPDF's Unlock PDF tool to remove the password protection. You will need to enter the current password to decrypt the file." },
+                { q: "Can I remove the encryption later?", a: "Yes. Use PDF.it's Unlock PDF tool to remove the password protection. You will need to enter the current password to decrypt the file." },
                 { q: "Will encrypting a PDF change its content or quality?", a: "No. Encryption adds password protection without altering the content, layout, images, or quality of your PDF. The document remains identical — it just requires a password to open." },
-                { q: "Can I encrypt a PDF on my phone?", a: "Yes. OmnisPDF works in mobile browsers on iPhone and Android. Upload your PDF, set a password, and download the encrypted file — no app required." },
-                { q: "Is it safe to encrypt PDFs with OmnisPDF?", a: "Yes. Your files are processed securely and deleted from our servers after your session ends. We never store your passwords or share your documents." },
+                { q: "Can I encrypt a PDF on my phone?", a: "Yes. PDF.it works in mobile browsers on iPhone and Android. Upload your PDF, set a password, and download the encrypted file — no app required." },
+                { q: "Is it safe to encrypt PDFs with PDF.it?", a: "Yes. Your files are processed securely and deleted from our servers after your session ends. We never store your passwords or share your documents." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

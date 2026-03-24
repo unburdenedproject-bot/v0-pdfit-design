@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileTextIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Converter PDF para Texto Online (Extrair Texto de PDF) | OmnisPDF",
+  title: "Como Converter PDF para Texto Online (Extrair Texto de PDF) | PDF.it",
   description:
     "Aprenda como converter PDF para texto online e extrair todo o conteúdo de texto de qualquer PDF. Guia passo a passo — grátis, sem software.",
   keywords: "converter pdf para texto, pdf para txt, extrair texto de pdf, copiar texto de pdf, pdf para texto online",
@@ -15,10 +15,10 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Como extraio texto de um PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para a ferramenta PDF para Texto do OmnisPDF e clique em Converter. O texto será extraído automaticamente e disponibilizado para download como arquivo TXT ou para copiar direto." } },
-    { "@type": "Question", "name": "Posso extrair texto de PDF digitalizado?", "acceptedAnswer": { "@type": "Answer", "text": "PDFs digitalizados são imagens, não texto. Para extrair texto deles, use a ferramenta Scanner OCR do OmnisPDF que reconhece texto em imagens usando inteligência artificial." } },
+    { "@type": "Question", "name": "Como extraio texto de um PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para a ferramenta PDF para Texto do PDF.it e clique em Converter. O texto será extraído automaticamente e disponibilizado para download como arquivo TXT ou para copiar direto." } },
+    { "@type": "Question", "name": "Posso extrair texto de PDF digitalizado?", "acceptedAnswer": { "@type": "Answer", "text": "PDFs digitalizados são imagens, não texto. Para extrair texto deles, use a ferramenta Scanner OCR do PDF.it que reconhece texto em imagens usando inteligência artificial." } },
     { "@type": "Question", "name": "O formato do texto é mantido?", "acceptedAnswer": { "@type": "Answer", "text": "O texto extraído mantém o conteúdo mas perde a formatação visual (negrito, itálico, fontes). É texto puro. Para manter a formatação, considere converter para Word em vez de TXT." } },
-    { "@type": "Question", "name": "Posso converter PDF para texto no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em qualquer navegador móvel. Envie o PDF, converta e baixe o texto diretamente no seu celular." } }
+    { "@type": "Question", "name": "Posso converter PDF para texto no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em qualquer navegador móvel. Envie o PDF, converta e baixe o texto diretamente no seu celular." } }
   ]
 }
 
@@ -28,8 +28,8 @@ const howToSchema = {
   "name": "Como Converter PDF para Texto",
   "description": "Extraia todo o texto de um PDF em 3 passos simples.",
   "step": [
-    { "@type": "HowToStep", "name": "Envie seu PDF", "text": "Acesse a ferramenta PDF para Texto do OmnisPDF e envie seu arquivo PDF." },
-    { "@type": "HowToStep", "name": "Clique em Converter", "text": "O OmnisPDF extrai automaticamente todo o texto do PDF." },
+    { "@type": "HowToStep", "name": "Envie seu PDF", "text": "Acesse a ferramenta PDF para Texto do PDF.it e envie seu arquivo PDF." },
+    { "@type": "HowToStep", "name": "Clique em Converter", "text": "O PDF.it extrai automaticamente todo o texto do PDF." },
     { "@type": "HowToStep", "name": "Baixe ou copie o texto", "text": "Baixe como arquivo TXT ou copie o texto diretamente para usar onde precisar." }
   ]
 }
@@ -86,7 +86,7 @@ export default function ConverterPdfParaTextoPage() {
               <div className="space-y-4">
                 {[
                   { title: "Envie seu PDF", desc: "Acesse a ferramenta PDF para Texto e envie seu arquivo. Arquivos até 25MB são grátis — usuários Pro podem enviar até 200MB." },
-                  { title: "Clique em Converter", desc: "O OmnisPDF extrai automaticamente todo o texto do PDF. O processo leva apenas alguns segundos." },
+                  { title: "Clique em Converter", desc: "O PDF.it extrai automaticamente todo o texto do PDF. O processo leva apenas alguns segundos." },
                   { title: "Baixe ou copie o texto", desc: "Baixe o resultado como arquivo TXT ou copie o texto diretamente. Use em qualquer editor de texto, email ou documento." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -167,10 +167,10 @@ export default function ConverterPdfParaTextoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como extraio texto de um PDF?", a: "Envie seu PDF para a ferramenta PDF para Texto do OmnisPDF e clique em Converter. O texto será extraído automaticamente." },
-                { q: "Posso extrair texto de PDF digitalizado?", a: "PDFs digitalizados são imagens. Para extrair texto deles, use a ferramenta Scanner OCR do OmnisPDF que reconhece texto em imagens." },
+                { q: "Como extraio texto de um PDF?", a: "Envie seu PDF para a ferramenta PDF para Texto do PDF.it e clique em Converter. O texto será extraído automaticamente." },
+                { q: "Posso extrair texto de PDF digitalizado?", a: "PDFs digitalizados são imagens. Para extrair texto deles, use a ferramenta Scanner OCR do PDF.it que reconhece texto em imagens." },
                 { q: "O formato do texto é mantido?", a: "O texto extraído mantém o conteúdo mas perde a formatação visual. Para manter a formatação, considere converter para Word." },
-                { q: "Posso converter PDF para texto no celular?", a: "Sim. O OmnisPDF funciona em qualquer navegador móvel. Envie o PDF, converta e baixe o texto diretamente no seu celular." },
+                { q: "Posso converter PDF para texto no celular?", a: "Sim. O PDF.it funciona em qualquer navegador móvel. Envie o PDF, converta e baixe o texto diretamente no seu celular." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

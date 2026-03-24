@@ -6,16 +6,16 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Ro
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF para 2MB Online — Reduzir Tamanho de PDF | OmnisPDF",
+  title: "Comprimir PDF para 2MB Online — Reduzir Tamanho de PDF | PDF.it",
   description: "Comprima seu PDF para cumprir limites de 2MB. Perfeito para portais de upload, formularios e plataformas com limites de tamanho.",
   alternates: { languages: { en: "/compress-pdf-to-2mb", es: "/es/comprimir-pdf-a-2mb", pt: "/br/comprimir-pdf-para-2mb" } },
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-  { "@type": "Question", "name": "Como comprimo um PDF para limite de 2MB?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF ao OmnisPDF e clique em Comprimir. A compressao recomendada otimiza imagens e estrutura interna para reduzir o tamanho do arquivo significativamente." } },
+  { "@type": "Question", "name": "Como comprimo um PDF para limite de 2MB?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF ao PDF.it e clique em Comprimir. A compressao recomendada otimiza imagens e estrutura interna para reduzir o tamanho do arquivo significativamente." } },
   { "@type": "Question", "name": "Meu PDF ficara abaixo de 2MB?", "acceptedAnswer": { "@type": "Answer", "text": "A maioria dos documentos de ate 20-30 paginas com texto e imagens moderadas ficam abaixo de 2MB apos compressao. Documentos com muitas imagens de alta resolucao podem precisar de compressao extrema ou ser divididos." } },
   { "@type": "Question", "name": "A qualidade sera preservada?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. A compressao recomendada preserva a qualidade visual. O texto permanece nitido e as imagens mantem bom detalhe." } },
-  { "@type": "Question", "name": "Posso comprimir pelo celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em qualquer navegador movel no iPhone ou Android." } },
+  { "@type": "Question", "name": "Posso comprimir pelo celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em qualquer navegador movel no iPhone ou Android." } },
   { "@type": "Question", "name": "Quais plataformas exigem limite de 2MB?", "acceptedAnswer": { "@type": "Answer", "text": "Portais governamentais, sistemas de admissao, plataformas de emprego e formularios online frequentemente tem limites de 2MB." } },
   { "@type": "Question", "name": "O que faco se continuar acima de 2MB?", "acceptedAnswer": { "@type": "Answer", "text": "Tente a compressao extrema ou divida o PDF em secoes menores. Voce tambem pode achatar o PDF ou remover paginas desnecessarias." } }
 ] }
@@ -44,7 +44,7 @@ export default function ComprimirPDFPara2MBPagePt() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que Comprimir um PDF para Limites de 2MB?</h2>
-            <p className="text-lg text-slate-600 mb-8">O limite de 2MB e muito comum em portais online. Formularios de candidatura, processos de admissao, sistemas governamentais e plataformas de documentos frequentemente exigem arquivos nesse tamanho. O OmnisPDF aplica compressao inteligente para ajuda-lo a cumprir esses requisitos preservando a qualidade.</p>
+            <p className="text-lg text-slate-600 mb-8">O limite de 2MB e muito comum em portais online. Formularios de candidatura, processos de admissao, sistemas governamentais e plataformas de documentos frequentemente exigem arquivos nesse tamanho. O PDF.it aplica compressao inteligente para ajuda-lo a cumprir esses requisitos preservando a qualidade.</p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Compressao inteligente que preserva qualidade visual</li>
               <li>&#10003; Ideal para candidaturas, formularios e documentos oficiais</li>
@@ -70,7 +70,7 @@ export default function ComprimirPDFPara2MBPagePt() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Comprimir um PDF para Limites de 2MB</h2>
             <div className="space-y-4">
-              {["Envie ou arraste seu PDF ao OmnisPDF.", "Clique em Comprimir PDF — a compressao inteligente e aplicada automaticamente.", "Baixe seu PDF menor. Se continuar acima de 2MB, tente dividir o arquivo ou usar compressao extrema."].map((step, i) => (
+              {["Envie ou arraste seu PDF ao PDF.it.", "Clique em Comprimir PDF — a compressao inteligente e aplicada automaticamente.", "Baixe seu PDF menor. Se continuar acima de 2MB, tente dividir o arquivo ou usar compressao extrema."].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200"><div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div><p className="text-slate-700 pt-1">{step}</p></div>
               ))}
             </div>
@@ -106,10 +106,10 @@ export default function ComprimirPDFPara2MBPagePt() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como comprimo um PDF para limite de 2MB?", a: "Envie seu PDF ao OmnisPDF e clique em Comprimir. A compressao inteligente reduz significativamente o tamanho." },
+                { q: "Como comprimo um PDF para limite de 2MB?", a: "Envie seu PDF ao PDF.it e clique em Comprimir. A compressao inteligente reduz significativamente o tamanho." },
                 { q: "Meu PDF ficara abaixo de 2MB?", a: "A maioria dos documentos de ate 20-30 paginas com texto ficam abaixo de 2MB. Documentos com muitas imagens podem precisar de compressao extrema." },
                 { q: "A qualidade sera preservada?", a: "Sim. O texto permanece nitido e as imagens mantem bom detalhe com a compressao recomendada." },
-                { q: "Posso comprimir pelo celular?", a: "Sim. O OmnisPDF funciona em qualquer navegador movel." },
+                { q: "Posso comprimir pelo celular?", a: "Sim. O PDF.it funciona em qualquer navegador movel." },
                 { q: "Quais plataformas exigem limite de 2MB?", a: "Portais governamentais, sistemas de admissao, plataformas de emprego e formularios online." },
                 { q: "O que faco se continuar acima de 2MB?", a: "Tente compressao extrema ou divida o PDF em secoes menores. Achate o PDF ou remova paginas desnecessarias." },
               ].map((faq, i) => (

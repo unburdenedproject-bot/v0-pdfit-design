@@ -7,9 +7,9 @@ import { Unlock, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Unlock PDF Online — Remove PDF Password Protection | OmnisPDF",
+  title: "Unlock PDF Online — Remove PDF Password Protection | PDF.it",
   description:
-    "Unlock a password-protected PDF with OmnisPDF. Remove PDF password security (with permission) and download an unlocked PDF in seconds.",
+    "Unlock a password-protected PDF with PDF.it. Remove PDF password security (with permission) and download an unlocked PDF in seconds.",
 }
 
 const faqSchema = {
@@ -18,23 +18,23 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Can OmnisPDF remove a PDF password without knowing it?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF requires the correct password. It can't recover or bypass unknown passwords." }
+      "name": "Can PDF.it remove a PDF password without knowing it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it requires the correct password. It can't recover or bypass unknown passwords." }
     },
     {
       "@type": "Question",
       "name": "Is it legal to unlock a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "You should only unlock PDFs you own or have explicit permission to unlock. OmnisPDF is designed for legitimate use cases." }
+      "acceptedAnswer": { "@type": "Answer", "text": "You should only unlock PDFs you own or have explicit permission to unlock. PDF.it is designed for legitimate use cases." }
     },
     {
       "@type": "Question",
       "name": "Can I re-protect my PDF after unlocking it?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use OmnisPDF's Protect PDF tool to add a new password to any PDF whenever you need to." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use PDF.it's Protect PDF tool to add a new password to any PDF whenever you need to." }
     },
     {
       "@type": "Question",
       "name": "Can I unlock a PDF on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in mobile browsers — upload, enter password, unlock, and download." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in mobile browsers — upload, enter password, unlock, and download." }
     },
     {
       "@type": "Question",
@@ -68,7 +68,7 @@ export default function UnlockPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Unlock a PDF (Remove Password Protection)</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Use OmnisPDF to unlock a password-protected PDF when you have the password. Remove restrictions and download an unlocked PDF for editing, printing, or sharing.
+                Use PDF.it to unlock a password-protected PDF when you have the password. Remove restrictions and download an unlocked PDF for editing, printing, or sharing.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Instant Unlocking</span></div>
@@ -87,7 +87,7 @@ export default function UnlockPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use OmnisPDF's Unlock PDF tool to remove password protection from a PDF when you know the password. Upload the file, enter the password, and download an unlocked PDF you can edit, print, merge, or compress.
+              Use PDF.it's Unlock PDF tool to remove password protection from a PDF when you know the password. Upload the file, enter the password, and download an unlocked PDF you can edit, print, merge, or compress.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Unlock PDF files you own or have permission to edit</li>
@@ -105,7 +105,7 @@ export default function UnlockPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Remove PDF Password (With Permission)</h2>
               <p className="text-slate-600">
-                If you have the correct password, OmnisPDF can decrypt the PDF and save a new version without the password requirement. This tool is designed for files you own or have legitimate access to.
+                If you have the correct password, PDF.it can decrypt the PDF and save a new version without the password requirement. This tool is designed for files you own or have legitimate access to.
               </p>
             </div>
             <div>
@@ -129,7 +129,7 @@ export default function UnlockPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Unlock a PDF</h2>
             <div className="space-y-4">
               {[
-                "Upload your password-protected PDF into OmnisPDF.",
+                "Upload your password-protected PDF into PDF.it.",
                 "Enter the correct password.",
                 "Click Unlock PDF.",
                 "Download the unlocked PDF.",
@@ -176,20 +176,20 @@ export default function UnlockPDFPage() {
             <div className="space-y-6">
               {[
                 {
-                  q: "Can OmnisPDF remove a PDF password without knowing it?",
-                  a: "No. OmnisPDF requires the correct password. It can't recover or bypass unknown passwords.",
+                  q: "Can PDF.it remove a PDF password without knowing it?",
+                  a: "No. PDF.it requires the correct password. It can't recover or bypass unknown passwords.",
                 },
                 {
                   q: "Is it legal to unlock a PDF?",
-                  a: "You should only unlock PDFs you own or have explicit permission to unlock. OmnisPDF is designed for legitimate use cases.",
+                  a: "You should only unlock PDFs you own or have explicit permission to unlock. PDF.it is designed for legitimate use cases.",
                 },
                 {
                   q: "Can I re-protect my PDF after unlocking it?",
-                  a: "Yes. Use OmnisPDF's Protect PDF tool to add a new password to any PDF whenever you need to.",
+                  a: "Yes. Use PDF.it's Protect PDF tool to add a new password to any PDF whenever you need to.",
                 },
                 {
                   q: "Can I unlock a PDF on my phone?",
-                  a: "Yes. OmnisPDF works in mobile browsers — upload, enter password, unlock, and download.",
+                  a: "Yes. PDF.it works in mobile browsers — upload, enter password, unlock, and download.",
                 },
                 {
                   q: "Is it safe to upload a protected PDF?",

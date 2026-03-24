@@ -5,7 +5,7 @@ import Link from "next/link"
 import { RotateCw, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Fix an Upside-Down PDF (Rotate 180° Instantly) | OmnisPDF",
+  title: "Fix an Upside-Down PDF (Rotate 180° Instantly) | PDF.it",
   description:
     "Learn how to fix an upside-down PDF by rotating it 180°. Common with scanned documents — fix the orientation instantly online, no software needed.",
   keywords: "fix upside down pdf, pdf upside down, rotate pdf 180, flip pdf right side up",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I fix an upside-down PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload the PDF to OmnisPDF's Rotate PDF tool, select the upside-down pages, choose 180° rotation, and download the corrected file. The fix takes seconds and is free for files up to 25MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload the PDF to PDF.it's Rotate PDF tool, select the upside-down pages, choose 180° rotation, and download the corrected file. The fix takes seconds and is free for files up to 25MB." }
     },
     {
       "@type": "Question",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I fix just the upside-down pages without affecting the rest?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF lets you select individual pages to rotate. You can fix only the upside-down pages while leaving correctly oriented pages untouched." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it lets you select individual pages to rotate. You can fix only the upside-down pages while leaving correctly oriented pages untouched." }
     },
     {
       "@type": "Question",
@@ -38,12 +38,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I fix an upside-down PDF on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in any mobile browser. Open omnispdf.com/rotate-pdf in Safari or Chrome, upload the PDF, rotate 180°, and download the fixed version directly on your phone." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in any mobile browser. Open pdf.it.com/rotate-pdf in Safari or Chrome, upload the PDF, rotate 180°, and download the fixed version directly on your phone." }
     },
     {
       "@type": "Question",
       "name": "How do I know if my PDF is upside down or just sideways?",
-      "acceptedAnswer": { "@type": "Answer", "text": "If the text reads bottom-to-top (completely inverted), it is upside down and needs a 180° rotation. If the text reads from the side, it is sideways and needs a 90° rotation. OmnisPDF's preview shows you the current orientation before you apply the fix." }
+      "acceptedAnswer": { "@type": "Answer", "text": "If the text reads bottom-to-top (completely inverted), it is upside down and needs a 180° rotation. If the text reads from the side, it is sideways and needs a 90° rotation. PDF.it's preview shows you the current orientation before you apply the fix." }
     }
   ]
 }
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Fix an Upside-Down PDF",
-  "description": "Rotate an upside-down PDF 180° in 3 simple steps using OmnisPDF.",
+  "description": "Rotate an upside-down PDF 180° in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Upload the upside-down PDF",
-      "text": "Go to OmnisPDF's Rotate PDF tool and upload the file with upside-down pages by clicking or dragging it into the upload area."
+      "text": "Go to PDF.it's Rotate PDF tool and upload the file with upside-down pages by clicking or dragging it into the upload area."
     },
     {
       "@type": "HowToStep",
@@ -214,9 +214,9 @@ export default function FixUpsideDownPDFPage() {
                 One of the most annoying scenarios is when a double-sided scan produces alternating orientations — odd pages are correct but even pages are upside down, or vice versa. Here is how to handle it:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Select only the upside-down pages.</strong> In OmnisPDF, you can click individual page thumbnails to select just the inverted pages. Then apply 180° rotation only to those pages.</li>
+                <li>&#10003; <strong>Select only the upside-down pages.</strong> In PDF.it, you can click individual page thumbnails to select just the inverted pages. Then apply 180° rotation only to those pages.</li>
                 <li>&#10003; <strong>Check the pattern.</strong> With ADF scanners, the problem is usually consistent — every other page is flipped. Select all even-numbered pages (or all odd-numbered pages, whichever are wrong) and rotate them together.</li>
-                <li>&#10003; <strong>Re-scan if possible.</strong> If you have access to the original documents and scanner, it may be faster to re-scan with the correct duplex settings. But if the originals are not available, OmnisPDF fixes it instantly.</li>
+                <li>&#10003; <strong>Re-scan if possible.</strong> If you have access to the original documents and scanner, it may be faster to re-scan with the correct duplex settings. But if the originals are not available, PDF.it fixes it instantly.</li>
                 <li>&#10003; <strong>Run OCR after fixing.</strong> If the scanned document needs searchable text, fix the rotation first, then use <Link href="/ocr-scanner" className="text-orange-600 hover:underline">OCR Scanner</Link>. OCR works much better when pages are correctly oriented.</li>
               </ul>
             </section>
@@ -282,12 +282,12 @@ export default function FixUpsideDownPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I fix an upside-down PDF?", a: "Upload the PDF to OmnisPDF's Rotate PDF tool, select the upside-down pages, choose 180° rotation, and download the corrected file. The fix takes seconds and is free for files up to 25MB." },
+                { q: "How do I fix an upside-down PDF?", a: "Upload the PDF to PDF.it's Rotate PDF tool, select the upside-down pages, choose 180° rotation, and download the corrected file. The fix takes seconds and is free for files up to 25MB." },
                 { q: "Why is my PDF upside down?", a: "This usually happens when a document is placed face-down or at the wrong angle in a scanner. It can also occur with double-sided scanning when the back pages get flipped, or when PDF export software has a rotation bug." },
-                { q: "Can I fix just the upside-down pages without affecting the rest?", a: "Yes. OmnisPDF lets you select individual pages to rotate. You can fix only the upside-down pages while leaving correctly oriented pages untouched." },
+                { q: "Can I fix just the upside-down pages without affecting the rest?", a: "Yes. PDF.it lets you select individual pages to rotate. You can fix only the upside-down pages while leaving correctly oriented pages untouched." },
                 { q: "Will fixing the rotation affect the PDF quality?", a: "No. Rotating a PDF only changes the orientation metadata — it does not re-render, compress, or modify the actual content. Text, images, and formatting remain identical." },
-                { q: "Can I fix an upside-down PDF on my phone?", a: "Yes. OmnisPDF works in any mobile browser. Open omnispdf.com/rotate-pdf in Safari or Chrome, upload the PDF, rotate 180°, and download the fixed version directly on your phone." },
-                { q: "How do I know if my PDF is upside down or just sideways?", a: "If the text reads bottom-to-top (completely inverted), it is upside down and needs a 180° rotation. If the text reads from the side, it is sideways and needs a 90° rotation. OmnisPDF's preview shows you the current orientation before you apply the fix." },
+                { q: "Can I fix an upside-down PDF on my phone?", a: "Yes. PDF.it works in any mobile browser. Open pdf.it.com/rotate-pdf in Safari or Chrome, upload the PDF, rotate 180°, and download the fixed version directly on your phone." },
+                { q: "How do I know if my PDF is upside down or just sideways?", a: "If the text reads bottom-to-top (completely inverted), it is upside down and needs a 180° rotation. If the text reads from the side, it is sideways and needs a 90° rotation. PDF.it's preview shows you the current orientation before you apply the fix." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

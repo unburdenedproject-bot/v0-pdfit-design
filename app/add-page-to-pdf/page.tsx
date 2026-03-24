@@ -6,9 +6,9 @@ import { Merge, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Add Pages to PDF Online — Insert Pages into a PDF | OmnisPDF",
+  title: "Add Pages to PDF Online — Insert Pages into a PDF | PDF.it",
   description:
-    "Add pages to an existing PDF with OmnisPDF. Upload multiple PDFs, combine them into one file, and insert pages exactly where you need them — fast, free, and browser-based.",
+    "Add pages to an existing PDF with PDF.it. Upload multiple PDFs, combine them into one file, and insert pages exactly where you need them — fast, free, and browser-based.",
 }
 
 const faqSchema = {
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I add pages to an existing PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your original PDF first, then upload the PDF containing the pages you want to add. OmnisPDF merges them in order — your original document followed by the new pages. Click Merge and download the combined file." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your original PDF first, then upload the PDF containing the pages you want to add. PDF.it merges them in order — your original document followed by the new pages. Click Merge and download the combined file." }
     },
     {
       "@type": "Question",
@@ -33,12 +33,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I combine pages from different PDF files?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Upload as many PDFs as you need — OmnisPDF merges all of them into one document in the order you arrange them." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Upload as many PDFs as you need — PDF.it merges all of them into one document in the order you arrange them." }
     },
     {
       "@type": "Question",
       "name": "Can I add pages to a PDF on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in mobile browsers — upload your PDFs, merge them, and download the result on iPhone or Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in mobile browsers — upload your PDFs, merge them, and download the result on iPhone or Android." }
     },
     {
       "@type": "Question",
@@ -91,7 +91,7 @@ export default function AddPageToPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              To add pages, upload the PDFs you want to combine. OmnisPDF merges them in order — place the original first, then the pages you want to add. The result is a single PDF with all pages included, ready to download, share, or print.
+              To add pages, upload the PDFs you want to combine. PDF.it merges them in order — place the original first, then the pages you want to add. The result is a single PDF with all pages included, ready to download, share, or print.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Add pages from one PDF to another</li>
@@ -109,13 +109,13 @@ export default function AddPageToPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Append Appendices and Attachments</h2>
               <p className="text-slate-600">
-                Need to add supporting documents to a report or application? Upload your main PDF first, then the appendix or attachment. OmnisPDF combines them into one clean file — perfect for submissions, proposals, and grant applications.
+                Need to add supporting documents to a report or application? Upload your main PDF first, then the appendix or attachment. PDF.it combines them into one clean file — perfect for submissions, proposals, and grant applications.
               </p>
             </div>
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Insert a Cover Page or Title Page</h2>
               <p className="text-slate-600">
-                Add a professional cover page to any PDF. Upload the cover page first, then the main document. OmnisPDF merges them in sequence so your cover page appears at the front.
+                Add a professional cover page to any PDF. Upload the cover page first, then the main document. PDF.it merges them in sequence so your cover page appears at the front.
               </p>
             </div>
             <div>
@@ -133,7 +133,7 @@ export default function AddPageToPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Add Pages to a PDF</h2>
             <div className="space-y-4">
               {[
-                "Upload your original PDF to OmnisPDF.",
+                "Upload your original PDF to PDF.it.",
                 "Upload the PDF containing the pages you want to add.",
                 "Arrange the files in the correct order.",
                 "Click Merge PDFs and download your updated document.",
@@ -181,7 +181,7 @@ export default function AddPageToPDFPage() {
               {[
                 {
                   q: "How do I add pages to an existing PDF?",
-                  a: "Upload your original PDF first, then upload the PDF containing the pages you want to add. OmnisPDF merges them in order — your original document followed by the new pages. Click Merge and download the combined file.",
+                  a: "Upload your original PDF first, then upload the PDF containing the pages you want to add. PDF.it merges them in order — your original document followed by the new pages. Click Merge and download the combined file.",
                 },
                 {
                   q: "Can I insert pages at a specific position in my PDF?",
@@ -193,11 +193,11 @@ export default function AddPageToPDFPage() {
                 },
                 {
                   q: "Can I combine pages from different PDF files?",
-                  a: "Yes. Upload as many PDFs as you need — OmnisPDF merges all of them into one document in the order you arrange them.",
+                  a: "Yes. Upload as many PDFs as you need — PDF.it merges all of them into one document in the order you arrange them.",
                 },
                 {
                   q: "Can I add pages to a PDF on my phone?",
-                  a: "Yes. OmnisPDF works in mobile browsers — upload your PDFs, merge them, and download the result on iPhone or Android.",
+                  a: "Yes. PDF.it works in mobile browsers — upload your PDFs, merge them, and download the result on iPhone or Android.",
                 },
                 {
                   q: "Is it safe to upload my PDFs?",

@@ -6,9 +6,9 @@ import { KeyRound, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Eliminar Contraseña de PDF — Quita la Contraseña de tu PDF | OmnisPDF",
+  title: "Eliminar Contraseña de PDF — Quita la Contraseña de tu PDF | PDF.it",
   description:
-    "Elimina la contraseña de un PDF con OmnisPDF. Quita la protección con contraseña de archivos PDF propios o autorizados y descarga un PDF sin contraseña en segundos.",
+    "Elimina la contraseña de un PDF con PDF.it. Quita la protección con contraseña de archivos PDF propios o autorizados y descarga un PDF sin contraseña en segundos.",
   alternates: {
     languages: {
       en: "/unlock-pdf",
@@ -24,7 +24,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo eliminar la contraseña de un PDF sin conocerla?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF requiere que ingreses la contraseña correcta del PDF. No puede recuperar, adivinar ni omitir contraseñas desconocidas." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it requiere que ingreses la contraseña correcta del PDF. No puede recuperar, adivinar ni omitir contraseñas desconocidas." }
     },
     {
       "@type": "Question",
@@ -39,17 +39,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo agregar una nueva contraseña después de eliminarla?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Usa la herramienta Proteger PDF de OmnisPDF para agregar una nueva contraseña en cualquier momento." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Usa la herramienta Proteger PDF de PDF.it para agregar una nueva contraseña en cualquier momento." }
     },
     {
       "@type": "Question",
-      "name": "¿Es seguro subir mi PDF protegido a OmnisPDF?",
+      "name": "¿Es seguro subir mi PDF protegido a PDF.it?",
       "acceptedAnswer": { "@type": "Answer", "text": "Sí. Todas las transferencias están encriptadas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." }
     },
     {
       "@type": "Question",
       "name": "¿Funciona en celulares y tablets?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en cualquier navegador moderno — sube el PDF, ingresa la contraseña y descarga el archivo sin contraseña desde tu celular, tablet o computadora." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en cualquier navegador moderno — sube el PDF, ingresa la contraseña y descarga el archivo sin contraseña desde tu celular, tablet o computadora." }
     }
   ]
 }
@@ -73,7 +73,7 @@ export default function EliminarContrasenaDePDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Eliminar Contraseña de PDF</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Quita la contraseña de tu PDF con OmnisPDF. Si conoces la contraseña, elimínala para obtener un PDF de libre acceso que puedes editar, imprimir y compartir sin restricciones.
+                Quita la contraseña de tu PDF con PDF.it. Si conoces la contraseña, elimínala para obtener un PDF de libre acceso que puedes editar, imprimir y compartir sin restricciones.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Eliminación Instantánea</span></div>
@@ -97,7 +97,7 @@ export default function EliminarContrasenaDePDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Usa la herramienta Eliminar Contraseña de PDF de OmnisPDF para quitar la protección con contraseña de tus archivos PDF. Perfecta para documentos propios que ya no necesitan protección, PDFs recibidos con contraseña conocida que quieres simplificar, y archivos que necesitas archivar sin restricciones de acceso.
+              Usa la herramienta Eliminar Contraseña de PDF de PDF.it para quitar la protección con contraseña de tus archivos PDF. Perfecta para documentos propios que ya no necesitan protección, PDFs recibidos con contraseña conocida que quieres simplificar, y archivos que necesitas archivar sin restricciones de acceso.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Elimina la contraseña de PDFs cuando la conoces</li>
@@ -115,7 +115,7 @@ export default function EliminarContrasenaDePDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Elimina la Contraseña de Documentos Propios</h2>
               <p className="text-slate-600">
-                Si protegiste un PDF con contraseña pero ahora necesitas acceder a él sin restricciones, simplemente ingresa la contraseña original y OmnisPDF genera una copia limpia sin protección.
+                Si protegiste un PDF con contraseña pero ahora necesitas acceder a él sin restricciones, simplemente ingresa la contraseña original y PDF.it genera una copia limpia sin protección.
               </p>
             </div>
             <div>
@@ -139,7 +139,7 @@ export default function EliminarContrasenaDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Eliminar la Contraseña de un PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube tu PDF protegido con contraseña a OmnisPDF.",
+                "Sube tu PDF protegido con contraseña a PDF.it.",
                 "Ingresa la contraseña correcta del PDF.",
                 "Haz clic en Eliminar Contraseña y descarga tu PDF sin restricciones.",
               ].map((step, i) => (
@@ -190,7 +190,7 @@ export default function EliminarContrasenaDePDFPage() {
               {[
                 {
                   q: "¿Puedo eliminar la contraseña de un PDF sin conocerla?",
-                  a: "No. OmnisPDF requiere que ingreses la contraseña correcta del PDF. No puede recuperar, adivinar ni omitir contraseñas desconocidas.",
+                  a: "No. PDF.it requiere que ingreses la contraseña correcta del PDF. No puede recuperar, adivinar ni omitir contraseñas desconocidas.",
                 },
                 {
                   q: "¿Qué pasa con el contenido del PDF al eliminar la contraseña?",
@@ -202,15 +202,15 @@ export default function EliminarContrasenaDePDFPage() {
                 },
                 {
                   q: "¿Puedo agregar una nueva contraseña después de eliminarla?",
-                  a: "Sí. Usa la herramienta Proteger PDF de OmnisPDF para agregar una nueva contraseña en cualquier momento.",
+                  a: "Sí. Usa la herramienta Proteger PDF de PDF.it para agregar una nueva contraseña en cualquier momento.",
                 },
                 {
-                  q: "¿Es seguro subir mi PDF protegido a OmnisPDF?",
+                  q: "¿Es seguro subir mi PDF protegido a PDF.it?",
                   a: "Sí. Todas las transferencias están encriptadas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos.",
                 },
                 {
                   q: "¿Funciona en celulares y tablets?",
-                  a: "Sí. OmnisPDF funciona en cualquier navegador moderno — sube el PDF, ingresa la contraseña y descarga el archivo sin contraseña desde tu celular, tablet o computadora.",
+                  a: "Sí. PDF.it funciona en cualquier navegador moderno — sube el PDF, ingresa la contraseña y descarga el archivo sin contraseña desde tu celular, tablet o computadora.",
                 },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

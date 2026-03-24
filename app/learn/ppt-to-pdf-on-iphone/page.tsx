@@ -5,9 +5,9 @@ import Link from "next/link"
 import { Smartphone, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Convert PPT to PDF on iPhone (Fast Method) | OmnisPDF",
+  title: "Convert PPT to PDF on iPhone (Fast Method) | PDF.it",
   description:
-    "Learn how to convert PowerPoint to PDF on iPhone using Safari and OmnisPDF. No app needed — open your PPTX from email or Files, convert online, and save or share the PDF.",
+    "Learn how to convert PowerPoint to PDF on iPhone using Safari and PDF.it. No app needed — open your PPTX from email or Files, convert online, and save or share the PDF.",
   keywords: "ppt to pdf iphone, convert powerpoint to pdf on iphone, pptx to pdf iphone, powerpoint pdf ios, convert ppt to pdf mobile",
 }
 
@@ -18,12 +18,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I convert PowerPoint to PDF on my iPhone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open Safari on your iPhone, go to OmnisPDF's PowerPoint to PDF tool, upload your PPTX file, and download the converted PDF. No app installation needed — everything works in the browser." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open Safari on your iPhone, go to PDF.it's PowerPoint to PDF tool, upload your PPTX file, and download the converted PDF. No app installation needed — everything works in the browser." }
     },
     {
       "@type": "Question",
       "name": "Do I need to install an app to convert PPT to PDF on iPhone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF works directly in Safari or any mobile browser. You don't need to download any app from the App Store. Just visit the website, upload your file, and convert." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it works directly in Safari or any mobile browser. You don't need to download any app from the App Store. Just visit the website, upload your file, and convert." }
     },
     {
       "@type": "Question",
@@ -56,8 +56,8 @@ const howToSchema = {
   "step": [
     {
       "@type": "HowToStep",
-      "name": "Open OmnisPDF in Safari",
-      "text": "Open Safari on your iPhone and go to omnispdf.com/powerpoint-to-pdf. The tool works on any iPhone running iOS 15 or later."
+      "name": "Open PDF.it in Safari",
+      "text": "Open Safari on your iPhone and go to pdf.it.com/powerpoint-to-pdf. The tool works on any iPhone running iOS 15 or later."
     },
     {
       "@type": "HowToStep",
@@ -154,8 +154,8 @@ export default function PPTToPDFOnIPhonePage() {
               <div className="space-y-4">
                 {[
                   {
-                    title: "Open Safari and go to OmnisPDF",
-                    desc: "Open Safari (or Chrome) on your iPhone and visit omnispdf.com/powerpoint-to-pdf. The page is fully mobile-optimized — everything works on your phone screen.",
+                    title: "Open Safari and go to PDF.it",
+                    desc: "Open Safari (or Chrome) on your iPhone and visit pdf.it.com/powerpoint-to-pdf. The page is fully mobile-optimized — everything works on your phone screen.",
                   },
                   {
                     title: "Upload your PowerPoint file",
@@ -189,25 +189,25 @@ export default function PPTToPDFOnIPhonePage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">From email (Gmail, Outlook, Apple Mail)</h3>
                   <p className="text-slate-600">
-                    Open the email with the attachment. Tap the PPTX file to preview it, then tap the <strong>share button</strong> and select <strong>"Save to Files"</strong>. Choose a folder (Downloads is fine). Now you can upload it to OmnisPDF.
+                    Open the email with the attachment. Tap the PPTX file to preview it, then tap the <strong>share button</strong> and select <strong>"Save to Files"</strong>. Choose a folder (Downloads is fine). Now you can upload it to PDF.it.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">From iCloud Drive</h3>
                   <p className="text-slate-600">
-                    If the file is on your iCloud Drive, it will appear directly when you tap the upload area on OmnisPDF. Select "iCloud Drive" in the file picker and navigate to your presentation.
+                    If the file is on your iCloud Drive, it will appear directly when you tap the upload area on PDF.it. Select "iCloud Drive" in the file picker and navigate to your presentation.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">From Google Drive or Dropbox</h3>
                   <p className="text-slate-600">
-                    If you have the Google Drive or Dropbox app installed, they appear as locations in the iPhone Files app. When OmnisPDF asks you to pick a file, browse to your cloud storage and select the PPTX.
+                    If you have the Google Drive or Dropbox app installed, they appear as locations in the iPhone Files app. When PDF.it asks you to pick a file, browse to your cloud storage and select the PPTX.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">From WhatsApp or iMessage</h3>
                   <p className="text-slate-600">
-                    If someone sent the file through a messaging app, tap and hold the file, then select <strong>"Share"</strong> and <strong>"Save to Files."</strong> Then upload from Files to OmnisPDF.
+                    If someone sent the file through a messaging app, tap and hold the file, then select <strong>"Share"</strong> and <strong>"Save to Files."</strong> Then upload from Files to PDF.it.
                   </p>
                 </div>
               </div>
@@ -234,7 +234,7 @@ export default function PPTToPDFOnIPhonePage() {
                 <li>&#10003; <strong>Use Wi-Fi for large files.</strong> If your PPTX is over 10MB, Wi-Fi will be much faster than cellular data.</li>
                 <li>&#10003; <strong>Check the PDF before sending.</strong> Open it in the Files app and scroll through the pages to make sure everything looks right.</li>
                 <li>&#10003; <strong>Compress if needed.</strong> If the PDF is too large for email (over 20MB), use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> — it also works on your iPhone.</li>
-                <li>&#10003; <strong>Bookmark OmnisPDF.</strong> Add omnispdf.com to your home screen for instant access: in Safari, tap the share button and select "Add to Home Screen."</li>
+                <li>&#10003; <strong>Bookmark PDF.it.</strong> Add pdf.it.com to your home screen for instant access: in Safari, tap the share button and select "Add to Home Screen."</li>
               </ul>
             </section>
 
@@ -242,7 +242,7 @@ export default function PPTToPDFOnIPhonePage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Other Conversions You Can Do on iPhone</h2>
               <p className="text-slate-600 mb-4">
-                OmnisPDF's entire suite works on your phone. Here are the most popular mobile conversions:
+                PDF.it's entire suite works on your phone. Here are the most popular mobile conversions:
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <Link href="/word-to-pdf" className="text-orange-600 hover:underline">Word to PDF</Link> — Convert DOCX files to PDF on your phone.</li>
@@ -299,8 +299,8 @@ export default function PPTToPDFOnIPhonePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "Can I convert PowerPoint to PDF on my iPhone?", a: "Yes. Open Safari on your iPhone, go to OmnisPDF's PowerPoint to PDF tool, upload your PPTX file, and download the converted PDF. No app installation needed — everything works in the browser." },
-                { q: "Do I need to install an app to convert PPT to PDF on iPhone?", a: "No. OmnisPDF works directly in Safari or any mobile browser. You don't need to download any app from the App Store. Just visit the website, upload your file, and convert." },
+                { q: "Can I convert PowerPoint to PDF on my iPhone?", a: "Yes. Open Safari on your iPhone, go to PDF.it's PowerPoint to PDF tool, upload your PPTX file, and download the converted PDF. No app installation needed — everything works in the browser." },
+                { q: "Do I need to install an app to convert PPT to PDF on iPhone?", a: "No. PDF.it works directly in Safari or any mobile browser. You don't need to download any app from the App Store. Just visit the website, upload your file, and convert." },
                 { q: "How do I open a PPTX file on iPhone?", a: "You can open PPTX files from the Files app, email attachments, iCloud Drive, Google Drive, or Dropbox. If you receive a PPTX via email, tap the attachment to download it, then use the share button to save it to Files." },
                 { q: "Where does the converted PDF save on iPhone?", a: "When you tap the download button in Safari, the PDF saves to your Downloads folder in the Files app. You can also tap the downloaded file notification in Safari's toolbar to open it immediately." },
                 { q: "Can I share the PDF directly from my iPhone after converting?", a: "Yes. After downloading the PDF, open it from the Files app and tap the share button. You can send it via email, iMessage, AirDrop, WhatsApp, Slack, or any other app that accepts file sharing." },

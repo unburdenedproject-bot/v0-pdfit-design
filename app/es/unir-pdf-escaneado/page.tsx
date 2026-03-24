@@ -6,9 +6,9 @@ import { Merge, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Unir PDF Escaneado — Combina Documentos Escaneados | OmnisPDF",
+  title: "Unir PDF Escaneado — Combina Documentos Escaneados | PDF.it",
   description:
-    "Combina múltiples PDFs escaneados en un solo documento con OmnisPDF. Une páginas escaneadas de diferentes fuentes en un archivo limpio — rápido, gratis y desde tu navegador.",
+    "Combina múltiples PDFs escaneados en un solo documento con PDF.it. Une páginas escaneadas de diferentes fuentes en un archivo limpio — rápido, gratis y desde tu navegador.",
   alternates: {
     languages: {
       en: "/merge-scanned-pdf",
@@ -24,17 +24,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo uno PDFs escaneados en un solo documento?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tus archivos PDF escaneados a OmnisPDF, ordénalos y haz clic en Unir. OmnisPDF combina las páginas escaneadas en un solo documento sin alterar la calidad de imagen." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tus archivos PDF escaneados a PDF.it, ordénalos y haz clic en Unir. PDF.it combina las páginas escaneadas en un solo documento sin alterar la calidad de imagen." }
     },
     {
       "@type": "Question",
       "name": "¿Unir PDFs escaneados reduce la calidad de imagen?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF une tus páginas escaneadas sin recomprimirlas. Cada página conserva la calidad y resolución original del escaneo." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it une tus páginas escaneadas sin recomprimirlas. Cada página conserva la calidad y resolución original del escaneo." }
     },
     {
       "@type": "Question",
       "name": "¿Puedo aplicar OCR después de unir PDFs escaneados?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Después de unir tus PDFs escaneados, usa la herramienta Escáner OCR de OmnisPDF para hacer el texto buscable y seleccionable. El OCR está disponible para usuarios Pro." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Después de unir tus PDFs escaneados, usa la herramienta Escáner OCR de PDF.it para hacer el texto buscable y seleccionable. El OCR está disponible para usuarios Pro." }
     },
     {
       "@type": "Question",
@@ -49,7 +49,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Funciona con escaneos de la cámara del teléfono?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona con PDFs escaneados de cualquier fuente — cámaras de teléfono, escáneres planos, impresoras multifunción o apps de escaneo como CamScanner y Adobe Scan." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona con PDFs escaneados de cualquier fuente — cámaras de teléfono, escáneres planos, impresoras multifunción o apps de escaneo como CamScanner y Adobe Scan." }
     }
   ]
 }
@@ -97,7 +97,7 @@ export default function UnirPDFEscaneadoPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Los documentos escaneados frecuentemente terminan como archivos PDF separados — uno por página, uno por lote o uno por sesión de escaneo. OmnisPDF te permite unir todos tus PDFs escaneados en un solo archivo, manteniendo cada página en su calidad original. Ideal para combinar contratos escaneados, recibos, identificaciones y documentos archivados.
+              Los documentos escaneados frecuentemente terminan como archivos PDF separados — uno por página, uno por lote o uno por sesión de escaneo. PDF.it te permite unir todos tus PDFs escaneados en un solo archivo, manteniendo cada página en su calidad original. Ideal para combinar contratos escaneados, recibos, identificaciones y documentos archivados.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Une PDFs escaneados sin pérdida de calidad</li>
@@ -127,7 +127,7 @@ export default function UnirPDFEscaneadoPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Organiza Registros Médicos y Archivos Escaneados</h2>
               <p className="text-slate-600">
-                ¿Digitalizando documentos antiguos? Une lotes de páginas escaneadas en documentos organizados por categoría, fecha o proyecto. Luego usa la herramienta Comprimir PDF de OmnisPDF para reducir el tamaño de archivos para almacenamiento a largo plazo.
+                ¿Digitalizando documentos antiguos? Une lotes de páginas escaneadas en documentos organizados por categoría, fecha o proyecto. Luego usa la herramienta Comprimir PDF de PDF.it para reducir el tamaño de archivos para almacenamiento a largo plazo.
               </p>
             </div>
           </div>
@@ -139,7 +139,7 @@ export default function UnirPDFEscaneadoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Unir PDFs Escaneados</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tus archivos PDF escaneados a OmnisPDF.",
+                "Sube o arrastra tus archivos PDF escaneados a PDF.it.",
                 "Ordena las páginas escaneadas en el orden correcto.",
                 "Haz clic en Unir y descarga tu documento escaneado combinado.",
               ].map((step, i) => (
@@ -184,12 +184,12 @@ export default function UnirPDFEscaneadoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo uno PDFs escaneados en un solo documento?", a: "Sube tus archivos PDF escaneados a OmnisPDF, ordénalos y haz clic en Unir. OmnisPDF combina las páginas escaneadas en un solo documento sin alterar la calidad de imagen." },
-                { q: "¿Unir PDFs escaneados reduce la calidad de imagen?", a: "No. OmnisPDF une tus páginas escaneadas sin recomprimirlas. Cada página conserva la calidad y resolución original del escaneo." },
-                { q: "¿Puedo aplicar OCR después de unir PDFs escaneados?", a: "Sí. Después de unir tus PDFs escaneados, usa la herramienta Escáner OCR de OmnisPDF para hacer el texto buscable y seleccionable. El OCR está disponible para usuarios Pro." },
+                { q: "¿Cómo uno PDFs escaneados en un solo documento?", a: "Sube tus archivos PDF escaneados a PDF.it, ordénalos y haz clic en Unir. PDF.it combina las páginas escaneadas en un solo documento sin alterar la calidad de imagen." },
+                { q: "¿Unir PDFs escaneados reduce la calidad de imagen?", a: "No. PDF.it une tus páginas escaneadas sin recomprimirlas. Cada página conserva la calidad y resolución original del escaneo." },
+                { q: "¿Puedo aplicar OCR después de unir PDFs escaneados?", a: "Sí. Después de unir tus PDFs escaneados, usa la herramienta Escáner OCR de PDF.it para hacer el texto buscable y seleccionable. El OCR está disponible para usuarios Pro." },
                 { q: "¿Qué tan grandes pueden ser los archivos PDF escaneados?", a: "Los usuarios gratuitos pueden subir PDFs escaneados de hasta 25MB cada uno. Los usuarios Pro tienen un límite de 200MB por archivo, ideal para escaneos de alta resolución." },
                 { q: "¿Puedo unir recibos e facturas escaneadas en un solo PDF?", a: "Por supuesto. Sube todos tus recibos o facturas escaneadas, ordénalos cronológicamente y únelos en un solo documento para contabilidad o informes de gastos." },
-                { q: "¿Funciona con escaneos de la cámara del teléfono?", a: "Sí. OmnisPDF funciona con PDFs escaneados de cualquier fuente — cámaras de teléfono, escáneres planos, impresoras multifunción o apps de escaneo como CamScanner y Adobe Scan." },
+                { q: "¿Funciona con escaneos de la cámara del teléfono?", a: "Sí. PDF.it funciona con PDFs escaneados de cualquier fuente — cámaras de teléfono, escáneres planos, impresoras multifunción o apps de escaneo como CamScanner y Adobe Scan." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

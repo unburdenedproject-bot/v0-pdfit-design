@@ -6,15 +6,15 @@ import { FileText, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Converter Office para PDF Online — DOCX, XLSX, PPTX para PDF | OmnisPDF",
+  title: "Converter Office para PDF Online — DOCX, XLSX, PPTX para PDF | PDF.it",
   description:
-    "Converta arquivos de Word, Excel e PowerPoint para PDF com o OmnisPDF. Transforme DOCX, XLSX, PPTX e mais para PDF — rapido, preciso e seguro.",
+    "Converta arquivos de Word, Excel e PowerPoint para PDF com o PDF.it. Transforme DOCX, XLSX, PPTX e mais para PDF — rapido, preciso e seguro.",
   alternates: {
-    canonical: "https://omnispdf.com/br/office-para-pdf",
+    canonical: "https://pdf.it.com/br/office-para-pdf",
     languages: {
-      en: "https://omnispdf.com/office-to-pdf",
-      es: "https://omnispdf.com/es/office-a-pdf",
-      pt: "https://omnispdf.com/br/office-para-pdf",
+      en: "https://pdf.it.com/office-to-pdf",
+      es: "https://pdf.it.com/es/office-a-pdf",
+      pt: "https://pdf.it.com/br/office-para-pdf",
     },
   },
 }
@@ -25,8 +25,8 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Quais formatos do Office o OmnisPDF pode converter para PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "O OmnisPDF converte Word (DOC/DOCX), Excel (XLS/XLSX), PowerPoint (PPT/PPTX) e formatos OpenDocument (ODT/ODP/ODS) para PDF." }
+      "name": "Quais formatos do Office o PDF.it pode converter para PDF?",
+      "acceptedAnswer": { "@type": "Answer", "text": "O PDF.it converte Word (DOC/DOCX), Excel (XLS/XLSX), PowerPoint (PPT/PPTX) e formatos OpenDocument (ODT/ODP/ODS) para PDF." }
     },
     {
       "@type": "Question",
@@ -36,7 +36,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso converter arquivos do Office para PDF no celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em navegadores moveis — envie seu arquivo e baixe o PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em navegadores moveis — envie seu arquivo e baixe o PDF." }
     },
     {
       "@type": "Question",
@@ -104,7 +104,7 @@ export default function OfficeParaPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use o conversor de Office para PDF do OmnisPDF para transformar documentos do Word, planilhas do Excel e apresentacoes do PowerPoint para PDF em segundos. Converta seus arquivos para um formato universal que fica igual em qualquer dispositivo.
+              Use o conversor de Office para PDF do PDF.it para transformar documentos do Word, planilhas do Excel e apresentacoes do PowerPoint para PDF em segundos. Converta seus arquivos para um formato universal que fica igual em qualquer dispositivo.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Converte Word, Excel e PowerPoint para PDF online</li>
@@ -122,7 +122,7 @@ export default function OfficeParaPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Converta Qualquer Arquivo do Office para PDF</h2>
               <p className="text-slate-600">
-                Seja um documento do Word, uma planilha do Excel ou uma apresentacao do PowerPoint, o OmnisPDF converte seu arquivo em um PDF limpo e profissional que abre em qualquer dispositivo.
+                Seja um documento do Word, uma planilha do Excel ou uma apresentacao do PowerPoint, o PDF.it converte seu arquivo em um PDF limpo e profissional que abre em qualquer dispositivo.
               </p>
             </div>
             <div>
@@ -134,7 +134,7 @@ export default function OfficeParaPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Conversao Rapida e Segura</h2>
               <p className="text-slate-600">
-                Envie seu arquivo, converta e baixe. Sem software adicional — o OmnisPDF funciona diretamente do navegador com criptografia SSL.
+                Envie seu arquivo, converta e baixe. Sem software adicional — o PDF.it funciona diretamente do navegador com criptografia SSL.
               </p>
             </div>
           </div>
@@ -146,7 +146,7 @@ export default function OfficeParaPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Converter Office para PDF</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste seu arquivo do Office (Word, Excel ou PowerPoint) para o OmnisPDF.",
+                "Envie ou arraste seu arquivo do Office (Word, Excel ou PowerPoint) para o PDF.it.",
                 "Clique em Converter para PDF.",
                 "Baixe seu PDF pronto para compartilhar.",
               ].map((step, i) => (
@@ -191,9 +191,9 @@ export default function OfficeParaPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Quais formatos do Office o OmnisPDF pode converter para PDF?", a: "O OmnisPDF converte Word (DOC/DOCX), Excel (XLS/XLSX), PowerPoint (PPT/PPTX) e formatos OpenDocument (ODT/ODP/ODS) para PDF." },
+                { q: "Quais formatos do Office o PDF.it pode converter para PDF?", a: "O PDF.it converte Word (DOC/DOCX), Excel (XLS/XLSX), PowerPoint (PPT/PPTX) e formatos OpenDocument (ODT/ODP/ODS) para PDF." },
                 { q: "Minha formatacao sera mantida igual apos converter para PDF?", a: "A maioria dos documentos se converte corretamente. Alguns layouts complexos com fontes incomuns ou planilhas muito largas podem ficar ligeiramente diferentes dependendo do arquivo fonte." },
-                { q: "Posso converter arquivos do Office para PDF no celular?", a: "Sim. O OmnisPDF funciona em navegadores moveis — envie seu arquivo e baixe o PDF." },
+                { q: "Posso converter arquivos do Office para PDF no celular?", a: "Sim. O PDF.it funciona em navegadores moveis — envie seu arquivo e baixe o PDF." },
                 { q: "As animacoes do PowerPoint sao convertidas para PDF?", a: "Nao. Os PDFs sao estaticos, entao as animacoes e transicoes nao sao reproduzidas — os slides sao exportados como paginas fixas." },
                 { q: "E seguro enviar arquivos do Office?", a: "Sim. Todas as transferencias sao criptografadas com SSL e seus arquivos sao eliminados imediatamente apos sua sessao. Nunca armazenamos nem compartilhamos seus documentos." },
                 { q: "Qual e o tamanho maximo de arquivo que posso converter?", a: "Contas Pro podem enviar arquivos de ate 200MB. Contas Business podem enviar ate 1GB." },

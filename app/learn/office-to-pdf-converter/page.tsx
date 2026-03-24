@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Office to PDF Converter: DOCX, XLSX, PPTX to PDF | OmnisPDF",
+  title: "Office to PDF Converter: DOCX, XLSX, PPTX to PDF | PDF.it",
   description:
     "Convert Word, Excel, and PowerPoint files to PDF in one place. Learn when to use the all-in-one Office to PDF converter vs individual tools, supported formats, and quality tips.",
   keywords: "office to pdf converter, convert office to pdf, docx to pdf, xlsx to pdf, pptx to pdf, office files to pdf online",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "What Office formats can I convert to PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF supports DOCX (Word), XLSX (Excel), PPTX (PowerPoint), DOC, XLS, PPT, and other common Microsoft Office formats. Upload any Office file and get a PDF back in seconds." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it supports DOCX (Word), XLSX (Excel), PPTX (PowerPoint), DOC, XLS, PPT, and other common Microsoft Office formats. Upload any Office file and get a PDF back in seconds." }
     },
     {
       "@type": "Question",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Will my formatting be preserved when converting to PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "In most cases, yes. OmnisPDF uses a high-fidelity conversion engine that preserves fonts, tables, images, and layout. If you notice issues, check that your fonts are standard system fonts and your margins are set correctly before converting." }
+      "acceptedAnswer": { "@type": "Answer", "text": "In most cases, yes. PDF.it uses a high-fidelity conversion engine that preserves fonts, tables, images, and layout. If you notice issues, check that your fonts are standard system fonts and your margins are set correctly before converting." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Do I need Microsoft Office installed to convert files?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF is a fully online tool — everything runs in the cloud. You don't need Office, LibreOffice, or any software installed. Just upload your file from any browser." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it is a fully online tool — everything runs in the cloud. You don't need Office, LibreOffice, or any software installed. Just upload your file from any browser." }
     }
   ]
 }
@@ -52,17 +52,17 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Convert Office Files to PDF Online",
-  "description": "Convert any Microsoft Office document to PDF in 3 simple steps using OmnisPDF.",
+  "description": "Convert any Microsoft Office document to PDF in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Upload your Office file",
-      "text": "Go to OmnisPDF's Office to PDF tool and upload your Word, Excel, or PowerPoint file by clicking or dragging it into the upload area."
+      "text": "Go to PDF.it's Office to PDF tool and upload your Word, Excel, or PowerPoint file by clicking or dragging it into the upload area."
     },
     {
       "@type": "HowToStep",
       "name": "Convert to PDF",
-      "text": "Click Convert to PDF. OmnisPDF processes the file in the cloud, preserving your original formatting, fonts, and layout."
+      "text": "Click Convert to PDF. PDF.it processes the file in the cloud, preserving your original formatting, fonts, and layout."
     },
     {
       "@type": "HowToStep",
@@ -129,7 +129,7 @@ export default function OfficeToPDFConverterPage() {
                 An Office to PDF converter takes Microsoft Office files — <strong>DOCX, XLSX, PPTX</strong> (and their older counterparts DOC, XLS, PPT) — and turns them into universally readable PDF documents. PDFs look the same on every device and can't be accidentally edited, which makes them the standard for sharing final versions of documents.
               </p>
               <p className="text-slate-600">
-                OmnisPDF's <Link href="/office-to-pdf" className="text-orange-600 hover:underline">Office to PDF converter</Link> handles all three formats in one place. Upload a Word doc, an Excel spreadsheet, or a PowerPoint deck — you get a properly formatted PDF back in seconds.
+                PDF.it's <Link href="/office-to-pdf" className="text-orange-600 hover:underline">Office to PDF converter</Link> handles all three formats in one place. Upload a Word doc, an Excel spreadsheet, or a PowerPoint deck — you get a properly formatted PDF back in seconds.
               </p>
             </section>
 
@@ -170,7 +170,7 @@ export default function OfficeToPDFConverterPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">All-in-One Converter vs. Individual Tools</h2>
               <p className="text-slate-600 mb-4">
-                OmnisPDF offers both a unified <Link href="/office-to-pdf" className="text-orange-600 hover:underline">Office to PDF</Link> tool and separate tools for each format. Here's when to use which:
+                PDF.it offers both a unified <Link href="/office-to-pdf" className="text-orange-600 hover:underline">Office to PDF</Link> tool and separate tools for each format. Here's when to use which:
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
@@ -207,7 +207,7 @@ export default function OfficeToPDFConverterPage() {
                   },
                   {
                     title: "Download your PDF",
-                    desc: "Download the converted PDF. From here you can compress it, merge it with other files, add a password, or share it — all within OmnisPDF.",
+                    desc: "Download the converted PDF. From here you can compress it, merge it with other files, add a password, or share it — all within PDF.it.",
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -311,12 +311,12 @@ export default function OfficeToPDFConverterPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "What Office formats can I convert to PDF?", a: "OmnisPDF supports DOCX (Word), XLSX (Excel), PPTX (PowerPoint), DOC, XLS, PPT, and other common Microsoft Office formats. Upload any Office file and get a PDF back in seconds." },
+                { q: "What Office formats can I convert to PDF?", a: "PDF.it supports DOCX (Word), XLSX (Excel), PPTX (PowerPoint), DOC, XLS, PPT, and other common Microsoft Office formats. Upload any Office file and get a PDF back in seconds." },
                 { q: "Is the Office to PDF converter free?", a: "Yes. You can convert up to 10 files per day for free (3 without an account, then sign up for more). Pro users get unlimited conversions and larger file size limits." },
-                { q: "Will my formatting be preserved when converting to PDF?", a: "In most cases, yes. OmnisPDF uses a high-fidelity conversion engine that preserves fonts, tables, images, and layout. If you notice issues, check that your fonts are standard system fonts and your margins are set correctly." },
+                { q: "Will my formatting be preserved when converting to PDF?", a: "In most cases, yes. PDF.it uses a high-fidelity conversion engine that preserves fonts, tables, images, and layout. If you notice issues, check that your fonts are standard system fonts and your margins are set correctly." },
                 { q: "Should I use the all-in-one converter or individual tools?", a: "Use the all-in-one Office to PDF tool when you have mixed file types to convert in one batch. Use individual tools when you need format-specific settings like Excel page fitting or PowerPoint slide orientation." },
                 { q: "Can I convert multiple Office files to PDF at once?", a: "Yes. Pro users can batch-convert multiple Office files in a single upload. Each file is converted independently and you can download them all as a ZIP file." },
-                { q: "Do I need Microsoft Office installed to convert files?", a: "No. OmnisPDF is a fully online tool — everything runs in the cloud. You don't need Office, LibreOffice, or any software installed. Just upload your file from any browser." },
+                { q: "Do I need Microsoft Office installed to convert files?", a: "No. PDF.it is a fully online tool — everything runs in the cloud. You don't need Office, LibreOffice, or any software installed. Just upload your file from any browser." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

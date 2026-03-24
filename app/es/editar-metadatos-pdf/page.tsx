@@ -6,9 +6,9 @@ import { FileText, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Editar Metadatos de PDF — Cambia Título, Autor y Propiedades | OmnisPDF",
+  title: "Editar Metadatos de PDF — Cambia Título, Autor y Propiedades | PDF.it",
   description:
-    "Edita los metadatos de un PDF con OmnisPDF. Cambia título, autor, tema y palabras clave de cualquier documento PDF — rápido, gratis y en tu navegador.",
+    "Edita los metadatos de un PDF con PDF.it. Cambia título, autor, tema y palabras clave de cualquier documento PDF — rápido, gratis y en tu navegador.",
   alternates: {
     languages: {
       en: "/edit-pdf-metadata",
@@ -44,7 +44,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo editar metadatos desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en navegadores móviles — sube tu PDF, edita los metadatos y descarga el resultado desde iPhone o Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube tu PDF, edita los metadatos y descarga el resultado desde iPhone o Android." }
     },
     {
       "@type": "Question",
@@ -97,7 +97,7 @@ export default function EditarMetadatosPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Los metadatos de un PDF contienen información descriptiva como el título, autor, tema y palabras clave. Con OmnisPDF puedes editar estos campos para organizar mejor tus documentos, mejorar su visibilidad en búsquedas y cumplir con estándares corporativos de documentación.
+              Los metadatos de un PDF contienen información descriptiva como el título, autor, tema y palabras clave. Con PDF.it puedes editar estos campos para organizar mejor tus documentos, mejorar su visibilidad en búsquedas y cumplir con estándares corporativos de documentación.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Edita título, autor, tema y palabras clave</li>
@@ -145,7 +145,7 @@ export default function EditarMetadatosPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Editar Metadatos de un PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Modifica los campos de metadatos: título, autor, tema y palabras clave.",
                 "Haz clic en Guardar y descarga tu PDF con los metadatos actualizados.",
               ].map((step, i) => (
@@ -198,7 +198,7 @@ export default function EditarMetadatosPDFPage() {
                 { q: "¿Qué campos de metadatos puedo editar?", a: "Puedes editar el título, autor, tema (subject), palabras clave (keywords) y otros campos estándar de metadatos PDF. Esto te permite personalizar la información del documento según tus necesidades." },
                 { q: "¿Editar los metadatos cambia el contenido del PDF?", a: "No. Editar los metadatos solo modifica la información descriptiva del archivo. El contenido visible del PDF — texto, imágenes, formato — permanece exactamente igual." },
                 { q: "¿Para qué sirve editar los metadatos de un PDF?", a: "Es útil para organización de archivos, SEO de documentos compartidos en línea, cumplimiento corporativo, archivado profesional y para que los documentos sean más fáciles de encontrar en búsquedas." },
-                { q: "¿Puedo editar metadatos desde mi celular?", a: "Sí. OmnisPDF funciona en navegadores móviles — sube tu PDF, edita los metadatos y descarga el resultado desde iPhone o Android." },
+                { q: "¿Puedo editar metadatos desde mi celular?", a: "Sí. PDF.it funciona en navegadores móviles — sube tu PDF, edita los metadatos y descarga el resultado desde iPhone o Android." },
                 { q: "¿Es gratis editar metadatos de un PDF?", a: "Sí. Puedes editar metadatos de PDFs de hasta 25MB gratis. Para archivos más grandes y procesamiento por lotes, actualiza a Pro." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

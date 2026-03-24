@@ -6,14 +6,14 @@ import { Scan, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Escanear PDF a Texto — Convierte PDFs Escaneados a Texto Editable | OmnisPDF",
+  title: "Escanear PDF a Texto — Convierte PDFs Escaneados a Texto Editable | PDF.it",
   description:
-    "Convierte PDFs escaneados a texto editable con OCR de OmnisPDF. Transforma documentos escaneados en texto que puedes copiar y editar — rápido, desde tu navegador, sin registro.",
+    "Convierte PDFs escaneados a texto editable con OCR de PDF.it. Transforma documentos escaneados en texto que puedes copiar y editar — rápido, desde tu navegador, sin registro.",
   alternates: {
-    canonical: "https://omnispdf.com/es/escanear-pdf-a-texto",
+    canonical: "https://pdf.it.com/es/escanear-pdf-a-texto",
     languages: {
-      en: "https://omnispdf.com/scan-pdf-to-text",
-      es: "https://omnispdf.com/es/escanear-pdf-a-texto",
+      en: "https://pdf.it.com/scan-pdf-to-text",
+      es: "https://pdf.it.com/es/escanear-pdf-a-texto",
     },
   },
 }
@@ -25,7 +25,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo convierto un PDF escaneado a texto?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF escaneado a OmnisPDF, haz clic en Escanear y la tecnología OCR convertirá las imágenes a texto editable que puedes descargar como archivo TXT." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF escaneado a PDF.it, haz clic en Escanear y la tecnología OCR convertirá las imágenes a texto editable que puedes descargar como archivo TXT." }
     },
     {
       "@type": "Question",
@@ -35,7 +35,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Qué idiomas soporta el OCR?",
-      "acceptedAnswer": { "@type": "Answer", "text": "El OCR de OmnisPDF soporta múltiples idiomas, incluyendo español, inglés, francés, alemán, portugués, italiano y más." }
+      "acceptedAnswer": { "@type": "Answer", "text": "El OCR de PDF.it soporta múltiples idiomas, incluyendo español, inglés, francés, alemán, portugués, italiano y más." }
     },
     {
       "@type": "Question",
@@ -98,7 +98,7 @@ export default function EscanearPDFaTextoPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              ¿Tienes un PDF escaneado que no puedes copiar ni editar? El escáner OCR de OmnisPDF lee el texto en las imágenes de tu documento escaneado y lo convierte a texto digital editable — perfecto para digitalizar documentos en papel, facturas escaneadas y archivos históricos.
+              ¿Tienes un PDF escaneado que no puedes copiar ni editar? El escáner OCR de PDF.it lee el texto en las imágenes de tu documento escaneado y lo convierte a texto digital editable — perfecto para digitalizar documentos en papel, facturas escaneadas y archivos históricos.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Convierte PDFs escaneados a texto editable</li>
@@ -140,7 +140,7 @@ export default function EscanearPDFaTextoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Escanear un PDF a Texto</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF escaneado a OmnisPDF.",
+                "Sube o arrastra tu PDF escaneado a PDF.it.",
                 "Haz clic en Escanear — el OCR procesa cada página automáticamente.",
                 "Descarga el archivo TXT con el texto reconocido.",
               ].map((step, i) => (
@@ -185,9 +185,9 @@ export default function EscanearPDFaTextoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo convierto un PDF escaneado a texto?", a: "Sube tu PDF escaneado a OmnisPDF, haz clic en Escanear y la tecnología OCR convertirá las imágenes a texto editable que puedes descargar como archivo TXT." },
+                { q: "¿Cómo convierto un PDF escaneado a texto?", a: "Sube tu PDF escaneado a PDF.it, haz clic en Escanear y la tecnología OCR convertirá las imágenes a texto editable que puedes descargar como archivo TXT." },
                 { q: "¿Qué es OCR?", a: "OCR (Reconocimiento Óptico de Caracteres) es la tecnología que lee texto en imágenes y lo convierte a texto digital editable. Funciona con documentos escaneados, fotos de documentos y PDFs basados en imágenes." },
-                { q: "¿Qué idiomas soporta el OCR?", a: "El OCR de OmnisPDF soporta múltiples idiomas, incluyendo español, inglés, francés, alemán, portugués, italiano y más." },
+                { q: "¿Qué idiomas soporta el OCR?", a: "El OCR de PDF.it soporta múltiples idiomas, incluyendo español, inglés, francés, alemán, portugués, italiano y más." },
                 { q: "¿Qué tan preciso es el OCR?", a: "La precisión depende de la calidad del escaneo. Documentos con buena resolución y texto claro tienen una precisión superior al 95%. Para mejorar los resultados, usa nuestra herramienta de Limpiar Escaneo primero." },
                 { q: "¿Puedo escanear documentos manuscritos?", a: "El OCR funciona mejor con texto impreso. Los documentos manuscritos pueden tener resultados variables dependiendo de la legibilidad de la escritura." },
                 { q: "¿Es gratis escanear PDFs a texto?", a: "Sí. Las cuentas gratuitas tienen 10 escaneos por día. Las cuentas Pro tienen escaneos ilimitados." },

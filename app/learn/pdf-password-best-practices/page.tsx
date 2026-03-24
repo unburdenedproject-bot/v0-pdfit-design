@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Shield, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "PDF Password Best Practices (Strong Passwords & Permissions) | OmnisPDF",
+  title: "PDF Password Best Practices (Strong Passwords & Permissions) | PDF.it",
   description:
     "Learn how to choose strong passwords for your PDFs, set the right permissions, and avoid common security mistakes. A complete guide to PDF password security.",
   keywords: "pdf password best practices, strong pdf password, pdf permissions, pdf security settings",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "What PDF permissions can I restrict?",
-      "acceptedAnswer": { "@type": "Answer", "text": "You can restrict printing, copying text, editing content, extracting pages, adding annotations, and filling in forms. OmnisPDF lets you set all of these permissions when you protect a PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "You can restrict printing, copying text, editing content, extracting pages, adding annotations, and filling in forms. PDF.it lets you set all of these permissions when you protect a PDF." }
     },
     {
       "@type": "Question",
@@ -52,7 +52,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Set Strong PDF Passwords and Permissions",
-  "description": "Secure your PDFs with strong passwords and the right permission settings in 3 steps using OmnisPDF.",
+  "description": "Secure your PDFs with strong passwords and the right permission settings in 3 steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
@@ -67,7 +67,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Apply encryption and download",
-      "text": "Upload your PDF to OmnisPDF's Protect PDF tool, enter your password and permissions, select 256-bit AES encryption, and download the secured file."
+      "text": "Upload your PDF to PDF.it's Protect PDF tool, enter your password and permissions, select 256-bit AES encryption, and download the secured file."
     }
   ]
 }
@@ -176,7 +176,7 @@ export default function PDFPasswordBestPracticesPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Setting the Right PDF Permissions</h2>
               <p className="text-slate-600 mb-4">
-                Beyond locking a file with a password, you can control exactly what people can do with your PDF. OmnisPDF's <Link href="/protect-pdf" className="text-orange-600 hover:underline">Protect PDF tool</Link> lets you restrict the following actions:
+                Beyond locking a file with a password, you can control exactly what people can do with your PDF. PDF.it's <Link href="/protect-pdf" className="text-orange-600 hover:underline">Protect PDF tool</Link> lets you restrict the following actions:
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
@@ -237,7 +237,7 @@ export default function PDFPasswordBestPracticesPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Which Encryption Level Should You Use?</h2>
               <p className="text-slate-600 mb-4">
-                OmnisPDF offers multiple encryption levels. Here is a practical guide for choosing the right one:
+                PDF.it offers multiple encryption levels. Here is a practical guide for choosing the right one:
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>128-bit AES:</strong> Fast, widely compatible, strong enough for most business documents. Use this for internal reports, general correspondence, and everyday files.</li>
@@ -296,7 +296,7 @@ export default function PDFPasswordBestPracticesPage() {
               {[
                 { q: "What makes a strong PDF password?", a: "A strong PDF password is at least 12 characters long, combines uppercase and lowercase letters, numbers, and special characters, and avoids dictionary words or personal information like birthdays." },
                 { q: "Should I use the same password for all my PDFs?", a: "No. Using the same password for every PDF means that if one password is compromised, all your documents are exposed. Use a unique password for each sensitive document and store them in a password manager." },
-                { q: "What PDF permissions can I restrict?", a: "You can restrict printing, copying text, editing content, extracting pages, adding annotations, and filling in forms. OmnisPDF lets you set all of these permissions when you protect a PDF." },
+                { q: "What PDF permissions can I restrict?", a: "You can restrict printing, copying text, editing content, extracting pages, adding annotations, and filling in forms. PDF.it lets you set all of these permissions when you protect a PDF." },
                 { q: "Is 128-bit encryption enough for PDF security?", a: "Yes, 128-bit AES encryption is strong enough for most business and personal documents. For highly confidential files like legal contracts or medical records, 256-bit AES provides an extra layer of security." },
                 { q: "Can someone bypass PDF permissions?", a: "Permissions passwords are less secure than open passwords — some tools can bypass them. For maximum security, always set an open password in addition to permissions restrictions." },
                 { q: "How should I share the password with the recipient?", a: "Never send the password in the same email as the PDF. Share the password through a different channel — a text message, phone call, or secure messaging app. This way, even if the email is intercepted, the file stays locked." },

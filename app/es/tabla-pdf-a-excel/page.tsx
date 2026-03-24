@@ -6,14 +6,14 @@ import { FileSpreadsheet, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Tabla PDF a Excel — Convierte Tablas de PDF a Hojas de Cálculo | OmnisPDF",
+  title: "Tabla PDF a Excel — Convierte Tablas de PDF a Hojas de Cálculo | PDF.it",
   description:
-    "Convierte tablas de archivos PDF a hojas de cálculo Excel con OmnisPDF. Exporta datos tabulares a XLSX con estructura intacta — rápido, desde tu navegador, sin registro.",
+    "Convierte tablas de archivos PDF a hojas de cálculo Excel con PDF.it. Exporta datos tabulares a XLSX con estructura intacta — rápido, desde tu navegador, sin registro.",
   alternates: {
-    canonical: "https://omnispdf.com/es/tabla-pdf-a-excel",
+    canonical: "https://pdf.it.com/es/tabla-pdf-a-excel",
     languages: {
-      en: "https://omnispdf.com/pdf-table-to-excel",
-      es: "https://omnispdf.com/es/tabla-pdf-a-excel",
+      en: "https://pdf.it.com/pdf-table-to-excel",
+      es: "https://pdf.it.com/es/tabla-pdf-a-excel",
     },
   },
 }
@@ -25,7 +25,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo convierto tablas de PDF a Excel?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a OmnisPDF, haz clic en Convertir y descarga un archivo Excel con las tablas detectadas en tu documento, organizadas en hojas de cálculo." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it, haz clic en Convertir y descarga un archivo Excel con las tablas detectadas en tu documento, organizadas en hojas de cálculo." }
     },
     {
       "@type": "Question",
@@ -40,7 +40,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo convertir múltiples tablas a la vez?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF detecta todas las tablas del PDF y las organiza en hojas separadas dentro del mismo archivo Excel." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it detecta todas las tablas del PDF y las organiza en hojas separadas dentro del mismo archivo Excel." }
     },
     {
       "@type": "Question",
@@ -98,7 +98,7 @@ export default function TablaPDFaExcelPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              ¿Tienes tablas en un PDF que necesitas en Excel? El conversor de tablas PDF a Excel de OmnisPDF detecta automáticamente las tablas en tu documento y las convierte a hojas de cálculo XLSX, manteniendo la estructura original para que puedas trabajar con los datos de inmediato.
+              ¿Tienes tablas en un PDF que necesitas en Excel? El conversor de tablas PDF a Excel de PDF.it detecta automáticamente las tablas en tu documento y las convierte a hojas de cálculo XLSX, manteniendo la estructura original para que puedas trabajar con los datos de inmediato.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Convierte tablas de PDF a formato Excel (XLSX)</li>
@@ -140,7 +140,7 @@ export default function TablaPDFaExcelPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Convertir Tablas de PDF a Excel</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Haz clic en Convertir a Excel — las tablas se detectan automáticamente.",
                 "Descarga el archivo Excel con las tablas convertidas.",
               ].map((step, i) => (
@@ -185,10 +185,10 @@ export default function TablaPDFaExcelPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo convierto tablas de PDF a Excel?", a: "Sube tu PDF a OmnisPDF, haz clic en Convertir y descarga un archivo Excel con las tablas detectadas en tu documento, organizadas en hojas de cálculo." },
+                { q: "¿Cómo convierto tablas de PDF a Excel?", a: "Sube tu PDF a PDF.it, haz clic en Convertir y descarga un archivo Excel con las tablas detectadas en tu documento, organizadas en hojas de cálculo." },
                 { q: "¿Cuál es la diferencia entre esta herramienta y PDF a Excel?", a: "Tabla PDF a Excel se enfoca específicamente en extraer tablas con su estructura de filas y columnas. PDF a Excel convierte todo el contenido del PDF, incluyendo texto y formato." },
                 { q: "¿Se mantienen las fórmulas en Excel?", a: "Los PDFs no contienen fórmulas — solo valores. Los números se mantienen como datos numéricos en Excel, lo que te permite agregar tus propias fórmulas después de la conversión." },
-                { q: "¿Puedo convertir múltiples tablas a la vez?", a: "Sí. OmnisPDF detecta todas las tablas del PDF y las organiza en hojas separadas dentro del mismo archivo Excel." },
+                { q: "¿Puedo convertir múltiples tablas a la vez?", a: "Sí. PDF.it detecta todas las tablas del PDF y las organiza en hojas separadas dentro del mismo archivo Excel." },
                 { q: "¿Funciona con PDFs escaneados?", a: "Para PDFs escaneados, primero usa nuestro Escáner OCR para convertir las imágenes a texto, y luego convierte las tablas a Excel." },
                 { q: "¿Es gratis convertir tablas de PDF a Excel?", a: "Sí. Las cuentas gratuitas tienen 10 conversiones por día. Las cuentas Pro tienen conversiones ilimitadas." },
               ].map((faq, i) => (

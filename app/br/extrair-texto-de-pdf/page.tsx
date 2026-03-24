@@ -6,15 +6,15 @@ import { FileText, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Extrair Texto de PDF — Copie Todo o Texto de um PDF | OmnisPDF",
+  title: "Extrair Texto de PDF — Copie Todo o Texto de um PDF | PDF.it",
   description:
-    "Extraia todo o texto de arquivos PDF com o OmnisPDF. Copie o conteúdo textual completo de qualquer documento PDF — rápido, no navegador, sem cadastro.",
+    "Extraia todo o texto de arquivos PDF com o PDF.it. Copie o conteúdo textual completo de qualquer documento PDF — rápido, no navegador, sem cadastro.",
   alternates: {
-    canonical: "https://omnispdf.com/br/extrair-texto-de-pdf",
+    canonical: "https://pdf.it.com/br/extrair-texto-de-pdf",
     languages: {
-      en: "https://omnispdf.com/extract-text-from-pdf",
-      es: "https://omnispdf.com/es/extraer-texto-de-pdf",
-      pt: "https://omnispdf.com/br/extrair-texto-de-pdf",
+      en: "https://pdf.it.com/extract-text-from-pdf",
+      es: "https://pdf.it.com/es/extraer-texto-de-pdf",
+      pt: "https://pdf.it.com/br/extrair-texto-de-pdf",
     },
   },
 }
@@ -26,7 +26,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como extraio texto de um PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o OmnisPDF, clique em Extrair Texto e baixe um arquivo TXT com todo o conteúdo textual do seu documento." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o PDF.it, clique em Extrair Texto e baixe um arquivo TXT com todo o conteúdo textual do seu documento." }
     },
     {
       "@type": "Question",
@@ -46,7 +46,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso extrair texto de um PDF pelo celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em navegadores móveis — envie seu PDF e extraia o texto de qualquer dispositivo." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em navegadores móveis — envie seu PDF e extraia o texto de qualquer dispositivo." }
     },
     {
       "@type": "Question",
@@ -99,7 +99,7 @@ export default function ExtrairTextoDePDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Precisa copiar o texto de um documento PDF? O extrator de texto do OmnisPDF extrai todo o conteúdo textual — parágrafos, títulos, listas, rodapés — e o disponibiliza em formato TXT limpo para usar em qualquer editor de texto, processador de palavras ou sistema.
+              Precisa copiar o texto de um documento PDF? O extrator de texto do PDF.it extrai todo o conteúdo textual — parágrafos, títulos, listas, rodapés — e o disponibiliza em formato TXT limpo para usar em qualquer editor de texto, processador de palavras ou sistema.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Extraia todo o texto de qualquer PDF</li>
@@ -141,7 +141,7 @@ export default function ExtrairTextoDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Extrair Texto de um PDF</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste seu PDF para o OmnisPDF.",
+                "Envie ou arraste seu PDF para o PDF.it.",
                 "Clique em Extrair Texto — o conteúdo é processado automaticamente.",
                 "Baixe o arquivo TXT com todo o texto extraído.",
               ].map((step, i) => (
@@ -188,11 +188,11 @@ export default function ExtrairTextoDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como extraio texto de um PDF?", a: "Envie seu PDF para o OmnisPDF, clique em Extrair Texto e baixe um arquivo TXT com todo o conteúdo textual do seu documento." },
+                { q: "Como extraio texto de um PDF?", a: "Envie seu PDF para o PDF.it, clique em Extrair Texto e baixe um arquivo TXT com todo o conteúdo textual do seu documento." },
                 { q: "O texto extraído mantém a formatação original?", a: "O texto é extraído em formato plano (TXT), preservando parágrafos e quebras de linha. Formatações como negrito, itálico e cores não são mantidas no arquivo de texto." },
                 { q: "Posso extrair texto de um PDF protegido?", a: "Se o PDF tiver proteção contra cópia, você pode usar nossa ferramenta Desbloquear PDF primeiro para remover a restrição e depois extrair o texto." },
                 { q: "É seguro enviar meu PDF para extrair texto?", a: "Sim. Todos os arquivos são processados com segurança e eliminados automaticamente após a sessão. Nunca armazenamos seus documentos." },
-                { q: "Posso extrair texto de um PDF pelo celular?", a: "Sim. O OmnisPDF funciona em navegadores móveis — envie seu PDF e extraia o texto de qualquer dispositivo." },
+                { q: "Posso extrair texto de um PDF pelo celular?", a: "Sim. O PDF.it funciona em navegadores móveis — envie seu PDF e extraia o texto de qualquer dispositivo." },
                 { q: "É grátis extrair texto de um PDF?", a: "Sim. Contas gratuitas têm 10 extrações por dia. Contas Pro têm extrações ilimitadas." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

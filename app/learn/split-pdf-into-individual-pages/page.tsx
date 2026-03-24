@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Scissors, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Split a PDF into Individual Pages (One Page per File) | OmnisPDF",
+  title: "Split a PDF into Individual Pages (One Page per File) | PDF.it",
   description:
     "Learn how to split a multi-page PDF into separate single-page files. Step-by-step guide for breaking a PDF into one file per page — free, no software needed.",
   keywords: "split pdf into individual pages, one page per pdf, separate pdf pages, pdf to single pages",
@@ -18,22 +18,22 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I split a PDF into individual pages?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF's Split PDF tool, select the option to split every page into its own file, and download a ZIP containing all individual page files." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it's Split PDF tool, select the option to split every page into its own file, and download a ZIP containing all individual page files." }
     },
     {
       "@type": "Question",
       "name": "Can I split a PDF into one page per file for free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF lets you split PDFs for free with files up to 25MB. You get 3 free operations without signing up, and 10 per day with a free account." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it lets you split PDFs for free with files up to 25MB. You get 3 free operations without signing up, and 10 per day with a free account." }
     },
     {
       "@type": "Question",
       "name": "What format are the individual pages saved in?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Each page is saved as its own PDF file. If you need images instead, you can convert the split pages to JPG or PNG using OmnisPDF's conversion tools." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Each page is saved as its own PDF file. If you need images instead, you can convert the split pages to JPG or PNG using PDF.it's conversion tools." }
     },
     {
       "@type": "Question",
       "name": "Can I split a 100-page PDF into 100 separate files?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF can split any PDF into individual pages regardless of page count. The resulting files are packaged in a ZIP download for easy handling." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it can split any PDF into individual pages regardless of page count. The resulting files are packaged in a ZIP download for easy handling." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I name the individual page files?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF automatically names each file with the original filename plus the page number (e.g., document_page1.pdf, document_page2.pdf). You can rename them after downloading." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it automatically names each file with the original filename plus the page number (e.g., document_page1.pdf, document_page2.pdf). You can rename them after downloading." }
     }
   ]
 }
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Split a PDF into Individual Pages",
-  "description": "Separate a multi-page PDF into one file per page in 3 simple steps using OmnisPDF.",
+  "description": "Separate a multi-page PDF into one file per page in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Upload your multi-page PDF",
-      "text": "Go to OmnisPDF's Split PDF tool and upload the document you want to split into individual pages."
+      "text": "Go to PDF.it's Split PDF tool and upload the document you want to split into individual pages."
     },
     {
       "@type": "HowToStep",
@@ -159,15 +159,15 @@ export default function SplitPDFIntoIndividualPagesPage() {
                 {[
                   {
                     title: "Upload your PDF",
-                    desc: "Go to OmnisPDF's Split PDF tool and drag your file into the upload area. You can upload PDFs up to 25MB for free, or up to 200MB with a Pro account.",
+                    desc: "Go to PDF.it's Split PDF tool and drag your file into the upload area. You can upload PDFs up to 25MB for free, or up to 200MB with a Pro account.",
                   },
                   {
                     title: "Select 'Split every page'",
-                    desc: "Choose the option to split each page into a separate file. OmnisPDF will create one PDF file per page. You'll see a preview of all pages before confirming.",
+                    desc: "Choose the option to split each page into a separate file. PDF.it will create one PDF file per page. You'll see a preview of all pages before confirming.",
                   },
                   {
                     title: "Download the ZIP file",
-                    desc: "Click Split PDF. OmnisPDF packages all individual page files into a single ZIP download. Extract the ZIP on your computer to access each page file separately.",
+                    desc: "Click Split PDF. PDF.it packages all individual page files into a single ZIP download. Extract the ZIP on your computer to access each page file separately.",
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -224,7 +224,7 @@ export default function SplitPDFIntoIndividualPagesPage() {
                 Splitting a large document into dozens or hundreds of individual files is straightforward, but there are a few things to keep in mind:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>The ZIP download is your friend.</strong> OmnisPDF packages all files into a single ZIP, so you do not have to download 100 files one by one.</li>
+                <li>&#10003; <strong>The ZIP download is your friend.</strong> PDF.it packages all files into a single ZIP, so you do not have to download 100 files one by one.</li>
                 <li>&#10003; <strong>Files are named sequentially.</strong> Each file is automatically named with the page number (page_1.pdf, page_2.pdf, etc.) so they sort correctly in your file manager.</li>
                 <li>&#10003; <strong>Pro users get faster processing.</strong> Splitting large files with many pages is faster with a Pro account thanks to priority processing.</li>
                 <li>&#10003; <strong>Organize into folders after extracting.</strong> After downloading and extracting the ZIP, consider sorting pages into folders by section or category.</li>
@@ -292,12 +292,12 @@ export default function SplitPDFIntoIndividualPagesPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I split a PDF into individual pages?", a: "Upload your PDF to OmnisPDF's Split PDF tool, select the option to split every page into its own file, and download a ZIP containing all individual page files." },
-                { q: "Can I split a PDF into one page per file for free?", a: "Yes. OmnisPDF lets you split PDFs for free with files up to 25MB. You get 3 free operations without signing up, and 10 per day with a free account." },
-                { q: "What format are the individual pages saved in?", a: "Each page is saved as its own PDF file. If you need images instead, you can convert the split pages to JPG or PNG using OmnisPDF's conversion tools." },
-                { q: "Can I split a 100-page PDF into 100 separate files?", a: "Yes. OmnisPDF can split any PDF into individual pages regardless of page count. The resulting files are packaged in a ZIP download for easy handling." },
+                { q: "How do I split a PDF into individual pages?", a: "Upload your PDF to PDF.it's Split PDF tool, select the option to split every page into its own file, and download a ZIP containing all individual page files." },
+                { q: "Can I split a PDF into one page per file for free?", a: "Yes. PDF.it lets you split PDFs for free with files up to 25MB. You get 3 free operations without signing up, and 10 per day with a free account." },
+                { q: "What format are the individual pages saved in?", a: "Each page is saved as its own PDF file. If you need images instead, you can convert the split pages to JPG or PNG using PDF.it's conversion tools." },
+                { q: "Can I split a 100-page PDF into 100 separate files?", a: "Yes. PDF.it can split any PDF into individual pages regardless of page count. The resulting files are packaged in a ZIP download for easy handling." },
                 { q: "Will splitting a PDF reduce the quality of each page?", a: "No. Splitting a PDF simply separates pages into individual files without re-encoding. Text, images, and formatting stay exactly the same." },
-                { q: "How do I name the individual page files?", a: "OmnisPDF automatically names each file with the original filename plus the page number (e.g., document_page1.pdf, document_page2.pdf). You can rename them after downloading." },
+                { q: "How do I name the individual page files?", a: "PDF.it automatically names each file with the original filename plus the page number (e.g., document_page1.pdf, document_page2.pdf). You can rename them after downloading." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

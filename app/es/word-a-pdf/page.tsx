@@ -6,14 +6,14 @@ import { FileText, CheckCircle, Zap, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Convertir Word a PDF Online — DOCX a PDF Gratis | OmnisPDF",
+  title: "Convertir Word a PDF Online — DOCX a PDF Gratis | PDF.it",
   description:
-    "Convierte Word a PDF en segundos con OmnisPDF. Transforma archivos DOC o DOCX en un PDF limpio y listo para compartir — rapido, facil y sin instalar nada.",
+    "Convierte Word a PDF en segundos con PDF.it. Transforma archivos DOC o DOCX en un PDF limpio y listo para compartir — rapido, facil y sin instalar nada.",
   alternates: {
-    canonical: "https://omnispdf.com/es/word-a-pdf",
+    canonical: "https://pdf.it.com/es/word-a-pdf",
     languages: {
-      en: "https://omnispdf.com/word-to-pdf",
-      es: "https://omnispdf.com/es/word-a-pdf",
+      en: "https://pdf.it.com/word-to-pdf",
+      es: "https://pdf.it.com/es/word-a-pdf",
     },
   },
 }
@@ -27,7 +27,7 @@ const faqSchema = {
       name: "¿Puedo convertir tanto DOC como DOCX a PDF?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Si. OmnisPDF soporta ambos formatos de archivo .doc y .docx.",
+        text: "Si. PDF.it soporta ambos formatos de archivo .doc y .docx.",
       },
     },
     {
@@ -35,7 +35,7 @@ const faqSchema = {
       name: "¿El PDF mantendra el formato de mi archivo Word?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "En la mayoria de los casos, si — OmnisPDF preserva el diseno, fuentes y espaciado. Documentos complejos con fuentes personalizadas o tablas inusuales pueden variar ligeramente.",
+        text: "En la mayoria de los casos, si — PDF.it preserva el diseno, fuentes y espaciado. Documentos complejos con fuentes personalizadas o tablas inusuales pueden variar ligeramente.",
       },
     },
     {
@@ -43,7 +43,7 @@ const faqSchema = {
       name: "¿Puedo convertir Word a PDF en mi celular?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Si. OmnisPDF funciona en navegadores moviles — sube tu archivo Word y descarga el PDF.",
+        text: "Si. PDF.it funciona en navegadores moviles — sube tu archivo Word y descarga el PDF.",
       },
     },
     {
@@ -92,7 +92,7 @@ export default function WordaPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convertir Word a PDF Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Convierte DOC/DOCX a PDF con OmnisPDF — rapido, sencillo y perfecto para documentos limpios y listos para compartir.
+                Convierte DOC/DOCX a PDF con PDF.it — rapido, sencillo y perfecto para documentos limpios y listos para compartir.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2">
@@ -125,7 +125,7 @@ export default function WordaPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Usa el convertidor de Word a PDF de OmnisPDF para transformar un DOC o DOCX en un PDF en segundos. Perfecto para curriculos, reportes, contratos y documentos escolares — convierte, descarga y comparte un PDF que funciona en todas partes.
+              Usa el convertidor de Word a PDF de PDF.it para transformar un DOC o DOCX en un PDF en segundos. Perfecto para curriculos, reportes, contratos y documentos escolares — convierte, descarga y comparte un PDF que funciona en todas partes.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Convierte Word a PDF online en segundos</li>
@@ -143,7 +143,7 @@ export default function WordaPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Convierte DOCX a PDF Manteniendo el Diseno</h2>
               <p className="text-slate-600">
-                OmnisPDF convierte documentos Word en PDFs disenados para verse consistentes en todos los dispositivos. Ideal para enviar archivos donde el formato debe mantenerse estable.
+                PDF.it convierte documentos Word en PDFs disenados para verse consistentes en todos los dispositivos. Ideal para enviar archivos donde el formato debe mantenerse estable.
               </p>
             </div>
             <div>
@@ -167,7 +167,7 @@ export default function WordaPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Convertir Word a PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu archivo DOC/DOCX a OmnisPDF.",
+                "Sube o arrastra tu archivo DOC/DOCX a PDF.it.",
                 "Haz clic en Convertir Word a PDF.",
                 "Descarga tu nuevo PDF.",
               ].map((step, i) => (
@@ -214,15 +214,15 @@ export default function WordaPDFPage() {
               {[
                 {
                   q: "¿Puedo convertir tanto DOC como DOCX a PDF?",
-                  a: "Si. OmnisPDF soporta ambos formatos de archivo .doc y .docx.",
+                  a: "Si. PDF.it soporta ambos formatos de archivo .doc y .docx.",
                 },
                 {
                   q: "¿El PDF mantendra el formato de mi archivo Word?",
-                  a: "En la mayoria de los casos, si — OmnisPDF preserva el diseno, fuentes y espaciado. Documentos complejos con fuentes personalizadas o tablas inusuales pueden variar ligeramente.",
+                  a: "En la mayoria de los casos, si — PDF.it preserva el diseno, fuentes y espaciado. Documentos complejos con fuentes personalizadas o tablas inusuales pueden variar ligeramente.",
                 },
                 {
                   q: "¿Puedo convertir Word a PDF en mi celular?",
-                  a: "Si. OmnisPDF funciona en navegadores moviles — sube tu archivo Word y descarga el PDF.",
+                  a: "Si. PDF.it funciona en navegadores moviles — sube tu archivo Word y descarga el PDF.",
                 },
                 {
                   q: "¿Es seguro subir mi documento Word?",

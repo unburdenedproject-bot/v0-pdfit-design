@@ -6,9 +6,9 @@ import { Upload, Zap, Shield, CheckCircle } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "PDF Pronto para Upload — Otimizar PDF para Portais | OmnisPDF",
+  title: "PDF Pronto para Upload — Otimizar PDF para Portais | PDF.it",
   description:
-    "Prepare seu PDF para upload com um clique. O OmnisPDF achata formulários, comprime o tamanho e corrige erros comuns — funciona com qualquer portal, sem cadastro.",
+    "Prepare seu PDF para upload com um clique. O PDF.it achata formulários, comprime o tamanho e corrige erros comuns — funciona com qualquer portal, sem cadastro.",
   alternates: {
     languages: {
       en: "/upload-ready-pdf",
@@ -120,7 +120,7 @@ export default function PDFProntoParaUploadPage() {
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Cansado de portais rejeitarem seu PDF? A ferramenta PDF Pronto para Upload do OmnisPDF corrige os problemas mais comuns em um clique — arquivos muito grandes, campos de formulário em branco, anotações incompatíveis e funções PDF não suportadas. O resultado é um PDF limpo e universalmente compatível que funciona em qualquer lugar.
+              Cansado de portais rejeitarem seu PDF? A ferramenta PDF Pronto para Upload do PDF.it corrige os problemas mais comuns em um clique — arquivos muito grandes, campos de formulário em branco, anotações incompatíveis e funções PDF não suportadas. O resultado é um PDF limpo e universalmente compatível que funciona em qualquer lugar.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Achata automaticamente campos de formulário para que os dados sejam exibidos corretamente</li>
@@ -162,7 +162,7 @@ export default function PDFProntoParaUploadPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Preparar um PDF para Upload</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste seu PDF para o OmnisPDF.",
+                "Envie ou arraste seu PDF para o PDF.it.",
                 "Clique em PDF Pronto para Upload — o achatamento e a compressão são aplicados automaticamente.",
                 "Baixe seu PDF otimizado e faça upload em qualquer portal.",
               ].map((step, i) => (

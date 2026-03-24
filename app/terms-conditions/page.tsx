@@ -3,8 +3,8 @@ import { Footer } from "@/components/footer"
 import { FileText } from "lucide-react"
 
 export const metadata = {
-  title: "Terms & Conditions — OmnisPDF",
-  description: "Terms and conditions for using OmnisPDF tools and services.",
+  title: "Terms & Conditions — PDF.it",
+  description: "Terms and conditions for using PDF.it tools and services.",
 }
 
 export default function TermsConditionsPage() {
@@ -21,7 +21,7 @@ export default function TermsConditionsPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Terms & Conditions</h1>
               <p className="text-xl text-slate-300">
-                The terms of service for using OmnisPDF tools and services.
+                The terms of service for using PDF.it tools and services.
               </p>
             </div>
           </div>
@@ -34,18 +34,18 @@ export default function TermsConditionsPage() {
               <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 lg:p-12">
 
                 <div className="space-y-2 mb-8">
-                  <h2 className="text-2xl font-bold text-slate-900">Terms & Conditions — OmnisPDF</h2>
+                  <h2 className="text-2xl font-bold text-slate-900">Terms & Conditions — PDF.it</h2>
                   <p className="text-slate-500 text-sm"><strong>Effective Date:</strong> January 1, 2024</p>
                 </div>
 
                 <p className="text-slate-700 leading-relaxed mb-10">
-                  Welcome to OmnisPDF ("we," "us," "our"). By accessing or using our website and tools (the "Service"), you agree to these Terms & Conditions ("Terms"). If you do not agree, do not use the Service.
+                  Welcome to PDF.it ("we," "us," "our"). By accessing or using our website and tools (the "Service"), you agree to these Terms & Conditions ("Terms"). If you do not agree, do not use the Service.
                 </p>
 
                 <div className="space-y-10">
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 mb-4">1. Use of the Service</h3>
-                    <p className="text-slate-700 mb-4">OmnisPDF provides online tools for converting, compressing, and processing documents. You agree to use the Service only for lawful purposes and in accordance with these Terms.</p>
+                    <p className="text-slate-700 mb-4">PDF.it provides online tools for converting, compressing, and processing documents. You agree to use the Service only for lawful purposes and in accordance with these Terms.</p>
                     <p className="text-slate-700 font-semibold mb-2">You must not:</p>
                     <ul className="space-y-2 text-slate-700 list-disc list-inside">
                       <li>Use the Service to violate any law or regulation</li>
@@ -63,12 +63,12 @@ export default function TermsConditionsPage() {
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 mb-4">3. Your Content and Files</h3>
                     <p className="text-slate-700 mb-4">You retain all rights to files and content you upload or process ("User Content"). You represent and warrant that you have all necessary rights to use your User Content with the Service.</p>
-                    <p className="text-slate-700">Files uploaded to OmnisPDF are processed securely and deleted automatically after your session ends. We do not store, review, or share your file contents. See our <a href="/privacy-policy" className="text-orange-500 hover:text-orange-600 font-medium">Privacy Policy</a> for full details.</p>
+                    <p className="text-slate-700">Files uploaded to PDF.it are processed securely and deleted automatically after your session ends. We do not store, review, or share your file contents. See our <a href="/privacy-policy" className="text-orange-500 hover:text-orange-600 font-medium">Privacy Policy</a> for full details.</p>
                   </div>
 
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 mb-4">4. Intellectual Property</h3>
-                    <p className="text-slate-700 mb-4">The Service (including the website, software, design, logos, and branding) is owned by OmnisPDF and protected by intellectual property laws. You may not copy, modify, distribute, sell, or lease any part of the Service without our written permission.</p>
+                    <p className="text-slate-700 mb-4">The Service (including the website, software, design, logos, and branding) is owned by PDF.it and protected by intellectual property laws. You may not copy, modify, distribute, sell, or lease any part of the Service without our written permission.</p>
                     <p className="text-slate-700">Your outputs: You own the documents you upload and the files you download, subject to the rights you already hold in the original content.</p>
                   </div>
 
@@ -79,21 +79,21 @@ export default function TermsConditionsPage() {
 
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 mb-4">6. Limitation of Liability</h3>
-                    <p className="text-slate-700">To the maximum extent permitted by law, OmnisPDF will not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of data, profits, revenue, or business arising from your use (or inability to use) the Service.</p>
+                    <p className="text-slate-700">To the maximum extent permitted by law, PDF.it will not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of data, profits, revenue, or business arising from your use (or inability to use) the Service.</p>
                   </div>
 
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 mb-4">7. Refunds</h3>
                     <p className="text-slate-700">We offer full refunds within 7 days of purchase, no questions asked. To request a refund, contact us at{" "}
-                      <a href="mailto:contact@omnispdf.com" className="text-orange-500 hover:text-orange-600 font-medium">
-                        contact@omnispdf.com
+                      <a href="mailto:contact@pdf.it.com" className="text-orange-500 hover:text-orange-600 font-medium">
+                        contact@pdf.it.com
                       </a>.
                     </p>
                   </div>
 
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 mb-4">8. Termination</h3>
-                    <p className="text-slate-700">We may suspend or terminate access to the Service if we believe you have violated these Terms, abused the Service, or created risk for OmnisPDF or other users.</p>
+                    <p className="text-slate-700">We may suspend or terminate access to the Service if we believe you have violated these Terms, abused the Service, or created risk for PDF.it or other users.</p>
                   </div>
 
                   <div>
@@ -110,8 +110,8 @@ export default function TermsConditionsPage() {
                     <h3 className="text-xl font-bold text-slate-900 mb-4">11. Contact</h3>
                     <p className="text-slate-700">
                       Questions about these Terms? Contact us at{" "}
-                      <a href="mailto:contact@omnispdf.com" className="text-orange-500 hover:text-orange-600 font-medium">
-                        contact@omnispdf.com
+                      <a href="mailto:contact@pdf.it.com" className="text-orange-500 hover:text-orange-600 font-medium">
+                        contact@pdf.it.com
                       </a>.
                     </p>
                   </div>

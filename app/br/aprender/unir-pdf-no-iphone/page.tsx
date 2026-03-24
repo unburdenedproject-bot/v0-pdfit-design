@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Merge, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Unir PDF no iPhone (Sem Aplicativo) | OmnisPDF",
+  title: "Unir PDF no iPhone (Sem Aplicativo) | PDF.it",
   description:
     "Aprenda como unir PDFs diretamente no iPhone usando o navegador. Combine documentos sem instalar nenhum aplicativo — online, gratis.",
   keywords: "unir pdf iphone, combinar pdf iphone, juntar pdf celular, mesclar pdf ios, unir pdf sem app",
@@ -18,12 +18,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como unir PDFs no iPhone sem aplicativo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Abra o Safari no iPhone, acesse omnispdf.com/br/unir-pdf, envie seus PDFs tocando na area de upload, organize a ordem e toque em Unir. Nenhum aplicativo necessario." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Abra o Safari no iPhone, acesse pdf.it.com/br/unir-pdf, envie seus PDFs tocando na area de upload, organize a ordem e toque em Unir. Nenhum aplicativo necessario." }
     },
     {
       "@type": "Question",
       "name": "Funciona no Android tambem?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em qualquer navegador movel — iPhone, Android, iPad ou tablet. O processo e identico em todos os dispositivos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em qualquer navegador movel — iPhone, Android, iPad ou tablet. O processo e identico em todos os dispositivos." }
     },
     {
       "@type": "Question",
@@ -41,8 +41,8 @@ const howToSchema = {
   "step": [
     {
       "@type": "HowToStep",
-      "name": "Abra o OmnisPDF no Safari",
-      "text": "No iPhone, abra o Safari e acesse omnispdf.com/br/unir-pdf."
+      "name": "Abra o PDF.it no Safari",
+      "text": "No iPhone, abra o Safari e acesse pdf.it.com/br/unir-pdf."
     },
     {
       "@type": "HowToStep",
@@ -107,7 +107,7 @@ export default function UnirPDFNoIPhonePage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que Usar o Navegador em Vez de um App?</h2>
               <p className="text-slate-600 mb-4">
-                Existem vantagens claras em usar o OmnisPDF no navegador:
+                Existem vantagens claras em usar o PDF.it no navegador:
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Sem instalacao</strong> — nao ocupa espaco no iPhone.</li>
@@ -122,8 +122,8 @@ export default function UnirPDFNoIPhonePage() {
               <div className="space-y-4">
                 {[
                   {
-                    title: "Abra o Safari e acesse o OmnisPDF",
-                    desc: "No iPhone, abra o Safari (ou Chrome) e acesse omnispdf.com/br/unir-pdf. A interface e totalmente otimizada para telas moveis.",
+                    title: "Abra o Safari e acesse o PDF.it",
+                    desc: "No iPhone, abra o Safari (ou Chrome) e acesse pdf.it.com/br/unir-pdf. A interface e totalmente otimizada para telas moveis.",
                   },
                   {
                     title: "Toque para enviar seus PDFs",
@@ -205,8 +205,8 @@ export default function UnirPDFNoIPhonePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como unir PDFs no iPhone sem aplicativo?", a: "Abra o Safari no iPhone, acesse omnispdf.com/br/unir-pdf, envie seus PDFs tocando na area de upload, organize a ordem e toque em Unir. Nenhum aplicativo necessario." },
-                { q: "Funciona no Android tambem?", a: "Sim. O OmnisPDF funciona em qualquer navegador movel — iPhone, Android, iPad ou tablet. O processo e identico em todos os dispositivos." },
+                { q: "Como unir PDFs no iPhone sem aplicativo?", a: "Abra o Safari no iPhone, acesse pdf.it.com/br/unir-pdf, envie seus PDFs tocando na area de upload, organize a ordem e toque em Unir. Nenhum aplicativo necessario." },
+                { q: "Funciona no Android tambem?", a: "Sim. O PDF.it funciona em qualquer navegador movel — iPhone, Android, iPad ou tablet. O processo e identico em todos os dispositivos." },
                 { q: "Onde fica o PDF combinado depois de baixar?", a: "No iPhone, o PDF baixado vai para o app Arquivos, na pasta Downloads. Voce pode abri-lo, compartilhar por email ou WhatsApp diretamente de la." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

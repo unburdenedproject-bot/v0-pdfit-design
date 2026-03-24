@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Stamp, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Melhores Praticas para Marca d'Agua em PDF | OmnisPDF",
+  title: "Melhores Praticas para Marca d'Agua em PDF | PDF.it",
   description:
     "Descubra as melhores praticas para adicionar marca d'agua em PDF: posicao, opacidade, cor, tamanho e quando usar cada tipo de marca d'agua.",
   keywords: "melhores praticas marca dagua pdf, dicas marca dagua pdf, como fazer marca dagua pdf, marca dagua pdf profissional",
@@ -19,7 +19,7 @@ const faqSchema = {
     { "@type": "Question", "name": "Qual cor usar na marca d'agua?", "acceptedAnswer": { "@type": "Answer", "text": "Cinza claro e a escolha mais profissional e discreta. Vermelho e ideal para marcas d'agua de alerta como CONFIDENCIAL ou RASCUNHO." } },
     { "@type": "Question", "name": "Devo usar marca d'agua de texto ou logo?", "acceptedAnswer": { "@type": "Answer", "text": "Texto e melhor para avisos legais (CONFIDENCIAL, RASCUNHO). Logo e ideal para branding corporativo e identificacao de propriedade." } },
     { "@type": "Question", "name": "A marca d'agua protege legalmente meu documento?", "acceptedAnswer": { "@type": "Answer", "text": "A marca d'agua serve como indicacao visual de restricao, mas nao substitui protecao legal formal. Para seguranca adicional, combine com protecao por senha." } },
-    { "@type": "Question", "name": "Posso adicionar marca d'agua a varios PDFs de uma vez?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Com o plano Pro do OmnisPDF, voce pode usar processamento em lote para adicionar marca d'agua a multiplos PDFs simultaneamente." } },
+    { "@type": "Question", "name": "Posso adicionar marca d'agua a varios PDFs de uma vez?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Com o plano Pro do PDF.it, voce pode usar processamento em lote para adicionar marca d'agua a multiplos PDFs simultaneamente." } },
   ]
 }
 
@@ -56,7 +56,7 @@ export default function MelhoresPraticasMarcaDaguaPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><Stamp className="h-5 w-5 text-white" /></div>
-              <p className="text-slate-700 font-semibold">Aplique marcas d&apos;agua profissionais com o OmnisPDF.</p>
+              <p className="text-slate-700 font-semibold">Aplique marcas d&apos;agua profissionais com o PDF.it.</p>
             </div>
             <Link href="/br/marca-dagua-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Marca d&apos;Agua PDF <ArrowRight className="h-4 w-4" /></Link>
           </div>
@@ -154,7 +154,7 @@ export default function MelhoresPraticasMarcaDaguaPage() {
                 { q: "Qual cor usar na marca d'agua?", a: "Cinza claro e a escolha mais profissional e discreta. Vermelho e ideal para marcas d'agua de alerta como CONFIDENCIAL ou RASCUNHO." },
                 { q: "Devo usar marca d'agua de texto ou logo?", a: "Texto e melhor para avisos legais (CONFIDENCIAL, RASCUNHO). Logo e ideal para branding corporativo e identificacao de propriedade." },
                 { q: "A marca d'agua protege legalmente meu documento?", a: "A marca d'agua serve como indicacao visual de restricao, mas nao substitui protecao legal formal. Para seguranca adicional, combine com protecao por senha." },
-                { q: "Posso adicionar marca d'agua a varios PDFs de uma vez?", a: "Sim. Com o plano Pro do OmnisPDF, voce pode usar processamento em lote para adicionar marca d'agua a multiplos PDFs simultaneamente." },
+                { q: "Posso adicionar marca d'agua a varios PDFs de uma vez?", a: "Sim. Com o plano Pro do PDF.it, voce pode usar processamento em lote para adicionar marca d'agua a multiplos PDFs simultaneamente." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

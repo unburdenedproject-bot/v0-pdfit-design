@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Unlock, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Unlock a PDF on Your Phone (iPhone & Android) | OmnisPDF",
+  title: "Unlock a PDF on Your Phone (iPhone & Android) | PDF.it",
   description:
     "Learn how to unlock a PDF on your phone — iPhone or Android. Remove PDF restrictions and passwords from your mobile browser. No app installation needed.",
   keywords: "unlock pdf on phone, unlock pdf iphone, remove pdf password android, unlock pdf mobile",
@@ -18,17 +18,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I unlock a PDF on my iPhone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open Safari or Chrome on your iPhone, go to OmnisPDF's Unlock PDF tool, upload your file, and download the unlocked version. No app installation needed — it works entirely in the browser." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open Safari or Chrome on your iPhone, go to PDF.it's Unlock PDF tool, upload your file, and download the unlocked version. No app installation needed — it works entirely in the browser." }
     },
     {
       "@type": "Question",
       "name": "Can I unlock a PDF on Android?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open Chrome, Firefox, or any browser on your Android phone, go to OmnisPDF's Unlock PDF tool, tap to upload your PDF, and download the unlocked file. Works on all Android devices." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open Chrome, Firefox, or any browser on your Android phone, go to PDF.it's Unlock PDF tool, tap to upload your PDF, and download the unlocked file. Works on all Android devices." }
     },
     {
       "@type": "Question",
       "name": "Do I need to install an app to unlock PDFs on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF is a web-based tool that works in any mobile browser. You don't need to download or install any app. Just visit omnispdf.com, upload your PDF, and unlock it." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it is a web-based tool that works in any mobile browser. You don't need to download or install any app. Just visit pdf.it.com, upload your PDF, and unlock it." }
     },
     {
       "@type": "Question",
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Unlock a PDF on Your Phone",
-  "description": "Remove PDF restrictions on iPhone or Android in 3 simple steps using OmnisPDF.",
+  "description": "Remove PDF restrictions on iPhone or Android in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
-      "name": "Open OmnisPDF in your mobile browser",
-      "text": "Open Safari (iPhone) or Chrome (Android) and go to omnispdf.com. Tap on the Unlock PDF tool."
+      "name": "Open PDF.it in your mobile browser",
+      "text": "Open Safari (iPhone) or Chrome (Android) and go to pdf.it.com. Tap on the Unlock PDF tool."
     },
     {
       "@type": "HowToStep",
@@ -147,7 +147,7 @@ export default function UnlockPDFOnMobilePage() {
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
-                OmnisPDF works in any mobile browser — no app download, no account required for basic use. Just upload, unlock, and download.
+                PDF.it works in any mobile browser — no app download, no account required for basic use. Just upload, unlock, and download.
               </p>
             </section>
 
@@ -157,8 +157,8 @@ export default function UnlockPDFOnMobilePage() {
               <div className="space-y-4">
                 {[
                   {
-                    title: "Open Safari and go to OmnisPDF",
-                    desc: "Open Safari (or Chrome) on your iPhone and navigate to omnispdf.com. Tap on \"Unlock PDF\" from the tools menu, or go directly to omnispdf.com/unlock-pdf.",
+                    title: "Open Safari and go to PDF.it",
+                    desc: "Open Safari (or Chrome) on your iPhone and navigate to pdf.it.com. Tap on \"Unlock PDF\" from the tools menu, or go directly to pdf.it.com/unlock-pdf.",
                   },
                   {
                     title: "Upload your locked PDF",
@@ -188,8 +188,8 @@ export default function UnlockPDFOnMobilePage() {
               <div className="space-y-4">
                 {[
                   {
-                    title: "Open Chrome and go to OmnisPDF",
-                    desc: "Open Chrome (or Firefox, Samsung Internet, or any browser) on your Android phone. Go to omnispdf.com and tap \"Unlock PDF\" from the tools list.",
+                    title: "Open Chrome and go to PDF.it",
+                    desc: "Open Chrome (or Firefox, Samsung Internet, or any browser) on your Android phone. Go to pdf.it.com and tap \"Unlock PDF\" from the tools list.",
                   },
                   {
                     title: "Upload your locked PDF",
@@ -232,7 +232,7 @@ export default function UnlockPDFOnMobilePage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Other PDF Tools That Work on Your Phone</h2>
               <p className="text-slate-600 mb-4">
-                OmnisPDF is fully responsive — every tool works on mobile. Here are the most useful ones for phone users:
+                PDF.it is fully responsive — every tool works on mobile. Here are the most useful ones for phone users:
               </p>
               <div className="space-y-6">
                 <div>
@@ -269,13 +269,13 @@ export default function UnlockPDFOnMobilePage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Why You Don&apos;t Need a PDF App</h2>
               <p className="text-slate-600 mb-4">
-                The App Store and Google Play are full of PDF apps that take up storage, show ads, and often require paid subscriptions. OmnisPDF works differently:
+                The App Store and Google Play are full of PDF apps that take up storage, show ads, and often require paid subscriptions. PDF.it works differently:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>✓ <strong>No download required.</strong> OmnisPDF runs entirely in your browser. No storage space used on your phone.</li>
+                <li>✓ <strong>No download required.</strong> PDF.it runs entirely in your browser. No storage space used on your phone.</li>
                 <li>✓ <strong>No account needed for basic use.</strong> Unlock up to 3 PDFs without creating an account. Log in for up to 10 free unlocks per day.</li>
-                <li>✓ <strong>Works on any phone.</strong> iPhone, Android, Samsung, Google Pixel, OnePlus — if it has a browser, OmnisPDF works on it.</li>
-                <li>✓ <strong>Always up to date.</strong> No app updates to install. OmnisPDF is always the latest version when you visit the site.</li>
+                <li>✓ <strong>Works on any phone.</strong> iPhone, Android, Samsung, Google Pixel, OnePlus — if it has a browser, PDF.it works on it.</li>
+                <li>✓ <strong>Always up to date.</strong> No app updates to install. PDF.it is always the latest version when you visit the site.</li>
                 <li>✓ <strong>Secure processing.</strong> Your files are processed over HTTPS and automatically deleted after processing. Nothing is stored on our servers.</li>
               </ul>
             </section>
@@ -326,9 +326,9 @@ export default function UnlockPDFOnMobilePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "Can I unlock a PDF on my iPhone?", a: "Yes. Open Safari or Chrome on your iPhone, go to OmnisPDF's Unlock PDF tool, upload your file, and download the unlocked version. No app installation needed — it works entirely in the browser." },
-                { q: "Can I unlock a PDF on Android?", a: "Yes. Open Chrome, Firefox, or any browser on your Android phone, go to OmnisPDF's Unlock PDF tool, tap to upload your PDF, and download the unlocked file. Works on all Android devices." },
-                { q: "Do I need to install an app to unlock PDFs on my phone?", a: "No. OmnisPDF is a web-based tool that works in any mobile browser. You don't need to download or install any app. Just visit omnispdf.com, upload your PDF, and unlock it." },
+                { q: "Can I unlock a PDF on my iPhone?", a: "Yes. Open Safari or Chrome on your iPhone, go to PDF.it's Unlock PDF tool, upload your file, and download the unlocked version. No app installation needed — it works entirely in the browser." },
+                { q: "Can I unlock a PDF on Android?", a: "Yes. Open Chrome, Firefox, or any browser on your Android phone, go to PDF.it's Unlock PDF tool, tap to upload your PDF, and download the unlocked file. Works on all Android devices." },
+                { q: "Do I need to install an app to unlock PDFs on my phone?", a: "No. PDF.it is a web-based tool that works in any mobile browser. You don't need to download or install any app. Just visit pdf.it.com, upload your PDF, and unlock it." },
                 { q: "Where does the unlocked PDF save on my phone?", a: "On iPhone, the file saves to your Downloads folder in the Files app. On Android, it saves to your Downloads folder. You can also find it in your browser's download history." },
                 { q: "Is the file size limited on mobile?", a: "Free users can upload PDFs up to 25MB, which covers most documents you'd have on your phone. Pro users can upload files up to 200MB. Mobile data or Wi-Fi speed may affect upload time for larger files." },
                 { q: "Can I print the unlocked PDF from my phone?", a: "Yes. After downloading the unlocked PDF, open it on your phone and use the share button to print. On iPhone, use AirPrint to send it to a nearby printer. On Android, use the built-in print option or Google Cloud Print." },

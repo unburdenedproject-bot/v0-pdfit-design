@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileArchiveIcon as Compress, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Comprimir PDF Grande (50MB, 100MB ou Mais) | OmnisPDF",
+  title: "Comprimir PDF Grande (50MB, 100MB ou Mais) | PDF.it",
   description:
     "Aprenda como comprimir PDFs grandes de 50MB, 100MB ou mais. Dicas para reduzir arquivos pesados sem perder qualidade — online, gratis, sem instalar nada.",
   keywords: "comprimir pdf grande, reduzir pdf 50mb, comprimir pdf 100mb, diminuir pdf pesado, compactar pdf grande online",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como comprimir um PDF de 50MB ou mais?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie o PDF para o OmnisPDF e selecione compressao Extrema. Para arquivos muito grandes, considere dividir o PDF em partes menores primeiro e comprimir cada parte separadamente." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie o PDF para o PDF.it e selecione compressao Extrema. Para arquivos muito grandes, considere dividir o PDF em partes menores primeiro e comprimir cada parte separadamente." }
     },
     {
       "@type": "Question",
@@ -42,7 +42,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Envie seu PDF grande",
-      "text": "Acesse a ferramenta Comprimir PDF do OmnisPDF e envie seu arquivo. Usuarios Pro podem enviar ate 200MB."
+      "text": "Acesse a ferramenta Comprimir PDF do PDF.it e envie seu arquivo. Usuarios Pro podem enviar ate 200MB."
     },
     {
       "@type": "HowToStep",
@@ -242,7 +242,7 @@ export default function ComprimirPDFGrandePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como comprimir um PDF de 50MB ou mais?", a: "Envie o PDF para o OmnisPDF e selecione compressao Extrema. Para arquivos muito grandes, considere dividir o PDF em partes menores primeiro e comprimir cada parte separadamente." },
+                { q: "Como comprimir um PDF de 50MB ou mais?", a: "Envie o PDF para o PDF.it e selecione compressao Extrema. Para arquivos muito grandes, considere dividir o PDF em partes menores primeiro e comprimir cada parte separadamente." },
                 { q: "Qual o tamanho maximo de PDF que posso comprimir?", a: "Usuarios gratuitos podem comprimir PDFs ate 25MB. Usuarios Pro podem enviar arquivos ate 200MB para compressao." },
                 { q: "Por que meu PDF tem mais de 100MB?", a: "PDFs com mais de 100MB geralmente contem muitas paginas digitalizadas em alta resolucao, imagens nao comprimidas ou multiplas camadas de graficos." },
               ].map((faq, i) => (

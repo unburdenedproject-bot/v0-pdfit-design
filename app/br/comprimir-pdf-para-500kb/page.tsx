@@ -6,16 +6,16 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Ro
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF para 500KB Online — Reduzir Tamanho de PDF | OmnisPDF",
+  title: "Comprimir PDF para 500KB Online — Reduzir Tamanho de PDF | PDF.it",
   description: "Comprima seu PDF para cumprir limites de 500KB. Compressao forte para formularios web, candidaturas e portais com limites de upload — rapido, pelo navegador, gratis.",
   alternates: { languages: { en: "/compress-pdf-to-500kb", es: "/es/comprimir-pdf-a-500kb", pt: "/br/comprimir-pdf-para-500kb" } },
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-  { "@type": "Question", "name": "Como comprimo um PDF para limite de 500KB?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF ao OmnisPDF e clique em Comprimir. A ferramenta aplica compressao forte para reduzir imagens e otimizar a estrutura interna, reduzindo significativamente o tamanho do arquivo." } },
+  { "@type": "Question", "name": "Como comprimo um PDF para limite de 500KB?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF ao PDF.it e clique em Comprimir. A ferramenta aplica compressao forte para reduzir imagens e otimizar a estrutura interna, reduzindo significativamente o tamanho do arquivo." } },
   { "@type": "Question", "name": "Meu PDF ficara abaixo de 500KB?", "acceptedAnswer": { "@type": "Answer", "text": "Documentos de ate 5-10 paginas com texto e poucas imagens geralmente ficam abaixo de 500KB. Arquivos com muitas imagens de alta resolucao podem precisar ser divididos primeiro." } },
   { "@type": "Question", "name": "A qualidade sera afetada?", "acceptedAnswer": { "@type": "Answer", "text": "O texto permanece nitido e legivel. As imagens sao otimizadas mantendo boa qualidade visual para a maioria dos documentos." } },
-  { "@type": "Question", "name": "Posso comprimir pelo celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em qualquer navegador movel no iPhone ou Android." } },
+  { "@type": "Question", "name": "Posso comprimir pelo celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em qualquer navegador movel no iPhone ou Android." } },
   { "@type": "Question", "name": "Para que serve o limite de 500KB?", "acceptedAnswer": { "@type": "Answer", "text": "Muitos portais de candidatura, formularios governamentais e sistemas de envio de documentos exigem arquivos abaixo de 500KB. E um limite comum em plataformas de emprego e portais educacionais." } },
   { "@type": "Question", "name": "O que faco se continuar acima de 500KB?", "acceptedAnswer": { "@type": "Answer", "text": "Divida o PDF em secoes menores com nossa ferramenta Dividir PDF e comprima cada parte. Tambem pode achatar o PDF ou remover paginas desnecessarias." } }
 ] }
@@ -44,7 +44,7 @@ export default function ComprimirPDFPara500KBPagePt() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que Comprimir um PDF para Limites de 500KB?</h2>
-            <p className="text-lg text-slate-600 mb-8">O limite de 500KB e um dos mais comuns em portais de upload. Plataformas de candidatura de emprego, sistemas de admissao universitaria, formularios governamentais e portais de documentos frequentemente exigem arquivos nesse tamanho. O OmnisPDF aplica compressao forte para ajuda-lo a cumprir esses limites.</p>
+            <p className="text-lg text-slate-600 mb-8">O limite de 500KB e um dos mais comuns em portais de upload. Plataformas de candidatura de emprego, sistemas de admissao universitaria, formularios governamentais e portais de documentos frequentemente exigem arquivos nesse tamanho. O PDF.it aplica compressao forte para ajuda-lo a cumprir esses limites.</p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Compressao forte para reducao significativa de tamanho</li>
               <li>&#10003; Ideal para candidaturas, formularios e documentos oficiais</li>
@@ -71,7 +71,7 @@ export default function ComprimirPDFPara500KBPagePt() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Comprimir um PDF para Limites de 500KB</h2>
             <div className="space-y-4">
-              {["Envie ou arraste seu PDF ao OmnisPDF.", "Clique em Comprimir PDF — a compressao forte e aplicada automaticamente.", "Baixe seu PDF menor. Se continuar acima de 500KB, tente dividi-lo em secoes menores primeiro."].map((step, i) => (
+              {["Envie ou arraste seu PDF ao PDF.it.", "Clique em Comprimir PDF — a compressao forte e aplicada automaticamente.", "Baixe seu PDF menor. Se continuar acima de 500KB, tente dividi-lo em secoes menores primeiro."].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200"><div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div><p className="text-slate-700 pt-1">{step}</p></div>
               ))}
             </div>
@@ -107,10 +107,10 @@ export default function ComprimirPDFPara500KBPagePt() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como comprimo um PDF para limite de 500KB?", a: "Envie seu PDF ao OmnisPDF e clique em Comprimir. A compressao forte reduz significativamente o tamanho otimizando imagens e estrutura interna." },
+                { q: "Como comprimo um PDF para limite de 500KB?", a: "Envie seu PDF ao PDF.it e clique em Comprimir. A compressao forte reduz significativamente o tamanho otimizando imagens e estrutura interna." },
                 { q: "Meu PDF ficara abaixo de 500KB?", a: "Documentos de ate 5-10 paginas com texto geralmente ficam abaixo de 500KB. Arquivos com muitas imagens podem precisar ser divididos." },
                 { q: "A qualidade sera afetada?", a: "O texto permanece nitido. As imagens sao otimizadas mantendo boa qualidade visual para a maioria dos documentos." },
-                { q: "Posso comprimir pelo celular?", a: "Sim. O OmnisPDF funciona em qualquer navegador movel no iPhone ou Android." },
+                { q: "Posso comprimir pelo celular?", a: "Sim. O PDF.it funciona em qualquer navegador movel no iPhone ou Android." },
                 { q: "Para que serve o limite de 500KB?", a: "Plataformas de emprego, portais educacionais, formularios governamentais e sistemas de envio de documentos frequentemente exigem arquivos abaixo de 500KB." },
                 { q: "O que faco se continuar acima de 500KB?", a: "Divida o PDF em secoes menores e comprima cada parte. Achate o PDF ou remova paginas desnecessarias." },
               ].map((faq, i) => (

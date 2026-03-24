@@ -5,22 +5,22 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Convertir archivos Office a PDF en movil (iPhone y Android) | OmnisPDF",
-  description: "Aprende como convertir archivos Word, Excel y PowerPoint a PDF en tu iPhone o telefono Android. Sin app necesaria — usa OmnisPDF en cualquier navegador movil.",
+  title: "Convertir archivos Office a PDF en movil (iPhone y Android) | PDF.it",
+  description: "Aprende como convertir archivos Word, Excel y PowerPoint a PDF en tu iPhone o telefono Android. Sin app necesaria — usa PDF.it en cualquier navegador movil.",
   keywords: "convertir office a pdf en telefono, word a pdf iphone, excel a pdf android, office a pdf movil, convertir a pdf en telefono",
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-  { "@type": "Question", "name": "Puedo convertir un archivo Word a PDF en mi iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Abre Safari o Chrome, ve a la herramienta Office a PDF de OmnisPDF, sube tu archivo .docx y descarga el PDF convertido. No se requiere instalacion de app." } },
-  { "@type": "Question", "name": "Necesito instalar una app para convertir archivos Office a PDF en mi telefono?", "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF funciona completamente en tu navegador movil — Safari, Chrome o Firefox. Sube tu archivo, conviertelo y descarga el PDF sin instalar nada." } },
-  { "@type": "Question", "name": "Puedo convertir archivos Excel a PDF en Android?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Abre cualquier navegador en tu telefono Android, ve a OmnisPDF, sube tu archivo .xlsx y obtiene un PDF en segundos. La herramienta preserva tu formato de tabla y diseno." } },
+  { "@type": "Question", "name": "Puedo convertir un archivo Word a PDF en mi iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Abre Safari o Chrome, ve a la herramienta Office a PDF de PDF.it, sube tu archivo .docx y descarga el PDF convertido. No se requiere instalacion de app." } },
+  { "@type": "Question", "name": "Necesito instalar una app para convertir archivos Office a PDF en mi telefono?", "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it funciona completamente en tu navegador movil — Safari, Chrome o Firefox. Sube tu archivo, conviertelo y descarga el PDF sin instalar nada." } },
+  { "@type": "Question", "name": "Puedo convertir archivos Excel a PDF en Android?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Abre cualquier navegador en tu telefono Android, ve a PDF.it, sube tu archivo .xlsx y obtiene un PDF en segundos. La herramienta preserva tu formato de tabla y diseno." } },
   { "@type": "Question", "name": "Donde se guarda el PDF convertido en mi telefono?", "acceptedAnswer": { "@type": "Answer", "text": "En iPhone, el PDF se descarga a tu app Archivos o la carpeta Descargas en Safari. En Android, va a tu carpeta Descargas. Tambien puedes compartirlo directamente desde el navegador por email o apps de mensajeria." } },
-  { "@type": "Question", "name": "La calidad es la misma que convertir en una computadora?", "acceptedAnswer": { "@type": "Answer", "text": "Si. OmnisPDF procesa archivos en el servidor, no en tu dispositivo. La calidad de conversion es identica ya sea que subas desde un telefono, tablet o computadora de escritorio." } },
+  { "@type": "Question", "name": "La calidad es la misma que convertir en una computadora?", "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it procesa archivos en el servidor, no en tu dispositivo. La calidad de conversion es identica ya sea que subas desde un telefono, tablet o computadora de escritorio." } },
   { "@type": "Question", "name": "Puedo convertir multiples archivos a PDF en mi telefono?", "acceptedAnswer": { "@type": "Answer", "text": "Los usuarios gratuitos pueden convertir un archivo a la vez en movil. Los usuarios Pro obtienen procesamiento por lotes, que permite convertir multiples archivos Office a PDF en una sola operacion incluso en un telefono." } }
 ] }
 
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como convertir archivos Office a PDF en movil", "description": "Convierte archivos Word, Excel o PowerPoint a PDF en tu telefono en 3 simples pasos.", "step": [
-  { "@type": "HowToStep", "name": "Abre OmnisPDF en tu navegador movil", "text": "Abre Safari (iPhone) o Chrome (Android) y ve a omnispdf.com. Navega a la herramienta Office a PDF." },
+  { "@type": "HowToStep", "name": "Abre PDF.it en tu navegador movil", "text": "Abre Safari (iPhone) o Chrome (Android) y ve a pdf.it.com. Navega a la herramienta Office a PDF." },
   { "@type": "HowToStep", "name": "Sube tu archivo Office", "text": "Toca el area de carga y selecciona tu archivo .docx, .xlsx o .pptx desde el navegador de archivos de tu telefono, almacenamiento en la nube o adjuntos de email." },
   { "@type": "HowToStep", "name": "Descarga el PDF", "text": "Toca Convertir, espera unos segundos y descarga tu PDF. Se guardara en tu carpeta Descargas o app Archivos." }
 ] }
@@ -59,7 +59,7 @@ export default function OfficeAPdfEnMovilPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-6">Como convertir archivos Office a PDF en tu telefono (paso a paso)</h2>
             <div className="space-y-4">
               {[
-                { title: "Abre OmnisPDF en tu navegador movil", desc: "Abre Safari (iPhone), Chrome (Android) o cualquier navegador movil y ve a omnispdf.com. Toca el menu para encontrar la herramienta Office a PDF, o ve directamente a omnispdf.com/es/office-a-pdf." },
+                { title: "Abre PDF.it en tu navegador movil", desc: "Abre Safari (iPhone), Chrome (Android) o cualquier navegador movil y ve a pdf.it.com. Toca el menu para encontrar la herramienta Office a PDF, o ve directamente a pdf.it.com/es/office-a-pdf." },
                 { title: "Sube tu archivo", desc: "Toca el area de carga. Tu telefono te permitira elegir un archivo desde tu almacenamiento, iCloud Drive, Google Drive, Dropbox o adjuntos de email recientes. Selecciona tu archivo .docx, .xlsx o .pptx." },
                 { title: "Descarga el PDF convertido", desc: "Toca Convertir y espera unos segundos. El PDF se descargara a tu carpeta Descargas (Android) o app Archivos (iPhone). Tambien puedes compartirlo directamente por email, WhatsApp o cualquier otra app." },
               ].map((step, i) => (
@@ -85,8 +85,8 @@ export default function OfficeAPdfEnMovilPage() {
             <ul className="space-y-2 text-slate-700">
               <li>&#10003; <strong>Revisa tu carpeta Descargas.</strong> Despues de convertir, el PDF va a tu carpeta Descargas por defecto. Desliza hacia abajo la barra de notificaciones para ver la notificacion de descarga y toca para abrir.</li>
               <li>&#10003; <strong>Sube desde Google Drive.</strong> Cuando toques el area de carga en Chrome, puedes explorar Google Drive directamente. Esta es la forma mas rapida de convertir un archivo almacenado en la nube.</li>
-              <li>&#10003; <strong>Usa "Compartir" desde otras apps.</strong> Si recibes un archivo Office en Gmail o WhatsApp, mantiene presionado el adjunto, toca "Compartir," luego "Abrir en Chrome" para navegar a OmnisPDF y subirlo.</li>
-              <li>&#10003; <strong>Usuarios Samsung:</strong> El navegador Samsung Internet funciona igual de bien que Chrome para subir y convertir archivos en OmnisPDF.</li>
+              <li>&#10003; <strong>Usa "Compartir" desde otras apps.</strong> Si recibes un archivo Office en Gmail o WhatsApp, mantiene presionado el adjunto, toca "Compartir," luego "Abrir en Chrome" para navegar a PDF.it y subirlo.</li>
+              <li>&#10003; <strong>Usuarios Samsung:</strong> El navegador Samsung Internet funciona igual de bien que Chrome para subir y convertir archivos en PDF.it.</li>
             </ul>
           </section>
 
@@ -104,7 +104,7 @@ export default function OfficeAPdfEnMovilPage() {
 
         <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
           <h2 className="text-2xl font-black text-white mb-3">Convierte archivos Office en tu telefono</h2>
-          <p className="text-slate-300 mb-6">Sin app necesaria. Abre OmnisPDF en tu navegador movil, sube tu archivo y obtiene un PDF en segundos.</p>
+          <p className="text-slate-300 mb-6">Sin app necesaria. Abre PDF.it en tu navegador movil, sube tu archivo y obtiene un PDF en segundos.</p>
           <Link href="/es/office-a-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><FileText className="h-5 w-5" /> Convertir a PDF Ahora</Link>
         </div></section>
 

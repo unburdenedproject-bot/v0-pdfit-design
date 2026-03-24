@@ -6,9 +6,9 @@ import { RedactionInterface } from "@/components/redaction-interface"
 import { Shield, Zap, Eye, Lock, FileText, Merge, Layers, Repeat, ArrowLeftRight } from "lucide-react"
 
 export const metadata = {
-  title: "Redactar PDF — Oculta Información Sensible Permanentemente | OmnisPDF",
+  title: "Redactar PDF — Oculta Información Sensible Permanentemente | PDF.it",
   description:
-    "Redacta permanentemente texto sensible, datos personales y contenido confidencial de archivos PDF. Editor visual de redacción — dibuja cajas directamente sobre tu documento. Función Business de OmnisPDF.",
+    "Redacta permanentemente texto sensible, datos personales y contenido confidencial de archivos PDF. Editor visual de redacción — dibuja cajas directamente sobre tu documento. Función Business de PDF.it.",
   alternates: {
     languages: {
       en: "/pdf-redaction",
@@ -76,7 +76,7 @@ export default function RedactarPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Redactar PDF</h1>
               <p className="text-xl text-slate-300 mb-4">
-                Elimina permanentemente información sensible de tus documentos PDF con el editor visual de redacción de OmnisPDF. Sube tu archivo, dibuja cajas de redacción sobre el contenido confidencial y aplica redacciones para que el texto oculto no pueda ser copiado, buscado ni recuperado.
+                Elimina permanentemente información sensible de tus documentos PDF con el editor visual de redacción de PDF.it. Sube tu archivo, dibuja cajas de redacción sobre el contenido confidencial y aplica redacciones para que el texto oculto no pueda ser copiado, buscado ni recuperado.
               </p>
               <p className="text-lg text-slate-400 mb-8">
                 Ideal para proteger datos personales, documentos legales, registros médicos, información financiera y otro contenido privado antes de compartir o archivar tus PDFs.

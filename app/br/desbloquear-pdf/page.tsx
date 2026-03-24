@@ -7,15 +7,15 @@ import { Unlock, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Desbloquear PDF Online — Remover Senha de PDF | OmnisPDF",
+  title: "Desbloquear PDF Online — Remover Senha de PDF | PDF.it",
   description:
-    "Desbloqueie um PDF protegido com senha usando o OmnisPDF. Remova a proteção de senha do PDF (com permissão) e baixe um PDF desbloqueado em segundos.",
+    "Desbloqueie um PDF protegido com senha usando o PDF.it. Remova a proteção de senha do PDF (com permissão) e baixe um PDF desbloqueado em segundos.",
   alternates: {
-    canonical: "https://omnispdf.com/br/desbloquear-pdf",
+    canonical: "https://pdf.it.com/br/desbloquear-pdf",
     languages: {
-      "en": "https://omnispdf.com/unlock-pdf",
-      "es": "https://omnispdf.com/es/desbloquear-pdf",
-      "pt": "https://omnispdf.com/br/desbloquear-pdf",
+      "en": "https://pdf.it.com/unlock-pdf",
+      "es": "https://pdf.it.com/es/desbloquear-pdf",
+      "pt": "https://pdf.it.com/br/desbloquear-pdf",
     },
   },
 }
@@ -26,23 +26,23 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "O OmnisPDF pode remover a senha de um PDF sem conhecê-la?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Não. O OmnisPDF requer a senha correta. Não pode recuperar nem ignorar senhas desconhecidas." }
+      "name": "O PDF.it pode remover a senha de um PDF sem conhecê-la?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Não. O PDF.it requer a senha correta. Não pode recuperar nem ignorar senhas desconhecidas." }
     },
     {
       "@type": "Question",
       "name": "É legal desbloquear um PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Você só deve desbloquear PDFs que sejam seus ou para os quais tenha permissão explícita. O OmnisPDF é projetado para usos legítimos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Você só deve desbloquear PDFs que sejam seus ou para os quais tenha permissão explícita. O PDF.it é projetado para usos legítimos." }
     },
     {
       "@type": "Question",
       "name": "Posso proteger meu PDF novamente após desbloqueá-lo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Use a ferramenta Proteger PDF do OmnisPDF para adicionar uma nova senha a qualquer PDF quando precisar." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Use a ferramenta Proteger PDF do PDF.it para adicionar uma nova senha a qualquer PDF quando precisar." }
     },
     {
       "@type": "Question",
       "name": "Posso desbloquear um PDF pelo celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em navegadores móveis — envie o arquivo, digite a senha, desbloqueie e baixe." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em navegadores móveis — envie o arquivo, digite a senha, desbloqueie e baixe." }
     },
     {
       "@type": "Question",
@@ -76,7 +76,7 @@ export default function DesbloquearPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Desbloquear PDF (Remover Senha)</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Use o OmnisPDF para desbloquear um PDF protegido com senha quando você tiver a senha. Remova as restrições e baixe um PDF desbloqueado para editar, imprimir ou compartilhar.
+                Use o PDF.it para desbloquear um PDF protegido com senha quando você tiver a senha. Remova as restrições e baixe um PDF desbloqueado para editar, imprimir ou compartilhar.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Desbloqueio Instantâneo</span></div>
@@ -95,7 +95,7 @@ export default function DesbloquearPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use a ferramenta Desbloquear PDF do OmnisPDF para remover a proteção com senha de um PDF quando você souber a senha. Envie o arquivo, digite a senha e baixe um PDF desbloqueado que você pode editar, imprimir, unir ou comprimir.
+              Use a ferramenta Desbloquear PDF do PDF.it para remover a proteção com senha de um PDF quando você souber a senha. Envie o arquivo, digite a senha e baixe um PDF desbloqueado que você pode editar, imprimir, unir ou comprimir.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Desbloqueie arquivos PDF que sejam seus ou tenha permissão para editar</li>
@@ -113,7 +113,7 @@ export default function DesbloquearPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Remova a Senha do PDF (Com Permissão)</h2>
               <p className="text-slate-600">
-                Se você tem a senha correta, o OmnisPDF pode descriptografar o PDF e salvar uma nova versão sem a exigência de senha. Esta ferramenta é projetada para arquivos que são seus ou aos quais você tem acesso legítimo.
+                Se você tem a senha correta, o PDF.it pode descriptografar o PDF e salvar uma nova versão sem a exigência de senha. Esta ferramenta é projetada para arquivos que são seus ou aos quais você tem acesso legítimo.
               </p>
             </div>
             <div>
@@ -137,7 +137,7 @@ export default function DesbloquearPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Desbloquear um PDF</h2>
             <div className="space-y-4">
               {[
-                "Envie seu PDF protegido com senha ao OmnisPDF.",
+                "Envie seu PDF protegido com senha ao PDF.it.",
                 "Digite a senha correta.",
                 "Clique em Desbloquear PDF e baixe o arquivo desbloqueado.",
               ].map((step, i) => (
@@ -182,10 +182,10 @@ export default function DesbloquearPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "O OmnisPDF pode remover a senha de um PDF sem conhecê-la?", a: "Não. O OmnisPDF requer a senha correta. Não pode recuperar nem ignorar senhas desconhecidas." },
-                { q: "É legal desbloquear um PDF?", a: "Você só deve desbloquear PDFs que sejam seus ou para os quais tenha permissão explícita. O OmnisPDF é projetado para usos legítimos." },
-                { q: "Posso proteger meu PDF novamente após desbloqueá-lo?", a: "Sim. Use a ferramenta Proteger PDF do OmnisPDF para adicionar uma nova senha a qualquer PDF quando precisar." },
-                { q: "Posso desbloquear um PDF pelo celular?", a: "Sim. O OmnisPDF funciona em navegadores móveis — envie o arquivo, digite a senha, desbloqueie e baixe." },
+                { q: "O PDF.it pode remover a senha de um PDF sem conhecê-la?", a: "Não. O PDF.it requer a senha correta. Não pode recuperar nem ignorar senhas desconhecidas." },
+                { q: "É legal desbloquear um PDF?", a: "Você só deve desbloquear PDFs que sejam seus ou para os quais tenha permissão explícita. O PDF.it é projetado para usos legítimos." },
+                { q: "Posso proteger meu PDF novamente após desbloqueá-lo?", a: "Sim. Use a ferramenta Proteger PDF do PDF.it para adicionar uma nova senha a qualquer PDF quando precisar." },
+                { q: "Posso desbloquear um PDF pelo celular?", a: "Sim. O PDF.it funciona em navegadores móveis — envie o arquivo, digite a senha, desbloqueie e baixe." },
                 { q: "É seguro enviar um PDF protegido?", a: "Sim. Todas as transferências são criptografadas com SSL e seus arquivos são removidos imediatamente após sua sessão. Nunca armazenamos nem compartilhamos seus documentos." },
                 { q: "Qual é o tamanho máximo de arquivo que posso desbloquear?", a: "Contas gratuitas podem enviar arquivos de até 25MB. Contas Pro podem enviar até 200MB. Contas Business podem enviar até 1GB." },
               ].map((faq, i) => (

@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ImageIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "PDF para JPG para PowerPoint (Melhores Configurações + Dicas) | OmnisPDF",
+  title: "PDF para JPG para PowerPoint (Melhores Configurações + Dicas) | PDF.it",
   description:
     "Aprenda como converter PDF para JPG com a qualidade ideal para inserir em apresentações do PowerPoint e Google Slides. Dicas de DPI, tamanho e formatação.",
   keywords: "pdf para jpg powerpoint, inserir pdf no powerpoint, pdf para imagem apresentação, pdf para slide",
@@ -27,7 +27,7 @@ const howToSchema = {
   "name": "Como Converter PDF para JPG para PowerPoint",
   "description": "Converta páginas de PDF para imagens JPG otimizadas para apresentações.",
   "step": [
-    { "@type": "HowToStep", "name": "Converta o PDF para JPG", "text": "Use a ferramenta PDF para JPG do OmnisPDF com 200 DPI para qualidade ideal em apresentações." },
+    { "@type": "HowToStep", "name": "Converta o PDF para JPG", "text": "Use a ferramenta PDF para JPG do PDF.it com 200 DPI para qualidade ideal em apresentações." },
     { "@type": "HowToStep", "name": "Insira no PowerPoint", "text": "No PowerPoint, vá em Inserir > Imagem e selecione o arquivo JPG convertido." },
     { "@type": "HowToStep", "name": "Ajuste o tamanho", "text": "Redimensione a imagem no slide mantendo a proporção. Evite ampliar além do tamanho original." }
   ]
@@ -83,7 +83,7 @@ export default function PdfParaJpgParaPowerpointPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-6">Como Fazer (Passo a Passo)</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Converta o PDF para JPG", desc: "Acesse a ferramenta PDF para JPG do OmnisPDF. Envie seu PDF e selecione 200 DPI (ideal para apresentações). Clique em Converter e baixe as imagens." },
+                  { title: "Converta o PDF para JPG", desc: "Acesse a ferramenta PDF para JPG do PDF.it. Envie seu PDF e selecione 200 DPI (ideal para apresentações). Clique em Converter e baixe as imagens." },
                   { title: "Insira no PowerPoint", desc: "Abra sua apresentação no PowerPoint. Vá em Inserir > Imagem > Este Dispositivo e selecione o arquivo JPG. A imagem será inserida no slide atual." },
                   { title: "Ajuste o tamanho e posição", desc: "Arraste os cantos da imagem para redimensionar (segure Shift para manter a proporção). Posicione no slide conforme necessário. Evite ampliar a imagem além do tamanho original para não perder qualidade." },
                 ].map((step, i) => (

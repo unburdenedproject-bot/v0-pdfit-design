@@ -6,15 +6,15 @@ import { UrlPdfInterface } from "@/components/url-pdf-interface"
 import { Globe, Zap, Shield, FileText, Merge, Scan, Lock, Type } from "lucide-react"
 
 export const metadata = {
-  title: "Converter URL para PDF Online — Salve Qualquer Pagina Web | OmnisPDF",
+  title: "Converter URL para PDF Online — Salve Qualquer Pagina Web | PDF.it",
   description:
-    "Converta qualquer pagina web em um PDF de alta qualidade. Digite uma URL e baixe um PDF perfeitamente formatado. Tamanho, orientacao e margens personalizaveis. Funcao Pro do OmnisPDF.",
+    "Converta qualquer pagina web em um PDF de alta qualidade. Digite uma URL e baixe um PDF perfeitamente formatado. Tamanho, orientacao e margens personalizaveis. Funcao Pro do PDF.it.",
   alternates: {
-    canonical: "https://omnispdf.com/br/url-para-pdf",
+    canonical: "https://pdf.it.com/br/url-para-pdf",
     languages: {
-      en: "https://omnispdf.com/url-to-pdf",
-      es: "https://omnispdf.com/es/url-a-pdf",
-      pt: "https://omnispdf.com/br/url-para-pdf",
+      en: "https://pdf.it.com/url-to-pdf",
+      es: "https://pdf.it.com/es/url-a-pdf",
+      pt: "https://pdf.it.com/br/url-para-pdf",
     },
   },
 }
@@ -28,7 +28,7 @@ const faqSchema = {
       name: "Como converter uma URL para PDF?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Cole a URL da pagina web no OmnisPDF, escolha o tamanho de pagina e orientacao desejados, e clique em Converter. O PDF sera gerado em segundos e estara pronto para download.",
+        text: "Cole a URL da pagina web no PDF.it, escolha o tamanho de pagina e orientacao desejados, e clique em Converter. O PDF sera gerado em segundos e estara pronto para download.",
       },
     },
     {
@@ -44,7 +44,7 @@ const faqSchema = {
       name: "A conversao de URL para PDF e gratuita?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "A ferramenta URL para PDF e uma funcao Pro do OmnisPDF, disponivel no plano Pro a $7,99/mes. O plano Pro inclui conversoes ilimitadas e acesso a todas as ferramentas avancadas.",
+        text: "A ferramenta URL para PDF e uma funcao Pro do PDF.it, disponivel no plano Pro a $7,99/mes. O plano Pro inclui conversoes ilimitadas e acesso a todas as ferramentas avancadas.",
       },
     },
     {
@@ -188,9 +188,9 @@ export default function UrlParaPdfPageBr() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como converter uma URL para PDF?", a: "Cole a URL da pagina web no OmnisPDF, escolha o tamanho de pagina e orientacao desejados, e clique em Converter. O PDF sera gerado em segundos e estara pronto para download." },
+                { q: "Como converter uma URL para PDF?", a: "Cole a URL da pagina web no PDF.it, escolha o tamanho de pagina e orientacao desejados, e clique em Converter. O PDF sera gerado em segundos e estara pronto para download." },
                 { q: "Posso personalizar o layout do PDF gerado?", a: "Sim. Voce pode escolher o tamanho da pagina (A4, Letter, Legal), orientacao (retrato ou paisagem) e ajustar as margens antes de converter." },
-                { q: "A conversao de URL para PDF e gratuita?", a: "A ferramenta URL para PDF e uma funcao Pro do OmnisPDF, disponivel no plano Pro a $7,99/mes. O plano Pro inclui conversoes ilimitadas e acesso a todas as ferramentas avancadas." },
+                { q: "A conversao de URL para PDF e gratuita?", a: "A ferramenta URL para PDF e uma funcao Pro do PDF.it, disponivel no plano Pro a $7,99/mes. O plano Pro inclui conversoes ilimitadas e acesso a todas as ferramentas avancadas." },
                 { q: "Quais tipos de paginas web posso converter?", a: "Voce pode converter qualquer pagina web publica — artigos, blogs, documentacao, portfolios, relatorios e muito mais. Paginas protegidas por login nao podem ser acessadas." },
                 { q: "Meus dados ficam seguros ao converter uma URL?", a: "Sim. Todas as transferencias sao criptografadas com SSL e os arquivos gerados sao removidos apos sua sessao. Nao armazenamos nem compartilhamos seus documentos." },
               ].map((faq, i) => (

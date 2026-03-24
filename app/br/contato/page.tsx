@@ -76,10 +76,10 @@ export default function ContatoPage() {
                         <div>
                           <h3 className="text-lg font-bold text-orange-900 mb-1">Suporte por Email</h3>
                           <a
-                            href="mailto:suporte@omnispdf.com"
+                            href="mailto:suporte@pdf.it.com"
                             className="text-2xl font-bold text-orange-600 hover:text-orange-700 transition-colors"
                           >
-                            suporte@omnispdf.com
+                            suporte@pdf.it.com
                           </a>
                         </div>
                       </div>
@@ -127,8 +127,8 @@ export default function ContatoPage() {
                         </p>
                         <p className="text-sm text-slate-500 mb-6">
                           Voce tambem pode escrever diretamente para{" "}
-                          <a href="mailto:suporte@omnispdf.com" className="text-orange-500 hover:text-orange-600 font-medium">
-                            suporte@omnispdf.com
+                          <a href="mailto:suporte@pdf.it.com" className="text-orange-500 hover:text-orange-600 font-medium">
+                            suporte@pdf.it.com
                           </a>
                         </p>
                         <Button onClick={() => setIsSubmitted(false)} variant="outline" className="bg-white text-slate-800 border-slate-300">
@@ -213,7 +213,7 @@ export default function ContatoPage() {
                             <AlertCircle className="h-5 w-5 flex-shrink-0" />
                             <span className="text-sm">
                               Ocorreu um erro ao enviar sua mensagem. Tente novamente ou escreva diretamente para{" "}
-                              <a href="mailto:suporte@omnispdf.com" className="underline">suporte@omnispdf.com</a>
+                              <a href="mailto:suporte@pdf.it.com" className="underline">suporte@pdf.it.com</a>
                             </span>
                           </div>
                         )}
@@ -232,8 +232,8 @@ export default function ContatoPage() {
 
                         <p className="text-center text-sm text-slate-500">
                           Ou escreva diretamente para{" "}
-                          <a href="mailto:suporte@omnispdf.com" className="text-orange-500 hover:text-orange-600 font-medium">
-                            suporte@omnispdf.com
+                          <a href="mailto:suporte@pdf.it.com" className="text-orange-500 hover:text-orange-600 font-medium">
+                            suporte@pdf.it.com
                           </a>
                         </p>
                       </form>

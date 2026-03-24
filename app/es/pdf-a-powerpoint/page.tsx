@@ -6,14 +6,14 @@ import { Presentation, Zap, Shield, Download, Crown } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Convertir PDF a PowerPoint Online — PDF a PPTX | OmnisPDF",
+  title: "Convertir PDF a PowerPoint Online — PDF a PPTX | PDF.it",
   description:
-    "Convierte archivos PDF a presentaciones PowerPoint editables con OmnisPDF. Transforma documentos estaticos en diapositivas que puedes editar, presentar y compartir.",
+    "Convierte archivos PDF a presentaciones PowerPoint editables con PDF.it. Transforma documentos estaticos en diapositivas que puedes editar, presentar y compartir.",
   alternates: {
-    canonical: "https://omnispdf.com/es/pdf-a-powerpoint",
+    canonical: "https://pdf.it.com/es/pdf-a-powerpoint",
     languages: {
-      en: "https://omnispdf.com/pdf-to-powerpoint",
-      es: "https://omnispdf.com/es/pdf-a-powerpoint",
+      en: "https://pdf.it.com/pdf-to-powerpoint",
+      es: "https://pdf.it.com/es/pdf-a-powerpoint",
     },
   },
 }
@@ -27,7 +27,7 @@ const faqSchema = {
       name: "¿Como convierto un PDF a PowerPoint?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sube tu PDF a OmnisPDF, haz clic en Convertir y descarga el archivo PowerPoint editable. La conversion preserva el diseno, texto e imagenes.",
+        text: "Sube tu PDF a PDF.it, haz clic en Convertir y descarga el archivo PowerPoint editable. La conversion preserva el diseno, texto e imagenes.",
       },
     },
     {
@@ -35,7 +35,7 @@ const faqSchema = {
       name: "¿Se mantiene el formato despues de la conversion?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "OmnisPDF preserva texto, imagenes y diseno lo mejor posible. Disenos complejos pueden necesitar ajustes menores en PowerPoint.",
+        text: "PDF.it preserva texto, imagenes y diseno lo mejor posible. Disenos complejos pueden necesitar ajustes menores en PowerPoint.",
       },
     },
     {
@@ -59,7 +59,7 @@ const faqSchema = {
       name: "¿Puedo convertir PDF a PowerPoint desde mi celular?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Si. OmnisPDF funciona en navegadores moviles — sube, convierte y descarga desde iPhone o Android.",
+        text: "Si. PDF.it funciona en navegadores moviles — sube, convierte y descarga desde iPhone o Android.",
       },
     },
     {
@@ -130,7 +130,7 @@ export default function PDFaPowerPointPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Usa OmnisPDF para convertir archivos PDF en presentaciones PowerPoint editables. Perfecto para reutilizar reportes, propuestas y documentos en diapositivas que puedes presentar y personalizar.
+              Usa PDF.it para convertir archivos PDF en presentaciones PowerPoint editables. Perfecto para reutilizar reportes, propuestas y documentos en diapositivas que puedes presentar y personalizar.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Convierte paginas PDF a diapositivas PowerPoint editables</li>
@@ -154,7 +154,7 @@ export default function PDFaPowerPointPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Preserva Diseno e Imagenes</h2>
               <p className="text-slate-600">
-                OmnisPDF mantiene texto, imagenes y estructura de pagina intactos para que tus diapositivas se vean profesionales desde el inicio. Disenos complejos pueden necesitar ajustes menores.
+                PDF.it mantiene texto, imagenes y estructura de pagina intactos para que tus diapositivas se vean profesionales desde el inicio. Disenos complejos pueden necesitar ajustes menores.
               </p>
             </div>
             <div>
@@ -172,7 +172,7 @@ export default function PDFaPowerPointPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Convertir PDF a PowerPoint</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Haz clic en Convertir PDF a PowerPoint.",
                 "Descarga tu archivo .pptx editable y abrelo en PowerPoint o Google Slides.",
               ].map((step, i) => (
@@ -217,11 +217,11 @@ export default function PDFaPowerPointPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Como convierto un PDF a PowerPoint?", a: "Sube tu PDF a OmnisPDF, haz clic en Convertir y descarga el archivo PowerPoint editable. La conversion preserva el diseno, texto e imagenes." },
-                { q: "¿Se mantiene el formato despues de la conversion?", a: "OmnisPDF preserva texto, imagenes y diseno lo mejor posible. Disenos complejos pueden necesitar ajustes menores en PowerPoint." },
+                { q: "¿Como convierto un PDF a PowerPoint?", a: "Sube tu PDF a PDF.it, haz clic en Convertir y descarga el archivo PowerPoint editable. La conversion preserva el diseno, texto e imagenes." },
+                { q: "¿Se mantiene el formato despues de la conversion?", a: "PDF.it preserva texto, imagenes y diseno lo mejor posible. Disenos complejos pueden necesitar ajustes menores en PowerPoint." },
                 { q: "¿Puedo editar las diapositivas despues de la conversion?", a: "Si. El resultado es un archivo .pptx completamente editable que puedes abrir en PowerPoint, Google Slides o Keynote." },
                 { q: "¿PDF a PowerPoint es gratis?", a: "PDF a PowerPoint es una funcion Pro. Los usuarios gratuitos pueden probar otras herramientas como PDF a JPG o PDF a PNG." },
-                { q: "¿Puedo convertir PDF a PowerPoint desde mi celular?", a: "Si. OmnisPDF funciona en navegadores moviles — sube, convierte y descarga desde iPhone o Android." },
+                { q: "¿Puedo convertir PDF a PowerPoint desde mi celular?", a: "Si. PDF.it funciona en navegadores moviles — sube, convierte y descarga desde iPhone o Android." },
                 { q: "¿Cual es el tamano maximo de archivo que puedo convertir?", a: "Las cuentas Pro y Business pueden subir archivos de hasta 200MB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

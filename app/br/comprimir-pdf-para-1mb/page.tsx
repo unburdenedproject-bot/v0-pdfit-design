@@ -6,16 +6,16 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Ro
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF para 1MB Online — Reduzir Tamanho de PDF | OmnisPDF",
+  title: "Comprimir PDF para 1MB Online — Reduzir Tamanho de PDF | PDF.it",
   description: "Comprima seu PDF para cumprir limites de 1MB. Perfeito para portais de upload, formularios e candidaturas com limites rigorosos de tamanho.",
   alternates: { languages: { en: "/compress-pdf-to-1mb", es: "/es/comprimir-pdf-a-1mb", pt: "/br/comprimir-pdf-para-1mb" } },
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-  { "@type": "Question", "name": "Como comprimo um PDF para limite de 1MB?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF ao OmnisPDF e clique em Comprimir. A ferramenta aplica compressao forte para otimizar imagens e estrutura interna, reduzindo significativamente o tamanho do arquivo." } },
+  { "@type": "Question", "name": "Como comprimo um PDF para limite de 1MB?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF ao PDF.it e clique em Comprimir. A ferramenta aplica compressao forte para otimizar imagens e estrutura interna, reduzindo significativamente o tamanho do arquivo." } },
   { "@type": "Question", "name": "Meu PDF ficara abaixo de 1MB?", "acceptedAnswer": { "@type": "Answer", "text": "Documentos de ate 10-20 paginas com texto e imagens moderadas geralmente ficam abaixo de 1MB. Arquivos com muitas imagens de alta resolucao podem precisar ser divididos primeiro." } },
   { "@type": "Question", "name": "A qualidade sera afetada?", "acceptedAnswer": { "@type": "Answer", "text": "O texto permanece nitido e legivel. As imagens sao otimizadas de forma inteligente mantendo boa qualidade visual." } },
-  { "@type": "Question", "name": "Posso comprimir pelo celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em qualquer navegador movel no iPhone ou Android." } },
+  { "@type": "Question", "name": "Posso comprimir pelo celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em qualquer navegador movel no iPhone ou Android." } },
   { "@type": "Question", "name": "Quais portais exigem limite de 1MB?", "acceptedAnswer": { "@type": "Answer", "text": "Muitos portais governamentais, sistemas de candidatura de emprego, plataformas educacionais e formularios online exigem documentos abaixo de 1MB." } },
   { "@type": "Question", "name": "O que faco se continuar acima de 1MB?", "acceptedAnswer": { "@type": "Answer", "text": "Divida o PDF em secoes menores com nossa ferramenta Dividir PDF e comprima cada parte. Tambem pode achatar o PDF ou remover paginas desnecessarias." } }
 ] }
@@ -30,7 +30,7 @@ export default function ComprimirPDFPara1MBPagePt() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-4xl mx-auto text-center">
             <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6"><Compress className="h-10 w-10 text-white" /></div>
             <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF para Limites de 1MB</h1>
-            <p className="text-xl text-slate-300 mb-8">Muitos portais de upload exigem PDFs abaixo de 1MB. O OmnisPDF aplica compressao forte para reduzir o tamanho do seu arquivo e cumprir esses requisitos — mantendo texto nitido e imagens com boa qualidade.</p>
+            <p className="text-xl text-slate-300 mb-8">Muitos portais de upload exigem PDFs abaixo de 1MB. O PDF.it aplica compressao forte para reduzir o tamanho do seu arquivo e cumprir esses requisitos — mantendo texto nitido e imagens com boa qualidade.</p>
             <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
               <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Compressao Forte</span></div>
               <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-orange-500" /><span>Arquivos Excluidos Apos a Sessao</span></div>
@@ -71,7 +71,7 @@ export default function ComprimirPDFPara1MBPagePt() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Comprimir um PDF para Limites de 1MB</h2>
             <div className="space-y-4">
-              {["Envie ou arraste seu PDF ao OmnisPDF.", "Clique em Comprimir PDF — a compressao forte e aplicada automaticamente.", "Baixe seu PDF menor. Se continuar acima de 1MB, tente dividir o arquivo primeiro."].map((step, i) => (
+              {["Envie ou arraste seu PDF ao PDF.it.", "Clique em Comprimir PDF — a compressao forte e aplicada automaticamente.", "Baixe seu PDF menor. Se continuar acima de 1MB, tente dividir o arquivo primeiro."].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200"><div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div><p className="text-slate-700 pt-1">{step}</p></div>
               ))}
             </div>
@@ -107,10 +107,10 @@ export default function ComprimirPDFPara1MBPagePt() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como comprimo um PDF para limite de 1MB?", a: "Envie seu PDF ao OmnisPDF e clique em Comprimir. A compressao forte reduz significativamente o tamanho otimizando imagens e estrutura interna." },
+                { q: "Como comprimo um PDF para limite de 1MB?", a: "Envie seu PDF ao PDF.it e clique em Comprimir. A compressao forte reduz significativamente o tamanho otimizando imagens e estrutura interna." },
                 { q: "Meu PDF ficara abaixo de 1MB?", a: "Documentos de ate 10-20 paginas com texto geralmente ficam abaixo de 1MB. Arquivos com muitas imagens podem precisar ser divididos." },
                 { q: "A qualidade sera afetada?", a: "O texto permanece nitido. As imagens sao otimizadas mantendo boa qualidade visual." },
-                { q: "Posso comprimir pelo celular?", a: "Sim. O OmnisPDF funciona em qualquer navegador movel." },
+                { q: "Posso comprimir pelo celular?", a: "Sim. O PDF.it funciona em qualquer navegador movel." },
                 { q: "Quais portais exigem limite de 1MB?", a: "Portais governamentais, plataformas de emprego, sistemas educacionais e formularios online." },
                 { q: "O que faco se continuar acima de 1MB?", a: "Divida o PDF em secoes menores e comprima cada parte. Achate o PDF ou remova paginas desnecessarias." },
               ].map((faq, i) => (

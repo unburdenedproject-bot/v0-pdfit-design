@@ -6,15 +6,15 @@ import { Unlock, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Descriptografar PDF — Remova a Criptografia do PDF | OmnisPDF",
+  title: "Descriptografar PDF — Remova a Criptografia do PDF | PDF.it",
   description:
-    "Descriptografe seu PDF e remova a criptografia com o OmnisPDF. Desbloqueie documentos protegidos com senha — rápido, no navegador, sem cadastro.",
+    "Descriptografe seu PDF e remova a criptografia com o PDF.it. Desbloqueie documentos protegidos com senha — rápido, no navegador, sem cadastro.",
   alternates: {
-    canonical: "https://omnispdf.com/br/descriptografar-pdf",
+    canonical: "https://pdf.it.com/br/descriptografar-pdf",
     languages: {
-      en: "https://omnispdf.com/decrypt-pdf",
-      es: "https://omnispdf.com/es/desencriptar-pdf",
-      pt: "https://omnispdf.com/br/descriptografar-pdf",
+      en: "https://pdf.it.com/decrypt-pdf",
+      es: "https://pdf.it.com/es/desencriptar-pdf",
+      pt: "https://pdf.it.com/br/descriptografar-pdf",
     },
   },
 }
@@ -26,7 +26,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como descriptografo um PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF criptografado para o OmnisPDF, insira a senha do documento e a ferramenta removerá a criptografia, gerando um PDF sem proteção por senha." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF criptografado para o PDF.it, insira a senha do documento e a ferramenta removerá a criptografia, gerando um PDF sem proteção por senha." }
     },
     {
       "@type": "Question",
@@ -36,7 +36,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Qual é a diferença entre descriptografar e desbloquear?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Descriptografar remove a criptografia completa do arquivo, enquanto desbloquear pode se referir apenas à remoção de restrições de permissão (como impressão ou cópia). Ambas as funções estão disponíveis no OmnisPDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Descriptografar remove a criptografia completa do arquivo, enquanto desbloquear pode se referir apenas à remoção de restrições de permissão (como impressão ou cópia). Ambas as funções estão disponíveis no PDF.it." }
     },
     {
       "@type": "Question",
@@ -46,7 +46,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso descriptografar um PDF pelo celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em navegadores móveis — envie seu PDF, insira a senha e baixe o arquivo descriptografado de qualquer dispositivo." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em navegadores móveis — envie seu PDF, insira a senha e baixe o arquivo descriptografado de qualquer dispositivo." }
     },
     {
       "@type": "Question",
@@ -75,7 +75,7 @@ export default function DescriptografarPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Descriptografar PDF</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Remova a criptografia e a proteção por senha do seu PDF com o OmnisPDF. Desbloqueie documentos cifrados — rápido, seguro e direto do navegador.
+                Remova a criptografia e a proteção por senha do seu PDF com o PDF.it. Desbloqueie documentos cifrados — rápido, seguro e direto do navegador.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Desbloqueio Rápido</span></div>
@@ -99,7 +99,7 @@ export default function DescriptografarPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Precisa remover a criptografia de um PDF? A ferramenta Descriptografar PDF do OmnisPDF remove a proteção por senha do seu documento, gerando um PDF limpo que pode ser aberto, editado e compartilhado livremente — desde que você conheça a senha original.
+              Precisa remover a criptografia de um PDF? A ferramenta Descriptografar PDF do PDF.it remove a proteção por senha do seu documento, gerando um PDF limpo que pode ser aberto, editado e compartilhado livremente — desde que você conheça a senha original.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Remova a criptografia de qualquer PDF protegido</li>
@@ -141,7 +141,7 @@ export default function DescriptografarPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Descriptografar um PDF</h2>
             <div className="space-y-4">
               {[
-                "Envie seu PDF criptografado para o OmnisPDF.",
+                "Envie seu PDF criptografado para o PDF.it.",
                 "Insira a senha do documento.",
                 "Clique em Descriptografar e baixe o PDF sem proteção.",
               ].map((step, i) => (
@@ -188,11 +188,11 @@ export default function DescriptografarPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como descriptografo um PDF?", a: "Envie seu PDF criptografado para o OmnisPDF, insira a senha do documento e a ferramenta removerá a criptografia, gerando um PDF sem proteção por senha." },
+                { q: "Como descriptografo um PDF?", a: "Envie seu PDF criptografado para o PDF.it, insira a senha do documento e a ferramenta removerá a criptografia, gerando um PDF sem proteção por senha." },
                 { q: "Preciso saber a senha para descriptografar?", a: "Sim. Para descriptografar um PDF protegido com senha de abertura, você precisa fornecer a senha correta. Não é possível remover criptografia sem a senha." },
-                { q: "Qual é a diferença entre descriptografar e desbloquear?", a: "Descriptografar remove a criptografia completa do arquivo, enquanto desbloquear pode se referir apenas à remoção de restrições de permissão. Ambas as funções estão disponíveis no OmnisPDF." },
+                { q: "Qual é a diferença entre descriptografar e desbloquear?", a: "Descriptografar remove a criptografia completa do arquivo, enquanto desbloquear pode se referir apenas à remoção de restrições de permissão. Ambas as funções estão disponíveis no PDF.it." },
                 { q: "É seguro enviar meu PDF criptografado?", a: "Sim. Todas as transferências são protegidas com SSL e seus arquivos são eliminados imediatamente após a sessão. Nunca armazenamos seus documentos." },
-                { q: "Posso descriptografar um PDF pelo celular?", a: "Sim. O OmnisPDF funciona em navegadores móveis — envie seu PDF, insira a senha e baixe o arquivo descriptografado de qualquer dispositivo." },
+                { q: "Posso descriptografar um PDF pelo celular?", a: "Sim. O PDF.it funciona em navegadores móveis — envie seu PDF, insira a senha e baixe o arquivo descriptografado de qualquer dispositivo." },
                 { q: "É grátis descriptografar um PDF?", a: "Sim. Contas gratuitas têm 10 operações por dia. Contas Pro têm operações ilimitadas." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

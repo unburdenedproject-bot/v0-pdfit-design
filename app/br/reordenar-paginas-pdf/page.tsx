@@ -6,15 +6,15 @@ import { ProcessingInterface } from "@/components/processing-interface"
 import { FileText, Zap, Shield, Download } from "lucide-react"
 
 export const metadata = {
-  title: "Reordenar Paginas de PDF — Reorganize Paginas Online | OmnisPDF",
+  title: "Reordenar Paginas de PDF — Reorganize Paginas Online | PDF.it",
   description:
-    "Reordene as paginas de um PDF online com o OmnisPDF. Mova, reorganize e ajuste a ordem das paginas do seu documento — rapido, gratuito e seguro.",
+    "Reordene as paginas de um PDF online com o PDF.it. Mova, reorganize e ajuste a ordem das paginas do seu documento — rapido, gratuito e seguro.",
   alternates: {
-    canonical: "https://omnispdf.com/br/reordenar-paginas-pdf",
+    canonical: "https://pdf.it.com/br/reordenar-paginas-pdf",
     languages: {
-      en: "https://omnispdf.com/reorder-pdf-pages",
-      es: "https://omnispdf.com/es/reordenar-paginas-pdf",
-      pt: "https://omnispdf.com/br/reordenar-paginas-pdf",
+      en: "https://pdf.it.com/reorder-pdf-pages",
+      es: "https://pdf.it.com/es/reordenar-paginas-pdf",
+      pt: "https://pdf.it.com/br/reordenar-paginas-pdf",
     },
   },
 }
@@ -28,7 +28,7 @@ const faqSchema = {
       name: "Como reordenar paginas de um PDF online?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Suba seu PDF no OmnisPDF, visualize todas as paginas como miniaturas, arraste cada pagina para a nova posicao desejada e baixe o PDF reorganizado.",
+        text: "Suba seu PDF no PDF.it, visualize todas as paginas como miniaturas, arraste cada pagina para a nova posicao desejada e baixe o PDF reorganizado.",
       },
     },
     {
@@ -36,7 +36,7 @@ const faqSchema = {
       name: "Preciso instalar algum software?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Nao. O OmnisPDF funciona inteiramente no navegador. Nao e necessario instalar nenhum software — basta acessar o site e subir seu PDF.",
+        text: "Nao. O PDF.it funciona inteiramente no navegador. Nao e necessario instalar nenhum software — basta acessar o site e subir seu PDF.",
       },
     },
     {
@@ -52,7 +52,7 @@ const faqSchema = {
       name: "O PDF original e modificado?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Nao. O OmnisPDF cria uma nova copia do PDF com as paginas na ordem desejada. Seu arquivo original permanece inalterado.",
+        text: "Nao. O PDF.it cria uma nova copia do PDF com as paginas na ordem desejada. Seu arquivo original permanece inalterado.",
       },
     },
     {
@@ -109,7 +109,7 @@ export default function ReordenarPaginasPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              O reordenador de paginas do OmnisPDF oferece uma interface visual e intuitiva para reorganizar seu PDF. Cada pagina e exibida como miniatura — basta arrastar para a nova posicao. Ideal para corrigir ordem de digitalizacao, reorganizar capitulos ou preparar documentos para impressao.
+              O reordenador de paginas do PDF.it oferece uma interface visual e intuitiva para reorganizar seu PDF. Cada pagina e exibida como miniatura — basta arrastar para a nova posicao. Ideal para corrigir ordem de digitalizacao, reorganizar capitulos ou preparar documentos para impressao.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Interface visual com miniaturas de paginas</li>
@@ -157,7 +157,7 @@ export default function ReordenarPaginasPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Reordenar Paginas de um PDF</h2>
             <div className="space-y-4">
               {[
-                "Suba ou arraste seu PDF para o OmnisPDF.",
+                "Suba ou arraste seu PDF para o PDF.it.",
                 "Visualize as miniaturas e arraste as paginas para a nova ordem.",
                 "Clique em Salvar e baixe seu PDF com as paginas reorganizadas.",
               ].map((step, i) => (
@@ -204,10 +204,10 @@ export default function ReordenarPaginasPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como reordenar paginas de um PDF online?", a: "Suba seu PDF no OmnisPDF, visualize todas as paginas como miniaturas, arraste cada pagina para a nova posicao desejada e baixe o PDF reorganizado." },
-                { q: "Preciso instalar algum software?", a: "Nao. O OmnisPDF funciona inteiramente no navegador. Nao e necessario instalar nenhum software — basta acessar o site e subir seu PDF." },
+                { q: "Como reordenar paginas de um PDF online?", a: "Suba seu PDF no PDF.it, visualize todas as paginas como miniaturas, arraste cada pagina para a nova posicao desejada e baixe o PDF reorganizado." },
+                { q: "Preciso instalar algum software?", a: "Nao. O PDF.it funciona inteiramente no navegador. Nao e necessario instalar nenhum software — basta acessar o site e subir seu PDF." },
                 { q: "Posso reverter a ordem de todas as paginas?", a: "Sim. Voce pode reorganizar as paginas em qualquer ordem, incluindo inverter completamente a sequencia do documento." },
-                { q: "O PDF original e modificado?", a: "Nao. O OmnisPDF cria uma nova copia do PDF com as paginas na ordem desejada. Seu arquivo original permanece inalterado." },
+                { q: "O PDF original e modificado?", a: "Nao. O PDF.it cria uma nova copia do PDF com as paginas na ordem desejada. Seu arquivo original permanece inalterado." },
                 { q: "E gratuito reordenar paginas de PDF?", a: "Sim. Voce pode reordenar paginas de PDFs de ate 25MB gratuitamente. Para arquivos maiores e processamento em lote, atualize para o plano Pro." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

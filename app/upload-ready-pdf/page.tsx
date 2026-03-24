@@ -6,9 +6,9 @@ import { Upload, Zap, Shield, CheckCircle } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Upload-Ready PDF — Fix & Optimize PDFs for Upload Portals | OmnisPDF",
+  title: "Upload-Ready PDF — Fix & Optimize PDFs for Upload Portals | PDF.it",
   description:
-    "Make your PDF upload-ready in one click. OmnisPDF flattens forms, compresses file size, and fixes common upload issues — works with any portal, no login required.",
+    "Make your PDF upload-ready in one click. PDF.it flattens forms, compresses file size, and fixes common upload issues — works with any portal, no login required.",
 }
 
 const faqSchema = {
@@ -113,7 +113,7 @@ export default function UploadReadyPDFPage() {
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Tired of upload portals rejecting your PDF? OmnisPDF's Upload-Ready tool fixes the most common problems in one click — oversized files, blank form fields, unsupported annotations, and incompatible PDF features. The result is a clean, universally compatible PDF that works everywhere.
+              Tired of upload portals rejecting your PDF? PDF.it's Upload-Ready tool fixes the most common problems in one click — oversized files, blank form fields, unsupported annotations, and incompatible PDF features. The result is a clean, universally compatible PDF that works everywhere.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Automatically flattens form fields so data displays correctly</li>
@@ -155,7 +155,7 @@ export default function UploadReadyPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Make a PDF Upload-Ready</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PDF into OmnisPDF.",
+                "Upload or drag and drop your PDF into PDF.it.",
                 "Click Upload-Ready PDF — flattening and compression happen automatically.",
                 "Download your optimized PDF and upload it to any portal.",
               ].map((step, i) => (

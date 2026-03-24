@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Merge, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Cómo Unir PDFs Escaneados (Y Mantenerlos Legibles) | OmnisPDF",
+  title: "Cómo Unir PDFs Escaneados (Y Mantenerlos Legibles) | PDF.it",
   description:
     "Aprende cómo unir archivos PDF escaneados sin perder legibilidad. Corrige orientación, reduce tamaño de archivo, y agrega OCR para texto buscable — guía paso a paso.",
   keywords: "unir pdfs escaneados, combinar documentos escaneados, unir páginas pdf escaneadas, pdf escaneado en uno",
@@ -14,21 +14,21 @@ export const metadata = {
 const faqSchema = {
   "@context": "https://schema.org", "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "¿Puedo unir PDFs escaneados como PDFs normales?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Los PDFs escaneados se unen de la misma manera que los PDFs normales — súbelos a la herramienta Unir de OmnisPDF, ordénalos, y haz clic en Unir. La diferencia es que los PDFs escaneados suelen ser mucho más grandes porque cada página se almacena como una imagen de página completa." } },
+    { "@type": "Question", "name": "¿Puedo unir PDFs escaneados como PDFs normales?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Los PDFs escaneados se unen de la misma manera que los PDFs normales — súbelos a la herramienta Unir de PDF.it, ordénalos, y haz clic en Unir. La diferencia es que los PDFs escaneados suelen ser mucho más grandes porque cada página se almacena como una imagen de página completa." } },
     { "@type": "Question", "name": "¿Por qué mi PDF escaneado unido es tan grande?", "acceptedAnswer": { "@type": "Answer", "text": "Las páginas escaneadas se almacenan como imágenes (frecuentemente 2-5MB por página). Cuando unes múltiples documentos escaneados, el tamaño del archivo se acumula rápidamente. Un escaneo unido de 20 páginas puede fácilmente ser 40-100MB. Comprime el archivo unido después para reducir el tamaño significativamente." } },
-    { "@type": "Question", "name": "¿Cómo corrijo páginas rotadas en un PDF escaneado?", "acceptedAnswer": { "@type": "Answer", "text": "Usa la herramienta Rotar PDF de OmnisPDF para corregir cualquier página que esté al revés o de lado antes de unir. Los escáneres a veces capturan páginas en la orientación incorrecta, especialmente al usar un alimentador automático de documentos." } },
-    { "@type": "Question", "name": "¿Puedo hacer un PDF escaneado buscable después de unir?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Pasa el archivo unido por la herramienta Escáner OCR de OmnisPDF. El OCR (Reconocimiento Óptico de Caracteres) lee el texto en las imágenes escaneadas y agrega una capa de texto buscable, para que puedas buscar, copiar y seleccionar texto en el documento." } },
+    { "@type": "Question", "name": "¿Cómo corrijo páginas rotadas en un PDF escaneado?", "acceptedAnswer": { "@type": "Answer", "text": "Usa la herramienta Rotar PDF de PDF.it para corregir cualquier página que esté al revés o de lado antes de unir. Los escáneres a veces capturan páginas en la orientación incorrecta, especialmente al usar un alimentador automático de documentos." } },
+    { "@type": "Question", "name": "¿Puedo hacer un PDF escaneado buscable después de unir?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Pasa el archivo unido por la herramienta Escáner OCR de PDF.it. El OCR (Reconocimiento Óptico de Caracteres) lee el texto en las imágenes escaneadas y agrega una capa de texto buscable, para que puedas buscar, copiar y seleccionar texto en el documento." } },
     { "@type": "Question", "name": "¿Debo comprimir antes o después de unir PDFs escaneados?", "acceptedAnswer": { "@type": "Answer", "text": "Comprime después de unir. Es más eficiente porque la herramienta de compresión puede optimizar todo el documento a la vez. Si los archivos individuales son demasiado grandes para subir (más de 25MB en el plan gratuito), comprime cada uno primero, luego únelos." } },
-    { "@type": "Question", "name": "¿Cómo limpio PDFs escaneados con teléfono antes de unir?", "acceptedAnswer": { "@type": "Answer", "text": "Usa la herramienta Limpieza de Escaneo de Teléfono de OmnisPDF para corregir iluminación, eliminar sombras, enderezar páginas y mejorar el contraste. Limpia cada escaneo primero, luego une los archivos mejorados en un documento." } }
+    { "@type": "Question", "name": "¿Cómo limpio PDFs escaneados con teléfono antes de unir?", "acceptedAnswer": { "@type": "Answer", "text": "Usa la herramienta Limpieza de Escaneo de Teléfono de PDF.it para corregir iluminación, eliminar sombras, enderezar páginas y mejorar el contraste. Limpia cada escaneo primero, luego une los archivos mejorados en un documento." } }
   ]
 }
 
 const howToSchema = {
   "@context": "https://schema.org", "@type": "HowTo", "name": "Cómo Unir PDFs Escaneados",
-  "description": "Combina documentos PDF escaneados en un archivo legible usando OmnisPDF.",
+  "description": "Combina documentos PDF escaneados en un archivo legible usando PDF.it.",
   "step": [
     { "@type": "HowToStep", "name": "Corrige orientación y limpia los escaneos", "text": "Antes de unir, rota las páginas que estén de lado o al revés usando la herramienta Rotar PDF. Si escaneaste con tu teléfono, usa Limpieza de Escaneo de Teléfono para mejorar la calidad." },
-    { "@type": "HowToStep", "name": "Sube y une los archivos escaneados", "text": "Sube todos los PDFs escaneados a la herramienta Unir de OmnisPDF, ordénalos correctamente, y haz clic en Unir para combinarlos en un documento." },
+    { "@type": "HowToStep", "name": "Sube y une los archivos escaneados", "text": "Sube todos los PDFs escaneados a la herramienta Unir de PDF.it, ordénalos correctamente, y haz clic en Unir para combinarlos en un documento." },
     { "@type": "HowToStep", "name": "Comprime y agrega OCR", "text": "Después de unir, comprime el archivo para reducir su tamaño. Opcionalmente, ejecuta el Escáner OCR para hacer el texto escaneado buscable y copiable." }
   ]
 }
@@ -91,7 +91,7 @@ export default function UnirPDFsEscaneadosPage() {
               <div className="space-y-4">
                 {[
                   { title: "Corrige la orientación y limpia cada escaneo", desc: "Antes de unir, revisa cada PDF escaneado buscando páginas rotadas. Usa la herramienta Rotar PDF para corregir páginas de lado o al revés. Si escaneaste con tu teléfono, pasa cada archivo por Limpieza de Escaneo de Teléfono para corregir iluminación, sombras y alineación." },
-                  { title: "Sube todos los escaneos y ordénalos", desc: "Sube todos tus PDFs escaneados a la herramienta Unir de OmnisPDF. Arrastra y suelta para ordenarlos correctamente. Verifica que ningún archivo esté fuera de lugar — especialmente si los archivos tienen nombres genéricos como 'Escaneo_001.pdf'." },
+                  { title: "Sube todos los escaneos y ordénalos", desc: "Sube todos tus PDFs escaneados a la herramienta Unir de PDF.it. Arrastra y suelta para ordenarlos correctamente. Verifica que ningún archivo esté fuera de lugar — especialmente si los archivos tienen nombres genéricos como 'Escaneo_001.pdf'." },
                   { title: "Une, luego comprime y aplica OCR", desc: "Haz clic en Unir para combinar todos los escaneos en un PDF. Luego comprime el archivo unido para reducir su tamaño (los PDFs escaneados se comprimen muy bien). Si necesitas texto buscable, pasa el resultado por el Escáner OCR." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -207,12 +207,12 @@ export default function UnirPDFsEscaneadosPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Puedo unir PDFs escaneados como PDFs normales?", a: "Sí. Los PDFs escaneados se unen de la misma manera que los PDFs normales — súbelos a la herramienta Unir de OmnisPDF, ordénalos, y haz clic en Unir. La diferencia es que los PDFs escaneados suelen ser mucho más grandes porque cada página se almacena como una imagen de página completa." },
+                { q: "¿Puedo unir PDFs escaneados como PDFs normales?", a: "Sí. Los PDFs escaneados se unen de la misma manera que los PDFs normales — súbelos a la herramienta Unir de PDF.it, ordénalos, y haz clic en Unir. La diferencia es que los PDFs escaneados suelen ser mucho más grandes porque cada página se almacena como una imagen de página completa." },
                 { q: "¿Por qué mi PDF escaneado unido es tan grande?", a: "Las páginas escaneadas se almacenan como imágenes (frecuentemente 2-5MB por página). Cuando unes múltiples documentos escaneados, el tamaño del archivo se acumula rápidamente. Un escaneo unido de 20 páginas puede fácilmente ser 40-100MB. Comprime el archivo unido después para reducir el tamaño significativamente." },
-                { q: "¿Cómo corrijo páginas rotadas en un PDF escaneado?", a: "Usa la herramienta Rotar PDF de OmnisPDF para corregir cualquier página que esté al revés o de lado antes de unir. Los escáneres a veces capturan páginas en la orientación incorrecta, especialmente al usar un alimentador automático de documentos." },
-                { q: "¿Puedo hacer un PDF escaneado buscable después de unir?", a: "Sí. Pasa el archivo unido por la herramienta Escáner OCR de OmnisPDF. El OCR lee el texto en las imágenes escaneadas y agrega una capa de texto buscable, para que puedas buscar, copiar y seleccionar texto en el documento." },
+                { q: "¿Cómo corrijo páginas rotadas en un PDF escaneado?", a: "Usa la herramienta Rotar PDF de PDF.it para corregir cualquier página que esté al revés o de lado antes de unir. Los escáneres a veces capturan páginas en la orientación incorrecta, especialmente al usar un alimentador automático de documentos." },
+                { q: "¿Puedo hacer un PDF escaneado buscable después de unir?", a: "Sí. Pasa el archivo unido por la herramienta Escáner OCR de PDF.it. El OCR lee el texto en las imágenes escaneadas y agrega una capa de texto buscable, para que puedas buscar, copiar y seleccionar texto en el documento." },
                 { q: "¿Debo comprimir antes o después de unir PDFs escaneados?", a: "Comprime después de unir. Es más eficiente porque la herramienta de compresión puede optimizar todo el documento a la vez. Si los archivos individuales son demasiado grandes para subir (más de 25MB en el plan gratuito), comprime cada uno primero, luego únelos." },
-                { q: "¿Cómo limpio PDFs escaneados con teléfono antes de unir?", a: "Usa la herramienta Limpieza de Escaneo de Teléfono de OmnisPDF para corregir iluminación, eliminar sombras, enderezar páginas y mejorar el contraste. Limpia cada escaneo primero, luego une los archivos mejorados en un documento." },
+                { q: "¿Cómo limpio PDFs escaneados con teléfono antes de unir?", a: "Usa la herramienta Limpieza de Escaneo de Teléfono de PDF.it para corregir iluminación, eliminar sombras, enderezar páginas y mejorar el contraste. Limpia cada escaneo primero, luego une los archivos mejorados en un documento." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

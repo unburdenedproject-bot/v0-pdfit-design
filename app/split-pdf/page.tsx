@@ -7,9 +7,9 @@ import { Split, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Split PDF Online — Extract Pages from PDF | OmnisPDF",
+  title: "Split PDF Online — Extract Pages from PDF | PDF.it",
   description:
-    "Split a PDF into separate pages or smaller PDFs with OmnisPDF. Extract pages by range and download instantly—fast, simple, online.",
+    "Split a PDF into separate pages or smaller PDFs with PDF.it. Extract pages by range and download instantly—fast, simple, online.",
 }
 
 const faqSchema = {
@@ -19,17 +19,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I split a PDF into multiple files?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF, choose the pages or ranges you want, then click Split PDF to download the new file(s)." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it, choose the pages or ranges you want, then click Split PDF to download the new file(s)." }
     },
     {
       "@type": "Question",
       "name": "Can I extract only certain pages from a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Select the page numbers or a page range and OmnisPDF will create a new PDF containing only those pages." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Select the page numbers or a page range and PDF.it will create a new PDF containing only those pages." }
     },
     {
       "@type": "Question",
       "name": "Can I split a PDF on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in mobile browsers — upload, select pages, split, and download." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in mobile browsers — upload, select pages, split, and download." }
     },
     {
       "@type": "Question",
@@ -68,7 +68,7 @@ export default function SplitPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Split PDF Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Split a PDF into smaller files with OmnisPDF. Extract specific pages, split by ranges, and download clean PDFs instantly.
+                Split a PDF into smaller files with PDF.it. Extract specific pages, split by ranges, and download clean PDFs instantly.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Custom Page Ranges</span></div>
@@ -87,7 +87,7 @@ export default function SplitPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use OmnisPDF's Split PDF tool to extract pages from a PDF or break a large PDF into smaller files. Choose a page range, split by individual pages, and download the PDFs you need — perfect for sharing, uploading, and emailing.
+              Use PDF.it's Split PDF tool to extract pages from a PDF or break a large PDF into smaller files. Choose a page range, split by individual pages, and download the PDFs you need — perfect for sharing, uploading, and emailing.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Split PDF pages into separate files</li>
@@ -105,7 +105,7 @@ export default function SplitPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Extract Pages From a PDF</h2>
               <p className="text-slate-600">
-                Need only part of a document? OmnisPDF lets you pull out the pages you want and save them as a new PDF — great for forms, contracts, chapters, and statements.
+                Need only part of a document? PDF.it lets you pull out the pages you want and save them as a new PDF — great for forms, contracts, chapters, and statements.
               </p>
             </div>
             <div>
@@ -129,7 +129,7 @@ export default function SplitPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Split a PDF</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PDF into OmnisPDF.",
+                "Upload or drag and drop your PDF into PDF.it.",
                 "Choose how to split: extract pages, page ranges, or individual pages.",
                 "Click Split PDF.",
                 "Download your new PDF file(s).",
@@ -177,15 +177,15 @@ export default function SplitPDFPage() {
               {[
                 {
                   q: "How do I split a PDF into multiple files?",
-                  a: "Upload your PDF to OmnisPDF, choose the pages or ranges you want, then click Split PDF to download the new file(s).",
+                  a: "Upload your PDF to PDF.it, choose the pages or ranges you want, then click Split PDF to download the new file(s).",
                 },
                 {
                   q: "Can I extract only certain pages from a PDF?",
-                  a: "Yes. Select the page numbers or a page range and OmnisPDF will create a new PDF containing only those pages.",
+                  a: "Yes. Select the page numbers or a page range and PDF.it will create a new PDF containing only those pages.",
                 },
                 {
                   q: "Can I split a PDF on my phone?",
-                  a: "Yes. OmnisPDF works in mobile browsers — upload, select pages, split, and download.",
+                  a: "Yes. PDF.it works in mobile browsers — upload, select pages, split, and download.",
                 },
                 {
                   q: "Can I split password-protected PDFs?",

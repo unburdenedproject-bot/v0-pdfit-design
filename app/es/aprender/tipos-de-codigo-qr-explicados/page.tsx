@@ -5,7 +5,7 @@ import Link from "next/link"
 import { QrCode, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Tipos de Codigo QR Explicados (URL, Texto, WiFi, vCard y Mas) | OmnisPDF",
+  title: "Tipos de Codigo QR Explicados (URL, Texto, WiFi, vCard y Mas) | PDF.it",
   description:
     "Aprende sobre los diferentes tipos de codigos QR — URL, texto plano, WiFi, vCard, correo, telefono y SMS. Entiende cuando usar cada tipo y como funcionan.",
   keywords: "tipos de codigo qr, tipos de codigos qr, formatos codigo qr, codigo qr url vs texto",
@@ -23,7 +23,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Cual es la diferencia entre un codigo QR estatico y dinamico?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Un codigo QR estatico tiene datos codificados directamente en su patron — una vez creado, no se puede cambiar. Un codigo QR dinamico apunta a una URL de redireccion que se puede actualizar en cualquier momento. OmnisPDF genera codigos QR estaticos, que nunca expiran y funcionan sin conexion." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Un codigo QR estatico tiene datos codificados directamente en su patron — una vez creado, no se puede cambiar. Un codigo QR dinamico apunta a una URL de redireccion que se puede actualizar en cualquier momento. PDF.it genera codigos QR estaticos, que nunca expiran y funcionan sin conexion." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "El generador de Codigo QR es gratuito?",
-      "acceptedAnswer": { "@type": "Answer", "text": "La herramienta de Codigo QR de OmnisPDF es una funcion Pro a $7.99/mes. Los usuarios Pro obtienen generacion ilimitada de todos los tipos de codigos QR mas acceso a todas las herramientas premium de PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "La herramienta de Codigo QR de PDF.it es una funcion Pro a $7.99/mes. Los usuarios Pro obtienen generacion ilimitada de todos los tipos de codigos QR mas acceso a todas las herramientas premium de PDF." }
     }
   ]
 }
@@ -52,7 +52,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Elegir el Tipo de Codigo QR Correcto",
-  "description": "Selecciona y crea el tipo de codigo QR correcto para tus necesidades en 3 simples pasos usando OmnisPDF.",
+  "description": "Selecciona y crea el tipo de codigo QR correcto para tus necesidades en 3 simples pasos usando PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
@@ -62,7 +62,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Selecciona el tipo correspondiente",
-      "text": "Abre la herramienta de Codigo QR de OmnisPDF y selecciona el tipo que coincida con tu objetivo. Ingresa los datos requeridos — URL, datos de contacto, credenciales WiFi o texto."
+      "text": "Abre la herramienta de Codigo QR de PDF.it y selecciona el tipo que coincida con tu objetivo. Ingresa los datos requeridos — URL, datos de contacto, credenciales WiFi o texto."
     },
     {
       "@type": "HowToStep",
@@ -232,7 +232,7 @@ export default function TiposCodigoQRExplicadosPage() {
                 Mas alla del tipo de dato, los codigos QR tambien se categorizan como estaticos o dinamicos:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Codigos QR estaticos</strong> codifican datos directamente en el patron QR. Una vez creados, los datos no pueden cambiarse. Funcionan para siempre, no requieren internet para decodificarse (excepto tipos URL que enlazan a un sitio web) y son completamente gratuitos de usar. OmnisPDF genera codigos QR estaticos.</li>
+                <li>&#10003; <strong>Codigos QR estaticos</strong> codifican datos directamente en el patron QR. Una vez creados, los datos no pueden cambiarse. Funcionan para siempre, no requieren internet para decodificarse (excepto tipos URL que enlazan a un sitio web) y son completamente gratuitos de usar. PDF.it genera codigos QR estaticos.</li>
                 <li>&#10003; <strong>Codigos QR dinamicos</strong> codifican una URL de redireccion que apunta a un servidor. El propietario del servidor puede cambiar a donde redirige en cualquier momento. Esto te permite actualizar el destino sin reimprimir el codigo QR. La desventaja: requieren un servicio de terceros (a menudo pago) y dejan de funcionar si ese servicio cae.</li>
               </ul>
               <p className="text-slate-600 mt-4">
@@ -310,11 +310,11 @@ export default function TiposCodigoQRExplicadosPage() {
             <div className="space-y-6">
               {[
                 { q: "Cuales son los principales tipos de codigos QR?", a: "Los tipos mas comunes son URL (abre un sitio web), texto plano (muestra un mensaje), WiFi (conecta a una red), vCard (guarda informacion de contacto), correo (abre un email pre-llenado), telefono (inicia una llamada) y SMS (abre un mensaje de texto pre-llenado)." },
-                { q: "Cual es la diferencia entre un codigo QR estatico y dinamico?", a: "Un codigo QR estatico tiene datos codificados directamente en su patron — una vez creado, no se puede cambiar. Un codigo QR dinamico apunta a una URL de redireccion que se puede actualizar en cualquier momento. OmnisPDF genera codigos QR estaticos, que nunca expiran y funcionan sin conexion." },
+                { q: "Cual es la diferencia entre un codigo QR estatico y dinamico?", a: "Un codigo QR estatico tiene datos codificados directamente en su patron — una vez creado, no se puede cambiar. Un codigo QR dinamico apunta a una URL de redireccion que se puede actualizar en cualquier momento. PDF.it genera codigos QR estaticos, que nunca expiran y funcionan sin conexion." },
                 { q: "Que tipo de codigo QR es el mas comun?", a: "Los codigos QR de URL son por mucho los mas comunes. Enlazan a sitios web, paginas de destino, perfiles de redes sociales, menus en linea, documentos y cualquier otro contenido web." },
                 { q: "Puede un codigo QR contener multiples tipos de datos?", a: "No. Cada codigo QR codifica un tipo de dato. Sin embargo, puedes crear un codigo QR de URL que enlace a una pagina web que contenga multiples piezas de informacion." },
                 { q: "Todos los telefonos soportan todos los tipos de codigos QR?", a: "La mayoria de los smartphones modernos soportan codigos QR de URL, texto, WiFi y vCard de forma nativa a traves de su camara integrada. Algunos telefonos mas antiguos pueden no soportar la conexion WiFi automatica o el guardado de vCard." },
-                { q: "El generador de Codigo QR es gratuito?", a: "La herramienta de Codigo QR de OmnisPDF es una funcion Pro a $7.99/mes. Los usuarios Pro obtienen generacion ilimitada de todos los tipos de codigos QR mas acceso a todas las herramientas premium de PDF." },
+                { q: "El generador de Codigo QR es gratuito?", a: "La herramienta de Codigo QR de PDF.it es una funcion Pro a $7.99/mes. Los usuarios Pro obtienen generacion ilimitada de todos los tipos de codigos QR mas acceso a todas las herramientas premium de PDF." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

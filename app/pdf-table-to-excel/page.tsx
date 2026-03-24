@@ -6,9 +6,9 @@ import { FileSpreadsheet, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "PDF Table to Excel — Convert PDF Tables to Spreadsheets | OmnisPDF",
+  title: "PDF Table to Excel — Convert PDF Tables to Spreadsheets | PDF.it",
   description:
-    "Convert PDF tables to Excel spreadsheets with OmnisPDF. Extract structured data from PDFs and download editable .xlsx files — fast and browser-based.",
+    "Convert PDF tables to Excel spreadsheets with PDF.it. Extract structured data from PDFs and download editable .xlsx files — fast and browser-based.",
 }
 
 const faqSchema = {
@@ -17,28 +17,28 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How does OmnisPDF detect tables in a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF analyzes the layout of your PDF to detect rows, columns, borders, and cell alignment. It identifies table structures even without visible gridlines, converting them into properly formatted Excel cells." }
+      "name": "How does PDF.it detect tables in a PDF?",
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it analyzes the layout of your PDF to detect rows, columns, borders, and cell alignment. It identifies table structures even without visible gridlines, converting them into properly formatted Excel cells." }
     },
     {
       "@type": "Question",
       "name": "Will my table formatting be preserved in Excel?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF maps PDF table cells to Excel cells, preserving column widths, row structure, and data alignment. Numbers, dates, and text are placed in the correct cells for immediate editing." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it maps PDF table cells to Excel cells, preserving column widths, row structure, and data alignment. Numbers, dates, and text are placed in the correct cells for immediate editing." }
     },
     {
       "@type": "Question",
       "name": "Can I convert multiple tables from one PDF to Excel?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. If your PDF contains multiple tables across different pages, OmnisPDF extracts all of them into your Excel file. Each table is placed in a logical layout for easy navigation." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. If your PDF contains multiple tables across different pages, PDF.it extracts all of them into your Excel file. Each table is placed in a logical layout for easy navigation." }
     },
     {
       "@type": "Question",
       "name": "What if my PDF table has merged cells or complex layouts?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF handles most table layouts including multi-row headers and spanning cells. For very complex tables with irregular merges, the Business-tier Table Extraction tool provides more advanced layout analysis." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it handles most table layouts including multi-row headers and spanning cells. For very complex tables with irregular merges, the Business-tier Table Extraction tool provides more advanced layout analysis." }
     },
     {
       "@type": "Question",
       "name": "Can I convert a scanned PDF table to Excel?",
-      "acceptedAnswer": { "@type": "Answer", "text": "For scanned PDFs, use OmnisPDF's OCR Scanner first to make the text searchable, then convert the PDF to Excel. This two-step approach gives the best results for scanned documents." }
+      "acceptedAnswer": { "@type": "Answer", "text": "For scanned PDFs, use PDF.it's OCR Scanner first to make the text searchable, then convert the PDF to Excel. This two-step approach gives the best results for scanned documents." }
     },
     {
       "@type": "Question",
@@ -91,7 +91,7 @@ export default function PDFTableToExcelPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              PDF tables are meant to be read, not edited. When you need to update numbers, run formulas, or import data into another system, you need those tables in Excel. OmnisPDF converts PDF tables directly to .xlsx files with rows, columns, and cell data preserved.
+              PDF tables are meant to be read, not edited. When you need to update numbers, run formulas, or import data into another system, you need those tables in Excel. PDF.it converts PDF tables directly to .xlsx files with rows, columns, and cell data preserved.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Detects table structure including rows, columns, and headers</li>
@@ -133,7 +133,7 @@ export default function PDFTableToExcelPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Convert a PDF Table to Excel</h2>
             <div className="space-y-4">
               {[
-                "Upload your PDF containing tables to OmnisPDF.",
+                "Upload your PDF containing tables to PDF.it.",
                 "Click Convert — tables are detected and extracted automatically.",
                 "Download your .xlsx file and open it in Excel or Google Sheets.",
               ].map((step, i) => (
@@ -178,11 +178,11 @@ export default function PDFTableToExcelPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How does OmnisPDF detect tables in a PDF?", a: "OmnisPDF analyzes the layout of your PDF to detect rows, columns, borders, and cell alignment. It identifies table structures even without visible gridlines, converting them into properly formatted Excel cells." },
-                { q: "Will my table formatting be preserved in Excel?", a: "Yes. OmnisPDF maps PDF table cells to Excel cells, preserving column widths, row structure, and data alignment. Numbers, dates, and text are placed in the correct cells for immediate editing." },
-                { q: "Can I convert multiple tables from one PDF to Excel?", a: "Yes. If your PDF contains multiple tables across different pages, OmnisPDF extracts all of them into your Excel file. Each table is placed in a logical layout for easy navigation." },
-                { q: "What if my PDF table has merged cells or complex layouts?", a: "OmnisPDF handles most table layouts including multi-row headers and spanning cells. For very complex tables with irregular merges, the Business-tier Table Extraction tool provides more advanced layout analysis." },
-                { q: "Can I convert a scanned PDF table to Excel?", a: "For scanned PDFs, use OmnisPDF's OCR Scanner first to make the text searchable, then convert the PDF to Excel. This two-step approach gives the best results for scanned documents." },
+                { q: "How does PDF.it detect tables in a PDF?", a: "PDF.it analyzes the layout of your PDF to detect rows, columns, borders, and cell alignment. It identifies table structures even without visible gridlines, converting them into properly formatted Excel cells." },
+                { q: "Will my table formatting be preserved in Excel?", a: "Yes. PDF.it maps PDF table cells to Excel cells, preserving column widths, row structure, and data alignment. Numbers, dates, and text are placed in the correct cells for immediate editing." },
+                { q: "Can I convert multiple tables from one PDF to Excel?", a: "Yes. If your PDF contains multiple tables across different pages, PDF.it extracts all of them into your Excel file. Each table is placed in a logical layout for easy navigation." },
+                { q: "What if my PDF table has merged cells or complex layouts?", a: "PDF.it handles most table layouts including multi-row headers and spanning cells. For very complex tables with irregular merges, the Business-tier Table Extraction tool provides more advanced layout analysis." },
+                { q: "Can I convert a scanned PDF table to Excel?", a: "For scanned PDFs, use PDF.it's OCR Scanner first to make the text searchable, then convert the PDF to Excel. This two-step approach gives the best results for scanned documents." },
                 { q: "Is this tool free to use?", a: "PDF Table to Excel is available on the Pro plan ($7.99/month) which includes unlimited conversions and files up to 200MB. For advanced table extraction with multi-format export, check out the Business plan." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

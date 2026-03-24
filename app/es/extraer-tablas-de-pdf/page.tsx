@@ -6,14 +6,14 @@ import { Table, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Extraer Tablas de PDF — Convierte Tablas PDF a Excel | OmnisPDF",
+  title: "Extraer Tablas de PDF — Convierte Tablas PDF a Excel | PDF.it",
   description:
-    "Extrae tablas de archivos PDF y conviértelas a Excel con OmnisPDF. Obtén datos tabulares en formato de hoja de cálculo — rápido, desde tu navegador, sin registro.",
+    "Extrae tablas de archivos PDF y conviértelas a Excel con PDF.it. Obtén datos tabulares en formato de hoja de cálculo — rápido, desde tu navegador, sin registro.",
   alternates: {
-    canonical: "https://omnispdf.com/es/extraer-tablas-de-pdf",
+    canonical: "https://pdf.it.com/es/extraer-tablas-de-pdf",
     languages: {
-      en: "https://omnispdf.com/extract-tables-from-pdf",
-      es: "https://omnispdf.com/es/extraer-tablas-de-pdf",
+      en: "https://pdf.it.com/extract-tables-from-pdf",
+      es: "https://pdf.it.com/es/extraer-tablas-de-pdf",
     },
   },
 }
@@ -25,7 +25,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo extraigo tablas de un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a OmnisPDF, haz clic en Extraer Tablas y descarga un archivo Excel con todas las tablas detectadas en tu documento, organizadas en hojas separadas." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it, haz clic en Extraer Tablas y descarga un archivo Excel con todas las tablas detectadas en tu documento, organizadas en hojas separadas." }
     },
     {
       "@type": "Question",
@@ -35,7 +35,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Funciona con tablas complejas?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF detecta tablas con filas, columnas y celdas combinadas. Para tablas muy complejas o con formato irregular, los resultados pueden variar." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it detecta tablas con filas, columnas y celdas combinadas. Para tablas muy complejas o con formato irregular, los resultados pueden variar." }
     },
     {
       "@type": "Question",
@@ -45,7 +45,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Se mantiene el formato de las tablas?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF conserva la estructura de filas y columnas de las tablas originales. Los datos numéricos se mantienen como números en Excel para que puedas usar fórmulas." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it conserva la estructura de filas y columnas de las tablas originales. Los datos numéricos se mantienen como números en Excel para que puedas usar fórmulas." }
     },
     {
       "@type": "Question",
@@ -98,7 +98,7 @@ export default function ExtraerTablasDePDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              ¿Tienes datos tabulares atrapados en un PDF? El extractor de tablas de OmnisPDF detecta automáticamente las tablas en tu documento y las convierte a formato Excel, manteniendo la estructura de filas y columnas para que puedas trabajar con los datos inmediatamente.
+              ¿Tienes datos tabulares atrapados en un PDF? El extractor de tablas de PDF.it detecta automáticamente las tablas en tu documento y las convierte a formato Excel, manteniendo la estructura de filas y columnas para que puedas trabajar con los datos inmediatamente.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Detecta y extrae tablas automáticamente</li>
@@ -140,7 +140,7 @@ export default function ExtraerTablasDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Extraer Tablas de un PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Haz clic en Extraer Tablas — todas las tablas se detectan automáticamente.",
                 "Descarga el archivo Excel con las tablas extraídas.",
               ].map((step, i) => (
@@ -185,11 +185,11 @@ export default function ExtraerTablasDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo extraigo tablas de un PDF?", a: "Sube tu PDF a OmnisPDF, haz clic en Extraer Tablas y descarga un archivo Excel con todas las tablas detectadas en tu documento, organizadas en hojas separadas." },
+                { q: "¿Cómo extraigo tablas de un PDF?", a: "Sube tu PDF a PDF.it, haz clic en Extraer Tablas y descarga un archivo Excel con todas las tablas detectadas en tu documento, organizadas en hojas separadas." },
                 { q: "¿En qué formato se extraen las tablas?", a: "Las tablas se extraen en formato XLSX (Excel). También puedes usar nuestra herramienta de Tabla PDF a CSV si prefieres formato CSV." },
-                { q: "¿Funciona con tablas complejas?", a: "OmnisPDF detecta tablas con filas, columnas y celdas combinadas. Para tablas muy complejas o con formato irregular, los resultados pueden variar." },
+                { q: "¿Funciona con tablas complejas?", a: "PDF.it detecta tablas con filas, columnas y celdas combinadas. Para tablas muy complejas o con formato irregular, los resultados pueden variar." },
                 { q: "¿Puedo extraer tablas de un PDF escaneado?", a: "Para PDFs escaneados, primero usa nuestro Escáner OCR para convertir las imágenes a texto, y luego extrae las tablas del resultado." },
-                { q: "¿Se mantiene el formato de las tablas?", a: "Sí. OmnisPDF conserva la estructura de filas y columnas de las tablas originales. Los datos numéricos se mantienen como números en Excel para que puedas usar fórmulas." },
+                { q: "¿Se mantiene el formato de las tablas?", a: "Sí. PDF.it conserva la estructura de filas y columnas de las tablas originales. Los datos numéricos se mantienen como números en Excel para que puedas usar fórmulas." },
                 { q: "¿Es gratis extraer tablas de un PDF?", a: "Sí. Las cuentas gratuitas tienen 10 extracciones por día. Las cuentas Pro tienen extracciones ilimitadas." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

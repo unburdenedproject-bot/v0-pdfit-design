@@ -5,9 +5,9 @@ import Link from "next/link"
 import { Stamp, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Agregar una Marca de Agua 'Confidencial' a un PDF (Guia Rapida) | OmnisPDF",
+  title: "Agregar una Marca de Agua 'Confidencial' a un PDF (Guia Rapida) | PDF.it",
   description:
-    "Aprende como agregar una marca de agua CONFIDENCIAL, BORRADOR o NO COPIAR a un PDF en linea. Protege documentos sensibles en segundos con OmnisPDF.",
+    "Aprende como agregar una marca de agua CONFIDENCIAL, BORRADOR o NO COPIAR a un PDF en linea. Protege documentos sensibles en segundos con PDF.it.",
   keywords: "marca de agua confidencial pdf, marca de agua borrador pdf, marca de agua no copiar, estampar pdf confidencial",
 }
 
@@ -18,17 +18,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como agrego una marca de agua Confidencial a un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Marca de Agua PDF de OmnisPDF, escribe CONFIDENCIAL como tu texto de marca de agua, ajusta la opacidad y el angulo, luego haz clic en Aplicar. La marca de agua aparece en todas las paginas del documento." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Marca de Agua PDF de PDF.it, escribe CONFIDENCIAL como tu texto de marca de agua, ajusta la opacidad y el angulo, luego haz clic en Aplicar. La marca de agua aparece en todas las paginas del documento." }
     },
     {
       "@type": "Question",
       "name": "Puedo agregar una marca de agua BORRADOR en lugar de CONFIDENCIAL?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. Puedes escribir cualquier texto que desees — BORRADOR, CONFIDENCIAL, NO COPIAR, MUESTRA, SOLO USO INTERNO o cualquier frase personalizada. OmnisPDF te permite personalizar el texto, color, tamano y angulo." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. Puedes escribir cualquier texto que desees — BORRADOR, CONFIDENCIAL, NO COPIAR, MUESTRA, SOLO USO INTERNO o cualquier frase personalizada. PDF.it te permite personalizar el texto, color, tamano y angulo." }
     },
     {
       "@type": "Question",
       "name": "La marca de agua Confidencial es permanente?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Por defecto, las marcas de agua se agregan como superposiciones. Para hacerla permanente, aplana el PDF despues de agregar la marca de agua usando la herramienta Aplanar PDF de OmnisPDF. Esto integra la marca de agua en la pagina para que no pueda eliminarse." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Por defecto, las marcas de agua se agregan como superposiciones. Para hacerla permanente, aplana el PDF despues de agregar la marca de agua usando la herramienta Aplanar PDF de PDF.it. Esto integra la marca de agua en la pagina para que no pueda eliminarse." }
     },
     {
       "@type": "Question",
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Agregar una Marca de Agua Confidencial a un PDF",
-  "description": "Estampa cualquier PDF con una marca de agua CONFIDENCIAL en 3 simples pasos con OmnisPDF.",
+  "description": "Estampa cualquier PDF con una marca de agua CONFIDENCIAL en 3 simples pasos con PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Sube tu PDF",
-      "text": "Ve a la herramienta Marca de Agua PDF de OmnisPDF y sube el documento que necesitas marcar como confidencial."
+      "text": "Ve a la herramienta Marca de Agua PDF de PDF.it y sube el documento que necesitas marcar como confidencial."
     },
     {
       "@type": "HowToStep",
@@ -293,9 +293,9 @@ export default function MarcaDeAguaPDFConfidencialPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como agrego una marca de agua Confidencial a un PDF?", a: "Sube tu PDF a la herramienta Marca de Agua PDF de OmnisPDF, escribe CONFIDENCIAL como tu texto de marca de agua, ajusta la opacidad y el angulo, luego haz clic en Aplicar. La marca de agua aparece en todas las paginas del documento." },
-                { q: "Puedo agregar una marca de agua BORRADOR en lugar de CONFIDENCIAL?", a: "Si. Puedes escribir cualquier texto que desees — BORRADOR, CONFIDENCIAL, NO COPIAR, MUESTRA, SOLO USO INTERNO o cualquier frase personalizada. OmnisPDF te permite personalizar el texto, color, tamano y angulo." },
-                { q: "La marca de agua Confidencial es permanente?", a: "Por defecto, las marcas de agua se agregan como superposiciones. Para hacerla permanente, aplana el PDF despues de agregar la marca de agua usando la herramienta Aplanar PDF de OmnisPDF. Esto integra la marca de agua en la pagina para que no pueda eliminarse." },
+                { q: "Como agrego una marca de agua Confidencial a un PDF?", a: "Sube tu PDF a la herramienta Marca de Agua PDF de PDF.it, escribe CONFIDENCIAL como tu texto de marca de agua, ajusta la opacidad y el angulo, luego haz clic en Aplicar. La marca de agua aparece en todas las paginas del documento." },
+                { q: "Puedo agregar una marca de agua BORRADOR en lugar de CONFIDENCIAL?", a: "Si. Puedes escribir cualquier texto que desees — BORRADOR, CONFIDENCIAL, NO COPIAR, MUESTRA, SOLO USO INTERNO o cualquier frase personalizada. PDF.it te permite personalizar el texto, color, tamano y angulo." },
+                { q: "La marca de agua Confidencial es permanente?", a: "Por defecto, las marcas de agua se agregan como superposiciones. Para hacerla permanente, aplana el PDF despues de agregar la marca de agua usando la herramienta Aplanar PDF de PDF.it. Esto integra la marca de agua en la pagina para que no pueda eliminarse." },
                 { q: "Puedo agregar marca de agua a multiples PDF a la vez?", a: "Si. Los usuarios Pro y Business pueden usar procesamiento por lotes para agregar marca de agua a multiples PDF de una vez. Sube todos tus archivos, configura la marca de agua una vez, y aplicala a todos los documentos simultaneamente." },
                 { q: "Que opacidad debo usar para una marca de agua Confidencial?", a: "Para la mayoria de los documentos, 15-25% de opacidad funciona bien. Hace que la marca de agua sea claramente visible sin dificultar la lectura del texto subyacente. Para mayor disuasion, sube hasta 30-40%." },
                 { q: "La herramienta Marca de Agua PDF es gratis?", a: "Marca de Agua PDF esta disponible para usuarios Pro ($7.99/mes) y Business ($13.99/mes). Ambos niveles incluyen marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." },

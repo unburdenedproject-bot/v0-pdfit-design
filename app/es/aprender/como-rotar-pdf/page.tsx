@@ -5,7 +5,7 @@ import Link from "next/link"
 import { RotateCw, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Rotar un PDF Online (90°, 180° o Personalizado) | OmnisPDF",
+  title: "Como Rotar un PDF Online (90°, 180° o Personalizado) | PDF.it",
   description:
     "Aprende como rotar paginas de PDF en linea — rota paginas individuales, todas las paginas o angulos especificos como 90° y 180°. Gratis, sin software.",
   keywords: "rotar pdf online, rotar paginas pdf, girar pdf, rotar pdf 90 grados",
@@ -18,17 +18,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como puedo rotar un PDF en linea gratis?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Rotar PDF de OmnisPDF, selecciona las paginas que quieres rotar, elige el angulo de rotacion (90°, 180° o 270°), haz clic en Rotar y descarga el archivo corregido. No se requiere registro para tus primeros 3 archivos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Rotar PDF de PDF.it, selecciona las paginas que quieres rotar, elige el angulo de rotacion (90°, 180° o 270°), haz clic en Rotar y descarga el archivo corregido. No se requiere registro para tus primeros 3 archivos." }
     },
     {
       "@type": "Question",
       "name": "Puedo rotar solo una pagina de un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. OmnisPDF te permite seleccionar paginas individuales para rotar mientras deja el resto del documento sin cambios. Esto es perfecto para corregir una sola pagina horizontal en un documento vertical." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it te permite seleccionar paginas individuales para rotar mientras deja el resto del documento sin cambios. Esto es perfecto para corregir una sola pagina horizontal en un documento vertical." }
     },
     {
       "@type": "Question",
       "name": "Que angulos de rotacion estan disponibles?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF soporta rotacion de 90° en sentido horario, 90° en sentido antihorario (270°) y 180°. Puedes aplicar diferentes rotaciones a diferentes paginas en el mismo documento." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it soporta rotacion de 90° en sentido horario, 90° en sentido antihorario (270°) y 180°. Puedes aplicar diferentes rotaciones a diferentes paginas en el mismo documento." }
     },
     {
       "@type": "Question",
@@ -38,12 +38,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Puedo rotar un PDF protegido con contrasena?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Primero necesitas desbloquear el PDF. Usa la herramienta Desbloquear PDF de OmnisPDF para quitar la contrasena, luego rota las paginas. Puedes volver a agregar proteccion con contrasena despues usando la herramienta Proteger PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Primero necesitas desbloquear el PDF. Usa la herramienta Desbloquear PDF de PDF.it para quitar la contrasena, luego rota las paginas. Puedes volver a agregar proteccion con contrasena despues usando la herramienta Proteger PDF." }
     },
     {
       "@type": "Question",
       "name": "Puedo rotar un PDF en mi telefono?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. OmnisPDF funciona en cualquier navegador movil — Safari, Chrome o Firefox. Sube tu PDF, rota las paginas y descarga el archivo corregido directamente en tu telefono. No necesitas instalar ninguna app." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en cualquier navegador movil — Safari, Chrome o Firefox. Sube tu PDF, rota las paginas y descarga el archivo corregido directamente en tu telefono. No necesitas instalar ninguna app." }
     }
   ]
 }
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Rotar un PDF Online",
-  "description": "Corrige la orientacion de las paginas de un PDF en 3 simples pasos usando OmnisPDF.",
+  "description": "Corrige la orientacion de las paginas de un PDF en 3 simples pasos usando PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Sube tu PDF",
-      "text": "Ve a la herramienta Rotar PDF de OmnisPDF y sube el archivo que quieres corregir haciendo clic o arrastrandolo al area de carga."
+      "text": "Ve a la herramienta Rotar PDF de PDF.it y sube el archivo que quieres corregir haciendo clic o arrastrandolo al area de carga."
     },
     {
       "@type": "HowToStep",
@@ -285,12 +285,12 @@ export default function ComoRotarPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como puedo rotar un PDF en linea gratis?", a: "Sube tu PDF a la herramienta Rotar PDF de OmnisPDF, selecciona las paginas que quieres rotar, elige el angulo de rotacion (90°, 180° o 270°), haz clic en Rotar y descarga el archivo corregido. No se requiere registro para tus primeros 3 archivos." },
-                { q: "Puedo rotar solo una pagina de un PDF?", a: "Si. OmnisPDF te permite seleccionar paginas individuales para rotar mientras deja el resto del documento sin cambios. Esto es perfecto para corregir una sola pagina horizontal en un documento vertical." },
-                { q: "Que angulos de rotacion estan disponibles?", a: "OmnisPDF soporta rotacion de 90° en sentido horario, 90° en sentido antihorario (270°) y 180°. Puedes aplicar diferentes rotaciones a diferentes paginas en el mismo documento." },
+                { q: "Como puedo rotar un PDF en linea gratis?", a: "Sube tu PDF a la herramienta Rotar PDF de PDF.it, selecciona las paginas que quieres rotar, elige el angulo de rotacion (90°, 180° o 270°), haz clic en Rotar y descarga el archivo corregido. No se requiere registro para tus primeros 3 archivos." },
+                { q: "Puedo rotar solo una pagina de un PDF?", a: "Si. PDF.it te permite seleccionar paginas individuales para rotar mientras deja el resto del documento sin cambios. Esto es perfecto para corregir una sola pagina horizontal en un documento vertical." },
+                { q: "Que angulos de rotacion estan disponibles?", a: "PDF.it soporta rotacion de 90° en sentido horario, 90° en sentido antihorario (270°) y 180°. Puedes aplicar diferentes rotaciones a diferentes paginas en el mismo documento." },
                 { q: "Rotar un PDF afectara la calidad del texto?", a: "No. Rotar un PDF solo cambia los metadatos de orientacion de la pagina — no re-renderiza ni comprime el contenido. Tu texto, imagenes y formato permanecen exactamente iguales." },
-                { q: "Puedo rotar un PDF protegido con contrasena?", a: "Primero necesitas desbloquear el PDF. Usa la herramienta Desbloquear PDF de OmnisPDF para quitar la contrasena, luego rota las paginas. Puedes volver a agregar proteccion con contrasena despues usando la herramienta Proteger PDF." },
-                { q: "Puedo rotar un PDF en mi telefono?", a: "Si. OmnisPDF funciona en cualquier navegador movil — Safari, Chrome o Firefox. Sube tu PDF, rota las paginas y descarga el archivo corregido directamente en tu telefono. No necesitas instalar ninguna app." },
+                { q: "Puedo rotar un PDF protegido con contrasena?", a: "Primero necesitas desbloquear el PDF. Usa la herramienta Desbloquear PDF de PDF.it para quitar la contrasena, luego rota las paginas. Puedes volver a agregar proteccion con contrasena despues usando la herramienta Proteger PDF." },
+                { q: "Puedo rotar un PDF en mi telefono?", a: "Si. PDF.it funciona en cualquier navegador movil — Safari, Chrome o Firefox. Sube tu PDF, rota las paginas y descarga el archivo corregido directamente en tu telefono. No necesitas instalar ninguna app." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

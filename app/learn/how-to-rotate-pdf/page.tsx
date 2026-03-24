@@ -5,7 +5,7 @@ import Link from "next/link"
 import { RotateCw, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "How to Rotate a PDF Online (90°, 180°, or Custom) | OmnisPDF",
+  title: "How to Rotate a PDF Online (90°, 180°, or Custom) | PDF.it",
   description:
     "Learn how to rotate PDF pages online — rotate single pages, all pages, or specific angles like 90° and 180°. Free, no software needed.",
   keywords: "rotate pdf online, rotate pdf pages, turn pdf sideways, rotate pdf 90 degrees",
@@ -18,17 +18,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I rotate a PDF online for free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF's Rotate PDF tool, select the pages you want to rotate, choose the rotation angle (90°, 180°, or 270°), click Rotate, and download the corrected file. No signup required for your first 3 files." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it's Rotate PDF tool, select the pages you want to rotate, choose the rotation angle (90°, 180°, or 270°), click Rotate, and download the corrected file. No signup required for your first 3 files." }
     },
     {
       "@type": "Question",
       "name": "Can I rotate just one page in a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF lets you select individual pages to rotate while leaving the rest of the document unchanged. This is perfect for fixing a single landscape page in a portrait document." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it lets you select individual pages to rotate while leaving the rest of the document unchanged. This is perfect for fixing a single landscape page in a portrait document." }
     },
     {
       "@type": "Question",
       "name": "What rotation angles are available?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF supports 90° clockwise, 90° counter-clockwise (270°), and 180° rotation. You can apply different rotations to different pages in the same document." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it supports 90° clockwise, 90° counter-clockwise (270°), and 180° rotation. You can apply different rotations to different pages in the same document." }
     },
     {
       "@type": "Question",
@@ -38,12 +38,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I rotate a password-protected PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "You need to unlock the PDF first. Use OmnisPDF's Unlock PDF tool to remove the password, then rotate the pages. You can re-add password protection afterward using the Protect PDF tool." }
+      "acceptedAnswer": { "@type": "Answer", "text": "You need to unlock the PDF first. Use PDF.it's Unlock PDF tool to remove the password, then rotate the pages. You can re-add password protection afterward using the Protect PDF tool." }
     },
     {
       "@type": "Question",
       "name": "Can I rotate a PDF on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in any mobile browser — Safari, Chrome, or Firefox. Upload your PDF, rotate the pages, and download the corrected file directly on your phone. No app installation needed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in any mobile browser — Safari, Chrome, or Firefox. Upload your PDF, rotate the pages, and download the corrected file directly on your phone. No app installation needed." }
     }
   ]
 }
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Rotate a PDF Online",
-  "description": "Fix the orientation of PDF pages in 3 simple steps using OmnisPDF.",
+  "description": "Fix the orientation of PDF pages in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Upload your PDF",
-      "text": "Go to OmnisPDF's Rotate PDF tool and upload the file you want to fix by clicking or dragging it into the upload area."
+      "text": "Go to PDF.it's Rotate PDF tool and upload the file you want to fix by clicking or dragging it into the upload area."
     },
     {
       "@type": "HowToStep",
@@ -285,12 +285,12 @@ export default function HowToRotatePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I rotate a PDF online for free?", a: "Upload your PDF to OmnisPDF's Rotate PDF tool, select the pages you want to rotate, choose the rotation angle (90°, 180°, or 270°), click Rotate, and download the corrected file. No signup required for your first 3 files." },
-                { q: "Can I rotate just one page in a PDF?", a: "Yes. OmnisPDF lets you select individual pages to rotate while leaving the rest of the document unchanged. This is perfect for fixing a single landscape page in a portrait document." },
-                { q: "What rotation angles are available?", a: "OmnisPDF supports 90° clockwise, 90° counter-clockwise (270°), and 180° rotation. You can apply different rotations to different pages in the same document." },
+                { q: "How do I rotate a PDF online for free?", a: "Upload your PDF to PDF.it's Rotate PDF tool, select the pages you want to rotate, choose the rotation angle (90°, 180°, or 270°), click Rotate, and download the corrected file. No signup required for your first 3 files." },
+                { q: "Can I rotate just one page in a PDF?", a: "Yes. PDF.it lets you select individual pages to rotate while leaving the rest of the document unchanged. This is perfect for fixing a single landscape page in a portrait document." },
+                { q: "What rotation angles are available?", a: "PDF.it supports 90° clockwise, 90° counter-clockwise (270°), and 180° rotation. You can apply different rotations to different pages in the same document." },
                 { q: "Will rotating a PDF affect the text quality?", a: "No. Rotating a PDF only changes the page orientation metadata — it does not re-render or compress the content. Your text, images, and formatting remain exactly the same." },
-                { q: "Can I rotate a password-protected PDF?", a: "You need to unlock the PDF first. Use OmnisPDF's Unlock PDF tool to remove the password, then rotate the pages. You can re-add password protection afterward using the Protect PDF tool." },
-                { q: "Can I rotate a PDF on my phone?", a: "Yes. OmnisPDF works in any mobile browser — Safari, Chrome, or Firefox. Upload your PDF, rotate the pages, and download the corrected file directly on your phone. No app installation needed." },
+                { q: "Can I rotate a password-protected PDF?", a: "You need to unlock the PDF first. Use PDF.it's Unlock PDF tool to remove the password, then rotate the pages. You can re-add password protection afterward using the Protect PDF tool." },
+                { q: "Can I rotate a PDF on my phone?", a: "Yes. PDF.it works in any mobile browser — Safari, Chrome, or Firefox. Upload your PDF, rotate the pages, and download the corrected file directly on your phone. No app installation needed." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

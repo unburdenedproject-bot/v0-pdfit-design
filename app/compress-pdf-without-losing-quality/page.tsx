@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Ro
 import Link from "next/link"
 
 export const metadata = {
-  title: "Compress PDF Without Losing Quality — Smart Compression | OmnisPDF",
+  title: "Compress PDF Without Losing Quality — Smart Compression | PDF.it",
   description:
     "Compress PDF files without losing quality. Smart compression optimizes internal structures, subsets fonts, and lightly compresses images while preserving readability — fast, browser-based, free.",
 }
@@ -17,7 +17,7 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How does OmnisPDF compress without losing quality?",
+      "name": "How does PDF.it compress without losing quality?",
       "acceptedAnswer": { "@type": "Answer", "text": "Smart compression optimizes internal PDF structures, removes duplicate objects, subsets embedded fonts, and applies light image compression. This reduces file size while preserving visual quality and readability." }
     },
     {
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I compress a PDF without losing quality on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in any mobile browser. Upload your PDF, compress with smart settings, and download the optimized file directly on iPhone or Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in any mobile browser. Upload your PDF, compress with smart settings, and download the optimized file directly on iPhone or Android." }
     },
     {
       "@type": "Question",
@@ -144,7 +144,7 @@ export default function CompressPDFWithoutLosingQualityPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Compress PDF Without Losing Quality</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PDF into OmnisPDF.",
+                "Upload or drag and drop your PDF into PDF.it.",
                 "Click Compress PDF — smart compression is applied to optimize your file while preserving quality.",
                 "Download your optimized PDF. If you need even smaller files, try extreme compression — but note it may reduce image detail.",
               ].map((step, i) => (
@@ -198,11 +198,11 @@ export default function CompressPDFWithoutLosingQualityPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How does OmnisPDF compress without losing quality?", a: "Smart compression optimizes internal PDF structures, removes duplicate objects, subsets embedded fonts, and applies light image compression. This reduces file size while preserving visual quality and readability." },
+                { q: "How does PDF.it compress without losing quality?", a: "Smart compression optimizes internal PDF structures, removes duplicate objects, subsets embedded fonts, and applies light image compression. This reduces file size while preserving visual quality and readability." },
                 { q: "Will images look different after compression?", a: "With recommended compression, images are lightly optimized. The difference is virtually unnoticeable for most documents. Text, charts, and diagrams remain crisp and sharp." },
                 { q: "How much smaller will my PDF be?", a: "Results depend on your PDF content. Documents with embedded fonts and unoptimized structures typically see 20-50% size reduction. Files that are already optimized may see smaller reductions." },
                 { q: "Is this different from extreme compression?", a: "Yes. Extreme compression aggressively reduces image resolution for maximum size reduction. Recommended compression prioritizes quality preservation, applying gentler optimization that keeps your document looking professional." },
-                { q: "Can I compress a PDF without losing quality on my phone?", a: "Yes. OmnisPDF works in any mobile browser. Upload your PDF, compress with smart settings, and download the optimized file directly on iPhone or Android." },
+                { q: "Can I compress a PDF without losing quality on my phone?", a: "Yes. PDF.it works in any mobile browser. Upload your PDF, compress with smart settings, and download the optimized file directly on iPhone or Android." },
                 { q: "What types of PDFs benefit most from quality-preserving compression?", a: "Professional reports, client presentations, portfolios, and legal documents benefit most — any document where visual quality matters. Smart compression reduces size without compromising the professional appearance." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

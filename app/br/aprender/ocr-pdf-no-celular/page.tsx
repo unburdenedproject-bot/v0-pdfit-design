@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ScanText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "OCR de PDF no Celular (iPhone e Android) | OmnisPDF",
+  title: "OCR de PDF no Celular (iPhone e Android) | PDF.it",
   description:
     "Aprenda como aplicar OCR em PDFs digitalizados direto do celular. Funciona no iPhone e Android sem instalar nenhum app — tudo no navegador.",
   keywords: "ocr pdf celular, ocr pdf iphone, ocr pdf android, ocr pdf online celular, scanner ocr celular",
@@ -15,10 +15,10 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Posso usar OCR no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O Scanner OCR do OmnisPDF funciona no navegador do celular (Safari ou Chrome), sem necessidade de instalar nenhum aplicativo." } },
+    { "@type": "Question", "name": "Posso usar OCR no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O Scanner OCR do PDF.it funciona no navegador do celular (Safari ou Chrome), sem necessidade de instalar nenhum aplicativo." } },
     { "@type": "Question", "name": "Funciona no iPhone e Android?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Qualquer navegador moderno funciona, incluindo Safari no iPhone e Chrome no Android." } },
     { "@type": "Question", "name": "Posso digitalizar um documento com a camera e aplicar OCR?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Tire uma foto do documento, converta para PDF usando JPG para PDF, e depois aplique OCR com o Scanner OCR. Para melhores resultados, use a ferramenta Limpeza de Digitalizacao antes." } },
-    { "@type": "Question", "name": "O processamento e feito no celular?", "acceptedAnswer": { "@type": "Answer", "text": "O processamento OCR e feito nos servidores do OmnisPDF. Voce faz upload do PDF e baixa o resultado — o celular nao precisa de muito poder de processamento." } },
+    { "@type": "Question", "name": "O processamento e feito no celular?", "acceptedAnswer": { "@type": "Answer", "text": "O processamento OCR e feito nos servidores do PDF.it. Voce faz upload do PDF e baixa o resultado — o celular nao precisa de muito poder de processamento." } },
   ]
 }
 
@@ -28,7 +28,7 @@ const howToSchema = {
   "name": "Como Usar OCR no Celular",
   "description": "Aplique OCR em PDFs digitalizados usando seu iPhone ou Android.",
   "step": [
-    { "@type": "HowToStep", "name": "Abra o OmnisPDF no navegador", "text": "No Safari (iPhone) ou Chrome (Android), acesse omnispdf.com e va para o Scanner OCR." },
+    { "@type": "HowToStep", "name": "Abra o PDF.it no navegador", "text": "No Safari (iPhone) ou Chrome (Android), acesse pdf.it.com e va para o Scanner OCR." },
     { "@type": "HowToStep", "name": "Faca upload do PDF", "text": "Selecione o PDF da pasta de arquivos ou downloads do celular." },
     { "@type": "HowToStep", "name": "Processe e baixe", "text": "Selecione o idioma, processe o OCR e baixe o PDF pesquisavel para o celular." }
   ]
@@ -67,7 +67,7 @@ export default function OCRPDFCelularPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que Usar OCR no Celular?</h2>
               <p className="text-slate-600 mb-4">Voce esta fora do escritorio, recebe um contrato digitalizado por e-mail e precisa encontrar uma clausula especifica. Ou fotografa um documento importante com o celular e quer tornar o texto pesquisavel imediatamente.</p>
-              <p className="text-slate-600 mb-4">Com o OmnisPDF, voce pode aplicar OCR em qualquer PDF direto do navegador do celular. O processamento e feito nos servidores, entao nao importa se seu celular e novo ou antigo.</p>
+              <p className="text-slate-600 mb-4">Com o PDF.it, voce pode aplicar OCR em qualquer PDF direto do navegador do celular. O processamento e feito nos servidores, entao nao importa se seu celular e novo ou antigo.</p>
               <p className="text-slate-600">O fluxo e identico ao do computador: upload, selecionar idioma, processar e baixar.</p>
             </section>
 
@@ -75,7 +75,7 @@ export default function OCRPDFCelularPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-6">Passo a Passo no Celular</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Abra o OmnisPDF no navegador", desc: "No Safari (iPhone) ou Chrome (Android), acesse omnispdf.com. Toque no menu e selecione Scanner OCR." },
+                  { title: "Abra o PDF.it no navegador", desc: "No Safari (iPhone) ou Chrome (Android), acesse pdf.it.com. Toque no menu e selecione Scanner OCR." },
                   { title: "Selecione o PDF", desc: "Toque no botao de upload. No iPhone, escolha do app Arquivos ou de anexos de e-mail. No Android, selecione de Downloads ou do gerenciador de arquivos." },
                   { title: "Escolha o idioma", desc: "Selecione o idioma principal do documento (portugues, ingles, etc.) para maximizar a precisao do reconhecimento." },
                   { title: "Processe e baixe", desc: "Toque em processar e aguarde. O PDF pesquisavel sera baixado automaticamente para a pasta Downloads do celular." },
@@ -151,10 +151,10 @@ export default function OCRPDFCelularPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Posso usar OCR no celular?", a: "Sim. O Scanner OCR do OmnisPDF funciona no navegador do celular, sem necessidade de instalar nenhum aplicativo." },
+                { q: "Posso usar OCR no celular?", a: "Sim. O Scanner OCR do PDF.it funciona no navegador do celular, sem necessidade de instalar nenhum aplicativo." },
                 { q: "Funciona no iPhone e Android?", a: "Sim. Qualquer navegador moderno funciona, incluindo Safari no iPhone e Chrome no Android." },
                 { q: "Posso digitalizar com a camera e aplicar OCR?", a: "Sim. Tire uma foto, converta para PDF e aplique OCR. Use Limpeza de Digitalizacao antes para melhores resultados." },
-                { q: "O processamento e feito no celular?", a: "O processamento OCR e feito nos servidores do OmnisPDF. Voce faz upload e baixa o resultado — o celular nao precisa de muito poder de processamento." },
+                { q: "O processamento e feito no celular?", a: "O processamento OCR e feito nos servidores do PDF.it. Voce faz upload e baixa o resultado — o celular nao precisa de muito poder de processamento." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

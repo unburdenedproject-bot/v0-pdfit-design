@@ -5,7 +5,7 @@ import Link from "next/link"
 import { QrCode, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Crear un Codigo QR que Enlace a un Documento PDF | OmnisPDF",
+  title: "Crear un Codigo QR que Enlace a un Documento PDF | PDF.it",
   description:
     "Aprende como crear un codigo QR que abra un documento PDF. Guia paso a paso cubriendo opciones de alojamiento, consejos de tamano de archivo y mejores practicas para compartir PDFs via codigo QR.",
   keywords: "codigo qr para pdf, codigo qr enlace a pdf, compartir pdf con codigo qr, generador codigo qr pdf",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Que tan grande puede ser el PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No hay limite tecnico del lado del codigo QR — solo almacena la URL, no el archivo. Sin embargo, manten tu PDF por debajo de 5MB para que cargue rapidamente en dispositivos moviles. Usa la herramienta Comprimir PDF de OmnisPDF para reducir archivos grandes." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No hay limite tecnico del lado del codigo QR — solo almacena la URL, no el archivo. Sin embargo, manten tu PDF por debajo de 5MB para que cargue rapidamente en dispositivos moviles. Usa la herramienta Comprimir PDF de PDF.it para reducir archivos grandes." }
     },
     {
       "@type": "Question",
@@ -38,12 +38,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Puedo proteger con contrasena el PDF detras del codigo QR?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si, pero la persona que escanee necesitara ingresar la contrasena para abrir el PDF. Usa la herramienta Proteger PDF de OmnisPDF para agregar una contrasena. Comparte la contrasena por separado — no la pongas junto al codigo QR." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si, pero la persona que escanee necesitara ingresar la contrasena para abrir el PDF. Usa la herramienta Proteger PDF de PDF.it para agregar una contrasena. Comparte la contrasena por separado — no la pongas junto al codigo QR." }
     },
     {
       "@type": "Question",
       "name": "La herramienta de Codigo QR es gratuita?",
-      "acceptedAnswer": { "@type": "Answer", "text": "El generador de Codigo QR de OmnisPDF es una funcion Pro ($7.99/mes). Pro incluye codigos QR ilimitados, compresion de PDF, herramientas de conversion y mas." }
+      "acceptedAnswer": { "@type": "Answer", "text": "El generador de Codigo QR de PDF.it es una funcion Pro ($7.99/mes). Pro incluye codigos QR ilimitados, compresion de PDF, herramientas de conversion y mas." }
     }
   ]
 }
@@ -52,7 +52,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Crear un Codigo QR que Enlace a un PDF",
-  "description": "Comparte cualquier documento PDF via codigo QR en 3 simples pasos usando OmnisPDF.",
+  "description": "Comparte cualquier documento PDF via codigo QR en 3 simples pasos usando PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
@@ -62,7 +62,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Genera el codigo QR",
-      "text": "Abre la herramienta de Codigo QR de OmnisPDF, selecciona tipo URL y pega el enlace a tu PDF. Genera el codigo QR."
+      "text": "Abre la herramienta de Codigo QR de PDF.it, selecciona tipo URL y pega el enlace a tu PDF. Genera el codigo QR."
     },
     {
       "@type": "HowToStep",
@@ -159,7 +159,7 @@ export default function CodigoQRParaPDFPage() {
                 {[
                   {
                     title: "Prepara y optimiza tu PDF",
-                    desc: "Antes de alojar, asegurate de que tu PDF este optimizado para visualizacion movil. Comprime archivos grandes usando la herramienta Comprimir PDF de OmnisPDF — apunta a menos de 5MB para que cargue rapidamente en conexiones de telefono. Aplana el PDF si tiene campos de formulario o capas innecesarias.",
+                    desc: "Antes de alojar, asegurate de que tu PDF este optimizado para visualizacion movil. Comprime archivos grandes usando la herramienta Comprimir PDF de PDF.it — apunta a menos de 5MB para que cargue rapidamente en conexiones de telefono. Aplana el PDF si tiene campos de formulario o capas innecesarias.",
                   },
                   {
                     title: "Sube y obtiene una URL publica",
@@ -167,7 +167,7 @@ export default function CodigoQRParaPDFPage() {
                   },
                   {
                     title: "Genera el codigo QR y pruebalo",
-                    desc: "Abre la herramienta de Codigo QR de OmnisPDF (funcion Pro), selecciona URL, pega tu enlace al PDF y genera. Descarga como SVG para impresion o PNG para digital. Siempre escanea el codigo QR con tu telefono para verificar que el PDF se abra correctamente antes de distribuirlo.",
+                    desc: "Abre la herramienta de Codigo QR de PDF.it (funcion Pro), selecciona URL, pega tu enlace al PDF y genera. Descarga como SVG para impresion o PNG para digital. Siempre escanea el codigo QR con tu telefono para verificar que el PDF se abra correctamente antes de distribuirlo.",
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -287,10 +287,10 @@ export default function CodigoQRParaPDFPage() {
               {[
                 { q: "Puede un codigo QR enlazar directamente a un archivo PDF?", a: "Si. Un codigo QR puede enlazar a cualquier URL, incluyendo un enlace directo a un archivo PDF alojado en linea. Cuando alguien escanea el codigo QR, el navegador de su telefono abre el PDF automaticamente." },
                 { q: "Donde debo alojar el PDF para mi codigo QR?", a: "Puedes alojarlo en tu propio sitio web, Google Drive (con compartir publico habilitado), Dropbox o cualquier servicio de alojamiento de archivos que te de una URL publica. Asegurate de que el enlace no requiera inicio de sesion." },
-                { q: "Que tan grande puede ser el PDF?", a: "No hay limite tecnico del lado del codigo QR — solo almacena la URL, no el archivo. Sin embargo, manten tu PDF por debajo de 5MB para que cargue rapidamente en dispositivos moviles. Usa la herramienta Comprimir PDF de OmnisPDF para reducir archivos grandes." },
+                { q: "Que tan grande puede ser el PDF?", a: "No hay limite tecnico del lado del codigo QR — solo almacena la URL, no el archivo. Sin embargo, manten tu PDF por debajo de 5MB para que cargue rapidamente en dispositivos moviles. Usa la herramienta Comprimir PDF de PDF.it para reducir archivos grandes." },
                 { q: "El codigo QR seguira funcionando si actualizo el PDF?", a: "Si reemplazas el archivo en la misma URL, si. Si la URL cambia (nueva subida con un enlace diferente), el codigo QR dejara de funcionar. Usa una URL de redireccion o reemplaza el archivo en su lugar." },
-                { q: "Puedo proteger con contrasena el PDF detras del codigo QR?", a: "Si, pero la persona que escanee necesitara ingresar la contrasena para abrir el PDF. Usa la herramienta Proteger PDF de OmnisPDF para agregar una contrasena. Comparte la contrasena por separado." },
-                { q: "La herramienta de Codigo QR es gratuita?", a: "El generador de Codigo QR de OmnisPDF es una funcion Pro ($7.99/mes). Pro incluye codigos QR ilimitados, compresion de PDF, herramientas de conversion y mas." },
+                { q: "Puedo proteger con contrasena el PDF detras del codigo QR?", a: "Si, pero la persona que escanee necesitara ingresar la contrasena para abrir el PDF. Usa la herramienta Proteger PDF de PDF.it para agregar una contrasena. Comparte la contrasena por separado." },
+                { q: "La herramienta de Codigo QR es gratuita?", a: "El generador de Codigo QR de PDF.it es una funcion Pro ($7.99/mes). Pro incluye codigos QR ilimitados, compresion de PDF, herramientas de conversion y mas." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

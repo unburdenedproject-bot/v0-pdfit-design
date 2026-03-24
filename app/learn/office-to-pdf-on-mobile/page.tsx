@@ -5,9 +5,9 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Convert Office Files to PDF on Mobile (iPhone & Android) | OmnisPDF",
+  title: "Convert Office Files to PDF on Mobile (iPhone & Android) | PDF.it",
   description:
-    "Learn how to convert Word, Excel, and PowerPoint files to PDF on your iPhone or Android phone. No app needed — use OmnisPDF in any mobile browser.",
+    "Learn how to convert Word, Excel, and PowerPoint files to PDF on your iPhone or Android phone. No app needed — use PDF.it in any mobile browser.",
   keywords: "convert office to pdf on phone, word to pdf iphone, excel to pdf android, office to pdf mobile, convert to pdf on phone",
 }
 
@@ -18,17 +18,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I convert a Word file to PDF on my iPhone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open Safari or Chrome, go to OmnisPDF's Office to PDF tool, upload your .docx file, and download the converted PDF. No app installation required." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open Safari or Chrome, go to PDF.it's Office to PDF tool, upload your .docx file, and download the converted PDF. No app installation required." }
     },
     {
       "@type": "Question",
       "name": "Do I need to install an app to convert Office files to PDF on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF works entirely in your mobile browser — Safari, Chrome, or Firefox. Upload your file, convert it, and download the PDF without installing anything." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it works entirely in your mobile browser — Safari, Chrome, or Firefox. Upload your file, convert it, and download the PDF without installing anything." }
     },
     {
       "@type": "Question",
       "name": "Can I convert Excel files to PDF on Android?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open any browser on your Android phone, go to OmnisPDF, upload your .xlsx file, and get a PDF back in seconds. The tool preserves your table formatting and layout." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open any browser on your Android phone, go to PDF.it, upload your .xlsx file, and get a PDF back in seconds. The tool preserves your table formatting and layout." }
     },
     {
       "@type": "Question",
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is the quality the same as converting on a computer?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF processes files on the server, not on your device. The conversion quality is identical whether you upload from a phone, tablet, or desktop computer." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it processes files on the server, not on your device. The conversion quality is identical whether you upload from a phone, tablet, or desktop computer." }
     },
     {
       "@type": "Question",
@@ -56,8 +56,8 @@ const howToSchema = {
   "step": [
     {
       "@type": "HowToStep",
-      "name": "Open OmnisPDF in your mobile browser",
-      "text": "Open Safari (iPhone) or Chrome (Android) and go to omnispdf.com. Navigate to the Office to PDF tool."
+      "name": "Open PDF.it in your mobile browser",
+      "text": "Open Safari (iPhone) or Chrome (Android) and go to pdf.it.com. Navigate to the Office to PDF tool."
     },
     {
       "@type": "HowToStep",
@@ -154,8 +154,8 @@ export default function OfficeToQdfOnMobilePage() {
               <div className="space-y-4">
                 {[
                   {
-                    title: "Open OmnisPDF in your mobile browser",
-                    desc: "Open Safari (iPhone), Chrome (Android), or any mobile browser and go to omnispdf.com. Tap the menu to find the Office to PDF tool, or go directly to omnispdf.com/office-to-pdf.",
+                    title: "Open PDF.it in your mobile browser",
+                    desc: "Open Safari (iPhone), Chrome (Android), or any mobile browser and go to pdf.it.com. Tap the menu to find the Office to PDF tool, or go directly to pdf.it.com/office-to-pdf.",
                   },
                   {
                     title: "Upload your file",
@@ -210,8 +210,8 @@ export default function OfficeToQdfOnMobilePage() {
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Check your Downloads folder.</strong> After converting, the PDF goes to your Downloads folder by default. Pull down the notification shade to see the download notification and tap to open.</li>
                 <li>&#10003; <strong>Upload from Google Drive.</strong> When you tap the upload area in Chrome, you can browse Google Drive directly. This is the fastest way to convert a file stored in the cloud.</li>
-                <li>&#10003; <strong>Use &quot;Share&quot; from other apps.</strong> If you receive an Office file in Gmail or WhatsApp, long-press the attachment, tap &quot;Share,&quot; then &quot;Open in Chrome&quot; to navigate to OmnisPDF and upload it.</li>
-                <li>&#10003; <strong>Samsung users:</strong> Samsung Internet browser works just as well as Chrome for uploading and converting files on OmnisPDF.</li>
+                <li>&#10003; <strong>Use &quot;Share&quot; from other apps.</strong> If you receive an Office file in Gmail or WhatsApp, long-press the attachment, tap &quot;Share,&quot; then &quot;Open in Chrome&quot; to navigate to PDF.it and upload it.</li>
+                <li>&#10003; <strong>Samsung users:</strong> Samsung Internet browser works just as well as Chrome for uploading and converting files on PDF.it.</li>
               </ul>
             </section>
 
@@ -236,7 +236,7 @@ export default function OfficeToQdfOnMobilePage() {
         <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Convert Office Files on Your Phone</h2>
-            <p className="text-slate-300 mb-6">No app needed. Open OmnisPDF in your mobile browser, upload your file, and get a PDF in seconds.</p>
+            <p className="text-slate-300 mb-6">No app needed. Open PDF.it in your mobile browser, upload your file, and get a PDF in seconds.</p>
             <Link
               href="/office-to-pdf"
               className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
@@ -276,11 +276,11 @@ export default function OfficeToQdfOnMobilePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "Can I convert a Word file to PDF on my iPhone?", a: "Yes. Open Safari or Chrome, go to OmnisPDF's Office to PDF tool, upload your .docx file, and download the converted PDF. No app installation required." },
-                { q: "Do I need to install an app to convert Office files to PDF on my phone?", a: "No. OmnisPDF works entirely in your mobile browser — Safari, Chrome, or Firefox. Upload your file, convert it, and download the PDF without installing anything." },
-                { q: "Can I convert Excel files to PDF on Android?", a: "Yes. Open any browser on your Android phone, go to OmnisPDF, upload your .xlsx file, and get a PDF back in seconds. The tool preserves your table formatting and layout." },
+                { q: "Can I convert a Word file to PDF on my iPhone?", a: "Yes. Open Safari or Chrome, go to PDF.it's Office to PDF tool, upload your .docx file, and download the converted PDF. No app installation required." },
+                { q: "Do I need to install an app to convert Office files to PDF on my phone?", a: "No. PDF.it works entirely in your mobile browser — Safari, Chrome, or Firefox. Upload your file, convert it, and download the PDF without installing anything." },
+                { q: "Can I convert Excel files to PDF on Android?", a: "Yes. Open any browser on your Android phone, go to PDF.it, upload your .xlsx file, and get a PDF back in seconds. The tool preserves your table formatting and layout." },
                 { q: "Where does the converted PDF get saved on my phone?", a: "On iPhone, the PDF downloads to your Files app or the Downloads folder in Safari. On Android, it goes to your Downloads folder. You can also share it directly from the browser via email or messaging apps." },
-                { q: "Is the quality the same as converting on a computer?", a: "Yes. OmnisPDF processes files on the server, not on your device. The conversion quality is identical whether you upload from a phone, tablet, or desktop computer." },
+                { q: "Is the quality the same as converting on a computer?", a: "Yes. PDF.it processes files on the server, not on your device. The conversion quality is identical whether you upload from a phone, tablet, or desktop computer." },
                 { q: "Can I convert multiple files to PDF on my phone?", a: "Free users can convert one file at a time on mobile. Pro users get batch processing, which allows converting multiple Office files to PDF in a single operation even on a phone." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ScanText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Dicas para Melhorar a Precisao do OCR | OmnisPDF",
+  title: "Dicas para Melhorar a Precisao do OCR | PDF.it",
   description:
     "Melhore a precisao do OCR com estas dicas praticas: resolucao ideal, contraste, alinhamento, limpeza de imagem e escolha de idioma para reconhecimento perfeito.",
   keywords: "dicas precisao ocr, melhorar ocr, ocr precisao, qualidade ocr, ocr melhores resultados",
@@ -93,7 +93,7 @@ export default function DicasPrecisaoOCRPage() {
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Texto escuro em fundo claro</strong> e a combinacao ideal. Evite papel colorido escuro ou texto em cor clara.</span></li>
                 <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Iluminacao uniforme</strong> ao digitalizar com celular. Sombras no documento prejudicam o reconhecimento.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Limpeza de Digitalizacao</strong> do OmnisPDF pode <Link href="/br/limpeza-digitalizacao" className="text-orange-600 hover:underline">melhorar o contraste automaticamente</Link> se a digitalizacao ficou escura ou com sombras.</span></li>
+                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Limpeza de Digitalizacao</strong> do PDF.it pode <Link href="/br/limpeza-digitalizacao" className="text-orange-600 hover:underline">melhorar o contraste automaticamente</Link> se a digitalizacao ficou escura ou com sombras.</span></li>
               </ul>
             </section>
 

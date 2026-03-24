@@ -6,9 +6,9 @@ import { Merge, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Merge Scanned PDFs Into One Document — Free Online | OmnisPDF",
+  title: "Merge Scanned PDFs Into One Document — Free Online | PDF.it",
   description:
-    "Combine multiple scanned PDFs into a single document with OmnisPDF. Merge scanned pages from different sources into one clean file — fast, free, and browser-based.",
+    "Combine multiple scanned PDFs into a single document with PDF.it. Merge scanned pages from different sources into one clean file — fast, free, and browser-based.",
 }
 
 const faqSchema = {
@@ -18,17 +18,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I merge scanned PDFs into one document?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your scanned PDF files to OmnisPDF, arrange them in order, and click Merge. OmnisPDF combines scanned pages into a single document without altering image quality." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your scanned PDF files to PDF.it, arrange them in order, and click Merge. PDF.it combines scanned pages into a single document without altering image quality." }
     },
     {
       "@type": "Question",
       "name": "Will merging scanned PDFs reduce image quality?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF merges your scanned pages without re-compressing them. Each page retains its original scan quality and resolution." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it merges your scanned pages without re-compressing them. Each page retains its original scan quality and resolution." }
     },
     {
       "@type": "Question",
       "name": "Can I run OCR after merging scanned PDFs?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. After merging your scanned PDFs, use OmnisPDF's OCR Scanner tool to make the text searchable and selectable. OCR is available for Pro users." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. After merging your scanned PDFs, use PDF.it's OCR Scanner tool to make the text searchable and selectable. OCR is available for Pro users." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Does this work with scans from my phone camera?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works with scanned PDFs from any source — phone cameras, flatbed scanners, multifunction printers, or scanning apps like CamScanner and Adobe Scan." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works with scanned PDFs from any source — phone cameras, flatbed scanners, multifunction printers, or scanning apps like CamScanner and Adobe Scan." }
     }
   ]
 }
@@ -91,7 +91,7 @@ export default function MergeScannedPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Scanned documents often end up as separate PDF files — one per page, one per batch, or one per scanner session. OmnisPDF lets you merge all your scanned PDFs into a single file, keeping every page at its original quality. Ideal for combining scanned contracts, receipts, IDs, and archived paperwork.
+              Scanned documents often end up as separate PDF files — one per page, one per batch, or one per scanner session. PDF.it lets you merge all your scanned PDFs into a single file, keeping every page at its original quality. Ideal for combining scanned contracts, receipts, IDs, and archived paperwork.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Merge scanned PDFs without quality loss</li>
@@ -121,7 +121,7 @@ export default function MergeScannedPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Organize Scanned Archives Into Single Files</h2>
               <p className="text-slate-600">
-                Digitizing old paperwork? Merge batches of scanned pages into organized documents by category, date, or project. Then use OmnisPDF's Compress PDF tool to reduce file sizes for long-term storage.
+                Digitizing old paperwork? Merge batches of scanned pages into organized documents by category, date, or project. Then use PDF.it's Compress PDF tool to reduce file sizes for long-term storage.
               </p>
             </div>
           </div>
@@ -133,7 +133,7 @@ export default function MergeScannedPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Merge Scanned PDFs</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your scanned PDF files into OmnisPDF.",
+                "Upload or drag and drop your scanned PDF files into PDF.it.",
                 "Arrange the scanned pages in the correct order.",
                 "Click Merge and download your combined scanned document.",
               ].map((step, i) => (
@@ -178,12 +178,12 @@ export default function MergeScannedPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I merge scanned PDFs into one document?", a: "Upload your scanned PDF files to OmnisPDF, arrange them in order, and click Merge. OmnisPDF combines scanned pages into a single document without altering image quality." },
-                { q: "Will merging scanned PDFs reduce image quality?", a: "No. OmnisPDF merges your scanned pages without re-compressing them. Each page retains its original scan quality and resolution." },
-                { q: "Can I run OCR after merging scanned PDFs?", a: "Yes. After merging your scanned PDFs, use OmnisPDF's OCR Scanner tool to make the text searchable and selectable. OCR is available for Pro users." },
+                { q: "How do I merge scanned PDFs into one document?", a: "Upload your scanned PDF files to PDF.it, arrange them in order, and click Merge. PDF.it combines scanned pages into a single document without altering image quality." },
+                { q: "Will merging scanned PDFs reduce image quality?", a: "No. PDF.it merges your scanned pages without re-compressing them. Each page retains its original scan quality and resolution." },
+                { q: "Can I run OCR after merging scanned PDFs?", a: "Yes. After merging your scanned PDFs, use PDF.it's OCR Scanner tool to make the text searchable and selectable. OCR is available for Pro users." },
                 { q: "How large can scanned PDF files be?", a: "Free users can upload scanned PDFs up to 25MB each. Pro users get a 200MB limit per file, which handles high-resolution scans with ease." },
                 { q: "Can I merge scanned receipts and invoices into one PDF?", a: "Absolutely. Upload all your scanned receipts or invoices, arrange them chronologically, and merge them into a single document for bookkeeping or expense reports." },
-                { q: "Does this work with scans from my phone camera?", a: "Yes. OmnisPDF works with scanned PDFs from any source — phone cameras, flatbed scanners, multifunction printers, or scanning apps like CamScanner and Adobe Scan." },
+                { q: "Does this work with scans from my phone camera?", a: "Yes. PDF.it works with scanned PDFs from any source — phone cameras, flatbed scanners, multifunction printers, or scanning apps like CamScanner and Adobe Scan." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

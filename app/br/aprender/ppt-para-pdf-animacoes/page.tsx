@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Presentation, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "PPT para PDF — E as Animacoes? O Que Converte e o Que Nao | OmnisPDF",
+  title: "PPT para PDF — E as Animacoes? O Que Converte e o Que Nao | PDF.it",
   description: "Descubra o que acontece com as animacoes e transicoes do PowerPoint quando voce converte para PDF. Saiba quais elementos sao preservados e como lidar com os que nao sao.",
   keywords: "ppt para pdf animacoes, powerpoint animacoes pdf, transicoes powerpoint pdf, animacoes perdem pdf, converter ppt animacoes",
 }
@@ -20,7 +20,7 @@ const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainE
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como lidar com animacoes ao converter PPT para PDF", "description": "Entenda o que acontece com animacoes e como preparar seu PowerPoint para uma boa conversao.", "step": [
   { "@type": "HowToStep", "name": "Identifique slides com animacoes", "text": "Revise sua apresentacao e identifique quais slides dependem de animacoes para comunicar a mensagem." },
   { "@type": "HowToStep", "name": "Duplique slides animados", "text": "Para cada estado de animacao importante, crie um slide separado mostrando aquele estado. Assim o PDF tera multiplas paginas representando a sequencia." },
-  { "@type": "HowToStep", "name": "Converta para PDF", "text": "Envie o arquivo preparado para o conversor do OmnisPDF e baixe o PDF com todos os estados visíveis." }
+  { "@type": "HowToStep", "name": "Converta para PDF", "text": "Envie o arquivo preparado para o conversor do PDF.it e baixe o PDF com todos os estados visíveis." }
 ] }
 
 export default function PptParaPdfAnimacoesPage() {

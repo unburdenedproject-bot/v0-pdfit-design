@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Merge, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "How to Merge PDFs on iPhone (Fast Browser Method) | OmnisPDF",
+  title: "How to Merge PDFs on iPhone (Fast Browser Method) | PDF.it",
   description:
     "Learn how to merge PDFs on iPhone using Safari or Chrome — no app needed. Step-by-step guide to combining PDFs on your phone for free.",
   keywords: "merge pdf on iphone, combine pdfs iphone, merge pdf ios, merge pdf on phone free",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I merge PDFs on my iPhone without an app?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works directly in Safari or Chrome on your iPhone. Go to omnispdf.com/merge-pdf, upload your files, arrange the order, and download the merged PDF — no app installation required." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works directly in Safari or Chrome on your iPhone. Go to pdf.it.com/merge-pdf, upload your files, arrange the order, and download the merged PDF — no app installation required." }
     },
     {
       "@type": "Question",
@@ -27,8 +27,8 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "How do I upload PDFs from my iPhone to OmnisPDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "When you tap the upload area on OmnisPDF, your iPhone will show a file picker. You can browse the Files app, recent downloads, iCloud Drive, or other cloud storage. Select the PDFs you want to merge and they'll upload automatically." }
+      "name": "How do I upload PDFs from my iPhone to PDF.it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "When you tap the upload area on PDF.it, your iPhone will show a file picker. You can browse the Files app, recent downloads, iCloud Drive, or other cloud storage. Select the PDFs you want to merge and they'll upload automatically." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is there a file size limit when merging PDFs on iPhone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Free users can upload files up to 25MB each. Pro users can upload files up to 200MB. If your merged file is too large, use OmnisPDF's Compress PDF tool to reduce the size before sharing." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Free users can upload files up to 25MB each. Pro users can upload files up to 200MB. If your merged file is too large, use PDF.it's Compress PDF tool to reduce the size before sharing." }
     }
   ]
 }
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Merge PDF Files on iPhone",
-  "description": "Combine multiple PDFs into one file on your iPhone using Safari and OmnisPDF.",
+  "description": "Combine multiple PDFs into one file on your iPhone using Safari and PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
-      "name": "Open OmnisPDF in Safari",
-      "text": "Open Safari on your iPhone and go to omnispdf.com/merge-pdf. Tap the upload area to open the file picker."
+      "name": "Open PDF.it in Safari",
+      "text": "Open Safari on your iPhone and go to pdf.it.com/merge-pdf. Tap the upload area to open the file picker."
     },
     {
       "@type": "HowToStep",
@@ -131,7 +131,7 @@ export default function MergePDFOnIPhonePage() {
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 font-bold mt-0.5">1.</span>
-                  <span><strong>No installation needed.</strong> Most PDF apps are 50-200MB and require creating yet another account. OmnisPDF works instantly in Safari.</span>
+                  <span><strong>No installation needed.</strong> Most PDF apps are 50-200MB and require creating yet another account. PDF.it works instantly in Safari.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 font-bold mt-0.5">2.</span>
@@ -139,7 +139,7 @@ export default function MergePDFOnIPhonePage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>No subscriptions traps.</strong> Many "free" PDF apps lock basic features behind weekly subscriptions. OmnisPDF lets you merge files for free with no hidden costs.</span>
+                  <span><strong>No subscriptions traps.</strong> Many "free" PDF apps lock basic features behind weekly subscriptions. PDF.it lets you merge files for free with no hidden costs.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 font-bold mt-0.5">4.</span>
@@ -184,8 +184,8 @@ export default function MergePDFOnIPhonePage() {
               <div className="space-y-4">
                 {[
                   {
-                    title: "Open Safari and go to OmnisPDF",
-                    desc: "Open Safari on your iPhone and navigate to omnispdf.com/merge-pdf. The page is fully mobile-optimized — it works perfectly on any iPhone screen size.",
+                    title: "Open Safari and go to PDF.it",
+                    desc: "Open Safari on your iPhone and navigate to pdf.it.com/merge-pdf. The page is fully mobile-optimized — it works perfectly on any iPhone screen size.",
                   },
                   {
                     title: "Upload your PDF files",
@@ -245,7 +245,7 @@ export default function MergePDFOnIPhonePage() {
               <ul className="space-y-2 text-slate-700">
                 <li>✓ <strong>Compress it.</strong> Go to <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> in Safari and upload the merged file. Compression can reduce the size by 50-80%.</li>
                 <li>✓ <strong>Split if needed.</strong> If compression isn't enough, use <Link href="/split-pdf" className="text-orange-600 hover:underline">Split PDF</Link> to break the document into smaller parts.</li>
-                <li>✓ <strong>All from your iPhone.</strong> Every OmnisPDF tool works in Safari — you don't need to switch to a computer.</li>
+                <li>✓ <strong>All from your iPhone.</strong> Every PDF.it tool works in Safari — you don't need to switch to a computer.</li>
               </ul>
             </section>
 
@@ -256,7 +256,7 @@ export default function MergePDFOnIPhonePage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Save Email Attachments First</h3>
                   <p className="text-slate-600">
-                    If your PDFs are in email, save them to the Files app before merging. Open the email, long-press the PDF attachment, and tap "Save to Files." Choose a folder you'll remember (like Downloads). Then you can easily find them when uploading to OmnisPDF.
+                    If your PDFs are in email, save them to the Files app before merging. Open the email, long-press the PDF attachment, and tap "Save to Files." Choose a folder you'll remember (like Downloads). Then you can easily find them when uploading to PDF.it.
                   </p>
                 </div>
 
@@ -323,12 +323,12 @@ export default function MergePDFOnIPhonePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "Can I merge PDFs on my iPhone without an app?", a: "Yes. OmnisPDF works directly in Safari or Chrome on your iPhone. Go to omnispdf.com/merge-pdf, upload your files, arrange the order, and download the merged PDF — no app installation required." },
+                { q: "Can I merge PDFs on my iPhone without an app?", a: "Yes. PDF.it works directly in Safari or Chrome on your iPhone. Go to pdf.it.com/merge-pdf, upload your files, arrange the order, and download the merged PDF — no app installation required." },
                 { q: "Where do I find PDFs on my iPhone?", a: "PDFs on iPhone are typically in the Files app (under 'On My iPhone' or iCloud Drive), in your email attachments, in messaging apps (WhatsApp, iMessage), or in the Downloads folder in Safari. Use the Files app to browse all locations." },
-                { q: "How do I upload PDFs from my iPhone to OmnisPDF?", a: "When you tap the upload area on OmnisPDF, your iPhone will show a file picker. You can browse the Files app, recent downloads, iCloud Drive, or other cloud storage. Select the PDFs you want to merge and they'll upload automatically." },
+                { q: "How do I upload PDFs from my iPhone to PDF.it?", a: "When you tap the upload area on PDF.it, your iPhone will show a file picker. You can browse the Files app, recent downloads, iCloud Drive, or other cloud storage. Select the PDFs you want to merge and they'll upload automatically." },
                 { q: "Where does the merged PDF download to on iPhone?", a: "The merged PDF downloads to your iPhone's Downloads folder, accessible through the Files app. In Safari, you can also find recent downloads by tapping the download arrow icon in the address bar." },
                 { q: "Can I share the merged PDF directly from my iPhone?", a: "Yes. After downloading, open the merged PDF from the Files app, tap the share button, and send it via email, AirDrop, WhatsApp, iMessage, or any other sharing option on your iPhone." },
-                { q: "Is there a file size limit when merging PDFs on iPhone?", a: "Free users can upload files up to 25MB each. Pro users can upload files up to 200MB. If your merged file is too large, use OmnisPDF's Compress PDF tool to reduce the size before sharing." },
+                { q: "Is there a file size limit when merging PDFs on iPhone?", a: "Free users can upload files up to 25MB each. Pro users can upload files up to 200MB. If your merged file is too large, use PDF.it's Compress PDF tool to reduce the size before sharing." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

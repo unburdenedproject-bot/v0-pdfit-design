@@ -5,7 +5,7 @@ import Link from "next/link"
 import { QrCode, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Crear un Codigo QR para WiFi (Los Invitados se Conectan al Instante) | OmnisPDF",
+  title: "Crear un Codigo QR para WiFi (Los Invitados se Conectan al Instante) | PDF.it",
   description:
     "Aprende como crear un codigo QR de WiFi para que invitados, clientes y visitantes se conecten a tu red al instante escaneando — sin escribir contrasenas. Guia paso a paso.",
   keywords: "codigo qr wifi, generador codigo qr wifi, compartir wifi codigo qr, contrasena wifi codigo qr",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Esta herramienta es gratuita?",
-      "acceptedAnswer": { "@type": "Answer", "text": "El generador de Codigo QR de OmnisPDF es una funcion Pro a $7.99/mes. Los usuarios Pro obtienen generacion ilimitada de codigos QR incluyendo WiFi, URL, vCard y todos los demas tipos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "El generador de Codigo QR de PDF.it es una funcion Pro a $7.99/mes. Los usuarios Pro obtienen generacion ilimitada de codigos QR incluyendo WiFi, URL, vCard y todos los demas tipos." }
     }
   ]
 }
@@ -52,7 +52,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Crear un Codigo QR de WiFi",
-  "description": "Deja que los invitados se conecten a tu WiFi al instante escaneando un codigo QR. Crealo en 3 pasos con OmnisPDF.",
+  "description": "Deja que los invitados se conecten a tu WiFi al instante escaneando un codigo QR. Crealo en 3 pasos con PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
@@ -62,7 +62,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Genera el codigo QR de WiFi",
-      "text": "Abre la herramienta de Codigo QR de OmnisPDF, selecciona tipo WiFi e ingresa el nombre de tu red, contrasena y tipo de encriptacion. Haz clic en Generar."
+      "text": "Abre la herramienta de Codigo QR de PDF.it, selecciona tipo WiFi e ingresa el nombre de tu red, contrasena y tipo de encriptacion. Haz clic en Generar."
     },
     {
       "@type": "HowToStep",
@@ -159,7 +159,7 @@ export default function CodigoQRParaWiFiPage() {
                   },
                   {
                     title: "Genera el codigo QR",
-                    desc: "Abre la herramienta de Codigo QR de OmnisPDF (funcion Pro), selecciona el tipo WiFi e ingresa tu SSID, contrasena y tipo de encriptacion. Si el nombre de tu red tiene espacios o caracteres especiales, ingresalo exactamente como aparece en la lista de configuracion WiFi.",
+                    desc: "Abre la herramienta de Codigo QR de PDF.it (funcion Pro), selecciona el tipo WiFi e ingresa tu SSID, contrasena y tipo de encriptacion. Si el nombre de tu red tiene espacios o caracteres especiales, ingresalo exactamente como aparece en la lista de configuracion WiFi.",
                   },
                   {
                     title: "Imprime y exhibe",
@@ -221,7 +221,7 @@ export default function CodigoQRParaWiFiPage() {
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Usa una red de invitados.</strong> La mayoria de los routers modernos soportan una red de invitados separada. Crea una con su propia contrasena y haz el codigo QR solo para esa red. Tu red principal permanece privada.</li>
-                <li>&#10003; <strong>Cambia la contrasena de invitados regularmente.</strong> Especialmente para negocios. Actualizala mensualmente y genera un nuevo codigo QR. La herramienta de <Link href="/es/codigo-qr" className="text-orange-600 hover:underline">Codigo QR</Link> de OmnisPDF hace esto rapido.</li>
+                <li>&#10003; <strong>Cambia la contrasena de invitados regularmente.</strong> Especialmente para negocios. Actualizala mensualmente y genera un nuevo codigo QR. La herramienta de <Link href="/es/codigo-qr" className="text-orange-600 hover:underline">Codigo QR</Link> de PDF.it hace esto rapido.</li>
                 <li>&#10003; <strong>Limita el acceso de la red de invitados.</strong> Configura tu router para evitar que los usuarios de la red de invitados accedan a dispositivos en tu red principal (impresoras, NAS, dispositivos inteligentes del hogar).</li>
                 <li>&#10003; <strong>Establece limites de ancho de banda.</strong> Si manejas un negocio, limita el ancho de banda de la red de invitados para que una persona viendo video en 4K no ralentice a todos los demas.</li>
                 <li>&#10003; <strong>No lo publiques afuera.</strong> Manten los codigos QR de WiFi dentro de tus instalaciones donde solo invitados y clientes reales puedan escanearlos.</li>
@@ -297,7 +297,7 @@ export default function CodigoQRParaWiFiPage() {
                 { q: "Funciona tanto en iPhone como en Android?", a: "Si. Los iPhones con iOS 11 o posterior y los telefonos Android con Android 10 o posterior pueden escanear codigos QR de WiFi con su app de camara integrada y conectarse automaticamente." },
                 { q: "Que informacion necesito para crear un codigo QR de WiFi?", a: "Necesitas tres cosas: el nombre de tu red (SSID), tu contrasena WiFi y el tipo de encriptacion (generalmente WPA/WPA2 para routers modernos). Revisa la configuracion de tu router o la etiqueta en tu router." },
                 { q: "Necesito actualizar el codigo QR si cambio mi contrasena WiFi?", a: "Si. Los codigos QR de WiFi son estaticos — la contrasena esta codificada directamente en el patron del codigo QR. Si cambias tu contrasena WiFi, necesitas generar un nuevo codigo QR." },
-                { q: "Esta herramienta es gratuita?", a: "El generador de Codigo QR de OmnisPDF es una funcion Pro a $7.99/mes. Los usuarios Pro obtienen generacion ilimitada de codigos QR incluyendo WiFi, URL, vCard y todos los demas tipos." },
+                { q: "Esta herramienta es gratuita?", a: "El generador de Codigo QR de PDF.it es una funcion Pro a $7.99/mes. Los usuarios Pro obtienen generacion ilimitada de codigos QR incluyendo WiFi, URL, vCard y todos los demas tipos." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

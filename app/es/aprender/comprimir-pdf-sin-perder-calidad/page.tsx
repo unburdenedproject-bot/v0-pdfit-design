@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileDown, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Cómo Comprimir un PDF Sin Perder Calidad | OmnisPDF",
+  title: "Cómo Comprimir un PDF Sin Perder Calidad | PDF.it",
   description:
     "Aprende cómo reducir el tamaño de un PDF sin perder calidad. Mantén el texto nítido y las imágenes claras mientras reduces tu documento — guía paso a paso con consejos de compresión sin pérdida.",
   keywords: "comprimir pdf sin perder calidad, reducir tamaño pdf mantener calidad, compresión pdf sin pérdida, comprimir pdf sin perder calidad",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo comprimir un PDF sin perder calidad en mi teléfono?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en cualquier navegador móvil. Sube tu PDF, selecciona compresión Ligera y descarga el resultado. No necesitas app — funciona en iPhone y Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, selecciona compresión Ligera y descarga el resultado. No necesitas app — funciona en iPhone y Android." }
     }
   ]
 }
@@ -54,7 +54,7 @@ const howToSchema = {
   "name": "Cómo Comprimir un PDF Sin Perder Calidad",
   "description": "Reduce el tamaño del archivo PDF manteniendo el texto y las imágenes en plena calidad en 3 simples pasos.",
   "step": [
-    { "@type": "HowToStep", "name": "Sube tu PDF", "text": "Ve a la herramienta Comprimir PDF de OmnisPDF y sube el archivo que quieres reducir haciendo clic o arrastrándolo al área de carga." },
+    { "@type": "HowToStep", "name": "Sube tu PDF", "text": "Ve a la herramienta Comprimir PDF de PDF.it y sube el archivo que quieres reducir haciendo clic o arrastrándolo al área de carga." },
     { "@type": "HowToStep", "name": "Selecciona compresión Ligera", "text": "Elige el nivel de compresión Ligera para mantener las imágenes en su resolución original mientras eliminas datos redundantes, fuentes no usadas y metadatos." },
     { "@type": "HowToStep", "name": "Descarga tu PDF comprimido", "text": "Haz clic en Comprimir PDF y descarga el archivo más pequeño. Compáralo con el original para verificar que la calidad se preserva." }
   ]
@@ -201,7 +201,7 @@ export default function ComprimirPDFSinPerderCalidadPage() {
                 { q: "¿Cuánto más pequeño será mi PDF con compresión sin pérdida?", a: "Típicamente 10-30% más pequeño. Si el PDF tiene muchos datos redundantes o fuentes incrustadas, el ahorro puede ser mayor. Para reducciones más grandes necesitas compresión con pérdida." },
                 { q: "¿El texto se mantiene nítido después de comprimir?", a: "Absolutamente. El texto del PDF se almacena como datos vectoriales, no como imágenes, así que la compresión nunca afecta la nitidez del texto. Solo las imágenes incrustadas pueden verse afectadas, y solo si eliges compresión Media o Extrema." },
                 { q: "¿Debería usar compresión Ligera o Media para mantener la calidad?", a: "Usa Ligera si la calidad es tu máxima prioridad — mantiene las imágenes en su resolución original. Media es un buen punto medio que reduce ligeramente la resolución de imagen pero sigue siendo visualmente indistinguible para la mayoría de los documentos." },
-                { q: "¿Puedo comprimir un PDF sin perder calidad en mi teléfono?", a: "Sí. OmnisPDF funciona en cualquier navegador móvil. Sube tu PDF, selecciona compresión Ligera y descarga el resultado. No necesitas app — funciona en iPhone y Android." },
+                { q: "¿Puedo comprimir un PDF sin perder calidad en mi teléfono?", a: "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, selecciona compresión Ligera y descarga el resultado. No necesitas app — funciona en iPhone y Android." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

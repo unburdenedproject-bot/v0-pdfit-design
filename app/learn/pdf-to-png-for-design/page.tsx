@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Image, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Convert PDF to PNG for Design Work (Figma, Canva, Web) | OmnisPDF",
+  title: "Convert PDF to PNG for Design Work (Figma, Canva, Web) | PDF.it",
   description:
     "Learn how to convert PDF to PNG for Figma, Canva, and web projects. Covers resolution, transparency, DPI settings, and best practices for using PDF content in design workflows.",
   keywords: "pdf to png for design, pdf to png figma, pdf to png canva, pdf to png for web, convert pdf to image for design",
@@ -23,7 +23,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I import a PDF directly into Figma?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Figma doesn't support PDF import natively. The best workflow is to convert your PDF to PNG first using OmnisPDF, then drag the PNG images into your Figma project. This gives you full control over resolution and quality." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Figma doesn't support PDF import natively. The best workflow is to convert your PDF to PNG first using PDF.it, then drag the PNG images into your Figma project. This gives you full control over resolution and quality." }
     },
     {
       "@type": "Question",
@@ -38,12 +38,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I use PDF content in Canva?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Canva can import PDFs directly, but for better control over quality and placement, convert your PDF to PNG first using OmnisPDF. Then upload the PNG to Canva as an image — you can resize, crop, and layer it freely." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Canva can import PDFs directly, but for better control over quality and placement, convert your PDF to PNG first using PDF.it. Then upload the PNG to Canva as an image — you can resize, crop, and layer it freely." }
     },
     {
       "@type": "Question",
       "name": "Should I extract images from a PDF instead of converting pages?",
-      "acceptedAnswer": { "@type": "Answer", "text": "If you only need specific images embedded in the PDF (photos, logos, graphics), use OmnisPDF's Extract Images tool. If you need the full page layout as an image, convert the page to PNG. Both approaches have their place in design workflows." }
+      "acceptedAnswer": { "@type": "Answer", "text": "If you only need specific images embedded in the PDF (photos, logos, graphics), use PDF.it's Extract Images tool. If you need the full page layout as an image, convert the page to PNG. Both approaches have their place in design workflows." }
     }
   ]
 }
@@ -57,7 +57,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Upload your PDF",
-      "text": "Go to OmnisPDF's PDF to PNG tool and upload the PDF containing the design assets or pages you need."
+      "text": "Go to PDF.it's PDF to PNG tool and upload the PDF containing the design assets or pages you need."
     },
     {
       "@type": "HowToStep",
@@ -243,7 +243,7 @@ export default function PDFtoPNGforDesignPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Convert at 300 DPI for flexibility</h3>
                   <p className="text-slate-600">
-                    Use <Link href="/pdf-to-png" className="text-orange-600 hover:underline">OmnisPDF's converter</Link> at 300 DPI. This gives you enough resolution to scale the image up or down within Figma without losing quality. An A4 page at 300 DPI produces a PNG that's roughly 2480 x 3508 pixels.
+                    Use <Link href="/pdf-to-png" className="text-orange-600 hover:underline">PDF.it's converter</Link> at 300 DPI. This gives you enough resolution to scale the image up or down within Figma without losing quality. An A4 page at 300 DPI produces a PNG that's roughly 2480 x 3508 pixels.
                   </p>
                 </div>
                 <div>
@@ -277,7 +277,7 @@ export default function PDFtoPNGforDesignPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Upload PNGs to your Canva Uploads folder</h3>
                   <p className="text-slate-600">
-                    After converting with OmnisPDF, upload the PNG images to Canva's "Uploads" section. From there, drag them into any Canva design — presentations, social posts, posters, or documents.
+                    After converting with PDF.it, upload the PNG images to Canva's "Uploads" section. From there, drag them into any Canva design — presentations, social posts, posters, or documents.
                   </p>
                 </div>
               </div>
@@ -320,7 +320,7 @@ export default function PDFtoPNGforDesignPage() {
               <ul className="space-y-2 text-slate-700">
                 <li>✓ <strong>Need a logo from a PDF?</strong> Use <Link href="/extract-images-from-pdf" className="text-orange-600 hover:underline">Extract Images from PDF</Link> to pull out individual images at their original resolution.</li>
                 <li>✓ <strong>Need the full page layout?</strong> Use <Link href="/pdf-to-png" className="text-orange-600 hover:underline">PDF to PNG</Link> to capture the entire page as rendered.</li>
-                <li>✓ <strong>Need both?</strong> Extract individual images for logo and photo assets, then convert full pages for layout reference. Both tools are free on OmnisPDF.</li>
+                <li>✓ <strong>Need both?</strong> Extract individual images for logo and photo assets, then convert full pages for layout reference. Both tools are free on PDF.it.</li>
               </ul>
             </section>
 
@@ -372,11 +372,11 @@ export default function PDFtoPNGforDesignPage() {
             <div className="space-y-6">
               {[
                 { q: "What resolution should I use for PDF to PNG in design work?", a: "For web design, 150 DPI is usually enough. For Figma and Canva projects that may be printed, use 300 DPI. For large format prints, consider 300-600 DPI. Higher resolution means larger files but more flexibility when scaling." },
-                { q: "Can I import a PDF directly into Figma?", a: "Figma doesn't support PDF import natively. The best workflow is to convert your PDF to PNG first using OmnisPDF, then drag the PNG images into your Figma project." },
+                { q: "Can I import a PDF directly into Figma?", a: "Figma doesn't support PDF import natively. The best workflow is to convert your PDF to PNG first using PDF.it, then drag the PNG images into your Figma project." },
                 { q: "Does converting PDF to PNG preserve transparency?", a: "PNG supports transparency, so if your PDF has transparent elements they can be preserved. However, most PDF pages have a white background by default." },
                 { q: "Why is PNG better than JPG for design work?", a: "PNG uses lossless compression, so edges stay sharp and colors stay accurate. JPG creates visible artifacts around text, logos, and hard edges. PNG also supports transparency, which is essential for layering in design tools." },
-                { q: "How do I use PDF content in Canva?", a: "Canva can import PDFs directly, but for better control over quality and placement, convert your PDF to PNG first using OmnisPDF. Then upload the PNG to Canva as an image." },
-                { q: "Should I extract images from a PDF instead of converting pages?", a: "If you only need specific images embedded in the PDF (photos, logos), use OmnisPDF's Extract Images tool. If you need the full page layout as an image, convert the page to PNG." },
+                { q: "How do I use PDF content in Canva?", a: "Canva can import PDFs directly, but for better control over quality and placement, convert your PDF to PNG first using PDF.it. Then upload the PNG to Canva as an image." },
+                { q: "Should I extract images from a PDF instead of converting pages?", a: "If you only need specific images embedded in the PDF (photos, logos), use PDF.it's Extract Images tool. If you need the full page layout as an image, convert the page to PNG." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

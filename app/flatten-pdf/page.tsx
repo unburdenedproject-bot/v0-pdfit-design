@@ -6,9 +6,9 @@ import { Layers, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Flatten PDF Online — Remove Form Fields & Annotations | OmnisPDF",
+  title: "Flatten PDF Online — Remove Form Fields & Annotations | PDF.it",
   description:
-    "Flatten PDF files with OmnisPDF. Lock form fields, annotations, and layers into a flat, non-editable PDF — fast, browser-based, no login required.",
+    "Flatten PDF files with PDF.it. Lock form fields, annotations, and layers into a flat, non-editable PDF — fast, browser-based, no login required.",
 }
 
 const faqSchema = {
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I flatten a PDF on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in mobile browsers — upload, flatten, and download on iPhone or Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in mobile browsers — upload, flatten, and download on iPhone or Android." }
     },
     {
       "@type": "Question",
@@ -133,7 +133,7 @@ export default function FlattenPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Flatten a PDF</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PDF into OmnisPDF.",
+                "Upload or drag and drop your PDF into PDF.it.",
                 "Click Flatten PDF — all fields and annotations are merged into the page.",
                 "Download your flattened, non-editable PDF.",
               ].map((step, i) => (
@@ -182,7 +182,7 @@ export default function FlattenPDFPage() {
                 { q: "When should I flatten a PDF?", a: "Flatten a PDF before submitting forms, sharing signed documents, archiving records, or when a recipient sees blank fields. Flattening ensures the content is locked and visible." },
                 { q: "Will flattening change how my PDF looks?", a: "No. The visual appearance stays the same. Flattening only removes the ability to edit form fields, annotations, and interactive elements." },
                 { q: "Can I flatten a PDF with filled-in form fields?", a: "Yes. All filled-in data is preserved and becomes part of the page content. The fields just can no longer be edited." },
-                { q: "Can I flatten a PDF on my phone?", a: "Yes. OmnisPDF works in mobile browsers — upload, flatten, and download on iPhone or Android." },
+                { q: "Can I flatten a PDF on my phone?", a: "Yes. PDF.it works in mobile browsers — upload, flatten, and download on iPhone or Android." },
                 { q: "Is it free to flatten a PDF?", a: "Yes. Free accounts get 10 conversions per day. Pro accounts get unlimited usage." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

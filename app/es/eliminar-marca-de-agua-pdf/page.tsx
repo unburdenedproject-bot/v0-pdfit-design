@@ -6,9 +6,9 @@ import { Eraser, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Eliminar Marca de Agua de PDF — Quita Marcas de Agua de PDFs | OmnisPDF",
+  title: "Eliminar Marca de Agua de PDF — Quita Marcas de Agua de PDFs | PDF.it",
   description:
-    "Elimina marcas de agua de archivos PDF con OmnisPDF. Quita marcas de agua de texto e imagen de tus documentos PDF y descarga un archivo limpio en segundos.",
+    "Elimina marcas de agua de archivos PDF con PDF.it. Quita marcas de agua de texto e imagen de tus documentos PDF y descarga un archivo limpio en segundos.",
   alternates: {
     languages: {
       en: "/remove-watermark",
@@ -23,8 +23,8 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Qué tipos de marcas de agua puede eliminar OmnisPDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF puede eliminar marcas de agua de texto (como CONFIDENCIAL, BORRADOR, MUESTRA) y marcas de agua de imagen (logos, sellos) que fueron agregadas como capas superpuestas al PDF." }
+      "name": "¿Qué tipos de marcas de agua puede eliminar PDF.it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it puede eliminar marcas de agua de texto (como CONFIDENCIAL, BORRADOR, MUESTRA) y marcas de agua de imagen (logos, sellos) que fueron agregadas como capas superpuestas al PDF." }
     },
     {
       "@type": "Question",
@@ -34,7 +34,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo eliminar marcas de agua de todas las páginas a la vez?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF elimina la marca de agua de todas las páginas del PDF de forma automática en un solo proceso." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it elimina la marca de agua de todas las páginas del PDF de forma automática en un solo proceso." }
     },
     {
       "@type": "Question",
@@ -44,7 +44,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo eliminar marcas de agua de un PDF desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en navegadores móviles — sube tu PDF, elimina la marca de agua y descarga el archivo limpio desde cualquier dispositivo." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube tu PDF, elimina la marca de agua y descarga el archivo limpio desde cualquier dispositivo." }
     },
     {
       "@type": "Question",
@@ -73,7 +73,7 @@ export default function EliminarMarcaDeAguaPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Eliminar Marca de Agua de PDF</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Quita marcas de agua de texto e imagen de tus archivos PDF con OmnisPDF. Obtén un documento limpio y profesional listo para presentaciones, envíos y uso final — rápido, seguro y desde tu navegador.
+                Quita marcas de agua de texto e imagen de tus archivos PDF con PDF.it. Obtén un documento limpio y profesional listo para presentaciones, envíos y uso final — rápido, seguro y desde tu navegador.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Eliminación Automática</span></div>
@@ -97,7 +97,7 @@ export default function EliminarMarcaDeAguaPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Usa la herramienta Eliminar Marca de Agua de PDF de OmnisPDF para quitar marcas de agua de texto e imagen de tus documentos PDF. Ideal para documentos finales aprobados, versiones de prueba compradas, borradores que pasaron a versión final, y presentaciones que necesitan verse limpias y profesionales.
+              Usa la herramienta Eliminar Marca de Agua de PDF de PDF.it para quitar marcas de agua de texto e imagen de tus documentos PDF. Ideal para documentos finales aprobados, versiones de prueba compradas, borradores que pasaron a versión final, y presentaciones que necesitan verse limpias y profesionales.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Elimina marcas de agua de texto como CONFIDENCIAL, BORRADOR o MUESTRA</li>
@@ -139,8 +139,8 @@ export default function EliminarMarcaDeAguaPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Eliminar la Marca de Agua de un PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube tu PDF con marca de agua a OmnisPDF.",
-                "OmnisPDF detecta y elimina la marca de agua automáticamente.",
+                "Sube tu PDF con marca de agua a PDF.it.",
+                "PDF.it detecta y elimina la marca de agua automáticamente.",
                 "Descarga tu PDF limpio sin marca de agua.",
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
@@ -189,8 +189,8 @@ export default function EliminarMarcaDeAguaPDFPage() {
             <div className="space-y-6">
               {[
                 {
-                  q: "¿Qué tipos de marcas de agua puede eliminar OmnisPDF?",
-                  a: "OmnisPDF puede eliminar marcas de agua de texto (como CONFIDENCIAL, BORRADOR, MUESTRA) y marcas de agua de imagen (logos, sellos) que fueron agregadas como capas superpuestas al PDF.",
+                  q: "¿Qué tipos de marcas de agua puede eliminar PDF.it?",
+                  a: "PDF.it puede eliminar marcas de agua de texto (como CONFIDENCIAL, BORRADOR, MUESTRA) y marcas de agua de imagen (logos, sellos) que fueron agregadas como capas superpuestas al PDF.",
                 },
                 {
                   q: "¿Eliminar la marca de agua afecta la calidad del PDF?",
@@ -198,7 +198,7 @@ export default function EliminarMarcaDeAguaPDFPage() {
                 },
                 {
                   q: "¿Puedo eliminar marcas de agua de todas las páginas a la vez?",
-                  a: "Sí. OmnisPDF elimina la marca de agua de todas las páginas del PDF de forma automática en un solo proceso.",
+                  a: "Sí. PDF.it elimina la marca de agua de todas las páginas del PDF de forma automática en un solo proceso.",
                 },
                 {
                   q: "¿Es legal eliminar marcas de agua de un PDF?",
@@ -206,7 +206,7 @@ export default function EliminarMarcaDeAguaPDFPage() {
                 },
                 {
                   q: "¿Puedo eliminar marcas de agua desde mi celular?",
-                  a: "Sí. OmnisPDF funciona en navegadores móviles — sube tu PDF, elimina la marca de agua y descarga el archivo limpio desde cualquier dispositivo.",
+                  a: "Sí. PDF.it funciona en navegadores móviles — sube tu PDF, elimina la marca de agua y descarga el archivo limpio desde cualquier dispositivo.",
                 },
                 {
                   q: "¿Es seguro subir mi PDF para eliminar la marca de agua?",

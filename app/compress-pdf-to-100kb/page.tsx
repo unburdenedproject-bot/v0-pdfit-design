@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Ro
 import Link from "next/link"
 
 export const metadata = {
-  title: "Compress PDF for 100KB Upload Limits — Free Extreme Compression | OmnisPDF",
+  title: "Compress PDF for 100KB Upload Limits — Free Extreme Compression | PDF.it",
   description:
     "Apply extreme PDF compression to reduce file size for portals with 100KB limits. Maximum compression for email signatures, micro-attachments, badge photos, and mobile-optimized documents — fast, browser-based, free.",
 }
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I compress a PDF for a 100KB upload limit?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF and click Compress. The tool applies extreme compression to reduce image resolution and optimize internal structures, drastically reducing file size. Results depend on the content of your PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it and click Compress. The tool applies extreme compression to reduce image resolution and optimize internal structures, drastically reducing file size. Results depend on the content of your PDF." }
     },
     {
       "@type": "Question",
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I compress a PDF for 100KB limits on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in any mobile browser. Upload your PDF, compress it, and download the smaller file directly on iPhone or Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in any mobile browser. Upload your PDF, compress it, and download the smaller file directly on iPhone or Android." }
     },
     {
       "@type": "Question",
@@ -93,7 +93,7 @@ export default function CompressPDFTo100KBPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Why Compress a PDF for 100KB Limits?</h2>
             <p className="text-lg text-slate-600 mb-8">
-              Some platforms enforce an extremely tight 100KB file size limit. Email signature attachments, badge photo uploads, micro-attachment fields, and certain mobile-optimized forms all require very small files. OmnisPDF applies extreme compression to drastically reduce your PDF size, helping you meet these demanding upload requirements.
+              Some platforms enforce an extremely tight 100KB file size limit. Email signature attachments, badge photo uploads, micro-attachment fields, and certain mobile-optimized forms all require very small files. PDF.it applies extreme compression to drastically reduce your PDF size, helping you meet these demanding upload requirements.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Extreme compression for maximum size reduction</li>
@@ -144,7 +144,7 @@ export default function CompressPDFTo100KBPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Compress a PDF for 100KB Limits</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PDF into OmnisPDF.",
+                "Upload or drag and drop your PDF into PDF.it.",
                 "Click Compress PDF — extreme compression is applied automatically.",
                 "Download your smaller PDF. If still over 100KB, try splitting into a single page first, then compress that page.",
               ].map((step, i) => (
@@ -216,11 +216,11 @@ export default function CompressPDFTo100KBPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I compress a PDF for a 100KB upload limit?", a: "Upload your PDF to OmnisPDF and click Compress. The tool applies extreme compression to reduce image resolution and optimize internal structures, drastically reducing file size. Results depend on the content of your PDF." },
+                { q: "How do I compress a PDF for a 100KB upload limit?", a: "Upload your PDF to PDF.it and click Compress. The tool applies extreme compression to reduce image resolution and optimize internal structures, drastically reducing file size. Results depend on the content of your PDF." },
                 { q: "Will my PDF definitely be under 100KB after compression?", a: "Extreme compression drastically reduces file size, but results depend on the PDF content. Simple single-page text documents can often reach under 100KB. Image-heavy or multi-page files will likely need to be split into individual pages first, then each page compressed separately." },
                 { q: "What types of files can realistically be compressed to 100KB?", a: "Single-page documents with mostly text, simple signatures, badge-sized photos, and small forms can often be compressed to under 100KB. Multi-page documents or files with high-resolution images will need to be split first." },
                 { q: "Will my PDF still be readable after compressing for 100KB limits?", a: "Text remains sharp and readable. Images will lose noticeable detail at this extreme compression level, but for signatures, badges, and simple documents, the result is still usable." },
-                { q: "Can I compress a PDF for 100KB limits on my phone?", a: "Yes. OmnisPDF works in any mobile browser. Upload your PDF, compress it, and download the smaller file directly on iPhone or Android." },
+                { q: "Can I compress a PDF for 100KB limits on my phone?", a: "Yes. PDF.it works in any mobile browser. Upload your PDF, compress it, and download the smaller file directly on iPhone or Android." },
                 { q: "What if my PDF is still over 100KB after compression?", a: "Split the PDF into individual pages with our Split PDF tool, then compress each page separately. For best results, keep only the single page you need, flatten the PDF, and convert images to grayscale before compressing." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

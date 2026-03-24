@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileDown, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Compress a PDF for Printing (Keep Print Quality) | OmnisPDF",
+  title: "Compress a PDF for Printing (Keep Print Quality) | PDF.it",
   description:
     "Learn how to compress a PDF for printing while keeping 300 DPI quality. Reduce file size for print shops, home printers, and professional output without ruining resolution.",
   keywords: "compress pdf for printing, reduce pdf size for print, pdf print quality, compress pdf 300 dpi",
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Should I flatten my PDF before printing?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Flattening removes form fields, annotations, and layers, which prevents printing errors. Use OmnisPDF's Flatten PDF tool before compressing for the cleanest print output." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Flattening removes form fields, annotations, and layers, which prevents printing errors. Use PDF.it's Flatten PDF tool before compressing for the cleanest print output." }
     },
     {
       "@type": "Question",
@@ -57,7 +57,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Upload your PDF",
-      "text": "Go to OmnisPDF's Compress PDF tool and upload the file you need to compress for printing."
+      "text": "Go to PDF.it's Compress PDF tool and upload the file you need to compress for printing."
     },
     {
       "@type": "HowToStep",
@@ -314,7 +314,7 @@ export default function CompressPDFForPrintingPage() {
                 { q: "What DPI do I need for printing?", a: "300 DPI is the standard for professional printing. 150 DPI is acceptable for draft prints or documents viewed at arm's length. Below 150 DPI, images start looking pixelated when printed." },
                 { q: "Will Medium compression ruin print quality?", a: "Medium compression typically reduces images to around 150-200 DPI. This is fine for draft prints and internal documents, but may not meet professional print shop requirements of 300 DPI." },
                 { q: "How do I know if my PDF is print-ready?", a: "A print-ready PDF should have images at 300 DPI or higher, use CMYK color mode (for professional printing), and have fonts embedded. After compressing with Light mode, your PDF will maintain these qualities." },
-                { q: "Should I flatten my PDF before printing?", a: "Yes. Flattening removes form fields, annotations, and layers, which prevents printing errors. Use OmnisPDF's Flatten PDF tool before compressing for the cleanest print output." },
+                { q: "Should I flatten my PDF before printing?", a: "Yes. Flattening removes form fields, annotations, and layers, which prevents printing errors. Use PDF.it's Flatten PDF tool before compressing for the cleanest print output." },
                 { q: "My print file is too large to send to the print shop. What should I do?", a: "Use Light compression first. If it's still too large, flatten the PDF to remove layers, then compress again. If you need to split a large document, use Split PDF to break it into sections." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

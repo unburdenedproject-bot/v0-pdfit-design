@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Ro
 import Link from "next/link"
 
 export const metadata = {
-  title: "Compress PDF for Website — Optimize PDFs for Web | OmnisPDF",
+  title: "Compress PDF for Website — Optimize PDFs for Web | PDF.it",
   description:
     "Optimize PDFs for your website with smart compression. Reduce file size for faster page loads and better user experience — keeps quality high while shrinking downloads.",
 }
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I optimize a PDF for my website?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF and click Compress. Recommended compression balances quality and file size, producing a PDF that loads quickly on web pages while keeping text and images looking good." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it and click Compress. Recommended compression balances quality and file size, producing a PDF that loads quickly on web pages while keeping text and images looking good." }
     },
     {
       "@type": "Question",
@@ -144,7 +144,7 @@ export default function CompressPDFForWebsitePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Optimize a PDF for Your Website</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PDF into OmnisPDF.",
+                "Upload or drag and drop your PDF into PDF.it.",
                 "Click Compress PDF — recommended compression is applied to balance quality and size.",
                 "Download your optimized PDF and upload it to your website. Your visitors will enjoy faster downloads.",
               ].map((step, i) => (
@@ -198,7 +198,7 @@ export default function CompressPDFForWebsitePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I optimize a PDF for my website?", a: "Upload your PDF to OmnisPDF and click Compress. Recommended compression balances quality and file size, producing a PDF that loads quickly on web pages while keeping text and images looking good." },
+                { q: "How do I optimize a PDF for my website?", a: "Upload your PDF to PDF.it and click Compress. Recommended compression balances quality and file size, producing a PDF that loads quickly on web pages while keeping text and images looking good." },
                 { q: "Will web-optimized PDFs look good when downloaded?", a: "Yes. Recommended compression reduces file size while preserving visual quality. Text stays sharp, and images retain good detail — visitors can download and read the PDF without issues." },
                 { q: "Why should I compress PDFs before hosting them on a website?", a: "Large PDFs slow down page load times, hurt SEO rankings, and frustrate visitors on mobile devices. Compressing PDFs ensures faster downloads, lower bandwidth costs, and a better user experience." },
                 { q: "Does PDF file size affect website SEO?", a: "Yes. Google considers page speed as a ranking factor. If a PDF takes too long to load, it can negatively affect your search rankings. Smaller PDFs load faster and contribute to better Core Web Vitals scores." },

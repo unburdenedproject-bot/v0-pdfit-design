@@ -7,14 +7,14 @@ import { Scan, Zap, Shield, Download, Crown } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Escaner OCR Online — Extraer Texto de PDF Escaneado | OmnisPDF",
+  title: "Escaner OCR Online — Extraer Texto de PDF Escaneado | PDF.it",
   description:
-    "Ejecuta OCR en un PDF con OmnisPDF para extraer texto de escaneos. Haz tus PDFs buscables y copiables en segundos — rapido y desde tu navegador.",
+    "Ejecuta OCR en un PDF con PDF.it para extraer texto de escaneos. Haz tus PDFs buscables y copiables en segundos — rapido y desde tu navegador.",
   alternates: {
-    canonical: "https://omnispdf.com/es/escaner-ocr",
+    canonical: "https://pdf.it.com/es/escaner-ocr",
     languages: {
-      en: "https://omnispdf.com/ocr-scanner",
-      es: "https://omnispdf.com/es/escaner-ocr",
+      en: "https://pdf.it.com/ocr-scanner",
+      es: "https://pdf.it.com/es/escaner-ocr",
     },
   },
 }
@@ -41,7 +41,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "¿Que tan preciso es el OCR de OmnisPDF?",
+      name: "¿Que tan preciso es el OCR de PDF.it?",
       acceptedAnswer: {
         "@type": "Answer",
         text: "La precision depende de la claridad del escaneo, la resolucion y la fuente. Escaneos limpios y de alta resolucion producen los mejores resultados. Escaneos borrosos o torcidos reducen la precision.",
@@ -98,7 +98,7 @@ export default function EscanerOCRPage() {
                 </span>
               </div>
               <p className="text-xl text-slate-300 mb-8">
-                Usa OmnisPDF para ejecutar OCR en PDFs escaneados — convierte imagenes en texto seleccionable y buscable, y descarga un PDF mas limpio y util.
+                Usa PDF.it para ejecutar OCR en PDFs escaneados — convierte imagenes en texto seleccionable y buscable, y descarga un PDF mas limpio y util.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>16+ Idiomas Soportados</span></div>
@@ -117,7 +117,7 @@ export default function EscanerOCRPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Usa la herramienta de OCR de OmnisPDF para extraer texto de PDFs escaneados y hacer tus documentos buscables y copiables. Perfecto para recibos, facturas, contratos, formularios y escaneos archivados — sube tu PDF, ejecuta OCR y descarga un archivo procesado en segundos.
+              Usa la herramienta de OCR de PDF.it para extraer texto de PDFs escaneados y hacer tus documentos buscables y copiables. Perfecto para recibos, facturas, contratos, formularios y escaneos archivados — sube tu PDF, ejecuta OCR y descarga un archivo procesado en segundos.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Convierte PDFs escaneados en PDFs buscables</li>
@@ -135,7 +135,7 @@ export default function EscanerOCRPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Haz PDFs Escaneados Buscables</h2>
               <p className="text-slate-600">
-                Si tu PDF es un escaneo, a menudo es solo una imagen — no puedes seleccionar texto ni buscar palabras. El OCR de OmnisPDF reconoce el texto y crea un PDF buscable que puedes usar como un documento normal.
+                Si tu PDF es un escaneo, a menudo es solo una imagen — no puedes seleccionar texto ni buscar palabras. El OCR de PDF.it reconoce el texto y crea un PDF buscable que puedes usar como un documento normal.
               </p>
             </div>
             <div>
@@ -159,7 +159,7 @@ export default function EscanerOCRPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Hacer OCR a un PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF escaneado a OmnisPDF.",
+                "Sube o arrastra tu PDF escaneado a PDF.it.",
                 "Elige el idioma de OCR si es necesario.",
                 "Haz clic en Ejecutar OCR.",
                 "Descarga tu PDF buscable.",
@@ -214,7 +214,7 @@ export default function EscanerOCRPage() {
                   a: "Si el PDF es un escaneo y no puedes seleccionar texto, necesitas OCR. Si el PDF ya contiene texto seleccionable, una conversion normal de PDF a TXT puede ser mas rapida.",
                 },
                 {
-                  q: "¿Que tan preciso es el OCR de OmnisPDF?",
+                  q: "¿Que tan preciso es el OCR de PDF.it?",
                   a: "La precision depende de la claridad del escaneo, la resolucion y la fuente. Escaneos limpios y de alta resolucion producen los mejores resultados. Escaneos borrosos o torcidos reducen la precision.",
                 },
                 {

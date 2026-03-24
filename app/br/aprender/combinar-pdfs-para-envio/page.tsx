@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Merge, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Combinar PDFs para Envio (Email, Portais, Formularios) | OmnisPDF",
+  title: "Combinar PDFs para Envio (Email, Portais, Formularios) | PDF.it",
   description:
     "Aprenda como combinar varios PDFs em um unico arquivo para envio por email, upload em portais ou formularios online — online, gratis.",
   keywords: "combinar pdf para envio, juntar pdf email, unir pdf portal, combinar documentos pdf enviar",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como combinar PDFs para enviar por email?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seus PDFs para o OmnisPDF, organize na ordem desejada e clique em Unir. Se o resultado for maior que 25MB (limite do Gmail), comprima o PDF antes de enviar." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie seus PDFs para o PDF.it, organize na ordem desejada e clique em Unir. Se o resultado for maior que 25MB (limite do Gmail), comprima o PDF antes de enviar." }
     },
     {
       "@type": "Question",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso combinar e comprimir ao mesmo tempo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "O OmnisPDF processa uma tarefa por vez. Primeiro, use Unir PDF para combinar seus documentos. Depois, use Comprimir PDF para reduzir o tamanho do resultado." }
+      "acceptedAnswer": { "@type": "Answer", "text": "O PDF.it processa uma tarefa por vez. Primeiro, use Unir PDF para combinar seus documentos. Depois, use Comprimir PDF para reduzir o tamanho do resultado." }
     }
   ]
 }
@@ -238,9 +238,9 @@ export default function CombinarPDFsParaEnvioPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como combinar PDFs para enviar por email?", a: "Envie seus PDFs para o OmnisPDF, organize na ordem desejada e clique em Unir. Se o resultado for maior que 25MB, comprima o PDF antes de enviar." },
+                { q: "Como combinar PDFs para enviar por email?", a: "Envie seus PDFs para o PDF.it, organize na ordem desejada e clique em Unir. Se o resultado for maior que 25MB, comprima o PDF antes de enviar." },
                 { q: "Qual o tamanho ideal para envio por email?", a: "Gmail aceita ate 25MB, Outlook ate 20MB e Yahoo ate 25MB. Recomendamos manter o PDF abaixo de 10MB para envio rapido." },
-                { q: "Posso combinar e comprimir ao mesmo tempo?", a: "O OmnisPDF processa uma tarefa por vez. Primeiro, use Unir PDF para combinar. Depois, use Comprimir PDF para reduzir o tamanho do resultado." },
+                { q: "Posso combinar e comprimir ao mesmo tempo?", a: "O PDF.it processa uma tarefa por vez. Primeiro, use Unir PDF para combinar. Depois, use Comprimir PDF para reduzir o tamanho do resultado." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

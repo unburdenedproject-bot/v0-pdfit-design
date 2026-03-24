@@ -5,7 +5,7 @@ import Link from "next/link"
 import { RotateCw, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Girar PDF (Rotacionar Paginas Facilmente) | OmnisPDF",
+  title: "Como Girar PDF (Rotacionar Paginas Facilmente) | PDF.it",
   description:
     "Aprenda como girar paginas de um PDF — 90, 180 ou 270 graus. Corrija a orientacao de documentos digitalizados e paginas invertidas — online, gratis.",
   keywords: "girar pdf, rotacionar pdf, como girar pdf, virar pdf, girar pagina pdf online gratis",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como girar um PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie o PDF para a ferramenta Girar PDF do OmnisPDF, selecione as paginas e a direcao de rotacao (90, 180 ou 270 graus), clique em Girar e baixe o resultado. E gratis e nao precisa de cadastro." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie o PDF para a ferramenta Girar PDF do PDF.it, selecione as paginas e a direcao de rotacao (90, 180 ou 270 graus), clique em Girar e baixe o resultado. E gratis e nao precisa de cadastro." }
     },
     {
       "@type": "Question",
@@ -47,7 +47,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Envie seu PDF",
-      "text": "Acesse a ferramenta Girar PDF do OmnisPDF e envie o arquivo com paginas na orientacao errada."
+      "text": "Acesse a ferramenta Girar PDF do PDF.it e envie o arquivo com paginas na orientacao errada."
     },
     {
       "@type": "HowToStep",
@@ -245,7 +245,7 @@ export default function ComoGirarPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como girar um PDF?", a: "Envie o PDF para a ferramenta Girar PDF do OmnisPDF, selecione as paginas e a direcao de rotacao, clique em Girar e baixe o resultado." },
+                { q: "Como girar um PDF?", a: "Envie o PDF para a ferramenta Girar PDF do PDF.it, selecione as paginas e a direcao de rotacao, clique em Girar e baixe o resultado." },
                 { q: "Posso girar apenas algumas paginas do PDF?", a: "Sim. Voce pode selecionar paginas individuais ou intervalos para girar. As demais paginas permanecem na orientacao original." },
                 { q: "Girar o PDF afeta a qualidade?", a: "Nao. Girar um PDF apenas muda a orientacao das paginas sem qualquer compressao ou alteracao de qualidade." },
                 { q: "Qual a diferenca entre girar 90 e 180 graus?", a: "Girar 90 graus muda de retrato para paisagem. Girar 180 graus inverte a pagina de cabeca para baixo." },

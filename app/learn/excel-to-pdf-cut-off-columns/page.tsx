@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileSpreadsheet, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Excel to PDF Cutting Off Columns? Here's How to Fix It | OmnisPDF",
+  title: "Excel to PDF Cutting Off Columns? Here's How to Fix It | PDF.it",
   description:
     "Fix cut-off columns when converting Excel to PDF. Learn 5 proven solutions: adjust print area, use landscape mode, scale to fit, reduce margins, and split wide sheets.",
   keywords: "excel to pdf cut off columns, excel to pdf columns missing, excel pdf formatting issues, fix excel to pdf layout",
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I split a wide Excel sheet into multiple PDFs?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Convert your Excel file to PDF using OmnisPDF, then use the Split PDF tool to separate pages. Alternatively, in Excel, manually split your data into two sheets (columns A-J on Sheet 1, columns K-T on Sheet 2) before converting." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Convert your Excel file to PDF using PDF.it, then use the Split PDF tool to separate pages. Alternatively, in Excel, manually split your data into two sheets (columns A-J on Sheet 1, columns K-T on Sheet 2) before converting." }
     },
     {
       "@type": "Question",
@@ -67,7 +67,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Convert to PDF",
-      "text": "Upload your prepared Excel file to OmnisPDF's Excel to PDF tool and convert. All columns will now appear correctly in the PDF."
+      "text": "Upload your prepared Excel file to PDF.it's Excel to PDF tool and convert. All columns will now appear correctly in the PDF."
     }
   ]
 }
@@ -167,7 +167,7 @@ export default function ExcelToPDFCutOffColumnsPage() {
                     <li>Check with <strong>Print Preview (Ctrl+P)</strong> to verify all columns appear</li>
                   </ol>
                   <p className="text-slate-600 mt-2">
-                    Once the print area is set, convert using <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">OmnisPDF's Excel to PDF tool</Link>.
+                    Once the print area is set, convert using <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">PDF.it's Excel to PDF tool</Link>.
                   </p>
                 </div>
 
@@ -241,7 +241,7 @@ export default function ExcelToPDFCutOffColumnsPage() {
                 If columns are still getting cut off after trying these fixes, the issue might be with the conversion tool you're using. Desktop Excel handles page breaks differently than online converters.
               </p>
               <p className="text-slate-600">
-                Try converting with <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">OmnisPDF's Excel to PDF tool</Link> — it uses server-side rendering that closely matches Excel's own output. You can also try our general <Link href="/office-to-pdf" className="text-orange-600 hover:underline">Office to PDF converter</Link> for additional format support.
+                Try converting with <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">PDF.it's Excel to PDF tool</Link> — it uses server-side rendering that closely matches Excel's own output. You can also try our general <Link href="/office-to-pdf" className="text-orange-600 hover:underline">Office to PDF converter</Link> for additional format support.
               </p>
             </section>
 
@@ -252,7 +252,7 @@ export default function ExcelToPDFCutOffColumnsPage() {
         <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Ready to Convert Without Cut-Off Columns?</h2>
-            <p className="text-slate-300 mb-6">Set your print area, switch to landscape, and convert with OmnisPDF — all columns included.</p>
+            <p className="text-slate-300 mb-6">Set your print area, switch to landscape, and convert with PDF.it — all columns included.</p>
             <Link
               href="/excel-to-pdf"
               className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
@@ -296,7 +296,7 @@ export default function ExcelToPDFCutOffColumnsPage() {
                 { q: "How do I set the print area in Excel to avoid cut-off columns?", a: "Select all the cells you want in your PDF, then go to Page Layout → Print Area → Set Print Area. This tells Excel (and any converter) exactly which columns and rows to include. Always set a print area before converting." },
                 { q: "Does landscape mode fix cut-off columns in Excel to PDF?", a: "Often yes. Landscape gives you about 40% more horizontal space. Go to Page Layout → Orientation → Landscape. This alone fixes the issue for most spreadsheets with 10-15 columns." },
                 { q: "What does 'Fit All Columns on One Page' do in Excel?", a: "It scales your entire spreadsheet width to fit on a single page. Go to Page Layout → Scale to Fit → Width: 1 page. Excel shrinks all columns proportionally. If the text becomes too small to read, you may need to split the sheet instead." },
-                { q: "Can I split a wide Excel sheet into multiple PDFs?", a: "Yes. Convert your Excel file to PDF using OmnisPDF, then use the Split PDF tool to separate pages. Alternatively, in Excel, manually split your data into two sheets before converting." },
+                { q: "Can I split a wide Excel sheet into multiple PDFs?", a: "Yes. Convert your Excel file to PDF using PDF.it, then use the Split PDF tool to separate pages. Alternatively, in Excel, manually split your data into two sheets before converting." },
                 { q: "Why do my columns look fine in Excel but get cut off in the PDF?", a: "Excel's normal view doesn't show page boundaries. Switch to Page Layout view (View → Page Layout) or use Print Preview (Ctrl+P) to see exactly where page breaks fall. This reveals which columns will be cut off before you convert." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

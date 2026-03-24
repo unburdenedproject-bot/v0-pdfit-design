@@ -7,15 +7,15 @@ import { Lock, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Proteger PDF com Senha Online | OmnisPDF",
+  title: "Proteger PDF com Senha Online | PDF.it",
   description:
-    "Proteja um PDF com senha usando o OmnisPDF. Criptografe seu PDF online, restrinja o acesso e baixe um arquivo protegido em segundos.",
+    "Proteja um PDF com senha usando o PDF.it. Criptografe seu PDF online, restrinja o acesso e baixe um arquivo protegido em segundos.",
   alternates: {
-    canonical: "https://omnispdf.com/br/proteger-pdf",
+    canonical: "https://pdf.it.com/br/proteger-pdf",
     languages: {
-      "en": "https://omnispdf.com/protect-pdf",
-      "es": "https://omnispdf.com/es/proteger-pdf",
-      "pt": "https://omnispdf.com/br/proteger-pdf",
+      "en": "https://pdf.it.com/protect-pdf",
+      "es": "https://pdf.it.com/es/proteger-pdf",
+      "pt": "https://pdf.it.com/br/proteger-pdf",
     },
   },
 }
@@ -32,17 +32,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "O que acontece se eu esquecer a senha?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PDFs protegidos com senha geralmente não podem ser recuperados sem a senha. O OmnisPDF não pode recuperá-la — guarde-a em um lugar seguro." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDFs protegidos com senha geralmente não podem ser recuperados sem a senha. O PDF.it não pode recuperá-la — guarde-a em um lugar seguro." }
     },
     {
       "@type": "Question",
       "name": "Posso remover a senha depois?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Use a ferramenta Desbloquear PDF do OmnisPDF para remover a proteção com senha de qualquer PDF do qual você tenha a senha." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Use a ferramenta Desbloquear PDF do PDF.it para remover a proteção com senha de qualquer PDF do qual você tenha a senha." }
     },
     {
       "@type": "Question",
       "name": "Posso proteger um PDF pelo celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em navegadores móveis — envie o PDF, defina uma senha e baixe o arquivo protegido." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em navegadores móveis — envie o PDF, defina uma senha e baixe o arquivo protegido." }
     },
     {
       "@type": "Question",
@@ -76,7 +76,7 @@ export default function ProtegerPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Proteger PDF com Senha</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Adicione uma senha ao seu PDF com o OmnisPDF. Criptografe seu documento para compartilhar, armazenar e enviar de forma mais segura — rápido e direto do navegador.
+                Adicione uma senha ao seu PDF com o PDF.it. Criptografe seu documento para compartilhar, armazenar e enviar de forma mais segura — rápido e direto do navegador.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Criptografia Segura</span></div>
@@ -95,7 +95,7 @@ export default function ProtegerPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use a ferramenta Proteger PDF do OmnisPDF para adicionar senha e criptografar um PDF em segundos. Adicione uma senha antes de enviar por e-mail, fazer upload ou armazenar arquivos sensíveis como contratos, extratos bancários, faturas ou documentos pessoais.
+              Use a ferramenta Proteger PDF do PDF.it para adicionar senha e criptografar um PDF em segundos. Adicione uma senha antes de enviar por e-mail, fazer upload ou armazenar arquivos sensíveis como contratos, extratos bancários, faturas ou documentos pessoais.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Proteja arquivos PDF com senha online</li>
@@ -113,7 +113,7 @@ export default function ProtegerPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Adicione uma Senha ao Seu PDF</h2>
               <p className="text-slate-600">
-                Defina uma senha para restringir quem pode abrir seu PDF. O OmnisPDF protege o arquivo usando proteção padrão com senha para que o conteúdo não seja acessível sem ela.
+                Defina uma senha para restringir quem pode abrir seu PDF. O PDF.it protege o arquivo usando proteção padrão com senha para que o conteúdo não seja acessível sem ela.
               </p>
             </div>
             <div>
@@ -137,7 +137,7 @@ export default function ProtegerPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Proteger um PDF com Senha</h2>
             <div className="space-y-4">
               {[
-                "Envie seu PDF ao OmnisPDF.",
+                "Envie seu PDF ao PDF.it.",
                 "Digite uma senha segura e confirme-a.",
                 "Clique em Proteger PDF e baixe seu arquivo protegido.",
               ].map((step, i) => (
@@ -183,9 +183,9 @@ export default function ProtegerPDFPage() {
             <div className="space-y-6">
               {[
                 { q: "O que significa proteger um PDF?", a: "Significa adicionar segurança com senha ao PDF para que apenas pessoas com a senha possam abri-lo." },
-                { q: "O que acontece se eu esquecer a senha?", a: "PDFs protegidos com senha geralmente não podem ser recuperados sem a senha. O OmnisPDF não pode recuperá-la — guarde-a em um lugar seguro." },
-                { q: "Posso remover a senha depois?", a: "Sim. Use a ferramenta Desbloquear PDF do OmnisPDF para remover a proteção com senha de qualquer PDF do qual você tenha a senha." },
-                { q: "Posso proteger um PDF pelo celular?", a: "Sim. O OmnisPDF funciona em navegadores móveis — envie o PDF, defina uma senha e baixe o arquivo protegido." },
+                { q: "O que acontece se eu esquecer a senha?", a: "PDFs protegidos com senha geralmente não podem ser recuperados sem a senha. O PDF.it não pode recuperá-la — guarde-a em um lugar seguro." },
+                { q: "Posso remover a senha depois?", a: "Sim. Use a ferramenta Desbloquear PDF do PDF.it para remover a proteção com senha de qualquer PDF do qual você tenha a senha." },
+                { q: "Posso proteger um PDF pelo celular?", a: "Sim. O PDF.it funciona em navegadores móveis — envie o PDF, defina uma senha e baixe o arquivo protegido." },
                 { q: "É seguro enviar PDFs confidenciais?", a: "Sim. Todas as transferências são criptografadas com SSL e seus arquivos são removidos imediatamente após sua sessão. Nunca armazenamos nem compartilhamos seus documentos." },
                 { q: "Qual é o tamanho máximo de arquivo que posso proteger?", a: "Contas gratuitas podem enviar arquivos de até 25MB. Contas Pro podem enviar até 200MB. Contas Business podem enviar até 1GB." },
               ].map((faq, i) => (

@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileTextIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Extrair Texto de PDF no Celular (iPhone e Android) | OmnisPDF",
+  title: "Como Extrair Texto de PDF no Celular (iPhone e Android) | PDF.it",
   description:
     "Aprenda como extrair texto de qualquer PDF diretamente no celular. Funciona no iPhone e Android — sem apps, direto no navegador.",
   keywords: "extrair texto pdf celular, pdf para texto celular, copiar texto pdf android, copiar texto pdf iphone, pdf para txt celular",
@@ -15,9 +15,9 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Preciso de app para extrair texto de PDF no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Não. O OmnisPDF funciona direto no navegador do celular (Safari no iPhone, Chrome no Android). Envie o PDF, converta e copie o texto — sem instalar nada." } },
-    { "@type": "Question", "name": "Funciona com PDF escaneado no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Para PDFs escaneados (imagem), use o Scanner OCR do OmnisPDF que reconhece texto em imagens. Funciona da mesma forma no celular." } },
-    { "@type": "Question", "name": "Posso extrair texto offline no celular?", "acceptedAnswer": { "@type": "Answer", "text": "O OmnisPDF é online e precisa de internet. Mas funciona bem com conexão 4G/5G. A conversão é rápida mesmo em conexões mais lentas." } }
+    { "@type": "Question", "name": "Preciso de app para extrair texto de PDF no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Não. O PDF.it funciona direto no navegador do celular (Safari no iPhone, Chrome no Android). Envie o PDF, converta e copie o texto — sem instalar nada." } },
+    { "@type": "Question", "name": "Funciona com PDF escaneado no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Para PDFs escaneados (imagem), use o Scanner OCR do PDF.it que reconhece texto em imagens. Funciona da mesma forma no celular." } },
+    { "@type": "Question", "name": "Posso extrair texto offline no celular?", "acceptedAnswer": { "@type": "Answer", "text": "O PDF.it é online e precisa de internet. Mas funciona bem com conexão 4G/5G. A conversão é rápida mesmo em conexões mais lentas." } }
   ]
 }
 
@@ -27,7 +27,7 @@ const howToSchema = {
   "name": "Extrair Texto de PDF no Celular",
   "description": "Extraia texto de qualquer PDF usando apenas o navegador do celular.",
   "step": [
-    { "@type": "HowToStep", "name": "Abra o OmnisPDF no navegador", "text": "No celular, abra o Safari ou Chrome e acesse a ferramenta PDF para Texto do OmnisPDF." },
+    { "@type": "HowToStep", "name": "Abra o PDF.it no navegador", "text": "No celular, abra o Safari ou Chrome e acesse a ferramenta PDF para Texto do PDF.it." },
     { "@type": "HowToStep", "name": "Envie o PDF", "text": "Toque em Escolher arquivo e selecione o PDF dos seus arquivos ou downloads." },
     { "@type": "HowToStep", "name": "Copie ou baixe o texto", "text": "Após a conversão, copie o texto extraído ou baixe como arquivo TXT." }
   ]
@@ -84,7 +84,7 @@ export default function ExtrairTextoDePdfNoCelularPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-6">Passo a Passo no Celular</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Abra o OmnisPDF no navegador", desc: "No iPhone, abra o Safari. No Android, abra o Chrome. Vá para omnispdf.com e acesse a ferramenta PDF para Texto." },
+                  { title: "Abra o PDF.it no navegador", desc: "No iPhone, abra o Safari. No Android, abra o Chrome. Vá para pdf.it.com e acesse a ferramenta PDF para Texto." },
                   { title: "Envie o PDF", desc: "Toque em 'Escolher arquivo'. Selecione o PDF da pasta Downloads, app Arquivos, iCloud, Google Drive ou de um anexo de email." },
                   { title: "Converta para texto", desc: "Toque em Converter. Em segundos, todo o texto do PDF será extraído e exibido na tela." },
                   { title: "Copie ou baixe", desc: "Toque longo no texto > Selecionar Tudo > Copiar. Ou baixe como arquivo TXT para usar depois." },
@@ -158,9 +158,9 @@ export default function ExtrairTextoDePdfNoCelularPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Preciso de app para extrair texto de PDF no celular?", a: "Não. O OmnisPDF funciona direto no navegador do celular. Envie o PDF, converta e copie o texto — sem instalar nada." },
-                { q: "Funciona com PDF escaneado no celular?", a: "Para PDFs escaneados, use o Scanner OCR do OmnisPDF que reconhece texto em imagens. Funciona da mesma forma no celular." },
-                { q: "Posso extrair texto offline no celular?", a: "O OmnisPDF precisa de internet, mas funciona bem com 4G/5G. A conversão é rápida mesmo em conexões mais lentas." },
+                { q: "Preciso de app para extrair texto de PDF no celular?", a: "Não. O PDF.it funciona direto no navegador do celular. Envie o PDF, converta e copie o texto — sem instalar nada." },
+                { q: "Funciona com PDF escaneado no celular?", a: "Para PDFs escaneados, use o Scanner OCR do PDF.it que reconhece texto em imagens. Funciona da mesma forma no celular." },
+                { q: "Posso extrair texto offline no celular?", a: "O PDF.it precisa de internet, mas funciona bem com 4G/5G. A conversão é rápida mesmo em conexões mais lentas." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

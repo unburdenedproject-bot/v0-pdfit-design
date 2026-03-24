@@ -6,9 +6,9 @@ import { Split, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Split Large PDF into Smaller Files — Free Online Tool | OmnisPDF",
+  title: "Split Large PDF into Smaller Files — Free Online Tool | PDF.it",
   description:
-    "Split a large PDF into smaller, more manageable files with OmnisPDF. Break oversized PDFs into parts for email, uploads, and sharing — fast, free, and browser-based.",
+    "Split a large PDF into smaller, more manageable files with PDF.it. Break oversized PDFs into parts for email, uploads, and sharing — fast, free, and browser-based.",
 }
 
 const faqSchema = {
@@ -17,7 +17,7 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is the maximum file size I can split with OmnisPDF?",
+      "name": "What is the maximum file size I can split with PDF.it?",
       "acceptedAnswer": { "@type": "Answer", "text": "Free users can split PDFs up to 25MB. Pro users can split files up to 200MB — perfect for oversized scans, textbooks, and large reports." }
     },
     {
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I split a large PDF on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in mobile browsers — upload, split, and download on iPhone or Android. No app installation required." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in mobile browsers — upload, split, and download on iPhone or Android. No app installation required." }
     },
     {
       "@type": "Question",
@@ -85,7 +85,7 @@ export default function SplitLargePDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Large PDFs — 100+ page reports, oversized scans, textbooks, and manuals — are difficult to email, upload, and share. OmnisPDF splits them into smaller files by page range or individual pages, so each part fits within size limits and is easy to handle.
+              Large PDFs — 100+ page reports, oversized scans, textbooks, and manuals — are difficult to email, upload, and share. PDF.it splits them into smaller files by page range or individual pages, so each part fits within size limits and is easy to handle.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Split PDFs with 100+ pages into manageable parts</li>
@@ -103,7 +103,7 @@ export default function SplitLargePDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Split Large PDFs for Email Attachments</h2>
               <p className="text-slate-600">
-                Most email providers limit attachments to 25MB. If your PDF is too large to attach, split it into smaller parts and send each one separately. Combine with OmnisPDF's compression tool for even smaller files.
+                Most email providers limit attachments to 25MB. If your PDF is too large to attach, split it into smaller parts and send each one separately. Combine with PDF.it's compression tool for even smaller files.
               </p>
             </div>
             <div>
@@ -127,7 +127,7 @@ export default function SplitLargePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Split a Large PDF</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your large PDF into OmnisPDF.",
+                "Upload or drag and drop your large PDF into PDF.it.",
                 "Choose your split method — by page range, individual pages, or equal parts.",
                 "Click Split PDF and download your smaller files.",
               ].map((step, i) => (
@@ -172,11 +172,11 @@ export default function SplitLargePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "What is the maximum file size I can split with OmnisPDF?", a: "Free users can split PDFs up to 25MB. Pro users can split files up to 200MB — perfect for oversized scans, textbooks, and large reports." },
+                { q: "What is the maximum file size I can split with PDF.it?", a: "Free users can split PDFs up to 25MB. Pro users can split files up to 200MB — perfect for oversized scans, textbooks, and large reports." },
                 { q: "How many parts can I split a PDF into?", a: "You can split a PDF into as many parts as you need — by page range, individual pages, or evenly divided sections. There is no limit on the number of output files." },
                 { q: "Does splitting a PDF reduce the quality?", a: "No. Splitting extracts pages from the original PDF without re-encoding. Text, images, and formatting remain exactly as they were in the original file." },
                 { q: "Can I split a 100+ page PDF into smaller chapters?", a: "Yes. Use page ranges to split a large document into chapters or sections. For example, split pages 1-25, 26-50, and 51-100 into three separate files." },
-                { q: "Can I split a large PDF on my phone?", a: "Yes. OmnisPDF works in mobile browsers — upload, split, and download on iPhone or Android. No app installation required." },
+                { q: "Can I split a large PDF on my phone?", a: "Yes. PDF.it works in mobile browsers — upload, split, and download on iPhone or Android. No app installation required." },
                 { q: "How do I split a PDF to send by email?", a: "Upload your large PDF, split it into smaller parts that fit under your email provider's attachment limit (usually 25MB), and attach each part to your email. You can also compress each part after splitting for even smaller files." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

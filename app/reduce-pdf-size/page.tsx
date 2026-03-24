@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Ro
 import Link from "next/link"
 
 export const metadata = {
-  title: "Reduce PDF Size Online — Free PDF File Size Reducer | OmnisPDF",
+  title: "Reduce PDF Size Online — Free PDF File Size Reducer | PDF.it",
   description:
     "Reduce PDF file size online for free. Choose your compression level — light, medium, or extreme — to balance quality and size. Fast, browser-based, no installation required.",
 }
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I reduce the size of a PDF file?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF, choose your preferred compression level (light, medium, or extreme), and click Compress. Your reduced-size PDF will be ready to download in seconds." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it, choose your preferred compression level (light, medium, or extreme), and click Compress. Your reduced-size PDF will be ready to download in seconds." }
     },
     {
       "@type": "Question",
@@ -93,7 +93,7 @@ export default function ReducePDFSizePage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-4">How Does PDF Size Reduction Work?</h2>
             <p className="text-lg text-slate-600 mb-8">
-              PDFs can be large for many reasons — high-resolution images, embedded fonts, unoptimized internal structures, or hidden metadata. OmnisPDF analyzes your document and applies compression based on the level you choose, targeting the biggest sources of bloat to reduce file size effectively.
+              PDFs can be large for many reasons — high-resolution images, embedded fonts, unoptimized internal structures, or hidden metadata. PDF.it analyzes your document and applies compression based on the level you choose, targeting the biggest sources of bloat to reduce file size effectively.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Three compression levels: light, medium (recommended), and extreme</li>
@@ -144,7 +144,7 @@ export default function ReducePDFSizePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Reduce PDF Size</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PDF into OmnisPDF.",
+                "Upload or drag and drop your PDF into PDF.it.",
                 "Choose your compression level — light, medium, or extreme — then click Compress PDF.",
                 "Download your reduced PDF. If still too large, try a higher compression level or split the file first.",
               ].map((step, i) => (
@@ -198,7 +198,7 @@ export default function ReducePDFSizePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I reduce the size of a PDF file?", a: "Upload your PDF to OmnisPDF, choose your preferred compression level (light, medium, or extreme), and click Compress. Your reduced-size PDF will be ready to download in seconds." },
+                { q: "How do I reduce the size of a PDF file?", a: "Upload your PDF to PDF.it, choose your preferred compression level (light, medium, or extreme), and click Compress. Your reduced-size PDF will be ready to download in seconds." },
                 { q: "What is the difference between light, medium, and extreme compression?", a: "Light compression optimizes PDF structures with minimal image changes — best for quality-sensitive documents. Medium (recommended) balances size reduction and quality. Extreme compression maximizes size reduction by aggressively compressing images — best when you need the smallest possible file." },
                 { q: "How much will my PDF be reduced?", a: "Results depend on your PDF content and the compression level you choose. Text-heavy PDFs may see 20-40% reduction. Image-heavy PDFs with extreme compression can see 50-80% reduction. Every document is different." },
                 { q: "Is reducing PDF size free?", a: "Yes. Free users can reduce up to 10 PDFs per day with files up to 25MB. Pro users get unlimited compressions with files up to 200MB and batch processing." },

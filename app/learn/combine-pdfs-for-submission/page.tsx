@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Merge, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Combine PDFs for Submissions (School, Visa, Job Portals) | OmnisPDF",
+  title: "Combine PDFs for Submissions (School, Visa, Job Portals) | PDF.it",
   description:
     "Learn how to combine multiple PDFs into one file for school, visa, and job portal submissions. Meet file size limits, flatten for compatibility, and protect sensitive documents.",
   keywords: "combine pdfs for submission, merge pdf for visa, combine pdf for job application, merge documents for upload",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I combine multiple PDFs into one for a submission?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload all your documents (ID, transcript, cover letter, etc.) to OmnisPDF's Merge PDF tool. Arrange them in the order required by the submission guidelines, click Merge, and download the combined file. If the file is too large, compress it afterward." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload all your documents (ID, transcript, cover letter, etc.) to PDF.it's Merge PDF tool. Arrange them in the order required by the submission guidelines, click Merge, and download the combined file. If the file is too large, compress it afterward." }
     },
     {
       "@type": "Question",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "My combined PDF is too large for the upload portal. What do I do?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Use OmnisPDF's Compress PDF tool after merging. For strict limits like 2MB or 5MB, use the dedicated Compress to 2MB or Compress to 5MB tools. If compression isn't enough, try flattening the PDF first to remove form fields and annotations, then compress again." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Use PDF.it's Compress PDF tool after merging. For strict limits like 2MB or 5MB, use the dedicated Compress to 2MB or Compress to 5MB tools. If compression isn't enough, try flattening the PDF first to remove form fields and annotations, then compress again." }
     },
     {
       "@type": "Question",
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I password-protect my combined submission?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use OmnisPDF's Protect PDF tool to add a password after merging. However, only add a password if the submission guidelines allow it — some portals can't open password-protected files." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use PDF.it's Protect PDF tool to add a password after merging. However, only add a password if the submission guidelines allow it — some portals can't open password-protected files." }
     },
     {
       "@type": "Question",
@@ -52,7 +52,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Combine PDFs for Submissions",
-  "description": "Merge multiple documents into one PDF for school, visa, or job submissions using OmnisPDF.",
+  "description": "Merge multiple documents into one PDF for school, visa, or job submissions using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
@@ -62,7 +62,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Merge documents in the required order",
-      "text": "Upload all PDFs to OmnisPDF's Merge tool, arrange them in the order specified by the submission guidelines, and click Merge to combine them into one file."
+      "text": "Upload all PDFs to PDF.it's Merge tool, arrange them in the order specified by the submission guidelines, and click Merge to combine them into one file."
     },
     {
       "@type": "HowToStep",
@@ -159,7 +159,7 @@ export default function CombinePDFsForSubmissionPage() {
                   },
                   {
                     title: "Upload and arrange in the required order",
-                    desc: "Upload all PDFs to OmnisPDF's Merge tool. Drag and drop them into the order specified by the submission guidelines. If no order is specified, use: application/cover letter first, then ID, then supporting documents.",
+                    desc: "Upload all PDFs to PDF.it's Merge tool. Drag and drop them into the order specified by the submission guidelines. If no order is specified, use: application/cover letter first, then ID, then supporting documents.",
                   },
                   {
                     title: "Merge, compress, and verify",
@@ -302,11 +302,11 @@ export default function CombinePDFsForSubmissionPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I combine multiple PDFs into one for a submission?", a: "Upload all your documents (ID, transcript, cover letter, etc.) to OmnisPDF's Merge PDF tool. Arrange them in the order required by the submission guidelines, click Merge, and download the combined file. If the file is too large, compress it afterward." },
+                { q: "How do I combine multiple PDFs into one for a submission?", a: "Upload all your documents (ID, transcript, cover letter, etc.) to PDF.it's Merge PDF tool. Arrange them in the order required by the submission guidelines, click Merge, and download the combined file. If the file is too large, compress it afterward." },
                 { q: "What order should I arrange documents for a submission?", a: "Always follow the order specified in the submission guidelines. If no order is given, a common arrangement is: application form or cover letter first, then identification documents, then supporting documents (transcripts, certificates, letters), then any additional materials." },
-                { q: "My combined PDF is too large for the upload portal. What do I do?", a: "Use OmnisPDF's Compress PDF tool after merging. For strict limits like 2MB or 5MB, use the dedicated Compress to 2MB or Compress to 5MB tools. If compression isn't enough, try flattening the PDF first to remove form fields and annotations, then compress again." },
+                { q: "My combined PDF is too large for the upload portal. What do I do?", a: "Use PDF.it's Compress PDF tool after merging. For strict limits like 2MB or 5MB, use the dedicated Compress to 2MB or Compress to 5MB tools. If compression isn't enough, try flattening the PDF first to remove form fields and annotations, then compress again." },
                 { q: "Should I flatten my PDF before submitting?", a: "Yes, especially if your PDF contains fillable form fields, signatures, or annotations. Flattening locks everything into place so the document looks the same on any device or PDF reader. It also reduces file size." },
-                { q: "Can I password-protect my combined submission?", a: "Yes. Use OmnisPDF's Protect PDF tool to add a password after merging. However, only add a password if the submission guidelines allow it — some portals can't open password-protected files." },
+                { q: "Can I password-protect my combined submission?", a: "Yes. Use PDF.it's Protect PDF tool to add a password after merging. However, only add a password if the submission guidelines allow it — some portals can't open password-protected files." },
                 { q: "How do I combine PDFs for a visa application?", a: "Follow the embassy's document checklist exactly. Typically: application form, passport copy, photos, financial documents (bank statements), and supporting letters. Merge them in that order, compress to meet any size limits, and flatten before uploading." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

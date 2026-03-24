@@ -3,8 +3,8 @@ import { Footer } from "@/components/footer"
 import { Shield } from "lucide-react"
 
 export const metadata = {
-  title: "Privacy Policy — OmnisPDF",
-  description: "Learn how OmnisPDF collects, uses, and protects your data.",
+  title: "Privacy Policy — PDF.it",
+  description: "Learn how PDF.it collects, uses, and protects your data.",
 }
 
 export default function PrivacyPolicyPage() {
@@ -33,19 +33,19 @@ export default function PrivacyPolicyPage() {
             <div className="max-w-4xl mx-auto">
               <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8 lg:p-12">
                 <div className="space-y-2 mb-8">
-                  <h2 className="text-2xl font-bold text-slate-900">Privacy Policy — OmnisPDF</h2>
+                  <h2 className="text-2xl font-bold text-slate-900">Privacy Policy — PDF.it</h2>
                   <p className="text-slate-500 text-sm"><strong>Effective Date:</strong> January 1, 2024</p>
                 </div>
 
                 <p className="text-slate-700 leading-relaxed mb-10">
-                  OmnisPDF ("we," "us," "our") values your privacy. This Privacy Policy explains what information we collect, how we use it, and the choices you have.
+                  PDF.it ("we," "us," "our") values your privacy. This Privacy Policy explains what information we collect, how we use it, and the choices you have.
                 </p>
 
                 <div className="space-y-10">
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 mb-4">1. Information We Collect</h3>
                     <p className="text-slate-700 font-semibold mb-2">A. Site usage data (collected automatically)</p>
-                    <p className="text-slate-700 mb-4">When you visit OmnisPDF, we and our service providers may collect basic usage information such as IP address (used to approximate location), device and browser type, operating system, pages viewed, referral URL, and session timestamps.</p>
+                    <p className="text-slate-700 mb-4">When you visit PDF.it, we and our service providers may collect basic usage information such as IP address (used to approximate location), device and browser type, operating system, pages viewed, referral URL, and session timestamps.</p>
                     <p className="text-slate-700 font-semibold mb-2">B. Information you provide</p>
                     <p className="text-slate-700 mb-4">If you contact us, we may collect your email address and the content of your message.</p>
                     <p className="text-slate-700 font-semibold mb-2">C. Your files</p>
@@ -82,7 +82,7 @@ export default function PrivacyPolicyPage() {
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 mb-4">5. Data Retention</h3>
                     <p className="text-slate-700 mb-2">Files uploaded for processing are deleted from our servers automatically after your session ends.</p>
-                    <p className="text-slate-700">Site usage data is retained as long as necessary to operate and improve OmnisPDF. Support messages are retained as needed to respond and maintain support history.</p>
+                    <p className="text-slate-700">Site usage data is retained as long as necessary to operate and improve PDF.it. Support messages are retained as needed to respond and maintain support history.</p>
                   </div>
 
                   <div>
@@ -92,7 +92,7 @@ export default function PrivacyPolicyPage() {
 
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 mb-4">7. Children's Privacy</h3>
-                    <p className="text-slate-700">OmnisPDF is not intended for children under 13. We do not knowingly collect personal information from children.</p>
+                    <p className="text-slate-700">PDF.it is not intended for children under 13. We do not knowingly collect personal information from children.</p>
                   </div>
 
                   <div>
@@ -114,8 +114,8 @@ export default function PrivacyPolicyPage() {
                     <h3 className="text-xl font-bold text-slate-900 mb-4">10. Contact Us</h3>
                     <p className="text-slate-700">
                       If you have questions about this Privacy Policy, contact us at{" "}
-                      <a href="mailto:contact@omnispdf.com" className="text-orange-500 hover:text-orange-600 font-medium">
-                        contact@omnispdf.com
+                      <a href="mailto:contact@pdf.it.com" className="text-orange-500 hover:text-orange-600 font-medium">
+                        contact@pdf.it.com
                       </a>.
                     </p>
                   </div>
@@ -128,7 +128,7 @@ export default function PrivacyPolicyPage() {
                       <div>
                         <h4 className="font-bold text-blue-900 mb-2">Your Files Are Deleted After Every Session</h4>
                         <p className="text-blue-800 text-sm leading-relaxed">
-                          Files uploaded to OmnisPDF are processed securely and deleted automatically after your session ends. We do not store, review, or share your documents.
+                          Files uploaded to PDF.it are processed securely and deleted automatically after your session ends. We do not store, review, or share your documents.
                         </p>
                       </div>
                     </div>

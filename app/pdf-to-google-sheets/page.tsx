@@ -5,8 +5,8 @@ import { Footer } from "@/components/footer"
 import { FileSpreadsheet, Zap, Shield, Upload, ArrowRight, FileText, Image, Lock, Scissors, Merge, RotateCw, ScanLine } from "lucide-react"
 
 export const metadata = {
-  title: "PDF to Google Sheets — Open PDF Tables in Google Sheets | OmnisPDF",
-  description: "Learn how to convert PDF tables to Google Sheets. Convert PDF to Excel with OmnisPDF, upload to Google Drive, and open in Google Sheets for editing and analysis.",
+  title: "PDF to Google Sheets — Open PDF Tables in Google Sheets | PDF.it",
+  description: "Learn how to convert PDF tables to Google Sheets. Convert PDF to Excel with PDF.it, upload to Google Drive, and open in Google Sheets for editing and analysis.",
 }
 
 const faqSchema = {
@@ -16,22 +16,22 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I open a PDF directly in Google Sheets?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. Google Sheets cannot open PDF files directly. The best approach is to convert the PDF to an Excel XLSX file first using OmnisPDF, then upload the XLSX to Google Drive and open it with Google Sheets. This extracts tables and data into editable spreadsheet format." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Google Sheets cannot open PDF files directly. The best approach is to convert the PDF to an Excel XLSX file first using PDF.it, then upload the XLSX to Google Drive and open it with Google Sheets. This extracts tables and data into editable spreadsheet format." }
     },
     {
       "@type": "Question",
       "name": "Why should I convert to XLSX before uploading to Google Sheets?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Google Sheets natively supports XLSX files and preserves cell structure, formulas, and formatting. OmnisPDF's PDF to Excel converter detects table structures in your PDF and maps them to clean rows and columns, giving Google Sheets structured data to work with." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Google Sheets natively supports XLSX files and preserves cell structure, formulas, and formatting. PDF.it's PDF to Excel converter detects table structures in your PDF and maps them to clean rows and columns, giving Google Sheets structured data to work with." }
     },
     {
       "@type": "Question",
       "name": "Will my PDF tables be extracted accurately?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF detects table structures in your PDF and converts them to Excel rows and columns. Well-structured tables with clear borders convert with high accuracy. Complex layouts with merged cells may need minor adjustments in Google Sheets." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it detects table structures in your PDF and converts them to Excel rows and columns. Well-structured tables with clear borders convert with high accuracy. Complex layouts with merged cells may need minor adjustments in Google Sheets." }
     },
     {
       "@type": "Question",
       "name": "Is this method free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PDF to Excel conversion on OmnisPDF is available to Pro and Business subscribers. Once you have the XLSX file, uploading to Google Drive and opening in Google Sheets is completely free with any Google account." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF to Excel conversion on PDF.it is available to Pro and Business subscribers. Once you have the XLSX file, uploading to Google Drive and opening in Google Sheets is completely free with any Google account." }
     },
     {
       "@type": "Question",
@@ -65,7 +65,7 @@ export default function PDFToGoogleSheetsPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convert PDF to Google Sheets</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Extract tables and data from any PDF into Google Sheets. Convert to Excel first with OmnisPDF, then upload to Google Drive for analysis and collaboration.
+                Extract tables and data from any PDF into Google Sheets. Convert to Excel first with PDF.it, then upload to Google Drive for analysis and collaboration.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2">
@@ -95,10 +95,10 @@ export default function PDFToGoogleSheetsPage() {
                   <div className="w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-lg flex-shrink-0">
                     1
                   </div>
-                  <h3 className="text-xl font-black text-slate-900">Convert PDF to Excel with OmnisPDF</h3>
+                  <h3 className="text-xl font-black text-slate-900">Convert PDF to Excel with PDF.it</h3>
                 </div>
                 <p className="text-slate-600 mb-6">
-                  Upload your PDF to OmnisPDF and convert it to an Excel XLSX file. OmnisPDF detects table structures and extracts data into clean rows and columns, ready for spreadsheet use.
+                  Upload your PDF to PDF.it and convert it to an Excel XLSX file. PDF.it detects table structures and extracts data into clean rows and columns, ready for spreadsheet use.
                 </p>
                 <Link
                   href="/pdf-to-excel"
@@ -116,7 +116,7 @@ export default function PDFToGoogleSheetsPage() {
                   <h3 className="text-xl font-black text-slate-900">Upload XLSX to Google Drive</h3>
                 </div>
                 <p className="text-slate-600">
-                  Go to <strong>drive.google.com</strong> and click <strong>New &gt; File upload</strong>. Select the XLSX file you just downloaded from OmnisPDF. Wait for the upload to complete.
+                  Go to <strong>drive.google.com</strong> and click <strong>New &gt; File upload</strong>. Select the XLSX file you just downloaded from PDF.it. Wait for the upload to complete.
                 </p>
               </div>
 
@@ -151,7 +151,7 @@ export default function PDFToGoogleSheetsPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Why Can't I Open PDFs Directly in Google Sheets?</h2>
             <p className="text-lg text-slate-600 mb-8">
-              Google Sheets is a spreadsheet application — it expects structured data in rows and columns. PDFs are visual documents designed for printing, not data analysis. To get your PDF data into Google Sheets, you need to first extract the tables into a spreadsheet format. OmnisPDF's PDF to Excel converter does this automatically, detecting table structures and mapping them to clean XLSX cells that Google Sheets can read perfectly.
+              Google Sheets is a spreadsheet application — it expects structured data in rows and columns. PDFs are visual documents designed for printing, not data analysis. To get your PDF data into Google Sheets, you need to first extract the tables into a spreadsheet format. PDF.it's PDF to Excel converter does this automatically, detecting table structures and mapping them to clean XLSX cells that Google Sheets can read perfectly.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Automatic table detection extracts rows and columns from PDFs</li>
@@ -235,10 +235,10 @@ export default function PDFToGoogleSheetsPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "Can I open a PDF directly in Google Sheets?", a: "No. Google Sheets cannot open PDF files directly. The best approach is to convert the PDF to an Excel XLSX file first using OmnisPDF, then upload the XLSX to Google Drive and open it with Google Sheets. This extracts tables and data into editable spreadsheet format." },
-                { q: "Why should I convert to XLSX before uploading to Google Sheets?", a: "Google Sheets natively supports XLSX files and preserves cell structure, formulas, and formatting. OmnisPDF's PDF to Excel converter detects table structures in your PDF and maps them to clean rows and columns, giving Google Sheets structured data to work with." },
-                { q: "Will my PDF tables be extracted accurately?", a: "OmnisPDF detects table structures in your PDF and converts them to Excel rows and columns. Well-structured tables with clear borders convert with high accuracy. Complex layouts with merged cells may need minor adjustments in Google Sheets." },
-                { q: "Is this method free?", a: "PDF to Excel conversion on OmnisPDF is available to Pro and Business subscribers. Once you have the XLSX file, uploading to Google Drive and opening in Google Sheets is completely free with any Google account." },
+                { q: "Can I open a PDF directly in Google Sheets?", a: "No. Google Sheets cannot open PDF files directly. The best approach is to convert the PDF to an Excel XLSX file first using PDF.it, then upload the XLSX to Google Drive and open it with Google Sheets. This extracts tables and data into editable spreadsheet format." },
+                { q: "Why should I convert to XLSX before uploading to Google Sheets?", a: "Google Sheets natively supports XLSX files and preserves cell structure, formulas, and formatting. PDF.it's PDF to Excel converter detects table structures in your PDF and maps them to clean rows and columns, giving Google Sheets structured data to work with." },
+                { q: "Will my PDF tables be extracted accurately?", a: "PDF.it detects table structures in your PDF and converts them to Excel rows and columns. Well-structured tables with clear borders convert with high accuracy. Complex layouts with merged cells may need minor adjustments in Google Sheets." },
+                { q: "Is this method free?", a: "PDF to Excel conversion on PDF.it is available to Pro and Business subscribers. Once you have the XLSX file, uploading to Google Drive and opening in Google Sheets is completely free with any Google account." },
                 { q: "Can I use formulas and charts after importing?", a: "Yes. Once the XLSX is opened in Google Sheets, you have full access to formulas, pivot tables, charts, conditional formatting, and all other Google Sheets features. The data is fully editable." },
                 { q: "Can I share the spreadsheet with my team?", a: "Yes. Once in Google Sheets, you can share the spreadsheet with anyone, set permissions (view, comment, or edit), and collaborate in real time — just like any other Google Sheets document." },
               ].map((faq, i) => (

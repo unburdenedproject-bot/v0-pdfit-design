@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ScanText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "How to OCR a Scanned Document (Step-by-Step) | OmnisPDF",
+  title: "How to OCR a Scanned Document (Step-by-Step) | PDF.it",
   description:
     "Learn how to run OCR on scanned documents like receipts, contracts, and old papers. Step-by-step guide to digitizing scanned PDFs into searchable, copyable text.",
   keywords: "ocr scanned document, scan and ocr, ocr scanned pdf, digitize scanned document",
@@ -23,12 +23,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Do I need a scanner to use OCR?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. You can use your phone camera to photograph a document, save it as a PDF, and then run OCR on it. For better results with phone-scanned documents, use OmnisPDF's Phone Scan Cleanup tool first to improve contrast and straighten the image." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. You can use your phone camera to photograph a document, save it as a PDF, and then run OCR on it. For better results with phone-scanned documents, use PDF.it's Phone Scan Cleanup tool first to improve contrast and straighten the image." }
     },
     {
       "@type": "Question",
       "name": "How long does OCR processing take?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Most documents process in a few seconds to under a minute. Longer documents (50+ pages) or very large files may take a couple of minutes. OmnisPDF Pro users get priority processing for faster results." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Most documents process in a few seconds to under a minute. Longer documents (50+ pages) or very large files may take a couple of minutes. PDF.it Pro users get priority processing for faster results." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I OCR a document in Spanish or another language?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF's OCR Scanner supports dozens of languages including Spanish, French, German, Portuguese, Italian, and many more. Select the correct language before processing for the best accuracy." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it's OCR Scanner supports dozens of languages including Spanish, French, German, Portuguese, Italian, and many more. Select the correct language before processing for the best accuracy." }
     }
   ]
 }
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to OCR a Scanned Document",
-  "description": "Digitize a scanned document into searchable text in 3 steps using OmnisPDF's OCR Scanner.",
+  "description": "Digitize a scanned document into searchable text in 3 steps using PDF.it's OCR Scanner.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Scan or upload your document",
-      "text": "Scan your document using a scanner or phone camera. Save it as a PDF, then upload it to OmnisPDF's OCR Scanner tool."
+      "text": "Scan your document using a scanner or phone camera. Save it as a PDF, then upload it to PDF.it's OCR Scanner tool."
     },
     {
       "@type": "HowToStep",
@@ -162,7 +162,7 @@ export default function OCRScannedDocumentPage() {
                     desc: "Use a flatbed scanner (set to 300 DPI for best results) or your phone camera. Save the scan as a PDF. If you used your phone, run the file through Phone Scan Cleanup first to improve contrast and straighten the image.",
                   },
                   {
-                    title: "Upload to OmnisPDF's OCR Scanner",
+                    title: "Upload to PDF.it's OCR Scanner",
                     desc: "Open the OCR Scanner tool (Pro feature) and upload your scanned PDF. Select the language of the document — this is important for accuracy, especially for non-English documents.",
                   },
                   {
@@ -246,7 +246,7 @@ export default function OCRScannedDocumentPage() {
                 <li>&#10003; Use natural, even lighting. Avoid flash, which creates hotspots and glare.</li>
                 <li>&#10003; Place the document on a dark, contrasting surface so the edges are clearly defined.</li>
                 <li>&#10003; Use your phone's built-in document scanner (Notes on iPhone, Google Drive on Android) for automatic cropping and perspective correction.</li>
-                <li>&#10003; Run the result through OmnisPDF's <Link href="/phone-scan-cleanup" className="text-orange-600 hover:underline">Phone Scan Cleanup</Link> tool before OCR to automatically improve contrast, remove shadows, and straighten the image.</li>
+                <li>&#10003; Run the result through PDF.it's <Link href="/phone-scan-cleanup" className="text-orange-600 hover:underline">Phone Scan Cleanup</Link> tool before OCR to automatically improve contrast, remove shadows, and straighten the image.</li>
               </ul>
               <p className="text-slate-600 mt-4">
                 For more on using OCR on mobile devices, see our guide on <Link href="/learn/ocr-pdf-on-mobile" className="text-orange-600 hover:underline">OCR a PDF on Your Phone</Link>.
@@ -302,11 +302,11 @@ export default function OCRScannedDocumentPage() {
             <div className="space-y-6">
               {[
                 { q: "What types of scanned documents can OCR process?", a: "OCR can process virtually any scanned document — contracts, receipts, invoices, legal papers, old books, letters, forms, and ID documents. As long as the text is printed (not handwritten) and the scan is reasonably clear, OCR will recognize it." },
-                { q: "Do I need a scanner to use OCR?", a: "No. You can use your phone camera to photograph a document, save it as a PDF, and then run OCR on it. For better results with phone-scanned documents, use OmnisPDF's Phone Scan Cleanup tool first to improve contrast and straighten the image." },
-                { q: "How long does OCR processing take?", a: "Most documents process in a few seconds to under a minute. Longer documents (50+ pages) or very large files may take a couple of minutes. OmnisPDF Pro users get priority processing for faster results." },
+                { q: "Do I need a scanner to use OCR?", a: "No. You can use your phone camera to photograph a document, save it as a PDF, and then run OCR on it. For better results with phone-scanned documents, use PDF.it's Phone Scan Cleanup tool first to improve contrast and straighten the image." },
+                { q: "How long does OCR processing take?", a: "Most documents process in a few seconds to under a minute. Longer documents (50+ pages) or very large files may take a couple of minutes. PDF.it Pro users get priority processing for faster results." },
                 { q: "Can OCR handle old or faded documents?", a: "OCR can handle moderately faded text, but very faded or damaged documents may produce lower accuracy. Improving the scan contrast before running OCR helps significantly. Scan at 300 DPI or higher for old documents." },
                 { q: "Is the original scan preserved after OCR?", a: "Yes. OCR adds an invisible text layer on top of your original scan. The visual appearance of every page remains exactly the same — only the searchability changes." },
-                { q: "Can I OCR a document in Spanish or another language?", a: "Yes. OmnisPDF's OCR Scanner supports dozens of languages including Spanish, French, German, Portuguese, Italian, and many more. Select the correct language before processing for the best accuracy." },
+                { q: "Can I OCR a document in Spanish or another language?", a: "Yes. PDF.it's OCR Scanner supports dozens of languages including Spanish, French, German, Portuguese, Italian, and many more. Select the correct language before processing for the best accuracy." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

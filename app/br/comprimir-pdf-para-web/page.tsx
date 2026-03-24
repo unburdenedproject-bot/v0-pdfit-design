@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Ro
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF para Web — Otimize PDFs para seu Site | OmnisPDF",
+  title: "Comprimir PDF para Web — Otimize PDFs para seu Site | PDF.it",
   description:
     "Otimize PDFs para seu site. Reduza o tamanho para carregamentos mais rapidos e melhor experiencia do usuario.",
   alternates: {
@@ -25,7 +25,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como otimizo um PDF para meu site?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF ao OmnisPDF e clique em Comprimir. A compressao recomendada equilibra qualidade e tamanho de arquivo, produzindo um PDF que carrega rapidamente em paginas web enquanto mantem o texto e as imagens com boa aparencia." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF ao PDF.it e clique em Comprimir. A compressao recomendada equilibra qualidade e tamanho de arquivo, produzindo um PDF que carrega rapidamente em paginas web enquanto mantem o texto e as imagens com boa aparencia." }
     },
     {
       "@type": "Question",
@@ -151,7 +151,7 @@ export default function ComprimirPDFParaWebPagePt() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Otimizar um PDF para seu Site</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste e solte seu PDF no OmnisPDF.",
+                "Envie ou arraste e solte seu PDF no PDF.it.",
                 "Clique em Comprimir PDF — a compressao recomendada e aplicada para equilibrar qualidade e tamanho.",
                 "Baixe seu PDF otimizado e envie ao seu site. Seus visitantes vao desfrutar de downloads mais rapidos.",
               ].map((step, i) => (
@@ -205,7 +205,7 @@ export default function ComprimirPDFParaWebPagePt() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como otimizo um PDF para meu site?", a: "Envie seu PDF ao OmnisPDF e clique em Comprimir. A compressao recomendada equilibra qualidade e tamanho de arquivo, produzindo um PDF que carrega rapidamente em paginas web enquanto mantem o texto e as imagens com boa aparencia." },
+                { q: "Como otimizo um PDF para meu site?", a: "Envie seu PDF ao PDF.it e clique em Comprimir. A compressao recomendada equilibra qualidade e tamanho de arquivo, produzindo um PDF que carrega rapidamente em paginas web enquanto mantem o texto e as imagens com boa aparencia." },
                 { q: "Os PDFs otimizados para web ficarao bons ao baixar?", a: "Sim. A compressao recomendada reduz o tamanho do arquivo preservando a qualidade visual. O texto permanece nitido e as imagens mantem bom detalhe — os visitantes podem baixar e ler o PDF sem problemas." },
                 { q: "Por que devo comprimir PDFs antes de enviar ao meu site?", a: "PDFs grandes tornam os tempos de carregamento mais lentos, prejudicam o posicionamento SEO e frustram visitantes em dispositivos moveis. Comprimir PDFs garante downloads mais rapidos, menores custos de banda e melhor experiencia do usuario." },
                 { q: "O tamanho do PDF afeta o SEO do site?", a: "Sim. O Google considera a velocidade de carregamento como fator de posicionamento. Se um PDF demora muito para carregar, pode afetar negativamente seu posicionamento nas buscas. PDFs menores carregam mais rapido e contribuem para melhores pontuacoes de Core Web Vitals." },

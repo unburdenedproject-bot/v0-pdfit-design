@@ -5,21 +5,21 @@ import Link from "next/link"
 import { Printer, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Desbloquear PDF para Imprimir — Remover Restricao de Impressao | OmnisPDF",
+  title: "Desbloquear PDF para Imprimir — Remover Restricao de Impressao | PDF.it",
   description: "Seu PDF nao permite imprimir? Aprenda a remover a restricao de impressao de PDFs protegidos. Desbloqueie e imprima em segundos.",
   keywords: "desbloquear pdf para imprimir, pdf nao imprime, remover restricao impressao pdf, pdf bloqueado impressao, imprimir pdf protegido",
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
   { "@type": "Question", "name": "Por que meu PDF nao permite imprimir?", "acceptedAnswer": { "@type": "Answer", "text": "O criador do PDF definiu uma senha de permissoes que restringe a impressao. Isso e diferente da senha de abertura — voce pode abrir e ler o PDF, mas nao pode imprimir, copiar texto ou editar." } },
-  { "@type": "Question", "name": "Posso remover a restricao de impressao sem a senha?", "acceptedAnswer": { "@type": "Answer", "text": "Na maioria dos casos, sim. A ferramenta Desbloquear PDF do OmnisPDF pode remover restricoes de permissao (impressao, copia, edicao) sem precisar da senha de permissoes. Isso so funciona se o PDF nao tiver senha de abertura." } },
+  { "@type": "Question", "name": "Posso remover a restricao de impressao sem a senha?", "acceptedAnswer": { "@type": "Answer", "text": "Na maioria dos casos, sim. A ferramenta Desbloquear PDF do PDF.it pode remover restricoes de permissao (impressao, copia, edicao) sem precisar da senha de permissoes. Isso so funciona se o PDF nao tiver senha de abertura." } },
   { "@type": "Question", "name": "O conteudo do PDF muda ao desbloquear?", "acceptedAnswer": { "@type": "Answer", "text": "Nao. Desbloquear apenas remove as restricoes. O conteudo, formatacao, imagens e layout permanecem 100% identicos." } },
   { "@type": "Question", "name": "E legal remover a restricao de impressao?", "acceptedAnswer": { "@type": "Answer", "text": "Se voce e o proprietario do documento ou tem autorizacao para imprimir, sim. Respeite sempre os direitos autorais e as politicas do criador do documento." } }
 ] }
 
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como desbloquear PDF para imprimir", "description": "Remova a restricao de impressao do PDF em 3 passos.", "step": [
-  { "@type": "HowToStep", "name": "Envie o PDF bloqueado", "text": "Acesse a ferramenta Desbloquear PDF do OmnisPDF e envie o PDF que nao permite imprimir." },
-  { "@type": "HowToStep", "name": "Remova as restricoes", "text": "O OmnisPDF detecta as restricoes de permissao e as remove automaticamente." },
+  { "@type": "HowToStep", "name": "Envie o PDF bloqueado", "text": "Acesse a ferramenta Desbloquear PDF do PDF.it e envie o PDF que nao permite imprimir." },
+  { "@type": "HowToStep", "name": "Remova as restricoes", "text": "O PDF.it detecta as restricoes de permissao e as remove automaticamente." },
   { "@type": "HowToStep", "name": "Imprima o PDF", "text": "Baixe o PDF desbloqueado e imprima normalmente usando Ctrl+P ou o menu do navegador." }
 ] }
 
@@ -57,8 +57,8 @@ export default function DesbloquearPdfParaImprimirPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-6">Como desbloquear para imprimir (passo a passo)</h2>
             <div className="space-y-4">
               {[
-                { title: "Envie o PDF bloqueado", desc: "Acesse a ferramenta Desbloquear PDF do OmnisPDF e envie o PDF que nao permite imprimir. Como o PDF abre sem senha, voce pode envia-lo normalmente." },
-                { title: "O OmnisPDF remove as restricoes", desc: "A ferramenta detecta automaticamente as restricoes de permissao (impressao, copia, edicao) e as remove do PDF." },
+                { title: "Envie o PDF bloqueado", desc: "Acesse a ferramenta Desbloquear PDF do PDF.it e envie o PDF que nao permite imprimir. Como o PDF abre sem senha, voce pode envia-lo normalmente." },
+                { title: "O PDF.it remove as restricoes", desc: "A ferramenta detecta automaticamente as restricoes de permissao (impressao, copia, edicao) e as remove do PDF." },
                 { title: "Baixe e imprima", desc: "Baixe o PDF desbloqueado. Agora use Ctrl+P (Windows) ou Cmd+P (Mac) para imprimir normalmente. A qualidade e identica ao original." },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">

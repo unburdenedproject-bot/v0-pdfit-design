@@ -6,8 +6,8 @@ import { ProcessingInterface } from "@/components/processing-interface"
 import { FileSpreadsheet, Zap, Shield, Download, FileText, Image, Lock, Scissors, Merge, RotateCw, ScanLine } from "lucide-react"
 
 export const metadata = {
-  title: "PDF to XLSX — Convert PDF to Excel Spreadsheet | OmnisPDF",
-  description: "Convert PDF to XLSX online with OmnisPDF. Extract tables, financial data, and reports from PDF into editable Excel spreadsheets. Fast, accurate, no installation.",
+  title: "PDF to XLSX — Convert PDF to Excel Spreadsheet | PDF.it",
+  description: "Convert PDF to XLSX online with PDF.it. Extract tables, financial data, and reports from PDF into editable Excel spreadsheets. Fast, accurate, no installation.",
 }
 
 const faqSchema = {
@@ -17,22 +17,22 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "What is the difference between XLSX and XLS?",
-      "acceptedAnswer": { "@type": "Answer", "text": "XLSX is the modern Excel format introduced with Microsoft Office 2007. It supports larger worksheets, better compression, and improved compatibility compared to the older XLS format. OmnisPDF converts PDFs directly to XLSX for use in modern spreadsheet applications." }
+      "acceptedAnswer": { "@type": "Answer", "text": "XLSX is the modern Excel format introduced with Microsoft Office 2007. It supports larger worksheets, better compression, and improved compatibility compared to the older XLS format. PDF.it converts PDFs directly to XLSX for use in modern spreadsheet applications." }
     },
     {
       "@type": "Question",
       "name": "How do I convert a PDF to XLSX?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF, click Convert, and download your XLSX file. The tool detects tables in your PDF and extracts the data into structured Excel columns and rows." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it, click Convert, and download your XLSX file. The tool detects tables in your PDF and extracts the data into structured Excel columns and rows." }
     },
     {
       "@type": "Question",
       "name": "Will my PDF tables be converted accurately?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF detects table structures in your PDF and maps them to Excel rows and columns. Simple, well-structured tables convert with high accuracy. Complex or merged-cell layouts may require minor adjustments." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it detects table structures in your PDF and maps them to Excel rows and columns. Simple, well-structured tables convert with high accuracy. Complex or merged-cell layouts may require minor adjustments." }
     },
     {
       "@type": "Question",
       "name": "Can I convert a scanned PDF to XLSX?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Scanned PDFs contain images rather than structured data. For best results, use OmnisPDF's OCR Scanner first to extract text, then convert the result. For advanced table extraction from scans, consider our Business tier." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Scanned PDFs contain images rather than structured data. For best results, use PDF.it's OCR Scanner first to extract text, then convert the result. For advanced table extraction from scans, consider our Business tier." }
     },
     {
       "@type": "Question",
@@ -100,7 +100,7 @@ export default function PDFToXlsxPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Why Convert PDF to XLSX?</h2>
             <p className="text-lg text-slate-600 mb-8">
-              XLSX is the modern Excel spreadsheet format used by Microsoft Excel, Google Sheets, and LibreOffice Calc. When you receive financial reports, invoices, or data tables as PDFs, converting them to XLSX lets you sort, filter, calculate, and analyze the data — instead of manually retyping everything. OmnisPDF detects table structures in your PDF and maps them to clean Excel rows and columns.
+              XLSX is the modern Excel spreadsheet format used by Microsoft Excel, Google Sheets, and LibreOffice Calc. When you receive financial reports, invoices, or data tables as PDFs, converting them to XLSX lets you sort, filter, calculate, and analyze the data — instead of manually retyping everything. PDF.it detects table structures in your PDF and maps them to clean Excel rows and columns.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Extract tables from PDF to editable XLSX format</li>
@@ -151,8 +151,8 @@ export default function PDFToXlsxPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Convert PDF to XLSX</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PDF into OmnisPDF.",
-                "Click Convert — OmnisPDF detects tables and extracts data into spreadsheet format.",
+                "Upload or drag and drop your PDF into PDF.it.",
+                "Click Convert — PDF.it detects tables and extracts data into spreadsheet format.",
                 "Download your XLSX file and open it in Excel, Google Sheets, or any compatible app.",
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
@@ -205,10 +205,10 @@ export default function PDFToXlsxPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "What is the difference between XLSX and XLS?", a: "XLSX is the modern Excel format introduced with Microsoft Office 2007. It supports larger worksheets, better compression, and improved compatibility compared to the older XLS format. OmnisPDF converts PDFs directly to XLSX for use in modern spreadsheet applications." },
-                { q: "How do I convert a PDF to XLSX?", a: "Upload your PDF to OmnisPDF, click Convert, and download your XLSX file. The tool detects tables in your PDF and extracts the data into structured Excel columns and rows." },
-                { q: "Will my PDF tables be converted accurately?", a: "OmnisPDF detects table structures in your PDF and maps them to Excel rows and columns. Simple, well-structured tables convert with high accuracy. Complex or merged-cell layouts may require minor adjustments." },
-                { q: "Can I convert a scanned PDF to XLSX?", a: "Scanned PDFs contain images rather than structured data. For best results, use OmnisPDF's OCR Scanner first to extract text, then convert the result. For advanced table extraction from scans, consider our Business tier." },
+                { q: "What is the difference between XLSX and XLS?", a: "XLSX is the modern Excel format introduced with Microsoft Office 2007. It supports larger worksheets, better compression, and improved compatibility compared to the older XLS format. PDF.it converts PDFs directly to XLSX for use in modern spreadsheet applications." },
+                { q: "How do I convert a PDF to XLSX?", a: "Upload your PDF to PDF.it, click Convert, and download your XLSX file. The tool detects tables in your PDF and extracts the data into structured Excel columns and rows." },
+                { q: "Will my PDF tables be converted accurately?", a: "PDF.it detects table structures in your PDF and maps them to Excel rows and columns. Simple, well-structured tables convert with high accuracy. Complex or merged-cell layouts may require minor adjustments." },
+                { q: "Can I convert a scanned PDF to XLSX?", a: "Scanned PDFs contain images rather than structured data. For best results, use PDF.it's OCR Scanner first to extract text, then convert the result. For advanced table extraction from scans, consider our Business tier." },
                 { q: "Is the PDF to XLSX converter free?", a: "PDF to XLSX conversion is available to Pro and Business subscribers. Free accounts can use basic PDF tools, while Pro unlocks advanced conversions including PDF to XLSX, DOCX, and PPTX." },
                 { q: "Can I convert multiple PDFs to XLSX at once?", a: "Yes. Pro and Business accounts support batch processing — upload multiple PDFs and convert them all to XLSX in one session. Free accounts are limited to single-file conversions." },
               ].map((faq, i) => (

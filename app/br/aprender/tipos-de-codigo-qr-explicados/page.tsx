@@ -5,7 +5,7 @@ import Link from "next/link"
 import { QrCode, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Tipos de Codigo QR Explicados (Estatico, Dinamico, URL, WiFi, vCard) | OmnisPDF",
+  title: "Tipos de Codigo QR Explicados (Estatico, Dinamico, URL, WiFi, vCard) | PDF.it",
   description:
     "Entenda os diferentes tipos de codigo QR: estatico vs dinamico, URL, texto, WiFi, vCard e mais. Saiba qual tipo usar para cada situacao.",
   keywords: "tipos de codigo qr, qr code estatico, qr code dinamico, tipos qr code, qr url wifi vcard",
@@ -16,7 +16,7 @@ const faqSchema = {
   "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "Qual a diferenca entre QR estatico e dinamico?", "acceptedAnswer": { "@type": "Answer", "text": "QR estatico codifica a informacao diretamente na imagem — nao pode ser alterado depois. QR dinamico aponta para uma URL intermediaria que pode ser redirecionada, permitindo mudar o destino sem alterar o codigo impresso." } },
-    { "@type": "Question", "name": "Qual tipo de QR o OmnisPDF gera?", "acceptedAnswer": { "@type": "Answer", "text": "O OmnisPDF gera codigos QR estaticos para URL, texto, WiFi, contato (vCard), e-mail e telefone. Sao permanentes e nao dependem de servicos externos." } },
+    { "@type": "Question", "name": "Qual tipo de QR o PDF.it gera?", "acceptedAnswer": { "@type": "Answer", "text": "O PDF.it gera codigos QR estaticos para URL, texto, WiFi, contato (vCard), e-mail e telefone. Sao permanentes e nao dependem de servicos externos." } },
     { "@type": "Question", "name": "QR code estatico expira?", "acceptedAnswer": { "@type": "Answer", "text": "Nao. Um QR estatico nunca expira porque a informacao esta codificada diretamente na imagem. Ele funciona enquanto a imagem existir." } },
     { "@type": "Question", "name": "Qual tipo usar para cada situacao?", "acceptedAnswer": { "@type": "Answer", "text": "URL para links de sites, WiFi para conexao automatica de rede, vCard para cartoes de visita, e-mail para facilitar contato. O tipo depende do que voce quer que aconteca quando alguem escaneia." } },
   ]
@@ -55,7 +55,7 @@ export default function TiposCodigoQRPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><QrCode className="h-5 w-5 text-white" /></div>
-              <p className="text-slate-700 font-semibold">Gere qualquer tipo de QR code com o OmnisPDF.</p>
+              <p className="text-slate-700 font-semibold">Gere qualquer tipo de QR code com o PDF.it.</p>
             </div>
             <Link href="/br/codigo-qr" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Gerador QR <ArrowRight className="h-4 w-4" /></Link>
           </div>
@@ -70,7 +70,7 @@ export default function TiposCodigoQRPage() {
               <div className="space-y-4">
                 <div className="bg-gray-50 rounded-xl p-5 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">QR Estatico</h3>
-                  <p className="text-slate-600 text-sm">A informacao (URL, texto, dados WiFi) e codificada diretamente no padrao do QR. Nao pode ser alterado depois de criado. Nao depende de servicos externos e nunca expira. E o tipo que o OmnisPDF gera.</p>
+                  <p className="text-slate-600 text-sm">A informacao (URL, texto, dados WiFi) e codificada diretamente no padrao do QR. Nao pode ser alterado depois de criado. Nao depende de servicos externos e nunca expira. E o tipo que o PDF.it gera.</p>
                 </div>
                 <div className="bg-gray-50 rounded-xl p-5 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">QR Dinamico</h3>
@@ -149,7 +149,7 @@ export default function TiposCodigoQRPage() {
             <div className="space-y-6">
               {[
                 { q: "Qual a diferenca entre QR estatico e dinamico?", a: "Estatico codifica a informacao direto na imagem (permanente). Dinamico usa URL intermediaria que pode ser redirecionada (flexivel, mas depende de servico externo)." },
-                { q: "Qual tipo o OmnisPDF gera?", a: "O OmnisPDF gera QR codes estaticos para URL, texto, WiFi, vCard, e-mail e telefone." },
+                { q: "Qual tipo o PDF.it gera?", a: "O PDF.it gera QR codes estaticos para URL, texto, WiFi, vCard, e-mail e telefone." },
                 { q: "QR code estatico expira?", a: "Nao. A informacao esta na imagem. Funciona enquanto a imagem existir." },
                 { q: "Qual tipo usar?", a: "Depende do objetivo: URL para sites, WiFi para rede, vCard para contatos, e-mail para comunicacao." },
               ].map((faq, i) => (

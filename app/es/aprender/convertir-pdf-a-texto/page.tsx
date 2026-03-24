@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Convertir PDF a TXT: Extrae Texto Plano en Segundos | OmnisPDF",
+  title: "Convertir PDF a TXT: Extrae Texto Plano en Segundos | PDF.it",
   description:
     "Aprende a convertir PDF a TXT y extraer texto plano de cualquier archivo PDF. Guia paso a paso para entrada de datos, programacion, notas y mas — gratis, en linea, sin software.",
   keywords: "convertir pdf a txt, pdf a texto, extraer texto de pdf, pdf a texto plano, convertidor pdf a txt",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo convierto un PDF a TXT gratis?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta PDF a TXT de OmnisPDF, haz clic en Convertir y descarga el archivo de texto plano. No necesitas registrarte para tus primeros 3 archivos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta PDF a TXT de PDF.it, haz clic en Convertir y descarga el archivo de texto plano. No necesitas registrarte para tus primeros 3 archivos." }
     },
     {
       "@type": "Question",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo convertir un PDF escaneado a TXT?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Las herramientas estándar de PDF a TXT no pueden extraer texto de PDFs escaneados porque el texto está almacenado como imagen. Necesitas OCR (Reconocimiento Óptico de Caracteres) para convertir páginas escaneadas a texto. El Escáner OCR de OmnisPDF se encarga de esto." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Las herramientas estándar de PDF a TXT no pueden extraer texto de PDFs escaneados porque el texto está almacenado como imagen. Necesitas OCR (Reconocimiento Óptico de Caracteres) para convertir páginas escaneadas a texto. El Escáner OCR de PDF.it se encarga de esto." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo convertir un PDF a TXT en mi teléfono?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en cualquier navegador móvil — sube tu PDF, conviértelo a TXT y descarga el archivo de texto directamente en iPhone o Android. No necesitas instalar ninguna aplicación." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en cualquier navegador móvil — sube tu PDF, conviértelo a TXT y descarga el archivo de texto directamente en iPhone o Android. No necesitas instalar ninguna aplicación." }
     }
   ]
 }
@@ -52,17 +52,17 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Cómo Convertir PDF a TXT en Línea",
-  "description": "Extrae texto plano de cualquier PDF en 3 simples pasos usando OmnisPDF.",
+  "description": "Extrae texto plano de cualquier PDF en 3 simples pasos usando PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Sube tu PDF",
-      "text": "Ve a la herramienta PDF a TXT de OmnisPDF y sube tu archivo haciendo clic o arrastrándolo al área de carga."
+      "text": "Ve a la herramienta PDF a TXT de PDF.it y sube tu archivo haciendo clic o arrastrándolo al área de carga."
     },
     {
       "@type": "HowToStep",
       "name": "Convierte a texto plano",
-      "text": "Haz clic en Convertir. OmnisPDF extrae todo el texto legible de tu PDF y genera un archivo TXT limpio."
+      "text": "Haz clic en Convertir. PDF.it extrae todo el texto legible de tu PDF y genera un archivo TXT limpio."
     },
     {
       "@type": "HowToStep",
@@ -163,7 +163,7 @@ export default function ConvertirPdfATextoPage() {
                   },
                   {
                     title: "Convierte a texto plano",
-                    desc: "Haz clic en Convertir. OmnisPDF lee todo el texto seleccionable en tu PDF y genera un archivo .txt limpio. Esto toma solo unos segundos para la mayoría de los documentos.",
+                    desc: "Haz clic en Convertir. PDF.it lee todo el texto seleccionable en tu PDF y genera un archivo .txt limpio. Esto toma solo unos segundos para la mayoría de los documentos.",
                   },
                   {
                     title: "Descarga y usa tu texto",
@@ -254,7 +254,7 @@ export default function ConvertirPdfATextoPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">PDFs Escaneados</h3>
                   <p className="text-slate-600">
-                    Si tu PDF es un escaneo (fotos de páginas de papel), no hay texto seleccionable para extraer. Necesitas <Link href="/es/escaner-ocr" className="text-orange-600 hover:underline">OCR (Reconocimiento Óptico de Caracteres)</Link> para leer el texto de las imágenes. El Escáner OCR de OmnisPDF se encarga de esto automáticamente.
+                    Si tu PDF es un escaneo (fotos de páginas de papel), no hay texto seleccionable para extraer. Necesitas <Link href="/es/escaner-ocr" className="text-orange-600 hover:underline">OCR (Reconocimiento Óptico de Caracteres)</Link> para leer el texto de las imágenes. El Escáner OCR de PDF.it se encarga de esto automáticamente.
                   </p>
                 </div>
 
@@ -320,12 +320,12 @@ export default function ConvertirPdfATextoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo convierto un PDF a TXT gratis?", a: "Sube tu PDF a la herramienta PDF a TXT de OmnisPDF, haz clic en Convertir y descarga el archivo de texto plano. No necesitas registrarte para tus primeros 3 archivos." },
+                { q: "¿Cómo convierto un PDF a TXT gratis?", a: "Sube tu PDF a la herramienta PDF a TXT de PDF.it, haz clic en Convertir y descarga el archivo de texto plano. No necesitas registrarte para tus primeros 3 archivos." },
                 { q: "¿Perderé el formato al convertir PDF a TXT?", a: "Sí — los archivos TXT contienen solo texto plano sin formato. Negritas, cursivas, tablas, imágenes y colores se eliminan. Si necesitas conservar el formato, usa PDF a Word en su lugar." },
-                { q: "¿Puedo convertir un PDF escaneado a TXT?", a: "Las herramientas estándar de PDF a TXT no pueden extraer texto de PDFs escaneados porque el texto está almacenado como imagen. Necesitas OCR (Reconocimiento Óptico de Caracteres) para convertir páginas escaneadas a texto. El Escáner OCR de OmnisPDF se encarga de esto." },
+                { q: "¿Puedo convertir un PDF escaneado a TXT?", a: "Las herramientas estándar de PDF a TXT no pueden extraer texto de PDFs escaneados porque el texto está almacenado como imagen. Necesitas OCR (Reconocimiento Óptico de Caracteres) para convertir páginas escaneadas a texto. El Escáner OCR de PDF.it se encarga de esto." },
                 { q: "¿Cuál es la diferencia entre PDF a TXT y PDF a Word?", a: "PDF a TXT extrae solo el contenido de texto sin formato — sin formato, sin imágenes, sin tablas. PDF a Word preserva el formato, diseño, tablas e imágenes en un documento editable. Usa TXT cuando solo necesites el texto; usa Word cuando necesites editar el documento completo." },
                 { q: "¿Por qué mi salida de PDF a TXT tiene texto faltante?", a: "El texto faltante generalmente significa que el PDF está escaneado (texto almacenado como imagen) o usa fuentes personalizadas/incrustadas que no se pueden decodificar. Prueba el Escáner OCR para PDFs escaneados, o PDF a Word para documentos con fuentes inusuales." },
-                { q: "¿Puedo convertir un PDF a TXT en mi teléfono?", a: "Sí. OmnisPDF funciona en cualquier navegador móvil — sube tu PDF, conviértelo a TXT y descarga el archivo de texto directamente en iPhone o Android. No necesitas instalar ninguna aplicación." },
+                { q: "¿Puedo convertir un PDF a TXT en mi teléfono?", a: "Sí. PDF.it funciona en cualquier navegador móvil — sube tu PDF, conviértelo a TXT y descarga el archivo de texto directamente en iPhone o Android. No necesitas instalar ninguna aplicación." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

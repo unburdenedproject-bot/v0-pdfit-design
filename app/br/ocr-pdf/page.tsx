@@ -6,15 +6,15 @@ import { ProcessingInterface } from "@/components/processing-interface"
 import { FileText, Zap, Shield, Download } from "lucide-react"
 
 export const metadata = {
-  title: "OCR PDF — Reconhecimento de Texto em PDF com OCR | OmnisPDF",
+  title: "OCR PDF — Reconhecimento de Texto em PDF com OCR | PDF.it",
   description:
-    "Aplique OCR em PDFs com o OmnisPDF. Extraia texto de PDFs digitalizados e imagens usando reconhecimento optico de caracteres — rapido, preciso e no navegador.",
+    "Aplique OCR em PDFs com o PDF.it. Extraia texto de PDFs digitalizados e imagens usando reconhecimento optico de caracteres — rapido, preciso e no navegador.",
   alternates: {
-    canonical: "https://omnispdf.com/br/ocr-pdf",
+    canonical: "https://pdf.it.com/br/ocr-pdf",
     languages: {
-      en: "https://omnispdf.com/ocr-pdf",
-      es: "https://omnispdf.com/es/ocr-pdf",
-      pt: "https://omnispdf.com/br/ocr-pdf",
+      en: "https://pdf.it.com/ocr-pdf",
+      es: "https://pdf.it.com/es/ocr-pdf",
+      pt: "https://pdf.it.com/br/ocr-pdf",
     },
   },
 }
@@ -52,7 +52,7 @@ const faqSchema = {
       name: "O PDF resultante mantem o layout original?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sim. O OCR do OmnisPDF adiciona uma camada de texto invisivel sobre as imagens originais. O layout visual do PDF permanece identico, mas agora o texto pode ser selecionado, copiado e pesquisado.",
+        text: "Sim. O OCR do PDF.it adiciona uma camada de texto invisivel sobre as imagens originais. O layout visual do PDF permanece identico, mas agora o texto pode ser selecionado, copiado e pesquisado.",
       },
     },
     {
@@ -60,7 +60,7 @@ const faqSchema = {
       name: "O OCR e gratuito?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "O OCR e um recurso Pro do OmnisPDF. Voce pode testar com arquivos de ate 25MB. Para processamento em lote e arquivos maiores, atualize para o plano Pro.",
+        text: "O OCR e um recurso Pro do PDF.it. Voce pode testar com arquivos de ate 25MB. Para processamento em lote e arquivos maiores, atualize para o plano Pro.",
       },
     },
   ],
@@ -114,7 +114,7 @@ export default function OCRPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              A ferramenta OCR do OmnisPDF usa reconhecimento optico de caracteres para identificar texto em imagens dentro de PDFs. O resultado e um PDF pesquisavel onde voce pode selecionar, copiar e buscar texto — mantendo o layout visual original do documento.
+              A ferramenta OCR do PDF.it usa reconhecimento optico de caracteres para identificar texto em imagens dentro de PDFs. O resultado e um PDF pesquisavel onde voce pode selecionar, copiar e buscar texto — mantendo o layout visual original do documento.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Reconheca texto em PDFs digitalizados e baseados em imagens</li>
@@ -162,7 +162,7 @@ export default function OCRPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Aplicar OCR em um PDF</h2>
             <div className="space-y-4">
               {[
-                "Suba ou arraste seu PDF para o OmnisPDF.",
+                "Suba ou arraste seu PDF para o PDF.it.",
                 "O OCR identifica automaticamente o texto nas imagens do PDF.",
                 "Baixe seu PDF pesquisavel com texto selecionavel e copiavel.",
               ].map((step, i) => (
@@ -212,8 +212,8 @@ export default function OCRPDFPage() {
                 { q: "O que e OCR em PDF?", a: "OCR (Reconhecimento Optico de Caracteres) em PDF e o processo de identificar e extrair texto de imagens dentro de um documento PDF. Isso transforma um PDF baseado em imagens em um documento com texto real, pesquisavel e copiavel." },
                 { q: "Quando preciso usar OCR em um PDF?", a: "Use OCR quando voce tem um PDF onde nao consegue selecionar ou copiar o texto. Isso geralmente acontece com documentos digitalizados (escaneados), fotos de documentos ou PDFs criados a partir de imagens." },
                 { q: "O OCR funciona com textos escritos a mao?", a: "O OCR funciona melhor com texto impresso. Textos escritos a mao podem ser parcialmente reconhecidos dependendo da legibilidade, mas os resultados variam significativamente." },
-                { q: "O PDF resultante mantem o layout original?", a: "Sim. O OCR do OmnisPDF adiciona uma camada de texto invisivel sobre as imagens originais. O layout visual do PDF permanece identico, mas agora o texto pode ser selecionado, copiado e pesquisado." },
-                { q: "O OCR e gratuito?", a: "O OCR e um recurso Pro do OmnisPDF. Voce pode testar com arquivos de ate 25MB. Para processamento em lote e arquivos maiores, atualize para o plano Pro." },
+                { q: "O PDF resultante mantem o layout original?", a: "Sim. O OCR do PDF.it adiciona uma camada de texto invisivel sobre as imagens originais. O layout visual do PDF permanece identico, mas agora o texto pode ser selecionado, copiado e pesquisado." },
+                { q: "O OCR e gratuito?", a: "O OCR e um recurso Pro do PDF.it. Voce pode testar com arquivos de ate 25MB. Para processamento em lote e arquivos maiores, atualize para o plano Pro." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

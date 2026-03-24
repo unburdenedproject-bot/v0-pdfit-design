@@ -6,15 +6,15 @@ import { RedactionInterface } from "@/components/redaction-interface"
 import { Shield, Zap, Eye, Lock, FileText, Merge, Layers } from "lucide-react"
 
 export const metadata = {
-  title: "Redigir PDF — Oculte Informações Sensíveis Permanentemente | OmnisPDF",
+  title: "Redigir PDF — Oculte Informações Sensíveis Permanentemente | PDF.it",
   description:
-    "Redija permanentemente texto sensível, dados pessoais e conteúdo confidencial de arquivos PDF. Editor visual de redação — desenhe caixas diretamente no documento. Função Business do OmnisPDF.",
+    "Redija permanentemente texto sensível, dados pessoais e conteúdo confidencial de arquivos PDF. Editor visual de redação — desenhe caixas diretamente no documento. Função Business do PDF.it.",
   alternates: {
-    canonical: "https://omnispdf.com/br/redigir-pdf",
+    canonical: "https://pdf.it.com/br/redigir-pdf",
     languages: {
-      en: "https://omnispdf.com/redact-pdf",
-      es: "https://omnispdf.com/es/redactar-pdf",
-      pt: "https://omnispdf.com/br/redigir-pdf",
+      en: "https://pdf.it.com/redact-pdf",
+      es: "https://pdf.it.com/es/redactar-pdf",
+      pt: "https://pdf.it.com/br/redigir-pdf",
     },
   },
 }
@@ -78,7 +78,7 @@ export default function RedigirPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Redigir PDF</h1>
               <p className="text-xl text-slate-300 mb-4">
-                Elimine permanentemente informações sensíveis dos seus documentos PDF com o editor visual de redação do OmnisPDF. Envie seu arquivo, desenhe caixas de redação sobre o conteúdo confidencial e aplique redações para que o texto oculto não possa ser copiado, pesquisado nem recuperado.
+                Elimine permanentemente informações sensíveis dos seus documentos PDF com o editor visual de redação do PDF.it. Envie seu arquivo, desenhe caixas de redação sobre o conteúdo confidencial e aplique redações para que o texto oculto não possa ser copiado, pesquisado nem recuperado.
               </p>
               <p className="text-lg text-slate-400 mb-8">
                 Ideal para proteger dados pessoais, documentos jurídicos, prontuários médicos, informações financeiras e outros conteúdos privados antes de compartilhar ou arquivar seus PDFs.

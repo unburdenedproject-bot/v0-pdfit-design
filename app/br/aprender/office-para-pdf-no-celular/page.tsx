@@ -5,20 +5,20 @@ import Link from "next/link"
 import { Smartphone, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Office para PDF no Celular — Android e iPhone | OmnisPDF",
+  title: "Office para PDF no Celular — Android e iPhone | PDF.it",
   description: "Converta arquivos Word, Excel e PowerPoint para PDF direto no celular. Guia completo para Android e iPhone, sem app necessario.",
   keywords: "office para pdf celular, converter office pdf android, office para pdf iphone, word para pdf celular, excel para pdf celular",
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-  { "@type": "Question", "name": "Preciso instalar algum app para converter Office para PDF no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Nao. O OmnisPDF funciona diretamente no navegador do celular (Chrome, Safari, Firefox). Basta acessar o site, enviar o arquivo e baixar o PDF." } },
-  { "@type": "Question", "name": "Funciona tanto no Android quanto no iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF e responsivo e funciona em qualquer navegador moderno, tanto em Android quanto em iPhone/iPad." } },
+  { "@type": "Question", "name": "Preciso instalar algum app para converter Office para PDF no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Nao. O PDF.it funciona diretamente no navegador do celular (Chrome, Safari, Firefox). Basta acessar o site, enviar o arquivo e baixar o PDF." } },
+  { "@type": "Question", "name": "Funciona tanto no Android quanto no iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it e responsivo e funciona em qualquer navegador moderno, tanto em Android quanto em iPhone/iPad." } },
   { "@type": "Question", "name": "Posso converter arquivos do Google Drive ou iCloud?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Ao tocar na area de upload, voce pode selecionar arquivos do Google Drive, iCloud Drive, OneDrive, Dropbox ou da memoria do celular." } },
-  { "@type": "Question", "name": "A qualidade e a mesma de converter no computador?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O processamento e feito nos servidores do OmnisPDF, nao no dispositivo. A qualidade do PDF e identica independente de onde voce acessa." } }
+  { "@type": "Question", "name": "A qualidade e a mesma de converter no computador?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O processamento e feito nos servidores do PDF.it, nao no dispositivo. A qualidade do PDF e identica independente de onde voce acessa." } }
 ] }
 
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como converter Office para PDF no celular", "description": "Converta documentos do Office para PDF no Android ou iPhone em 3 passos.", "step": [
-  { "@type": "HowToStep", "name": "Abra o OmnisPDF no navegador", "text": "No celular, abra o Chrome (Android) ou Safari (iPhone) e acesse a ferramenta Office para PDF do OmnisPDF." },
+  { "@type": "HowToStep", "name": "Abra o PDF.it no navegador", "text": "No celular, abra o Chrome (Android) ou Safari (iPhone) e acesse a ferramenta Office para PDF do PDF.it." },
   { "@type": "HowToStep", "name": "Envie o arquivo do Office", "text": "Toque na area de upload e selecione o arquivo DOCX, XLSX ou PPTX do armazenamento do celular ou da nuvem." },
   { "@type": "HowToStep", "name": "Baixe e compartilhe o PDF", "text": "Toque em Converter, baixe o PDF e compartilhe por WhatsApp, email ou qualquer app." }
 ] }
@@ -56,7 +56,7 @@ export default function OfficeParaPdfNoCelularPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-6">Passo a passo no Android</h2>
             <div className="space-y-4">
               {[
-                { title: "Abra o Chrome", desc: "No seu Android, abra o Chrome e acesse omnispdf.com/br/office-para-pdf. O site se adapta automaticamente a tela do celular." },
+                { title: "Abra o Chrome", desc: "No seu Android, abra o Chrome e acesse pdf.it.com/br/office-para-pdf. O site se adapta automaticamente a tela do celular." },
                 { title: "Envie o arquivo", desc: "Toque na area de upload. Voce pode selecionar arquivos do armazenamento interno, Google Drive, OneDrive ou Dropbox. DOCX, XLSX e PPTX sao aceitos." },
                 { title: "Converta e compartilhe", desc: "Toque em Converter, aguarde alguns segundos e baixe o PDF. Use o botao Compartilhar do Android para enviar por WhatsApp, Telegram, email ou salvar no Google Drive." },
               ].map((step, i) => (
@@ -72,7 +72,7 @@ export default function OfficeParaPdfNoCelularPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-6">Passo a passo no iPhone</h2>
             <div className="space-y-4">
               {[
-                { title: "Abra o Safari", desc: "No seu iPhone, abra o Safari e acesse omnispdf.com/br/office-para-pdf. Para uma experiencia ainda melhor, adicione o site a Tela de Inicio." },
+                { title: "Abra o Safari", desc: "No seu iPhone, abra o Safari e acesse pdf.it.com/br/office-para-pdf. Para uma experiencia ainda melhor, adicione o site a Tela de Inicio." },
                 { title: "Selecione o arquivo", desc: "Toque na area de upload e escolha o arquivo do iCloud Drive, Google Drive ou do app Arquivos. Formatos DOCX, XLSX e PPTX sao aceitos." },
                 { title: "Baixe e compartilhe", desc: "Apos a conversao, toque em Baixar. O PDF vai para a pasta Downloads do app Arquivos. Compartilhe via AirDrop, WhatsApp, email ou qualquer app." },
               ].map((step, i) => (

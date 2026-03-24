@@ -6,15 +6,15 @@ import { ProcessingInterface } from "@/components/processing-interface"
 import { FileText, Zap, Shield, Download } from "lucide-react"
 
 export const metadata = {
-  title: "Converter PDF Digitalizado — Transforme Digitalizacoes em Texto Editavel | OmnisPDF",
+  title: "Converter PDF Digitalizado — Transforme Digitalizacoes em Texto Editavel | PDF.it",
   description:
-    "Converta PDFs digitalizados em documentos editaveis com o OmnisPDF. Use OCR para extrair texto de imagens e digitalizacoes — rapido, preciso e no navegador.",
+    "Converta PDFs digitalizados em documentos editaveis com o PDF.it. Use OCR para extrair texto de imagens e digitalizacoes — rapido, preciso e no navegador.",
   alternates: {
-    canonical: "https://omnispdf.com/br/converter-pdf-digitalizado",
+    canonical: "https://pdf.it.com/br/converter-pdf-digitalizado",
     languages: {
-      en: "https://omnispdf.com/convert-scanned-pdf",
-      es: "https://omnispdf.com/es/convertir-pdf-escaneado",
-      pt: "https://omnispdf.com/br/converter-pdf-digitalizado",
+      en: "https://pdf.it.com/convert-scanned-pdf",
+      es: "https://pdf.it.com/es/convertir-pdf-escaneado",
+      pt: "https://pdf.it.com/br/converter-pdf-digitalizado",
     },
   },
 }
@@ -36,7 +36,7 @@ const faqSchema = {
       name: "O que e OCR?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "OCR (Reconhecimento Optico de Caracteres) e uma tecnologia que identifica e extrai texto de imagens. O OmnisPDF usa OCR para converter PDFs digitalizados em documentos com texto real e editavel.",
+        text: "OCR (Reconhecimento Optico de Caracteres) e uma tecnologia que identifica e extrai texto de imagens. O PDF.it usa OCR para converter PDFs digitalizados em documentos com texto real e editavel.",
       },
     },
     {
@@ -44,7 +44,7 @@ const faqSchema = {
       name: "Quais idiomas o OCR suporta?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "O OCR do OmnisPDF suporta portugues, ingles, espanhol e dezenas de outros idiomas. O reconhecimento funciona com a maioria dos alfabetos e caracteres.",
+        text: "O OCR do PDF.it suporta portugues, ingles, espanhol e dezenas de outros idiomas. O reconhecimento funciona com a maioria dos alfabetos e caracteres.",
       },
     },
     {
@@ -60,7 +60,7 @@ const faqSchema = {
       name: "E gratuito converter PDFs digitalizados?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "O OCR e um recurso Pro do OmnisPDF. Voce pode testar com arquivos de ate 25MB. Para processamento em lote e arquivos maiores, atualize para o plano Pro.",
+        text: "O OCR e um recurso Pro do PDF.it. Voce pode testar com arquivos de ate 25MB. Para processamento em lote e arquivos maiores, atualize para o plano Pro.",
       },
     },
   ],
@@ -114,7 +114,7 @@ export default function ConverterPDFDigitalizadoPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              PDFs digitalizados contem imagens de paginas, nao texto real. O OmnisPDF usa tecnologia OCR (Reconhecimento Optico de Caracteres) para identificar e extrair texto dessas imagens, criando um PDF pesquisavel e editavel. Ideal para documentos antigos, formularios escaneados e contratos digitalizados.
+              PDFs digitalizados contem imagens de paginas, nao texto real. O PDF.it usa tecnologia OCR (Reconhecimento Optico de Caracteres) para identificar e extrair texto dessas imagens, criando um PDF pesquisavel e editavel. Ideal para documentos antigos, formularios escaneados e contratos digitalizados.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Converta imagens de texto em texto real editavel</li>
@@ -162,7 +162,7 @@ export default function ConverterPDFDigitalizadoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Converter um PDF Digitalizado</h2>
             <div className="space-y-4">
               {[
-                "Suba ou arraste seu PDF digitalizado para o OmnisPDF.",
+                "Suba ou arraste seu PDF digitalizado para o PDF.it.",
                 "O OCR identifica e extrai automaticamente o texto das imagens.",
                 "Baixe seu PDF com texto pesquisavel e editavel.",
               ].map((step, i) => (
@@ -210,10 +210,10 @@ export default function ConverterPDFDigitalizadoPage() {
             <div className="space-y-6">
               {[
                 { q: "O que e um PDF digitalizado?", a: "Um PDF digitalizado e um arquivo que contem imagens de paginas em vez de texto real. Ele e criado quando voce digitaliza (escaneia) um documento fisico. O texto nas imagens nao pode ser selecionado, copiado ou editado sem OCR." },
-                { q: "O que e OCR?", a: "OCR (Reconhecimento Optico de Caracteres) e uma tecnologia que identifica e extrai texto de imagens. O OmnisPDF usa OCR para converter PDFs digitalizados em documentos com texto real e editavel." },
-                { q: "Quais idiomas o OCR suporta?", a: "O OCR do OmnisPDF suporta portugues, ingles, espanhol e dezenas de outros idiomas. O reconhecimento funciona com a maioria dos alfabetos e caracteres." },
+                { q: "O que e OCR?", a: "OCR (Reconhecimento Optico de Caracteres) e uma tecnologia que identifica e extrai texto de imagens. O PDF.it usa OCR para converter PDFs digitalizados em documentos com texto real e editavel." },
+                { q: "Quais idiomas o OCR suporta?", a: "O OCR do PDF.it suporta portugues, ingles, espanhol e dezenas de outros idiomas. O reconhecimento funciona com a maioria dos alfabetos e caracteres." },
                 { q: "A qualidade da digitalizacao afeta o resultado?", a: "Sim. Digitalizacoes com boa resolucao (300 DPI ou mais), texto nitido e bom contraste produzem melhores resultados. Documentos borrados ou com baixa resolucao podem ter erros de reconhecimento." },
-                { q: "E gratuito converter PDFs digitalizados?", a: "O OCR e um recurso Pro do OmnisPDF. Voce pode testar com arquivos de ate 25MB. Para processamento em lote e arquivos maiores, atualize para o plano Pro." },
+                { q: "E gratuito converter PDFs digitalizados?", a: "O OCR e um recurso Pro do PDF.it. Voce pode testar com arquivos de ate 25MB. Para processamento em lote e arquivos maiores, atualize para o plano Pro." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

@@ -65,7 +65,7 @@ function LoginForm() {
   return (
           <Card className="border-slate-200 shadow-sm">
             <CardHeader className="text-center">
-              <img src="/logo.svg" alt="OmnisPDF" className="mx-auto mb-2 h-8 w-auto" />
+              <img src="/logo.svg" alt="PDF.it" className="mx-auto mb-2 h-8 w-auto" />
               <CardTitle className="text-xl text-slate-800">Bienvenido de nuevo</CardTitle>
               <CardDescription className="text-slate-500">
                 Inicia sesión en tu cuenta para continuar

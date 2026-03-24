@@ -6,9 +6,9 @@ import { Lock, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Encriptar PDF — Protege tu PDF con Contraseña | OmnisPDF",
+  title: "Encriptar PDF — Protege tu PDF con Contraseña | PDF.it",
   description:
-    "Encripta tu PDF con contraseña usando OmnisPDF. Protege documentos confidenciales con encriptación segura en línea — rápido, sin registro y desde tu navegador.",
+    "Encripta tu PDF con contraseña usando PDF.it. Protege documentos confidenciales con encriptación segura en línea — rápido, sin registro y desde tu navegador.",
   alternates: {
     languages: {
       en: "/protect-pdf",
@@ -29,17 +29,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Qué tipos de contraseña existen para un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Existen dos tipos: la contraseña de apertura (impide abrir el PDF sin ella) y la contraseña de permisos (restringe acciones como imprimir, copiar o editar). OmnisPDF aplica una contraseña de apertura para máxima protección." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Existen dos tipos: la contraseña de apertura (impide abrir el PDF sin ella) y la contraseña de permisos (restringe acciones como imprimir, copiar o editar). PDF.it aplica una contraseña de apertura para máxima protección." }
     },
     {
       "@type": "Question",
       "name": "¿Qué nivel de seguridad tiene la encriptación?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF utiliza encriptación estándar de la industria para proteger tus PDFs. El archivo resultante requiere la contraseña correcta para ser abierto en cualquier visor PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it utiliza encriptación estándar de la industria para proteger tus PDFs. El archivo resultante requiere la contraseña correcta para ser abierto en cualquier visor PDF." }
     },
     {
       "@type": "Question",
       "name": "¿Puedo desencriptar el PDF después?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Usa la herramienta Desbloquear PDF de OmnisPDF para quitar la contraseña de cualquier PDF encriptado, siempre que conozcas la contraseña original." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Usa la herramienta Desbloquear PDF de PDF.it para quitar la contraseña de cualquier PDF encriptado, siempre que conozcas la contraseña original." }
     },
     {
       "@type": "Question",
@@ -49,7 +49,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo encriptar un PDF desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en navegadores móviles — sube tu PDF, establece una contraseña y descarga el archivo encriptado desde cualquier dispositivo." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube tu PDF, establece una contraseña y descarga el archivo encriptado desde cualquier dispositivo." }
     }
   ]
 }
@@ -73,7 +73,7 @@ export default function EncriptarPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Encriptar PDF</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Protege tu PDF con contraseña y encriptación usando OmnisPDF. Cifra documentos confidenciales antes de enviarlos, almacenarlos o compartirlos — rápido, seguro y desde tu navegador.
+                Protege tu PDF con contraseña y encriptación usando PDF.it. Cifra documentos confidenciales antes de enviarlos, almacenarlos o compartirlos — rápido, seguro y desde tu navegador.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Encriptación Segura</span></div>
@@ -97,7 +97,7 @@ export default function EncriptarPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Usa la herramienta Encriptar PDF de OmnisPDF para cifrar y proteger con contraseña cualquier archivo PDF en segundos. Ideal para asegurar documentos confidenciales, información financiera, contratos legales y datos personales antes de enviarlos por correo o subirlos a la nube.
+              Usa la herramienta Encriptar PDF de PDF.it para cifrar y proteger con contraseña cualquier archivo PDF en segundos. Ideal para asegurar documentos confidenciales, información financiera, contratos legales y datos personales antes de enviarlos por correo o subirlos a la nube.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Encripta archivos PDF con contraseña en línea</li>
@@ -139,7 +139,7 @@ export default function EncriptarPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Encriptar un PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube tu PDF a OmnisPDF.",
+                "Sube tu PDF a PDF.it.",
                 "Ingresa una contraseña segura y confírmala.",
                 "Haz clic en Encriptar PDF y descarga tu archivo protegido.",
               ].map((step, i) => (
@@ -194,15 +194,15 @@ export default function EncriptarPDFPage() {
                 },
                 {
                   q: "¿Qué tipos de contraseña existen para un PDF?",
-                  a: "Existen dos tipos: la contraseña de apertura (impide abrir el PDF sin ella) y la contraseña de permisos (restringe acciones como imprimir, copiar o editar). OmnisPDF aplica una contraseña de apertura para máxima protección.",
+                  a: "Existen dos tipos: la contraseña de apertura (impide abrir el PDF sin ella) y la contraseña de permisos (restringe acciones como imprimir, copiar o editar). PDF.it aplica una contraseña de apertura para máxima protección.",
                 },
                 {
                   q: "¿Qué nivel de seguridad tiene la encriptación?",
-                  a: "OmnisPDF utiliza encriptación estándar de la industria para proteger tus PDFs. El archivo resultante requiere la contraseña correcta para ser abierto en cualquier visor PDF.",
+                  a: "PDF.it utiliza encriptación estándar de la industria para proteger tus PDFs. El archivo resultante requiere la contraseña correcta para ser abierto en cualquier visor PDF.",
                 },
                 {
                   q: "¿Puedo desencriptar el PDF después?",
-                  a: "Sí. Usa la herramienta Desbloquear PDF de OmnisPDF para quitar la contraseña de cualquier PDF encriptado, siempre que conozcas la contraseña original.",
+                  a: "Sí. Usa la herramienta Desbloquear PDF de PDF.it para quitar la contraseña de cualquier PDF encriptado, siempre que conozcas la contraseña original.",
                 },
                 {
                   q: "¿Es seguro subir documentos confidenciales para encriptarlos?",
@@ -210,7 +210,7 @@ export default function EncriptarPDFPage() {
                 },
                 {
                   q: "¿Puedo encriptar un PDF desde mi celular?",
-                  a: "Sí. OmnisPDF funciona en navegadores móviles — sube tu PDF, establece una contraseña y descarga el archivo encriptado desde cualquier dispositivo.",
+                  a: "Sí. PDF.it funciona en navegadores móviles — sube tu PDF, establece una contraseña y descarga el archivo encriptado desde cualquier dispositivo.",
                 },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

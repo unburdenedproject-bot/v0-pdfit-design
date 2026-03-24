@@ -6,14 +6,14 @@ import { ProcessingInterface } from "@/components/processing-interface"
 import { FileText, Zap, Shield, Download } from "lucide-react"
 
 export const metadata = {
-  title: "PDF a Google Docs — Convierte PDF para Editar en Google Docs | OmnisPDF",
+  title: "PDF a Google Docs — Convierte PDF para Editar en Google Docs | PDF.it",
   description:
-    "Convierte PDF a Google Docs con OmnisPDF. Transforma tu PDF en un archivo DOCX que puedes subir a Google Drive y editar en Google Docs — rapido y seguro.",
+    "Convierte PDF a Google Docs con PDF.it. Transforma tu PDF en un archivo DOCX que puedes subir a Google Drive y editar en Google Docs — rapido y seguro.",
   alternates: {
-    canonical: "https://omnispdf.com/es/pdf-a-google-docs",
+    canonical: "https://pdf.it.com/es/pdf-a-google-docs",
     languages: {
-      en: "https://omnispdf.com/pdf-to-google-docs",
-      es: "https://omnispdf.com/es/pdf-a-google-docs",
+      en: "https://pdf.it.com/pdf-to-google-docs",
+      es: "https://pdf.it.com/es/pdf-a-google-docs",
     },
   },
 }
@@ -27,7 +27,7 @@ const faqSchema = {
       name: "¿Como abro un PDF en Google Docs?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Convierte tu PDF a DOCX con OmnisPDF, luego sube el archivo .docx a Google Drive. Haz clic derecho en el archivo y selecciona 'Abrir con Google Docs' para editarlo directamente.",
+        text: "Convierte tu PDF a DOCX con PDF.it, luego sube el archivo .docx a Google Drive. Haz clic derecho en el archivo y selecciona 'Abrir con Google Docs' para editarlo directamente.",
       },
     },
     {
@@ -35,7 +35,7 @@ const faqSchema = {
       name: "¿Se mantiene el formato al abrir en Google Docs?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "OmnisPDF preserva el diseno, fuentes y estructura lo mejor posible en el archivo DOCX. Google Docs mantiene la mayoria del formato, aunque elementos complejos como tablas avanzadas pueden variar ligeramente.",
+        text: "PDF.it preserva el diseno, fuentes y estructura lo mejor posible en el archivo DOCX. Google Docs mantiene la mayoria del formato, aunque elementos complejos como tablas avanzadas pueden variar ligeramente.",
       },
     },
     {
@@ -59,7 +59,7 @@ const faqSchema = {
       name: "¿Funciona con PDFs escaneados?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Los PDFs escaneados requieren OCR para extraer el texto primero. Usa la herramienta de Escaner OCR de OmnisPDF antes de convertir a DOCX para Google Docs.",
+        text: "Los PDFs escaneados requieren OCR para extraer el texto primero. Usa la herramienta de Escaner OCR de PDF.it antes de convertir a DOCX para Google Docs.",
       },
     },
   ],
@@ -118,7 +118,7 @@ export default function PDFaGoogleDocsPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Usa OmnisPDF para convertir tu PDF en un archivo DOCX compatible con Google Docs. Simplemente convierte, descarga el .docx y subelo a Google Drive para editarlo con tu equipo. Google Docs abre archivos DOCX de forma nativa, manteniendo el formato y estructura del documento original.
+              Usa PDF.it para convertir tu PDF en un archivo DOCX compatible con Google Docs. Simplemente convierte, descarga el .docx y subelo a Google Drive para editarlo con tu equipo. Google Docs abre archivos DOCX de forma nativa, manteniendo el formato y estructura del documento original.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Convierte PDF a DOCX compatible con Google Docs</li>
@@ -166,7 +166,7 @@ export default function PDFaGoogleDocsPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Convertir PDF para Google Docs</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Haz clic en Convertir para obtener un archivo DOCX.",
                 "Descarga el .docx y subelo a Google Drive.",
                 "Haz clic derecho en el archivo y selecciona 'Abrir con Google Docs'.",
@@ -216,11 +216,11 @@ export default function PDFaGoogleDocsPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Como abro un PDF en Google Docs?", a: "Convierte tu PDF a DOCX con OmnisPDF, luego sube el archivo .docx a Google Drive. Haz clic derecho en el archivo y selecciona 'Abrir con Google Docs' para editarlo directamente." },
-                { q: "¿Se mantiene el formato al abrir en Google Docs?", a: "OmnisPDF preserva el diseno, fuentes y estructura lo mejor posible en el archivo DOCX. Google Docs mantiene la mayoria del formato, aunque elementos complejos como tablas avanzadas pueden variar ligeramente." },
+                { q: "¿Como abro un PDF en Google Docs?", a: "Convierte tu PDF a DOCX con PDF.it, luego sube el archivo .docx a Google Drive. Haz clic derecho en el archivo y selecciona 'Abrir con Google Docs' para editarlo directamente." },
+                { q: "¿Se mantiene el formato al abrir en Google Docs?", a: "PDF.it preserva el diseno, fuentes y estructura lo mejor posible en el archivo DOCX. Google Docs mantiene la mayoria del formato, aunque elementos complejos como tablas avanzadas pueden variar ligeramente." },
                 { q: "¿Puedo colaborar en el documento con mi equipo?", a: "Si. Una vez que el archivo esta en Google Docs, puedes compartirlo con tu equipo y editar en tiempo real, agregar comentarios y sugerencias como cualquier otro documento de Google." },
                 { q: "¿Es seguro subir mi PDF?", a: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." },
-                { q: "¿Funciona con PDFs escaneados?", a: "Los PDFs escaneados requieren OCR para extraer el texto primero. Usa la herramienta de Escaner OCR de OmnisPDF antes de convertir a DOCX para Google Docs." },
+                { q: "¿Funciona con PDFs escaneados?", a: "Los PDFs escaneados requieren OCR para extraer el texto primero. Usa la herramienta de Escaner OCR de PDF.it antes de convertir a DOCX para Google Docs." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

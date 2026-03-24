@@ -5,8 +5,8 @@ import { Footer } from "@/components/footer"
 import { FileText, Zap, Shield, Upload, ArrowRight, FileSpreadsheet, Image, Lock, Scissors, Merge, RotateCw, ScanLine } from "lucide-react"
 
 export const metadata = {
-  title: "PDF to Google Docs — Open PDFs in Google Docs | OmnisPDF",
-  description: "Learn how to convert a PDF to Google Docs format. Convert PDF to Word with OmnisPDF, upload to Google Drive, and open in Google Docs for easy editing and collaboration.",
+  title: "PDF to Google Docs — Open PDFs in Google Docs | PDF.it",
+  description: "Learn how to convert a PDF to Google Docs format. Convert PDF to Word with PDF.it, upload to Google Drive, and open in Google Docs for easy editing and collaboration.",
 }
 
 const faqSchema = {
@@ -16,22 +16,22 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I open a PDF directly in Google Docs?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Google Drive can open PDFs, but the formatting is often broken. For best results, convert the PDF to a Word DOCX file first using OmnisPDF, then upload the DOCX to Google Drive and open it with Google Docs. This preserves formatting, tables, and images much better." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Google Drive can open PDFs, but the formatting is often broken. For best results, convert the PDF to a Word DOCX file first using PDF.it, then upload the DOCX to Google Drive and open it with Google Docs. This preserves formatting, tables, and images much better." }
     },
     {
       "@type": "Question",
       "name": "Why should I convert to DOCX before uploading to Google Docs?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Google Docs handles DOCX files much better than PDFs. When you open a PDF in Google Docs directly, it often loses layout, fonts, and table structure. Converting to DOCX first with OmnisPDF preserves the formatting so Google Docs can render it properly." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Google Docs handles DOCX files much better than PDFs. When you open a PDF in Google Docs directly, it often loses layout, fonts, and table structure. Converting to DOCX first with PDF.it preserves the formatting so Google Docs can render it properly." }
     },
     {
       "@type": "Question",
       "name": "Is this method free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PDF to Word conversion on OmnisPDF is available to Pro and Business subscribers. Once you have the DOCX file, uploading to Google Drive and opening in Google Docs is completely free with any Google account." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF to Word conversion on PDF.it is available to Pro and Business subscribers. Once you have the DOCX file, uploading to Google Drive and opening in Google Docs is completely free with any Google account." }
     },
     {
       "@type": "Question",
       "name": "Will the formatting be preserved in Google Docs?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Converting PDF to DOCX with OmnisPDF preserves most formatting including fonts, tables, images, and layout. Google Docs may make minor adjustments when opening the DOCX, but the result is far better than opening the PDF directly." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Converting PDF to DOCX with PDF.it preserves most formatting including fonts, tables, images, and layout. Google Docs may make minor adjustments when opening the DOCX, but the result is far better than opening the PDF directly." }
     },
     {
       "@type": "Question",
@@ -41,7 +41,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I do this on a Chromebook?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in any browser, including Chrome on Chromebooks. Convert your PDF to DOCX, download it, upload to Google Drive, and open in Google Docs — all without installing any software." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in any browser, including Chrome on Chromebooks. Convert your PDF to DOCX, download it, upload to Google Drive, and open in Google Docs — all without installing any software." }
     }
   ]
 }
@@ -65,7 +65,7 @@ export default function PDFToGoogleDocsPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convert PDF to Google Docs</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Open any PDF in Google Docs with perfect formatting. Convert to Word first with OmnisPDF, then upload to Google Drive for easy editing and collaboration.
+                Open any PDF in Google Docs with perfect formatting. Convert to Word first with PDF.it, then upload to Google Drive for easy editing and collaboration.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2">
@@ -95,10 +95,10 @@ export default function PDFToGoogleDocsPage() {
                   <div className="w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-lg flex-shrink-0">
                     1
                   </div>
-                  <h3 className="text-xl font-black text-slate-900">Convert PDF to Word with OmnisPDF</h3>
+                  <h3 className="text-xl font-black text-slate-900">Convert PDF to Word with PDF.it</h3>
                 </div>
                 <p className="text-slate-600 mb-6">
-                  Upload your PDF to OmnisPDF and convert it to a Word DOCX file. This step preserves your formatting, tables, and images so Google Docs can read them properly.
+                  Upload your PDF to PDF.it and convert it to a Word DOCX file. This step preserves your formatting, tables, and images so Google Docs can read them properly.
                 </p>
                 <Link
                   href="/pdf-to-word"
@@ -116,7 +116,7 @@ export default function PDFToGoogleDocsPage() {
                   <h3 className="text-xl font-black text-slate-900">Upload DOCX to Google Drive</h3>
                 </div>
                 <p className="text-slate-600">
-                  Go to <strong>drive.google.com</strong> and click <strong>New &gt; File upload</strong>. Select the DOCX file you just downloaded from OmnisPDF. Wait for the upload to complete.
+                  Go to <strong>drive.google.com</strong> and click <strong>New &gt; File upload</strong>. Select the DOCX file you just downloaded from PDF.it. Wait for the upload to complete.
                 </p>
               </div>
 
@@ -151,7 +151,7 @@ export default function PDFToGoogleDocsPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Why Not Open PDFs Directly in Google Docs?</h2>
             <p className="text-lg text-slate-600 mb-8">
-              Google Drive can technically open PDFs, but the results are often disappointing. Tables break apart, fonts change, images shift, and the layout rarely matches the original. By converting to DOCX first with OmnisPDF, you get a clean, editable document that Google Docs can render properly — with formatting, tables, and images intact.
+              Google Drive can technically open PDFs, but the results are often disappointing. Tables break apart, fonts change, images shift, and the layout rarely matches the original. By converting to DOCX first with PDF.it, you get a clean, editable document that Google Docs can render properly — with formatting, tables, and images intact.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Much better formatting than opening PDF directly in Google Docs</li>
@@ -183,7 +183,7 @@ export default function PDFToGoogleDocsPage() {
               <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
                 <h3 className="text-xl font-black text-slate-900 mb-3">Editing on a Chromebook</h3>
                 <p className="text-slate-600">
-                  Chromebooks run Google Docs natively but cannot install Microsoft Word. Convert your PDF to DOCX with OmnisPDF, then open in Google Docs for full editing capability on ChromeOS.
+                  Chromebooks run Google Docs natively but cannot install Microsoft Word. Convert your PDF to DOCX with PDF.it, then open in Google Docs for full editing capability on ChromeOS.
                 </p>
               </div>
               <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
@@ -235,12 +235,12 @@ export default function PDFToGoogleDocsPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "Can I open a PDF directly in Google Docs?", a: "Google Drive can open PDFs, but the formatting is often broken. For best results, convert the PDF to a Word DOCX file first using OmnisPDF, then upload the DOCX to Google Drive and open it with Google Docs. This preserves formatting, tables, and images much better." },
-                { q: "Why should I convert to DOCX before uploading to Google Docs?", a: "Google Docs handles DOCX files much better than PDFs. When you open a PDF in Google Docs directly, it often loses layout, fonts, and table structure. Converting to DOCX first with OmnisPDF preserves the formatting so Google Docs can render it properly." },
-                { q: "Is this method free?", a: "PDF to Word conversion on OmnisPDF is available to Pro and Business subscribers. Once you have the DOCX file, uploading to Google Drive and opening in Google Docs is completely free with any Google account." },
-                { q: "Will the formatting be preserved in Google Docs?", a: "Converting PDF to DOCX with OmnisPDF preserves most formatting including fonts, tables, images, and layout. Google Docs may make minor adjustments when opening the DOCX, but the result is far better than opening the PDF directly." },
+                { q: "Can I open a PDF directly in Google Docs?", a: "Google Drive can open PDFs, but the formatting is often broken. For best results, convert the PDF to a Word DOCX file first using PDF.it, then upload the DOCX to Google Drive and open it with Google Docs. This preserves formatting, tables, and images much better." },
+                { q: "Why should I convert to DOCX before uploading to Google Docs?", a: "Google Docs handles DOCX files much better than PDFs. When you open a PDF in Google Docs directly, it often loses layout, fonts, and table structure. Converting to DOCX first with PDF.it preserves the formatting so Google Docs can render it properly." },
+                { q: "Is this method free?", a: "PDF to Word conversion on PDF.it is available to Pro and Business subscribers. Once you have the DOCX file, uploading to Google Drive and opening in Google Docs is completely free with any Google account." },
+                { q: "Will the formatting be preserved in Google Docs?", a: "Converting PDF to DOCX with PDF.it preserves most formatting including fonts, tables, images, and layout. Google Docs may make minor adjustments when opening the DOCX, but the result is far better than opening the PDF directly." },
                 { q: "Can I collaborate on the document after converting?", a: "Yes. Once the DOCX is opened in Google Docs, you can share it with others, use real-time collaboration, add comments, suggest edits, and track changes — just like any other Google Docs document." },
-                { q: "Can I do this on a Chromebook?", a: "Yes. OmnisPDF works in any browser, including Chrome on Chromebooks. Convert your PDF to DOCX, download it, upload to Google Drive, and open in Google Docs — all without installing any software." },
+                { q: "Can I do this on a Chromebook?", a: "Yes. PDF.it works in any browser, including Chrome on Chromebooks. Convert your PDF to DOCX, download it, upload to Google Drive, and open in Google Docs — all without installing any software." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

@@ -9,7 +9,7 @@ export function FooterEs() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="mb-4">
-              <img src="/logo-white.svg" alt="OmnisPDF" className="h-8 w-auto" width="180" height="32" loading="lazy" />
+              <img src="/logo-white.svg" alt="PDF.it" className="h-8 w-auto" width="180" height="32" loading="lazy" />
             </div>
             <p className="text-slate-400 mb-6 leading-relaxed">
               Convierte, comprime, une, divide, escanea y protege archivos PDF en segundos. Herramientas simples que funcionan en cualquier dispositivo.
@@ -103,11 +103,11 @@ export function FooterEs() {
             <h3 className="font-bold text-white mb-4">Contáctanos</h3>
             <div className="space-y-3">
               <a
-                href="mailto:contact@omnispdf.com"
+                href="mailto:contact@pdf.it.com"
                 className="flex items-center gap-2 text-slate-400 hover:text-orange-500 transition-colors text-sm group"
               >
                 <Mail className="h-4 w-4 group-hover:scale-110 transition-transform" />
-                <span>contact@omnispdf.com</span>
+                <span>contact@pdf.it.com</span>
               </a>
               <p className="text-slate-400 text-xs">Respondemos en menos de 24 horas</p>
             </div>
@@ -115,7 +115,7 @@ export function FooterEs() {
         </div>
 
         <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-slate-400 text-sm">© {new Date().getFullYear()} OmnisPDF. Todos los derechos reservados.</p>
+          <p className="text-slate-400 text-sm">© {new Date().getFullYear()} PDF.it. Todos los derechos reservados.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/es/politica-de-privacidad" className="text-slate-400 hover:text-white text-sm transition-colors">
               Privacidad

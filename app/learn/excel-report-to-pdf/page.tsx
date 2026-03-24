@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileSpreadsheet, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Export Monthly Reports: Excel to PDF for Email + Sharing | OmnisPDF",
+  title: "Export Monthly Reports: Excel to PDF for Email + Sharing | PDF.it",
   description:
     "Learn how to convert Excel reports to PDF for email and sharing. Covers setting print areas once, compressing for email, adding headers and footers, and creating professional presentations.",
   keywords: "export excel to pdf for email, excel report to pdf, monthly report pdf, excel to pdf email attachment, share excel as pdf",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I convert an Excel report to PDF for email?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Set your print area in Excel to include only the report data, adjust the page layout, then upload to OmnisPDF's Excel to PDF tool. After conversion, use Compress PDF to get the file under email attachment limits (usually 20-25MB)." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Set your print area in Excel to include only the report data, adjust the page layout, then upload to PDF.it's Excel to PDF tool. After conversion, use Compress PDF to get the file under email attachment limits (usually 20-25MB)." }
     },
     {
       "@type": "Question",
@@ -33,17 +33,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I compress my Excel-to-PDF report for email?",
-      "acceptedAnswer": { "@type": "Answer", "text": "After converting to PDF, upload the file to OmnisPDF's Compress PDF tool. Choose Medium compression for a good balance of quality and size. For strict limits, use Compress PDF for Email which optimizes specifically for email attachments." }
+      "acceptedAnswer": { "@type": "Answer", "text": "After converting to PDF, upload the file to PDF.it's Compress PDF tool. Choose Medium compression for a good balance of quality and size. For strict limits, use Compress PDF for Email which optimizes specifically for email attachments." }
     },
     {
       "@type": "Question",
       "name": "Should I password-protect my Excel report PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "If the report contains sensitive financial data, yes. Use OmnisPDF's Protect PDF tool to add a password after converting. This prevents unauthorized access if the email is forwarded or the file is shared accidentally." }
+      "acceptedAnswer": { "@type": "Answer", "text": "If the report contains sensitive financial data, yes. Use PDF.it's Protect PDF tool to add a password after converting. This prevents unauthorized access if the email is forwarded or the file is shared accidentally." }
     },
     {
       "@type": "Question",
       "name": "Can I merge multiple Excel reports into one PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Convert each Excel report to PDF separately, then use OmnisPDF's Merge PDF tool to combine them into a single document. This is great for quarterly packages that include multiple monthly reports." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Convert each Excel report to PDF separately, then use PDF.it's Merge PDF tool to combine them into a single document. This is great for quarterly packages that include multiple monthly reports." }
     }
   ]
 }
@@ -62,12 +62,12 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Convert to PDF",
-      "text": "Upload your prepared Excel file to OmnisPDF's Excel to PDF tool and click Convert. The PDF preserves your formatting, headers, footers, and page layout settings."
+      "text": "Upload your prepared Excel file to PDF.it's Excel to PDF tool and click Convert. The PDF preserves your formatting, headers, footers, and page layout settings."
     },
     {
       "@type": "HowToStep",
       "name": "Compress and send",
-      "text": "If the PDF is too large for email, use OmnisPDF's Compress PDF tool to reduce the file size. Then attach to your email and send."
+      "text": "If the PDF is too large for email, use PDF.it's Compress PDF tool to reduce the file size. Then attach to your email and send."
     }
   ]
 }
@@ -139,7 +139,7 @@ export default function ExcelReportToPDFPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>Convert to PDF.</strong> Upload to <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">OmnisPDF's Excel to PDF tool</Link>. The converter respects your saved print settings.</span>
+                  <span><strong>Convert to PDF.</strong> Upload to <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">PDF.it's Excel to PDF tool</Link>. The converter respects your saved print settings.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 font-bold mt-0.5">4.</span>
@@ -297,12 +297,12 @@ export default function ExcelReportToPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I convert an Excel report to PDF for email?", a: "Set your print area in Excel to include only the report data, adjust the page layout, then upload to OmnisPDF's Excel to PDF tool. After conversion, use Compress PDF to get the file under email attachment limits (usually 20-25MB)." },
+                { q: "How do I convert an Excel report to PDF for email?", a: "Set your print area in Excel to include only the report data, adjust the page layout, then upload to PDF.it's Excel to PDF tool. After conversion, use Compress PDF to get the file under email attachment limits (usually 20-25MB)." },
                 { q: "How do I set up my Excel report so I can convert it every month without re-doing settings?", a: "Set your print area, page orientation, margins, and scaling once in your Excel template. Save the file. Each month, update the data and convert — all your print settings are preserved in the saved file." },
                 { q: "Can I add headers and footers to my Excel report before converting to PDF?", a: "Yes. Go to Insert → Header & Footer in Excel. Add your company name, report title, date, or page numbers. These appear on every page of the converted PDF." },
-                { q: "How do I compress my Excel-to-PDF report for email?", a: "After converting to PDF, upload the file to OmnisPDF's Compress PDF tool. Choose Medium compression for a good balance of quality and size. For strict limits, use Compress PDF for Email which optimizes specifically for email attachments." },
-                { q: "Should I password-protect my Excel report PDF?", a: "If the report contains sensitive financial data, yes. Use OmnisPDF's Protect PDF tool to add a password after converting. This prevents unauthorized access if the email is forwarded or the file is shared accidentally." },
-                { q: "Can I merge multiple Excel reports into one PDF?", a: "Yes. Convert each Excel report to PDF separately, then use OmnisPDF's Merge PDF tool to combine them into a single document. This is great for quarterly packages that include multiple monthly reports." },
+                { q: "How do I compress my Excel-to-PDF report for email?", a: "After converting to PDF, upload the file to PDF.it's Compress PDF tool. Choose Medium compression for a good balance of quality and size. For strict limits, use Compress PDF for Email which optimizes specifically for email attachments." },
+                { q: "Should I password-protect my Excel report PDF?", a: "If the report contains sensitive financial data, yes. Use PDF.it's Protect PDF tool to add a password after converting. This prevents unauthorized access if the email is forwarded or the file is shared accidentally." },
+                { q: "Can I merge multiple Excel reports into one PDF?", a: "Yes. Convert each Excel report to PDF separately, then use PDF.it's Merge PDF tool to combine them into a single document. This is great for quarterly packages that include multiple monthly reports." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

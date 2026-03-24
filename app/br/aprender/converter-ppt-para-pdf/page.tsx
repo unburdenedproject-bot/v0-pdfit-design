@@ -5,23 +5,23 @@ import Link from "next/link"
 import { Presentation, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Converter PowerPoint para PDF Online (PPTX para PDF) | OmnisPDF",
+  title: "Converter PowerPoint para PDF Online (PPTX para PDF) | PDF.it",
   description: "Aprenda como converter PowerPoint para PDF online em segundos. Guia passo a passo sobre qualidade de slides, paginas de notas e por que PDF e o melhor formato para compartilhar apresentacoes.",
   keywords: "converter powerpoint para pdf online, pptx para pdf, powerpoint para pdf, conversor ppt para pdf, converter ppt para pdf gratis",
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-  { "@type": "Question", "name": "Como converto PowerPoint para PDF de graca?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu arquivo PPTX ou PPT para a ferramenta PowerPoint para PDF do OmnisPDF, clique em Converter e baixe o PDF. Nao e necessario cadastro para seus primeiros 3 arquivos. A conversao preserva o layout dos slides, fontes e imagens." } },
+  { "@type": "Question", "name": "Como converto PowerPoint para PDF de graca?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu arquivo PPTX ou PPT para a ferramenta PowerPoint para PDF do PDF.it, clique em Converter e baixe o PDF. Nao e necessario cadastro para seus primeiros 3 arquivos. A conversao preserva o layout dos slides, fontes e imagens." } },
   { "@type": "Question", "name": "Converter PowerPoint para PDF mantem a formatacao?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Converter para PDF preserva seu texto, imagens, formas, graficos e layout exatamente como aparecem no PowerPoint. Os unicos elementos que nao sao transferidos sao animacoes e transicoes, ja que PDF e um formato estatico." } },
-  { "@type": "Question", "name": "Posso converter PPTX para PDF sem ter o PowerPoint instalado?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF e uma ferramenta online que funciona em qualquer navegador. Voce nao precisa do PowerPoint, Microsoft Office nem nenhum software instalado. Basta enviar seu arquivo e converter." } },
+  { "@type": "Question", "name": "Posso converter PPTX para PDF sem ter o PowerPoint instalado?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it e uma ferramenta online que funciona em qualquer navegador. Voce nao precisa do PowerPoint, Microsoft Office nem nenhum software instalado. Basta enviar seu arquivo e converter." } },
   { "@type": "Question", "name": "Como incluo as notas do apresentador no PDF?", "acceptedAnswer": { "@type": "Answer", "text": "No PowerPoint, va em Arquivo > Exportar > Criar PDF e escolha 'Paginas de notas' como layout. Isso imprime cada slide com suas notas abaixo. Se estiver convertendo online, exporte como Paginas de notas no PowerPoint primeiro, depois converta o arquivo resultante." } },
   { "@type": "Question", "name": "Minhas fontes do PowerPoint ficarao iguais no PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Se voce usar fontes padrao (Arial, Calibri, Times New Roman), sim. Fontes personalizadas ou incomuns podem ser substituidas se nao estiverem incorporadas. Para evitar isso, incorpore as fontes no PowerPoint antes de converter: va em Arquivo > Opcoes > Salvar > marque 'Incorporar fontes no arquivo'." } },
-  { "@type": "Question", "name": "Posso converter o PDF de volta para PowerPoint depois?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF oferece uma ferramenta PDF para PowerPoint que converte seu PDF de volta para um arquivo PPTX editavel. Tenha em mente que layouts complexos podem precisar de ajustes menores apos a conversao." } }
+  { "@type": "Question", "name": "Posso converter o PDF de volta para PowerPoint depois?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it oferece uma ferramenta PDF para PowerPoint que converte seu PDF de volta para um arquivo PPTX editavel. Tenha em mente que layouts complexos podem precisar de ajustes menores apos a conversao." } }
 ] }
 
-const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como converter PowerPoint para PDF online", "description": "Converta sua apresentacao PPTX ou PPT para PDF em 3 passos simples usando o OmnisPDF.", "step": [
-  { "@type": "HowToStep", "name": "Envie seu arquivo PowerPoint", "text": "Va ate a ferramenta PowerPoint para PDF do OmnisPDF e envie seu arquivo PPTX ou PPT clicando ou arrastando para a area de upload." },
-  { "@type": "HowToStep", "name": "Converta para PDF", "text": "Clique em Converter. O OmnisPDF processa sua apresentacao e cria um PDF que preserva seus slides, fontes e imagens." },
+const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como converter PowerPoint para PDF online", "description": "Converta sua apresentacao PPTX ou PPT para PDF em 3 passos simples usando o PDF.it.", "step": [
+  { "@type": "HowToStep", "name": "Envie seu arquivo PowerPoint", "text": "Va ate a ferramenta PowerPoint para PDF do PDF.it e envie seu arquivo PPTX ou PPT clicando ou arrastando para a area de upload." },
+  { "@type": "HowToStep", "name": "Converta para PDF", "text": "Clique em Converter. O PDF.it processa sua apresentacao e cria um PDF que preserva seus slides, fontes e imagens." },
   { "@type": "HowToStep", "name": "Baixe seu PDF", "text": "Baixe o arquivo PDF convertido. Ele esta pronto para compartilhar por email, enviar para portais ou imprimir — e ficara igual em qualquer dispositivo." }
 ] }
 
@@ -60,7 +60,7 @@ export default function ConverterPptParaPdfPage() {
             <div className="space-y-4">
               {[
                 { title: "Envie seu arquivo PowerPoint", desc: "Va ate a ferramenta PowerPoint para PDF e arraste seu arquivo PPTX ou PPT para a area de upload, ou clique para procurar. Arquivos ate 25MB sao gratis — usuarios Pro podem enviar ate 200MB." },
-                { title: "Clique em Converter", desc: "O OmnisPDF converte sua apresentacao em um PDF de alta qualidade. Cada slide se torna uma pagina. Texto, imagens, formas e graficos sao preservados exatamente como aparecem no PowerPoint." },
+                { title: "Clique em Converter", desc: "O PDF.it converte sua apresentacao em um PDF de alta qualidade. Cada slide se torna uma pagina. Texto, imagens, formas e graficos sao preservados exatamente como aparecem no PowerPoint." },
                 { title: "Baixe seu PDF", desc: "Baixe o PDF finalizado e compartilhe com confianca. O arquivo fica identico em cada dispositivo e plataforma — nao e necessario PowerPoint para visualizar." },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -113,12 +113,12 @@ export default function ConverterPptParaPdfPage() {
               <li>&#10003; Isso cria um PDF onde cada pagina mostra o slide acima e as notas do apresentador abaixo.</li>
               <li>&#10003; Alternativamente, imprima como PDF usando o layout "Paginas de notas" em Arquivo &gt; Imprimir.</li>
             </ul>
-            <p className="text-slate-600 mt-4">Se voce ja tem um arquivo PPTX e nao consegue acessar o PowerPoint, envie-o para o <Link href="/br/powerpoint-para-pdf" className="text-orange-600 hover:underline">conversor do OmnisPDF</Link> para uma conversao rapida apenas dos slides.</p>
+            <p className="text-slate-600 mt-4">Se voce ja tem um arquivo PPTX e nao consegue acessar o PowerPoint, envie-o para o <Link href="/br/powerpoint-para-pdf" className="text-orange-600 hover:underline">conversor do PDF.it</Link> para uma conversao rapida apenas dos slides.</p>
           </section>
 
           <section className="mb-12">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Convertendo outros arquivos do Office para PDF</h2>
-            <p className="text-slate-600 mb-4">PowerPoint nao e o unico tipo de arquivo que voce pode converter. O OmnisPDF tambem trabalha com:</p>
+            <p className="text-slate-600 mb-4">PowerPoint nao e o unico tipo de arquivo que voce pode converter. O PDF.it tambem trabalha com:</p>
             <ul className="space-y-2 text-slate-700">
               <li>&#10003; <Link href="/br/word-para-pdf" className="text-orange-600 hover:underline">Word para PDF</Link> — Converta arquivos DOCX e DOC para PDF.</li>
               <li>&#10003; <Link href="/br/excel-para-pdf" className="text-orange-600 hover:underline">Excel para PDF</Link> — Converta planilhas preservando layouts de tabelas.</li>

@@ -5,9 +5,9 @@ import Link from "next/link"
 import { Stamp, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Add Your Logo as a Watermark on a PDF | OmnisPDF",
+  title: "Add Your Logo as a Watermark on a PDF | PDF.it",
   description:
-    "Learn how to add your company logo as an image watermark on a PDF. Brand proposals, invoices, and reports with a professional logo watermark using OmnisPDF.",
+    "Learn how to add your company logo as an image watermark on a PDF. Brand proposals, invoices, and reports with a professional logo watermark using PDF.it.",
   keywords: "logo watermark pdf, add logo to pdf, brand pdf with logo, image watermark pdf",
 }
 
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I add my logo as a watermark on a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF's Watermark PDF tool, select Image Watermark, upload your logo file (PNG or JPG), adjust the size and opacity, then click Apply. Your logo will appear on every page." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it's Watermark PDF tool, select Image Watermark, upload your logo file (PNG or JPG), adjust the size and opacity, then click Apply. Your logo will appear on every page." }
     },
     {
       "@type": "Question",
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Will adding a logo watermark increase my file size?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Slightly. The logo image is embedded on each page, which adds some file size. If the result is too large, use OmnisPDF's Compress PDF tool after watermarking to reduce the file size." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Slightly. The logo image is embedded on each page, which adds some file size. If the result is too large, use PDF.it's Compress PDF tool after watermarking to reduce the file size." }
     },
     {
       "@type": "Question",
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Add a Logo Watermark to a PDF",
-  "description": "Brand any PDF with your company logo in 3 simple steps using OmnisPDF.",
+  "description": "Brand any PDF with your company logo in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Upload your PDF",
-      "text": "Go to OmnisPDF's Watermark PDF tool and upload the document you want to brand with your logo."
+      "text": "Go to PDF.it's Watermark PDF tool and upload the document you want to brand with your logo."
     },
     {
       "@type": "HowToStep",
@@ -285,11 +285,11 @@ export default function WatermarkPDFWithLogoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I add my logo as a watermark on a PDF?", a: "Upload your PDF to OmnisPDF's Watermark PDF tool, select Image Watermark, upload your logo file (PNG or JPG), adjust the size and opacity, then click Apply. Your logo will appear on every page." },
+                { q: "How do I add my logo as a watermark on a PDF?", a: "Upload your PDF to PDF.it's Watermark PDF tool, select Image Watermark, upload your logo file (PNG or JPG), adjust the size and opacity, then click Apply. Your logo will appear on every page." },
                 { q: "What image format should my logo be in?", a: "PNG with a transparent background works best. This ensures only your logo shows up on the page without a white rectangle around it. JPG logos will work but may have a visible background." },
                 { q: "What size and opacity work best for a logo watermark?", a: "For a subtle background watermark, use 10-20% opacity and scale the logo to about 30-50% of the page width. For a more visible stamp, increase opacity to 25-35%. Place it in the center for background branding or in a corner for a subtle mark." },
                 { q: "Can I watermark multiple PDFs with my logo at once?", a: "Yes. Pro and Business users can use batch processing to apply the same logo watermark to multiple PDFs simultaneously. Upload all your files, configure the watermark once, and apply to all." },
-                { q: "Will adding a logo watermark increase my file size?", a: "Slightly. The logo image is embedded on each page, which adds some file size. If the result is too large, use OmnisPDF's Compress PDF tool after watermarking to reduce the file size." },
+                { q: "Will adding a logo watermark increase my file size?", a: "Slightly. The logo image is embedded on each page, which adds some file size. If the result is too large, use PDF.it's Compress PDF tool after watermarking to reduce the file size." },
                 { q: "Is the Watermark PDF tool free?", a: "Watermark PDF is available to Pro ($7.99/month) and Business ($13.99/month) users. Both tiers include unlimited watermarking, batch processing, and files up to 200MB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

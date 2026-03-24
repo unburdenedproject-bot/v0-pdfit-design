@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 
 const faqData = [
   {
-    question: "Is OmnisPDF free to use?",
+    question: "Is PDF.it free to use?",
     answer:
       "Yes! Core tools like PDF compression, merging, splitting, rotating, and image conversion are completely free with up to 10 conversions per day. Advanced tools like OCR, PDF to Word, and batch processing are available with Pro ($7.99/month).",
   },
@@ -16,7 +16,7 @@ const faqData = [
       "You can try 3 conversions without an account. After that, a free account is required — signing up takes 30 seconds. Free users get 10 conversions per day. Upgrade to Pro for unlimited conversions.",
   },
   {
-    question: "Is it safe to upload my files to OmnisPDF?",
+    question: "Is it safe to upload my files to PDF.it?",
     answer:
       "Yes. Your files are processed securely and deleted after your session. We never store your documents permanently. All transfers are encrypted.",
   },
@@ -45,8 +45,8 @@ const faqData = [
       "Yes. Table Extraction uses AI to detect tables in your PDFs and export them as formatted Excel spreadsheets. Available on Business (200 pages/month) and Enterprise (2,000 pages/month) plans.",
   },
   {
-    question: "Can I use OmnisPDF on my phone or tablet?",
-    answer: "Absolutely. OmnisPDF is fully mobile-friendly and works on any modern device — no app download needed.",
+    question: "Can I use PDF.it on my phone or tablet?",
+    answer: "Absolutely. PDF.it is fully mobile-friendly and works on any modern device — no app download needed.",
   },
   {
     question: "What's the difference between the plans?",
@@ -55,7 +55,7 @@ const faqData = [
   },
   {
     question: "How can I get support?",
-    answer: "Visit our Contact page or email us at contact@omnispdf.com. Enterprise users get dedicated email support with 24-hour response times.",
+    answer: "Visit our Contact page or email us at contact@pdf.it.com. Enterprise users get dedicated email support with 24-hour response times.",
   },
 ]
 
@@ -144,7 +144,7 @@ export function FAQSection() {
                 Frequently Asked Questions
               </h2>
               <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-                Everything you need to know about OmnisPDF. Can't find what you're looking for?{" "}
+                Everything you need to know about PDF.it. Can't find what you're looking for?{" "}
                 <a href="/contact" className="text-orange-500 hover:text-orange-600 font-medium underline">
                   Contact us
                 </a>
@@ -170,7 +170,7 @@ export function FAQSection() {
             <div className="mt-16 text-center">
               <div className="bg-gradient-to-r from-orange-50 to-orange-100 border border-orange-200 rounded-2xl p-8">
                 <h3 className="text-2xl font-bold text-slate-900 mb-4">Still have questions?</h3>
-                <p className="text-slate-700 mb-6">Our support team is here to help you get the most out of OmnisPDF.</p>
+                <p className="text-slate-700 mb-6">Our support team is here to help you get the most out of PDF.it.</p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
                     href="/contact"
@@ -179,7 +179,7 @@ export function FAQSection() {
                     Contact Support
                   </a>
                   <a
-                    href="mailto:contact@omnispdf.com"
+                    href="mailto:contact@pdf.it.com"
                     className="inline-flex items-center justify-center px-6 py-3 bg-white hover:bg-gray-50 text-slate-700 font-semibold rounded-lg border border-gray-300 transition-colors duration-200"
                   >
                     Email Us

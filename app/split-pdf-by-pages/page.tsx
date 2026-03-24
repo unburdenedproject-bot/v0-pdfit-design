@@ -6,9 +6,9 @@ import { Split, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Split PDF by Page Number — Divide PDF into Parts | OmnisPDF",
+  title: "Split PDF by Page Number — Divide PDF into Parts | PDF.it",
   description:
-    "Split a PDF by page number with OmnisPDF. Choose exactly which pages go into each file — download separate PDFs instantly, free and browser-based.",
+    "Split a PDF by page number with PDF.it. Choose exactly which pages go into each file — download separate PDFs instantly, free and browser-based.",
 }
 
 const faqSchema = {
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I split a PDF by page number?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF, enter the page ranges you want (e.g. 1-5, 6-10), click Split, and download each part as a separate PDF file." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it, enter the page ranges you want (e.g. 1-5, 6-10), click Split, and download each part as a separate PDF file." }
     },
     {
       "@type": "Question",
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I split a PDF by page number on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in any mobile browser — upload your PDF, set your page ranges, and download the split files on iPhone or Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in any mobile browser — upload your PDF, set your page ranges, and download the split files on iPhone or Android." }
     },
     {
       "@type": "Question",
@@ -85,7 +85,7 @@ export default function SplitPDFByPagesPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Need to pull specific pages out of a PDF? OmnisPDF lets you split any PDF by page number — define custom ranges like 1-5, 6-10, or even single pages, and download each part as a separate file. Perfect for breaking apart reports, extracting chapters, or creating handouts from a larger document.
+              Need to pull specific pages out of a PDF? PDF.it lets you split any PDF by page number — define custom ranges like 1-5, 6-10, or even single pages, and download each part as a separate file. Perfect for breaking apart reports, extracting chapters, or creating handouts from a larger document.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Split by custom page ranges (e.g. 1-5, 6-10, 11-15)</li>
@@ -127,7 +127,7 @@ export default function SplitPDFByPagesPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Split a PDF by Page Number</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your PDF into OmnisPDF.",
+                "Upload or drag and drop your PDF into PDF.it.",
                 "Enter your page ranges (e.g. 1-5, 6-10, 11-15) to define each split.",
                 "Click Split PDF to separate your file into parts.",
                 "Download each part as a separate PDF file.",
@@ -173,11 +173,11 @@ export default function SplitPDFByPagesPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I split a PDF by page number?", a: "Upload your PDF to OmnisPDF, enter the page ranges you want (e.g. 1-5, 6-10), click Split, and download each part as a separate PDF file." },
+                { q: "How do I split a PDF by page number?", a: "Upload your PDF to PDF.it, enter the page ranges you want (e.g. 1-5, 6-10), click Split, and download each part as a separate PDF file." },
                 { q: "Can I create multiple PDFs from one file using custom page ranges?", a: "Yes. You can define as many page ranges as you need. Each range produces a separate PDF file that you can download individually." },
                 { q: "Can I extract a single page from a PDF?", a: "Absolutely. Enter a single page number (e.g. 3) as your range to extract just that one page into its own PDF file." },
                 { q: "Does splitting a PDF reduce the quality?", a: "No. Splitting simply separates pages into different files — the content, formatting, and quality of each page remain exactly the same as the original." },
-                { q: "Can I split a PDF by page number on my phone?", a: "Yes. OmnisPDF works in any mobile browser — upload your PDF, set your page ranges, and download the split files on iPhone or Android." },
+                { q: "Can I split a PDF by page number on my phone?", a: "Yes. PDF.it works in any mobile browser — upload your PDF, set your page ranges, and download the split files on iPhone or Android." },
                 { q: "Is there a limit to how many pages I can split?", a: "Free users can split PDFs up to 25MB. Pro users can handle files up to 200MB with batch processing and priority support." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

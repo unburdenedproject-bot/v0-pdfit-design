@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ImageIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Por Que PDF para JPG Fica Borrado? (E Como Resolver) | OmnisPDF",
+  title: "Por Que PDF para JPG Fica Borrado? (E Como Resolver) | PDF.it",
   description:
     "Seu PDF convertido para JPG ficou borrado ou com baixa qualidade? Descubra as causas mais comuns e como obter imagens nítidas na conversão.",
   keywords: "pdf para jpg borrado, pdf para jpg baixa qualidade, jpg desfocado, melhorar qualidade jpg pdf",
@@ -74,7 +74,7 @@ export default function PorQuePdfParaJpgFicaBorradoPage() {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">1. DPI Baixo Demais</h3>
-                  <p className="text-slate-600">Esta é a causa mais frequente. Muitas ferramentas convertem em 72 DPI por padrão, que produz imagens pequenas e borradas. A solução é simples: use 200-300 DPI. No OmnisPDF, você pode escolher o DPI antes de converter.</p>
+                  <p className="text-slate-600">Esta é a causa mais frequente. Muitas ferramentas convertem em 72 DPI por padrão, que produz imagens pequenas e borradas. A solução é simples: use 200-300 DPI. No PDF.it, você pode escolher o DPI antes de converter.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">2. PDF Original em Baixa Resolução</h3>
@@ -82,7 +82,7 @@ export default function PorQuePdfParaJpgFicaBorradoPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">3. Compressão JPG Excessiva</h3>
-                  <p className="text-slate-600">JPG é um formato com perda. Algumas ferramentas aplicam compressão agressiva para reduzir o tamanho do arquivo, o que degrada a qualidade. No OmnisPDF, a compressão é otimizada para manter a qualidade visual.</p>
+                  <p className="text-slate-600">JPG é um formato com perda. Algumas ferramentas aplicam compressão agressiva para reduzir o tamanho do arquivo, o que degrada a qualidade. No PDF.it, a compressão é otimizada para manter a qualidade visual.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">4. Ampliação da Imagem</h3>
@@ -95,7 +95,7 @@ export default function PorQuePdfParaJpgFicaBorradoPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-6">Como Resolver (Passo a Passo)</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Aumente o DPI para 200-300", desc: "Na ferramenta PDF para JPG do OmnisPDF, selecione 200 DPI para uso geral ou 300 DPI para máxima qualidade. Isso resolve a maioria dos problemas de imagem borrada." },
+                  { title: "Aumente o DPI para 200-300", desc: "Na ferramenta PDF para JPG do PDF.it, selecione 200 DPI para uso geral ou 300 DPI para máxima qualidade. Isso resolve a maioria dos problemas de imagem borrada." },
                   { title: "Verifique o PDF original", desc: "Abra o PDF e dê zoom a 200%. Se o texto ou imagens já ficam borrados no PDF, o problema está no arquivo original, não na conversão." },
                   { title: "Use PNG para texto e gráficos", desc: "Se seu PDF tem muito texto fino ou gráficos com linhas, considere converter para PNG em vez de JPG. O formato PNG não tem artefatos de compressão." },
                 ].map((step, i) => (

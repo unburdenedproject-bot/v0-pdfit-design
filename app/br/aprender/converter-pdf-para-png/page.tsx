@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ImageIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Converter PDF para PNG Online (Sem Perda de Qualidade) | OmnisPDF",
+  title: "Como Converter PDF para PNG Online (Sem Perda de Qualidade) | PDF.it",
   description:
     "Aprenda como converter PDF para PNG online com qualidade perfeita. Guia passo a passo para obter imagens PNG nítidas de qualquer PDF — grátis, sem software.",
   keywords: "converter pdf para png, pdf para png online, pdf para png grátis, pdf para imagem png, converter pdf para png sem perda",
@@ -15,7 +15,7 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Como converto PDF para PNG grátis?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para a ferramenta PDF para PNG do OmnisPDF, escolha a resolução, clique em Converter e baixe suas imagens PNG. Não é necessário cadastro para seus primeiros 3 arquivos." } },
+    { "@type": "Question", "name": "Como converto PDF para PNG grátis?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para a ferramenta PDF para PNG do PDF.it, escolha a resolução, clique em Converter e baixe suas imagens PNG. Não é necessário cadastro para seus primeiros 3 arquivos." } },
     { "@type": "Question", "name": "PNG é melhor que JPG para converter PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Depende do conteúdo. PNG é melhor para texto, gráficos e diagramas porque não tem artefatos de compressão. JPG é melhor para fotos e quando o tamanho do arquivo importa." } },
     { "@type": "Question", "name": "PNG suporta transparência?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Diferente do JPG, o formato PNG suporta fundo transparente. Isso é útil quando você precisa colocar a imagem sobre fundos coloridos em design ou apresentações." } },
     { "@type": "Question", "name": "Os arquivos PNG ficam muito grandes?", "acceptedAnswer": { "@type": "Answer", "text": "PNGs são maiores que JPGs (geralmente 2-5x). Para uso web onde o tamanho importa, considere JPG. Para design, documentação e qualidade máxima, PNG vale o tamanho extra." } }
@@ -28,7 +28,7 @@ const howToSchema = {
   "name": "Como Converter PDF para PNG Online",
   "description": "Converta páginas de PDF para imagens PNG de alta qualidade em 3 passos simples.",
   "step": [
-    { "@type": "HowToStep", "name": "Envie seu PDF", "text": "Acesse a ferramenta PDF para PNG do OmnisPDF e envie seu arquivo PDF." },
+    { "@type": "HowToStep", "name": "Envie seu PDF", "text": "Acesse a ferramenta PDF para PNG do PDF.it e envie seu arquivo PDF." },
     { "@type": "HowToStep", "name": "Configure a resolução", "text": "Escolha o DPI desejado (150 para web, 200 para uso geral, 300 para máxima qualidade)." },
     { "@type": "HowToStep", "name": "Baixe suas imagens PNG", "text": "Clique em Converter e baixe as imagens PNG individualmente ou como arquivo ZIP." }
   ]
@@ -169,7 +169,7 @@ export default function ConverterPdfParaPngPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como converto PDF para PNG grátis?", a: "Envie seu PDF para a ferramenta PDF para PNG do OmnisPDF, escolha a resolução, clique em Converter e baixe suas imagens PNG. Não é necessário cadastro para seus primeiros 3 arquivos." },
+                { q: "Como converto PDF para PNG grátis?", a: "Envie seu PDF para a ferramenta PDF para PNG do PDF.it, escolha a resolução, clique em Converter e baixe suas imagens PNG. Não é necessário cadastro para seus primeiros 3 arquivos." },
                 { q: "PNG é melhor que JPG para converter PDF?", a: "Depende do conteúdo. PNG é melhor para texto, gráficos e diagramas porque não tem artefatos de compressão. JPG é melhor para fotos e quando o tamanho do arquivo importa." },
                 { q: "PNG suporta transparência?", a: "Sim. Diferente do JPG, o formato PNG suporta fundo transparente. Isso é útil quando você precisa colocar a imagem sobre fundos coloridos em design ou apresentações." },
                 { q: "Os arquivos PNG ficam muito grandes?", a: "PNGs são maiores que JPGs (geralmente 2-5x). Para uso web onde o tamanho importa, considere JPG. Para design, documentação e qualidade máxima, PNG vale o tamanho extra." },

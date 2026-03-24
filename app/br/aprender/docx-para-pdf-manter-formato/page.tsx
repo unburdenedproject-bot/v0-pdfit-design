@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "DOCX para PDF — Manter Formato (Sem Perder Formatacao) | OmnisPDF",
+  title: "DOCX para PDF — Manter Formato (Sem Perder Formatacao) | PDF.it",
   description:
     "Aprenda como converter DOCX para PDF mantendo a formatacao original. Fontes, tabelas, imagens e layout preservados na conversao.",
   keywords: "docx para pdf manter formato, word para pdf sem perder formatacao, converter docx pdf formatacao, word pdf layout",
@@ -18,7 +18,7 @@ const faqSchema = {
     { "@type": "Question", "name": "Por que meu Word perde formatacao ao converter para PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Os motivos mais comuns sao: fontes nao incorporadas no documento, tabelas complexas que se desalinham, imagens mal ancoradas e diferencas entre o Word do computador e a ferramenta de conversao." } },
     { "@type": "Question", "name": "Como manter fontes ao converter para PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Use fontes padrao do sistema (Arial, Times New Roman, Calibri) ou incorpore as fontes no documento Word antes de converter. No Word: Arquivo > Opcoes > Salvar > Incorporar fontes no arquivo." } },
     { "@type": "Question", "name": "Tabelas ficam desalinhadas no PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Pode acontecer se as tabelas forem muito largas ou usarem largura automatica. Defina larguras fixas em centimetros e evite tabelas que excedam as margens da pagina." } },
-    { "@type": "Question", "name": "O OmnisPDF preserva a formatacao?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O conversor Word para PDF do OmnisPDF preserva fontes, tabelas, imagens, cabecalhos, rodapes e layout. Se o documento Word estiver bem formatado, o PDF sera identico." } },
+    { "@type": "Question", "name": "O PDF.it preserva a formatacao?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O conversor Word para PDF do PDF.it preserva fontes, tabelas, imagens, cabecalhos, rodapes e layout. Se o documento Word estiver bem formatado, o PDF sera identico." } },
   ]
 }
 
@@ -29,7 +29,7 @@ const howToSchema = {
   "description": "Converta Word para PDF sem perder formatacao em 3 passos.",
   "step": [
     { "@type": "HowToStep", "name": "Prepare o documento", "text": "Verifique fontes, tabelas e imagens no Word. Incorpore fontes se forem personalizadas." },
-    { "@type": "HowToStep", "name": "Faca upload no OmnisPDF", "text": "Acesse a ferramenta Word para PDF e faca upload do arquivo DOCX." },
+    { "@type": "HowToStep", "name": "Faca upload no PDF.it", "text": "Acesse a ferramenta Word para PDF e faca upload do arquivo DOCX." },
     { "@type": "HowToStep", "name": "Baixe o PDF", "text": "O PDF e gerado preservando layout, fontes e formatacao. Baixe e verifique o resultado." }
   ]
 }
@@ -82,7 +82,7 @@ export default function DOCXParaPDFManterFormatoPage() {
                   { title: "Use fontes padrao ou incorpore", desc: "Prefira Arial, Times New Roman, Calibri ou Georgia. Se precisar de fontes personalizadas, incorpore-as: Arquivo > Opcoes > Salvar > Incorporar fontes no arquivo." },
                   { title: "Defina larguras fixas nas tabelas", desc: "Evite 'Ajustar automaticamente ao conteudo'. Defina largura fixa em centimetros para cada coluna e certifique-se de que a tabela cabe nas margens." },
                   { title: "Ancore imagens ao texto", desc: "Selecione a imagem, va em Layout e escolha 'Alinhado com o texto' ou 'Parte superior e inferior'. Evite 'Em frente ao texto' e 'Atras do texto'." },
-                  { title: "Faca upload no OmnisPDF", desc: "Acesse Word para PDF do OmnisPDF e faca upload do DOCX. O conversor processa o documento preservando formatacao, fontes e layout." },
+                  { title: "Faca upload no PDF.it", desc: "Acesse Word para PDF do PDF.it e faca upload do DOCX. O conversor processa o documento preservando formatacao, fontes e layout." },
                   { title: "Verifique o resultado", desc: "Abra o PDF e compare com o original no Word. Verifique fontes, tabelas, imagens e numeracao de paginas." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -96,7 +96,7 @@ export default function DOCXParaPDFManterFormatoPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Dicas Extras</h2>
               <div className="space-y-6">
-                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Salve Como PDF no Word Primeiro</h3><p className="text-slate-600">No Word, use Arquivo &gt; Salvar como &gt; PDF para comparar. Se o resultado for diferente do OmnisPDF, o problema esta no documento, nao na ferramenta.</p></div>
+                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Salve Como PDF no Word Primeiro</h3><p className="text-slate-600">No Word, use Arquivo &gt; Salvar como &gt; PDF para comparar. Se o resultado for diferente do PDF.it, o problema esta no documento, nao na ferramenta.</p></div>
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">Evite Macros e Campos Dinamicos</h3><p className="text-slate-600">Campos como {`{PAGE}`}, {`{DATE}`} e macros podem nao ser convertidos corretamente. Converta campos em texto estatico antes: Ctrl+A, depois Ctrl+Shift+F9.</p></div>
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">Comprima Depois</h3><p className="text-slate-600">Se o PDF ficou grande (especialmente com muitas imagens), use <Link href="/br/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> para reduzir o tamanho sem perder qualidade visual.</p></div>
               </div>
@@ -136,7 +136,7 @@ export default function DOCXParaPDFManterFormatoPage() {
                 { q: "Por que meu Word perde formatacao ao converter?", a: "Fontes nao incorporadas, tabelas complexas, imagens mal ancoradas e diferencas entre ferramentas de conversao sao as causas mais comuns." },
                 { q: "Como manter fontes ao converter?", a: "Use fontes padrao (Arial, Calibri) ou incorpore no Word: Arquivo > Opcoes > Salvar > Incorporar fontes." },
                 { q: "Tabelas ficam desalinhadas?", a: "Pode acontecer com tabelas de largura automatica. Defina larguras fixas em centimetros." },
-                { q: "O OmnisPDF preserva a formatacao?", a: "Sim. Se o documento Word estiver bem formatado, o PDF sera identico ao original." },
+                { q: "O PDF.it preserva a formatacao?", a: "Sim. Se o documento Word estiver bem formatado, o PDF sera identico ao original." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

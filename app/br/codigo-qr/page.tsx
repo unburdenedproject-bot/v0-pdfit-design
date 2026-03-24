@@ -90,7 +90,7 @@ export default function CodigoQRPage() {
                 </span>
               </div>
               <p className="text-xl text-slate-300">
-                Crie códigos QR instantaneamente com o OmnisPDF — gere um código QR para um link, texto, Wi-Fi, e-mail ou informações de contato e baixe em segundos.
+                Crie códigos QR instantaneamente com o PDF.it — gere um código QR para um link, texto, Wi-Fi, e-mail ou informações de contato e baixe em segundos.
               </p>
             </div>
           </div>
@@ -201,7 +201,7 @@ export default function CodigoQRPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use o gerador de códigos QR do OmnisPDF para criar um código QR para um link web, texto, dados de contato ou credenciais de Wi-Fi. Gere um código QR instantaneamente e baixe-o para flyers, embalagens, cardápios, cartões de visita, apresentações e redes sociais.
+              Use o gerador de códigos QR do PDF.it para criar um código QR para um link web, texto, dados de contato ou credenciais de Wi-Fi. Gere um código QR instantaneamente e baixe-o para flyers, embalagens, cardápios, cartões de visita, apresentações e redes sociais.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Gere códigos QR para URLs, texto, e-mail e números de telefone</li>
@@ -287,11 +287,11 @@ export default function CodigoQRPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como crio um código QR com o OmnisPDF?", a: "Insira sua URL ou texto, clique em Gerar Código QR e baixe a imagem do código QR." },
+                { q: "Como crio um código QR com o PDF.it?", a: "Insira sua URL ou texto, clique em Gerar Código QR e baixe a imagem do código QR." },
                 { q: "O que posso colocar em um código QR?", a: "As opções mais comuns incluem links para sites, texto simples, endereços de e-mail e números de telefone." },
                 { q: "Por que meu código QR não escaneia?", a: "Problemas de escaneamento geralmente se devem a baixo contraste, tamanho pequeno ou borramento. Aumente o tamanho, mantenha bom contraste e evite distorção." },
                 { q: "Qual tamanho deve ter um código QR para imprimir?", a: "Uma boa regra é mantê-lo grande o suficiente para escanear da distância esperada — maior para pôsteres, menor para cartões de visita." },
-                { q: "O Gerador de Código QR é grátis?", a: "O Gerador de Código QR é uma função Pro, disponível no plano Pro do OmnisPDF a $7,99/mês." },
+                { q: "O Gerador de Código QR é grátis?", a: "O Gerador de Código QR é uma função Pro, disponível no plano Pro do PDF.it a $7,99/mês." },
                 { q: "Meus dados são armazenados quando gero um código QR?", a: "Os códigos QR são gerados e entregues diretamente a você. Não armazenamos o conteúdo que você insere." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

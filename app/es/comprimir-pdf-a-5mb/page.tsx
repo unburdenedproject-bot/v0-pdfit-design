@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download } from "lucide-react
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF a 5MB Online — Reducir Tamaño de PDF | OmnisPDF",
+  title: "Comprimir PDF a 5MB Online — Reducir Tamaño de PDF | PDF.it",
   description:
     "Aplica compresión extrema para reducir el tamaño de tu PDF para portales con límite de 5MB. Compresión máxima para trámites, solicitudes y cargas — rápido, desde tu navegador, gratis.",
   alternates: {
@@ -24,7 +24,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo comprimo un PDF para un límite de carga de 5MB?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a OmnisPDF, haz clic en Comprimir y descarga el archivo reducido. OmnisPDF usa compresión extrema para reducir drásticamente el tamaño del archivo. Los resultados dependen del contenido de tu PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it, haz clic en Comprimir y descarga el archivo reducido. PDF.it usa compresión extrema para reducir drásticamente el tamaño del archivo. Los resultados dependen del contenido de tu PDF." }
     },
     {
       "@type": "Question",
@@ -44,12 +44,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo comprimir un PDF a 5MB desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en navegadores móviles — sube, comprime y descarga desde tu iPhone o Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube, comprime y descarga desde tu iPhone o Android." }
     },
     {
       "@type": "Question",
       "name": "¿Qué hago si mi PDF sigue pesando más de 5MB después de la compresión?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si el archivo sigue siendo muy grande, intenta dividirlo en partes más pequeñas con la herramienta Dividir PDF de OmnisPDF, luego comprime cada parte individualmente." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si el archivo sigue siendo muy grande, intenta dividirlo en partes más pequeñas con la herramienta Dividir PDF de PDF.it, luego comprime cada parte individualmente." }
     }
   ]
 }
@@ -98,7 +98,7 @@ export default function ComprimirPDFA5MBPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              ¿Necesitas subir un PDF pero el portal dice &quot;archivo muy grande&quot;? OmnisPDF aplica compresión extrema para reducir drásticamente el tamaño de tu PDF — perfecto para formularios del gobierno, trámites universitarios, solicitudes de empleo y cualquier sitio con límite de carga de 5MB.
+              ¿Necesitas subir un PDF pero el portal dice &quot;archivo muy grande&quot;? PDF.it aplica compresión extrema para reducir drásticamente el tamaño de tu PDF — perfecto para formularios del gobierno, trámites universitarios, solicitudes de empleo y cualquier sitio con límite de carga de 5MB.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Compresión extrema para máxima reducción de tamaño</li>
@@ -116,19 +116,19 @@ export default function ComprimirPDFA5MBPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Cumple con los Límites de Tamaño de los Portales</h2>
               <p className="text-slate-600">
-                Los portales de gobierno, solicitudes universitarias y sitios de empleo frecuentemente limitan las cargas a 5MB. OmnisPDF aplica compresión extrema para reducir drásticamente el tamaño de tu archivo, ayudándote a cumplir con estos requisitos.
+                Los portales de gobierno, solicitudes universitarias y sitios de empleo frecuentemente limitan las cargas a 5MB. PDF.it aplica compresión extrema para reducir drásticamente el tamaño de tu archivo, ayudándote a cumplir con estos requisitos.
               </p>
             </div>
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Comprime Documentos Escaneados y Formularios</h2>
               <p className="text-slate-600">
-                Los PDFs escaneados frecuentemente pesan 10-30MB. El modo de compresión extrema de OmnisPDF reduce agresivamente los datos de imagen para llevar el archivo por debajo de 5MB manteniendo el texto legible.
+                Los PDFs escaneados frecuentemente pesan 10-30MB. El modo de compresión extrema de PDF.it reduce agresivamente los datos de imagen para llevar el archivo por debajo de 5MB manteniendo el texto legible.
               </p>
             </div>
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">¿Sigue Muy Grande? Divide y Luego Comprime</h2>
               <p className="text-slate-600">
-                Si tu PDF sigue pesando más de 5MB después de la compresión, usa la herramienta Dividir PDF de OmnisPDF para separarlo en partes más pequeñas, luego comprime cada una individualmente.
+                Si tu PDF sigue pesando más de 5MB después de la compresión, usa la herramienta Dividir PDF de PDF.it para separarlo en partes más pequeñas, luego comprime cada una individualmente.
               </p>
             </div>
           </div>
@@ -140,7 +140,7 @@ export default function ComprimirPDFA5MBPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Comprimir un PDF para Límites de 5MB</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Haz clic en Comprimir PDF — la compresión extrema se aplica automáticamente.",
                 "Descarga tu PDF más pequeño y súbelo a tu portal.",
               ].map((step, i) => (
@@ -185,12 +185,12 @@ export default function ComprimirPDFA5MBPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo comprimo un PDF para un límite de carga de 5MB?", a: "Sube tu PDF a OmnisPDF, haz clic en Comprimir y descarga el archivo reducido. OmnisPDF usa compresión extrema para reducir drásticamente el tamaño del archivo. Los resultados dependen del contenido de tu PDF." },
+                { q: "¿Cómo comprimo un PDF para un límite de carga de 5MB?", a: "Sube tu PDF a PDF.it, haz clic en Comprimir y descarga el archivo reducido. PDF.it usa compresión extrema para reducir drásticamente el tamaño del archivo. Los resultados dependen del contenido de tu PDF." },
                 { q: "¿Mi PDF quedará definitivamente por debajo de 5MB después de la compresión?", a: "La compresión extrema reduce drásticamente el tamaño del archivo. La mayoría de los PDFs de menos de 20MB se comprimen significativamente. Los archivos muy pesados en imágenes pueden necesitar dividirse primero y luego comprimir cada parte por separado." },
                 { q: "¿El texto seguirá siendo legible después de la compresión?", a: "Sí. El texto se mantiene nítido y legible. La calidad de las imágenes puede reducirse ligeramente, pero las páginas siguen siendo utilizables." },
                 { q: "¿Por qué los portales de carga tienen un límite de 5MB?", a: "Muchos portales de gobierno, universidades y solicitudes de empleo establecen un límite de 5MB para gestionar almacenamiento y ancho de banda. Comprimir tu PDF asegura que cumpla con estos requisitos." },
-                { q: "¿Puedo comprimir un PDF a 5MB desde mi celular?", a: "Sí. OmnisPDF funciona en navegadores móviles — sube, comprime y descarga desde tu iPhone o Android." },
-                { q: "¿Qué hago si mi PDF sigue pesando más de 5MB después de la compresión?", a: "Si el archivo sigue siendo muy grande, intenta dividirlo en partes más pequeñas con la herramienta Dividir PDF de OmnisPDF, luego comprime cada parte individualmente." },
+                { q: "¿Puedo comprimir un PDF a 5MB desde mi celular?", a: "Sí. PDF.it funciona en navegadores móviles — sube, comprime y descarga desde tu iPhone o Android." },
+                { q: "¿Qué hago si mi PDF sigue pesando más de 5MB después de la compresión?", a: "Si el archivo sigue siendo muy grande, intenta dividirlo en partes más pequeñas con la herramienta Dividir PDF de PDF.it, luego comprime cada parte individualmente." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

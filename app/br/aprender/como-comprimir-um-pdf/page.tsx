@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileArchiveIcon as Compress, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Comprimir um PDF (Reduzir Tamanho Rapidamente) | OmnisPDF",
+  title: "Como Comprimir um PDF (Reduzir Tamanho Rapidamente) | PDF.it",
   description:
     "Aprenda como comprimir um PDF e reduzir o tamanho do arquivo em segundos. Guia passo a passo com dicas para email, uploads e documentos digitalizados — gratis, online, sem software.",
   keywords: "comprimir pdf, reduzir tamanho pdf, como comprimir um pdf, diminuir pdf, compactar pdf online gratis",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como comprimir um PDF gratis?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o OmnisPDF, escolha um nivel de compressao (Leve, Media ou Extrema), clique em Comprimir e baixe o arquivo menor. Nao e necessario cadastro para seus primeiros 3 arquivos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o PDF.it, escolha um nivel de compressao (Leve, Media ou Extrema), clique em Comprimir e baixe o arquivo menor. Nao e necessario cadastro para seus primeiros 3 arquivos." }
     },
     {
       "@type": "Question",
@@ -33,7 +33,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso comprimir um PDF no celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em qualquer navegador movel — envie seu PDF, comprima e baixe o resultado diretamente no iPhone ou Android. Nao precisa de nenhum aplicativo." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em qualquer navegador movel — envie seu PDF, comprima e baixe o resultado diretamente no iPhone ou Android. Nao precisa de nenhum aplicativo." }
     },
     {
       "@type": "Question",
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Comprimir um PDF Online",
-  "description": "Reduza o tamanho do seu arquivo PDF em 3 passos simples usando o OmnisPDF.",
+  "description": "Reduza o tamanho do seu arquivo PDF em 3 passos simples usando o PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Envie seu PDF",
-      "text": "Acesse a ferramenta Comprimir PDF do OmnisPDF e envie seu arquivo clicando ou arrastando para a area de upload."
+      "text": "Acesse a ferramenta Comprimir PDF do PDF.it e envie seu arquivo clicando ou arrastando para a area de upload."
     },
     {
       "@type": "HowToStep",
@@ -293,10 +293,10 @@ export default function ComoComprimirUmPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como comprimir um PDF gratis?", a: "Envie seu PDF para o OmnisPDF, escolha um nivel de compressao (Leve, Media ou Extrema), clique em Comprimir e baixe o arquivo menor. Nao e necessario cadastro para seus primeiros 3 arquivos." },
+                { q: "Como comprimir um PDF gratis?", a: "Envie seu PDF para o PDF.it, escolha um nivel de compressao (Leve, Media ou Extrema), clique em Comprimir e baixe o arquivo menor. Nao e necessario cadastro para seus primeiros 3 arquivos." },
                 { q: "Comprimir um PDF reduz a qualidade?", a: "A compressao Leve mantem a qualidade quase identica ao original. Media equilibra tamanho e qualidade. A compressao Extrema reduz mais o tamanho mas pode diminuir levemente a qualidade das imagens. O texto sempre permanece nitido e legivel." },
                 { q: "Por que meu PDF e tao grande?", a: "PDFs grandes geralmente sao causados por imagens de alta resolucao, paginas digitalizadas ou fontes incorporadas. Documentos digitalizados sao os principais culpados — uma unica pagina digitalizada pode pesar 2-5MB." },
-                { q: "Posso comprimir um PDF no celular?", a: "Sim. O OmnisPDF funciona em qualquer navegador movel — envie seu PDF, comprima e baixe o resultado diretamente no iPhone ou Android. Nao precisa de nenhum aplicativo." },
+                { q: "Posso comprimir um PDF no celular?", a: "Sim. O PDF.it funciona em qualquer navegador movel — envie seu PDF, comprima e baixe o resultado diretamente no iPhone ou Android. Nao precisa de nenhum aplicativo." },
                 { q: "Quanto posso reduzir o tamanho de um PDF?", a: "Depende do conteudo. Um PDF digitalizado de 10MB pode ser comprimido para 1-3MB. Um PDF de 5MB com muito texto pode cair para 500KB. A compressao Extrema oferece a maxima reducao." },
                 { q: "Qual a diferenca entre compressao Leve, Media e Extrema?", a: "Leve mantem as imagens em alta qualidade (menor reducao). Media equilibra qualidade e tamanho (boa para a maioria dos usos). Extrema reduz agressivamente a qualidade das imagens para maxima reducao de tamanho." },
               ].map((faq, i) => (

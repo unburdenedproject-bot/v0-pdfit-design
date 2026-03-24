@@ -6,15 +6,15 @@ import { ProcessingInterface } from "@/components/processing-interface"
 import { FileText, Zap, Shield, Download } from "lucide-react"
 
 export const metadata = {
-  title: "Reordenar PDF — Mude a Ordem das Paginas do Seu PDF | OmnisPDF",
+  title: "Reordenar PDF — Mude a Ordem das Paginas do Seu PDF | PDF.it",
   description:
-    "Reordene as paginas de um PDF com o OmnisPDF. Arraste e solte para mudar a ordem das paginas — rapido, gratuito e direto no navegador.",
+    "Reordene as paginas de um PDF com o PDF.it. Arraste e solte para mudar a ordem das paginas — rapido, gratuito e direto no navegador.",
   alternates: {
-    canonical: "https://omnispdf.com/br/reordenar-pdf",
+    canonical: "https://pdf.it.com/br/reordenar-pdf",
     languages: {
-      en: "https://omnispdf.com/reorder-pdf",
-      es: "https://omnispdf.com/es/reordenar-pdf",
-      pt: "https://omnispdf.com/br/reordenar-pdf",
+      en: "https://pdf.it.com/reorder-pdf",
+      es: "https://pdf.it.com/es/reordenar-pdf",
+      pt: "https://pdf.it.com/br/reordenar-pdf",
     },
   },
 }
@@ -28,7 +28,7 @@ const faqSchema = {
       name: "Como reordenar paginas de um PDF?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Suba seu PDF no OmnisPDF, visualize as miniaturas das paginas, arraste e solte para mudar a ordem e baixe o PDF reorganizado.",
+        text: "Suba seu PDF no PDF.it, visualize as miniaturas das paginas, arraste e solte para mudar a ordem e baixe o PDF reorganizado.",
       },
     },
     {
@@ -52,7 +52,7 @@ const faqSchema = {
       name: "Funciona com PDFs longos?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sim. O OmnisPDF suporta PDFs com centenas de paginas. A versao gratuita aceita arquivos de ate 25MB e a versao Pro ate 200MB.",
+        text: "Sim. O PDF.it suporta PDFs com centenas de paginas. A versao gratuita aceita arquivos de ate 25MB e a versao Pro ate 200MB.",
       },
     },
     {
@@ -109,7 +109,7 @@ export default function ReordenarPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              O OmnisPDF permite reordenar as paginas de qualquer PDF de forma visual e intuitiva. Visualize miniaturas de cada pagina, arraste para a nova posicao e exporte o documento reorganizado — tudo sem instalar nada.
+              O PDF.it permite reordenar as paginas de qualquer PDF de forma visual e intuitiva. Visualize miniaturas de cada pagina, arraste para a nova posicao e exporte o documento reorganizado — tudo sem instalar nada.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Arraste e solte para reordenar paginas</li>
@@ -157,7 +157,7 @@ export default function ReordenarPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Reordenar Paginas de um PDF</h2>
             <div className="space-y-4">
               {[
-                "Suba ou arraste seu PDF para o OmnisPDF.",
+                "Suba ou arraste seu PDF para o PDF.it.",
                 "Arraste e solte as miniaturas das paginas para mudar a ordem.",
                 "Clique em Salvar e baixe seu PDF com as paginas reordenadas.",
               ].map((step, i) => (
@@ -204,10 +204,10 @@ export default function ReordenarPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como reordenar paginas de um PDF?", a: "Suba seu PDF no OmnisPDF, visualize as miniaturas das paginas, arraste e solte para mudar a ordem e baixe o PDF reorganizado." },
+                { q: "Como reordenar paginas de um PDF?", a: "Suba seu PDF no PDF.it, visualize as miniaturas das paginas, arraste e solte para mudar a ordem e baixe o PDF reorganizado." },
                 { q: "Reordenar paginas altera o conteudo do PDF?", a: "Nao. Reordenar paginas apenas muda a sequencia em que aparecem no documento. O conteudo de cada pagina — texto, imagens, formatacao — permanece identico." },
                 { q: "Posso mover uma pagina do final para o inicio?", a: "Sim. Voce pode mover qualquer pagina para qualquer posicao do documento. Basta arrastar a miniatura da pagina para a posicao desejada." },
-                { q: "Funciona com PDFs longos?", a: "Sim. O OmnisPDF suporta PDFs com centenas de paginas. A versao gratuita aceita arquivos de ate 25MB e a versao Pro ate 200MB." },
+                { q: "Funciona com PDFs longos?", a: "Sim. O PDF.it suporta PDFs com centenas de paginas. A versao gratuita aceita arquivos de ate 25MB e a versao Pro ate 200MB." },
                 { q: "E gratuito reordenar paginas de um PDF?", a: "Sim. Voce pode reordenar paginas de PDFs de ate 25MB gratuitamente. Para arquivos maiores e processamento em lote, atualize para o plano Pro." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

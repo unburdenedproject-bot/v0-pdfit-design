@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Printer, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "PPT a PDF para imprimir: mejores consejos de diseno y calidad | OmnisPDF",
+  title: "PPT a PDF para imprimir: mejores consejos de diseno y calidad | PDF.it",
   description: "Aprende como convertir PowerPoint a PDF para impresion de alta calidad. Consejos sobre tamano de diapositiva, resolucion, sangrado, margenes y como obtener PDFs listos para imprenta desde tus presentaciones.",
   keywords: "ppt a pdf para imprimir, powerpoint a pdf calidad impresion, pptx a pdf alta resolucion, imprimir diapositivas powerpoint, configuraciones impresion pdf",
 }
@@ -21,7 +21,7 @@ const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainE
 
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como convertir PowerPoint a PDF para impresion de alta calidad", "description": "Obtiene PDFs listos para imprimir desde tus presentaciones de PowerPoint en 3 pasos.", "step": [
   { "@type": "HowToStep", "name": "Establece tamano de diapositiva y resolucion", "text": "En PowerPoint, ve a Diseno > Tamano de diapositiva y elige un tamano que coincida con tu papel objetivo. Establece resolucion de imagen en Alta fidelidad en Archivo > Opciones > Avanzado." },
-  { "@type": "HowToStep", "name": "Convierte a PDF", "text": "Sube tu PPTX a la herramienta PowerPoint a PDF de OmnisPDF y haz clic en Convertir. La herramienta preserva tus imagenes de alta resolucion y fuentes." },
+  { "@type": "HowToStep", "name": "Convierte a PDF", "text": "Sube tu PPTX a la herramienta PowerPoint a PDF de PDF.it y haz clic en Convertir. La herramienta preserva tus imagenes de alta resolucion y fuentes." },
   { "@type": "HowToStep", "name": "Revisa e imprime", "text": "Abre el PDF y haz zoom al 100% para verificar la calidad de imagen. Busca problemas de fuentes o desplazamientos de diseno. Una vez satisfecho, envia a tu impresora o imprenta." }
 ] }
 
@@ -70,7 +70,7 @@ export default function PptAPdfParaImprimirPage() {
             <div className="space-y-4">
               {[
                 { title: "Establece tamano de diapositiva y verifica resolucion", desc: "Haz coincidir el tamano de diapositiva con el papel en que imprimiras. Luego ve a Archivo > Opciones > Avanzado y establece 'Resolucion predeterminada' en Alta fidelidad (330 PPI) para que las imagenes no se compriman durante la exportacion." },
-                { title: "Convierte a PDF usando OmnisPDF", desc: "Sube tu PPTX a la herramienta PowerPoint a PDF. OmnisPDF preserva tus imagenes de alta resolucion, fuentes incrustadas y diseno — dandote un archivo PDF listo para imprimir." },
+                { title: "Convierte a PDF usando PDF.it", desc: "Sube tu PPTX a la herramienta PowerPoint a PDF. PDF.it preserva tus imagenes de alta resolucion, fuentes incrustadas y diseno — dandote un archivo PDF listo para imprimir." },
                 { title: "Revisa el PDF al 100% de zoom", desc: "Abre el PDF y haz zoom al 100% (tamano real). Verifica que las imagenes esten nitidas, las fuentes se vean correctas y nada se haya desplazado. Si algo se ve mal, corrigelo en PowerPoint y reconvierte." },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">

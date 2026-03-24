@@ -5,9 +5,9 @@ import Link from "next/link"
 import { Stamp, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Marca d'Agua 'Confidencial' em PDF (Guia Rapido) | OmnisPDF",
+  title: "Marca d'Agua 'Confidencial' em PDF (Guia Rapido) | PDF.it",
   description:
-    "Aprenda como adicionar uma marca d'agua CONFIDENCIAL, RASCUNHO ou NAO COPIAR a um PDF online. Proteja documentos sensiveis em segundos com o OmnisPDF.",
+    "Aprenda como adicionar uma marca d'agua CONFIDENCIAL, RASCUNHO ou NAO COPIAR a um PDF online. Proteja documentos sensiveis em segundos com o PDF.it.",
   keywords: "marca dagua confidencial pdf, marca dagua rascunho pdf, marca dagua pdf online, proteger pdf confidencial",
 }
 
@@ -15,11 +15,11 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Como adicionar uma marca d'agua 'Confidencial' a um PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Use a ferramenta Marca d'Agua do OmnisPDF: faca upload do PDF, digite 'CONFIDENCIAL' como texto da marca d'agua, ajuste tamanho, cor e opacidade, e baixe o PDF protegido." } },
-    { "@type": "Question", "name": "Posso personalizar a aparencia da marca d'agua?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. No OmnisPDF voce pode alterar o texto, tamanho da fonte, cor, opacidade, angulo e posicao da marca d'agua em cada pagina do PDF." } },
-    { "@type": "Question", "name": "A marca d'agua pode ser removida depois?", "acceptedAnswer": { "@type": "Answer", "text": "A marca d'agua adicionada pelo OmnisPDF e incorporada ao PDF. Para dificultar a remocao, use opacidade media e posicione sobre o conteudo principal do documento." } },
+    { "@type": "Question", "name": "Como adicionar uma marca d'agua 'Confidencial' a um PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Use a ferramenta Marca d'Agua do PDF.it: faca upload do PDF, digite 'CONFIDENCIAL' como texto da marca d'agua, ajuste tamanho, cor e opacidade, e baixe o PDF protegido." } },
+    { "@type": "Question", "name": "Posso personalizar a aparencia da marca d'agua?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. No PDF.it voce pode alterar o texto, tamanho da fonte, cor, opacidade, angulo e posicao da marca d'agua em cada pagina do PDF." } },
+    { "@type": "Question", "name": "A marca d'agua pode ser removida depois?", "acceptedAnswer": { "@type": "Answer", "text": "A marca d'agua adicionada pelo PDF.it e incorporada ao PDF. Para dificultar a remocao, use opacidade media e posicione sobre o conteudo principal do documento." } },
     { "@type": "Question", "name": "A marca d'agua e aplicada em todas as paginas?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Por padrao, a marca d'agua e aplicada em todas as paginas do PDF, garantindo protecao uniforme em todo o documento." } },
-    { "@type": "Question", "name": "Preciso pagar para usar a marca d'agua?", "acceptedAnswer": { "@type": "Answer", "text": "A ferramenta Marca d'Agua em PDF e uma funcionalidade Pro do OmnisPDF, disponivel por $7.99/mes com conversoes ilimitadas e arquivos ate 200MB." } },
+    { "@type": "Question", "name": "Preciso pagar para usar a marca d'agua?", "acceptedAnswer": { "@type": "Answer", "text": "A ferramenta Marca d'Agua em PDF e uma funcionalidade Pro do PDF.it, disponivel por $7.99/mes com conversoes ilimitadas e arquivos ate 200MB." } },
   ]
 }
 
@@ -27,9 +27,9 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Adicionar Marca d'Agua 'Confidencial' a um PDF",
-  "description": "Adicione uma marca d'agua de confidencialidade ao seu PDF em 3 passos simples usando o OmnisPDF.",
+  "description": "Adicione uma marca d'agua de confidencialidade ao seu PDF em 3 passos simples usando o PDF.it.",
   "step": [
-    { "@type": "HowToStep", "name": "Faca upload do PDF", "text": "Acesse a ferramenta Marca d'Agua em PDF do OmnisPDF e faca upload do documento que deseja proteger." },
+    { "@type": "HowToStep", "name": "Faca upload do PDF", "text": "Acesse a ferramenta Marca d'Agua em PDF do PDF.it e faca upload do documento que deseja proteger." },
     { "@type": "HowToStep", "name": "Configure a marca d'agua", "text": "Digite 'CONFIDENCIAL' (ou outro texto), ajuste tamanho, cor, opacidade e angulo conforme necessario." },
     { "@type": "HowToStep", "name": "Baixe o PDF protegido", "text": "Clique em aplicar e baixe o PDF com a marca d'agua incorporada em todas as paginas." }
   ]
@@ -56,7 +56,7 @@ export default function MarcaDaguaConfidencialPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><Stamp className="h-5 w-5 text-white" /></div>
-              <p className="text-slate-700 font-semibold">Adicione marca d&apos;agua agora com o OmnisPDF (Pro).</p>
+              <p className="text-slate-700 font-semibold">Adicione marca d&apos;agua agora com o PDF.it (Pro).</p>
             </div>
             <Link href="/br/marca-dagua-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Marca d&apos;Agua PDF <ArrowRight className="h-4 w-4" /></Link>
           </div>
@@ -76,7 +76,7 @@ export default function MarcaDaguaConfidencialPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-6">Como Adicionar Marca d&apos;Agua Confidencial (Passo a Passo)</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Faca upload do PDF", desc: "Acesse a ferramenta Marca d'Agua em PDF do OmnisPDF e selecione o arquivo que deseja proteger. Aceita arquivos ate 200MB no plano Pro." },
+                  { title: "Faca upload do PDF", desc: "Acesse a ferramenta Marca d'Agua em PDF do PDF.it e selecione o arquivo que deseja proteger. Aceita arquivos ate 200MB no plano Pro." },
                   { title: "Configure o texto da marca d'agua", desc: "Digite 'CONFIDENCIAL', 'RASCUNHO', 'NAO COPIAR' ou qualquer texto personalizado. Ajuste o tamanho da fonte, cor (vermelho e o mais comum), opacidade e angulo de rotacao." },
                   { title: "Aplique e baixe", desc: "Clique em aplicar para incorporar a marca d'agua em todas as paginas. Baixe o PDF protegido pronto para envio ou arquivamento." },
                 ].map((step, i) => (
@@ -109,8 +109,8 @@ export default function MarcaDaguaConfidencialPage() {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Marca d&apos;Agua no OmnisPDF</h2>
-              <p className="text-slate-600 mb-4">A ferramenta <Link href="/br/marca-dagua-pdf" className="text-orange-600 hover:underline">Marca d&apos;Agua em PDF</Link> do OmnisPDF oferece:</p>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Marca d&apos;Agua no PDF.it</h2>
+              <p className="text-slate-600 mb-4">A ferramenta <Link href="/br/marca-dagua-pdf" className="text-orange-600 hover:underline">Marca d&apos;Agua em PDF</Link> do PDF.it oferece:</p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; Texto personalizado com controle total de fonte, cor e tamanho.</li>
                 <li>&#10003; Ajuste de opacidade e angulo de rotacao.</li>
@@ -125,7 +125,7 @@ export default function MarcaDaguaConfidencialPage() {
         <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Proteja Seus Documentos Agora</h2>
-            <p className="text-slate-300 mb-6">Adicione uma marca d&apos;agua &quot;Confidencial&quot; ao seu PDF em segundos com o OmnisPDF.</p>
+            <p className="text-slate-300 mb-6">Adicione uma marca d&apos;agua &quot;Confidencial&quot; ao seu PDF em segundos com o PDF.it.</p>
             <Link href="/br/marca-dagua-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><Stamp className="h-5 w-5" /> Marca d&apos;Agua PDF (Pro)</Link>
           </div>
         </section>
@@ -152,11 +152,11 @@ export default function MarcaDaguaConfidencialPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como adicionar uma marca d'agua 'Confidencial' a um PDF?", a: "Use a ferramenta Marca d'Agua do OmnisPDF: faca upload do PDF, digite 'CONFIDENCIAL' como texto da marca d'agua, ajuste tamanho, cor e opacidade, e baixe o PDF protegido." },
-                { q: "Posso personalizar a aparencia da marca d'agua?", a: "Sim. No OmnisPDF voce pode alterar o texto, tamanho da fonte, cor, opacidade, angulo e posicao da marca d'agua em cada pagina do PDF." },
-                { q: "A marca d'agua pode ser removida depois?", a: "A marca d'agua adicionada pelo OmnisPDF e incorporada ao PDF. Para dificultar a remocao, use opacidade media e posicione sobre o conteudo principal." },
+                { q: "Como adicionar uma marca d'agua 'Confidencial' a um PDF?", a: "Use a ferramenta Marca d'Agua do PDF.it: faca upload do PDF, digite 'CONFIDENCIAL' como texto da marca d'agua, ajuste tamanho, cor e opacidade, e baixe o PDF protegido." },
+                { q: "Posso personalizar a aparencia da marca d'agua?", a: "Sim. No PDF.it voce pode alterar o texto, tamanho da fonte, cor, opacidade, angulo e posicao da marca d'agua em cada pagina do PDF." },
+                { q: "A marca d'agua pode ser removida depois?", a: "A marca d'agua adicionada pelo PDF.it e incorporada ao PDF. Para dificultar a remocao, use opacidade media e posicione sobre o conteudo principal." },
                 { q: "A marca d'agua e aplicada em todas as paginas?", a: "Sim. Por padrao, a marca d'agua e aplicada em todas as paginas do PDF, garantindo protecao uniforme." },
-                { q: "Preciso pagar para usar a marca d'agua?", a: "A ferramenta Marca d'Agua em PDF e uma funcionalidade Pro do OmnisPDF, disponivel por $7.99/mes com conversoes ilimitadas e arquivos ate 200MB." },
+                { q: "Preciso pagar para usar a marca d'agua?", a: "A ferramenta Marca d'Agua em PDF e uma funcionalidade Pro do PDF.it, disponivel por $7.99/mes com conversoes ilimitadas e arquivos ate 200MB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

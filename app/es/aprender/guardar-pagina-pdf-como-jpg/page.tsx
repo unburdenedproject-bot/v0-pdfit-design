@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ImageIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Cómo Guardar Una Página PDF como JPG (Windows, Mac, Móvil) | OmnisPDF",
+  title: "Cómo Guardar Una Página PDF como JPG (Windows, Mac, Móvil) | PDF.it",
   description:
     "Aprende cómo extraer y guardar una sola página PDF como imagen JPG en cualquier dispositivo. Guía paso a paso para Windows, Mac, iPhone y Android — sin software necesario.",
   keywords: "guardar página pdf como jpg, extraer página pdf como imagen, pdf una página a jpg, guardar una página de pdf como imagen",
@@ -18,22 +18,22 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo guardo solo una página de un PDF como JPG?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta PDF a JPG de OmnisPDF, selecciona la página específica que deseas y convierte solo esa página. Descarga la imagen JPG individual — no necesitas convertir todo el documento." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta PDF a JPG de PDF.it, selecciona la página específica que deseas y convierte solo esa página. Descarga la imagen JPG individual — no necesitas convertir todo el documento." }
     },
     {
       "@type": "Question",
       "name": "¿Puedo guardar una página PDF como JPG en mi teléfono?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Abre OmnisPDF en el navegador de tu teléfono (Safari o Chrome), sube tu PDF, selecciona la página que necesitas y descarga el JPG. Se guarda directamente en la biblioteca de fotos de tu teléfono." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Abre PDF.it en el navegador de tu teléfono (Safari o Chrome), sube tu PDF, selecciona la página que necesitas y descarga el JPG. Se guarda directamente en la biblioteca de fotos de tu teléfono." }
     },
     {
       "@type": "Question",
       "name": "¿Cómo guardo una página PDF como JPG en Windows?",
-      "acceptedAnswer": { "@type": "Answer", "text": "La forma más rápida es usar una herramienta en línea como OmnisPDF — no necesitas instalar software. Alternativamente, puedes tomar una captura de pantalla con la Herramienta de Recorte, pero esto da menor calidad que una conversión adecuada a 200-300 DPI." }
+      "acceptedAnswer": { "@type": "Answer", "text": "La forma más rápida es usar una herramienta en línea como PDF.it — no necesitas instalar software. Alternativamente, puedes tomar una captura de pantalla con la Herramienta de Recorte, pero esto da menor calidad que una conversión adecuada a 200-300 DPI." }
     },
     {
       "@type": "Question",
       "name": "¿Cómo guardo una página PDF como JPG en Mac?",
-      "acceptedAnswer": { "@type": "Answer", "text": "En Mac, puedes abrir el PDF en Vista Previa y exportar como JPEG (Archivo > Exportar). Sin embargo, esto solo funciona para páginas individuales y las opciones de calidad son limitadas. OmnisPDF te da más control sobre DPI y calidad." }
+      "acceptedAnswer": { "@type": "Answer", "text": "En Mac, puedes abrir el PDF en Vista Previa y exportar como JPEG (Archivo > Exportar). Sin embargo, esto solo funciona para páginas individuales y las opciones de calidad son limitadas. PDF.it te da más control sobre DPI y calidad." }
     },
     {
       "@type": "Question",
@@ -57,7 +57,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Sube tu PDF",
-      "text": "Ve a la herramienta PDF a JPG de OmnisPDF y sube el PDF que contiene la página que quieres guardar como imagen."
+      "text": "Ve a la herramienta PDF a JPG de PDF.it y sube el PDF que contiene la página que quieres guardar como imagen."
     },
     {
       "@type": "HowToStep",
@@ -190,7 +190,7 @@ export default function GuardarPaginaPdfComoJpgPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Windows</h3>
                   <p className="text-slate-600 mb-2">
-                    <strong>Opción 1 (Recomendada):</strong> Usa la <Link href="/es/pdf-a-jpg" className="text-orange-600 hover:underline">herramienta en línea de OmnisPDF</Link> en tu navegador — sin instalación necesaria y obtienes salida de alto DPI.
+                    <strong>Opción 1 (Recomendada):</strong> Usa la <Link href="/es/pdf-a-jpg" className="text-orange-600 hover:underline">herramienta en línea de PDF.it</Link> en tu navegador — sin instalación necesaria y obtienes salida de alto DPI.
                   </p>
                   <p className="text-slate-600 mb-2">
                     <strong>Opción 2:</strong> Usa la Herramienta de Recorte (Win + Shift + S) para hacer una captura de pantalla de la página. Es rápido pero te da calidad de resolución de pantalla, que puede verse borrosa si haces zoom o imprimes.
@@ -206,21 +206,21 @@ export default function GuardarPaginaPdfComoJpgPage() {
                     <strong>Opción 1:</strong> Abre en Vista Previa, ve a la página que deseas, luego Archivo &gt; Exportar y selecciona JPEG. Ajusta el deslizador de calidad y haz clic en Guardar. Funciona para páginas individuales.
                   </p>
                   <p className="text-slate-600">
-                    <strong>Opción 2:</strong> Usa <Link href="/es/pdf-a-jpg" className="text-orange-600 hover:underline">OmnisPDF en línea</Link> para más control sobre DPI y para manejar múltiples páginas a la vez.
+                    <strong>Opción 2:</strong> Usa <Link href="/es/pdf-a-jpg" className="text-orange-600 hover:underline">PDF.it en línea</Link> para más control sobre DPI y para manejar múltiples páginas a la vez.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">iPhone y iPad</h3>
                   <p className="text-slate-600">
-                    iOS no tiene una forma nativa de convertir páginas PDF a JPG. El método más fácil es abrir OmnisPDF en Safari, subir tu PDF, seleccionar la página y guardar el JPG resultante en tu app de Fotos. No se necesita descargar ninguna app. Consulta nuestra guía detallada: <Link href="/es/aprender/pdf-a-jpg-en-iphone" className="text-orange-600 hover:underline">Convertir PDF a JPG en iPhone</Link>.
+                    iOS no tiene una forma nativa de convertir páginas PDF a JPG. El método más fácil es abrir PDF.it en Safari, subir tu PDF, seleccionar la página y guardar el JPG resultante en tu app de Fotos. No se necesita descargar ninguna app. Consulta nuestra guía detallada: <Link href="/es/aprender/pdf-a-jpg-en-iphone" className="text-orange-600 hover:underline">Convertir PDF a JPG en iPhone</Link>.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Android</h3>
                   <p className="text-slate-600">
-                    Similar al iPhone — abre OmnisPDF en Chrome, sube tu PDF y descarga el JPG convertido. También puedes tomar una captura de pantalla de la página, pero la calidad estará limitada a la resolución de tu pantalla.
+                    Similar al iPhone — abre PDF.it en Chrome, sube tu PDF y descarga el JPG convertido. También puedes tomar una captura de pantalla de la página, pero la calidad estará limitada a la resolución de tu pantalla.
                   </p>
                 </div>
               </div>
@@ -305,10 +305,10 @@ export default function GuardarPaginaPdfComoJpgPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo guardo solo una página de un PDF como JPG?", a: "Sube tu PDF a la herramienta PDF a JPG de OmnisPDF, selecciona la página específica que deseas y convierte solo esa página. Descarga la imagen JPG individual — no necesitas convertir todo el documento." },
-                { q: "¿Puedo guardar una página PDF como JPG en mi teléfono?", a: "Sí. Abre OmnisPDF en el navegador de tu teléfono (Safari o Chrome), sube tu PDF, selecciona la página que necesitas y descarga el JPG. Se guarda directamente en la biblioteca de fotos de tu teléfono." },
-                { q: "¿Cómo guardo una página PDF como JPG en Windows?", a: "La forma más rápida es usar una herramienta en línea como OmnisPDF — no necesitas instalar software. Alternativamente, puedes tomar una captura de pantalla con la Herramienta de Recorte, pero da menor calidad que una conversión a 200-300 DPI." },
-                { q: "¿Cómo guardo una página PDF como JPG en Mac?", a: "En Mac, puedes abrir el PDF en Vista Previa y exportar como JPEG (Archivo > Exportar). Sin embargo, solo funciona para páginas individuales y las opciones de calidad son limitadas. OmnisPDF te da más control sobre DPI y calidad." },
+                { q: "¿Cómo guardo solo una página de un PDF como JPG?", a: "Sube tu PDF a la herramienta PDF a JPG de PDF.it, selecciona la página específica que deseas y convierte solo esa página. Descarga la imagen JPG individual — no necesitas convertir todo el documento." },
+                { q: "¿Puedo guardar una página PDF como JPG en mi teléfono?", a: "Sí. Abre PDF.it en el navegador de tu teléfono (Safari o Chrome), sube tu PDF, selecciona la página que necesitas y descarga el JPG. Se guarda directamente en la biblioteca de fotos de tu teléfono." },
+                { q: "¿Cómo guardo una página PDF como JPG en Windows?", a: "La forma más rápida es usar una herramienta en línea como PDF.it — no necesitas instalar software. Alternativamente, puedes tomar una captura de pantalla con la Herramienta de Recorte, pero da menor calidad que una conversión a 200-300 DPI." },
+                { q: "¿Cómo guardo una página PDF como JPG en Mac?", a: "En Mac, puedes abrir el PDF en Vista Previa y exportar como JPEG (Archivo > Exportar). Sin embargo, solo funciona para páginas individuales y las opciones de calidad son limitadas. PDF.it te da más control sobre DPI y calidad." },
                 { q: "¿Qué calidad debo usar al guardar una página PDF como JPG?", a: "Para la mayoría de usos (correo, redes sociales, mensajería), 150 DPI es suficiente. Para insertar en documentos o presentaciones, usa 200 DPI. Para impresión, usa 300 DPI. Mayor DPI significa imágenes más nítidas pero archivos más grandes." },
                 { q: "¿Puedo guardar múltiples páginas específicas como JPGs separados?", a: "Sí. Puedes seleccionar múltiples páginas individuales (por ejemplo, páginas 1, 3 y 7) y convertir solo esas a JPGs. Cada página seleccionada se convierte en su propio archivo JPG que puedes descargar por separado." },
               ].map((faq, i) => (

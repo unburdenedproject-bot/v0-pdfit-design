@@ -5,7 +5,7 @@ import Link from "next/link"
 import { QrCode, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Create a QR Code That Links to a PDF Document | OmnisPDF",
+  title: "Create a QR Code That Links to a PDF Document | PDF.it",
   description:
     "Learn how to create a QR code that opens a PDF document. Step-by-step guide covering hosting options, file size tips, and best practices for sharing PDFs via QR code.",
   keywords: "qr code for pdf, qr code link to pdf, share pdf with qr code, pdf qr code generator",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How large can the PDF be?",
-      "acceptedAnswer": { "@type": "Answer", "text": "There's no technical limit from the QR code side — it only stores the URL, not the file. However, keep your PDF under 5MB so it loads quickly on mobile devices. Use OmnisPDF's Compress PDF tool to reduce large files." }
+      "acceptedAnswer": { "@type": "Answer", "text": "There's no technical limit from the QR code side — it only stores the URL, not the file. However, keep your PDF under 5MB so it loads quickly on mobile devices. Use PDF.it's Compress PDF tool to reduce large files." }
     },
     {
       "@type": "Question",
@@ -38,12 +38,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I password-protect the PDF behind the QR code?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes, but the person scanning will need to enter the password to open the PDF. Use OmnisPDF's Protect PDF tool to add a password. Share the password separately — don't put it next to the QR code." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, but the person scanning will need to enter the password to open the PDF. Use PDF.it's Protect PDF tool to add a password. Share the password separately — don't put it next to the QR code." }
     },
     {
       "@type": "Question",
       "name": "Is the QR Code tool free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF's QR Code generator is a Pro feature ($7.99/month). Pro includes unlimited QR codes, PDF compression, conversion tools, and more." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it's QR Code generator is a Pro feature ($7.99/month). Pro includes unlimited QR codes, PDF compression, conversion tools, and more." }
     }
   ]
 }
@@ -52,7 +52,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Create a QR Code That Links to a PDF",
-  "description": "Share any PDF document via QR code in 3 simple steps using OmnisPDF.",
+  "description": "Share any PDF document via QR code in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
@@ -62,7 +62,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Generate the QR code",
-      "text": "Open OmnisPDF's QR Code tool, select URL type, and paste the link to your PDF. Generate the QR code."
+      "text": "Open PDF.it's QR Code tool, select URL type, and paste the link to your PDF. Generate the QR code."
     },
     {
       "@type": "HowToStep",
@@ -159,7 +159,7 @@ export default function QRCodeForPDFPage() {
                 {[
                   {
                     title: "Prepare and optimize your PDF",
-                    desc: "Before hosting, make sure your PDF is optimized for mobile viewing. Compress large files using OmnisPDF's Compress PDF tool — aim for under 5MB so it loads quickly on phone connections. Flatten the PDF if it has unnecessary form fields or layers.",
+                    desc: "Before hosting, make sure your PDF is optimized for mobile viewing. Compress large files using PDF.it's Compress PDF tool — aim for under 5MB so it loads quickly on phone connections. Flatten the PDF if it has unnecessary form fields or layers.",
                   },
                   {
                     title: "Upload and get a public URL",
@@ -167,7 +167,7 @@ export default function QRCodeForPDFPage() {
                   },
                   {
                     title: "Generate the QR code and test it",
-                    desc: "Open OmnisPDF's QR Code tool (Pro feature), select URL, paste your PDF link, and generate. Download as SVG for print or PNG for digital. Always scan the QR code with your phone to verify the PDF opens correctly before distributing.",
+                    desc: "Open PDF.it's QR Code tool (Pro feature), select URL, paste your PDF link, and generate. Download as SVG for print or PNG for digital. Always scan the QR code with your phone to verify the PDF opens correctly before distributing.",
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -287,10 +287,10 @@ export default function QRCodeForPDFPage() {
               {[
                 { q: "Can a QR code link directly to a PDF file?", a: "Yes. A QR code can link to any URL, including a direct link to a PDF file hosted online. When someone scans the QR code, their phone browser opens the PDF automatically." },
                 { q: "Where should I host the PDF for my QR code?", a: "You can host it on your own website, Google Drive (with public sharing enabled), Dropbox, or any file hosting service that gives you a public URL. Make sure the link doesn't require a login to access." },
-                { q: "How large can the PDF be?", a: "There's no technical limit from the QR code side — it only stores the URL, not the file. However, keep your PDF under 5MB so it loads quickly on mobile devices. Use OmnisPDF's Compress PDF tool to reduce large files." },
+                { q: "How large can the PDF be?", a: "There's no technical limit from the QR code side — it only stores the URL, not the file. However, keep your PDF under 5MB so it loads quickly on mobile devices. Use PDF.it's Compress PDF tool to reduce large files." },
                 { q: "Will the QR code still work if I update the PDF?", a: "If you replace the file at the same URL, yes. If the URL changes (new upload with a different link), the QR code will break. Use a redirect URL or replace the file in-place to avoid this." },
-                { q: "Can I password-protect the PDF behind the QR code?", a: "Yes, but the person scanning will need to enter the password to open the PDF. Use OmnisPDF's Protect PDF tool to add a password. Share the password separately — don't put it next to the QR code." },
-                { q: "Is the QR Code tool free?", a: "OmnisPDF's QR Code generator is a Pro feature ($7.99/month). Pro includes unlimited QR codes, PDF compression, conversion tools, and more." },
+                { q: "Can I password-protect the PDF behind the QR code?", a: "Yes, but the person scanning will need to enter the password to open the PDF. Use PDF.it's Protect PDF tool to add a password. Share the password separately — don't put it next to the QR code." },
+                { q: "Is the QR Code tool free?", a: "PDF.it's QR Code generator is a Pro feature ($7.99/month). Pro includes unlimited QR codes, PDF compression, conversion tools, and more." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

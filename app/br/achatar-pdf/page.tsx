@@ -6,9 +6,9 @@ import { Layers, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Achatar PDF Online — Bloquear Formulários e Anotações | OmnisPDF",
+  title: "Achatar PDF Online — Bloquear Formulários e Anotações | PDF.it",
   description:
-    "Achate arquivos PDF com o OmnisPDF. Bloqueie campos de formulário, anotações e camadas em um PDF plano e não editável — rápido, pelo navegador, sem cadastro.",
+    "Achate arquivos PDF com o PDF.it. Bloqueie campos de formulário, anotações e camadas em um PDF plano e não editável — rápido, pelo navegador, sem cadastro.",
   alternates: {
     languages: {
       en: "/flatten-pdf",
@@ -45,7 +45,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso achatar um PDF pelo celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em navegadores móveis — envie, achate e baixe do seu iPhone ou Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em navegadores móveis — envie, achate e baixe do seu iPhone ou Android." }
     },
     {
       "@type": "Question",
@@ -140,7 +140,7 @@ export default function AchatarPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Achatar um PDF</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste seu PDF para o OmnisPDF.",
+                "Envie ou arraste seu PDF para o PDF.it.",
                 "Clique em Achatar PDF — todos os campos e anotações são mesclados na página.",
                 "Baixe seu PDF achatado e não editável.",
               ].map((step, i) => (
@@ -189,7 +189,7 @@ export default function AchatarPDFPage() {
                 { q: "Quando devo achatar um PDF?", a: "Achate um PDF antes de enviar formulários, compartilhar documentos assinados, arquivar registros, ou quando o destinatário vê campos em branco. Achatar garante que o conteúdo fique bloqueado e visível." },
                 { q: "Achatar vai mudar a aparência do meu PDF?", a: "Não. A aparência visual permanece igual. Achatar apenas remove a capacidade de editar campos de formulário, anotações e elementos interativos." },
                 { q: "Posso achatar um PDF com campos de formulário preenchidos?", a: "Sim. Todos os dados inseridos são preservados e se tornam parte do conteúdo da página. Os campos simplesmente deixam de ser editáveis." },
-                { q: "Posso achatar um PDF pelo celular?", a: "Sim. O OmnisPDF funciona em navegadores móveis — envie, achate e baixe do seu iPhone ou Android." },
+                { q: "Posso achatar um PDF pelo celular?", a: "Sim. O PDF.it funciona em navegadores móveis — envie, achate e baixe do seu iPhone ou Android." },
                 { q: "É grátis achatar um PDF?", a: "Sim. Contas gratuitas têm 10 conversões por dia. Contas Pro têm uso ilimitado." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

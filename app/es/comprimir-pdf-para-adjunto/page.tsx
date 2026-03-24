@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Ro
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF para Adjunto — Reduce el Tamaño para Enviar por Email | OmnisPDF",
+  title: "Comprimir PDF para Adjunto — Reduce el Tamaño para Enviar por Email | PDF.it",
   description:
     "Comprime PDFs para adjuntos de correo electrónico. Reduce el tamaño para cumplir límites de Gmail, Outlook y Yahoo.",
   alternates: {
@@ -24,12 +24,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo comprimo un PDF para adjuntarlo a un email?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a OmnisPDF y haz clic en Comprimir. La compresión recomendada reduce el tamaño del archivo manteniendo el texto y las imágenes con buena apariencia, para que tu adjunto se suba rápidamente y sea fácil de abrir." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it y haz clic en Comprimir. La compresión recomendada reduce el tamaño del archivo manteniendo el texto y las imágenes con buena apariencia, para que tu adjunto se suba rápidamente y sea fácil de abrir." }
     },
     {
       "@type": "Question",
       "name": "¿Cuáles son los límites de tamaño de adjuntos en Gmail, Outlook y Yahoo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Gmail permite adjuntos de hasta 25MB, Outlook permite hasta 20MB y Yahoo Mail permite hasta 25MB. Si tu PDF excede estos límites, OmnisPDF lo comprime para que quepa sin problemas." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Gmail permite adjuntos de hasta 25MB, Outlook permite hasta 20MB y Yahoo Mail permite hasta 25MB. Si tu PDF excede estos límites, PDF.it lo comprime para que quepa sin problemas." }
     },
     {
       "@type": "Question",
@@ -44,7 +44,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo comprimir un PDF para adjunto desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en cualquier navegador móvil. Sube tu PDF, comprímelo y adjunta el archivo más pequeño — todo desde tu iPhone o dispositivo Android sin instalar una app." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, comprímelo y adjunta el archivo más pequeño — todo desde tu iPhone o dispositivo Android sin instalar una app." }
     },
     {
       "@type": "Question",
@@ -151,7 +151,7 @@ export default function ComprimirPDFParaAdjuntoPageEs() {
               <div className="bg-white rounded-xl p-8 border border-gray-200">
                 <h3 className="text-xl font-black text-slate-900 mb-3">Desde Cualquier Dispositivo</h3>
                 <p className="text-slate-600">
-                  ¿Necesitas enviar un PDF comprimido desde tu celular? OmnisPDF funciona en cualquier navegador móvil — comprime y adjunta tu PDF directamente desde tu iPhone o Android sin instalar apps.
+                  ¿Necesitas enviar un PDF comprimido desde tu celular? PDF.it funciona en cualquier navegador móvil — comprime y adjunta tu PDF directamente desde tu iPhone o Android sin instalar apps.
                 </p>
               </div>
             </div>
@@ -164,7 +164,7 @@ export default function ComprimirPDFParaAdjuntoPageEs() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Comprimir un PDF para Adjunto</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra y suelta tu PDF en OmnisPDF.",
+                "Sube o arrastra y suelta tu PDF en PDF.it.",
                 "Haz clic en Comprimir PDF — se aplica compresión recomendada para reducir el tamaño preservando la calidad.",
                 "Descarga tu PDF más pequeño y adjúntalo a tu email. Si aún es muy grande, prueba dividir el archivo primero y luego comprime cada parte.",
               ].map((step, i) => (
@@ -214,11 +214,11 @@ export default function ComprimirPDFParaAdjuntoPageEs() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo comprimo un PDF para adjuntarlo a un email?", a: "Sube tu PDF a OmnisPDF y haz clic en Comprimir. La compresión recomendada reduce el tamaño del archivo manteniendo el texto y las imágenes con buena apariencia, para que tu adjunto se suba rápidamente y sea fácil de abrir." },
-                { q: "¿Cuáles son los límites de tamaño de adjuntos en Gmail, Outlook y Yahoo?", a: "Gmail permite adjuntos de hasta 25MB, Outlook permite hasta 20MB y Yahoo Mail permite hasta 25MB. Si tu PDF excede estos límites, OmnisPDF lo comprime para que quepa sin problemas." },
+                { q: "¿Cómo comprimo un PDF para adjuntarlo a un email?", a: "Sube tu PDF a PDF.it y haz clic en Comprimir. La compresión recomendada reduce el tamaño del archivo manteniendo el texto y las imágenes con buena apariencia, para que tu adjunto se suba rápidamente y sea fácil de abrir." },
+                { q: "¿Cuáles son los límites de tamaño de adjuntos en Gmail, Outlook y Yahoo?", a: "Gmail permite adjuntos de hasta 25MB, Outlook permite hasta 20MB y Yahoo Mail permite hasta 25MB. Si tu PDF excede estos límites, PDF.it lo comprime para que quepa sin problemas." },
                 { q: "¿La compresión afecta la calidad del PDF?", a: "La compresión recomendada preserva la calidad visual. El texto se mantiene nítido y claro, y las imágenes conservan buen detalle. El documento se verá profesional cuando el destinatario lo abra." },
                 { q: "¿Puedo comprimir varios PDFs para adjuntarlos?", a: "Los usuarios Pro pueden comprimir múltiples PDFs en lote. Sube todos tus archivos, comprímelos juntos y descarga cada uno listo para adjuntar." },
-                { q: "¿Puedo comprimir un PDF para adjunto desde mi celular?", a: "Sí. OmnisPDF funciona en cualquier navegador móvil. Sube tu PDF, comprímelo y adjunta el archivo más pequeño — todo desde tu iPhone o dispositivo Android sin instalar una app." },
+                { q: "¿Puedo comprimir un PDF para adjunto desde mi celular?", a: "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, comprímelo y adjunta el archivo más pequeño — todo desde tu iPhone o dispositivo Android sin instalar una app." },
                 { q: "¿Qué hago si mi PDF sigue siendo muy grande después de comprimirlo?", a: "Intenta dividir el PDF en partes más pequeñas con nuestra herramienta Dividir PDF, luego comprime y adjunta cada parte por separado. También puedes aplanar el PDF o eliminar páginas innecesarias antes de comprimir." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

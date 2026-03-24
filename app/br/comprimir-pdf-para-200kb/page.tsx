@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Ro
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF para 200KB Online — Reduzir Tamanho de PDF | OmnisPDF",
+  title: "Comprimir PDF para 200KB Online — Reduzir Tamanho de PDF | PDF.it",
   description:
     "Comprima seu PDF para cumprir limites de 200KB. Compressao extrema para formularios online, anexos e documentos otimizados — rapido, pelo navegador, gratis.",
   alternates: {
@@ -22,10 +22,10 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Como comprimo um PDF para limite de 200KB?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF ao OmnisPDF e clique em Comprimir. A ferramenta aplica compressao extrema para reduzir a resolucao de imagens e otimizar a estrutura interna, reduzindo drasticamente o tamanho do arquivo." } },
+    { "@type": "Question", "name": "Como comprimo um PDF para limite de 200KB?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF ao PDF.it e clique em Comprimir. A ferramenta aplica compressao extrema para reduzir a resolucao de imagens e otimizar a estrutura interna, reduzindo drasticamente o tamanho do arquivo." } },
     { "@type": "Question", "name": "Meu PDF ficara definitivamente abaixo de 200KB?", "acceptedAnswer": { "@type": "Answer", "text": "A compressao extrema reduz drasticamente o tamanho, mas os resultados dependem do conteudo. Documentos de 1-3 paginas com texto geralmente ficam abaixo de 200KB. Arquivos com muitas imagens podem precisar ser divididos primeiro." } },
     { "@type": "Question", "name": "A qualidade do PDF sera afetada?", "acceptedAnswer": { "@type": "Answer", "text": "O texto permanece nitido e legivel. Imagens terao alguma reducao de detalhe com compressao extrema, mas o documento continua utilizavel para a maioria dos fins." } },
-    { "@type": "Question", "name": "Posso comprimir um PDF para 200KB pelo celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em qualquer navegador movel. Envie, comprima e baixe direto no seu iPhone ou Android." } },
+    { "@type": "Question", "name": "Posso comprimir um PDF para 200KB pelo celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em qualquer navegador movel. Envie, comprima e baixe direto no seu iPhone ou Android." } },
     { "@type": "Question", "name": "Quais documentos podem ser comprimidos para 200KB?", "acceptedAnswer": { "@type": "Answer", "text": "Documentos de poucas paginas com texto, formularios simples, curriculos e documentos de identidade digitalizados geralmente podem ser comprimidos para menos de 200KB." } },
     { "@type": "Question", "name": "O que faco se continuar acima de 200KB?", "acceptedAnswer": { "@type": "Answer", "text": "Divida o PDF em paginas individuais com nossa ferramenta Dividir PDF e comprima cada pagina. Tambem pode achatar o PDF ou remover paginas desnecessarias." } }
   ]
@@ -83,7 +83,7 @@ export default function ComprimirPDFPara200KBPagePt() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Comprimir um PDF para Limites de 200KB</h2>
             <div className="space-y-4">
-              {["Envie ou arraste seu PDF ao OmnisPDF.", "Clique em Comprimir PDF — a compressao extrema e aplicada automaticamente.", "Baixe seu PDF menor. Se continuar acima de 200KB, tente dividi-lo em paginas individuais primeiro."].map((step, i) => (
+              {["Envie ou arraste seu PDF ao PDF.it.", "Clique em Comprimir PDF — a compressao extrema e aplicada automaticamente.", "Baixe seu PDF menor. Se continuar acima de 200KB, tente dividi-lo em paginas individuais primeiro."].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200"><div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div><p className="text-slate-700 pt-1">{step}</p></div>
               ))}
             </div>
@@ -119,10 +119,10 @@ export default function ComprimirPDFPara200KBPagePt() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como comprimo um PDF para limite de 200KB?", a: "Envie seu PDF ao OmnisPDF e clique em Comprimir. A compressao extrema reduz drasticamente o tamanho otimizando imagens e estrutura interna." },
+                { q: "Como comprimo um PDF para limite de 200KB?", a: "Envie seu PDF ao PDF.it e clique em Comprimir. A compressao extrema reduz drasticamente o tamanho otimizando imagens e estrutura interna." },
                 { q: "Meu PDF ficara abaixo de 200KB?", a: "Documentos de poucas paginas com texto geralmente ficam abaixo de 200KB. Arquivos com muitas imagens podem precisar ser divididos primeiro." },
                 { q: "A qualidade sera afetada?", a: "O texto permanece nitido. Imagens terao alguma reducao de detalhe com compressao extrema, mas o documento continua utilizavel." },
-                { q: "Posso comprimir pelo celular?", a: "Sim. O OmnisPDF funciona em qualquer navegador movel no iPhone ou Android." },
+                { q: "Posso comprimir pelo celular?", a: "Sim. O PDF.it funciona em qualquer navegador movel no iPhone ou Android." },
                 { q: "Quais documentos comprimem para 200KB?", a: "Curriculos, formularios simples, documentos de identidade e documentos de poucas paginas com texto." },
                 { q: "O que faco se continuar acima de 200KB?", a: "Divida o PDF em paginas individuais e comprima cada uma. Achate o PDF ou remova paginas desnecessarias." },
               ].map((faq, i) => (

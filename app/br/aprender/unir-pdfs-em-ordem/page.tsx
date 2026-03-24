@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Merge, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Unir PDFs em Ordem (Organizar e Combinar) | OmnisPDF",
+  title: "Unir PDFs em Ordem (Organizar e Combinar) | PDF.it",
   description:
     "Aprenda como unir PDFs em uma ordem especifica. Organize documentos antes de combinar para criar o PDF final perfeito — online, gratis.",
   keywords: "unir pdf em ordem, organizar pdf, combinar pdf ordem certa, juntar pdf sequencia, mesclar pdf ordenado",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como unir PDFs em uma ordem especifica?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seus PDFs para o OmnisPDF e use a funcao arrastar e soltar para reorganizar os arquivos na ordem desejada antes de clicar em Unir. Os PDFs serao combinados exatamente na sequencia que voce definir." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie seus PDFs para o PDF.it e use a funcao arrastar e soltar para reorganizar os arquivos na ordem desejada antes de clicar em Unir. Os PDFs serao combinados exatamente na sequencia que voce definir." }
     },
     {
       "@type": "Question",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como garantir que as paginas fiquem na ordem certa?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Nomeie seus arquivos com numeros (01_, 02_, 03_) antes do upload. O OmnisPDF mantem a ordem em que voce organiza os thumbnails na tela." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Nomeie seus arquivos com numeros (01_, 02_, 03_) antes do upload. O PDF.it mantem a ordem em que voce organiza os thumbnails na tela." }
     }
   ]
 }
@@ -151,7 +151,7 @@ export default function UnirPDFsEmOrdemPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">Dicas para Manter a Ordem Correta</h2>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Nomeie com numeros:</strong> use prefixos como 01_, 02_, 03_ nos nomes dos arquivos para facilitar a identificacao visual.</li>
-                <li>&#10003; <strong>Confira os thumbnails:</strong> o OmnisPDF mostra uma previa de cada PDF — use isso para confirmar a identidade de cada arquivo.</li>
+                <li>&#10003; <strong>Confira os thumbnails:</strong> o PDF.it mostra uma previa de cada PDF — use isso para confirmar a identidade de cada arquivo.</li>
                 <li>&#10003; <strong>Envie em lotes:</strong> se tem muitos PDFs, envie por grupos (documentos pessoais, comprovantes, etc.) para nao se confundir.</li>
                 <li>&#10003; <strong>Apos unir</strong>, abra o resultado e navegue pelas paginas para confirmar que tudo esta na ordem certa.</li>
               </ul>
@@ -213,9 +213,9 @@ export default function UnirPDFsEmOrdemPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como unir PDFs em uma ordem especifica?", a: "Envie seus PDFs para o OmnisPDF e use a funcao arrastar e soltar para reorganizar os arquivos na ordem desejada antes de clicar em Unir." },
+                { q: "Como unir PDFs em uma ordem especifica?", a: "Envie seus PDFs para o PDF.it e use a funcao arrastar e soltar para reorganizar os arquivos na ordem desejada antes de clicar em Unir." },
                 { q: "Posso mudar a ordem depois de enviar os arquivos?", a: "Sim. Apos o upload, voce pode arrastar e soltar os arquivos para qualquer posicao. Tambem pode remover arquivos individuais e adicionar novos." },
-                { q: "Como garantir que as paginas fiquem na ordem certa?", a: "Nomeie seus arquivos com numeros (01_, 02_, 03_) antes do upload. O OmnisPDF mantem a ordem em que voce organiza os thumbnails na tela." },
+                { q: "Como garantir que as paginas fiquem na ordem certa?", a: "Nomeie seus arquivos com numeros (01_, 02_, 03_) antes do upload. O PDF.it mantem a ordem em que voce organiza os thumbnails na tela." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

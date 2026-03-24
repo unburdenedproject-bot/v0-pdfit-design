@@ -5,9 +5,9 @@ import { Layers, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Batch Organize PDFs — Process Multiple Files at Once | OmnisPDF",
+  title: "Batch Organize PDFs — Process Multiple Files at Once | PDF.it",
   description:
-    "Batch organize multiple PDF files with OmnisPDF Pro. Merge, split, rotate, and compress PDFs in bulk — save time with batch processing.",
+    "Batch organize multiple PDF files with PDF.it Pro. Merge, split, rotate, and compress PDFs in bulk — save time with batch processing.",
 }
 
 const faqSchema = {
@@ -17,12 +17,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "What does batch organize PDFs mean?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Batch organizing means processing multiple PDF files at once — merging, splitting, rotating, or compressing them in bulk instead of one at a time. OmnisPDF Pro lets you upload multiple files and apply operations to all of them simultaneously." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Batch organizing means processing multiple PDF files at once — merging, splitting, rotating, or compressing them in bulk instead of one at a time. PDF.it Pro lets you upload multiple files and apply operations to all of them simultaneously." }
     },
     {
       "@type": "Question",
       "name": "What operations can I perform in batch?",
-      "acceptedAnswer": { "@type": "Answer", "text": "With OmnisPDF Pro, you can batch merge (combine multiple PDFs), batch split (separate multiple PDFs into pages), batch rotate (fix orientation on multiple files), and batch compress (reduce file sizes in bulk). All operations support multi-file upload and Download All as ZIP." }
+      "acceptedAnswer": { "@type": "Answer", "text": "With PDF.it Pro, you can batch merge (combine multiple PDFs), batch split (separate multiple PDFs into pages), batch rotate (fix orientation on multiple files), and batch compress (reduce file sizes in bulk). All operations support multi-file upload and Download All as ZIP." }
     },
     {
       "@type": "Question",
@@ -36,13 +36,13 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Can I automate PDF workflows with OmnisPDF?",
+      "name": "Can I automate PDF workflows with PDF.it?",
       "acceptedAnswer": { "@type": "Answer", "text": "Yes. Business plan users ($13.99/month) get access to Workflow Automation, which lets you chain multiple operations together — for example, split PDFs, then compress each part, then merge selected pages. Visit the Workflow Automation page to learn more." }
     },
     {
       "@type": "Question",
       "name": "Are my files secure during batch processing?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. All files are processed securely and deleted automatically after your session ends. OmnisPDF does not store or share your documents. Processing happens in isolated sessions for each user." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. All files are processed securely and deleted automatically after your session ends. PDF.it does not store or share your documents. Processing happens in isolated sessions for each user." }
     }
   ]
 }
@@ -66,7 +66,7 @@ export default function BatchOrganizePDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Batch Organize PDFs</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Process multiple PDF files at once with OmnisPDF Pro. Merge, split, rotate, and compress PDFs in bulk — save hours of repetitive work with batch processing.
+                Process multiple PDF files at once with PDF.it Pro. Merge, split, rotate, and compress PDFs in bulk — save hours of repetitive work with batch processing.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Multiple Operations</span></div>
@@ -97,7 +97,7 @@ export default function BatchOrganizePDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Managing a large library of PDF files is time-consuming when you can only process one at a time. OmnisPDF Pro gives you batch processing across all major tools — upload multiple files, apply operations in bulk, and download everything as a ZIP.
+              Managing a large library of PDF files is time-consuming when you can only process one at a time. PDF.it Pro gives you batch processing across all major tools — upload multiple files, apply operations in bulk, and download everything as a ZIP.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Batch merge, split, rotate, and compress PDFs</li>
@@ -115,7 +115,7 @@ export default function BatchOrganizePDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Organize Document Libraries</h2>
               <p className="text-slate-600">
-                When your document folder is overflowing with PDFs that need merging, splitting, or compressing, batch processing is the answer. Upload your entire batch, choose the operation, and let OmnisPDF process everything in parallel — no more clicking through files one by one.
+                When your document folder is overflowing with PDFs that need merging, splitting, or compressing, batch processing is the answer. Upload your entire batch, choose the operation, and let PDF.it process everything in parallel — no more clicking through files one by one.
               </p>
             </div>
             <div>
@@ -184,12 +184,12 @@ export default function BatchOrganizePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "What does batch organize PDFs mean?", a: "Batch organizing means processing multiple PDF files at once — merging, splitting, rotating, or compressing them in bulk instead of one at a time. OmnisPDF Pro lets you upload multiple files and apply operations to all of them simultaneously." },
-                { q: "What operations can I perform in batch?", a: "With OmnisPDF Pro, you can batch merge (combine multiple PDFs), batch split (separate multiple PDFs into pages), batch rotate (fix orientation on multiple files), and batch compress (reduce file sizes in bulk). All operations support multi-file upload and Download All as ZIP." },
+                { q: "What does batch organize PDFs mean?", a: "Batch organizing means processing multiple PDF files at once — merging, splitting, rotating, or compressing them in bulk instead of one at a time. PDF.it Pro lets you upload multiple files and apply operations to all of them simultaneously." },
+                { q: "What operations can I perform in batch?", a: "With PDF.it Pro, you can batch merge (combine multiple PDFs), batch split (separate multiple PDFs into pages), batch rotate (fix orientation on multiple files), and batch compress (reduce file sizes in bulk). All operations support multi-file upload and Download All as ZIP." },
                 { q: "Is batch processing available on the free plan?", a: "Free users can process one file at a time with files up to 25MB. Batch processing — working with multiple files simultaneously — is a Pro feature available for $7.99/month, which also includes files up to 200MB and unlimited conversions." },
                 { q: "How many files can I process at once?", a: "Pro users can upload and process dozens of files in a single batch. There is no fixed file count limit — the main constraint is the per-file size limit (200MB for Pro, 1GB for Business). All files are processed in parallel for maximum speed." },
-                { q: "Can I automate PDF workflows with OmnisPDF?", a: "Yes. Business plan users ($13.99/month) get access to Workflow Automation, which lets you chain multiple operations together — for example, split PDFs, then compress each part, then merge selected pages. Visit the Workflow Automation page to learn more." },
-                { q: "Are my files secure during batch processing?", a: "Yes. All files are processed securely and deleted automatically after your session ends. OmnisPDF does not store or share your documents. Processing happens in isolated sessions for each user." },
+                { q: "Can I automate PDF workflows with PDF.it?", a: "Yes. Business plan users ($13.99/month) get access to Workflow Automation, which lets you chain multiple operations together — for example, split PDFs, then compress each part, then merge selected pages. Visit the Workflow Automation page to learn more." },
+                { q: "Are my files secure during batch processing?", a: "Yes. All files are processed securely and deleted automatically after your session ends. PDF.it does not store or share your documents. Processing happens in isolated sessions for each user." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

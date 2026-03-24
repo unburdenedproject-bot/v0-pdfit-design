@@ -8,9 +8,9 @@ import { Footer } from "@/components/footer"
 import { ScrollToTools } from "@/components/scroll-to-tools"
 
 export const metadata: Metadata = {
-  title: "AI PDF Tools, ATS Resume Optimizer & Resume Builder | OmnisPDF",
+  title: "AI PDF Tools, ATS Resume Optimizer & Resume Builder | PDF.it",
   description:
-    "Use OmnisPDF to compress, convert, merge, split, and edit PDFs online. Try AI Resume ATS Optimizer and AI Resume Builder to score, fix, and create ATS-friendly resumes fast.",
+    "Use PDF.it to compress, convert, merge, split, and edit PDFs online. Try AI Resume ATS Optimizer and AI Resume Builder to score, fix, and create ATS-friendly resumes fast.",
   keywords: [
     "AI PDF tools",
     "ATS resume optimizer",
@@ -23,17 +23,17 @@ export const metadata: Metadata = {
     "convert PDF",
   ],
   openGraph: {
-    title: "AI PDF Tools, ATS Resume Optimizer & Resume Builder | OmnisPDF",
+    title: "AI PDF Tools, ATS Resume Optimizer & Resume Builder | PDF.it",
     description:
       "Compress, convert, merge, split, and edit PDFs online. Score your resume with AI ATS analysis or create a new ATS-friendly resume in minutes.",
-    url: "https://omnispdf.com",
-    siteName: "OmnisPDF",
+    url: "https://pdf.it.com",
+    siteName: "PDF.it",
     images: [
       {
-        url: "https://omnispdf.com/og-logo.png",
+        url: "https://pdf.it.com/og-logo.png",
         width: 1200,
         height: 630,
-        alt: "OmnisPDF AI PDF and Resume Tools",
+        alt: "PDF.it AI PDF and Resume Tools",
       },
     ],
     locale: "en_US",
@@ -41,10 +41,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI PDF Tools, ATS Resume Optimizer & Resume Builder | OmnisPDF",
+    title: "AI PDF Tools, ATS Resume Optimizer & Resume Builder | PDF.it",
     description:
       "Compress PDFs and use AI to optimize or build ATS-friendly resumes.",
-    images: ["https://omnispdf.com/og-logo.png"],
+    images: ["https://pdf.it.com/og-logo.png"],
   },
 }
 

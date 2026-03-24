@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Shield, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Mejores Practicas de Contrasena para PDF (Contrasenas Fuertes y Permisos) | OmnisPDF",
+  title: "Mejores Practicas de Contrasena para PDF (Contrasenas Fuertes y Permisos) | PDF.it",
   description: "Aprende como elegir contrasenas fuertes para tus PDFs, establecer los permisos correctos y evitar errores comunes de seguridad. Una guia completa de seguridad de contrasenas para PDF.",
   keywords: "mejores practicas contrasena pdf, contrasena fuerte pdf, permisos pdf, configuracion seguridad pdf",
 }
@@ -13,16 +13,16 @@ export const metadata = {
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
   { "@type": "Question", "name": "Que hace una contrasena de PDF fuerte?", "acceptedAnswer": { "@type": "Answer", "text": "Una contrasena de PDF fuerte tiene al menos 12 caracteres, combina letras mayusculas y minusculas, numeros y caracteres especiales, y evita palabras del diccionario o informacion personal como cumpleanos." } },
   { "@type": "Question", "name": "Debo usar la misma contrasena para todos mis PDFs?", "acceptedAnswer": { "@type": "Answer", "text": "No. Usar la misma contrasena para cada PDF significa que si una contrasena es comprometida, todos tus documentos quedan expuestos. Usa una contrasena unica para cada documento sensible y guardalas en un gestor de contrasenas." } },
-  { "@type": "Question", "name": "Que permisos de PDF puedo restringir?", "acceptedAnswer": { "@type": "Answer", "text": "Puedes restringir la impresion, copia de texto, edicion de contenido, extraccion de paginas, agregar anotaciones y rellenar formularios. OmnisPDF te permite establecer todos estos permisos cuando proteges un PDF." } },
+  { "@type": "Question", "name": "Que permisos de PDF puedo restringir?", "acceptedAnswer": { "@type": "Answer", "text": "Puedes restringir la impresion, copia de texto, edicion de contenido, extraccion de paginas, agregar anotaciones y rellenar formularios. PDF.it te permite establecer todos estos permisos cuando proteges un PDF." } },
   { "@type": "Question", "name": "La encriptacion de 128 bits es suficiente para la seguridad del PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Si, la encriptacion AES de 128 bits es suficientemente fuerte para la mayoria de documentos de negocio y personales. Para archivos altamente confidenciales como contratos legales o registros medicos, AES de 256 bits proporciona una capa extra de seguridad." } },
   { "@type": "Question", "name": "Alguien puede eludir los permisos del PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Las contrasenas de permisos son menos seguras que las contrasenas de apertura — algunas herramientas pueden eludirlas. Para maxima seguridad, siempre establece una contrasena de apertura ademas de las restricciones de permisos." } },
   { "@type": "Question", "name": "Como debo compartir la contrasena con el destinatario?", "acceptedAnswer": { "@type": "Answer", "text": "Nunca envies la contrasena en el mismo correo que el PDF. Comparte la contrasena por un canal diferente — un mensaje de texto, llamada o app de mensajeria segura. Asi, incluso si el correo es interceptado, el archivo permanece bloqueado." } }
 ] }
 
-const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como Establecer Contrasenas y Permisos Fuertes para PDF", "description": "Asegura tus PDFs con contrasenas fuertes y la configuracion de permisos correcta en 3 pasos usando OmnisPDF.", "step": [
+const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como Establecer Contrasenas y Permisos Fuertes para PDF", "description": "Asegura tus PDFs con contrasenas fuertes y la configuracion de permisos correcta en 3 pasos usando PDF.it.", "step": [
   { "@type": "HowToStep", "name": "Elige una contrasena fuerte", "text": "Crea una contrasena de al menos 12 caracteres con una mezcla de mayusculas, minusculas, numeros y caracteres especiales. Evita palabras del diccionario y detalles personales." },
   { "@type": "HowToStep", "name": "Establece los permisos correctos", "text": "Decide que debe poder hacer el destinatario — solo ver, imprimir o editar. Establece una contrasena de permisos para restringir acciones como copiar, imprimir o modificar el documento." },
-  { "@type": "HowToStep", "name": "Aplica la encriptacion y descarga", "text": "Sube tu PDF a la herramienta Proteger PDF de OmnisPDF, ingresa tu contrasena y permisos, selecciona encriptacion AES de 256 bits y descarga el archivo asegurado." }
+  { "@type": "HowToStep", "name": "Aplica la encriptacion y descarga", "text": "Sube tu PDF a la herramienta Proteger PDF de PDF.it, ingresa tu contrasena y permisos, selecciona encriptacion AES de 256 bits y descarga el archivo asegurado." }
 ] }
 
 export default function MejoresPracticasContrasenaPDFPage() {
@@ -72,7 +72,7 @@ export default function MejoresPracticasContrasenaPDFPage() {
 
           <section className="mb-12">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Establecer los Permisos Correctos de PDF</h2>
-            <p className="text-slate-600 mb-4">Mas alla de bloquear un archivo con contrasena, puedes controlar exactamente lo que las personas pueden hacer con tu PDF. La herramienta <Link href="/es/proteger-pdf" className="text-orange-600 hover:underline">Proteger PDF</Link> de OmnisPDF te permite restringir las siguientes acciones:</p>
+            <p className="text-slate-600 mb-4">Mas alla de bloquear un archivo con contrasena, puedes controlar exactamente lo que las personas pueden hacer con tu PDF. La herramienta <Link href="/es/proteger-pdf" className="text-orange-600 hover:underline">Proteger PDF</Link> de PDF.it te permite restringir las siguientes acciones:</p>
             <ul className="space-y-3 text-slate-700">
               <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Sin impresion.</strong> Evita que el destinatario imprima el documento. Util para borradores de informes, memorandos confidenciales y materiales compartidos solo para revision.</span></li>
               <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Sin copiar texto.</strong> Bloquea la seleccion de texto y copiar-pegar. Esto protege propiedad intelectual, lenguaje legal y contenido original de ser copiado.</span></li>
@@ -94,7 +94,7 @@ export default function MejoresPracticasContrasenaPDFPage() {
 
           <section className="mb-12">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Que Nivel de Encriptacion Deberias Usar?</h2>
-            <p className="text-slate-600 mb-4">OmnisPDF ofrece multiples niveles de encriptacion. Aqui tienes una guia practica para elegir el correcto:</p>
+            <p className="text-slate-600 mb-4">PDF.it ofrece multiples niveles de encriptacion. Aqui tienes una guia practica para elegir el correcto:</p>
             <ul className="space-y-2 text-slate-700">
               <li>&#10003; <strong>AES de 128 bits:</strong> Rapido, ampliamente compatible, suficientemente fuerte para la mayoria de documentos de negocio. Usa esto para informes internos, correspondencia general y archivos cotidianos.</li>
               <li>&#10003; <strong>AES de 256 bits:</strong> Maxima seguridad. Usa esto para contratos legales, registros financieros, datos medicos, documentos gubernamentales y cualquier cosa con requisitos de cumplimiento normativo.</li>
@@ -131,7 +131,7 @@ export default function MejoresPracticasContrasenaPDFPage() {
             {[
               { q: "Que hace una contrasena de PDF fuerte?", a: "Una contrasena de PDF fuerte tiene al menos 12 caracteres, combina letras mayusculas y minusculas, numeros y caracteres especiales, y evita palabras del diccionario o informacion personal como cumpleanos." },
               { q: "Debo usar la misma contrasena para todos mis PDFs?", a: "No. Usar la misma contrasena para cada PDF significa que si una contrasena es comprometida, todos tus documentos quedan expuestos. Usa una contrasena unica para cada documento sensible y guardalas en un gestor de contrasenas." },
-              { q: "Que permisos de PDF puedo restringir?", a: "Puedes restringir la impresion, copia de texto, edicion de contenido, extraccion de paginas, agregar anotaciones y rellenar formularios. OmnisPDF te permite establecer todos estos permisos cuando proteges un PDF." },
+              { q: "Que permisos de PDF puedo restringir?", a: "Puedes restringir la impresion, copia de texto, edicion de contenido, extraccion de paginas, agregar anotaciones y rellenar formularios. PDF.it te permite establecer todos estos permisos cuando proteges un PDF." },
               { q: "La encriptacion de 128 bits es suficiente para la seguridad del PDF?", a: "Si, la encriptacion AES de 128 bits es suficientemente fuerte para la mayoria de documentos de negocio y personales. Para archivos altamente confidenciales como contratos legales o registros medicos, AES de 256 bits proporciona una capa extra de seguridad." },
               { q: "Alguien puede eludir los permisos del PDF?", a: "Las contrasenas de permisos son menos seguras que las contrasenas de apertura — algunas herramientas pueden eludirlas. Para maxima seguridad, siempre establece una contrasena de apertura ademas de las restricciones de permisos." },
               { q: "Como debo compartir la contrasena con el destinatario?", a: "Nunca envies la contrasena en el mismo correo que el PDF. Comparte la contrasena por un canal diferente — un mensaje de texto, llamada o app de mensajeria segura. Asi, incluso si el correo es interceptado, el archivo permanece bloqueado." },

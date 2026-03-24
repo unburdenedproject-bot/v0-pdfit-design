@@ -6,9 +6,9 @@ import { Scissors, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Eliminar Páginas de PDF — Quita Páginas No Deseadas | OmnisPDF",
+  title: "Eliminar Páginas de PDF — Quita Páginas No Deseadas | PDF.it",
   description:
-    "Elimina páginas no deseadas de un PDF con OmnisPDF. Quita páginas en blanco, duplicados, portadas o secciones irrelevantes — rápido, gratis y en tu navegador.",
+    "Elimina páginas no deseadas de un PDF con PDF.it. Quita páginas en blanco, duplicados, portadas o secciones irrelevantes — rápido, gratis y en tu navegador.",
   alternates: {
     languages: {
       en: "/delete-pdf-pages",
@@ -24,7 +24,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Eliminar páginas es permanente?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF crea un nuevo PDF sin las páginas seleccionadas. Tu archivo original no se modifica — siempre puedes volver a subir el original si necesitas las páginas eliminadas." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it crea un nuevo PDF sin las páginas seleccionadas. Tu archivo original no se modifica — siempre puedes volver a subir el original si necesitas las páginas eliminadas." }
     },
     {
       "@type": "Question",
@@ -39,12 +39,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo sé qué páginas eliminar?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF te muestra una vista previa de cada página de tu PDF. Puedes navegar por las miniaturas y seleccionar las páginas que deseas eliminar antes de procesar." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it te muestra una vista previa de cada página de tu PDF. Puedes navegar por las miniaturas y seleccionar las páginas que deseas eliminar antes de procesar." }
     },
     {
       "@type": "Question",
       "name": "¿Puedo eliminar páginas de un PDF desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en navegadores móviles — sube tu PDF, selecciona las páginas a eliminar y descarga el resultado desde iPhone o Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube tu PDF, selecciona las páginas a eliminar y descarga el resultado desde iPhone o Android." }
     },
     {
       "@type": "Question",
@@ -91,7 +91,7 @@ export default function EliminarPaginasDePDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              La herramienta Eliminar Páginas de OmnisPDF te permite quitar páginas específicas de un PDF sin afectar el resto del documento. Perfecto para limpiar documentos antes de compartirlos — elimina portadas, páginas en blanco, publicidad o cualquier contenido que no necesites.
+              La herramienta Eliminar Páginas de PDF.it te permite quitar páginas específicas de un PDF sin afectar el resto del documento. Perfecto para limpiar documentos antes de compartirlos — elimina portadas, páginas en blanco, publicidad o cualquier contenido que no necesites.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Elimina páginas específicas de cualquier PDF</li>
@@ -139,7 +139,7 @@ export default function EliminarPaginasDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Eliminar Páginas de un PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Selecciona las páginas que deseas eliminar.",
                 "Haz clic en Eliminar Páginas y descarga tu PDF limpio.",
               ].map((step, i) => (
@@ -188,11 +188,11 @@ export default function EliminarPaginasDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Eliminar páginas es permanente?", a: "OmnisPDF crea un nuevo PDF sin las páginas seleccionadas. Tu archivo original no se modifica — siempre puedes volver a subir el original si necesitas las páginas eliminadas." },
+                { q: "¿Eliminar páginas es permanente?", a: "PDF.it crea un nuevo PDF sin las páginas seleccionadas. Tu archivo original no se modifica — siempre puedes volver a subir el original si necesitas las páginas eliminadas." },
                 { q: "¿Puedo deshacer la eliminación de páginas?", a: "El archivo descargado no incluirá las páginas eliminadas, pero tu archivo original no se toca. Si necesitas recuperar páginas, simplemente vuelve a subir el archivo original." },
                 { q: "¿Se mantiene la calidad al eliminar páginas?", a: "Sí. Las páginas restantes se mantienen exactamente como en el original — sin recodificación, sin pérdida de calidad en texto, imágenes o formato." },
-                { q: "¿Cómo sé qué páginas eliminar?", a: "OmnisPDF te muestra una vista previa de cada página de tu PDF. Puedes navegar por las miniaturas y seleccionar las páginas que deseas eliminar antes de procesar." },
-                { q: "¿Puedo eliminar páginas de un PDF desde mi celular?", a: "Sí. OmnisPDF funciona en navegadores móviles — sube tu PDF, selecciona las páginas a eliminar y descarga el resultado desde iPhone o Android." },
+                { q: "¿Cómo sé qué páginas eliminar?", a: "PDF.it te muestra una vista previa de cada página de tu PDF. Puedes navegar por las miniaturas y seleccionar las páginas que deseas eliminar antes de procesar." },
+                { q: "¿Puedo eliminar páginas de un PDF desde mi celular?", a: "Sí. PDF.it funciona en navegadores móviles — sube tu PDF, selecciona las páginas a eliminar y descarga el resultado desde iPhone o Android." },
                 { q: "¿Es gratis eliminar páginas de un PDF?", a: "Sí. Puedes eliminar páginas de PDFs de hasta 25MB gratis. Para archivos más grandes y procesamiento por lotes, actualiza a Pro." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

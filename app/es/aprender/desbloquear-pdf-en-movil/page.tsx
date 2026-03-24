@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Unlock, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Desbloquear un PDF en Tu Telefono (iPhone y Android) | OmnisPDF",
+  title: "Desbloquear un PDF en Tu Telefono (iPhone y Android) | PDF.it",
   description:
     "Aprende como desbloquear un PDF en tu telefono — iPhone o Android. Elimina restricciones y contrasenas de PDF desde tu navegador movil. Sin necesidad de instalar aplicaciones.",
   keywords: "desbloquear pdf en telefono, desbloquear pdf iphone, eliminar contrasena pdf android, desbloquear pdf movil",
@@ -18,17 +18,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Puedo desbloquear un PDF en mi iPhone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. Abre Safari o Chrome en tu iPhone, ve a la herramienta Desbloquear PDF de OmnisPDF, sube tu archivo y descarga la version desbloqueada. No necesitas instalar ninguna aplicacion — funciona completamente en el navegador." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. Abre Safari o Chrome en tu iPhone, ve a la herramienta Desbloquear PDF de PDF.it, sube tu archivo y descarga la version desbloqueada. No necesitas instalar ninguna aplicacion — funciona completamente en el navegador." }
     },
     {
       "@type": "Question",
       "name": "Puedo desbloquear un PDF en Android?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. Abre Chrome, Firefox o cualquier navegador en tu telefono Android, ve a la herramienta Desbloquear PDF de OmnisPDF, toca para subir tu PDF y descarga el archivo desbloqueado. Funciona en todos los dispositivos Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. Abre Chrome, Firefox o cualquier navegador en tu telefono Android, ve a la herramienta Desbloquear PDF de PDF.it, toca para subir tu PDF y descarga el archivo desbloqueado. Funciona en todos los dispositivos Android." }
     },
     {
       "@type": "Question",
       "name": "Necesito instalar una aplicacion para desbloquear PDF en mi telefono?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF es una herramienta basada en web que funciona en cualquier navegador movil. No necesitas descargar ni instalar ninguna aplicacion. Solo visita omnispdf.com, sube tu PDF y desbloquealo." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it es una herramienta basada en web que funciona en cualquier navegador movil. No necesitas descargar ni instalar ninguna aplicacion. Solo visita pdf.it.com, sube tu PDF y desbloquealo." }
     },
     {
       "@type": "Question",
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Desbloquear un PDF en Tu Telefono",
-  "description": "Elimina las restricciones de PDF en iPhone o Android en 3 simples pasos con OmnisPDF.",
+  "description": "Elimina las restricciones de PDF en iPhone o Android en 3 simples pasos con PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
-      "name": "Abre OmnisPDF en tu navegador movil",
-      "text": "Abre Safari (iPhone) o Chrome (Android) y ve a omnispdf.com. Toca la herramienta Desbloquear PDF."
+      "name": "Abre PDF.it en tu navegador movil",
+      "text": "Abre Safari (iPhone) o Chrome (Android) y ve a pdf.it.com. Toca la herramienta Desbloquear PDF."
     },
     {
       "@type": "HowToStep",
@@ -147,7 +147,7 @@ export default function DesbloquearPDFEnMovilPage() {
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
-                OmnisPDF funciona en cualquier navegador movil — sin descarga de aplicacion, sin cuenta requerida para uso basico. Solo sube, desbloquea y descarga.
+                PDF.it funciona en cualquier navegador movil — sin descarga de aplicacion, sin cuenta requerida para uso basico. Solo sube, desbloquea y descarga.
               </p>
             </section>
 
@@ -157,8 +157,8 @@ export default function DesbloquearPDFEnMovilPage() {
               <div className="space-y-4">
                 {[
                   {
-                    title: "Abre Safari y ve a OmnisPDF",
-                    desc: "Abre Safari (o Chrome) en tu iPhone y navega a omnispdf.com. Toca \"Desbloquear PDF\" en el menu de herramientas, o ve directamente a omnispdf.com/es/desbloquear-pdf.",
+                    title: "Abre Safari y ve a PDF.it",
+                    desc: "Abre Safari (o Chrome) en tu iPhone y navega a pdf.it.com. Toca \"Desbloquear PDF\" en el menu de herramientas, o ve directamente a pdf.it.com/es/desbloquear-pdf.",
                   },
                   {
                     title: "Sube tu PDF bloqueado",
@@ -188,8 +188,8 @@ export default function DesbloquearPDFEnMovilPage() {
               <div className="space-y-4">
                 {[
                   {
-                    title: "Abre Chrome y ve a OmnisPDF",
-                    desc: "Abre Chrome (o Firefox, Samsung Internet o cualquier navegador) en tu telefono Android. Ve a omnispdf.com y toca \"Desbloquear PDF\" en la lista de herramientas.",
+                    title: "Abre Chrome y ve a PDF.it",
+                    desc: "Abre Chrome (o Firefox, Samsung Internet o cualquier navegador) en tu telefono Android. Ve a pdf.it.com y toca \"Desbloquear PDF\" en la lista de herramientas.",
                   },
                   {
                     title: "Sube tu PDF bloqueado",
@@ -231,7 +231,7 @@ export default function DesbloquearPDFEnMovilPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Otras Herramientas de PDF que Funcionan en Tu Telefono</h2>
               <p className="text-slate-600 mb-4">
-                OmnisPDF es completamente responsivo — todas las herramientas funcionan en movil. Aqui estan las mas utiles para usuarios de telefono:
+                PDF.it es completamente responsivo — todas las herramientas funcionan en movil. Aqui estan las mas utiles para usuarios de telefono:
               </p>
               <div className="space-y-6">
                 <div>
@@ -268,13 +268,13 @@ export default function DesbloquearPDFEnMovilPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que No Necesitas una Aplicacion de PDF</h2>
               <p className="text-slate-600 mb-4">
-                La App Store y Google Play estan llenas de aplicaciones de PDF que ocupan almacenamiento, muestran anuncios y a menudo requieren suscripciones de pago. OmnisPDF funciona de manera diferente:
+                La App Store y Google Play estan llenas de aplicaciones de PDF que ocupan almacenamiento, muestran anuncios y a menudo requieren suscripciones de pago. PDF.it funciona de manera diferente:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Sin descarga requerida.</strong> OmnisPDF funciona completamente en tu navegador. No se usa espacio de almacenamiento en tu telefono.</li>
+                <li>&#10003; <strong>Sin descarga requerida.</strong> PDF.it funciona completamente en tu navegador. No se usa espacio de almacenamiento en tu telefono.</li>
                 <li>&#10003; <strong>Sin cuenta necesaria para uso basico.</strong> Desbloquea hasta 3 PDF sin crear una cuenta. Inicia sesion para hasta 10 desbloqueos gratis por dia.</li>
-                <li>&#10003; <strong>Funciona en cualquier telefono.</strong> iPhone, Android, Samsung, Google Pixel, OnePlus — si tiene un navegador, OmnisPDF funciona en el.</li>
-                <li>&#10003; <strong>Siempre actualizado.</strong> Sin actualizaciones de aplicacion que instalar. OmnisPDF siempre es la version mas reciente cuando visitas el sitio.</li>
+                <li>&#10003; <strong>Funciona en cualquier telefono.</strong> iPhone, Android, Samsung, Google Pixel, OnePlus — si tiene un navegador, PDF.it funciona en el.</li>
+                <li>&#10003; <strong>Siempre actualizado.</strong> Sin actualizaciones de aplicacion que instalar. PDF.it siempre es la version mas reciente cuando visitas el sitio.</li>
                 <li>&#10003; <strong>Procesamiento seguro.</strong> Tus archivos se procesan a traves de HTTPS y se eliminan automaticamente despues del procesamiento. Nada se almacena en nuestros servidores.</li>
               </ul>
             </section>
@@ -325,9 +325,9 @@ export default function DesbloquearPDFEnMovilPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Puedo desbloquear un PDF en mi iPhone?", a: "Si. Abre Safari o Chrome en tu iPhone, ve a la herramienta Desbloquear PDF de OmnisPDF, sube tu archivo y descarga la version desbloqueada. No necesitas instalar ninguna aplicacion — funciona completamente en el navegador." },
-                { q: "Puedo desbloquear un PDF en Android?", a: "Si. Abre Chrome, Firefox o cualquier navegador en tu telefono Android, ve a la herramienta Desbloquear PDF de OmnisPDF, toca para subir tu PDF y descarga el archivo desbloqueado. Funciona en todos los dispositivos Android." },
-                { q: "Necesito instalar una aplicacion para desbloquear PDF en mi telefono?", a: "No. OmnisPDF es una herramienta basada en web que funciona en cualquier navegador movil. No necesitas descargar ni instalar ninguna aplicacion. Solo visita omnispdf.com, sube tu PDF y desbloquealo." },
+                { q: "Puedo desbloquear un PDF en mi iPhone?", a: "Si. Abre Safari o Chrome en tu iPhone, ve a la herramienta Desbloquear PDF de PDF.it, sube tu archivo y descarga la version desbloqueada. No necesitas instalar ninguna aplicacion — funciona completamente en el navegador." },
+                { q: "Puedo desbloquear un PDF en Android?", a: "Si. Abre Chrome, Firefox o cualquier navegador en tu telefono Android, ve a la herramienta Desbloquear PDF de PDF.it, toca para subir tu PDF y descarga el archivo desbloqueado. Funciona en todos los dispositivos Android." },
+                { q: "Necesito instalar una aplicacion para desbloquear PDF en mi telefono?", a: "No. PDF.it es una herramienta basada en web que funciona en cualquier navegador movil. No necesitas descargar ni instalar ninguna aplicacion. Solo visita pdf.it.com, sube tu PDF y desbloquealo." },
                 { q: "Donde se guarda el PDF desbloqueado en mi telefono?", a: "En iPhone, el archivo se guarda en la carpeta Descargas en la aplicacion Archivos. En Android, se guarda en la carpeta Descargas. Tambien puedes encontrarlo en el historial de descargas de tu navegador." },
                 { q: "Hay limite de tamano de archivo en movil?", a: "Los usuarios gratuitos pueden subir PDF de hasta 25MB, lo que cubre la mayoria de los documentos que tendrias en tu telefono. Los usuarios Pro pueden subir archivos de hasta 200MB. La velocidad de datos moviles o Wi-Fi puede afectar el tiempo de carga para archivos mas grandes." },
                 { q: "Puedo imprimir el PDF desbloqueado desde mi telefono?", a: "Si. Despues de descargar el PDF desbloqueado, abrelo en tu telefono y usa el boton de compartir para imprimir. En iPhone, usa AirPrint para enviarlo a una impresora cercana. En Android, usa la opcion de impresion integrada o Google Cloud Print." },

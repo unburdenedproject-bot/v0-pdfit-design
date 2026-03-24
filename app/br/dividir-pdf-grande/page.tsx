@@ -6,9 +6,9 @@ import { Scissors, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Dividir PDF Grande — Separe PDFs Pesados em Partes Menores | OmnisPDF",
+  title: "Dividir PDF Grande — Separe PDFs Pesados em Partes Menores | PDF.it",
   description:
-    "Divida um PDF grande em arquivos menores e mais faceis de gerenciar com OmnisPDF. Separe manuais, relatorios e livros digitais em partes — rapido, gratis e no navegador.",
+    "Divida um PDF grande em arquivos menores e mais faceis de gerenciar com PDF.it. Separe manuais, relatorios e livros digitais em partes — rapido, gratis e no navegador.",
   alternates: {
     languages: {
       en: "/split-large-pdf",
@@ -45,7 +45,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso dividir um PDF grande no celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em navegadores moveis — envie, divida e baixe pelo iPhone ou Android. Nao precisa instalar nenhum app." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em navegadores moveis — envie, divida e baixe pelo iPhone ou Android. Nao precisa instalar nenhum app." }
     },
     {
       "@type": "Question",
@@ -98,7 +98,7 @@ export default function DividirPdfGrandePage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              PDFs grandes — relatorios de 100+ paginas, digitalizacoes pesadas, livros e manuais — sao dificeis de enviar por email, subir e compartilhar. O OmnisPDF os divide em arquivos menores por intervalo de paginas ou paginas individuais, para que cada parte respeite os limites de tamanho.
+              PDFs grandes — relatorios de 100+ paginas, digitalizacoes pesadas, livros e manuais — sao dificeis de enviar por email, subir e compartilhar. O PDF.it os divide em arquivos menores por intervalo de paginas ou paginas individuais, para que cada parte respeite os limites de tamanho.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Divida PDFs de 100+ paginas em partes gerenciaveis</li>
@@ -146,7 +146,7 @@ export default function DividirPdfGrandePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Dividir um PDF Grande</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste seu PDF grande para o OmnisPDF.",
+                "Envie ou arraste seu PDF grande para o PDF.it.",
                 "Escolha como dividir — por intervalo de paginas, paginas individuais ou partes iguais.",
                 "Clique em Dividir PDF e baixe seus arquivos menores.",
               ].map((step, i) => (
@@ -197,7 +197,7 @@ export default function DividirPdfGrandePage() {
                 { q: "Dividir um PDF reduz a qualidade?", a: "Nao. A divisao extrai paginas do PDF original sem recodificar. Texto, imagens e formatacao sao mantidos exatamente como no arquivo original." },
                 { q: "Quanto tempo leva para dividir um PDF grande?", a: "A maioria dos PDFs e dividida em segundos. Arquivos muito grandes (100+ paginas) podem levar um pouco mais, mas o processo e significativamente mais rapido que software de desktop." },
                 { q: "E gratis dividir PDFs grandes?", a: "Sim. Voce pode dividir PDFs de ate 25MB gratis. Para arquivos maiores (ate 200MB) e processamento em lote, faca upgrade para Pro." },
-                { q: "Posso dividir um PDF grande no celular?", a: "Sim. O OmnisPDF funciona em navegadores moveis — envie, divida e baixe pelo iPhone ou Android. Nao precisa instalar nenhum app." },
+                { q: "Posso dividir um PDF grande no celular?", a: "Sim. O PDF.it funciona em navegadores moveis — envie, divida e baixe pelo iPhone ou Android. Nao precisa instalar nenhum app." },
                 { q: "Como divido um PDF grande para enviar por email?", a: "Envie seu PDF grande, divida-o em partes menores que respeitem o limite do seu provedor de email (geralmente 25MB) e anexe cada parte. Voce tambem pode comprimir cada parte apos dividir." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

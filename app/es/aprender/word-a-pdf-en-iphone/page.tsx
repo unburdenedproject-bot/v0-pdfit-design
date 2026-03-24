@@ -5,9 +5,9 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Convertir Word a PDF en iPhone (DOCX a PDF en Minutos) | OmnisPDF",
+  title: "Convertir Word a PDF en iPhone (DOCX a PDF en Minutos) | PDF.it",
   description:
-    "Aprende a convertir Word a PDF en iPhone usando Safari y OmnisPDF. Sin necesidad de app — abre tu DOCX desde correo o Archivos, conviértelo y comparte el PDF en minutos.",
+    "Aprende a convertir Word a PDF en iPhone usando Safari y PDF.it. Sin necesidad de app — abre tu DOCX desde correo o Archivos, conviértelo y comparte el PDF en minutos.",
   keywords: "word a pdf iphone, convertir docx a pdf iphone, word a pdf en telefono, docx a pdf movil, convertir documento word iphone",
 }
 
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo convertir Word a PDF en iPhone sin una app?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona directamente en Safari (o cualquier navegador de iPhone). Ve a omnispdf.com/word-to-pdf, sube tu archivo .docx y descarga el PDF convertido. No necesitas instalar ninguna aplicación." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona directamente en Safari (o cualquier navegador de iPhone). Ve a pdf.it.com/word-to-pdf, sube tu archivo .docx y descarga el PDF convertido. No necesitas instalar ninguna aplicación." }
     },
     {
       "@type": "Question",
@@ -28,17 +28,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿El PDF mantendrá el mismo formato que mi documento Word?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF preserva fuentes, imágenes, tablas y diseño durante la conversión. Para mejores resultados, asegúrate de que tu documento Word use fuentes estándar como Arial o Calibri, que se convierten de forma confiable en todos los dispositivos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it preserva fuentes, imágenes, tablas y diseño durante la conversión. Para mejores resultados, asegúrate de que tu documento Word use fuentes estándar como Arial o Calibri, que se convierten de forma confiable en todos los dispositivos." }
     },
     {
       "@type": "Question",
       "name": "¿Puedo convertir Word a PDF usando la app Archivos en iPhone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "La app Archivos puede abrir archivos DOCX para visualización pero no tiene un convertidor PDF integrado. Puedes usar el truco del menú Imprimir (compartir > Imprimir > pellizcar para hacer zoom en la vista previa > compartir como PDF), pero esto a menudo cambia márgenes y elimina hipervínculos. OmnisPDF da una conversión más precisa." }
+      "acceptedAnswer": { "@type": "Answer", "text": "La app Archivos puede abrir archivos DOCX para visualización pero no tiene un convertidor PDF integrado. Puedes usar el truco del menú Imprimir (compartir > Imprimir > pellizcar para hacer zoom en la vista previa > compartir como PDF), pero esto a menudo cambia márgenes y elimina hipervínculos. PDF.it da una conversión más precisa." }
     },
     {
       "@type": "Question",
       "name": "¿Cómo comparto el PDF convertido desde mi iPhone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Después de descargar el PDF de OmnisPDF, toca el ícono de compartir para enviarlo por correo electrónico, iMessage, AirDrop, WhatsApp o cualquier otra app. También puedes guardarlo en la app Archivos o subirlo a almacenamiento en la nube." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Después de descargar el PDF de PDF.it, toca el ícono de compartir para enviarlo por correo electrónico, iMessage, AirDrop, WhatsApp o cualquier otra app. También puedes guardarlo en la app Archivos o subirlo a almacenamiento en la nube." }
     },
     {
       "@type": "Question",
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Cómo Convertir Word a PDF en iPhone",
-  "description": "Convierte un archivo DOCX a PDF en tu iPhone usando Safari y OmnisPDF — sin necesidad de app.",
+  "description": "Convierte un archivo DOCX a PDF en tu iPhone usando Safari y PDF.it — sin necesidad de app.",
   "step": [
     {
       "@type": "HowToStep",
-      "name": "Abre OmnisPDF en Safari",
-      "text": "Abre Safari en tu iPhone y ve a omnispdf.com/word-to-pdf. Toca el área de carga para buscar tu archivo .docx."
+      "name": "Abre PDF.it en Safari",
+      "text": "Abre Safari en tu iPhone y ve a pdf.it.com/word-to-pdf. Toca el área de carga para buscar tu archivo .docx."
     },
     {
       "@type": "HowToStep",
@@ -132,7 +132,7 @@ export default function WordAPdfEnIphonePage() {
                 El iPhone no tiene un convertidor integrado de Word a PDF. La app Archivos puede <em>abrir</em> archivos .docx, pero no puede <em>convertirlos</em> a PDF de forma confiable con formato preciso. Y descargar una app dedicada solo para una conversión parece excesivo.
               </p>
               <p className="text-slate-600">
-                Ahí es donde entra OmnisPDF. Funciona completamente en tu navegador — sin app que instalar, sin cuenta necesaria para tus primeras conversiones.
+                Ahí es donde entra PDF.it. Funciona completamente en tu navegador — sin app que instalar, sin cuenta necesaria para tus primeras conversiones.
               </p>
             </section>
 
@@ -142,8 +142,8 @@ export default function WordAPdfEnIphonePage() {
               <div className="space-y-4">
                 {[
                   {
-                    title: "Abre OmnisPDF en Safari",
-                    desc: "Abre Safari y ve a omnispdf.com/word-to-pdf. La página está completamente optimizada para móvil — funciona exactamente como la versión de escritorio, solo adaptada al tamaño de tu pantalla.",
+                    title: "Abre PDF.it en Safari",
+                    desc: "Abre Safari y ve a pdf.it.com/word-to-pdf. La página está completamente optimizada para móvil — funciona exactamente como la versión de escritorio, solo adaptada al tamaño de tu pantalla.",
                   },
                   {
                     title: "Sube tu archivo Word",
@@ -176,7 +176,7 @@ export default function WordAPdfEnIphonePage() {
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 font-bold mt-0.5">1.</span>
-                  <span><strong>Adjunto de correo electrónico.</strong> Abre el correo con el archivo Word, mantén presionado el adjunto, luego toca "Compartir" y elige "Guardar en Archivos". Ahora puedes encontrarlo en la app Archivos al subir a OmnisPDF.</span>
+                  <span><strong>Adjunto de correo electrónico.</strong> Abre el correo con el archivo Word, mantén presionado el adjunto, luego toca "Compartir" y elige "Guardar en Archivos". Ahora puedes encontrarlo en la app Archivos al subir a PDF.it.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 font-bold mt-0.5">2.</span>
@@ -184,7 +184,7 @@ export default function WordAPdfEnIphonePage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>Apps de almacenamiento en la nube.</strong> Si el archivo está en Google Drive, Dropbox o OneDrive, puedes acceder directamente desde el selector de archivos de iOS al subir a OmnisPDF — estos servicios se integran con la app Archivos.</span>
+                  <span><strong>Apps de almacenamiento en la nube.</strong> Si el archivo está en Google Drive, Dropbox o OneDrive, puedes acceder directamente desde el selector de archivos de iOS al subir a PDF.it — estos servicios se integran con la app Archivos.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-orange-500 font-bold mt-0.5">4.</span>
@@ -224,7 +224,7 @@ export default function WordAPdfEnIphonePage() {
                 <li>&#10003; <strong>Los metadatos se pierden.</strong> Las propiedades del documento como título, autor y palabras clave se eliminan.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Para una nota interna rápida, el truco de imprimir está bien. Para cualquier cosa profesional — currículos, contratos, entregables para clientes — usa el <Link href="/es/word-a-pdf" className="text-orange-600 hover:underline">convertidor Word a PDF de OmnisPDF</Link> para resultados precisos.
+                Para una nota interna rápida, el truco de imprimir está bien. Para cualquier cosa profesional — currículos, contratos, entregables para clientes — usa el <Link href="/es/word-a-pdf" className="text-orange-600 hover:underline">convertidor Word a PDF de PDF.it</Link> para resultados precisos.
               </p>
             </section>
 
@@ -232,7 +232,7 @@ export default function WordAPdfEnIphonePage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Otras Cosas Que Puedes Hacer en iPhone</h2>
               <p className="text-slate-600 mb-4">
-                Todas las herramientas de OmnisPDF funcionan en Safari móvil, así que puedes manejar todo tu flujo de trabajo PDF desde tu teléfono:
+                Todas las herramientas de PDF.it funcionan en Safari móvil, así que puedes manejar todo tu flujo de trabajo PDF desde tu teléfono:
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> — reduce el tamaño del archivo si el PDF es demasiado grande para enviar por correo o subir.</li>
@@ -297,11 +297,11 @@ export default function WordAPdfEnIphonePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Puedo convertir Word a PDF en iPhone sin una app?", a: "Sí. OmnisPDF funciona directamente en Safari (o cualquier navegador de iPhone). Ve a omnispdf.com/word-to-pdf, sube tu archivo .docx y descarga el PDF convertido. No necesitas instalar ninguna aplicación." },
+                { q: "¿Puedo convertir Word a PDF en iPhone sin una app?", a: "Sí. PDF.it funciona directamente en Safari (o cualquier navegador de iPhone). Ve a pdf.it.com/word-to-pdf, sube tu archivo .docx y descarga el PDF convertido. No necesitas instalar ninguna aplicación." },
                 { q: "¿Cómo abro un archivo DOCX en mi iPhone?", a: "Puedes abrir archivos DOCX usando la app Archivos, desde adjuntos de correo electrónico (mantén presionado > Compartir), o desde apps de almacenamiento en la nube como Google Drive, Dropbox o OneDrive. También puedes abrirlos directamente en la app Microsoft Word si la tienes instalada." },
-                { q: "¿El PDF mantendrá el mismo formato que mi documento Word?", a: "Sí. OmnisPDF preserva fuentes, imágenes, tablas y diseño durante la conversión. Para mejores resultados, asegúrate de que tu documento Word use fuentes estándar como Arial o Calibri, que se convierten de forma confiable en todos los dispositivos." },
-                { q: "¿Puedo convertir Word a PDF usando la app Archivos en iPhone?", a: "La app Archivos puede abrir archivos DOCX para visualización pero no tiene un convertidor PDF integrado. Puedes usar el truco del menú Imprimir (compartir > Imprimir > pellizcar para hacer zoom en la vista previa > compartir como PDF), pero esto a menudo cambia márgenes y elimina hipervínculos. OmnisPDF da una conversión más precisa." },
-                { q: "¿Cómo comparto el PDF convertido desde mi iPhone?", a: "Después de descargar el PDF de OmnisPDF, toca el ícono de compartir para enviarlo por correo electrónico, iMessage, AirDrop, WhatsApp o cualquier otra app. También puedes guardarlo en la app Archivos o subirlo a almacenamiento en la nube." },
+                { q: "¿El PDF mantendrá el mismo formato que mi documento Word?", a: "Sí. PDF.it preserva fuentes, imágenes, tablas y diseño durante la conversión. Para mejores resultados, asegúrate de que tu documento Word use fuentes estándar como Arial o Calibri, que se convierten de forma confiable en todos los dispositivos." },
+                { q: "¿Puedo convertir Word a PDF usando la app Archivos en iPhone?", a: "La app Archivos puede abrir archivos DOCX para visualización pero no tiene un convertidor PDF integrado. Puedes usar el truco del menú Imprimir (compartir > Imprimir > pellizcar para hacer zoom en la vista previa > compartir como PDF), pero esto a menudo cambia márgenes y elimina hipervínculos. PDF.it da una conversión más precisa." },
+                { q: "¿Cómo comparto el PDF convertido desde mi iPhone?", a: "Después de descargar el PDF de PDF.it, toca el ícono de compartir para enviarlo por correo electrónico, iMessage, AirDrop, WhatsApp o cualquier otra app. También puedes guardarlo en la app Archivos o subirlo a almacenamiento en la nube." },
                 { q: "¿Hay un límite de tamaño de archivo para convertir en iPhone?", a: "Los usuarios gratuitos pueden subir archivos de hasta 25MB. Los usuarios Pro pueden subir hasta 200MB. La mayoría de los documentos Word están muy por debajo de 25MB, así que el nivel gratuito funciona para la gran mayoría de las conversiones." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

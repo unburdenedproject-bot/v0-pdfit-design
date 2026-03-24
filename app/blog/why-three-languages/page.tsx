@@ -4,9 +4,9 @@ import Link from "next/link"
 import { Calendar, ArrowLeft } from "lucide-react"
 
 export const metadata = {
-  title: "Why OmnisPDF Speaks English, Spanish, and Portuguese | OmnisPDF Blog",
+  title: "Why PDF.it Speaks English, Spanish, and Portuguese | PDF.it Blog",
   description:
-    "Most PDF tools only work in English. OmnisPDF is trilingual from day one — here's why we built 588 pages across three languages and what it means for our users.",
+    "Most PDF tools only work in English. PDF.it is trilingual from day one — here's why we built 588 pages across three languages and what it means for our users.",
 }
 
 export default function WhyThreeLanguagesPage() {
@@ -35,7 +35,7 @@ export default function WhyThreeLanguagesPage() {
                 </div>
               </div>
               <h1 className="text-3xl sm:text-4xl font-black">
-                Why OmnisPDF Speaks English, Spanish, and Portuguese
+                Why PDF.it Speaks English, Spanish, and Portuguese
               </h1>
             </div>
           </div>
@@ -78,7 +78,7 @@ export default function WhyThreeLanguagesPage() {
 
               <h2 className="text-2xl font-black text-slate-900 mt-10 mb-4">What Trilingual Means for Us</h2>
               <p className="text-slate-600 leading-relaxed mb-4">
-                When we say OmnisPDF is trilingual, we do not mean we ran the homepage through Google Translate and
+                When we say PDF.it is trilingual, we do not mean we ran the homepage through Google Translate and
                 called it a day. Every single element of the platform exists in all three languages:
               </p>
               <ul className="list-disc list-inside space-y-2 text-slate-600 mb-4">
@@ -130,7 +130,7 @@ export default function WhyThreeLanguagesPage() {
 
               <h2 className="text-2xl font-black text-slate-900 mt-10 mb-4">Our Markets</h2>
               <p className="text-slate-600 leading-relaxed mb-4">
-                With three languages, OmnisPDF serves a wide range of markets:
+                With three languages, PDF.it serves a wide range of markets:
               </p>
               <ul className="list-disc list-inside space-y-2 text-slate-600 mb-4">
                 <li>
@@ -158,11 +158,11 @@ export default function WhyThreeLanguagesPage() {
               <h2 className="text-2xl font-black text-slate-900 mt-10 mb-4">Try It Yourself</h2>
               <p className="text-slate-600 leading-relaxed mb-4">
                 You can see our trilingual experience in action right now. Look for the flag icons in the header of any
-                page on OmnisPDF. Click a flag to switch languages instantly — the platform will take you to the
+                page on PDF.it. Click a flag to switch languages instantly — the platform will take you to the
                 equivalent page in your chosen language, preserving your context.
               </p>
               <p className="text-slate-600 leading-relaxed mb-4">
-                We believe that language should never be a barrier to getting work done. OmnisPDF speaks your language
+                We believe that language should never be a barrier to getting work done. PDF.it speaks your language
                 — whichever one it is.
               </p>
 

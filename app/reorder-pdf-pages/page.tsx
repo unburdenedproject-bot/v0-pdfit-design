@@ -5,9 +5,9 @@ import { ArrowLeftRight, Zap, Shield, Download, Split, Merge } from "lucide-reac
 import Link from "next/link"
 
 export const metadata = {
-  title: "Reorder PDF Pages Online — Rearrange Pages in a PDF | OmnisPDF",
+  title: "Reorder PDF Pages Online — Rearrange Pages in a PDF | PDF.it",
   description:
-    "Rearrange pages in a PDF with OmnisPDF. Use Split and Merge to reorder pages in any sequence — fast, free, and browser-based.",
+    "Rearrange pages in a PDF with PDF.it. Use Split and Merge to reorder pages in any sequence — fast, free, and browser-based.",
 }
 
 const faqSchema = {
@@ -17,7 +17,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I reorder pages in a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Use OmnisPDF's Split PDF tool to extract individual pages or groups, then use Merge PDF to recombine them in the order you want. Upload the pages in your desired sequence and download the reordered PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Use PDF.it's Split PDF tool to extract individual pages or groups, then use Merge PDF to recombine them in the order you want. Upload the pages in your desired sequence and download the reordered PDF." }
     },
     {
       "@type": "Question",
@@ -27,12 +27,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I rearrange PDF pages on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in mobile browsers — split and merge your PDFs on iPhone or Android to rearrange pages in any order." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in mobile browsers — split and merge your PDFs on iPhone or Android to rearrange pages in any order." }
     },
     {
       "@type": "Question",
       "name": "Do I need to install software to reorder PDF pages?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF runs entirely in your browser — no downloads, no installations. Just upload, split, merge, and download." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it runs entirely in your browser — no downloads, no installations. Just upload, split, merge, and download." }
     },
     {
       "@type": "Question",
@@ -42,7 +42,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I reverse the page order of a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Split your PDF into individual pages, then upload them to Merge PDF in reverse order. OmnisPDF combines them in the sequence you choose." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Split your PDF into individual pages, then upload them to Merge PDF in reverse order. PDF.it combines them in the sequence you choose." }
     }
   ]
 }
@@ -97,7 +97,7 @@ export default function ReorderPDFPagesPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Reordering PDF pages is easy with OmnisPDF. First, use the Split PDF tool to extract individual pages or page ranges from your document. Then, upload the extracted pages to the Merge PDF tool in your desired order. OmnisPDF combines them into a single, reorganized PDF — ready to download, print, or share.
+              Reordering PDF pages is easy with PDF.it. First, use the Split PDF tool to extract individual pages or page ranges from your document. Then, upload the extracted pages to the Merge PDF tool in your desired order. PDF.it combines them into a single, reorganized PDF — ready to download, print, or share.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Rearrange pages in any order you need</li>
@@ -139,7 +139,7 @@ export default function ReorderPDFPagesPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Reorder PDF Pages</h2>
             <div className="space-y-4">
               {[
-                "Upload your PDF to OmnisPDF's Split PDF tool.",
+                "Upload your PDF to PDF.it's Split PDF tool.",
                 "Split the PDF into individual pages or page groups.",
                 "Upload the extracted pages to the Merge PDF tool in your desired order.",
                 "Click Merge PDFs and download your reordered document.",
@@ -187,7 +187,7 @@ export default function ReorderPDFPagesPage() {
               {[
                 {
                   q: "How do I reorder pages in a PDF?",
-                  a: "Use OmnisPDF's Split PDF tool to extract individual pages or groups, then use Merge PDF to recombine them in the order you want. Upload the pages in your desired sequence and download the reordered PDF.",
+                  a: "Use PDF.it's Split PDF tool to extract individual pages or groups, then use Merge PDF to recombine them in the order you want. Upload the pages in your desired sequence and download the reordered PDF.",
                 },
                 {
                   q: "Can I move a specific page to a different position?",
@@ -195,11 +195,11 @@ export default function ReorderPDFPagesPage() {
                 },
                 {
                   q: "Can I rearrange PDF pages on my phone?",
-                  a: "Yes. OmnisPDF works in mobile browsers — split and merge your PDFs on iPhone or Android to rearrange pages in any order.",
+                  a: "Yes. PDF.it works in mobile browsers — split and merge your PDFs on iPhone or Android to rearrange pages in any order.",
                 },
                 {
                   q: "Do I need to install software to reorder PDF pages?",
-                  a: "No. OmnisPDF runs entirely in your browser — no downloads, no installations. Just upload, split, merge, and download.",
+                  a: "No. PDF.it runs entirely in your browser — no downloads, no installations. Just upload, split, merge, and download.",
                 },
                 {
                   q: "Is it safe to upload my PDF for reordering?",
@@ -207,7 +207,7 @@ export default function ReorderPDFPagesPage() {
                 },
                 {
                   q: "Can I reverse the page order of a PDF?",
-                  a: "Yes. Split your PDF into individual pages, then upload them to Merge PDF in reverse order. OmnisPDF combines them in the sequence you choose.",
+                  a: "Yes. Split your PDF into individual pages, then upload them to Merge PDF in reverse order. PDF.it combines them in the sequence you choose.",
                 },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

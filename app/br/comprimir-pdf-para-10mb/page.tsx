@@ -6,16 +6,16 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Ro
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF para 10MB Online — Reduzir Tamanho de PDF | OmnisPDF",
+  title: "Comprimir PDF para 10MB Online — Reduzir Tamanho de PDF | PDF.it",
   description: "Comprima seu PDF para cumprir limites de 10MB. Compressao inteligente para email, uploads e compartilhamento — rapido, pelo navegador, gratis.",
   alternates: { languages: { en: "/compress-pdf-to-10mb", es: "/es/comprimir-pdf-a-10mb", pt: "/br/comprimir-pdf-para-10mb" } },
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-  { "@type": "Question", "name": "Como comprimo um PDF para limite de 10MB?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF ao OmnisPDF e clique em Comprimir. A compressao recomendada otimiza imagens e estrutura interna para reduzir o tamanho preservando a qualidade." } },
+  { "@type": "Question", "name": "Como comprimo um PDF para limite de 10MB?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF ao PDF.it e clique em Comprimir. A compressao recomendada otimiza imagens e estrutura interna para reduzir o tamanho preservando a qualidade." } },
   { "@type": "Question", "name": "Meu PDF ficara abaixo de 10MB?", "acceptedAnswer": { "@type": "Answer", "text": "A grande maioria dos documentos ficam abaixo de 10MB apos compressao. Apenas documentos muito grandes com centenas de paginas ou imagens de alta resolucao podem precisar de compressao extrema." } },
   { "@type": "Question", "name": "A qualidade sera preservada?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. A compressao recomendada preserva excelente qualidade visual. O texto permanece nitido e as imagens mantem otimo detalhe." } },
-  { "@type": "Question", "name": "Posso comprimir pelo celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em qualquer navegador movel." } },
+  { "@type": "Question", "name": "Posso comprimir pelo celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em qualquer navegador movel." } },
   { "@type": "Question", "name": "Quais plataformas exigem limite de 10MB?", "acceptedAnswer": { "@type": "Answer", "text": "Muitos provedores de email pessoais, sistemas de mensagens, portais de upload e plataformas de compartilhamento limitam arquivos a 10MB." } },
   { "@type": "Question", "name": "O que faco se continuar acima de 10MB?", "acceptedAnswer": { "@type": "Answer", "text": "Tente compressao extrema ou divida o PDF em secoes menores. Achate o PDF ou remova paginas desnecessarias." } }
 ] }
@@ -44,7 +44,7 @@ export default function ComprimirPDFPara10MBPagePt() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que Comprimir um PDF para Limites de 10MB?</h2>
-            <p className="text-lg text-slate-600 mb-8">Muitos provedores de email, sistemas de compartilhamento e portais de upload limitam arquivos a 10MB. Relatorios com graficos, apresentacoes com imagens e documentos digitalizados frequentemente excedem esse limite. O OmnisPDF aplica compressao inteligente para reduzir o tamanho preservando a qualidade.</p>
+            <p className="text-lg text-slate-600 mb-8">Muitos provedores de email, sistemas de compartilhamento e portais de upload limitam arquivos a 10MB. Relatorios com graficos, apresentacoes com imagens e documentos digitalizados frequentemente excedem esse limite. O PDF.it aplica compressao inteligente para reduzir o tamanho preservando a qualidade.</p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Compressao inteligente que preserva excelente qualidade visual</li>
               <li>&#10003; Perfeito para email, compartilhamento e uploads</li>
@@ -71,7 +71,7 @@ export default function ComprimirPDFPara10MBPagePt() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Comprimir um PDF para Limites de 10MB</h2>
             <div className="space-y-4">
-              {["Envie ou arraste seu PDF ao OmnisPDF.", "Clique em Comprimir PDF — a compressao inteligente e aplicada automaticamente.", "Baixe seu PDF menor. Se continuar acima de 10MB, tente compressao extrema ou divida o arquivo."].map((step, i) => (
+              {["Envie ou arraste seu PDF ao PDF.it.", "Clique em Comprimir PDF — a compressao inteligente e aplicada automaticamente.", "Baixe seu PDF menor. Se continuar acima de 10MB, tente compressao extrema ou divida o arquivo."].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200"><div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div><p className="text-slate-700 pt-1">{step}</p></div>
               ))}
             </div>
@@ -107,10 +107,10 @@ export default function ComprimirPDFPara10MBPagePt() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como comprimo um PDF para limite de 10MB?", a: "Envie seu PDF ao OmnisPDF e clique em Comprimir. A compressao recomendada reduz significativamente o tamanho preservando a qualidade." },
+                { q: "Como comprimo um PDF para limite de 10MB?", a: "Envie seu PDF ao PDF.it e clique em Comprimir. A compressao recomendada reduz significativamente o tamanho preservando a qualidade." },
                 { q: "Meu PDF ficara abaixo de 10MB?", a: "A grande maioria dos documentos ficam abaixo de 10MB apos compressao. Documentos muito grandes podem precisar de compressao extrema." },
                 { q: "A qualidade sera preservada?", a: "Sim. O texto permanece nitido e as imagens mantem otimo detalhe." },
-                { q: "Posso comprimir pelo celular?", a: "Sim. O OmnisPDF funciona em qualquer navegador movel." },
+                { q: "Posso comprimir pelo celular?", a: "Sim. O PDF.it funciona em qualquer navegador movel." },
                 { q: "Quais plataformas exigem limite de 10MB?", a: "Provedores de email, plataformas de mensagens, portais de upload e sistemas de compartilhamento." },
                 { q: "O que faco se continuar acima de 10MB?", a: "Tente compressao extrema ou divida o PDF. Achate o PDF ou remova paginas desnecessarias." },
               ].map((faq, i) => (

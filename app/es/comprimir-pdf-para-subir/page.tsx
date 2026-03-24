@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Ro
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF para Subir — Reduce el Tamaño para Portales de Carga | OmnisPDF",
+  title: "Comprimir PDF para Subir — Reduce el Tamaño para Portales de Carga | PDF.it",
   description:
     "Comprime PDFs para cumplir límites de portales de carga. Reduce el tamaño para formularios web, solicitudes y envíos en línea.",
   alternates: {
@@ -24,12 +24,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo comprimo un PDF para un portal de carga?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a OmnisPDF y haz clic en Comprimir. La compresión recomendada reduce el tamaño del archivo optimizando imágenes y la estructura interna, ayudándote a cumplir con los límites de subida del portal." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it y haz clic en Comprimir. La compresión recomendada reduce el tamaño del archivo optimizando imágenes y la estructura interna, ayudándote a cumplir con los límites de subida del portal." }
     },
     {
       "@type": "Question",
       "name": "¿Mi PDF comprimido será aceptado por portales gubernamentales?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF produce archivos PDF estándar que son aceptados por todos los portales principales. El texto se mantiene nítido y legible, y la estructura del archivo es válida para cualquier sistema que acepte PDFs." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it produce archivos PDF estándar que son aceptados por todos los portales principales. El texto se mantiene nítido y legible, y la estructura del archivo es válida para cualquier sistema que acepte PDFs." }
     },
     {
       "@type": "Question",
@@ -44,7 +44,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo comprimir PDFs para subir desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en cualquier navegador móvil. Sube tu PDF, comprímelo y descarga el archivo más pequeño directamente en tu iPhone o Android — sin necesidad de instalar una app." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, comprímelo y descarga el archivo más pequeño directamente en tu iPhone o Android — sin necesidad de instalar una app." }
     },
     {
       "@type": "Question",
@@ -99,7 +99,7 @@ export default function ComprimirPDFParaSubirPageEs() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-4">¿Por Qué Comprimir un PDF para Portales de Carga?</h2>
             <p className="text-lg text-slate-600 mb-8">
-              Los sitios web gubernamentales, sistemas de admisión universitaria, portales de solicitud de empleo y formularios de trámites en línea a menudo aplican límites estrictos de tamaño — a veces tan bajos como 1MB o 2MB. Si tu PDF excede el límite, la subida falla. OmnisPDF comprime tu archivo para que cumpla con estos requisitos sin perder legibilidad.
+              Los sitios web gubernamentales, sistemas de admisión universitaria, portales de solicitud de empleo y formularios de trámites en línea a menudo aplican límites estrictos de tamaño — a veces tan bajos como 1MB o 2MB. Si tu PDF excede el límite, la subida falla. PDF.it comprime tu archivo para que cumpla con estos requisitos sin perder legibilidad.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Compresión inteligente para cumplir límites de portales</li>
@@ -150,7 +150,7 @@ export default function ComprimirPDFParaSubirPageEs() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Comprimir un PDF para Subir</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra y suelta tu PDF en OmnisPDF.",
+                "Sube o arrastra y suelta tu PDF en PDF.it.",
                 "Haz clic en Comprimir PDF — la compresión recomendada se aplica automáticamente para reducir el tamaño del archivo.",
                 "Descarga tu PDF más pequeño y súbelo al portal. Si aún es muy grande, prueba dividir el archivo primero y luego comprime cada parte.",
               ].map((step, i) => (
@@ -204,11 +204,11 @@ export default function ComprimirPDFParaSubirPageEs() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo comprimo un PDF para un portal de carga?", a: "Sube tu PDF a OmnisPDF y haz clic en Comprimir. La compresión recomendada reduce el tamaño del archivo optimizando imágenes y la estructura interna, ayudándote a cumplir con los límites de subida del portal." },
-                { q: "¿Mi PDF comprimido será aceptado por portales gubernamentales?", a: "Sí. OmnisPDF produce archivos PDF estándar que son aceptados por todos los portales principales. El texto se mantiene nítido y legible, y la estructura del archivo es válida para cualquier sistema que acepte PDFs." },
+                { q: "¿Cómo comprimo un PDF para un portal de carga?", a: "Sube tu PDF a PDF.it y haz clic en Comprimir. La compresión recomendada reduce el tamaño del archivo optimizando imágenes y la estructura interna, ayudándote a cumplir con los límites de subida del portal." },
+                { q: "¿Mi PDF comprimido será aceptado por portales gubernamentales?", a: "Sí. PDF.it produce archivos PDF estándar que son aceptados por todos los portales principales. El texto se mantiene nítido y legible, y la estructura del archivo es válida para cualquier sistema que acepte PDFs." },
                 { q: "¿Puedo comprimir un PDF para cumplir un límite de tamaño específico?", a: "La compresión recomendada reduce significativamente el tamaño del archivo, pero el resultado exacto depende del contenido de tu PDF. Los documentos con mucho texto se comprimen muy bien. Si el archivo sigue siendo muy grande, intenta dividirlo en partes y comprimir cada una." },
                 { q: "¿Se afectará la calidad del documento al comprimirlo?", a: "El texto se mantiene nítido y completamente legible. Las imágenes conservan buen detalle con la compresión recomendada. El documento sigue siendo completamente utilizable para envíos oficiales y subidas a portales." },
-                { q: "¿Puedo comprimir PDFs para subir desde mi celular?", a: "Sí. OmnisPDF funciona en cualquier navegador móvil. Sube tu PDF, comprímelo y descarga el archivo más pequeño directamente en tu iPhone o Android — sin necesidad de instalar una app." },
+                { q: "¿Puedo comprimir PDFs para subir desde mi celular?", a: "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, comprímelo y descarga el archivo más pequeño directamente en tu iPhone o Android — sin necesidad de instalar una app." },
                 { q: "¿Qué pasa si mi PDF sigue siendo muy grande después de comprimirlo?", a: "Intenta dividir el PDF en secciones más pequeñas con nuestra herramienta Dividir PDF, luego comprime cada parte por separado. También puedes aplanar el PDF o eliminar páginas innecesarias antes de comprimir." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

@@ -28,8 +28,8 @@ export async function POST() {
     const session = await getStripe().checkout.sessions.create({
       mode: "subscription",
       line_items: [{ price: priceId, quantity: 1 }],
-      success_url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://omnispdf.com"}/dashboard?success=true`,
-      cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://omnispdf.com"}/dashboard?canceled=true`,
+      success_url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://pdf.it.com"}/dashboard?success=true`,
+      cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://pdf.it.com"}/dashboard?canceled=true`,
       client_reference_id: user.id,
       customer_email: user.email,
       metadata: {

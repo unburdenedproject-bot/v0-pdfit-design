@@ -5,9 +5,9 @@ import Link from "next/link"
 import { ImageIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Salvar PDF como PNG no Mac (3 Métodos) | OmnisPDF",
+  title: "Como Salvar PDF como PNG no Mac (3 Métodos) | PDF.it",
   description:
-    "Aprenda 3 formas de salvar PDF como PNG no Mac: usando OmnisPDF online, Preview (Pré-visualização) e Automator. Guia completo com passo a passo.",
+    "Aprenda 3 formas de salvar PDF como PNG no Mac: usando PDF.it online, Preview (Pré-visualização) e Automator. Guia completo com passo a passo.",
   keywords: "salvar pdf como png mac, pdf para png mac, converter pdf para png macbook, preview pdf para png",
 }
 
@@ -16,8 +16,8 @@ const faqSchema = {
   "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "O Mac tem ferramenta nativa para converter PDF para PNG?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O app Preview (Pré-visualização) do Mac permite exportar páginas de PDF como PNG. Abra o PDF, vá em Arquivo > Exportar e escolha PNG como formato. Mas só exporta uma página por vez." } },
-    { "@type": "Question", "name": "Como converter múltiplas páginas de PDF para PNG no Mac?", "acceptedAnswer": { "@type": "Answer", "text": "O Preview só exporta uma página por vez. Para converter múltiplas páginas, use o OmnisPDF online que converte todas as páginas de uma vez e permite baixar como ZIP." } },
-    { "@type": "Question", "name": "Qual a melhor forma de converter PDF para PNG no Mac?", "acceptedAnswer": { "@type": "Answer", "text": "Para uma ou duas páginas, o Preview funciona bem. Para múltiplas páginas ou conversões frequentes, o OmnisPDF online é mais rápido e prático — funciona direto no navegador." } }
+    { "@type": "Question", "name": "Como converter múltiplas páginas de PDF para PNG no Mac?", "acceptedAnswer": { "@type": "Answer", "text": "O Preview só exporta uma página por vez. Para converter múltiplas páginas, use o PDF.it online que converte todas as páginas de uma vez e permite baixar como ZIP." } },
+    { "@type": "Question", "name": "Qual a melhor forma de converter PDF para PNG no Mac?", "acceptedAnswer": { "@type": "Answer", "text": "Para uma ou duas páginas, o Preview funciona bem. Para múltiplas páginas ou conversões frequentes, o PDF.it online é mais rápido e prático — funciona direto no navegador." } }
   ]
 }
 
@@ -27,7 +27,7 @@ const howToSchema = {
   "name": "Salvar PDF como PNG no Mac",
   "description": "3 métodos para converter PDF para PNG no Mac.",
   "step": [
-    { "@type": "HowToStep", "name": "Método 1: OmnisPDF Online", "text": "Abra omnispdf.com no Safari, envie o PDF, escolha PNG e baixe todas as páginas convertidas." },
+    { "@type": "HowToStep", "name": "Método 1: PDF.it Online", "text": "Abra pdf.it.com no Safari, envie o PDF, escolha PNG e baixe todas as páginas convertidas." },
     { "@type": "HowToStep", "name": "Método 2: Preview", "text": "Abra o PDF no Preview, vá em Arquivo > Exportar, escolha PNG e salve." },
     { "@type": "HowToStep", "name": "Método 3: Automator", "text": "Crie um workflow no Automator para converter PDFs para PNG automaticamente." }
   ]
@@ -46,7 +46,7 @@ export default function SalvarPdfComoPngNoMacPage() {
               <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF para PNG</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Salvar PDF como PNG no Mac (3 Métodos)</h1>
               <p className="text-xl text-slate-300">
-                Precisa converter um PDF para PNG no Mac? Veja 3 métodos: OmnisPDF online (mais rápido), Preview nativo e Automator para automação.
+                Precisa converter um PDF para PNG no Mac? Veja 3 métodos: PDF.it online (mais rápido), Preview nativo e Automator para automação.
               </p>
             </div>
           </div>
@@ -70,11 +70,11 @@ export default function SalvarPdfComoPngNoMacPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
 
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-6">Método 1: OmnisPDF Online (Recomendado)</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-6">Método 1: PDF.it Online (Recomendado)</h2>
               <p className="text-slate-600 mb-4">O método mais rápido e prático — funciona direto no Safari, sem instalar nada.</p>
               <div className="space-y-4">
                 {[
-                  { title: "Acesse o OmnisPDF", desc: "Abra o Safari e vá para a ferramenta PDF para PNG do OmnisPDF. O site funciona perfeitamente no Mac." },
+                  { title: "Acesse o PDF.it", desc: "Abra o Safari e vá para a ferramenta PDF para PNG do PDF.it. O site funciona perfeitamente no Mac." },
                   { title: "Envie seu PDF", desc: "Arraste o PDF para a área de upload ou clique para selecionar. Arquivos até 25MB são grátis." },
                   { title: "Escolha DPI e converta", desc: "Selecione 200 DPI para uso geral ou 300 DPI para design/impressão. Clique em Converter." },
                   { title: "Baixe as imagens", desc: "Baixe as imagens PNG individualmente ou todas como ZIP. Elas vão para a pasta Downloads do Mac." },
@@ -98,7 +98,7 @@ export default function SalvarPdfComoPngNoMacPage() {
                 <li>4. Ajuste a resolução se necessário</li>
                 <li>5. Clique em <strong>Salvar</strong></li>
               </ul>
-              <p className="text-slate-600 mt-4 text-sm"><strong>Limitação:</strong> Exporta apenas uma página por vez. Para PDFs com muitas páginas, use o OmnisPDF.</p>
+              <p className="text-slate-600 mt-4 text-sm"><strong>Limitação:</strong> Exporta apenas uma página por vez. Para PDFs com muitas páginas, use o PDF.it.</p>
             </section>
 
             <section className="mb-12">
@@ -121,7 +121,7 @@ export default function SalvarPdfComoPngNoMacPage() {
                 <table className="w-full text-sm border border-gray-200 rounded-xl overflow-hidden">
                   <thead><tr className="bg-slate-900 text-white"><th className="text-left py-3 px-4 font-bold">Método</th><th className="text-left py-3 px-4 font-bold">Melhor Para</th><th className="text-left py-3 px-4 font-bold">Múltiplas Páginas</th></tr></thead>
                   <tbody className="text-slate-700">
-                    <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold text-orange-600">OmnisPDF Online</td><td className="py-3 px-4">Uso geral, praticidade</td><td className="py-3 px-4 text-green-600 font-semibold">Sim</td></tr>
+                    <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold text-orange-600">PDF.it Online</td><td className="py-3 px-4">Uso geral, praticidade</td><td className="py-3 px-4 text-green-600 font-semibold">Sim</td></tr>
                     <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold text-orange-600">Preview</td><td className="py-3 px-4">Conversão rápida de 1 página</td><td className="py-3 px-4 text-red-500">Uma por vez</td></tr>
                     <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold text-orange-600">Automator</td><td className="py-3 px-4">Conversões frequentes</td><td className="py-3 px-4 text-green-600 font-semibold">Sim</td></tr>
                   </tbody>
@@ -167,8 +167,8 @@ export default function SalvarPdfComoPngNoMacPage() {
             <div className="space-y-6">
               {[
                 { q: "O Mac tem ferramenta nativa para converter PDF para PNG?", a: "Sim. O app Preview (Pré-visualização) do Mac permite exportar páginas de PDF como PNG. Mas só exporta uma página por vez." },
-                { q: "Como converter múltiplas páginas de PDF para PNG no Mac?", a: "O Preview só exporta uma página por vez. Para converter múltiplas páginas, use o OmnisPDF online que converte todas as páginas de uma vez e permite baixar como ZIP." },
-                { q: "Qual a melhor forma de converter PDF para PNG no Mac?", a: "Para uma ou duas páginas, o Preview funciona bem. Para múltiplas páginas ou conversões frequentes, o OmnisPDF online é mais rápido e prático." },
+                { q: "Como converter múltiplas páginas de PDF para PNG no Mac?", a: "O Preview só exporta uma página por vez. Para converter múltiplas páginas, use o PDF.it online que converte todas as páginas de uma vez e permite baixar como ZIP." },
+                { q: "Qual a melhor forma de converter PDF para PNG no Mac?", a: "Para uma ou duas páginas, o Preview funciona bem. Para múltiplas páginas ou conversões frequentes, o PDF.it online é mais rápido e prático." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

@@ -5,9 +5,9 @@ import { Split, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Batch Split PDFs — Split Multiple Files at Once | OmnisPDF",
+  title: "Batch Split PDFs — Split Multiple Files at Once | PDF.it",
   description:
-    "Batch split multiple PDF files at once with OmnisPDF Pro. Process dozens of PDFs simultaneously — split, extract pages, and organize in bulk.",
+    "Batch split multiple PDF files at once with PDF.it Pro. Process dozens of PDFs simultaneously — split, extract pages, and organize in bulk.",
 }
 
 const faqSchema = {
@@ -17,7 +17,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I batch split multiple PDFs at once?",
-      "acceptedAnswer": { "@type": "Answer", "text": "With OmnisPDF Pro, upload multiple PDF files to the Split PDF tool simultaneously. Each file is processed in parallel — split into individual pages or custom page ranges — and you can download all results as a ZIP file." }
+      "acceptedAnswer": { "@type": "Answer", "text": "With PDF.it Pro, upload multiple PDF files to the Split PDF tool simultaneously. Each file is processed in parallel — split into individual pages or custom page ranges — and you can download all results as a ZIP file." }
     },
     {
       "@type": "Question",
@@ -66,7 +66,7 @@ export default function BatchSplitPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Batch Split PDFs</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Split multiple PDF files at once with OmnisPDF Pro. Process dozens of documents simultaneously — extract pages, split by range, and download results in bulk.
+                Split multiple PDF files at once with PDF.it Pro. Process dozens of documents simultaneously — extract pages, split by range, and download results in bulk.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Process Multiple Files</span></div>
@@ -97,7 +97,7 @@ export default function BatchSplitPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Splitting PDFs one at a time is tedious when you have a stack of documents to process. OmnisPDF Pro's batch split feature lets you upload multiple files at once, configure split settings for each, and process them all simultaneously.
+              Splitting PDFs one at a time is tedious when you have a stack of documents to process. PDF.it Pro's batch split feature lets you upload multiple files at once, configure split settings for each, and process them all simultaneously.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Split multiple PDFs simultaneously in one operation</li>
@@ -184,7 +184,7 @@ export default function BatchSplitPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I batch split multiple PDFs at once?", a: "With OmnisPDF Pro, upload multiple PDF files to the Split PDF tool simultaneously. Each file is processed in parallel — split into individual pages or custom page ranges — and you can download all results as a ZIP file." },
+                { q: "How do I batch split multiple PDFs at once?", a: "With PDF.it Pro, upload multiple PDF files to the Split PDF tool simultaneously. Each file is processed in parallel — split into individual pages or custom page ranges — and you can download all results as a ZIP file." },
                 { q: "How many PDFs can I split at once?", a: "Pro users can upload and split dozens of PDF files in a single batch operation. Each file can be up to 200MB with Pro, or up to 1GB with Business. There is no fixed file count limit for batch processing." },
                 { q: "Is batch splitting available on the free plan?", a: "Free users can split one file at a time with files up to 25MB. Batch processing — splitting multiple files simultaneously — is a Pro feature available for $7.99/month." },
                 { q: "Can I extract specific pages from multiple PDFs in a batch?", a: "Yes. With batch splitting, you can configure page ranges for each file. Extract specific pages, split into individual pages, or divide by custom ranges — all processed simultaneously." },

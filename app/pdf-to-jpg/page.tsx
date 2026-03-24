@@ -6,8 +6,8 @@ import { ImageIcon, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "PDF to JPG Converter — OmnisPDF",
-  description: "Convert PDF to JPG in seconds with OmnisPDF. Export every page as a high-quality JPEG image and download instantly—no installs or software needed.",
+  title: "PDF to JPG Converter — PDF.it",
+  description: "Convert PDF to JPG in seconds with PDF.it. Export every page as a high-quality JPEG image and download instantly—no installs or software needed.",
 }
 
 export default function PDFToJPGPage() {
@@ -24,7 +24,7 @@ export default function PDFToJPGPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convert PDF to JPG Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Convert a PDF into crisp JPG images in seconds with OmnisPDF—fast, simple, and browser-based.
+                Convert a PDF into crisp JPG images in seconds with PDF.it—fast, simple, and browser-based.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2">
@@ -48,7 +48,7 @@ export default function PDFToJPGPage() {
         <section className="py-10 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <p className="text-lg text-slate-600 leading-relaxed">
-              Convert your PDF into high-quality JPG (JPEG) images with OmnisPDF. Upload a file, convert in seconds, and download each page as a separate image—perfect for sharing, slides, previews, and email.
+              Convert your PDF into high-quality JPG (JPEG) images with PDF.it. Upload a file, convert in seconds, and download each page as a separate image—perfect for sharing, slides, previews, and email.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
               <li className="flex items-center gap-2">✓ Convert entire PDF pages into JPG images</li>
@@ -78,7 +78,7 @@ export default function PDFToJPGPage() {
               </div>
               <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
                 <h3 className="text-lg font-bold text-slate-900 mb-2">Keep Layouts Clean and Clear</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">OmnisPDF preserves the page layout so your content stays readable and professional-looking after conversion.</p>
+                <p className="text-slate-600 text-sm leading-relaxed">PDF.it preserves the page layout so your content stays readable and professional-looking after conversion.</p>
               </div>
               <div className="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
                 <h3 className="text-lg font-bold text-slate-900 mb-2">Download Instantly</h3>
@@ -150,7 +150,7 @@ export default function PDFToJPGPage() {
             <div className="space-y-6">
               <div className="bg-slate-50 rounded-xl p-6 border border-slate-100">
                 <h3 className="text-lg font-bold text-slate-900 mb-2">Can I convert a multi-page PDF to JPG?</h3>
-                <p className="text-slate-600 leading-relaxed">Yes. OmnisPDF converts each PDF page into its own JPG image so you can download pages individually.</p>
+                <p className="text-slate-600 leading-relaxed">Yes. PDF.it converts each PDF page into its own JPG image so you can download pages individually.</p>
               </div>
               <div className="bg-slate-50 rounded-xl p-6 border border-slate-100">
                 <h3 className="text-lg font-bold text-slate-900 mb-2">Can I convert just one page of a PDF to JPG?</h3>
@@ -161,8 +161,8 @@ export default function PDFToJPGPage() {
                 <p className="text-slate-600 leading-relaxed">The output quality depends on the source PDF. High-resolution PDFs produce crisp JPGs; low-resolution scans may look softer.</p>
               </div>
               <div className="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                <h3 className="text-lg font-bold text-slate-900 mb-2">Does OmnisPDF work on Mac, Windows, iPhone, and Android?</h3>
-                <p className="text-slate-600 leading-relaxed">Yes. OmnisPDF runs in your browser, so it works across modern devices and operating systems.</p>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">Does PDF.it work on Mac, Windows, iPhone, and Android?</h3>
+                <p className="text-slate-600 leading-relaxed">Yes. PDF.it runs in your browser, so it works across modern devices and operating systems.</p>
               </div>
               <div className="bg-slate-50 rounded-xl p-6 border border-slate-100">
                 <h3 className="text-lg font-bold text-slate-900 mb-2">What's the difference between JPG and PNG for PDF pages?</h3>
@@ -178,7 +178,7 @@ export default function PDFToJPGPage() {
               </div>
               <div className="bg-slate-50 rounded-xl p-6 border border-slate-100">
                 <h3 className="text-lg font-bold text-slate-900 mb-2">Do you add watermarks?</h3>
-                <p className="text-slate-600 leading-relaxed">No. OmnisPDF does not add watermarks to your converted JPG files.</p>
+                <p className="text-slate-600 leading-relaxed">No. PDF.it does not add watermarks to your converted JPG files.</p>
               </div>
             </div>
           </div>
@@ -188,14 +188,14 @@ export default function PDFToJPGPage() {
           "@context": "https://schema.org",
           "@type": "FAQPage",
           "mainEntity": [
-            { "@type": "Question", "name": "Can I convert a multi-page PDF to JPG?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF converts each PDF page into its own JPG image so you can download pages individually." } },
+            { "@type": "Question", "name": "Can I convert a multi-page PDF to JPG?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it converts each PDF page into its own JPG image so you can download pages individually." } },
             { "@type": "Question", "name": "Can I convert just one page of a PDF to JPG?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Convert the PDF, then download only the page JPG you need from the ZIP file." } },
             { "@type": "Question", "name": "Will converting PDF to JPG reduce quality?", "acceptedAnswer": { "@type": "Answer", "text": "The output quality depends on the source PDF. High-resolution PDFs produce crisp JPGs; low-resolution scans may look softer." } },
-            { "@type": "Question", "name": "Does OmnisPDF work on Mac, Windows, iPhone, and Android?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF runs in your browser, so it works across modern devices and operating systems." } },
+            { "@type": "Question", "name": "Does PDF.it work on Mac, Windows, iPhone, and Android?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it runs in your browser, so it works across modern devices and operating systems." } },
             { "@type": "Question", "name": "What's the difference between JPG and PNG for PDF pages?", "acceptedAnswer": { "@type": "Answer", "text": "JPG usually creates smaller files and is great for sharing. PNG can be better for very sharp text and graphics." } },
             { "@type": "Question", "name": "Why do my JPG pages look blurry?", "acceptedAnswer": { "@type": "Answer", "text": "Blurriness usually comes from a low-resolution scanned PDF or small text in the original file." } },
             { "@type": "Question", "name": "Is it safe to upload my PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Files are transferred over HTTPS and automatically deleted after your session. We never store or share your documents." } },
-            { "@type": "Question", "name": "Do you add watermarks?", "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF does not add watermarks to your converted JPG files." } }
+            { "@type": "Question", "name": "Do you add watermarks?", "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it does not add watermarks to your converted JPG files." } }
           ]
         })}} />
       </main>

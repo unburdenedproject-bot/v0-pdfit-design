@@ -6,14 +6,14 @@ import { ProcessingInterface } from "@/components/processing-interface"
 import { Scan, Zap, Shield, Download } from "lucide-react"
 
 export const metadata = {
-  title: "Convertir PDF Escaneado — Transforma PDFs Escaneados a Texto Editable | OmnisPDF",
+  title: "Convertir PDF Escaneado — Transforma PDFs Escaneados a Texto Editable | PDF.it",
   description:
-    "Convierte PDFs escaneados a texto editable con OmnisPDF. Usa OCR para transformar documentos escaneados en texto que puedes copiar, buscar y editar — rapido y seguro.",
+    "Convierte PDFs escaneados a texto editable con PDF.it. Usa OCR para transformar documentos escaneados en texto que puedes copiar, buscar y editar — rapido y seguro.",
   alternates: {
-    canonical: "https://omnispdf.com/es/convertir-pdf-escaneado",
+    canonical: "https://pdf.it.com/es/convertir-pdf-escaneado",
     languages: {
-      en: "https://omnispdf.com/convert-scanned-pdf",
-      es: "https://omnispdf.com/es/convertir-pdf-escaneado",
+      en: "https://pdf.it.com/convert-scanned-pdf",
+      es: "https://pdf.it.com/es/convertir-pdf-escaneado",
     },
   },
 }
@@ -27,7 +27,7 @@ const faqSchema = {
       name: "¿Como convierto un PDF escaneado a texto editable?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sube tu PDF escaneado a OmnisPDF, selecciona el idioma del documento y haz clic en Convertir. El OCR extraera el texto y podras descargarlo como archivo de texto editable.",
+        text: "Sube tu PDF escaneado a PDF.it, selecciona el idioma del documento y haz clic en Convertir. El OCR extraera el texto y podras descargarlo como archivo de texto editable.",
       },
     },
     {
@@ -51,7 +51,7 @@ const faqSchema = {
       name: "¿Que idiomas soporta?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "El OCR de OmnisPDF soporta mas de 16 idiomas incluyendo espanol, ingles, frances, aleman, portugues, italiano y mas.",
+        text: "El OCR de PDF.it soporta mas de 16 idiomas incluyendo espanol, ingles, frances, aleman, portugues, italiano y mas.",
       },
     },
     {
@@ -123,7 +123,7 @@ export default function ConvertirPDFEscaneadoPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Usa OmnisPDF para convertir PDFs escaneados en texto editable. La tecnologia OCR (Reconocimiento Optico de Caracteres) analiza las imagenes del escaneo, detecta letras y palabras, y genera texto que puedes copiar, buscar y editar. Perfecto para digitalizar documentos en papel.
+              Usa PDF.it para convertir PDFs escaneados en texto editable. La tecnologia OCR (Reconocimiento Optico de Caracteres) analiza las imagenes del escaneo, detecta letras y palabras, y genera texto que puedes copiar, buscar y editar. Perfecto para digitalizar documentos en papel.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Convierte PDFs escaneados en texto editable con OCR</li>
@@ -171,7 +171,7 @@ export default function ConvertirPDFEscaneadoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Convertir un PDF Escaneado</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF escaneado a OmnisPDF.",
+                "Sube o arrastra tu PDF escaneado a PDF.it.",
                 "Selecciona el idioma del documento si es necesario.",
                 "Haz clic en Convertir para ejecutar el OCR.",
                 "Descarga tu archivo de texto editable.",
@@ -221,10 +221,10 @@ export default function ConvertirPDFEscaneadoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Como convierto un PDF escaneado a texto editable?", a: "Sube tu PDF escaneado a OmnisPDF, selecciona el idioma del documento y haz clic en Convertir. El OCR extraera el texto y podras descargarlo como archivo de texto editable." },
+                { q: "¿Como convierto un PDF escaneado a texto editable?", a: "Sube tu PDF escaneado a PDF.it, selecciona el idioma del documento y haz clic en Convertir. El OCR extraera el texto y podras descargarlo como archivo de texto editable." },
                 { q: "¿Que es OCR y por que lo necesito para PDFs escaneados?", a: "OCR (Reconocimiento Optico de Caracteres) es una tecnologia que detecta texto dentro de imagenes. Los PDFs escaneados son esencialmente imagenes, por lo que necesitas OCR para extraer el texto y hacerlo editable." },
                 { q: "¿Que tan preciso es el reconocimiento de texto?", a: "La precision depende de la calidad del escaneo. Documentos escaneados con buena resolucion y texto claro producen los mejores resultados. Escaneos borrosos, torcidos o con manchas reducen la precision." },
-                { q: "¿Que idiomas soporta?", a: "El OCR de OmnisPDF soporta mas de 16 idiomas incluyendo espanol, ingles, frances, aleman, portugues, italiano y mas." },
+                { q: "¿Que idiomas soporta?", a: "El OCR de PDF.it soporta mas de 16 idiomas incluyendo espanol, ingles, frances, aleman, portugues, italiano y mas." },
                 { q: "¿Es seguro subir documentos escaneados?", a: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

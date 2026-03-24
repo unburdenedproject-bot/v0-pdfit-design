@@ -6,7 +6,7 @@ import { ResumeBuilderInterface } from "@/components/resume-builder-interface"
 import { Sparkles, Zap, Shield, FileText, Merge, Lock, Scan, Target } from "lucide-react"
 
 export const metadata = {
-  title: "Crear un Curriculum Profesional con IA | OmnisPDF",
+  title: "Crear un Curriculum Profesional con IA | PDF.it",
   description:
     "Crea un curriculum optimizado para ATS desde cero. Completa tus datos y deja que la IA escriba un CV pulido y listo para el trabajo que puedes descargar en Word y editar en cualquier momento.",
   alternates: {

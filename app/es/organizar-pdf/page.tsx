@@ -6,9 +6,9 @@ import { LayoutGrid, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Organizar PDF — Reordena y Gestiona Páginas de tu PDF | OmnisPDF",
+  title: "Organizar PDF — Reordena y Gestiona Páginas de tu PDF | PDF.it",
   description:
-    "Organiza las páginas de tu PDF con OmnisPDF. Reordena, mueve y gestiona páginas para crear documentos bien estructurados — rápido, gratis y en tu navegador.",
+    "Organiza las páginas de tu PDF con PDF.it. Reordena, mueve y gestiona páginas para crear documentos bien estructurados — rápido, gratis y en tu navegador.",
   alternates: {
     languages: {
       en: "/organize-pdf",
@@ -29,7 +29,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo mover páginas a cualquier posición?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF te permite arrastrar y soltar páginas para moverlas a cualquier posición dentro del documento. Puedes reorganizar todo el PDF según tus necesidades." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it te permite arrastrar y soltar páginas para moverlas a cualquier posición dentro del documento. Puedes reorganizar todo el PDF según tus necesidades." }
     },
     {
       "@type": "Question",
@@ -39,7 +39,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo organizar un PDF desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en navegadores móviles — sube tu PDF, reorganiza las páginas y descarga el resultado desde iPhone o Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube tu PDF, reorganiza las páginas y descarga el resultado desde iPhone o Android." }
     },
     {
       "@type": "Question",
@@ -97,7 +97,7 @@ export default function OrganizarPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              La herramienta Organizar PDF de OmnisPDF te permite reorganizar las páginas de cualquier documento PDF. Arrastra y suelta páginas para cambiar su orden, mueve secciones completas y crea un documento con la estructura perfecta para tus necesidades.
+              La herramienta Organizar PDF de PDF.it te permite reorganizar las páginas de cualquier documento PDF. Arrastra y suelta páginas para cambiar su orden, mueve secciones completas y crea un documento con la estructura perfecta para tus necesidades.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Reordena páginas con arrastrar y soltar</li>
@@ -145,7 +145,7 @@ export default function OrganizarPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Organizar un PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Arrastra y suelta las páginas para reorganizarlas en el orden deseado.",
                 "Haz clic en Organizar PDF y descarga tu documento reorganizado.",
               ].map((step, i) => (
@@ -195,9 +195,9 @@ export default function OrganizarPDFPage() {
             <div className="space-y-6">
               {[
                 { q: "¿Qué significa organizar un PDF?", a: "Organizar un PDF te permite reordenar las páginas, mover secciones, eliminar páginas no deseadas y reorganizar el contenido de tu documento para crear una estructura lógica y profesional." },
-                { q: "¿Puedo mover páginas a cualquier posición?", a: "Sí. OmnisPDF te permite arrastrar y soltar páginas para moverlas a cualquier posición dentro del documento. Puedes reorganizar todo el PDF según tus necesidades." },
+                { q: "¿Puedo mover páginas a cualquier posición?", a: "Sí. PDF.it te permite arrastrar y soltar páginas para moverlas a cualquier posición dentro del documento. Puedes reorganizar todo el PDF según tus necesidades." },
                 { q: "¿Se mantiene la calidad al reorganizar?", a: "Sí. Reorganizar páginas no afecta la calidad del contenido — texto, imágenes y formato se mantienen exactamente como en el original." },
-                { q: "¿Puedo organizar un PDF desde mi celular?", a: "Sí. OmnisPDF funciona en navegadores móviles — sube tu PDF, reorganiza las páginas y descarga el resultado desde iPhone o Android." },
+                { q: "¿Puedo organizar un PDF desde mi celular?", a: "Sí. PDF.it funciona en navegadores móviles — sube tu PDF, reorganiza las páginas y descarga el resultado desde iPhone o Android." },
                 { q: "¿Hay un límite de páginas para organizar?", a: "Las cuentas gratuitas pueden organizar PDFs de hasta 25MB. Las cuentas Pro y Business permiten archivos de hasta 200MB sin límite de páginas." },
                 { q: "¿Es gratis organizar un PDF?", a: "Sí. Puedes organizar PDFs de hasta 25MB gratis. Para archivos más grandes y procesamiento por lotes, actualiza a Pro." },
               ].map((faq, i) => (

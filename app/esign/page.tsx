@@ -6,9 +6,9 @@ import { EsignInterface } from "@/components/esign-interface"
 import { PenTool, Zap, Eye, Shield, FileText, Lock, Layers, Repeat, ArrowLeftRight, Merge } from "lucide-react"
 
 export const metadata = {
-  title: "eSign PDF Documents Online — Add Electronic Signatures to PDFs | OmnisPDF",
+  title: "eSign PDF Documents Online — Add Electronic Signatures to PDFs | PDF.it",
   description:
-    "Sign PDF documents online with a visual editor. Draw, type, or upload your signature and place it anywhere on any page. Download your signed PDF instantly. OmnisPDF Business feature.",
+    "Sign PDF documents online with a visual editor. Draw, type, or upload your signature and place it anywhere on any page. Download your signed PDF instantly. PDF.it Business feature.",
 }
 
 const faqSchema = {

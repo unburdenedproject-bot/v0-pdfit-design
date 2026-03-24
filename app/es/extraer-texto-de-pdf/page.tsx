@@ -6,14 +6,14 @@ import { FileText, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Extraer Texto de PDF — Copia Todo el Texto de un PDF | OmnisPDF",
+  title: "Extraer Texto de PDF — Copia Todo el Texto de un PDF | PDF.it",
   description:
-    "Extrae todo el texto de archivos PDF con OmnisPDF. Copia el contenido textual completo de cualquier PDF — rápido, desde tu navegador, sin registro.",
+    "Extrae todo el texto de archivos PDF con PDF.it. Copia el contenido textual completo de cualquier PDF — rápido, desde tu navegador, sin registro.",
   alternates: {
-    canonical: "https://omnispdf.com/es/extraer-texto-de-pdf",
+    canonical: "https://pdf.it.com/es/extraer-texto-de-pdf",
     languages: {
-      en: "https://omnispdf.com/extract-text-from-pdf",
-      es: "https://omnispdf.com/es/extraer-texto-de-pdf",
+      en: "https://pdf.it.com/extract-text-from-pdf",
+      es: "https://pdf.it.com/es/extraer-texto-de-pdf",
     },
   },
 }
@@ -25,7 +25,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo extraigo texto de un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a OmnisPDF, haz clic en Extraer y descarga un archivo TXT con todo el contenido textual de tu documento PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it, haz clic en Extraer y descarga un archivo TXT con todo el contenido textual de tu documento PDF." }
     },
     {
       "@type": "Question",
@@ -98,7 +98,7 @@ export default function ExtraerTextoDePDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              ¿Necesitas copiar el texto de un PDF pero no puedes seleccionarlo? El extractor de texto de OmnisPDF obtiene todo el contenido textual de tu documento — párrafos, títulos, listas, pies de página — y lo entrega como texto plano que puedes editar, traducir o reutilizar.
+              ¿Necesitas copiar el texto de un PDF pero no puedes seleccionarlo? El extractor de texto de PDF.it obtiene todo el contenido textual de tu documento — párrafos, títulos, listas, pies de página — y lo entrega como texto plano que puedes editar, traducir o reutilizar.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Extrae todo el texto de cualquier PDF</li>
@@ -140,7 +140,7 @@ export default function ExtraerTextoDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Extraer Texto de un PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Haz clic en Extraer Texto — todo el contenido se procesa automáticamente.",
                 "Descarga el archivo TXT con todo el texto extraído.",
               ].map((step, i) => (
@@ -185,7 +185,7 @@ export default function ExtraerTextoDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo extraigo texto de un PDF?", a: "Sube tu PDF a OmnisPDF, haz clic en Extraer y descarga un archivo TXT con todo el contenido textual de tu documento PDF." },
+                { q: "¿Cómo extraigo texto de un PDF?", a: "Sube tu PDF a PDF.it, haz clic en Extraer y descarga un archivo TXT con todo el contenido textual de tu documento PDF." },
                 { q: "¿Cuál es la diferencia entre extraer texto y PDF a TXT?", a: "Son herramientas muy similares. Extraer Texto se enfoca en obtener el contenido textual para reutilizarlo, mientras que PDF a TXT convierte el formato del archivo completo." },
                 { q: "¿Puedo extraer texto de un PDF protegido?", a: "Si el PDF tiene restricciones de copia, primero usa nuestra herramienta Desbloquear PDF para eliminar las restricciones, y luego extrae el texto." },
                 { q: "¿Se mantiene el formato del texto?", a: "El texto se extrae como texto plano (TXT). Se conservan los párrafos y saltos de línea, pero no el formato visual como negritas, colores o fuentes." },

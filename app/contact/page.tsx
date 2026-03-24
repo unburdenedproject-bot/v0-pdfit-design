@@ -88,10 +88,10 @@ export default function ContactPage() {
                         <div>
                           <h3 className="text-lg font-bold text-orange-900 mb-1">Email Support</h3>
                           <a
-                            href="mailto:contact@omnispdf.com"
+                            href="mailto:contact@pdf.it.com"
                             className="text-2xl font-bold text-orange-600 hover:text-orange-700 transition-colors"
                           >
-                            contact@omnispdf.com
+                            contact@pdf.it.com
                           </a>
                         </div>
                       </div>
@@ -141,10 +141,10 @@ export default function ContactPage() {
                         <p className="text-sm text-slate-500 mb-6">
                           You can also reach us directly at{" "}
                           <a
-                            href="mailto:contact@omnispdf.com"
+                            href="mailto:contact@pdf.it.com"
                             className="text-orange-500 hover:text-orange-600 font-medium"
                           >
-                            contact@omnispdf.com
+                            contact@pdf.it.com
                           </a>
                         </p>
                         <Button
@@ -234,8 +234,8 @@ export default function ContactPage() {
                             <AlertCircle className="h-5 w-5 flex-shrink-0" />
                             <span className="text-sm">
                               There was an error sending your message. Please try again or email us directly at{" "}
-                              <a href="mailto:contact@omnispdf.com" className="underline">
-                                contact@omnispdf.com
+                              <a href="mailto:contact@pdf.it.com" className="underline">
+                                contact@pdf.it.com
                               </a>
                             </span>
                           </div>
@@ -264,10 +264,10 @@ export default function ContactPage() {
                         <p className="text-center text-sm text-slate-500">
                           Or email us directly at{" "}
                           <a
-                            href="mailto:contact@omnispdf.com"
+                            href="mailto:contact@pdf.it.com"
                             className="text-orange-500 hover:text-orange-600 font-medium"
                           >
-                            contact@omnispdf.com
+                            contact@pdf.it.com
                           </a>
                         </p>
                       </form>

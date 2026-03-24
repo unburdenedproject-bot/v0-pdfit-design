@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Extraer Texto de PDF en iPhone/Android (Mejores Métodos) | OmnisPDF",
+  title: "Extraer Texto de PDF en iPhone/Android (Mejores Métodos) | PDF.it",
   description:
     "Aprende a extraer texto de un PDF en tu teléfono. Guía paso a paso para iPhone y Android — sin necesidad de aplicación. Funciona para PDFs digitales y escaneados.",
   keywords: "extraer texto de pdf en iphone, extraer texto de pdf android, pdf a texto movil, copiar texto de pdf en telefono, extraccion texto pdf movil",
@@ -18,32 +18,32 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo extraer texto de un PDF en mi iPhone sin una aplicación?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Abre OmnisPDF.com en Safari, sube tu PDF a la herramienta PDF a TXT y descarga el archivo de texto plano. No necesitas instalar ninguna aplicación — funciona completamente en tu navegador." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Abre PDF.it.com en Safari, sube tu PDF a la herramienta PDF a TXT y descarga el archivo de texto plano. No necesitas instalar ninguna aplicación — funciona completamente en tu navegador." }
     },
     {
       "@type": "Question",
       "name": "¿Cómo copio texto de un PDF en Android?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Abre el PDF en Google Drive o tu visor de PDF predeterminado e intenta seleccionar texto. Si no funciona bien (líneas rotas, formato extraño), usa la herramienta PDF a TXT de OmnisPDF en Chrome para obtener una extracción de texto limpia." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Abre el PDF en Google Drive o tu visor de PDF predeterminado e intenta seleccionar texto. Si no funciona bien (líneas rotas, formato extraño), usa la herramienta PDF a TXT de PDF.it en Chrome para obtener una extracción de texto limpia." }
     },
     {
       "@type": "Question",
       "name": "¿Puedo extraer texto de un PDF escaneado en mi teléfono?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí, pero necesitas OCR. El PDF a TXT estándar no funciona en documentos escaneados. Usa el Escáner OCR de OmnisPDF en tu navegador móvil — sube el PDF escaneado y extraerá el texto usando reconocimiento óptico de caracteres." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, pero necesitas OCR. El PDF a TXT estándar no funciona en documentos escaneados. Usa el Escáner OCR de PDF.it en tu navegador móvil — sube el PDF escaneado y extraerá el texto usando reconocimiento óptico de caracteres." }
     },
     {
       "@type": "Question",
       "name": "¿Cuál es la mejor app para extraer texto de PDF en iPhone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No necesitas una aplicación. OmnisPDF funciona directamente en Safari en iPhone — sube tu PDF, convierte a TXT y descarga el texto. Es más rápido que instalar una aplicación y funciona en cualquier versión de iOS." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No necesitas una aplicación. PDF.it funciona directamente en Safari en iPhone — sube tu PDF, convierte a TXT y descarga el texto. Es más rápido que instalar una aplicación y funciona en cualquier versión de iOS." }
     },
     {
       "@type": "Question",
       "name": "¿Por qué copiar y pegar desde un PDF en móvil me da texto roto?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Los visores de PDF móviles tienen capacidades limitadas de selección de texto. A menudo rompen líneas en los finales de línea visuales, fusionan columnas e incluyen encabezados/pies de página. Convertir a TXT con OmnisPDF te da texto correctamente ordenado sin estos problemas." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Los visores de PDF móviles tienen capacidades limitadas de selección de texto. A menudo rompen líneas en los finales de línea visuales, fusionan columnas e incluyen encabezados/pies de página. Convertir a TXT con PDF.it te da texto correctamente ordenado sin estos problemas." }
     },
     {
       "@type": "Question",
       "name": "¿Puedo guardar el texto extraído directamente en mi app de Notas?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Después de descargar el archivo TXT de OmnisPDF, ábrelo en tu teléfono y usa el botón de compartir para enviarlo a Notas (iPhone), Google Keep (Android) o cualquier otra app de notas. También puedes copiar todo el texto y pegarlo directamente." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Después de descargar el archivo TXT de PDF.it, ábrelo en tu teléfono y usa el botón de compartir para enviarlo a Notas (iPhone), Google Keep (Android) o cualquier otra app de notas. También puedes copiar todo el texto y pegarlo directamente." }
     }
   ]
 }
@@ -56,8 +56,8 @@ const howToSchema = {
   "step": [
     {
       "@type": "HowToStep",
-      "name": "Abre OmnisPDF en tu navegador móvil",
-      "text": "Ve a omnispdf.com en Safari (iPhone) o Chrome (Android) y navega a la herramienta PDF a TXT."
+      "name": "Abre PDF.it en tu navegador móvil",
+      "text": "Ve a pdf.it.com en Safari (iPhone) o Chrome (Android) y navega a la herramienta PDF a TXT."
     },
     {
       "@type": "HowToStep",
@@ -151,17 +151,17 @@ export default function ExtraerTextoDePdfEnMovilPage() {
               </p>
             </section>
 
-            {/* Method 1: OmnisPDF */}
+            {/* Method 1: PDF.it */}
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-6">Método 1: Usa OmnisPDF en Tu Navegador Móvil (Recomendado)</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-6">Método 1: Usa PDF.it en Tu Navegador Móvil (Recomendado)</h2>
               <p className="text-slate-600 mb-4">
                 La forma más rápida y limpia de extraer texto de un PDF en tu teléfono. No necesitas aplicación — funciona en Safari, Chrome o cualquier navegador móvil.
               </p>
               <div className="space-y-4">
                 {[
                   {
-                    title: "Abre OmnisPDF en tu navegador",
-                    desc: "Ve a omnispdf.com en Safari (iPhone) o Chrome (Android). Navega a la herramienta PDF a TXT desde el menú o ve directamente a omnispdf.com/pdf-to-txt.",
+                    title: "Abre PDF.it en tu navegador",
+                    desc: "Ve a pdf.it.com en Safari (iPhone) o Chrome (Android). Navega a la herramienta PDF a TXT desde el menú o ve directamente a pdf.it.com/pdf-to-txt.",
                   },
                   {
                     title: "Sube tu PDF",
@@ -218,7 +218,7 @@ export default function ExtraerTextoDePdfEnMovilPage() {
                 Si tu PDF es un documento escaneado (fotos de páginas de papel), la extracción de texto estándar no funcionará — ni copiar y pegar ni PDF a TXT. Necesitas OCR (Reconocimiento Óptico de Caracteres).
               </p>
               <p className="text-slate-600 mb-4">
-                El <Link href="/es/escaner-ocr" className="text-orange-600 hover:underline">Escáner OCR</Link> de OmnisPDF funciona en tu navegador móvil igual que PDF a TXT:
+                El <Link href="/es/escaner-ocr" className="text-orange-600 hover:underline">Escáner OCR</Link> de PDF.it funciona en tu navegador móvil igual que PDF a TXT:
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#x2713; Sube tu PDF escaneado desde tu teléfono</li>
@@ -260,14 +260,14 @@ export default function ExtraerTextoDePdfEnMovilPage() {
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
                       <td className="py-3 px-4 font-semibold">Mejor para extracción completa</td>
-                      <td className="py-3 px-4 font-semibold text-orange-600">OmnisPDF en Safari</td>
-                      <td className="py-3 px-4 font-semibold text-orange-600">OmnisPDF en Chrome</td>
+                      <td className="py-3 px-4 font-semibold text-orange-600">PDF.it en Safari</td>
+                      <td className="py-3 px-4 font-semibold text-orange-600">PDF.it en Chrome</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
               <p className="text-slate-600 mt-4 text-sm">
-                Las funciones OCR integradas de ambas plataformas (Live Text y Google Lens) funcionan con fotos pero no con archivos PDF. Para extracción de texto de PDF, una herramienta web como <Link href="/es/pdf-a-texto" className="text-orange-600 hover:underline">OmnisPDF</Link> es la opción más confiable en ambas plataformas.
+                Las funciones OCR integradas de ambas plataformas (Live Text y Google Lens) funcionan con fotos pero no con archivos PDF. Para extracción de texto de PDF, una herramienta web como <Link href="/es/pdf-a-texto" className="text-orange-600 hover:underline">PDF.it</Link> es la opción más confiable en ambas plataformas.
               </p>
             </section>
 
@@ -275,7 +275,7 @@ export default function ExtraerTextoDePdfEnMovilPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Dónde Guardar Tu Texto Extraído</h2>
               <p className="text-slate-600 mb-4">
-                Una vez que hayas descargado el archivo TXT de OmnisPDF, así es como puedes llevarlo a tus aplicaciones favoritas:
+                Una vez que hayas descargado el archivo TXT de PDF.it, así es como puedes llevarlo a tus aplicaciones favoritas:
               </p>
               <div className="space-y-6">
                 <div>
@@ -347,12 +347,12 @@ export default function ExtraerTextoDePdfEnMovilPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Puedo extraer texto de un PDF en mi iPhone sin una aplicación?", a: "Sí. Abre OmnisPDF.com en Safari, sube tu PDF a la herramienta PDF a TXT y descarga el archivo de texto plano. No necesitas instalar ninguna aplicación — funciona completamente en tu navegador." },
-                { q: "¿Cómo copio texto de un PDF en Android?", a: "Abre el PDF en Google Drive o tu visor de PDF predeterminado e intenta seleccionar texto. Si no funciona bien (líneas rotas, formato extraño), usa la herramienta PDF a TXT de OmnisPDF en Chrome para obtener una extracción de texto limpia." },
-                { q: "¿Puedo extraer texto de un PDF escaneado en mi teléfono?", a: "Sí, pero necesitas OCR. El PDF a TXT estándar no funciona en documentos escaneados. Usa el Escáner OCR de OmnisPDF en tu navegador móvil — sube el PDF escaneado y extraerá el texto usando reconocimiento óptico de caracteres." },
-                { q: "¿Cuál es la mejor app para extraer texto de PDF en iPhone?", a: "No necesitas una aplicación. OmnisPDF funciona directamente en Safari en iPhone — sube tu PDF, convierte a TXT y descarga el texto. Es más rápido que instalar una aplicación y funciona en cualquier versión de iOS." },
-                { q: "¿Por qué copiar y pegar desde un PDF en móvil me da texto roto?", a: "Los visores de PDF móviles tienen capacidades limitadas de selección de texto. A menudo rompen líneas en los finales de línea visuales, fusionan columnas e incluyen encabezados/pies de página. Convertir a TXT con OmnisPDF te da texto correctamente ordenado sin estos problemas." },
-                { q: "¿Puedo guardar el texto extraído directamente en mi app de Notas?", a: "Sí. Después de descargar el archivo TXT de OmnisPDF, ábrelo en tu teléfono y usa el botón de compartir para enviarlo a Notas (iPhone), Google Keep (Android) o cualquier otra app de notas. También puedes copiar todo el texto y pegarlo directamente." },
+                { q: "¿Puedo extraer texto de un PDF en mi iPhone sin una aplicación?", a: "Sí. Abre PDF.it.com en Safari, sube tu PDF a la herramienta PDF a TXT y descarga el archivo de texto plano. No necesitas instalar ninguna aplicación — funciona completamente en tu navegador." },
+                { q: "¿Cómo copio texto de un PDF en Android?", a: "Abre el PDF en Google Drive o tu visor de PDF predeterminado e intenta seleccionar texto. Si no funciona bien (líneas rotas, formato extraño), usa la herramienta PDF a TXT de PDF.it en Chrome para obtener una extracción de texto limpia." },
+                { q: "¿Puedo extraer texto de un PDF escaneado en mi teléfono?", a: "Sí, pero necesitas OCR. El PDF a TXT estándar no funciona en documentos escaneados. Usa el Escáner OCR de PDF.it en tu navegador móvil — sube el PDF escaneado y extraerá el texto usando reconocimiento óptico de caracteres." },
+                { q: "¿Cuál es la mejor app para extraer texto de PDF en iPhone?", a: "No necesitas una aplicación. PDF.it funciona directamente en Safari en iPhone — sube tu PDF, convierte a TXT y descarga el texto. Es más rápido que instalar una aplicación y funciona en cualquier versión de iOS." },
+                { q: "¿Por qué copiar y pegar desde un PDF en móvil me da texto roto?", a: "Los visores de PDF móviles tienen capacidades limitadas de selección de texto. A menudo rompen líneas en los finales de línea visuales, fusionan columnas e incluyen encabezados/pies de página. Convertir a TXT con PDF.it te da texto correctamente ordenado sin estos problemas." },
+                { q: "¿Puedo guardar el texto extraído directamente en mi app de Notas?", a: "Sí. Después de descargar el archivo TXT de PDF.it, ábrelo en tu teléfono y usa el botón de compartir para enviarlo a Notas (iPhone), Google Keep (Android) o cualquier otra app de notas. También puedes copiar todo el texto y pegarlo directamente." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

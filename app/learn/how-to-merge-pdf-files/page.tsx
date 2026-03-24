@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Merge, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "How to Merge PDF Files Online (Combine PDFs into One) | OmnisPDF",
+  title: "How to Merge PDF Files Online (Combine PDFs into One) | PDF.it",
   description:
     "Learn how to merge PDF files online into one document. Step-by-step guide for combining PDFs for submissions, reports, and portfolios — free, no software needed.",
   keywords: "merge pdf files online, combine pdfs into one, merge pdf, join pdf files, how to merge pdfs",
@@ -18,32 +18,32 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I merge PDF files online for free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDFs to OmnisPDF's Merge PDF tool, arrange them in the order you want, click Merge, and download the combined file. No signup required for your first 3 files." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDFs to PDF.it's Merge PDF tool, arrange them in the order you want, click Merge, and download the combined file. No signup required for your first 3 files." }
     },
     {
       "@type": "Question",
       "name": "Can I merge more than two PDFs at once?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF lets you upload and merge as many PDFs as you need in a single operation. Free users can merge files one at a time, while Pro users get batch processing for merging multiple files at once." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it lets you upload and merge as many PDFs as you need in a single operation. Free users can merge files one at a time, while Pro users get batch processing for merging multiple files at once." }
     },
     {
       "@type": "Question",
       "name": "Will merging PDFs increase the file size?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The merged file will be roughly the sum of all individual files. If the result is too large, use OmnisPDF's Compress PDF tool after merging to reduce the file size significantly." }
+      "acceptedAnswer": { "@type": "Answer", "text": "The merged file will be roughly the sum of all individual files. If the result is too large, use PDF.it's Compress PDF tool after merging to reduce the file size significantly." }
     },
     {
       "@type": "Question",
       "name": "Can I reorder pages before merging?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF lets you drag and drop files into the exact order you want before merging. You can also rearrange individual pages after merging using the Split or Reorder tool." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it lets you drag and drop files into the exact order you want before merging. You can also rearrange individual pages after merging using the Split or Reorder tool." }
     },
     {
       "@type": "Question",
       "name": "Is it safe to merge PDFs online?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF processes files securely and deletes them from the server after processing. Your documents are never stored permanently or shared with third parties." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it processes files securely and deletes them from the server after processing. Your documents are never stored permanently or shared with third parties." }
     },
     {
       "@type": "Question",
       "name": "Can I merge PDFs on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in any mobile browser — Safari, Chrome, or Firefox. Upload your PDFs, merge them, and download the result directly on your phone. No app installation needed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in any mobile browser — Safari, Chrome, or Firefox. Upload your PDFs, merge them, and download the result directly on your phone. No app installation needed." }
     }
   ]
 }
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Merge PDF Files Online",
-  "description": "Combine multiple PDFs into one document in 3 simple steps using OmnisPDF.",
+  "description": "Combine multiple PDFs into one document in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Upload your PDF files",
-      "text": "Go to OmnisPDF's Merge PDF tool and upload all the files you want to combine by clicking or dragging them into the upload area."
+      "text": "Go to PDF.it's Merge PDF tool and upload all the files you want to combine by clicking or dragging them into the upload area."
     },
     {
       "@type": "HowToStep",
@@ -191,7 +191,7 @@ export default function HowToMergePDFFilesPage() {
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>✓ <strong>Name your files logically</strong> before uploading (e.g., "01-cover-letter.pdf", "02-resume.pdf", "03-references.pdf"). This makes sorting easier.</li>
-                <li>✓ <strong>Use drag and drop</strong> in OmnisPDF to rearrange files visually before merging.</li>
+                <li>✓ <strong>Use drag and drop</strong> in PDF.it to rearrange files visually before merging.</li>
                 <li>✓ <strong>Preview the merged result</strong> before downloading to make sure everything is in the right order.</li>
                 <li>✓ If you need to rearrange individual pages (not just files), use <Link href="/split-pdf" className="text-orange-600 hover:underline">Split PDF</Link> to extract pages, then merge them back in the correct order.</li>
               </ul>
@@ -217,7 +217,7 @@ export default function HowToMergePDFFilesPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Check Page Orientation</h3>
                   <p className="text-slate-600">
-                    Scanned documents sometimes have pages rotated the wrong way. Before merging, make sure all pages are oriented correctly. You can fix rotated pages using OmnisPDF's <Link href="/merge-pdf" className="text-orange-600 hover:underline">Merge tool</Link> or the dedicated rotate feature.
+                    Scanned documents sometimes have pages rotated the wrong way. Before merging, make sure all pages are oriented correctly. You can fix rotated pages using PDF.it's <Link href="/merge-pdf" className="text-orange-600 hover:underline">Merge tool</Link> or the dedicated rotate feature.
                   </p>
                 </div>
 
@@ -231,7 +231,7 @@ export default function HowToMergePDFFilesPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Consider Password Protection</h3>
                   <p className="text-slate-600">
-                    If your merged PDF contains sensitive information (financial documents, ID copies, medical records), consider adding a password after merging. OmnisPDF's <Link href="/merge-pdf" className="text-orange-600 hover:underline">Merge tool</Link> creates a clean file that you can then protect.
+                    If your merged PDF contains sensitive information (financial documents, ID copies, medical records), consider adding a password after merging. PDF.it's <Link href="/merge-pdf" className="text-orange-600 hover:underline">Merge tool</Link> creates a clean file that you can then protect.
                   </p>
                 </div>
               </div>
@@ -284,12 +284,12 @@ export default function HowToMergePDFFilesPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I merge PDF files online for free?", a: "Upload your PDFs to OmnisPDF's Merge PDF tool, arrange them in the order you want, click Merge, and download the combined file. No signup required for your first 3 files." },
-                { q: "Can I merge more than two PDFs at once?", a: "Yes. OmnisPDF lets you upload and merge as many PDFs as you need in a single operation. Free users can merge files one at a time, while Pro users get batch processing for merging multiple files at once." },
-                { q: "Will merging PDFs increase the file size?", a: "The merged file will be roughly the sum of all individual files. If the result is too large, use OmnisPDF's Compress PDF tool after merging to reduce the file size significantly." },
-                { q: "Can I reorder pages before merging?", a: "Yes. OmnisPDF lets you drag and drop files into the exact order you want before merging. You can also rearrange individual pages after merging using the Split or Reorder tool." },
-                { q: "Is it safe to merge PDFs online?", a: "OmnisPDF processes files securely and deletes them from the server after processing. Your documents are never stored permanently or shared with third parties." },
-                { q: "Can I merge PDFs on my phone?", a: "Yes. OmnisPDF works in any mobile browser — Safari, Chrome, or Firefox. Upload your PDFs, merge them, and download the result directly on your phone. No app installation needed." },
+                { q: "How do I merge PDF files online for free?", a: "Upload your PDFs to PDF.it's Merge PDF tool, arrange them in the order you want, click Merge, and download the combined file. No signup required for your first 3 files." },
+                { q: "Can I merge more than two PDFs at once?", a: "Yes. PDF.it lets you upload and merge as many PDFs as you need in a single operation. Free users can merge files one at a time, while Pro users get batch processing for merging multiple files at once." },
+                { q: "Will merging PDFs increase the file size?", a: "The merged file will be roughly the sum of all individual files. If the result is too large, use PDF.it's Compress PDF tool after merging to reduce the file size significantly." },
+                { q: "Can I reorder pages before merging?", a: "Yes. PDF.it lets you drag and drop files into the exact order you want before merging. You can also rearrange individual pages after merging using the Split or Reorder tool." },
+                { q: "Is it safe to merge PDFs online?", a: "PDF.it processes files securely and deletes them from the server after processing. Your documents are never stored permanently or shared with third parties." },
+                { q: "Can I merge PDFs on my phone?", a: "Yes. PDF.it works in any mobile browser — Safari, Chrome, or Firefox. Upload your PDFs, merge them, and download the result directly on your phone. No app installation needed." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

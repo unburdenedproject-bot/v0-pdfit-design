@@ -5,9 +5,9 @@ import { Type, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Extract Fonts from PDF — Identify Fonts Used in PDFs | OmnisPDF",
+  title: "Extract Fonts from PDF — Identify Fonts Used in PDFs | PDF.it",
   description:
-    "Learn how to identify and extract fonts used in PDF documents. OmnisPDF helps you work with PDF content including text extraction and document conversion.",
+    "Learn how to identify and extract fonts used in PDF documents. PDF.it helps you work with PDF content including text extraction and document conversion.",
 }
 
 const faqSchema = {
@@ -100,7 +100,7 @@ export default function ExtractFontsFromPDFPage() {
               <li>✓ Convert PDFs to Word to reveal font names and styling</li>
               <li>✓ Extract text content for visual font matching</li>
               <li>✓ Works with any PDF — reports, brochures, books, and more</li>
-              <li>✓ No installation — use OmnisPDF tools directly in your browser</li>
+              <li>✓ No installation — use PDF.it tools directly in your browser</li>
             </ul>
           </div>
         </section>
@@ -117,7 +117,7 @@ export default function ExtractFontsFromPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">How to Identify Fonts in a PDF</h2>
               <p className="text-slate-600">
-                The fastest way to identify fonts is to convert your PDF to Word using OmnisPDF. The converted document preserves font names, so you can select any text and see the typeface in the font menu. Alternatively, extract the text and use a visual font identification service like WhatTheFont or Font Squirrel Matcherator.
+                The fastest way to identify fonts is to convert your PDF to Word using PDF.it. The converted document preserves font names, so you can select any text and see the typeface in the font menu. Alternatively, extract the text and use a visual font identification service like WhatTheFont or Font Squirrel Matcherator.
               </p>
             </div>
             <div>
@@ -135,7 +135,7 @@ export default function ExtractFontsFromPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Identify Fonts in a PDF</h2>
             <div className="space-y-4">
               {[
-                "Upload your PDF to OmnisPDF and convert it to Word format.",
+                "Upload your PDF to PDF.it and convert it to Word format.",
                 "Open the Word document and select any text to see the font name.",
                 "Search for the font online to find licensing options or free alternatives.",
               ].map((step, i) => (

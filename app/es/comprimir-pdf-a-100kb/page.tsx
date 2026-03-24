@@ -6,7 +6,7 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Ro
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF a 100KB Online — Reducir Tamaño de PDF | OmnisPDF",
+  title: "Comprimir PDF a 100KB Online — Reducir Tamaño de PDF | PDF.it",
   description:
     "Comprime tu PDF para cumplir con límites de 100KB. Compresión extrema para firmas de email, micro-adjuntos, fotos de credencial y documentos optimizados para móvil — rápido, desde tu navegador, gratis.",
   alternates: {
@@ -24,7 +24,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo comprimo un PDF para un límite de 100KB?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a OmnisPDF y haz clic en Comprimir. La herramienta aplica compresión extrema para reducir la resolución de imágenes y optimizar la estructura interna, reduciendo drásticamente el tamaño del archivo. Los resultados dependen del contenido de tu PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it y haz clic en Comprimir. La herramienta aplica compresión extrema para reducir la resolución de imágenes y optimizar la estructura interna, reduciendo drásticamente el tamaño del archivo. Los resultados dependen del contenido de tu PDF." }
     },
     {
       "@type": "Question",
@@ -44,7 +44,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo comprimir un PDF a 100KB desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en cualquier navegador móvil. Sube tu PDF, comprímelo y descarga el archivo más pequeño directamente en tu iPhone o Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, comprímelo y descarga el archivo más pequeño directamente en tu iPhone o Android." }
     },
     {
       "@type": "Question",
@@ -99,7 +99,7 @@ export default function ComprimirPDFA100KBPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-4">¿Por Qué Comprimir un PDF para Límites de 100KB?</h2>
             <p className="text-lg text-slate-600 mb-8">
-              Algunas plataformas exigen un límite de tamaño extremadamente estricto de 100KB. Los adjuntos de firma de email, subida de fotos de credencial, campos de micro-adjuntos y ciertos formularios optimizados para móvil requieren archivos muy pequeños. OmnisPDF aplica compresión extrema para reducir drásticamente el tamaño de tu PDF y ayudarte a cumplir con estos requisitos de subida tan exigentes.
+              Algunas plataformas exigen un límite de tamaño extremadamente estricto de 100KB. Los adjuntos de firma de email, subida de fotos de credencial, campos de micro-adjuntos y ciertos formularios optimizados para móvil requieren archivos muy pequeños. PDF.it aplica compresión extrema para reducir drásticamente el tamaño de tu PDF y ayudarte a cumplir con estos requisitos de subida tan exigentes.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>&#10003; Compresión extrema para máxima reducción de tamaño</li>
@@ -150,7 +150,7 @@ export default function ComprimirPDFA100KBPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Comprimir un PDF para Límites de 100KB</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Haz clic en Comprimir PDF — la compresión extrema se aplica automáticamente.",
                 "Descarga tu PDF más pequeño. Si sigue superando 100KB, intenta dividirlo en una sola página primero y luego comprime esa página.",
               ].map((step, i) => (
@@ -222,11 +222,11 @@ export default function ComprimirPDFA100KBPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo comprimo un PDF para un límite de 100KB?", a: "Sube tu PDF a OmnisPDF y haz clic en Comprimir. La herramienta aplica compresión extrema para reducir la resolución de imágenes y optimizar la estructura interna, reduciendo drásticamente el tamaño del archivo. Los resultados dependen del contenido de tu PDF." },
+                { q: "¿Cómo comprimo un PDF para un límite de 100KB?", a: "Sube tu PDF a PDF.it y haz clic en Comprimir. La herramienta aplica compresión extrema para reducir la resolución de imágenes y optimizar la estructura interna, reduciendo drásticamente el tamaño del archivo. Los resultados dependen del contenido de tu PDF." },
                 { q: "¿Mi PDF quedará definitivamente debajo de 100KB después de comprimirlo?", a: "La compresión extrema reduce drásticamente el tamaño del archivo, pero los resultados dependen del contenido del PDF. Los documentos simples de una sola página con texto pueden llegar a menos de 100KB. Los archivos con muchas imágenes o de varias páginas probablemente necesiten dividirse en páginas individuales primero y luego comprimir cada página por separado." },
                 { q: "¿Qué tipos de archivos se pueden comprimir a 100KB de forma realista?", a: "Los documentos de una sola página con principalmente texto, firmas simples, fotos de tamaño credencial y formularios pequeños pueden comprimirse a menos de 100KB. Los documentos de varias páginas o con imágenes de alta resolución necesitarán dividirse primero." },
                 { q: "¿Mi PDF seguirá siendo legible después de comprimirlo a 100KB?", a: "El texto se mantiene nítido y legible. Las imágenes perderán detalle notable con este nivel de compresión extrema, pero para firmas, credenciales y documentos simples, el resultado sigue siendo utilizable." },
-                { q: "¿Puedo comprimir un PDF a 100KB desde mi celular?", a: "Sí. OmnisPDF funciona en cualquier navegador móvil. Sube tu PDF, comprímelo y descarga el archivo más pequeño directamente en tu iPhone o Android." },
+                { q: "¿Puedo comprimir un PDF a 100KB desde mi celular?", a: "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, comprímelo y descarga el archivo más pequeño directamente en tu iPhone o Android." },
                 { q: "¿Qué hago si mi PDF sigue pesando más de 100KB después de comprimirlo?", a: "Divide el PDF en páginas individuales con nuestra herramienta Dividir PDF y luego comprime cada página por separado. Para mejores resultados, quédate solo con la página que necesitas, aplana el PDF y convierte las imágenes a escala de grises antes de comprimir." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

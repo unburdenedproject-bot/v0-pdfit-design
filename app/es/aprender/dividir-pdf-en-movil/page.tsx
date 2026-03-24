@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Scissors, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Cómo Dividir un PDF en tu Teléfono (iPhone y Android) | OmnisPDF",
+  title: "Cómo Dividir un PDF en tu Teléfono (iPhone y Android) | PDF.it",
   description:
     "Aprende cómo dividir un PDF en tu teléfono usando solo tu navegador. Funciona en iPhone y Android — sin necesidad de descargar app. Guía paso a paso gratuita, rápida y fácil.",
   keywords: "dividir pdf en teléfono, dividir pdf iphone, dividir pdf android, dividir pdf móvil gratis",
@@ -14,20 +14,20 @@ export const metadata = {
 const faqSchema = {
   "@context": "https://schema.org", "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "¿Puedo dividir un PDF en mi teléfono sin una app?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona completamente en el navegador de tu teléfono — Safari en iPhone, Chrome en Android, o cualquier otro navegador móvil. No se necesita instalar ninguna app." } },
-    { "@type": "Question", "name": "¿Cómo divido un PDF en iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Abre Safari, ve a omnispdf.com/es/dividir-pdf, toca para subir tu PDF desde Archivos o iCloud Drive, selecciona las páginas que quieres, y descarga los archivos divididos." } },
-    { "@type": "Question", "name": "¿Cómo divido un PDF en Android?", "acceptedAnswer": { "@type": "Answer", "text": "Abre Chrome o tu navegador preferido, ve a omnispdf.com/es/dividir-pdf, toca para subir tu PDF desde el almacenamiento de tu dispositivo o Google Drive, selecciona páginas, y descarga." } },
-    { "@type": "Question", "name": "¿Es gratis dividir un PDF en móvil?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF ofrece división de PDF gratuita con archivos de hasta 25MB. Obtienes 3 operaciones gratuitas sin cuenta, y 10 por día con una cuenta gratuita." } },
+    { "@type": "Question", "name": "¿Puedo dividir un PDF en mi teléfono sin una app?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona completamente en el navegador de tu teléfono — Safari en iPhone, Chrome en Android, o cualquier otro navegador móvil. No se necesita instalar ninguna app." } },
+    { "@type": "Question", "name": "¿Cómo divido un PDF en iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Abre Safari, ve a pdf.it.com/es/dividir-pdf, toca para subir tu PDF desde Archivos o iCloud Drive, selecciona las páginas que quieres, y descarga los archivos divididos." } },
+    { "@type": "Question", "name": "¿Cómo divido un PDF en Android?", "acceptedAnswer": { "@type": "Answer", "text": "Abre Chrome o tu navegador preferido, ve a pdf.it.com/es/dividir-pdf, toca para subir tu PDF desde el almacenamiento de tu dispositivo o Google Drive, selecciona páginas, y descarga." } },
+    { "@type": "Question", "name": "¿Es gratis dividir un PDF en móvil?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it ofrece división de PDF gratuita con archivos de hasta 25MB. Obtienes 3 operaciones gratuitas sin cuenta, y 10 por día con una cuenta gratuita." } },
     { "@type": "Question", "name": "¿Dónde se descarga el PDF dividido en mi teléfono?", "acceptedAnswer": { "@type": "Answer", "text": "En iPhone, los archivos divididos se descargan a tu app Archivos (generalmente en la carpeta Descargas). En Android, los archivos van a tu carpeta Descargas, accesible a través de la app Archivos o la barra de notificaciones." } },
-    { "@type": "Question", "name": "¿Puedo dividir un PDF grande en móvil?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Los usuarios gratuitos pueden dividir PDFs de hasta 25MB en móvil. Los usuarios Pro pueden manejar archivos de hasta 200MB. El procesamiento ocurre en los servidores de OmnisPDF, así que el almacenamiento y velocidad de tu teléfono no afectan el resultado." } }
+    { "@type": "Question", "name": "¿Puedo dividir un PDF grande en móvil?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Los usuarios gratuitos pueden dividir PDFs de hasta 25MB en móvil. Los usuarios Pro pueden manejar archivos de hasta 200MB. El procesamiento ocurre en los servidores de PDF.it, así que el almacenamiento y velocidad de tu teléfono no afectan el resultado." } }
   ]
 }
 
 const howToSchema = {
   "@context": "https://schema.org", "@type": "HowTo", "name": "Cómo Dividir un PDF en tu Teléfono",
-  "description": "Divide un PDF en archivos separados en iPhone o Android en 3 simples pasos usando OmnisPDF en tu navegador móvil.",
+  "description": "Divide un PDF en archivos separados en iPhone o Android en 3 simples pasos usando PDF.it en tu navegador móvil.",
   "step": [
-    { "@type": "HowToStep", "name": "Abre OmnisPDF en tu navegador móvil", "text": "Abre Safari (iPhone) o Chrome (Android) y ve a omnispdf.com/es/dividir-pdf. La herramienta funciona igual en móvil que en escritorio." },
+    { "@type": "HowToStep", "name": "Abre PDF.it en tu navegador móvil", "text": "Abre Safari (iPhone) o Chrome (Android) y ve a pdf.it.com/es/dividir-pdf. La herramienta funciona igual en móvil que en escritorio." },
     { "@type": "HowToStep", "name": "Sube y selecciona páginas", "text": "Toca el área de carga para seleccionar un PDF de tu teléfono. Elige páginas de Archivos, iCloud Drive, Google Drive, o el almacenamiento de tu dispositivo. Luego selecciona qué páginas extraer o cómo dividir." },
     { "@type": "HowToStep", "name": "Descarga los archivos divididos", "text": "Toca Dividir PDF y descarga el resultado. Los archivos se guardan en tu carpeta Descargas donde puedes compartirlos por email, apps de mensajería o almacenamiento en la nube." }
   ]
@@ -44,7 +44,7 @@ export default function DividirPDFEnMovilPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
             <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Dividir PDF</p>
             <h1 className="text-4xl lg:text-5xl font-black mb-4">Cómo Dividir un PDF en tu Teléfono (iPhone y Android)</h1>
-            <p className="text-xl text-slate-300">¿Necesitas dividir un PDF pero solo tienes tu teléfono? No hay problema. OmnisPDF funciona directamente en tu navegador móvil — sin descargar app, sin cuenta requerida.</p>
+            <p className="text-xl text-slate-300">¿Necesitas dividir un PDF pero solo tienes tu teléfono? No hay problema. PDF.it funciona directamente en tu navegador móvil — sin descargar app, sin cuenta requerida.</p>
           </div></div>
         </section>
 
@@ -90,7 +90,7 @@ export default function DividirPDFEnMovilPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-6">Cómo Dividir un PDF en iPhone (Paso a Paso)</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Abre Safari y ve a omnispdf.com/es/dividir-pdf", desc: "Escribe omnispdf.com/es/dividir-pdf en la barra de direcciones de Safari. La página carga la misma herramienta completa de división que verías en una computadora. No se necesita app." },
+                  { title: "Abre Safari y ve a pdf.it.com/es/dividir-pdf", desc: "Escribe pdf.it.com/es/dividir-pdf en la barra de direcciones de Safari. La página carga la misma herramienta completa de división que verías en una computadora. No se necesita app." },
                   { title: "Toca para subir tu PDF", desc: "Toca el área de carga. iOS te permitirá elegir de Archivos, iCloud Drive, o descargas recientes. Encuentra tu PDF y toca para subirlo. Verás una vista previa de páginas una vez cargado." },
                   { title: "Selecciona páginas y descarga", desc: "Elige las páginas o rangos de páginas que quieres conservar. Toca Dividir PDF. El resultado se descarga a tu app Archivos (carpeta Descargas). Luego puedes compartirlo por Mail, AirDrop, Mensajes, o cualquier otra app." },
                 ].map((step, i) => (
@@ -109,7 +109,7 @@ export default function DividirPDFEnMovilPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-6">Cómo Dividir un PDF en Android (Paso a Paso)</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Abre Chrome y ve a omnispdf.com/es/dividir-pdf", desc: "Abre Chrome (o tu navegador preferido) y navega a omnispdf.com/es/dividir-pdf. La herramienta carga al instante — sin necesidad de descargar app ni visitar Google Play Store." },
+                  { title: "Abre Chrome y ve a pdf.it.com/es/dividir-pdf", desc: "Abre Chrome (o tu navegador preferido) y navega a pdf.it.com/es/dividir-pdf. La herramienta carga al instante — sin necesidad de descargar app ni visitar Google Play Store." },
                   { title: "Toca para subir tu PDF", desc: "Toca el área de carga. Android mostrará opciones para buscar en el almacenamiento de tu dispositivo, Google Drive, o archivos recientes. Selecciona tu PDF y espera a que se suba." },
                   { title: "Selecciona páginas y descarga", desc: "Elige qué páginas extraer o cómo dividir el archivo. Toca Dividir PDF. El archivo se descarga a tu carpeta Descargas. Revisa la barra de notificaciones para la confirmación de descarga, luego abre o comparte el archivo." },
                 ].map((step, i) => (
@@ -129,7 +129,7 @@ export default function DividirPDFEnMovilPage() {
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Usa una conexión estable.</strong> Subir y descargar funcionan mejor con Wi-Fi. Los datos celulares también funcionan, pero archivos grandes pueden tardar más en conexiones lentas.</li>
                 <li>&#10003; <strong>Revisa tu carpeta Descargas.</strong> En iPhone, los archivos van a la app Archivos. En Android, revisa tu carpeta Descargas o la barra de notificaciones.</li>
-                <li>&#10003; <strong>Agrega la herramienta a favoritos.</strong> Agrega omnispdf.com/es/dividir-pdf a tu pantalla de inicio para acceso instantáneo. En iPhone, toca Compartir y luego &quot;Agregar a pantalla de inicio&quot;. En Android, toca el menú del navegador y &quot;Agregar a pantalla de inicio&quot;.</li>
+                <li>&#10003; <strong>Agrega la herramienta a favoritos.</strong> Agrega pdf.it.com/es/dividir-pdf a tu pantalla de inicio para acceso instantáneo. En iPhone, toca Compartir y luego &quot;Agregar a pantalla de inicio&quot;. En Android, toca el menú del navegador y &quot;Agregar a pantalla de inicio&quot;.</li>
                 <li>&#10003; <strong>Comprime si sigue siendo muy grande.</strong> Después de dividir, si las partes individuales siguen siendo grandes, usa <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> desde tu teléfono para reducirlas más.</li>
                 <li>&#10003; <strong>Funciona con almacenamiento en la nube.</strong> Puedes subir PDFs directamente desde iCloud Drive, Google Drive, Dropbox, o OneDrive — sin necesidad de descargar a tu teléfono primero.</li>
               </ul>
@@ -137,7 +137,7 @@ export default function DividirPDFEnMovilPage() {
 
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Otras Herramientas PDF que Puedes Usar en tu Teléfono</h2>
-              <p className="text-slate-600 mb-4">OmnisPDF es completamente compatible con móviles. Cada herramienta funciona en el navegador de tu teléfono, igual que la herramienta de división. Aquí hay algunas que podrías necesitar después de dividir:</p>
+              <p className="text-slate-600 mb-4">PDF.it es completamente compatible con móviles. Cada herramienta funciona en el navegador de tu teléfono, igual que la herramienta de división. Aquí hay algunas que podrías necesitar después de dividir:</p>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Unir archivos divididos de nuevo</h3>
@@ -195,12 +195,12 @@ export default function DividirPDFEnMovilPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Puedo dividir un PDF en mi teléfono sin una app?", a: "Sí. OmnisPDF funciona completamente en el navegador de tu teléfono — Safari en iPhone, Chrome en Android, o cualquier otro navegador móvil. No se necesita instalar ninguna app." },
-                { q: "¿Cómo divido un PDF en iPhone?", a: "Abre Safari, ve a omnispdf.com/es/dividir-pdf, toca para subir tu PDF desde Archivos o iCloud Drive, selecciona las páginas que quieres, y descarga los archivos divididos." },
-                { q: "¿Cómo divido un PDF en Android?", a: "Abre Chrome o tu navegador preferido, ve a omnispdf.com/es/dividir-pdf, toca para subir tu PDF desde el almacenamiento de tu dispositivo o Google Drive, selecciona páginas, y descarga." },
-                { q: "¿Es gratis dividir un PDF en móvil?", a: "Sí. OmnisPDF ofrece división de PDF gratuita con archivos de hasta 25MB. Obtienes 3 operaciones gratuitas sin cuenta, y 10 por día con una cuenta gratuita." },
+                { q: "¿Puedo dividir un PDF en mi teléfono sin una app?", a: "Sí. PDF.it funciona completamente en el navegador de tu teléfono — Safari en iPhone, Chrome en Android, o cualquier otro navegador móvil. No se necesita instalar ninguna app." },
+                { q: "¿Cómo divido un PDF en iPhone?", a: "Abre Safari, ve a pdf.it.com/es/dividir-pdf, toca para subir tu PDF desde Archivos o iCloud Drive, selecciona las páginas que quieres, y descarga los archivos divididos." },
+                { q: "¿Cómo divido un PDF en Android?", a: "Abre Chrome o tu navegador preferido, ve a pdf.it.com/es/dividir-pdf, toca para subir tu PDF desde el almacenamiento de tu dispositivo o Google Drive, selecciona páginas, y descarga." },
+                { q: "¿Es gratis dividir un PDF en móvil?", a: "Sí. PDF.it ofrece división de PDF gratuita con archivos de hasta 25MB. Obtienes 3 operaciones gratuitas sin cuenta, y 10 por día con una cuenta gratuita." },
                 { q: "¿Dónde se descarga el PDF dividido en mi teléfono?", a: "En iPhone, los archivos divididos se descargan a tu app Archivos (generalmente en la carpeta Descargas). En Android, los archivos van a tu carpeta Descargas, accesible a través de la app Archivos o la barra de notificaciones." },
-                { q: "¿Puedo dividir un PDF grande en móvil?", a: "Sí. Los usuarios gratuitos pueden dividir PDFs de hasta 25MB en móvil. Los usuarios Pro pueden manejar archivos de hasta 200MB. El procesamiento ocurre en los servidores de OmnisPDF, así que el almacenamiento y velocidad de tu teléfono no afectan el resultado." },
+                { q: "¿Puedo dividir un PDF grande en móvil?", a: "Sí. Los usuarios gratuitos pueden dividir PDFs de hasta 25MB en móvil. Los usuarios Pro pueden manejar archivos de hasta 200MB. El procesamiento ocurre en los servidores de PDF.it, así que el almacenamiento y velocidad de tu teléfono no afectan el resultado." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

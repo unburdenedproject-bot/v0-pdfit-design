@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Lock, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "How to Protect a PDF Before Sending by Email | OmnisPDF",
+  title: "How to Protect a PDF Before Sending by Email | PDF.it",
   description:
     "Learn how to secure a PDF before sending it by email. Step-by-step guide covering password protection, flattening, metadata removal, and compression for safe email sharing.",
   keywords: "protect pdf before sending, secure pdf for email, lock pdf before sharing, pdf security for email",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I protect a PDF before emailing it?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Use OmnisPDF's Protect PDF tool to add a password, flatten any form fields or annotations, and compress the file to fit email size limits. Share the password separately via text or phone call." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Use PDF.it's Protect PDF tool to add a password, flatten any form fields or annotations, and compress the file to fit email size limits. Share the password separately via text or phone call." }
     },
     {
       "@type": "Question",
@@ -33,7 +33,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "What is the maximum PDF size I can send by email?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Most email providers limit attachments to 25MB (Gmail, Outlook, Yahoo). If your PDF is larger, use OmnisPDF's Compress PDF tool to reduce the file size before sending." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Most email providers limit attachments to 25MB (Gmail, Outlook, Yahoo). If your PDF is larger, use PDF.it's Compress PDF tool to reduce the file size before sending." }
     },
     {
       "@type": "Question",
@@ -42,8 +42,8 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Does OmnisPDF remove metadata from PDFs?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Flattening a PDF with OmnisPDF removes interactive elements and embedded data. For additional metadata cleanup, flatten the file and then re-protect it to create a clean, secure version." }
+      "name": "Does PDF.it remove metadata from PDFs?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Flattening a PDF with PDF.it removes interactive elements and embedded data. For additional metadata cleanup, flatten the file and then re-protect it to create a clean, secure version." }
     }
   ]
 }
@@ -52,17 +52,17 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Protect a PDF Before Sending by Email",
-  "description": "Secure your PDF for email sharing in 3 steps using OmnisPDF.",
+  "description": "Secure your PDF for email sharing in 3 steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Flatten and clean the PDF",
-      "text": "Upload your PDF to OmnisPDF's Flatten PDF tool to remove form fields, annotations, and layers. This prevents hidden data from being extracted by the recipient."
+      "text": "Upload your PDF to PDF.it's Flatten PDF tool to remove form fields, annotations, and layers. This prevents hidden data from being extracted by the recipient."
     },
     {
       "@type": "HowToStep",
       "name": "Add password protection",
-      "text": "Upload the flattened file to OmnisPDF's Protect PDF tool. Set a strong open password and choose 256-bit AES encryption for maximum security."
+      "text": "Upload the flattened file to PDF.it's Protect PDF tool. Set a strong open password and choose 256-bit AES encryption for maximum security."
     },
     {
       "@type": "HowToStep",
@@ -158,7 +158,7 @@ export default function ProtectPDFBeforeSendingPage() {
                 {[
                   {
                     title: "Flatten your PDF first",
-                    desc: "Before adding a password, remove any interactive elements that could leak data. Use OmnisPDF's Flatten PDF tool to bake form fields, comments, and annotations into the page. This prevents anyone from extracting hidden information.",
+                    desc: "Before adding a password, remove any interactive elements that could leak data. Use PDF.it's Flatten PDF tool to bake form fields, comments, and annotations into the page. This prevents anyone from extracting hidden information.",
                   },
                   {
                     title: "Add password protection",
@@ -195,7 +195,7 @@ export default function ProtectPDFBeforeSendingPage() {
                 <li>&#10003; <strong>Reduces file size.</strong> Removing interactive elements often makes the file smaller, which helps with email attachment limits.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Think of flattening as cleaning your document before locking it. Use <Link href="/flatten-pdf" className="text-orange-600 hover:underline">OmnisPDF's Flatten tool</Link>, then immediately <Link href="/protect-pdf" className="text-orange-600 hover:underline">protect the result</Link>.
+                Think of flattening as cleaning your document before locking it. Use <Link href="/flatten-pdf" className="text-orange-600 hover:underline">PDF.it's Flatten tool</Link>, then immediately <Link href="/protect-pdf" className="text-orange-600 hover:underline">protect the result</Link>.
               </p>
             </section>
 
@@ -303,12 +303,12 @@ export default function ProtectPDFBeforeSendingPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I protect a PDF before emailing it?", a: "Use OmnisPDF's Protect PDF tool to add a password, flatten any form fields or annotations, and compress the file to fit email size limits. Share the password separately via text or phone call." },
+                { q: "How do I protect a PDF before emailing it?", a: "Use PDF.it's Protect PDF tool to add a password, flatten any form fields or annotations, and compress the file to fit email size limits. Share the password separately via text or phone call." },
                 { q: "Should I flatten my PDF before sending it?", a: "Yes. Flattening removes interactive form fields, annotations, and layers, baking everything into the page. This prevents recipients from editing or extracting hidden data from your document." },
                 { q: "Can email attachments be intercepted?", a: "Yes. Standard email is not encrypted end-to-end. Attachments can potentially be intercepted during transmission or accessed if the recipient's email account is compromised. Password-protecting your PDF adds an essential layer of security." },
-                { q: "What is the maximum PDF size I can send by email?", a: "Most email providers limit attachments to 25MB (Gmail, Outlook, Yahoo). If your PDF is larger, use OmnisPDF's Compress PDF tool to reduce the file size before sending." },
+                { q: "What is the maximum PDF size I can send by email?", a: "Most email providers limit attachments to 25MB (Gmail, Outlook, Yahoo). If your PDF is larger, use PDF.it's Compress PDF tool to reduce the file size before sending." },
                 { q: "How should I share the password with the recipient?", a: "Never include the password in the same email as the PDF. Send it through a different channel — a text message, phone call, or encrypted messaging app like Signal or WhatsApp." },
-                { q: "Does OmnisPDF remove metadata from PDFs?", a: "Flattening a PDF with OmnisPDF removes interactive elements and embedded data. For additional metadata cleanup, flatten the file and then re-protect it to create a clean, secure version." },
+                { q: "Does PDF.it remove metadata from PDFs?", a: "Flattening a PDF with PDF.it removes interactive elements and embedded data. For additional metadata cleanup, flatten the file and then re-protect it to create a clean, secure version." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

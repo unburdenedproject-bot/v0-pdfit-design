@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileOutput, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Extract Pages from a PDF (Save Selected Pages as a New PDF) | OmnisPDF",
+  title: "Extract Pages from a PDF (Save Selected Pages as a New PDF) | PDF.it",
   description:
     "Learn how to extract specific pages from a PDF and save them as a new file. Pull out receipts, chapters, forms, or any combination of pages — free, online, no software needed.",
   keywords: "extract pages from pdf, save specific pages pdf, pull pages from pdf, extract pdf pages online, select pages from pdf",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I extract specific pages from a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF, select or type the page numbers you want to extract, click Extract, and download a new PDF containing only those pages. The original file is not modified." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it, select or type the page numbers you want to extract, click Extract, and download a new PDF containing only those pages. The original file is not modified." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I extract pages from a PDF on my phone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in any mobile browser. Open the Extract Pages tool in Safari or Chrome, upload your PDF, select the pages, and download the result — no app needed." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in any mobile browser. Open the Extract Pages tool in Safari or Chrome, upload your PDF, select the pages, and download the result — no app needed." }
     }
   ]
 }
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Extract Pages from a PDF",
-  "description": "Pull specific pages out of a PDF and save them as a new file in 3 simple steps using OmnisPDF.",
+  "description": "Pull specific pages out of a PDF and save them as a new file in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Upload your PDF",
-      "text": "Go to OmnisPDF's Extract Pages tool and upload your file by clicking or dragging it into the upload area."
+      "text": "Go to PDF.it's Extract Pages tool and upload your file by clicking or dragging it into the upload area."
     },
     {
       "@type": "HowToStep",
@@ -183,7 +183,7 @@ export default function ExtractPagesFromPDFPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Extracting Non-Consecutive Pages</h2>
               <p className="text-slate-600 mb-4">
-                You don't have to extract pages that are next to each other. OmnisPDF lets you pick any combination. For example:
+                You don't have to extract pages that are next to each other. PDF.it lets you pick any combination. For example:
               </p>
               <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 space-y-3">
                 <p className="text-slate-700"><strong>Scenario:</strong> You need pages 3, 7, and 15-18 from a 25-page contract.</p>
@@ -294,12 +294,12 @@ export default function ExtractPagesFromPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I extract specific pages from a PDF?", a: "Upload your PDF to OmnisPDF, select or type the page numbers you want to extract, click Extract, and download a new PDF containing only those pages. The original file is not modified." },
+                { q: "How do I extract specific pages from a PDF?", a: "Upload your PDF to PDF.it, select or type the page numbers you want to extract, click Extract, and download a new PDF containing only those pages. The original file is not modified." },
                 { q: "Can I extract non-consecutive pages from a PDF?", a: "Yes. You can pick any combination of pages — for example, pages 2, 5, and 11. They don't need to be in order or next to each other. The extracted pages will appear in the order you specify." },
                 { q: "What's the difference between extracting and splitting a PDF?", a: "Extracting pulls selected pages into one new file. Splitting divides a PDF into multiple separate files. Use extract when you need a single output; use split when you need multiple output files." },
                 { q: "Can I extract pages from a scanned PDF?", a: "Yes. Scanned PDFs work the same way — each scanned page is a page in the PDF. Select the page numbers you need and extract them. The image quality of each page is preserved exactly." },
                 { q: "Is the extracted PDF smaller than the original?", a: "Usually yes. The extracted file only contains the pages you selected, so it's smaller than the full document. If you need it even smaller, compress the extracted file using the Compress PDF tool." },
-                { q: "Can I extract pages from a PDF on my phone?", a: "Yes. OmnisPDF works in any mobile browser. Open the Extract Pages tool in Safari or Chrome, upload your PDF, select the pages, and download the result — no app needed." },
+                { q: "Can I extract pages from a PDF on my phone?", a: "Yes. PDF.it works in any mobile browser. Open the Extract Pages tool in Safari or Chrome, upload your PDF, select the pages, and download the result — no app needed." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

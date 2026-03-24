@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ScanText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Que es OCR? (Reconocimiento Optico de Caracteres Explicado) | OmnisPDF",
+  title: "Que es OCR? (Reconocimiento Optico de Caracteres Explicado) | PDF.it",
   description:
     "Aprende que es OCR (Reconocimiento Optico de Caracteres), como funciona y por que es importante para PDFs escaneados. Entiende como OCR convierte imagenes de texto en contenido editable y buscable.",
   keywords: "que es ocr, reconocimiento optico de caracteres, ocr explicado, como funciona ocr",
@@ -17,10 +17,10 @@ const faqSchema = {
   "mainEntity": [
     { "@type": "Question", "name": "Que significa OCR?", "acceptedAnswer": { "@type": "Answer", "text": "OCR significa Reconocimiento Optico de Caracteres. Es una tecnologia que convierte imagenes de texto — como documentos escaneados, fotos o PDFs — en texto legible por maquina y buscable." } },
     { "@type": "Question", "name": "Como funciona el OCR?", "acceptedAnswer": { "@type": "Answer", "text": "El software OCR analiza las formas, patrones y disposicion de pixeles en una imagen para identificar caracteres individuales (letras, numeros, simbolos). El OCR moderno usa aprendizaje automatico para mejorar la precision en diferentes fuentes, idiomas y disenos." } },
-    { "@type": "Question", "name": "Puede el OCR manejar multiples idiomas?", "acceptedAnswer": { "@type": "Answer", "text": "Si. La mayoria de herramientas OCR modernas, incluyendo el Escaner OCR de OmnisPDF, soportan docenas de idiomas incluyendo espanol, ingles, frances, aleman, portugues y muchos mas." } },
+    { "@type": "Question", "name": "Puede el OCR manejar multiples idiomas?", "acceptedAnswer": { "@type": "Answer", "text": "Si. La mayoria de herramientas OCR modernas, incluyendo el Escaner OCR de PDF.it, soportan docenas de idiomas incluyendo espanol, ingles, frances, aleman, portugues y muchos mas." } },
     { "@type": "Question", "name": "Es el OCR 100% preciso?", "acceptedAnswer": { "@type": "Answer", "text": "El OCR tipicamente tiene 95-99% de precision en escaneos limpios de alta resolucion con fuentes impresas estandar. La precision disminuye con imagenes de baja resolucion, texto manuscrito, fuentes inusuales o documentos con formato complejo." } },
-    { "@type": "Question", "name": "Necesito instalar software para usar OCR?", "acceptedAnswer": { "@type": "Answer", "text": "No. El Escaner OCR de OmnisPDF funciona completamente en tu navegador. Sube tu PDF escaneado, selecciona el idioma y descarga un PDF buscable — sin instalacion de software requerida." } },
-    { "@type": "Question", "name": "Es OCR una funcion Pro en OmnisPDF?", "acceptedAnswer": { "@type": "Answer", "text": "Si. El Escaner OCR esta disponible para suscriptores Pro y Business. Pro cuesta $7.99/mes e incluye conversiones ilimitadas, archivos hasta 200MB, procesamiento por lotes y todas las herramientas avanzadas incluyendo OCR." } }
+    { "@type": "Question", "name": "Necesito instalar software para usar OCR?", "acceptedAnswer": { "@type": "Answer", "text": "No. El Escaner OCR de PDF.it funciona completamente en tu navegador. Sube tu PDF escaneado, selecciona el idioma y descarga un PDF buscable — sin instalacion de software requerida." } },
+    { "@type": "Question", "name": "Es OCR una funcion Pro en PDF.it?", "acceptedAnswer": { "@type": "Answer", "text": "Si. El Escaner OCR esta disponible para suscriptores Pro y Business. Pro cuesta $7.99/mes e incluye conversiones ilimitadas, archivos hasta 200MB, procesamiento por lotes y todas las herramientas avanzadas incluyendo OCR." } }
   ]
 }
 
@@ -28,9 +28,9 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Usar OCR en un PDF Escaneado",
-  "description": "Convierte un PDF escaneado en texto buscable en 3 simples pasos usando el Escaner OCR de OmnisPDF.",
+  "description": "Convierte un PDF escaneado en texto buscable en 3 simples pasos usando el Escaner OCR de PDF.it.",
   "step": [
-    { "@type": "HowToStep", "name": "Sube tu PDF escaneado", "text": "Ve a la herramienta Escaner OCR de OmnisPDF y sube el PDF escaneado que quieres hacer buscable." },
+    { "@type": "HowToStep", "name": "Sube tu PDF escaneado", "text": "Ve a la herramienta Escaner OCR de PDF.it y sube el PDF escaneado que quieres hacer buscable." },
     { "@type": "HowToStep", "name": "Selecciona tu idioma y ejecuta OCR", "text": "Elige el idioma del texto del documento y haz clic en el boton OCR para iniciar el procesamiento." },
     { "@type": "HowToStep", "name": "Descarga tu PDF buscable", "text": "Una vez completado el procesamiento OCR, descarga tu nuevo PDF buscable. Ahora puedes encontrar texto, copiar contenido y seleccionar palabras en el documento." }
   ]
@@ -57,7 +57,7 @@ export default function QueEsOCRPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><ScanText className="h-5 w-5 text-white" /></div>
-              <p className="text-slate-700 font-semibold">Quieres probar OCR ahora? Usa el Escaner OCR de OmnisPDF (Pro).</p>
+              <p className="text-slate-700 font-semibold">Quieres probar OCR ahora? Usa el Escaner OCR de PDF.it (Pro).</p>
             </div>
             <Link href="/es/escaner-ocr" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Escaner OCR <ArrowRight className="h-4 w-4" /></Link>
           </div>
@@ -112,8 +112,8 @@ export default function QueEsOCRPage() {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Como Ejecutar OCR en OmnisPDF</h2>
-              <p className="text-slate-600 mb-4">El <Link href="/es/escaner-ocr" className="text-orange-600 hover:underline">Escaner OCR</Link> de OmnisPDF es una funcion Pro que convierte PDFs escaneados en documentos buscables. Esto es lo que obtienes:</p>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Como Ejecutar OCR en PDF.it</h2>
+              <p className="text-slate-600 mb-4">El <Link href="/es/escaner-ocr" className="text-orange-600 hover:underline">Escaner OCR</Link> de PDF.it es una funcion Pro que convierte PDFs escaneados en documentos buscables. Esto es lo que obtienes:</p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; Sube cualquier PDF escaneado — la herramienta detecta paginas solo de imagen automaticamente.</li>
                 <li>&#10003; Selecciona el idioma del documento para mejor precision de reconocimiento.</li>
@@ -121,7 +121,7 @@ export default function QueEsOCRPage() {
                 <li>&#10003; Procesa archivos hasta 200MB con una suscripcion Pro ($7.99/mes).</li>
                 <li>&#10003; Despues del OCR, usa <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> si el archivo es muy grande para email o portales de carga.</li>
               </ul>
-              <p className="text-slate-600 mt-4">El Escaner OCR esta disponible en los planes <Link href="/es/precios" className="text-orange-600 hover:underline">Pro y Business</Link>. Los usuarios gratuitos pueden explorar todas las demas herramientas de OmnisPDF con generosos limites diarios.</p>
+              <p className="text-slate-600 mt-4">El Escaner OCR esta disponible en los planes <Link href="/es/precios" className="text-orange-600 hover:underline">Pro y Business</Link>. Los usuarios gratuitos pueden explorar todas las demas herramientas de PDF.it con generosos limites diarios.</p>
             </section>
           </div>
         </article>
@@ -161,10 +161,10 @@ export default function QueEsOCRPage() {
               {[
                 { q: "Que significa OCR?", a: "OCR significa Reconocimiento Optico de Caracteres. Es una tecnologia que convierte imagenes de texto — como documentos escaneados, fotos o PDFs — en texto legible por maquina y buscable." },
                 { q: "Como funciona el OCR?", a: "El software OCR analiza las formas, patrones y disposicion de pixeles en una imagen para identificar caracteres individuales. El OCR moderno usa aprendizaje automatico para mejorar la precision en diferentes fuentes, idiomas y disenos." },
-                { q: "Puede el OCR manejar multiples idiomas?", a: "Si. La mayoria de herramientas OCR modernas, incluyendo el Escaner OCR de OmnisPDF, soportan docenas de idiomas incluyendo espanol, ingles, frances, aleman, portugues y muchos mas." },
+                { q: "Puede el OCR manejar multiples idiomas?", a: "Si. La mayoria de herramientas OCR modernas, incluyendo el Escaner OCR de PDF.it, soportan docenas de idiomas incluyendo espanol, ingles, frances, aleman, portugues y muchos mas." },
                 { q: "Es el OCR 100% preciso?", a: "El OCR tipicamente tiene 95-99% de precision en escaneos limpios de alta resolucion con fuentes impresas estandar. La precision disminuye con imagenes de baja resolucion, texto manuscrito o fuentes inusuales." },
-                { q: "Necesito instalar software para usar OCR?", a: "No. El Escaner OCR de OmnisPDF funciona completamente en tu navegador. Sube tu PDF escaneado, selecciona el idioma y descarga un PDF buscable — sin instalacion requerida." },
-                { q: "Es OCR una funcion Pro en OmnisPDF?", a: "Si. El Escaner OCR esta disponible para suscriptores Pro y Business. Pro cuesta $7.99/mes e incluye conversiones ilimitadas, archivos hasta 200MB, procesamiento por lotes y todas las herramientas avanzadas." },
+                { q: "Necesito instalar software para usar OCR?", a: "No. El Escaner OCR de PDF.it funciona completamente en tu navegador. Sube tu PDF escaneado, selecciona el idioma y descarga un PDF buscable — sin instalacion requerida." },
+                { q: "Es OCR una funcion Pro en PDF.it?", a: "Si. El Escaner OCR esta disponible para suscriptores Pro y Business. Pro cuesta $7.99/mes e incluye conversiones ilimitadas, archivos hasta 200MB, procesamiento por lotes y todas las herramientas avanzadas." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

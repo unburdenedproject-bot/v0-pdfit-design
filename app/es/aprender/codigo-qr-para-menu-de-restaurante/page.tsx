@@ -5,7 +5,7 @@ import Link from "next/link"
 import { QrCode, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Codigo QR para Menus de Restaurante (Crea un Enlace Escaneable) | OmnisPDF",
+  title: "Codigo QR para Menus de Restaurante (Crea un Enlace Escaneable) | PDF.it",
   description:
     "Aprende como crear un codigo QR para el menu de tu restaurante. Enlaza a un menu PDF o sitio web para que los clientes escaneen y vean tu menu en su telefono al instante.",
   keywords: "codigo qr menu restaurante, menu codigo qr, menu escaneable, codigo qr para cafeteria",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como creo un codigo QR para el menu de mi restaurante?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu menu como PDF a un servicio de alojamiento o tu sitio web, copia la URL, luego usa la herramienta de Codigo QR de OmnisPDF para generar un codigo QR para esa URL. Imprime el codigo QR en carpas de mesa, stickers o letreros." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu menu como PDF a un servicio de alojamiento o tu sitio web, copia la URL, luego usa la herramienta de Codigo QR de PDF.it para generar un codigo QR para esa URL. Imprime el codigo QR en carpas de mesa, stickers o letreros." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Es una herramienta gratuita?",
-      "acceptedAnswer": { "@type": "Answer", "text": "El generador de Codigo QR de OmnisPDF es una funcion Pro a $7.99/mes. Pro incluye codigos QR ilimitados mas todas las herramientas PDF — perfecto para restaurantes que tambien necesitan comprimir, convertir o gestionar menus en PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "El generador de Codigo QR de PDF.it es una funcion Pro a $7.99/mes. Pro incluye codigos QR ilimitados mas todas las herramientas PDF — perfecto para restaurantes que tambien necesitan comprimir, convertir o gestionar menus en PDF." }
     }
   ]
 }
@@ -52,7 +52,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Crear un Codigo QR para el Menu de Tu Restaurante",
-  "description": "Configura un codigo QR escaneable para el menu de tu restaurante en 3 simples pasos usando OmnisPDF.",
+  "description": "Configura un codigo QR escaneable para el menu de tu restaurante en 3 simples pasos usando PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
@@ -62,7 +62,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Genera el codigo QR",
-      "text": "Abre la herramienta de Codigo QR de OmnisPDF, selecciona tipo URL y pega el enlace de tu menu. Personaliza los colores para que coincidan con la marca de tu restaurante si lo deseas."
+      "text": "Abre la herramienta de Codigo QR de PDF.it, selecciona tipo URL y pega el enlace de tu menu. Personaliza los colores para que coincidan con la marca de tu restaurante si lo deseas."
     },
     {
       "@type": "HowToStep",
@@ -155,7 +155,7 @@ export default function CodigoQRParaMenuRestaurantePage() {
                 {[
                   {
                     title: "Crea o digitaliza tu menu",
-                    desc: "Si ya tienes un menu en PDF, estas listo. Si tu menu es solo impreso, fotografialo o recrealo en Word/Google Docs y exportalo como PDF. Usa la herramienta Word a PDF de OmnisPDF si es necesario. Asegurate de que el texto sea legible en la pantalla de un telefono.",
+                    desc: "Si ya tienes un menu en PDF, estas listo. Si tu menu es solo impreso, fotografialo o recrealo en Word/Google Docs y exportalo como PDF. Usa la herramienta Word a PDF de PDF.it si es necesario. Asegurate de que el texto sea legible en la pantalla de un telefono.",
                   },
                   {
                     title: "Aloja tu menu en linea",
@@ -163,7 +163,7 @@ export default function CodigoQRParaMenuRestaurantePage() {
                   },
                   {
                     title: "Genera e imprime el codigo QR",
-                    desc: "Abre la herramienta de Codigo QR de OmnisPDF (funcion Pro), pega la URL de tu menu y genera el codigo. Descarga como SVG para impresion. Imprime en carpas de mesa, soportes acrilicos, letreros de pared o stickers. Agrega el texto 'Escanea para ver el Menu' para que los clientes sepan que hacer.",
+                    desc: "Abre la herramienta de Codigo QR de PDF.it (funcion Pro), pega la URL de tu menu y genera el codigo. Descarga como SVG para impresion. Imprime en carpas de mesa, soportes acrilicos, letreros de pared o stickers. Agrega el texto 'Escanea para ver el Menu' para que los clientes sepan que hacer.",
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -228,7 +228,7 @@ export default function CodigoQRParaMenuRestaurantePage() {
                 <li>&#10003; <strong>Reemplaza el archivo, no el enlace.</strong> Si alojas el PDF en Google Drive, puedes reemplazar el archivo sin cambiar el enlace de compartir. Sube el nuevo PDF con el mismo nombre a la misma carpeta.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Necesitas convertir tu menu actualizado de Word o PowerPoint a PDF? Usa el convertidor <Link href="/es/word-a-pdf" className="text-orange-600 hover:underline">Word a PDF</Link> o <Link href="/es/powerpoint-a-pdf" className="text-orange-600 hover:underline">PowerPoint a PDF</Link> de OmnisPDF.
+                Necesitas convertir tu menu actualizado de Word o PowerPoint a PDF? Usa el convertidor <Link href="/es/word-a-pdf" className="text-orange-600 hover:underline">Word a PDF</Link> o <Link href="/es/powerpoint-a-pdf" className="text-orange-600 hover:underline">PowerPoint a PDF</Link> de PDF.it.
               </p>
             </section>
 
@@ -281,12 +281,12 @@ export default function CodigoQRParaMenuRestaurantePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como creo un codigo QR para el menu de mi restaurante?", a: "Sube tu menu como PDF a un servicio de alojamiento o tu sitio web, copia la URL, luego usa la herramienta de Codigo QR de OmnisPDF para generar un codigo QR para esa URL. Imprime el codigo QR en carpas de mesa, stickers o letreros." },
+                { q: "Como creo un codigo QR para el menu de mi restaurante?", a: "Sube tu menu como PDF a un servicio de alojamiento o tu sitio web, copia la URL, luego usa la herramienta de Codigo QR de PDF.it para generar un codigo QR para esa URL. Imprime el codigo QR en carpas de mesa, stickers o letreros." },
                 { q: "Debo enlazar a un menu PDF o una pagina web?", a: "Una pagina web es mas facil de actualizar (cambiar precios, agregar platillos) sin reimprimir codigos QR. Un menu PDF es mas simple de crear y se ve exactamente como tu menu impreso. Elige segun la frecuencia con que cambia tu menu." },
                 { q: "Que tamano debe tener un codigo QR de menu?", a: "Al menos 3cm x 3cm para carpas de mesa y stickers. Para letreros de pared o posters, hazlo mas grande. La distancia de escaneo importa — los clientes deben poder escanear desde al menos 30cm en la iluminacion del restaurante." },
                 { q: "Los clientes pueden escanear el codigo QR sin una app?", a: "Si. Todos los smartphones modernos (iPhone y Android) pueden escanear codigos QR directamente con su app de camara integrada. No se necesita una app separada de lectura de QR." },
                 { q: "Como actualizo mi menu sin reimprimir los codigos QR?", a: "Usa un acortador de URL o servicio de redireccion. El codigo QR apunta a una URL corta, y cambias a donde redirige esa URL corta cada vez que actualizas tu menu. De esta manera el codigo QR sigue siendo el mismo." },
-                { q: "Es una herramienta gratuita?", a: "El generador de Codigo QR de OmnisPDF es una funcion Pro a $7.99/mes. Pro incluye codigos QR ilimitados mas todas las herramientas PDF — perfecto para restaurantes que tambien necesitan comprimir, convertir o gestionar menus en PDF." },
+                { q: "Es una herramienta gratuita?", a: "El generador de Codigo QR de PDF.it es una funcion Pro a $7.99/mes. Pro incluye codigos QR ilimitados mas todas las herramientas PDF — perfecto para restaurantes que tambien necesitan comprimir, convertir o gestionar menus en PDF." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

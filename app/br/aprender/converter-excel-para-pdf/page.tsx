@@ -5,7 +5,7 @@ import Link from "next/link"
 import { TableIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Converter Excel para PDF Online (Sem Cortar Colunas) | OmnisPDF",
+  title: "Como Converter Excel para PDF Online (Sem Cortar Colunas) | PDF.it",
   description:
     "Aprenda como converter planilhas Excel para PDF mantendo todas as colunas visíveis. Guia passo a passo para evitar colunas cortadas e formatação errada.",
   keywords: "converter excel para pdf, excel para pdf online, planilha para pdf, xlsx para pdf, converter planilha pdf grátis",
@@ -15,9 +15,9 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Como converto Excel para PDF grátis?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu arquivo Excel para a ferramenta Excel para PDF do OmnisPDF, clique em Converter e baixe o PDF. Não é necessário cadastro para seus primeiros 3 arquivos." } },
-    { "@type": "Question", "name": "As colunas ficam cortadas ao converter?", "acceptedAnswer": { "@type": "Answer", "text": "O OmnisPDF ajusta automaticamente a planilha para caber na página PDF. Para planilhas muito largas, recomendamos usar orientação paisagem e ajustar a área de impressão no Excel antes de converter." } },
-    { "@type": "Question", "name": "Posso converter Excel para PDF no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em qualquer navegador móvel. Envie o arquivo Excel e baixe o PDF diretamente no celular." } },
+    { "@type": "Question", "name": "Como converto Excel para PDF grátis?", "acceptedAnswer": { "@type": "Answer", "text": "Envie seu arquivo Excel para a ferramenta Excel para PDF do PDF.it, clique em Converter e baixe o PDF. Não é necessário cadastro para seus primeiros 3 arquivos." } },
+    { "@type": "Question", "name": "As colunas ficam cortadas ao converter?", "acceptedAnswer": { "@type": "Answer", "text": "O PDF.it ajusta automaticamente a planilha para caber na página PDF. Para planilhas muito largas, recomendamos usar orientação paisagem e ajustar a área de impressão no Excel antes de converter." } },
+    { "@type": "Question", "name": "Posso converter Excel para PDF no celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em qualquer navegador móvel. Envie o arquivo Excel e baixe o PDF diretamente no celular." } },
     { "@type": "Question", "name": "As fórmulas são mantidas?", "acceptedAnswer": { "@type": "Answer", "text": "O PDF mostra os valores calculados, não as fórmulas. PDF é um formato visual — ele captura o que está visível na planilha, incluindo formatação, cores e bordas." } }
   ]
 }
@@ -28,8 +28,8 @@ const howToSchema = {
   "name": "Como Converter Excel para PDF",
   "description": "Converta planilhas Excel para PDF mantendo a formatação e todas as colunas visíveis.",
   "step": [
-    { "@type": "HowToStep", "name": "Envie o arquivo Excel", "text": "Acesse a ferramenta Excel para PDF do OmnisPDF e envie seu arquivo .xlsx ou .xls." },
-    { "@type": "HowToStep", "name": "Clique em Converter", "text": "O OmnisPDF converte a planilha ajustando para caber na página PDF." },
+    { "@type": "HowToStep", "name": "Envie o arquivo Excel", "text": "Acesse a ferramenta Excel para PDF do PDF.it e envie seu arquivo .xlsx ou .xls." },
+    { "@type": "HowToStep", "name": "Clique em Converter", "text": "O PDF.it converte a planilha ajustando para caber na página PDF." },
     { "@type": "HowToStep", "name": "Baixe o PDF", "text": "Baixe o PDF gerado e verifique que todas as colunas estão visíveis." }
   ]
 }
@@ -85,7 +85,7 @@ export default function ConverterExcelParaPdfPage() {
               <div className="space-y-4">
                 {[
                   { title: "Envie o arquivo Excel", desc: "Acesse a ferramenta Excel para PDF e envie seu arquivo .xlsx ou .xls. Arquivos até 25MB são grátis — usuários Pro podem enviar até 200MB." },
-                  { title: "Clique em Converter", desc: "O OmnisPDF processa a planilha, convertendo cada aba para uma página (ou múltiplas páginas) no PDF. Formatação, cores e bordas são mantidas." },
+                  { title: "Clique em Converter", desc: "O PDF.it processa a planilha, convertendo cada aba para uma página (ou múltiplas páginas) no PDF. Formatação, cores e bordas são mantidas." },
                   { title: "Baixe o PDF", desc: "Baixe o PDF gerado. Abra e verifique que todas as colunas estão visíveis e a formatação está correta." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -163,9 +163,9 @@ export default function ConverterExcelParaPdfPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como converto Excel para PDF grátis?", a: "Envie seu arquivo Excel para o OmnisPDF, clique em Converter e baixe o PDF. Não é necessário cadastro para seus primeiros 3 arquivos." },
-                { q: "As colunas ficam cortadas ao converter?", a: "O OmnisPDF ajusta automaticamente. Para planilhas largas, use orientação paisagem e ajuste a área de impressão antes." },
-                { q: "Posso converter Excel para PDF no celular?", a: "Sim. O OmnisPDF funciona em qualquer navegador móvel. Envie o Excel e baixe o PDF diretamente no celular." },
+                { q: "Como converto Excel para PDF grátis?", a: "Envie seu arquivo Excel para o PDF.it, clique em Converter e baixe o PDF. Não é necessário cadastro para seus primeiros 3 arquivos." },
+                { q: "As colunas ficam cortadas ao converter?", a: "O PDF.it ajusta automaticamente. Para planilhas largas, use orientação paisagem e ajuste a área de impressão antes." },
+                { q: "Posso converter Excel para PDF no celular?", a: "Sim. O PDF.it funciona em qualquer navegador móvel. Envie o Excel e baixe o PDF diretamente no celular." },
                 { q: "As fórmulas são mantidas?", a: "O PDF mostra os valores calculados, não as fórmulas. PDF captura o que está visível na planilha." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

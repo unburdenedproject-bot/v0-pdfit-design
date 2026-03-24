@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ScanLine, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Convert Scanned PDF to Text: When You Need OCR | OmnisPDF",
+  title: "Convert Scanned PDF to Text: When You Need OCR | PDF.it",
   description:
     "Learn how to convert scanned PDFs to editable text using OCR. Understand when PDF to TXT works vs when you need OCR, plus tips for improving scan quality.",
   keywords: "convert scanned pdf to text, scanned pdf to text, ocr pdf, scanned pdf ocr, extract text from scanned pdf",
@@ -38,12 +38,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I OCR a phone photo of a document?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes, but phone photos often have perspective distortion, shadows, and lower resolution than flatbed scans. Use OmnisPDF's Phone Scan Cleanup tool first to straighten and enhance the image, then run OCR for better results." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, but phone photos often have perspective distortion, shadows, and lower resolution than flatbed scans. Use PDF.it's Phone Scan Cleanup tool first to straighten and enhance the image, then run OCR for better results." }
     },
     {
       "@type": "Question",
-      "name": "Is OCR free on OmnisPDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OCR Scanner is a Pro feature on OmnisPDF. Free users can try basic PDF to TXT (which works on digital PDFs). For scanned documents that require OCR, a Pro subscription ($7.99/month) unlocks the OCR Scanner with unlimited conversions." }
+      "name": "Is OCR free on PDF.it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "OCR Scanner is a Pro feature on PDF.it. Free users can try basic PDF to TXT (which works on digital PDFs). For scanned documents that require OCR, a Pro subscription ($7.99/month) unlocks the OCR Scanner with unlimited conversions." }
     }
   ]
 }
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Convert a Scanned PDF to Text with OCR",
-  "description": "Extract editable text from scanned PDFs in 3 simple steps using OmnisPDF's OCR Scanner.",
+  "description": "Extract editable text from scanned PDFs in 3 simple steps using PDF.it's OCR Scanner.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Upload your scanned PDF",
-      "text": "Go to OmnisPDF's OCR Scanner and upload your scanned PDF. The tool accepts PDFs with any number of scanned pages."
+      "text": "Go to PDF.it's OCR Scanner and upload your scanned PDF. The tool accepts PDFs with any number of scanned pages."
     },
     {
       "@type": "HowToStep",
@@ -181,7 +181,7 @@ export default function ConvertScannedPdfToTextPage() {
                 In a scanned PDF, there is no text data — only image data. Each page is a JPEG or PNG-like image of the original paper. The tool finds no characters to extract, so it outputs a blank file or just whitespace.
               </p>
               <p className="text-slate-600">
-                This is not a limitation of OmnisPDF specifically — <em>no</em> standard text extraction tool can read text from images. You need a completely different technology: OCR.
+                This is not a limitation of PDF.it specifically — <em>no</em> standard text extraction tool can read text from images. You need a completely different technology: OCR.
               </p>
             </section>
 
@@ -192,7 +192,7 @@ export default function ConvertScannedPdfToTextPage() {
                 OCR (Optical Character Recognition) is technology that reads text from images. Instead of looking for text data in the PDF file, it analyzes the visual appearance of each page and recognizes letter shapes, words, and sentences.
               </p>
               <p className="text-slate-600 mb-4">
-                Modern OCR engines (like the one OmnisPDF uses) can:
+                Modern OCR engines (like the one PDF.it uses) can:
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#x2713; Recognize text in over 100 languages</li>
@@ -345,8 +345,8 @@ export default function ConvertScannedPdfToTextPage() {
                 { q: "How accurate is OCR on scanned PDFs?", a: "Modern OCR is 95-99% accurate on clean scans with standard fonts. Accuracy drops with poor scan quality, handwriting, unusual fonts, or very small text. You can improve results by scanning at 300 DPI or higher and ensuring good lighting." },
                 { q: "What's the difference between a scanned PDF and a digital PDF?", a: "A digital PDF was created electronically (from Word, Google Docs, etc.) and contains real text data you can select and search. A scanned PDF is a photograph of paper — each page is an image with no text data. You need OCR to extract text from scanned PDFs." },
                 { q: "How do I improve OCR accuracy on my scanned documents?", a: "Scan at 300 DPI or higher, use good lighting (no shadows), keep the document flat and aligned, scan in black and white for text-only documents, and clean up phone scans using image processing tools before OCR." },
-                { q: "Can I OCR a phone photo of a document?", a: "Yes, but phone photos often have perspective distortion, shadows, and lower resolution than flatbed scans. Use OmnisPDF's Phone Scan Cleanup tool first to straighten and enhance the image, then run OCR for better results." },
-                { q: "Is OCR free on OmnisPDF?", a: "OCR Scanner is a Pro feature on OmnisPDF. Free users can try basic PDF to TXT (which works on digital PDFs). For scanned documents that require OCR, a Pro subscription ($7.99/month) unlocks the OCR Scanner with unlimited conversions." },
+                { q: "Can I OCR a phone photo of a document?", a: "Yes, but phone photos often have perspective distortion, shadows, and lower resolution than flatbed scans. Use PDF.it's Phone Scan Cleanup tool first to straighten and enhance the image, then run OCR for better results." },
+                { q: "Is OCR free on PDF.it?", a: "OCR Scanner is a Pro feature on PDF.it. Free users can try basic PDF to TXT (which works on digital PDFs). For scanned documents that require OCR, a Pro subscription ($7.99/month) unlocks the OCR Scanner with unlimited conversions." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

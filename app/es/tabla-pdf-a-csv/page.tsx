@@ -6,14 +6,14 @@ import { FileSpreadsheet, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Tabla PDF a CSV — Convierte Tablas de PDF a Formato CSV | OmnisPDF",
+  title: "Tabla PDF a CSV — Convierte Tablas de PDF a Formato CSV | PDF.it",
   description:
-    "Convierte tablas de archivos PDF a formato CSV con OmnisPDF. Exporta datos tabulares a CSV para importar en bases de datos y hojas de cálculo — rápido y sin registro.",
+    "Convierte tablas de archivos PDF a formato CSV con PDF.it. Exporta datos tabulares a CSV para importar en bases de datos y hojas de cálculo — rápido y sin registro.",
   alternates: {
-    canonical: "https://omnispdf.com/es/tabla-pdf-a-csv",
+    canonical: "https://pdf.it.com/es/tabla-pdf-a-csv",
     languages: {
-      en: "https://omnispdf.com/pdf-table-to-csv",
-      es: "https://omnispdf.com/es/tabla-pdf-a-csv",
+      en: "https://pdf.it.com/pdf-table-to-csv",
+      es: "https://pdf.it.com/es/tabla-pdf-a-csv",
     },
   },
 }
@@ -25,7 +25,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo convierto tablas de PDF a CSV?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a OmnisPDF, haz clic en Convertir y descarga un archivo CSV con las tablas detectadas en tu documento, listas para importar en cualquier sistema." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it, haz clic en Convertir y descarga un archivo CSV con las tablas detectadas en tu documento, listas para importar en cualquier sistema." }
     },
     {
       "@type": "Question",
@@ -40,7 +40,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Se detectan todas las tablas del PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF detecta automáticamente las tablas con estructura clara de filas y columnas. Tablas muy irregulares o sin bordes visibles pueden requerir ajustes manuales." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it detecta automáticamente las tablas con estructura clara de filas y columnas. Tablas muy irregulares o sin bordes visibles pueden requerir ajustes manuales." }
     },
     {
       "@type": "Question",
@@ -98,7 +98,7 @@ export default function TablaPDFaCSVPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              ¿Necesitas importar datos de un PDF a tu base de datos o sistema? El conversor de tablas PDF a CSV de OmnisPDF detecta las tablas en tu documento y las exporta como archivos CSV — el formato más universal para intercambio de datos entre sistemas.
+              ¿Necesitas importar datos de un PDF a tu base de datos o sistema? El conversor de tablas PDF a CSV de PDF.it detecta las tablas en tu documento y las exporta como archivos CSV — el formato más universal para intercambio de datos entre sistemas.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Convierte tablas de PDF a formato CSV</li>
@@ -140,7 +140,7 @@ export default function TablaPDFaCSVPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Convertir Tablas de PDF a CSV</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Haz clic en Convertir a CSV — las tablas se detectan automáticamente.",
                 "Descarga el archivo CSV listo para importar.",
               ].map((step, i) => (
@@ -185,10 +185,10 @@ export default function TablaPDFaCSVPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo convierto tablas de PDF a CSV?", a: "Sube tu PDF a OmnisPDF, haz clic en Convertir y descarga un archivo CSV con las tablas detectadas en tu documento, listas para importar en cualquier sistema." },
+                { q: "¿Cómo convierto tablas de PDF a CSV?", a: "Sube tu PDF a PDF.it, haz clic en Convertir y descarga un archivo CSV con las tablas detectadas en tu documento, listas para importar en cualquier sistema." },
                 { q: "¿Cuál es la diferencia entre CSV y Excel?", a: "CSV es un formato de texto plano separado por comas, ideal para importar datos en bases de datos y sistemas. Excel (XLSX) es un formato de hoja de cálculo con soporte para fórmulas y formato visual." },
                 { q: "¿Para qué sirve el formato CSV?", a: "CSV es el formato más universal para intercambio de datos. Se puede importar en Excel, Google Sheets, bases de datos SQL, CRMs, ERPs y prácticamente cualquier sistema de datos." },
-                { q: "¿Se detectan todas las tablas del PDF?", a: "OmnisPDF detecta automáticamente las tablas con estructura clara de filas y columnas. Tablas muy irregulares o sin bordes visibles pueden requerir ajustes manuales." },
+                { q: "¿Se detectan todas las tablas del PDF?", a: "PDF.it detecta automáticamente las tablas con estructura clara de filas y columnas. Tablas muy irregulares o sin bordes visibles pueden requerir ajustes manuales." },
                 { q: "¿Puedo convertir tablas de PDFs escaneados a CSV?", a: "Para PDFs escaneados, primero usa nuestro Escáner OCR para convertir las imágenes a texto, y luego convierte las tablas a CSV." },
                 { q: "¿Es gratis convertir tablas de PDF a CSV?", a: "Sí. Las cuentas gratuitas tienen 10 conversiones por día. Las cuentas Pro tienen conversiones ilimitadas." },
               ].map((faq, i) => (

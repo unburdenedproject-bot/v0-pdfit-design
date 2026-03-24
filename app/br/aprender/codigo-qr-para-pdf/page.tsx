@@ -5,7 +5,7 @@ import Link from "next/link"
 import { QrCode, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Codigo QR para PDF (Compartilhe Documentos com QR) | OmnisPDF",
+  title: "Codigo QR para PDF (Compartilhe Documentos com QR) | PDF.it",
   description:
     "Crie um codigo QR que direciona para um PDF. Ideal para cardapios, manuais, catalogos e qualquer documento que voce queira compartilhar via QR code.",
   keywords: "codigo qr para pdf, qr code pdf, compartilhar pdf qr, qr code para documento",
@@ -15,7 +15,7 @@ const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Como criar um QR code para um PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Primeiro, hospede o PDF em um link publico (Google Drive, Dropbox ou seu servidor). Depois, use o gerador de QR do OmnisPDF para criar um QR code com essa URL. Ao escanear, o usuario sera direcionado ao PDF." } },
+    { "@type": "Question", "name": "Como criar um QR code para um PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Primeiro, hospede o PDF em um link publico (Google Drive, Dropbox ou seu servidor). Depois, use o gerador de QR do PDF.it para criar um QR code com essa URL. Ao escanear, o usuario sera direcionado ao PDF." } },
     { "@type": "Question", "name": "Posso gerar um QR direto de um arquivo PDF?", "acceptedAnswer": { "@type": "Answer", "text": "O QR code precisa apontar para uma URL. Voce precisa primeiro hospedar o PDF online e usar a URL publica para gerar o QR." } },
     { "@type": "Question", "name": "O PDF precisa estar online?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O QR code direciona para uma URL, entao o PDF precisa estar acessivel pela internet — em servicos como Google Drive, Dropbox, OneDrive ou seu proprio site." } },
     { "@type": "Question", "name": "Posso atualizar o PDF sem mudar o QR?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, se voce substituir o arquivo na mesma URL. Se o link permanecer o mesmo, o QR continuara funcionando com o PDF atualizado." } },
@@ -29,7 +29,7 @@ const howToSchema = {
   "description": "Compartilhe qualquer PDF via codigo QR em 3 passos.",
   "step": [
     { "@type": "HowToStep", "name": "Hospede o PDF online", "text": "Faca upload do PDF para Google Drive, Dropbox ou seu site e obtenha o link publico." },
-    { "@type": "HowToStep", "name": "Gere o QR code", "text": "No gerador de Codigo QR do OmnisPDF, selecione tipo URL e cole o link do PDF." },
+    { "@type": "HowToStep", "name": "Gere o QR code", "text": "No gerador de Codigo QR do PDF.it, selecione tipo URL e cole o link do PDF." },
     { "@type": "HowToStep", "name": "Baixe e use", "text": "Baixe o QR em PNG ou SVG e adicione ao seu material impresso ou digital." }
   ]
 }
@@ -77,7 +77,7 @@ export default function CodigoQRParaPDFPage() {
                 {[
                   { title: "Hospede o PDF online", desc: "Faca upload para Google Drive, Dropbox, OneDrive ou seu proprio site. Certifique-se de que o link e publico (qualquer pessoa com o link pode acessar)." },
                   { title: "Copie o link publico", desc: "Copie a URL completa do PDF. No Google Drive, use a opcao 'Obter link' e configure para 'Qualquer pessoa com o link'." },
-                  { title: "Gere o QR code", desc: "No gerador de Codigo QR do OmnisPDF, selecione tipo 'URL', cole o link do PDF e gere o codigo." },
+                  { title: "Gere o QR code", desc: "No gerador de Codigo QR do PDF.it, selecione tipo 'URL', cole o link do PDF e gere o codigo." },
                   { title: "Baixe e use", desc: "Baixe em PNG (para digital) ou SVG (para impressao). Adicione ao cardapio, cartao, poster ou material impresso." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -143,7 +143,7 @@ export default function CodigoQRParaPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como criar um QR code para um PDF?", a: "Hospede o PDF online, copie o link publico e use o gerador de QR do OmnisPDF para criar o codigo." },
+                { q: "Como criar um QR code para um PDF?", a: "Hospede o PDF online, copie o link publico e use o gerador de QR do PDF.it para criar o codigo." },
                 { q: "O PDF precisa estar online?", a: "Sim. O QR code direciona para uma URL, entao o PDF precisa estar acessivel pela internet." },
                 { q: "Posso atualizar o PDF sem mudar o QR?", a: "Sim, se voce substituir o arquivo na mesma URL. O QR continuara funcionando com o PDF atualizado." },
                 { q: "Posso gerar um QR direto de um arquivo PDF?", a: "O QR precisa apontar para uma URL. Primeiro hospede o PDF online e use a URL para gerar o QR." },

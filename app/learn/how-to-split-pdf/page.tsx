@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Scissors, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "How to Split a PDF Online (Extract Pages or Ranges) | OmnisPDF",
+  title: "How to Split a PDF Online (Extract Pages or Ranges) | PDF.it",
   description:
     "Learn how to split a PDF into separate files by page ranges. Step-by-step guide to extracting chapters, removing pages, and organizing documents — free, online, no software needed.",
   keywords: "split pdf online, split pdf by pages, extract pages from pdf, split pdf into parts, how to split a pdf",
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I split a PDF online for free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF, enter the page ranges you want to extract (e.g. 1-5, 8, 10-15), click Split, and download your new files. No signup required for your first 3 files." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it, enter the page ranges you want to extract (e.g. 1-5, 8, 10-15), click Split, and download your new files. No signup required for your first 3 files." }
     },
     {
       "@type": "Question",
@@ -33,7 +33,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I split a PDF into individual pages?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Enter each page number separated by commas (e.g. 1, 2, 3, 4) or use OmnisPDF's 'split every page' option to create a separate file for each page automatically." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Enter each page number separated by commas (e.g. 1, 2, 3, 4) or use PDF.it's 'split every page' option to create a separate file for each page automatically." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is it possible to split a password-protected PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "You need to unlock the PDF first. Use OmnisPDF's Unlock PDF tool to remove the password, then split the unlocked file into the pages or ranges you need." }
+      "acceptedAnswer": { "@type": "Answer", "text": "You need to unlock the PDF first. Use PDF.it's Unlock PDF tool to remove the password, then split the unlocked file into the pages or ranges you need." }
     }
   ]
 }
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Split a PDF Online",
-  "description": "Split your PDF into separate files by page ranges in 3 simple steps using OmnisPDF.",
+  "description": "Split your PDF into separate files by page ranges in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Upload your PDF",
-      "text": "Go to OmnisPDF's Split PDF tool and upload your file by clicking or dragging it into the upload area."
+      "text": "Go to PDF.it's Split PDF tool and upload your file by clicking or dragging it into the upload area."
     },
     {
       "@type": "HowToStep",
@@ -183,7 +183,7 @@ export default function HowToSplitPDFPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Understanding Page Range Syntax</h2>
               <p className="text-slate-600 mb-4">
-                OmnisPDF uses a simple syntax to define which pages you want. Here are common examples:
+                PDF.it uses a simple syntax to define which pages you want. Here are common examples:
               </p>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm border border-gray-200 rounded-xl overflow-hidden">
@@ -222,7 +222,7 @@ export default function HowToSplitPDFPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">What Happens to the Original PDF?</h2>
               <p className="text-slate-600 mb-4">
-                Nothing. Splitting is a non-destructive operation. OmnisPDF creates <strong>new files</strong> from the pages you select — your original PDF is never modified, renamed, or deleted. Think of it like photocopying specific pages from a book. The book stays intact.
+                Nothing. Splitting is a non-destructive operation. PDF.it creates <strong>new files</strong> from the pages you select — your original PDF is never modified, renamed, or deleted. Think of it like photocopying specific pages from a book. The book stays intact.
               </p>
               <p className="text-slate-600">
                 If you later realize you need those pages back together, use <Link href="/merge-pdf" className="text-orange-600 hover:underline">Merge PDF</Link> to combine files into one document.
@@ -275,7 +275,7 @@ export default function HowToSplitPDFPage() {
                 <li>✓ <strong>Extract</strong> pulls specific pages into a single new file (one output file with selected pages).</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                OmnisPDF's <Link href="/split-pdf" className="text-orange-600 hover:underline">Split PDF</Link> tool handles both — enter one range for extraction, or multiple ranges to split into parts. You can also use the dedicated <Link href="/extract-pages-from-pdf" className="text-orange-600 hover:underline">Extract Pages</Link> tool for a simpler interface focused on pulling out specific pages.
+                PDF.it's <Link href="/split-pdf" className="text-orange-600 hover:underline">Split PDF</Link> tool handles both — enter one range for extraction, or multiple ranges to split into parts. You can also use the dedicated <Link href="/extract-pages-from-pdf" className="text-orange-600 hover:underline">Extract Pages</Link> tool for a simpler interface focused on pulling out specific pages.
               </p>
             </section>
 
@@ -326,12 +326,12 @@ export default function HowToSplitPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I split a PDF online for free?", a: "Upload your PDF to OmnisPDF, enter the page ranges you want to extract (e.g. 1-5, 8, 10-15), click Split, and download your new files. No signup required for your first 3 files." },
+                { q: "How do I split a PDF online for free?", a: "Upload your PDF to PDF.it, enter the page ranges you want to extract (e.g. 1-5, 8, 10-15), click Split, and download your new files. No signup required for your first 3 files." },
                 { q: "Can I split a PDF into specific page ranges?", a: "Yes. You can enter any combination of page ranges and individual pages. For example, '1-3, 7, 10-15' will create a file with pages 1 through 3, page 7, and pages 10 through 15." },
                 { q: "Does splitting a PDF change the original file?", a: "No. Splitting creates new files from the pages you select. Your original PDF stays exactly as it was — nothing is modified or deleted." },
-                { q: "Can I split a PDF into individual pages?", a: "Yes. Enter each page number separated by commas (e.g. 1, 2, 3, 4) or use OmnisPDF's 'split every page' option to create a separate file for each page automatically." },
+                { q: "Can I split a PDF into individual pages?", a: "Yes. Enter each page number separated by commas (e.g. 1, 2, 3, 4) or use PDF.it's 'split every page' option to create a separate file for each page automatically." },
                 { q: "How do I split a large PDF for email?", a: "Divide your PDF into smaller parts that fit under your email provider's attachment limit (usually 20-25MB). Split the PDF into 2-3 page ranges, then compress each part separately if needed." },
-                { q: "Is it possible to split a password-protected PDF?", a: "You need to unlock the PDF first. Use OmnisPDF's Unlock PDF tool to remove the password, then split the unlocked file into the pages or ranges you need." },
+                { q: "Is it possible to split a password-protected PDF?", a: "You need to unlock the PDF first. Use PDF.it's Unlock PDF tool to remove the password, then split the unlocked file into the pages or ranges you need." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

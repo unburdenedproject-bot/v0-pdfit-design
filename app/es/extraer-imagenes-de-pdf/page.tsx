@@ -6,9 +6,9 @@ import { Image, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Extraer Imágenes de PDF Online — Descargar Fotos de PDF | OmnisPDF",
+  title: "Extraer Imágenes de PDF Online — Descargar Fotos de PDF | PDF.it",
   description:
-    "Extrae todas las imágenes de archivos PDF con OmnisPDF. Saca fotos, logos y gráficos de cualquier PDF — rápido, desde tu navegador, sin registro.",
+    "Extrae todas las imágenes de archivos PDF con PDF.it. Saca fotos, logos y gráficos de cualquier PDF — rápido, desde tu navegador, sin registro.",
   alternates: {
     languages: {
       en: "/extract-images-from-pdf",
@@ -24,12 +24,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo extraigo imágenes de un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a OmnisPDF, haz clic en Extraer y descarga un archivo ZIP con todas las imágenes encontradas en tu PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it, haz clic en Extraer y descarga un archivo ZIP con todas las imágenes encontradas en tu PDF." }
     },
     {
       "@type": "Question",
       "name": "¿En qué formatos se extraen las imágenes?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF extrae las imágenes en su formato original — generalmente JPG o PNG. Las imágenes se descargan como archivo ZIP." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it extrae las imágenes en su formato original — generalmente JPG o PNG. Las imágenes se descargan como archivo ZIP." }
     },
     {
       "@type": "Question",
@@ -44,7 +44,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo extraer imágenes de un PDF desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en navegadores móviles — sube, extrae y descarga desde tu iPhone o Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube, extrae y descarga desde tu iPhone o Android." }
     },
     {
       "@type": "Question",
@@ -97,7 +97,7 @@ export default function ExtraerImagenesDePDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              ¿Necesitas las fotos o gráficos de un PDF sin el texto y el diseño? El extractor de imágenes de OmnisPDF saca cada imagen incrustada — fotos, logos, gráficos, diagramas — y las entrega como un archivo ZIP que puedes usar en cualquier lugar.
+              ¿Necesitas las fotos o gráficos de un PDF sin el texto y el diseño? El extractor de imágenes de PDF.it saca cada imagen incrustada — fotos, logos, gráficos, diagramas — y las entrega como un archivo ZIP que puedes usar en cualquier lugar.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Extrae todas las imágenes incrustadas de cualquier PDF</li>
@@ -139,7 +139,7 @@ export default function ExtraerImagenesDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Extraer Imágenes de un PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tu PDF a OmnisPDF.",
+                "Sube o arrastra tu PDF a PDF.it.",
                 "Haz clic en Extraer Imágenes — todas las imágenes incrustadas se detectan automáticamente.",
                 "Descarga el archivo ZIP con todas las imágenes extraídas.",
               ].map((step, i) => (
@@ -184,11 +184,11 @@ export default function ExtraerImagenesDePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo extraigo imágenes de un PDF?", a: "Sube tu PDF a OmnisPDF, haz clic en Extraer y descarga un archivo ZIP con todas las imágenes encontradas en tu PDF." },
-                { q: "¿En qué formatos se extraen las imágenes?", a: "OmnisPDF extrae las imágenes en su formato original — generalmente JPG o PNG. Las imágenes se descargan como archivo ZIP." },
+                { q: "¿Cómo extraigo imágenes de un PDF?", a: "Sube tu PDF a PDF.it, haz clic en Extraer y descarga un archivo ZIP con todas las imágenes encontradas en tu PDF." },
+                { q: "¿En qué formatos se extraen las imágenes?", a: "PDF.it extrae las imágenes en su formato original — generalmente JPG o PNG. Las imágenes se descargan como archivo ZIP." },
                 { q: "¿Cuál es la diferencia entre extraer imágenes y convertir PDF a JPG?", a: "PDF a JPG convierte cada página en una imagen. Extraer Imágenes saca solo las fotos, logos y gráficos incrustados — no el diseño completo de la página." },
                 { q: "¿Puedo extraer imágenes de un PDF escaneado?", a: "Los PDFs escaneados tratan toda la página como una sola imagen. Puedes extraerla, pero será el escaneo completo de la página en vez de gráficos individuales." },
-                { q: "¿Puedo extraer imágenes de un PDF desde mi celular?", a: "Sí. OmnisPDF funciona en navegadores móviles — sube, extrae y descarga desde tu iPhone o Android." },
+                { q: "¿Puedo extraer imágenes de un PDF desde mi celular?", a: "Sí. PDF.it funciona en navegadores móviles — sube, extrae y descarga desde tu iPhone o Android." },
                 { q: "¿Es gratis extraer imágenes de un PDF?", a: "Sí. Las cuentas gratuitas tienen 10 extracciones por día. Las cuentas Pro tienen extracciones ilimitadas." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">

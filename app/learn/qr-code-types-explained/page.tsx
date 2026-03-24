@@ -5,7 +5,7 @@ import Link from "next/link"
 import { QrCode, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "QR Code Types Explained (URL, Text, WiFi, vCard & More) | OmnisPDF",
+  title: "QR Code Types Explained (URL, Text, WiFi, vCard & More) | PDF.it",
   description:
     "Learn about the different types of QR codes — URL, plain text, WiFi, vCard, email, phone, and SMS. Understand when to use each type and how they work.",
   keywords: "qr code types, types of qr codes, qr code formats, qr code url vs text",
@@ -23,7 +23,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "What is the difference between a static and dynamic QR code?",
-      "acceptedAnswer": { "@type": "Answer", "text": "A static QR code has data encoded directly in its pattern — once created, it cannot be changed. A dynamic QR code points to a redirect URL that can be updated anytime. OmnisPDF generates static QR codes, which never expire and work offline." }
+      "acceptedAnswer": { "@type": "Answer", "text": "A static QR code has data encoded directly in its pattern — once created, it cannot be changed. A dynamic QR code points to a redirect URL that can be updated anytime. PDF.it generates static QR codes, which never expire and work offline." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is the QR Code generator free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF's QR Code tool is a Pro feature at $7.99/month. Pro users get unlimited generation of all QR code types plus access to all premium PDF tools." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it's QR Code tool is a Pro feature at $7.99/month. Pro users get unlimited generation of all QR code types plus access to all premium PDF tools." }
     }
   ]
 }
@@ -52,7 +52,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Choose the Right QR Code Type",
-  "description": "Select and create the right QR code type for your needs in 3 simple steps using OmnisPDF.",
+  "description": "Select and create the right QR code type for your needs in 3 simple steps using PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
@@ -62,7 +62,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Select the matching type",
-      "text": "Open OmnisPDF's QR Code tool and select the type that matches your goal. Enter the required data — URL, contact details, WiFi credentials, or text."
+      "text": "Open PDF.it's QR Code tool and select the type that matches your goal. Enter the required data — URL, contact details, WiFi credentials, or text."
     },
     {
       "@type": "HowToStep",
@@ -232,7 +232,7 @@ export default function QRCodeTypesExplainedPage() {
                 Beyond the data type, QR codes are also categorized as static or dynamic:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Static QR codes</strong> encode data directly in the QR pattern. Once created, the data cannot be changed. They work forever, do not require internet to decode (except URL types that link to a website), and are completely free to use. OmnisPDF generates static QR codes.</li>
+                <li>&#10003; <strong>Static QR codes</strong> encode data directly in the QR pattern. Once created, the data cannot be changed. They work forever, do not require internet to decode (except URL types that link to a website), and are completely free to use. PDF.it generates static QR codes.</li>
                 <li>&#10003; <strong>Dynamic QR codes</strong> encode a redirect URL that points to a server. The server owner can change where the redirect goes anytime. This lets you update the destination without reprinting the QR code. The downside: they require a third-party service (often paid) and stop working if that service goes down.</li>
               </ul>
               <p className="text-slate-600 mt-4">
@@ -310,11 +310,11 @@ export default function QRCodeTypesExplainedPage() {
             <div className="space-y-6">
               {[
                 { q: "What are the main types of QR codes?", a: "The most common types are URL (opens a website), plain text (displays a message), WiFi (connects to a network), vCard (saves contact info), email (opens a pre-filled email), phone (initiates a call), and SMS (opens a pre-filled text message)." },
-                { q: "What is the difference between a static and dynamic QR code?", a: "A static QR code has data encoded directly in its pattern — once created, it cannot be changed. A dynamic QR code points to a redirect URL that can be updated anytime. OmnisPDF generates static QR codes, which never expire and work offline." },
+                { q: "What is the difference between a static and dynamic QR code?", a: "A static QR code has data encoded directly in its pattern — once created, it cannot be changed. A dynamic QR code points to a redirect URL that can be updated anytime. PDF.it generates static QR codes, which never expire and work offline." },
                 { q: "Which QR code type is most common?", a: "URL QR codes are by far the most common. They link to websites, landing pages, social media profiles, online menus, documents, and any other web content." },
                 { q: "Can one QR code contain multiple types of data?", a: "No. Each QR code encodes one type of data. However, you can create a URL QR code that links to a webpage containing multiple pieces of information." },
                 { q: "Do all phones support all QR code types?", a: "Most modern smartphones support URL, text, WiFi, and vCard QR codes natively through their built-in camera. Some older phones may not support automatic WiFi connection or vCard saving." },
-                { q: "Is the QR Code generator free?", a: "OmnisPDF's QR Code tool is a Pro feature at $7.99/month. Pro users get unlimited generation of all QR code types plus access to all premium PDF tools." },
+                { q: "Is the QR Code generator free?", a: "PDF.it's QR Code tool is a Pro feature at $7.99/month. Pro users get unlimited generation of all QR code types plus access to all premium PDF tools." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

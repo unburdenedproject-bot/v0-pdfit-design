@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileDown, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Comprimir un PDF para Imprimir (Mantener Calidad de Impresión) | OmnisPDF",
+  title: "Comprimir un PDF para Imprimir (Mantener Calidad de Impresión) | PDF.it",
   description:
     "Aprende cómo comprimir un PDF para impresión manteniendo la calidad de 300 DPI. Reduce el tamaño del archivo para imprentas, impresoras domésticas y salida profesional sin arruinar la resolución.",
   keywords: "comprimir pdf para imprimir, reducir tamaño pdf para impresión, pdf calidad de impresión, comprimir pdf 300 dpi",
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Debería aplanar mi PDF antes de imprimir?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Aplanar elimina campos de formulario, anotaciones y capas, lo que previene errores de impresión. Usa la herramienta Aplanar PDF de OmnisPDF antes de comprimir para la salida de impresión más limpia." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Aplanar elimina campos de formulario, anotaciones y capas, lo que previene errores de impresión. Usa la herramienta Aplanar PDF de PDF.it antes de comprimir para la salida de impresión más limpia." }
     },
     {
       "@type": "Question",
@@ -57,7 +57,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Sube tu PDF",
-      "text": "Ve a la herramienta Comprimir PDF de OmnisPDF y sube el archivo que necesitas comprimir para impresión."
+      "text": "Ve a la herramienta Comprimir PDF de PDF.it y sube el archivo que necesitas comprimir para impresión."
     },
     {
       "@type": "HowToStep",
@@ -272,7 +272,7 @@ export default function ComprimirPDFParaImprimirPage() {
                 { q: "¿Qué DPI necesito para imprimir?", a: "300 DPI es el estándar para impresión profesional. 150 DPI es aceptable para borradores o documentos vistos a distancia del brazo. Por debajo de 150 DPI, las imágenes empiezan a verse pixeladas al imprimir." },
                 { q: "¿La compresión Media arruinará la calidad de impresión?", a: "La compresión Media típicamente reduce las imágenes a alrededor de 150-200 DPI. Esto está bien para borradores y documentos internos, pero puede no cumplir los requisitos profesionales de imprenta de 300 DPI." },
                 { q: "¿Cómo sé si mi PDF está listo para imprimir?", a: "Un PDF listo para impresión debe tener imágenes a 300 DPI o más, usar modo de color CMYK (para impresión profesional) y tener fuentes incrustadas. Después de comprimir con modo Ligero, tu PDF mantendrá estas cualidades." },
-                { q: "¿Debería aplanar mi PDF antes de imprimir?", a: "Sí. Aplanar elimina campos de formulario, anotaciones y capas, lo que previene errores de impresión. Usa la herramienta Aplanar PDF de OmnisPDF antes de comprimir para la salida de impresión más limpia." },
+                { q: "¿Debería aplanar mi PDF antes de imprimir?", a: "Sí. Aplanar elimina campos de formulario, anotaciones y capas, lo que previene errores de impresión. Usa la herramienta Aplanar PDF de PDF.it antes de comprimir para la salida de impresión más limpia." },
                 { q: "Mi archivo de impresión es muy grande para enviar a la imprenta. ¿Qué hago?", a: "Usa compresión Ligera primero. Si sigue siendo muy grande, aplana el PDF para eliminar capas, luego comprime de nuevo. Si necesitas dividir un documento grande, usa Dividir PDF para separarlo en secciones." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

@@ -6,9 +6,9 @@ import { Merge, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Combinar Arquivos PDF — Junte PDFs em Um Unico Documento | OmnisPDF",
+  title: "Combinar Arquivos PDF — Junte PDFs em Um Unico Documento | PDF.it",
   description:
-    "Combine arquivos PDF em um unico documento com OmnisPDF. Junte relatorios, contratos e apresentacoes — rapido, gratis e sem instalar software.",
+    "Combine arquivos PDF em um unico documento com PDF.it. Junte relatorios, contratos e apresentacoes — rapido, gratis e sem instalar software.",
   alternates: {
     languages: {
       en: "/combine-pdf-files",
@@ -25,12 +25,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Como combinar arquivos PDF online?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seus arquivos PDF para o OmnisPDF, organize-os na ordem desejada e clique em Combinar. Seu PDF combinado estara pronto para download em segundos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Envie seus arquivos PDF para o PDF.it, organize-os na ordem desejada e clique em Combinar. Seu PDF combinado estara pronto para download em segundos." }
     },
     {
       "@type": "Question",
       "name": "Combinar PDFs afeta o formato dos documentos?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Nao. O OmnisPDF preserva texto, imagens, fontes e layout de cada arquivo original ao combina-los em um unico PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Nao. O PDF.it preserva texto, imagens, fontes e layout de cada arquivo original ao combina-los em um unico PDF." }
     },
     {
       "@type": "Question",
@@ -50,7 +50,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso combinar arquivos PDF no celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em qualquer navegador movel — combine PDFs diretamente do seu iPhone ou Android sem instalar apps." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em qualquer navegador movel — combine PDFs diretamente do seu iPhone ou Android sem instalar apps." }
     }
   ]
 }
@@ -98,7 +98,7 @@ export default function CombinarArquivosPdfPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Chega de enviar varios anexos separados. O OmnisPDF permite combinar todos os seus arquivos PDF em um unico documento profissional — ideal para trabalho, estudos ou uso pessoal. Sem software para baixar, sem custos escondidos.
+              Chega de enviar varios anexos separados. O PDF.it permite combinar todos os seus arquivos PDF em um unico documento profissional — ideal para trabalho, estudos ou uso pessoal. Sem software para baixar, sem custos escondidos.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Combine qualquer numero de arquivos PDF</li>
@@ -140,7 +140,7 @@ export default function CombinarArquivosPdfPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Combinar Arquivos PDF</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste seus arquivos PDF para o OmnisPDF.",
+                "Envie ou arraste seus arquivos PDF para o PDF.it.",
                 "Organize os arquivos na ordem que preferir.",
                 "Clique em Combinar e baixe seu PDF unificado.",
               ].map((step, i) => (
@@ -187,12 +187,12 @@ export default function CombinarArquivosPdfPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como combinar arquivos PDF online?", a: "Envie seus arquivos PDF para o OmnisPDF, organize-os na ordem desejada e clique em Combinar. Seu PDF combinado estara pronto para download em segundos." },
-                { q: "Combinar PDFs afeta o formato dos documentos?", a: "Nao. O OmnisPDF preserva texto, imagens, fontes e layout de cada arquivo original ao combina-los em um unico PDF." },
+                { q: "Como combinar arquivos PDF online?", a: "Envie seus arquivos PDF para o PDF.it, organize-os na ordem desejada e clique em Combinar. Seu PDF combinado estara pronto para download em segundos." },
+                { q: "Combinar PDFs afeta o formato dos documentos?", a: "Nao. O PDF.it preserva texto, imagens, fontes e layout de cada arquivo original ao combina-los em um unico PDF." },
                 { q: "Posso combinar PDFs de tamanhos diferentes?", a: "Sim. Voce pode combinar PDFs com tamanhos de pagina diferentes (A4, carta, etc.) em um unico arquivo. Cada pagina mantem suas dimensoes originais." },
                 { q: "Preciso de conta para combinar arquivos PDF?", a: "Nao. Voce pode combinar PDFs sem criar conta. Basta enviar, combinar e baixar. Uma conta gratuita desbloqueia mais conversoes por dia." },
                 { q: "Existe limite de quantos arquivos posso combinar?", a: "Usuarios gratuitos podem combinar varios PDFs de ate 25MB cada. Usuarios Pro tem limite de 200MB por arquivo e processamento em lote." },
-                { q: "Posso combinar arquivos PDF no celular?", a: "Sim. O OmnisPDF funciona em qualquer navegador movel — combine PDFs diretamente do seu iPhone ou Android sem instalar apps." },
+                { q: "Posso combinar arquivos PDF no celular?", a: "Sim. O PDF.it funciona em qualquer navegador movel — combine PDFs diretamente do seu iPhone ou Android sem instalar apps." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

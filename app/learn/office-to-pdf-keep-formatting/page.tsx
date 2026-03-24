@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "How to Keep Formatting When Converting Office to PDF | OmnisPDF",
+  title: "How to Keep Formatting When Converting Office to PDF | PDF.it",
   description:
     "Fix formatting issues when converting Word, Excel, or PowerPoint to PDF. Learn how to preserve fonts, layout, images, and tables so your PDF looks exactly like the original.",
   keywords: "office to pdf keep formatting, word to pdf formatting issues, preserve formatting pdf, convert to pdf without losing formatting",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Do images get compressed when converting to PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Some converters compress images during conversion. OmnisPDF preserves image quality by default. If you need a smaller file afterward, use the Compress PDF tool to reduce size without affecting readability." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Some converters compress images during conversion. PDF.it preserves image quality by default. If you need a smaller file afterward, use the Compress PDF tool to reduce size without affecting readability." }
     },
     {
       "@type": "Question",
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I convert Office files to PDF without losing hyperlinks?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF preserves clickable hyperlinks during conversion. Links to websites, email addresses, and bookmarks within the document remain functional in the PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it preserves clickable hyperlinks during conversion. Links to websites, email addresses, and bookmarks within the document remain functional in the PDF." }
     },
     {
       "@type": "Question",
@@ -61,8 +61,8 @@ const howToSchema = {
     },
     {
       "@type": "HowToStep",
-      "name": "Convert with OmnisPDF",
-      "text": "Upload your file to OmnisPDF's Office to PDF tool. The converter preserves formatting, fonts, images, and layout automatically."
+      "name": "Convert with PDF.it",
+      "text": "Upload your file to PDF.it's Office to PDF tool. The converter preserves formatting, fonts, images, and layout automatically."
     },
     {
       "@type": "HowToStep",
@@ -167,7 +167,7 @@ export default function OfficeToQdfKeepFormattingPage() {
                   },
                   {
                     title: "Convert and verify the result",
-                    desc: "Upload to OmnisPDF's Office to PDF tool, download the PDF, and open it to check every page. Look for shifted images, missing fonts, cut-off tables, and incorrect page breaks.",
+                    desc: "Upload to PDF.it's Office to PDF tool, download the PDF, and open it to check every page. Look for shifted images, missing fonts, cut-off tables, and incorrect page breaks.",
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -237,7 +237,7 @@ export default function OfficeToQdfKeepFormattingPage() {
         <section className="py-12 bg-gradient-to-br from-slate-900 to-slate-800">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Convert Without Losing Formatting</h2>
-            <p className="text-slate-300 mb-6">OmnisPDF preserves fonts, images, and layout automatically. Upload your Office file and get a pixel-perfect PDF.</p>
+            <p className="text-slate-300 mb-6">PDF.it preserves fonts, images, and layout automatically. Upload your Office file and get a pixel-perfect PDF.</p>
             <Link
               href="/office-to-pdf"
               className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
@@ -279,9 +279,9 @@ export default function OfficeToQdfKeepFormattingPage() {
               {[
                 { q: "Why does my Word document look different after converting to PDF?", a: "The most common cause is non-standard fonts. If the converter does not have the same font installed, it substitutes a similar one — which changes spacing, line breaks, and sometimes pushes content to the next page." },
                 { q: "How do I fix table formatting issues in Excel to PDF?", a: "Set the print area in Excel before converting, switch to landscape orientation for wide tables, and use 'Fit Sheet on One Page' in Page Layout settings. This ensures columns are not cut off in the PDF." },
-                { q: "Do images get compressed when converting to PDF?", a: "Some converters compress images during conversion. OmnisPDF preserves image quality by default. If you need a smaller file afterward, use the Compress PDF tool to reduce size without affecting readability." },
+                { q: "Do images get compressed when converting to PDF?", a: "Some converters compress images during conversion. PDF.it preserves image quality by default. If you need a smaller file afterward, use the Compress PDF tool to reduce size without affecting readability." },
                 { q: "Will my PowerPoint animations show in the PDF?", a: "No. PDF is a static format, so animations and slide transitions are not preserved. Each slide becomes one page in the PDF with all visible elements shown in their final state." },
-                { q: "Can I convert Office files to PDF without losing hyperlinks?", a: "Yes. OmnisPDF preserves clickable hyperlinks during conversion. Links to websites, email addresses, and bookmarks within the document remain functional in the PDF." },
+                { q: "Can I convert Office files to PDF without losing hyperlinks?", a: "Yes. PDF.it preserves clickable hyperlinks during conversion. Links to websites, email addresses, and bookmarks within the document remain functional in the PDF." },
                 { q: "What fonts should I use to avoid formatting issues?", a: "Use standard fonts like Arial, Calibri, Times New Roman, Verdana, or Helvetica. These are available on virtually every system and will render correctly in any PDF converter." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">

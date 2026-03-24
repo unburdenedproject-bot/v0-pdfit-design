@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Excel to PDF Online — Convert Spreadsheets to PDF | OmnisPDF",
+  title: "Excel to PDF Online — Convert Spreadsheets to PDF | PDF.it",
   description: "Convert Excel spreadsheets to PDF online. Tables, charts, and formatting preserved perfectly. Fast, secure, and works in any browser.",
 }
 

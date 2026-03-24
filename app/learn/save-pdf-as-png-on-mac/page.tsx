@@ -5,9 +5,9 @@ import Link from "next/link"
 import { Image, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Save PDF as PNG on Mac (Quick Methods + Best Results) | OmnisPDF",
+  title: "Save PDF as PNG on Mac (Quick Methods + Best Results) | PDF.it",
   description:
-    "Learn how to save a PDF as PNG on Mac using Preview, OmnisPDF, or Automator. Covers single page and batch conversion with quality comparison and best practices.",
+    "Learn how to save a PDF as PNG on Mac using Preview, PDF.it, or Automator. Covers single page and batch conversion with quality comparison and best practices.",
   keywords: "save pdf as png mac, pdf to png mac, convert pdf to png on mac, mac preview pdf to png, export pdf as png mac",
 }
 
@@ -23,7 +23,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I convert all pages of a PDF to PNG on Mac?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Mac Preview only exports one page at a time. For multi-page PDFs, use OmnisPDF's online converter — upload your PDF and all pages are converted to PNG at once, downloadable as a ZIP file." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Mac Preview only exports one page at a time. For multi-page PDFs, use PDF.it's online converter — upload your PDF and all pages are converted to PNG at once, downloadable as a ZIP file." }
     },
     {
       "@type": "Question",
@@ -33,7 +33,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is there a free way to batch convert PDF to PNG on Mac?",
-      "acceptedAnswer": { "@type": "Answer", "text": "You can use macOS Automator to create a workflow, but it requires some setup. The easiest free option is OmnisPDF's online tool — upload your PDF, convert all pages, and download the PNGs as a ZIP." }
+      "acceptedAnswer": { "@type": "Answer", "text": "You can use macOS Automator to create a workflow, but it requires some setup. The easiest free option is PDF.it's online tool — upload your PDF, convert all pages, and download the PNGs as a ZIP." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I convert a PDF to PNG on Mac without installing software?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Preview is built into macOS and handles basic single-page exports. For multi-page or batch conversions without installing anything, use OmnisPDF in your browser — it works on Safari, Chrome, and Firefox." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Preview is built into macOS and handles basic single-page exports. For multi-page or batch conversions without installing anything, use PDF.it in your browser — it works on Safari, Chrome, and Firefox." }
     }
   ]
 }
@@ -57,17 +57,17 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Open your PDF",
-      "text": "Open the PDF in Mac Preview (double-click the file) or navigate to OmnisPDF's PDF to PNG tool in your browser."
+      "text": "Open the PDF in Mac Preview (double-click the file) or navigate to PDF.it's PDF to PNG tool in your browser."
     },
     {
       "@type": "HowToStep",
       "name": "Export as PNG",
-      "text": "In Preview: File > Export, choose PNG format, set resolution. In OmnisPDF: upload the file, select resolution, click Convert."
+      "text": "In Preview: File > Export, choose PNG format, set resolution. In PDF.it: upload the file, select resolution, click Convert."
     },
     {
       "@type": "HowToStep",
       "name": "Save your PNG files",
-      "text": "Choose your save location and download. OmnisPDF converts all pages at once and offers a ZIP download for multi-page PDFs."
+      "text": "Choose your save location and download. PDF.it converts all pages at once and offers a ZIP download for multi-page PDFs."
     }
   ]
 }
@@ -161,17 +161,17 @@ export default function SavePDFasPNGonMacPage() {
               </div>
             </section>
 
-            {/* Method 2: OmnisPDF */}
+            {/* Method 2: PDF.it */}
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-6">Method 2: Using OmnisPDF (All Pages at Once)</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-6">Method 2: Using PDF.it (All Pages at Once)</h2>
               <p className="text-slate-600 mb-4">
-                OmnisPDF's online converter handles the entire PDF at once — no need to export page by page. It works in Safari, Chrome, or any browser on your Mac.
+                PDF.it's online converter handles the entire PDF at once — no need to export page by page. It works in Safari, Chrome, or any browser on your Mac.
               </p>
               <div className="space-y-4">
                 {[
                   {
                     title: "Open the PDF to PNG tool",
-                    desc: "Go to omnispdf.com/pdf-to-png in your browser. No software to install — it works entirely online.",
+                    desc: "Go to pdf.it.com/pdf-to-png in your browser. No software to install — it works entirely online.",
                   },
                   {
                     title: "Upload your PDF",
@@ -197,14 +197,14 @@ export default function SavePDFasPNGonMacPage() {
 
             {/* Comparison table */}
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Preview vs OmnisPDF: Which to Use?</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Preview vs PDF.it: Which to Use?</h2>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm border border-gray-200 rounded-xl overflow-hidden">
                   <thead>
                     <tr className="bg-slate-900 text-white">
                       <th className="text-left py-3 px-4 font-bold">Feature</th>
                       <th className="text-left py-3 px-4 font-bold">Mac Preview</th>
-                      <th className="text-left py-3 px-4 font-bold">OmnisPDF</th>
+                      <th className="text-left py-3 px-4 font-bold">PDF.it</th>
                     </tr>
                   </thead>
                   <tbody className="text-slate-700">
@@ -267,7 +267,7 @@ export default function SavePDFasPNGonMacPage() {
               </p>
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">OmnisPDF Pro batch conversion</h3>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">PDF.it Pro batch conversion</h3>
                   <p className="text-slate-600">
                     With a Pro subscription, you can upload multiple PDFs at once and convert them all to PNG in a single batch. Each PDF's pages are exported as separate PNGs, all packaged into a downloadable ZIP.
                   </p>
@@ -340,11 +340,11 @@ export default function SavePDFasPNGonMacPage() {
             <div className="space-y-6">
               {[
                 { q: "Can I save a PDF as PNG using Mac Preview?", a: "Yes. Open the PDF in Preview, go to File > Export, choose PNG from the format dropdown, and set your resolution. However, Preview only exports one page at a time, which is slow for multi-page PDFs." },
-                { q: "How do I convert all pages of a PDF to PNG on Mac?", a: "Mac Preview only exports one page at a time. For multi-page PDFs, use OmnisPDF's online converter — upload your PDF and all pages are converted to PNG at once, downloadable as a ZIP file." },
+                { q: "How do I convert all pages of a PDF to PNG on Mac?", a: "Mac Preview only exports one page at a time. For multi-page PDFs, use PDF.it's online converter — upload your PDF and all pages are converted to PNG at once, downloadable as a ZIP file." },
                 { q: "What resolution should I use when exporting PDF to PNG on Mac?", a: "For web use, 150 DPI is sufficient. For presentations and print, use 300 DPI. Mac Preview's default export is 72 DPI which may look blurry — increase it for sharper results." },
-                { q: "Is there a free way to batch convert PDF to PNG on Mac?", a: "You can use macOS Automator to create a workflow, but it requires some setup. The easiest free option is OmnisPDF's online tool — upload your PDF, convert all pages, and download the PNGs as a ZIP." },
+                { q: "Is there a free way to batch convert PDF to PNG on Mac?", a: "You can use macOS Automator to create a workflow, but it requires some setup. The easiest free option is PDF.it's online tool — upload your PDF, convert all pages, and download the PNGs as a ZIP." },
                 { q: "Why does my PDF look blurry when saved as PNG on Mac?", a: "This usually happens because the export resolution is too low. Mac Preview defaults to 72 DPI. Increase the resolution to 150 DPI (web) or 300 DPI (print) for sharp results." },
-                { q: "Can I convert a PDF to PNG on Mac without installing software?", a: "Yes. Preview is built into macOS and handles basic single-page exports. For multi-page or batch conversions without installing anything, use OmnisPDF in your browser." },
+                { q: "Can I convert a PDF to PNG on Mac without installing software?", a: "Yes. Preview is built into macOS and handles basic single-page exports. For multi-page or batch conversions without installing anything, use PDF.it in your browser." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

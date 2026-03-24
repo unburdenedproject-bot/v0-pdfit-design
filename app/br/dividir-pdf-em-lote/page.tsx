@@ -6,9 +6,9 @@ import { Scissors, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Dividir PDF em Lote — Divida Varios PDFs de Uma Vez | OmnisPDF",
+  title: "Dividir PDF em Lote — Divida Varios PDFs de Uma Vez | PDF.it",
   description:
-    "Divida varios PDFs em lote com OmnisPDF. Processamento em lote para dividir multiplos documentos de uma so vez — rapido, gratis e online.",
+    "Divida varios PDFs em lote com PDF.it. Processamento em lote para dividir multiplos documentos de uma so vez — rapido, gratis e online.",
   alternates: {
     languages: {
       en: "/batch-split-pdf",
@@ -50,7 +50,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "E seguro enviar varios PDFs de uma vez?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF usa conexoes criptografadas e exclui todos os arquivos apos sua sessao. Nenhum arquivo e armazenado permanentemente." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it usa conexoes criptografadas e exclui todos os arquivos apos sua sessao. Nenhum arquivo e armazenado permanentemente." }
     }
   ]
 }
@@ -98,7 +98,7 @@ export default function DividirPdfEmLotePage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Quando voce tem muitos PDFs para dividir, processar um por um e ineficiente. O OmnisPDF permite dividir varios PDFs em lote — envie todos os arquivos, configure a regra de divisao e processe todos de uma vez.
+              Quando voce tem muitos PDFs para dividir, processar um por um e ineficiente. O PDF.it permite dividir varios PDFs em lote — envie todos os arquivos, configure a regra de divisao e processe todos de uma vez.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Divida varios PDFs simultaneamente</li>
@@ -140,7 +140,7 @@ export default function DividirPdfEmLotePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Dividir PDFs em Lote</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste todos os seus PDFs para o OmnisPDF.",
+                "Envie ou arraste todos os seus PDFs para o PDF.it.",
                 "Configure a regra de divisao (por paginas, intervalos ou tamanho).",
                 "Clique em Dividir e baixe todos os resultados.",
               ].map((step, i) => (
@@ -192,7 +192,7 @@ export default function DividirPdfEmLotePage() {
                 { q: "A divisao em lote e gratuita?", a: "A divisao basica de multiplos PDFs e gratuita. Para processamento em lote avancado com arquivos maiores e sem limites, faca upgrade para o plano Pro." },
                 { q: "Posso aplicar regras diferentes para cada arquivo no lote?", a: "O processamento em lote aplica a mesma configuracao de divisao a todos os arquivos. Para regras diferentes, divida cada arquivo individualmente." },
                 { q: "Como baixo os resultados do processamento em lote?", a: "Apos o processamento, voce pode baixar todos os arquivos resultantes em um unico ZIP ou baixar cada um individualmente." },
-                { q: "E seguro enviar varios PDFs de uma vez?", a: "Sim. O OmnisPDF usa conexoes criptografadas e exclui todos os arquivos apos sua sessao. Nenhum arquivo e armazenado permanentemente." },
+                { q: "E seguro enviar varios PDFs de uma vez?", a: "Sim. O PDF.it usa conexoes criptografadas e exclui todos os arquivos apos sua sessao. Nenhum arquivo e armazenado permanentemente." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

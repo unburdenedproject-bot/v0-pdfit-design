@@ -7,14 +7,14 @@ import { Lock, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Proteger PDF con Contraseña Online | OmnisPDF",
+  title: "Proteger PDF con Contraseña Online | PDF.it",
   description:
-    "Protege un PDF con contraseña usando OmnisPDF. Encripta tu PDF en línea, restringe el acceso y descarga un archivo protegido en segundos.",
+    "Protege un PDF con contraseña usando PDF.it. Encripta tu PDF en línea, restringe el acceso y descarga un archivo protegido en segundos.",
   alternates: {
-    canonical: "https://omnispdf.com/es/proteger-pdf",
+    canonical: "https://pdf.it.com/es/proteger-pdf",
     languages: {
-      "en": "https://omnispdf.com/protect-pdf",
-      "es": "https://omnispdf.com/es/proteger-pdf",
+      "en": "https://pdf.it.com/protect-pdf",
+      "es": "https://pdf.it.com/es/proteger-pdf",
     },
   },
 }
@@ -31,17 +31,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Qué pasa si olvido la contraseña?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Los PDFs protegidos con contraseña generalmente no se pueden recuperar sin la contraseña. OmnisPDF no puede recuperarla — guárdala en un lugar seguro." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Los PDFs protegidos con contraseña generalmente no se pueden recuperar sin la contraseña. PDF.it no puede recuperarla — guárdala en un lugar seguro." }
     },
     {
       "@type": "Question",
       "name": "¿Puedo quitar la contraseña después?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Usa la herramienta Desbloquear PDF de OmnisPDF para quitar la protección con contraseña de cualquier PDF del que tengas la contraseña." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Usa la herramienta Desbloquear PDF de PDF.it para quitar la protección con contraseña de cualquier PDF del que tengas la contraseña." }
     },
     {
       "@type": "Question",
       "name": "¿Puedo proteger un PDF desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en navegadores móviles — sube el PDF, establece una contraseña y descarga el archivo protegido." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube el PDF, establece una contraseña y descarga el archivo protegido." }
     },
     {
       "@type": "Question",
@@ -75,7 +75,7 @@ export default function ProtegerPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Proteger PDF con Contraseña</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Agrega una contraseña a tu PDF con OmnisPDF. Encripta tu documento para compartirlo, almacenarlo y enviarlo de forma más segura — rápido y desde el navegador.
+                Agrega una contraseña a tu PDF con PDF.it. Encripta tu documento para compartirlo, almacenarlo y enviarlo de forma más segura — rápido y desde el navegador.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Encriptación Segura</span></div>
@@ -94,7 +94,7 @@ export default function ProtegerPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Usa la herramienta Proteger PDF de OmnisPDF para agregar contraseña y encriptar un PDF en segundos. Agrega una contraseña antes de enviar por correo, subir o almacenar archivos sensibles como contratos, estados de cuenta, facturas o documentos personales.
+              Usa la herramienta Proteger PDF de PDF.it para agregar contraseña y encriptar un PDF en segundos. Agrega una contraseña antes de enviar por correo, subir o almacenar archivos sensibles como contratos, estados de cuenta, facturas o documentos personales.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Protege archivos PDF con contraseña en línea</li>
@@ -112,7 +112,7 @@ export default function ProtegerPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Agrega una Contraseña a tu PDF</h2>
               <p className="text-slate-600">
-                Establece una contraseña para restringir quién puede abrir tu PDF. OmnisPDF asegura el archivo usando protección estándar con contraseña para que el contenido no sea accesible sin ella.
+                Establece una contraseña para restringir quién puede abrir tu PDF. PDF.it asegura el archivo usando protección estándar con contraseña para que el contenido no sea accesible sin ella.
               </p>
             </div>
             <div>
@@ -136,7 +136,7 @@ export default function ProtegerPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Proteger un PDF con Contraseña</h2>
             <div className="space-y-4">
               {[
-                "Sube tu PDF a OmnisPDF.",
+                "Sube tu PDF a PDF.it.",
                 "Ingresa una contraseña segura y confírmala.",
                 "Haz clic en Proteger PDF y descarga tu archivo protegido.",
               ].map((step, i) => (
@@ -187,15 +187,15 @@ export default function ProtegerPDFPage() {
                 },
                 {
                   q: "¿Qué pasa si olvido la contraseña?",
-                  a: "Los PDFs protegidos con contraseña generalmente no se pueden recuperar sin la contraseña. OmnisPDF no puede recuperarla — guárdala en un lugar seguro.",
+                  a: "Los PDFs protegidos con contraseña generalmente no se pueden recuperar sin la contraseña. PDF.it no puede recuperarla — guárdala en un lugar seguro.",
                 },
                 {
                   q: "¿Puedo quitar la contraseña después?",
-                  a: "Sí. Usa la herramienta Desbloquear PDF de OmnisPDF para quitar la protección con contraseña de cualquier PDF del que tengas la contraseña.",
+                  a: "Sí. Usa la herramienta Desbloquear PDF de PDF.it para quitar la protección con contraseña de cualquier PDF del que tengas la contraseña.",
                 },
                 {
                   q: "¿Puedo proteger un PDF desde mi celular?",
-                  a: "Sí. OmnisPDF funciona en navegadores móviles — sube el PDF, establece una contraseña y descarga el archivo protegido.",
+                  a: "Sí. PDF.it funciona en navegadores móviles — sube el PDF, establece una contraseña y descarga el archivo protegido.",
                 },
                 {
                   q: "¿Es seguro subir PDFs confidenciales?",

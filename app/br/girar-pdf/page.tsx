@@ -7,9 +7,9 @@ import { RotateCw, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Girar PDF Online — Rotacionar Paginas de PDF | OmnisPDF",
+  title: "Girar PDF Online — Rotacionar Paginas de PDF | PDF.it",
   description:
-    "Gire paginas de PDF online com o OmnisPDF. Corrija paginas de lado ou de cabeca para baixo, gire paginas especificas e baixe um PDF corrigido na hora.",
+    "Gire paginas de PDF online com o PDF.it. Corrija paginas de lado ou de cabeca para baixo, gire paginas especificas e baixe um PDF corrigido na hora.",
   alternates: {
     languages: {
       en: "/rotate-pdf",
@@ -26,7 +26,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso girar apenas uma pagina de um PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF permite girar paginas individuais sem modificar o restante do documento." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it permite girar paginas individuais sem modificar o restante do documento." }
     },
     {
       "@type": "Question",
@@ -41,7 +41,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Posso girar um PDF no celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O OmnisPDF funciona em navegadores moveis — envie, gire e baixe do seu iPhone ou Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em navegadores moveis — envie, gire e baixe do seu iPhone ou Android." }
     },
     {
       "@type": "Question",
@@ -75,7 +75,7 @@ export default function GirarPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Girar PDF Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Corrija paginas de lado ou de cabeca para baixo com o OmnisPDF. Gire paginas individuais de PDF ou o documento completo e baixe um PDF com a orientacao correta.
+                Corrija paginas de lado ou de cabeca para baixo com o PDF.it. Gire paginas individuais de PDF ou o documento completo e baixe um PDF com a orientacao correta.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>90°, 180°, 270°</span></div>
@@ -94,7 +94,7 @@ export default function GirarPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use a ferramenta Girar PDF do OmnisPDF para rotacionar paginas de PDF e corrigir a orientacao em segundos. Gire uma unica pagina ou varias paginas 90°, 180° ou 270°, e baixe um PDF limpo que seja facil de ler, imprimir e compartilhar.
+              Use a ferramenta Girar PDF do PDF.it para rotacionar paginas de PDF e corrigir a orientacao em segundos. Gire uma unica pagina ou varias paginas 90°, 180° ou 270°, e baixe um PDF limpo que seja facil de ler, imprimir e compartilhar.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Gire PDFs de lado e corrija paginas de cabeca para baixo</li>
@@ -118,7 +118,7 @@ export default function GirarPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Corrija PDFs Escaneados e Documentos de Lado</h2>
               <p className="text-slate-600">
-                Os scanners frequentemente salvam paginas giradas incorretamente. O OmnisPDF ajuda voce a girar as paginas rapidamente para a direcao correta de leitura.
+                Os scanners frequentemente salvam paginas giradas incorretamente. O PDF.it ajuda voce a girar as paginas rapidamente para a direcao correta de leitura.
               </p>
             </div>
             <div>
@@ -136,7 +136,7 @@ export default function GirarPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Girar um PDF</h2>
             <div className="space-y-4">
               {[
-                "Envie ou arraste seu PDF para o OmnisPDF.",
+                "Envie ou arraste seu PDF para o PDF.it.",
                 "Selecione as paginas para girar ou escolha girar todas.",
                 "Escolha a direcao de rotacao: 90° sentido horario, 90° sentido anti-horario ou 180°.",
                 "Clique em Girar PDF e baixe o arquivo atualizado.",
@@ -182,10 +182,10 @@ export default function GirarPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Posso girar apenas uma pagina de um PDF?", a: "Sim. O OmnisPDF permite girar paginas individuais sem modificar o restante do documento." },
+                { q: "Posso girar apenas uma pagina de um PDF?", a: "Sim. O PDF.it permite girar paginas individuais sem modificar o restante do documento." },
                 { q: "Quais angulos de rotacao estao disponiveis?", a: "Voce pode girar paginas 90°, 180° ou 270° — no sentido horario ou anti-horario." },
                 { q: "Posso girar um PDF escaneado?", a: "Sim — a rotacao e especialmente util para documentos escaneados que ficam de lado ou de cabeca para baixo." },
-                { q: "Posso girar um PDF no celular?", a: "Sim. O OmnisPDF funciona em navegadores moveis — envie, gire e baixe do seu iPhone ou Android." },
+                { q: "Posso girar um PDF no celular?", a: "Sim. O PDF.it funciona em navegadores moveis — envie, gire e baixe do seu iPhone ou Android." },
                 { q: "E seguro enviar meu PDF?", a: "Sim. Todas as transferencias sao criptografadas com SSL e seus arquivos sao eliminados imediatamente apos sua sessao. Nunca armazenamos nem compartilhamos seus documentos." },
                 { q: "Qual e o tamanho maximo de arquivo que posso girar?", a: "Contas gratuitas podem enviar arquivos de ate 25MB. Contas Pro podem enviar ate 200MB. Contas Business podem enviar ate 1GB." },
               ].map((faq, i) => (

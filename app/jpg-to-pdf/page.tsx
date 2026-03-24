@@ -6,7 +6,7 @@ import { ImageToPdfInterface } from "@/components/image-to-pdf-interface"
 import { Image as ImageIcon, Zap, Shield, Upload, FileText, Merge, RotateCw, Scissors, Lock, ScanLine, Camera } from "lucide-react"
 
 export const metadata = {
-  title: "JPG to PDF — Convert JPG Images to PDF Online | OmnisPDF",
+  title: "JPG to PDF — Convert JPG Images to PDF Online | PDF.it",
   description:
     "Convert JPG and JPEG images to PDF documents online for free. Upload one or multiple images and get a professional PDF instantly. No software to install.",
 }
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I convert a JPG to PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your JPG image to OmnisPDF, click Convert to PDF, and download the result. You can upload multiple JPG images at once and each will be converted to its own PDF file." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your JPG image to PDF.it, click Convert to PDF, and download the result. You can upload multiple JPG images at once and each will be converted to its own PDF file." }
     },
     {
       "@type": "Question",
@@ -33,7 +33,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Will converting JPG to PDF reduce image quality?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF preserves the original resolution and quality of your JPG image when converting to PDF. The resulting PDF contains the full-quality image." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it preserves the original resolution and quality of your JPG image when converting to PDF. The resulting PDF contains the full-quality image." }
     },
     {
       "@type": "Question",
@@ -167,7 +167,7 @@ export default function JpgToPdfPage() {
                 { q: "How do I convert a JPG to PDF?", a: "Upload your JPG image, click Convert to PDF, and download. You can upload multiple images and each will be converted to its own PDF." },
                 { q: "Can I convert multiple JPG images at once?", a: "Yes. Select multiple JPG files and each will be converted to a separate PDF. Download them individually or as a ZIP archive." },
                 { q: "Is the JPG to PDF converter free?", a: "You can convert several images for free daily. For unlimited conversions and larger files, upgrade to Pro at $7.99/month." },
-                { q: "Will converting reduce image quality?", a: "No. OmnisPDF preserves the full resolution and quality of your JPG image in the resulting PDF." },
+                { q: "Will converting reduce image quality?", a: "No. PDF.it preserves the full resolution and quality of your JPG image in the resulting PDF." },
                 { q: "What is the maximum file size?", a: "Free users can upload up to 25MB per image. Pro and Business subscribers can upload up to 200MB per image." },
                 { q: "Can I convert JPEG files too?", a: "Yes. JPG and JPEG are the same format with different extensions. This tool accepts both .jpg and .jpeg files." },
               ].map((faq, i) => (

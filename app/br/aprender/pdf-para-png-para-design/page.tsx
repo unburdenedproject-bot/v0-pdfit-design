@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ImageIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "PDF para PNG para Design (Canva, Figma, Photoshop) | OmnisPDF",
+  title: "PDF para PNG para Design (Canva, Figma, Photoshop) | PDF.it",
   description:
     "Aprenda como converter PDF para PNG com qualidade ideal para uso em ferramentas de design como Canva, Figma e Photoshop. Dicas de DPI e transparência.",
   keywords: "pdf para png design, pdf para canva, pdf para figma, pdf para photoshop, converter pdf para imagem design",
@@ -27,7 +27,7 @@ const howToSchema = {
   "name": "Como Converter PDF para PNG para Design",
   "description": "Converta PDF para imagens PNG de alta qualidade para uso em ferramentas de design.",
   "step": [
-    { "@type": "HowToStep", "name": "Converta com 300 DPI", "text": "Use a ferramenta PDF para PNG do OmnisPDF com configuração de 300 DPI para máxima qualidade." },
+    { "@type": "HowToStep", "name": "Converta com 300 DPI", "text": "Use a ferramenta PDF para PNG do PDF.it com configuração de 300 DPI para máxima qualidade." },
     { "@type": "HowToStep", "name": "Baixe as imagens PNG", "text": "Baixe as imagens PNG convertidas. Cada página gera uma imagem separada." },
     { "@type": "HowToStep", "name": "Importe no design", "text": "Importe as imagens PNG na sua ferramenta de design preferida (Canva, Figma, Photoshop, etc.)." }
   ]
@@ -84,7 +84,7 @@ export default function PdfParaPngParaDesignPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-6">Como Converter para Uso em Design</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Converta com 300 DPI", desc: "Na ferramenta PDF para PNG do OmnisPDF, selecione 300 DPI. Para design e impressão, essa é a resolução padrão da indústria." },
+                  { title: "Converta com 300 DPI", desc: "Na ferramenta PDF para PNG do PDF.it, selecione 300 DPI. Para design e impressão, essa é a resolução padrão da indústria." },
                   { title: "Baixe as imagens PNG", desc: "Após a conversão, baixe as imagens. Cada página do PDF gera um PNG separado. Baixe individualmente ou como ZIP." },
                   { title: "Importe na ferramenta de design", desc: "No Canva: Upload > Faça upload de mídia. No Figma: arraste o arquivo para o canvas. No Photoshop: Arquivo > Abrir ou arraste para a janela." },
                 ].map((step, i) => (

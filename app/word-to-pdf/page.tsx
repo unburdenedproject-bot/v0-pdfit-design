@@ -6,9 +6,9 @@ import { FileText, CheckCircle, Zap, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Word to PDF Converter — Fast & No Login Required | OmnisPDF",
+  title: "Word to PDF Converter — Fast & No Login Required | PDF.it",
   description:
-    "Convert Word to PDF in seconds with OmnisPDF. Turn DOC or DOCX into a clean PDF you can share anywhere—fast, easy, no installs.",
+    "Convert Word to PDF in seconds with PDF.it. Turn DOC or DOCX into a clean PDF you can share anywhere—fast, easy, no installs.",
 }
 
 const faqSchema = {
@@ -18,17 +18,17 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I convert both DOC and DOCX to PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF supports both .doc and .docx file formats." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it supports both .doc and .docx file formats." }
     },
     {
       "@type": "Question",
       "name": "Will the PDF keep my Word formatting?",
-      "acceptedAnswer": { "@type": "Answer", "text": "In most cases, yes — OmnisPDF preserves layout, fonts, and spacing. Complex documents with custom fonts or unusual tables can sometimes shift slightly." }
+      "acceptedAnswer": { "@type": "Answer", "text": "In most cases, yes — PDF.it preserves layout, fonts, and spacing. Complex documents with custom fonts or unusual tables can sometimes shift slightly." }
     },
     {
       "@type": "Question",
       "name": "Can I convert Word to PDF on mobile?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OmnisPDF works in mobile browsers — upload your Word file and download the PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in mobile browsers — upload your Word file and download the PDF." }
     },
     {
       "@type": "Question",
@@ -67,7 +67,7 @@ export default function WordToPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convert Word to PDF Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Convert DOC/DOCX to PDF with OmnisPDF — fast, simple, and built for clean, shareable documents.
+                Convert DOC/DOCX to PDF with PDF.it — fast, simple, and built for clean, shareable documents.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-orange-500" /><span>Formatting Preserved</span></div>
@@ -91,7 +91,7 @@ export default function WordToPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Use OmnisPDF's Word to PDF converter to turn a DOC or DOCX into a PDF in seconds. Perfect for resumes, reports, contracts, and school documents — convert, download, and share a PDF that works everywhere.
+              Use PDF.it's Word to PDF converter to turn a DOC or DOCX into a PDF in seconds. Perfect for resumes, reports, contracts, and school documents — convert, download, and share a PDF that works everywhere.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Convert Word to PDF online in seconds</li>
@@ -109,7 +109,7 @@ export default function WordToPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Convert DOCX to PDF While Keeping Layout</h2>
               <p className="text-slate-600">
-                OmnisPDF converts Word documents into PDFs designed for consistent viewing across devices. Great for sending files where formatting should stay stable.
+                PDF.it converts Word documents into PDFs designed for consistent viewing across devices. Great for sending files where formatting should stay stable.
               </p>
             </div>
             <div>
@@ -133,7 +133,7 @@ export default function WordToPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Convert Word to PDF</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your DOC/DOCX file into OmnisPDF.",
+                "Upload or drag and drop your DOC/DOCX file into PDF.it.",
                 "Click Convert Word to PDF.",
                 "Download your new PDF.",
               ].map((step, i) => (
@@ -180,15 +180,15 @@ export default function WordToPDFPage() {
               {[
                 {
                   q: "Can I convert both DOC and DOCX to PDF?",
-                  a: "Yes. OmnisPDF supports both .doc and .docx file formats.",
+                  a: "Yes. PDF.it supports both .doc and .docx file formats.",
                 },
                 {
                   q: "Will the PDF keep my Word formatting?",
-                  a: "In most cases, yes — OmnisPDF preserves layout, fonts, and spacing. Complex documents with custom fonts or unusual tables can sometimes shift slightly.",
+                  a: "In most cases, yes — PDF.it preserves layout, fonts, and spacing. Complex documents with custom fonts or unusual tables can sometimes shift slightly.",
                 },
                 {
                   q: "Can I convert Word to PDF on mobile?",
-                  a: "Yes. OmnisPDF works in mobile browsers — upload your Word file and download the PDF.",
+                  a: "Yes. PDF.it works in mobile browsers — upload your Word file and download the PDF.",
                 },
                 {
                   q: "Is it safe to upload my Word document?",

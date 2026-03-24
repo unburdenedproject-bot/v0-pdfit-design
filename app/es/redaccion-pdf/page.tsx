@@ -6,9 +6,9 @@ import { RedactionInterface } from "@/components/redaction-interface"
 import { Shield, Zap, Eye, Lock, FileText, Merge, Layers, Repeat, ArrowLeftRight } from "lucide-react"
 
 export const metadata = {
-  title: "Redacción de PDFs en Línea — Elimina Información Sensible Permanentemente | OmnisPDF",
+  title: "Redacción de PDFs en Línea — Elimina Información Sensible Permanentemente | PDF.it",
   description:
-    "Redacta permanentemente texto sensible, números de seguro social, direcciones y datos confidenciales de PDFs. Editor visual de redacción — dibuja cajas directamente sobre tu documento. Función Business de OmnisPDF.",
+    "Redacta permanentemente texto sensible, números de seguro social, direcciones y datos confidenciales de PDFs. Editor visual de redacción — dibuja cajas directamente sobre tu documento. Función Business de PDF.it.",
 }
 
 const faqSchema = {

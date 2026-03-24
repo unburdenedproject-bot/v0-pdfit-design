@@ -90,7 +90,7 @@ export default function CodigoQRPage() {
                 </span>
               </div>
               <p className="text-xl text-slate-300">
-                Crea codigos QR al instante con OmnisPDF — genera un codigo QR para un enlace, texto, Wi-Fi, correo o informacion de contacto y descargalo en segundos.
+                Crea codigos QR al instante con PDF.it — genera un codigo QR para un enlace, texto, Wi-Fi, correo o informacion de contacto y descargalo en segundos.
               </p>
             </div>
           </div>
@@ -201,7 +201,7 @@ export default function CodigoQRPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Usa el generador de codigos QR de OmnisPDF para crear un codigo QR para un enlace web, texto, datos de contacto o credenciales de Wi-Fi. Genera un codigo QR al instante y descargalo para volantes, empaques, menus, tarjetas de presentacion, presentaciones y redes sociales.
+              Usa el generador de codigos QR de PDF.it para crear un codigo QR para un enlace web, texto, datos de contacto o credenciales de Wi-Fi. Genera un codigo QR al instante y descargalo para volantes, empaques, menus, tarjetas de presentacion, presentaciones y redes sociales.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Genera codigos QR para URLs, texto, correo y numeros de telefono</li>
@@ -288,7 +288,7 @@ export default function CodigoQRPage() {
             <div className="space-y-6">
               {[
                 {
-                  q: "¿Como creo un codigo QR con OmnisPDF?",
+                  q: "¿Como creo un codigo QR con PDF.it?",
                   a: "Ingresa tu URL o texto, haz clic en Generar Codigo QR y descarga la imagen del codigo QR.",
                 },
                 {
@@ -305,7 +305,7 @@ export default function CodigoQRPage() {
                 },
                 {
                   q: "¿El Generador de Codigo QR es gratis?",
-                  a: "El Generador de Codigo QR es una funcion Pro, disponible en el plan Pro de OmnisPDF a $7.99/mes.",
+                  a: "El Generador de Codigo QR es una funcion Pro, disponible en el plan Pro de PDF.it a $7.99/mes.",
                 },
                 {
                   q: "¿Se almacenan mis datos cuando genero un codigo QR?",

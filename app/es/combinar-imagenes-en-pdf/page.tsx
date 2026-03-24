@@ -6,9 +6,9 @@ import { Image, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Combinar Imágenes en PDF — Convierte Múltiples Imágenes a Un PDF | OmnisPDF",
+  title: "Combinar Imágenes en PDF — Convierte Múltiples Imágenes a Un PDF | PDF.it",
   description:
-    "Combina múltiples imágenes en un solo PDF con OmnisPDF. Sube JPG, PNG u otras imágenes y crea un documento PDF — rápido, gratis y desde tu navegador.",
+    "Combina múltiples imágenes en un solo PDF con PDF.it. Sube JPG, PNG u otras imágenes y crea un documento PDF — rápido, gratis y desde tu navegador.",
   alternates: {
     languages: {
       en: "/combine-images-into-pdf",
@@ -24,7 +24,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Qué formatos de imagen puedo combinar en un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OmnisPDF soporta imágenes JPG, JPEG, PNG y WebP. Sube cualquier combinación de estos formatos y todas se combinarán en un solo documento PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it soporta imágenes JPG, JPEG, PNG y WebP. Sube cualquier combinación de estos formatos y todas se combinarán en un solo documento PDF." }
     },
     {
       "@type": "Question",
@@ -44,12 +44,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo combinar imágenes en un PDF desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF funciona en navegadores móviles — sube fotos de tu galería en iPhone o Android y descarga el PDF combinado al instante." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube fotos de tu galería en iPhone o Android y descarga el PDF combinado al instante." }
     },
     {
       "@type": "Question",
       "name": "¿Es gratis combinar imágenes en un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. OmnisPDF te permite combinar imágenes en un PDF gratis sin registro. Los usuarios Pro obtienen funciones adicionales como procesamiento por lotes y límites de tamaño más grandes." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it te permite combinar imágenes en un PDF gratis sin registro. Los usuarios Pro obtienen funciones adicionales como procesamiento por lotes y límites de tamaño más grandes." }
     }
   ]
 }
@@ -95,7 +95,7 @@ export default function CombinarImagenesEnPDFPage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              ¿Necesitas convertir una carpeta de fotos en un solo documento? OmnisPDF combina múltiples imágenes — JPG, PNG o WebP — en un PDF organizado. Cada imagen se convierte en su propia página, facilitando compartir, imprimir o archivar colecciones de fotos, recibos o documentos escaneados.
+              ¿Necesitas convertir una carpeta de fotos en un solo documento? PDF.it combina múltiples imágenes — JPG, PNG o WebP — en un PDF organizado. Cada imagen se convierte en su propia página, facilitando compartir, imprimir o archivar colecciones de fotos, recibos o documentos escaneados.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Soporta formatos de imagen JPG, JPEG, PNG y WebP</li>
@@ -119,7 +119,7 @@ export default function CombinarImagenesEnPDFPage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Combina Documentos de Identidad y Recibos Digitales</h2>
               <p className="text-slate-600">
-                Informes de gastos, declaraciones de impuestos y solicitudes de reembolso frecuentemente requieren recibos en formato PDF. Fotografía o escanea tus recibos, sube las imágenes a OmnisPDF y descarga un solo PDF con todos los recibos organizados en orden.
+                Informes de gastos, declaraciones de impuestos y solicitudes de reembolso frecuentemente requieren recibos en formato PDF. Fotografía o escanea tus recibos, sube las imágenes a PDF.it y descarga un solo PDF con todos los recibos organizados en orden.
               </p>
             </div>
             <div>
@@ -137,7 +137,7 @@ export default function CombinarImagenesEnPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Combinar Imágenes en un PDF</h2>
             <div className="space-y-4">
               {[
-                "Sube o arrastra tus imágenes (JPG, PNG o WebP) a OmnisPDF.",
+                "Sube o arrastra tus imágenes (JPG, PNG o WebP) a PDF.it.",
                 "Ordena las imágenes en el orden que quieras que aparezcan en el PDF.",
                 "Haz clic en Convertir y descarga tu documento PDF combinado.",
               ].map((step, i) => (
@@ -182,12 +182,12 @@ export default function CombinarImagenesEnPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Qué formatos de imagen puedo combinar en un PDF?", a: "OmnisPDF soporta imágenes JPG, JPEG, PNG y WebP. Sube cualquier combinación de estos formatos y todas se combinarán en un solo documento PDF." },
+                { q: "¿Qué formatos de imagen puedo combinar en un PDF?", a: "PDF.it soporta imágenes JPG, JPEG, PNG y WebP. Sube cualquier combinación de estos formatos y todas se combinarán en un solo documento PDF." },
                 { q: "¿Combinar imágenes en un PDF reduce la calidad de imagen?", a: "No. Tus imágenes se incrustan en el PDF a su resolución original. La calidad de cada imagen permanece igual que el archivo original que subiste." },
                 { q: "¿Puedo elegir el orden de las páginas de las imágenes en el PDF?", a: "Sí. Las imágenes se agregan al PDF en el orden que las subes. Ordena tus archivos en la secuencia deseada antes de subir para controlar el orden de páginas." },
                 { q: "¿Cuántas imágenes puedo combinar en un PDF?", a: "Los usuarios gratuitos pueden combinar imágenes de una sola carga. Los usuarios Pro obtienen procesamiento por lotes para combinar grandes conjuntos de imágenes en un PDF sin límite práctico de cantidad." },
-                { q: "¿Puedo combinar imágenes en un PDF desde mi celular?", a: "Sí. OmnisPDF funciona en navegadores móviles — sube fotos de tu galería en iPhone o Android y descarga el PDF combinado al instante." },
-                { q: "¿Es gratis combinar imágenes en un PDF?", a: "Sí. OmnisPDF te permite combinar imágenes en un PDF gratis sin registro. Los usuarios Pro obtienen funciones adicionales como procesamiento por lotes y límites de tamaño más grandes." },
+                { q: "¿Puedo combinar imágenes en un PDF desde mi celular?", a: "Sí. PDF.it funciona en navegadores móviles — sube fotos de tu galería en iPhone o Android y descarga el PDF combinado al instante." },
+                { q: "¿Es gratis combinar imágenes en un PDF?", a: "Sí. PDF.it te permite combinar imágenes en un PDF gratis sin registro. Los usuarios Pro obtienen funciones adicionales como procesamiento por lotes y límites de tamaño más grandes." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

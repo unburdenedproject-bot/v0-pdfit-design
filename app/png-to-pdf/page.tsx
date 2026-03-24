@@ -6,7 +6,7 @@ import { ImageToPdfInterface } from "@/components/image-to-pdf-interface"
 import { Image as ImageIcon, Zap, Shield, Upload, FileText, Merge, RotateCw, Scissors, Lock, ScanLine, Camera } from "lucide-react"
 
 export const metadata = {
-  title: "PNG to PDF — Convert PNG Images to PDF Online | OmnisPDF",
+  title: "PNG to PDF — Convert PNG Images to PDF Online | PDF.it",
   description:
     "Convert PNG images to PDF documents online for free. Upload one or multiple images and get a professional PDF instantly. Preserves transparency and full quality.",
 }
@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I convert a PNG to PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PNG image to OmnisPDF, click Convert to PDF, and download the result. You can upload multiple PNG images at once and each will be converted to its own PDF file." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PNG image to PDF.it, click Convert to PDF, and download the result. You can upload multiple PNG images at once and each will be converted to its own PDF file." }
     },
     {
       "@type": "Question",

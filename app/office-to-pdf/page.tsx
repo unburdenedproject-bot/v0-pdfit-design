@@ -429,8 +429,8 @@ export default function OfficeToPDFPage() {
             <div className="space-y-6">
               {[
                 {
-                  q: "What Office formats can OmnisPDF convert to PDF?",
-                  a: "OmnisPDF converts Word (DOC/DOCX), Excel (XLS/XLSX), PowerPoint (PPT/PPTX), and OpenDocument formats (ODT/ODP/ODS) to PDF.",
+                  q: "What Office formats can PDF.it convert to PDF?",
+                  a: "PDF.it converts Word (DOC/DOCX), Excel (XLS/XLSX), PowerPoint (PPT/PPTX), and OpenDocument formats (ODT/ODP/ODS) to PDF.",
                 },
                 {
                   q: "Will my formatting stay the same after converting to PDF?",
@@ -438,7 +438,7 @@ export default function OfficeToPDFPage() {
                 },
                 {
                   q: "Can I convert Office files to PDF on mobile?",
-                  a: "Yes. OmnisPDF works in mobile browsers — upload your file and download the PDF.",
+                  a: "Yes. PDF.it works in mobile browsers — upload your file and download the PDF.",
                 },
                 {
                   q: "Do PowerPoint animations convert to PDF?",

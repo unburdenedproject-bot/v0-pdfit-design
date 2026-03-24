@@ -5,7 +5,7 @@ import Link from "next/link"
 import { ScanText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "What Is OCR? (Optical Character Recognition Explained) | OmnisPDF",
+  title: "What Is OCR? (Optical Character Recognition Explained) | PDF.it",
   description:
     "Learn what OCR (Optical Character Recognition) is, how it works, and why it matters for scanned PDFs. Understand how OCR turns images of text into editable, searchable content.",
   keywords: "what is ocr, optical character recognition, ocr explained, how does ocr work",
@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can OCR handle multiple languages?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Most modern OCR tools, including OmnisPDF's OCR Scanner, support dozens of languages including English, Spanish, French, German, Portuguese, and many more. You can select the document language before processing for better accuracy." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Most modern OCR tools, including PDF.it's OCR Scanner, support dozens of languages including English, Spanish, French, German, Portuguese, and many more. You can select the document language before processing for better accuracy." }
     },
     {
       "@type": "Question",
@@ -38,11 +38,11 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Do I need to install software to use OCR?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. OmnisPDF's OCR Scanner works entirely in your browser. Upload your scanned PDF, select the language, and download a searchable PDF — no software installation required." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it's OCR Scanner works entirely in your browser. Upload your scanned PDF, select the language, and download a searchable PDF — no software installation required." }
     },
     {
       "@type": "Question",
-      "name": "Is OCR a Pro feature on OmnisPDF?",
+      "name": "Is OCR a Pro feature on PDF.it?",
       "acceptedAnswer": { "@type": "Answer", "text": "Yes. OCR Scanner is available to Pro and Business subscribers. Pro costs $7.99/month and includes unlimited conversions, files up to 200MB, batch processing, and all advanced tools including OCR." }
     }
   ]
@@ -52,12 +52,12 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Use OCR on a Scanned PDF",
-  "description": "Convert a scanned PDF into searchable text in 3 simple steps using OmnisPDF's OCR Scanner.",
+  "description": "Convert a scanned PDF into searchable text in 3 simple steps using PDF.it's OCR Scanner.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Upload your scanned PDF",
-      "text": "Go to OmnisPDF's OCR Scanner tool and upload the scanned PDF you want to make searchable."
+      "text": "Go to PDF.it's OCR Scanner tool and upload the scanned PDF you want to make searchable."
     },
     {
       "@type": "HowToStep",
@@ -107,7 +107,7 @@ export default function WhatIsOCRPage() {
               <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
                 <ScanText className="h-5 w-5 text-white" />
               </div>
-              <p className="text-slate-700 font-semibold">Want to try OCR right now? Use OmnisPDF's OCR Scanner (Pro).</p>
+              <p className="text-slate-700 font-semibold">Want to try OCR right now? Use PDF.it's OCR Scanner (Pro).</p>
             </div>
             <Link
               href="/ocr-scanner"
@@ -231,11 +231,11 @@ export default function WhatIsOCRPage() {
               </div>
             </section>
 
-            {/* How to OCR with OmnisPDF */}
+            {/* How to OCR with PDF.it */}
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">How to Run OCR on OmnisPDF</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">How to Run OCR on PDF.it</h2>
               <p className="text-slate-600 mb-4">
-                OmnisPDF's <Link href="/ocr-scanner" className="text-orange-600 hover:underline">OCR Scanner</Link> is a Pro feature that converts scanned PDFs into searchable documents. Here is what you get:
+                PDF.it's <Link href="/ocr-scanner" className="text-orange-600 hover:underline">OCR Scanner</Link> is a Pro feature that converts scanned PDFs into searchable documents. Here is what you get:
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; Upload any scanned PDF — the tool detects image-only pages automatically.</li>
@@ -245,7 +245,7 @@ export default function WhatIsOCRPage() {
                 <li>&#10003; After OCR, use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> if the file is too large for email or upload portals.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                OCR Scanner is available on the <Link href="/pricing" className="text-orange-600 hover:underline">Pro and Business plans</Link>. Free users can explore all other OmnisPDF tools with generous daily limits.
+                OCR Scanner is available on the <Link href="/pricing" className="text-orange-600 hover:underline">Pro and Business plans</Link>. Free users can explore all other PDF.it tools with generous daily limits.
               </p>
             </section>
 
@@ -299,10 +299,10 @@ export default function WhatIsOCRPage() {
               {[
                 { q: "What does OCR stand for?", a: "OCR stands for Optical Character Recognition. It is a technology that converts images of text — such as scanned documents, photos, or PDFs — into machine-readable and searchable text." },
                 { q: "How does OCR work?", a: "OCR software analyzes the shapes, patterns, and pixel arrangements in an image to identify individual characters (letters, numbers, symbols). Modern OCR uses machine learning to improve accuracy across different fonts, languages, and layouts." },
-                { q: "Can OCR handle multiple languages?", a: "Yes. Most modern OCR tools, including OmnisPDF's OCR Scanner, support dozens of languages including English, Spanish, French, German, Portuguese, and many more. You can select the document language before processing for better accuracy." },
+                { q: "Can OCR handle multiple languages?", a: "Yes. Most modern OCR tools, including PDF.it's OCR Scanner, support dozens of languages including English, Spanish, French, German, Portuguese, and many more. You can select the document language before processing for better accuracy." },
                 { q: "Is OCR 100% accurate?", a: "OCR is typically 95-99% accurate on clean, high-resolution scans with standard printed fonts. Accuracy decreases with low-resolution images, handwritten text, unusual fonts, or heavily formatted documents. You can improve results by scanning at 300 DPI or higher." },
-                { q: "Do I need to install software to use OCR?", a: "No. OmnisPDF's OCR Scanner works entirely in your browser. Upload your scanned PDF, select the language, and download a searchable PDF — no software installation required." },
-                { q: "Is OCR a Pro feature on OmnisPDF?", a: "Yes. OCR Scanner is available to Pro and Business subscribers. Pro costs $7.99/month and includes unlimited conversions, files up to 200MB, batch processing, and all advanced tools including OCR." },
+                { q: "Do I need to install software to use OCR?", a: "No. PDF.it's OCR Scanner works entirely in your browser. Upload your scanned PDF, select the language, and download a searchable PDF — no software installation required." },
+                { q: "Is OCR a Pro feature on PDF.it?", a: "Yes. OCR Scanner is available to Pro and Business subscribers. Pro costs $7.99/month and includes unlimited conversions, files up to 200MB, batch processing, and all advanced tools including OCR." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

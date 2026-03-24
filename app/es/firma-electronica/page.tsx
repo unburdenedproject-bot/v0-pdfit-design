@@ -6,9 +6,9 @@ import { EsignInterface } from "@/components/esign-interface"
 import { PenTool, Zap, Eye, Shield, FileText, Lock, Layers, Repeat, ArrowLeftRight, Merge } from "lucide-react"
 
 export const metadata = {
-  title: "Firma Electrónica de PDFs en Línea — Agrega Firmas a Documentos PDF | OmnisPDF",
+  title: "Firma Electrónica de PDFs en Línea — Agrega Firmas a Documentos PDF | PDF.it",
   description:
-    "Firma documentos PDF en línea con un editor visual. Dibuja, escribe o sube tu firma y colócala en cualquier parte de cualquier página. Descarga tu PDF firmado al instante. Función Business de OmnisPDF.",
+    "Firma documentos PDF en línea con un editor visual. Dibuja, escribe o sube tu firma y colócala en cualquier parte de cualquier página. Descarga tu PDF firmado al instante. Función Business de PDF.it.",
 }
 
 const faqSchema = {

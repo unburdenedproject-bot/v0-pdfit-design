@@ -5,7 +5,7 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Cómo Copiar Texto de un PDF a Notas o Documentos (Limpiamente) | OmnisPDF",
+  title: "Cómo Copiar Texto de un PDF a Notas o Documentos (Limpiamente) | PDF.it",
   description:
     "Aprende por qué copiar texto de PDFs a menudo se rompe y cómo obtener texto limpio y utilizable en tus notas, Google Docs o Word. Guía paso a paso con herramientas gratuitas.",
   keywords: "copiar texto de pdf, pegar texto pdf en notas, formato texto pdf roto, copiar pdf a google docs, extraer texto de pdf limpiamente",
@@ -23,7 +23,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo copio texto de un PDF sin perder el formato?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si quieres texto plano limpio, convierte el PDF a TXT usando la herramienta PDF a TXT de OmnisPDF — maneja el orden de lectura y elimina el formato oculto. Si necesitas texto con formato, usa PDF a Word para obtener un documento editable con el estilo intacto." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si quieres texto plano limpio, convierte el PDF a TXT usando la herramienta PDF a TXT de PDF.it — maneja el orden de lectura y elimina el formato oculto. Si necesitas texto con formato, usa PDF a Word para obtener un documento editable con el estilo intacto." }
     },
     {
       "@type": "Question",
@@ -33,7 +33,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo copio una tabla de un PDF a una hoja de cálculo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Copiar y pegar casi nunca preserva la estructura de tablas de PDFs. Convierte el PDF a Excel usando la herramienta PDF a Excel de OmnisPDF, que reconstruye filas y columnas. Para tablas simples, PDF a Word también puede preservar la estructura." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Copiar y pegar casi nunca preserva la estructura de tablas de PDFs. Convierte el PDF a Excel usando la herramienta PDF a Excel de PDF.it, que reconstruye filas y columnas. Para tablas simples, PDF a Word también puede preservar la estructura." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo copiar texto de un PDF en mi teléfono?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí, pero copiar y pegar en móvil es aún menos confiable que en escritorio. Para mejores resultados, sube tu PDF a la herramienta PDF a TXT de OmnisPDF en tu navegador móvil y descarga el archivo de texto limpio." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, pero copiar y pegar en móvil es aún menos confiable que en escritorio. Para mejores resultados, sube tu PDF a la herramienta PDF a TXT de PDF.it en tu navegador móvil y descarga el archivo de texto limpio." }
     }
   ]
 }
@@ -52,17 +52,17 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Cómo Copiar Texto Limpio de un PDF",
-  "description": "Obtén texto limpio y utilizable de cualquier PDF en 3 simples pasos usando OmnisPDF.",
+  "description": "Obtén texto limpio y utilizable de cualquier PDF en 3 simples pasos usando PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Sube tu PDF",
-      "text": "Ve a la herramienta PDF a TXT de OmnisPDF y sube el PDF del que quieres extraer texto."
+      "text": "Ve a la herramienta PDF a TXT de PDF.it y sube el PDF del que quieres extraer texto."
     },
     {
       "@type": "HowToStep",
       "name": "Convierte a texto plano limpio",
-      "text": "Haz clic en Convertir. OmnisPDF extrae el texto en el orden de lectura correcto, eliminando formato oculto y artefactos de diseño."
+      "text": "Haz clic en Convertir. PDF.it extrae el texto en el orden de lectura correcto, eliminando formato oculto y artefactos de diseño."
     },
     {
       "@type": "HowToStep",
@@ -159,7 +159,7 @@ export default function CopiarTextoDePdfANotasPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-6">La Forma Limpia: Convierte PDF a TXT Primero</h2>
               <p className="text-slate-600 mb-4">
-                En lugar de luchar con copiar y pegar, convierte todo el PDF a un archivo TXT limpio usando la <Link href="/es/pdf-a-texto" className="text-orange-600 hover:underline">herramienta PDF a TXT de OmnisPDF</Link>. Este enfoque te da texto correctamente ordenado sin formato oculto:
+                En lugar de luchar con copiar y pegar, convierte todo el PDF a un archivo TXT limpio usando la <Link href="/es/pdf-a-texto" className="text-orange-600 hover:underline">herramienta PDF a TXT de PDF.it</Link>. Este enfoque te da texto correctamente ordenado sin formato oculto:
               </p>
               <div className="space-y-4">
                 {[
@@ -328,11 +328,11 @@ export default function CopiarTextoDePdfANotasPage() {
             <div className="space-y-6">
               {[
                 { q: "¿Por qué el texto de un PDF se pega con formato extraño?", a: "Los PDFs almacenan texto como caracteres posicionados, no como párrafos fluidos. Al copiar y pegar, tu computadora intenta reconstruir el orden de lectura pero a menudo se confunde con columnas, encabezados, pies de página y saltos de línea. El resultado es texto desordenado con saltos de línea aleatorios y palabras fusionadas." },
-                { q: "¿Cómo copio texto de un PDF sin perder el formato?", a: "Si quieres texto plano limpio, convierte el PDF a TXT usando la herramienta PDF a TXT de OmnisPDF — maneja el orden de lectura y elimina el formato oculto. Si necesitas texto con formato, usa PDF a Word para obtener un documento editable con el estilo intacto." },
+                { q: "¿Cómo copio texto de un PDF sin perder el formato?", a: "Si quieres texto plano limpio, convierte el PDF a TXT usando la herramienta PDF a TXT de PDF.it — maneja el orden de lectura y elimina el formato oculto. Si necesitas texto con formato, usa PDF a Word para obtener un documento editable con el estilo intacto." },
                 { q: "¿Por qué no puedo seleccionar texto en mi PDF?", a: "Hay dos razones comunes: el PDF es una imagen escaneada (no texto real), o el PDF está bloqueado por seguridad para evitar la copia de texto. Para PDFs escaneados, usa una herramienta OCR. Para PDFs bloqueados, usa Desbloquear PDF si tienes la contraseña." },
-                { q: "¿Cómo copio una tabla de un PDF a una hoja de cálculo?", a: "Copiar y pegar casi nunca preserva la estructura de tablas de PDFs. Convierte el PDF a Excel usando la herramienta PDF a Excel de OmnisPDF, que reconstruye filas y columnas. Para tablas simples, PDF a Word también puede preservar la estructura." },
+                { q: "¿Cómo copio una tabla de un PDF a una hoja de cálculo?", a: "Copiar y pegar casi nunca preserva la estructura de tablas de PDFs. Convierte el PDF a Excel usando la herramienta PDF a Excel de PDF.it, que reconstruye filas y columnas. Para tablas simples, PDF a Word también puede preservar la estructura." },
                 { q: "¿Convertir PDF a TXT conserva los saltos de párrafo?", a: "PDF a TXT preserva los saltos de línea básicos y el espaciado de párrafos, pero elimina todo el demás formato. El resultado es texto limpio y legible que puedes pegar en cualquier aplicación sin problemas de formato oculto." },
-                { q: "¿Puedo copiar texto de un PDF en mi teléfono?", a: "Sí, pero copiar y pegar en móvil es aún menos confiable que en escritorio. Para mejores resultados, sube tu PDF a la herramienta PDF a TXT de OmnisPDF en tu navegador móvil y descarga el archivo de texto limpio." },
+                { q: "¿Puedo copiar texto de un PDF en mi teléfono?", a: "Sí, pero copiar y pegar en móvil es aún menos confiable que en escritorio. Para mejores resultados, sube tu PDF a la herramienta PDF a TXT de PDF.it en tu navegador móvil y descarga el archivo de texto limpio." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

@@ -6,9 +6,9 @@ import { AtsOptimizerInterface } from "@/components/ats-optimizer-interface"
 import { Target, Zap, Shield, FileText, Merge, Lock, Scan, Type } from "lucide-react"
 
 export const metadata = {
-  title: "Otimizador ATS de Curriculo — Pontue seu Curriculo para Compatibilidade ATS | OmnisPDF",
+  title: "Otimizador ATS de Curriculo — Pontue seu Curriculo para Compatibilidade ATS | PDF.it",
   description:
-    "Envie seu curriculo e receba uma pontuacao de compatibilidade ATS instantanea. O Otimizador ATS do OmnisPDF analisa formatacao, palavras-chave, secoes e estrutura — e diz exatamente o que corrigir.",
+    "Envie seu curriculo e receba uma pontuacao de compatibilidade ATS instantanea. O Otimizador ATS do PDF.it analisa formatacao, palavras-chave, secoes e estrutura — e diz exatamente o que corrigir.",
   alternates: {
     languages: {
       en: "/ats-optimizer",

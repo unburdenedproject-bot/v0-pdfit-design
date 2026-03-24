@@ -6,9 +6,9 @@ import { Split, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Split Large PDF into Smaller Files — Reduce PDF Size by Splitting | OmnisPDF",
+  title: "Split Large PDF into Smaller Files — Reduce PDF Size by Splitting | PDF.it",
   description:
-    "Split a large PDF into smaller files with OmnisPDF. Break oversized PDFs into manageable parts for email, uploads, and sharing — fast, free, and browser-based.",
+    "Split a large PDF into smaller files with PDF.it. Break oversized PDFs into manageable parts for email, uploads, and sharing — fast, free, and browser-based.",
 }
 
 const faqSchema = {
@@ -18,12 +18,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "How do I split a large PDF into smaller files?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to OmnisPDF and enter page ranges to divide it into equal parts. For example, split a 20-page PDF into four 5-page files by entering ranges 1-5, 6-10, 11-15, and 16-20. Download each part separately." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF to PDF.it and enter page ranges to divide it into equal parts. For example, split a 20-page PDF into four 5-page files by entering ranges 1-5, 6-10, 11-15, and 16-20. Download each part separately." }
     },
     {
       "@type": "Question",
       "name": "Can I split a PDF to fit email attachment limits?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Most email providers limit attachments to 25MB. Split your large PDF into smaller parts by page range, then attach each part to separate emails or compress each part further with OmnisPDF's Compress for Email tool." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Most email providers limit attachments to 25MB. Split your large PDF into smaller parts by page range, then attach each part to separate emails or compress each part further with PDF.it's Compress for Email tool." }
     },
     {
       "@type": "Question",
@@ -38,12 +38,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Can I split a PDF for upload portals with file size limits?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Many portals have 5MB or 10MB limits. Split your PDF into smaller sections, then use OmnisPDF's compression tools on each part to ensure they meet the size requirement." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Many portals have 5MB or 10MB limits. Split your PDF into smaller sections, then use PDF.it's compression tools on each part to ensure they meet the size requirement." }
     },
     {
       "@type": "Question",
       "name": "Can I recombine the split files later?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Use OmnisPDF's Merge PDF tool to combine split files back into a single document whenever you need the full version again." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Use PDF.it's Merge PDF tool to combine split files back into a single document whenever you need the full version again." }
     }
   ]
 }
@@ -85,7 +85,7 @@ export default function SplitPDFBySizePage() {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
-              Got a PDF that is too large to email, upload, or share? OmnisPDF lets you split it into smaller files by selecting page ranges. For example, split a 20-page PDF into four 5-page files — each small enough to attach to an email or upload to a portal with strict size limits.
+              Got a PDF that is too large to email, upload, or share? PDF.it lets you split it into smaller files by selecting page ranges. For example, split a 20-page PDF into four 5-page files — each small enough to attach to an email or upload to a portal with strict size limits.
             </p>
             <ul className="space-y-2 text-slate-700 mb-8">
               <li>✓ Split oversized PDFs into email-friendly parts</li>
@@ -103,7 +103,7 @@ export default function SplitPDFBySizePage() {
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Split PDFs for Email Attachments</h2>
               <p className="text-slate-600">
-                Most email providers cap attachments at 25MB. If your PDF exceeds that, split it into smaller parts by page range and send each part in a separate email. Combine with OmnisPDF's compression tools for even smaller files.
+                Most email providers cap attachments at 25MB. If your PDF exceeds that, split it into smaller parts by page range and send each part in a separate email. Combine with PDF.it's compression tools for even smaller files.
               </p>
             </div>
             <div>
@@ -127,7 +127,7 @@ export default function SplitPDFBySizePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Split a Large PDF into Smaller Files</h2>
             <div className="space-y-4">
               {[
-                "Upload or drag and drop your large PDF into OmnisPDF.",
+                "Upload or drag and drop your large PDF into PDF.it.",
                 "Enter page ranges to create equal-sized parts (e.g. 1-5, 6-10, 11-15, 16-20).",
                 "Click Split PDF to break your file into separate parts.",
                 "Download each smaller PDF and email, upload, or share them individually.",
@@ -173,12 +173,12 @@ export default function SplitPDFBySizePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">
               {[
-                { q: "How do I split a large PDF into smaller files?", a: "Upload your PDF to OmnisPDF and enter page ranges to divide it into equal parts. For example, split a 20-page PDF into four 5-page files by entering ranges 1-5, 6-10, 11-15, and 16-20. Download each part separately." },
-                { q: "Can I split a PDF to fit email attachment limits?", a: "Yes. Most email providers limit attachments to 25MB. Split your large PDF into smaller parts by page range, then attach each part to separate emails or compress each part further with OmnisPDF's Compress for Email tool." },
+                { q: "How do I split a large PDF into smaller files?", a: "Upload your PDF to PDF.it and enter page ranges to divide it into equal parts. For example, split a 20-page PDF into four 5-page files by entering ranges 1-5, 6-10, 11-15, and 16-20. Download each part separately." },
+                { q: "Can I split a PDF to fit email attachment limits?", a: "Yes. Most email providers limit attachments to 25MB. Split your large PDF into smaller parts by page range, then attach each part to separate emails or compress each part further with PDF.it's Compress for Email tool." },
                 { q: "How small can the split parts be?", a: "Each part can be as small as a single page. The file size of each part depends on the content — pages with images will be larger than text-only pages." },
                 { q: "Will splitting a PDF reduce the quality?", a: "No. Splitting only separates pages into different files. The content, images, and formatting stay exactly the same as the original document." },
-                { q: "Can I split a PDF for upload portals with file size limits?", a: "Yes. Many portals have 5MB or 10MB limits. Split your PDF into smaller sections, then use OmnisPDF's compression tools on each part to ensure they meet the size requirement." },
-                { q: "Can I recombine the split files later?", a: "Absolutely. Use OmnisPDF's Merge PDF tool to combine split files back into a single document whenever you need the full version again." },
+                { q: "Can I split a PDF for upload portals with file size limits?", a: "Yes. Many portals have 5MB or 10MB limits. Split your PDF into smaller sections, then use PDF.it's compression tools on each part to ensure they meet the size requirement." },
+                { q: "Can I recombine the split files later?", a: "Absolutely. Use PDF.it's Merge PDF tool to combine split files back into a single document whenever you need the full version again." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
