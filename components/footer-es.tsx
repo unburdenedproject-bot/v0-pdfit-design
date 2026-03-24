@@ -15,18 +15,18 @@ export function FooterEs() {
               Convierte, comprime, une, divide, escanea y protege archivos PDF en segundos. Herramientas simples que funcionan en cualquier dispositivo.
             </p>
             <div className="flex space-x-4">
-              <Link href="#" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors" aria-label="Síguenos en Facebook">
+              <a href="#" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors" aria-label="Síguenos en Facebook" onClick={(e) => e.preventDefault()}>
                 <Facebook className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors" aria-label="Síguenos en Twitter">
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors" aria-label="Síguenos en Twitter" onClick={(e) => e.preventDefault()}>
                 <Twitter className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors" aria-label="Síguenos en Instagram">
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors" aria-label="Síguenos en Instagram" onClick={(e) => e.preventDefault()}>
                 <Instagram className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors" aria-label="Síguenos en LinkedIn">
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors" aria-label="Síguenos en LinkedIn" onClick={(e) => e.preventDefault()}>
                 <Linkedin className="h-5 w-5" />
-              </Link>
+              </a>
             </div>
           </div>
 

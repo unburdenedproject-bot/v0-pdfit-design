@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { HeaderBr } from "@/components/header-br"
 import { FooterBr } from "@/components/footer-br"
 import { Button } from "@/components/ui/button"
@@ -8,7 +8,17 @@ import { Check, Star, Crown } from "lucide-react"
 import Link from "next/link"
 
 export default function PrecosPage() {
-  const [billing, setBilling] = useState<"monthly" | "annual">("monthly")
+  const [billing, setBillingState] = useState<"monthly" | "annual">("monthly")
+
+  useEffect(() => {
+    const saved = localStorage.getItem("pricing_billing")
+    if (saved === "annual") setBillingState("annual")
+  }, [])
+
+  const setBilling = (value: "monthly" | "annual") => {
+    setBillingState(value)
+    localStorage.setItem("pricing_billing", value)
+  }
 
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
@@ -134,11 +144,11 @@ export default function PrecosPage() {
                         {billing === "monthly" ? "/mes" : "/ano"}
                       </span>
                     </div>
-                    {billing === "annual" && (
+                    <div className="min-h-[20px]">{billing === "annual" && (
                       <p className="text-sm text-slate-500">
                         Equivale a $6.66/mes cobrado anualmente
                       </p>
-                    )}
+                    )}</div>
                   </div>
 
                   <div className="space-y-3 mb-8 flex-grow">
@@ -205,11 +215,11 @@ export default function PrecosPage() {
                         {billing === "monthly" ? "/mes" : "/ano"}
                       </span>
                     </div>
-                    {billing === "annual" && (
+                    <div className="min-h-[20px]">{billing === "annual" && (
                       <p className="text-sm text-slate-500">
                         Equivale a $11.66/mes cobrado anualmente
                       </p>
-                    )}
+                    )}</div>
                   </div>
 
                   <div className="space-y-3 mb-8 flex-grow">
@@ -283,11 +293,11 @@ export default function PrecosPage() {
                         {billing === "monthly" ? "/mes" : "/ano"}
                       </span>
                     </div>
-                    {billing === "annual" && (
+                    <div className="min-h-[20px]">{billing === "annual" && (
                       <p className="text-sm text-slate-400">
                         Equivale a $41.66/mes cobrado anualmente
                       </p>
-                    )}
+                    )}</div>
                   </div>
 
                   <div className="space-y-3 mb-8 flex-grow">

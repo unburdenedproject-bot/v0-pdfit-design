@@ -110,7 +110,7 @@ export function Header() {
 
             {/* Auth links */}
             {loading ? (
-              <div className="w-[100px] h-9" />
+              <div className="w-[100px] h-9 flex-shrink-0" />
             ) : (
               user ? (
                 <Link href="/dashboard">
@@ -230,7 +230,7 @@ export function Header() {
 
             <div className="pt-2 border-t border-gray-100">
               {loading ? (
-                <div className="h-9" />
+                <div className="h-9 flex-shrink-0" />
               ) : user ? (
                 <Link href="/dashboard" onClick={() => setMobileMenuOpen(false)}>
                   <Button size="sm" className="w-full bg-orange-500 hover:bg-orange-600 text-white">

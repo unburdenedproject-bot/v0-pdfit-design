@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { HeaderEs } from "@/components/header-es"
 import { FooterEs } from "@/components/footer-es"
 import { Button } from "@/components/ui/button"
@@ -8,7 +8,17 @@ import { Check, Star, Crown } from "lucide-react"
 import Link from "next/link"
 
 export default function PreciosPage() {
-  const [billing, setBilling] = useState<"monthly" | "annual">("monthly")
+  const [billing, setBillingState] = useState<"monthly" | "annual">("monthly")
+
+  useEffect(() => {
+    const saved = localStorage.getItem("pricing_billing")
+    if (saved === "annual") setBillingState("annual")
+  }, [])
+
+  const setBilling = (value: "monthly" | "annual") => {
+    setBillingState(value)
+    localStorage.setItem("pricing_billing", value)
+  }
 
   const comparisonFeatures = [
     { feature: "Conversiones por dia", free: "10", pro: "Ilimitado", business: "Ilimitado", enterprise: "Ilimitado" },
@@ -79,7 +89,7 @@ export default function PreciosPage() {
                     <h2 className="text-2xl font-black text-slate-900 mb-2">Pro</h2>
                     <p className="text-sm text-slate-500 mb-4">Desbloquea todas las herramientas sin limites diarios</p>
                     <div className="mb-2"><span className="text-5xl font-black text-orange-500">{billing === "monthly" ? "$7.99" : "$79.90"}</span><span className="text-lg text-slate-600">{billing === "monthly" ? "/mes" : "/ano"}</span></div>
-                    {billing === "annual" && <p className="text-sm text-slate-500">Equivale a $6.66/mes facturado anualmente</p>}
+                    <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-500">Equivale a $6.66/mes facturado anualmente</p>}</div>
                   </div>
                   <div className="space-y-3 mb-8 flex-grow">
                     <p className="text-sm text-slate-500 font-medium">Todo en Gratis, mas:</p>
@@ -97,7 +107,7 @@ export default function PreciosPage() {
                     <h2 className="text-2xl font-black text-slate-900 mb-2">Business</h2>
                     <p className="text-sm text-slate-500 mb-4">Herramientas avanzadas para profesionales y equipos</p>
                     <div className="mb-2"><span className="text-5xl font-black text-indigo-600">{billing === "monthly" ? "$13.99" : "$139.90"}</span><span className="text-lg text-slate-600">{billing === "monthly" ? "/mes" : "/ano"}</span></div>
-                    {billing === "annual" && <p className="text-sm text-slate-500">Equivale a $11.66/mes facturado anualmente</p>}
+                    <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-500">Equivale a $11.66/mes facturado anualmente</p>}</div>
                   </div>
                   <div className="space-y-3 mb-8 flex-grow">
                     <p className="text-sm text-slate-500 font-medium">Todo en Pro, mas:</p>
@@ -115,7 +125,7 @@ export default function PreciosPage() {
                     <h2 className="text-2xl font-black text-white mb-2">Enterprise</h2>
                     <p className="text-sm text-slate-400 mb-4">Disenado para bufetes de abogados, contadores y laboratorios</p>
                     <div className="mb-2"><span className="text-5xl font-black text-[#D4AF37]">{billing === "monthly" ? "$49.99" : "$499.90"}</span><span className="text-lg text-slate-400">{billing === "monthly" ? "/mes" : "/ano"}</span></div>
-                    {billing === "annual" && <p className="text-sm text-slate-400">Equivale a $41.66/mes facturado anualmente</p>}
+                    <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-400">Equivale a $41.66/mes facturado anualmente</p>}</div>
                   </div>
                   <div className="space-y-3 mb-8 flex-grow">
                     <p className="text-sm text-slate-400 font-medium">Todo en Business, mas:</p>

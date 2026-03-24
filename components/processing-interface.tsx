@@ -1065,10 +1065,10 @@ export function ProcessingInterface({
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 sm:px-0">
               {processedFiles.length > 1 && (
                 <Button
-                  className="bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-3"
+                  className="bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-3 w-full sm:w-auto"
                   onClick={async () => {
                     const JSZip = (await import("jszip")).default
                     const zip = new JSZip()
@@ -1096,12 +1096,12 @@ export function ProcessingInterface({
               <Button
                 onClick={resetInterface}
                 variant="outline"
-                className="bg-white text-slate-800 border-slate-300 hover:bg-slate-50 px-8 py-3"
+                className="bg-white text-slate-800 border-slate-300 hover:bg-slate-50 px-8 py-3 w-full sm:w-auto"
               >
                 Process More Files
               </Button>
               <Button
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3"
+                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 w-full sm:w-auto"
                 onClick={() => (window.location.href = "/")}
               >
                 Try Another Tool
