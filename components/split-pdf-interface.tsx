@@ -17,6 +17,7 @@ import {
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
+import { PDFDocument } from "pdf-lib"
 
 interface ProcessedFile {
   name: string
@@ -73,9 +74,22 @@ export function SplitPdfInterface() {
 
     setIsProcessing(true)
     setHasError(false)
-    setProgress(10)
+    setProgress(5)
 
     try {
+      // Step 0: Check page count — single-page PDFs cannot be split
+      const arrayBuffer = await file.arrayBuffer()
+      const pdfDoc = await PDFDocument.load(arrayBuffer, { ignoreEncryption: true })
+      const pageCount = pdfDoc.getPageCount()
+      if (pageCount <= 1) {
+        setHasError(true)
+        setErrorMessage("This PDF has only 1 page and cannot be split.")
+        setIsProcessing(false)
+        return
+      }
+
+      setProgress(10)
+
       // Step 1: Upload to Vercel Blob
       const inputBlobUrl = await uploadFileToBlob(file)
 

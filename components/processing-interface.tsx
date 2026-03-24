@@ -127,7 +127,7 @@ export function ProcessingInterface({
   }, [isPaidUser, freeFileLimit])
 
   const handleFileSelect = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) {
+    if (e.target.files && e.target.files.length > 0) {
       const selectedFiles = Array.from(e.target.files)
       if (isPaidUser) {
         setFiles((prev) => [...prev, ...selectedFiles])
@@ -138,7 +138,21 @@ export function ProcessingInterface({
   }, [isPaidUser, freeFileLimit])
 
   const removeFile = useCallback((index: number) => {
-    setFiles((prev) => prev.filter((_, i) => i !== index))
+    setFiles((prev) => {
+      const updated = prev.filter((_, i) => i !== index)
+      if (updated.length === 0) {
+        setHasError(false)
+        setIsComplete(false)
+        setIsProcessing(false)
+        setErrorMessage("")
+        setProgress(0)
+        setProcessedFiles([])
+      }
+      return updated
+    })
+    // Always reset file input so the same file can be re-uploaded
+    const input = document.getElementById("file-upload") as HTMLInputElement
+    if (input) input.value = ""
   }, [])
 
   const processFiles = useCallback(async () => {
