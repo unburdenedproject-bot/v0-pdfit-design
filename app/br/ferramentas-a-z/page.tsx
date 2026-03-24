@@ -104,7 +104,7 @@ export default function FerramentasAZPage() {
   const totalEnterprise = tools.filter((t) => t.tier === "ENTERPRISE").length
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <HeaderBr />
       <main>
         <section className="bg-[#191B4D] text-white py-20">

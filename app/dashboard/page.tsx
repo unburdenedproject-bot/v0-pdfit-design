@@ -88,7 +88,7 @@ export default async function DashboardPage() {
     .gte("created_at", monthStart.toISOString())
 
   return (
-    <div className="flex min-h-screen flex-col bg-slate-50">
+    <div className="flex min-h-screen flex-col bg-[#F3F4FF]">
       <Header />
       <main className="flex-1">
         <Suspense>

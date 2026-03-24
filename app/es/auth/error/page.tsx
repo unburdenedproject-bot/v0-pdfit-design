@@ -12,7 +12,7 @@ export default async function AuthErrorPageEs({
   const params = await searchParams
 
   return (
-    <div className="flex min-h-screen flex-col bg-slate-50">
+    <div className="flex min-h-screen flex-col bg-[#F3F4FF]">
       <HeaderEs />
       <main className="flex flex-1 items-center justify-center px-4 py-12">
         <div className="w-full max-w-md">

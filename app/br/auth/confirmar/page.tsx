@@ -99,7 +99,7 @@ function ConfirmForm() {
 
 export default function AuthConfirmPagePt() {
   return (
-    <div className="min-h-screen bg-slate-50 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-[#F3F4FF] flex items-center justify-center px-4">
       <Suspense fallback={null}>
         <ConfirmForm />
       </Suspense>

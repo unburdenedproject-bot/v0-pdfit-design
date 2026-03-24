@@ -29,7 +29,7 @@ export default async function AdminLimitsPage() {
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY
   if (!url || !key) {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+      <div className="min-h-screen bg-[#F3F4FF] flex items-center justify-center">
         <p className="text-slate-600">Service client not configured.</p>
       </div>
     )
@@ -73,7 +73,7 @@ export default async function AdminLimitsPage() {
   const hoursUntilReset = Math.ceil((tomorrow.getTime() - now.getTime()) / (1000 * 60 * 60))
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-8">
           <h1 className="text-2xl font-bold text-slate-900">Admin: Limit Enforcement</h1>
