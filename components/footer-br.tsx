@@ -9,7 +9,7 @@ export function FooterBr() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="mb-4">
-              <img src="/logo-white.svg" alt="PDF.it" className="h-8 w-auto" width="180" height="32" loading="lazy" />
+              <span className="text-2xl font-black tracking-tight"><span className="text-white">PDF</span><span style={{ color: "#14D8C4" }}>.it</span></span>
             </div>
             <p className="text-[#A5B4FC] mb-6 leading-relaxed">
               Converta, comprima, una, divida, digitalize e proteja arquivos PDF em segundos. Ferramentas simples que funcionam em qualquer dispositivo.

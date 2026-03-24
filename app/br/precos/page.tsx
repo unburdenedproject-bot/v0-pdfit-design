@@ -263,10 +263,10 @@ export default function PrecosPage() {
                 </div>
 
                 {/* Enterprise Plan */}
-                <div className="bg-slate-900 rounded-2xl border-2 border-amber-500 p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 relative flex flex-col">
+                <div className="bg-slate-900 rounded-2xl border-2 border-[#D4AF37] p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 relative flex flex-col">
                   {/* Best Value Badge */}
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-amber-500 text-slate-900 px-5 py-1.5 rounded-full text-sm font-bold flex items-center gap-2 shadow-lg whitespace-nowrap">
+                    <div className="bg-[#D4AF37] text-slate-900 px-5 py-1.5 rounded-full text-sm font-bold flex items-center gap-2 shadow-lg whitespace-nowrap">
                       <Crown className="h-4 w-4 fill-current" />
                       Melhor Valor
                     </div>
@@ -276,7 +276,7 @@ export default function PrecosPage() {
                     <h2 className="text-2xl font-black text-white mb-2">Enterprise</h2>
                     <p className="text-sm text-slate-400 mb-4">Feito para escritorios de advocacia, contadores e laboratorios</p>
                     <div className="mb-2">
-                      <span className="text-5xl font-black text-amber-500">
+                      <span className="text-5xl font-black text-[#D4AF37]">
                         {billing === "monthly" ? "$49.99" : "$499.90"}
                       </span>
                       <span className="text-lg text-slate-400">
@@ -293,39 +293,39 @@ export default function PrecosPage() {
                   <div className="space-y-3 mb-8 flex-grow">
                     <p className="text-sm text-slate-400 font-medium">Tudo no Business, mais:</p>
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-amber-500/20 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="h-3 w-3 text-amber-500" />
+                      <div className="w-5 h-5 bg-[#D4AF37]/20 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-[#D4AF37]" />
                       </div>
                       <span className="text-slate-200 font-medium">Extracao de tabelas para Excel (2.000 paginas/mes)</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-amber-500/20 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="h-3 w-3 text-amber-500" />
+                      <div className="w-5 h-5 bg-[#D4AF37]/20 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-[#D4AF37]" />
                       </div>
                       <span className="text-slate-200 font-medium">Fila de processamento prioritario</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-amber-500/20 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="h-3 w-3 text-amber-500" />
+                      <div className="w-5 h-5 bg-[#D4AF37]/20 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-[#D4AF37]" />
                       </div>
                       <span className="text-slate-200 font-medium">Suporte dedicado por email (resposta em 24h)</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-amber-500/20 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="h-3 w-3 text-amber-500" />
+                      <div className="w-5 h-5 bg-[#D4AF37]/20 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-[#D4AF37]" />
                       </div>
                       <span className="text-slate-200 font-medium">Acesso antecipado a novos recursos</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-amber-500/20 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="h-3 w-3 text-amber-500" />
+                      <div className="w-5 h-5 bg-[#D4AF37]/20 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-[#D4AF37]" />
                       </div>
                       <span className="text-slate-200 font-medium">Modelos de fluxo de trabalho personalizados</span>
                     </div>
                   </div>
 
                   <Button
-                    className="w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="w-full bg-[#D4AF37] hover:bg-[#BF9B30] text-slate-900 font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                     asChild
                   >
                     <Link href={billing === "monthly" ? "/upgrade?plan=enterprise" : "/upgrade?plan=enterprise&billing=annual"}>
@@ -352,7 +352,7 @@ export default function PrecosPage() {
                       <th className="text-center py-4 px-4 text-gray-600 font-bold text-lg">Gratis</th>
                       <th className="text-center py-4 px-4 text-orange-500 font-bold text-lg">Pro</th>
                       <th className="text-center py-4 px-4 text-indigo-600 font-bold text-lg">Business</th>
-                      <th className="text-center py-4 px-4 text-amber-500 font-bold text-lg">Enterprise</th>
+                      <th className="text-center py-4 px-4 text-[#D4AF37] font-bold text-lg">Enterprise</th>
                     </tr>
                   </thead>
                   <tbody>
