@@ -67,7 +67,7 @@ const faqSchema = {
 
 export default function CrearCurriculumPageEs() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <Script
         id="faq-schema"
         type="application/ld+json"
@@ -124,7 +124,7 @@ export default function CrearCurriculumPageEs() {
         </section>
 
         {/* Why Section */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-6 text-center">Por Qué Crear un Curriculum Desde Cero Es Difícil</h2>
             <div className="space-y-4 text-slate-600 text-lg">
@@ -159,7 +159,7 @@ export default function CrearCurriculumPageEs() {
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">

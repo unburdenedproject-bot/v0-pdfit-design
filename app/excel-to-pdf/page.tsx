@@ -50,7 +50,7 @@ const faqSchema = {
 
 export default function ExcelToPDFPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <Script
         id="faq-schema"
         type="application/ld+json"
@@ -104,7 +104,7 @@ export default function ExcelToPDFPage() {
         </section>
 
         {/* Feature Sections */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Export XLSX to PDF for Easy Sharing</h2>
@@ -149,7 +149,7 @@ export default function ExcelToPDFPage() {
         </section>
 
         {/* Related Tools */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-6 text-center">Related Tools</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">

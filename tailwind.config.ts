@@ -78,7 +78,7 @@ const config: Config = {
         support: {
           blue: "#6B7CFF",
         },
-        surface: "#F5F7FB",
+        surface: "#F3F4FF",
       },
       borderRadius: {
         lg: "var(--radius)",

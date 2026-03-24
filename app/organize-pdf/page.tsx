@@ -49,7 +49,7 @@ const faqSchema = {
 
 export default function OrganizePDFPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <Script
         id="faq-schema"
         type="application/ld+json"
@@ -78,7 +78,7 @@ export default function OrganizePDFPage() {
         </section>
 
         {/* CTA Section — Choose Your Tool */}
-        <section className="py-12 bg-white">
+        <section className="py-12 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Choose Your Tool</h2>
             <p className="text-slate-600 mb-8">Use these tools to organize your PDF pages:</p>
@@ -116,7 +116,7 @@ export default function OrganizePDFPage() {
         </section>
 
         {/* Feature Sections */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Organize Scanned Documents</h2>
@@ -161,7 +161,7 @@ export default function OrganizePDFPage() {
         </section>
 
         {/* Related Tools */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-6 text-center">Related Tools</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">

@@ -49,7 +49,7 @@ const faqSchema = {
 
 export default function EditPDFMetadataPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <Script
         id="faq-schema"
         type="application/ld+json"
@@ -94,7 +94,7 @@ export default function EditPDFMetadataPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-12 bg-white">
+        <section className="py-12 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Manage Your PDF Properties</h2>
             <p className="text-slate-600 mb-6">While direct metadata editing is coming soon, you can use Flatten PDF to clean up annotations or Protect PDF to secure your document properties.</p>
@@ -134,7 +134,7 @@ export default function EditPDFMetadataPage() {
         </section>
 
         {/* How To */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Edit PDF Metadata</h2>
             <div className="space-y-4">
@@ -180,7 +180,7 @@ export default function EditPDFMetadataPage() {
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">

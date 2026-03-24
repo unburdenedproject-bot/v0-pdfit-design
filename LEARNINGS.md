@@ -101,3 +101,33 @@
 **What:** Created POST-LAUNCH.md with 4 milestone gates (1K/3K/5K/10K subscribers), each unlocking a phase of work. Deferred audit fixes, new languages, new tools, infrastructure migration, and team plans all live here with explicit "do not build until" gates.
 **Why it matters:** Without a gated document, post-launch scope creep is likely — every good idea feels urgent. The rule at the bottom ("Growth first. Complexity second.") creates a forcing function to stay focused on acquiring subscribers before building more complexity.
 **Apply when:** Any time a good idea comes up that isn't needed for the current launch milestone — add it to POST-LAUNCH.md under the correct phase gate instead of building it now.
+
+## 2026-03-23 — pnpm virtual store can ship incomplete packages; use .npmrc hoisting
+
+**What:** The `v0-pdfit-design` build failed on Vercel because pnpm's virtual store had an incomplete React package (only LICENSE and README, no actual modules). Adding `public-hoist-pattern[]=*react*` and `public-hoist-pattern[]=*react-dom*` to `.npmrc` forces React to the top-level node_modules, fixing resolution.
+**Why it matters:** A corrupted pnpm virtual store causes `TypeError: Cannot read properties of null (reading 'useContext')` — a misleading error that looks like a code bug but is actually a package resolution issue. Local `pnpm install` may fix it temporarily, but Vercel installs fresh every time.
+**Apply when:** Any Next.js project using pnpm that hits mysterious `useContext` null errors during build — check if `.npmrc` hoists react and react-dom.
+
+## 2026-03-23 — tailwind.config.ts must be committed to git
+
+**What:** The `tailwind.config.ts` was untracked in v0-pdfit-design. Local builds worked because the file existed locally, but Vercel builds failed with "border-border class does not exist" because the config wasn't in the repo.
+**Why it matters:** Without the Tailwind config, all custom CSS variables (`border`, `background`, etc.) defined in globals.css have no corresponding Tailwind utilities. The error message doesn't mention the missing config file.
+**Apply when:** After cloning or forking a v0-generated project — run `git status` and verify all config files (tailwind.config.ts, postcss.config.mjs, tsconfig.json) are tracked.
+
+## 2026-03-23 — Global sed find-and-replace can break JavaScript identifiers
+
+**What:** Replacing "OmnisPDF" → "PDF.it" across 564 files turned the function name `WelcomeToOmnisPDFPage` into `WelcomeToPDF.itPage` — invalid JS because dots aren't allowed in identifiers. Build failed with a cryptic "Expected '(', got '.'" error.
+**Why it matters:** Brand names with dots (PDF.it) are safe in strings and metadata but will break any code identifier (function names, variable names, class names) that incorporates the brand name.
+**Apply when:** Any global find-and-replace where the replacement string contains special characters (dots, hyphens, etc.) — always grep for the pattern in code identifiers (function/class/const declarations) separately and fix those manually.
+
+## 2026-03-23 — Remap legacy Tailwind color keys instead of renaming every class
+
+**What:** Instead of changing every `orange-500` class to `teal-500` across 500+ files, remapped the `orange` key in tailwind.config.ts to point to teal hex values. Existing `bg-orange-500` classes now render as `#14D8C4` automatically.
+**Why it matters:** Saves hundreds of file edits and prevents missed references. The config is the single source of truth for colors, so changing it once propagates everywhere.
+**Apply when:** Any full-codebase rebrand where one color family replaces another — remap in tailwind.config.ts first, then only do targeted edits for hardcoded hex values or cases where the semantic meaning needs to change.
+
+## 2026-03-24 — Lock brand identity in CLAUDE.md and BRAND.md before building UI
+
+**What:** Updated CLAUDE.md Brand section and fully rewrote BRAND.md to reflect the final locked PDF.it palette (#0E0F1E dark, #14D8C4 CTA, iridescent wave gradient, Sora/Inter fonts, GTM/GA4 IDs). BRAND.md now has a role-tagged color table instead of a list.
+**Why it matters:** Without a single locked source of truth, color values drift across components as new UI is built. CLAUDE.md and BRAND.md together are the authoritative reference — all future UI work should pull from here, not from memory.
+**Apply when:** Before any new page, component, or design pass — verify hex values against BRAND.md. If a color decision changes, update BRAND.md and CLAUDE.md first, then propagate to code.

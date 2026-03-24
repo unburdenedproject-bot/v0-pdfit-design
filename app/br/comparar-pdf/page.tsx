@@ -50,7 +50,7 @@ const faqSchema = {
 
 export default function PdfComparePagePt() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <Script
         id="faq-schema-pt"
         type="application/ld+json"
@@ -110,7 +110,7 @@ export default function PdfComparePagePt() {
         </section>
 
         {/* Why Compare PDFs */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-4 text-center">Por Que Comparar PDFs?</h2>
             <div className="max-w-3xl mx-auto space-y-4">
@@ -158,7 +158,7 @@ export default function PdfComparePagePt() {
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">

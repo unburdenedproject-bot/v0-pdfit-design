@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function TermsConditionsPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <Header />
       <main>
         {/* Hero */}

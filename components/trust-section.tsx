@@ -33,7 +33,7 @@ const features = [
 
 export function TrustSection() {
   return (
-    <section className="py-10 bg-white">
+    <section className="py-10 bg-[#F3F4FF]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Stats */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">

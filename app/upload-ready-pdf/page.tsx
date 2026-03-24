@@ -50,7 +50,7 @@ const faqSchema = {
 
 export default function UploadReadyPDFPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <Script
         id="faq-schema"
         type="application/ld+json"
@@ -110,7 +110,7 @@ export default function UploadReadyPDFPage() {
         </section>
 
         {/* About */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
               Tired of upload portals rejecting your PDF? PDF.it's Upload-Ready tool fixes the most common problems in one click — oversized files, blank form fields, unsupported annotations, and incompatible PDF features. The result is a clean, universally compatible PDF that works everywhere.
@@ -150,7 +150,7 @@ export default function UploadReadyPDFPage() {
         </section>
 
         {/* How To */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Make a PDF Upload-Ready</h2>
             <div className="space-y-4">
@@ -195,7 +195,7 @@ export default function UploadReadyPDFPage() {
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">

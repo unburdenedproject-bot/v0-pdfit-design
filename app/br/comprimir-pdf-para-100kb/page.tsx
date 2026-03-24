@@ -57,7 +57,7 @@ const faqSchema = {
 
 export default function ComprimirPDFPara100KBPagePt() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <Script
         id="faq-schema-pt"
         type="application/ld+json"
@@ -112,7 +112,7 @@ export default function ComprimirPDFPara100KBPagePt() {
         </section>
 
         {/* Use Cases */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Casos de Uso Comuns</h2>
             <div className="space-y-10">
@@ -156,7 +156,7 @@ export default function ComprimirPDFPara100KBPagePt() {
         </section>
 
         {/* Tips */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Dicas para Chegar Abaixo de 100KB</h2>
@@ -197,7 +197,7 @@ export default function ComprimirPDFPara100KBPagePt() {
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">

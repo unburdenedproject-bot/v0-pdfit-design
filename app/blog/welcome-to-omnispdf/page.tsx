@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function WelcomeToPDFitPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <Header />
       <main>
         {/* Hero */}

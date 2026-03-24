@@ -45,7 +45,7 @@ const faqSchema = {
 
 export default function PngToPdfPageEs() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <Script
         id="faq-schema-es"
         type="application/ld+json"
@@ -106,7 +106,7 @@ export default function PngToPdfPageEs() {
         </section>
 
         {/* Why Convert PNG to PDF */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-4 text-center">¿Por Qué Convertir PNG a PDF?</h2>
             <div className="max-w-3xl mx-auto space-y-4">
@@ -154,7 +154,7 @@ export default function PngToPdfPageEs() {
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">

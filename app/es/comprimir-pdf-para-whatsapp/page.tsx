@@ -56,7 +56,7 @@ const faqSchema = {
 
 export default function ComprimirPDFParaWhatsAppPageEs() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <Script
         id="faq-schema-es"
         type="application/ld+json"
@@ -112,7 +112,7 @@ export default function ComprimirPDFParaWhatsAppPageEs() {
         </section>
 
         {/* WhatsApp Limit */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Límite de WhatsApp para Documentos</h2>
             <div className="max-w-md mx-auto">
@@ -162,7 +162,7 @@ export default function ComprimirPDFParaWhatsAppPageEs() {
         </section>
 
         {/* How To */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Comprimir un PDF para WhatsApp</h2>
             <div className="space-y-4">
@@ -216,7 +216,7 @@ export default function ComprimirPDFParaWhatsAppPageEs() {
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">

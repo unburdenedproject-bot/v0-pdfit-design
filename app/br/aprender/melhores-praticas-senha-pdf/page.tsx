@@ -25,7 +25,7 @@ const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name"
 
 export default function MelhoresPraticasSenhaPdfPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Script id="howto-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <HeaderBr />
@@ -120,7 +120,7 @@ export default function MelhoresPraticasSenhaPdfPage() {
           </div>
         </div></section>
 
-        <section className="py-16 bg-white"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+        <section className="py-16 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
           <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas frequentes</h2>
           <div className="space-y-6">
             {(faqSchema.mainEntity as Array<{name: string; acceptedAnswer: {text: string}}>).map((faq, i) => (

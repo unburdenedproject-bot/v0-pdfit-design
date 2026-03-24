@@ -58,11 +58,11 @@ export function HeaderBr() {
   }
 
   return (
-    <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
+    <header className="bg-[#F3F4FF] border-b border-gray-100 sticky top-0 z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/br" className="flex items-center">
-            <span style={{fontWeight: 800, color: '#ffffff', fontSize: '22px', letterSpacing: '-0.5px'}}>PDF<span style={{color: '#14D8C4', fontWeight: 400}}>.it</span></span>
+            <span style={{fontWeight: 800, color: '#191B4D', fontSize: '22px', letterSpacing: '-0.5px'}}>PDF<span style={{color: '#14D8C4', fontWeight: 400}}>.it</span></span>
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
@@ -145,7 +145,7 @@ export function HeaderBr() {
       )}
 
       {mobileMenuOpen && (
-        <nav className="fixed top-16 left-0 right-0 z-40 bg-white border-b border-gray-100 shadow-lg md:hidden">
+        <nav className="fixed top-16 left-0 right-0 z-40 bg-[#F3F4FF] border-b border-gray-100 shadow-lg md:hidden">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-3">
             <Link
               href="/br"

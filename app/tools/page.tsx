@@ -5,7 +5,7 @@ import { Wrench } from "lucide-react"
 
 export default function ToolsPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <Header />
       <main>
         {/* Hero Section */}

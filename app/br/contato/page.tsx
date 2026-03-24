@@ -40,7 +40,7 @@ export default function ContatoPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <HeaderBr />
       <main>
         {/* Hero */}

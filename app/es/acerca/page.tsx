@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 
 export default function AcercaPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <HeaderEs />
       <main>
         <section className="bg-[#191B4D] text-white py-16">

@@ -137,7 +137,7 @@ export default function HomePageEs() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <HeaderEs />
       <main>
         {/* Hero */}
@@ -261,7 +261,7 @@ export default function HomePageEs() {
         </section>
 
         {/* Trust Section */}
-        <section className="py-10 bg-white">
+        <section className="py-10 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
               {[
@@ -357,7 +357,7 @@ export default function HomePageEs() {
         </section>
 
         {/* FAQ */}
-        <section className="py-10 bg-white">
+        <section className="py-10 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-8">

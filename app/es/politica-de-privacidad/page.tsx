@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function PrivacyPolicyPageEs() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <HeaderEs />
       <main>
         {/* Hero */}

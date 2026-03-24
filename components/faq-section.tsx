@@ -132,7 +132,7 @@ export function FAQSection() {
       {/* JSON-LD Schema */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <section className="py-20 bg-white" aria-labelledby="faq-heading">
+      <section className="py-20 bg-[#F3F4FF]" aria-labelledby="faq-heading">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             {/* Header */}
@@ -180,7 +180,7 @@ export function FAQSection() {
                   </a>
                   <a
                     href="mailto:contact@pdf.it.com"
-                    className="inline-flex items-center justify-center px-6 py-3 bg-white hover:bg-gray-50 text-slate-700 font-semibold rounded-lg border border-gray-300 transition-colors duration-200"
+                    className="inline-flex items-center justify-center px-6 py-3 bg-[#F3F4FF] hover:bg-gray-50 text-slate-700 font-semibold rounded-lg border border-gray-300 transition-colors duration-200"
                   >
                     Email Us
                   </a>

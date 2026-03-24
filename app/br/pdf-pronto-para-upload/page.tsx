@@ -57,7 +57,7 @@ const faqSchema = {
 
 export default function PDFProntoParaUploadPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <Script
         id="faq-schema"
         type="application/ld+json"
@@ -117,7 +117,7 @@ export default function PDFProntoParaUploadPage() {
         </section>
 
         {/* About */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
               Cansado de portais rejeitarem seu PDF? A ferramenta PDF Pronto para Upload do PDF.it corrige os problemas mais comuns em um clique — arquivos muito grandes, campos de formulário em branco, anotações incompatíveis e funções PDF não suportadas. O resultado é um PDF limpo e universalmente compatível que funciona em qualquer lugar.
@@ -157,7 +157,7 @@ export default function PDFProntoParaUploadPage() {
         </section>
 
         {/* How To */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Preparar um PDF para Upload</h2>
             <div className="space-y-4">
@@ -202,7 +202,7 @@ export default function PDFProntoParaUploadPage() {
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">

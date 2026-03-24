@@ -11,7 +11,7 @@ export default async function WordToPDFPage() {
   if (error || !data?.user) redirect("/login?redirect=/tools/word-to-pdf")
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <Header />
       <main>
         <section className="bg-[#191B4D] text-white py-16">

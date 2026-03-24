@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function PDFToJPGPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <Header />
       <main>
         {/* Hero Section */}
@@ -45,7 +45,7 @@ export default function PDFToJPGPage() {
         </section>
 
         {/* Intro */}
-        <section className="py-10 bg-white">
+        <section className="py-10 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <p className="text-lg text-slate-600 leading-relaxed">
               Convert your PDF into high-quality JPG (JPEG) images with PDF.it. Upload a file, convert in seconds, and download each page as a separate image—perfect for sharing, slides, previews, and email.
@@ -89,7 +89,7 @@ export default function PDFToJPGPage() {
         </section>
 
         {/* How It Works */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">How to Convert PDF to JPG</h2>
             <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
@@ -144,7 +144,7 @@ export default function PDFToJPGPage() {
         </section>
 
         {/* FAQ */}
-        <section className="bg-white py-16">
+        <section className="bg-[#F3F4FF] py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-3xl font-black text-slate-900 mb-10 text-center">Frequently Asked Questions</h2>
             <div className="space-y-6">

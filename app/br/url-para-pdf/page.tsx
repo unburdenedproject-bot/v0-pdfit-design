@@ -68,7 +68,7 @@ const faqSchema = {
 
 export default function UrlParaPdfPageBr() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <Script
         id="faq-schema"
         type="application/ld+json"
@@ -126,7 +126,7 @@ export default function UrlParaPdfPageBr() {
         </section>
 
         {/* Why Use URL to PDF */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
             <h2 className="text-2xl font-black text-slate-900 mb-3 text-center">Por Que Converter URL para PDF?</h2>
             <div>
@@ -183,7 +183,7 @@ export default function UrlParaPdfPageBr() {
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
             <div className="space-y-6">

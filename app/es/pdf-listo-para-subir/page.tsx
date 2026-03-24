@@ -56,7 +56,7 @@ const faqSchema = {
 
 export default function PDFListoParaSubirPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <Script
         id="faq-schema"
         type="application/ld+json"
@@ -116,7 +116,7 @@ export default function PDFListoParaSubirPage() {
         </section>
 
         {/* About */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <p className="text-lg text-slate-600 mb-8">
               ¿Cansado de que los portales rechacen tu PDF? La herramienta PDF Listo para Subir de PDF.it corrige los problemas más comunes en un clic — archivos demasiado grandes, campos de formulario en blanco, anotaciones no compatibles y funciones PDF incompatibles. El resultado es un PDF limpio y universalmente compatible que funciona en todas partes.
@@ -156,7 +156,7 @@ export default function PDFListoParaSubirPage() {
         </section>
 
         {/* How To */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Preparar un PDF para Subir</h2>
             <div className="space-y-4">
@@ -201,7 +201,7 @@ export default function PDFListoParaSubirPage() {
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">

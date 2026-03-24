@@ -49,7 +49,7 @@ const faqSchema = {
 
 export default function ExtractFontsFromPDFPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <Script
         id="faq-schema"
         type="application/ld+json"
@@ -78,7 +78,7 @@ export default function ExtractFontsFromPDFPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-12 bg-white">
+        <section className="py-12 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Work with PDF Text Content</h2>
             <p className="text-slate-600 mb-6">While direct font extraction is coming soon, you can extract text content or convert PDFs to editable formats to identify and reuse text styling.</p>
@@ -106,7 +106,7 @@ export default function ExtractFontsFromPDFPage() {
         </section>
 
         {/* Feature Sections */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
             <div>
               <h2 className="text-2xl font-black text-slate-900 mb-3">Why People Extract Fonts from PDFs</h2>
@@ -151,7 +151,7 @@ export default function ExtractFontsFromPDFPage() {
         </section>
 
         {/* Related Tools */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-6 text-center">Related Tools</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
