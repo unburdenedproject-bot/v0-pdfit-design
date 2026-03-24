@@ -23,11 +23,10 @@ export function HeroSection() {
             </Link>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black mb-4 leading-tight text-balance">
-            PDF Tools Built for Legal, Accounting, Business Teams <span className="text-orange-500">and for Your Everyday Student</span>
+            Fix Any PDF Problem — Instantly
           </h1>
           <p className="text-lg sm:text-xl lg:text-2xl text-slate-300 mb-6 font-medium leading-relaxed max-w-3xl mx-auto text-pretty">
-            Compress, convert, extract tables, sign, and redact - in English, Spanish, and Portuguese.{" "}
-            <span className="text-orange-400">Now with AI ATS resume optimization and an AI resume builder.</span>
+            Compress, merge, convert and sign PDFs online. No install. Files deleted immediately after use.
           </p>
 
           <div className="flex flex-wrap justify-center gap-6 mb-6 text-sm font-semibold">
