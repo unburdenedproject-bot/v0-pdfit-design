@@ -84,7 +84,7 @@
 - First name required on signup (validation + stored in Supabase user_metadata)
 - Stripe webhook no longer overwrites user names (changed upsert → update)
 - Suspense boundary fix for useSearchParams() in auth/confirm pages
-- All OmnisPDF branding removed, replaced with PDF.it
+- All PDF.it branding removed, replaced with OmnisPDF
 
 ## SEO Cluster Pages Done (All 6 Clusters — ~100 pages)
 - Cluster 1 (Compression): 18 pages built
