@@ -8,13 +8,21 @@ export function HeroSection() {
     <section
       style={{
         background: `
-          radial-gradient(ellipse 80% 60% at 50% 20%, rgba(20,216,196,0.06) 0%, transparent 70%),
+          radial-gradient(ellipse 90% 70% at 50% 15%, rgba(20,216,196,0.12) 0%, transparent 70%),
+          radial-gradient(ellipse 60% 60% at 20% 80%, rgba(107,124,255,0.08) 0%, transparent 65%),
           radial-gradient(ellipse 50% 50% at 75% 35%, rgba(107,124,255,0.04) 0%, transparent 65%),
           #0E0F1E
         `,
       }}
       className="relative text-white pt-16 lg:pt-24 overflow-hidden"
     >
+      {/* Grain texture overlay */}
+      <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" style={{ opacity: 0.05 }}>
+        <filter id="grain">
+          <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+        </filter>
+        <rect width="100%" height="100%" filter="url(#grain)" />
+      </svg>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
 
@@ -62,8 +70,9 @@ export function HeroSection() {
                 color: "#0E0F1E",
                 fontWeight: 800,
                 border: "none",
+                boxShadow: "0 0 24px rgba(20, 216, 196, 0.45)",
               }}
-              className="py-3.5 px-8 rounded-xl text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 hover:opacity-90"
+              className="py-3.5 px-8 rounded-xl text-lg transition-all duration-300 hover:shadow-xl hover:scale-105 hover:opacity-90"
             >
               Start for free →
             </a>

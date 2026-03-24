@@ -382,13 +382,13 @@ function PricingCTA() {
 
 export function FeaturesGrid() {
   return (
-    <section id="tools" className="scroll-mt-16 py-10 bg-gradient-to-br from-gray-50 to-white">
+    <section id="tools" className="scroll-mt-16 py-10 bg-[#0E0F1E]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
-          <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-2 text-balance">
+          <h2 className="text-3xl lg:text-4xl font-black text-white mb-2 text-balance">
             All Tools
           </h2>
-          <p className="text-base text-slate-600 max-w-2xl mx-auto">
+          <p className="text-base text-slate-400 max-w-2xl mx-auto">
             PDF tools plus AI resume tools to optimize resumes for ATS and build new resumes fast.
           </p>
         </div>
@@ -398,10 +398,10 @@ export function FeaturesGrid() {
             <div key={categoryIndex}>
               {/* Category Header */}
               <div className="mb-3">
-                <h3 className="text-lg font-bold text-slate-900">
+                <h3 className="text-lg font-bold text-white">
                   {category.name}
                 </h3>
-                <p className="text-sm text-slate-500">
+                <p className="text-sm text-slate-400">
                   {category.description}
                 </p>
               </div>
@@ -412,18 +412,28 @@ export function FeaturesGrid() {
                   <Link
                     key={toolIndex}
                     href={tool.href}
-                    className="group flex flex-col items-center text-center rounded-xl border border-gray-200 bg-white p-4 hover:border-[#14D8C4]/30 hover:bg-[#191B4D]/5 hover:shadow-md transition-all duration-200"
+                    className="group flex flex-col items-center text-center rounded-xl p-4 hover:border-[#14D8C4]/30 hover:shadow-lg transition-all duration-200"
+                    style={{
+                      background: "rgba(255, 255, 255, 0.04)",
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      border: "1px solid rgba(255, 255, 255, 0.08)",
+                      boxShadow: "0 4px 24px rgba(0, 0, 0, 0.2)",
+                    }}
                   >
-                    <div className="w-10 h-10 bg-[#191B4D] rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200 shadow-sm">
+                    <div
+                      className="w-10 h-10 bg-[#191B4D] rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200"
+                      style={{ boxShadow: "0 0 16px rgba(20, 216, 196, 0.2)" }}
+                    >
                       <tool.icon className="h-5 w-5 text-[#14D8C4]" />
                     </div>
                     <div className="flex items-center gap-1.5 mb-1">
-                      <h4 className="text-sm font-bold text-slate-900 group-hover:text-[#14D8C4] transition-colors">
+                      <h4 className="text-sm font-bold text-white group-hover:text-[#14D8C4] transition-colors">
                         {tool.name}
                       </h4>
                       <TierBadge tier={tool.tier} />
                     </div>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <p className="text-xs text-slate-400 leading-relaxed">
                       {tool.description}
                     </p>
                   </Link>
