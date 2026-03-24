@@ -76,6 +76,7 @@ export default function SignUpPageEs() {
           emailRedirectTo:
             process.env.NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL ||
             `${window.location.origin}/es/dashboard`,
+          captchaToken: captchaToken ?? undefined,
           data: {
             full_name: firstName.trim(),
           },

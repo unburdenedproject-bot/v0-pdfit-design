@@ -76,6 +76,7 @@ export default function SignUpPagePt() {
           emailRedirectTo:
             process.env.NEXT_PUBLIC_DEV_SUPABASE_REDIRECT_URL ||
             `${window.location.origin}/br/painel`,
+          captchaToken: captchaToken ?? undefined,
           data: {
             full_name: firstName.trim(),
           },

@@ -41,7 +41,7 @@ function LoginForm() {
     setResetError(null)
     try {
       const { error } = await supabase.auth.resetPasswordForEmail(resetEmail, {
-        redirectTo: `${window.location.origin}/br/painel`,
+        redirectTo: `${window.location.origin}/reset-password`,
       })
       if (error) throw error
       setResetSent(true)
@@ -74,6 +74,7 @@ function LoginForm() {
       const { error } = await supabase.auth.signInWithPassword({
         email,
         password,
+        options: { captchaToken: captchaToken ?? undefined },
       })
       if (error) throw error
       window.location.href = redirectTo
@@ -188,7 +189,7 @@ function LoginForm() {
                       className="border-slate-200 focus-visible:ring-orange-500"
                     />
                   </div>
-                  <div className="flex justify-center min-h-[78px]">
+                  <div className="flex justify-center overflow-hidden min-h-[78px]">
                     <HCaptcha
                       sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY!}
                       onVerify={(token) => setCaptchaToken(token)}
