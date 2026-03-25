@@ -361,25 +361,26 @@ Used by: url-to-pdf
 
 When a tool requires a paid plan (Pro, Business, Enterprise) and the user is on a free tier, the Processing Interface component renders an **upgrade card** instead of the tool. This card must match the dark cinematic aesthetic — never use flat white cards with light backgrounds.
 
-- **Section background**: Dark `#0E0F1E` with subtle gold-tinted radial gradient (`rgba(214,179,106,0.04)`)
-- **Card border**: Champagne gold metallic — `linear-gradient(135deg, #D6B36A, #E0C27A 30%, rgba(214,179,106,0.4) 50%, #E0C27A 70%, #D6B36A)` — `p-[1.5px]` for a slightly thicker premium border
-- **"Most Popular" badge**: Pinned to top center of card — `absolute top-0 left-1/2 -translate-x-1/2`, gold gradient background (`#D6B36A` → `#E0C27A`), dark text `#0E0F1E`, `text-[10px] font-bold uppercase tracking-widest`
-- **Card inner**: Glassmorphism with a gold radial glow at top center (`rgba(214,179,106,0.08)`), inset gold highlight (`inset 0 1px 1px rgba(214,179,106,0.1)`), outer gold ambient glow (`0 0 40px rgba(214,179,106,0.06)`)
-- **Icon**: Dark gradient (`#1e2345` → `#2a2f55`) with gold glow — `boxShadow: "0 0 30px rgba(214,179,106,0.3), 0 0 60px rgba(214,179,106,0.1)"`. Crown icon in gold `text-[#E0C27A]`
-- **Title**: `text-white`, larger font (pre-gate: `text-2xl font-black`, error cards: `text-3xl sm:text-4xl font-black`)
-- **Subtitle**: `text-[#E0C27A]` gold (e.g., "Upgrade to Pro")
-- **Description**: `text-slate-400`, `text-base`
-- **Primary CTA**: `bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E]` (teal button — the action color stays teal)
+- **Section background**: Dark `#0E0F1E` with standard radial gradients (same as other sections)
+- **Card border**: Standard metallic gradient with a subtle gold accent woven in — `rgba(214,179,106,0.3)` added to the existing teal/purple/orange gradient
+- **Card inner**: Standard glassmorphism plus a faint gold radial glow at top center — `radial-gradient(ellipse 40% 30% at 50% 0%, rgba(214,179,106,0.05) 0%, transparent 50%)`
+- **Icon**: Standard dark gradient box with a warm gold glow instead of teal — `boxShadow: "0 0 20px rgba(214,179,106,0.25)"`. Crown icon in gold `text-[#E0C27A]`
+- **Title**: `text-white`
+- **Subtitle**: `text-[#14D8C4]` (stays teal)
+- **Description**: `text-slate-400`
+- **Primary CTA**: `bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E]` (teal button)
 - **Secondary CTA**: Ghost/outline with `border-[rgba(255,255,255,0.15)] text-slate-300`
 
-### Color tokens for upgrade cards
+The gold is intentionally subtle — just enough to distinguish the upgrade card from standard tool cards. Only 3 things carry the gold: the crown icon color, the icon glow, and a faint warm tint in the border gradient and inner radial.
+
+### Gold accent tokens (upgrade cards only)
 
 | Token | Value | Usage |
 |---|---|---|
-| Champagne gold | `#D6B36A` | Border gradient start, badge bg |
-| Light gold | `#E0C27A` | Border gradient mid, crown icon, subtitle text |
-| Gold glow | `rgba(214,179,106,0.3)` | Icon box-shadow, ambient glow |
-| Gold tint | `rgba(214,179,106,0.08)` | Card inner radial gradient |
+| Gold icon | `#E0C27A` | Crown icon color |
+| Gold glow | `rgba(214,179,106,0.25)` | Icon box-shadow |
+| Gold border accent | `rgba(214,179,106,0.3)` | One stop in the metallic border gradient |
+| Gold inner tint | `rgba(214,179,106,0.05)` | Faint radial glow at card top center |
 
 This applies to all 3 card types:
 1. **Pre-gate** (tool blocked before loading — e.g., url-pdf-interface, paid-only tools)
