@@ -266,9 +266,20 @@ export default function HomePagePt() {
         </section>
 
         {/* Trust Section */}
-        <section className="py-10 bg-[#F3F4FF]">
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
               {[
                 { icon: Shield, label: "Seguranca", value: "HTTPS", description: "Transferencia criptografada com TLS" },
                 { icon: Zap, label: "Velocidade", value: "Rapido", description: "Segundos para a maioria dos arquivos" },
@@ -276,50 +287,63 @@ export default function HomePagePt() {
                 { icon: Gift, label: "Conversoes Gratis", value: "10/dia", description: "Ilimitadas com Pro" },
               ].map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-2">
-                    <stat.icon className="h-5 w-5 text-orange-600" />
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20,216,196,0.2)",
+                    }}
+                  >
+                    <stat.icon className="h-5 w-5 text-[#14D8C4]" />
                   </div>
-                  <div className="text-2xl font-black text-slate-900 mb-0.5">{stat.value}</div>
-                  <div className="text-xs font-semibold text-slate-700">{stat.label}</div>
-                  <div className="text-xs text-slate-500">{stat.description}</div>
+                  <div className="text-2xl font-black text-white mb-0.5">{stat.value}</div>
+                  <div className="text-xs font-semibold text-[#14D8C4]">{stat.label}</div>
+                  <div className="text-xs text-slate-400">{stat.description}</div>
                 </div>
               ))}
             </div>
 
             {/* Social Proof */}
-            <div className="bg-slate-50 rounded-2xl p-6 mb-10 border border-slate-100">
+            <div
+              className="rounded-2xl p-6 mb-12"
+              style={{
+                background: "rgba(255,255,255,0.04)",
+                border: "1px solid rgba(255,255,255,0.08)",
+                backdropFilter: "blur(12px)",
+              }}
+            >
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
                 <div>
-                  <div className="text-2xl font-black text-slate-900">30+</div>
-                  <div className="text-sm text-slate-600">Ferramentas PDF em um so lugar</div>
+                  <div className="text-2xl font-black text-white">30+</div>
+                  <div className="text-sm text-slate-400">Ferramentas PDF em um so lugar</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-black text-slate-900">3 Idiomas</div>
-                  <div className="text-sm text-slate-600">Ingles, espanhol, portugues</div>
+                  <div className="text-2xl font-black text-white">3 Idiomas</div>
+                  <div className="text-sm text-slate-400">Ingles, espanhol, portugues</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-black text-slate-900">4 Planos</div>
-                  <div className="text-sm text-slate-600">Gratis, Pro, Business, Enterprise</div>
+                  <div className="text-2xl font-black text-white">4 Planos</div>
+                  <div className="text-sm text-slate-400">Gratis, Pro, Business, Enterprise</div>
                 </div>
               </div>
-              <div className="mt-4 flex flex-wrap justify-center gap-3 text-xs text-slate-500">
-                <span className="bg-white px-3 py-1.5 rounded-full border border-slate-200">Equipes juridicas</span>
-                <span className="bg-white px-3 py-1.5 rounded-full border border-slate-200">Profissionais contabeis</span>
-                <span className="bg-white px-3 py-1.5 rounded-full border border-slate-200">Laboratorios de pesquisa</span>
-                <span className="bg-white px-3 py-1.5 rounded-full border border-slate-200">Estudantes em todo o mundo</span>
+              <div className="mt-4 flex flex-wrap justify-center gap-3 text-xs text-slate-400">
+                <span className="px-3 py-1.5 rounded-full" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>Equipes juridicas</span>
+                <span className="px-3 py-1.5 rounded-full" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>Profissionais contabeis</span>
+                <span className="px-3 py-1.5 rounded-full" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>Laboratorios de pesquisa</span>
+                <span className="px-3 py-1.5 rounded-full" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>Estudantes em todo o mundo</span>
               </div>
             </div>
 
-            <div className="text-center mb-6">
-              <h2 className="text-2xl lg:text-3xl font-black text-slate-900 mb-2 text-balance">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl lg:text-3xl font-black text-white mb-2 text-balance">
                 Por Que PDF.it?
               </h2>
-              <p className="text-base text-slate-600 max-w-2xl mx-auto">
+              <p className="text-base text-slate-400 max-w-2xl mx-auto">
                 Ferramentas PDF online com funcoes Pro quando voce precisar — converta, comprima, una, divida e digitalize no seu navegador.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
               {[
                 { icon: Gift, title: "Gratis para Comecar", description: "10 conversoes gratis por dia. Sem cartao de credito." },
                 { icon: Zap, title: "Processamento Rapido", description: "Converta PDFs em segundos — sem instalar nada." },
@@ -327,31 +351,55 @@ export default function HomePagePt() {
                 { icon: Award, title: "Alta Qualidade", description: "Projetado para manter texto claro, layout limpo e formatacao intacta." },
               ].map((feature, index) => (
                 <div key={index} className="text-center">
-                  <div className="w-11 h-11 bg-[#191B4D] rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <feature.icon className="h-5 w-5 text-orange-500" />
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(107,124,255,0.2)",
+                    }}
+                  >
+                    <feature.icon className="h-5 w-5 text-[#14D8C4]" />
                   </div>
-                  <h3 className="text-base font-bold text-slate-900 mb-1">{feature.title}</h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">{feature.description}</p>
+                  <h3 className="text-base font-bold text-white mb-1">{feature.title}</h3>
+                  <p className="text-xs text-slate-400 leading-relaxed">{feature.description}</p>
                 </div>
               ))}
             </div>
 
             <div className="text-center">
-              <div className="bg-[#191B4D] rounded-2xl p-8 max-w-3xl mx-auto">
+              <div
+                className="rounded-2xl p-8 max-w-3xl mx-auto"
+                style={{
+                  background: "linear-gradient(135deg, rgba(20,216,196,0.08), rgba(107,124,255,0.06), rgba(232,129,58,0.04))",
+                  border: "1px solid rgba(20,216,196,0.15)",
+                  boxShadow: "0 0 40px rgba(20,216,196,0.08), 0 8px 32px rgba(0,0,0,0.3)",
+                }}
+              >
                 <h3 className="text-xl font-black text-white mb-2 text-balance">Pronto para converter seu primeiro arquivo?</h3>
-                <p className="text-slate-300 text-sm mb-5 max-w-xl mx-auto leading-relaxed">
+                <p className="text-slate-400 text-sm mb-5 max-w-xl mx-auto leading-relaxed">
                   10 conversoes gratis por dia. Sem conta necessaria para ferramentas gratuitas. Atualize quando quiser.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <a
                     href="#tools"
-                    className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors shadow-lg hover:shadow-xl"
+                    className="font-bold py-2.5 px-6 rounded-xl text-sm transition-all duration-300 hover:scale-105"
+                    style={{
+                      background: "linear-gradient(135deg, #14D8C4, #0FBFB0)",
+                      color: "#0E0F1E",
+                      boxShadow: "0 0 20px rgba(20,216,196,0.4), 0 4px 12px rgba(0,0,0,0.3)",
+                      border: "1px solid rgba(255,255,255,0.15)",
+                    }}
                   >
                     Comecar Gratis
                   </a>
                   <Link
                     href="/br/precos"
-                    className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-all border border-white/20 hover:border-white/40"
+                    className="font-bold py-2.5 px-6 rounded-xl text-sm transition-all duration-300 hover:scale-105 text-white"
+                    style={{
+                      background: "rgba(255,255,255,0.06)",
+                      border: "1px solid rgba(255,255,255,0.15)",
+                      boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+                    }}
                   >
                     Ver Planos
                   </Link>
