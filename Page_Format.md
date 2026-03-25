@@ -357,6 +357,28 @@ Used by: url-to-pdf
 
 ---
 
+## Upgrade / Tier-Gating Card
+
+When a tool requires a paid plan (Pro, Business, Enterprise) and the user is on a free tier, the Processing Interface component renders an **upgrade card** instead of the tool. This card must match the dark cinematic aesthetic — never use flat white cards with light backgrounds.
+
+- **Section background**: Dark `#0E0F1E` with subtle radial gradients (same as Feature Blocks)
+- **Card**: Metallic border wrapper (`rounded-2xl p-[1px]`) + glassmorphism inner (`rounded-[15px]`)
+- **Icon**: Dark gradient circle/square with teal glow, Crown icon in `text-[#14D8C4]`
+- **Title**: `text-white` (e.g., "Pro Feature", "You're out of free conversions")
+- **Subtitle**: `text-[#14D8C4]` (e.g., "Upgrade to Pro")
+- **Description**: `text-slate-400`
+- **Primary CTA**: `bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E]` (dark text on teal button)
+- **Secondary CTA**: Ghost/outline with `border-[rgba(255,255,255,0.15)] text-slate-300`
+
+This applies to all 3 card types:
+1. **Pre-gate** (tool blocked before loading — e.g., url-pdf-interface, paid-only tools)
+2. **Upgrade required** (conversion fails because tool requires higher plan)
+3. **Daily limit reached** (free conversion quota exhausted)
+
+Components that render this card: `processing-interface.tsx`, `url-pdf-interface.tsx`, and any other interface component with `isPaidUser` checks.
+
+---
+
 ## Prohibited Elements
 
 These elements must NOT appear on any tool page:
@@ -373,6 +395,7 @@ These elements must NOT appear on any tool page:
 - **No `bg-gray-50`** sections — use `bg-[#F3F4FF]` for light sections
 - **No vertical step lists** with orange circles — always horizontal flex with dark gradient circles
 - **No `<Script>` at the top** of the component — always at the bottom of `<main>`
+- **No flat white upgrade cards** (`bg-white`, `border-slate-200`, `bg-orange-100` icon) — always dark glassmorphism with metallic border
 
 ---
 

@@ -853,34 +853,70 @@ export function ProcessingInterface({
 
     if (isUpgradeError) {
       return (
-        <section className="py-16">
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl mx-auto text-center">
-              <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Crown className="h-10 w-10 text-orange-500" />
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-2">This is a Pro Feature</h2>
-              <p className="text-xl sm:text-2xl font-bold text-orange-600 mb-4">Upgrade to Pro</p>
-              <p className="text-base sm:text-lg text-slate-600 mb-8">
-                Upgrade to unlock this tool and get unlimited conversions, files up to 200MB, batch processing, and more. Need files up to 1GB? Try Business.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <Button
-                  onClick={() => {
-                    const toolSlug = encodeURIComponent(toolName.toLowerCase().trim().replace(/\s+/g, "-"))
-                    router.push(`${pricingUrl}?source=upgrade&tool=${toolSlug}`)
+            <div className="max-w-2xl mx-auto">
+              <div
+                className="rounded-2xl p-[1px]"
+                style={{
+                  background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                }}
+              >
+                <div
+                  className="rounded-[15px] p-8 text-center"
+                  style={{
+                    background: `
+                      radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                      radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                      rgba(255, 255, 255, 0.07)
+                    `,
+                    backdropFilter: "blur(12px)",
+                    WebkitBackdropFilter: "blur(12px)",
+                    boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 4px 24px rgba(0,0,0,0.3)",
                   }}
-                  className="bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl px-6 py-3"
                 >
-                  Upgrade to Pro
-                </Button>
-                <Button
-                  variant="outline"
-                  onClick={resetInterface}
-                  className="border border-slate-200 text-slate-700 rounded-xl px-6 py-3"
-                >
-                  Go Back
-                </Button>
+                  <div
+                    className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                    }}
+                  >
+                    <Crown className="h-10 w-10 text-[#14D8C4]" />
+                  </div>
+                  <h2 className="text-3xl sm:text-4xl font-black text-white mb-2">This is a Pro Feature</h2>
+                  <p className="text-xl sm:text-2xl font-bold text-[#14D8C4] mb-4">Upgrade to Pro</p>
+                  <p className="text-base sm:text-lg text-slate-400 mb-8">
+                    Upgrade to unlock this tool and get unlimited conversions, files up to 200MB, batch processing, and more. Need files up to 1GB? Try Business.
+                  </p>
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <Button
+                      onClick={() => {
+                        const toolSlug = encodeURIComponent(toolName.toLowerCase().trim().replace(/\s+/g, "-"))
+                        router.push(`${pricingUrl}?source=upgrade&tool=${toolSlug}`)
+                      }}
+                      className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold rounded-xl px-6 py-3"
+                    >
+                      Upgrade to Pro
+                    </Button>
+                    <Button
+                      variant="outline"
+                      onClick={resetInterface}
+                      className="border border-[rgba(255,255,255,0.15)] text-slate-300 hover:text-white hover:border-[rgba(255,255,255,0.3)] rounded-xl px-6 py-3"
+                    >
+                      Go Back
+                    </Button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -890,34 +926,70 @@ export function ProcessingInterface({
 
     if (isLimitError) {
       return (
-        <section className="py-16">
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl mx-auto text-center">
-              <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Crown className="h-10 w-10 text-orange-500" />
-              </div>
-              <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-2">{"You're out of free conversions"}</h2>
-              <p className="text-xl sm:text-2xl font-bold text-orange-600 mb-4">Upgrade to Pro</p>
-              <p className="text-base sm:text-lg text-slate-600 mb-8">
-                {"Free includes 10 conversions per day. Upgrade for unlimited conversions."}
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <Button
-                  onClick={() => {
-                    const toolSlug = encodeURIComponent(toolName.toLowerCase().trim().replace(/\s+/g, "-"))
-                    router.push(`${pricingUrl}?source=limit&tool=${toolSlug}`)
+            <div className="max-w-2xl mx-auto">
+              <div
+                className="rounded-2xl p-[1px]"
+                style={{
+                  background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                }}
+              >
+                <div
+                  className="rounded-[15px] p-8 text-center"
+                  style={{
+                    background: `
+                      radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                      radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                      rgba(255, 255, 255, 0.07)
+                    `,
+                    backdropFilter: "blur(12px)",
+                    WebkitBackdropFilter: "blur(12px)",
+                    boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 4px 24px rgba(0,0,0,0.3)",
                   }}
-                  className="bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl px-6 py-3"
                 >
-                  Upgrade to Pro
-                </Button>
-                <Button
-                  variant="outline"
-                  onClick={() => router.push(dashboardUrl)}
-                  className="border border-slate-200 text-slate-700 rounded-xl px-6 py-3"
-                >
-                  Back to Dashboard
-                </Button>
+                  <div
+                    className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                    }}
+                  >
+                    <Crown className="h-10 w-10 text-[#14D8C4]" />
+                  </div>
+                  <h2 className="text-3xl sm:text-4xl font-black text-white mb-2">{"You're out of free conversions"}</h2>
+                  <p className="text-xl sm:text-2xl font-bold text-[#14D8C4] mb-4">Upgrade to Pro</p>
+                  <p className="text-base sm:text-lg text-slate-400 mb-8">
+                    {"Free includes 10 conversions per day. Upgrade for unlimited conversions."}
+                  </p>
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <Button
+                      onClick={() => {
+                        const toolSlug = encodeURIComponent(toolName.toLowerCase().trim().replace(/\s+/g, "-"))
+                        router.push(`${pricingUrl}?source=limit&tool=${toolSlug}`)
+                      }}
+                      className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold rounded-xl px-6 py-3"
+                    >
+                      Upgrade to Pro
+                    </Button>
+                    <Button
+                      variant="outline"
+                      onClick={() => router.push(dashboardUrl)}
+                      className="border border-[rgba(255,255,255,0.15)] text-slate-300 hover:text-white hover:border-[rgba(255,255,255,0.3)] rounded-xl px-6 py-3"
+                    >
+                      Back to Dashboard
+                    </Button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
