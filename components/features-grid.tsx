@@ -442,23 +442,28 @@ export function FeaturesGrid() {
                     key={toolIndex}
                     className="rounded-xl p-[1px]"
                     style={{
-                      background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(20,216,196,0.1))",
+                      background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
                     }}
                   >
                     <Link
                       href={tool.href}
                       className="group flex flex-col items-center text-center rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full tool-card-hover"
                       style={{
-                        background: "rgba(255, 255, 255, 0.07)",
+                        background: `
+                          radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                          radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                          rgba(255, 255, 255, 0.07)
+                        `,
                         backdropFilter: "blur(12px)",
                         WebkitBackdropFilter: "blur(12px)",
+                        boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
                       }}
                     >
                       <div
                         className="w-10 h-10 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200"
                         style={{
                           background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
-                          boxShadow: "0 0 20px rgba(20, 216, 196, 0.35)",
+                          boxShadow: "0 0 20px rgba(20, 216, 196, 0.35), 0 4px 8px rgba(232,129,58,0.1)",
                         }}
                       >
                         <tool.icon className="h-5 w-5 text-[#14D8C4]" />

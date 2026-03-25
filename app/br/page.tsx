@@ -14,7 +14,7 @@ import {
 function TierBadge({ tier }: { tier: "FREE" | "PRO" | "BUSINESS" | "ENTERPRISE" }) {
   if (tier === "ENTERPRISE") {
     return (
-      <span className="bg-amber-100 text-amber-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
+      <span className="bg-slate-900 text-white border border-slate-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
         Enterprise
       </span>
     )
@@ -191,13 +191,24 @@ export default function HomePagePt() {
         </section>
 
         {/* Tools Grid */}
-        <section id="tools" className="scroll-mt-16 py-10 bg-gradient-to-br from-gray-50 to-white">
+        <section
+          id="tools"
+          className="scroll-mt-16 py-14"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 0% 50%, rgba(107,124,255,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8">
-              <h2 className="text-3xl lg:text-4xl font-black text-slate-900 mb-2 text-balance">
+              <h2 className="text-3xl lg:text-4xl font-black text-white mb-2 text-balance">
                 Todas as Ferramentas
               </h2>
-              <p className="text-base text-slate-600 max-w-2xl mx-auto">
+              <p className="text-base text-slate-400 max-w-2xl mx-auto">
                 Tudo o que voce precisa para trabalhar com PDFs em segundos.
               </p>
             </div>
@@ -206,50 +217,91 @@ export default function HomePagePt() {
               {categories.map((category, categoryIndex) => (
                 <div key={categoryIndex}>
                   <div className="mb-3">
-                    <h3 className="text-lg font-bold text-slate-900">{category.name}</h3>
-                    <p className="text-sm text-slate-500">{category.description}</p>
+                    <h3 className="text-lg font-extrabold text-white">{category.name}</h3>
+                    <p className="text-sm text-[#6B7CFF]">{category.description}</p>
                   </div>
                   <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
                     {category.tools.map((tool, toolIndex) => (
-                      <Link
+                      <div
                         key={toolIndex}
-                        href={tool.href}
-                        className="group flex flex-col items-center text-center rounded-xl border border-gray-200 bg-white p-4 hover:border-orange-200 hover:bg-orange-50/40 hover:shadow-md transition-all duration-200"
+                        className="rounded-xl p-[1px]"
+                        style={{
+                          background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                        }}
                       >
-                        <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200 shadow-sm">
-                          <tool.icon className="h-5 w-5 text-white" />
-                        </div>
-                        <div className="flex items-center gap-1.5 mb-1">
-                          <h4 className="text-sm font-bold text-slate-900 group-hover:text-orange-600 transition-colors">{tool.name}</h4>
-                          <TierBadge tier={tool.tier} />
-                        </div>
-                        <p className="text-xs text-slate-500 leading-relaxed">{tool.description}</p>
-                      </Link>
+                        <Link
+                          href={tool.href}
+                          className="group flex flex-col items-center text-center rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full"
+                          style={{
+                            background: `
+                              radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                              radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                              rgba(255, 255, 255, 0.07)
+                            `,
+                            backdropFilter: "blur(12px)",
+                            WebkitBackdropFilter: "blur(12px)",
+                            boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                          }}
+                        >
+                          <div
+                            className="w-10 h-10 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200"
+                            style={{
+                              background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                              boxShadow: "0 0 20px rgba(20, 216, 196, 0.35), 0 4px 8px rgba(232,129,58,0.1)",
+                            }}
+                          >
+                            <tool.icon className="h-5 w-5 text-[#14D8C4]" />
+                          </div>
+                          <div className="flex items-center gap-1.5 mb-1">
+                            <h4 className="text-sm font-bold text-white group-hover:text-[#14D8C4] transition-colors">{tool.name}</h4>
+                            <TierBadge tier={tool.tier} />
+                          </div>
+                          <p className="text-xs text-slate-400 leading-relaxed">{tool.description}</p>
+                        </Link>
+                      </div>
                     ))}
                   </div>
                 </div>
               ))}
 
               {/* Pricing CTA */}
-              <div className="max-w-2xl mx-auto my-8">
-                <div className="bg-[#191B4D] rounded-2xl p-8 text-center">
+              <div className="max-w-2xl mx-auto my-10">
+                <div
+                  className="rounded-2xl p-8 text-center"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.08), rgba(107,124,255,0.06), rgba(232,129,58,0.04))",
+                    border: "1px solid rgba(20,216,196,0.15)",
+                    boxShadow: "0 0 40px rgba(20,216,196,0.08), 0 8px 32px rgba(0,0,0,0.3)",
+                  }}
+                >
                   <h3 className="text-xl font-black text-white mb-2 text-balance">
                     Precisa de conversoes ilimitadas ou arquivos maiores?
                   </h3>
-                  <p className="text-slate-300 text-sm mb-5 max-w-lg mx-auto leading-relaxed">
+                  <p className="text-slate-400 text-sm mb-5 max-w-lg mx-auto leading-relaxed">
                     Atualize para Pro para conversoes ilimitadas, processamento em lote e todas as ferramentas — $7.99/mes. Precisa de assinatura eletronica e automacao? Experimente Business por $13.99/mes.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <Link
                       href="/br/precos"
-                      className="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors shadow-lg hover:shadow-xl"
+                      className="inline-flex items-center justify-center gap-2 font-bold py-2.5 px-6 rounded-xl text-sm transition-all duration-300 hover:scale-105"
+                      style={{
+                        background: "linear-gradient(135deg, #14D8C4, #0FBFB0)",
+                        color: "#0E0F1E",
+                        boxShadow: "0 0 20px rgba(20,216,196,0.4), 0 4px 12px rgba(0,0,0,0.3)",
+                        border: "1px solid rgba(255,255,255,0.15)",
+                      }}
                     >
                       <Crown className="h-4 w-4" />
                       Atualizar para Pro
                     </Link>
                     <Link
                       href="/br/precos"
-                      className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-all border border-white/20 hover:border-white/40"
+                      className="inline-flex items-center justify-center gap-2 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-all duration-300 hover:scale-105"
+                      style={{
+                        background: "rgba(255,255,255,0.06)",
+                        border: "1px solid rgba(255,255,255,0.15)",
+                        boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+                      }}
                     >
                       Ver Planos
                     </Link>

@@ -197,3 +197,27 @@
 **What:** After the OmnisPDF → PDF.it rebrand, COMPLETED.md still had "OmnisPDF" in the header and stale GA4/GTM IDs. Line 87 ("All PDF.it branding removed, replaced with OmnisPDF") describes the *original* v0-generated project's state and must stay as-is — reversing it changes the historical meaning.
 **Why it matters:** A global find-and-replace on "OmnisPDF" → "PDF.it" in COMPLETED.md inverts the meaning of historical entries that describe what *was* replaced. Historical notes should reflect what happened at that time, not the current brand.
 **Apply when:** When updating documentation after a rebrand — only change the document header and forward-looking sections. Leave historical entries that describe past actions as they were.
+
+## 2026-03-24 — Footer components are Server Components — no onClick handlers
+
+**What:** Adding `onClick={(e) => e.preventDefault()}` to social media `<a>` tags in footer.tsx broke the Next.js build with "Event handlers cannot be passed to Client Component props." The footers don't have `"use client"` and are rendered as Server Components.
+**Why it matters:** The build failure only surfaced during `pnpm run build`, not during dev. The Vercel deployment failed silently.
+**Apply when:** Before adding any event handler (onClick, onChange, onSubmit) to a component — check if it has `"use client"` at the top. If not, either add it or find an alternative that doesn't require client-side JS.
+
+## 2026-03-24 — Glassmorphism requires a dark background to be visible
+
+**What:** Glassmorphism (rgba white bg + backdrop-blur + subtle border) is invisible on light backgrounds. The tool cards looked identical to plain white cards on the `bg-gradient-to-br from-gray-50 to-white` section. Had to change the section background to `#0E0F1E` before the glass effect became visible.
+**Why it matters:** Glass effects work by contrasting translucent white against a dark surface. Without the dark surface, there's nothing for the glass to "float above."
+**Apply when:** Any time adding glassmorphism — always set the parent section to a dark background first. Light sections need a different visual treatment (e.g., white cards with shadows).
+
+## 2026-03-24 — When switching backgrounds from light to dark, audit all child text colors
+
+**What:** Changing the "Still have questions?" boxes from beige (from-orange-50 to-orange-100) to dark navy (#191B4D) left `text-slate-900` headings and `text-slate-700` body text — completely unreadable on dark. Same issue hit the "Our Mission" box on 3 about pages. Every child element's color must be updated when a container background changes.
+**Why it matters:** sed-based background replacements only change the container — they don't cascade to fix child text colors. The bug is invisible in code review because `text-slate-900` looks fine in isolation.
+**Apply when:** Any time changing a container from light to dark (or vice versa) — immediately grep for all child text classes and update them. Use a checklist: headings → body text → links → icons → badges → buttons.
+
+## 2026-03-24 — Paula's visual north star: metallic, dimensional, cinematic
+
+**What:** Paula wants every page to feel like a luxury tech brand — dark backgrounds that glow from within, metallic gradient borders, 3D buttons with colored shadows, atmospheric light that bleeds through surfaces. The teal (#14D8C4) + purple (#6B7CFF) + orange (#E8813A) triad creates the iridescent metallic feel. A touch of orange alongside teal makes it more powerful.
+**Why it matters:** This is the core design philosophy for PDF.it — not just "dark mode" but dimensional, cinematic UI where every element has depth and weight. "Perception sells" — the visual quality must signal premium within 3 seconds.
+**Apply when:** Every new page or component should follow this system: dark bg with radial glows, grain texture, glass cards with gradient borders, icon containers with colored glow, 3D buttons with pulse animation. Check against the homepage as the reference.

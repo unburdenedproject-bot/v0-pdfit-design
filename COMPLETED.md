@@ -238,6 +238,18 @@
 - **Billing toggle localStorage** — Added to ES and BR pricing pages (EN already had it)
 - **Processing error messages** — Specific messages for 413/too large, 415/unsupported format, and network errors
 
+## Trilingual Parity Audit (March 25 2026)
+- Full audit of EN, ES, and BR locales — all three are in parity
+- All 97+ main PDF tool pages present in all 3 locales
+- All 81 /learn/ (EN), /aprender/ (ES), /aprender/ (BR) articles present in all 3 locales
+- Auth flows complete: login, signup, confirmation, error pages in all 3 locales
+- Legal pages (privacy policy, terms) present in all 3 locales
+- Static pages (about, contact, pricing, tools, tools A-Z) present in all 3 locales
+- Dashboard pages present in all 3 locales
+- All BR-specific components confirmed: header-br.tsx, footer-br.tsx, features-grid-br.tsx, dashboard-client-br.tsx
+- Route map (lib/route-map.ts) trilingual tuples verified correct
+- No missing pages found
+
 ## Google Search Console Status
 - Sitemap with 1,130+ URLs across EN/ES/BR — submitted 2026-03-12, updated 2026-03-18 (added URL to PDF)
 - DO NOT break any existing indexed pages
