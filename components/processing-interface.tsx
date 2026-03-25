@@ -857,45 +857,48 @@ export function ProcessingInterface({
           className="py-16"
           style={{
             background: `
-              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(192,197,206,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(214,179,106,0.04) 0%, transparent 50%),
               radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
               #0E0F1E
             `,
           }}
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl mx-auto">
+            <div className="max-w-2xl mx-auto relative">
               <div
-                className="rounded-2xl p-[1px]"
+                className="rounded-2xl p-[1.5px]"
                 style={{
-                  background: "linear-gradient(135deg, rgba(192,197,206,0.5), rgba(20,216,196,0.25), rgba(192,197,206,0.35), rgba(107,124,255,0.2), rgba(192,197,206,0.4))",
+                  background: "linear-gradient(135deg, #D6B36A, #E0C27A 30%, rgba(214,179,106,0.4) 50%, #E0C27A 70%, #D6B36A)",
                 }}
               >
                 <div
-                  className="rounded-[15px] p-8 text-center"
+                  className="rounded-[14.5px] p-8 pt-10 text-center relative overflow-hidden"
                   style={{
                     background: `
-                      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(192,197,206,0.06) 0%, transparent 50%),
+                      radial-gradient(ellipse 50% 40% at 50% 0%, rgba(214,179,106,0.08) 0%, transparent 50%),
                       radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.04) 0%, transparent 70%),
                       radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.03) 0%, transparent 60%),
                       rgba(255, 255, 255, 0.07)
                     `,
                     backdropFilter: "blur(12px)",
                     WebkitBackdropFilter: "blur(12px)",
-                    boxShadow: "inset 0 1px 1px rgba(255,255,255,0.08), inset 0 -1px 1px rgba(192,197,206,0.06), 0 4px 24px rgba(0,0,0,0.3)",
+                    boxShadow: "inset 0 1px 1px rgba(214,179,106,0.1), 0 4px 24px rgba(0,0,0,0.3), 0 0 40px rgba(214,179,106,0.06)",
                   }}
                 >
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest" style={{ background: "linear-gradient(135deg, #D6B36A, #E0C27A)", color: "#0E0F1E" }}>
+                    Most Popular
+                  </div>
                   <div
                     className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
                     style={{
                       background: "linear-gradient(135deg, #1e2345, #2a2f55)",
-                      boxShadow: "0 0 20px rgba(192,197,206,0.2), 0 4px 8px rgba(0,0,0,0.2)",
+                      boxShadow: "0 0 30px rgba(214,179,106,0.3), 0 0 60px rgba(214,179,106,0.1), 0 4px 8px rgba(0,0,0,0.2)",
                     }}
                   >
-                    <Crown className="h-10 w-10 text-[#C0C5CE]" />
+                    <Crown className="h-10 w-10 text-[#E0C27A]" />
                   </div>
                   <h2 className="text-3xl sm:text-4xl font-black text-white mb-2">This is a Pro Feature</h2>
-                  <p className="text-xl sm:text-2xl font-bold text-[#14D8C4] mb-4">Upgrade to Pro</p>
+                  <p className="text-xl sm:text-2xl font-bold text-[#E0C27A] mb-4">Upgrade to Pro</p>
                   <p className="text-base sm:text-lg text-slate-400 mb-8">
                     Upgrade to unlock this tool and get unlimited conversions, files up to 200MB, batch processing, and more. Need files up to 1GB? Try Business.
                   </p>
@@ -931,45 +934,48 @@ export function ProcessingInterface({
           className="py-16"
           style={{
             background: `
-              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(192,197,206,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(214,179,106,0.04) 0%, transparent 50%),
               radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
               #0E0F1E
             `,
           }}
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl mx-auto">
+            <div className="max-w-2xl mx-auto relative">
               <div
-                className="rounded-2xl p-[1px]"
+                className="rounded-2xl p-[1.5px]"
                 style={{
-                  background: "linear-gradient(135deg, rgba(192,197,206,0.5), rgba(20,216,196,0.25), rgba(192,197,206,0.35), rgba(107,124,255,0.2), rgba(192,197,206,0.4))",
+                  background: "linear-gradient(135deg, #D6B36A, #E0C27A 30%, rgba(214,179,106,0.4) 50%, #E0C27A 70%, #D6B36A)",
                 }}
               >
                 <div
-                  className="rounded-[15px] p-8 text-center"
+                  className="rounded-[14.5px] p-8 pt-10 text-center relative overflow-hidden"
                   style={{
                     background: `
-                      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(192,197,206,0.06) 0%, transparent 50%),
+                      radial-gradient(ellipse 50% 40% at 50% 0%, rgba(214,179,106,0.08) 0%, transparent 50%),
                       radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.04) 0%, transparent 70%),
                       radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.03) 0%, transparent 60%),
                       rgba(255, 255, 255, 0.07)
                     `,
                     backdropFilter: "blur(12px)",
                     WebkitBackdropFilter: "blur(12px)",
-                    boxShadow: "inset 0 1px 1px rgba(255,255,255,0.08), inset 0 -1px 1px rgba(192,197,206,0.06), 0 4px 24px rgba(0,0,0,0.3)",
+                    boxShadow: "inset 0 1px 1px rgba(214,179,106,0.1), 0 4px 24px rgba(0,0,0,0.3), 0 0 40px rgba(214,179,106,0.06)",
                   }}
                 >
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest" style={{ background: "linear-gradient(135deg, #D6B36A, #E0C27A)", color: "#0E0F1E" }}>
+                    Most Popular
+                  </div>
                   <div
                     className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
                     style={{
                       background: "linear-gradient(135deg, #1e2345, #2a2f55)",
-                      boxShadow: "0 0 20px rgba(192,197,206,0.2), 0 4px 8px rgba(0,0,0,0.2)",
+                      boxShadow: "0 0 30px rgba(214,179,106,0.3), 0 0 60px rgba(214,179,106,0.1), 0 4px 8px rgba(0,0,0,0.2)",
                     }}
                   >
-                    <Crown className="h-10 w-10 text-[#C0C5CE]" />
+                    <Crown className="h-10 w-10 text-[#E0C27A]" />
                   </div>
                   <h2 className="text-3xl sm:text-4xl font-black text-white mb-2">{"You're out of free conversions"}</h2>
-                  <p className="text-xl sm:text-2xl font-bold text-[#14D8C4] mb-4">Upgrade to Pro</p>
+                  <p className="text-xl sm:text-2xl font-bold text-[#E0C27A] mb-4">Upgrade to Pro</p>
                   <p className="text-base sm:text-lg text-slate-400 mb-8">
                     {"Free includes 10 conversions per day. Upgrade for unlimited conversions."}
                   </p>

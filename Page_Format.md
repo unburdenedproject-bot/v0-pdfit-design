@@ -361,17 +361,25 @@ Used by: url-to-pdf
 
 When a tool requires a paid plan (Pro, Business, Enterprise) and the user is on a free tier, the Processing Interface component renders an **upgrade card** instead of the tool. This card must match the dark cinematic aesthetic — never use flat white cards with light backgrounds.
 
-- **Section background**: Dark `#0E0F1E` with subtle silver-tinted radial gradients (`rgba(192,197,206,0.04)`)
-- **Card border**: Silver-tinted metallic gradient — `linear-gradient(135deg, rgba(192,197,206,0.5), rgba(20,216,196,0.25), rgba(192,197,206,0.35), rgba(107,124,255,0.2), rgba(192,197,206,0.4))` — this distinguishes it from standard teal/orange cards
-- **Card inner**: Glassmorphism with a silver radial glow at top center (`rgba(192,197,206,0.06)`), plus subtle inset highlight (`inset 0 1px 1px rgba(255,255,255,0.08)`)
-- **Icon**: Slightly lighter dark gradient (`#1e2345` → `#2a2f55`) with silver glow (`rgba(192,197,206,0.2)`), Crown icon in silver `text-[#C0C5CE]`
-- **Title**: `text-white`
-- **Subtitle**: `text-[#14D8C4]` (e.g., "Upgrade to Pro")
-- **Description**: `text-slate-400`
-- **Primary CTA**: `bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E]` (dark text on teal button)
+- **Section background**: Dark `#0E0F1E` with subtle gold-tinted radial gradient (`rgba(214,179,106,0.04)`)
+- **Card border**: Champagne gold metallic — `linear-gradient(135deg, #D6B36A, #E0C27A 30%, rgba(214,179,106,0.4) 50%, #E0C27A 70%, #D6B36A)` — `p-[1.5px]` for a slightly thicker premium border
+- **"Most Popular" badge**: Pinned to top center of card — `absolute top-0 left-1/2 -translate-x-1/2`, gold gradient background (`#D6B36A` → `#E0C27A`), dark text `#0E0F1E`, `text-[10px] font-bold uppercase tracking-widest`
+- **Card inner**: Glassmorphism with a gold radial glow at top center (`rgba(214,179,106,0.08)`), inset gold highlight (`inset 0 1px 1px rgba(214,179,106,0.1)`), outer gold ambient glow (`0 0 40px rgba(214,179,106,0.06)`)
+- **Icon**: Dark gradient (`#1e2345` → `#2a2f55`) with gold glow — `boxShadow: "0 0 30px rgba(214,179,106,0.3), 0 0 60px rgba(214,179,106,0.1)"`. Crown icon in gold `text-[#E0C27A]`
+- **Title**: `text-white`, larger font (pre-gate: `text-2xl font-black`, error cards: `text-3xl sm:text-4xl font-black`)
+- **Subtitle**: `text-[#E0C27A]` gold (e.g., "Upgrade to Pro")
+- **Description**: `text-slate-400`, `text-base`
+- **Primary CTA**: `bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E]` (teal button — the action color stays teal)
 - **Secondary CTA**: Ghost/outline with `border-[rgba(255,255,255,0.15)] text-slate-300`
 
-The silver tone (`#C0C5CE` / `rgba(192,197,206,...)`) gives the upgrade card a distinct "premium gate" feel that separates it from the teal/orange tool cards elsewhere on the site.
+### Color tokens for upgrade cards
+
+| Token | Value | Usage |
+|---|---|---|
+| Champagne gold | `#D6B36A` | Border gradient start, badge bg |
+| Light gold | `#E0C27A` | Border gradient mid, crown icon, subtitle text |
+| Gold glow | `rgba(214,179,106,0.3)` | Icon box-shadow, ambient glow |
+| Gold tint | `rgba(214,179,106,0.08)` | Card inner radial gradient |
 
 This applies to all 3 card types:
 1. **Pre-gate** (tool blocked before loading — e.g., url-pdf-interface, paid-only tools)
