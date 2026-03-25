@@ -65,7 +65,7 @@ export async function checkUsageAndAuth(toolName: string) {
   } = await supabase.auth.getUser()
   if (!user) {
     const cookieStore = await cookies()
-    const cookieKey = `omnispdf_uses`
+    const cookieKey = `pdfit_uses`
     const current = parseInt(cookieStore.get(cookieKey)?.value || "0", 10)
 
     if (current >= ANON_LIMIT) {

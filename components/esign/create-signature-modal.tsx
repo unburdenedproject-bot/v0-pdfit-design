@@ -28,7 +28,7 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved, locale = "en
     locale === "es"
       ? {
           title: "Crear Firma",
-          description: "Crea una firma electrónica o iniciales para este PDF. OmniSPDF no guarda datos de firma después de tu sesión.",
+          description: "Crea una firma electrónica o iniciales para este PDF. PDF.it no guarda datos de firma después de tu sesión.",
           signature: "Firma",
           initials: "Iniciales",
           type: "Escribir",
@@ -70,7 +70,7 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved, locale = "en
       : locale === "br"
         ? {
             title: "Criar Assinatura",
-            description: "Crie uma assinatura eletrônica ou iniciais para este PDF. OmniSPDF não armazena dados de assinatura após a sua sessão.",
+            description: "Crie uma assinatura eletrônica ou iniciais para este PDF. PDF.it não armazena dados de assinatura após a sua sessão.",
             signature: "Assinatura",
             initials: "Iniciais",
             type: "Digitar",
@@ -111,7 +111,7 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved, locale = "en
           }
         : {
             title: "Create Signature",
-            description: "Create an electronic signature or initials for this PDF. OmniSPDF does not store signature data after your session.",
+            description: "Create an electronic signature or initials for this PDF. PDF.it does not store signature data after your session.",
             signature: "Signature",
             initials: "Initials",
             type: "Type",
@@ -575,7 +575,7 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved, locale = "en
                   </label>
                 </div>
                 <p className="text-xs text-slate-500">
-                  OmniSPDF does not store this signature. It is generated in-session so you can place it directly on the current document.
+                  PDF.it does not store this signature. It is generated in-session so you can place it directly on the current document.
                 </p>
               </div>
 

@@ -1085,7 +1085,7 @@ export function ProcessingInterface({
                     const objectUrl = URL.createObjectURL(zipBlob)
                     const link = document.createElement("a")
                     link.href = objectUrl
-                    link.download = `omnispdf-batch-${Date.now()}.zip`
+                    link.download = `pdfit-batch-${Date.now()}.zip`
                     link.style.display = "none"
                     document.body.appendChild(link)
                     link.click()
