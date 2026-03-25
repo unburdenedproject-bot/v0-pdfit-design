@@ -206,6 +206,38 @@
 - GA4 measurement ID updated to G-PWD4YNY710
 - GTM container ID updated to GTM-PNR9LXC2
 
+## Premium Visual Redesign (March 24 2026)
+- **Brand identity locked** — CLAUDE.md + BRAND.md rewritten with final PDF.it palette: #0E0F1E dark, #13152A secondary, #F3F4FF surface, #14D8C4 CTA, #6B7CFF support blue, iridescent wave gradient (#0A4A5C → #1E6FD9 → #E8813A)
+- **Sora + Inter fonts** — Google Fonts loaded in layout.tsx; Sora for headings (h1-h6), Inter for body; Tailwind config updated with font-sans and font-heading
+- **Dark cinematic homepage** — Hero: 4-layer radial gradient glows (teal 22%, orange 8%, purple 14%), SVG grain texture, gradient "Instantly." headline (teal → purple → orange)
+- **3D CTA buttons** — Primary: linear-gradient teal, inset highlight, breathing pulse glow animation (ctaGlow keyframes), 3D box-shadow with color; Secondary: glass outline with blur
+- **Glassmorphism tool cards** — Dark section bg (#0E0F1E) with atmospheric glows; cards wrapped in 1px gradient border (teal → purple → orange metallic); inner card: rgba(255,255,255,0.07) + backdrop-blur(12px); hover: translateY(-4px) + colored shadow
+- **Icon containers** — Gradient backgrounds (linear-gradient #1a1f5e → #252A6A) with teal glow shadows (0 0 20px rgba(20,216,196,0.35))
+- **Trust section** — Fully dark with glass social proof badges, gradient icon containers, iridescent CTA box
+- **Iridescent wave** — Updated gradient stops to full brand palette (#0A4A5C → #14D8C4 → #6B7CFF → #E8813A)
+- **Dark navbar** — Solid #0E0F1E background, white nav text, teal Sign In button with glow shadow
+- **Tools A-Z page** — Full cinematic treatment: atmospheric hero with grain, gradient "A-Z" text, glass letter nav, metallic-bordered tool cards, gradient letter markers with teal glow, colored tier badges (green/teal/purple/orange), 3D CTA at bottom
+- **"Still have questions?" boxes** — Replaced beige/cream (from-orange-50 to-orange-100) with dark navy (#191B4D) + white text + teal CTA buttons across all pages and locales
+- **Category headers** — font-extrabold (800) white titles, #6B7CFF purple subtitles
+- **Dark-on-dark text fix** — Fixed unreadable text-slate-800 on bg-[#191B4D] in Our Mission box across EN/ES/BR about pages
+- **User-facing OmnisPDF cleanup** — Replaced "OmniSPDF" in eSign modal (4 instances), batch zip filename, and cookie key with PDF.it equivalents
+- **Blog rename** — /blog/welcome-to-omnispdf → /blog/welcome-to-pdfit; updated slugs in EN/ES/BR blog listings and sitemap
+- **Sitemap cleanup** — Removed duplicate /tools/qr-code and /tools/word-to-pdf entries
+- **Footer social links build fix** — Removed onClick handlers from server component footer social links (was causing Next.js build failure)
+
+## Supabase Schema (March 24 2026)
+- Generated complete SQL schema at scripts/pdfit_complete_schema.sql for new PDF.it Supabase project
+- Tables: users (with plan check constraint), usage (daily counts), usage_logs (per-attempt audit), contact_messages
+- Includes RLS policies, indexes, auto-create trigger on auth.users signup
+- Code uses "users" table (not "profiles" from old migrations)
+
+## Bug Fixes — March 24 2026 (Additional)
+- **SB-34: "More Files" no scroll on mobile** — `resetInterface()` now scrolls to `#file-upload-zone` after reset
+- **SB-16: Pricing card text clipped on annual** — Added `min-h-[20px]` wrapper around conditional annual text in EN/ES/BR pricing pages
+- **SB-13/21: Language switcher** — Confirmed working; `getAlternateRoute()` logic and flag links are correct
+- **Billing toggle localStorage** — Added to ES and BR pricing pages (EN already had it)
+- **Processing error messages** — Specific messages for 413/too large, 415/unsupported format, and network errors
+
 ## Google Search Console Status
 - Sitemap with 1,130+ URLs across EN/ES/BR — submitted 2026-03-12, updated 2026-03-18 (added URL to PDF)
 - DO NOT break any existing indexed pages
