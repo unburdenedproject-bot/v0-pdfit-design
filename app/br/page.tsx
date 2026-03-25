@@ -3,12 +3,13 @@
 import { useEffect } from "react"
 import Link from "next/link"
 import { HeaderBr } from "@/components/header-br"
+import { HeroSectionBr } from "@/components/hero-section-br"
 import { FooterBr } from "@/components/footer-br"
 import {
-  Shield, ArrowRight, Crown, Gift, Zap, Globe, Award, HelpCircle,
+  Shield, Crown, Gift, Zap, Globe, Award, HelpCircle,
   FileText, FileSpreadsheet, Presentation, Image, Merge, Split, RotateCw,
   FileArchiveIcon as Compress, Lock, Unlock, Droplets, Scan, Camera, Mail,
-  Type, QrCode, ImageDown, Layers, Upload, PenTool, ArrowLeftRight, Repeat, Target, Sparkles, FilePlus,
+  Type, QrCode, ImageDown, Layers, Upload, PenTool, ArrowLeftRight, Repeat, Target, FilePlus,
 } from "lucide-react"
 
 function TierBadge({ tier }: { tier: "FREE" | "PRO" | "BUSINESS" | "ENTERPRISE" }) {
@@ -140,55 +141,7 @@ export default function HomePagePt() {
     <div className="min-h-screen bg-[#F3F4FF]">
       <HeaderBr />
       <main>
-        {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-14 lg:py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-black mb-4 leading-tight text-balance">
-                Ferramentas PDF para Equipes Juridicas, Contabeis, Empresariais <span className="text-orange-500">e para o Estudante do Dia a Dia</span>
-              </h1>
-              <p className="text-lg sm:text-xl lg:text-2xl text-slate-300 mb-6 font-medium leading-relaxed max-w-3xl mx-auto text-pretty">
-                Comprima, converta, extraia tabelas, assine e redija — em ingles, espanhol e portugues. A ferramenta de confianca de profissionais em todo o mundo.
-              </p>
-
-              <div className="flex flex-wrap justify-center gap-6 mb-6 text-sm font-semibold">
-                <div className="flex items-center gap-2">
-                  <Gift className="h-4 w-4 text-green-400" />
-                  <span>10 conversoes gratis/dia</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Shield className="h-4 w-4 text-orange-500" />
-                  <span>Arquivos removidos apos o uso</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Crown className="h-4 w-4 text-purple-400" />
-                  <span>Pro: Acesso Ilimitado</span>
-                </div>
-              </div>
-
-              <p className="text-sm text-slate-400 mb-8 max-w-xl mx-auto leading-relaxed">
-                Tenha 10 conversoes gratis por dia. Atualize para acesso ilimitado e arquivos maiores.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a
-                  href="#tools"
-                  className="group bg-orange-500 hover:bg-orange-600 text-white font-bold py-3.5 px-8 rounded-xl text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center gap-2"
-                >
-                  Comecar Gratis
-                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </a>
-                <Link
-                  href="/br/precos"
-                  className="group bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-bold py-3.5 px-8 rounded-xl text-lg transition-all duration-300 border border-white/20 hover:border-white/40 flex items-center gap-2"
-                >
-                  Ver Ferramentas
-                  <Crown className="h-5 w-5 group-hover:scale-110 transition-transform" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        <HeroSectionBr />
 
         {/* Tools Grid */}
         <section
