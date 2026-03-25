@@ -70,12 +70,10 @@ export function Header() {
 
   return (
     <header
-      className="sticky top-0 z-50 transition-all duration-300"
+      className="sticky top-0 z-50"
       style={{
-        background: scrolled ? "rgba(14, 15, 30, 0.85)" : "transparent",
-        backdropFilter: scrolled ? "blur(12px)" : "none",
-        WebkitBackdropFilter: scrolled ? "blur(12px)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "1px solid transparent",
+        background: "#0E0F1E",
+        borderBottom: "1px solid rgba(255,255,255,0.06)",
       }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
