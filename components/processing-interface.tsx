@@ -857,8 +857,8 @@ export function ProcessingInterface({
           className="py-16"
           style={{
             background: `
-              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.06) 0%, transparent 50%),
-              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(192,197,206,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
               #0E0F1E
             `,
           }}
@@ -868,30 +868,31 @@ export function ProcessingInterface({
               <div
                 className="rounded-2xl p-[1px]"
                 style={{
-                  background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  background: "linear-gradient(135deg, rgba(192,197,206,0.5), rgba(20,216,196,0.25), rgba(192,197,206,0.35), rgba(107,124,255,0.2), rgba(192,197,206,0.4))",
                 }}
               >
                 <div
                   className="rounded-[15px] p-8 text-center"
                   style={{
                     background: `
-                      radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
-                      radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(192,197,206,0.06) 0%, transparent 50%),
+                      radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.04) 0%, transparent 70%),
+                      radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.03) 0%, transparent 60%),
                       rgba(255, 255, 255, 0.07)
                     `,
                     backdropFilter: "blur(12px)",
                     WebkitBackdropFilter: "blur(12px)",
-                    boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 4px 24px rgba(0,0,0,0.3)",
+                    boxShadow: "inset 0 1px 1px rgba(255,255,255,0.08), inset 0 -1px 1px rgba(192,197,206,0.06), 0 4px 24px rgba(0,0,0,0.3)",
                   }}
                 >
                   <div
                     className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
                     style={{
-                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
-                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                      background: "linear-gradient(135deg, #1e2345, #2a2f55)",
+                      boxShadow: "0 0 20px rgba(192,197,206,0.2), 0 4px 8px rgba(0,0,0,0.2)",
                     }}
                   >
-                    <Crown className="h-10 w-10 text-[#14D8C4]" />
+                    <Crown className="h-10 w-10 text-[#C0C5CE]" />
                   </div>
                   <h2 className="text-3xl sm:text-4xl font-black text-white mb-2">This is a Pro Feature</h2>
                   <p className="text-xl sm:text-2xl font-bold text-[#14D8C4] mb-4">Upgrade to Pro</p>
@@ -930,8 +931,8 @@ export function ProcessingInterface({
           className="py-16"
           style={{
             background: `
-              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.06) 0%, transparent 50%),
-              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(192,197,206,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
               #0E0F1E
             `,
           }}
@@ -941,30 +942,31 @@ export function ProcessingInterface({
               <div
                 className="rounded-2xl p-[1px]"
                 style={{
-                  background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  background: "linear-gradient(135deg, rgba(192,197,206,0.5), rgba(20,216,196,0.25), rgba(192,197,206,0.35), rgba(107,124,255,0.2), rgba(192,197,206,0.4))",
                 }}
               >
                 <div
                   className="rounded-[15px] p-8 text-center"
                   style={{
                     background: `
-                      radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
-                      radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(192,197,206,0.06) 0%, transparent 50%),
+                      radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.04) 0%, transparent 70%),
+                      radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.03) 0%, transparent 60%),
                       rgba(255, 255, 255, 0.07)
                     `,
                     backdropFilter: "blur(12px)",
                     WebkitBackdropFilter: "blur(12px)",
-                    boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 4px 24px rgba(0,0,0,0.3)",
+                    boxShadow: "inset 0 1px 1px rgba(255,255,255,0.08), inset 0 -1px 1px rgba(192,197,206,0.06), 0 4px 24px rgba(0,0,0,0.3)",
                   }}
                 >
                   <div
                     className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
                     style={{
-                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
-                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                      background: "linear-gradient(135deg, #1e2345, #2a2f55)",
+                      boxShadow: "0 0 20px rgba(192,197,206,0.2), 0 4px 8px rgba(0,0,0,0.2)",
                     }}
                   >
-                    <Crown className="h-10 w-10 text-[#14D8C4]" />
+                    <Crown className="h-10 w-10 text-[#C0C5CE]" />
                   </div>
                   <h2 className="text-3xl sm:text-4xl font-black text-white mb-2">{"You're out of free conversions"}</h2>
                   <p className="text-xl sm:text-2xl font-bold text-[#14D8C4] mb-4">Upgrade to Pro</p>

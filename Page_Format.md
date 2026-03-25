@@ -361,14 +361,17 @@ Used by: url-to-pdf
 
 When a tool requires a paid plan (Pro, Business, Enterprise) and the user is on a free tier, the Processing Interface component renders an **upgrade card** instead of the tool. This card must match the dark cinematic aesthetic — never use flat white cards with light backgrounds.
 
-- **Section background**: Dark `#0E0F1E` with subtle radial gradients (same as Feature Blocks)
-- **Card**: Metallic border wrapper (`rounded-2xl p-[1px]`) + glassmorphism inner (`rounded-[15px]`)
-- **Icon**: Dark gradient circle/square with teal glow, Crown icon in `text-[#14D8C4]`
-- **Title**: `text-white` (e.g., "Pro Feature", "You're out of free conversions")
+- **Section background**: Dark `#0E0F1E` with subtle silver-tinted radial gradients (`rgba(192,197,206,0.04)`)
+- **Card border**: Silver-tinted metallic gradient — `linear-gradient(135deg, rgba(192,197,206,0.5), rgba(20,216,196,0.25), rgba(192,197,206,0.35), rgba(107,124,255,0.2), rgba(192,197,206,0.4))` — this distinguishes it from standard teal/orange cards
+- **Card inner**: Glassmorphism with a silver radial glow at top center (`rgba(192,197,206,0.06)`), plus subtle inset highlight (`inset 0 1px 1px rgba(255,255,255,0.08)`)
+- **Icon**: Slightly lighter dark gradient (`#1e2345` → `#2a2f55`) with silver glow (`rgba(192,197,206,0.2)`), Crown icon in silver `text-[#C0C5CE]`
+- **Title**: `text-white`
 - **Subtitle**: `text-[#14D8C4]` (e.g., "Upgrade to Pro")
 - **Description**: `text-slate-400`
 - **Primary CTA**: `bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E]` (dark text on teal button)
 - **Secondary CTA**: Ghost/outline with `border-[rgba(255,255,255,0.15)] text-slate-300`
+
+The silver tone (`#C0C5CE` / `rgba(192,197,206,...)`) gives the upgrade card a distinct "premium gate" feel that separates it from the teal/orange tool cards elsewhere on the site.
 
 This applies to all 3 card types:
 1. **Pre-gate** (tool blocked before loading — e.g., url-pdf-interface, paid-only tools)
