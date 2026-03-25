@@ -85,15 +85,43 @@ const tools = [
 
 function TierBadge({ tier }: { tier: string }) {
   if (tier === "ENTERPRISE") {
-    return <span className="bg-slate-900 text-white border border-slate-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Enterprise</span>
+    return (
+      <span
+        className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide"
+        style={{ background: "rgba(255,255,255,0.1)", color: "#E8813A", border: "1px solid rgba(232,129,58,0.3)" }}
+      >
+        Enterprise
+      </span>
+    )
   }
   if (tier === "BUSINESS") {
-    return <span className="bg-indigo-100 text-indigo-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Business</span>
+    return (
+      <span
+        className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide"
+        style={{ background: "rgba(107,124,255,0.15)", color: "#A5B4FC", border: "1px solid rgba(107,124,255,0.3)" }}
+      >
+        Business
+      </span>
+    )
   }
   if (tier === "PRO") {
-    return <span className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide" style={{ backgroundColor: "#FDE7C7", color: "#92400E" }}>Pro</span>
+    return (
+      <span
+        className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide"
+        style={{ background: "rgba(20,216,196,0.15)", color: "#14D8C4", border: "1px solid rgba(20,216,196,0.3)" }}
+      >
+        Pro
+      </span>
+    )
   }
-  return <span className="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Gratis</span>
+  return (
+    <span
+      className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide"
+      style={{ background: "rgba(74,222,128,0.15)", color: "#4ADE80", border: "1px solid rgba(74,222,128,0.3)" }}
+    >
+      Gratis
+    </span>
+  )
 }
 
 export default function FerramentasAZPage() {
@@ -104,41 +132,104 @@ export default function FerramentasAZPage() {
   const totalEnterprise = tools.filter((t) => t.tier === "ENTERPRISE").length
 
   return (
-    <div className="min-h-screen bg-[#F3F4FF]">
+    <div className="min-h-screen" style={{ background: "#0E0F1E" }}>
       <HeaderBr />
       <main>
-        <section className="bg-[#191B4D] text-white py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-6">
-              <Search className="h-4 w-4 text-orange-400" />
+        {/* Hero */}
+        <section
+          className="text-white py-20 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 50% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%),
+              #0E0F1E
+            `,
+          }}
+        >
+          {/* Grain */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="azGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#azGrain)" />
+          </svg>
+
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div
+              className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-6"
+              style={{
+                background: "rgba(20,216,196,0.08)",
+                border: "1px solid rgba(20,216,196,0.25)",
+                boxShadow: "0 0 12px rgba(20,216,196,0.1)",
+              }}
+            >
+              <Search className="h-4 w-4 text-[#14D8C4]" />
               <span className="text-sm font-medium text-slate-300">{tools.length} ferramentas disponiveis</span>
             </div>
-            <h1 className="text-4xl lg:text-5xl font-black mb-4">Ferramentas PDF A–Z</h1>
-            <p className="text-lg text-slate-400 max-w-xl mx-auto mb-8">
+            <h1
+              className="text-4xl lg:text-5xl font-black mb-4"
+              style={{ letterSpacing: "-1.5px" }}
+            >
+              Ferramentas PDF{" "}
+              <span
+                style={{
+                  background: "linear-gradient(135deg, #14D8C4, #6B7CFF, #E8813A)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                A–Z
+              </span>
+            </h1>
+            <p className="text-lg max-w-xl mx-auto mb-8" style={{ color: "rgba(165,180,252,0.7)" }}>
               Todas as ferramentas em um so lugar, em ordem alfabetica. Clique em uma letra para pular.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
-              <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-4 py-2">
-                <span className="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">{totalFree} Gratis</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-4 py-2">
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase" style={{ backgroundColor: "#FDE7C7", color: "#92400E" }}>{totalPro} Pro</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-4 py-2">
-                <span className="bg-indigo-100 text-indigo-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">{totalBusiness} Business</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-4 py-2">
-                <span className="bg-slate-900 text-white border border-slate-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">{totalEnterprise} Enterprise</span>
-              </div>
+
+            {/* Stat pills */}
+            <div className="flex flex-wrap items-center justify-center gap-3 text-sm">
+              {[
+                { label: `${totalFree} Gratis`, color: "#4ADE80" },
+                { label: `${totalPro} Pro`, color: "#14D8C4" },
+                { label: `${totalBusiness} Business`, color: "#6B7CFF" },
+                { label: `${totalEnterprise} Enterprise`, color: "#E8813A" },
+              ].map((pill) => (
+                <div
+                  key={pill.label}
+                  className="rounded-lg px-4 py-2"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: `1px solid ${pill.color}30`,
+                    boxShadow: `0 0 12px ${pill.color}10`,
+                  }}
+                >
+                  <span className="text-[11px] font-bold uppercase tracking-wide" style={{ color: pill.color }}>
+                    {pill.label}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        <nav className="sticky top-0 z-10 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+        {/* Sticky letter nav */}
+        <nav
+          className="sticky top-16 z-10"
+          style={{
+            background: "rgba(14,15,30,0.9)",
+            backdropFilter: "blur(16px)",
+            WebkitBackdropFilter: "blur(16px)",
+            borderBottom: "1px solid rgba(255,255,255,0.06)",
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-wrap gap-0.5 py-3 justify-center">
               {letters.map((letter) => (
-                <a key={letter} href={`#letter-${letter}`} className="w-10 h-10 flex items-center justify-center rounded-xl text-sm font-black text-slate-500 hover:bg-orange-500 hover:text-white transition-all duration-200">
+                <a
+                  key={letter}
+                  href={`#letter-${letter}`}
+                  className="w-10 h-10 flex items-center justify-center rounded-xl text-sm font-black transition-all duration-200"
+                  style={{ color: "rgba(165,180,252,0.5)" }}
+                >
                   {letter}
                 </a>
               ))}
@@ -146,34 +237,81 @@ export default function FerramentasAZPage() {
           </div>
         </nav>
 
-        <section className="py-12">
+        {/* Tool listing */}
+        <section
+          className="py-14"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 30% at 50% 0%, rgba(20,216,196,0.03) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 50%, rgba(107,124,255,0.03) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
             {letters.map((letter) => {
               const letterTools = tools.filter((t) => t.name[0].toUpperCase() === letter)
               return (
-                <div key={letter} id={`letter-${letter}`} className="mb-12 scroll-mt-20">
+                <div key={letter} id={`letter-${letter}`} className="mb-14 scroll-mt-32">
+                  {/* Letter header */}
                   <div className="flex items-center gap-4 mb-5">
-                    <div className="w-12 h-12 bg-blue-900 text-white rounded-2xl flex items-center justify-center font-black text-xl flex-shrink-0">{letter}</div>
-                    <div className="h-px flex-1 bg-gradient-to-r from-slate-200 to-transparent" />
-                    <span className="text-xs font-medium text-slate-400 uppercase tracking-wider">{letterTools.length} ferramenta{letterTools.length !== 1 ? "s" : ""}</span>
+                    <div
+                      className="w-12 h-12 rounded-2xl flex items-center justify-center font-black text-xl flex-shrink-0"
+                      style={{
+                        background: "linear-gradient(135deg, rgba(20,216,196,0.15), rgba(107,124,255,0.1))",
+                        border: "1px solid rgba(20,216,196,0.2)",
+                        color: "#14D8C4",
+                        boxShadow: "0 0 16px rgba(20,216,196,0.12)",
+                      }}
+                    >
+                      {letter}
+                    </div>
+                    <div className="h-px flex-1" style={{ background: "linear-gradient(90deg, rgba(20,216,196,0.2), transparent)" }} />
+                    <span className="text-xs font-medium uppercase tracking-wider" style={{ color: "#6B7CFF" }}>
+                      {letterTools.length} ferramenta{letterTools.length !== 1 ? "s" : ""}
+                    </span>
                   </div>
+
+                  {/* Tool cards */}
                   <div className="grid sm:grid-cols-2 gap-3">
                     {letterTools.map((tool) => {
                       const Icon = tool.icon
                       return (
-                        <Link key={tool.href} href={tool.href} className="flex items-start gap-4 bg-white rounded-2xl p-5 border border-gray-200 hover:border-orange-300 hover:shadow-lg hover:shadow-orange-500/5 transition-all duration-300 group">
-                          <div className="w-11 h-11 bg-gradient-to-br from-slate-50 to-slate-100 group-hover:from-orange-50 group-hover:to-orange-100 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 border border-slate-200 group-hover:border-orange-200">
-                            <Icon className="h-5 w-5 text-slate-500 group-hover:text-orange-600 transition-colors duration-300" />
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <div className="flex items-center gap-2 mb-1">
-                              <span className="font-bold text-slate-900 group-hover:text-orange-600 transition-colors">{tool.name}</span>
-                              <TierBadge tier={tool.tier} />
+                        <div
+                          key={tool.href + tool.tier}
+                          className="rounded-2xl p-[1px]"
+                          style={{
+                            background: "linear-gradient(135deg, rgba(20,216,196,0.3), rgba(107,124,255,0.15), rgba(232,129,58,0.08))",
+                          }}
+                        >
+                          <Link
+                            href={tool.href}
+                            className="flex items-start gap-4 rounded-[15px] p-5 transition-all duration-300 group tool-card-hover"
+                            style={{
+                              background: "rgba(255,255,255,0.05)",
+                              backdropFilter: "blur(12px)",
+                              WebkitBackdropFilter: "blur(12px)",
+                            }}
+                          >
+                            <div
+                              className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
+                              style={{
+                                background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                                boxShadow: "0 0 20px rgba(20,216,196,0.25)",
+                              }}
+                            >
+                              <Icon className="h-5 w-5 text-[#14D8C4]" />
                             </div>
-                            <p className="text-sm text-slate-500 leading-relaxed">{tool.description}</p>
-                          </div>
-                          <ArrowRight className="h-4 w-4 text-slate-300 group-hover:text-orange-500 flex-shrink-0 mt-1 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1" />
-                        </Link>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center gap-2 mb-1">
+                                <span className="font-bold text-white group-hover:text-[#14D8C4] transition-colors">{tool.name}</span>
+                                <TierBadge tier={tool.tier} />
+                              </div>
+                              <p className="text-sm text-slate-400 leading-relaxed">{tool.description}</p>
+                            </div>
+                            <ArrowRight className="h-4 w-4 text-slate-500 group-hover:text-[#14D8C4] flex-shrink-0 mt-1 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1" />
+                          </Link>
+                        </div>
                       )
                     })}
                   </div>
@@ -183,17 +321,46 @@ export default function FerramentasAZPage() {
           </div>
         </section>
 
-        <section className="py-16 bg-[#191B4D]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
-            <h2 className="text-2xl font-black text-white mb-3">Pronto para comecar?</h2>
-            <p className="text-slate-400 mb-6">Escolha qualquer ferramenta ou comece pelas mais populares.</p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link href="/br/comprimir-pdf" className="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-xl transition-colors">
-                Comprimir PDF <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link href="/br/unir-pdf" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-6 rounded-xl border border-white/20 transition-colors">
-                Unir PDF <ArrowRight className="h-4 w-4" />
-              </Link>
+        {/* Bottom CTA */}
+        <section className="py-16 relative overflow-hidden">
+          <div
+            className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center relative z-10"
+          >
+            <div
+              className="rounded-2xl p-10"
+              style={{
+                background: "linear-gradient(135deg, rgba(20,216,196,0.08), rgba(107,124,255,0.06), rgba(232,129,58,0.04))",
+                border: "1px solid rgba(20,216,196,0.15)",
+                boxShadow: "0 0 50px rgba(20,216,196,0.08), 0 8px 32px rgba(0,0,0,0.3)",
+              }}
+            >
+              <h2 className="text-2xl font-black text-white mb-3">Pronto para comecar?</h2>
+              <p className="text-slate-400 mb-8">Escolha qualquer ferramenta ou comece pelas mais populares.</p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Link
+                  href="/br/comprimir-pdf"
+                  className="cta-primary inline-flex items-center justify-center gap-2 font-bold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 hover:-translate-y-0.5"
+                  style={{
+                    background: "linear-gradient(135deg, #14D8C4, #0FBFB0)",
+                    color: "#0E0F1E",
+                    boxShadow: "0 0 24px rgba(20,216,196,0.45), 0 4px 16px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2)",
+                    border: "1px solid rgba(255,255,255,0.15)",
+                  }}
+                >
+                  Comprimir PDF <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="/br/unir-pdf"
+                  className="inline-flex items-center justify-center gap-2 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 hover:-translate-y-0.5"
+                  style={{
+                    background: "rgba(255,255,255,0.05)",
+                    border: "1px solid rgba(255,255,255,0.15)",
+                    boxShadow: "0 4px 16px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.05)",
+                  }}
+                >
+                  Unir PDF <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
             </div>
           </div>
         </section>
