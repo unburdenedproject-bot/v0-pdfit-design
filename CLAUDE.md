@@ -98,6 +98,7 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 - ENVIRONMENT.md — Vercel environment variables and Google Cloud credentials
 - LOCALIZATION.md — Localization patterns, route map rules, language-specific components, trilingual build instructions
 - BRAND.md — Target audience, brand voice, positioning, color system, design rules
+- **Page_Format.md — Canonical tool page format (section order, exact styles, JSX snippets, color tokens). READ THIS before creating or editing any tool page.**
 
 ## Brand
 - Fonts: Sora (headings), Inter (body)
@@ -126,6 +127,8 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 - Use iLoveAPI for PDF processing (except pdf-to-word/excel/powerpoint which use CloudConvert)
 - Table extraction uses Google Document AI Form Parser
 - See LOCALIZATION.md
+- **Every tool page must follow the format in Page_Format.md — read it before creating or editing any tool page**
+- **Every change must be applied to all 3 languages (EN, ES, BR) simultaneously — no exceptions**
 - Enterprise users must have access to ALL Business features — check for both "business" AND "enterprise" in tier gates
 - Paula is non-technical — explain things simply
 

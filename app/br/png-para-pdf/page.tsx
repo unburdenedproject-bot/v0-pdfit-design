@@ -1,227 +1,271 @@
 import Script from "next/script"
-import Link from "next/link"
 import { HeaderBr } from "@/components/header-br"
 import { FooterBr } from "@/components/footer-br"
 import { ImageToPdfInterface } from "@/components/image-to-pdf-interface"
-import { Image as ImageIcon, Zap, Shield, Upload, FileText, Merge, RotateCw, Lock, ScanLine, Camera } from "lucide-react"
+import { ImageIcon, Zap, Shield, Download } from "lucide-react"
+import Link from "next/link"
 
 export const metadata = {
   title: "PNG para PDF — Converta Imagens PNG para PDF Online | PDF.it",
   description:
     "Converta imagens PNG para documentos PDF online gratis. Envie uma ou varias imagens e obtenha um PDF profissional na hora. Sem software para instalar.",
-}
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Como converto um PNG para PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie sua imagem PNG para o PDF.it, clique em Converter para PDF e baixe o resultado. Voce pode enviar varias imagens PNG de uma vez e cada uma sera convertida em seu proprio arquivo PDF." }
+  alternates: {
+    canonical: "https://pdf.it.com/br/png-para-pdf",
+    languages: {
+      en: "https://pdf.it.com/png-to-pdf",
+      es: "https://pdf.it.com/es/png-a-pdf",
+      pt: "https://pdf.it.com/br/png-para-pdf",
     },
-    {
-      "@type": "Question",
-      "name": "Posso converter varias imagens PNG para PDF de uma vez?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Selecione varios arquivos PNG ao enviar e cada imagem sera convertida em um PDF separado. Voce pode baixa-los individualmente ou como um arquivo ZIP." }
-    },
-    {
-      "@type": "Question",
-      "name": "O conversor de PNG para PDF e gratis?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Voce pode converter varias imagens PNG para PDF gratis por dia. Para conversoes ilimitadas e arquivos maiores, atualize para o plano Pro por $7.99/mes." }
-    },
-    {
-      "@type": "Question",
-      "name": "Converter PNG para PDF reduz a qualidade da imagem?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Nao. O PDF.it preserva a resolucao, transparencia e qualidade original da sua imagem PNG ao converte-la para PDF." }
-    },
-    {
-      "@type": "Question",
-      "name": "A transparencia do PNG e preservada?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Imagens PNG com fundo transparente sao convertidas para PDF com fundo branco, pois o formato PDF nao suporta transparencia da mesma forma que PNG." }
-    },
-  ]
+  },
 }
 
 export default function PngParaPdfPage() {
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema-pt"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderBr />
       <main>
-        {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Hero Section */}
+        <section
+          className="text-white py-16 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#heroGrain)" />
+          </svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <ImageIcon className="h-10 w-10 text-white" />
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                  boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)",
+                }}
+              >
+                <ImageIcon className="h-10 w-10 text-[#14D8C4]" />
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Converter PNG para PDF</h1>
-              <p className="text-xl text-slate-300 mb-4">
-                Converta imagens PNG para documentos PDF. Envie uma ou varias imagens e obtenha um PDF profissional na hora.
-              </p>
-              <p className="text-lg text-slate-400 mb-8">
-                Sem software para instalar. Sem cadastro necessario. Apenas envie e converta.
+              <p className="text-xl text-slate-300 mb-8">
+                Converta imagens PNG para documentos PDF profissionais — envie uma ou varias imagens e baixe na hora. Qualidade total preservada.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Upload className="h-4 w-4 text-orange-500" /><span>Multiplas Imagens</span></div>
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Conversao Instantanea</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-orange-500" /><span>Qualidade Total</span></div>
+                <div className="flex items-center gap-2">
+                  <Zap className="h-4 w-4 text-[#14D8C4]" />
+                  <span>Multiplas Imagens</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Shield className="h-4 w-4 text-[#14D8C4]" />
+                  <span>Qualidade Total</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Download className="h-4 w-4 text-[#14D8C4]" />
+                  <span>Conversao Instantanea</span>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Tool Interface */}
+        {/* Intro */}
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Converta suas imagens PNG para PDF com o PDF.it. PNG e ideal para capturas de tela, exportacoes de design e imagens com transparencia — mas quando voce precisa compartilhar, imprimir ou enviar documentos profissionalmente, PDF e o formato padrao que funciona em qualquer lugar.
+            </p>
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">✓ Converte uma ou varias imagens PNG para PDF</li>
+              <li className="flex items-center gap-2">✓ Qualidade e resolucao completa preservada</li>
+              <li className="flex items-center gap-2">✓ Funciona no Mac, Windows, iOS, Android e Linux</li>
+              <li className="flex items-center gap-2">✓ Sem instalacao — funciona direto do navegador</li>
+              <li className="flex items-center gap-2">✓ Areas transparentes aparecem como branco no PDF</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Processing Interface */}
         <ImageToPdfInterface
           acceptedTypes={["image/png"]}
           acceptedExtensions=".png"
           formatLabel="PNG"
         />
 
-        {/* How It Works */}
-        <section className="py-16 bg-gray-50">
+        {/* Feature Blocks */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-6 text-center">Como Funciona</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { step: "1", title: "Envie suas Imagens PNG", desc: "Arraste e solte seus arquivos PNG, ou clique para selecionar. Voce pode escolher uma ou varias imagens de uma vez." },
-                { step: "2", title: "Converta para PDF", desc: "Clique no botao Converter e cada imagem se transforma em um documento PDF de alta qualidade em segundos." },
-                { step: "3", title: "Baixe seus PDFs", desc: "Baixe cada PDF individualmente, ou baixe todos como um arquivo ZIP. A qualidade original da sua imagem e preservada." },
-              ].map((item) => (
-                <div key={item.step} className="bg-white border border-gray-200 rounded-xl p-6 text-center">
-                  <div className="w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-lg mx-auto mb-3">
-                    {item.step}
+                { title: "Capturas de Tela e Exportacoes de Design", desc: "Capturas de tela e mockups de design geralmente sao salvos como PNG. Converta-os para PDF para documentacao, relatorios de bugs, apresentacoes ou portfolios." },
+                { title: "Envie Documentos Profissionalmente", desc: "Muitos portais e instituicoes exigem formato PDF. Converta suas imagens PNG de certificados, formularios ou documentos escaneados em PDFs para envia-los facilmente." },
+                { title: "Pronto para Imprimir a Partir de Qualquer PNG", desc: "PDF garante formato consistente em todos os dispositivos e impressoras. Converta infograficos, graficos e material web para PDF para impressao limpa e profissional." },
+              ].map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <div
+                    className="rounded-[11px] p-6 h-full"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
                   </div>
-                  <div className="text-lg font-bold text-slate-900 mb-2">{item.title}</div>
-                  <p className="text-sm text-slate-600">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Why Convert PNG to PDF */}
+        {/* How It Works */}
         <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-4 text-center">Por Que Converter PNG para PDF?</h2>
-            <div className="max-w-3xl mx-auto space-y-4">
-              <p className="text-slate-600 text-center">
-                O formato PNG e excelente para imagens com alta qualidade e transparencia, mas nao e ideal para compartilhar documentos. Converter PNG para PDF permite compartilhar imagens em formato profissional e universalmente compativel.
-              </p>
-              <p className="text-slate-600 text-center">
-                Os PDFs sao perfeitos para enviar capturas de tela, designs, infograficos ou qualquer imagem que precise ser apresentada como documento formal.
-              </p>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Converter PNG para PDF</h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+              {[
+                { num: "1", title: "Envie suas imagens PNG", desc: "Arraste ou clique para escolher arquivos" },
+                { num: "2", title: "Clique em Converter", desc: "Cada imagem se torna um PDF em segundos" },
+                { num: "3", title: "Baixe seus PDFs", desc: "Obtenha individualmente ou como ZIP" },
+              ].map((step) => (
+                <div key={step.num} className="flex-1">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                      border: "1px solid rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <span className="text-[#14D8C4] font-black text-lg">{step.num}</span>
+                  </div>
+                  <p className="font-semibold text-slate-900">{step.title}</p>
+                  <p className="text-sm text-slate-500 mt-1">{step.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Use Cases */}
-        <section className="py-16 bg-gray-50">
+        {/* Related Tools */}
+        <section className="py-16" style={{ background: "#0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Casos de Uso Comuns</h2>
-            <div className="space-y-10">
-              <div className="bg-white rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Capturas de Tela como PDF</h3>
-                <p className="text-slate-600">
-                  Converta capturas de tela PNG em documentos PDF profissionais. Ideal para documentacao tecnica, relatorios de bugs ou evidencia visual.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Designs e Infograficos</h3>
-                <p className="text-slate-600">
-                  Transforme designs graficos, infograficos e material visual PNG em PDFs prontos para imprimir ou compartilhar por e-mail.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Documentos Escaneados</h3>
-                <p className="text-slate-600">
-                  Muitos scanners salvam arquivos como PNG. Converta-os para PDF para criar documentos digitais organizados e faceis de arquivar.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Apresentacoes e Portfolios</h3>
-                <p className="text-slate-600">
-                  Converta imagens PNG do seu trabalho em PDFs individuais, depois combine-os com nossa ferramenta Unir PDF para criar um portfolio profissional.
-                </p>
-              </div>
+            <h2 className="text-2xl font-black text-white mb-6 text-center">Ferramentas Relacionadas</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {[
+                { name: "JPG para PDF", href: "/br/jpg-para-pdf", desc: "Converta imagens JPG para PDF" },
+                { name: "PDF para PNG", href: "/br/pdf-para-png", desc: "Converta paginas PDF em imagens" },
+                { name: "Unir PDF", href: "/br/unir-pdf", desc: "Combine varios PDFs em um" },
+                { name: "Comprimir PDF", href: "/br/comprimir-pdf", desc: "Reduza o tamanho do PDF" },
+              ].map((tool) => (
+                <div
+                  key={tool.href}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <Link
+                    href={tool.href}
+                    className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
+                    <div className="text-xs text-slate-400">{tool.desc}</div>
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-[#F3F4FF]">
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
-            <div className="space-y-6">
+            <h2 className="text-3xl font-black text-white mb-10 text-center">Perguntas Frequentes</h2>
+            <div className="space-y-4">
               {[
                 { q: "Como converto um PNG para PDF?", a: "Envie sua imagem PNG, clique em Converter para PDF e baixe. Voce pode enviar varias imagens e cada uma sera convertida em seu proprio PDF." },
                 { q: "Posso converter varias imagens PNG de uma vez?", a: "Sim. Selecione varios arquivos PNG e cada um sera convertido em um PDF separado. Baixe-os individualmente ou como um arquivo ZIP." },
-                { q: "E gratis?", a: "Voce pode converter varias imagens gratis por dia. Para conversoes ilimitadas e arquivos maiores, atualize para Pro por $7.99/mes." },
-                { q: "A conversao reduz a qualidade?", a: "Nao. O PDF.it preserva a resolucao e qualidade total da sua imagem PNG no PDF resultante." },
                 { q: "A transparencia e mantida?", a: "Imagens PNG com fundo transparente sao convertidas para PDF com fundo branco, pois PDF nao suporta transparencia da mesma forma que PNG." },
+                { q: "A conversao reduz a qualidade?", a: "Nao. O PDF.it preserva a resolucao e qualidade total da sua imagem PNG no PDF resultante." },
+                { q: "E seguro enviar minhas imagens?", a: "Sim. Todas as transferencias sao criptografadas com SSL e seus arquivos sao eliminados imediatamente apos sua sessao. Nunca armazenamos nem compartilhamos seus documentos." },
+                { q: "Qual e o tamanho maximo de arquivo?", a: "Usuarios gratuitos podem enviar ate 25MB por imagem. Assinantes Pro e Business podem enviar ate 200MB por imagem." },
               ].map((faq, i) => (
-                <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
+                <div
+                  key={i}
+                  className="rounded-xl p-6"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-16 bg-[#191B4D] text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-            <h2 className="text-2xl font-black mb-4">Converta suas Imagens PNG Agora</h2>
-            <p className="text-slate-300 text-lg mb-8">
-              Rapido, gratis e seguro. Converta qualquer imagem PNG em um PDF profissional em segundos.
-            </p>
-            <Link
-              href="/br/png-para-pdf"
-              className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl text-lg transition-colors shadow-lg"
-            >
-              Converter PNG para PDF
-            </Link>
-          </div>
-        </section>
-
-        {/* Related Tools */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Mais Ferramentas PDF</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-              {[
-                { name: "JPG para PDF", desc: "Converta imagens JPG para PDF.", href: "/br/jpg-para-pdf", icon: ImageIcon },
-                { name: "PDF para PNG", desc: "Converta paginas PDF em imagens PNG.", href: "/br/pdf-para-png", icon: FileText },
-                { name: "Unir PDF", desc: "Combine varios PDFs em um so.", href: "/br/unir-pdf", icon: Merge },
-                { name: "Comprimir PDF", desc: "Reduza o tamanho do arquivo PDF.", href: "/br/comprimir-pdf", icon: FileText },
-                { name: "Limpar Escaneamento", desc: "Converta fotos do celular em PDFs limpos.", href: "/br/limpar-escaneamento", icon: Camera },
-                { name: "Scanner OCR", desc: "Torne PDFs escaneados pesquisaveis.", href: "/br/scanner-ocr", icon: ScanLine },
-                { name: "Girar PDF", desc: "Corrija paginas de cabeca para baixo ou de lado.", href: "/br/girar-pdf", icon: RotateCw },
-                { name: "Proteger PDF", desc: "Adicione protecao com senha.", href: "/br/proteger-pdf", icon: Lock },
-              ].map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="group flex flex-col items-center text-center rounded-xl border border-gray-200 bg-white p-4 hover:border-orange-200 hover:bg-orange-50/40 hover:shadow-md transition-all duration-200"
-                >
-                  <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200 shadow-sm">
-                    <tool.icon className="h-5 w-5 text-white" />
-                  </div>
-                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-orange-600 transition-colors mb-1">
-                    {tool.name}
-                  </h4>
-                  <p className="text-xs text-slate-500 leading-relaxed">{tool.desc}</p>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "Como converto um PNG para PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Envie sua imagem PNG, clique em Converter para PDF e baixe. Voce pode enviar varias imagens e cada uma sera convertida em seu proprio PDF." } },
+            { "@type": "Question", "name": "Posso converter varias imagens PNG de uma vez?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Selecione varios arquivos PNG e cada um sera convertido em um PDF separado. Baixe-os individualmente ou como um arquivo ZIP." } },
+            { "@type": "Question", "name": "A transparencia e mantida?", "acceptedAnswer": { "@type": "Answer", "text": "Imagens PNG com fundo transparente sao convertidas para PDF com fundo branco, pois PDF nao suporta transparencia da mesma forma que PNG." } },
+            { "@type": "Question", "name": "A conversao reduz a qualidade?", "acceptedAnswer": { "@type": "Answer", "text": "Nao. O PDF.it preserva a resolucao e qualidade total da sua imagem PNG no PDF resultante." } },
+            { "@type": "Question", "name": "E seguro enviar minhas imagens?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Todas as transferencias sao criptografadas com SSL e seus arquivos sao eliminados imediatamente apos sua sessao. Nunca armazenamos nem compartilhamos seus documentos." } },
+            { "@type": "Question", "name": "Qual e o tamanho maximo de arquivo?", "acceptedAnswer": { "@type": "Answer", "text": "Usuarios gratuitos podem enviar ate 25MB por imagem. Assinantes Pro e Business podem enviar ate 200MB por imagem." } }
+          ]
+        })}} />
       </main>
       <FooterBr />
     </div>
