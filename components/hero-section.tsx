@@ -8,9 +8,9 @@ export function HeroSection() {
     <section
       style={{
         background: `
-          radial-gradient(ellipse 90% 70% at 50% 15%, rgba(20,216,196,0.12) 0%, transparent 70%),
-          radial-gradient(ellipse 60% 60% at 20% 80%, rgba(107,124,255,0.08) 0%, transparent 65%),
-          radial-gradient(ellipse 50% 50% at 75% 35%, rgba(107,124,255,0.04) 0%, transparent 65%),
+          radial-gradient(ellipse 90% 70% at 50% 15%, rgba(20,216,196,0.18) 0%, transparent 70%),
+          radial-gradient(ellipse 60% 60% at 20% 80%, rgba(107,124,255,0.12) 0%, transparent 65%),
+          radial-gradient(ellipse 50% 50% at 75% 35%, rgba(107,124,255,0.06) 0%, transparent 65%),
           #0E0F1E
         `,
       }}
