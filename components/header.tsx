@@ -135,10 +135,20 @@ export function Header() {
                 </Link>
               ) : (
                 <Link href="/login">
-                  <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10">
+                  <button
+                    className="inline-flex items-center text-sm"
+                    style={{
+                      background: "#14D8C4",
+                      color: "#0E0F1E",
+                      fontWeight: 700,
+                      borderRadius: "8px",
+                      padding: "8px 20px",
+                      boxShadow: "0 0 16px rgba(20, 216, 196, 0.4)",
+                    }}
+                  >
                     <LogIn className="mr-1.5 h-4 w-4" />
                     Sign In
-                  </Button>
+                  </button>
                 </Link>
               )
             )}
@@ -254,10 +264,20 @@ export function Header() {
                 </Link>
               ) : (
                 <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
-                  <Button size="sm" variant="outline" className="w-full border-slate-200 text-slate-700 hover:text-slate-900">
+                  <button
+                    className="inline-flex items-center justify-center w-full text-sm"
+                    style={{
+                      background: "#14D8C4",
+                      color: "#0E0F1E",
+                      fontWeight: 700,
+                      borderRadius: "8px",
+                      padding: "8px 20px",
+                      boxShadow: "0 0 16px rgba(20, 216, 196, 0.4)",
+                    }}
+                  >
                     <LogIn className="mr-1.5 h-4 w-4" />
                     Sign In
-                  </Button>
+                  </button>
                 </Link>
               )}
             </div>
