@@ -206,42 +206,44 @@ export default function PDFToJPGPage() {
         </section>
 
         {/* FAQ */}
-        <section className="bg-[#F3F4FF] py-16">
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-3xl font-black text-slate-900 mb-10 text-center">Frequently Asked Questions</h2>
-            <div className="space-y-6">
-              <div className="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                <h3 className="text-lg font-bold text-slate-900 mb-2">Can I convert a multi-page PDF to JPG?</h3>
-                <p className="text-slate-600 leading-relaxed">Yes. PDF.it converts each PDF page into its own JPG image so you can download pages individually.</p>
-              </div>
-              <div className="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                <h3 className="text-lg font-bold text-slate-900 mb-2">Can I convert just one page of a PDF to JPG?</h3>
-                <p className="text-slate-600 leading-relaxed">Yes. Convert the PDF, then download only the page JPG you need from the ZIP file.</p>
-              </div>
-              <div className="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                <h3 className="text-lg font-bold text-slate-900 mb-2">Will converting PDF to JPG reduce quality?</h3>
-                <p className="text-slate-600 leading-relaxed">The output quality depends on the source PDF. High-resolution PDFs produce crisp JPGs; low-resolution scans may look softer.</p>
-              </div>
-              <div className="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                <h3 className="text-lg font-bold text-slate-900 mb-2">Does PDF.it work on Mac, Windows, iPhone, and Android?</h3>
-                <p className="text-slate-600 leading-relaxed">Yes. PDF.it runs in your browser, so it works across modern devices and operating systems.</p>
-              </div>
-              <div className="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                <h3 className="text-lg font-bold text-slate-900 mb-2">What's the difference between JPG and PNG for PDF pages?</h3>
-                <p className="text-slate-600 leading-relaxed">JPG usually creates smaller files and is great for sharing. PNG can be better for very sharp text and graphics. Try our <Link href="/pdf-to-png" className="text-orange-500 hover:underline">PDF to PNG</Link> tool if you need lossless output.</p>
-              </div>
-              <div className="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                <h3 className="text-lg font-bold text-slate-900 mb-2">Why do my JPG pages look blurry?</h3>
-                <p className="text-slate-600 leading-relaxed">Blurriness usually comes from a low-resolution scanned PDF or small text in the original file.</p>
-              </div>
-              <div className="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                <h3 className="text-lg font-bold text-slate-900 mb-2">Is it safe to upload my PDF?</h3>
-                <p className="text-slate-600 leading-relaxed">Yes. Files are transferred over HTTPS and automatically deleted after your session. We never store or share your documents.</p>
-              </div>
-              <div className="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                <h3 className="text-lg font-bold text-slate-900 mb-2">Do you add watermarks?</h3>
-                <p className="text-slate-600 leading-relaxed">No. PDF.it does not add watermarks to your converted JPG files.</p>
-              </div>
+            <h2 className="text-3xl font-black text-white mb-10 text-center">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {[
+                { q: "Can I convert a multi-page PDF to JPG?", a: "Yes. PDF.it converts each PDF page into its own JPG image so you can download pages individually." },
+                { q: "Can I convert just one page of a PDF to JPG?", a: "Yes. Convert the PDF, then download only the page JPG you need from the ZIP file." },
+                { q: "Will converting PDF to JPG reduce quality?", a: "The output quality depends on the source PDF. High-resolution PDFs produce crisp JPGs; low-resolution scans may look softer." },
+                { q: "Does PDF.it work on Mac, Windows, iPhone, and Android?", a: "Yes. PDF.it runs in your browser, so it works across modern devices and operating systems." },
+                { q: "What's the difference between JPG and PNG for PDF pages?", a: "JPG usually creates smaller files and is great for sharing. PNG can be better for very sharp text and graphics." },
+                { q: "Why do my JPG pages look blurry?", a: "Blurriness usually comes from a low-resolution scanned PDF or small text in the original file." },
+                { q: "Is it safe to upload my PDF?", a: "Yes. Files are transferred over HTTPS and automatically deleted after your session. We never store or share your documents." },
+                { q: "Do you add watermarks?", a: "No. PDF.it does not add watermarks to your converted JPG files." },
+              ].map((faq, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl p-6"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

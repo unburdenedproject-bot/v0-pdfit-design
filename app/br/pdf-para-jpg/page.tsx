@@ -275,39 +275,40 @@ export default function PDFparaJPGPage() {
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-gray-50">
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
-            <div className="space-y-6">
+            <h2 className="text-2xl font-black text-white mb-8 text-center">Perguntas Frequentes</h2>
+            <div className="space-y-4">
               {[
-                {
-                  q: "Posso converter um PDF de varias paginas para JPG?",
-                  a: "Sim. O PDF.it converte cada pagina do PDF em uma imagem JPG individual que voce pode baixar separadamente.",
-                },
-                {
-                  q: "Converter PDF para JPG reduz a qualidade?",
-                  a: "A qualidade depende do PDF original. PDFs de alta resolucao produzem JPGs nitidos; escaneamentos de baixa resolucao podem ficar mais suaves.",
-                },
-                {
-                  q: "Qual e a diferenca entre JPG e PNG para paginas de PDF?",
-                  a: "JPG geralmente cria arquivos menores e e ideal para compartilhar. PNG e melhor para texto muito nitido e graficos. Experimente nossa ferramenta PDF para PNG se precisar de saida sem perda.",
-                },
-                {
-                  q: "Funciona no iPhone e Android?",
-                  a: "Sim. O PDF.it funciona em navegadores moveis — envie seu PDF, converta e baixe suas imagens JPG.",
-                },
-                {
-                  q: "E seguro enviar meu PDF?",
-                  a: "Sim. Os arquivos sao transferidos por HTTPS e eliminados automaticamente apos sua sessao. Nunca armazenamos nem compartilhamos seus documentos.",
-                },
-                {
-                  q: "O PDF.it adiciona marcas d'agua?",
-                  a: "Nao. O PDF.it nao adiciona marcas d'agua aos seus arquivos JPG convertidos.",
-                },
+                { q: "Posso converter um PDF de varias paginas para JPG?", a: "Sim. O PDF.it converte cada pagina do PDF em uma imagem JPG individual que voce pode baixar separadamente." },
+                { q: "Converter PDF para JPG reduz a qualidade?", a: "A qualidade depende do PDF original. PDFs de alta resolucao produzem JPGs nitidos; escaneamentos de baixa resolucao podem ficar mais suaves." },
+                { q: "Qual e a diferenca entre JPG e PNG para paginas de PDF?", a: "JPG geralmente cria arquivos menores e e ideal para compartilhar. PNG e melhor para texto muito nitido e graficos. Experimente nossa ferramenta PDF para PNG se precisar de saida sem perda." },
+                { q: "Funciona no iPhone e Android?", a: "Sim. O PDF.it funciona em navegadores moveis — envie seu PDF, converta e baixe suas imagens JPG." },
+                { q: "E seguro enviar meu PDF?", a: "Sim. Os arquivos sao transferidos por HTTPS e eliminados automaticamente apos sua sessao. Nunca armazenamos nem compartilhamos seus documentos." },
+                { q: "O PDF.it adiciona marcas d'agua?", a: "Nao. O PDF.it nao adiciona marcas d'agua aos seus arquivos JPG convertidos." },
               ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
+                <div
+                  key={i}
+                  className="rounded-xl p-6"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  <h3 className="font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 text-sm">{faq.a}</p>
                 </div>
               ))}
             </div>
