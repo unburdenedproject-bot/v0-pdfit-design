@@ -245,30 +245,41 @@ export default function PDFToTXTPage() {
         </section>
 
         {/* FAQ */}
-        <section className="bg-[#F3F4FF] py-16">
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-3xl font-black text-slate-900 mb-10 text-center">Frequently Asked Questions</h2>
-            <div className="space-y-6">
-              <div className="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                <h3 className="text-lg font-bold text-slate-900 mb-2">Can I convert any PDF to a TXT file?</h3>
-                <p className="text-slate-600 leading-relaxed">Most text-based PDFs convert cleanly. If your PDF is scanned (image-only), you'll need OCR to extract text.</p>
-              </div>
-              <div className="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                <h3 className="text-lg font-bold text-slate-900 mb-2">Does PDF.it keep the formatting from the PDF?</h3>
-                <p className="text-slate-600 leading-relaxed">TXT is plain text, so formatting like fonts, columns, and spacing may not carry over. If you need layout preserved, use a PDF to Word tool instead.</p>
-              </div>
-              <div className="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                <h3 className="text-lg font-bold text-slate-900 mb-2">Why does my converted text look messy or out of order?</h3>
-                <p className="text-slate-600 leading-relaxed">Some PDFs store text in columns or positioned blocks. TXT export follows the PDF's internal structure, which may reorder lines.</p>
-              </div>
-              <div className="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                <h3 className="text-lg font-bold text-slate-900 mb-2">Can I convert PDF to TXT on mobile?</h3>
-                <p className="text-slate-600 leading-relaxed">Yes. Open PDF.it in your mobile browser, upload the PDF, convert, and download the TXT file.</p>
-              </div>
-              <div className="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                <h3 className="text-lg font-bold text-slate-900 mb-2">Is it safe to upload my PDF?</h3>
-                <p className="text-slate-600 leading-relaxed">Yes. All transfers are SSL encrypted and your files are deleted immediately after your session.</p>
-              </div>
+            <h2 className="text-3xl font-black text-white mb-10 text-center">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {[
+                { q: "Can I convert any PDF to a TXT file?", a: "Most text-based PDFs convert cleanly. If your PDF is scanned (image-only), you'll need OCR to extract text." },
+                { q: "Does PDF.it keep the formatting from the PDF?", a: "TXT is plain text, so formatting like fonts, columns, and spacing may not carry over. If you need layout preserved, use a PDF to Word tool instead." },
+                { q: "Why does my converted text look messy or out of order?", a: "Some PDFs store text in columns or positioned blocks. TXT export follows the PDF's internal structure, which may reorder lines." },
+                { q: "Can I convert PDF to TXT on mobile?", a: "Yes. Open PDF.it in your mobile browser, upload the PDF, convert, and download the TXT file." },
+                { q: "Is it safe to upload my PDF?", a: "Yes. All transfers are SSL encrypted and your files are deleted immediately after your session." },
+              ].map((faq, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl p-6"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

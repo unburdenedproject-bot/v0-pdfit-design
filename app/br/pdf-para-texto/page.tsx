@@ -275,39 +275,40 @@ export default function PDFparaTextoPage() {
         </section>
 
         {/* FAQ */}
-        <section className="bg-[#F3F4FF] py-16">
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-3xl font-black text-slate-900 mb-10 text-center">Perguntas Frequentes</h2>
-            <div className="space-y-6">
+            <h2 className="text-3xl font-black text-white mb-10 text-center">Perguntas Frequentes</h2>
+            <div className="space-y-4">
               {[
-                {
-                  q: "Posso converter qualquer PDF para um arquivo TXT?",
-                  a: "A maioria dos PDFs com texto se converte bem. Se seu PDF e escaneado (apenas imagem), voce precisara de OCR para extrair o texto.",
-                },
-                {
-                  q: "O PDF.it mantem a formatacao do PDF?",
-                  a: "TXT e texto puro, entao a formatacao como fontes, colunas e espacamento pode nao ser preservada. Se precisar manter o layout, use nossa ferramenta PDF para Word.",
-                },
-                {
-                  q: "Por que meu texto convertido parece desorganizado?",
-                  a: "Alguns PDFs armazenam texto em colunas ou blocos posicionados. A exportacao para TXT segue a estrutura interna do PDF, o que pode reordenar as linhas.",
-                },
-                {
-                  q: "Posso converter PDF para TXT no celular?",
-                  a: "Sim. Abra o PDF.it no navegador do celular, envie o PDF, converta e baixe o arquivo TXT.",
-                },
-                {
-                  q: "E seguro enviar meu PDF?",
-                  a: "Sim. Todas as transferencias sao criptografadas com SSL e seus arquivos sao eliminados imediatamente apos sua sessao.",
-                },
-                {
-                  q: "Para que serve converter PDF para texto?",
-                  a: "E ideal para copiar conteudo em notas, documentos, e-mails ou ferramentas de IA — sem ter que redigitar tudo manualmente.",
-                },
+                { q: "Posso converter qualquer PDF para um arquivo TXT?", a: "A maioria dos PDFs com texto se converte bem. Se seu PDF e escaneado (apenas imagem), voce precisara de OCR para extrair o texto." },
+                { q: "O PDF.it mantem a formatacao do PDF?", a: "TXT e texto puro, entao a formatacao como fontes, colunas e espacamento pode nao ser preservada. Se precisar manter o layout, use nossa ferramenta PDF para Word." },
+                { q: "Por que meu texto convertido parece desorganizado?", a: "Alguns PDFs armazenam texto em colunas ou blocos posicionados. A exportacao para TXT segue a estrutura interna do PDF, o que pode reordenar as linhas." },
+                { q: "Posso converter PDF para TXT no celular?", a: "Sim. Abra o PDF.it no navegador do celular, envie o PDF, converta e baixe o arquivo TXT." },
+                { q: "E seguro enviar meu PDF?", a: "Sim. Todas as transferencias sao criptografadas com SSL e seus arquivos sao eliminados imediatamente apos sua sessao." },
+                { q: "Para que serve converter PDF para texto?", a: "E ideal para copiar conteudo em notas, documentos, e-mails ou ferramentas de IA — sem ter que redigitar tudo manualmente." },
               ].map((faq, i) => (
-                <div key={i} className="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 leading-relaxed">{faq.a}</p>
+                <div
+                  key={i}
+                  className="rounded-xl p-6"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p>
                 </div>
               ))}
             </div>
