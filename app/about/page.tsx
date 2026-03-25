@@ -176,7 +176,7 @@ export default function AboutPage() {
                   <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Target className="h-6 w-6 text-white" />
                   </div>
-                  <p className="text-slate-800 text-lg leading-relaxed">
+                  <p className="text-slate-200 text-lg leading-relaxed">
                     To provide reliable, browser-based PDF tools that work quickly and simply - no installs, no plugins, no technical expertise required. We want PDF conversion, OCR, redaction, eSign, table extraction, and workflow automation to be easy to access for individuals and teams alike.
                   </p>
                 </div>

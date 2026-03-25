@@ -177,7 +177,7 @@ export default function SobrePage() {
                   <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Target className="h-6 w-6 text-white" />
                   </div>
-                  <p className="text-slate-800 text-lg leading-relaxed">
+                  <p className="text-slate-200 text-lg leading-relaxed">
                     Oferecer ferramentas PDF confiaveis no navegador que funcionem de forma rapida e simples, sem instalacoes, sem plugins e sem necessidade de conhecimento tecnico. Queremos que conversao PDF, OCR, redacao, assinatura eletronica, extracao de tabelas e automacao estejam ao alcance de pessoas e equipes.
                   </p>
                 </div>
