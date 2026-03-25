@@ -138,20 +138,28 @@ export default function PDFToPNGPage() {
         </section>
 
         {/* How To */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Convert PDF to PNG</h2>
-            <div className="space-y-4">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">How to Convert PDF to PNG</h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
               {[
-                "Upload or drag and drop your PDF into PDF.it.",
-                "Click Convert PDF to PNG.",
-                "Download your PNG images — one per page.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
+                { num: "1", title: "Upload your PDF", desc: "Drag and drop or click to choose a file" },
+                { num: "2", title: "Click Convert", desc: "Processing usually takes a few seconds" },
+                { num: "3", title: "Download your PNGs", desc: "Get all pages in a single ZIP file" },
+              ].map((step) => (
+                <div key={step.num} className="flex-1">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                      border: "1px solid rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <span className="text-[#14D8C4] font-black text-lg">{step.num}</span>
                   </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
+                  <p className="font-semibold text-slate-900">{step.title}</p>
+                  <p className="text-sm text-slate-500 mt-1">{step.desc}</p>
                 </div>
               ))}
             </div>
