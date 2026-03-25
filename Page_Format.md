@@ -371,7 +371,9 @@ When a tool requires a paid plan (Pro, Business, Enterprise) and the user is on 
 - **Primary CTA**: `bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E]` (teal button)
 - **Secondary CTA**: Ghost/outline with `border-[rgba(255,255,255,0.15)] text-slate-300`
 
-The gold is intentionally subtle — just enough to distinguish the upgrade card from standard tool cards. Only 3 things carry the gold: the crown icon color, the icon glow, and a faint warm tint in the border gradient and inner radial.
+The gold is intentionally subtle — just enough to distinguish the upgrade card from standard tool cards. Four things carry the gold: the crown icon, the icon glow, a faint warm tint in the border/inner radial, and the "Most Popular" badge.
+
+- **"Most Popular" badge**: Pinned to top center — `absolute top-0 left-1/2 -translate-x-1/2`, `px-4 py-1 rounded-b-lg`, gold gradient background (`#D6B36A` → `#E0C27A`), dark text `#0E0F1E`, `text-[10px] font-bold uppercase tracking-widest`. Card inner needs `pt-10 relative overflow-hidden` to accommodate the badge.
 
 ### Gold accent tokens (upgrade cards only)
 
@@ -381,6 +383,7 @@ The gold is intentionally subtle — just enough to distinguish the upgrade card
 | Gold glow | `rgba(214,179,106,0.25)` | Icon box-shadow |
 | Gold border accent | `rgba(214,179,106,0.3)` | One stop in the metallic border gradient |
 | Gold inner tint | `rgba(214,179,106,0.05)` | Faint radial glow at card top center |
+| Badge gradient | `#D6B36A` → `#E0C27A` | "Most Popular" badge background |
 
 This applies to all 3 card types:
 1. **Pre-gate** (tool blocked before loading — e.g., url-pdf-interface, paid-only tools)
