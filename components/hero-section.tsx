@@ -8,21 +8,23 @@ export function HeroSection() {
     <section
       style={{
         background: `
-          radial-gradient(ellipse 90% 70% at 50% 15%, rgba(20,216,196,0.18) 0%, transparent 70%),
-          radial-gradient(ellipse 60% 60% at 20% 80%, rgba(107,124,255,0.12) 0%, transparent 65%),
-          radial-gradient(ellipse 50% 50% at 75% 35%, rgba(107,124,255,0.06) 0%, transparent 65%),
+          radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.22) 0%, transparent 60%),
+          radial-gradient(ellipse 50% 40% at 80% 20%, rgba(232,129,58,0.08) 0%, transparent 55%),
+          radial-gradient(ellipse 60% 60% at 15% 75%, rgba(107,124,255,0.14) 0%, transparent 60%),
+          radial-gradient(ellipse 40% 40% at 85% 70%, rgba(20,216,196,0.06) 0%, transparent 50%),
           #0E0F1E
         `,
       }}
-      className="relative text-white pt-16 lg:pt-24 overflow-hidden"
+      className="relative text-white pt-20 lg:pt-28 overflow-hidden"
     >
       {/* Grain texture overlay */}
-      <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" style={{ opacity: 0.05 }}>
+      <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" style={{ opacity: 0.04 }}>
         <filter id="grain">
           <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
         </filter>
         <rect width="100%" height="100%" filter="url(#grain)" />
       </svg>
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
 
@@ -30,14 +32,23 @@ export function HeroSection() {
           <div className="flex flex-wrap justify-center gap-2 mb-8">
             <Link
               href="/ats-optimizer"
-              className="inline-flex items-center gap-2 rounded-full border border-teal-400/30 bg-teal-400/10 px-4 py-2 text-xs font-bold uppercase tracking-wide text-teal-300 hover:bg-teal-400/20 transition-colors"
+              className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wide text-teal-300 transition-all duration-200 hover:scale-105"
+              style={{
+                background: "rgba(20,216,196,0.1)",
+                border: "1px solid rgba(20,216,196,0.3)",
+                boxShadow: "0 0 12px rgba(20,216,196,0.1)",
+              }}
             >
               <Target className="h-3.5 w-3.5" />
               New AI ATS Resume Optimizer
             </Link>
             <Link
               href="/create-resume"
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-wide text-slate-100 hover:bg-white/15 transition-colors"
+              className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wide text-slate-200 transition-all duration-200 hover:scale-105"
+              style={{
+                background: "rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.15)",
+              }}
             >
               <FilePlus className="h-3.5 w-3.5" />
               New AI Resume Builder
@@ -46,52 +57,67 @@ export function HeroSection() {
 
           {/* Headline */}
           <h1
-            className="mb-4 leading-tight"
-            style={{ fontSize: "clamp(40px, 7vw, 64px)", fontWeight: 900, letterSpacing: "-2px" }}
+            className="mb-5 leading-tight"
+            style={{ fontSize: "clamp(40px, 7vw, 68px)", fontWeight: 900, letterSpacing: "-2.5px" }}
           >
             <span className="text-white block">Fix Any PDF Problem</span>
-            <span style={{ color: "#14D8C4" }} className="block">Instantly.</span>
+            <span
+              className="block"
+              style={{
+                background: "linear-gradient(135deg, #14D8C4, #6B7CFF, #E8813A)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              Instantly.
+            </span>
           </h1>
 
           {/* Subheadline */}
           <p
-            className="mb-8 max-w-xl mx-auto"
-            style={{ fontSize: "18px", color: "#6A7299", lineHeight: "1.6" }}
+            className="mb-10 max-w-xl mx-auto"
+            style={{ fontSize: "18px", color: "rgba(165,180,252,0.7)", lineHeight: "1.7" }}
           >
             No login. No install. Files deleted immediately after use.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            {/* Primary CTA — 3D teal button */}
             <a
               href="#tools"
+              className="cta-primary py-4 px-10 rounded-xl text-lg transition-all duration-300 hover:scale-105 hover:-translate-y-0.5"
               style={{
-                background: "#14D8C4",
+                background: "linear-gradient(135deg, #14D8C4, #0FBFB0)",
                 color: "#0E0F1E",
                 fontWeight: 800,
-                border: "none",
-                boxShadow: "0 0 24px rgba(20, 216, 196, 0.45)",
+                boxShadow: "0 0 30px rgba(20,216,196,0.5), 0 4px 16px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2)",
+                border: "1px solid rgba(255,255,255,0.15)",
+                textShadow: "0 1px 0 rgba(255,255,255,0.1)",
               }}
-              className="py-3.5 px-8 rounded-xl text-lg transition-all duration-300 hover:shadow-xl hover:scale-105 hover:opacity-90"
             >
               Start for free →
             </a>
+            {/* Secondary CTA — glass outline */}
             <Link
               href="/tools"
+              className="py-4 px-10 rounded-xl text-lg transition-all duration-300 hover:scale-105 hover:-translate-y-0.5"
               style={{
-                background: "transparent",
+                background: "rgba(255,255,255,0.04)",
                 color: "#ffffff",
-                border: "1.5px solid #252A6A",
                 fontWeight: 600,
+                border: "1px solid rgba(255,255,255,0.15)",
+                boxShadow: "0 4px 16px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.05)",
+                backdropFilter: "blur(8px)",
               }}
-              className="py-3.5 px-8 rounded-xl text-lg transition-all duration-300 hover:border-teal-400/60"
             >
               See all tools
             </Link>
           </div>
 
           {/* Trust icons */}
-          <div className="flex flex-wrap justify-center gap-6 mb-10 text-sm font-semibold text-slate-300">
+          <div className="flex flex-wrap justify-center gap-6 mb-12 text-sm font-semibold text-slate-300">
             <div className="flex items-center gap-2">
               <Gift className="h-4 w-4 text-green-400" />
               <span>10 free conversions/day</span>
@@ -123,15 +149,15 @@ export function HeroSection() {
         >
           <defs>
             <linearGradient id="waveGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#191B4D" />
+              <stop offset="0%" stopColor="#0A4A5C" />
               <stop offset="35%" stopColor="#14D8C4" />
               <stop offset="65%" stopColor="#6B7CFF" />
-              <stop offset="100%" stopColor="#191B4D" />
+              <stop offset="100%" stopColor="#E8813A" />
             </linearGradient>
             <linearGradient id="waveGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#14D8C4" />
               <stop offset="40%" stopColor="#6B7CFF" />
-              <stop offset="70%" stopColor="#191B4D" />
+              <stop offset="70%" stopColor="#E8813A" />
               <stop offset="100%" stopColor="#14D8C4" />
             </linearGradient>
             <style>{`

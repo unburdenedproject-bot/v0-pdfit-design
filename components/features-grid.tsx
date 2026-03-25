@@ -352,25 +352,43 @@ function TierBadge({ tier }: { tier: "FREE" | "PRO" | "BUSINESS" | "ENTERPRISE" 
 
 function PricingCTA() {
   return (
-    <div className="max-w-2xl mx-auto my-8">
-      <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 text-center">
+    <div className="max-w-2xl mx-auto my-10">
+      <div
+        className="rounded-2xl p-8 text-center"
+        style={{
+          background: "linear-gradient(135deg, rgba(20,216,196,0.08), rgba(107,124,255,0.06), rgba(232,129,58,0.04))",
+          border: "1px solid rgba(20,216,196,0.15)",
+          boxShadow: "0 0 40px rgba(20,216,196,0.08), 0 8px 32px rgba(0,0,0,0.3)",
+        }}
+      >
         <h3 className="text-xl font-black text-white mb-2 text-balance">
           Need unlimited conversions or larger files?
         </h3>
-        <p className="text-slate-300 text-sm mb-5 max-w-lg mx-auto leading-relaxed">
+        <p className="text-slate-400 text-sm mb-5 max-w-lg mx-auto leading-relaxed">
           Go Pro for unlimited conversions and all tools — $7.99/month. Need eSign and workflow automation? Try Business at $13.99/month. Law firms and accountants love Enterprise at $49.99/month.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link
             href="/pricing"
-            className="inline-flex items-center justify-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors shadow-lg hover:shadow-xl"
+            className="inline-flex items-center justify-center gap-2 font-bold py-2.5 px-6 rounded-xl text-sm transition-all duration-300 hover:scale-105"
+            style={{
+              background: "linear-gradient(135deg, #14D8C4, #0FBFB0)",
+              color: "#0E0F1E",
+              boxShadow: "0 0 20px rgba(20,216,196,0.4), 0 4px 12px rgba(0,0,0,0.3)",
+              border: "1px solid rgba(255,255,255,0.15)",
+            }}
           >
             <Crown className="h-4 w-4" />
             Upgrade to Pro
           </Link>
           <Link
             href="/pricing"
-            className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-all border border-white/20 hover:border-white/40"
+            className="inline-flex items-center justify-center gap-2 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-all duration-300 hover:scale-105"
+            style={{
+              background: "rgba(255,255,255,0.06)",
+              border: "1px solid rgba(255,255,255,0.15)",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+            }}
           >
             See Plans
           </Link>
@@ -382,7 +400,18 @@ function PricingCTA() {
 
 export function FeaturesGrid() {
   return (
-    <section id="tools" className="scroll-mt-16 py-10 bg-[#0E0F1E]">
+    <section
+      id="tools"
+      className="scroll-mt-16 py-14"
+      style={{
+        background: `
+          radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.05) 0%, transparent 50%),
+          radial-gradient(ellipse 50% 50% at 0% 50%, rgba(107,124,255,0.04) 0%, transparent 50%),
+          radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
+          #0E0F1E
+        `,
+      }}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
           <h2 className="text-3xl lg:text-4xl font-black text-white mb-2 text-balance">

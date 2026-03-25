@@ -12,12 +12,32 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @layer utilities {
+  .tool-card-hover {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
   .tool-card-hover:hover {
-    box-shadow: 0 8px 32px rgba(20, 216, 196, 0.15);
+    box-shadow: 0 8px 40px rgba(20, 216, 196, 0.2), 0 0 20px rgba(107, 124, 255, 0.1);
   }
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Premium CTA pulse glow */
+@keyframes ctaGlow {
+  0%, 100% { box-shadow: 0 0 30px rgba(20,216,196,0.5), 0 4px 16px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2); }
+  50% { box-shadow: 0 0 40px rgba(20,216,196,0.65), 0 4px 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2); }
+}
+.cta-primary {
+  animation: ctaGlow 3s ease-in-out infinite;
+}
+.cta-primary:hover {
+  animation: none;
+  box-shadow: 0 0 50px rgba(20,216,196,0.7), 0 8px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.25) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-primary { animation: none; }
 }
 
 @layer base {
