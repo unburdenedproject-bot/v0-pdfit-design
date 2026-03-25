@@ -121,22 +121,22 @@ export default function PDFToJPGPage() {
         {/* Related Tools */}
         <section className="py-16 bg-slate-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-6 text-center">Related Tools</h2>
+            <h2 className="text-2xl font-black text-white mb-6 text-center">Related Tools</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               <Link href="/pdf-to-png" className="border border-orange-200 bg-orange-50 rounded-xl p-4 hover:border-orange-400 hover:bg-orange-100 transition-all text-center">
-                <div className="font-bold text-orange-600 text-sm mb-1">PDF to PNG</div>
+                <div className="font-bold text-[#14D8C4] text-sm mb-1">PDF to PNG</div>
                 <div className="text-xs text-slate-500">Lossless image output</div>
               </Link>
               <Link href="/compress-pdf" className="border border-orange-200 bg-orange-50 rounded-xl p-4 hover:border-orange-400 hover:bg-orange-100 transition-all text-center">
-                <div className="font-bold text-orange-600 text-sm mb-1">Compress PDF</div>
+                <div className="font-bold text-[#14D8C4] text-sm mb-1">Compress PDF</div>
                 <div className="text-xs text-slate-500">Reduce size before converting</div>
               </Link>
               <Link href="/split-pdf" className="border border-orange-200 bg-orange-50 rounded-xl p-4 hover:border-orange-400 hover:bg-orange-100 transition-all text-center">
-                <div className="font-bold text-orange-600 text-sm mb-1">Split PDF</div>
+                <div className="font-bold text-[#14D8C4] text-sm mb-1">Split PDF</div>
                 <div className="text-xs text-slate-500">Convert only the pages you need</div>
               </Link>
               <Link href="/ocr-scanner" className="border border-orange-200 bg-orange-50 rounded-xl p-4 hover:border-orange-400 hover:bg-orange-100 transition-all text-center">
-                <div className="font-bold text-orange-600 text-sm mb-1">OCR Scanner</div>
+                <div className="font-bold text-[#14D8C4] text-sm mb-1">OCR Scanner</div>
                 <div className="text-xs text-slate-500">Extract text from scanned PDFs</div>
               </Link>
             </div>

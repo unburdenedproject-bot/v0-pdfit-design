@@ -160,7 +160,7 @@ export default function CompressPDFWithoutLosingQualityPage() {
         </section>
 
         {/* Related Tools */}
-        <section className="py-16 bg-[#F3F4FF]">
+        <section className="py-16" style={{ background: "#0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">More PDF Tools</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">

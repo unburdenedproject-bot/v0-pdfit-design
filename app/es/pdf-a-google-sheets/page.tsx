@@ -183,9 +183,9 @@ export default function PDFaGoogleSheetsPage() {
         </section>
 
         {/* Related Tools */}
-        <section className="py-16 bg-[#F3F4FF]">
+        <section className="py-16" style={{ background: "#0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-6 text-center">Herramientas Relacionadas</h2>
+            <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
                 { name: "PDF a Excel", href: "/es/pdf-a-excel", desc: "Convierte PDF a hoja de calculo" },
@@ -200,10 +200,10 @@ export default function PDFaGoogleSheetsPage() {
                 <Link
                   key={tool.href}
                   href={tool.href}
-                  className="border border-orange-200 bg-orange-50 rounded-xl p-4 hover:border-orange-400 hover:bg-orange-100 transition-all text-center flex flex-col justify-center min-h-[80px]"
+                  className="rounded-xl p-4 transition-all text-center flex flex-col justify-center min-h-[80px] hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(20,216,196,0.25)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.2)" }}
                 >
-                  <div className="font-bold text-orange-600 text-sm mb-1">{tool.name}</div>
-                  <div className="text-xs text-slate-500">{tool.desc}</div>
+                  <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
+                  <div className="text-xs text-slate-400">{tool.desc}</div>
                 </Link>
               ))}
             </div>
