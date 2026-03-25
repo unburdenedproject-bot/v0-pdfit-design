@@ -246,7 +246,7 @@ export default function ContactPage() {
                           disabled={
                             isSubmitting || !formData.name || !formData.email || !formData.subject || !formData.message
                           }
-                          className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                          className="w-full bg-orange-500 hover:bg-orange-600 text-[#0E0F1E] font-bold py-3 px-6 rounded-lg text-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                           {isSubmitting ? (
                             <>
