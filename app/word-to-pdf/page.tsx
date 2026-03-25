@@ -159,53 +159,33 @@ export default function WordToPDFPage() {
                 { name: "Merge PDF", href: "/merge-pdf", desc: "Combine multiple PDFs" },
                 { name: "Excel to PDF", href: "/excel-to-pdf", desc: "Convert spreadsheets to PDF" },
               ].map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="rounded-xl p-4 transition-all text-center flex flex-col justify-center min-h-[80px] hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(20,216,196,0.25)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.2)" }}
-                >
-                  <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
-                  <div className="text-xs text-slate-400">{tool.desc}</div>
-                </Link>
+                <div key={tool.href} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}>
+                  <Link href={tool.href} className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]" style={{ background: "radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255,255,255,0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
+                    <div className="text-xs text-slate-400">{tool.desc}</div>
+                  </Link>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16" style={{ background: "radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%), radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%), #0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
-            <div className="space-y-6">
+            <h2 className="text-2xl font-black text-white mb-8 text-center">Frequently Asked Questions</h2>
+            <div className="space-y-4">
               {[
-                {
-                  q: "Can I convert both DOC and DOCX to PDF?",
-                  a: "Yes. PDF.it supports both .doc and .docx file formats.",
-                },
-                {
-                  q: "Will the PDF keep my Word formatting?",
-                  a: "In most cases, yes — PDF.it preserves layout, fonts, and spacing. Complex documents with custom fonts or unusual tables can sometimes shift slightly.",
-                },
-                {
-                  q: "Can I convert Word to PDF on mobile?",
-                  a: "Yes. PDF.it works in mobile browsers — upload your Word file and download the PDF.",
-                },
-                {
-                  q: "Is it safe to upload my Word document?",
-                  a: "Yes. All transfers are SSL encrypted and your files are deleted immediately after your session. We never store or share your documents.",
-                },
-                {
-                  q: "What is the maximum file size I can convert?",
-                  a: "Pro accounts can upload files up to 200MB. Business accounts can upload files up to 1GB.",
-                },
-                {
-                  q: "My PDF looks different from my Word file — why?",
-                  a: "Differences can occur due to embedded fonts or complex formatting. Try simplifying spacing, using standard fonts, or exporting again.",
-                },
+                { q: "Can I convert both DOC and DOCX to PDF?", a: "Yes. PDF.it supports both .doc and .docx file formats." },
+                { q: "Will the PDF keep my Word formatting?", a: "In most cases, yes — PDF.it preserves layout, fonts, and spacing. Complex documents with custom fonts or unusual tables can sometimes shift slightly." },
+                { q: "Can I convert Word to PDF on mobile?", a: "Yes. PDF.it works in mobile browsers — upload your Word file and download the PDF." },
+                { q: "Is it safe to upload my Word document?", a: "Yes. All transfers are SSL encrypted and your files are deleted immediately after your session. We never store or share your documents." },
+                { q: "What is the maximum file size I can convert?", a: "Pro accounts can upload files up to 200MB. Business accounts can upload files up to 1GB." },
+                { q: "My PDF looks different from my Word file — why?", a: "Differences can occur due to embedded fonts or complex formatting. Try simplifying spacing, using standard fonts, or exporting again." },
               ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
+                  <h3 className="font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 text-sm">{faq.a}</p>
                 </div>
               ))}
             </div>

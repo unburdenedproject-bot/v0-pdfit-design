@@ -193,53 +193,33 @@ export default function WordaPDFPage() {
                 { name: "Unir PDF", href: "/es/unir-pdf", desc: "Combina varios PDFs en uno" },
                 { name: "PDF a JPG", href: "/es/pdf-a-jpg", desc: "Extrae paginas como imagenes" },
               ].map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="rounded-xl p-4 transition-all text-center flex flex-col justify-center min-h-[80px] hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(20,216,196,0.25)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.2)" }}
-                >
-                  <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
-                  <div className="text-xs text-slate-400">{tool.desc}</div>
-                </Link>
+                <div key={tool.href} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}>
+                  <Link href={tool.href} className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]" style={{ background: "radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255,255,255,0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
+                    <div className="text-xs text-slate-400">{tool.desc}</div>
+                  </Link>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16" style={{ background: "radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%), radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%), #0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
-            <div className="space-y-6">
+            <h2 className="text-2xl font-black text-white mb-8 text-center">Preguntas Frecuentes</h2>
+            <div className="space-y-4">
               {[
-                {
-                  q: "¿Puedo convertir tanto DOC como DOCX a PDF?",
-                  a: "Si. PDF.it soporta ambos formatos de archivo .doc y .docx.",
-                },
-                {
-                  q: "¿El PDF mantendra el formato de mi archivo Word?",
-                  a: "En la mayoria de los casos, si — PDF.it preserva el diseno, fuentes y espaciado. Documentos complejos con fuentes personalizadas o tablas inusuales pueden variar ligeramente.",
-                },
-                {
-                  q: "¿Puedo convertir Word a PDF en mi celular?",
-                  a: "Si. PDF.it funciona en navegadores moviles — sube tu archivo Word y descarga el PDF.",
-                },
-                {
-                  q: "¿Es seguro subir mi documento Word?",
-                  a: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos.",
-                },
-                {
-                  q: "¿Cual es el tamano maximo de archivo que puedo convertir?",
-                  a: "Las cuentas Pro y Business pueden subir archivos de hasta 200MB.",
-                },
-                {
-                  q: "Mi PDF se ve diferente a mi archivo Word — ¿por que?",
-                  a: "Las diferencias pueden ocurrir por fuentes incrustadas o formato complejo. Intenta simplificar el espaciado, usar fuentes estandar o exportar de nuevo.",
-                },
+                { q: "¿Puedo convertir tanto DOC como DOCX a PDF?", a: "Si. PDF.it soporta ambos formatos de archivo .doc y .docx." },
+                { q: "¿El PDF mantendra el formato de mi archivo Word?", a: "En la mayoria de los casos, si — PDF.it preserva el diseno, fuentes y espaciado. Documentos complejos con fuentes personalizadas o tablas inusuales pueden variar ligeramente." },
+                { q: "¿Puedo convertir Word a PDF en mi celular?", a: "Si. PDF.it funciona en navegadores moviles — sube tu archivo Word y descarga el PDF." },
+                { q: "¿Es seguro subir mi documento Word?", a: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." },
+                { q: "¿Cual es el tamano maximo de archivo que puedo convertir?", a: "Las cuentas Pro y Business pueden subir archivos de hasta 200MB." },
+                { q: "Mi PDF se ve diferente a mi archivo Word — ¿por que?", a: "Las diferencias pueden ocurrir por fuentes incrustadas o formato complejo. Intenta simplificar el espaciado, usar fuentes estandar o exportar de nuevo." },
               ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
+                  <h3 className="font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 text-sm">{faq.a}</p>
                 </div>
               ))}
             </div>
