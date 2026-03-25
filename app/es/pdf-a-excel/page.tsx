@@ -3,7 +3,7 @@ import Link from "next/link"
 import { HeaderEs } from "@/components/header-es"
 import { FooterEs } from "@/components/footer-es"
 import { ProcessingInterface } from "@/components/processing-interface"
-import { FileSpreadsheet, Zap, Shield, Download, Crown } from "lucide-react"
+import { FileSpreadsheet, Zap, Shield, Download } from "lucide-react"
 
 export const metadata = {
   title: "Convertir PDF a Excel Online — Extraer Tablas de PDF | PDF.it",
@@ -83,23 +83,17 @@ export default function PDFaExcelPage() {
       />
       <HeaderEs />
       <main>
-        {/* Hero Section */}
+        {/* Hero */}
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
               <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <FileSpreadsheet className="h-10 w-10 text-white" />
               </div>
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <h1 className="text-4xl lg:text-5xl font-black">Convertir PDF a Excel</h1>
-                <span className="bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
-                  Pro
-                </span>
-              </div>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Convertir PDF a Excel Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Extrae datos de tus PDFs en hojas de calculo Excel. Perfecto para analisis de datos y reportes.
+                Extrae tablas y datos de PDFs en hojas de calculo Excel editables — perfecto para reportes financieros, facturas y analisis de datos.
               </p>
-
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2">
                   <Zap className="h-4 w-4 text-orange-500" />
@@ -111,7 +105,7 @@ export default function PDFaExcelPage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Download className="h-4 w-4 text-orange-500" />
-                  <span>Formato XLSX</span>
+                  <span>Sin Registro</span>
                 </div>
               </div>
             </div>
@@ -128,18 +122,52 @@ export default function PDFaExcelPage() {
         />
 
         {/* About */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <p className="text-lg text-slate-600 mb-8">
-              Usa la herramienta de PDF a Excel de PDF.it para extraer tablas y datos de archivos PDF en hojas de calculo editables. Sube tu PDF, convierte y descarga un archivo .xlsx listo para analizar — sin necesidad de instalar software.
-            </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>✓ Convierte tablas y datos de PDF a hojas de calculo Excel</li>
-              <li>✓ Ideal para reportes financieros, facturas y exportaciones de datos</li>
-              <li>✓ Descarga un archivo .xlsx listo para abrir en Excel o Google Sheets</li>
-              <li>✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li>✓ Sin instalacion — convierte PDFs desde tu navegador</li>
-            </ul>
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <div
+              className="rounded-2xl p-8 mb-8 text-center"
+              style={{
+                background: "linear-gradient(135deg, rgba(20,216,196,0.06), rgba(107,124,255,0.04), rgba(232,129,58,0.03))",
+                border: "1px solid rgba(20,216,196,0.12)",
+                boxShadow: "0 4px 24px rgba(0,0,0,0.04)",
+              }}
+            >
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Usa la herramienta PDF a Excel de PDF.it para extraer tablas y datos de archivos PDF en hojas de calculo editables. Sube tu PDF, conviertelo y descarga un archivo .xlsx listo para analizar — sin necesidad de software.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                "Convierte tablas y datos de PDF a hojas de calculo Excel",
+                "Ideal para reportes financieros, facturas y exportaciones de datos",
+                "Descarga un archivo .xlsx listo para abrir en Excel o Google Sheets",
+                "Funciona en Mac, Windows, iOS, Android y Linux",
+                "Sin instalacion — convierte PDFs desde tu navegador",
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-3 rounded-xl px-4 py-3"
+                  style={{
+                    background: "rgba(255,255,255,0.7)",
+                    border: "1px solid rgba(20,216,196,0.1)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
+                  }}
+                >
+                  <div
+                    className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 10px rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <svg className="w-3.5 h-3.5 text-[#14D8C4]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="text-sm font-medium text-slate-700">{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -147,7 +175,7 @@ export default function PDFaExcelPage() {
         <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
             <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Extrae Tablas de PDF con Precision</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-3">Extrae Tablas de PDF a Hojas de Calculo</h2>
               <p className="text-slate-600">
                 PDF.it detecta y extrae tablas de tus archivos PDF, convirtiendo filas y columnas en celdas de Excel que puedes editar, filtrar y analizar.
               </p>
@@ -159,29 +187,37 @@ export default function PDFaExcelPage() {
               </p>
             </div>
             <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Herramienta Pro para Profesionales</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-3">Descarga .xlsx — Compatible con Excel y Google Sheets</h2>
               <p className="text-slate-600">
-                PDF a Excel es una funcion Pro. Actualiza tu plan para acceder a conversiones ilimitadas, archivos de hasta 200MB y procesamiento prioritario.
+                Tu archivo convertido se abre directamente en Microsoft Excel, Google Sheets o cualquier app de hojas de calculo. Sin necesidad de limpiar el formato.
               </p>
             </div>
           </div>
         </section>
 
         {/* How To */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Convertir PDF a Excel</h2>
-            <div className="space-y-4">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Convertir PDF a Excel</h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
               {[
-                "Sube o arrastra tu PDF a PDF.it.",
-                "Haz clic en Convertir PDF a Excel.",
-                "Descarga tu archivo .xlsx y abrelo en Excel o Google Sheets.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
+                { num: "1", title: "Sube tu PDF", desc: "Arrastra o haz clic para elegir un archivo" },
+                { num: "2", title: "Haz clic en Convertir", desc: "El procesamiento toma solo segundos" },
+                { num: "3", title: "Descarga tu archivo Excel", desc: "Abrelo en Excel o Google Sheets" },
+              ].map((step) => (
+                <div key={step.num} className="flex-1">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                      border: "1px solid rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <span className="text-[#14D8C4] font-black text-lg">{step.num}</span>
                   </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
+                  <p className="font-semibold text-slate-900">{step.title}</p>
+                  <p className="text-sm text-slate-500 mt-1">{step.desc}</p>
                 </div>
               ))}
             </div>

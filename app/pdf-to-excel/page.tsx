@@ -57,7 +57,7 @@ export default function PDFToExcelPage() {
       />
       <Header />
       <main>
-        {/* Hero Section */}
+        {/* Hero */}
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
@@ -66,9 +66,8 @@ export default function PDFToExcelPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">PDF to Excel Converter</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Extract data from your PDFs into Excel spreadsheets. Perfect for data analysis and reporting.
+                Extract tables and data from PDFs into editable Excel spreadsheets — perfect for financial reports, invoices, and data analysis.
               </p>
-
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2">
                   <Zap className="h-4 w-4 text-orange-500" />
@@ -96,21 +95,110 @@ export default function PDFToExcelPage() {
           successMessage="Your Excel file is ready!"
         />
 
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <p className="text-lg text-slate-600 mb-8">
-              Use PDF.it's PDF to Excel tool to extract tables and data from PDF files into editable spreadsheets. Upload your PDF, convert it, and download a .xlsx file ready for analysis — no software required.
-            </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>✓ Convert PDF tables and data to Excel spreadsheets</li>
-              <li>✓ Great for financial reports, invoices, and data exports</li>
-              <li>✓ Download a .xlsx file ready to open in Excel or Google Sheets</li>
-              <li>✓ Works on Mac, Windows, iOS, Android, and Linux</li>
-              <li>✓ No installation — convert PDFs in your browser</li>
-            </ul>
+        {/* About */}
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <div
+              className="rounded-2xl p-8 mb-8 text-center"
+              style={{
+                background: "linear-gradient(135deg, rgba(20,216,196,0.06), rgba(107,124,255,0.04), rgba(232,129,58,0.03))",
+                border: "1px solid rgba(20,216,196,0.12)",
+                boxShadow: "0 4px 24px rgba(0,0,0,0.04)",
+              }}
+            >
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Use PDF.it's PDF to Excel tool to extract tables and data from PDF files into editable spreadsheets. Upload your PDF, convert it, and download a .xlsx file ready for analysis — no software required.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                "Convert PDF tables and data to Excel spreadsheets",
+                "Great for financial reports, invoices, and data exports",
+                "Download a .xlsx file ready to open in Excel or Google Sheets",
+                "Works on Mac, Windows, iOS, Android, and Linux",
+                "No installation — convert PDFs in your browser",
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-3 rounded-xl px-4 py-3"
+                  style={{
+                    background: "rgba(255,255,255,0.7)",
+                    border: "1px solid rgba(20,216,196,0.1)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
+                  }}
+                >
+                  <div
+                    className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 10px rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <svg className="w-3.5 h-3.5 text-[#14D8C4]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="text-sm font-medium text-slate-700">{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
+        {/* Feature Sections */}
+        <section className="py-16 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
+            <div>
+              <h2 className="text-2xl font-black text-slate-900 mb-3">Extract PDF Tables to Excel Spreadsheets</h2>
+              <p className="text-slate-600">
+                PDF.it detects and extracts tables from your PDF files, converting rows and columns into Excel cells you can edit, filter, and analyze.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-2xl font-black text-slate-900 mb-3">Great for Financial Reports and Invoices</h2>
+              <p className="text-slate-600">
+                Convert bank statements, invoices, and reports into editable spreadsheets. Save hours of manual data entry.
+              </p>
+            </div>
+            <div>
+              <h2 className="text-2xl font-black text-slate-900 mb-3">Download .xlsx — Works in Excel and Google Sheets</h2>
+              <p className="text-slate-600">
+                Your converted file opens directly in Microsoft Excel, Google Sheets, or any spreadsheet app. No formatting cleanup needed.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* How To */}
+        <section className="py-16 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">How to Convert PDF to Excel</h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+              {[
+                { num: "1", title: "Upload your PDF", desc: "Drag or click to choose a file" },
+                { num: "2", title: "Click Convert", desc: "Processing takes just seconds" },
+                { num: "3", title: "Download your Excel file", desc: "Open it in Excel or Google Sheets" },
+              ].map((step) => (
+                <div key={step.num} className="flex-1">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                      border: "1px solid rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <span className="text-[#14D8C4] font-black text-lg">{step.num}</span>
+                  </div>
+                  <p className="font-semibold text-slate-900">{step.title}</p>
+                  <p className="text-sm text-slate-500 mt-1">{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Related Tools */}
         <section className="py-16" style={{ background: "#0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-white mb-6 text-center">Related Tools</h2>
@@ -132,6 +220,7 @@ export default function PDFToExcelPage() {
           </div>
         </section>
 
+        {/* FAQ */}
         <section className="py-16" style={{ background: "radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%), radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%), #0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-white mb-8 text-center">Frequently Asked Questions</h2>
