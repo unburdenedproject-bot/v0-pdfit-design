@@ -362,25 +362,42 @@ export default function HomePagePt() {
         </section>
 
         {/* FAQ */}
-        <section className="py-10 bg-[#F3F4FF]">
+        <section
+          className="py-14"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 100%, rgba(20,216,196,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 0% 50%, rgba(107,124,255,0.03) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 20%, rgba(232,129,58,0.02) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-8">
-                <div className="w-11 h-11 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <HelpCircle className="h-5 w-5 text-orange-600" />
+              <div className="text-center mb-10">
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4"
+                  style={{
+                    background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                    boxShadow: "0 0 24px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                    border: "1px solid rgba(20,216,196,0.2)",
+                  }}
+                >
+                  <HelpCircle className="h-5 w-5 text-[#14D8C4]" />
                 </div>
-                <h2 className="text-2xl lg:text-3xl font-black text-slate-900 mb-2">
+                <h2 className="text-2xl lg:text-3xl font-black text-white mb-2">
                   Perguntas Frequentes
                 </h2>
-                <p className="text-sm text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                <p className="text-sm text-slate-400 max-w-2xl mx-auto leading-relaxed">
                   Tudo o que voce precisa saber sobre o PDF.it. Nao encontrou o que procura?{" "}
-                  <a href="/br/contato" className="text-orange-500 hover:text-orange-600 font-medium underline">
+                  <a href="/br/contato" className="text-[#14D8C4] hover:text-[#2EE6D6] font-medium underline">
                     Fale conosco
                   </a>.
                 </p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {[
                   { q: "O PDF.it e gratis?", a: "Sim. O PDF.it oferece um plano gratuito com 10 conversoes por dia e arquivos ate 25MB. Nao precisa de conta para ferramentas gratuitas. Atualize para Pro ($7.99/mes) para conversoes ilimitadas, todas as ferramentas e arquivos ate 200MB." },
                   { q: "Preciso criar uma conta?", a: "Nao precisa de conta para usar as ferramentas gratuitas — basta enviar seu arquivo e converter. Conta e necessaria para funcoes Pro e gerenciar sua assinatura." },
@@ -391,17 +408,32 @@ export default function HomePagePt() {
                   { q: "Funciona no celular?", a: "Sim. O PDF.it funciona em navegadores modernos incluindo Chrome, Firefox, Safari e Edge em computador, tablet e celular." },
                   { q: "Como posso obter ajuda?", a: "Visite nossa pagina de Contato ou escreva para suporte@pdf.it.com. Respondemos em menos de um dia util." },
                 ].map((faq, i) => (
-                  <div key={i} className="bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <h3 className="font-bold text-slate-900 mb-2 text-sm">{faq.q}</h3>
-                    <p className="text-slate-600 text-xs leading-relaxed">{faq.a}</p>
+                  <div
+                    key={i}
+                    className="rounded-xl p-5"
+                    style={{
+                      background: "rgba(255,255,255,0.04)",
+                      border: "1px solid rgba(255,255,255,0.08)",
+                      boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                    }}
+                  >
+                    <h3 className="font-bold text-white mb-2 text-sm">{faq.q}</h3>
+                    <p className="text-slate-300 text-xs leading-relaxed">{faq.a}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-8 text-center">
-                <div className="bg-[#191B4D] border border-[#252A6A] rounded-2xl p-6">
+              <div className="mt-10 text-center">
+                <div
+                  className="rounded-2xl p-8"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.08), rgba(107,124,255,0.06), rgba(232,129,58,0.04))",
+                    border: "1px solid rgba(20,216,196,0.15)",
+                    boxShadow: "0 0 40px rgba(20,216,196,0.06), 0 8px 32px rgba(0,0,0,0.3)",
+                  }}
+                >
                   <h3 className="text-lg font-bold text-white mb-2">Ainda tem perguntas?</h3>
-                  <p className="text-slate-300 text-xs mb-4 max-w-xl mx-auto leading-relaxed">
+                  <p className="text-slate-400 text-xs mb-5 max-w-xl mx-auto leading-relaxed">
                     Nossa equipe de suporte esta aqui para ajudar voce a aproveitar o PDF.it ao maximo.
                   </p>
                   <div className="flex justify-center">
@@ -411,7 +443,13 @@ export default function HomePagePt() {
                         e.preventDefault()
                         window.location.href = "mailto:contact@pdf.it.com"
                       }}
-                      className="inline-flex items-center justify-center px-5 py-2.5 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold rounded-xl text-sm transition-colors duration-200 shadow-lg hover:shadow-xl"
+                      className="inline-flex items-center justify-center px-6 py-2.5 font-bold rounded-xl text-sm transition-all duration-300 hover:scale-105"
+                      style={{
+                        background: "linear-gradient(135deg, #14D8C4, #0FBFB0)",
+                        color: "#0E0F1E",
+                        boxShadow: "0 0 20px rgba(20,216,196,0.4), 0 4px 12px rgba(0,0,0,0.3)",
+                        border: "1px solid rgba(255,255,255,0.15)",
+                      }}
                     >
                       Escreva para Nos
                     </a>

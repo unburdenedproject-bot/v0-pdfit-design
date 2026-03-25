@@ -117,19 +117,32 @@ interface FAQItemProps {
 
 function FAQItem({ question, answer, isOpen, onToggle, questionId }: FAQItemProps) {
   return (
-    <div className="border border-gray-200 rounded-lg overflow-hidden bg-white">
+    <div
+      className="rounded-xl overflow-hidden transition-all duration-200"
+      style={{
+        background: isOpen
+          ? "rgba(255,255,255,0.08)"
+          : "rgba(255,255,255,0.04)",
+        border: isOpen
+          ? "1px solid rgba(20,216,196,0.2)"
+          : "1px solid rgba(255,255,255,0.08)",
+        boxShadow: isOpen
+          ? "0 4px 16px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.05)"
+          : "0 2px 8px rgba(0,0,0,0.1)",
+      }}
+    >
       <button
         onClick={onToggle}
-        className="w-full px-5 py-3 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-inset"
+        className="w-full px-5 py-3.5 text-left flex items-center justify-between transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#14D8C4] focus:ring-inset rounded-xl"
         aria-expanded={isOpen}
         aria-controls={questionId}
       >
-        <h4 className="text-sm font-bold text-slate-900 pr-4 leading-relaxed">{question}</h4>
+        <h4 className="text-sm font-bold text-white pr-4 leading-relaxed">{question}</h4>
         <div className="flex-shrink-0">
           {isOpen ? (
-            <ChevronUp className="h-4 w-4 text-orange-500 transition-transform duration-200" />
+            <ChevronUp className="h-4 w-4 text-[#14D8C4] transition-transform duration-200" />
           ) : (
-            <ChevronDown className="h-4 w-4 text-slate-600 transition-transform duration-200" />
+            <ChevronDown className="h-4 w-4 text-slate-400 transition-transform duration-200" />
           )}
         </div>
       </button>
@@ -140,9 +153,9 @@ function FAQItem({ question, answer, isOpen, onToggle, questionId }: FAQItemProp
           isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0",
         )}
       >
-        <div className="px-5 pb-3 pt-0.5">
+        <div className="px-5 pb-4 pt-0.5">
           <p
-            className="text-slate-700 text-xs leading-relaxed"
+            className="text-slate-300 text-xs leading-relaxed"
             dangerouslySetInnerHTML={{
               __html: answer,
             }}
@@ -161,8 +174,8 @@ interface FAQCategoryProps {
 
 function FAQCategory({ category, openItems, toggleItem }: FAQCategoryProps) {
   return (
-    <div className="mb-5">
-      <h3 className="text-base font-bold text-slate-900 mb-2">
+    <div className="mb-6">
+      <h3 className="text-base font-extrabold text-[#6B7CFF] mb-3 uppercase tracking-wide text-xs">
         {category.title}
       </h3>
       <div className="space-y-2">
@@ -216,20 +229,38 @@ export function ComprehensiveFAQSection() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <section className="py-10 bg-[#F3F4FF]" aria-labelledby="comprehensive-faq-heading">
+      <section
+        className="py-14"
+        aria-labelledby="comprehensive-faq-heading"
+        style={{
+          background: `
+            radial-gradient(ellipse 60% 40% at 50% 100%, rgba(20,216,196,0.04) 0%, transparent 50%),
+            radial-gradient(ellipse 50% 50% at 0% 50%, rgba(107,124,255,0.03) 0%, transparent 50%),
+            radial-gradient(ellipse 50% 50% at 100% 20%, rgba(232,129,58,0.02) 0%, transparent 50%),
+            #0E0F1E
+          `,
+        }}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             {/* Header */}
-            <div className="text-center mb-8">
-              <div className="w-11 h-11 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-                <HelpCircle className="h-5 w-5 text-orange-600" />
+            <div className="text-center mb-10">
+              <div
+                className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4"
+                style={{
+                  background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                  boxShadow: "0 0 24px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                  border: "1px solid rgba(20,216,196,0.2)",
+                }}
+              >
+                <HelpCircle className="h-5 w-5 text-[#14D8C4]" />
               </div>
-              <h2 id="comprehensive-faq-heading" className="text-2xl lg:text-3xl font-black text-slate-900 mb-2">
+              <h2 id="comprehensive-faq-heading" className="text-2xl lg:text-3xl font-black text-white mb-2">
                 Frequently Asked Questions
               </h2>
-              <p className="text-sm text-slate-600 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-sm text-slate-400 max-w-2xl mx-auto leading-relaxed">
                 {"Everything you need to know about PDF.it. Can't find what you're looking for? "}
-                <a href="/contact" className="text-orange-500 hover:text-orange-600 font-medium underline">
+                <a href="/contact" className="text-[#14D8C4] hover:text-[#2EE6D6] font-medium underline">
                   Contact our support team
                 </a>
                 .
@@ -244,10 +275,17 @@ export function ComprehensiveFAQSection() {
             </div>
 
             {/* Bottom CTA */}
-            <div className="mt-8 text-center">
-              <div className="bg-[#191B4D] border border-[#252A6A] rounded-2xl p-6">
+            <div className="mt-10 text-center">
+              <div
+                className="rounded-2xl p-8"
+                style={{
+                  background: "linear-gradient(135deg, rgba(20,216,196,0.08), rgba(107,124,255,0.06), rgba(232,129,58,0.04))",
+                  border: "1px solid rgba(20,216,196,0.15)",
+                  boxShadow: "0 0 40px rgba(20,216,196,0.06), 0 8px 32px rgba(0,0,0,0.3)",
+                }}
+              >
                 <h3 className="text-lg font-bold text-white mb-2">Still have questions?</h3>
-                <p className="text-slate-300 text-xs mb-4 max-w-xl mx-auto leading-relaxed">
+                <p className="text-slate-400 text-xs mb-5 max-w-xl mx-auto leading-relaxed">
                   Our support team is here to help you get the most out of PDF.it.
                 </p>
                 <div className="flex justify-center">
@@ -257,7 +295,13 @@ export function ComprehensiveFAQSection() {
                       e.preventDefault()
                       window.location.href = "mailto:contact@pdf.it.com"
                     }}
-                    className="inline-flex items-center justify-center px-5 py-2.5 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold rounded-xl text-sm transition-colors duration-200 shadow-lg hover:shadow-xl"
+                    className="inline-flex items-center justify-center px-6 py-2.5 font-bold rounded-xl text-sm transition-all duration-300 hover:scale-105"
+                    style={{
+                      background: "linear-gradient(135deg, #14D8C4, #0FBFB0)",
+                      color: "#0E0F1E",
+                      boxShadow: "0 0 20px rgba(20,216,196,0.4), 0 4px 12px rgba(0,0,0,0.3)",
+                      border: "1px solid rgba(255,255,255,0.15)",
+                    }}
                   >
                     Email Us Directly
                   </a>
