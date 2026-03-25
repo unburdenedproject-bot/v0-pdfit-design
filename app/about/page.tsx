@@ -12,6 +12,8 @@ export const metadata: Metadata = {
     "about PDF.it",
     "PDF tools",
     "free PDF tools",
+    "online PDF tools",
+    "browser-based PDF tools",
     "PDF converter",
     "compress PDF",
     "merge PDF",
@@ -25,6 +27,30 @@ export const metadata: Metadata = {
     "Business PDF tools",
     "Enterprise PDF tools",
   ],
+  openGraph: {
+    title: "About PDF.it — Free, Pro, Business & Enterprise PDF Tools",
+    description:
+      "Compare Free, Pro, Business, and Enterprise plans. PDF conversion, OCR, eSign, redaction, workflow automation, and table extraction — all in the browser.",
+    url: "https://pdf.it.com/about",
+    siteName: "PDF.it",
+    images: [{ url: "https://pdf.it.com/og-logo.png", width: 1200, height: 630, alt: "PDF.it — About" }],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About PDF.it — Free, Pro, Business & Enterprise PDF Tools",
+    description: "Compare PDF.it plans for conversion, OCR, eSign, redaction, automation, and table extraction.",
+    images: ["https://pdf.it.com/og-logo.png"],
+  },
+  alternates: {
+    canonical: "https://pdf.it.com/about",
+    languages: {
+      en: "https://pdf.it.com/about",
+      es: "https://pdf.it.com/es/acerca",
+      pt: "https://pdf.it.com/br/sobre",
+    },
+  },
 }
 
 export default function AboutPage() {

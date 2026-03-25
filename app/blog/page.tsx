@@ -2,10 +2,46 @@ import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Calendar, ArrowRight } from "lucide-react"
+import type { Metadata } from "next"
 
-export const metadata = {
-  title: "Blog — PDF.it",
-  description: "News, updates, and tips from the PDF.it team. Learn about new features, PDF best practices, and product announcements.",
+export const metadata: Metadata = {
+  title: "PDF.it Blog — PDF Tips, New Features & Product Updates",
+  description:
+    "News, updates, and tips from the PDF.it team. Learn about new features, PDF best practices, AI resume tools, table extraction, and product announcements.",
+  keywords: [
+    "PDF.it blog",
+    "PDF tips",
+    "PDF tools updates",
+    "compress PDF tips",
+    "merge PDF guide",
+    "AI resume optimizer",
+    "table extraction PDF",
+    "eSign documents",
+    "PDF best practices",
+  ],
+  openGraph: {
+    title: "PDF.it Blog — PDF Tips, New Features & Product Updates",
+    description: "News, updates, and tips from the PDF.it team. Learn about new features and PDF best practices.",
+    url: "https://pdf.it.com/blog",
+    siteName: "PDF.it",
+    images: [{ url: "https://pdf.it.com/og-logo.png", width: 1200, height: 630, alt: "PDF.it Blog" }],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PDF.it Blog — PDF Tips, New Features & Product Updates",
+    description: "News, updates, and tips from the PDF.it team.",
+    images: ["https://pdf.it.com/og-logo.png"],
+  },
+  alternates: {
+    canonical: "https://pdf.it.com/blog",
+    languages: {
+      en: "https://pdf.it.com/blog",
+      es: "https://pdf.it.com/es/blog",
+      pt: "https://pdf.it.com/br/blog",
+    },
+  },
 }
 
 const posts = [

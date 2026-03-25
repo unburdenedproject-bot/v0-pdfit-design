@@ -46,6 +46,14 @@ export const metadata: Metadata = {
       "Compress PDFs and use AI to optimize or build ATS-friendly resumes.",
     images: ["https://pdf.it.com/og-logo.png"],
   },
+  alternates: {
+    canonical: "https://pdf.it.com",
+    languages: {
+      en: "https://pdf.it.com",
+      es: "https://pdf.it.com/es",
+      pt: "https://pdf.it.com/br",
+    },
+  },
 }
 
 export default function HomePage() {

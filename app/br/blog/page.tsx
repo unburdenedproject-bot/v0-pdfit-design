@@ -2,10 +2,46 @@ import Link from "next/link"
 import { HeaderBr } from "@/components/header-br"
 import { FooterBr } from "@/components/footer-br"
 import { Calendar, ArrowRight } from "lucide-react"
+import type { Metadata } from "next"
 
-export const metadata = {
-  title: "Blog — PDF.it",
-  description: "Noticias, atualizacoes e dicas da equipe PDF.it.",
+export const metadata: Metadata = {
+  title: "Blog do PDF.it — Dicas PDF, Novos Recursos e Atualizacoes",
+  description:
+    "Noticias, atualizacoes e dicas da equipe PDF.it. Aprenda sobre novos recursos, melhores praticas PDF, ferramentas de curriculo com IA e extracao de tabelas.",
+  keywords: [
+    "blog PDF.it",
+    "dicas PDF",
+    "ferramentas PDF atualizacoes",
+    "comprimir PDF dicas",
+    "unir PDF guia",
+    "otimizador ATS curriculo",
+    "extracao de tabelas PDF",
+    "assinatura eletronica documentos",
+    "melhores praticas PDF",
+  ],
+  openGraph: {
+    title: "Blog do PDF.it — Dicas PDF, Novos Recursos e Atualizacoes",
+    description: "Noticias, atualizacoes e dicas da equipe PDF.it. Novos recursos e melhores praticas PDF.",
+    url: "https://pdf.it.com/br/blog",
+    siteName: "PDF.it",
+    images: [{ url: "https://pdf.it.com/og-logo.png", width: 1200, height: 630, alt: "Blog do PDF.it" }],
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog do PDF.it — Dicas PDF, Novos Recursos e Atualizacoes",
+    description: "Noticias, atualizacoes e dicas da equipe PDF.it.",
+    images: ["https://pdf.it.com/og-logo.png"],
+  },
+  alternates: {
+    canonical: "https://pdf.it.com/br/blog",
+    languages: {
+      en: "https://pdf.it.com/blog",
+      es: "https://pdf.it.com/es/blog",
+      pt: "https://pdf.it.com/br/blog",
+    },
+  },
 }
 
 const posts = [
