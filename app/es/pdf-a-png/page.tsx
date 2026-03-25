@@ -122,18 +122,52 @@ export default function PDFaPNGPage() {
         />
 
         {/* About */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <p className="text-lg text-slate-600 mb-8">
-              Usa el convertidor de PDF a PNG de PDF.it para exportar paginas de PDF como imagenes PNG — rapido. PNG es ideal cuando necesitas texto nitido, graficos limpios y calidad consistente para presentaciones, documentos y uso web. Sube tu PDF, convierte y descarga tus PNGs al instante.
-            </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>✓ Convierte PDF a PNG con resultados nitidos y legibles</li>
-              <li>✓ Ideal para paginas con mucho texto, graficos y diagramas</li>
-              <li>✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li>✓ Sin instalacion — funciona desde tu navegador</li>
-              <li>✓ Descargas faciles para paginas individuales o documentos completos</li>
-            </ul>
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <div
+              className="rounded-2xl p-8 mb-8 text-center"
+              style={{
+                background: "linear-gradient(135deg, rgba(20,216,196,0.06), rgba(107,124,255,0.04), rgba(232,129,58,0.03))",
+                border: "1px solid rgba(20,216,196,0.12)",
+                boxShadow: "0 4px 24px rgba(0,0,0,0.04)",
+              }}
+            >
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Usa el convertidor de PDF a PNG de PDF.it para exportar paginas de PDF como imagenes PNG — rapido. PNG es ideal cuando necesitas texto nitido, graficos limpios y calidad consistente para presentaciones, documentos y uso web. Sube tu PDF, convierte y descarga tus PNGs al instante.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                "Convierte PDF a PNG con resultados nitidos y legibles",
+                "Ideal para paginas con mucho texto, graficos y diagramas",
+                "Funciona en Mac, Windows, iOS, Android y Linux",
+                "Sin instalacion — funciona desde tu navegador",
+                "Descargas faciles para paginas individuales o documentos completos",
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-3 rounded-xl px-4 py-3"
+                  style={{
+                    background: "rgba(255,255,255,0.7)",
+                    border: "1px solid rgba(20,216,196,0.1)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
+                  }}
+                >
+                  <div
+                    className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 10px rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <svg className="w-3.5 h-3.5 text-[#14D8C4]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="text-sm font-medium text-slate-700">{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 

@@ -92,18 +92,52 @@ export default function PDFToPNGPage() {
         />
 
         {/* About */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <p className="text-lg text-slate-600 mb-8">
-              Use PDF.it's PDF to PNG converter to export PDF pages as PNG images — fast. PNG is ideal when you need crisp text, clean graphics, and consistent quality for presentations, documents, and web use. Upload your PDF, convert, and download your PNGs instantly.
-            </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>✓ Convert PDF to PNG with sharp, readable results</li>
-              <li>✓ Great for text-heavy pages, charts, and line art</li>
-              <li>✓ Works on Mac, Windows, iOS, Android, and Linux</li>
-              <li>✓ No installation — runs in your browser</li>
-              <li>✓ Easy downloads for single pages or full documents</li>
-            </ul>
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <div
+              className="rounded-2xl p-8 mb-8 text-center"
+              style={{
+                background: "linear-gradient(135deg, rgba(20,216,196,0.06), rgba(107,124,255,0.04), rgba(232,129,58,0.03))",
+                border: "1px solid rgba(20,216,196,0.12)",
+                boxShadow: "0 4px 24px rgba(0,0,0,0.04)",
+              }}
+            >
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Use PDF.it's PDF to PNG converter to export PDF pages as PNG images — fast. PNG is ideal when you need crisp text, clean graphics, and consistent quality for presentations, documents, and web use. Upload your PDF, convert, and download your PNGs instantly.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                "Convert PDF to PNG with sharp, readable results",
+                "Great for text-heavy pages, charts, and line art",
+                "Works on Mac, Windows, iOS, Android, and Linux",
+                "No installation — runs in your browser",
+                "Easy downloads for single pages or full documents",
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-3 rounded-xl px-4 py-3"
+                  style={{
+                    background: "rgba(255,255,255,0.7)",
+                    border: "1px solid rgba(20,216,196,0.1)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
+                  }}
+                >
+                  <div
+                    className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 10px rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <svg className="w-3.5 h-3.5 text-[#14D8C4]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="text-sm font-medium text-slate-700">{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
