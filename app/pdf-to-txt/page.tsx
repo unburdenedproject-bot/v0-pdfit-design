@@ -46,11 +46,6 @@ const faqSchema = {
 export default function PDFToTXTPage() {
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <Header />
       <main>
         {/* Hero Section */}
@@ -283,6 +278,12 @@ export default function PDFToTXTPage() {
             </div>
           </div>
         </section>
+
+        <Script
+          id="faq-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
       </main>
       <Footer />
     </div>

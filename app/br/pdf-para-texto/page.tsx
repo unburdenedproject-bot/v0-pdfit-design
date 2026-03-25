@@ -77,11 +77,6 @@ const faqSchema = {
 export default function PDFparaTextoPage() {
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderBr />
       <main>
         {/* Hero */}
@@ -314,6 +309,12 @@ export default function PDFparaTextoPage() {
             </div>
           </div>
         </section>
+
+        <Script
+          id="faq-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
       </main>
       <FooterBr />
     </div>

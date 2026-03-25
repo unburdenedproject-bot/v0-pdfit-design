@@ -76,11 +76,6 @@ const faqSchema = {
 export default function PDFaWordPage() {
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderEs />
       <main>
         {/* Hero Section */}
@@ -314,6 +309,11 @@ export default function PDFaWordPage() {
             </div>
           </div>
         </section>
+        <Script
+          id="faq-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
       </main>
       <FooterEs />
     </div>
