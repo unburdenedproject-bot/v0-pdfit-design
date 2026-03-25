@@ -398,10 +398,10 @@ export function FeaturesGrid() {
             <div key={categoryIndex}>
               {/* Category Header */}
               <div className="mb-3">
-                <h3 className="text-lg font-bold text-white">
+                <h3 className="text-lg font-extrabold text-white">
                   {category.name}
                 </h3>
-                <p className="text-sm text-slate-400">
+                <p className="text-sm text-[#6B7CFF]">
                   {category.description}
                 </p>
               </div>
@@ -409,34 +409,42 @@ export function FeaturesGrid() {
               {/* Tools Grid - always visible */}
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
                 {category.tools.map((tool, toolIndex) => (
-                  <Link
+                  <div
                     key={toolIndex}
-                    href={tool.href}
-                    className="group flex flex-col items-center text-center rounded-xl p-4 hover:border-[#14D8C4]/30 hover:shadow-lg transition-all duration-200"
+                    className="rounded-xl p-[1px]"
                     style={{
-                      background: "rgba(255, 255, 255, 0.04)",
-                      backdropFilter: "blur(12px)",
-                      WebkitBackdropFilter: "blur(12px)",
-                      border: "1px solid rgba(255, 255, 255, 0.08)",
-                      boxShadow: "0 4px 24px rgba(0, 0, 0, 0.2)",
+                      background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(20,216,196,0.1))",
                     }}
                   >
-                    <div
-                      className="w-10 h-10 bg-[#191B4D] rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200"
-                      style={{ boxShadow: "0 0 16px rgba(20, 216, 196, 0.2)" }}
+                    <Link
+                      href={tool.href}
+                      className="group flex flex-col items-center text-center rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full tool-card-hover"
+                      style={{
+                        background: "rgba(255, 255, 255, 0.07)",
+                        backdropFilter: "blur(12px)",
+                        WebkitBackdropFilter: "blur(12px)",
+                      }}
                     >
-                      <tool.icon className="h-5 w-5 text-[#14D8C4]" />
-                    </div>
-                    <div className="flex items-center gap-1.5 mb-1">
-                      <h4 className="text-sm font-bold text-white group-hover:text-[#14D8C4] transition-colors">
-                        {tool.name}
-                      </h4>
-                      <TierBadge tier={tool.tier} />
-                    </div>
-                    <p className="text-xs text-slate-400 leading-relaxed">
-                      {tool.description}
-                    </p>
-                  </Link>
+                      <div
+                        className="w-10 h-10 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200"
+                        style={{
+                          background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                          boxShadow: "0 0 20px rgba(20, 216, 196, 0.35)",
+                        }}
+                      >
+                        <tool.icon className="h-5 w-5 text-[#14D8C4]" />
+                      </div>
+                      <div className="flex items-center gap-1.5 mb-1">
+                        <h4 className="text-sm font-bold text-white group-hover:text-[#14D8C4] transition-colors">
+                          {tool.name}
+                        </h4>
+                        <TierBadge tier={tool.tier} />
+                      </div>
+                      <p className="text-xs text-slate-400 leading-relaxed">
+                        {tool.description}
+                      </p>
+                    </Link>
+                  </div>
                 ))}
               </div>
 
