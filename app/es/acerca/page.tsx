@@ -187,7 +187,7 @@ export default function AcercaPage() {
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-b-md text-[9px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #D6B36A, #E0C27A)", color: "#0E0F1E" }}>Mas Popular</div>
                     <h3 className="text-lg font-bold text-white mb-1 mt-3">Pro</h3>
                     <p className="text-[#E0C27A] font-semibold text-sm mb-4">$7.99/mes</p>
-                    <p className="text-slate-500 text-xs mb-3">Todo en Gratis, mas:</p>
+                    <p className="text-[#6B7CFF] text-xs font-medium mb-3">Todo en Gratis, mas:</p>
                     <ul className="space-y-2">
                       <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#E0C27A] mt-0.5">&#10003;</span><span>Conversiones ilimitadas</span></li>
                       <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#E0C27A] mt-0.5">&#10003;</span><span>Archivos hasta 200MB</span></li>
@@ -204,7 +204,7 @@ export default function AcercaPage() {
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-b-md text-[9px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #6B7CFF, #8B9AFF)", color: "#0E0F1E" }}>Ideal para Equipos</div>
                     <h3 className="text-lg font-bold text-white mb-1 mt-3">Business</h3>
                     <p className="text-[#6B7CFF] font-semibold text-sm mb-4">$13.99/mes</p>
-                    <p className="text-slate-500 text-xs mb-3">Todo en Pro, mas:</p>
+                    <p className="text-[#6B7CFF] text-xs font-medium mb-3">Todo en Pro, mas:</p>
                     <ul className="space-y-2">
                       <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#6B7CFF] mt-0.5">&#10003;</span><span>Archivos hasta 1GB</span></li>
                       <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#6B7CFF] mt-0.5">&#10003;</span><span>Extraccion de tablas a Excel (200 paginas/mes)</span></li>
@@ -221,7 +221,7 @@ export default function AcercaPage() {
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-b-md text-[9px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #C0C5CE, #14D8C4)", color: "#0E0F1E" }}>Mejor Valor</div>
                     <h3 className="text-lg font-bold text-white mb-1 mt-3">Enterprise</h3>
                     <p className="text-[#C0C5CE] font-semibold text-sm mb-4">$49.99/mes</p>
-                    <p className="text-slate-500 text-xs mb-3">Todo en Business, mas:</p>
+                    <p className="text-[#6B7CFF] text-xs font-medium mb-3">Todo en Business, mas:</p>
                     <ul className="space-y-2">
                       <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#C0C5CE] mt-0.5">&#10003;</span><span>Extraccion de tablas a Excel (2,000 paginas/mes)</span></li>
                       <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#C0C5CE] mt-0.5">&#10003;</span><span>Automatizacion de flujos de trabajo</span></li>
