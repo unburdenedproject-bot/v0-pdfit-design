@@ -110,31 +110,22 @@ const categories = [
   },
 ]
 
+const tierStyles: Record<string, { bg: string; color: string; border: string }> = {
+  FREE: { bg: "rgba(148,163,184,0.15)", color: "#94A3B8", border: "rgba(148,163,184,0.3)" },
+  PRO: { bg: "rgba(214,179,106,0.15)", color: "#E0C27A", border: "rgba(214,179,106,0.4)" },
+  BUSINESS: { bg: "rgba(107,124,255,0.15)", color: "#6B7CFF", border: "rgba(107,124,255,0.4)" },
+  ENTERPRISE: { bg: "rgba(192,197,206,0.15)", color: "#C0C5CE", border: "rgba(192,197,206,0.4)" },
+}
+
 function TierBadge({ tier }: { tier: "FREE" | "PRO" | "BUSINESS" | "ENTERPRISE" }) {
-  if (tier === "ENTERPRISE") {
-    return (
-      <span className="bg-slate-900 text-white border border-slate-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
-        Enterprise
-      </span>
-    )
-  }
-  if (tier === "BUSINESS") {
-    return (
-      <span className="bg-indigo-100 text-indigo-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
-        Business
-      </span>
-    )
-  }
-  if (tier === "PRO") {
-    return (
-      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide" style={{ backgroundColor: "#FDE7C7", color: "#92400E" }}>
-        Pro
-      </span>
-    )
-  }
+  const s = tierStyles[tier] || tierStyles.FREE
+  const labels: Record<string, string> = { FREE: "Gratis", PRO: "Pro", BUSINESS: "Business", ENTERPRISE: "Enterprise" }
   return (
-    <span className="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">
-      Gratis
+    <span
+      className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide"
+      style={{ background: s.bg, color: s.color, border: `1px solid ${s.border}` }}
+    >
+      {labels[tier] || "Gratis"}
     </span>
   )
 }
