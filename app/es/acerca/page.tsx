@@ -166,77 +166,71 @@ export default function AcercaPage() {
               }}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-                {[
-                  {
-                    name: "Gratis",
-                    price: "$0/mes",
-                    items: [
-                      "10 conversiones/dia, archivos hasta 25MB",
-                      "Herramientas PDF esenciales (unir, dividir, comprimir, rotar, aplanar, proteger, desbloquear)",
-                      "Sin registro necesario",
-                    ],
-                  },
-                  {
-                    name: "Pro",
-                    price: "$7.99/mes",
-                    items: [
-                      "Conversiones ilimitadas, archivos hasta 200MB",
-                      "Todas las herramientas PDF incluyendo OCR, marcas de agua, conversiones Office",
-                      "Optimizador ATS, creador de curriculum, codigo QR, URL a PDF",
-                    ],
-                  },
-                  {
-                    name: "Business",
-                    price: "$13.99/mes",
-                    items: [
-                      "Todo en Pro, archivos hasta 1GB",
-                      "Extraccion de tablas (200 paginas/mes), comparacion PDF, firma electronica, redaccion PDF",
-                      "Automatizacion de flujos",
-                    ],
-                  },
-                  {
-                    name: "Enterprise",
-                    price: "$49.99/mes",
-                    items: [
-                      "Todo en Business",
-                      "Extraccion de tablas de alto volumen (2,000 paginas/mes), automatizacion de flujos",
-                      "Plantillas de flujo, procesamiento prioritario, soporte dedicado",
-                    ],
-                  },
-                ].map((tier) => (
-                  <div
-                    key={tier.name}
-                    className="rounded-xl p-[1px]"
-                    style={{
-                      background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
-                    }}
-                  >
-                    <div
-                      className="rounded-[11px] p-6 h-full"
-                      style={{
-                        background: `
-                          radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
-                          radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
-                          rgba(255, 255, 255, 0.07)
-                        `,
-                        backdropFilter: "blur(12px)",
-                        WebkitBackdropFilter: "blur(12px)",
-                        boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
-                      }}
-                    >
-                      <h3 className="text-lg font-bold text-white mb-1">{tier.name}</h3>
-                      <p className="text-[#14D8C4] font-semibold text-sm mb-4">{tier.price}</p>
-                      <ul className="space-y-2">
-                        {tier.items.map((item) => (
-                          <li key={item} className="text-slate-400 text-sm leading-relaxed flex items-start gap-2">
-                            <span className="text-[#14D8C4] mt-0.5">&#10003;</span>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                {/* Gratis */}
+                <div className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(148,163,184,0.4), rgba(148,163,184,0.2), rgba(148,163,184,0.3))" }}>
+                  <div className="rounded-[11px] p-6 h-full" style={{ background: "radial-gradient(ellipse 70% 60% at 95% 90%, rgba(148,163,184,0.06) 0%, transparent 70%), rgba(255, 255, 255, 0.05)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(148,163,184,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <h3 className="text-lg font-bold text-white mb-1">Gratis</h3>
+                    <p className="text-slate-400 font-semibold text-sm mb-4">$0/mes</p>
+                    <ul className="space-y-2">
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-slate-400 mt-0.5">&#10003;</span><span>10 conversiones por dia</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-slate-400 mt-0.5">&#10003;</span><span>Archivos hasta 25MB</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-slate-400 mt-0.5">&#10003;</span><span>Herramientas PDF basicas (comprimir, unir, dividir, rotar, convertir)</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-slate-400 mt-0.5">&#10003;</span><span>Procesamiento de un solo archivo</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-slate-400 mt-0.5">&#10003;</span><span>Velocidad estandar</span></li>
+                    </ul>
                   </div>
-                ))}
+                </div>
+
+                {/* Pro — dorado */}
+                <div className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(214,179,106,0.5), rgba(20,216,196,0.3), rgba(214,179,106,0.3), rgba(214,179,106,0.4))" }}>
+                  <div className="rounded-[11px] p-6 h-full relative overflow-hidden" style={{ background: "radial-gradient(ellipse 40% 30% at 50% 0%, rgba(214,179,106,0.05) 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(20,216,196,0.04) 0%, transparent 70%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(214,179,106,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-b-md text-[9px] font-bold uppercase tracking-widest" style={{ background: "linear-gradient(135deg, #D6B36A, #E0C27A)", color: "#0E0F1E" }}>Mas Popular</div>
+                    <h3 className="text-lg font-bold text-white mb-1 mt-3">Pro</h3>
+                    <p className="text-[#E0C27A] font-semibold text-sm mb-4">$7.99/mes</p>
+                    <p className="text-slate-500 text-xs mb-3">Todo en Gratis, mas:</p>
+                    <ul className="space-y-2">
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#E0C27A] mt-0.5">&#10003;</span><span>Conversiones ilimitadas</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#E0C27A] mt-0.5">&#10003;</span><span>Archivos hasta 200MB</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#E0C27A] mt-0.5">&#10003;</span><span>Todas las herramientas PDF (OCR, codigo QR, PDF a Word/Excel/PowerPoint)</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#E0C27A] mt-0.5">&#10003;</span><span>Procesamiento por lotes (multiples archivos a la vez)</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#E0C27A] mt-0.5">&#10003;</span><span>Velocidad de procesamiento prioritaria</span></li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Business — zafiro */}
+                <div className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(107,124,255,0.5), rgba(20,216,196,0.3), rgba(107,124,255,0.35), rgba(107,124,255,0.4))" }}>
+                  <div className="rounded-[11px] p-6 h-full relative overflow-hidden" style={{ background: "radial-gradient(ellipse 40% 30% at 50% 0%, rgba(107,124,255,0.06) 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(20,216,196,0.04) 0%, transparent 70%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(107,124,255,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-b-md text-[9px] font-bold uppercase tracking-widest" style={{ background: "linear-gradient(135deg, #6B7CFF, #8B9AFF)", color: "#0E0F1E" }}>Ideal para Equipos</div>
+                    <h3 className="text-lg font-bold text-white mb-1 mt-3">Business</h3>
+                    <p className="text-[#6B7CFF] font-semibold text-sm mb-4">$13.99/mes</p>
+                    <p className="text-slate-500 text-xs mb-3">Todo en Pro, mas:</p>
+                    <ul className="space-y-2">
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#6B7CFF] mt-0.5">&#10003;</span><span>Archivos hasta 1GB</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#6B7CFF] mt-0.5">&#10003;</span><span>Extraccion de tablas a Excel (200 paginas/mes)</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#6B7CFF] mt-0.5">&#10003;</span><span>Comparacion de PDF (diferencias lado a lado)</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#6B7CFF] mt-0.5">&#10003;</span><span>Firma electronica de documentos</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#6B7CFF] mt-0.5">&#10003;</span><span>Redaccion de PDF (eliminacion permanente)</span></li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Enterprise — platino */}
+                <div className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(192,197,206,0.5), rgba(20,216,196,0.3), rgba(192,197,206,0.35), rgba(192,197,206,0.4))" }}>
+                  <div className="rounded-[11px] p-6 h-full relative overflow-hidden" style={{ background: "radial-gradient(ellipse 40% 30% at 50% 0%, rgba(192,197,206,0.06) 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(20,216,196,0.04) 0%, transparent 70%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(192,197,206,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-b-md text-[9px] font-bold uppercase tracking-widest" style={{ background: "linear-gradient(135deg, #C0C5CE, #14D8C4)", color: "#0E0F1E" }}>Mejor Valor</div>
+                    <h3 className="text-lg font-bold text-white mb-1 mt-3">Enterprise</h3>
+                    <p className="text-[#C0C5CE] font-semibold text-sm mb-4">$49.99/mes</p>
+                    <p className="text-slate-500 text-xs mb-3">Todo en Business, mas:</p>
+                    <ul className="space-y-2">
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#C0C5CE] mt-0.5">&#10003;</span><span>Extraccion de tablas a Excel (2,000 paginas/mes)</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#C0C5CE] mt-0.5">&#10003;</span><span>Automatizacion de flujos de trabajo</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#C0C5CE] mt-0.5">&#10003;</span><span>Plantillas de flujo personalizadas</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#C0C5CE] mt-0.5">&#10003;</span><span>Cola de procesamiento prioritario</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#C0C5CE] mt-0.5">&#10003;</span><span>Soporte por email dedicado (respuesta en 24h)</span></li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

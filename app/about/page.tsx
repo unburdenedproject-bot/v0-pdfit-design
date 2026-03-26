@@ -166,77 +166,71 @@ export default function AboutPage() {
               }}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-                {[
-                  {
-                    name: "Free",
-                    price: "$0/month",
-                    items: [
-                      "10 conversions/day, files up to 25MB",
-                      "Essential PDF tools (merge, split, compress, rotate, flatten, protect, unlock)",
-                      "No login required",
-                    ],
-                  },
-                  {
-                    name: "Pro",
-                    price: "$7.99/month",
-                    items: [
-                      "Unlimited conversions, files up to 200MB",
-                      "All PDF tools including OCR, watermark, Office conversions",
-                      "ATS Resume Optimizer, Resume Builder, QR Code, URL to PDF",
-                    ],
-                  },
-                  {
-                    name: "Business",
-                    price: "$13.99/month",
-                    items: [
-                      "Everything in Pro, files up to 1GB",
-                      "Table extraction (200 pages/month), PDF Compare, eSign, PDF Redaction",
-                      "Workflow automation",
-                    ],
-                  },
-                  {
-                    name: "Enterprise",
-                    price: "$49.99/month",
-                    items: [
-                      "Everything in Business",
-                      "High-volume table extraction (2,000 pages/month), workflow automation",
-                      "Custom workflow templates, priority processing, dedicated support",
-                    ],
-                  },
-                ].map((tier) => (
-                  <div
-                    key={tier.name}
-                    className="rounded-xl p-[1px]"
-                    style={{
-                      background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
-                    }}
-                  >
-                    <div
-                      className="rounded-[11px] p-6 h-full"
-                      style={{
-                        background: `
-                          radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
-                          radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
-                          rgba(255, 255, 255, 0.07)
-                        `,
-                        backdropFilter: "blur(12px)",
-                        WebkitBackdropFilter: "blur(12px)",
-                        boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
-                      }}
-                    >
-                      <h3 className="text-lg font-bold text-white mb-1">{tier.name}</h3>
-                      <p className="text-[#14D8C4] font-semibold text-sm mb-4">{tier.price}</p>
-                      <ul className="space-y-2">
-                        {tier.items.map((item) => (
-                          <li key={item} className="text-slate-400 text-sm leading-relaxed flex items-start gap-2">
-                            <span className="text-[#14D8C4] mt-0.5">&#10003;</span>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                {/* Free */}
+                <div className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(148,163,184,0.4), rgba(148,163,184,0.2), rgba(148,163,184,0.3))" }}>
+                  <div className="rounded-[11px] p-6 h-full" style={{ background: "radial-gradient(ellipse 70% 60% at 95% 90%, rgba(148,163,184,0.06) 0%, transparent 70%), rgba(255, 255, 255, 0.05)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(148,163,184,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <h3 className="text-lg font-bold text-white mb-1">Free</h3>
+                    <p className="text-slate-400 font-semibold text-sm mb-4">$0/month</p>
+                    <ul className="space-y-2">
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-slate-400 mt-0.5">&#10003;</span><span>10 conversions per day</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-slate-400 mt-0.5">&#10003;</span><span>Files up to 25MB</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-slate-400 mt-0.5">&#10003;</span><span>Basic PDF tools (compress, merge, split, rotate, convert)</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-slate-400 mt-0.5">&#10003;</span><span>Single file processing</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-slate-400 mt-0.5">&#10003;</span><span>Standard speed</span></li>
+                    </ul>
                   </div>
-                ))}
+                </div>
+
+                {/* Pro — gold */}
+                <div className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(214,179,106,0.5), rgba(20,216,196,0.3), rgba(214,179,106,0.3), rgba(214,179,106,0.4))" }}>
+                  <div className="rounded-[11px] p-6 h-full relative overflow-hidden" style={{ background: "radial-gradient(ellipse 40% 30% at 50% 0%, rgba(214,179,106,0.05) 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(20,216,196,0.04) 0%, transparent 70%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(214,179,106,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-b-md text-[9px] font-bold uppercase tracking-widest" style={{ background: "linear-gradient(135deg, #D6B36A, #E0C27A)", color: "#0E0F1E" }}>Most Popular</div>
+                    <h3 className="text-lg font-bold text-white mb-1 mt-3">Pro</h3>
+                    <p className="text-[#E0C27A] font-semibold text-sm mb-4">$7.99/month</p>
+                    <p className="text-slate-500 text-xs mb-3">Everything in Free, plus:</p>
+                    <ul className="space-y-2">
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#E0C27A] mt-0.5">&#10003;</span><span>Unlimited conversions</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#E0C27A] mt-0.5">&#10003;</span><span>Files up to 200MB</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#E0C27A] mt-0.5">&#10003;</span><span>All PDF tools (OCR, QR code, PDF to Word/Excel/PowerPoint)</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#E0C27A] mt-0.5">&#10003;</span><span>Batch processing (multiple files at once)</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#E0C27A] mt-0.5">&#10003;</span><span>Priority processing speed</span></li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Business — sapphire */}
+                <div className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(107,124,255,0.5), rgba(20,216,196,0.3), rgba(107,124,255,0.35), rgba(107,124,255,0.4))" }}>
+                  <div className="rounded-[11px] p-6 h-full relative overflow-hidden" style={{ background: "radial-gradient(ellipse 40% 30% at 50% 0%, rgba(107,124,255,0.06) 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(20,216,196,0.04) 0%, transparent 70%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(107,124,255,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-b-md text-[9px] font-bold uppercase tracking-widest" style={{ background: "linear-gradient(135deg, #6B7CFF, #8B9AFF)", color: "#0E0F1E" }}>Best for Teams</div>
+                    <h3 className="text-lg font-bold text-white mb-1 mt-3">Business</h3>
+                    <p className="text-[#6B7CFF] font-semibold text-sm mb-4">$13.99/month</p>
+                    <p className="text-slate-500 text-xs mb-3">Everything in Pro, plus:</p>
+                    <ul className="space-y-2">
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#6B7CFF] mt-0.5">&#10003;</span><span>Files up to 1GB</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#6B7CFF] mt-0.5">&#10003;</span><span>Table extraction to Excel (200 pages/month)</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#6B7CFF] mt-0.5">&#10003;</span><span>PDF comparison (side-by-side diff)</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#6B7CFF] mt-0.5">&#10003;</span><span>eSign documents</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#6B7CFF] mt-0.5">&#10003;</span><span>PDF redaction (permanent removal)</span></li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Enterprise — platinum */}
+                <div className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(192,197,206,0.5), rgba(20,216,196,0.3), rgba(192,197,206,0.35), rgba(192,197,206,0.4))" }}>
+                  <div className="rounded-[11px] p-6 h-full relative overflow-hidden" style={{ background: "radial-gradient(ellipse 40% 30% at 50% 0%, rgba(192,197,206,0.06) 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(20,216,196,0.04) 0%, transparent 70%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(192,197,206,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-b-md text-[9px] font-bold uppercase tracking-widest" style={{ background: "linear-gradient(135deg, #C0C5CE, #14D8C4)", color: "#0E0F1E" }}>Best Value</div>
+                    <h3 className="text-lg font-bold text-white mb-1 mt-3">Enterprise</h3>
+                    <p className="text-[#C0C5CE] font-semibold text-sm mb-4">$49.99/month</p>
+                    <p className="text-slate-500 text-xs mb-3">Everything in Business, plus:</p>
+                    <ul className="space-y-2">
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#C0C5CE] mt-0.5">&#10003;</span><span>Table extraction to Excel (2,000 pages/month)</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#C0C5CE] mt-0.5">&#10003;</span><span>Workflow automation</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#C0C5CE] mt-0.5">&#10003;</span><span>Custom workflow templates</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#C0C5CE] mt-0.5">&#10003;</span><span>Priority processing queue</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#C0C5CE] mt-0.5">&#10003;</span><span>Dedicated email support (24h response)</span></li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
