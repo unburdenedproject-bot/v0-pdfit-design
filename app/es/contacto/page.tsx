@@ -77,7 +77,7 @@ export default function ContactoPage() {
                           <h3 className="text-lg font-bold text-white mb-1">Soporte por Email</h3>
                           <a
                             href="mailto:contact@pdf.it.com"
-                            className="text-2xl font-bold text-[#14D8C4] hover:text-[#2EE6D6] transition-colors"
+                            className="text-lg sm:text-2xl font-bold text-[#14D8C4] hover:text-[#2EE6D6] transition-colors break-all"
                           >
                             contact@pdf.it.com
                           </a>
