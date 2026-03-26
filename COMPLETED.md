@@ -291,6 +291,69 @@
   - Pages: `/table-extraction`, `/workflow-automation`
 - Also redesigned: upgrade-required and daily-limit-reached error cards in `processing-interface.tsx`
 
+## Full Aesthetic Overhaul — March 26 2026
+
+### Tool Pages Rewritten to Page_Format.md (additional batch)
+- `/compress-pdf`, `/compress-pdf-for-email`, `/upload-ready-pdf`, `/ocr-scanner`, `/phone-scan-cleanup` — all 3 languages (15 files)
+- `/tools/qr-code`, `/ats-optimizer`, `/create-resume` — all 3 languages (9 files + new `qr-code-interface.tsx` component)
+- `/pdf-compare`, `/esign`, `/pdf-redaction`, `/workflow-automation`, `/extract-tables-from-pdf`, `/table-extraction` — all 3 languages (18 files)
+- QR Code page split from client-only to server page + client interface for SEO metadata support
+
+### Pro Tier Gate Cards Updated
+- `/watermark-pdf`, `/ats-optimizer`, `/create-resume` — changed from old flat white cards to dark glassmorphism with gold accents (`#E0C27A`)
+- QR Code interface (`qr-code-interface.tsx`) — new component with proper Pro gold gate card
+
+### Business Tier Gate Cards Updated
+- `/esign`, `/pdf-redaction`, `/pdf-compare`, `/table-extraction` — sapphire (`#6B7CFF`) glassmorphism cards
+
+### Enterprise Tier Gate Cards Updated
+- `/workflow-automation` — platinum (`#C0C5CE`) gate, gates at Enterprise only (`userPlan === "enterprise"`)
+- `/high-volume-table-extraction` — new Enterprise page created (EN/ES/BR) with `enterpriseMode` prop on `TableExtractionInterface`
+- `/table-extraction` — Business gate (200 pages/month), separate from Enterprise high-volume version
+
+### New Page: /high-volume-table-extraction (Enterprise)
+- Created EN, ES (`/es/extraccion-tablas-alto-volumen`), BR (`/br/extracao-tabelas-alto-volume`) pages
+- Homepage features-grid updated to point Enterprise "High-Volume Table Extraction" to new route
+- `TableExtractionInterface` updated with `enterpriseMode` prop for dual gating
+
+### Homepage Updates
+- Hero slogan changed to: "Free PDF Tools. Zero File Storage." / "Convert, compress, and edit PDFs in seconds — files deleted immediately after you download."
+- Translated to ES and BR
+- Hero sections converted from client to server components (reduced JS bundle)
+- TierBadge colors updated across all 3 features-grid files (EN/ES/BR): Free=gray, Pro=gold, Business=sapphire, Enterprise=sky blue (`#38BDF8`)
+- Language flags now show initials underneath (EN/ES/BR) in white
+
+### Static Pages Redesigned (dark cinematic aesthetic, all 3 languages)
+- `/about` — dark hero, glassmorphism feature cards, tier cards with tier-specific colors (gray/gold/sapphire/platinum), privacy commitment section, "Everything in..." text changed to readable blue
+- `/pricing` — dark hero with teal billing toggle, `p-[1px]` gradient border tier cards matching about page, dark comparison table with tier-colored headers and teal checkmarks
+- `/contact` — dark hero with badges, dark glassmorphism contact info card, white form card with teal focus rings, privacy footer section
+- `/blog` — dark hero with BookOpen icon, featured post card, glassmorphism blog grid, newsletter CTA section, Blog structured data (JSON-LD)
+- `/login` — full dark page with glassmorphism form card, teal accents, dark inputs
+- `/signup` — same dark treatment with trust points below form
+- `/signup/success` — dark cinematic with glowing CheckCircle, "Thank You for Joining PDF.it!" message, email instruction card, trust points
+- `/dashboard` — full dark redesign: glassmorphism stat cards, dark tool grid, teal progress bars, tier-colored plan badges, subtle red hover on Sign Out
+
+### Blog Articles Added (SEO-rich)
+- `/blog/compress-pdf-email` — "How to Compress a PDF for Email Attachments" (Guide)
+- `/blog/scanned-pdf-searchable-ocr` — "How to Make a Scanned PDF Searchable with OCR" (Guide)
+- `/blog/protect-sensitive-documents` — "How to Protect Sensitive Documents Before Sharing" (Security)
+- Blog listings updated with 6 total posts, featured post layout, structured data
+
+### Performance Improvements
+- Google Fonts deferred with `media="print" onLoad` trick — eliminated render-blocking (~320ms saved)
+- Removed duplicate GA4 gtag.js scripts (GTM already loads GA4) — 1 fewer network request
+- Hero sections converted to server components (EN/ES/BR) — less JS shipped
+- FAQ section lazy-loaded with `next/dynamic`
+
+### Branding Fixes
+- Replaced OmnisPDF logo.svg with PDF.it inline text logo on login, signup, and reset-password pages (7 files)
+- Login page background CSS syntax fixed (color must come after gradients)
+
+### Mobile Fixes
+- Hamburger menu icon set to white on all 3 headers
+- Contact page email overflow fixed on ES/BR (responsive text + break-all)
+- Tier badge "Best for Teams" wrapping fixed with whitespace-nowrap
+
 ## Google Search Console Status
 - Sitemap with 1,130+ URLs across EN/ES/BR — submitted 2026-03-12, updated 2026-03-18 (added URL to PDF)
 - DO NOT break any existing indexed pages
