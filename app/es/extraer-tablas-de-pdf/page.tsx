@@ -1,154 +1,157 @@
 import Script from "next/script"
 import { HeaderEs } from "@/components/header-es"
 import { FooterEs } from "@/components/footer-es"
-import { ProcessingInterface } from "@/components/processing-interface"
-import { Table, Zap, Shield, Download } from "lucide-react"
+import { FileSpreadsheet, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
   title: "Extraer Tablas de PDF — Convierte Tablas PDF a Excel | PDF.it",
   description:
-    "Extrae tablas de archivos PDF y conviértelas a Excel con PDF.it. Obtén datos tabulares en formato de hoja de cálculo — rápido, desde tu navegador, sin registro.",
+    "Extrae tablas de archivos PDF y conviértelas a hojas de cálculo Excel. PDF.it ofrece dos opciones: PDF a Excel (Pro) para extracción básica, y Extracción de Tablas (Business) para exportación avanzada de datos estructurados.",
   alternates: {
     canonical: "https://pdf.it.com/es/extraer-tablas-de-pdf",
     languages: {
       en: "https://pdf.it.com/extract-tables-from-pdf",
       es: "https://pdf.it.com/es/extraer-tablas-de-pdf",
+      pt: "https://pdf.it.com/br/extrair-tabelas-de-pdf",
     },
   },
-}
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Cómo extraigo tablas de un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it, haz clic en Extraer Tablas y descarga un archivo Excel con todas las tablas detectadas en tu documento, organizadas en hojas separadas." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿En qué formato se extraen las tablas?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Las tablas se extraen en formato XLSX (Excel). También puedes usar nuestra herramienta de Tabla PDF a CSV si prefieres formato CSV." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Funciona con tablas complejas?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it detecta tablas con filas, columnas y celdas combinadas. Para tablas muy complejas o con formato irregular, los resultados pueden variar." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo extraer tablas de un PDF escaneado?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Para PDFs escaneados, primero usa nuestro Escáner OCR para convertir las imágenes a texto, y luego extrae las tablas del resultado." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Se mantiene el formato de las tablas?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it conserva la estructura de filas y columnas de las tablas originales. Los datos numéricos se mantienen como números en Excel para que puedas usar fórmulas." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Es gratis extraer tablas de un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Las cuentas gratuitas tienen 10 extracciones por día. Las cuentas Pro tienen extracciones ilimitadas." }
-    }
-  ]
 }
 
 export default function ExtraerTablasDePDFPage() {
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderEs />
       <main>
         {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section
+          className="text-white py-16 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#heroGrain)" />
+          </svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Table className="h-10 w-10 text-white" />
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                  boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)",
+                }}
+              >
+                <FileSpreadsheet className="h-10 w-10 text-[#14D8C4]" />
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Extraer Tablas de PDF</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Convierte las tablas de tu PDF a hojas de cálculo Excel. Extrae datos tabulares con su estructura intacta — rápido y desde tu navegador.
+                Extrae datos tabulares de archivos PDF y conviértelos en hojas de cálculo Excel para edición, análisis y reportes.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Detección Automática de Tablas</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-orange-500" /><span>Archivos Eliminados Tras la Sesión</span></div>
-                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-orange-500" /><span>Sin Registro</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Detección Precisa de Tablas</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesión</span></div>
+                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Exportar a Excel</span></div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Processing Interface */}
-        <ProcessingInterface
-          acceptedFiles=".pdf"
-          toolName="PDF to Excel"
-          outputFormat="XLSX"
-          processingMessage="Extrayendo tablas de tu PDF..."
-          successMessage="¡Las tablas han sido extraídas!"
-        />
-
-        {/* About */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <p className="text-lg text-slate-600 mb-8">
-              ¿Tienes datos tabulares atrapados en un PDF? El extractor de tablas de PDF.it detecta automáticamente las tablas en tu documento y las convierte a formato Excel, manteniendo la estructura de filas y columnas para que puedas trabajar con los datos inmediatamente.
+        {/* Intro */}
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Los PDFs encierran tus datos en páginas estáticas. Cuando necesitas analizar tablas financieras, actualizar listas de precios o importar datos de facturas, reescribir manualmente desperdicia horas. PDF.it extrae tablas de PDFs y las convierte en archivos Excel editables — elige PDF a Excel (Pro) para extracción básica o Extracción de Tablas (Business) para datos estructurados avanzados.
             </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>✓ Detecta y extrae tablas automáticamente</li>
-              <li>✓ Mantiene la estructura de filas y columnas</li>
-              <li>✓ Resultado en formato Excel (XLSX) listo para usar</li>
-              <li>✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li>✓ Sin instalación — extrae tablas en tu navegador</li>
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">✓ Extrae tablas con filas, columnas y celdas intactas</li>
+              <li className="flex items-center gap-2">✓ Funciona con reportes financieros, facturas y hojas de datos</li>
+              <li className="flex items-center gap-2">✓ Exporta a Excel (.xlsx) para edición y análisis</li>
+              <li className="flex items-center gap-2">✓ Sin instalación — extrae tablas en tu navegador</li>
             </ul>
-          </div>
-        </section>
-
-        {/* Feature Sections */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Datos Financieros y Presupuestos</h2>
-              <p className="text-slate-600">
-                Extrae tablas de estados financieros, balances, reportes trimestrales y presupuestos en PDF. Obtén los números directamente en Excel para analizarlos con fórmulas y gráficos.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Inventarios y Listas de Precios</h2>
-              <p className="text-slate-600">
-                ¿Recibiste un catálogo o lista de precios en PDF? Extrae las tablas para importarlas a tu sistema de inventario, ERP o base de datos sin copiar manualmente cada dato.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Resultados de Encuestas e Investigación</h2>
-              <p className="text-slate-600">
-                Convierte tablas de resultados de encuestas, estudios estadísticos y reportes de investigación a Excel para crear tus propios análisis, gráficos y visualizaciones.
-              </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/es/pdf-a-excel" className="inline-flex items-center justify-center bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors">PDF a Excel (Pro)</Link>
+              <Link href="/es/extraccion-de-tablas" className="inline-flex items-center justify-center bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-8 rounded-xl transition-colors">Extracción de Tablas (Business)</Link>
             </div>
           </div>
         </section>
 
-        {/* How To */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Extraer Tablas de un PDF</h2>
-            <div className="space-y-4">
+        {/* Feature Blocks */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                "Sube o arrastra tu PDF a PDF.it.",
-                "Haz clic en Extraer Tablas — todas las tablas se detectan automáticamente.",
-                "Descarga el archivo Excel con las tablas extraídas.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
+                { title: "Tablas Financieras y Reportes", desc: "Extrae números de reportes anuales, estados de resultados y balances para tus modelos financieros." },
+                { title: "Datos de Investigación y Encuestas", desc: "Extrae tablas de artículos de investigación, reportes de mercado y encuestas a Excel para análisis." },
+                { title: "Líneas de Facturas", desc: "Extrae datos de facturas con cantidades y totales para contabilidad y software financiero." },
+              ].map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <div
+                    className="rounded-[11px] p-6 h-full"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
                   </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works */}
+        <section className="py-16 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Cómo Extraer Tablas de un PDF</h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+              {[
+                { num: "1", title: "Sube tu PDF", desc: "Arrastra y suelta tu archivo" },
+                { num: "2", title: "Elige el método de extracción", desc: "PDF a Excel o Extracción de Tablas" },
+                { num: "3", title: "Descarga el archivo Excel", desc: "Obtén tus datos en una hoja de cálculo" },
+              ].map((step) => (
+                <div key={step.num} className="flex-1">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                      border: "1px solid rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <span className="text-[#14D8C4] font-black text-lg">{step.num}</span>
+                  </div>
+                  <p className="font-semibold text-slate-900">{step.title}</p>
+                  <p className="text-sm text-slate-500 mt-1">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -161,45 +164,95 @@ export default function ExtraerTablasDePDFPage() {
             <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "Tabla PDF a Excel", href: "/es/tabla-pdf-a-excel", desc: "Tablas a hojas de cálculo" },
-                { name: "Tabla PDF a CSV", href: "/es/tabla-pdf-a-csv", desc: "Tablas a formato CSV" },
-                { name: "PDF a Excel", href: "/es/pdf-a-excel", desc: "Convierte PDF completo a Excel" },
-                { name: "Extracción de Tablas", href: "/es/extraccion-de-tablas", desc: "Herramienta avanzada" },
+                { name: "PDF a Excel", href: "/es/pdf-a-excel", desc: "Convierte PDFs a Excel" },
+                { name: "Extracción de Tablas", href: "/es/extraccion-de-tablas", desc: "Exportación avanzada de datos" },
+                { name: "Escáner OCR", href: "/es/escaner-ocr", desc: "Texto de PDFs escaneados" },
+                { name: "PDF a TXT", href: "/es/pdf-a-texto", desc: "Extrae texto de PDFs" },
               ].map((tool) => (
-                <Link
+                <div
                   key={tool.href}
-                  href={tool.href}
-                  className="rounded-xl p-4 transition-all text-center flex flex-col justify-center min-h-[80px] hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(20,216,196,0.25)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.2)" }}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
                 >
-                  <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
-                  <div className="text-xs text-slate-400">{tool.desc}</div>
-                </Link>
+                  <Link
+                    href={tool.href}
+                    className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
+                    <div className="text-xs text-slate-400">{tool.desc}</div>
+                  </Link>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-gray-50">
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
-            <div className="space-y-6">
+            <h2 className="text-3xl font-black text-white mb-10 text-center">Preguntas Frecuentes</h2>
+            <div className="space-y-4">
               {[
-                { q: "¿Cómo extraigo tablas de un PDF?", a: "Sube tu PDF a PDF.it, haz clic en Extraer Tablas y descarga un archivo Excel con todas las tablas detectadas en tu documento, organizadas en hojas separadas." },
-                { q: "¿En qué formato se extraen las tablas?", a: "Las tablas se extraen en formato XLSX (Excel). También puedes usar nuestra herramienta de Tabla PDF a CSV si prefieres formato CSV." },
-                { q: "¿Funciona con tablas complejas?", a: "PDF.it detecta tablas con filas, columnas y celdas combinadas. Para tablas muy complejas o con formato irregular, los resultados pueden variar." },
-                { q: "¿Puedo extraer tablas de un PDF escaneado?", a: "Para PDFs escaneados, primero usa nuestro Escáner OCR para convertir las imágenes a texto, y luego extrae las tablas del resultado." },
-                { q: "¿Se mantiene el formato de las tablas?", a: "Sí. PDF.it conserva la estructura de filas y columnas de las tablas originales. Los datos numéricos se mantienen como números en Excel para que puedas usar fórmulas." },
-                { q: "¿Es gratis extraer tablas de un PDF?", a: "Sí. Las cuentas gratuitas tienen 10 extracciones por día. Las cuentas Pro tienen extracciones ilimitadas." },
+                { q: "¿Qué tan precisa es la extracción de tablas de PDFs?", a: "PDF.it usa análisis avanzado para detectar estructuras de tablas, bordes y alineación de celdas. La precisión depende del PDF — tablas bien estructuradas con bordes claros se extraen con alta fidelidad, mientras que tablas escaneadas pueden necesitar OCR primero." },
+                { q: "¿En qué formatos puedo exportar las tablas extraídas?", a: "Con PDF a Excel (Pro), obtienes archivos .xlsx. Con Extracción de Tablas (Business), puedes exportar datos estructurados a Excel, CSV y otros formatos aptos para bases de datos y herramientas de análisis." },
+                { q: "¿Puedo extraer tablas de PDFs escaneados?", a: "Para PDFs escaneados, pásalos primero por el Escáner OCR de PDF.it para convertir imágenes a texto, y luego extrae las tablas. Este proceso de dos pasos funciona bien para la mayoría de los documentos escaneados." },
+                { q: "¿Cuál es la diferencia entre Pro y Business para extracción de tablas?", a: "Pro incluye conversión de PDF a Excel, que funciona bien para extracción básica de tablas. Business incluye Extracción de Tablas avanzada con mejor detección de estructura, soporte multi-tabla y exportación directa a múltiples formatos." },
+                { q: "¿Puedo extraer múltiples tablas de un solo PDF?", a: "Sí. Tanto PDF a Excel como Extracción de Tablas pueden manejar múltiples tablas en diferentes páginas. La Extracción de Tablas del nivel Business es mejor separando tablas distintas en la misma página." },
+                { q: "¿La extracción de tablas conserva el formato como celdas combinadas?", a: "PDF.it conserva la estructura de celdas, alineación de columnas y tipos de datos. El formato complejo como celdas combinadas se maneja mejor con la herramienta de Extracción de Tablas del nivel Business, que usa análisis de diseño avanzado." },
               ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
+                <div
+                  key={i}
+                  className="rounded-xl p-6"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
+
+        {/* FAQ Schema */}
+        <Script id="faq-schema-es" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "¿Qué tan precisa es la extracción de tablas de PDFs?", "acceptedAnswer": { "@type": "Answer", "text": "PDF.it usa análisis avanzado para detectar estructuras de tablas, bordes y alineación de celdas. La precisión depende del PDF — tablas bien estructuradas con bordes claros se extraen con alta fidelidad, mientras que tablas escaneadas pueden necesitar OCR primero." } },
+            { "@type": "Question", "name": "¿En qué formatos puedo exportar las tablas extraídas?", "acceptedAnswer": { "@type": "Answer", "text": "Con PDF a Excel (Pro), obtienes archivos .xlsx. Con Extracción de Tablas (Business), puedes exportar datos estructurados a Excel, CSV y otros formatos aptos para bases de datos y herramientas de análisis." } },
+            { "@type": "Question", "name": "¿Puedo extraer tablas de PDFs escaneados?", "acceptedAnswer": { "@type": "Answer", "text": "Para PDFs escaneados, pásalos primero por el Escáner OCR de PDF.it para convertir imágenes a texto, y luego extrae las tablas. Este proceso de dos pasos funciona bien para la mayoría de los documentos escaneados." } },
+            { "@type": "Question", "name": "¿Cuál es la diferencia entre Pro y Business para extracción de tablas?", "acceptedAnswer": { "@type": "Answer", "text": "Pro incluye conversión de PDF a Excel, que funciona bien para extracción básica de tablas. Business incluye Extracción de Tablas avanzada con mejor detección de estructura, soporte multi-tabla y exportación directa a múltiples formatos." } },
+            { "@type": "Question", "name": "¿Puedo extraer múltiples tablas de un solo PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Tanto PDF a Excel como Extracción de Tablas pueden manejar múltiples tablas en diferentes páginas. La Extracción de Tablas del nivel Business es mejor separando tablas distintas en la misma página." } },
+            { "@type": "Question", "name": "¿La extracción de tablas conserva el formato como celdas combinadas?", "acceptedAnswer": { "@type": "Answer", "text": "PDF.it conserva la estructura de celdas, alineación de columnas y tipos de datos. El formato complejo como celdas combinadas se maneja mejor con la herramienta de Extracción de Tablas del nivel Business, que usa análisis de diseño avanzado." } },
+          ]
+        })}} />
       </main>
       <FooterEs />
     </div>

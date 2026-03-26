@@ -3,236 +3,248 @@ import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { RedactionInterface } from "@/components/redaction-interface"
-import { Shield, Zap, Eye, Lock, FileText, Merge, Layers, Repeat, ArrowLeftRight } from "lucide-react"
+import { Shield, Eye, Lock, Zap, PenTool, ArrowLeftRight, Layers } from "lucide-react"
 
 export const metadata = {
   title: "Redact PDFs Online — Permanently Remove Sensitive Information | PDF.it",
   description:
-    "Permanently redact sensitive text, SSNs, addresses, and confidential data from PDFs. Visual redaction editor — draw boxes directly on your document. Upload, redact, and download securely. PDF.it Business feature.",
-}
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is PDF redaction?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PDF redaction is the process of permanently removing sensitive information from a PDF. Unlike placing a black box over text, true redaction deletes the underlying content so it cannot be recovered." }
-    },
-    {
-      "@type": "Question",
-      "name": "Is the redaction permanent?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. After you apply redactions, the original content is permanently removed from the PDF. The redacted areas appear as solid black boxes, and the hidden text underneath is deleted." }
-    },
-    {
-      "@type": "Question",
-      "name": "What information should I redact?",
-      "acceptedAnswer": { "@type": "Answer", "text": "You should redact any sensitive or confidential information, including Social Security numbers, addresses, phone numbers, bank details, account numbers, medical information, case details, and other personally identifiable information." }
-    },
-    {
-      "@type": "Question",
-      "name": "How is redaction different from covering text with a black box?",
-      "acceptedAnswer": { "@type": "Answer", "text": "A simple black box may only hide text visually while leaving the original content in the file. Proper PDF redaction removes the actual data underneath, making it inaccessible to search, copy, and extraction tools." }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I redact multiple pages in a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can move through your document page by page and add redactions wherever sensitive content appears before applying all redactions at once." }
-    },
-    {
-      "@type": "Question",
-      "name": "Is PDF Redaction free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PDF Redaction is available as a Business plan feature for $13.99/month. It includes the visual redaction editor along with other Business tools like Workflow Automation, Table Extraction, PDF Compare, and eSign." }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I redact a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Upload your PDF, draw black redaction boxes over the areas you want to remove, review all pages, and click Apply Redaction. Once applied, the sensitive content is permanently deleted from the document." }
-    },
-  ]
+    "Permanently redact sensitive text, SSNs, addresses, and confidential data from PDFs. Visual redaction editor — draw boxes over content to permanently delete it. PDF.it Business feature.",
 }
 
 export default function PdfRedactionPage() {
+  const faqs = [
+    { q: "What is PDF redaction?", a: "PDF redaction is the process of permanently removing sensitive information from a PDF. Unlike placing a black box over text, true redaction deletes the underlying content so it cannot be recovered." },
+    { q: "Is the redaction permanent?", a: "Yes. After you apply redactions, the original content is permanently removed from the PDF. The redacted areas appear as solid black boxes, and the hidden text underneath is deleted." },
+    { q: "What information should I redact?", a: "You should redact any sensitive or confidential information, including Social Security numbers, addresses, phone numbers, bank details, account numbers, medical information, case details, and other personally identifiable information." },
+    { q: "How is redaction different from covering text with a black box?", a: "A simple black box may only hide text visually while leaving the original content in the file. Proper PDF redaction removes the actual data underneath, making it inaccessible to search, copy, and extraction tools." },
+    { q: "Can I redact multiple pages in a PDF?", a: "Yes. You can move through your document page by page and add redactions wherever sensitive content appears before applying all redactions at once." },
+    { q: "Is PDF Redaction free?", a: "PDF Redaction is available as a Business plan feature for $13.99/month. It includes the visual redaction editor along with other Business tools like Workflow Automation, Table Extraction, PDF Compare, and eSign." },
+    { q: "How do I redact a PDF?", a: "Upload your PDF, draw black redaction boxes over the areas you want to remove, review all pages, and click Apply Redaction. Once applied, the sensitive content is permanently deleted from the document." },
+  ]
+
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <Header />
       <main>
-        {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* 1. Hero */}
+        <section
+          className="text-white py-16 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#heroGrain)" />
+          </svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Shield className="h-10 w-10 text-white" />
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                  boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)",
+                }}
+              >
+                <Shield className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <div className="inline-block bg-indigo-100 text-indigo-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-4">
-                Business
-              </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Redact PDFs Online Securely</h1>
-              <p className="text-xl text-slate-300 mb-4">
-                Permanently remove sensitive information from PDF documents with a simple visual redaction tool. Upload your file, draw redaction boxes over confidential content, and apply permanent redactions so the underlying text cannot be copied, searched, or recovered.
-              </p>
-              <p className="text-lg text-slate-400 mb-8">
-                Protect personal data, confidential business information, legal case details, medical records, and other private content before sharing or filing your PDFs.
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Redact PDFs Online</h1>
+              <p className="text-xl text-slate-300 mb-8">
+                Permanently remove sensitive information from PDF documents. Draw redaction boxes over confidential content, and when you apply, the underlying text is deleted from the document so it cannot be selected, copied, searched, or recovered.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Eye className="h-4 w-4 text-red-400" /><span>Visual Editor</span></div>
-                <div className="flex items-center gap-2"><Lock className="h-4 w-4 text-red-400" /><span>Permanent Removal</span></div>
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-red-400" /><span>Multi-Page Support</span></div>
+                <div className="flex items-center gap-2"><Eye className="h-4 w-4 text-[#14D8C4]" /><span>Visual Editor</span></div>
+                <div className="flex items-center gap-2"><Lock className="h-4 w-4 text-[#14D8C4]" /><span>Permanent Removal</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Multi-Page Support</span></div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Redaction Interface */}
+        {/* 2. Intro */}
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Proper PDF redaction permanently removes sensitive information — not just hiding it visually. PDF.it's redaction tool lets you draw boxes over confidential content, and when you apply, the underlying text is deleted from the document so it cannot be selected, copied, searched, or recovered.
+            </p>
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">✓ Permanently delete underlying text data</li>
+              <li className="flex items-center gap-2">✓ Visual editor — draw redaction boxes on pages</li>
+              <li className="flex items-center gap-2">✓ Protect SSNs, addresses, medical records, legal data</li>
+              <li className="flex items-center gap-2">✓ Multi-page redaction with one-click apply</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* 3. Interface */}
         <RedactionInterface locale="en" />
 
-        {/* How It Works */}
-        <section className="py-16 bg-gray-50">
+        {/* 4. Feature Blocks */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-6 text-center">How It Works</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { step: "1", title: "Upload Your PDF", desc: "Drag and drop your PDF into the upload area to open it in the redaction editor." },
-                { step: "2", title: "Draw Redactions", desc: "Click and drag to place black redaction boxes over text or areas you want to remove. Review each page and add redactions wherever sensitive information appears." },
-                { step: "3", title: "Apply and Download", desc: "Click Apply Redaction to permanently delete the underlying content from the PDF. Then download your redacted file, ready to share securely." },
-              ].map((item) => (
-                <div key={item.step} className="bg-white border border-gray-200 rounded-xl p-6 text-center">
-                  <div className="w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center font-black text-lg mx-auto mb-3">
-                    {item.step}
+                { title: "Legal & Court Documents", desc: "Redact witness names, case numbers, and signatures before filing. Protect confidential details and meet privacy requirements for legal teams and court users." },
+                { title: "HR & Employee Records", desc: "Remove SSNs, salaries, and addresses before sharing records with third parties. Keep employee data private when sending to auditors, vendors, or outside partners." },
+                { title: "Healthcare & Financial", desc: "Redact patient info, bank accounts, and tax IDs for HIPAA and compliance. Protect medical records, payment details, and confidential business information." },
+              ].map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <div
+                    className="rounded-[11px] p-6 h-full"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
                   </div>
-                  <div className="text-lg font-bold text-slate-900 mb-2">{item.title}</div>
-                  <p className="text-sm text-slate-600">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Why Use PDF Redaction */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-4 text-center">Why Use PDF Redaction?</h2>
-            <div className="max-w-3xl mx-auto space-y-4">
-              <p className="text-slate-600 text-center">
-                Proper PDF redaction does more than hide text visually. It permanently removes the underlying information from the document so it cannot be selected, copied, searched, or recovered later.
-              </p>
-              <p className="text-slate-600 text-center">
-                This makes PDF redaction essential for sharing documents that contain personal, financial, legal, medical, or confidential business information.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Common Use Cases */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Common Use Cases</h2>
-            <div className="space-y-10">
-              <div className="bg-white rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Legal and Court Documents</h3>
-                <p className="text-slate-600">
-                  Redact witness names, case numbers, signatures, addresses, and other sensitive information before filing or sharing legal documents. Proper redaction helps law firms, legal teams, and court users protect confidential details and meet privacy requirements.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">HR and Employee Records</h3>
-                <p className="text-slate-600">
-                  Remove Social Security numbers, salary details, home addresses, contact information, and other employee data before sending records to auditors, vendors, or outside partners.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Healthcare and HIPAA Compliance</h3>
-                <p className="text-slate-600">
-                  Redact patient names, medical record numbers, treatment details, dates of birth, and other protected health information to support HIPAA compliance and protect patient privacy.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Financial and Business Documents</h3>
-                <p className="text-slate-600">
-                  Remove bank account numbers, payment details, tax IDs, invoices, contract data, and other confidential business information before sharing documents internally or externally.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
+        {/* 5. How It Works */}
         <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
-            <div className="space-y-6">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">How to Redact a PDF</h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
               {[
-                { q: "What is PDF redaction?", a: "PDF redaction is the process of permanently removing sensitive information from a PDF. Unlike placing a black box over text, true redaction deletes the underlying content so it cannot be recovered." },
-                { q: "Is the redaction permanent?", a: "Yes. After you apply redactions, the original content is permanently removed from the PDF. The redacted areas appear as solid black boxes, and the hidden text underneath is deleted." },
-                { q: "What information should I redact?", a: "You should redact any sensitive or confidential information, including Social Security numbers, addresses, phone numbers, bank details, account numbers, medical information, case details, and other personally identifiable information." },
-                { q: "How is redaction different from covering text with a black box?", a: "A simple black box may only hide text visually while leaving the original content in the file. Proper PDF redaction removes the actual data underneath, making it inaccessible to search, copy, and extraction tools." },
-                { q: "Can I redact multiple pages in a PDF?", a: "Yes. You can move through your document page by page and add redactions wherever sensitive content appears before applying all redactions at once." },
-                { q: "Is PDF Redaction free?", a: "PDF Redaction is available as a Business plan feature for $13.99/month. It includes the visual redaction editor along with other Business tools." },
-                { q: "How do I redact a PDF?", a: "Upload your PDF, draw black redaction boxes over the areas you want to remove, review all pages, and click Apply Redaction. Once applied, the sensitive content is permanently deleted from the document." },
-              ].map((faq, i) => (
-                <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
+                { num: "1", title: "Upload your PDF", desc: "Drag and drop or click to choose a file" },
+                { num: "2", title: "Draw redaction boxes", desc: "Click and drag over sensitive areas" },
+                { num: "3", title: "Apply and download", desc: "Content permanently deleted from the PDF" },
+              ].map((step) => (
+                <div key={step.num} className="flex-1">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                      border: "1px solid rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <span className="text-[#14D8C4] font-black text-lg">{step.num}</span>
+                  </div>
+                  <p className="font-semibold text-slate-900">{step.title}</p>
+                  <p className="text-sm text-slate-500 mt-1">{step.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-16 bg-[#191B4D] text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-            <h2 className="text-2xl font-black mb-4">Redact Sensitive Information with Confidence</h2>
-            <p className="text-slate-300 text-lg mb-8">
-              Use PDF Redaction to securely remove confidential content from your documents before sharing, filing, or storing them. It is a simple way to protect private information and ensure sensitive text is permanently removed from your PDF.
-            </p>
-            <Link
-              href="/pdf-redaction"
-              className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-xl text-lg transition-colors shadow-lg"
-            >
-              Start Redacting Now
-            </Link>
-          </div>
-        </section>
-
-        {/* Related Tools */}
-        <section className="py-16 bg-gray-50">
+        {/* 6. Related Tools */}
+        <section className="py-16" style={{ background: "#0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">More PDF Tools</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            <h2 className="text-2xl font-black text-white mb-6 text-center">Related Tools</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "Protect PDF", desc: "Add password protection to your documents.", href: "/protect-pdf", icon: Lock },
-                { name: "Flatten PDF", desc: "Lock form fields and annotations into a flat PDF.", href: "/flatten-pdf", icon: Layers },
-                { name: "Merge PDF", desc: "Combine multiple PDFs into one file.", href: "/merge-pdf", icon: Merge },
-                { name: "Workflow Automation", desc: "Chain multiple PDF tools into one automated workflow.", href: "/workflow-automation", icon: Repeat },
-                { name: "PDF Compare", desc: "Compare two PDFs side-by-side and highlight differences.", href: "/pdf-compare", icon: ArrowLeftRight },
-                { name: "PDF to JPG", desc: "Convert PDF pages to high-quality JPG images.", href: "/pdf-to-jpg", icon: FileText },
-                { name: "Compress PDF", desc: "Reduce file size without losing quality.", href: "/compress-pdf", icon: FileText },
-                { name: "Split PDF", desc: "Divide a PDF into separate files.", href: "/split-pdf", icon: FileText },
+                { name: "eSign", href: "/esign", desc: "Add electronic signatures to any PDF document." },
+                { name: "PDF Compare", href: "/pdf-compare", desc: "Compare two PDFs side-by-side and highlight differences." },
+                { name: "Protect PDF", href: "/protect-pdf", desc: "Add password protection to your documents." },
+                { name: "Flatten PDF", href: "/flatten-pdf", desc: "Lock form fields and annotations into a flat PDF." },
               ].map((tool) => (
-                <Link
+                <div
                   key={tool.href}
-                  href={tool.href}
-                  className="group flex flex-col items-center text-center rounded-xl border border-gray-200 bg-white p-4 hover:border-orange-200 hover:bg-orange-50/40 hover:shadow-md transition-all duration-200"
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
                 >
-                  <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200 shadow-sm">
-                    <tool.icon className="h-5 w-5 text-white" />
-                  </div>
-                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-orange-600 transition-colors mb-1">
-                    {tool.name}
-                  </h4>
-                  <p className="text-xs text-slate-500 leading-relaxed">{tool.desc}</p>
-                </Link>
+                  <Link
+                    href={tool.href}
+                    className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
+                    <div className="text-xs text-slate-400">{tool.desc}</div>
+                  </Link>
+                </div>
               ))}
             </div>
           </div>
         </section>
+
+        {/* 7. FAQ */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <h2 className="text-3xl font-black text-white mb-10 text-center">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl p-6"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 8. FAQ Schema */}
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+          }))
+        })}} />
       </main>
       <Footer />
     </div>

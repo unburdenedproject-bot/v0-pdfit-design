@@ -185,9 +185,9 @@ export function TableExtractionInterface() {
           success: "Tablas extraidas exitosamente",
           download: "Descargar Excel",
           extractAnother: "Extraer otro",
-          upgradeTitle: "Funcion Business",
-          upgradeDesc: "La Extraccion de Tablas esta disponible en el plan Business.",
-          upgradeBtn: "Ver Plan Business",
+          upgradeTitle: "Funcion Enterprise",
+          upgradeDesc: "La Extraccion de Tablas esta disponible en el plan Enterprise.",
+          upgradeBtn: "Ver Plan Enterprise",
           errorNoTables: "No se detectaron tablas en este PDF.",
         }
       : localePrefix === "/br"
@@ -200,9 +200,9 @@ export function TableExtractionInterface() {
             success: "Tabelas extraidas com sucesso",
             download: "Baixar Excel",
             extractAnother: "Extrair outro",
-            upgradeTitle: "Funcao Business",
-            upgradeDesc: "A Extracao de Tabelas esta disponivel no plano Business.",
-            upgradeBtn: "Ver Plano Business",
+            upgradeTitle: "Funcao Enterprise",
+            upgradeDesc: "A Extracao de Tabelas esta disponivel no plano Enterprise.",
+            upgradeBtn: "Ver Plano Enterprise",
             errorNoTables: "Nenhuma tabela detectada neste PDF.",
           }
         : {
@@ -214,9 +214,9 @@ export function TableExtractionInterface() {
             success: "Tables extracted successfully",
             download: "Download Excel",
             extractAnother: "Extract another",
-            upgradeTitle: "Business Feature",
-            upgradeDesc: "Table Extraction is available on the Business plan.",
-            upgradeBtn: "View Business Plan",
+            upgradeTitle: "Enterprise Feature",
+            upgradeDesc: "Table Extraction is available on the Enterprise plan.",
+            upgradeBtn: "View Enterprise Plan",
             errorNoTables: "No tables detected in this PDF.",
           }
 
