@@ -156,8 +156,9 @@ export default function PricingPage() {
                     <Button className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl" asChild>
                       <Link href={billing === "monthly" ? "/upgrade?plan=business" : "/upgrade?plan=business&billing=annual"}>
                         {billing === "monthly" ? "Upgrade to Business" : "Save 2 Months — Annual"}
-                    </Link>
-                  </Button>
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
 
                 {/* Enterprise Plan — platinum */}
@@ -187,6 +188,7 @@ export default function PricingPage() {
                         {billing === "monthly" ? "Upgrade to Enterprise" : "Save 2 Months — Annual"}
                       </Link>
                     </Button>
+                  </div>
                 </div>
 
               </div>
