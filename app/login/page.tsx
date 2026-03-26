@@ -248,9 +248,9 @@ export default function LoginPage() {
       className="flex min-h-screen flex-col"
       style={{
         background: `
-          #0E0F1E
           radial-gradient(ellipse 80% 50% at 50% 0%, rgba(20, 216, 196, 0.08), transparent 60%),
-          radial-gradient(ellipse 60% 40% at 80% 100%, rgba(107, 124, 255, 0.06), transparent 50%)
+          radial-gradient(ellipse 60% 40% at 80% 100%, rgba(107, 124, 255, 0.06), transparent 50%),
+          #0E0F1E
         `,
       }}
     >
