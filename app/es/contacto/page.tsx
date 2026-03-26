@@ -5,7 +5,7 @@ import { useState } from "react"
 import { HeaderEs } from "@/components/header-es"
 import { FooterEs } from "@/components/footer-es"
 import { Button } from "@/components/ui/button"
-import { Mail, MessageSquare, CheckCircle, AlertCircle, Send, Clock } from "lucide-react"
+import { Mail, MessageSquare, CheckCircle, AlertCircle, Send, Clock, Shield, Lock } from "lucide-react"
 
 export default function ContactoPage() {
   const [formData, setFormData] = useState({
@@ -43,35 +43,60 @@ export default function ContactoPage() {
     <div className="min-h-screen bg-[#F3F4FF]">
       <HeaderEs />
       <main>
-        {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Hero Section — Dark Cinematic */}
+        <section className="relative bg-[#0E0F1E] text-white py-20 overflow-hidden">
+          {/* Radial gradients */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#0A4A5C] rounded-full opacity-20 blur-[120px]" />
+            <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#1E6FD9] rounded-full opacity-15 blur-[100px]" />
+          </div>
+          {/* Grain SVG overlay */}
+          <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E")`, backgroundRepeat: "repeat" }} />
+
+          <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <MessageSquare className="h-10 w-10 text-white" />
+              {/* Icon with teal glow */}
+              <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 bg-gradient-to-br from-[#13152A] to-[#0E0F1E] border border-[#14D8C4]/30 shadow-[0_0_30px_rgba(20,216,196,0.15)]">
+                <MessageSquare className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Contáctanos</h1>
-              <p className="text-xl text-slate-300">
-                ¿Tienes preguntas? ¡Estamos aquí para ayudarte!
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Cont&#225;ctanos</h1>
+              <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+                &#191;Tienes preguntas? Estamos aqu&#237; para ayudarte. Contacta a nuestro equipo de soporte y te responderemos r&#225;pidamente.
               </p>
+              {/* 3 badges */}
+              <div className="flex flex-wrap justify-center gap-4 mt-8">
+                <div className="flex items-center gap-2 bg-[#13152A]/80 border border-white/10 rounded-full px-4 py-2 text-sm">
+                  <Clock className="h-4 w-4 text-[#14D8C4]" />
+                  <span className="text-slate-300">Respuesta en 24h</span>
+                </div>
+                <div className="flex items-center gap-2 bg-[#13152A]/80 border border-white/10 rounded-full px-4 py-2 text-sm">
+                  <Lock className="h-4 w-4 text-[#14D8C4]" />
+                  <span className="text-slate-300">Cifrado SSL</span>
+                </div>
+                <div className="flex items-center gap-2 bg-[#13152A]/80 border border-white/10 rounded-full px-4 py-2 text-sm">
+                  <Shield className="h-4 w-4 text-[#14D8C4]" />
+                  <span className="text-slate-300">Privacidad Primero</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Contact Content */}
-        <section className="py-16">
+        <section className="bg-[#F3F4FF] py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-5xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                {/* Contact Info */}
+                {/* Left Column — Contact Info (dark glassmorphism) */}
                 <div>
-                  <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-6">Información de Contacto</h2>
+                  <div className="bg-[#0E0F1E]/95 backdrop-blur-sm rounded-2xl border border-white/10 p-8 shadow-2xl">
+                    <h2 className="text-2xl font-bold text-white mb-6">Informaci&#243;n de Contacto</h2>
 
-                    <div className="bg-[#191B4D] border border-[#252A6A] rounded-xl p-6 mb-6">
+                    {/* Email support */}
+                    <div className="bg-[#13152A] border border-white/10 rounded-xl p-6 mb-6">
                       <div className="flex items-center gap-4 mb-3">
-                        <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                          <Mail className="h-6 w-6 text-white" />
+                        <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-[#13152A] to-[#0E0F1E] border border-[#14D8C4]/30 shadow-[0_0_20px_rgba(20,216,196,0.15)]">
+                          <Mail className="h-6 w-6 text-[#14D8C4]" />
                         </div>
                         <div>
                           <h3 className="text-lg font-bold text-white mb-1">Soporte por Email</h3>
@@ -83,7 +108,7 @@ export default function ContactoPage() {
                           </a>
                         </div>
                       </div>
-                      <div className="flex items-center gap-2 text-slate-300">
+                      <div className="flex items-center gap-2 text-slate-400">
                         <Clock className="h-4 w-4" />
                         <span className="text-sm font-medium">Respondemos en menos de 24 horas</span>
                       </div>
@@ -91,43 +116,46 @@ export default function ContactoPage() {
 
                     <div className="space-y-6">
                       <div>
-                        <h3 className="text-lg font-bold text-slate-900 mb-3">¿En qué podemos ayudarte?</h3>
-                        <ul className="space-y-2 text-slate-600">
-                          <li>• Soporte técnico con herramientas PDF</li>
-                          <li>• Preguntas sobre funciones Pro</li>
-                          <li>• Reportar errores y dar retroalimentación</li>
-                          <li>• Alianzas comerciales</li>
-                          <li>• Consultas generales</li>
+                        <h3 className="text-lg font-bold text-white mb-3">&#191;En qu&#233; podemos ayudarte?</h3>
+                        <ul className="space-y-2 text-slate-300">
+                          <li className="flex items-start gap-2"><span className="text-[#14D8C4]">-</span> Soporte t&#233;cnico con herramientas PDF</li>
+                          <li className="flex items-start gap-2"><span className="text-[#14D8C4]">-</span> Preguntas sobre funciones Pro</li>
+                          <li className="flex items-start gap-2"><span className="text-[#14D8C4]">-</span> Reportar errores y dar retroalimentaci&#243;n</li>
+                          <li className="flex items-start gap-2"><span className="text-[#14D8C4]">-</span> Alianzas comerciales</li>
+                          <li className="flex items-start gap-2"><span className="text-[#14D8C4]">-</span> Consultas generales</li>
                         </ul>
                       </div>
 
-                      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                        <h4 className="font-bold text-blue-900 mb-2">Tips para una Respuesta Rápida</h4>
-                        <p className="text-blue-800 text-sm">
-                          Para soporte más rápido, incluye detalles sobre tu navegador, tipo de archivo y cualquier mensaje de error que hayas encontrado.
-                        </p>
+                      {/* Privacy note */}
+                      <div className="bg-[#13152A] border border-white/10 rounded-lg p-4">
+                        <div className="flex items-start gap-3">
+                          <Shield className="h-5 w-5 text-[#14D8C4] flex-shrink-0 mt-0.5" />
+                          <p className="text-slate-300 text-sm">
+                            Tus mensajes son privados. Nunca compartimos tu informaci&#243;n de contacto. Los archivos se eliminan inmediatamente despu&#233;s del procesamiento.
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Contact Form */}
+                {/* Right Column — Contact Form (white card) */}
                 <div>
-                  <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-6">Envíanos un Mensaje</h2>
+                  <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
+                    <h2 className="text-2xl font-bold text-slate-900 mb-6">Env&#237;anos un Mensaje</h2>
 
                     {isSubmitted ? (
                       <div className="text-center py-8">
                         <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                           <CheckCircle className="h-8 w-8 text-green-600" />
                         </div>
-                        <h3 className="text-xl font-bold text-slate-900 mb-2">¡Mensaje Enviado!</h3>
+                        <h3 className="text-xl font-bold text-slate-900 mb-2">&#161;Mensaje Enviado!</h3>
                         <p className="text-slate-600 mb-4">
                           Gracias por contactarnos. Te responderemos en menos de 24 horas.
                         </p>
                         <p className="text-sm text-slate-500 mb-6">
-                          También puedes escribirnos directamente a{" "}
-                          <a href="mailto:contact@pdf.it.com" className="text-orange-500 hover:text-orange-600 font-medium">
+                          Tambi&#233;n puedes escribirnos directamente a{" "}
+                          <a href="mailto:contact@pdf.it.com" className="text-[#14D8C4] hover:text-[#2EE6D6] font-medium">
                             contact@pdf.it.com
                           </a>
                         </p>
@@ -149,7 +177,7 @@ export default function ContactoPage() {
                               value={formData.name}
                               onChange={handleInputChange}
                               required
-                              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#14D8C4] focus:border-[#14D8C4] transition-colors"
                               placeholder="Ingresa tu nombre completo"
                             />
                           </div>
@@ -164,8 +192,8 @@ export default function ContactoPage() {
                               value={formData.email}
                               onChange={handleInputChange}
                               required
-                              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
-                              placeholder="Ingresa tu correo electrónico"
+                              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#14D8C4] focus:border-[#14D8C4] transition-colors"
+                              placeholder="Ingresa tu correo electr&#243;nico"
                             />
                           </div>
                         </div>
@@ -180,13 +208,13 @@ export default function ContactoPage() {
                             value={formData.subject}
                             onChange={handleInputChange}
                             required
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#14D8C4] focus:border-[#14D8C4] transition-colors"
                           >
                             <option value="">Selecciona un tema</option>
-                            <option value="technical-support">Soporte Técnico</option>
+                            <option value="technical-support">Soporte T&#233;cnico</option>
                             <option value="pro-features">Pregunta sobre Pro</option>
                             <option value="bug-report">Reportar Error</option>
-                            <option value="feature-request">Sugerencia de Función</option>
+                            <option value="feature-request">Sugerencia de Funci&#243;n</option>
                             <option value="business-inquiry">Consulta Comercial</option>
                             <option value="other">Otro</option>
                           </select>
@@ -203,8 +231,8 @@ export default function ContactoPage() {
                             onChange={handleInputChange}
                             required
                             rows={6}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors resize-vertical"
-                            placeholder="Cuéntanos sobre tu pregunta, comentario o problema..."
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#14D8C4] focus:border-[#14D8C4] transition-colors resize-vertical"
+                            placeholder="Cu&#233;ntanos sobre tu pregunta, comentario o problema..."
                           />
                         </div>
 
@@ -212,7 +240,7 @@ export default function ContactoPage() {
                           <div className="flex items-center gap-2 text-red-600 bg-red-50 border border-red-200 rounded-lg p-3">
                             <AlertCircle className="h-5 w-5 flex-shrink-0" />
                             <span className="text-sm">
-                              Hubo un error al enviar tu mensaje. Intenta de nuevo o escríbenos directamente a{" "}
+                              Hubo un error al enviar tu mensaje. Intenta de nuevo o escr&#237;benos directamente a{" "}
                               <a href="mailto:contact@pdf.it.com" className="underline">contact@pdf.it.com</a>
                             </span>
                           </div>
@@ -221,7 +249,7 @@ export default function ContactoPage() {
                         <Button
                           type="submit"
                           disabled={isSubmitting || !formData.name || !formData.email || !formData.subject || !formData.message}
-                          className="w-full bg-orange-500 hover:bg-orange-600 text-[#0E0F1E] font-bold py-3 px-6 rounded-lg text-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                          className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-6 rounded-lg text-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                           {isSubmitting ? (
                             <><Send className="h-4 w-4 mr-2 animate-pulse" /> Enviando Mensaje...</>
@@ -231,8 +259,8 @@ export default function ContactoPage() {
                         </Button>
 
                         <p className="text-center text-sm text-slate-500">
-                          O escríbenos directamente a{" "}
-                          <a href="mailto:contact@pdf.it.com" className="text-orange-500 hover:text-orange-600 font-medium">
+                          O escr&#237;benos directamente a{" "}
+                          <a href="mailto:contact@pdf.it.com" className="text-[#14D8C4] hover:text-[#2EE6D6] font-medium">
                             contact@pdf.it.com
                           </a>
                         </p>
@@ -241,6 +269,22 @@ export default function ContactoPage() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Privacy Note Section — Dark Cinematic */}
+        <section className="relative bg-[#0E0F1E] py-12 overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-[#0A4A5C] rounded-full opacity-10 blur-[100px]" />
+            <div className="absolute bottom-0 right-1/3 w-[400px] h-[200px] bg-[#E8813A] rounded-full opacity-5 blur-[80px]" />
+          </div>
+          <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-2xl mx-auto text-center">
+              <Shield className="h-8 w-8 text-[#14D8C4] mx-auto mb-4" />
+              <p className="text-slate-300 text-sm">
+                Todas las comunicaciones est&#225;n cifradas. Nunca compartimos tu informaci&#243;n personal.
+              </p>
             </div>
           </div>
         </section>
