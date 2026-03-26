@@ -280,7 +280,7 @@ const categories = [
         description: "Extract tables from PDFs directly into Excel spreadsheets.",
         icon: FileSpreadsheet,
         href: "/table-extraction",
-        tier: "ENTERPRISE" as const,
+        tier: "BUSINESS" as const,
       },
       {
         name: "PDF Compare",

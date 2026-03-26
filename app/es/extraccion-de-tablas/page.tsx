@@ -3,224 +3,261 @@ import Link from "next/link"
 import { HeaderEs } from "@/components/header-es"
 import { FooterEs } from "@/components/footer-es"
 import { TableExtractionInterface } from "@/components/table-extraction-interface"
-import { Table2, Zap, Shield, FileText, Lock, Layers, Merge, Repeat, ArrowLeftRight, PenTool } from "lucide-react"
+import { FileSpreadsheet, Zap, Shield } from "lucide-react"
 
 export const metadata = {
-  title: "Extraer Tablas de PDF a Excel Online | PDF.it",
+  title: "Extraccion de Tablas — Extraer Tablas de PDF a Excel | PDF.it",
   description:
-    "Extrae tablas de documentos PDF y conviertelas en hojas de calculo Excel. Detecta y exporta datos tabulares automaticamente — rapido y preciso. Funcion Business de PDF.it.",
+    "Extrae tablas de documentos PDF y conviertelas en hojas de calculo Excel. Detecta automaticamente datos tabulares de reportes financieros, facturas y documentos de investigacion. 200 paginas/mes en el plan Business.",
+  alternates: {
+    canonical: "https://pdf.it.com/es/extraccion-de-tablas",
+    languages: {
+      "en": "https://pdf.it.com/table-extraction",
+      "es": "https://pdf.it.com/es/extraccion-de-tablas",
+      "pt-BR": "https://pdf.it.com/br/extracao-de-tabelas",
+    },
+  },
 }
+
+const faqs = [
+  { q: "¿Que es la Extraccion de Tablas?", a: "Detecta automaticamente tablas dentro de PDFs y las convierte en hojas de calculo Excel editables. Funciona con reportes financieros, facturas, datos cientificos y cualquier PDF con datos tabulares." },
+  { q: "¿Cuantas paginas puedo extraer por mes?", a: "El plan Business ($13.99/mes) incluye 200 paginas por mes. Para mayor volumen, Enterprise ($49.99/mes) ofrece 2,000 paginas por mes con procesamiento prioritario." },
+  { q: "¿Que tipos de tablas se pueden extraer?", a: "Tablas con bordes visibles, tablas sin bordes, tablas de varias paginas y tablas con encabezados combinados. Funciona mejor con tablas estructuradas y limpias." },
+  { q: "¿Puedo extraer tablas de PDFs escaneados?", a: "Para mejores resultados, primero ejecute OCR usando nuestra herramienta Scanner OCR, luego use la Extraccion de Tablas en el PDF procesado." },
+  { q: "¿En que formato es la salida?", a: "Las tablas se exportan como archivos Excel (.xlsx) compatibles con Microsoft Excel, Google Sheets y LibreOffice Calc." },
+  { q: "¿La Extraccion de Tablas es gratis?", a: "La Extraccion de Tablas es una funcion del plan Business a $13.99/mes con 200 paginas/mes. Incluye todas las demas herramientas Business como Comparar PDF, Firma Electronica y Redaccion de PDF." },
+]
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Que es la Extraccion de Tablas?",
-      "acceptedAnswer": { "@type": "Answer", "text": "La Extraccion de Tablas detecta automaticamente tablas dentro de documentos PDF y las convierte en hojas de calculo Excel (.xlsx) editables. Funciona con reportes financieros, facturas, datos cientificos y cualquier PDF que contenga datos tabulares." }
-    },
-    {
-      "@type": "Question",
-      "name": "Que tipos de tablas se pueden extraer?",
-      "acceptedAnswer": { "@type": "Answer", "text": "La herramienta puede extraer tablas con bordes visibles, tablas sin bordes (basadas en alineacion), tablas de varias paginas y tablas con encabezados combinados. Funciona mejor con tablas estructuradas y limpias." }
-    },
-    {
-      "@type": "Question",
-      "name": "La Extraccion de Tablas es gratis?",
-      "acceptedAnswer": { "@type": "Answer", "text": "La Extraccion de Tablas esta disponible como funcion del plan Business por $13.99/mes. Incluye extracciones ilimitadas junto con todas las demas herramientas Business como Automatizacion de Flujos, Comparar PDF, Firma Electronica y Redaccion de PDF." }
-    },
-    {
-      "@type": "Question",
-      "name": "Puedo extraer tablas de PDFs escaneados?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Para mejores resultados, primero ejecute OCR en el PDF escaneado usando nuestra herramienta Scanner OCR, luego use la Extraccion de Tablas en el PDF con texto reconocido." }
-    },
-    {
-      "@type": "Question",
-      "name": "En que formato se exporta el resultado?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Las tablas se exportan como archivo Excel (.xlsx) que se puede abrir en Microsoft Excel, Google Sheets, LibreOffice Calc y otras aplicaciones de hojas de calculo." }
-    },
-  ]
+  "mainEntity": faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.a },
+  })),
 }
 
 export default function TableExtractionPageEs() {
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema-es"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderEs />
       <main>
         {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section
+          className="text-white py-16 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#heroGrain)" />
+          </svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Table2 className="h-10 w-10 text-white" />
-              </div>
-              <div className="inline-block bg-indigo-100 text-indigo-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-4">
-                Business
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                  boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)",
+                }}
+              >
+                <FileSpreadsheet className="h-10 w-10 text-[#14D8C4]" />
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Extraccion de Tablas de PDF</h1>
-              <p className="text-xl text-slate-300 mb-4">
-                Extrae tablas de documentos PDF y conviertelas en hojas de calculo Excel editables. Detecta automaticamente datos tabulares en reportes, facturas, estados financieros y documentos cientificos.
-              </p>
-              <p className="text-lg text-slate-400 mb-8">
-                Deja de copiar datos manualmente — deja que PDF.it extraiga tus tablas con precision.
+              <p className="text-xl text-slate-300 mb-8">
+                Extrae tablas de documentos PDF y conviertelas en hojas de calculo Excel editables. Detecta automaticamente datos tabulares de reportes financieros, facturas y documentos de investigacion. 200 paginas/mes en el plan Business.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Table2 className="h-4 w-4 text-indigo-400" /><span>Deteccion Automatica</span></div>
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-indigo-400" /><span>Exportacion a Excel</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-indigo-400" /><span>Archivos Eliminados Despues de la Sesion</span></div>
+                <div className="flex items-center gap-2"><FileSpreadsheet className="h-4 w-4 text-[#14D8C4]" /><span>Deteccion Automatica</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Exportacion a Excel</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>200 Paginas/Mes</span></div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Table Extraction Interface */}
+        {/* Intro */}
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Los PDFs bloquean tus datos dentro de paginas estaticas. Cuando necesitas numeros de un reporte financiero, partidas de una factura o datos de investigacion de un documento, copiar celda por celda es lento y propenso a errores. La Extraccion de Tablas usa IA para detectar y extraer tablas automaticamente de cualquier PDF, entregando hojas de calculo Excel limpias listas para analisis. El plan Business incluye 200 paginas por mes — ¿necesitas mas? Actualiza a Enterprise para 2,000 paginas/mes.
+            </p>
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">✓ Detecta tablas con filas, columnas y celdas</li>
+              <li className="flex items-center gap-2">✓ Exporta a Excel (.xlsx) para edicion y analisis</li>
+              <li className="flex items-center gap-2">✓ 200 paginas/mes en el plan Business</li>
+              <li className="flex items-center gap-2">✓ ¿Necesitas mas? Enterprise ofrece 2,000 paginas/mes</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Interface */}
         <TableExtractionInterface />
 
-        {/* How It Works */}
-        <section className="py-16 bg-gray-50">
+        {/* Feature Blocks */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-6 text-center">Como Funciona</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { step: "1", title: "Sube tu PDF", desc: "Arrastra y suelta tu PDF que contiene tablas en la zona de carga." },
-                { step: "2", title: "Deteccion Automatica", desc: "PDF.it detecta automaticamente todas las tablas en el documento usando reconocimiento con inteligencia artificial." },
-                { step: "3", title: "Descarga el Excel", desc: "Descarga las tablas extraidas como archivo Excel (.xlsx) listo para edicion y analisis." },
-              ].map((item) => (
-                <div key={item.step} className="bg-white border border-gray-200 rounded-xl p-6 text-center">
-                  <div className="w-10 h-10 bg-indigo-500 text-white rounded-full flex items-center justify-center font-black text-lg mx-auto mb-3">
-                    {item.step}
+                { title: "Reportes Financieros y Facturas", desc: "Extrae estados financieros, balances generales y partidas de facturas directamente a Excel para analisis, modelado y contabilidad." },
+                { title: "Datos de Investigacion y Regulatorios", desc: "Extrae tablas de datos de articulos cientificos, reportes de mercado y documentos gubernamentales en hojas de calculo estructuradas para tu propio analisis." },
+                { title: "200 Paginas/Mes — Escala con Enterprise", desc: "El plan Business incluye 200 paginas de extraccion de tablas por mes. Para necesidades de alto volumen, Enterprise ofrece 2,000 paginas/mes con procesamiento prioritario." },
+              ].map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <div
+                    className="rounded-[11px] p-6 h-full"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
                   </div>
-                  <div className="text-lg font-bold text-slate-900 mb-2">{item.title}</div>
-                  <p className="text-sm text-slate-600">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Why Use */}
+        {/* How It Works */}
         <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-4 text-center">Por que Extraer Tablas de PDFs?</h2>
-            <div className="max-w-3xl mx-auto space-y-4">
-              <p className="text-slate-600 text-center">
-                Los PDFs son excelentes para compartir documentos, pero terribles para trabajar con datos. Cuando necesitas numeros de un reporte financiero, partidas de una factura o datos de investigacion, copiar celda por celda es lento y propenso a errores.
-              </p>
-              <p className="text-slate-600 text-center">
-                La Extraccion de Tablas usa Google Document AI para detectar y extraer tablas automaticamente de cualquier PDF, entregando hojas de calculo Excel limpias listas para analisis, formulas y graficos.
-              </p>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Extraer Tablas de PDF</h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+              {[
+                { num: "1", title: "Sube tu PDF", desc: "Arrastra y suelta tu archivo" },
+                { num: "2", title: "Tablas detectadas", desc: "La IA identifica las estructuras de tablas" },
+                { num: "3", title: "Descarga el Excel", desc: "Obtiene tus datos en una hoja de calculo" },
+              ].map((step) => (
+                <div key={step.num} className="flex-1">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                      border: "1px solid rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <span className="text-[#14D8C4] font-black text-lg">{step.num}</span>
+                  </div>
+                  <p className="font-semibold text-slate-900">{step.title}</p>
+                  <p className="text-sm text-slate-500 mt-1">{step.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Use Cases */}
-        <section className="py-16 bg-gray-50">
+        {/* Related Tools */}
+        <section className="py-16" style={{ background: "#0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Casos de Uso Comunes</h2>
-            <div className="space-y-10">
-              <div className="bg-white rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Reportes Financieros</h3>
-                <p className="text-slate-600">
-                  Extrae estados financieros, balances generales y reportes de resultados de PDFs directamente a Excel para analisis y modelado financiero.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Facturas y Ordenes de Compra</h3>
-                <p className="text-slate-600">
-                  Extrae partidas, cantidades, precios y totales de facturas en PDF para importar en sistemas contables u hojas de calculo de seguimiento.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Datos Cientificos y de Investigacion</h3>
-                <p className="text-slate-600">
-                  Extrae tablas de datos de articulos cientificos, reportes de investigacion y publicaciones academicas para reutilizar en tus propios analisis.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Documentos Gubernamentales y Regulatorios</h3>
-                <p className="text-slate-600">
-                  Extrae datos estadisticos, tablas de cumplimiento y cifras regulatorias de PDFs gubernamentales en hojas de calculo estructuradas para reportes y analisis.
-                </p>
-              </div>
+            <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {[
+                { name: "Extraccion de Tablas Alto Volumen", href: "/es/extraccion-tablas-alto-volumen", desc: "2,000 paginas/mes — Enterprise" },
+                { name: "PDF a Excel", href: "/es/pdf-a-excel", desc: "Convierte PDFs completos a Excel" },
+                { name: "Scanner OCR", href: "/es/escaner-ocr", desc: "Haz PDFs escaneados buscables primero" },
+                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamano del archivo" },
+              ].map((tool) => (
+                <div
+                  key={tool.href}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <Link
+                    href={tool.href}
+                    className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
+                    <div className="text-xs text-slate-400">{tool.desc}</div>
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-[#F3F4FF]">
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
-            <div className="space-y-6">
-              {[
-                { q: "Que es la Extraccion de Tablas?", a: "Detecta automaticamente tablas dentro de PDFs y las convierte en hojas de calculo Excel editables. Funciona con reportes financieros, facturas, datos cientificos y cualquier PDF con datos tabulares." },
-                { q: "Que tipos de tablas se pueden extraer?", a: "Tablas con bordes visibles, tablas sin bordes, tablas de varias paginas y tablas con encabezados combinados. Funciona mejor con tablas estructuradas y limpias." },
-                { q: "Es gratis?", a: "La Extraccion de Tablas esta disponible como funcion del plan Business por $13.99/mes." },
-                { q: "Puedo extraer tablas de PDFs escaneados?", a: "Para mejores resultados, primero ejecute OCR usando nuestra herramienta Scanner OCR, luego use la Extraccion de Tablas en el PDF procesado." },
-                { q: "En que formato se exporta?", a: "Las tablas se exportan como archivo Excel (.xlsx) compatible con Microsoft Excel, Google Sheets y LibreOffice Calc." },
-              ].map((faq, i) => (
-                <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
+            <h2 className="text-3xl font-black text-white mb-10 text-center">Preguntas Frecuentes</h2>
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl p-6"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-16 bg-[#191B4D] text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-            <h2 className="text-2xl font-black mb-4">Convierte Tablas de PDF en Hojas de Calculo</h2>
-            <p className="text-slate-300 text-lg mb-8">
-              Extrae cualquier tabla de cualquier PDF y obtiene un archivo Excel limpio y formateado en segundos. Sin copiar manualmente.
-            </p>
-            <Link
-              href="/es/extraccion-de-tablas"
-              className="inline-block bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-8 rounded-xl text-lg transition-colors shadow-lg"
-            >
-              Comenzar a Extraer
-            </Link>
-          </div>
-        </section>
-
-        {/* Related Tools */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Mas Herramientas PDF</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-              {[
-                { name: "Comparar PDF", desc: "Compara dos PDFs lado a lado.", href: "/es/comparar-pdf", icon: ArrowLeftRight },
-                { name: "Firma Electronica", desc: "Agrega firmas electronicas a PDFs.", href: "/es/firma-electronica", icon: PenTool },
-                { name: "Redaccion PDF", desc: "Elimina informacion sensible.", href: "/es/redaccion-pdf", icon: Shield },
-                { name: "Automatizacion", desc: "Encadena herramientas PDF en un flujo.", href: "/es/automatizacion", icon: Repeat },
-                { name: "Proteger PDF", desc: "Agrega proteccion con contrasena.", href: "/es/proteger-pdf", icon: Lock },
-                { name: "Aplanar PDF", desc: "Bloquea campos y anotaciones.", href: "/es/aplanar-pdf", icon: Layers },
-                { name: "Comprimir PDF", desc: "Reduce el tamano sin perder calidad.", href: "/es/comprimir-pdf", icon: FileText },
-                { name: "Unir PDF", desc: "Combina varios PDFs en uno solo.", href: "/es/unir-pdf", icon: Merge },
-              ].map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="group flex flex-col items-center text-center rounded-xl border border-gray-200 bg-white p-4 hover:border-orange-200 hover:bg-orange-50/40 hover:shadow-md transition-all duration-200"
-                >
-                  <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200 shadow-sm">
-                    <tool.icon className="h-5 w-5 text-white" />
-                  </div>
-                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-orange-600 transition-colors mb-1">
-                    {tool.name}
-                  </h4>
-                  <p className="text-xs text-slate-500 leading-relaxed">{tool.desc}</p>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* FAQ Schema */}
+        <Script
+          id="faq-schema-es"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
       </main>
       <FooterEs />
     </div>

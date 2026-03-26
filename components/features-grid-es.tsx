@@ -279,7 +279,7 @@ const categories = [
         description: "Extrae tablas de PDFs directamente a hojas de cálculo Excel.",
         icon: FileSpreadsheet,
         href: "/es/extraccion-de-tablas",
-        tier: "ENTERPRISE" as const,
+        tier: "BUSINESS" as const,
       },
       {
         name: "Comparar PDF",
