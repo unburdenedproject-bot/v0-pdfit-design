@@ -4,8 +4,6 @@ import { createClient } from "@/lib/supabase/client"
 import { useRouter, useSearchParams } from "next/navigation"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import type { User } from "@supabase/supabase-js"
 import {
   FileText,
@@ -112,6 +110,19 @@ function formatTimeAgo(dateStr: string): string {
   return date.toLocaleDateString("es-MX", { month: "short", day: "numeric" })
 }
 
+function getPlanBadgeClasses(plan: string): string {
+  switch (plan) {
+    case "enterprise":
+      return "bg-gradient-to-r from-slate-300/20 to-slate-400/20 text-slate-300 border border-slate-400/30"
+    case "business":
+      return "bg-gradient-to-r from-blue-500/20 to-indigo-500/20 text-blue-400 border border-blue-500/30"
+    case "pro":
+      return "bg-gradient-to-r from-amber-500/20 to-yellow-500/20 text-amber-400 border border-amber-500/30"
+    default:
+      return "bg-white/10 text-slate-400 border border-white/10"
+  }
+}
+
 export function DashboardClientEs({
   user,
   plan = "free",
@@ -166,8 +177,8 @@ export function DashboardClientEs({
         <div
           className={`mb-6 flex items-center gap-3 rounded-lg border p-4 ${
             statusMessage.type === "success"
-              ? "border-green-200 bg-green-50 text-green-800"
-              : "border-amber-200 bg-amber-50 text-amber-800"
+              ? "bg-green-500/10 border-green-500/20 text-green-400"
+              : "bg-amber-500/10 border-amber-500/20 text-amber-400"
           }`}
         >
           {statusMessage.type === "success" ? (
@@ -182,16 +193,16 @@ export function DashboardClientEs({
       {/* Welcome Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-8">
         <div>
-          <h1 className="text-3xl font-black text-slate-900">
+          <h1 className="text-3xl font-black text-white">
             Bienvenido, {displayName || "amigo"}
           </h1>
-          <p className="text-slate-500 mt-1">
+          <p className="text-slate-400 mt-1">
             ¿Qué necesitas arreglar hoy?
           </p>
         </div>
         <div className="flex items-center gap-3">
           <Link href="/es/herramientas">
-            <Button className="bg-orange-500 hover:bg-orange-600 text-white">
+            <Button className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold">
               <Zap className="mr-2 h-4 w-4" />
               Todas las Herramientas
             </Button>
@@ -200,7 +211,7 @@ export function DashboardClientEs({
             variant="outline"
             size="sm"
             onClick={handleSignOut}
-            className="border-slate-200 text-slate-500 hover:text-slate-700"
+            className="border-white/10 text-slate-400 hover:text-white hover:bg-white/5"
           >
             <LogOut className="mr-2 h-4 w-4" />
             Salir
@@ -210,31 +221,33 @@ export function DashboardClientEs({
 
       {/* Get Started CTA (for users with 0 usage) */}
       {usageCount === 0 && recentActivity.length === 0 && (
-        <div className="mb-8 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 p-8 text-white">
-          <div className="max-w-2xl">
-            <h2 className="text-2xl font-black mb-2">Comienza con tu primera herramienta</h2>
-            <p className="text-slate-300 mb-6">
-              Elige una herramienta para convertir, comprimir u organizar tu PDF. Solo toma unos segundos.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/es/comprimir-pdf">
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white font-bold">
-                  <Compress className="mr-2 h-4 w-4" />
-                  Comprimir PDF
-                </Button>
-              </Link>
-              <Link href="/es/unir-pdf">
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white font-bold">
-                  <Merge className="mr-2 h-4 w-4" />
-                  Unir PDF
-                </Button>
-              </Link>
-              <Link href="/es/pdf-a-jpg">
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white font-bold">
-                  <Image className="mr-2 h-4 w-4" />
-                  PDF a JPG
-                </Button>
-              </Link>
+        <div className="mb-8 rounded-2xl p-[1px] bg-gradient-to-br from-[#14D8C4]/40 via-[#6B7CFF]/30 to-[#14D8C4]/20">
+          <div className="rounded-2xl bg-white/[0.05] backdrop-blur-sm p-8">
+            <div className="max-w-2xl">
+              <h2 className="text-2xl font-black text-white mb-2">Comienza con tu primera herramienta</h2>
+              <p className="text-slate-400 mb-6">
+                Elige una herramienta para convertir, comprimir u organizar tu PDF. Solo toma unos segundos.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/es/comprimir-pdf">
+                  <Button className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold">
+                    <Compress className="mr-2 h-4 w-4" />
+                    Comprimir PDF
+                  </Button>
+                </Link>
+                <Link href="/es/unir-pdf">
+                  <Button className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold">
+                    <Merge className="mr-2 h-4 w-4" />
+                    Unir PDF
+                  </Button>
+                </Link>
+                <Link href="/es/pdf-a-jpg">
+                  <Button className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold">
+                    <Image className="mr-2 h-4 w-4" />
+                    PDF a JPG
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -243,147 +256,151 @@ export function DashboardClientEs({
       {/* Stats Row */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
         {/* Today's Usage */}
-        <Card className="border-slate-200 shadow-sm">
-          <CardContent className="p-5">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center">
-                <Zap className="h-5 w-5 text-orange-600" />
-              </div>
-              <div>
-                <p className="text-xs font-medium text-slate-500 uppercase tracking-wide">Hoy</p>
-                <p className="text-2xl font-black text-slate-900">
-                  {isPro ? usageCount : `${usageCount}/${dailyLimit}`}
-                </p>
-              </div>
+        <div className="rounded-xl bg-white/[0.05] backdrop-blur-sm border border-white/10 p-5">
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#14D8C4]/20 to-[#14D8C4]/5 border border-[#14D8C4]/20 flex items-center justify-center">
+              <Zap className="h-5 w-5 text-[#14D8C4]" />
             </div>
-            {!isPro && (
-              <div className="w-full bg-slate-100 rounded-full h-2">
-                <div
-                  className={`h-2 rounded-full transition-all duration-500 ${
-                    usagePercent >= 80 ? "bg-red-500" : usagePercent >= 50 ? "bg-amber-500" : "bg-orange-500"
-                  }`}
-                  style={{ width: `${usagePercent}%` }}
-                />
-              </div>
-            )}
-            {isPro && (
-              <p className="text-xs text-slate-500">Conversiones ilimitadas</p>
-            )}
-          </CardContent>
-        </Card>
+            <div>
+              <p className="text-xs font-medium text-slate-500 uppercase tracking-wide">Hoy</p>
+              <p className="text-2xl font-black text-white">
+                {isPro ? usageCount : `${usageCount}/${dailyLimit}`}
+              </p>
+            </div>
+          </div>
+          {!isPro && (
+            <div className="w-full bg-white/10 rounded-full h-2">
+              <div
+                className="h-2 rounded-full transition-all duration-500 bg-[#14D8C4]"
+                style={{ width: `${usagePercent}%` }}
+              />
+            </div>
+          )}
+          {isPro && (
+            <p className="text-xs text-slate-500">Conversiones ilimitadas</p>
+          )}
+        </div>
 
         {/* Monthly Stats */}
-        <Card className="border-slate-200 shadow-sm">
-          <CardContent className="p-5">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
-                <BarChart3 className="h-5 w-5 text-blue-600" />
-              </div>
-              <div>
-                <p className="text-xs font-medium text-slate-500 uppercase tracking-wide">Este Mes</p>
-                <p className="text-2xl font-black text-slate-900">{monthlyCount}</p>
-              </div>
+        <div className="rounded-xl bg-white/[0.05] backdrop-blur-sm border border-white/10 p-5">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#6B7CFF]/20 to-[#6B7CFF]/5 border border-[#6B7CFF]/20 flex items-center justify-center">
+              <BarChart3 className="h-5 w-5 text-[#6B7CFF]" />
             </div>
-            <p className="text-xs text-slate-500 mt-3">Archivos procesados</p>
-          </CardContent>
-        </Card>
+            <div>
+              <p className="text-xs font-medium text-slate-500 uppercase tracking-wide">Este Mes</p>
+              <p className="text-2xl font-black text-white">{monthlyCount}</p>
+            </div>
+          </div>
+          <p className="text-xs text-slate-500 mt-3">Archivos procesados</p>
+        </div>
 
         {/* Plan Status */}
-        <Card className="border-slate-200 shadow-sm">
-          <CardContent className="p-5">
-            <div className="flex items-center gap-3">
-              <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
-                plan === "business" ? "bg-indigo-100" : isPro ? "bg-orange-100" : "bg-slate-100"
-              }`}>
-                <Crown className={`h-5 w-5 ${
-                  plan === "business" ? "text-indigo-600" : isPro ? "text-orange-600" : "text-slate-500"
-                }`} />
-              </div>
-              <div>
-                <p className="text-xs font-medium text-slate-500 uppercase tracking-wide">Plan</p>
-                <p className="text-2xl font-black text-slate-900">{planLabel}</p>
-              </div>
+        <div className="rounded-xl bg-white/[0.05] backdrop-blur-sm border border-white/10 p-5">
+          <div className="flex items-center gap-3">
+            <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+              plan === "enterprise"
+                ? "bg-gradient-to-br from-slate-300/20 to-slate-400/5 border border-slate-400/20"
+                : plan === "business"
+                ? "bg-gradient-to-br from-blue-500/20 to-indigo-500/5 border border-blue-500/20"
+                : isPro
+                ? "bg-gradient-to-br from-amber-500/20 to-yellow-500/5 border border-amber-500/20"
+                : "bg-gradient-to-br from-slate-500/20 to-slate-600/5 border border-slate-500/20"
+            }`}>
+              <Crown className={`h-5 w-5 ${
+                plan === "enterprise"
+                  ? "text-slate-300"
+                  : plan === "business"
+                  ? "text-blue-400"
+                  : isPro
+                  ? "text-amber-400"
+                  : "text-slate-500"
+              }`} />
             </div>
-            {!isPro && (
-              <Button
-                onClick={() => router.push("/es/precios?source=dashboard")}
-                size="sm"
-                className="mt-3 w-full bg-orange-500 hover:bg-orange-600 text-white text-xs"
-              >
-                <Crown className="mr-1.5 h-3.5 w-3.5" />
-                Actualizar a Pro
-              </Button>
-            )}
-            {isPro && !cancelAtPeriodEnd && currentPeriodEnd && (
-              <p className="text-xs text-slate-500 mt-3">
-                Se renueva el {new Date(currentPeriodEnd).toLocaleDateString("es-MX", {
-                  day: "numeric", month: "short", year: "numeric",
+            <div>
+              <p className="text-xs font-medium text-slate-500 uppercase tracking-wide">Plan</p>
+              <p className="text-2xl font-black text-white">{planLabel}</p>
+            </div>
+          </div>
+          {!isPro && (
+            <Button
+              onClick={() => router.push("/es/precios?source=dashboard")}
+              size="sm"
+              className="mt-3 w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] text-xs font-bold"
+            >
+              <Crown className="mr-1.5 h-3.5 w-3.5" />
+              Actualizar a Pro
+            </Button>
+          )}
+          {isPro && !cancelAtPeriodEnd && currentPeriodEnd && (
+            <p className="text-xs text-slate-500 mt-3">
+              Se renueva el {new Date(currentPeriodEnd).toLocaleDateString("es-MX", {
+                day: "numeric", month: "short", year: "numeric",
+              })}
+            </p>
+          )}
+          {cancelAtPeriodEnd && currentPeriodEnd && (
+            <div className="flex items-center gap-1.5 mt-3">
+              <AlertTriangle className="h-3.5 w-3.5 text-amber-500" />
+              <p className="text-xs text-amber-400">
+                Termina el {new Date(currentPeriodEnd).toLocaleDateString("es-MX", {
+                  day: "numeric", month: "short",
                 })}
               </p>
-            )}
-            {cancelAtPeriodEnd && currentPeriodEnd && (
-              <div className="flex items-center gap-1.5 mt-3">
-                <AlertTriangle className="h-3.5 w-3.5 text-amber-500" />
-                <p className="text-xs text-amber-700">
-                  Termina el {new Date(currentPeriodEnd).toLocaleDateString("es-MX", {
-                    day: "numeric", month: "short",
-                  })}
-                </p>
-              </div>
-            )}
-          </CardContent>
-        </Card>
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Main Content Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
         {/* Quick Tools - Takes 2 columns */}
         <div className="lg:col-span-2">
-          <Card className="border-slate-200 shadow-sm h-full">
-            <CardHeader className="pb-4">
+          <div className="rounded-xl bg-white/[0.05] backdrop-blur-sm border border-white/10 h-full">
+            <div className="p-6 pb-4">
               <div className="flex items-center justify-between">
-                <CardTitle className="text-lg font-bold text-slate-900">Herramientas Rápidas</CardTitle>
-                <Link href="/es/herramientas" className="text-sm text-orange-500 hover:text-orange-600 font-medium flex items-center gap-1">
+                <h3 className="text-lg font-bold text-white">Herramientas Rápidas</h3>
+                <Link href="/es/herramientas" className="text-sm text-[#14D8C4] hover:text-[#2EE6D6] font-medium flex items-center gap-1">
                   Ver todas <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
-            </CardHeader>
-            <CardContent>
+            </div>
+            <div className="px-6 pb-6">
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
                 {quickTools.map((tool) => (
                   <Link key={tool.href} href={tool.href} className="group">
-                    <div className="flex items-center gap-3 rounded-xl border border-slate-200 p-3 hover:border-orange-200 hover:bg-orange-50/50 transition-all duration-200">
-                      <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-                        <tool.icon className="h-4 w-4 text-white" />
+                    <div className="flex items-center gap-3 rounded-xl border border-white/10 p-3 hover:border-[#14D8C4]/30 hover:bg-white/[0.03] transition-all duration-200">
+                      <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#14D8C4]/20 to-[#14D8C4]/5 border border-[#14D8C4]/20 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                        <tool.icon className="h-4 w-4 text-[#14D8C4]" />
                       </div>
-                      <span className="text-sm font-medium text-slate-700 group-hover:text-slate-900 truncate">
+                      <span className="text-sm font-medium text-slate-300 group-hover:text-white truncate">
                         {tool.label}
                       </span>
                     </div>
                   </Link>
                 ))}
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
 
         {/* Recent Activity - Takes 1 column */}
         <div>
-          <Card className="border-slate-200 shadow-sm h-full">
-            <CardHeader className="pb-4">
-              <CardTitle className="text-lg font-bold text-slate-900 flex items-center gap-2">
-                <Clock className="h-4 w-4 text-slate-400" />
+          <div className="rounded-xl bg-white/[0.05] backdrop-blur-sm border border-white/10 h-full">
+            <div className="p-6 pb-4">
+              <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                <Clock className="h-4 w-4 text-slate-500" />
                 Actividad Reciente
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </h3>
+            </div>
+            <div className="px-6 pb-6">
               {recentActivity.length === 0 ? (
                 <div className="text-center py-8">
-                  <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center mx-auto mb-3">
-                    <FileText className="h-6 w-6 text-slate-300" />
+                  <div className="w-12 h-12 rounded-full bg-white/[0.05] border border-white/10 flex items-center justify-center mx-auto mb-3">
+                    <FileText className="h-6 w-6 text-slate-600" />
                   </div>
                   <p className="text-sm text-slate-500 font-medium">Sin actividad aún</p>
-                  <p className="text-xs text-slate-400 mt-1">
+                  <p className="text-xs text-slate-600 mt-1">
                     Tus conversiones recientes aparecerán aquí
                   </p>
                 </div>
@@ -398,17 +415,17 @@ export function DashboardClientEs({
                     return (
                       <div
                         key={index}
-                        className="flex items-center justify-between py-2 px-2 rounded-lg hover:bg-slate-50 transition-colors"
+                        className="flex items-center justify-between py-2 px-2 rounded-lg hover:bg-white/[0.03] transition-colors"
                       >
                         <div className="flex items-center gap-2.5 min-w-0">
-                          <div className="w-7 h-7 rounded-md bg-orange-100 flex items-center justify-center shrink-0">
-                            <ToolIcon className="h-3.5 w-3.5 text-orange-600" />
+                          <div className="w-7 h-7 rounded-md bg-gradient-to-br from-[#14D8C4]/20 to-[#14D8C4]/5 border border-[#14D8C4]/20 flex items-center justify-center shrink-0">
+                            <ToolIcon className="h-3.5 w-3.5 text-[#14D8C4]" />
                           </div>
-                          <span className="text-sm text-slate-700 font-medium truncate">
+                          <span className="text-sm text-slate-300 font-medium truncate">
                             {toolInfo.label}
                           </span>
                         </div>
-                        <span className="text-xs text-slate-400 shrink-0 ml-2">
+                        <span className="text-xs text-slate-500 shrink-0 ml-2">
                           {formatTimeAgo(item.created_at)}
                         </span>
                       </div>
@@ -416,48 +433,42 @@ export function DashboardClientEs({
                   })}
                 </div>
               )}
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Bottom Row: Plan Details + Tips */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Plan & Billing */}
-        <Card className="border-slate-200 shadow-sm">
-          <CardHeader className="pb-4">
-            <CardTitle className="text-lg font-bold text-slate-900">Plan y Facturación</CardTitle>
-          </CardHeader>
-          <CardContent>
+        <div className="rounded-xl bg-white/[0.05] backdrop-blur-sm border border-white/10">
+          <div className="p-6 pb-4">
+            <h3 className="text-lg font-bold text-white">Plan y Facturación</h3>
+          </div>
+          <div className="px-6 pb-6">
             <div className="space-y-4">
-              <div className="flex items-center justify-between py-2 border-b border-slate-100">
+              <div className="flex items-center justify-between py-2 border-b border-white/10">
                 <span className="text-sm text-slate-500">Plan</span>
-                <Badge className={
-                  plan === "business"
-                    ? "bg-indigo-100 text-indigo-700 hover:bg-indigo-100"
-                    : isPro
-                    ? "bg-orange-100 text-orange-700 hover:bg-orange-100"
-                    : "bg-slate-100 text-slate-600 hover:bg-slate-100"
-                }>
+                <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${getPlanBadgeClasses(plan)}`}>
                   {planLabel}
-                </Badge>
+                </span>
               </div>
-              <div className="flex items-center justify-between py-2 border-b border-slate-100">
+              <div className="flex items-center justify-between py-2 border-b border-white/10">
                 <span className="text-sm text-slate-500">Estado</span>
-                <span className="text-sm font-medium text-green-600 flex items-center gap-1.5">
+                <span className="text-sm font-medium text-green-400 flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-green-500" />
                   Activo
                 </span>
               </div>
-              <div className="flex items-center justify-between py-2 border-b border-slate-100">
+              <div className="flex items-center justify-between py-2 border-b border-white/10">
                 <span className="text-sm text-slate-500">Conversiones</span>
-                <span className="text-sm font-medium text-slate-700">
+                <span className="text-sm font-medium text-white">
                   {isPro ? "Ilimitadas" : `${dailyLimit}/día`}
                 </span>
               </div>
-              <div className="flex items-center justify-between py-2 border-b border-slate-100">
+              <div className="flex items-center justify-between py-2 border-b border-white/10">
                 <span className="text-sm text-slate-500">Email</span>
-                <span className="text-sm font-medium text-slate-700 truncate ml-4">
+                <span className="text-sm font-medium text-white truncate ml-4">
                   {user.email}
                 </span>
               </div>
@@ -480,7 +491,7 @@ export function DashboardClientEs({
                       setIsBillingLoading(false)
                     }
                   }}
-                  className="w-full border-slate-200 text-slate-600 hover:text-slate-800"
+                  className="w-full border-white/10 text-slate-300 hover:text-white hover:bg-white/5"
                 >
                   {isBillingLoading ? (
                     <>
@@ -494,63 +505,65 @@ export function DashboardClientEs({
               ) : (
                 <Button
                   onClick={() => router.push("/es/precios?source=dashboard")}
-                  className="w-full bg-orange-500 hover:bg-orange-600 text-white"
+                  className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold"
                 >
                   <Crown className="mr-2 h-4 w-4" />
                   Actualizar a Pro — $7.99/mes
                 </Button>
               )}
               {billingError && (
-                <p className="text-sm text-red-600">{billingError}</p>
+                <p className="text-sm text-red-400">{billingError}</p>
               )}
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
         {/* Tips */}
-        <Card className="border-slate-200 shadow-sm">
-          <CardHeader className="pb-4">
-            <CardTitle className="text-lg font-bold text-slate-900 flex items-center gap-2">
-              <Lightbulb className="h-4 w-4 text-amber-500" />
+        <div className="rounded-xl bg-white/[0.05] backdrop-blur-sm border border-white/10">
+          <div className="p-6 pb-4">
+            <h3 className="text-lg font-bold text-white flex items-center gap-2">
+              <Lightbulb className="h-4 w-4 text-[#14D8C4]" />
               Consejos
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
+            </h3>
+          </div>
+          <div className="px-6 pb-6">
             <div className="space-y-3">
               {tips.map((tip, index) => (
                 <Link key={index} href={tip.href} className="group block">
-                  <div className="flex items-start gap-3 p-3 rounded-lg border border-slate-100 hover:border-orange-200 hover:bg-orange-50/30 transition-all duration-200">
-                    <span className="text-orange-500 font-bold text-sm mt-0.5 shrink-0">
+                  <div className="flex items-start gap-3 p-3 rounded-lg border border-white/10 hover:border-[#14D8C4]/30 hover:bg-white/[0.03] transition-all duration-200">
+                    <span className="text-[#14D8C4] font-bold text-sm mt-0.5 shrink-0">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <p className="text-sm text-slate-600 group-hover:text-slate-800 leading-relaxed">
+                    <p className="text-sm text-slate-400 group-hover:text-slate-300 leading-relaxed">
                       {tip.text}
                     </p>
-                    <ArrowRight className="h-4 w-4 text-slate-300 group-hover:text-orange-500 shrink-0 mt-0.5 ml-auto" />
+                    <ArrowRight className="h-4 w-4 text-slate-600 group-hover:text-[#14D8C4] shrink-0 mt-0.5 ml-auto" />
                   </div>
                 </Link>
               ))}
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </div>
 
       {/* Upgrade Banner (for free users, only when they've used some conversions) */}
       {!isPro && usageCount >= 5 && (
-        <div className="mt-8 rounded-2xl bg-gradient-to-r from-orange-500 to-orange-600 p-6 text-white text-center">
-          <h3 className="text-lg font-black mb-1">
-            Has usado {usageCount} de {dailyLimit} conversiones gratis hoy
-          </h3>
-          <p className="text-orange-100 text-sm mb-4">
-            Actualiza a Pro para conversiones ilimitadas, todas las herramientas y archivos hasta 200MB. Business soporta archivos hasta 1GB.
-          </p>
-          <Button
-            onClick={() => router.push("/es/precios?source=dashboard")}
-            className="bg-white text-orange-600 hover:bg-orange-50 font-bold"
-          >
-            <Crown className="mr-2 h-4 w-4" />
-            Actualizar a Pro — $7.99/mes
-          </Button>
+        <div className="mt-8 rounded-2xl p-[1px] bg-gradient-to-r from-[#14D8C4]/60 via-[#6B7CFF]/40 to-[#14D8C4]/60">
+          <div className="rounded-2xl bg-white/[0.05] backdrop-blur-sm p-6 text-center">
+            <h3 className="text-lg font-black text-white mb-1">
+              Has usado {usageCount} de {dailyLimit} conversiones gratis hoy
+            </h3>
+            <p className="text-slate-400 text-sm mb-4">
+              Actualiza a Pro para conversiones ilimitadas, todas las herramientas y archivos hasta 200MB. Business soporta archivos hasta 1GB.
+            </p>
+            <Button
+              onClick={() => router.push("/es/precios?source=dashboard")}
+              className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold"
+            >
+              <Crown className="mr-2 h-4 w-4" />
+              Actualizar a Pro — $7.99/mes
+            </Button>
+          </div>
         </div>
       )}
     </div>

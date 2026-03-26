@@ -88,9 +88,23 @@ export default async function DashboardPage() {
     .gte("created_at", monthStart.toISOString())
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#F3F4FF]">
+    <div
+      className="flex min-h-screen flex-col"
+      style={{
+        background:
+          "radial-gradient(ellipse 80% 50% at 50% 0%, rgba(20,216,196,0.08), transparent 60%), radial-gradient(ellipse 60% 40% at 80% 100%, rgba(107,124,255,0.06), transparent 50%), #0E0F1E",
+      }}
+    >
+      {/* Grain overlay */}
+      <svg className="pointer-events-none fixed inset-0 z-50 h-full w-full opacity-[0.03]" aria-hidden="true">
+        <filter id="grain">
+          <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch" />
+        </filter>
+        <rect width="100%" height="100%" filter="url(#grain)" />
+      </svg>
+
       <Header />
-      <main className="flex-1">
+      <main className="flex-1 relative z-10">
         <Suspense>
           <DashboardClient
             user={data.user}
