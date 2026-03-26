@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { HeaderEs } from "@/components/header-es"
 import { FooterEs } from "@/components/footer-es"
 import { Button } from "@/components/ui/button"
-import { Check, Star, Crown } from "lucide-react"
+import { Check } from "lucide-react"
 import Link from "next/link"
 
 export default function PreciosPage() {
@@ -73,75 +73,118 @@ export default function PreciosPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
 
                 {/* Gratis */}
-                <div className="rounded-2xl p-8 flex flex-col transition-shadow duration-300 hover:shadow-2xl" style={{ background: "rgba(255,255,255,0.07)", backdropFilter: "blur(12px)", border: "1px solid rgba(148,163,184,0.25)", boxShadow: "0 0 0 1px rgba(148,163,184,0.1), inset 0 1px 0 rgba(255,255,255,0.05)" }}>
-                  <div className="text-center mb-6">
-                    <h2 className="text-2xl font-black text-white mb-2">Gratis</h2>
-                    <p className="text-sm text-slate-400 mb-4">Empieza con herramientas PDF esenciales</p>
-                    <div className="mb-2">
-                      <span className="text-5xl font-black text-slate-400">$0</span>
-                      <span className="text-lg text-slate-500">/mes</span>
+                <div className="rounded-2xl p-[1px] flex" style={{ background: "linear-gradient(135deg, rgba(148,163,184,0.4), rgba(148,163,184,0.2), rgba(148,163,184,0.3))" }}>
+                  <div className="rounded-[15px] p-8 flex flex-col w-full" style={{ background: "radial-gradient(ellipse 70% 60% at 95% 90%, rgba(148,163,184,0.06) 0%, transparent 70%), rgba(255, 255, 255, 0.05)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(148,163,184,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <div className="text-center mb-6">
+                      <h2 className="text-2xl font-black text-white mb-2">Gratis</h2>
+                      <p className="text-sm text-slate-400 mb-4">Empieza con herramientas PDF esenciales</p>
+                      <div className="mb-2">
+                        <span className="text-5xl font-black text-slate-400">$0</span>
+                        <span className="text-lg text-slate-500">/mes</span>
+                      </div>
                     </div>
+                    <div className="space-y-3 mb-8 flex-grow">
+                      {["10 conversiones por dia", "Archivos hasta 25MB", "Herramientas PDF basicas (comprimir, unir, dividir, rotar, convertir)", "Procesamiento de un solo archivo", "Velocidad estandar"].map((item) => (
+                        <div key={item} className="flex items-center gap-3">
+                          <span className="text-slate-400 flex-shrink-0">&#10003;</span>
+                          <span className="text-slate-300 text-sm">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <Button className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl" asChild>
+                      <Link href="/es/dashboard">Empezar Gratis</Link>
+                    </Button>
                   </div>
-                  <div className="space-y-3 mb-8 flex-grow">
-                    {["10 conversiones por dia","Archivos hasta 25MB","Herramientas PDF basicas (comprimir, unir, dividir, rotar, convertir)","Procesamiento de un solo archivo","Velocidad estandar"].map((f,i)=>(
-                      <div key={i} className="flex items-center gap-3"><div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(148,163,184,0.2)" }}><Check className="h-3 w-3 text-slate-400" /></div><span className="text-slate-300">{f}</span></div>
-                    ))}
-                  </div>
-                  <Button className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" asChild><Link href="/es/dashboard">Empezar Gratis</Link></Button>
                 </div>
 
-                {/* Pro — gold accents */}
-                <div className="rounded-2xl p-8 relative flex flex-col transition-shadow duration-300 hover:shadow-2xl" style={{ background: "rgba(255,255,255,0.07)", backdropFilter: "blur(12px)", border: "1px solid rgba(214,179,106,0.5)", boxShadow: "0 0 0 1px rgba(214,179,106,0.2), inset 0 1px 0 rgba(255,255,255,0.05)" }}>
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2"><div className="px-5 py-1.5 rounded-full text-sm font-bold flex items-center gap-2 shadow-lg whitespace-nowrap text-[#0E0F1E]" style={{ background: "linear-gradient(135deg, #D6B36A, #E0C27A)" }}><Star className="h-4 w-4 fill-current" />Mas Popular</div></div>
-                  <div className="text-center mb-6 mt-4">
-                    <h2 className="text-2xl font-black text-white mb-2">Pro</h2>
-                    <p className="text-sm text-slate-400 mb-4">Desbloquea todas las herramientas sin limites diarios</p>
-                    <div className="mb-2"><span className="text-5xl font-black text-[#E0C27A]">{billing === "monthly" ? "$7.99" : "$79.90"}</span><span className="text-lg text-slate-400">{billing === "monthly" ? "/mes" : "/ano"}</span></div>
-                    <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-400">Equivale a $6.66/mes facturado anualmente</p>}</div>
+                {/* Pro — gold */}
+                <div className="rounded-2xl p-[1px] flex" style={{ background: "linear-gradient(135deg, rgba(214,179,106,0.5), rgba(20,216,196,0.3), rgba(214,179,106,0.3), rgba(214,179,106,0.4))" }}>
+                  <div className="rounded-[15px] p-8 pt-10 flex flex-col w-full relative overflow-hidden" style={{ background: "radial-gradient(ellipse 40% 30% at 50% 0%, rgba(214,179,106,0.05) 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(20,216,196,0.04) 0%, transparent 70%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(214,179,106,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #D6B36A, #E0C27A)", color: "#0E0F1E" }}>Mas Popular</div>
+                    <div className="text-center mb-6">
+                      <h2 className="text-2xl font-black text-white mb-2">Pro</h2>
+                      <p className="text-sm text-slate-400 mb-4">Desbloquea todas las herramientas sin limites diarios</p>
+                      <div className="mb-2">
+                        <span className="text-5xl font-black text-[#E0C27A]">{billing === "monthly" ? "$7.99" : "$79.90"}</span>
+                        <span className="text-lg text-slate-400">{billing === "monthly" ? "/mes" : "/ano"}</span>
+                      </div>
+                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-400">Equivale a $6.66/mes facturado anualmente</p>}</div>
+                    </div>
+                    <div className="space-y-3 mb-8 flex-grow">
+                      <p className="text-sm text-[#6B7CFF] font-medium">Todo en Gratis, mas:</p>
+                      {["Conversiones ilimitadas", "Archivos hasta 200MB", "Todas las herramientas PDF (OCR, codigo QR, PDF a Word/Excel/PowerPoint)", "Procesamiento por lotes (multiples archivos a la vez)", "Velocidad de procesamiento prioritaria"].map((item) => (
+                        <div key={item} className="flex items-center gap-3">
+                          <span className="text-[#E0C27A] flex-shrink-0">&#10003;</span>
+                          <span className="text-slate-300 text-sm font-medium">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <Button className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl" asChild>
+                      <Link href={billing === "monthly" ? "/upgrade" : "/upgrade?billing=annual"}>
+                        {billing === "monthly" ? "Actualizar a Pro" : "Ahorra 2 Meses — Anual"}
+                      </Link>
+                    </Button>
                   </div>
-                  <div className="space-y-3 mb-8 flex-grow">
-                    <p className="text-sm text-[#6B7CFF] font-medium">Todo en Gratis, mas:</p>
-                    {["Conversiones ilimitadas","Archivos hasta 200MB","Todas las herramientas PDF (OCR, codigo QR, PDF a Word/Excel/PowerPoint)","Procesamiento por lotes (multiples archivos a la vez)","Velocidad de procesamiento prioritaria"].map((f,i)=>(
-                      <div key={i} className="flex items-center gap-3"><div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(214,179,106,0.2)" }}><Check className="h-3 w-3 text-[#E0C27A]" /></div><span className="text-slate-300 font-medium">{f}</span></div>
-                    ))}
-                  </div>
-                  <Button className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" asChild><Link href={billing === "monthly" ? "/upgrade" : "/upgrade?billing=annual"}>{billing === "monthly" ? "Actualizar a Pro" : "Ahorra 2 Meses — Anual"}</Link></Button>
                 </div>
 
-                {/* Business — sapphire accents */}
-                <div className="rounded-2xl p-8 relative flex flex-col transition-shadow duration-300 hover:shadow-2xl" style={{ background: "rgba(255,255,255,0.07)", backdropFilter: "blur(12px)", border: "1px solid rgba(107,124,255,0.5)", boxShadow: "0 0 0 1px rgba(107,124,255,0.2), inset 0 1px 0 rgba(255,255,255,0.05)" }}>
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2"><div className="px-5 py-1.5 rounded-full text-sm font-bold flex items-center gap-2 shadow-lg whitespace-nowrap text-white" style={{ background: "linear-gradient(135deg, #6B7CFF, #8B9AFF)" }}>Ideal para Equipos</div></div>
-                  <div className="text-center mb-6 mt-4">
-                    <h2 className="text-2xl font-black text-white mb-2">Business</h2>
-                    <p className="text-sm text-slate-400 mb-4">Herramientas avanzadas para profesionales y equipos</p>
-                    <div className="mb-2"><span className="text-5xl font-black text-[#6B7CFF]">{billing === "monthly" ? "$13.99" : "$139.90"}</span><span className="text-lg text-slate-400">{billing === "monthly" ? "/mes" : "/ano"}</span></div>
-                    <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-400">Equivale a $11.66/mes facturado anualmente</p>}</div>
+                {/* Business — sapphire */}
+                <div className="rounded-2xl p-[1px] flex" style={{ background: "linear-gradient(135deg, rgba(107,124,255,0.5), rgba(20,216,196,0.3), rgba(107,124,255,0.35), rgba(107,124,255,0.4))" }}>
+                  <div className="rounded-[15px] p-8 pt-10 flex flex-col w-full relative overflow-hidden" style={{ background: "radial-gradient(ellipse 40% 30% at 50% 0%, rgba(107,124,255,0.06) 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(20,216,196,0.04) 0%, transparent 70%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(107,124,255,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #6B7CFF, #8B9AFF)", color: "#0E0F1E" }}>Ideal para Equipos</div>
+                    <div className="text-center mb-6">
+                      <h2 className="text-2xl font-black text-white mb-2">Business</h2>
+                      <p className="text-sm text-slate-400 mb-4">Herramientas avanzadas para profesionales y equipos</p>
+                      <div className="mb-2">
+                        <span className="text-5xl font-black text-[#6B7CFF]">{billing === "monthly" ? "$13.99" : "$139.90"}</span>
+                        <span className="text-lg text-slate-400">{billing === "monthly" ? "/mes" : "/ano"}</span>
+                      </div>
+                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-400">Equivale a $11.66/mes facturado anualmente</p>}</div>
+                    </div>
+                    <div className="space-y-3 mb-8 flex-grow">
+                      <p className="text-sm text-[#6B7CFF] font-medium">Todo en Pro, mas:</p>
+                      {["Archivos hasta 1GB", "Extraccion de tablas a Excel (200 paginas/mes)", "Automatizacion de flujos (encadena herramientas)", "Comparacion de PDFs (diferencias lado a lado)", "Firma electronica de documentos", "Redaccion de PDFs (eliminacion permanente)"].map((item) => (
+                        <div key={item} className="flex items-center gap-3">
+                          <span className="text-[#6B7CFF] flex-shrink-0">&#10003;</span>
+                          <span className="text-slate-300 text-sm font-medium">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <Button className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl" asChild>
+                      <Link href={billing === "monthly" ? "/upgrade?plan=business" : "/upgrade?plan=business&billing=annual"}>
+                        {billing === "monthly" ? "Actualizar a Business" : "Ahorra 2 Meses — Anual"}
+                      </Link>
+                    </Button>
                   </div>
-                  <div className="space-y-3 mb-8 flex-grow">
-                    <p className="text-sm text-[#6B7CFF] font-medium">Todo en Pro, mas:</p>
-                    {["Archivos hasta 1GB","Extraccion de tablas a Excel (200 paginas/mes)","Automatizacion de flujos (encadena herramientas)","Comparacion de PDFs (diferencias lado a lado)","Firma electronica de documentos","Redaccion de PDFs (eliminacion permanente)"].map((f,i)=>(
-                      <div key={i} className="flex items-center gap-3"><div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(107,124,255,0.2)" }}><Check className="h-3 w-3 text-[#6B7CFF]" /></div><span className="text-slate-300 font-medium">{f}</span></div>
-                    ))}
-                  </div>
-                  <Button className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" asChild><Link href={billing === "monthly" ? "/upgrade?plan=business" : "/upgrade?plan=business&billing=annual"}>{billing === "monthly" ? "Actualizar a Business" : "Ahorra 2 Meses — Anual"}</Link></Button>
                 </div>
 
-                {/* Enterprise — platinum accents */}
-                <div className="rounded-2xl p-8 relative flex flex-col transition-shadow duration-300 hover:shadow-2xl" style={{ background: "rgba(255,255,255,0.07)", backdropFilter: "blur(12px)", border: "1px solid rgba(192,197,206,0.5)", boxShadow: "0 0 0 1px rgba(192,197,206,0.2), inset 0 1px 0 rgba(255,255,255,0.05)" }}>
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2"><div className="px-5 py-1.5 rounded-full text-sm font-bold flex items-center gap-2 shadow-lg whitespace-nowrap text-[#0E0F1E]" style={{ background: "linear-gradient(135deg, #C0C5CE, #14D8C4)" }}><Crown className="h-4 w-4 fill-current" />Mejor Valor</div></div>
-                  <div className="text-center mb-6 mt-4">
-                    <h2 className="text-2xl font-black text-white mb-2">Enterprise</h2>
-                    <p className="text-sm text-slate-400 mb-4">Disenado para bufetes de abogados, contadores y laboratorios</p>
-                    <div className="mb-2"><span className="text-5xl font-black text-[#C0C5CE]">{billing === "monthly" ? "$49.99" : "$499.90"}</span><span className="text-lg text-slate-400">{billing === "monthly" ? "/mes" : "/ano"}</span></div>
-                    <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-400">Equivale a $41.66/mes facturado anualmente</p>}</div>
+                {/* Enterprise — platinum */}
+                <div className="rounded-2xl p-[1px] flex" style={{ background: "linear-gradient(135deg, rgba(192,197,206,0.5), rgba(20,216,196,0.3), rgba(192,197,206,0.35), rgba(192,197,206,0.4))" }}>
+                  <div className="rounded-[15px] p-8 pt-10 flex flex-col w-full relative overflow-hidden" style={{ background: "radial-gradient(ellipse 40% 30% at 50% 0%, rgba(192,197,206,0.06) 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(20,216,196,0.04) 0%, transparent 70%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(192,197,206,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #C0C5CE, #14D8C4)", color: "#0E0F1E" }}>Mejor Valor</div>
+                    <div className="text-center mb-6">
+                      <h2 className="text-2xl font-black text-white mb-2">Enterprise</h2>
+                      <p className="text-sm text-slate-400 mb-4">Disenado para bufetes de abogados, contadores y laboratorios</p>
+                      <div className="mb-2">
+                        <span className="text-5xl font-black text-[#C0C5CE]">{billing === "monthly" ? "$49.99" : "$499.90"}</span>
+                        <span className="text-lg text-slate-400">{billing === "monthly" ? "/mes" : "/ano"}</span>
+                      </div>
+                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-400">Equivale a $41.66/mes facturado anualmente</p>}</div>
+                    </div>
+                    <div className="space-y-3 mb-8 flex-grow">
+                      <p className="text-sm text-[#6B7CFF] font-medium">Todo en Business, mas:</p>
+                      {["Extraccion de tablas a Excel (2,000 paginas/mes)", "Cola de procesamiento prioritario", "Soporte dedicado por email (respuesta en 24h)", "Acceso anticipado a nuevas funciones", "Plantillas de flujos personalizadas"].map((item) => (
+                        <div key={item} className="flex items-center gap-3">
+                          <span className="text-[#C0C5CE] flex-shrink-0">&#10003;</span>
+                          <span className="text-slate-300 text-sm font-medium">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <Button className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl" asChild>
+                      <Link href={billing === "monthly" ? "/upgrade?plan=enterprise" : "/upgrade?plan=enterprise&billing=annual"}>
+                        {billing === "monthly" ? "Actualizar a Enterprise" : "Ahorra 2 Meses — Anual"}
+                      </Link>
+                    </Button>
                   </div>
-                  <div className="space-y-3 mb-8 flex-grow">
-                    <p className="text-sm text-[#6B7CFF] font-medium">Todo en Business, mas:</p>
-                    {["Extraccion de tablas a Excel (2,000 paginas/mes)","Cola de procesamiento prioritario","Soporte dedicado por email (respuesta en 24h)","Acceso anticipado a nuevas funciones","Plantillas de flujos personalizadas"].map((f,i)=>(
-                      <div key={i} className="flex items-center gap-3"><div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(192,197,206,0.2)" }}><Check className="h-3 w-3 text-[#C0C5CE]" /></div><span className="text-slate-300 font-medium">{f}</span></div>
-                    ))}
-                  </div>
-                  <Button className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" asChild><Link href={billing === "monthly" ? "/upgrade?plan=enterprise" : "/upgrade?plan=enterprise&billing=annual"}>{billing === "monthly" ? "Actualizar a Enterprise" : "Ahorra 2 Meses — Anual"}</Link></Button>
                 </div>
               </div>
             </div>

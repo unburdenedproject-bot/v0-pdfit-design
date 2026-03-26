@@ -77,276 +77,116 @@ export default function PricingPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
 
                 {/* Free Plan */}
-                <div className="rounded-2xl p-8 flex flex-col transition-shadow duration-300 hover:shadow-2xl" style={{ background: "rgba(255,255,255,0.07)", backdropFilter: "blur(12px)", border: "1px solid rgba(148,163,184,0.25)", boxShadow: "0 0 0 1px rgba(148,163,184,0.1), inset 0 1px 0 rgba(255,255,255,0.05)" }}>
-                  <div className="text-center mb-6">
-                    <h2 className="text-2xl font-black text-white mb-2">Free</h2>
-                    <p className="text-sm text-slate-400 mb-4">Get started with essential PDF tools</p>
-                    <div className="mb-2">
-                      <span className="text-5xl font-black text-slate-400">$0</span>
-                      <span className="text-lg text-slate-500">/month</span>
+                <div className="rounded-2xl p-[1px] flex" style={{ background: "linear-gradient(135deg, rgba(148,163,184,0.4), rgba(148,163,184,0.2), rgba(148,163,184,0.3))" }}>
+                  <div className="rounded-[15px] p-8 flex flex-col w-full" style={{ background: "radial-gradient(ellipse 70% 60% at 95% 90%, rgba(148,163,184,0.06) 0%, transparent 70%), rgba(255, 255, 255, 0.05)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(148,163,184,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <div className="text-center mb-6">
+                      <h2 className="text-2xl font-black text-white mb-2">Free</h2>
+                      <p className="text-sm text-slate-400 mb-4">Get started with essential PDF tools</p>
+                      <div className="mb-2">
+                        <span className="text-5xl font-black text-slate-400">$0</span>
+                        <span className="text-lg text-slate-500">/month</span>
+                      </div>
                     </div>
+                    <div className="space-y-3 mb-8 flex-grow">
+                      {["10 conversions per day", "Files up to 25MB", "Basic PDF tools (compress, merge, split, rotate, convert)", "Single file processing", "Standard speed"].map((item) => (
+                        <div key={item} className="flex items-center gap-3">
+                          <span className="text-slate-400 flex-shrink-0">&#10003;</span>
+                          <span className="text-slate-300 text-sm">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <Button className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl" asChild>
+                      <Link href="/dashboard">Get Started Free</Link>
+                    </Button>
                   </div>
-
-                  <div className="space-y-3 mb-8 flex-grow">
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(148,163,184,0.2)" }}>
-                        <Check className="h-3 w-3 text-slate-400" />
-                      </div>
-                      <span className="text-slate-300">10 conversions per day</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(148,163,184,0.2)" }}>
-                        <Check className="h-3 w-3 text-slate-400" />
-                      </div>
-                      <span className="text-slate-300">Files up to 25MB</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(148,163,184,0.2)" }}>
-                        <Check className="h-3 w-3 text-slate-400" />
-                      </div>
-                      <span className="text-slate-300">Basic PDF tools (compress, merge, split, rotate, convert)</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(148,163,184,0.2)" }}>
-                        <Check className="h-3 w-3 text-slate-400" />
-                      </div>
-                      <span className="text-slate-300">Single file processing</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(148,163,184,0.2)" }}>
-                        <Check className="h-3 w-3 text-slate-400" />
-                      </div>
-                      <span className="text-slate-300">Standard speed</span>
-                    </div>
-                  </div>
-
-                  <Button
-                    className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                    asChild
-                  >
-                    <Link href="/dashboard">Get Started Free</Link>
-                  </Button>
                 </div>
 
-                {/* Pro Plan — gold accents */}
-                <div className="rounded-2xl p-8 relative flex flex-col transition-shadow duration-300 hover:shadow-2xl" style={{ background: "rgba(255,255,255,0.07)", backdropFilter: "blur(12px)", border: "1px solid rgba(214,179,106,0.5)", boxShadow: "0 0 0 1px rgba(214,179,106,0.2), inset 0 1px 0 rgba(255,255,255,0.05)" }}>
-                  {/* Most Popular Badge */}
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="px-5 py-1.5 rounded-full text-sm font-bold flex items-center gap-2 shadow-lg whitespace-nowrap text-[#0E0F1E]" style={{ background: "linear-gradient(135deg, #D6B36A, #E0C27A)" }}>
-                      <Star className="h-4 w-4 fill-current" />
-                      Most Popular
+                {/* Pro Plan — gold */}
+                <div className="rounded-2xl p-[1px] flex" style={{ background: "linear-gradient(135deg, rgba(214,179,106,0.5), rgba(20,216,196,0.3), rgba(214,179,106,0.3), rgba(214,179,106,0.4))" }}>
+                  <div className="rounded-[15px] p-8 pt-10 flex flex-col w-full relative overflow-hidden" style={{ background: "radial-gradient(ellipse 40% 30% at 50% 0%, rgba(214,179,106,0.05) 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(20,216,196,0.04) 0%, transparent 70%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(214,179,106,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #D6B36A, #E0C27A)", color: "#0E0F1E" }}>Most Popular</div>
+                    <div className="text-center mb-6">
+                      <h2 className="text-2xl font-black text-white mb-2">Pro</h2>
+                      <p className="text-sm text-slate-400 mb-4">Unlock all tools with no daily limits</p>
+                      <div className="mb-2">
+                        <span className="text-5xl font-black text-[#E0C27A]">{billing === "monthly" ? "$7.99" : "$79.90"}</span>
+                        <span className="text-lg text-slate-400">{billing === "monthly" ? "/month" : "/year"}</span>
+                      </div>
+                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-400">Equivalent to $6.66/mo billed annually</p>}</div>
                     </div>
+                    <div className="space-y-3 mb-8 flex-grow">
+                      <p className="text-sm text-[#6B7CFF] font-medium">Everything in Free, plus:</p>
+                      {["Unlimited conversions", "Files up to 200MB", "All PDF tools (OCR, QR code, PDF to Word/Excel/PowerPoint)", "Batch processing (multiple files at once)", "Priority processing speed"].map((item) => (
+                        <div key={item} className="flex items-center gap-3">
+                          <span className="text-[#E0C27A] flex-shrink-0">&#10003;</span>
+                          <span className="text-slate-300 text-sm font-medium">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <Button className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl" asChild>
+                      <Link href={billing === "monthly" ? "/upgrade" : "/upgrade?billing=annual"}>
+                        {billing === "monthly" ? "Upgrade to Pro" : "Save 2 Months — Annual"}
+                      </Link>
+                    </Button>
                   </div>
+                </div>
 
-                  <div className="text-center mb-6 mt-4">
-                    <h2 className="text-2xl font-black text-white mb-2">Pro</h2>
-                    <p className="text-sm text-slate-400 mb-4">Unlock all tools with no daily limits</p>
-                    <div className="mb-2">
-                      <span className="text-5xl font-black text-[#E0C27A]">
-                        {billing === "monthly" ? "$7.99" : "$79.90"}
-                      </span>
-                      <span className="text-lg text-slate-400">
-                        {billing === "monthly" ? "/month" : "/year"}
-                      </span>
-                    </div>
-                    <div className="min-h-[20px]">{billing === "annual" && (
-                      <p className="text-sm text-slate-400">
-                        Equivalent to $6.66/mo billed annually
-                      </p>
-                    )}</div>
-                  </div>
-
-                  <div className="space-y-3 mb-8 flex-grow">
-                    <p className="text-sm text-[#6B7CFF] font-medium">Everything in Free, plus:</p>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(214,179,106,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#E0C27A]" />
+                {/* Business Plan — sapphire */}
+                <div className="rounded-2xl p-[1px] flex" style={{ background: "linear-gradient(135deg, rgba(107,124,255,0.5), rgba(20,216,196,0.3), rgba(107,124,255,0.35), rgba(107,124,255,0.4))" }}>
+                  <div className="rounded-[15px] p-8 pt-10 flex flex-col w-full relative overflow-hidden" style={{ background: "radial-gradient(ellipse 40% 30% at 50% 0%, rgba(107,124,255,0.06) 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(20,216,196,0.04) 0%, transparent 70%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(107,124,255,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #6B7CFF, #8B9AFF)", color: "#0E0F1E" }}>Best for Teams</div>
+                    <div className="text-center mb-6">
+                      <h2 className="text-2xl font-black text-white mb-2">Business</h2>
+                      <p className="text-sm text-slate-400 mb-4">Advanced tools for professionals and teams</p>
+                      <div className="mb-2">
+                        <span className="text-5xl font-black text-[#6B7CFF]">{billing === "monthly" ? "$13.99" : "$139.90"}</span>
+                        <span className="text-lg text-slate-400">{billing === "monthly" ? "/month" : "/year"}</span>
                       </div>
-                      <span className="text-slate-300 font-medium">Unlimited conversions</span>
+                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-400">Equivalent to $11.66/mo billed annually</p>}</div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(214,179,106,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#E0C27A]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Files up to 200MB</span>
+                    <div className="space-y-3 mb-8 flex-grow">
+                      <p className="text-sm text-[#6B7CFF] font-medium">Everything in Pro, plus:</p>
+                      {["Files up to 1GB", "Table extraction to Excel (200 pages/month)", "PDF comparison (side-by-side diff)", "eSign documents", "PDF redaction (permanent removal)"].map((item) => (
+                        <div key={item} className="flex items-center gap-3">
+                          <span className="text-[#6B7CFF] flex-shrink-0">&#10003;</span>
+                          <span className="text-slate-300 text-sm font-medium">{item}</span>
+                        </div>
+                      ))}
                     </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(214,179,106,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#E0C27A]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">All PDF tools (OCR, QR code, PDF to Word/Excel/PowerPoint)</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(214,179,106,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#E0C27A]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Batch processing (multiple files at once)</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(214,179,106,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#E0C27A]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Priority processing speed</span>
-                    </div>
-                  </div>
-
-                  <Button
-                    className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                    asChild
-                  >
-                    <Link href={billing === "monthly" ? "/upgrade" : "/upgrade?billing=annual"}>
-                      {billing === "monthly" ? "Upgrade to Pro" : "Save 2 Months — Annual"}
+                    <Button className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl" asChild>
+                      <Link href={billing === "monthly" ? "/upgrade?plan=business" : "/upgrade?plan=business&billing=annual"}>
+                        {billing === "monthly" ? "Upgrade to Business" : "Save 2 Months — Annual"}
                     </Link>
                   </Button>
                 </div>
 
-                {/* Business Plan — sapphire accents */}
-                <div className="rounded-2xl p-8 relative flex flex-col transition-shadow duration-300 hover:shadow-2xl" style={{ background: "rgba(255,255,255,0.07)", backdropFilter: "blur(12px)", border: "1px solid rgba(107,124,255,0.5)", boxShadow: "0 0 0 1px rgba(107,124,255,0.2), inset 0 1px 0 rgba(255,255,255,0.05)" }}>
-                  {/* Best for Teams Badge */}
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="px-5 py-1.5 rounded-full text-sm font-bold flex items-center gap-2 shadow-lg whitespace-nowrap text-white" style={{ background: "linear-gradient(135deg, #6B7CFF, #8B9AFF)" }}>
-                      Best for Teams
-                    </div>
-                  </div>
-
-                  <div className="text-center mb-6 mt-4">
-                    <h2 className="text-2xl font-black text-white mb-2">Business</h2>
-                    <p className="text-sm text-slate-400 mb-4">Advanced tools for professionals and teams</p>
-                    <div className="mb-2">
-                      <span className="text-5xl font-black text-[#6B7CFF]">
-                        {billing === "monthly" ? "$13.99" : "$139.90"}
-                      </span>
-                      <span className="text-lg text-slate-400">
-                        {billing === "monthly" ? "/month" : "/year"}
-                      </span>
-                    </div>
-                    <div className="min-h-[20px]">{billing === "annual" && (
-                      <p className="text-sm text-slate-400">
-                        Equivalent to $11.66/mo billed annually
-                      </p>
-                    )}</div>
-                  </div>
-
-                  <div className="space-y-3 mb-8 flex-grow">
-                    <p className="text-sm text-[#6B7CFF] font-medium">Everything in Pro, plus:</p>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(107,124,255,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#6B7CFF]" />
+                {/* Enterprise Plan — platinum */}
+                <div className="rounded-2xl p-[1px] flex" style={{ background: "linear-gradient(135deg, rgba(192,197,206,0.5), rgba(20,216,196,0.3), rgba(192,197,206,0.35), rgba(192,197,206,0.4))" }}>
+                  <div className="rounded-[15px] p-8 pt-10 flex flex-col w-full relative overflow-hidden" style={{ background: "radial-gradient(ellipse 40% 30% at 50% 0%, rgba(192,197,206,0.06) 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(20,216,196,0.04) 0%, transparent 70%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(192,197,206,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #C0C5CE, #14D8C4)", color: "#0E0F1E" }}>Best Value</div>
+                    <div className="text-center mb-6">
+                      <h2 className="text-2xl font-black text-white mb-2">Enterprise</h2>
+                      <p className="text-sm text-slate-400 mb-4">Built for law firms, accountants, and labs</p>
+                      <div className="mb-2">
+                        <span className="text-5xl font-black text-[#C0C5CE]">{billing === "monthly" ? "$49.99" : "$499.90"}</span>
+                        <span className="text-lg text-slate-400">{billing === "monthly" ? "/month" : "/year"}</span>
                       </div>
-                      <span className="text-slate-300 font-medium">Files up to 1GB</span>
+                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-400">Equivalent to $41.66/mo billed annually</p>}</div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(107,124,255,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#6B7CFF]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Table extraction to Excel (200 pages/month)</span>
+                    <div className="space-y-3 mb-8 flex-grow">
+                      <p className="text-sm text-[#6B7CFF] font-medium">Everything in Business, plus:</p>
+                      {["Table extraction to Excel (2,000 pages/month)", "Workflow automation", "Priority processing queue", "Dedicated email support (24h response)", "Custom workflow templates"].map((item) => (
+                        <div key={item} className="flex items-center gap-3">
+                          <span className="text-[#C0C5CE] flex-shrink-0">&#10003;</span>
+                          <span className="text-slate-300 text-sm font-medium">{item}</span>
+                        </div>
+                      ))}
                     </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(107,124,255,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#6B7CFF]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Workflow automation (chain tools together)</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(107,124,255,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#6B7CFF]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">PDF comparison (side-by-side diff)</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(107,124,255,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#6B7CFF]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">eSign documents</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(107,124,255,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#6B7CFF]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">PDF redaction (permanent removal)</span>
-                    </div>
-                  </div>
-
-                  <Button
-                    className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                    asChild
-                  >
-                    <Link href={billing === "monthly" ? "/upgrade?plan=business" : "/upgrade?plan=business&billing=annual"}>
-                      {billing === "monthly" ? "Upgrade to Business" : "Save 2 Months — Annual"}
-                    </Link>
-                  </Button>
-                </div>
-
-                {/* Enterprise Plan — platinum accents */}
-                <div className="rounded-2xl p-8 relative flex flex-col transition-shadow duration-300 hover:shadow-2xl" style={{ background: "rgba(255,255,255,0.07)", backdropFilter: "blur(12px)", border: "1px solid rgba(192,197,206,0.5)", boxShadow: "0 0 0 1px rgba(192,197,206,0.2), inset 0 1px 0 rgba(255,255,255,0.05)" }}>
-                  {/* Best Value Badge */}
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="px-5 py-1.5 rounded-full text-sm font-bold flex items-center gap-2 shadow-lg whitespace-nowrap text-[#0E0F1E]" style={{ background: "linear-gradient(135deg, #C0C5CE, #14D8C4)" }}>
-                      <Crown className="h-4 w-4 fill-current" />
-                      Best Value
-                    </div>
-                  </div>
-
-                  <div className="text-center mb-6 mt-4">
-                    <h2 className="text-2xl font-black text-white mb-2">Enterprise</h2>
-                    <p className="text-sm text-slate-400 mb-4">Built for law firms, accountants, and labs</p>
-                    <div className="mb-2">
-                      <span className="text-5xl font-black text-[#C0C5CE]">
-                        {billing === "monthly" ? "$49.99" : "$499.90"}
-                      </span>
-                      <span className="text-lg text-slate-400">
-                        {billing === "monthly" ? "/month" : "/year"}
-                      </span>
-                    </div>
-                    <div className="min-h-[20px]">{billing === "annual" && (
-                      <p className="text-sm text-slate-400">
-                        Equivalent to $41.66/mo billed annually
-                      </p>
-                    )}</div>
-                  </div>
-
-                  <div className="space-y-3 mb-8 flex-grow">
-                    <p className="text-sm text-[#6B7CFF] font-medium">Everything in Business, plus:</p>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(192,197,206,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#C0C5CE]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Table extraction to Excel (2,000 pages/month)</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(192,197,206,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#C0C5CE]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Priority processing queue</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(192,197,206,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#C0C5CE]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Dedicated email support (24h response)</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(192,197,206,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#C0C5CE]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Early access to new features</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(192,197,206,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#C0C5CE]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Custom workflow templates</span>
-                    </div>
-                  </div>
-
-                  <Button
-                    className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                    asChild
-                  >
-                    <Link href={billing === "monthly" ? "/upgrade?plan=enterprise" : "/upgrade?plan=enterprise&billing=annual"}>
-                      {billing === "monthly" ? "Upgrade to Enterprise" : "Save 2 Months — Annual"}
-                    </Link>
-                  </Button>
+                    <Button className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl" asChild>
+                      <Link href={billing === "monthly" ? "/upgrade?plan=enterprise" : "/upgrade?plan=enterprise&billing=annual"}>
+                        {billing === "monthly" ? "Upgrade to Enterprise" : "Save 2 Months — Annual"}
+                      </Link>
+                    </Button>
                 </div>
 
               </div>

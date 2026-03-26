@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { HeaderBr } from "@/components/header-br"
 import { FooterBr } from "@/components/footer-br"
 import { Button } from "@/components/ui/button"
-import { Check, Star, Crown } from "lucide-react"
+import { Check } from "lucide-react"
 import Link from "next/link"
 
 export default function PrecosPage() {
@@ -76,276 +76,118 @@ export default function PrecosPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
 
                 {/* Gratis */}
-                <div className="rounded-2xl p-8 flex flex-col transition-shadow duration-300 hover:shadow-2xl" style={{ background: "rgba(255,255,255,0.07)", backdropFilter: "blur(12px)", border: "1px solid rgba(148,163,184,0.25)", boxShadow: "0 0 0 1px rgba(148,163,184,0.1), inset 0 1px 0 rgba(255,255,255,0.05)" }}>
-                  <div className="text-center mb-6">
-                    <h2 className="text-2xl font-black text-white mb-2">Gratis</h2>
-                    <p className="text-sm text-slate-400 mb-4">Comece com ferramentas PDF essenciais</p>
-                    <div className="mb-2">
-                      <span className="text-5xl font-black text-slate-400">$0</span>
-                      <span className="text-lg text-slate-500">/mes</span>
+                <div className="rounded-2xl p-[1px] flex" style={{ background: "linear-gradient(135deg, rgba(148,163,184,0.4), rgba(148,163,184,0.2), rgba(148,163,184,0.3))" }}>
+                  <div className="rounded-[15px] p-8 flex flex-col w-full" style={{ background: "radial-gradient(ellipse 70% 60% at 95% 90%, rgba(148,163,184,0.06) 0%, transparent 70%), rgba(255, 255, 255, 0.05)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(148,163,184,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <div className="text-center mb-6">
+                      <h2 className="text-2xl font-black text-white mb-2">Gratis</h2>
+                      <p className="text-sm text-slate-400 mb-4">Comece com ferramentas PDF essenciais</p>
+                      <div className="mb-2">
+                        <span className="text-5xl font-black text-slate-400">$0</span>
+                        <span className="text-lg text-slate-500">/mes</span>
+                      </div>
                     </div>
+                    <div className="space-y-3 mb-8 flex-grow">
+                      {["10 conversoes por dia", "Arquivos ate 25MB", "Ferramentas PDF basicas (comprimir, unir, dividir, girar, converter)", "Processamento de arquivo unico", "Velocidade padrao"].map((item) => (
+                        <div key={item} className="flex items-center gap-3">
+                          <span className="text-slate-400 flex-shrink-0">&#10003;</span>
+                          <span className="text-slate-300 text-sm">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <Button className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl" asChild>
+                      <Link href="/br/painel">Comecar Gratis</Link>
+                    </Button>
                   </div>
-
-                  <div className="space-y-3 mb-8 flex-grow">
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(148,163,184,0.2)" }}>
-                        <Check className="h-3 w-3 text-slate-400" />
-                      </div>
-                      <span className="text-slate-300">10 conversoes por dia</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(148,163,184,0.2)" }}>
-                        <Check className="h-3 w-3 text-slate-400" />
-                      </div>
-                      <span className="text-slate-300">Arquivos ate 25MB</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(148,163,184,0.2)" }}>
-                        <Check className="h-3 w-3 text-slate-400" />
-                      </div>
-                      <span className="text-slate-300">Ferramentas PDF basicas (comprimir, unir, dividir, girar, converter)</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(148,163,184,0.2)" }}>
-                        <Check className="h-3 w-3 text-slate-400" />
-                      </div>
-                      <span className="text-slate-300">Processamento de arquivo unico</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(148,163,184,0.2)" }}>
-                        <Check className="h-3 w-3 text-slate-400" />
-                      </div>
-                      <span className="text-slate-300">Velocidade padrao</span>
-                    </div>
-                  </div>
-
-                  <Button
-                    className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                    asChild
-                  >
-                    <Link href="/br/painel">Comecar Gratis</Link>
-                  </Button>
                 </div>
 
-                {/* Pro — gold accents */}
-                <div className="rounded-2xl p-8 relative flex flex-col transition-shadow duration-300 hover:shadow-2xl" style={{ background: "rgba(255,255,255,0.07)", backdropFilter: "blur(12px)", border: "1px solid rgba(214,179,106,0.5)", boxShadow: "0 0 0 1px rgba(214,179,106,0.2), inset 0 1px 0 rgba(255,255,255,0.05)" }}>
-                  {/* Mais Popular Badge */}
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="px-5 py-1.5 rounded-full text-sm font-bold flex items-center gap-2 shadow-lg whitespace-nowrap text-[#0E0F1E]" style={{ background: "linear-gradient(135deg, #D6B36A, #E0C27A)" }}>
-                      <Star className="h-4 w-4 fill-current" />
-                      Mais Popular
+                {/* Pro — gold */}
+                <div className="rounded-2xl p-[1px] flex" style={{ background: "linear-gradient(135deg, rgba(214,179,106,0.5), rgba(20,216,196,0.3), rgba(214,179,106,0.3), rgba(214,179,106,0.4))" }}>
+                  <div className="rounded-[15px] p-8 pt-10 flex flex-col w-full relative overflow-hidden" style={{ background: "radial-gradient(ellipse 40% 30% at 50% 0%, rgba(214,179,106,0.05) 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(20,216,196,0.04) 0%, transparent 70%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(214,179,106,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #D6B36A, #E0C27A)", color: "#0E0F1E" }}>Mais Popular</div>
+                    <div className="text-center mb-6">
+                      <h2 className="text-2xl font-black text-white mb-2">Pro</h2>
+                      <p className="text-sm text-slate-400 mb-4">Desbloqueie todas as ferramentas sem limites diarios</p>
+                      <div className="mb-2">
+                        <span className="text-5xl font-black text-[#E0C27A]">{billing === "monthly" ? "$7.99" : "$79.90"}</span>
+                        <span className="text-lg text-slate-400">{billing === "monthly" ? "/mes" : "/ano"}</span>
+                      </div>
+                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-400">Equivale a $6.66/mes cobrado anualmente</p>}</div>
                     </div>
+                    <div className="space-y-3 mb-8 flex-grow">
+                      <p className="text-sm text-[#6B7CFF] font-medium">Tudo no Gratis, mais:</p>
+                      {["Conversoes ilimitadas", "Arquivos ate 200MB", "Todas as ferramentas PDF (OCR, QR code, PDF para Word/Excel/PowerPoint)", "Processamento em lote (varios arquivos)", "Velocidade de processamento prioritaria"].map((item) => (
+                        <div key={item} className="flex items-center gap-3">
+                          <span className="text-[#E0C27A] flex-shrink-0">&#10003;</span>
+                          <span className="text-slate-300 text-sm font-medium">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <Button className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl" asChild>
+                      <Link href={billing === "monthly" ? "/upgrade" : "/upgrade?billing=annual"}>
+                        {billing === "monthly" ? "Atualizar para Pro" : "Economize 2 Meses — Anual"}
+                      </Link>
+                    </Button>
                   </div>
-
-                  <div className="text-center mb-6 mt-4">
-                    <h2 className="text-2xl font-black text-white mb-2">Pro</h2>
-                    <p className="text-sm text-slate-400 mb-4">Desbloqueie todas as ferramentas sem limites diarios</p>
-                    <div className="mb-2">
-                      <span className="text-5xl font-black text-[#E0C27A]">
-                        {billing === "monthly" ? "$7.99" : "$79.90"}
-                      </span>
-                      <span className="text-lg text-slate-400">
-                        {billing === "monthly" ? "/mes" : "/ano"}
-                      </span>
-                    </div>
-                    <div className="min-h-[20px]">{billing === "annual" && (
-                      <p className="text-sm text-slate-400">
-                        Equivale a $6.66/mes cobrado anualmente
-                      </p>
-                    )}</div>
-                  </div>
-
-                  <div className="space-y-3 mb-8 flex-grow">
-                    <p className="text-sm text-[#6B7CFF] font-medium">Tudo no Gratis, mais:</p>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(214,179,106,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#E0C27A]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Conversoes ilimitadas</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(214,179,106,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#E0C27A]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Arquivos ate 200MB</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(214,179,106,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#E0C27A]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Todas as ferramentas PDF (OCR, QR code, PDF para Word/Excel/PowerPoint)</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(214,179,106,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#E0C27A]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Processamento em lote (varios arquivos)</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(214,179,106,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#E0C27A]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Velocidade de processamento prioritaria</span>
-                    </div>
-                  </div>
-
-                  <Button
-                    className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                    asChild
-                  >
-                    <Link href={billing === "monthly" ? "/upgrade" : "/upgrade?billing=annual"}>
-                      {billing === "monthly" ? "Atualizar para Pro" : "Economize 2 Meses — Anual"}
-                    </Link>
-                  </Button>
                 </div>
 
-                {/* Business — sapphire accents */}
-                <div className="rounded-2xl p-8 relative flex flex-col transition-shadow duration-300 hover:shadow-2xl" style={{ background: "rgba(255,255,255,0.07)", backdropFilter: "blur(12px)", border: "1px solid rgba(107,124,255,0.5)", boxShadow: "0 0 0 1px rgba(107,124,255,0.2), inset 0 1px 0 rgba(255,255,255,0.05)" }}>
-                  {/* Ideal para Equipes Badge */}
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="px-5 py-1.5 rounded-full text-sm font-bold flex items-center gap-2 shadow-lg whitespace-nowrap text-white" style={{ background: "linear-gradient(135deg, #6B7CFF, #8B9AFF)" }}>
-                      Ideal para Equipes
+                {/* Business — sapphire */}
+                <div className="rounded-2xl p-[1px] flex" style={{ background: "linear-gradient(135deg, rgba(107,124,255,0.5), rgba(20,216,196,0.3), rgba(107,124,255,0.35), rgba(107,124,255,0.4))" }}>
+                  <div className="rounded-[15px] p-8 pt-10 flex flex-col w-full relative overflow-hidden" style={{ background: "radial-gradient(ellipse 40% 30% at 50% 0%, rgba(107,124,255,0.06) 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(20,216,196,0.04) 0%, transparent 70%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(107,124,255,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #6B7CFF, #8B9AFF)", color: "#0E0F1E" }}>Ideal para Equipes</div>
+                    <div className="text-center mb-6">
+                      <h2 className="text-2xl font-black text-white mb-2">Business</h2>
+                      <p className="text-sm text-slate-400 mb-4">Ferramentas avancadas para profissionais e equipes</p>
+                      <div className="mb-2">
+                        <span className="text-5xl font-black text-[#6B7CFF]">{billing === "monthly" ? "$13.99" : "$139.90"}</span>
+                        <span className="text-lg text-slate-400">{billing === "monthly" ? "/mes" : "/ano"}</span>
+                      </div>
+                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-400">Equivale a $11.66/mes cobrado anualmente</p>}</div>
                     </div>
+                    <div className="space-y-3 mb-8 flex-grow">
+                      <p className="text-sm text-[#6B7CFF] font-medium">Tudo no Pro, mais:</p>
+                      {["Arquivos ate 1GB", "Extracao de tabelas para Excel (200 paginas/mes)", "Automacao de fluxos de trabalho (encadear ferramentas)", "Comparacao de PDFs (diferenca lado a lado)", "Assinatura eletronica de documentos", "Redacao de PDFs (remocao permanente)"].map((item) => (
+                        <div key={item} className="flex items-center gap-3">
+                          <span className="text-[#6B7CFF] flex-shrink-0">&#10003;</span>
+                          <span className="text-slate-300 text-sm font-medium">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <Button className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl" asChild>
+                      <Link href={billing === "monthly" ? "/upgrade?plan=business" : "/upgrade?plan=business&billing=annual"}>
+                        {billing === "monthly" ? "Atualizar para Business" : "Economize 2 Meses — Anual"}
+                      </Link>
+                    </Button>
                   </div>
-
-                  <div className="text-center mb-6 mt-4">
-                    <h2 className="text-2xl font-black text-white mb-2">Business</h2>
-                    <p className="text-sm text-slate-400 mb-4">Ferramentas avancadas para profissionais e equipes</p>
-                    <div className="mb-2">
-                      <span className="text-5xl font-black text-[#6B7CFF]">
-                        {billing === "monthly" ? "$13.99" : "$139.90"}
-                      </span>
-                      <span className="text-lg text-slate-400">
-                        {billing === "monthly" ? "/mes" : "/ano"}
-                      </span>
-                    </div>
-                    <div className="min-h-[20px]">{billing === "annual" && (
-                      <p className="text-sm text-slate-400">
-                        Equivale a $11.66/mes cobrado anualmente
-                      </p>
-                    )}</div>
-                  </div>
-
-                  <div className="space-y-3 mb-8 flex-grow">
-                    <p className="text-sm text-[#6B7CFF] font-medium">Tudo no Pro, mais:</p>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(107,124,255,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#6B7CFF]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Arquivos ate 1GB</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(107,124,255,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#6B7CFF]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Extracao de tabelas para Excel (200 paginas/mes)</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(107,124,255,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#6B7CFF]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Automacao de fluxos de trabalho (encadear ferramentas)</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(107,124,255,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#6B7CFF]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Comparacao de PDFs (diferenca lado a lado)</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(107,124,255,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#6B7CFF]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Assinatura eletronica de documentos</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(107,124,255,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#6B7CFF]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Redacao de PDFs (remocao permanente)</span>
-                    </div>
-                  </div>
-
-                  <Button
-                    className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                    asChild
-                  >
-                    <Link href={billing === "monthly" ? "/upgrade?plan=business" : "/upgrade?plan=business&billing=annual"}>
-                      {billing === "monthly" ? "Atualizar para Business" : "Economize 2 Meses — Anual"}
-                    </Link>
-                  </Button>
                 </div>
 
-                {/* Enterprise — platinum accents */}
-                <div className="rounded-2xl p-8 relative flex flex-col transition-shadow duration-300 hover:shadow-2xl" style={{ background: "rgba(255,255,255,0.07)", backdropFilter: "blur(12px)", border: "1px solid rgba(192,197,206,0.5)", boxShadow: "0 0 0 1px rgba(192,197,206,0.2), inset 0 1px 0 rgba(255,255,255,0.05)" }}>
-                  {/* Melhor Valor Badge */}
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="px-5 py-1.5 rounded-full text-sm font-bold flex items-center gap-2 shadow-lg whitespace-nowrap text-[#0E0F1E]" style={{ background: "linear-gradient(135deg, #C0C5CE, #14D8C4)" }}>
-                      <Crown className="h-4 w-4 fill-current" />
-                      Melhor Valor
+                {/* Enterprise — platinum */}
+                <div className="rounded-2xl p-[1px] flex" style={{ background: "linear-gradient(135deg, rgba(192,197,206,0.5), rgba(20,216,196,0.3), rgba(192,197,206,0.35), rgba(192,197,206,0.4))" }}>
+                  <div className="rounded-[15px] p-8 pt-10 flex flex-col w-full relative overflow-hidden" style={{ background: "radial-gradient(ellipse 40% 30% at 50% 0%, rgba(192,197,206,0.06) 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(20,216,196,0.04) 0%, transparent 70%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(192,197,206,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #C0C5CE, #14D8C4)", color: "#0E0F1E" }}>Melhor Valor</div>
+                    <div className="text-center mb-6">
+                      <h2 className="text-2xl font-black text-white mb-2">Enterprise</h2>
+                      <p className="text-sm text-slate-400 mb-4">Feito para escritorios de advocacia, contadores e laboratorios</p>
+                      <div className="mb-2">
+                        <span className="text-5xl font-black text-[#C0C5CE]">{billing === "monthly" ? "$49.99" : "$499.90"}</span>
+                        <span className="text-lg text-slate-400">{billing === "monthly" ? "/mes" : "/ano"}</span>
+                      </div>
+                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-400">Equivale a $41.66/mes cobrado anualmente</p>}</div>
                     </div>
+                    <div className="space-y-3 mb-8 flex-grow">
+                      <p className="text-sm text-[#6B7CFF] font-medium">Tudo no Business, mais:</p>
+                      {["Extracao de tabelas para Excel (2.000 paginas/mes)", "Fila de processamento prioritario", "Suporte dedicado por email (resposta em 24h)", "Acesso antecipado a novos recursos", "Modelos de fluxo de trabalho personalizados"].map((item) => (
+                        <div key={item} className="flex items-center gap-3">
+                          <span className="text-[#C0C5CE] flex-shrink-0">&#10003;</span>
+                          <span className="text-slate-300 text-sm font-medium">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <Button className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl" asChild>
+                      <Link href={billing === "monthly" ? "/upgrade?plan=enterprise" : "/upgrade?plan=enterprise&billing=annual"}>
+                        {billing === "monthly" ? "Atualizar para Enterprise" : "Economize 2 Meses — Anual"}
+                      </Link>
+                    </Button>
                   </div>
-
-                  <div className="text-center mb-6 mt-4">
-                    <h2 className="text-2xl font-black text-white mb-2">Enterprise</h2>
-                    <p className="text-sm text-slate-400 mb-4">Feito para escritorios de advocacia, contadores e laboratorios</p>
-                    <div className="mb-2">
-                      <span className="text-5xl font-black text-[#C0C5CE]">
-                        {billing === "monthly" ? "$49.99" : "$499.90"}
-                      </span>
-                      <span className="text-lg text-slate-400">
-                        {billing === "monthly" ? "/mes" : "/ano"}
-                      </span>
-                    </div>
-                    <div className="min-h-[20px]">{billing === "annual" && (
-                      <p className="text-sm text-slate-400">
-                        Equivale a $41.66/mes cobrado anualmente
-                      </p>
-                    )}</div>
-                  </div>
-
-                  <div className="space-y-3 mb-8 flex-grow">
-                    <p className="text-sm text-[#6B7CFF] font-medium">Tudo no Business, mais:</p>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(192,197,206,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#C0C5CE]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Extracao de tabelas para Excel (2.000 paginas/mes)</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(192,197,206,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#C0C5CE]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Fila de processamento prioritario</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(192,197,206,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#C0C5CE]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Suporte dedicado por email (resposta em 24h)</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(192,197,206,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#C0C5CE]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Acesso antecipado a novos recursos</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(192,197,206,0.2)" }}>
-                        <Check className="h-3 w-3 text-[#C0C5CE]" />
-                      </div>
-                      <span className="text-slate-300 font-medium">Modelos de fluxo de trabalho personalizados</span>
-                    </div>
-                  </div>
-
-                  <Button
-                    className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                    asChild
-                  >
-                    <Link href={billing === "monthly" ? "/upgrade?plan=enterprise" : "/upgrade?plan=enterprise&billing=annual"}>
-                      {billing === "monthly" ? "Atualizar para Enterprise" : "Economize 2 Meses — Anual"}
-                    </Link>
-                  </Button>
                 </div>
 
               </div>
