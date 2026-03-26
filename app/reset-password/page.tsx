@@ -67,7 +67,7 @@ export default function ResetPasswordPage() {
         <div className="w-full max-w-md">
           <Card className="border-slate-200 shadow-sm">
             <CardHeader className="text-center">
-              <img src="/logo.svg" alt="PDF.it" className="mx-auto mb-2 h-8 w-auto" />
+              <div className="mx-auto mb-2"><span style={{fontWeight: 800, color: '#1E3A5F', fontSize: '28px', letterSpacing: '-0.5px'}}>PDF<span style={{color: '#14D8C4', fontWeight: 400}}>.it</span></span></div>
               <CardTitle className="text-xl text-slate-800">Set new password</CardTitle>
               <CardDescription className="text-slate-500">
                 Enter your new password below

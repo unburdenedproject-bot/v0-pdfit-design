@@ -128,7 +128,7 @@ export default function SignUpPage() {
             <div className="rounded-[15px] p-8" style={{ background: "rgba(255,255,255,0.07)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)" }}>
               {/* Logo & Title */}
               <div className="mb-6 text-center">
-                <img src="/logo.svg" alt="PDF.it" className="mx-auto mb-3 h-8 w-auto" />
+                <div className="mx-auto mb-3"><span style={{fontWeight: 800, color: '#ffffff', fontSize: '28px', letterSpacing: '-0.5px'}}>PDF<span style={{color: '#14D8C4', fontWeight: 400}}>.it</span></span></div>
                 <h1 className="text-xl font-bold text-white">Create your account</h1>
                 <p className="mt-1 text-sm text-slate-400">Get 10 free conversions per day</p>
               </div>
