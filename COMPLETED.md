@@ -374,6 +374,9 @@
 - `/reset-password` — rewritten with dark glassmorphism, dark inputs, teal accents, password show/hide toggles
 - `public/logo.svg` — replaced OmnisPDF SVG with PDF.it text logo ("PDF" in dark + ".it" in teal)
 
+### Legal Pages Redesigned — March 26 2026
+- `/privacy-policy` (EN/ES/BR) — dark cinematic hero, glassmorphism policy card on dark bg, teal accents, teal bullet markers, privacy footer section. All legal text preserved exactly.
+
 ## Google Search Console Status
 - Sitemap index with 542 URLs across EN/ES/BR — 3 sub-sitemaps of 200 each
 - DO NOT break any existing indexed pages
