@@ -208,10 +208,10 @@ export function DashboardClient({
             </Button>
           </Link>
           <Button
-            variant="outline"
+            variant="ghost"
             size="sm"
             onClick={handleSignOut}
-            className="border-white/10 text-slate-400 hover:text-white hover:bg-white/5"
+            className="text-slate-400 hover:text-red-400 hover:bg-red-500/10 transition-colors"
           >
             <LogOut className="mr-2 h-4 w-4" />
             Sign Out
