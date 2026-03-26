@@ -60,7 +60,7 @@ export function HeroSectionBr() {
             className="mb-5 leading-tight"
             style={{ fontSize: "clamp(40px, 7vw, 68px)", fontWeight: 900, letterSpacing: "-2.5px" }}
           >
-            <span className="text-white block">Resolva Qualquer Problema PDF</span>
+            <span className="text-white block">Ferramentas PDF Grátis.</span>
             <span
               className="block"
               style={{
@@ -70,7 +70,7 @@ export function HeroSectionBr() {
                 backgroundClip: "text",
               }}
             >
-              Instantaneamente.
+              Zero Armazenamento.
             </span>
           </h1>
 
@@ -79,7 +79,7 @@ export function HeroSectionBr() {
             className="mb-10 max-w-xl mx-auto"
             style={{ fontSize: "18px", color: "rgba(165,180,252,0.7)", lineHeight: "1.7" }}
           >
-            Sem conta. Sem instalar nada. Arquivos removidos imediatamente apos o uso.
+            Converta, comprima e edite PDFs em segundos — arquivos removidos imediatamente após o download.
           </p>
 
           {/* CTA Buttons */}

@@ -60,7 +60,7 @@ export function HeroSection() {
             className="mb-5 leading-tight"
             style={{ fontSize: "clamp(40px, 7vw, 68px)", fontWeight: 900, letterSpacing: "-2.5px" }}
           >
-            <span className="text-white block">Fix Any PDF Problem</span>
+            <span className="text-white block">Free PDF Tools.</span>
             <span
               className="block"
               style={{
@@ -70,7 +70,7 @@ export function HeroSection() {
                 backgroundClip: "text",
               }}
             >
-              Instantly.
+              Zero File Storage.
             </span>
           </h1>
 
@@ -79,7 +79,7 @@ export function HeroSection() {
             className="mb-10 max-w-xl mx-auto"
             style={{ fontSize: "18px", color: "rgba(165,180,252,0.7)", lineHeight: "1.7" }}
           >
-            No login. No install. Files deleted immediately after use.
+            Convert, compress, and edit PDFs in seconds — files deleted immediately after you download.
           </p>
 
           {/* CTA Buttons */}
