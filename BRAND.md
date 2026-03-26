@@ -40,6 +40,13 @@ Copy written for each locale should feel native, not localized.
 | Wave mid | `#1E6FD9` | Iridescent wave gradient |
 | Wave end | `#E8813A` | Iridescent wave gradient |
 
+**Tier accent colors (upgrade/pre-gate cards):**
+| Tier | Accent | Crown | Badge |
+|------|--------|-------|-------|
+| Pro | Gold `#E0C27A` / `#D6B36A` | Gold crown | "Most Popular" |
+| Business | Sapphire `#6B7CFF` / `#8B9AFF` | Blue crown | "Business Feature" |
+| Enterprise | Platinum `#C0C5CE` + teal `#14D8C4` | Platinum crown | "Enterprise Feature" |
+
 **Typography:**
 - Headings: **Sora**
 - Body: **Inter**

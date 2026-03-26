@@ -250,6 +250,47 @@
 - Route map (lib/route-map.ts) trilingual tuples verified correct
 - No missing pages found
 
+## Premium Dark Cinematic Redesign (COMPLETE — March 25 2026)
+
+### Page_Format.md — Canonical tool page format
+- Created `Page_Format.md` as the single source of truth for tool page structure
+- Referenced in `CLAUDE.md` under Rules and Strategy Documents
+- Defines 8-section order: Hero → Intro → Processing Interface → Feature Blocks → How It Works → Related Tools → FAQ → Schema
+- Documents 3 processing interface variants (standard, image-to-pdf, url-to-pdf)
+- Includes Prohibited Elements section and full Color Reference
+
+### Tool pages redesigned to Page_Format.md (all 3 languages: EN, ES, BR)
+- `/pdf-to-txt`, `/pdf-to-png`, `/pdf-to-word`, `/pdf-to-excel`, `/pdf-to-powerpoint`
+- `/extract-images-from-pdf`, `/word-to-pdf`, `/excel-to-pdf`, `/powerpoint-to-pdf`
+- `/jpg-to-pdf`, `/png-to-pdf`, `/url-to-pdf`
+- `/merge-pdf`, `/split-pdf`, `/rotate-pdf`, `/flatten-pdf`
+- `/protect-pdf`, `/unlock-pdf`, `/watermark-pdf`
+- Total: 19 tools × 3 languages = 57 page files rewritten
+
+### Design changes applied per page
+- Hero: `#0E0F1E` with radial gradients + noise grain SVG (was `#191B4D`)
+- Icon: dark gradient box with teal glow (was `bg-orange-500`)
+- Badges: `text-[#14D8C4]` teal icons (was `text-orange-500`)
+- Intro: plain `✓` checklist in 2-column grid on `bg-[#F3F4FF]` (was various old styles)
+- Feature Blocks: 3 dark glassmorphism cards on `#0E0F1E` (was light `bg-[#F3F4FF]` text sections)
+- How It Works: horizontal flex with dark gradient circles + teal numbers (was vertical lists with orange circles)
+- Related Tools: 4 metallic border cards with glassmorphism (was various old styles)
+- FAQ: wave-color dark background with frosted glass cards (was `bg-gray-50` white cards)
+- Schema: moved to bottom of `<main>` (was at top of component)
+- Removed: CTA sections, Use Cases sections, TrustBadges, 8-tool grids
+
+### Tier pre-gate cards (upgrade cards shown to free users)
+- **Pro** (gold `#E0C27A`): Crown icon, "Most Popular" badge, gold glow
+  - Components: `processing-interface.tsx` (via `requiresPlan="pro"` prop), `url-pdf-interface.tsx`, `pdf-to-word-interface.tsx`, `ocr-pdf-interface.tsx`, `image-to-pdf-interface.tsx`, `ats-optimizer-interface.tsx`, `resume-builder-interface.tsx`
+  - Pages: `/pdf-to-word`, `/pdf-to-excel`, `/pdf-to-powerpoint`, `/word-to-pdf`, `/excel-to-pdf`, `/powerpoint-to-pdf`, `/url-to-pdf`, `/ocr-scanner`, `/jpg-to-pdf`, `/png-to-pdf`, `/ats-optimizer`, `/create-resume`
+- **Business** (sapphire `#6B7CFF`): Crown icon, "Business Feature" badge, blue glow
+  - Components: `esign-interface.tsx`, `pdf-compare-interface.tsx`, `redaction-interface.tsx`
+  - Pages: `/esign`, `/pdf-compare`, `/pdf-redaction`
+- **Enterprise** (platinum `#C0C5CE` + teal): Crown icon, "Enterprise Feature" badge, platinum glow
+  - Components: `table-extraction-interface.tsx`, `workflow-interface.tsx`
+  - Pages: `/table-extraction`, `/workflow-automation`
+- Also redesigned: upgrade-required and daily-limit-reached error cards in `processing-interface.tsx`
+
 ## Google Search Console Status
 - Sitemap with 1,130+ URLs across EN/ES/BR — submitted 2026-03-12, updated 2026-03-18 (added URL to PDF)
 - DO NOT break any existing indexed pages

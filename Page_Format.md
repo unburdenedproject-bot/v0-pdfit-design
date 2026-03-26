@@ -373,24 +373,40 @@ When a tool requires a paid plan (Pro, Business, Enterprise) and the user is on 
 
 The gold is intentionally subtle — just enough to distinguish the upgrade card from standard tool cards. Four things carry the gold: the crown icon, the icon glow, a faint warm tint in the border/inner radial, and the "Most Popular" badge.
 
-- **"Most Popular" badge**: Pinned to top center — `absolute top-0 left-1/2 -translate-x-1/2`, `px-4 py-1 rounded-b-lg`, gold gradient background (`#D6B36A` → `#E0C27A`), dark text `#0E0F1E`, `text-[10px] font-bold uppercase tracking-widest`. Card inner needs `pt-10 relative overflow-hidden` to accommodate the badge.
+- **Badge**: Pinned to top center — `absolute top-0 left-1/2 -translate-x-1/2`, `px-4 py-1 rounded-b-lg`, tier-colored gradient background, dark text `#0E0F1E`, `text-[10px] font-bold uppercase tracking-widest`. Card inner needs `pt-10 relative overflow-hidden` to accommodate the badge.
 
-### Gold accent tokens (upgrade cards only)
+### Tier-specific accent colors
 
-| Token | Value | Usage |
-|---|---|---|
-| Gold icon | `#E0C27A` | Crown icon color |
-| Gold glow | `rgba(214,179,106,0.25)` | Icon box-shadow |
-| Gold border accent | `rgba(214,179,106,0.3)` | One stop in the metallic border gradient |
-| Gold inner tint | `rgba(214,179,106,0.05)` | Faint radial glow at card top center |
-| Badge gradient | `#D6B36A` → `#E0C27A` | "Most Popular" badge background |
+Each paid tier has its own visual identity on the pre-gate card:
 
-This applies to all 3 card types:
-1. **Pre-gate** (tool blocked before loading — e.g., url-pdf-interface, paid-only tools)
+| Tier | Crown color | Glow color | Border accent | Badge bg | Badge text |
+|---|---|---|---|---|---|
+| **Pro** | `#E0C27A` (gold) | `rgba(214,179,106,0.25)` | `rgba(214,179,106,0.3)` | `#D6B36A` → `#E0C27A` | "Most Popular" |
+| **Business** | `#6B7CFF` (sapphire) | `rgba(107,124,255,0.3)` | `rgba(107,124,255,0.5)` | `#6B7CFF` → `#8B9AFF` | "Business Feature" |
+| **Enterprise** | `#C0C5CE` (platinum) | `rgba(192,197,206,0.25)` | `rgba(192,197,206,0.5)` | `#C0C5CE` → `#14D8C4` | "Enterprise Feature" |
+
+### How the pre-gate is triggered
+
+- **Standalone interface components** (url-pdf-interface, ocr-pdf-interface, image-to-pdf-interface, pdf-to-word-interface, esign-interface, etc.): Each has its own `isPaidUser` / `isBusinessUser` check and renders the card directly.
+- **ProcessingInterface** (shared by many tools): Uses the `requiresPlan` prop. Pages pass `requiresPlan="pro"` (or `"business"` / `"enterprise"`) and the component handles the tier check and card rendering automatically. Free tools omit the prop.
+
+### Card types
+
+1. **Pre-gate** (tool blocked before loading — shown to users below the required tier)
 2. **Upgrade required** (conversion fails because tool requires higher plan)
 3. **Daily limit reached** (free conversion quota exhausted)
 
-Components that render this card: `processing-interface.tsx`, `url-pdf-interface.tsx`, and any other interface component with `isPaidUser` checks.
+### Pro tools (requiresPlan="pro")
+
+`/pdf-to-word`, `/pdf-to-excel`, `/pdf-to-powerpoint`, `/word-to-pdf`, `/excel-to-pdf`, `/powerpoint-to-pdf`, `/url-to-pdf`, `/ocr-scanner`, `/jpg-to-pdf`, `/png-to-pdf`, `/qr-code`, `/ats-optimizer`, `/create-resume`
+
+### Business tools
+
+`/esign`, `/pdf-compare`, `/pdf-redaction`
+
+### Enterprise tools
+
+`/table-extraction`, `/workflow-automation`
 
 ---
 
