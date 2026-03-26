@@ -1,5 +1,3 @@
-"use client"
-
 import { Shield, Crown, Gift, Sparkles, Target, FilePlus } from "lucide-react"
 import Link from "next/link"
 

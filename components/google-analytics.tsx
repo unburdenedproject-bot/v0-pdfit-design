@@ -18,23 +18,7 @@ export const GoogleTagManager = () => {
           `,
         }}
       />
-      <Script
-        id="ga4-script"
-        strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=G-PWD4YNY710"
-      />
-      <Script
-        id="ga4-config"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-PWD4YNY710');
-          `,
-        }}
-      />
+      {/* GA4 is configured inside GTM — no separate gtag.js needed */}
     </>
   )
 }

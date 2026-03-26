@@ -157,7 +157,7 @@ export function HeaderEs() {
           <Button
             variant="ghost"
             size="sm"
-            className="md:hidden relative z-50"
+            className="md:hidden relative z-50 text-white hover:text-white/80"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
           >

@@ -1,11 +1,13 @@
 import type { Metadata } from "next"
+import dynamic from "next/dynamic"
 import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
 import { FeaturesGrid } from "@/components/features-grid"
 import { TrustSection } from "@/components/trust-section"
-import { ComprehensiveFAQSection } from "@/components/comprehensive-faq-section"
 import { Footer } from "@/components/footer"
 import { ScrollToTools } from "@/components/scroll-to-tools"
+
+const ComprehensiveFAQSection = dynamic(() => import("@/components/comprehensive-faq-section").then(mod => ({ default: mod.ComprehensiveFAQSection })), { ssr: true })
 
 export const metadata: Metadata = {
   title: "AI PDF Tools, ATS Resume Optimizer & Resume Builder | PDF.it",
