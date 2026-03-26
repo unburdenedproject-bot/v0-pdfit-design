@@ -1,31 +1,32 @@
 import { HeaderEs } from "@/components/header-es"
 import { FooterEs } from "@/components/footer-es"
 import type { Metadata } from "next"
-import { Heart, Target, Crown, Gift, FileText, Building, GraduationCap, Briefcase, Shield, Workflow, ScanText } from "lucide-react"
+import { Shield, FileOutput, Lock, Zap, GraduationCap, Building, Briefcase, Scale } from "lucide-react"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Acerca de PDF.it — Herramientas PDF Gratis, Pro, Business y Enterprise",
+  title: "Acerca de PDF.it — Herramientas PDF en Linea con Privacidad para Equipos e Individuos",
   description:
-    "Conoce PDF.it, sus herramientas PDF y sus planes. Compara Gratis, Pro, Business y Enterprise para conversion de PDF, OCR, firma electronica, redaccion, automatizacion y extraccion de tablas.",
-  keywords: [
-    "acerca de PDF.it",
-    "herramientas PDF",
-    "herramientas PDF gratis",
-    "convertidor PDF",
-    "comprimir PDF",
-    "unir PDF",
-    "dividir PDF",
-    "OCR PDF",
-    "redaccion PDF",
-    "firma electronica PDF",
-    "automatizacion de flujos",
-    "extraccion de tablas",
-    "herramientas PDF Pro",
-    "herramientas PDF Business",
-    "herramientas PDF Enterprise",
-  ],
+    "PDF.it es una plataforma PDF en el navegador. Convierte, comprime, firma, redacta y automatiza PDFs — los archivos se eliminan inmediatamente despues de la descarga. Planes Gratis, Pro, Business y Enterprise disponibles.",
+  openGraph: {
+    title: "Acerca de PDF.it — Herramientas PDF en Linea con Privacidad para Equipos e Individuos",
+    description:
+      "PDF.it es una plataforma PDF en el navegador. Convierte, comprime, firma, redacta y automatiza PDFs — los archivos se eliminan inmediatamente despues de la descarga.",
+    url: "https://pdf.it.com/es/acerca",
+    siteName: "PDF.it",
+    images: [{ url: "https://pdf.it.com/og-logo.png", width: 1200, height: 630, alt: "PDF.it — Acerca" }],
+    locale: "es_ES",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Acerca de PDF.it — Herramientas PDF en Linea con Privacidad para Equipos e Individuos",
+    description:
+      "PDF.it es una plataforma PDF en el navegador. Convierte, comprime, firma, redacta y automatiza PDFs — los archivos se eliminan inmediatamente despues de la descarga.",
+    images: ["https://pdf.it.com/og-logo.png"],
+  },
   alternates: {
+    canonical: "https://pdf.it.com/es/acerca",
     languages: {
       en: "https://pdf.it.com/about",
       es: "https://pdf.it.com/es/acerca",
@@ -39,236 +40,345 @@ export default function AcercaPage() {
     <div className="min-h-screen bg-[#F3F4FF]">
       <HeaderEs />
       <main>
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* ── 1. Hero ── */}
+        <section
+          className="text-white py-16 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#heroGrain)" />
+          </svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Heart className="h-10 w-10 text-white" />
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                  boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)",
+                }}
+              >
+                <Shield className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Planes de PDF.it: Herramientas PDF Gratis, Pro, Business y Enterprise</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Acerca de PDF.it — Herramientas PDF con Privacidad</h1>
               <p className="text-xl text-slate-300">
-                Herramientas PDF en el navegador para conversion, compresion, OCR, firma electronica, redaccion, automatizacion de flujos y procesamiento documental empresarial.
+                PDF.it es una plataforma PDF en el navegador creada para personas, equipos y organizaciones. Convierte, comprime, firma, redacta y automatiza — tus archivos se procesan y eliminan de inmediato. Nunca almacenamos tus documentos.
               </p>
             </div>
           </div>
         </section>
 
-        <section className="py-16">
+        {/* ── 2. Mision + Privacidad ── */}
+        <section className="py-16 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <p className="text-lg text-slate-600 leading-relaxed">
+              PDF.it te ofrece un conjunto completo de herramientas PDF que funcionan directamente en el navegador. Convierte documentos, comprime archivos, agrega firmas electronicas, redacta datos sensibles, extrae tablas y automatiza flujos recurrentes — todo sin instalar software. La privacidad esta integrada en cada paso: tus archivos se procesan en tiempo real y se eliminan en cuanto descargas el resultado.
+            </p>
+            <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">✓ Archivos eliminados inmediatamente despues de la descarga</li>
+              <li className="flex items-center gap-2">✓ Transferencias cifradas con SSL</li>
+              <li className="flex items-center gap-2">✓ Sin almacenamiento de archivos — nunca</li>
+              <li className="flex items-center gap-2">✓ Sin necesidad de cuenta para herramientas gratuitas</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* ── 3. Que puedes hacer ── */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <p className="text-lg text-slate-600 mb-6">
-              PDF.it ayuda a personas, estudiantes, equipos legales, contables, operativos y empresas en crecimiento a trabajar con archivos PDF directamente en el navegador. Puedes convertir PDF a Word, Excel, JPG, PNG y TXT, comprimir PDF para email y limites de subida, unir y dividir documentos PDF, ejecutar OCR sobre PDFs escaneados, agregar firmas electronicas, redactar contenido sensible, automatizar flujos y extraer tablas a Excel.
+            <h2 className="text-3xl font-black text-white mb-8 text-center">Lo que puedes hacer</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                {
+                  title: "Convertir y comprimir",
+                  desc: "Convierte PDFs a Word, Excel, JPG, PNG, TXT y mas. Comprime archivos para email y limites de subida. Une, divide, rota y aplana — todo en tu navegador.",
+                },
+                {
+                  title: "Firmar, proteger y redactar",
+                  desc: "Agrega firmas electronicas, protege documentos con contrasena y redacta informacion sensible de forma permanente. Agrega marcas de agua a tus PDFs para branding y control documental.",
+                },
+                {
+                  title: "Automatizar y extraer",
+                  desc: "Encadena multiples herramientas PDF en flujos automatizados. Extrae tablas de PDFs a hojas de calculo Excel. Ejecuta OCR para hacer buscables los documentos escaneados.",
+                },
+              ].map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <div
+                    className="rounded-[11px] p-6 h-full"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── 4. Planes ── */}
+        <section className="py-16 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+            <h2 className="text-3xl font-black text-slate-900 mb-4 text-center">Planes que crecen contigo</h2>
+            <p className="text-lg text-slate-600 leading-relaxed text-center max-w-3xl mx-auto mb-10">
+              Empieza gratis y actualiza solo cuando crezca tu volumen documental, el tamano de tus archivos o la complejidad de tus flujos.
             </p>
-            <p className="text-lg text-slate-600 mb-8">
-              Nuestros planes estan pensados para crecer con tu flujo de trabajo. El plan Gratis cubre herramientas PDF esenciales, Pro desbloquea conversion avanzada y utilidades impulsadas por IA, Business agrega flujos documentales de nivel equipo, y Enterprise suma procesamiento de mayor volumen, plantillas de flujo y soporte premium para operaciones documentales exigentes.
+
+            <div
+              className="rounded-2xl p-8"
+              style={{
+                background: `
+                  radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.06) 0%, transparent 50%),
+                  radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.04) 0%, transparent 50%),
+                  #0E0F1E
+                `,
+              }}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+                {[
+                  {
+                    name: "Gratis",
+                    price: "$0/mes",
+                    items: [
+                      "10 conversiones/dia, archivos hasta 25MB",
+                      "Herramientas PDF esenciales (unir, dividir, comprimir, rotar, aplanar, proteger, desbloquear)",
+                      "Sin registro necesario",
+                    ],
+                  },
+                  {
+                    name: "Pro",
+                    price: "$7.99/mes",
+                    items: [
+                      "Conversiones ilimitadas, archivos hasta 200MB",
+                      "Todas las herramientas PDF incluyendo OCR, marcas de agua, conversiones Office",
+                      "Optimizador ATS, creador de curriculum, codigo QR, URL a PDF",
+                    ],
+                  },
+                  {
+                    name: "Business",
+                    price: "$13.99/mes",
+                    items: [
+                      "Todo en Pro, archivos hasta 1GB",
+                      "Extraccion de tablas (200 paginas/mes), comparacion PDF, firma electronica, redaccion PDF",
+                      "Automatizacion de flujos",
+                    ],
+                  },
+                  {
+                    name: "Enterprise",
+                    price: "$49.99/mes",
+                    items: [
+                      "Todo en Business",
+                      "Extraccion de tablas de alto volumen (2,000 paginas/mes), automatizacion de flujos",
+                      "Plantillas de flujo, procesamiento prioritario, soporte dedicado",
+                    ],
+                  },
+                ].map((tier) => (
+                  <div
+                    key={tier.name}
+                    className="rounded-xl p-[1px]"
+                    style={{
+                      background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                    }}
+                  >
+                    <div
+                      className="rounded-[11px] p-6 h-full"
+                      style={{
+                        background: `
+                          radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                          radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                          rgba(255, 255, 255, 0.07)
+                        `,
+                        backdropFilter: "blur(12px)",
+                        WebkitBackdropFilter: "blur(12px)",
+                        boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                      }}
+                    >
+                      <h3 className="text-lg font-bold text-white mb-1">{tier.name}</h3>
+                      <p className="text-[#14D8C4] font-semibold text-sm mb-4">{tier.price}</p>
+                      <ul className="space-y-2">
+                        {tier.items.map((item) => (
+                          <li key={item} className="text-slate-400 text-sm leading-relaxed flex items-start gap-2">
+                            <span className="text-[#14D8C4] mt-0.5">&#10003;</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 5. Disenado para ── */}
+        <section className="py-16 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Disenado para flujos de trabajo reales</h2>
+
+            <div
+              className="rounded-2xl p-8"
+              style={{
+                background: `
+                  radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.06) 0%, transparent 50%),
+                  radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.04) 0%, transparent 50%),
+                  #0E0F1E
+                `,
+              }}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  {
+                    icon: GraduationCap,
+                    title: "Estudiantes e investigadores",
+                    desc: "Convierte trabajos, extrae tablas, comprime documentos grandes y ejecuta OCR sobre apuntes escaneados.",
+                  },
+                  {
+                    icon: Building,
+                    title: "Empresas y equipos",
+                    desc: "Procesa facturas, contratos y paquetes de onboarding. Usa firma electronica, redaccion y automatizacion de flujos.",
+                  },
+                  {
+                    icon: Briefcase,
+                    title: "Freelancers y candidatos",
+                    desc: "Prepara entregables, crea curriculos, agrega marcas de agua y protege archivos con contrasena.",
+                  },
+                  {
+                    icon: Scale,
+                    title: "Legal, finanzas y salud",
+                    desc: "Redacta datos sensibles, extrae tablas de cumplimiento y automatiza flujos documentales.",
+                  },
+                ].map((card) => (
+                  <div
+                    key={card.title}
+                    className="rounded-xl p-[1px]"
+                    style={{
+                      background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                    }}
+                  >
+                    <div
+                      className="rounded-[11px] p-6 h-full"
+                      style={{
+                        background: `
+                          radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                          radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                          rgba(255, 255, 255, 0.07)
+                        `,
+                        backdropFilter: "blur(12px)",
+                        WebkitBackdropFilter: "blur(12px)",
+                        boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                      }}
+                    >
+                      <div className="flex items-center gap-3 mb-3">
+                        <card.icon className="h-6 w-6 text-[#14D8C4]" />
+                        <h3 className="text-lg font-bold text-white">{card.title}</h3>
+                      </div>
+                      <p className="text-slate-400 text-sm leading-relaxed">{card.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 6. Compromiso de privacidad ── */}
+        <section
+          className="py-16 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 80% 60% at 30% 100%, rgba(10,74,92,0.35) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 50% at 70% 0%, rgba(30,111,217,0.20) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 90% 80%, rgba(232,129,58,0.10) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="privacyGrainEs"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#privacyGrainEs)" />
+          </svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl relative z-10">
+            <div
+              className="rounded-xl p-[1px]"
+              style={{
+                background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+              }}
+            >
+              <div
+                className="rounded-[11px] p-8 md:p-10 text-center"
+                style={{
+                  background: `
+                    radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                    radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                    rgba(255, 255, 255, 0.07)
+                  `,
+                  backdropFilter: "blur(12px)",
+                  WebkitBackdropFilter: "blur(12px)",
+                  boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                }}
+              >
+                <div
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                  style={{
+                    background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                    boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)",
+                  }}
+                >
+                  <Shield className="h-8 w-8 text-[#14D8C4]" />
+                </div>
+                <h2 className="text-2xl font-black text-white mb-4">Tus documentos son tu asunto</h2>
+                <p className="text-slate-400 leading-relaxed">
+                  PDF.it procesa tus archivos en tiempo real y los elimina en cuanto descargas el resultado. Nunca almacenamos, leemos, indexamos ni compartimos tus documentos. Todas las transferencias estan cifradas con SSL. Tu privacidad no es una funcion — es la base sobre la que construimos esta plataforma.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 7. CTA ── */}
+        <section className="py-16 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <h2 className="text-3xl font-black text-slate-900 mb-4">Empieza a convertir gratis</h2>
+            <p className="text-lg text-slate-600 leading-relaxed mb-8">
+              Sin necesidad de cuenta para herramientas gratuitas. Actualiza cuando necesites acceso ilimitado, archivos mas grandes o flujos avanzados.
             </p>
-
-            <div className="bg-gray-50 rounded-xl p-8 mb-8">
-              <h2 className="text-xl font-black text-slate-900 mb-4">Que puedes hacer con PDF.it</h2>
-              <ul className="space-y-2 text-slate-700">
-                <li>✓ Convertir PDFs a Word, Excel, JPG/PNG, TXT y mas</li>
-                <li>✓ Comprimir PDFs para reducir el tamano de archivo para email y subidas</li>
-                <li>✓ Unir y dividir PDFs para envios y paquetes de documentos</li>
-                <li>✓ Ejecutar OCR para volver buscables los PDFs escaneados</li>
-                <li>✓ Proteger, poner marca de agua, firmar, comparar y redactar PDFs para compartirlos con mas seguridad</li>
-                <li>✓ Automatizar flujos PDF recurrentes y extraer tablas a Excel</li>
-              </ul>
-            </div>
-
-            <div className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Comparar planes de PDF.it</h2>
-              <p className="text-slate-600 mb-6">
-                PDF.it ofrece cuatro niveles de precios para que puedas empezar con herramientas PDF gratis y actualizar solo cuando aumenten tu volumen documental, el tamano de los archivos, el nivel de cumplimiento o la complejidad de tus flujos.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-12">
-              <div className="bg-green-50 border border-green-200 rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Gift className="h-6 w-6 text-green-600" />
-                  <h3 className="text-xl font-bold text-green-900">Plan Gratis</h3>
-                </div>
-                <p className="text-green-900 font-medium text-sm mb-4">Ideal para conversion PDF ocasional, compresion, union, division y tareas documentales cotidianas.</p>
-                <ul className="space-y-2 text-green-800 text-sm">
-                  <li>• 10 conversiones por dia</li>
-                  <li>• Herramientas PDF esenciales</li>
-                  <li>• Archivos hasta 25MB</li>
-                  <li>• Sin registro para herramientas gratuitas</li>
-                  <li>• Ideal para estudiantes, uso personal y trabajo ligero de oficina</li>
-                </ul>
-              </div>
-              <div className="bg-orange-50 border border-orange-200 rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Crown className="h-6 w-6 text-orange-600" />
-                  <h3 className="text-xl font-bold text-orange-900">Pro — $7.99/mes</h3>
-                </div>
-                <p className="text-orange-900 font-medium text-sm mb-4">Ideal para freelancers, candidatos y profesionales que necesitan conversion PDF avanzada y mayores limites de uso.</p>
-                <ul className="space-y-2 text-orange-800 text-sm">
-                  <li>• Conversiones ilimitadas</li>
-                  <li>• Todas las herramientas PDF</li>
-                  <li>• Archivos hasta 200MB</li>
-                  <li>• OCR, marcas de agua y herramientas Office a PDF</li>
-                  <li>• Optimizador ATS, creador de curriculum, URL a PDF y generador de QR</li>
-                </ul>
-              </div>
-              <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Crown className="h-6 w-6 text-indigo-600" />
-                  <h3 className="text-xl font-bold text-indigo-900">Business — $13.99/mes</h3>
-                </div>
-                <p className="text-indigo-900 font-medium text-sm mb-4">Ideal para equipos que gestionan contratos, facturas, reportes, documentos escaneados y flujos repetitivos.</p>
-                <ul className="space-y-2 text-indigo-800 text-sm">
-                  <li>• Todo lo incluido en Pro</li>
-                  <li>• Archivos hasta 1GB</li>
-                  <li>• Automatizacion de flujos</li>
-                  <li>• Extraccion de tablas, comparacion de PDF, firma electronica y redaccion</li>
-                  <li>• Pensado para operaciones, finanzas, RR. HH. y equipos documentales</li>
-                </ul>
-              </div>
-              <div className="bg-slate-900 border border-amber-500 rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Crown className="h-6 w-6 text-amber-500" />
-                  <h3 className="text-xl font-bold text-white">Enterprise — $49.99/mes</h3>
-                </div>
-                <p className="text-slate-200 font-medium text-sm mb-4">Ideal para bufetes, contadores, laboratorios y organizaciones que necesitan mas volumen, prioridad y soporte premium.</p>
-                <ul className="space-y-2 text-slate-200 text-sm">
-                  <li>• Todo lo incluido en Business</li>
-                  <li>• Extraccion de tablas a Excel: 2,000 paginas por mes</li>
-                  <li>• Plantillas de flujo personalizadas</li>
-                  <li>• Cola de procesamiento prioritaria</li>
-                  <li>• Soporte dedicado por email con respuesta en 24 horas</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <ScanText className="h-6 w-6 text-slate-700" />
-                  <h3 className="text-lg font-bold text-slate-900">Conversion PDF Avanzada</h3>
-                </div>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  PDF.it cubre flujos comunes como PDF a Word, PDF a Excel, PDF a PowerPoint, Word a PDF, Excel a PDF, JPG a PDF, PNG a PDF, URL a PDF y OCR para documentos escaneados. Esto hace que la plataforma sea util para limpiar, editar, compartir y archivar documentos.
-                </p>
-              </div>
-              <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Workflow className="h-6 w-6 text-slate-700" />
-                  <h3 className="text-lg font-bold text-slate-900">Herramientas de Flujo Business</h3>
-                </div>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  Los planes Business y Enterprise agregan automatizacion de flujos, extraccion de tablas, comparacion de PDF, firma electronica y redaccion PDF. Estas funciones estan disenadas para documentos legales, contratos, procesamiento de facturas, cumplimiento, auditoria y operaciones PDF recurrentes.
-                </p>
-              </div>
-              <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Shield className="h-6 w-6 text-slate-700" />
-                  <h3 className="text-lg font-bold text-slate-900">Capacidad de Nivel Enterprise</h3>
-                </div>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  Enterprise incluye limites mensuales mas altos para extraccion de tablas, plantillas de flujo, prioridad en cola y soporte dedicado. Esta pensado para firmas y equipos que necesitan procesamiento PDF confiable en el navegador sin depender de software de escritorio en cada equipo.
-                </p>
-              </div>
-            </div>
-
-            <div className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Nuestra Mision</h2>
-              <div className="bg-[#191B4D] border border-[#252A6A] rounded-xl p-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Target className="h-6 w-6 text-white" />
-                  </div>
-                  <p className="text-slate-200 text-lg leading-relaxed">
-                    Ofrecer herramientas PDF confiables basadas en el navegador que funcionen de manera rapida y simple, sin instalaciones, sin plugins y sin necesidad de conocimientos tecnicos. Queremos que la conversion PDF, el OCR, la redaccion, la firma electronica, la extraccion de tablas y la automatizacion esten al alcance de personas y equipos.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-6">Disenado para Flujos de Trabajo Reales</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <GraduationCap className="h-7 w-7 text-blue-600" />
-                    <h3 className="text-lg font-bold text-blue-900">Estudiantes e Investigadores</h3>
-                  </div>
-                  <ul className="space-y-2 text-blue-800 text-sm">
-                    <li>• Convierte trabajos, extrae tablas y comprime documentos grandes</li>
-                    <li>• Divide PDFs de varios capitulos en archivos separados</li>
-                    <li>• Ejecuta OCR sobre apuntes y materiales escaneados</li>
-                  </ul>
-                </div>
-                <div className="bg-green-50 border border-green-200 rounded-xl p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Building className="h-7 w-7 text-green-600" />
-                    <h3 className="text-lg font-bold text-green-900">Empresas</h3>
-                  </div>
-                  <ul className="space-y-2 text-green-800 text-sm">
-                    <li>• Procesa facturas, contratos, paquetes de onboarding y reportes</li>
-                    <li>• Combina PDFs para envios y entregables para clientes</li>
-                    <li>• Usa OCR, firma electronica, redaccion y automatizacion</li>
-                  </ul>
-                </div>
-                <div className="bg-purple-50 border border-purple-200 rounded-xl p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Briefcase className="h-7 w-7 text-purple-600" />
-                    <h3 className="text-lg font-bold text-purple-900">Freelancers</h3>
-                  </div>
-                  <ul className="space-y-2 text-purple-800 text-sm">
-                    <li>• Prepara entregables para clientes</li>
-                    <li>• Agrega marcas de agua y contrasenas a tus archivos</li>
-                    <li>• Comprime portafolios para compartirlos facilmente</li>
-                  </ul>
-                </div>
-                <div className="bg-orange-50 border border-orange-200 rounded-xl p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <FileText className="h-7 w-7 text-orange-600" />
-                    <h3 className="text-lg font-bold text-orange-900">Uso Personal</h3>
-                  </div>
-                  <ul className="space-y-2 text-orange-800 text-sm">
-                    <li>• Formularios, organizacion y documentos para compartir</li>
-                    <li>• Convierte y comprime archivos del dia a dia</li>
-                    <li>• Protege documentos personales con contrasena</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Que plan de PDF.it deberias elegir?</h2>
-              <div className="bg-white border border-slate-200 rounded-xl p-8">
-                <div className="space-y-4 text-slate-600">
-                  <p>
-                    Elige <strong>Gratis</strong> si necesitas un convertidor PDF online confiable, compresor PDF, union PDF, division PDF o proteccion con contrasena para archivos cotidianos.
-                  </p>
-                  <p>
-                    Elige <strong>Pro</strong> si necesitas herramientas PDF mas avanzadas como OCR, conversion Office a PDF, herramientas de curriculum con IA, archivos mas grandes y uso ilimitado.
-                  </p>
-                  <p>
-                    Elige <strong>Business</strong> si tu equipo trabaja con contratos, facturas, registros escaneados, comparaciones, firmas o flujos PDF repetitivos.
-                  </p>
-                  <p>
-                    Elige <strong>Enterprise</strong> si necesitas soporte premium, plantillas de flujo, extraccion de tablas de alto volumen y una configuracion mas solida para trabajo legal, contable, financiero, de laboratorio o de cumplimiento.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="text-center">
-              <div className="bg-[#191B4D] rounded-2xl p-8 md:p-12 text-white">
-                <h3 className="text-2xl md:text-3xl font-black text-white mb-4">
-                  Empieza a convertir gratis
-                </h3>
-                <p className="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
-                  No necesitas cuenta para las herramientas gratuitas. Actualiza cuando necesites acceso ilimitado, archivos mas grandes, OCR, firma electronica, redaccion, extraccion de tablas, automatizacion o soporte Enterprise.
-                </p>
-                <Link href="/es#tools">
-                  <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-xl text-lg transition-colors">
-                    Empezar Gratis →
-                  </button>
-                </Link>
-              </div>
-            </div>
+            <Link href="/es#tools">
+              <button className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 px-8 rounded-xl text-lg transition-colors">
+                Empezar gratis
+              </button>
+            </Link>
           </div>
         </section>
       </main>

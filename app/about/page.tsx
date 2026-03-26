@@ -1,36 +1,17 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import type { Metadata } from "next"
-import { Heart, Target, Crown, Gift, FileText, Building, GraduationCap, Briefcase, Shield, Workflow, ScanText } from "lucide-react"
+import { Shield, FileOutput, Lock, Zap, GraduationCap, Building, Briefcase, Scale } from "lucide-react"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "About PDF.it — Free, Pro, Business & Enterprise PDF Tools",
+  title: "About PDF.it — Privacy-First Online PDF Tools for Teams & Individuals",
   description:
-    "Learn about PDF.it PDF tools, pricing tiers, and features. Compare Free, Pro, Business, and Enterprise plans for PDF conversion, OCR, eSign, redaction, workflow automation, and table extraction.",
-  keywords: [
-    "about PDF.it",
-    "PDF tools",
-    "free PDF tools",
-    "online PDF tools",
-    "browser-based PDF tools",
-    "PDF converter",
-    "compress PDF",
-    "merge PDF",
-    "split PDF",
-    "OCR PDF",
-    "PDF redaction",
-    "eSign PDF",
-    "workflow automation",
-    "table extraction",
-    "Pro PDF tools",
-    "Business PDF tools",
-    "Enterprise PDF tools",
-  ],
+    "PDF.it is a browser-based PDF platform. Convert, compress, sign, redact, and automate PDFs — files are deleted immediately after download. Free, Pro, Business, and Enterprise plans available.",
   openGraph: {
-    title: "About PDF.it — Free, Pro, Business & Enterprise PDF Tools",
+    title: "About PDF.it — Privacy-First Online PDF Tools for Teams & Individuals",
     description:
-      "Compare Free, Pro, Business, and Enterprise plans. PDF conversion, OCR, eSign, redaction, workflow automation, and table extraction — all in the browser.",
+      "PDF.it is a browser-based PDF platform. Convert, compress, sign, redact, and automate PDFs — files are deleted immediately after download.",
     url: "https://pdf.it.com/about",
     siteName: "PDF.it",
     images: [{ url: "https://pdf.it.com/og-logo.png", width: 1200, height: 630, alt: "PDF.it — About" }],
@@ -39,8 +20,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About PDF.it — Free, Pro, Business & Enterprise PDF Tools",
-    description: "Compare PDF.it plans for conversion, OCR, eSign, redaction, automation, and table extraction.",
+    title: "About PDF.it — Privacy-First Online PDF Tools for Teams & Individuals",
+    description:
+      "PDF.it is a browser-based PDF platform. Convert, compress, sign, redact, and automate PDFs — files are deleted immediately after download.",
     images: ["https://pdf.it.com/og-logo.png"],
   },
   alternates: {
@@ -58,244 +40,345 @@ export default function AboutPage() {
     <div className="min-h-screen bg-[#F3F4FF]">
       <Header />
       <main>
-        {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* ── 1. Hero ── */}
+        <section
+          className="text-white py-16 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#heroGrain)" />
+          </svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Heart className="h-10 w-10 text-white" />
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                  boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)",
+                }}
+              >
+                <Shield className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">PDF.it Plans: Free, Pro, Business & Enterprise PDF Tools</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">About PDF.it — Privacy-First PDF Tools</h1>
               <p className="text-xl text-slate-300">
-                Browser-based PDF tools for conversion, compression, OCR, eSign, redaction, workflow automation, and enterprise document processing.
+                PDF.it is a browser-based PDF platform built for individuals, teams, and organizations. Convert, compress, sign, redact, and automate — your files are processed and deleted immediately. We never store your documents.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Intro */}
-        <section className="py-16">
+        {/* ── 2. Mission + Privacy ── */}
+        <section className="py-16 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <p className="text-lg text-slate-600 leading-relaxed">
+              PDF.it gives you a full suite of PDF tools that run entirely in the browser. Convert documents, compress files, add electronic signatures, redact sensitive data, extract tables, and automate recurring workflows — all without installing software. Privacy is built into every step: your files are processed in real time and deleted as soon as you download the result.
+            </p>
+            <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">✓ Files deleted immediately after download</li>
+              <li className="flex items-center gap-2">✓ SSL-encrypted transfers</li>
+              <li className="flex items-center gap-2">✓ No file storage — ever</li>
+              <li className="flex items-center gap-2">✓ No account needed for free tools</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* ── 3. What You Can Do ── */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <p className="text-lg text-slate-600 mb-6">
-              PDF.it helps individuals, students, legal teams, accountants, operations teams, and growing businesses work with PDF files directly in the browser. You can convert PDF to Word, Excel, JPG, PNG, and TXT, compress PDF files for email and upload limits, merge and split PDF documents, run OCR on scanned PDFs, add eSignatures, redact sensitive content, automate workflows, and extract tables to Excel.
+            <h2 className="text-3xl font-black text-white mb-8 text-center">What You Can Do</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                {
+                  title: "Convert & Compress",
+                  desc: "Convert PDFs to Word, Excel, JPG, PNG, TXT, and more. Compress files for email and upload limits. Merge, split, rotate, and flatten — all in your browser.",
+                },
+                {
+                  title: "Sign, Protect & Redact",
+                  desc: "Add electronic signatures, password-protect documents, and permanently redact sensitive information. Watermark PDFs for branding and document control.",
+                },
+                {
+                  title: "Automate & Extract",
+                  desc: "Chain multiple PDF tools into automated workflows. Extract tables from PDFs into Excel spreadsheets. Run OCR to make scanned documents searchable.",
+                },
+              ].map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <div
+                    className="rounded-[11px] p-6 h-full"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── 4. Pricing Tiers ── */}
+        <section className="py-16 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+            <h2 className="text-3xl font-black text-slate-900 mb-4 text-center">Plans That Scale With You</h2>
+            <p className="text-lg text-slate-600 leading-relaxed text-center max-w-3xl mx-auto mb-10">
+              Start free and upgrade only when your document volume, file sizes, or workflow complexity grows.
             </p>
-            <p className="text-lg text-slate-600 mb-8">
-              Our pricing is designed to scale with your workflow. The Free plan covers essential PDF tools, Pro unlocks advanced conversion and AI-powered utilities, Business adds team-grade document workflows, and Enterprise adds higher-volume processing, custom workflow templates, and premium support for demanding document operations.
+
+            <div
+              className="rounded-2xl p-8"
+              style={{
+                background: `
+                  radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.06) 0%, transparent 50%),
+                  radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.04) 0%, transparent 50%),
+                  #0E0F1E
+                `,
+              }}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+                {[
+                  {
+                    name: "Free",
+                    price: "$0/month",
+                    items: [
+                      "10 conversions/day, files up to 25MB",
+                      "Essential PDF tools (merge, split, compress, rotate, flatten, protect, unlock)",
+                      "No login required",
+                    ],
+                  },
+                  {
+                    name: "Pro",
+                    price: "$7.99/month",
+                    items: [
+                      "Unlimited conversions, files up to 200MB",
+                      "All PDF tools including OCR, watermark, Office conversions",
+                      "ATS Resume Optimizer, Resume Builder, QR Code, URL to PDF",
+                    ],
+                  },
+                  {
+                    name: "Business",
+                    price: "$13.99/month",
+                    items: [
+                      "Everything in Pro, files up to 1GB",
+                      "Table extraction (200 pages/month), PDF Compare, eSign, PDF Redaction",
+                      "Workflow automation",
+                    ],
+                  },
+                  {
+                    name: "Enterprise",
+                    price: "$49.99/month",
+                    items: [
+                      "Everything in Business",
+                      "High-volume table extraction (2,000 pages/month), workflow automation",
+                      "Custom workflow templates, priority processing, dedicated support",
+                    ],
+                  },
+                ].map((tier) => (
+                  <div
+                    key={tier.name}
+                    className="rounded-xl p-[1px]"
+                    style={{
+                      background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                    }}
+                  >
+                    <div
+                      className="rounded-[11px] p-6 h-full"
+                      style={{
+                        background: `
+                          radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                          radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                          rgba(255, 255, 255, 0.07)
+                        `,
+                        backdropFilter: "blur(12px)",
+                        WebkitBackdropFilter: "blur(12px)",
+                        boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                      }}
+                    >
+                      <h3 className="text-lg font-bold text-white mb-1">{tier.name}</h3>
+                      <p className="text-[#14D8C4] font-semibold text-sm mb-4">{tier.price}</p>
+                      <ul className="space-y-2">
+                        {tier.items.map((item) => (
+                          <li key={item} className="text-slate-400 text-sm leading-relaxed flex items-start gap-2">
+                            <span className="text-[#14D8C4] mt-0.5">&#10003;</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 5. Built For ── */}
+        <section className="py-16 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Built for Real Workflows</h2>
+
+            <div
+              className="rounded-2xl p-8"
+              style={{
+                background: `
+                  radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.06) 0%, transparent 50%),
+                  radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.04) 0%, transparent 50%),
+                  #0E0F1E
+                `,
+              }}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  {
+                    icon: GraduationCap,
+                    title: "Students & Researchers",
+                    desc: "Convert papers, extract tables, compress large documents, and run OCR on scanned lecture notes.",
+                  },
+                  {
+                    icon: Building,
+                    title: "Businesses & Teams",
+                    desc: "Process invoices, contracts, and onboarding packets. Run eSign, redaction, and workflow automation.",
+                  },
+                  {
+                    icon: Briefcase,
+                    title: "Freelancers & Job Seekers",
+                    desc: "Prep deliverables, build resumes, watermark files, and password-protect documents.",
+                  },
+                  {
+                    icon: Scale,
+                    title: "Legal, Finance & Healthcare",
+                    desc: "Redact sensitive data, extract compliance tables, and automate document workflows.",
+                  },
+                ].map((card) => (
+                  <div
+                    key={card.title}
+                    className="rounded-xl p-[1px]"
+                    style={{
+                      background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                    }}
+                  >
+                    <div
+                      className="rounded-[11px] p-6 h-full"
+                      style={{
+                        background: `
+                          radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                          radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                          rgba(255, 255, 255, 0.07)
+                        `,
+                        backdropFilter: "blur(12px)",
+                        WebkitBackdropFilter: "blur(12px)",
+                        boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                      }}
+                    >
+                      <div className="flex items-center gap-3 mb-3">
+                        <card.icon className="h-6 w-6 text-[#14D8C4]" />
+                        <h3 className="text-lg font-bold text-white">{card.title}</h3>
+                      </div>
+                      <p className="text-slate-400 text-sm leading-relaxed">{card.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 6. Privacy Commitment ── */}
+        <section
+          className="py-16 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 80% 60% at 30% 100%, rgba(10,74,92,0.35) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 50% at 70% 0%, rgba(30,111,217,0.20) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 90% 80%, rgba(232,129,58,0.10) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="privacyGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#privacyGrain)" />
+          </svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl relative z-10">
+            <div
+              className="rounded-xl p-[1px]"
+              style={{
+                background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+              }}
+            >
+              <div
+                className="rounded-[11px] p-8 md:p-10 text-center"
+                style={{
+                  background: `
+                    radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                    radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                    rgba(255, 255, 255, 0.07)
+                  `,
+                  backdropFilter: "blur(12px)",
+                  WebkitBackdropFilter: "blur(12px)",
+                  boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                }}
+              >
+                <div
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                  style={{
+                    background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                    boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)",
+                  }}
+                >
+                  <Shield className="h-8 w-8 text-[#14D8C4]" />
+                </div>
+                <h2 className="text-2xl font-black text-white mb-4">Your Documents Are Your Business</h2>
+                <p className="text-slate-400 leading-relaxed">
+                  PDF.it processes your files in real time and deletes them as soon as you download the result. We never store, read, index, or share your documents. All transfers are SSL-encrypted. Your privacy isn&apos;t a feature — it&apos;s the foundation of how we built this platform.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 7. CTA ── */}
+        <section className="py-16 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <h2 className="text-3xl font-black text-slate-900 mb-4">Start Converting for Free</h2>
+            <p className="text-lg text-slate-600 leading-relaxed mb-8">
+              No account needed for free tools. Upgrade when you need unlimited access, larger files, or advanced workflows.
             </p>
-
-            {/* What you can do */}
-            <div className="bg-gray-50 rounded-xl p-8 mb-8">
-              <h2 className="text-xl font-black text-slate-900 mb-4">What you can do with PDF.it</h2>
-              <ul className="space-y-2 text-slate-700">
-                <li>✓ Convert PDFs to Word, Excel, JPG/PNG, TXT, and more</li>
-                <li>✓ Compress PDFs to reduce file size for email and uploads</li>
-                <li>✓ Merge and split PDFs for submissions and document packets</li>
-                <li>✓ Run OCR to make scanned PDFs searchable</li>
-                <li>✓ Protect, watermark, sign, compare, and redact PDFs for safer sharing</li>
-                <li>✓ Automate recurring PDF workflows and extract tables to Excel</li>
-              </ul>
-            </div>
-
-            {/* Tier Overview */}
-            <div className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Compare PDF.it Plans</h2>
-              <p className="text-slate-600 mb-6">
-                PDF.it offers four pricing tiers so you can start with free PDF tools and upgrade only when your document volume, file size, compliance, or workflow complexity increases.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-12">
-              <div className="bg-green-50 border border-green-200 rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Gift className="h-6 w-6 text-green-600" />
-                  <h3 className="text-xl font-bold text-green-900">Free Plan</h3>
-                </div>
-                <p className="text-green-900 font-medium text-sm mb-4">Best for occasional PDF conversion, compression, merging, splitting, and everyday document tasks.</p>
-                <ul className="space-y-2 text-green-800 text-sm">
-                  <li>• 10 conversions per day</li>
-                  <li>• Essential PDF tools</li>
-                  <li>• Files up to 25MB</li>
-                  <li>• No login required for free tools</li>
-                  <li>• Best for students, personal use, and light office work</li>
-                </ul>
-              </div>
-              <div className="bg-orange-50 border border-orange-200 rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Crown className="h-6 w-6 text-orange-600" />
-                  <h3 className="text-xl font-bold text-orange-900">Pro — $7.99/month</h3>
-                </div>
-                <p className="text-orange-900 font-medium text-sm mb-4">Best for freelancers, job seekers, and professionals who need advanced PDF conversion and higher usage limits.</p>
-                <ul className="space-y-2 text-orange-800 text-sm">
-                  <li>• Unlimited conversions</li>
-                  <li>• All PDF tools</li>
-                  <li>• Files up to 200MB</li>
-                  <li>• OCR, watermarking, and Office to PDF tools</li>
-                  <li>• ATS Resume Optimizer, Resume Builder, URL to PDF, QR Code Generator</li>
-                </ul>
-              </div>
-              <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Crown className="h-6 w-6 text-indigo-600" />
-                  <h3 className="text-xl font-bold text-indigo-900">Business — $13.99/month</h3>
-                </div>
-                <p className="text-indigo-900 font-medium text-sm mb-4">Best for teams that handle contracts, invoices, reports, scanned documents, and repeatable document workflows.</p>
-                <ul className="space-y-2 text-indigo-800 text-sm">
-                  <li>• Everything in Pro</li>
-                  <li>• Files up to 1GB</li>
-                  <li>• Workflow automation</li>
-                  <li>• Table extraction, PDF comparison, eSign, redaction</li>
-                  <li>• Built for operations, finance, HR, and document-heavy teams</li>
-                </ul>
-              </div>
-              <div className="bg-slate-900 border border-amber-500 rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Crown className="h-6 w-6 text-amber-500" />
-                  <h3 className="text-xl font-bold text-white">Enterprise — $49.99/month</h3>
-                </div>
-                <p className="text-slate-200 font-medium text-sm mb-4">Best for law firms, accountants, labs, and organizations that need higher-volume extraction, priority handling, and premium workflow support.</p>
-                <ul className="space-y-2 text-slate-200 text-sm">
-                  <li>• Everything in Business</li>
-                  <li>• Table extraction to Excel: 2,000 pages per month</li>
-                  <li>• Custom workflow templates</li>
-                  <li>• Priority processing queue</li>
-                  <li>• Dedicated email support with 24-hour response time</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Plan descriptions */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <ScanText className="h-6 w-6 text-slate-700" />
-                  <h3 className="text-lg font-bold text-slate-900">Advanced PDF Conversion</h3>
-                </div>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  PDF.it covers common PDF workflows like PDF to Word, PDF to Excel, PDF to PowerPoint, Word to PDF, Excel to PDF, JPG to PDF, PNG to PDF, URL to PDF, and OCR for scanned documents. This makes the platform useful for document cleanup, editing, sharing, and archiving.
-                </p>
-              </div>
-              <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Workflow className="h-6 w-6 text-slate-700" />
-                  <h3 className="text-lg font-bold text-slate-900">Business Workflow Tools</h3>
-                </div>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  Business and Enterprise plans add workflow automation, table extraction, PDF comparison, eSign, and PDF redaction. These features are designed for legal documents, contracts, invoice processing, compliance workflows, audit support, and recurring PDF operations.
-                </p>
-              </div>
-              <div className="bg-slate-50 border border-slate-200 rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Shield className="h-6 w-6 text-slate-700" />
-                  <h3 className="text-lg font-bold text-slate-900">Enterprise-Grade Capacity</h3>
-                </div>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  Enterprise includes higher monthly table extraction limits, custom workflow templates, faster queue priority, and dedicated support. It is built for firms and teams that need reliable browser-based PDF processing without adding desktop software to every workstation.
-                </p>
-              </div>
-            </div>
-
-            {/* Our Mission */}
-            <div className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Our Mission</h2>
-              <div className="bg-[#191B4D] border border-[#252A6A] rounded-xl p-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Target className="h-6 w-6 text-white" />
-                  </div>
-                  <p className="text-slate-200 text-lg leading-relaxed">
-                    To provide reliable, browser-based PDF tools that work quickly and simply - no installs, no plugins, no technical expertise required. We want PDF conversion, OCR, redaction, eSign, table extraction, and workflow automation to be easy to access for individuals and teams alike.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Built for real workflows */}
-            <div className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-6">Built for Real Workflows</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <GraduationCap className="h-7 w-7 text-blue-600" />
-                    <h3 className="text-lg font-bold text-blue-900">Students & Researchers</h3>
-                  </div>
-                  <ul className="space-y-2 text-blue-800 text-sm">
-                    <li>• Convert papers, extract tables, compress large documents</li>
-                    <li>• Split multi-chapter PDFs into separate files</li>
-                    <li>• OCR scanned lecture notes and textbooks</li>
-                  </ul>
-                </div>
-                <div className="bg-green-50 border border-green-200 rounded-xl p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Building className="h-7 w-7 text-green-600" />
-                    <h3 className="text-lg font-bold text-green-900">Businesses</h3>
-                  </div>
-                  <ul className="space-y-2 text-green-800 text-sm">
-                    <li>• Process invoices, contracts, onboarding packets, and reports</li>
-                    <li>• Combine PDFs for submissions and client deliverables</li>
-                    <li>• Run OCR, eSign, redaction, and workflow automation</li>
-                  </ul>
-                </div>
-                <div className="bg-purple-50 border border-purple-200 rounded-xl p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Briefcase className="h-7 w-7 text-purple-600" />
-                    <h3 className="text-lg font-bold text-purple-900">Freelancers</h3>
-                  </div>
-                  <ul className="space-y-2 text-purple-800 text-sm">
-                    <li>• Prep client deliverables</li>
-                    <li>• Watermark and password-protect files</li>
-                    <li>• Compress portfolios for sharing</li>
-                  </ul>
-                </div>
-                <div className="bg-orange-50 border border-orange-200 rounded-xl p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <FileText className="h-7 w-7 text-orange-600" />
-                    <h3 className="text-lg font-bold text-orange-900">Personal Use</h3>
-                  </div>
-                  <ul className="space-y-2 text-orange-800 text-sm">
-                    <li>• Forms, organization, and sharing</li>
-                    <li>• Convert and compress everyday documents</li>
-                    <li>• Protect personal files with passwords</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Which PDF.it Plan Should You Choose?</h2>
-              <div className="bg-white border border-slate-200 rounded-xl p-8">
-                <div className="space-y-4 text-slate-600">
-                  <p>
-                    Choose <strong>Free</strong> if you need a reliable online PDF converter, PDF compressor, PDF merger, PDF splitter, or password protection tool for everyday files.
-                  </p>
-                  <p>
-                    Choose <strong>Pro</strong> if you need more advanced PDF tools like OCR, Office-to-PDF conversion, AI resume tools, larger file uploads, and unlimited usage.
-                  </p>
-                  <p>
-                    Choose <strong>Business</strong> if your team handles contracts, invoices, scanned records, comparisons, signatures, or repeatable PDF workflows.
-                  </p>
-                  <p>
-                    Choose <strong>Enterprise</strong> if you need premium support, workflow templates, high-volume table extraction, and a stronger operational setup for legal, accounting, finance, lab, or compliance-heavy work.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* CTA */}
-            <div className="text-center">
-              <div className="bg-[#191B4D] rounded-2xl p-8 md:p-12 text-white">
-                <h3 className="text-2xl md:text-3xl font-black text-white mb-4">
-                  Start converting for free
-                </h3>
-                <p className="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
-                  No account needed for free tools. Upgrade when you need unlimited access, larger files, OCR, eSign, redaction, table extraction, workflow automation, or Enterprise support.
-                </p>
-                <Link href="/#tools">
-                  <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-xl text-lg transition-colors">
-                    Start Converting Free →
-                  </button>
-                </Link>
-              </div>
-            </div>
+            <Link href="/#tools">
+              <button className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 px-8 rounded-xl text-lg transition-colors">
+                Start Converting Free
+              </button>
+            </Link>
           </div>
         </section>
       </main>
