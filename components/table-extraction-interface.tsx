@@ -185,9 +185,9 @@ export function TableExtractionInterface() {
           success: "Tablas extraidas exitosamente",
           download: "Descargar Excel",
           extractAnother: "Extraer otro",
-          upgradeTitle: "Funcion Enterprise",
-          upgradeDesc: "La Extraccion de Tablas esta disponible en el plan Enterprise.",
-          upgradeBtn: "Ver Plan Enterprise",
+          upgradeTitle: "Funcion Business",
+          upgradeDesc: "La Extraccion de Tablas esta disponible en el plan Business.",
+          upgradeBtn: "Ver Plan Business",
           errorNoTables: "No se detectaron tablas en este PDF.",
         }
       : localePrefix === "/br"
@@ -200,9 +200,9 @@ export function TableExtractionInterface() {
             success: "Tabelas extraidas com sucesso",
             download: "Baixar Excel",
             extractAnother: "Extrair outro",
-            upgradeTitle: "Funcao Enterprise",
-            upgradeDesc: "A Extracao de Tabelas esta disponivel no plano Enterprise.",
-            upgradeBtn: "Ver Plano Enterprise",
+            upgradeTitle: "Funcao Business",
+            upgradeDesc: "A Extracao de Tabelas esta disponivel no plano Business.",
+            upgradeBtn: "Ver Plano Business",
             errorNoTables: "Nenhuma tabela detectada neste PDF.",
           }
         : {
@@ -214,23 +214,23 @@ export function TableExtractionInterface() {
             success: "Tables extracted successfully",
             download: "Download Excel",
             extractAnother: "Extract another",
-            upgradeTitle: "Enterprise Feature",
-            upgradeDesc: "Table Extraction is available on the Enterprise plan.",
-            upgradeBtn: "View Enterprise Plan",
+            upgradeTitle: "Business Feature",
+            upgradeDesc: "Table Extraction is available on the Business plan.",
+            upgradeBtn: "View Business Plan",
             errorNoTables: "No tables detected in this PDF.",
           }
 
   // Non-business users see upgrade prompt
   if (!isBusinessUser) {
     return (
-      <section className="py-16" style={{ background: "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(192,197,206,0.05) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 100% 80%, rgba(20,216,196,0.04) 0%, transparent 50%), #0E0F1E" }}>
+      <section className="py-16" style={{ background: "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(107,124,255,0.05) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 100% 80%, rgba(20,216,196,0.04) 0%, transparent 50%), #0E0F1E" }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-lg mx-auto relative">
-            <div className="rounded-2xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(192,197,206,0.5), rgba(20,216,196,0.3), rgba(192,197,206,0.35), rgba(107,124,255,0.2), rgba(192,197,206,0.4))" }}>
-              <div className="rounded-[15px] p-8 pt-10 text-center relative overflow-hidden" style={{ background: "radial-gradient(ellipse 40% 30% at 50% 0%, rgba(192,197,206,0.06) 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(20,216,196,0.04) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(192,197,206,0.03) 0%, transparent 60%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 1px 1px rgba(192,197,206,0.08), 0 4px 24px rgba(0,0,0,0.3)" }}>
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest" style={{ background: "linear-gradient(135deg, #C0C5CE, #14D8C4)", color: "#0E0F1E" }}>Enterprise Feature</div>
-                <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 20px rgba(192,197,206,0.25), 0 0 40px rgba(20,216,196,0.1), 0 4px 8px rgba(0,0,0,0.2)" }}>
-                  <Crown className="h-7 w-7 text-[#C0C5CE]" />
+            <div className="rounded-2xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(107,124,255,0.5), rgba(20,216,196,0.3), rgba(107,124,255,0.35), rgba(107,124,255,0.2), rgba(107,124,255,0.4))" }}>
+              <div className="rounded-[15px] p-8 pt-10 text-center relative overflow-hidden" style={{ background: "radial-gradient(ellipse 40% 30% at 50% 0%, rgba(107,124,255,0.06) 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(20,216,196,0.04) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(107,124,255,0.03) 0%, transparent 60%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 1px 1px rgba(107,124,255,0.08), 0 4px 24px rgba(0,0,0,0.3)" }}>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest" style={{ background: "linear-gradient(135deg, #6B7CFF, #8B9AFF)", color: "#0E0F1E" }}>Business Feature</div>
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 20px rgba(107,124,255,0.3), 0 0 40px rgba(20,216,196,0.1), 0 4px 8px rgba(0,0,0,0.2)" }}>
+                  <Crown className="h-7 w-7 text-[#6B7CFF]" />
                 </div>
                 <h2 className="text-xl font-bold text-white mb-2">{labels.upgradeTitle}</h2>
                 <p className="text-sm text-slate-400 mb-6">{labels.upgradeDesc}</p>

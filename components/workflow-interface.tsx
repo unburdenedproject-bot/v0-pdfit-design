@@ -20,13 +20,13 @@ const WORKFLOW_COPY = {
     pricingSourcePath: "/pricing?source=workflow",
     signupPath: "/signup-required",
     homePath: "/",
-    businessFeature: "Enterprise Feature",
-    businessDescription: "Workflow Automation is available on the Enterprise plan. Chain multiple PDF tools into one automated workflow.",
-    upgradeButton: "Upgrade to Enterprise — $49.99/mo",
+    businessFeature: "Business Feature",
+    businessDescription: "Workflow Automation is available on the Business plan. Chain multiple PDF tools into one automated workflow.",
+    upgradeButton: "Upgrade to Business — $13.99/mo",
     upgradeTitle: "This Feature Requires an Upgrade",
     limitTitle: "You're out of free conversions",
-    upgradeLabel: "Upgrade to Enterprise",
-    upgradeDescription: "This tool is available on the Enterprise plan. Upgrade to unlock unlimited access to all PDF tools.",
+    upgradeLabel: "Upgrade to Business",
+    upgradeDescription: "This tool is available on the Business plan. Upgrade to unlock unlimited access to all PDF tools.",
     limitDescription: "Free includes 10 conversions per day. Upgrade for unlimited conversions.",
     goBack: "Go Back",
     failedTitle: "Workflow Failed",
@@ -61,13 +61,13 @@ const WORKFLOW_COPY = {
     pricingSourcePath: "/es/precios?source=workflow",
     signupPath: "/es/registro-requerido",
     homePath: "/es",
-    businessFeature: "Función Enterprise",
-    businessDescription: "Automatización de Flujos está disponible en el plan Enterprise. Encadena varias herramientas PDF en un flujo automatizado.",
-    upgradeButton: "Mejorar a Enterprise — $49.99/mes",
+    businessFeature: "Función Business",
+    businessDescription: "Automatización de Flujos está disponible en el plan Business. Encadena varias herramientas PDF en un flujo automatizado.",
+    upgradeButton: "Mejorar a Business — $13.99/mes",
     upgradeTitle: "Esta función requiere una mejora",
     limitTitle: "Ya no tienes conversiones gratis",
-    upgradeLabel: "Mejorar a Enterprise",
-    upgradeDescription: "Esta herramienta está disponible en el plan Enterprise. Mejora para desbloquear acceso ilimitado a todas las herramientas PDF.",
+    upgradeLabel: "Mejorar a Business",
+    upgradeDescription: "Esta herramienta está disponible en el plan Business. Mejora para desbloquear acceso ilimitado a todas las herramientas PDF.",
     limitDescription: "Free incluye 10 conversiones por día. Mejora para conversiones ilimitadas.",
     goBack: "Volver",
     failedTitle: "El flujo falló",
@@ -102,13 +102,13 @@ const WORKFLOW_COPY = {
     pricingSourcePath: "/br/precos?source=workflow",
     signupPath: "/br/cadastro-obrigatorio",
     homePath: "/br",
-    businessFeature: "Recurso Enterprise",
-    businessDescription: "Automação de Fluxos está disponível no plano Enterprise. Encadeie várias ferramentas PDF em um fluxo automatizado.",
-    upgradeButton: "Fazer upgrade para Enterprise — $49.99/mês",
+    businessFeature: "Recurso Business",
+    businessDescription: "Automação de Fluxos está disponível no plano Business. Encadeie várias ferramentas PDF em um fluxo automatizado.",
+    upgradeButton: "Fazer upgrade para Business — $13.99/mês",
     upgradeTitle: "Este recurso exige upgrade",
     limitTitle: "Você ficou sem conversões gratuitas",
-    upgradeLabel: "Fazer upgrade para Enterprise",
-    upgradeDescription: "Esta ferramenta está disponível no plano Enterprise. Faça upgrade para desbloquear acesso ilimitado a todas as ferramentas PDF.",
+    upgradeLabel: "Fazer upgrade para Business",
+    upgradeDescription: "Esta ferramenta está disponível no plano Business. Faça upgrade para desbloquear acesso ilimitado a todas as ferramentas PDF.",
     limitDescription: "Free inclui 10 conversões por dia. Faça upgrade para conversões ilimitadas.",
     goBack: "Voltar",
     failedTitle: "O fluxo falhou",
@@ -530,14 +530,14 @@ export function WorkflowInterface({ locale = "en" }: { locale?: ToolLocale }) {
   // Not a Business user — show upgrade prompt
   if (!isBusinessUser && userPlan !== "loading") {
     return (
-      <section className="py-16" style={{ background: "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(192,197,206,0.05) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 100% 80%, rgba(20,216,196,0.04) 0%, transparent 50%), #0E0F1E" }}>
+      <section className="py-16" style={{ background: "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(107,124,255,0.05) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 100% 80%, rgba(20,216,196,0.04) 0%, transparent 50%), #0E0F1E" }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-lg mx-auto relative">
-            <div className="rounded-2xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(192,197,206,0.5), rgba(20,216,196,0.3), rgba(192,197,206,0.35), rgba(107,124,255,0.2), rgba(192,197,206,0.4))" }}>
-              <div className="rounded-[15px] p-8 pt-10 text-center relative overflow-hidden" style={{ background: "radial-gradient(ellipse 40% 30% at 50% 0%, rgba(192,197,206,0.06) 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(20,216,196,0.04) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(192,197,206,0.03) 0%, transparent 60%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 1px 1px rgba(192,197,206,0.08), 0 4px 24px rgba(0,0,0,0.3)" }}>
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest" style={{ background: "linear-gradient(135deg, #C0C5CE, #14D8C4)", color: "#0E0F1E" }}>Enterprise Feature</div>
-                <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 20px rgba(192,197,206,0.25), 0 0 40px rgba(20,216,196,0.1), 0 4px 8px rgba(0,0,0,0.2)" }}>
-                  <Crown className="h-7 w-7 text-[#C0C5CE]" />
+            <div className="rounded-2xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(107,124,255,0.5), rgba(20,216,196,0.3), rgba(107,124,255,0.35), rgba(107,124,255,0.2), rgba(107,124,255,0.4))" }}>
+              <div className="rounded-[15px] p-8 pt-10 text-center relative overflow-hidden" style={{ background: "radial-gradient(ellipse 40% 30% at 50% 0%, rgba(107,124,255,0.06) 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(20,216,196,0.04) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(107,124,255,0.03) 0%, transparent 60%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 1px 1px rgba(107,124,255,0.08), 0 4px 24px rgba(0,0,0,0.3)" }}>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest" style={{ background: "linear-gradient(135deg, #6B7CFF, #8B9AFF)", color: "#0E0F1E" }}>Business Feature</div>
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 20px rgba(107,124,255,0.3), 0 0 40px rgba(20,216,196,0.1), 0 4px 8px rgba(0,0,0,0.2)" }}>
+                  <Crown className="h-7 w-7 text-[#6B7CFF]" />
                 </div>
                 <h2 className="text-xl font-bold text-white mb-2">{copy.businessFeature}</h2>
                 <p className="text-sm text-slate-400 mb-6">{copy.businessDescription}</p>
@@ -563,14 +563,14 @@ export function WorkflowInterface({ locale = "en" }: { locale?: ToolLocale }) {
 
     if (isUpgradeError || isLimitError) {
       return (
-        <section className="py-16" style={{ background: "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(192,197,206,0.05) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 100% 80%, rgba(20,216,196,0.04) 0%, transparent 50%), #0E0F1E" }}>
+        <section className="py-16" style={{ background: "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(107,124,255,0.05) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 100% 80%, rgba(20,216,196,0.04) 0%, transparent 50%), #0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-lg mx-auto relative">
-              <div className="rounded-2xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(192,197,206,0.5), rgba(20,216,196,0.3), rgba(192,197,206,0.35), rgba(107,124,255,0.2), rgba(192,197,206,0.4))" }}>
-                <div className="rounded-[15px] p-8 pt-10 text-center relative overflow-hidden" style={{ background: "radial-gradient(ellipse 40% 30% at 50% 0%, rgba(192,197,206,0.06) 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(20,216,196,0.04) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(192,197,206,0.03) 0%, transparent 60%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 1px 1px rgba(192,197,206,0.08), 0 4px 24px rgba(0,0,0,0.3)" }}>
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest" style={{ background: "linear-gradient(135deg, #C0C5CE, #14D8C4)", color: "#0E0F1E" }}>Enterprise Feature</div>
-                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 20px rgba(192,197,206,0.25), 0 0 40px rgba(20,216,196,0.1), 0 4px 8px rgba(0,0,0,0.2)" }}>
-                    <Crown className="h-7 w-7 text-[#C0C5CE]" />
+              <div className="rounded-2xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(107,124,255,0.5), rgba(20,216,196,0.3), rgba(107,124,255,0.35), rgba(107,124,255,0.2), rgba(107,124,255,0.4))" }}>
+                <div className="rounded-[15px] p-8 pt-10 text-center relative overflow-hidden" style={{ background: "radial-gradient(ellipse 40% 30% at 50% 0%, rgba(107,124,255,0.06) 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(20,216,196,0.04) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(107,124,255,0.03) 0%, transparent 60%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 1px 1px rgba(107,124,255,0.08), 0 4px 24px rgba(0,0,0,0.3)" }}>
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest" style={{ background: "linear-gradient(135deg, #6B7CFF, #8B9AFF)", color: "#0E0F1E" }}>Business Feature</div>
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 20px rgba(107,124,255,0.3), 0 0 40px rgba(20,216,196,0.1), 0 4px 8px rgba(0,0,0,0.2)" }}>
+                    <Crown className="h-7 w-7 text-[#6B7CFF]" />
                   </div>
                   <h2 className="text-xl font-bold text-white mb-2">
                     {isUpgradeError ? copy.upgradeTitle : copy.limitTitle}
