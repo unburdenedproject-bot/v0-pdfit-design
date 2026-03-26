@@ -376,6 +376,7 @@
 
 ### Legal Pages Redesigned — March 26 2026
 - `/privacy-policy` (EN/ES/BR) — dark cinematic hero, glassmorphism policy card on dark bg, teal accents, teal bullet markers, privacy footer section. All legal text preserved exactly.
+- `/terms-conditions` (EN/ES/BR) — same dark cinematic treatment: glassmorphism card, teal bullets, teal links, privacy footer. All legal text preserved exactly.
 
 ## Google Search Console Status
 - Sitemap index with 542 URLs across EN/ES/BR — 3 sub-sitemaps of 200 each
