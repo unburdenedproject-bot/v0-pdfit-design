@@ -273,14 +273,14 @@ const categories = [
         description: "Chain multiple PDF tools into one automated workflow.",
         icon: Repeat,
         href: "/workflow-automation",
-        tier: "BUSINESS" as const,
+        tier: "ENTERPRISE" as const,
       },
       {
         name: "Table Extraction",
         description: "Extract tables from PDFs directly into Excel spreadsheets.",
         icon: FileSpreadsheet,
         href: "/table-extraction",
-        tier: "BUSINESS" as const,
+        tier: "ENTERPRISE" as const,
       },
       {
         name: "PDF Compare",

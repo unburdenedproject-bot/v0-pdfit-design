@@ -272,14 +272,14 @@ const categories = [
         description: "Encadena múltiples herramientas PDF en un flujo automatizado.",
         icon: Repeat,
         href: "/es/automatizacion",
-        tier: "BUSINESS" as const,
+        tier: "ENTERPRISE" as const,
       },
       {
         name: "Extracción de Tablas",
         description: "Extrae tablas de PDFs directamente a hojas de cálculo Excel.",
         icon: FileSpreadsheet,
         href: "/es/extraccion-de-tablas",
-        tier: "BUSINESS" as const,
+        tier: "ENTERPRISE" as const,
       },
       {
         name: "Comparar PDF",

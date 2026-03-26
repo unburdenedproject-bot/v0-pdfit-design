@@ -117,7 +117,7 @@ export default function ExtraccionTablasAltoVolumenPage() {
         </section>
 
         {/* Table Extraction Interface */}
-        <TableExtractionInterface />
+        <TableExtractionInterface enterpriseMode />
 
         {/* Feature Blocks */}
         <section
