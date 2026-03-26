@@ -1,24 +1,14 @@
 import Link from "next/link"
+import Script from "next/script"
 import { HeaderEs } from "@/components/header-es"
 import { FooterEs } from "@/components/footer-es"
-import { Calendar, ArrowRight } from "lucide-react"
+import { Calendar, ArrowRight, BookOpen, Shield } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Blog de PDF.it — Consejos PDF, Nuevas Funciones y Actualizaciones",
   description:
     "Noticias, actualizaciones y consejos del equipo de PDF.it. Aprende sobre nuevas funciones, mejores practicas PDF, herramientas de curriculum con IA y extraccion de tablas.",
-  keywords: [
-    "blog PDF.it",
-    "consejos PDF",
-    "herramientas PDF actualizaciones",
-    "comprimir PDF consejos",
-    "unir PDF guia",
-    "optimizador ATS curriculum",
-    "extraccion de tablas PDF",
-    "firma electronica documentos",
-    "mejores practicas PDF",
-  ],
   openGraph: {
     title: "Blog de PDF.it — Consejos PDF, Nuevas Funciones y Actualizaciones",
     description: "Noticias, actualizaciones y consejos del equipo de PDF.it. Nuevas funciones y mejores practicas PDF.",
@@ -46,61 +36,203 @@ export const metadata: Metadata = {
 
 const posts = [
   {
-    slug: "/blog/welcome-to-pdfit",
+    slug: "welcome-to-pdfit",
     title: "Bienvenido a PDF.it — Herramientas PDF para Profesionales",
-    excerpt: "Creamos PDF.it porque los profesionales merecen mejores herramientas PDF. Nuestra historia y lo que nos hace diferentes.",
+    excerpt:
+      "Creamos PDF.it porque los profesionales merecen mejores herramientas PDF. Nuestra historia y lo que nos hace diferentes.",
     date: "2026-04-01",
     category: "Anuncio",
   },
   {
-    slug: "/blog/table-extraction-excel",
+    slug: "table-extraction-excel",
     title: "Nueva Funcion: Extrae Tablas de PDFs a Excel con IA",
-    excerpt: "Nuestra nueva herramienta de Extraccion de Tablas usa Google Document AI para detectar y exportar tablas de cualquier PDF a hojas de calculo Excel.",
+    excerpt:
+      "Nuestra nueva herramienta de Extraccion de Tablas usa Google Document AI para detectar y exportar tablas de cualquier PDF a hojas de calculo Excel.",
     date: "2026-04-01",
     category: "Producto",
   },
   {
-    slug: "/blog/why-three-languages",
+    slug: "why-three-languages",
     title: "Por Que PDF.it Habla Ingles, Espanol y Portugues",
-    excerpt: "La mayoria de herramientas PDF solo funcionan en ingles. Construimos PDF.it para profesionales en todo el mundo.",
+    excerpt:
+      "La mayoria de herramientas PDF solo funcionan en ingles. Construimos PDF.it para profesionales en todo el mundo.",
     date: "2026-04-01",
     category: "Empresa",
   },
 ]
 
+const featured = posts[0]
+const remaining = posts.slice(1)
+
 export default function BlogPageEs() {
   return (
-    <div className="min-h-screen bg-[#F3F4FF]">
+    <div className="min-h-screen bg-[#0E0F1E]">
       <HeaderEs />
       <main>
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Hero */}
+        <section className="relative overflow-hidden bg-[#0E0F1E] text-white pt-24 pb-16">
+          <div
+            className="absolute inset-0 opacity-40"
+            style={{
+              background:
+                "radial-gradient(ellipse at 20% 50%, rgba(10,74,92,0.5) 0%, transparent 60%), radial-gradient(ellipse at 80% 50%, rgba(30,111,217,0.3) 0%, transparent 60%)",
+            }}
+          />
+          <svg className="absolute inset-0 w-full h-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
+            <filter id="grain-es">
+              <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch" />
+            </filter>
+            <rect width="100%" height="100%" filter="url(#grain-es)" />
+          </svg>
+          <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Blog</h1>
-              <p className="text-xl text-slate-300">Noticias, actualizaciones y consejos del equipo de PDF.it.</p>
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-6" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.15) 0%, rgba(10,74,92,0.3) 100%)", border: "1px solid rgba(20,216,196,0.2)" }}>
+                <BookOpen className="h-8 w-8 text-[#14D8C4]" style={{ filter: "drop-shadow(0 0 8px rgba(20,216,196,0.5))" }} />
+              </div>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4 tracking-tight">Blog</h1>
+              <p className="text-lg text-slate-400 max-w-2xl mx-auto mb-6">
+                Noticias, actualizaciones de producto y consejos practicos para trabajar con PDFs — del equipo de PDF.it.
+              </p>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium" style={{ background: "rgba(20,216,196,0.1)", border: "1px solid rgba(20,216,196,0.25)", color: "#14D8C4" }}>
+                {posts.length} articulos
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="py-16">
+        {/* Featured Post */}
+        <section className="relative bg-[#0E0F1E] pb-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto space-y-8">
-              {posts.map((post) => (
-                <Link key={post.slug} href={post.slug} className="block group bg-white rounded-2xl border border-slate-200 p-8 hover:border-orange-300 hover:shadow-lg transition-all duration-200">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1 rounded-full">{post.category}</span>
-                    <div className="flex items-center gap-1.5 text-sm text-slate-400"><Calendar className="h-3.5 w-3.5" />{post.date}</div>
+            <div className="max-w-4xl mx-auto">
+              <div className="rounded-2xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(30,111,217,0.3), rgba(232,129,58,0.2))" }}>
+                <Link href={`/blog/${featured.slug}`} className="block group rounded-2xl p-8 lg:p-10 transition-all duration-300 hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.05)", backdropFilter: "blur(12px)" }}>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-xs font-bold px-3 py-1 rounded-full" style={{ background: "rgba(20,216,196,0.1)", border: "1px solid rgba(20,216,196,0.3)", color: "#14D8C4" }}>
+                      Destacado
+                    </span>
+                    <span className="text-xs font-bold px-3 py-1 rounded-full" style={{ background: "rgba(20,216,196,0.08)", border: "1px solid rgba(20,216,196,0.2)", color: "#14D8C4" }}>
+                      {featured.category}
+                    </span>
+                    <div className="flex items-center gap-1.5 text-sm text-slate-500">
+                      <Calendar className="h-3.5 w-3.5" />
+                      {featured.date}
+                    </div>
                   </div>
-                  <h2 className="text-xl font-black text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{post.title}</h2>
-                  <p className="text-slate-600 mb-4">{post.excerpt}</p>
-                  <div className="flex items-center gap-1 text-orange-500 font-semibold text-sm">Leer mas <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" /></div>
+                  <h2 className="text-2xl lg:text-3xl font-black text-white mb-3 group-hover:text-[#14D8C4] transition-colors">
+                    {featured.title}
+                  </h2>
+                  <p className="text-slate-400 text-lg mb-5">{featured.excerpt}</p>
+                  <div className="flex items-center gap-1 text-[#14D8C4] font-semibold text-sm">
+                    Leer mas <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Blog Grid */}
+        <section className="relative bg-[#0E0F1E] pb-20">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+              {remaining.map((post) => (
+                <div key={post.slug} className="rounded-2xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.3), rgba(30,111,217,0.2), rgba(232,129,58,0.15))" }}>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="block group rounded-2xl p-7 h-full transition-all duration-300 hover:-translate-y-1"
+                    style={{ background: "rgba(255,255,255,0.05)", backdropFilter: "blur(12px)" }}
+                  >
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="text-xs font-bold px-3 py-1 rounded-full" style={{ background: "rgba(20,216,196,0.08)", border: "1px solid rgba(20,216,196,0.2)", color: "#14D8C4" }}>
+                        {post.category}
+                      </span>
+                      <div className="flex items-center gap-1.5 text-sm text-slate-500">
+                        <Calendar className="h-3.5 w-3.5" />
+                        {post.date}
+                      </div>
+                    </div>
+                    <h2 className="text-xl font-black text-white mb-2 group-hover:text-[#14D8C4] transition-colors">
+                      {post.title}
+                    </h2>
+                    <p className="text-slate-400 mb-4">{post.excerpt}</p>
+                    <div className="flex items-center gap-1 text-[#14D8C4] font-semibold text-sm">
+                      Leer mas <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </Link>
+                </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Newsletter CTA */}
+        <section className="relative overflow-hidden bg-[#0E0F1E] py-16">
+          <div
+            className="absolute inset-0 opacity-30"
+            style={{
+              background:
+                "radial-gradient(ellipse at 30% 50%, rgba(10,74,92,0.5) 0%, transparent 50%), radial-gradient(ellipse at 70% 50%, rgba(30,111,217,0.4) 0%, transparent 50%), radial-gradient(ellipse at 50% 80%, rgba(232,129,58,0.2) 0%, transparent 50%)",
+            }}
+          />
+          <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-2xl mx-auto">
+              <div className="rounded-2xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.3), rgba(30,111,217,0.2))" }}>
+                <div className="rounded-2xl p-8 text-center" style={{ background: "rgba(255,255,255,0.05)", backdropFilter: "blur(12px)" }}>
+                  <h2 className="text-2xl font-black text-white mb-3">Mantente Actualizado</h2>
+                  <p className="text-slate-400 mb-6">
+                    Recibe consejos PDF, actualizaciones de producto y mejores practicas del equipo de PDF.it.
+                  </p>
+                  <Link
+                    href="/es/blog"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all duration-200 hover:brightness-110"
+                    style={{ background: "linear-gradient(135deg, #14D8C4, #0A4A5C)" }}
+                  >
+                    Sigue Nuestro Blog
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <p className="text-slate-500 text-sm mt-4">Respetamos tu bandeja de entrada. Sin spam, nunca.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Privacy Footer */}
+        <section className="bg-[#0E0F1E] py-8 border-t border-white/5">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-center gap-2 text-slate-500 text-sm">
+              <Shield className="h-4 w-4" />
+              Tus documentos nunca se almacenan. Los archivos se eliminan inmediatamente despues de la descarga.
             </div>
           </div>
         </section>
       </main>
       <FooterEs />
+
+      <Script id="blog-schema-es" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          name: "Blog de PDF.it",
+          description: "Noticias, actualizaciones y consejos del equipo de PDF.it. Nuevas funciones y mejores practicas PDF.",
+          url: "https://pdf.it.com/es/blog",
+          inLanguage: "es",
+          publisher: {
+            "@type": "Organization",
+            name: "PDF.it",
+            url: "https://pdf.it.com",
+            logo: { "@type": "ImageObject", url: "https://pdf.it.com/og-logo.png" },
+          },
+          blogPost: posts.map((post) => ({
+            "@type": "BlogPosting",
+            headline: post.title,
+            description: post.excerpt,
+            datePublished: post.date,
+            url: `https://pdf.it.com/blog/${post.slug}`,
+            author: { "@type": "Organization", name: "PDF.it" },
+          })),
+        })}
+      </Script>
     </div>
   )
 }
