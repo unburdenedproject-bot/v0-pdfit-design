@@ -354,7 +354,27 @@
 - Contact page email overflow fixed on ES/BR (responsive text + break-all)
 - Tier badge "Best for Teams" wrapping fixed with whitespace-nowrap
 
+### System Audit — March 26 2026
+- Full audit of all 38 API routes, 14 interface components, and `checkUsageAndAuth()` function
+- All Pro+ API routes correctly include `enterprise` in allowed plans
+- All Business+ API routes correctly include `enterprise` in allowed plans
+- `checkUsageAndAuth()` correctly gives unlimited access to Pro/Business/Enterprise
+- File size limits correctly gated: Free=25MB, Pro=200MB, Business=1GB, Enterprise=1GB (in `lib/upload-to-blob.ts`)
+- **Fixed**: Workflow API (`app/api/workflow/route.js`) was allowing Business users through — changed to Enterprise-only to match UI gate
+
+### Sitemap Fix — March 26 2026
+- Converted from single `sitemap()` to `generateSitemaps()` index pattern (Next.js 15)
+- Split 542 URLs into 3 sub-sitemaps of 200 each (`/sitemap/0.xml`, `/sitemap/1.xml`, `/sitemap/2.xml`)
+- Google was only discovering 200 of 536 URLs due to single-sitemap limitation
+- Added 6 missing URLs: `/high-volume-table-extraction` (EN/ES/BR), 3 new blog articles
+- Total: 542 URLs across EN/ES/BR
+
+### Remaining Pages Fixed — March 26 2026
+- `/signup-required` (EN/ES/BR) — rewritten with dark cinematic glassmorphism card, teal CTA, privacy note
+- `/reset-password` — rewritten with dark glassmorphism, dark inputs, teal accents, password show/hide toggles
+- `public/logo.svg` — replaced OmnisPDF SVG with PDF.it text logo ("PDF" in dark + ".it" in teal)
+
 ## Google Search Console Status
-- Sitemap with 1,130+ URLs across EN/ES/BR — submitted 2026-03-12, updated 2026-03-18 (added URL to PDF)
+- Sitemap index with 542 URLs across EN/ES/BR — 3 sub-sitemaps of 200 each
 - DO NOT break any existing indexed pages
 - English, Spanish, and Brazilian pages all included in sitemap
