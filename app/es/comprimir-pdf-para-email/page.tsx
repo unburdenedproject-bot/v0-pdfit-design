@@ -2,7 +2,7 @@ import Script from "next/script"
 import { HeaderEs } from "@/components/header-es"
 import { FooterEs } from "@/components/footer-es"
 import { ProcessingInterface } from "@/components/processing-interface"
-import { FileArchiveIcon as Compress, Zap, Shield, Mail } from "lucide-react"
+import { Mail, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
@@ -17,70 +17,72 @@ export const metadata = {
   },
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Cómo comprimo un PDF para email?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it, haz clic en Comprimir y descarga un archivo más pequeño listo para adjuntar a tu email." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuál es el tamaño máximo de adjunto en email?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Gmail permite 25MB, Outlook permite 20MB y Yahoo Mail permite 25MB. PDF.it comprime tu PDF para que quepa dentro de estos límites." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿El PDF se verá bien después de la compresión?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it usa compresión inteligente que mantiene el texto nítido y las páginas legibles. La calidad de imagen puede reducirse ligeramente, pero el documento se mantiene profesional." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo comprimir varios PDFs para email?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Sube varios PDFs y PDF.it comprimirá cada uno individualmente. También puedes unirlos primero con la herramienta Unir PDF." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo comprimir un PDF para email desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — comprime y envía PDFs por email directamente desde tu iPhone o Android." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué hago si mi PDF sigue siendo muy grande para email?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Intenta usar la herramienta Dividir PDF de PDF.it para separar el documento en partes más pequeñas, luego comprime y envía cada parte por separado." }
-    }
-  ]
-}
-
 export default function ComprimirPDFParaEmailPage() {
+  const faqs = [
+    { q: "¿Cómo comprimo un PDF para email?", a: "Sube tu PDF a PDF.it, haz clic en Comprimir y descarga un archivo más pequeño listo para adjuntar a tu email." },
+    { q: "¿Cuál es el tamaño máximo de adjunto en email?", a: "Gmail permite 25MB, Outlook permite 20MB y Yahoo Mail permite 25MB. PDF.it comprime tu PDF para que quepa dentro de estos límites." },
+    { q: "¿El PDF se verá bien después de la compresión?", a: "Sí. PDF.it usa compresión inteligente que mantiene el texto nítido y las páginas legibles. La calidad de imagen puede reducirse ligeramente, pero el documento se mantiene profesional." },
+    { q: "¿Puedo comprimir varios PDFs para email?", a: "Sí. Sube varios PDFs y PDF.it comprimirá cada uno individualmente. También puedes unirlos primero con la herramienta Unir PDF." },
+    { q: "¿Puedo comprimir un PDF para email desde mi celular?", a: "Sí. PDF.it funciona en navegadores móviles — comprime y envía PDFs por email directamente desde tu iPhone o Android." },
+    { q: "¿Qué hago si mi PDF sigue siendo muy grande para email?", a: "Intenta usar la herramienta Dividir PDF de PDF.it para separar el documento en partes más pequeñas, luego comprime y envía cada parte por separado." },
+  ]
+
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderEs />
       <main>
         {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section
+          className="text-white py-16 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#heroGrain)" />
+          </svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Mail className="h-10 w-10 text-white" />
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                  boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)",
+                }}
+              >
+                <Mail className="h-10 w-10 text-[#14D8C4]" />
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF para Email</h1>
               <p className="text-xl text-slate-300 mb-8">
                 Reduce tu PDF para que quepa como adjunto de email. Funciona con Gmail, Outlook, Yahoo Mail y cualquier proveedor de correo — compresión instantánea en tu navegador.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Compresión Inteligente</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-orange-500" /><span>Archivos Eliminados Tras la Sesión</span></div>
-                <div className="flex items-center gap-2"><Mail className="h-4 w-4 text-orange-500" /><span>Tamaño Listo para Email</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compresión Inteligente</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesión</span></div>
+                <div className="flex items-center gap-2"><Mail className="h-4 w-4 text-[#14D8C4]" /><span>Tamaño Listo para Email</span></div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Intro */}
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Los adjuntos de email tienen límites de tamaño — Gmail tiene un tope de 25MB, Outlook de 20MB. PDF.it comprime tu PDF para que quepa como adjunto de email sin perder legibilidad. Sube, comprime, descarga y adjunta en segundos.
+            </p>
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">✓ Comprime PDFs para cumplir los límites de Gmail, Outlook y Yahoo</li>
+              <li className="flex items-center gap-2">✓ Compresión inteligente que mantiene documentos profesionales</li>
+              <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
+              <li className="flex items-center gap-2">✓ Sin instalación — comprime PDFs en tu navegador</li>
+            </ul>
           </div>
         </section>
 
@@ -94,81 +96,76 @@ export default function ComprimirPDFParaEmailPage() {
           compressionLevel="recommended"
         />
 
-        {/* About */}
-        <section className="py-16 bg-gray-50">
+        {/* Feature Blocks */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <p className="text-lg text-slate-600 mb-8">
-              Los adjuntos de email tienen límites de tamaño — Gmail tiene un tope de 25MB, Outlook de 20MB. PDF.it comprime tu PDF para que quepa como adjunto de email sin perder legibilidad. Sube, comprime, descarga y adjunta en segundos.
-            </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>✓ Comprime PDFs para cumplir los límites de Gmail, Outlook y Yahoo</li>
-              <li>✓ Compresión inteligente que mantiene documentos profesionales</li>
-              <li>✓ Ideal para contratos, facturas, informes y formularios</li>
-              <li>✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li>✓ Sin instalación — comprime PDFs en tu navegador</li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Email Limits */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Límites de Tamaño de Adjuntos por Email</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { provider: "Gmail", limit: "25MB", color: "bg-red-50 border-red-200" },
-                { provider: "Outlook", limit: "20MB", color: "bg-blue-50 border-blue-200" },
-                { provider: "Yahoo Mail", limit: "25MB", color: "bg-purple-50 border-purple-200" },
-              ].map((item) => (
-                <div key={item.provider} className={`${item.color} border rounded-xl p-6 text-center`}>
-                  <div className="text-lg font-bold text-slate-900">{item.provider}</div>
-                  <div className="text-3xl font-black text-orange-600 mt-2">{item.limit}</div>
-                  <div className="text-sm text-slate-500 mt-1">adjunto máximo</div>
+                { title: "Envía Contratos y Facturas", desc: "Los contratos y facturas grandes con firmas a menudo superan los límites de email. PDF.it los comprime a un tamaño enviable manteniendo cada página nítida." },
+                { title: "Comprime Informes y Presentaciones", desc: "Los informes con gráficos, imágenes y tablas pueden ser enormes. Reduce el tamaño del archivo para enviarlo directamente por email en vez de usar enlaces compartidos." },
+                { title: "Funciona Desde Cualquier Dispositivo", desc: "¿Necesitas enviar un PDF comprimido desde tu celular? PDF.it funciona en navegadores móviles — comprime y envía por email sobre la marcha." },
+              ].map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <div
+                    className="rounded-[11px] p-6 h-full"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Feature Sections */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Envía Contratos y Facturas Sin Que Reboten</h2>
-              <p className="text-slate-600">
-                Los contratos y facturas grandes con firmas a menudo superan los límites de email. PDF.it los comprime a un tamaño enviable manteniendo cada página nítida y profesional.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Comprime Informes y Presentaciones</h2>
-              <p className="text-slate-600">
-                Los informes con gráficos, imágenes y tablas pueden ser enormes. PDF.it reduce el tamaño del archivo para que puedas enviarlos por email directamente en vez de usar enlaces de archivos compartidos.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Funciona Desde Cualquier Dispositivo</h2>
-              <p className="text-slate-600">
-                ¿Necesitas enviar un PDF comprimido desde tu celular? PDF.it funciona en navegadores móviles — comprime y envía por email sobre la marcha.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* How To */}
+        {/* How It Works */}
         <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Comprimir un PDF para Email</h2>
-            <div className="space-y-4">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Cómo Comprimir un PDF para Email</h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
               {[
-                "Sube o arrastra tu PDF a PDF.it.",
-                "Haz clic en Comprimir PDF — la compresión inteligente se aplica automáticamente.",
-                "Descarga el PDF más pequeño y adjúntalo a tu email.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
+                { num: "1", title: "Sube tu PDF", desc: "Arrastra y suelta o haz clic para elegir un archivo" },
+                { num: "2", title: "Haz clic en Comprimir", desc: "La compresión inteligente se aplica automáticamente" },
+                { num: "3", title: "Descarga y adjunta", desc: "Obtén tu PDF listo para email al instante" },
+              ].map((step) => (
+                <div key={step.num} className="flex-1">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                      border: "1px solid rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <span className="text-[#14D8C4] font-black text-lg">{step.num}</span>
                   </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
+                  <p className="font-semibold text-slate-900">{step.title}</p>
+                  <p className="text-sm text-slate-500 mt-1">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -176,50 +173,89 @@ export default function ComprimirPDFParaEmailPage() {
         </section>
 
         {/* Related Tools */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16" style={{ background: "#0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "Comprimir a 5MB", href: "/compress-pdf-to-5mb", desc: "Cumple límites de 5MB" },
-                { name: "Comprimir a 2MB", href: "/compress-pdf-to-2mb", desc: "Tamaños estrictos" },
+                { name: "Comprimir a 5MB", href: "/es/comprimir-pdf-a-5mb", desc: "Cumple límites de 5MB" },
+                { name: "Comprimir a 2MB", href: "/es/comprimir-pdf-a-2mb", desc: "Tamaños estrictos" },
                 { name: "Unir PDF", href: "/es/unir-pdf", desc: "Combina antes de enviar" },
                 { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Divide si sigue siendo muy grande" },
               ].map((tool) => (
-                <Link
+                <div
                   key={tool.href}
-                  href={tool.href}
-                  className="rounded-xl p-4 transition-all text-center flex flex-col justify-center min-h-[80px] hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(20,216,196,0.25)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.2)" }}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
                 >
-                  <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
-                  <div className="text-xs text-slate-400">{tool.desc}</div>
-                </Link>
+                  <Link
+                    href={tool.href}
+                    className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
+                    <div className="text-xs text-slate-400">{tool.desc}</div>
+                  </Link>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-[#F3F4FF]">
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
-            <div className="space-y-6">
-              {[
-                { q: "¿Cómo comprimo un PDF para email?", a: "Sube tu PDF a PDF.it, haz clic en Comprimir y descarga un archivo más pequeño listo para adjuntar a tu email." },
-                { q: "¿Cuál es el tamaño máximo de adjunto en email?", a: "Gmail permite 25MB, Outlook permite 20MB y Yahoo Mail permite 25MB. PDF.it comprime tu PDF para que quepa dentro de estos límites." },
-                { q: "¿El PDF se verá bien después de la compresión?", a: "Sí. PDF.it usa compresión inteligente que mantiene el texto nítido y las páginas legibles. La calidad de imagen puede reducirse ligeramente, pero el documento se mantiene profesional." },
-                { q: "¿Puedo comprimir varios PDFs para email?", a: "Sí. Sube varios PDFs y PDF.it comprimirá cada uno individualmente. También puedes unirlos primero con la herramienta Unir PDF." },
-                { q: "¿Puedo comprimir un PDF para email desde mi celular?", a: "Sí. PDF.it funciona en navegadores móviles — comprime y envía PDFs por email directamente desde tu iPhone o Android." },
-                { q: "¿Qué hago si mi PDF sigue siendo muy grande para email?", a: "Intenta usar la herramienta Dividir PDF de PDF.it para separar el documento en partes más pequeñas, luego comprime y envía cada parte por separado." },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
+            <h2 className="text-3xl font-black text-white mb-10 text-center">Preguntas Frecuentes</h2>
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl p-6"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
+
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+          }))
+        })}} />
       </main>
       <FooterEs />
     </div>
