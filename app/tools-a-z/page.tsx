@@ -83,43 +83,22 @@ const tools = [
   { name: "Workflow Templates", description: "Pre-built workflows for legal, accounting, and lab documents.", icon: Layers, href: "/workflow-automation", tier: "ENTERPRISE" },
 ]
 
+const tierColors: Record<string, { badge: string; border: string; glow: string; check: string }> = {
+  FREE: { badge: "rgba(148,163,184,0.15)", border: "rgba(148,163,184,0.3)", glow: "rgba(148,163,184,0.15)", check: "#94A3B8" },
+  PRO: { badge: "rgba(214,179,106,0.15)", border: "rgba(214,179,106,0.4)", glow: "rgba(214,179,106,0.25)", check: "#E0C27A" },
+  BUSINESS: { badge: "rgba(107,124,255,0.15)", border: "rgba(107,124,255,0.4)", glow: "rgba(107,124,255,0.3)", check: "#6B7CFF" },
+  ENTERPRISE: { badge: "rgba(192,197,206,0.15)", border: "rgba(192,197,206,0.4)", glow: "rgba(192,197,206,0.25)", check: "#C0C5CE" },
+}
+
 function TierBadge({ tier }: { tier: string }) {
-  if (tier === "ENTERPRISE") {
-    return (
-      <span
-        className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide"
-        style={{ background: "rgba(255,255,255,0.1)", color: "#E8813A", border: "1px solid rgba(232,129,58,0.3)" }}
-      >
-        Enterprise
-      </span>
-    )
-  }
-  if (tier === "BUSINESS") {
-    return (
-      <span
-        className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide"
-        style={{ background: "rgba(107,124,255,0.15)", color: "#A5B4FC", border: "1px solid rgba(107,124,255,0.3)" }}
-      >
-        Business
-      </span>
-    )
-  }
-  if (tier === "PRO") {
-    return (
-      <span
-        className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide"
-        style={{ background: "rgba(20,216,196,0.15)", color: "#14D8C4", border: "1px solid rgba(20,216,196,0.3)" }}
-      >
-        Pro
-      </span>
-    )
-  }
+  const c = tierColors[tier] || tierColors.FREE
+  const labels: Record<string, string> = { FREE: "Free", PRO: "Pro", BUSINESS: "Business", ENTERPRISE: "Enterprise" }
   return (
     <span
-      className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide"
-      style={{ background: "rgba(74,222,128,0.15)", color: "#4ADE80", border: "1px solid rgba(74,222,128,0.3)" }}
+      className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide whitespace-nowrap"
+      style={{ background: c.badge, color: c.check, border: `1px solid ${c.border}` }}
     >
-      Free
+      {labels[tier] || "Free"}
     </span>
   )
 }
@@ -188,10 +167,10 @@ export default function ToolsAZPage() {
             {/* Stat pills */}
             <div className="flex flex-wrap items-center justify-center gap-3 text-sm">
               {[
-                { label: `${totalFree} Free`, color: "#4ADE80" },
-                { label: `${totalPro} Pro`, color: "#14D8C4" },
+                { label: `${totalFree} Free`, color: "#94A3B8" },
+                { label: `${totalPro} Pro`, color: "#E0C27A" },
                 { label: `${totalBusiness} Business`, color: "#6B7CFF" },
-                { label: `${totalEnterprise} Enterprise`, color: "#E8813A" },
+                { label: `${totalEnterprise} Enterprise`, color: "#C0C5CE" },
               ].map((pill) => (
                 <div
                   key={pill.label}
@@ -276,12 +255,13 @@ export default function ToolsAZPage() {
                   <div className="grid sm:grid-cols-2 gap-3">
                     {letterTools.map((tool) => {
                       const Icon = tool.icon
+                      const tc = tierColors[tool.tier] || tierColors.FREE
                       return (
                         <div
                           key={tool.href + tool.tier}
                           className="rounded-2xl p-[1px]"
                           style={{
-                            background: "linear-gradient(135deg, rgba(20,216,196,0.3), rgba(107,124,255,0.15), rgba(232,129,58,0.08))",
+                            background: `linear-gradient(135deg, ${tc.border}, rgba(20,216,196,0.2), ${tc.border})`,
                           }}
                         >
                           <Link
@@ -297,10 +277,10 @@ export default function ToolsAZPage() {
                               className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
                               style={{
                                 background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
-                                boxShadow: "0 0 20px rgba(20,216,196,0.25)",
+                                boxShadow: `0 0 20px ${tc.glow}`,
                               }}
                             >
-                              <Icon className="h-5 w-5 text-[#14D8C4]" />
+                              <Icon className="h-5 w-5" style={{ color: tc.check }} />
                             </div>
                             <div className="flex-1 min-w-0">
                               <div className="flex items-center gap-2 mb-1">
