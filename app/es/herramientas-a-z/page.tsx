@@ -87,7 +87,7 @@ const tierColors: Record<string, { badge: string; border: string; glow: string; 
   FREE: { badge: "rgba(148,163,184,0.15)", border: "rgba(148,163,184,0.3)", glow: "rgba(148,163,184,0.15)", check: "#94A3B8" },
   PRO: { badge: "rgba(214,179,106,0.15)", border: "rgba(214,179,106,0.4)", glow: "rgba(214,179,106,0.25)", check: "#E0C27A" },
   BUSINESS: { badge: "rgba(107,124,255,0.15)", border: "rgba(107,124,255,0.4)", glow: "rgba(107,124,255,0.3)", check: "#6B7CFF" },
-  ENTERPRISE: { badge: "rgba(192,197,206,0.15)", border: "rgba(192,197,206,0.4)", glow: "rgba(192,197,206,0.25)", check: "#C0C5CE" },
+  ENTERPRISE: { badge: "rgba(14,165,233,0.15)", border: "rgba(14,165,233,0.4)", glow: "rgba(14,165,233,0.25)", check: "#38BDF8" },
 }
 
 function TierBadge({ tier }: { tier: string }) {
@@ -170,7 +170,7 @@ export default function HerramientasAZPage() {
                 { label: `${totalFree} Gratis`, color: "#94A3B8" },
                 { label: `${totalPro} Pro`, color: "#E0C27A" },
                 { label: `${totalBusiness} Business`, color: "#6B7CFF" },
-                { label: `${totalEnterprise} Enterprise`, color: "#C0C5CE" },
+                { label: `${totalEnterprise} Enterprise`, color: "#38BDF8" },
               ].map((pill) => (
                 <div
                   key={pill.label}

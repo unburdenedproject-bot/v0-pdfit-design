@@ -114,7 +114,7 @@ const tierStyles: Record<string, { bg: string; color: string; border: string }> 
   FREE: { bg: "rgba(148,163,184,0.15)", color: "#94A3B8", border: "rgba(148,163,184,0.3)" },
   PRO: { bg: "rgba(214,179,106,0.15)", color: "#E0C27A", border: "rgba(214,179,106,0.4)" },
   BUSINESS: { bg: "rgba(107,124,255,0.15)", color: "#6B7CFF", border: "rgba(107,124,255,0.4)" },
-  ENTERPRISE: { bg: "rgba(192,197,206,0.15)", color: "#C0C5CE", border: "rgba(192,197,206,0.4)" },
+  ENTERPRISE: { bg: "rgba(14,165,233,0.15)", color: "#38BDF8", border: "rgba(14,165,233,0.4)" },
 }
 
 function TierBadge({ tier }: { tier: "FREE" | "PRO" | "BUSINESS" | "ENTERPRISE" }) {
