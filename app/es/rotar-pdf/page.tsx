@@ -2,7 +2,6 @@ import Script from "next/script"
 import { HeaderEs } from "@/components/header-es"
 import { FooterEs } from "@/components/footer-es"
 import { RotatePdfInterface } from "@/components/rotate-pdf-interface"
-import { TrustBadges } from "@/components/trust-badges"
 import { RotateCw, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
@@ -11,140 +10,124 @@ export const metadata = {
   description:
     "Rota páginas de PDF online con PDF.it. Corrige páginas de lado o al revés, rota páginas específicas y descarga un PDF corregido al instante.",
   alternates: {
+    canonical: "https://pdf.it.com/es/rotar-pdf",
     languages: {
       en: "/rotate-pdf",
       es: "/es/rotar-pdf",
+      pt: "/br/girar-pdf",
     },
   },
-}
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Puedo rotar solo una página de un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it te permite rotar páginas individuales sin modificar el resto del documento." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué ángulos de rotación están disponibles?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Puedes rotar páginas 90°, 180° o 270° — en sentido horario o antihorario." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo rotar un PDF escaneado?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí — la rotación es especialmente útil para documentos escaneados que quedan de lado o al revés." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo rotar un PDF desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube, rota y descarga desde tu iPhone o Android." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Es seguro subir mi PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Todas las transferencias están encriptadas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuál es el tamaño máximo de archivo que puedo rotar?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Las cuentas gratuitas pueden subir archivos de hasta 25MB. Las cuentas Pro pueden subir hasta 200MB. Las cuentas Business pueden subir hasta 1GB." }
-    }
-  ]
 }
 
 export default function RotarPDFPage() {
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderEs />
       <main>
-        {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Hero Section */}
+        <section
+          className="text-white py-16 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#heroGrain)" />
+          </svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <RotateCw className="h-10 w-10 text-white" />
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                  boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)",
+                }}
+              >
+                <RotateCw className="h-10 w-10 text-[#14D8C4]" />
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Rotar PDF Online</h1>
               <p className="text-xl text-slate-300 mb-8">
                 Corrige páginas de lado o al revés con PDF.it. Rota páginas individuales de PDF o el documento completo y descarga un PDF con la orientación correcta.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>90°, 180°, 270°</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-orange-500" /><span>Archivos Eliminados Tras la Sesión</span></div>
-                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-orange-500" /><span>Sin Registro</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>90°, 180°, 270°</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesión</span></div>
+                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sin Registro</span></div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Rotate Interface */}
-        <RotatePdfInterface />
-        <TrustBadges />
-
-        {/* About */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <p className="text-lg text-slate-600 mb-8">
+        {/* Intro */}
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <p className="text-lg text-slate-600 leading-relaxed">
               Usa la herramienta Rotar PDF de PDF.it para girar páginas de PDF y corregir la orientación en segundos. Rota una sola página o varias páginas 90°, 180° o 270°, y descarga un PDF limpio que sea fácil de leer, imprimir y compartir.
             </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>✓ Rota PDFs de lado y corrige páginas al revés</li>
-              <li>✓ Rota una sola página o varias páginas en un mismo archivo</li>
-              <li>✓ Ideal para PDFs escaneados, formularios, recibos y documentos</li>
-              <li>✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li>✓ Sin instalación — rota PDFs en tu navegador</li>
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">✓ Rota PDFs de lado y corrige páginas al revés</li>
+              <li className="flex items-center gap-2">✓ Rota una sola página o varias páginas en un mismo archivo</li>
+              <li className="flex items-center gap-2">✓ Ideal para PDFs escaneados, formularios, recibos y documentos</li>
+              <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
+              <li className="flex items-center gap-2">✓ Sin instalación — rota PDFs en tu navegador</li>
             </ul>
           </div>
         </section>
 
-        {/* Feature Sections */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Rota Páginas Individuales de PDF</h2>
-              <p className="text-slate-600">
-                Corrige solo las páginas que lo necesitan. Rota una página, un rango o varias páginas seleccionadas sin cambiar el resto del documento.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Corrige PDFs Escaneados y Documentos de Lado</h2>
-              <p className="text-slate-600">
-                Los escáneres a menudo guardan las páginas rotadas de forma incorrecta. PDF.it te ayuda a girar las páginas rápidamente a la dirección correcta de lectura.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Guarda un PDF con la Orientación Correcta</h2>
-              <p className="text-slate-600">
-                Después de rotar, descarga un nuevo PDF con la orientación de página actualizada — listo para imprimir, enviar por email y subir.
-              </p>
+        {/* Processing Interface */}
+        <RotatePdfInterface />
+
+        {/* Feature Blocks */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                { title: "Rota Páginas Individuales de PDF", desc: "Corrige solo las páginas que lo necesitan. Rota una página, un rango o varias páginas seleccionadas sin cambiar el resto del documento." },
+                { title: "Corrige PDFs Escaneados y Documentos de Lado", desc: "Los escáneres a menudo guardan las páginas rotadas de forma incorrecta. PDF.it te ayuda a girar las páginas rápidamente a la dirección correcta de lectura." },
+                { title: "Guarda un PDF con la Orientación Correcta", desc: "Después de rotar, descarga un nuevo PDF con la orientación de página actualizada — listo para imprimir, enviar por email y subir." },
+              ].map((feature) => (
+                <div key={feature.title} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}>
+                  <div className="rounded-[11px] p-6 h-full" style={{ background: "radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* How To */}
-        <section className="py-16 bg-gray-50">
+        {/* How It Works */}
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Rotar un PDF</h2>
-            <div className="space-y-4">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Cómo Rotar un PDF</h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
               {[
-                "Sube o arrastra tu PDF a PDF.it.",
-                "Selecciona las páginas a rotar o elige rotar todas.",
-                "Elige la dirección de rotación: 90° en sentido horario, 90° en sentido antihorario o 180°.",
-                "Haz clic en Rotar PDF y descarga el archivo actualizado.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
+                { num: "1", title: "Sube tu PDF", desc: "Arrastra y suelta o haz clic para elegir un archivo" },
+                { num: "2", title: "Selecciona las páginas a rotar", desc: "Elige la dirección y el ángulo de rotación" },
+                { num: "3", title: "Descarga tu PDF", desc: "Obtén un archivo con la orientación correcta" },
+              ].map((step) => (
+                <div key={step.num} className="flex-1">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)", border: "1px solid rgba(20,216,196,0.25)" }}>
+                    <span className="text-[#14D8C4] font-black text-lg">{step.num}</span>
                   </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
+                  <p className="font-semibold text-slate-900">{step.title}</p>
+                  <p className="text-sm text-slate-500 mt-1">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -160,60 +143,51 @@ export default function RotarPDFPage() {
                 { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Extrae páginas antes de rotar" },
                 { name: "Unir PDF", href: "/es/unir-pdf", desc: "Combina PDFs después de rotar" },
                 { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce tamaño después de guardar" },
-                { name: "OCR Scanner", href: "/ocr-scanner", desc: "Extrae texto de PDFs escaneados" },
+                { name: "OCR Scanner", href: "/es/ocr-scanner", desc: "Extrae texto de PDFs escaneados" },
               ].map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="rounded-xl p-4 transition-all text-center flex flex-col justify-center min-h-[80px] hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(20,216,196,0.25)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.2)" }}
-                >
-                  <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
-                  <div className="text-xs text-slate-400">{tool.desc}</div>
-                </Link>
+                <div key={tool.href} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}>
+                  <Link href={tool.href} className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]" style={{ background: "radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
+                    <div className="text-xs text-slate-400">{tool.desc}</div>
+                  </Link>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16" style={{ background: "radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%), radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%), #0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
-            <div className="space-y-6">
+            <h2 className="text-3xl font-black text-white mb-10 text-center">Preguntas Frecuentes</h2>
+            <div className="space-y-4">
               {[
-                {
-                  q: "¿Puedo rotar solo una página de un PDF?",
-                  a: "Sí. PDF.it te permite rotar páginas individuales sin modificar el resto del documento.",
-                },
-                {
-                  q: "¿Qué ángulos de rotación están disponibles?",
-                  a: "Puedes rotar páginas 90°, 180° o 270° — en sentido horario o antihorario.",
-                },
-                {
-                  q: "¿Puedo rotar un PDF escaneado?",
-                  a: "Sí — la rotación es especialmente útil para documentos escaneados que quedan de lado o al revés.",
-                },
-                {
-                  q: "¿Puedo rotar un PDF desde mi celular?",
-                  a: "Sí. PDF.it funciona en navegadores móviles — sube, rota y descarga desde tu iPhone o Android.",
-                },
-                {
-                  q: "¿Es seguro subir mi PDF?",
-                  a: "Sí. Todas las transferencias están encriptadas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos.",
-                },
-                {
-                  q: "¿Cuál es el tamaño máximo de archivo que puedo rotar?",
-                  a: "Las cuentas gratuitas pueden subir archivos de hasta 25MB. Las cuentas Pro pueden subir hasta 200MB. Las cuentas Business pueden subir hasta 1GB.",
-                },
+                { q: "¿Puedo rotar solo una página de un PDF?", a: "Sí. PDF.it te permite rotar páginas individuales sin modificar el resto del documento." },
+                { q: "¿Qué ángulos de rotación están disponibles?", a: "Puedes rotar páginas 90°, 180° o 270° — en sentido horario o antihorario." },
+                { q: "¿Puedo rotar un PDF escaneado?", a: "Sí — la rotación es especialmente útil para documentos escaneados que quedan de lado o al revés." },
+                { q: "¿Puedo rotar un PDF desde mi celular?", a: "Sí. PDF.it funciona en navegadores móviles — sube, rota y descarga desde tu iPhone o Android." },
+                { q: "¿Es seguro subir mi PDF?", a: "Sí. Todas las transferencias están encriptadas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." },
+                { q: "¿Cuál es el tamaño máximo de archivo que puedo rotar?", a: "Las cuentas gratuitas pueden subir archivos de hasta 25MB. Las cuentas Pro pueden subir hasta 200MB. Las cuentas Business pueden subir hasta 1GB." },
               ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
+                  <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
+
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            { "@type": "Question", "name": "¿Puedo rotar solo una página de un PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it te permite rotar páginas individuales sin modificar el resto del documento." } },
+            { "@type": "Question", "name": "¿Qué ángulos de rotación están disponibles?", "acceptedAnswer": { "@type": "Answer", "text": "Puedes rotar páginas 90°, 180° o 270° — en sentido horario o antihorario." } },
+            { "@type": "Question", "name": "¿Puedo rotar un PDF escaneado?", "acceptedAnswer": { "@type": "Answer", "text": "Sí — la rotación es especialmente útil para documentos escaneados que quedan de lado o al revés." } },
+            { "@type": "Question", "name": "¿Puedo rotar un PDF desde mi celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube, rota y descarga desde tu iPhone o Android." } },
+            { "@type": "Question", "name": "¿Es seguro subir mi PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Todas las transferencias están encriptadas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." } },
+            { "@type": "Question", "name": "¿Cuál es el tamaño máximo de archivo que puedo rotar?", "acceptedAnswer": { "@type": "Answer", "text": "Las cuentas gratuitas pueden subir archivos de hasta 25MB. Las cuentas Pro pueden subir hasta 200MB. Las cuentas Business pueden subir hasta 1GB." } }
+          ]
+        })}} />
       </main>
       <FooterEs />
     </div>
