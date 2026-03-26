@@ -81,6 +81,7 @@ export default function WordaPDFPage() {
 
         {/* Processing Interface */}
         <ProcessingInterface
+          requiresPlan="pro"
           acceptedFiles=".doc,.docx"
           toolName="Word to PDF"
           outputFormat="PDF"

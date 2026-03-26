@@ -119,6 +119,7 @@ export default function PDFToWordPage() {
 
         {/* Processing Interface */}
         <ProcessingInterface
+          requiresPlan="pro"
           acceptedFiles=".pdf"
           toolName="PDF to Word"
           outputFormat="DOCX"

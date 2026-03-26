@@ -91,6 +91,7 @@ export default function ExcelParaPDFPage() {
 
         {/* Processing Interface */}
         <ProcessingInterface
+          requiresPlan="pro"
           acceptedFiles=".xls,.xlsx"
           toolName="Excel to PDF"
           outputFormat="PDF"

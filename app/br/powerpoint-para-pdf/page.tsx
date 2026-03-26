@@ -91,6 +91,7 @@ export default function PowerPointParaPDFPage() {
 
         {/* Processing Interface */}
         <ProcessingInterface
+          requiresPlan="pro"
           acceptedFiles=".ppt,.pptx"
           toolName="PowerPoint to PDF"
           outputFormat="PDF"

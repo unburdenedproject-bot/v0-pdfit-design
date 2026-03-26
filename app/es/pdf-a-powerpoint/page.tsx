@@ -90,6 +90,7 @@ export default function PDFaPowerPointPage() {
 
         {/* Processing Interface */}
         <ProcessingInterface
+          requiresPlan="pro"
           acceptedFiles=".pdf"
           toolName="PDF to PowerPoint"
           outputFormat="PPTX"

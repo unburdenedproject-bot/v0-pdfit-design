@@ -100,6 +100,7 @@ export default function PDFparaExcelPage() {
 
         {/* Processing Interface */}
         <ProcessingInterface
+          requiresPlan="pro"
           acceptedFiles=".pdf"
           toolName="PDF to Excel"
           outputFormat="XLSX"
