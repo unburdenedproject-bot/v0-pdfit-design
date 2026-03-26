@@ -3,12 +3,12 @@ import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ResumeBuilderInterface } from "@/components/resume-builder-interface"
-import { Sparkles, Zap, Shield, FileText, Merge, Lock, Scan, Target } from "lucide-react"
+import { Sparkles, Zap, FileText, Target } from "lucide-react"
 
 export const metadata = {
-  title: "Create a Professional Resume with AI | PDF.it",
+  title: "AI Resume Builder — Create a Professional Resume Online | PDF.it",
   description:
-    "Build an ATS-optimized resume from scratch. Fill in your details and let AI write a polished, job-ready resume you can download as Word and edit anytime.",
+    "Build a polished, ATS-optimized resume from scratch with AI. Enter your details, get a professionally written resume, and download it as an editable Word file. Optional cover letter included.",
   alternates: {
     languages: {
       en: "/create-resume",
@@ -18,104 +18,149 @@ export const metadata = {
   },
 }
 
+const faqs = [
+  {
+    q: "How does the AI resume builder work?",
+    a: "Enter your contact info, work experience, education, and skills. Our AI generates a professionally written, ATS-optimized resume you can download as a Word (.docx) file and edit anytime.",
+  },
+  {
+    q: "What format is the resume downloaded in?",
+    a: "Word (.docx) format, so you can edit it in Microsoft Word, Google Docs, or any compatible word processor. This gives you full control over the final result.",
+  },
+  {
+    q: "Is the resume ATS-friendly?",
+    a: "Yes. The AI uses clean formatting, proper section headers (Experience, Education, Skills), and keyword-rich content designed to pass Applicant Tracking Systems used by most employers.",
+  },
+  {
+    q: "Can I generate a cover letter too?",
+    a: "Yes. There's an optional cover letter feature that creates a tailored cover letter based on your resume details and the job you're targeting.",
+  },
+  {
+    q: "Is my personal data stored?",
+    a: "No. Your information is processed in real time to generate the resume and is not stored on our servers. We never share or sell your personal data.",
+  },
+  {
+    q: "Is the Resume Builder free?",
+    a: "Create Resume is a Pro feature at $7.99/month. Pro includes unlimited resume generation plus all other PDF tools.",
+  },
+]
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How does the AI resume builder work?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You fill in your personal details, work experience, education, and skills. Our AI then generates a professionally written, ATS-optimized resume that you can download as a Word document and edit anytime."
-      }
+  "mainEntity": faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.a,
     },
-    {
-      "@type": "Question",
-      "name": "What format is the resume downloaded in?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Your resume is downloaded as a Word (.docx) file, so you can easily edit it in Microsoft Word, Google Docs, or any compatible word processor."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is the resume ATS-friendly?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. The AI generates resumes with clean formatting, proper section headers, and keyword-rich content designed to pass Applicant Tracking Systems used by most employers."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I also generate a cover letter?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. There is an optional cover letter feature that generates a tailored cover letter based on your resume details and the job you are targeting."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is my personal data stored?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Your information is processed in real time to generate the resume and is not stored on our servers. We never share or sell your personal data."
-      }
-    }
-  ]
+  })),
 }
 
 export default function CreateResumePage() {
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <Header />
       <main>
         {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section
+          className="text-white py-16 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#heroGrain)" />
+          </svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Sparkles className="h-10 w-10 text-white" />
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                  boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)",
+                }}
+              >
+                <Sparkles className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <span className="inline-block bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1 rounded-full mb-4">PRO</span>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Create a Professional Resume</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">AI Resume Builder</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Fill in your details and AI builds a polished, job-ready resume in seconds. Download as Word — edit it anytime.
+                Fill in your details and AI builds a polished, ATS-ready resume in seconds. Download as an editable Word file — customize it anytime.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>AI-Powered</span></div>
-                <div className="flex items-center gap-2"><FileText className="h-4 w-4 text-orange-500" /><span>Word Format</span></div>
-                <div className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-orange-500" /><span>Cover Letter Option</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>AI-Powered</span></div>
+                <div className="flex items-center gap-2"><FileText className="h-4 w-4 text-[#14D8C4]" /><span>Word Format</span></div>
+                <div className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-[#14D8C4]" /><span>Cover Letter Option</span></div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Resume Builder Interface */}
+        {/* Intro */}
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Writing a resume from scratch is stressful — choosing the right format, words, and structure while competing with hundreds of applicants. PDF.it's AI Resume Builder eliminates that struggle. Fill in your details and get a polished, ATS-ready resume in seconds, downloaded as an editable Word file.
+            </p>
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">✓ AI writes your resume from your details</li>
+              <li className="flex items-center gap-2">✓ ATS-optimized formatting and keywords</li>
+              <li className="flex items-center gap-2">✓ Download as editable Word (.docx) file</li>
+              <li className="flex items-center gap-2">✓ Optional cover letter generation</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Processing Interface */}
         <ResumeBuilderInterface />
 
-        {/* How It Works */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How It Works</h2>
-            <div className="space-y-4">
+        {/* Feature Blocks */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { title: "Fill In Your Details", desc: "Enter your contact information, work experience, education, skills, and any other relevant sections." },
-                { title: "AI Writes Your Resume", desc: "Our AI takes your input and generates a professionally written, ATS-optimized resume with clean formatting and strong language." },
-                { title: "Download Word File", desc: "Download your finished resume as a Word (.docx) file. Open it in any word processor and customize it further if needed." },
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-slate-900">{step.title}</h3>
-                    <p className="text-slate-700 text-sm">{step.desc}</p>
+                { title: "First-Time & Career Changers", desc: "Building your first resume or switching industries? AI handles formatting, language, and structure. It highlights transferable skills and tailors content to your target role." },
+                { title: "AI-Powered Professional Writing", desc: "Our AI generates polished bullet points, strong action verbs, and keyword-rich descriptions that match what recruiters and ATS systems look for." },
+                { title: "Editable Word Output + Cover Letter", desc: "Download your resume as a Word file you can customize further. Optionally generate a tailored cover letter based on your resume and target job." },
+              ].map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <div
+                    className="rounded-[11px] p-6 h-full"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
                   </div>
                 </div>
               ))}
@@ -123,35 +168,70 @@ export default function CreateResumePage() {
           </div>
         </section>
 
-        {/* Why Section */}
+        {/* How It Works */}
         <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-6 text-center">Why Building a Resume From Scratch Is Hard</h2>
-            <div className="space-y-4 text-slate-600 text-lg">
-              <p>
-                Writing a resume from scratch is one of the most stressful parts of job hunting. You have to figure out the right format, choose the right words, highlight the right skills, and make sure the whole thing looks professional — all while competing with hundreds of other applicants.
-              </p>
-              <p>
-                Most people spend hours staring at a blank page or copying outdated templates. Our AI Resume Builder eliminates that struggle. Just fill in your details and let artificial intelligence do the writing. You get a polished, ATS-ready resume in seconds — no design skills or writing experience required.
-              </p>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">How to Build Your Resume</h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+              {[
+                { num: "1", title: "Fill in your details", desc: "Contact info, experience, education, skills" },
+                { num: "2", title: "AI writes your resume", desc: "Professionally written and ATS-optimized" },
+                { num: "3", title: "Download Word file", desc: "Edit in Word, Google Docs, or any editor" },
+              ].map((step) => (
+                <div key={step.num} className="flex-1">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                      border: "1px solid rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <span className="text-[#14D8C4] font-black text-lg">{step.num}</span>
+                  </div>
+                  <p className="font-semibold text-slate-900">{step.title}</p>
+                  <p className="text-sm text-slate-500 mt-1">{step.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Use Cases */}
-        <section className="py-16 bg-gray-50">
+        {/* Related Tools */}
+        <section className="py-16" style={{ background: "#0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Who Is This For?</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <h2 className="text-2xl font-black text-white mb-6 text-center">Related Tools</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { title: "First-Time Job Seekers", desc: "Build your first resume with confidence. AI handles formatting, language, and structure so you can focus on your strengths." },
-                { title: "Career Changers", desc: "Transitioning to a new field? The AI highlights transferable skills and tailors your resume to your target industry." },
-                { title: "Freelancers Going Corporate", desc: "Translate your freelance experience into a corporate-friendly resume that recruiters and ATS systems understand." },
-                { title: "International Professionals", desc: "Create a resume that meets local standards and uses professional English, Spanish, or Portuguese — regardless of your native language." },
-              ].map((card, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{card.title}</h3>
-                  <p className="text-slate-600 text-sm">{card.desc}</p>
+                { name: "ATS Optimizer", href: "/ats-optimizer", desc: "Score your resume for ATS" },
+                { name: "PDF to Word", href: "/pdf-to-word", desc: "Convert PDF to editable Word" },
+                { name: "Word to PDF", href: "/word-to-pdf", desc: "Convert Word to PDF" },
+                { name: "Compress PDF", href: "/compress-pdf", desc: "Reduce PDF file size" },
+              ].map((tool) => (
+                <div
+                  key={tool.href}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <Link
+                    href={tool.href}
+                    className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
+                    <div className="text-xs text-slate-400">{tool.desc}</div>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -159,85 +239,45 @@ export default function CreateResumePage() {
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-[#F3F4FF]">
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
-            <div className="space-y-6">
-              {[
-                {
-                  q: "How does the AI resume builder work?",
-                  a: "You fill in your personal details, work experience, education, and skills. Our AI then generates a professionally written, ATS-optimized resume that you can download as a Word document and edit anytime.",
-                },
-                {
-                  q: "What format is the resume downloaded in?",
-                  a: "Your resume is downloaded as a Word (.docx) file, so you can easily edit it in Microsoft Word, Google Docs, or any compatible word processor.",
-                },
-                {
-                  q: "Is the resume ATS-friendly?",
-                  a: "Yes. The AI generates resumes with clean formatting, proper section headers, and keyword-rich content designed to pass Applicant Tracking Systems used by most employers.",
-                },
-                {
-                  q: "Can I also generate a cover letter?",
-                  a: "Yes. There is an optional cover letter feature that generates a tailored cover letter based on your resume details and the job you are targeting.",
-                },
-                {
-                  q: "Is my personal data stored?",
-                  a: "No. Your information is processed in real time to generate the resume and is not stored on our servers. We never share or sell your personal data.",
-                },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
+            <h2 className="text-3xl font-black text-white mb-10 text-center">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl p-6"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-16 bg-[#191B4D] text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-            <h2 className="text-3xl font-black mb-4">Ready to Build Your Resume?</h2>
-            <p className="text-slate-300 text-lg mb-8">
-              Fill in your details and let AI create a professional, job-ready resume in seconds.
-            </p>
-            <Link
-              href="#"
-              onClick={undefined}
-              className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
-            >
-              Create Your Resume
-            </Link>
-          </div>
-        </section>
-
-        {/* Related Tools */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-white mb-6 text-center">Related Tools</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {[
-                { name: "ATS Optimizer", href: "/ats-optimizer", icon: Target, desc: "Score your resume for ATS" },
-                { name: "PDF to Word", href: "/pdf-to-word", icon: FileText, desc: "Convert PDF to editable Word" },
-                { name: "Merge PDF", href: "/merge-pdf", icon: Merge, desc: "Combine multiple PDFs" },
-                { name: "Compress PDF", href: "/compress-pdf", icon: Zap, desc: "Reduce PDF file size" },
-                { name: "OCR Scanner", href: "/ocr-scanner", icon: Scan, desc: "Extract text from scans" },
-                { name: "Protect PDF", href: "/protect-pdf", icon: Lock, desc: "Password-protect your PDF" },
-                { name: "URL to PDF", href: "/url-to-pdf", icon: Shield, desc: "Save any webpage as PDF" },
-                { name: "Flatten PDF", href: "/flatten-pdf", icon: FileText, desc: "Flatten PDF form fields" },
-              ].map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="rounded-xl p-4 transition-all text-center flex flex-col justify-center min-h-[80px] hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(20,216,196,0.25)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.2)" }}
-                >
-                  <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
-                  <div className="text-xs text-slate-400">{tool.desc}</div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* FAQ Schema */}
+        <Script
+          id="faq-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
       </main>
       <Footer />
     </div>

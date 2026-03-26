@@ -3,12 +3,12 @@ import Link from "next/link"
 import { HeaderBr } from "@/components/header-br"
 import { FooterBr } from "@/components/footer-br"
 import { AtsOptimizerInterface } from "@/components/ats-optimizer-interface"
-import { Target, Zap, Shield, FileText, Merge, Lock, Scan, Type } from "lucide-react"
+import { Target, Zap, CheckCircle } from "lucide-react"
 
 export const metadata = {
-  title: "Otimizador ATS de Curriculo — Pontue seu Curriculo para Compatibilidade ATS | PDF.it",
+  title: "Otimizador ATS de Currículo — Verifique sua Pontuação ATS e Corrija Problemas | PDF.it",
   description:
-    "Envie seu curriculo e receba uma pontuacao de compatibilidade ATS instantanea. O Otimizador ATS do PDF.it analisa formatacao, palavras-chave, secoes e estrutura — e diz exatamente o que corrigir.",
+    "Envie seu currículo e receba uma pontuação de compatibilidade ATS instantânea. A IA do PDF.it analisa formatação, palavras-chave e estrutura — e mostra exatamente o que corrigir para que seu currículo passe nos sistemas de rastreamento de candidatos.",
   alternates: {
     languages: {
       en: "/ats-optimizer",
@@ -18,104 +18,136 @@ export const metadata = {
   },
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "O que e um ATS e por que ele importa para meu curriculo?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Um Sistema de Rastreamento de Candidatos (ATS) e um software usado por empregadores para filtrar e classificar curriculos antes que um humano os veja. Se seu curriculo nao e compativel com ATS, ele pode ser rejeitado automaticamente — mesmo que voce seja qualificado para a vaga."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Como funciona a pontuacao ATS?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nossa IA analisa seu curriculo em multiplas dimensoes: compatibilidade de formatacao, relevancia de palavras-chave, estrutura de secoes e legibilidade. Voce recebe uma pontuacao de 0 a 100 junto com recomendacoes especificas para melhorar cada area."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O que e uma boa pontuacao ATS?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Uma pontuacao de 80 ou mais e considerada forte. Pontuacoes entre 60–79 sao medianas e podem passar em alguns sistemas. Abaixo de 60 significa que seu curriculo provavelmente precisa de melhorias significativas para passar nos filtros ATS."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "O otimizador ATS funciona para curriculos em varios idiomas?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sim. Nossa IA pode analisar curriculos escritos em ingles, espanhol, portugues e muitos outros idiomas. Os criterios de pontuacao sao universais em todos os idiomas."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Meu curriculo e armazenado apos a analise?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nao. Seu curriculo e processado em tempo real e excluido de nossos servidores imediatamente apos a analise. Nunca armazenamos, compartilhamos ou vendemos seus dados pessoais."
-      }
-    }
-  ]
-}
+const faqs = [
+  {
+    q: "O que é um ATS e por que ele importa?",
+    a: "Um Sistema de Rastreamento de Candidatos (ATS) é um software que empregadores usam para filtrar currículos antes que um humano os veja. Mais de 75% dos currículos são rejeitados pelo ATS. Se seu currículo não tem a formatação correta ou faltam as palavras-chave certas, ele é descartado — mesmo que você seja qualificado.",
+  },
+  {
+    q: "Como funciona a pontuação ATS?",
+    a: "Nossa IA analisa seu currículo em compatibilidade de formatação, relevância de palavras-chave, estrutura de seções e legibilidade. Você recebe uma pontuação de 0 a 100 com recomendações específicas para melhorar cada área.",
+  },
+  {
+    q: "O que é uma boa pontuação ATS?",
+    a: "80+ é forte e provavelmente passará na maioria dos sistemas. 60-79 é médio e pode passar em alguns. Abaixo de 60 significa que melhorias significativas são necessárias para passar nos filtros ATS.",
+  },
+  {
+    q: "Funciona com currículos em outros idiomas?",
+    a: "Sim. Nossa IA analisa currículos em inglês, espanhol, português e muitos outros idiomas. Os critérios de pontuação são universais.",
+  },
+  {
+    q: "Meu currículo é armazenado após a análise?",
+    a: "Não. Seu currículo é processado em tempo real e excluído imediatamente após a análise. Nunca armazenamos, compartilhamos ou vendemos seus dados.",
+  },
+  {
+    q: "O Otimizador ATS é gratuito?",
+    a: "O Otimizador ATS é um recurso Pro a $7.99/mês. O Pro inclui análises ilimitadas de currículos mais todas as outras ferramentas PDF.",
+  },
+]
 
 export default function OtimizadorAtsPageBr() {
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderBr />
       <main>
         {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section
+          className="text-white py-16 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#heroGrain)" />
+          </svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Target className="h-10 w-10 text-white" />
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                  boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)",
+                }}
+              >
+                <Target className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <span className="inline-block bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1 rounded-full mb-4">PRO</span>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Otimizador ATS de Curriculo</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Otimizador ATS de Currículo</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Envie seu curriculo e receba uma pontuacao de compatibilidade ATS instantanea. Nossa IA analisa formatacao, palavras-chave, secoes e estrutura — e diz exatamente o que corrigir.
+                Envie seu currículo e receba uma pontuação de compatibilidade ATS instantânea. Nossa IA analisa formatação, palavras-chave e estrutura — e mostra exatamente o que corrigir.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Analise com IA</span></div>
-                <div className="flex items-center gap-2"><Target className="h-4 w-4 text-orange-500" /><span>Pontuacao ATS 0-100</span></div>
-                <div className="flex items-center gap-2"><Scan className="h-4 w-4 text-orange-500" /><span>Analise de Palavras-Chave</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Análise com IA</span></div>
+                <div className="flex items-center gap-2"><Target className="h-4 w-4 text-[#14D8C4]" /><span>Pontuação ATS 0-100</span></div>
+                <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-[#14D8C4]" /><span>Correções Práticas</span></div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ATS Optimizer Interface */}
+        {/* Intro */}
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Mais de 75% dos currículos são rejeitados por Sistemas de Rastreamento de Candidatos antes que um recrutador os veja. O Otimizador ATS do PDF.it envia seu currículo, executa análise com IA sobre formatação, palavras-chave e estrutura, e fornece uma pontuação prática de 0 a 100 com correções específicas.
+            </p>
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">✓ Pontuação de compatibilidade ATS com IA</li>
+              <li className="flex items-center gap-2">✓ Recomendações práticas para melhorar seu currículo</li>
+              <li className="flex items-center gap-2">✓ Funciona com currículos em qualquer idioma</li>
+              <li className="flex items-center gap-2">✓ Privacidade em primeiro lugar — arquivos excluídos após análise</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Processing Interface */}
         <AtsOptimizerInterface />
 
-        {/* How It Works */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Funciona</h2>
-            <div className="space-y-4">
+        {/* Feature Blocks */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { title: "Envie seu Curriculo", desc: "Envie seu curriculo em formato PDF. Arraste e solte ou clique para procurar." },
-                { title: "A IA Analisa", desc: "Nossa IA escaneia seu curriculo para compatibilidade ATS — verificando formatacao, palavras-chave, secoes e estrutura." },
-                { title: "Receba Resultados", desc: "Receba uma pontuacao ATS detalhada de 0 a 100 com recomendacoes praticas para melhorar seu curriculo." },
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-slate-900">{step.title}</h3>
-                    <p className="text-slate-700 text-sm">{step.desc}</p>
+                { title: "Candidatos e Mudança de Carreira", desc: "Otimize seu currículo antes de se candidatar para maximizar suas chances. Seja mudando de setor ou mirando uma vaga específica, obtenha as palavras-chave e a formatação certas." },
+                { title: "Análise com IA", desc: "Nossa IA verifica padrões de formatação, cabeçalhos de seções, densidade de palavras-chave e legibilidade — os mesmos critérios que o software ATS usa para filtrar candidatos." },
+                { title: "Pontuação 0-100 com Correções", desc: "Receba uma pontuação clara com recomendações específicas e práticas. Saiba exatamente o que mudar para que seu currículo chegue à mesa do gerente de contratação." },
+              ].map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <div
+                    className="rounded-[11px] p-6 h-full"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
                   </div>
                 </div>
               ))}
@@ -123,35 +155,70 @@ export default function OtimizadorAtsPageBr() {
           </div>
         </section>
 
-        {/* Why ATS Matters */}
+        {/* How It Works */}
         <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-6 text-center">Por Que a Compatibilidade ATS Importa</h2>
-            <div className="space-y-4 text-slate-600 text-lg">
-              <p>
-                Mais de 75% dos curriculos sao rejeitados por Sistemas de Rastreamento de Candidatos antes que um recrutador humano os veja. Esses filtros automaticos procuram palavras-chave especificas, padroes de formatacao e cabecalhos de secoes — e se seu curriculo nao corresponde, ele e descartado independentemente das suas qualificacoes.
-              </p>
-              <p>
-                Isso significa que ate candidatos altamente qualificados podem perder entrevistas simplesmente porque seu curriculo nao estava formatado para software ATS. Nosso Otimizador ATS de Curriculo ajuda voce a identificar e corrigir esses problemas para que seu CV chegue a mesa do gerente de contratacao.
-              </p>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Funciona</h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+              {[
+                { num: "1", title: "Envie seu currículo", desc: "Arraste e solte seu currículo em PDF" },
+                { num: "2", title: "A IA analisa seu currículo", desc: "Formatação, palavras-chave e estrutura verificados" },
+                { num: "3", title: "Receba sua pontuação ATS", desc: "Pontuação 0-100 com correções práticas" },
+              ].map((step) => (
+                <div key={step.num} className="flex-1">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                      border: "1px solid rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <span className="text-[#14D8C4] font-black text-lg">{step.num}</span>
+                  </div>
+                  <p className="font-semibold text-slate-900">{step.title}</p>
+                  <p className="text-sm text-slate-500 mt-1">{step.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Use Cases */}
-        <section className="py-16 bg-gray-50">
+        {/* Related Tools */}
+        <section className="py-16" style={{ background: "#0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Para Quem E Isso?</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <h2 className="text-2xl font-black text-white mb-6 text-center">Ferramentas Relacionadas</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { title: "Candidatos a Emprego", desc: "Otimize seu curriculo antes de se candidatar para maximizar suas chances de passar nos filtros ATS e conseguir entrevistas." },
-                { title: "Mudanca de Carreira", desc: "Garanta que seu curriculo destaque habilidades transferiveis e use as palavras-chave certas para sua nova industria." },
-                { title: "Recem-Formados", desc: "Acerte seu primeiro curriculo. Aprenda o que os sistemas ATS procuram e estruture seu CV para se destacar." },
-                { title: "Recrutadores", desc: "Avalie rapidamente se os curriculos dos candidatos estao otimizados para ATS antes de envia-los as empresas clientes." },
-              ].map((card, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{card.title}</h3>
-                  <p className="text-slate-600 text-sm">{card.desc}</p>
+                { name: "Criar Currículo", href: "/br/criar-curriculo", desc: "Crie um currículo do zero" },
+                { name: "PDF para Word", href: "/br/pdf-para-word", desc: "Converta PDF para Word editável" },
+                { name: "Comprimir PDF", href: "/br/comprimir-pdf", desc: "Reduza o tamanho do PDF" },
+                { name: "Achatar PDF", href: "/br/achatar-pdf", desc: "Achate campos de formulário" },
+              ].map((tool) => (
+                <div
+                  key={tool.href}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <Link
+                    href={tool.href}
+                    className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
+                    <div className="text-xs text-slate-400">{tool.desc}</div>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -159,85 +226,52 @@ export default function OtimizadorAtsPageBr() {
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-[#F3F4FF]">
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
-            <div className="space-y-6">
-              {[
-                {
-                  q: "O que e um ATS e por que ele importa para meu curriculo?",
-                  a: "Um Sistema de Rastreamento de Candidatos (ATS) e um software usado por empregadores para filtrar e classificar curriculos antes que um humano os veja. Se seu curriculo nao e compativel com ATS, ele pode ser rejeitado automaticamente — mesmo que voce seja qualificado para a vaga.",
-                },
-                {
-                  q: "Como funciona a pontuacao ATS?",
-                  a: "Nossa IA analisa seu curriculo em multiplas dimensoes: compatibilidade de formatacao, relevancia de palavras-chave, estrutura de secoes e legibilidade. Voce recebe uma pontuacao de 0 a 100 junto com recomendacoes especificas para melhorar cada area.",
-                },
-                {
-                  q: "O que e uma boa pontuacao ATS?",
-                  a: "Uma pontuacao de 80 ou mais e considerada forte. Pontuacoes entre 60–79 sao medianas e podem passar em alguns sistemas. Abaixo de 60 significa que seu curriculo provavelmente precisa de melhorias significativas para passar nos filtros ATS.",
-                },
-                {
-                  q: "O otimizador ATS funciona para curriculos em varios idiomas?",
-                  a: "Sim. Nossa IA pode analisar curriculos escritos em ingles, espanhol, portugues e muitos outros idiomas. Os criterios de pontuacao sao universais em todos os idiomas.",
-                },
-                {
-                  q: "Meu curriculo e armazenado apos a analise?",
-                  a: "Nao. Seu curriculo e processado em tempo real e excluido de nossos servidores imediatamente apos a analise. Nunca armazenamos, compartilhamos ou vendemos seus dados pessoais.",
-                },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
+            <h2 className="text-3xl font-black text-white mb-10 text-center">Perguntas Frequentes</h2>
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl p-6"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-16 bg-[#191B4D] text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-            <h2 className="text-3xl font-black mb-4">Pronto para Vencer o ATS?</h2>
-            <p className="text-slate-300 text-lg mb-8">
-              Envie seu curriculo agora e receba uma pontuacao de compatibilidade ATS instantanea com recomendacoes praticas.
-            </p>
-            <Link
-              href="#"
-              onClick={undefined}
-              className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
-            >
-              Otimize seu Curriculo
-            </Link>
-          </div>
-        </section>
-
-        {/* Related Tools */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-white mb-6 text-center">Ferramentas Relacionadas</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {[
-                { name: "PDF para Word", href: "/br/pdf-para-word", icon: FileText, desc: "Converta PDF para Word editavel" },
-                { name: "Unir PDF", href: "/br/unir-pdf", icon: Merge, desc: "Combine varios PDFs" },
-                { name: "Comprimir PDF", href: "/br/comprimir-pdf", icon: Zap, desc: "Reduza o tamanho do PDF" },
-                { name: "Scanner OCR", href: "/br/scanner-ocr", icon: Scan, desc: "Extraia texto de digitalizacoes" },
-                { name: "Word para PDF", href: "/br/word-para-pdf", icon: Type, desc: "Converta Word para PDF" },
-                { name: "Proteger PDF", href: "/br/proteger-pdf", icon: Lock, desc: "Proteja seu PDF com senha" },
-                { name: "URL para PDF", href: "/br/url-para-pdf", icon: Shield, desc: "Salve qualquer pagina como PDF" },
-                { name: "Achatar PDF", href: "/br/achatar-pdf", icon: FileText, desc: "Achate campos de formulario" },
-              ].map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="rounded-xl p-4 transition-all text-center flex flex-col justify-center min-h-[80px] hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(20,216,196,0.25)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.2)" }}
-                >
-                  <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
-                  <div className="text-xs text-slate-400">{tool.desc}</div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* FAQ Schema */}
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.a,
+            },
+          })),
+        })}} />
       </main>
       <FooterBr />
     </div>
