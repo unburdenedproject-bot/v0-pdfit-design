@@ -36,26 +36,44 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "protect-sensitive-documents",
+    title: "How to Protect Sensitive Documents Before Sharing",
+    excerpt: "Three layers of PDF security: password protection, permanent redaction, and watermarking. Learn when to use each to keep sensitive data safe.",
+    date: "2026-04-20",
+    category: "Security",
+  },
+  {
+    slug: "scanned-pdf-searchable-ocr",
+    title: "How to Make a Scanned PDF Searchable with OCR",
+    excerpt: "Turn scanned documents into searchable, copyable PDFs using OCR. Works with receipts, contracts, old paperwork, and documents in 16+ languages.",
+    date: "2026-04-15",
+    category: "Guide",
+  },
+  {
+    slug: "compress-pdf-email",
+    title: "How to Compress a PDF for Email Attachments",
+    excerpt: "Learn how to reduce PDF file size to fit Gmail, Outlook, and Yahoo attachment limits — step by step with compression tips.",
+    date: "2026-04-10",
+    category: "Guide",
+  },
+  {
     slug: "welcome-to-pdfit",
     title: "Welcome to PDF.it — PDF Tools Built for Professionals",
-    excerpt:
-      "We built PDF.it because professionals deserve better PDF tools. Here's our story and what makes us different.",
+    excerpt: "We built PDF.it because professionals deserve better PDF tools. Here's our story and what makes us different.",
     date: "2026-04-01",
     category: "Announcement",
   },
   {
     slug: "table-extraction-excel",
     title: "New Feature: Extract Tables from PDFs to Excel with AI",
-    excerpt:
-      "Our new Table Extraction tool uses Google Document AI to detect and export tables from any PDF into clean, formatted Excel spreadsheets.",
+    excerpt: "Our new Table Extraction tool uses Google Document AI to detect and export tables from any PDF into clean, formatted Excel spreadsheets.",
     date: "2026-04-01",
     category: "Product",
   },
   {
     slug: "why-three-languages",
     title: "Why PDF.it Speaks English, Spanish, and Portuguese",
-    excerpt:
-      "Most PDF tools only work in English. We built PDF.it for professionals across the Americas and beyond — here's why multilingual matters.",
+    excerpt: "Most PDF tools only work in English. We built PDF.it for professionals across the Americas and beyond — here's why multilingual matters.",
     date: "2026-04-01",
     category: "Company",
   },
