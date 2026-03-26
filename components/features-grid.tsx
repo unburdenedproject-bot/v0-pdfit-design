@@ -314,7 +314,7 @@ const categories = [
         name: "High-Volume Table Extraction",
         description: "Extract up to 2,000 pages of tables per month to Excel.",
         icon: FileSpreadsheet,
-        href: "/table-extraction",
+        href: "/high-volume-table-extraction",
         tier: "ENTERPRISE" as const,
       },
     ],

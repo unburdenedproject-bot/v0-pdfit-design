@@ -313,7 +313,7 @@ const categories = [
         name: "Extracción de Alto Volumen",
         description: "Extrae hasta 2,000 páginas de tablas al mes a Excel.",
         icon: FileSpreadsheet,
-        href: "/es/extraccion-de-tablas",
+        href: "/es/extraccion-tablas-alto-volumen",
         tier: "ENTERPRISE" as const,
       },
     ],
