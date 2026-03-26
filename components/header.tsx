@@ -106,19 +106,21 @@ export function Header() {
             </Link>
 
             {/* Language switcher */}
-            <div className="flex items-center gap-1.5">
-              <Link href={getAlternateRoute(pathname, "es")} className="hover:opacity-80 transition-opacity" title="Cambiar a Español">
+            <div className="flex items-center gap-3">
+              <Link href={getAlternateRoute(pathname, "es")} className="flex flex-col items-center gap-0.5 hover:opacity-80 transition-opacity" title="Cambiar a Español">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500" className="w-6 h-4 rounded-sm shadow-sm border border-white/20">
                   <rect width="750" height="500" fill="#c60b1e"/>
                   <rect y="125" width="750" height="250" fill="#ffc400"/>
                 </svg>
+                <span className="text-[9px] font-bold text-white leading-none">ES</span>
               </Link>
-              <Link href={getAlternateRoute(pathname, "pt")} className="hover:opacity-80 transition-opacity" title="Mudar para Português">
+              <Link href={getAlternateRoute(pathname, "pt")} className="flex flex-col items-center gap-0.5 hover:opacity-80 transition-opacity" title="Mudar para Português">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 504" className="w-6 h-4 rounded-sm shadow-sm border border-white/20">
                   <rect width="720" height="504" fill="#009B3A"/>
                   <polygon points="360,42 692,252 360,462 28,252" fill="#FEDF00"/>
                   <circle cx="360" cy="252" r="115" fill="#002776"/>
                 </svg>
+                <span className="text-[9px] font-bold text-white leading-none">BR</span>
               </Link>
             </div>
 

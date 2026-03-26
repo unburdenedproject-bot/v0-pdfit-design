@@ -103,20 +103,22 @@ export function HeaderBr() {
             </Link>
 
             {/* Language switcher */}
-            <div className="flex items-center gap-1.5">
-              <Link href={getAlternateRoute(pathname, "en")} className="hover:opacity-80 transition-opacity" title="Switch to English">
+            <div className="flex items-center gap-3">
+              <Link href={getAlternateRoute(pathname, "en")} className="flex flex-col items-center gap-0.5 hover:opacity-80 transition-opacity" title="Switch to English">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7410 3900" className="w-6 h-4 rounded-sm shadow-sm border border-white/20">
                   <rect width="7410" height="3900" fill="#B22234"/>
                   <path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" strokeWidth="300"/>
                   <rect width="2964" height="2100" fill="#3C3B6E"/>
                   <g fill="#fff"><g id="ps18"><g id="ps9"><g id="ps5"><g id="ps4"><path id="ps" d="M247,90 317.534230,307.082039 132.873218,172.917961H361.126782L176.465770,307.082039z"/><use href="#ps" y="420"/><use href="#ps" y="840"/><use href="#ps" y="1260"/></g><use href="#ps" y="1680"/></g><use href="#ps4" x="247" y="210"/></g><use href="#ps9" x="494"/></g><use href="#ps18" x="988"/><use href="#ps9" x="1976"/></g>
                 </svg>
+                <span className="text-[9px] font-bold text-white leading-none">EN</span>
               </Link>
-              <Link href={getAlternateRoute(pathname, "es")} className="hover:opacity-80 transition-opacity" title="Cambiar a Español">
+              <Link href={getAlternateRoute(pathname, "es")} className="flex flex-col items-center gap-0.5 hover:opacity-80 transition-opacity" title="Cambiar a Español">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500" className="w-6 h-4 rounded-sm shadow-sm border border-white/20">
                   <rect width="750" height="500" fill="#c60b1e"/>
                   <rect y="125" width="750" height="250" fill="#ffc400"/>
                 </svg>
+                <span className="text-[9px] font-bold text-white leading-none">ES</span>
               </Link>
             </div>
 
