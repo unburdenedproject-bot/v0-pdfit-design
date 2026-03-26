@@ -2,19 +2,12 @@
 
 import { createClient } from "@/lib/supabase/client"
 import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState, useRef } from "react"
-import { Eye, EyeOff } from "lucide-react"
+import { Eye, EyeOff, Shield, CheckCircle2 } from "lucide-react"
 import HCaptcha from "@hcaptcha/react-hcaptcha"
 import { HeaderEs } from "@/components/header-es"
 import { FooterEs } from "@/components/footer-es"
@@ -107,23 +100,44 @@ export default function SignUpPageEs() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#F3F4FF]">
+    <div
+      className="flex min-h-screen flex-col"
+      style={{
+        background: `
+          radial-gradient(ellipse at 20% 0%, rgba(20, 216, 196, 0.08) 0%, transparent 50%),
+          radial-gradient(ellipse at 80% 100%, rgba(107, 124, 255, 0.06) 0%, transparent 50%),
+          #0E0F1E
+        `,
+      }}
+    >
+      {/* Grain overlay */}
+      <div
+        className="pointer-events-none fixed inset-0 z-10 opacity-[0.03]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E")`,
+          backgroundRepeat: "repeat",
+        }}
+      />
+
       <HeaderEs />
-      <main className="flex flex-1 items-center justify-center px-4 py-12">
+
+      <main className="relative z-20 flex flex-1 items-center justify-center px-4 py-12">
         <div className="w-full max-w-md">
-          <Card className="border-slate-200 shadow-sm">
-            <CardHeader className="text-center">
-              <img src="/logo.svg" alt="PDF.it" className="mx-auto mb-2 h-8 w-auto" />
-              <CardTitle className="text-xl text-slate-800">Crea tu cuenta</CardTitle>
-              <CardDescription className="text-slate-500">
-                Obtén 10 conversiones gratis por día
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
+          {/* Card with metallic gradient border */}
+          <div className="rounded-2xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05), rgba(20,216,196,0.2), rgba(255,255,255,0.05))" }}>
+            <div className="rounded-[15px] p-8" style={{ background: "rgba(255,255,255,0.07)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)" }}>
+              {/* Logo & Title */}
+              <div className="mb-6 text-center">
+                <img src="/logo.svg" alt="PDF.it" className="mx-auto mb-3 h-8 w-auto" />
+                <h1 className="text-xl font-bold text-white">Crea tu cuenta</h1>
+                <p className="mt-1 text-sm text-slate-400">Obtén 10 conversiones gratis por día</p>
+              </div>
+
+              {/* Form */}
               <form onSubmit={handleSignUp}>
                 <div className="flex flex-col gap-4">
                   <div className="grid gap-2">
-                    <Label htmlFor="first-name" className="text-slate-700">Nombre <span className="text-red-500">*</span></Label>
+                    <Label htmlFor="first-name" className="text-slate-300">Nombre <span className="text-red-400">*</span></Label>
                     <Input
                       id="first-name"
                       type="text"
@@ -132,11 +146,11 @@ export default function SignUpPageEs() {
                       autoComplete="given-name"
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
-                      className="border-slate-200 focus-visible:ring-orange-500"
+                      className="bg-white/5 border-white/10 text-white placeholder:text-slate-500 focus:ring-[#14D8C4] focus:border-[#14D8C4] focus-visible:ring-[#14D8C4]"
                     />
                   </div>
                   <div className="grid gap-2">
-                    <Label htmlFor="email" className="text-slate-700">Correo electrónico</Label>
+                    <Label htmlFor="email" className="text-slate-300">Correo electrónico</Label>
                     <Input
                       id="email"
                       type="email"
@@ -144,11 +158,11 @@ export default function SignUpPageEs() {
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="border-slate-200 focus-visible:ring-orange-500"
+                      className="bg-white/5 border-white/10 text-white placeholder:text-slate-500 focus:ring-[#14D8C4] focus:border-[#14D8C4] focus-visible:ring-[#14D8C4]"
                     />
                   </div>
                   <div className="grid gap-2">
-                    <Label htmlFor="password" className="text-slate-700">Contraseña</Label>
+                    <Label htmlFor="password" className="text-slate-300">Contraseña</Label>
                     <div className="relative">
                       <Input
                         id="password"
@@ -156,12 +170,12 @@ export default function SignUpPageEs() {
                         required
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        className="border-slate-200 focus-visible:ring-orange-500 pr-10"
+                        className="bg-white/5 border-white/10 text-white placeholder:text-slate-500 focus:ring-[#14D8C4] focus:border-[#14D8C4] focus-visible:ring-[#14D8C4] pr-10"
                       />
                       <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white transition-colors"
                         aria-label={showPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
                       >
                         {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
@@ -169,7 +183,7 @@ export default function SignUpPageEs() {
                     </div>
                   </div>
                   <div className="grid gap-2">
-                    <Label htmlFor="confirm-password" className="text-slate-700">Confirmar Contraseña</Label>
+                    <Label htmlFor="confirm-password" className="text-slate-300">Confirmar Contraseña</Label>
                     <div className="relative">
                       <Input
                         id="confirm-password"
@@ -177,12 +191,12 @@ export default function SignUpPageEs() {
                         required
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
-                        className="border-slate-200 focus-visible:ring-orange-500 pr-10"
+                        className="bg-white/5 border-white/10 text-white placeholder:text-slate-500 focus:ring-[#14D8C4] focus:border-[#14D8C4] focus-visible:ring-[#14D8C4] pr-10"
                       />
                       <button
                         type="button"
                         onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white transition-colors"
                         aria-label={showConfirmPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
                       >
                         {showConfirmPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
@@ -196,32 +210,55 @@ export default function SignUpPageEs() {
                     ref={captchaRef}
                   />
                   {error && (
-                    <p className="text-sm text-red-600 bg-red-50 rounded-md px-3 py-2">
+                    <p className="text-sm text-red-400 bg-red-500/10 border border-red-500/20 rounded-md px-3 py-2">
                       {error}
                     </p>
                   )}
                   <Button
                     type="submit"
-                    className="w-full bg-orange-500 hover:bg-orange-600 text-white"
+                    className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold transition-colors"
                     disabled={isLoading}
                   >
                     {isLoading ? "Creando cuenta..." : "Registrarse"}
                   </Button>
                 </div>
-                <div className="mt-4 text-center text-sm text-slate-500">
+                <div className="mt-4 text-center text-sm text-slate-400">
                   {"¿Ya tienes una cuenta? "}
                   <Link
                     href="/es/login"
-                    className="text-orange-500 hover:text-orange-600 font-medium underline underline-offset-4"
+                    className="text-[#14D8C4] hover:text-[#2EE6D6] font-medium underline underline-offset-4 transition-colors"
                   >
                     Inicia sesión
                   </Link>
                 </div>
               </form>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
+
+          {/* Privacy note */}
+          <div className="mt-4 flex items-center justify-center gap-1.5">
+            <Shield className="h-3.5 w-3.5 text-slate-500" />
+            <span className="text-xs text-slate-500">Tus archivos nunca se almacenan. Cifrado SSL.</span>
+          </div>
+
+          {/* Trust points */}
+          <div className="mt-4 flex items-center justify-center gap-4 flex-wrap">
+            <div className="flex items-center gap-1">
+              <CheckCircle2 className="h-3.5 w-3.5 text-[#14D8C4]" />
+              <span className="text-xs text-slate-400">10 conversiones gratis/día</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <CheckCircle2 className="h-3.5 w-3.5 text-[#14D8C4]" />
+              <span className="text-xs text-slate-400">Sin tarjeta de crédito</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <CheckCircle2 className="h-3.5 w-3.5 text-[#14D8C4]" />
+              <span className="text-xs text-slate-400">Archivos eliminados tras descarga</span>
+            </div>
+          </div>
         </div>
       </main>
+
       <FooterEs />
     </div>
   )

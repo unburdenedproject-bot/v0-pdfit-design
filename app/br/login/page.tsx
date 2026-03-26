@@ -2,19 +2,12 @@
 
 import { createClient } from "@/lib/supabase/client"
 import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import Link from "next/link"
 import { useRouter, useSearchParams } from "next/navigation"
 import { useState, useRef, Suspense } from "react"
-import { Eye, EyeOff } from "lucide-react"
+import { Eye, EyeOff, Shield } from "lucide-react"
 import HCaptcha from "@hcaptcha/react-hcaptcha"
 import { HeaderBr } from "@/components/header-br"
 import { FooterBr } from "@/components/footer-br"
@@ -61,13 +54,13 @@ function LoginForm() {
     setError(null)
 
     if (!captchaToken) {
-      setError("Por favor, complete a verificacao captcha")
+      setError("Por favor, complete a verificação captcha")
       setIsLoading(false)
       return
     }
 
     if (!supabase) {
-      setError("A autenticacao nao esta configurada.")
+      setError("A autenticação não está configurada.")
       setIsLoading(false)
       return
     }
@@ -90,158 +83,185 @@ function LoginForm() {
 
   if (forgotPassword) {
     return (
-      <Card className="border-slate-200 shadow-sm">
-        <CardHeader className="text-center">
-          <CardTitle className="text-xl text-slate-800">Redefinir senha</CardTitle>
-          <CardDescription className="text-slate-500">
-            {resetSent
-              ? "Verifique seu email para o link de redefinição."
-              : "Digite seu email e enviaremos um link para redefinir sua senha."}
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          {!resetSent ? (
-            <form onSubmit={handleResetPassword}>
-              <div className="flex flex-col gap-4">
-                <div className="grid gap-2">
-                  <Label htmlFor="reset-email" className="text-slate-700">Email</Label>
-                  <Input
-                    id="reset-email"
-                    type="email"
-                    placeholder="seu@exemplo.com"
-                    required
-                    value={resetEmail}
-                    onChange={(e) => setResetEmail(e.target.value)}
-                    className="border-slate-200 focus-visible:ring-orange-500"
-                  />
-                </div>
-                {resetError && (
-                  <p className="text-sm text-red-600 bg-red-50 rounded-md px-3 py-2">
-                    {resetError}
-                  </p>
-                )}
-                <Button
-                  type="submit"
-                  className="w-full bg-orange-500 hover:bg-orange-600 text-white"
-                  disabled={resetLoading}
-                >
-                  {resetLoading ? "Enviando..." : "Enviar link"}
-                </Button>
-              </div>
-            </form>
-          ) : (
-            <p className="text-center text-sm text-green-600 bg-green-50 rounded-md px-3 py-3">
-              Se existir uma conta com esse email, você receberá um link de redefinição.
-            </p>
-          )}
-          <div className="mt-4 text-center">
-            <button
-              onClick={() => { setForgotPassword(false); setResetSent(false); setResetError(null) }}
-              className="text-sm text-orange-500 hover:text-orange-600 font-medium underline underline-offset-4"
-            >
-              Voltar para o login
-            </button>
-          </div>
-        </CardContent>
-      </Card>
-    )
-  }
-
-  return (
-          <Card className="border-slate-200 shadow-sm">
-            <CardHeader className="text-center">
-              <img src="/logo.svg" alt="PDF.it" className="mx-auto mb-2 h-8 w-auto" />
-              <CardTitle className="text-xl text-slate-800">Bem-vindo de volta</CardTitle>
-              <CardDescription className="text-slate-500">
-                Entre na sua conta para continuar
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleLogin}>
+      <>
+        <div className="rounded-2xl p-[1px] bg-gradient-to-b from-white/20 via-white/5 to-transparent">
+          <div className="rounded-[15px] p-8 bg-white/[0.07] backdrop-blur-xl">
+            <div className="text-center mb-6">
+              <h1 className="text-xl font-bold text-white">Redefinir senha</h1>
+              <p className="text-slate-400 text-sm mt-1">
+                {resetSent
+                  ? "Verifique seu email para o link de redefinição."
+                  : "Digite seu email e enviaremos um link para redefinir sua senha."}
+              </p>
+            </div>
+            {!resetSent ? (
+              <form onSubmit={handleResetPassword}>
                 <div className="flex flex-col gap-4">
                   <div className="grid gap-2">
-                    <Label htmlFor="email" className="text-slate-700">Email</Label>
+                    <Label htmlFor="reset-email" className="text-slate-300">Email</Label>
                     <Input
-                      id="email"
+                      id="reset-email"
                       type="email"
                       placeholder="seu@exemplo.com"
                       required
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="border-slate-200 focus-visible:ring-orange-500"
+                      value={resetEmail}
+                      onChange={(e) => setResetEmail(e.target.value)}
+                      className="bg-white/5 border-white/10 text-white placeholder:text-slate-500 focus:ring-[#14D8C4] focus:border-[#14D8C4] focus-visible:ring-[#14D8C4]"
                     />
                   </div>
-                  <div className="grid gap-2">
-                    <div className="flex items-center justify-between">
-                      <Label htmlFor="password" className="text-slate-700">Senha</Label>
-                      <button
-                        type="button"
-                        onClick={() => setForgotPassword(true)}
-                        className="text-xs text-orange-500 hover:text-orange-600 font-medium underline underline-offset-4"
-                      >
-                        Esqueceu a senha?
-                      </button>
-                    </div>
-                    <div className="relative">
-                      <Input
-                        id="password"
-                        type={showPassword ? "text" : "password"}
-                        required
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        className="border-slate-200 focus-visible:ring-orange-500 pr-10 [&::-ms-reveal]:hidden [&::-webkit-credentials-auto-fill-button]:hidden"
-                      />
-                      <button
-                        type="button"
-                        onClick={() => setShowPassword(!showPassword)}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 z-10"
-                        aria-label={showPassword ? "Ocultar senha" : "Mostrar senha"}
-                      >
-                        {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-                      </button>
-                    </div>
-                  </div>
-                  <div className="flex justify-center overflow-hidden min-h-[78px]">
-                    <HCaptcha
-                      sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY!}
-                      onVerify={(token) => setCaptchaToken(token)}
-                      onExpire={() => setCaptchaToken(null)}
-                      ref={captchaRef}
-                    />
-                  </div>
-                  {error && (
-                    <p className="text-sm text-red-600 bg-red-50 rounded-md px-3 py-2">
-                      {error}
+                  {resetError && (
+                    <p className="text-sm text-red-400 bg-red-500/10 border border-red-500/20 rounded-md px-3 py-2">
+                      {resetError}
                     </p>
                   )}
                   <Button
                     type="submit"
-                    className="w-full bg-orange-500 hover:bg-orange-600 text-white"
-                    disabled={isLoading}
+                    className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold"
+                    disabled={resetLoading}
                   >
-                    {isLoading ? "Entrando..." : "Entrar"}
+                    {resetLoading ? "Enviando..." : "Enviar link"}
                   </Button>
                 </div>
-                <div className="mt-4 text-center text-sm text-slate-500">
-                  {"Nao tem uma conta? "}
-                  <Link
-                    href="/br/cadastro"
-                    className="text-orange-500 hover:text-orange-600 font-medium underline underline-offset-4"
-                  >
-                    Cadastre-se
-                  </Link>
-                </div>
               </form>
-            </CardContent>
-          </Card>
+            ) : (
+              <p className="text-center text-sm text-green-400 bg-green-500/10 rounded-md px-3 py-3">
+                Se existir uma conta com esse email, você receberá um link de redefinição.
+              </p>
+            )}
+            <div className="mt-4 text-center">
+              <button
+                onClick={() => { setForgotPassword(false); setResetSent(false); setResetError(null) }}
+                className="text-sm text-[#14D8C4] hover:text-[#2EE6D6] font-medium underline underline-offset-4"
+              >
+                Voltar para o login
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="flex items-center justify-center gap-1.5 mt-6">
+          <Shield className="h-3.5 w-3.5 text-slate-500" />
+          <p className="text-slate-500 text-xs">Seus arquivos nunca são armazenados. Criptografia SSL.</p>
+        </div>
+      </>
+    )
+  }
+
+  return (
+    <>
+      <div className="rounded-2xl p-[1px] bg-gradient-to-b from-white/20 via-white/5 to-transparent">
+        <div className="rounded-[15px] p-8 bg-white/[0.07] backdrop-blur-xl">
+          <div className="text-center mb-6">
+            <img src="/logo.svg" alt="PDF.it" className="mx-auto mb-2 h-8 w-auto" />
+            <h1 className="text-xl font-bold text-white">Bem-vindo de volta</h1>
+            <p className="text-slate-400 text-sm mt-1">
+              Entre na sua conta para continuar
+            </p>
+          </div>
+          <form onSubmit={handleLogin}>
+            <div className="flex flex-col gap-4">
+              <div className="grid gap-2">
+                <Label htmlFor="email" className="text-slate-300">Email</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="seu@exemplo.com"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="bg-white/5 border-white/10 text-white placeholder:text-slate-500 focus:ring-[#14D8C4] focus:border-[#14D8C4] focus-visible:ring-[#14D8C4]"
+                />
+              </div>
+              <div className="grid gap-2">
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="password" className="text-slate-300">Senha</Label>
+                  <button
+                    type="button"
+                    onClick={() => setForgotPassword(true)}
+                    className="text-xs text-[#14D8C4] hover:text-[#2EE6D6] font-medium underline underline-offset-4"
+                  >
+                    Esqueceu a senha?
+                  </button>
+                </div>
+                <div className="relative">
+                  <Input
+                    id="password"
+                    type={showPassword ? "text" : "password"}
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="bg-white/5 border-white/10 text-white placeholder:text-slate-500 focus:ring-[#14D8C4] focus:border-[#14D8C4] focus-visible:ring-[#14D8C4] pr-10 [&::-ms-reveal]:hidden [&::-webkit-credentials-auto-fill-button]:hidden"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white z-10"
+                    aria-label={showPassword ? "Ocultar senha" : "Mostrar senha"}
+                  >
+                    {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                  </button>
+                </div>
+              </div>
+              <div className="flex justify-center overflow-hidden min-h-[78px]">
+                <HCaptcha
+                  sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY!}
+                  onVerify={(token) => setCaptchaToken(token)}
+                  onExpire={() => setCaptchaToken(null)}
+                  ref={captchaRef}
+                />
+              </div>
+              {error && (
+                <p className="text-sm text-red-400 bg-red-500/10 border border-red-500/20 rounded-md px-3 py-2">
+                  {error}
+                </p>
+              )}
+              <Button
+                type="submit"
+                className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold"
+                disabled={isLoading}
+              >
+                {isLoading ? "Entrando..." : "Entrar"}
+              </Button>
+            </div>
+            <div className="mt-4 text-center text-sm text-slate-400">
+              {"Não tem conta? "}
+              <Link
+                href="/br/cadastro"
+                className="text-[#14D8C4] hover:text-[#2EE6D6] font-medium underline underline-offset-4"
+              >
+                Cadastre-se
+              </Link>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div className="flex items-center justify-center gap-1.5 mt-6">
+        <Shield className="h-3.5 w-3.5 text-slate-500" />
+        <p className="text-slate-500 text-xs">Seus arquivos nunca são armazenados. Criptografia SSL.</p>
+      </div>
+    </>
   )
 }
 
 export default function LoginPagePt() {
   return (
-    <div className="flex min-h-screen flex-col bg-[#F3F4FF]">
+    <div
+      className="flex min-h-screen flex-col"
+      style={{
+        background: `
+          #0E0F1E
+          radial-gradient(ellipse 80% 50% at 50% 0%, rgba(20, 216, 196, 0.08), transparent 60%),
+          radial-gradient(ellipse 60% 40% at 80% 100%, rgba(107, 124, 255, 0.06), transparent 50%)
+        `,
+      }}
+    >
+      <div
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+        }}
+      />
       <HeaderBr />
-      <main className="flex flex-1 items-center justify-center px-4 py-12">
+      <main className="relative z-10 flex flex-1 items-center justify-center px-4 py-12">
         <div className="w-full max-w-md">
           <Suspense fallback={null}>
             <LoginForm />
