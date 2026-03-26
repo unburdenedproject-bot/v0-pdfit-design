@@ -2,7 +2,8 @@
 
 import type React from "react"
 
-import { useState, useCallback, useRef } from "react"
+import { useState, useCallback, useRef, useEffect } from "react"
+import { useRouter, usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Upload, FileText, X, Download, CheckCircle, Loader2, AlertCircle, RefreshCw, Crown } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -24,6 +25,22 @@ interface ProcessingStep {
 }
 
 export function PDFToWordInterface() {
+  const router = useRouter()
+  const pathname = usePathname()
+  const [userPlan, setUserPlan] = useState("loading")
+
+  const localePrefix = pathname.startsWith("/es") ? "/es" : pathname.startsWith("/br") ? "/br" : ""
+  const pricingUrl = localePrefix === "/es" ? "/es/precios" : localePrefix === "/br" ? "/br/precos" : "/pricing"
+
+  useEffect(() => {
+    fetch("/api/user-plan")
+      .then((res) => res.json())
+      .then((data) => setUserPlan(data.plan || "free"))
+      .catch(() => setUserPlan("free"))
+  }, [])
+
+  const isPaidUser = userPlan === "pro" || userPlan === "business" || userPlan === "enterprise"
+
   const [isDragOver, setIsDragOver] = useState(false)
   const [files, setFiles] = useState<File[]>([])
   const [state, setState] = useState<ProcessingState>("idle")
@@ -271,6 +288,31 @@ Processed by PDF.it - Professional PDF Tools
       fileInputRef.current.value = ""
     }
   }, [processedFiles, processingSteps])
+
+  // Pro tier pre-gate
+  if (!isPaidUser && userPlan !== "loading") {
+    return (
+      <section className="py-16" style={{ background: "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.06) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.04) 0%, transparent 50%), #0E0F1E" }}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-lg mx-auto relative">
+            <div className="rounded-2xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(214,179,106,0.3), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}>
+              <div className="rounded-[15px] p-8 pt-10 text-center relative overflow-hidden" style={{ background: "radial-gradient(ellipse 40% 30% at 50% 0%, rgba(214,179,106,0.05) 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 4px 24px rgba(0,0,0,0.3)" }}>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest" style={{ background: "linear-gradient(135deg, #D6B36A, #E0C27A)", color: "#0E0F1E" }}>
+                  Most Popular
+                </div>
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 20px rgba(214,179,106,0.25), 0 4px 8px rgba(0,0,0,0.2)" }}>
+                  <Crown className="h-7 w-7 text-[#E0C27A]" />
+                </div>
+                <h2 className="text-xl font-bold text-white mb-2">Pro Feature</h2>
+                <p className="text-sm text-slate-400 mb-6">PDF to Word is available on the Pro, Business, and Enterprise plans.</p>
+                <Button onClick={() => router.push(pricingUrl)} className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold px-8 py-3 rounded-xl">View Plans</Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
 
   // Error state
   if (state === "error") {
