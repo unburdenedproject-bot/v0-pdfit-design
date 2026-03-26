@@ -232,20 +232,17 @@ export function WatermarkPdfInterface() {
   const upgradeLabels =
     localePrefix === "/es"
       ? {
-          badge: "Función Pro",
           title: "Función Pro",
           desc: "Agregar Marca de Agua está disponible en el plan Pro.",
           btn: "Ver Plan Pro",
         }
       : localePrefix === "/br"
         ? {
-            badge: "Função Pro",
             title: "Função Pro",
             desc: "Adicionar Marca d'Água está disponível no plano Pro.",
             btn: "Ver Plano Pro",
           }
         : {
-            badge: "Pro Feature",
             title: "Pro Feature",
             desc: "Add Watermark is available on the Pro plan.",
             btn: "View Pro Plan",
@@ -254,14 +251,14 @@ export function WatermarkPdfInterface() {
   // Non-pro users see upgrade prompt
   if (userPlan !== null && !isProUser) {
     return (
-      <section className="py-16" style={{ background: "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(192,197,206,0.05) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 100% 80%, rgba(20,216,196,0.04) 0%, transparent 50%), #0E0F1E" }}>
+      <section className="py-16" style={{ background: "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(214,179,106,0.05) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 100% 80%, rgba(20,216,196,0.04) 0%, transparent 50%), #0E0F1E" }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-lg mx-auto relative">
-            <div className="rounded-2xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(192,197,206,0.5), rgba(20,216,196,0.3), rgba(192,197,206,0.35), rgba(107,124,255,0.2), rgba(192,197,206,0.4))" }}>
-              <div className="rounded-[15px] p-8 pt-10 text-center relative overflow-hidden" style={{ background: "radial-gradient(ellipse 40% 30% at 50% 0%, rgba(192,197,206,0.06) 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(20,216,196,0.04) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(192,197,206,0.03) 0%, transparent 60%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 1px 1px rgba(192,197,206,0.08), 0 4px 24px rgba(0,0,0,0.3)" }}>
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest" style={{ background: "linear-gradient(135deg, #C0C5CE, #14D8C4)", color: "#0E0F1E" }}>{upgradeLabels.badge}</div>
-                <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 20px rgba(192,197,206,0.25), 0 0 40px rgba(20,216,196,0.1), 0 4px 8px rgba(0,0,0,0.2)" }}>
-                  <Crown className="h-7 w-7 text-[#C0C5CE]" />
+            <div className="rounded-2xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(214,179,106,0.5), rgba(20,216,196,0.3), rgba(214,179,106,0.3), rgba(107,124,255,0.2), rgba(214,179,106,0.4))" }}>
+              <div className="rounded-[15px] p-8 pt-10 text-center relative overflow-hidden" style={{ background: "radial-gradient(ellipse 40% 30% at 50% 0%, rgba(214,179,106,0.05) 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(20,216,196,0.04) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(214,179,106,0.03) 0%, transparent 60%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 1px 1px rgba(214,179,106,0.08), 0 4px 24px rgba(0,0,0,0.3)" }}>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest" style={{ background: "linear-gradient(135deg, #D6B36A, #E0C27A)", color: "#0E0F1E" }}>Most Popular</div>
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 20px rgba(214,179,106,0.25), 0 0 40px rgba(20,216,196,0.1), 0 4px 8px rgba(0,0,0,0.2)" }}>
+                  <Crown className="h-7 w-7 text-[#E0C27A]" />
                 </div>
                 <h2 className="text-xl font-bold text-white mb-2">{upgradeLabels.title}</h2>
                 <p className="text-sm text-slate-400 mb-6">{upgradeLabels.desc}</p>
