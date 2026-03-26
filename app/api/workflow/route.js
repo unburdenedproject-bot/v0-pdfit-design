@@ -90,7 +90,7 @@ export async function POST(request) {
   let uploadedBlobUrl = null;
 
   try {
-    // Auth: Business plan only
+    // Auth: Enterprise plan only
     const { createClient } = await import("@/lib/supabase/server");
     const supabase = await createClient();
     const { data: { user } } = await supabase.auth.getUser();
@@ -98,7 +98,7 @@ export async function POST(request) {
       return NextResponse.json({ error: "upgrade_required" }, { status: 403 });
     }
     const { data: profile } = await supabase.from("users").select("plan").eq("id", user.id).single();
-    if (profile?.plan !== "business" && profile?.plan !== "enterprise") {
+    if (profile?.plan !== "enterprise") {
       return NextResponse.json({ error: "upgrade_required" }, { status: 403 });
     }
 
