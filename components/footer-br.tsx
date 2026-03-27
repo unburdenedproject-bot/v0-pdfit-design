@@ -120,7 +120,7 @@ export function FooterBr() {
         </div>
 
         <div className="border-t border-[#252A6A] mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-[#A5B4FC] text-sm">&copy; 2024 PDF.it. Todos os direitos reservados.</p>
+          <p className="text-[#A5B4FC] text-sm">&copy; 2024 PDF.it. Feito para profissionais, escolhido por profissionais.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/br/politica-de-privacidade" className="text-[#A5B4FC] hover:text-[#14D8C4] text-sm transition-colors">
               Privacidade

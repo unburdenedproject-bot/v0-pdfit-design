@@ -67,7 +67,7 @@ export default function AcercaPage() {
               >
                 <Shield className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Acerca de PDF.it — Herramientas PDF con Privacidad</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Acerca de PDF.it — Creado para Profesionales, Elegido por Profesionales</h1>
               <p className="text-xl text-slate-300">
                 PDF.it es una plataforma PDF en el navegador creada para personas, equipos y organizaciones. Convierte, comprime, firma, redacta y automatiza — tus archivos se procesan y eliminan de inmediato. Nunca almacenamos tus documentos.
               </p>

@@ -58,7 +58,7 @@ export function HeroSection() {
             className="mb-5 leading-tight"
             style={{ fontSize: "clamp(40px, 7vw, 68px)", fontWeight: 900, letterSpacing: "-2.5px" }}
           >
-            <span className="text-white block">Free PDF Tools.</span>
+            <span className="text-white block">Built for Professionals.</span>
             <span
               className="block"
               style={{

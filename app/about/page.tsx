@@ -67,7 +67,7 @@ export default function AboutPage() {
               >
                 <Shield className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">About PDF.it — Privacy-First PDF Tools</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">About PDF.it — Built for Professionals, Trusted by Professionals</h1>
               <p className="text-xl text-slate-300">
                 PDF.it is a browser-based PDF platform built for individuals, teams, and organizations. Convert, compress, sign, redact, and automate — your files are processed and deleted immediately. We never store your documents.
               </p>

@@ -67,7 +67,7 @@ export default function SobrePage() {
               >
                 <Shield className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Sobre o PDF.it — Ferramentas PDF com Privacidade</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Sobre o PDF.it — Feito para Profissionais, Escolhido por Profissionais</h1>
               <p className="text-xl text-slate-300">
                 O PDF.it e uma plataforma PDF no navegador criada para pessoas, equipes e organizacoes. Converta, comprima, assine, redija e automatize — seus arquivos sao processados e excluidos imediatamente. Nunca armazenamos seus documentos.
               </p>
