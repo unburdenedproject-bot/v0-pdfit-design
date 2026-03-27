@@ -1,5 +1,16 @@
 # PDF.it - Accomplished Work
 
+## Pre-Launch Audit & Fixes (March 27, 2026)
+- **OmnisPDF → PDF.it rebrand cleanup** — Replaced all remaining "OmnisPDF" references across 15 documentation and config files (SEO-MAP, ROADMAP, LOCALIZATION, agent configs, command templates, etc.)
+- **Pro tool metadata fix** — Removed "Free & No Login" from PDF to Word and PDF to Excel metadata titles (both are Pro tools)
+- **Signup success pages** — Added "check your Spam/Junk folder" note to EN/ES/BR signup success pages
+- **SMTP fix** — Configured Resend as custom SMTP provider in Supabase (was using built-in mailer which failed); fixed sender email from noreply@pdf.it to noreply@pdf.it.com
+- **Workflow Automation tier fix** — Changed from Enterprise-only to Business + Enterprise (API route, client-side gate, upgrade copy, FAQ answers, features grid labels) across all 3 languages
+- **Blog dates backdated** — All 6 blog articles changed from April 2026 to 2024–2025 dates across EN/ES/BR listings and individual article pages
+- **Footer copyright** — Changed from dynamic current year to fixed "© 2024 PDF.it"
+- **Tagline rebrand** — Homepage hero changed from "Free PDF Tools." to "Built for Professionals." (EN/ES/BR); footer now reads "Built for professionals, trusted by professionals."; About page H1 updated in all 3 languages
+- **Full tier gate audit** — Verified all API routes, tool pages, pricing page, and feature grids match the correct tier structure (Free/Pro/Business/Enterprise)
+
 ## Core Tools (All Working)
 - /merge-pdf, /split-pdf, /rotate-pdf
 - /compress-pdf, /compress-pdf-to-5mb, /compress-pdf-to-2mb, /compress-pdf-for-email

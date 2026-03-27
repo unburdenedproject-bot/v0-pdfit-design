@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Acerca de PDF.it — Herramientas PDF en Linea con Privacidad para Equipos e Individuos",
   description:
     "PDF.it es una plataforma PDF en el navegador. Convierte, comprime, firma, redacta y automatiza PDFs — los archivos se eliminan inmediatamente despues de la descarga. Planes Gratis, Pro, Business y Enterprise disponibles.",
+  keywords: ["PDF para profesionales", "PDF para abogados", "PDF para contadores", "PDF para estudiantes", "PDF para freelancers", "herramientas PDF para equipos", "PDF con privacidad"],
   openGraph: {
     title: "Acerca de PDF.it — Herramientas PDF en Linea con Privacidad para Equipos e Individuos",
     description:
@@ -255,23 +256,23 @@ export default function AcercaPage() {
                 {[
                   {
                     icon: GraduationCap,
-                    title: "Estudiantes e investigadores",
-                    desc: "Convierte trabajos, extrae tablas, comprime documentos grandes y ejecuta OCR sobre apuntes escaneados.",
+                    title: "PDF para Estudiantes e Investigadores",
+                    desc: "Convierte trabajos, extrae tablas, comprime documentos grandes y ejecuta OCR sobre apuntes escaneados. La herramienta PDF ideal para estudiantes de todos los niveles.",
                   },
                   {
                     icon: Building,
-                    title: "Empresas y equipos",
-                    desc: "Procesa facturas, contratos y paquetes de onboarding. Usa firma electronica, redaccion y automatizacion de flujos.",
+                    title: "PDF para Profesionales y Equipos",
+                    desc: "Procesa facturas, contratos y paquetes de onboarding. Usa firma electronica, redaccion y automatizacion de flujos — creado para profesionales que manejan documentos a diario.",
                   },
                   {
                     icon: Briefcase,
-                    title: "Freelancers y candidatos",
-                    desc: "Prepara entregables, crea curriculos, agrega marcas de agua y protege archivos con contrasena.",
+                    title: "PDF para Freelancers y Candidatos",
+                    desc: "Prepara entregables, crea curriculos, agrega marcas de agua y protege archivos con contrasena. Elegido por freelancers que necesitan herramientas PDF rapidas y confiables.",
                   },
                   {
                     icon: Scale,
-                    title: "Legal, finanzas y salud",
-                    desc: "Redacta datos sensibles, extrae tablas de cumplimiento y automatiza flujos documentales.",
+                    title: "PDF para Abogados y Contadores",
+                    desc: "Redacta datos sensibles, extrae tablas de cumplimiento y automatiza flujos documentales. Disenado para abogados, contadores y equipos que exigen precision.",
                   },
                 ].map((card) => (
                   <div

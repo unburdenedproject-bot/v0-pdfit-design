@@ -95,3 +95,21 @@
 **What:** Tools like jpg-to-pdf, png-to-pdf, and url-to-pdf use different processing components (ImageToPdfInterface, UrlPdfInterface) instead of the standard ProcessingInterface. The Page_Format.md was updated to document these as "Variant B" and "Variant C" with the explicit rule that the surrounding page structure is always identical — only the processing component changes.
 **Why it matters:** Without this, future sessions might think these pages need a different layout because they use a different interface. The rule is: the shell never changes, only the component at position 3.
 **Apply when:** Adding a new tool that uses a non-standard interface component. Follow Page_Format.md exactly — swap only the processing component, keep everything else identical.
+
+## 2026-03-27 — Supabase SMTP sender email must match the verified domain exactly
+
+**What:** Supabase signup confirmation emails failed with "Error sending confirmation email" because the SMTP sender was configured as `noreply@pdf.it` instead of `noreply@pdf.it.com`. The domain verified in Resend was `pdf.it.com`, so the sender email must match exactly.
+**Why it matters:** This is a silent config error — the code is correct, the SMTP credentials are correct, but Resend rejects the send because the sender domain doesn't match. There's no clear error message pointing to the mismatch.
+**Apply when:** Setting up SMTP in Supabase with any provider (Resend, SendGrid, etc.). The sender email domain must exactly match the domain verified in the email provider — including subdomains.
+
+## 2026-03-27 — Metadata must not claim "Free" for paid tools
+
+**What:** PDF to Word and PDF to Excel had metadata titles saying "Free & No Login" despite being Pro-only tools. This is misleading to users who find the page via Google and expect a free tool.
+**Why it matters:** SEO metadata is a promise. If the title says "Free" but the tool requires a Pro subscription, users bounce and trust erodes. Always match metadata claims to the actual tier gate.
+**Apply when:** Creating or editing any tool page metadata. Check the `requiresPlan` prop — if the tool is gated, the title and description must NOT say "free", "no login", or "no signup".
+
+## 2026-03-27 — Audit agent findings need manual verification
+
+**What:** The Explore agent flagged PDF-to-TXT as "missing from features grid" and flagged pdf-to-jpg/pdf-to-png as "batch processing routes" — both were wrong. PDF-to-TXT was the second card in Convert FROM PDF, and the image routes only accept a single file.
+**Why it matters:** Agents can misread code or miss context. Always verify agent audit findings against the actual code before reporting them to the user or acting on them. Paula caught the PDF-to-TXT error immediately.
+**Apply when:** Any time an agent returns audit findings. Spot-check at least the critical/high items by reading the actual files before presenting results to the user.

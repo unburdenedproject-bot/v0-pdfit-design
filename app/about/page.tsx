@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "About PDF.it — Privacy-First Online PDF Tools for Teams & Individuals",
   description:
     "PDF.it is a browser-based PDF platform. Convert, compress, sign, redact, and automate PDFs — files are deleted immediately after download. Free, Pro, Business, and Enterprise plans available.",
+  keywords: ["PDF for professionals", "PDF for lawyers", "PDF for accountants", "PDF for students", "PDF for freelancers", "PDF tools for teams", "privacy-first PDF tools"],
   openGraph: {
     title: "About PDF.it — Privacy-First Online PDF Tools for Teams & Individuals",
     description:
@@ -255,23 +256,23 @@ export default function AboutPage() {
                 {[
                   {
                     icon: GraduationCap,
-                    title: "Students & Researchers",
-                    desc: "Convert papers, extract tables, compress large documents, and run OCR on scanned lecture notes.",
+                    title: "PDF for Students & Researchers",
+                    desc: "Convert papers, extract tables, compress large documents, and run OCR on scanned lecture notes. The go-to PDF toolkit for students at every level.",
                   },
                   {
                     icon: Building,
-                    title: "Businesses & Teams",
-                    desc: "Process invoices, contracts, and onboarding packets. Run eSign, redaction, and workflow automation.",
+                    title: "PDF for Professionals & Teams",
+                    desc: "Process invoices, contracts, and onboarding packets. Run eSign, redaction, and workflow automation — built for professionals who handle documents daily.",
                   },
                   {
                     icon: Briefcase,
-                    title: "Freelancers & Job Seekers",
-                    desc: "Prep deliverables, build resumes, watermark files, and password-protect documents.",
+                    title: "PDF for Freelancers & Job Seekers",
+                    desc: "Prep deliverables, build resumes, watermark files, and password-protect documents. Trusted by freelancers who need fast, reliable PDF tools.",
                   },
                   {
                     icon: Scale,
-                    title: "Legal, Finance & Healthcare",
-                    desc: "Redact sensitive data, extract compliance tables, and automate document workflows.",
+                    title: "PDF for Lawyers & Accountants",
+                    desc: "Redact sensitive data, extract compliance tables, and automate document workflows. Designed for lawyers, accountants, and teams that demand precision.",
                   },
                 ].map((card) => (
                   <div

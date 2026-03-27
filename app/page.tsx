@@ -23,6 +23,11 @@ export const metadata: Metadata = {
     "compress PDF",
     "merge PDF",
     "convert PDF",
+    "PDF for professionals",
+    "PDF for lawyers",
+    "PDF for accountants",
+    "PDF for students",
+    "PDF for freelancers",
   ],
   openGraph: {
     title: "AI PDF Tools, ATS Resume Optimizer & Resume Builder | PDF.it",
