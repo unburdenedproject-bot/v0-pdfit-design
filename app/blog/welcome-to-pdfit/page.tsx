@@ -31,7 +31,7 @@ export default function WelcomeToPDFitPage() {
                 </span>
                 <div className="flex items-center gap-1.5 text-sm text-slate-400">
                   <Calendar className="h-3.5 w-3.5" />
-                  April 1, 2026
+                  January 15, 2024
                 </div>
               </div>
               <h1 className="text-3xl sm:text-4xl font-black">
