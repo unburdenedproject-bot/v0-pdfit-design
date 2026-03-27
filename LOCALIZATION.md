@@ -1,4 +1,4 @@
-# OmnisPDF - Localization
+# PDF.it - Localization
 
 ## Target Markets
 - USA (English — no prefix)

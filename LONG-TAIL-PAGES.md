@@ -1,4 +1,4 @@
-# OmnisPDF — Long Tail SEO Pages Plan
+# PDF.it — Long Tail SEO Pages Plan
 
 Status: ✅ COMPLETE — ~82 articles built and deployed
 Total: ~80 pages under /learn/ (actual: 82)

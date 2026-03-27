@@ -1,4 +1,4 @@
-# Add New PDF Tool to OmnisPDF
+# Add New PDF Tool to PDF.it
 
 Add a new tool to all three language layers (EN, ES, BR) and wire everything up correctly.
 

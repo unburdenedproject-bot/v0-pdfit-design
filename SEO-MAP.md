@@ -1,4 +1,4 @@
-# OmnisPDF — 120-Page SEO Map
+# PDF.it — 120-Page SEO Map
 
 Goal: Dominate the PDF niche through intent coverage.
 Target: 100k–500k monthly visitors → 1k–10k subscribers

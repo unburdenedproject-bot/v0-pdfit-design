@@ -84,7 +84,7 @@
 - First name required on signup (validation + stored in Supabase user_metadata)
 - Stripe webhook no longer overwrites user names (changed upsert → update)
 - Suspense boundary fix for useSearchParams() in auth/confirm pages
-- All PDF.it branding removed, replaced with OmnisPDF
+- All PDF.it branding removed, replaced with PDF.it
 
 ## SEO Cluster Pages Done (All 6 Clusters — ~100 pages)
 - Cluster 1 (Compression): 18 pages built
@@ -197,7 +197,7 @@
 - **SB-37: UI distorted on mobile after conversion** — Added `overflow-x-hidden` on success state section in `processing-interface.tsx`
 
 ## PDF.it Rebrand (COMPLETE — March 24 2026)
-- Global find-and-replace: OmnisPDF → PDF.it across all pages, components, metadata
+- Global find-and-replace: PDF.it → PDF.it across all pages, components, metadata
 - Tailwind config: remapped `orange` color key to teal (#14D8C4) hex values
 - Background color: replaced all `bg-slate-50`/`bg-white` page wrappers with `#F3F4FF`
 - Header: text wordmark with "PDF" in dark indigo (#191B4D) + ".it" in teal (#14D8C4)
@@ -220,7 +220,7 @@
 - **"Still have questions?" boxes** — Replaced beige/cream (from-orange-50 to-orange-100) with dark navy (#191B4D) + white text + teal CTA buttons across all pages and locales
 - **Category headers** — font-extrabold (800) white titles, #6B7CFF purple subtitles
 - **Dark-on-dark text fix** — Fixed unreadable text-slate-800 on bg-[#191B4D] in Our Mission box across EN/ES/BR about pages
-- **User-facing OmnisPDF cleanup** — Replaced "OmniSPDF" in eSign modal (4 instances), batch zip filename, and cookie key with PDF.it equivalents
+- **User-facing PDF.it cleanup** — Replaced "OmniSPDF" in eSign modal (4 instances), batch zip filename, and cookie key with PDF.it equivalents
 - **Blog rename** — /blog/welcome-to-omnispdf → /blog/welcome-to-pdfit; updated slugs in EN/ES/BR blog listings and sitemap
 - **Sitemap cleanup** — Removed duplicate /tools/qr-code and /tools/word-to-pdf entries
 - **Footer social links build fix** — Removed onClick handlers from server component footer social links (was causing Next.js build failure)
@@ -346,7 +346,7 @@
 - FAQ section lazy-loaded with `next/dynamic`
 
 ### Branding Fixes
-- Replaced OmnisPDF logo.svg with PDF.it inline text logo on login, signup, and reset-password pages (7 files)
+- Replaced PDF.it logo.svg with PDF.it inline text logo on login, signup, and reset-password pages (7 files)
 - Login page background CSS syntax fixed (color must come after gradients)
 
 ### Mobile Fixes
@@ -372,7 +372,7 @@
 ### Remaining Pages Fixed — March 26 2026
 - `/signup-required` (EN/ES/BR) — rewritten with dark cinematic glassmorphism card, teal CTA, privacy note
 - `/reset-password` — rewritten with dark glassmorphism, dark inputs, teal accents, password show/hide toggles
-- `public/logo.svg` — replaced OmnisPDF SVG with PDF.it text logo ("PDF" in dark + ".it" in teal)
+- `public/logo.svg` — replaced PDF.it SVG with PDF.it text logo ("PDF" in dark + ".it" in teal)
 
 ### Legal Pages Redesigned — March 26 2026
 - `/privacy-policy` (EN/ES/BR) — dark cinematic hero, glassmorphism policy card on dark bg, teal accents, teal bullet markers, privacy footer section. All legal text preserved exactly.

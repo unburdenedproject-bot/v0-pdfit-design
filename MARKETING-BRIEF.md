@@ -1,4 +1,4 @@
-# PDF.it & OmnisPDF — Marketing Brief
+# PDF.it & PDF.it — Marketing Brief
 
 Created: March 23, 2026
 Prepared for: Marketing Department
@@ -9,7 +9,7 @@ Prepared for: Marketing Department
 
 Two sister products, same engine, different visual identity:
 
-| | PDF.it | OmnisPDF |
+| | PDF.it | PDF.it |
 |---|---|---|
 | Domain | pdf.it.com | omnispdf.com |
 | Identity | Premium, modern, consumer-facing | Professional, business-facing |
@@ -48,7 +48,7 @@ None of them prove it.
 | Smallpdf | "We protect your privacy" |
 | Adobe | "Your files are secure" |
 | SodaPDF | "256-bit encryption" |
-| **PDF.it / OmnisPDF** | **"Files deleted immediately after your session"** |
+| **PDF.it / PDF.it** | **"Files deleted immediately after your session"** |
 
 We don't promise privacy. We prove it.
 - Files are deleted the moment the session ends
@@ -113,7 +113,7 @@ Browser-based, instant processing. No desktop app to download, no plugin require
 
 **Pain points:** Don't want to create accounts, worried about privacy, need it done now
 
-### OmnisPDF — Business & Professional
+### PDF.it — Business & Professional
 - **Legal teams** — redacting, protecting, and organizing case documents
 - **Accounting teams** — extracting tables, converting invoices, batch processing
 - **Operations teams** — workflow automation, document management at scale
@@ -157,7 +157,7 @@ Browser-based, instant processing. No desktop app to download, no plugin require
 ```
                     HIGH PRIVACY PROOF
                            |
-              PDF.it       |      OmnisPDF
+              PDF.it       |      PDF.it
               (consumer)   |      (business)
                            |
 SIMPLE ——————————————————————————————————— POWERFUL
@@ -209,7 +209,7 @@ We own the top half. No competitor is credibly claiming verified, immediate file
 1. **Privacy proof** — immediate deletion is a technical fact, not a marketing claim
 2. **No friction** — anonymous use before any account request
 3. **Three languages** — EN + ES + BR from day one (competitors have UI translations but no native SEO content depth)
-4. **Two brands** — PDF.it captures consumer traffic, OmnisPDF captures business traffic
+4. **Two brands** — PDF.it captures consumer traffic, PDF.it captures business traffic
 5. **Domain** — pdf.it is a premium, memorable domain that competitors cannot replicate
 
 ---

@@ -1,223 +1,97 @@
 # Project Learnings
 
-## 2026-03-22 — Split CLAUDE.md into focused context files
+## 2026-03-25 — Canonical page format doc eliminates repeated instructions
 
-**What:** Broke CLAUDE.md into CLAUDE.md, COMPLETED.md, ENVIRONMENT.md, and LOCALIZATION.md.
-**Why it matters:** Keeps Claude's loaded context lean — it only pulls in what's relevant to the task at hand rather than one massive file.
-**Apply when:** Any time CLAUDE.md grows beyond ~200 lines or contains sections that are rarely needed together.
+**What:** Created `Page_Format.md` as the single source of truth for tool page structure (section order, exact JSX snippets, inline styles, color tokens, localization rules). Referenced it in `CLAUDE.md` under both Strategy Documents and Rules.
+**Why it matters:** Paula was specifying the same design requirements every session and every tool page. Without a canonical doc, each session drifted slightly (e.g., some pages got frosted glass intro pills, others got plain `✓` lists; some had dark feature cards, others had light `bg-gray-50`). The doc locks down the pattern so any model in any session produces identical output.
+**Apply when:** Creating or editing any tool page. Read `Page_Format.md` first — every time, no exceptions.
 
-## 2026-03-22 — BRAND.md as the Business Brain
+## 2026-03-25 — ES/BR pages diverge silently from EN
 
-**What:** Created BRAND.md containing audience, voice, positioning, and color decisions. All skills reference it automatically.
-**Why it matters:** Ensures brand consistency across every skill without having to re-state identity details in each one.
-**Apply when:** Adding any new skill that produces user-facing content — make sure it reads BRAND.md first.
+**What:** The ES and BR versions of `/pdf-to-excel` had a "Pro" badge in the hero, different feature section content, and an old vertical How To layout — while EN had none of those. This divergence wasn't obvious until all three files were read side-by-side.
+**Why it matters:** When pages are built at different times or by different sessions, structural drift accumulates. The fix is always a full rewrite to unify, which is more work than getting it right the first time.
+**Apply when:** Before editing any tool page, read all 3 language versions first. If they differ structurally, unify them as part of the edit — don't just patch one language.
 
-## 2026-03-22 — /add-tool skill for cross-locale tool rollout
+## 2026-03-25 — CLAUDE.md is the auto-loaded contract
 
-**What:** Built a `/add-tool` skill that adds any new PDF tool across EN, ES, and BR in a single command.
-**Why it matters:** Eliminates the manual, error-prone process of duplicating tool additions across three locales.
-**Apply when:** Any new tool is being added to PrecisionConvert — use `/add-tool` instead of editing locale files manually.
+**What:** Adding rules to `CLAUDE.md` ensures they're loaded into every conversation automatically. Adding them to standalone docs (like `Page_Format.md`) only works if something tells the model to read that doc.
+**Why it matters:** A rule that isn't in `CLAUDE.md` is a rule that gets forgotten. The fix is: put the pointer in `CLAUDE.md`, put the detail in the standalone doc.
+**Apply when:** Any time a new project-wide rule or reference doc is created, add a pointer to it in `CLAUDE.md` Rules or Strategy Documents.
 
-## 2026-03-22 — /seo-research then /seo-article workflow
+## 2026-03-25 — Do tool page rewrites yourself, not via agents
 
-**What:** Built two separate skills: `/seo-research` (research first) and `/seo-article` (write after). They are always run in sequence, never combined.
-**Why it matters:** Separating research from writing ensures the article is grounded in real keyword data, not guesses.
-**Apply when:** Any SEO content task — always run `/seo-research` before `/seo-article`, never skip straight to writing.
+**What:** When 7 agents were launched in parallel to rewrite tool pages, several produced output that didn't match the canonical format — wrong intro style, missing classes, inconsistent FAQ headings. Paula caught the drift on the live site and was frustrated. Doing pages one at a time manually produced pixel-perfect results every time.
+**Why it matters:** Agents interpret instructions loosely. For visually precise work where every class and inline style must match exactly, manual rewrites are faster and more reliable than delegating to agents — even with detailed prompts. Agents are fine for simple mechanical edits (moving a `<Script>` tag, adding a prop) but not for full page rewrites where structure must be identical.
+**Apply when:** Any task where visual/structural precision matters across multiple files. Do it yourself, one page at a time. Use agents only for truly mechanical changes (find-replace, prop additions, schema moves).
 
-## 2026-03-22 — seo-agent sub-agent for isolated SEO work
+## 2026-03-25 — Use requiresPlan prop for shared component gating
 
-**What:** Built a dedicated `seo-agent` sub-agent so SEO work runs independently.
-**Why it matters:** Keeps SEO research and writing out of the main conversation context, preventing context bloat when doing long-form content work.
-**Apply when:** Any SEO task that would otherwise clutter the main context — delegate to seo-agent.
+**What:** `ProcessingInterface` is shared across free and paid tools. Instead of adding pre-gate logic to each page file, a `requiresPlan` prop was added to the component. Pages pass `requiresPlan="pro"` (or `"business"` / `"enterprise"`) and the component handles the tier check internally. Free tools omit the prop entirely.
+**Why it matters:** This avoids duplicating plan-detection code across 18+ page files and keeps the gating logic centralized. It also supports all 3 tiers with automatic color theming (gold/sapphire/platinum).
+**Apply when:** Any time a shared component needs to behave differently based on user tier. Add an optional prop to the component rather than gating in each page.
 
-## 2026-03-22 — Global /wrap-up skill
+## 2026-03-25 — Three-tier visual identity for upgrade cards
 
-**What:** Created a global `/wrap-up` skill to run at the end of every session.
-**Why it matters:** Ensures learnings are captured consistently before closing out, building a durable knowledge base over time.
-**Apply when:** End of every working session — run `/wrap-up` before closing Claude Code.
+**What:** Upgrade/pre-gate cards now have distinct visual identities per tier: Pro = champagne gold (#E0C27A, "Most Popular"), Business = sapphire blue (#6B7CFF, "Business Feature"), Enterprise = platinum (#C0C5CE) + teal ("Enterprise Feature"). All share the same dark glassmorphism structure but with tier-specific accent colors on the crown icon, badge, glow, and border gradient.
+**Why it matters:** Paula wanted each tier to feel premium and distinct. The gold started too heavy (full gold border takeover) and had to be dialed back to a subtle smear. The lesson: start subtle, add impact with one or two focal points (badge + icon glow), not by coloring everything.
+**Apply when:** Designing tier-differentiated UI. Keep the structural shell identical; vary only accent colors on 3-4 elements (icon, badge, glow, one border gradient stop). Never take over the entire card with one color.
 
-## 2026-03-22 — Global /multilingual-page skill
+## 2026-03-26 — Tier assignments must be verified against the homepage, not just CLAUDE.md
 
-**What:** Created a global `/multilingual-page` skill for adding or updating pages across all supported locales.
-**Why it matters:** Standardizes the multilingual workflow so no locale gets missed when new pages are added.
-**Apply when:** Any time a new page or content block needs to exist in multiple languages.
+**What:** CLAUDE.md listed workflow-automation and table-extraction as Enterprise tools, but the homepage features-grid showed them as Business. The user corrected me multiple times as I flip-flopped between tiers. The homepage is the source of truth for what customers see — CLAUDE.md may be outdated.
+**Why it matters:** Inconsistent tier labeling across the site confuses users and damages trust. When in doubt, check the homepage features-grid AND ask the user before making tier changes.
+**Apply when:** Any time you're changing tier assignments, gate cards, or pricing labels. Always verify against the homepage features-grid (all 3 language versions) and confirm with the user if there's any ambiguity.
 
-## 2026-03-22 — Global hooks: auto-format on save and command logging
+## 2026-03-26 — CSS background shorthand: base color must come LAST
 
-**What:** Added global hooks to auto-format files on save and log all commands run during a session.
-**Why it matters:** Removes manual formatting steps and creates an audit trail of what Claude did without extra effort.
-**Apply when:** Already active globally — no action needed, but be aware logs exist if debugging unexpected changes.
+**What:** Writing `background: #0E0F1E radial-gradient(...)` is invalid CSS. The solid color fallback must come after all gradient layers, separated by commas: `background: radial-gradient(...), radial-gradient(...), #0E0F1E`. The broken syntax was deployed to production and the login page showed a white background.
+**Why it matters:** This is a silent failure — no build error, no console error. The browser just ignores the entire property. Always put the base color as the last value in a multi-layer background.
+**Apply when:** Any time you write inline `background` styles with gradients + a solid fallback color. Pattern: `radial-gradient(...), radial-gradient(...), #baseColor`.
 
-## 2026-03-23 — API routes are .js, not .ts — grep must include both extensions
+## 2026-03-26 — Verify closing tags after surgical edits to JSX
 
-**What:** All processing API routes (`/api/compress-pdf`, `/api/watermark-pdf`, etc.) are `.js` files. Only a handful of utility routes (`/api/upload`, `/api/qr-code`, `/api/pdf-to-txt`) are `.ts`. Grepping only `--include="*.ts"` misses the majority of routes.
-**Why it matters:** An audit that only searched `.ts` would report false "all clear" on 25+ routes that hold all the plan-gating and logUsage logic.
-**Apply when:** Any time searching or auditing API routes — always grep `--include="*.ts" --include="*.js"` together.
+**What:** After replacing the pricing card sections with new JSX, two cards were missing closing `</div>` tags. This caused a build failure on Vercel. The error message ("Unexpected token `div` at line 24") pointed at the return statement, not the actual missing tag — making it hard to diagnose.
+**Why it matters:** JSX edit tools replace exact string matches. If the old and new strings have different nesting depths, you silently lose closing tags. Always count opening/closing tags after a large JSX replacement.
+**Apply when:** After any Edit that replaces multi-line JSX blocks with different nesting structure. Read the surrounding 10 lines after the edit to verify tag balance.
 
-## 2026-03-23 — Client-side plan gates must always include "enterprise" alongside "business"
+## 2026-03-26 — Enterprise badge needs a distinct color, not platinum gray
 
-**What:** The QR code pages had `plan !== "pro" && plan !== "business"` but were missing `&& plan !== "enterprise"`. The API correctly included enterprise; the page component did not. Enterprise users saw a locked UI even though the API would have served them.
-**Why it matters:** Enterprise must have access to all Pro and Business features. A missing tier in a client-side check silently blocks paying users without any server error — it's invisible in logs.
-**Apply when:** Any time adding or reviewing a client-side plan gate — check that all three paid tiers (pro, business, enterprise) are explicitly listed. The pattern `isPro = plan === "pro" || plan === "business" || plan === "enterprise"` from dashboard-client.tsx is the correct template.
+**What:** The Enterprise tier badge used platinum gray (`#C0C5CE`), which was nearly identical to the Free tier gray (`#94A3B8`) on dark backgrounds. The user couldn't tell them apart. Changed Enterprise to sky blue (`#38BDF8`) for clear differentiation.
+**Why it matters:** Tier colors must be visually distinct at a glance. Gray-on-gray doesn't work even when the hex values differ. The gate cards can keep platinum for the Crown/glow (seen in isolation), but badges seen side-by-side with other tiers need higher contrast.
+**Apply when:** Choosing tier badge colors for contexts where all tiers appear together (homepage grid, tools-a-z, about page, pricing page). Use: Free=gray, Pro=gold, Business=sapphire, Enterprise=sky blue.
 
-## 2026-03-23 — Every paid API route needs both a plan gate AND logUsage
+## 2026-03-26 — Use props to differentiate shared components across tiers
 
-**What:** `qr-code/route.ts` had the plan gate but no `logUsage` call. Usage for that tool was completely invisible in the database.
-**Why it matters:** Without logUsage, there's no analytics, no way to detect abuse, and no daily-count enforcement for free users if a tool ever moves tiers.
-**Apply when:** When adding or reviewing any gated API route — confirm both pieces are present: (1) plan check with upgrade_required, (2) `await logUsage(user.id, "tool-name")` on the success path.
+**What:** `TableExtractionInterface` serves both `/table-extraction` (Business) and `/high-volume-table-extraction` (Enterprise). An `enterpriseMode` prop controls which gate card renders and which tier is checked. This avoided duplicating the entire component.
+**Why it matters:** Creating separate components for each tier leads to code drift. A prop-based approach keeps the tool logic unified while allowing visual and access-control differences.
+**Apply when:** A single tool component needs to serve different tier pages. Add an optional mode/tier prop rather than forking the component.
 
-## 2026-03-23 — Table extraction: pre-check PDF page count before calling Document AI
+## 2026-03-26 — Deploy after every task, don't batch
 
-**What:** Document AI charges $0.03/page regardless of whether the request ultimately succeeds. The page cap check was happening after the API call. Fixed by using `pdf-lib` to count pages from the buffer first, rejecting before the API call if the user's remaining quota is too low.
-**Why it matters:** A Business user with 10 pages remaining uploading a 200-page PDF was getting charged ~$6 for a request that would be rejected. pdf-lib is already a project dependency and page counting is cheap.
-**Apply when:** Any time a third-party API charges per unit of input (pages, tokens, conversions) — always validate the input size against quotas before calling the API, not after.
+**What:** The user explicitly asked to deploy after each completed task rather than batching changes. This caught CSS bugs and tier mismatches early on the live site instead of accumulating silent errors.
+**Why it matters:** Paula reviews changes on the live site, not in code. Batching hides problems behind later commits. Small, frequent deploys let her verify each change immediately.
+**Apply when:** Always. When the user says "deploy" or when a task is complete, commit and push immediately. Don't wait to batch with the next task.
 
-## 2026-03-23 — Run a full audit before shipping a new tier
+## 2026-03-26 — Sitemap index pattern required for 200+ URL sites
 
-**What:** The Enterprise tier was added and believed complete, but a targeted audit found 6 bugs — including Enterprise users actively locked out of a tool they paid for, a missing timeout that would cause failures for large paid-tier files, and a cost leak in table extraction.
-**Why it matters:** Tier additions touch many files across API routes, page components, and admin tools. It's easy to miss one spot, especially client-side gates that don't produce server errors.
-**Apply when:** After any new pricing tier is added — run a sweep of (1) all API routes for missing tier in plan gate, (2) all client-side page components for missing tier, (3) all admin/dashboard pages for display logic, (4) maxDuration on any new or modified processing routes.
+**What:** A single Next.js `sitemap()` function with 536 URLs resulted in Google Search Console only discovering 200 pages. Converting to `generateSitemaps()` with 200-URL chunks solved it — Google now gets a sitemap index pointing to `/sitemap/0.xml`, `/sitemap/1.xml`, `/sitemap/2.xml`.
+**Why it matters:** Google may silently truncate large single sitemaps. The Next.js 15 `generateSitemaps()` pattern is the correct approach for any site over ~200 pages.
+**Apply when:** Any time the sitemap exceeds 200 URLs. Use the chunk pattern: `const URLS_PER_SITEMAP = 200`, export `generateSitemaps()` returning `[{id: 0}, {id: 1}, ...]`, and `sitemap({id})` returning `allUrls.slice(start, start + URLS_PER_SITEMAP)`.
 
-## 2026-03-23 — Delegate deep multi-file audits to the Explore sub-agent
+## 2026-03-26 — Always audit API + UI gates together, not separately
 
-**What:** A tier-limits audit across 14 routes, 3 components, and 2 lib files was delegated to the Explore sub-agent in a single prompt. It returned exact file:line findings for all 5 audit areas without consuming the main context window.
-**Why it matters:** Reading 14+ files sequentially in the main conversation bloats context and risks losing earlier findings. The sub-agent returns a structured report and discards its working memory.
-**Apply when:** Any audit that requires reading more than ~5 files and cross-referencing findings — delegate to Explore with a precise, structured prompt listing exactly what to check and what format to report in.
+**What:** The workflow API allowed Business users (`profile?.plan !== "business" && profile?.plan !== "enterprise"`) while the UI gated at Enterprise only (`userPlan === "enterprise"`). Business users were blocked visually but could bypass via direct API calls. Found during the full system audit at end of session.
+**Why it matters:** API and UI gates must match exactly. A UI-only gate is a cosmetic lock, not a security gate. Always check both layers when changing tier assignments.
+**Apply when:** Any time you change a tool's tier. Update BOTH the API route AND the interface component. Then verify they match.
 
-## 2026-03-23 — anonCookie is returned, not set — each route must call res.cookies.set()
+## 2026-03-26 — New pages must be added to the sitemap manually
 
-**What:** `checkUsageAndAuth()` returns the cookie object but does not set it. Every route that calls `checkUsageAndAuth` must explicitly call `res.cookies.set(usage.anonCookie.name, usage.anonCookie.value, usage.anonCookie.options)` before returning. If a route forgets, the anon counter never increments and that tool gives unlimited free anonymous access.
-**Why it matters:** A missing cookie set is silent — no error, no log. The function always returns `allowed: true` for the first 3 anonymous calls, so the user just keeps getting through.
-**Apply when:** Any time a new free/anonymous-accessible route is added — verify the anonCookie block is present. Pattern: `if (usage?.anonCookie) { res.cookies.set(...) }` immediately before `return res`.
+**What:** Three new pages (`/high-volume-table-extraction` EN/ES/BR) and 3 blog articles were created but not added to the sitemap. The sitemap is a static array in `app/sitemap.ts`, not auto-generated from the filesystem.
+**Why it matters:** New pages that aren't in the sitemap won't be discovered by Google. Since the sitemap is manually maintained, every new page creation must include a sitemap entry.
+**Apply when:** Every time a new page is created. Add its URL (and ES/BR equivalents) to the `allUrls` array in `app/sitemap.ts`.
 
-## 2026-03-23 — Batch processing is UI-only; free users can bypass it via direct API calls
+## 2026-03-25 — Page_Format.md must document processing interface variants
 
-**What:** The multi-file batch gate lives entirely in `processing-interface.tsx` (client-side). No API route checks how many files are in the request. A free user calling `/api/merge-pdf` directly with 50 blobUrls would succeed — counted as 1 daily conversion.
-**Why it matters:** This is a known architectural gap. It's not critical because the daily conversion cap still applies, but it means batch is a UX restriction, not a billing control.
-**Apply when:** If batch ever becomes a hard billing feature (e.g., a per-batch charge), server-side enforcement will be required. For now, document this as a known limitation and do not rely on it as a revenue control.
-
-## 2026-03-23 — POST-LAUNCH.md as the single source of truth for deferred work
-
-**What:** Created POST-LAUNCH.md with 4 milestone gates (1K/3K/5K/10K subscribers), each unlocking a phase of work. Deferred audit fixes, new languages, new tools, infrastructure migration, and team plans all live here with explicit "do not build until" gates.
-**Why it matters:** Without a gated document, post-launch scope creep is likely — every good idea feels urgent. The rule at the bottom ("Growth first. Complexity second.") creates a forcing function to stay focused on acquiring subscribers before building more complexity.
-**Apply when:** Any time a good idea comes up that isn't needed for the current launch milestone — add it to POST-LAUNCH.md under the correct phase gate instead of building it now.
-
-## 2026-03-23 — pnpm virtual store can ship incomplete packages; use .npmrc hoisting
-
-**What:** The `v0-pdfit-design` build failed on Vercel because pnpm's virtual store had an incomplete React package (only LICENSE and README, no actual modules). Adding `public-hoist-pattern[]=*react*` and `public-hoist-pattern[]=*react-dom*` to `.npmrc` forces React to the top-level node_modules, fixing resolution.
-**Why it matters:** A corrupted pnpm virtual store causes `TypeError: Cannot read properties of null (reading 'useContext')` — a misleading error that looks like a code bug but is actually a package resolution issue. Local `pnpm install` may fix it temporarily, but Vercel installs fresh every time.
-**Apply when:** Any Next.js project using pnpm that hits mysterious `useContext` null errors during build — check if `.npmrc` hoists react and react-dom.
-
-## 2026-03-23 — tailwind.config.ts must be committed to git
-
-**What:** The `tailwind.config.ts` was untracked in v0-pdfit-design. Local builds worked because the file existed locally, but Vercel builds failed with "border-border class does not exist" because the config wasn't in the repo.
-**Why it matters:** Without the Tailwind config, all custom CSS variables (`border`, `background`, etc.) defined in globals.css have no corresponding Tailwind utilities. The error message doesn't mention the missing config file.
-**Apply when:** After cloning or forking a v0-generated project — run `git status` and verify all config files (tailwind.config.ts, postcss.config.mjs, tsconfig.json) are tracked.
-
-## 2026-03-23 — Global sed find-and-replace can break JavaScript identifiers
-
-**What:** Replacing "OmnisPDF" → "PDF.it" across 564 files turned the function name `WelcomeToOmnisPDFPage` into `WelcomeToPDF.itPage` — invalid JS because dots aren't allowed in identifiers. Build failed with a cryptic "Expected '(', got '.'" error.
-**Why it matters:** Brand names with dots (PDF.it) are safe in strings and metadata but will break any code identifier (function names, variable names, class names) that incorporates the brand name.
-**Apply when:** Any global find-and-replace where the replacement string contains special characters (dots, hyphens, etc.) — always grep for the pattern in code identifiers (function/class/const declarations) separately and fix those manually.
-
-## 2026-03-23 — Remap legacy Tailwind color keys instead of renaming every class
-
-**What:** Instead of changing every `orange-500` class to `teal-500` across 500+ files, remapped the `orange` key in tailwind.config.ts to point to teal hex values. Existing `bg-orange-500` classes now render as `#14D8C4` automatically.
-**Why it matters:** Saves hundreds of file edits and prevents missed references. The config is the single source of truth for colors, so changing it once propagates everywhere.
-**Apply when:** Any full-codebase rebrand where one color family replaces another — remap in tailwind.config.ts first, then only do targeted edits for hardcoded hex values or cases where the semantic meaning needs to change.
-
-## 2026-03-24 — SVG files dropped into the project root don't serve from Next.js
-
-**What:** A logo SVG placed in the project root (`PDF.it LOGO_Vector.svg`) won't load in the browser. It must be in the `public/` folder and referenced as `/filename.svg`. The filename also can't contain spaces or dots (other than the extension) — rename to underscores before copying.
-**Why it matters:** The file existed locally and git showed it as untracked, but the deployed site returned a 404 because Next.js only serves static files from `public/`.
-**Apply when:** Any time adding a static asset (image, font, SVG) — always place it in `public/` and verify the path matches the `src` attribute exactly.
-
-## 2026-03-24 — Use text wordmark as fallback when SVG logo fails to load
-
-**What:** When an SVG logo can't be confirmed working, replace the `<img>` tag with a styled text wordmark (`<span>` with inline styles) as a reliable fallback. Revert to `<img>` once the final file is verified.
-**Why it matters:** A broken `<img>` renders as a missing image icon — worse than no logo. A text wordmark looks intentional and keeps the brand visible.
-**Apply when:** Any time a logo file change is unverified or a designer hasn't delivered the final asset yet.
-
-## 2026-03-24 — Header logo text color must match the header background
-
-**What:** When the header background switched from dark (`#0E0F1E`) to light (`#F3F4FF`), the text wordmark color for "PDF" had to change from `#ffffff` (invisible on light) to `#191B4D` (dark indigo). The `.it` teal stays the same on both.
-**Why it matters:** Logo color is tied to the surface it sits on — a color that works on dark will be invisible on light.
-**Apply when:** Any time the header background color changes — always check that the wordmark colors have sufficient contrast against the new background.
-
-## 2026-03-24 — For codebase-wide color replacements, target semantic patterns not raw class names
-
-**What:** Rather than replacing all `bg-white` (which would break cards, modals, and form inputs), targeted the page-level patterns: `min-h-screen bg-white` (page wrappers) and `py-N bg-white` / `bg-white py-N` (section backgrounds). Also updated the named `surface` color in `tailwind.config.ts` to propagate via `bg-surface`.
-**Why it matters:** `bg-white` appears 500+ times in this codebase across elements that should stay white (cards on dark backgrounds, input fields, modals). A blanket replace would break the UI.
-**Apply when:** Any codebase-wide background color swap — identify the structural patterns (page wrappers, section containers) and target those specifically, not the raw class.
-
-## 2026-03-24 — Lock brand identity in CLAUDE.md and BRAND.md before building UI
-
-**What:** Updated CLAUDE.md Brand section and fully rewrote BRAND.md to reflect the final locked PDF.it palette (#0E0F1E dark, #14D8C4 CTA, iridescent wave gradient, Sora/Inter fonts, GTM/GA4 IDs). BRAND.md now has a role-tagged color table instead of a list.
-**Why it matters:** Without a single locked source of truth, color values drift across components as new UI is built. CLAUDE.md and BRAND.md together are the authoritative reference — all future UI work should pull from here, not from memory.
-**Apply when:** Before any new page, component, or design pass — verify hex values against BRAND.md. If a color decision changes, update BRAND.md and CLAUDE.md first, then propagate to code.
-
-## 2026-03-24 — Applying the same QA fixes across two sibling projects requires checking existing state
-
-**What:** OmnisPDF and PDF.it are sibling codebases with the same architecture but different drift. When applying 6 critical + 5 medium QA bugs from OmnisPDF to PDF.it, 3 of the 6 critical bugs were already partially fixed in PDF.it (eye icons, forgot password, merge multi-file) and 1 of the 5 medium bugs was already done (split single-page validation). Blindly applying all fixes would have created duplicates or conflicts.
-**Why it matters:** The two projects are maintained separately and diverge over time. Always read the target file before editing — never assume the same bug exists in both projects.
-**Apply when:** Any time porting fixes between OmnisPDF and PDF.it — check each file's current state first, skip what's already done.
-
-## 2026-03-24 — removeFile in custom interfaces must reset ALL state, not just the file
-
-**What:** The OCR interface's `removeFile()` only called `setFile(null)`, leaving `hasError`, `isProcessing`, `isComplete`, `progress`, and `processedFile` in their previous state. If any of those were truthy, the component rendered the wrong UI branch (error screen, processing screen, or success screen) instead of the upload drop zone.
-**Why it matters:** React components that use state flags to switch between UI branches (upload → processing → success → error) must reset ALL flags when returning to the initial state, not just the data that changed.
-**Apply when:** Any custom tool interface with `removeFile`/`resetInterface` — verify every state variable is reset. Use `resetInterface` as the reference pattern and make `removeFile` match it.
-
-## 2026-03-24 — Reset file input value onClick, not onRemove, to fix both re-upload and cancel bugs
-
-**What:** Adding `onClick={(e) => { (e.target as HTMLInputElement).value = "" }}` to the `<input type="file">` element solves two bugs at once: (1) re-uploading the same file after deletion, and (2) canceling the file dialog not clearing existing selections. The value is cleared before the dialog opens, so onChange only fires when a file is actually selected.
-**Why it matters:** The previous approach (resetting in `removeFile`) only fixed re-upload. The onClick approach fixes both and is simpler — one line on the input element instead of getElementById calls scattered across handlers.
-**Apply when:** Every `<input type="file">` in the project should have this onClick handler. There are 12 file input components total.
-
-## 2026-03-24 — Browser native password reveal buttons overlap custom eye icons
-
-**What:** Edge's `::-ms-reveal` and Chrome's `::-webkit-credentials-auto-fill-button` pseudo-elements render native password toggle buttons that overlap custom Eye/EyeOff icons. Fix with `[&::-ms-reveal]:hidden [&::-webkit-credentials-auto-fill-button]:hidden` on the input and `z-10` on the custom button.
-**Why it matters:** The custom eye icon "disappears" only after the user types — because the browser's native button appears on top. QA reports this as "eye icon disappears after full entry" which is misleading.
-**Apply when:** Any password field with a custom visibility toggle — always add the CSS to suppress native browser reveal buttons.
-
-## 2026-03-24 — Auth loading placeholder prevents nav layout shift (flicker)
-
-**What:** The header conditionally renders the Sign In / Dashboard button only when `loading` is false. During the auth check (~100-300ms), nothing renders in that spot, causing all nav items to shift right then snap back. Fix: render a fixed-size placeholder `<div className="w-[100px] h-9" />` while loading.
-**Why it matters:** QA reported this as "screen flickers when clicking navigation" — a vague symptom. The root cause is a Cumulative Layout Shift from the auth button appearing after hydration.
-**Apply when:** Any sticky header with conditional auth UI — always reserve space with a placeholder during loading state. Match the placeholder width to the widest possible button text (e.g., 120px for "Iniciar Sesión" in ES).
-
-## 2026-03-24 — Persist pricing billing toggle in localStorage
-
-**What:** The pricing page's monthly/annual toggle used `useState("monthly")` which reset on every navigation. Wrapping it with a `useEffect` that reads from `localStorage` on mount and a setter that writes on change preserves the user's selection.
-**Why it matters:** Users who select "Annual" and then navigate away lose their selection, which feels broken and biases toward the monthly (lower-revenue) option.
-**Apply when:** Any toggle or preference that the user explicitly sets and expects to persist across page navigations — use localStorage.
-
-## 2026-03-24 — COMPLETED.md must be updated with brand-correct references
-
-**What:** After the OmnisPDF → PDF.it rebrand, COMPLETED.md still had "OmnisPDF" in the header and stale GA4/GTM IDs. Line 87 ("All PDF.it branding removed, replaced with OmnisPDF") describes the *original* v0-generated project's state and must stay as-is — reversing it changes the historical meaning.
-**Why it matters:** A global find-and-replace on "OmnisPDF" → "PDF.it" in COMPLETED.md inverts the meaning of historical entries that describe what *was* replaced. Historical notes should reflect what happened at that time, not the current brand.
-**Apply when:** When updating documentation after a rebrand — only change the document header and forward-looking sections. Leave historical entries that describe past actions as they were.
-
-## 2026-03-24 — Footer components are Server Components — no onClick handlers
-
-**What:** Adding `onClick={(e) => e.preventDefault()}` to social media `<a>` tags in footer.tsx broke the Next.js build with "Event handlers cannot be passed to Client Component props." The footers don't have `"use client"` and are rendered as Server Components.
-**Why it matters:** The build failure only surfaced during `pnpm run build`, not during dev. The Vercel deployment failed silently.
-**Apply when:** Before adding any event handler (onClick, onChange, onSubmit) to a component — check if it has `"use client"` at the top. If not, either add it or find an alternative that doesn't require client-side JS.
-
-## 2026-03-24 — Glassmorphism requires a dark background to be visible
-
-**What:** Glassmorphism (rgba white bg + backdrop-blur + subtle border) is invisible on light backgrounds. The tool cards looked identical to plain white cards on the `bg-gradient-to-br from-gray-50 to-white` section. Had to change the section background to `#0E0F1E` before the glass effect became visible.
-**Why it matters:** Glass effects work by contrasting translucent white against a dark surface. Without the dark surface, there's nothing for the glass to "float above."
-**Apply when:** Any time adding glassmorphism — always set the parent section to a dark background first. Light sections need a different visual treatment (e.g., white cards with shadows).
-
-## 2026-03-24 — When switching backgrounds from light to dark, audit all child text colors
-
-**What:** Changing the "Still have questions?" boxes from beige (from-orange-50 to-orange-100) to dark navy (#191B4D) left `text-slate-900` headings and `text-slate-700` body text — completely unreadable on dark. Same issue hit the "Our Mission" box on 3 about pages. Every child element's color must be updated when a container background changes.
-**Why it matters:** sed-based background replacements only change the container — they don't cascade to fix child text colors. The bug is invisible in code review because `text-slate-900` looks fine in isolation.
-**Apply when:** Any time changing a container from light to dark (or vice versa) — immediately grep for all child text classes and update them. Use a checklist: headings → body text → links → icons → badges → buttons.
-
-## 2026-03-24 — Paula's visual north star: metallic, dimensional, cinematic
-
-**What:** Paula wants every page to feel like a luxury tech brand — dark backgrounds that glow from within, metallic gradient borders, 3D buttons with colored shadows, atmospheric light that bleeds through surfaces. The teal (#14D8C4) + purple (#6B7CFF) + orange (#E8813A) triad creates the iridescent metallic feel. A touch of orange alongside teal makes it more powerful.
-**Why it matters:** This is the core design philosophy for PDF.it — not just "dark mode" but dimensional, cinematic UI where every element has depth and weight. "Perception sells" — the visual quality must signal premium within 3 seconds.
-**Apply when:** Every new page or component should follow this system: dark bg with radial glows, grain texture, glass cards with gradient borders, icon containers with colored glow, 3D buttons with pulse animation. Check against the homepage as the reference.
+**What:** Tools like jpg-to-pdf, png-to-pdf, and url-to-pdf use different processing components (ImageToPdfInterface, UrlPdfInterface) instead of the standard ProcessingInterface. The Page_Format.md was updated to document these as "Variant B" and "Variant C" with the explicit rule that the surrounding page structure is always identical — only the processing component changes.
+**Why it matters:** Without this, future sessions might think these pages need a different layout because they use a different interface. The rule is: the shell never changes, only the component at position 3.
+**Apply when:** Adding a new tool that uses a non-standard interface component. Follow Page_Format.md exactly — swap only the processing component, keep everything else identical.

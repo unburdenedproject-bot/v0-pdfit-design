@@ -1,4 +1,4 @@
-# OmnisPDF - Environment Variables & Credentials
+# PDF.it - Environment Variables & Credentials
 
 ## Vercel Environment Variables (confirmed 2026-03-18)
 All set on Vercel for Production and Preview:
@@ -33,4 +33,4 @@ All set on Vercel for Production and Preview:
 - Project ID: project-5fe73bdf-4333-442f-840
 - Processor ID: 41cccb5fc88aa541 (Form Parser)
 - Location: us
-- JSON key stored in: C:\Users\paula\Dropbox\Paula\V. A. M. Outfitters, LLC\OmnisPDF\Credentials_Google Cloud
+- JSON key stored in: C:\Users\paula\Dropbox\Paula\V. A. M. Outfitters, LLC\PDF.it\Credentials_Google Cloud

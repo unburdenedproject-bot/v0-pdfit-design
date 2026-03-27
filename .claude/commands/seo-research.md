@@ -2,7 +2,7 @@
 context: fork
 ---
 
-# SEO Research Brief for OmnisPDF
+# SEO Research Brief for PDF.it
 
 Research a topic and produce a ready-to-use brief for `/seo-article`.
 
@@ -68,7 +68,7 @@ Compare the top results and identify what they are missing. Look for:
 - No internal linking to related tools
 - Generic copy that doesn't speak to business users or students
 
-List 3–5 specific gaps OmnisPDF's article can fill to outrank competitors.
+List 3–5 specific gaps PDF.it's article can fill to outrank competitors.
 
 ---
 
@@ -133,7 +133,7 @@ Return a clean, structured brief in this exact format:
 
 **Related articles to link (4):** [existing `/learn/` slugs that are relevant]
 
-**Target tool:** [OmnisPDF tool slug this article funnels to]
+**Target tool:** [PDF.it tool slug this article funnels to]
 
 **Tier:** [free / pro / business]
 

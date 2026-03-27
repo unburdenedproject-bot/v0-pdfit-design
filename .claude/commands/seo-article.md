@@ -1,4 +1,4 @@
-# Write SEO Article for OmnisPDF
+# Write SEO Article for PDF.it
 
 Write a complete `/learn/` article as a ready-to-save `page.tsx` file.
 
@@ -11,7 +11,7 @@ Write a complete `/learn/` article as a ready-to-save `page.tsx` file.
 Ask the user for:
 1. **Topic / keyword** — e.g. "how to compress a PDF for email"
 2. **EN slug** — e.g. `compress-pdf-for-email`
-3. **Target tool** — the OmnisPDF tool the article funnels to, e.g. `/compress-pdf`
+3. **Target tool** — the PDF.it tool the article funnels to, e.g. `/compress-pdf`
 4. **Target tool name** — e.g. "Compress PDF"
 5. **Icon name** from lucide-react — e.g. `FileDown`
 6. **3–5 related articles** — slugs + titles for the Related Articles section
@@ -38,7 +38,7 @@ Before writing, outline:
 - **6 FAQ questions** — realistic questions a user would Google
 - **3 HowTo steps** — map to the tool's actual workflow
 - **Comparison table** — 3 rows (e.g. levels, methods, or formats being compared)
-- **4 extra techniques** — related tips with internal links to other OmnisPDF tools
+- **4 extra techniques** — related tips with internal links to other PDF.it tools
 - **3 troubleshooting scenarios** — common problems with short answers
 
 ---
@@ -61,7 +61,7 @@ import { [Icon], ArrowRight } from "lucide-react"
 **Metadata**
 ```ts
 export const metadata = {
-  title: "[H1 exact match] | OmnisPDF",
+  title: "[H1 exact match] | PDF.it",
   description: "[1–2 sentences, keyword-rich, under 160 chars]",
   keywords: "[4–5 comma-separated keyword phrases]",
 }
@@ -110,7 +110,7 @@ export const metadata = {
 - H2 + intro sentence
 - 4 checklist items using `&#10003;` prefix
 - Each item has a bold technique name + explanation
-- Each links to a relevant OmnisPDF tool with `text-orange-600 hover:underline`
+- Each links to a relevant PDF.it tool with `text-orange-600 hover:underline`
 
 ### Section 7 — Troubleshooting
 - H2 + intro sentence
@@ -144,7 +144,7 @@ export const metadata = {
 Before outputting, verify:
 - [ ] Schema FAQ questions match rendered FAQ questions word-for-word
 - [ ] HowTo steps match the How To section word-for-word
-- [ ] All internal links use OmnisPDF paths (no external links)
+- [ ] All internal links use PDF.it paths (no external links)
 - [ ] Orange is used only for CTAs, highlights, and links — not decorative
 - [ ] H1 contains the exact target keyword
 - [ ] Meta description is under 160 characters

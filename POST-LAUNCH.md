@@ -1,4 +1,4 @@
-# OmnisPDF — Post-Launch Roadmap
+# PDF.it — Post-Launch Roadmap
 
 Last updated: March 23, 2026
 Status: Planning — do not build any of this before reaching 1,000 paid subscribers.
@@ -33,7 +33,7 @@ These were intentionally skipped pre-launch. Fix in this order:
 - 270 million people, fast-growing digital economy
 - Asia-Pacific is the fastest-growing PDF software region globally
 - iLovePDF/Smallpdf have Indonesian UI translations but almost zero native SEO content depth
-- Mobile-first user base — aligns with OmnisPDF's browser-based approach
+- Mobile-first user base — aligns with PDF.it's browser-based approach
 - Stripe supports Indonesia (IDR)
 
 **What to build:**
@@ -164,7 +164,7 @@ Migration order:
 
 ### 4A. API Access Tier
 
-- Developers can call OmnisPDF tools programmatically
+- Developers can call PDF.it tools programmatically
 - Priced per conversion or as a monthly credit bundle
 - Pairs with PDF to JSON and batch processing
 - Requires infrastructure migration to be complete first

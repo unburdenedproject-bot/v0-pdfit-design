@@ -393,13 +393,13 @@ Just say and I’ll break it down. 💡
 
 Is there something I can add to my omnispdf.com page to take me to the next level? 
 
-I looked at what OmnisPDF currently offers (PDF conversion, compression, merge/split, OCR, QR generator, etc.). It’s a solid toolbox-style PDF utility site with browser-based processing and security features like encrypted uploads and auto-delete. 
+I looked at what PDF.it currently offers (PDF conversion, compression, merge/split, OCR, QR generator, etc.). It’s a solid toolbox-style PDF utility site with browser-based processing and security features like encrypted uploads and auto-delete. 
 
 That’s good—but sites like this usually plateau because they only provide one-time tools.
 
 To reach your 10k subscriber goal, the next level is adding recurring-value features—things users keep coming back for.
 
-Below are specific features you could add to OmnisPDF that could realistically move the needle.
+Below are specific features you could add to PDF.it that could realistically move the needle.
 
 1. A “PDF Intelligence” Layer (Huge Opportunity)
 Instead of just converting PDFs, help users extract knowledge from them.
@@ -630,7 +630,7 @@ Each page can rank individually.
 Many sites get millions of visits this way.
 
 The Most Powerful Thing You Could Add
-If I had to pick one feature to massively improve OmnisPDF:
+If I had to pick one feature to massively improve PDF.it:
 
 A developer API
 Because it:
@@ -677,7 +677,7 @@ Which tool should I implement right now before I launch that will put me in a po
 
 You’re asking the right tactical question: what single feature + API decision gives the best chance of converting visitors into subscribers. That’s the correct way to think about launch strategy. 👍
 
-The key constraint for tool-SEO products like OmnisPDF is this:
+The key constraint for tool-SEO products like PDF.it is this:
 
 Traffic tools bring visitors. Premium tools convert subscribers.
 
@@ -1062,7 +1062,7 @@ Table extraction
 Bulk processing
 These solve real business problems, which is what drives subscriptions.
 
-If you'd like, I can also show you the single feature that could realistically get OmnisPDF to 100k+ monthly SEO traffic (which is the real driver behind reaching 10k paid users).
+If you'd like, I can also show you the single feature that could realistically get PDF.it to 100k+ monthly SEO traffic (which is the real driver behind reaching 10k paid users).
 
 
 But normally accountants and business use quickbooks
@@ -1190,7 +1190,7 @@ bulk processing
 
 data extraction
 
-If I were building OmnisPDF
+If I were building PDF.it
 Your Business tier would be:
 
 Invoice extraction
@@ -1519,7 +1519,7 @@ One more important insight:
 
 Most successful PDF SaaS that reach 10k+ subscribers win because of one killer niche tool.
 
-If you'd like, I can also show you the single PDF tool with the highest SEO traffic opportunity right now. That could bring 100k+ monthly visitors to OmnisPDF.
+If you'd like, I can also show you the single PDF tool with the highest SEO traffic opportunity right now. That could bring 100k+ monthly visitors to PDF.it.
 
 
 Banks already give you the statement is csv 
@@ -1691,7 +1691,7 @@ bulk features behind paywall
 The free tools bring traffic.
 The bulk automation features convert users.
 
-If you'd like, I can also show you 3 extremely high-traffic PDF tools that could realistically bring 200k–500k visitors/month to OmnisPDF. That’s usually what enables sites in this space to reach 10k paid users.
+If you'd like, I can also show you 3 extremely high-traffic PDF tools that could realistically bring 200k–500k visitors/month to PDF.it. That’s usually what enables sites in this space to reach 10k paid users.
 
 
 I guess you don't have good ideas. You sell your business as a business partner,  but you really don't have any good idea. I think implementing some sort of Ai assistant would be good. And I don't know what else. So frustrating brainstorming with you. I need lots of people who have one problem in common and I need to solve that problem. That's all im.askinh. something that no many people are thinking.  I'm looking for a blue ocean idea to implement in my website 
@@ -2055,7 +2055,7 @@ AI extraction
 document management
 These convert users into subscribers.
 
-What I Would Add to OmnisPDF First
+What I Would Add to PDF.it First
 Three tools that combine traffic + monetization:
 
 1️⃣ Compress for Upload Limits
@@ -2222,7 +2222,7 @@ Example:
 = 3,000 paid users
 Scale traffic → scale subscriptions.
 
-What I Would Build Next on OmnisPDF
+What I Would Build Next on PDF.it
 Immediate SEO pages to add:
 
 compress-pdf-to-5mb
@@ -2373,7 +2373,7 @@ If you want, I can also show you something extremely useful:
 
 10 unconventional PDF tools that almost no competitors offer yet but people actually search for.
 
-Those could give OmnisPDF SEO advantages and unique positioning.
+Those could give PDF.it SEO advantages and unique positioning.
 
 
 Absolutely, but must be something that AI won't take me out of business 
@@ -2619,7 +2619,7 @@ format conversion
 document parsing
 Those needs will exist regardless of AI trends.
 
-If I were prioritizing for OmnisPDF
+If I were prioritizing for PDF.it
 I would implement first:
 
 PDF compare
@@ -2860,7 +2860,7 @@ Example growth model:
 = 300k monthly visitors
 Even 1% conversion can produce thousands of subscribers.
 
-✅ The fastest path for OmnisPDF
+✅ The fastest path for PDF.it
 
 Build around these pillars:
 
@@ -2878,9 +2878,9 @@ The 7 specific PDF tool keywords with the weakest competition right now that cou
 
 Alright. Based on what I have and what we've talked. Write a business plan including the 5 niche tools (blue sea) that will bring subscribers. And push my company to the next level to compete. Be very specific but also, detailed with everything we've talked right now. Also include the type of API I should take a look.  Do you understand? Please, I need your best support. I need to make this business work soon. 
 
-Below is a focused execution business plan for OmnisPDF based on everything we discussed: SEO traffic tools + a few blue-ocean workflow tools that convert users to subscriptions. The goal is 10,000 paid subscribers by building around real document frustrations rather than generic utilities.
+Below is a focused execution business plan for PDF.it based on everything we discussed: SEO traffic tools + a few blue-ocean workflow tools that convert users to subscriptions. The goal is 10,000 paid subscribers by building around real document frustrations rather than generic utilities.
 
-OmnisPDF – Strategic Business Plan
+PDF.it – Strategic Business Plan
 Goal: Reach 10,000 paid subscribers by solving high-frequency document workflow problems globally (US + LATAM).
 
 Core Strategy
@@ -3197,7 +3197,7 @@ Launch PDF compare
 Expand Spanish + Portuguese SEO
 Add batch processing
 Final Strategic Insight
-OmnisPDF should not position itself as another PDF converter.
+PDF.it should not position itself as another PDF converter.
 
 Instead position as:
 
@@ -3210,7 +3210,7 @@ This file won't upload
 I can't extract the data
 Those moments create urgency → conversion → subscribers.
 
-If you want, I can also help you with something very powerful for OmnisPDF:
+If you want, I can also help you with something very powerful for PDF.it:
 
 A complete SEO map of 150 tool pages
 
@@ -3221,7 +3221,7 @@ The fastest 90-day roadmap to reach your first 1,000 paying users.
 
 In order to call myself the fastest way to fix... I need to know if Vercel will support me 20k users without crashing.  Also, what budget are we talking to build this?
 
-To call OmnisPDF “the fastest way to fix document problems”, the infrastructure must support bursty workloads (many file uploads and CPU-heavy processing). Let’s break this down realistically: Vercel capacity + architecture + budget.
+To call PDF.it “the fastest way to fix document problems”, the infrastructure must support bursty workloads (many file uploads and CPU-heavy processing). Let’s break this down realistically: Vercel capacity + architecture + budget.
 
 1️⃣ Can Vercel Handle ~20k Users?
 
@@ -3427,7 +3427,7 @@ Cloudflare R2
 Fly.io workers
 can support tens of thousands of users cheaply.
 
-If you'd like, I can also show you something extremely useful for OmnisPDF:
+If you'd like, I can also show you something extremely useful for PDF.it:
 
 The simplest architecture that PDF SaaS founders use to scale from 0 → 1M users without rebuilding their system.
 
@@ -3619,7 +3619,7 @@ no major rebuild required
 This architecture is used by many document SaaS tools and file processing platforms.
 
 12. Your Competitive Advantage
-If OmnisPDF combines:
+If PDF.it combines:
 
 SEO traffic engine
 document workflow tools
@@ -3631,12 +3631,12 @@ Most successful document SaaS platforms eventually build a developer API (PDF AP
 
 If you want, I can also show you:
 
-The 5 features that could realistically bring OmnisPDF its first 1000 paying users within a year.
+The 5 features that could realistically bring PDF.it its first 1000 paying users within a year.
 
 
 Yes, please 
 
-Below are 5 features most likely to produce the first ~1,000 paying users for a document SaaS like OmnisPDF. The principle: solve painful, repeatable document tasks and place them behind limits that encourage upgrading. Each feature also has clear API/library suggestions.
+Below are 5 features most likely to produce the first ~1,000 paying users for a document SaaS like PDF.it. The principle: solve painful, repeatable document tasks and place them behind limits that encourage upgrading. Each feature also has clear API/library suggestions.
 
 1️⃣ Upload-Ready PDF Optimizer
 
@@ -3830,12 +3830,12 @@ This sequence balances technical complexity with conversion potential.
 ✅ Key takeaway:
 Traffic comes from simple utilities, but subscribers come from workflow tools that save time or prevent failure.
 
-If helpful, I can also map out a 90-day execution roadmap (feature build schedule, SEO pages, and marketing steps) to move OmnisPDF toward those first 1,000 subscribers quickly.
+If helpful, I can also map out a 90-day execution roadmap (feature build schedule, SEO pages, and marketing steps) to move PDF.it toward those first 1,000 subscribers quickly.
 
 
 Yes
 
-Below is a practical 90-day execution roadmap for OmnisPDF focused on reaching the first 1,000 paying users. It prioritizes:
+Below is a practical 90-day execution roadmap for PDF.it focused on reaching the first 1,000 paying users. It prioritizes:
 
 SEO traffic generation,
 
@@ -3843,7 +3843,7 @@ a few differentiated workflow tools (your “blue ocean”), and
 
 a reliable infrastructure so users experience fast results.
 
-OmnisPDF – 90-Day Execution Roadmap
+PDF.it – 90-Day Execution Roadmap
 Overall Targets (First 3 Months)
 Traffic goal:
 
@@ -3917,7 +3917,7 @@ Goal:
 Homepage headline example:
 
 Fix any PDF problem in seconds
-Position OmnisPDF as:
+Position PDF.it as:
 
 The fastest way to fix document problems
 Not just a converter.
@@ -4088,7 +4088,7 @@ conversion > 3%
 tool success rate > 95%
 processing time < 10 seconds
 Biggest Competitive Advantage
-If OmnisPDF succeeds, it will be because of:
+If PDF.it succeeds, it will be because of:
 
 fast processing
 large tool library
@@ -4106,12 +4106,12 @@ SEO expansion
 automation tools
 If you'd like, I can also create something extremely useful for you:
 
-A complete list of 120 SEO tool pages OmnisPDF should build to dominate the PDF niche.
+A complete list of 120 SEO tool pages PDF.it should build to dominate the PDF niche.
 
 
 Take a look at my website  omnispdf.com and tell me what should be my next steps to make it unique. Based on what we talked and by priorities.  Keeping in mind BLUE OCEAN + HIGH DEMAND IN THE USA AND LATAM. Just remember,  I'm a solo flyer with a few hours a day to implement 
 
-I reviewed what’s publicly visible from OmnisPDF tools page example (QR generator) and related pages. Your site currently positions itself as a browser-based PDF toolbox with tools like:
+I reviewed what’s publicly visible from PDF.it tools page example (QR generator) and related pages. Your site currently positions itself as a browser-based PDF toolbox with tools like:
 
 merge PDF
 
@@ -4140,7 +4140,7 @@ USA + LATAM audience
 
 BLUE OCEAN focus
 
-Current Strengths of OmnisPDF
+Current Strengths of PDF.it
 From what I can see:
 
 1. Clean positioning
@@ -4157,7 +4157,7 @@ These are good — keep them.
 But they won’t differentiate you.
 
 The Real Problem With Your Current Position
-Right now OmnisPDF is essentially:
+Right now PDF.it is essentially:
 
 another PDF toolbox
 Users will use it once and leave.
@@ -4342,7 +4342,7 @@ flatten-pdf
 These bring steady traffic.
 
 Your Unique Brand Angle
-Position OmnisPDF as:
+Position PDF.it as:
 
 Fix any document problem instantly
 Not:
@@ -4362,7 +4362,7 @@ If you want, I can also show you something extremely valuable:
 
 The one niche inside the PDF market where solo founders are quietly making $20k–$80k/month.
 
-Almost nobody talks about it, but it could fit OmnisPDF extremely well.
+Almost nobody talks about it, but it could fit PDF.it extremely well.
 
 
 Absolutely 
@@ -4433,7 +4433,7 @@ This is extremely valuable.
 
 Free tools rarely offer bulk workflows.
 
-How OmnisPDF Could Enter This Niche
+How PDF.it Could Enter This Niche
 You already have the building blocks.
 
 Add:
@@ -4532,7 +4532,7 @@ tool libraries
 But the next evolution is:
 
 document automation platforms
-If OmnisPDF moves in that direction early, it becomes much harder for competitors to copy quickly.
+If PDF.it moves in that direction early, it becomes much harder for competitors to copy quickly.
 
 💡 My honest recommendation
 
@@ -4547,7 +4547,7 @@ That combination is how many successful PDF SaaS businesses grow.
 
 If you'd like, I can also show you something extremely useful:
 
-A realistic revenue path from 0 to $10k/month with OmnisPDF, including traffic assumptions and conversion rates so you can see exactly what numbers you need to hit.
+A realistic revenue path from 0 to $10k/month with PDF.it, including traffic assumptions and conversion rates so you can see exactly what numbers you need to hit.
 
 
 Let's work on these and create a daily goal to achieve them soon. SEO tool pages
@@ -4566,7 +4566,7 @@ Workflow automation → differentiation (blue ocean)
 
 Below is a 30-day execution system assuming ~2–3 hours per day.
 
-30-Day Execution Plan for OmnisPDF
+30-Day Execution Plan for PDF.it
 Weekly Structure
 Every week you do:
 
@@ -4858,7 +4858,7 @@ Never leave a day without shipping something.
 
 If you'd like, I can also help you with something extremely useful next:
 
-a list of the 40 highest-value SEO tool pages you should build for OmnisPDF.
+a list of the 40 highest-value SEO tool pages you should build for PDF.it.
 
 Those are the pages most likely to bring your first 100k visitors.
 
@@ -5005,7 +5005,7 @@ If you want, I’ll map this into a week-by-week setup plan so you know exactly 
 
 Let's forget about me going solo. Let's build an incredible site where I can compete. Give me a 45 day plan with details. Remember what I already have built. 
 
-Below is a 45-day execution plan to transform OmnisPDF into a competitive document platform.
+Below is a 45-day execution plan to transform PDF.it into a competitive document platform.
 It assumes you already have:
 
 core PDF tools (merge, split, convert, OCR, etc.)
@@ -5316,7 +5316,7 @@ Possible subscribers:
 
 1k–5k
 Strategic Positioning
-Do not market OmnisPDF as:
+Do not market PDF.it as:
 
 PDF tools
 Market it as:
@@ -5338,12 +5338,12 @@ Not one feature.
 
 If you'd like, I can also create something extremely useful next:
 
-a 120-page SEO map for OmnisPDF that can realistically bring 1M monthly visitors.
+a 120-page SEO map for PDF.it that can realistically bring 1M monthly visitors.
 
 
 Yes.
 
-Below is a structured SEO map of ~120 pages designed specifically for OmnisPDF. The idea is to dominate the PDF niche through intent coverage. Most successful PDF sites grow by capturing hundreds of small queries rather than a few large ones.
+Below is a structured SEO map of ~120 pages designed specifically for PDF.it. The idea is to dominate the PDF niche through intent coverage. Most successful PDF sites grow by capturing hundreds of small queries rather than a few large ones.
 
 To make this manageable, the pages are grouped into 6 SEO clusters. Each cluster targets a specific user problem and interlinks internally.
 
@@ -5540,7 +5540,7 @@ convert-scanned-pdf
 Total pages: 18
 
 Blue Ocean Tool Pages
-These differentiate OmnisPDF.
+These differentiate PDF.it.
 
 prepare-pdf-for-upload
 phone-scan-cleanup
@@ -5591,7 +5591,7 @@ Add schema markup:
 FAQ schema
 software schema
 Strategic Positioning
-OmnisPDF should position itself as:
+PDF.it should position itself as:
 
 The fastest way to fix document problems
 Not just a converter.
@@ -5604,12 +5604,12 @@ Extract data instantly
 Process hundreds of files
 If you want, I can also help you with something even more powerful:
 
-a realistic roadmap to reach 10k paying subscribers with OmnisPDF (including traffic assumptions, pricing, and conversion math).
+a realistic roadmap to reach 10k paying subscribers with PDF.it (including traffic assumptions, pricing, and conversion math).
 
 
 What should be my tiers and prices?
 
-For OmnisPDF, pricing should follow a simple principle used by many successful document SaaS products:
+For PDF.it, pricing should follow a simple principle used by many successful document SaaS products:
 
 Free → habit
 Pro → productivity
@@ -5807,7 +5807,7 @@ compress all
 download ZIP
 Bulk processing is extremely valuable for professionals.
 
-Recommendation for OmnisPDF Launch
+Recommendation for PDF.it Launch
 Start with only three tiers:
 
 Free
@@ -5826,9 +5826,9 @@ $7.99 for Pro is actually a good price — the question is how to structure the 
 
 Your goal is not just pricing — it's price anchoring so the Business tier looks like a clear upgrade.
 
-Below is how I would structure OmnisPDF with your $7.99 Pro.
+Below is how I would structure PDF.it with your $7.99 Pro.
 
-Recommended Pricing Structure for OmnisPDF
+Recommended Pricing Structure for PDF.it
 Tier	Price	Role
 Free	$0	traffic & acquisition
 Pro	$7.99	main conversion tier
@@ -5970,7 +5970,7 @@ And highlight Business as:
 Best for professionals
 This subtle UI trick increases upgrades.
 
-What I Would Do If OmnisPDF Were Mine
+What I Would Do If PDF.it Were Mine
 Free
 Pro $7.99 (Most Popular)
 Business $29
@@ -6102,7 +6102,7 @@ Example:
 Unlimited tasks for only $7.99/month.
 Simple, clear, low friction.
 
-If you'd like, I can also help you with something extremely important for OmnisPDF:
+If you'd like, I can also help you with something extremely important for PDF.it:
 
 design the exact upgrade funnel that turns free users into paid subscribers.
 
@@ -6233,7 +6233,7 @@ That’s exactly what you want.
 One Last Tip
 When someone signs up, send a short onboarding message like:
 
-Welcome to OmnisPDF.
+Welcome to PDF.it.
 You now have 10 free document tasks per day.
 Then recommend:
 
@@ -6242,7 +6242,7 @@ Merge documents
 Clean phone scans
 This increases activation.
 
-If you want, I can also show you something extremely valuable for OmnisPDF:
+If you want, I can also show you something extremely valuable for PDF.it:
 
 the 5 biggest mistakes PDF SaaS founders make that prevent them from reaching 10k subscribers.
 

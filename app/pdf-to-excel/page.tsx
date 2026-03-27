@@ -6,8 +6,8 @@ import { ProcessingInterface } from "@/components/processing-interface"
 import { FileSpreadsheet, Zap, Shield, Download } from "lucide-react"
 
 export const metadata = {
-  title: "PDF to Excel Converter Online — Free & No Login | PDF.it",
-  description: "Convert PDF to Excel spreadsheets with PDF.it. Extract tables and data from PDFs into .xlsx files — fast, browser-based, no login required.",
+  title: "PDF to Excel Converter Online — Extract Tables from PDF | PDF.it",
+  description: "Convert PDF to Excel spreadsheets with PDF.it. Extract tables and data from PDFs into .xlsx files — fast, secure, and browser-based.",
 }
 
 export default function PDFToExcelPage() {

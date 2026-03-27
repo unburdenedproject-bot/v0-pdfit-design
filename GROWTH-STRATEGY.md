@@ -1,8 +1,8 @@
-# OmnisPDF — Growth & Conversion Strategy
+# PDF.it — Growth & Conversion Strategy
 
 ## Strategic Positioning
 
-Do NOT market OmnisPDF as: "PDF tools"
+Do NOT market PDF.it as: "PDF tools"
 Market it as: **"Fix any document problem instantly"**
 
 Examples:

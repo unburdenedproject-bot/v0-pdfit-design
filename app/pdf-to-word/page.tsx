@@ -6,8 +6,8 @@ import { ProcessingInterface } from "@/components/processing-interface"
 import { FileText, Zap, Shield, Download } from "lucide-react"
 
 export const metadata = {
-  title: "PDF to Word Converter Online — Free & No Login | PDF.it",
-  description: "Convert PDF to editable Word documents with PDF.it. Fast, browser-based PDF to Word conversion — no login required.",
+  title: "PDF to Word Converter Online — PDF to DOCX Editable | PDF.it",
+  description: "Convert PDF to editable Word documents with PDF.it. Fast, browser-based PDF to Word conversion — secure and instant.",
 }
 
 const faqSchema = {

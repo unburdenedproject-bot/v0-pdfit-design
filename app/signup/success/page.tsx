@@ -48,6 +48,9 @@ export default function SignUpSuccessPage() {
                 <p className="text-slate-400 text-sm leading-relaxed">
                   We sent you a confirmation link. Click it to activate your account, then sign in to start using all your PDF tools.
                 </p>
+                <p className="text-slate-500 text-xs mt-2 leading-relaxed">
+                  {"Don't see it? Check your Spam or Junk folder."}
+                </p>
               </div>
 
               {/* What you get */}

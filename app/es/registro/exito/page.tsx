@@ -41,6 +41,9 @@ export default function SignUpSuccessPageEs() {
                 <p className="text-slate-400 text-sm leading-relaxed">
                   {"Te enviamos un enlace de confirmación. Haz clic en él para activar tu cuenta y luego inicia sesión para comenzar a usar tus herramientas PDF."}
                 </p>
+                <p className="text-slate-500 text-xs mt-2 leading-relaxed">
+                  {"¿No lo ves? Revisa tu carpeta de Spam o Correo no deseado."}
+                </p>
               </div>
               <div className="text-left space-y-3 mb-8">
                 <p className="text-slate-500 text-xs font-medium uppercase tracking-wider text-center mb-3">Lo que obtienes con tu cuenta gratis</p>
