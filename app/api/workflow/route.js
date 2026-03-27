@@ -80,7 +80,7 @@ const SUPPORTED_STEPS = {
  * Workflow Automation API
  *
  * Chains multiple iLoveAPI tasks in sequence.
- * Business plan only.
+ * Business and Enterprise plans.
  *
  * Body: { blobUrl: string, originalName?: string, steps: Array<{ tool: string, params?: object }> }
  */
@@ -90,7 +90,7 @@ export async function POST(request) {
   let uploadedBlobUrl = null;
 
   try {
-    // Auth: Enterprise plan only
+    // Auth: Business or Enterprise plan
     const { createClient } = await import("@/lib/supabase/server");
     const supabase = await createClient();
     const { data: { user } } = await supabase.auth.getUser();
@@ -98,7 +98,7 @@ export async function POST(request) {
       return NextResponse.json({ error: "upgrade_required" }, { status: 403 });
     }
     const { data: profile } = await supabase.from("users").select("plan").eq("id", user.id).single();
-    if (profile?.plan !== "enterprise") {
+    if (profile?.plan !== "business" && profile?.plan !== "enterprise") {
       return NextResponse.json({ error: "upgrade_required" }, { status: 403 });
     }
 

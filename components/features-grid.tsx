@@ -273,7 +273,7 @@ const categories = [
         description: "Chain multiple PDF tools into one automated workflow.",
         icon: Repeat,
         href: "/workflow-automation",
-        tier: "ENTERPRISE" as const,
+        tier: "BUSINESS" as const,
       },
       {
         name: "Table Extraction",

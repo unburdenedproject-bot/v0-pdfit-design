@@ -210,7 +210,7 @@ export default function WorkflowAutomationPage() {
               {[
                 { q: "What is Workflow Automation?", a: "It lets you chain multiple PDF tools into one automated process. For example, flatten forms, compress the file, and add a watermark — all in a single click instead of three separate steps." },
                 { q: "Which tools can I chain together?", a: "You can combine: Flatten PDF, Compress PDF, Watermark PDF, Rotate PDF, and Password Protect. You can use up to 5 steps per workflow." },
-                { q: "Is Workflow Automation free?", a: "Workflow Automation is an Enterprise plan feature ($49.99/month). It includes unlimited workflows along with all other Enterprise tools." },
+                { q: "Is Workflow Automation free?", a: "Workflow Automation is available on the Business plan ($13.99/month) and above. It includes unlimited workflows along with all other Business tools." },
                 { q: "Can I create custom workflows?", a: "Yes. You can choose from preset workflows or build your own custom workflow by selecting and ordering up to 5 steps. Each step can be configured individually." },
                 { q: "How many steps can I chain?", a: "Up to 5 steps per workflow. Each step runs in sequence on your PDF." },
                 { q: "Is my PDF stored after processing?", a: "No. All files are deleted immediately after your session. We never store your documents." },
@@ -239,7 +239,7 @@ export default function WorkflowAutomationPage() {
           "mainEntity": [
             { "@type": "Question", "name": "What is Workflow Automation?", "acceptedAnswer": { "@type": "Answer", "text": "Workflow Automation lets you chain multiple PDF tools into one automated process. For example, flatten forms, compress the file, and add a watermark — all in a single click instead of three separate steps." } },
             { "@type": "Question", "name": "Which tools can I chain together?", "acceptedAnswer": { "@type": "Answer", "text": "You can combine: Flatten PDF, Compress PDF, Watermark PDF, Rotate PDF, and Password Protect. You can use up to 5 steps per workflow." } },
-            { "@type": "Question", "name": "Is Workflow Automation free?", "acceptedAnswer": { "@type": "Answer", "text": "Workflow Automation is an Enterprise plan feature ($49.99/month). It includes unlimited workflows along with all other Enterprise tools." } },
+            { "@type": "Question", "name": "Is Workflow Automation free?", "acceptedAnswer": { "@type": "Answer", "text": "Workflow Automation is available on the Business plan ($13.99/month) and above. It includes unlimited workflows along with all other Business tools." } },
             { "@type": "Question", "name": "Can I create custom workflows?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can choose from preset workflows or build your own custom workflow by selecting and ordering up to 5 steps. Each step can be configured individually." } },
             { "@type": "Question", "name": "How many steps can I chain?", "acceptedAnswer": { "@type": "Answer", "text": "Up to 5 steps per workflow. Each step runs in sequence on your PDF." } },
             { "@type": "Question", "name": "Is my PDF stored after processing?", "acceptedAnswer": { "@type": "Answer", "text": "No. All files are deleted immediately after your session. We never store your documents." } },

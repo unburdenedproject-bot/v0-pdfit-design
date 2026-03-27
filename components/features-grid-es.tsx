@@ -272,7 +272,7 @@ const categories = [
         description: "Encadena múltiples herramientas PDF en un flujo automatizado.",
         icon: Repeat,
         href: "/es/automatizacion",
-        tier: "ENTERPRISE" as const,
+        tier: "BUSINESS" as const,
       },
       {
         name: "Extracción de Tablas",
