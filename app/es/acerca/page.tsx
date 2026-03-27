@@ -1,14 +1,14 @@
 import { HeaderEs } from "@/components/header-es"
 import { FooterEs } from "@/components/footer-es"
 import type { Metadata } from "next"
-import { Shield, FileOutput, Lock, Zap, GraduationCap, Building, Briefcase, Scale } from "lucide-react"
+import { Shield, FileOutput, Lock, Zap, GraduationCap, Building, Briefcase, Scale, BookOpen, Home } from "lucide-react"
 import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Acerca de PDF.it — Herramientas PDF en Linea con Privacidad para Equipos e Individuos",
   description:
     "PDF.it es una plataforma PDF en el navegador. Convierte, comprime, firma, redacta y automatiza PDFs — los archivos se eliminan inmediatamente despues de la descarga. Planes Gratis, Pro, Business y Enterprise disponibles.",
-  keywords: ["PDF para profesionales", "PDF para abogados", "PDF para contadores", "PDF para estudiantes", "PDF para freelancers", "herramientas PDF para equipos", "PDF con privacidad"],
+  keywords: ["PDF para profesionales", "PDF para abogados", "PDF para contadores", "PDF para estudiantes", "PDF para freelancers", "PDF para profesores", "PDF para inmobiliarias", "PDF para recursos humanos", "PDF para salud", "PDF para pequenas empresas", "alternativa a iLovePDF", "alternativa a SmallPDF", "alternativa a Adobe Acrobat", "herramientas PDF seguras", "PDF sin registro", "PDF con privacidad"],
   openGraph: {
     title: "Acerca de PDF.it — Herramientas PDF en Linea con Privacidad para Equipos e Individuos",
     description:
@@ -273,6 +273,16 @@ export default function AcercaPage() {
                     icon: Scale,
                     title: "PDF para Abogados y Contadores",
                     desc: "Redacta datos sensibles, extrae tablas de cumplimiento y automatiza flujos documentales. Disenado para abogados, contadores y equipos que exigen precision.",
+                  },
+                  {
+                    icon: BookOpen,
+                    title: "PDF para Profesores y Educadores",
+                    desc: "Convierte planes de clase, comprime material para email, une documentos de curso y haz escaneados buscables con OCR. Una mejor alternativa a iLovePDF y SmallPDF para educadores.",
+                  },
+                  {
+                    icon: Home,
+                    title: "PDF para Recursos Humanos e Inmobiliarias",
+                    desc: "Procesa documentos de onboarding, firma contratos online sin registro, procesa contratos de arrendamiento por lotes y extrae datos de formularios. Herramientas PDF seguras sin almacenamiento — creadas para pequenas empresas en recursos humanos, inmobiliarias y salud.",
                   },
                 ].map((card) => (
                   <div

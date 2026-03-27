@@ -1,14 +1,14 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import type { Metadata } from "next"
-import { Shield, FileOutput, Lock, Zap, GraduationCap, Building, Briefcase, Scale } from "lucide-react"
+import { Shield, FileOutput, Lock, Zap, GraduationCap, Building, Briefcase, Scale, BookOpen, Home } from "lucide-react"
 import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "About PDF.it — Privacy-First Online PDF Tools for Teams & Individuals",
   description:
     "PDF.it is a browser-based PDF platform. Convert, compress, sign, redact, and automate PDFs — files are deleted immediately after download. Free, Pro, Business, and Enterprise plans available.",
-  keywords: ["PDF for professionals", "PDF for lawyers", "PDF for accountants", "PDF for students", "PDF for freelancers", "PDF tools for teams", "privacy-first PDF tools"],
+  keywords: ["PDF for professionals", "PDF for lawyers", "PDF for accountants", "PDF for students", "PDF for freelancers", "PDF for teachers", "PDF for real estate", "PDF for HR", "PDF for healthcare", "PDF for small business", "iLovePDF alternative", "SmallPDF alternative", "Adobe Acrobat alternative", "secure PDF tools no file storage", "PDF tools no signup required", "privacy-first PDF tools"],
   openGraph: {
     title: "About PDF.it — Privacy-First Online PDF Tools for Teams & Individuals",
     description:
@@ -273,6 +273,16 @@ export default function AboutPage() {
                     icon: Scale,
                     title: "PDF for Lawyers & Accountants",
                     desc: "Redact sensitive data, extract compliance tables, and automate document workflows. Designed for lawyers, accountants, and teams that demand precision.",
+                  },
+                  {
+                    icon: BookOpen,
+                    title: "PDF for Teachers & Educators",
+                    desc: "Convert lesson plans, compress handouts for email, merge course materials, and make scanned worksheets searchable with OCR. A better alternative to iLovePDF and SmallPDF for educators.",
+                  },
+                  {
+                    icon: Home,
+                    title: "PDF for HR & Real Estate",
+                    desc: "Process onboarding documents, sign contracts online without an account, batch-process lease agreements, and extract data from forms. Secure PDF tools with no file storage — built for small business teams in HR, real estate, and healthcare.",
                   },
                 ].map((card) => (
                   <div
