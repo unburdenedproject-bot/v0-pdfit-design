@@ -10,7 +10,7 @@ import {
   FileText, FileSpreadsheet, Presentation, Image, Merge, Split, RotateCw,
   FileArchiveIcon as Compress, Lock, Unlock, Droplets, Scan, Camera, Mail,
   Type, QrCode, ImageDown, Layers, Upload, PenTool, ArrowLeftRight, Repeat, Target, FilePlus,
-  MessageCircle, Sparkles, FileSearch, BookOpen, HelpCircle, Languages,
+  MessageCircle, Sparkles, FileSearch, BookOpen, Languages,
 } from "lucide-react"
 
 function AIBadge() {

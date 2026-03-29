@@ -57,6 +57,7 @@ const routes: [string, string, string][] = [
   ["/smart-extraction", "/es/extraccion-inteligente", "/br/extracao-inteligente"],
   ["/pdf-summarizer", "/es/resumidor-pdf", "/br/resumidor-pdf"],
   ["/question-generator", "/es/generador-preguntas", "/br/gerador-perguntas"],
+  ["/translate-pdf", "/es/traducir-pdf", "/br/traduzir-pdf"],
   // Compression cluster
   ["/compress-pdf-fast", "/es/comprimir-pdf-rapido", "/br/comprimir-pdf-rapido"],
   ["/compress-pdf-for-attachment", "/es/comprimir-pdf-para-adjunto", "/br/comprimir-pdf-para-anexo"],
