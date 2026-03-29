@@ -21,17 +21,17 @@ const sora = Sora({
 })
 
 export const metadata: Metadata = {
-  title: "PDF.it - The fastest PDF tools on the planet",
+  title: "PDF.it — Fix Any Document Problem Instantly",
   description:
-    "Convert, compress, merge, split and edit PDF files instantly. No registration required. Lightning fast processing.",
+    "Convert, compress, merge, split and edit PDF files instantly. AI-powered tools for professionals. No registration required.",
   generator: "v0.dev",
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-icon.png",
   },
   openGraph: {
-    title: "PDF.it - The fastest PDF tools on the planet",
-    description: "Convert, compress, merge, split and edit PDF files instantly. No registration required.",
+    title: "PDF.it — Fix Any Document Problem Instantly",
+    description: "Convert, compress, merge, split and edit PDF files instantly. AI-powered tools for professionals.",
     url: "https://pdf.it.com",
     siteName: "PDF.it",
     images: [
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "PDF.it - The fastest PDF tools on the planet",
-    description: "Convert, compress, merge, split and edit PDF files instantly.",
+    title: "PDF.it — Fix Any Document Problem Instantly",
+    description: "Convert, compress, merge, split and edit PDF files instantly. AI-powered tools for professionals.",
     images: ["https://pdf.it.com/og-logo.png"],
   },
 }

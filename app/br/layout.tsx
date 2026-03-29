@@ -2,9 +2,9 @@ import type React from "react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "PDF.it - As ferramentas PDF mais rapidas do mundo",
+  title: "PDF.it — Resolva Qualquer Problema de Documentos Instantaneamente",
   description:
-    "Converta, comprima, una, divida e edite arquivos PDF instantaneamente. Sem cadastro. Processamento ultrarapido.",
+    "Converta, comprima, una, divida e edite arquivos PDF instantaneamente. Ferramentas com IA para profissionais. Sem cadastro.",
   alternates: {
     canonical: "https://pdf.it.com/br",
     languages: {
