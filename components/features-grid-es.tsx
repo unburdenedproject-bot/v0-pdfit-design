@@ -354,8 +354,8 @@ function TierBadge({ tier }: { tier: "FREE" | "PRO" | "BUSINESS" | "ENTERPRISE" 
 function AIBadge() {
   return (
     <span
-      className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide"
-      style={{ background: "rgba(232,129,58,0.15)", color: "#E8813A", border: "1px solid rgba(232,129,58,0.4)" }}
+      className="text-[11px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider"
+      style={{ background: "rgba(232,129,58,0.2)", color: "#E8813A", border: "1px solid rgba(232,129,58,0.5)", boxShadow: "0 0 8px rgba(232,129,58,0.2)" }}
     >
       AI
     </span>

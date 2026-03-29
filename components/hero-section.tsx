@@ -1,4 +1,4 @@
-import { Shield, Crown, Gift, Sparkles, Target, FilePlus } from "lucide-react"
+import { Shield, Crown, Gift, Sparkles, Target, FilePlus, MessageCircle, Zap } from "lucide-react"
 import Link from "next/link"
 
 export function HeroSection() {
@@ -26,31 +26,30 @@ export function HeroSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
 
-          {/* Badge links */}
-          <div className="flex flex-wrap justify-center gap-2 mb-8">
-            <Link
-              href="/ats-optimizer"
-              className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wide text-teal-300 transition-all duration-200 hover:scale-105"
-              style={{
-                background: "rgba(20,216,196,0.1)",
-                border: "1px solid rgba(20,216,196,0.3)",
-                boxShadow: "0 0 12px rgba(20,216,196,0.1)",
-              }}
-            >
-              <Target className="h-3.5 w-3.5" />
-              New AI ATS Resume Optimizer
-            </Link>
-            <Link
-              href="/create-resume"
-              className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wide text-slate-200 transition-all duration-200 hover:scale-105"
-              style={{
-                background: "rgba(255,255,255,0.06)",
-                border: "1px solid rgba(255,255,255,0.15)",
-              }}
-            >
-              <FilePlus className="h-3.5 w-3.5" />
-              New AI Resume Builder
-            </Link>
+          {/* AI Tools Banner */}
+          <div
+            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 mb-8"
+            style={{
+              background: "linear-gradient(135deg, rgba(232,129,58,0.15), rgba(20,216,196,0.12), rgba(107,124,255,0.15))",
+              border: "1px solid rgba(232,129,58,0.35)",
+              boxShadow: "0 0 20px rgba(232,129,58,0.15), 0 0 40px rgba(20,216,196,0.08)",
+            }}
+          >
+            <Zap className="h-4 w-4 text-[#E8813A]" />
+            <span className="text-sm font-bold text-white">AI-Powered Tools:</span>
+            <div className="flex items-center gap-3">
+              <Link href="/ats-optimizer" className="text-sm font-semibold text-[#14D8C4] hover:text-[#2EE6D6] transition-colors">
+                Resume Optimizer
+              </Link>
+              <span className="text-slate-500">|</span>
+              <Link href="/create-resume" className="text-sm font-semibold text-[#14D8C4] hover:text-[#2EE6D6] transition-colors">
+                Resume Builder
+              </Link>
+              <span className="text-slate-500">|</span>
+              <Link href="/chat-with-pdf" className="text-sm font-semibold text-[#14D8C4] hover:text-[#2EE6D6] transition-colors">
+                Chat with PDF
+              </Link>
+            </div>
           </div>
 
           {/* Headline */}
@@ -121,8 +120,8 @@ export function HeroSection() {
               <span>10 free conversions/day</span>
             </div>
             <div className="flex items-center gap-2">
-              <Sparkles className="h-4 w-4 text-sky-300" />
-              <span>AI Resume Builder + ATS Optimizer</span>
+              <Sparkles className="h-4 w-4 text-[#E8813A]" />
+              <span>3 AI-Powered Tools</span>
             </div>
             <div className="flex items-center gap-2">
               <Shield className="h-4 w-4" style={{ color: "#14D8C4" }} />
