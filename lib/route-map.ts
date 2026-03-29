@@ -56,6 +56,7 @@ const routes: [string, string, string][] = [
   ["/chat-with-pdf", "/es/chat-con-pdf", "/br/chat-com-pdf"],
   ["/smart-extraction", "/es/extraccion-inteligente", "/br/extracao-inteligente"],
   ["/pdf-summarizer", "/es/resumidor-pdf", "/br/resumidor-pdf"],
+  ["/question-generator", "/es/generador-preguntas", "/br/gerador-perguntas"],
   // Compression cluster
   ["/compress-pdf-fast", "/es/comprimir-pdf-rapido", "/br/comprimir-pdf-rapido"],
   ["/compress-pdf-for-attachment", "/es/comprimir-pdf-para-adjunto", "/br/comprimir-pdf-para-anexo"],

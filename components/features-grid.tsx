@@ -32,6 +32,7 @@ import {
   BrainCircuit,
   FileSearch,
   BookOpen,
+  HelpCircle,
 } from "lucide-react"
 
 const categories = [
@@ -290,6 +291,14 @@ const categories = [
         icon: BookOpen,
         href: "/pdf-summarizer",
         tier: "BUSINESS" as const,
+        hasAI: true,
+      },
+      {
+        name: "Question Generator",
+        description: "Generate study questions from any PDF. Multiple choice, short answer, and true/false.",
+        icon: HelpCircle,
+        href: "/question-generator",
+        tier: "PRO" as const,
         hasAI: true,
       },
     ],

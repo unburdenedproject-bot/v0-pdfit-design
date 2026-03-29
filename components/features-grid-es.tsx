@@ -32,6 +32,7 @@ import {
   BrainCircuit,
   FileSearch,
   BookOpen,
+  HelpCircle,
 } from "lucide-react"
 
 const categories = [
@@ -289,6 +290,14 @@ const categories = [
         icon: BookOpen,
         href: "/es/resumidor-pdf",
         tier: "BUSINESS" as const,
+        hasAI: true,
+      },
+      {
+        name: "Generador de Preguntas",
+        description: "Genera preguntas de estudio de cualquier PDF. Opción múltiple, respuesta corta y verdadero/falso.",
+        icon: HelpCircle,
+        href: "/es/generador-preguntas",
+        tier: "PRO" as const,
         hasAI: true,
       },
     ],

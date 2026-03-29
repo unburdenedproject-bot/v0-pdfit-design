@@ -398,7 +398,7 @@ Each paid tier has its own visual identity on the pre-gate card:
 
 ### Pro tools (requiresPlan="pro")
 
-`/pdf-to-word`, `/pdf-to-excel`, `/pdf-to-powerpoint`, `/word-to-pdf`, `/excel-to-pdf`, `/powerpoint-to-pdf`, `/url-to-pdf`, `/ocr-scanner`, `/jpg-to-pdf`, `/png-to-pdf`, `/qr-code`, `/ats-optimizer`, `/create-resume`
+`/pdf-to-word`, `/pdf-to-excel`, `/pdf-to-powerpoint`, `/word-to-pdf`, `/excel-to-pdf`, `/powerpoint-to-pdf`, `/url-to-pdf`, `/ocr-scanner`, `/jpg-to-pdf`, `/png-to-pdf`, `/qr-code`, `/ats-optimizer`, `/create-resume`, `/question-generator`
 
 ### Business tools
 

@@ -57,6 +57,10 @@ export function HeroSectionEs() {
               <Link href="/es/resumidor-pdf" className="text-sm font-semibold text-[#14D8C4] hover:text-[#2EE6D6] transition-colors">
                 Resumidor
               </Link>
+              <span className="text-slate-500">|</span>
+              <Link href="/es/generador-preguntas" className="text-sm font-semibold text-[#14D8C4] hover:text-[#2EE6D6] transition-colors">
+                Preguntas
+              </Link>
             </div>
           </div>
 
@@ -127,7 +131,7 @@ export function HeroSectionEs() {
             </div>
             <div className="flex items-center gap-2">
               <Sparkles className="h-4 w-4 text-[#E8813A]" />
-              <span>5 Herramientas con IA</span>
+              <span>6 Herramientas con IA</span>
             </div>
             <div className="flex items-center gap-2">
               <Shield className="h-4 w-4" style={{ color: "#14D8C4" }} />
