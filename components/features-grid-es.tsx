@@ -31,6 +31,7 @@ import {
   MessageCircle,
   BrainCircuit,
   FileSearch,
+  BookOpen,
 } from "lucide-react"
 
 const categories = [
@@ -279,6 +280,14 @@ const categories = [
         description: "Extrae automáticamente nombres, fechas, montos y datos clave de cualquier PDF.",
         icon: FileSearch,
         href: "/es/extraccion-inteligente",
+        tier: "BUSINESS" as const,
+        hasAI: true,
+      },
+      {
+        name: "Resumidor de PDF",
+        description: "Resume documentos largos en segundos. Elige longitud e idioma.",
+        icon: BookOpen,
+        href: "/es/resumidor-pdf",
         tier: "BUSINESS" as const,
         hasAI: true,
       },
