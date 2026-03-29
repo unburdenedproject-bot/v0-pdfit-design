@@ -10,6 +10,10 @@
 - **Footer copyright** — Changed from dynamic current year to fixed "© 2024 PDF.it"
 - **Tagline rebrand** — Homepage hero changed from "Free PDF Tools." to "Built for Professionals." (EN/ES/BR); footer now reads "Built for professionals, trusted by professionals."; About page H1 updated in all 3 languages
 - **Full tier gate audit** — Verified all API routes, tool pages, pricing page, and feature grids match the correct tier structure (Free/Pro/Business/Enterprise)
+- **SEO keywords — audience targeting** — Added "PDF for accountants/lawyers/professionals/students/freelancers" to homepage meta keywords, about page meta keywords (EN/ES/BR), and woven naturally into about page "Built for" card titles and descriptions
+- **SEO keywords — expanded** — Added 17 new homepage keywords: competitor alternatives (iLovePDF/SmallPDF/Adobe Acrobat alternative), industry audiences (teachers, real estate, HR, healthcare, small business), problem-based terms (reduce PDF size, extract tables, sign without account, batch processing, make scanned PDF searchable)
+- **About page — 2 new audience cards** — "PDF for Teachers & Educators" and "PDF for HR & Real Estate" added to "Built for Real Workflows" section (EN/ES/BR), naturally incorporating competitor alternative and privacy keywords
+- **Pricing page metadata** — Created layout.tsx files for EN/ES/BR pricing pages with SEO-rich titles, descriptions, and keywords targeting competitor alternatives, batch processing, workflow automation, and privacy terms
 
 ## Core Tools (All Working)
 - /merge-pdf, /split-pdf, /rotate-pdf

@@ -402,7 +402,7 @@ Each paid tier has its own visual identity on the pre-gate card:
 
 ### Business tools
 
-`/esign`, `/pdf-compare`, `/pdf-redaction`
+`/esign`, `/pdf-compare`, `/pdf-redaction`, `/chat-with-pdf`
 
 ### Enterprise tools
 

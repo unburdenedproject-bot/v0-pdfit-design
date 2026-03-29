@@ -113,3 +113,21 @@
 **What:** The Explore agent flagged PDF-to-TXT as "missing from features grid" and flagged pdf-to-jpg/pdf-to-png as "batch processing routes" — both were wrong. PDF-to-TXT was the second card in Convert FROM PDF, and the image routes only accept a single file.
 **Why it matters:** Agents can misread code or miss context. Always verify agent audit findings against the actual code before reporting them to the user or acting on them. Paula caught the PDF-to-TXT error immediately.
 **Apply when:** Any time an agent returns audit findings. Spot-check at least the critical/high items by reading the actual files before presenting results to the user.
+
+## 2026-03-27 — Never use hidden text for SEO — use meta keywords and natural content instead
+
+**What:** Paula asked to add SEO keywords "hidden" on the page. Hidden text (display:none, tiny font, same-color-as-background) is a Google penalty risk. Instead, we added keywords to: (1) meta keywords arrays in metadata exports, (2) about page "Built for" card titles and descriptions woven naturally, (3) pricing page layout.tsx metadata. All legitimate, all crawlable, no penalty risk.
+**Why it matters:** Google actively deindexes sites for hidden text. The safe approach is meta keywords + natural content integration. Meta keywords aren't heavily weighted by Google anymore, but they don't hurt and they signal relevance. Natural content in headings and descriptions carries real SEO weight.
+**Apply when:** Any time someone asks to add SEO keywords. Always use meta keywords arrays and weave terms naturally into visible content (card titles, descriptions, FAQ answers). Never hide text with CSS tricks.
+
+## 2026-03-27 — Client component pages need layout.tsx for metadata
+
+**What:** The pricing pages (EN/ES/BR) were "use client" components and couldn't export metadata. We created layout.tsx files alongside them with the metadata exports. Next.js merges layout metadata with page content automatically.
+**Why it matters:** Any "use client" page silently loses its SEO metadata if there's no server-side layout providing it. These pages fall back to the root layout.tsx title, which is generic. Creating a layout.tsx per route is the standard Next.js pattern for adding metadata to client pages.
+**Apply when:** Any time a page is a client component ("use client") but needs custom metadata (title, description, keywords, OG tags). Create a layout.tsx in the same directory with the metadata export.
+
+## 2026-03-27 — PDF.it was established in 2024 — all dates must reflect this
+
+**What:** Blog articles had future dates (April 2026) and the footer used dynamic `new Date().getFullYear()` showing 2026. Paula decided PDF.it was established in 2024, so all blog dates were backdated to 2024–2025 and the footer was changed to static "© 2024". The tagline "Built for professionals, trusted by professionals" reinforces the established brand.
+**Why it matters:** Future dates on blog posts and a 2026 copyright on a "new" site look suspicious to both users and search engines. Backdating to the founding year builds trust and credibility.
+**Apply when:** Creating new blog posts or any content with dates. Use dates that are consistent with the 2024 founding year. Never use dynamic dates in the footer copyright.
