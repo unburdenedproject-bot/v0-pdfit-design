@@ -10,7 +10,17 @@ import {
   FileText, FileSpreadsheet, Presentation, Image, Merge, Split, RotateCw,
   FileArchiveIcon as Compress, Lock, Unlock, Droplets, Scan, Camera, Mail,
   Type, QrCode, ImageDown, Layers, Upload, PenTool, ArrowLeftRight, Repeat, Target, FilePlus,
+  MessageCircle, Sparkles,
 } from "lucide-react"
+
+function AIBadge() {
+  return (
+    <span className="inline-flex items-center gap-1.5 text-sm font-semibold px-3 py-1 rounded-full bg-purple-600 text-white shadow-md shadow-purple-500/50">
+      <Sparkles className="h-3.5 w-3.5" />
+      AI-Powered
+    </span>
+  )
+}
 
 function TierBadge({ tier }: { tier: "FREE" | "PRO" | "BUSINESS" | "ENTERPRISE" }) {
   if (tier === "ENTERPRISE") {
@@ -102,8 +112,9 @@ const categories = [
       { name: "Scanner OCR", description: "Extraia texto de PDFs digitalizados.", icon: Scan, href: "/br/scanner-ocr", tier: "PRO" as const },
       { name: "Limpeza de Digitalizacao", description: "Converta fotos de documentos em PDFs profissionais.", icon: Camera, href: "/br/limpeza-digitalizacao", tier: "FREE" as const },
       { name: "Codigo QR", description: "Gere codigos QR a partir de qualquer URL ou texto.", icon: QrCode, href: "/br/codigo-qr", tier: "PRO" as const },
-      { name: "Otimize Seu Curriculo", description: "Envie seu curriculo, receba uma pontuacao e a IA corrige.", icon: Target, href: "/br/otimizador-ats", tier: "PRO" as const },
-      { name: "Criar Curriculo", description: "Construa um curriculo profissional do zero. Baixe em Word.", icon: FilePlus, href: "/br/criar-curriculo", tier: "PRO" as const },
+      { name: "Otimize Seu Curriculo", description: "Envie seu curriculo, receba uma pontuacao e a IA corrige.", icon: Target, href: "/br/otimizador-ats", tier: "PRO" as const, hasAI: true },
+      { name: "Criar Curriculo", description: "Construa um curriculo profissional do zero. Baixe em Word.", icon: FilePlus, href: "/br/criar-curriculo", tier: "PRO" as const, hasAI: true },
+      { name: "Chat com PDF", description: "Faca perguntas e obtenha respostas com IA de qualquer documento PDF.", icon: MessageCircle, href: "/br/chat-com-pdf", tier: "BUSINESS" as const, hasAI: true },
     ],
   },
   {
@@ -205,10 +216,11 @@ export default function HomePagePt() {
                           >
                             <tool.icon className="h-5 w-5 text-[#14D8C4]" />
                           </div>
-                          <div className="flex items-center gap-1.5 mb-1">
+                          <div className="flex items-center gap-1.5 mb-1 flex-wrap justify-center">
                             <h4 className="text-sm font-bold text-white group-hover:text-[#14D8C4] transition-colors">{tool.name}</h4>
                             <TierBadge tier={tool.tier} />
                           </div>
+                          {tool.hasAI && <div className="mb-1"><AIBadge /></div>}
                           <p className="text-xs text-slate-400 leading-relaxed">{tool.description}</p>
                         </Link>
                       </div>

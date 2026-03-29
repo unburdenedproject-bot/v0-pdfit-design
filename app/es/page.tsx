@@ -10,7 +10,17 @@ import {
   FileText, FileSpreadsheet, Presentation, Image, Merge, Split, RotateCw,
   FileArchiveIcon as Compress, Lock, Unlock, Droplets, Scan, Camera, Mail,
   Type, QrCode, ImageDown, Layers, Upload, PenTool, ArrowLeftRight, Repeat, Target, FilePlus,
+  MessageCircle, Sparkles,
 } from "lucide-react"
+
+function AIBadge() {
+  return (
+    <span className="inline-flex items-center gap-1.5 text-sm font-semibold px-3 py-1 rounded-full bg-purple-600 text-white shadow-md shadow-purple-500/50">
+      <Sparkles className="h-3.5 w-3.5" />
+      AI-Powered
+    </span>
+  )
+}
 
 function TierBadge({ tier }: { tier: "FREE" | "PRO" | "BUSINESS" | "ENTERPRISE" }) {
   if (tier === "ENTERPRISE") {
@@ -102,8 +112,9 @@ const categories = [
     description: "Crea recursos útiles al instante",
     tools: [
       { name: "Generador de QR", description: "Genera códigos QR desde cualquier URL o texto.", icon: QrCode, href: "/es/codigo-qr", tier: "PRO" as const },
-      { name: "Optimiza Tu Curriculum", description: "Sube tu curriculum, recibe una puntuacion y la IA lo arregla.", icon: Target, href: "/es/optimizador-ats", tier: "PRO" as const },
-      { name: "Crear Curriculum", description: "Construye un curriculum profesional desde cero. Descarga en Word.", icon: FilePlus, href: "/es/crear-curriculum", tier: "PRO" as const },
+      { name: "Optimiza Tu Curriculum", description: "Sube tu curriculum, recibe una puntuacion y la IA lo arregla.", icon: Target, href: "/es/optimizador-ats", tier: "PRO" as const, hasAI: true },
+      { name: "Crear Curriculum", description: "Construye un curriculum profesional desde cero. Descarga en Word.", icon: FilePlus, href: "/es/crear-curriculum", tier: "PRO" as const, hasAI: true },
+      { name: "Chat con PDF", description: "Haz preguntas y obtén respuestas con IA de cualquier documento PDF.", icon: MessageCircle, href: "/es/chat-con-pdf", tier: "BUSINESS" as const, hasAI: true },
     ],
   },
   {
@@ -205,10 +216,11 @@ export default function HomePageEs() {
                           >
                             <tool.icon className="h-5 w-5 text-[#14D8C4]" />
                           </div>
-                          <div className="flex items-center gap-1.5 mb-1">
+                          <div className="flex items-center gap-1.5 mb-1 flex-wrap justify-center">
                             <h4 className="text-sm font-bold text-white group-hover:text-[#14D8C4] transition-colors">{tool.name}</h4>
                             <TierBadge tier={tool.tier} />
                           </div>
+                          {tool.hasAI && <div className="mb-1"><AIBadge /></div>}
                           <p className="text-xs text-slate-400 leading-relaxed">{tool.description}</p>
                         </Link>
                       </div>
