@@ -28,6 +28,7 @@ import {
   Target,
   Sparkles,
   FilePlus,
+  MessageCircle,
 } from "lucide-react"
 
 const categories = [
@@ -254,6 +255,7 @@ const categories = [
         icon: Target,
         href: "/ats-optimizer",
         tier: "PRO" as const,
+        hasAI: true,
       },
       {
         name: "Create a Resume",
@@ -261,6 +263,15 @@ const categories = [
         icon: FilePlus,
         href: "/create-resume",
         tier: "PRO" as const,
+        hasAI: true,
+      },
+      {
+        name: "Chat with PDF",
+        description: "Ask questions and get AI-powered answers from any PDF document.",
+        icon: MessageCircle,
+        href: "/chat-with-pdf",
+        tier: "BUSINESS" as const,
+        hasAI: true,
       },
     ],
   },
@@ -337,6 +348,17 @@ function TierBadge({ tier }: { tier: "FREE" | "PRO" | "BUSINESS" | "ENTERPRISE" 
       style={{ background: s.bg, color: s.color, border: `1px solid ${s.border}` }}
     >
       {labels[tier] || "Free"}
+    </span>
+  )
+}
+
+function AIBadge() {
+  return (
+    <span
+      className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide"
+      style={{ background: "rgba(232,129,58,0.15)", color: "#E8813A", border: "1px solid rgba(232,129,58,0.4)" }}
+    >
+      AI
     </span>
   )
 }
@@ -459,11 +481,12 @@ export function FeaturesGrid() {
                       >
                         <tool.icon className="h-5 w-5 text-[#14D8C4]" />
                       </div>
-                      <div className="flex items-center gap-1.5 mb-1">
+                      <div className="flex items-center gap-1.5 mb-1 flex-wrap justify-center">
                         <h4 className="text-sm font-bold text-white group-hover:text-[#14D8C4] transition-colors">
                           {tool.name}
                         </h4>
                         <TierBadge tier={tool.tier} />
+                        {tool.hasAI && <AIBadge />}
                       </div>
                       <p className="text-xs text-slate-400 leading-relaxed">
                         {tool.description}

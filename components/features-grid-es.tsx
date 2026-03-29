@@ -28,6 +28,7 @@ import {
   Target,
   Sparkles,
   FilePlus,
+  MessageCircle,
 } from "lucide-react"
 
 const categories = [
@@ -253,6 +254,7 @@ const categories = [
         icon: Target,
         href: "/es/optimizador-ats",
         tier: "PRO" as const,
+        hasAI: true,
       },
       {
         name: "Crear Curriculum",
@@ -260,6 +262,15 @@ const categories = [
         icon: FilePlus,
         href: "/es/crear-curriculum",
         tier: "PRO" as const,
+        hasAI: true,
+      },
+      {
+        name: "Chat con PDF",
+        description: "Haz preguntas y obtén respuestas con IA de cualquier documento PDF.",
+        icon: MessageCircle,
+        href: "/es/chat-con-pdf",
+        tier: "BUSINESS" as const,
+        hasAI: true,
       },
     ],
   },
@@ -336,6 +347,17 @@ function TierBadge({ tier }: { tier: "FREE" | "PRO" | "BUSINESS" | "ENTERPRISE" 
       style={{ background: s.bg, color: s.color, border: `1px solid ${s.border}` }}
     >
       {labels[tier] || "Gratis"}
+    </span>
+  )
+}
+
+function AIBadge() {
+  return (
+    <span
+      className="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide"
+      style={{ background: "rgba(232,129,58,0.15)", color: "#E8813A", border: "1px solid rgba(232,129,58,0.4)" }}
+    >
+      AI
     </span>
   )
 }
@@ -458,11 +480,12 @@ export function FeaturesGridEs() {
                       >
                         <tool.icon className="h-5 w-5 text-[#14D8C4]" />
                       </div>
-                      <div className="flex items-center gap-1.5 mb-1">
+                      <div className="flex items-center gap-1.5 mb-1 flex-wrap justify-center">
                         <h4 className="text-sm font-bold text-white group-hover:text-[#14D8C4] transition-colors">
                           {tool.name}
                         </h4>
                         <TierBadge tier={tool.tier} />
+                        {tool.hasAI && <AIBadge />}
                       </div>
                       <p className="text-xs text-slate-400 leading-relaxed">
                         {tool.description}
