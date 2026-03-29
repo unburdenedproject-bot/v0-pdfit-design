@@ -29,6 +29,7 @@ import {
   Sparkles,
   FilePlus,
   MessageCircle,
+  BrainCircuit,
 } from "lucide-react"
 
 const categories = [
@@ -355,9 +356,10 @@ function TierBadge({ tier }: { tier: "FREE" | "PRO" | "BUSINESS" | "ENTERPRISE" 
 function AIBadge() {
   return (
     <span
-      className="text-[11px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider"
+      className="inline-flex items-center gap-1 text-[11px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider"
       style={{ background: "rgba(232,129,58,0.2)", color: "#E8813A", border: "1px solid rgba(232,129,58,0.5)", boxShadow: "0 0 8px rgba(232,129,58,0.2)" }}
     >
+      <BrainCircuit className="h-3 w-3" />
       AI
     </span>
   )
