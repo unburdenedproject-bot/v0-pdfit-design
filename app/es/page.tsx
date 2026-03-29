@@ -10,7 +10,7 @@ import {
   FileText, FileSpreadsheet, Presentation, Image, Merge, Split, RotateCw,
   FileArchiveIcon as Compress, Lock, Unlock, Droplets, Scan, Camera, Mail,
   Type, QrCode, ImageDown, Layers, Upload, PenTool, ArrowLeftRight, Repeat, Target, FilePlus,
-  MessageCircle, Sparkles, FileSearch, BookOpen, HelpCircle,
+  MessageCircle, Sparkles, FileSearch, BookOpen, HelpCircle, Languages,
 } from "lucide-react"
 
 function AIBadge() {
@@ -118,6 +118,7 @@ const categories = [
       { name: "Extracción Inteligente", description: "Extrae automáticamente nombres, fechas, montos y datos clave de cualquier PDF.", icon: FileSearch, href: "/es/extraccion-inteligente", tier: "BUSINESS" as const, hasAI: true },
       { name: "Resumidor de PDF", description: "Resume documentos largos en segundos. Elige longitud e idioma.", icon: BookOpen, href: "/es/resumidor-pdf", tier: "BUSINESS" as const, hasAI: true },
       { name: "Generador de Preguntas", description: "Genera preguntas de estudio de cualquier PDF. Opción múltiple, respuesta corta y verdadero/falso.", icon: HelpCircle, href: "/es/generador-preguntas", tier: "PRO" as const, hasAI: true },
+      { name: "Traducir PDF", description: "Traduce documentos PDF completos a 13 idiomas con IA.", icon: Languages, href: "/es/traducir-pdf", tier: "BUSINESS" as const, hasAI: true },
     ],
   },
   {

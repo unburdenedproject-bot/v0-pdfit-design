@@ -61,6 +61,10 @@ export function HeroSectionBr() {
               <Link href="/br/gerador-perguntas" className="text-sm font-semibold text-[#14D8C4] hover:text-[#2EE6D6] transition-colors">
                 Perguntas
               </Link>
+              <span className="text-slate-500">|</span>
+              <Link href="/br/traduzir-pdf" className="text-sm font-semibold text-[#14D8C4] hover:text-[#2EE6D6] transition-colors">
+                Traduzir
+              </Link>
             </div>
           </div>
 
@@ -131,7 +135,7 @@ export function HeroSectionBr() {
             </div>
             <div className="flex items-center gap-2">
               <Sparkles className="h-4 w-4 text-[#E8813A]" />
-              <span>6 Ferramentas com IA</span>
+              <span>7 Ferramentas com IA</span>
             </div>
             <div className="flex items-center gap-2">
               <Shield className="h-4 w-4" style={{ color: "#14D8C4" }} />

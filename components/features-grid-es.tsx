@@ -33,6 +33,7 @@ import {
   FileSearch,
   BookOpen,
   HelpCircle,
+  Languages,
 } from "lucide-react"
 
 const categories = [
@@ -298,6 +299,14 @@ const categories = [
         icon: HelpCircle,
         href: "/es/generador-preguntas",
         tier: "PRO" as const,
+        hasAI: true,
+      },
+      {
+        name: "Traducir PDF",
+        description: "Traduce documentos PDF completos a 13 idiomas con IA.",
+        icon: Languages,
+        href: "/es/traducir-pdf",
+        tier: "BUSINESS" as const,
         hasAI: true,
       },
     ],

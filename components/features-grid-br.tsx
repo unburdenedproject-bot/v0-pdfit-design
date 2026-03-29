@@ -33,6 +33,7 @@ import {
   FileSearch,
   BookOpen,
   HelpCircle,
+  Languages,
 } from "lucide-react"
 
 const categories = [
@@ -102,6 +103,7 @@ const categories = [
       { name: "Extracao Inteligente", description: "Extraia automaticamente nomes, datas, valores e dados chave de qualquer PDF.", icon: FileSearch, href: "/br/extracao-inteligente", tier: "BUSINESS" as const, hasAI: true },
       { name: "Resumidor de PDF", description: "Resuma documentos longos em segundos. Escolha tamanho e idioma.", icon: BookOpen, href: "/br/resumidor-pdf", tier: "BUSINESS" as const, hasAI: true },
       { name: "Gerador de Perguntas", description: "Gere perguntas de estudo de qualquer PDF. Multipla escolha, resposta curta e verdadeiro/falso.", icon: HelpCircle, href: "/br/gerador-perguntas", tier: "PRO" as const, hasAI: true },
+      { name: "Traduzir PDF", description: "Traduza documentos PDF completos para 13 idiomas com IA.", icon: Languages, href: "/br/traduzir-pdf", tier: "BUSINESS" as const, hasAI: true },
     ],
   },
   {
