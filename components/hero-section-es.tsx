@@ -49,6 +49,10 @@ export function HeroSectionEs() {
               <Link href="/es/chat-con-pdf" className="text-sm font-semibold text-[#14D8C4] hover:text-[#2EE6D6] transition-colors">
                 Chat con PDF
               </Link>
+              <span className="text-slate-500">|</span>
+              <Link href="/es/extraccion-inteligente" className="text-sm font-semibold text-[#14D8C4] hover:text-[#2EE6D6] transition-colors">
+                Extracción Inteligente
+              </Link>
             </div>
           </div>
 
@@ -119,7 +123,7 @@ export function HeroSectionEs() {
             </div>
             <div className="flex items-center gap-2">
               <Sparkles className="h-4 w-4 text-[#E8813A]" />
-              <span>3 Herramientas con IA</span>
+              <span>4 Herramientas con IA</span>
             </div>
             <div className="flex items-center gap-2">
               <Shield className="h-4 w-4" style={{ color: "#14D8C4" }} />

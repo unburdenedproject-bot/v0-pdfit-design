@@ -30,6 +30,7 @@ import {
   FilePlus,
   MessageCircle,
   BrainCircuit,
+  FileSearch,
 } from "lucide-react"
 
 const categories = [
@@ -271,6 +272,14 @@ const categories = [
         description: "Ask questions and get AI-powered answers from any PDF document.",
         icon: MessageCircle,
         href: "/chat-with-pdf",
+        tier: "BUSINESS" as const,
+        hasAI: true,
+      },
+      {
+        name: "Smart Data Extraction",
+        description: "Automatically pull names, dates, amounts, and key data from any PDF.",
+        icon: FileSearch,
+        href: "/smart-extraction",
         tier: "BUSINESS" as const,
         hasAI: true,
       },

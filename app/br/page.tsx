@@ -10,7 +10,7 @@ import {
   FileText, FileSpreadsheet, Presentation, Image, Merge, Split, RotateCw,
   FileArchiveIcon as Compress, Lock, Unlock, Droplets, Scan, Camera, Mail,
   Type, QrCode, ImageDown, Layers, Upload, PenTool, ArrowLeftRight, Repeat, Target, FilePlus,
-  MessageCircle, Sparkles,
+  MessageCircle, Sparkles, FileSearch,
 } from "lucide-react"
 
 function AIBadge() {
@@ -115,6 +115,7 @@ const categories = [
       { name: "Otimize Seu Curriculo", description: "Envie seu curriculo, receba uma pontuacao e a IA corrige.", icon: Target, href: "/br/otimizador-ats", tier: "PRO" as const, hasAI: true },
       { name: "Criar Curriculo", description: "Construa um curriculo profissional do zero. Baixe em Word.", icon: FilePlus, href: "/br/criar-curriculo", tier: "PRO" as const, hasAI: true },
       { name: "Chat com PDF", description: "Faca perguntas e obtenha respostas com IA de qualquer documento PDF.", icon: MessageCircle, href: "/br/chat-com-pdf", tier: "BUSINESS" as const, hasAI: true },
+      { name: "Extracao Inteligente", description: "Extraia automaticamente nomes, datas, valores e dados chave de qualquer PDF.", icon: FileSearch, href: "/br/extracao-inteligente", tier: "BUSINESS" as const, hasAI: true },
     ],
   },
   {
