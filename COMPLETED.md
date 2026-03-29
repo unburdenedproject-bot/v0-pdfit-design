@@ -1,5 +1,59 @@
 # PDF.it - Accomplished Work
 
+## AI Tools Suite (March 29, 2026) — 5 New AI-Powered Tools
+
+### Chat with PDF (Business tier)
+- `/chat-with-pdf`, `/es/chat-con-pdf`, `/br/chat-com-pdf`
+- Upload a PDF, ask unlimited questions, get AI answers from the document content
+- Uses OpenAI GPT-4o-mini with conversation history (10 messages)
+- Text extracted once via iLoveAPI, cached client-side for follow-up questions
+- Blob deleted immediately after text extraction
+- ~$0.01-0.03 per question
+
+### Smart Data Extraction (Business tier)
+- `/smart-extraction`, `/es/extraccion-inteligente`, `/br/extracao-inteligente`
+- Upload a PDF, AI extracts: people (names + roles), organizations, dates, amounts, contact info (emails/phones/addresses), key-value fields, important clauses
+- Results displayed in organized categories with JSON download
+- Uses OpenAI GPT-4o-mini with structured JSON output
+- ~$0.02-0.05 per document
+
+### AI PDF Summarizer (Business tier)
+- `/pdf-summarizer`, `/es/resumidor-pdf`, `/br/resumidor-pdf`
+- Upload a PDF, choose summary length (short/medium/detailed) and language (same/English/Spanish/Portuguese)
+- One-click copy to clipboard
+- Uses OpenAI GPT-4o-mini with adjustable max_tokens per length
+- ~$0.01-0.03 per summary
+
+### AI Question Generator (Pro tier)
+- `/question-generator`, `/es/generador-preguntas`, `/br/gerador-perguntas`
+- Upload a PDF, choose question type (mixed/multiple choice/short answer/true-false), count (5-20), difficulty (easy/medium/hard)
+- Answers hidden by default with reveal toggle per question
+- Copy all questions + answers with one click
+- Uses OpenAI GPT-4o-mini
+- ~$0.01-0.03 per generation
+
+### Translate PDF (Business tier)
+- `/translate-pdf`, `/es/traducir-pdf`, `/br/traduzir-pdf`
+- Upload a PDF, choose from 13 target languages (English, Spanish, Portuguese, French, German, Italian, Dutch, Chinese, Japanese, Korean, Arabic, Russian, Hindi)
+- Copy or download translation as TXT
+- Uses OpenAI GPT-4o-mini with professional translation prompting
+- ~$0.02-0.05 per translation
+
+### AI Tools Infrastructure
+- All 5 tools follow identical architecture: upload → iLoveAPI text extraction → OpenAI GPT-4o-mini → structured response
+- All tools added to all 5 homepage grids (3 features-grid components + 2 inline ES/BR homepage grids)
+- All tools added to all 3 hero banners ("7 AI-Powered Tools" with clickable links)
+- Purple "AI-Powered" badge (Sparkles icon) on all AI tool cards in homepage grids
+- All tool pages follow Page_Format.md (Hero → Intro → Interface → Features → How It Works → Related Tools → FAQ → Schema)
+- Route map updated with all trilingual routes
+- Page_Format.md updated with new Pro and Business tool lists
+
+### Performance & Branding Fixes (March 29, 2026)
+- **Google Fonts → next/font** — Switched from render-blocking `<link>` to self-hosted `next/font/google` (Inter + Sora); eliminated preconnect hints to fonts.googleapis.com
+- **GTM deferred** — Changed from `afterInteractive` to `lazyOnload` strategy for better mobile performance
+- **Package imports optimized** — Added `optimizePackageImports` for lucide-react and recharts
+- **Page titles fixed** — Removed "fastest PDF tools on the planet" claims from all 3 layout files; replaced with brand positioning "Fix Any Document Problem Instantly" (EN/ES/BR); updated OpenGraph and Twitter card titles to match
+
 ## Pre-Launch Audit & Fixes (March 27, 2026)
 - **OmnisPDF → PDF.it rebrand cleanup** — Replaced all remaining "OmnisPDF" references across 15 documentation and config files (SEO-MAP, ROADMAP, LOCALIZATION, agent configs, command templates, etc.)
 - **Pro tool metadata fix** — Removed "Free & No Login" from PDF to Word and PDF to Excel metadata titles (both are Pro tools)
