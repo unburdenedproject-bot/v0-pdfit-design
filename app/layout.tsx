@@ -3,22 +3,7 @@ import type { Metadata } from "next"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import { GoogleTagManager, GoogleTagManagerNoScript } from "@/components/google-analytics"
 import { Suspense } from "react"
-import { Inter, Sora } from "next/font/google"
 import "./globals.css"
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-  weight: ["400", "500", "600"],
-})
-
-const sora = Sora({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-sora",
-  weight: ["700", "800"],
-})
 
 export const metadata: Metadata = {
   title: "PDF.it — Fix Any Document Problem Instantly",
@@ -59,8 +44,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${sora.variable}`}>
+    <html lang="en">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onLoad="this.media='all'" />
         <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       </head>
