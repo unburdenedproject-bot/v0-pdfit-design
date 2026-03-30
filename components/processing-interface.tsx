@@ -133,8 +133,8 @@ export function ProcessingInterface({
     if (isPaidUser) {
       setFiles((prev) => [...prev, ...droppedFiles])
     } else {
-      // Free users: limit files (2 for merge, 1 for others)
-      setFiles((prev) => [...prev, ...droppedFiles].slice(0, freeFileLimit))
+      // Free users: replace file(s) with new selection (keeps latest up to limit)
+      setFiles(droppedFiles.slice(0, freeFileLimit))
     }
   }, [isPaidUser, freeFileLimit])
 
@@ -144,7 +144,8 @@ export function ProcessingInterface({
       if (isPaidUser) {
         setFiles((prev) => [...prev, ...selectedFiles])
       } else {
-        setFiles((prev) => [...prev, ...selectedFiles].slice(0, freeFileLimit))
+        // Free users: replace file(s) with new selection (keeps latest up to limit)
+        setFiles(selectedFiles.slice(0, freeFileLimit))
       }
     }
   }, [isPaidUser, freeFileLimit])
@@ -1253,7 +1254,7 @@ export function ProcessingInterface({
             </div>
 
             {/* Security Notice */}
-            <div className="mt-8 text-center">
+            <div className="mt-8 text-center space-y-3">
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-2xl mx-auto">
                 <div className="flex items-center justify-center gap-2 text-blue-800 text-sm">
                   <Shield className="h-4 w-4" />
@@ -1262,6 +1263,9 @@ export function ProcessingInterface({
                   </span>
                 </div>
               </div>
+              <p className="text-xs text-slate-400 max-w-2xl mx-auto">
+                For your privacy, files are not saved between sessions. If you refresh this page, you will need to upload your document again.
+              </p>
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X, User, LogIn } from "lucide-react"
+import { Menu, X, User, LogIn, ArrowLeft } from "lucide-react"
 import { useRouter, usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
 import { createClient } from "@/lib/supabase/client"
@@ -84,9 +84,20 @@ export function HeaderBr() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/br" className="flex items-center">
-            <span style={{fontWeight: 800, color: '#ffffff', fontSize: '22px', letterSpacing: '-0.5px'}}>PDF<span style={{color: '#14D8C4', fontWeight: 400}}>.it</span></span>
-          </Link>
+          <div className="flex items-center gap-2">
+            {pathname !== "/br" && (
+              <button
+                onClick={() => router.back()}
+                className="md:hidden flex items-center justify-center w-8 h-8 rounded-lg text-white/70 hover:text-white hover:bg-white/10 transition-colors"
+                aria-label="Voltar"
+              >
+                <ArrowLeft className="h-5 w-5" />
+              </button>
+            )}
+            <Link href="/br" className="flex items-center">
+              <span style={{fontWeight: 800, color: '#ffffff', fontSize: '22px', letterSpacing: '-0.5px'}}>PDF<span style={{color: '#14D8C4', fontWeight: 400}}>.it</span></span>
+            </Link>
+          </div>
 
           <nav className="hidden md:flex items-center space-x-8">
             <Link href="/br" className="text-white/80 hover:text-white font-medium transition-colors">
