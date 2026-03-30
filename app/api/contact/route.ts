@@ -4,11 +4,21 @@ import { createClient } from "@supabase/supabase-js"
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { name, email, subject, message } = body
+    const name = (body.name || "").trim()
+    const email = (body.email || "").trim()
+    const subject = (body.subject || "").trim()
+    const message = (body.message || "").trim()
 
     if (!name || !email || !subject || !message) {
       return NextResponse.json(
         { error: "All fields are required." },
+        { status: 400 }
+      )
+    }
+
+    if (name.length < 2) {
+      return NextResponse.json(
+        { error: "Please enter a valid name." },
         { status: 400 }
       )
     }

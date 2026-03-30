@@ -195,6 +195,9 @@ export default function ContactPage() {
                               value={formData.name}
                               onChange={handleInputChange}
                               required
+                              minLength={2}
+                              pattern=".*\S+.*"
+                              title="Please enter your name"
                               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#14D8C4] focus:border-[#14D8C4] transition-colors"
                               placeholder="Full name"
                             />
@@ -270,7 +273,7 @@ export default function ContactPage() {
                         <Button
                           type="submit"
                           disabled={
-                            isSubmitting || !formData.name || !formData.email || !formData.subject || !formData.message
+                            isSubmitting || !formData.name.trim() || !formData.email.trim() || !formData.subject || !formData.message.trim()
                           }
                           className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-6 rounded-lg text-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                         >
