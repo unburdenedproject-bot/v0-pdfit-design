@@ -30,6 +30,13 @@ import {
   Search,
   Globe,
   Target,
+  MessageCircle,
+  FileSearch,
+  BookOpen,
+  HelpCircle,
+  Languages,
+  Sparkles,
+  FilePlus,
 } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -47,8 +54,12 @@ export const metadata: Metadata = {
 }
 
 const tools = [
+  { name: "AI PDF Summarizer", description: "Summarize long documents in seconds. Choose length and language.", icon: BookOpen, href: "/pdf-summarizer", tier: "BUSINESS" },
+  { name: "AI Question Generator", description: "Generate study questions from any PDF. Multiple choice, short answer, and true/false.", icon: HelpCircle, href: "/question-generator", tier: "PRO" },
   { name: "ATS Resume Optimizer", description: "AI-powered resume analysis with ATS compatibility score and keyword suggestions.", icon: Target, href: "/ats-optimizer", tier: "PRO" },
+  { name: "Chat with PDF", description: "Ask questions and get AI-powered answers from any PDF document.", icon: MessageCircle, href: "/chat-with-pdf", tier: "BUSINESS" },
   { name: "Compress PDF", description: "Reduce file size with Light, Medium, or Extreme compression.", icon: Compress, href: "/compress-pdf", tier: "FREE" },
+  { name: "Create a Resume", description: "Build a professional resume from scratch with AI. Download as Word.", icon: FilePlus, href: "/create-resume", tier: "PRO" },
   { name: "Compress PDF for Email", description: "Shrink PDFs to fit Gmail, Outlook, and Yahoo attachment limits.", icon: Mail, href: "/compress-pdf-for-email", tier: "FREE" },
   { name: "eSign Documents", description: "Add legally binding electronic signatures to PDFs.", icon: PenTool, href: "/esign", tier: "BUSINESS" },
   { name: "Excel to PDF", description: "Turn spreadsheets into shareable PDFs.", icon: FileSpreadsheet, href: "/excel-to-pdf", tier: "PRO" },
@@ -71,8 +82,10 @@ const tools = [
   { name: "Protect PDF", description: "Add password protection to your PDF.", icon: Lock, href: "/protect-pdf", tier: "FREE" },
   { name: "QR Code Generator", description: "Generate QR codes from any URL or text instantly.", icon: QrCode, href: "/tools/qr-code", tier: "PRO" },
   { name: "Rotate PDF", description: "Fix page orientation instantly.", icon: RotateCw, href: "/rotate-pdf", tier: "FREE" },
+  { name: "Smart Data Extraction", description: "Automatically pull names, dates, amounts, and key data from any PDF.", icon: FileSearch, href: "/smart-extraction", tier: "BUSINESS" },
   { name: "Split PDF", description: "Divide a PDF into separate files.", icon: Split, href: "/split-pdf", tier: "FREE" },
   { name: "Table Extraction", description: "Extract tables from PDFs directly into Excel spreadsheets.", icon: FileSpreadsheet, href: "/table-extraction", tier: "BUSINESS" },
+  { name: "Translate PDF", description: "Translate entire PDF documents into 13 languages with AI.", icon: Languages, href: "/translate-pdf", tier: "BUSINESS" },
   { name: "High-Volume Table Extraction", description: "Extract up to 2,000 pages of tables per month to Excel.", icon: FileSpreadsheet, href: "/table-extraction", tier: "ENTERPRISE" },
   { name: "Unlock PDF", description: "Remove password restrictions from a PDF.", icon: Unlock, href: "/unlock-pdf", tier: "FREE" },
   { name: "Upload-Ready PDF", description: "Fix and optimize PDFs for any upload portal in one click.", icon: Upload, href: "/upload-ready-pdf", tier: "FREE" },

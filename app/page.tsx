@@ -12,7 +12,7 @@ const ComprehensiveFAQSection = dynamic(() => import("@/components/comprehensive
 export const metadata: Metadata = {
   title: "AI PDF Tools, ATS Resume Optimizer & Resume Builder | PDF.it",
   description:
-    "Use PDF.it to compress, convert, merge, split, and edit PDFs online. Try AI Resume ATS Optimizer and AI Resume Builder to score, fix, and create ATS-friendly resumes fast.",
+    "Use PDF.it to compress, convert, merge, split, and edit PDFs online. 7 AI tools: chat with PDF, summarize documents, extract data, generate questions, translate to 13 languages, and optimize resumes.",
   keywords: [
     "AI PDF tools",
     "ATS resume optimizer",
@@ -45,11 +45,22 @@ export const metadata: Metadata = {
     "PDF workflow automation",
     "PDF tools no signup required",
     "make scanned PDF searchable",
+    "chat with PDF",
+    "ask questions about PDF",
+    "PDF summarizer",
+    "summarize PDF document",
+    "translate PDF",
+    "PDF translation tool",
+    "AI question generator",
+    "generate quiz from PDF",
+    "extract data from PDF",
+    "smart data extraction",
+    "AI document analysis",
   ],
   openGraph: {
     title: "AI PDF Tools, ATS Resume Optimizer & Resume Builder | PDF.it",
     description:
-      "Compress, convert, merge, split, and edit PDFs online. Score your resume with AI ATS analysis or create a new ATS-friendly resume in minutes.",
+      "Compress, convert, merge, split, and edit PDFs online. 7 AI tools: chat with PDF, summarize, extract data, generate questions, translate, and optimize resumes.",
     url: "https://pdf.it.com",
     siteName: "PDF.it",
     images: [

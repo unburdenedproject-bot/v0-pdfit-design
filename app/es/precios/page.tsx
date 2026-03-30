@@ -112,7 +112,7 @@ export default function PreciosPage() {
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
                       <p className="text-sm text-[#6B7CFF] font-medium">Todo en Gratis, mas:</p>
-                      {["Conversiones ilimitadas", "Archivos hasta 200MB", "Todas las herramientas PDF (OCR, codigo QR, PDF a Word/Excel/PowerPoint)", "Procesamiento por lotes (multiples archivos a la vez)", "Velocidad de procesamiento prioritaria"].map((item) => (
+                      {["Conversiones ilimitadas", "Archivos hasta 200MB", "Todas las herramientas PDF (OCR, codigo QR, PDF a Word/Excel/PowerPoint)", "Generador de Preguntas con IA", "Procesamiento por lotes (multiples archivos a la vez)", "Velocidad de procesamiento prioritaria"].map((item) => (
                         <div key={item} className="flex items-center gap-3">
                           <span className="text-[#E0C27A] flex-shrink-0">&#10003;</span>
                           <span className="text-slate-300 text-sm font-medium">{item}</span>
@@ -142,7 +142,7 @@ export default function PreciosPage() {
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
                       <p className="text-sm text-[#6B7CFF] font-medium">Todo en Pro, mas:</p>
-                      {["Archivos hasta 1GB", "Extraccion de tablas a Excel (200 paginas/mes)", "Automatizacion de flujos (encadena herramientas)", "Comparacion de PDFs (diferencias lado a lado)", "Firma electronica de documentos", "Redaccion de PDFs (eliminacion permanente)"].map((item) => (
+                      {["Archivos hasta 1GB", "Chat con PDF (preguntas con IA)", "Resumidor de PDF con IA", "Extraccion Inteligente de Datos", "Traducir PDF (13 idiomas)", "Extraccion de tablas a Excel (200 paginas/mes)", "Comparacion de PDFs (diferencias lado a lado)", "Firma electronica de documentos", "Redaccion de PDFs (eliminacion permanente)"].map((item) => (
                         <div key={item} className="flex items-center gap-3">
                           <span className="text-[#6B7CFF] flex-shrink-0">&#10003;</span>
                           <span className="text-slate-300 text-sm font-medium">{item}</span>

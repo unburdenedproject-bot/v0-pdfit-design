@@ -115,7 +115,7 @@ export default function PrecosPage() {
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
                       <p className="text-sm text-[#6B7CFF] font-medium">Tudo no Gratis, mais:</p>
-                      {["Conversoes ilimitadas", "Arquivos ate 200MB", "Todas as ferramentas PDF (OCR, QR code, PDF para Word/Excel/PowerPoint)", "Processamento em lote (varios arquivos)", "Velocidade de processamento prioritaria"].map((item) => (
+                      {["Conversoes ilimitadas", "Arquivos ate 200MB", "Todas as ferramentas PDF (OCR, QR code, PDF para Word/Excel/PowerPoint)", "Gerador de Perguntas com IA", "Processamento em lote (varios arquivos)", "Velocidade de processamento prioritaria"].map((item) => (
                         <div key={item} className="flex items-center gap-3">
                           <span className="text-[#E0C27A] flex-shrink-0">&#10003;</span>
                           <span className="text-slate-300 text-sm font-medium">{item}</span>
@@ -145,7 +145,7 @@ export default function PrecosPage() {
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
                       <p className="text-sm text-[#6B7CFF] font-medium">Tudo no Pro, mais:</p>
-                      {["Arquivos ate 1GB", "Extracao de tabelas para Excel (200 paginas/mes)", "Automacao de fluxos de trabalho (encadear ferramentas)", "Comparacao de PDFs (diferenca lado a lado)", "Assinatura eletronica de documentos", "Redacao de PDFs (remocao permanente)"].map((item) => (
+                      {["Arquivos ate 1GB", "Chat com PDF (perguntas com IA)", "Resumidor de PDF com IA", "Extracao Inteligente de Dados", "Traduzir PDF (13 idiomas)", "Extracao de tabelas para Excel (200 paginas/mes)", "Comparacao de PDFs (diferenca lado a lado)", "Assinatura eletronica de documentos", "Redacao de PDFs (remocao permanente)"].map((item) => (
                         <div key={item} className="flex items-center gap-3">
                           <span className="text-[#6B7CFF] flex-shrink-0">&#10003;</span>
                           <span className="text-slate-300 text-sm font-medium">{item}</span>

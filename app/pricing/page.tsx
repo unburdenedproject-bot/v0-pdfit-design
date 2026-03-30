@@ -116,7 +116,7 @@ export default function PricingPage() {
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
                       <p className="text-sm text-[#6B7CFF] font-medium">Everything in Free, plus:</p>
-                      {["Unlimited conversions", "Files up to 200MB", "All PDF tools (OCR, QR code, PDF to Word/Excel/PowerPoint)", "Batch processing (multiple files at once)", "Priority processing speed"].map((item) => (
+                      {["Unlimited conversions", "Files up to 200MB", "All PDF tools (OCR, QR code, PDF to Word/Excel/PowerPoint)", "AI Question Generator", "Batch processing (multiple files at once)", "Priority processing speed"].map((item) => (
                         <div key={item} className="flex items-center gap-3">
                           <span className="text-[#E0C27A] flex-shrink-0">&#10003;</span>
                           <span className="text-slate-300 text-sm font-medium">{item}</span>
@@ -146,7 +146,7 @@ export default function PricingPage() {
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
                       <p className="text-sm text-[#6B7CFF] font-medium">Everything in Pro, plus:</p>
-                      {["Files up to 1GB", "Table extraction to Excel (200 pages/month)", "PDF comparison (side-by-side diff)", "eSign documents", "PDF redaction (permanent removal)"].map((item) => (
+                      {["Files up to 1GB", "Chat with PDF (AI Q&A)", "AI PDF Summarizer", "Smart Data Extraction", "Translate PDF (13 languages)", "Table extraction to Excel (200 pages/month)", "PDF comparison (side-by-side diff)", "eSign documents", "PDF redaction (permanent removal)"].map((item) => (
                         <div key={item} className="flex items-center gap-3">
                           <span className="text-[#6B7CFF] flex-shrink-0">&#10003;</span>
                           <span className="text-slate-300 text-sm font-medium">{item}</span>
@@ -256,6 +256,41 @@ export default function PricingPage() {
                       <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-[#14D8C4] mx-auto" /></td>
                     </tr>
                     <tr className="border-b border-slate-200 bg-white">
+                      <td className="py-4 px-4 text-slate-700 font-medium">AI Question Generator</td>
+                      <td className="py-4 px-4 text-center text-slate-400">—</td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-[#14D8C4] mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-[#14D8C4] mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-[#14D8C4] mx-auto" /></td>
+                    </tr>
+                    <tr className="border-b border-slate-200 bg-[#F3F4FF]">
+                      <td className="py-4 px-4 text-slate-700 font-medium">Chat with PDF</td>
+                      <td className="py-4 px-4 text-center text-slate-400">—</td>
+                      <td className="py-4 px-4 text-center text-slate-400">—</td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-[#14D8C4] mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-[#14D8C4] mx-auto" /></td>
+                    </tr>
+                    <tr className="border-b border-slate-200 bg-white">
+                      <td className="py-4 px-4 text-slate-700 font-medium">AI PDF Summarizer</td>
+                      <td className="py-4 px-4 text-center text-slate-400">—</td>
+                      <td className="py-4 px-4 text-center text-slate-400">—</td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-[#14D8C4] mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-[#14D8C4] mx-auto" /></td>
+                    </tr>
+                    <tr className="border-b border-slate-200 bg-[#F3F4FF]">
+                      <td className="py-4 px-4 text-slate-700 font-medium">Smart Data Extraction</td>
+                      <td className="py-4 px-4 text-center text-slate-400">—</td>
+                      <td className="py-4 px-4 text-center text-slate-400">—</td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-[#14D8C4] mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-[#14D8C4] mx-auto" /></td>
+                    </tr>
+                    <tr className="border-b border-slate-200 bg-white">
+                      <td className="py-4 px-4 text-slate-700 font-medium">Translate PDF (13 languages)</td>
+                      <td className="py-4 px-4 text-center text-slate-400">—</td>
+                      <td className="py-4 px-4 text-center text-slate-400">—</td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-[#14D8C4] mx-auto" /></td>
+                      <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-[#14D8C4] mx-auto" /></td>
+                    </tr>
+                    <tr className="border-b border-slate-200 bg-[#F3F4FF]">
                       <td className="py-4 px-4 text-slate-700 font-medium">Batch processing</td>
                       <td className="py-4 px-4 text-center text-slate-400">—</td>
                       <td className="py-4 px-4 text-center"><Check className="h-5 w-5 text-[#14D8C4] mx-auto" /></td>
