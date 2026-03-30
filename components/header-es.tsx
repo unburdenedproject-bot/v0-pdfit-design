@@ -2,9 +2,9 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X, User, LogIn, ArrowLeft } from "lucide-react"
+import { Menu, X, User, LogIn, ArrowLeft, ChevronDown, Globe } from "lucide-react"
 import { useRouter, usePathname } from "next/navigation"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { createClient } from "@/lib/supabase/client"
 import { getAlternateRoute } from "@/lib/route-map"
 import type { User as SupabaseUser } from "@supabase/supabase-js"
@@ -16,6 +16,8 @@ export function HeaderEs() {
   const [loading, setLoading] = useState(true)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false)
+  const langDropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -32,6 +34,16 @@ export function HeaderEs() {
     }
     return () => { document.body.style.overflow = "" }
   }, [mobileMenuOpen])
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (langDropdownRef.current && !langDropdownRef.current.contains(e.target as Node)) {
+        setLangDropdownOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", handler)
+    return () => document.removeEventListener("mousedown", handler)
+  }, [])
 
   useEffect(() => {
     const supabase = createClient()
@@ -122,25 +134,46 @@ export function HeaderEs() {
               Blog
             </Link>
 
-            {/* Language switcher */}
-            <div className="flex items-center gap-3">
-              <Link href={getAlternateRoute(pathname, "en")} className="flex flex-col items-center gap-0.5 hover:opacity-80 transition-opacity" title="Switch to English">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7410 3900" className="w-6 h-4 rounded-sm shadow-sm border border-white/20">
-                  <rect width="7410" height="3900" fill="#B22234"/>
-                  <path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" strokeWidth="300"/>
-                  <rect width="2964" height="2100" fill="#3C3B6E"/>
-                  <g fill="#fff"><g id="s18"><g id="s9"><g id="s5"><g id="s4"><path id="s" d="M247,90 317.534230,307.082039 132.873218,172.917961H361.126782L176.465770,307.082039z"/><use href="#s" y="420"/><use href="#s" y="840"/><use href="#s" y="1260"/></g><use href="#s" y="1680"/></g><use href="#s4" x="247" y="210"/></g><use href="#s9" x="494"/></g><use href="#s18" x="988"/><use href="#s9" x="1976"/></g>
-                </svg>
-                <span className="text-[9px] font-bold text-white leading-none">EN</span>
-              </Link>
-              <Link href={getAlternateRoute(pathname, "pt")} className="flex flex-col items-center gap-0.5 hover:opacity-80 transition-opacity" title="Mudar para Português">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 504" className="w-6 h-4 rounded-sm shadow-sm border border-white/20">
-                  <rect width="720" height="504" fill="#009B3A"/>
-                  <polygon points="360,42 692,252 360,462 28,252" fill="#FEDF00"/>
-                  <circle cx="360" cy="252" r="115" fill="#002776"/>
-                </svg>
-                <span className="text-[9px] font-bold text-white leading-none">BR</span>
-              </Link>
+            {/* Language dropdown */}
+            <div className="relative" ref={langDropdownRef}>
+              <button
+                onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+                className="flex items-center gap-1.5 text-white/80 hover:text-white font-medium transition-colors px-2 py-1.5 rounded-lg hover:bg-white/10"
+                aria-expanded={langDropdownOpen}
+                aria-haspopup="true"
+              >
+                <Globe className="h-4 w-4" />
+                <span className="text-sm">ES</span>
+                <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${langDropdownOpen ? "rotate-180" : ""}`} />
+              </button>
+              {langDropdownOpen && (
+                <div className="absolute right-0 top-full mt-2 w-48 rounded-xl overflow-hidden shadow-xl border border-white/10" style={{ background: "#13152A", backdropFilter: "blur(16px)" }}>
+                  <Link
+                    href={getAlternateRoute(pathname, "en")}
+                    onClick={() => setLangDropdownOpen(false)}
+                    className="flex items-center gap-3 px-4 py-3 text-sm text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7410 3900" className="w-6 h-4 rounded-sm shadow-sm border border-white/20 flex-shrink-0">
+                      <rect width="7410" height="3900" fill="#B22234"/>
+                      <path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" strokeWidth="300"/>
+                      <rect width="2964" height="2100" fill="#3C3B6E"/>
+                    </svg>
+                    English
+                  </Link>
+                  <Link
+                    href={getAlternateRoute(pathname, "pt")}
+                    onClick={() => setLangDropdownOpen(false)}
+                    className="flex items-center gap-3 px-4 py-3 text-sm text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 504" className="w-6 h-4 rounded-sm shadow-sm border border-white/20 flex-shrink-0">
+                      <rect width="720" height="504" fill="#009B3A"/>
+                      <polygon points="360,42 692,252 360,462 28,252" fill="#FEDF00"/>
+                      <circle cx="360" cy="252" r="115" fill="#002776"/>
+                    </svg>
+                    Português
+                  </Link>
+                </div>
+              )}
             </div>
 
             {loading ? (
@@ -218,23 +251,25 @@ export function HeaderEs() {
               Blog
             </Link>
 
-            <Link href={getAlternateRoute(pathname, "en")} onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7410 3900" className="w-6 h-4 rounded-sm shadow-sm border border-white/20">
-                <rect width="7410" height="3900" fill="#B22234"/>
-                <path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" strokeWidth="300"/>
-                <rect width="2964" height="2100" fill="#3C3B6E"/>
-                <g fill="#fff"><g id="ms18"><g id="ms9"><g id="ms5"><g id="ms4"><path id="ms" d="M247,90 317.534230,307.082039 132.873218,172.917961H361.126782L176.465770,307.082039z"/><use href="#ms" y="420"/><use href="#ms" y="840"/><use href="#ms" y="1260"/></g><use href="#ms" y="1680"/></g><use href="#ms4" x="247" y="210"/></g><use href="#ms9" x="494"/></g><use href="#ms18" x="988"/><use href="#ms9" x="1976"/></g>
-              </svg>
-              English
-            </Link>
-            <Link href={getAlternateRoute(pathname, "pt")} onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 504" className="w-6 h-4 rounded-sm shadow-sm border border-white/20">
-                <rect width="720" height="504" fill="#009B3A"/>
-                <polygon points="360,42 692,252 360,462 28,252" fill="#FEDF00"/>
-                <circle cx="360" cy="252" r="115" fill="#002776"/>
-              </svg>
-              Português
-            </Link>
+            <div className="pt-2 border-t border-white/10">
+              <p className="text-xs text-slate-500 uppercase tracking-wider font-bold px-3 mb-2">Idioma</p>
+              <Link href={getAlternateRoute(pathname, "en")} onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7410 3900" className="w-6 h-4 rounded-sm shadow-sm border border-white/20 flex-shrink-0">
+                  <rect width="7410" height="3900" fill="#B22234"/>
+                  <path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" strokeWidth="300"/>
+                  <rect width="2964" height="2100" fill="#3C3B6E"/>
+                </svg>
+                English
+              </Link>
+              <Link href={getAlternateRoute(pathname, "pt")} onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 504" className="w-6 h-4 rounded-sm shadow-sm border border-white/20 flex-shrink-0">
+                  <rect width="720" height="504" fill="#009B3A"/>
+                  <polygon points="360,42 692,252 360,462 28,252" fill="#FEDF00"/>
+                  <circle cx="360" cy="252" r="115" fill="#002776"/>
+                </svg>
+                Português
+              </Link>
+            </div>
 
             <div className="pt-2 border-t border-white/10">
               {loading ? (

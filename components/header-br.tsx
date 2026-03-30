@@ -2,9 +2,9 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X, User, LogIn, ArrowLeft } from "lucide-react"
+import { Menu, X, User, LogIn, ArrowLeft, ChevronDown, Globe } from "lucide-react"
 import { useRouter, usePathname } from "next/navigation"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { createClient } from "@/lib/supabase/client"
 import { getAlternateRoute } from "@/lib/route-map"
 import type { User as SupabaseUser } from "@supabase/supabase-js"
@@ -16,6 +16,8 @@ export function HeaderBr() {
   const [loading, setLoading] = useState(true)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false)
+  const langDropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -32,6 +34,16 @@ export function HeaderBr() {
     }
     return () => { document.body.style.overflow = "" }
   }, [mobileMenuOpen])
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (langDropdownRef.current && !langDropdownRef.current.contains(e.target as Node)) {
+        setLangDropdownOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", handler)
+    return () => document.removeEventListener("mousedown", handler)
+  }, [])
 
   useEffect(() => {
     const supabase = createClient()
@@ -122,24 +134,45 @@ export function HeaderBr() {
               Blog
             </Link>
 
-            {/* Language switcher */}
-            <div className="flex items-center gap-3">
-              <Link href={getAlternateRoute(pathname, "en")} className="flex flex-col items-center gap-0.5 hover:opacity-80 transition-opacity" title="Switch to English">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7410 3900" className="w-6 h-4 rounded-sm shadow-sm border border-white/20">
-                  <rect width="7410" height="3900" fill="#B22234"/>
-                  <path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" strokeWidth="300"/>
-                  <rect width="2964" height="2100" fill="#3C3B6E"/>
-                  <g fill="#fff"><g id="ps18"><g id="ps9"><g id="ps5"><g id="ps4"><path id="ps" d="M247,90 317.534230,307.082039 132.873218,172.917961H361.126782L176.465770,307.082039z"/><use href="#ps" y="420"/><use href="#ps" y="840"/><use href="#ps" y="1260"/></g><use href="#ps" y="1680"/></g><use href="#ps4" x="247" y="210"/></g><use href="#ps9" x="494"/></g><use href="#ps18" x="988"/><use href="#ps9" x="1976"/></g>
-                </svg>
-                <span className="text-[9px] font-bold text-white leading-none">EN</span>
-              </Link>
-              <Link href={getAlternateRoute(pathname, "es")} className="flex flex-col items-center gap-0.5 hover:opacity-80 transition-opacity" title="Cambiar a Español">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500" className="w-6 h-4 rounded-sm shadow-sm border border-white/20">
-                  <rect width="750" height="500" fill="#c60b1e"/>
-                  <rect y="125" width="750" height="250" fill="#ffc400"/>
-                </svg>
-                <span className="text-[9px] font-bold text-white leading-none">ES</span>
-              </Link>
+            {/* Language dropdown */}
+            <div className="relative" ref={langDropdownRef}>
+              <button
+                onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+                className="flex items-center gap-1.5 text-white/80 hover:text-white font-medium transition-colors px-2 py-1.5 rounded-lg hover:bg-white/10"
+                aria-expanded={langDropdownOpen}
+                aria-haspopup="true"
+              >
+                <Globe className="h-4 w-4" />
+                <span className="text-sm">BR</span>
+                <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${langDropdownOpen ? "rotate-180" : ""}`} />
+              </button>
+              {langDropdownOpen && (
+                <div className="absolute right-0 top-full mt-2 w-48 rounded-xl overflow-hidden shadow-xl border border-white/10" style={{ background: "#13152A", backdropFilter: "blur(16px)" }}>
+                  <Link
+                    href={getAlternateRoute(pathname, "en")}
+                    onClick={() => setLangDropdownOpen(false)}
+                    className="flex items-center gap-3 px-4 py-3 text-sm text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7410 3900" className="w-6 h-4 rounded-sm shadow-sm border border-white/20 flex-shrink-0">
+                      <rect width="7410" height="3900" fill="#B22234"/>
+                      <path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" strokeWidth="300"/>
+                      <rect width="2964" height="2100" fill="#3C3B6E"/>
+                    </svg>
+                    English
+                  </Link>
+                  <Link
+                    href={getAlternateRoute(pathname, "es")}
+                    onClick={() => setLangDropdownOpen(false)}
+                    className="flex items-center gap-3 px-4 py-3 text-sm text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500" className="w-6 h-4 rounded-sm shadow-sm border border-white/20 flex-shrink-0">
+                      <rect width="750" height="500" fill="#c60b1e"/>
+                      <rect y="125" width="750" height="250" fill="#ffc400"/>
+                    </svg>
+                    Español
+                  </Link>
+                </div>
+              )}
             </div>
 
             {loading ? (
@@ -217,22 +250,24 @@ export function HeaderBr() {
               Blog
             </Link>
 
-            <Link href={getAlternateRoute(pathname, "en")} onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7410 3900" className="w-6 h-4 rounded-sm shadow-sm border border-white/20">
-                <rect width="7410" height="3900" fill="#B22234"/>
-                <path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" strokeWidth="300"/>
-                <rect width="2964" height="2100" fill="#3C3B6E"/>
-                <g fill="#fff"><g id="mps18"><g id="mps9"><g id="mps5"><g id="mps4"><path id="mps" d="M247,90 317.534230,307.082039 132.873218,172.917961H361.126782L176.465770,307.082039z"/><use href="#mps" y="420"/><use href="#mps" y="840"/><use href="#mps" y="1260"/></g><use href="#mps" y="1680"/></g><use href="#mps4" x="247" y="210"/></g><use href="#mps9" x="494"/></g><use href="#mps18" x="988"/><use href="#mps9" x="1976"/></g>
-              </svg>
-              English
-            </Link>
-            <Link href={getAlternateRoute(pathname, "es")} onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500" className="w-6 h-4 rounded-sm shadow-sm border border-white/20">
-                <rect width="750" height="500" fill="#c60b1e"/>
-                <rect y="125" width="750" height="250" fill="#ffc400"/>
-              </svg>
-              Español
-            </Link>
+            <div className="pt-2 border-t border-white/10">
+              <p className="text-xs text-slate-500 uppercase tracking-wider font-bold px-3 mb-2">Idioma</p>
+              <Link href={getAlternateRoute(pathname, "en")} onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7410 3900" className="w-6 h-4 rounded-sm shadow-sm border border-white/20 flex-shrink-0">
+                  <rect width="7410" height="3900" fill="#B22234"/>
+                  <path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" strokeWidth="300"/>
+                  <rect width="2964" height="2100" fill="#3C3B6E"/>
+                </svg>
+                English
+              </Link>
+              <Link href={getAlternateRoute(pathname, "es")} onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500" className="w-6 h-4 rounded-sm shadow-sm border border-white/20 flex-shrink-0">
+                  <rect width="750" height="500" fill="#c60b1e"/>
+                  <rect y="125" width="750" height="250" fill="#ffc400"/>
+                </svg>
+                Español
+              </Link>
+            </div>
 
             <div className="pt-2 border-t border-white/10">
               {loading ? (
