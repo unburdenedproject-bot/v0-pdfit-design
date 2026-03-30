@@ -289,12 +289,13 @@ export function ComprehensiveFAQSection() {
                   Our support team is here to help you get the most out of PDF.it.
                 </p>
                 <div className="flex justify-center">
-                  <a
-                    href="mailto:contact@pdf.it.com"
-                    onClick={(e) => {
-                      e.preventDefault()
-                      window.location.href = "mailto:contact@pdf.it.com"
+                  <button
+                    onClick={() => {
+                      navigator.clipboard.writeText("contact@pdf.it.com")
+                      const btn = document.getElementById("copy-email-btn-comp")
+                      if (btn) { btn.textContent = "Copied!"; setTimeout(() => { btn.textContent = "contact@pdf.it.com — Copy" }, 2000) }
                     }}
+                    id="copy-email-btn-comp"
                     className="inline-flex items-center justify-center px-6 py-2.5 font-bold rounded-xl text-sm transition-all duration-300 hover:scale-105"
                     style={{
                       background: "linear-gradient(135deg, #14D8C4, #0FBFB0)",
@@ -303,8 +304,8 @@ export function ComprehensiveFAQSection() {
                       border: "1px solid rgba(255,255,255,0.15)",
                     }}
                   >
-                    Email Us Directly
-                  </a>
+                    contact@pdf.it.com — Copy
+                  </button>
                 </div>
               </div>
             </div>

@@ -178,12 +178,17 @@ export function FAQSection() {
                   >
                     Contact Support
                   </a>
-                  <a
-                    href="mailto:contact@pdf.it.com"
+                  <button
+                    onClick={() => {
+                      navigator.clipboard.writeText("contact@pdf.it.com")
+                      const btn = document.getElementById("copy-email-btn")
+                      if (btn) { btn.textContent = "Copied!"; setTimeout(() => { btn.textContent = "contact@pdf.it.com — Copy" }, 2000) }
+                    }}
+                    id="copy-email-btn"
                     className="inline-flex items-center justify-center px-6 py-3 bg-transparent hover:bg-[#252A6A] text-white font-semibold rounded-lg border border-[#252A6A] transition-colors duration-200"
                   >
-                    Email Us
-                  </a>
+                    contact@pdf.it.com — Copy
+                  </button>
                 </div>
               </div>
             </div>
