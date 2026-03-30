@@ -1318,29 +1318,32 @@ export function ProcessingInterface({
     <section className="py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto">
-          <div
-            id="file-upload-zone"
-            className={cn(
-              "border-2 border-dashed rounded-xl p-12 transition-all duration-200 cursor-pointer",
-              isDragOver
-                ? "border-orange-500 bg-orange-50"
-                : "border-gray-300 hover:border-orange-400 hover:bg-gray-50",
-            )}
-            onDragOver={handleDragOver}
-            onDragLeave={handleDragLeave}
-            onDrop={handleDrop}
-            onClick={() => document.getElementById("file-upload")?.click()}
-          >
-            <div className="text-center">
-              <Upload className="h-12 w-12 text-orange-500 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-slate-900 mb-2">Drop your files here</h3>
-              <p className="text-slate-600 mb-6">or click to browse files</p>
-              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8">
-                Choose Files
-              </Button>
-              <p className="text-sm text-slate-500 mt-4">Supported formats: {acceptedFiles}</p>
+          {/* Full upload zone — only when no files selected yet */}
+          {files.length === 0 && (
+            <div
+              id="file-upload-zone"
+              className={cn(
+                "border-2 border-dashed rounded-xl p-12 transition-all duration-200 cursor-pointer",
+                isDragOver
+                  ? "border-orange-500 bg-orange-50"
+                  : "border-gray-300 hover:border-orange-400 hover:bg-gray-50",
+              )}
+              onDragOver={handleDragOver}
+              onDragLeave={handleDragLeave}
+              onDrop={handleDrop}
+              onClick={() => document.getElementById("file-upload")?.click()}
+            >
+              <div className="text-center">
+                <Upload className="h-12 w-12 text-orange-500 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Drop your files here</h3>
+                <p className="text-slate-600 mb-6">or click to browse files</p>
+                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8">
+                  Choose Files
+                </Button>
+                <p className="text-sm text-slate-500 mt-4">Supported formats: {acceptedFiles}</p>
+              </div>
             </div>
-          </div>
+          )}
 
           <input
             id="file-upload"
@@ -1394,6 +1397,32 @@ export function ProcessingInterface({
                   </Button>
                 </div>
               ))}
+
+              {/* Add more / Change file button */}
+              {allowMultiple ? (
+                <div
+                  className="border-2 border-dashed border-gray-300 hover:border-orange-400 rounded-xl p-4 cursor-pointer transition-all duration-200 hover:bg-gray-50"
+                  onDragOver={handleDragOver}
+                  onDragLeave={handleDragLeave}
+                  onDrop={handleDrop}
+                  onClick={() => document.getElementById("file-upload")?.click()}
+                >
+                  <div className="flex items-center justify-center gap-2 text-orange-500">
+                    <Upload className="h-5 w-5" />
+                    <span className="font-semibold">Add more files</span>
+                  </div>
+                </div>
+              ) : (
+                <div
+                  className="border-2 border-dashed border-gray-300 hover:border-orange-400 rounded-xl p-3 cursor-pointer transition-all duration-200 hover:bg-gray-50"
+                  onClick={() => document.getElementById("file-upload")?.click()}
+                >
+                  <div className="flex items-center justify-center gap-2 text-slate-500 hover:text-orange-500 transition-colors">
+                    <Upload className="h-4 w-4" />
+                    <span className="text-sm font-medium">Choose a different file</span>
+                  </div>
+                </div>
+              )}
               {showCompressionSelector && (
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-3">Compression Level:</h3>
