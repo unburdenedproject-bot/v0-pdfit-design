@@ -105,6 +105,16 @@ export function ProcessingInterface({
       .catch(() => setUserPlan("free"))
   }, [])
 
+  // Warn user before leaving during processing (BUG-013)
+  useEffect(() => {
+    if (!isProcessing) return
+    const handler = (e: BeforeUnloadEvent) => {
+      e.preventDefault()
+    }
+    window.addEventListener("beforeunload", handler)
+    return () => window.removeEventListener("beforeunload", handler)
+  }, [isProcessing])
+
   const handleDragOver = useCallback((e: React.DragEvent) => {
     e.preventDefault()
     setIsDragOver(true)
@@ -1042,7 +1052,7 @@ export function ProcessingInterface({
                     <Button
                       variant="outline"
                       onClick={() => router.push(dashboardUrl)}
-                      className="border border-[rgba(255,255,255,0.15)] text-slate-300 hover:text-white hover:border-[rgba(255,255,255,0.3)] rounded-xl px-6 py-3"
+                      className="border border-[#14D8C4]/30 text-[#14D8C4] hover:text-white hover:bg-[#14D8C4]/10 hover:border-[#14D8C4]/50 rounded-xl px-6 py-3"
                     >
                       Back to Dashboard
                     </Button>
@@ -1141,7 +1151,7 @@ export function ProcessingInterface({
                               onChange={(e) => setEditedNames((prev) => ({ ...prev, [index]: e.target.value }))}
                               className="font-bold text-slate-900 text-base sm:text-lg border-b border-dashed border-slate-300 focus:border-orange-500 focus:outline-none bg-transparent w-full max-w-[200px] sm:max-w-sm truncate"
                             />
-                            <Pencil className="h-4 w-4 text-orange-400 flex-shrink-0" />
+                            <Pencil className="h-4 w-4 text-orange-400 flex-shrink-0 cursor-pointer hover:text-orange-600 transition-colors" onClick={(e) => { const input = (e.currentTarget.previousElementSibling as HTMLInputElement); input?.focus(); input?.select() }} />
                           </div>
                           <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-slate-500 mt-1">
                             <span>{(convertedSize / 1024 / 1024).toFixed(2)} MB</span>

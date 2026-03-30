@@ -21,23 +21,23 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="mb-4">
+            <Link href="/" className="inline-block mb-4">
               <span style={{fontWeight: 800, color: '#ffffff', fontSize: '22px', letterSpacing: '-0.5px'}}>PDF<span style={{color: '#14D8C4', fontWeight: 400}}>.it</span></span>
-            </div>
+            </Link>
             <p className="text-[#A5B4FC] mb-6 leading-relaxed">
               Convert, compress, merge, split, OCR, and protect PDFs in seconds. Simple, browser-based tools that work on any device.
             </p>
             <div className="flex space-x-4">
-              <a href="#" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors" aria-label="Follow us on Facebook">
+              <a href="https://www.facebook.com/pdfit" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors" aria-label="Follow us on Facebook">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors" aria-label="Follow us on Twitter">
+              <a href="https://x.com/pdfit" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors" aria-label="Follow us on Twitter">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors" aria-label="Follow us on Instagram">
+              <a href="https://www.instagram.com/pdfit" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors" aria-label="Follow us on Instagram">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors" aria-label="Follow us on LinkedIn">
+              <a href="https://www.linkedin.com/company/pdfit" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors" aria-label="Follow us on LinkedIn">
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
@@ -124,21 +124,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-[#252A6A] mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-[#A5B4FC] text-sm">© 2024 PDF.it. Built for professionals, trusted by professionals.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/privacy-policy" className="text-[#A5B4FC] hover:text-[#14D8C4] text-sm transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="/terms-conditions" className="text-[#A5B4FC] hover:text-[#14D8C4] text-sm transition-colors">
-              Terms & Conditions
-            </Link>
-            <a
-              href="mailto:contact@pdf.it.com"
-              className="text-[#A5B4FC] hover:text-[#14D8C4] text-sm transition-colors"
-            >
-              Contact
-            </a>
-          </div>
+          <p className="text-[#A5B4FC] text-sm">© {new Date().getFullYear()} PDF.it. Built for professionals, trusted by professionals.</p>
         </div>
       </div>
     </footer>

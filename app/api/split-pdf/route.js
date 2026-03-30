@@ -137,6 +137,20 @@ export async function POST(request) {
       );
     }
 
+    // Validate the PDF has more than 1 page before splitting
+    const { readFile } = await import("fs/promises");
+    const { PDFDocument } = await import("pdf-lib");
+    const pdfBytes = await readFile(tmpPath);
+    const pdfDoc = await PDFDocument.load(pdfBytes, { ignoreEncryption: true });
+    const pageCount = pdfDoc.getPageCount();
+    if (pageCount <= 1) {
+      await unlink(tmpPath).catch(() => {});
+      return errorResponse(
+        "A single-page PDF cannot be split. Please upload a PDF with 2 or more pages.",
+        400
+      );
+    }
+
     // -----------------------------------------------------------
     // Common: run iLovePDF split task
     // -----------------------------------------------------------
@@ -200,11 +214,15 @@ export async function POST(request) {
 
     console.error("split-pdf route error:", err);
 
-    const message =
+    const rawMessage =
       err && typeof err === "object" && err.message
         ? err.message
-        : "An unexpected error occurred.";
+        : "";
 
-    return errorResponse(message, 500);
+    if (rawMessage.includes("400") || rawMessage.includes("corrupt") || rawMessage.includes("invalid")) {
+      return errorResponse("The uploaded file appears to be corrupted or invalid. Please upload a valid PDF file.", 400);
+    }
+
+    return errorResponse("Something went wrong while splitting your PDF. Please try again or upload a different file.", 500);
   }
 }

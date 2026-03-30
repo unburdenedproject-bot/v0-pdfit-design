@@ -134,11 +134,16 @@ export async function POST(request) {
 
     console.error("pdf-to-txt route error:", err);
 
-    const message =
+    const rawMessage =
       err && typeof err === "object" && err.message
         ? err.message
-        : "An unexpected error occurred.";
+        : "";
 
-    return errorResponse(message, 500);
+    // Return user-friendly messages for common errors
+    if (rawMessage.includes("400") || rawMessage.includes("corrupt") || rawMessage.includes("invalid")) {
+      return errorResponse("The uploaded file appears to be corrupted or invalid. Please upload a valid PDF file.", 400);
+    }
+
+    return errorResponse("Something went wrong while extracting text. Please try again or upload a different file.", 500);
   }
 }

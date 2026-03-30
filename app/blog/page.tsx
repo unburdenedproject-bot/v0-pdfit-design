@@ -131,7 +131,7 @@ export default function BlogPage() {
                     <span className="text-xs font-bold px-3 py-1 rounded-full" style={{ background: "rgba(20,216,196,0.08)", border: "1px solid rgba(20,216,196,0.2)", color: "#14D8C4" }}>
                       {featured.category}
                     </span>
-                    <div className="flex items-center gap-1.5 text-sm text-slate-500">
+                    <div className="flex items-center gap-1.5 text-sm text-slate-400">
                       <Calendar className="h-3.5 w-3.5" />
                       {featured.date}
                     </div>
@@ -164,9 +164,9 @@ export default function BlogPage() {
                       <span className="text-xs font-bold px-3 py-1 rounded-full" style={{ background: "rgba(20,216,196,0.08)", border: "1px solid rgba(20,216,196,0.2)", color: "#14D8C4" }}>
                         {post.category}
                       </span>
-                      <div className="flex items-center gap-1.5 text-sm text-slate-500">
+                      <div className="flex items-center gap-1.5 text-sm text-slate-400">
                         <Calendar className="h-3.5 w-3.5" />
-                        {post.date}
+                        <span>{post.date}</span>
                       </div>
                     </div>
                     <h2 className="text-xl font-black text-white mb-2 group-hover:text-[#14D8C4] transition-colors">

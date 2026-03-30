@@ -219,7 +219,7 @@ export default function ToolsAZPage() {
                 <a
                   key={letter}
                   href={`#letter-${letter}`}
-                  className="w-10 h-10 flex items-center justify-center rounded-xl text-sm font-black transition-all duration-200"
+                  className="w-10 h-10 flex items-center justify-center rounded-xl text-sm font-black transition-all duration-200 hover:text-[#14D8C4] hover:bg-white/5"
                   style={{ color: "rgba(165,180,252,0.5)" }}
                 >
                   {letter}
@@ -244,7 +244,7 @@ export default function ToolsAZPage() {
             {letters.map((letter) => {
               const letterTools = tools.filter((t) => t.name[0].toUpperCase() === letter)
               return (
-                <div key={letter} id={`letter-${letter}`} className="mb-14 scroll-mt-32">
+                <div key={letter} id={`letter-${letter}`} className="mb-14 scroll-mt-36">
                   {/* Letter header */}
                   <div className="flex items-center gap-4 mb-5">
                     <div

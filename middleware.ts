@@ -19,7 +19,7 @@ const ratelimit =
     : null
 
 export async function middleware(request: NextRequest) {
-  // Apply rate limiting only to /api/ routes
+  // Apply rate limiting only to /api/ routes (excluding auth-related Supabase calls)
   if (request.nextUrl.pathname.startsWith("/api/") && ratelimit) {
     const ip = request.ip ?? request.headers.get("x-forwarded-for") ?? "127.0.0.1"
     const { success } = await ratelimit.limit(ip)
@@ -31,6 +31,11 @@ export async function middleware(request: NextRequest) {
       )
     }
 
+    return NextResponse.next()
+  }
+
+  // Skip rate limiting for auth pages (signup/login) — Supabase handles its own rate limits
+  if (request.nextUrl.pathname.startsWith("/auth/")) {
     return NextResponse.next()
   }
 

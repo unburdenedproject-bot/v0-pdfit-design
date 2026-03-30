@@ -25,6 +25,15 @@ export function HeaderBr() {
   }, [])
 
   useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ""
+    }
+    return () => { document.body.style.overflow = "" }
+  }, [mobileMenuOpen])
+
+  useEffect(() => {
     const supabase = createClient()
 
     if (!supabase) {
@@ -175,29 +184,29 @@ export function HeaderBr() {
       {mobileMenuOpen && (
         <nav className="fixed top-16 left-0 right-0 z-40 bg-[#0E0F1E]/95 backdrop-blur-xl border-b border-white/10 shadow-lg md:hidden">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-3">
-            <Link href="/br" onClick={() => setMobileMenuOpen(false)} className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
+            <Link href="/br" onClick={() => setMobileMenuOpen(false)} className="text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
               Inicio
             </Link>
-            <Link href="/br/sobre" onClick={() => setMobileMenuOpen(false)} className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
+            <Link href="/br/sobre" onClick={() => setMobileMenuOpen(false)} className="text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
               Sobre
             </Link>
-            <Link href="/br/contato" onClick={() => setMobileMenuOpen(false)} className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
+            <Link href="/br/contato" onClick={() => setMobileMenuOpen(false)} className="text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
               Contato
             </Link>
-            <Link href="/br/precos" onClick={() => setMobileMenuOpen(false)} className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
+            <Link href="/br/precos" onClick={() => setMobileMenuOpen(false)} className="text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
               Precos
             </Link>
-            <Link href="/br/ferramentas" onClick={() => setMobileMenuOpen(false)} className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
+            <Link href="/br/ferramentas" onClick={() => setMobileMenuOpen(false)} className="text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
               Todas as Ferramentas
             </Link>
-            <Link href="/br/ferramentas-a-z" onClick={() => setMobileMenuOpen(false)} className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
+            <Link href="/br/ferramentas-a-z" onClick={() => setMobileMenuOpen(false)} className="text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
               Indice A–Z
             </Link>
-            <Link href="/br/blog" onClick={() => setMobileMenuOpen(false)} className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
+            <Link href="/br/blog" onClick={() => setMobileMenuOpen(false)} className="text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
               Blog
             </Link>
 
-            <Link href={getAlternateRoute(pathname, "en")} onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
+            <Link href={getAlternateRoute(pathname, "en")} onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7410 3900" className="w-6 h-4 rounded-sm shadow-sm border border-white/20">
                 <rect width="7410" height="3900" fill="#B22234"/>
                 <path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" strokeWidth="300"/>
@@ -206,7 +215,7 @@ export function HeaderBr() {
               </svg>
               English
             </Link>
-            <Link href={getAlternateRoute(pathname, "es")} onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
+            <Link href={getAlternateRoute(pathname, "es")} onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500" className="w-6 h-4 rounded-sm shadow-sm border border-white/20">
                 <rect width="750" height="500" fill="#c60b1e"/>
                 <rect y="125" width="750" height="250" fill="#ffc400"/>

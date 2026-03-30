@@ -25,6 +25,15 @@ export function HeaderEs() {
   }, [])
 
   useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ""
+    }
+    return () => { document.body.style.overflow = "" }
+  }, [mobileMenuOpen])
+
+  useEffect(() => {
     const supabase = createClient()
 
     if (!supabase) {
@@ -176,29 +185,29 @@ export function HeaderEs() {
       {mobileMenuOpen && (
         <nav className="fixed top-16 left-0 right-0 z-40 bg-[#0E0F1E]/95 backdrop-blur-xl border-b border-white/10 shadow-lg md:hidden">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-3">
-            <Link href="/es" onClick={() => setMobileMenuOpen(false)} className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
+            <Link href="/es" onClick={() => setMobileMenuOpen(false)} className="text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
               Inicio
             </Link>
-            <Link href="/es/acerca" onClick={() => setMobileMenuOpen(false)} className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
+            <Link href="/es/acerca" onClick={() => setMobileMenuOpen(false)} className="text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
               Nosotros
             </Link>
-            <Link href="/es/contacto" onClick={() => setMobileMenuOpen(false)} className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
+            <Link href="/es/contacto" onClick={() => setMobileMenuOpen(false)} className="text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
               Contacto
             </Link>
-            <Link href="/es/precios" onClick={() => setMobileMenuOpen(false)} className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
+            <Link href="/es/precios" onClick={() => setMobileMenuOpen(false)} className="text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
               Precios
             </Link>
-            <Link href="/es/herramientas" onClick={() => setMobileMenuOpen(false)} className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
+            <Link href="/es/herramientas" onClick={() => setMobileMenuOpen(false)} className="text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
               Todas las Herramientas
             </Link>
-            <Link href="/es/herramientas-a-z" onClick={() => setMobileMenuOpen(false)} className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
+            <Link href="/es/herramientas-a-z" onClick={() => setMobileMenuOpen(false)} className="text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
               Indice A–Z
             </Link>
-            <Link href="/es/blog" onClick={() => setMobileMenuOpen(false)} className="text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
+            <Link href="/es/blog" onClick={() => setMobileMenuOpen(false)} className="text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
               Blog
             </Link>
 
-            <Link href={getAlternateRoute(pathname, "en")} onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
+            <Link href={getAlternateRoute(pathname, "en")} onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7410 3900" className="w-6 h-4 rounded-sm shadow-sm border border-white/20">
                 <rect width="7410" height="3900" fill="#B22234"/>
                 <path d="M0,450H7410m0,600H0m0,600H7410m0,600H0m0,600H7410m0,600H0" stroke="#fff" strokeWidth="300"/>
@@ -207,7 +216,7 @@ export function HeaderEs() {
               </svg>
               English
             </Link>
-            <Link href={getAlternateRoute(pathname, "pt")} onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 text-slate-700 hover:text-slate-900 font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
+            <Link href={getAlternateRoute(pathname, "pt")} onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 504" className="w-6 h-4 rounded-sm shadow-sm border border-white/20">
                 <rect width="720" height="504" fill="#009B3A"/>
                 <polygon points="360,42 692,252 360,462 28,252" fill="#FEDF00"/>

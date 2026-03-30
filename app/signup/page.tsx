@@ -93,7 +93,12 @@ export default function SignUpPage() {
       router.push("/signup/success")
       captchaRef.current?.resetCaptcha()
     } catch (error: unknown) {
-      setError(error instanceof Error ? error.message : "An error occurred")
+      const msg = error instanceof Error ? error.message : "An error occurred"
+      if (msg.toLowerCase().includes("rate") || msg.toLowerCase().includes("limit") || msg.toLowerCase().includes("too many")) {
+        setError("Too many signup attempts. Please wait a minute and try again.")
+      } else {
+        setError(msg)
+      }
     } finally {
       setIsLoading(false)
     }
@@ -150,7 +155,7 @@ export default function SignUpPage() {
                     />
                   </div>
                   <div className="grid gap-2">
-                    <Label htmlFor="email" className="text-slate-300">Email</Label>
+                    <Label htmlFor="email" className="text-slate-300">Email <span className="text-red-400">*</span></Label>
                     <Input
                       id="email"
                       type="email"
@@ -162,7 +167,7 @@ export default function SignUpPage() {
                     />
                   </div>
                   <div className="grid gap-2">
-                    <Label htmlFor="password" className="text-slate-300">Password</Label>
+                    <Label htmlFor="password" className="text-slate-300">Password <span className="text-red-400">*</span></Label>
                     <div className="relative">
                       <Input
                         id="password"
@@ -183,7 +188,7 @@ export default function SignUpPage() {
                     </div>
                   </div>
                   <div className="grid gap-2">
-                    <Label htmlFor="confirm-password" className="text-slate-300">Confirm Password</Label>
+                    <Label htmlFor="confirm-password" className="text-slate-300">Confirm Password <span className="text-red-400">*</span></Label>
                     <div className="relative">
                       <Input
                         id="confirm-password"
@@ -205,7 +210,7 @@ export default function SignUpPage() {
                   </div>
                   <HCaptcha
                     sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY!}
-                    onVerify={(token) => setCaptchaToken(token)}
+                    onVerify={(token) => { setCaptchaToken(token); setError(null) }}
                     onExpire={() => setCaptchaToken(null)}
                     ref={captchaRef}
                   />
