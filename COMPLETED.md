@@ -48,11 +48,18 @@
 - Route map updated with all trilingual routes
 - Page_Format.md updated with new Pro and Business tool lists
 
+### SEO Fixes (March 29, 2026)
+- **Sitemap** — Added 15 new URLs (5 AI tools × 3 languages) to sitemap.ts
+- **Pricing pages** — Added AI tools to Pro features (Question Generator) and Business features (Chat with PDF, Summarizer, Smart Extraction, Translate PDF) across EN/ES/BR pricing pages; added 5 new rows to EN comparison table
+- **Tools A-Z** — Added 7 new tool entries alphabetically (5 AI tools + Create Resume) with proper icons and tier badges
+- **Homepage keywords** — Added 11 new keywords (chat with pdf, pdf summarizer, translate pdf, ai question generator, smart extraction, etc.); updated description to mention 7 AI tools
+
 ### Performance & Branding Fixes (March 29, 2026)
-- **Google Fonts → next/font** — Switched from render-blocking `<link>` to self-hosted `next/font/google` (Inter + Sora); eliminated preconnect hints to fonts.googleapis.com
+- **Google Fonts loading** — Kept non-blocking `<link>` with `media="print" onLoad="this.media='all'"` trick (tested `next/font/google` but it generated an extra render-blocking CSS file that dropped desktop from 100 to 77 — reverted)
 - **GTM deferred** — Changed from `afterInteractive` to `lazyOnload` strategy for better mobile performance
-- **Package imports optimized** — Added `optimizePackageImports` for lucide-react and recharts
+- **Package imports optimized** — Added `optimizePackageImports` for lucide-react and recharts in next.config.mjs
 - **Page titles fixed** — Removed "fastest PDF tools on the planet" claims from all 3 layout files; replaced with brand positioning "Fix Any Document Problem Instantly" (EN/ES/BR); updated OpenGraph and Twitter card titles to match
+- **Lighthouse scores restored** — Desktop: 100 Performance, 100 Best Practices after reverting next/font
 
 ## Pre-Launch Audit & Fixes (March 27, 2026)
 - **OmnisPDF → PDF.it rebrand cleanup** — Replaced all remaining "OmnisPDF" references across 15 documentation and config files (SEO-MAP, ROADMAP, LOCALIZATION, agent configs, command templates, etc.)
