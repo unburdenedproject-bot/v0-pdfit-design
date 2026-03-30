@@ -1,5 +1,54 @@
 # PDF.it - Accomplished Work
 
+## QA Bug Fix Sprint (March 30, 2026) — 32 Bugs Resolved
+
+External QA tester reported 39 bugs (32 unique after deduplication). All addressed across 20+ files, 3 languages (EN/ES/BR).
+
+### Priority 1 — High (Fixed)
+- **BUG-001**: Forgot password email not received — built custom `/api/forgot-password` route that sends reset emails through Resend directly (bypasses Supabase's built-in email). Branded HTML template matching PDF.it design. Installed `resend` package.
+- **BUG-002**: Footer social media icons had `href="#"` — replaced with real URLs (placeholder until accounts created), all 3 languages
+- **BUG-003**: Generic 400 error on corrupted PDF in PDF-to-TXT — added user-friendly error messages in `api/pdf-to-txt/route.ts`
+- **BUG-004**: Edit/pencil icon not clickable after upload — now focuses and selects filename input on click
+- **BUG-005**: Language switcher not working — confirmed working after dropdown conversion (BUG-037)
+- **BUG-006**: Pricing card text cut off after language change — removed `overflow-hidden` from card divs (EN/ES/BR pricing pages)
+- **BUG-007**: 400 error splitting single-page PDF — added page count validation with `pdf-lib` before calling API, friendly error message
+- **BUG-008**: Eye icon missing in PDF password field — outside scope (browser's native PDF viewer)
+- **BUG-009**: No validation on contact form name field — added `minLength`, `pattern`, trim validation on form + API
+- **BUG-010**: FAQ accordion no collapse icon — already working (ChevronUp/ChevronDown with toggle)
+- **BUG-011**: Captcha error persists after verification — `onVerify` callback now clears error state (signup + login)
+- **BUG-013**: Navigation allowed during file upload — added `beforeunload` warning during processing
+- **BUG-016 + BUG-036**: Mobile hamburger menu text invisible — changed `text-slate-700` to `text-white/80` (all 3 headers)
+- **BUG-019**: "Limit Exceeded" on signup — friendly message for Supabase rate limit errors
+- **BUG-020**: JPG/PNG to PDF labeled FREE but gated as Pro — removed Pro pre-gate from `image-to-pdf-interface.tsx`
+
+### Priority 2 — Medium (Fixed)
+- **BUG-021**: "Email Us" button broken without email client — replaced `mailto:` with copy-to-clipboard button showing email address
+- **BUG-022**: Missing asterisks on Email/Password fields in signup — added `*` indicators
+- **BUG-023**: Duplicate footer links (Privacy, Terms, Contact) — removed duplicate bottom bar links
+- **BUG-024**: Page bottom visible during PDF-to-JPG upload — added `min-h-[60vh]` to processing state
+- **BUG-025**: File disappears on refresh — added privacy message explaining files are cleared on refresh
+- **BUG-026**: Layout shift on language change — expected behavior (full page navigation)
+- **BUG-027**: Header logo not linking home — already fixed (was wrapped in `<Link href="/">`)
+- **BUG-028 + BUG-032**: Footer logo not clickable — wrapped in `<Link>` (all 3 languages)
+- **BUG-029**: No hover effect on A-Z alphabet letters — added `hover:text-[#14D8C4] hover:bg-white/5`
+- **BUG-030 + BUG-034**: Upload button not disabled after first file — free users: new file replaces old; paid users: "Add more files" button below file list; big upload zone hides after first file
+- **BUG-031 + BUG-033**: Active nav state not highlighted — added `usePathname()` check with teal highlight for current page
+
+### Priority 3 — Low (Fixed)
+- **BUG-035**: Background scrolls when hamburger menu open — added `overflow: hidden` to body (all 3 headers)
+- **BUG-037**: Language selector as flag row — converted to dropdown menu with globe icon, flag + language name (all 3 headers, desktop + mobile)
+- **BUG-038**: Blog card dates not visible — improved contrast from `text-slate-500` to `text-slate-400`
+- **BUG-039**: "Back to Dashboard" button text invisible — changed to teal text with teal border
+
+### Additional Improvements
+- **BUG-014**: A-Z scroll offset — increased `scroll-mt` from 32 to 36 for sticky nav clearance
+- **BUG-017**: Back navigation arrow on mobile — added `←` button next to logo on all pages except homepage (all 3 languages)
+
+### Files Changed (20+)
+`components/header.tsx`, `header-es.tsx`, `header-br.tsx`, `footer.tsx`, `footer-es.tsx`, `footer-br.tsx`, `processing-interface.tsx`, `image-to-pdf-interface.tsx`, `faq-section.tsx`, `comprehensive-faq-section.tsx`, `app/signup/page.tsx`, `app/login/page.tsx`, `app/contact/page.tsx`, `app/api/contact/route.ts`, `app/api/forgot-password/route.ts` (new), `app/api/pdf-to-txt/route.ts`, `app/api/split-pdf/route.js`, `app/pricing/page.tsx`, `app/es/precios/page.tsx`, `app/br/precos/page.tsx`, `app/tools-a-z/page.tsx`, `app/blog/page.tsx`, `middleware.ts`
+
+---
+
 ## AI Tools Suite (March 29, 2026) — 5 New AI-Powered Tools
 
 ### Chat with PDF (Business tier)
