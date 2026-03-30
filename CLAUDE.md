@@ -68,7 +68,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - ~~Social proof~~ DONE — added to homepage
 
 ### Still needs Paula's verification:
-- Verify GA4 Realtime is recording data
+- ~~Verify GA4 Realtime is recording data~~ DONE
 - Test full payment flow end-to-end
 - Test table extraction with a real PDF
 - Verify NEXT_PUBLIC_SITE_URL=https://pdf.it.com on Vercel
