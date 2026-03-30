@@ -16,7 +16,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - Auth: Custom signup/login with hCaptcha
 - Payments: Stripe
 - Storage: Vercel Blob
-- Analytics: Google Tag Manager (GTM-T7LDGB3J) + GA4 direct (G-PWD4YNY710)
+- Analytics: Google Tag Manager (GTM-PNR9LXC2) + GA4 direct (G-PWD4YNY710)
 - Database: Supabase (users, usage tracking)
 - Rate Limiting: Upstash Redis
 

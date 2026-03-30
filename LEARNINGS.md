@@ -131,3 +131,33 @@
 **What:** Blog articles had future dates (April 2026) and the footer used dynamic `new Date().getFullYear()` showing 2026. Paula decided PDF.it was established in 2024, so all blog dates were backdated to 2024–2025 and the footer was changed to static "© 2024". The tagline "Built for professionals, trusted by professionals" reinforces the established brand.
 **Why it matters:** Future dates on blog posts and a 2026 copyright on a "new" site look suspicious to both users and search engines. Backdating to the founding year builds trust and credibility.
 **Apply when:** Creating new blog posts or any content with dates. Use dates that are consistent with the 2024 founding year. Never use dynamic dates in the footer copyright.
+
+## 2026-03-29 — ES/BR homepages have INLINE tool grids separate from features-grid components
+
+**What:** The ES (`app/es/page.tsx`) and BR (`app/br/page.tsx`) homepages have their own inline tool grid arrays — they do NOT use the `FeaturesGridEs`/`FeaturesGridBr` components. The EN homepage uses `<FeaturesGrid />`, but ES/BR have the tools array hardcoded in the page file itself. This means any tool card change requires updating 5 locations: 3 features-grid components + 2 inline homepage grids.
+**Why it matters:** Multiple tools were added to features-grid components but were missing from the ES/BR homepages, creating a mismatch that Paula caught. The CLAUDE.md rule "Every change must be applied to all 3 languages simultaneously" applies to these inline grids too.
+**Apply when:** Adding any new tool card, badge, or visual change to the homepage tool grids. Always update all 5 files: `features-grid.tsx`, `features-grid-es.tsx`, `features-grid-br.tsx`, `app/es/page.tsx`, `app/br/page.tsx`.
+
+## 2026-03-29 — next/font generates extra render-blocking CSS — keep the non-blocking link approach
+
+**What:** Switching from Google Fonts `<link>` to Next.js `next/font/google` dropped the desktop Lighthouse score from 100 to 77. The `next/font` approach generates an additional CSS file that's render-blocking. The original `<link>` with `media="print" onLoad="this.media='all'"` is a non-blocking trick — the browser treats it as a print stylesheet during initial render, then switches to `all` once loaded.
+**Why it matters:** This was a "best practice" change that made performance worse. The theory (self-hosted, no external request) doesn't account for the extra blocking CSS file that Next.js generates. The change was reverted and scores returned to 100.
+**Apply when:** Never switch to `next/font/google` for this project. The current Google Fonts `<link>` with `media="print" onLoad` approach is optimal and proven.
+
+## 2026-03-29 — Duplicate icon imports cause build failures on Vercel
+
+**What:** `HelpCircle` was already imported on line 9 of both `app/es/page.tsx` and `app/br/page.tsx`. When adding new AI tools, it was imported again on the line with the new icons. This caused "Identifier has already been declared" build failures on Vercel.
+**Why it matters:** The error message in Vercel only says "Failed to compile" with a webpack error — it doesn't show the duplicate import clearly. Always check existing imports before adding new ones, especially in files you didn't write.
+**Apply when:** Adding new icon imports to any file. Check the existing import block first — search for the icon name before adding it.
+
+## 2026-03-29 — New tools require updates in 8+ places for full SEO coverage
+
+**What:** Adding a new tool requires updates to: (1) sitemap.ts (3 URLs per tool), (2) pricing pages (EN/ES/BR feature lists + comparison table), (3) tools-a-z page, (4) homepage keywords, (5) all 5 homepage grids, (6) all 3 hero banners, (7) route-map.ts, (8) Page_Format.md. Missing any one of these creates an SEO gap.
+**Why it matters:** The 5 AI tools were built and deployed but the sitemap, pricing pages, tools A-Z, and homepage keywords were all missing. Google couldn't find the pages, and the pricing page didn't show customers what they were paying for.
+**Apply when:** Every time a new tool is created. Use this as a checklist: sitemap, pricing (EN/ES/BR), tools-a-z, homepage keywords, 5 homepage grids, 3 hero banners, route-map, Page_Format.md.
+
+## 2026-03-29 — Don't run npm install in a pnpm project
+
+**What:** Running `npm install` to test a local build created a `package-lock.json` alongside the existing `pnpm-lock.yaml`. While it didn't get committed this time, it could have confused Vercel's build process and caused dependency version mismatches.
+**Why it matters:** The project uses pnpm (Vercel detects `pnpm-lock.yaml`). Running `npm install` creates competing lock files. If `package-lock.json` gets committed, Vercel may pick the wrong package manager.
+**Apply when:** Never run `npm install` in this project. If you need to test locally, use `pnpm install` instead. If a `package-lock.json` appears, delete it — don't commit it.
