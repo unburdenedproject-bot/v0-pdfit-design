@@ -58,7 +58,7 @@ export async function POST(request: Request) {
     const resend = new Resend(resendKey)
 
     await resend.emails.send({
-      from: "PDF.it <noreply@pdf.it>",
+      from: "PDF.it <noreply@pdf.it.com>",
       to: email,
       subject: "Reset your PDF.it password",
       html: `
