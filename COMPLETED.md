@@ -5,7 +5,13 @@
 External QA tester reported 39 bugs (32 unique after deduplication). All addressed across 20+ files, 3 languages (EN/ES/BR).
 
 ### Priority 1 — High (Fixed)
-- **BUG-001**: Forgot password email not received — built custom `/api/forgot-password` route that sends reset emails through Resend directly (bypasses Supabase's built-in email). Branded HTML template matching PDF.it design. Installed `resend` package.
+- **BUG-001**: Forgot password email not received — full fix:
+  - Built custom `/api/forgot-password` route that sends reset emails through Resend directly (bypasses Supabase's built-in email sender which wasn't reaching users)
+  - Branded HTML email template matching PDF.it design, sent from `noreply@pdf.it.com`
+  - Installed `resend` package (requires `RESEND_API_KEY` env var on Vercel)
+  - Built `/reset-password` page with password form, eye toggle, validation
+  - Reset link routes through `/auth/confirm` to exchange token for session before landing on `/reset-password` (same proven flow as signup confirmation)
+  - Added "check junk/spam folder" message on the reset email sent screen
 - **BUG-002**: Footer social media icons had `href="#"` — replaced with real URLs (placeholder until accounts created), all 3 languages
 - **BUG-003**: Generic 400 error on corrupted PDF in PDF-to-TXT — added user-friendly error messages in `api/pdf-to-txt/route.ts`
 - **BUG-004**: Edit/pencil icon not clickable after upload — now focuses and selects filename input on click
