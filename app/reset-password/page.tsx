@@ -17,63 +17,25 @@ export default function ResetPasswordPage() {
   const [success, setSuccess] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
-  const [sessionReady, setSessionReady] = useState(false)
-  const [sessionError, setSessionError] = useState(false)
-
   // Exchange the token from the reset link URL for an active session
   useEffect(() => {
     const supabase = createClient()
-    if (!supabase) { setSessionError(true); return }
+    if (!supabase) return
 
-    async function exchangeToken() {
-      // Supabase may put tokens in the URL hash (#access_token=...) or as query params (?code=...)
-      const hash = window.location.hash
-      const params = new URLSearchParams(window.location.search)
+    // Try all possible token formats from the URL
+    const hash = window.location.hash
+    const params = new URLSearchParams(window.location.search)
 
-      // Try hash-based tokens first (most common from generateLink)
-      if (hash && hash.includes("access_token")) {
-        // Supabase client auto-detects hash tokens — just wait for the auth state change
-        const { data: { subscription } } = supabase.auth.onAuthStateChange((event) => {
-          if (event === "PASSWORD_RECOVERY" || event === "SIGNED_IN") {
-            setSessionReady(true)
-          }
-        })
+    const code = params.get("code")
+    const tokenHash = params.get("token_hash")
+    const type = params.get("type")
 
-        // Also check if already resolved
-        const { data: { session } } = await supabase.auth.getSession()
-        if (session) { setSessionReady(true); subscription.unsubscribe(); return }
-
-        // Clean up after 15 seconds
-        setTimeout(() => { subscription.unsubscribe() }, 15000)
-        return
-      }
-
-      // Try code-based exchange (PKCE flow)
-      const code = params.get("code")
-      if (code) {
-        const { error } = await supabase.auth.exchangeCodeForSession(code)
-        if (!error) { setSessionReady(true); return }
-        console.error("Code exchange failed:", error.message)
-      }
-
-      // Try token_hash + type (email link flow)
-      const tokenHash = params.get("token_hash")
-      const type = params.get("type")
-      if (tokenHash && type) {
-        const { error } = await supabase.auth.verifyOtp({ token_hash: tokenHash, type: type as any })
-        if (!error) { setSessionReady(true); return }
-        console.error("OTP verify failed:", error.message)
-      }
-
-      // Check if there's already an active session (user clicked link while logged in)
-      const { data: { session } } = await supabase.auth.getSession()
-      if (session) { setSessionReady(true); return }
-
-      // No valid tokens found — show the form anyway and let updateUser report the real error
-      setSessionReady(true)
+    if (code) {
+      supabase.auth.exchangeCodeForSession(code).catch(() => {})
+    } else if (tokenHash && type) {
+      supabase.auth.verifyOtp({ token_hash: tokenHash, type: type as any }).catch(() => {})
     }
-
-    exchangeToken()
+    // Hash-based tokens (#access_token=...) are handled automatically by Supabase client
   }, [])
 
   const handleReset = async (e: React.FormEvent) => {
@@ -145,11 +107,6 @@ export default function ResetPasswordPage() {
                   <p className="text-sm text-green-400 bg-green-500/10 border border-green-500/20 rounded-md px-3 py-3">
                     Password updated! Redirecting to your dashboard...
                   </p>
-                </div>
-              ) : !sessionReady ? (
-                <div className="text-center py-6">
-                  <div className="w-8 h-8 border-2 border-[#14D8C4] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-                  <p className="text-sm text-slate-400">Verifying your reset link...</p>
                 </div>
               ) : (
                 <form onSubmit={handleReset}>
