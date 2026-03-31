@@ -4,7 +4,7 @@ import { createClient } from "@/lib/supabase/client"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Shield, Eye, EyeOff } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -17,6 +17,35 @@ export default function ResetPasswordPage() {
   const [success, setSuccess] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+  const [sessionReady, setSessionReady] = useState(false)
+  const [sessionError, setSessionError] = useState(false)
+
+  // Exchange the token from the reset link URL for an active session
+  useEffect(() => {
+    const supabase = createClient()
+    if (!supabase) { setSessionError(true); return }
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event) => {
+      if (event === "PASSWORD_RECOVERY" || event === "SIGNED_IN") {
+        setSessionReady(true)
+      }
+    })
+
+    // Check if session is already established
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session) setSessionReady(true)
+    })
+
+    // If no session after 5 seconds, the link is expired/invalid
+    const timeout = setTimeout(() => {
+      setSessionReady((ready) => {
+        if (!ready) setSessionError(true)
+        return ready
+      })
+    }, 5000)
+
+    return () => { subscription.unsubscribe(); clearTimeout(timeout) }
+  }, [])
 
   const handleReset = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -87,6 +116,23 @@ export default function ResetPasswordPage() {
                   <p className="text-sm text-green-400 bg-green-500/10 border border-green-500/20 rounded-md px-3 py-3">
                     Password updated! Redirecting to your dashboard...
                   </p>
+                </div>
+              ) : sessionError ? (
+                <div className="text-center">
+                  <p className="text-sm text-red-400 bg-red-500/10 border border-red-500/20 rounded-md px-3 py-3 mb-4">
+                    This password reset link has expired or is invalid. Please request a new one.
+                  </p>
+                  <Button
+                    onClick={() => (window.location.href = "/login")}
+                    className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold"
+                  >
+                    Back to Sign In
+                  </Button>
+                </div>
+              ) : !sessionReady ? (
+                <div className="text-center py-6">
+                  <div className="w-8 h-8 border-2 border-[#14D8C4] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+                  <p className="text-sm text-slate-400">Verifying your reset link...</p>
                 </div>
               ) : (
                 <form onSubmit={handleReset}>
