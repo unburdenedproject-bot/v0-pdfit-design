@@ -25,26 +25,55 @@ export default function ResetPasswordPage() {
     const supabase = createClient()
     if (!supabase) { setSessionError(true); return }
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event) => {
-      if (event === "PASSWORD_RECOVERY" || event === "SIGNED_IN") {
-        setSessionReady(true)
+    async function exchangeToken() {
+      // Supabase may put tokens in the URL hash (#access_token=...) or as query params (?code=...)
+      const hash = window.location.hash
+      const params = new URLSearchParams(window.location.search)
+
+      // Try hash-based tokens first (most common from generateLink)
+      if (hash && hash.includes("access_token")) {
+        // Supabase client auto-detects hash tokens — just wait for the auth state change
+        const { data: { subscription } } = supabase.auth.onAuthStateChange((event) => {
+          if (event === "PASSWORD_RECOVERY" || event === "SIGNED_IN") {
+            setSessionReady(true)
+          }
+        })
+
+        // Also check if already resolved
+        const { data: { session } } = await supabase.auth.getSession()
+        if (session) { setSessionReady(true); subscription.unsubscribe(); return }
+
+        // Clean up after 15 seconds
+        setTimeout(() => { subscription.unsubscribe() }, 15000)
+        return
       }
-    })
 
-    // Check if session is already established
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session) setSessionReady(true)
-    })
+      // Try code-based exchange (PKCE flow)
+      const code = params.get("code")
+      if (code) {
+        const { error } = await supabase.auth.exchangeCodeForSession(code)
+        if (!error) { setSessionReady(true); return }
+        console.error("Code exchange failed:", error.message)
+      }
 
-    // If no session after 5 seconds, the link is expired/invalid
-    const timeout = setTimeout(() => {
-      setSessionReady((ready) => {
-        if (!ready) setSessionError(true)
-        return ready
-      })
-    }, 5000)
+      // Try token_hash + type (email link flow)
+      const tokenHash = params.get("token_hash")
+      const type = params.get("type")
+      if (tokenHash && type) {
+        const { error } = await supabase.auth.verifyOtp({ token_hash: tokenHash, type: type as any })
+        if (!error) { setSessionReady(true); return }
+        console.error("OTP verify failed:", error.message)
+      }
 
-    return () => { subscription.unsubscribe(); clearTimeout(timeout) }
+      // Check if there's already an active session (user clicked link while logged in)
+      const { data: { session } } = await supabase.auth.getSession()
+      if (session) { setSessionReady(true); return }
+
+      // No valid tokens found — show the form anyway and let updateUser report the real error
+      setSessionReady(true)
+    }
+
+    exchangeToken()
   }, [])
 
   const handleReset = async (e: React.FormEvent) => {
@@ -116,18 +145,6 @@ export default function ResetPasswordPage() {
                   <p className="text-sm text-green-400 bg-green-500/10 border border-green-500/20 rounded-md px-3 py-3">
                     Password updated! Redirecting to your dashboard...
                   </p>
-                </div>
-              ) : sessionError ? (
-                <div className="text-center">
-                  <p className="text-sm text-red-400 bg-red-500/10 border border-red-500/20 rounded-md px-3 py-3 mb-4">
-                    This password reset link has expired or is invalid. Please request a new one.
-                  </p>
-                  <Button
-                    onClick={() => (window.location.href = "/login")}
-                    className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold"
-                  >
-                    Back to Sign In
-                  </Button>
                 </div>
               ) : !sessionReady ? (
                 <div className="text-center py-6">
