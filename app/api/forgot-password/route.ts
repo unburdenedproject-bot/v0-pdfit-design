@@ -47,12 +47,15 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: true })
     }
 
-    // Extract the action link from Supabase
-    const resetLink = data?.properties?.action_link
-    if (!resetLink) {
-      console.error("No action_link returned from Supabase generateLink")
+    // Extract the hashed_token and build a link through our /auth/confirm page
+    // which exchanges the token for a session, then redirects to /reset-password
+    const hashedToken = data?.properties?.hashed_token
+    if (!hashedToken) {
+      console.error("No hashed_token returned from Supabase generateLink")
       return NextResponse.json({ success: true })
     }
+
+    const resetLink = `${siteUrl}/auth/confirm?token_hash=${hashedToken}&type=recovery&redirect_to=/reset-password`
 
     // Send the email via Resend
     const resend = new Resend(resendKey)

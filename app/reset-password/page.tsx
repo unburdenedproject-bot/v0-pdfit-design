@@ -4,7 +4,7 @@ import { createClient } from "@/lib/supabase/client"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Shield, Eye, EyeOff } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -17,26 +17,7 @@ export default function ResetPasswordPage() {
   const [success, setSuccess] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
-  // Exchange the token from the reset link URL for an active session
-  useEffect(() => {
-    const supabase = createClient()
-    if (!supabase) return
-
-    // Try all possible token formats from the URL
-    const hash = window.location.hash
-    const params = new URLSearchParams(window.location.search)
-
-    const code = params.get("code")
-    const tokenHash = params.get("token_hash")
-    const type = params.get("type")
-
-    if (code) {
-      supabase.auth.exchangeCodeForSession(code).catch(() => {})
-    } else if (tokenHash && type) {
-      supabase.auth.verifyOtp({ token_hash: tokenHash, type: type as any }).catch(() => {})
-    }
-    // Hash-based tokens (#access_token=...) are handled automatically by Supabase client
-  }, [])
+  // Session is established by /auth/confirm before redirecting here
 
   const handleReset = async (e: React.FormEvent) => {
     e.preventDefault()

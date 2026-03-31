@@ -129,7 +129,7 @@ function LoginForm() {
               </form>
             ) : (
               <p className="text-center text-sm text-green-400 bg-green-500/10 rounded-md px-3 py-3">
-                If an account exists for that email, you will receive a reset link shortly.
+                If an account exists for that email, you will receive a reset link shortly. Please check your junk or spam folder if you don't see it in your inbox.
               </p>
             )}
             <div className="mt-4 text-center">
