@@ -32,9 +32,17 @@ export default function PricingPage() {
           <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Choose Your Plan</h1>
-              <p className="text-xl text-slate-300 max-w-2xl mx-auto mb-8">
+              <p className="text-xl text-slate-300 max-w-2xl mx-auto mb-6">
                 Start free, upgrade when you need more. Files deleted immediately — your privacy comes first.
               </p>
+
+              {/* Free trial banner */}
+              <div className="inline-flex items-center gap-3 bg-[#14D8C4]/10 border border-[#14D8C4]/30 rounded-full px-6 py-3 mb-8">
+                <span className="bg-[#14D8C4] text-[#0E0F1E] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Free Trial</span>
+                <p className="text-sm sm:text-base text-slate-200">
+                  <strong className="text-white">Try any plan free for 30 days</strong> — no commitment, cancel anytime. Just add a payment method to start your risk-free trial.
+                </p>
+              </div>
 
               {/* Billing Toggle */}
               <div className="inline-flex items-center bg-white/10 rounded-full p-1">

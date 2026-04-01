@@ -49,9 +49,17 @@ export default function PreciosPage() {
           <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Elige Tu Plan</h1>
-              <p className="text-xl text-slate-300 max-w-2xl mx-auto mb-8">
+              <p className="text-xl text-slate-300 max-w-2xl mx-auto mb-6">
                 Empieza gratis, actualiza cuando necesites mas. Archivos eliminados de inmediato — tu privacidad es lo primero.
               </p>
+
+              {/* Free trial banner */}
+              <div className="inline-flex items-center gap-3 bg-[#14D8C4]/10 border border-[#14D8C4]/30 rounded-full px-6 py-3 mb-8">
+                <span className="bg-[#14D8C4] text-[#0E0F1E] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Prueba Gratis</span>
+                <p className="text-sm sm:text-base text-slate-200">
+                  <strong className="text-white">Prueba cualquier plan gratis por 30 dias</strong> — sin compromiso, cancela cuando quieras. Solo agrega un metodo de pago para iniciar tu prueba sin riesgo.
+                </p>
+              </div>
 
               <div className="inline-flex items-center bg-white/10 rounded-full p-1">
                 <button type="button" onClick={() => setBilling("monthly")} className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 ${billing === "monthly" ? "bg-white text-slate-900 shadow-sm" : "text-slate-300 hover:text-white"}`}>Mensual</button>
