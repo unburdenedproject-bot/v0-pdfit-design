@@ -142,8 +142,9 @@ export function DashboardClient({
   const [isBillingLoading, setIsBillingLoading] = useState(false)
   const [billingError, setBillingError] = useState<string | null>(null)
 
-  const isPro = plan === "pro" || plan === "business" || plan === "enterprise"
-  const planLabel = plan === "enterprise" ? "Enterprise" : plan === "business" ? "Business" : plan === "pro" ? "Pro" : "Free"
+  const [currentPlan, setCurrentPlan] = useState(plan)
+  const isPro = currentPlan === "pro" || currentPlan === "business" || currentPlan === "enterprise"
+  const planLabel = currentPlan === "enterprise" ? "Enterprise" : currentPlan === "business" ? "Business" : currentPlan === "pro" ? "Pro" : "Free"
   const dailyLimit = 10
   const usagePercent = isPro ? 100 : Math.min((usageCount / dailyLimit) * 100, 100)
 
@@ -151,8 +152,32 @@ export function DashboardClient({
     if (searchParams.get("success") === "true") {
       setStatusMessage({
         type: "success",
-        text: "Payment successful! Your Pro plan is now active.",
+        text: "Payment successful! Activating your plan...",
       })
+
+      // Poll Supabase until the plan updates (webhook may take a few seconds)
+      if (currentPlan === "free") {
+        const supabase = createClient()
+        let attempts = 0
+        const poll = setInterval(async () => {
+          attempts++
+          const { data } = await supabase
+            .from("users")
+            .select("plan")
+            .eq("id", user.id)
+            .single()
+          if (data && data.plan !== "free") {
+            setCurrentPlan(data.plan)
+            const label = data.plan === "enterprise" ? "Enterprise" : data.plan === "business" ? "Business" : "Pro"
+            setStatusMessage({ type: "success", text: `Payment successful! Your ${label} plan is now active.` })
+            clearInterval(poll)
+          } else if (attempts >= 15) {
+            setStatusMessage({ type: "success", text: "Payment successful! Your plan will activate shortly — please refresh if needed." })
+            clearInterval(poll)
+          }
+        }, 2000)
+        return () => clearInterval(poll)
+      }
     } else if (searchParams.get("canceled") === "true") {
       setStatusMessage({
         type: "canceled",
@@ -449,7 +474,7 @@ export function DashboardClient({
             <div className="space-y-4">
               <div className="flex items-center justify-between py-2 border-b border-white/10">
                 <span className="text-sm text-slate-500">Plan</span>
-                <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${getPlanBadgeClasses(plan)}`}>
+                <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${getPlanBadgeClasses(currentPlan)}`}>
                   {planLabel}
                 </span>
               </div>
