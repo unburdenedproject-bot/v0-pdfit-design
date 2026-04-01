@@ -126,6 +126,9 @@ export default async function UpgradePage({
       metadata: {
         supabase_user_id: user.id,
       },
+      subscription_data: {
+        trial_period_days: 30,
+      },
     }
 
     // If user already has a Stripe customer ID, use it (prevents duplicate customers)
