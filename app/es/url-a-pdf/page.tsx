@@ -230,7 +230,7 @@ export default function UrlAPdfPageEs() {
                 { q: "¿Puedo personalizar el tamano y orientacion del PDF?", a: "Si. Puedes elegir el tamano de pagina (Carta, A4, Legal), la orientacion (vertical u horizontal) y ajustar los margenes." },
                 { q: "¿El PDF conserva el diseno original?", a: "PDF.it renderiza la pagina web como un navegador real y captura el diseno, imagenes, fuentes y colores con alta fidelidad." },
                 { q: "¿Es seguro convertir paginas web a PDF?", a: "Si. Todas las transferencias estan cifradas con SSL y los archivos se eliminan despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." },
-                { q: "¿URL a PDF es gratis?", a: "URL a PDF es una funcion Pro disponible por $7.99/mes. El plan Pro incluye OCR, generacion de QR, procesamiento por lotes y todas las herramientas premium." },
+                { q: "¿URL a PDF es gratis?", a: "URL a PDF es una funcion Pro disponible por $3.99/mes. El plan Pro incluye OCR, generacion de QR, procesamiento por lotes y todas las herramientas premium." },
               ].map((faq, i) => (
                 <div
                   key={i}
@@ -257,7 +257,7 @@ export default function UrlAPdfPageEs() {
             { "@type": "Question", "name": "¿Puedo personalizar el tamano y orientacion del PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Puedes elegir el tamano de pagina (Carta, A4, Legal), la orientacion (vertical u horizontal) y ajustar los margenes." } },
             { "@type": "Question", "name": "¿El PDF conserva el diseno original?", "acceptedAnswer": { "@type": "Answer", "text": "PDF.it renderiza la pagina web como un navegador real y captura el diseno, imagenes, fuentes y colores con alta fidelidad." } },
             { "@type": "Question", "name": "¿Es seguro convertir paginas web a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Todas las transferencias estan cifradas con SSL y los archivos se eliminan despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." } },
-            { "@type": "Question", "name": "¿URL a PDF es gratis?", "acceptedAnswer": { "@type": "Answer", "text": "URL a PDF es una funcion Pro disponible por $7.99/mes. El plan Pro incluye OCR, generacion de QR, procesamiento por lotes y todas las herramientas premium." } }
+            { "@type": "Question", "name": "¿URL a PDF es gratis?", "acceptedAnswer": { "@type": "Answer", "text": "URL a PDF es una funcion Pro disponible por $3.99/mes. El plan Pro incluye OCR, generacion de QR, procesamiento por lotes y todas las herramientas premium." } }
           ]
         })}} />
       </main>

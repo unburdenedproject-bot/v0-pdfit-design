@@ -133,7 +133,7 @@ export default function WelcomeToPDFitPage() {
                   long as you want.
                 </li>
                 <li>
-                  <strong>Upgrade only when you need more.</strong> Pro at $7.99/month unlocks unlimited conversions,
+                  <strong>Upgrade only when you need more.</strong> Pro at $3.99/month unlocks unlimited conversions,
                   larger file sizes, and premium tools like OCR and PDF-to-Word.
                 </li>
                 <li>

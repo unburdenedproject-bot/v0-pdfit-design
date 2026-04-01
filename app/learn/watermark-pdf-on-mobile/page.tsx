@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is the Watermark PDF tool free on mobile?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Watermark PDF is available to Pro ($7.99/month) and Business ($13.99/month) users on all devices, including mobile. Both tiers include unlimited watermarking and files up to 200MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Watermark PDF is available to Pro ($3.99/month) and Business ($13.99/month) users on all devices, including mobile. Both tiers include unlimited watermarking and files up to 200MB." }
     }
   ]
 }
@@ -280,7 +280,7 @@ export default function WatermarkPDFOnMobilePage() {
                 { q: "Does it work the same on iPhone and Android?", a: "Yes. PDF.it is fully responsive and works identically on iPhone (Safari, Chrome) and Android (Chrome, Firefox, Samsung Internet). The interface adapts to your screen size automatically." },
                 { q: "Can I upload a logo watermark from my phone's camera roll?", a: "Yes. When you select Image Watermark in PDF.it, your phone will let you browse your camera roll or files. Select your logo image (PNG recommended for best results) and it will be used as the watermark." },
                 { q: "Where does the watermarked PDF get saved on my phone?", a: "The watermarked PDF downloads to your phone's default download location. On iPhone, check the Files app under Downloads. On Android, check the Downloads folder or your browser's download manager." },
-                { q: "Is the Watermark PDF tool free on mobile?", a: "Watermark PDF is available to Pro ($7.99/month) and Business ($13.99/month) users on all devices, including mobile. Both tiers include unlimited watermarking and files up to 200MB." },
+                { q: "Is the Watermark PDF tool free on mobile?", a: "Watermark PDF is available to Pro ($3.99/month) and Business ($13.99/month) users on all devices, including mobile. Both tiers include unlimited watermarking and files up to 200MB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

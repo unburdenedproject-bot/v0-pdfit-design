@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "La herramienta Marca de Agua PDF es gratis?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Marca de Agua PDF esta disponible para usuarios Pro y Business. Pro comienza en $7.99/mes e incluye marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Marca de Agua PDF esta disponible para usuarios Pro y Business. Pro comienza en $3.99/mes e incluye marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." }
     },
     {
       "@type": "Question",
@@ -294,7 +294,7 @@ export default function ComoAgregarMarcaDeAguaAPDFPage() {
               {[
                 { q: "Como agrego una marca de agua a un PDF en linea?", a: "Sube tu PDF a la herramienta Marca de Agua PDF de PDF.it, escribe tu texto de marca de agua o sube una imagen, ajusta la opacidad y posicion, luego haz clic en Aplicar. Descarga tu PDF con marca de agua en segundos." },
                 { q: "Puedo agregar una marca de agua de imagen como un logo?", a: "Si. PDF.it admite marcas de agua de texto e imagen. Sube un logo PNG o JPG, ajusta el tamano y la opacidad, y se colocara en cada pagina de tu PDF." },
-                { q: "La herramienta Marca de Agua PDF es gratis?", a: "Marca de Agua PDF esta disponible para usuarios Pro y Business. Pro comienza en $7.99/mes e incluye marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." },
+                { q: "La herramienta Marca de Agua PDF es gratis?", a: "Marca de Agua PDF esta disponible para usuarios Pro y Business. Pro comienza en $3.99/mes e incluye marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." },
                 { q: "La marca de agua aparecera en todas las paginas?", a: "Si. Por defecto, la marca de agua se aplica a todas las paginas de tu PDF. Esto asegura un marcado consistente de marca o seguridad en todo el documento." },
                 { q: "Alguien puede quitar mi marca de agua?", a: "Una marca de agua agregada como superposicion a veces puede eliminarse con herramientas avanzadas. Para mayor proteccion, combina la marca de agua con proteccion por contrasena usando la herramienta Proteger PDF de PDF.it, o aplana el PDF despues para integrar la marca de agua en el contenido de la pagina." },
                 { q: "Puedo agregar una marca de agua a un PDF desde mi telefono?", a: "Si. PDF.it funciona en cualquier navegador movil. Sube tu PDF, agrega tu marca de agua de texto o imagen, y descarga el resultado — sin necesidad de aplicacion." },

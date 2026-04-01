@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     q: "O Otimizador ATS é gratuito?",
-    a: "O Otimizador ATS é um recurso Pro a $7.99/mês. O Pro inclui análises ilimitadas de currículos mais todas as outras ferramentas PDF.",
+    a: "O Otimizador ATS é um recurso Pro a $3.99/mês. O Pro inclui análises ilimitadas de currículos mais todas as outras ferramentas PDF.",
   },
 ]
 

@@ -23,7 +23,7 @@ export default function CodigoQRPage() {
     { q: "¿Qué puedo poner en un código QR?", a: "Puedes codificar enlaces a sitios web, texto simple, direcciones de correo electrónico, números de teléfono y más. El código QR almacena los datos para que cualquier persona que lo escanee obtenga acceso instantáneo." },
     { q: "¿Qué tamaño debe tener un código QR para imprimirlo?", a: "Como regla general, mantén los códigos QR de al menos 2cm \u00d7 2cm para escaneo de cerca (tarjetas de presentación) y más grandes para pósteres o señalización. Siempre haz un escaneo de prueba antes de imprimir." },
     { q: "¿Por qué mi código QR no se escanea?", a: "Los problemas comunes incluyen bajo contraste, tamaño pequeño o borrosidad de imagen. Asegúrate de que el código QR tenga buen contraste con el fondo y sea lo suficientemente grande para la distancia de escaneo." },
-    { q: "¿El Generador de Código QR es gratis?", a: "El Generador de Código QR es una función Pro, disponible en el plan Pro de PDF.it a $7.99/mes. Pro incluye códigos QR ilimitados además de todas las demás herramientas PDF." },
+    { q: "¿El Generador de Código QR es gratis?", a: "El Generador de Código QR es una función Pro, disponible en el plan Pro de PDF.it a $3.99/mes. Pro incluye códigos QR ilimitados además de todas las demás herramientas PDF." },
     { q: "¿Se almacenan mis datos cuando genero un código QR?", a: "No. Los códigos QR se generan y se devuelven directamente a tu navegador. No almacenamos el contenido que ingresas." },
   ]
 

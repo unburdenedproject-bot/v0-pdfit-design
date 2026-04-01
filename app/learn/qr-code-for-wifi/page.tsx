@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is this tool free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it's QR Code generator is a Pro feature at $7.99/month. Pro users get unlimited QR code generation including WiFi, URL, vCard, and all other types." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it's QR Code generator is a Pro feature at $3.99/month. Pro users get unlimited QR code generation including WiFi, URL, vCard, and all other types." }
     }
   ]
 }
@@ -297,7 +297,7 @@ export default function QRCodeForWiFiPage() {
                 { q: "Does it work on both iPhone and Android?", a: "Yes. iPhones running iOS 11 or later and Android phones running Android 10 or later can scan WiFi QR codes with their built-in camera app and connect automatically." },
                 { q: "What information do I need to create a WiFi QR code?", a: "You need three things: your network name (SSID), your WiFi password, and the encryption type (usually WPA/WPA2 for modern routers). Check your router settings or the sticker on your router." },
                 { q: "Do I need to update the QR code if I change my WiFi password?", a: "Yes. WiFi QR codes are static — the password is encoded directly in the QR code pattern. If you change your WiFi password, you need to generate a new QR code." },
-                { q: "Is this tool free?", a: "PDF.it's QR Code generator is a Pro feature at $7.99/month. Pro users get unlimited QR code generation including WiFi, URL, vCard, and all other types." },
+                { q: "Is this tool free?", a: "PDF.it's QR Code generator is a Pro feature at $3.99/month. Pro users get unlimited QR code generation including WiFi, URL, vCard, and all other types." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

@@ -221,7 +221,7 @@ export default function UrlToPdfPage() {
                 { q: "How do I convert a URL to PDF?", a: "Paste the webpage URL into PDF.it, choose your page size, orientation, and margin settings, then click Convert. Your PDF will be ready to download in seconds." },
                 { q: "Can I convert any website to PDF?", a: "You can convert most publicly accessible webpages. Pages that require login or have heavy JavaScript rendering may not convert perfectly. Static content pages convert best." },
                 { q: "Will the PDF keep the original formatting?", a: "PDF.it captures the webpage layout, images, and text formatting as closely as possible. You can customize page size, orientation, and margins for the best result." },
-                { q: "Is URL to PDF free?", a: "URL to PDF is a Pro feature available for $7.99/month. Pro accounts also include OCR, QR code generation, batch processing, and all other premium tools." },
+                { q: "Is URL to PDF free?", a: "URL to PDF is a Pro feature available for $3.99/month. Pro accounts also include OCR, QR code generation, batch processing, and all other premium tools." },
                 { q: "Can I save a webpage for offline reading?", a: "Yes. Converting a URL to PDF creates a permanent, offline copy of the webpage you can read anytime without an internet connection." },
               ].map((faq, i) => (
                 <div
@@ -248,7 +248,7 @@ export default function UrlToPdfPage() {
             { "@type": "Question", "name": "How do I convert a URL to PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Paste the webpage URL into PDF.it, choose your page size, orientation, and margin settings, then click Convert. Your PDF will be ready to download in seconds." } },
             { "@type": "Question", "name": "Can I convert any website to PDF?", "acceptedAnswer": { "@type": "Answer", "text": "You can convert most publicly accessible webpages. Pages that require login or have heavy JavaScript rendering may not convert perfectly. Static content pages convert best." } },
             { "@type": "Question", "name": "Will the PDF keep the original formatting?", "acceptedAnswer": { "@type": "Answer", "text": "PDF.it captures the webpage layout, images, and text formatting as closely as possible. You can customize page size, orientation, and margins for the best result." } },
-            { "@type": "Question", "name": "Is URL to PDF free?", "acceptedAnswer": { "@type": "Answer", "text": "URL to PDF is a Pro feature available for $7.99/month. Pro accounts also include OCR, QR code generation, batch processing, and all other premium tools." } },
+            { "@type": "Question", "name": "Is URL to PDF free?", "acceptedAnswer": { "@type": "Answer", "text": "URL to PDF is a Pro feature available for $3.99/month. Pro accounts also include OCR, QR code generation, batch processing, and all other premium tools." } },
             { "@type": "Question", "name": "Can I save a webpage for offline reading?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Converting a URL to PDF creates a permanent, offline copy of the webpage you can read anytime without an internet connection." } }
           ]
         })}} />

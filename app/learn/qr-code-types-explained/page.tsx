@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is the QR Code generator free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it's QR Code tool is a Pro feature at $7.99/month. Pro users get unlimited generation of all QR code types plus access to all premium PDF tools." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it's QR Code tool is a Pro feature at $3.99/month. Pro users get unlimited generation of all QR code types plus access to all premium PDF tools." }
     }
   ]
 }
@@ -314,7 +314,7 @@ export default function QRCodeTypesExplainedPage() {
                 { q: "Which QR code type is most common?", a: "URL QR codes are by far the most common. They link to websites, landing pages, social media profiles, online menus, documents, and any other web content." },
                 { q: "Can one QR code contain multiple types of data?", a: "No. Each QR code encodes one type of data. However, you can create a URL QR code that links to a webpage containing multiple pieces of information." },
                 { q: "Do all phones support all QR code types?", a: "Most modern smartphones support URL, text, WiFi, and vCard QR codes natively through their built-in camera. Some older phones may not support automatic WiFi connection or vCard saving." },
-                { q: "Is the QR Code generator free?", a: "PDF.it's QR Code tool is a Pro feature at $7.99/month. Pro users get unlimited generation of all QR code types plus access to all premium PDF tools." },
+                { q: "Is the QR Code generator free?", a: "PDF.it's QR Code tool is a Pro feature at $3.99/month. Pro users get unlimited generation of all QR code types plus access to all premium PDF tools." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

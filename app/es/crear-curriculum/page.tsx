@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     q: "¿El Creador de Curriculum es gratuito?",
-    a: "Crear Curriculum es una función Pro a $7.99/mes. Pro incluye generación ilimitada de curriculums más todas las demás herramientas PDF.",
+    a: "Crear Curriculum es una función Pro a $3.99/mes. Pro incluye generación ilimitada de curriculums más todas las demás herramientas PDF.",
   },
 ]
 

@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "El OCR es gratis en PDF.it?",
-      "acceptedAnswer": { "@type": "Answer", "text": "El Escaner OCR es una funcion Pro en PDF.it. Los usuarios gratuitos pueden probar PDF a TXT basico (que funciona en PDFs digitales). Para documentos escaneados que requieren OCR, una suscripcion Pro ($7.99/mes) desbloquea el Escaner OCR con conversiones ilimitadas." }
+      "acceptedAnswer": { "@type": "Answer", "text": "El Escaner OCR es una funcion Pro en PDF.it. Los usuarios gratuitos pueden probar PDF a TXT basico (que funciona en PDFs digitales). Para documentos escaneados que requieren OCR, una suscripcion Pro ($3.99/mes) desbloquea el Escaner OCR con conversiones ilimitadas." }
     }
   ]
 }
@@ -278,7 +278,7 @@ export default function ConvertirPdfEscaneadoATextoPage() {
                 { q: "Cual es la diferencia entre un PDF escaneado y un PDF digital?", a: "Un PDF digital fue creado electronicamente y contiene datos de texto reales que puedes seleccionar y buscar. Un PDF escaneado es una fotografia de papel: cada pagina es una imagen sin datos de texto." },
                 { q: "Como mejoro la precision del OCR en mis documentos escaneados?", a: "Escanea a 300 DPI o mas, usa buena iluminacion, mantiene el documento plano y alineado, escanea en blanco y negro para documentos solo de texto, y limpia los escaneos de telefono antes del OCR." },
                 { q: "Puedo hacer OCR a una foto de telefono de un documento?", a: "Si, pero las fotos de telefono suelen tener distorsion de perspectiva, sombras y menor resolucion. Usa la herramienta de Limpieza de Escaneo de Telefono primero para enderezar y mejorar la imagen." },
-                { q: "El OCR es gratis en PDF.it?", a: "El Escaner OCR es una funcion Pro en PDF.it. Los usuarios gratuitos pueden probar PDF a TXT basico. Para documentos escaneados que requieren OCR, una suscripcion Pro ($7.99/mes) desbloquea el Escaner OCR con conversiones ilimitadas." },
+                { q: "El OCR es gratis en PDF.it?", a: "El Escaner OCR es una funcion Pro en PDF.it. Los usuarios gratuitos pueden probar PDF a TXT basico. Para documentos escaneados que requieren OCR, una suscripcion Pro ($3.99/mes) desbloquea el Escaner OCR con conversiones ilimitadas." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

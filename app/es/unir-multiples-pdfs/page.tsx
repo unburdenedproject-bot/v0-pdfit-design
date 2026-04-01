@@ -39,7 +39,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo unir PDFs en lote con el plan gratuito?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Los usuarios gratuitos pueden unir archivos uno a la vez. El procesamiento por lotes — subir y unir múltiples archivos simultáneamente — es una función Pro disponible por $7.99/mes." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Los usuarios gratuitos pueden unir archivos uno a la vez. El procesamiento por lotes — subir y unir múltiples archivos simultáneamente — es una función Pro disponible por $3.99/mes." }
     },
     {
       "@type": "Question",
@@ -187,7 +187,7 @@ export default function UnirMultiplesPDFsPage() {
                 { q: "¿Cuántos PDFs puedo unir a la vez?", a: "Los usuarios Pro pueden unir grandes lotes de PDFs con procesamiento por lotes. Los usuarios gratuitos pueden unir archivos uno a la vez y combinar los resultados." },
                 { q: "¿Se mantiene el orden de los archivos al unirlos?", a: "Sí. PDF.it preserva el orden exacto que tú estableces. Arrastra y suelta tus archivos para reorganizarlos antes de unir." },
                 { q: "¿Se pierde calidad al unir múltiples PDFs?", a: "No. PDF.it une tus PDFs sin recomprimirlos. Cada página conserva su calidad original, fuentes y formato." },
-                { q: "¿Puedo unir PDFs en lote con el plan gratuito?", a: "Los usuarios gratuitos pueden unir archivos uno a la vez. El procesamiento por lotes — subir y unir múltiples archivos simultáneamente — es una función Pro disponible por $7.99/mes." },
+                { q: "¿Puedo unir PDFs en lote con el plan gratuito?", a: "Los usuarios gratuitos pueden unir archivos uno a la vez. El procesamiento por lotes — subir y unir múltiples archivos simultáneamente — es una función Pro disponible por $3.99/mes." },
                 { q: "¿Puedo unir PDFs desde mi celular?", a: "Sí. PDF.it es completamente basado en navegador y funciona en iPhone, iPad, Android y cualquier dispositivo con un navegador moderno." },
                 { q: "¿Cuál es el tamaño máximo por archivo?", a: "Los usuarios gratuitos pueden subir archivos de hasta 25MB cada uno. Los usuarios Pro tienen un límite de 200MB por archivo, ideal para documentos grandes." },
               ].map((faq, i) => (

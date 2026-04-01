@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is OCR on mobile a free feature?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OCR Scanner is a Pro feature on PDF.it, available for $7.99/month. This applies to both mobile and desktop use. Pro includes unlimited conversions, files up to 200MB, batch processing, and all advanced tools." }
+      "acceptedAnswer": { "@type": "Answer", "text": "OCR Scanner is a Pro feature on PDF.it, available for $3.99/month. This applies to both mobile and desktop use. Pro includes unlimited conversions, files up to 200MB, batch processing, and all advanced tools." }
     }
   ]
 }
@@ -305,7 +305,7 @@ export default function OCRPDFOnMobilePage() {
                 { q: "Can I scan a document with my phone camera and OCR it?", a: "Yes. Use your phone's built-in scanner (Notes on iPhone, Google Drive on Android) to capture the document as a PDF, then upload it to PDF.it's OCR Scanner. For better results, run the scan through Phone Scan Cleanup first." },
                 { q: "How big of a file can I OCR on mobile?", a: "PDF.it Pro users can process PDFs up to 200MB on any device, including mobile. If your file is large and your connection is slow, consider compressing the PDF first to speed up the upload." },
                 { q: "Will OCR on mobile be slower than on a computer?", a: "No. OCR processing happens on PDF.it's servers, not on your device. The speed is the same whether you use a phone, tablet, or desktop computer. The only difference is upload and download speed, which depends on your internet connection." },
-                { q: "Is OCR on mobile a free feature?", a: "OCR Scanner is a Pro feature on PDF.it, available for $7.99/month. This applies to both mobile and desktop use. Pro includes unlimited conversions, files up to 200MB, batch processing, and all advanced tools." },
+                { q: "Is OCR on mobile a free feature?", a: "OCR Scanner is a Pro feature on PDF.it, available for $3.99/month. This applies to both mobile and desktop use. Pro includes unlimited conversions, files up to 200MB, batch processing, and all advanced tools." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

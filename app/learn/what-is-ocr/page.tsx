@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is OCR a Pro feature on PDF.it?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OCR Scanner is available to Pro and Business subscribers. Pro costs $7.99/month and includes unlimited conversions, files up to 200MB, batch processing, and all advanced tools including OCR." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. OCR Scanner is available to Pro and Business subscribers. Pro costs $3.99/month and includes unlimited conversions, files up to 200MB, batch processing, and all advanced tools including OCR." }
     }
   ]
 }
@@ -241,7 +241,7 @@ export default function WhatIsOCRPage() {
                 <li>&#10003; Upload any scanned PDF — the tool detects image-only pages automatically.</li>
                 <li>&#10003; Select the document language for better recognition accuracy.</li>
                 <li>&#10003; Download a searchable PDF with an invisible text layer on top of the original scan.</li>
-                <li>&#10003; Process files up to 200MB with a Pro subscription ($7.99/month).</li>
+                <li>&#10003; Process files up to 200MB with a Pro subscription ($3.99/month).</li>
                 <li>&#10003; After OCR, use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> if the file is too large for email or upload portals.</li>
               </ul>
               <p className="text-slate-600 mt-4">
@@ -302,7 +302,7 @@ export default function WhatIsOCRPage() {
                 { q: "Can OCR handle multiple languages?", a: "Yes. Most modern OCR tools, including PDF.it's OCR Scanner, support dozens of languages including English, Spanish, French, German, Portuguese, and many more. You can select the document language before processing for better accuracy." },
                 { q: "Is OCR 100% accurate?", a: "OCR is typically 95-99% accurate on clean, high-resolution scans with standard printed fonts. Accuracy decreases with low-resolution images, handwritten text, unusual fonts, or heavily formatted documents. You can improve results by scanning at 300 DPI or higher." },
                 { q: "Do I need to install software to use OCR?", a: "No. PDF.it's OCR Scanner works entirely in your browser. Upload your scanned PDF, select the language, and download a searchable PDF — no software installation required." },
-                { q: "Is OCR a Pro feature on PDF.it?", a: "Yes. OCR Scanner is available to Pro and Business subscribers. Pro costs $7.99/month and includes unlimited conversions, files up to 200MB, batch processing, and all advanced tools including OCR." },
+                { q: "Is OCR a Pro feature on PDF.it?", a: "Yes. OCR Scanner is available to Pro and Business subscribers. Pro costs $3.99/month and includes unlimited conversions, files up to 200MB, batch processing, and all advanced tools including OCR." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

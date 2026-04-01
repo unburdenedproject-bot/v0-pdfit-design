@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is OCR free on PDF.it?",
-      "acceptedAnswer": { "@type": "Answer", "text": "OCR Scanner is a Pro feature on PDF.it. Free users can try basic PDF to TXT (which works on digital PDFs). For scanned documents that require OCR, a Pro subscription ($7.99/month) unlocks the OCR Scanner with unlimited conversions." }
+      "acceptedAnswer": { "@type": "Answer", "text": "OCR Scanner is a Pro feature on PDF.it. Free users can try basic PDF to TXT (which works on digital PDFs). For scanned documents that require OCR, a Pro subscription ($3.99/month) unlocks the OCR Scanner with unlimited conversions." }
     }
   ]
 }
@@ -346,7 +346,7 @@ export default function ConvertScannedPdfToTextPage() {
                 { q: "What's the difference between a scanned PDF and a digital PDF?", a: "A digital PDF was created electronically (from Word, Google Docs, etc.) and contains real text data you can select and search. A scanned PDF is a photograph of paper — each page is an image with no text data. You need OCR to extract text from scanned PDFs." },
                 { q: "How do I improve OCR accuracy on my scanned documents?", a: "Scan at 300 DPI or higher, use good lighting (no shadows), keep the document flat and aligned, scan in black and white for text-only documents, and clean up phone scans using image processing tools before OCR." },
                 { q: "Can I OCR a phone photo of a document?", a: "Yes, but phone photos often have perspective distortion, shadows, and lower resolution than flatbed scans. Use PDF.it's Phone Scan Cleanup tool first to straighten and enhance the image, then run OCR for better results." },
-                { q: "Is OCR free on PDF.it?", a: "OCR Scanner is a Pro feature on PDF.it. Free users can try basic PDF to TXT (which works on digital PDFs). For scanned documents that require OCR, a Pro subscription ($7.99/month) unlocks the OCR Scanner with unlimited conversions." },
+                { q: "Is OCR free on PDF.it?", a: "OCR Scanner is a Pro feature on PDF.it. Free users can try basic PDF to TXT (which works on digital PDFs). For scanned documents that require OCR, a Pro subscription ($3.99/month) unlocks the OCR Scanner with unlimited conversions." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

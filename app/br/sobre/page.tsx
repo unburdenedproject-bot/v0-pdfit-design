@@ -187,7 +187,7 @@ export default function SobrePage() {
                   <div className="rounded-[11px] p-6 h-full relative overflow-hidden" style={{ background: "radial-gradient(ellipse 40% 30% at 50% 0%, rgba(214,179,106,0.05) 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(20,216,196,0.04) 0%, transparent 70%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(214,179,106,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-b-md text-[9px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #D6B36A, #E0C27A)", color: "#0E0F1E" }}>Mais Popular</div>
                     <h3 className="text-lg font-bold text-white mb-1 mt-3">Pro</h3>
-                    <p className="text-[#E0C27A] font-semibold text-sm mb-4">$7.99/mes</p>
+                    <p className="text-[#E0C27A] font-semibold text-sm mb-4">$3.99/mes</p>
                     <p className="text-[#6B7CFF] text-xs font-medium mb-3">Tudo no Gratis, mais:</p>
                     <ul className="space-y-2">
                       <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#E0C27A] mt-0.5">&#10003;</span><span>Conversoes ilimitadas</span></li>

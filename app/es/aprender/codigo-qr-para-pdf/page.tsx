@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "La herramienta de Codigo QR es gratuita?",
-      "acceptedAnswer": { "@type": "Answer", "text": "El generador de Codigo QR de PDF.it es una funcion Pro ($7.99/mes). Pro incluye codigos QR ilimitados, compresion de PDF, herramientas de conversion y mas." }
+      "acceptedAnswer": { "@type": "Answer", "text": "El generador de Codigo QR de PDF.it es una funcion Pro ($3.99/mes). Pro incluye codigos QR ilimitados, compresion de PDF, herramientas de conversion y mas." }
     }
   ]
 }
@@ -290,7 +290,7 @@ export default function CodigoQRParaPDFPage() {
                 { q: "Que tan grande puede ser el PDF?", a: "No hay limite tecnico del lado del codigo QR — solo almacena la URL, no el archivo. Sin embargo, manten tu PDF por debajo de 5MB para que cargue rapidamente en dispositivos moviles. Usa la herramienta Comprimir PDF de PDF.it para reducir archivos grandes." },
                 { q: "El codigo QR seguira funcionando si actualizo el PDF?", a: "Si reemplazas el archivo en la misma URL, si. Si la URL cambia (nueva subida con un enlace diferente), el codigo QR dejara de funcionar. Usa una URL de redireccion o reemplaza el archivo en su lugar." },
                 { q: "Puedo proteger con contrasena el PDF detras del codigo QR?", a: "Si, pero la persona que escanee necesitara ingresar la contrasena para abrir el PDF. Usa la herramienta Proteger PDF de PDF.it para agregar una contrasena. Comparte la contrasena por separado." },
-                { q: "La herramienta de Codigo QR es gratuita?", a: "El generador de Codigo QR de PDF.it es una funcion Pro ($7.99/mes). Pro incluye codigos QR ilimitados, compresion de PDF, herramientas de conversion y mas." },
+                { q: "La herramienta de Codigo QR es gratuita?", a: "El generador de Codigo QR de PDF.it es una funcion Pro ($3.99/mes). Pro incluye codigos QR ilimitados, compresion de PDF, herramientas de conversion y mas." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

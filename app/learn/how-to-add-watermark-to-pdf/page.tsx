@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is the Watermark PDF tool free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Watermark PDF is available to Pro and Business users. Pro starts at $7.99/month and includes unlimited watermarking, batch processing, and files up to 200MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Watermark PDF is available to Pro and Business users. Pro starts at $3.99/month and includes unlimited watermarking, batch processing, and files up to 200MB." }
     },
     {
       "@type": "Question",
@@ -295,7 +295,7 @@ export default function HowToAddWatermarkToPDFPage() {
               {[
                 { q: "How do I add a watermark to a PDF online?", a: "Upload your PDF to PDF.it's Watermark PDF tool, type your watermark text or upload an image, adjust opacity and position, then click Apply. Download your watermarked PDF in seconds." },
                 { q: "Can I add an image watermark like a logo?", a: "Yes. PDF.it supports both text and image watermarks. Upload a PNG or JPG logo, adjust the size and opacity, and it will be placed on every page of your PDF." },
-                { q: "Is the Watermark PDF tool free?", a: "Watermark PDF is available to Pro and Business users. Pro starts at $7.99/month and includes unlimited watermarking, batch processing, and files up to 200MB." },
+                { q: "Is the Watermark PDF tool free?", a: "Watermark PDF is available to Pro and Business users. Pro starts at $3.99/month and includes unlimited watermarking, batch processing, and files up to 200MB." },
                 { q: "Will the watermark appear on every page?", a: "Yes. By default, the watermark is applied to every page of your PDF. This ensures consistent branding or security marking across the entire document." },
                 { q: "Can someone remove my watermark?", a: "A watermark added as an overlay can sometimes be removed with advanced tools. For stronger protection, combine watermarking with password protection using PDF.it's Protect PDF tool, or flatten the PDF afterward to bake the watermark into the page content." },
                 { q: "Can I watermark a PDF on my phone?", a: "Yes. PDF.it works in any mobile browser. Upload your PDF, add your watermark text or image, and download the result — no app needed." },

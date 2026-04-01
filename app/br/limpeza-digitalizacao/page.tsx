@@ -23,7 +23,7 @@ export default function LimpezaDigitalizacaoPage() {
     { q: "O que é Limpeza de Digitalização?", a: "Ela pega fotos de documentos tiradas com a câmera do seu celular e as transforma em PDFs limpos e profissionais. Remove sombras, corrige a iluminação e melhora a nitidez do texto para resultados com qualidade de scanner." },
     { q: "Quais formatos de imagem são suportados?", a: "JPG, PNG e WEBP. Esses são os formatos padrão usados pelas câmeras de celulares tanto em iPhone quanto em Android." },
     { q: "Qual é a diferença entre Preto e Branco e Limpeza Colorida?", a: "Preto e Branco converte para texto preto nítido em fundo branco, como um scanner. Limpeza Colorida mantém as cores enquanto remove sombras e melhora o contraste." },
-    { q: "A Limpeza de Digitalização é gratuita?", a: "Você pode limpar algumas digitalizações gratuitamente. Para uso ilimitado, faça upgrade para o plano Pro por $7.99/mês." },
+    { q: "A Limpeza de Digitalização é gratuita?", a: "Você pode limpar algumas digitalizações gratuitamente. Para uso ilimitado, faça upgrade para o plano Pro por $3.99/mês." },
     { q: "Funciona com qualquer câmera de celular?", a: "Sim. Funciona com fotos de qualquer celular — iPhone, Samsung, Google Pixel ou qualquer dispositivo Android." },
     { q: "Posso tornar o texto pesquisável?", a: "Esta ferramenta cria um PDF limpo a partir da sua foto. Para tornar o texto pesquisável, passe o resultado pela nossa ferramenta Scanner OCR." },
   ]

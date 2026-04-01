@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "El generador de Codigo QR es gratuito?",
-      "acceptedAnswer": { "@type": "Answer", "text": "La herramienta de Codigo QR de PDF.it es una funcion Pro a $7.99/mes. Los usuarios Pro obtienen generacion ilimitada de todos los tipos de codigos QR mas acceso a todas las herramientas premium de PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "La herramienta de Codigo QR de PDF.it es una funcion Pro a $3.99/mes. Los usuarios Pro obtienen generacion ilimitada de todos los tipos de codigos QR mas acceso a todas las herramientas premium de PDF." }
     }
   ]
 }
@@ -314,7 +314,7 @@ export default function TiposCodigoQRExplicadosPage() {
                 { q: "Que tipo de codigo QR es el mas comun?", a: "Los codigos QR de URL son por mucho los mas comunes. Enlazan a sitios web, paginas de destino, perfiles de redes sociales, menus en linea, documentos y cualquier otro contenido web." },
                 { q: "Puede un codigo QR contener multiples tipos de datos?", a: "No. Cada codigo QR codifica un tipo de dato. Sin embargo, puedes crear un codigo QR de URL que enlace a una pagina web que contenga multiples piezas de informacion." },
                 { q: "Todos los telefonos soportan todos los tipos de codigos QR?", a: "La mayoria de los smartphones modernos soportan codigos QR de URL, texto, WiFi y vCard de forma nativa a traves de su camara integrada. Algunos telefonos mas antiguos pueden no soportar la conexion WiFi automatica o el guardado de vCard." },
-                { q: "El generador de Codigo QR es gratuito?", a: "La herramienta de Codigo QR de PDF.it es una funcion Pro a $7.99/mes. Los usuarios Pro obtienen generacion ilimitada de todos los tipos de codigos QR mas acceso a todas las herramientas premium de PDF." },
+                { q: "El generador de Codigo QR es gratuito?", a: "La herramienta de Codigo QR de PDF.it es una funcion Pro a $3.99/mes. Los usuarios Pro obtienen generacion ilimitada de todos los tipos de codigos QR mas acceso a todas las herramientas premium de PDF." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

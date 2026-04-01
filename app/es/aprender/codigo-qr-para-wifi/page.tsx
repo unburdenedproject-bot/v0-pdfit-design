@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Esta herramienta es gratuita?",
-      "acceptedAnswer": { "@type": "Answer", "text": "El generador de Codigo QR de PDF.it es una funcion Pro a $7.99/mes. Los usuarios Pro obtienen generacion ilimitada de codigos QR incluyendo WiFi, URL, vCard y todos los demas tipos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "El generador de Codigo QR de PDF.it es una funcion Pro a $3.99/mes. Los usuarios Pro obtienen generacion ilimitada de codigos QR incluyendo WiFi, URL, vCard y todos los demas tipos." }
     }
   ]
 }
@@ -297,7 +297,7 @@ export default function CodigoQRParaWiFiPage() {
                 { q: "Funciona tanto en iPhone como en Android?", a: "Si. Los iPhones con iOS 11 o posterior y los telefonos Android con Android 10 o posterior pueden escanear codigos QR de WiFi con su app de camara integrada y conectarse automaticamente." },
                 { q: "Que informacion necesito para crear un codigo QR de WiFi?", a: "Necesitas tres cosas: el nombre de tu red (SSID), tu contrasena WiFi y el tipo de encriptacion (generalmente WPA/WPA2 para routers modernos). Revisa la configuracion de tu router o la etiqueta en tu router." },
                 { q: "Necesito actualizar el codigo QR si cambio mi contrasena WiFi?", a: "Si. Los codigos QR de WiFi son estaticos — la contrasena esta codificada directamente en el patron del codigo QR. Si cambias tu contrasena WiFi, necesitas generar un nuevo codigo QR." },
-                { q: "Esta herramienta es gratuita?", a: "El generador de Codigo QR de PDF.it es una funcion Pro a $7.99/mes. Los usuarios Pro obtienen generacion ilimitada de codigos QR incluyendo WiFi, URL, vCard y todos los demas tipos." },
+                { q: "Esta herramienta es gratuita?", a: "El generador de Codigo QR de PDF.it es una funcion Pro a $3.99/mes. Los usuarios Pro obtienen generacion ilimitada de codigos QR incluyendo WiFi, URL, vCard y todos los demas tipos." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

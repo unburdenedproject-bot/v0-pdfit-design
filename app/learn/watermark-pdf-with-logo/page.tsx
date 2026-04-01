@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is the Watermark PDF tool free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Watermark PDF is available to Pro ($7.99/month) and Business ($13.99/month) users. Both tiers include unlimited watermarking, batch processing, and files up to 200MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Watermark PDF is available to Pro ($3.99/month) and Business ($13.99/month) users. Both tiers include unlimited watermarking, batch processing, and files up to 200MB." }
     }
   ]
 }
@@ -290,7 +290,7 @@ export default function WatermarkPDFWithLogoPage() {
                 { q: "What size and opacity work best for a logo watermark?", a: "For a subtle background watermark, use 10-20% opacity and scale the logo to about 30-50% of the page width. For a more visible stamp, increase opacity to 25-35%. Place it in the center for background branding or in a corner for a subtle mark." },
                 { q: "Can I watermark multiple PDFs with my logo at once?", a: "Yes. Pro and Business users can use batch processing to apply the same logo watermark to multiple PDFs simultaneously. Upload all your files, configure the watermark once, and apply to all." },
                 { q: "Will adding a logo watermark increase my file size?", a: "Slightly. The logo image is embedded on each page, which adds some file size. If the result is too large, use PDF.it's Compress PDF tool after watermarking to reduce the file size." },
-                { q: "Is the Watermark PDF tool free?", a: "Watermark PDF is available to Pro ($7.99/month) and Business ($13.99/month) users. Both tiers include unlimited watermarking, batch processing, and files up to 200MB." },
+                { q: "Is the Watermark PDF tool free?", a: "Watermark PDF is available to Pro ($3.99/month) and Business ($13.99/month) users. Both tiers include unlimited watermarking, batch processing, and files up to 200MB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

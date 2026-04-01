@@ -22,7 +22,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 
 ## Pricing Tiers
 - Free: 10 conversions/day (3 anonymous, then must log in), files up to 25MB, basic PDF tools, single file, standard processing
-- Pro ($7.99/month, $79.90/year): Unlimited conversions, files up to 200MB, all PDF tools (OCR, QR, PDF to Word/Excel/PPT), batch processing, priority speed
+- Pro ($3.99/month, $39.90/year): Unlimited conversions, files up to 200MB, all PDF tools (OCR, QR, PDF to Word/Excel/PPT), batch processing, priority speed
 - Business ($13.99/month, $139.90/year): Everything in Pro + files up to 1GB, workflow automation, table extraction to Excel (200 pages/month), PDF comparison, eSign, PDF redaction
 - Enterprise ($49.99/month, $499.90/year): Everything in Business + table extraction (2,000 pages/month), 5 enterprise workflow templates, priority processing queue, dedicated email support, early access to new features
 

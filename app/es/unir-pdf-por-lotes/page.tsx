@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿La unión por lotes está disponible en el plan gratuito?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Los usuarios gratuitos pueden unir archivos uno a la vez con archivos de hasta 25MB. El procesamiento por lotes — subir y unir múltiples archivos simultáneamente — es una función Pro disponible por $7.99/mes." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Los usuarios gratuitos pueden unir archivos uno a la vez con archivos de hasta 25MB. El procesamiento por lotes — subir y unir múltiples archivos simultáneamente — es una función Pro disponible por $3.99/mes." }
     },
     {
       "@type": "Question",
@@ -191,7 +191,7 @@ export default function UnirPDFPorLotesPage() {
             <div className="space-y-6">
               {[
                 { q: "¿Cuántos PDFs puedo unir por lotes?", a: "Los usuarios Pro pueden subir y unir docenas de archivos PDF en una sola operación por lotes. No hay un límite fijo de archivos — la principal restricción es el tamaño total, que puede ser de hasta 200MB por archivo para usuarios Pro." },
-                { q: "¿La unión por lotes está disponible en el plan gratuito?", a: "Los usuarios gratuitos pueden unir archivos uno a la vez con archivos de hasta 25MB. El procesamiento por lotes — subir y unir múltiples archivos simultáneamente — es una función Pro disponible por $7.99/mes." },
+                { q: "¿La unión por lotes está disponible en el plan gratuito?", a: "Los usuarios gratuitos pueden unir archivos uno a la vez con archivos de hasta 25MB. El procesamiento por lotes — subir y unir múltiples archivos simultáneamente — es una función Pro disponible por $3.99/mes." },
                 { q: "¿Puedo elegir el orden de los PDFs unidos por lotes?", a: "Sí. Cuando subes múltiples archivos para unión por lotes, puedes ordenarlos como prefieras antes de combinar. El PDF final seguirá la secuencia que establezcas." },
                 { q: "¿Qué tan rápido es el procesamiento por lotes?", a: "El procesamiento por lotes es significativamente más rápido que unir archivos uno por uno. PDF.it procesa todos los archivos en paralelo, ahorrándote horas de trabajo manual." },
                 { q: "¿Cuál es el tamaño máximo de archivo para unir por lotes?", a: "Los usuarios Pro pueden subir archivos de hasta 200MB cada uno. Los usuarios gratuitos están limitados a 25MB por archivo. Para documentos muy grandes, considera comprimirlos primero con la herramienta Comprimir PDF de PDF.it." },

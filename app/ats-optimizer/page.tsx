@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     q: "Is the ATS Optimizer free?",
-    a: "ATS Optimizer is a Pro feature at $7.99/month. Pro includes unlimited resume analyses plus all other PDF tools.",
+    a: "ATS Optimizer is a Pro feature at $3.99/month. Pro includes unlimited resume analyses plus all other PDF tools.",
   },
 ]
 

@@ -247,7 +247,7 @@ export default function HomePagePt() {
                     Precisa de conversoes ilimitadas ou arquivos maiores?
                   </h3>
                   <p className="text-slate-400 text-sm mb-5 max-w-lg mx-auto leading-relaxed">
-                    Atualize para Pro para conversoes ilimitadas, processamento em lote e todas as ferramentas — $7.99/mes. Precisa de assinatura eletronica e automacao? Experimente Business por $13.99/mes.
+                    Atualize para Pro para conversoes ilimitadas, processamento em lote e todas as ferramentas — $3.99/mes. Precisa de assinatura eletronica e automacao? Experimente Business por $13.99/mes.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <Link
@@ -463,12 +463,12 @@ export default function HomePagePt() {
 
               <div className="space-y-3">
                 {[
-                  { q: "O PDF.it e gratis?", a: "Sim. O PDF.it oferece um plano gratuito com 10 conversoes por dia e arquivos ate 25MB. Nao precisa de conta para ferramentas gratuitas. Atualize para Pro ($7.99/mes) para conversoes ilimitadas, todas as ferramentas e arquivos ate 200MB." },
+                  { q: "O PDF.it e gratis?", a: "Sim. O PDF.it oferece um plano gratuito com 10 conversoes por dia e arquivos ate 25MB. Nao precisa de conta para ferramentas gratuitas. Atualize para Pro ($3.99/mes) para conversoes ilimitadas, todas as ferramentas e arquivos ate 200MB." },
                   { q: "Preciso criar uma conta?", a: "Nao precisa de conta para usar as ferramentas gratuitas — basta enviar seu arquivo e converter. Conta e necessaria para funcoes Pro e gerenciar sua assinatura." },
                   { q: "E seguro enviar meus arquivos?", a: "Sim. Todas as transferencias usam criptografia SSL/HTTPS. Os arquivos sao processados de forma segura e removidos automaticamente quando sua sessao termina. Nao armazenamos, revisamos ou compartilhamos seus documentos." },
                   { q: "Quais formatos de arquivo sao suportados?", a: "O PDF.it suporta PDF, JPG, PNG, TXT e formatos Office (Word, Excel, PowerPoint). As ferramentas incluem converter, comprimir, unir, dividir, girar, proteger, desbloquear, marca d'agua e OCR." },
                   { q: "Qual e o tamanho maximo de arquivo?", a: "Contas gratuitas podem enviar arquivos ate 25MB. Contas Pro podem enviar ate 200MB. Contas Business podem enviar ate 1GB." },
-                  { q: "O que inclui o plano Pro?", a: "Pro ($7.99/mes) inclui conversoes ilimitadas, todas as ferramentas PDF (incluindo OCR, Marca d'Agua e Office para PDF), e arquivos ate 200MB. Business ($13.99/mes) adiciona assinatura eletronica, automacao e mais." },
+                  { q: "O que inclui o plano Pro?", a: "Pro ($3.99/mes) inclui conversoes ilimitadas, todas as ferramentas PDF (incluindo OCR, Marca d'Agua e Office para PDF), e arquivos ate 200MB. Business ($13.99/mes) adiciona assinatura eletronica, automacao e mais." },
                   { q: "Funciona no celular?", a: "Sim. O PDF.it funciona em navegadores modernos incluindo Chrome, Firefox, Safari e Edge em computador, tablet e celular." },
                   { q: "Como posso obter ajuda?", a: "Visite nossa pagina de Contato ou escreva para suporte@pdf.it.com. Respondemos em menos de um dia util." },
                 ].map((faq, i) => (

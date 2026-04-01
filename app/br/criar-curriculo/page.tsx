@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     q: "O Criador de Curriculo e gratuito?",
-    a: "Criar Curriculo e um recurso Pro a $7.99/mes. O Pro inclui geracao ilimitada de curriculos mais todas as outras ferramentas PDF.",
+    a: "Criar Curriculo e um recurso Pro a $3.99/mes. O Pro inclui geracao ilimitada de curriculos mais todas as outras ferramentas PDF.",
   },
 ]
 

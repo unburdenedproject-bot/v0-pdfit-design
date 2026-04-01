@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is the QR Code generator a Pro feature?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it's QR Code tool is a Pro feature available at $7.99/month. Pro users get unlimited QR code generation plus all premium PDF tools." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it's QR Code tool is a Pro feature available at $3.99/month. Pro users get unlimited QR code generation plus all premium PDF tools." }
     }
   ]
 }
@@ -287,7 +287,7 @@ export default function QRCodeForBusinessCardPage() {
                 { q: "How big should a QR code be on a business card?", a: "At least 2cm x 2cm (about 0.8 x 0.8 inches). Smaller QR codes are harder for phone cameras to read, especially in low light. If your card design allows it, go bigger — 2.5cm is ideal." },
                 { q: "Where should I place the QR code on my business card?", a: "Place it on the back of the card to keep the front clean and professional. If it goes on the front, put it in a corner with enough white space around it. Never let text or graphics overlap the QR code." },
                 { q: "Can I update the QR code destination later?", a: "Static QR codes cannot be updated — the URL or data is baked into the pattern. If you think you might change your website URL, use a short link service that lets you redirect the destination without changing the QR code." },
-                { q: "Is the QR Code generator a Pro feature?", a: "Yes. PDF.it's QR Code tool is a Pro feature available at $7.99/month. Pro users get unlimited QR code generation plus all premium PDF tools." },
+                { q: "Is the QR Code generator a Pro feature?", a: "Yes. PDF.it's QR Code tool is a Pro feature available at $3.99/month. Pro users get unlimited QR code generation plus all premium PDF tools." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

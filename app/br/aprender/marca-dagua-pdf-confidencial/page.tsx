@@ -19,7 +19,7 @@ const faqSchema = {
     { "@type": "Question", "name": "Posso personalizar a aparencia da marca d'agua?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. No PDF.it voce pode alterar o texto, tamanho da fonte, cor, opacidade, angulo e posicao da marca d'agua em cada pagina do PDF." } },
     { "@type": "Question", "name": "A marca d'agua pode ser removida depois?", "acceptedAnswer": { "@type": "Answer", "text": "A marca d'agua adicionada pelo PDF.it e incorporada ao PDF. Para dificultar a remocao, use opacidade media e posicione sobre o conteudo principal do documento." } },
     { "@type": "Question", "name": "A marca d'agua e aplicada em todas as paginas?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Por padrao, a marca d'agua e aplicada em todas as paginas do PDF, garantindo protecao uniforme em todo o documento." } },
-    { "@type": "Question", "name": "Preciso pagar para usar a marca d'agua?", "acceptedAnswer": { "@type": "Answer", "text": "A ferramenta Marca d'Agua em PDF e uma funcionalidade Pro do PDF.it, disponivel por $7.99/mes com conversoes ilimitadas e arquivos ate 200MB." } },
+    { "@type": "Question", "name": "Preciso pagar para usar a marca d'agua?", "acceptedAnswer": { "@type": "Answer", "text": "A ferramenta Marca d'Agua em PDF e uma funcionalidade Pro do PDF.it, disponivel por $3.99/mes com conversoes ilimitadas e arquivos ate 200MB." } },
   ]
 }
 
@@ -115,7 +115,7 @@ export default function MarcaDaguaConfidencialPage() {
                 <li>&#10003; Texto personalizado com controle total de fonte, cor e tamanho.</li>
                 <li>&#10003; Ajuste de opacidade e angulo de rotacao.</li>
                 <li>&#10003; Aplicacao automatica em todas as paginas do PDF.</li>
-                <li>&#10003; Processamento de arquivos ate 200MB no plano Pro ($7.99/mes).</li>
+                <li>&#10003; Processamento de arquivos ate 200MB no plano Pro ($3.99/mes).</li>
                 <li>&#10003; Depois de adicionar a marca d&apos;agua, use <Link href="/br/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> se o arquivo ficar grande demais para e-mail.</li>
               </ul>
             </section>
@@ -156,7 +156,7 @@ export default function MarcaDaguaConfidencialPage() {
                 { q: "Posso personalizar a aparencia da marca d'agua?", a: "Sim. No PDF.it voce pode alterar o texto, tamanho da fonte, cor, opacidade, angulo e posicao da marca d'agua em cada pagina do PDF." },
                 { q: "A marca d'agua pode ser removida depois?", a: "A marca d'agua adicionada pelo PDF.it e incorporada ao PDF. Para dificultar a remocao, use opacidade media e posicione sobre o conteudo principal." },
                 { q: "A marca d'agua e aplicada em todas as paginas?", a: "Sim. Por padrao, a marca d'agua e aplicada em todas as paginas do PDF, garantindo protecao uniforme." },
-                { q: "Preciso pagar para usar a marca d'agua?", a: "A ferramenta Marca d'Agua em PDF e uma funcionalidade Pro do PDF.it, disponivel por $7.99/mes com conversoes ilimitadas e arquivos ate 200MB." },
+                { q: "Preciso pagar para usar a marca d'agua?", a: "A ferramenta Marca d'Agua em PDF e uma funcionalidade Pro do PDF.it, disponivel por $3.99/mes com conversoes ilimitadas e arquivos ate 200MB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

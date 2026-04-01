@@ -202,7 +202,7 @@ export default function ConvertirWordAPdfPage() {
                     <tr className="bg-slate-900 text-white">
                       <th className="text-left py-3 px-4 font-bold">Característica</th>
                       <th className="text-left py-3 px-4 font-bold">Gratis</th>
-                      <th className="text-left py-3 px-4 font-bold">Pro ($7.99/mes)</th>
+                      <th className="text-left py-3 px-4 font-bold">Pro ($3.99/mes)</th>
                     </tr>
                   </thead>
                   <tbody className="text-slate-700">

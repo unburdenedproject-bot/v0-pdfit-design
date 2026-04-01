@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     q: "¿El Optimizador ATS es gratuito?",
-    a: "El Optimizador ATS es una función Pro a $7.99/mes. Pro incluye análisis ilimitados de currículums más todas las demás herramientas PDF.",
+    a: "El Optimizador ATS es una función Pro a $3.99/mes. Pro incluye análisis ilimitados de currículums más todas las demás herramientas PDF.",
   },
 ]
 

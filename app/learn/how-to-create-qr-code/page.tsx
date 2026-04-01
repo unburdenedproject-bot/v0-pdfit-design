@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is the QR Code tool free on PDF.it?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The QR Code generator is a Pro feature on PDF.it. Pro users ($7.99/month) get unlimited QR code generation along with all other premium PDF tools." }
+      "acceptedAnswer": { "@type": "Answer", "text": "The QR Code generator is a Pro feature on PDF.it. Pro users ($3.99/month) get unlimited QR code generation along with all other premium PDF tools." }
     }
   ]
 }
@@ -303,7 +303,7 @@ export default function HowToCreateQRCodePage() {
                 { q: "Do QR codes expire?", a: "Static QR codes never expire — the data is encoded directly in the pattern. However, if your QR code links to a URL and that URL goes down, the QR code will still work but the destination won't load." },
                 { q: "Can I customize the color of my QR code?", a: "Yes. PDF.it's QR Code tool lets you change foreground and background colors. Just make sure there's enough contrast between them — dark foreground on light background works best for reliable scanning." },
                 { q: "What file format should I download my QR code in?", a: "Use PNG for digital use (websites, emails, social media). Use SVG if you need to print the QR code at large sizes without losing quality — SVG scales infinitely without pixelation." },
-                { q: "Is the QR Code tool free on PDF.it?", a: "The QR Code generator is a Pro feature on PDF.it. Pro users ($7.99/month) get unlimited QR code generation along with all other premium PDF tools." },
+                { q: "Is the QR Code tool free on PDF.it?", a: "The QR Code generator is a Pro feature on PDF.it. Pro users ($3.99/month) get unlimited QR code generation along with all other premium PDF tools." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

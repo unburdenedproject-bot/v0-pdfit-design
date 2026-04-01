@@ -23,7 +23,7 @@ export default function QRCodePage() {
     { q: "What can I put in a QR code?", a: "You can encode website links, plain text, email addresses, phone numbers, and more. The QR code stores the data so anyone scanning it gets instant access." },
     { q: "What size should a QR code be for printing?", a: "As a rule of thumb, keep QR codes at least 2cm \u00d7 2cm for close-range scanning (business cards) and larger for posters or signage. Always test-scan before printing." },
     { q: "Why isn't my QR code scanning?", a: "Common issues include low contrast, small size, or image blur. Make sure the QR code has strong contrast against its background and is large enough for the scanning distance." },
-    { q: "Is the QR Code Generator free?", a: "QR Code Generator is a Pro feature, available on the PDF.it Pro plan at $7.99/month. Pro includes unlimited QR codes plus all other PDF tools." },
+    { q: "Is the QR Code Generator free?", a: "QR Code Generator is a Pro feature, available on the PDF.it Pro plan at $3.99/month. Pro includes unlimited QR codes plus all other PDF tools." },
     { q: "Is my data stored when I generate a QR code?", a: "No. QR codes are generated and returned directly to your browser. We do not store the content you enter." },
   ]
 

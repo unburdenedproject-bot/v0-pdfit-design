@@ -205,7 +205,7 @@ export default function ConvertWordToPDFPage() {
                     <tr className="bg-slate-900 text-white">
                       <th className="text-left py-3 px-4 font-bold">Feature</th>
                       <th className="text-left py-3 px-4 font-bold">Free</th>
-                      <th className="text-left py-3 px-4 font-bold">Pro ($7.99/mo)</th>
+                      <th className="text-left py-3 px-4 font-bold">Pro ($3.99/mo)</th>
                     </tr>
                   </thead>
                   <tbody className="text-slate-700">

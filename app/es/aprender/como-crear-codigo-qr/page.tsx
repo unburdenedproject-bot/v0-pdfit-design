@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "La herramienta de Codigo QR es gratuita en PDF.it?",
-      "acceptedAnswer": { "@type": "Answer", "text": "El generador de Codigo QR es una funcion Pro en PDF.it. Los usuarios Pro ($7.99/mes) obtienen generacion ilimitada de codigos QR junto con todas las demas herramientas premium de PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "El generador de Codigo QR es una funcion Pro en PDF.it. Los usuarios Pro ($3.99/mes) obtienen generacion ilimitada de codigos QR junto con todas las demas herramientas premium de PDF." }
     }
   ]
 }
@@ -303,7 +303,7 @@ export default function ComoCrearCodigoQRPage() {
                 { q: "Los codigos QR expiran?", a: "Los codigos QR estaticos nunca expiran — los datos estan codificados directamente en el patron. Sin embargo, si tu codigo QR enlaza a una URL y esa URL deja de funcionar, el codigo QR seguira funcionando pero el destino no cargara." },
                 { q: "Puedo personalizar el color de mi codigo QR?", a: "Si. La herramienta de Codigo QR de PDF.it te permite cambiar los colores de primer plano y fondo. Solo asegurate de que haya suficiente contraste entre ellos — primer plano oscuro sobre fondo claro funciona mejor." },
                 { q: "En que formato de archivo debo descargar mi codigo QR?", a: "Usa PNG para uso digital (sitios web, correos, redes sociales). Usa SVG si necesitas imprimir el codigo QR en tamanos grandes sin perder calidad — SVG escala infinitamente sin pixelacion." },
-                { q: "La herramienta de Codigo QR es gratuita en PDF.it?", a: "El generador de Codigo QR es una funcion Pro en PDF.it. Los usuarios Pro ($7.99/mes) obtienen generacion ilimitada de codigos QR junto con todas las demas herramientas premium de PDF." },
+                { q: "La herramienta de Codigo QR es gratuita en PDF.it?", a: "El generador de Codigo QR es una funcion Pro en PDF.it. Los usuarios Pro ($3.99/mes) obtienen generacion ilimitada de codigos QR junto con todas las demas herramientas premium de PDF." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

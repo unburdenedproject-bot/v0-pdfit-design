@@ -20,7 +20,7 @@ const faqSchema = {
     { "@type": "Question", "name": "Puede el OCR manejar multiples idiomas?", "acceptedAnswer": { "@type": "Answer", "text": "Si. La mayoria de herramientas OCR modernas, incluyendo el Escaner OCR de PDF.it, soportan docenas de idiomas incluyendo espanol, ingles, frances, aleman, portugues y muchos mas." } },
     { "@type": "Question", "name": "Es el OCR 100% preciso?", "acceptedAnswer": { "@type": "Answer", "text": "El OCR tipicamente tiene 95-99% de precision en escaneos limpios de alta resolucion con fuentes impresas estandar. La precision disminuye con imagenes de baja resolucion, texto manuscrito, fuentes inusuales o documentos con formato complejo." } },
     { "@type": "Question", "name": "Necesito instalar software para usar OCR?", "acceptedAnswer": { "@type": "Answer", "text": "No. El Escaner OCR de PDF.it funciona completamente en tu navegador. Sube tu PDF escaneado, selecciona el idioma y descarga un PDF buscable — sin instalacion de software requerida." } },
-    { "@type": "Question", "name": "Es OCR una funcion Pro en PDF.it?", "acceptedAnswer": { "@type": "Answer", "text": "Si. El Escaner OCR esta disponible para suscriptores Pro y Business. Pro cuesta $7.99/mes e incluye conversiones ilimitadas, archivos hasta 200MB, procesamiento por lotes y todas las herramientas avanzadas incluyendo OCR." } }
+    { "@type": "Question", "name": "Es OCR una funcion Pro en PDF.it?", "acceptedAnswer": { "@type": "Answer", "text": "Si. El Escaner OCR esta disponible para suscriptores Pro y Business. Pro cuesta $3.99/mes e incluye conversiones ilimitadas, archivos hasta 200MB, procesamiento por lotes y todas las herramientas avanzadas incluyendo OCR." } }
   ]
 }
 
@@ -118,7 +118,7 @@ export default function QueEsOCRPage() {
                 <li>&#10003; Sube cualquier PDF escaneado — la herramienta detecta paginas solo de imagen automaticamente.</li>
                 <li>&#10003; Selecciona el idioma del documento para mejor precision de reconocimiento.</li>
                 <li>&#10003; Descarga un PDF buscable con una capa de texto invisible sobre el escaneo original.</li>
-                <li>&#10003; Procesa archivos hasta 200MB con una suscripcion Pro ($7.99/mes).</li>
+                <li>&#10003; Procesa archivos hasta 200MB con una suscripcion Pro ($3.99/mes).</li>
                 <li>&#10003; Despues del OCR, usa <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> si el archivo es muy grande para email o portales de carga.</li>
               </ul>
               <p className="text-slate-600 mt-4">El Escaner OCR esta disponible en los planes <Link href="/es/precios" className="text-orange-600 hover:underline">Pro y Business</Link>. Los usuarios gratuitos pueden explorar todas las demas herramientas de PDF.it con generosos limites diarios.</p>
@@ -164,7 +164,7 @@ export default function QueEsOCRPage() {
                 { q: "Puede el OCR manejar multiples idiomas?", a: "Si. La mayoria de herramientas OCR modernas, incluyendo el Escaner OCR de PDF.it, soportan docenas de idiomas incluyendo espanol, ingles, frances, aleman, portugues y muchos mas." },
                 { q: "Es el OCR 100% preciso?", a: "El OCR tipicamente tiene 95-99% de precision en escaneos limpios de alta resolucion con fuentes impresas estandar. La precision disminuye con imagenes de baja resolucion, texto manuscrito o fuentes inusuales." },
                 { q: "Necesito instalar software para usar OCR?", a: "No. El Escaner OCR de PDF.it funciona completamente en tu navegador. Sube tu PDF escaneado, selecciona el idioma y descarga un PDF buscable — sin instalacion requerida." },
-                { q: "Es OCR una funcion Pro en PDF.it?", a: "Si. El Escaner OCR esta disponible para suscriptores Pro y Business. Pro cuesta $7.99/mes e incluye conversiones ilimitadas, archivos hasta 200MB, procesamiento por lotes y todas las herramientas avanzadas." },
+                { q: "Es OCR una funcion Pro en PDF.it?", a: "Si. El Escaner OCR esta disponible para suscriptores Pro y Business. Pro cuesta $3.99/mes e incluye conversiones ilimitadas, archivos hasta 200MB, procesamiento por lotes y todas las herramientas avanzadas." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

@@ -15,7 +15,7 @@ export default function PhoneScanCleanupPage() {
     { q: "What is Phone Scan Cleanup?", a: "It takes photos of documents from your phone camera and transforms them into clean, professional PDFs. It removes shadows, fixes lighting, and sharpens text for scanner-quality results." },
     { q: "What image formats are supported?", a: "JPG, PNG, and WEBP. These are the standard formats used by phone cameras on both iPhone and Android." },
     { q: "What is the difference between Black & White and Color Cleanup?", a: "Black & White converts to crisp black text on white background, like a scanner. Color Cleanup keeps colors while removing shadows and boosting contrast." },
-    { q: "Is Phone Scan Cleanup free?", a: "You can clean up a few scans for free. For unlimited usage, upgrade to the Pro plan at $7.99/month." },
+    { q: "Is Phone Scan Cleanup free?", a: "You can clean up a few scans for free. For unlimited usage, upgrade to the Pro plan at $3.99/month." },
     { q: "Does it work with any phone camera?", a: "Yes. It works with photos from any phone — iPhone, Samsung, Google Pixel, or any Android device." },
     { q: "Can I make the text searchable?", a: "This tool creates a clean PDF from your photo. To make text searchable, run the result through our OCR Scanner tool." },
   ]

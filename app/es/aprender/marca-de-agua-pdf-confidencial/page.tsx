@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "La herramienta Marca de Agua PDF es gratis?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Marca de Agua PDF esta disponible para usuarios Pro ($7.99/mes) y Business ($13.99/mes). Ambos niveles incluyen marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Marca de Agua PDF esta disponible para usuarios Pro ($3.99/mes) y Business ($13.99/mes). Ambos niveles incluyen marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." }
     }
   ]
 }
@@ -298,7 +298,7 @@ export default function MarcaDeAguaPDFConfidencialPage() {
                 { q: "La marca de agua Confidencial es permanente?", a: "Por defecto, las marcas de agua se agregan como superposiciones. Para hacerla permanente, aplana el PDF despues de agregar la marca de agua usando la herramienta Aplanar PDF de PDF.it. Esto integra la marca de agua en la pagina para que no pueda eliminarse." },
                 { q: "Puedo agregar marca de agua a multiples PDF a la vez?", a: "Si. Los usuarios Pro y Business pueden usar procesamiento por lotes para agregar marca de agua a multiples PDF de una vez. Sube todos tus archivos, configura la marca de agua una vez, y aplicala a todos los documentos simultaneamente." },
                 { q: "Que opacidad debo usar para una marca de agua Confidencial?", a: "Para la mayoria de los documentos, 15-25% de opacidad funciona bien. Hace que la marca de agua sea claramente visible sin dificultar la lectura del texto subyacente. Para mayor disuasion, sube hasta 30-40%." },
-                { q: "La herramienta Marca de Agua PDF es gratis?", a: "Marca de Agua PDF esta disponible para usuarios Pro ($7.99/mes) y Business ($13.99/mes). Ambos niveles incluyen marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." },
+                { q: "La herramienta Marca de Agua PDF es gratis?", a: "Marca de Agua PDF esta disponible para usuarios Pro ($3.99/mes) y Business ($13.99/mes). Ambos niveles incluyen marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

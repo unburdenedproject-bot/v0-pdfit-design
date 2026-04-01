@@ -16,7 +16,7 @@ const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainE
   { "@type": "Question", "name": "Puedo escanear un documento con la camara de mi telefono y hacerle OCR?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Usa el escaner integrado de tu telefono (Notas en iPhone, Google Drive en Android) para capturar el documento como PDF, luego subelo al Escaner OCR de PDF.it." } },
   { "@type": "Question", "name": "Que tamano de archivo puedo hacer OCR en movil?", "acceptedAnswer": { "@type": "Answer", "text": "Los usuarios Pro de PDF.it pueden procesar PDFs hasta 200MB en cualquier dispositivo, incluyendo movil." } },
   { "@type": "Question", "name": "El OCR en movil sera mas lento que en computadora?", "acceptedAnswer": { "@type": "Answer", "text": "No. El procesamiento OCR ocurre en los servidores de PDF.it, no en tu dispositivo. La velocidad es la misma ya sea que uses telefono, tableta o computadora." } },
-  { "@type": "Question", "name": "El OCR en movil es una funcion gratuita?", "acceptedAnswer": { "@type": "Answer", "text": "El Escaner OCR es una funcion Pro en PDF.it, disponible por $7.99/mes. Esto aplica tanto para uso movil como de escritorio." } }
+  { "@type": "Question", "name": "El OCR en movil es una funcion gratuita?", "acceptedAnswer": { "@type": "Answer", "text": "El Escaner OCR es una funcion Pro en PDF.it, disponible por $3.99/mes. Esto aplica tanto para uso movil como de escritorio." } }
 ] }
 
 const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como Hacer OCR a un PDF en Tu Telefono", "description": "Haz un PDF escaneado buscable desde tu iPhone o Android en 3 pasos.", "step": [
@@ -135,7 +135,7 @@ export default function OCRPDFEnMovilPage() {
               { q: "Puedo escanear un documento con mi telefono y hacerle OCR?", a: "Si. Usa el escaner integrado de tu telefono (Notas en iPhone, Google Drive en Android) para capturar como PDF, luego sube al Escaner OCR." },
               { q: "Que tamano de archivo puedo hacer OCR en movil?", a: "Los usuarios Pro pueden procesar PDFs hasta 200MB en cualquier dispositivo, incluyendo movil." },
               { q: "El OCR en movil es mas lento que en computadora?", a: "No. El procesamiento ocurre en los servidores de PDF.it. La velocidad es la misma en cualquier dispositivo." },
-              { q: "El OCR en movil es gratuito?", a: "El Escaner OCR es una funcion Pro en PDF.it, disponible por $7.99/mes. Aplica tanto para uso movil como de escritorio." },
+              { q: "El OCR en movil es gratuito?", a: "El Escaner OCR es una funcion Pro en PDF.it, disponible por $3.99/mes. Aplica tanto para uso movil como de escritorio." },
             ].map((faq, i) => (
               <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                 <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

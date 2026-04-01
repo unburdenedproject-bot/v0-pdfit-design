@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is this a free tool?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it's QR Code generator is a Pro feature at $7.99/month. Pro includes unlimited QR codes plus all PDF tools — perfect for restaurants that also need to compress, convert, or manage PDF menus." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it's QR Code generator is a Pro feature at $3.99/month. Pro includes unlimited QR codes plus all PDF tools — perfect for restaurants that also need to compress, convert, or manage PDF menus." }
     }
   ]
 }
@@ -286,7 +286,7 @@ export default function QRCodeForRestaurantMenuPage() {
                 { q: "How big should a menu QR code be?", a: "At least 3cm x 3cm for table tents and stickers. For wall signs or posters, go larger. The scanning distance matters — customers should be able to scan from at least 30cm away in restaurant lighting." },
                 { q: "Can customers scan the QR code without an app?", a: "Yes. All modern smartphones (iPhone and Android) can scan QR codes directly with their built-in camera app. No separate QR reader app is needed." },
                 { q: "How do I update my menu without reprinting QR codes?", a: "Use a URL shortener or redirect service. The QR code points to a short URL, and you change where that short URL redirects to whenever you update your menu. This way the QR code stays the same." },
-                { q: "Is this a free tool?", a: "PDF.it's QR Code generator is a Pro feature at $7.99/month. Pro includes unlimited QR codes plus all PDF tools — perfect for restaurants that also need to compress, convert, or manage PDF menus." },
+                { q: "Is this a free tool?", a: "PDF.it's QR Code generator is a Pro feature at $3.99/month. Pro includes unlimited QR codes plus all PDF tools — perfect for restaurants that also need to compress, convert, or manage PDF menus." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

@@ -16,7 +16,7 @@ const faqs = [
   { q: "What types of questions can it generate?", a: "Multiple choice (4 options with one correct answer), short answer (1-3 sentence responses), and true/false questions. You can pick one type or get a mix of all three." },
   { q: "Can I control the difficulty?", a: "Yes. Choose Easy (basic recall), Medium (understanding and application), or Hard (critical thinking and analysis). You can also pick how many questions to generate (5, 10, 15, or 20)." },
   { q: "What types of documents work best?", a: "Textbooks, research papers, study guides, training manuals, course materials, and any educational or informational PDF. For scanned PDFs, run OCR first." },
-  { q: "What plan do I need?", a: "AI Question Generator is a Pro plan feature at $7.99/month. It includes all Pro tools like PDF conversions, OCR, resume tools, and more." },
+  { q: "What plan do I need?", a: "AI Question Generator is a Pro plan feature at $3.99/month. It includes all Pro tools like PDF conversions, OCR, resume tools, and more." },
   { q: "Can I copy the questions?", a: "Yes. Use the Copy All button to copy all questions with answers and explanations to your clipboard, ready to paste into a document or quiz tool." },
 ]
 

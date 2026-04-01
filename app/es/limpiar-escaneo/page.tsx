@@ -23,7 +23,7 @@ export default function LimpiarEscaneoPage() {
     { q: "¿Qué es Limpiar Escaneo de Celular?", a: "Toma fotos de documentos capturadas con la cámara de tu celular y las transforma en PDFs limpios y profesionales. Elimina sombras, corrige la iluminación y mejora la nitidez del texto para resultados con calidad de escáner." },
     { q: "¿Qué formatos de imagen se admiten?", a: "JPG, PNG y WEBP. Estos son los formatos estándar que usan las cámaras de celulares tanto en iPhone como en Android." },
     { q: "¿Cuál es la diferencia entre Blanco y Negro y Limpieza a Color?", a: "Blanco y Negro convierte a texto negro nítido sobre fondo blanco, como un escáner. Limpieza a Color mantiene los colores mientras elimina sombras y mejora el contraste." },
-    { q: "¿Es gratis Limpiar Escaneo de Celular?", a: "Puedes limpiar algunos escaneos gratis. Para uso ilimitado, actualiza al plan Pro por $7.99/mes." },
+    { q: "¿Es gratis Limpiar Escaneo de Celular?", a: "Puedes limpiar algunos escaneos gratis. Para uso ilimitado, actualiza al plan Pro por $3.99/mes." },
     { q: "¿Funciona con cualquier cámara de celular?", a: "Sí. Funciona con fotos de cualquier celular — iPhone, Samsung, Google Pixel o cualquier dispositivo Android." },
     { q: "¿Puedo hacer el texto buscable?", a: "Esta herramienta crea un PDF limpio a partir de tu foto. Para hacer el texto buscable, pasa el resultado por nuestra herramienta Escáner OCR." },
   ]

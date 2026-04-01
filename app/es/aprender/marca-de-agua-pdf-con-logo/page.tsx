@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿La herramienta Marca de Agua PDF es gratuita?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Marca de Agua PDF está disponible para usuarios Pro ($7.99/mes) y Business ($13.99/mes). Ambos niveles incluyen marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Marca de Agua PDF está disponible para usuarios Pro ($3.99/mes) y Business ($13.99/mes). Ambos niveles incluyen marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." }
     }
   ]
 }
@@ -285,7 +285,7 @@ export default function MarcaDeAguaPDFConLogoPage() {
                 { q: "¿Qué tamaño y opacidad funcionan mejor para una marca de agua con logo?", a: "Para una marca de agua sutil de fondo, usa 10-20% de opacidad y escala el logo a aproximadamente 30-50% del ancho de la página. Para un sello más visible, aumenta la opacidad a 25-35%." },
                 { q: "¿Puedo poner marca de agua con mi logo en varios PDFs a la vez?", a: "Sí. Los usuarios Pro y Business pueden usar el procesamiento por lotes para aplicar la misma marca de agua con logo a múltiples PDFs simultáneamente." },
                 { q: "¿Agregar una marca de agua con logo aumentará el tamaño del archivo?", a: "Ligeramente. La imagen del logo se incrusta en cada página, lo que añade algo de tamaño. Si el resultado es demasiado grande, usa la herramienta Comprimir PDF de PDF.it después de aplicar la marca de agua." },
-                { q: "¿La herramienta Marca de Agua PDF es gratuita?", a: "Marca de Agua PDF está disponible para usuarios Pro ($7.99/mes) y Business ($13.99/mes). Ambos niveles incluyen marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." },
+                { q: "¿La herramienta Marca de Agua PDF es gratuita?", a: "Marca de Agua PDF está disponible para usuarios Pro ($3.99/mes) y Business ($13.99/mes). Ambos niveles incluyen marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

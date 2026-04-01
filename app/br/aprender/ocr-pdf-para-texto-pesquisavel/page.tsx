@@ -113,7 +113,7 @@ export default function OCRPDFTextoPesquisavelPage() {
                 <li>&#10003; Deteccao automatica de paginas somente imagem.</li>
                 <li>&#10003; Suporte a dezenas de idiomas incluindo portugues.</li>
                 <li>&#10003; Camada de texto invisivel que nao altera a aparencia do documento.</li>
-                <li>&#10003; Processamento de arquivos ate 200MB no plano Pro ($7.99/mes).</li>
+                <li>&#10003; Processamento de arquivos ate 200MB no plano Pro ($3.99/mes).</li>
                 <li>&#10003; Apos o OCR, use <Link href="/br/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> para reduzir o tamanho do arquivo.</li>
               </ul>
             </section>

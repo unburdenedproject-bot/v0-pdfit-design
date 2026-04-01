@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Es una herramienta gratuita?",
-      "acceptedAnswer": { "@type": "Answer", "text": "El generador de Codigo QR de PDF.it es una funcion Pro a $7.99/mes. Pro incluye codigos QR ilimitados mas todas las herramientas PDF — perfecto para restaurantes que tambien necesitan comprimir, convertir o gestionar menus en PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "El generador de Codigo QR de PDF.it es una funcion Pro a $3.99/mes. Pro incluye codigos QR ilimitados mas todas las herramientas PDF — perfecto para restaurantes que tambien necesitan comprimir, convertir o gestionar menus en PDF." }
     }
   ]
 }
@@ -286,7 +286,7 @@ export default function CodigoQRParaMenuRestaurantePage() {
                 { q: "Que tamano debe tener un codigo QR de menu?", a: "Al menos 3cm x 3cm para carpas de mesa y stickers. Para letreros de pared o posters, hazlo mas grande. La distancia de escaneo importa — los clientes deben poder escanear desde al menos 30cm en la iluminacion del restaurante." },
                 { q: "Los clientes pueden escanear el codigo QR sin una app?", a: "Si. Todos los smartphones modernos (iPhone y Android) pueden escanear codigos QR directamente con su app de camara integrada. No se necesita una app separada de lectura de QR." },
                 { q: "Como actualizo mi menu sin reimprimir los codigos QR?", a: "Usa un acortador de URL o servicio de redireccion. El codigo QR apunta a una URL corta, y cambias a donde redirige esa URL corta cada vez que actualizas tu menu. De esta manera el codigo QR sigue siendo el mismo." },
-                { q: "Es una herramienta gratuita?", a: "El generador de Codigo QR de PDF.it es una funcion Pro a $7.99/mes. Pro incluye codigos QR ilimitados mas todas las herramientas PDF — perfecto para restaurantes que tambien necesitan comprimir, convertir o gestionar menus en PDF." },
+                { q: "Es una herramienta gratuita?", a: "El generador de Codigo QR de PDF.it es una funcion Pro a $3.99/mes. Pro incluye codigos QR ilimitados mas todas las herramientas PDF — perfecto para restaurantes que tambien necesitan comprimir, convertir o gestionar menus en PDF." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

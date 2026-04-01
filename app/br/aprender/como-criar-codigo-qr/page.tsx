@@ -16,7 +16,7 @@ const faqSchema = {
   "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "Como criar um codigo QR gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Acesse o gerador de Codigo QR do PDF.it, selecione o tipo (URL, texto, WiFi, contato), insira as informacoes e baixe a imagem do QR code. E gratuito e sem necessidade de cadastro." } },
-    { "@type": "Question", "name": "Preciso pagar para gerar um codigo QR?", "acceptedAnswer": { "@type": "Answer", "text": "O gerador de Codigo QR do PDF.it e uma ferramenta Pro. Com o plano Pro ($7.99/mes) voce pode gerar codigos QR ilimitados com todas as opcoes de personalizacao." } },
+    { "@type": "Question", "name": "Preciso pagar para gerar um codigo QR?", "acceptedAnswer": { "@type": "Answer", "text": "O gerador de Codigo QR do PDF.it e uma ferramenta Pro. Com o plano Pro ($3.99/mes) voce pode gerar codigos QR ilimitados com todas as opcoes de personalizacao." } },
     { "@type": "Question", "name": "O codigo QR expira?", "acceptedAnswer": { "@type": "Answer", "text": "Um codigo QR estatico nunca expira — ele simplesmente codifica a informacao diretamente na imagem. Enquanto a imagem existir, o QR funciona." } },
     { "@type": "Question", "name": "Posso personalizar as cores do QR?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. No PDF.it voce pode alterar a cor do codigo e do fundo. Mantenha bom contraste para garantir que scanners consigam ler o codigo." } },
     { "@type": "Question", "name": "Qual formato baixar?", "acceptedAnswer": { "@type": "Answer", "text": "PNG e ideal para uso digital (sites, redes sociais). SVG e melhor para impressao em alta qualidade pois nao perde resolucao ao redimensionar." } },
@@ -116,7 +116,7 @@ export default function ComoCriarCodigoQRPage() {
                 <li>&#10003; Suporte a URL, texto, WiFi, contato (vCard), e-mail e telefone.</li>
                 <li>&#10003; Personalizacao de cores do codigo e fundo.</li>
                 <li>&#10003; Download em PNG e SVG.</li>
-                <li>&#10003; Disponivel no plano <Link href="/br/precos" className="text-orange-600 hover:underline">Pro</Link> ($7.99/mes).</li>
+                <li>&#10003; Disponivel no plano <Link href="/br/precos" className="text-orange-600 hover:underline">Pro</Link> ($3.99/mes).</li>
               </ul>
             </section>
           </div>

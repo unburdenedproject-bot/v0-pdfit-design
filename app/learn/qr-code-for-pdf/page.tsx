@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is the QR Code tool free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it's QR Code generator is a Pro feature ($7.99/month). Pro includes unlimited QR codes, PDF compression, conversion tools, and more." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it's QR Code generator is a Pro feature ($3.99/month). Pro includes unlimited QR codes, PDF compression, conversion tools, and more." }
     }
   ]
 }
@@ -290,7 +290,7 @@ export default function QRCodeForPDFPage() {
                 { q: "How large can the PDF be?", a: "There's no technical limit from the QR code side — it only stores the URL, not the file. However, keep your PDF under 5MB so it loads quickly on mobile devices. Use PDF.it's Compress PDF tool to reduce large files." },
                 { q: "Will the QR code still work if I update the PDF?", a: "If you replace the file at the same URL, yes. If the URL changes (new upload with a different link), the QR code will break. Use a redirect URL or replace the file in-place to avoid this." },
                 { q: "Can I password-protect the PDF behind the QR code?", a: "Yes, but the person scanning will need to enter the password to open the PDF. Use PDF.it's Protect PDF tool to add a password. Share the password separately — don't put it next to the QR code." },
-                { q: "Is the QR Code tool free?", a: "PDF.it's QR Code generator is a Pro feature ($7.99/month). Pro includes unlimited QR codes, PDF compression, conversion tools, and more." },
+                { q: "Is the QR Code tool free?", a: "PDF.it's QR Code generator is a Pro feature ($3.99/month). Pro includes unlimited QR codes, PDF compression, conversion tools, and more." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

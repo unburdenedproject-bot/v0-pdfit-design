@@ -34,7 +34,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿La organización por lotes es una función Pro?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. El procesamiento por lotes está disponible para cuentas Pro ($7.99/mes) y Business ($13.99/mes). Las cuentas gratuitas pueden organizar un PDF a la vez." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. El procesamiento por lotes está disponible para cuentas Pro ($3.99/mes) y Business ($13.99/mes). Las cuentas gratuitas pueden organizar un PDF a la vez." }
     },
     {
       "@type": "Question",
@@ -196,7 +196,7 @@ export default function OrganizarPDFPorLotesPage() {
               {[
                 { q: "¿Qué es la organización por lotes de PDFs?", a: "La organización por lotes te permite reorganizar las páginas de múltiples archivos PDF simultáneamente. En vez de procesar cada documento individualmente, sube varios PDFs y PDF.it los organiza todos a la vez." },
                 { q: "¿Cuántos PDFs puedo organizar a la vez?", a: "Las cuentas Pro y Business pueden procesar múltiples archivos por lotes. El límite depende del tamaño total de los archivos — hasta 200MB por sesión." },
-                { q: "¿La organización por lotes es una función Pro?", a: "Sí. El procesamiento por lotes está disponible para cuentas Pro ($7.99/mes) y Business ($13.99/mes). Las cuentas gratuitas pueden organizar un PDF a la vez." },
+                { q: "¿La organización por lotes es una función Pro?", a: "Sí. El procesamiento por lotes está disponible para cuentas Pro ($3.99/mes) y Business ($13.99/mes). Las cuentas gratuitas pueden organizar un PDF a la vez." },
                 { q: "¿Se mantiene la calidad de los documentos?", a: "Sí. La reorganización de páginas no afecta la calidad del contenido — texto, imágenes y formato se mantienen exactamente como en los originales." },
                 { q: "¿Puedo descargar todos los PDFs organizados a la vez?", a: "Sí. Después de organizar por lotes, puedes descargar todos los archivos procesados en un solo archivo ZIP." },
                 { q: "¿Es seguro subir múltiples PDFs?", a: "Sí. Todas las transferencias están encriptadas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." },

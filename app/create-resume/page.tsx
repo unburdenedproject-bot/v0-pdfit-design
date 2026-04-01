@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     q: "Is the Resume Builder free?",
-    a: "Create Resume is a Pro feature at $7.99/month. Pro includes unlimited resume generation plus all other PDF tools.",
+    a: "Create Resume is a Pro feature at $3.99/month. Pro includes unlimited resume generation plus all other PDF tools.",
   },
 ]
 

@@ -116,10 +116,10 @@ export default function PrecosPage() {
                       <h2 className="text-2xl font-black text-white mb-2">Pro</h2>
                       <p className="text-sm text-slate-400 mb-4">Desbloqueie todas as ferramentas sem limites diarios</p>
                       <div className="mb-2">
-                        <span className="text-5xl font-black text-[#E0C27A]">{billing === "monthly" ? "$7.99" : "$79.90"}</span>
+                        <span className="text-5xl font-black text-[#E0C27A]">{billing === "monthly" ? "$3.99" : "$39.90"}</span>
                         <span className="text-lg text-slate-400">{billing === "monthly" ? "/mes" : "/ano"}</span>
                       </div>
-                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-400">Equivale a $6.66/mes cobrado anualmente</p>}</div>
+                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-400">Equivale a $3.33/mes cobrado anualmente</p>}</div>
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
                       <p className="text-sm text-[#6B7CFF] font-medium">Tudo no Gratis, mais:</p>

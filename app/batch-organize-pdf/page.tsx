@@ -27,7 +27,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is batch processing available on the free plan?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Free users can process one file at a time with files up to 25MB. Batch processing — working with multiple files simultaneously — is a Pro feature available for $7.99/month, which also includes files up to 200MB and unlimited conversions." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Free users can process one file at a time with files up to 25MB. Batch processing — working with multiple files simultaneously — is a Pro feature available for $3.99/month, which also includes files up to 200MB and unlimited conversions." }
     },
     {
       "@type": "Question",
@@ -186,7 +186,7 @@ export default function BatchOrganizePDFPage() {
               {[
                 { q: "What does batch organize PDFs mean?", a: "Batch organizing means processing multiple PDF files at once — merging, splitting, rotating, or compressing them in bulk instead of one at a time. PDF.it Pro lets you upload multiple files and apply operations to all of them simultaneously." },
                 { q: "What operations can I perform in batch?", a: "With PDF.it Pro, you can batch merge (combine multiple PDFs), batch split (separate multiple PDFs into pages), batch rotate (fix orientation on multiple files), and batch compress (reduce file sizes in bulk). All operations support multi-file upload and Download All as ZIP." },
-                { q: "Is batch processing available on the free plan?", a: "Free users can process one file at a time with files up to 25MB. Batch processing — working with multiple files simultaneously — is a Pro feature available for $7.99/month, which also includes files up to 200MB and unlimited conversions." },
+                { q: "Is batch processing available on the free plan?", a: "Free users can process one file at a time with files up to 25MB. Batch processing — working with multiple files simultaneously — is a Pro feature available for $3.99/month, which also includes files up to 200MB and unlimited conversions." },
                 { q: "How many files can I process at once?", a: "Pro users can upload and process dozens of files in a single batch. There is no fixed file count limit — the main constraint is the per-file size limit (200MB for Pro, 1GB for Business). All files are processed in parallel for maximum speed." },
                 { q: "Can I automate PDF workflows with PDF.it?", a: "Yes. Business plan users ($13.99/month) get access to Workflow Automation, which lets you chain multiple operations together — for example, split PDFs, then compress each part, then merge selected pages. Visit the Workflow Automation page to learn more." },
                 { q: "Are my files secure during batch processing?", a: "Yes. All files are processed securely and deleted automatically after your session ends. PDF.it does not store or share your documents. Processing happens in isolated sessions for each user." },

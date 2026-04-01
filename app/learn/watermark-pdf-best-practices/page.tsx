@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is the Watermark PDF tool free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Watermark PDF is available to Pro ($7.99/month) and Business ($13.99/month) users. Both tiers include unlimited watermarking, batch processing, and files up to 200MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Watermark PDF is available to Pro ($3.99/month) and Business ($13.99/month) users. Both tiers include unlimited watermarking, batch processing, and files up to 200MB." }
     }
   ]
 }
@@ -299,7 +299,7 @@ export default function WatermarkPDFBestPracticesPage() {
                 { q: "What font size works best for text watermarks?", a: "For diagonal watermarks spanning the page, use a large font (60-100pt) so the text stretches across the entire page. For corner stamps, use a smaller font (24-36pt). The goal is readability without overwhelming the document content." },
                 { q: "What color should my watermark be?", a: "Gray is the most common and professional choice for text watermarks. Red works well for CONFIDENTIAL or urgent stamps. For logo watermarks, use your brand colors at reduced opacity. Avoid colors that clash with the document content." },
                 { q: "How do I make a watermark that cannot be removed?", a: "After adding your watermark, flatten the PDF using PDF.it's Flatten PDF tool. This merges the watermark into the page content permanently. Then password-protect the file to prevent further editing." },
-                { q: "Is the Watermark PDF tool free?", a: "Watermark PDF is available to Pro ($7.99/month) and Business ($13.99/month) users. Both tiers include unlimited watermarking, batch processing, and files up to 200MB." },
+                { q: "Is the Watermark PDF tool free?", a: "Watermark PDF is available to Pro ($3.99/month) and Business ($13.99/month) users. Both tiers include unlimited watermarking, batch processing, and files up to 200MB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is this tool free to use?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PDF Table to Excel is available on the Pro plan ($7.99/month) which includes unlimited conversions and files up to 200MB. For advanced table extraction with multi-format export, check out the Business plan." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF Table to Excel is available on the Pro plan ($3.99/month) which includes unlimited conversions and files up to 200MB. For advanced table extraction with multi-format export, check out the Business plan." }
     }
   ]
 }
@@ -183,7 +183,7 @@ export default function PDFTableToExcelPage() {
                 { q: "Can I convert multiple tables from one PDF to Excel?", a: "Yes. If your PDF contains multiple tables across different pages, PDF.it extracts all of them into your Excel file. Each table is placed in a logical layout for easy navigation." },
                 { q: "What if my PDF table has merged cells or complex layouts?", a: "PDF.it handles most table layouts including multi-row headers and spanning cells. For very complex tables with irregular merges, the Business-tier Table Extraction tool provides more advanced layout analysis." },
                 { q: "Can I convert a scanned PDF table to Excel?", a: "For scanned PDFs, use PDF.it's OCR Scanner first to make the text searchable, then convert the PDF to Excel. This two-step approach gives the best results for scanned documents." },
-                { q: "Is this tool free to use?", a: "PDF Table to Excel is available on the Pro plan ($7.99/month) which includes unlimited conversions and files up to 200MB. For advanced table extraction with multi-format export, check out the Business plan." },
+                { q: "Is this tool free to use?", a: "PDF Table to Excel is available on the Pro plan ($3.99/month) which includes unlimited conversions and files up to 200MB. For advanced table extraction with multi-format export, check out the Business plan." },
               ].map((faq, i) => (
                 <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

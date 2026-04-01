@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Is the Watermark PDF tool free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Watermark PDF is available to Pro ($7.99/month) and Business ($13.99/month) users. Both tiers include unlimited watermarking, batch processing, and files up to 200MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Watermark PDF is available to Pro ($3.99/month) and Business ($13.99/month) users. Both tiers include unlimited watermarking, batch processing, and files up to 200MB." }
     }
   ]
 }
@@ -299,7 +299,7 @@ export default function WatermarkPDFConfidentialPage() {
                 { q: "Is the Confidential watermark permanent?", a: "By default, watermarks are added as overlays. To make it permanent, flatten the PDF after watermarking using PDF.it's Flatten PDF tool. This bakes the watermark into the page so it cannot be removed." },
                 { q: "Can I watermark multiple PDFs at once?", a: "Yes. Pro and Business users can use batch processing to watermark multiple PDFs in one go. Upload all your files, configure the watermark once, and apply it to every document simultaneously." },
                 { q: "What opacity should I use for a Confidential watermark?", a: "For most documents, 15-25% opacity works well. It makes the watermark clearly visible without making the underlying text hard to read. For stronger deterrence, go up to 30-40%." },
-                { q: "Is the Watermark PDF tool free?", a: "Watermark PDF is available to Pro ($7.99/month) and Business ($13.99/month) users. Both tiers include unlimited watermarking, batch processing, and files up to 200MB." },
+                { q: "Is the Watermark PDF tool free?", a: "Watermark PDF is available to Pro ($3.99/month) and Business ($13.99/month) users. Both tiers include unlimited watermarking, batch processing, and files up to 200MB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

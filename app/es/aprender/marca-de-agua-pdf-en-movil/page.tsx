@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "La herramienta Marca de Agua PDF es gratis en movil?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Marca de Agua PDF esta disponible para usuarios Pro ($7.99/mes) y Business ($13.99/mes) en todos los dispositivos, incluyendo movil. Ambos niveles incluyen marcas de agua ilimitadas y archivos de hasta 200MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Marca de Agua PDF esta disponible para usuarios Pro ($3.99/mes) y Business ($13.99/mes) en todos los dispositivos, incluyendo movil. Ambos niveles incluyen marcas de agua ilimitadas y archivos de hasta 200MB." }
     }
   ]
 }
@@ -279,7 +279,7 @@ export default function MarcaDeAguaPDFEnMovilPage() {
                 { q: "Funciona igual en iPhone y Android?", a: "Si. PDF.it es completamente responsivo y funciona de manera identica en iPhone (Safari, Chrome) y Android (Chrome, Firefox, Samsung Internet). La interfaz se adapta automaticamente al tamano de tu pantalla." },
                 { q: "Puedo subir un logo como marca de agua desde la galeria de mi telefono?", a: "Si. Cuando seleccionas Marca de Agua de Imagen en PDF.it, tu telefono te permitira explorar tu galeria o archivos. Selecciona tu imagen de logo (PNG recomendado para mejores resultados) y se usara como marca de agua." },
                 { q: "Donde se guarda el PDF con marca de agua en mi telefono?", a: "El PDF con marca de agua se descarga en la ubicacion de descarga predeterminada de tu telefono. En iPhone, revisa la aplicacion Archivos en Descargas. En Android, revisa la carpeta Descargas o el gestor de descargas de tu navegador." },
-                { q: "La herramienta Marca de Agua PDF es gratis en movil?", a: "Marca de Agua PDF esta disponible para usuarios Pro ($7.99/mes) y Business ($13.99/mes) en todos los dispositivos, incluyendo movil. Ambos niveles incluyen marcas de agua ilimitadas y archivos de hasta 200MB." },
+                { q: "La herramienta Marca de Agua PDF es gratis en movil?", a: "Marca de Agua PDF esta disponible para usuarios Pro ($3.99/mes) y Business ($13.99/mes) en todos los dispositivos, incluyendo movil. Ambos niveles incluyen marcas de agua ilimitadas y archivos de hasta 200MB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

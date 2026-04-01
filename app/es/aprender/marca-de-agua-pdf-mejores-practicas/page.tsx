@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "La herramienta Marca de Agua PDF es gratis?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Marca de Agua PDF esta disponible para usuarios Pro ($7.99/mes) y Business ($13.99/mes). Ambos niveles incluyen marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Marca de Agua PDF esta disponible para usuarios Pro ($3.99/mes) y Business ($13.99/mes). Ambos niveles incluyen marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." }
     }
   ]
 }
@@ -298,7 +298,7 @@ export default function MarcaDeAguaPDFMejoresPracticasPage() {
                 { q: "Que tamano de fuente funciona mejor para marcas de agua de texto?", a: "Para marcas de agua diagonales que abarcan la pagina, usa una fuente grande (60-100pt) para que el texto se extienda de esquina a esquina. Para sellos de esquina, usa una fuente mas pequena (24-36pt). El objetivo es legibilidad sin abrumar el contenido del documento." },
                 { q: "Que color debe tener mi marca de agua?", a: "El gris es la opcion mas profesional y versatil para marcas de agua de texto. El rojo funciona bien para sellos CONFIDENCIAL o urgentes. Para marcas de agua con logo, usa los colores de tu marca a opacidad reducida. Evita colores que choquen con el contenido del documento." },
                 { q: "Como hago una marca de agua que no se pueda eliminar?", a: "Despues de agregar tu marca de agua, aplana el PDF usando la herramienta Aplanar PDF de PDF.it. Esto fusiona la marca de agua con el contenido de la pagina de forma permanente. Luego protege el archivo con contrasena para prevenir mas ediciones." },
-                { q: "La herramienta Marca de Agua PDF es gratis?", a: "Marca de Agua PDF esta disponible para usuarios Pro ($7.99/mes) y Business ($13.99/mes). Ambos niveles incluyen marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." },
+                { q: "La herramienta Marca de Agua PDF es gratis?", a: "Marca de Agua PDF esta disponible para usuarios Pro ($3.99/mes) y Business ($13.99/mes). Ambos niveles incluyen marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

@@ -20,7 +20,7 @@ const faqSchema = {
     { "@type": "Question", "name": "O OCR suporta varios idiomas?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. A maioria das ferramentas OCR modernas, incluindo o Scanner OCR do PDF.it, suportam dezenas de idiomas incluindo portugues, ingles, espanhol, frances, alemao e muitos outros." } },
     { "@type": "Question", "name": "O OCR e 100% preciso?", "acceptedAnswer": { "@type": "Answer", "text": "O OCR tipicamente tem 95-99% de precisao em digitalizacoes limpas de alta resolucao com fontes impressas padrao. A precisao diminui com imagens de baixa resolucao, texto manuscrito, fontes incomuns ou documentos com formatacao complexa." } },
     { "@type": "Question", "name": "Preciso instalar software para usar OCR?", "acceptedAnswer": { "@type": "Answer", "text": "Nao. O Scanner OCR do PDF.it funciona completamente no navegador. Faca upload do PDF digitalizado, selecione o idioma e baixe um PDF pesquisavel — sem instalacao necessaria." } },
-    { "@type": "Question", "name": "OCR e uma funcao Pro no PDF.it?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O Scanner OCR esta disponivel para assinantes Pro e Business. Pro custa $7.99/mes e inclui conversoes ilimitadas, arquivos ate 200MB, processamento em lote e todas as ferramentas avancadas incluindo OCR." } }
+    { "@type": "Question", "name": "OCR e uma funcao Pro no PDF.it?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O Scanner OCR esta disponivel para assinantes Pro e Business. Pro custa $3.99/mes e inclui conversoes ilimitadas, arquivos ate 200MB, processamento em lote e todas as ferramentas avancadas incluindo OCR." } }
   ]
 }
 
@@ -118,7 +118,7 @@ export default function OQueEOCRPage() {
                 <li>&#10003; Faca upload de qualquer PDF digitalizado — a ferramenta detecta paginas somente de imagem automaticamente.</li>
                 <li>&#10003; Selecione o idioma do documento para melhor precisao de reconhecimento.</li>
                 <li>&#10003; Baixe um PDF pesquisavel com uma camada de texto invisivel sobre a digitalizacao original.</li>
-                <li>&#10003; Processe arquivos ate 200MB com uma assinatura Pro ($7.99/mes).</li>
+                <li>&#10003; Processe arquivos ate 200MB com uma assinatura Pro ($3.99/mes).</li>
                 <li>&#10003; Apos o OCR, use <Link href="/br/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> se o arquivo estiver grande demais para e-mail ou portais de upload.</li>
               </ul>
               <p className="text-slate-600 mt-4">O Scanner OCR esta disponivel nos planos <Link href="/br/precos" className="text-orange-600 hover:underline">Pro e Business</Link>. Usuarios gratuitos podem explorar todas as outras ferramentas do PDF.it com generosos limites diarios.</p>
@@ -164,7 +164,7 @@ export default function OQueEOCRPage() {
                 { q: "O OCR suporta varios idiomas?", a: "Sim. A maioria das ferramentas OCR modernas, incluindo o Scanner OCR do PDF.it, suportam dezenas de idiomas incluindo portugues, ingles, espanhol, frances, alemao e muitos outros." },
                 { q: "O OCR e 100% preciso?", a: "O OCR tipicamente tem 95-99% de precisao em digitalizacoes limpas de alta resolucao com fontes impressas padrao. A precisao diminui com imagens de baixa resolucao, texto manuscrito ou fontes incomuns." },
                 { q: "Preciso instalar software para usar OCR?", a: "Nao. O Scanner OCR do PDF.it funciona completamente no navegador. Faca upload do PDF digitalizado, selecione o idioma e baixe um PDF pesquisavel — sem instalacao necessaria." },
-                { q: "OCR e uma funcao Pro no PDF.it?", a: "Sim. O Scanner OCR esta disponivel para assinantes Pro e Business. Pro custa $7.99/mes e inclui conversoes ilimitadas, arquivos ate 200MB, processamento em lote e todas as ferramentas avancadas." },
+                { q: "OCR e uma funcao Pro no PDF.it?", a: "Sim. O Scanner OCR esta disponivel para assinantes Pro e Business. Pro custa $3.99/mes e inclui conversoes ilimitadas, arquivos ate 200MB, processamento em lote e todas as ferramentas avancadas." },
               ].map((faq, i) => (
                 <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
