@@ -3,6 +3,7 @@ export const runtime = "nodejs"
 import { NextRequest, NextResponse } from "next/server"
 import Stripe from "stripe"
 import { createClient } from "@supabase/supabase-js"
+import { Resend } from "resend"
 
 function getStripe() {
   return new Stripe(process.env.STRIPE_SECRET_KEY!, {
@@ -100,6 +101,74 @@ export async function POST(request: NextRequest) {
 
       if (error) {
         console.error("Failed to update user plan:", error)
+      }
+
+      // Send welcome email
+      const resendKey = process.env.RESEND_API_KEY
+      if (resendKey && email) {
+        try {
+          const resend = new Resend(resendKey)
+          const planLabel = plan === "enterprise" ? "Enterprise" : plan === "business" ? "Business" : "Pro"
+          const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://pdf.it.com"
+
+          await resend.emails.send({
+            from: "PDF.it <noreply@pdf.it.com>",
+            to: email,
+            subject: `Welcome to PDF.it ${planLabel} — your 30-day free trial has started!`,
+            html: `
+              <div style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 480px; margin: 0 auto; padding: 40px 24px;">
+                <div style="text-align: center; margin-bottom: 32px;">
+                  <span style="font-weight: 800; color: #0E0F1E; font-size: 28px; letter-spacing: -0.5px;">PDF<span style="color: #14D8C4; font-weight: 400;">.it</span></span>
+                </div>
+                <h1 style="font-size: 22px; font-weight: 700; color: #0E0F1E; margin-bottom: 16px; text-align: center;">
+                  You're in! Welcome to ${planLabel}.
+                </h1>
+                <p style="font-size: 15px; color: #475569; line-height: 1.6; margin-bottom: 24px; text-align: center;">
+                  Your 30-day free trial is now active. You have full access to all ${planLabel} features — no charges until your trial ends.
+                </p>
+                <div style="background: #F0FDFA; border: 1px solid #14D8C4; border-radius: 12px; padding: 20px; margin-bottom: 24px;">
+                  <p style="font-size: 14px; color: #0E0F1E; font-weight: 600; margin: 0 0 8px 0;">What's included:</p>
+                  <ul style="font-size: 14px; color: #475569; line-height: 1.8; margin: 0; padding-left: 20px;">
+                    ${plan === "pro" ? `
+                    <li>Unlimited conversions</li>
+                    <li>Files up to 200MB</li>
+                    <li>All PDF tools (OCR, QR, PDF to Word/Excel/PPT)</li>
+                    <li>Batch processing</li>
+                    <li>Priority speed</li>
+                    ` : plan === "business" ? `
+                    <li>Everything in Pro</li>
+                    <li>Files up to 1GB</li>
+                    <li>Table extraction (200 pages/month)</li>
+                    <li>PDF comparison, eSign, redaction</li>
+                    <li>Workflow automation</li>
+                    ` : `
+                    <li>Everything in Business</li>
+                    <li>Table extraction (2,000 pages/month)</li>
+                    <li>Dedicated support</li>
+                    <li>Priority processing queue</li>
+                    <li>Early access to new features</li>
+                    `}
+                  </ul>
+                </div>
+                <div style="text-align: center; margin-bottom: 32px;">
+                  <a href="${siteUrl}/dashboard" style="display: inline-block; background: #14D8C4; color: #0E0F1E; font-weight: 700; font-size: 15px; padding: 14px 32px; border-radius: 10px; text-decoration: none;">
+                    Go to Your Dashboard
+                  </a>
+                </div>
+                <p style="font-size: 13px; color: #94A3B8; line-height: 1.6; text-align: center;">
+                  You won't be charged during your trial. Cancel anytime from your dashboard — no questions asked.
+                </p>
+                <hr style="border: none; border-top: 1px solid #E2E8F0; margin: 32px 0;" />
+                <p style="font-size: 12px; color: #94A3B8; text-align: center;">
+                  PDF.it &mdash; Fix any document problem instantly.<br />
+                  <a href="${siteUrl}" style="color: #14D8C4; text-decoration: none;">pdf.it.com</a>
+                </p>
+              </div>
+            `,
+          })
+        } catch (emailErr) {
+          console.error("Failed to send welcome email:", emailErr)
+        }
       }
     }
   }
