@@ -148,6 +148,15 @@ export function HeroSection() {
               <span>Pro: Unlimited Access</span>
             </div>
           </div>
+
+          {/* Free trial banner */}
+          <div className="max-w-md mx-auto rounded-2xl p-[1px] mt-8" style={{ background: "linear-gradient(135deg, #E0C27A, #D6B36A, #E0C27A)" }}>
+            <div className="rounded-[15px] px-8 py-5 text-center" style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(224,194,122,0.08) 0%, transparent 60%), rgba(14,15,30,0.95)" }}>
+              <p className="text-sm sm:text-base font-black uppercase tracking-widest text-[#E0C27A] mb-2">Free Trial</p>
+              <p className="text-xl sm:text-2xl font-black text-white mb-1">Try any plan free for 30 days</p>
+              <p className="text-sm text-slate-400">No commitment, cancel anytime. Just add a payment method to start your risk-free trial.</p>
+            </div>
+          </div>
         </div>
       </div>
 
