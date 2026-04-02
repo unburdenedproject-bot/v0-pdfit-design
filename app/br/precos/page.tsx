@@ -36,11 +36,12 @@ export default function PrecosPage() {
               </p>
 
               {/* Free trial banner */}
-              <div className="inline-flex items-center gap-3 bg-[#14D8C4]/10 border border-[#14D8C4]/30 rounded-full px-6 py-3 mb-8">
-                <span className="bg-[#14D8C4] text-[#0E0F1E] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Teste Gratis</span>
-                <p className="text-sm sm:text-base text-slate-200">
-                  <strong className="text-white">Experimente qualquer plano gratis por 30 dias</strong> — sem compromisso, cancele quando quiser. Basta adicionar um metodo de pagamento para iniciar seu teste sem risco.
-                </p>
+              <div className="max-w-md mx-auto rounded-2xl p-[1px] mb-8" style={{ background: "linear-gradient(135deg, #E0C27A, #D6B36A, #E0C27A)" }}>
+                <div className="rounded-[15px] px-8 py-5 text-center" style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(224,194,122,0.08) 0%, transparent 60%), rgba(14,15,30,0.95)" }}>
+                  <p className="text-xs font-bold uppercase tracking-widest text-[#E0C27A] mb-2">Teste Gratis</p>
+                  <p className="text-xl sm:text-2xl font-black text-white mb-1">Experimente qualquer plano gratis por 30 dias</p>
+                  <p className="text-sm text-slate-400">Sem compromisso, cancele quando quiser. Basta adicionar um metodo de pagamento para iniciar seu teste sem risco.</p>
+                </div>
               </div>
 
               {/* Billing Toggle */}
