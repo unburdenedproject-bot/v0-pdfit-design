@@ -533,7 +533,7 @@ export function DashboardClient({
                   className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold"
                 >
                   <Crown className="mr-2 h-4 w-4" />
-                  Upgrade to Pro — $7.99/mo
+                  Upgrade to Pro — $3.99/mo
                 </Button>
               )}
               {billingError && (
@@ -586,7 +586,7 @@ export function DashboardClient({
               className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold"
             >
               <Crown className="mr-2 h-4 w-4" />
-              Upgrade to Pro — $7.99/mo
+              Upgrade to Pro — $3.99/mo
             </Button>
           </div>
         </div>

@@ -128,7 +128,7 @@ From SEO-MAP.md, these pages are still unbuilt (~35 pages remaining):
 ### 2C. Annual Pricing Discount
 
 - Already in CLAUDE.md as post-launch item
-- Pro annual: $79.90/year (saves ~$16 vs monthly)
+- Pro annual: $39.90/year (saves ~$16 vs monthly)
 - Business annual: $139.90/year
 - Enterprise annual: $499.90/year
 - Increases LTV significantly — priority to build after hitting 3K subscribers

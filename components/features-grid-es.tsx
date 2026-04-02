@@ -412,7 +412,7 @@ function PricingCTA() {
           ¿Necesitas conversiones ilimitadas o archivos más grandes?
         </h3>
         <p className="text-slate-400 text-sm mb-5 max-w-lg mx-auto leading-relaxed">
-          Hazte Pro para conversiones ilimitadas y todas las herramientas — $7.99/mes. ¿Necesitas firma electrónica y automatización? Prueba Business a $13.99/mes. Bufetes y contadores eligen Enterprise a $49.99/mes.
+          Hazte Pro para conversiones ilimitadas y todas las herramientas — $3.99/mes. ¿Necesitas firma electrónica y automatización? Prueba Business a $13.99/mes. Bufetes y contadores eligen Enterprise a $49.99/mes.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link

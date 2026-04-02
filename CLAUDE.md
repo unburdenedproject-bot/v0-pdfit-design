@@ -40,6 +40,12 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - Enterprise: industry-specific workflow templates (Legal, Court Filing, Invoice Archive, Draft Review, Lab Report)
 - We can't give everything for free — free tools are funnels to Pro/Business/Enterprise
 
+## Free Trial
+- All paid plans include a 30-day free trial (configured in `/app/upgrade/page.tsx` via `subscription_data.trial_period_days: 30`)
+- Stripe collects payment method at checkout but does not charge until day 31
+- Welcome email sent via Resend on `checkout.session.completed` webhook
+- Stripe webhook URL: `https://www.pdf.it.com/api/webhook` (must use www — non-www returns 307 redirect)
+
 ## Cost Structure (at scale)
 - iLoveAPI: ~$0.04-0.10 per conversion (2,500 free credits/month)
 - Google Document AI: $0.03/page (Form Parser)

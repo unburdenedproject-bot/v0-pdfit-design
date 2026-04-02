@@ -8,7 +8,7 @@ const faqData = [
   {
     question: "Is PDF.it free to use?",
     answer:
-      "Yes! Core tools like PDF compression, merging, splitting, rotating, and image conversion are completely free with up to 10 conversions per day. Advanced tools like OCR, PDF to Word, and batch processing are available with Pro ($7.99/month).",
+      "Yes! Core tools like PDF compression, merging, splitting, rotating, and image conversion are completely free with up to 10 conversions per day. Advanced tools like OCR, PDF to Word, and batch processing are available with Pro ($3.99/month).",
   },
   {
     question: "Do I need to create an account?",
@@ -51,7 +51,7 @@ const faqData = [
   {
     question: "What's the difference between the plans?",
     answer:
-      "Free: 10 conversions/day, basic tools, 25MB files. Pro ($7.99/mo): unlimited conversions, all tools, 200MB files, batch processing. Business ($13.99/mo): adds eSign, redaction, workflow automation, table extraction, 1GB files. Enterprise ($49.99/mo): 2,000 table extraction pages/month, priority processing, dedicated support, workflow templates for legal, accounting, and labs.",
+      "Free: 10 conversions/day, basic tools, 25MB files. Pro ($3.99/mo): unlimited conversions, all tools, 200MB files, batch processing. Business ($13.99/mo): adds eSign, redaction, workflow automation, table extraction, 1GB files. Enterprise ($49.99/mo): 2,000 table extraction pages/month, priority processing, dedicated support, workflow templates for legal, accounting, and labs.",
   },
   {
     question: "How can I get support?",

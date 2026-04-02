@@ -196,7 +196,7 @@ We own the top half. No competitor is credibly claiming verified, immediate file
 | Tier | Price | Key message |
 |------|-------|-------------|
 | Free | $0 | 10 tasks/day, no account needed for first 3 |
-| Pro | $7.99/month | All tools, 200MB files, no daily limit |
+| Pro | $3.99/month | All tools, 200MB files, no daily limit |
 | Business | $13.99/month | Pro + invoice, eSign, 1GB files |
 | Enterprise | $49.99/month | Business + 2,000 pages table extraction, workflows |
 

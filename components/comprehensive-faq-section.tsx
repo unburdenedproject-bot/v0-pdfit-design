@@ -11,7 +11,7 @@ const faqCategories = [
       {
         question: "Is PDF.it free to use?",
         answer:
-          "Yes. PDF.it offers a free tier with 10 conversions per day and files up to 25MB. No account is required for free tools. Upgrade to Pro ($7.99/month) for unlimited conversions, all tools, and files up to 200MB. Business ($13.99/month) supports files up to 1GB.",
+          "Yes. PDF.it offers a free tier with 10 conversions per day and files up to 25MB. No account is required for free tools. Upgrade to Pro ($3.99/month) for unlimited conversions, all tools, and files up to 200MB. Business ($13.99/month) supports files up to 1GB.",
       },
       {
         question: "Do I need to create an account?",
@@ -86,7 +86,7 @@ const faqCategories = [
       {
         question: "What does Pro include?",
         answer:
-          "Pro ($7.99/month) includes unlimited conversions, all PDF tools (including OCR, Watermark, and Office to PDF), and files up to 200MB. Business ($13.99/month) adds files up to 1GB, workflow automation, table extraction, PDF comparison, eSign, and PDF redaction.",
+          "Pro ($3.99/month) includes unlimited conversions, all PDF tools (including OCR, Watermark, and Office to PDF), and files up to 200MB. Business ($13.99/month) adds files up to 1GB, workflow automation, table extraction, PDF comparison, eSign, and PDF redaction.",
       },
     ],
   },

@@ -413,7 +413,7 @@ function PricingCTA() {
           Need unlimited conversions or larger files?
         </h3>
         <p className="text-slate-400 text-sm mb-5 max-w-lg mx-auto leading-relaxed">
-          Go Pro for unlimited conversions and all tools — $7.99/month. Need eSign and workflow automation? Try Business at $13.99/month. Law firms and accountants love Enterprise at $49.99/month.
+          Go Pro for unlimited conversions and all tools — $3.99/month. Need eSign and workflow automation? Try Business at $13.99/month. Law firms and accountants love Enterprise at $49.99/month.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link

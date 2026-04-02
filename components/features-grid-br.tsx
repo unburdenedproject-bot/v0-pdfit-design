@@ -165,7 +165,7 @@ function PricingCTA() {
           Precisa de conversoes ilimitadas ou arquivos maiores?
         </h3>
         <p className="text-slate-400 text-sm mb-5 max-w-lg mx-auto leading-relaxed">
-          Atualize para Pro para conversoes ilimitadas e todas as ferramentas — $7.99/mes. Precisa de assinatura eletronica e automacao? Experimente Business por $13.99/mes. Escritorios e contadores escolhem Enterprise por $49.99/mes.
+          Atualize para Pro para conversoes ilimitadas e todas as ferramentas — $3.99/mes. Precisa de assinatura eletronica e automacao? Experimente Business por $13.99/mes. Escritorios e contadores escolhem Enterprise por $49.99/mes.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link

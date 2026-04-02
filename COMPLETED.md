@@ -1,5 +1,46 @@
 # PDF.it - Accomplished Work
 
+## 30-Day Free Trial & Pricing Update (April 1, 2026)
+
+### Pro Tier Price Reduction
+- Changed Pro monthly from $3.99 to **$3.99/month**
+- Changed Pro annual from $39.90 to **$39.90/year** ($3.33/mo equivalent)
+- Updated across all 66 files site-wide (pricing pages, tool pages, FAQs, learn articles, about pages, blog, structured data — EN/ES/BR)
+
+### 30-Day Free Trial (Stripe)
+- Added `subscription_data.trial_period_days: 30` to `/app/upgrade/page.tsx` (the actual checkout route)
+- Also added to `/app/api/create-checkout/route.ts` (secondary route)
+- Users add a payment method at checkout but are NOT charged for 30 days
+- Stripe shows subscription status as "Trialing" with first charge on day 31
+- If user cancels during trial, they keep access until trial ends — never charged
+
+### Free Trial Banner (Gold)
+- Added gold-bordered banner card to **pricing pages** (EN/ES/BR) between subtitle and billing toggle
+- Added same banner to **homepage hero sections** (EN/ES/BR) after trust icons, before the wave
+- 3-line stacked layout: "FREE TRIAL" (gold, bold uppercase) → "Try any plan free for 30 days" (white, large) → "No commitment, cancel anytime..." (slate)
+- Uses Pro tier gold gradient border (#E0C27A/#D6B36A) matching the Pro card design
+
+### Welcome Email on Checkout
+- Added Resend-powered welcome email in `/app/api/webhook/route.ts` on `checkout.session.completed`
+- Branded HTML email matching PDF.it design (same style as password reset email)
+- Subject: "Welcome to PDF.it [Plan] — your 30-day free trial has started!"
+- Includes plan-specific feature list, "Go to Your Dashboard" CTA, trial reassurance
+- Sent from `noreply@pdf.it.com`
+
+### Dashboard Auto-Refresh After Checkout
+- Dashboard now polls Supabase every 2 seconds (up to 30 seconds) after `?success=true` redirect
+- Plan badge and status message update live when webhook completes — no page refresh needed
+- Applied to all 3 dashboard components (EN/ES/BR)
+
+### Stripe Webhook Fix
+- Webhook endpoint was returning **307 redirect** (pdf.it.com → www.pdf.it.com)
+- Fixed by updating webhook URL in Stripe to `https://www.pdf.it.com/api/webhook`
+
+### Files Changed
+`app/upgrade/page.tsx`, `app/api/create-checkout/route.ts`, `app/api/webhook/route.ts`, `app/pricing/page.tsx`, `app/es/precios/page.tsx`, `app/br/precos/page.tsx`, `components/hero-section.tsx`, `components/hero-section-es.tsx`, `components/hero-section-br.tsx`, `components/dashboard-client.tsx`, `components/dashboard-client-es.tsx`, `components/dashboard-client-br.tsx`, `CLAUDE.md`, + 63 files with price updates
+
+---
+
 ## GA4 Analytics Verified (March 31, 2026)
 - GA4 (G-PWD4YNY710) confirmed working and recording data in production
 - GTM container (GTM-PNR9LXC2) active
@@ -182,7 +223,7 @@ External QA tester reported 39 bugs (32 unique after deduplication). All address
 ## Infrastructure Done
 - hCaptcha integration (signup + login pages)
 - Batch processing (Pro/Business/Enterprise: multi-file select, per-file progress, Download All as ZIP; Free: single file + upgrade banner)
-- Pricing page: 4 tiers (Free / Pro $7.99 / Business $13.99 / Enterprise $49.99) with comparison table
+- Pricing page: 4 tiers (Free / Pro $3.99 / Business $13.99 / Enterprise $49.99) with comparison table
 - Rate limiting: 100 req/min per IP via Upstash Redis middleware
 - Usage logging: daily counts in usage table, monthly page tracking in usage_logs for table extraction
 

@@ -16,7 +16,7 @@ Examples:
 | Tier | Price | Role |
 |------|-------|------|
 | Free | $0 | Traffic + acquisition |
-| Pro | $7.99/mo | Main conversion tier |
+| Pro | $3.99/mo | Main conversion tier |
 | Business | $13.99/mo | Automation + batch |
 
 ## Free Tier Funnel
@@ -37,7 +37,7 @@ Examples:
 
 ### Hard Limit (after 10th task)
 "You've reached your daily limit of 10 conversions. Upgrade to continue processing instantly."
-- Button 1: Upgrade to Pro ($7.99)
+- Button 1: Upgrade to Pro ($3.99)
 - Button 2: Continue tomorrow
 
 ## Three Upgrade Triggers
@@ -50,13 +50,13 @@ Examples:
 
 ### Conservative (100k visitors/month)
 - 1% conversion = 1,000 subscribers
-- 700 Pro × $7.99 = $5,593
+- 700 Pro × $3.99 = $5,593
 - 300 Business × $13.99 = $4,197
 - Total: ~$10k/month
 
 ### Growth (300k visitors/month)
 - 1.5% conversion = 4,500 subscribers
-- 3,000 Pro × $7.99 = $23,970
+- 3,000 Pro × $3.99 = $23,970
 - 1,500 Business × $13.99 = $20,985
 - Total: ~$45k/month
 

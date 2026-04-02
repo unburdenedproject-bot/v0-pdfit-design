@@ -408,7 +408,7 @@ export function WatermarkPdfInterface() {
                   </div>
                 </div>
                 <h3 className="font-bold text-foreground text-lg mb-2">Your watermarked PDF is ready.</h3>
-                <p className="text-muted-foreground mb-4">Upgrade to Pro to download — $7.99/month</p>
+                <p className="text-muted-foreground mb-4">Upgrade to Pro to download — $3.99/month</p>
                 <p className="text-xs text-muted-foreground italic mb-4">
                   We never store your files — you'll need to re-upload after upgrading. Your privacy is guaranteed.
                 </p>
