@@ -13,7 +13,6 @@
     "@hcaptcha/react-hcaptcha": "^1.11.0",
     "@hookform/resolvers": "^3.9.1",
     "@ilovepdf/ilovepdf-nodejs": "^0.3.1",
-    "@napi-rs/canvas": "^0.1.97",
     "@radix-ui/react-accordion": "1.2.2",
     "@radix-ui/react-alert-dialog": "1.1.4",
     "@radix-ui/react-aspect-ratio": "1.1.1",

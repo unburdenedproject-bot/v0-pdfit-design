@@ -133,35 +133,19 @@ export async function POST(request) {
     }
 
     // -----------------------------------------------------------
-    // Reject visually blank PDFs before hitting iLovePDF (saves API costs)
-    // Renders each page to an image and checks for actual visible content.
+    // Reject blank PDFs before hitting iLovePDF (saves API costs)
+    // Uses pdfjs-dist operator list (pure JS, no native deps) to check
+    // if any page has text-showing or image-drawing operations.
     // -----------------------------------------------------------
     const { readFile: readTmp } = await import("fs/promises");
     const pdfBytes = await readTmp(tmpPath);
 
     try {
       const pdfjsLib = await import("pdfjs-dist/legacy/build/pdf.js");
-      const { createCanvas } = await import("@napi-rs/canvas");
-
-      // Disable worker (not needed in Node.js serverless)
       pdfjsLib.GlobalWorkerOptions.workerSrc = "";
-
-      // Canvas factory for pdfjs rendering
-      class CanvasFactory {
-        create(width, height) {
-          const canvas = createCanvas(width, height);
-          return { canvas, context: canvas.getContext("2d") };
-        }
-        reset(pair, width, height) {
-          pair.canvas.width = width;
-          pair.canvas.height = height;
-        }
-        destroy() {}
-      }
 
       const doc = await pdfjsLib.getDocument({
         data: new Uint8Array(pdfBytes),
-        canvasFactory: new CanvasFactory(),
         disableFontFace: true,
         isEvalSupported: false,
       }).promise;
@@ -170,63 +154,50 @@ export async function POST(request) {
         doc.destroy();
         await unlink(tmpPath).catch(() => {});
         tmpPath = null;
+        console.log("[blank-check] REJECTED — zero pages");
         return errorResponse("This file appears to be empty. Please upload a PDF with content.", 400);
       }
 
-      // Render each page at low resolution and check for visible ink
-      const RENDER_SCALE = 0.25; // quarter res — fast, enough to detect content
-      const DARK_THRESHOLD = 30; // pixel must be this much darker than background
-      const MIN_COVERAGE = 0.05; // at least 0.05% of pixels must be dark content
+      // Operator IDs that produce visible output (from pdfjs-dist OPS)
+      const OPS = pdfjsLib.OPS;
+      const VISIBLE_OPS = new Set([
+        OPS.showText,                  // Tj — show text string
+        OPS.showSpacedText,            // TJ — show text array
+        OPS.paintImageXObject,         // Do (image)
+        OPS.paintInlineImageXObject,   // inline image
+        OPS.paintInlineImageXObjectGroup,
+        OPS.paintJpegXObject,          // JPEG image
+        OPS.paintFormXObjectBegin,     // Form XObject (may contain content)
+      ]);
+
       let hasVisibleContent = false;
 
       for (let i = 1; i <= doc.numPages; i++) {
         const page = await doc.getPage(i);
-        const viewport = page.getViewport({ scale: RENDER_SCALE });
-        const w = Math.floor(viewport.width);
-        const h = Math.floor(viewport.height);
+        const opList = await page.getOperatorList();
 
-        const canvas = createCanvas(w, h);
-        const ctx = canvas.getContext("2d");
+        // Also check for text content directly
+        const textContent = await page.getTextContent();
+        const pageText = textContent.items
+          .map((item) => ("str" in item ? item.str : ""))
+          .join("")
+          .trim();
 
-        // White background (matches what a viewer would show)
-        ctx.fillStyle = "#ffffff";
-        ctx.fillRect(0, 0, w, h);
-
-        await page.render({ canvasContext: ctx, viewport }).promise;
-
-        const imageData = ctx.getImageData(0, 0, w, h);
-        const rgba = imageData.data;
-        const totalPixels = w * h;
-
-        // Pass 1: compute grayscale values and estimate background level
-        const gray = new Uint8Array(totalPixels);
-        let bgSum = 0;
-        for (let p = 0; p < totalPixels; p++) {
-          const g = Math.round(
-            0.299 * rgba[p * 4] + 0.587 * rgba[p * 4 + 1] + 0.114 * rgba[p * 4 + 2]
-          );
-          gray[p] = g;
-          bgSum += g;
-        }
-        const bgLevel = bgSum / totalPixels;
-
-        // Pass 2: count pixels meaningfully darker than background
-        let darkPixels = 0;
-        for (let p = 0; p < totalPixels; p++) {
-          if (gray[p] < bgLevel - DARK_THRESHOLD) {
-            darkPixels++;
+        // Count visible operators
+        let visibleOpCount = 0;
+        for (const fn of opList.fnArray) {
+          if (VISIBLE_OPS.has(fn)) {
+            visibleOpCount++;
           }
         }
 
-        const coverage = (darkPixels / totalPixels) * 100;
-
         console.log(
           `[blank-check] Page ${i}/${doc.numPages}: ` +
-          `bg=${bgLevel.toFixed(1)}, darkPx=${darkPixels}, ` +
-          `coverage=${coverage.toFixed(4)}%, pixels=${totalPixels}`
+          `visibleOps=${visibleOpCount}, textLength=${pageText.length}, ` +
+          `totalOps=${opList.fnArray.length}`
         );
 
-        if (coverage >= MIN_COVERAGE) {
+        if (pageText.length > 0 || visibleOpCount > 0) {
           hasVisibleContent = true;
           page.cleanup();
           break;
@@ -237,7 +208,7 @@ export async function POST(request) {
       doc.destroy();
 
       if (!hasVisibleContent) {
-        console.log("[blank-check] REJECTED — all pages visually blank");
+        console.log("[blank-check] REJECTED — no visible content on any page");
         await unlink(tmpPath).catch(() => {});
         tmpPath = null;
         return errorResponse("This file appears to be empty. Please upload a PDF with content.", 400);

@@ -20,6 +20,7 @@ const nextConfig = {
   },
   experimental: {
     optimizePackageImports: ['lucide-react', 'recharts'],
+    serverComponentsExternalPackages: ['pdfjs-dist'],
   },
 }
 
