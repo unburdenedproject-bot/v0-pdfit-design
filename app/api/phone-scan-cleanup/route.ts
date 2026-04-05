@@ -75,7 +75,8 @@ export async function POST(req: NextRequest) {
         .median(3) // denoise — removes phone camera speckle
         .clahe({ width: 8, height: 8, maxSlope: 3 }) // local contrast equalization — handles uneven phone lighting/shadows
         .sharpen({ sigma: 1.5 })
-        .threshold(140) // crisp B&W — works correctly now because CLAHE removed illumination gradients
+        .linear(1.6, -(0.6 * 128)) // boost contrast — darks darker, lights lighter, preserves midtone strokes
+        .gamma(2.2) // push light grays to white (clean background) while keeping dark strokes solid
     } else {
       // color cleanup
       pipeline = pipeline
