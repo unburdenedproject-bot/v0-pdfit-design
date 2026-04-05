@@ -64,29 +64,52 @@ export async function POST(req: NextRequest) {
     }
 
     // ── Process with Sharp ──
-    let pipeline = sharp(buffer)
+    const base = sharp(buffer)
       .rotate() // auto-rotate based on EXIF
       .resize(2400, 2400, { fit: "inside", withoutEnlargement: true }) // cap size for performance
       .flatten({ background: "#ffffff" }) // remove alpha channel
 
+    let processedBuffer: Buffer
+
     if (mode === "bw") {
-      pipeline = pipeline
-        .grayscale()
-        .median(3) // denoise — removes phone camera speckle
-        .clahe({ width: 8, height: 8, maxSlope: 3 }) // local contrast equalization — handles uneven phone lighting/shadows
-        .sharpen({ sigma: 1.5 })
-        .linear(1.6, -(0.6 * 128)) // boost contrast — darks darker, lights lighter, preserves midtone strokes
-        .gamma(2.2) // push light grays to white (clean background) while keeping dark strokes solid
+      // ── Adaptive background removal (division-based, similar to Sauvola) ──
+      // 1. Prepare grayscale denoised base
+      const grayBase = base.grayscale().median(3)
+
+      // 2. Get original pixels and a heavily blurred background estimate
+      const [{ data: origData, info }, { data: bgData }] = await Promise.all([
+        grayBase.clone().raw().toBuffer({ resolveWithObject: true }),
+        grayBase.clone().blur(50).raw().toBuffer({ resolveWithObject: true }),
+      ])
+
+      // 3. Divide each pixel by its local background — removes illumination gradient
+      //    Dark text on bright background → stays dark (low ratio)
+      //    Shadow on shadow background → normalizes to light (ratio ≈ 1)
+      const normalized = Buffer.alloc(origData.length)
+      for (let i = 0; i < origData.length; i++) {
+        const bg = bgData[i] < 1 ? 1 : bgData[i]
+        normalized[i] = Math.min(255, Math.round((origData[i] / bg) * 255))
+      }
+
+      // 4. Final contrast enhancement on the illumination-corrected image
+      processedBuffer = await sharp(normalized, {
+        raw: { width: info.width, height: info.height, channels: 1 },
+      })
+        .normalize() // stretch remaining contrast range
+        .sharpen({ sigma: 1.2 })
+        .gamma(1.8) // push light grays to white for clean background
+        .png()
+        .toBuffer()
     } else {
       // color cleanup
-      pipeline = pipeline
+      processedBuffer = await base
         .median(3) // denoise — removes phone camera speckle
         .clahe({ width: 8, height: 8, maxSlope: 3 }) // local contrast equalization — handles uneven phone lighting/shadows
         .sharpen({ sigma: 1.5 })
         .modulate({ brightness: 1.05, saturation: 0.9 }) // slight brightness boost, reduce color cast
+        .png()
+        .toBuffer()
     }
-
-    const processedBuffer = await pipeline.png().toBuffer()
     const processedMeta = await sharp(processedBuffer).metadata()
 
     const imgW = processedMeta.width!
