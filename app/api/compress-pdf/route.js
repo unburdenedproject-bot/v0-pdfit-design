@@ -133,33 +133,119 @@ export async function POST(request) {
     }
 
     // -----------------------------------------------------------
-    // Reject blank PDFs before hitting iLovePDF (saves API costs)
-    // Uses pdf-parse (Mozilla pdf.js) to extract actual rendered text.
+    // Reject visually blank PDFs before hitting iLovePDF (saves API costs)
+    // Renders each page to an image and checks for actual visible content.
     // -----------------------------------------------------------
     const { readFile: readTmp } = await import("fs/promises");
     const pdfBytes = await readTmp(tmpPath);
 
     try {
-      const pdfParse = (await import("pdf-parse")).default;
-      const parsed = await pdfParse(pdfBytes);
+      const pdfjsLib = await import("pdfjs-dist/legacy/build/pdf.js");
+      const { createCanvas } = await import("@napi-rs/canvas");
 
-      // Check 1: Does the PDF have any extractable text?
-      const hasText = parsed.text.trim().length > 0;
+      // Disable worker (not needed in Node.js serverless)
+      pdfjsLib.GlobalWorkerOptions.workerSrc = "";
 
-      // Check 2: No text but large file = likely scanned images (allow through)
-      // A blank PDF is typically under 30KB. Image-heavy PDFs are much larger.
-      const hasLikelyImages = !hasText && pdfBytes.length > 30000;
+      // Canvas factory for pdfjs rendering
+      class CanvasFactory {
+        create(width, height) {
+          const canvas = createCanvas(width, height);
+          return { canvas, context: canvas.getContext("2d") };
+        }
+        reset(pair, width, height) {
+          pair.canvas.width = width;
+          pair.canvas.height = height;
+        }
+        destroy() {}
+      }
 
-      // Check 3: Zero pages
-      const hasPages = parsed.numpages > 0;
+      const doc = await pdfjsLib.getDocument({
+        data: new Uint8Array(pdfBytes),
+        canvasFactory: new CanvasFactory(),
+        disableFontFace: true,
+        isEvalSupported: false,
+      }).promise;
 
-      if (!hasPages || (!hasText && !hasLikelyImages)) {
+      if (doc.numPages === 0) {
+        doc.destroy();
         await unlink(tmpPath).catch(() => {});
         tmpPath = null;
         return errorResponse("This file appears to be empty. Please upload a PDF with content.", 400);
       }
+
+      // Render each page at low resolution and check for visible ink
+      const RENDER_SCALE = 0.25; // quarter res — fast, enough to detect content
+      const DARK_THRESHOLD = 30; // pixel must be this much darker than background
+      const MIN_COVERAGE = 0.05; // at least 0.05% of pixels must be dark content
+      let hasVisibleContent = false;
+
+      for (let i = 1; i <= doc.numPages; i++) {
+        const page = await doc.getPage(i);
+        const viewport = page.getViewport({ scale: RENDER_SCALE });
+        const w = Math.floor(viewport.width);
+        const h = Math.floor(viewport.height);
+
+        const canvas = createCanvas(w, h);
+        const ctx = canvas.getContext("2d");
+
+        // White background (matches what a viewer would show)
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0, 0, w, h);
+
+        await page.render({ canvasContext: ctx, viewport }).promise;
+
+        const imageData = ctx.getImageData(0, 0, w, h);
+        const rgba = imageData.data;
+        const totalPixels = w * h;
+
+        // Pass 1: compute grayscale values and estimate background level
+        const gray = new Uint8Array(totalPixels);
+        let bgSum = 0;
+        for (let p = 0; p < totalPixels; p++) {
+          const g = Math.round(
+            0.299 * rgba[p * 4] + 0.587 * rgba[p * 4 + 1] + 0.114 * rgba[p * 4 + 2]
+          );
+          gray[p] = g;
+          bgSum += g;
+        }
+        const bgLevel = bgSum / totalPixels;
+
+        // Pass 2: count pixels meaningfully darker than background
+        let darkPixels = 0;
+        for (let p = 0; p < totalPixels; p++) {
+          if (gray[p] < bgLevel - DARK_THRESHOLD) {
+            darkPixels++;
+          }
+        }
+
+        const coverage = (darkPixels / totalPixels) * 100;
+
+        console.log(
+          `[blank-check] Page ${i}/${doc.numPages}: ` +
+          `bg=${bgLevel.toFixed(1)}, darkPx=${darkPixels}, ` +
+          `coverage=${coverage.toFixed(4)}%, pixels=${totalPixels}`
+        );
+
+        if (coverage >= MIN_COVERAGE) {
+          hasVisibleContent = true;
+          page.cleanup();
+          break;
+        }
+        page.cleanup();
+      }
+
+      doc.destroy();
+
+      if (!hasVisibleContent) {
+        console.log("[blank-check] REJECTED — all pages visually blank");
+        await unlink(tmpPath).catch(() => {});
+        tmpPath = null;
+        return errorResponse("This file appears to be empty. Please upload a PDF with content.", 400);
+      }
+
+      console.log("[blank-check] PASSED — visible content detected");
     } catch (pdfError) {
-      // If pdf-parse can't read it, it's likely corrupt
+      console.error("[blank-check] Preflight error:", pdfError?.message || pdfError);
       await unlink(tmpPath).catch(() => {});
       tmpPath = null;
       return errorResponse("The uploaded file is not a valid PDF and cannot be compressed.", 400);
