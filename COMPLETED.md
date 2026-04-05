@@ -1,5 +1,20 @@
 # PDF.it - Accomplished Work
 
+## Phone Scan Cleanup & Signup CAPTCHA Fix (April 5, 2026)
+
+### Phone Scan Cleanup — Adaptive Background Removal (B&W mode)
+- Replaced global `threshold(145)` with division-based adaptive background removal
+- Pipeline: grayscale → median(3) denoise → two parallel passes (raw pixels + blur(50) background estimate) → pixel-by-pixel division to remove illumination gradient → normalize → sharpen(1.2) → gamma(1.8) → PNG
+- Fixes: uneven phone lighting no longer causes black blobs, shadow regions are normalized, handwriting/signatures/stamps/seals are fully preserved
+- Result matches professional flatbed scanner quality for mixed-content documents (printed text + handwriting + official marks)
+- Color mode updated to use CLAHE local contrast equalization instead of global normalize
+- File changed: `app/api/phone-scan-cleanup/route.ts`
+
+### Signup CAPTCHA Revalidation on Email Change
+- CAPTCHA is now invalidated when user changes email after completing verification
+- Email onChange handler clears captchaToken state and resets the hCaptcha widget
+- Applied to all 3 languages: `app/signup/page.tsx`, `app/es/registro/page.tsx`, `app/br/cadastro/page.tsx`
+
 ## 30-Day Free Trial & Pricing Update (April 1, 2026)
 
 ### Pro Tier Price Reduction
