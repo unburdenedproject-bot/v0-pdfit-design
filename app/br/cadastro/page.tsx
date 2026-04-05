@@ -157,7 +157,13 @@ export default function SignUpPagePt() {
                       placeholder="seu@exemplo.com"
                       required
                       value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      onChange={(e) => {
+                        setEmail(e.target.value)
+                        if (captchaToken) {
+                          setCaptchaToken(null)
+                          captchaRef.current?.resetCaptcha()
+                        }
+                      }}
                       className="bg-white/5 border-white/10 text-white placeholder:text-slate-500 focus:ring-[#14D8C4] focus:border-[#14D8C4] focus-visible:ring-[#14D8C4]"
                     />
                   </div>
