@@ -132,93 +132,18 @@ export async function POST(request) {
       await writeFile(tmpPath, buffer);
     }
 
-    // -----------------------------------------------------------
-    // Reject blank PDFs before hitting iLovePDF (saves API costs)
-    // Uses pdfjs-dist operator list (pure JS, no native deps) to check
-    // if any page has text-showing or image-drawing operations.
-    // -----------------------------------------------------------
-    const { readFile: readTmp } = await import("fs/promises");
-    const pdfBytes = await readTmp(tmpPath);
-
+    // ── Reject blank PDFs before hitting paid API ──
+    const { readFile: readTmpFile } = await import("fs/promises");
+    const pdfBytes = await readTmpFile(tmpPath);
     try {
-      const pdfjsLib = await import("pdfjs-dist/legacy/build/pdf.js");
-      pdfjsLib.GlobalWorkerOptions.workerSrc = "";
-
-      const doc = await pdfjsLib.getDocument({
-        data: new Uint8Array(pdfBytes),
-        disableFontFace: true,
-        isEvalSupported: false,
-      }).promise;
-
-      if (doc.numPages === 0) {
-        doc.destroy();
-        await unlink(tmpPath).catch(() => {});
-        tmpPath = null;
-        console.log("[blank-check] REJECTED — zero pages");
-        return errorResponse("This file appears to be empty. Please upload a PDF with content.", 400);
-      }
-
-      // Operator IDs that produce visible output (from pdfjs-dist OPS)
-      const OPS = pdfjsLib.OPS;
-      const VISIBLE_OPS = new Set([
-        OPS.showText,                  // Tj — show text string
-        OPS.showSpacedText,            // TJ — show text array
-        OPS.paintImageXObject,         // Do (image)
-        OPS.paintInlineImageXObject,   // inline image
-        OPS.paintInlineImageXObjectGroup,
-        OPS.paintJpegXObject,          // JPEG image
-        OPS.paintFormXObjectBegin,     // Form XObject (may contain content)
-      ]);
-
-      let hasVisibleContent = false;
-
-      for (let i = 1; i <= doc.numPages; i++) {
-        const page = await doc.getPage(i);
-        const opList = await page.getOperatorList();
-
-        // Also check for text content directly
-        const textContent = await page.getTextContent();
-        const pageText = textContent.items
-          .map((item) => ("str" in item ? item.str : ""))
-          .join("")
-          .trim();
-
-        // Count visible operators
-        let visibleOpCount = 0;
-        for (const fn of opList.fnArray) {
-          if (VISIBLE_OPS.has(fn)) {
-            visibleOpCount++;
-          }
-        }
-
-        console.log(
-          `[blank-check] Page ${i}/${doc.numPages}: ` +
-          `visibleOps=${visibleOpCount}, textLength=${pageText.length}, ` +
-          `totalOps=${opList.fnArray.length}`
-        );
-
-        if (pageText.length > 0 || visibleOpCount > 0) {
-          hasVisibleContent = true;
-          page.cleanup();
-          break;
-        }
-        page.cleanup();
-      }
-
-      doc.destroy();
-
-      if (!hasVisibleContent) {
-        console.log("[blank-check] REJECTED — no visible content on any page");
+      const { isBlankPdf } = await import("@/lib/blank-pdf-check");
+      const { blank } = await isBlankPdf(pdfBytes);
+      if (blank) {
         await unlink(tmpPath).catch(() => {});
         tmpPath = null;
         return errorResponse("This file appears to be empty. Please upload a PDF with content.", 400);
       }
-
-      console.log("[blank-check] PASSED — visible content detected");
-    } catch (pdfError) {
-      console.error("[blank-check] Preflight error:", pdfError?.message || pdfError);
-      // If pdfjs-dist fails to parse the page content, the PDF is likely blank or corrupt
-      // Either way, don't send it to iLovePDF
+    } catch {
       await unlink(tmpPath).catch(() => {});
       tmpPath = null;
       return errorResponse("This file appears to be empty or unreadable. Please upload a PDF with content.", 400);

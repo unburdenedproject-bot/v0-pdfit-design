@@ -122,6 +122,17 @@ export async function POST(request) {
 
     const { buffer, originalName, lang, uploadedBlobUrl } = input;
 
+    // ── Reject blank PDFs before hitting paid API ──
+    try {
+      const { isBlankPdf } = await import("@/lib/blank-pdf-check");
+      const { blank } = await isBlankPdf(buffer);
+      if (blank) {
+        return jsonError("This file appears to be empty. Please upload a PDF with content.", 400);
+      }
+    } catch {
+      return jsonError("This file appears to be empty or unreadable. Please upload a PDF with content.", 400);
+    }
+
     const region = (process.env.ILOVEAPI_REGION || "us").toLowerCase();
 
     // 1) AUTH -> token

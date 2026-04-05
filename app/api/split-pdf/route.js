@@ -137,6 +137,23 @@ export async function POST(request) {
       );
     }
 
+    // ── Reject blank PDFs before hitting paid API ──
+    const { readFile: readTmpFile } = await import("fs/promises");
+    const pdfBytesCheck = await readTmpFile(tmpPath);
+    try {
+      const { isBlankPdf } = await import("@/lib/blank-pdf-check");
+      const { blank } = await isBlankPdf(pdfBytesCheck);
+      if (blank) {
+        await unlink(tmpPath).catch(() => {});
+        tmpPath = null;
+        return errorResponse("This file appears to be empty. Please upload a PDF with content.", 400);
+      }
+    } catch {
+      await unlink(tmpPath).catch(() => {});
+      tmpPath = null;
+      return errorResponse("This file appears to be empty or unreadable. Please upload a PDF with content.", 400);
+    }
+
     // Validate the PDF has more than 1 page before splitting
     const { readFile } = await import("fs/promises");
     const { PDFDocument } = await import("pdf-lib");

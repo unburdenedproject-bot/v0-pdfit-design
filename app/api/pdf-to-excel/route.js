@@ -188,6 +188,22 @@ export async function POST(request) {
     }
 
     const fileBuffer = await readFile(tmpPath);
+
+    // ── Reject blank PDFs before hitting paid API ──
+    try {
+      const { isBlankPdf } = await import("@/lib/blank-pdf-check");
+      const { blank } = await isBlankPdf(fileBuffer);
+      if (blank) {
+        await unlink(tmpPath).catch(() => {});
+        tmpPath = null;
+        return errorResponse("This file appears to be empty. Please upload a PDF with content.", 400);
+      }
+    } catch {
+      await unlink(tmpPath).catch(() => {});
+      tmpPath = null;
+      return errorResponse("This file appears to be empty or unreadable. Please upload a PDF with content.", 400);
+    }
+
     const data = await convertWithCloudConvert(fileBuffer, originalName);
 
     if (uploadedBlobUrl) {

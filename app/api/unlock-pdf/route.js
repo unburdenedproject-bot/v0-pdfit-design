@@ -120,6 +120,23 @@ export async function POST(request) {
       await writeFile(tmpPath, buffer);
     }
 
+    // ── Reject blank PDFs before hitting paid API ──
+    const { readFile: readTmpFile } = await import("fs/promises");
+    const pdfBytes = await readTmpFile(tmpPath);
+    try {
+      const { isBlankPdf } = await import("@/lib/blank-pdf-check");
+      const { blank } = await isBlankPdf(pdfBytes);
+      if (blank) {
+        await unlink(tmpPath).catch(() => {});
+        tmpPath = null;
+        return errorResponse("This file appears to be empty. Please upload a PDF with content.", 400);
+      }
+    } catch {
+      await unlink(tmpPath).catch(() => {});
+      tmpPath = null;
+      return errorResponse("This file appears to be empty or unreadable. Please upload a PDF with content.", 400);
+    }
+
     // -----------------------------------------------------------
     // Common: run iLovePDF unlock task
     // -----------------------------------------------------------

@@ -76,6 +76,19 @@ export async function POST(request) {
     tmpPath = join("/tmp", `${id}-translate.pdf`);
     await writeFile(tmpPath, buffer);
 
+    // ── Reject blank PDFs before hitting paid API ──
+    try {
+      const { isBlankPdf } = await import("@/lib/blank-pdf-check");
+      const { blank } = await isBlankPdf(buffer);
+      if (blank) {
+        if (tmpPath) { await unlink(tmpPath).catch(() => {}); tmpPath = null; }
+        return errorResponse("This file appears to be empty. Please upload a PDF with content.", 400);
+      }
+    } catch {
+      if (tmpPath) { await unlink(tmpPath).catch(() => {}); tmpPath = null; }
+      return errorResponse("This file appears to be empty or unreadable. Please upload a PDF with content.", 400);
+    }
+
     // Extract text using iLoveAPI
     const publicKey = process.env.ILOVEAPI_PUBLIC_KEY;
     const secretKey = process.env.ILOVEAPI_SECRET_KEY;
