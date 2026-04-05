@@ -137,7 +137,7 @@ export async function POST(request) {
     // -----------------------------------------------------------
     const { readFile: readTmp } = await import("fs/promises");
     const pdfBytes = await readTmp(tmpPath);
-    const { PDFDocument, PDFName, PDFArray, PDFStream } = await import("pdf-lib");
+    const { PDFDocument, PDFName } = await import("pdf-lib");
 
     try {
       const pdfDoc = await PDFDocument.load(pdfBytes, { ignoreEncryption: true });
@@ -149,35 +149,28 @@ export async function POST(request) {
         return errorResponse("This file appears to be empty. Please upload a PDF with content.", 400);
       }
 
-      // Check if any page has visible content by scanning for PDF drawing operators
-      // Blank pages may have setup operators (q, Q, cm) but no visible output
-      // Visible content requires: text (Tj, TJ, ', "), images (Do), fills/strokes (f, F, S, s, B, sh)
-      const VISIBLE_OPS = /\b(Tj|TJ|Do|sh)\b|[^a-zA-Z](f|F|S|s|B|B\*|f\*)\s/;
+      // Check if any page has Font or XObject resources
+      // No fonts = no text. No XObjects = no images. A blank page has neither.
       let hasContent = false;
       for (const page of pages) {
-        const contentsRef = page.node.get(PDFName.of("Contents"));
-        if (!contentsRef) continue;
-
-        const resolved = pdfDoc.context.lookup(contentsRef);
-        if (!resolved) continue;
-
-        const streams = resolved instanceof PDFArray
-          ? resolved.asArray().map((ref) => pdfDoc.context.lookup(ref))
-          : [resolved];
-
-        for (const stream of streams) {
-          if (stream instanceof PDFStream) {
-            const bytes = stream.getContents();
-            if (bytes && bytes.length > 0) {
-              const ops = Buffer.from(bytes).toString("latin1");
-              if (VISIBLE_OPS.test(ops)) {
-                hasContent = true;
-                break;
-              }
-            }
-          }
+        // Get Resources dict (check page directly, then inherited from parent)
+        let resourcesRef = page.node.get(PDFName.of("Resources"));
+        if (!resourcesRef && page.node.Parent()) {
+          const parent = pdfDoc.context.lookup(page.node.Parent());
+          if (parent && parent.get) resourcesRef = parent.get(PDFName.of("Resources"));
         }
-        if (hasContent) break;
+        if (!resourcesRef) continue;
+
+        const resources = pdfDoc.context.lookup(resourcesRef);
+        if (!resources || !resources.get) continue;
+
+        const fonts = resources.get(PDFName.of("Font"));
+        const xobjects = resources.get(PDFName.of("XObject"));
+
+        if (fonts || xobjects) {
+          hasContent = true;
+          break;
+        }
       }
 
       if (!hasContent) {
