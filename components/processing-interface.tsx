@@ -1097,7 +1097,7 @@ export function ProcessingInterface({
                 ? "Unsupported File Type"
                 : errorMessage.toLowerCase().includes("size limit") || errorMessage.toLowerCase().includes("too large")
                 ? "File Too Large"
-                : errorMessage.toLowerCase().includes("appears to be empty") || errorMessage.toLowerCase().includes("empty and cannot")
+                : errorMessage.toLowerCase().includes("appears to be empty") || errorMessage.toLowerCase().includes("empty and cannot") || errorMessage.toLowerCase().includes("is empty and contains")
                 ? "Empty File"
                 : "Processing Failed"}
             </h2>

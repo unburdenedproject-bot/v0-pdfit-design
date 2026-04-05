@@ -91,6 +91,60 @@ export async function POST(request) {
       await writeFile(tmpPath, buffer);
     }
 
+    // ── Reject blank/empty PDFs before hitting iLoveAPI ──
+    const { readFile: readTmp } = await import("fs/promises");
+    const pdfBytes = await readTmp(tmpPath);
+
+    try {
+      const pdfjsLib = await import("pdfjs-dist/legacy/build/pdf.js");
+      pdfjsLib.GlobalWorkerOptions.workerSrc = "";
+
+      const doc = await pdfjsLib.getDocument({
+        data: new Uint8Array(pdfBytes),
+        disableFontFace: true,
+        isEvalSupported: false,
+      }).promise;
+
+      let hasVisibleContent = false;
+      const OPS = pdfjsLib.OPS;
+      const VISIBLE_OPS = new Set([
+        OPS.showText, OPS.showSpacedText,
+        OPS.paintImageXObject, OPS.paintInlineImageXObject,
+        OPS.paintInlineImageXObjectGroup, OPS.paintJpegXObject,
+        OPS.paintFormXObjectBegin,
+      ]);
+
+      for (let i = 1; i <= doc.numPages; i++) {
+        const page = await doc.getPage(i);
+        const opList = await page.getOperatorList();
+        const textContent = await page.getTextContent();
+        const pageText = textContent.items.map((item) => ("str" in item ? item.str : "")).join("").trim();
+
+        let visibleOpCount = 0;
+        for (const fn of opList.fnArray) {
+          if (VISIBLE_OPS.has(fn)) { visibleOpCount++; }
+        }
+
+        if (pageText.length > 0 || visibleOpCount > 0) {
+          hasVisibleContent = true;
+          page.cleanup();
+          break;
+        }
+        page.cleanup();
+      }
+      doc.destroy();
+
+      if (!hasVisibleContent) {
+        await unlink(tmpPath).catch(() => {});
+        tmpPath = null;
+        return errorResponse("The uploaded PDF is empty and contains no images to extract.", 400);
+      }
+    } catch {
+      await unlink(tmpPath).catch(() => {});
+      tmpPath = null;
+      return errorResponse("The uploaded PDF is empty and contains no images to extract.", 400);
+    }
+
     // Use pdfjpg with "extract" mode to extract embedded images
     const ILovePDFApi = (await import("@ilovepdf/ilovepdf-nodejs")).default;
     const ILovePDFFile = (await import("@ilovepdf/ilovepdf-nodejs/ILovePDFFile")).default;
