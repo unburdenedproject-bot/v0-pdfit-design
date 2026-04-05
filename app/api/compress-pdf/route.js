@@ -134,52 +134,32 @@ export async function POST(request) {
 
     // -----------------------------------------------------------
     // Reject blank PDFs before hitting iLovePDF (saves API costs)
+    // Uses pdf-parse (Mozilla pdf.js) to extract actual rendered text.
     // -----------------------------------------------------------
     const { readFile: readTmp } = await import("fs/promises");
     const pdfBytes = await readTmp(tmpPath);
-    const { PDFDocument, PDFName } = await import("pdf-lib");
 
     try {
-      const pdfDoc = await PDFDocument.load(pdfBytes, { ignoreEncryption: true });
-      const pages = pdfDoc.getPages();
+      const pdfParse = (await import("pdf-parse")).default;
+      const parsed = await pdfParse(pdfBytes);
 
-      if (pages.length === 0) {
-        await unlink(tmpPath).catch(() => {});
-        tmpPath = null;
-        return errorResponse("This file appears to be empty. Please upload a PDF with content.", 400);
-      }
+      // Check 1: Does the PDF have any extractable text?
+      const hasText = parsed.text.trim().length > 0;
 
-      // Check if any page has Font or XObject resources
-      // No fonts = no text. No XObjects = no images. A blank page has neither.
-      let hasContent = false;
-      for (const page of pages) {
-        // Get Resources dict (check page directly, then inherited from parent)
-        let resourcesRef = page.node.get(PDFName.of("Resources"));
-        if (!resourcesRef && page.node.Parent()) {
-          const parent = pdfDoc.context.lookup(page.node.Parent());
-          if (parent && parent.get) resourcesRef = parent.get(PDFName.of("Resources"));
-        }
-        if (!resourcesRef) continue;
+      // Check 2: No text but large file = likely scanned images (allow through)
+      // A blank PDF is typically under 30KB. Image-heavy PDFs are much larger.
+      const hasLikelyImages = !hasText && pdfBytes.length > 30000;
 
-        const resources = pdfDoc.context.lookup(resourcesRef);
-        if (!resources || !resources.get) continue;
+      // Check 3: Zero pages
+      const hasPages = parsed.numpages > 0;
 
-        const fonts = resources.get(PDFName.of("Font"));
-        const xobjects = resources.get(PDFName.of("XObject"));
-
-        if (fonts || xobjects) {
-          hasContent = true;
-          break;
-        }
-      }
-
-      if (!hasContent) {
+      if (!hasPages || (!hasText && !hasLikelyImages)) {
         await unlink(tmpPath).catch(() => {});
         tmpPath = null;
         return errorResponse("This file appears to be empty. Please upload a PDF with content.", 400);
       }
     } catch (pdfError) {
-      // If pdf-lib can't parse it, it's likely corrupt
+      // If pdf-parse can't read it, it's likely corrupt
       await unlink(tmpPath).catch(() => {});
       tmpPath = null;
       return errorResponse("The uploaded file is not a valid PDF and cannot be compressed.", 400);
