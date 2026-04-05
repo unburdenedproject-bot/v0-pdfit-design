@@ -59,6 +59,7 @@ export function ImageToPdfInterface({
 
   const [isDragOver, setIsDragOver] = useState(false)
   const [images, setImages] = useState<SelectedImage[]>([])
+  const [outputMode, setOutputMode] = useState<"combined" | "separate">("combined")
   const [isProcessing, setIsProcessing] = useState(false)
   const [isComplete, setIsComplete] = useState(false)
   const [hasError, setHasError] = useState(false)
@@ -139,27 +140,25 @@ export function ImageToPdfInterface({
     const uploadedBlobUrls: string[] = []
 
     try {
-      const totalSteps = images.length * 2 // upload + convert per image
-      let completedSteps = 0
-
-      for (const img of images) {
-        // Step 1: Upload to Vercel Blob
-        const blobUrl = await uploadFileToBlob(img.file)
+      // Upload all images to Vercel Blob first
+      for (let i = 0; i < images.length; i++) {
+        const blobUrl = await uploadFileToBlob(images[i].file)
         uploadedBlobUrls.push(blobUrl)
-        completedSteps++
-        setProgress(Math.round((completedSteps / totalSteps) * 90) + 5)
+        setProgress(Math.round(((i + 1) / images.length) * 40) + 5)
+      }
 
-        // Step 2: Call conversion API
+      if (outputMode === "combined" && images.length > 1) {
+        // ── Combined: send all blob URLs in one request ──
+        setProgress(50)
         const response = await fetch("/api/image-to-pdf", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ blobUrl }),
+          body: JSON.stringify({ blobUrls: uploadedBlobUrls }),
         })
 
         if (!response.ok) {
           const rawBody = await response.text()
           let message = `Conversion failed (HTTP ${response.status})`
-
           try {
             const errorData = JSON.parse(rawBody)
             if (errorData.error) message = errorData.error
@@ -168,29 +167,60 @@ export function ImageToPdfInterface({
           } catch {
             if (rawBody) message = rawBody
           }
-
           throw new Error(message)
         }
 
-        // Derive filename
-        const baseName = img.file.name.replace(/\.[^.]+$/, "")
-        let downloadName = `${baseName}.pdf`
+        const baseName = images[0].file.name.replace(/\.[^.]+$/, "")
+        let downloadName = `${baseName}-combined.pdf`
         const cd = response.headers.get("content-disposition") || ""
         const cdMatch = cd.match(/filename[^;=\n]*=["']?([^"';\n]+)/)
         if (cdMatch?.[1]) downloadName = cdMatch[1]
 
         const blob = await response.blob()
-        const url = URL.createObjectURL(blob)
-
         results.push({
           name: downloadName,
-          url,
-          inputBlobUrl: blobUrl,
+          url: URL.createObjectURL(blob),
           size: blob.size,
         })
+      } else {
+        // ── Separate: one API call per image ──
+        for (let i = 0; i < images.length; i++) {
+          setProgress(45 + Math.round(((i + 1) / images.length) * 45))
 
-        completedSteps++
-        setProgress(Math.round((completedSteps / totalSteps) * 90) + 5)
+          const response = await fetch("/api/image-to-pdf", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ blobUrl: uploadedBlobUrls[i] }),
+          })
+
+          if (!response.ok) {
+            const rawBody = await response.text()
+            let message = `Conversion failed (HTTP ${response.status})`
+            try {
+              const errorData = JSON.parse(rawBody)
+              if (errorData.error) message = errorData.error
+              if (message.includes("upgrade_required")) { router.push(`/pricing?source=${formatLabel.toLowerCase()}-to-pdf`); return }
+              if (message.includes("signup_required")) { router.push("/signup-required"); return }
+            } catch {
+              if (rawBody) message = rawBody
+            }
+            throw new Error(message)
+          }
+
+          const baseName = images[i].file.name.replace(/\.[^.]+$/, "")
+          let downloadName = `${baseName}.pdf`
+          const cd = response.headers.get("content-disposition") || ""
+          const cdMatch = cd.match(/filename[^;=\n]*=["']?([^"';\n]+)/)
+          if (cdMatch?.[1]) downloadName = cdMatch[1]
+
+          const blob = await response.blob()
+          results.push({
+            name: downloadName,
+            url: URL.createObjectURL(blob),
+            inputBlobUrl: uploadedBlobUrls[i],
+            size: blob.size,
+          })
+        }
       }
 
       setProcessedFiles(results)
@@ -198,7 +228,6 @@ export function ImageToPdfInterface({
       setIsProcessing(false)
       setIsComplete(true)
     } catch (error) {
-      // Clean up uploaded blobs on failure
       for (const url of uploadedBlobUrls) {
         deleteBlobUrl(url)
       }
@@ -208,7 +237,7 @@ export function ImageToPdfInterface({
       )
       setIsProcessing(false)
     }
-  }, [images, router, formatLabel])
+  }, [images, outputMode, router, formatLabel])
 
   const downloadFile = useCallback((fileUrl: string, fileName: string) => {
     const link = document.createElement("a")
@@ -562,6 +591,51 @@ export function ImageToPdfInterface({
                 <Upload className="h-4 w-4 mr-2" />
                 Add More Images
               </Button>
+
+              {/* Output mode selector (only shown when multiple images) */}
+              {images.length > 1 && (
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-3">Output Mode:</h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    <button
+                      type="button"
+                      onClick={() => setOutputMode("combined")}
+                      className={cn(
+                        "flex flex-col items-center gap-2 rounded-xl border-2 p-5 transition-all",
+                        outputMode === "combined"
+                          ? "border-orange-500 bg-orange-50 shadow-sm"
+                          : "border-gray-200 hover:border-orange-300 hover:bg-gray-50"
+                      )}
+                    >
+                      <FileText className={cn("h-8 w-8", outputMode === "combined" ? "text-orange-600" : "text-slate-400")} />
+                      <span className={cn("font-bold text-sm", outputMode === "combined" ? "text-orange-700" : "text-slate-700")}>
+                        One PDF
+                      </span>
+                      <span className="text-xs text-slate-500 text-center">
+                        All images combined into a single PDF file.
+                      </span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setOutputMode("separate")}
+                      className={cn(
+                        "flex flex-col items-center gap-2 rounded-xl border-2 p-5 transition-all",
+                        outputMode === "separate"
+                          ? "border-orange-500 bg-orange-50 shadow-sm"
+                          : "border-gray-200 hover:border-orange-300 hover:bg-gray-50"
+                      )}
+                    >
+                      <Download className={cn("h-8 w-8", outputMode === "separate" ? "text-orange-600" : "text-slate-400")} />
+                      <span className={cn("font-bold text-sm", outputMode === "separate" ? "text-orange-700" : "text-slate-700")}>
+                        Separate PDFs
+                      </span>
+                      <span className="text-xs text-slate-500 text-center">
+                        Each image as its own PDF file.
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              )}
 
               {/* Submit */}
               <Button
