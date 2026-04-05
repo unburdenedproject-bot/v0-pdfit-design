@@ -72,17 +72,16 @@ export async function POST(req: NextRequest) {
     if (mode === "bw") {
       pipeline = pipeline
         .grayscale()
-        .median(3) // denoise — removes phone camera speckle before sharpening
-        .normalize() // auto-stretch contrast
-        .gamma(1.8) // push midtones lighter — separates text from background
-        .sharpen({ sigma: 2, m1: 2, m2: 3 }) // aggressive sharpen for blurry scans
-        .threshold(145) // crisp black & white
+        .median(3) // denoise — removes phone camera speckle
+        .clahe({ width: 8, height: 8, maxSlope: 3 }) // local contrast equalization — handles uneven phone lighting/shadows
+        .sharpen({ sigma: 1.5 })
+        .threshold(140) // crisp B&W — works correctly now because CLAHE removed illumination gradients
     } else {
       // color cleanup
       pipeline = pipeline
-        .median(3) // denoise — removes phone camera speckle before sharpening
-        .normalize() // auto-stretch contrast
-        .sharpen({ sigma: 1.5, m1: 1.5, m2: 2 }) // stronger sharpen for blurry scans
+        .median(3) // denoise — removes phone camera speckle
+        .clahe({ width: 8, height: 8, maxSlope: 3 }) // local contrast equalization — handles uneven phone lighting/shadows
+        .sharpen({ sigma: 1.5 })
         .modulate({ brightness: 1.05, saturation: 0.9 }) // slight brightness boost, reduce color cast
     }
 
