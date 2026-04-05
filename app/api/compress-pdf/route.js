@@ -217,9 +217,11 @@ export async function POST(request) {
       console.log("[blank-check] PASSED — visible content detected");
     } catch (pdfError) {
       console.error("[blank-check] Preflight error:", pdfError?.message || pdfError);
+      // If pdfjs-dist fails to parse the page content, the PDF is likely blank or corrupt
+      // Either way, don't send it to iLovePDF
       await unlink(tmpPath).catch(() => {});
       tmpPath = null;
-      return errorResponse("The uploaded file is not a valid PDF and cannot be compressed.", 400);
+      return errorResponse("This file appears to be empty or unreadable. Please upload a PDF with content.", 400);
     }
 
     // -----------------------------------------------------------
