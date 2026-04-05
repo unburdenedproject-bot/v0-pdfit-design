@@ -149,18 +149,18 @@ export async function POST(request) {
         return errorResponse("This file appears to be empty. Please upload a PDF with content.", 400);
       }
 
-      // Check if any page has actual content by inspecting content streams
-      // A page with text, images, or drawings has non-empty content streams
+      // Check if any page has visible content by scanning for PDF drawing operators
+      // Blank pages may have setup operators (q, Q, cm) but no visible output
+      // Visible content requires: text (Tj, TJ, ', "), images (Do), fills/strokes (f, F, S, s, B, sh)
+      const VISIBLE_OPS = /\b(Tj|TJ|Do|sh)\b|[^a-zA-Z](f|F|S|s|B|B\*|f\*)\s/;
       let hasContent = false;
       for (const page of pages) {
         const contentsRef = page.node.get(PDFName.of("Contents"));
-        if (!contentsRef) continue; // no content stream = blank page
+        if (!contentsRef) continue;
 
-        // Resolve the content stream(s) and check for meaningful bytes
         const resolved = pdfDoc.context.lookup(contentsRef);
         if (!resolved) continue;
 
-        // Contents can be a single stream or an array of streams
         const streams = resolved instanceof PDFArray
           ? resolved.asArray().map((ref) => pdfDoc.context.lookup(ref))
           : [resolved];
@@ -168,11 +168,9 @@ export async function POST(request) {
         for (const stream of streams) {
           if (stream instanceof PDFStream) {
             const bytes = stream.getContents();
-            // A non-blank page has content operators (text, images, paths)
-            // Blank pages have either no bytes or only whitespace
             if (bytes && bytes.length > 0) {
-              const text = Buffer.from(bytes).toString("ascii").trim();
-              if (text.length > 0) {
+              const ops = Buffer.from(bytes).toString("latin1");
+              if (VISIBLE_OPS.test(ops)) {
                 hasContent = true;
                 break;
               }
