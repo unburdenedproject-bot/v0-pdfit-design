@@ -36,7 +36,7 @@ const WORKFLOW_COPY = {
     download: "Download",
     runAnother: "Run Another Workflow",
     backToTools: "Back to Tools",
-    filesDeleted: "Files are automatically deleted after 1 hour.",
+    filesDeleted: "Files are automatically deleted after download.",
     runningTitle: "Running Workflow...",
     processingStep: "Processing step {current} of {total}",
     choosePreset: "Choose a Preset Workflow",

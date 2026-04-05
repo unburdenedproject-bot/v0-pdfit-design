@@ -36,7 +36,7 @@ const REDACTION_COPY = {
     download: "Download",
     redactAnother: "Redact Another PDF",
     backToTools: "Back to Tools",
-    filesDeleted: "Files are automatically deleted after 1 hour.",
+    filesDeleted: "Files are automatically deleted after download.",
     applyingTitle: "Applying Redactions...",
     applyingDescription: "Permanently removing {count} selected {areaLabel}...",
     loadingPdf: "Loading PDF pages...",

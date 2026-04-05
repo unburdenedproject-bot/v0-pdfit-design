@@ -306,8 +306,7 @@ export function ProtectPdfInterface() {
                 <div className="flex items-center justify-center gap-2 text-blue-800 text-sm">
                   <Shield className="h-4 w-4" />
                   <span className="font-medium">
-                    Your files are automatically deleted from our servers after 1
-                    hour for your privacy and security.
+                    Your files are automatically deleted from our servers after download for your privacy and security.
                   </span>
                 </div>
               </div>
