@@ -126,6 +126,7 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 - /api/generate-resume handles both "rewrite" and "build" modes, optional cover letter as second page
 - Homepage shows 2 resume tools: "Optimize Your Resume" → /ats-optimizer, "Create a Resume" → /create-resume
 - eSign signatures are privacy-first and session-only: never persist reusable signature libraries server-side
+- Phone scan cleanup uses division-based adaptive background removal (blur(50) background estimate → pixel division). DO NOT replace with global threshold, CLAHE, or modulate — these were tested and produced unusable output. Current parameters are locked as the benchmark.
 - See LOCALIZATION.md
 
 ## Rules - Always Follow

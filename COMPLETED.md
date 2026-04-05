@@ -2,12 +2,13 @@
 
 ## Phone Scan Cleanup & Signup CAPTCHA Fix (April 5, 2026)
 
-### Phone Scan Cleanup — Adaptive Background Removal (B&W mode)
-- Replaced global `threshold(145)` with division-based adaptive background removal
-- Pipeline: grayscale → median(3) denoise → two parallel passes (raw pixels + blur(50) background estimate) → pixel-by-pixel division to remove illumination gradient → normalize → sharpen(1.2) → gamma(1.8) → PNG
-- Fixes: uneven phone lighting no longer causes black blobs, shadow regions are normalized, handwriting/signatures/stamps/seals are fully preserved
-- Result matches professional flatbed scanner quality for mixed-content documents (printed text + handwriting + official marks)
-- Color mode updated to use CLAHE local contrast equalization instead of global normalize
+### Phone Scan Cleanup — Adaptive Background Removal (LOCKED benchmark)
+- Both B&W and Color modes use division-based adaptive background removal
+- **B&W pipeline:** grayscale → median(3) → raw pixels + blur(50) background estimate → pixel division → normalize → sharpen(1.2) → gamma(1.8) → PNG
+- **Color pipeline:** median(3) → raw pixels + blur(50) background estimate → per-channel pixel division → normalize → sharpen(1.2) → gamma(1.6) → PNG
+- DO NOT use global threshold, CLAHE, or modulate for scan cleanup — these were tested and failed
+- Benchmark: clean white background, sharp printed text, legible handwriting, intact signatures/stamps/seals — professional flatbed scanner quality
+- Validated on: phone-photographed mixed-content documents with printed text, handwriting, and official marks under uneven illumination
 - File changed: `app/api/phone-scan-cleanup/route.ts`
 
 ### Signup CAPTCHA Revalidation on Email Change
