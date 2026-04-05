@@ -60,7 +60,7 @@ export async function POST(request: Request) {
     // Send the email via Resend
     const resend = new Resend(resendKey)
 
-    await resend.emails.send({
+    const { data: emailResult, error: emailError } = await resend.emails.send({
       from: "PDF.it <noreply@pdf.it.com>",
       to: email,
       subject: "Reset your PDF.it password",
@@ -91,6 +91,27 @@ export async function POST(request: Request) {
         </div>
       `,
     })
+
+    if (emailError) {
+      console.error("Resend email delivery failed:", { email, error: emailError.message, name: emailError.name })
+
+      // Fallback: use Supabase's built-in password reset email
+      console.log("Attempting Supabase fallback for password reset:", email)
+      const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+      if (anonKey) {
+        const fallbackClient = createClient(supabaseUrl, anonKey)
+        const { error: fallbackError } = await fallbackClient.auth.resetPasswordForEmail(email, {
+          redirectTo: `${siteUrl}/reset-password`,
+        })
+        if (fallbackError) {
+          console.error("Supabase fallback also failed:", fallbackError.message)
+        } else {
+          console.log("Supabase fallback email sent for:", email)
+        }
+      }
+    } else {
+      console.log("Password reset email sent:", { email, id: emailResult?.id })
+    }
 
     // Always return success to avoid leaking whether the email exists
     return NextResponse.json({ success: true })
