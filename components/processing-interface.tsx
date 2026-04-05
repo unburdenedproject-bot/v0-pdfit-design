@@ -181,6 +181,8 @@ export function ProcessingInterface({
     const pdfFiles = files.filter((f) => f.name.toLowerCase().endsWith(".pdf"))
     for (const f of pdfFiles) {
       const header = await f.slice(0, 5).text()
+      const headerBytes = new Uint8Array(await f.slice(0, 10).arrayBuffer())
+      console.log("[PDF validation]", { fileName: f.name, fileSize: f.size, headerText: JSON.stringify(header), headerBytes: Array.from(headerBytes) })
       if (header !== "%PDF-") {
         setHasError(true)
         setErrorMessage("The uploaded file is not a valid PDF and cannot be processed.")
