@@ -133,6 +133,68 @@ export async function POST(request) {
     }
 
     // -----------------------------------------------------------
+    // Reject blank PDFs before hitting iLovePDF (saves API costs)
+    // -----------------------------------------------------------
+    const { readFile: readTmp } = await import("fs/promises");
+    const pdfBytes = await readTmp(tmpPath);
+    const { PDFDocument, PDFName, PDFArray, PDFStream } = await import("pdf-lib");
+
+    try {
+      const pdfDoc = await PDFDocument.load(pdfBytes, { ignoreEncryption: true });
+      const pages = pdfDoc.getPages();
+
+      if (pages.length === 0) {
+        await unlink(tmpPath).catch(() => {});
+        tmpPath = null;
+        return errorResponse("This file appears to be empty. Please upload a PDF with content.", 400);
+      }
+
+      // Check if any page has actual content by inspecting content streams
+      // A page with text, images, or drawings has non-empty content streams
+      let hasContent = false;
+      for (const page of pages) {
+        const contentsRef = page.node.get(PDFName.of("Contents"));
+        if (!contentsRef) continue; // no content stream = blank page
+
+        // Resolve the content stream(s) and check for meaningful bytes
+        const resolved = pdfDoc.context.lookup(contentsRef);
+        if (!resolved) continue;
+
+        // Contents can be a single stream or an array of streams
+        const streams = resolved instanceof PDFArray
+          ? resolved.asArray().map((ref) => pdfDoc.context.lookup(ref))
+          : [resolved];
+
+        for (const stream of streams) {
+          if (stream instanceof PDFStream) {
+            const bytes = stream.getContents();
+            // A non-blank page has content operators (text, images, paths)
+            // Blank pages have either no bytes or only whitespace
+            if (bytes && bytes.length > 0) {
+              const text = Buffer.from(bytes).toString("ascii").trim();
+              if (text.length > 0) {
+                hasContent = true;
+                break;
+              }
+            }
+          }
+        }
+        if (hasContent) break;
+      }
+
+      if (!hasContent) {
+        await unlink(tmpPath).catch(() => {});
+        tmpPath = null;
+        return errorResponse("This file appears to be empty. Please upload a PDF with content.", 400);
+      }
+    } catch (pdfError) {
+      // If pdf-lib can't parse it, it's likely corrupt
+      await unlink(tmpPath).catch(() => {});
+      tmpPath = null;
+      return errorResponse("The uploaded file is not a valid PDF and cannot be compressed.", 400);
+    }
+
+    // -----------------------------------------------------------
     // Common: run iLovePDF compress task
     // -----------------------------------------------------------
     const ILovePDFApi = (await import("@ilovepdf/ilovepdf-nodejs")).default;
