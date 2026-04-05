@@ -177,6 +177,17 @@ export function ProcessingInterface({
       return
     }
 
+    // Validate PDF header for tools that accept PDFs
+    const pdfFiles = files.filter((f) => f.name.toLowerCase().endsWith(".pdf"))
+    for (const f of pdfFiles) {
+      const header = await f.slice(0, 5).text()
+      if (header !== "%PDF-") {
+        setHasError(true)
+        setErrorMessage("The uploaded file is not a valid PDF and cannot be processed.")
+        return
+      }
+    }
+
     setIsProcessing(true)
     setHasError(false)
     setProgress(0)

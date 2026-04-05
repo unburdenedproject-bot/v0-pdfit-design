@@ -89,12 +89,12 @@ export async function POST(request) {
       tmpPath = result.tmpPath;
       originalName = result.name;
 
-      const { stat } = await import("fs/promises");
-      const fileStats = await stat(tmpPath);
-      if (fileStats.size === 0) {
+      const { readFile } = await import("fs/promises");
+      const headerBytes = await readFile(tmpPath).then((buf) => buf.subarray(0, 5));
+      if (headerBytes.length < 5 || headerBytes.toString("ascii") !== "%PDF-") {
         await unlink(tmpPath).catch(() => {});
         tmpPath = null;
-        return errorResponse("The uploaded file is empty and cannot be compressed.", 400);
+        return errorResponse("The uploaded file is not a valid PDF and cannot be compressed.", 400);
       }
     } else {
       // ---- Multipart path: formData key "file" (backwards compat) ----
@@ -123,8 +123,8 @@ export async function POST(request) {
       }
 
       const buffer = Buffer.from(await file.arrayBuffer());
-      if (buffer.length === 0) {
-        return errorResponse("The uploaded file is empty and cannot be compressed.", 400);
+      if (buffer.length < 5 || buffer.subarray(0, 5).toString("ascii") !== "%PDF-") {
+        return errorResponse("The uploaded file is not a valid PDF and cannot be compressed.", 400);
       }
 
       const id = randomUUID();
