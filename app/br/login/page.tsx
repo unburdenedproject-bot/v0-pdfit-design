@@ -28,6 +28,7 @@ function LoginForm() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const redirectTo = searchParams.get("redirect") || "/br/painel"
+  const messageParam = searchParams.get("message")
 
   const handleResetPassword = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -157,6 +158,11 @@ function LoginForm() {
               Entre na sua conta para continuar
             </p>
           </div>
+          {messageParam === "already-verified" && (
+            <div className="mb-4 rounded-lg border border-green-500/30 bg-green-500/10 px-4 py-3 text-center">
+              <p className="text-sm text-green-300 font-medium">Seu e-mail já foi verificado. Faça login.</p>
+            </div>
+          )}
           <form onSubmit={handleLogin}>
             <div className="flex flex-col gap-4">
               <div className="grid gap-2">

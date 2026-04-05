@@ -51,6 +51,17 @@ export async function updateSession(request: NextRequest) {
   // If the user is NOT logged in and the path is protected, redirect to /login
   if (!user && isProtectedPath(request.nextUrl.pathname)) {
     const url = request.nextUrl.clone()
+
+    // Detect Supabase auth error params (e.g. already-used confirmation link)
+    const errorParam = request.nextUrl.searchParams.get("error")
+    const errorDescription = request.nextUrl.searchParams.get("error_description") || ""
+    if (errorParam || errorDescription.toLowerCase().includes("expired") || errorDescription.toLowerCase().includes("already")) {
+      url.pathname = "/login"
+      url.search = ""
+      url.searchParams.set("message", "already-verified")
+      return NextResponse.redirect(url)
+    }
+
     const redirectTo = request.nextUrl.pathname + request.nextUrl.search
     url.pathname = "/login"
     url.searchParams.set("redirect", redirectTo)

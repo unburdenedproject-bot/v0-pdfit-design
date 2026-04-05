@@ -36,7 +36,12 @@ function ConfirmForm() {
       })
 
       if (error) {
-        setErrorMessage(error.message || "Confirmation failed. The link may have expired.")
+        const msg = (error.message || "").toLowerCase()
+        if (msg.includes("already") || msg.includes("expired") || msg.includes("otp_expired") || msg.includes("used")) {
+          setErrorMessage("Your email is already verified. Please log in.")
+        } else {
+          setErrorMessage(error.message || "Confirmation failed. The link may have expired.")
+        }
         setStatus("error")
         return
       }
