@@ -312,7 +312,11 @@ export function ImageToPdfInterface({
               <AlertCircle className="h-10 w-10 text-red-600" />
             </div>
             <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              Conversion Failed
+              {errorMessage.toLowerCase().includes("invalid file type") || errorMessage.toLowerCase().includes("not supported") || errorMessage.toLowerCase().includes("file format")
+                ? "Unsupported File Type"
+                : errorMessage.toLowerCase().includes("size limit") || errorMessage.toLowerCase().includes("too large")
+                ? "File Too Large"
+                : "Conversion Failed"}
             </h2>
             <p className="text-slate-600 mb-8">{errorMessage}</p>
             <Button
