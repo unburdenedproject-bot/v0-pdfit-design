@@ -43,6 +43,12 @@ export default function SignUpPagePt() {
       return
     }
 
+    if (!/^[\p{L}\s'\-]+$/u.test(firstName.trim())) {
+      setError("O nome só pode conter letras")
+      setIsLoading(false)
+      return
+    }
+
     if (password !== confirmPassword) {
       setError("As senhas não coincidem")
       setIsLoading(false)

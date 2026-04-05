@@ -43,6 +43,12 @@ export default function SignUpPage() {
       return
     }
 
+    if (!/^[\p{L}\s'\-]+$/u.test(firstName.trim())) {
+      setError("Name can only contain letters")
+      setIsLoading(false)
+      return
+    }
+
     if (password !== confirmPassword) {
       setError("Passwords do not match")
       setIsLoading(false)

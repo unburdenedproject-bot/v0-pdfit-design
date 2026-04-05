@@ -43,6 +43,12 @@ export default function SignUpPageEs() {
       return
     }
 
+    if (!/^[\p{L}\s'\-]+$/u.test(firstName.trim())) {
+      setError("El nombre solo puede contener letras")
+      setIsLoading(false)
+      return
+    }
+
     if (password !== confirmPassword) {
       setError("Las contraseñas no coinciden")
       setIsLoading(false)
