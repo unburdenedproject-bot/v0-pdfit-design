@@ -101,12 +101,34 @@ export async function POST(req: NextRequest) {
         .png()
         .toBuffer()
     } else {
-      // color cleanup
-      processedBuffer = await base
-        .median(3) // denoise — removes phone camera speckle
-        .clahe({ width: 8, height: 8, maxSlope: 3 }) // local contrast equalization — handles uneven phone lighting/shadows
-        .sharpen({ sigma: 1.5 })
-        .modulate({ brightness: 1.05, saturation: 0.9 }) // slight brightness boost, reduce color cast
+      // ── Color: same adaptive background removal, applied per-channel ──
+      const colorBase = base.median(3)
+
+      const { data: origData, info } = await colorBase
+        .clone()
+        .raw()
+        .toBuffer({ resolveWithObject: true })
+
+      // Blur each channel equally for background estimate (3-channel RGB)
+      const { data: bgData } = await colorBase
+        .clone()
+        .blur(50)
+        .raw()
+        .toBuffer({ resolveWithObject: true })
+
+      // Divide each channel by its local background
+      const normalized = Buffer.alloc(origData.length)
+      for (let i = 0; i < origData.length; i++) {
+        const bg = bgData[i] < 1 ? 1 : bgData[i]
+        normalized[i] = Math.min(255, Math.round((origData[i] / bg) * 255))
+      }
+
+      processedBuffer = await sharp(normalized, {
+        raw: { width: info.width, height: info.height, channels: 3 },
+      })
+        .normalize()
+        .sharpen({ sigma: 1.2 })
+        .gamma(1.6) // clean background without washing out colors
         .png()
         .toBuffer()
     }
