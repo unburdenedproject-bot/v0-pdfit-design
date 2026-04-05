@@ -1,5 +1,50 @@
 # PDF.it - Accomplished Work
 
+## Bug Fixes & Security Hardening (April 5, 2026)
+
+### Blank PDF Rejection (all paid API routes)
+- Created shared `lib/blank-pdf-check.js` using pdfjs-dist operator list (pure JS, no native deps)
+- Checks each page for text-showing and image-drawing operators — rejects visually blank PDFs before any paid API call
+- Applied to all 20 paid API routes: compress, extract-images, split, pdf-to-txt, pdf-to-jpg, pdf-to-png, flatten, watermark, protect, unlock, rotate, ocr, chat-with-pdf, translate-pdf, pdf-summarizer, question-generator, smart-extraction, pdf-to-word, pdf-to-excel, pdf-to-powerpoint
+- Error heading shows "Empty File" (not "Processing Failed")
+- Previous failed approaches: global threshold, %PDF header, content stream operators, Font/XObject resources, pdf-parse text extraction, @napi-rs/canvas rasterization — all failed due to PDF generators embedding default resources on blank pages or native deps not deploying on Vercel
+
+### Image-to-PDF: Combined/Separate Output Mode
+- Users can now choose "One PDF" (all images as pages in a single file) or "Separate PDFs" (each image as its own file)
+- Mode selector only appears when 2+ images are uploaded; single image works as before
+- API updated to accept `blobUrls` array for combined mode, backwards compatible with single `blobUrl`
+- Files changed: `components/image-to-pdf-interface.tsx`, `app/api/image-to-pdf/route.ts`
+
+### Password Reset Email Reliability
+- Added Resend delivery error logging (email ID on success, error details on failure)
+- Added automatic Supabase fallback: if Resend fails, triggers Supabase's built-in `resetPasswordForEmail`
+- File changed: `app/api/forgot-password/route.ts`
+
+### Already-Verified Email Confirmation Link
+- Clicking an already-used confirmation link now redirects to `/login?message=already-verified` instead of silently going to home page
+- Login pages show green banner: "Your email is already verified. Please log in." (EN/ES/BR)
+- `/auth/confirm` page detects "already used" or "expired" token errors and shows appropriate message
+- Files changed: `app/auth/confirm/page.tsx`, `lib/supabase/middleware.ts`, login pages (EN/ES/BR)
+
+### Error Heading Accuracy (all tool interfaces)
+- "Processing Failed" / "Conversion Failed" / "Cleanup Failed" replaced with specific headings: "Unsupported File Type", "File Too Large", "Empty File"
+- Applied to: `processing-interface.tsx`, `phone-scan-cleanup-interface.tsx`, `image-to-pdf-interface.tsx`, `pdf-to-word-interface.tsx`
+
+### Privacy Message Correction
+- Changed "files deleted after 1 hour" → "files deleted after download" across 11 interface files
+
+### Signup Validation
+- Name field now rejects numbers and special characters (allows Unicode letters, spaces, hyphens, apostrophes)
+- CAPTCHA invalidated when email is changed after verification
+- Minimum password length increased from 6 to 8 characters (signup EN/ES/BR + reset password)
+
+### Remove File X Button Fix
+- Clicking X to remove a file in phone-scan-cleanup now clears error state instead of showing "Cleanup Failed"
+
+### pnpm Lockfile Fix
+- Discovered project uses pnpm, not npm — all previous `npm install` commands broke the lockfile and silently prevented Vercel deploys
+- Synced `pnpm-lock.yaml` to fix all pending deployments
+
 ## Phone Scan Cleanup & Signup CAPTCHA Fix (April 5, 2026)
 
 ### Phone Scan Cleanup — Adaptive Background Removal (LOCKED benchmark)

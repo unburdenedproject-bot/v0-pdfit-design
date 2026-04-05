@@ -133,6 +133,10 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 - Never break already indexed pages
 - Use iLoveAPI for PDF processing (except pdf-to-word/excel/powerpoint which use CloudConvert)
 - Table extraction uses Google Document AI Form Parser
+- **All API routes that call paid APIs (iLoveAPI, CloudConvert) must check for blank PDFs using `lib/blank-pdf-check.js` before making the call**
+- **Never use "Processing Failed" as an error heading — use specific headings: "Unsupported File Type", "File Too Large", "Empty File"**
+- **Minimum password length is 8 characters** (enforced on signup and reset password pages)
+- **Always use `pnpm install` / `pnpm add`, NEVER `npm install`** — npm breaks pnpm-lock.yaml and silently prevents Vercel deploys
 - See LOCALIZATION.md
 - **Every tool page must follow the format in Page_Format.md — read it before creating or editing any tool page**
 - **Every change must be applied to all 3 languages (EN, ES, BR) simultaneously — no exceptions**
