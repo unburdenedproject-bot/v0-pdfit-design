@@ -90,6 +90,8 @@ export function PhoneScanCleanupInterface() {
     if (previewUrl) URL.revokeObjectURL(previewUrl)
     setFile(null)
     setPreviewUrl(null)
+    setHasError(false)
+    setErrorMessage("")
   }, [previewUrl])
 
   const processFile = useCallback(async () => {
