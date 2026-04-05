@@ -30,8 +30,8 @@ export default function ResetPasswordPage() {
       return
     }
 
-    if (password.length < 6) {
-      setError("Password must be at least 6 characters")
+    if (password.length < 8) {
+      setError("Password must be at least 8 characters")
       setIsLoading(false)
       return
     }
@@ -99,6 +99,8 @@ export default function ResetPasswordPage() {
                           id="password"
                           type={showPassword ? "text" : "password"}
                           required
+                          minLength={8}
+                          placeholder="At least 8 characters"
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
                           className="bg-white/5 border-white/10 text-white placeholder:text-slate-500 focus:ring-[#14D8C4] focus:border-[#14D8C4] focus-visible:ring-[#14D8C4] pr-10"
