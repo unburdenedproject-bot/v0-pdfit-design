@@ -88,6 +88,14 @@ export async function POST(request) {
       const result = await blobUrlToTmp(blobUrl);
       tmpPath = result.tmpPath;
       originalName = result.name;
+
+      const { stat } = await import("fs/promises");
+      const fileStats = await stat(tmpPath);
+      if (fileStats.size === 0) {
+        await unlink(tmpPath).catch(() => {});
+        tmpPath = null;
+        return errorResponse("The uploaded file is empty and cannot be compressed.", 400);
+      }
     } else {
       // ---- Multipart path: formData key "file" (backwards compat) ----
       const formData = await request.formData();
@@ -114,9 +122,13 @@ export async function POST(request) {
         compressionLevel = level;
       }
 
+      const buffer = Buffer.from(await file.arrayBuffer());
+      if (buffer.length === 0) {
+        return errorResponse("The uploaded file is empty and cannot be compressed.", 400);
+      }
+
       const id = randomUUID();
       tmpPath = join("/tmp", `${id}-${originalName}`);
-      const buffer = Buffer.from(await file.arrayBuffer());
       await writeFile(tmpPath, buffer);
     }
 

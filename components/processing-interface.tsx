@@ -169,6 +169,14 @@ export function ProcessingInterface({
   }, [])
 
   const processFiles = useCallback(async () => {
+    // Reject empty (0-byte) files before uploading
+    const emptyFile = files.find((f) => f.size === 0)
+    if (emptyFile) {
+      setHasError(true)
+      setErrorMessage("The uploaded file is empty and cannot be processed.")
+      return
+    }
+
     setIsProcessing(true)
     setHasError(false)
     setProgress(0)
