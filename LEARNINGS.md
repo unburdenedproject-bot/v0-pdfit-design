@@ -1,5 +1,29 @@
 # Project Learnings
 
+## 2026-04-05 — This project uses pnpm, not npm
+
+**What:** Running `npm install` to add packages (pdf-parse, pdfjs-dist, @napi-rs/canvas) updated `package-lock.json` but not `pnpm-lock.yaml`. Vercel builds with pnpm using frozen lockfile, so every build after the first `npm install` silently failed. Vercel served cached old deployments — making it look like code changes had no effect.
+**Why it matters:** Multiple commits appeared to deploy successfully (git push worked, no errors) but the actual Vercel function code never changed. Wasted significant debugging time on blank PDF detection that was actually working in code but never deployed.
+**Apply when:** Always check for `pnpm-lock.yaml` before installing packages. If it exists, use `pnpm install` / `pnpm add` exclusively. Never use `npm install`.
+
+## 2026-04-05 — Native Node.js packages don't work on Vercel serverless
+
+**What:** Attempted to use `@napi-rs/canvas` for PDF page rasterization on Vercel. The package requires pre-built native binaries which either weren't bundled by Vercel's function bundler or failed to load at runtime. The entire serverless function silently failed.
+**Why it matters:** Vercel serverless functions run on Amazon Linux with limited system libraries. Packages that require native compilation (canvas, sharp is an exception — it ships its own), native binaries, or system-level deps (poppler, ghostscript, imagemagick) won't work without explicit configuration.
+**Apply when:** Before adding any package with native deps to a Vercel-deployed project, verify it works on serverless. Prefer pure-JS alternatives. If native deps are needed, add them to `serverComponentsExternalPackages` in `next.config.mjs`.
+
+## 2026-04-05 — Blank PDF detection requires pdfjs-dist operator list, not PDF structure
+
+**What:** Tried 6 approaches to detect blank PDFs: global threshold, %PDF header, raw content stream operators, Font/XObject resources, pdf-parse text extraction, canvas rasterization. All failed because PDF generators (Word, Print to PDF) embed default fonts, resources, and setup operators even on blank pages.
+**Why it matters:** A PDF can be structurally non-empty but visually blank. The only reliable pure-JS approach is using pdfjs-dist's `getOperatorList()` which returns the actual parsed, decompressed rendering operations — checking for `showText`, `showSpacedText`, `paintImageXObject`, etc. This handles compressed streams, inherited resources, and form XObjects correctly.
+**Apply when:** Any time you need to validate PDF content before sending to a paid API. Use `lib/blank-pdf-check.js`.
+
+## 2026-04-05 — Apply fixes to ALL affected routes, not just the reported one
+
+**What:** Blank PDF detection was initially only added to `compress-pdf/route.js`. When the same issue was reported for extract-images, it became clear all 20+ paid API routes needed the same protection. Created a shared utility (`lib/blank-pdf-check.js`) and applied it to all routes at once.
+**Why it matters:** When a bug exists in one route, it almost certainly exists in all similar routes. Fix them all at once to avoid repeated bug reports for the same underlying issue.
+**Apply when:** Any bug fix that touches API route validation, error handling, or input checking — check all similar routes and fix them together.
+
 ## 2026-03-25 — Canonical page format doc eliminates repeated instructions
 
 **What:** Created `Page_Format.md` as the single source of truth for tool page structure (section order, exact JSX snippets, inline styles, color tokens, localization rules). Referenced it in `CLAUDE.md` under both Strategy Documents and Rules.
