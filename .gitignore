@@ -13,3 +13,14 @@ node_modules/
 # Claude MCP config (contains secrets)
 mcp.json
 .claude/mcp.json
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+e2e/fixtures/sample-files/
+e2e/fixtures/storage-*.json
+
+# Test env
+.env.test
