@@ -69,7 +69,7 @@ Features implemented:
 
 ## Quality & Testing (Ongoing)
 
-**Status: DONE** — 156 E2E tests + 6 unit tests (162 total)
+**Status: DONE** — 180 E2E + 41 integration + 6 unit = 227 total tests
 
 - Playwright test suite covering: smoke, tools, auth, payments, SEO, i18n, accessibility, security, mobile, content
 - Automated WCAG AA accessibility audits on 6 key pages

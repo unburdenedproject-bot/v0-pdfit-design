@@ -50,6 +50,20 @@
 ### Setup Guide
 - Created `SETUP-GUIDE.md` with step-by-step instructions for Sentry, BetterUptime, and CRON_SECRET
 
+### Launch-Critical Tests (24 new E2E tests, 180 total)
+- **Checkout URL mapping (8 tests):** all 3 tiers × monthly/annual CTAs verified to link to correct `/upgrade` paths
+- **Price accuracy (2 tests):** monthly ($3.99/$13.99/$49.99) and annual ($39.90/$139.90/$499.90) verified
+- **Contact form (3 tests):** form fields present, valid submission shows "Message Sent!", API failure shows error
+- **Global error / 404 page (2 tests):** 404 renders helpful content with back-to-home link
+- **Console error detection (8 tests):** 8 critical pages (homepage, compress-pdf, pricing, login, signup, contact, /es, /br) verified zero JS console errors
+- **Cron endpoint auth (3 tests):** trial-emails and seo-health reject unauthenticated requests, health endpoint returns valid JSON
+
+### Multi-Specialist Pre-Launch Audit — CONVERGED
+- 3 specialist agents (infrastructure gaps, payment flow, critical user journeys) identified 30+ gaps
+- 24 highest-impact tests built from findings (all passing)
+- Synthesis agent declared convergence: "Suite is sufficient for a safe launch"
+- Remaining gaps (Stripe checkout completion, email confirmation click-through) are infeasible in E2E without real backends — handled by manual QA checklist
+
 ---
 
 ## E2E Test Suite Expansion (April 5, 2026)
