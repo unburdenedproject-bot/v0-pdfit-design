@@ -19,7 +19,7 @@ Ask the user for:
 6. **BR tool name** — e.g. "Girar PDF"
 7. **One-line description** (English) — e.g. "Rotate pages in any direction"
 8. **Icon name** from lucide-react — e.g. `RotateCcw`
-9. **Tier** — `free` or `pro` or `business`
+9. **Tier** — `free` or `pro` or `business` or `enterprise`
 10. **API route** — e.g. `/api/rotate-pdf`
 11. **Homepage category** — which category group it belongs to (e.g. "Convert", "Organize", "Optimize")
 
@@ -27,9 +27,10 @@ Do NOT proceed until all 11 items are confirmed.
 
 ---
 
-## Step 1 — Read Brand and Localization Rules
+## Step 1 — Read Required Docs
 
-Read these two files before writing any code:
+Read these files before writing any code:
+- `Page_Format.md` — canonical tool page format (section order, exact styles, JSX snippets). MANDATORY.
 - `BRAND.md` — voice, color system, design rules
 - `LOCALIZATION.md` — route map rules, component references, trilingual build checklist
 
@@ -39,16 +40,16 @@ Read these two files before writing any code:
 
 Create `app/[en-slug]/page.tsx`.
 
-Follow the existing tool page pattern:
+Follow `Page_Format.md` exactly:
 - `metadata` block with `title`, `description`, `keywords`
-- Hero section: dark navy gradient (`from-slate-900 to-slate-800`), H1, subtitle
-- Upload/action area (or placeholder pointing to API route)
-- How It Works — 3 steps
-- FAQ section (4–6 questions) with FAQPage schema
-- Footer CTA with orange button
-- Use `text-orange-500/600` for CTAs and highlights
+- If tool is paid: do NOT say "free" or "no login" in metadata
+- Hero section: dark `#0E0F1E` with radial gradients + noise grain
+- Processing Interface with `apiRoute` and optional `requiresPlan`
+- Feature Blocks (3 glassmorphism cards)
+- How It Works (3 horizontal steps)
+- Related Tools (4 metallic cards)
+- FAQ section (4-6 questions) with FAQPage JSON-LD schema
 - Import `Header` and `Footer` from `@/components/`
-- Tier gate: if `pro` or `business`, wrap the tool UI with the appropriate plan check
 
 ---
 
@@ -68,11 +69,22 @@ Same structure as English. Write copy natively in Brazilian Portuguese. Use BR-s
 
 ---
 
-## Step 5 — Update English Homepage Categories
+## Step 5 — Create the API Route (if needed)
 
-Edit `app/page.tsx`.
+Create `app/api/[en-slug]/route.ts` if the tool needs a backend processing endpoint.
 
-Find the categories array and add the new tool to the correct category group:
+- Import and call `isBlankPdf` from `lib/blank-pdf-check.js` before any paid API call
+- Import and call `checkUsageAndAuth` for rate limiting
+- Use specific error headings ("Unsupported File Type", "File Too Large", "Empty File") — never "Processing Failed"
+- Set `maxDuration = 300` for Enterprise large file support
+
+---
+
+## Step 6 — Update English Homepage
+
+Edit `app/page.tsx` — find the `FeaturesGrid` component import. Then edit `components/features-grid.tsx`:
+
+Add the new tool to the correct category group:
 ```ts
 {
   name: "[Tool Name]",
@@ -85,57 +97,27 @@ Find the categories array and add the new tool to the correct category group:
 
 ---
 
-## Step 6 — Update Spanish Homepage Categories
+## Step 7 — Update Spanish Homepage (BOTH locations)
 
-Edit `app/es/page.tsx`.
+**7a.** Edit `app/es/page.tsx` — find the **inline** categories array (this file does NOT use FeaturesGridEs). Add the tool with Spanish name/description.
 
-Find the **inline** categories array (this file does NOT use FeaturesGridEs — it has its own array). Add:
-```ts
-{
-  name: "[ES Tool Name]",
-  href: "/es/[es-slug]",
-  icon: [IconName],
-  description: "[ES description]",
-  tier: "[free|pro|business]",
-}
-```
+**7b.** Edit `components/features-grid-es.tsx` — this is used by `/es/herramientas`. Add the same tool data.
+
+Both must match.
 
 ---
 
-## Step 7 — Update Brazilian Homepage Categories
+## Step 8 — Update Brazilian Homepage (BOTH locations)
 
-Edit `app/br/page.tsx`.
+**8a.** Edit `app/br/page.tsx` — find the **inline** categories array (this file does NOT use FeaturesGridBr). Add the tool with Portuguese name/description.
 
-Find the **inline** categories array (this file does NOT use FeaturesGridBr — it has its own array). Add:
-```ts
-{
-  name: "[BR Tool Name]",
-  href: "/br/[br-slug]",
-  icon: [IconName],
-  description: "[BR description]",
-  tier: "[free|pro|business]",
-}
-```
+**8b.** Edit `components/features-grid-br.tsx` — this is used by `/br/ferramentas`. Add the same tool data.
+
+Both must match.
 
 ---
 
-## Step 8 — Update FeaturesGridEs
-
-Edit `components/features-grid-es.tsx`.
-
-This component is used by `/es/herramientas` (All Tools page). Add the tool to the correct category group — same Spanish data as Step 6.
-
----
-
-## Step 9 — Update FeaturesGridBr
-
-Edit `components/features-grid-br.tsx`.
-
-This component is used by `/br/ferramentas` (All Tools page). Add the tool to the correct category group — same BR data as Step 7.
-
----
-
-## Step 10 — Update Route Map
+## Step 9 — Update Route Map
 
 Edit `lib/route-map.ts`.
 
@@ -144,32 +126,73 @@ Add a trilingual tuple so the language switcher can route between the three page
 ["/[en-slug]", "/es/[es-slug]", "/br/[br-slug]"],
 ```
 
-Find the correct alphabetical or categorical position in the file. Do not append blindly to the end.
+Find the correct alphabetical or categorical position in the file.
 
 ---
 
-## Step 11 — Verification Checklist
+## Step 10 — Update Sitemap
+
+Edit `app/sitemap.ts`.
+
+Add all 3 URLs to the `allUrls` array:
+```ts
+{ url: "https://pdf.it.com/[en-slug]", lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+{ url: "https://pdf.it.com/es/[es-slug]", lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+{ url: "https://pdf.it.com/br/[br-slug]", lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+```
+
+---
+
+## Step 11 — Update Pricing Pages (if paid tool)
+
+If the tool is Pro, Business, or Enterprise:
+
+Add the tool name to the feature lists on all 3 pricing pages:
+- `app/pricing/page.tsx` (or its `layout.tsx`)
+- `app/es/precios/page.tsx` (or its `layout.tsx`)
+- `app/br/precos/page.tsx` (or its `layout.tsx`)
+
+Also add to the comparison table if one exists.
+
+---
+
+## Step 12 — Update Hero Banners (if applicable)
+
+If the tool is a headline feature, add it to the AI tools banner in:
+- `components/hero-section.tsx`
+- `components/hero-section-es.tsx`
+- `components/hero-section-br.tsx`
+
+---
+
+## Step 13 — Verification Checklist
 
 Before finishing, confirm every item:
 
+- [ ] `Page_Format.md` was read before creating pages
 - [ ] `app/[en-slug]/page.tsx` created
 - [ ] `app/es/[es-slug]/page.tsx` created
 - [ ] `app/br/[br-slug]/page.tsx` created
-- [ ] `app/page.tsx` — tool added to categories array
+- [ ] `app/api/[en-slug]/route.ts` created (if needed)
+- [ ] `components/features-grid.tsx` — tool added (EN)
 - [ ] `app/es/page.tsx` — tool added to inline categories array
-- [ ] `app/br/page.tsx` — tool added to inline categories array
 - [ ] `components/features-grid-es.tsx` — tool added
+- [ ] `app/br/page.tsx` — tool added to inline categories array
 - [ ] `components/features-grid-br.tsx` — tool added
 - [ ] `lib/route-map.ts` — trilingual tuple added
+- [ ] `app/sitemap.ts` — 3 URLs added
+- [ ] Pricing pages updated (if paid tool)
 - [ ] All three slugs use correct prefixes (`/`, `/es/`, `/br/`)
-- [ ] Icons match across all files
+- [ ] Icons imported correctly (no duplicates) across all files
 - [ ] Tier gate consistent across all three pages
+- [ ] Metadata does NOT say "free" for paid tools
+- [ ] API route uses `isBlankPdf` check (if calling paid APIs)
 
 ---
 
-## Step 12 — Give Paula the Commit Command
+## Step 14 — Commit and Deploy
 
-Always end with the exact commands to run:
+Always end with the exact commands:
 
 ```
 git add .

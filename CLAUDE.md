@@ -20,6 +20,9 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - Database: Supabase (users, usage tracking)
 - Rate Limiting: Upstash Redis
 - Testing: Playwright (E2E, 156 tests), Vitest (unit), @axe-core/playwright (accessibility)
+- Error Tracking: Sentry (requires NEXT_PUBLIC_SENTRY_DSN env var — inactive until configured)
+- CI: GitHub Actions (build + unit + E2E on every push to main)
+- Cron Jobs: Vercel Cron — trial email drip (daily 9am UTC), SEO health check (Mondays 8am UTC)
 
 ## Pricing Tiers
 - Free: 10 conversions/day (3 anonymous, then must log in), files up to 25MB, basic PDF tools, single file, standard processing
@@ -94,6 +97,11 @@ Processing libraries: Ghostscript, PDFium, Poppler, OpenCV, Tesseract.
 Not urgent yet — current system works but won't scale past ~100 concurrent users.
 
 ---
+
+## Cron Jobs (vercel.json)
+- `/api/cron/trial-emails` — daily 9am UTC: sends Day 7, 25, 30 trial drip emails via Stripe + Resend
+- `/api/cron/seo-health` — Mondays 8am UTC: checks 30+ pages, sitemap, robots.txt, meta tags; emails report to Paula
+- Both protected by `CRON_SECRET` env var (set on Vercel)
 
 ## Strategy Documents
 - ROADMAP.md — Week-by-week execution plan (6 weeks)
