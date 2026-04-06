@@ -11,8 +11,8 @@ export const metadata: Metadata = {
     "Convert, compress, merge, split and edit PDF files instantly. AI-powered tools for professionals. No registration required.",
   generator: "v0.dev",
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-icon.png",
+    icon: "/icon.svg",
+    apple: "/icon.svg",
   },
   openGraph: {
     title: "PDF.it — Fix Any Document Problem Instantly",
