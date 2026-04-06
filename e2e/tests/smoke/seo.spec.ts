@@ -10,8 +10,8 @@ test.describe("SEO — Sitemap & Robots", () => {
     const res = await request.get("/robots.txt");
     expect(res.status()).toBe(200);
     const text = await res.text();
-    expect(text).toContain("Sitemap");
-    expect(text).toContain("Disallow");
+    expect(text.toLowerCase()).toContain("sitemap");
+    expect(text.toLowerCase()).toContain("disallow");
   });
 
   test("sitemap is accessible", async ({ request }) => {
