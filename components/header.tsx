@@ -114,7 +114,7 @@ export function Header() {
               </button>
             )}
             <Link href="/" className="flex items-center">
-              <span style={{fontWeight: 800, color: '#ffffff', fontSize: '22px', letterSpacing: '-0.5px'}}>PDF<span style={{color: '#14D8C4', fontWeight: 400}}>.it</span></span>
+              <img src="/logo.svg" alt="PDF.it" style={{height: '28px', width: 'auto'}} />
             </Link>
           </div>
 

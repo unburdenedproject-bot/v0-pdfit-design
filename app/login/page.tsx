@@ -156,7 +156,7 @@ function LoginForm() {
       <div className="rounded-2xl p-[1px] bg-gradient-to-b from-white/20 via-white/5 to-transparent">
         <div className="rounded-[15px] p-8 bg-white/[0.07] backdrop-blur-xl">
           <div className="text-center mb-6">
-            <div className="mx-auto mb-2"><span style={{fontWeight: 800, color: '#ffffff', fontSize: '28px', letterSpacing: '-0.5px'}}>PDF<span style={{color: '#14D8C4', fontWeight: 400}}>.it</span></span></div>
+            <div className="mx-auto mb-2"><img src="/logo.svg" alt="PDF.it" style={{height: '32px', width: 'auto', display: 'inline-block'}} /></div>
             <h1 className="text-xl font-bold text-white">Welcome back</h1>
             <p className="text-slate-400 text-sm mt-1">
               Sign in to your account to continue

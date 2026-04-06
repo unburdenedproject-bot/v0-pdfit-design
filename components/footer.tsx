@@ -22,7 +22,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-4">
-              <span style={{fontWeight: 800, color: '#ffffff', fontSize: '22px', letterSpacing: '-0.5px'}}>PDF<span style={{color: '#14D8C4', fontWeight: 400}}>.it</span></span>
+              <img src="/logo.svg" alt="PDF.it" style={{height: '28px', width: 'auto'}} />
             </Link>
             <p className="text-[#A5B4FC] mb-6 leading-relaxed">
               Convert, compress, merge, split, OCR, and protect PDFs in seconds. Simple, browser-based tools that work on any device.
