@@ -45,14 +45,11 @@ export async function POST(request) {
       return errorResponse("Missing URL.", 400);
     }
 
-    // Basic URL validation
-    try {
-      const parsed = new URL(url);
-      if (!["http:", "https:"].includes(parsed.protocol)) {
-        return errorResponse("Only HTTP and HTTPS URLs are supported.", 400);
-      }
-    } catch {
-      return errorResponse("Invalid URL format.", 400);
+    // URL validation — blocks SSRF (internal IPs, cloud metadata, non-HTTP schemes)
+    const { validateUrlForCapture } = await import("@/lib/url-validation");
+    const validation = await validateUrlForCapture(url);
+    if (!validation.valid) {
+      return errorResponse(validation.reason, 400);
     }
 
     const apiKey = process.env.CLOUDCONVERT_API_KEY;

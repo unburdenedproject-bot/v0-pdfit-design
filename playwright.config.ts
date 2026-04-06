@@ -24,6 +24,28 @@ export default defineConfig({
       name: "desktop-chrome",
       use: { ...devices["Desktop Chrome"] },
     },
+    {
+      name: "integration",
+      testDir: "./e2e/integration",
+      testIgnore: "**/nightly/**",
+      retries: isCI ? 1 : 0,
+      workers: isCI ? 2 : 1,
+      use: {
+        baseURL,
+        extraHTTPHeaders: {
+          Accept: "application/json",
+        },
+      },
+    },
+    {
+      name: "integration-nightly",
+      testDir: "./e2e/integration/nightly",
+      retries: 0,
+      workers: 1,
+      use: {
+        baseURL,
+      },
+    },
   ],
   webServer: {
     command: isCI ? "pnpm build && pnpm start" : "pnpm dev",

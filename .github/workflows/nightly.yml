@@ -1,0 +1,73 @@
+name: Nightly Integration Tests (Real APIs)
+
+on:
+  schedule:
+    # Weekdays only, 6am UTC — stays within iLovePDF free tier (2,500 credits/mo)
+    - cron: "0 6 * * 1-5"
+  workflow_dispatch: {} # Allow manual trigger
+
+concurrency:
+  group: nightly-integration
+  cancel-in-progress: true
+
+jobs:
+  nightly:
+    name: Nightly — Real API Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run nightly integration tests
+        run: npx playwright test --project=integration-nightly --reporter=github
+        env:
+          CI: true
+          # Real API keys for nightly
+          ILOVEAPI_PUBLIC_KEY: ${{ secrets.ILOVEAPI_PUBLIC_KEY }}
+          ILOVEAPI_SECRET_KEY: ${{ secrets.ILOVEAPI_SECRET_KEY }}
+          CLOUDCONVERT_API_KEY: ${{ secrets.CLOUDCONVERT_API_KEY }}
+          # Supabase test project
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.TEST_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.TEST_SUPABASE_ANON_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.TEST_SUPABASE_SERVICE_KEY }}
+          # Stripe test mode
+          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_TEST_SECRET_KEY }}
+          STRIPE_WEBHOOK_SECRET: ${{ secrets.STRIPE_TEST_WEBHOOK_SECRET }}
+          STRIPE_PRICE_ID: ${{ secrets.STRIPE_PRICE_ID }}
+          STRIPE_PRICE_ID_ANNUAL: ${{ secrets.STRIPE_PRICE_ID_ANNUAL }}
+          STRIPE_PRICE_ID_BUSINESS: ${{ secrets.STRIPE_PRICE_ID_BUSINESS }}
+          STRIPE_PRICE_ID_BUSINESS_ANNUAL: ${{ secrets.STRIPE_PRICE_ID_BUSINESS_ANNUAL }}
+          STRIPE_PRICE_ID_ENTERPRISE: ${{ secrets.STRIPE_PRICE_ID_ENTERPRISE }}
+          STRIPE_PRICE_ID_ENTERPRISE_ANNUAL: ${{ secrets.STRIPE_PRICE_ID_ENTERPRISE_ANNUAL }}
+          CRON_SECRET: "test-cron-secret-12345"
+          NEXT_PUBLIC_HCAPTCHA_SITE_KEY: "10000000-ffff-ffff-ffff-000000000001"
+          HCAPTCHA_SECRET_KEY: "0x0000000000000000000000000000000000000000"
+          NEXT_PUBLIC_SITE_URL: "http://localhost:3000"
+
+      - name: Upload nightly report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nightly-report
+          path: playwright-report/
+          retention-days: 14
+
+      - name: Notify on failure
+        if: failure()
+        run: echo "::error::Nightly integration tests failed — check the report artifact"
