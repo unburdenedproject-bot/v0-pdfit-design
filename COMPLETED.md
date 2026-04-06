@@ -1,5 +1,57 @@
 # PDF.it - Accomplished Work
 
+## Production Infrastructure (April 6, 2026)
+
+### GitHub Actions CI Pipeline
+- Build, unit test, and E2E test jobs run on every push to `main`
+- Playwright installs Chromium with deps in CI, runs with `--reporter=github`
+- Failed test reports uploaded as artifacts (7-day retention)
+- File: `.github/workflows/ci.yml`
+
+### Sentry Error Tracking — LIVE
+- @sentry/nextjs installed and configured (client, server, edge)
+- Only active in production when `NEXT_PUBLIC_SENTRY_DSN` is set (now configured on Vercel)
+- Global error page (`app/global-error.tsx`) auto-reports crashes to Sentry
+- Instrumentation file (`instrumentation.ts`) captures server-side request errors
+- `next.config.mjs` conditionally wraps with `withSentryConfig` only when DSN exists
+
+### Trial Email Drip Sequence — LIVE
+- Vercel Cron runs daily at 9am UTC (`/api/cron/trial-emails`)
+- Queries Stripe for all trialing subscriptions, calculates days since trial start
+- Day 7: feature discovery email (batch processing, OCR, PDF to Word, compress for email)
+- Day 25: "5 days left" warning with cancel/continue info
+- Day 30: "trial ends today" with next steps
+- All emails branded with PDF.it design, personalized with name and plan label
+- Protected by `CRON_SECRET` env var
+
+### Weekly SEO Health Check — LIVE
+- Vercel Cron runs Mondays at 8am UTC (`/api/cron/seo-health`)
+- Checks 30+ pages across EN/ES/BR for HTTP status codes
+- Validates sitemap accessibility and content, robots.txt Sitemap directive
+- Checks homepage for og:title, canonical, and hreflang meta tags
+- Calculates health score (% of pages passing)
+- Emails branded HTML report to paula.vargas3@gmail.com
+- Protected by `CRON_SECRET` env var
+
+### BetterUptime Monitoring — LIVE
+- External uptime monitoring pings site every minute
+- SMS/email alerts when site goes down
+
+### Enhanced /add-tool Skill
+- Expanded from 12 to 14 steps, 18-point verification checklist
+- Now includes: Page_Format.md reading, API route creation with blank PDF check, sitemap updates, pricing page updates, hero banner updates
+- Prevents the #1 bug source: missing files when adding new tools
+
+### New /pre-deploy Skill
+- Runs tests → build check → commit → push in one command
+- Blocks deploy if tests fail or build breaks
+- Analyzes diff to write commit message if none provided
+
+### Setup Guide
+- Created `SETUP-GUIDE.md` with step-by-step instructions for Sentry, BetterUptime, and CRON_SECRET
+
+---
+
 ## E2E Test Suite Expansion (April 5, 2026)
 
 ### Test Suite: 94 → 156 tests (+66%)

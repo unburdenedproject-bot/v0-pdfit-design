@@ -28,9 +28,9 @@ All set on Vercel for Production and Preview:
 - HCAPTCHA_SECRET_KEY
 - NEXT_PUBLIC_HCAPTCHA_SITE_KEY
 
-## New Environment Variables (April 2026)
-- NEXT_PUBLIC_SENTRY_DSN (optional — Sentry error tracking, inactive until set)
-- CRON_SECRET (optional — protects cron job endpoints from unauthorized access)
+## New Environment Variables (April 2026) — ALL CONFIGURED ON VERCEL
+- NEXT_PUBLIC_SENTRY_DSN — Sentry error tracking DSN (LIVE)
+- CRON_SECRET — protects cron job endpoints from unauthorized access (LIVE)
 
 ## Google Cloud Credentials
 - Service Account: omnispdf-docai@project-5fe73bdf-4333-442f-840.iam.gserviceaccount.com

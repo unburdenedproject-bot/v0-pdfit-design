@@ -20,7 +20,8 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - Database: Supabase (users, usage tracking)
 - Rate Limiting: Upstash Redis
 - Testing: Playwright (E2E, 156 tests), Vitest (unit), @axe-core/playwright (accessibility)
-- Error Tracking: Sentry (requires NEXT_PUBLIC_SENTRY_DSN env var — inactive until configured)
+- Error Tracking: Sentry (LIVE — NEXT_PUBLIC_SENTRY_DSN configured on Vercel)
+- Uptime Monitoring: BetterUptime (LIVE — pings every minute, SMS/email alerts)
 - CI: GitHub Actions (build + unit + E2E on every push to main)
 - Cron Jobs: Vercel Cron — trial email drip (daily 9am UTC), SEO health check (Mondays 8am UTC)
 
@@ -114,6 +115,7 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 - LOCALIZATION.md — Localization patterns, route map rules, language-specific components, trilingual build instructions
 - BRAND.md — Target audience, brand voice, positioning, color system, design rules
 - **Page_Format.md — Canonical tool page format (section order, exact styles, JSX snippets, color tokens). READ THIS before creating or editing any tool page.**
+- SETUP-GUIDE.md — Step-by-step setup for Sentry, BetterUptime, CRON_SECRET (all now configured)
 
 ## Brand
 - Fonts: Sora (headings), Inter (body)
