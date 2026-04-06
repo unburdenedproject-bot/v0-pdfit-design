@@ -28,40 +28,42 @@ export function HeroSection() {
 
           {/* AI Tools Banner */}
           <div
-            className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 mb-8"
+            className="inline-flex flex-wrap items-center justify-center gap-2 rounded-2xl sm:rounded-full px-4 sm:px-5 py-2.5 mb-8 max-w-full"
             style={{
               background: "linear-gradient(135deg, rgba(232,129,58,0.15), rgba(20,216,196,0.12), rgba(107,124,255,0.15))",
               border: "1px solid rgba(232,129,58,0.35)",
               boxShadow: "0 0 20px rgba(232,129,58,0.15), 0 0 40px rgba(20,216,196,0.08)",
             }}
           >
-            <Zap className="h-4 w-4 text-[#E8813A]" />
-            <span className="text-sm font-bold text-white">AI-Powered Tools:</span>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
+              <Zap className="h-4 w-4 text-[#E8813A] flex-shrink-0" />
+              <span className="text-sm font-bold text-white whitespace-nowrap">AI-Powered Tools:</span>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
               <Link href="/ats-optimizer" className="text-sm font-semibold text-[#14D8C4] hover:text-[#2EE6D6] transition-colors">
                 Resume Optimizer
               </Link>
-              <span className="text-slate-500">|</span>
+              <span className="text-slate-500 hidden sm:inline">|</span>
               <Link href="/create-resume" className="text-sm font-semibold text-[#14D8C4] hover:text-[#2EE6D6] transition-colors">
                 Resume Builder
               </Link>
-              <span className="text-slate-500">|</span>
+              <span className="text-slate-500 hidden sm:inline">|</span>
               <Link href="/chat-with-pdf" className="text-sm font-semibold text-[#14D8C4] hover:text-[#2EE6D6] transition-colors">
                 Chat with PDF
               </Link>
-              <span className="text-slate-500">|</span>
+              <span className="text-slate-500 hidden sm:inline">|</span>
               <Link href="/smart-extraction" className="text-sm font-semibold text-[#14D8C4] hover:text-[#2EE6D6] transition-colors">
                 Smart Extraction
               </Link>
-              <span className="text-slate-500">|</span>
+              <span className="text-slate-500 hidden sm:inline">|</span>
               <Link href="/pdf-summarizer" className="text-sm font-semibold text-[#14D8C4] hover:text-[#2EE6D6] transition-colors">
                 Summarizer
               </Link>
-              <span className="text-slate-500">|</span>
+              <span className="text-slate-500 hidden sm:inline">|</span>
               <Link href="/question-generator" className="text-sm font-semibold text-[#14D8C4] hover:text-[#2EE6D6] transition-colors">
                 Questions
               </Link>
-              <span className="text-slate-500">|</span>
+              <span className="text-slate-500 hidden sm:inline">|</span>
               <Link href="/translate-pdf" className="text-sm font-semibold text-[#14D8C4] hover:text-[#2EE6D6] transition-colors">
                 Translate
               </Link>

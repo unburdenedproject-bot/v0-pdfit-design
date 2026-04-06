@@ -231,7 +231,7 @@ export default function FerramentasAZPage() {
             {letters.map((letter) => {
               const letterTools = tools.filter((t) => t.name[0].toUpperCase() === letter)
               return (
-                <div key={letter} id={`letter-${letter}`} className="mb-14 scroll-mt-32">
+                <div key={letter} id={`letter-${letter}`} className="mb-14 scroll-mt-24 sm:scroll-mt-32">
                   {/* Letter header */}
                   <div className="flex items-center gap-4 mb-5">
                     <div

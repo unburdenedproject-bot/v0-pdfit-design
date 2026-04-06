@@ -288,14 +288,9 @@ export function ComprehensiveFAQSection() {
                 <p className="text-slate-400 text-xs mb-5 max-w-xl mx-auto leading-relaxed">
                   Our support team is here to help you get the most out of PDF.it.
                 </p>
-                <div className="flex justify-center">
-                  <button
-                    onClick={() => {
-                      navigator.clipboard.writeText("contact@pdf.it.com")
-                      const btn = document.getElementById("copy-email-btn-comp")
-                      if (btn) { btn.textContent = "Copied!"; setTimeout(() => { btn.textContent = "contact@pdf.it.com — Copy" }, 2000) }
-                    }}
-                    id="copy-email-btn-comp"
+                <div className="flex flex-col sm:flex-row justify-center gap-3">
+                  <a
+                    href="mailto:contact@pdf.it.com"
                     className="inline-flex items-center justify-center px-6 py-2.5 font-bold rounded-xl text-sm transition-all duration-300 hover:scale-105"
                     style={{
                       background: "linear-gradient(135deg, #14D8C4, #0FBFB0)",
@@ -304,7 +299,23 @@ export function ComprehensiveFAQSection() {
                       border: "1px solid rgba(255,255,255,0.15)",
                     }}
                   >
-                    contact@pdf.it.com — Copy
+                    Email Us: contact@pdf.it.com
+                  </a>
+                  <button
+                    onClick={() => {
+                      navigator.clipboard.writeText("contact@pdf.it.com")
+                      const btn = document.getElementById("copy-email-btn-comp")
+                      if (btn) { btn.textContent = "Copied!"; setTimeout(() => { btn.textContent = "Copy Email" }, 2000) }
+                    }}
+                    id="copy-email-btn-comp"
+                    className="inline-flex items-center justify-center px-4 py-2.5 font-bold rounded-xl text-xs transition-all duration-200"
+                    style={{
+                      background: "rgba(255,255,255,0.08)",
+                      color: "#A5B4FC",
+                      border: "1px solid rgba(255,255,255,0.1)",
+                    }}
+                  >
+                    Copy Email
                   </button>
                 </div>
               </div>

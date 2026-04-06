@@ -52,7 +52,7 @@ export default function RootLayout({
         <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       </head>
-      <body>
+      <body style={{ backgroundColor: "#0E0F1E" }}>
         <GoogleTagManager />
         <GoogleTagManagerNoScript />
         <Suspense fallback={null}>

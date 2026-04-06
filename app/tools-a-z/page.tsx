@@ -1,5 +1,6 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { LetterNav } from "@/components/letter-nav"
 import Link from "next/link"
 import type { Metadata } from "next"
 import {
@@ -203,31 +204,8 @@ export default function ToolsAZPage() {
           </div>
         </section>
 
-        {/* Sticky letter nav */}
-        <nav
-          className="sticky top-16 z-10"
-          style={{
-            background: "rgba(14,15,30,0.9)",
-            backdropFilter: "blur(16px)",
-            WebkitBackdropFilter: "blur(16px)",
-            borderBottom: "1px solid rgba(255,255,255,0.06)",
-          }}
-        >
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-wrap gap-0.5 py-3 justify-center">
-              {letters.map((letter) => (
-                <a
-                  key={letter}
-                  href={`#letter-${letter}`}
-                  className="w-10 h-10 flex items-center justify-center rounded-xl text-sm font-black transition-all duration-200 hover:text-[#14D8C4] hover:bg-white/5"
-                  style={{ color: "rgba(165,180,252,0.5)" }}
-                >
-                  {letter}
-                </a>
-              ))}
-            </div>
-          </div>
-        </nav>
+        {/* Sticky letter nav with active state highlighting */}
+        <LetterNav letters={letters} />
 
         {/* Tool listing */}
         <section
@@ -244,7 +222,7 @@ export default function ToolsAZPage() {
             {letters.map((letter) => {
               const letterTools = tools.filter((t) => t.name[0].toUpperCase() === letter)
               return (
-                <div key={letter} id={`letter-${letter}`} className="mb-14 scroll-mt-36">
+                <div key={letter} id={`letter-${letter}`} className="mb-14 scroll-mt-24 sm:scroll-mt-36">
                   {/* Letter header */}
                   <div className="flex items-center gap-4 mb-5">
                     <div

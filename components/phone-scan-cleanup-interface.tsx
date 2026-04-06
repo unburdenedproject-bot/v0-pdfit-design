@@ -45,12 +45,30 @@ export function PhoneScanCleanupInterface() {
   const [processedFile, setProcessedFile] = useState<ProcessedFile | null>(null)
   const router = useRouter()
 
-  const handleFile = useCallback((f: File) => {
+  const handleFile = useCallback(async (f: File) => {
     if (!ACCEPTED_TYPES.includes(f.type)) {
       setHasError(true)
       setErrorMessage("Please upload a JPG, PNG, or WEBP image.")
       return
     }
+
+    // Check file integrity via magic bytes
+    try {
+      const bytes = new Uint8Array(await f.slice(0, 4).arrayBuffer())
+      const isJpeg = bytes[0] === 0xFF && bytes[1] === 0xD8
+      const isPng = bytes[0] === 0x89 && bytes[1] === 0x50 && bytes[2] === 0x4E && bytes[3] === 0x47
+      const isWebp = bytes.length >= 4 && new TextDecoder().decode(bytes.slice(0, 4)) === "RIFF"
+      if (!isJpeg && !isPng && !isWebp) {
+        setHasError(true)
+        setErrorMessage("The file appears to be corrupted or unreadable. Please upload a valid image.")
+        return
+      }
+    } catch {
+      setHasError(true)
+      setErrorMessage("The file could not be read. Please try a different image.")
+      return
+    }
+
     setFile(f)
     setPreviewUrl(URL.createObjectURL(f))
     setHasError(false)
