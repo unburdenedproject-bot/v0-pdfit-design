@@ -31,6 +31,23 @@ export async function mockPdfApiRoute(
 }
 
 /**
+ * Mock the /api/user-plan endpoint to return a specific plan.
+ * Useful for testing tier-gated features.
+ */
+export async function mockUserPlan(
+  page: Page,
+  plan: "free" | "pro" | "business" | "enterprise"
+) {
+  await page.route("**/api/user-plan", async (route) => {
+    await route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      body: JSON.stringify({ plan }),
+    });
+  });
+}
+
+/**
  * Mock the Vercel Blob upload endpoint.
  */
 export async function mockBlobUpload(page: Page) {

@@ -5,12 +5,13 @@ const isCI = !!process.env.CI;
 
 export default defineConfig({
   testDir: "./e2e/tests",
+  fullyParallel: true,
   globalSetup: "./e2e/global-setup.ts",
   globalTeardown: "./e2e/global-teardown.ts",
   timeout: 60_000,
   expect: { timeout: 10_000 },
   retries: isCI ? 2 : 0,
-  workers: isCI ? 2 : 1,
+  workers: isCI ? 4 : 1,
   reporter: isCI ? [["html"], ["github"]] : [["html"]],
   use: {
     baseURL,
