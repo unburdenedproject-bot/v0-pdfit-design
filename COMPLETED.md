@@ -1,5 +1,36 @@
 # PDF.it - Accomplished Work
 
+## E2E Test Suite Expansion (April 5, 2026)
+
+### Test Suite: 94 → 156 tests (+66%)
+- Built 14 new Playwright spec files covering 7 new areas
+- Multi-specialist audit (8 agents in 2 waves) verified quality and fixed 7 issues
+- All 156 tests passing (155 green, 1 expected skip for sitemap in dev mode)
+
+### New Test Coverage
+- **Tool pages (5 files):** merge-pdf (multi-file upload, corrupted validation), split-pdf (page-range input, single-page rejection), esign (Business tier gating, upload flow), url-to-pdf (Pro gating, URL input form), table-extraction (Business+Enterprise gating)
+- **Auth (2 files):** password-reset (forgot-password toggle, form validation, min 8 chars), protected-routes (dashboard redirect to login, signup-required page CTAs)
+- **Accessibility (1 file):** WCAG AA axe-core audits on 6 key pages (homepage, compress-pdf, pricing, signup, login, about) — color-contrast excluded for gradient backgrounds
+- **SEO (2 files):** structured-data (JSON-LD FAQPage on learn articles, OG tags, Twitter cards, canonical URLs), localized-seo (hreflang for EN/ES/BR, lang attribute, sitemap language coverage)
+- **i18n (3 files):** localized-content (no English leak on ES/BR pages), navigation-switching (links preserve /es/ and /br/ context), fallback-and-404 (invalid locale prefix returns 404)
+- **Content (1 file):** blog index, blog post, about, privacy policy, terms, learn article — data-driven h1 assertions
+- **Health expansion:** added 9 missing pages (esign, url-to-pdf, table-extraction, pdf-to-excel, flatten-pdf, privacy-policy, terms-conditions, reset-password, signup-required)
+
+### New Infrastructure
+- `e2e/helpers/accessibility.ts` — axe-core wrapper with WCAG AA filtering, excludes third-party iframes
+- `mockUserPlan()` in `e2e/helpers/api-mocks.ts` — mock `/api/user-plan` for tier-gated feature testing
+- `playwright.config.ts` — `fullyParallel: true`, CI workers increased from 2 to 4
+
+### Audit Fixes Applied
+- Removed dead `seo.ts` helper (4 unused exports)
+- Fixed silent-pass pattern in split-pdf (conditional `if` → hard `expect().toBeVisible()`)
+- Fixed duplicate test in protected-routes (now actually verifies redirect query param)
+- Tightened content.spec.ts assertions (broad body regex → specific h1 matching)
+- Removed language-neutral "pdf" from Spanish locale check
+- Replaced flaky `networkidle` with `main` element visibility in axe audits
+
+---
+
 ## Bug Fixes & Security Hardening (April 5, 2026)
 
 ### Blank PDF Rejection (all paid API routes)

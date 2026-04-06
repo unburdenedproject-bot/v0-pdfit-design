@@ -1,5 +1,29 @@
 # Project Learnings
 
+## 2026-04-05 — Playwright tier-gating tests need page.route() BEFORE page.goto()
+
+**What:** Tool components like EsignInterface and UrlPdfInterface fetch `/api/user-plan` in a `useEffect` during client-side hydration. If `mockUserPlan()` is called after `page.goto()`, the real fetch fires first and the component renders the upgrade gate. The mock only intercepts subsequent requests.
+**Why it matters:** Tests that mock after navigation appear to work locally (slower page load gives time for mock to register) but fail in CI (faster load means the real fetch wins the race). Setting up the mock before navigation guarantees the intercept is ready.
+**Apply when:** Any Playwright test that mocks an API response for a client-side component. Always call `page.route()` before `page.goto()`.
+
+## 2026-04-05 — Silent-pass pattern: conditional assertions inside .toPass() are dangerous
+
+**What:** A split-pdf test wrapped `if (await element.isVisible()) { await element.fill("1") }` inside `.toPass()`. When the element never appeared, all conditionals were skipped, zero assertions ran, and the test passed — giving false confidence.
+**Why it matters:** `.toPass()` retries the entire block until it succeeds or times out. If all assertions are behind `if` guards, "success" means "nothing was checked." This is the most dangerous test anti-pattern because it looks green while testing nothing.
+**Apply when:** Writing any test with `.toPass()`. Every code path inside the retry block must have at least one unconditional `expect()`. If an element might not exist, use `expect(element).toBeVisible()` as the first line — it will fail fast rather than silently skip.
+
+## 2026-04-05 — HTML minLength attribute prevents form submission before JS validation
+
+**What:** The reset-password page has `minLength={8}` on the password input. When testing "short password shows error," the browser's native validation fires first (tooltip: "Please lengthen to 8 characters") and prevents the form from submitting. The JS validation (`password.length < 8 → setError(...)`) never runs because `handleReset` is never called.
+**Why it matters:** Testing client-side validation messages requires that the form actually submits. HTML attributes like `required`, `minLength`, `type="email"` create a validation layer that runs before any JS. Playwright can't easily detect or interact with native browser validation tooltips.
+**Apply when:** Testing form validation in Playwright. If the form has HTML validation attributes, test the attribute exists (`getAttribute("minlength")`) rather than trying to trigger the JS error message. Or use `page.evaluate(() => form.noValidate = true)` to bypass native validation.
+
+## 2026-04-05 — networkidle is flaky with analytics scripts
+
+**What:** Using `waitForLoadState("networkidle")` in accessibility tests caused intermittent timeouts. GTM and GA4 fire tracking beacons that can take 2-3 seconds or retry, resetting the 500ms idle timer. In CI with cold DNS, this is worse.
+**Why it matters:** "networkidle" sounds safe but it's the most common source of Playwright flakiness. It waits for zero in-flight requests for 500ms — any late analytics beacon restarts the timer.
+**Apply when:** Never use `networkidle` as a page-ready signal. Instead, wait for a specific visible element that indicates the page content is rendered (e.g., `page.locator("main").waitFor()`).
+
 ## 2026-04-05 — This project uses pnpm, not npm
 
 **What:** Running `npm install` to add packages (pdf-parse, pdfjs-dist, @napi-rs/canvas) updated `package-lock.json` but not `pnpm-lock.yaml`. Vercel builds with pnpm using frozen lockfile, so every build after the first `npm install` silently failed. Vercel served cached old deployments — making it look like code changes had no effect.

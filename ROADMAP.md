@@ -67,6 +67,16 @@ Features implemented:
 ### Tool #5 — PDF Compare
 - Libraries: diff-pdf, PDFium, Poppler
 
+## Quality & Testing (Ongoing)
+
+**Status: DONE** — 156 E2E tests + 6 unit tests (162 total)
+
+- Playwright test suite covering: smoke, tools, auth, payments, SEO, i18n, accessibility, security, mobile, content
+- Automated WCAG AA accessibility audits on 6 key pages
+- Tier gating verified for Pro (url-to-pdf), Business (esign, table-extraction), and Enterprise tools
+- Multi-specialist audit process (8 agents, 2 waves) for test quality verification
+- Reusable `/audit` command created for future convergence audits on any repo
+
 ## The Only Rule
 Every day ship one thing:
 - 1 SEO page, OR
