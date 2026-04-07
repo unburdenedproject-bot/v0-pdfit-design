@@ -181,7 +181,7 @@ export function HeaderEs() {
             ) : (
               user ? (
                 <Link href="/es/dashboard">
-                  <Button size="sm" className="bg-orange-500 hover:bg-orange-600 text-white">
+                  <Button size="sm" className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold text-white">
                     <User className="mr-1.5 h-4 w-4" />
                     Mi Cuenta
                   </Button>
@@ -276,7 +276,7 @@ export function HeaderEs() {
                 <div className="h-9 flex-shrink-0" />
               ) : user ? (
                 <Link href="/es/dashboard" onClick={() => setMobileMenuOpen(false)}>
-                  <Button size="sm" className="w-full bg-orange-500 hover:bg-orange-600 text-white">
+                  <Button size="sm" className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold text-white">
                     <User className="mr-1.5 h-4 w-4" />
                     Mi Cuenta
                   </Button>

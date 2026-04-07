@@ -180,7 +180,7 @@ export function HeaderBr() {
             ) : (
               user ? (
                 <Link href="/br/painel">
-                  <Button size="sm" className="bg-orange-500 hover:bg-orange-600 text-white">
+                  <Button size="sm" className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold text-white">
                     <User className="mr-1.5 h-4 w-4" />
                     Painel
                   </Button>
@@ -274,7 +274,7 @@ export function HeaderBr() {
                 <div className="h-9 flex-shrink-0" />
               ) : user ? (
                 <Link href="/br/painel" onClick={() => setMobileMenuOpen(false)}>
-                  <Button size="sm" className="w-full bg-orange-500 hover:bg-orange-600 text-white">
+                  <Button size="sm" className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold text-white">
                     <User className="mr-1.5 h-4 w-4" />
                     Painel
                   </Button>

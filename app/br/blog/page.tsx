@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description: "Noticias, atualizacoes e dicas da equipe PDF.it. Novos recursos e melhores praticas PDF.",
     url: "https://pdf.it.com/br/blog",
     siteName: "PDF.it",
-    images: [{ url: "https://pdf.it.com/og-logo.png", width: 1200, height: 630, alt: "Blog do PDF.it" }],
+    images: [{ url: "https://pdf.it.com/og-logo.png", width: 1736, height: 846, alt: "Blog do PDF.it" }],
     locale: "pt_BR",
     type: "website",
   },

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
       "O PDF.it e uma plataforma PDF no navegador. Converta, comprima, assine, redija e automatize PDFs — os arquivos sao excluidos imediatamente apos o download.",
     url: "https://pdf.it.com/br/sobre",
     siteName: "PDF.it",
-    images: [{ url: "https://pdf.it.com/og-logo.png", width: 1200, height: 630, alt: "PDF.it — Sobre" }],
+    images: [{ url: "https://pdf.it.com/og-logo.png", width: 1736, height: 846, alt: "PDF.it — Sobre" }],
     locale: "pt_BR",
     type: "website",
   },
