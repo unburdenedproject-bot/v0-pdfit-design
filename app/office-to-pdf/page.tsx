@@ -1,8 +1,8 @@
 "use client"
 
 import type React from "react"
-import { useState, useCallback, useEffect } from "react"
-import { useRouter } from "next/navigation"
+import { useState, useCallback } from "react"
+import Script from "next/script"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -17,11 +17,9 @@ import {
   CheckCircle,
   Loader2,
   AlertCircle,
-  Crown,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
-
 
 const ACCEPTED_EXTENSIONS = ".doc,.docx,.ppt,.pptx,.xls,.xlsx,.odt,.odp,.ods"
 
@@ -32,6 +30,15 @@ interface ProcessedFile {
   size: number
 }
 
+const faqs = [
+  { q: "What Office formats can PDF.it convert to PDF?", a: "PDF.it converts Word (DOC/DOCX), Excel (XLS/XLSX), PowerPoint (PPT/PPTX), and OpenDocument formats (ODT/ODP/ODS) to PDF." },
+  { q: "Will my formatting stay the same after converting to PDF?", a: "Most documents convert cleanly. Some complex layouts with unusual fonts or wide spreadsheets may render slightly differently depending on the source file." },
+  { q: "Can I convert Office files to PDF on mobile?", a: "Yes. PDF.it works in mobile browsers — upload your file and download the PDF." },
+  { q: "Do PowerPoint animations convert to PDF?", a: "No. PDFs are static, so animations and transitions won't play — slides are exported as still pages." },
+  { q: "Is it safe to upload Office files?", a: "Yes. All transfers are SSL encrypted and your files are deleted immediately after your session. We never store or share your documents." },
+  { q: "What is the maximum file size I can convert?", a: "Pro accounts can upload files up to 200MB. Business accounts can upload files up to 1GB." },
+]
+
 export default function OfficeToPDFPage() {
   const [isDragOver, setIsDragOver] = useState(false)
   const [files, setFiles] = useState<File[]>([])
@@ -41,7 +48,6 @@ export default function OfficeToPDFPage() {
   const [errorMessage, setErrorMessage] = useState("")
   const [progress, setProgress] = useState(0)
   const [processedFiles, setProcessedFiles] = useState<ProcessedFile[]>([])
-  const router = useRouter()
 
   const handleDragOver = useCallback((e: React.DragEvent) => {
     e.preventDefault()
@@ -85,13 +91,11 @@ export default function OfficeToPDFPage() {
         const file = files[i]
         setProgress(((i / files.length) * 30) + 5)
 
-        // Step 1: Upload to Vercel Blob (browser -> Blob, no server body)
         const inputUrl = await uploadFileToBlob(file)
         inputBlobUrls.push(inputUrl)
 
         setProgress(((i / files.length) * 40) + 35)
 
-        // Step 2: Call API with JSON { blobUrl }
         const response = await fetch("/api/office-to-pdf", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -131,7 +135,6 @@ export default function OfficeToPDFPage() {
       setErrorMessage(error instanceof Error ? error.message : "An unknown error occurred")
       setIsProcessing(false)
     } finally {
-      // Cleanup input blobs -- they are no longer needed after processing
       inputBlobUrls.forEach((u) => deleteBlobUrl(u))
     }
   }, [files])
@@ -161,46 +164,65 @@ export default function OfficeToPDFPage() {
   }, [processedFiles])
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#F3F4FF]">
       <Header />
       <main>
-        {/* Hero Section */}
-        <section className="bg-[#191B4D] text-foreground py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Hero */}
+        <section
+          className="text-white py-16 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#heroGrain)" />
+          </svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <FileText className="h-10 w-10 text-white" />
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                  boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)",
+                }}
+              >
+                <FileText className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4 text-white">Office to PDF Converter</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Office to PDF Converter</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Convert Word, Excel, PowerPoint and other office files to PDF. Fast, accurate, and secure.
+                Convert Word, Excel, PowerPoint and other office files to PDF. Fast, accurate, and secure — all in your browser.
               </p>
-
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2 text-white">
-                  <Zap className="h-4 w-4 text-[#14D8C4]" />
-                  <span>Formatting Preserved</span>
-                </div>
-                <div className="flex items-center gap-2 text-white">
-                  <Shield className="h-4 w-4 text-[#14D8C4]" />
-                  <span>Files Deleted After Session</span>
-                </div>
-                <div className="flex items-center gap-2 text-white">
-                  <Download className="h-4 w-4 text-[#14D8C4]" />
-                  <span>No Login Required</span>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap justify-center gap-2 text-xs text-slate-400">
-                <span className="px-3 py-1 rounded-full bg-slate-800 border border-slate-700">DOC / DOCX</span>
-                <span className="px-3 py-1 rounded-full bg-slate-800 border border-slate-700">XLS / XLSX</span>
-                <span className="px-3 py-1 rounded-full bg-slate-800 border border-slate-700">PPT / PPTX</span>
-                <span className="px-3 py-1 rounded-full bg-slate-800 border border-slate-700">ODT / ODP / ODS</span>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Formatting Preserved</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Files Deleted After Session</span></div>
+                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>No Login Required</span></div>
               </div>
             </div>
           </div>
         </section>
 
+        {/* Intro */}
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Convert any Microsoft Office or OpenDocument file to PDF with a single click. PDF.it preserves formatting, fonts, and layout so your documents look exactly the way you intended — no software installation needed.
+            </p>
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">&#10003; Supports DOC, DOCX, XLS, XLSX, PPT, PPTX</li>
+              <li className="flex items-center gap-2">&#10003; OpenDocument formats: ODT, ODP, ODS</li>
+              <li className="flex items-center gap-2">&#10003; Preserves fonts, tables, and layout</li>
+              <li className="flex items-center gap-2">&#10003; No installation — convert in your browser</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Custom Processing Interface */}
         <section className="py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto">
@@ -211,7 +233,7 @@ export default function OfficeToPDFPage() {
                   <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <AlertCircle className="h-10 w-10 text-red-600" />
                   </div>
-                  <h2 className="text-3xl font-bold text-slate-900 mb-4">Processing Failed</h2>
+                  <h2 className="text-3xl font-bold text-slate-900 mb-4">Conversion Failed</h2>
                   <p className="text-slate-600 mb-8">{errorMessage}</p>
                   <Button onClick={resetInterface} className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E]">
                     Try Again
@@ -398,6 +420,83 @@ export default function OfficeToPDFPage() {
             </div>
           </div>
         </section>
+
+        {/* Feature Blocks */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                { title: "Preserves Formatting & Layout", desc: "Fonts, tables, images, and page layout are faithfully reproduced in the PDF output. Your documents look exactly as intended." },
+                { title: "All Major Office Formats", desc: "Supports Word, Excel, PowerPoint, and OpenDocument formats. Convert any office file to a universally readable PDF." },
+                { title: "Fast & Secure Conversion", desc: "Upload, convert, download. Files are encrypted during transfer and deleted automatically after your session ends." },
+              ].map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <div
+                    className="rounded-[11px] p-6 h-full"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works */}
+        <section className="py-16 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">How to Convert Office Files to PDF</h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+              {[
+                { num: "1", title: "Upload your file", desc: "Drag and drop or click to choose a file" },
+                { num: "2", title: "Click Convert to PDF", desc: "Conversion usually takes a few seconds" },
+                { num: "3", title: "Download your PDF", desc: "Get your converted file instantly" },
+              ].map((step) => (
+                <div key={step.num} className="flex-1">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                      border: "1px solid rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <span className="text-[#14D8C4] font-black text-lg">{step.num}</span>
+                  </div>
+                  <p className="font-semibold text-slate-900">{step.title}</p>
+                  <p className="text-sm text-slate-500 mt-1">{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Related Tools */}
         <section className="py-16" style={{ background: "#0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
@@ -409,58 +508,79 @@ export default function OfficeToPDFPage() {
                 { name: "PowerPoint to PDF", href: "/powerpoint-to-pdf", desc: "Convert slides to PDF" },
                 { name: "Compress PDF", href: "/compress-pdf", desc: "Reduce size after converting" },
               ].map((tool) => (
-                <Link
+                <div
                   key={tool.href}
-                  href={tool.href}
-                  className="rounded-xl p-4 transition-all text-center flex flex-col justify-center min-h-[80px] hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(20,216,196,0.25)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.2)" }}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
                 >
-                  <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
-                  <div className="text-xs text-slate-400">{tool.desc}</div>
-                </Link>
+                  <Link
+                    href={tool.href}
+                    className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
+                    <div className="text-xs text-slate-400">{tool.desc}</div>
+                  </Link>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-gray-50">
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
-            <div className="space-y-6">
-              {[
-                {
-                  q: "What Office formats can PDF.it convert to PDF?",
-                  a: "PDF.it converts Word (DOC/DOCX), Excel (XLS/XLSX), PowerPoint (PPT/PPTX), and OpenDocument formats (ODT/ODP/ODS) to PDF.",
-                },
-                {
-                  q: "Will my formatting stay the same after converting to PDF?",
-                  a: "Most documents convert cleanly. Some complex layouts with unusual fonts or wide spreadsheets may render slightly differently depending on the source file.",
-                },
-                {
-                  q: "Can I convert Office files to PDF on mobile?",
-                  a: "Yes. PDF.it works in mobile browsers — upload your file and download the PDF.",
-                },
-                {
-                  q: "Do PowerPoint animations convert to PDF?",
-                  a: "No. PDFs are static, so animations and transitions won't play — slides are exported as still pages.",
-                },
-                {
-                  q: "Is it safe to upload Office files?",
-                  a: "Yes. All transfers are SSL encrypted and your files are deleted immediately after your session. We never store or share your documents.",
-                },
-                {
-                  q: "What is the maximum file size I can convert?",
-                  a: "Pro accounts can upload files up to 200MB. Business accounts can upload files up to 1GB.",
-                },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
+            <h2 className="text-3xl font-black text-white mb-10 text-center">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl p-6"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
+
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+          }))
+        })}} />
       </main>
       <Footer />
     </div>
