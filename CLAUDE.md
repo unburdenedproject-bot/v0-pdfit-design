@@ -167,6 +167,7 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 - **Never use orange Tailwind classes (orange-50 through orange-700)** — all were migrated to teal (#14D8C4) brand colors on April 6, 2026. Zero orange remaining in codebase.
 - **All 149 tool pages now use canonical Page_Format.md layout** — rewritten April 6-7, 2026. Only ~243 learn articles + 3 blog posts still have old layout.
 - **BR pages must have canonical in alternates metadata** — `alternates: { canonical: "https://pdf.it.com/br/...", languages: {...} }` (14 were missing, fixed April 7)
+- **Newsletter signup** on blog pages saves to Supabase `newsletter_subscribers` table — requires table creation in Supabase
 - Paula is non-technical — explain things simply
 
 ## Deployment Process

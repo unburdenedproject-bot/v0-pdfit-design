@@ -23,6 +23,21 @@
 - Convergence audit: sampled 26 pages (10 EN + 8 ES + 8 BR) — all passed except 14 BR pages missing canonical in alternates (fixed)
 - Remaining with old layout: ~243 learn articles (EN/ES/BR) + 3 blog posts — need separate format approach
 
+### 246 Learn Articles + Blog Posts Updated (April 7, 2026)
+- Hero sections: bg-[#191B4D] → dark #0E0F1E with radial gradients across 81 EN + 81 ES + 81 BR learn articles + 3 blog posts
+- Tool CTA sections: bg-[#191B4D] → dark #0E0F1E
+- FAQ cards in learn articles: light bg-gray-50 → frosted glass dark style
+- Related articles sections: bg-gray-50 → bg-[#F3F4FF]
+- Fixed broken JSX in 243 files (trailing quote from sed FAQ replacement)
+- Fixed missing Download import in 5 files (office-to-pdf EN/ES/BR, pdf-a-google-sheets, pdf-a-google-docs)
+- Zero bg-[#191B4D] remaining in codebase (except tools index page)
+
+### Newsletter Signup (April 7, 2026)
+- New API route: `/api/newsletter` — saves email to Supabase `newsletter_subscribers` table (upsert)
+- New component: `newsletter-signup.tsx` — trilingual form (EN/ES/BR) with email input, loading/success/error states
+- Replaced dead "Follow Our Blog" button (linked to same page) with working newsletter signup on all 3 blog pages
+- Requires Supabase table: `CREATE TABLE newsletter_subscribers (email TEXT PRIMARY KEY, subscribed_at TIMESTAMPTZ DEFAULT NOW())`
+
 ### Design Audit Fixes
 - 404 page: replaced all orange OmnisPDF colors with brand teal
 - Header dashboard button (EN/ES/BR): orange → teal
