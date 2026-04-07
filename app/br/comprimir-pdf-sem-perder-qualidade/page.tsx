@@ -2,263 +2,89 @@ import Script from "next/script"
 import { HeaderBr } from "@/components/header-br"
 import { FooterBr } from "@/components/footer-br"
 import { ProcessingInterface } from "@/components/processing-interface"
-import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Scissors, Settings } from "lucide-react"
+import { FileArchiveIcon as Compress, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF sem Perder Qualidade — Compressao Inteligente | PDF.it",
-  description:
-    "Comprima PDFs sem perder qualidade visivel. Compressao inteligente que reduz o tamanho mantendo texto nitido e imagens claras.",
-  alternates: {
-    languages: {
-      en: "/compress-pdf-without-losing-quality",
-      es: "/es/comprimir-pdf-sin-perder-calidad",
-      pt: "/br/comprimir-pdf-sem-perder-qualidade",
-    },
-  },
+  title: "Comprimir PDF Sem Perder Qualidade — Compressao Inteligente | PDF.it",
+  description: "Comprima arquivos PDF sem perder qualidade. A compressao inteligente otimiza estruturas internas, faz subset de fontes e comprime imagens levemente preservando a legibilidade — rapido, pelo navegador, gratis.",
+  alternates: { canonical: "/br/comprimir-pdf-sem-perder-qualidade", languages: { en: "/compress-pdf-without-losing-quality", es: "/es/comprimir-pdf-sin-perder-calidad", pt: "/br/comprimir-pdf-sem-perder-qualidade" } },
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Como o PDF.it comprime sem perder qualidade?",
-      "acceptedAnswer": { "@type": "Answer", "text": "A compressao inteligente do PDF.it elimina metadados desnecessarios, otimiza fontes incorporadas, reestrutura dados internos do PDF e aplica compressao leve de imagens. Isso reduz o tamanho do arquivo enquanto preserva a qualidade visual — texto nitido, imagens claras e formatacao intacta." }
-    },
-    {
-      "@type": "Question",
-      "name": "As imagens ficarao diferentes apos a compressao?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Com a compressao recomendada, as imagens sao otimizadas de forma inteligente. A diferenca e praticamente imperceptivel para a maioria dos documentos. O texto, graficos e diagramas permanecem nitidos e claros." }
-    },
-    {
-      "@type": "Question",
-      "name": "Quanto menor ficara meu PDF sem perder qualidade?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Os resultados dependem do conteudo do seu PDF. Documentos com fontes incorporadas, metadados excessivos e estruturas nao otimizadas tipicamente veem reducao de 20-50%. Arquivos ja otimizados podem ver reducoes menores." }
-    },
-    {
-      "@type": "Question",
-      "name": "O que a compressao inteligente faz exatamente?",
-      "acceptedAnswer": { "@type": "Answer", "text": "A compressao inteligente realiza quatro otimizacoes principais: elimina metadados desnecessarios e dados ocultos, otimiza e reduz fontes incorporadas, reestrutura os dados internos do PDF para maior eficiencia, e aplica compressao leve de imagens que preserva a qualidade visual." }
-    },
-    {
-      "@type": "Question",
-      "name": "Posso comprimir documentos profissionais sem perder qualidade?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Com certeza. A compressao recomendada e projetada especificamente para documentos onde a qualidade importa — relatorios profissionais, portfolios de design, documentos legais e material de marketing. Seu documento mantera sua aparencia profissional." }
-    },
-    {
-      "@type": "Question",
-      "name": "Ha limite de tamanho ou numero de paginas?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Usuarios gratuitos podem comprimir PDFs de ate 25MB. Usuarios Pro podem processar arquivos de ate 200MB com processamento em lote. Nao ha limite de numero de paginas." }
-    }
+export default function ComprimirPDFSemPerderQualidadePageBr() {
+  const faqs = [
+    { q: "Como o PDF.it comprime sem perder qualidade?", a: "A compressao inteligente otimiza as estruturas internas do PDF, remove objetos duplicados, faz subset de fontes incorporadas e aplica compressao leve de imagem. Isso reduz o tamanho do arquivo preservando a qualidade visual e legibilidade." },
+    { q: "As imagens vao parecer diferentes apos comprimir?", a: "Com a compressao recomendada, as imagens sao levemente otimizadas. A diferenca e praticamente imperceptivel para a maioria dos documentos. Texto, graficos e diagramas permanecem nitidos e definidos." },
+    { q: "Quanto menor meu PDF ficara?", a: "Os resultados dependem do conteudo do seu PDF. Documentos com fontes incorporadas e estruturas nao otimizadas tipicamente veem reducao de 20-50%. Arquivos ja otimizados podem ver reducoes menores." },
+    { q: "Isso e diferente da compressao extrema?", a: "Sim. A compressao extrema reduz agressivamente a resolucao das imagens para maxima reducao de tamanho. A compressao recomendada prioriza a preservacao da qualidade, aplicando otimizacao mais suave que mantem seu documento com aparencia profissional." },
+    { q: "Posso comprimir um PDF sem perder qualidade pelo celular?", a: "Sim. O PDF.it funciona em qualquer navegador movel. Envie seu PDF, comprima com configuracoes inteligentes e baixe o arquivo otimizado direto no seu iPhone ou Android." },
+    { q: "Quais tipos de PDFs mais se beneficiam da compressao que preserva qualidade?", a: "Relatorios profissionais, apresentacoes para clientes, portfolios e documentos juridicos se beneficiam mais — qualquer documento onde a qualidade visual importa. A compressao inteligente reduz o tamanho sem comprometer a aparencia profissional." },
   ]
-}
 
-export default function ComprimirPDFSemPerderQualidadePagePt() {
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema-pt"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderBr />
       <main>
-        {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Compress className="h-10 w-10 text-white" />
-              </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF sem Perder Qualidade</h1>
-              <p className="text-xl text-slate-300 mb-8">
-                A compressao inteligente do PDF.it reduz o tamanho do seu PDF sem sacrificar a qualidade visual. Elimina metadados desnecessarios, otimiza fontes, reestrutura dados internos e comprime imagens de forma leve — mantendo texto nitido e imagens claras.
-              </p>
-              <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compressao Inteligente</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Qualidade Preservada</span></div>
-                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sem Cadastro</span></div>
-              </div>
+        <section className="text-white py-16 relative overflow-hidden" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%), radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%), #0E0F1E` }}>
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}><filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter><rect width="100%" height="100%" filter="url(#heroGrain)" /></svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10"><div className="max-w-4xl mx-auto text-center">
+            <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)" }}><Compress className="h-10 w-10 text-[#14D8C4]" /></div>
+            <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF Sem Perder Qualidade</h1>
+            <p className="text-xl text-slate-300 mb-8">A compressao inteligente otimiza as estruturas internas do PDF, faz subset de fontes e comprime imagens levemente — reduzindo o tamanho do arquivo preservando a legibilidade e qualidade visual.</p>
+            <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
+              <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compressao Inteligente</span></div>
+              <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Arquivos Excluidos Apos a Sessao</span></div>
+              <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sem Cadastro</span></div>
             </div>
-          </div>
+          </div></div>
         </section>
 
-        {/* Processing Interface */}
-        <ProcessingInterface
-          acceptedFiles=".pdf"
-          toolName="Compress PDF"
-          outputFormat="PDF"
-          processingMessage="Comprimindo seu PDF sem perder qualidade..."
-          successMessage="Seu PDF comprimido com qualidade preservada esta pronto!"
-          compressionLevel="recommended"
-        />
+        <section className="py-10 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+          <p className="text-lg text-slate-600 leading-relaxed">Nem toda compressao e igual. A compressao inteligente do PDF.it foca em otimizar a estrutura interna do seu PDF — removendo objetos duplicados, fazendo subset de fontes incorporadas e aplicando otimizacao leve de imagem. O resultado e um arquivo visivelmente menor que parece praticamente identico ao original.</p>
+          <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+            <li className="flex items-center gap-2">✓ Otimiza estruturas internas do PDF e remove redundancias</li>
+            <li className="flex items-center gap-2">✓ Faz subset de fontes para remover caracteres nao utilizados</li>
+            <li className="flex items-center gap-2">✓ Compressao leve de imagem preserva a qualidade visual</li>
+            <li className="flex items-center gap-2">✓ Sem instalacao — funciona em qualquer navegador em qualquer dispositivo</li>
+          </ul>
+        </div></section>
 
-        {/* How Smart Compression Works */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-4">Como Funciona a Compressao Inteligente?</h2>
-            <p className="text-lg text-slate-600 mb-8">
-              Nem toda compressao e igual. A compressao inteligente se concentra em otimizar a estrutura interna do seu PDF em vez de degradar o conteudo visivel. O resultado e um arquivo notavelmente menor que parece praticamente identico ao original.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="bg-white rounded-xl p-6 border border-gray-200">
-                <div className="flex items-center gap-3 mb-3">
-                  <Settings className="h-5 w-5 text-[#14D8C4]" />
-                  <h3 className="font-bold text-slate-900">Elimina Metadados</h3>
-                </div>
-                <p className="text-slate-600 text-sm">Remove dados ocultos, miniaturas incorporadas, historico de edicao e metadados desnecessarios que inflam o tamanho do arquivo sem agregar valor.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 border border-gray-200">
-                <div className="flex items-center gap-3 mb-3">
-                  <Settings className="h-5 w-5 text-[#14D8C4]" />
-                  <h3 className="font-bold text-slate-900">Otimiza Fontes</h3>
-                </div>
-                <p className="text-slate-600 text-sm">Reduz as fontes incorporadas eliminando caracteres nao utilizados e otimizando as tabelas de fontes, sem afetar como o texto aparece.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 border border-gray-200">
-                <div className="flex items-center gap-3 mb-3">
-                  <Settings className="h-5 w-5 text-[#14D8C4]" />
-                  <h3 className="font-bold text-slate-900">Reestrutura Dados</h3>
-                </div>
-                <p className="text-slate-600 text-sm">Reorganiza as estruturas internas do PDF, elimina objetos duplicados e otimiza os fluxos de dados para maior eficiencia.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 border border-gray-200">
-                <div className="flex items-center gap-3 mb-3">
-                  <Settings className="h-5 w-5 text-[#14D8C4]" />
-                  <h3 className="font-bold text-slate-900">Compressao Leve de Imagens</h3>
-                </div>
-                <p className="text-slate-600 text-sm">Aplica otimizacao leve as imagens incorporadas — o suficiente para reduzir o tamanho sem diferencas visiveis a olho nu.</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ProcessingInterface acceptedFiles=".pdf" toolName="Compress PDF" outputFormat="PDF" processingMessage="Aplicando compressao inteligente no seu PDF..." successMessage="Seu PDF otimizado esta pronto!" compressionLevel="recommended" />
 
-        {/* Use Cases */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Casos de Uso Comuns</h2>
-            <div className="space-y-10">
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Documentos Profissionais</h3>
-                <p className="text-slate-600">
-                  Relatorios anuais, resumos financeiros e analises empresariais precisam ter aparencia impecavel. A compressao inteligente reduz o tamanho do arquivo para compartilhar facilmente enquanto mantem graficos, tabelas e formatacao impecaveis.
-                </p>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Portfolios de Design</h3>
-                <p className="text-slate-600">
-                  Portfolios criativos dependem da qualidade de imagem para causar impressao. A compressao que preserva qualidade permite compartilhar seu trabalho por email ou portais de upload sem degradar seus designs.
-                </p>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Documentos Legais</h3>
-                <p className="text-slate-600">
-                  Contratos, acordos e documentos legais devem permanecer completamente legiveis. A compressao inteligente otimiza o tamanho do arquivo garantindo que cada palavra, assinatura e selo permaneca nitido e legivel.
-                </p>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Material de Marketing</h3>
-                <p className="text-slate-600">
-                  Folhetos, catalogos e apresentacoes com graficos de marca precisam ter aparencia profissional. Comprima para compartilhar por email ou web sem comprometer a imagem da sua marca.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <section className="py-16" style={{ background: `radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%), #0E0F1E` }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl"><div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {[
+            { title: "Relatorios Profissionais e Apresentacoes", desc: "Relatorios anuais, resumos financeiros e apresentacoes para clientes precisam parecer polidos. A compressao inteligente reduz o tamanho do arquivo para compartilhamento facil mantendo graficos, tabelas e formatacao impecaveis." },
+            { title: "Portfolios e Trabalhos de Design", desc: "Portfolios criativos dependem da qualidade da imagem para causar impressao. A compressao que preserva qualidade permite compartilhar seu trabalho por email ou portais de upload sem degradar seus designs." },
+            { title: "Documentos Juridicos e de Conformidade", desc: "Contratos, acordos e documentos juridicos devem permanecer totalmente legiveis. A compressao inteligente otimiza o tamanho do arquivo garantindo que cada palavra, assinatura e carimbo permaneca nitido e legivel." },
+          ].map((feature) => (
+            <div key={feature.title} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}><div className="rounded-[11px] p-6 h-full" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}><h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3><p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p></div></div>
+          ))}
+        </div></div></section>
 
-        {/* How To */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Comprimir PDF Sem Perder Qualidade</h2>
-            <div className="space-y-4">
-              {[
-                "Envie ou arraste e solte seu PDF no PDF.it.",
-                "Clique em Comprimir PDF — a compressao inteligente e aplicada para otimizar seu arquivo preservando a qualidade.",
-                "Baixe seu PDF otimizado. Se precisar de arquivos ainda menores, tente a compressao extrema — mas tenha em mente que pode reduzir o detalhe das imagens.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
-                  </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
-                </div>
-              ))}
-            </div>
+        <section className="py-16 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+          <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Comprimir PDF Sem Perder Qualidade</h2>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+            {[{ num: "1", title: "Envie seu PDF", desc: "Arraste e solte ou clique para escolher um arquivo" }, { num: "2", title: "Clique em Comprimir PDF", desc: "A compressao inteligente e aplicada automaticamente" }, { num: "3", title: "Baixe seu PDF", desc: "Receba seu arquivo otimizado instantaneamente" }].map((step) => (
+              <div key={step.num} className="flex-1"><div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)", border: "1px solid rgba(20,216,196,0.25)" }}><span className="text-[#14D8C4] font-black text-lg">{step.num}</span></div><p className="font-semibold text-slate-900">{step.title}</p><p className="text-sm text-slate-500 mt-1">{step.desc}</p></div>
+            ))}
           </div>
-        </section>
+        </div></section>
 
-        {/* Related Tools */}
-        <section className="py-16" style={{ background: "#0E0F1E" }}>
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Ferramentas Relacionadas</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-              {[
-                { name: "Comprimir PDF", desc: "Compressao padrao.", href: "/br/comprimir-pdf", icon: Compress },
-                { name: "PDF com Imagens", desc: "Comprime imagens.", href: "/br/comprimir-pdf-imagens", icon: Compress },
-                { name: "Compressao Rapida", desc: "Comprime instantaneamente.", href: "/br/comprimir-pdf-rapido", icon: Compress },
-                { name: "Achatar PDF", desc: "Remove camadas e campos.", href: "/br/achatar-pdf", icon: FileText },
-                { name: "Reduzir Tamanho", desc: "Reduz tamanho geral.", href: "/br/reduzir-tamanho-pdf", icon: Compress },
-                { name: "Comprimir para Email", desc: "Comprime para email.", href: "/br/comprimir-pdf-para-email", icon: Compress },
-                { name: "Dividir PDF", desc: "Divide documentos.", href: "/br/dividir-pdf", icon: Scissors },
-                { name: "Unir PDF", desc: "Combina varios PDFs.", href: "/br/unir-pdf", icon: Merge },
-              ].map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="group flex flex-col items-center text-center rounded-xl border border-gray-200 bg-white p-4 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] hover:shadow-md transition-all duration-200"
-                >
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#14D8C4] to-[#0FBFB0] rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200 shadow-sm">
-                    <tool.icon className="h-5 w-5 text-white" />
-                  </div>
-                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-[#14D8C4] transition-colors mb-1">
-                    {tool.name}
-                  </h4>
-                  <p className="text-xs text-slate-500 leading-relaxed">{tool.desc}</p>
-                </Link>
-              ))}
-            </div>
+        <section className="py-16" style={{ background: "#0E0F1E" }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+          <h2 className="text-2xl font-black text-white mb-6 text-center">Ferramentas Relacionadas</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {[{ name: "Comprimir PDF", href: "/br/comprimir-pdf", desc: "Compressao padrao" }, { name: "Comprimir para Email", href: "/br/comprimir-pdf-para-email", desc: "Para limites de email" }, { name: "Dividir PDF", href: "/br/dividir-pdf", desc: "Divida se ainda for grande" }, { name: "Achatar PDF", href: "/br/achatar-pdf", desc: "Remover campos de formulario" }].map((tool) => (
+              <div key={tool.href} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}><Link href={tool.href} className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}><div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div><div className="text-xs text-slate-400">{tool.desc}</div></Link></div>
+            ))}
           </div>
-        </section>
+        </div></section>
 
-        {/* FAQ */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
-            <div className="space-y-6">
-              {[
-                { q: "Como o PDF.it comprime sem perder qualidade?", a: "A compressao inteligente do PDF.it elimina metadados desnecessarios, otimiza fontes incorporadas, reestrutura dados internos do PDF e aplica compressao leve de imagens. Isso reduz o tamanho do arquivo enquanto preserva a qualidade visual — texto nitido, imagens claras e formatacao intacta." },
-                { q: "As imagens ficarao diferentes apos a compressao?", a: "Com a compressao recomendada, as imagens sao otimizadas de forma inteligente. A diferenca e praticamente imperceptivel para a maioria dos documentos. O texto, graficos e diagramas permanecem nitidos e claros." },
-                { q: "Quanto menor ficara meu PDF sem perder qualidade?", a: "Os resultados dependem do conteudo do seu PDF. Documentos com fontes incorporadas, metadados excessivos e estruturas nao otimizadas tipicamente veem reducao de 20-50%. Arquivos ja otimizados podem ver reducoes menores." },
-                { q: "O que a compressao inteligente faz exatamente?", a: "A compressao inteligente realiza quatro otimizacoes principais: elimina metadados desnecessarios e dados ocultos, otimiza e reduz fontes incorporadas, reestrutura os dados internos do PDF para maior eficiencia, e aplica compressao leve de imagens que preserva a qualidade visual." },
-                { q: "Posso comprimir documentos profissionais sem perder qualidade?", a: "Com certeza. A compressao recomendada e projetada especificamente para documentos onde a qualidade importa — relatorios profissionais, portfolios de design, documentos legais e material de marketing. Seu documento mantera sua aparencia profissional." },
-                { q: "Ha limite de tamanho ou numero de paginas?", a: "Usuarios gratuitos podem comprimir PDFs de ate 25MB. Usuarios Pro podem processar arquivos de ate 200MB com processamento em lote. Nao ha limite de numero de paginas." },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <section className="py-16" style={{ background: `radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%), radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%), #0E0F1E` }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+          <h2 className="text-3xl font-black text-white mb-10 text-center">Perguntas Frequentes</h2>
+          <div className="space-y-4">{faqs.map((faq, i) => (<div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}><h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3><p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p></div>))}</div>
+        </div></section>
 
-        {/* CTA */}
-        <section className="py-16 bg-[#191B4D] text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-            <h2 className="text-2xl font-black mb-4">Comprima Seu PDF — Mantenha a Qualidade</h2>
-            <p className="text-slate-300 text-lg mb-8">
-              A compressao inteligente reduz o tamanho do arquivo sem sacrificar a legibilidade. Sem cadastro, sem instalacao, sem espera.
-            </p>
-            <Link
-              href="/br/comprimir-pdf-sem-perder-qualidade"
-              className="inline-block bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl text-lg transition-colors shadow-lg"
-            >
-              Comprimir Sem Perder Qualidade
-            </Link>
-          </div>
-        </section>
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(faq => ({ "@type": "Question", "name": faq.q, "acceptedAnswer": { "@type": "Answer", "text": faq.a } })) })}} />
       </main>
       <FooterBr />
     </div>

@@ -2,250 +2,89 @@ import Script from "next/script"
 import { HeaderBr } from "@/components/header-br"
 import { FooterBr } from "@/components/footer-br"
 import { ProcessingInterface } from "@/components/processing-interface"
-import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, RotateCw, Scissors } from "lucide-react"
+import { FileArchiveIcon as Compress, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF para Anexo — Reduza o Tamanho para Enviar por Email | PDF.it",
-  description:
-    "Comprima PDFs para anexos de email. Reduza o tamanho para cumprir limites do Gmail, Outlook e Yahoo.",
-  alternates: {
-    languages: {
-      en: "/compress-pdf-for-attachment",
-      es: "/es/comprimir-pdf-para-adjunto",
-      pt: "/br/comprimir-pdf-para-anexo",
-    },
-  },
+  title: "Comprimir PDF para Anexo — Reduza PDFs para Envio | PDF.it",
+  description: "Comprima seu PDF para anexar em emails, tickets de suporte, formularios e mensagens. Compressao recomendada mantem a qualidade alta enquanto reduz o tamanho — gratis e pelo navegador.",
+  alternates: { canonical: "/br/comprimir-pdf-para-anexo", languages: { en: "/compress-pdf-for-attachment", es: "/es/comprimir-pdf-para-adjunto", pt: "/br/comprimir-pdf-para-anexo" } },
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Como comprimo um PDF para anexar a um email?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF ao PDF.it e clique em Comprimir. A compressao recomendada reduz o tamanho do arquivo mantendo o texto e as imagens com boa aparencia, para que seu anexo suba rapidamente e seja facil de abrir." }
-    },
-    {
-      "@type": "Question",
-      "name": "Quais sao os limites de tamanho de anexo no Gmail, Outlook e Yahoo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "O Gmail permite anexos de ate 25MB, o Outlook permite ate 20MB e o Yahoo Mail permite ate 25MB. Se seu PDF exceder esses limites, o PDF.it o comprime para que caiba sem problemas." }
-    },
-    {
-      "@type": "Question",
-      "name": "A compressao afeta a qualidade do PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "A compressao recomendada preserva a qualidade visual. O texto permanece nitido e claro, e as imagens mantem bom detalhe. O documento ficara profissional quando o destinatario abri-lo." }
-    },
-    {
-      "@type": "Question",
-      "name": "Posso comprimir varios PDFs para anexar?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Usuarios Pro podem comprimir multiplos PDFs em lote. Envie todos os seus arquivos, comprima-os juntos e baixe cada um pronto para anexar." }
-    },
-    {
-      "@type": "Question",
-      "name": "Posso comprimir um PDF para anexo pelo celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em qualquer navegador movel. Envie seu PDF, comprima-o e anexe o arquivo menor — tudo do seu iPhone ou dispositivo Android sem instalar um app." }
-    },
-    {
-      "@type": "Question",
-      "name": "O que faco se meu PDF continuar muito grande apos comprimir?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Tente dividir o PDF em partes menores com nossa ferramenta Dividir PDF, depois comprima e anexe cada parte separadamente. Voce tambem pode achatar o PDF ou remover paginas desnecessarias antes de comprimir." }
-    }
+export default function ComprimirPDFParaAnexoPageBr() {
+  const faqs = [
+    { q: "Como comprimo um PDF para anexo?", a: "Envie seu PDF ao PDF.it e clique em Comprimir. A compressao recomendada reduz o tamanho do arquivo mantendo texto e imagens com boa aparencia, para que seu anexo faca upload rapidamente e seja facil de abrir." },
+    { q: "Por que meus anexos PDF sao rejeitados?", a: "Muitos sistemas tem limites de tamanho para anexos — provedores de email, plataformas de tickets de suporte, CRMs e ferramentas de gestao de projetos impoem limites. Comprimir seu PDF reduz o tamanho para que caiba nesses limites." },
+    { q: "O PDF comprimido ainda vai parecer profissional?", a: "Sim. A compressao recomendada preserva a qualidade visual. O texto permanece nitido e claro, e as imagens mantem bons detalhes. O documento parecera profissional quando o destinatario abri-lo." },
+    { q: "Quais limites de tamanho as plataformas comuns tem?", a: "O Gmail permite anexos de 25MB, Outlook permite 20MB, Zendesk e Freshdesk tipicamente limitam a 20-50MB, e muitos CRMs tem limites entre 10-25MB. Comprimir seu PDF ajuda a garantir que caiba em qualquer um desses limites." },
+    { q: "Posso comprimir um PDF para anexo pelo celular?", a: "Sim. O PDF.it funciona em qualquer navegador movel. Envie seu PDF, comprima-o e anexe o arquivo menor — tudo pelo seu iPhone ou Android sem instalar nenhum app." },
+    { q: "O que faco se meu PDF ainda for grande demais apos comprimir?", a: "Tente dividir o PDF em partes menores com nossa ferramenta Dividir PDF e comprima e anexe cada parte separadamente. Voce tambem pode achatar o PDF ou remover paginas desnecessarias antes de comprimir." },
   ]
-}
 
-export default function ComprimirPDFParaAnexoPagePt() {
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema-pt"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderBr />
       <main>
-        {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Compress className="h-10 w-10 text-white" />
-              </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF para Anexo</h1>
-              <p className="text-xl text-slate-300 mb-8">
-                Reduza o tamanho dos seus PDFs para cumprir os limites de anexo do Gmail, Outlook e Yahoo. A compressao recomendada mantem a qualidade alta enquanto reduz o tamanho do arquivo para que envie sem problemas.
-              </p>
-              <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compressao Inteligente</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Arquivos Excluidos Apos a Sessao</span></div>
-                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sem Cadastro</span></div>
-              </div>
+        <section className="text-white py-16 relative overflow-hidden" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%), radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%), #0E0F1E` }}>
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}><filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter><rect width="100%" height="100%" filter="url(#heroGrain)" /></svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10"><div className="max-w-4xl mx-auto text-center">
+            <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)" }}><Compress className="h-10 w-10 text-[#14D8C4]" /></div>
+            <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF para Anexos</h1>
+            <p className="text-xl text-slate-300 mb-8">Reduza seus PDFs para que anexem rapidamente em emails, tickets de suporte, formularios e mensagens. A compressao recomendada mantem a qualidade alta enquanto reduz o tamanho do arquivo.</p>
+            <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
+              <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compressao Inteligente</span></div>
+              <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Arquivos Excluidos Apos a Sessao</span></div>
+              <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sem Cadastro</span></div>
             </div>
-          </div>
+          </div></div>
         </section>
 
-        {/* Processing Interface */}
-        <ProcessingInterface
-          acceptedFiles=".pdf"
-          toolName="Compress PDF"
-          outputFormat="PDF"
-          processingMessage="Comprimindo seu PDF para anexo..."
-          successMessage="Seu PDF pronto para anexar esta pronto!"
-          compressionLevel="recommended"
-        />
+        <section className="py-10 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+          <p className="text-lg text-slate-600 leading-relaxed">Seja anexando um PDF a um email, ticket de suporte, registro de CRM ou ferramenta de gestao de projetos — arquivos menores fazem upload mais rapido e tem menos chance de serem rejeitados. Muitas plataformas impoem limites rigorosos de tamanho para anexos. Comprimir seu PDF garante que passe sem problemas toda vez.</p>
+          <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+            <li className="flex items-center gap-2">✓ Compressao recomendada preserva a qualidade</li>
+            <li className="flex items-center gap-2">✓ Evite rejeicoes de anexo por limite de tamanho</li>
+            <li className="flex items-center gap-2">✓ Funciona no Mac, Windows, iOS, Android e Linux</li>
+            <li className="flex items-center gap-2">✓ Sem instalacao — comprima PDFs no navegador</li>
+          </ul>
+        </div></section>
 
-        {/* About */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que Comprimir PDFs para Anexos de Email?</h2>
-            <p className="text-lg text-slate-600 mb-8">
-              Os provedores de email aplicam limites rigorosos de tamanho para anexos. Se seu PDF exceder o limite, o email volta ou o arquivo nao e anexado. Comprimir seu PDF antes de envia-lo garante que chegue sem problemas na caixa de entrada do destinatario.
-            </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>&#10003; A compressao recomendada preserva a qualidade enquanto reduz o tamanho</li>
-              <li>&#10003; Cumpre os limites do Gmail (25MB), Outlook (20MB) e Yahoo (25MB)</li>
-              <li>&#10003; Arquivos menores sobem mais rapido para o servidor de email</li>
-              <li>&#10003; Funciona no Mac, Windows, iOS, Android e Linux</li>
-              <li>&#10003; Sem instalacao — comprima PDFs direto no seu navegador</li>
-            </ul>
-          </div>
-        </section>
+        <ProcessingInterface acceptedFiles=".pdf" toolName="Compress PDF" outputFormat="PDF" processingMessage="Comprimindo seu PDF para anexo..." successMessage="Seu PDF comprimido esta pronto para anexar!" compressionLevel="recommended" />
 
-        {/* Email Limits */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Limites de Tamanho de Anexo por Provedor</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {[
-                { provider: "Gmail", limit: "25MB", color: "bg-red-50 border-red-200" },
-                { provider: "Outlook", limit: "20MB", color: "bg-blue-50 border-blue-200" },
-                { provider: "Yahoo Mail", limit: "25MB", color: "bg-purple-50 border-purple-200" },
-              ].map((item) => (
-                <div key={item.provider} className={`${item.color} border rounded-xl p-6 text-center`}>
-                  <div className="text-lg font-bold text-slate-900">{item.provider}</div>
-                  <div className="text-3xl font-black text-[#14D8C4] mt-2">{item.limit}</div>
-                  <div className="text-sm text-slate-500 mt-1">tamanho maximo de anexo</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <section className="py-16" style={{ background: `radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%), #0E0F1E` }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl"><div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {[
+            { title: "Tickets de Suporte e CRM", desc: "Plataformas de helpdesk como Zendesk, Freshdesk e CRMs como Salesforce tem limites de anexo. Comprima antes de anexar para que sua documentacao faca upload sem problemas." },
+            { title: "Ferramentas de Gestao de Projetos", desc: "Jira, Asana, Trello e Monday.com permitem anexar arquivos a tarefas. PDFs menores significam uploads mais rapidos e uma experiencia mais suave para toda a equipe." },
+            { title: "Formularios de RH e Integracao", desc: "Enviando documentos de integracao, formularios de impostos ou politicas da empresa por plataformas de RH? Comprima seus PDFs para cumprir limites de upload e evitar atrasos no envio." },
+          ].map((feature) => (
+            <div key={feature.title} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}><div className="rounded-[11px] p-6 h-full" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}><h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3><p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p></div></div>
+          ))}
+        </div></div></section>
 
-        {/* Use Cases */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Casos de Uso Comuns</h2>
-            <div className="space-y-10">
-              <div className="bg-white rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Contratos e Faturas</h3>
-                <p className="text-slate-600">
-                  Contratos com assinaturas e faturas com logos e imagens geralmente excedem os limites de anexo. Comprima esses documentos para envia-los diretamente por email sem que voltem.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Relatorios e Apresentacoes</h3>
-                <p className="text-slate-600">
-                  Relatorios com graficos, tabelas e imagens podem ser muito pesados. Comprima seus relatorios para envia-los direto por email em vez de usar links de download.
-                </p>
-              </div>
-              <div className="bg-white rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">De Qualquer Dispositivo</h3>
-                <p className="text-slate-600">
-                  Precisa enviar um PDF comprimido do celular? O PDF.it funciona em qualquer navegador movel — comprima e anexe seu PDF direto do iPhone ou Android sem instalar apps.
-                </p>
-              </div>
-            </div>
+        <section className="py-16 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+          <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Comprimir um PDF para Anexos</h2>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+            {[{ num: "1", title: "Envie seu PDF", desc: "Arraste e solte ou clique para escolher um arquivo" }, { num: "2", title: "Clique em Comprimir", desc: "A compressao recomendada preserva a qualidade" }, { num: "3", title: "Baixe e anexe", desc: "Receba seu arquivo menor e anexe em qualquer lugar" }].map((step) => (
+              <div key={step.num} className="flex-1"><div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)", border: "1px solid rgba(20,216,196,0.25)" }}><span className="text-[#14D8C4] font-black text-lg">{step.num}</span></div><p className="font-semibold text-slate-900">{step.title}</p><p className="text-sm text-slate-500 mt-1">{step.desc}</p></div>
+            ))}
           </div>
-        </section>
+        </div></section>
 
-        {/* How To */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Comprimir um PDF para Anexo</h2>
-            <div className="space-y-4">
-              {[
-                "Envie ou arraste e solte seu PDF no PDF.it.",
-                "Clique em Comprimir PDF — a compressao recomendada e aplicada para reduzir o tamanho preservando a qualidade.",
-                "Baixe seu PDF menor e anexe ao seu email. Se ainda estiver muito grande, tente dividir o arquivo primeiro e comprima cada parte.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
-                  </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
-                </div>
-              ))}
-            </div>
+        <section className="py-16" style={{ background: "#0E0F1E" }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+          <h2 className="text-2xl font-black text-white mb-6 text-center">Ferramentas Relacionadas</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {[{ name: "Comprimir PDF", href: "/br/comprimir-pdf", desc: "Compressao padrao" }, { name: "Comprimir para Email", href: "/br/comprimir-pdf-para-email", desc: "Para limites de email" }, { name: "Dividir PDF", href: "/br/dividir-pdf", desc: "Divida se ainda for grande" }, { name: "Achatar PDF", href: "/br/achatar-pdf", desc: "Remover campos de formulario" }].map((tool) => (
+              <div key={tool.href} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}><Link href={tool.href} className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}><div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div><div className="text-xs text-slate-400">{tool.desc}</div></Link></div>
+            ))}
           </div>
-        </section>
+        </div></section>
 
-        {/* Related Tools */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Mais Ferramentas PDF</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {[
-                { name: "Comprimir para 5MB", desc: "Para limites de 5MB.", href: "/br/comprimir-pdf-para-5mb", icon: Compress },
-                { name: "Comprimir para 2MB", desc: "Para limites de 2MB.", href: "/br/comprimir-pdf-para-2mb", icon: Compress },
-                { name: "Unir PDF", desc: "Combina varios PDFs.", href: "/br/unir-pdf", icon: Merge },
-                { name: "Dividir PDF", desc: "Divide se ainda for grande.", href: "/br/dividir-pdf", icon: Scissors },
-              ].map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="group flex flex-col items-center text-center rounded-xl border border-gray-200 bg-white p-4 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] hover:shadow-md transition-all duration-200"
-                >
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#14D8C4] to-[#0FBFB0] rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200 shadow-sm">
-                    <tool.icon className="h-5 w-5 text-white" />
-                  </div>
-                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-[#14D8C4] transition-colors mb-1">
-                    {tool.name}
-                  </h4>
-                  <p className="text-xs text-slate-500 leading-relaxed">{tool.desc}</p>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+        <section className="py-16" style={{ background: `radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%), radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%), #0E0F1E` }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+          <h2 className="text-3xl font-black text-white mb-10 text-center">Perguntas Frequentes</h2>
+          <div className="space-y-4">{faqs.map((faq, i) => (<div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}><h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3><p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p></div>))}</div>
+        </div></section>
 
-        {/* FAQ */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
-            <div className="space-y-6">
-              {[
-                { q: "Como comprimo um PDF para anexar a um email?", a: "Envie seu PDF ao PDF.it e clique em Comprimir. A compressao recomendada reduz o tamanho do arquivo mantendo o texto e as imagens com boa aparencia, para que seu anexo suba rapidamente e seja facil de abrir." },
-                { q: "Quais sao os limites de tamanho de anexo no Gmail, Outlook e Yahoo?", a: "O Gmail permite anexos de ate 25MB, o Outlook permite ate 20MB e o Yahoo Mail permite ate 25MB. Se seu PDF exceder esses limites, o PDF.it o comprime para que caiba sem problemas." },
-                { q: "A compressao afeta a qualidade do PDF?", a: "A compressao recomendada preserva a qualidade visual. O texto permanece nitido e claro, e as imagens mantem bom detalhe. O documento ficara profissional quando o destinatario abri-lo." },
-                { q: "Posso comprimir varios PDFs para anexar?", a: "Usuarios Pro podem comprimir multiplos PDFs em lote. Envie todos os seus arquivos, comprima-os juntos e baixe cada um pronto para anexar." },
-                { q: "Posso comprimir um PDF para anexo pelo celular?", a: "Sim. O PDF.it funciona em qualquer navegador movel. Envie seu PDF, comprima-o e anexe o arquivo menor — tudo do seu iPhone ou dispositivo Android sem instalar um app." },
-                { q: "O que faco se meu PDF continuar muito grande apos comprimir?", a: "Tente dividir o PDF em partes menores com nossa ferramenta Dividir PDF, depois comprima e anexe cada parte separadamente. Voce tambem pode achatar o PDF ou remover paginas desnecessarias antes de comprimir." },
-              ].map((faq, i) => (
-                <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="py-16 bg-[#191B4D] text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-            <h2 className="text-2xl font-black mb-4">Precisa Reduzir um PDF para Anexar?</h2>
-            <p className="text-slate-300 text-lg mb-8">
-              Comprima seu PDF em segundos para que anexe sem problemas em qualquer provedor de email. Sem cadastro, sem instalacao, sem espera.
-            </p>
-            <Link
-              href="/br/comprimir-pdf-para-anexo"
-              className="inline-block bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl text-lg transition-colors shadow-lg"
-            >
-              Comprimir para Anexo Agora
-            </Link>
-          </div>
-        </section>
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(faq => ({ "@type": "Question", "name": faq.q, "acceptedAnswer": { "@type": "Answer", "text": faq.a } })) })}} />
       </main>
       <FooterBr />
     </div>

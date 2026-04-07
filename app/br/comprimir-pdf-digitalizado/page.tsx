@@ -2,210 +2,89 @@ import Script from "next/script"
 import { HeaderBr } from "@/components/header-br"
 import { FooterBr } from "@/components/footer-br"
 import { ProcessingInterface } from "@/components/processing-interface"
-import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Scissors, ScanLine } from "lucide-react"
+import { FileArchiveIcon as Compress, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF Digitalizado — Reduza o Tamanho de Documentos Digitalizados | PDF.it",
-  description:
-    "Comprima documentos PDF digitalizados. Digitalizacoes costumam ser arquivos grandes — reduza o tamanho significativamente mantendo a legibilidade.",
-  alternates: {
-    languages: {
-      en: "/compress-scanned-pdf",
-      es: "/es/comprimir-pdf-escaneado",
-      pt: "/br/comprimir-pdf-digitalizado",
-    },
-  },
+  title: "Comprimir PDF Digitalizado — Reduzir Tamanho de Scan | PDF.it",
+  description: "Comprima PDFs digitalizados com compressao extrema para reduzir drasticamente o tamanho do arquivo. Perfeito para contratos digitalizados, documentos arquivados, recibos e scans de identidade — rapido, pelo navegador, gratis.",
+  alternates: { canonical: "/br/comprimir-pdf-digitalizado", languages: { en: "/compress-scanned-pdf", es: "/es/comprimir-pdf-escaneado", pt: "/br/comprimir-pdf-digitalizado" } },
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Por que PDFs digitalizados sao tao grandes?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PDFs digitalizados contem imagens de pagina inteira em alta resolucao em vez de texto vetorial. Cada pagina e essencialmente uma fotografia, entao um documento de 10 paginas pode pesar 30-50MB facilmente. A compressao se concentra em otimizar essas imagens para reduzir drasticamente o tamanho." }
-    },
-    {
-      "@type": "Question",
-      "name": "A compressao tornara meu documento digitalizado ilegivel?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Nao. A compressao recomendada do PDF.it e projetada para preservar a legibilidade. O texto impresso permanece nitido e claro. As imagens sao otimizadas de forma inteligente sem degradar a qualidade visivel do documento." }
-    },
-    {
-      "@type": "Question",
-      "name": "Comprimir um PDF digitalizado afeta o texto OCR?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Se seu PDF digitalizado ja tem uma camada de texto OCR, a compressao a preserva completamente. A camada de texto e independente da camada de imagem, entao voce pode continuar buscando e copiando texto apos a compressao." }
-    },
-    {
-      "@type": "Question",
-      "name": "Quanto pode ser comprimido um PDF digitalizado?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PDFs digitalizados tipicamente comprimem muito bem por serem compostos principalmente de imagens. Reducoes de 50-80% sao comuns, embora os resultados exatos dependam da resolucao da digitalizacao e do numero de paginas." }
-    },
-    {
-      "@type": "Question",
-      "name": "Posso comprimir um PDF digitalizado de muitas paginas?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it comprime todas as paginas do seu PDF digitalizado de uma vez. Digitalizacoes de muitas paginas frequentemente veem as maiores reducoes porque cada pagina contem uma imagem completa que pode ser otimizada." }
-    },
-    {
-      "@type": "Question",
-      "name": "O que faco se meu PDF digitalizado continuar muito grande apos a compressao?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Tente dividir o PDF em secoes menores com nossa ferramenta Dividir PDF, depois comprima cada parte individualmente. Voce tambem pode remover paginas desnecessarias antes de comprimir ou usar o Scanner OCR para converter as imagens em texto pesquisavel e mais leve." }
-    }
+export default function ComprimirPDFDigitalizadoPageBr() {
+  const faqs = [
+    { q: "Por que PDFs digitalizados sao tao grandes?", a: "PDFs digitalizados contem imagens de pagina inteira em vez de texto. Cada pagina e essencialmente uma fotografia em alta resolucao, por isso documentos digitalizados tipicamente tem 10-50MB ou mais. A compressao foca nessas imagens incorporadas para reduzir drasticamente o tamanho do arquivo." },
+    { q: "A compressao vai deixar meu documento digitalizado ilegivel?", a: "O texto em documentos digitalizados permanece legivel apos a compressao. A compressao extrema reduz a resolucao da imagem, mas texto impresso continua legivel para a maioria dos propositos. Se voce precisa de qualidade de imagem perfeita, considere usar a compressao recomendada." },
+    { q: "Posso comprimir um PDF digitalizado com varias paginas?", a: "Sim. O PDF.it comprime todas as paginas do seu PDF digitalizado de uma vez. Scans de varias paginas frequentemente veem as maiores reducoes de tamanho porque cada pagina contem uma imagem de pagina inteira que pode ser otimizada." },
+    { q: "Quanto um PDF digitalizado pode ser comprimido?", a: "Os resultados variam dependendo da resolucao do scan e do numero de paginas. PDFs digitalizados tipicamente comprimem muito bem — reducoes de 50-80% sao comuns, embora resultados exatos dependam do seu documento especifico." },
+    { q: "Comprimir um PDF digitalizado afeta o texto OCR?", a: "Se seu PDF digitalizado ja tem uma camada de texto OCR, a compressao a preserva. A camada de texto e separada da camada de imagem, entao voce ainda pode pesquisar e copiar texto apos a compressao." },
+    { q: "E se meu PDF digitalizado ainda for grande demais apos comprimir?", a: "Tente dividir o PDF em secoes menores com nossa ferramenta Dividir PDF e comprima cada parte individualmente. Voce tambem pode remover paginas desnecessarias antes de comprimir para reduzir o tamanho geral." },
   ]
-}
 
-export default function ComprimirPDFDigitalizadoPagePt() {
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema-pt"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderBr />
       <main>
-        {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Compress className="h-10 w-10 text-white" />
-              </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF Digitalizado</h1>
-              <p className="text-xl text-slate-300 mb-8">
-                Documentos digitalizados sao notoriamente pesados — cada pagina e uma imagem de alta resolucao que pode pesar varios megabytes. O PDF.it comprime as imagens incorporadas de forma inteligente, reduzindo significativamente o tamanho das suas digitalizacoes enquanto mantem o conteudo legivel.
-              </p>
-              <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compressao Inteligente</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Legibilidade Preservada</span></div>
-                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sem Cadastro</span></div>
-              </div>
+        <section className="text-white py-16 relative overflow-hidden" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%), radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%), #0E0F1E` }}>
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}><filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter><rect width="100%" height="100%" filter="url(#heroGrain)" /></svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10"><div className="max-w-4xl mx-auto text-center">
+            <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)" }}><Compress className="h-10 w-10 text-[#14D8C4]" /></div>
+            <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF Digitalizado</h1>
+            <p className="text-xl text-slate-300 mb-8">PDFs digitalizados contem grandes imagens incorporadas que inflam o tamanho do arquivo para 10-50MB ou mais. Aplique compressao extrema para reduzir drasticamente o tamanho do seu documento digitalizado — perfeito para enviar, anexar por email ou arquivar.</p>
+            <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
+              <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compressao Extrema</span></div>
+              <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Arquivos Excluidos Apos a Sessao</span></div>
+              <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sem Cadastro</span></div>
             </div>
-          </div>
+          </div></div>
         </section>
 
-        <ProcessingInterface
-          acceptedFiles=".pdf"
-          toolName="Compress PDF"
-          outputFormat="PDF"
-          processingMessage="Comprimindo seu PDF digitalizado..."
-          successMessage="Seu PDF digitalizado comprimido esta pronto!"
-          compressionLevel="recommended"
-        />
+        <section className="py-10 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+          <p className="text-lg text-slate-600 leading-relaxed">Diferente de PDFs nativos que armazenam texto como dados vetoriais, PDFs digitalizados armazenam cada pagina como uma imagem em alta resolucao. Um documento digitalizado de 10 paginas pode facilmente chegar a 30-50MB. O PDF.it aplica compressao extrema que foca nessas imagens incorporadas, reduzindo drasticamente o tamanho do arquivo mantendo o texto legivel.</p>
+          <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+            <li className="flex items-center gap-2">✓ Compressao extrema foca nas grandes imagens do scan</li>
+            <li className="flex items-center gap-2">✓ Preserva camadas de texto OCR existentes</li>
+            <li className="flex items-center gap-2">✓ Funciona no Mac, Windows, iOS, Android e Linux</li>
+            <li className="flex items-center gap-2">✓ Sem instalacao — comprima PDFs digitalizados no navegador</li>
+          </ul>
+        </div></section>
 
-        {/* Why Scanned PDFs Are Large */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que PDFs Digitalizados Sao Tao Grandes?</h2>
-            <p className="text-lg text-slate-600 mb-8">
-              Diferente dos PDFs nativos que armazenam texto como dados vetoriais leves, PDFs digitalizados armazenam cada pagina como uma imagem de alta resolucao. Uma digitalizacao tipica a 300 DPI pode gerar imagens de 3-5MB por pagina. Um documento de 20 paginas pode facilmente alcancar 60-100MB.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="bg-white rounded-xl p-6 border border-gray-200">
-                <div className="flex items-center gap-3 mb-3"><ScanLine className="h-5 w-5 text-[#14D8C4]" /><h3 className="font-bold text-slate-900">Imagens de Alta Resolucao</h3></div>
-                <p className="text-slate-600 text-sm">Scanners capturam cada pagina como imagem de alta resolucao (300-600 DPI), gerando arquivos muito grandes mesmo para documentos simples de texto.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 border border-gray-200">
-                <div className="flex items-center gap-3 mb-3"><ScanLine className="h-5 w-5 text-[#14D8C4]" /><h3 className="font-bold text-slate-900">Sem Otimizacao</h3></div>
-                <p className="text-slate-600 text-sm">Scanners raramente otimizam as imagens. Salvam cada pagina na maxima qualidade possivel, incluindo areas em branco que poderiam ser comprimidas significativamente.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 border border-gray-200">
-                <div className="flex items-center gap-3 mb-3"><ScanLine className="h-5 w-5 text-[#14D8C4]" /><h3 className="font-bold text-slate-900">Cor Desnecessaria</h3></div>
-                <p className="text-slate-600 text-sm">Muitos documentos de texto sao digitalizados em cores embora sejam preto e branco, triplicando o tamanho do arquivo desnecessariamente.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 border border-gray-200">
-                <div className="flex items-center gap-3 mb-3"><ScanLine className="h-5 w-5 text-[#14D8C4]" /><h3 className="font-bold text-slate-900">Multiplas Paginas</h3></div>
-                <p className="text-slate-600 text-sm">O problema se multiplica com cada pagina. Um contrato de 50 paginas digitalizado pode facilmente ultrapassar 100MB.</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ProcessingInterface acceptedFiles=".pdf" toolName="Compress PDF" outputFormat="PDF" processingMessage="Comprimindo seu PDF digitalizado..." successMessage="Seu PDF digitalizado comprimido esta pronto!" compressionLevel="extreme" />
 
-        {/* Use Cases */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Casos de Uso Comuns</h2>
-            <div className="space-y-10">
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200"><h3 className="text-xl font-black text-slate-900 mb-3">Documentos Legais Digitalizados</h3><p className="text-slate-600">Contratos assinados, escrituras, procuracoes e documentos legais digitalizados em alta resolucao podem ser enormes. Comprima-os para um tamanho gerenciavel para anexos de email, armazenamento na nuvem ou upload em sistemas de gestao documental.</p></div>
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200"><h3 className="text-xl font-black text-slate-900 mb-3">Recibos e Notas Fiscais</h3><p className="text-slate-600">Relatorios de despesas e registros contabeis frequentemente incluem recibos e notas fiscais digitalizados. Comprima-os para reduzir custos de armazenamento e facilitar o compartilhamento com seu contador.</p></div>
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200"><h3 className="text-xl font-black text-slate-900 mb-3">Registros Medicos</h3><p className="text-slate-600">Registros medicos digitalizados — resultados de exames, receitas, historico clinico — precisam ser armazenados e compartilhados de forma eficiente. Comprima seus documentos medicos para facilitar sua gestao digital.</p></div>
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200"><h3 className="text-xl font-black text-slate-900 mb-3">Arquivos Historicos</h3><p className="text-slate-600">Digitalizar arquivos em papel cria PDFs massivos. Comprima seus arquivos digitalizados para economizar espaco de armazenamento enquanto mantem os documentos acessiveis e pesquisaveis.</p></div>
-            </div>
-          </div>
-        </section>
+        <section className="py-16" style={{ background: `radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%), #0E0F1E` }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl"><div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {[
+            { title: "Contratos e Acordos Digitalizados", desc: "Contratos assinados digitalizados em alta resolucao podem ser enormes. Comprima-os para um tamanho gerenciavel para anexos de email, armazenamento na nuvem ou upload em sistemas de gestao de documentos." },
+            { title: "Documentos e Registros Arquivados", desc: "Digitalizar arquivos em papel cria arquivos PDF massivos. Comprima seus arquivos digitalizados para economizar espaco de armazenamento mantendo os documentos acessiveis e pesquisaveis." },
+            { title: "Recibos, Notas Fiscais e Scans de ID", desc: "Relatorios de despesas e documentos de identidade frequentemente sao exigidos em inscricoes com limites rigorosos de tamanho. Comprima recibos e IDs digitalizados para cumprir requisitos de upload facilmente." },
+          ].map((feature) => (
+            <div key={feature.title} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}><div className="rounded-[11px] p-6 h-full" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}><h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3><p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p></div></div>
+          ))}
+        </div></div></section>
 
-        {/* How To */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Comprimir um PDF Digitalizado</h2>
-            <div className="space-y-4">
-              {[
-                "Envie ou arraste e solte seu PDF digitalizado no PDF.it.",
-                "Clique em Comprimir PDF — a compressao inteligente e aplicada automaticamente as imagens incorporadas.",
-                "Baixe seu PDF menor. Se ainda estiver muito grande, tente dividir o arquivo primeiro e comprima cada parte.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
-                  <p className="text-slate-700 pt-1">{step}</p>
-                </div>
-              ))}
-            </div>
+        <section className="py-16 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+          <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Comprimir um PDF Digitalizado</h2>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+            {[{ num: "1", title: "Envie seu PDF digitalizado", desc: "Arraste e solte ou clique para escolher um arquivo" }, { num: "2", title: "Clique em Comprimir PDF", desc: "A compressao extrema foca nas imagens incorporadas" }, { num: "3", title: "Baixe seu PDF", desc: "Receba seu arquivo comprimido instantaneamente" }].map((step) => (
+              <div key={step.num} className="flex-1"><div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)", border: "1px solid rgba(20,216,196,0.25)" }}><span className="text-[#14D8C4] font-black text-lg">{step.num}</span></div><p className="font-semibold text-slate-900">{step.title}</p><p className="text-sm text-slate-500 mt-1">{step.desc}</p></div>
+            ))}
           </div>
-        </section>
+        </div></section>
 
-        {/* Related Tools */}
-        <section className="py-16" style={{ background: "#0E0F1E" }}>
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Ferramentas Relacionadas</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-              {[
-                { name: "Comprimir PDF", desc: "Compressao padrao.", href: "/br/comprimir-pdf", icon: Compress },
-                { name: "PDF com Imagens", desc: "Comprime imagens.", href: "/br/comprimir-pdf-imagens", icon: Compress },
-                { name: "Sem Perder Qualidade", desc: "Compressao inteligente.", href: "/br/comprimir-pdf-sem-perder-qualidade", icon: Compress },
-                { name: "Reduzir Tamanho", desc: "Reduz tamanho geral.", href: "/br/reduzir-tamanho-pdf", icon: Compress },
-                { name: "Comprimir para Email", desc: "Comprime para email.", href: "/br/comprimir-pdf-para-email", icon: Compress },
-                { name: "Dividir PDF", desc: "Divide documentos.", href: "/br/dividir-pdf", icon: Scissors },
-                { name: "Unir PDF", desc: "Combina varios PDFs.", href: "/br/unir-pdf", icon: Merge },
-                { name: "Achatar PDF", desc: "Remove camadas e campos.", href: "/br/achatar-pdf", icon: FileText },
-              ].map((tool) => (
-                <Link key={tool.href} href={tool.href} className="group flex flex-col items-center text-center rounded-xl border border-gray-200 bg-white p-4 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] hover:shadow-md transition-all duration-200">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#14D8C4] to-[#0FBFB0] rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200 shadow-sm"><tool.icon className="h-5 w-5 text-white" /></div>
-                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-[#14D8C4] transition-colors mb-1">{tool.name}</h4>
-                  <p className="text-xs text-slate-500 leading-relaxed">{tool.desc}</p>
-                </Link>
-              ))}
-            </div>
+        <section className="py-16" style={{ background: "#0E0F1E" }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+          <h2 className="text-2xl font-black text-white mb-6 text-center">Ferramentas Relacionadas</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {[{ name: "Comprimir PDF", href: "/br/comprimir-pdf", desc: "Compressao padrao" }, { name: "Scanner OCR", href: "/br/scanner-ocr", desc: "Torne scans pesquisaveis" }, { name: "Dividir PDF", href: "/br/dividir-pdf", desc: "Divida se ainda for grande" }, { name: "Unir PDF", href: "/br/unir-pdf", desc: "Combine apos comprimir" }].map((tool) => (
+              <div key={tool.href} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}><Link href={tool.href} className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}><div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div><div className="text-xs text-slate-400">{tool.desc}</div></Link></div>
+            ))}
           </div>
-        </section>
+        </div></section>
 
-        {/* FAQ */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
-            <div className="space-y-6">
-              {[
-                { q: "Por que PDFs digitalizados sao tao grandes?", a: "PDFs digitalizados contem imagens de pagina inteira em alta resolucao. Cada pagina e uma fotografia, entao um documento de 10 paginas pode pesar 30-50MB. A compressao otimiza essas imagens para reduzir drasticamente o tamanho." },
-                { q: "A compressao tornara meu documento ilegivel?", a: "Nao. A compressao recomendada preserva a legibilidade. O texto impresso permanece nitido e claro. As imagens sao otimizadas sem degradar a qualidade visivel." },
-                { q: "Comprimir afeta o texto OCR?", a: "Se seu PDF ja tem camada de texto OCR, a compressao a preserva completamente. Voce pode continuar buscando e copiando texto apos comprimir." },
-                { q: "Quanto pode ser comprimido um PDF digitalizado?", a: "Reducoes de 50-80% sao comuns para PDFs digitalizados, que sao compostos principalmente de imagens." },
-                { q: "Posso comprimir um PDF digitalizado de muitas paginas?", a: "Sim. O PDF.it comprime todas as paginas de uma vez. Digitalizacoes de muitas paginas veem as maiores reducoes." },
-                { q: "O que faco se continuar muito grande?", a: "Divida o PDF em secoes menores e comprima cada parte. Remova paginas desnecessarias ou use o Scanner OCR para converter imagens em texto mais leve." },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200"><h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3><p className="text-slate-600 text-sm">{faq.a}</p></div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <section className="py-16" style={{ background: `radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%), radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%), #0E0F1E` }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+          <h2 className="text-3xl font-black text-white mb-10 text-center">Perguntas Frequentes</h2>
+          <div className="space-y-4">{faqs.map((faq, i) => (<div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}><h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3><p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p></div>))}</div>
+        </div></section>
 
-        {/* CTA */}
-        <section className="py-16 bg-[#191B4D] text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-            <h2 className="text-2xl font-black mb-4">Comprima Seus PDFs Digitalizados Agora</h2>
-            <p className="text-slate-300 text-lg mb-8">Reduza documentos digitalizados sobredimensionados em segundos. Sem cadastro, sem instalacao, sem espera.</p>
-            <Link href="/br/comprimir-pdf-digitalizado" className="inline-block bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl text-lg transition-colors shadow-lg">Comprimir PDF Digitalizado</Link>
-          </div>
-        </section>
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(faq => ({ "@type": "Question", "name": faq.q, "acceptedAnswer": { "@type": "Answer", "text": faq.a } })) })}} />
       </main>
       <FooterBr />
     </div>
