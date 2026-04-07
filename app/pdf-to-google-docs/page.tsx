@@ -1,271 +1,256 @@
 import Script from "next/script"
-import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { FileText, Zap, Shield, Upload, ArrowRight, FileSpreadsheet, Image, Lock, Scissors, Merge, RotateCw, ScanLine } from "lucide-react"
+import { FileText, Zap, Shield, Upload } from "lucide-react"
+import Link from "next/link"
 
 export const metadata = {
   title: "PDF to Google Docs — Open PDFs in Google Docs | PDF.it",
   description: "Learn how to convert a PDF to Google Docs format. Convert PDF to Word with PDF.it, upload to Google Drive, and open in Google Docs for easy editing and collaboration.",
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Can I open a PDF directly in Google Docs?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Google Drive can open PDFs, but the formatting is often broken. For best results, convert the PDF to a Word DOCX file first using PDF.it, then upload the DOCX to Google Drive and open it with Google Docs. This preserves formatting, tables, and images much better." }
-    },
-    {
-      "@type": "Question",
-      "name": "Why should I convert to DOCX before uploading to Google Docs?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Google Docs handles DOCX files much better than PDFs. When you open a PDF in Google Docs directly, it often loses layout, fonts, and table structure. Converting to DOCX first with PDF.it preserves the formatting so Google Docs can render it properly." }
-    },
-    {
-      "@type": "Question",
-      "name": "Is this method free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PDF to Word conversion on PDF.it is available to Pro and Business subscribers. Once you have the DOCX file, uploading to Google Drive and opening in Google Docs is completely free with any Google account." }
-    },
-    {
-      "@type": "Question",
-      "name": "Will the formatting be preserved in Google Docs?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Converting PDF to DOCX with PDF.it preserves most formatting including fonts, tables, images, and layout. Google Docs may make minor adjustments when opening the DOCX, but the result is far better than opening the PDF directly." }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I collaborate on the document after converting?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Once the DOCX is opened in Google Docs, you can share it with others, use real-time collaboration, add comments, suggest edits, and track changes — just like any other Google Docs document." }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I do this on a Chromebook?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PDF.it works in any browser, including Chrome on Chromebooks. Convert your PDF to DOCX, download it, upload to Google Drive, and open in Google Docs — all without installing any software." }
-    }
-  ]
-}
-
 export default function PDFToGoogleDocsPage() {
+  const faqs = [
+    { q: "Can I open a PDF directly in Google Docs?", a: "Google Drive can open PDFs, but the formatting is often broken. For best results, convert the PDF to a Word DOCX file first using PDF.it, then upload the DOCX to Google Drive and open it with Google Docs. This preserves formatting, tables, and images much better." },
+    { q: "Why should I convert to DOCX before uploading to Google Docs?", a: "Google Docs handles DOCX files much better than PDFs. When you open a PDF in Google Docs directly, it often loses layout, fonts, and table structure. Converting to DOCX first with PDF.it preserves the formatting so Google Docs can render it properly." },
+    { q: "Is this method free?", a: "PDF to Word conversion on PDF.it is available to Pro and Business subscribers. Once you have the DOCX file, uploading to Google Drive and opening in Google Docs is completely free with any Google account." },
+    { q: "Will the formatting be preserved in Google Docs?", a: "Converting PDF to DOCX with PDF.it preserves most formatting including fonts, tables, images, and layout. Google Docs may make minor adjustments when opening the DOCX, but the result is far better than opening the PDF directly." },
+    { q: "Can I collaborate on the document after converting?", a: "Yes. Once the DOCX is opened in Google Docs, you can share it with others, use real-time collaboration, add comments, suggest edits, and track changes — just like any other Google Docs document." },
+    { q: "Can I do this on a Chromebook?", a: "Yes. PDF.it works in any browser, including Chrome on Chromebooks. Convert your PDF to DOCX, download it, upload to Google Drive, and open in Google Docs — all without installing any software." },
+  ]
+
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <Header />
       <main>
-        {/* Hero Section */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Hero */}
+        <section
+          className="text-white py-16 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#heroGrain)" />
+          </svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <FileText className="h-10 w-10 text-white" />
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                  boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)",
+                }}
+              >
+                <FileText className="h-10 w-10 text-[#14D8C4]" />
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convert PDF to Google Docs</h1>
               <p className="text-xl text-slate-300 mb-8">
                 Open any PDF in Google Docs with perfect formatting. Convert to Word first with PDF.it, then upload to Google Drive for easy editing and collaboration.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2">
-                  <Zap className="h-4 w-4 text-[#14D8C4]" />
-                  <span>Preserves Formatting</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Shield className="h-4 w-4 text-[#14D8C4]" />
-                  <span>100% Secure</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Upload className="h-4 w-4 text-[#14D8C4]" />
-                  <span>Works on Any Device</span>
-                </div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Preserves Formatting</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Files Deleted After Session</span></div>
+                <div className="flex items-center gap-2"><Upload className="h-4 w-4 text-[#14D8C4]" /><span>Works on Any Device</span></div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Step-by-Step Guide */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Open a PDF in Google Docs</h2>
-            <div className="space-y-6">
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-10 h-10 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-lg flex-shrink-0">
-                    1
-                  </div>
-                  <h3 className="text-xl font-black text-slate-900">Convert PDF to Word with PDF.it</h3>
-                </div>
-                <p className="text-slate-600 mb-6">
-                  Upload your PDF to PDF.it and convert it to a Word DOCX file. This step preserves your formatting, tables, and images so Google Docs can read them properly.
-                </p>
-                <Link
-                  href="/pdf-to-word"
-                  className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-6 rounded-xl transition-colors shadow-lg"
-                >
-                  Convert PDF to Word <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-10 h-10 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-lg flex-shrink-0">
-                    2
-                  </div>
-                  <h3 className="text-xl font-black text-slate-900">Upload DOCX to Google Drive</h3>
-                </div>
-                <p className="text-slate-600">
-                  Go to <strong>drive.google.com</strong> and click <strong>New &gt; File upload</strong>. Select the DOCX file you just downloaded from PDF.it. Wait for the upload to complete.
-                </p>
-              </div>
-
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-10 h-10 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-lg flex-shrink-0">
-                    3
-                  </div>
-                  <h3 className="text-xl font-black text-slate-900">Open with Google Docs</h3>
-                </div>
-                <p className="text-slate-600">
-                  Double-click the uploaded file in Google Drive. It will open in Google Docs automatically. You can now edit, share, comment, and collaborate on the document in real time.
-                </p>
-              </div>
-            </div>
-
-            {/* Prominent CTA */}
-            <div className="mt-10 text-center">
-              <Link
-                href="/pdf-to-word"
-                className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 px-10 rounded-xl text-lg transition-colors shadow-lg"
-              >
-                Start: Convert PDF to Word <ArrowRight className="h-5 w-5" />
-              </Link>
-              <p className="text-sm text-slate-500 mt-3">Step 1 of 3 — Convert your PDF to DOCX first</p>
-            </div>
-          </div>
-        </section>
-
-        {/* About */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-4">Why Not Open PDFs Directly in Google Docs?</h2>
-            <p className="text-lg text-slate-600 mb-8">
-              Google Drive can technically open PDFs, but the results are often disappointing. Tables break apart, fonts change, images shift, and the layout rarely matches the original. By converting to DOCX first with PDF.it, you get a clean, editable document that Google Docs can render properly — with formatting, tables, and images intact.
+        {/* Intro */}
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Google Drive can technically open PDFs, but the results are often disappointing — tables break apart, fonts change, and images shift. By converting to DOCX first with PDF.it, you get a clean, editable document that Google Docs can render properly with formatting, tables, and images intact.
             </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>&#10003; Much better formatting than opening PDF directly in Google Docs</li>
-              <li>&#10003; Tables, images, and text structure are preserved</li>
-              <li>&#10003; Full editing and collaboration in Google Docs</li>
-              <li>&#10003; Works on any device with a browser</li>
-              <li>&#10003; Share and collaborate in real time with your team</li>
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">✓ Better formatting than opening PDFs directly</li>
+              <li className="flex items-center gap-2">✓ Tables, images, and text structure preserved</li>
+              <li className="flex items-center gap-2">✓ Full editing and collaboration in Google Docs</li>
+              <li className="flex items-center gap-2">✓ Share and collaborate in real time with your team</li>
             </ul>
           </div>
         </section>
 
-        {/* Use Cases */}
-        <section className="py-16 bg-[#F3F4FF]">
+        {/* Guide CTA — this page has no ProcessingInterface since the workflow is: PDF.it -> Google Drive -> Google Docs */}
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
+            <Link
+              href="/pdf-to-word"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 px-10 rounded-xl text-lg transition-colors shadow-lg"
+            >
+              Step 1: Convert PDF to Word
+            </Link>
+            <p className="text-sm text-slate-500 mt-3">Then upload the DOCX to Google Drive and open with Google Docs</p>
+          </div>
+        </section>
+
+        {/* Feature Blocks */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Common Use Cases</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Collaborative Editing</h3>
-                <p className="text-slate-600">
-                  Need multiple people to edit a PDF? Convert it to Google Docs format so your entire team can make changes simultaneously with real-time collaboration, comments, and suggestions.
-                </p>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Sharing with Team Members</h3>
-                <p className="text-slate-600">
-                  Share editable documents with colleagues who use Google Workspace. Instead of sending static PDFs back and forth, give everyone a link to a Google Doc they can edit.
-                </p>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Editing on a Chromebook</h3>
-                <p className="text-slate-600">
-                  Chromebooks run Google Docs natively but cannot install Microsoft Word. Convert your PDF to DOCX with PDF.it, then open in Google Docs for full editing capability on ChromeOS.
-                </p>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Cloud-Based Workflow</h3>
-                <p className="text-slate-600">
-                  Keep all your documents in Google Drive for easy access from any device. Convert PDFs to Google Docs format so everything lives in one organized, searchable, cloud-based system.
-                </p>
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                { title: "Collaborative Editing", desc: "Need multiple people to edit a PDF? Convert to Google Docs format so your entire team can make changes simultaneously with real-time collaboration and comments." },
+                { title: "Works on Chromebooks", desc: "Chromebooks run Google Docs natively but cannot install Word. Convert your PDF to DOCX with PDF.it, then open in Google Docs for full editing capability on ChromeOS." },
+                { title: "Cloud-Based Workflow", desc: "Keep all your documents in Google Drive. Convert PDFs to Google Docs format so everything lives in one organized, searchable, cloud-based system." },
+              ].map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <div
+                    className="rounded-[11px] p-6 h-full"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works */}
+        <section className="py-16 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">How to Open a PDF in Google Docs</h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+              {[
+                { num: "1", title: "Convert PDF to Word", desc: "Use PDF.it to convert your PDF to DOCX" },
+                { num: "2", title: "Upload to Google Drive", desc: "Upload the DOCX file to drive.google.com" },
+                { num: "3", title: "Open with Google Docs", desc: "Double-click the file to edit in Google Docs" },
+              ].map((step) => (
+                <div key={step.num} className="flex-1">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                      border: "1px solid rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <span className="text-[#14D8C4] font-black text-lg">{step.num}</span>
+                  </div>
+                  <p className="font-semibold text-slate-900">{step.title}</p>
+                  <p className="text-sm text-slate-500 mt-1">{step.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Related Tools */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16" style={{ background: "#0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">More PDF Tools</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            <h2 className="text-2xl font-black text-white mb-6 text-center">Related Tools</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "PDF to Word", desc: "Convert PDF to Word document.", href: "/pdf-to-word", icon: FileText },
-                { name: "PDF to DOCX", desc: "Convert PDF to DOCX format.", href: "/pdf-to-docx", icon: FileText },
-                { name: "PDF to Excel", desc: "Extract tables to spreadsheet.", href: "/pdf-to-excel", icon: FileSpreadsheet },
-                { name: "PDF to Google Sheets", desc: "Open PDF tables in Sheets.", href: "/pdf-to-google-sheets", icon: FileSpreadsheet },
-                { name: "OCR Scanner", desc: "Extract text from scanned PDFs.", href: "/ocr-scanner", icon: ScanLine },
-                { name: "Merge PDF", desc: "Combine multiple PDFs.", href: "/merge-pdf", icon: Merge },
-                { name: "Split PDF", desc: "Extract pages from PDF.", href: "/split-pdf", icon: Scissors },
-                { name: "Compress PDF", desc: "Reduce PDF file size.", href: "/compress-pdf", icon: Image },
+                { name: "PDF to Word", href: "/pdf-to-word", desc: "Convert PDF to Word DOC" },
+                { name: "PDF to DOCX", href: "/pdf-to-docx", desc: "Convert PDF to DOCX format" },
+                { name: "PDF to Google Sheets", href: "/pdf-to-google-sheets", desc: "PDF tables to Google Sheets" },
+                { name: "OCR Scanner", href: "/ocr-scanner", desc: "Extract text from scans" },
               ].map((tool) => (
-                <Link
+                <div
                   key={tool.href}
-                  href={tool.href}
-                  className="group flex flex-col items-center text-center rounded-xl border border-gray-200 bg-white p-4 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] hover:shadow-md transition-all duration-200"
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
                 >
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#14D8C4] to-[#0FBFB0] rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200 shadow-sm">
-                    <tool.icon className="h-5 w-5 text-white" />
-                  </div>
-                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-[#14D8C4] transition-colors mb-1">
-                    {tool.name}
-                  </h4>
-                  <p className="text-xs text-slate-500 leading-relaxed">{tool.desc}</p>
-                </Link>
+                  <Link
+                    href={tool.href}
+                    className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
+                    <div className="text-xs text-slate-400">{tool.desc}</div>
+                  </Link>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-[#F3F4FF]">
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
-            <div className="space-y-6">
-              {[
-                { q: "Can I open a PDF directly in Google Docs?", a: "Google Drive can open PDFs, but the formatting is often broken. For best results, convert the PDF to a Word DOCX file first using PDF.it, then upload the DOCX to Google Drive and open it with Google Docs. This preserves formatting, tables, and images much better." },
-                { q: "Why should I convert to DOCX before uploading to Google Docs?", a: "Google Docs handles DOCX files much better than PDFs. When you open a PDF in Google Docs directly, it often loses layout, fonts, and table structure. Converting to DOCX first with PDF.it preserves the formatting so Google Docs can render it properly." },
-                { q: "Is this method free?", a: "PDF to Word conversion on PDF.it is available to Pro and Business subscribers. Once you have the DOCX file, uploading to Google Drive and opening in Google Docs is completely free with any Google account." },
-                { q: "Will the formatting be preserved in Google Docs?", a: "Converting PDF to DOCX with PDF.it preserves most formatting including fonts, tables, images, and layout. Google Docs may make minor adjustments when opening the DOCX, but the result is far better than opening the PDF directly." },
-                { q: "Can I collaborate on the document after converting?", a: "Yes. Once the DOCX is opened in Google Docs, you can share it with others, use real-time collaboration, add comments, suggest edits, and track changes — just like any other Google Docs document." },
-                { q: "Can I do this on a Chromebook?", a: "Yes. PDF.it works in any browser, including Chrome on Chromebooks. Convert your PDF to DOCX, download it, upload to Google Drive, and open in Google Docs — all without installing any software." },
-              ].map((faq, i) => (
-                <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
+            <h2 className="text-3xl font-black text-white mb-10 text-center">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl p-6"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-16 bg-[#191B4D] text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-            <h2 className="text-2xl font-black mb-4">Ready to Open Your PDF in Google Docs?</h2>
-            <p className="text-slate-300 text-lg mb-8">
-              Start by converting your PDF to Word — then upload to Google Drive. The whole process takes under a minute.
-            </p>
-            <Link
-              href="/pdf-to-word"
-              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl text-lg transition-colors shadow-lg"
-            >
-              Convert PDF to Word First <ArrowRight className="h-5 w-5" />
-            </Link>
-          </div>
-        </section>
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+          }))
+        })}} />
       </main>
       <Footer />
     </div>
