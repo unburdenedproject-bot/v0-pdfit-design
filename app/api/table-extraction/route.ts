@@ -5,6 +5,7 @@ export const runtime = "nodejs";
 export const maxDuration = 300;
 
 import { NextRequest, NextResponse } from "next/server";
+import { logger } from "@/lib/logger";
 import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
@@ -106,6 +107,8 @@ async function logPageUsage(serviceClient: any, userId: string, pageCount: numbe
 }
 
 export async function POST(request: NextRequest): Promise<Response> {
+  const startTime = Date.now();
+  const requestId = logger.request("table-extraction");
   let tmpPath: string | null = null;
   let uploadedBlobUrl: string | null = null;
 
@@ -133,6 +136,7 @@ export async function POST(request: NextRequest): Promise<Response> {
         { status: 403 }
       );
     }
+    logger.info("auth_passed", { requestId, userId: user.id, tool: "table-extraction" });
 
     const monthlyPageLimit: number = profile?.plan === "enterprise"
       ? MONTHLY_PAGE_LIMIT_ENTERPRISE
@@ -414,6 +418,7 @@ export async function POST(request: NextRequest): Promise<Response> {
       .replace(/\.[^/.]+$/, "")
       .replace(/-[a-zA-Z0-9]{20,}$/g, "");
 
+    logger.requestEnd(requestId, "table-extraction", "success", Date.now() - startTime);
     return new NextResponse(Buffer.from(excelBuffer), {
       status: 200,
       headers: {
@@ -424,7 +429,7 @@ export async function POST(request: NextRequest): Promise<Response> {
       },
     });
   } catch (err: unknown) {
-    console.error("table-extraction route error:", err);
+    logger.error("processing_failed", err, { requestId, tool: "table-extraction" });
 
     const raw: string = err && typeof err === "object" && (err as Error).message ? (err as Error).message : "";
     const safe: string = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob\.vercel/i.test(raw)

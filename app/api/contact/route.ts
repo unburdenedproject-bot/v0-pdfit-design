@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
+import { logger } from "@/lib/logger"
 import { createClient } from "@supabase/supabase-js"
 import { Ratelimit } from "@upstash/ratelimit"
 import { Redis } from "@upstash/redis"
@@ -15,6 +16,8 @@ const ratelimit =
     : null
 
 export async function POST(request: NextRequest) {
+  const startTime = Date.now()
+  const requestId = logger.request("contact")
   try {
     // CSRF protection
     const csrfError = checkCsrf(request)
@@ -91,9 +94,11 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    logger.info("contact_submitted", { requestId, tool: "contact", email })
+    logger.requestEnd(requestId, "contact", "success", Date.now() - startTime)
     return NextResponse.json({ success: true })
   } catch (err) {
-    console.error("Contact form error:", err)
+    logger.error("processing_failed", err, { requestId, tool: "contact" })
     return NextResponse.json(
       { error: "An unexpected error occurred." },
       { status: 500 }

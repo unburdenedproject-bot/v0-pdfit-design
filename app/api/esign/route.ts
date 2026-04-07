@@ -5,6 +5,7 @@ export const runtime = "nodejs";
 export const maxDuration = 300;
 
 import { type NextRequest, NextResponse } from "next/server";
+import { logger } from "@/lib/logger";
 import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
@@ -74,6 +75,8 @@ interface SignatureInput {
  * }
  */
 export async function POST(request: NextRequest): Promise<NextResponse | Response> {
+  const startTime = Date.now();
+  const requestId = logger.request("esign");
   let tmpPath: string | null = null;
   let uploadedBlobUrl: string | null = null;
 
@@ -89,6 +92,7 @@ export async function POST(request: NextRequest): Promise<NextResponse | Respons
     if (profile?.plan !== "business" && profile?.plan !== "enterprise") {
       return NextResponse.json({ error: "upgrade_required" }, { status: 403 });
     }
+    logger.info("auth_passed", { requestId, userId: user.id, tool: "esign" });
 
     // Parse request
     const body = await request.json();
@@ -168,6 +172,7 @@ export async function POST(request: NextRequest): Promise<NextResponse | Respons
     const { logUsage } = await import("@/lib/usage-check");
     await logUsage(user.id, "esign");
 
+    logger.requestEnd(requestId, "esign", "success", Date.now() - startTime);
     return new NextResponse(Buffer.from(signedBytes), {
       status: 200,
       headers: {
@@ -177,7 +182,7 @@ export async function POST(request: NextRequest): Promise<NextResponse | Respons
       },
     });
   } catch (err: unknown) {
-    console.error("esign route error:", err);
+    logger.error("processing_failed", err, { requestId, tool: "esign" });
 
     const raw: string = err && typeof err === "object" && (err as Error).message ? (err as Error).message : "";
     const safe: string = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob.vercel/i.test(raw)

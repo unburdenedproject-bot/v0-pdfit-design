@@ -5,6 +5,7 @@ export const runtime = "nodejs";
 export const maxDuration = 300;
 
 import { type NextRequest, NextResponse } from "next/server";
+import { logger } from "@/lib/logger";
 import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
@@ -42,6 +43,8 @@ async function blobUrlToTmp(blobUrl: string, index: number): Promise<{ tmpPath: 
 }
 
 export async function POST(request: NextRequest): Promise<NextResponse | Response> {
+  const startTime = Date.now();
+  const requestId = logger.request("merge-pdf");
   const tmpPaths: string[] = [];
   let uploadedBlobUrls: string[] = [];
 
@@ -52,6 +55,7 @@ export async function POST(request: NextRequest): Promise<NextResponse | Respons
     if (!usage.allowed) {
       return NextResponse.json({ error: usage.error || "Daily limit reached." }, { status: 403 });
     }
+    logger.info("auth_passed", { requestId, userId: usage.userId, tool: "merge-pdf" });
 
     const publicKey: string | undefined = process.env.ILOVEAPI_PUBLIC_KEY;
     const secretKey: string | undefined = process.env.ILOVEAPI_SECRET_KEY;
@@ -190,9 +194,10 @@ export async function POST(request: NextRequest): Promise<NextResponse | Respons
     if (usage?.anonCookie) {
       res.cookies.set(usage.anonCookie.name, usage.anonCookie.value, usage.anonCookie.options)
     }
+    logger.requestEnd(requestId, "merge-pdf", "success", Date.now() - startTime);
     return res;
   } catch (err) {
-    console.error("merge-pdf route error:", err);
+    logger.error("processing_failed", err, { requestId, tool: "merge-pdf" });
 
     return Response.json({ error: "An error occurred while merging your files. Please try again." }, { status: 500 });
   } finally {

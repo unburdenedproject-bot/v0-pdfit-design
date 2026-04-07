@@ -1,6 +1,7 @@
 export const runtime = "nodejs"
 
 import { NextRequest, NextResponse } from "next/server"
+import { logger } from "@/lib/logger"
 import Stripe from "stripe"
 import { createClient } from "@supabase/supabase-js"
 import { Resend } from "resend"
@@ -19,6 +20,8 @@ function getSupabaseAdmin() {
 }
 
 export async function POST(request: NextRequest) {
+  const startTime = Date.now()
+  const requestId = logger.request("webhook")
   const body = await request.text()
   const signature = request.headers.get("stripe-signature")
 
@@ -37,12 +40,14 @@ export async function POST(request: NextRequest) {
     )
   } catch (err) {
     const message = err instanceof Error ? err.message : "Unknown error"
-    console.error("Webhook signature verification failed:", message)
+    logger.error("webhook_signature_failed", err, { requestId, tool: "webhook" })
     return NextResponse.json(
       { error: `Webhook Error: ${message}` },
       { status: 400 }
     )
   }
+
+  logger.info("webhook_event", { requestId, tool: "webhook", eventType: event.type })
 
   const supabaseAdmin = getSupabaseAdmin()
 
@@ -288,6 +293,8 @@ export async function POST(request: NextRequest) {
       }
     }
   }
+
+  logger.requestEnd(requestId, "webhook", "success", Date.now() - startTime)
 
   // Record this event as processed (idempotency protection)
   await supabaseAdmin.from("webhook_events").insert({

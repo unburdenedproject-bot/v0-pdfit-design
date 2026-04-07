@@ -5,6 +5,7 @@ export const runtime = "nodejs";
 export const maxDuration = 300;
 
 import { type NextRequest, NextResponse } from "next/server";
+import { logger } from "@/lib/logger";
 import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
@@ -44,6 +45,8 @@ function errorResponse(message: string, status: number = 500): Response {
 }
 
 export async function POST(request: NextRequest) {
+  const startTime = Date.now();
+  const requestId = logger.request("split-pdf");
   let tmpPath: string | null = null;
   let uploadedBlobUrl: string | null = null;
 
@@ -54,6 +57,7 @@ export async function POST(request: NextRequest) {
     if (!usage.allowed) {
       return NextResponse.json({ error: usage.error || "Daily limit reached." }, { status: 403 });
     }
+    logger.info("auth_passed", { requestId, userId: usage.userId, tool: "split-pdf" });
 
     const publicKey: string | undefined = process.env.ILOVEAPI_PUBLIC_KEY;
     const secretKey: string | undefined = process.env.ILOVEAPI_SECRET_KEY;
@@ -230,9 +234,10 @@ export async function POST(request: NextRequest) {
     if (usage?.anonCookie) {
       res.cookies.set(usage.anonCookie.name, usage.anonCookie.value, usage.anonCookie.options);
     }
+    logger.requestEnd(requestId, "split-pdf", "success", Date.now() - startTime);
     return res;
   } catch (err) {
-    console.error("split-pdf route error:", err);
+    logger.error("processing_failed", err, { requestId, tool: "split-pdf" });
 
     const rawMessage: string =
       err && typeof err === "object" && (err as any).message

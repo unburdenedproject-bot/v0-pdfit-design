@@ -2,6 +2,7 @@ export const runtime = "nodejs";
 export const maxDuration = 300;
 
 import { type NextRequest, NextResponse } from "next/server";
+import { logger } from "@/lib/logger";
 import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
@@ -13,6 +14,8 @@ import { errorResponse, safeMessageFrom } from "@/lib/api/error-handler";
 const ALLOWED_LEVELS = new Set(["low", "recommended", "extreme"]);
 
 export async function POST(request: NextRequest) {
+  const startTime = Date.now();
+  const requestId = logger.request("compress-pdf");
   let tmpPath: string | null = null;
   let uploadedBlobUrl: string | null = null;
 
@@ -22,6 +25,7 @@ export async function POST(request: NextRequest) {
     if (!usage.allowed) {
       return NextResponse.json({ error: usage.error || "Daily limit reached." }, { status: 403 })
     }
+    logger.info("auth_passed", { requestId, userId: usage.userId, tool: "compress-pdf" });
 
     const publicKey: string | undefined = process.env.ILOVEAPI_PUBLIC_KEY;
     const secretKey: string | undefined = process.env.ILOVEAPI_SECRET_KEY;
@@ -167,9 +171,10 @@ export async function POST(request: NextRequest) {
     if (usage?.anonCookie) {
       res.cookies.set(usage.anonCookie.name, usage.anonCookie.value, usage.anonCookie.options)
     }
+    logger.requestEnd(requestId, "compress-pdf", "success", Date.now() - startTime);
     return res;
   } catch (err) {
-    console.error("compress-pdf route error:", err);
+    logger.error("processing_failed", err, { requestId, tool: "compress-pdf" });
     return errorResponse(safeMessageFrom(err), 500);
   } finally {
     if (uploadedBlobUrl) {

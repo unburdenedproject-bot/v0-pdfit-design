@@ -2,12 +2,15 @@ export const runtime = "nodejs";
 export const maxDuration = 300;
 
 import { type NextRequest, NextResponse } from "next/server";
+import { logger } from "@/lib/logger";
 
 function errorResponse(message: string, status: number = 500): Response {
   return Response.json({ error: message }, { status });
 }
 
 export async function POST(request: NextRequest): Promise<NextResponse | Response> {
+  const startTime = Date.now();
+  const requestId = logger.request("url-to-pdf");
   try {
     // Auth: Pro/Business/Enterprise only
     const { createClient } = await import("@/lib/supabase/server");
@@ -36,6 +39,7 @@ export async function POST(request: NextRequest): Promise<NextResponse | Respons
         { status: 403 }
       );
     }
+    logger.info("auth_passed", { requestId, userId: user.id, tool: "url-to-pdf" });
 
     // Parse request
     const body = await request.json();
@@ -156,6 +160,7 @@ export async function POST(request: NextRequest): Promise<NextResponse | Respons
       // keep default
     }
 
+    logger.requestEnd(requestId, "url-to-pdf", "success", Date.now() - startTime);
     return new NextResponse(Buffer.from(pdfBuffer), {
       status: 200,
       headers: {
@@ -165,7 +170,7 @@ export async function POST(request: NextRequest): Promise<NextResponse | Respons
       },
     });
   } catch (err: unknown) {
-    console.error("url-to-pdf route error:", err);
+    logger.error("processing_failed", err, { requestId, tool: "url-to-pdf" });
 
     const raw: string = err && typeof err === "object" && (err as Error).message ? (err as Error).message : "";
     const safe: string = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob\.vercel/i.test(raw)

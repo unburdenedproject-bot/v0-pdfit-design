@@ -5,6 +5,7 @@ export const runtime = "nodejs";
 export const maxDuration = 300;
 
 import { NextRequest, NextResponse } from "next/server";
+import { logger } from "@/lib/logger";
 import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
@@ -44,6 +45,8 @@ function errorResponse(message: string, status: number = 500): Response {
 }
 
 export async function POST(request: NextRequest) {
+  const startTime = Date.now();
+  const requestId = logger.request("pdf-to-jpg");
   let tmpPath: string | null = null;
   let uploadedBlobUrl: string | null = null;
 
@@ -54,6 +57,7 @@ export async function POST(request: NextRequest) {
     if (!usage.allowed) {
       return NextResponse.json({ error: usage.error || "Daily limit reached." }, { status: 403 });
     }
+    logger.info("auth_passed", { requestId, userId: usage.userId, tool: "pdf-to-jpg" });
 
     const publicKey: string | undefined = process.env.ILOVEAPI_PUBLIC_KEY;
     const secretKey: string | undefined = process.env.ILOVEAPI_SECRET_KEY;
@@ -205,9 +209,10 @@ export async function POST(request: NextRequest) {
     if (usage?.anonCookie) {
       res.cookies.set(usage.anonCookie.name, usage.anonCookie.value, usage.anonCookie.options);
     }
+    logger.requestEnd(requestId, "pdf-to-jpg", "success", Date.now() - startTime);
     return res;
   } catch (err: unknown) {
-    console.error("pdf-to-jpg route error:", err);
+    logger.error("processing_failed", err, { requestId, tool: "pdf-to-jpg" });
 
     const raw: string = err && typeof err === "object" && (err as Error).message ? (err as Error).message : "";
     const safe: string = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob.vercel/i.test(raw)

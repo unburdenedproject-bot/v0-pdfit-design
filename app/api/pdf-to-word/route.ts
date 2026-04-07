@@ -5,6 +5,7 @@ export const runtime = "nodejs";
 export const maxDuration = 300;
 
 import { NextRequest, NextResponse } from "next/server";
+import { logger } from "@/lib/logger";
 import { readFile, writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
@@ -154,6 +155,8 @@ async function convertWithCloudConvert(fileBuffer: Buffer, fileName: string): Pr
 }
 
 export async function POST(request: NextRequest) {
+  const startTime = Date.now();
+  const requestId = logger.request("pdf-to-word");
   let tmpPath: string | null = null;
   let uploadedBlobUrl: string | null = null;
 
@@ -170,6 +173,7 @@ export async function POST(request: NextRequest) {
     if (profile?.plan !== "pro" && profile?.plan !== "business" && profile?.plan !== "enterprise") {
       return NextResponse.json({ error: "upgrade_required" }, { status: 403 });
     }
+    logger.info("auth_passed", { requestId, userId: user.id, tool: "pdf-to-word" });
 
     const contentType: string = request.headers.get("content-type") || "";
     const isJson: boolean = contentType.includes("application/json");
@@ -238,6 +242,7 @@ export async function POST(request: NextRequest) {
 
     await logUsage(user.id, "pdf-to-word");
 
+    logger.requestEnd(requestId, "pdf-to-word", "success", Date.now() - startTime);
     const res = new NextResponse(data, {
       status: 200,
       headers: {
@@ -248,7 +253,7 @@ export async function POST(request: NextRequest) {
     });
     return res;
   } catch (err: unknown) {
-    console.error("pdf-to-word route error:", err);
+    logger.error("processing_failed", err, { requestId, tool: "pdf-to-word" });
 
     const raw: string = err && typeof err === "object" && (err as Error).message ? (err as Error).message : "";
     // Strip any message that leaks internal service names
