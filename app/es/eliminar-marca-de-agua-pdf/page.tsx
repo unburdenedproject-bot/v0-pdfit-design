@@ -1,226 +1,90 @@
 import Script from "next/script"
 import { HeaderEs } from "@/components/header-es"
 import { FooterEs } from "@/components/footer-es"
-import { ProcessingInterface } from "@/components/processing-interface"
-import { Eraser, Zap, Shield, Download } from "lucide-react"
+import { Droplets, Zap, AlertTriangle, FileCheck } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Eliminar Marca de Agua de PDF — Quita Marcas de Agua de PDFs | PDF.it",
-  description:
-    "Elimina marcas de agua de archivos PDF con PDF.it. Quita marcas de agua de texto e imagen de tus documentos PDF y descarga un archivo limpio en segundos.",
-  alternates: {
-    languages: {
-      en: "/remove-watermark",
-      es: "/es/eliminar-marca-de-agua-pdf",
-    },
-  },
-}
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Qué tipos de marcas de agua puede eliminar PDF.it?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it puede eliminar marcas de agua de texto (como CONFIDENCIAL, BORRADOR, MUESTRA) y marcas de agua de imagen (logos, sellos) que fueron agregadas como capas superpuestas al PDF." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Eliminar la marca de agua afecta la calidad del PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. El proceso de eliminación de marca de agua quita solo la capa superpuesta. El contenido original del PDF — texto, imágenes, formato y estructura — se mantiene intacto y con la misma calidad." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo eliminar marcas de agua de todas las páginas a la vez?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it elimina la marca de agua de todas las páginas del PDF de forma automática en un solo proceso." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Es legal eliminar marcas de agua de un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Solo debes eliminar marcas de agua de documentos propios o con autorización del propietario. Por ejemplo, borradores aprobados, versiones de prueba compradas o documentos internos de tu organización." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo eliminar marcas de agua de un PDF desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube tu PDF, elimina la marca de agua y descarga el archivo limpio desde cualquier dispositivo." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Es seguro subir mi PDF para eliminar la marca de agua?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Todas las transferencias están encriptadas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." }
-    }
-  ]
+  title: "Eliminar Marca de Agua de PDF — Como Borrar Marcas de Agua | PDF.it",
+  description: "Aprende como manejar PDFs con marca de agua. PDF.it ofrece herramientas para agregar marcas de agua, pero eliminar marcas de PDFs ajenos puede violar derechos de autor.",
+  alternates: { canonical: "https://www.pdf.it.com/es/eliminar-marca-de-agua-pdf", languages: { en: "/remove-watermark-pdf", es: "/es/eliminar-marca-de-agua-pdf" } },
 }
 
 export default function EliminarMarcaDeAguaPDFPage() {
+  const faqs = [
+    { q: "¿PDF.it puede eliminar marcas de agua de PDFs?", a: "No. PDF.it no ofrece eliminación de marcas de agua porque podría facilitar la infracción de derechos de autor y la piratería. En su lugar, PDF.it ofrece herramientas para agregar tus propias marcas de agua y proteger tus documentos." },
+    { q: "¿Es legal eliminar una marca de agua de un PDF?", a: "Depende. Si eres dueño del documento original y agregaste la marca de agua tú mismo, puedes eliminarla. Sin embargo, eliminar marcas de agua de documentos que no te pertenecen — como fotos de stock, contenido licenciado o software de prueba — generalmente viola la ley de derechos de autor y los términos de servicio." },
+    { q: "¿Por qué los PDFs tienen marcas de agua?", a: "Las marcas de agua sirven para varios propósitos: proteger la propiedad intelectual, marcar documentos como borradores o confidenciales, identificar documentos con un logo de empresa, disuadir la copia no autorizada e indicar el estado del documento (ej. MUESTRA, BORRADOR, APROBADO)." },
+    { q: "¿Cómo puedo obtener un PDF sin la marca de agua?", a: "La forma legítima es comprar o licenciar la versión completa del documento. Para marcas de borrador, pide al autor la versión final. Para marcas de prueba, compra la licencia del software. Para contenido de stock, compra la versión en alta resolución." },
+    { q: "¿Puedo agregar mi propia marca de agua a un PDF con PDF.it?", a: "Sí. La herramienta Marca de Agua PDF de PDF.it (disponible en el plan Pro) te permite agregar marcas de agua de texto o imagen personalizadas a tus PDFs. Puedes controlar la posición, opacidad, rotación y tamaño de la marca de agua." },
+    { q: "¿Qué hago si accidentalmente puse marca de agua a mi propio PDF?", a: "Si agregaste una marca de agua a tu propio documento y aún tienes el archivo original sin marca, simplemente usa esa versión. Si solo tienes la versión con marca de agua, puede que necesites recrear el documento desde el archivo fuente (Word, PowerPoint, etc.) y exportar un nuevo PDF sin la marca de agua." },
+  ]
+
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderEs />
       <main>
-        {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Eraser className="h-10 w-10 text-white" />
-              </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Eliminar Marca de Agua de PDF</h1>
-              <p className="text-xl text-slate-300 mb-8">
-                Quita marcas de agua de texto e imagen de tus archivos PDF con PDF.it. Obtén un documento limpio y profesional listo para presentaciones, envíos y uso final — rápido, seguro y desde tu navegador.
-              </p>
-              <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Eliminación Automática</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Después de la Sesión</span></div>
-                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sin Registro</span></div>
-              </div>
+        <section className="text-white py-16 relative overflow-hidden" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%), radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%), #0E0F1E` }}>
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}><filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter><rect width="100%" height="100%" filter="url(#heroGrain)" /></svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10"><div className="max-w-4xl mx-auto text-center">
+            <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)" }}><Droplets className="h-10 w-10 text-[#14D8C4]" /></div>
+            <h1 className="text-4xl lg:text-5xl font-black mb-4">Eliminar Marca de Agua de PDF</h1>
+            <p className="text-xl text-slate-300 mb-8">Aprende sobre las marcas de agua en PDFs — por qué existen, cuándo se pueden eliminar legítimamente y cómo trabajar con documentos con marca de agua.</p>
+            <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
+              <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Entiende las Marcas de Agua</span></div>
+              <div className="flex items-center gap-2"><AlertTriangle className="h-4 w-4 text-[#14D8C4]" /><span>Conoce tus Derechos</span></div>
+              <div className="flex items-center gap-2"><FileCheck className="h-4 w-4 text-[#14D8C4]" /><span>Opciones Legítimas</span></div>
             </div>
-          </div>
+          </div></div>
         </section>
 
-        {/* Processing Interface */}
-        <ProcessingInterface
-          acceptedFiles=".pdf"
-          toolName="Remove Watermark"
-          outputFormat="PDF"
-          processingMessage="Eliminando marca de agua..."
-          successMessage="¡Tu PDF sin marca de agua está listo!"
-        />
+        <section className="py-10 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+          <p className="text-lg text-slate-600 leading-relaxed">Las marcas de agua en PDFs son superposiciones de texto o imagen colocadas sobre las páginas del documento para indicar propiedad, estado o licenciamiento. Aunque hay razones legítimas para eliminar una marca de agua de tus propios documentos, PDF.it no ofrece eliminación de marcas de agua como herramienta porque podría facilitar la infracción de derechos de autor. Esta página explica tus opciones.</p>
+          <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+            <li className="flex items-center gap-2">✓ Entiende por qué los PDFs tienen marcas de agua</li>
+            <li className="flex items-center gap-2">✓ Aprende cuándo la eliminación es legítima</li>
+            <li className="flex items-center gap-2">✓ Encuentra alternativas a eliminar marcas de agua</li>
+            <li className="flex items-center gap-2">✓ Agrega tus propias marcas de agua para proteger documentos</li>
+          </ul>
+        </div></section>
 
-        {/* About */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <p className="text-lg text-slate-600 mb-8">
-              Usa la herramienta Eliminar Marca de Agua de PDF de PDF.it para quitar marcas de agua de texto e imagen de tus documentos PDF. Ideal para documentos finales aprobados, versiones de prueba compradas, borradores que pasaron a versión final, y presentaciones que necesitan verse limpias y profesionales.
-            </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>✓ Elimina marcas de agua de texto como CONFIDENCIAL, BORRADOR o MUESTRA</li>
-              <li>✓ Quita marcas de agua de imagen y logos superpuestos</li>
-              <li>✓ El contenido original del PDF se mantiene intacto</li>
-              <li>✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li>✓ Sin instalación — elimina marcas de agua desde tu navegador</li>
-            </ul>
+        <section className="py-12 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
+          <h2 className="text-2xl font-black text-slate-900 mb-4">¿Necesitas Trabajar con Marcas de Agua?</h2>
+          <p className="text-slate-600 mb-6">Agrega tus propias marcas de agua profesionales para proteger tus documentos, o aplana PDFs para fijar el contenido existente.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/es/marca-de-agua-pdf" className="inline-flex items-center justify-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors">Agregar Marca de Agua (Pro)</Link>
+            <Link href="/es/aplanar-pdf" className="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-8 rounded-xl transition-colors">Aplanar PDF (Gratis)</Link>
           </div>
-        </section>
+        </div></section>
 
-        {/* Feature Sections */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Obtén Documentos Finales Limpios</h2>
-              <p className="text-slate-600">
-                Cuando un borrador con marca de agua es aprobado y necesitas la versión final, elimina la marca de agua para obtener un documento limpio y profesional listo para distribución o archivado.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Limpia Versiones de Prueba</h2>
-              <p className="text-slate-600">
-                Las versiones de prueba o demos de documentos a menudo incluyen marcas de agua. Una vez que tienes la versión autorizada, elimina la marca de agua para un uso más cómodo y presentable.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Prepara Presentaciones Profesionales</h2>
-              <p className="text-slate-600">
-                Las marcas de agua pueden distraer en presentaciones, propuestas o informes. Elimínalas para que tus documentos se vean limpios, claros y profesionales ante clientes o socios.
-              </p>
-            </div>
-          </div>
-        </section>
+        <section className="py-16" style={{ background: `radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%), #0E0F1E` }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl"><div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {[
+            { title: "¿Por Qué los PDFs Tienen Marcas de Agua?", desc: "Las marcas de agua protegen la propiedad intelectual, marcan documentos como borradores o confidenciales, identifican contenido con logos y disuaden la copia no autorizada en industrias legales, corporativas y editoriales." },
+            { title: "Escenarios Legítimos de Eliminación", desc: "Puedes eliminar legítimamente una marca de agua si eres el autor original, compraste una licencia o la marca de agua se agregó por error. Vuelve al archivo fuente para exportar un PDF limpio." },
+            { title: "Alternativas a la Eliminación", desc: "Compra la versión completa con licencia, contacta al propietario para una copia sin marca de agua, úsala solo como vista previa o crea tu propio contenido. Usa PDF.it para agregar tus propias marcas de agua." },
+          ].map((feature) => (<div key={feature.title} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}><div className="rounded-[11px] p-6 h-full" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}><h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3><p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p></div></div>))}
+        </div></div></section>
 
-        {/* How To */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Eliminar la Marca de Agua de un PDF</h2>
-            <div className="space-y-4">
-              {[
-                "Sube tu PDF con marca de agua a PDF.it.",
-                "PDF.it detecta y elimina la marca de agua automáticamente.",
-                "Descarga tu PDF limpio sin marca de agua.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
-                  </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
-                </div>
-              ))}
-            </div>
+        <section className="py-16 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+          <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Cómo Manejar PDFs con Marca de Agua</h2>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+            {[{ num: "1", title: "Determina la propiedad", desc: "Quién es dueño del documento y por qué se agregó la marca" }, { num: "2", title: "Re-exporta si es tuyo", desc: "Vuelve al archivo fuente y exporta sin la marca de agua" }, { num: "3", title: "Licencia o agrega la tuya", desc: "Compra la versión completa o agrega tu propia marca de agua" }].map((step) => (<div key={step.num} className="flex-1"><div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)", border: "1px solid rgba(20,216,196,0.25)" }}><span className="text-[#14D8C4] font-black text-lg">{step.num}</span></div><p className="font-semibold text-slate-900">{step.title}</p><p className="text-sm text-slate-500 mt-1">{step.desc}</p></div>))}
           </div>
-        </section>
+        </div></section>
 
-        {/* Related Tools */}
-        <section className="py-16" style={{ background: "#0E0F1E" }}>
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {[
-                { name: "Marca de Agua PDF", href: "/es/marca-de-agua-pdf", desc: "Agrega marcas de agua a un PDF" },
-                { name: "Proteger PDF", href: "/es/proteger-pdf", desc: "Agrega contraseña a tu PDF" },
-                { name: "Aplanar PDF", href: "/es/aplanar-pdf", desc: "Bloquea formularios y capas" },
-                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamaño del archivo" },
-                { name: "Redacción PDF", href: "/es/redaccion-pdf", desc: "Oculta información sensible" },
-                { name: "Unir PDF", href: "/es/unir-pdf", desc: "Combina varios PDFs en uno" },
-                { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Separa páginas de un PDF" },
-                { name: "PDF a JPG", href: "/es/pdf-a-jpg", desc: "Convierte páginas a imágenes" },
-              ].map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="rounded-xl p-4 transition-all text-center flex flex-col justify-center min-h-[80px] hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(20,216,196,0.25)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.2)" }}
-                >
-                  <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
-                  <div className="text-xs text-slate-400">{tool.desc}</div>
-                </Link>
-              ))}
-            </div>
+        <section className="py-16" style={{ background: "#0E0F1E" }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+          <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {[{ name: "Marca de Agua PDF", href: "/es/marca-de-agua-pdf", desc: "Agrega marcas de agua (Pro)" }, { name: "Aplanar PDF", href: "/es/aplanar-pdf", desc: "Fija el contenido" }, { name: "Proteger PDF", href: "/es/proteger-pdf", desc: "Protege con contraseña" }, { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamaño" }].map((tool) => (<div key={tool.href} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}><Link href={tool.href} className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}><div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div><div className="text-xs text-slate-400">{tool.desc}</div></Link></div>))}
           </div>
-        </section>
+        </div></section>
 
-        {/* FAQ */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
-            <div className="space-y-6">
-              {[
-                {
-                  q: "¿Qué tipos de marcas de agua puede eliminar PDF.it?",
-                  a: "PDF.it puede eliminar marcas de agua de texto (como CONFIDENCIAL, BORRADOR, MUESTRA) y marcas de agua de imagen (logos, sellos) que fueron agregadas como capas superpuestas al PDF.",
-                },
-                {
-                  q: "¿Eliminar la marca de agua afecta la calidad del PDF?",
-                  a: "No. El proceso de eliminación quita solo la capa superpuesta. El contenido original del PDF — texto, imágenes, formato y estructura — se mantiene intacto y con la misma calidad.",
-                },
-                {
-                  q: "¿Puedo eliminar marcas de agua de todas las páginas a la vez?",
-                  a: "Sí. PDF.it elimina la marca de agua de todas las páginas del PDF de forma automática en un solo proceso.",
-                },
-                {
-                  q: "¿Es legal eliminar marcas de agua de un PDF?",
-                  a: "Solo debes eliminar marcas de agua de documentos propios o con autorización del propietario. Por ejemplo, borradores aprobados, versiones de prueba compradas o documentos internos.",
-                },
-                {
-                  q: "¿Puedo eliminar marcas de agua desde mi celular?",
-                  a: "Sí. PDF.it funciona en navegadores móviles — sube tu PDF, elimina la marca de agua y descarga el archivo limpio desde cualquier dispositivo.",
-                },
-                {
-                  q: "¿Es seguro subir mi PDF para eliminar la marca de agua?",
-                  a: "Sí. Todas las transferencias están encriptadas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos.",
-                },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <section className="py-16" style={{ background: `radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%), radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%), #0E0F1E` }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+          <h2 className="text-3xl font-black text-white mb-10 text-center">Preguntas Frecuentes</h2>
+          <div className="space-y-4">{faqs.map((faq, i) => (<div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}><h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3><p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p></div>))}</div>
+        </div></section>
+
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(faq => ({ "@type": "Question", "name": faq.q, "acceptedAnswer": { "@type": "Answer", "text": faq.a } })) })}} />
       </main>
       <FooterEs />
     </div>

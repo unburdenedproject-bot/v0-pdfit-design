@@ -1,205 +1,147 @@
 import Script from "next/script"
 import { HeaderEs } from "@/components/header-es"
 import { FooterEs } from "@/components/footer-es"
-import { ProcessingInterface } from "@/components/processing-interface"
 import { Type, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Extraer Fuentes de PDF — Identifica las Fuentes Usadas en un PDF | PDF.it",
-  description:
-    "Identifica y extrae la información de fuentes tipográficas de cualquier PDF con PDF.it. Descubre qué fuentes se usaron — rápido, desde tu navegador, sin registro.",
-  alternates: {
-    canonical: "https://pdf.it.com/es/extraer-fuentes-de-pdf",
-    languages: {
-      en: "https://pdf.it.com/extract-fonts-from-pdf",
-      es: "https://pdf.it.com/es/extraer-fuentes-de-pdf",
-    },
-  },
-}
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Cómo identifico las fuentes de un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it y la herramienta analizará el documento para identificar todas las fuentes tipográficas utilizadas, incluyendo nombre, estilo y tamaño." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Para qué sirve extraer las fuentes de un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Es útil para diseñadores gráficos que necesitan recrear un documento, mantener la consistencia de marca o identificar tipografías específicas usadas en materiales existentes." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo descargar las fuentes extraídas?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it identifica los nombres y estilos de las fuentes usadas en el PDF. Para descargar las fuentes, necesitarás buscarlas en sitios de tipografía como Google Fonts o Adobe Fonts." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué información de fuentes se extrae?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Se extrae el nombre de la fuente, el estilo (regular, bold, italic), el tamaño utilizado y si la fuente está incrustada en el documento." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Funciona con PDFs escaneados?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Los PDFs escaneados no contienen información de fuentes ya que son imágenes. Para estos casos, puedes usar herramientas de reconocimiento de fuentes basadas en imágenes." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Es gratis extraer fuentes de un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Las cuentas gratuitas tienen 10 extracciones por día. Las cuentas Pro tienen extracciones ilimitadas." }
-    }
-  ]
+  title: "Extraer Fuentes de PDF — Identifica Fuentes Usadas en PDFs | PDF.it",
+  description: "Aprende cómo identificar y extraer fuentes usadas en documentos PDF. PDF.it te ayuda a trabajar con contenido de PDF incluyendo extracción de texto y conversión de documentos.",
+  alternates: { canonical: "https://www.pdf.it.com/es/extraer-fuentes-de-pdf", languages: { en: "/extract-fonts-from-pdf", es: "/es/extraer-fuentes-de-pdf" } },
 }
 
 export default function ExtraerFuentesDePDFPage() {
+  const faqs = [
+    {
+        "q": "¿Puedo extraer fuentes directamente de un PDF?",
+        "a": "Los PDFs incrustan datos de fuentes para renderizado, pero extraer archivos de fuentes utilizables requiere herramientas especializadas. Puedes identificar qué fuentes se usan examinando las propiedades del PDF o convirtiendo a un formato editable como Word, que preserva los nombres de fuentes."
+    },
+    {
+        "q": "¿Es legal extraer fuentes de un PDF?",
+        "a": "Las licencias de fuentes varían. La mayoría de fuentes comerciales se licencian por usuario o por dispositivo. Extraer y reutilizar fuentes incrustadas sin una licencia adecuada puede violar el EULA de la fuente. Siempre verifica la licencia de la fuente antes de reutilizar."
+    },
+    {
+        "q": "¿Cómo puedo identificar qué fuentes se usan en un PDF?",
+        "a": "Puedes revisar las propiedades del PDF en la mayoría de lectores (Archivo > Propiedades > Fuentes), convertir el PDF a Word para ver nombres de fuentes en el editor, o extraer el texto y compararlo visualmente usando servicios de identificación de fuentes como WhatTheFont."
+    },
+    {
+        "q": "¿Qué pasa con las fuentes cuando convierto un PDF a Word?",
+        "a": "Cuando conviertes un PDF a Word, el convertidor identifica las fuentes usadas y las referencia en el documento Word. Si la fuente está instalada en tu sistema, se muestra correctamente. Si no, Word sustituye una fuente similar."
+    },
+    {
+        "q": "¿Puedo extraer fuentes de un PDF escaneado?",
+        "a": "Los PDFs escaneados contienen imágenes, no texto ni datos de fuentes. Primero necesitarías ejecutar OCR para extraer el texto, luego usar una herramienta de identificación visual de fuentes para igualar la tipografía usada en el documento escaneado."
+    },
+    {
+        "q": "¿Qué son las fuentes incrustadas en un PDF?",
+        "a": "Las fuentes incrustadas son archivos de fuentes incluidos dentro de un PDF para que el documento se muestre correctamente en cualquier dispositivo, incluso si el lector no tiene la fuente instalada. La mayoría de PDFs profesionales incrustan fuentes para asegurar un renderizado consistente."
+    }
+]
+
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderEs />
       <main>
         {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Type className="h-10 w-10 text-white" />
-              </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Extraer Fuentes de PDF</h1>
-              <p className="text-xl text-slate-300 mb-8">
-                Identifica todas las fuentes tipográficas usadas en tu PDF. Descubre nombres, estilos y tamaños — instantáneo y desde tu navegador.
-              </p>
-              <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Análisis Instantáneo</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesión</span></div>
-                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sin Registro</span></div>
-              </div>
+        <section className="text-white py-16 relative overflow-hidden" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%), radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%), #0E0F1E` }}>
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}><filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter><rect width="100%" height="100%" filter="url(#heroGrain)" /></svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10"><div className="max-w-4xl mx-auto text-center">
+            <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)" }}><Type className="h-10 w-10 text-[#14D8C4]" /></div>
+            <h1 className="text-4xl lg:text-5xl font-black mb-4">Extraer Fuentes de PDF</h1>
+            <p className="text-xl text-slate-300 mb-8">Aprende cómo identificar y extraer las fuentes usadas en documentos PDF. Descubre qué tipografías están incrustadas en cualquier PDF y encuentra formas de reutilizarlas en tus propios proyectos.</p>
+            <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
+              <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Identifica Cualquier Fuente</span></div>
+              <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Procesamiento que Respeta tu Privacidad</span></div>
+              <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sin Instalación de Software</span></div>
             </div>
-          </div>
+          </div></div>
         </section>
 
-        {/* Processing Interface */}
-        <ProcessingInterface
-          acceptedFiles=".pdf"
-          toolName="PDF to TXT"
-          outputFormat="TXT"
-          processingMessage="Analizando fuentes de tu PDF..."
-          successMessage="¡Las fuentes han sido identificadas!"
-        />
+        {/* Intro */}
+        <section className="py-10 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+          <p className="text-lg text-slate-600 leading-relaxed">Las fuentes son una parte crítica de la identidad visual de cualquier PDF. Ya sea que estés tratando de igualar la tipografía de una marca, recrear un diseño de documento o simplemente identificar qué fuente se usó, entender cómo se incrustan las fuentes en PDFs es el primer paso. Convierte tu PDF a Word para revelar nombres de fuentes, o extrae texto para coincidencia visual de fuentes.</p>
+          <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+            <li className="flex items-center gap-2">✓ Identifica fuentes incrustadas en cualquier documento PDF</li>
+            <li className="flex items-center gap-2">✓ Convierte PDFs a Word para revelar nombres de fuentes</li>
+            <li className="flex items-center gap-2">✓ Extrae contenido de texto para coincidencia visual de fuentes</li>
+            <li className="flex items-center gap-2">✓ Sin instalación — usa PDF.it en tu navegador</li>
+          </ul>
+        </div></section>
 
-        {/* About */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <p className="text-lg text-slate-600 mb-8">
-              ¿Necesitas saber qué fuentes tipográficas se usaron en un PDF? El extractor de fuentes de PDF.it analiza tu documento y te muestra todas las fuentes utilizadas — nombres, estilos, tamaños y si están incrustadas en el archivo.
-            </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>✓ Identifica todas las fuentes tipográficas del PDF</li>
-              <li>✓ Muestra nombre, estilo (bold, italic) y tamaño</li>
-              <li>✓ Perfecto para diseño gráfico y consistencia de marca</li>
-              <li>✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li>✓ Sin instalación — analiza fuentes en tu navegador</li>
-            </ul>
-          </div>
-        </section>
+        <section className="py-12 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center"><h2 className="text-2xl font-black text-slate-900 mb-4">Trabaja con Contenido de Texto de PDF</h2><p className="text-slate-600 mb-6">Aunque la extracción directa de fuentes estará disponible pronto, puedes extraer contenido de texto o convertir PDFs a formatos editables para identificar y reutilizar estilos de texto.</p><div className="flex flex-col sm:flex-row gap-4 justify-center"><Link href="/es/pdf-a-txt" className="inline-flex items-center justify-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors">Extraer Texto (Gratis)</Link><Link href="/es/pdf-a-word" className="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-8 rounded-xl transition-colors">PDF a Word (Pro)</Link></div></div></section>
 
-        {/* Feature Sections */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Diseño Gráfico y Tipografía</h2>
-              <p className="text-slate-600">
-                ¿Te enviaron un diseño en PDF y necesitas saber qué fuentes usaron? Identifica las tipografías exactas para recrear el diseño o crear materiales complementarios con la misma estética visual.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Consistencia de Marca</h2>
-              <p className="text-slate-600">
-                Verifica que todos los documentos corporativos usen las fuentes oficiales de tu marca. Detecta inconsistencias tipográficas en materiales de marketing, presentaciones y documentos internos.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Recreación de Documentos</h2>
-              <p className="text-slate-600">
-                ¿Necesitas editar un PDF pero no tienes el archivo original? Identifica primero las fuentes usadas para poder recrear el documento con exactitud en tu editor de texto o diseño.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* How To */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Extraer Fuentes de un PDF</h2>
-            <div className="space-y-4">
-              {[
-                "Sube o arrastra tu PDF a PDF.it.",
-                "Haz clic en Analizar Fuentes — todas las tipografías se detectan automáticamente.",
-                "Descarga el reporte con todas las fuentes identificadas.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
-                  </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
+        {/* Feature Blocks */}
+        <section className="py-16" style={{ background: `radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%), #0E0F1E` }}>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl"><div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {[
+              { title: "Por Qué la Gente Extrae Fuentes de PDFs", desc: "Los diseñadores igualan tipografía entre proyectos, los marketeros mantienen consistencia de marca y los desarrolladores identifican fuentes para proyectos web. Identificar fuentes de PDF es un flujo de trabajo común." },
+              { title: "Cómo Identificar Fuentes en un PDF", desc: "Convierte tu PDF a Word usando PDF.it. El documento convertido preserva los nombres de fuentes para que puedas seleccionar cualquier texto y ver la tipografía. O usa WhatTheFont para coincidencia visual." },
+              { title: "Consideraciones de Licencia de Fuentes", desc: "Solo porque una fuente está incrustada en un PDF no significa que puedas usarla libremente. La mayoría de fuentes comerciales requieren una licencia. Existen muchas excelentes alternativas gratuitas en Google Fonts." },
+            ].map((feature) => (
+              <div key={feature.title} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}>
+                <div className="rounded-[11px] p-6 h-full" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                  <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
                 </div>
-              ))}
-            </div>
-          </div>
+              </div>
+            ))}
+          </div></div>
         </section>
+
+        {/* How It Works */}
+        <section className="py-16 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+          <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Cómo Identificar Fuentes en un PDF</h2>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+            {[
+              { num: "1", title: "Convierte PDF a Word", desc: "Sube tu PDF y conviértelo a formato Word" },
+              { num: "2", title: "Revisa nombres de fuentes", desc: "Selecciona cualquier texto para ver la fuente en el menú" },
+              { num: "3", title: "Encuentra la fuente online", desc: "Busca opciones de licencia o alternativas gratuitas" },
+            ].map((step) => (
+              <div key={step.num} className="flex-1">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)", border: "1px solid rgba(20,216,196,0.25)" }}><span className="text-[#14D8C4] font-black text-lg">{step.num}</span></div>
+                <p className="font-semibold text-slate-900">{step.title}</p>
+                <p className="text-sm text-slate-500 mt-1">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div></section>
 
         {/* Related Tools */}
-        <section className="py-16" style={{ background: "#0E0F1E" }}>
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {[
-                { name: "PDF a Texto", href: "/es/pdf-a-texto", desc: "Convierte PDF a TXT" },
-                { name: "Extraer Datos de PDF", href: "/es/extraer-datos-de-pdf", desc: "Obtén información del PDF" },
-                { name: "PDF a Word", href: "/es/pdf-a-word", desc: "Convierte PDF a Word" },
-                { name: "Extraer Imágenes", href: "/es/extraer-imagenes-de-pdf", desc: "Saca fotos del PDF" },
-              ].map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="rounded-xl p-4 transition-all text-center flex flex-col justify-center min-h-[80px] hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(20,216,196,0.25)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.2)" }}
-                >
+        <section className="py-16" style={{ background: "#0E0F1E" }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+          <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {[
+              { name: "PDF a TXT", href: "/es/pdf-a-txt", desc: "Extrae contenido de texto" },
+              { name: "PDF a Word", href: "/es/pdf-a-word", desc: "Editable con nombres de fuentes" },
+              { name: "Extraer Texto", href: "/es/extraer-texto-de-pdf", desc: "Extrae todo el texto de PDFs" },
+              { name: "Extraer Imágenes", href: "/es/extraer-imagenes-de-pdf", desc: "Obtén imágenes incrustadas" },
+            ].map((tool) => (
+              <div key={tool.href} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}>
+                <Link href={tool.href} className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
                   <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
                   <div className="text-xs text-slate-400">{tool.desc}</div>
                 </Link>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-        </section>
+        </div></section>
 
         {/* FAQ */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16" style={{ background: `radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%), radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%), #0E0F1E` }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
-            <div className="space-y-6">
-              {[
-                { q: "¿Cómo identifico las fuentes de un PDF?", a: "Sube tu PDF a PDF.it y la herramienta analizará el documento para identificar todas las fuentes tipográficas utilizadas, incluyendo nombre, estilo y tamaño." },
-                { q: "¿Para qué sirve extraer las fuentes de un PDF?", a: "Es útil para diseñadores gráficos que necesitan recrear un documento, mantener la consistencia de marca o identificar tipografías específicas usadas en materiales existentes." },
-                { q: "¿Puedo descargar las fuentes extraídas?", a: "PDF.it identifica los nombres y estilos de las fuentes usadas en el PDF. Para descargar las fuentes, necesitarás buscarlas en sitios de tipografía como Google Fonts o Adobe Fonts." },
-                { q: "¿Qué información de fuentes se extrae?", a: "Se extrae el nombre de la fuente, el estilo (regular, bold, italic), el tamaño utilizado y si la fuente está incrustada en el documento." },
-                { q: "¿Funciona con PDFs escaneados?", a: "Los PDFs escaneados no contienen información de fuentes ya que son imágenes. Para estos casos, puedes usar herramientas de reconocimiento de fuentes basadas en imágenes." },
-                { q: "¿Es gratis extraer fuentes de un PDF?", a: "Sí. Las cuentas gratuitas tienen 10 extracciones por día. Las cuentas Pro tienen extracciones ilimitadas." },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
+            <h2 className="text-3xl font-black text-white mb-10 text-center">Preguntas Frecuentes</h2>
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
+                  <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
+
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(faq => ({ "@type": "Question", "name": faq.q, "acceptedAnswer": { "@type": "Answer", "text": faq.a } })) })}} />
       </main>
       <FooterEs />
     </div>

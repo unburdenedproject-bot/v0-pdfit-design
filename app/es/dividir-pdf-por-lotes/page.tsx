@@ -1,15 +1,16 @@
 import Script from "next/script"
 import { HeaderEs } from "@/components/header-es"
 import { FooterEs } from "@/components/footer-es"
-import { SplitPdfInterface } from "@/components/split-pdf-interface"
-import { Scissors, Zap, Shield, Download } from "lucide-react"
+import { ProcessingInterface } from "@/components/processing-interface"
+import { Split, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Dividir PDF por Lotes — Divide Múltiples PDFs a la Vez | PDF.it",
+  title: "Dividir PDFs por Lotes — Divide Múltiples Archivos a la Vez | PDF.it",
   description:
-    "Divide múltiples PDFs a la vez con PDF.it Pro. Procesamiento por lotes para equipos legales, RRHH y archivos digitales — rápido, seguro y en tu navegador.",
+    "Divide múltiples archivos PDF a la vez con PDF.it Pro. Procesa docenas de PDFs simultáneamente — divide, extrae páginas y organiza en lote.",
   alternates: {
+    canonical: "https://www.pdf.it.com/es/dividir-pdf-por-lotes",
     languages: {
       en: "/batch-split-pdf",
       es: "/es/dividir-pdf-por-lotes",
@@ -17,137 +18,155 @@ export const metadata = {
   },
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Es la división por lotes una función Pro?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. La división por lotes es una función exclusiva de los planes Pro y Business. Las cuentas gratuitas pueden dividir un PDF a la vez." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuántos PDFs puedo dividir a la vez?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Los usuarios Pro pueden procesar hasta 20 PDFs a la vez. Los usuarios Business pueden procesar hasta 50 PDFs simultáneamente." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué tan rápido es el procesamiento por lotes?",
-      "acceptedAnswer": { "@type": "Answer", "text": "El procesamiento por lotes es significativamente más rápido que dividir archivos uno por uno. Los usuarios Pro y Business tienen prioridad en la cola de procesamiento." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo aplicar la misma configuración a todos los archivos?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Puedes definir una configuración de división (por ejemplo, dividir cada PDF en 3 partes) y aplicarla a todos los archivos del lote." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Se mantiene la calidad en el procesamiento por lotes?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Cada PDF se procesa individualmente y las páginas se extraen sin recodificar. La calidad es idéntica a la división de un solo archivo." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cómo descargo los archivos resultantes?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Todos los archivos divididos se empaquetan en un archivo ZIP que puedes descargar con un solo clic. Cada archivo mantiene su nombre original con un sufijo de parte." }
-    }
-  ]
-}
-
 export default function DividirPDFPorLotesPage() {
+  const faqs = [
+    { q: "¿Cómo divido múltiples PDFs a la vez?", a: "Con PDF.it Pro, sube múltiples archivos PDF a la herramienta de División simultáneamente. Cada archivo se procesa en paralelo — dividido en páginas individuales o rangos personalizados — y puedes descargar todos los resultados como un archivo ZIP." },
+    { q: "¿Cuántos PDFs puedo dividir a la vez?", a: "Los usuarios Pro pueden subir y dividir docenas de archivos PDF en una sola operación por lotes. Cada archivo puede ser de hasta 200MB con Pro, o hasta 1GB con Business. No hay un límite fijo de cantidad de archivos." },
+    { q: "¿La división por lotes está disponible en el plan gratuito?", a: "Los usuarios gratuitos pueden dividir un archivo a la vez con archivos de hasta 25MB. El procesamiento por lotes — dividir múltiples archivos simultáneamente — es una función Pro disponible por $3.99/mes." },
+    { q: "¿Puedo extraer páginas específicas de múltiples PDFs en lote?", a: "Sí. Con la división por lotes, puedes configurar rangos de páginas para cada archivo. Extrae páginas específicas, divide en páginas individuales o divide por rangos personalizados — todo procesado simultáneamente." },
+    { q: "¿Cómo descargo los resultados de una división por lotes?", a: "Después de la división por lotes, puedes descargar resultados individuales o usar el botón Descargar Todo para obtener todo como un solo archivo ZIP. Cada archivo dividido está claramente etiquetado." },
+    { q: "¿La división por lotes afecta la calidad del PDF?", a: "No. Dividir PDFs no altera el contenido. Cada página extraída mantiene su calidad original — texto, imágenes, formato y fuentes incrustadas permanecen sin cambios." },
+  ]
+
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderEs />
       <main>
         {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section
+          className="text-white py-16 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#heroGrain)" />
+          </svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Scissors className="h-10 w-10 text-white" />
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                  boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)",
+                }}
+              >
+                <Split className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Dividir PDF por Lotes</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Dividir PDFs por Lotes</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Divide múltiples PDFs a la vez con el procesamiento por lotes de PDF.it Pro. Sube varios archivos, aplica la configuración de división y descarga todos los resultados en un ZIP.
+                Divide múltiples archivos PDF a la vez con PDF.it Pro. Procesa docenas de documentos simultáneamente — extrae páginas, divide por rangos y descarga resultados en lote.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Procesamiento Masivo</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Procesa Múltiples Archivos</span></div>
                 <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesión</span></div>
-                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Descarga en ZIP</span></div>
+                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Descarga como ZIP</span></div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Tool Interface */}
-        <SplitPdfInterface />
-
-        {/* About */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <p className="text-lg text-slate-600 mb-8">
-              La división por lotes de PDF.it te permite procesar múltiples PDFs simultáneamente. En lugar de dividir archivos uno por uno, sube un lote completo, define la configuración de división y descarga todos los resultados en un archivo ZIP. Función exclusiva para usuarios Pro y Business.
+        {/* Intro */}
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Dividir PDFs uno por uno es tedioso cuando tienes muchos documentos que procesar. La función de división por lotes de PDF.it Pro te permite subir múltiples archivos a la vez, configurar las opciones de división para cada uno y procesarlos todos simultáneamente.
             </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>✓ Divide múltiples PDFs en una sola operación</li>
-              <li>✓ Aplica la misma configuración a todos los archivos</li>
-              <li>✓ Descarga todos los resultados en un ZIP</li>
-              <li>✓ Cola de procesamiento prioritaria para Pro/Business</li>
-              <li>✓ Sin pérdida de calidad — extracción directa del original</li>
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">✓ Divide múltiples PDFs simultáneamente</li>
+              <li className="flex items-center gap-2">✓ Extrae páginas específicas o divide en páginas individuales</li>
+              <li className="flex items-center gap-2">✓ Archivos de hasta 200MB cada uno con Pro</li>
+              <li className="flex items-center gap-2">✓ Descarga todos los resultados como archivo ZIP</li>
             </ul>
           </div>
         </section>
 
-        {/* Use Cases */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Procesamiento Masivo</h2>
-              <p className="text-slate-600">
-                Cuando tienes docenas de PDFs que necesitan dividirse de la misma manera, el procesamiento por lotes te ahorra horas de trabajo manual. Sube todos los archivos y aplica la misma configuración.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Equipos Legales</h2>
-              <p className="text-slate-600">
-                Los despachos legales manejan grandes volúmenes de documentos. Divide contratos, expedientes y escrituras en partes específicas para distribuir a diferentes abogados o departamentos.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Departamentos de RRHH</h2>
-              <p className="text-slate-600">
-                Procesa múltiples expedientes de empleados, políticas y manuales de capacitación simultáneamente. Divide cada documento en las secciones que necesitas sin procesar uno por uno.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Archivos Digitales</h2>
-              <p className="text-slate-600">
-                Organiza archivos digitales dividiendo documentos extensos en secciones catalogables. Ideal para bibliotecas, archivos históricos y bases de datos documentales.
-              </p>
+        {/* Processing Interface */}
+        <ProcessingInterface
+          acceptedFiles=".pdf"
+          toolName="Split PDF"
+          outputFormat="PDF"
+          processingMessage="Dividiendo tus PDFs..."
+          successMessage="¡Tus PDFs divididos están listos!"
+          requiresPlan="pro"
+        />
+
+        {/* Feature Blocks */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                { title: "Divide Facturas y Estados de Cuenta", desc: "Los equipos financieros suelen recibir facturas o estados bancarios de múltiples páginas que necesitan separarse. La división por lotes permite procesar toda una carpeta de PDFs a la vez." },
+                { title: "Extrae Páginas de Múltiples Documentos", desc: "¿Necesitas la primera página de 50 contratos diferentes? La división por lotes aplica las mismas reglas de extracción a múltiples archivos simultáneamente." },
+                { title: "Procesa Documentos Legales", desc: "Firmas de abogados y equipos de cumplimiento pueden dividir grandes paquetes de documentos en expedientes individuales. Sube un lote, divide por rangos y descarga resultados organizados como ZIP." },
+              ].map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <div
+                    className="rounded-[11px] p-6 h-full"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* How To */}
-        <section className="py-16 bg-gray-50">
+        {/* How It Works */}
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Dividir PDFs por Lotes</h2>
-            <div className="space-y-4">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Cómo Dividir PDFs por Lotes</h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
               {[
-                "Sube o arrastra múltiples PDFs a PDF.it.",
-                "Define la configuración de división para el lote.",
-                "Haz clic en Dividir PDFs y descarga el archivo ZIP con todos los resultados.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
+                { num: "1", title: "Sube múltiples PDFs", desc: "Selecciona todos los archivos a dividir (Pro)" },
+                { num: "2", title: "Configura la división", desc: "Por página, por rango o en páginas individuales" },
+                { num: "3", title: "Descarga como ZIP", desc: "Obtén todos los resultados en una sola descarga" },
+              ].map((step) => (
+                <div key={step.num} className="flex-1">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                      border: "1px solid rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <span className="text-[#14D8C4] font-black text-lg">{step.num}</span>
                   </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
+                  <p className="font-semibold text-slate-900">{step.title}</p>
+                  <p className="text-sm text-slate-500 mt-1">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -160,49 +179,84 @@ export default function DividirPDFPorLotesPage() {
             <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Herramienta estándar de división" },
-                { name: "Dividir PDF Grande", href: "/es/dividir-pdf-grande", desc: "Separa PDFs pesados" },
-                { name: "Dividir por Páginas", href: "/es/dividir-pdf-por-paginas", desc: "Elige qué páginas separar" },
-                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamaño del archivo" },
-                { name: "Unir PDF", href: "/es/unir-pdf", desc: "Combina PDFs en uno" },
-                { name: "Extraer Páginas", href: "/es/extraer-paginas-de-pdf", desc: "Saca páginas específicas" },
-                { name: "Eliminar Páginas", href: "/es/eliminar-paginas-de-pdf", desc: "Quita páginas no deseadas" },
-                { name: "Aplanar PDF", href: "/es/aplanar-pdf", desc: "Aplana formularios y capas" },
+                { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Divide archivos individuales" },
+                { name: "Unir PDF", href: "/es/unir-pdf", desc: "Combina PDFs" },
+                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamaño" },
+                { name: "Rotar PDF", href: "/es/rotar-pdf", desc: "Corrige la orientación" },
               ].map((tool) => (
-                <Link
+                <div
                   key={tool.href}
-                  href={tool.href}
-                  className="rounded-xl p-4 transition-all text-center flex flex-col justify-center min-h-[80px] hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(20,216,196,0.25)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.2)" }}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
                 >
-                  <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
-                  <div className="text-xs text-slate-400">{tool.desc}</div>
-                </Link>
+                  <Link
+                    href={tool.href}
+                    className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
+                    <div className="text-xs text-slate-400">{tool.desc}</div>
+                  </Link>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-gray-50">
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
-            <div className="space-y-6">
-              {[
-                { q: "¿Es la división por lotes una función Pro?", a: "Sí. La división por lotes es una función exclusiva de los planes Pro y Business. Las cuentas gratuitas pueden dividir un PDF a la vez." },
-                { q: "¿Cuántos PDFs puedo dividir a la vez?", a: "Los usuarios Pro pueden procesar hasta 20 PDFs a la vez. Los usuarios Business pueden procesar hasta 50 PDFs simultáneamente." },
-                { q: "¿Qué tan rápido es el procesamiento por lotes?", a: "El procesamiento por lotes es significativamente más rápido que dividir archivos uno por uno. Los usuarios Pro y Business tienen prioridad en la cola de procesamiento." },
-                { q: "¿Puedo aplicar la misma configuración a todos los archivos?", a: "Sí. Puedes definir una configuración de división (por ejemplo, dividir cada PDF en 3 partes) y aplicarla a todos los archivos del lote." },
-                { q: "¿Se mantiene la calidad en el procesamiento por lotes?", a: "Sí. Cada PDF se procesa individualmente y las páginas se extraen sin recodificar. La calidad es idéntica a la división de un solo archivo." },
-                { q: "¿Cómo descargo los archivos resultantes?", a: "Todos los archivos divididos se empaquetan en un archivo ZIP que puedes descargar con un solo clic. Cada archivo mantiene su nombre original con un sufijo de parte." },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
+            <h2 className="text-3xl font-black text-white mb-10 text-center">Preguntas Frecuentes</h2>
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl p-6"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
+
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+          }))
+        })}} />
       </main>
       <FooterEs />
     </div>
