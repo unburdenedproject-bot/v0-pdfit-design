@@ -88,7 +88,7 @@
 - **Fix applied:** Upstash Redis rate limit: 3 submissions per hour per IP. Falls back gracefully if Redis not configured.
 - **Effort:** 1 hour
 
-### [ ] 11. Memory Will Crash at ~50 Concurrent Users
+### [x] 11. Memory Will Crash at ~50 Concurrent Users — FIXED April 7 (26 routes streamed)
 - **Files:** All PDF processing routes
 - **Issue:** Entire files buffered in memory (`Buffer.from(arrayBuffer())`), no streaming
 - **Risk:** Vercel Pro 3GB limit = OOM at ~50 concurrent 25MB uploads
