@@ -189,9 +189,8 @@
 - **Fix:** Rate limit by user ID for authenticated users, IP for anonymous
 - **Effort:** 2 hours
 
-### [ ] 28. Decompose Giant Components
-- **Issue:** `processing-interface.tsx` is 1,501 lines. Top 4 components = 4,663 lines.
-- **Fix:** Extract FileUploadZone, ProcessingErrorDialog, base interface
+### [x] 28. Decompose Giant Components — FIXED April 7
+- **Fix applied:** Extracted 5 subcomponents (file-dropzone, file-list, tier-gate-card, processing-result, compression-selector). Main component 1,501 → 1,177 lines.
 - **Effort:** 3 days
 
 ---
