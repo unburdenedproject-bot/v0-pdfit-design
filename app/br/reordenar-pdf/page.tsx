@@ -7,7 +7,7 @@ import Link from "next/link"
 export const metadata = {
   title: "Reordenar PDF Online — Reorganize Paginas em Qualquer Ordem | PDF.it",
   description: "Reorganize paginas PDF em qualquer ordem com o PDF.it. Use Dividir e Unir para reorganizar seu documento — rapido, gratis e pelo navegador.",
-  alternates: { languages: { en: "/reorder-pdf", es: "/es/reordenar-pdf", pt: "/br/reordenar-pdf" } },
+  alternates: { canonical: "https://pdf.it.com/br/reordenar-pdf", languages: { en: "/reorder-pdf", es: "/es/reordenar-pdf", pt: "/br/reordenar-pdf" } },
 }
 
 export default function ReordenarPDFPage() {

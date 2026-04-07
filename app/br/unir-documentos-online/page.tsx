@@ -8,7 +8,7 @@ import Link from "next/link"
 export const metadata = {
   title: "Unir Documentos Online — Combine Arquivos em Um PDF | PDF.it",
   description: "Una documentos online com o PDF.it. Combine multiplos arquivos em um unico PDF para compartilhar, imprimir ou arquivar — rapido, gratis e pelo navegador.",
-  alternates: { languages: { en: "/merge-documents-online", es: "/es/unir-documentos-en-linea", pt: "/br/unir-documentos-online" } },
+  alternates: { canonical: "https://pdf.it.com/br/unir-documentos-online", languages: { en: "/merge-documents-online", es: "/es/unir-documentos-en-linea", pt: "/br/unir-documentos-online" } },
 }
 
 export default function UnirDocumentosOnlinePage() {

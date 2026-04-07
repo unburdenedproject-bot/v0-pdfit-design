@@ -8,7 +8,7 @@ import Link from "next/link"
 export const metadata = {
   title: "PDF para XLSX — Converter PDF para Planilha Excel | PDF.it",
   description: "Converta PDF para XLSX online com o PDF.it. Extraia tabelas e dados financeiros de PDF para planilhas Excel editaveis. Rapido, preciso, sem instalacao.",
-  alternates: { languages: { en: "/pdf-to-xlsx", es: "/es/pdf-a-xlsx", pt: "/br/pdf-para-xlsx" } },
+  alternates: { canonical: "https://pdf.it.com/br/pdf-para-xlsx", languages: { en: "/pdf-to-xlsx", es: "/es/pdf-a-xlsx", pt: "/br/pdf-para-xlsx" } },
 }
 
 export default function PDFParaXlsxPage() {

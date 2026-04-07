@@ -8,7 +8,7 @@ import Link from "next/link"
 export const metadata = {
   title: "PDF para DOCX — Converter PDF para Documento Word | PDF.it",
   description: "Converta PDF para DOCX online com o PDF.it. Transforme qualquer PDF em um arquivo Word .docx editavel — preserva formatacao, tabelas e imagens. Rapido, seguro, sem instalacao.",
-  alternates: { languages: { en: "/pdf-to-docx", es: "/es/pdf-a-docx", pt: "/br/pdf-para-docx" } },
+  alternates: { canonical: "https://pdf.it.com/br/pdf-para-docx", languages: { en: "/pdf-to-docx", es: "/es/pdf-a-docx", pt: "/br/pdf-para-docx" } },
 }
 
 export default function PDFParaDocxPage() {

@@ -8,7 +8,7 @@ import Link from "next/link"
 export const metadata = {
   title: "Organizar PDFs em Lote — Processe Multiplos Arquivos de Uma Vez | PDF.it",
   description: "Organize multiplos arquivos PDF em lote com o PDF.it Pro. Una, divida, gire e comprima PDFs em massa — economize tempo com processamento em lote.",
-  alternates: { languages: { en: "/batch-organize-pdf", es: "/es/organizar-pdf-por-lotes", pt: "/br/organizar-pdf-em-lote" } },
+  alternates: { canonical: "https://pdf.it.com/br/organizar-pdf-em-lote", languages: { en: "/batch-organize-pdf", es: "/es/organizar-pdf-por-lotes", pt: "/br/organizar-pdf-em-lote" } },
 }
 
 export default function OrganizarPDFEmLotePage() {

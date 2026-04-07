@@ -7,7 +7,7 @@ import Link from "next/link"
 export const metadata = {
   title: "Tabela PDF para CSV — Exporte Tabelas PDF como CSV | PDF.it",
   description: "Exporte tabelas de PDFs como arquivos CSV com o PDF.it. Extraia dados estruturados para uso no Excel, Google Sheets, bancos de dados e ferramentas de analise.",
-  alternates: { languages: { en: "/pdf-table-to-csv", es: "/es/tabla-pdf-a-csv", pt: "/br/tabela-pdf-para-csv" } },
+  alternates: { canonical: "https://pdf.it.com/br/tabela-pdf-para-csv", languages: { en: "/pdf-table-to-csv", es: "/es/tabla-pdf-a-csv", pt: "/br/tabela-pdf-para-csv" } },
 }
 
 export default function TabelaPDFParaCSVPage() {

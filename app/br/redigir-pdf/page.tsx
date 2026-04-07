@@ -7,7 +7,7 @@ import Link from "next/link"
 export const metadata = {
   title: "Redigir PDF Online — Remova Informacoes Sensiveis Permanentemente | PDF.it",
   description: "Redija textos e dados sensiveis de PDFs com o PDF.it. Apague permanentemente informacoes confidenciais antes de compartilhar — seguro, rapido e pelo navegador.",
-  alternates: { languages: { en: "/redact-pdf", es: "/es/redactar-pdf", pt: "/br/redigir-pdf" } },
+  alternates: { canonical: "https://pdf.it.com/br/redigir-pdf", languages: { en: "/redact-pdf", es: "/es/redactar-pdf", pt: "/br/redigir-pdf" } },
 }
 
 export default function RedigirPDFPage() {

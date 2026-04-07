@@ -8,7 +8,7 @@ import Link from "next/link"
 export const metadata = {
   title: "Unir PDFs Digitalizados em Um Documento — Gratis Online | PDF.it",
   description: "Combine multiplos PDFs digitalizados em um unico documento com o PDF.it. Una paginas de diferentes fontes em um arquivo limpo — rapido, gratis e pelo navegador.",
-  alternates: { languages: { en: "/merge-scanned-pdf", es: "/es/unir-pdf-escaneado", pt: "/br/unir-pdf-digitalizado" } },
+  alternates: { canonical: "https://pdf.it.com/br/unir-pdf-digitalizado", languages: { en: "/merge-scanned-pdf", es: "/es/unir-pdf-escaneado", pt: "/br/unir-pdf-digitalizado" } },
 }
 
 export default function UnirPDFDigitalizadoPage() {

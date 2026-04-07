@@ -7,7 +7,7 @@ import Link from "next/link"
 export const metadata = {
   title: "PDF para Google Docs — Abra PDFs no Google Docs | PDF.it",
   description: "Converta PDF para formato Google Docs. Converta PDF para Word com o PDF.it, envie ao Google Drive e abra no Google Docs para edicao facil.",
-  alternates: { languages: { en: "/pdf-to-google-docs", es: "/es/pdf-a-google-docs", pt: "/br/pdf-para-google-docs" } },
+  alternates: { canonical: "https://pdf.it.com/br/pdf-para-google-docs", languages: { en: "/pdf-to-google-docs", es: "/es/pdf-a-google-docs", pt: "/br/pdf-para-google-docs" } },
 }
 
 export default function PDFParaGoogleDocsPage() {

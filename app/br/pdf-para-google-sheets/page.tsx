@@ -7,7 +7,7 @@ import Link from "next/link"
 export const metadata = {
   title: "PDF para Google Sheets — Abra Tabelas PDF no Google Sheets | PDF.it",
   description: "Aprenda como converter tabelas PDF para Google Sheets. Converta PDF para Excel com o PDF.it, envie ao Google Drive e abra no Google Sheets para edicao e analise.",
-  alternates: { languages: { en: "/pdf-to-google-sheets", es: "/es/pdf-a-google-sheets", pt: "/br/pdf-para-google-sheets" } },
+  alternates: { canonical: "https://pdf.it.com/br/pdf-para-google-sheets", languages: { en: "/pdf-to-google-sheets", es: "/es/pdf-a-google-sheets", pt: "/br/pdf-para-google-sheets" } },
 }
 
 export default function PDFParaGoogleSheetsPage() {

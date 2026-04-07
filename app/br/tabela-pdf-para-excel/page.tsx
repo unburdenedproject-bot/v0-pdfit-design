@@ -8,7 +8,7 @@ import Link from "next/link"
 export const metadata = {
   title: "Tabela PDF para Excel — Converta Tabelas PDF em Planilhas | PDF.it",
   description: "Converta tabelas PDF em planilhas Excel com o PDF.it. Extraia dados estruturados e baixe arquivos .xlsx editaveis — rapido e pelo navegador.",
-  alternates: { languages: { en: "/pdf-table-to-excel", es: "/es/tabla-pdf-a-excel", pt: "/br/tabela-pdf-para-excel" } },
+  alternates: { canonical: "https://pdf.it.com/br/tabela-pdf-para-excel", languages: { en: "/pdf-table-to-excel", es: "/es/tabla-pdf-a-excel", pt: "/br/tabela-pdf-para-excel" } },
 }
 
 export default function TabelaPDFParaExcelPage() {

@@ -8,7 +8,7 @@ import Link from "next/link"
 export const metadata = {
   title: "Unir Multiplos PDFs em Um Arquivo — Gratis Online | PDF.it",
   description: "Una multiplos arquivos PDF em um unico documento com o PDF.it. Combine 2, 5 ou 10+ PDFs em um arquivo — rapido, gratis e pelo navegador.",
-  alternates: { languages: { en: "/merge-multiple-pdfs", es: "/es/unir-multiples-pdfs", pt: "/br/unir-multiplos-pdfs" } },
+  alternates: { canonical: "https://pdf.it.com/br/unir-multiplos-pdfs", languages: { en: "/merge-multiple-pdfs", es: "/es/unir-multiples-pdfs", pt: "/br/unir-multiplos-pdfs" } },
 }
 
 export default function UnirMultiplosPDFsPage() {

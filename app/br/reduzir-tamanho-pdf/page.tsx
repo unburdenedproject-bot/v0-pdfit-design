@@ -8,7 +8,7 @@ import Link from "next/link"
 export const metadata = {
   title: "Reduzir Tamanho PDF Online — Redutor Gratis | PDF.it",
   description: "Reduza o tamanho de arquivos PDF online. Escolha seu nivel de compressao — leve, medio ou extremo. Rapido, pelo navegador, sem instalacao.",
-  alternates: { languages: { en: "/reduce-pdf-size", es: "/es/reducir-tamano-pdf", pt: "/br/reduzir-tamanho-pdf" } },
+  alternates: { canonical: "https://pdf.it.com/br/reduzir-tamanho-pdf", languages: { en: "/reduce-pdf-size", es: "/es/reducir-tamano-pdf", pt: "/br/reduzir-tamanho-pdf" } },
 }
 
 export default function ReduzirTamanhoPDFPage() {
