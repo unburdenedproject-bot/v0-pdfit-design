@@ -37,14 +37,14 @@
 - **Fix:** Return 500 on DB error so Stripe retries
 - **Effort:** 30 minutes
 
-### [ ] 3. Newsletter Table Doesn't Exist — NEEDS SUPABASE SQL
+### [x] 3. Newsletter Table Doesn't Exist — FIXED April 7 (SQL run in Supabase)
 - **File:** `app/api/newsletter/route.ts` writes to `newsletter_subscribers` — table never created
 - **Issue:** All signups silently fail but return "success"
 - **Risk:** Zero newsletter subscribers being collected
 - **Fix:** `CREATE TABLE newsletter_subscribers (email TEXT PRIMARY KEY, subscribed_at TIMESTAMPTZ DEFAULT NOW())`
 - **Effort:** 10 minutes
 
-### [ ] 4. Missing Database Index on stripe_customer_id — NEEDS SUPABASE SQL
+### [x] 4. Missing Database Index on stripe_customer_id — FIXED April 7 (SQL run in Supabase)
 - **File:** `app/api/webhook/route.ts` line 184-188
 - **Issue:** Webhook looks up users by `stripe_customer_id` — full table scan on every payment
 - **Risk:** Slow payment processing, degrades with user count
