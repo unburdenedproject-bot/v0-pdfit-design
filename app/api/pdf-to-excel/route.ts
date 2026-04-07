@@ -4,21 +4,21 @@ import { pipeline } from "stream/promises";
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { readFile, writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
 import { isValidBlobUrl } from "@/lib/validate-blob-url";
 
-async function blobUrlToTmp(blobUrl) {
+async function blobUrlToTmp(blobUrl: string): Promise<{ tmpPath: string; name: string }> {
   const res = await fetch(blobUrl);
   if (!res.ok) {
     console.error(`Failed to fetch blob URL (${res.status}): ${blobUrl}`);
     throw new Error("Failed to retrieve your uploaded file. Please try uploading again.");
   }
 
-  let name = "input.pdf";
+  let name: string = "input.pdf";
   try {
     const pathname = new URL(blobUrl).pathname;
     const segments = pathname.split("/").filter(Boolean);
@@ -29,27 +29,21 @@ async function blobUrlToTmp(blobUrl) {
     // keep default name
   }
 
-  const id = randomUUID();
-  const tmpPath = join("/tmp", `${id}-${name}`);
-  if (res.body) { const nodeStream = Readable.fromWeb(res.body); await pipeline(nodeStream, createWriteStream(tmpPath)); } else { const buf = Buffer.from(await res.arrayBuffer()); await writeFile(tmpPath, buf); }
+  const id: string = randomUUID();
+  const tmpPath: string = join("/tmp", `${id}-${name}`);
+  if (res.body) { const nodeStream = Readable.fromWeb(res.body as any); await pipeline(nodeStream, createWriteStream(tmpPath)); } else { const buf: Buffer = Buffer.from(await res.arrayBuffer()); await writeFile(tmpPath, buf); }
   return { tmpPath, name };
 }
 
-function errorResponse(message, status = 500) {
+function errorResponse(message: string, status: number = 500): Response {
   return Response.json({ error: message }, { status });
 }
 
 /**
- * Convert PDF to DOCX using CloudConvert REST API.
- *
- * Flow:
- *   1. Create a job with import/upload → convert (pdf→docx) → export/url
- *   2. Upload the PDF to the import task's presigned URL
- *   3. Poll the job until finished
- *   4. Download the converted file from the export task's URL
+ * Convert PDF to XLSX using CloudConvert REST API.
  */
-async function convertWithCloudConvert(fileBuffer, fileName) {
-  const apiKey = process.env.CLOUDCONVERT_API_KEY;
+async function convertWithCloudConvert(fileBuffer: Buffer, fileName: string): Promise<Buffer> {
+  const apiKey: string | undefined = process.env.CLOUDCONVERT_API_KEY;
   if (!apiKey) {
     console.error("CLOUDCONVERT_API_KEY is not set");
     throw new Error("The conversion service is temporarily unavailable. Please try again later.");
@@ -69,7 +63,7 @@ async function convertWithCloudConvert(fileBuffer, fileName) {
           operation: "convert",
           input: "import-1",
           input_format: "pdf",
-          output_format: "docx",
+          output_format: "xlsx",
         },
         "export-1": {
           operation: "export/url",
@@ -86,18 +80,18 @@ async function convertWithCloudConvert(fileBuffer, fileName) {
   }
 
   const job = await jobRes.json();
-  const importTask = job.data.tasks.find((t) => t.name === "import-1");
+  const importTask = job.data.tasks.find((t: any) => t.name === "import-1");
   if (!importTask || !importTask.result || !importTask.result.form) {
     console.error("Conversion service did not return an upload URL");
     throw new Error("An error occurred while processing your file. Please try again.");
   }
 
-  // Step 2: Upload the file to the presigned URL
+  // Step 2: Upload the file
   const form = importTask.result.form;
-  const uploadUrl = form.url;
+  const uploadUrl: string = form.url;
   const formData = new FormData();
   for (const [key, value] of Object.entries(form.parameters || {})) {
-    formData.append(key, value);
+    formData.append(key, value as string);
   }
   formData.append("file", new Blob([fileBuffer]), fileName);
 
@@ -108,9 +102,9 @@ async function convertWithCloudConvert(fileBuffer, fileName) {
   }
 
   // Step 3: Poll for job completion
-  const jobId = job.data.id;
-  let finished = null;
-  for (let i = 0; i < 60; i++) {
+  const jobId: string = job.data.id;
+  let finished: any = null;
+  for (let i: number = 0; i < 60; i++) {
     await new Promise((r) => setTimeout(r, 2000));
 
     const pollRes = await fetch(`https://api.cloudconvert.com/v2/jobs/${jobId}`, {
@@ -119,14 +113,14 @@ async function convertWithCloudConvert(fileBuffer, fileName) {
     if (!pollRes.ok) continue;
 
     const pollData = await pollRes.json();
-    const status = pollData.data.status;
+    const status: string = pollData.data.status;
 
     if (status === "finished") {
       finished = pollData.data;
       break;
     }
     if (status === "error") {
-      const failedTask = pollData.data.tasks.find((t) => t.status === "error");
+      const failedTask = pollData.data.tasks.find((t: any) => t.status === "error");
       console.error("Conversion failed:", failedTask?.message || "unknown error");
       throw new Error("File conversion failed. Please try again or use a different file.");
     }
@@ -137,8 +131,8 @@ async function convertWithCloudConvert(fileBuffer, fileName) {
   }
 
   // Step 4: Download the result
-  const exportTask = finished.tasks.find((t) => t.name === "export-1");
-  const fileUrl = exportTask?.result?.files?.[0]?.url;
+  const exportTask = finished.tasks.find((t: any) => t.name === "export-1");
+  const fileUrl: string | undefined = exportTask?.result?.files?.[0]?.url;
   if (!fileUrl) {
     console.error("Conversion service did not return a download URL");
     throw new Error("An error occurred while processing your file. Please try again.");
@@ -153,9 +147,9 @@ async function convertWithCloudConvert(fileBuffer, fileName) {
   return Buffer.from(await downloadRes.arrayBuffer());
 }
 
-export async function POST(request) {
-  let tmpPath = null;
-  let uploadedBlobUrl = null;
+export async function POST(request: NextRequest) {
+  let tmpPath: string | null = null;
+  let uploadedBlobUrl: string | null = null;
 
   try {
     // Pro/Business-only gate
@@ -171,14 +165,14 @@ export async function POST(request) {
       return NextResponse.json({ error: "upgrade_required" }, { status: 403 });
     }
 
-    const contentType = request.headers.get("content-type") || "";
-    const isJson = contentType.includes("application/json");
+    const contentType: string = request.headers.get("content-type") || "";
+    const isJson: boolean = contentType.includes("application/json");
 
-    let originalName = "input.pdf";
+    let originalName: string = "input.pdf";
 
     if (isJson) {
       const body = await request.json();
-      const blobUrl = body.blobUrl;
+      const blobUrl: string = body.blobUrl;
       uploadedBlobUrl = blobUrl;
 
       if (!blobUrl || typeof blobUrl !== "string") {
@@ -195,20 +189,19 @@ export async function POST(request) {
         : result.name;
     } else {
       const formData = await request.formData();
-      const file = formData.get("file");
+      const file: FormDataEntryValue | null = formData.get("file");
       if (!file || typeof file === "string") {
         return errorResponse('No file provided. Send a PDF file under the key "file".', 400);
       }
 
       originalName = file.name || "input.pdf";
-      const id = randomUUID();
+      const id: string = randomUUID();
       tmpPath = join("/tmp", `${id}-${originalName}`);
-      const buffer = Buffer.from(await file.arrayBuffer());
+      const buffer: Buffer = Buffer.from(await file.arrayBuffer());
       await writeFile(tmpPath, buffer);
     }
 
-    // Read the file and convert via CloudConvert
-    const fileBuffer = await readFile(tmpPath);
+    const fileBuffer: Buffer = await readFile(tmpPath);
 
     // ── Reject blank PDFs before hitting paid API ──
     try {
@@ -225,34 +218,32 @@ export async function POST(request) {
       return errorResponse("This file appears to be empty or unreadable. Please upload a PDF with content.", 400);
     }
 
-    const data = await convertWithCloudConvert(fileBuffer, originalName);
+    const data: Buffer = await convertWithCloudConvert(fileBuffer, originalName);
 
-    // Clean up
     if (uploadedBlobUrl) {
       await del(uploadedBlobUrl).catch(() => {});
     }
     await unlink(tmpPath).catch(() => {});
     tmpPath = null;
 
-    const baseName = originalName.replace(/\.[^/.]+$/, "").replace(/-[a-zA-Z0-9]{20,}$/g, "");
+    const baseName: string = originalName.replace(/\.[^/.]+$/, "").replace(/-[a-zA-Z0-9]{20,}$/g, "");
 
-    await logUsage(user.id, "pdf-to-word");
+    await logUsage(user.id, "pdf-to-excel");
 
     const res = new NextResponse(data, {
       status: 200,
       headers: {
-        "Content-Type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-        "Content-Disposition": `attachment; filename="${baseName}.docx"`,
+        "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "Content-Disposition": `attachment; filename="${baseName}.xlsx"`,
         "Cache-Control": "no-store",
       },
     });
     return res;
-  } catch (err) {
-    console.error("pdf-to-word route error:", err);
+  } catch (err: unknown) {
+    console.error("pdf-to-excel route error:", err);
 
-    const raw = err && typeof err === "object" && err.message ? err.message : "";
-    // Strip any message that leaks internal service names
-    const safe = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob\.vercel/i.test(raw)
+    const raw: string = err && typeof err === "object" && (err as Error).message ? (err as Error).message : "";
+    const safe: string = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob\.vercel/i.test(raw)
       ? "An error occurred while processing your file. Please try again."
       : (raw || "An unexpected error occurred.");
 
