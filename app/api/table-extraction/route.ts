@@ -4,7 +4,7 @@ import { pipeline } from "stream/promises";
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
@@ -14,19 +14,59 @@ import { isValidBlobUrl } from "@/lib/validate-blob-url";
 // Monthly page limits for table extraction
 // Business: 200 pages/mo ($6.00 cost at $0.03/page vs $13.99 revenue)
 // Enterprise: 2,000 pages/mo ($60.00 cost at $0.03/page vs $49.99 revenue — profitable on average usage)
-const MONTHLY_PAGE_LIMIT_BUSINESS = 200;
-const MONTHLY_PAGE_LIMIT_ENTERPRISE = 2000;
+const MONTHLY_PAGE_LIMIT_BUSINESS: number = 200;
+const MONTHLY_PAGE_LIMIT_ENTERPRISE: number = 2000;
 
-function errorResponse(message, status = 500) {
+function errorResponse(message: string, status: number = 500): Response {
   return Response.json({ error: message }, { status });
+}
+
+interface TextSegment {
+  startIndex?: number | string;
+  endIndex?: number | string;
+}
+
+interface Layout {
+  textAnchor?: {
+    textSegments?: TextSegment[];
+  };
+}
+
+interface Cell {
+  layout: Layout;
+}
+
+interface TableRow {
+  cells?: Cell[];
+}
+
+interface Table {
+  headerRows?: TableRow[];
+  bodyRows?: TableRow[];
+}
+
+interface Page {
+  pageNumber?: number;
+  tables?: Table[];
+}
+
+interface DocumentAIDocument {
+  pages?: Page[];
+  text?: string;
+}
+
+interface ExtractedTable {
+  pageNumber: number;
+  headerRows: string[][];
+  bodyRows: string[][];
 }
 
 /**
  * Get how many table extraction pages the user has consumed this month.
  */
-async function getMonthlyPageCount(serviceClient, userId) {
-  const now = new Date();
-  const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1).toISOString();
+async function getMonthlyPageCount(serviceClient: any, userId: string): Promise<number> {
+  const now: Date = new Date();
+  const startOfMonth: string = new Date(now.getFullYear(), now.getMonth(), 1).toISOString();
 
   const { data, error } = await serviceClient
     .from("usage_logs")
@@ -46,10 +86,10 @@ async function getMonthlyPageCount(serviceClient, userId) {
 /**
  * Log the number of pages processed for monthly tracking.
  */
-async function logPageUsage(serviceClient, userId, pageCount) {
+async function logPageUsage(serviceClient: any, userId: string, pageCount: number): Promise<void> {
   if (!serviceClient) return;
 
-  const rows = [];
+  const rows: { user_id: string; tool: string; allowed: boolean; block_reason: null }[] = [];
   for (let i = 0; i < pageCount; i++) {
     rows.push({
       user_id: userId,
@@ -65,9 +105,9 @@ async function logPageUsage(serviceClient, userId, pageCount) {
   }
 }
 
-export async function POST(request) {
-  let tmpPath = null;
-  let uploadedBlobUrl = null;
+export async function POST(request: NextRequest): Promise<Response> {
+  let tmpPath: string | null = null;
+  let uploadedBlobUrl: string | null = null;
 
   try {
     // Auth: Business plan only
@@ -94,16 +134,16 @@ export async function POST(request) {
       );
     }
 
-    const monthlyPageLimit = profile?.plan === "enterprise"
+    const monthlyPageLimit: number = profile?.plan === "enterprise"
       ? MONTHLY_PAGE_LIMIT_ENTERPRISE
       : MONTHLY_PAGE_LIMIT_BUSINESS;
 
     // Check monthly page limit
     const { createClient: createServiceClient } = await import("@supabase/supabase-js");
-    const serviceUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-    let serviceClient = null;
-    let usedPagesAtStart = 0;
+    const serviceUrl: string | undefined = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const serviceKey: string | undefined = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    let serviceClient: any = null;
+    let usedPagesAtStart: number = 0;
 
     if (serviceUrl && serviceKey) {
       serviceClient = createServiceClient(serviceUrl, serviceKey);
@@ -119,7 +159,7 @@ export async function POST(request) {
 
     // Parse request
     const body = await request.json();
-    const blobUrl = body.blobUrl;
+    const blobUrl: string = body.blobUrl;
     uploadedBlobUrl = blobUrl;
 
     if (!blobUrl || typeof blobUrl !== "string") {
@@ -130,13 +170,13 @@ export async function POST(request) {
     }
 
     // Download PDF from blob
-    const res = await fetch(blobUrl);
+    const res: globalThis.Response = await fetch(blobUrl);
     if (!res.ok) {
       console.error(`Failed to fetch blob URL (${res.status})`);
       throw new Error("Failed to retrieve your uploaded file. Please try uploading again.");
     }
-    const buffer = Buffer.from(await res.arrayBuffer());
-    const id = randomUUID();
+    const buffer: Buffer = Buffer.from(await res.arrayBuffer());
+    const id: string = randomUUID();
     tmpPath = join("/tmp", `${id}-input.pdf`);
     await writeFile(tmpPath, buffer);
 
@@ -147,8 +187,8 @@ export async function POST(request) {
       try {
         const { PDFDocument } = await import("pdf-lib");
         const pdfDoc = await PDFDocument.load(buffer, { ignoreEncryption: true });
-        const pdfPageCount = pdfDoc.getPageCount();
-        const remaining = monthlyPageLimit - usedPagesAtStart;
+        const pdfPageCount: number = pdfDoc.getPageCount();
+        const remaining: number = monthlyPageLimit - usedPagesAtStart;
 
         if (pdfPageCount > remaining) {
           if (uploadedBlobUrl) await del(uploadedBlobUrl).catch(() => {});
@@ -166,11 +206,11 @@ export async function POST(request) {
     }
 
     // Call Google Document AI using REST API (avoids gRPC private key issues)
-    const projectId = process.env.GOOGLE_CLOUD_PROJECT_ID;
-    const location = process.env.GOOGLE_CLOUD_LOCATION || "us";
-    const processorId = process.env.GOOGLE_CLOUD_PROCESSOR_ID;
-    const clientEmail = process.env.GOOGLE_CLOUD_CLIENT_EMAIL;
-    const privateKey = process.env.GOOGLE_CLOUD_PRIVATE_KEY?.replace(
+    const projectId: string | undefined = process.env.GOOGLE_CLOUD_PROJECT_ID;
+    const location: string = process.env.GOOGLE_CLOUD_LOCATION || "us";
+    const processorId: string | undefined = process.env.GOOGLE_CLOUD_PROCESSOR_ID;
+    const clientEmail: string | undefined = process.env.GOOGLE_CLOUD_CLIENT_EMAIL;
+    const privateKey: string | undefined = process.env.GOOGLE_CLOUD_PRIVATE_KEY?.replace(
       /\\n/g,
       "\n"
     );
@@ -181,13 +221,13 @@ export async function POST(request) {
     }
 
     // Generate JWT access token
-    const accessToken = await getAccessToken(clientEmail, privateKey);
+    const accessToken: string = await getAccessToken(clientEmail, privateKey);
 
-    const endpoint = `https://${location}-documentai.googleapis.com/v1/projects/${projectId}/locations/${location}/processors/${processorId}:process`;
+    const endpoint: string = `https://${location}-documentai.googleapis.com/v1/projects/${projectId}/locations/${location}/processors/${processorId}:process`;
 
-    const encodedDocument = buffer.toString("base64");
+    const encodedDocument: string = buffer.toString("base64");
 
-    const docAiResponse = await fetch(endpoint, {
+    const docAiResponse: globalThis.Response = await fetch(endpoint, {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${accessToken}`,
@@ -202,13 +242,13 @@ export async function POST(request) {
     });
 
     if (!docAiResponse.ok) {
-      const errBody = await docAiResponse.text();
+      const errBody: string = await docAiResponse.text();
       console.error("Document AI API error:", docAiResponse.status, errBody);
       throw new Error("Table extraction failed. Please try again or use a different file.");
     }
 
     const result = await docAiResponse.json();
-    const document = result.document;
+    const document: DocumentAIDocument | undefined = result.document;
 
     if (!document) {
       console.error("Document AI returned no document in response");
@@ -216,11 +256,11 @@ export async function POST(request) {
     }
 
     // Check page count against remaining monthly limit
-    const pageCount = (document.pages || []).length;
+    const pageCount: number = (document.pages || []).length;
 
     if (serviceClient) {
-      const usedPages = await getMonthlyPageCount(serviceClient, user.id);
-      const remaining = monthlyPageLimit - usedPages;
+      const usedPages: number = await getMonthlyPageCount(serviceClient, user.id);
+      const remaining: number = monthlyPageLimit - usedPages;
 
       if (pageCount > remaining) {
         // Clean up
@@ -234,11 +274,11 @@ export async function POST(request) {
     }
 
     // Extract tables from Document AI response
-    const tables = [];
+    const tables: ExtractedTable[] = [];
 
     for (const page of document.pages || []) {
       for (const table of page.tables || []) {
-        const extractedTable = {
+        const extractedTable: ExtractedTable = {
           pageNumber: (page.pageNumber || 1),
           headerRows: [],
           bodyRows: [],
@@ -246,9 +286,9 @@ export async function POST(request) {
 
         // Extract header rows
         for (const headerRow of table.headerRows || []) {
-          const row = [];
+          const row: string[] = [];
           for (const cell of headerRow.cells || []) {
-            const text = extractTextFromLayout(cell.layout, document.text || "");
+            const text: string = extractTextFromLayout(cell.layout, document.text || "");
             row.push(text.trim());
           }
           extractedTable.headerRows.push(row);
@@ -256,9 +296,9 @@ export async function POST(request) {
 
         // Extract body rows
         for (const bodyRow of table.bodyRows || []) {
-          const row = [];
+          const row: string[] = [];
           for (const cell of bodyRow.cells || []) {
-            const text = extractTextFromLayout(cell.layout, document.text || "");
+            const text: string = extractTextFromLayout(cell.layout, document.text || "");
             row.push(text.trim());
           }
           extractedTable.bodyRows.push(row);
@@ -287,8 +327,8 @@ export async function POST(request) {
     workbook.created = new Date();
 
     for (let i = 0; i < tables.length; i++) {
-      const table = tables[i];
-      const sheetName =
+      const table: ExtractedTable = tables[i];
+      const sheetName: string =
         tables.length === 1
           ? "Table"
           : `Page ${table.pageNumber} - Table ${i + 1}`;
@@ -299,7 +339,7 @@ export async function POST(request) {
       // Add header rows with styling
       for (const headerRow of table.headerRows) {
         const row = worksheet.addRow(headerRow);
-        row.eachCell((cell) => {
+        row.eachCell((cell: any) => {
           cell.font = { bold: true, color: { argb: "FFFFFFFF" } };
           cell.fill = {
             type: "pattern",
@@ -319,7 +359,7 @@ export async function POST(request) {
       // Add body rows
       for (let r = 0; r < table.bodyRows.length; r++) {
         const row = worksheet.addRow(table.bodyRows[r]);
-        row.eachCell((cell) => {
+        row.eachCell((cell: any) => {
           cell.border = {
             top: { style: "thin" },
             left: { style: "thin" },
@@ -339,10 +379,10 @@ export async function POST(request) {
       }
 
       // Auto-fit column widths
-      worksheet.columns.forEach((column) => {
-        let maxLength = 10;
-        column.eachCell({ includeEmpty: true }, (cell) => {
-          const cellValue = cell.value ? cell.value.toString() : "";
+      worksheet.columns.forEach((column: any) => {
+        let maxLength: number = 10;
+        column.eachCell({ includeEmpty: true }, (cell: any) => {
+          const cellValue: string = cell.value ? cell.value.toString() : "";
           maxLength = Math.max(maxLength, Math.min(cellValue.length + 4, 50));
         });
         column.width = maxLength;
@@ -369,8 +409,8 @@ export async function POST(request) {
     await logUsage(user.id, "table-extraction");
 
     // Get original filename for download
-    const originalName = body.originalName || "document";
-    const baseName = originalName
+    const originalName: string = body.originalName || "document";
+    const baseName: string = originalName
       .replace(/\.[^/.]+$/, "")
       .replace(/-[a-zA-Z0-9]{20,}$/g, "");
 
@@ -383,11 +423,11 @@ export async function POST(request) {
         "Cache-Control": "no-store",
       },
     });
-  } catch (err) {
+  } catch (err: unknown) {
     console.error("table-extraction route error:", err);
 
-    const raw = err && typeof err === "object" && err.message ? err.message : "";
-    const safe = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob\.vercel/i.test(raw)
+    const raw: string = err && typeof err === "object" && (err as Error).message ? (err as Error).message : "";
+    const safe: string = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob\.vercel/i.test(raw)
       ? "An error occurred while extracting tables. Please try again."
       : (raw || "An unexpected error occurred.");
 
@@ -405,14 +445,14 @@ export async function POST(request) {
 /**
  * Extract text content from a Document AI layout object using text anchors.
  */
-function extractTextFromLayout(layout, fullText) {
+function extractTextFromLayout(layout: Layout, fullText: string): string {
   if (!layout || !layout.textAnchor || !layout.textAnchor.textSegments) {
     return "";
   }
-  let text = "";
+  let text: string = "";
   for (const segment of layout.textAnchor.textSegments) {
-    const startIndex = Number(segment.startIndex || 0);
-    const endIndex = Number(segment.endIndex || 0);
+    const startIndex: number = Number(segment.startIndex || 0);
+    const endIndex: number = Number(segment.endIndex || 0);
     text += fullText.substring(startIndex, endIndex);
   }
   return text;
@@ -422,12 +462,12 @@ function extractTextFromLayout(layout, fullText) {
  * Generate a Google OAuth2 access token from a service account.
  * Uses JWT → token exchange via REST (no gRPC, no native crypto issues).
  */
-async function getAccessToken(clientEmail, privateKey) {
+async function getAccessToken(clientEmail: string, privateKey: string): Promise<string> {
   const crypto = await import("crypto");
 
-  const now = Math.floor(Date.now() / 1000);
-  const header = { alg: "RS256", typ: "JWT" };
-  const payload = {
+  const now: number = Math.floor(Date.now() / 1000);
+  const header: { alg: string; typ: string } = { alg: "RS256", typ: "JWT" };
+  const payload: { iss: string; scope: string; aud: string; iat: number; exp: number } = {
     iss: clientEmail,
     scope: "https://www.googleapis.com/auth/cloud-platform",
     aud: "https://oauth2.googleapis.com/token",
@@ -435,26 +475,26 @@ async function getAccessToken(clientEmail, privateKey) {
     exp: now + 3600,
   };
 
-  const encode = (obj) =>
+  const encode = (obj: object): string =>
     Buffer.from(JSON.stringify(obj))
       .toString("base64url");
 
-  const unsignedToken = `${encode(header)}.${encode(payload)}`;
+  const unsignedToken: string = `${encode(header)}.${encode(payload)}`;
 
   const sign = crypto.createSign("RSA-SHA256");
   sign.update(unsignedToken);
-  const signature = sign.sign(privateKey, "base64url");
+  const signature: string = sign.sign(privateKey, "base64url");
 
-  const jwt = `${unsignedToken}.${signature}`;
+  const jwt: string = `${unsignedToken}.${signature}`;
 
-  const tokenResponse = await fetch("https://oauth2.googleapis.com/token", {
+  const tokenResponse: globalThis.Response = await fetch("https://oauth2.googleapis.com/token", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: `grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&assertion=${jwt}`,
   });
 
   if (!tokenResponse.ok) {
-    const errText = await tokenResponse.text();
+    const errText: string = await tokenResponse.text();
     throw new Error(`Failed to get access token: ${errText}`);
   }
 

@@ -4,38 +4,38 @@ import { pipeline } from "stream/promises";
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { writeFile, unlink, readFile } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
 import { isValidBlobUrl } from "@/lib/validate-blob-url";
 
-function errorResponse(message, status = 500) {
+function errorResponse(message: string, status: number = 500): Response {
   return Response.json({ error: message }, { status });
 }
 
-const MAX_RESUME_TEXT_CHARS = 7000;
+const MAX_RESUME_TEXT_CHARS: number = 7000;
 
-function clampScore(value, fallback = 0) {
+function clampScore(value: unknown, fallback: number = 0): number {
   const num = Number(value);
   if (!Number.isFinite(num)) return fallback;
   return Math.max(0, Math.min(100, Math.round(num)));
 }
 
-function cleanString(value, fallback = "") {
+function cleanString(value: unknown, fallback: string = ""): string {
   return typeof value === "string" ? value.trim() : fallback;
 }
 
-function cleanStringArray(value, maxItems) {
+function cleanStringArray(value: unknown, maxItems: number): string[] {
   if (!Array.isArray(value)) return [];
 
-  const seen = new Set();
-  const items = [];
+  const seen = new Set<string>();
+  const items: string[] = [];
 
   for (const entry of value) {
-    const cleaned = cleanString(entry);
-    const key = cleaned.toLowerCase();
+    const cleaned: string = cleanString(entry);
+    const key: string = cleaned.toLowerCase();
     if (!cleaned || seen.has(key)) continue;
     seen.add(key);
     items.push(cleaned);
@@ -45,23 +45,96 @@ function cleanStringArray(value, maxItems) {
   return items;
 }
 
-function normalizeSection(value, fallbackFeedback) {
+interface SectionScore {
+  score: number;
+  feedback: string;
+}
+
+function normalizeSection(value: any, fallbackFeedback: string): SectionScore {
   return {
     score: clampScore(value?.score),
     feedback: cleanString(value?.feedback, fallbackFeedback),
   };
 }
 
-function normalizeAnalysis(rawAnalysis, jobDescriptionProvided) {
-  const keywordAnalysis = {
+interface ParsingRisk {
+  severity: string;
+  type: string;
+  issue: string;
+  fix: string;
+}
+
+interface FormatRisk {
+  severity: string;
+  issue: string;
+}
+
+interface BulletFeedback {
+  original: string;
+  problem: string;
+  improved: string;
+}
+
+interface RewriteSuggestion {
+  section: string;
+  original: string;
+  improved: string;
+}
+
+interface SectionImprovement {
+  section: string;
+  priority: string;
+  issue: string;
+  fix: string;
+}
+
+interface KeywordAnalysis {
+  matched: string[];
+  missing: string[];
+  partial: string[];
+}
+
+interface NormalizedAnalysis {
+  version: string;
+  job_description_provided: boolean;
+  score: number;
+  summary: string;
+  score_breakdown: {
+    formatting: number;
+    keyword_match: number;
+    experience_quality: number;
+    section_completeness: number;
+    parsing_clarity: number;
+  };
+  sections: {
+    contact_info: SectionScore;
+    formatting: SectionScore;
+    keywords: SectionScore;
+    experience: SectionScore;
+    education: SectionScore;
+    skills: SectionScore;
+  };
+  improvements: string[];
+  keyword_analysis: KeywordAnalysis;
+  missing_keywords: string[];
+  matched_keywords: string[];
+  parsing_risks: ParsingRisk[];
+  format_risks: FormatRisk[];
+  bullet_feedback: BulletFeedback[];
+  rewrite_suggestions: RewriteSuggestion[];
+  section_improvements: SectionImprovement[];
+}
+
+function normalizeAnalysis(rawAnalysis: any, jobDescriptionProvided: boolean): NormalizedAnalysis {
+  const keywordAnalysis: KeywordAnalysis = {
     matched: cleanStringArray(rawAnalysis?.keyword_analysis?.matched ?? rawAnalysis?.matched_keywords, 8),
     missing: cleanStringArray(rawAnalysis?.keyword_analysis?.missing ?? rawAnalysis?.missing_keywords, 8),
     partial: cleanStringArray(rawAnalysis?.keyword_analysis?.partial, 5),
   };
 
-  const parsingRisks = Array.isArray(rawAnalysis?.parsing_risks)
+  const parsingRisks: ParsingRisk[] = Array.isArray(rawAnalysis?.parsing_risks)
     ? rawAnalysis.parsing_risks
-        .map((risk) => ({
+        .map((risk: any) => ({
           severity: ["high", "medium", "low"].includes(risk?.severity) ? risk.severity : "medium",
           type: ["tables", "columns", "headers", "footers", "graphics", "dates", "file_format", "unknown"].includes(risk?.type)
             ? risk.type
@@ -69,21 +142,21 @@ function normalizeAnalysis(rawAnalysis, jobDescriptionProvided) {
           issue: cleanString(risk?.issue),
           fix: cleanString(risk?.fix),
         }))
-        .filter((risk) => risk.issue)
+        .filter((risk: ParsingRisk) => risk.issue)
         .slice(0, 4)
     : [];
 
-  const formatRisks = [
-    ...parsingRisks.map((risk) => ({
+  const formatRisks: FormatRisk[] = [
+    ...parsingRisks.map((risk: ParsingRisk) => ({
       severity: risk.severity,
       issue: risk.issue,
     })),
     ...(Array.isArray(rawAnalysis?.format_risks) ? rawAnalysis.format_risks : [])
-      .map((risk) => ({
+      .map((risk: any) => ({
         severity: ["high", "medium", "low"].includes(risk?.severity) ? risk.severity : "medium",
         issue: cleanString(risk?.issue),
       }))
-      .filter((risk) => risk.issue),
+      .filter((risk: FormatRisk) => risk.issue),
   ].slice(0, 4);
 
   return {
@@ -113,36 +186,36 @@ function normalizeAnalysis(rawAnalysis, jobDescriptionProvided) {
     parsing_risks: parsingRisks,
     format_risks: formatRisks,
     bullet_feedback: (Array.isArray(rawAnalysis?.bullet_feedback) ? rawAnalysis.bullet_feedback : [])
-      .map((item) => ({
+      .map((item: any) => ({
         original: cleanString(item?.original),
         problem: cleanString(item?.problem),
         improved: cleanString(item?.improved),
       }))
-      .filter((item) => item.original && item.problem && item.improved)
+      .filter((item: BulletFeedback) => item.original && item.problem && item.improved)
       .slice(0, 3),
     rewrite_suggestions: (Array.isArray(rawAnalysis?.rewrite_suggestions) ? rawAnalysis.rewrite_suggestions : [])
-      .map((item) => ({
+      .map((item: any) => ({
         section: cleanString(item?.section, "section"),
         original: cleanString(item?.original),
         improved: cleanString(item?.improved),
       }))
-      .filter((item) => item.original && item.improved)
+      .filter((item: RewriteSuggestion) => item.original && item.improved)
       .slice(0, 3),
     section_improvements: (Array.isArray(rawAnalysis?.section_improvements) ? rawAnalysis.section_improvements : [])
-      .map((item) => ({
+      .map((item: any) => ({
         section: cleanString(item?.section, "section"),
         priority: ["high", "medium", "low"].includes(item?.priority) ? item.priority : "medium",
         issue: cleanString(item?.issue),
         fix: cleanString(item?.fix),
       }))
-      .filter((item) => item.issue && item.fix)
+      .filter((item: SectionImprovement) => item.issue && item.fix)
       .slice(0, 6),
   };
 }
 
-export async function POST(request) {
-  let tmpPath = null;
-  let uploadedBlobUrl = null;
+export async function POST(request: NextRequest): Promise<Response> {
+  let tmpPath: string | null = null;
+  let uploadedBlobUrl: string | null = null;
 
   try {
     // Auth: Pro/Business/Enterprise only
@@ -173,7 +246,7 @@ export async function POST(request) {
       );
     }
 
-    const apiKey = process.env.OPENAI_API_KEY;
+    const apiKey: string | undefined = process.env.OPENAI_API_KEY;
     if (!apiKey) {
       console.error("OPENAI_API_KEY is not set");
       return errorResponse("The analysis service is temporarily unavailable. Please try again later.", 500);
@@ -181,8 +254,8 @@ export async function POST(request) {
 
     // Parse request
     const body = await request.json();
-    const blobUrl = body.blobUrl;
-    const jobDescription = body.jobDescription || "";
+    const blobUrl: string = body.blobUrl;
+    const jobDescription: string = body.jobDescription || "";
     uploadedBlobUrl = blobUrl;
 
     if (!blobUrl || typeof blobUrl !== "string") {
@@ -193,21 +266,21 @@ export async function POST(request) {
     }
 
     // Download PDF from blob
-    const res = await fetch(blobUrl);
+    const res: globalThis.Response = await fetch(blobUrl);
     if (!res.ok) {
       console.error(`Failed to fetch blob URL (${res.status})`);
       throw new Error("Failed to retrieve your uploaded file. Please try uploading again.");
     }
-    const buffer = Buffer.from(await res.arrayBuffer());
-    const id = randomUUID();
+    const buffer: Buffer = Buffer.from(await res.arrayBuffer());
+    const id: string = randomUUID();
     tmpPath = join("/tmp", `${id}-resume.pdf`);
     await writeFile(tmpPath, buffer);
 
     // Extract text from PDF using iLoveAPI pdftxt
-    const publicKey = process.env.ILOVEAPI_PUBLIC_KEY;
-    const secretKey = process.env.ILOVEAPI_SECRET_KEY;
+    const publicKey: string | undefined = process.env.ILOVEAPI_PUBLIC_KEY;
+    const secretKey: string | undefined = process.env.ILOVEAPI_SECRET_KEY;
 
-    let resumeText = "";
+    let resumeText: string = "";
 
     if (publicKey && secretKey) {
       const ILovePDFApi = (await import("@ilovepdf/ilovepdf-nodejs")).default;
@@ -248,8 +321,8 @@ export async function POST(request) {
     }
 
     // Analyze with OpenAI using a compact JSON contract.
-    const systemPrompt = "You are an ATS resume analyzer. Return only valid JSON. No markdown. No commentary. No code fences. Be concise. If evidence is weak, use fewer items rather than guessing.";
-    const userPrompt = `Analyze this resume for ATS compatibility.
+    const systemPrompt: string = "You are an ATS resume analyzer. Return only valid JSON. No markdown. No commentary. No code fences. Be concise. If evidence is weak, use fewer items rather than guessing.";
+    const userPrompt: string = `Analyze this resume for ATS compatibility.
 
 Output JSON matching this structure exactly:
 {
@@ -340,7 +413,7 @@ RESUME TEXT:
 ${resumeText.substring(0, MAX_RESUME_TEXT_CHARS)}`;
 
     // Call OpenAI with retry for rate limits
-    let openaiRes;
+    let openaiRes: globalThis.Response | undefined;
     for (let attempt = 0; attempt < 3; attempt++) {
       openaiRes = await fetch("https://api.openai.com/v1/chat/completions", {
         method: "POST",
@@ -362,31 +435,31 @@ ${resumeText.substring(0, MAX_RESUME_TEXT_CHARS)}`;
       if (openaiRes.ok || openaiRes.status !== 429) break;
 
       // Rate limited — wait and retry
-      const waitMs = (attempt + 1) * 5000;
+      const waitMs: number = (attempt + 1) * 5000;
       console.log(`OpenAI rate limited, retrying in ${waitMs}ms...`);
       await new Promise((r) => setTimeout(r, waitMs));
     }
 
-    if (!openaiRes.ok) {
-      const errBody = await openaiRes.text();
-      console.error("OpenAI API error:", openaiRes.status, errBody);
-      if (openaiRes.status === 429) {
+    if (!openaiRes!.ok) {
+      const errBody: string = await openaiRes!.text();
+      console.error("OpenAI API error:", openaiRes!.status, errBody);
+      if (openaiRes!.status === 429) {
         throw new Error("AI service is temporarily busy. Please try again in a few seconds.");
       }
-      console.error("AI analysis request failed:", openaiRes.status); throw new Error("An error occurred while analyzing your file. Please try again.");
+      console.error("AI analysis request failed:", openaiRes!.status); throw new Error("An error occurred while analyzing your file. Please try again.");
     }
 
-    const openaiData = await openaiRes.json();
-    const content = openaiData.choices?.[0]?.message?.content;
+    const openaiData = await openaiRes!.json();
+    const content: string | undefined = openaiData.choices?.[0]?.message?.content;
 
     if (!content) {
       throw new Error("AI returned no analysis.");
     }
 
     // Parse the JSON response
-    let analysis;
+    let analysis: NormalizedAnalysis;
     try {
-      const cleaned = content.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
+      const cleaned: string = content.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
       analysis = normalizeAnalysis(JSON.parse(cleaned), Boolean(jobDescription.trim()));
     } catch {
       console.error("Failed to parse AI response:", content);
@@ -398,11 +471,11 @@ ${resumeText.substring(0, MAX_RESUME_TEXT_CHARS)}`;
     await logUsage(user.id, "ats-optimizer");
 
     return NextResponse.json(analysis);
-  } catch (err) {
+  } catch (err: unknown) {
     console.error("ats-optimizer route error:", err);
 
-    const raw = err && typeof err === "object" && err.message ? err.message : "";
-    const safe = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob.vercel/i.test(raw)
+    const raw: string = err && typeof err === "object" && (err as Error).message ? (err as Error).message : "";
+    const safe: string = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob.vercel/i.test(raw)
       ? "An error occurred while processing your file. Please try again."
       : (raw || "An unexpected error occurred.");
 

@@ -4,25 +4,25 @@ import { pipeline } from "stream/promises";
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
 import { isValidBlobUrl } from "@/lib/validate-blob-url";
 
-function errorResponse(message, status = 500) {
+function errorResponse(message: string, status: number = 500): Response {
   return Response.json({ error: message }, { status });
 }
 
-const MAX_PDF_TEXT_CHARS = 12000;
+const MAX_PDF_TEXT_CHARS: number = 10000;
 
-export async function POST(request) {
-  let tmpPath = null;
-  let uploadedBlobUrl = null;
+export async function POST(request: NextRequest): Promise<Response> {
+  let tmpPath: string | null = null;
+  let uploadedBlobUrl: string | null = null;
 
   try {
-    // Auth: Pro/Business/Enterprise
+    // Auth: Business/Enterprise only
     const { createClient } = await import("@/lib/supabase/server");
     const supabase = await createClient();
     const {
@@ -40,7 +40,6 @@ export async function POST(request) {
       .eq("id", user.id)
       .single();
     if (
-      profile?.plan !== "pro" &&
       profile?.plan !== "business" &&
       profile?.plan !== "enterprise"
     ) {
@@ -50,17 +49,14 @@ export async function POST(request) {
       );
     }
 
-    const apiKey = process.env.OPENAI_API_KEY;
+    const apiKey: string | undefined = process.env.OPENAI_API_KEY;
     if (!apiKey) {
       return errorResponse("The service is temporarily unavailable. Please try again later.", 500);
     }
 
     // Parse request
     const body = await request.json();
-    const blobUrl = body.blobUrl;
-    const questionType = body.questionType || "mixed"; // "multiple_choice", "short_answer", "true_false", "mixed"
-    const count = Math.min(Math.max(parseInt(body.count) || 10, 3), 20);
-    const difficulty = body.difficulty || "medium"; // "easy", "medium", "hard"
+    const blobUrl: string = body.blobUrl;
     uploadedBlobUrl = blobUrl;
 
     if (!blobUrl || typeof blobUrl !== "string") {
@@ -71,13 +67,13 @@ export async function POST(request) {
     }
 
     // Download PDF from blob
-    const res = await fetch(blobUrl);
+    const res: globalThis.Response = await fetch(blobUrl);
     if (!res.ok) {
       console.error("Failed to fetch PDF:", res.status); throw new Error("Failed to retrieve your uploaded file. Please try uploading again.");
     }
-    const buffer = Buffer.from(await res.arrayBuffer());
-    const id = randomUUID();
-    tmpPath = join("/tmp", `${id}-questions.pdf`);
+    const buffer: Buffer = Buffer.from(await res.arrayBuffer());
+    const id: string = randomUUID();
+    tmpPath = join("/tmp", `${id}-extract.pdf`);
     await writeFile(tmpPath, buffer);
 
     // ── Reject blank PDFs before hitting paid API ──
@@ -94,10 +90,10 @@ export async function POST(request) {
     }
 
     // Extract text using iLoveAPI
-    const publicKey = process.env.ILOVEAPI_PUBLIC_KEY;
-    const secretKey = process.env.ILOVEAPI_SECRET_KEY;
+    const publicKey: string | undefined = process.env.ILOVEAPI_PUBLIC_KEY;
+    const secretKey: string | undefined = process.env.ILOVEAPI_SECRET_KEY;
 
-    let documentText = "";
+    let documentText: string = "";
 
     if (publicKey && secretKey) {
       const ILovePDFApi = (await import("@ilovepdf/ilovepdf-nodejs")).default;
@@ -114,6 +110,7 @@ export async function POST(request) {
     }
 
     if (!documentText || documentText.trim().length < 50) {
+      // Fallback: try reading raw text from buffer
       documentText = buffer.toString("utf-8").replace(/[^\x20-\x7E\n\r\t]/g, " ").trim();
     }
 
@@ -136,53 +133,50 @@ export async function POST(request) {
 
     documentText = documentText.substring(0, MAX_PDF_TEXT_CHARS);
 
-    // Build question type instruction
-    const typeInstruction =
-      questionType === "multiple_choice"
-        ? "Generate ONLY multiple choice questions. Each must have exactly 4 options (A, B, C, D) with one correct answer."
-        : questionType === "short_answer"
-          ? "Generate ONLY short answer questions. Each answer should be 1-3 sentences."
-          : questionType === "true_false"
-            ? "Generate ONLY true/false questions. Each must have a clear true or false answer."
-            : "Generate a MIX of multiple choice, short answer, and true/false questions.";
-
-    const difficultyInstruction =
-      difficulty === "easy"
-        ? "Questions should test basic recall and understanding. Straightforward factual questions."
-        : difficulty === "hard"
-          ? "Questions should test critical thinking, analysis, and deeper understanding. Include questions that require combining multiple concepts."
-          : "Questions should test understanding and application. A mix of factual and analytical questions.";
-
-    const systemPrompt = `You are an educational question generator. Generate ${count} questions based on the document content below. Return only valid JSON. No markdown. No code fences.
-
-${typeInstruction}
-${difficultyInstruction}
+    // Call OpenAI to extract structured data
+    const systemPrompt: string = `You are a document data extraction assistant. Extract ALL structured data from the document text below. Return only valid JSON. No markdown. No code fences. No commentary.
 
 Output JSON matching this structure exactly:
 {
-  "questions": [
-    {
-      "type": "multiple_choice" | "short_answer" | "true_false",
-      "question": string,
-      "options": ["A) ...", "B) ...", "C) ...", "D) ..."] | null,
-      "answer": string,
-      "explanation": string
-    }
-  ]
+  "document_type": string (e.g. "invoice", "contract", "receipt", "form", "report", "letter", "resume", "other"),
+  "summary": string (1-2 sentence summary of the document),
+  "people": [
+    { "name": string, "role": string or null }
+  ],
+  "organizations": [string],
+  "dates": [
+    { "label": string, "value": string }
+  ],
+  "amounts": [
+    { "label": string, "value": string, "currency": string or null }
+  ],
+  "contact_info": {
+    "emails": [string],
+    "phones": [string],
+    "addresses": [string]
+  },
+  "key_values": [
+    { "key": string, "value": string }
+  ],
+  "important_clauses": [string]
 }
 
 Rules:
-- Generate exactly ${count} questions.
-- All questions must be based ONLY on information in the document. Do not use outside knowledge.
-- For multiple choice: exactly 4 options, answer is the letter (e.g. "B").
-- For short answer: answer is 1-3 sentences.
-- For true/false: answer is "True" or "False".
-- explanation: 1 sentence explaining why the answer is correct, referencing the document.
-- options is null for short_answer and true_false types.
-- Keep questions clear, concise, and unambiguous.`;
+- Extract ONLY data that is clearly present in the document. Do not guess or infer.
+- people: names of individuals mentioned, with role if stated (e.g. "Buyer", "Signatory", "Manager")
+- organizations: company names, institutions, agencies
+- dates: labeled dates (e.g. "Invoice Date", "Due Date", "Effective Date", "Date of Birth")
+- amounts: monetary values with labels (e.g. "Total", "Subtotal", "Tax", "Salary")
+- contact_info: emails, phone numbers, physical addresses found in the document
+- key_values: other important labeled fields (e.g. "Invoice #", "Policy Number", "Account Number", "SSN last 4")
+- important_clauses: key legal, contractual, or policy statements (max 5, keep short)
+- If a category has no data, return an empty array or object
+- Keep all strings concise and production-safe`;
 
-    // Call OpenAI with retry
-    let openaiRes;
+    const userPrompt: string = `Extract all structured data from this document:\n\n${documentText}`;
+
+    // Call OpenAI with retry for rate limits
+    let openaiRes: globalThis.Response | undefined;
     for (let attempt = 0; attempt < 3; attempt++) {
       openaiRes = await fetch("https://api.openai.com/v1/chat/completions", {
         method: "POST",
@@ -194,54 +188,56 @@ Rules:
           model: "gpt-4o-mini",
           messages: [
             { role: "system", content: systemPrompt },
-            { role: "user", content: `Generate questions from this document:\n\n${documentText}` },
+            { role: "user", content: userPrompt },
           ],
-          temperature: 0.5,
-          max_tokens: 3000,
+          temperature: 0.1,
+          max_tokens: 2000,
         }),
       });
 
       if (openaiRes.ok || openaiRes.status !== 429) break;
 
-      const waitMs = (attempt + 1) * 5000;
+      const waitMs: number = (attempt + 1) * 5000;
+      console.log(`OpenAI rate limited, retrying in ${waitMs}ms...`);
       await new Promise((r) => setTimeout(r, waitMs));
     }
 
-    if (!openaiRes.ok) {
-      const errBody = await openaiRes.text();
-      console.error("OpenAI API error:", openaiRes.status, errBody);
-      if (openaiRes.status === 429) {
+    if (!openaiRes!.ok) {
+      const errBody: string = await openaiRes!.text();
+      console.error("OpenAI API error:", openaiRes!.status, errBody);
+      if (openaiRes!.status === 429) {
         throw new Error("AI service is temporarily busy. Please try again in a few seconds.");
       }
-      console.error("AI service request failed:", openaiRes.status); throw new Error("An error occurred while processing your request. Please try again.");
+      console.error("AI service request failed:", openaiRes!.status); throw new Error("An error occurred while processing your request. Please try again.");
     }
 
-    const openaiData = await openaiRes.json();
-    const content = openaiData.choices?.[0]?.message?.content;
+    const openaiData = await openaiRes!.json();
+    const content: string | undefined = openaiData.choices?.[0]?.message?.content;
 
     if (!content) {
       throw new Error("AI returned no response.");
     }
 
-    let result;
+    // Parse the JSON response
+    let extraction: any;
     try {
-      const cleaned = content.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
-      result = JSON.parse(cleaned);
+      const cleaned: string = content.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
+      extraction = JSON.parse(cleaned);
     } catch {
       console.error("Failed to parse AI response:", content);
-      throw new Error("AI returned invalid format.");
+      throw new Error("AI returned invalid extraction format.");
     }
 
     // Log usage
     const { logUsage } = await import("@/lib/usage-check");
-    await logUsage(user.id, "question-generator");
+    await logUsage(user.id, "smart-extraction");
 
-    return NextResponse.json(result);
-  } catch (err) {
-    console.error("question-generator route error:", err);
+    return NextResponse.json(extraction);
+  } catch (err: unknown) {
+    console.error("smart-extraction route error:", err);
 
-    const raw = err && typeof err === "object" && err.message ? err.message : "";
-    const safe = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob.vercel/i.test(raw)
+    const raw: string = err && typeof err === "object" && (err as Error).message ? (err as Error).message : "";
+    const safe: string = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob.vercel/i.test(raw)
       ? "An error occurred while processing your file. Please try again."
       : (raw || "An unexpected error occurred.");
 

@@ -1,14 +1,14 @@
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-function errorResponse(message, status = 500) {
+function errorResponse(message: string, status: number = 500): Response {
   return Response.json({ error: message }, { status });
 }
 
-async function callOpenAI(apiKey, prompt) {
-  let openaiRes;
+async function callOpenAI(apiKey: string, prompt: string): Promise<string> {
+  let openaiRes: globalThis.Response | undefined;
   for (let attempt = 0; attempt < 3; attempt++) {
     openaiRes = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
@@ -27,34 +27,50 @@ async function callOpenAI(apiKey, prompt) {
     await new Promise((r) => setTimeout(r, (attempt + 1) * 5000));
   }
 
-  if (!openaiRes.ok) {
-    if (openaiRes.status === 429) throw new Error("AI service is temporarily busy. Please try again.");
-    console.error("AI generation request failed:", openaiRes.status); throw new Error("An error occurred while generating your resume. Please try again.");
+  if (!openaiRes!.ok) {
+    if (openaiRes!.status === 429) throw new Error("AI service is temporarily busy. Please try again.");
+    console.error("AI generation request failed:", openaiRes!.status); throw new Error("An error occurred while generating your resume. Please try again.");
   }
 
-  const data = await openaiRes.json();
+  const data = await openaiRes!.json();
   return data.choices?.[0]?.message?.content || "";
 }
 
-function buildDocx(resumeText, coverLetterText) {
+interface ResumeInfo {
+  jobTarget?: string;
+  fullName?: string;
+  email?: string;
+  phone?: string;
+  location?: string;
+  linkedin?: string;
+  summary?: string;
+  experience?: string;
+  education?: string;
+  skills?: string;
+  certifications?: string;
+  languages?: string;
+  additional?: string;
+}
+
+function buildDocx(resumeText: string, coverLetterText: string): Promise<Buffer> {
   // Dynamic import inside function to avoid bundling issues
   return import("docx").then(({ Document, Paragraph, TextRun, AlignmentType, BorderStyle, Packer, SectionType }) => {
-    const sections = [];
+    const sections: any[] = [];
 
     // Parse resume text into document sections
-    const resumeChildren = [];
-    const lines = resumeText.split("\n");
-    let isFirstLine = true;
-    let isContactBlock = true;
+    const resumeChildren: any[] = [];
+    const lines: string[] = resumeText.split("\n");
+    let isFirstLine: boolean = true;
+    let isContactBlock: boolean = true;
 
     for (const rawLine of lines) {
-      const line = rawLine.trim();
+      const line: string = rawLine.trim();
       if (line === "") {
         resumeChildren.push(new Paragraph({ spacing: { after: 80 } }));
         continue;
       }
 
-      const isHeading = line === line.toUpperCase() && line.length > 3 && /[A-Z]{3,}/.test(line) && !line.includes("@") && !line.includes("(");
+      const isHeading: boolean = line === line.toUpperCase() && line.length > 3 && /[A-Z]{3,}/.test(line) && !line.includes("@") && !line.includes("(");
 
       if (isFirstLine) {
         resumeChildren.push(new Paragraph({
@@ -93,8 +109,8 @@ function buildDocx(resumeText, coverLetterText) {
 
       isContactBlock = false;
 
-      const isBullet = line.startsWith("•") || (line.startsWith("-") && line.length > 2 && line[1] === " ");
-      const isSubHeading = (line.includes("–") || line.includes("—") || line.includes(" - ")) && !isBullet && line.length < 120;
+      const isBullet: boolean = line.startsWith("•") || (line.startsWith("-") && line.length > 2 && line[1] === " ");
+      const isSubHeading: boolean = (line.includes("–") || line.includes("—") || line.includes(" - ")) && !isBullet && line.length < 120;
 
       if (isSubHeading) {
         resumeChildren.push(new Paragraph({
@@ -129,11 +145,11 @@ function buildDocx(resumeText, coverLetterText) {
 
     // Cover letter as second section (new page)
     if (coverLetterText) {
-      const clChildren = [];
-      const clLines = coverLetterText.split("\n");
+      const clChildren: any[] = [];
+      const clLines: string[] = coverLetterText.split("\n");
 
       for (const rawLine of clLines) {
-        const line = rawLine.trim();
+        const line: string = rawLine.trim();
         if (line === "") {
           clChildren.push(new Paragraph({ spacing: { after: 80 } }));
           continue;
@@ -160,7 +176,7 @@ function buildDocx(resumeText, coverLetterText) {
   });
 }
 
-export async function POST(request) {
+export async function POST(request: NextRequest): Promise<Response> {
   try {
     // Auth: Pro/Business/Enterprise only
     const { createClient } = await import("@/lib/supabase/server");
@@ -174,33 +190,33 @@ export async function POST(request) {
       return NextResponse.json({ error: "upgrade_required" }, { status: 403 });
     }
 
-    const apiKey = process.env.OPENAI_API_KEY;
+    const apiKey: string | undefined = process.env.OPENAI_API_KEY;
     if (!apiKey) {
       console.error("OPENAI_API_KEY is not set");
       return errorResponse("The service is temporarily unavailable. Please try again later.", 500);
     }
 
     const body = await request.json();
-    const mode = body.mode;
-    const includeCoverLetter = body.includeCoverLetter || false;
-    const selectedImprovements = body.selectedImprovements || [];
-    const selectedKeywords = body.selectedKeywords || [];
+    const mode: string = body.mode;
+    const includeCoverLetter: boolean = body.includeCoverLetter || false;
+    const selectedImprovements: string[] = body.selectedImprovements || [];
+    const selectedKeywords: string[] = body.selectedKeywords || [];
 
     // Build the improvement instructions
-    let improvementInstructions = "";
+    let improvementInstructions: string = "";
     if (selectedImprovements.length > 0) {
-      improvementInstructions += `\n\nThe user specifically wants these improvements applied:\n${selectedImprovements.map((s, i) => `${i + 1}. ${s}`).join("\n")}`;
+      improvementInstructions += `\n\nThe user specifically wants these improvements applied:\n${selectedImprovements.map((s: string, i: number) => `${i + 1}. ${s}`).join("\n")}`;
     }
     if (selectedKeywords.length > 0) {
       improvementInstructions += `\n\nThe user wants these keywords incorporated naturally throughout the resume: ${selectedKeywords.join(", ")}`;
     }
 
-    let resumePrompt = "";
+    let resumePrompt: string = "";
 
     if (mode === "rewrite") {
-      const resumeText = body.resumeText;
-      const jobDescription = body.jobDescription || "";
-      const analysisFeedback = body.analysisFeedback || "";
+      const resumeText: string = body.resumeText;
+      const jobDescription: string = body.jobDescription || "";
+      const analysisFeedback: string = body.analysisFeedback || "";
 
       if (!resumeText) return errorResponse("Missing resume text.", 400);
 
@@ -227,7 +243,7 @@ ${resumeText.substring(0, 6000)}
 Return the complete rewritten resume as plain text with clear section headings. No explanation — just the resume.`
 
     } else if (mode === "build") {
-      const info = body.info;
+      const info: ResumeInfo = body.info;
       if (!info) return errorResponse("Missing resume information.", 400);
 
       resumePrompt = `You are an expert resume writer. Create a professional ATS-optimized resume from this information.
@@ -266,14 +282,14 @@ Return the complete resume as plain text. No explanation.`
     }
 
     // Generate resume
-    const resumeContent = await callOpenAI(apiKey, resumePrompt);
+    const resumeContent: string = await callOpenAI(apiKey, resumePrompt);
     if (!resumeContent) throw new Error("AI returned no content.");
 
     // Generate cover letter if requested
-    let coverLetterContent = "";
+    let coverLetterContent: string = "";
     if (includeCoverLetter) {
-      const jobDescription = body.jobDescription || body.info?.jobTarget || "";
-      const clPrompt = `You are an expert cover letter writer. Write a professional, compelling cover letter based on this resume.
+      const jobDescription: string = body.jobDescription || body.info?.jobTarget || "";
+      const clPrompt: string = `You are an expert cover letter writer. Write a professional, compelling cover letter based on this resume.
 
 RULES:
 - Professional but warm tone
@@ -295,13 +311,13 @@ Return the cover letter as plain text. No explanation.`
     }
 
     // Generate Word document
-    const docxBuffer = await buildDocx(resumeContent, coverLetterContent);
+    const docxBuffer: Buffer = await buildDocx(resumeContent, coverLetterContent);
 
     // Log usage
     const { logUsage } = await import("@/lib/usage-check");
     await logUsage(user.id, "generate-resume");
 
-    const filename = includeCoverLetter ? "resume-and-cover-letter.docx" : mode === "rewrite" ? "resume-optimized.docx" : "resume-new.docx";
+    const filename: string = includeCoverLetter ? "resume-and-cover-letter.docx" : mode === "rewrite" ? "resume-optimized.docx" : "resume-new.docx";
 
     return new NextResponse(Buffer.from(docxBuffer), {
       status: 200,
@@ -311,10 +327,10 @@ Return the cover letter as plain text. No explanation.`
         "Cache-Control": "no-store",
       },
     });
-  } catch (err) {
+  } catch (err: unknown) {
     console.error("generate-resume route error:", err);
-    const raw = err && typeof err === "object" && err.message ? err.message : "";
-    const safe = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob\.vercel/i.test(raw)
+    const raw: string = err && typeof err === "object" && (err as Error).message ? (err as Error).message : "";
+    const safe: string = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob\.vercel/i.test(raw)
       ? "An error occurred while generating your resume. Please try again."
       : (raw || "An unexpected error occurred.");
     return errorResponse(safe, 500);

@@ -4,25 +4,25 @@ import { pipeline } from "stream/promises";
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
 import { isValidBlobUrl } from "@/lib/validate-blob-url";
 
-function errorResponse(message, status = 500) {
+function errorResponse(message: string, status: number = 500): Response {
   return Response.json({ error: message }, { status });
 }
 
-const MAX_PDF_TEXT_CHARS = 14000;
+const MAX_PDF_TEXT_CHARS: number = 12000;
 
-export async function POST(request) {
-  let tmpPath = null;
-  let uploadedBlobUrl = null;
+export async function POST(request: NextRequest): Promise<Response> {
+  let tmpPath: string | null = null;
+  let uploadedBlobUrl: string | null = null;
 
   try {
-    // Auth: Business/Enterprise only
+    // Auth: Pro/Business/Enterprise
     const { createClient } = await import("@/lib/supabase/server");
     const supabase = await createClient();
     const {
@@ -40,6 +40,7 @@ export async function POST(request) {
       .eq("id", user.id)
       .single();
     if (
+      profile?.plan !== "pro" &&
       profile?.plan !== "business" &&
       profile?.plan !== "enterprise"
     ) {
@@ -49,16 +50,17 @@ export async function POST(request) {
       );
     }
 
-    const apiKey = process.env.OPENAI_API_KEY;
+    const apiKey: string | undefined = process.env.OPENAI_API_KEY;
     if (!apiKey) {
       return errorResponse("The service is temporarily unavailable. Please try again later.", 500);
     }
 
     // Parse request
     const body = await request.json();
-    const blobUrl = body.blobUrl;
-    const length = body.length || "medium"; // "short", "medium", "detailed"
-    const language = body.language || "same"; // "same", "english", "spanish", "portuguese"
+    const blobUrl: string = body.blobUrl;
+    const questionType: string = body.questionType || "mixed"; // "multiple_choice", "short_answer", "true_false", "mixed"
+    const count: number = Math.min(Math.max(parseInt(body.count) || 10, 3), 20);
+    const difficulty: string = body.difficulty || "medium"; // "easy", "medium", "hard"
     uploadedBlobUrl = blobUrl;
 
     if (!blobUrl || typeof blobUrl !== "string") {
@@ -69,13 +71,13 @@ export async function POST(request) {
     }
 
     // Download PDF from blob
-    const res = await fetch(blobUrl);
+    const res: globalThis.Response = await fetch(blobUrl);
     if (!res.ok) {
       console.error("Failed to fetch PDF:", res.status); throw new Error("Failed to retrieve your uploaded file. Please try uploading again.");
     }
-    const buffer = Buffer.from(await res.arrayBuffer());
-    const id = randomUUID();
-    tmpPath = join("/tmp", `${id}-summarize.pdf`);
+    const buffer: Buffer = Buffer.from(await res.arrayBuffer());
+    const id: string = randomUUID();
+    tmpPath = join("/tmp", `${id}-questions.pdf`);
     await writeFile(tmpPath, buffer);
 
     // ── Reject blank PDFs before hitting paid API ──
@@ -92,10 +94,10 @@ export async function POST(request) {
     }
 
     // Extract text using iLoveAPI
-    const publicKey = process.env.ILOVEAPI_PUBLIC_KEY;
-    const secretKey = process.env.ILOVEAPI_SECRET_KEY;
+    const publicKey: string | undefined = process.env.ILOVEAPI_PUBLIC_KEY;
+    const secretKey: string | undefined = process.env.ILOVEAPI_SECRET_KEY;
 
-    let documentText = "";
+    let documentText: string = "";
 
     if (publicKey && secretKey) {
       const ILovePDFApi = (await import("@ilovepdf/ilovepdf-nodejs")).default;
@@ -134,36 +136,53 @@ export async function POST(request) {
 
     documentText = documentText.substring(0, MAX_PDF_TEXT_CHARS);
 
-    // Build length instruction
-    const lengthInstruction =
-      length === "short"
-        ? "Provide a brief summary in 2-3 sentences (max 100 words)."
-        : length === "detailed"
-          ? "Provide a comprehensive summary with key sections, main arguments, and important details (300-500 words). Use clear paragraph breaks."
-          : "Provide a clear summary covering the main points (150-250 words). Use paragraph breaks for readability.";
+    // Build question type instruction
+    const typeInstruction: string =
+      questionType === "multiple_choice"
+        ? "Generate ONLY multiple choice questions. Each must have exactly 4 options (A, B, C, D) with one correct answer."
+        : questionType === "short_answer"
+          ? "Generate ONLY short answer questions. Each answer should be 1-3 sentences."
+          : questionType === "true_false"
+            ? "Generate ONLY true/false questions. Each must have a clear true or false answer."
+            : "Generate a MIX of multiple choice, short answer, and true/false questions.";
 
-    // Build language instruction
-    const languageInstruction =
-      language === "english"
-        ? "Write the summary in English."
-        : language === "spanish"
-          ? "Write the summary in Spanish."
-          : language === "portuguese"
-            ? "Write the summary in Brazilian Portuguese."
-            : "Write the summary in the same language as the document.";
+    const difficultyInstruction: string =
+      difficulty === "easy"
+        ? "Questions should test basic recall and understanding. Straightforward factual questions."
+        : difficulty === "hard"
+          ? "Questions should test critical thinking, analysis, and deeper understanding. Include questions that require combining multiple concepts."
+          : "Questions should test understanding and application. A mix of factual and analytical questions.";
 
-    const systemPrompt = `You are a professional document summarizer. Summarize the document text provided below. ${lengthInstruction} ${languageInstruction}
+    const systemPrompt: string = `You are an educational question generator. Generate ${count} questions based on the document content below. Return only valid JSON. No markdown. No code fences.
+
+${typeInstruction}
+${difficultyInstruction}
+
+Output JSON matching this structure exactly:
+{
+  "questions": [
+    {
+      "type": "multiple_choice" | "short_answer" | "true_false",
+      "question": string,
+      "options": ["A) ...", "B) ...", "C) ...", "D) ..."] | null,
+      "answer": string,
+      "explanation": string
+    }
+  ]
+}
 
 Rules:
-- Focus on the most important information, key findings, and main conclusions.
-- Be factual — only include information present in the document.
-- Use plain text with paragraph breaks. No markdown headers, no bullet points, no code blocks.
-- If the document is a contract, highlight key terms, parties, and obligations.
-- If the document is a report, highlight key findings and recommendations.
-- If the document is an invoice, highlight total amount, parties, and due date.`;
+- Generate exactly ${count} questions.
+- All questions must be based ONLY on information in the document. Do not use outside knowledge.
+- For multiple choice: exactly 4 options, answer is the letter (e.g. "B").
+- For short answer: answer is 1-3 sentences.
+- For true/false: answer is "True" or "False".
+- explanation: 1 sentence explaining why the answer is correct, referencing the document.
+- options is null for short_answer and true_false types.
+- Keep questions clear, concise, and unambiguous.`;
 
     // Call OpenAI with retry
-    let openaiRes;
+    let openaiRes: globalThis.Response | undefined;
     for (let attempt = 0; attempt < 3; attempt++) {
       openaiRes = await fetch("https://api.openai.com/v1/chat/completions", {
         method: "POST",
@@ -175,46 +194,54 @@ Rules:
           model: "gpt-4o-mini",
           messages: [
             { role: "system", content: systemPrompt },
-            { role: "user", content: `Summarize this document:\n\n${documentText}` },
+            { role: "user", content: `Generate questions from this document:\n\n${documentText}` },
           ],
-          temperature: 0.3,
-          max_tokens: length === "short" ? 200 : length === "detailed" ? 800 : 400,
+          temperature: 0.5,
+          max_tokens: 3000,
         }),
       });
 
       if (openaiRes.ok || openaiRes.status !== 429) break;
 
-      const waitMs = (attempt + 1) * 5000;
-      console.log(`OpenAI rate limited, retrying in ${waitMs}ms...`);
+      const waitMs: number = (attempt + 1) * 5000;
       await new Promise((r) => setTimeout(r, waitMs));
     }
 
-    if (!openaiRes.ok) {
-      const errBody = await openaiRes.text();
-      console.error("OpenAI API error:", openaiRes.status, errBody);
-      if (openaiRes.status === 429) {
+    if (!openaiRes!.ok) {
+      const errBody: string = await openaiRes!.text();
+      console.error("OpenAI API error:", openaiRes!.status, errBody);
+      if (openaiRes!.status === 429) {
         throw new Error("AI service is temporarily busy. Please try again in a few seconds.");
       }
-      console.error("AI service request failed:", openaiRes.status); throw new Error("An error occurred while processing your request. Please try again.");
+      console.error("AI service request failed:", openaiRes!.status); throw new Error("An error occurred while processing your request. Please try again.");
     }
 
-    const openaiData = await openaiRes.json();
-    const summary = openaiData.choices?.[0]?.message?.content;
+    const openaiData = await openaiRes!.json();
+    const content: string | undefined = openaiData.choices?.[0]?.message?.content;
 
-    if (!summary) {
+    if (!content) {
       throw new Error("AI returned no response.");
+    }
+
+    let result: any;
+    try {
+      const cleaned: string = content.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
+      result = JSON.parse(cleaned);
+    } catch {
+      console.error("Failed to parse AI response:", content);
+      throw new Error("AI returned invalid format.");
     }
 
     // Log usage
     const { logUsage } = await import("@/lib/usage-check");
-    await logUsage(user.id, "pdf-summarizer");
+    await logUsage(user.id, "question-generator");
 
-    return NextResponse.json({ summary: summary.trim() });
-  } catch (err) {
-    console.error("pdf-summarizer route error:", err);
+    return NextResponse.json(result);
+  } catch (err: unknown) {
+    console.error("question-generator route error:", err);
 
-    const raw = err && typeof err === "object" && err.message ? err.message : "";
-    const safe = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob.vercel/i.test(raw)
+    const raw: string = err && typeof err === "object" && (err as Error).message ? (err as Error).message : "";
+    const safe: string = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob.vercel/i.test(raw)
       ? "An error occurred while processing your file. Please try again."
       : (raw || "An unexpected error occurred.");
 

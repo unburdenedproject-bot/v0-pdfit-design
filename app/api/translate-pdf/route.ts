@@ -4,20 +4,20 @@ import { pipeline } from "stream/promises";
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
 import { isValidBlobUrl } from "@/lib/validate-blob-url";
 
-function errorResponse(message, status = 500) {
+function errorResponse(message: string, status: number = 500): Response {
   return Response.json({ error: message }, { status });
 }
 
-const MAX_PDF_TEXT_CHARS = 12000;
+const MAX_PDF_TEXT_CHARS: number = 12000;
 
-const LANGUAGES = {
+const LANGUAGES: Record<string, string> = {
   english: "English",
   spanish: "Spanish",
   portuguese: "Brazilian Portuguese",
@@ -33,9 +33,9 @@ const LANGUAGES = {
   hindi: "Hindi",
 };
 
-export async function POST(request) {
-  let tmpPath = null;
-  let uploadedBlobUrl = null;
+export async function POST(request: NextRequest): Promise<Response> {
+  let tmpPath: string | null = null;
+  let uploadedBlobUrl: string | null = null;
 
   try {
     // Auth: Business/Enterprise only
@@ -56,14 +56,14 @@ export async function POST(request) {
       return NextResponse.json({ error: "upgrade_required" }, { status: 403 });
     }
 
-    const apiKey = process.env.OPENAI_API_KEY;
+    const apiKey: string | undefined = process.env.OPENAI_API_KEY;
     if (!apiKey) {
       return errorResponse("The service is temporarily unavailable. Please try again later.", 500);
     }
 
     const body = await request.json();
-    const blobUrl = body.blobUrl;
-    const targetLang = body.targetLanguage || "english";
+    const blobUrl: string = body.blobUrl;
+    const targetLang: string = body.targetLanguage || "english";
     uploadedBlobUrl = blobUrl;
 
     if (!blobUrl || typeof blobUrl !== "string") {
@@ -73,16 +73,16 @@ export async function POST(request) {
       return errorResponse("Invalid file URL.", 400);
     }
 
-    const targetLanguageName = LANGUAGES[targetLang] || "English";
+    const targetLanguageName: string = LANGUAGES[targetLang] || "English";
 
     // Download PDF from blob
-    const res = await fetch(blobUrl);
+    const res: globalThis.Response = await fetch(blobUrl);
     if (!res.ok) {
       console.error("Failed to fetch PDF:", res.status);
       throw new Error("Failed to retrieve your uploaded file. Please try uploading again.");
     }
-    const buffer = Buffer.from(await res.arrayBuffer());
-    const id = randomUUID();
+    const buffer: Buffer = Buffer.from(await res.arrayBuffer());
+    const id: string = randomUUID();
     tmpPath = join("/tmp", `${id}-translate.pdf`);
     await writeFile(tmpPath, buffer);
 
@@ -100,9 +100,9 @@ export async function POST(request) {
     }
 
     // Extract text using iLoveAPI
-    const publicKey = process.env.ILOVEAPI_PUBLIC_KEY;
-    const secretKey = process.env.ILOVEAPI_SECRET_KEY;
-    let documentText = "";
+    const publicKey: string | undefined = process.env.ILOVEAPI_PUBLIC_KEY;
+    const secretKey: string | undefined = process.env.ILOVEAPI_SECRET_KEY;
+    let documentText: string = "";
 
     if (publicKey && secretKey) {
       const ILovePDFApi = (await import("@ilovepdf/ilovepdf-nodejs")).default;
@@ -134,7 +134,7 @@ export async function POST(request) {
 
     documentText = documentText.substring(0, MAX_PDF_TEXT_CHARS);
 
-    const systemPrompt = `You are a professional document translator. Translate the document text below into ${targetLanguageName}.
+    const systemPrompt: string = `You are a professional document translator. Translate the document text below into ${targetLanguageName}.
 
 Rules:
 - Translate ALL text faithfully and accurately. Do not summarize or skip sections.
@@ -145,7 +145,7 @@ Rules:
 - Output only the translated text. No commentary, no notes, no "Translation:" prefix.`;
 
     // Call OpenAI with retry
-    let openaiRes;
+    let openaiRes: globalThis.Response | undefined;
     for (let attempt = 0; attempt < 3; attempt++) {
       openaiRes = await fetch("https://api.openai.com/v1/chat/completions", {
         method: "POST",
@@ -165,19 +165,19 @@ Rules:
       });
 
       if (openaiRes.ok || openaiRes.status !== 429) break;
-      const waitMs = (attempt + 1) * 5000;
+      const waitMs: number = (attempt + 1) * 5000;
       await new Promise((r) => setTimeout(r, waitMs));
     }
 
-    if (!openaiRes.ok) {
-      const errBody = await openaiRes.text();
-      console.error("OpenAI API error:", openaiRes.status, errBody);
-      if (openaiRes.status === 429) throw new Error("AI service is temporarily busy. Please try again in a few seconds.");
-      console.error("AI service request failed:", openaiRes.status); throw new Error("An error occurred while processing your request. Please try again.");
+    if (!openaiRes!.ok) {
+      const errBody: string = await openaiRes!.text();
+      console.error("OpenAI API error:", openaiRes!.status, errBody);
+      if (openaiRes!.status === 429) throw new Error("AI service is temporarily busy. Please try again in a few seconds.");
+      console.error("AI service request failed:", openaiRes!.status); throw new Error("An error occurred while processing your request. Please try again.");
     }
 
-    const openaiData = await openaiRes.json();
-    const translation = openaiData.choices?.[0]?.message?.content;
+    const openaiData = await openaiRes!.json();
+    const translation: string | undefined = openaiData.choices?.[0]?.message?.content;
 
     if (!translation) throw new Error("AI returned no response.");
 
@@ -190,10 +190,10 @@ Rules:
       detectedLanguage: null, // Could add detection later
       targetLanguage: targetLanguageName,
     });
-  } catch (err) {
+  } catch (err: unknown) {
     console.error("translate-pdf route error:", err);
-    const raw = err && typeof err === "object" && err.message ? err.message : "";
-    const safe = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob\.vercel/i.test(raw)
+    const raw: string = err && typeof err === "object" && (err as Error).message ? (err as Error).message : "";
+    const safe: string = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob\.vercel/i.test(raw)
       ? "An error occurred while translating your file. Please try again."
       : (raw || "An unexpected error occurred.");
     return errorResponse(safe, 500);
