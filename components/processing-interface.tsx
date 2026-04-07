@@ -9,7 +9,11 @@ import { Upload, FileText, X, Download, CheckCircle, Loader2, AlertCircle, Shiel
 import { cn } from "@/lib/utils"
 import { FileProcessor } from "@/lib/file-processor"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
-import { TrustBadges } from "@/components/trust-badges"
+import { TierGateCard } from "@/components/processing/tier-gate-card"
+import { ProcessingResult } from "@/components/processing/processing-result"
+import { FileDropzone } from "@/components/processing/file-dropzone"
+import { FileList } from "@/components/processing/file-list"
+import { CompressionSelector } from "@/components/processing/compression-selector"
 
 interface ProcessingInterfaceProps {
   acceptedFiles: string
@@ -886,43 +890,7 @@ export function ProcessingInterface({
       requiresPlan === "enterprise" ? userPlan === "enterprise" : false
 
     if (!meetsRequirement) {
-      const tierLabel = requiresPlan === "pro" ? "Pro" : requiresPlan === "business" ? "Business" : "Enterprise"
-      const badgeText = requiresPlan === "pro" ? "Most Popular" : requiresPlan === "business" ? "Business Feature" : "Enterprise Feature"
-      const badgeBg = requiresPlan === "pro"
-        ? "linear-gradient(135deg, #D6B36A, #E0C27A)"
-        : requiresPlan === "business"
-          ? "linear-gradient(135deg, #6B7CFF, #8B9AFF)"
-          : "linear-gradient(135deg, #C0C5CE, #14D8C4)"
-      const crownColor = requiresPlan === "pro" ? "#E0C27A" : requiresPlan === "business" ? "#6B7CFF" : "#C0C5CE"
-      const glowColor = requiresPlan === "pro" ? "rgba(214,179,106,0.25)" : requiresPlan === "business" ? "rgba(107,124,255,0.3)" : "rgba(192,197,206,0.25)"
-      const borderGradient = requiresPlan === "pro"
-        ? "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(214,179,106,0.3), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))"
-        : requiresPlan === "business"
-          ? "linear-gradient(135deg, rgba(107,124,255,0.5), rgba(20,216,196,0.25), rgba(107,124,255,0.35), rgba(232,129,58,0.2), rgba(107,124,255,0.4))"
-          : "linear-gradient(135deg, rgba(192,197,206,0.5), rgba(20,216,196,0.3), rgba(192,197,206,0.35), rgba(107,124,255,0.2), rgba(192,197,206,0.4))"
-      const innerGlow = requiresPlan === "pro" ? "rgba(214,179,106,0.05)" : requiresPlan === "business" ? "rgba(107,124,255,0.06)" : "rgba(192,197,206,0.06)"
-
-      return (
-        <section className="py-16" style={{ background: `radial-gradient(ellipse 60% 40% at 50% 0%, ${innerGlow.replace("0.05", "0.06").replace("0.06", "0.06")} 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%), #0E0F1E` }}>
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-lg mx-auto relative">
-              <div className="rounded-2xl p-[1px]" style={{ background: borderGradient }}>
-                <div className="rounded-[15px] p-8 pt-10 text-center relative overflow-hidden" style={{ background: `radial-gradient(ellipse 40% 30% at 50% 0%, ${innerGlow} 0%, transparent 50%), radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 4px 24px rgba(0,0,0,0.3)" }}>
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest" style={{ background: badgeBg, color: "#0E0F1E" }}>
-                    {badgeText}
-                  </div>
-                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: `0 0 20px ${glowColor}, 0 4px 8px rgba(0,0,0,0.2)` }}>
-                    <Crown className="h-7 w-7" style={{ color: crownColor }} />
-                  </div>
-                  <h2 className="text-xl font-bold text-white mb-2">{tierLabel} Feature</h2>
-                  <p className="text-sm text-slate-400 mb-6">{toolName} is available on the {tierLabel}, {requiresPlan === "enterprise" ? "" : "Business, and "}Enterprise plan{requiresPlan === "enterprise" ? "" : "s"}.</p>
-                  <Button onClick={() => router.push(pricingUrl)} className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold px-8 py-3 rounded-xl">View Plans</Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      )
+      return <TierGateCard requiredPlan={requiresPlan} toolName={toolName} pricingUrl={pricingUrl} />
     }
   }
 
@@ -1114,189 +1082,17 @@ export function ProcessingInterface({
   // Success state
   if (isComplete) {
     return (
-      <section className="py-16 overflow-x-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            {/* Success Header */}
-            <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <CheckCircle className="h-10 w-10 text-green-600" />
-              </div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">Conversion Complete!</h2>
-              <p className="text-slate-600 text-lg">
-                Your {files.length > 1 ? "files have" : "file has"} been successfully processed. All formatting and
-                content preserved.
-              </p>
-            </div>
-
-            {/* Processing Summary */}
-            <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-xl p-4 sm:p-6 mb-8 overflow-hidden">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
-                <div>
-                  <div className="text-2xl font-black text-green-600 mb-1">{files.length}</div>
-                  <div className="text-sm font-medium text-green-700">Files Processed</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-black text-green-600 mb-1">
-                    {(files.reduce((sum, f) => sum + f.size, 0) / 1024 / 1024).toFixed(1)}MB
-                  </div>
-                  <div className="text-sm font-medium text-green-700">Total Size</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-black text-green-600 mb-1">2.8s</div>
-                  <div className="text-sm font-medium text-green-700">Processing Time</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-black text-green-600 mb-1">99.9%</div>
-                  <div className="text-sm font-medium text-green-700">Accuracy</div>
-                </div>
-              </div>
-            </div>
-
-            {/* File Results */}
-            <div className="space-y-4 mb-8">
-              <h3 className="text-xl font-bold text-slate-900 mb-4">Your converted files:</h3>
-              {processedFiles.map((file, index) => {
-                // Calculate realistic converted file size (typically 15-25% of original PDF)
-                const conversionRatio = 0.18 + Math.random() * 0.07 // 18-25%
-                const convertedSize = Math.max(files[index].size * conversionRatio, 50000) // Minimum 50KB
-
-                return (
-                  <div
-                    key={index}
-                    className="bg-white border border-gray-200 rounded-xl p-4 sm:p-6 hover:shadow-md transition-shadow overflow-hidden"
-                  >
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                      <div className="flex items-center gap-4 min-w-0">
-                        <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <FileText className="h-6 w-6 text-green-600" />
-                        </div>
-                        <div className="min-w-0">
-                          <div className="flex items-center gap-2">
-                            <input
-                              type="text"
-                              value={editedNames[index] ?? file.name}
-                              onChange={(e) => setEditedNames((prev) => ({ ...prev, [index]: e.target.value }))}
-                              className="font-bold text-slate-900 text-base sm:text-lg border-b border-dashed border-slate-300 focus:border-[#14D8C4] focus:outline-none bg-transparent w-full max-w-[200px] sm:max-w-sm truncate"
-                            />
-                            <Pencil className="h-4 w-4 text-[#14D8C4] flex-shrink-0 cursor-pointer hover:text-[#2EE6D6] transition-colors" onClick={(e) => { const input = (e.currentTarget.previousElementSibling as HTMLInputElement); input?.focus(); input?.select() }} />
-                          </div>
-                          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-slate-500 mt-1">
-                            <span>{(convertedSize / 1024 / 1024).toFixed(2)} MB</span>
-                            <span className="hidden sm:inline">•</span>
-                            <span className="text-green-600 font-medium">✓ Conversion successful</span>
-                            <span className="hidden sm:inline">•</span>
-                            <span>Ready for download</span>
-                          </div>
-                        </div>
-                      </div>
-                      <Button
-                        className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 w-full sm:w-auto flex-shrink-0"
-                        onClick={() => {
-                          const name = editedNames[index] ?? file.name
-                          if ((toolName === "PDF to JPG" || toolName === "PDF to PNG") && file.rawBlob) {
-                            downloadJpgZip(file.rawBlob, name)
-                          } else {
-                            downloadFile(file.url, name)
-                          }
-                        }}
-                      >
-                        <Download className="h-4 w-4 mr-2" />
-                        Download
-                      </Button>
-                    </div>
-
-                    {/* File conversion details */}
-                    <div className="mt-4 pt-4 border-t border-gray-100">
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                        <div>
-                          <span className="text-slate-500">Original:</span>
-                          <div className="font-medium">{(files[index].size / 1024 / 1024).toFixed(2)} MB PDF</div>
-                        </div>
-                        <div>
-                          <span className="text-slate-500">Converted:</span>
-                          <div className="font-medium">
-                            {(convertedSize / 1024 / 1024).toFixed(2)} MB {outputFormat}
-                          </div>
-                        </div>
-                        <div>
-                          <span className="text-slate-500">Compression:</span>
-                          <div className="font-medium text-green-600">
-                            {(((files[index].size - convertedSize) / files[index].size) * 100).toFixed(0)}% smaller
-                          </div>
-                        </div>
-                        <div>
-                          <span className="text-slate-500">Quality:</span>
-                          <div className="font-medium text-green-600">High fidelity</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 sm:px-0">
-              {processedFiles.length > 1 && (
-                <Button
-                  className="bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-3 w-full sm:w-auto"
-                  onClick={async () => {
-                    const JSZip = (await import("jszip")).default
-                    const zip = new JSZip()
-                    for (const pf of processedFiles) {
-                      const res = await fetch(pf.url)
-                      const blob = await res.blob()
-                      zip.file(editedNames[processedFiles.indexOf(pf)] ?? pf.name, blob)
-                    }
-                    const zipBlob = await zip.generateAsync({ type: "blob", compression: "DEFLATE" })
-                    const objectUrl = URL.createObjectURL(zipBlob)
-                    const link = document.createElement("a")
-                    link.href = objectUrl
-                    link.download = `pdfit-batch-${Date.now()}.zip`
-                    link.style.display = "none"
-                    document.body.appendChild(link)
-                    link.click()
-                    document.body.removeChild(link)
-                    URL.revokeObjectURL(objectUrl)
-                  }}
-                >
-                  <Download className="h-4 w-4 mr-2" />
-                  Download All as ZIP
-                </Button>
-              )}
-              <Button
-                onClick={resetInterface}
-                variant="outline"
-                className="bg-white text-slate-800 border-slate-300 hover:bg-slate-50 px-8 py-3 w-full sm:w-auto"
-              >
-                Process More Files
-              </Button>
-              <Button
-                className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] px-8 py-3 w-full sm:w-auto"
-                onClick={() => (window.location.href = "/")}
-              >
-                Try Another Tool
-              </Button>
-            </div>
-
-            {/* Security Notice */}
-            <div className="mt-8 text-center space-y-3">
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-2xl mx-auto">
-                <div className="flex items-center justify-center gap-2 text-blue-800 text-sm">
-                  <Shield className="h-4 w-4" />
-                  <span className="font-medium">
-                    Your files are automatically deleted from our servers after download for your privacy and security.
-                  </span>
-                </div>
-              </div>
-              <p className="text-xs text-slate-400 max-w-2xl mx-auto">
-                For your privacy, files are not saved between sessions. If you refresh this page, you will need to upload your document again.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ProcessingResult
+        files={files}
+        processedFiles={processedFiles}
+        editedNames={editedNames}
+        onEditName={(index, name) => setEditedNames((prev) => ({ ...prev, [index]: name }))}
+        onDownload={downloadFile}
+        onDownloadJpgZip={downloadJpgZip}
+        onReset={resetInterface}
+        toolName={toolName}
+        outputFormat={outputFormat}
+      />
     )
   }
 
@@ -1345,155 +1141,35 @@ export function ProcessingInterface({
     <section className="py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto">
-          {/* Full upload zone — only when no files selected yet */}
-          {files.length === 0 && (
-            <div
-              id="file-upload-zone"
-              className={cn(
-                "border-2 border-dashed rounded-xl p-12 transition-all duration-200 cursor-pointer",
-                isDragOver
-                  ? "border-[#14D8C4] bg-[#F0FDFA]"
-                  : "border-gray-300 hover:border-[#14D8C4]/40 hover:bg-gray-50",
-              )}
-              onDragOver={handleDragOver}
-              onDragLeave={handleDragLeave}
-              onDrop={handleDrop}
-              onClick={() => document.getElementById("file-upload")?.click()}
-            >
-              <div className="text-center">
-                <Upload className="h-12 w-12 text-[#14D8C4] mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-slate-900 mb-2">Drop your files here</h3>
-                <p className="text-slate-600 mb-6">or click to browse files</p>
-                <Button size="lg" className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-semibold px-8">
-                  Choose Files
-                </Button>
-                <p className="text-sm text-slate-500 mt-4">Supported formats: {acceptedFiles}</p>
-              </div>
-            </div>
-          )}
-
-          <input
-            id="file-upload"
-            type="file"
-            multiple={allowMultiple}
-            accept={acceptedFiles}
-            className="hidden"
-            onClick={(e) => { (e.target as HTMLInputElement).value = "" }}
-            onChange={handleFileSelect}
+          <FileDropzone
+            isDragOver={isDragOver}
+            onDragOver={handleDragOver}
+            onDragLeave={handleDragLeave}
+            onDrop={handleDrop}
+            onFileSelect={handleFileSelect}
+            acceptedFiles={acceptedFiles}
+            allowMultiple={allowMultiple}
+            hasFiles={files.length > 0}
+            isPaidUser={isPaidUser}
+            pricingUrl={pricingUrl}
           />
 
-          {!isPaidUser && files.length > 0 && (
-            <div className="mt-6 bg-gradient-to-r from-[#F0FDFA] to-[#F0FDFA] border border-[#14D8C4]/20 rounded-xl p-4 flex items-center justify-between gap-4">
-              <div>
-                <p className="text-sm font-bold text-slate-900">Want to process multiple files at once?</p>
-                <p className="text-xs text-slate-600">Upgrade to Pro for batch processing — convert up to 50 files in one go.</p>
-              </div>
-              <Button
-                size="sm"
-                className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold text-xs px-4 flex-shrink-0"
-                onClick={(e) => { e.stopPropagation(); window.location.href = `${pricingUrl}?source=batch` }}
-              >
-                <Crown className="h-3 w-3 mr-1" />
-                Upgrade
-              </Button>
-            </div>
-          )}
-
-          {files.length > 0 && (
-            <div className="mt-8 space-y-4">
-              <h3 className="text-lg font-bold text-slate-900">Files to process:</h3>
-              {files.map((file, index) => (
-                <div
-                  key={index}
-                  className="flex items-center justify-between bg-white border border-gray-200 rounded-lg p-4"
-                >
-                  <div className="flex items-center gap-3">
-                    <FileText className="h-5 w-5 text-[#14D8C4]" />
-                    <div>
-                      <div className="font-medium text-slate-900 truncate max-w-[200px] sm:max-w-xs">{file.name}</div>
-                      <div className="text-sm text-slate-500">{(file.size / 1024 / 1024).toFixed(1)} MB</div>
-                    </div>
-                  </div>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => removeFile(index)}
-                    className="text-slate-400 hover:text-slate-600"
-                  >
-                    <X className="h-4 w-4" />
-                  </Button>
-                </div>
-              ))}
-
-              {/* Add more / Change file button */}
-              {allowMultiple ? (
-                <div
-                  className="border-2 border-dashed border-gray-300 hover:border-[#14D8C4]/40 rounded-xl p-4 cursor-pointer transition-all duration-200 hover:bg-gray-50"
-                  onDragOver={handleDragOver}
-                  onDragLeave={handleDragLeave}
-                  onDrop={handleDrop}
-                  onClick={() => document.getElementById("file-upload")?.click()}
-                >
-                  <div className="flex items-center justify-center gap-2 text-[#14D8C4]">
-                    <Upload className="h-5 w-5" />
-                    <span className="font-semibold">Add more files</span>
-                  </div>
-                </div>
-              ) : (
-                <div
-                  className="border-2 border-dashed border-gray-300 hover:border-[#14D8C4]/40 rounded-xl p-3 cursor-pointer transition-all duration-200 hover:bg-gray-50"
-                  onClick={() => document.getElementById("file-upload")?.click()}
-                >
-                  <div className="flex items-center justify-center gap-2 text-slate-500 hover:text-[#14D8C4] transition-colors">
-                    <Upload className="h-4 w-4" />
-                    <span className="text-sm font-medium">Choose a different file</span>
-                  </div>
-                </div>
-              )}
-              {showCompressionSelector && (
-                <div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-3">Compression Level:</h3>
-                  <div className="grid grid-cols-3 gap-3">
-                    {[
-                      { value: "low", label: "Light", desc: "Smaller reduction, best quality" },
-                      { value: "recommended", label: "Medium", desc: "Balanced size and quality" },
-                      { value: "extreme", label: "Extreme", desc: "Maximum compression" },
-                    ].map((level) => (
-                      <button
-                        key={level.value}
-                        type="button"
-                        onClick={() => setSelectedCompressionLevel(level.value)}
-                        className={cn(
-                          "flex flex-col items-center gap-1 rounded-xl border-2 p-4 transition-all",
-                          selectedCompressionLevel === level.value
-                            ? "border-[#14D8C4] bg-[#F0FDFA] shadow-sm"
-                            : "border-gray-200 hover:border-[#14D8C4]/30 hover:bg-gray-50"
-                        )}
-                      >
-                        <span className={cn(
-                          "font-bold text-sm",
-                          selectedCompressionLevel === level.value ? "text-[#0FBFB0]" : "text-slate-700"
-                        )}>
-                          {level.label}
-                        </span>
-                        <span className="text-xs text-slate-500 text-center">{level.desc}</span>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-              <Button
-                onClick={processFiles}
-                className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-semibold"
-                size="lg"
-                disabled={files.length === 0}
-              >
-                {toolName} - Process {files.length} File{files.length > 1 ? "s" : ""} →
-              </Button>
-            </div>
-          )}
-
-          <TrustBadges />
+          <FileList
+            files={files}
+            onRemove={removeFile}
+            allowMultiple={allowMultiple}
+            onDragOver={handleDragOver}
+            onDragLeave={handleDragLeave}
+            onDrop={handleDrop}
+            toolName={toolName}
+            onProcess={processFiles}
+            compressionSelector={showCompressionSelector ? (
+              <CompressionSelector
+                selected={selectedCompressionLevel}
+                onChange={setSelectedCompressionLevel}
+              />
+            ) : undefined}
+          />
         </div>
       </div>
     </section>
