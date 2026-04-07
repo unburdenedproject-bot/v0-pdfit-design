@@ -1,171 +1,181 @@
 import Script from "next/script"
-import Link from "next/link"
 import { HeaderBr } from "@/components/header-br"
 import { FooterBr } from "@/components/footer-br"
-import { ProcessingInterface } from "@/components/processing-interface"
-import { FileText, Zap, Shield, Download } from "lucide-react"
+import { Layers, Zap, Shield, Download } from "lucide-react"
+import Link from "next/link"
 
 export const metadata = {
-  title: "Organizar PDF — Reordene, Remova e Gerencie Paginas | PDF.it",
+  title: "Organizar Paginas PDF Online — Classificar, Reorganizar e Gerenciar PDFs | PDF.it",
   description:
-    "Organize seu PDF com o PDF.it. Reordene paginas, remova as desnecessarias e gerencie seu documento — rapido, gratuito e direto no navegador.",
+    "Organize suas paginas PDF com o PDF.it. Divida, una, gire e reordene paginas para criar documentos perfeitamente organizados — rapido, gratis e pelo navegador.",
   alternates: {
-    canonical: "https://pdf.it.com/br/organizar-pdf",
     languages: {
-      en: "https://pdf.it.com/organize-pdf",
-      es: "https://pdf.it.com/es/organizar-pdf",
-      pt: "https://pdf.it.com/br/organizar-pdf",
+      en: "/organize-pdf",
+      es: "/es/organizar-pdf",
+      pt: "/br/organizar-pdf",
     },
   },
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "O que significa organizar um PDF?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Organizar um PDF significa reordenar paginas, remover paginas desnecessarias, girar paginas e gerenciar a estrutura do documento para que fique exatamente como voce precisa.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Posso remover paginas especificas do PDF?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Sim. O PDF.it permite selecionar e remover paginas individuais do seu PDF. Voce pode excluir paginas em branco, duplicadas ou desnecessarias.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "A qualidade do PDF muda ao reorganizar paginas?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Nao. Reorganizar paginas nao altera a qualidade do conteudo. Texto, imagens e formatacao de cada pagina permanecem identicos.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Posso organizar PDFs pelo celular?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Sim. O PDF.it funciona em navegadores moveis. Suba seu PDF, organize as paginas e baixe o resultado pelo iPhone ou Android.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "E gratuito organizar um PDF?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Sim. Voce pode organizar PDFs de ate 25MB gratuitamente. Para arquivos maiores e processamento em lote, atualize para o plano Pro.",
-      },
-    },
-  ],
-}
-
 export default function OrganizarPDFPage() {
+  const faqs = [
+    { q: "Quais ferramentas o PDF.it oferece para organizar paginas PDF?", a: "O PDF.it oferece quatro ferramentas principais para organizar PDFs: Dividir PDF para extrair paginas ou secoes, Unir PDF para combinar varios arquivos em um, Girar PDF para corrigir a orientacao das paginas e Reordenar Paginas para reorganizar a sequencia." },
+    { q: "Como reorganizo paginas em um PDF?", a: "Use a ferramenta Reordenar Paginas para reorganizar suas paginas PDF. Voce tambem pode dividir seu PDF em paginas individuais com Dividir PDF e depois uni-las novamente em qualquer ordem usando Unir PDF." },
+    { q: "Posso remover paginas especificas de um PDF?", a: "Sim. Use Dividir PDF para extrair apenas as paginas que deseja manter, deixando de fora as que deseja remover. Depois, una as paginas restantes em um documento limpo." },
+    { q: "Posso organizar paginas PDF no celular?", a: "Sim. Todas as ferramentas do PDF.it funcionam em navegadores moveis — divida, una, gire e reordene suas paginas PDF no iPhone ou Android sem instalar nenhum aplicativo." },
+    { q: "Organizar paginas PDF e gratis?", a: "Sim. As ferramentas Dividir, Unir e Girar do PDF.it sao gratuitas e sem necessidade de cadastro. Usuarios gratuitos podem processar arquivos individuais de ate 25MB. Usuarios Pro tem processamento em lote e limites de arquivo maiores." },
+    { q: "Posso combinar etapas de organizacao em um fluxo de trabalho?", a: "Sim. Voce pode encadear varias ferramentas — por exemplo, dividir um PDF para remover paginas indesejadas, girar paginas tortas e depois unir tudo em um unico documento organizado." },
+  ]
+
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderBr />
       <main>
         {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section
+          className="text-white py-16 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#heroGrain)" />
+          </svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <FileText className="h-10 w-10 text-white" />
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                  boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)",
+                }}
+              >
+                <Layers className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Organizar PDF</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Organizar Paginas PDF Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Reordene, remova e gerencie as paginas do seu PDF. Arraste e solte para organizar seu documento na ordem perfeita.
+                Classifique, reorganize e gerencie suas paginas PDF com o PDF.it. Divida, una, gire e reordene paginas para criar documentos perfeitamente organizados — tudo no seu navegador.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Arrastar e Soltar</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Arquivos Removidos Apos a Sessao</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Multiplas Ferramentas</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Arquivos Excluidos Apos a Sessao</span></div>
                 <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sem Cadastro</span></div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Processing Interface */}
-        <ProcessingInterface
-          acceptedFiles=".pdf"
-          toolName="Organize PDF"
-          outputFormat="PDF"
-          processingMessage="Organizando seu PDF..."
-          successMessage="PDF organizado com sucesso!"
-        />
-
-        {/* About */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <p className="text-lg text-slate-600 mb-8">
-              O organizador de PDF do PDF.it permite gerenciar as paginas do seu documento de forma visual e intuitiva. Reordene, remova paginas desnecessarias, gire paginas individuais e exporte o resultado — tudo direto no navegador.
+        {/* Intro */}
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <p className="text-lg text-slate-600 leading-relaxed">
+              PDFs desorganizados desperdicam tempo e parecem pouco profissionais. Se voce precisa remover paginas extras, corrigir escaneamentos tortos, reordenar capitulos ou combinar arquivos de diferentes fontes, o PDF.it oferece as ferramentas para organizar seu documento — sem instalar nenhum software.
             </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>&#10003; Reordene paginas arrastando e soltando</li>
-              <li>&#10003; Remova paginas em branco ou desnecessarias</li>
-              <li>&#10003; Gire paginas individuais</li>
-              <li>&#10003; Funciona em Mac, Windows, iOS, Android e Linux</li>
-              <li>&#10003; Sem instalacao — organize PDFs direto no navegador</li>
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">✓ Divida PDFs para extrair ou remover paginas</li>
+              <li className="flex items-center gap-2">✓ Una varios PDFs em um documento organizado</li>
+              <li className="flex items-center gap-2">✓ Gire paginas para corrigir a orientacao</li>
+              <li className="flex items-center gap-2">✓ Funciona no Mac, Windows, iOS, Android e Linux</li>
             </ul>
           </div>
         </section>
 
-        {/* Use Cases */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Preparar Apresentacoes</h2>
-              <p className="text-slate-600">
-                Reorganize paginas de um PDF de apresentacao para ajustar a ordem dos slides. Remova slides desnecessarios e crie a sequencia perfeita.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Limpar Documentos Digitalizados</h2>
-              <p className="text-slate-600">
-                Remova paginas em branco ou duplicadas de documentos digitalizados. Reorganize as paginas que ficaram fora de ordem durante a digitalizacao.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Montar Portfolios</h2>
-              <p className="text-slate-600">
-                Organize paginas de diferentes trabalhos na ordem ideal para criar portfolios profissionais e materiais de apresentacao impactantes.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Editar Relatorios</h2>
-              <p className="text-slate-600">
-                Remova secoes desnecessarias e reorganize capitulos de relatorios longos para criar versoes resumidas e personalizadas.
-              </p>
+        {/* Tool Links */}
+        <section className="py-12 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-md text-center">
+            <div className="grid grid-cols-2 gap-4">
+              <Link href="/br/dividir-pdf" className="inline-flex items-center justify-center bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-6 rounded-xl transition-colors">
+                Dividir PDF
+              </Link>
+              <Link href="/br/unir-pdf" className="inline-flex items-center justify-center bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-6 rounded-xl transition-colors">
+                Unir PDF
+              </Link>
+              <Link href="/br/girar-pdf" className="inline-flex items-center justify-center bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-6 rounded-xl transition-colors">
+                Girar PDF
+              </Link>
+              <Link href="/br/reordenar-paginas-pdf" className="inline-flex items-center justify-center bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-6 rounded-xl transition-colors">
+                Reordenar Paginas
+              </Link>
             </div>
           </div>
         </section>
 
-        {/* How To */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Organizar um PDF</h2>
-            <div className="space-y-4">
+        {/* Feature Blocks */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                "Suba ou arraste seu PDF para o PDF.it.",
-                "Arraste e solte as paginas para reordena-las. Remova as desnecessarias.",
-                "Clique em Salvar e baixe seu PDF organizado.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
+                { title: "Organize Documentos Escaneados", desc: "Documentos escaneados frequentemente chegam com paginas fora de ordem, de cabeca para baixo ou com paginas em branco misturadas. Use Dividir, Girar e Unir para remontar tudo na ordem correta." },
+                { title: "Prepare Envios e Candidaturas", desc: "Candidaturas de emprego, envios para universidades e registros oficiais exigem documentos em uma ordem especifica. Organize seu historico, curriculo e documentos de apoio em um unico PDF ordenado." },
+                { title: "Limpe Arquivos Unidos", desc: "Apos unir varios PDFs, voce pode ficar com paginas duplicadas, paginas em branco ou secoes na ordem errada. Use Dividir e Reordenar para limpar o documento final." },
+              ].map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <div
+                    className="rounded-[11px] p-6 h-full"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
                   </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works */}
+        <section className="py-16 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Organizar Paginas PDF</h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+              {[
+                { num: "1", title: "Escolha a ferramenta certa", desc: "Dividir, Unir, Girar ou Reordenar Paginas" },
+                { num: "2", title: "Envie seu PDF", desc: "Arraste e solte ou clique para escolher" },
+                { num: "3", title: "Baixe seu PDF", desc: "Receba seu documento organizado instantaneamente" },
+              ].map((step) => (
+                <div key={step.num} className="flex-1">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                      border: "1px solid rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <span className="text-[#14D8C4] font-black text-lg">{step.num}</span>
+                  </div>
+                  <p className="font-semibold text-slate-900">{step.title}</p>
+                  <p className="text-sm text-slate-500 mt-1">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -178,46 +188,84 @@ export default function OrganizarPDFPage() {
             <h2 className="text-2xl font-black text-white mb-6 text-center">Ferramentas Relacionadas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "Girar PDF", href: "/br/girar-pdf", desc: "Gire paginas do PDF" },
-                { name: "Dividir PDF", href: "/br/dividir-pdf", desc: "Separe paginas do PDF" },
-                { name: "Unir PDF", href: "/br/unir-pdf", desc: "Combine varios PDFs" },
-                { name: "Achatar PDF", href: "/br/achatar-pdf", desc: "Bloqueie formularios e camadas" },
-                { name: "Comprimir PDF", href: "/br/comprimir-pdf", desc: "Reduza o tamanho do arquivo" },
-                { name: "Proteger PDF", href: "/br/proteger-pdf", desc: "Adicione senha ao PDF" },
+                { name: "Dividir PDF", href: "/br/dividir-pdf", desc: "Extraia ou remova paginas" },
+                { name: "Unir PDF", href: "/br/unir-pdf", desc: "Combine arquivos em um" },
+                { name: "Girar PDF", href: "/br/girar-pdf", desc: "Corrija a orientacao" },
+                { name: "Reordenar Paginas", href: "/br/reordenar-paginas-pdf", desc: "Reorganize a ordem" },
               ].map((tool) => (
-                <Link
+                <div
                   key={tool.href}
-                  href={tool.href}
-                  className="rounded-xl p-4 transition-all text-center flex flex-col justify-center min-h-[80px] hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(20,216,196,0.25)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.2)" }}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
                 >
-                  <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
-                  <div className="text-xs text-slate-400">{tool.desc}</div>
-                </Link>
+                  <Link
+                    href={tool.href}
+                    className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
+                    <div className="text-xs text-slate-400">{tool.desc}</div>
+                  </Link>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-gray-50">
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
-            <div className="space-y-6">
-              {[
-                { q: "O que significa organizar um PDF?", a: "Organizar um PDF significa reordenar paginas, remover paginas desnecessarias, girar paginas e gerenciar a estrutura do documento para que fique exatamente como voce precisa." },
-                { q: "Posso remover paginas especificas do PDF?", a: "Sim. O PDF.it permite selecionar e remover paginas individuais do seu PDF. Voce pode excluir paginas em branco, duplicadas ou desnecessarias." },
-                { q: "A qualidade do PDF muda ao reorganizar paginas?", a: "Nao. Reorganizar paginas nao altera a qualidade do conteudo. Texto, imagens e formatacao de cada pagina permanecem identicos." },
-                { q: "Posso organizar PDFs pelo celular?", a: "Sim. O PDF.it funciona em navegadores moveis. Suba seu PDF, organize as paginas e baixe o resultado pelo iPhone ou Android." },
-                { q: "E gratuito organizar um PDF?", a: "Sim. Voce pode organizar PDFs de ate 25MB gratuitamente. Para arquivos maiores e processamento em lote, atualize para o plano Pro." },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
+            <h2 className="text-3xl font-black text-white mb-10 text-center">Perguntas Frequentes</h2>
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl p-6"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
+
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+          }))
+        })}} />
       </main>
       <FooterBr />
     </div>

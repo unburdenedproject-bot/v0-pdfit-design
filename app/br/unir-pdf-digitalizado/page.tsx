@@ -6,202 +6,97 @@ import { Merge, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Unir PDF Digitalizado — Combine PDFs Escaneados em Um Arquivo | PDF.it",
-  description:
-    "Una PDFs digitalizados em um unico documento com PDF.it. Combine documentos escaneados, recibos e formularios — rapido, gratis e online.",
-  alternates: {
-    languages: {
-      en: "/merge-scanned-pdf",
-      es: "/es/unir-pdf-escaneado",
-      pt: "/br/unir-pdf-digitalizado",
-    },
-  },
+  title: "Unir PDFs Digitalizados em Um Documento — Gratis Online | PDF.it",
+  description: "Combine multiplos PDFs digitalizados em um unico documento com o PDF.it. Una paginas de diferentes fontes em um arquivo limpo — rapido, gratis e pelo navegador.",
+  alternates: { languages: { en: "/merge-scanned-pdf", es: "/es/unir-pdf-escaneado", pt: "/br/unir-pdf-digitalizado" } },
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+export default function UnirPDFDigitalizadoPage() {
+  const faqs = [
     {
-      "@type": "Question",
-      "name": "Posso unir PDFs digitalizados sem perder qualidade?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it combina PDFs digitalizados sem recomprimir as imagens. A qualidade original das digitalizacoes e mantida integralmente." }
+        "q": "Como uno PDFs digitalizados?",
+        "a": "Envie os PDFs, organize na ordem e clique em Unir. A qualidade da imagem e preservada."
     },
     {
-      "@type": "Question",
-      "name": "PDFs digitalizados costumam ser grandes — qual o limite de tamanho?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Usuarios gratuitos podem enviar arquivos de ate 25MB. Usuarios Pro tem limite de 200MB por arquivo — ideal para digitalizacoes de alta resolucao." }
+        "q": "A qualidade sera reduzida?",
+        "a": "Nao. O PDF.it une sem recomprimir as paginas."
     },
     {
-      "@type": "Question",
-      "name": "Posso unir PDFs digitalizados no celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em qualquer navegador movel. Digitalize documentos com seu celular, converta para PDF e una-os diretamente." }
+        "q": "Posso executar OCR depois?",
+        "a": "Sim. Use o Scanner OCR do PDF.it apos unir. Disponivel para usuarios Pro."
     },
     {
-      "@type": "Question",
-      "name": "E possivel aplicar OCR nos PDFs digitalizados antes de unir?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Use a ferramenta OCR Scanner do PDF.it para tornar seus PDFs digitalizados pesquisaveis antes de uni-los. Assim o documento final tera texto selecionavel." }
+        "q": "Qual o tamanho maximo?",
+        "a": "Gratuito ate 25MB. Pro ate 200MB por arquivo."
     },
     {
-      "@type": "Question",
-      "name": "E seguro enviar documentos digitalizados para o PDF.it?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it usa conexoes criptografadas e exclui todos os arquivos apos sua sessao. Seus documentos nunca sao armazenados permanentemente." }
+        "q": "Posso unir recibos digitalizados?",
+        "a": "Absolutamente. Organize cronologicamente e una em um unico documento."
     },
     {
-      "@type": "Question",
-      "name": "Posso comprimir o PDF apos unir as digitalizacoes?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Apos unir seus PDFs digitalizados, use a ferramenta Comprimir PDF do PDF.it para reduzir o tamanho do arquivo final, facilitando o envio por email." }
+        "q": "Funciona com escaneamentos do celular?",
+        "a": "Sim. Funciona com PDFs de cameras, scanners e apps de escaneamento."
     }
-  ]
-}
+]
 
-export default function UnirPdfDigitalizadoPage() {
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderBr />
       <main>
-        {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Merge className="h-10 w-10 text-white" />
-              </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Unir PDF Digitalizado</h1>
-              <p className="text-xl text-slate-300 mb-8">
-                Combine documentos escaneados em um unico PDF organizado. Perfeito para reunir recibos, formularios, contratos digitalizados e documentos de identidade em um arquivo so.
-              </p>
-              <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Qualidade Preservada</span></div>
+        <section className="text-white py-16 relative overflow-hidden" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%), radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%), #0E0F1E` }}>
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}><filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter><rect width="100%" height="100%" filter="url(#heroGrain)" /></svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10"><div className="max-w-4xl mx-auto text-center">
+            <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)" }}><Merge className="h-10 w-10 text-[#14D8C4]" /></div>
+            <h1 className="text-4xl lg:text-5xl font-black mb-4">Unir PDFs Digitalizados em Um Documento</h1>
+            <p className="text-xl text-slate-300 mb-8">Combine PDFs digitalizados de diferentes fontes em um unico documento organizado. Perfeito para recibos, contratos e documentos arquivados — rapido, gratis e pelo navegador.</p>
+            <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Preserva Qualidade do Escaneamento</span></div>
                 <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Arquivos Excluidos Apos a Sessao</span></div>
                 <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sem Cadastro</span></div>
-              </div>
             </div>
-          </div>
+          </div></div>
         </section>
 
-        {/* Processing Interface */}
-        <ProcessingInterface
-          acceptedFiles=".pdf"
-          toolName="Merge PDF"
-          outputFormat="PDF"
-          processingMessage="Unindo seus PDFs digitalizados..."
-          successMessage="Seus PDFs digitalizados foram combinados!"
-        />
+        <section className="py-10 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+          <p className="text-lg text-slate-600 leading-relaxed">Documentos digitalizados frequentemente acabam como PDFs separados. O PDF.it permite unir todos em um unico arquivo mantendo cada pagina na qualidade original. Ideal para combinar contratos, recibos, documentos de identificacao e papeis arquivados.</p>
+          <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">✓ Una PDFs digitalizados sem perda de qualidade</li>
+              <li className="flex items-center gap-2">✓ Combine escaneamentos de celulares, scanners e apps</li>
+              <li className="flex items-center gap-2">✓ Organize paginas em qualquer ordem antes de unir</li>
+              <li className="flex items-center gap-2">✓ Siga com OCR para texto pesquisavel (Pro)</li>
+          </ul>
+        </div></section>
 
-        {/* About */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <p className="text-lg text-slate-600 mb-8">
-              Documentos digitalizados costumam ficar espalhados em varios arquivos separados. O PDF.it permite unir todos os seus PDFs escaneados em um unico documento — mantendo a qualidade original das imagens e a ordem correta das paginas.
-            </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>✓ Una PDFs digitalizados sem perder qualidade de imagem</li>
-              <li>✓ Combine recibos, formularios e documentos escaneados</li>
-              <li>✓ Use OCR depois para tornar o texto pesquisavel</li>
-              <li>✓ Comprima o resultado final para facilitar o envio</li>
-              <li>✓ Funciona em qualquer dispositivo com navegador</li>
-            </ul>
-          </div>
-        </section>
+        <ProcessingInterface acceptedFiles=".pdf" toolName="Merge PDF" outputFormat="PDF" processingMessage="Unindo seus PDFs digitalizados..." successMessage="Seu documento unido esta pronto!" />
 
-        {/* Use Cases */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Recibos e Notas Fiscais Digitalizados</h2>
-              <p className="text-slate-600">
-                Junte todos os recibos e notas fiscais digitalizados do mes em um unico PDF para contabilidade ou declaracao de impostos.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Documentos de Identidade e Certidoes</h2>
-              <p className="text-slate-600">
-                Combine copias digitalizadas de RG, CPF, comprovante de endereco e certidoes em um unico arquivo para processos burocraticos.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Prontuarios e Exames Medicos</h2>
-              <p className="text-slate-600">
-                Reuna exames medicos, laudos e receitas digitalizadas em um unico PDF para consultas ou para manter um historico organizado.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* How To */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Unir PDFs Digitalizados</h2>
-            <div className="space-y-4">
+        <section className="py-16" style={{ background: `radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%), #0E0F1E` }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl"><div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                "Envie ou arraste seus PDFs digitalizados para o PDF.it.",
-                "Organize os documentos na ordem desejada.",
-                "Clique em Unir e baixe seu PDF combinado.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
-                  </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+                { title: "Una Contratos Digitalizados", desc: "Contratos assinados chegam como paginas separadas. Combine todas em um documento profissional." },
+                { title: "Combine Recibos para Despesas", desc: "Digitalize recibos ao longo do mes, depois una em um PDF para relatorio de despesas." },
+                { title: "Organize Arquivos Digitalizados", desc: "Digitalizando papeis antigos? Una lotes em documentos organizados por categoria, data ou projeto." },
+              ].map((feature) => (<div key={feature.title} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}><div className="rounded-[11px] p-6 h-full" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}><h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3><p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p></div></div>))}
+            </div></div></section>
 
-        {/* Related Tools */}
-        <section className="py-16" style={{ background: "#0E0F1E" }}>
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-white mb-6 text-center">Ferramentas Relacionadas</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {[
-                { name: "Unir PDF", href: "/br/unir-pdf", desc: "Combine PDFs em um" },
-                { name: "Dividir PDF", href: "/br/dividir-pdf", desc: "Separe paginas" },
-                { name: "Comprimir PDF", href: "/br/comprimir-pdf", desc: "Reduza o tamanho" },
-                { name: "Girar PDF", href: "/br/girar-pdf", desc: "Corrija a orientacao" },
-                { name: "Achatar PDF", href: "/br/achatar-pdf", desc: "Achate campos" },
-                { name: "PDF para JPG", href: "/br/pdf-para-jpg", desc: "Converta em imagens" },
-              ].map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="rounded-xl p-4 transition-all text-center flex flex-col justify-center min-h-[80px] hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(20,216,196,0.25)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.2)" }}
-                >
-                  <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
-                  <div className="text-xs text-slate-400">{tool.desc}</div>
-                </Link>
-              ))}
-            </div>
+        <section className="py-16 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+          <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Unir PDFs Digitalizados</h2>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+            {[{ num: "1", title: "Envie seus PDFs digitalizados", desc: "Arraste e solte ou clique para escolher" }, { num: "2", title: "Organize na ordem", desc: "Reordene os arquivos antes de unir" }, { num: "3", title: "Baixe seu documento", desc: "Receba o arquivo unido instantaneamente" }].map((step) => (<div key={step.num} className="flex-1"><div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)", border: "1px solid rgba(20,216,196,0.25)" }}><span className="text-[#14D8C4] font-black text-lg">{step.num}</span></div><p className="font-semibold text-slate-900">{step.title}</p><p className="text-sm text-slate-500 mt-1">{step.desc}</p></div>))}
           </div>
-        </section>
+        </div></section>
 
-        {/* FAQ */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
-            <div className="space-y-6">
-              {[
-                { q: "Posso unir PDFs digitalizados sem perder qualidade?", a: "Sim. O PDF.it combina PDFs digitalizados sem recomprimir as imagens. A qualidade original das digitalizacoes e mantida integralmente." },
-                { q: "PDFs digitalizados costumam ser grandes — qual o limite de tamanho?", a: "Usuarios gratuitos podem enviar arquivos de ate 25MB. Usuarios Pro tem limite de 200MB por arquivo — ideal para digitalizacoes de alta resolucao." },
-                { q: "Posso unir PDFs digitalizados no celular?", a: "Sim. O PDF.it funciona em qualquer navegador movel. Digitalize documentos com seu celular, converta para PDF e una-os diretamente." },
-                { q: "E possivel aplicar OCR nos PDFs digitalizados antes de unir?", a: "Sim. Use a ferramenta OCR Scanner do PDF.it para tornar seus PDFs digitalizados pesquisaveis antes de uni-los. Assim o documento final tera texto selecionavel." },
-                { q: "E seguro enviar documentos digitalizados para o PDF.it?", a: "Sim. O PDF.it usa conexoes criptografadas e exclui todos os arquivos apos sua sessao. Seus documentos nunca sao armazenados permanentemente." },
-                { q: "Posso comprimir o PDF apos unir as digitalizacoes?", a: "Sim. Apos unir seus PDFs digitalizados, use a ferramenta Comprimir PDF do PDF.it para reduzir o tamanho do arquivo final, facilitando o envio por email." },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
-                </div>
-              ))}
-            </div>
+        <section className="py-16" style={{ background: "#0E0F1E" }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+          <h2 className="text-2xl font-black text-white mb-6 text-center">Ferramentas Relacionadas</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {[{ name: "Unir PDF", href: "/br/unir-pdf", desc: "Uniao padrao de PDF" }, { name: "Scanner OCR", href: "/br/scanner-ocr", desc: "Torne escaneamentos pesquisaveis" }, { name: "Comprimir PDF", href: "/br/comprimir-pdf", desc: "Reduza o tamanho" }, { name: "Limpeza de Foto", href: "/br/limpeza-foto-digitalizada", desc: "Limpe escaneamentos de celular" }].map((tool) => (<div key={tool.href} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}><Link href={tool.href} className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}><div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div><div className="text-xs text-slate-400">{tool.desc}</div></Link></div>))}
           </div>
-        </section>
+        </div></section>
+
+        <section className="py-16" style={{ background: `radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%), radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%), #0E0F1E` }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+          <h2 className="text-3xl font-black text-white mb-10 text-center">Perguntas Frequentes</h2>
+          <div className="space-y-4">{faqs.map((faq, i) => (<div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}><h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3><p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p></div>))}</div>
+        </div></section>
+
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(faq => ({ "@type": "Question", "name": faq.q, "acceptedAnswer": { "@type": "Answer", "text": faq.a } })) })}} />
       </main>
       <FooterBr />
     </div>
