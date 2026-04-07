@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Script from "next/script"
 import { HeaderEs } from "@/components/header-es"
 import { FooterEs } from "@/components/footer-es"
-import { FileText, Zap, Shield, Upload } from "lucide-react"
+import { FileText, Zap, Shield, Upload , Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata: Metadata = {
