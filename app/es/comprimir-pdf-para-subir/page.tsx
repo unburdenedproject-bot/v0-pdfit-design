@@ -2,239 +2,84 @@ import Script from "next/script"
 import { HeaderEs } from "@/components/header-es"
 import { FooterEs } from "@/components/footer-es"
 import { ProcessingInterface } from "@/components/processing-interface"
-import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, RotateCw, Scissors } from "lucide-react"
+import { FileArchiveIcon as Compress, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF para Subir — Reduce el Tamaño para Portales de Carga | PDF.it",
-  description:
-    "Comprime PDFs para cumplir límites de portales de carga. Reduce el tamaño para formularios web, solicitudes y envíos en línea.",
-  alternates: {
-    languages: {
-      en: "/compress-pdf-for-upload",
-      es: "/es/comprimir-pdf-para-subir",
-    },
-  },
+  title: "Comprimir PDF para Subir a Portales — Reduce Tamano de PDF | PDF.it",
+  description: "Comprime tu PDF para cumplir limites de portales de subida. Compresion extrema para formularios gubernamentales, admisiones universitarias, solicitudes de empleo y reclamos de seguros — gratis y desde tu navegador.",
+  alternates: { canonical: "https://www.pdf.it.com/es/comprimir-pdf-para-subir", languages: { en: "/compress-pdf-for-upload", es: "/es/comprimir-pdf-para-subir", "pt-BR": "/br/comprimir-pdf-para-subir" } },
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Cómo comprimo un PDF para un portal de carga?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it y haz clic en Comprimir. La compresión recomendada reduce el tamaño del archivo optimizando imágenes y la estructura interna, ayudándote a cumplir con los límites de subida del portal." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Mi PDF comprimido será aceptado por portales gubernamentales?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it produce archivos PDF estándar que son aceptados por todos los portales principales. El texto se mantiene nítido y legible, y la estructura del archivo es válida para cualquier sistema que acepte PDFs." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo comprimir un PDF para cumplir un límite de tamaño específico?",
-      "acceptedAnswer": { "@type": "Answer", "text": "La compresión recomendada reduce significativamente el tamaño del archivo, pero el resultado exacto depende del contenido de tu PDF. Los documentos con mucho texto se comprimen muy bien. Si el archivo sigue siendo muy grande, intenta dividirlo en partes y comprimir cada una." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Se afectará la calidad del documento al comprimirlo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "El texto se mantiene nítido y completamente legible. Las imágenes conservan buen detalle con la compresión recomendada. El documento sigue siendo completamente utilizable para envíos oficiales y subidas a portales." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo comprimir PDFs para subir desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, comprímelo y descarga el archivo más pequeño directamente en tu iPhone o Android — sin necesidad de instalar una app." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué pasa si mi PDF sigue siendo muy grande después de comprimirlo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Intenta dividir el PDF en secciones más pequeñas con nuestra herramienta Dividir PDF, luego comprime cada parte por separado. También puedes aplanar el PDF o eliminar páginas innecesarias antes de comprimir." }
-    }
-  ]
-}
+export default function ComprimirPDFParaSubirPage() {
+  const faqs = [{"q":"¿Como comprimo un PDF para un portal?","a":"Sube tu PDF a PDF.it y haz clic en Comprimir. La compresion extrema reduce la resolucion de imagenes y optimiza la estructura del archivo."},{"q":"¿Sera aceptado por portales gubernamentales?","a":"Si. PDF.it produce archivos PDF estandar aceptados por todos los portales principales."},{"q":"¿Puedo comprimir a un tamano especifico?","a":"La compresion extrema reduce drasticamente el tamano, pero el resultado exacto depende del contenido de tu PDF."},{"q":"¿Se afectara la calidad?","a":"El texto se mantiene nitido y legible. Las imagenes pueden perder algo de detalle con la compresion extrema."},{"q":"¿Puedo comprimir desde mi celular?","a":"Si. PDF.it funciona en cualquier navegador movil — sin necesidad de instalar una app."},{"q":"¿Que hago si sigue siendo muy grande?","a":"Divide el PDF en secciones con Dividir PDF y luego comprime cada parte por separado."}]
 
-export default function ComprimirPDFParaSubirPageEs() {
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema-es"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderEs />
       <main>
-        {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Compress className="h-10 w-10 text-white" />
-              </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF para Subir</h1>
-              <p className="text-xl text-slate-300 mb-8">
-                Muchos portales de carga tienen límites estrictos de tamaño. Comprime tu PDF para cumplir con los requisitos de formularios web, solicitudes de empleo, trámites gubernamentales y envíos en línea — rápido, gratis y desde el navegador.
-              </p>
-              <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compresión Inteligente</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Después de la Sesión</span></div>
-                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sin Registro</span></div>
-              </div>
+        <section className="text-white py-16 relative overflow-hidden" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%), radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%), #0E0F1E` }}>
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}><filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter><rect width="100%" height="100%" filter="url(#heroGrain)" /></svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10"><div className="max-w-4xl mx-auto text-center">
+            <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)" }}><Compress className="h-10 w-10 text-[#14D8C4]" /></div>
+            <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF para Portales de Subida</h1>
+            <p className="text-xl text-slate-300 mb-8">Muchos portales de subida tienen limites estrictos. Aplica compresion extrema para reducir drasticamente el tamano de tu PDF para formularios gubernamentales, admisiones universitarias, bolsas de trabajo y mas.</p>
+            <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
+              <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compresion Extrema</span></div>
+              <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesion</span></div>
+              <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sin Registro</span></div>
             </div>
-          </div>
+          </div></div>
         </section>
 
-        {/* Processing Interface */}
-        <ProcessingInterface
-          acceptedFiles=".pdf"
-          toolName="Compress PDF"
-          outputFormat="PDF"
-          processingMessage="Comprimiendo tu PDF para subir..."
-          successMessage="¡Tu PDF listo para subir está listo!"
-          compressionLevel="recommended"
-        />
+        <section className="py-10 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+          <p className="text-lg text-slate-600 leading-relaxed">Los sitios gubernamentales, sistemas de admision universitaria, portales de empleo y formularios de reclamos de seguros frecuentemente imponen limites estrictos — a veces tan bajos como 1MB o 2MB. Si tu PDF excede el limite, la subida falla. PDF.it aplica compresion extrema para reducir drasticamente el tamano de tu archivo.</p>
+          <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+            <li className="flex items-center gap-2">✓ Compresion extrema para maxima reduccion de tamano</li>
+            <li className="flex items-center gap-2">✓ Produce PDFs estandar aceptados por todos los portales</li>
+            <li className="flex items-center gap-2">✓ El texto se mantiene nitido y legible para envios</li>
+            <li className="flex items-center gap-2">✓ Sin instalacion — comprime PDFs en tu navegador</li>
+          </ul>
+        </div></section>
 
-        {/* About */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-4">¿Por Qué Comprimir un PDF para Portales de Carga?</h2>
-            <p className="text-lg text-slate-600 mb-8">
-              Los sitios web gubernamentales, sistemas de admisión universitaria, portales de solicitud de empleo y formularios de trámites en línea a menudo aplican límites estrictos de tamaño — a veces tan bajos como 1MB o 2MB. Si tu PDF excede el límite, la subida falla. PDF.it comprime tu archivo para que cumpla con estos requisitos sin perder legibilidad.
-            </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>&#10003; Compresión inteligente para cumplir límites de portales</li>
-              <li>&#10003; Produce PDFs estándar aceptados por todos los sistemas</li>
-              <li>&#10003; El texto se mantiene nítido y legible para envíos oficiales</li>
-              <li>&#10003; Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li>&#10003; Sin instalación — comprime PDFs en tu navegador</li>
-            </ul>
-          </div>
-        </section>
+        <ProcessingInterface acceptedFiles=".pdf" toolName="Compress PDF" outputFormat="PDF" processingMessage="Compressing your PDF for upload..." successMessage="Your compressed PDF is ready!" compressionLevel="extreme" />
 
-        {/* Use Cases */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Casos de Uso Comunes</h2>
-            <div className="space-y-10">
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Solicitudes de Empleo</h3>
-                <p className="text-slate-600">
-                  Muchas bolsas de trabajo y sistemas de seguimiento de candidatos limitan la subida de currículums y cartas de presentación a unos pocos megabytes. Comprime tus documentos de solicitud para que se suban sin errores en LinkedIn, Indeed, Workday y otras plataformas.
-                </p>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Formularios Gubernamentales</h3>
-                <p className="text-slate-600">
-                  Declaraciones de impuestos, solicitudes de permisos, formularios de visa y trámites regulatorios a menudo tienen límites estrictos de subida. Comprime tus PDFs para cumplir con los requisitos de portales gubernamentales y evitar errores de envío.
-                </p>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Portales Educativos</h3>
-                <p className="text-slate-600">
-                  Los portales de solicitud de universidades y posgrados a menudo requieren expedientes académicos, cartas de recomendación y ensayos personales bajo límites estrictos de tamaño. Comprime tus documentos para cumplir con estos requisitos sin perder legibilidad.
-                </p>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Plataformas de Envío</h3>
-                <p className="text-slate-600">
-                  Los portales de seguros, plataformas de licitación y sistemas de envío de documentos frecuentemente limitan la subida a tamaños pequeños. Comprime recibos escaneados, registros y formularios para que se suban exitosamente.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <section className="py-16" style={{ background: `radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%), #0E0F1E` }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl"><div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {[
+                { title: "Solicitudes de Empleo y Admisiones", desc: "Bolsas de trabajo, sistemas de seguimiento de candidatos y portales universitarios limitan las subidas a pocos megabytes. Comprime tu curriculum, transcripciones y cartas para subirlos sin errores." },
+                { title: "Tramites Gubernamentales y de Seguros", desc: "Declaraciones de impuestos, solicitudes de permisos, formularios de visa y reclamos de seguros tienen limites estrictos. Comprime tus PDFs para cumplir requisitos y evitar errores." },
+                { title: "Salida PDF Estandar", desc: "PDF.it produce archivos PDF estandar aceptados por todos los portales principales. El texto permanece nitido y la estructura se mantiene valida para cualquier sistema." },
+          ].map((feature) => (
+            <div key={feature.title} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}><div className="rounded-[11px] p-6 h-full" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+              <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3><p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
+            </div></div>
+          ))}
+        </div></div></section>
 
-        {/* How To */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Comprimir un PDF para Subir</h2>
-            <div className="space-y-4">
-              {[
-                "Sube o arrastra y suelta tu PDF en PDF.it.",
-                "Haz clic en Comprimir PDF — la compresión recomendada se aplica automáticamente para reducir el tamaño del archivo.",
-                "Descarga tu PDF más pequeño y súbelo al portal. Si aún es muy grande, prueba dividir el archivo primero y luego comprime cada parte.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
-                  </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
-                </div>
-              ))}
-            </div>
+        <section className="py-16 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+          <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Comprimir un PDF para Portales de Subida</h2>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+            {[{ num: "1", title: "Sube tu PDF", desc: "Arrastra y suelta o haz clic para elegir un archivo" }, { num: "2", title: "Haz clic en Comprimir", desc: "La compresion extrema se aplica automaticamente" }, { num: "3", title: "Descarga y sube", desc: "Obtiene tu archivo mas pequeno y envialo al portal" }].map((step) => (
+              <div key={step.num} className="flex-1"><div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)", border: "1px solid rgba(20,216,196,0.25)" }}><span className="text-[#14D8C4] font-black text-lg">{step.num}</span></div><p className="font-semibold text-slate-900">{step.title}</p><p className="text-sm text-slate-500 mt-1">{step.desc}</p></div>
+            ))}
           </div>
-        </section>
+        </div></section>
 
-        {/* Related Tools */}
-        <section className="py-16" style={{ background: "#0E0F1E" }}>
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Más Herramientas PDF</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-              {[
-                { name: "Comprimir PDF", desc: "Compresión estándar.", href: "/es/comprimir-pdf", icon: Compress },
-                { name: "Comprimir a 1MB", desc: "Para límites de 1MB.", href: "/es/comprimir-pdf-a-1mb", icon: Compress },
-                { name: "Comprimir a 2MB", desc: "Para límites de 2MB.", href: "/es/comprimir-pdf-a-2mb", icon: Compress },
-                { name: "Comprimir a 5MB", desc: "Para límites de 5MB.", href: "/es/comprimir-pdf-a-5mb", icon: Compress },
-                { name: "Dividir PDF", desc: "Divide si aún es muy grande.", href: "/es/dividir-pdf", icon: Scissors },
-                { name: "Unir PDF", desc: "Combina varios PDFs.", href: "/es/unir-pdf", icon: Merge },
-                { name: "Aplanar PDF", desc: "Elimina campos y anotaciones.", href: "/es/aplanar-pdf", icon: FileText },
-                { name: "Rotar PDF", desc: "Corrige la orientación.", href: "/es/rotar-pdf", icon: RotateCw },
-              ].map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="group flex flex-col items-center text-center rounded-xl border border-gray-200 bg-white p-4 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] hover:shadow-md transition-all duration-200"
-                >
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#14D8C4] to-[#0FBFB0] rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200 shadow-sm">
-                    <tool.icon className="h-5 w-5 text-white" />
-                  </div>
-                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-[#14D8C4] transition-colors mb-1">
-                    {tool.name}
-                  </h4>
-                  <p className="text-xs text-slate-500 leading-relaxed">{tool.desc}</p>
-                </Link>
-              ))}
-            </div>
+        <section className="py-16" style={{ background: "#0E0F1E" }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+          <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {[{ name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Compresion estandar" }, { name: "Comprimir a 1MB", href: "/es/comprimir-pdf-a-1mb", desc: "Para limites de 1MB" }, { name: "Comprimir a 2MB", href: "/es/comprimir-pdf-a-2mb", desc: "Para limites de 2MB" }, { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Divide si sigue grande" }].map((tool) => (
+              <div key={tool.href} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}><Link href={tool.href} className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}><div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div><div className="text-xs text-slate-400">{tool.desc}</div></Link></div>
+            ))}
           </div>
-        </section>
+        </div></section>
 
-        {/* FAQ */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
-            <div className="space-y-6">
-              {[
-                { q: "¿Cómo comprimo un PDF para un portal de carga?", a: "Sube tu PDF a PDF.it y haz clic en Comprimir. La compresión recomendada reduce el tamaño del archivo optimizando imágenes y la estructura interna, ayudándote a cumplir con los límites de subida del portal." },
-                { q: "¿Mi PDF comprimido será aceptado por portales gubernamentales?", a: "Sí. PDF.it produce archivos PDF estándar que son aceptados por todos los portales principales. El texto se mantiene nítido y legible, y la estructura del archivo es válida para cualquier sistema que acepte PDFs." },
-                { q: "¿Puedo comprimir un PDF para cumplir un límite de tamaño específico?", a: "La compresión recomendada reduce significativamente el tamaño del archivo, pero el resultado exacto depende del contenido de tu PDF. Los documentos con mucho texto se comprimen muy bien. Si el archivo sigue siendo muy grande, intenta dividirlo en partes y comprimir cada una." },
-                { q: "¿Se afectará la calidad del documento al comprimirlo?", a: "El texto se mantiene nítido y completamente legible. Las imágenes conservan buen detalle con la compresión recomendada. El documento sigue siendo completamente utilizable para envíos oficiales y subidas a portales." },
-                { q: "¿Puedo comprimir PDFs para subir desde mi celular?", a: "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, comprímelo y descarga el archivo más pequeño directamente en tu iPhone o Android — sin necesidad de instalar una app." },
-                { q: "¿Qué pasa si mi PDF sigue siendo muy grande después de comprimirlo?", a: "Intenta dividir el PDF en secciones más pequeñas con nuestra herramienta Dividir PDF, luego comprime cada parte por separado. También puedes aplanar el PDF o eliminar páginas innecesarias antes de comprimir." },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <section className="py-16" style={{ background: `radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%), radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%), #0E0F1E` }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+          <h2 className="text-3xl font-black text-white mb-10 text-center">Preguntas Frecuentes</h2>
+          <div className="space-y-4">{faqs.map((faq, i) => (<div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}><h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3><p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p></div>))}</div>
+        </div></section>
 
-        {/* CTA */}
-        <section className="py-16 bg-[#191B4D] text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-            <h2 className="text-2xl font-black mb-4">¿Necesitas Reducir un PDF para Subir?</h2>
-            <p className="text-slate-300 text-lg mb-8">
-              Comprime tu PDF en segundos y súbelo sin errores de tamaño. Sin registro, sin instalación, sin esperas.
-            </p>
-            <Link
-              href="/es/comprimir-pdf-para-subir"
-              className="inline-block bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl text-lg transition-colors shadow-lg"
-            >
-              Comprimir para Subir Ahora
-            </Link>
-          </div>
-        </section>
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(faq => ({ "@type": "Question", "name": faq.q, "acceptedAnswer": { "@type": "Answer", "text": faq.a } })) })}} />
       </main>
       <FooterEs />
     </div>

@@ -2,239 +2,84 @@ import Script from "next/script"
 import { HeaderEs } from "@/components/header-es"
 import { FooterEs } from "@/components/footer-es"
 import { ProcessingInterface } from "@/components/processing-interface"
-import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Image, Merge, Scissors } from "lucide-react"
+import { FileArchiveIcon as Compress, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF con Imagenes — Reduce PDFs con Fotos e Imagenes | PDF.it",
-  description:
-    "Comprime PDFs que contienen imagenes y fotos. Reduce significativamente el tamano sin perder la calidad visual del documento.",
-  alternates: {
-    languages: {
-      en: "/compress-pdf-images",
-      es: "/es/comprimir-pdf-imagenes",
-    },
-  },
+  title: "Comprimir Imagenes de PDF — Reducir PDFs con Muchas Imagenes | PDF.it",
+  description: "Comprime PDFs con muchas imagenes con compresion extrema para reducir dramaticamente el tamano. Perfecto para portafolios, catalogos, listados inmobiliarios y materiales de marketing — rapido, desde tu navegador, gratis.",
+  alternates: { canonical: "https://www.pdf.it.com/es/comprimir-pdf-imagenes", languages: { en: "/compress-pdf-images", es: "/es/comprimir-pdf-imagenes", "pt-BR": "/br/comprimir-pdf-imagenes" } },
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Cómo comprime PDF.it las imágenes dentro de un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it analiza cada imagen incrustada en tu PDF y aplica compresión inteligente que reduce la resolución y optimiza el formato de cada imagen. El texto, las fuentes y el formato del documento permanecen intactos." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuánto se puede reducir un PDF con muchas imágenes?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Los PDFs con muchas imágenes suelen ver las mayores reducciones — típicamente entre un 50-80%. Los resultados exactos dependen de la resolución, cantidad y tipo de imágenes en tu documento." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Se pierde calidad visible en las imágenes después de comprimir?",
-      "acceptedAnswer": { "@type": "Answer", "text": "La compresión recomendada de PDF.it está diseñada para preservar la calidad visual. Las imágenes se optimizan de forma inteligente — la diferencia es prácticamente imperceptible para la mayoría de los documentos, incluidos portafolios y catálogos." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué tipos de imágenes se comprimen dentro del PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it comprime todos los tipos de imágenes incrustadas: fotografías JPEG, gráficos PNG, ilustraciones vectoriales rasterizadas y cualquier otro formato de imagen que contenga tu PDF." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿La compresión afecta el texto o las fuentes del PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. El texto en los PDFs se almacena como datos vectoriales, completamente separado de las imágenes. La compresión se enfoca exclusivamente en las imágenes incrustadas — el texto, las fuentes y el formato permanecen 100% intactos y nítidos." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo comprimir un PDF con cientos de imágenes?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it procesa todas las imágenes incrustadas en tu PDF sin importar cuántas haya. Los documentos con muchas imágenes — catálogos, portafolios, presentaciones — típicamente ven las mayores reducciones de tamaño." }
-    }
-  ]
-}
+export default function ComprimirPDFImagenesPage() {
+  const faqs = [{"q":"¿Por que los PDFs con muchas imagenes son tan grandes?","a":"Las imagenes son el componente mas grande en la mayoria de los PDFs. Las fotos de alta resolucion pueden hacer un PDF muchas veces mas grande que un documento solo de texto."},{"q":"¿Cuanto puede reducir la compresion el tamano?","a":"Los documentos con muchas imagenes tipicamente ven reducciones del 50-80%, aunque los resultados exactos varian."},{"q":"¿Mis imagenes seguiran viendose bien?","a":"La compresion extrema reduce la resolucion de imagen. Las imagenes permanecen claras para visualizacion en pantalla, pero los detalles finos pueden suavizarse."},{"q":"¿Puedo comprimir un PDF con cientos de imagenes?","a":"Si. PDF.it procesa todas las imagenes incrustadas sin importar cuantas haya."},{"q":"¿La compresion afecta el texto?","a":"No. El texto se almacena como datos vectoriales. La compresion apunta a las imagenes dejando el texto completamente intacto."},{"q":"¿Que hago si sigue siendo muy grande?","a":"Divide el PDF en secciones con Dividir PDF y luego comprime cada parte individualmente."}]
 
-export default function ComprimirPDFImagenesPageEs() {
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema-comprimir-pdf-imagenes-es"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderEs />
       <main>
-        {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Compress className="h-10 w-10 text-white" />
-              </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF con Imagenes</h1>
-              <p className="text-xl text-slate-300 mb-8">
-                Los PDFs con muchas imagenes — portafolios fotograficos, catalogos de productos, presentaciones y documentos escaneados — suelen ser los archivos mas grandes con los que trabajas. PDF.it comprime las imagenes incrustadas de forma inteligente, reduciendo significativamente el tamano sin perder la calidad visual del documento.
-              </p>
-              <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compresion Inteligente de Imagenes</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Despues de la Sesion</span></div>
-                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sin Registro</span></div>
-              </div>
+        <section className="text-white py-16 relative overflow-hidden" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%), radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%), #0E0F1E` }}>
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}><filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter><rect width="100%" height="100%" filter="url(#heroGrain)" /></svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10"><div className="max-w-4xl mx-auto text-center">
+            <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)" }}><Compress className="h-10 w-10 text-[#14D8C4]" /></div>
+            <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir Imagenes de PDF</h1>
+            <p className="text-xl text-slate-300 mb-8">Los PDFs con muchas imagenes — fotos, catalogos, presentaciones — suelen ser los archivos mas grandes. La compresion extrema apunta a las imagenes incrustadas para maxima reduccion, haciendo tus archivos mas faciles de compartir y subir.</p>
+            <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
+              <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compresion Extrema de Imagenes</span></div>
+              <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesion</span></div>
+              <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sin Registro</span></div>
             </div>
-          </div>
+          </div></div>
         </section>
 
-        {/* Processing Interface */}
-        <ProcessingInterface
-          acceptedFiles=".pdf"
-          toolName="Compress PDF"
-          outputFormat="PDF"
-          processingMessage="Comprimiendo tu PDF con imagenes..."
-          successMessage="¡Tu PDF comprimido esta listo!"
-          compressionLevel="recommended"
-        />
+        <section className="py-10 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+          <p className="text-lg text-slate-600 leading-relaxed">Las imagenes son casi siempre el componente mas grande en un PDF. Una sola foto de alta resolucion puede agregar varios megabytes. Cuando tu PDF contiene docenas o cientos de imagenes, el tamano puede inflarse a 50MB o mas. La compresion extrema de PDF.it apunta a estas imagenes incrustadas para la reduccion mas dramatica posible.</p>
+          <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+            <li className="flex items-center gap-2">✓ Apunta a imagenes incrustadas para maxima reduccion</li>
+            <li className="flex items-center gap-2">✓ El texto y formato permanecen intactos y nitidos</li>
+            <li className="flex items-center gap-2">✓ Procesa todas las imagenes de tu PDF a la vez</li>
+            <li className="flex items-center gap-2">✓ Sin instalacion — comprime en tu navegador</li>
+          </ul>
+        </div></section>
 
-        {/* About */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-4">¿Por Que Comprimir PDFs con Imagenes?</h2>
-            <p className="text-lg text-slate-600 mb-8">
-              Las imagenes son casi siempre el componente mas grande en un PDF. Una sola foto de alta resolucion puede agregar varios megabytes. Cuando tu PDF contiene docenas o cientos de imagenes — fotos de productos, ilustraciones, graficos — el tamano del archivo puede inflarse a 50MB o mas. La compresion inteligente de PDF.it se enfoca en estas imagenes incrustadas, reduciendolas significativamente mientras preserva la calidad visual.
-            </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>&#10003; Se enfoca en imagenes incrustadas para maxima reduccion de tamano</li>
-              <li>&#10003; Preserva la calidad visual de fotos e ilustraciones</li>
-              <li>&#10003; El texto y el formato permanecen intactos y nitidos</li>
-              <li>&#10003; Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li>&#10003; Sin instalacion — comprime en tu navegador</li>
-            </ul>
-          </div>
-        </section>
+        <ProcessingInterface acceptedFiles=".pdf" toolName="Compress PDF" outputFormat="PDF" processingMessage="Compressing images in your PDF..." successMessage="Your compressed PDF is ready!" compressionLevel="extreme" />
 
-        {/* Use Cases */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Casos de Uso Comunes</h2>
-            <div className="space-y-10">
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Portafolios Fotograficos</h3>
-                <p className="text-slate-600">
-                  Los portafolios de fotografia exportados como PDFs pueden superar facilmente los 100MB. Comprime las imagenes incrustadas para crear una version compartible que se descargue rapidamente sin dejar de mostrar tu trabajo con calidad profesional.
-                </p>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Catalogos de Productos</h3>
-                <p className="text-slate-600">
-                  Los catalogos de comercio electronico con fotos de productos en cada pagina crean PDFs enormes. Comprime las imagenes para que tu catalogo sea facil de enviar por correo, descargar desde tu sitio web o compartir con distribuidores.
-                </p>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Presentaciones con Imagenes</h3>
-                <p className="text-slate-600">
-                  Las presentaciones exportadas a PDF con graficos, fotos y diagramas pueden ser muy pesadas. Comprime las imagenes para compartir tus presentaciones por correo, subirlas a plataformas o enviarlas a clientes sin problemas de tamano.
-                </p>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Documentos Escaneados</h3>
-                <p className="text-slate-600">
-                  Los documentos escaneados son esencialmente imagenes de pagina completa, lo que los hace extremadamente grandes. Comprime las imagenes incrustadas para reducir drasticamente el tamano mientras mantienes el contenido legible.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <section className="py-16" style={{ background: `radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%), #0E0F1E` }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl"><div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {[
+                { title: "Portafolios de Fotos y Catalogos", desc: "Los portafolios de fotografia y catalogos de e-commerce con fotos de productos en cada pagina crean PDFs masivos. Comprime las imagenes para enviarlos facilmente por email o compartir con clientes." },
+                { title: "Listados Inmobiliarios", desc: "Los folletos de propiedades con fotos de interiores y exteriores pueden ser muy grandes. Comprime las imagenes para que los agentes puedan compartir listados rapidamente por email o portales MLS." },
+                { title: "Marketing y Presentaciones", desc: "Folletos, volantes y presentaciones cargados de graficos necesitan ser compartibles. Comprime las imagenes para reducir el tamano para campanas de email, redes sociales y descargas web." },
+          ].map((feature) => (
+            <div key={feature.title} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}><div className="rounded-[11px] p-6 h-full" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+              <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3><p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
+            </div></div>
+          ))}
+        </div></div></section>
 
-        {/* How To */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Comprimir PDF con Imagenes</h2>
-            <div className="space-y-4">
-              {[
-                "Sube o arrastra y suelta tu PDF con imagenes en PDF.it.",
-                "Haz clic en Comprimir PDF — la compresion inteligente se aplica automaticamente a todas las imagenes incrustadas.",
-                "Descarga tu PDF mas pequeno. Si aun es muy grande, intenta dividir el archivo primero y luego comprime cada parte.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
-                  </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
-                </div>
-              ))}
-            </div>
+        <section className="py-16 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+          <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Comprimir Imagenes de PDF</h2>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+            {[{ num: "1", title: "Sube tu PDF", desc: "Arrastra y suelta o haz clic para elegir un archivo" }, { num: "2", title: "Haz clic en Comprimir", desc: "La compresion extrema apunta a todas las imagenes incrustadas" }, { num: "3", title: "Descarga tu PDF", desc: "Obtiene tu archivo mas pequeno al instante" }].map((step) => (
+              <div key={step.num} className="flex-1"><div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)", border: "1px solid rgba(20,216,196,0.25)" }}><span className="text-[#14D8C4] font-black text-lg">{step.num}</span></div><p className="font-semibold text-slate-900">{step.title}</p><p className="text-sm text-slate-500 mt-1">{step.desc}</p></div>
+            ))}
           </div>
-        </section>
+        </div></section>
 
-        {/* Related Tools */}
-        <section className="py-16" style={{ background: "#0E0F1E" }}>
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Herramientas Relacionadas</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-              {[
-                { name: "Comprimir PDF", desc: "Compresion estandar.", href: "/es/comprimir-pdf", icon: Compress },
-                { name: "Sin Perder Calidad", desc: "Compresion inteligente.", href: "/es/comprimir-pdf-sin-perder-calidad", icon: Compress },
-                { name: "PDF Escaneado", desc: "Comprime escaneos.", href: "/es/comprimir-pdf-escaneado", icon: Compress },
-                { name: "PDF a JPG", desc: "Convierte a imagenes.", href: "/es/pdf-a-jpg", icon: Image },
-                { name: "Extraer Imagenes", desc: "Extrae imagenes de PDFs.", href: "/es/extraer-imagenes-de-pdf", icon: Image },
-                { name: "Para Email", desc: "Comprime para correo.", href: "/es/comprimir-pdf-para-email", icon: Compress },
-                { name: "Dividir PDF", desc: "Divide documentos.", href: "/es/dividir-pdf", icon: Scissors },
-                { name: "Unir PDF", desc: "Combina varios PDFs.", href: "/es/unir-pdf", icon: Merge },
-              ].map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="group flex flex-col items-center text-center rounded-xl border border-gray-200 bg-white p-4 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] hover:shadow-md transition-all duration-200"
-                >
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#14D8C4] to-[#0FBFB0] rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200 shadow-sm">
-                    <tool.icon className="h-5 w-5 text-white" />
-                  </div>
-                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-[#14D8C4] transition-colors mb-1">
-                    {tool.name}
-                  </h4>
-                  <p className="text-xs text-slate-500 leading-relaxed">{tool.desc}</p>
-                </Link>
-              ))}
-            </div>
+        <section className="py-16" style={{ background: "#0E0F1E" }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+          <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {[{ name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Compresion estandar" }, { name: "Extraer Imagenes", href: "/es/extraer-imagenes-pdf", desc: "Extrae imagenes de PDFs" }, { name: "Comprimir a 5MB", href: "/es/comprimir-pdf-a-5mb", desc: "Para limites de 5MB" }, { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Divide si sigue grande" }].map((tool) => (
+              <div key={tool.href} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}><Link href={tool.href} className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}><div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div><div className="text-xs text-slate-400">{tool.desc}</div></Link></div>
+            ))}
           </div>
-        </section>
+        </div></section>
 
-        {/* FAQ */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
-            <div className="space-y-6">
-              {[
-                { q: "¿Como comprime PDF.it las imagenes dentro de un PDF?", a: "PDF.it analiza cada imagen incrustada en tu PDF y aplica compresion inteligente que reduce la resolucion y optimiza el formato de cada imagen. El texto, las fuentes y el formato del documento permanecen intactos." },
-                { q: "¿Cuanto se puede reducir un PDF con muchas imagenes?", a: "Los PDFs con muchas imagenes suelen ver las mayores reducciones — tipicamente entre un 50-80%. Los resultados exactos dependen de la resolucion, cantidad y tipo de imagenes en tu documento." },
-                { q: "¿Se pierde calidad visible en las imagenes despues de comprimir?", a: "La compresion recomendada de PDF.it esta disenada para preservar la calidad visual. Las imagenes se optimizan de forma inteligente — la diferencia es practicamente imperceptible para la mayoria de los documentos, incluidos portafolios y catalogos." },
-                { q: "¿Que tipos de imagenes se comprimen dentro del PDF?", a: "PDF.it comprime todos los tipos de imagenes incrustadas: fotografias JPEG, graficos PNG, ilustraciones vectoriales rasterizadas y cualquier otro formato de imagen que contenga tu PDF." },
-                { q: "¿La compresion afecta el texto o las fuentes del PDF?", a: "No. El texto en los PDFs se almacena como datos vectoriales, completamente separado de las imagenes. La compresion se enfoca exclusivamente en las imagenes incrustadas — el texto, las fuentes y el formato permanecen 100% intactos y nitidos." },
-                { q: "¿Puedo comprimir un PDF con cientos de imagenes?", a: "Si. PDF.it procesa todas las imagenes incrustadas en tu PDF sin importar cuantas haya. Los documentos con muchas imagenes — catalogos, portafolios, presentaciones — tipicamente ven las mayores reducciones de tamano." },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <section className="py-16" style={{ background: `radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%), radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%), #0E0F1E` }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+          <h2 className="text-3xl font-black text-white mb-10 text-center">Preguntas Frecuentes</h2>
+          <div className="space-y-4">{faqs.map((faq, i) => (<div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}><h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3><p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p></div>))}</div>
+        </div></section>
 
-        {/* CTA */}
-        <section className="py-16 bg-[#191B4D] text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-            <h2 className="text-2xl font-black mb-4">Comprime Tus PDFs con Imagenes Ahora</h2>
-            <p className="text-slate-300 text-lg mb-8">
-              Reduce PDFs sobredimensionados llenos de imagenes en segundos. Sin registro, sin instalacion, sin esperas.
-            </p>
-            <Link
-              href="/es/comprimir-pdf-imagenes"
-              className="inline-block bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl text-lg transition-colors shadow-lg"
-            >
-              Comprimir PDF con Imagenes
-            </Link>
-          </div>
-        </section>
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(faq => ({ "@type": "Question", "name": faq.q, "acceptedAnswer": { "@type": "Answer", "text": faq.a } })) })}} />
       </main>
       <FooterEs />
     </div>

@@ -2,85 +2,89 @@ import Script from "next/script"
 import { HeaderEs } from "@/components/header-es"
 import { FooterEs } from "@/components/footer-es"
 import { ProcessingInterface } from "@/components/processing-interface"
-import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, RotateCw, Scissors } from "lucide-react"
+import { FileArchiveIcon as Compress, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF a 100KB Online — Reducir Tamaño de PDF | PDF.it",
+  title: "Comprimir PDF a 100KB Online — Compresion Extrema Gratis | PDF.it",
   description:
-    "Comprime tu PDF para cumplir con límites de 100KB. Compresión extrema para firmas de email, micro-adjuntos, fotos de credencial y documentos optimizados para móvil — rápido, desde tu navegador, gratis.",
+    "Aplica compresion extrema a tu PDF para cumplir limites de 100KB. Perfecto para firmas de email, micro-adjuntos, fotos de credencial y documentos moviles — rapido, desde tu navegador, gratis.",
   alternates: {
+    canonical: "https://www.pdf.it.com/es/comprimir-pdf-a-100kb",
     languages: {
       en: "/compress-pdf-to-100kb",
       es: "/es/comprimir-pdf-a-100kb",
+      "pt-BR": "/br/comprimir-pdf-a-100kb",
     },
   },
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Cómo comprimo un PDF para un límite de 100KB?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it y haz clic en Comprimir. La herramienta aplica compresión extrema para reducir la resolución de imágenes y optimizar la estructura interna, reduciendo drásticamente el tamaño del archivo. Los resultados dependen del contenido de tu PDF." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Mi PDF quedará definitivamente debajo de 100KB después de comprimirlo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "La compresión extrema reduce drásticamente el tamaño del archivo, pero los resultados dependen del contenido del PDF. Los documentos simples de una sola página con texto pueden llegar a menos de 100KB. Los archivos con muchas imágenes o de varias páginas probablemente necesiten dividirse en páginas individuales primero y luego comprimir cada página por separado." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué tipos de archivos se pueden comprimir a 100KB de forma realista?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Los documentos de una sola página con principalmente texto, firmas simples, fotos de tamaño credencial y formularios pequeños pueden comprimirse a menos de 100KB. Los documentos de varias páginas o con imágenes de alta resolución necesitarán dividirse primero." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Mi PDF seguirá siendo legible después de comprimirlo a 100KB?",
-      "acceptedAnswer": { "@type": "Answer", "text": "El texto se mantiene nítido y legible. Las imágenes perderán detalle notable con este nivel de compresión extrema, pero para firmas, credenciales y documentos simples, el resultado sigue siendo utilizable." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo comprimir un PDF a 100KB desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, comprímelo y descarga el archivo más pequeño directamente en tu iPhone o Android." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué hago si mi PDF sigue pesando más de 100KB después de comprimirlo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Divide el PDF en páginas individuales con nuestra herramienta Dividir PDF y luego comprime cada página por separado. Para mejores resultados, quédate solo con la página que necesitas, aplana el PDF y convierte las imágenes a escala de grises antes de comprimir." }
-    }
-  ]
-}
-
 export default function ComprimirPDFA100KBPage() {
+  const faqs = [
+    { q: "¿Como comprimo un PDF para un limite de 100KB?", a: "Sube tu PDF a PDF.it y haz clic en Comprimir. La herramienta aplica compresion extrema para reducir la resolucion de imagenes y optimizar la estructura interna, reduciendo drasticamente el tamano del archivo. Los resultados dependen del contenido de tu PDF." },
+    { q: "¿Mi PDF quedara definitivamente debajo de 100KB despues de comprimirlo?", a: "La compresion extrema reduce drasticamente el tamano del archivo, pero los resultados dependen del contenido del PDF. Los documentos simples de una sola pagina con texto pueden llegar a menos de 100KB. Los archivos con muchas imagenes o de varias paginas probablemente necesiten dividirse en paginas individuales primero y luego comprimir cada pagina por separado." },
+    { q: "¿Que tipos de archivos se pueden comprimir a 100KB de forma realista?", a: "Los documentos de una sola pagina con principalmente texto, firmas simples, fotos de tamano credencial y formularios pequenos pueden comprimirse a menos de 100KB. Los documentos de varias paginas o con imagenes de alta resolucion necesitaran dividirse primero." },
+    { q: "¿Mi PDF seguira siendo legible despues de comprimirlo a 100KB?", a: "El texto se mantiene nitido y legible. Las imagenes perderan detalle notable con este nivel de compresion extrema, pero para firmas, credenciales y documentos simples, el resultado sigue siendo utilizable." },
+    { q: "¿Puedo comprimir un PDF a 100KB desde mi celular?", a: "Si. PDF.it funciona en cualquier navegador movil. Sube tu PDF, comprimelo y descarga el archivo mas pequeno directamente en tu iPhone o Android." },
+    { q: "¿Que hago si mi PDF sigue pesando mas de 100KB despues de comprimirlo?", a: "Divide el PDF en paginas individuales con nuestra herramienta Dividir PDF y luego comprime cada pagina por separado. Para mejores resultados, quedate solo con la pagina que necesitas, aplana el PDF y convierte las imagenes a escala de grises antes de comprimir." },
+  ]
+
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderEs />
       <main>
         {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section
+          className="text-white py-16 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#heroGrain)" />
+          </svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Compress className="h-10 w-10 text-white" />
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                  boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)",
+                }}
+              >
+                <Compress className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF para Límites de 100KB</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF para Limites de 100KB</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Aplica compresión extrema para reducir drásticamente el tamaño de tu PDF en portales con límites de 100KB. Perfecto para firmas de email, micro-adjuntos, subida de fotos de credencial y documentos optimizados para móvil.
+                Aplica compresion extrema para reducir drasticamente el tamano de tu PDF en portales con limites de 100KB. Perfecto para firmas de email, micro-adjuntos, fotos de credencial y documentos optimizados para movil.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compresión Extrema</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesión</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compresion Extrema</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesion</span></div>
                 <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sin Registro</span></div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Intro */}
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Algunas plataformas exigen un limite de tamano extremadamente estricto de 100KB. Los adjuntos de firma de email, subida de fotos de credencial, campos de micro-adjuntos y ciertos formularios optimizados para movil requieren archivos muy pequenos. PDF.it aplica compresion extrema para reducir drasticamente el tamano de tu PDF y ayudarte a cumplir con estos requisitos de subida tan exigentes.
+            </p>
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">✓ Compresion extrema para maxima reduccion de tamano</li>
+              <li className="flex items-center gap-2">✓ Perfecto para firmas de email y credenciales</li>
+              <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
+              <li className="flex items-center gap-2">✓ Sin instalacion — comprime PDFs en tu navegador</li>
+            </ul>
           </div>
         </section>
 
@@ -94,165 +98,166 @@ export default function ComprimirPDFA100KBPage() {
           compressionLevel="extreme"
         />
 
-        {/* About */}
-        <section className="py-16 bg-gray-50">
+        {/* Feature Blocks */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-4">¿Por Qué Comprimir un PDF para Límites de 100KB?</h2>
-            <p className="text-lg text-slate-600 mb-8">
-              Algunas plataformas exigen un límite de tamaño extremadamente estricto de 100KB. Los adjuntos de firma de email, subida de fotos de credencial, campos de micro-adjuntos y ciertos formularios optimizados para móvil requieren archivos muy pequeños. PDF.it aplica compresión extrema para reducir drásticamente el tamaño de tu PDF y ayudarte a cumplir con estos requisitos de subida tan exigentes.
-            </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>&#10003; Compresión extrema para máxima reducción de tamaño</li>
-              <li>&#10003; Perfecto para firmas de email, credenciales y micro-adjuntos</li>
-              <li>&#10003; El texto se mantiene nítido y legible</li>
-              <li>&#10003; Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li>&#10003; Sin instalación — comprime PDFs en tu navegador</li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Use Cases */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Casos de Uso Comunes</h2>
-            <div className="space-y-10">
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Adjuntos de Firma de Email</h3>
-                <p className="text-slate-600">
-                  Los sistemas de email corporativo frecuentemente limitan los adjuntos de firma a 100KB o menos. Comprime tu logo, vCard o PDF de folleto para que quepa dentro de las restricciones de tamaño de firma de email sin ralentizar la entrega.
-                </p>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Micro-Adjuntos para Formularios en Línea</h3>
-                <p className="text-slate-600">
-                  Algunos formularios en línea y sistemas de tickets solo permiten adjuntos muy pequeños de menos de 100KB. Comprime tus documentos de soporte para adjuntarlos a tickets de soporte, formularios de retroalimentación o campos de registro.
-                </p>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Documentos Optimizados para Móvil</h3>
-                <p className="text-slate-600">
-                  Enviar PDFs por conexiones móviles lentas o a dispositivos con almacenamiento limitado se beneficia de la compresión extrema. Reduce tu archivo a menos de 100KB para carga instantánea y mínimo uso de datos.
-                </p>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Subida de Fotos de Credencial e Identificación</h3>
-                <p className="text-slate-600">
-                  Los sistemas de credenciales de empleados, portales de registro de eventos y plataformas de tarjetas de membresía frecuentemente requieren subida de fotos de menos de 100KB. Comprime tu foto de credencial en PDF para cumplir con estos límites estrictos de tamaño.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* How To */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Comprimir un PDF para Límites de 100KB</h2>
-            <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                "Sube o arrastra tu PDF a PDF.it.",
-                "Haz clic en Comprimir PDF — la compresión extrema se aplica automáticamente.",
-                "Descarga tu PDF más pequeño. Si sigue superando 100KB, intenta dividirlo en una sola página primero y luego comprime esa página.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
+                { title: "Firmas de Email y Micro-Adjuntos", desc: "Los sistemas de email corporativo y plataformas de tickets frecuentemente limitan los adjuntos a 100KB. Comprime tu logo, vCard o folleto PDF para que quepa dentro de las restricciones estrictas de tamano." },
+                { title: "Fotos de Credencial e Identificacion", desc: "Los sistemas de credenciales de empleados, registros de eventos y portales de membresia requieren fotos de menos de 100KB. Comprime tu foto de credencial en PDF para cumplir estos limites." },
+                { title: "Documentos Optimizados para Movil", desc: "Enviar PDFs por conexiones lentas o a dispositivos con almacenamiento limitado se beneficia de la compresion extrema. Reduce tu archivo para carga instantanea y minimo uso de datos." },
+              ].map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <div
+                    className="rounded-[11px] p-6 h-full"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
                   </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Tips */}
+        {/* How It Works */}
         <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Consejos para Lograr Menos de 100KB</h2>
-              <p className="text-slate-600 mb-4">
-                Lograr menos de 100KB requiere optimización agresiva. Prueba estas estrategias:
-              </p>
-              <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Usa solo una página</strong> — extrae la página que necesitas con nuestra herramienta Dividir PDF y luego comprime solo esa página.</li>
-                <li>&#10003; <strong>Elimina contenido innecesario</strong> — borra páginas, imágenes o elementos que no sean estrictamente necesarios.</li>
-                <li>&#10003; <strong>Usa blanco y negro</strong> — convierte las imágenes a escala de grises antes de comprimir. Los datos de color ocupan mucho espacio.</li>
-                <li>&#10003; <strong>Aplana el PDF</strong> — si el PDF tiene campos de formulario, anotaciones o capas, aplánalo primero para eliminar datos ocultos.</li>
-              </ul>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Comprimir un PDF para Limites de 100KB</h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+              {[
+                { num: "1", title: "Sube tu PDF", desc: "Arrastra y suelta o haz clic para elegir un archivo" },
+                { num: "2", title: "Haz clic en Comprimir", desc: "La compresion extrema se aplica automaticamente" },
+                { num: "3", title: "Descarga tu PDF", desc: "Obtiene tu archivo comprimido al instante" },
+              ].map((step) => (
+                <div key={step.num} className="flex-1">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                      border: "1px solid rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <span className="text-[#14D8C4] font-black text-lg">{step.num}</span>
+                  </div>
+                  <p className="font-semibold text-slate-900">{step.title}</p>
+                  <p className="text-sm text-slate-500 mt-1">{step.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Related Tools */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16" style={{ background: "#0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Más Herramientas PDF</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "Comprimir a 200KB", desc: "Para límites de 200KB.", href: "/es/comprimir-pdf-a-200kb", icon: Compress },
-                { name: "Comprimir a 500KB", desc: "Para límites de 500KB.", href: "/es/comprimir-pdf-a-500kb", icon: Compress },
-                { name: "Comprimir a 1MB", desc: "Para límites de 1MB.", href: "/es/comprimir-pdf-a-1mb", icon: Compress },
-                { name: "Comprimir para Email", desc: "Para adjuntos de email.", href: "/es/comprimir-pdf-para-email", icon: Compress },
-                { name: "Dividir PDF", desc: "Divide si sigue siendo grande.", href: "/es/dividir-pdf", icon: Scissors },
-                { name: "Unir PDF", desc: "Combina múltiples PDFs.", href: "/es/unir-pdf", icon: Merge },
-                { name: "Comprimir PDF", desc: "Compresión estándar.", href: "/es/comprimir-pdf", icon: Compress },
-                { name: "Rotar PDF", desc: "Corrige la orientación.", href: "/es/rotar-pdf", icon: RotateCw },
+                { name: "Comprimir a 200KB", href: "/es/comprimir-pdf-a-200kb", desc: "Para limites de 200KB" },
+                { name: "Comprimir a 500KB", href: "/es/comprimir-pdf-a-500kb", desc: "Para limites de 500KB" },
+                { name: "Comprimir a 1MB", href: "/es/comprimir-pdf-a-1mb", desc: "Para limites de 1MB" },
+                { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Divide si sigue grande" },
               ].map((tool) => (
-                <Link
+                <div
                   key={tool.href}
-                  href={tool.href}
-                  className="group flex flex-col items-center text-center rounded-xl border border-gray-200 bg-white p-4 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] hover:shadow-md transition-all duration-200"
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
                 >
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#14D8C4] to-[#0FBFB0] rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200 shadow-sm">
-                    <tool.icon className="h-5 w-5 text-white" />
-                  </div>
-                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-[#14D8C4] transition-colors mb-1">
-                    {tool.name}
-                  </h4>
-                  <p className="text-xs text-slate-500 leading-relaxed">{tool.desc}</p>
-                </Link>
+                  <Link
+                    href={tool.href}
+                    className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
+                    <div className="text-xs text-slate-400">{tool.desc}</div>
+                  </Link>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-[#F3F4FF]">
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
-            <div className="space-y-6">
-              {[
-                { q: "¿Cómo comprimo un PDF para un límite de 100KB?", a: "Sube tu PDF a PDF.it y haz clic en Comprimir. La herramienta aplica compresión extrema para reducir la resolución de imágenes y optimizar la estructura interna, reduciendo drásticamente el tamaño del archivo. Los resultados dependen del contenido de tu PDF." },
-                { q: "¿Mi PDF quedará definitivamente debajo de 100KB después de comprimirlo?", a: "La compresión extrema reduce drásticamente el tamaño del archivo, pero los resultados dependen del contenido del PDF. Los documentos simples de una sola página con texto pueden llegar a menos de 100KB. Los archivos con muchas imágenes o de varias páginas probablemente necesiten dividirse en páginas individuales primero y luego comprimir cada página por separado." },
-                { q: "¿Qué tipos de archivos se pueden comprimir a 100KB de forma realista?", a: "Los documentos de una sola página con principalmente texto, firmas simples, fotos de tamaño credencial y formularios pequeños pueden comprimirse a menos de 100KB. Los documentos de varias páginas o con imágenes de alta resolución necesitarán dividirse primero." },
-                { q: "¿Mi PDF seguirá siendo legible después de comprimirlo a 100KB?", a: "El texto se mantiene nítido y legible. Las imágenes perderán detalle notable con este nivel de compresión extrema, pero para firmas, credenciales y documentos simples, el resultado sigue siendo utilizable." },
-                { q: "¿Puedo comprimir un PDF a 100KB desde mi celular?", a: "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, comprímelo y descarga el archivo más pequeño directamente en tu iPhone o Android." },
-                { q: "¿Qué hago si mi PDF sigue pesando más de 100KB después de comprimirlo?", a: "Divide el PDF en páginas individuales con nuestra herramienta Dividir PDF y luego comprime cada página por separado. Para mejores resultados, quédate solo con la página que necesitas, aplana el PDF y convierte las imágenes a escala de grises antes de comprimir." },
-              ].map((faq, i) => (
-                <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
+            <h2 className="text-3xl font-black text-white mb-10 text-center">Preguntas Frecuentes</h2>
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl p-6"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-16 bg-[#191B4D] text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-            <h2 className="text-2xl font-black mb-4">¿Necesitas Compresión Extrema de PDF?</h2>
-            <p className="text-slate-300 text-lg mb-8">
-              Sube tu PDF y aplica compresión máxima en segundos. Sin registro, sin instalación, sin esperas.
-            </p>
-            <Link
-              href="/es/comprimir-pdf-a-100kb"
-              className="inline-block bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl text-lg transition-colors shadow-lg"
-            >
-              Comprimir a 100KB Ahora
-            </Link>
-          </div>
-        </section>
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+          }))
+        })}} />
       </main>
       <FooterEs />
     </div>

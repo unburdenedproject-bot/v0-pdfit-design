@@ -2,85 +2,89 @@ import Script from "next/script"
 import { HeaderEs } from "@/components/header-es"
 import { FooterEs } from "@/components/footer-es"
 import { ProcessingInterface } from "@/components/processing-interface"
-import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, Scissors, Upload } from "lucide-react"
+import { FileArchiveIcon as Compress, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF a 10MB — Reduce tu PDF a Menos de 10MB | PDF.it",
+  title: "Comprimir PDF a 10MB Online — Compresion Extrema Gratis | PDF.it",
   description:
-    "Comprime tu PDF a menos de 10MB. Ideal para portales de carga, formularios en linea y sistemas con limite de 10MB.",
+    "Aplica compresion extrema a tu PDF para cumplir limites de 10MB. Perfecto para almacenamiento en la nube, LMS, plataformas de archivos y formularios en linea — rapido, desde tu navegador, gratis.",
   alternates: {
+    canonical: "https://www.pdf.it.com/es/comprimir-pdf-a-10mb",
     languages: {
       en: "/compress-pdf-to-10mb",
       es: "/es/comprimir-pdf-a-10mb",
+      "pt-BR": "/br/comprimir-pdf-a-10mb",
     },
   },
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Cómo comprimo un PDF a menos de 10MB?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it y haz clic en Comprimir. La herramienta aplica compresión inteligente que optimiza imágenes, fuentes y estructuras internas para reducir el tamaño del archivo. La mayoría de los documentos se comprimen fácilmente por debajo de 10MB." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿PDF.it garantiza que mi PDF quedará por debajo de 10MB?",
-      "acceptedAnswer": { "@type": "Answer", "text": "La compresión reduce drásticamente el tamaño del archivo, pero los resultados dependen del contenido del PDF. La mayoría de los documentos se comprimen muy por debajo de 10MB. Si tu archivo sigue siendo grande, prueba dividirlo primero y comprime cada parte por separado." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué plataformas tienen un límite de carga de 10MB?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Muchos portales de empleo, sistemas de gestión documental, plataformas educativas, formularios gubernamentales y servicios para compartir archivos establecen un límite de 10MB para la carga de documentos." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿La compresión a 10MB afecta la calidad del documento?",
-      "acceptedAnswer": { "@type": "Answer", "text": "La compresión recomendada de PDF.it está diseñada para preservar la calidad. El texto permanece nítido y completamente legible. Las imágenes se optimizan de forma inteligente con diferencias prácticamente imperceptibles." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo comprimir un PDF a 10MB desde mi teléfono?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, comprímelo y descarga el archivo más pequeño directamente en iPhone o Android." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Qué pasa si mi PDF sigue superando los 10MB después de la compresión?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Intenta dividir el PDF en partes más pequeñas con nuestra herramienta Dividir PDF, luego comprime cada parte individualmente. También puedes eliminar páginas innecesarias o aplanar el PDF para reducir aún más el tamaño." }
-    }
+export default function ComprimirPDFA10MBPage() {
+  const faqs = [
+    { q: "¿Como comprimo un PDF para un limite de 10MB?", a: "Sube tu PDF a PDF.it y haz clic en Comprimir. La herramienta aplica compresion extrema para reducir la resolucion de imagenes y optimizar la estructura interna, reduciendo drasticamente el tamano del archivo. Los resultados dependen del contenido de tu PDF." },
+    { q: "¿Mi PDF quedara definitivamente debajo de 10MB despues de comprimirlo?", a: "La compresion extrema reduce drasticamente el tamano del archivo, pero los resultados dependen del contenido del PDF. La mayoria de los documentos se comprimen bien por debajo de 10MB. Archivos muy pesados en imagenes pueden necesitar dividirse primero y luego comprimir cada parte por separado." },
+    { q: "¿Que plataformas tienen un limite de 10MB?", a: "Muchas versiones gratuitas de almacenamiento en la nube, sistemas de gestion de aprendizaje (LMS), servicios para compartir archivos, portales gubernamentales y constructores de formularios en linea imponen un limite de 10MB." },
+    { q: "¿Mi PDF seguira siendo legible despues de la compresion extrema?", a: "Si. El texto se mantiene nitido y completamente legible. Las imagenes pueden perder algo de detalle con la compresion extrema, pero el documento sigue siendo utilizable para la mayoria de los propositos." },
+    { q: "¿Puedo comprimir un PDF a 10MB desde mi celular?", a: "Si. PDF.it funciona en cualquier navegador movil. Sube tu PDF, comprimelo y descarga el archivo mas pequeno directamente en tu iPhone o Android." },
+    { q: "¿Que hago si mi PDF sigue pesando mas de 10MB despues de comprimirlo?", a: "Intenta dividir el PDF en partes mas pequenas con nuestra herramienta Dividir PDF y luego comprime cada parte individualmente. Tambien puedes aplanar el PDF o eliminar paginas innecesarias para reducir mas el tamano." },
   ]
-}
 
-export default function ComprimirPDFA10MBPageEs() {
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema-comprimir-pdf-10mb-es"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderEs />
       <main>
         {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section
+          className="text-white py-16 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#heroGrain)" />
+          </svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Compress className="h-10 w-10 text-white" />
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                  boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)",
+                }}
+              >
+                <Compress className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF a 10MB</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF para Limites de 10MB</h1>
               <p className="text-xl text-slate-300 mb-8">
-                ¿Necesitas que tu PDF pese menos de 10MB? Muchos portales de empleo, plataformas educativas y sistemas de gestion tienen un limite de 10MB para la carga de archivos. PDF.it comprime tu PDF de forma inteligente para que cumpla con estos requisitos sin perder calidad.
+                Aplica compresion extrema para reducir drasticamente el tamano de tu PDF en plataformas con limites de 10MB. Perfecto para almacenamiento en la nube, subidas a LMS, plataformas para compartir archivos y formularios en linea.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compresion Inteligente</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Despues de la Sesion</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compresion Extrema</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesion</span></div>
                 <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sin Registro</span></div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Intro */}
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Muchas plataformas imponen un limite de 10MB en las subidas de archivos. Las versiones gratuitas de almacenamiento en la nube, los sistemas de gestion de aprendizaje, los servicios para compartir archivos y los formularios en linea limitan los archivos a 10MB. PDF.it aplica compresion extrema para reducir drasticamente el tamano de tu PDF y ayudarte a cumplir estos requisitos.
+            </p>
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">✓ Compresion extrema para maxima reduccion de tamano</li>
+              <li className="flex items-center gap-2">✓ Perfecto para LMS, nube y plataformas de archivos</li>
+              <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
+              <li className="flex items-center gap-2">✓ Sin instalacion — comprime PDFs en tu navegador</li>
+            </ul>
           </div>
         </section>
 
@@ -89,99 +93,81 @@ export default function ComprimirPDFA10MBPageEs() {
           acceptedFiles=".pdf"
           toolName="Compress PDF"
           outputFormat="PDF"
-          processingMessage="Comprimiendo tu PDF a 10MB..."
-          successMessage="¡Tu PDF de menos de 10MB esta listo!"
-          compressionLevel="recommended"
+          processingMessage="Compressing your PDF for 10MB upload limits..."
+          successMessage="Your compressed PDF is ready!"
+          compressionLevel="extreme"
         />
 
-        {/* Common 10MB Limits */}
-        <section className="py-16 bg-gray-50">
+        {/* Feature Blocks */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-4">Plataformas con Limite de 10MB</h2>
-            <p className="text-lg text-slate-600 mb-8">
-              Muchas plataformas establecen un limite de 10MB para la carga de archivos. Si tu PDF supera este limite, no podras completar tu envio. PDF.it te ayuda a reducir el tamano de tu documento para cumplir con estos requisitos.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="bg-white rounded-xl p-6 border border-gray-200">
-                <div className="flex items-center gap-3 mb-3">
-                  <Upload className="h-5 w-5 text-[#14D8C4]" />
-                  <h3 className="font-bold text-slate-900">Portales de Empleo</h3>
-                </div>
-                <p className="text-slate-600 text-sm">LinkedIn, Indeed, Glassdoor y portales de empleo locales frecuentemente limitan los CVs y documentos adjuntos a 10MB.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 border border-gray-200">
-                <div className="flex items-center gap-3 mb-3">
-                  <Upload className="h-5 w-5 text-[#14D8C4]" />
-                  <h3 className="font-bold text-slate-900">Sistemas de Gestion</h3>
-                </div>
-                <p className="text-slate-600 text-sm">Los sistemas de gestion documental, CRMs y plataformas empresariales suelen tener limites de 10MB por archivo.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 border border-gray-200">
-                <div className="flex items-center gap-3 mb-3">
-                  <Upload className="h-5 w-5 text-[#14D8C4]" />
-                  <h3 className="font-bold text-slate-900">Plataformas Educativas</h3>
-                </div>
-                <p className="text-slate-600 text-sm">Moodle, Canvas, Blackboard y otras plataformas LMS a menudo restringen las cargas de archivos a 10MB.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 border border-gray-200">
-                <div className="flex items-center gap-3 mb-3">
-                  <Upload className="h-5 w-5 text-[#14D8C4]" />
-                  <h3 className="font-bold text-slate-900">Formularios Gubernamentales</h3>
-                </div>
-                <p className="text-slate-600 text-sm">Tramites, solicitudes y formularios oficiales en linea frecuentemente establecen un limite de 10MB para documentos adjuntos.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Use Cases */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Casos de Uso Comunes</h2>
-            <div className="space-y-10">
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Solicitudes de Empleo</h3>
-                <p className="text-slate-600">
-                  Tu CV, carta de presentacion y documentos de respaldo necesitan caber dentro del limite de 10MB de los portales de empleo. Comprime tus PDFs para enviar solicitudes sin problemas.
-                </p>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Documentos Legales</h3>
-                <p className="text-slate-600">
-                  Contratos, acuerdos y documentos notariales con firmas e imagenes escaneadas pueden superar los 10MB. Comprímelos para subirlos a plataformas legales o enviarlos por correo.
-                </p>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Formularios Gubernamentales</h3>
-                <p className="text-slate-600">
-                  Los tramites en linea — impuestos, permisos, solicitudes de visa — frecuentemente requieren documentos de menos de 10MB. Comprime tus PDFs para completar tus envios exitosamente.
-                </p>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Envios Academicos</h3>
-                <p className="text-slate-600">
-                  Tesis, trabajos de investigacion y tareas academicas con graficos e imagenes pueden ser muy pesados. Comprimelos para subirlos a plataformas educativas dentro del limite de 10MB.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* How To */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Comprimir un PDF a 10MB</h2>
-            <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                "Sube o arrastra y suelta tu PDF en PDF.it.",
-                "Haz clic en Comprimir PDF — la compresion inteligente se aplica automaticamente.",
-                "Descarga tu PDF mas pequeno. Si aun supera los 10MB, intenta dividir el archivo primero y luego comprime cada parte.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
+                { title: "Almacenamiento en la Nube y LMS", desc: "Muchas plataformas gratuitas de nube y sistemas de gestion de aprendizaje como Moodle, Canvas y Blackboard restringen las subidas a 10MB. Comprime apuntes, temarios y materiales de curso para subirlos sin errores." },
+                { title: "Compartir Archivos y Mensajeria", desc: "Servicios como WeTransfer gratuito, algunos espacios de Slack y Discord limitan el tamano de archivos. Comprime tus PDFs para que colegas y clientes los reciban sin problemas." },
+                { title: "Formularios en Linea", desc: "Solicitudes de empleo, reclamos de seguros y postulaciones a becas frecuentemente imponen un limite de 10MB en documentos adjuntos. Comprime tus archivos de soporte para enviar formularios exitosamente." },
+              ].map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <div
+                    className="rounded-[11px] p-6 h-full"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
                   </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works */}
+        <section className="py-16 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Comprimir un PDF para Limites de 10MB</h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+              {[
+                { num: "1", title: "Sube tu PDF", desc: "Arrastra y suelta o haz clic para elegir un archivo" },
+                { num: "2", title: "Haz clic en Comprimir", desc: "La compresion extrema se aplica automaticamente" },
+                { num: "3", title: "Descarga tu PDF", desc: "Obtiene tu archivo comprimido al instante" },
+              ].map((step) => (
+                <div key={step.num} className="flex-1">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                      border: "1px solid rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <span className="text-[#14D8C4] font-black text-lg">{step.num}</span>
+                  </div>
+                  <p className="font-semibold text-slate-900">{step.title}</p>
+                  <p className="text-sm text-slate-500 mt-1">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -191,73 +177,87 @@ export default function ComprimirPDFA10MBPageEs() {
         {/* Related Tools */}
         <section className="py-16" style={{ background: "#0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Herramientas Relacionadas</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "Comprimir a 5MB", desc: "Para limites de 5MB.", href: "/es/comprimir-pdf-a-5mb", icon: Compress },
-                { name: "Comprimir a 2MB", desc: "Para limites de 2MB.", href: "/es/comprimir-pdf-a-2mb", icon: Compress },
-                { name: "Comprimir a 1MB", desc: "Para limites de 1MB.", href: "/es/comprimir-pdf-a-1mb", icon: Compress },
-                { name: "Comprimir PDF", desc: "Compresion estandar.", href: "/es/comprimir-pdf", icon: Compress },
-                { name: "Dividir PDF", desc: "Divide si aun es grande.", href: "/es/dividir-pdf", icon: Scissors },
-                { name: "Unir PDF", desc: "Combina varios PDFs.", href: "/es/unir-pdf", icon: Merge },
-                { name: "Para Subir", desc: "Optimiza para carga.", href: "/es/comprimir-pdf-para-subir", icon: Compress },
-                { name: "Compresion Rapida", desc: "Comprime al instante.", href: "/es/comprimir-pdf-rapido", icon: Compress },
+                { name: "Comprimir a 5MB", href: "/es/comprimir-pdf-a-5mb", desc: "Para limites de 5MB" },
+                { name: "Comprimir a 2MB", href: "/es/comprimir-pdf-a-2mb", desc: "Para limites de 2MB" },
+                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Compresion estandar" },
+                { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Divide si sigue grande" },
               ].map((tool) => (
-                <Link
+                <div
                   key={tool.href}
-                  href={tool.href}
-                  className="group flex flex-col items-center text-center rounded-xl border border-gray-200 bg-white p-4 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] hover:shadow-md transition-all duration-200"
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
                 >
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#14D8C4] to-[#0FBFB0] rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200 shadow-sm">
-                    <tool.icon className="h-5 w-5 text-white" />
-                  </div>
-                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-[#14D8C4] transition-colors mb-1">
-                    {tool.name}
-                  </h4>
-                  <p className="text-xs text-slate-500 leading-relaxed">{tool.desc}</p>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
-            <div className="space-y-6">
-              {[
-                { q: "¿Como comprimo un PDF a menos de 10MB?", a: "Sube tu PDF a PDF.it y haz clic en Comprimir. La herramienta aplica compresion inteligente que optimiza imagenes, fuentes y estructuras internas para reducir el tamano del archivo. La mayoria de los documentos se comprimen facilmente por debajo de 10MB." },
-                { q: "¿PDF.it garantiza que mi PDF quedara por debajo de 10MB?", a: "La compresion reduce drasticamente el tamano del archivo, pero los resultados dependen del contenido del PDF. La mayoria de los documentos se comprimen muy por debajo de 10MB. Si tu archivo sigue siendo grande, prueba dividirlo primero y comprime cada parte por separado." },
-                { q: "¿Que plataformas tienen un limite de carga de 10MB?", a: "Muchos portales de empleo, sistemas de gestion documental, plataformas educativas, formularios gubernamentales y servicios para compartir archivos establecen un limite de 10MB para la carga de documentos." },
-                { q: "¿La compresion a 10MB afecta la calidad del documento?", a: "La compresion recomendada de PDF.it esta disenada para preservar la calidad. El texto permanece nitido y completamente legible. Las imagenes se optimizan de forma inteligente con diferencias practicamente imperceptibles." },
-                { q: "¿Puedo comprimir un PDF a 10MB desde mi telefono?", a: "Si. PDF.it funciona en cualquier navegador movil. Sube tu PDF, comprimelo y descarga el archivo mas pequeno directamente en iPhone o Android." },
-                { q: "¿Que pasa si mi PDF sigue superando los 10MB despues de la compresion?", a: "Intenta dividir el PDF en partes mas pequenas con nuestra herramienta Dividir PDF, luego comprime cada parte individualmente. Tambien puedes eliminar paginas innecesarias o aplanar el PDF para reducir aun mas el tamano." },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
+                  <Link
+                    href={tool.href}
+                    className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
+                    <div className="text-xs text-slate-400">{tool.desc}</div>
+                  </Link>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-16 bg-[#191B4D] text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-            <h2 className="text-2xl font-black mb-4">Comprime Tu PDF a Menos de 10MB</h2>
-            <p className="text-slate-300 text-lg mb-8">
-              Reduce tu PDF para cumplir con limites de carga en segundos. Sin registro, sin instalacion, sin esperas.
-            </p>
-            <Link
-              href="/es/comprimir-pdf-a-10mb"
-              className="inline-block bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl text-lg transition-colors shadow-lg"
-            >
-              Comprimir PDF a 10MB Ahora
-            </Link>
+        {/* FAQ */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <h2 className="text-3xl font-black text-white mb-10 text-center">Preguntas Frecuentes</h2>
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl p-6"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
+
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+          }))
+        })}} />
       </main>
       <FooterEs />
     </div>
