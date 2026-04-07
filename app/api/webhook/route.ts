@@ -270,13 +270,21 @@ export async function POST(request: NextRequest) {
         .limit(1)
 
       if (users && users.length > 0) {
-        await supabaseAdmin.from("users").update({
+        const { error } = await supabaseAdmin.from("users").update({
           plan: "free",
           stripe_subscription_id: null,
           cancel_at_period_end: false,
           current_period_end: null,
           updated_at: new Date().toISOString(),
         }).eq("id", users[0].id)
+
+        if (error) {
+          console.error("Failed to downgrade user on subscription deletion:", error)
+          return NextResponse.json(
+            { error: "Database update failed" },
+            { status: 500 }
+          )
+        }
       }
     }
   }
