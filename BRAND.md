@@ -26,6 +26,13 @@ All three languages are **equal, first-class identities** — not translations o
 
 Copy written for each locale should feel native, not localized.
 
+## Logo
+- **Primary logo**: `/public/logo.svg` — PDFit swirl + ".it" in teal/blue gradient on transparent background
+- **Favicon**: `/public/favicon.png` — Internet Tab Logo (PDF.it on dark background)
+- **OG image**: `/public/og-logo.png` — PDFit logo for social sharing (1736×846)
+- **Usage**: All headers, footers, login, signup, reset-password use `<img src="/logo.svg" alt="PDF.it">` — never use text-based spans
+- **No orange**: All OmnisPDF orange colors were removed on April 6, 2026. Zero orange Tailwind classes in codebase.
+
 ## Color System
 **Brand palette (locked):**
 | Role | Hex | Usage |

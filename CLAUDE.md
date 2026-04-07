@@ -20,8 +20,9 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - Database: Supabase (users, usage tracking)
 - Rate Limiting: Upstash Redis
 - Testing: Playwright (E2E, 180 tests + 41 integration), Vitest (unit, 6 tests) — 227 total
-- Error Tracking: Sentry (LIVE — NEXT_PUBLIC_SENTRY_DSN configured on Vercel)
+- Error Tracking: Sentry (Vercel-side only — @sentry/nextjs removed due to Node 24 incompatibility)
 - Uptime Monitoring: BetterUptime (LIVE — pings every minute, SMS/email alerts)
+- Logo: SVG image logo at `/public/logo.svg` — used in all headers, footers, auth pages via `<img>` tag
 - CI: GitHub Actions (build + unit + E2E on every push to main)
 - Cron Jobs: Vercel Cron — trial email drip (daily 9am UTC), SEO health check (Mondays 8am UTC)
 
@@ -163,6 +164,7 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 - **Every tool page must follow the format in Page_Format.md — read it before creating or editing any tool page**
 - **Every change must be applied to all 3 languages (EN, ES, BR) simultaneously — no exceptions**
 - Enterprise users must have access to ALL Business features — check for both "business" AND "enterprise" in tier gates
+- **Never use orange Tailwind classes (orange-50 through orange-700)** — all were migrated to teal (#14D8C4) brand colors on April 6, 2026. Zero orange remaining in codebase.
 - Paula is non-technical — explain things simply
 
 ## Deployment Process

@@ -29,7 +29,7 @@ All set on Vercel for Production and Preview:
 - NEXT_PUBLIC_HCAPTCHA_SITE_KEY
 
 ## New Environment Variables (April 2026) — ALL CONFIGURED ON VERCEL
-- NEXT_PUBLIC_SENTRY_DSN — Sentry error tracking DSN (LIVE)
+- NEXT_PUBLIC_SENTRY_DSN — Sentry error tracking DSN (configured on Vercel; @sentry/nextjs package removed from codebase due to Node 24 incompatibility)
 - CRON_SECRET — protects cron job endpoints from unauthorized access (LIVE)
 
 ## Google Cloud Credentials

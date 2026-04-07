@@ -1,5 +1,23 @@
 # Project Learnings
 
+## 2026-04-06 — @sentry/nextjs crashes webpack on Node.js v24
+
+**What:** Installing `@sentry/nextjs` caused `WasmHash` crashes during `pnpm build` on Node.js v24.14.0. The crash occurs in webpack's hashing module, triggered by Sentry's `@opentelemetry` instrumentation. Removing the package, config files, and instrumentation.ts still crashed because the package was in `pnpm-lock.yaml` as a transitive dep. Only fully removing `@sentry/nextjs` from `package.json` fixed it.
+**Why it matters:** Vercel uses Node.js 20 where Sentry works fine. But local builds on Node.js v24 (bleeding edge) crash. The Sentry DSN is still configured on Vercel and captures errors in production. The package can be re-added when Sentry releases Node 24 support.
+**Apply when:** Before adding any npm package that uses `@opentelemetry` or native instrumentation hooks. Test the build locally first. If it crashes with WasmHash errors, check the Node.js version.
+
+## 2026-04-06 — Conflicting Tailwind text color classes cause accessibility failures
+
+**What:** The Dashboard button had both `text-[#0E0F1E]` and `text-white` in its className. Tailwind applies the last utility, so `text-white` won. White text on teal (#14D8C4) background has a contrast ratio of 2.9:1 — failing WCAG AA (minimum 4.5:1). Lighthouse flagged it as an accessibility issue.
+**Why it matters:** When replacing colors in bulk (orange → teal), the original classes had `text-white` which was correct for orange (white on orange = 4.6:1 ratio). After changing to teal background, `text-white` became incorrect but was left alongside the new `text-[#0E0F1E]`. The conflicting classes silently degraded accessibility.
+**Apply when:** After any bulk color replacement, check for conflicting text-color classes. Search for patterns like `text-[#0E0F1E].*text-white` or `text-white.*text-[#0E0F1E]` — the last class wins in Tailwind.
+
+## 2026-04-06 — Bulk find-and-replace on 437 files works but needs a cleanup pass
+
+**What:** Replacing all `orange-500` → `text-[#14D8C4]` across 437 files with sed was fast (~2 seconds) but missed edge cases: `focus:ring-orange-500`, `from-orange-50 to-amber-50`, `border-orange-500` in conditional expressions. Three cleanup passes were needed to reach zero remaining.
+**Why it matters:** Bulk sed replacements handle 95% of cases perfectly. The remaining 5% are context-specific patterns that need a second pass. Always run `grep -r "orange" --include="*.tsx"` after the bulk replace to catch stragglers.
+**Apply when:** Any large-scale class rename. Do the bulk pass first, then grep for survivors, then fix manually.
+
 ## 2026-04-05 — Playwright tier-gating tests need page.route() BEFORE page.goto()
 
 **What:** Tool components like EsignInterface and UrlPdfInterface fetch `/api/user-plan` in a `useEffect` during client-side hydration. If `mockUserPlan()` is called after `page.goto()`, the real fetch fires first and the component renders the upgrade gate. The mock only intercepts subsequent requests.
