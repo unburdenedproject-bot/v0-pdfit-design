@@ -1,14 +1,14 @@
 import Script from "next/script"
-import Link from "next/link"
 import { HeaderBr } from "@/components/header-br"
 import { FooterBr } from "@/components/footer-br"
 import { ProcessingInterface } from "@/components/processing-interface"
-import { FileText, Zap, Shield, Download } from "lucide-react"
+import { FilePlus, Zap, Shield, Download } from "lucide-react"
+import Link from "next/link"
 
 export const metadata = {
-  title: "Adicionar Pagina ao PDF — Insira Novas Paginas em Qualquer PDF | PDF.it",
+  title: "Adicionar Páginas ao PDF Online — Insira Páginas em Qualquer PDF | PDF.it",
   description:
-    "Adicione paginas a um PDF com o PDF.it. Insira paginas extras de outro PDF no seu documento — rapido, gratuito e direto no navegador.",
+    "Adicione páginas a um PDF existente com o PDF.it. Envie vários PDFs, combine-os em um único arquivo e insira páginas exatamente onde precisar — rápido e direto no navegador.",
   alternates: {
     canonical: "https://pdf.it.com/br/adicionar-pagina-ao-pdf",
     languages: {
@@ -19,80 +19,72 @@ export const metadata = {
   },
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Como adicionar uma pagina a um PDF?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Suba seu PDF principal no PDF.it, depois suba o segundo PDF com as paginas que deseja inserir. Escolha a posicao e clique em Mesclar. O resultado sera um unico PDF com todas as paginas combinadas.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Posso adicionar paginas no meio de um PDF?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Sim. A ferramenta de mesclagem do PDF.it permite combinar PDFs e reorganizar as paginas na ordem desejada, inserindo paginas em qualquer posicao do documento.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "A qualidade do PDF muda ao adicionar paginas?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Nao. O PDF.it preserva a qualidade original de ambos os documentos. Texto, imagens e formatacao permanecem identicos apos a mesclagem.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Posso adicionar paginas de diferentes PDFs?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Sim. Voce pode combinar paginas de multiplos PDFs em um unico documento. Suba todos os arquivos e organize as paginas na ordem desejada.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "E gratuito adicionar paginas a um PDF?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Sim. Voce pode adicionar paginas a PDFs de ate 25MB gratuitamente. Para arquivos maiores e processamento em lote, atualize para o plano Pro.",
-      },
-    },
-  ],
-}
-
 export default function AdicionarPaginaAoPDFPage() {
+  const faqs = [
+    { q: "Como adiciono páginas a um PDF existente?", a: "Envie seu PDF original primeiro e depois o PDF com as páginas que deseja adicionar. O PDF.it une os arquivos em ordem — seu documento original seguido das novas páginas. Clique em Mesclar e baixe o arquivo combinado." },
+    { q: "Posso inserir páginas em uma posição específica do PDF?", a: "Para inserir páginas em um ponto exato, primeiro use Dividir PDF para separar seu documento na posição desejada. Depois use Unir PDF para combinar a primeira parte, as novas páginas e a segunda parte nessa ordem." },
+    { q: "Posso adicionar páginas em branco a um PDF?", a: "Sim. Crie um PDF em branco usando qualquer editor de texto (como Google Docs ou Word), salve como PDF e envie junto com seu PDF original para mesclá-los." },
+    { q: "Posso combinar páginas de diferentes arquivos PDF?", a: "Sim. Envie quantos PDFs precisar — o PDF.it une todos em um único documento na ordem em que você organizá-los." },
+    { q: "Posso adicionar páginas a um PDF pelo celular?", a: "Sim. O PDF.it funciona em navegadores móveis — envie seus PDFs, mescle-os e baixe o resultado no iPhone ou Android." },
+    { q: "É seguro enviar meus PDFs?", a: "Sim. Todas as transferências são criptografadas com SSL e seus arquivos são excluídos imediatamente após a sessão. Nunca armazenamos nem compartilhamos seus documentos." },
+  ]
+
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderBr />
       <main>
         {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section
+          className="text-white py-16 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#heroGrain)" />
+          </svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <FileText className="h-10 w-10 text-white" />
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                  boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)",
+                }}
+              >
+                <FilePlus className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Adicionar Pagina ao PDF</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Adicionar Páginas ao PDF</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Insira novas paginas em qualquer documento PDF. Combine paginas de diferentes arquivos para criar o documento completo que voce precisa.
+                Insira páginas extras em um PDF existente, anexe documentos ou combine vários PDFs em um único arquivo — rápido e direto no navegador.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Insercao Instantanea</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Arquivos Removidos Apos a Sessao</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Envie Vários PDFs</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Arquivos Removidos Após a Sessão</span></div>
                 <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sem Cadastro</span></div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Intro */}
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Envie seus PDFs e o PDF.it une tudo em ordem — coloque o original primeiro e depois as páginas que quer adicionar. O resultado é um único PDF com todas as páginas incluídas, pronto para baixar, compartilhar ou imprimir.
+            </p>
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">✓ Adicione páginas de um PDF a outro</li>
+              <li className="flex items-center gap-2">✓ Anexe apêndices e documentos complementares</li>
+              <li className="flex items-center gap-2">✓ Funciona no Mac, Windows, iOS e Android</li>
+              <li className="flex items-center gap-2">✓ Sem instalação — roda direto no navegador</li>
+            </ul>
           </div>
         </section>
 
@@ -101,71 +93,80 @@ export default function AdicionarPaginaAoPDFPage() {
           acceptedFiles=".pdf"
           toolName="Merge PDF"
           outputFormat="PDF"
-          processingMessage="Adicionando paginas ao seu PDF..."
-          successMessage="Paginas adicionadas com sucesso!"
+          processingMessage="Adicionando páginas ao seu PDF..."
+          successMessage="Seu PDF atualizado está pronto!"
         />
 
-        {/* About */}
-        <section className="py-16 bg-gray-50">
+        {/* Feature Blocks */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <p className="text-lg text-slate-600 mb-8">
-              Precisa inserir paginas extras em um PDF? O PDF.it permite combinar paginas de diferentes documentos PDF em um unico arquivo. Suba seus PDFs, organize as paginas na ordem desejada e baixe o documento completo.
-            </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>&#10003; Adicione paginas de um ou varios PDFs</li>
-              <li>&#10003; Insira paginas em qualquer posicao do documento</li>
-              <li>&#10003; Qualidade original preservada</li>
-              <li>&#10003; Funciona em Mac, Windows, iOS, Android e Linux</li>
-              <li>&#10003; Sem instalacao — adicione paginas direto no navegador</li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Use Cases */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Complementar Relatorios</h2>
-              <p className="text-slate-600">
-                Adicione anexos, graficos ou paginas complementares a relatorios empresariais ja finalizados sem precisar recriar o documento inteiro.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Montar Documentacao</h2>
-              <p className="text-slate-600">
-                Combine paginas de diferentes fontes para montar documentacao completa — contratos com anexos, propostas com termos e condicoes, ou portfolios profissionais.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Inserir Capas e Sumarios</h2>
-              <p className="text-slate-600">
-                Adicione uma pagina de capa, sumario ou folha de rosto a um PDF existente. Ideal para apresentacoes, trabalhos academicos e documentos formais.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Atualizar Manuais</h2>
-              <p className="text-slate-600">
-                Insira novas paginas em manuais e guias para mante-los atualizados sem precisar recriar o documento do zero.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* How To */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Adicionar Paginas a um PDF</h2>
-            <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                "Suba ou arraste seu PDF principal para o PDF.it.",
-                "Suba o segundo PDF com as paginas que deseja adicionar.",
-                "Organize as paginas na ordem desejada e clique em Mesclar para baixar o resultado.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
+                { title: "Anexar Apêndices e Documentos", desc: "Adicione documentos de apoio a relatórios ou solicitações. Envie seu PDF principal primeiro e depois o apêndice — o PDF.it combina tudo em um arquivo só." },
+                { title: "Inserir uma Capa", desc: "Adicione uma capa profissional a qualquer PDF. Envie a capa primeiro e depois o documento principal — sua capa aparece no início." },
+                { title: "Combinar Documentos de Várias Partes", desc: "Trabalhando com relatórios trimestrais ou faturas de fontes diferentes? Envie todas as partes e mescle tudo em um único PDF." },
+              ].map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <div
+                    className="rounded-[11px] p-6 h-full"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
                   </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works */}
+        <section className="py-16 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Adicionar Páginas a um PDF</h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+              {[
+                { num: "1", title: "Envie seu PDF", desc: "Arraste e solte ou clique para escolher seus arquivos" },
+                { num: "2", title: "Adicione mais páginas", desc: "Envie PDFs extras para anexar" },
+                { num: "3", title: "Baixe o arquivo mesclado", desc: "Receba seu PDF combinado na hora" },
+              ].map((step) => (
+                <div key={step.num} className="flex-1">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                      border: "1px solid rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <span className="text-[#14D8C4] font-black text-lg">{step.num}</span>
+                  </div>
+                  <p className="font-semibold text-slate-900">{step.title}</p>
+                  <p className="text-sm text-slate-500 mt-1">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -178,46 +179,84 @@ export default function AdicionarPaginaAoPDFPage() {
             <h2 className="text-2xl font-black text-white mb-6 text-center">Ferramentas Relacionadas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "Girar PDF", href: "/br/girar-pdf", desc: "Gire paginas do PDF" },
-                { name: "Dividir PDF", href: "/br/dividir-pdf", desc: "Separe paginas do PDF" },
-                { name: "Unir PDF", href: "/br/unir-pdf", desc: "Combine varios PDFs" },
-                { name: "Achatar PDF", href: "/br/achatar-pdf", desc: "Bloqueie formularios e camadas" },
-                { name: "Comprimir PDF", href: "/br/comprimir-pdf", desc: "Reduza o tamanho do arquivo" },
-                { name: "Proteger PDF", href: "/br/proteger-pdf", desc: "Adicione senha ao PDF" },
+                { name: "Unir PDF", href: "/br/unir-pdf", desc: "Combine vários PDFs em um" },
+                { name: "Dividir PDF", href: "/br/dividir-pdf", desc: "Extraia páginas de um PDF" },
+                { name: "Girar PDF", href: "/br/girar-pdf", desc: "Corrija a orientação das páginas" },
+                { name: "Achatar PDF", href: "/br/achatar-pdf", desc: "Bloqueie campos de formulário" },
               ].map((tool) => (
-                <Link
+                <div
                   key={tool.href}
-                  href={tool.href}
-                  className="rounded-xl p-4 transition-all text-center flex flex-col justify-center min-h-[80px] hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(20,216,196,0.25)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.2)" }}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
                 >
-                  <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
-                  <div className="text-xs text-slate-400">{tool.desc}</div>
-                </Link>
+                  <Link
+                    href={tool.href}
+                    className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
+                    <div className="text-xs text-slate-400">{tool.desc}</div>
+                  </Link>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-gray-50">
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
-            <div className="space-y-6">
-              {[
-                { q: "Como adicionar uma pagina a um PDF?", a: "Suba seu PDF principal no PDF.it, depois suba o segundo PDF com as paginas que deseja inserir. Escolha a posicao e clique em Mesclar. O resultado sera um unico PDF com todas as paginas combinadas." },
-                { q: "Posso adicionar paginas no meio de um PDF?", a: "Sim. A ferramenta de mesclagem do PDF.it permite combinar PDFs e reorganizar as paginas na ordem desejada, inserindo paginas em qualquer posicao do documento." },
-                { q: "A qualidade do PDF muda ao adicionar paginas?", a: "Nao. O PDF.it preserva a qualidade original de ambos os documentos. Texto, imagens e formatacao permanecem identicos apos a mesclagem." },
-                { q: "Posso adicionar paginas de diferentes PDFs?", a: "Sim. Voce pode combinar paginas de multiplos PDFs em um unico documento. Suba todos os arquivos e organize as paginas na ordem desejada." },
-                { q: "E gratuito adicionar paginas a um PDF?", a: "Sim. Voce pode adicionar paginas a PDFs de ate 25MB gratuitamente. Para arquivos maiores e processamento em lote, atualize para o plano Pro." },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
+            <h2 className="text-3xl font-black text-white mb-10 text-center">Perguntas Frequentes</h2>
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl p-6"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
+
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+          }))
+        })}} />
       </main>
       <FooterBr />
     </div>

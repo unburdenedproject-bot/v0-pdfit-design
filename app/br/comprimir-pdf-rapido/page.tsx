@@ -2,7 +2,7 @@ import Script from "next/script"
 import { HeaderBr } from "@/components/header-br"
 import { FooterBr } from "@/components/footer-br"
 import { ProcessingInterface } from "@/components/processing-interface"
-import { FileArchiveIcon as Compress, Zap, Shield, Download, FileText, Merge, RotateCw, Scissors } from "lucide-react"
+import { Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
@@ -10,6 +10,7 @@ export const metadata = {
   description:
     "Comprima arquivos PDF instantaneamente online. Sem software, sem contas. Envie, comprima, baixe — pronto em segundos.",
   alternates: {
+    canonical: "/br/comprimir-pdf-rapido",
     languages: {
       en: "/compress-pdf-fast",
       es: "/es/comprimir-pdf-rapido",
@@ -18,59 +19,46 @@ export const metadata = {
   },
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Qual a velocidade da compressao do PDF.it?",
-      "acceptedAnswer": { "@type": "Answer", "text": "A maioria dos PDFs e comprimida em apenas alguns segundos. O tempo de processamento depende do tamanho e da complexidade do arquivo, mas documentos tipicos ficam prontos para download quase imediatamente apos clicar em Comprimir." }
-    },
-    {
-      "@type": "Question",
-      "name": "Preciso criar uma conta para comprimir um PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Nao. Voce pode comprimir PDFs imediatamente sem se cadastrar ou fazer login. Basta enviar seu arquivo, clicar em Comprimir e baixar o resultado. Usuarios gratuitos tem ate 10 compressoes por dia." }
-    },
-    {
-      "@type": "Question",
-      "name": "Preciso instalar algum software?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Nao. O PDF.it funciona inteiramente no seu navegador. Nao ha nada para baixar ou instalar. Funciona em qualquer dispositivo — Mac, Windows, iPhone, Android, Linux, Chromebook." }
-    },
-    {
-      "@type": "Question",
-      "name": "Meu PDF esta seguro quando comprimo online?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Seus arquivos sao processados de forma segura e excluidos automaticamente ao final da sua sessao. O PDF.it nao armazena nem compartilha seus documentos." }
-    },
-    {
-      "@type": "Question",
-      "name": "Quanto meu PDF sera comprimido?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Os resultados dependem do conteudo do seu PDF. Documentos com imagens e estruturas nao otimizadas geralmente veem reducoes significativas de tamanho. PDFs ja otimizados podem ver reducoes menores." }
-    },
-    {
-      "@type": "Question",
-      "name": "Posso comprimir PDFs pelo celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em qualquer navegador movel — Safari, Chrome, Firefox ou Samsung Internet. Envie da sua galeria ou gerenciador de arquivos, comprima e baixe o arquivo menor instantaneamente." }
-    }
-  ]
-}
-
 export default function ComprimirPDFRapidoPagePt() {
+  const faqs = [
+    { q: "Qual a velocidade da compressao do PDF.it?", a: "A maioria dos PDFs e comprimida em apenas alguns segundos. O tempo de processamento depende do tamanho e da complexidade do arquivo, mas documentos tipicos ficam prontos para download quase imediatamente apos clicar em Comprimir." },
+    { q: "Preciso criar uma conta para comprimir um PDF?", a: "Nao. Voce pode comprimir PDFs imediatamente sem se cadastrar ou fazer login. Basta enviar seu arquivo, clicar em Comprimir e baixar o resultado. Usuarios gratuitos tem ate 10 compressoes por dia." },
+    { q: "Preciso instalar algum software?", a: "Nao. O PDF.it funciona inteiramente no seu navegador. Nao ha nada para baixar ou instalar. Funciona em qualquer dispositivo — Mac, Windows, iPhone, Android, Linux, Chromebook." },
+    { q: "Meu PDF esta seguro quando comprimo online?", a: "Sim. Seus arquivos sao processados de forma segura e excluidos automaticamente ao final da sua sessao. O PDF.it nao armazena nem compartilha seus documentos." },
+    { q: "Quanto meu PDF sera comprimido?", a: "Os resultados dependem do conteudo do seu PDF. Documentos com imagens e estruturas nao otimizadas geralmente veem reducoes significativas de tamanho. PDFs ja otimizados podem ver reducoes menores." },
+    { q: "Posso comprimir PDFs pelo celular?", a: "Sim. O PDF.it funciona em qualquer navegador movel — Safari, Chrome, Firefox ou Samsung Internet. Envie da sua galeria ou gerenciador de arquivos, comprima e baixe o arquivo menor instantaneamente." },
+  ]
+
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema-pt"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderBr />
       <main>
         {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section
+          className="text-white py-16 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#heroGrain)" />
+          </svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Compress className="h-10 w-10 text-white" />
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                  boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)",
+                }}
+              >
+                <Zap className="h-10 w-10 text-[#14D8C4]" />
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF Rapido</h1>
               <p className="text-xl text-slate-300 mb-8">
@@ -85,6 +73,21 @@ export default function ComprimirPDFRapidoPagePt() {
           </div>
         </section>
 
+        {/* Intro */}
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Quando voce precisa de um PDF menor agora mesmo, a ultima coisa que quer e baixar software, criar uma conta ou esperar numa fila. O PDF.it comprime seu PDF em segundos — sem instalacao, sem cadastro, sem complicacoes. Basta enviar, comprimir e baixar.
+            </p>
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">✓ Comprima PDFs em segundos — sem espera</li>
+              <li className="flex items-center gap-2">✓ Sem software para instalar ou atualizar</li>
+              <li className="flex items-center gap-2">✓ Funciona no Mac, Windows, iOS, Android e Linux</li>
+              <li className="flex items-center gap-2">✓ Arquivos excluidos automaticamente apos sua sessao</li>
+            </ul>
+          </div>
+        </section>
+
         {/* Processing Interface */}
         <ProcessingInterface
           acceptedFiles=".pdf"
@@ -92,74 +95,79 @@ export default function ComprimirPDFRapidoPagePt() {
           outputFormat="PDF"
           processingMessage="Comprimindo seu PDF..."
           successMessage="Seu PDF comprimido esta pronto!"
-          compressionLevel="recommended"
+          showCompressionSelector
         />
 
-        {/* About */}
-        <section className="py-16 bg-gray-50">
+        {/* Feature Blocks */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que Usar o PDF.it para Compressao Rapida?</h2>
-            <p className="text-lg text-slate-600 mb-8">
-              Quando voce precisa de um PDF menor agora mesmo, a ultima coisa que quer e baixar software, criar uma conta ou esperar numa fila. O PDF.it e uma ferramenta baseada no navegador que comprime seu PDF em segundos — sem instalacao, sem cadastro, sem complicacoes. Basta enviar, comprimir e baixar.
-            </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>&#10003; Comprima PDFs em segundos — sem espera</li>
-              <li>&#10003; Sem software para instalar ou atualizar</li>
-              <li>&#10003; Sem conta necessaria para compressao basica</li>
-              <li>&#10003; Funciona no Mac, Windows, iOS, Android e Linux</li>
-              <li>&#10003; Arquivos excluidos automaticamente apos sua sessao</li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Use Cases */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Casos de Uso Comuns</h2>
-            <div className="space-y-10">
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Anexos de Ultima Hora</h3>
-                <p className="text-slate-600">
-                  Seu PDF e grande demais para anexar e o email precisa ser enviado ja. Comprima em segundos e anexe a versao menor — sem precisar instalar nada nem criar conta.
-                </p>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Compartilhamento Rapido de Arquivos</h3>
-                <p className="text-slate-600">
-                  Precisa compartilhar um PDF pelo Slack, Teams ou um app de mensagens? Comprima rapidamente para que suba e baixe mais rapido para todos os envolvidos.
-                </p>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Entregas com Prazo</h3>
-                <p className="text-slate-600">
-                  Portais de upload falham porque seu arquivo e grande demais? Comprima seu PDF em segundos para cumprir o prazo sem procurar software para desktop.
-                </p>
-              </div>
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <h3 className="text-xl font-black text-slate-900 mb-3">Compressao pelo Celular</h3>
-                <p className="text-slate-600">
-                  Longe do computador? Comprima PDFs direto do seu celular ou tablet usando qualquer navegador movel. Nao precisa baixar nenhum app — abra o PDF.it e pronto.
-                </p>
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                { title: "Anexos de Ultima Hora", desc: "Seu PDF e grande demais para anexar e o email precisa ser enviado ja. Comprima em segundos e anexe a versao menor — sem instalar nada, sem criar contas." },
+                { title: "Compartilhamento Rapido", desc: "Precisa compartilhar um PDF pelo Slack, Teams ou um app de mensagens? Comprima rapidamente para que suba e baixe mais rapido para todos." },
+                { title: "Compressao pelo Celular", desc: "Longe do computador? Comprima PDFs direto do seu celular ou tablet usando qualquer navegador movel. Nao precisa baixar nenhum app." },
+              ].map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <div
+                    className="rounded-[11px] p-6 h-full"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* How To */}
-        <section className="py-16 bg-gray-50">
+        {/* How It Works */}
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Comprimir um PDF Rapido</h2>
-            <div className="space-y-4">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Comprimir um PDF Rapido</h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
               {[
-                "Envie ou arraste e solte seu PDF no PDF.it — leva apenas um segundo.",
-                "Clique em Comprimir PDF — seu arquivo e processado em segundos.",
-                "Baixe seu PDF menor instantaneamente. Se precisar de mais compressao, tente o modo extremo ou divida o arquivo primeiro.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
+                { num: "1", title: "Envie seu PDF", desc: "Arraste e solte ou clique para escolher um arquivo" },
+                { num: "2", title: "Escolha o nivel de compressao", desc: "Leve, Media ou Extrema" },
+                { num: "3", title: "Baixe seu PDF", desc: "Receba seu arquivo comprimido instantaneamente" },
+              ].map((step) => (
+                <div key={step.num} className="flex-1">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                      border: "1px solid rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <span className="text-[#14D8C4] font-black text-lg">{step.num}</span>
                   </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
+                  <p className="font-semibold text-slate-900">{step.title}</p>
+                  <p className="text-sm text-slate-500 mt-1">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -169,73 +177,87 @@ export default function ComprimirPDFRapidoPagePt() {
         {/* Related Tools */}
         <section className="py-16" style={{ background: "#0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Mais Ferramentas PDF</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            <h2 className="text-2xl font-black text-white mb-6 text-center">Ferramentas Relacionadas</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "Comprimir PDF", desc: "Compressao padrao.", href: "/br/comprimir-pdf", icon: Compress },
-                { name: "Comprimir para 1MB", desc: "Para limites de 1MB.", href: "/br/comprimir-pdf-para-1mb", icon: Compress },
-                { name: "Comprimir para 5MB", desc: "Para limites de 5MB.", href: "/br/comprimir-pdf-para-5mb", icon: Compress },
-                { name: "Comprimir para Email", desc: "Para limites de anexo.", href: "/br/comprimir-pdf-para-email", icon: Compress },
-                { name: "Dividir PDF", desc: "Divide documentos grandes.", href: "/br/dividir-pdf", icon: Scissors },
-                { name: "Unir PDF", desc: "Combina varios PDFs.", href: "/br/unir-pdf", icon: Merge },
-                { name: "Achatar PDF", desc: "Remove campos de formulario.", href: "/br/achatar-pdf", icon: FileText },
-                { name: "Girar PDF", desc: "Corrige a orientacao.", href: "/br/girar-pdf", icon: RotateCw },
+                { name: "Comprimir PDF", href: "/br/comprimir-pdf", desc: "Compressao padrao" },
+                { name: "Comprimir para Email", href: "/br/comprimir-pdf-para-email", desc: "Para limites de anexo" },
+                { name: "Comprimir para 1MB", href: "/br/comprimir-pdf-para-1mb", desc: "Para limites de 1MB" },
+                { name: "Dividir PDF", href: "/br/dividir-pdf", desc: "Divida se ainda for grande" },
               ].map((tool) => (
-                <Link
+                <div
                   key={tool.href}
-                  href={tool.href}
-                  className="group flex flex-col items-center text-center rounded-xl border border-gray-200 bg-white p-4 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] hover:shadow-md transition-all duration-200"
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
                 >
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#14D8C4] to-[#0FBFB0] rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200 shadow-sm">
-                    <tool.icon className="h-5 w-5 text-white" />
-                  </div>
-                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-[#14D8C4] transition-colors mb-1">
-                    {tool.name}
-                  </h4>
-                  <p className="text-xs text-slate-500 leading-relaxed">{tool.desc}</p>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
-            <div className="space-y-6">
-              {[
-                { q: "Qual a velocidade da compressao do PDF.it?", a: "A maioria dos PDFs e comprimida em apenas alguns segundos. O tempo de processamento depende do tamanho e da complexidade do arquivo, mas documentos tipicos ficam prontos para download quase imediatamente apos clicar em Comprimir." },
-                { q: "Preciso criar uma conta para comprimir um PDF?", a: "Nao. Voce pode comprimir PDFs imediatamente sem se cadastrar ou fazer login. Basta enviar seu arquivo, clicar em Comprimir e baixar o resultado. Usuarios gratuitos tem ate 10 compressoes por dia." },
-                { q: "Preciso instalar algum software?", a: "Nao. O PDF.it funciona inteiramente no seu navegador. Nao ha nada para baixar ou instalar. Funciona em qualquer dispositivo — Mac, Windows, iPhone, Android, Linux, Chromebook." },
-                { q: "Meu PDF esta seguro quando comprimo online?", a: "Sim. Seus arquivos sao processados de forma segura e excluidos automaticamente ao final da sua sessao. O PDF.it nao armazena nem compartilha seus documentos." },
-                { q: "Quanto meu PDF sera comprimido?", a: "Os resultados dependem do conteudo do seu PDF. Documentos com imagens e estruturas nao otimizadas geralmente veem reducoes significativas de tamanho. PDFs ja otimizados podem ver reducoes menores." },
-                { q: "Posso comprimir PDFs pelo celular?", a: "Sim. O PDF.it funciona em qualquer navegador movel — Safari, Chrome, Firefox ou Samsung Internet. Envie da sua galeria ou gerenciador de arquivos, comprima e baixe o arquivo menor instantaneamente." },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
+                  <Link
+                    href={tool.href}
+                    className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
+                    <div className="text-xs text-slate-400">{tool.desc}</div>
+                  </Link>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-16 bg-[#191B4D] text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-            <h2 className="text-2xl font-black mb-4">Precisa Comprimir um PDF Agora Mesmo?</h2>
-            <p className="text-slate-300 text-lg mb-8">
-              Envie, comprima, baixe — pronto em segundos. Sem cadastro, sem instalacao, sem espera.
-            </p>
-            <Link
-              href="/br/comprimir-pdf-rapido"
-              className="inline-block bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl text-lg transition-colors shadow-lg"
-            >
-              Comprimir PDF Agora
-            </Link>
+        {/* FAQ */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <h2 className="text-3xl font-black text-white mb-10 text-center">Perguntas Frequentes</h2>
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl p-6"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
+
+        <Script id="faq-schema-pt" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+          }))
+        })}} />
       </main>
       <FooterBr />
     </div>

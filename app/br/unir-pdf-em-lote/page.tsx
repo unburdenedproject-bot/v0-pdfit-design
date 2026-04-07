@@ -8,8 +8,9 @@ import Link from "next/link"
 export const metadata = {
   title: "Unir PDF em Lote — Combine Dezenas de PDFs de Uma Vez | PDF.it",
   description:
-    "Una PDFs em lote com PDF.it. Envie dezenas de arquivos PDF e combine todos em um unico documento — processamento em lote rapido, gratis e online.",
+    "Una PDFs em lote com PDF.it. Envie dezenas de arquivos PDF e combine todos em um \u00fanico documento — processamento em lote r\u00e1pido e online.",
   alternates: {
+    canonical: "/br/unir-pdf-em-lote",
     languages: {
       en: "/batch-merge-pdf",
       es: "/es/unir-pdf-por-lotes",
@@ -18,70 +19,72 @@ export const metadata = {
   },
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "O que significa unir PDFs em lote?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Unir em lote significa combinar muitos arquivos PDF de uma so vez em um unico documento, em vez de unir dois de cada vez. E muito mais rapido quando voce tem dezenas de arquivos." }
-    },
-    {
-      "@type": "Question",
-      "name": "Quantos PDFs posso unir em lote?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Usuarios gratuitos podem unir varios PDFs de ate 25MB cada. Usuarios Pro tem acesso a processamento em lote avancado com arquivos de ate 200MB cada." }
-    },
-    {
-      "@type": "Question",
-      "name": "O processamento em lote e gratis?",
-      "acceptedAnswer": { "@type": "Answer", "text": "A uniao basica de multiplos PDFs e gratuita. Para processamento em lote avancado com arquivos maiores e sem limites, faca upgrade para o plano Pro." }
-    },
-    {
-      "@type": "Question",
-      "name": "Posso escolher a ordem dos arquivos no lote?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Apos enviar todos os arquivos, voce pode arrastar e soltar para definir a ordem exata antes de unir." }
-    },
-    {
-      "@type": "Question",
-      "name": "E seguro enviar muitos arquivos de uma vez?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it usa conexoes criptografadas e exclui todos os arquivos apos sua sessao. Nenhum arquivo e armazenado permanentemente em nossos servidores." }
-    },
-    {
-      "@type": "Question",
-      "name": "Quanto tempo leva para unir PDFs em lote?",
-      "acceptedAnswer": { "@type": "Answer", "text": "A maioria dos lotes e processada em segundos. Lotes muito grandes podem levar um pouco mais, mas o processo e muito mais rapido que software de desktop." }
-    }
-  ]
-}
-
 export default function UnirPdfEmLotePage() {
+  const faqs = [
+    { q: "O que significa unir PDFs em lote?", a: "Unir em lote significa combinar muitos arquivos PDF de uma s\u00f3 vez em um \u00fanico documento, em vez de unir dois de cada vez. \u00c9 muito mais r\u00e1pido quando voc\u00ea tem dezenas de arquivos." },
+    { q: "Quantos PDFs posso unir em lote?", a: "Usu\u00e1rios gratuitos podem unir v\u00e1rios PDFs de at\u00e9 25MB cada. Usu\u00e1rios Pro t\u00eam acesso a processamento em lote avan\u00e7ado com arquivos de at\u00e9 200MB cada. Usu\u00e1rios Business podem enviar arquivos de at\u00e9 1GB." },
+    { q: "O processamento em lote \u00e9 gratuito?", a: "A uni\u00e3o b\u00e1sica de m\u00faltiplos PDFs \u00e9 gratuita. Para processamento em lote avan\u00e7ado com arquivos maiores e sem limites, fa\u00e7a upgrade para o plano Pro." },
+    { q: "Posso escolher a ordem dos arquivos no lote?", a: "Sim. Ap\u00f3s enviar todos os arquivos, voc\u00ea pode arrastar e soltar para definir a ordem exata antes de unir." },
+    { q: "\u00c9 seguro enviar muitos arquivos de uma vez?", a: "Sim. O PDF.it usa conex\u00f5es criptografadas e exclui todos os arquivos ap\u00f3s sua sess\u00e3o. Nenhum arquivo \u00e9 armazenado permanentemente em nossos servidores." },
+    { q: "Quanto tempo leva para unir PDFs em lote?", a: "A maioria dos lotes \u00e9 processada em segundos. Lotes muito grandes podem levar um pouco mais, mas o processo \u00e9 muito mais r\u00e1pido que software de desktop." },
+  ]
+
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderBr />
       <main>
         {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section
+          className="text-white py-16 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#heroGrain)" />
+          </svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Merge className="h-10 w-10 text-white" />
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                  boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)",
+                }}
+              >
+                <Merge className="h-10 w-10 text-[#14D8C4]" />
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Unir PDF em Lote</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Combine dezenas de arquivos PDF de uma so vez. Processamento em lote rapido para quem precisa unir muitos documentos — sem instalar software.
+                Combine dezenas de arquivos PDF de uma s&#243; vez com PDF.it Pro. Processamento em lote r&#225;pido para quem precisa unir muitos documentos — sem instalar software.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Processamento em Lote</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Arquivos Excluidos Apos a Sessao</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Arquivos Exclu&#237;dos Ap&#243;s a Sess&#227;o</span></div>
                 <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sem Cadastro</span></div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Intro */}
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Quando voc&#234; tem dezenas ou centenas de PDFs para combinar, unir um por um n&#227;o &#233; vi&#225;vel. O PDF.it oferece uni&#227;o em lote — envie todos os arquivos de uma vez, organize a ordem e gere um &#250;nico PDF consolidado em segundos.
+            </p>
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">&#10003; Envie muitos PDFs de uma s&#243; vez</li>
+              <li className="flex items-center gap-2">&#10003; Reorganize a ordem com arrastar e soltar</li>
+              <li className="flex items-center gap-2">&#10003; Arquivos de at&#233; 200MB com Pro, 1GB com Business</li>
+              <li className="flex items-center gap-2">&#10003; Funciona em qualquer navegador moderno</li>
+            </ul>
           </div>
         </section>
 
@@ -92,63 +95,79 @@ export default function UnirPdfEmLotePage() {
           outputFormat="PDF"
           processingMessage="Unindo seus PDFs em lote..."
           successMessage="Todos os PDFs foram combinados com sucesso!"
+          requiresPlan="pro"
         />
 
-        {/* About */}
-        <section className="py-16 bg-gray-50">
+        {/* Feature Blocks */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <p className="text-lg text-slate-600 mb-8">
-              Quando voce tem dezenas ou centenas de PDFs para combinar, unir um por um nao e viavel. O PDF.it oferece uniao em lote — envie todos os arquivos de uma vez, organize a ordem e gere um unico PDF consolidado em segundos.
-            </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>✓ Envie muitos PDFs de uma so vez</li>
-              <li>✓ Reorganize a ordem com arrastar e soltar</li>
-              <li>✓ Processamento rapido mesmo com muitos arquivos</li>
-              <li>✓ Sem perda de qualidade ou formatacao</li>
-              <li>✓ Funciona em qualquer navegador moderno</li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Use Cases */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Consolidacao de Relatorios Mensais</h2>
-              <p className="text-slate-600">
-                Junte relatorios diarios ou semanais em um unico relatorio mensal. Ideal para equipes que geram documentos individuais que precisam ser consolidados.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Arquivamento de Documentos</h2>
-              <p className="text-slate-600">
-                Combine centenas de documentos avulsos em arquivos consolidados para arquivamento digital organizado e facil de pesquisar.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Materiais de Treinamento</h2>
-              <p className="text-slate-600">
-                Una apostilas, slides, exercicios e materiais complementares em um unico PDF para distribuir para a equipe ou alunos.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* How To */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Unir PDFs em Lote</h2>
-            <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                "Envie ou arraste todos os seus arquivos PDF para o PDF.it.",
-                "Organize os arquivos na ordem desejada.",
-                "Clique em Unir e baixe seu PDF consolidado.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
+                { title: "Consolida\u00e7\u00e3o de Relat\u00f3rios Mensais", desc: "Junte relat\u00f3rios di\u00e1rios ou semanais em um \u00fanico relat\u00f3rio mensal. Ideal para equipes que geram documentos individuais que precisam ser consolidados." },
+                { title: "Arquivamento de Documentos", desc: "Combine centenas de documentos avulsos em arquivos consolidados para arquivamento digital organizado e f\u00e1cil de pesquisar." },
+                { title: "Materiais de Treinamento", desc: "Una apostilas, slides, exerc\u00edcios e materiais complementares em um \u00fanico PDF para distribuir para a equipe ou alunos." },
+              ].map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <div
+                    className="rounded-[11px] p-6 h-full"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
                   </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works */}
+        <section className="py-16 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Unir PDFs em Lote</h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+              {[
+                { num: "1", title: "Envie seus PDFs", desc: "Selecione m\u00faltiplos arquivos de uma vez" },
+                { num: "2", title: "Organize a ordem", desc: "Arraste e solte para reordenar" },
+                { num: "3", title: "Una e baixe", desc: "Obtenha seu PDF combinado na hora" },
+              ].map((step) => (
+                <div key={step.num} className="flex-1">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                      border: "1px solid rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <span className="text-[#14D8C4] font-black text-lg">{step.num}</span>
+                  </div>
+                  <p className="font-semibold text-slate-900">{step.title}</p>
+                  <p className="text-sm text-slate-500 mt-1">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -162,46 +181,83 @@ export default function UnirPdfEmLotePage() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
                 { name: "Unir PDF", href: "/br/unir-pdf", desc: "Combine PDFs em um" },
-                { name: "Dividir PDF", href: "/br/dividir-pdf", desc: "Separe paginas" },
+                { name: "Dividir PDF", href: "/br/dividir-pdf", desc: "Separe p\u00e1ginas" },
                 { name: "Comprimir PDF", href: "/br/comprimir-pdf", desc: "Reduza o tamanho" },
-                { name: "Girar PDF", href: "/br/girar-pdf", desc: "Corrija a orientacao" },
-                { name: "Achatar PDF", href: "/br/achatar-pdf", desc: "Achate campos" },
-                { name: "PDF para JPG", href: "/br/pdf-para-jpg", desc: "Converta em imagens" },
+                { name: "Girar PDF", href: "/br/girar-pdf", desc: "Corrija a orienta\u00e7\u00e3o" },
               ].map((tool) => (
-                <Link
+                <div
                   key={tool.href}
-                  href={tool.href}
-                  className="rounded-xl p-4 transition-all text-center flex flex-col justify-center min-h-[80px] hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(20,216,196,0.25)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.2)" }}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
                 >
-                  <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
-                  <div className="text-xs text-slate-400">{tool.desc}</div>
-                </Link>
+                  <Link
+                    href={tool.href}
+                    className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
+                    <div className="text-xs text-slate-400">{tool.desc}</div>
+                  </Link>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-gray-50">
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
-            <div className="space-y-6">
-              {[
-                { q: "O que significa unir PDFs em lote?", a: "Unir em lote significa combinar muitos arquivos PDF de uma so vez em um unico documento, em vez de unir dois de cada vez. E muito mais rapido quando voce tem dezenas de arquivos." },
-                { q: "Quantos PDFs posso unir em lote?", a: "Usuarios gratuitos podem unir varios PDFs de ate 25MB cada. Usuarios Pro tem acesso a processamento em lote avancado com arquivos de ate 200MB cada." },
-                { q: "O processamento em lote e gratis?", a: "A uniao basica de multiplos PDFs e gratuita. Para processamento em lote avancado com arquivos maiores e sem limites, faca upgrade para o plano Pro." },
-                { q: "Posso escolher a ordem dos arquivos no lote?", a: "Sim. Apos enviar todos os arquivos, voce pode arrastar e soltar para definir a ordem exata antes de unir." },
-                { q: "E seguro enviar muitos arquivos de uma vez?", a: "Sim. O PDF.it usa conexoes criptografadas e exclui todos os arquivos apos sua sessao. Nenhum arquivo e armazenado permanentemente em nossos servidores." },
-                { q: "Quanto tempo leva para unir PDFs em lote?", a: "A maioria dos lotes e processada em segundos. Lotes muito grandes podem levar um pouco mais, mas o processo e muito mais rapido que software de desktop." },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
+            <h2 className="text-3xl font-black text-white mb-10 text-center">Perguntas Frequentes</h2>
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl p-6"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
+
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+          }))
+        })}} />
       </main>
       <FooterBr />
     </div>
