@@ -24,7 +24,10 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - Uptime Monitoring: BetterUptime (LIVE — pings every minute, SMS/email alerts)
 - Logo: SVG image logo at `/public/logo.svg` — used in all headers, footers, auth pages via `<img>` tag
 - CI: GitHub Actions (build + unit + E2E on every push to main)
-- Cron Jobs: Vercel Cron — trial email drip (daily 9am UTC), SEO health check (Mondays 8am UTC)
+- Cron Jobs: Vercel Cron — trial email drip (daily 9am), SEO health (Mon 8am), Stripe reconciliation (Sun 6am), usage log cleanup (1st of month 3am)
+- API Routes: 51 total, ALL TypeScript (.ts), zero .js remaining
+- Shared Utilities: `lib/api/blob-handler.js` (streaming blobUrlToTmp), `lib/api/error-handler.js` (sanitized errorResponse), `lib/csrf.ts`, `lib/retry.ts`, `lib/validate-blob-url.js`
+- Backend Audit Score: 8/10 (was 4.5/10 before April 7 fixes) — see BACKEND-AUDIT.md
 
 ## Pricing Tiers
 - Free: 10 conversions/day (3 anonymous, then must log in), files up to 25MB, basic PDF tools, single file, standard processing
@@ -168,7 +171,14 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 - **Never use orange Tailwind classes (orange-50 through orange-700)** — all were migrated to teal (#14D8C4) brand colors on April 6, 2026. Zero orange remaining in codebase.
 - **All 149 tool pages now use canonical Page_Format.md layout** — rewritten April 6-7, 2026. Only ~243 learn articles + 3 blog posts still have old layout.
 - **BR pages must have canonical in alternates metadata** — `alternates: { canonical: "https://pdf.it.com/br/...", languages: {...} }` (14 were missing, fixed April 7)
-- **Newsletter signup** on blog pages saves to Supabase `newsletter_subscribers` table — requires table creation in Supabase
+- **Newsletter signup** on blog pages saves to Supabase `newsletter_subscribers` table
+- **All new API routes must be TypeScript (.ts)** — zero .js routes remaining after April 7 migration
+- **All API routes must validate blob URLs** — use `isValidBlobUrl()` from `lib/validate-blob-url.js`
+- **All API routes must use streaming** — use `blobUrlToTmp()` from `lib/api/blob-handler.js` (streams to disk, no Buffer.from(arrayBuffer()))
+- **All API routes must have finally blocks** for blob + /tmp cleanup
+- **All POST endpoints must check CSRF** — use `checkCsrf()` from `lib/csrf.ts`
+- **Error messages must never expose service names** — use `errorResponse()` from `lib/api/error-handler.js`
+- **Webhook must return 500 on DB failure** (so Stripe retries) and check `webhook_events` for idempotency
 - Paula is non-technical — explain things simply
 
 ## Deployment Process

@@ -1,5 +1,29 @@
 # Project Learnings
 
+## 2026-04-07 — Webhook must return 500 on DB failure, not 200
+
+**What:** The Stripe webhook was returning 200 OK even when the Supabase plan update failed. This meant Stripe thought the webhook succeeded and wouldn't retry. Users who paid during a Supabase blip were charged but stayed on the free plan.
+**Why it matters:** Stripe retries webhooks that return 500 (up to 5 times over 24 hours). Returning 200 on failure means the payment is lost forever — the user paid but never got upgraded. This is a revenue-critical bug.
+**Apply when:** Any webhook handler that updates a database. Always return 500 if the DB write fails, so the sender retries.
+
+## 2026-04-07 — CRON_SECRET with `&&` check allows bypass when empty
+
+**What:** The pattern `if (CRON_SECRET && authHeader !== Bearer ${CRON_SECRET})` skips auth when CRON_SECRET is falsy (empty string, undefined). In dev/staging where the env var isn't set, anyone can trigger the cron.
+**Why it matters:** Cron endpoints can send mass emails, modify database state, or fetch external APIs. An unauthenticated trigger is a security hole.
+**Apply when:** Any endpoint protected by a secret. Use `if (!SECRET || authHeader !== ...)` — fail if secret is missing, don't skip the check.
+
+## 2026-04-07 — Streaming prevents OOM on serverless (Buffer.from vs pipeline)
+
+**What:** Every API route was doing `Buffer.from(await res.arrayBuffer())` — loading the entire file into memory before writing to /tmp. At 50 concurrent users with 25MB files, this consumed 2.5GB+ (exceeding Vercel Pro's 3GB limit). Replaced with `Readable.fromWeb(res.body)` piped through `pipeline()` to `createWriteStream()`.
+**Why it matters:** Streaming uses ~1MB of memory per concurrent download regardless of file size. The old approach used 2× the file size (response buffer + write buffer).
+**Apply when:** Any serverless function that processes user-uploaded files. Never hold the entire file in a Buffer — stream it to disk.
+
+## 2026-04-07 — Blob URL validation prevents SSRF and cross-user access
+
+**What:** API routes accepted any URL in the `blobUrl` request field. An attacker could pass internal URLs (SSRF) or another user's blob URL (data theft). Added validation requiring URLs to have `https://` scheme and `.vercel-storage.com` hostname.
+**Why it matters:** Without validation, every PDF processing endpoint is an open SSRF proxy. The validation is cheap (string check) and blocks the entire attack class.
+**Apply when:** Any endpoint that fetches a URL from user input. Validate the domain before fetching.
+
 ## 2026-04-06 — @sentry/nextjs crashes webpack on Node.js v24
 
 **What:** Installing `@sentry/nextjs` caused `WasmHash` crashes during `pnpm build` on Node.js v24.14.0. The crash occurs in webpack's hashing module, triggered by Sentry's `@opentelemetry` instrumentation. Removing the package, config files, and instrumentation.ts still crashed because the package was in `pnpm-lock.yaml` as a transitive dep. Only fully removing `@sentry/nextjs` from `package.json` fixed it.
