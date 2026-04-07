@@ -88,7 +88,7 @@ export default function ConvertPdfToTxtPage() {
       <Header />
       <main>
         {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
+        <section className="text-white py-16 relative overflow-hidden" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%), radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%), #0E0F1E` }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
               <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to TXT</p>
@@ -278,7 +278,7 @@ export default function ConvertPdfToTxtPage() {
         </article>
 
         {/* Tool CTA */}
-        <section className="py-12 bg-[#191B4D]">
+        <section className="py-12" style={{ background: "#0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Ready to Extract Text from Your PDF?</h2>
             <p className="text-slate-300 mb-6">Upload your file and get clean plain text in seconds — free, no signup required.</p>
@@ -292,7 +292,7 @@ export default function ConvertPdfToTxtPage() {
         </section>
 
         {/* Related Articles */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-6">Related Articles</h2>
             <div className="grid gap-3">
@@ -328,7 +328,7 @@ export default function ConvertPdfToTxtPage() {
                 { q: "Why is my PDF to TXT output missing text?", a: "Missing text usually means the PDF is scanned (text stored as an image) or uses custom/embedded fonts that can't be decoded. Try the OCR Scanner for scanned PDFs, or PDF to Word for documents with unusual fonts." },
                 { q: "Can I convert a PDF to TXT on my phone?", a: "Yes. PDF.it works in any mobile browser — upload your PDF, convert it to TXT, and download the text file directly on iPhone or Android. No app installation needed." },
               ].map((faq, i) => (
-                <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

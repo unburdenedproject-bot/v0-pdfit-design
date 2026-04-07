@@ -88,7 +88,7 @@ export default function PdfAJpgVsPngPage() {
       <HeaderEs />
       <main>
         {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
+        <section className="text-white py-16 relative overflow-hidden" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%), radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%), #0E0F1E` }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
               <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF a PNG</p>
@@ -283,7 +283,7 @@ export default function PdfAJpgVsPngPage() {
         </article>
 
         {/* Tool CTA */}
-        <section className="py-12 bg-[#191B4D]">
+        <section className="py-12" style={{ background: "#0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">¿Listo para Convertir Tu PDF?</h2>
             <p className="text-slate-300 mb-6">Elige tu formato y convierte en segundos — gratis, sin registro.</p>
@@ -305,7 +305,7 @@ export default function PdfAJpgVsPngPage() {
         </section>
 
         {/* Related Articles */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-6">Artículos Relacionados</h2>
             <div className="grid gap-3">
@@ -341,7 +341,7 @@ export default function PdfAJpgVsPngPage() {
                 { q: "¿Qué formato es mejor para redes sociales?", a: "Para publicaciones con fotos, JPG está bien y mantiene los tamaños de archivo pequeños. Para infografías, imágenes con mucho texto o logos, PNG se ve significativamente mejor. La mayoría de las plataformas sociales aceptan ambos formatos." },
                 { q: "¿Puedo convertir el mismo PDF tanto a JPG como a PNG?", a: "Sí. Con PDF.it puedes convertir el mismo PDF a JPG y PNG por separado. Esto es útil cuando necesitas un PNG de alta calidad para trabajo de diseño y un JPG más pequeño para compartir." },
               ].map((faq, i) => (
-                <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

@@ -88,7 +88,7 @@ export default function WhatIsOCRPage() {
       <Header />
       <main>
         {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
+        <section className="text-white py-16 relative overflow-hidden" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%), radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%), #0E0F1E` }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
               <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / OCR PDF</p>
@@ -253,7 +253,7 @@ export default function WhatIsOCRPage() {
         </article>
 
         {/* Tool CTA */}
-        <section className="py-12 bg-[#191B4D]">
+        <section className="py-12" style={{ background: "#0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Ready to Make Your PDFs Searchable?</h2>
             <p className="text-slate-300 mb-6">Upload a scanned PDF and let OCR Scanner extract every word — so you can search, copy, and edit your documents.</p>
@@ -267,7 +267,7 @@ export default function WhatIsOCRPage() {
         </section>
 
         {/* Related Articles */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-6">Related Articles</h2>
             <div className="grid gap-3">
@@ -304,7 +304,7 @@ export default function WhatIsOCRPage() {
                 { q: "Do I need to install software to use OCR?", a: "No. PDF.it's OCR Scanner works entirely in your browser. Upload your scanned PDF, select the language, and download a searchable PDF — no software installation required." },
                 { q: "Is OCR a Pro feature on PDF.it?", a: "Yes. OCR Scanner is available to Pro and Business subscribers. Pro costs $3.99/month and includes unlimited conversions, files up to 200MB, batch processing, and all advanced tools including OCR." },
               ].map((faq, i) => (
-                <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

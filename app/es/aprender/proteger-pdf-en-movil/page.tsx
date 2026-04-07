@@ -32,7 +32,7 @@ export default function ProtegerPDFEnMovilPage() {
       <Script id="howto-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <HeaderEs />
       <main>
-        <section className="bg-[#191B4D] text-white py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
+        <section className="text-white py-16 relative overflow-hidden" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%), radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%), #0E0F1E` }}><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
           <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Proteger PDF</p>
           <h1 className="text-4xl lg:text-5xl font-black mb-4">Proteger un PDF con Contrasena en Tu Telefono (iPhone y Android)</h1>
           <p className="text-xl text-slate-300">Necesitas bloquear un PDF directamente desde tu telefono? Ya sea que estes en un iPhone o Android, puedes agregar proteccion con contrasena en menos de un minuto — sin app requerida.</p>
@@ -102,13 +102,13 @@ export default function ProtegerPDFEnMovilPage() {
           </section>
         </div></article>
 
-        <section className="py-12 bg-[#191B4D]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
+        <section className="py-12" style={{ background: "#0E0F1E" }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
           <h2 className="text-2xl font-black text-white mb-3">Protege Tu PDF Ahora Mismo</h2>
           <p className="text-slate-300 mb-6">Funciona en cualquier telefono — iPhone, Android o tablet. No necesitas app, solo tu navegador.</p>
           <Link href="/es/proteger-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><Shield className="h-5 w-5" /> Proteger PDF Ahora</Link>
         </div></section>
 
-        <section className="py-16 bg-gray-50"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+        <section className="py-16 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
           <h2 className="text-2xl font-black text-slate-900 mb-6">Articulos Relacionados</h2>
           <div className="grid gap-3">
             {[
@@ -135,7 +135,7 @@ export default function ProtegerPDFEnMovilPage() {
               { q: "Puedo proteger un PDF que recibi por WhatsApp o correo?", a: "Si. Guarda el PDF en tu telefono primero (mantiene presionado el archivo, luego guarda en Archivos o Descargas), luego subelo a la herramienta Proteger PDF de PDF.it en tu navegador." },
               { q: "La version movil de PDF.it es gratis?", a: "Si. Obtienes 3 conversiones gratis sin registrarte, y 10 por dia con una cuenta gratuita. Se soportan archivos de hasta 25MB en el nivel gratuito. Los usuarios Pro obtienen conversiones ilimitadas y archivos de hasta 200MB." },
             ].map((faq, i) => (
-              <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200"><h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3><p className="text-slate-600 text-sm">{faq.a}</p></div>
+              <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}"><h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3><p className="text-slate-600 text-sm">{faq.a}</p></div>
             ))}
           </div>
         </div></section>

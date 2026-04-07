@@ -88,7 +88,7 @@ export default function CopiarTextoDePdfANotasPage() {
       <HeaderEs />
       <main>
         {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
+        <section className="text-white py-16 relative overflow-hidden" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%), radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%), #0E0F1E` }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
               <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF a Texto</p>
@@ -285,7 +285,7 @@ export default function CopiarTextoDePdfANotasPage() {
         </article>
 
         {/* Tool CTA */}
-        <section className="py-12 bg-[#191B4D]">
+        <section className="py-12" style={{ background: "#0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Obtén Texto Limpio de Cualquier PDF</h2>
             <p className="text-slate-300 mb-6">Deja de luchar con copiar y pegar. Convierte tu PDF a texto limpio en segundos — gratis, sin registro.</p>
@@ -299,7 +299,7 @@ export default function CopiarTextoDePdfANotasPage() {
         </section>
 
         {/* Related Articles */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-6">Artículos Relacionados</h2>
             <div className="grid gap-3">
@@ -334,7 +334,7 @@ export default function CopiarTextoDePdfANotasPage() {
                 { q: "¿Convertir PDF a TXT conserva los saltos de párrafo?", a: "PDF a TXT preserva los saltos de línea básicos y el espaciado de párrafos, pero elimina todo el demás formato. El resultado es texto limpio y legible que puedes pegar en cualquier aplicación sin problemas de formato oculto." },
                 { q: "¿Puedo copiar texto de un PDF en mi teléfono?", a: "Sí, pero copiar y pegar en móvil es aún menos confiable que en escritorio. Para mejores resultados, sube tu PDF a la herramienta PDF a TXT de PDF.it en tu navegador móvil y descarga el archivo de texto limpio." },
               ].map((faq, i) => (
-                <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

@@ -88,7 +88,7 @@ export default function ExtractTextFromPdfOnMobilePage() {
       <Header />
       <main>
         {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
+        <section className="text-white py-16 relative overflow-hidden" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%), radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%), #0E0F1E` }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
               <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to TXT</p>
@@ -305,7 +305,7 @@ export default function ExtractTextFromPdfOnMobilePage() {
         </article>
 
         {/* Tool CTA */}
-        <section className="py-12 bg-[#191B4D]">
+        <section className="py-12" style={{ background: "#0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Extract PDF Text on Your Phone — Right Now</h2>
             <p className="text-slate-300 mb-6">No app to install. Upload your PDF in your mobile browser and download clean text in seconds.</p>
@@ -319,7 +319,7 @@ export default function ExtractTextFromPdfOnMobilePage() {
         </section>
 
         {/* Related Articles */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-6">Related Articles</h2>
             <div className="grid gap-3">
@@ -355,7 +355,7 @@ export default function ExtractTextFromPdfOnMobilePage() {
                 { q: "Why does copy-paste from a PDF on mobile give me broken text?", a: "Mobile PDF viewers have limited text selection capabilities. They often break lines at visual line endings, merge columns, and include headers/footers. Converting to TXT with PDF.it gives you properly ordered text without these issues." },
                 { q: "Can I save extracted text directly to my Notes app?", a: "Yes. After downloading the TXT file from PDF.it, open it on your phone and use the share button to send it to Notes (iPhone), Google Keep (Android), or any other notes app. You can also copy all the text and paste it directly." },
               ].map((faq, i) => (
-                <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

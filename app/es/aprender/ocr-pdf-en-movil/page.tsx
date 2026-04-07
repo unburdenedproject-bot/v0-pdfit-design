@@ -32,7 +32,7 @@ export default function OCRPDFEnMovilPage() {
       <Script id="howto-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <HeaderEs />
       <main>
-        <section className="bg-[#191B4D] text-white py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
+        <section className="text-white py-16 relative overflow-hidden" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%), radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%), #0E0F1E` }}><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
           <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / OCR PDF</p>
           <h1 className="text-4xl lg:text-5xl font-black mb-4">OCR un PDF en Tu Telefono (iPhone y Android)</h1>
           <p className="text-xl text-slate-300">Sin computadora? Sin problema. Puedes escanear un documento con la camara de tu telefono y ejecutar OCR directamente desde tu navegador — sin app necesaria.</p>
@@ -102,13 +102,13 @@ export default function OCRPDFEnMovilPage() {
           </section>
         </div></article>
 
-        <section className="py-12 bg-[#191B4D]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
+        <section className="py-12" style={{ background: "#0E0F1E" }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
           <h2 className="text-2xl font-black text-white mb-3">OCR Cualquier PDF Desde Tu Telefono</h2>
           <p className="text-slate-300 mb-6">Abre PDF.it en tu navegador movil, sube un PDF escaneado y obtiene una version buscable en segundos. Sin app necesaria.</p>
           <Link href="/es/escaner-ocr" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><ScanText className="h-5 w-5" /> Probar Escaner OCR (Pro)</Link>
         </div></section>
 
-        <section className="py-16 bg-gray-50"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+        <section className="py-16 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
           <h2 className="text-2xl font-black text-slate-900 mb-6">Articulos Relacionados</h2>
           <div className="grid gap-3">
             {[
@@ -137,7 +137,7 @@ export default function OCRPDFEnMovilPage() {
               { q: "El OCR en movil es mas lento que en computadora?", a: "No. El procesamiento ocurre en los servidores de PDF.it. La velocidad es la misma en cualquier dispositivo." },
               { q: "El OCR en movil es gratuito?", a: "El Escaner OCR es una funcion Pro en PDF.it, disponible por $3.99/mes. Aplica tanto para uso movil como de escritorio." },
             ].map((faq, i) => (
-              <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+              <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
                 <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                 <p className="text-slate-600 text-sm">{faq.a}</p>
               </div>

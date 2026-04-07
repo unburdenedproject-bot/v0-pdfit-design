@@ -88,7 +88,7 @@ export default function MarcaDeAguaPDFMejoresPracticasPage() {
       <HeaderEs />
       <main>
         {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
+        <section className="text-white py-16 relative overflow-hidden" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%), radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%), #0E0F1E` }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
               <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Marca de Agua PDF</p>
@@ -251,7 +251,7 @@ export default function MarcaDeAguaPDFMejoresPracticasPage() {
         </article>
 
         {/* Tool CTA */}
-        <section className="py-12 bg-[#191B4D]">
+        <section className="py-12" style={{ background: "#0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Listo para Agregar una Marca de Agua Profesional?</h2>
             <p className="text-slate-300 mb-6">Sube tu PDF, configura tu marca de agua con las mejores opciones, y descarga el resultado en segundos. Disponible para usuarios Pro y Business.</p>
@@ -265,7 +265,7 @@ export default function MarcaDeAguaPDFMejoresPracticasPage() {
         </section>
 
         {/* Related Articles */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-6">Articulos Relacionados</h2>
             <div className="grid gap-3">
@@ -300,7 +300,7 @@ export default function MarcaDeAguaPDFMejoresPracticasPage() {
                 { q: "Como hago una marca de agua que no se pueda eliminar?", a: "Despues de agregar tu marca de agua, aplana el PDF usando la herramienta Aplanar PDF de PDF.it. Esto fusiona la marca de agua con el contenido de la pagina de forma permanente. Luego protege el archivo con contrasena para prevenir mas ediciones." },
                 { q: "La herramienta Marca de Agua PDF es gratis?", a: "Marca de Agua PDF esta disponible para usuarios Pro ($3.99/mes) y Business ($13.99/mes). Ambos niveles incluyen marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." },
               ].map((faq, i) => (
-                <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

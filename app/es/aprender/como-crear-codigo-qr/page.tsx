@@ -88,7 +88,7 @@ export default function ComoCrearCodigoQRPage() {
       <HeaderEs />
       <main>
         {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
+        <section className="text-white py-16 relative overflow-hidden" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%), radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%), #0E0F1E` }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
               <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Codigo QR</p>
@@ -253,7 +253,7 @@ export default function ComoCrearCodigoQRPage() {
         </article>
 
         {/* Tool CTA */}
-        <section className="py-12 bg-[#191B4D]">
+        <section className="py-12" style={{ background: "#0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Listo para Crear Tu Codigo QR?</h2>
             <p className="text-slate-300 mb-6">Genera un codigo QR para cualquier URL, texto o dato en segundos. Funcion Pro — actualiza para desbloquear codigos QR ilimitados.</p>
@@ -267,7 +267,7 @@ export default function ComoCrearCodigoQRPage() {
         </section>
 
         {/* Related Articles */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <h2 className="text-2xl font-black text-slate-900 mb-6">Articulos Relacionados</h2>
             <div className="grid gap-3">
@@ -305,7 +305,7 @@ export default function ComoCrearCodigoQRPage() {
                 { q: "En que formato de archivo debo descargar mi codigo QR?", a: "Usa PNG para uso digital (sitios web, correos, redes sociales). Usa SVG si necesitas imprimir el codigo QR en tamanos grandes sin perder calidad — SVG escala infinitamente sin pixelacion." },
                 { q: "La herramienta de Codigo QR es gratuita en PDF.it?", a: "El generador de Codigo QR es una funcion Pro en PDF.it. Los usuarios Pro ($3.99/mes) obtienen generacion ilimitada de codigos QR junto con todas las demas herramientas premium de PDF." },
               ].map((faq, i) => (
-                <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>
