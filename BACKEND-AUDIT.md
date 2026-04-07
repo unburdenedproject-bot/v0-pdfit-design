@@ -23,35 +23,35 @@
 
 ## CRITICAL — Fix Before Launch
 
-### [ ] 1. Blob Delete/Download Has No Authentication
+### [x] 1. Blob Delete/Download Has No Authentication — FIXED April 7
 - **Files:** `app/api/blob/delete/route.ts`, `app/api/download/[filename]/route.ts`
 - **Issue:** Anyone can delete or download any user's files by guessing the blob URL
 - **Risk:** Data breach, file loss, legal liability
 - **Fix:** Add auth check + validate blob URL belongs to current user
 - **Effort:** 1 hour
 
-### [ ] 2. Webhook Returns 200 When DB Update Fails
+### [x] 2. Webhook Returns 200 When DB Update Fails — FIXED April 7
 - **File:** `app/api/webhook/route.ts` lines 93-104
 - **Issue:** If Supabase is down, user pays but plan never updates. Webhook returns 200 so Stripe won't retry.
 - **Risk:** Lost revenue, users stuck on free after paying
 - **Fix:** Return 500 on DB error so Stripe retries
 - **Effort:** 30 minutes
 
-### [ ] 3. Newsletter Table Doesn't Exist
+### [ ] 3. Newsletter Table Doesn't Exist — NEEDS SUPABASE SQL
 - **File:** `app/api/newsletter/route.ts` writes to `newsletter_subscribers` — table never created
 - **Issue:** All signups silently fail but return "success"
 - **Risk:** Zero newsletter subscribers being collected
 - **Fix:** `CREATE TABLE newsletter_subscribers (email TEXT PRIMARY KEY, subscribed_at TIMESTAMPTZ DEFAULT NOW())`
 - **Effort:** 10 minutes
 
-### [ ] 4. Missing Database Index on stripe_customer_id
+### [ ] 4. Missing Database Index on stripe_customer_id — NEEDS SUPABASE SQL
 - **File:** `app/api/webhook/route.ts` line 184-188
 - **Issue:** Webhook looks up users by `stripe_customer_id` — full table scan on every payment
 - **Risk:** Slow payment processing, degrades with user count
 - **Fix:** `CREATE INDEX idx_users_stripe_customer_id ON users(stripe_customer_id)`
 - **Effort:** 10 minutes
 
-### [ ] 5. CRON_SECRET Bypass When Not Set
+### [x] 5. CRON_SECRET Bypass When Not Set — FIXED April 7
 - **Files:** `app/api/cron/trial-emails/route.ts`, `app/api/cron/seo-health/route.ts`
 - **Issue:** If env var is empty, auth check is skipped entirely
 - **Risk:** Anyone can trigger email blasts in dev/staging
