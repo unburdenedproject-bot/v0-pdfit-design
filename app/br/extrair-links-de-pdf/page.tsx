@@ -1,208 +1,112 @@
 import Script from "next/script"
 import { HeaderBr } from "@/components/header-br"
 import { FooterBr } from "@/components/footer-br"
-import { ProcessingInterface } from "@/components/processing-interface"
-import { LinkIcon, Zap, Shield, Download } from "lucide-react"
+import { Link2, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Extrair Links de PDF — Obtenha Todos os URLs de um PDF | PDF.it",
-  description:
-    "Extraia todos os links e URLs de arquivos PDF com o PDF.it. Obtenha uma lista completa de hyperlinks — rápido, no navegador, sem cadastro.",
+  title: "Extrair Links de PDF — Encontre Todas as URLs em um PDF | PDF.it",
+  description: "Encontre e extraia todos os hyperlinks e URLs de documentos PDF. O PDF.it ajuda a extrair conteudo de texto incluindo links incorporados de qualquer PDF.",
   alternates: {
-    canonical: "https://pdf.it.com/br/extrair-links-de-pdf",
-    languages: {
-      en: "https://pdf.it.com/extract-links-from-pdf",
-      es: "https://pdf.it.com/es/extraer-enlaces-de-pdf",
-      pt: "https://pdf.it.com/br/extrair-links-de-pdf",
-    },
+    canonical: "/br/extrair-links-de-pdf",
+    languages: { en: "/extract-links-from-pdf", es: "/es/extraer-enlaces-de-pdf", pt: "/br/extrair-links-de-pdf" },
   },
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Como extraio links de um PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF para o PDF.it e a ferramenta extrairá automaticamente todos os hyperlinks e URLs encontrados no documento." }
-    },
-    {
-      "@type": "Question",
-      "name": "Que tipos de links são extraídos?",
-      "acceptedAnswer": { "@type": "Answer", "text": "A ferramenta extrai URLs de sites, links de e-mail (mailto), links internos do documento e qualquer outro hyperlink incorporado no PDF." }
-    },
-    {
-      "@type": "Question",
-      "name": "Os links extraídos são clicáveis?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Os URLs extraídos são apresentados em texto plano que você pode copiar e colar no navegador ou usar em planilhas e outros documentos." }
-    },
-    {
-      "@type": "Question",
-      "name": "É seguro enviar meu PDF para extrair links?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Todos os arquivos são processados com segurança e eliminados automaticamente após a sessão. Nunca armazenamos seus documentos." }
-    },
-    {
-      "@type": "Question",
-      "name": "Posso extrair links de um PDF pelo celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em navegadores móveis — envie seu PDF e obtenha a lista de links de qualquer dispositivo." }
-    },
-    {
-      "@type": "Question",
-      "name": "É grátis extrair links de um PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Contas gratuitas têm 10 extrações por dia. Contas Pro têm extrações ilimitadas." }
-    }
+export default function ExtrairLinksDePdfPage() {
+  const faqs = [
+    { q: "Como extraio links de um PDF?", a: "Converta seu PDF para texto usando a ferramenta PDF para TXT do PDF.it. O texto extraido contera todas as URLs visiveis do documento. Voce pode pesquisar padroes http://, https:// ou www. para encontrar cada link." },
+    { q: "Posso extrair hyperlinks ocultos atras de texto?", a: "Hyperlinks clicaveis incorporados atras de texto ancora (como \"clique aqui\") requerem examinar as anotacoes de link do PDF. Converter para formato Word preserva esses hyperlinks, permitindo ver e clicar as URLs reais." },
+    { q: "Como extraio links de um PDF digitalizado?", a: "PDFs digitalizados sao imagens, entao links nao sao clicaveis nem incorporados como texto. Use o Scanner OCR do PDF.it primeiro para converter as paginas em texto selecionavel, depois extraia o texto para encontrar URLs impressas." },
+    { q: "Posso extrair todos os links de um PDF de uma vez?", a: "Sim. Converta o PDF inteiro para texto e pesquise por padroes de URL. Isso captura todas as URLs visiveis em todo o documento em um unico passo." },
+    { q: "Por que eu precisaria extrair links de um PDF?", a: "Razoes comuns incluem auditar referencias em artigos de pesquisa, verificar links quebrados em documentacao, compilar listas de recursos de relatorios, verificar citacoes e migrar conteudo de PDFs para sites ou bancos de dados." },
+    { q: "Quais tipos de links podem ser encontrados em PDFs?", a: "PDFs podem conter texto de URL visivel (impresso na pagina), hyperlinks clicaveis atras de texto ancora, links de email mailto, links internos do documento (pulando para outras paginas) e links para arquivos externos." },
   ]
-}
 
-export default function ExtrairLinksDePDFPage() {
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderBr />
       <main>
         {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <LinkIcon className="h-10 w-10 text-white" />
-              </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Extrair Links de PDF</h1>
-              <p className="text-xl text-slate-300 mb-8">
-                Obtenha todos os hyperlinks e URLs dos seus documentos PDF. Extraia links rapidamente — direto do navegador.
-              </p>
-              <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Extração Instantânea</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Arquivos Eliminados Após a Sessão</span></div>
-                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sem Cadastro</span></div>
-              </div>
+        <section className="text-white py-16 relative overflow-hidden" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%), radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%), #0E0F1E` }}>
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}><filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter><rect width="100%" height="100%" filter="url(#heroGrain)" /></svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10"><div className="max-w-4xl mx-auto text-center">
+            <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)" }}><Link2 className="h-10 w-10 text-[#14D8C4]" /></div>
+            <h1 className="text-4xl lg:text-5xl font-black mb-4">Extrair Links de PDF</h1>
+            <p className="text-xl text-slate-300 mb-8">Encontre e extraia todos os hyperlinks e URLs incorporados em documentos PDF. Extraia cada referencia, citacao e link de recurso de artigos de pesquisa, relatorios e documentacao.</p>
+            <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Encontre Todas as URLs Instantaneamente</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Arquivos Excluidos Apos a Sessao</span></div>
+                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sem Instalacao</span></div>
             </div>
-          </div>
+          </div></div>
         </section>
+
+        {/* Intro */}
+        <section className="py-10 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+          <p className="text-lg text-slate-600 leading-relaxed">PDFs frequentemente contem dezenas ou centenas de links — referencias em artigos academicos, URLs de recursos em relatorios e hyperlinks em documentacao. Extrair esses links manualmente e tedioso. O PDF.it ajuda a extrair todo o conteudo de texto de PDFs, facilitando encontrar e compilar cada URL no seu documento.</p>
+          <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">✓ Extraia URLs visiveis impressas no texto do PDF</li>
+              <li className="flex items-center gap-2">✓ Converta para Word para preservar hyperlinks clicaveis</li>
+              <li className="flex items-center gap-2">✓ Use OCR para documentos digitalizados com URLs impressas</li>
+              <li className="flex items-center gap-2">✓ Sem instalacao — extraia links no navegador</li>
+          </ul>
+        </div></section>
 
         {/* Processing Interface */}
-        <ProcessingInterface
-          acceptedFiles=".pdf"
-          toolName="Extract Text"
-          outputFormat="TXT"
-          processingMessage="Extraindo links do seu PDF..."
-          successMessage="Os links foram extraídos!"
-        />
+        
 
-        {/* About */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <p className="text-lg text-slate-600 mb-8">
-              Precisa obter todos os links de um documento PDF? O extrator de links do PDF.it analisa seu arquivo e lista todos os hyperlinks encontrados — URLs de sites, endereços de e-mail e links internos.
-            </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>✓ Extraia todos os URLs e hyperlinks de qualquer PDF</li>
-              <li>✓ Perfeito para auditoria de links, SEO e verificação de referências</li>
-              <li>✓ Detecta links de sites, e-mails e links internos</li>
-              <li>✓ Funciona no Mac, Windows, iOS, Android e Linux</li>
-              <li>✓ Sem instalação — extraia links no seu navegador</li>
-            </ul>
+        <section className="py-12 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
+          <h2 className="text-2xl font-black text-slate-900 mb-4">Extrair Conteudo de PDFs</h2>
+          <p className="text-slate-600 mb-6">Converta seu PDF para texto para encontrar todas as URLs e links incorporados no documento. Funciona com qualquer PDF que contenha texto selecionavel.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/br/pdf-para-txt" className="inline-flex items-center justify-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors">PDF para TXT (Gratis)</Link>
+            <Link href="/br/extrair-texto-de-pdf" className="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-8 rounded-xl transition-colors">Extrair Texto</Link>
           </div>
-        </section>
+        </div></section>
 
-        {/* Feature Sections */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Auditoria de Links e SEO</h2>
-              <p className="text-slate-600">
-                Extraia todos os links de e-books, whitepapers e relatórios em PDF para verificar se os URLs ainda estão ativos, auditar referências ou criar listas de recursos.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Pesquisa e Referências</h2>
-              <p className="text-slate-600">
-                Obtenha rapidamente todas as referências e fontes citadas em artigos acadêmicos, relatórios de pesquisa e documentos técnicos em formato PDF.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Verificação de Documentos</h2>
-              <p className="text-slate-600">
-                Verifique todos os links em propostas comerciais, apresentações e materiais de marketing para garantir que apontam para os destinos corretos antes da distribuição.
-              </p>
-            </div>
-          </div>
-        </section>
+        {/* Feature Blocks */}
+        <section className="py-16" style={{ background: `radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%), #0E0F1E` }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl"><div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {[
+                { title: "Encontrar URLs em Artigos de Pesquisa", desc: "Artigos academicos e relatorios estao repletos de referencias. Converta o PDF para texto e pesquise todas as URLs de uma vez — perfeito para revisoes de literatura e verificacao de fatos." },
+                { title: "Extrair Referencias e Citacoes", desc: "Muitos PDFs incluem secoes de bibliografia com URLs de obras citadas. Extraia o texto completo para compilar rapidamente uma lista de todos os links referenciados para verificacao." },
+                { title: "Auditar Links de Documentos", desc: "Antes de publicar ou distribuir um PDF, verifique se todos os links estao corretos e ativos. Extraia cada URL e verifique cada um quanto a links quebrados ou referencias desatualizadas." },
+          ].map((feature) => (
+            <div key={feature.title} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}><div className="rounded-[11px] p-6 h-full" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}><h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3><p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p></div></div>
+          ))}
+        </div></div></section>
 
-        {/* How To */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Extrair Links de um PDF</h2>
-            <div className="space-y-4">
-              {[
-                "Envie ou arraste seu PDF para o PDF.it.",
-                "Clique em Extrair — todos os links são detectados automaticamente.",
-                "Baixe a lista completa de URLs encontrados no documento.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
-                  </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* How It Works */}
+        <section className="py-16 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl"><h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Extrair Links de um PDF</h2><div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+          {[
+                { num: "1", title: "Envie seu PDF", desc: "Use o conversor PDF para TXT do PDF.it" },
+                { num: "2", title: "Baixe o texto", desc: "Obtenha o texto extraido com todo o conteudo" },
+                { num: "3", title: "Pesquise por URLs", desc: "Encontre padroes http://, https://, www." },
+          ].map((step) => (
+            <div key={step.num} className="flex-1"><div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)", border: "1px solid rgba(20,216,196,0.25)" }}><span className="text-[#14D8C4] font-black text-lg">{step.num}</span></div><p className="font-semibold text-slate-900">{step.title}</p><p className="text-sm text-slate-500 mt-1">{step.desc}</p></div>
+          ))}
+        </div></div></section>
 
         {/* Related Tools */}
-        <section className="py-16" style={{ background: "#0E0F1E" }}>
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-white mb-6 text-center">Ferramentas Relacionadas</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {[
-                { name: "Extrair Imagens de PDF", href: "/br/extrair-imagens-de-pdf", desc: "Extraia imagens do PDF" },
-                { name: "PDF para Texto", href: "/br/pdf-para-texto", desc: "Converta PDF para TXT" },
-                { name: "Scanner OCR", href: "/br/scanner-ocr", desc: "Texto de digitalizações" },
-                { name: "Comprimir PDF", href: "/br/comprimir-pdf", desc: "Reduza o tamanho do arquivo" },
-                { name: "Unir PDF", href: "/br/unir-pdf", desc: "Combine vários PDFs em um" },
-                { name: "Dividir PDF", href: "/br/dividir-pdf", desc: "Separe páginas de um PDF" },
-              ].map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="rounded-xl p-4 transition-all text-center flex flex-col justify-center min-h-[80px] hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(20,216,196,0.25)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.2)" }}
-                >
-                  <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
-                  <div className="text-xs text-slate-400">{tool.desc}</div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+        <section className="py-16" style={{ background: "#0E0F1E" }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl"><h2 className="text-2xl font-black text-white mb-6 text-center">Ferramentas Relacionadas</h2><div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          {[
+                { name: "PDF para TXT", href: "/br/pdf-para-txt", desc: "Extrair todo o conteudo de texto" },
+                { name: "Extrair Texto", href: "/br/extrair-texto-de-pdf", desc: "Copiar texto de PDFs" },
+                { name: "Scanner OCR", href: "/br/scanner-ocr", desc: "Texto de PDFs digitalizados" },
+                { name: "PDF para Word", href: "/br/pdf-para-word", desc: "Preservar hyperlinks" },
+          ].map((tool) => (
+            <div key={tool.href} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}><Link href={tool.href} className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}><div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div><div className="text-xs text-slate-400">{tool.desc}</div></Link></div>
+          ))}
+        </div></div></section>
 
         {/* FAQ */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
-            <div className="space-y-6">
-              {[
-                { q: "Como extraio links de um PDF?", a: "Envie seu PDF para o PDF.it e a ferramenta extrairá automaticamente todos os hyperlinks e URLs encontrados no documento." },
-                { q: "Que tipos de links são extraídos?", a: "A ferramenta extrai URLs de sites, links de e-mail (mailto), links internos do documento e qualquer outro hyperlink incorporado no PDF." },
-                { q: "Os links extraídos são clicáveis?", a: "Sim. Os URLs extraídos são apresentados em texto plano que você pode copiar e colar no navegador ou usar em planilhas e outros documentos." },
-                { q: "É seguro enviar meu PDF para extrair links?", a: "Sim. Todos os arquivos são processados com segurança e eliminados automaticamente após a sessão. Nunca armazenamos seus documentos." },
-                { q: "Posso extrair links de um PDF pelo celular?", a: "Sim. O PDF.it funciona em navegadores móveis — envie seu PDF e obtenha a lista de links de qualquer dispositivo." },
-                { q: "É grátis extrair links de um PDF?", a: "Sim. Contas gratuitas têm 10 extrações por dia. Contas Pro têm extrações ilimitadas." },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <section className="py-16" style={{ background: `radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%), radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%), #0E0F1E` }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl"><h2 className="text-3xl font-black text-white mb-10 text-center">Perguntas Frequentes</h2><div className="space-y-4">
+          {faqs.map((faq, i) => (
+            <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}><h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3><p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p></div>
+          ))}
+        </div></div></section>
+
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(faq => ({ "@type": "Question", "name": faq.q, "acceptedAnswer": { "@type": "Answer", "text": faq.a } })) })}} />
       </main>
       <FooterBr />
     </div>

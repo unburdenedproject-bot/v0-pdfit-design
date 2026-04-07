@@ -1,208 +1,104 @@
 import Script from "next/script"
 import { HeaderBr } from "@/components/header-br"
 import { FooterBr } from "@/components/footer-br"
-import { ProcessingInterface } from "@/components/processing-interface"
+import { UnlockPdfInterface } from "@/components/unlock-pdf-interface"
 import { Unlock, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Descriptografar PDF — Remova a Criptografia do PDF | PDF.it",
-  description:
-    "Descriptografe seu PDF e remova a criptografia com o PDF.it. Desbloqueie documentos protegidos com senha — rápido, no navegador, sem cadastro.",
+  title: "Descriptografar PDF Online — Remover Criptografia de PDF | PDF.it",
+  description: "Descriptografe um PDF protegido por senha com PDF.it. Insira a senha para remover a criptografia e baixe um arquivo desprotegido — rapido, gratis e no navegador.",
   alternates: {
-    canonical: "https://pdf.it.com/br/descriptografar-pdf",
-    languages: {
-      en: "https://pdf.it.com/decrypt-pdf",
-      es: "https://pdf.it.com/es/desencriptar-pdf",
-      pt: "https://pdf.it.com/br/descriptografar-pdf",
-    },
+    canonical: "/br/descriptografar-pdf",
+    languages: { en: "/decrypt-pdf", es: "/es/desencriptar-pdf", pt: "/br/descriptografar-pdf" },
   },
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Como descriptografo um PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Envie seu PDF criptografado para o PDF.it, insira a senha do documento e a ferramenta removerá a criptografia, gerando um PDF sem proteção por senha." }
-    },
-    {
-      "@type": "Question",
-      "name": "Preciso saber a senha para descriptografar?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Para descriptografar um PDF protegido com senha de abertura, você precisa fornecer a senha correta. Não é possível remover criptografia sem a senha." }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual é a diferença entre descriptografar e desbloquear?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Descriptografar remove a criptografia completa do arquivo, enquanto desbloquear pode se referir apenas à remoção de restrições de permissão (como impressão ou cópia). Ambas as funções estão disponíveis no PDF.it." }
-    },
-    {
-      "@type": "Question",
-      "name": "É seguro enviar meu PDF criptografado?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Todas as transferências são protegidas com SSL e seus arquivos são eliminados imediatamente após a sessão. Nunca armazenamos seus documentos." }
-    },
-    {
-      "@type": "Question",
-      "name": "Posso descriptografar um PDF pelo celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. O PDF.it funciona em navegadores móveis — envie seu PDF, insira a senha e baixe o arquivo descriptografado de qualquer dispositivo." }
-    },
-    {
-      "@type": "Question",
-      "name": "É grátis descriptografar um PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim. Contas gratuitas têm 10 operações por dia. Contas Pro têm operações ilimitadas." }
-    }
+export default function DescriptografarPdfPage() {
+  const faqs = [
+    { q: "Qual a diferenca entre descriptografar e desbloquear um PDF?", a: "Sao a mesma coisa. Descriptografar um PDF significa remover sua criptografia baseada em senha para que o arquivo possa ser aberto sem inserir uma senha. A ferramenta Desbloquear PDF do PDF.it realiza exatamente esta operacao." },
+    { q: "Preciso da senha para descriptografar um PDF?", a: "Sim. O PDF.it exige que voce insira a senha correta para descriptografar o arquivo. Ele nao quebra, contorna ou usa forca bruta em senhas — isso garante que apenas usuarios autorizados possam remover a criptografia." },
+    { q: "Descriptografar um PDF e seguro?", a: "Sim. Seus arquivos sao processados com seguranca e excluidos dos servidores do PDF.it apos o fim da sessao. Nunca armazenamos suas senhas ou compartilhamos seus documentos." },
+    { q: "Descriptografar um PDF altera seu conteudo?", a: "Nao. A descriptografia remove o requisito de senha sem alterar o conteudo, imagens, formatacao ou qualidade do PDF. O documento permanece identico." },
+    { q: "Posso descriptografar um PDF no celular?", a: "Sim. O PDF.it funciona em navegadores moveis no iPhone e Android. Envie seu PDF criptografado, insira a senha e baixe o arquivo descriptografado — sem instalacao de app necessaria." },
+    { q: "Posso re-criptografar um PDF apos descriptografa-lo?", a: "Sim. Apos descriptografar seu PDF, voce pode usar a ferramenta Proteger PDF do PDF.it para adicionar uma nova senha. Isso e util se voce quer mudar a senha ou compartilhar o arquivo com um destinatario diferente." },
   ]
-}
 
-export default function DescriptografarPDFPage() {
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderBr />
       <main>
         {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Unlock className="h-10 w-10 text-white" />
-              </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Descriptografar PDF</h1>
-              <p className="text-xl text-slate-300 mb-8">
-                Remova a criptografia e a proteção por senha do seu PDF com o PDF.it. Desbloqueie documentos cifrados — rápido, seguro e direto do navegador.
-              </p>
-              <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Desbloqueio Rápido</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Arquivos Eliminados Após a Sessão</span></div>
+        <section className="text-white py-16 relative overflow-hidden" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%), radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%), #0E0F1E` }}>
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}><filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter><rect width="100%" height="100%" filter="url(#heroGrain)" /></svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10"><div className="max-w-4xl mx-auto text-center">
+            <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)" }}><Unlock className="h-10 w-10 text-[#14D8C4]" /></div>
+            <h1 className="text-4xl lg:text-5xl font-black mb-4">Descriptografar PDF</h1>
+            <p className="text-xl text-slate-300 mb-8">Remova a criptografia de um PDF protegido por senha. Insira a senha que voce ja conhece, e o PDF.it removera a criptografia para que seu arquivo abra livremente — sem prompts de senha, sem restricoes.</p>
+            <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Descriptografia Instantanea</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Arquivos Excluidos Apos a Sessao</span></div>
                 <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sem Cadastro</span></div>
-              </div>
             </div>
-          </div>
+          </div></div>
         </section>
+
+        {/* Intro */}
+        <section className="py-10 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+          <p className="text-lg text-slate-600 leading-relaxed">PDFs criptografados exigem uma senha toda vez que voce os abre. Se voce tem a senha e quer remover a criptografia permanentemente, o PDF.it torna isso simples — envie, insira a senha e baixe uma copia limpa e nao criptografada do seu documento.</p>
+          <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">✓ Remova a criptografia de PDF permanentemente</li>
+              <li className="flex items-center gap-2">✓ Conteudo, formatacao e qualidade preservados</li>
+              <li className="flex items-center gap-2">✓ Exige a senha correta — sem contorno</li>
+              <li className="flex items-center gap-2">✓ Sem instalacao — descriptografe no navegador</li>
+          </ul>
+        </div></section>
 
         {/* Processing Interface */}
-        <ProcessingInterface
-          acceptedFiles=".pdf"
-          toolName="Unlock PDF"
-          outputFormat="PDF"
-          processingMessage="Descriptografando seu PDF..."
-          successMessage="Seu PDF foi descriptografado!"
-        />
+        <UnlockPdfInterface />
 
-        {/* About */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <p className="text-lg text-slate-600 mb-8">
-              Precisa remover a criptografia de um PDF? A ferramenta Descriptografar PDF do PDF.it remove a proteção por senha do seu documento, gerando um PDF limpo que pode ser aberto, editado e compartilhado livremente — desde que você conheça a senha original.
-            </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>✓ Remova a criptografia de qualquer PDF protegido</li>
-              <li>✓ Gere um PDF sem proteção por senha</li>
-              <li>✓ Ideal quando você não precisa mais da criptografia</li>
-              <li>✓ Funciona no Mac, Windows, iOS, Android e Linux</li>
-              <li>✓ Sem instalação — descriptografe direto do navegador</li>
-            </ul>
-          </div>
-        </section>
+        {/* Feature Blocks */}
+        <section className="py-16" style={{ background: `radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%), #0E0F1E` }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl"><div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {[
+                { title: "Descriptografar PDFs para Edicao", desc: "PDFs criptografados frequentemente bloqueiam edicao, preenchimento de formularios e anotacoes. Descriptografe o arquivo para recuperar acesso completo — destaque texto, adicione comentarios e faca alteracoes." },
+                { title: "Remover Criptografia para Arquivamento", desc: "Senhas se perdem com o tempo. Se voce tem PDFs criptografados antigos e ainda sabe as senhas, descriptografe-os agora para arquivamento seguro e acesso futuro." },
+                { title: "Descriptografar para Acesso da Equipe", desc: "Quando um colega envia um PDF criptografado e toda a equipe precisa de acesso, descriptografe uma vez e compartilhe a versao desprotegida internamente." },
+          ].map((feature) => (
+            <div key={feature.title} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}><div className="rounded-[11px] p-6 h-full" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}><h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3><p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p></div></div>
+          ))}
+        </div></div></section>
 
-        {/* Feature Sections */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Acesso Simplificado a Documentos</h2>
-              <p className="text-slate-600">
-                Remova a criptografia de PDFs que você precisa acessar frequentemente. Elimine a necessidade de digitar a senha toda vez que abrir o documento.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Compartilhamento sem Restrições</h2>
-              <p className="text-slate-600">
-                Descriptografe PDFs antes de compartilhá-los com colegas ou clientes que não precisam da proteção por senha. Facilite o acesso ao conteúdo do documento.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Edição e Processamento</h2>
-              <p className="text-slate-600">
-                Remova a criptografia para poder editar, converter ou processar o PDF com outras ferramentas que não suportam arquivos protegidos por senha.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* How To */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Descriptografar um PDF</h2>
-            <div className="space-y-4">
-              {[
-                "Envie seu PDF criptografado para o PDF.it.",
-                "Insira a senha do documento.",
-                "Clique em Descriptografar e baixe o PDF sem proteção.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
-                  </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* How It Works */}
+        <section className="py-16 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl"><h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Descriptografar um PDF</h2><div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+          {[
+                { num: "1", title: "Envie seu PDF", desc: "Arraste e solte seu PDF criptografado" },
+                { num: "2", title: "Insira a senha", desc: "Digite a senha atual quando solicitado" },
+                { num: "3", title: "Baixe o PDF descriptografado", desc: "Receba seu arquivo nao criptografado instantaneamente" },
+          ].map((step) => (
+            <div key={step.num} className="flex-1"><div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)", border: "1px solid rgba(20,216,196,0.25)" }}><span className="text-[#14D8C4] font-black text-lg">{step.num}</span></div><p className="font-semibold text-slate-900">{step.title}</p><p className="text-sm text-slate-500 mt-1">{step.desc}</p></div>
+          ))}
+        </div></div></section>
 
         {/* Related Tools */}
-        <section className="py-16" style={{ background: "#0E0F1E" }}>
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-white mb-6 text-center">Ferramentas Relacionadas</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {[
-                { name: "Proteger PDF", href: "/br/proteger-pdf", desc: "Adicione senha ao seu PDF" },
-                { name: "Desbloquear PDF", href: "/br/desbloquear-pdf", desc: "Remova a proteção por senha" },
-                { name: "Redação PDF", href: "/br/redacao-pdf", desc: "Oculte informações sensíveis" },
-                { name: "Achatar PDF", href: "/br/achatar-pdf", desc: "Bloqueie formulários e camadas" },
-                { name: "Marca d'Água", href: "/br/marca-dagua-pdf", desc: "Adicione marcas d'água ao PDF" },
-                { name: "Comprimir PDF", href: "/br/comprimir-pdf", desc: "Reduza o tamanho do arquivo" },
-              ].map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="rounded-xl p-4 transition-all text-center flex flex-col justify-center min-h-[80px] hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(20,216,196,0.25)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.2)" }}
-                >
-                  <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
-                  <div className="text-xs text-slate-400">{tool.desc}</div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+        <section className="py-16" style={{ background: "#0E0F1E" }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl"><h2 className="text-2xl font-black text-white mb-6 text-center">Ferramentas Relacionadas</h2><div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          {[
+                { name: "Desbloquear PDF", href: "/br/desbloquear-pdf", desc: "Remover senhas de PDF" },
+                { name: "Proteger PDF", href: "/br/proteger-pdf", desc: "Adicionar protecao por senha" },
+                { name: "Comprimir PDF", href: "/br/comprimir-pdf", desc: "Reduzir tamanho do arquivo" },
+                { name: "Achatar PDF", href: "/br/achatar-pdf", desc: "Achatar campos de formulario" },
+          ].map((tool) => (
+            <div key={tool.href} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}><Link href={tool.href} className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}><div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div><div className="text-xs text-slate-400">{tool.desc}</div></Link></div>
+          ))}
+        </div></div></section>
 
         {/* FAQ */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Perguntas Frequentes</h2>
-            <div className="space-y-6">
-              {[
-                { q: "Como descriptografo um PDF?", a: "Envie seu PDF criptografado para o PDF.it, insira a senha do documento e a ferramenta removerá a criptografia, gerando um PDF sem proteção por senha." },
-                { q: "Preciso saber a senha para descriptografar?", a: "Sim. Para descriptografar um PDF protegido com senha de abertura, você precisa fornecer a senha correta. Não é possível remover criptografia sem a senha." },
-                { q: "Qual é a diferença entre descriptografar e desbloquear?", a: "Descriptografar remove a criptografia completa do arquivo, enquanto desbloquear pode se referir apenas à remoção de restrições de permissão. Ambas as funções estão disponíveis no PDF.it." },
-                { q: "É seguro enviar meu PDF criptografado?", a: "Sim. Todas as transferências são protegidas com SSL e seus arquivos são eliminados imediatamente após a sessão. Nunca armazenamos seus documentos." },
-                { q: "Posso descriptografar um PDF pelo celular?", a: "Sim. O PDF.it funciona em navegadores móveis — envie seu PDF, insira a senha e baixe o arquivo descriptografado de qualquer dispositivo." },
-                { q: "É grátis descriptografar um PDF?", a: "Sim. Contas gratuitas têm 10 operações por dia. Contas Pro têm operações ilimitadas." },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <section className="py-16" style={{ background: `radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%), radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%), #0E0F1E` }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl"><h2 className="text-3xl font-black text-white mb-10 text-center">Perguntas Frequentes</h2><div className="space-y-4">
+          {faqs.map((faq, i) => (
+            <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}><h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3><p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p></div>
+          ))}
+        </div></div></section>
+
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(faq => ({ "@type": "Question", "name": faq.q, "acceptedAnswer": { "@type": "Answer", "text": faq.a } })) })}} />
       </main>
       <FooterBr />
     </div>
