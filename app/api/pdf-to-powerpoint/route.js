@@ -1,3 +1,6 @@
+import { createWriteStream } from "fs";
+import { Readable } from "stream";
+import { pipeline } from "stream/promises";
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
@@ -26,10 +29,9 @@ async function blobUrlToTmp(blobUrl) {
     // keep default name
   }
 
-  const buffer = Buffer.from(await res.arrayBuffer());
   const id = randomUUID();
   const tmpPath = join("/tmp", `${id}-${name}`);
-  await writeFile(tmpPath, buffer);
+  if (res.body) { const nodeStream = Readable.fromWeb(res.body); await pipeline(nodeStream, createWriteStream(tmpPath)); } else { const buf = Buffer.from(await res.arrayBuffer()); await writeFile(tmpPath, buf); }
   return { tmpPath, name };
 }
 

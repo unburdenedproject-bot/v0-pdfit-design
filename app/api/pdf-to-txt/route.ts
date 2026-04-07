@@ -2,40 +2,11 @@ export const runtime = "nodejs";
 export const maxDuration = 300;
 
 import { NextResponse } from "next/server";
-import { writeFile, unlink } from "fs/promises";
-import { join } from "path";
-import { randomUUID } from "crypto";
+import { unlink } from "fs/promises";
 import { del } from "@vercel/blob";
 import { isValidBlobUrl } from "@/lib/validate-blob-url";
-
-async function blobUrlToTmp(blobUrl) {
-  const res = await fetch(blobUrl);
-  if (!res.ok) {
-    console.error(`Failed to fetch blob URL (${res.status}): ${blobUrl}`);
-    throw new Error("Failed to retrieve your uploaded file. Please try uploading again.");
-  }
-
-  let name = "input.pdf";
-  try {
-    const pathname = new URL(blobUrl).pathname;
-    const segments = pathname.split("/").filter(Boolean);
-    if (segments.length > 0) {
-      name = decodeURIComponent(segments[segments.length - 1]);
-    }
-  } catch {
-    // keep default name
-  }
-
-  const buffer = Buffer.from(await res.arrayBuffer());
-  const id = randomUUID();
-  const tmpPath = join("/tmp", `${id}-${name}`);
-  await writeFile(tmpPath, buffer);
-  return { tmpPath, name };
-}
-
-function errorResponse(message, status = 500) {
-  return Response.json({ error: message }, { status });
-}
+import { blobUrlToTmp, cleanupTmp } from "@/lib/api/blob-handler";
+import { errorResponse } from "@/lib/api/error-handler";
 
 export async function POST(request) {
   let tmpPath = null;
