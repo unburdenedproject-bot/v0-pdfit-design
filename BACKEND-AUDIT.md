@@ -153,12 +153,12 @@
 - **Fix:** Rename + add types incrementally
 - **Effort:** 3-5 days
 
-### [ ] 21. GDPR Deletion Flow
+### [x] 21. GDPR Deletion Flow — FIXED April 7
 - **Issue:** No mechanism to delete a user's files, usage logs, and contact messages on request
 - **Fix:** Deletion request table + processing cron
 - **Effort:** 4 hours
 
-### [ ] 22. User Audit Trail
+### [x] 22. User Audit Trail — FIXED April 7 (needs SQL run in Supabase)
 - **Issue:** No log of when/why a user's plan changed
 - **Fix:** Postgres trigger that logs plan changes to `user_audit_log` table
 - **Effort:** 3 hours
@@ -169,7 +169,7 @@
 - **Fix:** Set to `false` or remove the line
 - **Effort:** 30 minutes
 
-### [ ] 24. Usage Log Retention Policy
+### [x] 24. Usage Log Retention Policy — FIXED April 7
 - **Issue:** `usage_logs` table grows indefinitely — millions of rows = slow queries
 - **Fix:** Cron to archive/delete logs older than 30 days
 - **Effort:** 2 hours
@@ -183,7 +183,7 @@
 - **Fix:** Redis/BullMQ queue → worker processors (per INFRASTRUCTURE.md plan)
 - **Effort:** 1 week
 
-### [ ] 27. Per-User Rate Limiting (Not Per-IP)
+### [x] 27. Per-User Rate Limiting (Not Per-IP) — FIXED April 7
 - **File:** `middleware.ts` — current 100 req/min is IP-based
 - **Issue:** Corporate VPN users all share one IP, all get blocked
 - **Fix:** Rate limit by user ID for authenticated users, IP for anonymous
