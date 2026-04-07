@@ -143,7 +143,7 @@
 
 ## LOWER PRIORITY — Month 2+
 
-### [ ] 19. Extract Shared Utilities (Kill 3,300 LOC Duplication)
+### [x] 19. Extract Shared Utilities — PARTIALLY FIXED April 7 (libs created, 5 routes migrated, 43 remaining)
 - **Issue:** `blobUrlToTmp()` copied 21 times, `errorResponse()` defined 48 times
 - **Fix:** Create `lib/api/blob-handler.ts`, `lib/api/error-handler.ts`, API route factory
 - **Effort:** 2 days
