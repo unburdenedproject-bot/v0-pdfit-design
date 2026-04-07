@@ -128,7 +128,7 @@
 - **Fix:** Validate blob URL ownership before processing
 - **Effort:** 3 hours
 
-### [ ] 17. /tmp Directory Will Fill Up
+### [x] 17. /tmp Directory Will Fill Up — VERIFIED April 7 (covered by #8 fix)
 - **Issue:** Vercel serverless shares 512MB /tmp. 20 concurrent 25MB uploads = full disk.
 - **Fix:** Ensure all error paths unlink temp files, use auto-cleanup patterns
 - **Effort:** 2 hours
@@ -174,7 +174,7 @@
 - **Fix:** Cron to archive/delete logs older than 30 days
 - **Effort:** 2 hours
 
-### [ ] 25. Webhook Event Deduplication Table
+### [x] 25. Webhook Event Deduplication Table — DONE (created as part of #7)
 - **Fix:** `CREATE TABLE webhook_events (stripe_event_id TEXT PRIMARY KEY, event_type TEXT, processed_at TIMESTAMPTZ DEFAULT NOW())`
 - **Effort:** 30 minutes (table creation, code change is part of #7)
 
