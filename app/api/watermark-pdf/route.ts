@@ -1,6 +1,7 @@
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
+import { type NextRequest } from "next/server";
 import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
@@ -9,9 +10,9 @@ import { isValidBlobUrl } from "@/lib/validate-blob-url";
 import { blobUrlToTmp, cleanupTmp } from "@/lib/api/blob-handler";
 import { errorResponse, safeMessageFrom } from "@/lib/api/error-handler";
 
-export async function POST(request) {
-  let tmpPath = null;
-  let uploadedBlobUrl = null;
+export async function POST(request: NextRequest) {
+  let tmpPath: string | null = null;
+  let uploadedBlobUrl: string | null = null;
 
   try {
     // Usage check: auth + daily limit
@@ -27,8 +28,8 @@ export async function POST(request) {
       return Response.json({ error: "upgrade_required" }, { status: 403 });
     }
 
-    const publicKey = process.env.ILOVEAPI_PUBLIC_KEY;
-    const secretKey = process.env.ILOVEAPI_SECRET_KEY;
+    const publicKey: string | undefined = process.env.ILOVEAPI_PUBLIC_KEY;
+    const secretKey: string | undefined = process.env.ILOVEAPI_SECRET_KEY;
 
     if (!publicKey || !secretKey) {
       return errorResponse(
@@ -40,20 +41,20 @@ export async function POST(request) {
     // -----------------------------------------------------------
     // Detect request type: JSON (blob URL) or multipart (file)
     // -----------------------------------------------------------
-    const contentType = request.headers.get("content-type") || "";
-    const isJson = contentType.includes("application/json");
+    const contentType: string = request.headers.get("content-type") || "";
+    const isJson: boolean = contentType.includes("application/json");
 
-    let originalName = "input.pdf";
-    let watermarkText = "CONFIDENTIAL";
-    let transparency = 50;
-    let fontSize = 48;
-    let fontColor = "#000000";
-    let position = "center";
+    let originalName: string = "input.pdf";
+    let watermarkText: string = "CONFIDENTIAL";
+    let transparency: number = 50;
+    let fontSize: number = 48;
+    let fontColor: string = "#000000";
+    let position: string = "center";
 
     if (isJson) {
       // ---- JSON path: { blobUrl, text, transparency?, fontSize?, color?, position? } ----
       const body = await request.json();
-      const blobUrl = body.blobUrl;
+      const blobUrl: string = body.blobUrl;
       uploadedBlobUrl = blobUrl;
 
       if (!blobUrl || typeof blobUrl !== "string") {
@@ -68,14 +69,14 @@ export async function POST(request) {
       }
 
       if (body.transparency !== undefined) {
-        const t = Number(body.transparency);
+        const t: number = Number(body.transparency);
         if (!isNaN(t) && t >= 0 && t <= 100) {
           transparency = t;
         }
       }
 
       if (body.fontSize !== undefined) {
-        const fs = Number(body.fontSize);
+        const fs: number = Number(body.fontSize);
         if (!isNaN(fs) && fs >= 8 && fs <= 120) {
           fontSize = fs;
         }
@@ -86,7 +87,7 @@ export async function POST(request) {
       }
 
       if (body.position && typeof body.position === "string") {
-        const allowed = ["center", "top-left", "top-right", "bottom-left", "bottom-right"];
+        const allowed: string[] = ["center", "top-left", "top-right", "bottom-left", "bottom-right"];
         if (allowed.includes(body.position)) {
           position = body.position;
         }
@@ -107,7 +108,7 @@ export async function POST(request) {
       }
 
       originalName = file.name || "input.pdf";
-      const ext = originalName.split(".").pop()?.toLowerCase() || "";
+      const ext: string = originalName.split(".").pop()?.toLowerCase() || "";
 
       if (ext !== "pdf") {
         return errorResponse(
@@ -123,7 +124,7 @@ export async function POST(request) {
 
       const transField = formData.get("transparency");
       if (transField) {
-        const t = Number(transField);
+        const t: number = Number(transField);
         if (!isNaN(t) && t >= 0 && t <= 100) {
           transparency = t;
         }
@@ -131,7 +132,7 @@ export async function POST(request) {
 
       const fsField = formData.get("fontSize");
       if (fsField) {
-        const fs = Number(fsField);
+        const fs: number = Number(fsField);
         if (!isNaN(fs) && fs >= 8 && fs <= 120) {
           fontSize = fs;
         }
@@ -144,21 +145,21 @@ export async function POST(request) {
 
       const posField = formData.get("position");
       if (posField && typeof posField === "string") {
-        const allowed = ["center", "top-left", "top-right", "bottom-left", "bottom-right"];
+        const allowed: string[] = ["center", "top-left", "top-right", "bottom-left", "bottom-right"];
         if (allowed.includes(posField)) {
           position = posField;
         }
       }
 
-      const id = randomUUID();
+      const id: string = randomUUID();
       tmpPath = join("/tmp", `${id}-${originalName}`);
-      const buffer = Buffer.from(await file.arrayBuffer());
+      const buffer: Buffer = Buffer.from(await file.arrayBuffer());
       await writeFile(tmpPath, buffer);
     }
 
     // ── Reject blank PDFs before hitting paid API ──
     const { readFile: readTmpFile } = await import("fs/promises");
-    const pdfBytes = await readTmpFile(tmpPath);
+    const pdfBytes: Buffer = await readTmpFile(tmpPath);
     try {
       const { isBlankPdf } = await import("@/lib/blank-pdf-check");
       const { blank } = await isBlankPdf(pdfBytes);
@@ -189,8 +190,8 @@ export async function POST(request) {
     await task.addFile(pdfFile);
 
     // Map position string to iLovePDF vertical/horizontal params
-    let vertical_position = "middle";
-    let horizontal_position = "center";
+    let vertical_position: string = "middle";
+    let horizontal_position: string = "center";
     if (position === "top-left") { vertical_position = "top"; horizontal_position = "left"; }
     else if (position === "top-right") { vertical_position = "top"; horizontal_position = "right"; }
     else if (position === "bottom-left") { vertical_position = "bottom"; horizontal_position = "left"; }
@@ -220,7 +221,7 @@ export async function POST(request) {
     await unlink(tmpPath).catch(() => {});
     tmpPath = null;
 
-    const baseName = originalName.replace(/\.[^/.]+$/, "").replace(/-[a-zA-Z0-9]{20,}$/, "");
+    const baseName: string = originalName.replace(/\.[^/.]+$/, "").replace(/-[a-zA-Z0-9]{20,}$/, "");
 
     // Log successful usage
     await logUsage(user.id, "watermark-pdf");

@@ -4,7 +4,7 @@ import { pipeline } from "stream/promises";
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
-import { NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
@@ -15,17 +15,17 @@ import { isValidBlobUrl } from "@/lib/validate-blob-url";
  * Fetch a Vercel Blob URL and write it to /tmp.
  * Returns { tmpPath, name }.
  */
-async function blobUrlToTmp(blobUrl) {
+async function blobUrlToTmp(blobUrl: string): Promise<{ tmpPath: string; name: string }> {
   const res = await fetch(blobUrl);
   if (!res.ok) {
     console.error(`Failed to fetch blob URL (${res.status}): ${blobUrl}`);
     throw new Error("Failed to retrieve your uploaded file. Please try uploading again.");
   }
 
-  let name = "input.pdf";
+  let name: string = "input.pdf";
   try {
-    const pathname = new URL(blobUrl).pathname;
-    const segments = pathname.split("/").filter(Boolean);
+    const pathname: string = new URL(blobUrl).pathname;
+    const segments: string[] = pathname.split("/").filter(Boolean);
     if (segments.length > 0) {
       name = decodeURIComponent(segments[segments.length - 1]);
     }
@@ -33,19 +33,19 @@ async function blobUrlToTmp(blobUrl) {
     // keep default name
   }
 
-  const id = randomUUID();
-  const tmpPath = join("/tmp", `${id}-${name}`);
-  if (res.body) { const nodeStream = Readable.fromWeb(res.body); await pipeline(nodeStream, createWriteStream(tmpPath)); } else { const buf = Buffer.from(await res.arrayBuffer()); await writeFile(tmpPath, buf); }
+  const id: string = randomUUID();
+  const tmpPath: string = join("/tmp", `${id}-${name}`);
+  if (res.body) { const nodeStream = Readable.fromWeb(res.body as any); await pipeline(nodeStream, createWriteStream(tmpPath)); } else { const buf: Buffer = Buffer.from(await res.arrayBuffer()); await writeFile(tmpPath, buf); }
   return { tmpPath, name };
 }
 
-function errorResponse(message, status = 500) {
+function errorResponse(message: string, status: number = 500): Response {
   return Response.json({ error: message }, { status });
 }
 
-export async function POST(request) {
-  let tmpPath = null;
-  let uploadedBlobUrl = null;
+export async function POST(request: NextRequest) {
+  let tmpPath: string | null = null;
+  let uploadedBlobUrl: string | null = null;
 
   try {
     // Usage check: auth + daily limit
@@ -55,8 +55,8 @@ export async function POST(request) {
       return NextResponse.json({ error: usage.error || "Daily limit reached." }, { status: 403 });
     }
 
-    const publicKey = process.env.ILOVEAPI_PUBLIC_KEY;
-    const secretKey = process.env.ILOVEAPI_SECRET_KEY;
+    const publicKey: string | undefined = process.env.ILOVEAPI_PUBLIC_KEY;
+    const secretKey: string | undefined = process.env.ILOVEAPI_SECRET_KEY;
 
     if (!publicKey || !secretKey) {
       return errorResponse(
@@ -68,16 +68,16 @@ export async function POST(request) {
     // -----------------------------------------------------------
     // Detect request type: JSON (blob URL) or multipart (file)
     // -----------------------------------------------------------
-    const contentType = request.headers.get("content-type") || "";
-    const isJson = contentType.includes("application/json");
+    const contentType: string = request.headers.get("content-type") || "";
+    const isJson: boolean = contentType.includes("application/json");
 
-    let originalName = "input.pdf";
-    let ranges = "";
+    let originalName: string = "input.pdf";
+    let ranges: string = "";
 
     if (isJson) {
       // ---- JSON path: { blobUrl, ranges } ----
       const body = await request.json();
-      const blobUrl = body.blobUrl;
+      const blobUrl: string = body.blobUrl;
       uploadedBlobUrl = blobUrl;
 
       if (!blobUrl || typeof blobUrl !== "string") {
@@ -110,7 +110,7 @@ export async function POST(request) {
       }
 
       originalName = file.name || "input.pdf";
-      const ext = originalName.split(".").pop()?.toLowerCase() || "";
+      const ext: string = originalName.split(".").pop()?.toLowerCase() || "";
 
       if (ext !== "pdf") {
         return errorResponse(
@@ -119,7 +119,7 @@ export async function POST(request) {
         );
       }
 
-      ranges = formData.get("ranges");
+      ranges = formData.get("ranges") as string;
       if (!ranges || typeof ranges !== "string" || !ranges.trim()) {
         return errorResponse(
           'Missing "ranges" field. Provide page ranges like "1-3,4-6".',
@@ -127,15 +127,15 @@ export async function POST(request) {
         );
       }
 
-      const id = randomUUID();
+      const id: string = randomUUID();
       tmpPath = join("/tmp", `${id}-${originalName}`);
-      const buffer = Buffer.from(await file.arrayBuffer());
+      const buffer: Buffer = Buffer.from(await file.arrayBuffer());
       await writeFile(tmpPath, buffer);
     }
 
     // Validate ranges format
-    const cleanRanges = ranges.trim().replace(/\s/g, "");
-    const rangesPattern = /^\d+(-\d+)?(,\d+(-\d+)?)*$/;
+    const cleanRanges: string = ranges.trim().replace(/\s/g, "");
+    const rangesPattern: RegExp = /^\d+(-\d+)?(,\d+(-\d+)?)*$/;
     if (!rangesPattern.test(cleanRanges)) {
       if (tmpPath) await unlink(tmpPath).catch(() => {});
       return errorResponse(
@@ -146,7 +146,7 @@ export async function POST(request) {
 
     // ── Reject blank PDFs before hitting paid API ──
     const { readFile: readTmpFile } = await import("fs/promises");
-    const pdfBytesCheck = await readTmpFile(tmpPath);
+    const pdfBytesCheck: Buffer = await readTmpFile(tmpPath);
     try {
       const { isBlankPdf } = await import("@/lib/blank-pdf-check");
       const { blank } = await isBlankPdf(pdfBytesCheck);
@@ -164,9 +164,9 @@ export async function POST(request) {
     // Validate the PDF has more than 1 page before splitting
     const { readFile } = await import("fs/promises");
     const { PDFDocument } = await import("pdf-lib");
-    const pdfBytes = await readFile(tmpPath);
+    const pdfBytes: Buffer = await readFile(tmpPath);
     const pdfDoc = await PDFDocument.load(pdfBytes, { ignoreEncryption: true });
-    const pageCount = pdfDoc.getPageCount();
+    const pageCount: number = pdfDoc.getPageCount();
     if (pageCount <= 1) {
       await unlink(tmpPath).catch(() => {});
       return errorResponse(
@@ -203,21 +203,21 @@ export async function POST(request) {
     await unlink(tmpPath).catch(() => {});
     tmpPath = null;
 
-    const baseName = originalName.replace(/\.[^/.]+$/, "").replace(/-[a-zA-Z0-9]{20,}$/, "");
+    const baseName: string = originalName.replace(/\.[^/.]+$/, "").replace(/-[a-zA-Z0-9]{20,}$/, "");
 
     // Log successful usage
     if (usage) await logUsage(usage.userId, "split-pdf");
 
     // Detect what iLovePDF actually returned
-    const outBuf = Buffer.isBuffer(data) ? data : Buffer.from(data);
-    const sig2 = outBuf.subarray(0, 2).toString("utf8");
-    const sig4 = outBuf.subarray(0, 4).toString("utf8");
-    const isZip = sig2 === "PK";
-    const isPdf = sig4 === "%PDF";
+    const outBuf: Buffer = Buffer.isBuffer(data) ? data : Buffer.from(data);
+    const sig2: string = outBuf.subarray(0, 2).toString("utf8");
+    const sig4: string = outBuf.subarray(0, 4).toString("utf8");
+    const isZip: boolean = sig2 === "PK";
+    const isPdf: boolean = sig4 === "%PDF";
     console.log("iLovePDF split output bytes:", outBuf.length, "sig:", { sig2, sig4 });
 
-    const outContentType = isZip ? "application/zip" : isPdf ? "application/pdf" : "application/octet-stream";
-    const outFileName = isZip ? `${baseName}-split.zip` : `${baseName}-split.pdf`;
+    const outContentType: string = isZip ? "application/zip" : isPdf ? "application/pdf" : "application/octet-stream";
+    const outFileName: string = isZip ? `${baseName}-split.zip` : `${baseName}-split.pdf`;
 
     const res = new NextResponse(outBuf, {
       status: 200,
@@ -234,9 +234,9 @@ export async function POST(request) {
   } catch (err) {
     console.error("split-pdf route error:", err);
 
-    const rawMessage =
-      err && typeof err === "object" && err.message
-        ? err.message
+    const rawMessage: string =
+      err && typeof err === "object" && (err as any).message
+        ? (err as any).message
         : "";
 
     if (rawMessage.includes("400") || rawMessage.includes("corrupt") || rawMessage.includes("invalid")) {

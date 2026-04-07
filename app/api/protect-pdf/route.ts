@@ -4,7 +4,7 @@ import { pipeline } from "stream/promises";
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
-import { NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
@@ -15,17 +15,17 @@ import { isValidBlobUrl } from "@/lib/validate-blob-url";
  * Fetch a Vercel Blob URL and write it to /tmp.
  * Returns { tmpPath, name }.
  */
-async function blobUrlToTmp(blobUrl) {
+async function blobUrlToTmp(blobUrl: string): Promise<{ tmpPath: string; name: string }> {
   const res = await fetch(blobUrl);
   if (!res.ok) {
     console.error(`Failed to fetch blob URL (${res.status}): ${blobUrl}`);
     throw new Error("Failed to retrieve your uploaded file. Please try uploading again.");
   }
 
-  let name = "input.pdf";
+  let name: string = "input.pdf";
   try {
-    const pathname = new URL(blobUrl).pathname;
-    const segments = pathname.split("/").filter(Boolean);
+    const pathname: string = new URL(blobUrl).pathname;
+    const segments: string[] = pathname.split("/").filter(Boolean);
     if (segments.length > 0) {
       name = decodeURIComponent(segments[segments.length - 1]);
     }
@@ -33,19 +33,19 @@ async function blobUrlToTmp(blobUrl) {
     // keep default name
   }
 
-  const id = randomUUID();
-  const tmpPath = join("/tmp", `${id}-${name}`);
-  if (res.body) { const nodeStream = Readable.fromWeb(res.body); await pipeline(nodeStream, createWriteStream(tmpPath)); } else { const buf = Buffer.from(await res.arrayBuffer()); await writeFile(tmpPath, buf); }
+  const id: string = randomUUID();
+  const tmpPath: string = join("/tmp", `${id}-${name}`);
+  if (res.body) { const nodeStream = Readable.fromWeb(res.body as any); await pipeline(nodeStream, createWriteStream(tmpPath)); } else { const buf: Buffer = Buffer.from(await res.arrayBuffer()); await writeFile(tmpPath, buf); }
   return { tmpPath, name };
 }
 
-function errorResponse(message, status = 500) {
+function errorResponse(message: string, status: number = 500): Response {
   return Response.json({ error: message }, { status });
 }
 
-export async function POST(request) {
-  let tmpPath = null;
-  let uploadedBlobUrl = null;
+export async function POST(request: NextRequest) {
+  let tmpPath: string | null = null;
+  let uploadedBlobUrl: string | null = null;
 
   try {
     // Usage check: auth + daily limit
@@ -55,8 +55,8 @@ export async function POST(request) {
       return NextResponse.json({ error: usage.error || "Daily limit reached." }, { status: 403 });
     }
 
-    const publicKey = process.env.ILOVEAPI_PUBLIC_KEY;
-    const secretKey = process.env.ILOVEAPI_SECRET_KEY;
+    const publicKey: string | undefined = process.env.ILOVEAPI_PUBLIC_KEY;
+    const secretKey: string | undefined = process.env.ILOVEAPI_SECRET_KEY;
 
     if (!publicKey || !secretKey) {
       return errorResponse("The processing service is temporarily unavailable. Please try again later.", 500);
@@ -65,16 +65,16 @@ export async function POST(request) {
     // -----------------------------------------------------------
     // Detect request type: JSON (blob URL) or multipart (file)
     // -----------------------------------------------------------
-    const contentType = request.headers.get("content-type") || "";
-    const isJson = contentType.includes("application/json");
+    const contentType: string = request.headers.get("content-type") || "";
+    const isJson: boolean = contentType.includes("application/json");
 
-    let originalName = "input.pdf";
-    let password = "";
+    let originalName: string = "input.pdf";
+    let password: string = "";
 
     if (isJson) {
       // ---- JSON path: { blobUrl, password } ----
       const body = await request.json();
-      const blobUrl = body.blobUrl;
+      const blobUrl: string = body.blobUrl;
       uploadedBlobUrl = blobUrl;
 
       if (!blobUrl || typeof blobUrl !== "string") {
@@ -104,7 +104,7 @@ export async function POST(request) {
       }
 
       originalName = file.name || "input.pdf";
-      const ext = originalName.split(".").pop()?.toLowerCase() || "";
+      const ext: string = originalName.split(".").pop()?.toLowerCase() || "";
 
       if (ext !== "pdf") {
         return errorResponse(
@@ -113,20 +113,20 @@ export async function POST(request) {
         );
       }
 
-      password = formData.get("password");
+      password = formData.get("password") as string;
       if (!password || typeof password !== "string" || password.length < 4) {
         return errorResponse("Password required (min 4 chars)", 400);
       }
 
-      const id = randomUUID();
+      const id: string = randomUUID();
       tmpPath = join("/tmp", `${id}-${originalName}`);
-      const buffer = Buffer.from(await file.arrayBuffer());
+      const buffer: Buffer = Buffer.from(await file.arrayBuffer());
       await writeFile(tmpPath, buffer);
     }
 
     // ── Reject blank PDFs before hitting paid API ──
     const { readFile: readTmpFile } = await import("fs/promises");
-    const pdfBytes = await readTmpFile(tmpPath);
+    const pdfBytes: Buffer = await readTmpFile(tmpPath);
     try {
       const { isBlankPdf } = await import("@/lib/blank-pdf-check");
       const { blank } = await isBlankPdf(pdfBytes);
@@ -170,7 +170,7 @@ export async function POST(request) {
     await unlink(tmpPath).catch(() => {});
     tmpPath = null;
 
-    const baseName = originalName.replace(/\.[^/.]+$/, "").replace(/-[a-zA-Z0-9]{20,}$/, "");
+    const baseName: string = originalName.replace(/\.[^/.]+$/, "").replace(/-[a-zA-Z0-9]{20,}$/, "");
 
     // Log successful usage
     if (usage) await logUsage(usage.userId, "protect-pdf");
@@ -190,8 +190,8 @@ export async function POST(request) {
   } catch (err) {
     console.error("protect-pdf route error:", err);
 
-    const raw = err && typeof err === "object" && err.message ? err.message : "";
-    const safe = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob.vercel/i.test(raw)
+    const raw: string = err && typeof err === "object" && (err as any).message ? (err as any).message : "";
+    const safe: string = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob.vercel/i.test(raw)
       ? "An error occurred while processing your file. Please try again."
       : (raw || "An unexpected error occurred.");
 

@@ -1,7 +1,7 @@
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
-import { NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
@@ -10,9 +10,9 @@ import { isValidBlobUrl } from "@/lib/validate-blob-url";
 import { blobUrlToTmp, cleanupTmp } from "@/lib/api/blob-handler";
 import { errorResponse, safeMessageFrom } from "@/lib/api/error-handler";
 
-export async function POST(request) {
-  let tmpPath = null;
-  let uploadedBlobUrl = null;
+export async function POST(request: NextRequest) {
+  let tmpPath: string | null = null;
+  let uploadedBlobUrl: string | null = null;
 
   try {
     const { checkUsageAndAuth, logUsage } = await import("@/lib/usage-check");
@@ -21,21 +21,21 @@ export async function POST(request) {
       return NextResponse.json({ error: usage.error || "Daily limit reached." }, { status: 403 });
     }
 
-    const publicKey = process.env.ILOVEAPI_PUBLIC_KEY;
-    const secretKey = process.env.ILOVEAPI_SECRET_KEY;
+    const publicKey: string | undefined = process.env.ILOVEAPI_PUBLIC_KEY;
+    const secretKey: string | undefined = process.env.ILOVEAPI_SECRET_KEY;
 
     if (!publicKey || !secretKey) {
       return errorResponse("The processing service is temporarily unavailable. Please try again later.", 500);
     }
 
-    const contentType = request.headers.get("content-type") || "";
-    const isJson = contentType.includes("application/json");
+    const contentType: string = request.headers.get("content-type") || "";
+    const isJson: boolean = contentType.includes("application/json");
 
-    let originalName = "input.pdf";
+    let originalName: string = "input.pdf";
 
     if (isJson) {
       const body = await request.json();
-      const blobUrl = body.blobUrl;
+      const blobUrl: string = body.blobUrl;
       uploadedBlobUrl = blobUrl;
 
       if (!blobUrl || typeof blobUrl !== "string") {
@@ -63,15 +63,15 @@ export async function POST(request) {
       }
 
       originalName = file.name || "input.pdf";
-      const id = randomUUID();
+      const id: string = randomUUID();
       tmpPath = join("/tmp", `${id}-${originalName}`);
-      const buffer = Buffer.from(await file.arrayBuffer());
+      const buffer: Buffer = Buffer.from(await file.arrayBuffer());
       await writeFile(tmpPath, buffer);
     }
 
     // ── Reject blank PDFs before hitting paid API ──
     const { readFile: readTmpFile } = await import("fs/promises");
-    const pdfBytes = await readTmpFile(tmpPath);
+    const pdfBytes: Buffer = await readTmpFile(tmpPath);
     try {
       const { isBlankPdf } = await import("@/lib/blank-pdf-check");
       const { blank } = await isBlankPdf(pdfBytes);
@@ -103,20 +103,20 @@ export async function POST(request) {
     const data = await task.download();
 
     const JSZip = (await import("jszip")).default;
-    const originalBase = originalName.replace(/\.[^/.]+$/, "").replace(/-[a-zA-Z0-9]{20,}/g, "");
+    const originalBase: string = originalName.replace(/\.[^/.]+$/, "").replace(/-[a-zA-Z0-9]{20,}/g, "");
 
     const newZip = new JSZip();
 
-    const isZip = data[0] === 0x50 && data[1] === 0x4B;
+    const isZip: boolean = data[0] === 0x50 && data[1] === 0x4B;
     if (isZip) {
       const zip = await JSZip.loadAsync(data);
-      const entries = Object.keys(zip.files).sort();
-      let imgNum = 1;
+      const entries: string[] = Object.keys(zip.files).sort();
+      let imgNum: number = 1;
       for (const entryName of entries) {
         const entry = zip.files[entryName];
         if (!entry.dir) {
-          const ext = entryName.split(".").pop() || "jpg";
-          const newName = `${originalBase}-image-${String(imgNum).padStart(4, "0")}.${ext}`;
+          const ext: string = entryName.split(".").pop() || "jpg";
+          const newName: string = `${originalBase}-image-${String(imgNum).padStart(4, "0")}.${ext}`;
           const content = await entry.async("nodebuffer");
           newZip.file(newName, content);
           imgNum++;
@@ -126,7 +126,7 @@ export async function POST(request) {
       newZip.file(`${originalBase}-image-0001.jpg`, data);
     }
 
-    const renamedData = await newZip.generateAsync({ type: "nodebuffer", compression: "DEFLATE" });
+    const renamedData: Buffer = await newZip.generateAsync({ type: "nodebuffer", compression: "DEFLATE" });
 
     if (uploadedBlobUrl) {
       await del(uploadedBlobUrl).catch(() => {});

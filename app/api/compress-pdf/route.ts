@@ -1,7 +1,7 @@
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
-import { NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
@@ -12,9 +12,9 @@ import { errorResponse, safeMessageFrom } from "@/lib/api/error-handler";
 
 const ALLOWED_LEVELS = new Set(["low", "recommended", "extreme"]);
 
-export async function POST(request) {
-  let tmpPath = null;
-  let uploadedBlobUrl = null;
+export async function POST(request: NextRequest) {
+  let tmpPath: string | null = null;
+  let uploadedBlobUrl: string | null = null;
 
   try {
     const { checkUsageAndAuth, logUsage } = await import("@/lib/usage-check");
@@ -23,8 +23,8 @@ export async function POST(request) {
       return NextResponse.json({ error: usage.error || "Daily limit reached." }, { status: 403 })
     }
 
-    const publicKey = process.env.ILOVEAPI_PUBLIC_KEY;
-    const secretKey = process.env.ILOVEAPI_SECRET_KEY;
+    const publicKey: string | undefined = process.env.ILOVEAPI_PUBLIC_KEY;
+    const secretKey: string | undefined = process.env.ILOVEAPI_SECRET_KEY;
 
     if (!publicKey || !secretKey) {
       return errorResponse(
@@ -36,16 +36,16 @@ export async function POST(request) {
     // -----------------------------------------------------------
     // Detect request type: JSON (blob URL) or multipart (file)
     // -----------------------------------------------------------
-    const contentType = request.headers.get("content-type") || "";
-    const isJson = contentType.includes("application/json");
+    const contentType: string = request.headers.get("content-type") || "";
+    const isJson: boolean = contentType.includes("application/json");
 
-    let originalName = "input.pdf";
-    let compressionLevel = "recommended";
+    let originalName: string = "input.pdf";
+    let compressionLevel: string = "recommended";
 
     if (isJson) {
       // ---- JSON path: { blobUrl, compression_level? } ----
       const body = await request.json();
-      const blobUrl = body.blobUrl;
+      const blobUrl: string = body.blobUrl;
       uploadedBlobUrl = blobUrl;
 
       if (!blobUrl || typeof blobUrl !== "string") {
@@ -64,7 +64,7 @@ export async function POST(request) {
       originalName = result.name;
 
       const { readFile } = await import("fs/promises");
-      const headerBytes = await readFile(tmpPath).then((buf) => buf.subarray(0, 5));
+      const headerBytes: Buffer = await readFile(tmpPath).then((buf) => buf.subarray(0, 5));
       if (headerBytes.length < 5 || headerBytes.toString("ascii") !== "%PDF-") {
         await unlink(tmpPath).catch(() => {});
         tmpPath = null;
@@ -82,7 +82,7 @@ export async function POST(request) {
       }
 
       originalName = file.name || "input.pdf";
-      const ext = originalName.split(".").pop()?.toLowerCase() || "";
+      const ext: string = originalName.split(".").pop()?.toLowerCase() || "";
 
       if (ext !== "pdf") {
         return errorResponse(
@@ -96,19 +96,19 @@ export async function POST(request) {
         compressionLevel = level;
       }
 
-      const buffer = Buffer.from(await file.arrayBuffer());
+      const buffer: Buffer = Buffer.from(await file.arrayBuffer());
       if (buffer.length < 5 || buffer.subarray(0, 5).toString("ascii") !== "%PDF-") {
         return errorResponse("The uploaded file is not a valid PDF and cannot be compressed.", 400);
       }
 
-      const id = randomUUID();
+      const id: string = randomUUID();
       tmpPath = join("/tmp", `${id}-${originalName}`);
       await writeFile(tmpPath, buffer);
     }
 
     // ── Reject blank PDFs before hitting paid API ──
     const { readFile: readTmpFile } = await import("fs/promises");
-    const pdfBytes = await readTmpFile(tmpPath);
+    const pdfBytes: Buffer = await readTmpFile(tmpPath);
     try {
       const { isBlankPdf } = await import("@/lib/blank-pdf-check");
       const { blank } = await isBlankPdf(pdfBytes);
@@ -151,7 +151,7 @@ export async function POST(request) {
     await unlink(tmpPath).catch(() => {});
     tmpPath = null;
 
-    const baseName = originalName.replace(/\.[^/.]+$/, "").replace(/-[a-zA-Z0-9]{20,}$/, "");
+    const baseName: string = originalName.replace(/\.[^/.]+$/, "").replace(/-[a-zA-Z0-9]{20,}$/, "");
 
     // Log successful usage
     if (usage) await logUsage(usage.userId, "compress-pdf");
