@@ -7,41 +7,10 @@ import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
 import { isValidBlobUrl } from "@/lib/validate-blob-url";
+import { blobUrlToTmp, cleanupTmp } from "@/lib/api/blob-handler";
+import { errorResponse, safeMessageFrom } from "@/lib/api/error-handler";
 
 const ALLOWED_ROTATIONS = new Set(["90", "180", "270"]);
-
-/**
- * Fetch a Vercel Blob URL and write it to /tmp.
- * Returns { tmpPath, name }.
- */
-async function blobUrlToTmp(blobUrl) {
-  const res = await fetch(blobUrl);
-  if (!res.ok) {
-    console.error(`Failed to fetch blob URL (${res.status}): ${blobUrl}`);
-    throw new Error("Failed to retrieve your uploaded file. Please try uploading again.");
-  }
-
-  let name = "input.pdf";
-  try {
-    const pathname = new URL(blobUrl).pathname;
-    const segments = pathname.split("/").filter(Boolean);
-    if (segments.length > 0) {
-      name = decodeURIComponent(segments[segments.length - 1]);
-    }
-  } catch {
-    // keep default name
-  }
-
-  const buffer = Buffer.from(await res.arrayBuffer());
-  const id = randomUUID();
-  const tmpPath = join("/tmp", `${id}-${name}`);
-  await writeFile(tmpPath, buffer);
-  return { tmpPath, name };
-}
-
-function errorResponse(message, status = 500) {
-  return Response.json({ error: message }, { status });
-}
 
 export async function POST(request) {
   let tmpPath = null;
@@ -192,13 +161,7 @@ export async function POST(request) {
     return res;
   } catch (err) {
     console.error("rotate-pdf route error:", err);
-
-    const raw = err && typeof err === "object" && err.message ? err.message : "";
-    const safe = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob.vercel/i.test(raw)
-      ? "An error occurred while processing your file. Please try again."
-      : (raw || "An unexpected error occurred.");
-
-    return errorResponse(safe, 500);
+    return errorResponse(safeMessageFrom(err), 500);
   } finally {
     if (uploadedBlobUrl) {
       await del(uploadedBlobUrl).catch(() => {});
