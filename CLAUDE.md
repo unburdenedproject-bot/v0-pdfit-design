@@ -117,6 +117,7 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 - BRAND.md — Target audience, brand voice, positioning, color system, design rules
 - **Page_Format.md — Canonical tool page format (section order, exact styles, JSX snippets, color tokens). READ THIS before creating or editing any tool page.**
 - SETUP-GUIDE.md — Step-by-step setup for Sentry, BetterUptime, CRON_SECRET (all now configured)
+- BACKEND-AUDIT.md — Full backend architecture audit with 28 prioritized fixes, scalability limits, and scorecard
 
 ## Brand
 - Fonts: Sora (headings), Inter (body)
