@@ -6,6 +6,7 @@ import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
+import { isValidBlobUrl } from "@/lib/validate-blob-url";
 
 function errorResponse(message, status = 500) {
   return Response.json({ error: message }, { status });
@@ -75,6 +76,9 @@ export async function POST(request) {
       documentText = pdfText.substring(0, MAX_PDF_TEXT_CHARS);
     } else if (blobUrl && typeof blobUrl === "string") {
       // Extract text from PDF via iLoveAPI
+      if (!isValidBlobUrl(blobUrl)) {
+        return errorResponse("Invalid file URL.", 400);
+      }
       uploadedBlobUrl = blobUrl;
 
       const res = await fetch(blobUrl);
@@ -216,12 +220,12 @@ ${documentText}`;
   } catch (err) {
     console.error("chat-with-pdf route error:", err);
 
-    const message =
-      err && typeof err === "object" && err.message
-        ? err.message
-        : "An unexpected error occurred.";
+    const raw = err && typeof err === "object" && err.message ? err.message : "";
+    const safe = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob.vercel/i.test(raw)
+      ? "An error occurred while processing your file. Please try again."
+      : (raw || "An unexpected error occurred.");
 
-    return errorResponse(message, 500);
+    return errorResponse(safe, 500);
   } finally {
     if (uploadedBlobUrl) {
       await del(uploadedBlobUrl).catch(() => {});

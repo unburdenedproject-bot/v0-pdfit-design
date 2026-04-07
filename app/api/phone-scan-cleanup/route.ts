@@ -5,6 +5,7 @@ import { NextRequest, NextResponse } from "next/server"
 import sharp from "sharp"
 import { PDFDocument } from "pdf-lib"
 import { del } from "@vercel/blob"
+import { isValidBlobUrl } from "@/lib/validate-blob-url"
 
 function jsonError(message: string, status = 500) {
   return NextResponse.json({ error: message }, { status })
@@ -37,6 +38,9 @@ export async function POST(req: NextRequest) {
 
     if (!blobUrl || typeof blobUrl !== "string") {
       return jsonError('JSON body must include "blobUrl".', 400)
+    }
+    if (!isValidBlobUrl(blobUrl)) {
+      return jsonError("Invalid file URL.", 400)
     }
 
     if (mode !== "bw" && mode !== "color") {

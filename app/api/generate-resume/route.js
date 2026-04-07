@@ -310,7 +310,10 @@ Return the cover letter as plain text. No explanation.`
     });
   } catch (err) {
     console.error("generate-resume route error:", err);
-    const message = err && typeof err === "object" && err.message ? err.message : "An unexpected error occurred.";
-    return errorResponse(message, 500);
+    const raw = err && typeof err === "object" && err.message ? err.message : "";
+    const safe = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob\.vercel/i.test(raw)
+      ? "An error occurred while generating your resume. Please try again."
+      : (raw || "An unexpected error occurred.");
+    return errorResponse(safe, 500);
   }
 }

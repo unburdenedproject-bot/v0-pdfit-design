@@ -6,6 +6,7 @@ import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
+import { areValidBlobUrls } from "@/lib/validate-blob-url";
 
 /**
  * Fetch a Vercel Blob URL and write it to /tmp.
@@ -14,7 +15,8 @@ import { del } from "@vercel/blob";
 async function blobUrlToTmp(blobUrl, index) {
   const res = await fetch(blobUrl);
   if (!res.ok) {
-    throw new Error(`Failed to fetch blob URL (${res.status}): ${blobUrl}`);
+    console.error(`Failed to fetch blob URL (${res.status}): ${blobUrl}`);
+    throw new Error("Failed to retrieve your uploaded file. Please try uploading again.");
   }
 
   // Derive a filename from the URL pathname or Content-Disposition header
@@ -53,7 +55,7 @@ export async function POST(request) {
 
     if (!publicKey || !secretKey) {
       return Response.json(
-        { error: "Server is not configured with iLoveAPI credentials." },
+        { error: "The processing service is temporarily unavailable. Please try again later." },
         { status: 500 }
       );
     }
@@ -75,6 +77,12 @@ export async function POST(request) {
       if (urls.length < 2) {
         return Response.json(
           { error: "At least 2 blob URLs are required to merge." },
+          { status: 400 }
+        );
+      }
+      if (!areValidBlobUrls(urls)) {
+        return Response.json(
+          { error: "Invalid file URL." },
           { status: 400 }
         );
       }
@@ -183,27 +191,7 @@ export async function POST(request) {
   } catch (err) {
     console.error("merge-pdf route error:", err);
 
-    let message = "Merge failed";
-    let details = "";
-    let httpStatus = 502;
-
-    if (err && typeof err === "object") {
-      if (err.response && err.response.data) {
-        const d = err.response.data;
-        details = typeof d === "string" ? d : JSON.stringify(d);
-        httpStatus = err.response.status || 502;
-      } else if (err.body) {
-        details = typeof err.body === "string" ? err.body : JSON.stringify(err.body);
-      }
-      if (err.message) {
-        message = err.message;
-      }
-      if (!details && err.toString) {
-        details = err.toString();
-      }
-    }
-
-    return Response.json({ error: message, details }, { status: httpStatus });
+    return Response.json({ error: "An error occurred while merging your files. Please try again." }, { status: 500 });
   } finally {
     for (const url of uploadedBlobUrls) {
       if (url) await del(url).catch(() => {});

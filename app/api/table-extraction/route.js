@@ -6,6 +6,7 @@ import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
+import { isValidBlobUrl } from "@/lib/validate-blob-url";
 
 // Monthly page limits for table extraction
 // Business: 200 pages/mo ($6.00 cost at $0.03/page vs $13.99 revenue)
@@ -121,11 +122,15 @@ export async function POST(request) {
     if (!blobUrl || typeof blobUrl !== "string") {
       return errorResponse("Missing blobUrl in JSON body.", 400);
     }
+    if (!isValidBlobUrl(blobUrl)) {
+      return errorResponse("Invalid file URL.", 400);
+    }
 
     // Download PDF from blob
     const res = await fetch(blobUrl);
     if (!res.ok) {
-      throw new Error(`Failed to fetch blob URL (${res.status})`);
+      console.error(`Failed to fetch blob URL (${res.status})`);
+      throw new Error("Failed to retrieve your uploaded file. Please try uploading again.");
     }
     const buffer = Buffer.from(await res.arrayBuffer());
     const id = randomUUID();
@@ -168,7 +173,8 @@ export async function POST(request) {
     );
 
     if (!projectId || !processorId || !clientEmail || !privateKey) {
-      throw new Error("Google Cloud Document AI is not configured.");
+      console.error("Google Cloud Document AI is not configured (missing env vars)");
+      throw new Error("The table extraction service is temporarily unavailable. Please try again later.");
     }
 
     // Generate JWT access token
@@ -195,14 +201,15 @@ export async function POST(request) {
     if (!docAiResponse.ok) {
       const errBody = await docAiResponse.text();
       console.error("Document AI API error:", docAiResponse.status, errBody);
-      throw new Error(`Document AI API error (${docAiResponse.status}): ${errBody.substring(0, 200)}`);
+      throw new Error("Table extraction failed. Please try again or use a different file.");
     }
 
     const result = await docAiResponse.json();
     const document = result.document;
 
     if (!document) {
-      throw new Error("Document AI returned no document.");
+      console.error("Document AI returned no document in response");
+      throw new Error("No data could be extracted from this file. Please try a different PDF.");
     }
 
     // Check page count against remaining monthly limit
@@ -376,12 +383,12 @@ export async function POST(request) {
   } catch (err) {
     console.error("table-extraction route error:", err);
 
-    const message =
-      err && typeof err === "object" && err.message
-        ? err.message
-        : "An unexpected error occurred.";
+    const raw = err && typeof err === "object" && err.message ? err.message : "";
+    const safe = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob\.vercel/i.test(raw)
+      ? "An error occurred while extracting tables. Please try again."
+      : (raw || "An unexpected error occurred.");
 
-    return errorResponse(message, 500);
+    return errorResponse(safe, 500);
   } finally {
     if (uploadedBlobUrl) {
       await del(uploadedBlobUrl).catch(() => {});

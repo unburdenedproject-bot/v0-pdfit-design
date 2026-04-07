@@ -6,6 +6,7 @@ import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
+import { isValidBlobUrl } from "@/lib/validate-blob-url";
 
 /**
  * Fetch a Vercel Blob URL and write it to /tmp.
@@ -14,7 +15,8 @@ import { del } from "@vercel/blob";
 async function blobUrlToTmp(blobUrl) {
   const res = await fetch(blobUrl);
   if (!res.ok) {
-    throw new Error(`Failed to fetch blob URL (${res.status}): ${blobUrl}`);
+    console.error(`Failed to fetch blob URL (${res.status}): ${blobUrl}`);
+    throw new Error("Failed to retrieve your uploaded file. Please try uploading again.");
   }
 
   let name = "input.pdf";
@@ -56,7 +58,7 @@ export async function POST(request) {
 
     if (!publicKey || !secretKey) {
       return errorResponse(
-        "Server is not configured with iLoveAPI credentials.",
+        "The processing service is temporarily unavailable. Please try again later.",
         500
       );
     }
@@ -78,6 +80,9 @@ export async function POST(request) {
 
       if (!blobUrl || typeof blobUrl !== "string") {
         return errorResponse("Missing blobUrl in JSON body.", 400);
+      }
+      if (!isValidBlobUrl(blobUrl)) {
+        return errorResponse("Invalid file URL.", 400);
       }
 
       ranges = body.ranges;

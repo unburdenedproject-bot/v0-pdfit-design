@@ -2,6 +2,7 @@ export const runtime = "nodejs";
 export const maxDuration = 300;
 
 import { del } from "@vercel/blob";
+import { isValidBlobUrl } from "@/lib/validate-blob-url";
 
 const API_BASE = "https://api.ilovepdf.com/v1";
 
@@ -41,10 +42,14 @@ async function resolveInput(request) {
     if (!blobUrl || typeof blobUrl !== "string") {
       return { error: jsonError('JSON body must include "blobUrl".', 400) };
     }
+    if (!isValidBlobUrl(blobUrl)) {
+      return { error: jsonError("Invalid file URL.", 400) };
+    }
 
     const res = await fetch(blobUrl);
     if (!res.ok) {
-      return { error: jsonError(`Failed to fetch blob URL (${res.status}).`, 502) };
+      console.error(`Failed to fetch blob URL (${res.status})`);
+      return { error: jsonError("Failed to retrieve your uploaded file. Please try uploading again.", 502) };
     }
 
     // Derive filename from URL pathname
@@ -113,7 +118,7 @@ export async function POST(request) {
     const publicKey = process.env.ILOVEAPI_PUBLIC_KEY;
     const secretKey = process.env.ILOVEAPI_SECRET_KEY;
     if (!publicKey || !secretKey) {
-      return jsonError("Server is not configured with iLoveAPI credentials.", 500);
+      return jsonError("The processing service is temporarily unavailable. Please try again later.", 500);
     }
 
     // -----------------------------------------------------------
@@ -256,7 +261,7 @@ export async function POST(request) {
     });
   } catch (err) {
     console.error("OCR route failed:", err?.stack || err);
-    return jsonError("OCR failed", 500, err?.message || String(err));
+    return jsonError("An error occurred while processing your file. Please try again.", 500);
   } finally {
     if (uploadedBlobUrl) {
       await del(uploadedBlobUrl).catch(() => {});

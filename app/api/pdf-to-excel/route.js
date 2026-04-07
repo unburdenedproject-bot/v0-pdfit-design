@@ -6,11 +6,13 @@ import { readFile, writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
+import { isValidBlobUrl } from "@/lib/validate-blob-url";
 
 async function blobUrlToTmp(blobUrl) {
   const res = await fetch(blobUrl);
   if (!res.ok) {
-    throw new Error(`Failed to fetch blob URL (${res.status}): ${blobUrl}`);
+    console.error(`Failed to fetch blob URL (${res.status}): ${blobUrl}`);
+    throw new Error("Failed to retrieve your uploaded file. Please try uploading again.");
   }
 
   let name = "input.pdf";
@@ -41,7 +43,8 @@ function errorResponse(message, status = 500) {
 async function convertWithCloudConvert(fileBuffer, fileName) {
   const apiKey = process.env.CLOUDCONVERT_API_KEY;
   if (!apiKey) {
-    throw new Error("Server is not configured with CloudConvert credentials.");
+    console.error("CLOUDCONVERT_API_KEY is not set");
+    throw new Error("The conversion service is temporarily unavailable. Please try again later.");
   }
 
   // Step 1: Create the job
@@ -70,13 +73,15 @@ async function convertWithCloudConvert(fileBuffer, fileName) {
 
   if (!jobRes.ok) {
     const err = await jobRes.json().catch(() => ({}));
-    throw new Error(`CloudConvert job creation failed: ${err.message || jobRes.status}`);
+    console.error("Conversion job creation failed:", err.message || jobRes.status);
+    throw new Error("An error occurred while processing your file. Please try again.");
   }
 
   const job = await jobRes.json();
   const importTask = job.data.tasks.find((t) => t.name === "import-1");
   if (!importTask || !importTask.result || !importTask.result.form) {
-    throw new Error("CloudConvert did not return an upload URL.");
+    console.error("Conversion service did not return an upload URL");
+    throw new Error("An error occurred while processing your file. Please try again.");
   }
 
   // Step 2: Upload the file
@@ -90,7 +95,8 @@ async function convertWithCloudConvert(fileBuffer, fileName) {
 
   const uploadRes = await fetch(uploadUrl, { method: "POST", body: formData });
   if (!uploadRes.ok && uploadRes.status !== 201 && uploadRes.status !== 204) {
-    throw new Error(`CloudConvert upload failed (${uploadRes.status})`);
+    console.error("File upload to conversion service failed:", uploadRes.status);
+    throw new Error("An error occurred while processing your file. Please try again.");
   }
 
   // Step 3: Poll for job completion
@@ -113,19 +119,21 @@ async function convertWithCloudConvert(fileBuffer, fileName) {
     }
     if (status === "error") {
       const failedTask = pollData.data.tasks.find((t) => t.status === "error");
-      throw new Error(`CloudConvert conversion failed: ${failedTask?.message || "unknown error"}`);
+      console.error("Conversion failed:", failedTask?.message || "unknown error");
+      throw new Error("File conversion failed. Please try again or use a different file.");
     }
   }
 
   if (!finished) {
-    throw new Error("CloudConvert conversion timed out.");
+    throw new Error("Conversion timed out. Please try again with a smaller file.");
   }
 
   // Step 4: Download the result
   const exportTask = finished.tasks.find((t) => t.name === "export-1");
   const fileUrl = exportTask?.result?.files?.[0]?.url;
   if (!fileUrl) {
-    throw new Error("CloudConvert did not return a download URL.");
+    console.error("Conversion service did not return a download URL");
+    throw new Error("An error occurred while processing your file. Please try again.");
   }
 
   const downloadRes = await fetch(fileUrl);
@@ -166,6 +174,9 @@ export async function POST(request) {
 
       if (!blobUrl || typeof blobUrl !== "string") {
         return errorResponse("Missing blobUrl in JSON body.", 400);
+      }
+      if (!isValidBlobUrl(blobUrl)) {
+        return errorResponse("Invalid file URL.", 400);
       }
 
       const result = await blobUrlToTmp(blobUrl);
@@ -228,12 +239,12 @@ export async function POST(request) {
   } catch (err) {
     console.error("pdf-to-excel route error:", err);
 
-    const message =
-      err && typeof err === "object" && err.message
-        ? err.message
-        : "An unexpected error occurred.";
+    const raw = err && typeof err === "object" && err.message ? err.message : "";
+    const safe = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob\.vercel/i.test(raw)
+      ? "An error occurred while processing your file. Please try again."
+      : (raw || "An unexpected error occurred.");
 
-    return errorResponse(message, 500);
+    return errorResponse(safe, 500);
   } finally {
     if (uploadedBlobUrl) {
       await del(uploadedBlobUrl).catch(() => {});

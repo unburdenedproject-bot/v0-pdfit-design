@@ -5,6 +5,7 @@ import { NextRequest, NextResponse } from "next/server"
 import sharp from "sharp"
 import { PDFDocument } from "pdf-lib"
 import { del } from "@vercel/blob"
+import { areValidBlobUrls } from "@/lib/validate-blob-url"
 
 function jsonError(message: string, status = 500) {
   return NextResponse.json({ error: message }, { status })
@@ -37,6 +38,9 @@ export async function POST(req: NextRequest) {
 
     if (blobUrls.length === 0 || blobUrls.some((u: unknown) => typeof u !== "string")) {
       return jsonError('JSON body must include "blobUrl" or "blobUrls".', 400)
+    }
+    if (!areValidBlobUrls(blobUrls)) {
+      return jsonError("Invalid file URL.", 400)
     }
 
     // ── Process each image and add as a page ──

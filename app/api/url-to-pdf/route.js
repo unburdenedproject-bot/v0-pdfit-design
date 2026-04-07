@@ -54,10 +54,11 @@ export async function POST(request) {
 
     const apiKey = process.env.CLOUDCONVERT_API_KEY;
     if (!apiKey) {
-      return errorResponse("Server is not configured with CloudConvert credentials.", 500);
+      console.error("CLOUDCONVERT_API_KEY is not set");
+      return errorResponse("The conversion service is temporarily unavailable. Please try again later.", 500);
     }
 
-    // Step 1: Create CloudConvert job — capture website as PDF → export
+    // Step 1: Create conversion job — capture website as PDF → export
     const jobRes = await fetch("https://api.cloudconvert.com/v2/jobs", {
       method: "POST",
       headers: {
@@ -91,7 +92,8 @@ export async function POST(request) {
 
     if (!jobRes.ok) {
       const err = await jobRes.json().catch(() => ({}));
-      throw new Error(`CloudConvert job creation failed: ${err.message || jobRes.status}`);
+      console.error("Conversion job creation failed:", err.message || jobRes.status);
+      throw new Error("An error occurred while converting the URL. Please try again.");
     }
 
     const job = await jobRes.json();
@@ -117,9 +119,8 @@ export async function POST(request) {
       }
       if (status === "error") {
         const failedTask = pollData.data.tasks?.find((t) => t.status === "error");
-        throw new Error(
-          `Conversion failed: ${failedTask?.message || "Unknown error"}`
-        );
+        console.error("URL conversion failed:", failedTask?.message || "Unknown error");
+        throw new Error("Conversion failed. The URL may be inaccessible or the page took too long to load.");
       }
     }
 
@@ -136,7 +137,8 @@ export async function POST(request) {
 
     const fileRes = await fetch(fileUrl);
     if (!fileRes.ok) {
-      throw new Error(`Failed to download converted file (${fileRes.status})`);
+      console.error("Failed to download converted file:", fileRes.status);
+      throw new Error("An error occurred while processing the converted file. Please try again.");
     }
 
     const pdfBuffer = await fileRes.arrayBuffer();
@@ -165,11 +167,11 @@ export async function POST(request) {
   } catch (err) {
     console.error("url-to-pdf route error:", err);
 
-    const message =
-      err && typeof err === "object" && err.message
-        ? err.message
-        : "An unexpected error occurred.";
+    const raw = err && typeof err === "object" && err.message ? err.message : "";
+    const safe = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob\.vercel/i.test(raw)
+      ? "An error occurred while converting the URL. Please try again."
+      : (raw || "An unexpected error occurred.");
 
-    return errorResponse(message, 500);
+    return errorResponse(safe, 500);
   }
 }

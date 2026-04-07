@@ -6,6 +6,7 @@ import { writeFile, unlink, readFile } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
+import { isValidBlobUrl } from "@/lib/validate-blob-url";
 
 function errorResponse(message, status = 500) {
   return Response.json({ error: message }, { status });
@@ -183,11 +184,15 @@ export async function POST(request) {
     if (!blobUrl || typeof blobUrl !== "string") {
       return errorResponse("Missing blobUrl in JSON body.", 400);
     }
+    if (!isValidBlobUrl(blobUrl)) {
+      return errorResponse("Invalid file URL.", 400);
+    }
 
     // Download PDF from blob
     const res = await fetch(blobUrl);
     if (!res.ok) {
-      throw new Error(`Failed to fetch blob URL (${res.status})`);
+      console.error(`Failed to fetch blob URL (${res.status})`);
+      throw new Error("Failed to retrieve your uploaded file. Please try uploading again.");
     }
     const buffer = Buffer.from(await res.arrayBuffer());
     const id = randomUUID();
@@ -392,12 +397,12 @@ ${resumeText.substring(0, MAX_RESUME_TEXT_CHARS)}`;
   } catch (err) {
     console.error("ats-optimizer route error:", err);
 
-    const message =
-      err && typeof err === "object" && err.message
-        ? err.message
-        : "An unexpected error occurred.";
+    const raw = err && typeof err === "object" && err.message ? err.message : "";
+    const safe = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob.vercel/i.test(raw)
+      ? "An error occurred while processing your file. Please try again."
+      : (raw || "An unexpected error occurred.");
 
-    return errorResponse(message, 500);
+    return errorResponse(safe, 500);
   } finally {
     if (uploadedBlobUrl) {
       await del(uploadedBlobUrl).catch(() => {});
