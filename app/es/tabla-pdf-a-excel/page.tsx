@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import Script from "next/script"
 import { HeaderEs } from "@/components/header-es"
 import { FooterEs } from "@/components/footer-es"
@@ -5,201 +6,94 @@ import { ProcessingInterface } from "@/components/processing-interface"
 import { FileSpreadsheet, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
-export const metadata = {
-  title: "Tabla PDF a Excel — Convierte Tablas de PDF a Hojas de Cálculo | PDF.it",
-  description:
-    "Convierte tablas de archivos PDF a hojas de cálculo Excel con PDF.it. Exporta datos tabulares a XLSX con estructura intacta — rápido, desde tu navegador, sin registro.",
+export const metadata: Metadata = {
+  title: "Tabla PDF a Excel — Convierte Tablas PDF a Hojas de Calculo | PDF.it",
+  description: "Convierte tablas PDF a hojas de calculo Excel con PDF.it. Extrae datos estructurados de PDFs y descarga archivos .xlsx editables, rapido y desde tu navegador.",
   alternates: {
-    canonical: "https://pdf.it.com/es/tabla-pdf-a-excel",
-    languages: {
-      en: "https://pdf.it.com/pdf-table-to-excel",
-      es: "https://pdf.it.com/es/tabla-pdf-a-excel",
-    },
+    canonical: "https://www.pdf.it.com/es/tabla-pdf-a-excel",
+    languages: { "en": "https://www.pdf.it.com/pdf-table-to-excel", "es": "https://www.pdf.it.com/es/tabla-pdf-a-excel", "pt-BR": "https://www.pdf.it.com/br/tabela-pdf-para-excel" },
   },
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+export default function TablaPDFAExcelPage() {
+  const faqs = [
     {
-      "@type": "Question",
-      "name": "¿Cómo convierto tablas de PDF a Excel?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it, haz clic en Convertir y descarga un archivo Excel con las tablas detectadas en tu documento, organizadas en hojas de cálculo." }
+        "q": "Como detecta PDF.it las tablas en un PDF?",
+        "a": "PDF.it analiza el diseno de tu PDF para detectar filas, columnas, bordes y alineacion de celdas. Identifica estructuras de tabla incluso sin lineas de cuadricula visibles."
     },
     {
-      "@type": "Question",
-      "name": "¿Cuál es la diferencia entre esta herramienta y PDF a Excel?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Tabla PDF a Excel se enfoca específicamente en extraer tablas con su estructura de filas y columnas. PDF a Excel convierte todo el contenido del PDF, incluyendo texto y formato." }
+        "q": "Se preservara el formato de mi tabla en Excel?",
+        "a": "Si. PDF.it mapea celdas PDF a celdas Excel, preservando anchos de columna, estructura de filas y alineacion de datos."
     },
     {
-      "@type": "Question",
-      "name": "¿Se mantienen las fórmulas en Excel?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Los PDFs no contienen fórmulas — solo valores. Los números se mantienen como datos numéricos en Excel, lo que te permite agregar tus propias fórmulas después de la conversión." }
+        "q": "Puedo convertir multiples tablas de un PDF a Excel?",
+        "a": "Si. Si tu PDF contiene multiples tablas en diferentes paginas, PDF.it las extrae todas en tu archivo Excel."
     },
     {
-      "@type": "Question",
-      "name": "¿Puedo convertir múltiples tablas a la vez?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it detecta todas las tablas del PDF y las organiza en hojas separadas dentro del mismo archivo Excel." }
+        "q": "Que pasa si mi tabla PDF tiene celdas combinadas o disenos complejos?",
+        "a": "PDF.it maneja la mayoria de disenos incluyendo encabezados multi-fila y celdas expandidas. Para tablas muy complejas, la herramienta de Extraccion de Tablas del plan Business proporciona analisis mas avanzado."
     },
     {
-      "@type": "Question",
-      "name": "¿Funciona con PDFs escaneados?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Para PDFs escaneados, primero usa nuestro Escáner OCR para convertir las imágenes a texto, y luego convierte las tablas a Excel." }
+        "q": "Puedo convertir una tabla PDF escaneada a Excel?",
+        "a": "Para PDFs escaneados, usa primero el Escaner OCR de PDF.it para hacer el texto buscable, luego convierte el PDF a Excel."
     },
     {
-      "@type": "Question",
-      "name": "¿Es gratis convertir tablas de PDF a Excel?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Las cuentas gratuitas tienen 10 conversiones por día. Las cuentas Pro tienen conversiones ilimitadas." }
+        "q": "Esta herramienta es gratis?",
+        "a": "Tabla PDF a Excel esta disponible en el plan Pro ($3.99/mes) que incluye conversiones ilimitadas y archivos de hasta 200MB."
     }
-  ]
-}
+]
 
-export default function TablaPDFaExcelPage() {
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderEs />
       <main>
-        {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <FileSpreadsheet className="h-10 w-10 text-white" />
-              </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Tabla PDF a Excel</h1>
-              <p className="text-xl text-slate-300 mb-8">
-                Convierte las tablas de tu PDF a hojas de cálculo Excel. Mantén la estructura de filas y columnas intacta — rápido y desde tu navegador.
-              </p>
-              <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Conversión Instantánea</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesión</span></div>
-                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sin Registro</span></div>
-              </div>
+        <section className="text-white py-16 relative overflow-hidden" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%), radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%), #0E0F1E` }}>
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}><filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter><rect width="100%" height="100%" filter="url(#heroGrain)" /></svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10"><div className="max-w-4xl mx-auto text-center">
+            <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)" }}><FileSpreadsheet className="h-10 w-10 text-[#14D8C4]" /></div>
+            <h1 className="text-4xl lg:text-5xl font-black mb-4">Tabla PDF a Excel</h1>
+            <p className="text-xl text-slate-300 mb-8">Convierte tablas atrapadas en archivos PDF a hojas de calculo Excel editables. Extrae filas, columnas y datos con la estructura intacta — listo para analisis.</p>
+            <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
+              <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Deteccion Inteligente de Tablas</span></div>
+              <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesion</span></div>
+              <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Descarga como .xlsx</span></div>
             </div>
-          </div>
+          </div></div>
         </section>
 
-        {/* Processing Interface */}
-        <ProcessingInterface
-          acceptedFiles=".pdf"
-          toolName="PDF to Excel"
-          outputFormat="XLSX"
-          processingMessage="Convirtiendo tablas a Excel..."
-          successMessage="¡Tu archivo Excel está listo!"
-        />
+        <section className="py-10 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+          <p className="text-lg text-slate-600 leading-relaxed">Las tablas PDF estan hechas para leerse, no para editarse. Cuando necesitas actualizar numeros, ejecutar formulas o importar datos a otro sistema, necesitas esas tablas en Excel. PDF.it convierte tablas PDF directamente a archivos .xlsx con filas, columnas y datos de celdas preservados.</p>
+          <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+            <li className="flex items-center gap-2">✓ Detecta estructura de tablas incluyendo filas y encabezados</li>
+            <li className="flex items-center gap-2">✓ Preserva numeros, fechas y texto en las celdas correctas</li>
+            <li className="flex items-center gap-2">✓ Maneja tablas de multiples paginas en tu PDF</li>
+            <li className="flex items-center gap-2">✓ Sin instalacion — convierte en tu navegador</li>
+          </ul>
+        </div></section>
 
-        {/* About */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <p className="text-lg text-slate-600 mb-8">
-              ¿Tienes tablas en un PDF que necesitas en Excel? El conversor de tablas PDF a Excel de PDF.it detecta automáticamente las tablas en tu documento y las convierte a hojas de cálculo XLSX, manteniendo la estructura original para que puedas trabajar con los datos de inmediato.
-            </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>✓ Convierte tablas de PDF a formato Excel (XLSX)</li>
-              <li>✓ Mantiene la estructura de filas y columnas</li>
-              <li>✓ Números listos para usar con fórmulas</li>
-              <li>✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li>✓ Sin instalación — convierte tablas en tu navegador</li>
-            </ul>
-          </div>
-        </section>
+        <ProcessingInterface acceptedFiles=".pdf" toolName="PDF to Excel" outputFormat="XLSX" processingMessage="Extrayendo tablas a Excel..." successMessage="Tu archivo Excel esta listo!" />
 
-        {/* Feature Sections */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Presupuestos y Finanzas</h2>
-              <p className="text-slate-600">
-                Convierte tablas de presupuestos, cotizaciones y estados de cuenta en PDF a Excel para analizarlos, compararlos o integrarlos en tu sistema contable con fórmulas y gráficos.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Inventarios y Listas de Contactos</h2>
-              <p className="text-slate-600">
-                ¿Recibiste un inventario o directorio en PDF? Conviértelo a Excel para filtrar, ordenar y buscar información fácilmente. Actualiza los datos sin tener que reescribir todo.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Análisis Financiero</h2>
-              <p className="text-slate-600">
-                Extrae tablas de reportes anuales, balances y estados financieros para crear tus propios modelos de análisis en Excel con fórmulas, tablas dinámicas y visualizaciones.
-              </p>
-            </div>
-          </div>
-        </section>
+        <section className="py-16" style={{ background: `radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%), #0E0F1E` }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl"><div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {[
+            { title: "Informes Financieros a Hojas de Calculo", desc: "Balances, estados de resultados e informes de presupuesto llegan como PDFs. Convierte a Excel para actualizar cifras, agregar formulas y crear graficos con datos reales." },
+            { title: "Extrae Lineas de Factura", desc: "Facturas de proveedores con lineas detalladas, cantidades y totales son faciles de extraer. Lleva los datos a Excel para conciliacion, seguimiento de gastos o importaciones contables." },
+            { title: "Tablas de Datos Listas para Analisis", desc: "Datos de investigacion, catalogos de productos y tablas de precios atrapados en PDFs se vuelven utiles al estar en Excel. Ordena, filtra, crea tablas dinamicas y graficos sin entrada manual." },
+          ].map((feature) => (<div key={feature.title} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}><div className="rounded-[11px] p-6 h-full" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}><h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3><p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p></div></div>))}
+        </div></div></section>
 
-        {/* How To */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Convertir Tablas de PDF a Excel</h2>
-            <div className="space-y-4">
-              {[
-                "Sube o arrastra tu PDF a PDF.it.",
-                "Haz clic en Convertir a Excel — las tablas se detectan automáticamente.",
-                "Descarga el archivo Excel con las tablas convertidas.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
-                  </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <section className="py-16 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl"><h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Convertir una Tabla PDF a Excel</h2><div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+          {[{ num: "1", title: "Sube tu PDF", desc: "Arrastra y suelta o haz clic para elegir" },{ num: "2", title: "Haz clic en Convertir", desc: "Las tablas se detectan y extraen automaticamente" },{ num: "3", title: "Descarga tu .xlsx", desc: "Abre en Excel o Google Sheets al instante" }].map((step) => (<div key={step.num} className="flex-1"><div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)", border: "1px solid rgba(20,216,196,0.25)" }}><span className="text-[#14D8C4] font-black text-lg">{step.num}</span></div><p className="font-semibold text-slate-900">{step.title}</p><p className="text-sm text-slate-500 mt-1">{step.desc}</p></div>))}
+        </div></div></section>
 
-        {/* Related Tools */}
-        <section className="py-16" style={{ background: "#0E0F1E" }}>
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {[
-                { name: "Tabla PDF a CSV", href: "/es/tabla-pdf-a-csv", desc: "Tablas a formato CSV" },
-                { name: "Extraer Tablas de PDF", href: "/es/extraer-tablas-de-pdf", desc: "Extrae tablas del PDF" },
-                { name: "PDF a Excel", href: "/es/pdf-a-excel", desc: "Convierte PDF completo a Excel" },
-                { name: "Extracción de Tablas", href: "/es/extraccion-de-tablas", desc: "Herramienta avanzada" },
-              ].map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="rounded-xl p-4 transition-all text-center flex flex-col justify-center min-h-[80px] hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(20,216,196,0.25)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.2)" }}
-                >
-                  <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
-                  <div className="text-xs text-slate-400">{tool.desc}</div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+        <section className="py-16" style={{ background: "#0E0F1E" }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl"><h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2><div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          {[{ name: "PDF a Excel", href: "/es/pdf-a-excel", desc: "Conversion completa PDF a Excel" },{ name: "Extraccion de Tablas", href: "/es/extraccion-tablas", desc: "Exportacion avanzada de datos" },{ name: "Extraer Tablas", href: "/es/extraer-tablas-pdf", desc: "Extrae tablas de PDFs" },{ name: "Tabla PDF a CSV", href: "/es/tabla-pdf-a-csv", desc: "Exporta tablas como CSV" }].map((tool) => (<div key={tool.href} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}><Link href={tool.href} className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}><div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div><div className="text-xs text-slate-400">{tool.desc}</div></Link></div>))}
+        </div></div></section>
 
-        {/* FAQ */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
-            <div className="space-y-6">
-              {[
-                { q: "¿Cómo convierto tablas de PDF a Excel?", a: "Sube tu PDF a PDF.it, haz clic en Convertir y descarga un archivo Excel con las tablas detectadas en tu documento, organizadas en hojas de cálculo." },
-                { q: "¿Cuál es la diferencia entre esta herramienta y PDF a Excel?", a: "Tabla PDF a Excel se enfoca específicamente en extraer tablas con su estructura de filas y columnas. PDF a Excel convierte todo el contenido del PDF, incluyendo texto y formato." },
-                { q: "¿Se mantienen las fórmulas en Excel?", a: "Los PDFs no contienen fórmulas — solo valores. Los números se mantienen como datos numéricos en Excel, lo que te permite agregar tus propias fórmulas después de la conversión." },
-                { q: "¿Puedo convertir múltiples tablas a la vez?", a: "Sí. PDF.it detecta todas las tablas del PDF y las organiza en hojas separadas dentro del mismo archivo Excel." },
-                { q: "¿Funciona con PDFs escaneados?", a: "Para PDFs escaneados, primero usa nuestro Escáner OCR para convertir las imágenes a texto, y luego convierte las tablas a Excel." },
-                { q: "¿Es gratis convertir tablas de PDF a Excel?", a: "Sí. Las cuentas gratuitas tienen 10 conversiones por día. Las cuentas Pro tienen conversiones ilimitadas." },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <section className="py-16" style={{ background: `radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%), radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%), #0E0F1E` }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl"><h2 className="text-3xl font-black text-white mb-10 text-center">Preguntas Frecuentes</h2><div className="space-y-4">
+          {faqs.map((faq, i) => (<div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}><h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3><p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p></div>))}
+        </div></div></section>
+
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(faq => ({ "@type": "Question", "name": faq.q, "acceptedAnswer": { "@type": "Answer", "text": faq.a } })) })}} />
       </main>
       <FooterEs />
     </div>

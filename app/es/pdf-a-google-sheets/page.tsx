@@ -1,235 +1,109 @@
+import type { Metadata } from "next"
 import Script from "next/script"
-import Link from "next/link"
 import { HeaderEs } from "@/components/header-es"
 import { FooterEs } from "@/components/footer-es"
-import { ProcessingInterface } from "@/components/processing-interface"
-import { FileSpreadsheet, Zap, Shield, Download } from "lucide-react"
+import { FileSpreadsheet, Zap, Shield, Upload } from "lucide-react"
+import Link from "next/link"
 
-export const metadata = {
-  title: "PDF a Google Sheets — Convierte Tablas PDF para Google Sheets | PDF.it",
-  description:
-    "Convierte tablas de PDF a Google Sheets con PDF.it. Extrae datos en formato XLSX y subelos a Google Drive para editar en Google Sheets — rapido y seguro.",
+export const metadata: Metadata = {
+  title: "PDF a Google Sheets — Abre Tablas PDF en Google Sheets | PDF.it",
+  description: "Aprende como convertir tablas PDF a Google Sheets. Convierte PDF a Excel con PDF.it, sube a Google Drive y abre en Google Sheets para editar y analizar.",
   alternates: {
-    canonical: "https://pdf.it.com/es/pdf-a-google-sheets",
-    languages: {
-      en: "https://pdf.it.com/pdf-to-google-sheets",
-      es: "https://pdf.it.com/es/pdf-a-google-sheets",
-    },
+    canonical: "https://www.pdf.it.com/es/pdf-a-google-sheets",
+    languages: { "en": "https://www.pdf.it.com/pdf-to-google-sheets", "es": "https://www.pdf.it.com/es/pdf-a-google-sheets", "pt-BR": "https://www.pdf.it.com/br/pdf-para-google-sheets" },
   },
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
+export default function PDFAGoogleSheetsPage() {
+  const faqs = [
     {
-      "@type": "Question",
-      name: "¿Como abro tablas de un PDF en Google Sheets?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Convierte tu PDF a XLSX con PDF.it, luego sube el archivo .xlsx a Google Drive. Haz clic derecho en el archivo y selecciona 'Abrir con Google Sheets' para editar los datos directamente.",
-      },
+        "q": "Puedo abrir un PDF directamente en Google Sheets?",
+        "a": "No. Google Sheets no puede abrir archivos PDF directamente. El mejor enfoque es convertir el PDF a un archivo Excel XLSX primero usando PDF.it, luego subir el XLSX a Google Drive y abrirlo con Google Sheets."
     },
     {
-      "@type": "Question",
-      name: "¿Se extraen las tablas con precision?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "PDF.it extrae tablas y datos estructurados con la mayor precision posible. Tablas simples y bien formateadas producen los mejores resultados. Tablas complejas con celdas combinadas pueden requerir ajustes manuales.",
-      },
+        "q": "Por que deberia convertir a XLSX antes de subir a Google Sheets?",
+        "a": "Google Sheets soporta nativamente archivos XLSX y preserva la estructura de celdas, formulas y formato. El convertidor de PDF.it detecta estructuras de tablas y las mapea a filas y columnas limpias."
     },
     {
-      "@type": "Question",
-      name: "¿Puedo colaborar en la hoja de calculo con mi equipo?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Si. Una vez que el archivo esta en Google Sheets, puedes compartirlo y colaborar en tiempo real. Filtra, ordena y analiza los datos con tu equipo.",
-      },
+        "q": "Mis tablas PDF se extraeran con precision?",
+        "a": "PDF.it detecta estructuras de tablas en tu PDF y las convierte a filas y columnas de Excel. Las tablas bien estructuradas con bordes claros se convierten con alta precision. Disenos complejos con celdas combinadas pueden necesitar ajustes menores."
     },
     {
-      "@type": "Question",
-      name: "¿Es seguro subir mi PDF?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos.",
-      },
+        "q": "Este metodo es gratis?",
+        "a": "La conversion de PDF a Excel en PDF.it esta disponible para suscriptores Pro y Business. Una vez que tengas el archivo XLSX, subirlo a Google Drive y abrirlo en Google Sheets es completamente gratis."
     },
     {
-      "@type": "Question",
-      name: "¿Funciona con PDFs escaneados?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Los PDFs escaneados requieren OCR para extraer datos primero. Usa la herramienta de Escaner OCR de PDF.it antes de convertir las tablas a XLSX para Google Sheets.",
-      },
+        "q": "Puedo usar formulas y graficos despues de importar?",
+        "a": "Si. Una vez que el XLSX se abre en Google Sheets, tienes acceso completo a formulas, tablas dinamicas, graficos, formato condicional y todas las demas funciones de Google Sheets."
     },
-  ],
-}
+    {
+        "q": "Puedo compartir la hoja de calculo con mi equipo?",
+        "a": "Si. Una vez en Google Sheets, puedes compartir la hoja con cualquier persona, establecer permisos (ver, comentar o editar) y colaborar en tiempo real."
+    }
+]
 
-export default function PDFaGoogleSheetsPage() {
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderEs />
       <main>
-        {/* Hero Section */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="text-white py-16 relative overflow-hidden" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%), radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%), #0E0F1E` }}>
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}><filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter><rect width="100%" height="100%" filter="url(#heroGrain)" /></svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <FileSpreadsheet className="h-10 w-10 text-white" />
-              </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">PDF a Google Sheets</h1>
-              <p className="text-xl text-slate-300 mb-8">
-                Extrae tablas y datos de tus PDFs para editar y analizar en Google Sheets. Colabora con tu equipo en tiempo real.
-              </p>
-
+              <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)" }}><FileSpreadsheet className="h-10 w-10 text-[#14D8C4]" /></div>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Convertir PDF a Google Sheets</h1>
+              <p className="text-xl text-slate-300 mb-8">Extrae tablas y datos de cualquier PDF a Google Sheets. Convierte a Excel primero con PDF.it, luego sube a Google Drive para analisis y colaboracion.</p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2">
-                  <Zap className="h-4 w-4 text-[#14D8C4]" />
-                  <span>Extraccion de Tablas</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Shield className="h-4 w-4 text-[#14D8C4]" />
-                  <span>100% Seguro</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Download className="h-4 w-4 text-[#14D8C4]" />
-                  <span>Listo para Google Sheets</span>
-                </div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Deteccion Inteligente de Tablas</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesion</span></div>
+                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Funciona en Cualquier Dispositivo</span></div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Processing Interface */}
-        <ProcessingInterface
-          acceptedFiles=".pdf"
-          toolName="PDF to Excel"
-          outputFormat="XLSX"
-          processingMessage="Convirtiendo tu PDF para Google Sheets..."
-          successMessage="¡Tu archivo listo para Google Sheets está listo!"
-        />
-
-        {/* About */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <p className="text-lg text-slate-600 mb-8">
-              Usa PDF.it para convertir tablas de PDF en archivos XLSX compatibles con Google Sheets. Simplemente convierte, descarga el .xlsx y subelo a Google Drive para editar, filtrar y analizar los datos con tu equipo. Google Sheets abre archivos XLSX de forma nativa.
-            </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>✓ Extrae tablas de PDF a formato XLSX para Google Sheets</li>
-              <li>✓ Sube el archivo a Google Drive y edita directamente</li>
-              <li>✓ Colabora en hojas de calculo en tiempo real</li>
-              <li>✓ Preserva filas, columnas y estructura de datos</li>
-              <li>✓ Sin instalacion — convierte desde tu navegador</li>
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <p className="text-lg text-slate-600 leading-relaxed">Google Sheets es una aplicacion de hojas de calculo — espera datos estructurados en filas y columnas. Los PDFs son documentos visuales disenados para impresion, no para analisis de datos. Para llevar tus datos PDF a Google Sheets, primero extrae las tablas en formato Excel con PDF.it, luego sube el XLSX a Google Drive.</p>
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">✓ Deteccion automatica de tablas extrae filas y columnas</li>
+              <li className="flex items-center gap-2">✓ El formato XLSX abre nativamente en Google Sheets</li>
+              <li className="flex items-center gap-2">✓ Acceso completo a formulas, graficos y tablas dinamicas</li>
+              <li className="flex items-center gap-2">✓ Comparte y colabora con tu equipo en tiempo real</li>
             </ul>
           </div>
         </section>
 
-        {/* Feature Sections */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Analisis de Datos Colaborativo</h2>
-              <p className="text-slate-600">
-                Convierte reportes y tablas de PDF a Google Sheets para que tu equipo pueda analizar datos, crear graficos y generar formulas en tiempo real. Perfecto para equipos de finanzas y operaciones.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Reportes Compartidos en la Nube</h2>
-              <p className="text-slate-600">
-                Transforma reportes mensuales, trimestrales o anuales de PDF en hojas de calculo compartidas. Compara periodos, agrega comentarios y mantiene a todo el equipo informado.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Presupuestos Colaborativos</h2>
-              <p className="text-slate-600">
-                Convierte presupuestos y cotizaciones en PDF a Google Sheets para editarlos con tu equipo. Ajusta numeros, agrega partidas y comparte versiones actualizadas al instante.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Seguimiento de Proyectos</h2>
-              <p className="text-slate-600">
-                Extrae cronogramas y tablas de seguimiento de PDFs para gestionarlos en Google Sheets. Actualiza estados, asigna tareas y filtra por prioridad directamente en la nube.
-              </p>
-            </div>
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
+            <Link href="/es/pdf-a-excel" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 px-10 rounded-xl text-lg transition-colors shadow-lg">Paso 1: Convertir PDF a Excel</Link>
+            <p className="text-sm text-slate-500 mt-3">Luego sube el XLSX a Google Drive y abre con Google Sheets</p>
           </div>
         </section>
 
-        {/* How To */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Convertir PDF para Google Sheets</h2>
-            <div className="space-y-4">
-              {[
-                "Sube o arrastra tu PDF a PDF.it.",
-                "Haz clic en Convertir para obtener un archivo XLSX.",
-                "Descarga el .xlsx y subelo a Google Drive.",
-                "Haz clic derecho en el archivo y selecciona 'Abrir con Google Sheets'.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
-                  </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+        <section className="py-16" style={{ background: `radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%), #0E0F1E` }}>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl"><div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {[
+              { title: "Analiza Datos Financieros", desc: "Estados de cuenta, informes de ganancias y perdidas, e informes trimestrales llegan como PDFs. Convierte a Google Sheets para hacer calculos, crear graficos y rastrear tendencias." },
+              { title: "Importa Facturas y Presupuestos", desc: "Extrae lineas de detalle de facturas PDF a Google Sheets. Ordena por proveedor, calcula totales y reconcilia pagos en una hoja de calculo compartida en la nube." },
+              { title: "Colabora en Datos", desc: "En lugar de enviar informes PDF por email, conviertelos a Google Sheets. Todos trabajan en los mismos datos en tiempo real — sin conflictos de versiones." },
+            ].map((feature) => (<div key={feature.title} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}><div className="rounded-[11px] p-6 h-full" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}><h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3><p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p></div></div>))}
+          </div></div>
         </section>
 
-        {/* Related Tools */}
-        <section className="py-16" style={{ background: "#0E0F1E" }}>
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {[
-                { name: "PDF a Excel", href: "/es/pdf-a-excel", desc: "Convierte PDF a hoja de calculo" },
-                { name: "PDF a XLSX", href: "/es/pdf-a-xlsx", desc: "Convierte PDF a formato XLSX" },
-                { name: "Tabla PDF a Excel", href: "/es/tabla-pdf-a-excel", desc: "Extrae tablas especificas" },
-                { name: "Tabla PDF a CSV", href: "/es/tabla-pdf-a-csv", desc: "Exporta tablas como CSV" },
-                { name: "PDF a Google Docs", href: "/es/pdf-a-google-docs", desc: "PDF para Google Docs" },
-                { name: "Escaner OCR", href: "/es/escaner-ocr", desc: "Extrae texto de PDFs escaneados" },
-                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamano del archivo" },
-                { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Separa paginas del PDF" },
-              ].map((tool) => (
-                <Link
-                  key={tool.href}
-                  href={tool.href}
-                  className="rounded-xl p-4 transition-all text-center flex flex-col justify-center min-h-[80px] hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(20,216,196,0.25)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.2)" }}
-                >
-                  <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
-                  <div className="text-xs text-slate-400">{tool.desc}</div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+        <section className="py-16 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl"><h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Abrir Tablas PDF en Google Sheets</h2><div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+          {[{ num: "1", title: "Convierte PDF a Excel", desc: "Usa PDF.it para extraer tablas en formato XLSX" },{ num: "2", title: "Sube a Google Drive", desc: "Sube el archivo XLSX a drive.google.com" },{ num: "3", title: "Abre con Google Sheets", desc: "Haz doble clic en el archivo para editar" }].map((step) => (<div key={step.num} className="flex-1"><div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)", border: "1px solid rgba(20,216,196,0.25)" }}><span className="text-[#14D8C4] font-black text-lg">{step.num}</span></div><p className="font-semibold text-slate-900">{step.title}</p><p className="text-sm text-slate-500 mt-1">{step.desc}</p></div>))}
+        </div></div></section>
 
-        {/* FAQ */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
-            <div className="space-y-6">
-              {[
-                { q: "¿Como abro tablas de un PDF en Google Sheets?", a: "Convierte tu PDF a XLSX con PDF.it, luego sube el archivo .xlsx a Google Drive. Haz clic derecho en el archivo y selecciona 'Abrir con Google Sheets' para editar los datos directamente." },
-                { q: "¿Se extraen las tablas con precision?", a: "PDF.it extrae tablas y datos estructurados con la mayor precision posible. Tablas simples y bien formateadas producen los mejores resultados. Tablas complejas con celdas combinadas pueden requerir ajustes manuales." },
-                { q: "¿Puedo colaborar en la hoja de calculo con mi equipo?", a: "Si. Una vez que el archivo esta en Google Sheets, puedes compartirlo y colaborar en tiempo real. Filtra, ordena y analiza los datos con tu equipo." },
-                { q: "¿Es seguro subir mi PDF?", a: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." },
-                { q: "¿Funciona con PDFs escaneados?", a: "Los PDFs escaneados requieren OCR para extraer datos primero. Usa la herramienta de Escaner OCR de PDF.it antes de convertir las tablas a XLSX para Google Sheets." },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <section className="py-16" style={{ background: "#0E0F1E" }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl"><h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2><div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          {[{ name: "PDF a Excel", href: "/es/pdf-a-excel", desc: "Convierte PDF a hoja de calculo" },{ name: "PDF a XLSX", href: "/es/pdf-a-xlsx", desc: "Extrae tablas a XLSX" },{ name: "PDF a Google Docs", href: "/es/pdf-a-google-docs", desc: "Abre PDFs en Google Docs" },{ name: "Extraccion de Tablas", href: "/es/extraccion-tablas", desc: "Exportacion avanzada de datos" }].map((tool) => (<div key={tool.href} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}><Link href={tool.href} className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}><div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div><div className="text-xs text-slate-400">{tool.desc}</div></Link></div>))}
+        </div></div></section>
+
+        <section className="py-16" style={{ background: `radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%), radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%), radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%), #0E0F1E` }}><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl"><h2 className="text-3xl font-black text-white mb-10 text-center">Preguntas Frecuentes</h2><div className="space-y-4">
+          {faqs.map((faq, i) => (<div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}><h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3><p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p></div>))}
+        </div></div></section>
+
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(faq => ({ "@type": "Question", "name": faq.q, "acceptedAnswer": { "@type": "Answer", "text": faq.a } })) })}} />
       </main>
       <FooterEs />
     </div>

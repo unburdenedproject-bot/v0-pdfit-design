@@ -1,194 +1,166 @@
+import type { Metadata } from "next"
 import Script from "next/script"
-import Link from "next/link"
 import { HeaderEs } from "@/components/header-es"
 import { FooterEs } from "@/components/footer-es"
-import { ProcessingInterface } from "@/components/processing-interface"
+import { OcrPdfInterface } from "@/components/ocr-pdf-interface"
 import { Scan, Zap, Shield, Download } from "lucide-react"
+import Link from "next/link"
 
-export const metadata = {
-  title: "OCR PDF — Reconocimiento Óptico de Caracteres en PDFs | PDF.it",
-  description:
-    "Aplica OCR a tus PDFs con PDF.it. Reconocimiento optico de caracteres para extraer texto de documentos escaneados y hacerlos buscables y editables — rapido y seguro.",
+export const metadata: Metadata = {
+  title: "OCR PDF en Linea — Haz PDFs Escaneados Buscables | PDF.it",
+  description: "Ejecuta OCR en un PDF con PDF.it para extraer texto de escaneos. Haz tus PDFs buscables y copiables en segundos, rapido y desde tu navegador.",
   alternates: {
-    canonical: "https://pdf.it.com/es/ocr-pdf",
+    canonical: "https://www.pdf.it.com/es/ocr-pdf",
     languages: {
-      en: "https://pdf.it.com/ocr-pdf",
-      es: "https://pdf.it.com/es/ocr-pdf",
+      "en": "https://www.pdf.it.com/ocr-scanner",
+      "es": "https://www.pdf.it.com/es/ocr-pdf",
+      "pt-BR": "https://www.pdf.it.com/br/ocr-pdf",
     },
   },
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "¿Que es OCR para PDFs?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "OCR (Reconocimiento Optico de Caracteres) es una tecnologia que analiza imagenes dentro de PDFs escaneados, detecta letras y palabras, y las convierte en texto digital seleccionable, buscable y editable.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "¿Cuando necesito aplicar OCR a un PDF?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Necesitas OCR cuando tu PDF es un escaneo (imagen) y no puedes seleccionar ni copiar texto. Si el PDF ya tiene texto seleccionable, puedes usar herramientas de extraccion de texto directamente.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "¿Que tan preciso es el OCR de PDF.it?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "La precision depende de la calidad del escaneo, la resolucion y la tipografia. Escaneos limpios y de alta resolucion producen los mejores resultados. Escaneos borrosos o con baja resolucion pueden reducir la precision.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "¿Que idiomas soporta el OCR?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "El OCR de PDF.it soporta mas de 16 idiomas incluyendo espanol, ingles, frances, aleman, portugues, italiano, holandes y mas.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "¿Es seguro subir mis documentos para OCR?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "¿Cual es el tamano maximo de archivo para OCR?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Las cuentas Pro y Business pueden subir archivos de hasta 200MB para procesamiento OCR.",
-      },
-    },
-  ],
-}
-
 export default function OCRPDFPage() {
+  const faqs = [
+    { q: "Que es OCR para PDFs?", a: "OCR (Reconocimiento Optico de Caracteres) detecta texto dentro de PDFs escaneados o basados en imagenes y lo convierte en texto seleccionable y buscable." },
+    { q: "Cuando necesito OCR en vez de PDF a TXT?", a: "Si el PDF es un escaneo y no puedes resaltar texto, necesitas OCR. Si el PDF ya contiene texto seleccionable, una conversion normal de PDF a TXT puede ser mas rapida." },
+    { q: "Que tan preciso es el OCR de PDF.it?", a: "La precision depende de la claridad del escaneo, la resolucion y la fuente. Los escaneos limpios y de alta resolucion producen los mejores resultados. Los escaneos borrosos o torcidos reducen la precision." },
+    { q: "Que idiomas soporta el escaner OCR?", a: "El escaner OCR soporta mas de 16 idiomas incluyendo espanol, ingles, frances, aleman, portugues, italiano, holandes y mas." },
+    { q: "Es seguro subir documentos escaneados?", a: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." },
+    { q: "Cual es el tamano maximo de archivo para OCR?", a: "Las cuentas Pro pueden subir archivos de hasta 200MB. Las cuentas Business pueden subir archivos de hasta 1GB." },
+  ]
+
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderEs />
       <main>
-        {/* Hero Section */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Hero */}
+        <section
+          className="text-white py-16 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#heroGrain)" />
+          </svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Scan className="h-10 w-10 text-white" />
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                  boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)",
+                }}
+              >
+                <Scan className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <h1 className="text-4xl lg:text-5xl font-black">OCR PDF</h1>
-                <span className="bg-[#F0FDFA] text-[#0FBFB0] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
-                  Pro
-                </span>
-              </div>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">OCR PDF en Linea</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Aplica reconocimiento optico de caracteres a tus PDFs. Extrae texto de documentos escaneados y hazlos buscables y editables.
+                Usa PDF.it para ejecutar OCR en PDFs escaneados — convierte imagenes en texto seleccionable y buscable y descarga un PDF mas limpio y util.
               </p>
-
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2">
-                  <Zap className="h-4 w-4 text-[#14D8C4]" />
-                  <span>16+ Idiomas Soportados</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Shield className="h-4 w-4 text-[#14D8C4]" />
-                  <span>Archivos Eliminados Tras la Sesion</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Download className="h-4 w-4 text-[#14D8C4]" />
-                  <span>Texto Extraido</span>
-                </div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>16+ Idiomas Soportados</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesion</span></div>
+                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>PDF Buscable de Salida</span></div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Processing Interface */}
-        <ProcessingInterface
-          acceptedFiles=".pdf"
-          toolName="OCR Scanner"
-          outputFormat="TXT"
-          processingMessage="Aplicando OCR a tu PDF..."
-          successMessage="¡El OCR ha sido completado!"
-        />
-
-        {/* About */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <p className="text-lg text-slate-600 mb-8">
-              Usa la herramienta de OCR PDF de PDF.it para aplicar reconocimiento optico de caracteres a tus documentos PDF escaneados. El OCR analiza cada pagina, detecta texto dentro de imagenes y lo convierte en texto digital que puedes copiar, buscar y editar. Ideal para digitalizar documentos fisicos.
+        {/* Intro */}
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Usa la herramienta OCR de PDF.it para extraer texto de PDFs escaneados y hacer tus documentos buscables y copiables. Perfecto para recibos, facturas, contratos, formularios y escaneos archivados — sube tu PDF, ejecuta OCR y descarga un archivo procesado en segundos.
             </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>✓ Aplica OCR a PDFs escaneados para extraer texto</li>
-              <li>✓ Soporta mas de 16 idiomas incluyendo espanol</li>
-              <li>✓ Haz tus PDFs buscables y el texto copiable</li>
-              <li>✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li>✓ Sin instalacion — el OCR se ejecuta desde tu navegador</li>
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">✓ Convierte PDFs escaneados en PDFs buscables</li>
+              <li className="flex items-center gap-2">✓ Haz el texto seleccionable y copiable</li>
+              <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
+              <li className="flex items-center gap-2">✓ Sin instalacion — OCR se ejecuta en tu navegador</li>
             </ul>
           </div>
         </section>
 
-        {/* Feature Sections */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Documentos Escaneados a Texto Digital</h2>
-              <p className="text-slate-600">
-                Si tu PDF es un escaneo, el texto existe solo como imagen — no puedes seleccionarlo ni buscarlo. El OCR de PDF.it reconoce cada caracter y lo convierte en texto digital real que puedes usar como cualquier otro texto.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Libros Digitalizados y Material de Lectura</h2>
-              <p className="text-slate-600">
-                Aplica OCR a libros escaneados, articulos y material de lectura para hacer el texto buscable. Encuentra palabras clave, copia citas y extrae informacion sin leer pagina por pagina.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Facturas y Documentos Comerciales</h2>
-              <p className="text-slate-600">
-                Extrae texto de facturas, recibos y documentos comerciales escaneados. Digitaliza tus registros para facilitar la contabilidad, auditorias y busquedas de informacion.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Formularios Impresos y Registros</h2>
-              <p className="text-slate-600">
-                Convierte formularios impresos, solicitudes y registros escaneados en texto editable. Ideal para migrar archivos fisicos a sistemas digitales.
-              </p>
+        {/* OCR Interface */}
+        <OcrPdfInterface />
+
+        {/* Feature Blocks */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                { title: "Haz PDFs Escaneados Buscables", desc: "Si tu PDF es un escaneo, es solo una imagen — no puedes resaltar ni buscar texto. OCR reconoce el texto y crea un PDF buscable." },
+                { title: "Extrae Texto de Escaneos PDF", desc: "Necesitas las palabras de un documento escaneado? OCR extrae texto de paginas basadas en imagenes para que puedas copiar y pegar en notas, email o Word." },
+                { title: "Recibos, Formularios y Contratos", desc: "OCR es especialmente util para documentos y archivos donde necesitas buscar, encontrar palabras clave o reutilizar texto rapidamente." },
+              ].map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <div
+                    className="rounded-[11px] p-6 h-full"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* How To */}
-        <section className="py-16 bg-gray-50">
+        {/* How It Works */}
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Aplicar OCR a un PDF</h2>
-            <div className="space-y-4">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Hacer OCR a un PDF</h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
               {[
-                "Sube o arrastra tu PDF escaneado a PDF.it.",
-                "Selecciona el idioma del documento si es necesario.",
-                "Haz clic en Aplicar OCR.",
-                "Descarga tu archivo con el texto extraido.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
+                { num: "1", title: "Sube tu PDF escaneado", desc: "Arrastra y suelta o haz clic para elegir un archivo" },
+                { num: "2", title: "Ejecuta OCR", desc: "Elige el idioma y haz clic para iniciar" },
+                { num: "3", title: "Descarga tu PDF", desc: "Obtiene tu PDF buscable al instante" },
+              ].map((step) => (
+                <div key={step.num} className="flex-1">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                      border: "1px solid rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <span className="text-[#14D8C4] font-black text-lg">{step.num}</span>
                   </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
+                  <p className="font-semibold text-slate-900">{step.title}</p>
+                  <p className="text-sm text-slate-500 mt-1">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -201,49 +173,84 @@ export default function OCRPDFPage() {
             <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "Escaner OCR", href: "/es/escaner-ocr", desc: "OCR completo con selector de idioma" },
-                { name: "Convertir PDF Escaneado", href: "/es/convertir-pdf-escaneado", desc: "PDFs escaneados a texto" },
-                { name: "Escanear PDF a Texto", href: "/es/escanear-pdf-a-texto", desc: "Escaneo directo a texto" },
-                { name: "PDF a Texto", href: "/es/pdf-a-texto", desc: "Extrae texto de PDFs digitales" },
-                { name: "Limpiar Escaneo", href: "/es/limpiar-escaneo", desc: "Mejora calidad de escaneos" },
-                { name: "Comprimir PDF Escaneado", href: "/es/comprimir-pdf-escaneado", desc: "Reduce tamano de escaneos" },
-                { name: "Rotar PDF", href: "/es/rotar-pdf", desc: "Corrige orientacion de escaneos" },
-                { name: "PDF a Word", href: "/es/pdf-a-word", desc: "Convierte PDF a documento Word" },
+                { name: "PDF a TXT", href: "/es/pdf-a-txt", desc: "Extrae texto de PDFs con texto" },
+                { name: "Rotar PDF", href: "/es/rotar-pdf", desc: "Corrige escaneos laterales" },
+                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamano antes de OCR" },
+                { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Solo aplica OCR a las paginas que necesitas" },
               ].map((tool) => (
-                <Link
+                <div
                   key={tool.href}
-                  href={tool.href}
-                  className="rounded-xl p-4 transition-all text-center flex flex-col justify-center min-h-[80px] hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(20,216,196,0.25)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.2)" }}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
                 >
-                  <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
-                  <div className="text-xs text-slate-400">{tool.desc}</div>
-                </Link>
+                  <Link
+                    href={tool.href}
+                    className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
+                    <div className="text-xs text-slate-400">{tool.desc}</div>
+                  </Link>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-gray-50">
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
-            <div className="space-y-6">
-              {[
-                { q: "¿Que es OCR para PDFs?", a: "OCR (Reconocimiento Optico de Caracteres) es una tecnologia que analiza imagenes dentro de PDFs escaneados, detecta letras y palabras, y las convierte en texto digital seleccionable, buscable y editable." },
-                { q: "¿Cuando necesito aplicar OCR a un PDF?", a: "Necesitas OCR cuando tu PDF es un escaneo (imagen) y no puedes seleccionar ni copiar texto. Si el PDF ya tiene texto seleccionable, puedes usar herramientas de extraccion de texto directamente." },
-                { q: "¿Que tan preciso es el OCR de PDF.it?", a: "La precision depende de la calidad del escaneo, la resolucion y la tipografia. Escaneos limpios y de alta resolucion producen los mejores resultados. Escaneos borrosos o con baja resolucion pueden reducir la precision." },
-                { q: "¿Que idiomas soporta el OCR?", a: "El OCR de PDF.it soporta mas de 16 idiomas incluyendo espanol, ingles, frances, aleman, portugues, italiano, holandes y mas." },
-                { q: "¿Es seguro subir mis documentos para OCR?", a: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." },
-                { q: "¿Cual es el tamano maximo de archivo para OCR?", a: "Las cuentas Pro y Business pueden subir archivos de hasta 200MB para procesamiento OCR." },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
+            <h2 className="text-3xl font-black text-white mb-10 text-center">Preguntas Frecuentes</h2>
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl p-6"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
+
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+          }))
+        })}} />
       </main>
       <FooterEs />
     </div>

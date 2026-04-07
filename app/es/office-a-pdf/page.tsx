@@ -1,159 +1,496 @@
+"use client"
+
+import type React from "react"
+import { useState, useCallback } from "react"
 import Script from "next/script"
+import Link from "next/link"
 import { HeaderEs } from "@/components/header-es"
 import { FooterEs } from "@/components/footer-es"
-import { ProcessingInterface } from "@/components/processing-interface"
-import { FileText, Zap, Shield, Download } from "lucide-react"
-import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import {
+  FileText,
+  Zap,
+  Shield,
+  Download,
+  Upload,
+  X,
+  CheckCircle,
+  Loader2,
+  AlertCircle,
+} from "lucide-react"
+import { cn } from "@/lib/utils"
+import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
 
-export const metadata = {
-  title: "Convertir Office a PDF Online — DOCX, XLSX, PPTX a PDF | PDF.it",
-  description:
-    "Convierte archivos de Word, Excel y PowerPoint a PDF con PDF.it. Transforma DOCX, XLSX, PPTX y más a PDF — rápido, preciso y seguro.",
-  alternates: {
-    canonical: "https://pdf.it.com/es/office-a-pdf",
-    languages: {
-      "en": "https://pdf.it.com/office-to-pdf",
-      "es": "https://pdf.it.com/es/office-a-pdf",
-    },
-  },
+const ACCEPTED_EXTENSIONS = ".doc,.docx,.ppt,.pptx,.xls,.xlsx,.odt,.odp,.ods"
+
+interface ProcessedFile {
+  name: string
+  url: string
+  inputBlobUrl?: string
+  size: number
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "¿Qué formatos de Office puede convertir PDF.it a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it convierte Word (DOC/DOCX), Excel (XLS/XLSX), PowerPoint (PPT/PPTX) y formatos OpenDocument (ODT/ODP/ODS) a PDF." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Mi formato se mantiene igual después de convertir a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "La mayoría de los documentos se convierten limpiamente. Algunos diseños complejos con fuentes inusuales o hojas de cálculo muy anchas pueden verse ligeramente diferentes dependiendo del archivo fuente." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Puedo convertir archivos de Office a PDF desde mi celular?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube tu archivo y descarga el PDF." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Las animaciones de PowerPoint se convierten a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. Los PDFs son estáticos, así que las animaciones y transiciones no se reproducen — las diapositivas se exportan como páginas fijas." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Es seguro subir archivos de Office?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Todas las transferencias están encriptadas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Cuál es el tamaño máximo de archivo que puedo convertir?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Las cuentas Pro y Business pueden subir archivos de hasta 200MB." }
-    }
-  ]
-}
+const faqs = [
+  { q: "Que formatos de Office puede convertir PDF.it a PDF?", a: "PDF.it convierte Word (DOC/DOCX), Excel (XLS/XLSX), PowerPoint (PPT/PPTX) y formatos OpenDocument (ODT/ODP/ODS) a PDF." },
+  { q: "Se mantendra mi formato despues de convertir a PDF?", a: "La mayoria de los documentos se convierten sin problemas. Algunos disenos complejos con fuentes inusuales o hojas de calculo anchas pueden verse ligeramente diferentes dependiendo del archivo original." },
+  { q: "Puedo convertir archivos de Office a PDF en mi celular?", a: "Si. PDF.it funciona en navegadores moviles — sube tu archivo y descarga el PDF." },
+  { q: "Las animaciones de PowerPoint se convierten a PDF?", a: "No. Los PDFs son estaticos, asi que las animaciones y transiciones no se reproduciran — las diapositivas se exportan como paginas fijas." },
+  { q: "Es seguro subir archivos de Office?", a: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." },
+  { q: "Cual es el tamano maximo de archivo que puedo convertir?", a: "Las cuentas Pro pueden subir archivos de hasta 200MB. Las cuentas Business pueden subir archivos de hasta 1GB." },
+]
 
 export default function OfficeAPDFPage() {
+  const [isDragOver, setIsDragOver] = useState(false)
+  const [files, setFiles] = useState<File[]>([])
+  const [isProcessing, setIsProcessing] = useState(false)
+  const [isComplete, setIsComplete] = useState(false)
+  const [hasError, setHasError] = useState(false)
+  const [errorMessage, setErrorMessage] = useState("")
+  const [progress, setProgress] = useState(0)
+  const [processedFiles, setProcessedFiles] = useState<ProcessedFile[]>([])
+
+  const handleDragOver = useCallback((e: React.DragEvent) => {
+    e.preventDefault()
+    setIsDragOver(true)
+  }, [])
+
+  const handleDragLeave = useCallback((e: React.DragEvent) => {
+    e.preventDefault()
+    setIsDragOver(false)
+  }, [])
+
+  const handleDrop = useCallback((e: React.DragEvent) => {
+    e.preventDefault()
+    setIsDragOver(false)
+    const droppedFiles = Array.from(e.dataTransfer.files)
+    setFiles((prev) => [...prev, ...droppedFiles])
+  }, [])
+
+  const handleFileSelect = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      const selectedFiles = Array.from(e.target.files)
+      setFiles((prev) => [...prev, ...selectedFiles])
+    }
+  }, [])
+
+  const removeFile = useCallback((index: number) => {
+    setFiles((prev) => prev.filter((_, i) => i !== index))
+  }, [])
+
+  const processFiles = useCallback(async () => {
+    setIsProcessing(true)
+    setHasError(false)
+    setProgress(0)
+
+    const inputBlobUrls: string[] = []
+
+    try {
+      const processed: ProcessedFile[] = []
+
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i]
+        setProgress(((i / files.length) * 30) + 5)
+
+        const inputUrl = await uploadFileToBlob(file)
+        inputBlobUrls.push(inputUrl)
+
+        setProgress(((i / files.length) * 40) + 35)
+
+        const response = await fetch("/api/office-to-pdf", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ blobUrl: inputUrl }),
+        })
+
+        if (!response.ok) {
+          let message = `La conversion fallo (HTTP ${response.status})`
+          try {
+            const errorData = await response.json()
+            if (errorData.error) message = errorData.error
+          } catch {
+            // JSON parsing failed, keep generic message
+          }
+          throw new Error(message)
+        }
+
+        const blob = await response.blob()
+        const baseName = file.name.replace(/\.[^/.]+$/, "")
+        const url = URL.createObjectURL(blob)
+
+        processed.push({
+          name: `${baseName}.pdf`,
+          url,
+          inputBlobUrl: inputUrl,
+          size: blob.size,
+        })
+      }
+
+      setProgress(100)
+      setProcessedFiles(processed)
+      setIsProcessing(false)
+      setIsComplete(true)
+    } catch (error) {
+      console.error("Processing failed:", error)
+      setHasError(true)
+      setErrorMessage(error instanceof Error ? error.message : "Ocurrio un error desconocido")
+      setIsProcessing(false)
+    } finally {
+      inputBlobUrls.forEach((u) => deleteBlobUrl(u))
+    }
+  }, [files])
+
+  const downloadFile = useCallback((fileUrl: string, fileName: string) => {
+    const link = document.createElement("a")
+    link.href = fileUrl
+    link.download = fileName
+    link.style.display = "none"
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }, [])
+
+  const resetInterface = useCallback(() => {
+    processedFiles.forEach((file) => {
+      URL.revokeObjectURL(file.url)
+      if (file.inputBlobUrl) deleteBlobUrl(file.inputBlobUrl)
+    })
+    setFiles([])
+    setProcessedFiles([])
+    setIsProcessing(false)
+    setIsComplete(false)
+    setHasError(false)
+    setErrorMessage("")
+    setProgress(0)
+  }, [processedFiles])
+
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <HeaderEs />
       <main>
         {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section
+          className="text-white py-16 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#heroGrain)" />
+          </svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <FileText className="h-10 w-10 text-white" />
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                  boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)",
+                }}
+              >
+                <FileText className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Convertir Office a PDF Online</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Convertidor de Office a PDF</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Convierte archivos de Word, Excel, PowerPoint y otros archivos de oficina a PDF. Rápido, preciso y seguro.
+                Convierte Word, Excel, PowerPoint y otros archivos de oficina a PDF. Rapido, preciso y seguro — todo desde tu navegador.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Formato Preservado</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Después de la Sesión</span></div>
-                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sin Registro</span></div>
-              </div>
-              <div className="flex flex-wrap justify-center gap-2 text-xs text-slate-400">
-                <span className="px-3 py-1 rounded-full bg-slate-800 border border-slate-700">DOC / DOCX</span>
-                <span className="px-3 py-1 rounded-full bg-slate-800 border border-slate-700">XLS / XLSX</span>
-                <span className="px-3 py-1 rounded-full bg-slate-800 border border-slate-700">PPT / PPTX</span>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesion</span></div>
+                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sin Registro Necesario</span></div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Processing Interface */}
-        <ProcessingInterface
-          acceptedFiles=".doc,.docx,.xls,.xlsx,.ppt,.pptx"
-          toolName="Office to PDF"
-          outputFormat="PDF"
-          processingMessage="Convirtiendo tu archivo..."
-          successMessage="¡Tu PDF está listo!"
-        />
-
-        {/* About */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <p className="text-lg text-slate-600 mb-8">
-              Usa el convertidor de Office a PDF de PDF.it para transformar documentos de Word, hojas de cálculo de Excel y presentaciones de PowerPoint a PDF en segundos. Convierte tus archivos a un formato universal que se ve igual en cualquier dispositivo.
+        {/* Intro */}
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Convierte cualquier archivo de Microsoft Office u OpenDocument a PDF con un solo clic. PDF.it preserva el formato, las fuentes y el diseno para que tus documentos se vean exactamente como los creaste — sin necesidad de instalar software.
             </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>✓ Convierte Word, Excel y PowerPoint a PDF en línea</li>
-              <li>✓ Soporta DOC, DOCX, XLS, XLSX, PPT y PPTX</li>
-              <li>✓ Crea PDFs compartibles y profesionales</li>
-              <li>✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li>✓ Sin instalación — funciona desde tu navegador</li>
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">&#10003; Soporta DOC, DOCX, XLS, XLSX, PPT, PPTX</li>
+              <li className="flex items-center gap-2">&#10003; Formatos OpenDocument: ODT, ODP, ODS</li>
+              <li className="flex items-center gap-2">&#10003; Preserva fuentes, tablas y diseno</li>
+              <li className="flex items-center gap-2">&#10003; Sin instalacion — convierte en tu navegador</li>
             </ul>
           </div>
         </section>
 
-        {/* Feature Sections */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Convierte Cualquier Archivo de Office a PDF</h2>
-              <p className="text-slate-600">
-                Ya sea un documento de Word, una hoja de Excel o una presentación de PowerPoint, PDF.it convierte tu archivo a un PDF limpio y profesional que se abre en cualquier dispositivo.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Perfecto para Compartir y Archivar</h2>
-              <p className="text-slate-600">
-                Los PDFs son el formato universal para documentos. Convierte tus archivos de Office a PDF para compartirlos por correo, subirlos a portales o archivarlos de forma segura.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Conversión Rápida y Segura</h2>
-              <p className="text-slate-600">
-                Sube tu archivo, conviértelo y descárgalo. Sin software adicional — PDF.it funciona directamente desde tu navegador con encriptación SSL.
-              </p>
+        {/* Custom Processing Interface */}
+        <section className="py-16">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-2xl mx-auto">
+
+              {/* Error state */}
+              {hasError && (
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <AlertCircle className="h-10 w-10 text-red-600" />
+                  </div>
+                  <h2 className="text-3xl font-bold text-slate-900 mb-4">La Conversion Fallo</h2>
+                  <p className="text-slate-600 mb-8">{errorMessage}</p>
+                  <Button onClick={resetInterface} className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E]">
+                    Intentar de Nuevo
+                  </Button>
+                </div>
+              )}
+
+              {/* Success state */}
+              {isComplete && !hasError && (
+                <div>
+                  <div className="text-center mb-8">
+                    <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <CheckCircle className="h-10 w-10 text-green-600" />
+                    </div>
+                    <h2 className="text-3xl font-bold text-slate-900 mb-4">Conversion Completada!</h2>
+                    <p className="text-slate-600 text-lg">
+                      {files.length > 1 ? "Tus archivos han sido" : "Tu archivo ha sido"} convertido{files.length > 1 ? "s" : ""} a PDF exitosamente.
+                    </p>
+                  </div>
+
+                  <div className="space-y-4 mb-8">
+                    {processedFiles.map((file, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center justify-between bg-background border border-border rounded-xl p-6 hover:shadow-md transition-shadow"
+                      >
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                            <FileText className="h-6 w-6 text-green-600" />
+                          </div>
+                          <div>
+                            <div className="font-bold text-slate-900 text-lg">{file.name}</div>
+                            <div className="text-sm text-slate-500">
+                              {(file.size / 1024 / 1024).toFixed(2)} MB
+                              <span className="mx-2">-</span>
+                              <span className="text-green-600 font-medium">Listo para descargar</span>
+                            </div>
+                          </div>
+                        </div>
+                        <Button
+                          className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3"
+                          onClick={() => downloadFile(file.url, file.name)}
+                        >
+                          <Download className="h-4 w-4 mr-2" />
+                          Descargar
+                        </Button>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button
+                      onClick={resetInterface}
+                      variant="outline"
+                      className="bg-background text-slate-800 border-slate-300 hover:bg-slate-50 px-8 py-3"
+                    >
+                      Convertir Mas Archivos
+                    </Button>
+                    <Button
+                      className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] px-8 py-3"
+                      onClick={() => (window.location.href = "/es")}
+                    >
+                      Probar Otra Herramienta
+                    </Button>
+                  </div>
+
+                  <div className="mt-8 text-center">
+                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-2xl mx-auto">
+                      <div className="flex items-center justify-center gap-2 text-blue-800 text-sm">
+                        <Shield className="h-4 w-4" />
+                        <span className="font-medium">
+                          Tus archivos se eliminan automaticamente de nuestros servidores despues de la descarga para tu privacidad y seguridad.
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Processing state */}
+              {isProcessing && (
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-[#F0FDFA] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Loader2 className="h-10 w-10 text-[#14D8C4] animate-spin" />
+                  </div>
+                  <h2 className="text-3xl font-bold text-slate-900 mb-4">Convirtiendo a PDF...</h2>
+                  <p className="text-slate-600 mb-8">Esto solo tomara unos segundos...</p>
+
+                  <div className="w-full bg-gray-200 rounded-full h-3 mb-8">
+                    <div
+                      className="bg-[#14D8C4] h-3 rounded-full transition-all duration-300 ease-out"
+                      style={{ width: `${progress}%` }}
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    {files.map((file, index) => (
+                      <div key={index} className="flex items-center justify-center gap-3 text-slate-600">
+                        <FileText className="h-4 w-4" />
+                        <span>{file.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Upload state */}
+              {!isProcessing && !isComplete && !hasError && (
+                <>
+                  <div
+                    className={cn(
+                      "border-2 border-dashed rounded-xl p-12 transition-all duration-200 cursor-pointer",
+                      isDragOver
+                        ? "border-[#14D8C4] bg-[#F0FDFA]"
+                        : "border-gray-300 hover:border-[#14D8C4]/40 hover:bg-gray-50",
+                    )}
+                    onDragOver={handleDragOver}
+                    onDragLeave={handleDragLeave}
+                    onDrop={handleDrop}
+                    onClick={() => document.getElementById("office-file-upload")?.click()}
+                  >
+                    <div className="text-center">
+                      <Upload className="h-12 w-12 text-[#14D8C4] mx-auto mb-4" />
+                      <h3 className="text-xl font-bold text-slate-900 mb-2">Suelta tus archivos de oficina aqui</h3>
+                      <p className="text-slate-600 mb-6">o haz clic para explorar archivos</p>
+                      <Button size="lg" className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-semibold px-8">
+                        Elegir Archivos
+                      </Button>
+                      <p className="text-sm text-slate-500 mt-4">
+                        Soportados: DOC, DOCX, XLS, XLSX, PPT, PPTX, ODT, ODP, ODS
+                      </p>
+                    </div>
+                  </div>
+
+                  <input
+                    id="office-file-upload"
+                    type="file"
+                    multiple
+                    accept={ACCEPTED_EXTENSIONS}
+                    className="hidden"
+                    onChange={handleFileSelect}
+                  />
+
+                  {files.length > 0 && (
+                    <div className="mt-8 space-y-4">
+                      <h3 className="text-lg font-bold text-slate-900">Archivos a convertir:</h3>
+                      {files.map((file, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center justify-between bg-background border border-border rounded-lg p-4"
+                        >
+                          <div className="flex items-center gap-3">
+                            <FileText className="h-5 w-5 text-[#14D8C4]" />
+                            <div>
+                              <div className="font-medium text-slate-900">{file.name}</div>
+                              <div className="text-sm text-slate-500">{(file.size / 1024 / 1024).toFixed(1)} MB</div>
+                            </div>
+                          </div>
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              removeFile(index)
+                            }}
+                            className="text-slate-400 hover:text-slate-600"
+                          >
+                            <X className="h-4 w-4" />
+                          </Button>
+                        </div>
+                      ))}
+                      <Button
+                        onClick={processFiles}
+                        className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-semibold"
+                        size="lg"
+                        disabled={files.length === 0}
+                      >
+                        Convertir {files.length} Archivo{files.length > 1 ? "s" : ""} a PDF
+                      </Button>
+                    </div>
+                  )}
+                </>
+              )}
             </div>
           </div>
         </section>
 
-        {/* How To */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Cómo Convertir Office a PDF</h2>
-            <div className="space-y-4">
+        {/* Feature Blocks */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                "Sube o arrastra y suelta tu archivo de Office (Word, Excel o PowerPoint) en PDF.it.",
-                "Haz clic en Convertir a PDF.",
-                "Descarga tu PDF listo para compartir.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
+                { title: "Preserva Formato y Diseno", desc: "Fuentes, tablas, imagenes y diseno de pagina se reproducen fielmente en el PDF resultante. Tus documentos se ven exactamente como fueron creados." },
+                { title: "Todos los Formatos de Office", desc: "Soporta Word, Excel, PowerPoint y formatos OpenDocument. Convierte cualquier archivo de oficina a un PDF universalmente legible." },
+                { title: "Conversion Rapida y Segura", desc: "Sube, convierte, descarga. Los archivos se cifran durante la transferencia y se eliminan automaticamente al terminar tu sesion." },
+              ].map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <div
+                    className="rounded-[11px] p-6 h-full"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
                   </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works */}
+        <section className="py-16 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Convertir Archivos de Office a PDF</h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+              {[
+                { num: "1", title: "Sube tu archivo", desc: "Arrastra y suelta o haz clic para elegir un archivo" },
+                { num: "2", title: "Haz clic en Convertir a PDF", desc: "La conversion suele tomar unos segundos" },
+                { num: "3", title: "Descarga tu PDF", desc: "Obtiene tu archivo convertido al instante" },
+              ].map((step) => (
+                <div key={step.num} className="flex-1">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                      border: "1px solid rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <span className="text-[#14D8C4] font-black text-lg">{step.num}</span>
+                  </div>
+                  <p className="font-semibold text-slate-900">{step.title}</p>
+                  <p className="text-sm text-slate-500 mt-1">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -166,63 +503,84 @@ export default function OfficeAPDFPage() {
             <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
+                { name: "Word a PDF", href: "/es/word-a-pdf", desc: "Convierte documentos Word a PDF" },
+                { name: "Excel a PDF", href: "/es/excel-a-pdf", desc: "Convierte hojas de calculo a PDF" },
                 { name: "PowerPoint a PDF", href: "/es/powerpoint-a-pdf", desc: "Convierte diapositivas a PDF" },
-                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce tamaño después de convertir" },
-                { name: "Unir PDF", href: "/es/unir-pdf", desc: "Combina múltiples PDFs" },
-                { name: "Proteger PDF", href: "/es/proteger-pdf", desc: "Protege tu PDF con contraseña" },
+                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamano despues de convertir" },
               ].map((tool) => (
-                <Link
+                <div
                   key={tool.href}
-                  href={tool.href}
-                  className="rounded-xl p-4 transition-all text-center flex flex-col justify-center min-h-[80px] hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(20,216,196,0.25)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.2)" }}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
                 >
-                  <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
-                  <div className="text-xs text-slate-400">{tool.desc}</div>
-                </Link>
+                  <Link
+                    href={tool.href}
+                    className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
+                    <div className="text-xs text-slate-400">{tool.desc}</div>
+                  </Link>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-gray-50">
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
-            <div className="space-y-6">
-              {[
-                {
-                  q: "¿Qué formatos de Office puede convertir PDF.it a PDF?",
-                  a: "PDF.it convierte Word (DOC/DOCX), Excel (XLS/XLSX), PowerPoint (PPT/PPTX) y formatos OpenDocument (ODT/ODP/ODS) a PDF.",
-                },
-                {
-                  q: "¿Mi formato se mantiene igual después de convertir a PDF?",
-                  a: "La mayoría de los documentos se convierten limpiamente. Algunos diseños complejos con fuentes inusuales o hojas de cálculo muy anchas pueden verse ligeramente diferentes dependiendo del archivo fuente.",
-                },
-                {
-                  q: "¿Puedo convertir archivos de Office a PDF desde mi celular?",
-                  a: "Sí. PDF.it funciona en navegadores móviles — sube tu archivo y descarga el PDF.",
-                },
-                {
-                  q: "¿Las animaciones de PowerPoint se convierten a PDF?",
-                  a: "No. Los PDFs son estáticos, así que las animaciones y transiciones no se reproducen — las diapositivas se exportan como páginas fijas.",
-                },
-                {
-                  q: "¿Es seguro subir archivos de Office?",
-                  a: "Sí. Todas las transferencias están encriptadas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos.",
-                },
-                {
-                  q: "¿Cuál es el tamaño máximo de archivo que puedo convertir?",
-                  a: "Las cuentas Pro y Business pueden subir archivos de hasta 200MB.",
-                },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
+            <h2 className="text-3xl font-black text-white mb-10 text-center">Preguntas Frecuentes</h2>
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl p-6"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
+
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+          }))
+        })}} />
       </main>
       <FooterEs />
     </div>
