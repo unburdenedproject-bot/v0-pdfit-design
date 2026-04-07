@@ -91,7 +91,7 @@ export default function QRCodeForWiFiPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / QR Code</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / QR Code</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Create a QR Code for WiFi (Guests Connect Instantly)</h1>
               <p className="text-xl text-slate-300">
                 Stop spelling out your WiFi password to every guest, customer, or Airbnb visitor. Create a WiFi QR code and they connect with a single scan — no typing required.
@@ -101,17 +101,17 @@ export default function QRCodeForWiFiPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <QrCode className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Know your WiFi details? Generate your QR code now.</p>
             </div>
             <Link
               href="/qr-code"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Create WiFi QR Code <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function QRCodeForWiFiPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Instant connection.</strong> Guests scan the QR code with their phone camera and connect to WiFi automatically. No typing, no mistakes, no frustration.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Perfect for businesses.</strong> Cafes, restaurants, hotels, coworking spaces, and salons can display a WiFi QR code so customers connect without asking staff for the password.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Great for Airbnb hosts.</strong> Print the WiFi QR code and place it in the guest guide or on the nightstand. Guests connect the moment they arrive without messaging you.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Works at home too.</strong> When friends and family visit, a framed WiFi QR code on the wall or fridge saves you from dictating passwords every time.</span>
                 </li>
               </ul>
@@ -167,7 +167,7 @@ export default function QRCodeForWiFiPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -189,7 +189,7 @@ export default function QRCodeForWiFiPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Restaurants and Cafes</h3>
                   <p className="text-slate-600">
-                    Place WiFi QR codes on table tents, next to the <Link href="/learn/qr-code-for-restaurant-menu" className="text-orange-600 hover:underline">menu QR code</Link>, or on a sign near the entrance. Some restaurants combine their menu and WiFi QR codes on the same card — two codes, clearly labeled.
+                    Place WiFi QR codes on table tents, next to the <Link href="/learn/qr-code-for-restaurant-menu" className="text-[#14D8C4] hover:underline">menu QR code</Link>, or on a sign near the entrance. Some restaurants combine their menu and WiFi QR codes on the same card — two codes, clearly labeled.
                   </p>
                 </div>
                 <div>
@@ -221,7 +221,7 @@ export default function QRCodeForWiFiPage() {
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Use a guest network.</strong> Most modern routers support a separate guest network. Create one with its own password and make the QR code for that network only. Your main network stays private.</li>
-                <li>&#10003; <strong>Change the guest password regularly.</strong> Especially for businesses. Update it monthly and generate a new QR code. PDF.it's <Link href="/qr-code" className="text-orange-600 hover:underline">QR Code tool</Link> makes this quick.</li>
+                <li>&#10003; <strong>Change the guest password regularly.</strong> Especially for businesses. Update it monthly and generate a new QR code. PDF.it's <Link href="/qr-code" className="text-[#14D8C4] hover:underline">QR Code tool</Link> makes this quick.</li>
                 <li>&#10003; <strong>Limit guest network access.</strong> Configure your router to prevent guest network users from accessing devices on your main network (printers, NAS drives, smart home devices).</li>
                 <li>&#10003; <strong>Set bandwidth limits.</strong> If you run a business, limit the guest network bandwidth so one person streaming 4K video does not slow down everyone else.</li>
                 <li>&#10003; <strong>Do not post it publicly outside.</strong> Keep WiFi QR codes inside your premises where only actual guests and customers can scan them.</li>
@@ -239,7 +239,7 @@ export default function QRCodeForWiFiPage() {
                 <li>&#10003; <strong>Password accuracy.</strong> Double-check the password. One wrong character and it will not work.</li>
                 <li>&#10003; <strong>Encryption type.</strong> Make sure you selected the correct type (WPA/WPA2 vs WEP). Most modern routers use WPA2 or WPA3.</li>
                 <li>&#10003; <strong>Phone compatibility.</strong> iPhones need iOS 11+ and Android phones need Android 10+ for automatic WiFi QR code connection. Older phones may recognize the QR code but not auto-connect.</li>
-                <li>&#10003; <strong>QR code quality.</strong> If the printed QR code is too small, blurry, or damaged, the scanner may misread it. Follow our <Link href="/learn/qr-code-best-practices" className="text-orange-600 hover:underline">QR code best practices</Link> for reliable printing.</li>
+                <li>&#10003; <strong>QR code quality.</strong> If the printed QR code is too small, blurry, or damaged, the scanner may misread it. Follow our <Link href="/learn/qr-code-best-practices" className="text-[#14D8C4] hover:underline">QR code best practices</Link> for reliable printing.</li>
               </ul>
             </section>
 
@@ -253,7 +253,7 @@ export default function QRCodeForWiFiPage() {
             <p className="text-slate-300 mb-6">Let guests connect to your WiFi with a single scan. Pro feature — upgrade for unlimited QR codes and all PDF tools.</p>
             <Link
               href="/qr-code"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <QrCode className="h-5 w-5" /> Create WiFi QR Code
             </Link>
@@ -276,10 +276,10 @@ export default function QRCodeForWiFiPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

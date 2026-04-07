@@ -75,7 +75,7 @@ export default function ComprimirPDFComImagensPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Comprimir PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Comprimir PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF com Imagens</h1>
               <p className="text-xl text-slate-300">
                 PDFs com fotos, graficos e digitalizacoes sao os maiores culpados por arquivos pesados. Veja como reduzir o tamanho sem destruir a qualidade visual.
@@ -84,17 +84,17 @@ export default function ComprimirPDFComImagensPage() {
           </div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Compress className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Pronto para comprimir? Va direto para a ferramenta.</p>
             </div>
             <Link
               href="/br/comprimir-pdf-imagens"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Comprimir PDF Agora <ArrowRight className="h-4 w-4" />
             </Link>
@@ -111,15 +111,15 @@ export default function ComprimirPDFComImagensPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Fotos em alta resolucao.</strong> Uma unica foto de 300 DPI pode ocupar 3-10MB dentro do PDF, especialmente se nao foi otimizada antes da insercao.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Digitalizacoes.</strong> Cada pagina digitalizada e essencialmente uma foto de pagina inteira. Um scanner padrao gera imagens de 2-5MB por pagina.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Graficos e infograficos.</strong> Elementos visuais complexos com muitas cores e detalhes ocupam espaco consideravel.</span>
                 </li>
               </ul>
@@ -143,7 +143,7 @@ export default function ComprimirPDFComImagensPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -169,22 +169,22 @@ export default function ComprimirPDFComImagensPage() {
                   <tbody className="text-slate-700">
                     <tr className="border-t border-gray-200">
                       <td className="py-3 px-4">Fotos de alta qualidade</td>
-                      <td className="py-3 px-4 font-semibold text-orange-600">Leve</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Leve</td>
                       <td className="py-3 px-4">20-40%</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
                       <td className="py-3 px-4">Graficos e diagramas</td>
-                      <td className="py-3 px-4 font-semibold text-orange-600">Media</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Media</td>
                       <td className="py-3 px-4">40-60%</td>
                     </tr>
                     <tr className="border-t border-gray-200">
                       <td className="py-3 px-4">Documentos digitalizados</td>
-                      <td className="py-3 px-4 font-semibold text-orange-600">Extrema</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Extrema</td>
                       <td className="py-3 px-4">60-80%</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
                       <td className="py-3 px-4">Capturas de tela</td>
-                      <td className="py-3 px-4 font-semibold text-orange-600">Media</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Media</td>
                       <td className="py-3 px-4">40-70%</td>
                     </tr>
                   </tbody>
@@ -195,9 +195,9 @@ export default function ComprimirPDFComImagensPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Dicas para Melhores Resultados</h2>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Extraia imagens desnecessarias</strong> usando <Link href="/br/extrair-imagens-de-pdf" className="text-orange-600 hover:underline">Extrair Imagens</Link> antes de comprimir — remova as que nao precisa.</li>
+                <li>&#10003; <strong>Extraia imagens desnecessarias</strong> usando <Link href="/br/extrair-imagens-de-pdf" className="text-[#14D8C4] hover:underline">Extrair Imagens</Link> antes de comprimir — remova as que nao precisa.</li>
                 <li>&#10003; <strong>Para PDFs digitalizados</strong>, a compressao Extrema e segura porque o texto permanece legivel mesmo com imagens de menor qualidade.</li>
-                <li>&#10003; <strong>Combine com achatamento:</strong> <Link href="/br/achatar-pdf" className="text-orange-600 hover:underline">Achatar PDF</Link> remove camadas extras e depois a compressao e ainda mais eficaz.</li>
+                <li>&#10003; <strong>Combine com achatamento:</strong> <Link href="/br/achatar-pdf" className="text-[#14D8C4] hover:underline">Achatar PDF</Link> remove camadas extras e depois a compressao e ainda mais eficaz.</li>
                 <li>&#10003; <strong>Teste diferentes niveis</strong> — comece com Media e ajuste conforme necessario.</li>
               </ul>
             </section>
@@ -211,7 +211,7 @@ export default function ComprimirPDFComImagensPage() {
             <p className="text-slate-300 mb-6">Reduza o tamanho do arquivo mantendo suas imagens com qualidade — gratis, sem cadastro.</p>
             <Link
               href="/br/comprimir-pdf-imagens"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Compress className="h-5 w-5" /> Comprimir PDF Agora
             </Link>
@@ -231,10 +231,10 @@ export default function ComprimirPDFComImagensPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

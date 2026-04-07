@@ -91,7 +91,7 @@ export default function PdfToJpgOnIphonePage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to JPG</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to JPG</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convert PDF to JPG on iPhone (No Apps Needed)</h1>
               <p className="text-xl text-slate-300">
                 Your iPhone doesn't have a built-in way to convert PDFs to images. Here's how to do it in Safari in under a minute — no App Store downloads required.
@@ -101,17 +101,17 @@ export default function PdfToJpgOnIphonePage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <ImageIcon className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">On your iPhone right now? Open the tool directly.</p>
             </div>
             <Link
               href="/pdf-to-jpg"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               PDF to JPG Tool <ArrowRight className="h-4 w-4" />
             </Link>
@@ -152,7 +152,7 @@ export default function PdfToJpgOnIphonePage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -172,19 +172,19 @@ export default function PdfToJpgOnIphonePage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span>Open the <strong>Files</strong> app on your iPhone.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span>Go to <strong>On My iPhone &gt; Downloads</strong> (or check iCloud Drive &gt; Downloads).</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span>Find the JPG file and <strong>tap and hold</strong> it.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span>Tap <strong>Share</strong>, then tap <strong>Save Image</strong>. The JPG is now in your Photos app.</span>
                 </li>
               </ul>
@@ -255,9 +255,9 @@ export default function PdfToJpgOnIphonePage() {
               <ul className="space-y-2 text-slate-700">
                 <li>- <strong>Use Wi-Fi</strong> for larger PDFs. Converting a 20-page PDF uploads the file and downloads multiple JPGs — Wi-Fi is faster and won't eat your data.</li>
                 <li>- <strong>Use Safari, not Chrome.</strong> Safari handles downloads better on iOS. Chrome sometimes has issues with file saving on iPhones.</li>
-                <li>- <strong>Need just one page?</strong> If you only need a single page as a JPG, you don't have to convert the whole PDF. Select just that page to save time. See our guide: <Link href="/learn/save-pdf-page-as-jpg" className="text-orange-600 hover:underline">Save One PDF Page as JPG</Link>.</li>
-                <li>- <strong>Choose PNG for text documents.</strong> If the PDF is mostly text and you need it to look sharp, use <Link href="/pdf-to-png" className="text-orange-600 hover:underline">PDF to PNG</Link> instead. PNG preserves text edges better than JPG.</li>
-                <li>- <strong>Compress first if the PDF is huge.</strong> If your PDF is over 25MB (the free limit), <Link href="/compress-pdf" className="text-orange-600 hover:underline">compress it first</Link> to get it under the limit.</li>
+                <li>- <strong>Need just one page?</strong> If you only need a single page as a JPG, you don't have to convert the whole PDF. Select just that page to save time. See our guide: <Link href="/learn/save-pdf-page-as-jpg" className="text-[#14D8C4] hover:underline">Save One PDF Page as JPG</Link>.</li>
+                <li>- <strong>Choose PNG for text documents.</strong> If the PDF is mostly text and you need it to look sharp, use <Link href="/pdf-to-png" className="text-[#14D8C4] hover:underline">PDF to PNG</Link> instead. PNG preserves text edges better than JPG.</li>
+                <li>- <strong>Compress first if the PDF is huge.</strong> If your PDF is over 25MB (the free limit), <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">compress it first</Link> to get it under the limit.</li>
               </ul>
             </section>
 
@@ -271,7 +271,7 @@ export default function PdfToJpgOnIphonePage() {
             <p className="text-slate-300 mb-6">Open the tool in Safari, upload your PDF, and get JPG images in seconds. No app needed.</p>
             <Link
               href="/pdf-to-jpg"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <ImageIcon className="h-5 w-5" /> PDF to JPG Tool
             </Link>
@@ -292,10 +292,10 @@ export default function PdfToJpgOnIphonePage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

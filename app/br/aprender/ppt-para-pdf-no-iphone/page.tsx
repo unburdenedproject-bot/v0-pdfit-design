@@ -31,14 +31,14 @@ export default function PptParaPdfNoIphonePage() {
       <HeaderBr />
       <main>
         <section className="bg-[#191B4D] text-white py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-          <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PowerPoint para PDF</p>
+          <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PowerPoint para PDF</p>
           <h1 className="text-4xl lg:text-5xl font-black mb-4">PPT para PDF no iPhone</h1>
           <p className="text-xl text-slate-300">Precisa converter uma apresentacao PowerPoint para PDF direto no seu iPhone? Veja como fazer em segundos, sem instalar nenhum aplicativo.</p>
         </div></div></section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><Smartphone className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Pronto para converter? Pule o guia e va direto para a ferramenta.</p></div>
-          <Link href="/br/powerpoint-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Converter PPT para PDF <ArrowRight className="h-4 w-4" /></Link>
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><Smartphone className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Pronto para converter? Pule o guia e va direto para a ferramenta.</p></div>
+          <Link href="/br/powerpoint-para-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Converter PPT para PDF <ArrowRight className="h-4 w-4" /></Link>
         </div></section>
 
         <article className="py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -46,9 +46,9 @@ export default function PptParaPdfNoIphonePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-4">Por que converter PPT para PDF no iPhone?</h2>
             <p className="text-slate-600 mb-4">Muitas vezes voce recebe um arquivo PowerPoint pelo WhatsApp, email ou Google Drive e precisa transforma-lo em PDF rapidamente. No iPhone, isso e util para:</p>
             <ul className="space-y-3 text-slate-700">
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Compartilhar sem problemas de formatacao.</strong> PDFs mantem o layout original em qualquer dispositivo. Enviar um PPTX pode resultar em fontes trocadas e slides desconfigurados.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Enviar por WhatsApp ou email.</strong> PDFs sao mais leves e universais. Qualquer pessoa consegue abrir sem precisar do PowerPoint.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Imprimir direto do celular.</strong> Se voce precisa <Link href="/br/aprender/ppt-para-pdf-para-imprimir" className="text-orange-600 hover:underline">imprimir sua apresentacao</Link>, o PDF garante que tudo saia como esperado.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span><strong>Compartilhar sem problemas de formatacao.</strong> PDFs mantem o layout original em qualquer dispositivo. Enviar um PPTX pode resultar em fontes trocadas e slides desconfigurados.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span><strong>Enviar por WhatsApp ou email.</strong> PDFs sao mais leves e universais. Qualquer pessoa consegue abrir sem precisar do PowerPoint.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">3.</span><span><strong>Imprimir direto do celular.</strong> Se voce precisa <Link href="/br/aprender/ppt-para-pdf-para-imprimir" className="text-[#14D8C4] hover:underline">imprimir sua apresentacao</Link>, o PDF garante que tudo saia como esperado.</span></li>
             </ul>
           </section>
 
@@ -61,7 +61,7 @@ export default function PptParaPdfNoIphonePage() {
                 { title: "Converta e baixe o PDF", desc: "Toque em Converter. O processamento acontece nos servidores do PDF.it (nao no seu iPhone), entao a conversao e rapida mesmo em conexoes mais lentas. Baixe o PDF e compartilhe diretamente." },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                   <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                 </div>
               ))}
@@ -74,7 +74,7 @@ export default function PptParaPdfNoIphonePage() {
               <li>&#10003; <strong>Use Wi-Fi para arquivos grandes</strong> — arquivos acima de 10MB convertem mais rapido com Wi-Fi.</li>
               <li>&#10003; <strong>Salve no app Arquivos</strong> — apos baixar, o PDF fica na pasta Downloads do app Arquivos. De la, voce pode mover para o iCloud ou compartilhar.</li>
               <li>&#10003; <strong>Compartilhe diretamente</strong> — use o botao Compartilhar do Safari para enviar o PDF por AirDrop, WhatsApp, Telegram ou email sem precisar salvar primeiro.</li>
-              <li>&#10003; <strong>Funciona em Android tambem</strong> — o mesmo metodo funciona no Chrome para Android. Veja nosso guia de <Link href="/br/aprender/office-para-pdf-no-celular" className="text-orange-600 hover:underline">Office para PDF no celular</Link>.</li>
+              <li>&#10003; <strong>Funciona em Android tambem</strong> — o mesmo metodo funciona no Chrome para Android. Veja nosso guia de <Link href="/br/aprender/office-para-pdf-no-celular" className="text-[#14D8C4] hover:underline">Office para PDF no celular</Link>.</li>
             </ul>
           </section>
 
@@ -86,14 +86,14 @@ export default function PptParaPdfNoIphonePage() {
               <li>&#10003; Toque nos tres pontos (...) &gt; <strong>Exportar</strong> &gt; <strong>PDF</strong>.</li>
               <li>&#10003; Escolha onde salvar o PDF.</li>
             </ul>
-            <p className="text-slate-600 mt-4">No entanto, se voce nao tem o app instalado ou nao quer instalar, o <Link href="/br/powerpoint-para-pdf" className="text-orange-600 hover:underline">conversor online do PDF.it</Link> e a opcao mais rapida.</p>
+            <p className="text-slate-600 mt-4">No entanto, se voce nao tem o app instalado ou nao quer instalar, o <Link href="/br/powerpoint-para-pdf" className="text-[#14D8C4] hover:underline">conversor online do PDF.it</Link> e a opcao mais rapida.</p>
           </section>
         </div></article>
 
         <section className="py-12 bg-[#191B4D]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
           <h2 className="text-2xl font-black text-white mb-3">Converta PPT para PDF no seu iPhone agora</h2>
           <p className="text-slate-300 mb-6">Envie seu arquivo PPTX e obtenha um PDF perfeito em segundos — gratis, direto no navegador.</p>
-          <Link href="/br/powerpoint-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><Smartphone className="h-5 w-5" /> Converter PPT para PDF Agora</Link>
+          <Link href="/br/powerpoint-para-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><Smartphone className="h-5 w-5" /> Converter PPT para PDF Agora</Link>
         </div></section>
 
         <section className="py-16 bg-gray-50"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -104,7 +104,7 @@ export default function PptParaPdfNoIphonePage() {
               { title: "PPT para PDF para imprimir: melhores dicas de layout e qualidade", href: "/br/aprender/ppt-para-pdf-para-imprimir" },
               { title: "Office para PDF no celular: guia completo", href: "/br/aprender/office-para-pdf-no-celular" },
               { title: "PPTX para PDF fontes faltando? Corrija incorporacao e substituicoes", href: "/br/aprender/pptx-para-pdf-fontes-faltando" },
-            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" /></Link>))}
+            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" /></Link>))}
           </div>
         </div></section>
 

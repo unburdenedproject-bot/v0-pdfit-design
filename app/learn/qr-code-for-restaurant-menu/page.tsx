@@ -91,7 +91,7 @@ export default function QRCodeForRestaurantMenuPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / QR Code</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / QR Code</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">QR Code for Restaurant Menus (Create a Scannable Menu Link)</h1>
               <p className="text-xl text-slate-300">
                 Let customers scan a QR code at the table and view your full menu on their phone. No app downloads, no physical menus to clean or reprint. Here is how to set it up.
@@ -101,17 +101,17 @@ export default function QRCodeForRestaurantMenuPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <QrCode className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to create your menu QR code? Go straight to the tool.</p>
             </div>
             <Link
               href="/qr-code"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Create QR Code <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function QRCodeForRestaurantMenuPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Instant updates.</strong> Change prices, add seasonal specials, or remove sold-out items without reprinting anything. Update the online menu and every QR code in your restaurant reflects the change immediately.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Cost savings.</strong> Printed menus are expensive — especially when you have multiple pages, seasonal rotations, or frequent price changes. A QR code costs nothing to update.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Faster table turns.</strong> Customers can view the menu while waiting for a server. They spend less time deciding and more time ordering, which increases table turnover during peak hours.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Multilingual support.</strong> Link to a webpage with language options or host multiple PDF menus (English, Spanish, etc.) — customers choose their language after scanning.</span>
                 </li>
               </ul>
@@ -167,7 +167,7 @@ export default function QRCodeForRestaurantMenuPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -186,7 +186,7 @@ export default function QRCodeForRestaurantMenuPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">PDF Menu</h3>
                   <p className="text-slate-600">
-                    Best for restaurants with a stable menu that does not change frequently. A PDF looks exactly like your printed menu, which is familiar and easy to read. You can create one in Word, Google Docs, or Canva and convert it to PDF. If the file is too large, use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> to reduce the size so it loads quickly on phones. You can also use <Link href="/compress-pdf-for-email" className="text-orange-600 hover:underline">Compress PDF for Email</Link> to make it lightweight.
+                    Best for restaurants with a stable menu that does not change frequently. A PDF looks exactly like your printed menu, which is familiar and easy to read. You can create one in Word, Google Docs, or Canva and convert it to PDF. If the file is too large, use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> to reduce the size so it loads quickly on phones. You can also use <Link href="/compress-pdf-for-email" className="text-[#14D8C4] hover:underline">Compress PDF for Email</Link> to make it lightweight.
                   </p>
                 </div>
                 <div>
@@ -212,7 +212,7 @@ export default function QRCodeForRestaurantMenuPage() {
                 <li>&#10003; <strong>Window decals.</strong> For takeout-focused restaurants, put a QR code on the window so passersby can scan and view your menu from outside.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                For more tips on sizing and testing, see our <Link href="/learn/qr-code-best-practices" className="text-orange-600 hover:underline">QR Code Best Practices</Link> guide.
+                For more tips on sizing and testing, see our <Link href="/learn/qr-code-best-practices" className="text-[#14D8C4] hover:underline">QR Code Best Practices</Link> guide.
               </p>
             </section>
 
@@ -228,7 +228,7 @@ export default function QRCodeForRestaurantMenuPage() {
                 <li>&#10003; <strong>Replace the file, not the link.</strong> If you host the PDF on Google Drive, you can replace the file without changing the sharing link. Upload the new PDF with the same name to the same folder.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Need to convert your updated menu from Word or PowerPoint to PDF? Use PDF.it's <Link href="/word-to-pdf" className="text-orange-600 hover:underline">Word to PDF</Link> or <Link href="/powerpoint-to-pdf" className="text-orange-600 hover:underline">PowerPoint to PDF</Link> converter.
+                Need to convert your updated menu from Word or PowerPoint to PDF? Use PDF.it's <Link href="/word-to-pdf" className="text-[#14D8C4] hover:underline">Word to PDF</Link> or <Link href="/powerpoint-to-pdf" className="text-[#14D8C4] hover:underline">PowerPoint to PDF</Link> converter.
               </p>
             </section>
 
@@ -242,7 +242,7 @@ export default function QRCodeForRestaurantMenuPage() {
             <p className="text-slate-300 mb-6">Generate a scannable QR code for your menu in seconds. Pro feature — includes all PDF tools for managing your menu files.</p>
             <Link
               href="/qr-code"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <QrCode className="h-5 w-5" /> Create Menu QR Code
             </Link>
@@ -265,10 +265,10 @@ export default function QRCodeForRestaurantMenuPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

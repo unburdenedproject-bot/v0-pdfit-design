@@ -82,7 +82,7 @@ export default function ConvertirCurriculumWordAPdfPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Word a PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Word a PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convertir curriculum de Word a PDF (consejos para ATS)</h1>
               <p className="text-xl text-slate-300">
                 Tu curriculum necesita verse excelente para los humanos Y ser legible por los sistemas de seguimiento de candidatos. Asi es como convertirlo de Word a PDF de la manera correcta.
@@ -91,15 +91,15 @@ export default function ConvertirCurriculumWordAPdfPage() {
           </div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileText className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Listo para convertir tu curriculum? Salta la guia y ve directo a la herramienta.</p>
             </div>
-            <Link href="/es/word-a-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
+            <Link href="/es/word-a-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
               Word a PDF Ahora <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -115,19 +115,19 @@ export default function ConvertirCurriculumWordAPdfPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Consistencia de formato.</strong> Un PDF se ve exactamente igual en cualquier dispositivo, sistema operativo y tamano de pantalla. Tu curriculum se vera igual en la PC Windows del reclutador que en tu Mac.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Sin ediciones accidentales.</strong> Los documentos de Word pueden modificarse accidentalmente. Un PDF evita que alguien cambie tu contenido, fechas o informacion de contacto.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Impresion profesional.</strong> Enviar un archivo .docx senala "trabajo en progreso". Un PDF senala "documento final y pulido". Pequeno detalle, gran impacto.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Compatible con ATS.</strong> Los sistemas modernos de seguimiento de candidatos analizan PDFs igual de bien que archivos de Word, siempre que sigas unas pocas reglas simples (cubiertas a continuacion).</span>
                 </li>
               </ul>
@@ -153,27 +153,27 @@ export default function ConvertirCurriculumWordAPdfPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Usa un diseno de una sola columna.</strong> Los disenos de multiples columnas, barras laterales y plantillas creativas pueden verse genial, pero los sistemas ATS leen de izquierda a derecha, de arriba a abajo. Dos columnas pueden hacer que el parser mezcle contenido de diferentes secciones.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Usa fuentes estandar.</strong> Arial, Calibri, Times New Roman, Georgia o Garamond. Se convierten perfectamente a PDF y son reconocidas por todos los sistemas ATS.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Evita cuadros de texto.</strong> El texto dentro de cuadros de texto a menudo es invisible para los parsers ATS. Usa parrafos normales con encabezados en negrita.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Evita tablas para diseno.</strong> Usar tablas para crear un aspecto de multiples columnas confunde a los sistemas ATS. Usa listas simples y parrafos.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Usa encabezados de seccion estandar.</strong> "Experiencia Laboral", "Educacion", "Habilidades", "Certificaciones": los sistemas ATS buscan estas palabras clave exactas para categorizar tu informacion.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">6.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">6.</span>
                   <span><strong>Sin imagenes ni graficos.</strong> Logos, iconos, fotos y graficos decorativos no pueden ser leidos por ATS. Tambien aumentan innecesariamente el tamano del archivo.</span>
                 </li>
               </ul>
@@ -188,7 +188,7 @@ export default function ConvertirCurriculumWordAPdfPage() {
                   { title: "Prueba el resultado", desc: "Abre el PDF e intenta seleccionar texto con tu cursor. Si puedes resaltar y copiar texto, el PDF es legible por ATS. Si el texto no se puede seleccionar, fue convertido como una imagen (que ATS no puede leer)." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div>
                       <h3 className="font-bold text-slate-900 mb-1">{step.title}</h3>
                       <p className="text-slate-600 text-sm">{step.desc}</p>
@@ -204,7 +204,7 @@ export default function ConvertirCurriculumWordAPdfPage() {
                 <li>&#10003; <strong>No protejas con contrasena tu curriculum PDF.</strong> Los sistemas ATS no pueden abrir archivos protegidos con contrasena. Tu curriculum sera rechazado antes de que alguien lo vea.</li>
                 <li>&#10003; <strong>No acoplar tu curriculum PDF.</strong> El acoplamiento convierte el texto en imagenes, haciendolo ilegible para ATS. Solo acopia si envias directamente a una persona (no a traves de un ATS).</li>
                 <li>&#10003; <strong>No escanees un curriculum impreso.</strong> Los PDFs escaneados son imagenes, no texto. ATS no puede leerlos. Siempre convierte desde el archivo digital de Word.</li>
-                <li>&#10003; <strong>No comprimas en exceso.</strong> Si usas <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> para reducir el tamano del archivo, usa compresion Ligera para mantener el texto nitido y seleccionable.</li>
+                <li>&#10003; <strong>No comprimas en exceso.</strong> Si usas <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para reducir el tamano del archivo, usa compresion Ligera para mantener el texto nitido y seleccionable.</li>
               </ul>
             </section>
 
@@ -219,7 +219,7 @@ export default function ConvertirCurriculumWordAPdfPage() {
                 <li>&#10003; Fuentes personalizadas incrustadas (cambia a fuentes estandar para reducir el tamano)</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Si aun necesitas reducir el tamano del archivo, usa <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> con compresion Ligera para minimizar el tamano sin afectar la calidad del texto.
+                Si aun necesitas reducir el tamano del archivo, usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> con compresion Ligera para minimizar el tamano sin afectar la calidad del texto.
               </p>
             </section>
 
@@ -242,7 +242,7 @@ export default function ConvertirCurriculumWordAPdfPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Convierte tu curriculum a PDF</h2>
             <p className="text-slate-300 mb-6">Sube tu curriculum de Word y obtiene un PDF compatible con ATS en segundos, gratis y sin registro.</p>
-            <Link href="/es/word-a-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors">
+            <Link href="/es/word-a-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors">
               <FileText className="h-5 w-5" /> Word a PDF Ahora
             </Link>
           </div>
@@ -258,9 +258,9 @@ export default function ConvertirCurriculumWordAPdfPage() {
                 { title: "Convertir DOCX, XLSX y PPTX a PDF: todos los formatos", href: "/es/aprender/convertir-docx-xlsx-pptx-a-pdf" },
                 { title: "Office a PDF: como mantener el formato", href: "/es/aprender/office-a-pdf-mantener-formato" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

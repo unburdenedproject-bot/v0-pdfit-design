@@ -91,7 +91,7 @@ export default function HowToPasswordProtectPDFPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Protect PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Protect PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">How to Password-Protect a PDF Online (Step-by-Step)</h1>
               <p className="text-xl text-slate-300">
                 Need to lock a PDF so only authorized people can open it? Whether you are sharing contracts, financial records, or personal documents — here is how to add password protection in seconds.
@@ -101,17 +101,17 @@ export default function HowToPasswordProtectPDFPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Lock className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to protect? Skip the guide and go straight to the tool.</p>
             </div>
             <Link
               href="/protect-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Protect PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,23 +130,23 @@ export default function HowToPasswordProtectPDFPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Contracts and legal documents.</strong> Protect signed agreements from unauthorized access. A password ensures only the intended parties can view the document.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Financial records.</strong> Tax returns, invoices, and bank statements contain sensitive data that should never be shared without encryption.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Medical documents.</strong> Patient records and insurance claims are protected by privacy regulations. Adding a password helps maintain compliance.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Employee files and HR documents.</strong> Offer letters, performance reviews, and payroll information should be locked before sending internally.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Intellectual property.</strong> Draft manuscripts, business plans, and design specs need protection when shared with external reviewers.</span>
                 </li>
               </ul>
@@ -171,7 +171,7 @@ export default function HowToPasswordProtectPDFPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -205,7 +205,7 @@ export default function HowToPasswordProtectPDFPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Using Both Together</h3>
                   <p className="text-slate-600">
-                    For maximum security, you can set both an open password and a permissions password. The viewer needs the open password to access the file, and even then, they cannot print or copy text unless they also have the permissions password. PDF.it's <Link href="/protect-pdf" className="text-orange-600 hover:underline">Protect PDF tool</Link> supports both options.
+                    For maximum security, you can set both an open password and a permissions password. The viewer needs the open password to access the file, and even then, they cannot print or copy text unless they also have the permissions password. PDF.it's <Link href="/protect-pdf" className="text-[#14D8C4] hover:underline">Protect PDF tool</Link> supports both options.
                   </p>
                 </div>
               </div>
@@ -223,7 +223,7 @@ export default function HowToPasswordProtectPDFPage() {
                 <li>&#10003; <strong>40-bit RC4 (legacy).</strong> An older standard that some tools still offer. Not recommended — it can be cracked with modern hardware. Always choose AES encryption instead.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                For more on choosing strong passwords and setting the right permissions, read our guide on <Link href="/learn/pdf-password-best-practices" className="text-orange-600 hover:underline">PDF password best practices</Link>.
+                For more on choosing strong passwords and setting the right permissions, read our guide on <Link href="/learn/pdf-password-best-practices" className="text-[#14D8C4] hover:underline">PDF password best practices</Link>.
               </p>
             </section>
 
@@ -236,9 +236,9 @@ export default function HowToPasswordProtectPDFPage() {
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Test the password.</strong> Open the protected file yourself and enter the password to confirm it works correctly before sending.</li>
                 <li>&#10003; <strong>Share the password separately.</strong> Send the PDF via email and the password via text message or a phone call. Never put both in the same message.</li>
-                <li>&#10003; <strong>Compress if needed.</strong> Encryption adds minimal overhead, but if the file was already large, use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> before or after protecting.</li>
-                <li>&#10003; <strong>Flatten first for extra security.</strong> If your PDF has form fields or annotations, <Link href="/flatten-pdf" className="text-orange-600 hover:underline">flatten the PDF</Link> before protecting to prevent hidden data from being extracted.</li>
-                <li>&#10003; <strong>Need to remove the password later?</strong> Use <Link href="/unlock-pdf" className="text-orange-600 hover:underline">Unlock PDF</Link> to create an unprotected copy when you need to share the file more broadly.</li>
+                <li>&#10003; <strong>Compress if needed.</strong> Encryption adds minimal overhead, but if the file was already large, use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> before or after protecting.</li>
+                <li>&#10003; <strong>Flatten first for extra security.</strong> If your PDF has form fields or annotations, <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">flatten the PDF</Link> before protecting to prevent hidden data from being extracted.</li>
+                <li>&#10003; <strong>Need to remove the password later?</strong> Use <Link href="/unlock-pdf" className="text-[#14D8C4] hover:underline">Unlock PDF</Link> to create an unprotected copy when you need to share the file more broadly.</li>
               </ul>
             </section>
 
@@ -252,7 +252,7 @@ export default function HowToPasswordProtectPDFPage() {
             <p className="text-slate-300 mb-6">Upload your file and add password protection in seconds — free, no signup required.</p>
             <Link
               href="/protect-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Lock className="h-5 w-5" /> Protect PDF Now
             </Link>
@@ -272,10 +272,10 @@ export default function HowToPasswordProtectPDFPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

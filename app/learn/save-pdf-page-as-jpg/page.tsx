@@ -91,7 +91,7 @@ export default function SavePdfPageAsJpgPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to JPG</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to JPG</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">How to Save One PDF Page as a JPG (Windows, Mac, Mobile)</h1>
               <p className="text-xl text-slate-300">
                 You don't need the whole PDF — just one page as an image. Here's how to extract and save a single page as a JPG on any device, in under a minute.
@@ -101,17 +101,17 @@ export default function SavePdfPageAsJpgPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <ImageIcon className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Need to save a page as JPG right now? Use the tool directly.</p>
             </div>
             <Link
               href="/pdf-to-jpg"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               PDF to JPG Tool <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function SavePdfPageAsJpgPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Saving a receipt or invoice.</strong> You received a multi-page PDF but only need page 1 (the receipt) as an image for your expense report or records.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Grabbing a chart or graph.</strong> A report has a chart on page 4 that you want to include in a presentation or email — saving that page as JPG is the fastest way.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Saving a certificate or diploma.</strong> You want to share your certificate on LinkedIn or keep it in your photos — a JPG is easier to share than a PDF file.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Creating a preview image.</strong> You need the first page of a document as a thumbnail or preview for a website, email, or document listing.</span>
                 </li>
               </ul>
@@ -170,7 +170,7 @@ export default function SavePdfPageAsJpgPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -190,7 +190,7 @@ export default function SavePdfPageAsJpgPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Windows</h3>
                   <p className="text-slate-600 mb-2">
-                    <strong>Option 1 (Recommended):</strong> Use <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">PDF.it's online tool</Link> in your browser — no installation needed and you get proper high-DPI output.
+                    <strong>Option 1 (Recommended):</strong> Use <Link href="/pdf-to-jpg" className="text-[#14D8C4] hover:underline">PDF.it's online tool</Link> in your browser — no installation needed and you get proper high-DPI output.
                   </p>
                   <p className="text-slate-600 mb-2">
                     <strong>Option 2:</strong> Use the Snipping Tool (Win + Shift + S) to screenshot the page. This is quick but gives you screen-resolution quality, which may look blurry if you zoom in or print.
@@ -206,14 +206,14 @@ export default function SavePdfPageAsJpgPage() {
                     <strong>Option 1:</strong> Open in Preview, go to the page you want, then File &gt; Export and select JPEG. Set the quality slider and click Save. This works for single pages.
                   </p>
                   <p className="text-slate-600">
-                    <strong>Option 2:</strong> Use <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">PDF.it online</Link> for more control over DPI and to handle multiple pages at once.
+                    <strong>Option 2:</strong> Use <Link href="/pdf-to-jpg" className="text-[#14D8C4] hover:underline">PDF.it online</Link> for more control over DPI and to handle multiple pages at once.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">iPhone and iPad</h3>
                   <p className="text-slate-600">
-                    iOS doesn't have a built-in way to convert PDF pages to JPG. The easiest method is to open PDF.it in Safari, upload your PDF, select the page, and save the resulting JPG to your Photos app. No app download required. See our detailed guide: <Link href="/learn/pdf-to-jpg-on-iphone" className="text-orange-600 hover:underline">Convert PDF to JPG on iPhone</Link>.
+                    iOS doesn't have a built-in way to convert PDF pages to JPG. The easiest method is to open PDF.it in Safari, upload your PDF, select the page, and save the resulting JPG to your Photos app. No app download required. See our detailed guide: <Link href="/learn/pdf-to-jpg-on-iphone" className="text-[#14D8C4] hover:underline">Convert PDF to JPG on iPhone</Link>.
                   </p>
                 </div>
 
@@ -250,8 +250,8 @@ export default function SavePdfPageAsJpgPage() {
                 If you need both a PDF and a JPG of a specific page, you can use a two-step approach:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>1. Use <Link href="/split-pdf" className="text-orange-600 hover:underline">Split PDF</Link> to extract the page as its own single-page PDF.</li>
-                <li>2. Then convert that single-page PDF to JPG using <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">PDF to JPG</Link>.</li>
+                <li>1. Use <Link href="/split-pdf" className="text-[#14D8C4] hover:underline">Split PDF</Link> to extract the page as its own single-page PDF.</li>
+                <li>2. Then convert that single-page PDF to JPG using <Link href="/pdf-to-jpg" className="text-[#14D8C4] hover:underline">PDF to JPG</Link>.</li>
               </ul>
               <p className="text-slate-600 mt-4">
                 This way you keep the original-quality PDF page and also have a JPG version for sharing.
@@ -268,7 +268,7 @@ export default function SavePdfPageAsJpgPage() {
             <p className="text-slate-300 mb-6">Upload your PDF, pick the page, and download a high-quality JPG in seconds.</p>
             <Link
               href="/pdf-to-jpg"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <ImageIcon className="h-5 w-5" /> PDF to JPG Tool
             </Link>
@@ -289,10 +289,10 @@ export default function SavePdfPageAsJpgPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

@@ -91,7 +91,7 @@ export default function GuardarPaginaPdfComoJpgPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF a JPG</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF a JPG</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Cómo Guardar Una Página PDF como JPG (Windows, Mac, Móvil)</h1>
               <p className="text-xl text-slate-300">
                 No necesitas todo el PDF — solo una página como imagen. Aquí te mostramos cómo extraer y guardar una sola página como JPG en cualquier dispositivo, en menos de un minuto.
@@ -101,17 +101,17 @@ export default function GuardarPaginaPdfComoJpgPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <ImageIcon className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">¿Necesitas guardar una página como JPG ahora? Usa la herramienta directamente.</p>
             </div>
             <Link
               href="/es/pdf-a-jpg"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Herramienta PDF a JPG <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function GuardarPaginaPdfComoJpgPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Guardar un recibo o factura.</strong> Recibiste un PDF de varias páginas pero solo necesitas la página 1 (el recibo) como imagen para tu informe de gastos o registros.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Capturar un gráfico o tabla.</strong> Un informe tiene un gráfico en la página 4 que quieres incluir en una presentación o correo — guardar esa página como JPG es la forma más rápida.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Guardar un certificado o diploma.</strong> Quieres compartir tu certificado en LinkedIn o guardarlo en tus fotos — un JPG es más fácil de compartir que un archivo PDF.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Crear una imagen de vista previa.</strong> Necesitas la primera página de un documento como miniatura o vista previa para un sitio web, correo o listado de documentos.</span>
                 </li>
               </ul>
@@ -170,7 +170,7 @@ export default function GuardarPaginaPdfComoJpgPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -190,7 +190,7 @@ export default function GuardarPaginaPdfComoJpgPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Windows</h3>
                   <p className="text-slate-600 mb-2">
-                    <strong>Opción 1 (Recomendada):</strong> Usa la <Link href="/es/pdf-a-jpg" className="text-orange-600 hover:underline">herramienta en línea de PDF.it</Link> en tu navegador — sin instalación necesaria y obtienes salida de alto DPI.
+                    <strong>Opción 1 (Recomendada):</strong> Usa la <Link href="/es/pdf-a-jpg" className="text-[#14D8C4] hover:underline">herramienta en línea de PDF.it</Link> en tu navegador — sin instalación necesaria y obtienes salida de alto DPI.
                   </p>
                   <p className="text-slate-600 mb-2">
                     <strong>Opción 2:</strong> Usa la Herramienta de Recorte (Win + Shift + S) para hacer una captura de pantalla de la página. Es rápido pero te da calidad de resolución de pantalla, que puede verse borrosa si haces zoom o imprimes.
@@ -206,14 +206,14 @@ export default function GuardarPaginaPdfComoJpgPage() {
                     <strong>Opción 1:</strong> Abre en Vista Previa, ve a la página que deseas, luego Archivo &gt; Exportar y selecciona JPEG. Ajusta el deslizador de calidad y haz clic en Guardar. Funciona para páginas individuales.
                   </p>
                   <p className="text-slate-600">
-                    <strong>Opción 2:</strong> Usa <Link href="/es/pdf-a-jpg" className="text-orange-600 hover:underline">PDF.it en línea</Link> para más control sobre DPI y para manejar múltiples páginas a la vez.
+                    <strong>Opción 2:</strong> Usa <Link href="/es/pdf-a-jpg" className="text-[#14D8C4] hover:underline">PDF.it en línea</Link> para más control sobre DPI y para manejar múltiples páginas a la vez.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">iPhone y iPad</h3>
                   <p className="text-slate-600">
-                    iOS no tiene una forma nativa de convertir páginas PDF a JPG. El método más fácil es abrir PDF.it en Safari, subir tu PDF, seleccionar la página y guardar el JPG resultante en tu app de Fotos. No se necesita descargar ninguna app. Consulta nuestra guía detallada: <Link href="/es/aprender/pdf-a-jpg-en-iphone" className="text-orange-600 hover:underline">Convertir PDF a JPG en iPhone</Link>.
+                    iOS no tiene una forma nativa de convertir páginas PDF a JPG. El método más fácil es abrir PDF.it en Safari, subir tu PDF, seleccionar la página y guardar el JPG resultante en tu app de Fotos. No se necesita descargar ninguna app. Consulta nuestra guía detallada: <Link href="/es/aprender/pdf-a-jpg-en-iphone" className="text-[#14D8C4] hover:underline">Convertir PDF a JPG en iPhone</Link>.
                   </p>
                 </div>
 
@@ -250,8 +250,8 @@ export default function GuardarPaginaPdfComoJpgPage() {
                 Si necesitas tanto un PDF como un JPG de una página específica, puedes usar un enfoque de dos pasos:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>1. Usa <Link href="/es/dividir-pdf" className="text-orange-600 hover:underline">Dividir PDF</Link> para extraer la página como su propio PDF de una sola página.</li>
-                <li>2. Luego convierte ese PDF de una página a JPG usando <Link href="/es/pdf-a-jpg" className="text-orange-600 hover:underline">PDF a JPG</Link>.</li>
+                <li>1. Usa <Link href="/es/dividir-pdf" className="text-[#14D8C4] hover:underline">Dividir PDF</Link> para extraer la página como su propio PDF de una sola página.</li>
+                <li>2. Luego convierte ese PDF de una página a JPG usando <Link href="/es/pdf-a-jpg" className="text-[#14D8C4] hover:underline">PDF a JPG</Link>.</li>
               </ul>
               <p className="text-slate-600 mt-4">
                 De esta forma conservas la página PDF en calidad original y también tienes una versión JPG para compartir.
@@ -268,7 +268,7 @@ export default function GuardarPaginaPdfComoJpgPage() {
             <p className="text-slate-300 mb-6">Sube tu PDF, elige la página y descarga un JPG de alta calidad en segundos.</p>
             <Link
               href="/es/pdf-a-jpg"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <ImageIcon className="h-5 w-5" /> Herramienta PDF a JPG
             </Link>
@@ -289,10 +289,10 @@ export default function GuardarPaginaPdfComoJpgPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

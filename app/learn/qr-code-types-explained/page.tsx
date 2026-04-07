@@ -91,7 +91,7 @@ export default function QRCodeTypesExplainedPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / QR Code</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / QR Code</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">QR Code Types Explained (URL, Text, WiFi, vCard & More)</h1>
               <p className="text-xl text-slate-300">
                 Not all QR codes are the same. The type you choose determines what happens when someone scans it — opening a website, saving a contact, connecting to WiFi, or displaying a message. Here is a complete guide to every type.
@@ -101,17 +101,17 @@ export default function QRCodeTypesExplainedPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <QrCode className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Know which type you need? Create your QR code now.</p>
             </div>
             <Link
               href="/qr-code"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Create QR Code <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,28 +130,28 @@ export default function QRCodeTypesExplainedPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Website links.</strong> Link to your homepage, landing page, product page, or any URL. The scanner's phone opens the page in their default browser.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
-                  <span><strong>Social media profiles.</strong> Link to your Instagram, LinkedIn, Twitter, or YouTube channel. Great for <Link href="/learn/qr-code-for-business-card" className="text-orange-600 hover:underline">business cards</Link> and marketing materials.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
+                  <span><strong>Social media profiles.</strong> Link to your Instagram, LinkedIn, Twitter, or YouTube channel. Great for <Link href="/learn/qr-code-for-business-card" className="text-[#14D8C4] hover:underline">business cards</Link> and marketing materials.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>PDF documents.</strong> Link to a <Link href="/learn/qr-code-for-pdf" className="text-orange-600 hover:underline">hosted PDF file</Link> — menus, brochures, manuals, or flyers. The PDF opens directly in the phone's browser.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
+                  <span><strong>PDF documents.</strong> Link to a <Link href="/learn/qr-code-for-pdf" className="text-[#14D8C4] hover:underline">hosted PDF file</Link> — menus, brochures, manuals, or flyers. The PDF opens directly in the phone's browser.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>App download links.</strong> Link to your app on the App Store or Google Play. Users scan and go directly to the download page.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Google Maps locations.</strong> Share a Google Maps link so people can get directions to your business, event venue, or meeting point.</span>
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
-                <strong>Best practice:</strong> Keep URLs short. Long URLs create denser QR codes that are harder to scan at small sizes. Use a URL shortener if needed. Learn more in our <Link href="/learn/how-to-create-qr-code" className="text-orange-600 hover:underline">how to create a QR code</Link> guide.
+                <strong>Best practice:</strong> Keep URLs short. Long URLs create denser QR codes that are harder to scan at small sizes. Use a URL shortener if needed. Learn more in our <Link href="/learn/how-to-create-qr-code" className="text-[#14D8C4] hover:underline">how to create a QR code</Link> guide.
               </p>
             </section>
 
@@ -171,7 +171,7 @@ export default function QRCodeTypesExplainedPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Best Use Cases</h3>
                   <p className="text-slate-600">
-                    Business cards are the most common use case. Instead of hoping someone manually types your phone number from a card, they scan and save. Also great for conference badges, name tags, and networking events. Read our full guide on <Link href="/learn/qr-code-for-business-card" className="text-orange-600 hover:underline">QR codes for business cards</Link>.
+                    Business cards are the most common use case. Instead of hoping someone manually types your phone number from a card, they scan and save. Also great for conference badges, name tags, and networking events. Read our full guide on <Link href="/learn/qr-code-for-business-card" className="text-[#14D8C4] hover:underline">QR codes for business cards</Link>.
                   </p>
                 </div>
               </div>
@@ -187,7 +187,7 @@ export default function QRCodeTypesExplainedPage() {
                 This type is perfect for restaurants, cafes, hotels, Airbnbs, offices, and homes. Instead of writing the WiFi password on a chalkboard or repeating it to every guest, display a QR code and let people connect with a scan.
               </p>
               <p className="text-slate-600">
-                <strong>Important:</strong> The password is encoded in the QR code, so use a guest network for public spaces. Read our detailed guide on <Link href="/learn/qr-code-for-wifi" className="text-orange-600 hover:underline">creating WiFi QR codes</Link> for security tips and setup instructions.
+                <strong>Important:</strong> The password is encoded in the QR code, so use a guest network for public spaces. Read our detailed guide on <Link href="/learn/qr-code-for-wifi" className="text-[#14D8C4] hover:underline">creating WiFi QR codes</Link> for security tips and setup instructions.
               </p>
             </section>
 
@@ -248,15 +248,15 @@ export default function QRCodeTypesExplainedPage() {
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Want people to visit a website?</strong> Use URL type.</li>
-                <li>&#10003; <strong>Want people to save your contact info?</strong> Use vCard type. Best for <Link href="/learn/qr-code-for-business-card" className="text-orange-600 hover:underline">business cards</Link>.</li>
-                <li>&#10003; <strong>Want people to connect to WiFi?</strong> Use <Link href="/learn/qr-code-for-wifi" className="text-orange-600 hover:underline">WiFi type</Link>.</li>
-                <li>&#10003; <strong>Want to share a PDF?</strong> Use URL type linking to a <Link href="/learn/qr-code-for-pdf" className="text-orange-600 hover:underline">hosted PDF</Link>.</li>
+                <li>&#10003; <strong>Want people to save your contact info?</strong> Use vCard type. Best for <Link href="/learn/qr-code-for-business-card" className="text-[#14D8C4] hover:underline">business cards</Link>.</li>
+                <li>&#10003; <strong>Want people to connect to WiFi?</strong> Use <Link href="/learn/qr-code-for-wifi" className="text-[#14D8C4] hover:underline">WiFi type</Link>.</li>
+                <li>&#10003; <strong>Want to share a PDF?</strong> Use URL type linking to a <Link href="/learn/qr-code-for-pdf" className="text-[#14D8C4] hover:underline">hosted PDF</Link>.</li>
                 <li>&#10003; <strong>Want people to call you?</strong> Use Phone type.</li>
                 <li>&#10003; <strong>Want to display a code or message?</strong> Use Text type.</li>
                 <li>&#10003; <strong>Want feedback via email?</strong> Use Email type.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                No matter which type you choose, follow our <Link href="/learn/qr-code-best-practices" className="text-orange-600 hover:underline">QR code best practices</Link> for sizing, contrast, and testing to ensure reliable scanning.
+                No matter which type you choose, follow our <Link href="/learn/qr-code-best-practices" className="text-[#14D8C4] hover:underline">QR code best practices</Link> for sizing, contrast, and testing to ensure reliable scanning.
               </p>
             </section>
 
@@ -270,7 +270,7 @@ export default function QRCodeTypesExplainedPage() {
             <p className="text-slate-300 mb-6">Generate URL, vCard, WiFi, text, and more QR code types in seconds. Pro feature — upgrade for unlimited QR codes.</p>
             <Link
               href="/qr-code"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <QrCode className="h-5 w-5" /> Create QR Code Now
             </Link>
@@ -293,10 +293,10 @@ export default function QRCodeTypesExplainedPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

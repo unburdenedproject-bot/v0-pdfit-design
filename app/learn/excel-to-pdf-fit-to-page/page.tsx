@@ -91,7 +91,7 @@ export default function ExcelToPDFFitToPagePage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Excel to PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Excel to PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Excel to PDF Fit to Page: Best Print Settings Before Converting</h1>
               <p className="text-xl text-slate-300">
                 Getting your Excel spreadsheet to fit neatly on a PDF page is all about the print settings. Here's a complete walkthrough of the Page Layout tab, scaling options, and margin tweaks that make the difference.
@@ -101,17 +101,17 @@ export default function ExcelToPDFFitToPagePage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileSpreadsheet className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Settings ready? Convert your spreadsheet now.</p>
             </div>
             <Link
               href="/excel-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Excel to PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -126,7 +126,7 @@ export default function ExcelToPDFFitToPagePage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Why Print Settings Matter for PDF Conversion</h2>
               <p className="text-slate-600 mb-4">
-                When you convert an Excel file to PDF — whether through Excel's built-in export or an online tool like <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">PDF.it</Link> — the converter uses your print settings to determine how the data maps to pages.
+                When you convert an Excel file to PDF — whether through Excel's built-in export or an online tool like <Link href="/excel-to-pdf" className="text-[#14D8C4] hover:underline">PDF.it</Link> — the converter uses your print settings to determine how the data maps to pages.
               </p>
               <p className="text-slate-600 mb-4">
                 If you haven't configured these settings, Excel uses defaults: portrait orientation, standard margins, no scaling. For anything beyond a simple 5-column table, these defaults produce PDFs with cut-off columns, awkward page breaks, or wasted whitespace.
@@ -155,7 +155,7 @@ export default function ExcelToPDFFitToPagePage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -184,17 +184,17 @@ export default function ExcelToPDFFitToPagePage() {
                   </thead>
                   <tbody className="text-slate-700">
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Fit Sheet on One Page</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Fit Sheet on One Page</td>
                       <td className="py-3 px-4">Shrinks entire sheet (width + height) to one page</td>
                       <td className="py-3 px-4">Small tables under 30 rows</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Fit All Columns on One Page</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Fit All Columns on One Page</td>
                       <td className="py-3 px-4">Constrains width to one page, rows flow freely</td>
                       <td className="py-3 px-4">Most spreadsheets (recommended)</td>
                     </tr>
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Fit All Rows on One Page</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Fit All Rows on One Page</td>
                       <td className="py-3 px-4">Constrains height to one page, columns flow freely</td>
                       <td className="py-3 px-4">Rarely useful — only for narrow, tall data</td>
                     </tr>
@@ -241,7 +241,7 @@ export default function ExcelToPDFFitToPagePage() {
                 </div>
               </div>
               <p className="text-slate-600 mt-4">
-                Not sure? Try both in Print Preview and see which produces cleaner output. You can always check before converting with <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">PDF.it</Link>.
+                Not sure? Try both in Print Preview and see which produces cleaner output. You can always check before converting with <Link href="/excel-to-pdf" className="text-[#14D8C4] hover:underline">PDF.it</Link>.
               </p>
             </section>
 
@@ -265,7 +265,7 @@ export default function ExcelToPDFFitToPagePage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">After Converting: Compress If Needed</h2>
               <p className="text-slate-600">
-                Large spreadsheets with charts, images, or many pages can produce big PDFs. If you need to email the file or upload it to a portal with size limits, use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> after converting. For email specifically, try <Link href="/compress-pdf-for-email" className="text-orange-600 hover:underline">Compress PDF for Email</Link> which is optimized for attachment size limits.
+                Large spreadsheets with charts, images, or many pages can produce big PDFs. If you need to email the file or upload it to a portal with size limits, use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> after converting. For email specifically, try <Link href="/compress-pdf-for-email" className="text-[#14D8C4] hover:underline">Compress PDF for Email</Link> which is optimized for attachment size limits.
               </p>
             </section>
 
@@ -279,7 +279,7 @@ export default function ExcelToPDFFitToPagePage() {
             <p className="text-slate-300 mb-6">Your print settings are dialed in. Upload and convert — free, no signup required.</p>
             <Link
               href="/excel-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileSpreadsheet className="h-5 w-5" /> Excel to PDF Now
             </Link>
@@ -300,10 +300,10 @@ export default function ExcelToPDFFitToPagePage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

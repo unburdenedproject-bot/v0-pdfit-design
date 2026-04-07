@@ -34,19 +34,19 @@ export default function ExcelAPdfEnMacPage() {
       <main>
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-            <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Excel a PDF</p>
+            <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Excel a PDF</p>
             <h1 className="text-4xl lg:text-5xl font-black mb-4">Convertir Excel a PDF en Mac (flujo de trabajo rapido y confiable)</h1>
             <p className="text-xl text-slate-300">Convertir Excel a PDF en un Mac puede producir resultados inesperados: fuentes diferentes, columnas desplazadas, saltos de pagina extranos. Asi es como obtener PDFs limpios y consistentes cada vez.</p>
           </div></div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><FileSpreadsheet className="h-5 w-5 text-white" /></div>
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><FileSpreadsheet className="h-5 w-5 text-white" /></div>
               <p className="text-slate-700 font-semibold">Evita las particularidades de Mac: convierte en linea para resultados consistentes.</p>
             </div>
-            <Link href="/es/excel-a-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Excel a PDF Ahora <ArrowRight className="h-4 w-4" /></Link>
+            <Link href="/es/excel-a-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Excel a PDF Ahora <ArrowRight className="h-4 w-4" /></Link>
           </div>
         </section>
 
@@ -82,7 +82,7 @@ export default function ExcelAPdfEnMacPage() {
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Metodo 3: Convertidor en linea PDF.it (recomendado)</h3>
                   <p className="text-slate-600 mb-2">Para los resultados mas consistentes:</p>
                   <ol className="space-y-1 text-slate-700 list-decimal list-inside ml-2">
-                    <li>Abre Safari o Chrome y ve a la <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">herramienta Excel a PDF de PDF.it</Link></li>
+                    <li>Abre Safari o Chrome y ve a la <Link href="/es/excel-a-pdf" className="text-[#14D8C4] hover:underline">herramienta Excel a PDF de PDF.it</Link></li>
                     <li>Sube tu archivo .xlsx</li>
                     <li>Haz clic en Convertir y descarga el PDF</li>
                   </ol>
@@ -97,7 +97,7 @@ export default function ExcelAPdfEnMacPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Sustitucion de fuentes</h3>
                   <p className="text-slate-600 mb-2">Si tu archivo Excel fue creado en Windows usando fuentes como Calibri o Cambria, Mac puede sustituir fuentes diferentes. Esto cambia los anchos de columna y puede empujar datos fuera de la pagina.</p>
-                  <p className="text-slate-700"><strong>Solucion:</strong> Usa fuentes multiplataforma (Arial, Times New Roman, Verdana) en tu hoja de calculo. O convierte en linea con <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">PDF.it</Link>, que usa su propia biblioteca de fuentes para renderizado consistente.</p>
+                  <p className="text-slate-700"><strong>Solucion:</strong> Usa fuentes multiplataforma (Arial, Times New Roman, Verdana) en tu hoja de calculo. O convierte en linea con <Link href="/es/excel-a-pdf" className="text-[#14D8C4] hover:underline">PDF.it</Link>, que usa su propia biblioteca de fuentes para renderizado consistente.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Saltos de pagina diferentes</h3>
@@ -107,7 +107,7 @@ export default function ExcelAPdfEnMacPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Funciones faltantes en Excel para Mac</h3>
                   <p className="text-slate-600 mb-2">Algunas funciones avanzadas de Excel se comportan diferente en Mac, particularmente graficos complejos, tablas dinamicas con formato personalizado y macros VBA.</p>
-                  <p className="text-slate-700"><strong>Solucion:</strong> Para hojas de calculo complejas, sube al <Link href="/es/office-a-pdf" className="text-orange-600 hover:underline">convertidor Office a PDF de PDF.it</Link>, que maneja estas funciones del lado del servidor.</p>
+                  <p className="text-slate-700"><strong>Solucion:</strong> Para hojas de calculo complejas, sube al <Link href="/es/office-a-pdf" className="text-[#14D8C4] hover:underline">convertidor Office a PDF de PDF.it</Link>, que maneja estas funciones del lado del servidor.</p>
                 </div>
               </div>
             </section>
@@ -118,7 +118,7 @@ export default function ExcelAPdfEnMacPage() {
                 <li>&#10003; <strong>Usa fuentes estandar</strong>: Arial, Times New Roman y Verdana son opciones seguras que se renderizan identicamente en ambas plataformas.</li>
                 <li>&#10003; <strong>Establece anchos de columna explicitos</strong>: no dependas del ajuste automatico, que calcula diferente en cada plataforma.</li>
                 <li>&#10003; <strong>Define el area de impresion</strong>: esto elimina ambiguedad sobre que celdas incluir en el PDF.</li>
-                <li>&#10003; <strong>Usa un convertidor en linea</strong>: <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">PDF.it</Link> procesa archivos del lado del servidor, produciendo resultados identicos sin importar desde donde subas.</li>
+                <li>&#10003; <strong>Usa un convertidor en linea</strong>: <Link href="/es/excel-a-pdf" className="text-[#14D8C4] hover:underline">PDF.it</Link> procesa archivos del lado del servidor, produciendo resultados identicos sin importar desde donde subas.</li>
                 <li>&#10003; <strong>Prueba con Vista previa de impresion</strong>: siempre revisa Cmd+P antes de convertir localmente para detectar problemas de diseno temprano.</li>
               </ul>
             </section>
@@ -127,7 +127,7 @@ export default function ExcelAPdfEnMacPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">No tienes Excel instalado en tu Mac?</h2>
               <p className="text-slate-600 mb-4">No necesitas Microsoft Excel para convertir archivos .xlsx a PDF. Aqui estan tus opciones:</p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>PDF.it en linea</strong>: sube el archivo .xlsx directamente en <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">Excel a PDF</Link>. Sin software necesario.</li>
+                <li>&#10003; <strong>PDF.it en linea</strong>: sube el archivo .xlsx directamente en <Link href="/es/excel-a-pdf" className="text-[#14D8C4] hover:underline">Excel a PDF</Link>. Sin software necesario.</li>
                 <li>&#10003; <strong>Apple Numbers</strong>: gratis en cada Mac. Abre el archivo .xlsx en Numbers, luego ve a Archivo &gt; Exportar a &gt; PDF.</li>
                 <li>&#10003; <strong>Google Sheets</strong>: sube a Google Drive, abre en Sheets, luego Archivo &gt; Descargar &gt; PDF. El formato puede desplazarse ligeramente.</li>
               </ul>
@@ -135,7 +135,7 @@ export default function ExcelAPdfEnMacPage() {
 
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Despues de convertir: comprimir o compartir</h2>
-              <p className="text-slate-600">Una vez que tengas tu PDF, tal vez quieras reducir su tamano antes de enviarlo por email. Usa <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> para reducir el archivo. Los PDFs descargados en Mac se abren automaticamente en Preview, donde puedes verificar rapidamente el resultado antes de enviar.</p>
+              <p className="text-slate-600">Una vez que tengas tu PDF, tal vez quieras reducir su tamano antes de enviarlo por email. Usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para reducir el archivo. Los PDFs descargados en Mac se abren automaticamente en Preview, donde puedes verificar rapidamente el resultado antes de enviar.</p>
             </section>
           </div>
         </article>
@@ -144,7 +144,7 @@ export default function ExcelAPdfEnMacPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Listo para convertir en tu Mac?</h2>
             <p className="text-slate-300 mb-6">Sube tu archivo Excel y obtiene un PDF consistente y profesional, funciona en Safari, Chrome o cualquier navegador.</p>
-            <Link href="/es/excel-a-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><FileSpreadsheet className="h-5 w-5" /> Excel a PDF Ahora</Link>
+            <Link href="/es/excel-a-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><FileSpreadsheet className="h-5 w-5" /> Excel a PDF Ahora</Link>
           </div>
         </section>
 
@@ -158,9 +158,9 @@ export default function ExcelAPdfEnMacPage() {
                 { title: "Excel a PDF ajustar a pagina: mejores configuraciones", href: "/es/aprender/excel-a-pdf-ajustar-a-pagina" },
                 { title: "Exportar reportes mensuales: Excel a PDF para email", href: "/es/aprender/reporte-excel-a-pdf" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

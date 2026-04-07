@@ -91,7 +91,7 @@ export default function PdfToJpgForPowerpointPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to JPG</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to JPG</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convert PDF to JPG for PowerPoint (Best Settings + Tips)</h1>
               <p className="text-xl text-slate-300">
                 Want to include PDF content in your slides? Here's how to convert PDF pages to JPG images that look sharp and professional in PowerPoint — no blurry screenshots.
@@ -101,17 +101,17 @@ export default function PdfToJpgForPowerpointPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <ImageIcon className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Need to convert now? Go straight to the tool.</p>
             </div>
             <Link
               href="/pdf-to-jpg"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Convert PDF to JPG <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,20 +130,20 @@ export default function PdfToJpgForPowerpointPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Full visual display.</strong> JPG images fill the entire slide with your PDF content — no clicking, no popups, no embedded viewers.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Works everywhere.</strong> Images display the same on every computer, projector, and PowerPoint version. Embedded PDFs can break on different systems.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Easy to annotate.</strong> Once the PDF page is an image in your slide, you can draw on it, add arrows, highlight text, or crop sections.</span>
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Alternatively, if you need <em>editable</em> slides (not just images), try our <Link href="/pdf-to-powerpoint" className="text-orange-600 hover:underline">PDF to PowerPoint</Link> converter which creates a .pptx file with editable text and layouts.
+                Alternatively, if you need <em>editable</em> slides (not just images), try our <Link href="/pdf-to-powerpoint" className="text-[#14D8C4] hover:underline">PDF to PowerPoint</Link> converter which creates a .pptx file with editable text and layouts.
               </p>
             </section>
 
@@ -166,7 +166,7 @@ export default function PdfToJpgForPowerpointPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -196,17 +196,17 @@ export default function PdfToJpgForPowerpointPage() {
                   <tbody className="text-slate-700">
                     <tr className="border-t border-gray-200">
                       <td className="py-3 px-4">Casual presentation (meeting room projector)</td>
-                      <td className="py-3 px-4 font-semibold text-orange-600">150 DPI</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">150 DPI</td>
                       <td className="py-3 px-4">~400KB</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
                       <td className="py-3 px-4">Standard presentation (HD screen, webinar)</td>
-                      <td className="py-3 px-4 font-semibold text-orange-600">200 DPI</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">200 DPI</td>
                       <td className="py-3 px-4">~800KB</td>
                     </tr>
                     <tr className="border-t border-gray-200">
                       <td className="py-3 px-4">High-quality (4K display, print handouts)</td>
-                      <td className="py-3 px-4 font-semibold text-orange-600">300 DPI</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">300 DPI</td>
                       <td className="py-3 px-4">~1.5-2MB</td>
                     </tr>
                   </tbody>
@@ -241,7 +241,7 @@ export default function PdfToJpgForPowerpointPage() {
                     <li>- File size is not a concern</li>
                   </ul>
                   <p className="text-slate-600 mt-2">
-                    Need PNG? Use our <Link href="/pdf-to-png" className="text-orange-600 hover:underline">PDF to PNG</Link> tool instead.
+                    Need PNG? Use our <Link href="/pdf-to-png" className="text-[#14D8C4] hover:underline">PDF to PNG</Link> tool instead.
                   </p>
                 </div>
               </div>
@@ -260,7 +260,7 @@ export default function PdfToJpgForPowerpointPage() {
                 <li>- <strong>Use "Insert Pictures" not paste.</strong> Copy-pasting images can reduce quality. Always use Insert &gt; Pictures to add your JPGs.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                For a deeper dive into quality issues, see our guide: <Link href="/learn/why-pdf-to-jpg-looks-blurry" className="text-orange-600 hover:underline">Why Your PDF to JPG Looks Blurry</Link>.
+                For a deeper dive into quality issues, see our guide: <Link href="/learn/why-pdf-to-jpg-looks-blurry" className="text-[#14D8C4] hover:underline">Why Your PDF to JPG Looks Blurry</Link>.
               </p>
             </section>
 
@@ -283,7 +283,7 @@ export default function PdfToJpgForPowerpointPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Consider the Alternative: PDF to PPTX</h3>
                   <p className="text-slate-600">
-                    If you need to edit the text or rearrange content from the PDF, converting to images won't help. Use our <Link href="/pdf-to-powerpoint" className="text-orange-600 hover:underline">PDF to PowerPoint</Link> converter to get an editable .pptx file instead.
+                    If you need to edit the text or rearrange content from the PDF, converting to images won't help. Use our <Link href="/pdf-to-powerpoint" className="text-[#14D8C4] hover:underline">PDF to PowerPoint</Link> converter to get an editable .pptx file instead.
                   </p>
                 </div>
               </div>
@@ -299,7 +299,7 @@ export default function PdfToJpgForPowerpointPage() {
             <p className="text-slate-300 mb-6">Upload your PDF and get presentation-ready JPG images in seconds.</p>
             <Link
               href="/pdf-to-jpg"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <ImageIcon className="h-5 w-5" /> Convert PDF to JPG
             </Link>
@@ -320,10 +320,10 @@ export default function PdfToJpgForPowerpointPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

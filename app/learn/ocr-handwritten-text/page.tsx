@@ -91,7 +91,7 @@ export default function OCRHandwrittenTextPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / OCR PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / OCR PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Can OCR Read Handwritten Text? (What to Expect)</h1>
               <p className="text-xl text-slate-300">
                 OCR works great on printed text, but handwriting is a different challenge. Here is an honest look at what OCR can and cannot do with handwritten documents — and tips for getting the best results.
@@ -101,17 +101,17 @@ export default function OCRHandwrittenTextPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <ScanText className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Try OCR on your handwritten document with OCR Scanner (Pro).</p>
             </div>
             <Link
               href="/ocr-scanner"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               OCR Scanner <ArrowRight className="h-4 w-4" />
             </Link>
@@ -133,19 +133,19 @@ export default function OCRHandwrittenTextPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Neat block letters — 70-85% accuracy.</strong> If someone wrote in clear, separated capital or lowercase letters with dark ink, OCR will recognize most of the text. You will still need to correct some characters, but the result is usable as a starting point.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Average handwriting — 40-65% accuracy.</strong> Most people&apos;s everyday handwriting falls here. Some words will be recognized correctly, others will be garbled. Numbers and short words tend to be more accurate than long words.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Cursive handwriting — below 40% accuracy.</strong> Connected letters are extremely hard for standard OCR to segment. The output will have so many errors that manual retyping is usually faster than correcting the OCR result.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Messy or rushed handwriting — below 30%.</strong> If you cannot read the handwriting yourself, OCR will not be able to either. Scratchy, overlapping, or very small handwriting produces mostly unusable results.</span>
                 </li>
               </ul>
@@ -170,7 +170,7 @@ export default function OCRHandwrittenTextPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -190,8 +190,8 @@ export default function OCRHandwrittenTextPage() {
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Use dark ink on white paper.</strong> Black or dark blue ink on clean white paper creates the highest contrast. Pencil, light-colored ink, or colored paper all reduce accuracy significantly.</li>
-                <li>&#10003; <strong>Scan at 400 DPI or higher.</strong> Handwriting needs more resolution than printed text because the character shapes are less defined. 400-600 DPI gives OCR more pixels to work with. See our full <Link href="/learn/ocr-accuracy-tips" className="text-orange-600 hover:underline">OCR Accuracy Tips</Link> guide.</li>
-                <li>&#10003; <strong>Clean up the scan first.</strong> Run phone scans through <Link href="/phone-scan-cleanup" className="text-orange-600 hover:underline">Phone Scan Cleanup</Link> to remove shadows, improve contrast, and straighten the image before OCR.</li>
+                <li>&#10003; <strong>Scan at 400 DPI or higher.</strong> Handwriting needs more resolution than printed text because the character shapes are less defined. 400-600 DPI gives OCR more pixels to work with. See our full <Link href="/learn/ocr-accuracy-tips" className="text-[#14D8C4] hover:underline">OCR Accuracy Tips</Link> guide.</li>
+                <li>&#10003; <strong>Clean up the scan first.</strong> Run phone scans through <Link href="/phone-scan-cleanup" className="text-[#14D8C4] hover:underline">Phone Scan Cleanup</Link> to remove shadows, improve contrast, and straighten the image before OCR.</li>
                 <li>&#10003; <strong>Write in block letters if possible.</strong> If you are creating a document that will be OCR-processed later, write in clear, separated block letters rather than cursive. All-caps tends to produce the best results.</li>
                 <li>&#10003; <strong>Leave space between words.</strong> Cramped handwriting with words running together is much harder for OCR to segment. Clear word spacing helps enormously.</li>
                 <li>&#10003; <strong>Use lined paper.</strong> Writing on lined paper keeps your text straight and evenly spaced, both of which improve OCR accuracy.</li>
@@ -233,24 +233,24 @@ export default function OCRHandwrittenTextPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Numbers.</strong> Handwritten digits (0-9) have fewer possible shapes than letters, so OCR recognizes them more reliably. This makes OCR useful for handwritten receipts, phone numbers, and dates — though you should still verify the results.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>All-caps block text.</strong> Capital letters are more distinct from each other than lowercase letters. A handwritten &quot;A&quot; looks quite different from a &quot;B&quot;, while lowercase &quot;a&quot;, &quot;o&quot;, and &quot;e&quot; can look very similar in handwriting.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Form fields.</strong> Short handwritten entries in form fields (names, addresses, dates) are often easier to recognize because the context helps. If OCR knows a field is a date, it can narrow down the possible characters.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Isolated words.</strong> Single words with clear spacing around them are easier to recognize than dense paragraphs of handwriting. Labels, headings, and annotations tend to work better than full pages of handwritten text.</span>
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
-                For printed documents that just need basic OCR, the <Link href="/ocr-scanner" className="text-orange-600 hover:underline">OCR Scanner</Link> (Pro) delivers excellent results. You can also extract text directly using <Link href="/pdf-to-txt" className="text-orange-600 hover:underline">PDF to TXT</Link> or convert to an editable format with <Link href="/pdf-to-word" className="text-orange-600 hover:underline">PDF to Word</Link>.
+                For printed documents that just need basic OCR, the <Link href="/ocr-scanner" className="text-[#14D8C4] hover:underline">OCR Scanner</Link> (Pro) delivers excellent results. You can also extract text directly using <Link href="/pdf-to-txt" className="text-[#14D8C4] hover:underline">PDF to TXT</Link> or convert to an editable format with <Link href="/pdf-to-word" className="text-[#14D8C4] hover:underline">PDF to Word</Link>.
               </p>
             </section>
 
@@ -264,7 +264,7 @@ export default function OCRHandwrittenTextPage() {
             <p className="text-slate-300 mb-6">Upload your scanned handwritten document to see what OCR can extract. For printed text, expect near-perfect results every time.</p>
             <Link
               href="/ocr-scanner"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <ScanText className="h-5 w-5" /> Try OCR Scanner (Pro)
             </Link>
@@ -286,10 +286,10 @@ export default function OCRHandwrittenTextPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

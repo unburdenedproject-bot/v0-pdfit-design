@@ -91,7 +91,7 @@ export default function WatermarkPDFConfidentialPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Watermark PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Watermark PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Add a &quot;Confidential&quot; Watermark to a PDF (Quick Guide)</h1>
               <p className="text-xl text-slate-300">
                 Need to mark a document as CONFIDENTIAL, DRAFT, or DO NOT COPY before sharing? Here is how to stamp any PDF with a security watermark in seconds.
@@ -101,17 +101,17 @@ export default function WatermarkPDFConfidentialPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Stamp className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to stamp your PDF? Skip the guide and go straight to the tool.</p>
             </div>
             <Link
               href="/watermark-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Watermark PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,23 +130,23 @@ export default function WatermarkPDFConfidentialPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Legal contracts and agreements.</strong> Law firms mark contracts, NDAs, and settlement documents as CONFIDENTIAL before sending them to clients or opposing counsel.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Financial reports.</strong> Internal financial statements, audit reports, and budget forecasts are often stamped CONFIDENTIAL to prevent unauthorized distribution within or outside the organization.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>HR documents.</strong> Employee records, salary sheets, and performance reviews contain sensitive information that must be clearly marked as restricted.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Draft proposals and reports.</strong> When circulating an unfinished document for review, a DRAFT watermark tells readers the content is not final and should not be cited or forwarded.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Exam papers and assessments.</strong> Educational institutions stamp exam materials with DO NOT COPY to prevent unauthorized distribution among students.</span>
                 </li>
               </ul>
@@ -156,7 +156,7 @@ export default function WatermarkPDFConfidentialPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-6">How to Add a Confidential Watermark (Step by Step)</h2>
               <p className="text-slate-600 mb-4">
-                Watermark PDF is available to Pro and Business users. <Link href="/pricing" className="text-orange-600 hover:underline">See pricing</Link> for details.
+                Watermark PDF is available to Pro and Business users. <Link href="/pricing" className="text-[#14D8C4] hover:underline">See pricing</Link> for details.
               </p>
               <div className="space-y-4">
                 {[
@@ -174,7 +174,7 @@ export default function WatermarkPDFConfidentialPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -227,9 +227,9 @@ export default function WatermarkPDFConfidentialPage() {
                 A watermark overlay can sometimes be removed by someone with the right tools. To prevent this, take these extra steps after watermarking:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Flatten the PDF.</strong> Use <Link href="/flatten-pdf" className="text-orange-600 hover:underline">Flatten PDF</Link> to merge the watermark permanently into the page content. After flattening, the watermark cannot be separated from the original document.</li>
-                <li>&#10003; <strong>Password-protect the file.</strong> Use <Link href="/protect-pdf" className="text-orange-600 hover:underline">Protect PDF</Link> to add a password that restricts editing and printing. This adds another barrier against tampering.</li>
-                <li>&#10003; <strong>Compress before sharing.</strong> After watermarking and flattening, use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> to keep the file size manageable, especially if you are emailing it.</li>
+                <li>&#10003; <strong>Flatten the PDF.</strong> Use <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">Flatten PDF</Link> to merge the watermark permanently into the page content. After flattening, the watermark cannot be separated from the original document.</li>
+                <li>&#10003; <strong>Password-protect the file.</strong> Use <Link href="/protect-pdf" className="text-[#14D8C4] hover:underline">Protect PDF</Link> to add a password that restricts editing and printing. This adds another barrier against tampering.</li>
+                <li>&#10003; <strong>Compress before sharing.</strong> After watermarking and flattening, use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> to keep the file size manageable, especially if you are emailing it.</li>
               </ul>
             </section>
 
@@ -243,7 +243,7 @@ export default function WatermarkPDFConfidentialPage() {
                 Pro and Business users can upload multiple PDFs at once, configure the watermark settings a single time, and apply the same watermark to every file simultaneously. Each file is processed individually and available for individual or bulk download as a ZIP file.
               </p>
               <p className="text-slate-600">
-                This is especially useful for legal teams preparing discovery documents, accounting firms distributing confidential reports, or HR departments processing employee records. Instead of watermarking files one at a time, do them all in one batch. After watermarking, you can <Link href="/merge-pdf" className="text-orange-600 hover:underline">merge them into a single document</Link> if needed.
+                This is especially useful for legal teams preparing discovery documents, accounting firms distributing confidential reports, or HR departments processing employee records. Instead of watermarking files one at a time, do them all in one batch. After watermarking, you can <Link href="/merge-pdf" className="text-[#14D8C4] hover:underline">merge them into a single document</Link> if needed.
               </p>
             </section>
 
@@ -257,7 +257,7 @@ export default function WatermarkPDFConfidentialPage() {
             <p className="text-slate-300 mb-6">Upload your PDF and add a CONFIDENTIAL, DRAFT, or custom watermark in seconds. Available for Pro and Business users.</p>
             <Link
               href="/watermark-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Stamp className="h-5 w-5" /> Watermark PDF Now
             </Link>
@@ -278,10 +278,10 @@ export default function WatermarkPDFConfidentialPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

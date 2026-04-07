@@ -91,7 +91,7 @@ export default function QRCodeBestPracticesPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / QR Code</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / QR Code</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">QR Code Best Practices (Size, Placement & Testing)</h1>
               <p className="text-xl text-slate-300">
                 A QR code that does not scan is worse than no QR code at all. Follow these best practices to make sure your QR codes work perfectly every time — in print, on screen, and in any lighting condition.
@@ -101,17 +101,17 @@ export default function QRCodeBestPracticesPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <QrCode className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Need to create a QR code? Use our generator tool.</p>
             </div>
             <Link
               href="/qr-code"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Create QR Code <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,23 +130,23 @@ export default function QRCodeBestPracticesPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>The 10:1 rule.</strong> The QR code should be at least 1/10th of the expected scanning distance. If someone will scan from 1 meter away, the QR code needs to be at least 10cm wide. From 30cm (a table), at least 3cm.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
-                  <span><strong>Business cards:</strong> Minimum 2cm x 2cm. Ideally 2.5cm. See our <Link href="/learn/qr-code-for-business-card" className="text-orange-600 hover:underline">business card QR code guide</Link> for placement tips.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
+                  <span><strong>Business cards:</strong> Minimum 2cm x 2cm. Ideally 2.5cm. See our <Link href="/learn/qr-code-for-business-card" className="text-[#14D8C4] hover:underline">business card QR code guide</Link> for placement tips.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>Table tents and stickers:</strong> At least 3cm x 3cm. Restaurant <Link href="/learn/qr-code-for-restaurant-menu" className="text-orange-600 hover:underline">menu QR codes</Link> should be easy to scan even in dim lighting.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
+                  <span><strong>Table tents and stickers:</strong> At least 3cm x 3cm. Restaurant <Link href="/learn/qr-code-for-restaurant-menu" className="text-[#14D8C4] hover:underline">menu QR codes</Link> should be easy to scan even in dim lighting.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Posters and billboards:</strong> Scale up significantly. A poster on a wall should have a QR code at least 15-20cm wide. Billboards need even larger codes.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Digital screens:</strong> On websites and presentations, make sure the QR code is at least 200x200 pixels. On phones, it needs to be large enough for another phone's camera to read it.</span>
                 </li>
               </ul>
@@ -171,7 +171,7 @@ export default function QRCodeBestPracticesPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -244,7 +244,7 @@ export default function QRCodeBestPracticesPage() {
                 <li>&#10003; <strong>Scan in bright light.</strong> Test in normal indoor lighting.</li>
                 <li>&#10003; <strong>Scan in dim light.</strong> Test in the actual environment — a dimly lit restaurant, a dark trade show booth, etc.</li>
                 <li>&#10003; <strong>Scan from the expected distance.</strong> Stand as far away as a real person would and try to scan.</li>
-                <li>&#10003; <strong>Verify the destination.</strong> Make sure the URL loads correctly, the <Link href="/learn/qr-code-for-pdf" className="text-orange-600 hover:underline">PDF opens</Link>, or the vCard saves properly.</li>
+                <li>&#10003; <strong>Verify the destination.</strong> Make sure the URL loads correctly, the <Link href="/learn/qr-code-for-pdf" className="text-[#14D8C4] hover:underline">PDF opens</Link>, or the vCard saves properly.</li>
                 <li>&#10003; <strong>Check the printed quality.</strong> Make sure the printer did not blur or distort the QR code modules. Inkjet printers at low resolution can make QR codes unscannable.</li>
               </ul>
             </section>
@@ -259,7 +259,7 @@ export default function QRCodeBestPracticesPage() {
             <p className="text-slate-300 mb-6">Generate QR codes with the right settings for your use case. Pro feature — upgrade for unlimited QR codes and all PDF tools.</p>
             <Link
               href="/qr-code"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <QrCode className="h-5 w-5" /> Create QR Code Now
             </Link>
@@ -282,10 +282,10 @@ export default function QRCodeBestPracticesPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

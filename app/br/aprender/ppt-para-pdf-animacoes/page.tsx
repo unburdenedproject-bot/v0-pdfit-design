@@ -31,14 +31,14 @@ export default function PptParaPdfAnimacoesPage() {
       <HeaderBr />
       <main>
         <section className="bg-[#191B4D] text-white py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-          <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PowerPoint para PDF</p>
+          <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PowerPoint para PDF</p>
           <h1 className="text-4xl lg:text-5xl font-black mb-4">PPT para PDF — E as Animacoes?</h1>
           <p className="text-xl text-slate-300">Voce vai converter seu PowerPoint para PDF mas tem animacoes na apresentacao? Entenda o que e preservado, o que se perde e como contornar as limitacoes.</p>
         </div></div></section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><Presentation className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Pronto para converter? Pule o guia e va direto para a ferramenta.</p></div>
-          <Link href="/br/powerpoint-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Converter PPT para PDF <ArrowRight className="h-4 w-4" /></Link>
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><Presentation className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Pronto para converter? Pule o guia e va direto para a ferramenta.</p></div>
+          <Link href="/br/powerpoint-para-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Converter PPT para PDF <ArrowRight className="h-4 w-4" /></Link>
         </div></section>
 
         <article className="py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -46,10 +46,10 @@ export default function PptParaPdfAnimacoesPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-4">O que acontece com as animacoes no PDF?</h2>
             <p className="text-slate-600 mb-4">PDF e um formato de documento estatico — ele nao suporta nenhum tipo de animacao ou interatividade de apresentacao. Quando voce converte PowerPoint para PDF:</p>
             <ul className="space-y-3 text-slate-700">
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Animacoes de entrada/saida sao perdidas.</strong> Elementos que aparecem ou desaparecem com animacao sao mostrados no estado final — como se todas as animacoes ja tivessem rodado.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Transicoes entre slides sao removidas.</strong> Efeitos como dissolucao, cortina e empurrar nao existem no PDF.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>GIFs ficam estaticos.</strong> GIFs animados sao convertidos para uma imagem fixa (geralmente o primeiro quadro).</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Videos incorporados sao perdidos.</strong> Apenas a miniatura (thumbnail) do video e preservada no PDF.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span><strong>Animacoes de entrada/saida sao perdidas.</strong> Elementos que aparecem ou desaparecem com animacao sao mostrados no estado final — como se todas as animacoes ja tivessem rodado.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span><strong>Transicoes entre slides sao removidas.</strong> Efeitos como dissolucao, cortina e empurrar nao existem no PDF.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">3.</span><span><strong>GIFs ficam estaticos.</strong> GIFs animados sao convertidos para uma imagem fixa (geralmente o primeiro quadro).</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">4.</span><span><strong>Videos incorporados sao perdidos.</strong> Apenas a miniatura (thumbnail) do video e preservada no PDF.</span></li>
             </ul>
           </section>
 
@@ -90,9 +90,9 @@ export default function PptParaPdfAnimacoesPage() {
             <p className="text-slate-600 mb-4">Em muitos casos, PDF e a melhor escolha mesmo com a perda de animacoes:</p>
             <ul className="space-y-2 text-slate-700">
               <li>&#10003; <strong>Envio por email</strong> — PDFs sao menores e abrem em qualquer dispositivo.</li>
-              <li>&#10003; <strong>Impressao</strong> — animacoes nao existem no papel. Veja nosso guia de <Link href="/br/aprender/ppt-para-pdf-para-imprimir" className="text-orange-600 hover:underline">PPT para PDF para imprimir</Link>.</li>
+              <li>&#10003; <strong>Impressao</strong> — animacoes nao existem no papel. Veja nosso guia de <Link href="/br/aprender/ppt-para-pdf-para-imprimir" className="text-[#14D8C4] hover:underline">PPT para PDF para imprimir</Link>.</li>
               <li>&#10003; <strong>Arquivamento</strong> — PDFs sao o formato padrao para documentos permanentes.</li>
-              <li>&#10003; <strong>Seguranca</strong> — voce pode <Link href="/br/aprender/como-proteger-pdf-com-senha" className="text-orange-600 hover:underline">proteger o PDF com senha</Link> para evitar copias nao autorizadas.</li>
+              <li>&#10003; <strong>Seguranca</strong> — voce pode <Link href="/br/aprender/como-proteger-pdf-com-senha" className="text-[#14D8C4] hover:underline">proteger o PDF com senha</Link> para evitar copias nao autorizadas.</li>
             </ul>
           </section>
         </div></article>
@@ -100,7 +100,7 @@ export default function PptParaPdfAnimacoesPage() {
         <section className="py-12 bg-[#191B4D]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
           <h2 className="text-2xl font-black text-white mb-3">Converta seu PowerPoint para PDF agora</h2>
           <p className="text-slate-300 mb-6">Envie seu arquivo PPTX e obtenha um PDF perfeito em segundos — gratis, sem cadastro.</p>
-          <Link href="/br/powerpoint-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><Presentation className="h-5 w-5" /> Converter PPT para PDF Agora</Link>
+          <Link href="/br/powerpoint-para-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><Presentation className="h-5 w-5" /> Converter PPT para PDF Agora</Link>
         </div></section>
 
         <section className="py-16 bg-gray-50"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -111,7 +111,7 @@ export default function PptParaPdfAnimacoesPage() {
               { title: "PPT para PDF para imprimir: dicas de layout e qualidade", href: "/br/aprender/ppt-para-pdf-para-imprimir" },
               { title: "PPTX para PDF fontes faltando? Corrija o problema", href: "/br/aprender/pptx-para-pdf-fontes-faltando" },
               { title: "PPT para PDF no iPhone (metodo rapido)", href: "/br/aprender/ppt-para-pdf-no-iphone" },
-            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" /></Link>))}
+            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" /></Link>))}
           </div>
         </div></section>
 

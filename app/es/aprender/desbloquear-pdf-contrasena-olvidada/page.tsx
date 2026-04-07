@@ -91,7 +91,7 @@ export default function DesbloquearPDFContrasenaOlvidadaPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Desbloquear PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Desbloquear PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Olvidaste Tu Contrasena de PDF? Esto Es Lo Que Puedes Hacer</h1>
               <p className="text-xl text-slate-300">
                 Bloqueado fuera de tu propio PDF? No te preocupes. Tus opciones dependen del tipo de contrasena que se configuro. Aqui tienes un desglose claro de lo que puedes (y no puedes) hacer.
@@ -101,17 +101,17 @@ export default function DesbloquearPDFContrasenaOlvidadaPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Unlock className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Tienes un bloqueo solo de permisos? Eliminalo al instante.</p>
             </div>
             <Link
               href="/es/desbloquear-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Desbloquear PDF Ahora <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,16 +130,16 @@ export default function DesbloquearPDFContrasenaOlvidadaPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Contrasena de apertura (contrasena de usuario).</strong> Esta contrasena es necesaria para abrir y ver el PDF. Cuando haces doble clic en el archivo, un cuadro de dialogo pide la contrasena antes de mostrar cualquier contenido. Sin esta contrasena, no puedes ver nada en el documento. Este es el tipo mas dificil de manejar si se olvida.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Contrasena de permisos (contrasena de propietario).</strong> Esta contrasena restringe acciones especificas — imprimir, copiar texto, editar o anotar — pero aun te permite ver el PDF. Puedes abrir el archivo y leerlo, pero ciertas funciones estan bloqueadas. Este tipo es mucho mas facil de manejar si se olvida.</span>
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
-                <strong>Prueba rapida:</strong> Puedes abrir y leer el PDF? Si es asi, tienes una contrasena de permisos — y la herramienta <Link href="/es/desbloquear-pdf" className="text-orange-600 hover:underline">Desbloquear PDF</Link> de PDF.it puede eliminar esas restricciones sin necesitar la contrasena.
+                <strong>Prueba rapida:</strong> Puedes abrir y leer el PDF? Si es asi, tienes una contrasena de permisos — y la herramienta <Link href="/es/desbloquear-pdf" className="text-[#14D8C4] hover:underline">Desbloquear PDF</Link> de PDF.it puede eliminar esas restricciones sin necesitar la contrasena.
               </p>
             </section>
 
@@ -165,7 +165,7 @@ export default function DesbloquearPDFContrasenaOlvidadaPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -185,23 +185,23 @@ export default function DesbloquearPDFContrasenaOlvidadaPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Revisa tu correo electronico.</strong> Busca en tu bandeja de entrada el nombre del archivo PDF o palabras clave como &quot;contrasena&quot; o &quot;protegido.&quot; La contrasena a menudo se envia en un correo separado del documento.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Revisa tu gestor de contrasenas.</strong> Si usas un gestor de contrasenas (1Password, LastPass, Bitwarden), busca entradas relacionadas con el PDF o el remitente.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Prueba contrasenas comunes.</strong> Piensa en contrasenas que usas frecuentemente para documentos. Prueba tu nombre, fecha de nacimiento, nombre de empresa o contrasenas simples como &quot;1234&quot; o &quot;password.&quot;</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Revisa chats y mensajes de texto.</strong> Si alguien te envio el PDF, busca en tu historial de WhatsApp, Slack, Teams o SMS la contrasena.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Contacta al remitente.</strong> Si el PDF vino de un colega, cliente, banco o agencia gubernamental, pideles que reenvien la contrasena o proporcionen una version sin proteccion del documento.</span>
                 </li>
               </ul>
@@ -218,7 +218,7 @@ export default function DesbloquearPDFContrasenaOlvidadaPage() {
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Usa un gestor de contrasenas.</strong> Almacena cada contrasena de PDF en tu gestor de contrasenas con una nota sobre a que archivo pertenece. Este es el metodo mas confiable.</li>
-                <li>&#10003; <strong>Usa restricciones de permisos en lugar de contrasenas de apertura.</strong> Si solo necesitas prevenir la edicion o impresion (no la visualizacion), usa una contrasena de permisos via <Link href="/es/proteger-pdf" className="text-orange-600 hover:underline">Proteger PDF</Link>. Estas son mas faciles de eliminar si las olvidas.</li>
+                <li>&#10003; <strong>Usa restricciones de permisos en lugar de contrasenas de apertura.</strong> Si solo necesitas prevenir la edicion o impresion (no la visualizacion), usa una contrasena de permisos via <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link>. Estas son mas faciles de eliminar si las olvidas.</li>
                 <li>&#10003; <strong>Mantien una copia de respaldo sin proteccion.</strong> Antes de agregar una contrasena a un PDF, guarda una copia sin proteccion en un lugar seguro (carpeta cifrada, almacenamiento en la nube seguro).</li>
                 <li>&#10003; <strong>Usa contrasenas consistentes.</strong> Para documentos no criticos, usa un formato de contrasena consistente que recordaras (pero nunca reutilices contrasenas de cuentas importantes).</li>
                 <li>&#10003; <strong>Documenta tus contrasenas.</strong> Mantien una nota segura (digital o fisica, almacenada de forma segura) listando que archivos tienen contrasenas y cuales son.</li>
@@ -232,21 +232,21 @@ export default function DesbloquearPDFContrasenaOlvidadaPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Desbloquear PDF — Eliminar Restricciones</h3>
                   <p className="text-slate-600">
-                    Usa <Link href="/es/desbloquear-pdf" className="text-orange-600 hover:underline">Desbloquear PDF</Link> para eliminar restricciones de permisos (bloqueos de impresion, copia, edicion) de PDF. Funciona sin la contrasena del propietario para restricciones solo de permisos.
+                    Usa <Link href="/es/desbloquear-pdf" className="text-[#14D8C4] hover:underline">Desbloquear PDF</Link> para eliminar restricciones de permisos (bloqueos de impresion, copia, edicion) de PDF. Funciona sin la contrasena del propietario para restricciones solo de permisos.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Proteger PDF — Agregar Tu Propia Contrasena</h3>
                   <p className="text-slate-600">
-                    Usa <Link href="/es/proteger-pdf" className="text-orange-600 hover:underline">Proteger PDF</Link> para agregar una nueva contrasena a cualquier PDF. Establece contrasenas de apertura, restricciones de permisos o ambas. Elige exactamente que acciones permitir o bloquear.
+                    Usa <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link> para agregar una nueva contrasena a cualquier PDF. Establece contrasenas de apertura, restricciones de permisos o ambas. Elige exactamente que acciones permitir o bloquear.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Aplanar PDF — Fijar Contenido en Su Lugar</h3>
                   <p className="text-slate-600">
-                    Si quieres prevenir la edicion sin usar contrasenas, <Link href="/es/aplanar-pdf" className="text-orange-600 hover:underline">Aplanar PDF</Link> fusiona permanentemente los campos de formulario, anotaciones y capas en la pagina. El contenido se convierte en parte del fondo — no hay contrasena que recordar.
+                    Si quieres prevenir la edicion sin usar contrasenas, <Link href="/es/aplanar-pdf" className="text-[#14D8C4] hover:underline">Aplanar PDF</Link> fusiona permanentemente los campos de formulario, anotaciones y capas en la pagina. El contenido se convierte en parte del fondo — no hay contrasena que recordar.
                   </p>
                 </div>
               </div>
@@ -262,7 +262,7 @@ export default function DesbloquearPDFContrasenaOlvidadaPage() {
             <p className="text-slate-300 mb-6">Si tu PDF tiene restricciones de permisos (no una contrasena de apertura), PDF.it puede eliminarlas al instante — gratis, sin necesidad de registro.</p>
             <Link
               href="/es/desbloquear-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Unlock className="h-5 w-5" /> Desbloquear PDF Ahora
             </Link>
@@ -282,10 +282,10 @@ export default function DesbloquearPDFContrasenaOlvidadaPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

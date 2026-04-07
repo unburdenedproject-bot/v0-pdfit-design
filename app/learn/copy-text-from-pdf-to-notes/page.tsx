@@ -91,7 +91,7 @@ export default function CopyTextFromPdfToNotesPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to TXT</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to TXT</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">How to Copy Text from a PDF into Notes or Docs (Cleanly)</h1>
               <p className="text-xl text-slate-300">
                 You tried Ctrl+C, Ctrl+V and got a mess of broken lines, random spaces, and merged paragraphs. Here's why — and how to get clean text every time.
@@ -101,17 +101,17 @@ export default function CopyTextFromPdfToNotesPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileText className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Need clean text right now? Skip the guide and extract it instantly.</p>
             </div>
             <Link
               href="/pdf-to-txt"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               PDF to TXT Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -133,23 +133,23 @@ export default function CopyTextFromPdfToNotesPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Line breaks where they shouldn't be.</strong> PDFs store each line separately. When you paste, every visual line becomes a hard line break — so a paragraph turns into dozens of short lines.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Columns get merged.</strong> Two-column layouts paste as alternating lines from each column, making the text unreadable.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Headers and footers mix in.</strong> Page numbers, running headers, and footnotes appear in the middle of your text.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Hidden formatting carries over.</strong> When pasting into Google Docs or Word, invisible font styles, sizes, and colors from the PDF create inconsistent formatting.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Special characters break.</strong> Ligatures (fi, fl), smart quotes, and em-dashes often paste as garbled characters or question marks.</span>
                 </li>
               </ul>
@@ -159,7 +159,7 @@ export default function CopyTextFromPdfToNotesPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-6">The Clean Way: Convert PDF to TXT First</h2>
               <p className="text-slate-600 mb-4">
-                Instead of fighting with copy-paste, convert the entire PDF to a clean TXT file using <Link href="/pdf-to-txt" className="text-orange-600 hover:underline">PDF.it's PDF to TXT tool</Link>. This approach gives you properly ordered text without hidden formatting:
+                Instead of fighting with copy-paste, convert the entire PDF to a clean TXT file using <Link href="/pdf-to-txt" className="text-[#14D8C4] hover:underline">PDF.it's PDF to TXT tool</Link>. This approach gives you properly ordered text without hidden formatting:
               </p>
               <div className="space-y-4">
                 {[
@@ -177,7 +177,7 @@ export default function CopyTextFromPdfToNotesPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -220,7 +220,7 @@ export default function CopyTextFromPdfToNotesPage() {
                 </table>
               </div>
               <p className="text-slate-600 mt-4 text-sm">
-                This helps with formatting but won't fix broken line breaks or column mixing. For a truly clean result, use <Link href="/pdf-to-txt" className="text-orange-600 hover:underline">PDF to TXT</Link>.
+                This helps with formatting but won't fix broken line breaks or column mixing. For a truly clean result, use <Link href="/pdf-to-txt" className="text-[#14D8C4] hover:underline">PDF to TXT</Link>.
               </p>
             </section>
 
@@ -234,21 +234,21 @@ export default function CopyTextFromPdfToNotesPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Need to edit the document layout?</h3>
                   <p className="text-slate-600">
-                    Use <Link href="/pdf-to-word" className="text-orange-600 hover:underline">PDF to Word</Link> to get an editable .docx file that preserves tables, images, headings, and formatting. You can then edit it in Word or Google Docs.
+                    Use <Link href="/pdf-to-word" className="text-[#14D8C4] hover:underline">PDF to Word</Link> to get an editable .docx file that preserves tables, images, headings, and formatting. You can then edit it in Word or Google Docs.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Need to extract a table into a spreadsheet?</h3>
                   <p className="text-slate-600">
-                    Use <Link href="/pdf-to-excel" className="text-orange-600 hover:underline">PDF to Excel</Link> to convert tables directly into spreadsheet format with rows and columns intact.
+                    Use <Link href="/pdf-to-excel" className="text-[#14D8C4] hover:underline">PDF to Excel</Link> to convert tables directly into spreadsheet format with rows and columns intact.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Can't select any text at all?</h3>
                   <p className="text-slate-600">
-                    Your PDF is probably a scanned image. Use <Link href="/ocr-scanner" className="text-orange-600 hover:underline">OCR Scanner</Link> to convert the scanned pages into selectable, copyable text.
+                    Your PDF is probably a scanned image. Use <Link href="/ocr-scanner" className="text-[#14D8C4] hover:underline">OCR Scanner</Link> to convert the scanned pages into selectable, copyable text.
                   </p>
                 </div>
               </div>
@@ -261,7 +261,7 @@ export default function CopyTextFromPdfToNotesPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Google Docs</h3>
                   <p className="text-slate-600">
-                    Google Docs can open PDFs directly (File &gt; Open), but the result is often messy. For clean text, convert to TXT first with <Link href="/pdf-to-txt" className="text-orange-600 hover:underline">PDF to TXT</Link>, then paste into a new Doc.
+                    Google Docs can open PDFs directly (File &gt; Open), but the result is often messy. For clean text, convert to TXT first with <Link href="/pdf-to-txt" className="text-[#14D8C4] hover:underline">PDF to TXT</Link>, then paste into a new Doc.
                   </p>
                 </div>
 
@@ -275,7 +275,7 @@ export default function CopyTextFromPdfToNotesPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Microsoft Word</h3>
                   <p className="text-slate-600">
-                    Word can open PDFs directly but often misinterprets layouts. For a cleaner conversion, use <Link href="/pdf-to-word" className="text-orange-600 hover:underline">PDF to Word</Link> which produces better results than Word's built-in converter.
+                    Word can open PDFs directly but often misinterprets layouts. For a cleaner conversion, use <Link href="/pdf-to-word" className="text-[#14D8C4] hover:underline">PDF to Word</Link> which produces better results than Word's built-in converter.
                   </p>
                 </div>
               </div>
@@ -291,7 +291,7 @@ export default function CopyTextFromPdfToNotesPage() {
             <p className="text-slate-300 mb-6">Stop fighting with copy-paste. Convert your PDF to clean text in seconds — free, no signup required.</p>
             <Link
               href="/pdf-to-txt"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileText className="h-5 w-5" /> PDF to TXT Now
             </Link>
@@ -312,10 +312,10 @@ export default function CopyTextFromPdfToNotesPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

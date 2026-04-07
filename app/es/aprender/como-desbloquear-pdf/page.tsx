@@ -91,7 +91,7 @@ export default function ComoDesbloquearPDFPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Desbloquear PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Desbloquear PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Como Desbloquear un PDF en Linea (Quitar Restricciones)</h1>
               <p className="text-xl text-slate-300">
                 Tienes un PDF que no puedes imprimir, copiar o editar? Aqui te explicamos como eliminar las restricciones de PDF en segundos — sin necesidad de software.
@@ -101,17 +101,17 @@ export default function ComoDesbloquearPDFPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Unlock className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Listo para desbloquear? Salta la guia y ve directo a la herramienta.</p>
             </div>
             <Link
               href="/es/desbloquear-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Desbloquear PDF Ahora <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,16 +130,16 @@ export default function ComoDesbloquearPDFPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Contrasena de apertura (contrasena de usuario).</strong> Esta impide que cualquier persona abra el PDF sin ingresar la contrasena correcta. Debes conocer esta contrasena para ver el archivo.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Contrasena de permisos (contrasena de propietario).</strong> Esta te permite ver el PDF pero bloquea acciones especificas como imprimir, copiar texto, editar o anotar. Este es el tipo mas comun de restriccion que la gente necesita eliminar.</span>
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
-                La mayoria de los PDF bloqueados que encuentras tienen restricciones de permisos — puedes abrirlos y leerlos, pero no puedes imprimir o copiar texto. La herramienta <Link href="/es/desbloquear-pdf" className="text-orange-600 hover:underline">Desbloquear PDF</Link> de PDF.it maneja ambos tipos.
+                La mayoria de los PDF bloqueados que encuentras tienen restricciones de permisos — puedes abrirlos y leerlos, pero no puedes imprimir o copiar texto. La herramienta <Link href="/es/desbloquear-pdf" className="text-[#14D8C4] hover:underline">Desbloquear PDF</Link> de PDF.it maneja ambos tipos.
               </p>
             </section>
 
@@ -162,7 +162,7 @@ export default function ComoDesbloquearPDFPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -182,23 +182,23 @@ export default function ComoDesbloquearPDFPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Imprimir para una reunion.</strong> Tu colega envio un informe como PDF restringido y necesitas imprimir copias para una presentacion. Usa PDF.it para eliminar la restriccion de impresion.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Copiar texto para investigacion.</strong> Los trabajos academicos o documentos gubernamentales a veces tienen restricciones de copia. Desbloquea el PDF, luego copia el texto que necesitas para citas.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>Editar un documento que creaste.</strong> Pusiste una contrasena a un PDF hace meses y ahora necesitas hacer cambios. Subelo a la herramienta <Link href="/es/desbloquear-pdf" className="text-orange-600 hover:underline">Desbloquear PDF</Link>, ingresa tu contrasena y obtiene una version editable.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
+                  <span><strong>Editar un documento que creaste.</strong> Pusiste una contrasena a un PDF hace meses y ahora necesitas hacer cambios. Subelo a la herramienta <Link href="/es/desbloquear-pdf" className="text-[#14D8C4] hover:underline">Desbloquear PDF</Link>, ingresa tu contrasena y obtiene una version editable.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Completar formularios.</strong> Algunos formularios PDF estan bloqueados, impidiendo que escribas en los campos. Desbloquear el PDF te permite completar el formulario y guardar tus cambios.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Convertir a otro formato.</strong> Si necesitas convertir un PDF bloqueado a Word o Excel, desbloquealo primero con PDF.it.</span>
                 </li>
               </ul>
@@ -211,9 +211,9 @@ export default function ComoDesbloquearPDFPage() {
                 Una vez que tu PDF esta desbloqueado, tienes control total. Aqui hay algunos pasos utiles:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Comprimir el archivo.</strong> Si el PDF desbloqueado es demasiado grande para email, usa <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> para reducir el tamano del archivo.</li>
-                <li>&#10003; <strong>Agregar nueva proteccion.</strong> Necesitas volver a proteger el archivo con una contrasena diferente? Usa <Link href="/es/proteger-pdf" className="text-orange-600 hover:underline">Proteger PDF</Link> para establecer tus propios permisos.</li>
-                <li>&#10003; <strong>Aplanar el archivo.</strong> Si el PDF tiene campos de formulario o anotaciones, usa <Link href="/es/aplanar-pdf" className="text-orange-600 hover:underline">Aplanar PDF</Link> para fijar esos elementos antes de compartir.</li>
+                <li>&#10003; <strong>Comprimir el archivo.</strong> Si el PDF desbloqueado es demasiado grande para email, usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para reducir el tamano del archivo.</li>
+                <li>&#10003; <strong>Agregar nueva proteccion.</strong> Necesitas volver a proteger el archivo con una contrasena diferente? Usa <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link> para establecer tus propios permisos.</li>
+                <li>&#10003; <strong>Aplanar el archivo.</strong> Si el PDF tiene campos de formulario o anotaciones, usa <Link href="/es/aplanar-pdf" className="text-[#14D8C4] hover:underline">Aplanar PDF</Link> para fijar esos elementos antes de compartir.</li>
               </ul>
             </section>
 
@@ -238,7 +238,7 @@ export default function ComoDesbloquearPDFPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Cuando Usar Proteger en Su Lugar</h3>
                   <p className="text-slate-600">
-                    Si estas creando PDF y quieres controlar quien puede imprimir o editarlos, usa <Link href="/es/proteger-pdf" className="text-orange-600 hover:underline">Proteger PDF</Link> para agregar tu propia contrasena y permisos. Esto te da control total sobre la seguridad de tu documento.
+                    Si estas creando PDF y quieres controlar quien puede imprimir o editarlos, usa <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link> para agregar tu propia contrasena y permisos. Esto te da control total sobre la seguridad de tu documento.
                   </p>
                 </div>
               </div>
@@ -254,7 +254,7 @@ export default function ComoDesbloquearPDFPage() {
             <p className="text-slate-300 mb-6">Elimina las restricciones y obtiene acceso completo a tu documento en segundos — gratis, sin necesidad de registro.</p>
             <Link
               href="/es/desbloquear-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Unlock className="h-5 w-5" /> Desbloquear PDF Ahora
             </Link>
@@ -274,10 +274,10 @@ export default function ComoDesbloquearPDFPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

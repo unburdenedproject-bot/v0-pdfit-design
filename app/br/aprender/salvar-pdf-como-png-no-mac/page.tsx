@@ -43,7 +43,7 @@ export default function SalvarPdfComoPngNoMacPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF para PNG</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF para PNG</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Salvar PDF como PNG no Mac (3 Métodos)</h1>
               <p className="text-xl text-slate-300">
                 Precisa converter um PDF para PNG no Mac? Veja 3 métodos: PDF.it online (mais rápido), Preview nativo e Automator para automação.
@@ -52,15 +52,15 @@ export default function SalvarPdfComoPngNoMacPage() {
           </div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <ImageIcon className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Método mais rápido: converta online em segundos.</p>
             </div>
-            <Link href="/br/pdf-para-png" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
+            <Link href="/br/pdf-para-png" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
               Converter PDF para PNG <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -80,7 +80,7 @@ export default function SalvarPdfComoPngNoMacPage() {
                   { title: "Baixe as imagens", desc: "Baixe as imagens PNG individualmente ou todas como ZIP. Elas vão para a pasta Downloads do Mac." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                   </div>
                 ))}
@@ -121,9 +121,9 @@ export default function SalvarPdfComoPngNoMacPage() {
                 <table className="w-full text-sm border border-gray-200 rounded-xl overflow-hidden">
                   <thead><tr className="bg-slate-900 text-white"><th className="text-left py-3 px-4 font-bold">Método</th><th className="text-left py-3 px-4 font-bold">Melhor Para</th><th className="text-left py-3 px-4 font-bold">Múltiplas Páginas</th></tr></thead>
                   <tbody className="text-slate-700">
-                    <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold text-orange-600">PDF.it Online</td><td className="py-3 px-4">Uso geral, praticidade</td><td className="py-3 px-4 text-green-600 font-semibold">Sim</td></tr>
-                    <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold text-orange-600">Preview</td><td className="py-3 px-4">Conversão rápida de 1 página</td><td className="py-3 px-4 text-red-500">Uma por vez</td></tr>
-                    <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold text-orange-600">Automator</td><td className="py-3 px-4">Conversões frequentes</td><td className="py-3 px-4 text-green-600 font-semibold">Sim</td></tr>
+                    <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold text-[#14D8C4]">PDF.it Online</td><td className="py-3 px-4">Uso geral, praticidade</td><td className="py-3 px-4 text-green-600 font-semibold">Sim</td></tr>
+                    <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold text-[#14D8C4]">Preview</td><td className="py-3 px-4">Conversão rápida de 1 página</td><td className="py-3 px-4 text-red-500">Uma por vez</td></tr>
+                    <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold text-[#14D8C4]">Automator</td><td className="py-3 px-4">Conversões frequentes</td><td className="py-3 px-4 text-green-600 font-semibold">Sim</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -136,7 +136,7 @@ export default function SalvarPdfComoPngNoMacPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Converter PDF para PNG no Mac</h2>
             <p className="text-slate-300 mb-6">O método mais rápido: converta online em segundos, sem instalar nada.</p>
-            <Link href="/br/pdf-para-png" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors">
+            <Link href="/br/pdf-para-png" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors">
               <ImageIcon className="h-5 w-5" /> Converter PDF para PNG
             </Link>
           </div>
@@ -152,9 +152,9 @@ export default function SalvarPdfComoPngNoMacPage() {
                 { title: "Converter PDF para PNG no iPhone", href: "/br/aprender/converter-pdf-para-png-no-iphone" },
                 { title: "PDF para JPG vs PNG: Qual Escolher?", href: "/br/aprender/pdf-para-jpg-vs-png" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

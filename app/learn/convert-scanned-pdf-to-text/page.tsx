@@ -91,7 +91,7 @@ export default function ConvertScannedPdfToTextPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to TXT</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to TXT</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convert Scanned PDF to Text: When You Need OCR</h1>
               <p className="text-xl text-slate-300">
                 Tried converting your PDF to text and got a blank file? Your PDF is probably scanned. Here's the difference between digital and scanned PDFs — and how to get text from both.
@@ -101,17 +101,17 @@ export default function ConvertScannedPdfToTextPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <ScanLine className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Have a scanned PDF? Extract text with OCR right now.</p>
             </div>
             <Link
               href="/ocr-scanner"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               OCR Scanner <ArrowRight className="h-4 w-4" />
             </Link>
@@ -167,7 +167,7 @@ export default function ConvertScannedPdfToTextPage() {
                 </table>
               </div>
               <p className="text-slate-600 mt-4">
-                <strong>Quick test:</strong> Open your PDF and try to highlight a single word. If individual words highlight, it's digital — use <Link href="/pdf-to-txt" className="text-orange-600 hover:underline">PDF to TXT</Link>. If the whole page selects as one block, or nothing highlights, it's scanned — you need OCR.
+                <strong>Quick test:</strong> Open your PDF and try to highlight a single word. If individual words highlight, it's digital — use <Link href="/pdf-to-txt" className="text-[#14D8C4] hover:underline">PDF to TXT</Link>. If the whole page selects as one block, or nothing highlights, it's scanned — you need OCR.
               </p>
             </section>
 
@@ -175,7 +175,7 @@ export default function ConvertScannedPdfToTextPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Why Standard PDF to TXT Fails on Scanned Documents</h2>
               <p className="text-slate-600 mb-4">
-                Standard text extraction tools like <Link href="/pdf-to-txt" className="text-orange-600 hover:underline">PDF to TXT</Link> read the text data embedded in a PDF file. They look for character codes, fonts, and positioning data.
+                Standard text extraction tools like <Link href="/pdf-to-txt" className="text-[#14D8C4] hover:underline">PDF to TXT</Link> read the text data embedded in a PDF file. They look for character codes, fonts, and positioning data.
               </p>
               <p className="text-slate-600 mb-4">
                 In a scanned PDF, there is no text data — only image data. Each page is a JPEG or PNG-like image of the original paper. The tool finds no characters to extract, so it outputs a blank file or just whitespace.
@@ -222,7 +222,7 @@ export default function ConvertScannedPdfToTextPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -242,23 +242,23 @@ export default function ConvertScannedPdfToTextPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Scan at 300 DPI or higher.</strong> Low-resolution scans (150 DPI or less) produce blurry text that OCR struggles to read. 300 DPI is the sweet spot for text documents.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
-                  <span><strong>Use good lighting for phone scans.</strong> Shadows, uneven lighting, and glare reduce accuracy. If scanning with your phone, use <Link href="/phone-scan-cleanup" className="text-orange-600 hover:underline">Phone Scan Cleanup</Link> to enhance the image before OCR.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
+                  <span><strong>Use good lighting for phone scans.</strong> Shadows, uneven lighting, and glare reduce accuracy. If scanning with your phone, use <Link href="/phone-scan-cleanup" className="text-[#14D8C4] hover:underline">Phone Scan Cleanup</Link> to enhance the image before OCR.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Keep the page flat and straight.</strong> Curved pages (from book spines) and tilted scans reduce accuracy. Flatten the document as much as possible.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Scan text documents in black and white.</strong> For text-only documents, grayscale or black-and-white mode produces sharper text with better contrast for OCR.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Clean up before OCR.</strong> Remove coffee stains, fold marks, and background noise if possible. Cleaner input produces more accurate output.</span>
                 </li>
               </ul>
@@ -304,7 +304,7 @@ export default function ConvertScannedPdfToTextPage() {
             <p className="text-slate-300 mb-6">Upload your scanned document and get editable text with OCR — fast, accurate, and online.</p>
             <Link
               href="/ocr-scanner"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <ScanLine className="h-5 w-5" /> OCR Scanner
             </Link>
@@ -325,10 +325,10 @@ export default function ConvertScannedPdfToTextPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

@@ -91,7 +91,7 @@ export default function GuardarPdfComoPngEnMacPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF a PNG</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF a PNG</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Guardar PDF como PNG en Mac (Métodos Rápidos + Mejores Resultados)</h1>
               <p className="text-xl text-slate-300">
                 ¿Necesitas convertir tu PDF en imágenes PNG en un Mac? Hay varias formas — desde la app Vista Previa integrada hasta herramientas online. Aquí te mostramos cómo obtener los resultados más nítidos con el menor esfuerzo.
@@ -101,17 +101,17 @@ export default function GuardarPdfComoPngEnMacPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Image className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">¿Quieres todas las páginas convertidas a la vez? Usa nuestro convertidor online.</p>
             </div>
             <Link
               href="/es/pdf-a-png"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Convertir PDF a PNG <ArrowRight className="h-4 w-4" />
             </Link>
@@ -143,7 +143,7 @@ export default function GuardarPdfComoPngEnMacPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -181,7 +181,7 @@ export default function GuardarPdfComoPngEnMacPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -208,11 +208,11 @@ export default function GuardarPdfComoPngEnMacPage() {
                     <tr className="border-t border-gray-200">
                       <td className="py-3 px-4 font-semibold">Exportación multi-página</td>
                       <td className="py-3 px-4">Una página a la vez</td>
-                      <td className="py-3 px-4 text-orange-600 font-semibold">Todas las páginas a la vez</td>
+                      <td className="py-3 px-4 text-[#14D8C4] font-semibold">Todas las páginas a la vez</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
                       <td className="py-3 px-4 font-semibold">Instalación</td>
-                      <td className="py-3 px-4 text-orange-600 font-semibold">Integrada</td>
+                      <td className="py-3 px-4 text-[#14D8C4] font-semibold">Integrada</td>
                       <td className="py-3 px-4">Ninguna (funciona en navegador)</td>
                     </tr>
                     <tr className="border-t border-gray-200">
@@ -223,12 +223,12 @@ export default function GuardarPdfComoPngEnMacPage() {
                     <tr className="border-t border-gray-200 bg-gray-50">
                       <td className="py-3 px-4 font-semibold">Conversión por lotes</td>
                       <td className="py-3 px-4">No</td>
-                      <td className="py-3 px-4 text-orange-600 font-semibold">Sí (Pro)</td>
+                      <td className="py-3 px-4 text-[#14D8C4] font-semibold">Sí (Pro)</td>
                     </tr>
                     <tr className="border-t border-gray-200">
                       <td className="py-3 px-4 font-semibold">Descarga ZIP</td>
                       <td className="py-3 px-4">No</td>
-                      <td className="py-3 px-4 text-orange-600 font-semibold">Sí</td>
+                      <td className="py-3 px-4 text-[#14D8C4] font-semibold">Sí</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
                       <td className="py-3 px-4 font-semibold">Mejor para</td>
@@ -251,7 +251,7 @@ export default function GuardarPdfComoPngEnMacPage() {
                 <li>- <strong>300 DPI:</strong> Ideal para presentaciones, impresión y pantallas Retina. Esto coincide con la resolución de la mayoría de flujos de trabajo profesionales.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Si tus archivos PNG terminan siendo más grandes de lo que te gustaría con alto DPI, puedes <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">comprimir el PDF original</Link> primero para reducir la cantidad de datos de imagen incrustados.
+                Si tus archivos PNG terminan siendo más grandes de lo que te gustaría con alto DPI, puedes <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">comprimir el PDF original</Link> primero para reducir la cantidad de datos de imagen incrustados.
               </p>
             </section>
 
@@ -270,7 +270,7 @@ export default function GuardarPdfComoPngEnMacPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Divide primero, luego convierte</h3>
                   <p className="text-slate-600">
-                    Para PDFs muy grandes, considera <Link href="/es/dividir-pdf" className="text-orange-600 hover:underline">dividir tu PDF</Link> en secciones más pequeñas primero, luego convierte cada sección a PNG. Esto te da más control sobre qué páginas exportas.
+                    Para PDFs muy grandes, considera <Link href="/es/dividir-pdf" className="text-[#14D8C4] hover:underline">dividir tu PDF</Link> en secciones más pequeñas primero, luego convierte cada sección a PNG. Esto te da más control sobre qué páginas exportas.
                   </p>
                 </div>
               </div>
@@ -279,10 +279,10 @@ export default function GuardarPdfComoPngEnMacPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">¿Deberías Guardar como PNG o JPG en Mac?</h2>
               <p className="text-slate-600 mb-4">
-                Vista Previa de Mac te permite exportar tanto como PNG como JPG. La elección depende de tu contenido. PNG es mejor para texto, gráficos y cualquier cosa con bordes nítidos. JPG es mejor para PDFs con muchas fotos donde el tamaño del archivo importa. Para un desglose detallado, ve nuestra <Link href="/es/aprender/pdf-a-jpg-vs-png" className="text-orange-600 hover:underline">guía de comparación JPG vs PNG</Link>.
+                Vista Previa de Mac te permite exportar tanto como PNG como JPG. La elección depende de tu contenido. PNG es mejor para texto, gráficos y cualquier cosa con bordes nítidos. JPG es mejor para PDFs con muchas fotos donde el tamaño del archivo importa. Para un desglose detallado, ve nuestra <Link href="/es/aprender/pdf-a-jpg-vs-png" className="text-[#14D8C4] hover:underline">guía de comparación JPG vs PNG</Link>.
               </p>
               <p className="text-slate-600">
-                Si decides que JPG es mejor para ti, usa nuestra herramienta <Link href="/es/pdf-a-jpg" className="text-orange-600 hover:underline">PDF a JPG</Link> para conversión rápida de múltiples páginas.
+                Si decides que JPG es mejor para ti, usa nuestra herramienta <Link href="/es/pdf-a-jpg" className="text-[#14D8C4] hover:underline">PDF a JPG</Link> para conversión rápida de múltiples páginas.
               </p>
             </section>
 
@@ -296,7 +296,7 @@ export default function GuardarPdfComoPngEnMacPage() {
             <p className="text-slate-300 mb-6">Sin más exportar una página a la vez. Sube tu PDF y obtén cada página como un PNG nítido en segundos.</p>
             <Link
               href="/es/pdf-a-png"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Image className="h-5 w-5" /> Convertir PDF a PNG Ahora
             </Link>
@@ -317,10 +317,10 @@ export default function GuardarPdfComoPngEnMacPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

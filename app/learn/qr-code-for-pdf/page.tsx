@@ -91,7 +91,7 @@ export default function QRCodeForPDFPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / QR Code</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / QR Code</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Create a QR Code That Links to a PDF Document</h1>
               <p className="text-xl text-slate-300">
                 Need to share a PDF with a simple scan? Whether it is a brochure, manual, menu, or flyer — here is how to create a QR code that opens your PDF instantly on any phone.
@@ -101,17 +101,17 @@ export default function QRCodeForPDFPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <QrCode className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Have your PDF URL ready? Generate a QR code now.</p>
             </div>
             <Link
               href="/qr-code"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Create QR Code <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,23 +130,23 @@ export default function QRCodeForPDFPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Product manuals.</strong> Print a QR code on the product packaging that links to the full PDF manual. Customers get the latest version without you shipping thick booklets.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Event brochures.</strong> Conference organizers print QR codes on signs that link to the full event schedule, speaker bios, or session handouts as PDFs.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>Restaurant menus.</strong> Link to a <Link href="/learn/qr-code-for-restaurant-menu" className="text-orange-600 hover:underline">PDF menu</Link> from a table QR code. Update the PDF anytime without reprinting the code.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
+                  <span><strong>Restaurant menus.</strong> Link to a <Link href="/learn/qr-code-for-restaurant-menu" className="text-[#14D8C4] hover:underline">PDF menu</Link> from a table QR code. Update the PDF anytime without reprinting the code.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Real estate flyers.</strong> Print a QR code on a property listing flyer that opens the full property details, floor plans, and photos as a PDF.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Educational materials.</strong> Teachers and professors print QR codes on worksheets that link to supplementary PDF readings or answer keys.</span>
                 </li>
               </ul>
@@ -171,7 +171,7 @@ export default function QRCodeForPDFPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -215,11 +215,11 @@ export default function QRCodeForPDFPage() {
                 People scanning QR codes are on their phones, often on mobile data. A 50MB PDF will take forever to load and most people will give up. Here is how to keep your PDF lean:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Compress first.</strong> Use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> to reduce file size. Most PDFs can be compressed by 50-80% without visible quality loss.</li>
-                <li>&#10003; <strong>Target a specific size.</strong> Use <Link href="/compress-pdf-to-5mb" className="text-orange-600 hover:underline">Compress to 5MB</Link> or <Link href="/compress-pdf-to-2mb" className="text-orange-600 hover:underline">Compress to 2MB</Link> for guaranteed size limits.</li>
-                <li>&#10003; <strong>Flatten layers.</strong> If your PDF has form fields, annotations, or transparency layers, <Link href="/flatten-pdf" className="text-orange-600 hover:underline">flatten it</Link> to remove unnecessary data.</li>
+                <li>&#10003; <strong>Compress first.</strong> Use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> to reduce file size. Most PDFs can be compressed by 50-80% without visible quality loss.</li>
+                <li>&#10003; <strong>Target a specific size.</strong> Use <Link href="/compress-pdf-to-5mb" className="text-[#14D8C4] hover:underline">Compress to 5MB</Link> or <Link href="/compress-pdf-to-2mb" className="text-[#14D8C4] hover:underline">Compress to 2MB</Link> for guaranteed size limits.</li>
+                <li>&#10003; <strong>Flatten layers.</strong> If your PDF has form fields, annotations, or transparency layers, <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">flatten it</Link> to remove unnecessary data.</li>
                 <li>&#10003; <strong>Reduce image resolution.</strong> PDFs with high-resolution images are the biggest culprits. Compression handles this automatically, but you can also reduce image quality manually before creating the PDF.</li>
-                <li>&#10003; <strong>Split if necessary.</strong> If your PDF is very long, consider using <Link href="/split-pdf" className="text-orange-600 hover:underline">Split PDF</Link> to break it into sections and link to only the relevant part.</li>
+                <li>&#10003; <strong>Split if necessary.</strong> If your PDF is very long, consider using <Link href="/split-pdf" className="text-[#14D8C4] hover:underline">Split PDF</Link> to break it into sections and link to only the relevant part.</li>
               </ul>
             </section>
 
@@ -246,7 +246,7 @@ export default function QRCodeForPDFPage() {
             <p className="text-slate-300 mb-6">Link any PDF document to a scannable QR code in seconds. Pro feature — upgrade for unlimited QR codes and all PDF tools.</p>
             <Link
               href="/qr-code"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <QrCode className="h-5 w-5" /> Create PDF QR Code
             </Link>
@@ -269,10 +269,10 @@ export default function QRCodeForPDFPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

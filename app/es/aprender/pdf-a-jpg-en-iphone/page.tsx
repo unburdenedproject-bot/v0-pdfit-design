@@ -33,14 +33,14 @@ export default function PdfAJpgEnIphonePage() {
       <HeaderEs />
       <main>
         <section className="bg-[#191B4D] text-white py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-          <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF a JPG</p>
+          <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF a JPG</p>
           <h1 className="text-4xl lg:text-5xl font-black mb-4">Convertir PDF a JPG en iPhone (Sin Apps)</h1>
           <p className="text-xl text-slate-300">Tu iPhone no tiene una forma integrada de convertir PDFs a imagenes. Aqui te explicamos como hacerlo en Safari en menos de un minuto — sin descargas de la App Store.</p>
         </div></div></section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><ImageIcon className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Estas en tu iPhone ahora? Abre la herramienta directamente.</p></div>
-          <Link href="/es/pdf-a-jpg" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Herramienta PDF a JPG <ArrowRight className="h-4 w-4" /></Link>
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><ImageIcon className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Estas en tu iPhone ahora? Abre la herramienta directamente.</p></div>
+          <Link href="/es/pdf-a-jpg" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Herramienta PDF a JPG <ArrowRight className="h-4 w-4" /></Link>
         </div></section>
 
         <article className="py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -56,17 +56,17 @@ export default function PdfAJpgEnIphonePage() {
                 { title: "Abre Safari y ve a PDF.it", desc: "Abre Safari en tu iPhone y navega a pdf.it.com/pdf-to-jpg. La herramienta esta completamente optimizada para moviles y funciona en cualquier iPhone con iOS 14 o posterior." },
                 { title: "Sube tu PDF", desc: "Toca el area de carga. Tu iPhone mostrara opciones para elegir desde: Archivos, iCloud Drive, Fotos (para PDFs escaneados) o Explorar. Busca y selecciona el PDF que quieres convertir." },
                 { title: "Convierte y descarga tus JPGs", desc: "Toca el boton Convertir. Una vez que termine el procesamiento, toca Descargar. Las imagenes JPG se guardan en tu carpeta Descargas en la app Archivos. Para PDFs de varias paginas, obtendras un archivo ZIP con todas las imagenes." },
-              ].map((step, i) => (<div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200"><div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div><div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div></div>))}
+              ].map((step, i) => (<div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200"><div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div><div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div></div>))}
             </div>
           </section>
           <section className="mb-12">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Como Guardar el JPG en Tu App de Fotos</h2>
             <p className="text-slate-600 mb-4">Por defecto, Safari guarda las descargas en la app Archivos. Si quieres el JPG en tu biblioteca de Fotos (carrete), sigue estos pasos adicionales:</p>
             <ul className="space-y-3 text-slate-700">
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span>Abre la app <strong>Archivos</strong> en tu iPhone.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span>Ve a <strong>En Mi iPhone &gt; Descargas</strong> (o revisa iCloud Drive &gt; Descargas).</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span>Busca el archivo JPG y <strong>manten presionado</strong>.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span>Toca <strong>Compartir</strong>, luego toca <strong>Guardar Imagen</strong>. El JPG ahora esta en tu app de Fotos.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span>Abre la app <strong>Archivos</strong> en tu iPhone.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span>Ve a <strong>En Mi iPhone &gt; Descargas</strong> (o revisa iCloud Drive &gt; Descargas).</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">3.</span><span>Busca el archivo JPG y <strong>manten presionado</strong>.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">4.</span><span>Toca <strong>Compartir</strong>, luego toca <strong>Guardar Imagen</strong>. El JPG ahora esta en tu app de Fotos.</span></li>
             </ul>
           </section>
           <section className="mb-12">
@@ -83,9 +83,9 @@ export default function PdfAJpgEnIphonePage() {
             <ul className="space-y-2 text-slate-700">
               <li>- <strong>Usa Wi-Fi</strong> para PDFs mas grandes. Convertir un PDF de 20 paginas sube el archivo y descarga multiples JPGs — Wi-Fi es mas rapido y no consume tus datos.</li>
               <li>- <strong>Usa Safari, no Chrome.</strong> Safari maneja las descargas mejor en iOS. Chrome a veces tiene problemas al guardar archivos en iPhones.</li>
-              <li>- <strong>Solo necesitas una pagina?</strong> Si solo necesitas una pagina como JPG, no tienes que convertir todo el PDF. Consulta nuestra guia: <Link href="/es/aprender/guardar-pagina-pdf-como-jpg" className="text-orange-600 hover:underline">Guardar Una Pagina PDF como JPG</Link>.</li>
-              <li>- <strong>Elige PNG para documentos de texto.</strong> Si el PDF es mayormente texto y necesitas que se vea nitido, usa <Link href="/es/pdf-a-png" className="text-orange-600 hover:underline">PDF a PNG</Link> en su lugar.</li>
-              <li>- <strong>Comprime primero si el PDF es enorme.</strong> Si tu PDF supera los 25MB, <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">comprimelo primero</Link> para que este bajo el limite.</li>
+              <li>- <strong>Solo necesitas una pagina?</strong> Si solo necesitas una pagina como JPG, no tienes que convertir todo el PDF. Consulta nuestra guia: <Link href="/es/aprender/guardar-pagina-pdf-como-jpg" className="text-[#14D8C4] hover:underline">Guardar Una Pagina PDF como JPG</Link>.</li>
+              <li>- <strong>Elige PNG para documentos de texto.</strong> Si el PDF es mayormente texto y necesitas que se vea nitido, usa <Link href="/es/pdf-a-png" className="text-[#14D8C4] hover:underline">PDF a PNG</Link> en su lugar.</li>
+              <li>- <strong>Comprime primero si el PDF es enorme.</strong> Si tu PDF supera los 25MB, <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">comprimelo primero</Link> para que este bajo el limite.</li>
             </ul>
           </section>
         </div></article>
@@ -93,7 +93,7 @@ export default function PdfAJpgEnIphonePage() {
         <section className="py-12 bg-[#191B4D]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
           <h2 className="text-2xl font-black text-white mb-3">Convierte PDF a JPG en Tu iPhone</h2>
           <p className="text-slate-300 mb-6">Abre la herramienta en Safari, sube tu PDF y obten imagenes JPG en segundos. Sin app necesaria.</p>
-          <Link href="/es/pdf-a-jpg" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><ImageIcon className="h-5 w-5" /> Herramienta PDF a JPG</Link>
+          <Link href="/es/pdf-a-jpg" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><ImageIcon className="h-5 w-5" /> Herramienta PDF a JPG</Link>
         </div></section>
 
         <section className="py-16 bg-gray-50"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -104,7 +104,7 @@ export default function PdfAJpgEnIphonePage() {
               { title: "Como Guardar una Pagina de PDF como JPG", href: "/es/aprender/guardar-pagina-pdf-como-jpg" },
               { title: "Convertir PDF a JPG para PowerPoint (Mejores Configuraciones)", href: "/es/aprender/pdf-a-jpg-para-powerpoint" },
               { title: "Por Que Tu PDF a JPG Se Ve Borroso (Y Como Solucionarlo)", href: "/es/aprender/por-que-pdf-a-jpg-se-ve-borroso" },
-            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" /></Link>))}
+            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" /></Link>))}
           </div>
         </div></section>
 

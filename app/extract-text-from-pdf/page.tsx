@@ -62,7 +62,7 @@ export default function ExtractTextFromPDFPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Type className="h-10 w-10 text-white" />
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Extract Text from PDF</h1>
@@ -70,9 +70,9 @@ export default function ExtractTextFromPDFPage() {
                 Pull plain text from any PDF for copying, editing, and reuse. Perfect for research, data entry, and repurposing content — instant and browser-based.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Instant Text Extraction</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-orange-500" /><span>Files Deleted After Session</span></div>
-                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-orange-500" /><span>No Login Required</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Instant Text Extraction</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Files Deleted After Session</span></div>
+                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>No Login Required</span></div>
               </div>
             </div>
           </div>
@@ -138,7 +138,7 @@ export default function ExtractTextFromPDFPage() {
                 "Download the plain text file or copy the text directly.",
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                     {i + 1}
                   </div>
                   <p className="text-slate-700 pt-1">{step}</p>

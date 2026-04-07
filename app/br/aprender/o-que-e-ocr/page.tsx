@@ -46,20 +46,20 @@ export default function OQueEOCRPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / OCR PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / OCR PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">O Que E OCR? (Reconhecimento Optico de Caracteres Explicado)</h1>
               <p className="text-xl text-slate-300">OCR e a tecnologia que converte documentos digitalizados e imagens em texto que voce pode pesquisar, copiar e editar. Aqui esta tudo o que voce precisa saber sobre como funciona e por que e importante.</p>
             </div>
           </div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><ScanText className="h-5 w-5 text-white" /></div>
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><ScanText className="h-5 w-5 text-white" /></div>
               <p className="text-slate-700 font-semibold">Quer testar o OCR agora? Use o Scanner OCR do PDF.it (Pro).</p>
             </div>
-            <Link href="/br/scanner-ocr" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Scanner OCR <ArrowRight className="h-4 w-4" /></Link>
+            <Link href="/br/scanner-ocr" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Scanner OCR <ArrowRight className="h-4 w-4" /></Link>
           </div>
         </section>
 
@@ -70,7 +70,7 @@ export default function OQueEOCRPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">O Que o OCR Realmente Faz?</h2>
               <p className="text-slate-600 mb-4">OCR significa Reconhecimento Optico de Caracteres. E uma tecnologia que analisa uma imagem — uma pagina digitalizada, uma fotografia de um documento ou um PDF feito a partir de um scanner — e identifica as letras, numeros e simbolos nela.</p>
               <p className="text-slate-600 mb-4">Sem OCR, um PDF digitalizado e apenas uma foto. Voce nao pode buscar uma palavra, copiar um paragrafo ou selecionar nenhum texto. O arquivo parece um documento, mas para o computador e apenas uma imagem plana — nao diferente de uma fotografia de um por do sol.</p>
-              <p className="text-slate-600">Apos o processamento OCR, uma camada de texto invisivel e colocada sobre a imagem. Agora voce pode pressionar Ctrl+F para encontrar palavras, copiar texto para outro documento ou extrair o conteudo em um <Link href="/br/pdf-para-texto" className="text-orange-600 hover:underline">arquivo de texto simples</Link>.</p>
+              <p className="text-slate-600">Apos o processamento OCR, uma camada de texto invisivel e colocada sobre a imagem. Agora voce pode pressionar Ctrl+F para encontrar palavras, copiar texto para outro documento ou extrair o conteudo em um <Link href="/br/pdf-para-texto" className="text-[#14D8C4] hover:underline">arquivo de texto simples</Link>.</p>
             </section>
 
             <section className="mb-12">
@@ -82,7 +82,7 @@ export default function OQueEOCRPage() {
                   { title: "Reconstrucao do texto", desc: "Os caracteres reconhecidos sao remontados em palavras, frases e paragrafos. O motor considera o contexto — por exemplo, 'tbe' provavelmente e 'the' — para corrigir caracteres ambiguos e produzir uma saida mais limpa." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                   </div>
                 ))}
@@ -93,11 +93,11 @@ export default function OQueEOCRPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que o OCR E Importante para PDFs</h2>
               <p className="text-slate-600 mb-4">PDFs sao o formato mais comum para documentos digitalizados. Toda vez que voce digitaliza um contrato, recibo, relatorio antigo ou documento de identidade, o resultado e quase sempre um PDF. Mas esses PDFs digitalizados sao apenas imagens. Veja por que e importante executar OCR neles:</p>
               <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Capacidade de pesquisa.</strong> Sem OCR, voce nao pode encontrar uma palavra especifica em um contrato digitalizado de 50 paginas. Com OCR, pressione Ctrl+F e encontre instantaneamente.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Copiar e colar.</strong> Precisa de uma citacao, um numero ou um paragrafo de um documento digitalizado? OCR permite selecionar e copiar texto em vez de redigitar manualmente.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Acessibilidade.</strong> Leitores de tela nao conseguem ler PDFs so de imagem. OCR torna seus documentos acessiveis para pessoas que usam tecnologia assistiva.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Arquivamento e compliance.</strong> Muitas organizacoes exigem PDFs pesquisaveis para conformidade legal e regulatoria. OCR transforma digitalizacoes arquivadas em documentos indexados corretamente.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">5.</span><span><strong>Conversao de formato.</strong> Uma vez que um PDF tem uma camada de texto, voce pode converte-lo para <Link href="/br/pdf-para-texto" className="text-orange-600 hover:underline">texto simples</Link> com resultados muito melhores.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span><strong>Capacidade de pesquisa.</strong> Sem OCR, voce nao pode encontrar uma palavra especifica em um contrato digitalizado de 50 paginas. Com OCR, pressione Ctrl+F e encontre instantaneamente.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span><strong>Copiar e colar.</strong> Precisa de uma citacao, um numero ou um paragrafo de um documento digitalizado? OCR permite selecionar e copiar texto em vez de redigitar manualmente.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">3.</span><span><strong>Acessibilidade.</strong> Leitores de tela nao conseguem ler PDFs so de imagem. OCR torna seus documentos acessiveis para pessoas que usam tecnologia assistiva.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">4.</span><span><strong>Arquivamento e compliance.</strong> Muitas organizacoes exigem PDFs pesquisaveis para conformidade legal e regulatoria. OCR transforma digitalizacoes arquivadas em documentos indexados corretamente.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">5.</span><span><strong>Conversao de formato.</strong> Uma vez que um PDF tem uma camada de texto, voce pode converte-lo para <Link href="/br/pdf-para-texto" className="text-[#14D8C4] hover:underline">texto simples</Link> com resultados muito melhores.</span></li>
               </ul>
             </section>
 
@@ -105,23 +105,23 @@ export default function OQueEOCRPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">Situacoes Comuns Onde Voce Precisa de OCR</h2>
               <div className="space-y-6">
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">Contratos e Documentos Legais Digitalizados</h3><p className="text-slate-600">Escritorios de advocacia e empresas digitalizam contratos constantemente. OCR torna essas digitalizacoes pesquisaveis para que voce possa encontrar clausulas, datas ou valores especificos sem ler cada pagina manualmente.</p></div>
-                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Recibos e Registros Financeiros</h3><p className="text-slate-600">Digitalizando recibos para relatorios de despesas ou registros fiscais? OCR permite extrair valores e datas. Se tambem precisa limpar digitalizacoes feitas com celular, experimente a ferramenta <Link href="/br/limpeza-digitalizacao" className="text-orange-600 hover:underline">Limpeza de Digitalizacao</Link> primeiro.</p></div>
+                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Recibos e Registros Financeiros</h3><p className="text-slate-600">Digitalizando recibos para relatorios de despesas ou registros fiscais? OCR permite extrair valores e datas. Se tambem precisa limpar digitalizacoes feitas com celular, experimente a ferramenta <Link href="/br/limpeza-digitalizacao" className="text-[#14D8C4] hover:underline">Limpeza de Digitalizacao</Link> primeiro.</p></div>
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">Livros Antigos, Documentos e Arquivos</h3><p className="text-slate-600">Bibliotecas e pesquisadores digitalizam documentos antigos regularmente. OCR converte essas digitalizacoes em arquivos de texto pesquisaveis. Para melhores resultados, digitalize a 300 DPI ou mais e garanta iluminacao uniforme.</p></div>
-                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Fotos de Quadros Brancos ou Notas</h3><p className="text-slate-600">Tirou uma foto de notas de reuniao em um quadro branco? Converta a imagem para PDF e execute OCR para extrair o texto. Tenha em mente que o <Link href="/br/aprender/ocr-texto-manuscrito" className="text-orange-600 hover:underline">texto manuscrito</Link> e mais dificil de ler com precisao para o OCR.</p></div>
+                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Fotos de Quadros Brancos ou Notas</h3><p className="text-slate-600">Tirou uma foto de notas de reuniao em um quadro branco? Converta a imagem para PDF e execute OCR para extrair o texto. Tenha em mente que o <Link href="/br/aprender/ocr-texto-manuscrito" className="text-[#14D8C4] hover:underline">texto manuscrito</Link> e mais dificil de ler com precisao para o OCR.</p></div>
               </div>
             </section>
 
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Como Executar OCR no PDF.it</h2>
-              <p className="text-slate-600 mb-4">O <Link href="/br/scanner-ocr" className="text-orange-600 hover:underline">Scanner OCR</Link> do PDF.it e uma funcao Pro que converte PDFs digitalizados em documentos pesquisaveis. Veja o que voce recebe:</p>
+              <p className="text-slate-600 mb-4">O <Link href="/br/scanner-ocr" className="text-[#14D8C4] hover:underline">Scanner OCR</Link> do PDF.it e uma funcao Pro que converte PDFs digitalizados em documentos pesquisaveis. Veja o que voce recebe:</p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; Faca upload de qualquer PDF digitalizado — a ferramenta detecta paginas somente de imagem automaticamente.</li>
                 <li>&#10003; Selecione o idioma do documento para melhor precisao de reconhecimento.</li>
                 <li>&#10003; Baixe um PDF pesquisavel com uma camada de texto invisivel sobre a digitalizacao original.</li>
                 <li>&#10003; Processe arquivos ate 200MB com uma assinatura Pro ($3.99/mes).</li>
-                <li>&#10003; Apos o OCR, use <Link href="/br/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> se o arquivo estiver grande demais para e-mail ou portais de upload.</li>
+                <li>&#10003; Apos o OCR, use <Link href="/br/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> se o arquivo estiver grande demais para e-mail ou portais de upload.</li>
               </ul>
-              <p className="text-slate-600 mt-4">O Scanner OCR esta disponivel nos planos <Link href="/br/precos" className="text-orange-600 hover:underline">Pro e Business</Link>. Usuarios gratuitos podem explorar todas as outras ferramentas do PDF.it com generosos limites diarios.</p>
+              <p className="text-slate-600 mt-4">O Scanner OCR esta disponivel nos planos <Link href="/br/precos" className="text-[#14D8C4] hover:underline">Pro e Business</Link>. Usuarios gratuitos podem explorar todas as outras ferramentas do PDF.it com generosos limites diarios.</p>
             </section>
           </div>
         </article>
@@ -130,7 +130,7 @@ export default function OQueEOCRPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Pronto para Tornar Seus PDFs Pesquisaveis?</h2>
             <p className="text-slate-300 mb-6">Faca upload de um PDF digitalizado e deixe o Scanner OCR extrair cada palavra — para que voce possa pesquisar, copiar e editar seus documentos.</p>
-            <Link href="/br/scanner-ocr" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><ScanText className="h-5 w-5" /> Testar Scanner OCR (Pro)</Link>
+            <Link href="/br/scanner-ocr" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><ScanText className="h-5 w-5" /> Testar Scanner OCR (Pro)</Link>
           </div>
         </section>
 
@@ -145,9 +145,9 @@ export default function OQueEOCRPage() {
                 { title: "OCR de PDF no Celular (iPhone e Android)", href: "/br/aprender/ocr-pdf-no-celular" },
                 { title: "OCR para Texto Manuscrito", href: "/br/aprender/ocr-texto-manuscrito" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

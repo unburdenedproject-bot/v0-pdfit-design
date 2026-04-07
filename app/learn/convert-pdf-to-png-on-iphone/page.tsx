@@ -91,7 +91,7 @@ export default function ConvertPDFtoPNGoniPhonePage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to PNG</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to PNG</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convert PDF to PNG on iPhone (Fast, High-Quality Export)</h1>
               <p className="text-xl text-slate-300">
                 Need to turn a PDF into images on your iPhone? No app required. Just open your browser, convert, and save sharp PNG images directly to your phone.
@@ -101,17 +101,17 @@ export default function ConvertPDFtoPNGoniPhonePage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Image className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">On your iPhone now? Open this tool in Safari to convert.</p>
             </div>
             <Link
               href="/pdf-to-png"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Convert PDF to PNG <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function ConvertPDFtoPNGoniPhonePage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Sharing on messaging apps.</strong> WhatsApp, iMessage, and Instagram don't handle PDFs well. A PNG image is universally viewable — the recipient sees it instantly without opening a separate viewer.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Posting on social media.</strong> Instagram, Twitter, and Facebook accept images but not PDFs. Converting to PNG lets you share document content as a post or story.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Quick reference.</strong> Saving a page as an image in your Photos app makes it easier to find later — no digging through the Files app for PDF documents.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Presentations and reports.</strong> If you need to include a PDF page in a Keynote presentation or email, a PNG image drops in cleanly with no formatting issues.</span>
                 </li>
               </ul>
@@ -171,7 +171,7 @@ export default function ConvertPDFtoPNGoniPhonePage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -214,7 +214,7 @@ export default function ConvertPDFtoPNGoniPhonePage() {
                 </table>
               </div>
               <p className="text-slate-500 text-sm mt-3">
-                For a detailed comparison, read our guide on <Link href="/learn/pdf-to-jpg-vs-png" className="text-orange-600 hover:underline">PDF to JPG vs PNG</Link>. If you need JPG, use our <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">PDF to JPG</Link> tool.
+                For a detailed comparison, read our guide on <Link href="/learn/pdf-to-jpg-vs-png" className="text-[#14D8C4] hover:underline">PDF to JPG vs PNG</Link>. If you need JPG, use our <Link href="/pdf-to-jpg" className="text-[#14D8C4] hover:underline">PDF to JPG</Link> tool.
               </p>
             </section>
 
@@ -237,13 +237,13 @@ export default function ConvertPDFtoPNGoniPhonePage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Compress the PDF first if it's huge</h3>
                   <p className="text-slate-600">
-                    If your PDF is very large and you want smaller PNGs, <Link href="/compress-pdf" className="text-orange-600 hover:underline">compress the PDF</Link> before converting. This reduces embedded image data, which means smaller PNG output files.
+                    If your PDF is very large and you want smaller PNGs, <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">compress the PDF</Link> before converting. This reduces embedded image data, which means smaller PNG output files.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Convert specific pages only</h3>
                   <p className="text-slate-600">
-                    If you only need a few pages, there's no need to convert the entire PDF. You can <Link href="/split-pdf" className="text-orange-600 hover:underline">split the PDF</Link> first to extract just the pages you need, then convert those to PNG.
+                    If you only need a few pages, there's no need to convert the entire PDF. You can <Link href="/split-pdf" className="text-[#14D8C4] hover:underline">split the PDF</Link> first to extract just the pages you need, then convert those to PNG.
                   </p>
                 </div>
               </div>
@@ -273,7 +273,7 @@ export default function ConvertPDFtoPNGoniPhonePage() {
             <p className="text-slate-300 mb-6">No app to install. Open in Safari, upload, convert, and save — it takes seconds.</p>
             <Link
               href="/pdf-to-png"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Image className="h-5 w-5" /> Convert PDF to PNG Now
             </Link>
@@ -294,10 +294,10 @@ export default function ConvertPDFtoPNGoniPhonePage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

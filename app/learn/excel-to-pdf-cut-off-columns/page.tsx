@@ -91,7 +91,7 @@ export default function ExcelToPDFCutOffColumnsPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Excel to PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Excel to PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Excel to PDF Cutting Off Columns? Here's How to Fix It</h1>
               <p className="text-xl text-slate-300">
                 You converted your spreadsheet to PDF and half the columns are missing. This is one of the most common Excel-to-PDF problems — and it's easy to fix once you know where to look.
@@ -101,17 +101,17 @@ export default function ExcelToPDFCutOffColumnsPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileSpreadsheet className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Fixed your layout? Convert your spreadsheet now.</p>
             </div>
             <Link
               href="/excel-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Excel to PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -133,19 +133,19 @@ export default function ExcelToPDFCutOffColumnsPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Page width is too narrow.</strong> Portrait mode on letter-size paper only fits about 8-10 standard columns. If you have 15 or 20 columns, the rest overflow.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>No print area is set.</strong> Without a defined print area, Excel guesses which cells to include. It often includes empty columns or misses the columns you need.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Hidden margins are eating space.</strong> Default margins in Excel (0.7" on each side) steal 1.4 inches of usable width. That's enough to lose 2-3 columns.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Column widths are uneven.</strong> One extra-wide column (like a "Notes" or "Description" column) can push everything else off the page.</span>
                 </li>
               </ul>
@@ -167,7 +167,7 @@ export default function ExcelToPDFCutOffColumnsPage() {
                     <li>Check with <strong>Print Preview (Ctrl+P)</strong> to verify all columns appear</li>
                   </ol>
                   <p className="text-slate-600 mt-2">
-                    Once the print area is set, convert using <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">PDF.it's Excel to PDF tool</Link>.
+                    Once the print area is set, convert using <Link href="/excel-to-pdf" className="text-[#14D8C4] hover:underline">PDF.it's Excel to PDF tool</Link>.
                   </p>
                 </div>
 
@@ -190,7 +190,7 @@ export default function ExcelToPDFCutOffColumnsPage() {
                     Go to <strong>Page Layout → Scale to Fit → Width: 1 page</strong>. Leave Height set to "Automatic" so rows can flow to multiple pages.
                   </p>
                   <p className="text-slate-600">
-                    <strong>Warning:</strong> If you have 30+ columns, the text might become too small to read. In that case, use Fix 5 instead. Read more about optimal scaling in our <Link href="/learn/excel-to-pdf-fit-to-page" className="text-orange-600 hover:underline">fit-to-page guide</Link>.
+                    <strong>Warning:</strong> If you have 30+ columns, the text might become too small to read. In that case, use Fix 5 instead. Read more about optimal scaling in our <Link href="/learn/excel-to-pdf-fit-to-page" className="text-[#14D8C4] hover:underline">fit-to-page guide</Link>.
                   </p>
                 </div>
 
@@ -213,7 +213,7 @@ export default function ExcelToPDFCutOffColumnsPage() {
                     Copy columns A-J to one sheet and columns K-T to another. Convert the entire workbook — each sheet becomes a separate page in the PDF.
                   </p>
                   <p className="text-slate-600">
-                    After converting, if you need to reorganize the pages, use <Link href="/split-pdf" className="text-orange-600 hover:underline">Split PDF</Link> to separate or reorder them.
+                    After converting, if you need to reorganize the pages, use <Link href="/split-pdf" className="text-[#14D8C4] hover:underline">Split PDF</Link> to separate or reorder them.
                   </p>
                 </div>
               </div>
@@ -241,7 +241,7 @@ export default function ExcelToPDFCutOffColumnsPage() {
                 If columns are still getting cut off after trying these fixes, the issue might be with the conversion tool you're using. Desktop Excel handles page breaks differently than online converters.
               </p>
               <p className="text-slate-600">
-                Try converting with <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">PDF.it's Excel to PDF tool</Link> — it uses server-side rendering that closely matches Excel's own output. You can also try our general <Link href="/office-to-pdf" className="text-orange-600 hover:underline">Office to PDF converter</Link> for additional format support.
+                Try converting with <Link href="/excel-to-pdf" className="text-[#14D8C4] hover:underline">PDF.it's Excel to PDF tool</Link> — it uses server-side rendering that closely matches Excel's own output. You can also try our general <Link href="/office-to-pdf" className="text-[#14D8C4] hover:underline">Office to PDF converter</Link> for additional format support.
               </p>
             </section>
 
@@ -255,7 +255,7 @@ export default function ExcelToPDFCutOffColumnsPage() {
             <p className="text-slate-300 mb-6">Set your print area, switch to landscape, and convert with PDF.it — all columns included.</p>
             <Link
               href="/excel-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileSpreadsheet className="h-5 w-5" /> Excel to PDF Now
             </Link>
@@ -276,10 +276,10 @@ export default function ExcelToPDFCutOffColumnsPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

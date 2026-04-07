@@ -91,7 +91,7 @@ export default function CompressPDFWithoutQualityLossPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Compress PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Compress PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">How to Compress a PDF Without Losing Quality</h1>
               <p className="text-xl text-slate-300">
                 You need a smaller PDF, but you can&apos;t afford blurry images or degraded text. Here&apos;s how to reduce file size while keeping your document looking sharp.
@@ -101,17 +101,17 @@ export default function CompressPDFWithoutQualityLossPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileDown className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to compress? Skip the guide and go straight to the tool.</p>
             </div>
             <Link
               href="/compress-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Compress PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,20 +130,20 @@ export default function CompressPDFWithoutQualityLossPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Redundant objects.</strong> PDFs often store duplicate fonts, color profiles, and metadata. Lossless compression merges these into single instances.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Unused data streams.</strong> Editing software sometimes leaves orphaned objects in the file. Compression strips them out.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Metadata and thumbnails.</strong> Author info, revision history, and embedded thumbnails add kilobytes that most people never see.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
-                  <span><strong>Form fields and layers.</strong> Interactive elements add overhead. <Link href="/flatten-pdf" className="text-orange-600 hover:underline">Flattening your PDF</Link> removes them without affecting how the document looks when printed or viewed.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
+                  <span><strong>Form fields and layers.</strong> Interactive elements add overhead. <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">Flattening your PDF</Link> removes them without affecting how the document looks when printed or viewed.</span>
                 </li>
               </ul>
             </section>
@@ -167,7 +167,7 @@ export default function CompressPDFWithoutQualityLossPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -196,17 +196,17 @@ export default function CompressPDFWithoutQualityLossPage() {
                   </thead>
                   <tbody className="text-slate-700">
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Light</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Light</td>
                       <td className="py-3 px-4">None — images untouched, text stays sharp</td>
                       <td className="py-3 px-4">10-30%</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Medium</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Medium</td>
                       <td className="py-3 px-4">Slight image resampling — unnoticeable on screen</td>
                       <td className="py-3 px-4">30-60%</td>
                     </tr>
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Extreme</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Extreme</td>
                       <td className="py-3 px-4">Visible quality loss on high-res images and photos</td>
                       <td className="py-3 px-4">60-80%</td>
                     </tr>
@@ -225,10 +225,10 @@ export default function CompressPDFWithoutQualityLossPage() {
                 Beyond choosing Light compression, there are several other strategies that reduce file size without touching visual quality:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Flatten the PDF.</strong> Use <Link href="/flatten-pdf" className="text-orange-600 hover:underline">Flatten PDF</Link> to merge form fields, annotations, and layers into the page content. This can remove significant overhead without changing the visual output.</li>
-                <li>&#10003; <strong>Remove unnecessary pages.</strong> If your PDF has blank pages or sections you don&apos;t need, use <Link href="/split-pdf" className="text-orange-600 hover:underline">Split PDF</Link> to extract only the pages you want, then <Link href="/merge-pdf" className="text-orange-600 hover:underline">merge them back</Link>.</li>
+                <li>&#10003; <strong>Flatten the PDF.</strong> Use <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">Flatten PDF</Link> to merge form fields, annotations, and layers into the page content. This can remove significant overhead without changing the visual output.</li>
+                <li>&#10003; <strong>Remove unnecessary pages.</strong> If your PDF has blank pages or sections you don&apos;t need, use <Link href="/split-pdf" className="text-[#14D8C4] hover:underline">Split PDF</Link> to extract only the pages you want, then <Link href="/merge-pdf" className="text-[#14D8C4] hover:underline">merge them back</Link>.</li>
                 <li>&#10003; <strong>Convert images to PDF separately.</strong> If you&apos;re including photos, convert them to the right size before embedding. Oversized photos are the biggest source of unnecessary file bloat.</li>
-                <li>&#10003; <strong>Use Upload Ready PDF.</strong> Our <Link href="/upload-ready-pdf" className="text-orange-600 hover:underline">Upload Ready PDF</Link> tool chains flattening and compression together for the best result in one step.</li>
+                <li>&#10003; <strong>Use Upload Ready PDF.</strong> Our <Link href="/upload-ready-pdf" className="text-[#14D8C4] hover:underline">Upload Ready PDF</Link> tool chains flattening and compression together for the best result in one step.</li>
               </ul>
             </section>
 
@@ -242,19 +242,19 @@ export default function CompressPDFWithoutQualityLossPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Strict Upload Limits</h3>
                   <p className="text-slate-600">
-                    Government portals, visa applications, and exam submissions often cap files at 2MB or 5MB. If Light compression doesn&apos;t get you there, try our dedicated <Link href="/compress-pdf-to-2mb" className="text-orange-600 hover:underline">Compress to 2MB</Link> or <Link href="/compress-pdf-to-5mb" className="text-orange-600 hover:underline">Compress to 5MB</Link> tools.
+                    Government portals, visa applications, and exam submissions often cap files at 2MB or 5MB. If Light compression doesn&apos;t get you there, try our dedicated <Link href="/compress-pdf-to-2mb" className="text-[#14D8C4] hover:underline">Compress to 2MB</Link> or <Link href="/compress-pdf-to-5mb" className="text-[#14D8C4] hover:underline">Compress to 5MB</Link> tools.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Email Attachments</h3>
                   <p className="text-slate-600">
-                    Most email services cap attachments at 20-25MB. If your PDF is close to that limit, Medium compression will get it under while keeping text and charts perfectly readable. See our <Link href="/compress-pdf-for-email" className="text-orange-600 hover:underline">Compress for Email</Link> guide.
+                    Most email services cap attachments at 20-25MB. If your PDF is close to that limit, Medium compression will get it under while keeping text and charts perfectly readable. See our <Link href="/compress-pdf-for-email" className="text-[#14D8C4] hover:underline">Compress for Email</Link> guide.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Very Large Files (50MB+)</h3>
                   <p className="text-slate-600">
-                    For very large PDFs with hundreds of pages or high-res photos, even Medium compression may be needed. Consider splitting the file first with <Link href="/split-pdf" className="text-orange-600 hover:underline">Split PDF</Link>, then compressing each part.
+                    For very large PDFs with hundreds of pages or high-res photos, even Medium compression may be needed. Consider splitting the file first with <Link href="/split-pdf" className="text-[#14D8C4] hover:underline">Split PDF</Link>, then compressing each part.
                   </p>
                 </div>
               </div>
@@ -270,7 +270,7 @@ export default function CompressPDFWithoutQualityLossPage() {
             <p className="text-slate-300 mb-6">Upload your PDF and reduce the file size while keeping every detail intact — free, no signup required.</p>
             <Link
               href="/compress-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileDown className="h-5 w-5" /> Compress PDF Now
             </Link>
@@ -291,10 +291,10 @@ export default function CompressPDFWithoutQualityLossPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

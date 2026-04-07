@@ -91,7 +91,7 @@ export default function SavePDFasPNGonMacPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to PNG</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to PNG</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Save PDF as PNG on Mac (Quick Methods + Best Results)</h1>
               <p className="text-xl text-slate-300">
                 Need to turn your PDF into PNG images on a Mac? There are several ways — from the built-in Preview app to online tools. Here's how to get the sharpest results with the least effort.
@@ -101,17 +101,17 @@ export default function SavePDFasPNGonMacPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Image className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Want all pages converted at once? Use our online converter.</p>
             </div>
             <Link
               href="/pdf-to-png"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Convert PDF to PNG <ArrowRight className="h-4 w-4" />
             </Link>
@@ -144,7 +144,7 @@ export default function SavePDFasPNGonMacPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -183,7 +183,7 @@ export default function SavePDFasPNGonMacPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -211,11 +211,11 @@ export default function SavePDFasPNGonMacPage() {
                     <tr className="border-t border-gray-200">
                       <td className="py-3 px-4 font-semibold">Multi-page export</td>
                       <td className="py-3 px-4">One page at a time</td>
-                      <td className="py-3 px-4 text-orange-600 font-semibold">All pages at once</td>
+                      <td className="py-3 px-4 text-[#14D8C4] font-semibold">All pages at once</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
                       <td className="py-3 px-4 font-semibold">Installation</td>
-                      <td className="py-3 px-4 text-orange-600 font-semibold">Built-in</td>
+                      <td className="py-3 px-4 text-[#14D8C4] font-semibold">Built-in</td>
                       <td className="py-3 px-4">None (works in browser)</td>
                     </tr>
                     <tr className="border-t border-gray-200">
@@ -226,12 +226,12 @@ export default function SavePDFasPNGonMacPage() {
                     <tr className="border-t border-gray-200 bg-gray-50">
                       <td className="py-3 px-4 font-semibold">Batch conversion</td>
                       <td className="py-3 px-4">No</td>
-                      <td className="py-3 px-4 text-orange-600 font-semibold">Yes (Pro)</td>
+                      <td className="py-3 px-4 text-[#14D8C4] font-semibold">Yes (Pro)</td>
                     </tr>
                     <tr className="border-t border-gray-200">
                       <td className="py-3 px-4 font-semibold">ZIP download</td>
                       <td className="py-3 px-4">No</td>
-                      <td className="py-3 px-4 text-orange-600 font-semibold">Yes</td>
+                      <td className="py-3 px-4 text-[#14D8C4] font-semibold">Yes</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
                       <td className="py-3 px-4 font-semibold">Best for</td>
@@ -255,7 +255,7 @@ export default function SavePDFasPNGonMacPage() {
                 <li>✓ <strong>300 DPI:</strong> Ideal for presentations, print, and Retina displays. This matches the resolution of most professional workflows.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                If your PNG files end up larger than you'd like at high DPI, you can <Link href="/compress-pdf" className="text-orange-600 hover:underline">compress the original PDF</Link> first to reduce the amount of embedded image data.
+                If your PNG files end up larger than you'd like at high DPI, you can <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">compress the original PDF</Link> first to reduce the amount of embedded image data.
               </p>
             </section>
 
@@ -275,7 +275,7 @@ export default function SavePDFasPNGonMacPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Split first, then convert</h3>
                   <p className="text-slate-600">
-                    For very large PDFs, consider <Link href="/split-pdf" className="text-orange-600 hover:underline">splitting your PDF</Link> into smaller sections first, then converting each section to PNG. This gives you more control over which pages you export.
+                    For very large PDFs, consider <Link href="/split-pdf" className="text-[#14D8C4] hover:underline">splitting your PDF</Link> into smaller sections first, then converting each section to PNG. This gives you more control over which pages you export.
                   </p>
                 </div>
               </div>
@@ -285,10 +285,10 @@ export default function SavePDFasPNGonMacPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Should You Save as PNG or JPG on Mac?</h2>
               <p className="text-slate-600 mb-4">
-                Mac Preview lets you export as both PNG and JPG. The choice depends on your content. PNG is better for text, graphics, and anything with sharp edges. JPG is better for photo-heavy PDFs where file size matters. For a detailed breakdown, see our <Link href="/learn/pdf-to-jpg-vs-png" className="text-orange-600 hover:underline">JPG vs PNG comparison guide</Link>.
+                Mac Preview lets you export as both PNG and JPG. The choice depends on your content. PNG is better for text, graphics, and anything with sharp edges. JPG is better for photo-heavy PDFs where file size matters. For a detailed breakdown, see our <Link href="/learn/pdf-to-jpg-vs-png" className="text-[#14D8C4] hover:underline">JPG vs PNG comparison guide</Link>.
               </p>
               <p className="text-slate-600">
-                If you decide JPG is the better fit, use our <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">PDF to JPG</Link> tool for fast, multi-page conversion.
+                If you decide JPG is the better fit, use our <Link href="/pdf-to-jpg" className="text-[#14D8C4] hover:underline">PDF to JPG</Link> tool for fast, multi-page conversion.
               </p>
             </section>
 
@@ -302,7 +302,7 @@ export default function SavePDFasPNGonMacPage() {
             <p className="text-slate-300 mb-6">No more exporting one page at a time. Upload your PDF and get every page as a sharp PNG in seconds.</p>
             <Link
               href="/pdf-to-png"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Image className="h-5 w-5" /> Convert PDF to PNG Now
             </Link>
@@ -323,10 +323,10 @@ export default function SavePDFasPNGonMacPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

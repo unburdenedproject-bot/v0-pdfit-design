@@ -33,14 +33,14 @@ export default function PptAPdfParaImprimirPage() {
       <HeaderEs />
       <main>
         <section className="bg-[#191B4D] text-white py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-          <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PowerPoint a PDF</p>
+          <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PowerPoint a PDF</p>
           <h1 className="text-4xl lg:text-5xl font-black mb-4">PPT a PDF para imprimir: mejores consejos de diseno y calidad</h1>
           <p className="text-xl text-slate-300">Convertir una presentacion para imprimir es diferente a compartirla en pantalla. Aqui te mostramos como obtener diapositivas impresas nitidas y de calidad profesional desde tu archivo PowerPoint.</p>
         </div></div></section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><Printer className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Listo para convertir? Salta la guia y ve directo a la herramienta.</p></div>
-          <Link href="/es/powerpoint-a-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Convertir PPT a PDF <ArrowRight className="h-4 w-4" /></Link>
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><Printer className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Listo para convertir? Salta la guia y ve directo a la herramienta.</p></div>
+          <Link href="/es/powerpoint-a-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Convertir PPT a PDF <ArrowRight className="h-4 w-4" /></Link>
         </div></section>
 
         <article className="py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -55,10 +55,10 @@ export default function PptAPdfParaImprimirPage() {
                   <th className="text-left py-3 px-4 font-bold">Mejor para</th>
                 </tr></thead>
                 <tbody className="text-slate-700">
-                  <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold text-orange-600">Estandar (4:3)</td><td className="py-3 px-4">10 x 7.5 pulg</td><td className="py-3 px-4">Impresion general en papel Carta o A4</td></tr>
-                  <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold text-orange-600">Panoramico (16:9)</td><td className="py-3 px-4">13.33 x 7.5 pulg</td><td className="py-3 px-4">Solo presentaciones en pantalla — no ideal para impresion</td></tr>
-                  <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold text-orange-600">Personalizado (Carta)</td><td className="py-3 px-4">8.5 x 11 pulg</td><td className="py-3 px-4">Impresion a pagina completa en Carta</td></tr>
-                  <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold text-orange-600">Personalizado (A4)</td><td className="py-3 px-4">11.69 x 8.27 pulg</td><td className="py-3 px-4">Impresion a pagina completa en A4 (estandar internacional)</td></tr>
+                  <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold text-[#14D8C4]">Estandar (4:3)</td><td className="py-3 px-4">10 x 7.5 pulg</td><td className="py-3 px-4">Impresion general en papel Carta o A4</td></tr>
+                  <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold text-[#14D8C4]">Panoramico (16:9)</td><td className="py-3 px-4">13.33 x 7.5 pulg</td><td className="py-3 px-4">Solo presentaciones en pantalla — no ideal para impresion</td></tr>
+                  <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold text-[#14D8C4]">Personalizado (Carta)</td><td className="py-3 px-4">8.5 x 11 pulg</td><td className="py-3 px-4">Impresion a pagina completa en Carta</td></tr>
+                  <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold text-[#14D8C4]">Personalizado (A4)</td><td className="py-3 px-4">11.69 x 8.27 pulg</td><td className="py-3 px-4">Impresion a pagina completa en A4 (estandar internacional)</td></tr>
                 </tbody>
               </table>
             </div>
@@ -74,7 +74,7 @@ export default function PptAPdfParaImprimirPage() {
                 { title: "Revisa el PDF al 100% de zoom", desc: "Abre el PDF y haz zoom al 100% (tamano real). Verifica que las imagenes esten nitidas, las fuentes se vean correctas y nada se haya desplazado. Si algo se ve mal, corrigelo en PowerPoint y reconvierte." },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                   <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                 </div>
               ))}
@@ -101,7 +101,7 @@ export default function PptAPdfParaImprimirPage() {
               <li>&#10003; <strong>Mantiene el contenido importante</strong> (texto, logos) al menos 0.25 pulgadas de los bordes — esta es tu "zona segura."</li>
               <li>&#10003; <strong>Para impresion casera/oficina</strong>, el sangrado no es necesario. Solo usa margenes estandar.</li>
             </ul>
-            <p className="text-slate-600 mt-4">Despues de convertir, si el archivo es muy grande para subir o enviar por email, usa <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> con compresion Ligera para reducir el tamano sin perder calidad de impresion.</p>
+            <p className="text-slate-600 mt-4">Despues de convertir, si el archivo es muy grande para subir o enviar por email, usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> con compresion Ligera para reducir el tamano sin perder calidad de impresion.</p>
           </section>
 
           <section className="mb-12">
@@ -120,7 +120,7 @@ export default function PptAPdfParaImprimirPage() {
             <div className="space-y-6">
               <div><h3 className="text-lg font-bold text-slate-900 mb-2">Bordes blancos alrededor de las diapositivas</h3><p className="text-slate-600">Esto sucede cuando el tamano de diapositiva no coincide con el tamano del papel. Establece un tamano de diapositiva personalizado que coincida con tu papel objetivo, o ajusta las configuraciones de tu impresora a "Ajustar a pagina." Para impresion borde a borde, agrega sangrado.</p></div>
               <div><h3 className="text-lg font-bold text-slate-900 mb-2">Los colores se ven diferentes al imprimir</h3><p className="text-slate-600">Los colores de pantalla (RGB) y los colores de impresion (CMYK) se muestran de manera diferente. Los neon brillantes y colores muy saturados no se reproduciran con precision en impresion. Usa colores solidos y atenuados para los resultados mas predecibles.</p></div>
-              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Fuentes cambiadas o faltantes</h3><p className="text-slate-600">Incrusta las fuentes antes de convertir: Archivo &gt; Opciones &gt; Guardar &gt; "Incrustar fuentes en el archivo." Lee nuestra guia completa sobre <Link href="/es/aprender/pptx-a-pdf-fuentes-faltantes" className="text-orange-600 hover:underline">como solucionar fuentes faltantes en PPTX a PDF</Link>.</p></div>
+              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Fuentes cambiadas o faltantes</h3><p className="text-slate-600">Incrusta las fuentes antes de convertir: Archivo &gt; Opciones &gt; Guardar &gt; "Incrustar fuentes en el archivo." Lee nuestra guia completa sobre <Link href="/es/aprender/pptx-a-pdf-fuentes-faltantes" className="text-[#14D8C4] hover:underline">como solucionar fuentes faltantes en PPTX a PDF</Link>.</p></div>
             </div>
           </section>
         </div></article>
@@ -128,7 +128,7 @@ export default function PptAPdfParaImprimirPage() {
         <section className="py-12 bg-[#191B4D]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
           <h2 className="text-2xl font-black text-white mb-3">Listo para crear un PDF listo para imprimir?</h2>
           <p className="text-slate-300 mb-6">Sube tu PowerPoint y obtiene un PDF de alta calidad — gratis, sin registro.</p>
-          <Link href="/es/powerpoint-a-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><Printer className="h-5 w-5" /> Convertir PPT a PDF Ahora</Link>
+          <Link href="/es/powerpoint-a-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><Printer className="h-5 w-5" /> Convertir PPT a PDF Ahora</Link>
         </div></section>
 
         <section className="py-16 bg-gray-50"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -139,7 +139,7 @@ export default function PptAPdfParaImprimirPage() {
               { title: "Las animaciones de PowerPoint funcionan en PDF?", href: "/es/aprender/ppt-a-pdf-animaciones" },
               { title: "PPTX a PDF fuentes faltantes? Soluciona incrustacion y sustituciones", href: "/es/aprender/pptx-a-pdf-fuentes-faltantes" },
               { title: "Convertir PPT a PDF en iPhone (metodo rapido)", href: "/es/aprender/ppt-a-pdf-en-iphone" },
-            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" /></Link>))}
+            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" /></Link>))}
           </div>
         </div></section>
 

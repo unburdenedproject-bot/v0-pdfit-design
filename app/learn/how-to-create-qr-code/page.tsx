@@ -91,7 +91,7 @@ export default function HowToCreateQRCodePage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / QR Code</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / QR Code</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">How to Create a QR Code Online (Free Generator)</h1>
               <p className="text-xl text-slate-300">
                 QR codes are everywhere — menus, business cards, event tickets, product packaging. Here is how to create your own QR code in seconds for any purpose.
@@ -101,17 +101,17 @@ export default function HowToCreateQRCodePage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <QrCode className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to generate? Skip the guide and go straight to the tool.</p>
             </div>
             <Link
               href="/qr-code"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Create QR Code <ArrowRight className="h-4 w-4" />
             </Link>
@@ -132,7 +132,7 @@ export default function HowToCreateQRCodePage() {
                 QR codes are used everywhere today. Restaurants use them for digital menus. Businesses put them on cards and flyers. Event organizers use them for ticketing. Marketers embed them in print ads to bridge physical and digital experiences.
               </p>
               <p className="text-slate-600">
-                The best part? Creating a QR code takes less than 30 seconds with the right tool. PDF.it's <Link href="/qr-code" className="text-orange-600 hover:underline">QR Code generator</Link> (Pro feature) lets you create QR codes for URLs, text, WiFi, vCards, and more — then download them as high-quality PNG or SVG files ready for print or digital use.
+                The best part? Creating a QR code takes less than 30 seconds with the right tool. PDF.it's <Link href="/qr-code" className="text-[#14D8C4] hover:underline">QR Code generator</Link> (Pro feature) lets you create QR codes for URLs, text, WiFi, vCards, and more — then download them as high-quality PNG or SVG files ready for print or digital use.
               </p>
             </section>
 
@@ -155,7 +155,7 @@ export default function HowToCreateQRCodePage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -175,24 +175,24 @@ export default function HowToCreateQRCodePage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Website links.</strong> The most common use case. Encode any URL so people can visit your site, landing page, or social media profile by scanning.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
-                  <span><strong>WiFi access.</strong> Create a <Link href="/learn/qr-code-for-wifi" className="text-orange-600 hover:underline">WiFi QR code</Link> so guests connect to your network instantly without typing passwords.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
+                  <span><strong>WiFi access.</strong> Create a <Link href="/learn/qr-code-for-wifi" className="text-[#14D8C4] hover:underline">WiFi QR code</Link> so guests connect to your network instantly without typing passwords.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>Business cards.</strong> Add a QR code to your <Link href="/learn/qr-code-for-business-card" className="text-orange-600 hover:underline">business card</Link> that links to your website, LinkedIn profile, or vCard with all your contact details.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
+                  <span><strong>Business cards.</strong> Add a QR code to your <Link href="/learn/qr-code-for-business-card" className="text-[#14D8C4] hover:underline">business card</Link> that links to your website, LinkedIn profile, or vCard with all your contact details.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
-                  <span><strong>Restaurant menus.</strong> Replace physical menus with a <Link href="/learn/qr-code-for-restaurant-menu" className="text-orange-600 hover:underline">scannable QR code</Link> that opens your menu as a PDF or webpage.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
+                  <span><strong>Restaurant menus.</strong> Replace physical menus with a <Link href="/learn/qr-code-for-restaurant-menu" className="text-[#14D8C4] hover:underline">scannable QR code</Link> that opens your menu as a PDF or webpage.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
-                  <span><strong>PDF documents.</strong> Share a <Link href="/learn/qr-code-for-pdf" className="text-orange-600 hover:underline">QR code that links to a PDF</Link> — perfect for brochures, manuals, and flyers.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
+                  <span><strong>PDF documents.</strong> Share a <Link href="/learn/qr-code-for-pdf" className="text-[#14D8C4] hover:underline">QR code that links to a PDF</Link> — perfect for brochures, manuals, and flyers.</span>
                 </li>
               </ul>
             </section>
@@ -211,7 +211,7 @@ export default function HowToCreateQRCodePage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Use High Contrast Colors</h3>
                   <p className="text-slate-600">
-                    Dark modules on a light background scan most reliably. Black on white is the gold standard. If you customize colors, always test with multiple phones. Avoid light-on-light or dark-on-dark combinations. Check out our <Link href="/learn/qr-code-best-practices" className="text-orange-600 hover:underline">QR code best practices guide</Link> for more design tips.
+                    Dark modules on a light background scan most reliably. Black on white is the gold standard. If you customize colors, always test with multiple phones. Avoid light-on-light or dark-on-dark combinations. Check out our <Link href="/learn/qr-code-best-practices" className="text-[#14D8C4] hover:underline">QR code best practices guide</Link> for more design tips.
                   </p>
                 </div>
 
@@ -225,7 +225,7 @@ export default function HowToCreateQRCodePage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Choose the Right File Format</h3>
                   <p className="text-slate-600">
-                    Download PNG for screens and digital media. Download SVG for print materials — SVG is a vector format that scales to any size without pixelation. If you need to convert your QR code image later, PDF.it also offers tools like <Link href="/pdf-to-png" className="text-orange-600 hover:underline">PDF to PNG</Link> and <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">PDF to JPG</Link>.
+                    Download PNG for screens and digital media. Download SVG for print materials — SVG is a vector format that scales to any size without pixelation. If you need to convert your QR code image later, PDF.it also offers tools like <Link href="/pdf-to-png" className="text-[#14D8C4] hover:underline">PDF to PNG</Link> and <Link href="/pdf-to-jpg" className="text-[#14D8C4] hover:underline">PDF to JPG</Link>.
                   </p>
                 </div>
               </div>
@@ -245,7 +245,7 @@ export default function HowToCreateQRCodePage() {
                 <li>&#10003; <strong>Email QR codes</strong> open a pre-filled email draft with a recipient and subject line.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Learn more about each type in our detailed guide: <Link href="/learn/qr-code-types-explained" className="text-orange-600 hover:underline">QR Code Types Explained</Link>.
+                Learn more about each type in our detailed guide: <Link href="/learn/qr-code-types-explained" className="text-[#14D8C4] hover:underline">QR Code Types Explained</Link>.
               </p>
             </section>
 
@@ -259,7 +259,7 @@ export default function HowToCreateQRCodePage() {
             <p className="text-slate-300 mb-6">Generate a QR code for any URL, text, or data in seconds. Pro feature — upgrade to unlock unlimited QR codes.</p>
             <Link
               href="/qr-code"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <QrCode className="h-5 w-5" /> Create QR Code Now
             </Link>
@@ -282,10 +282,10 @@ export default function HowToCreateQRCodePage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

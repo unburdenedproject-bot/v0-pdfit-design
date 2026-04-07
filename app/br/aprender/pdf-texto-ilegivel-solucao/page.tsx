@@ -43,7 +43,7 @@ export default function PdfTextoIlegivelSolucaoPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF para Texto</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF para Texto</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">PDF com Texto Ilegível — Solução</h1>
               <p className="text-xl text-slate-300">
                 Abriu um PDF e o texto aparece como símbolos estranhos, caracteres quebrados ou é completamente ilegível? Veja as causas e como resolver.
@@ -52,15 +52,15 @@ export default function PdfTextoIlegivelSolucaoPage() {
           </div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <ScanIcon className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">O OCR pode recuperar texto de PDFs com problemas.</p>
             </div>
-            <Link href="/br/scanner-ocr" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
+            <Link href="/br/scanner-ocr" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
               Scanner OCR <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -101,7 +101,7 @@ export default function PdfTextoIlegivelSolucaoPage() {
                   { title: "Melhore a imagem se necessário", desc: "Se o PDF é escaneado e a qualidade é ruim, use Limpeza de Scan primeiro para melhorar o contraste e nitidez, depois aplique OCR." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                   </div>
                 ))}
@@ -117,7 +117,7 @@ export default function PdfTextoIlegivelSolucaoPage() {
                 <li>- O PDF foi escaneado e você precisa do texto</li>
                 <li>- As fontes do PDF não estão incorporadas</li>
               </ul>
-              <p className="text-slate-600 mt-4">O <Link href="/br/scanner-ocr" className="text-orange-600 hover:underline">Scanner OCR</Link> analisa a aparência visual do texto, então não depende de fontes ou codificação interna do PDF.</p>
+              <p className="text-slate-600 mt-4">O <Link href="/br/scanner-ocr" className="text-[#14D8C4] hover:underline">Scanner OCR</Link> analisa a aparência visual do texto, então não depende de fontes ou codificação interna do PDF.</p>
             </section>
 
             <section className="mb-12">
@@ -128,7 +128,7 @@ export default function PdfTextoIlegivelSolucaoPage() {
                   <p className="text-slate-600">Ao criar PDFs, sempre incorpore as fontes. No Word, vá em Opções &gt; Salvar e marque "Incorporar fontes no arquivo".</p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">Use <Link href="/br/achatar-pdf" className="text-orange-600 hover:underline">Achatar PDF</Link></h3>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">Use <Link href="/br/achatar-pdf" className="text-[#14D8C4] hover:underline">Achatar PDF</Link></h3>
                   <p className="text-slate-600">Achatar o PDF converte texto e elementos em uma versão fixa que aparece igual em qualquer leitor.</p>
                 </div>
                 <div>
@@ -145,7 +145,7 @@ export default function PdfTextoIlegivelSolucaoPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Recupere Texto de PDF Ilegível</h2>
             <p className="text-slate-300 mb-6">Use OCR para extrair texto mesmo de PDFs com problemas de fontes ou codificação.</p>
-            <Link href="/br/scanner-ocr" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors">
+            <Link href="/br/scanner-ocr" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors">
               <ScanIcon className="h-5 w-5" /> Scanner OCR
             </Link>
           </div>
@@ -161,9 +161,9 @@ export default function PdfTextoIlegivelSolucaoPage() {
                 { title: "Copiar Texto de PDF para Notas", href: "/br/aprender/copiar-texto-de-pdf-para-notas" },
                 { title: "Extrair Texto de PDF no Celular", href: "/br/aprender/extrair-texto-de-pdf-no-celular" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

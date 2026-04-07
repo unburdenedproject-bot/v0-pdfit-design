@@ -91,7 +91,7 @@ export default function CombinePDFsForSubmissionPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Merge PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Merge PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Combine PDFs for Submissions (School, Visa, Job Portals)</h1>
               <p className="text-xl text-slate-300">
                 Upload portals want one single PDF with all your documents. Here's how to assemble, combine, compress, and submit — without getting rejected for formatting or size issues.
@@ -101,17 +101,17 @@ export default function CombinePDFsForSubmissionPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Merge className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to combine your documents? Go straight to the tool.</p>
             </div>
             <Link
               href="/merge-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Merge PDFs Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function CombinePDFsForSubmissionPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Single file upload.</strong> Most portals only accept one PDF file — not multiple attachments. You need to combine all your documents into one.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>File size limits.</strong> Common limits are 2MB, 5MB, 10MB, or 25MB. Government portals tend to have the strictest limits (often 2-5MB).</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Specific document order.</strong> Many applications list the exact order they want documents in. Not following this order can result in delays or rejection.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>PDF format only.</strong> Most portals require PDF specifically (not Word, JPG, or PNG). Make sure all your documents are in PDF format before combining.</span>
                 </li>
               </ul>
@@ -167,7 +167,7 @@ export default function CombinePDFsForSubmissionPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -186,12 +186,12 @@ export default function CombinePDFsForSubmissionPage() {
                 After merging, your combined PDF might be too large for the submission portal. Here's how to get it under the limit:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>✓ <strong>Compress the merged file</strong> using <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link>. Medium compression works for most portals.</li>
-                <li>✓ <strong>For 2MB limits,</strong> use the dedicated <Link href="/compress-pdf-to-2mb" className="text-orange-600 hover:underline">Compress to 2MB</Link> tool which targets that specific size.</li>
-                <li>✓ <strong>Flatten before compressing.</strong> Use <Link href="/flatten-pdf" className="text-orange-600 hover:underline">Flatten PDF</Link> to remove form fields and annotations, which reduces file size and makes compression more effective.</li>
+                <li>✓ <strong>Compress the merged file</strong> using <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link>. Medium compression works for most portals.</li>
+                <li>✓ <strong>For 2MB limits,</strong> use the dedicated <Link href="/compress-pdf-to-2mb" className="text-[#14D8C4] hover:underline">Compress to 2MB</Link> tool which targets that specific size.</li>
+                <li>✓ <strong>Flatten before compressing.</strong> Use <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">Flatten PDF</Link> to remove form fields and annotations, which reduces file size and makes compression more effective.</li>
                 <li>✓ <strong>If compression isn't enough,</strong> check if scanned pages are the culprit. One scanned page can be 2-5MB. Re-scan at a lower resolution or use Phone Scan Cleanup to optimize.</li>
               </ul>
-              <div className="bg-orange-50 border border-orange-200 rounded-xl p-5 mt-4">
+              <div className="bg-[#F0FDFA] border border-[#14D8C4]/20 rounded-xl p-5 mt-4">
                 <p className="text-slate-700 text-sm">
                   <strong>Pro tip:</strong> Many government and visa portals have a 2MB or 5MB limit. Always check the limit <em>before</em> scanning and assembling your documents. If the limit is very strict, scan at 150 DPI instead of 300 DPI to keep file sizes manageable.
                 </p>
@@ -211,7 +211,7 @@ export default function CombinePDFsForSubmissionPage() {
                 <li>✓ <strong>Improves compatibility.</strong> Some older PDF readers don't display form fields or annotations correctly. A flattened PDF looks the same everywhere.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Use <Link href="/flatten-pdf" className="text-orange-600 hover:underline">Flatten PDF</Link> after merging and before compressing for best results.
+                Use <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">Flatten PDF</Link> after merging and before compressing for best results.
               </p>
             </section>
 
@@ -222,7 +222,7 @@ export default function CombinePDFsForSubmissionPage() {
                 If your merged PDF contains sensitive information (passport copies, bank statements, medical records), you might want to add a password:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>✓ <strong>Use <Link href="/protect-pdf" className="text-orange-600 hover:underline">Protect PDF</Link></strong> to add a password to your merged file.</li>
+                <li>✓ <strong>Use <Link href="/protect-pdf" className="text-[#14D8C4] hover:underline">Protect PDF</Link></strong> to add a password to your merged file.</li>
                 <li>✓ <strong>But check the submission requirements first.</strong> Many upload portals cannot open password-protected PDFs. If the portal doesn't mention password protection, don't add one.</li>
                 <li>✓ <strong>For email submissions,</strong> password protection is more appropriate. Send the PDF in one email and the password in a separate message.</li>
               </ul>
@@ -265,7 +265,7 @@ export default function CombinePDFsForSubmissionPage() {
             <p className="text-slate-300 mb-6">Upload all your files, merge them into one PDF, and submit with confidence — free, no signup required.</p>
             <Link
               href="/merge-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Merge className="h-5 w-5" /> Merge PDFs Now
             </Link>
@@ -286,10 +286,10 @@ export default function CombinePDFsForSubmissionPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

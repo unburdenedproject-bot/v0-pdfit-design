@@ -91,7 +91,7 @@ export default function ConvertWordToPDFPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Word to PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Word to PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convert Word to PDF Online (DOCX to PDF)</h1>
               <p className="text-xl text-slate-300">
                 Need to send a Word document that looks exactly the same on every device? Convert it to PDF in seconds — free, online, no software to install.
@@ -101,17 +101,17 @@ export default function ConvertWordToPDFPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileText className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to convert? Skip the guide and go straight to the tool.</p>
             </div>
             <Link
               href="/word-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Word to PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,20 +130,20 @@ export default function ConvertWordToPDFPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Universal compatibility.</strong> PDFs open on every device, operating system, and browser without needing Microsoft Word installed. Your recipient sees exactly what you see.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>No accidental edits.</strong> PDFs prevent recipients from accidentally (or intentionally) changing your content. This matters for contracts, invoices, and resumes.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Consistent formatting.</strong> Word files can look different depending on the viewer's version of Word, installed fonts, and screen size. PDFs lock the layout in place.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
-                  <span><strong>Smaller file size.</strong> PDFs are often smaller than the original Word file, especially for image-heavy documents. If the PDF is still too large, you can <Link href="/compress-pdf" className="text-orange-600 hover:underline">compress it further</Link>.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
+                  <span><strong>Smaller file size.</strong> PDFs are often smaller than the original Word file, especially for image-heavy documents. If the PDF is still too large, you can <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">compress it further</Link>.</span>
                 </li>
               </ul>
             </section>
@@ -167,7 +167,7 @@ export default function ConvertWordToPDFPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -192,7 +192,7 @@ export default function ConvertWordToPDFPage() {
                 <li>&#10003; <strong>Simplify headers and footers.</strong> Complex header/footer layouts with multiple columns can sometimes shift. Keep them simple for best results.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                For a deeper dive into formatting issues, read our guide on <Link href="/learn/docx-to-pdf-keep-formatting" className="text-orange-600 hover:underline">how to keep formatting when converting DOCX to PDF</Link>.
+                For a deeper dive into formatting issues, read our guide on <Link href="/learn/docx-to-pdf-keep-formatting" className="text-[#14D8C4] hover:underline">how to keep formatting when converting DOCX to PDF</Link>.
               </p>
             </section>
 
@@ -241,9 +241,9 @@ export default function ConvertWordToPDFPage() {
                 Word isn't the only file type you might need to turn into a PDF. PDF.it handles the full Microsoft Office suite:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">Excel to PDF</Link> — convert spreadsheets while preserving columns, rows, and charts.</li>
-                <li>&#10003; <Link href="/powerpoint-to-pdf" className="text-orange-600 hover:underline">PowerPoint to PDF</Link> — turn slide decks into shareable PDFs.</li>
-                <li>&#10003; <Link href="/office-to-pdf" className="text-orange-600 hover:underline">Office to PDF</Link> — a universal tool that accepts .docx, .xlsx, .pptx, and more.</li>
+                <li>&#10003; <Link href="/excel-to-pdf" className="text-[#14D8C4] hover:underline">Excel to PDF</Link> — convert spreadsheets while preserving columns, rows, and charts.</li>
+                <li>&#10003; <Link href="/powerpoint-to-pdf" className="text-[#14D8C4] hover:underline">PowerPoint to PDF</Link> — turn slide decks into shareable PDFs.</li>
+                <li>&#10003; <Link href="/office-to-pdf" className="text-[#14D8C4] hover:underline">Office to PDF</Link> — a universal tool that accepts .docx, .xlsx, .pptx, and more.</li>
               </ul>
             </section>
 
@@ -254,9 +254,9 @@ export default function ConvertWordToPDFPage() {
                 Once your Word document is a PDF, you might want to take a few extra steps before sharing:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Compress it</strong> with <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> if the file is too large for email or an upload portal.</li>
-                <li>&#10003; <strong>Password-protect it</strong> using <Link href="/protect-pdf" className="text-orange-600 hover:underline">Protect PDF</Link> if the document contains sensitive information like contracts or financial data.</li>
-                <li>&#10003; <strong>Merge it</strong> with other PDFs using <Link href="/merge-pdf" className="text-orange-600 hover:underline">Merge PDF</Link> if you need to combine multiple documents into one file.</li>
+                <li>&#10003; <strong>Compress it</strong> with <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> if the file is too large for email or an upload portal.</li>
+                <li>&#10003; <strong>Password-protect it</strong> using <Link href="/protect-pdf" className="text-[#14D8C4] hover:underline">Protect PDF</Link> if the document contains sensitive information like contracts or financial data.</li>
+                <li>&#10003; <strong>Merge it</strong> with other PDFs using <Link href="/merge-pdf" className="text-[#14D8C4] hover:underline">Merge PDF</Link> if you need to combine multiple documents into one file.</li>
               </ul>
             </section>
 
@@ -270,7 +270,7 @@ export default function ConvertWordToPDFPage() {
             <p className="text-slate-300 mb-6">Upload your .docx file and get a PDF in seconds — free, no signup required.</p>
             <Link
               href="/word-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileText className="h-5 w-5" /> Word to PDF Now
             </Link>
@@ -291,10 +291,10 @@ export default function ConvertWordToPDFPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

@@ -34,19 +34,19 @@ export default function OCRDocumentoEscaneadoPage() {
       <main>
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-            <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / OCR PDF</p>
+            <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / OCR PDF</p>
             <h1 className="text-4xl lg:text-5xl font-black mb-4">Como Hacer OCR a un Documento Escaneado (Paso a Paso)</h1>
             <p className="text-xl text-slate-300">Recibos escaneados, contratos, documentos antiguos y documentos de identificacion son solo imagenes dentro de un PDF. Aqui esta como ejecutar OCR y convertirlos en texto real y buscable.</p>
           </div></div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><ScanText className="h-5 w-5 text-white" /></div>
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><ScanText className="h-5 w-5 text-white" /></div>
               <p className="text-slate-700 font-semibold">Listo para digitalizar tu documento escaneado? Prueba el Escaner OCR (Pro).</p>
             </div>
-            <Link href="/es/escaner-ocr" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Escaner OCR <ArrowRight className="h-4 w-4" /></Link>
+            <Link href="/es/escaner-ocr" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Escaner OCR <ArrowRight className="h-4 w-4" /></Link>
           </div>
         </section>
 
@@ -56,11 +56,11 @@ export default function OCRDocumentoEscaneadoPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">Que Tipos de Documentos Escaneados Puedes OCR?</h2>
               <p className="text-slate-600 mb-4">OCR funciona en cualquier documento donde el texto fue impreso (escrito a maquina, no a mano). Estos son los tipos mas comunes de documentos escaneados en los que se ejecuta OCR:</p>
               <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Contratos y acuerdos.</strong> Los documentos legales escaneados necesitan ser buscables para que puedas encontrar clausulas, fechas o nombres especificos sin leer 30 paginas manualmente.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Recibos y facturas.</strong> El seguimiento de gastos y la preparacion de impuestos requieren extraer montos, fechas y nombres de proveedores de recibos escaneados.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Informes antiguos y documentos academicos.</strong> Investigadores y empresas digitalizan documentos archivados para que puedan ser buscados y referenciados eficientemente.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Documentos gubernamentales y de identificacion.</strong> Pasaportes, licencias de conducir y formularios gubernamentales frecuentemente necesitan ser escaneados y hacerse buscables para solicitudes y cumplimiento.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">5.</span><span><strong>Registros medicos.</strong> Los proveedores de salud escanean documentos de pacientes que necesitan ser indexados y buscables dentro de sistemas de registros de salud electronicos.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span><strong>Contratos y acuerdos.</strong> Los documentos legales escaneados necesitan ser buscables para que puedas encontrar clausulas, fechas o nombres especificos sin leer 30 paginas manualmente.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span><strong>Recibos y facturas.</strong> El seguimiento de gastos y la preparacion de impuestos requieren extraer montos, fechas y nombres de proveedores de recibos escaneados.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">3.</span><span><strong>Informes antiguos y documentos academicos.</strong> Investigadores y empresas digitalizan documentos archivados para que puedan ser buscados y referenciados eficientemente.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">4.</span><span><strong>Documentos gubernamentales y de identificacion.</strong> Pasaportes, licencias de conducir y formularios gubernamentales frecuentemente necesitan ser escaneados y hacerse buscables para solicitudes y cumplimiento.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">5.</span><span><strong>Registros medicos.</strong> Los proveedores de salud escanean documentos de pacientes que necesitan ser indexados y buscables dentro de sistemas de registros de salud electronicos.</span></li>
               </ul>
             </section>
 
@@ -73,7 +73,7 @@ export default function OCRDocumentoEscaneadoPage() {
                   { title: "Descarga y verifica tu PDF buscable", desc: "Descarga el archivo procesado. Abrelo y prueba Ctrl+F para buscar una palabra que sabes esta en el documento. Si el texto se encuentra, OCR funciono correctamente. La apariencia visual permanece identica a tu escaneo original." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                   </div>
                 ))}
@@ -86,20 +86,20 @@ export default function OCRDocumentoEscaneadoPage() {
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Escanea a 300 DPI o mas.</strong> Resoluciones menores producen caracteres borrosos que el OCR tiene dificultad para reconocer. 300 DPI es el punto ideal para documentos de texto.</li>
                 <li>&#10003; <strong>Usa buena iluminacion.</strong> Sombras desiguales a traves de la pagina causan errores de OCR. Los escaneres planos dan la iluminacion mas consistente.</li>
-                <li>&#10003; <strong>Endereza el documento.</strong> Texto torcido o rotado reduce la precision. Usa <Link href="/es/rotar-pdf" className="text-orange-600 hover:underline">Rotar PDF</Link> para corregir la orientacion antes del OCR.</li>
+                <li>&#10003; <strong>Endereza el documento.</strong> Texto torcido o rotado reduce la precision. Usa <Link href="/es/rotar-pdf" className="text-[#14D8C4] hover:underline">Rotar PDF</Link> para corregir la orientacion antes del OCR.</li>
                 <li>&#10003; <strong>Aumenta el contraste.</strong> Texto desvanecido en una pagina amarillenta es dificil para el OCR. Si el original esta desvanecido, aumenta el contraste en la configuracion de tu escaner.</li>
                 <li>&#10003; <strong>Elimina ruido de fondo.</strong> Manchas, marcas de cafe, sellos sobre texto y paginas arrugadas reducen la precision del OCR. Escanea la copia mas limpia disponible.</li>
               </ul>
-              <p className="text-slate-600 mt-4">Para una guia mas detallada, lee nuestra guia completa de <Link href="/es/aprender/consejos-precision-ocr" className="text-orange-600 hover:underline">Consejos de Precision OCR</Link>.</p>
+              <p className="text-slate-600 mt-4">Para una guia mas detallada, lee nuestra guia completa de <Link href="/es/aprender/consejos-precision-ocr" className="text-[#14D8C4] hover:underline">Consejos de Precision OCR</Link>.</p>
             </section>
 
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Que Hacer Despues de Ejecutar OCR</h2>
               <div className="space-y-6">
-                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Convertir a Word o Excel</h3><p className="text-slate-600">Ahora que tu documento tiene una capa de texto, convertir a otros formatos da mucho mejores resultados. Usa <Link href="/es/pdf-a-texto" className="text-orange-600 hover:underline">PDF a TXT</Link> para documentos editables o extrae datos tabulares como facturas y estados financieros.</p></div>
-                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Extraer Texto Plano</h3><p className="text-slate-600">Necesitas solo el texto sin formato? Usa <Link href="/es/pdf-a-texto" className="text-orange-600 hover:underline">PDF a TXT</Link> para extraer todo el contenido de texto de tu PDF buscable. Esto es util para analisis de datos, traduccion o alimentar texto a otro software.</p></div>
-                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Comprimir el Resultado</h3><p className="text-slate-600">El procesamiento OCR a veces puede aumentar ligeramente el tamano del archivo debido a la capa de texto agregada. Si necesitas enviar el documento por correo o subirlo a un portal con limites de tamano, usa <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link>.</p></div>
-                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Proteger Documentos Sensibles</h3><p className="text-slate-600">Si tu documento escaneado contiene informacion sensible (contratos, registros financieros, copias de identificacion), considera agregar proteccion con contrasena despues del OCR usando <Link href="/es/proteger-pdf" className="text-orange-600 hover:underline">Proteger PDF</Link>.</p></div>
+                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Convertir a Word o Excel</h3><p className="text-slate-600">Ahora que tu documento tiene una capa de texto, convertir a otros formatos da mucho mejores resultados. Usa <Link href="/es/pdf-a-texto" className="text-[#14D8C4] hover:underline">PDF a TXT</Link> para documentos editables o extrae datos tabulares como facturas y estados financieros.</p></div>
+                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Extraer Texto Plano</h3><p className="text-slate-600">Necesitas solo el texto sin formato? Usa <Link href="/es/pdf-a-texto" className="text-[#14D8C4] hover:underline">PDF a TXT</Link> para extraer todo el contenido de texto de tu PDF buscable. Esto es util para analisis de datos, traduccion o alimentar texto a otro software.</p></div>
+                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Comprimir el Resultado</h3><p className="text-slate-600">El procesamiento OCR a veces puede aumentar ligeramente el tamano del archivo debido a la capa de texto agregada. Si necesitas enviar el documento por correo o subirlo a un portal con limites de tamano, usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link>.</p></div>
+                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Proteger Documentos Sensibles</h3><p className="text-slate-600">Si tu documento escaneado contiene informacion sensible (contratos, registros financieros, copias de identificacion), considera agregar proteccion con contrasena despues del OCR usando <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link>.</p></div>
               </div>
             </section>
 
@@ -111,9 +111,9 @@ export default function OCRDocumentoEscaneadoPage() {
                 <li>&#10003; Usa iluminacion natural y uniforme. Evita el flash, que crea puntos brillantes y reflejos.</li>
                 <li>&#10003; Coloca el documento en una superficie oscura y contrastante para que los bordes esten claramente definidos.</li>
                 <li>&#10003; Usa el escaner de documentos integrado de tu telefono (Notas en iPhone, Google Drive en Android) para recorte automatico y correccion de perspectiva.</li>
-                <li>&#10003; Pasa el resultado por la herramienta <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> de PDF.it antes del OCR para mejorar automaticamente el contraste y enderezar la imagen.</li>
+                <li>&#10003; Pasa el resultado por la herramienta <Link href="/es/limpiar-escaneo" className="text-[#14D8C4] hover:underline">Limpieza de Escaneo de Telefono</Link> de PDF.it antes del OCR para mejorar automaticamente el contraste y enderezar la imagen.</li>
               </ul>
-              <p className="text-slate-600 mt-4">Para mas sobre usar OCR en dispositivos moviles, ve nuestra guia sobre <Link href="/es/aprender/ocr-pdf-en-movil" className="text-orange-600 hover:underline">OCR un PDF en Tu Telefono</Link>.</p>
+              <p className="text-slate-600 mt-4">Para mas sobre usar OCR en dispositivos moviles, ve nuestra guia sobre <Link href="/es/aprender/ocr-pdf-en-movil" className="text-[#14D8C4] hover:underline">OCR un PDF en Tu Telefono</Link>.</p>
             </section>
           </div>
         </article>
@@ -122,7 +122,7 @@ export default function OCRDocumentoEscaneadoPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Digitaliza Tus Documentos Escaneados</h2>
             <p className="text-slate-300 mb-6">Sube cualquier PDF escaneado y conviertelo en un documento buscable, copiable y convertible en segundos.</p>
-            <Link href="/es/escaner-ocr" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><ScanText className="h-5 w-5" /> Probar Escaner OCR (Pro)</Link>
+            <Link href="/es/escaner-ocr" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><ScanText className="h-5 w-5" /> Probar Escaner OCR (Pro)</Link>
           </div>
         </section>
 
@@ -137,9 +137,9 @@ export default function OCRDocumentoEscaneadoPage() {
                 { title: "OCR PDF en Movil (iPhone y Android)", href: "/es/aprender/ocr-pdf-en-movil" },
                 { title: "Puede el OCR Leer Texto Manuscrito?", href: "/es/aprender/ocr-texto-manuscrito" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

@@ -91,7 +91,7 @@ export default function ConsejoPrecisionOCRPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / OCR PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / OCR PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Consejos de Precision OCR (Mejores Resultados de Reconocimiento de Texto)</h1>
               <p className="text-xl text-slate-300">
                 El OCR no es magia — la calidad de tus resultados depende de la calidad del escaneo, la configuracion y la preparacion. Aqui estan los consejos probados para obtener el reconocimiento de texto mas preciso de tus PDFs escaneados.
@@ -101,17 +101,17 @@ export default function ConsejoPrecisionOCRPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <ScanText className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Aplica estos consejos y prueba el Escaner OCR de PDF.it (Pro).</p>
             </div>
             <Link
               href="/es/escaner-ocr"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Escaner OCR <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function ConsejoPrecisionOCRPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>300 DPI — el estandar.</strong> Esta es la resolucion recomendada para la mayoria de los documentos de texto. Proporciona suficiente detalle para que el OCR reconozca caracteres con precision sin crear archivos innecesariamente grandes.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>400-600 DPI — para texto pequeno.</strong> Si tu documento tiene notas al pie, letra pequena o texto menor a 10 puntos, aumenta la resolucion. El detalle extra ayuda al OCR a distinguir entre caracteres similares como &apos;l&apos; y &apos;1&apos;, o &apos;O&apos; y &apos;0&apos;.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Menos de 200 DPI — evita esto.</strong> Los escaneos de baja resolucion producen caracteres borrosos que el OCR no puede reconocer de manera confiable. Si recibes un escaneo de baja resolucion de alguien mas, hay mejora limitada posible sin volver a escanear.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Mas de 600 DPI — rendimientos decrecientes.</strong> Escanear por encima de 600 DPI crea archivos mucho mas grandes pero no mejora significativamente la precision del OCR para texto impreso estandar. Ahorra espacio de almacenamiento y tiempo de procesamiento manteniendote en 300-600 DPI.</span>
                 </li>
               </ul>
@@ -167,7 +167,7 @@ export default function ConsejoPrecisionOCRPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -186,10 +186,10 @@ export default function ConsejoPrecisionOCRPage() {
                 Los motores OCR esperan que el texto vaya en lineas horizontales rectas. Cuando una pagina esta torcida (ligeramente rotada) o al reves, la precision cae drasticamente. Asi es como corregir problemas comunes de orientacion:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Endereza paginas torcidas.</strong> Incluso una inclinacion de 2-3 grados puede causar errores OCR. Si tu escaneo se ve ligeramente inclinado, usa <Link href="/es/rotar-pdf" className="text-orange-600 hover:underline">Rotar PDF</Link> para corregir la orientacion antes de ejecutar el OCR.</li>
+                <li>&#10003; <strong>Endereza paginas torcidas.</strong> Incluso una inclinacion de 2-3 grados puede causar errores OCR. Si tu escaneo se ve ligeramente inclinado, usa <Link href="/es/rotar-pdf" className="text-[#14D8C4] hover:underline">Rotar PDF</Link> para corregir la orientacion antes de ejecutar el OCR.</li>
                 <li>&#10003; <strong>Corrige paginas al reves.</strong> Si alguna pagina de tu PDF esta rotada 180 grados, el OCR fallara completamente o producira texto sin sentido. Rotalas al derecho primero.</li>
                 <li>&#10003; <strong>Maneja orientaciones mixtas.</strong> Algunos documentos mezclan paginas verticales y horizontales. Asegurate de que cada pagina este orientada para que el texto se lea de izquierda a derecha, de arriba a abajo antes de procesar.</li>
-                <li>&#10003; <strong>Usa la Limpieza de Escaneo para correccion automatica.</strong> La herramienta de <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo</Link> detecta y corrige automaticamente la inclinacion en documentos capturados con telefono, ahorrandote el esfuerzo manual.</li>
+                <li>&#10003; <strong>Usa la Limpieza de Escaneo para correccion automatica.</strong> La herramienta de <Link href="/es/limpiar-escaneo" className="text-[#14D8C4] hover:underline">Limpieza de Escaneo</Link> detecta y corrige automaticamente la inclinacion en documentos capturados con telefono, ahorrandote el esfuerzo manual.</li>
               </ul>
             </section>
 
@@ -231,7 +231,7 @@ export default function ConsejoPrecisionOCRPage() {
                 <li>&#10003; <strong>Limpia el vidrio del escaner.</strong> El polvo, manchas y huellas dactilares en el vidrio del escaner aparecen como ruido en el escaneo y pueden ser confundidos con caracteres o puntuacion por el motor OCR.</li>
                 <li>&#10003; <strong>Usa la mejor copia disponible.</strong> Si tienes acceso a multiples copias de un documento (original, fotocopia, fax), siempre escanea la que tenga el texto mas nitido y oscuro.</li>
                 <li>&#10003; <strong>Quita grapas y clips.</strong> Estos crean sombras y pueden causar que la pagina se asiente de manera desigual en el escaner, produciendo escaneos torcidos.</li>
-                <li>&#10003; <strong>Considera el formato de salida.</strong> Si necesitas extraer datos a una hoja de calculo despues del OCR, usa <Link href="/es/pdf-a-excel" className="text-orange-600 hover:underline">PDF a Excel</Link>. Para texto editable, usa <Link href="/es/pdf-a-word" className="text-orange-600 hover:underline">PDF a Word</Link>. Para texto sin formato, usa <Link href="/es/pdf-a-texto" className="text-orange-600 hover:underline">PDF a TXT</Link>.</li>
+                <li>&#10003; <strong>Considera el formato de salida.</strong> Si necesitas extraer datos a una hoja de calculo despues del OCR, usa <Link href="/es/pdf-a-excel" className="text-[#14D8C4] hover:underline">PDF a Excel</Link>. Para texto editable, usa <Link href="/es/pdf-a-word" className="text-[#14D8C4] hover:underline">PDF a Word</Link>. Para texto sin formato, usa <Link href="/es/pdf-a-texto" className="text-[#14D8C4] hover:underline">PDF a TXT</Link>.</li>
               </ul>
             </section>
 
@@ -245,7 +245,7 @@ export default function ConsejoPrecisionOCRPage() {
             <p className="text-slate-300 mb-6">Aplica estos consejos y sube tu PDF escaneado al Escaner OCR de PDF.it para el mejor reconocimiento de texto posible.</p>
             <Link
               href="/es/escaner-ocr"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <ScanText className="h-5 w-5" /> Probar Escaner OCR (Pro)
             </Link>
@@ -267,10 +267,10 @@ export default function ConsejoPrecisionOCRPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

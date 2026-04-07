@@ -91,7 +91,7 @@ export default function ExtractPagesFromPDFPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Extract Pages</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Extract Pages</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Extract Pages from a PDF (Save Selected Pages as a New PDF)</h1>
               <p className="text-xl text-slate-300">
                 Need just a few pages from a large document? Here's how to pull out exactly the pages you need and save them as a new, clean PDF file.
@@ -101,17 +101,17 @@ export default function ExtractPagesFromPDFPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileOutput className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to extract pages? Skip the guide and go straight to the tool.</p>
             </div>
             <Link
               href="/split-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Extract Pages Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function ExtractPagesFromPDFPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Pulling a receipt or invoice.</strong> Your bank statement PDF has 12 months of data — extract just the month you need for your expense report.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Grabbing a chapter from a textbook.</strong> Study just the chapter you need without carrying around the entire book on your device.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Isolating a form.</strong> A government packet has 20 pages but only one is the actual form you need to fill out and return.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Creating a custom handout.</strong> Pull pages from different sections of a training manual to create a focused reference document.</span>
                 </li>
               </ul>
@@ -167,7 +167,7 @@ export default function ExtractPagesFromPDFPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -187,7 +187,7 @@ export default function ExtractPagesFromPDFPage() {
               </p>
               <div className="bg-gray-50 rounded-xl p-5 border border-gray-200 space-y-3">
                 <p className="text-slate-700"><strong>Scenario:</strong> You need pages 3, 7, and 15-18 from a 25-page contract.</p>
-                <p className="text-slate-700"><strong>Type:</strong> <span className="font-mono bg-white px-2 py-1 rounded border text-orange-600">3, 7, 15-18</span></p>
+                <p className="text-slate-700"><strong>Type:</strong> <span className="font-mono bg-white px-2 py-1 rounded border text-[#14D8C4]">3, 7, 15-18</span></p>
                 <p className="text-slate-700"><strong>Result:</strong> One new PDF with 6 pages — page 3, page 7, and pages 15 through 18, in that order.</p>
               </div>
               <p className="text-slate-600 mt-4">
@@ -202,7 +202,7 @@ export default function ExtractPagesFromPDFPage() {
                 Extracting pages doesn't modify your source PDF. The tool creates a brand-new file with copies of the pages you selected. Your original document keeps all its pages, formatting, and metadata exactly as they were.
               </p>
               <p className="text-slate-600">
-                If you want to combine extracted pages with pages from other PDFs, use <Link href="/merge-pdf" className="text-orange-600 hover:underline">Merge PDF</Link> to bring them together into a single document.
+                If you want to combine extracted pages with pages from other PDFs, use <Link href="/merge-pdf" className="text-[#14D8C4] hover:underline">Merge PDF</Link> to bring them together into a single document.
               </p>
             </section>
 
@@ -213,9 +213,9 @@ export default function ExtractPagesFromPDFPage() {
                 Once you have your extracted PDF, you might want to refine it further:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>✓ <strong>Compress it</strong> to reduce file size using <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> — especially helpful if the extracted pages contain scanned images.</li>
-                <li>✓ <strong>Merge it</strong> with other documents using <Link href="/merge-pdf" className="text-orange-600 hover:underline">Merge PDF</Link> to build a custom document from multiple sources.</li>
-                <li>✓ <strong>Convert it</strong> to another format — for example, <Link href="/pdf-to-word" className="text-orange-600 hover:underline">PDF to Word</Link> if you need to edit the content.</li>
+                <li>✓ <strong>Compress it</strong> to reduce file size using <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> — especially helpful if the extracted pages contain scanned images.</li>
+                <li>✓ <strong>Merge it</strong> with other documents using <Link href="/merge-pdf" className="text-[#14D8C4] hover:underline">Merge PDF</Link> to build a custom document from multiple sources.</li>
+                <li>✓ <strong>Convert it</strong> to another format — for example, <Link href="/pdf-to-word" className="text-[#14D8C4] hover:underline">PDF to Word</Link> if you need to edit the content.</li>
               </ul>
             </section>
 
@@ -241,7 +241,7 @@ export default function ExtractPagesFromPDFPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Extract and Compress for Sharing</h3>
                   <p className="text-slate-600">
-                    After extracting pages, run the new file through <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> before emailing it. This ensures the file is as small as possible for the recipient.
+                    After extracting pages, run the new file through <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> before emailing it. This ensures the file is as small as possible for the recipient.
                   </p>
                 </div>
               </div>
@@ -257,7 +257,7 @@ export default function ExtractPagesFromPDFPage() {
             <p className="text-slate-300 mb-6">Upload your PDF and pull out the pages you need in seconds — free, no signup required.</p>
             <Link
               href="/split-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileOutput className="h-5 w-5" /> Extract Pages Now
             </Link>
@@ -278,10 +278,10 @@ export default function ExtractPagesFromPDFPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

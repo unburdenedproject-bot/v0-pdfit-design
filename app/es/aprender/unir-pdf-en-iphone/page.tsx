@@ -41,19 +41,19 @@ export default function UnirPDFEnIPhonePage() {
       <main>
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-            <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Unir PDF</p>
+            <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Unir PDF</p>
             <h1 className="text-4xl lg:text-5xl font-black mb-4">Unir Archivos PDF en iPhone (Método Rápido por Navegador)</h1>
             <p className="text-xl text-slate-300">Sin app necesaria. Abre Safari, sube tus PDFs, combínalos y descarga el archivo unido — todo en menos de un minuto, directamente desde tu iPhone.</p>
           </div></div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><Merge className="h-5 w-5 text-white" /></div>
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><Merge className="h-5 w-5 text-white" /></div>
               <p className="text-slate-700 font-semibold">¿En tu iPhone ahora mismo? Ve directo a la herramienta.</p>
             </div>
-            <Link href="/es/unir-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Unir PDFs Ahora <ArrowRight className="h-4 w-4" /></Link>
+            <Link href="/es/unir-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Unir PDFs Ahora <ArrowRight className="h-4 w-4" /></Link>
           </div>
         </section>
 
@@ -63,10 +63,10 @@ export default function UnirPDFEnIPhonePage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">¿Por Qué Usar un Navegador en Vez de una App?</h2>
               <p className="text-slate-600 mb-4">Podrías descargar una app de PDF del App Store, pero hay buenas razones para no hacerlo:</p>
               <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Sin instalación necesaria.</strong> La mayoría de apps de PDF pesan 50-200MB y requieren crear otra cuenta más. PDF.it funciona instantáneamente en Safari.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Sin espacio desperdiciado.</strong> El almacenamiento de tu iPhone se mantiene limpio. La herramienta del navegador no ocupa espacio en tu dispositivo.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Sin trampas de suscripción.</strong> Muchas apps &quot;gratuitas&quot; de PDF bloquean funciones básicas detrás de suscripciones semanales. PDF.it te permite unir archivos gratis sin costos ocultos.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Funciona en cualquier dispositivo.</strong> La misma herramienta funciona en tu iPhone, iPad, teléfono Android o computadora — sin cambiar entre apps.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span><strong>Sin instalación necesaria.</strong> La mayoría de apps de PDF pesan 50-200MB y requieren crear otra cuenta más. PDF.it funciona instantáneamente en Safari.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span><strong>Sin espacio desperdiciado.</strong> El almacenamiento de tu iPhone se mantiene limpio. La herramienta del navegador no ocupa espacio en tu dispositivo.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">3.</span><span><strong>Sin trampas de suscripción.</strong> Muchas apps &quot;gratuitas&quot; de PDF bloquean funciones básicas detrás de suscripciones semanales. PDF.it te permite unir archivos gratis sin costos ocultos.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">4.</span><span><strong>Funciona en cualquier dispositivo.</strong> La misma herramienta funciona en tu iPhone, iPad, teléfono Android o computadora — sin cambiar entre apps.</span></li>
               </ul>
             </section>
 
@@ -74,11 +74,11 @@ export default function UnirPDFEnIPhonePage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">Dónde Encontrar Tus PDFs en iPhone</h2>
               <p className="text-slate-600 mb-4">Antes de poder unir PDFs, necesitas saber dónde están en tu iPhone. Las ubicaciones más comunes:</p>
               <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>App Archivos.</strong> Abre la app Archivos y revisa &quot;En Mi iPhone&quot; e &quot;iCloud Drive&quot;. Este es el lugar principal donde Apple almacena documentos descargados.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Descargas de Safari.</strong> Si descargaste un PDF de un sitio web, toca el icono de flecha de descarga (junto a la barra de dirección en Safari) para ver descargas recientes.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Adjuntos de email.</strong> Los PDFs recibidos por email pueden guardarse en la app Archivos. Abre el email, mantén presionado el adjunto y toca &quot;Guardar en Archivos&quot;.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Apps de mensajería.</strong> Los PDFs compartidos por WhatsApp, iMessage o Telegram se almacenan en esas apps. Guárdalos primero en la app Archivos para acceso fácil.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">5.</span><span><strong>Almacenamiento en la nube.</strong> Google Drive, Dropbox y OneDrive son accesibles a través de la app Archivos si has conectado esos servicios.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span><strong>App Archivos.</strong> Abre la app Archivos y revisa &quot;En Mi iPhone&quot; e &quot;iCloud Drive&quot;. Este es el lugar principal donde Apple almacena documentos descargados.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span><strong>Descargas de Safari.</strong> Si descargaste un PDF de un sitio web, toca el icono de flecha de descarga (junto a la barra de dirección en Safari) para ver descargas recientes.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">3.</span><span><strong>Adjuntos de email.</strong> Los PDFs recibidos por email pueden guardarse en la app Archivos. Abre el email, mantén presionado el adjunto y toca &quot;Guardar en Archivos&quot;.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">4.</span><span><strong>Apps de mensajería.</strong> Los PDFs compartidos por WhatsApp, iMessage o Telegram se almacenan en esas apps. Guárdalos primero en la app Archivos para acceso fácil.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">5.</span><span><strong>Almacenamiento en la nube.</strong> Google Drive, Dropbox y OneDrive son accesibles a través de la app Archivos si has conectado esos servicios.</span></li>
               </ul>
             </section>
 
@@ -91,7 +91,7 @@ export default function UnirPDFEnIPhonePage() {
                   { title: "Ordena los archivos y toca Unir", desc: "Arrastra los archivos al orden correcto. El primer archivo en la lista se convierte en las primeras páginas del documento unido. Cuando el orden esté correcto, toca Unir PDF. El archivo unido se descargará a tu carpeta de Descargas en la app Archivos." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                   </div>
                 ))}
@@ -123,8 +123,8 @@ export default function UnirPDFEnIPhonePage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">¿El Archivo Unido Es Muy Grande para Compartir?</h2>
               <p className="text-slate-600 mb-4">Los adjuntos de email y portales de carga tienen límites de tamaño. Si tu PDF unido es muy grande:</p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Comprímelo.</strong> Ve a <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> en Safari y sube el archivo unido. La compresión puede reducir el tamaño en 50-80%.</li>
-                <li>&#10003; <strong>Divídelo si es necesario.</strong> Si la compresión no es suficiente, usa <Link href="/es/dividir-pdf" className="text-orange-600 hover:underline">Dividir PDF</Link> para separar el documento en partes más pequeñas.</li>
+                <li>&#10003; <strong>Comprímelo.</strong> Ve a <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> en Safari y sube el archivo unido. La compresión puede reducir el tamaño en 50-80%.</li>
+                <li>&#10003; <strong>Divídelo si es necesario.</strong> Si la compresión no es suficiente, usa <Link href="/es/dividir-pdf" className="text-[#14D8C4] hover:underline">Dividir PDF</Link> para separar el documento en partes más pequeñas.</li>
                 <li>&#10003; <strong>Todo desde tu iPhone.</strong> Cada herramienta de PDF.it funciona en Safari — no necesitas cambiar a una computadora.</li>
               </ul>
             </section>
@@ -144,7 +144,7 @@ export default function UnirPDFEnIPhonePage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">¿Listo para Unir PDFs en Tu iPhone?</h2>
             <p className="text-slate-300 mb-6">Abre la herramienta en Safari y combina tus archivos en menos de un minuto — gratis, sin app necesaria.</p>
-            <Link href="/es/unir-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><Merge className="h-5 w-5" /> Unir PDFs Ahora</Link>
+            <Link href="/es/unir-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><Merge className="h-5 w-5" /> Unir PDFs Ahora</Link>
           </div>
         </section>
 
@@ -158,9 +158,9 @@ export default function UnirPDFEnIPhonePage() {
                 { title: "Cómo Unir PDFs Escaneados (Y Mantenerlos Legibles)", href: "/es/aprender/unir-pdfs-escaneados" },
                 { title: "Combinar PDFs para Envíos (Escuela, Visa, Portales de Empleo)", href: "/es/aprender/combinar-pdfs-para-envio" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

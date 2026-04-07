@@ -300,13 +300,13 @@ export function ImageToPdfInterface({
         <section className="py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto text-center">
-              <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Crown className="h-10 w-10 text-orange-500" />
+              <div className="w-20 h-20 bg-[#F0FDFA] rounded-full flex items-center justify-center mx-auto mb-6">
+                <Crown className="h-10 w-10 text-[#14D8C4]" />
               </div>
               <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-2">
                 {isUpgradeError ? "This Feature Requires an Upgrade" : "You're out of free conversions"}
               </h2>
-              <p className="text-xl sm:text-2xl font-bold text-orange-600 mb-4">Upgrade to Pro</p>
+              <p className="text-xl sm:text-2xl font-bold text-[#14D8C4] mb-4">Upgrade to Pro</p>
               <p className="text-base sm:text-lg text-slate-600 mb-8">
                 {isUpgradeError
                   ? "This tool is available on the Pro plan. Upgrade to unlock unlimited access to all PDF tools."
@@ -315,7 +315,7 @@ export function ImageToPdfInterface({
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <Button
                   onClick={() => router.push("/pricing")}
-                  className="bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl px-6 py-3"
+                  className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold rounded-xl px-6 py-3"
                 >
                   Upgrade to Pro
                 </Button>
@@ -350,7 +350,7 @@ export function ImageToPdfInterface({
             <p className="text-slate-600 mb-8">{errorMessage}</p>
             <Button
               onClick={resetInterface}
-              className="bg-orange-500 hover:bg-orange-600 text-white"
+              className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E]"
             >
               Try Again
             </Button>
@@ -416,7 +416,7 @@ export function ImageToPdfInterface({
               <div className="text-center mb-8">
                 <Button
                   onClick={downloadAllAsZip}
-                  className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3"
+                  className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-semibold px-8 py-3"
                   size="lg"
                 >
                   <Download className="h-4 w-4 mr-2" />
@@ -434,7 +434,7 @@ export function ImageToPdfInterface({
                 Convert More Images
               </Button>
               <Button
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3"
+                className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] px-8 py-3"
                 onClick={() => (window.location.href = "/")}
               >
                 Try Another Tool
@@ -463,8 +463,8 @@ export function ImageToPdfInterface({
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
-            <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Loader2 className="h-10 w-10 text-orange-600 animate-spin" />
+            <div className="w-20 h-20 bg-[#F0FDFA] rounded-full flex items-center justify-center mx-auto mb-6">
+              <Loader2 className="h-10 w-10 text-[#14D8C4] animate-spin" />
             </div>
             <h2 className="text-3xl font-bold text-slate-900 mb-4">
               Converting {images.length === 1 ? "Image" : "Images"} to PDF...
@@ -474,7 +474,7 @@ export function ImageToPdfInterface({
             </p>
             <div className="w-full bg-gray-200 rounded-full h-3 mb-8">
               <div
-                className="bg-orange-500 h-3 rounded-full transition-all duration-300 ease-out"
+                className="bg-[#14D8C4] h-3 rounded-full transition-all duration-300 ease-out"
                 style={{ width: `${progress}%` }}
               />
             </div>
@@ -500,8 +500,8 @@ export function ImageToPdfInterface({
             className={cn(
               "border-2 border-dashed rounded-xl p-12 transition-all duration-200 cursor-pointer",
               isDragOver
-                ? "border-orange-500 bg-orange-50"
-                : "border-gray-300 hover:border-orange-400 hover:bg-gray-50"
+                ? "border-[#14D8C4] bg-[#F0FDFA]"
+                : "border-gray-300 hover:border-[#14D8C4]/40 hover:bg-gray-50"
             )}
             onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
@@ -509,14 +509,14 @@ export function ImageToPdfInterface({
             onClick={() => fileInputRef.current?.click()}
           >
             <div className="text-center">
-              <ImageIcon className="h-12 w-12 text-orange-500 mx-auto mb-4" />
+              <ImageIcon className="h-12 w-12 text-[#14D8C4] mx-auto mb-4" />
               <h3 className="text-xl font-bold text-slate-900 mb-2">
                 Drop your {formatLabel} {images.length > 0 ? "images" : "image(s)"} here
               </h3>
               <p className="text-slate-600 mb-6">or click to browse files</p>
               <Button
                 size="lg"
-                className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8"
+                className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-semibold px-8"
               >
                 Choose {formatLabel} Images
               </Button>
@@ -586,7 +586,7 @@ export function ImageToPdfInterface({
                   e.stopPropagation()
                   fileInputRef.current?.click()
                 }}
-                className="w-full border-dashed border-2 border-gray-300 hover:border-orange-400 text-slate-600 hover:text-orange-600"
+                className="w-full border-dashed border-2 border-gray-300 hover:border-[#14D8C4]/40 text-slate-600 hover:text-[#2EE6D6]"
               >
                 <Upload className="h-4 w-4 mr-2" />
                 Add More Images
@@ -603,12 +603,12 @@ export function ImageToPdfInterface({
                       className={cn(
                         "flex flex-col items-center gap-2 rounded-xl border-2 p-5 transition-all",
                         outputMode === "combined"
-                          ? "border-orange-500 bg-orange-50 shadow-sm"
-                          : "border-gray-200 hover:border-orange-300 hover:bg-gray-50"
+                          ? "border-[#14D8C4] bg-[#F0FDFA] shadow-sm"
+                          : "border-gray-200 hover:border-[#14D8C4]/30 hover:bg-gray-50"
                       )}
                     >
-                      <FileText className={cn("h-8 w-8", outputMode === "combined" ? "text-orange-600" : "text-slate-400")} />
-                      <span className={cn("font-bold text-sm", outputMode === "combined" ? "text-orange-700" : "text-slate-700")}>
+                      <FileText className={cn("h-8 w-8", outputMode === "combined" ? "text-[#14D8C4]" : "text-slate-400")} />
+                      <span className={cn("font-bold text-sm", outputMode === "combined" ? "text-[#0FBFB0]" : "text-slate-700")}>
                         One PDF
                       </span>
                       <span className="text-xs text-slate-500 text-center">
@@ -621,12 +621,12 @@ export function ImageToPdfInterface({
                       className={cn(
                         "flex flex-col items-center gap-2 rounded-xl border-2 p-5 transition-all",
                         outputMode === "separate"
-                          ? "border-orange-500 bg-orange-50 shadow-sm"
-                          : "border-gray-200 hover:border-orange-300 hover:bg-gray-50"
+                          ? "border-[#14D8C4] bg-[#F0FDFA] shadow-sm"
+                          : "border-gray-200 hover:border-[#14D8C4]/30 hover:bg-gray-50"
                       )}
                     >
-                      <Download className={cn("h-8 w-8", outputMode === "separate" ? "text-orange-600" : "text-slate-400")} />
-                      <span className={cn("font-bold text-sm", outputMode === "separate" ? "text-orange-700" : "text-slate-700")}>
+                      <Download className={cn("h-8 w-8", outputMode === "separate" ? "text-[#14D8C4]" : "text-slate-400")} />
+                      <span className={cn("font-bold text-sm", outputMode === "separate" ? "text-[#0FBFB0]" : "text-slate-700")}>
                         Separate PDFs
                       </span>
                       <span className="text-xs text-slate-500 text-center">
@@ -640,7 +640,7 @@ export function ImageToPdfInterface({
               {/* Submit */}
               <Button
                 onClick={processImages}
-                className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold"
+                className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-semibold"
                 size="lg"
               >
                 <FileText className="h-4 w-4 mr-2" />

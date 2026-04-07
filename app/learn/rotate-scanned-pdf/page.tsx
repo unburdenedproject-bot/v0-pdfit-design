@@ -91,7 +91,7 @@ export default function RotateScannedPDFPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Rotate PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Rotate PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Rotate a Scanned PDF (Fix Orientation After Scanning)</h1>
               <p className="text-xl text-slate-300">
                 Scanned a document and the pages came out sideways or upside down? This is one of the most common scanning issues. Here is how to fix the orientation instantly without re-scanning.
@@ -101,17 +101,17 @@ export default function RotateScannedPDFPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <RotateCw className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Got a rotated scan? Fix it in seconds.</p>
             </div>
             <Link
               href="/rotate-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Rotate PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,23 +130,23 @@ export default function RotateScannedPDFPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Paper placed at wrong angle.</strong> Flatbed scanners scan from a fixed corner. If you place the document at a 90° or 180° offset, the scan comes out rotated. Most people do not notice until they open the PDF later.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Automatic document feeder (ADF) orientation.</strong> When feeding pages through an ADF, the scanner expects a specific orientation. If you load pages the wrong way, every page comes out sideways — and you may not discover this until the entire batch is scanned.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Landscape documents scanned as portrait.</strong> Spreadsheets, certificates, and landscape-oriented documents placed on a portrait-oriented scanner produce sideways scans. The scanner does not auto-detect landscape orientation.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
-                  <span><strong>Phone camera scanning.</strong> Using your phone to scan documents can produce rotated results depending on how you held the device. <Link href="/phone-scan-cleanup" className="text-orange-600 hover:underline">Phone Scan Cleanup</Link> helps with image quality, but rotation may still need a manual fix.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
+                  <span><strong>Phone camera scanning.</strong> Using your phone to scan documents can produce rotated results depending on how you held the device. <Link href="/phone-scan-cleanup" className="text-[#14D8C4] hover:underline">Phone Scan Cleanup</Link> helps with image quality, but rotation may still need a manual fix.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Mixed orientation batches.</strong> When you scan a stack of documents that includes both portrait and landscape pages, some pages will inevitably be rotated compared to others.</span>
                 </li>
               </ul>
@@ -171,7 +171,7 @@ export default function RotateScannedPDFPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -199,7 +199,7 @@ export default function RotateScannedPDFPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Mixed Portrait and Landscape Pages</h3>
                   <p className="text-slate-600">
-                    When a document has both portrait text pages and landscape charts, you need to rotate them separately. In PDF.it, select only the landscape pages, rotate them, then download. The portrait pages remain untouched. If you need to do more complex rearranging, <Link href="/split-pdf" className="text-orange-600 hover:underline">split the document</Link> first.
+                    When a document has both portrait text pages and landscape charts, you need to rotate them separately. In PDF.it, select only the landscape pages, rotate them, then download. The portrait pages remain untouched. If you need to do more complex rearranging, <Link href="/split-pdf" className="text-[#14D8C4] hover:underline">split the document</Link> first.
                   </p>
                 </div>
                 <div>
@@ -219,8 +219,8 @@ export default function RotateScannedPDFPage() {
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Rotate first, OCR second.</strong> OCR engines analyze text line by line, expecting horizontal text. Sideways or upside-down text produces garbled results with high error rates.</li>
-                <li>&#10003; <strong>Fix orientation completely.</strong> Make sure every page is upright before running <Link href="/ocr-scanner" className="text-orange-600 hover:underline">OCR Scanner</Link>. Even a single rotated page will produce unusable text output for that page.</li>
-                <li>&#10003; <strong>Clean up phone scans.</strong> If the scan came from a phone camera, use <Link href="/phone-scan-cleanup" className="text-orange-600 hover:underline">Phone Scan Cleanup</Link> to improve contrast and remove shadows before running OCR. Better input quality means better OCR accuracy.</li>
+                <li>&#10003; <strong>Fix orientation completely.</strong> Make sure every page is upright before running <Link href="/ocr-scanner" className="text-[#14D8C4] hover:underline">OCR Scanner</Link>. Even a single rotated page will produce unusable text output for that page.</li>
+                <li>&#10003; <strong>Clean up phone scans.</strong> If the scan came from a phone camera, use <Link href="/phone-scan-cleanup" className="text-[#14D8C4] hover:underline">Phone Scan Cleanup</Link> to improve contrast and remove shadows before running OCR. Better input quality means better OCR accuracy.</li>
                 <li>&#10003; <strong>Check the OCR output.</strong> After running OCR, try selecting and copying text from the PDF to verify the recognition worked correctly. If it did not, the page orientation might still be slightly off.</li>
               </ul>
             </section>
@@ -236,7 +236,7 @@ export default function RotateScannedPDFPage() {
                 <li>&#10003; <strong>Check ADF paper guides.</strong> When using an automatic document feeder, make sure the paper guides are snug against the page edges. Loose guides let pages shift and enter at an angle.</li>
                 <li>&#10003; <strong>Scan a test page first.</strong> Before scanning a large batch, scan one page and check the orientation. Fixing the setup for one page is much faster than rotating 50 pages afterward.</li>
                 <li>&#10003; <strong>Use scanner auto-rotate.</strong> Some modern scanners have an auto-rotate feature that detects text orientation and corrects it automatically. Check your scanner settings if available.</li>
-                <li>&#10003; <strong>Separate landscape pages.</strong> If your batch includes landscape documents, scan them separately with the correct orientation setting, then <Link href="/merge-pdf" className="text-orange-600 hover:underline">merge the PDFs</Link> together afterward.</li>
+                <li>&#10003; <strong>Separate landscape pages.</strong> If your batch includes landscape documents, scan them separately with the correct orientation setting, then <Link href="/merge-pdf" className="text-[#14D8C4] hover:underline">merge the PDFs</Link> together afterward.</li>
               </ul>
             </section>
 
@@ -248,24 +248,24 @@ export default function RotateScannedPDFPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
-                  <span><strong>Rotate</strong> — Fix any pages that are sideways or upside down using <Link href="/rotate-pdf" className="text-orange-600 hover:underline">Rotate PDF</Link>.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
+                  <span><strong>Rotate</strong> — Fix any pages that are sideways or upside down using <Link href="/rotate-pdf" className="text-[#14D8C4] hover:underline">Rotate PDF</Link>.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
-                  <span><strong>Clean up</strong> — If scanned with a phone, use <Link href="/phone-scan-cleanup" className="text-orange-600 hover:underline">Phone Scan Cleanup</Link> to improve contrast and remove shadows.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
+                  <span><strong>Clean up</strong> — If scanned with a phone, use <Link href="/phone-scan-cleanup" className="text-[#14D8C4] hover:underline">Phone Scan Cleanup</Link> to improve contrast and remove shadows.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>OCR</strong> — Run <Link href="/ocr-scanner" className="text-orange-600 hover:underline">OCR Scanner</Link> to make the text searchable and copyable.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
+                  <span><strong>OCR</strong> — Run <Link href="/ocr-scanner" className="text-[#14D8C4] hover:underline">OCR Scanner</Link> to make the text searchable and copyable.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
-                  <span><strong>Compress</strong> — Use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> to reduce the file size for sharing or uploading.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
+                  <span><strong>Compress</strong> — Use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> to reduce the file size for sharing or uploading.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
-                  <span><strong>Flatten</strong> — Use <Link href="/flatten-pdf" className="text-orange-600 hover:underline">Flatten PDF</Link> to finalize the document and make it compatible with all submission portals.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
+                  <span><strong>Flatten</strong> — Use <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">Flatten PDF</Link> to finalize the document and make it compatible with all submission portals.</span>
                 </li>
               </ul>
             </section>
@@ -280,7 +280,7 @@ export default function RotateScannedPDFPage() {
             <p className="text-slate-300 mb-6">Upload your scan and correct the orientation in seconds — free, no signup required.</p>
             <Link
               href="/rotate-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <RotateCw className="h-5 w-5" /> Rotate PDF Now
             </Link>
@@ -300,10 +300,10 @@ export default function RotateScannedPDFPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

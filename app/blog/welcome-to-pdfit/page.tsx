@@ -26,7 +26,7 @@ export default function WelcomeToPDFitPage() {
                 Back to Blog
               </Link>
               <div className="flex items-center gap-3 mb-4">
-                <span className="bg-orange-500/20 text-orange-300 text-xs font-bold px-3 py-1 rounded-full">
+                <span className="bg-[#14D8C4]/20 text-[#14D8C4]/40 text-xs font-bold px-3 py-1 rounded-full">
                   Announcement
                 </span>
                 <div className="flex items-center gap-1.5 text-sm text-slate-400">
@@ -153,11 +153,11 @@ export default function WelcomeToPDFitPage() {
               </p>
               <p className="text-slate-600 leading-relaxed mb-4">
                 Check out our{" "}
-                <Link href="/pricing" className="text-orange-600 font-semibold hover:underline">
+                <Link href="/pricing" className="text-[#14D8C4] font-semibold hover:underline">
                   pricing page
                 </Link>{" "}
                 to see which plan fits your needs, or head to the{" "}
-                <Link href="/" className="text-orange-600 font-semibold hover:underline">
+                <Link href="/" className="text-[#14D8C4] font-semibold hover:underline">
                   homepage
                 </Link>{" "}
                 to explore all available tools.
@@ -170,7 +170,7 @@ export default function WelcomeToPDFitPage() {
               <div className="mt-12 pt-8 border-t border-slate-200">
                 <Link
                   href="/blog"
-                  className="inline-flex items-center gap-2 text-orange-600 font-semibold hover:underline"
+                  className="inline-flex items-center gap-2 text-[#14D8C4] font-semibold hover:underline"
                 >
                   <ArrowLeft className="h-4 w-4" />
                   Back to Blog

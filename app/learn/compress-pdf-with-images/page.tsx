@@ -91,7 +91,7 @@ export default function CompressPDFWithImagesPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Compress PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Compress PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Compress a PDF with Images (Photos, Scans, Graphics)</h1>
               <p className="text-xl text-slate-300">
                 Your PDF is stuffed with photos, scanned pages, or graphics — and the file size has ballooned. Here&apos;s how to compress image-heavy PDFs without destroying what makes them useful.
@@ -101,17 +101,17 @@ export default function CompressPDFWithImagesPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileDown className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to compress? Skip the guide and go straight to the tool.</p>
             </div>
             <Link
               href="/compress-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Compress PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function CompressPDFWithImagesPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>High-resolution photos.</strong> A single 12-megapixel photo embedded at full resolution can be 5-10MB. Reports with 10-20 product photos can easily hit 50-100MB.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Scanned documents.</strong> Scanners save each page as a full-resolution image — typically 2-5MB per page at 300 DPI. A 30-page scanned contract can be 60-150MB.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Charts and infographics.</strong> Data-rich graphics with gradients, shadows, and transparency are stored as complex image data that takes up significant space.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Duplicate images.</strong> PDFs sometimes embed the same logo, header image, or watermark separately on every page instead of referencing it once. Compression tools can detect and fix this.</span>
                 </li>
               </ul>
@@ -167,7 +167,7 @@ export default function CompressPDFWithImagesPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -197,27 +197,27 @@ export default function CompressPDFWithImagesPage() {
                   <tbody className="text-slate-700">
                     <tr className="border-t border-gray-200">
                       <td className="py-3 px-4 font-semibold">Photographs</td>
-                      <td className="py-3 px-4 text-orange-600 font-semibold">Medium</td>
+                      <td className="py-3 px-4 text-[#14D8C4] font-semibold">Medium</td>
                       <td className="py-3 px-4">40-70% reduction</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
                       <td className="py-3 px-4 font-semibold">Scanned pages</td>
-                      <td className="py-3 px-4 text-orange-600 font-semibold">Medium or Extreme</td>
+                      <td className="py-3 px-4 text-[#14D8C4] font-semibold">Medium or Extreme</td>
                       <td className="py-3 px-4">60-85% reduction</td>
                     </tr>
                     <tr className="border-t border-gray-200">
                       <td className="py-3 px-4 font-semibold">Charts and graphs</td>
-                      <td className="py-3 px-4 text-orange-600 font-semibold">Medium</td>
+                      <td className="py-3 px-4 text-[#14D8C4] font-semibold">Medium</td>
                       <td className="py-3 px-4">30-50% reduction</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
                       <td className="py-3 px-4 font-semibold">Logos and icons</td>
-                      <td className="py-3 px-4 text-orange-600 font-semibold">Light</td>
+                      <td className="py-3 px-4 text-[#14D8C4] font-semibold">Light</td>
                       <td className="py-3 px-4">10-20% reduction</td>
                     </tr>
                     <tr className="border-t border-gray-200">
                       <td className="py-3 px-4 font-semibold">Screenshots</td>
-                      <td className="py-3 px-4 text-orange-600 font-semibold">Medium or Extreme</td>
+                      <td className="py-3 px-4 text-[#14D8C4] font-semibold">Medium or Extreme</td>
                       <td className="py-3 px-4">50-75% reduction</td>
                     </tr>
                   </tbody>
@@ -233,9 +233,9 @@ export default function CompressPDFWithImagesPage() {
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Use Medium or Extreme compression.</strong> Scanned text stays readable even at lower resolutions because our eyes can fill in the gaps. Medium compression typically reduces a 20MB scanned document to 3-5MB.</li>
-                <li>&#10003; <strong>Run OCR first.</strong> Use <Link href="/ocr-scanner" className="text-orange-600 hover:underline">OCR Scanner</Link> to convert scanned images to searchable text. This makes the document more useful and can improve compression efficiency.</li>
-                <li>&#10003; <strong>Clean up phone scans.</strong> If the document was scanned with a phone camera, use <Link href="/phone-scan-cleanup" className="text-orange-600 hover:underline">Phone Scan Cleanup</Link> first to remove shadows and straighten pages, then compress.</li>
-                <li>&#10003; <strong>Flatten annotations.</strong> If you&apos;ve annotated the scanned PDF, <Link href="/flatten-pdf" className="text-orange-600 hover:underline">flatten it first</Link> to merge annotations into the page before compressing.</li>
+                <li>&#10003; <strong>Run OCR first.</strong> Use <Link href="/ocr-scanner" className="text-[#14D8C4] hover:underline">OCR Scanner</Link> to convert scanned images to searchable text. This makes the document more useful and can improve compression efficiency.</li>
+                <li>&#10003; <strong>Clean up phone scans.</strong> If the document was scanned with a phone camera, use <Link href="/phone-scan-cleanup" className="text-[#14D8C4] hover:underline">Phone Scan Cleanup</Link> first to remove shadows and straighten pages, then compress.</li>
+                <li>&#10003; <strong>Flatten annotations.</strong> If you&apos;ve annotated the scanned PDF, <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">flatten it first</Link> to merge annotations into the page before compressing.</li>
               </ul>
             </section>
 
@@ -246,25 +246,25 @@ export default function CompressPDFWithImagesPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Extract and Optimize Individual Images</h3>
                   <p className="text-slate-600">
-                    If a few oversized images are driving up your file size, use <Link href="/extract-images-from-pdf" className="text-orange-600 hover:underline">Extract Images from PDF</Link> to pull them out. Resize or compress them individually, then rebuild the document. This gives you precise control over quality.
+                    If a few oversized images are driving up your file size, use <Link href="/extract-images-from-pdf" className="text-[#14D8C4] hover:underline">Extract Images from PDF</Link> to pull them out. Resize or compress them individually, then rebuild the document. This gives you precise control over quality.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Convert to JPG for Sharing</h3>
                   <p className="text-slate-600">
-                    If you only need to share the images (not the full PDF), use <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">PDF to JPG</Link> to convert pages into individual images. JPGs are much smaller than the equivalent PDF page and easier to share on messaging apps.
+                    If you only need to share the images (not the full PDF), use <Link href="/pdf-to-jpg" className="text-[#14D8C4] hover:underline">PDF to JPG</Link> to convert pages into individual images. JPGs are much smaller than the equivalent PDF page and easier to share on messaging apps.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Split Before Compressing</h3>
                   <p className="text-slate-600">
-                    For very large image-heavy PDFs (50MB+), <Link href="/split-pdf" className="text-orange-600 hover:underline">split the PDF</Link> into sections of 10-20 pages, compress each section, then <Link href="/merge-pdf" className="text-orange-600 hover:underline">merge them back together</Link>. This often produces better compression ratios than processing the entire file at once.
+                    For very large image-heavy PDFs (50MB+), <Link href="/split-pdf" className="text-[#14D8C4] hover:underline">split the PDF</Link> into sections of 10-20 pages, compress each section, then <Link href="/merge-pdf" className="text-[#14D8C4] hover:underline">merge them back together</Link>. This often produces better compression ratios than processing the entire file at once.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Use Upload Ready PDF</h3>
                   <p className="text-slate-600">
-                    For the fastest workflow, use our <Link href="/upload-ready-pdf" className="text-orange-600 hover:underline">Upload Ready PDF</Link> tool. It chains flattening and compression in one step — ideal for getting image-heavy files ready for submission portals.
+                    For the fastest workflow, use our <Link href="/upload-ready-pdf" className="text-[#14D8C4] hover:underline">Upload Ready PDF</Link> tool. It chains flattening and compression in one step — ideal for getting image-heavy files ready for submission portals.
                   </p>
                 </div>
               </div>
@@ -280,7 +280,7 @@ export default function CompressPDFWithImagesPage() {
             <p className="text-slate-300 mb-6">Upload your file and reduce the size while keeping images clear — free, no signup required.</p>
             <Link
               href="/compress-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileDown className="h-5 w-5" /> Compress PDF Now
             </Link>
@@ -301,10 +301,10 @@ export default function CompressPDFWithImagesPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

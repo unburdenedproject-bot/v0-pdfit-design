@@ -91,7 +91,7 @@ export default function ConvertPdfToJpgPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to JPG</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to JPG</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">How to Convert PDF to JPG Online (Fast & High Quality)</h1>
               <p className="text-xl text-slate-300">
                 Need to turn a PDF into images? Whether it's for a presentation, social media, or a website, here's how to convert PDF to JPG in seconds — no software to install.
@@ -101,17 +101,17 @@ export default function ConvertPdfToJpgPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <ImageIcon className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to convert? Skip the guide and go straight to the tool.</p>
             </div>
             <Link
               href="/pdf-to-jpg"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Convert PDF to JPG <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function ConvertPdfToJpgPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Presentations.</strong> You can't drag a PDF into PowerPoint or Google Slides — but you can insert a JPG. Converting pages to images lets you use PDF content in any slide deck.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Social media and websites.</strong> Platforms like Instagram, Facebook, and most website builders don't support PDF uploads. JPG is universally accepted.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Quick previews.</strong> Sometimes you need a thumbnail or preview image of a document — a JPG of the first page works perfectly.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Messaging apps.</strong> Sharing a JPG on WhatsApp, Slack, or Teams shows an inline preview. PDFs often require the recipient to download and open a separate file.</span>
                 </li>
               </ul>
@@ -167,7 +167,7 @@ export default function ConvertPdfToJpgPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -196,22 +196,22 @@ export default function ConvertPdfToJpgPage() {
                   </thead>
                   <tbody className="text-slate-700">
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">72 DPI</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">72 DPI</td>
                       <td className="py-3 px-4">Quick thumbnails, web previews</td>
                       <td className="py-3 px-4">Small (~100-300KB)</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">150 DPI</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">150 DPI</td>
                       <td className="py-3 px-4">Email, web use, social media</td>
                       <td className="py-3 px-4">Medium (~300-800KB)</td>
                     </tr>
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">200 DPI</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">200 DPI</td>
                       <td className="py-3 px-4">Presentations, documents, clear viewing</td>
                       <td className="py-3 px-4">Larger (~500KB-1.5MB)</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">300 DPI</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">300 DPI</td>
                       <td className="py-3 px-4">Printing, archiving, maximum quality</td>
                       <td className="py-3 px-4">Large (~1-3MB per page)</td>
                     </tr>
@@ -245,7 +245,7 @@ export default function ConvertPdfToJpgPage() {
                     <li>- You're creating screenshots or documentation</li>
                   </ul>
                   <p className="text-slate-600 mt-2">
-                    Need PNG instead? Use our <Link href="/pdf-to-png" className="text-orange-600 hover:underline">PDF to PNG</Link> tool for lossless conversion.
+                    Need PNG instead? Use our <Link href="/pdf-to-png" className="text-[#14D8C4] hover:underline">PDF to PNG</Link> tool for lossless conversion.
                   </p>
                 </div>
               </div>
@@ -264,7 +264,7 @@ export default function ConvertPdfToJpgPage() {
                 <li>- Track progress for each file individually</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Free users can convert one file at a time. If you regularly convert PDFs, <Link href="/pricing" className="text-orange-600 hover:underline">upgrading to Pro</Link> saves significant time.
+                Free users can convert one file at a time. If you regularly convert PDFs, <Link href="/pricing" className="text-[#14D8C4] hover:underline">upgrading to Pro</Link> saves significant time.
               </p>
             </section>
 
@@ -275,13 +275,13 @@ export default function ConvertPdfToJpgPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Compress Before Converting</h3>
                   <p className="text-slate-600">
-                    If your PDF is very large, <Link href="/compress-pdf" className="text-orange-600 hover:underline">compress it first</Link> to remove unnecessary data. This can speed up the conversion process without affecting the final JPG quality.
+                    If your PDF is very large, <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">compress it first</Link> to remove unnecessary data. This can speed up the conversion process without affecting the final JPG quality.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Split First, Convert Later</h3>
                   <p className="text-slate-600">
-                    If you only need a few pages as JPGs, don't convert the entire PDF. Use <Link href="/split-pdf" className="text-orange-600 hover:underline">Split PDF</Link> to extract just the pages you need, then convert those to JPG. Faster and less clutter.
+                    If you only need a few pages as JPGs, don't convert the entire PDF. Use <Link href="/split-pdf" className="text-[#14D8C4] hover:underline">Split PDF</Link> to extract just the pages you need, then convert those to JPG. Faster and less clutter.
                   </p>
                 </div>
                 <div>
@@ -303,7 +303,7 @@ export default function ConvertPdfToJpgPage() {
             <p className="text-slate-300 mb-6">Upload your file and get high-quality JPG images in seconds — free, no signup required.</p>
             <Link
               href="/pdf-to-jpg"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <ImageIcon className="h-5 w-5" /> Convert PDF to JPG
             </Link>
@@ -324,10 +324,10 @@ export default function ConvertPdfToJpgPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

@@ -91,7 +91,7 @@ export default function DesbloquearPDFEnMovilPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Desbloquear PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Desbloquear PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Desbloquear un PDF en Tu Telefono (iPhone y Android)</h1>
               <p className="text-xl text-slate-300">
                 Necesitas desbloquear un PDF pero solo tienes tu telefono? No hay problema. Aqui te explicamos como eliminar las restricciones de PDF directamente desde tu navegador movil — sin necesidad de aplicaciones.
@@ -101,17 +101,17 @@ export default function DesbloquearPDFEnMovilPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Unlock className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">En tu telefono ahora mismo? Desbloquea tu PDF en segundos.</p>
             </div>
             <Link
               href="/es/desbloquear-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Desbloquear PDF Ahora <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function DesbloquearPDFEnMovilPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Alguien te envio un PDF restringido</strong> y necesitas copiar una seccion de texto para una respuesta rapida. Estas en el metro con solo tu telefono.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Recibiste un PDF que necesitas imprimir</strong> en una tienda de impresion cercana, pero la restriccion de impresion te lo impide. No tienes laptop disponible.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Necesitas reenviar una version desbloqueada</strong> de un documento a un colega o cliente, y tu laptop no esta accesible.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Estas viajando</strong> y necesitas acceder a un documento protegido con contrasena para una reunion o cita. Tu telefono es tu unico dispositivo.</span>
                 </li>
               </ul>
@@ -170,7 +170,7 @@ export default function DesbloquearPDFEnMovilPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -201,7 +201,7 @@ export default function DesbloquearPDFEnMovilPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -223,7 +223,7 @@ export default function DesbloquearPDFEnMovilPage() {
                 <li>&#10003; <strong>Imprimir desde tu telefono.</strong> En iPhone, usa AirPrint (toca Compartir, luego Imprimir). En Android, usa la opcion de impresion integrada en tu visor de PDF o el menu Compartir.</li>
                 <li>&#10003; <strong>Copiar texto.</strong> Abre el PDF desbloqueado, mantien presionado el texto que quieres copiar y pegalo en cualquier aplicacion — correo, notas, mensajes.</li>
                 <li>&#10003; <strong>Compartir por mensajeria.</strong> Toca el boton de compartir para enviar el PDF desbloqueado a traves de WhatsApp, Telegram, correo electronico o cualquier aplicacion de mensajeria.</li>
-                <li>&#10003; <strong>Comprimir para compartir facilmente.</strong> Si el PDF es demasiado grande para enviar por correo, usa <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> desde tu telefono para reducir el tamano del archivo.</li>
+                <li>&#10003; <strong>Comprimir para compartir facilmente.</strong> Si el PDF es demasiado grande para enviar por correo, usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> desde tu telefono para reducir el tamano del archivo.</li>
               </ul>
             </section>
 
@@ -237,28 +237,28 @@ export default function DesbloquearPDFEnMovilPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Comprimir PDF</h3>
                   <p className="text-slate-600">
-                    Las fotos y escaneos de telefono crean PDF grandes. Usa <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> para reducir el tamano del archivo antes de compartir por correo o aplicaciones de mensajeria. Tambien puedes apuntar a tamanos especificos como <Link href="/es/comprimir-pdf-a-5mb" className="text-orange-600 hover:underline">5MB</Link> o <Link href="/es/comprimir-pdf-a-2mb" className="text-orange-600 hover:underline">2MB</Link>.
+                    Las fotos y escaneos de telefono crean PDF grandes. Usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para reducir el tamano del archivo antes de compartir por correo o aplicaciones de mensajeria. Tambien puedes apuntar a tamanos especificos como <Link href="/es/comprimir-pdf-a-5mb" className="text-[#14D8C4] hover:underline">5MB</Link> o <Link href="/es/comprimir-pdf-a-2mb" className="text-[#14D8C4] hover:underline">2MB</Link>.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Limpieza de Escaneo de Telefono</h3>
                   <p className="text-slate-600">
-                    Tomaste una foto de un documento con la camara de tu telefono? Usa <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> para enderezar, mejorar y convertirla en un PDF limpio y profesional.
+                    Tomaste una foto de un documento con la camara de tu telefono? Usa <Link href="/es/limpiar-escaneo" className="text-[#14D8C4] hover:underline">Limpieza de Escaneo de Telefono</Link> para enderezar, mejorar y convertirla en un PDF limpio y profesional.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Proteger PDF</h3>
                   <p className="text-slate-600">
-                    Necesitas agregar una contrasena a un PDF antes de compartirlo desde tu telefono? Usa <Link href="/es/proteger-pdf" className="text-orange-600 hover:underline">Proteger PDF</Link> para establecer una contrasena de apertura o restricciones de permisos — todo desde tu navegador movil.
+                    Necesitas agregar una contrasena a un PDF antes de compartirlo desde tu telefono? Usa <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link> para establecer una contrasena de apertura o restricciones de permisos — todo desde tu navegador movil.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Unir PDF</h3>
                   <p className="text-slate-600">
-                    Necesitas combinar multiples PDF en tu telefono? Usa <Link href="/es/unir-pdf" className="text-orange-600 hover:underline">Unir PDF</Link> para juntar documentos. Ideal para combinar recibos, boletos o paginas de documentos en un solo archivo.
+                    Necesitas combinar multiples PDF en tu telefono? Usa <Link href="/es/unir-pdf" className="text-[#14D8C4] hover:underline">Unir PDF</Link> para juntar documentos. Ideal para combinar recibos, boletos o paginas de documentos en un solo archivo.
                   </p>
                 </div>
               </div>
@@ -289,7 +289,7 @@ export default function DesbloquearPDFEnMovilPage() {
             <p className="text-slate-300 mb-6">Funciona en iPhone, Android y cualquier dispositivo con navegador. Sin necesidad de aplicacion — solo sube, desbloquea y descarga.</p>
             <Link
               href="/es/desbloquear-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Unlock className="h-5 w-5" /> Desbloquear PDF Ahora
             </Link>
@@ -309,10 +309,10 @@ export default function DesbloquearPDFEnMovilPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

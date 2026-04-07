@@ -91,7 +91,7 @@ export default function ConvertResumeWordToPDFPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Word to PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Word to PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convert a Resume from Word to PDF (ATS-Friendly Tips)</h1>
               <p className="text-xl text-slate-300">
                 Your resume needs to look great to humans AND be readable by applicant tracking systems. Here's how to convert it from Word to PDF the right way.
@@ -101,17 +101,17 @@ export default function ConvertResumeWordToPDFPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileText className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to convert your resume? Skip the guide and go straight to the tool.</p>
             </div>
             <Link
               href="/word-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Word to PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function ConvertResumeWordToPDFPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Formatting consistency.</strong> A PDF looks exactly the same on every device, operating system, and screen size. Your resume will look the same on a recruiter's Windows PC as it does on your Mac.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>No accidental edits.</strong> Word documents can be accidentally modified. A PDF prevents anyone from changing your content, dates, or contact information.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Professional impression.</strong> Sending a .docx file signals "work in progress." A PDF signals "final, polished document." Small detail, big impact.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>ATS compatible.</strong> Modern applicant tracking systems parse PDFs just as well as Word files — as long as you follow a few simple rules (covered below).</span>
                 </li>
               </ul>
@@ -170,27 +170,27 @@ export default function ConvertResumeWordToPDFPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Use a single-column layout.</strong> Multi-column layouts, sidebar designs, and creative templates may look great, but ATS systems read left-to-right, top-to-bottom. Two columns can cause the parser to mix content from different sections.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Use standard fonts.</strong> Arial, Calibri, Times New Roman, Georgia, or Garamond. These convert perfectly to PDF and are recognized by all ATS systems.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Avoid text boxes.</strong> Text inside text boxes is often invisible to ATS parsers. Use normal paragraphs with bold headings instead.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Avoid tables for layout.</strong> Using tables to create a multi-column look (like skills on the left, details on the right) confuses ATS systems. Use simple lists and paragraphs.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Use standard section headings.</strong> "Work Experience," "Education," "Skills," "Certifications" — ATS systems look for these exact keywords to categorize your information.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">6.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">6.</span>
                   <span><strong>No images or graphics.</strong> Logos, icons, headshot photos, and decorative graphics can't be read by ATS. They also increase file size unnecessarily.</span>
                 </li>
               </ul>
@@ -215,7 +215,7 @@ export default function ConvertResumeWordToPDFPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -232,9 +232,9 @@ export default function ConvertResumeWordToPDFPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">Resume PDF Mistakes to Avoid</h2>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Don't password-protect your resume PDF.</strong> ATS systems can't open password-protected files. Your resume will be rejected before anyone sees it.</li>
-                <li>&#10003; <strong>Don't flatten your resume PDF.</strong> <Link href="/flatten-pdf" className="text-orange-600 hover:underline">Flattening</Link> converts text to images, making it unreadable by ATS. Only flatten if you're sending directly to a person (not through an ATS).</li>
+                <li>&#10003; <strong>Don't flatten your resume PDF.</strong> <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">Flattening</Link> converts text to images, making it unreadable by ATS. Only flatten if you're sending directly to a person (not through an ATS).</li>
                 <li>&#10003; <strong>Don't scan a printed resume.</strong> Scanned PDFs are images, not text. ATS can't read them. Always convert from the digital Word file.</li>
-                <li>&#10003; <strong>Don't over-compress.</strong> If you use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> to reduce file size, stick with Light compression to keep text sharp and selectable.</li>
+                <li>&#10003; <strong>Don't over-compress.</strong> If you use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> to reduce file size, stick with Light compression to keep text sharp and selectable.</li>
               </ul>
             </section>
 
@@ -250,7 +250,7 @@ export default function ConvertResumeWordToPDFPage() {
                 <li>&#10003; Embedded custom fonts (switch to standard fonts to reduce size)</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                If you still need to reduce the file size, use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> with Light compression to minimize size without affecting text quality.
+                If you still need to reduce the file size, use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> with Light compression to minimize size without affecting text quality.
               </p>
             </section>
 
@@ -279,7 +279,7 @@ export default function ConvertResumeWordToPDFPage() {
             <p className="text-slate-300 mb-6">Upload your Word resume and get an ATS-friendly PDF in seconds — free, no signup required.</p>
             <Link
               href="/word-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileText className="h-5 w-5" /> Word to PDF Now
             </Link>
@@ -300,10 +300,10 @@ export default function ConvertResumeWordToPDFPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

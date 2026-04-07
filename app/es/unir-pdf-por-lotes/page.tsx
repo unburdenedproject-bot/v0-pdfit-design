@@ -67,7 +67,7 @@ export default function UnirPDFPorLotesPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Merge className="h-10 w-10 text-white" />
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Unir PDF por Lotes</h1>
@@ -75,9 +75,9 @@ export default function UnirPDFPorLotesPage() {
                 Combina múltiples archivos PDF a la vez con PDF.it Pro. Sube docenas de documentos y únelos en un solo PDF en una sola operación — ahorra horas de trabajo manual.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Procesa Múltiples Archivos</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-orange-500" /><span>Archivos Eliminados Tras la Sesión</span></div>
-                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-orange-500" /><span>Descarga como ZIP</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Procesa Múltiples Archivos</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesión</span></div>
+                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Descarga como ZIP</span></div>
               </div>
             </div>
           </div>
@@ -89,7 +89,7 @@ export default function UnirPDFPorLotesPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-4">El Procesamiento por Lotes Requiere Pro</h2>
             <p className="text-slate-600 mb-6">Los usuarios gratuitos pueden unir archivos uno a la vez. Actualiza a Pro para unión por lotes, archivos más grandes y conversiones ilimitadas.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/es/unir-pdf" className="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors">
+              <Link href="/es/unir-pdf" className="inline-flex items-center justify-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors">
                 Prueba Unir PDF Gratis
               </Link>
               <Link href="/es/precios" className="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-8 rounded-xl transition-colors">
@@ -150,7 +150,7 @@ export default function UnirPDFPorLotesPage() {
                 "Haz clic en Unir y descarga tu PDF combinado.",
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                     {i + 1}
                   </div>
                   <p className="text-slate-700 pt-1">{step}</p>

@@ -91,7 +91,7 @@ export default function DocxToPdfKeepFormattingPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Word to PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Word to PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">DOCX to PDF Without Formatting Issues</h1>
               <p className="text-xl text-slate-300">
                 Fonts look wrong, spacing shifted, images moved — sound familiar? Here's how to convert Word to PDF and keep your formatting exactly the way you designed it.
@@ -101,17 +101,17 @@ export default function DocxToPdfKeepFormattingPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileText className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to convert? Skip the guide and go straight to the tool.</p>
             </div>
             <Link
               href="/word-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Word to PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -133,15 +133,15 @@ export default function DocxToPdfKeepFormattingPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Font substitution</strong> — the tool replaces your font with a similar one that has different character widths, causing text to reflow across lines and pages.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Spacing and margin changes</strong> — paragraph spacing, line height, and margins may be interpreted slightly differently by the conversion engine.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Image and object shifts</strong> — floating images, text boxes, and shapes can move when the surrounding text reflows.</span>
                 </li>
               </ul>
@@ -183,7 +183,7 @@ export default function DocxToPdfKeepFormattingPage() {
                 <li>&#10003; <strong>Use "In Line with Text" wrapping.</strong> This anchors the image to a specific position in the text flow. Right-click the image &gt; Wrap Text &gt; In Line with Text.</li>
                 <li>&#10003; <strong>Anchor floating images.</strong> If you need text wrapping, lock the anchor position: right-click &gt; Size and Position &gt; Position tab &gt; check "Lock anchor."</li>
                 <li>&#10003; <strong>Insert at the right resolution.</strong> Don't resize images by dragging handles in Word — this stores the full-size image and just displays it smaller. Resize images in an image editor before inserting.</li>
-                <li>&#10003; <strong>Don't compress images in Word.</strong> Word's built-in compression can reduce quality unexpectedly. If you need a smaller file, convert to PDF first and then <Link href="/compress-pdf" className="text-orange-600 hover:underline">compress the PDF</Link> instead.</li>
+                <li>&#10003; <strong>Don't compress images in Word.</strong> Word's built-in compression can reduce quality unexpectedly. If you need a smaller file, convert to PDF first and then <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">compress the PDF</Link> instead.</li>
               </ul>
             </section>
 
@@ -206,7 +206,7 @@ export default function DocxToPdfKeepFormattingPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -222,9 +222,9 @@ export default function DocxToPdfKeepFormattingPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Common Pitfalls to Avoid</h2>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Don't use Word's "Save as PDF."</strong> Word's built-in export can produce inconsistent results depending on your Word version and operating system. A dedicated converter like <Link href="/word-to-pdf" className="text-orange-600 hover:underline">PDF.it's Word to PDF</Link> gives more reliable output.</li>
+                <li>&#10003; <strong>Don't use Word's "Save as PDF."</strong> Word's built-in export can produce inconsistent results depending on your Word version and operating system. A dedicated converter like <Link href="/word-to-pdf" className="text-[#14D8C4] hover:underline">PDF.it's Word to PDF</Link> gives more reliable output.</li>
                 <li>&#10003; <strong>Avoid "Print to PDF" on Windows.</strong> The Microsoft Print to PDF driver often changes margins and can drop hyperlinks. It's a last resort, not a first choice.</li>
-                <li>&#10003; <strong>Don't mix Office formats.</strong> If your Word document has embedded Excel charts or PowerPoint slides, convert each element separately and use <Link href="/office-to-pdf" className="text-orange-600 hover:underline">Office to PDF</Link> for the best results.</li>
+                <li>&#10003; <strong>Don't mix Office formats.</strong> If your Word document has embedded Excel charts or PowerPoint slides, convert each element separately and use <Link href="/office-to-pdf" className="text-[#14D8C4] hover:underline">Office to PDF</Link> for the best results.</li>
               </ul>
             </section>
 
@@ -255,7 +255,7 @@ export default function DocxToPdfKeepFormattingPage() {
             <p className="text-slate-300 mb-6">Upload your Word document and get a perfectly formatted PDF in seconds.</p>
             <Link
               href="/word-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileText className="h-5 w-5" /> Word to PDF Now
             </Link>
@@ -276,10 +276,10 @@ export default function DocxToPdfKeepFormattingPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

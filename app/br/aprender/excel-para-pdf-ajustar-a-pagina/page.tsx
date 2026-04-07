@@ -43,7 +43,7 @@ export default function ExcelParaPdfAjustarAPaginaPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Excel para PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Excel para PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Excel para PDF — Como Ajustar à Página</h1>
               <p className="text-xl text-slate-300">
                 A função "Ajustar à Página" do Excel é a melhor forma de garantir que toda a planilha caiba na página do PDF. Veja como usar passo a passo.
@@ -52,15 +52,15 @@ export default function ExcelParaPdfAjustarAPaginaPage() {
           </div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <TableIcon className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Planilha ajustada? Converta agora.</p>
             </div>
-            <Link href="/br/excel-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
+            <Link href="/br/excel-para-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
               Converter Excel para PDF <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -86,7 +86,7 @@ export default function ExcelParaPdfAjustarAPaginaPage() {
                   { title: "Salve e converta", desc: "Salve o arquivo Excel e envie para a ferramenta Excel para PDF do PDF.it. As configurações de escala serão respeitadas na conversão." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                   </div>
                 ))}
@@ -100,8 +100,8 @@ export default function ExcelParaPdfAjustarAPaginaPage() {
                   <thead><tr className="bg-slate-900 text-white"><th className="text-left py-3 px-4 font-bold">Cenário</th><th className="text-left py-3 px-4 font-bold">Largura</th><th className="text-left py-3 px-4 font-bold">Altura</th><th className="text-left py-3 px-4 font-bold">Orientação</th></tr></thead>
                   <tbody className="text-slate-700">
                     <tr className="border-t border-gray-200"><td className="py-3 px-4">Planilha com ~10 colunas</td><td className="py-3 px-4 font-semibold">1 página</td><td className="py-3 px-4">Automático</td><td className="py-3 px-4">Retrato</td></tr>
-                    <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4">Planilha com ~15 colunas</td><td className="py-3 px-4 font-semibold">1 página</td><td className="py-3 px-4">Automático</td><td className="py-3 px-4 font-semibold text-orange-600">Paisagem</td></tr>
-                    <tr className="border-t border-gray-200"><td className="py-3 px-4">Planilha com 20+ colunas</td><td className="py-3 px-4 font-semibold">1 página</td><td className="py-3 px-4">Automático</td><td className="py-3 px-4 font-semibold text-orange-600">Paisagem + fonte menor</td></tr>
+                    <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4">Planilha com ~15 colunas</td><td className="py-3 px-4 font-semibold">1 página</td><td className="py-3 px-4">Automático</td><td className="py-3 px-4 font-semibold text-[#14D8C4]">Paisagem</td></tr>
+                    <tr className="border-t border-gray-200"><td className="py-3 px-4">Planilha com 20+ colunas</td><td className="py-3 px-4 font-semibold">1 página</td><td className="py-3 px-4">Automático</td><td className="py-3 px-4 font-semibold text-[#14D8C4]">Paisagem + fonte menor</td></tr>
                     <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4">Tudo em 1 página</td><td className="py-3 px-4 font-semibold">1 página</td><td className="py-3 px-4 font-semibold">1 página</td><td className="py-3 px-4">Paisagem</td></tr>
                   </tbody>
                 </table>
@@ -136,7 +136,7 @@ export default function ExcelParaPdfAjustarAPaginaPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Planilha Ajustada? Converta Agora</h2>
             <p className="text-slate-300 mb-6">Envie seu Excel e obtenha um PDF com todas as colunas visíveis.</p>
-            <Link href="/br/excel-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors">
+            <Link href="/br/excel-para-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors">
               <TableIcon className="h-5 w-5" /> Converter Excel para PDF
             </Link>
           </div>
@@ -152,9 +152,9 @@ export default function ExcelParaPdfAjustarAPaginaPage() {
                 { title: "Converter Word para PDF Online", href: "/br/aprender/converter-word-para-pdf" },
                 { title: "Word para PDF — Erros Comuns de Formato", href: "/br/aprender/word-para-pdf-erros-comuns-de-formato" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

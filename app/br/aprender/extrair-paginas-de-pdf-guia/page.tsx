@@ -80,7 +80,7 @@ export default function ExtrairPaginasDePDFGuiaPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Dividir PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Dividir PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Extrair Paginas de PDF — Guia Completo</h1>
               <p className="text-xl text-slate-300">
                 Tudo que voce precisa saber sobre extracao de paginas: selecao individual, intervalos, cenarios avancados e dicas de produtividade.
@@ -89,17 +89,17 @@ export default function ExtrairPaginasDePDFGuiaPage() {
           </div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Scissors className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Pronto para extrair? Va direto para a ferramenta.</p>
             </div>
             <Link
               href="/br/extrair-paginas-de-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Extrair Paginas Agora <ArrowRight className="h-4 w-4" />
             </Link>
@@ -152,7 +152,7 @@ export default function ExtrairPaginasDePDFGuiaPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -170,13 +170,13 @@ export default function ExtrairPaginasDePDFGuiaPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Extrair paginas de diferentes PDFs e combinar</h3>
                   <p className="text-slate-600">
-                    Extraia paginas do primeiro PDF, depois do segundo, e use <Link href="/br/unir-pdf" className="text-orange-600 hover:underline">Unir PDF</Link> para combinar os resultados em um unico documento.
+                    Extraia paginas do primeiro PDF, depois do segundo, e use <Link href="/br/unir-pdf" className="text-[#14D8C4] hover:underline">Unir PDF</Link> para combinar os resultados em um unico documento.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Extrair e comprimir</h3>
                   <p className="text-slate-600">
-                    Extraia as paginas desejadas e depois use <Link href="/br/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> para reduzir o tamanho do resultado — especialmente util para documentos digitalizados.
+                    Extraia as paginas desejadas e depois use <Link href="/br/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para reduzir o tamanho do resultado — especialmente util para documentos digitalizados.
                   </p>
                 </div>
                 <div>
@@ -207,7 +207,7 @@ export default function ExtrairPaginasDePDFGuiaPage() {
             <p className="text-slate-300 mb-6">Selecione exatamente as paginas que precisa — gratis, sem cadastro.</p>
             <Link
               href="/br/extrair-paginas-de-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Scissors className="h-5 w-5" /> Extrair Paginas Agora
             </Link>
@@ -228,10 +228,10 @@ export default function ExtrairPaginasDePDFGuiaPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

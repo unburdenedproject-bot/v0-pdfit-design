@@ -91,7 +91,7 @@ export default function ConvertExcelToPDFPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Excel to PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Excel to PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convert Excel to PDF Online (XLSX to PDF)</h1>
               <p className="text-xl text-slate-300">
                 Need to share a spreadsheet without worrying about broken formatting or accidental edits? Here's how to convert Excel to PDF in seconds — free, online, no software needed.
@@ -101,17 +101,17 @@ export default function ConvertExcelToPDFPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileSpreadsheet className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to convert? Skip the guide and go straight to the tool.</p>
             </div>
             <Link
               href="/excel-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Excel to PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,23 +130,23 @@ export default function ConvertExcelToPDFPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Universal viewing.</strong> Not everyone has Excel installed. PDFs open on any device, any operating system, any browser — no special software required.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Locked formatting.</strong> Spreadsheets look different depending on the viewer's screen size, Excel version, and installed fonts. PDFs look identical everywhere.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>No accidental edits.</strong> When you send a .xlsx file, anyone can change the numbers. A PDF keeps your data safe from unintentional modifications.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Print-ready.</strong> PDFs are designed for printing. What you see on screen is exactly what comes out of the printer — margins, page breaks, and all.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Archiving.</strong> PDFs are the standard format for long-term document storage. Financial reports, invoices, and records are best archived as PDFs.</span>
                 </li>
               </ul>
@@ -171,7 +171,7 @@ export default function ConvertExcelToPDFPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -197,7 +197,7 @@ export default function ConvertExcelToPDFPage() {
                 <li>✓ <strong>Use "Fit to Page"</strong> scaling. Go to Page Layout → Scale to Fit and set Width to 1 page. This shrinks the spreadsheet to fit on one page width.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Having trouble with columns getting cut off? Read our detailed guide on <Link href="/learn/excel-to-pdf-cut-off-columns" className="text-orange-600 hover:underline">fixing cut-off columns in Excel to PDF</Link>.
+                Having trouble with columns getting cut off? Read our detailed guide on <Link href="/learn/excel-to-pdf-cut-off-columns" className="text-[#14D8C4] hover:underline">fixing cut-off columns in Excel to PDF</Link>.
               </p>
             </section>
 
@@ -211,7 +211,7 @@ export default function ConvertExcelToPDFPage() {
                 <strong>Tip:</strong> If you only need specific sheets in the PDF, either delete the extra sheets before uploading or hide them (right-click the tab → Hide). Hidden sheets are excluded from the conversion.
               </p>
               <p className="text-slate-600">
-                After converting, if you need to extract just certain pages, use <Link href="/split-pdf" className="text-orange-600 hover:underline">Split PDF</Link> to pull out the sheets you need. Or if you're combining PDFs from multiple workbooks, use <Link href="/merge-pdf" className="text-orange-600 hover:underline">Merge PDF</Link>.
+                After converting, if you need to extract just certain pages, use <Link href="/split-pdf" className="text-[#14D8C4] hover:underline">Split PDF</Link> to pull out the sheets you need. Or if you're combining PDFs from multiple workbooks, use <Link href="/merge-pdf" className="text-[#14D8C4] hover:underline">Merge PDF</Link>.
               </p>
             </section>
 
@@ -228,13 +228,13 @@ export default function ConvertExcelToPDFPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Financial Reports</h3>
                   <p className="text-slate-600">
-                    Monthly or quarterly reports with charts and tables convert cleanly to PDF. Set your print area to include only the summary data, convert, and share with stakeholders. Need to compress the result? Use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link>.
+                    Monthly or quarterly reports with charts and tables convert cleanly to PDF. Set your print area to include only the summary data, convert, and share with stakeholders. Need to compress the result? Use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link>.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Data Exports for Archiving</h3>
                   <p className="text-slate-600">
-                    For long-term record keeping, PDF is more reliable than .xlsx. Convert your annual data exports to PDF and store them knowing they'll open correctly in 10 or 20 years. You can also <Link href="/protect-pdf" className="text-orange-600 hover:underline">password-protect</Link> sensitive files.
+                    For long-term record keeping, PDF is more reliable than .xlsx. Convert your annual data exports to PDF and store them knowing they'll open correctly in 10 or 20 years. You can also <Link href="/protect-pdf" className="text-[#14D8C4] hover:underline">password-protect</Link> sensitive files.
                   </p>
                 </div>
               </div>
@@ -244,7 +244,7 @@ export default function ConvertExcelToPDFPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Need to Convert Other Office Files?</h2>
               <p className="text-slate-600">
-                PDF.it handles all major Office formats. Use <Link href="/office-to-pdf" className="text-orange-600 hover:underline">Office to PDF</Link> to convert Word documents, PowerPoint presentations, and other formats. Or go directly to the specific tool you need — the conversion is fast and formatting is preserved across all file types.
+                PDF.it handles all major Office formats. Use <Link href="/office-to-pdf" className="text-[#14D8C4] hover:underline">Office to PDF</Link> to convert Word documents, PowerPoint presentations, and other formats. Or go directly to the specific tool you need — the conversion is fast and formatting is preserved across all file types.
               </p>
             </section>
 
@@ -258,7 +258,7 @@ export default function ConvertExcelToPDFPage() {
             <p className="text-slate-300 mb-6">Upload your spreadsheet and get a clean PDF in seconds — free, no signup required.</p>
             <Link
               href="/excel-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileSpreadsheet className="h-5 w-5" /> Excel to PDF Now
             </Link>
@@ -279,10 +279,10 @@ export default function ConvertExcelToPDFPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

@@ -80,7 +80,7 @@ export default function CorrigirPDFDeCabecaParaBaixoPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Girar PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Girar PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Corrigir PDF de Cabeca para Baixo</h1>
               <p className="text-xl text-slate-300">
                 Seu PDF esta de cabeca para baixo e voce nao consegue ler? Corrija em segundos girando 180 graus — sem software, sem cadastro.
@@ -89,17 +89,17 @@ export default function CorrigirPDFDeCabecaParaBaixoPage() {
           </div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <RotateCw className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Pronto para corrigir? Va direto para a ferramenta.</p>
             </div>
             <Link
               href="/br/girar-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Girar PDF Agora <ArrowRight className="h-4 w-4" />
             </Link>
@@ -116,15 +116,15 @@ export default function CorrigirPDFDeCabecaParaBaixoPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Digitalizacao ao contrario.</strong> O documento foi colocado de cabeca para baixo no scanner ou no alimentador automatico.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Foto com celular.</strong> Ao fotografar um documento com o celular de cabeca para baixo, o PDF gerado fica invertido.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Erro de software.</strong> Alguns programas de criacao de PDF podem gerar paginas na orientacao errada.</span>
                 </li>
               </ul>
@@ -148,7 +148,7 @@ export default function CorrigirPDFDeCabecaParaBaixoPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -175,17 +175,17 @@ export default function CorrigirPDFDeCabecaParaBaixoPage() {
                     <tr className="border-t border-gray-200">
                       <td className="py-3 px-4">Texto de cabeca para baixo</td>
                       <td className="py-3 px-4">Girar 180°</td>
-                      <td className="py-3 px-4 font-semibold text-orange-600">180 graus</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">180 graus</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
                       <td className="py-3 px-4">Texto deitado para a esquerda</td>
                       <td className="py-3 px-4">Girar 90° horario</td>
-                      <td className="py-3 px-4 font-semibold text-orange-600">90° horario</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">90° horario</td>
                     </tr>
                     <tr className="border-t border-gray-200">
                       <td className="py-3 px-4">Texto deitado para a direita</td>
                       <td className="py-3 px-4">Girar 90° anti-horario</td>
-                      <td className="py-3 px-4 font-semibold text-orange-600">90° anti-horario</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">90° anti-horario</td>
                     </tr>
                   </tbody>
                 </table>
@@ -195,9 +195,9 @@ export default function CorrigirPDFDeCabecaParaBaixoPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Proximos Passos Apos Corrigir</h2>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Comprima o PDF</strong> com <Link href="/br/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> se o arquivo for muito grande.</li>
-                <li>&#10003; <strong>Una com outros documentos</strong> usando <Link href="/br/unir-pdf" className="text-orange-600 hover:underline">Unir PDF</Link> se precisar combinar varios PDFs.</li>
-                <li>&#10003; <strong>Aplique OCR</strong> com <Link href="/br/ocr-pdf" className="text-orange-600 hover:underline">OCR PDF</Link> se o documento digitalizado precisa ter texto pesquisavel.</li>
+                <li>&#10003; <strong>Comprima o PDF</strong> com <Link href="/br/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> se o arquivo for muito grande.</li>
+                <li>&#10003; <strong>Una com outros documentos</strong> usando <Link href="/br/unir-pdf" className="text-[#14D8C4] hover:underline">Unir PDF</Link> se precisar combinar varios PDFs.</li>
+                <li>&#10003; <strong>Aplique OCR</strong> com <Link href="/br/ocr-pdf" className="text-[#14D8C4] hover:underline">OCR PDF</Link> se o documento digitalizado precisa ter texto pesquisavel.</li>
                 <li>&#10003; <strong>Funciona no celular:</strong> corrija PDFs invertidos direto do iPhone ou Android pelo navegador.</li>
               </ul>
             </section>
@@ -211,7 +211,7 @@ export default function CorrigirPDFDeCabecaParaBaixoPage() {
             <p className="text-slate-300 mb-6">Gire 180° e corrija em segundos — gratis, sem cadastro.</p>
             <Link
               href="/br/girar-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <RotateCw className="h-5 w-5" /> Girar PDF Agora
             </Link>
@@ -230,10 +230,10 @@ export default function CorrigirPDFDeCabecaParaBaixoPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

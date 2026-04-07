@@ -34,19 +34,19 @@ export default function ConvertirExcelAPdfPage() {
       <main>
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-            <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Excel a PDF</p>
+            <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Excel a PDF</p>
             <h1 className="text-4xl lg:text-5xl font-black mb-4">Convertir Excel a PDF en linea (XLSX a PDF)</h1>
             <p className="text-xl text-slate-300">Necesitas compartir una hoja de calculo sin preocuparte por formato roto o ediciones accidentales? Asi es como convertir Excel a PDF en segundos: gratis, en linea, sin software.</p>
           </div></div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><FileSpreadsheet className="h-5 w-5 text-white" /></div>
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><FileSpreadsheet className="h-5 w-5 text-white" /></div>
               <p className="text-slate-700 font-semibold">Listo para convertir? Salta la guia y ve directo a la herramienta.</p>
             </div>
-            <Link href="/es/excel-a-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Excel a PDF Ahora <ArrowRight className="h-4 w-4" /></Link>
+            <Link href="/es/excel-a-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Excel a PDF Ahora <ArrowRight className="h-4 w-4" /></Link>
           </div>
         </section>
 
@@ -56,11 +56,11 @@ export default function ConvertirExcelAPdfPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">Por que convertir Excel a PDF?</h2>
               <p className="text-slate-600 mb-4">Los archivos Excel son excelentes para trabajar con datos, pero no son ideales para compartir. He aqui por que convertir a PDF es la opcion mas inteligente:</p>
               <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Visualizacion universal.</strong> No todos tienen Excel instalado. Los PDFs se abren en cualquier dispositivo, cualquier sistema operativo, cualquier navegador, sin software especial.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Formato fijo.</strong> Las hojas de calculo se ven diferentes segun el tamano de pantalla del visor, version de Excel y fuentes instaladas. Los PDFs se ven identicos en todas partes.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Sin ediciones accidentales.</strong> Cuando envias un archivo .xlsx, cualquiera puede cambiar los numeros. Un PDF mantiene tus datos seguros de modificaciones no intencionales.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Listo para imprimir.</strong> Los PDFs estan disenados para impresion. Lo que ves en pantalla es exactamente lo que sale de la impresora.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">5.</span><span><strong>Archivado.</strong> Los PDFs son el formato estandar para almacenamiento a largo plazo de documentos. Reportes financieros, facturas y registros se archivan mejor como PDFs.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span><strong>Visualizacion universal.</strong> No todos tienen Excel instalado. Los PDFs se abren en cualquier dispositivo, cualquier sistema operativo, cualquier navegador, sin software especial.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span><strong>Formato fijo.</strong> Las hojas de calculo se ven diferentes segun el tamano de pantalla del visor, version de Excel y fuentes instaladas. Los PDFs se ven identicos en todas partes.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">3.</span><span><strong>Sin ediciones accidentales.</strong> Cuando envias un archivo .xlsx, cualquiera puede cambiar los numeros. Un PDF mantiene tus datos seguros de modificaciones no intencionales.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">4.</span><span><strong>Listo para imprimir.</strong> Los PDFs estan disenados para impresion. Lo que ves en pantalla es exactamente lo que sale de la impresora.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">5.</span><span><strong>Archivado.</strong> Los PDFs son el formato estandar para almacenamiento a largo plazo de documentos. Reportes financieros, facturas y registros se archivan mejor como PDFs.</span></li>
               </ul>
             </section>
 
@@ -73,7 +73,7 @@ export default function ConvertirExcelAPdfPage() {
                   { title: "Descarga tu PDF", desc: "Una vez que termine la conversion, descarga tu PDF. Si necesitas reducir el tamano del archivo para email, usa la herramienta Comprimir PDF. Si combinas multiples hojas de calculo, usa Unir PDF." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                   </div>
                 ))}
@@ -90,14 +90,14 @@ export default function ConvertirExcelAPdfPage() {
                 <li>&#10003; <strong>Ajusta el ancho de las columnas</strong> para que todos los datos sean visibles. Si una columna muestra "###" en lugar de numeros, ensanchala antes de convertir.</li>
                 <li>&#10003; <strong>Usa escala "Ajustar a pagina".</strong> Ve a Diseno de pagina &gt; Ajustar a y establece Ancho en 1 pagina. Esto encoge la hoja de calculo para que quepa en un ancho de pagina.</li>
               </ul>
-              <p className="text-slate-600 mt-4">Tienes problemas con columnas cortadas? Lee nuestra guia detallada sobre <Link href="/es/aprender/excel-a-pdf-columnas-cortadas" className="text-orange-600 hover:underline">solucionar columnas cortadas en Excel a PDF</Link>.</p>
+              <p className="text-slate-600 mt-4">Tienes problemas con columnas cortadas? Lee nuestra guia detallada sobre <Link href="/es/aprender/excel-a-pdf-columnas-cortadas" className="text-[#14D8C4] hover:underline">solucionar columnas cortadas en Excel a PDF</Link>.</p>
             </section>
 
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Convertir libros con multiples hojas</h2>
               <p className="text-slate-600 mb-4">Si tu archivo Excel tiene multiples hojas (pestanas), PDF.it las convierte todas en un solo PDF. Cada hoja comienza en una nueva pagina, manteniendo el orden de pestanas de tu libro.</p>
               <p className="text-slate-600 mb-4"><strong>Consejo:</strong> Si solo necesitas hojas especificas en el PDF, elimina las hojas extras antes de subir u ocultalas (clic derecho en la pestana &gt; Ocultar). Las hojas ocultas se excluyen de la conversion.</p>
-              <p className="text-slate-600">Despues de convertir, si necesitas extraer solo ciertas paginas, usa <Link href="/es/dividir-pdf" className="text-orange-600 hover:underline">Dividir PDF</Link> para sacar las hojas que necesitas. O si combinas PDFs de multiples libros, usa <Link href="/es/unir-pdf" className="text-orange-600 hover:underline">Unir PDF</Link>.</p>
+              <p className="text-slate-600">Despues de convertir, si necesitas extraer solo ciertas paginas, usa <Link href="/es/dividir-pdf" className="text-[#14D8C4] hover:underline">Dividir PDF</Link> para sacar las hojas que necesitas. O si combinas PDFs de multiples libros, usa <Link href="/es/unir-pdf" className="text-[#14D8C4] hover:underline">Unir PDF</Link>.</p>
             </section>
 
             <section className="mb-12">
@@ -120,7 +120,7 @@ export default function ConvertirExcelAPdfPage() {
 
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Necesitas convertir otros archivos de Office?</h2>
-              <p className="text-slate-600">PDF.it maneja todos los formatos principales de Office. Usa <Link href="/es/office-a-pdf" className="text-orange-600 hover:underline">Office a PDF</Link> para convertir documentos de Word, presentaciones de PowerPoint y otros formatos. O ve directamente a la herramienta especifica que necesitas.</p>
+              <p className="text-slate-600">PDF.it maneja todos los formatos principales de Office. Usa <Link href="/es/office-a-pdf" className="text-[#14D8C4] hover:underline">Office a PDF</Link> para convertir documentos de Word, presentaciones de PowerPoint y otros formatos. O ve directamente a la herramienta especifica que necesitas.</p>
             </section>
           </div>
         </article>
@@ -129,7 +129,7 @@ export default function ConvertirExcelAPdfPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Listo para convertir tu archivo Excel?</h2>
             <p className="text-slate-300 mb-6">Sube tu hoja de calculo y obtiene un PDF limpio en segundos, gratis y sin registro.</p>
-            <Link href="/es/excel-a-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><FileSpreadsheet className="h-5 w-5" /> Excel a PDF Ahora</Link>
+            <Link href="/es/excel-a-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><FileSpreadsheet className="h-5 w-5" /> Excel a PDF Ahora</Link>
           </div>
         </section>
 
@@ -143,9 +143,9 @@ export default function ConvertirExcelAPdfPage() {
                 { title: "Exportar reportes mensuales: Excel a PDF para email", href: "/es/aprender/reporte-excel-a-pdf" },
                 { title: "Convertir Excel a PDF en Mac", href: "/es/aprender/excel-a-pdf-en-mac" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

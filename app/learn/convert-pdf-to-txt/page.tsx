@@ -91,7 +91,7 @@ export default function ConvertPdfToTxtPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to TXT</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to TXT</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convert PDF to TXT: Extract Plain Text in Seconds</h1>
               <p className="text-xl text-slate-300">
                 Need the raw text from a PDF — no formatting, no images, just words? Here's how to convert any PDF to a clean TXT file in seconds.
@@ -101,17 +101,17 @@ export default function ConvertPdfToTxtPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileText className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to extract text? Skip the guide and go straight to the tool.</p>
             </div>
             <Link
               href="/pdf-to-txt"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               PDF to TXT Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,23 +130,23 @@ export default function ConvertPdfToTxtPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Data entry and spreadsheets.</strong> When you need to pull text from invoices, receipts, or forms into a database or spreadsheet, TXT gives you clean data without formatting clutter.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Coding and development.</strong> Developers often need to extract text from documentation, API specs, or log files saved as PDFs. Plain text is the easiest format to parse programmatically.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Note-taking and research.</strong> Copying text from a PDF into notes apps (Notion, Google Keep, Apple Notes) works much better with clean TXT than with copy-pasted PDF content that carries hidden formatting.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Accessibility.</strong> Plain text works with every screen reader and assistive technology. Converting academic papers or reports to TXT makes them accessible to everyone.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Text analysis.</strong> Running word counts, searching for keywords, or feeding content into AI tools is simpler with plain text files.</span>
                 </li>
               </ul>
@@ -171,7 +171,7 @@ export default function ConvertPdfToTxtPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -191,13 +191,13 @@ export default function ConvertPdfToTxtPage() {
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#x2717; <strong>All formatting</strong> — bold, italics, underlines, font sizes, and colors disappear.</li>
-                <li>&#x2717; <strong>Images and graphics</strong> — photos, charts, logos, and diagrams are removed. Use <Link href="/extract-images-from-pdf" className="text-orange-600 hover:underline">Extract Images</Link> if you need those separately.</li>
+                <li>&#x2717; <strong>Images and graphics</strong> — photos, charts, logos, and diagrams are removed. Use <Link href="/extract-images-from-pdf" className="text-[#14D8C4] hover:underline">Extract Images</Link> if you need those separately.</li>
                 <li>&#x2717; <strong>Tables and layout</strong> — table structures collapse into plain text lines. Column alignment is lost.</li>
                 <li>&#x2717; <strong>Headers and footers</strong> — page numbers, running headers, and footers may appear inline with the main text.</li>
                 <li>&#x2717; <strong>Hyperlinks</strong> — clickable links become plain text (the URL text stays, but it's no longer clickable).</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                If you need to keep formatting, consider using <Link href="/pdf-to-word" className="text-orange-600 hover:underline">PDF to Word</Link> instead — it preserves layout, tables, and styling in an editable document.
+                If you need to keep formatting, consider using <Link href="/pdf-to-word" className="text-[#14D8C4] hover:underline">PDF to Word</Link> instead — it preserves layout, tables, and styling in an editable document.
               </p>
             </section>
 
@@ -254,21 +254,21 @@ export default function ConvertPdfToTxtPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Scanned PDFs</h3>
                   <p className="text-slate-600">
-                    If your PDF is a scan (photos of paper pages), there's no selectable text to extract. You need <Link href="/ocr-scanner" className="text-orange-600 hover:underline">OCR (Optical Character Recognition)</Link> to read the text from the images. PDF.it's OCR Scanner handles this automatically.
+                    If your PDF is a scan (photos of paper pages), there's no selectable text to extract. You need <Link href="/ocr-scanner" className="text-[#14D8C4] hover:underline">OCR (Optical Character Recognition)</Link> to read the text from the images. PDF.it's OCR Scanner handles this automatically.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Password-Protected PDFs</h3>
                   <p className="text-slate-600">
-                    Some PDFs restrict text copying. If your PDF is protected, use <Link href="/unlock-pdf" className="text-orange-600 hover:underline">Unlock PDF</Link> first (you'll need the password), then convert to TXT.
+                    Some PDFs restrict text copying. If your PDF is protected, use <Link href="/unlock-pdf" className="text-[#14D8C4] hover:underline">Unlock PDF</Link> first (you'll need the password), then convert to TXT.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">PDFs with Custom Fonts</h3>
                   <p className="text-slate-600">
-                    Some PDFs use encoded or custom fonts that produce garbled text when extracted. If your output looks like gibberish, try <Link href="/pdf-to-word" className="text-orange-600 hover:underline">PDF to Word</Link> which handles font encoding differently, or use OCR as a fallback.
+                    Some PDFs use encoded or custom fonts that produce garbled text when extracted. If your output looks like gibberish, try <Link href="/pdf-to-word" className="text-[#14D8C4] hover:underline">PDF to Word</Link> which handles font encoding differently, or use OCR as a fallback.
                   </p>
                 </div>
               </div>
@@ -284,7 +284,7 @@ export default function ConvertPdfToTxtPage() {
             <p className="text-slate-300 mb-6">Upload your file and get clean plain text in seconds — free, no signup required.</p>
             <Link
               href="/pdf-to-txt"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileText className="h-5 w-5" /> Convert PDF to TXT Now
             </Link>
@@ -305,10 +305,10 @@ export default function ConvertPdfToTxtPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

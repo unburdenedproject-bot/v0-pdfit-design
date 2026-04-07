@@ -91,7 +91,7 @@ export default function MejorFormatoParaEnviarDocumentosPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Office a PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Office a PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Mejor Formato para Enviar Documentos (PDF vs DOCX vs Otros)</h1>
               <p className="text-xl text-slate-300">
                 Terminaste de escribir tu documento. Ahora necesitas enviarlo. Debes adjuntar el archivo .docx, exportar como PDF o compartir un enlace? Aqui te explicamos cuando usar cada formato y por que PDF gana en la mayoria de situaciones.
@@ -101,17 +101,17 @@ export default function MejorFormatoParaEnviarDocumentosPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileText className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Necesitas convertir un documento a PDF ahora mismo?</p>
             </div>
             <Link
               href="/es/office-a-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Convertir a PDF Ahora <ArrowRight className="h-4 w-4" />
             </Link>
@@ -129,19 +129,19 @@ export default function MejorFormatoParaEnviarDocumentosPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>PDF es un formato de visualizacion.</strong> Muestra el documento exactamente como el autor lo diseno — mismas fuentes, mismo diseno, mismo espaciado — en cada dispositivo, sistema operativo y tamano de pantalla.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>DOCX es un formato de edicion.</strong> Esta disenado para escribir y revisar. El documento puede verse diferente dependiendo de las fuentes instaladas, la version de Word y la resolucion de pantalla del lector.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>PDF no puede ser editado accidentalmente.</strong> Cuando envias un DOCX, el destinatario podria cambiar texto, eliminar una seccion o reformatear un parrafo por accidente. Los PDFs previenen esto.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>PDF se abre en todas partes.</strong> Cada telefono, tableta y computadora puede abrir PDFs nativamente. DOCX requiere Microsoft Word, Google Docs o una aplicacion compatible.</span>
                 </li>
               </ul>
@@ -165,7 +165,7 @@ export default function MejorFormatoParaEnviarDocumentosPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -188,7 +188,7 @@ export default function MejorFormatoParaEnviarDocumentosPage() {
                 <li>&#10003; <strong>Cuando se solicita especificamente.</strong> Algunas solicitudes de empleo o formularios gubernamentales piden especificamente .docx. Sigue sus instrucciones, aunque PDF suele ser superior.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Para todo lo demas — versiones finales, envios formales, entregables a clientes — convierte a PDF primero. Puedes usar las herramientas de PDF.it: <Link href="/es/word-a-pdf" className="text-orange-600 hover:underline">Word a PDF</Link>, <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">Excel a PDF</Link>, o <Link href="/es/powerpoint-a-pdf" className="text-orange-600 hover:underline">PowerPoint a PDF</Link>.
+                Para todo lo demas — versiones finales, envios formales, entregables a clientes — convierte a PDF primero. Puedes usar las herramientas de PDF.it: <Link href="/es/word-a-pdf" className="text-[#14D8C4] hover:underline">Word a PDF</Link>, <Link href="/es/excel-a-pdf" className="text-[#14D8C4] hover:underline">Excel a PDF</Link>, o <Link href="/es/powerpoint-a-pdf" className="text-[#14D8C4] hover:underline">PowerPoint a PDF</Link>.
               </p>
             </section>
 
@@ -204,13 +204,13 @@ export default function MejorFormatoParaEnviarDocumentosPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Texto Plano (.txt)</h3>
                   <p className="text-slate-600">
-                    Los archivos de texto plano no tienen formato — sin negritas, sin imagenes, sin tablas. Son utiles para codigo, registros o notas rapidas, pero nunca para documentos profesionales. Si necesitas extraer texto de un PDF, usa la herramienta <Link href="/es/pdf-a-texto" className="text-orange-600 hover:underline">PDF a TXT</Link> de PDF.it.
+                    Los archivos de texto plano no tienen formato — sin negritas, sin imagenes, sin tablas. Son utiles para codigo, registros o notas rapidas, pero nunca para documentos profesionales. Si necesitas extraer texto de un PDF, usa la herramienta <Link href="/es/pdf-a-texto" className="text-[#14D8C4] hover:underline">PDF a TXT</Link> de PDF.it.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Formatos de Imagen (JPG, PNG)</h3>
                   <p className="text-slate-600">
-                    Algunas personas toman capturas de pantalla de documentos y las envian como imagenes. Esto hace que el texto no sea buscable ni seleccionable, y la calidad suele ser pobre. Siempre envia el PDF real. Si necesitas imagenes de un PDF, usa <Link href="/es/pdf-a-jpg" className="text-orange-600 hover:underline">PDF a JPG</Link> o <Link href="/es/extraer-imagenes-de-pdf" className="text-orange-600 hover:underline">Extraer Imagenes de PDF</Link>.
+                    Algunas personas toman capturas de pantalla de documentos y las envian como imagenes. Esto hace que el texto no sea buscable ni seleccionable, y la calidad suele ser pobre. Siempre envia el PDF real. Si necesitas imagenes de un PDF, usa <Link href="/es/pdf-a-jpg" className="text-[#14D8C4] hover:underline">PDF a JPG</Link> o <Link href="/es/extraer-imagenes-de-pdf" className="text-[#14D8C4] hover:underline">Extraer Imagenes de PDF</Link>.
                   </p>
                 </div>
               </div>
@@ -222,10 +222,10 @@ export default function MejorFormatoParaEnviarDocumentosPage() {
                 Incluso despues de elegir PDF como formato, hay algunos pasos adicionales para asegurar que llegue perfectamente:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Verifica el tamano del archivo.</strong> La mayoria de proveedores de correo limitan adjuntos a 25MB. Si tu PDF es muy grande, usa <Link href="/es/comprimir-pdf-para-email" className="text-orange-600 hover:underline">Comprimir PDF para Email</Link> para reducirlo.</li>
-                <li>&#10003; <strong>Aplana el PDF.</strong> Si tu documento tiene campos de formulario, capas o anotaciones, <Link href="/es/aplanar-pdf" className="text-orange-600 hover:underline">aplanalo</Link> para asegurar que todo se muestre correctamente en el dispositivo del destinatario.</li>
+                <li>&#10003; <strong>Verifica el tamano del archivo.</strong> La mayoria de proveedores de correo limitan adjuntos a 25MB. Si tu PDF es muy grande, usa <Link href="/es/comprimir-pdf-para-email" className="text-[#14D8C4] hover:underline">Comprimir PDF para Email</Link> para reducirlo.</li>
+                <li>&#10003; <strong>Aplana el PDF.</strong> Si tu documento tiene campos de formulario, capas o anotaciones, <Link href="/es/aplanar-pdf" className="text-[#14D8C4] hover:underline">aplanalo</Link> para asegurar que todo se muestre correctamente en el dispositivo del destinatario.</li>
                 <li>&#10003; <strong>Nombra el archivo claramente.</strong> Usa un nombre descriptivo como &quot;Juan-Perez-Curriculo-2026.pdf&quot; en lugar de &quot;Documento1.pdf&quot;. Esto ayuda al destinatario a encontrar tu archivo despues.</li>
-                <li>&#10003; <strong>Protege documentos sensibles con contrasena.</strong> Usa <Link href="/es/proteger-pdf" className="text-orange-600 hover:underline">Proteger PDF</Link> para agregar una contrasena si el documento contiene informacion financiera o personal.</li>
+                <li>&#10003; <strong>Protege documentos sensibles con contrasena.</strong> Usa <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link> para agregar una contrasena si el documento contiene informacion financiera o personal.</li>
               </ul>
             </section>
 
@@ -239,7 +239,7 @@ export default function MejorFormatoParaEnviarDocumentosPage() {
             <p className="text-slate-300 mb-6">Sube cualquier archivo de Office y obtiene un PDF con formato profesional en segundos — gratis, sin registro.</p>
             <Link
               href="/es/office-a-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileText className="h-5 w-5" /> Convertir a PDF Ahora
             </Link>
@@ -260,10 +260,10 @@ export default function MejorFormatoParaEnviarDocumentosPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

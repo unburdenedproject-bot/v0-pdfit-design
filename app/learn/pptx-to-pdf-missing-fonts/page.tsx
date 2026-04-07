@@ -91,7 +91,7 @@ export default function PPTXToPDFMissingFontsPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PowerPoint to PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PowerPoint to PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">PPTX to PDF Missing Fonts? Fix Font Embedding and Substitutions</h1>
               <p className="text-xl text-slate-300">
                 Your PowerPoint looks perfect on your computer, but the PDF output has wrong fonts, broken spacing, or garbled text. Here's why it happens and how to fix it.
@@ -101,17 +101,17 @@ export default function PPTXToPDFMissingFontsPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Type className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Fonts embedded and ready? Convert your file now.</p>
             </div>
             <Link
               href="/powerpoint-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Convert PPT to PDF <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function PPTXToPDFMissingFontsPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Custom fonts not embedded.</strong> Decorative, brand, or purchased fonts are only on your machine. Without embedding, they won't travel with the file.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>System-specific fonts.</strong> Some fonts exist only on Windows (e.g., Segoe UI) or only on Mac (e.g., San Francisco). Cross-platform conversions can trigger substitutions.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Online conversion tools.</strong> When you upload a PPTX to an online converter (including PDF.it), the server may not have your custom fonts. Embedding solves this.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Font licensing restrictions.</strong> Some commercial fonts block embedding due to their license terms. PowerPoint won't include them even if you check the embed option.</span>
                 </li>
               </ul>
@@ -167,7 +167,7 @@ export default function PPTXToPDFMissingFontsPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -199,32 +199,32 @@ export default function PPTXToPDFMissingFontsPage() {
                   </thead>
                   <tbody className="text-slate-700">
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Arial</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Arial</td>
                       <td className="py-3 px-4">Sans-serif, clean</td>
                       <td className="py-3 px-4">Windows, Mac, Linux</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Calibri</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Calibri</td>
                       <td className="py-3 px-4">Sans-serif, modern (Office default)</td>
                       <td className="py-3 px-4">Windows, Mac (with Office)</td>
                     </tr>
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Times New Roman</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Times New Roman</td>
                       <td className="py-3 px-4">Serif, traditional</td>
                       <td className="py-3 px-4">Windows, Mac, Linux</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Verdana</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Verdana</td>
                       <td className="py-3 px-4">Sans-serif, screen-optimized</td>
                       <td className="py-3 px-4">Windows, Mac, Linux</td>
                     </tr>
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Georgia</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Georgia</td>
                       <td className="py-3 px-4">Serif, elegant</td>
                       <td className="py-3 px-4">Windows, Mac, Linux</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Tahoma</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Tahoma</td>
                       <td className="py-3 px-4">Sans-serif, compact</td>
                       <td className="py-3 px-4">Windows, Mac</td>
                     </tr>
@@ -270,9 +270,9 @@ export default function PPTXToPDFMissingFontsPage() {
                 The same font embedding principles apply to other Microsoft Office files:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <Link href="/word-to-pdf" className="text-orange-600 hover:underline">Word to PDF</Link> — Embed fonts in Word the same way (File &gt; Options &gt; Save).</li>
-                <li>&#10003; <Link href="/office-to-pdf" className="text-orange-600 hover:underline">Office to PDF</Link> — Our universal converter handles Word, Excel, and PowerPoint files.</li>
-                <li>&#10003; <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">Excel to PDF</Link> — Excel has fewer font issues since spreadsheets typically use standard fonts.</li>
+                <li>&#10003; <Link href="/word-to-pdf" className="text-[#14D8C4] hover:underline">Word to PDF</Link> — Embed fonts in Word the same way (File &gt; Options &gt; Save).</li>
+                <li>&#10003; <Link href="/office-to-pdf" className="text-[#14D8C4] hover:underline">Office to PDF</Link> — Our universal converter handles Word, Excel, and PowerPoint files.</li>
+                <li>&#10003; <Link href="/excel-to-pdf" className="text-[#14D8C4] hover:underline">Excel to PDF</Link> — Excel has fewer font issues since spreadsheets typically use standard fonts.</li>
               </ul>
             </section>
 
@@ -286,7 +286,7 @@ export default function PPTXToPDFMissingFontsPage() {
             <p className="text-slate-300 mb-6">Embed your fonts, upload the PPTX, and get a perfect PDF in seconds.</p>
             <Link
               href="/powerpoint-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Type className="h-5 w-5" /> Convert PPT to PDF Now
             </Link>
@@ -307,10 +307,10 @@ export default function PPTXToPDFMissingFontsPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

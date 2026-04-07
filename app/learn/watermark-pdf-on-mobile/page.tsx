@@ -91,7 +91,7 @@ export default function WatermarkPDFOnMobilePage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Watermark PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Watermark PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Add a Watermark to a PDF on Your Phone (iPhone & Android)</h1>
               <p className="text-xl text-slate-300">
                 Need to watermark a PDF while away from your computer? PDF.it works in any mobile browser — no app download needed. Here is how to stamp a PDF from your phone in under a minute.
@@ -101,17 +101,17 @@ export default function WatermarkPDFOnMobilePage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Stamp className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">On your phone right now? Go straight to the tool.</p>
             </div>
             <Link
               href="/watermark-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Watermark PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function WatermarkPDFOnMobilePage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Urgent email while traveling.</strong> A client needs a proposal marked as DRAFT before a meeting, and you are on a train or in an airport. Watermark it from your phone and send it immediately.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Marking documents at a job site.</strong> Construction managers, real estate agents, and field engineers often need to stamp documents as CONFIDENTIAL or add a company logo while on location.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Last-minute submission requirements.</strong> You realized a document needs a watermark just before a deadline, and your laptop is not available. Your phone browser is all you need.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Working from a tablet.</strong> iPads and Android tablets work just as well. The responsive interface adapts to larger screens, giving you an experience close to desktop.</span>
                 </li>
               </ul>
@@ -152,7 +152,7 @@ export default function WatermarkPDFOnMobilePage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-6">How to Watermark a PDF on Your Phone (Step by Step)</h2>
               <p className="text-slate-600 mb-4">
-                Watermark PDF is available to Pro and Business users. <Link href="/pricing" className="text-orange-600 hover:underline">See pricing</Link> for details.
+                Watermark PDF is available to Pro and Business users. <Link href="/pricing" className="text-[#14D8C4] hover:underline">See pricing</Link> for details.
               </p>
               <div className="space-y-4">
                 {[
@@ -170,7 +170,7 @@ export default function WatermarkPDFOnMobilePage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -217,14 +217,14 @@ export default function WatermarkPDFOnMobilePage() {
                 PDF.it is designed to work fully on mobile for all its tools, not just watermarking. Here are some tools that pair well with watermarking on your phone:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Flatten your watermark.</strong> After watermarking, use <Link href="/flatten-pdf" className="text-orange-600 hover:underline">Flatten PDF</Link> on your phone to make the watermark permanent — all from the same browser session.</li>
-                <li>&#10003; <strong>Compress before emailing.</strong> Large PDFs can be slow to send from mobile. Use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> to reduce the file size before attaching it to an email.</li>
-                <li>&#10003; <strong>Protect with a password.</strong> Add an extra layer of security with <Link href="/protect-pdf" className="text-orange-600 hover:underline">Protect PDF</Link> — set an open password or restrict editing and printing.</li>
-                <li>&#10003; <strong>Merge documents together.</strong> Need to combine a watermarked document with other files? Use <Link href="/merge-pdf" className="text-orange-600 hover:underline">Merge PDF</Link> right from your phone.</li>
-                <li>&#10003; <strong>Clean up phone scans.</strong> If you scanned a document with your phone camera, use <Link href="/phone-scan-cleanup" className="text-orange-600 hover:underline">Phone Scan Cleanup</Link> to improve the image quality before watermarking.</li>
+                <li>&#10003; <strong>Flatten your watermark.</strong> After watermarking, use <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">Flatten PDF</Link> on your phone to make the watermark permanent — all from the same browser session.</li>
+                <li>&#10003; <strong>Compress before emailing.</strong> Large PDFs can be slow to send from mobile. Use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> to reduce the file size before attaching it to an email.</li>
+                <li>&#10003; <strong>Protect with a password.</strong> Add an extra layer of security with <Link href="/protect-pdf" className="text-[#14D8C4] hover:underline">Protect PDF</Link> — set an open password or restrict editing and printing.</li>
+                <li>&#10003; <strong>Merge documents together.</strong> Need to combine a watermarked document with other files? Use <Link href="/merge-pdf" className="text-[#14D8C4] hover:underline">Merge PDF</Link> right from your phone.</li>
+                <li>&#10003; <strong>Clean up phone scans.</strong> If you scanned a document with your phone camera, use <Link href="/phone-scan-cleanup" className="text-[#14D8C4] hover:underline">Phone Scan Cleanup</Link> to improve the image quality before watermarking.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                For the best practices on watermark settings like opacity and placement, check out our <Link href="/learn/watermark-pdf-best-practices" className="text-orange-600 hover:underline">watermark best practices guide</Link>.
+                For the best practices on watermark settings like opacity and placement, check out our <Link href="/learn/watermark-pdf-best-practices" className="text-[#14D8C4] hover:underline">watermark best practices guide</Link>.
               </p>
             </section>
 
@@ -238,7 +238,7 @@ export default function WatermarkPDFOnMobilePage() {
             <p className="text-slate-300 mb-6">Open PDF.it in your mobile browser, upload your PDF, and add a watermark in seconds. No app download needed. Available for Pro and Business users.</p>
             <Link
               href="/watermark-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Stamp className="h-5 w-5" /> Watermark PDF Now
             </Link>
@@ -259,10 +259,10 @@ export default function WatermarkPDFOnMobilePage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

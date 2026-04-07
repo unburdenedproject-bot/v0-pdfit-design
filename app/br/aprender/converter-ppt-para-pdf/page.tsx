@@ -33,14 +33,14 @@ export default function ConverterPptParaPdfPage() {
       <HeaderBr />
       <main>
         <section className="bg-[#191B4D] text-white py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-          <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PowerPoint para PDF</p>
+          <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PowerPoint para PDF</p>
           <h1 className="text-4xl lg:text-5xl font-black mb-4">Converter PowerPoint para PDF Online (PPTX para PDF)</h1>
           <p className="text-xl text-slate-300">Precisa compartilhar uma apresentacao sem se preocupar com fontes, formatacao ou compatibilidade de software? Veja como converter PowerPoint para PDF em segundos — gratis, online, sem software necessario.</p>
         </div></div></section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><Presentation className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Pronto para converter? Pule o guia e va direto para a ferramenta.</p></div>
-          <Link href="/br/powerpoint-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Converter PPT para PDF <ArrowRight className="h-4 w-4" /></Link>
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><Presentation className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Pronto para converter? Pule o guia e va direto para a ferramenta.</p></div>
+          <Link href="/br/powerpoint-para-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Converter PPT para PDF <ArrowRight className="h-4 w-4" /></Link>
         </div></section>
 
         <article className="py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -48,10 +48,10 @@ export default function ConverterPptParaPdfPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-4">Por que converter PowerPoint para PDF?</h2>
             <p className="text-slate-600 mb-4">Arquivos PowerPoint sao otimos para criar e editar apresentacoes, mas nao sao ideais para compartilhar. Veja por que o PDF e o melhor formato para distribuicao:</p>
             <ul className="space-y-3 text-slate-700">
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Visualizacao universal.</strong> PDFs abrem em qualquer dispositivo — Windows, Mac, iPhone, Android — sem precisar do PowerPoint instalado. Sua audiencia ve exatamente o que voce planejou.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Sem edicoes acidentais.</strong> Enviar um PPTX significa que qualquer pessoa pode modificar seus slides. Um PDF trava o conteudo para que seu trabalho permaneca intacto.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Layout consistente.</strong> Fontes mudam, imagens se deslocam e graficos quebram quando um PPTX e aberto em outro computador. O PDF congela o layout pixel por pixel.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Tamanho de arquivo menor.</strong> PDFs geralmente sao menores que o PPTX original. Se o arquivo ainda for grande, voce pode <Link href="/br/comprimir-pdf" className="text-orange-600 hover:underline">comprimir o PDF</Link> ainda mais.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span><strong>Visualizacao universal.</strong> PDFs abrem em qualquer dispositivo — Windows, Mac, iPhone, Android — sem precisar do PowerPoint instalado. Sua audiencia ve exatamente o que voce planejou.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span><strong>Sem edicoes acidentais.</strong> Enviar um PPTX significa que qualquer pessoa pode modificar seus slides. Um PDF trava o conteudo para que seu trabalho permaneca intacto.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">3.</span><span><strong>Layout consistente.</strong> Fontes mudam, imagens se deslocam e graficos quebram quando um PPTX e aberto em outro computador. O PDF congela o layout pixel por pixel.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">4.</span><span><strong>Tamanho de arquivo menor.</strong> PDFs geralmente sao menores que o PPTX original. Se o arquivo ainda for grande, voce pode <Link href="/br/comprimir-pdf" className="text-[#14D8C4] hover:underline">comprimir o PDF</Link> ainda mais.</span></li>
             </ul>
           </section>
 
@@ -64,7 +64,7 @@ export default function ConverterPptParaPdfPage() {
                 { title: "Baixe seu PDF", desc: "Baixe o PDF finalizado e compartilhe com confianca. O arquivo fica identico em cada dispositivo e plataforma — nao e necessario PowerPoint para visualizar." },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                   <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                 </div>
               ))}
@@ -84,13 +84,13 @@ export default function ConverterPptParaPdfPage() {
                   <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold">Texto e fontes</td><td className="py-3 px-4 text-green-600 font-semibold">Sim</td><td className="py-3 px-4">Fontes padrao convertem perfeitamente; fontes personalizadas devem ser incorporadas primeiro</td></tr>
                   <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold">Imagens e formas</td><td className="py-3 px-4 text-green-600 font-semibold">Sim</td><td className="py-3 px-4">Preservadas na qualidade original</td></tr>
                   <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold">Graficos e diagramas</td><td className="py-3 px-4 text-green-600 font-semibold">Sim</td><td className="py-3 px-4">Renderizados como imagens estaticas no PDF</td></tr>
-                  <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold">Animacoes</td><td className="py-3 px-4 text-red-600 font-semibold">Nao</td><td className="py-3 px-4">PDF e estatico — <Link href="/br/aprender/ppt-para-pdf-animacoes" className="text-orange-600 hover:underline">saiba mais</Link></td></tr>
+                  <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold">Animacoes</td><td className="py-3 px-4 text-red-600 font-semibold">Nao</td><td className="py-3 px-4">PDF e estatico — <Link href="/br/aprender/ppt-para-pdf-animacoes" className="text-[#14D8C4] hover:underline">saiba mais</Link></td></tr>
                   <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold">Transicoes</td><td className="py-3 px-4 text-red-600 font-semibold">Nao</td><td className="py-3 px-4">As transicoes de slides sao perdidas no PDF</td></tr>
                   <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold">Videos incorporados</td><td className="py-3 px-4 text-red-600 font-semibold">Nao</td><td className="py-3 px-4">Apenas a miniatura/poster do video e conservada</td></tr>
                 </tbody>
               </table>
             </div>
-            <p className="text-slate-600 mt-4 text-sm">Tem curiosidade sobre as animacoes especificamente? Leia nosso guia completo sobre <Link href="/br/aprender/ppt-para-pdf-animacoes" className="text-orange-600 hover:underline">o que acontece com as animacoes do PowerPoint no PDF</Link>.</p>
+            <p className="text-slate-600 mt-4 text-sm">Tem curiosidade sobre as animacoes especificamente? Leia nosso guia completo sobre <Link href="/br/aprender/ppt-para-pdf-animacoes" className="text-[#14D8C4] hover:underline">o que acontece com as animacoes do PowerPoint no PDF</Link>.</p>
           </section>
 
           <section className="mb-12">
@@ -98,9 +98,9 @@ export default function ConverterPptParaPdfPage() {
             <p className="text-slate-600 mb-4">A qualidade do seu PDF depende da qualidade do seu PowerPoint original. Aqui vao dicas para obter os melhores resultados:</p>
             <ul className="space-y-2 text-slate-700">
               <li>&#10003; <strong>Use imagens de alta resolucao</strong> nos seus slides (pelo menos 150 DPI para tela, 300 DPI para impressao).</li>
-              <li>&#10003; <strong>Incorpore suas fontes</strong> antes de converter. Va em Arquivo &gt; Opcoes &gt; Salvar &gt; marque "Incorporar fontes no arquivo." Isso previne <Link href="/br/aprender/pptx-para-pdf-fontes-faltando" className="text-orange-600 hover:underline">problemas de fontes faltando</Link>.</li>
+              <li>&#10003; <strong>Incorpore suas fontes</strong> antes de converter. Va em Arquivo &gt; Opcoes &gt; Salvar &gt; marque "Incorporar fontes no arquivo." Isso previne <Link href="/br/aprender/pptx-para-pdf-fontes-faltando" className="text-[#14D8C4] hover:underline">problemas de fontes faltando</Link>.</li>
               <li>&#10003; <strong>Evite compressao excessiva</strong> de imagens dentro do PowerPoint — deixe a qualidade original ser transferida para o PDF.</li>
-              <li>&#10003; <strong>Verifique o tamanho do slide</strong> antes de converter. Padrao (4:3) e Widescreen (16:9) funcionam, mas certifique-se de que a proporcao corresponde a sua saida desejada. Veja nosso <Link href="/br/aprender/ppt-para-pdf-para-imprimir" className="text-orange-600 hover:underline">guia de impressao</Link> para detalhes.</li>
+              <li>&#10003; <strong>Verifique o tamanho do slide</strong> antes de converter. Padrao (4:3) e Widescreen (16:9) funcionam, mas certifique-se de que a proporcao corresponde a sua saida desejada. Veja nosso <Link href="/br/aprender/ppt-para-pdf-para-imprimir" className="text-[#14D8C4] hover:underline">guia de impressao</Link> para detalhes.</li>
             </ul>
           </section>
 
@@ -113,16 +113,16 @@ export default function ConverterPptParaPdfPage() {
               <li>&#10003; Isso cria um PDF onde cada pagina mostra o slide acima e as notas do apresentador abaixo.</li>
               <li>&#10003; Alternativamente, imprima como PDF usando o layout "Paginas de notas" em Arquivo &gt; Imprimir.</li>
             </ul>
-            <p className="text-slate-600 mt-4">Se voce ja tem um arquivo PPTX e nao consegue acessar o PowerPoint, envie-o para o <Link href="/br/powerpoint-para-pdf" className="text-orange-600 hover:underline">conversor do PDF.it</Link> para uma conversao rapida apenas dos slides.</p>
+            <p className="text-slate-600 mt-4">Se voce ja tem um arquivo PPTX e nao consegue acessar o PowerPoint, envie-o para o <Link href="/br/powerpoint-para-pdf" className="text-[#14D8C4] hover:underline">conversor do PDF.it</Link> para uma conversao rapida apenas dos slides.</p>
           </section>
 
           <section className="mb-12">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Convertendo outros arquivos do Office para PDF</h2>
             <p className="text-slate-600 mb-4">PowerPoint nao e o unico tipo de arquivo que voce pode converter. O PDF.it tambem trabalha com:</p>
             <ul className="space-y-2 text-slate-700">
-              <li>&#10003; <Link href="/br/word-para-pdf" className="text-orange-600 hover:underline">Word para PDF</Link> — Converta arquivos DOCX e DOC para PDF.</li>
-              <li>&#10003; <Link href="/br/excel-para-pdf" className="text-orange-600 hover:underline">Excel para PDF</Link> — Converta planilhas preservando layouts de tabelas.</li>
-              <li>&#10003; <Link href="/br/office-para-pdf" className="text-orange-600 hover:underline">Office para PDF</Link> — Uma ferramenta para qualquer arquivo do Microsoft Office.</li>
+              <li>&#10003; <Link href="/br/word-para-pdf" className="text-[#14D8C4] hover:underline">Word para PDF</Link> — Converta arquivos DOCX e DOC para PDF.</li>
+              <li>&#10003; <Link href="/br/excel-para-pdf" className="text-[#14D8C4] hover:underline">Excel para PDF</Link> — Converta planilhas preservando layouts de tabelas.</li>
+              <li>&#10003; <Link href="/br/office-para-pdf" className="text-[#14D8C4] hover:underline">Office para PDF</Link> — Uma ferramenta para qualquer arquivo do Microsoft Office.</li>
             </ul>
           </section>
         </div></article>
@@ -130,7 +130,7 @@ export default function ConverterPptParaPdfPage() {
         <section className="py-12 bg-[#191B4D]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
           <h2 className="text-2xl font-black text-white mb-3">Pronto para converter seu PowerPoint?</h2>
           <p className="text-slate-300 mb-6">Envie seu arquivo PPTX e obtenha um PDF perfeito em segundos — gratis, sem cadastro.</p>
-          <Link href="/br/powerpoint-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><Presentation className="h-5 w-5" /> Converter PPT para PDF Agora</Link>
+          <Link href="/br/powerpoint-para-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><Presentation className="h-5 w-5" /> Converter PPT para PDF Agora</Link>
         </div></section>
 
         <section className="py-16 bg-gray-50"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -141,7 +141,7 @@ export default function ConverterPptParaPdfPage() {
               { title: "As animacoes do PowerPoint funcionam no PDF? O que converte (e o que nao)", href: "/br/aprender/ppt-para-pdf-animacoes" },
               { title: "PPTX para PDF fontes faltando? Corrija incorporacao e substituicoes", href: "/br/aprender/pptx-para-pdf-fontes-faltando" },
               { title: "Converter PPT para PDF no iPhone (metodo rapido)", href: "/br/aprender/ppt-para-pdf-no-iphone" },
-            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" /></Link>))}
+            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" /></Link>))}
           </div>
         </div></section>
 

@@ -91,7 +91,7 @@ export default function PPTToPDFOnIPhonePage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PowerPoint to PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PowerPoint to PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convert PPT to PDF on iPhone (Fast Method)</h1>
               <p className="text-xl text-slate-300">
                 You're on your phone and need to send a presentation as a PDF — fast. Here's how to convert PowerPoint to PDF on your iPhone in under a minute, no app needed.
@@ -101,17 +101,17 @@ export default function PPTToPDFOnIPhonePage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Smartphone className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">On your iPhone right now? Go straight to the tool.</p>
             </div>
             <Link
               href="/powerpoint-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Convert PPT to PDF <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function PPTToPDFOnIPhonePage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>A client or professor needs it now.</strong> You got the request while away from your computer. Convert and send from your phone in under a minute.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>You received a PPTX by email.</strong> Someone sent you a presentation, but you need a PDF to forward it to someone who doesn't have PowerPoint.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Upload portal requires PDF.</strong> A job application or submission form only accepts PDF, and the deadline is in minutes.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>You want to review slides on the go.</strong> PDFs are easier to read on a phone than PowerPoint files — no zooming in and out of individual slides.</span>
                 </li>
               </ul>
@@ -167,7 +167,7 @@ export default function PPTToPDFOnIPhonePage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -233,7 +233,7 @@ export default function PPTToPDFOnIPhonePage() {
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Use Wi-Fi for large files.</strong> If your PPTX is over 10MB, Wi-Fi will be much faster than cellular data.</li>
                 <li>&#10003; <strong>Check the PDF before sending.</strong> Open it in the Files app and scroll through the pages to make sure everything looks right.</li>
-                <li>&#10003; <strong>Compress if needed.</strong> If the PDF is too large for email (over 20MB), use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> — it also works on your iPhone.</li>
+                <li>&#10003; <strong>Compress if needed.</strong> If the PDF is too large for email (over 20MB), use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> — it also works on your iPhone.</li>
                 <li>&#10003; <strong>Bookmark PDF.it.</strong> Add pdf.it.com to your home screen for instant access: in Safari, tap the share button and select "Add to Home Screen."</li>
               </ul>
             </section>
@@ -245,10 +245,10 @@ export default function PPTToPDFOnIPhonePage() {
                 PDF.it's entire suite works on your phone. Here are the most popular mobile conversions:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <Link href="/word-to-pdf" className="text-orange-600 hover:underline">Word to PDF</Link> — Convert DOCX files to PDF on your phone.</li>
-                <li>&#10003; <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">Excel to PDF</Link> — Convert spreadsheets while keeping table layouts.</li>
-                <li>&#10003; <Link href="/office-to-pdf" className="text-orange-600 hover:underline">Office to PDF</Link> — One tool for any Microsoft Office file.</li>
-                <li>&#10003; <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> — Reduce PDF file size for email or uploads.</li>
+                <li>&#10003; <Link href="/word-to-pdf" className="text-[#14D8C4] hover:underline">Word to PDF</Link> — Convert DOCX files to PDF on your phone.</li>
+                <li>&#10003; <Link href="/excel-to-pdf" className="text-[#14D8C4] hover:underline">Excel to PDF</Link> — Convert spreadsheets while keeping table layouts.</li>
+                <li>&#10003; <Link href="/office-to-pdf" className="text-[#14D8C4] hover:underline">Office to PDF</Link> — One tool for any Microsoft Office file.</li>
+                <li>&#10003; <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> — Reduce PDF file size for email or uploads.</li>
               </ul>
             </section>
 
@@ -262,7 +262,7 @@ export default function PPTToPDFOnIPhonePage() {
             <p className="text-slate-300 mb-6">Open the tool in Safari, upload your PPTX, and get the PDF in seconds — no app needed.</p>
             <Link
               href="/powerpoint-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Smartphone className="h-5 w-5" /> Convert PPT to PDF Now
             </Link>
@@ -283,10 +283,10 @@ export default function PPTToPDFOnIPhonePage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

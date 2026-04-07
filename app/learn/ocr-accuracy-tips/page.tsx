@@ -91,7 +91,7 @@ export default function OCRAccuracyTipsPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / OCR PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / OCR PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">OCR Accuracy Tips (Get Better Text Recognition Results)</h1>
               <p className="text-xl text-slate-300">
                 OCR is not magic — the quality of your results depends on scan quality, settings, and preparation. Here are the proven tips to get the most accurate text recognition from your scanned PDFs.
@@ -101,17 +101,17 @@ export default function OCRAccuracyTipsPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <ScanText className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Apply these tips and try PDF.it's OCR Scanner (Pro).</p>
             </div>
             <Link
               href="/ocr-scanner"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               OCR Scanner <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function OCRAccuracyTipsPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>300 DPI — the standard.</strong> This is the recommended resolution for most text documents. It provides enough detail for OCR to recognize characters accurately without creating unnecessarily large files.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>400-600 DPI — for small text.</strong> If your document has footnotes, fine print, or text smaller than 10 points, increase the resolution. The extra detail helps OCR distinguish between similar characters like &apos;l&apos; and &apos;1&apos;, or &apos;O&apos; and &apos;0&apos;.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Below 200 DPI — avoid this.</strong> Low-resolution scans produce blurry characters that OCR cannot reliably recognize. If you receive a low-resolution scan from someone else, there is limited improvement possible without rescanning.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Above 600 DPI — diminishing returns.</strong> Scanning above 600 DPI creates much larger files but does not significantly improve OCR accuracy for standard printed text. Save storage space and processing time by staying at 300-600 DPI.</span>
                 </li>
               </ul>
@@ -167,7 +167,7 @@ export default function OCRAccuracyTipsPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -186,10 +186,10 @@ export default function OCRAccuracyTipsPage() {
                 OCR engines expect text to run in straight horizontal lines. When a page is skewed (slightly rotated) or upside down, accuracy drops dramatically. Here is how to fix common orientation problems:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Straighten skewed pages.</strong> Even a 2-3 degree skew can cause OCR errors. If your scan looks slightly tilted, use <Link href="/rotate-pdf" className="text-orange-600 hover:underline">Rotate PDF</Link> to correct the orientation before running OCR.</li>
+                <li>&#10003; <strong>Straighten skewed pages.</strong> Even a 2-3 degree skew can cause OCR errors. If your scan looks slightly tilted, use <Link href="/rotate-pdf" className="text-[#14D8C4] hover:underline">Rotate PDF</Link> to correct the orientation before running OCR.</li>
                 <li>&#10003; <strong>Fix upside-down pages.</strong> If any pages in your PDF are rotated 180 degrees, OCR will either fail completely or produce gibberish. Rotate them right-side-up first.</li>
                 <li>&#10003; <strong>Handle mixed orientations.</strong> Some documents mix portrait and landscape pages. Make sure each page is oriented so the text reads left-to-right, top-to-bottom before processing.</li>
-                <li>&#10003; <strong>Use Phone Scan Cleanup for auto-correction.</strong> The <Link href="/phone-scan-cleanup" className="text-orange-600 hover:underline">Phone Scan Cleanup</Link> tool automatically detects and corrects skew in phone-captured documents, saving you the manual effort.</li>
+                <li>&#10003; <strong>Use Phone Scan Cleanup for auto-correction.</strong> The <Link href="/phone-scan-cleanup" className="text-[#14D8C4] hover:underline">Phone Scan Cleanup</Link> tool automatically detects and corrects skew in phone-captured documents, saving you the manual effort.</li>
               </ul>
             </section>
 
@@ -231,7 +231,7 @@ export default function OCRAccuracyTipsPage() {
                 <li>&#10003; <strong>Clean the scanner glass.</strong> Dust, smudges, and fingerprints on the scanner glass appear as noise in the scan and can be mistaken for characters or punctuation by the OCR engine.</li>
                 <li>&#10003; <strong>Use the best copy available.</strong> If you have access to multiple copies of a document (original, photocopy, fax), always scan the one with the sharpest, darkest text.</li>
                 <li>&#10003; <strong>Remove staples and paper clips.</strong> These create shadows and can cause the page to sit unevenly on the scanner, producing skewed scans.</li>
-                <li>&#10003; <strong>Consider the output format.</strong> If you need to extract data into a spreadsheet after OCR, use <Link href="/pdf-to-excel" className="text-orange-600 hover:underline">PDF to Excel</Link>. For editable text, use <Link href="/pdf-to-word" className="text-orange-600 hover:underline">PDF to Word</Link>. For raw text, use <Link href="/pdf-to-txt" className="text-orange-600 hover:underline">PDF to TXT</Link>.</li>
+                <li>&#10003; <strong>Consider the output format.</strong> If you need to extract data into a spreadsheet after OCR, use <Link href="/pdf-to-excel" className="text-[#14D8C4] hover:underline">PDF to Excel</Link>. For editable text, use <Link href="/pdf-to-word" className="text-[#14D8C4] hover:underline">PDF to Word</Link>. For raw text, use <Link href="/pdf-to-txt" className="text-[#14D8C4] hover:underline">PDF to TXT</Link>.</li>
               </ul>
             </section>
 
@@ -245,7 +245,7 @@ export default function OCRAccuracyTipsPage() {
             <p className="text-slate-300 mb-6">Apply these tips and upload your scanned PDF to PDF.it's OCR Scanner for the best possible text recognition.</p>
             <Link
               href="/ocr-scanner"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <ScanText className="h-5 w-5" /> Try OCR Scanner (Pro)
             </Link>
@@ -267,10 +267,10 @@ export default function OCRAccuracyTipsPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

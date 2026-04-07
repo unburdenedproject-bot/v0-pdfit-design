@@ -26,7 +26,7 @@ export default function WhyThreeLanguagesPage() {
                 Back to Blog
               </Link>
               <div className="flex items-center gap-3 mb-4">
-                <span className="bg-orange-500/20 text-orange-300 text-xs font-bold px-3 py-1 rounded-full">
+                <span className="bg-[#14D8C4]/20 text-[#14D8C4]/40 text-xs font-bold px-3 py-1 rounded-full">
                   Company
                 </span>
                 <div className="flex items-center gap-1.5 text-sm text-slate-400">
@@ -170,7 +170,7 @@ export default function WhyThreeLanguagesPage() {
               <div className="mt-12 pt-8 border-t border-slate-200">
                 <Link
                   href="/blog"
-                  className="inline-flex items-center gap-2 text-orange-600 font-semibold hover:underline"
+                  className="inline-flex items-center gap-2 text-[#14D8C4] font-semibold hover:underline"
                 >
                   <ArrowLeft className="h-4 w-4" />
                   Back to Blog

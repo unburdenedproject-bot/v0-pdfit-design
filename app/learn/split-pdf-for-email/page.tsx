@@ -91,7 +91,7 @@ export default function SplitPDFForEmailPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Split PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Split PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Split a PDF for Email (Under Attachment Size Limits)</h1>
               <p className="text-xl text-slate-300">
                 Your PDF is too large to attach to an email? Here's how to split it into smaller parts that fit under Gmail's 25MB limit, Outlook's 20MB limit, and more.
@@ -101,17 +101,17 @@ export default function SplitPDFForEmailPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Scissors className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Need to split your PDF right now? Skip the guide and use the tool.</p>
             </div>
             <Link
               href="/split-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Split PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,28 +130,28 @@ export default function SplitPDFForEmailPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">&#8226;</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span>
                   <span><strong>Gmail:</strong> 25MB per email (total for all attachments combined)</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">&#8226;</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span>
                   <span><strong>Outlook / Hotmail:</strong> 20MB per email</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">&#8226;</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span>
                   <span><strong>Yahoo Mail:</strong> 25MB per email</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">&#8226;</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span>
                   <span><strong>Apple iCloud Mail:</strong> 20MB per email</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">&#8226;</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span>
                   <span><strong>Corporate email servers:</strong> Often 10MB or even 5MB, depending on company policy</span>
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
-                If your recipient uses a corporate email system, aim for files under 10MB to be safe. You can also try <Link href="/compress-pdf-for-email" className="text-orange-600 hover:underline">compressing your PDF for email</Link> before splitting.
+                If your recipient uses a corporate email system, aim for files under 10MB to be safe. You can also try <Link href="/compress-pdf-for-email" className="text-[#14D8C4] hover:underline">compressing your PDF for email</Link> before splitting.
               </p>
             </section>
 
@@ -174,7 +174,7 @@ export default function SplitPDFForEmailPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -196,7 +196,7 @@ export default function SplitPDFForEmailPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Try compressing first</h3>
                   <p className="text-slate-600">
-                    Use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> to reduce the file size. If your 30MB PDF compresses to 18MB, you can email it through Gmail without splitting. For even more targeted compression, try <Link href="/compress-pdf-to-5mb" className="text-orange-600 hover:underline">Compress to 5MB</Link> or <Link href="/compress-pdf-to-2mb" className="text-orange-600 hover:underline">Compress to 2MB</Link>.
+                    Use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> to reduce the file size. If your 30MB PDF compresses to 18MB, you can email it through Gmail without splitting. For even more targeted compression, try <Link href="/compress-pdf-to-5mb" className="text-[#14D8C4] hover:underline">Compress to 5MB</Link> or <Link href="/compress-pdf-to-2mb" className="text-[#14D8C4] hover:underline">Compress to 2MB</Link>.
                   </p>
                 </div>
                 <div>
@@ -222,7 +222,7 @@ export default function SplitPDFForEmailPage() {
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Download all parts</strong> from each email to the same folder.</li>
-                <li>&#10003; <strong>Go to <Link href="/merge-pdf" className="text-orange-600 hover:underline">PDF.it Merge PDF</Link></strong> and upload all the parts.</li>
+                <li>&#10003; <strong>Go to <Link href="/merge-pdf" className="text-[#14D8C4] hover:underline">PDF.it Merge PDF</Link></strong> and upload all the parts.</li>
                 <li>&#10003; <strong>Arrange them in order</strong> (Part 1 first, Part 2 second, etc.).</li>
                 <li>&#10003; <strong>Click Merge</strong> and download the complete document.</li>
               </ul>
@@ -235,10 +235,10 @@ export default function SplitPDFForEmailPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Pro Tips for Emailing Large PDFs</h2>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Flatten before splitting.</strong> If your PDF has form fields or annotations, use <Link href="/flatten-pdf" className="text-orange-600 hover:underline">Flatten PDF</Link> first to reduce embedded data.</li>
-                <li>&#10003; <strong>Convert images to JPG.</strong> If you only need to share visual pages (not editable text), convert pages to <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">JPG images</Link> — they are often much smaller than PDF pages.</li>
+                <li>&#10003; <strong>Flatten before splitting.</strong> If your PDF has form fields or annotations, use <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">Flatten PDF</Link> first to reduce embedded data.</li>
+                <li>&#10003; <strong>Convert images to JPG.</strong> If you only need to share visual pages (not editable text), convert pages to <Link href="/pdf-to-jpg" className="text-[#14D8C4] hover:underline">JPG images</Link> — they are often much smaller than PDF pages.</li>
                 <li>&#10003; <strong>Use clear file names.</strong> Name your files &quot;Report_Part1of3.pdf&quot;, &quot;Report_Part2of3.pdf&quot;, etc. so the recipient knows the order.</li>
-                <li>&#10003; <strong>Extract only what's needed.</strong> If the recipient only needs certain pages, <Link href="/learn/extract-pages-from-pdf-guide" className="text-orange-600 hover:underline">extract those pages</Link> instead of sending the full document.</li>
+                <li>&#10003; <strong>Extract only what's needed.</strong> If the recipient only needs certain pages, <Link href="/learn/extract-pages-from-pdf-guide" className="text-[#14D8C4] hover:underline">extract those pages</Link> instead of sending the full document.</li>
                 <li>&#10003; <strong>Test with yourself first.</strong> Send the split files to your own email to make sure everything looks right before sending to the recipient.</li>
               </ul>
             </section>
@@ -253,7 +253,7 @@ export default function SplitPDFForEmailPage() {
             <p className="text-slate-300 mb-6">Split it into smaller files that fit under any email attachment limit — free, no signup required.</p>
             <Link
               href="/split-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Scissors className="h-5 w-5" /> Split PDF Now
             </Link>
@@ -274,10 +274,10 @@ export default function SplitPDFForEmailPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

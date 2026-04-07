@@ -75,7 +75,7 @@ export default function GirarPDFNoIPhonePage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Girar PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Girar PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Girar PDF no iPhone</h1>
               <p className="text-xl text-slate-300">
                 Recebeu um PDF com paginas na orientacao errada no iPhone? Corrija diretamente pelo navegador, sem instalar nenhum aplicativo.
@@ -84,17 +84,17 @@ export default function GirarPDFNoIPhonePage() {
           </div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <RotateCw className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">No iPhone agora? Va direto para a ferramenta.</p>
             </div>
             <Link
               href="/br/girar-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Girar PDF Agora <ArrowRight className="h-4 w-4" />
             </Link>
@@ -136,7 +136,7 @@ export default function GirarPDFNoIPhonePage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -153,7 +153,7 @@ export default function GirarPDFNoIPhonePage() {
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Salve na tela inicial:</strong> no Safari, toque Compartilhar &gt; Adicionar a Tela de Inicio para acesso rapido.</li>
                 <li>&#10003; <strong>Girou errado?</strong> Basta enviar novamente e girar na direcao oposta.</li>
-                <li>&#10003; <strong>Depois de girar</strong>, voce pode <Link href="/br/comprimir-pdf" className="text-orange-600 hover:underline">comprimir</Link> ou <Link href="/br/unir-pdf" className="text-orange-600 hover:underline">unir</Link> com outros PDFs no mesmo navegador.</li>
+                <li>&#10003; <strong>Depois de girar</strong>, voce pode <Link href="/br/comprimir-pdf" className="text-[#14D8C4] hover:underline">comprimir</Link> ou <Link href="/br/unir-pdf" className="text-[#14D8C4] hover:underline">unir</Link> com outros PDFs no mesmo navegador.</li>
                 <li>&#10003; <strong>Funciona offline?</strong> Nao, voce precisa de internet para processar o PDF.</li>
               </ul>
             </section>
@@ -167,7 +167,7 @@ export default function GirarPDFNoIPhonePage() {
             <p className="text-slate-300 mb-6">Abra no Safari e corrija a orientacao em segundos — gratis, sem app.</p>
             <Link
               href="/br/girar-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <RotateCw className="h-5 w-5" /> Girar PDF Agora
             </Link>
@@ -186,10 +186,10 @@ export default function GirarPDFNoIPhonePage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

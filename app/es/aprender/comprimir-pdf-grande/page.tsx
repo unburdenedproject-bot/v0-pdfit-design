@@ -91,7 +91,7 @@ export default function ComprimirPDFGrandePage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Comprimir PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Comprimir PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Cómo Comprimir un PDF Grande (50MB, 100MB o Más)</h1>
               <p className="text-xl text-slate-300">
                 Tu PDF es enorme — demasiado grande para email, portales de carga o incluso los límites de almacenamiento en la nube. Aquí te explicamos cómo reducir archivos masivos a un tamaño manejable.
@@ -101,17 +101,17 @@ export default function ComprimirPDFGrandePage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileDown className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">¿Listo para comprimir? Salta la guía y ve directo a la herramienta.</p>
             </div>
             <Link
               href="/es/comprimir-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Comprimir PDF Ahora <ArrowRight className="h-4 w-4" />
             </Link>
@@ -129,20 +129,20 @@ export default function ComprimirPDFGrandePage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Documentos escaneados.</strong> Cada página escaneada es una imagen de página completa a 200-400 DPI. Un documento escaneado de 50 páginas puede alcanzar fácilmente 100-200MB. Esta es la causa más común de PDFs sobredimensionados.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Fotografías incrustadas.</strong> Informes con fotos de productos, listados inmobiliarios con imágenes de propiedades y portafolios con arte de alta resolución crean archivos masivos.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Dibujos CAD y diagramas técnicos.</strong> Los PDFs de ingeniería con gráficos vectoriales y esquemas detallados pueden pesar 50-100MB por página.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
-                  <span><strong>Archivos unidos.</strong> Cuando <Link href="/es/unir-pdf" className="text-orange-600 hover:underline">unes múltiples PDFs</Link>, los tamaños se acumulan. Un conjunto de 10 informes de 10MB cada uno se convierte en un monstruo de 100MB.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
+                  <span><strong>Archivos unidos.</strong> Cuando <Link href="/es/unir-pdf" className="text-[#14D8C4] hover:underline">unes múltiples PDFs</Link>, los tamaños se acumulan. Un conjunto de 10 informes de 10MB cada uno se convierte en un monstruo de 100MB.</span>
                 </li>
               </ul>
             </section>
@@ -165,7 +165,7 @@ export default function ComprimirPDFGrandePage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -184,16 +184,16 @@ export default function ComprimirPDFGrandePage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
-                  <span><strong>Divide el PDF en secciones.</strong> Usa <Link href="/es/dividir-pdf" className="text-orange-600 hover:underline">Dividir PDF</Link> para separar tu archivo grande en fragmentos de 10-20 páginas cada uno.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
+                  <span><strong>Divide el PDF en secciones.</strong> Usa <Link href="/es/dividir-pdf" className="text-[#14D8C4] hover:underline">Dividir PDF</Link> para separar tu archivo grande en fragmentos de 10-20 páginas cada uno.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
-                  <span><strong>Comprime cada sección por separado.</strong> Sube cada fragmento a <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> y aplica compresión Extrema o Media. Los usuarios Pro pueden procesar por lotes todas las secciones a la vez.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
+                  <span><strong>Comprime cada sección por separado.</strong> Sube cada fragmento a <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> y aplica compresión Extrema o Media. Los usuarios Pro pueden procesar por lotes todas las secciones a la vez.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>Une las secciones comprimidas.</strong> Usa <Link href="/es/unir-pdf" className="text-orange-600 hover:underline">Unir PDF</Link> para combinar los fragmentos comprimidos de vuelta en un solo archivo. El resultado frecuentemente es 50-70% más pequeño que la compresión directa sola.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
+                  <span><strong>Une las secciones comprimidas.</strong> Usa <Link href="/es/unir-pdf" className="text-[#14D8C4] hover:underline">Unir PDF</Link> para combinar los fragmentos comprimidos de vuelta en un solo archivo. El resultado frecuentemente es 50-70% más pequeño que la compresión directa sola.</span>
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
@@ -217,24 +217,24 @@ export default function ComprimirPDFGrandePage() {
                   </thead>
                   <tbody className="text-slate-700">
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Menos de 25MB</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Menos de 25MB</td>
                       <td className="py-3 px-4">Compresión Extrema, aplanar primero</td>
-                      <td className="py-3 px-4"><Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link></td>
+                      <td className="py-3 px-4"><Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link></td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Menos de 5MB</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Menos de 5MB</td>
                       <td className="py-3 px-4">Dividir + Extrema + unir, o herramienta dedicada</td>
-                      <td className="py-3 px-4"><Link href="/es/comprimir-pdf-a-5mb" className="text-orange-600 hover:underline">Comprimir a 5MB</Link></td>
+                      <td className="py-3 px-4"><Link href="/es/comprimir-pdf-a-5mb" className="text-[#14D8C4] hover:underline">Comprimir a 5MB</Link></td>
                     </tr>
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Menos de 2MB</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Menos de 2MB</td>
                       <td className="py-3 px-4">Dividir en páginas individuales, compresión extrema en cada una</td>
-                      <td className="py-3 px-4"><Link href="/es/comprimir-pdf-a-2mb" className="text-orange-600 hover:underline">Comprimir a 2MB</Link></td>
+                      <td className="py-3 px-4"><Link href="/es/comprimir-pdf-a-2mb" className="text-[#14D8C4] hover:underline">Comprimir a 2MB</Link></td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Para email</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Para email</td>
                       <td className="py-3 px-4">Media o Extrema, objetivo menor a 20MB</td>
-                      <td className="py-3 px-4"><Link href="/es/comprimir-pdf-para-email" className="text-orange-600 hover:underline">Comprimir para Email</Link></td>
+                      <td className="py-3 px-4"><Link href="/es/comprimir-pdf-para-email" className="text-[#14D8C4] hover:underline">Comprimir para Email</Link></td>
                     </tr>
                   </tbody>
                 </table>
@@ -247,25 +247,25 @@ export default function ComprimirPDFGrandePage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Aplanar Antes de Comprimir</h3>
                   <p className="text-slate-600">
-                    Los PDFs grandes de software de diseño frecuentemente contienen capas, anotaciones y campos de formulario que añaden sobrecarga significativa. Usa <Link href="/es/aplanar-pdf" className="text-orange-600 hover:underline">Aplanar PDF</Link> primero para fusionar todo en contenido de página plano, luego comprime. Esto solo puede cortar 10-20% del tamaño del archivo antes de que la compresión comience.
+                    Los PDFs grandes de software de diseño frecuentemente contienen capas, anotaciones y campos de formulario que añaden sobrecarga significativa. Usa <Link href="/es/aplanar-pdf" className="text-[#14D8C4] hover:underline">Aplanar PDF</Link> primero para fusionar todo en contenido de página plano, luego comprime. Esto solo puede cortar 10-20% del tamaño del archivo antes de que la compresión comience.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Extraer y Reemplazar Imágenes</h3>
                   <p className="text-slate-600">
-                    Si tu PDF tiene algunas imágenes extremadamente grandes que aumentan el tamaño del archivo, usa <Link href="/es/extraer-imagenes-de-pdf" className="text-orange-600 hover:underline">Extraer Imágenes</Link> para sacarlas, redimensiónalas externamente y reconstruye el documento. A veces una o dos fotos representan el 80% del tamaño del archivo.
+                    Si tu PDF tiene algunas imágenes extremadamente grandes que aumentan el tamaño del archivo, usa <Link href="/es/extraer-imagenes-de-pdf" className="text-[#14D8C4] hover:underline">Extraer Imágenes</Link> para sacarlas, redimensiónalas externamente y reconstruye el documento. A veces una o dos fotos representan el 80% del tamaño del archivo.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Convertir Páginas Escaneadas a Texto con Búsqueda</h3>
                   <p className="text-slate-600">
-                    Si tu PDF grande es un documento escaneado, pásalo por el <Link href="/es/escaner-ocr" className="text-orange-600 hover:underline">Escáner OCR</Link> para convertir imágenes a texto con búsqueda. Aunque esto no siempre reduce el tamaño por sí solo, permite una mejor compresión en pasadas posteriores porque el texto se comprime mucho más eficientemente que las imágenes.
+                    Si tu PDF grande es un documento escaneado, pásalo por el <Link href="/es/escaner-ocr" className="text-[#14D8C4] hover:underline">Escáner OCR</Link> para convertir imágenes a texto con búsqueda. Aunque esto no siempre reduce el tamaño por sí solo, permite una mejor compresión en pasadas posteriores porque el texto se comprime mucho más eficientemente que las imágenes.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Usar PDF Listo para Subir</h3>
                   <p className="text-slate-600">
-                    Nuestra herramienta <Link href="/es/pdf-listo-para-subir" className="text-orange-600 hover:underline">PDF Listo para Subir</Link> encadena aplanamiento y compresión en un solo paso — perfecto para preparar archivos grandes para portales de carga rápidamente.
+                    Nuestra herramienta <Link href="/es/pdf-listo-para-subir" className="text-[#14D8C4] hover:underline">PDF Listo para Subir</Link> encadena aplanamiento y compresión en un solo paso — perfecto para preparar archivos grandes para portales de carga rápidamente.
                   </p>
                 </div>
               </div>
@@ -281,7 +281,7 @@ export default function ComprimirPDFGrandePage() {
             <p className="text-slate-300 mb-6">Sube tu archivo sobredimensionado y comprímelo en segundos — los usuarios Pro pueden manejar archivos de hasta 200MB.</p>
             <Link
               href="/es/comprimir-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileDown className="h-5 w-5" /> Comprimir PDF Ahora
             </Link>
@@ -302,10 +302,10 @@ export default function ComprimirPDFGrandePage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

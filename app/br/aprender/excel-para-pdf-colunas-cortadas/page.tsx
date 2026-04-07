@@ -43,7 +43,7 @@ export default function ExcelParaPdfColunasCortadasPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Excel para PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Excel para PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Excel para PDF — Colunas Cortadas? Como Resolver</h1>
               <p className="text-xl text-slate-300">
                 Converteu Excel para PDF e as colunas ficaram cortadas? Veja 5 soluções para garantir que toda a planilha caiba na página do PDF.
@@ -52,15 +52,15 @@ export default function ExcelParaPdfColunasCortadasPage() {
           </div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <TableIcon className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ajuste a planilha e converta sem colunas cortadas.</p>
             </div>
-            <Link href="/br/excel-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
+            <Link href="/br/excel-para-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
               Converter Excel para PDF <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -95,7 +95,7 @@ export default function ExcelParaPdfColunasCortadasPage() {
                     <li>- Configure <strong>Largura: 1 página</strong> e <strong>Altura: Automático</strong></li>
                     <li>- O Excel reduz automaticamente o tamanho para caber</li>
                   </ul>
-                  <p className="text-slate-600 text-sm mt-2">Leia mais: <Link href="/br/aprender/excel-para-pdf-ajustar-a-pagina" className="text-orange-600 hover:underline">Excel para PDF — Ajustar à Página</Link></p>
+                  <p className="text-slate-600 text-sm mt-2">Leia mais: <Link href="/br/aprender/excel-para-pdf-ajustar-a-pagina" className="text-[#14D8C4] hover:underline">Excel para PDF — Ajustar à Página</Link></p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">3. Reduza a Largura das Colunas</h3>
@@ -145,7 +145,7 @@ export default function ExcelParaPdfColunasCortadasPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Converta Sem Colunas Cortadas</h2>
             <p className="text-slate-300 mb-6">Ajuste a planilha e converta para PDF com todas as colunas visíveis.</p>
-            <Link href="/br/excel-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors">
+            <Link href="/br/excel-para-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors">
               <TableIcon className="h-5 w-5" /> Converter Excel para PDF
             </Link>
           </div>
@@ -161,9 +161,9 @@ export default function ExcelParaPdfColunasCortadasPage() {
                 { title: "Word para PDF — Erros Comuns de Formato", href: "/br/aprender/word-para-pdf-erros-comuns-de-formato" },
                 { title: "Converter Word para PDF Online", href: "/br/aprender/converter-word-para-pdf" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

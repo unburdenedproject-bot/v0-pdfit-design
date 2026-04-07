@@ -91,7 +91,7 @@ export default function MarcaDeAguaPDFConLogoPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Marca de Agua PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Marca de Agua PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Agregar Tu Logo como Marca de Agua en un PDF</h1>
               <p className="text-xl text-slate-300">
                 ¿Quieres personalizar tus propuestas, facturas o informes con el logo de tu empresa? Aquí te explicamos cómo agregar una marca de agua profesional con logo a cualquier PDF — sin software de diseño.
@@ -101,17 +101,17 @@ export default function MarcaDeAguaPDFConLogoPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Stamp className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">¿Listo para personalizar tu PDF? Salta la guía y ve directo a la herramienta.</p>
             </div>
             <Link
               href="/es/marca-de-agua-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Marca de Agua PDF Ahora <ArrowRight className="h-4 w-4" />
             </Link>
@@ -129,19 +129,19 @@ export default function MarcaDeAguaPDFConLogoPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Apariencia profesional.</strong> Las propuestas, cotizaciones e informes con una marca de agua sutil con logo lucen pulidos y establecen credibilidad con los clientes.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Reconocimiento de marca.</strong> Cada vez que alguien abre tu documento, ve tu marca. Con el tiempo, esto construye reconocimiento y confianza.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Protección de propiedad intelectual.</strong> Arquitectos, diseñadores y fotógrafos aplican marcas de agua a planos y portafolios para reclamar autoría y desalentar el uso no autorizado.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Rastreo de origen del documento.</strong> Si un documento se reenvía más allá de su audiencia prevista, el logo deja claro de dónde proviene.</span>
                 </li>
               </ul>
@@ -150,7 +150,7 @@ export default function MarcaDeAguaPDFConLogoPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-6">Cómo Agregar una Marca de Agua con Logo (Paso a Paso)</h2>
               <p className="text-slate-600 mb-4">
-                Marca de Agua PDF está disponible para usuarios Pro y Business. <Link href="/es/precios" className="text-orange-600 hover:underline">Ver precios</Link> para más detalles.
+                Marca de Agua PDF está disponible para usuarios Pro y Business. <Link href="/es/precios" className="text-[#14D8C4] hover:underline">Ver precios</Link> para más detalles.
               </p>
               <div className="space-y-4">
                 {[
@@ -168,7 +168,7 @@ export default function MarcaDeAguaPDFConLogoPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -196,7 +196,7 @@ export default function MarcaDeAguaPDFConLogoPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Estrategias de Ubicación del Logo</h2>
               <p className="text-slate-600 mb-4">
-                Dónde coloques tu marca de agua con logo depende del propósito. Para una guía más detallada, consulta nuestra <Link href="/es/aprender/marca-de-agua-pdf-mejores-practicas" className="text-orange-600 hover:underline">guía de mejores prácticas de marcas de agua</Link>.
+                Dónde coloques tu marca de agua con logo depende del propósito. Para una guía más detallada, consulta nuestra <Link href="/es/aprender/marca-de-agua-pdf-mejores-practicas" className="text-[#14D8C4] hover:underline">guía de mejores prácticas de marcas de agua</Link>.
               </p>
               <div className="space-y-6">
                 <div>
@@ -226,10 +226,10 @@ export default function MarcaDeAguaPDFConLogoPage() {
                 Una vez que tu PDF tiene marca con tu logo, considera estos pasos adicionales:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Aplana para hacerlo permanente.</strong> Usa <Link href="/es/aplanar-pdf" className="text-orange-600 hover:underline">Aplanar PDF</Link> para fusionar la marca de agua en la página para que no pueda ser eliminada por alguien que edite el archivo.</li>
-                <li>&#10003; <strong>Comprime para reducir el tamaño.</strong> Las imágenes de logo añaden algo de peso al PDF. Pásalo por <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> para reducirlo, especialmente si planeas enviarlo por email.</li>
-                <li>&#10003; <strong>Protege con contraseña.</strong> Para documentos con marca sensibles, agrega una contraseña usando <Link href="/es/proteger-pdf" className="text-orange-600 hover:underline">Proteger PDF</Link> para restringir la edición e impresión.</li>
-                <li>&#10003; <strong>Combina múltiples documentos.</strong> Si tienes varios PDFs con marca que necesitan ir juntos, usa <Link href="/es/unir-pdf" className="text-orange-600 hover:underline">Unir PDF</Link> para combinarlos en un solo paquete profesional.</li>
+                <li>&#10003; <strong>Aplana para hacerlo permanente.</strong> Usa <Link href="/es/aplanar-pdf" className="text-[#14D8C4] hover:underline">Aplanar PDF</Link> para fusionar la marca de agua en la página para que no pueda ser eliminada por alguien que edite el archivo.</li>
+                <li>&#10003; <strong>Comprime para reducir el tamaño.</strong> Las imágenes de logo añaden algo de peso al PDF. Pásalo por <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para reducirlo, especialmente si planeas enviarlo por email.</li>
+                <li>&#10003; <strong>Protege con contraseña.</strong> Para documentos con marca sensibles, agrega una contraseña usando <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link> para restringir la edición e impresión.</li>
+                <li>&#10003; <strong>Combina múltiples documentos.</strong> Si tienes varios PDFs con marca que necesitan ir juntos, usa <Link href="/es/unir-pdf" className="text-[#14D8C4] hover:underline">Unir PDF</Link> para combinarlos en un solo paquete profesional.</li>
               </ul>
             </section>
 
@@ -243,7 +243,7 @@ export default function MarcaDeAguaPDFConLogoPage() {
             <p className="text-slate-300 mb-6">Sube tu PDF y logo, ajusta la opacidad y posición, y descarga tu documento con marca en segundos. Disponible para usuarios Pro y Business.</p>
             <Link
               href="/es/marca-de-agua-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Stamp className="h-5 w-5" /> Marca de Agua PDF Ahora
             </Link>
@@ -264,10 +264,10 @@ export default function MarcaDeAguaPDFConLogoPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

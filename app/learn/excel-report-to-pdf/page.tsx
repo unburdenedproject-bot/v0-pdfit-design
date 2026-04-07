@@ -91,7 +91,7 @@ export default function ExcelReportToPDFPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Excel to PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Excel to PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Export Monthly Reports: Excel to PDF for Email + Sharing</h1>
               <p className="text-xl text-slate-300">
                 You build the same report every month in Excel. Here's how to set it up once, convert to a professional PDF, compress it for email, and send it — every time, in under a minute.
@@ -101,17 +101,17 @@ export default function ExcelReportToPDFPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileSpreadsheet className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Have a report ready? Convert it to PDF now.</p>
             </div>
             <Link
               href="/excel-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Excel to PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,20 +130,20 @@ export default function ExcelReportToPDFPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Set it up once.</strong> Configure your print area, orientation, margins, scaling, and headers/footers in your Excel template. Save the file.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Update data monthly.</strong> Each month, open the template, update the numbers, and save. All your print settings are preserved.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>Convert to PDF.</strong> Upload to <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">PDF.it's Excel to PDF tool</Link>. The converter respects your saved print settings.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
+                  <span><strong>Convert to PDF.</strong> Upload to <Link href="/excel-to-pdf" className="text-[#14D8C4] hover:underline">PDF.it's Excel to PDF tool</Link>. The converter respects your saved print settings.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
-                  <span><strong>Compress and send.</strong> If the PDF is over the email limit, <Link href="/compress-pdf" className="text-orange-600 hover:underline">compress it</Link> before attaching.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
+                  <span><strong>Compress and send.</strong> If the PDF is over the email limit, <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">compress it</Link> before attaching.</span>
                 </li>
               </ul>
             </section>
@@ -167,7 +167,7 @@ export default function ExcelReportToPDFPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -220,12 +220,12 @@ export default function ExcelReportToPDFPage() {
                 Most email providers cap attachments at 20-25MB. If your report PDF is larger (common with charts or images), compress it before sending:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>✓ Use <Link href="/compress-pdf-for-email" className="text-orange-600 hover:underline">Compress PDF for Email</Link> — optimized specifically for email attachment limits</li>
+                <li>✓ Use <Link href="/compress-pdf-for-email" className="text-[#14D8C4] hover:underline">Compress PDF for Email</Link> — optimized specifically for email attachment limits</li>
                 <li>✓ Medium compression keeps charts and tables readable while significantly reducing file size</li>
                 <li>✓ A typical 5MB report with charts compresses to 1-2MB — well under the email limit</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                For very large reports, consider splitting the PDF into sections using <Link href="/split-pdf" className="text-orange-600 hover:underline">Split PDF</Link> and sending as multiple attachments.
+                For very large reports, consider splitting the PDF into sections using <Link href="/split-pdf" className="text-[#14D8C4] hover:underline">Split PDF</Link> and sending as multiple attachments.
               </p>
             </section>
 
@@ -236,7 +236,7 @@ export default function ExcelReportToPDFPage() {
                 Financial reports often contain sensitive data — revenue numbers, salary information, profit margins. Before emailing these, consider adding protection:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>✓ <strong>Password protection</strong> — Use <Link href="/protect-pdf" className="text-orange-600 hover:underline">Protect PDF</Link> to add a password. Share the password separately (text message, phone call, or a different email).</li>
+                <li>✓ <strong>Password protection</strong> — Use <Link href="/protect-pdf" className="text-[#14D8C4] hover:underline">Protect PDF</Link> to add a password. Share the password separately (text message, phone call, or a different email).</li>
                 <li>✓ <strong>Read-only access</strong> — Restrict editing permissions so recipients can view but not modify the PDF.</li>
                 <li>✓ <strong>Watermarking</strong> — Add a "Confidential" watermark to mark the document's sensitivity level.</li>
               </ul>
@@ -246,7 +246,7 @@ export default function ExcelReportToPDFPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Combining Multiple Reports Into One PDF</h2>
               <p className="text-slate-600">
-                Need to send a quarterly package with three monthly reports? Convert each Excel file to PDF separately, then use <Link href="/merge-pdf" className="text-orange-600 hover:underline">Merge PDF</Link> to combine them into a single document. You can also add a cover page or a table of contents as the first page. This creates a professional, consolidated package that's easier for recipients to manage than multiple attachments.
+                Need to send a quarterly package with three monthly reports? Convert each Excel file to PDF separately, then use <Link href="/merge-pdf" className="text-[#14D8C4] hover:underline">Merge PDF</Link> to combine them into a single document. You can also add a cover page or a table of contents as the first page. This creates a professional, consolidated package that's easier for recipients to manage than multiple attachments.
               </p>
             </section>
 
@@ -260,7 +260,7 @@ export default function ExcelReportToPDFPage() {
             <p className="text-slate-300 mb-6">Upload your Excel report and get a professional PDF in seconds — free, no signup required.</p>
             <Link
               href="/excel-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileSpreadsheet className="h-5 w-5" /> Excel to PDF Now
             </Link>
@@ -281,10 +281,10 @@ export default function ExcelReportToPDFPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

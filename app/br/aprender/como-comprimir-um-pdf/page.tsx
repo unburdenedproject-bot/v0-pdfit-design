@@ -91,7 +91,7 @@ export default function ComoComprimirUmPDFPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Comprimir PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Comprimir PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Como Comprimir um PDF (Reduzir Tamanho Rapidamente)</h1>
               <p className="text-xl text-slate-300">
                 Seu PDF e grande demais para email, um portal de upload ou um formulario de envio. Veja como comprimi-lo em menos de 30 segundos — sem software, sem cadastro.
@@ -101,17 +101,17 @@ export default function ComoComprimirUmPDFPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Compress className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Pronto para comprimir? Pule o guia e va direto para a ferramenta.</p>
             </div>
             <Link
               href="/br/comprimir-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Comprimir PDF Agora <ArrowRight className="h-4 w-4" />
             </Link>
@@ -129,20 +129,20 @@ export default function ComoComprimirUmPDFPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Paginas digitalizadas.</strong> Cada pagina digitalizada e armazenada como uma imagem de pagina inteira (frequentemente 2-5MB por pagina). Um documento digitalizado de 10 paginas pode facilmente atingir 20-50MB.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Imagens de alta resolucao.</strong> Fotos, graficos e elementos visuais incorporados em qualidade de impressao (300 DPI) ocupam espaco significativo.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Fontes incorporadas.</strong> PDFs que incluem fontes personalizadas incorporam o arquivo de fonte completo, adicionando centenas de KB por fonte.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
-                  <span><strong>Camadas e anotacoes.</strong> Campos de formulario, comentarios e elementos interativos adicionam dados extras. <Link href="/br/achatar-pdf" className="text-orange-600 hover:underline">Achatar seu PDF</Link> os remove.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
+                  <span><strong>Camadas e anotacoes.</strong> Campos de formulario, comentarios e elementos interativos adicionam dados extras. <Link href="/br/achatar-pdf" className="text-[#14D8C4] hover:underline">Achatar seu PDF</Link> os remove.</span>
                 </li>
               </ul>
             </section>
@@ -165,7 +165,7 @@ export default function ComoComprimirUmPDFPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -190,17 +190,17 @@ export default function ComoComprimirUmPDFPage() {
                   </thead>
                   <tbody className="text-slate-700">
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Leve</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Leve</td>
                       <td className="py-3 px-4">Compartilhar documentos onde a qualidade importa (relatorios, portfolios)</td>
                       <td className="py-3 px-4">Quase original</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Media</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Media</td>
                       <td className="py-3 px-4">Anexos de email, compartilhamento geral, maioria dos portais de upload</td>
                       <td className="py-3 px-4">Boa — o texto permanece nitido</td>
                     </tr>
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Extrema</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Extrema</td>
                       <td className="py-3 px-4">Limites rigorosos de upload (1MB, 2MB, 5MB), portais governamentais, formularios de visto</td>
                       <td className="py-3 px-4">Reduzida — imagens podem perder detalhes</td>
                     </tr>
@@ -215,10 +215,10 @@ export default function ComoComprimirUmPDFPage() {
                 Se a compressao sozinha nao reduzir seu arquivo o suficiente, tente estas abordagens:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Divida o PDF</strong> em partes menores usando <Link href="/br/dividir-pdf" className="text-orange-600 hover:underline">Dividir PDF</Link>, depois comprima cada parte separadamente.</li>
-                <li>&#10003; <strong>Achate o PDF</strong> primeiro com <Link href="/br/achatar-pdf" className="text-orange-600 hover:underline">Achatar PDF</Link> para remover campos de formulario e anotacoes antes de comprimir.</li>
+                <li>&#10003; <strong>Divida o PDF</strong> em partes menores usando <Link href="/br/dividir-pdf" className="text-[#14D8C4] hover:underline">Dividir PDF</Link>, depois comprima cada parte separadamente.</li>
+                <li>&#10003; <strong>Achate o PDF</strong> primeiro com <Link href="/br/achatar-pdf" className="text-[#14D8C4] hover:underline">Achatar PDF</Link> para remover campos de formulario e anotacoes antes de comprimir.</li>
                 <li>&#10003; <strong>Tente a compressao Extrema</strong> se ainda nao tentou — oferece a maxima reducao de tamanho.</li>
-                <li>&#10003; <strong>Remova paginas desnecessarias</strong> usando <Link href="/br/remover-paginas-de-pdf" className="text-orange-600 hover:underline">Remover Paginas</Link> antes de comprimir.</li>
+                <li>&#10003; <strong>Remova paginas desnecessarias</strong> usando <Link href="/br/remover-paginas-de-pdf" className="text-[#14D8C4] hover:underline">Remover Paginas</Link> antes de comprimir.</li>
               </ul>
             </section>
 
@@ -228,7 +228,7 @@ export default function ComoComprimirUmPDFPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Para Anexos de Email</h3>
                   <p className="text-slate-600">
-                    Gmail, Outlook e Yahoo limitam anexos a 20-25MB. A compressao Media geralmente faz com que os PDFs fiquem abaixo desse limite. Para limites mais rigorosos, tente nossa ferramenta <Link href="/br/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> que e otimizada para diferentes necessidades.
+                    Gmail, Outlook e Yahoo limitam anexos a 20-25MB. A compressao Media geralmente faz com que os PDFs fiquem abaixo desse limite. Para limites mais rigorosos, tente nossa ferramenta <Link href="/br/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> que e otimizada para diferentes necessidades.
                   </p>
                 </div>
                 <div>
@@ -256,7 +256,7 @@ export default function ComoComprimirUmPDFPage() {
             <p className="text-slate-300 mb-6">Envie seu arquivo e reduza o tamanho em segundos — gratis, sem cadastro.</p>
             <Link
               href="/br/comprimir-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Compress className="h-5 w-5" /> Comprimir PDF Agora
             </Link>
@@ -277,10 +277,10 @@ export default function ComoComprimirUmPDFPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

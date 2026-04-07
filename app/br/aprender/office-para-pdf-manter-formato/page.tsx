@@ -31,14 +31,14 @@ export default function OfficeParaPdfManterFormatoPage() {
       <HeaderBr />
       <main>
         <section className="bg-[#191B4D] text-white py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-          <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Office para PDF</p>
+          <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Office para PDF</p>
           <h1 className="text-4xl lg:text-5xl font-black mb-4">Office para PDF — Manter Formato</h1>
           <p className="text-xl text-slate-300">Converteu um documento do Office para PDF e a formatacao ficou diferente? Aprenda como preservar fontes, tabelas, graficos e layout na conversao.</p>
         </div></div></section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><FileText className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Pronto para converter? Pule o guia e va direto para a ferramenta.</p></div>
-          <Link href="/br/office-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Converter Office para PDF <ArrowRight className="h-4 w-4" /></Link>
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><FileText className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Pronto para converter? Pule o guia e va direto para a ferramenta.</p></div>
+          <Link href="/br/office-para-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Converter Office para PDF <ArrowRight className="h-4 w-4" /></Link>
         </div></section>
 
         <article className="py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -46,10 +46,10 @@ export default function OfficeParaPdfManterFormatoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-4">Por que a formatacao muda na conversao?</h2>
             <p className="text-slate-600 mb-4">Existem varias razoes pelas quais um documento do Office pode ficar diferente apos a conversao para PDF:</p>
             <ul className="space-y-3 text-slate-700">
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Fontes nao incorporadas.</strong> Se o documento usa fontes que nao estao disponiveis no servidor, elas sao substituidas. Veja nosso guia sobre <Link href="/br/aprender/pptx-para-pdf-fontes-faltando" className="text-orange-600 hover:underline">fontes faltando</Link>.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Margens e tamanho de pagina.</strong> Documentos criados para papel Carta (Letter) podem ficar cortados se o conversor assume A4, e vice-versa.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Tabelas muito largas.</strong> Tabelas do Excel que excedem a largura da pagina sao cortadas ou reduzidas no PDF.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Elementos flutuantes.</strong> Imagens e caixas de texto com posicionamento "livre" no Word podem se deslocar na conversao.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span><strong>Fontes nao incorporadas.</strong> Se o documento usa fontes que nao estao disponiveis no servidor, elas sao substituidas. Veja nosso guia sobre <Link href="/br/aprender/pptx-para-pdf-fontes-faltando" className="text-[#14D8C4] hover:underline">fontes faltando</Link>.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span><strong>Margens e tamanho de pagina.</strong> Documentos criados para papel Carta (Letter) podem ficar cortados se o conversor assume A4, e vice-versa.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">3.</span><span><strong>Tabelas muito largas.</strong> Tabelas do Excel que excedem a largura da pagina sao cortadas ou reduzidas no PDF.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">4.</span><span><strong>Elementos flutuantes.</strong> Imagens e caixas de texto com posicionamento "livre" no Word podem se deslocar na conversao.</span></li>
             </ul>
           </section>
 
@@ -80,7 +80,7 @@ export default function OfficeParaPdfManterFormatoPage() {
             <ul className="space-y-2 text-slate-700">
               <li>&#10003; <strong>Incorpore fontes:</strong> Arquivo &gt; Opcoes &gt; Salvar &gt; Incorporar fontes no arquivo.</li>
               <li>&#10003; <strong>Verifique o tamanho do slide:</strong> Design &gt; Tamanho do Slide. Use Padrao (4:3) para papel ou Widescreen (16:9) para tela.</li>
-              <li>&#10003; <strong>Cuidado com animacoes:</strong> <Link href="/br/aprender/ppt-para-pdf-animacoes" className="text-orange-600 hover:underline">Animacoes nao sao convertidas</Link> — o PDF mostra o estado final de cada slide.</li>
+              <li>&#10003; <strong>Cuidado com animacoes:</strong> <Link href="/br/aprender/ppt-para-pdf-animacoes" className="text-[#14D8C4] hover:underline">Animacoes nao sao convertidas</Link> — o PDF mostra o estado final de cada slide.</li>
               <li>&#10003; <strong>Use imagens de alta resolucao</strong> para evitar que fiquem pixeladas no PDF.</li>
             </ul>
           </section>
@@ -101,7 +101,7 @@ export default function OfficeParaPdfManterFormatoPage() {
         <section className="py-12 bg-[#191B4D]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
           <h2 className="text-2xl font-black text-white mb-3">Converta com formatacao perfeita</h2>
           <p className="text-slate-300 mb-6">Prepare seu documento, envie para o PDF.it e obtenha um PDF identico ao original — gratis.</p>
-          <Link href="/br/office-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><FileText className="h-5 w-5" /> Converter Office para PDF Agora</Link>
+          <Link href="/br/office-para-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><FileText className="h-5 w-5" /> Converter Office para PDF Agora</Link>
         </div></section>
 
         <section className="py-16 bg-gray-50"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -112,7 +112,7 @@ export default function OfficeParaPdfManterFormatoPage() {
               { title: "PPTX para PDF fontes faltando? Como corrigir", href: "/br/aprender/pptx-para-pdf-fontes-faltando" },
               { title: "Converter DOCX, XLSX, PPTX para PDF", href: "/br/aprender/converter-docx-xlsx-pptx-para-pdf" },
               { title: "Office para PDF no celular", href: "/br/aprender/office-para-pdf-no-celular" },
-            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" /></Link>))}
+            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" /></Link>))}
           </div>
         </div></section>
 

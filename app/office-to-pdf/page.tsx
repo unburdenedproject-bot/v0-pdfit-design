@@ -168,7 +168,7 @@ export default function OfficeToPDFPage() {
         <section className="bg-[#191B4D] text-foreground py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <FileText className="h-10 w-10 text-white" />
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4 text-white">Office to PDF Converter</h1>
@@ -178,15 +178,15 @@ export default function OfficeToPDFPage() {
 
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2 text-white">
-                  <Zap className="h-4 w-4 text-orange-500" />
+                  <Zap className="h-4 w-4 text-[#14D8C4]" />
                   <span>Formatting Preserved</span>
                 </div>
                 <div className="flex items-center gap-2 text-white">
-                  <Shield className="h-4 w-4 text-orange-500" />
+                  <Shield className="h-4 w-4 text-[#14D8C4]" />
                   <span>Files Deleted After Session</span>
                 </div>
                 <div className="flex items-center gap-2 text-white">
-                  <Download className="h-4 w-4 text-orange-500" />
+                  <Download className="h-4 w-4 text-[#14D8C4]" />
                   <span>No Login Required</span>
                 </div>
               </div>
@@ -213,7 +213,7 @@ export default function OfficeToPDFPage() {
                   </div>
                   <h2 className="text-3xl font-bold text-slate-900 mb-4">Processing Failed</h2>
                   <p className="text-slate-600 mb-8">{errorMessage}</p>
-                  <Button onClick={resetInterface} className="bg-orange-500 hover:bg-orange-600 text-white">
+                  <Button onClick={resetInterface} className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E]">
                     Try Again
                   </Button>
                 </div>
@@ -271,7 +271,7 @@ export default function OfficeToPDFPage() {
                       Convert More Files
                     </Button>
                     <Button
-                      className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3"
+                      className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] px-8 py-3"
                       onClick={() => (window.location.href = "/")}
                     >
                       Try Another Tool
@@ -294,15 +294,15 @@ export default function OfficeToPDFPage() {
               {/* Processing state */}
               {isProcessing && (
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Loader2 className="h-10 w-10 text-orange-600 animate-spin" />
+                  <div className="w-20 h-20 bg-[#F0FDFA] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Loader2 className="h-10 w-10 text-[#14D8C4] animate-spin" />
                   </div>
                   <h2 className="text-3xl font-bold text-slate-900 mb-4">Converting to PDF...</h2>
                   <p className="text-slate-600 mb-8">This will only take a few seconds...</p>
 
                   <div className="w-full bg-gray-200 rounded-full h-3 mb-8">
                     <div
-                      className="bg-orange-500 h-3 rounded-full transition-all duration-300 ease-out"
+                      className="bg-[#14D8C4] h-3 rounded-full transition-all duration-300 ease-out"
                       style={{ width: `${progress}%` }}
                     />
                   </div>
@@ -325,8 +325,8 @@ export default function OfficeToPDFPage() {
                     className={cn(
                       "border-2 border-dashed rounded-xl p-12 transition-all duration-200 cursor-pointer",
                       isDragOver
-                        ? "border-orange-500 bg-orange-50"
-                        : "border-gray-300 hover:border-orange-400 hover:bg-gray-50",
+                        ? "border-[#14D8C4] bg-[#F0FDFA]"
+                        : "border-gray-300 hover:border-[#14D8C4]/40 hover:bg-gray-50",
                     )}
                     onDragOver={handleDragOver}
                     onDragLeave={handleDragLeave}
@@ -334,10 +334,10 @@ export default function OfficeToPDFPage() {
                     onClick={() => document.getElementById("office-file-upload")?.click()}
                   >
                     <div className="text-center">
-                      <Upload className="h-12 w-12 text-orange-500 mx-auto mb-4" />
+                      <Upload className="h-12 w-12 text-[#14D8C4] mx-auto mb-4" />
                       <h3 className="text-xl font-bold text-slate-900 mb-2">Drop your office files here</h3>
                       <p className="text-slate-600 mb-6">or click to browse files</p>
-                      <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8">
+                      <Button size="lg" className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-semibold px-8">
                         Choose Files
                       </Button>
                       <p className="text-sm text-slate-500 mt-4">
@@ -364,7 +364,7 @@ export default function OfficeToPDFPage() {
                           className="flex items-center justify-between bg-background border border-border rounded-lg p-4"
                         >
                           <div className="flex items-center gap-3">
-                            <FileText className="h-5 w-5 text-orange-500" />
+                            <FileText className="h-5 w-5 text-[#14D8C4]" />
                             <div>
                               <div className="font-medium text-slate-900">{file.name}</div>
                               <div className="text-sm text-slate-500">{(file.size / 1024 / 1024).toFixed(1)} MB</div>
@@ -385,7 +385,7 @@ export default function OfficeToPDFPage() {
                       ))}
                       <Button
                         onClick={processFiles}
-                        className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold"
+                        className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-semibold"
                         size="lg"
                         disabled={files.length === 0}
                       >

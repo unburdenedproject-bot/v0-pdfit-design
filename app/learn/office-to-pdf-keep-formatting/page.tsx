@@ -91,7 +91,7 @@ export default function OfficeToQdfKeepFormattingPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Office to PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Office to PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">How to Keep Formatting When Converting Office to PDF</h1>
               <p className="text-xl text-slate-300">
                 Fonts changing, tables shifting, images disappearing — formatting issues are the most frustrating part of converting Office files to PDF. Here is how to prevent every common problem.
@@ -101,17 +101,17 @@ export default function OfficeToQdfKeepFormattingPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileText className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to convert? Our tool preserves formatting automatically.</p>
             </div>
             <Link
               href="/office-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Convert to PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,23 +130,23 @@ export default function OfficeToQdfKeepFormattingPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Font substitution.</strong> If your document uses a font the converter does not have, it swaps in a similar font. This changes letter spacing, line breaks, and sometimes pushes content to the next page.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Margin and page size differences.</strong> If your document was designed for A4 paper but the converter defaults to Letter size (or vice versa), content near the edges can get cut off or shifted.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Image displacement.</strong> Images anchored to text may shift when line spacing changes due to font substitution. Images set to &quot;in line with text&quot; are more stable than floating images.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Table overflow.</strong> Wide Excel tables can extend beyond the PDF page width, cutting off columns on the right side.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Special characters missing.</strong> Symbols, emojis, or characters from non-Latin scripts may not render if the font does not support them.</span>
                 </li>
               </ul>
@@ -171,7 +171,7 @@ export default function OfficeToQdfKeepFormattingPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -196,7 +196,7 @@ export default function OfficeToQdfKeepFormattingPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Set Images to &quot;In Line with Text&quot;</h3>
                   <p className="text-slate-600">
-                    Floating images (set to &quot;square,&quot; &quot;tight,&quot; or &quot;behind text&quot; wrapping) are the most likely to shift during conversion. Right-click each image, choose &quot;Wrap Text,&quot; and select &quot;In Line with Text&quot; for maximum stability. Use the <Link href="/word-to-pdf" className="text-orange-600 hover:underline">Word to PDF</Link> tool for the most reliable conversion.
+                    Floating images (set to &quot;square,&quot; &quot;tight,&quot; or &quot;behind text&quot; wrapping) are the most likely to shift during conversion. Right-click each image, choose &quot;Wrap Text,&quot; and select &quot;In Line with Text&quot; for maximum stability. Use the <Link href="/word-to-pdf" className="text-[#14D8C4] hover:underline">Word to PDF</Link> tool for the most reliable conversion.
                   </p>
                 </div>
                 <div>
@@ -215,7 +215,7 @@ export default function OfficeToQdfKeepFormattingPage() {
                 <li>&#10003; <strong>Set the print area.</strong> Select the cells you want in the PDF, then go to Page Layout &gt; Print Area &gt; Set Print Area. This prevents extra blank columns from appearing in the PDF.</li>
                 <li>&#10003; <strong>Use landscape orientation</strong> for wide spreadsheets. Go to Page Layout &gt; Orientation &gt; Landscape.</li>
                 <li>&#10003; <strong>Fit to one page.</strong> In Page Setup, set Width to &quot;1 page&quot; to prevent columns from being cut off. Be careful with very wide sheets — the text may become too small to read.</li>
-                <li>&#10003; <strong>Check Print Preview first.</strong> Before converting, use File &gt; Print Preview to see exactly how your spreadsheet will look as a PDF. Fix any issues in the spreadsheet before uploading to <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">Excel to PDF</Link>.</li>
+                <li>&#10003; <strong>Check Print Preview first.</strong> Before converting, use File &gt; Print Preview to see exactly how your spreadsheet will look as a PDF. Fix any issues in the spreadsheet before uploading to <Link href="/excel-to-pdf" className="text-[#14D8C4] hover:underline">Excel to PDF</Link>.</li>
               </ul>
             </section>
 
@@ -225,7 +225,7 @@ export default function OfficeToQdfKeepFormattingPage() {
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Check text overflow.</strong> Text that extends beyond the slide boundary in PowerPoint may get clipped in the PDF. Make sure all text fits within the visible area of each slide.</li>
                 <li>&#10003; <strong>Understand what does not transfer.</strong> Animations, slide transitions, embedded videos, and audio will not appear in the PDF. Each slide becomes a static page showing all elements in their final position.</li>
-                <li>&#10003; <strong>Use standard slide sizes.</strong> If you used a custom slide size, the PDF pages will match that size. Standard 16:9 or 4:3 slides convert most reliably with the <Link href="/powerpoint-to-pdf" className="text-orange-600 hover:underline">PowerPoint to PDF</Link> tool.</li>
+                <li>&#10003; <strong>Use standard slide sizes.</strong> If you used a custom slide size, the PDF pages will match that size. Standard 16:9 or 4:3 slides convert most reliably with the <Link href="/powerpoint-to-pdf" className="text-[#14D8C4] hover:underline">PowerPoint to PDF</Link> tool.</li>
                 <li>&#10003; <strong>Embed fonts in PowerPoint.</strong> Just like Word, go to File &gt; Options &gt; Save &gt; &quot;Embed fonts in the file&quot; to prevent font substitution.</li>
               </ul>
             </section>
@@ -240,7 +240,7 @@ export default function OfficeToQdfKeepFormattingPage() {
             <p className="text-slate-300 mb-6">PDF.it preserves fonts, images, and layout automatically. Upload your Office file and get a pixel-perfect PDF.</p>
             <Link
               href="/office-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileText className="h-5 w-5" /> Convert to PDF Now
             </Link>
@@ -261,10 +261,10 @@ export default function OfficeToQdfKeepFormattingPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

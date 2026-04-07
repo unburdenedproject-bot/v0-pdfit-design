@@ -17,7 +17,7 @@ export default async function WordToPDFPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <FileText className="h-10 w-10 text-white" />
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Word to PDF</h1>
@@ -26,15 +26,15 @@ export default async function WordToPDFPage() {
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="h-4 w-4 text-orange-500" />
+                  <CheckCircle className="h-4 w-4 text-[#14D8C4]" />
                   <span>Preserves Formatting</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Zap className="h-4 w-4 text-orange-500" />
+                  <Zap className="h-4 w-4 text-[#14D8C4]" />
                   <span>Instant Conversion</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Download className="h-4 w-4 text-orange-500" />
+                  <Download className="h-4 w-4 text-[#14D8C4]" />
                   <span>Fonts Kept Intact</span>
                 </div>
               </div>

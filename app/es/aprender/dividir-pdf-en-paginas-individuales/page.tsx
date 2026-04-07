@@ -42,19 +42,19 @@ export default function DividirPDFEnPaginasIndividualesPage() {
       <main>
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-            <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Dividir PDF</p>
+            <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Dividir PDF</p>
             <h1 className="text-4xl lg:text-5xl font-black mb-4">Dividir un PDF en Páginas Individuales (Un Archivo por Página)</h1>
             <p className="text-xl text-slate-300">¿Necesitas cada página de tu PDF como su propio archivo separado? Aquí te explicamos cómo separar un documento de múltiples páginas en PDFs individuales de una sola página — al instante, gratis.</p>
           </div></div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><Scissors className="h-5 w-5 text-white" /></div>
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><Scissors className="h-5 w-5 text-white" /></div>
               <p className="text-slate-700 font-semibold">¿Listo para dividir? Salta la guía y ve directo a la herramienta.</p>
             </div>
-            <Link href="/es/dividir-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
+            <Link href="/es/dividir-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
               Dividir PDF Ahora <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -68,23 +68,23 @@ export default function DividirPDFEnPaginasIndividualesPage() {
               <p className="text-slate-600 mb-4">Hay muchos escenarios del mundo real donde necesitas cada página como su propio archivo. Aquí están los más comunes:</p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Subir a portales que aceptan páginas individuales.</strong> Algunos portales gubernamentales y de solicitudes requieren cada documento de respaldo como un archivo separado — una página para tu identificación, una para comprobante de domicilio, una para tu estado de cuenta bancario.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Distribuir páginas a diferentes personas.</strong> Divide un cuestionario de 10 páginas para que cada miembro del equipo reciba la página asignada para llenar independientemente.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>Crear exportaciones de imagen diapositiva por diapositiva.</strong> Divide un PDF de presentación en páginas individuales, luego convierte cada una a <Link href="/es/pdf-a-jpg" className="text-orange-600 hover:underline">JPG</Link> o <Link href="/es/pdf-a-png" className="text-orange-600 hover:underline">PNG</Link> para redes sociales o uso en sitios web.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
+                  <span><strong>Crear exportaciones de imagen diapositiva por diapositiva.</strong> Divide un PDF de presentación en páginas individuales, luego convierte cada una a <Link href="/es/pdf-a-jpg" className="text-[#14D8C4] hover:underline">JPG</Link> o <Link href="/es/pdf-a-png" className="text-[#14D8C4] hover:underline">PNG</Link> para redes sociales o uso en sitios web.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Archivar recibos o facturas individuales.</strong> Un PDF de estado de cuenta mensual con 30 facturas puede dividirse en 30 archivos — uno por factura — para archivado organizado.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Procesar páginas por separado.</strong> Cuando necesitas aplicar diferentes ediciones a diferentes páginas — rotar algunas, comprimir otras — dividir primero hace cada operación más fácil.</span>
                 </li>
               </ul>
@@ -99,7 +99,7 @@ export default function DividirPDFEnPaginasIndividualesPage() {
                   { title: "Descarga el archivo ZIP", desc: "Haz clic en Dividir PDF. PDF.it empaqueta todos los archivos de páginas individuales en una sola descarga ZIP. Extrae el ZIP en tu computadora para acceder a cada archivo de página por separado." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div>
                       <h3 className="font-bold text-slate-900 mb-1">{step.title}</h3>
                       <p className="text-slate-600 text-sm">{step.desc}</p>
@@ -115,19 +115,19 @@ export default function DividirPDFEnPaginasIndividualesPage() {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Convertir páginas a imágenes</h3>
-                  <p className="text-slate-600">Usa <Link href="/es/pdf-a-jpg" className="text-orange-600 hover:underline">PDF a JPG</Link> o <Link href="/es/pdf-a-png" className="text-orange-600 hover:underline">PDF a PNG</Link> para convertir cada página en un archivo de imagen. Perfecto para compartir en redes sociales, incrustar en presentaciones o publicar en un sitio web.</p>
+                  <p className="text-slate-600">Usa <Link href="/es/pdf-a-jpg" className="text-[#14D8C4] hover:underline">PDF a JPG</Link> o <Link href="/es/pdf-a-png" className="text-[#14D8C4] hover:underline">PDF a PNG</Link> para convertir cada página en un archivo de imagen. Perfecto para compartir en redes sociales, incrustar en presentaciones o publicar en un sitio web.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Recombinar páginas específicas</h3>
-                  <p className="text-slate-600">Después de dividir, podrías querer reensamblar algunas páginas en un orden diferente. Usa <Link href="/es/unir-pdf" className="text-orange-600 hover:underline">Unir PDF</Link> para combinar archivos de páginas seleccionadas en un nuevo documento con un orden personalizado.</p>
+                  <p className="text-slate-600">Después de dividir, podrías querer reensamblar algunas páginas en un orden diferente. Usa <Link href="/es/unir-pdf" className="text-[#14D8C4] hover:underline">Unir PDF</Link> para combinar archivos de páginas seleccionadas en un nuevo documento con un orden personalizado.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Comprimir páginas individuales</h3>
-                  <p className="text-slate-600">Si páginas específicas son muy grandes (común con documentos escaneados), usa <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> en esas páginas individualmente para mejor control de tamaños de archivo.</p>
+                  <p className="text-slate-600">Si páginas específicas son muy grandes (común con documentos escaneados), usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> en esas páginas individualmente para mejor control de tamaños de archivo.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Extraer texto de páginas específicas</h3>
-                  <p className="text-slate-600">¿Necesitas el texto de solo una página? Conviértela usando <Link href="/es/pdf-a-texto" className="text-orange-600 hover:underline">PDF a TXT</Link> para obtener una versión de texto plano que puedes copiar, editar o pegar en otro lugar.</p>
+                  <p className="text-slate-600">¿Necesitas el texto de solo una página? Conviértela usando <Link href="/es/pdf-a-texto" className="text-[#14D8C4] hover:underline">PDF a TXT</Link> para obtener una versión de texto plano que puedes copiar, editar o pegar en otro lugar.</p>
                 </div>
               </div>
             </section>
@@ -147,10 +147,10 @@ export default function DividirPDFEnPaginasIndividualesPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">Cuando No Necesitas Cada Página Separada</h2>
               <p className="text-slate-600 mb-4">Dividir en páginas individuales es la opción más granular, pero a veces un enfoque diferente es más práctico:</p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>¿Necesitas solo unas páginas específicas?</strong> Usa el enfoque de <Link href="/es/aprender/extraer-paginas-de-pdf-guia" className="text-orange-600 hover:underline">extraer páginas</Link> — selecciona solo las páginas que necesitas y obtén un solo PDF.</li>
+                <li>&#10003; <strong>¿Necesitas solo unas páginas específicas?</strong> Usa el enfoque de <Link href="/es/aprender/extraer-paginas-de-pdf-guia" className="text-[#14D8C4] hover:underline">extraer páginas</Link> — selecciona solo las páginas que necesitas y obtén un solo PDF.</li>
                 <li>&#10003; <strong>¿Necesitas dividir en capítulos o secciones?</strong> Usa rangos de páginas (ej., 1-10, 11-25, 26-40) en vez de páginas individuales. Esto mantiene el contenido relacionado junto.</li>
-                <li>&#10003; <strong>¿Necesitas archivos más pequeños para email?</strong> Consulta nuestra guía sobre <Link href="/es/aprender/dividir-pdf-para-email" className="text-orange-600 hover:underline">dividir PDFs para email</Link> para el mejor enfoque para cumplir con los límites de adjuntos.</li>
-                <li>&#10003; <strong>¿Necesitas imágenes, no PDFs?</strong> Salta la división por completo y ve directo a <Link href="/es/pdf-a-jpg" className="text-orange-600 hover:underline">PDF a JPG</Link> — convierte cada página a una imagen en un solo paso.</li>
+                <li>&#10003; <strong>¿Necesitas archivos más pequeños para email?</strong> Consulta nuestra guía sobre <Link href="/es/aprender/dividir-pdf-para-email" className="text-[#14D8C4] hover:underline">dividir PDFs para email</Link> para el mejor enfoque para cumplir con los límites de adjuntos.</li>
+                <li>&#10003; <strong>¿Necesitas imágenes, no PDFs?</strong> Salta la división por completo y ve directo a <Link href="/es/pdf-a-jpg" className="text-[#14D8C4] hover:underline">PDF a JPG</Link> — convierte cada página a una imagen en un solo paso.</li>
               </ul>
             </section>
 
@@ -161,7 +161,7 @@ export default function DividirPDFEnPaginasIndividualesPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">¿Listo para Dividir Tu PDF en Páginas Individuales?</h2>
             <p className="text-slate-300 mb-6">Sube tu archivo y obtén un PDF por página — gratis, sin registro.</p>
-            <Link href="/es/dividir-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors">
+            <Link href="/es/dividir-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors">
               <Scissors className="h-5 w-5" /> Dividir PDF Ahora
             </Link>
           </div>
@@ -177,9 +177,9 @@ export default function DividirPDFEnPaginasIndividualesPage() {
                 { title: "Dividir un PDF para Email (Bajo Límites de Adjuntos)", href: "/es/aprender/dividir-pdf-para-email" },
                 { title: "Cómo Dividir un PDF en tu Teléfono (iPhone y Android)", href: "/es/aprender/dividir-pdf-en-movil" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

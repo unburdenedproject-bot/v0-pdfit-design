@@ -66,7 +66,7 @@ function ConfirmForm() {
     <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 max-w-sm w-full text-center">
       {status === "loading" && (
         <>
-          <Loader2 className="h-10 w-10 animate-spin text-orange-500 mx-auto mb-4" />
+          <Loader2 className="h-10 w-10 animate-spin text-[#14D8C4] mx-auto mb-4" />
           <h1 className="text-xl font-bold text-slate-800 mb-1">Confirmando seu email</h1>
           <p className="text-sm text-slate-500">Por favor, aguarde um momento...</p>
         </>
@@ -87,7 +87,7 @@ function ConfirmForm() {
           <p className="text-sm text-slate-500 mb-4">{errorMessage}</p>
           <a
             href="/br/login"
-            className="text-sm font-medium text-orange-500 hover:text-orange-600 underline underline-offset-2"
+            className="text-sm font-medium text-[#14D8C4] hover:text-[#14D8C4] underline underline-offset-2"
           >
             Voltar para login
           </a>

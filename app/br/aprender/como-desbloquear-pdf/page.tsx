@@ -31,14 +31,14 @@ export default function ComoDesbloquearPdfPage() {
       <HeaderBr />
       <main>
         <section className="bg-[#191B4D] text-white py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-          <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Desbloquear PDF</p>
+          <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Desbloquear PDF</p>
           <h1 className="text-4xl lg:text-5xl font-black mb-4">Como Desbloquear PDF</h1>
           <p className="text-xl text-slate-300">Tem um PDF protegido com senha e precisa remover a protecao? Aprenda a desbloquear seu PDF em segundos — mantendo todo o conteudo intacto.</p>
         </div></div></section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><Unlock className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Pronto para desbloquear? Pule o guia e va direto para a ferramenta.</p></div>
-          <Link href="/br/desbloquear-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Desbloquear PDF <ArrowRight className="h-4 w-4" /></Link>
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><Unlock className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Pronto para desbloquear? Pule o guia e va direto para a ferramenta.</p></div>
+          <Link href="/br/desbloquear-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Desbloquear PDF <ArrowRight className="h-4 w-4" /></Link>
         </div></section>
 
         <article className="py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -46,10 +46,10 @@ export default function ComoDesbloquearPdfPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-4">Quando voce precisa desbloquear um PDF?</h2>
             <p className="text-slate-600 mb-4">Existem varias situacoes em que desbloquear um PDF e necessario:</p>
             <ul className="space-y-3 text-slate-700">
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Voce protegeu e agora precisa editar.</strong> Voce mesmo colocou a senha e agora quer remover para editar ou compartilhar sem restricoes.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Precisa imprimir um PDF restrito.</strong> O PDF abre normalmente mas nao permite imprimir. Veja nosso guia de <Link href="/br/aprender/desbloquear-pdf-para-imprimir" className="text-orange-600 hover:underline">desbloquear PDF para imprimir</Link>.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Copiar texto bloqueado.</strong> O PDF tem senha de permissoes que impede copiar texto.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Combinar com outros PDFs.</strong> Voce precisa <Link href="/br/unir-pdf" className="text-orange-600 hover:underline">juntar PDFs</Link> mas um deles esta protegido.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span><strong>Voce protegeu e agora precisa editar.</strong> Voce mesmo colocou a senha e agora quer remover para editar ou compartilhar sem restricoes.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span><strong>Precisa imprimir um PDF restrito.</strong> O PDF abre normalmente mas nao permite imprimir. Veja nosso guia de <Link href="/br/aprender/desbloquear-pdf-para-imprimir" className="text-[#14D8C4] hover:underline">desbloquear PDF para imprimir</Link>.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">3.</span><span><strong>Copiar texto bloqueado.</strong> O PDF tem senha de permissoes que impede copiar texto.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">4.</span><span><strong>Combinar com outros PDFs.</strong> Voce precisa <Link href="/br/unir-pdf" className="text-[#14D8C4] hover:underline">juntar PDFs</Link> mas um deles esta protegido.</span></li>
             </ul>
           </section>
 
@@ -62,7 +62,7 @@ export default function ComoDesbloquearPdfPage() {
                 { title: "Baixe o PDF desbloqueado", desc: "Clique em Desbloquear. O PDF e processado e voce baixa a versao sem protecao — mesmo conteudo, sem restricoes." },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                   <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                 </div>
               ))}
@@ -89,18 +89,18 @@ export default function ComoDesbloquearPdfPage() {
 
           <section className="mb-12">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Esqueceu a senha?</h2>
-            <p className="text-slate-600 mb-4">Se voce esqueceu a senha de abertura do PDF, as opcoes sao limitadas. Leia nosso guia completo sobre <Link href="/br/aprender/desbloquear-pdf-senha-esquecida" className="text-orange-600 hover:underline">desbloquear PDF com senha esquecida</Link> para entender suas alternativas.</p>
+            <p className="text-slate-600 mb-4">Se voce esqueceu a senha de abertura do PDF, as opcoes sao limitadas. Leia nosso guia completo sobre <Link href="/br/aprender/desbloquear-pdf-senha-esquecida" className="text-[#14D8C4] hover:underline">desbloquear PDF com senha esquecida</Link> para entender suas alternativas.</p>
           </section>
 
           <section className="mb-12">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Apos desbloquear</h2>
             <p className="text-slate-600 mb-4">Depois de desbloquear, voce pode:</p>
             <ul className="space-y-2 text-slate-700">
-              <li>&#10003; <Link href="/br/aprender/desbloquear-pdf-para-imprimir" className="text-orange-600 hover:underline">Imprimir o PDF</Link> sem restricoes.</li>
+              <li>&#10003; <Link href="/br/aprender/desbloquear-pdf-para-imprimir" className="text-[#14D8C4] hover:underline">Imprimir o PDF</Link> sem restricoes.</li>
               <li>&#10003; Copiar texto livremente.</li>
-              <li>&#10003; <Link href="/br/unir-pdf" className="text-orange-600 hover:underline">Juntar com outros PDFs</Link>.</li>
-              <li>&#10003; <Link href="/br/dividir-pdf" className="text-orange-600 hover:underline">Dividir o PDF</Link> em partes.</li>
-              <li>&#10003; Se necessario, <Link href="/br/aprender/como-proteger-pdf-com-senha" className="text-orange-600 hover:underline">adicionar uma nova senha</Link>.</li>
+              <li>&#10003; <Link href="/br/unir-pdf" className="text-[#14D8C4] hover:underline">Juntar com outros PDFs</Link>.</li>
+              <li>&#10003; <Link href="/br/dividir-pdf" className="text-[#14D8C4] hover:underline">Dividir o PDF</Link> em partes.</li>
+              <li>&#10003; Se necessario, <Link href="/br/aprender/como-proteger-pdf-com-senha" className="text-[#14D8C4] hover:underline">adicionar uma nova senha</Link>.</li>
             </ul>
           </section>
         </div></article>
@@ -108,7 +108,7 @@ export default function ComoDesbloquearPdfPage() {
         <section className="py-12 bg-[#191B4D]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
           <h2 className="text-2xl font-black text-white mb-3">Desbloqueie seu PDF agora</h2>
           <p className="text-slate-300 mb-6">Remova a senha em segundos — gratis, sem cadastro, conteudo intacto.</p>
-          <Link href="/br/desbloquear-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><Unlock className="h-5 w-5" /> Desbloquear PDF Agora</Link>
+          <Link href="/br/desbloquear-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><Unlock className="h-5 w-5" /> Desbloquear PDF Agora</Link>
         </div></section>
 
         <section className="py-16 bg-gray-50"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -119,7 +119,7 @@ export default function ComoDesbloquearPdfPage() {
               { title: "Desbloquear PDF no celular", href: "/br/aprender/desbloquear-pdf-no-celular" },
               { title: "Desbloquear PDF para imprimir", href: "/br/aprender/desbloquear-pdf-para-imprimir" },
               { title: "Como proteger PDF com senha", href: "/br/aprender/como-proteger-pdf-com-senha" },
-            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" /></Link>))}
+            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" /></Link>))}
           </div>
         </div></section>
 

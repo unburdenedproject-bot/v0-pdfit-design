@@ -91,7 +91,7 @@ export default function WhyPdfToJpgLooksBlurryPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to JPG</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to JPG</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Why Your PDF to JPG Looks Blurry (And How to Fix It)</h1>
               <p className="text-xl text-slate-300">
                 You converted a PDF to JPG and the result looks fuzzy, pixelated, or washed out. Here's why it happens and exactly how to fix it.
@@ -101,17 +101,17 @@ export default function WhyPdfToJpgLooksBlurryPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <ImageIcon className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Want sharp JPGs? Convert with control over DPI and quality.</p>
             </div>
             <Link
               href="/pdf-to-jpg"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Convert PDF to JPG <ArrowRight className="h-4 w-4" />
             </Link>
@@ -136,7 +136,7 @@ export default function WhyPdfToJpgLooksBlurryPage() {
                     DPI stands for "dots per inch" — it controls how many pixels make up each inch of the image. Many free tools convert at 72 or 96 DPI by default. At 72 DPI, a standard letter-size page becomes only about 612 x 792 pixels — that's tiny by today's standards.
                   </p>
                   <p className="text-slate-600">
-                    <strong>The fix:</strong> Convert at 200 DPI minimum. For print or presentations, use 300 DPI. PDF.it's <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">PDF to JPG tool</Link> lets you choose your DPI before converting.
+                    <strong>The fix:</strong> Convert at 200 DPI minimum. For print or presentations, use 300 DPI. PDF.it's <Link href="/pdf-to-jpg" className="text-[#14D8C4] hover:underline">PDF to JPG tool</Link> lets you choose your DPI before converting.
                   </p>
                 </div>
 
@@ -146,7 +146,7 @@ export default function WhyPdfToJpgLooksBlurryPage() {
                     JPG is a "lossy" format — it reduces file size by throwing away image data. This creates visible artifacts: fuzzy halos around text, blocky areas in gradients, and soft edges on sharp lines. The more compression applied, the worse it looks.
                   </p>
                   <p className="text-slate-600">
-                    <strong>The fix:</strong> Use high quality (low compression) settings when converting. Or switch to PNG format — it's lossless, meaning zero quality loss. Use our <Link href="/pdf-to-png" className="text-orange-600 hover:underline">PDF to PNG tool</Link> for text-heavy documents.
+                    <strong>The fix:</strong> Use high quality (low compression) settings when converting. Or switch to PNG format — it's lossless, meaning zero quality loss. Use our <Link href="/pdf-to-png" className="text-[#14D8C4] hover:underline">PDF to PNG tool</Link> for text-heavy documents.
                   </p>
                 </div>
 
@@ -206,20 +206,20 @@ export default function WhyPdfToJpgLooksBlurryPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Your PDF is mostly text.</strong> JPG compression creates visible artifacts around letter edges. PNG preserves text perfectly — every letter stays razor sharp.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Your PDF has diagrams, charts, or line art.</strong> Sharp lines and solid colors compress badly in JPG. PNG handles them perfectly.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>You need pixel-perfect accuracy.</strong> Legal documents, technical drawings, or any image where accuracy matters — PNG is the only choice.</span>
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
-                The trade-off is file size: PNG files are 2-5x larger than JPGs. If that's not an issue, <Link href="/pdf-to-png" className="text-orange-600 hover:underline">convert to PNG</Link> for the best quality.
+                The trade-off is file size: PNG files are 2-5x larger than JPGs. If that's not an issue, <Link href="/pdf-to-png" className="text-[#14D8C4] hover:underline">convert to PNG</Link> for the best quality.
               </p>
             </section>
 
@@ -240,22 +240,22 @@ export default function WhyPdfToJpgLooksBlurryPage() {
                   </thead>
                   <tbody className="text-slate-700">
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">72 DPI</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">72 DPI</td>
                       <td className="py-3 px-4">612 x 792 px</td>
                       <td className="py-3 px-4">Poor — text looks fuzzy, images are pixelated</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">150 DPI</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">150 DPI</td>
                       <td className="py-3 px-4">1275 x 1650 px</td>
                       <td className="py-3 px-4">Decent — fine for web and email</td>
                     </tr>
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">200 DPI</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">200 DPI</td>
                       <td className="py-3 px-4">1700 x 2200 px</td>
                       <td className="py-3 px-4">Good — sharp on screens, clean in presentations</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">300 DPI</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">300 DPI</td>
                       <td className="py-3 px-4">2550 x 3300 px</td>
                       <td className="py-3 px-4">Excellent — print quality, maximum detail</td>
                     </tr>
@@ -275,7 +275,7 @@ export default function WhyPdfToJpgLooksBlurryPage() {
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>1. Convert at 200 DPI with high quality settings — this gives you sharp images.</li>
-                <li>2. If the file size is too large, <Link href="/compress-pdf" className="text-orange-600 hover:underline">compress the original PDF first</Link>, then convert to JPG.</li>
+                <li>2. If the file size is too large, <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">compress the original PDF first</Link>, then convert to JPG.</li>
                 <li>3. Use 150 DPI as a compromise — still sharp enough for screens, but significantly smaller files.</li>
               </ul>
               <p className="text-slate-600 mt-4">
@@ -293,7 +293,7 @@ export default function WhyPdfToJpgLooksBlurryPage() {
             <p className="text-slate-300 mb-6">Convert at 200+ DPI with full quality control — no blurry results.</p>
             <Link
               href="/pdf-to-jpg"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <ImageIcon className="h-5 w-5" /> Convert PDF to JPG
             </Link>
@@ -314,10 +314,10 @@ export default function WhyPdfToJpgLooksBlurryPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

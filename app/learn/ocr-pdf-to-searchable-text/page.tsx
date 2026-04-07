@@ -91,7 +91,7 @@ export default function OCRPDFToSearchableTextPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / OCR PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / OCR PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">OCR a PDF to Make It Searchable (Find Text in Scanned PDFs)</h1>
               <p className="text-xl text-slate-300">
                 Got a scanned PDF where you cannot find, select, or copy text? OCR fixes that. Here is how to turn any scanned PDF into a fully searchable document.
@@ -101,17 +101,17 @@ export default function OCRPDFToSearchableTextPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <ScanText className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Make your scanned PDF searchable right now (Pro feature).</p>
             </div>
             <Link
               href="/ocr-scanner"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               OCR Scanner <ArrowRight className="h-4 w-4" />
             </Link>
@@ -132,7 +132,7 @@ export default function OCRPDFToSearchableTextPage() {
                 This means you cannot press Ctrl+F to find a word. You cannot select a paragraph and copy it. You cannot convert it to Word and get actual editable text. The PDF is essentially a photo album pretending to be a document.
               </p>
               <p className="text-slate-600">
-                OCR (Optical Character Recognition) solves this by analyzing the image, identifying every character, and creating a hidden text layer that sits behind the scan. The document looks the same, but now your computer can read it. Learn more about the technology in our <Link href="/learn/what-is-ocr" className="text-orange-600 hover:underline">What Is OCR?</Link> guide.
+                OCR (Optical Character Recognition) solves this by analyzing the image, identifying every character, and creating a hidden text layer that sits behind the scan. The document looks the same, but now your computer can read it. Learn more about the technology in our <Link href="/learn/what-is-ocr" className="text-[#14D8C4] hover:underline">What Is OCR?</Link> guide.
               </p>
             </section>
 
@@ -155,7 +155,7 @@ export default function OCRPDFToSearchableTextPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -175,23 +175,23 @@ export default function OCRPDFToSearchableTextPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Find specific text.</strong> Press Ctrl+F (or Cmd+F on Mac) to search for any word, name, date, or number in the document instantly.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Copy and paste content.</strong> Select any text in the PDF and paste it into emails, reports, spreadsheets, or other documents — no manual retyping needed.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>Convert to Word.</strong> Use <Link href="/pdf-to-word" className="text-orange-600 hover:underline">PDF to Word</Link> to turn your now-searchable PDF into an editable Word document with much better accuracy than converting an image-only PDF.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
+                  <span><strong>Convert to Word.</strong> Use <Link href="/pdf-to-word" className="text-[#14D8C4] hover:underline">PDF to Word</Link> to turn your now-searchable PDF into an editable Word document with much better accuracy than converting an image-only PDF.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
-                  <span><strong>Extract plain text.</strong> Use <Link href="/pdf-to-txt" className="text-orange-600 hover:underline">PDF to TXT</Link> to pull out all the text content for data processing, translation, or analysis.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
+                  <span><strong>Extract plain text.</strong> Use <Link href="/pdf-to-txt" className="text-[#14D8C4] hover:underline">PDF to TXT</Link> to pull out all the text content for data processing, translation, or analysis.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Index and archive.</strong> Searchable PDFs can be properly indexed by document management systems, making them easy to find later in large archives.</span>
                 </li>
               </ul>
@@ -204,7 +204,7 @@ export default function OCRPDFToSearchableTextPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Start with a Clean Scan</h3>
                   <p className="text-slate-600">
-                    OCR accuracy depends heavily on scan quality. Use at least 300 DPI resolution, make sure the text is not blurry, and avoid shadows or uneven lighting. If you scanned with your phone, run the file through <Link href="/phone-scan-cleanup" className="text-orange-600 hover:underline">Phone Scan Cleanup</Link> before OCR.
+                    OCR accuracy depends heavily on scan quality. Use at least 300 DPI resolution, make sure the text is not blurry, and avoid shadows or uneven lighting. If you scanned with your phone, run the file through <Link href="/phone-scan-cleanup" className="text-[#14D8C4] hover:underline">Phone Scan Cleanup</Link> before OCR.
                   </p>
                 </div>
 
@@ -218,7 +218,7 @@ export default function OCRPDFToSearchableTextPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Check the Output</h3>
                   <p className="text-slate-600">
-                    After OCR, open the PDF and try searching for a few words to verify the text layer is accurate. For critical documents, compare key sections against the original to catch any recognition errors. Read our full guide on <Link href="/learn/ocr-accuracy-tips" className="text-orange-600 hover:underline">improving OCR accuracy</Link>.
+                    After OCR, open the PDF and try searching for a few words to verify the text layer is accurate. For critical documents, compare key sections against the original to catch any recognition errors. Read our full guide on <Link href="/learn/ocr-accuracy-tips" className="text-[#14D8C4] hover:underline">improving OCR accuracy</Link>.
                   </p>
                 </div>
               </div>
@@ -231,7 +231,7 @@ export default function OCRPDFToSearchableTextPage() {
                 A searchable PDF keeps the original scan image and adds an invisible text layer. You can find and copy text, but you cannot directly edit the words on the page. The visual appearance stays exactly the same as the original scan.
               </p>
               <p className="text-slate-600">
-                An editable PDF (or editable document) lets you change, add, or delete text directly — like working in Word. If you need full editing, run OCR first, then convert to <Link href="/pdf-to-word" className="text-orange-600 hover:underline">Word format</Link> where you can make all the changes you need, and convert back to PDF when finished using <Link href="/word-to-pdf" className="text-orange-600 hover:underline">Word to PDF</Link>.
+                An editable PDF (or editable document) lets you change, add, or delete text directly — like working in Word. If you need full editing, run OCR first, then convert to <Link href="/pdf-to-word" className="text-[#14D8C4] hover:underline">Word format</Link> where you can make all the changes you need, and convert back to PDF when finished using <Link href="/word-to-pdf" className="text-[#14D8C4] hover:underline">Word to PDF</Link>.
               </p>
             </section>
 
@@ -245,7 +245,7 @@ export default function OCRPDFToSearchableTextPage() {
             <p className="text-slate-300 mb-6">Upload a scanned PDF and get a searchable version in seconds. Find any word, copy any text, convert to any format.</p>
             <Link
               href="/ocr-scanner"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <ScanText className="h-5 w-5" /> Try OCR Scanner (Pro)
             </Link>
@@ -267,10 +267,10 @@ export default function OCRPDFToSearchableTextPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

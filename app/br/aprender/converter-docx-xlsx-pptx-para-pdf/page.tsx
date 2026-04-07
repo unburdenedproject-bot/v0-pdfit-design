@@ -31,14 +31,14 @@ export default function ConverterDocxXlsxPptxParaPdfPage() {
       <HeaderBr />
       <main>
         <section className="bg-[#191B4D] text-white py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-          <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Office para PDF</p>
+          <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Office para PDF</p>
           <h1 className="text-4xl lg:text-5xl font-black mb-4">Converter DOCX, XLSX, PPTX para PDF</h1>
           <p className="text-xl text-slate-300">Precisa converter varios tipos de arquivos do Office para PDF? Veja como fazer tudo de uma vez — Word, Excel e PowerPoint — em uma unica ferramenta.</p>
         </div></div></section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><FileText className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Pronto para converter? Pule o guia e va direto para a ferramenta.</p></div>
-          <Link href="/br/office-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Converter Office para PDF <ArrowRight className="h-4 w-4" /></Link>
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><FileText className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Pronto para converter? Pule o guia e va direto para a ferramenta.</p></div>
+          <Link href="/br/office-para-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Converter Office para PDF <ArrowRight className="h-4 w-4" /></Link>
         </div></section>
 
         <article className="py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -70,7 +70,7 @@ export default function ConverterDocxXlsxPptxParaPdfPage() {
                 { title: "Baixe os PDFs", desc: "Baixe cada PDF individualmente ou, se converteu multiplos arquivos (Pro), baixe todos em um unico ZIP. Perfeito para enviar por email." },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                   <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                 </div>
               ))}
@@ -81,20 +81,20 @@ export default function ConverterDocxXlsxPptxParaPdfPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-4">Ferramentas dedicadas vs. ferramenta universal</h2>
             <p className="text-slate-600 mb-4">O PDF.it oferece tanto a ferramenta universal (Office para PDF) quanto ferramentas dedicadas para cada formato:</p>
             <ul className="space-y-2 text-slate-700">
-              <li>&#10003; <Link href="/br/word-para-pdf" className="text-orange-600 hover:underline">Word para PDF</Link> — otimizada para documentos de texto com cabecalhos, rodapes e indice.</li>
-              <li>&#10003; <Link href="/br/excel-para-pdf" className="text-orange-600 hover:underline">Excel para PDF</Link> — preserva tabelas, graficos e areas de impressao.</li>
-              <li>&#10003; <Link href="/br/powerpoint-para-pdf" className="text-orange-600 hover:underline">PowerPoint para PDF</Link> — converte slides com imagens, formas e graficos.</li>
-              <li>&#10003; <Link href="/br/office-para-pdf" className="text-orange-600 hover:underline">Office para PDF</Link> — aceita qualquer formato em uma unica interface.</li>
+              <li>&#10003; <Link href="/br/word-para-pdf" className="text-[#14D8C4] hover:underline">Word para PDF</Link> — otimizada para documentos de texto com cabecalhos, rodapes e indice.</li>
+              <li>&#10003; <Link href="/br/excel-para-pdf" className="text-[#14D8C4] hover:underline">Excel para PDF</Link> — preserva tabelas, graficos e areas de impressao.</li>
+              <li>&#10003; <Link href="/br/powerpoint-para-pdf" className="text-[#14D8C4] hover:underline">PowerPoint para PDF</Link> — converte slides com imagens, formas e graficos.</li>
+              <li>&#10003; <Link href="/br/office-para-pdf" className="text-[#14D8C4] hover:underline">Office para PDF</Link> — aceita qualquer formato em uma unica interface.</li>
             </ul>
           </section>
 
           <section className="mb-12">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Dicas para conversao perfeita</h2>
             <ul className="space-y-2 text-slate-700">
-              <li>&#10003; <strong>Incorpore fontes</strong> em todos os documentos antes de converter. Veja nosso guia de <Link href="/br/aprender/pptx-para-pdf-fontes-faltando" className="text-orange-600 hover:underline">fontes faltando</Link>.</li>
+              <li>&#10003; <strong>Incorpore fontes</strong> em todos os documentos antes de converter. Veja nosso guia de <Link href="/br/aprender/pptx-para-pdf-fontes-faltando" className="text-[#14D8C4] hover:underline">fontes faltando</Link>.</li>
               <li>&#10003; <strong>Verifique a formatacao</strong> com Ctrl+P (visualizacao de impressao) antes de enviar.</li>
               <li>&#10003; <strong>Use formatos modernos</strong> (DOCX, XLSX, PPTX) em vez dos antigos (DOC, XLS, PPT).</li>
-              <li>&#10003; Para manter o formato perfeito, leia nosso guia de <Link href="/br/aprender/office-para-pdf-manter-formato" className="text-orange-600 hover:underline">como manter a formatacao</Link>.</li>
+              <li>&#10003; Para manter o formato perfeito, leia nosso guia de <Link href="/br/aprender/office-para-pdf-manter-formato" className="text-[#14D8C4] hover:underline">como manter a formatacao</Link>.</li>
             </ul>
           </section>
         </div></article>
@@ -102,7 +102,7 @@ export default function ConverterDocxXlsxPptxParaPdfPage() {
         <section className="py-12 bg-[#191B4D]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
           <h2 className="text-2xl font-black text-white mb-3">Converta todos os seus documentos para PDF</h2>
           <p className="text-slate-300 mb-6">Word, Excel, PowerPoint — envie qualquer formato e obtenha PDFs perfeitos em segundos.</p>
-          <Link href="/br/office-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><FileText className="h-5 w-5" /> Converter Office para PDF Agora</Link>
+          <Link href="/br/office-para-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><FileText className="h-5 w-5" /> Converter Office para PDF Agora</Link>
         </div></section>
 
         <section className="py-16 bg-gray-50"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -113,7 +113,7 @@ export default function ConverterDocxXlsxPptxParaPdfPage() {
               { title: "Office para PDF — como manter o formato", href: "/br/aprender/office-para-pdf-manter-formato" },
               { title: "Melhor formato para enviar documentos", href: "/br/aprender/melhor-formato-para-enviar-documentos" },
               { title: "Converter PPT para PDF (guia completo)", href: "/br/aprender/converter-ppt-para-pdf" },
-            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" /></Link>))}
+            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" /></Link>))}
           </div>
         </div></section>
 

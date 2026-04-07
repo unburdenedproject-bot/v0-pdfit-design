@@ -42,19 +42,19 @@ export default function ComoDividirPDFPage() {
       <main>
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-            <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Dividir PDF</p>
+            <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Dividir PDF</p>
             <h1 className="text-4xl lg:text-5xl font-black mb-4">Cómo Dividir un PDF en Línea (Extraer Páginas o Rangos)</h1>
             <p className="text-xl text-slate-300">¿Necesitas sacar unas páginas de un PDF grande? Aquí te explicamos cómo dividir cualquier PDF en archivos más pequeños por rango de páginas — en segundos, sin software.</p>
           </div></div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><Scissors className="h-5 w-5 text-white" /></div>
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><Scissors className="h-5 w-5 text-white" /></div>
               <p className="text-slate-700 font-semibold">¿Listo para dividir? Salta la guía y ve directo a la herramienta.</p>
             </div>
-            <Link href="/es/dividir-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
+            <Link href="/es/dividir-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
               Dividir PDF Ahora <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -68,19 +68,19 @@ export default function ComoDividirPDFPage() {
               <p className="text-slate-600 mb-4">Dividir es la opción correcta cuando necesitas separar un documento grande en piezas más pequeñas y manejables. Razones comunes:</p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Extraer un capítulo o sección.</strong> Tienes un informe de 200 páginas pero solo necesitas las páginas 45-60. Extrae esas en vez de enviar todo el archivo.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Eliminar páginas no deseadas.</strong> Un contrato tiene 15 páginas de anexos que no necesitas. Extrae solo las páginas que importan.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Dividir un archivo para email.</strong> Tu PDF es muy grande para adjuntos de email. Divídelo en 2-3 archivos más pequeños y envíalos por separado.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Organizar PDFs multi-documento.</strong> Alguien escaneó facturas, recibos y formularios en un solo archivo. Divídelos en documentos individuales para archivar.</span>
                 </li>
               </ul>
@@ -95,7 +95,7 @@ export default function ComoDividirPDFPage() {
                   { title: "Descarga tus archivos divididos", desc: "Haz clic en Dividir PDF. Tus nuevos archivos están listos para descargar individualmente, o tómalos todos a la vez como un ZIP. El PDF original no se modifica." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div>
                       <h3 className="font-bold text-slate-900 mb-1">{step.title}</h3>
                       <p className="text-slate-600 text-sm">{step.desc}</p>
@@ -118,19 +118,19 @@ export default function ComoDividirPDFPage() {
                   </thead>
                   <tbody className="text-slate-700">
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">1-5</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">1-5</td>
                       <td className="py-3 px-4">Un archivo con las páginas 1 a 5</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">1-5, 10-15</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">1-5, 10-15</td>
                       <td className="py-3 px-4">Dos archivos: uno con páginas 1-5, otro con páginas 10-15</td>
                     </tr>
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">3, 7, 12</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">3, 7, 12</td>
                       <td className="py-3 px-4">Tres archivos separados de una sola página</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">1-3, 8, 10-15</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">1-3, 8, 10-15</td>
                       <td className="py-3 px-4">Tres archivos: páginas 1-3, página 8 sola, y páginas 10-15</td>
                     </tr>
                   </tbody>
@@ -142,7 +142,7 @@ export default function ComoDividirPDFPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">¿Qué Pasa con el PDF Original?</h2>
               <p className="text-slate-600 mb-4">Nada. Dividir es una operación no destructiva. PDF.it crea <strong>nuevos archivos</strong> con las páginas que seleccionas — tu PDF original nunca se modifica, renombra ni elimina. Piensa en ello como fotocopiar páginas específicas de un libro. El libro permanece intacto.</p>
-              <p className="text-slate-600">Si más tarde te das cuenta de que necesitas esas páginas juntas de nuevo, usa <Link href="/es/unir-pdf" className="text-orange-600 hover:underline">Unir PDF</Link> para combinar archivos en un documento.</p>
+              <p className="text-slate-600">Si más tarde te das cuenta de que necesitas esas páginas juntas de nuevo, usa <Link href="/es/unir-pdf" className="text-[#14D8C4] hover:underline">Unir PDF</Link> para combinar archivos en un documento.</p>
             </section>
 
             <section className="mb-12">
@@ -154,7 +154,7 @@ export default function ComoDividirPDFPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Dividir para Adjuntos de Email</h3>
-                  <p className="text-slate-600">Divide el conteo total de páginas en partes aproximadamente iguales. Para un PDF de 30 páginas, prueba "1-10, 11-20, 21-30" para crear tres archivos más pequeños. Después de dividir, <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">comprime cada parte</Link> para reducir el tamaño aún más. Consulta nuestra guía completa sobre <Link href="/es/aprender/dividir-pdf-para-email" className="text-orange-600 hover:underline">dividir PDFs para email</Link>.</p>
+                  <p className="text-slate-600">Divide el conteo total de páginas en partes aproximadamente iguales. Para un PDF de 30 páginas, prueba "1-10, 11-20, 21-30" para crear tres archivos más pequeños. Después de dividir, <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">comprime cada parte</Link> para reducir el tamaño aún más. Consulta nuestra guía completa sobre <Link href="/es/aprender/dividir-pdf-para-email" className="text-[#14D8C4] hover:underline">dividir PDFs para email</Link>.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Eliminar Páginas No Deseadas</h3>
@@ -162,7 +162,7 @@ export default function ComoDividirPDFPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Sacar un Solo Formulario o Recibo</h3>
-                  <p className="text-slate-600">Si necesitas solo una página — digamos la página 4 — escribe "4" y obtendrás un PDF de una sola página. Aprende más en nuestra guía sobre <Link href="/es/aprender/extraer-paginas-de-pdf" className="text-orange-600 hover:underline">extraer páginas de un PDF</Link>.</p>
+                  <p className="text-slate-600">Si necesitas solo una página — digamos la página 4 — escribe "4" y obtendrás un PDF de una sola página. Aprende más en nuestra guía sobre <Link href="/es/aprender/extraer-paginas-de-pdf" className="text-[#14D8C4] hover:underline">extraer páginas de un PDF</Link>.</p>
                 </div>
               </div>
             </section>
@@ -174,7 +174,7 @@ export default function ComoDividirPDFPage() {
                 <li>✓ <strong>Dividir</strong> separa un PDF en múltiples partes (múltiples archivos de salida de una entrada).</li>
                 <li>✓ <strong>Extraer</strong> saca páginas específicas en un solo archivo nuevo (un archivo de salida con páginas seleccionadas).</li>
               </ul>
-              <p className="text-slate-600 mt-4">La herramienta <Link href="/es/dividir-pdf" className="text-orange-600 hover:underline">Dividir PDF</Link> de PDF.it maneja ambos — ingresa un rango para extracción, o múltiples rangos para dividir en partes. También puedes usar la herramienta dedicada <Link href="/es/dividir-pdf" className="text-orange-600 hover:underline">Extraer Páginas</Link> para una interfaz más simple enfocada en sacar páginas específicas.</p>
+              <p className="text-slate-600 mt-4">La herramienta <Link href="/es/dividir-pdf" className="text-[#14D8C4] hover:underline">Dividir PDF</Link> de PDF.it maneja ambos — ingresa un rango para extracción, o múltiples rangos para dividir en partes. También puedes usar la herramienta dedicada <Link href="/es/dividir-pdf" className="text-[#14D8C4] hover:underline">Extraer Páginas</Link> para una interfaz más simple enfocada en sacar páginas específicas.</p>
             </section>
 
           </div>
@@ -184,7 +184,7 @@ export default function ComoDividirPDFPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">¿Listo para Dividir Tu PDF?</h2>
             <p className="text-slate-300 mb-6">Sube tu archivo y extrae las páginas que necesitas en segundos — gratis, sin registro.</p>
-            <Link href="/es/dividir-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors">
+            <Link href="/es/dividir-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors">
               <Scissors className="h-5 w-5" /> Dividir PDF Ahora
             </Link>
           </div>
@@ -200,9 +200,9 @@ export default function ComoDividirPDFPage() {
                 { title: "Dividir PDF en Páginas Individuales (Un Archivo por Página)", href: "/es/aprender/dividir-pdf-en-paginas-individuales" },
                 { title: "Dividir un PDF en tu Teléfono (iPhone y Android)", href: "/es/aprender/dividir-pdf-en-movil" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

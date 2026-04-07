@@ -68,7 +68,7 @@ export default function ReducirTamanoPDFPageEs() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Compress className="h-10 w-10 text-white" />
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Reducir Tamano de PDF</h1>
@@ -76,9 +76,9 @@ export default function ReducirTamanoPDFPageEs() {
                 ¿Tu PDF es demasiado grande para compartir, subir o almacenar? PDF.it reduce el tamano de cualquier archivo PDF de forma rapida y facil — optimizando imagenes, fuentes y estructuras internas para hacer tu documento mas pequeno sin perder calidad visible.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Reduccion Rapida</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-orange-500" /><span>Archivos Eliminados Despues de la Sesion</span></div>
-                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-orange-500" /><span>Sin Registro</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Reduccion Rapida</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Despues de la Sesion</span></div>
+                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sin Registro</span></div>
               </div>
             </div>
           </div>
@@ -104,28 +104,28 @@ export default function ReducirTamanoPDFPageEs() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="bg-white rounded-xl p-6 border border-gray-200">
                 <div className="flex items-center gap-3 mb-3">
-                  <HardDrive className="h-5 w-5 text-orange-500" />
+                  <HardDrive className="h-5 w-5 text-[#14D8C4]" />
                   <h3 className="font-bold text-slate-900">Imagenes de Alta Resolucion</h3>
                 </div>
                 <p className="text-slate-600 text-sm">Las fotos, graficos e ilustraciones en alta resolucion son la principal causa de PDFs grandes. Una sola imagen puede agregar varios megabytes al archivo.</p>
               </div>
               <div className="bg-white rounded-xl p-6 border border-gray-200">
                 <div className="flex items-center gap-3 mb-3">
-                  <HardDrive className="h-5 w-5 text-orange-500" />
+                  <HardDrive className="h-5 w-5 text-[#14D8C4]" />
                   <h3 className="font-bold text-slate-900">Fuentes Incrustadas</h3>
                 </div>
                 <p className="text-slate-600 text-sm">Los PDFs incrustan fuentes completas para garantizar que el documento se vea igual en cualquier dispositivo. Multiples fuentes pueden agregar megabytes innecesarios.</p>
               </div>
               <div className="bg-white rounded-xl p-6 border border-gray-200">
                 <div className="flex items-center gap-3 mb-3">
-                  <HardDrive className="h-5 w-5 text-orange-500" />
+                  <HardDrive className="h-5 w-5 text-[#14D8C4]" />
                   <h3 className="font-bold text-slate-900">Metadatos y Datos Ocultos</h3>
                 </div>
                 <p className="text-slate-600 text-sm">Historial de edicion, miniaturas incrustadas, comentarios y metadatos acumulados pueden inflar significativamente el tamano del archivo sin que lo notes.</p>
               </div>
               <div className="bg-white rounded-xl p-6 border border-gray-200">
                 <div className="flex items-center gap-3 mb-3">
-                  <HardDrive className="h-5 w-5 text-orange-500" />
+                  <HardDrive className="h-5 w-5 text-[#14D8C4]" />
                   <h3 className="font-bold text-slate-900">Capas y Formularios</h3>
                 </div>
                 <p className="text-slate-600 text-sm">Los campos de formulario, anotaciones, capas de dibujo y elementos interactivos agregan datos adicionales que aumentan el tamano del PDF.</p>
@@ -178,7 +178,7 @@ export default function ReducirTamanoPDFPageEs() {
                 "Descarga tu PDF reducido. Si aun es muy grande, intenta dividir el archivo primero y luego comprime cada parte.",
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                     {i + 1}
                   </div>
                   <p className="text-slate-700 pt-1">{step}</p>
@@ -206,12 +206,12 @@ export default function ReducirTamanoPDFPageEs() {
                 <Link
                   key={tool.href}
                   href={tool.href}
-                  className="group flex flex-col items-center text-center rounded-xl border border-gray-200 bg-white p-4 hover:border-orange-200 hover:bg-orange-50/40 hover:shadow-md transition-all duration-200"
+                  className="group flex flex-col items-center text-center rounded-xl border border-gray-200 bg-white p-4 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] hover:shadow-md transition-all duration-200"
                 >
-                  <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200 shadow-sm">
+                  <div className="w-10 h-10 bg-gradient-to-br from-[#14D8C4] to-[#0FBFB0] rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200 shadow-sm">
                     <tool.icon className="h-5 w-5 text-white" />
                   </div>
-                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-orange-600 transition-colors mb-1">
+                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-[#14D8C4] transition-colors mb-1">
                     {tool.name}
                   </h4>
                   <p className="text-xs text-slate-500 leading-relaxed">{tool.desc}</p>
@@ -252,7 +252,7 @@ export default function ReducirTamanoPDFPageEs() {
             </p>
             <Link
               href="/es/reducir-tamano-pdf"
-              className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl text-lg transition-colors shadow-lg"
+              className="inline-block bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl text-lg transition-colors shadow-lg"
             >
               Reducir Tamano de PDF
             </Link>

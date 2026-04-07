@@ -9,8 +9,8 @@ export default function ProPage() {
       <Header />
       <main className="flex-1 flex items-center justify-center py-16 px-4">
         <div className="max-w-md w-full text-center">
-          <div className="w-20 h-20 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <Crown className="w-10 h-10 text-orange-500" />
+          <div className="w-20 h-20 bg-[#F0FDFA] rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <Crown className="w-10 h-10 text-[#14D8C4]" />
           </div>
           <h1 className="text-3xl font-black text-[#111827] mb-2">
             This is a Pro feature

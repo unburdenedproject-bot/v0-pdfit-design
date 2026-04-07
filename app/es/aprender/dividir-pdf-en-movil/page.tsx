@@ -42,19 +42,19 @@ export default function DividirPDFEnMovilPage() {
       <main>
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-            <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Dividir PDF</p>
+            <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Dividir PDF</p>
             <h1 className="text-4xl lg:text-5xl font-black mb-4">Cómo Dividir un PDF en tu Teléfono (iPhone y Android)</h1>
             <p className="text-xl text-slate-300">¿Necesitas dividir un PDF pero solo tienes tu teléfono? No hay problema. PDF.it funciona directamente en tu navegador móvil — sin descargar app, sin cuenta requerida.</p>
           </div></div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><Scissors className="h-5 w-5 text-white" /></div>
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><Scissors className="h-5 w-5 text-white" /></div>
               <p className="text-slate-700 font-semibold">¿Estás en tu teléfono ahora? Abre la herramienta directamente.</p>
             </div>
-            <Link href="/es/dividir-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
+            <Link href="/es/dividir-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
               Dividir PDF Ahora <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -68,19 +68,19 @@ export default function DividirPDFEnMovilPage() {
               <p className="text-slate-600 mb-4">Estás lejos de tu computadora, pero necesitas dividir un PDF ahora mismo. Escenarios móviles comunes incluyen:</p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Reenviar una página específica de un adjunto de email.</strong> Tu jefe te envía un informe de 20 páginas y te pide que reenvíes solo la página 5 a un cliente. Divídelo en tu teléfono y responde en segundos.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Subir un documento a un formulario móvil.</strong> Un portal gubernamental o app de seguros pide una sola página de tu documento de múltiples páginas. Extrae solo esa página.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Enviar un archivo por WhatsApp o Telegram.</strong> Las apps de mensajería tienen límites de tamaño de archivo. Divide un PDF grande en partes más pequeñas para compartirlas por chat.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Ediciones rápidas mientras viajas.</strong> Estás en el aeropuerto y necesitas enviar solo ciertas páginas de un contrato antes de tu vuelo. Tu teléfono es todo lo que tienes.</span>
                 </li>
               </ul>
@@ -95,7 +95,7 @@ export default function DividirPDFEnMovilPage() {
                   { title: "Selecciona páginas y descarga", desc: "Elige las páginas o rangos de páginas que quieres conservar. Toca Dividir PDF. El resultado se descarga a tu app Archivos (carpeta Descargas). Luego puedes compartirlo por Mail, AirDrop, Mensajes, o cualquier otra app." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div>
                       <h3 className="font-bold text-slate-900 mb-1">{step.title}</h3>
                       <p className="text-slate-600 text-sm">{step.desc}</p>
@@ -114,7 +114,7 @@ export default function DividirPDFEnMovilPage() {
                   { title: "Selecciona páginas y descarga", desc: "Elige qué páginas extraer o cómo dividir el archivo. Toca Dividir PDF. El archivo se descarga a tu carpeta Descargas. Revisa la barra de notificaciones para la confirmación de descarga, luego abre o comparte el archivo." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div>
                       <h3 className="font-bold text-slate-900 mb-1">{step.title}</h3>
                       <p className="text-slate-600 text-sm">{step.desc}</p>
@@ -130,7 +130,7 @@ export default function DividirPDFEnMovilPage() {
                 <li>&#10003; <strong>Usa una conexión estable.</strong> Subir y descargar funcionan mejor con Wi-Fi. Los datos celulares también funcionan, pero archivos grandes pueden tardar más en conexiones lentas.</li>
                 <li>&#10003; <strong>Revisa tu carpeta Descargas.</strong> En iPhone, los archivos van a la app Archivos. En Android, revisa tu carpeta Descargas o la barra de notificaciones.</li>
                 <li>&#10003; <strong>Agrega la herramienta a favoritos.</strong> Agrega pdf.it.com/es/dividir-pdf a tu pantalla de inicio para acceso instantáneo. En iPhone, toca Compartir y luego &quot;Agregar a pantalla de inicio&quot;. En Android, toca el menú del navegador y &quot;Agregar a pantalla de inicio&quot;.</li>
-                <li>&#10003; <strong>Comprime si sigue siendo muy grande.</strong> Después de dividir, si las partes individuales siguen siendo grandes, usa <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> desde tu teléfono para reducirlas más.</li>
+                <li>&#10003; <strong>Comprime si sigue siendo muy grande.</strong> Después de dividir, si las partes individuales siguen siendo grandes, usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> desde tu teléfono para reducirlas más.</li>
                 <li>&#10003; <strong>Funciona con almacenamiento en la nube.</strong> Puedes subir PDFs directamente desde iCloud Drive, Google Drive, Dropbox, o OneDrive — sin necesidad de descargar a tu teléfono primero.</li>
               </ul>
             </section>
@@ -141,19 +141,19 @@ export default function DividirPDFEnMovilPage() {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Unir archivos divididos de nuevo</h3>
-                  <p className="text-slate-600">¿Necesitas recombinar partes de PDF? Usa <Link href="/es/unir-pdf" className="text-orange-600 hover:underline">Unir PDF</Link> para juntar múltiples archivos en uno — funciona perfecto en móvil para reensamblar documentos.</p>
+                  <p className="text-slate-600">¿Necesitas recombinar partes de PDF? Usa <Link href="/es/unir-pdf" className="text-[#14D8C4] hover:underline">Unir PDF</Link> para juntar múltiples archivos en uno — funciona perfecto en móvil para reensamblar documentos.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Comprimir para compartir</h3>
-                  <p className="text-slate-600">Antes de compartir por WhatsApp o email, usa <Link href="/es/comprimir-pdf-para-email" className="text-orange-600 hover:underline">Comprimir PDF para Email</Link> para asegurarte de que tu archivo sea lo suficientemente pequeño para enviar.</p>
+                  <p className="text-slate-600">Antes de compartir por WhatsApp o email, usa <Link href="/es/comprimir-pdf-para-email" className="text-[#14D8C4] hover:underline">Comprimir PDF para Email</Link> para asegurarte de que tu archivo sea lo suficientemente pequeño para enviar.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Convertir páginas a imágenes</h3>
-                  <p className="text-slate-600">¿Necesitas compartir una página como foto? Conviértela a <Link href="/es/pdf-a-jpg" className="text-orange-600 hover:underline">JPG</Link> o <Link href="/es/pdf-a-png" className="text-orange-600 hover:underline">PNG</Link> directamente desde tu teléfono — mucho más fácil de compartir en apps de mensajería que un PDF.</p>
+                  <p className="text-slate-600">¿Necesitas compartir una página como foto? Conviértela a <Link href="/es/pdf-a-jpg" className="text-[#14D8C4] hover:underline">JPG</Link> o <Link href="/es/pdf-a-png" className="text-[#14D8C4] hover:underline">PNG</Link> directamente desde tu teléfono — mucho más fácil de compartir en apps de mensajería que un PDF.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Corregir páginas rotadas</h3>
-                  <p className="text-slate-600">Los PDFs escaneados frecuentemente tienen páginas rotadas de lado. Usa <Link href="/es/rotar-pdf" className="text-orange-600 hover:underline">Rotar PDF</Link> en tu teléfono para corregir la orientación antes de compartir.</p>
+                  <p className="text-slate-600">Los PDFs escaneados frecuentemente tienen páginas rotadas de lado. Usa <Link href="/es/rotar-pdf" className="text-[#14D8C4] hover:underline">Rotar PDF</Link> en tu teléfono para corregir la orientación antes de compartir.</p>
                 </div>
               </div>
             </section>
@@ -165,7 +165,7 @@ export default function DividirPDFEnMovilPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Divide un PDF Directamente desde tu Teléfono</h2>
             <p className="text-slate-300 mb-6">Funciona en iPhone y Android — sin app necesaria, sin registro requerido.</p>
-            <Link href="/es/dividir-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors">
+            <Link href="/es/dividir-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors">
               <Scissors className="h-5 w-5" /> Dividir PDF Ahora
             </Link>
           </div>
@@ -181,9 +181,9 @@ export default function DividirPDFEnMovilPage() {
                 { title: "Dividir un PDF para Email (Bajo Límites de Adjuntos)", href: "/es/aprender/dividir-pdf-para-email" },
                 { title: "Dividir PDF en Páginas Individuales (Un Archivo por Página)", href: "/es/aprender/dividir-pdf-en-paginas-individuales" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

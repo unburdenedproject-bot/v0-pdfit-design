@@ -61,7 +61,7 @@ export default function OrganizePDFPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Layers className="h-10 w-10 text-white" />
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Organize PDF Pages Online</h1>
@@ -69,9 +69,9 @@ export default function OrganizePDFPage() {
                 Sort, rearrange, and manage your PDF pages with PDF.it. Split, merge, rotate, and reorder pages to create perfectly organized documents — all in your browser.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Multiple Tools</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-orange-500" /><span>Files Deleted After Session</span></div>
-                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-orange-500" /><span>No Login Required</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Multiple Tools</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Files Deleted After Session</span></div>
+                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>No Login Required</span></div>
               </div>
             </div>
           </div>
@@ -83,10 +83,10 @@ export default function OrganizePDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-4">Choose Your Tool</h2>
             <p className="text-slate-600 mb-8">Use these tools to organize your PDF pages:</p>
             <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
-              <Link href="/split-pdf" className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-xl transition-colors">
+              <Link href="/split-pdf" className="inline-flex items-center justify-center bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-6 rounded-xl transition-colors">
                 Split PDF
               </Link>
-              <Link href="/merge-pdf" className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-xl transition-colors">
+              <Link href="/merge-pdf" className="inline-flex items-center justify-center bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-6 rounded-xl transition-colors">
                 Merge PDF
               </Link>
               <Link href="/rotate-pdf" className="inline-flex items-center justify-center bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-6 rounded-xl transition-colors">
@@ -150,7 +150,7 @@ export default function OrganizePDFPage() {
                 "Upload your PDF, make your changes, and download the organized document.",
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                     {i + 1}
                   </div>
                   <p className="text-slate-700 pt-1">{step}</p>

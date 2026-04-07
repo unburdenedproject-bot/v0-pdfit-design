@@ -91,7 +91,7 @@ export default function CodigoQRParaWiFiPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Codigo QR</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Codigo QR</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Crear un Codigo QR para WiFi (Los Invitados se Conectan al Instante)</h1>
               <p className="text-xl text-slate-300">
                 Deja de deletrear tu contrasena WiFi a cada invitado, cliente o visitante de Airbnb. Crea un codigo QR de WiFi y se conectan con un solo escaneo — sin escribir nada.
@@ -101,17 +101,17 @@ export default function CodigoQRParaWiFiPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <QrCode className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Tienes los datos de tu WiFi? Genera tu codigo QR ahora.</p>
             </div>
             <Link
               href="/es/codigo-qr"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Crear Codigo QR WiFi <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function CodigoQRParaWiFiPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Conexion instantanea.</strong> Los invitados escanean el codigo QR con la camara de su telefono y se conectan al WiFi automaticamente. Sin escribir, sin errores, sin frustracion.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Perfecto para negocios.</strong> Cafeterias, restaurantes, hoteles, espacios de coworking y salones pueden exhibir un codigo QR de WiFi para que los clientes se conecten sin pedir la contrasena al personal.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Genial para anfitriones de Airbnb.</strong> Imprime el codigo QR de WiFi y colocalo en la guia del huesped o en la mesita de noche. Los huespedes se conectan en el momento que llegan sin enviarte mensaje.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Funciona en casa tambien.</strong> Cuando amigos y familiares visitan, un codigo QR de WiFi enmarcado en la pared o el refrigerador te ahorra de dictar contrasenas cada vez.</span>
                 </li>
               </ul>
@@ -167,7 +167,7 @@ export default function CodigoQRParaWiFiPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -189,7 +189,7 @@ export default function CodigoQRParaWiFiPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Restaurantes y Cafeterias</h3>
                   <p className="text-slate-600">
-                    Coloca los codigos QR de WiFi en carpas de mesa, junto al <Link href="/es/aprender/codigo-qr-para-menu-de-restaurante" className="text-orange-600 hover:underline">codigo QR del menu</Link>, o en un letrero cerca de la entrada. Algunos restaurantes combinan sus codigos QR de menu y WiFi en la misma tarjeta — dos codigos, claramente etiquetados.
+                    Coloca los codigos QR de WiFi en carpas de mesa, junto al <Link href="/es/aprender/codigo-qr-para-menu-de-restaurante" className="text-[#14D8C4] hover:underline">codigo QR del menu</Link>, o en un letrero cerca de la entrada. Algunos restaurantes combinan sus codigos QR de menu y WiFi en la misma tarjeta — dos codigos, claramente etiquetados.
                   </p>
                 </div>
                 <div>
@@ -221,7 +221,7 @@ export default function CodigoQRParaWiFiPage() {
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Usa una red de invitados.</strong> La mayoria de los routers modernos soportan una red de invitados separada. Crea una con su propia contrasena y haz el codigo QR solo para esa red. Tu red principal permanece privada.</li>
-                <li>&#10003; <strong>Cambia la contrasena de invitados regularmente.</strong> Especialmente para negocios. Actualizala mensualmente y genera un nuevo codigo QR. La herramienta de <Link href="/es/codigo-qr" className="text-orange-600 hover:underline">Codigo QR</Link> de PDF.it hace esto rapido.</li>
+                <li>&#10003; <strong>Cambia la contrasena de invitados regularmente.</strong> Especialmente para negocios. Actualizala mensualmente y genera un nuevo codigo QR. La herramienta de <Link href="/es/codigo-qr" className="text-[#14D8C4] hover:underline">Codigo QR</Link> de PDF.it hace esto rapido.</li>
                 <li>&#10003; <strong>Limita el acceso de la red de invitados.</strong> Configura tu router para evitar que los usuarios de la red de invitados accedan a dispositivos en tu red principal (impresoras, NAS, dispositivos inteligentes del hogar).</li>
                 <li>&#10003; <strong>Establece limites de ancho de banda.</strong> Si manejas un negocio, limita el ancho de banda de la red de invitados para que una persona viendo video en 4K no ralentice a todos los demas.</li>
                 <li>&#10003; <strong>No lo publiques afuera.</strong> Manten los codigos QR de WiFi dentro de tus instalaciones donde solo invitados y clientes reales puedan escanearlos.</li>
@@ -239,7 +239,7 @@ export default function CodigoQRParaWiFiPage() {
                 <li>&#10003; <strong>Precision de la contrasena.</strong> Verifica dos veces la contrasena. Un caracter incorrecto y no funcionara.</li>
                 <li>&#10003; <strong>Tipo de encriptacion.</strong> Asegurate de que seleccionaste el tipo correcto (WPA/WPA2 vs WEP). La mayoria de los routers modernos usan WPA2 o WPA3.</li>
                 <li>&#10003; <strong>Compatibilidad del telefono.</strong> Los iPhones necesitan iOS 11+ y los telefonos Android necesitan Android 10+ para conexion automatica por codigo QR WiFi. Los telefonos mas antiguos pueden reconocer el codigo QR pero no auto-conectarse.</li>
-                <li>&#10003; <strong>Calidad del codigo QR.</strong> Si el codigo QR impreso es muy pequeno, borroso o danado, el escaner puede leerlo mal. Sigue nuestras <Link href="/es/aprender/mejores-practicas-codigo-qr" className="text-orange-600 hover:underline">mejores practicas de codigo QR</Link> para impresion confiable.</li>
+                <li>&#10003; <strong>Calidad del codigo QR.</strong> Si el codigo QR impreso es muy pequeno, borroso o danado, el escaner puede leerlo mal. Sigue nuestras <Link href="/es/aprender/mejores-practicas-codigo-qr" className="text-[#14D8C4] hover:underline">mejores practicas de codigo QR</Link> para impresion confiable.</li>
               </ul>
             </section>
 
@@ -253,7 +253,7 @@ export default function CodigoQRParaWiFiPage() {
             <p className="text-slate-300 mb-6">Deja que los invitados se conecten a tu WiFi con un solo escaneo. Funcion Pro — actualiza para codigos QR ilimitados y todas las herramientas PDF.</p>
             <Link
               href="/es/codigo-qr"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <QrCode className="h-5 w-5" /> Crear Codigo QR WiFi
             </Link>
@@ -276,10 +276,10 @@ export default function CodigoQRParaWiFiPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

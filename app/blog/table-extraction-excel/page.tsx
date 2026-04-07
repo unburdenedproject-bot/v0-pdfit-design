@@ -26,7 +26,7 @@ export default function TableExtractionExcelPage() {
                 Back to Blog
               </Link>
               <div className="flex items-center gap-3 mb-4">
-                <span className="bg-orange-500/20 text-orange-300 text-xs font-bold px-3 py-1 rounded-full">
+                <span className="bg-[#14D8C4]/20 text-[#14D8C4]/40 text-xs font-bold px-3 py-1 rounded-full">
                   Product
                 </span>
                 <div className="flex items-center gap-1.5 text-sm text-slate-400">
@@ -131,7 +131,7 @@ export default function TableExtractionExcelPage() {
                 <li>
                   <strong>Use OCR first if working with scanned PDFs.</strong> If your PDF was created from a scan or
                   photograph, run it through our{" "}
-                  <Link href="/ocr-scanner" className="text-orange-600 font-semibold hover:underline">
+                  <Link href="/ocr-scanner" className="text-[#14D8C4] font-semibold hover:underline">
                     OCR Scanner
                   </Link>{" "}
                   before extracting tables. This converts the image-based text into machine-readable text, which
@@ -152,11 +152,11 @@ export default function TableExtractionExcelPage() {
               <h2 className="text-2xl font-black text-slate-900 mt-10 mb-4">Try It Now</h2>
               <p className="text-slate-600 leading-relaxed mb-4">
                 Head over to the{" "}
-                <Link href="/table-extraction" className="text-orange-600 font-semibold hover:underline">
+                <Link href="/table-extraction" className="text-[#14D8C4] font-semibold hover:underline">
                   Table Extraction tool
                 </Link>{" "}
                 to try it with your own PDF. If you are not yet on a Business or Enterprise plan, visit our{" "}
-                <Link href="/pricing" className="text-orange-600 font-semibold hover:underline">
+                <Link href="/pricing" className="text-[#14D8C4] font-semibold hover:underline">
                   pricing page
                 </Link>{" "}
                 to upgrade.
@@ -170,7 +170,7 @@ export default function TableExtractionExcelPage() {
               <div className="mt-12 pt-8 border-t border-slate-200">
                 <Link
                   href="/blog"
-                  className="inline-flex items-center gap-2 text-orange-600 font-semibold hover:underline"
+                  className="inline-flex items-center gap-2 text-[#14D8C4] font-semibold hover:underline"
                 >
                   <ArrowLeft className="h-4 w-4" />
                   Back to Blog

@@ -44,20 +44,20 @@ export default function CodigoQRParaPDFPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Codigo QR</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Codigo QR</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Codigo QR para PDF</h1>
               <p className="text-xl text-slate-300">Compartilhe qualquer PDF atraves de um codigo QR. Ideal para cardapios, manuais, catalogos, apresentacoes e documentos que precisam ser acessados rapidamente.</p>
             </div>
           </div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><QrCode className="h-5 w-5 text-white" /></div>
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><QrCode className="h-5 w-5 text-white" /></div>
               <p className="text-slate-700 font-semibold">Crie um QR para seu PDF agora.</p>
             </div>
-            <Link href="/br/codigo-qr" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Gerador QR <ArrowRight className="h-4 w-4" /></Link>
+            <Link href="/br/codigo-qr" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Gerador QR <ArrowRight className="h-4 w-4" /></Link>
           </div>
         </section>
 
@@ -81,7 +81,7 @@ export default function CodigoQRParaPDFPage() {
                   { title: "Baixe e use", desc: "Baixe em PNG (para digital) ou SVG (para impressao). Adicione ao cardapio, cartao, poster ou material impresso." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                   </div>
                 ))}
@@ -91,7 +91,7 @@ export default function CodigoQRParaPDFPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Casos de Uso Populares</h2>
               <div className="space-y-6">
-                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Cardapios de Restaurante</h3><p className="text-slate-600">Coloque o QR nas mesas e os clientes acessam o <Link href="/br/aprender/codigo-qr-para-cardapio-de-restaurante" className="text-orange-600 hover:underline">cardapio digital</Link> pelo celular. Atualize precos e pratos sem reimprimir.</p></div>
+                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Cardapios de Restaurante</h3><p className="text-slate-600">Coloque o QR nas mesas e os clientes acessam o <Link href="/br/aprender/codigo-qr-para-cardapio-de-restaurante" className="text-[#14D8C4] hover:underline">cardapio digital</Link> pelo celular. Atualize precos e pratos sem reimprimir.</p></div>
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">Catalogos de Produtos</h3><p className="text-slate-600">Em feiras, lojas ou showrooms, o QR direciona para o catalogo completo em PDF com fotos e especificacoes.</p></div>
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">Manuais de Instrucoes</h3><p className="text-slate-600">Coloque o QR na embalagem do produto e o cliente acessa o manual completo sem precisar guardar papeis.</p></div>
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">Apresentacoes e Slides</h3><p className="text-slate-600">Apos uma palestra, compartilhe os slides em PDF via QR code para que os participantes acessem no celular.</p></div>
@@ -101,7 +101,7 @@ export default function CodigoQRParaPDFPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Dicas Importantes</h2>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; Antes de gerar o QR, <Link href="/br/comprimir-pdf" className="text-orange-600 hover:underline">comprima o PDF</Link> para que carregue rapido no celular.</li>
+                <li>&#10003; Antes de gerar o QR, <Link href="/br/comprimir-pdf" className="text-[#14D8C4] hover:underline">comprima o PDF</Link> para que carregue rapido no celular.</li>
                 <li>&#10003; Teste o QR code escaneando com seu celular antes de imprimir ou publicar.</li>
                 <li>&#10003; Se o PDF for grande, considere usar um servico de hospedagem rapido (nao e-mail com anexo).</li>
                 <li>&#10003; Adicione texto como &quot;Escaneie para acessar&quot; proximo ao QR code.</li>
@@ -114,7 +114,7 @@ export default function CodigoQRParaPDFPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Compartilhe PDFs com QR Code</h2>
             <p className="text-slate-300 mb-6">Crie um codigo QR que direciona para qualquer PDF em segundos.</p>
-            <Link href="/br/codigo-qr" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><QrCode className="h-5 w-5" /> Gerador de Codigo QR</Link>
+            <Link href="/br/codigo-qr" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><QrCode className="h-5 w-5" /> Gerador de Codigo QR</Link>
           </div>
         </section>
 
@@ -129,9 +129,9 @@ export default function CodigoQRParaPDFPage() {
                 { title: "Tipos de Codigo QR Explicados", href: "/br/aprender/tipos-de-codigo-qr-explicados" },
                 { title: "Melhores Praticas para Codigo QR", href: "/br/aprender/melhores-praticas-codigo-qr" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

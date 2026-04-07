@@ -91,7 +91,7 @@ export default function CodigoQRParaMenuRestaurantePage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Codigo QR</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Codigo QR</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Codigo QR para Menus de Restaurante (Crea un Enlace Escaneable)</h1>
               <p className="text-xl text-slate-300">
                 Deja que los clientes escaneen un codigo QR en la mesa y vean tu menu completo en su telefono. Sin descargar apps, sin menus fisicos que limpiar o reimprimir. Aqui te explicamos como configurarlo.
@@ -101,17 +101,17 @@ export default function CodigoQRParaMenuRestaurantePage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <QrCode className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Listo para crear el codigo QR de tu menu? Ve directo a la herramienta.</p>
             </div>
             <Link
               href="/es/codigo-qr"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Crear Codigo QR <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function CodigoQRParaMenuRestaurantePage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Actualizaciones instantaneas.</strong> Cambia precios, agrega especiales de temporada o elimina platillos agotados sin reimprimir nada. Actualiza el menu en linea y cada codigo QR en tu restaurante refleja el cambio inmediatamente.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Ahorro de costos.</strong> Los menus impresos son caros — especialmente cuando tienes multiples paginas, rotaciones de temporada o cambios frecuentes de precios. Un codigo QR no cuesta nada para actualizar.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Rotacion de mesas mas rapida.</strong> Los clientes pueden ver el menu mientras esperan a un mesero. Pasan menos tiempo decidiendo y mas tiempo pidiendo, lo que aumenta la rotacion de mesas en horas pico.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Soporte multilingue.</strong> Enlaza a una pagina web con opciones de idioma o aloja multiples menus PDF (espanol, ingles, etc.) — los clientes eligen su idioma despues de escanear.</span>
                 </li>
               </ul>
@@ -167,7 +167,7 @@ export default function CodigoQRParaMenuRestaurantePage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -186,7 +186,7 @@ export default function CodigoQRParaMenuRestaurantePage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Menu PDF</h3>
                   <p className="text-slate-600">
-                    Mejor para restaurantes con un menu estable que no cambia frecuentemente. Un PDF se ve exactamente como tu menu impreso, lo cual es familiar y facil de leer. Puedes crear uno en Word, Google Docs o Canva y convertirlo a PDF. Si el archivo es muy grande, usa <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> para reducir el tamano y que cargue rapidamente en telefonos.
+                    Mejor para restaurantes con un menu estable que no cambia frecuentemente. Un PDF se ve exactamente como tu menu impreso, lo cual es familiar y facil de leer. Puedes crear uno en Word, Google Docs o Canva y convertirlo a PDF. Si el archivo es muy grande, usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para reducir el tamano y que cargue rapidamente en telefonos.
                   </p>
                 </div>
                 <div>
@@ -212,7 +212,7 @@ export default function CodigoQRParaMenuRestaurantePage() {
                 <li>&#10003; <strong>Calcomanias de ventana.</strong> Para restaurantes enfocados en comida para llevar, pon un codigo QR en la ventana para que los que pasen puedan escanear y ver tu menu desde afuera.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Para mas consejos sobre tamano y pruebas, consulta nuestra guia de <Link href="/es/aprender/mejores-practicas-codigo-qr" className="text-orange-600 hover:underline">Mejores Practicas de Codigo QR</Link>.
+                Para mas consejos sobre tamano y pruebas, consulta nuestra guia de <Link href="/es/aprender/mejores-practicas-codigo-qr" className="text-[#14D8C4] hover:underline">Mejores Practicas de Codigo QR</Link>.
               </p>
             </section>
 
@@ -228,7 +228,7 @@ export default function CodigoQRParaMenuRestaurantePage() {
                 <li>&#10003; <strong>Reemplaza el archivo, no el enlace.</strong> Si alojas el PDF en Google Drive, puedes reemplazar el archivo sin cambiar el enlace de compartir. Sube el nuevo PDF con el mismo nombre a la misma carpeta.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Necesitas convertir tu menu actualizado de Word o PowerPoint a PDF? Usa el convertidor <Link href="/es/word-a-pdf" className="text-orange-600 hover:underline">Word a PDF</Link> o <Link href="/es/powerpoint-a-pdf" className="text-orange-600 hover:underline">PowerPoint a PDF</Link> de PDF.it.
+                Necesitas convertir tu menu actualizado de Word o PowerPoint a PDF? Usa el convertidor <Link href="/es/word-a-pdf" className="text-[#14D8C4] hover:underline">Word a PDF</Link> o <Link href="/es/powerpoint-a-pdf" className="text-[#14D8C4] hover:underline">PowerPoint a PDF</Link> de PDF.it.
               </p>
             </section>
 
@@ -242,7 +242,7 @@ export default function CodigoQRParaMenuRestaurantePage() {
             <p className="text-slate-300 mb-6">Genera un codigo QR escaneable para tu menu en segundos. Funcion Pro — incluye todas las herramientas PDF para gestionar tus archivos de menu.</p>
             <Link
               href="/es/codigo-qr"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <QrCode className="h-5 w-5" /> Crear Codigo QR de Menu
             </Link>
@@ -265,10 +265,10 @@ export default function CodigoQRParaMenuRestaurantePage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

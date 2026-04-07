@@ -91,7 +91,7 @@ export default function ExtraerTextoDePdfEnMovilPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF a Texto</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF a Texto</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Extraer Texto de PDF en iPhone/Android (Mejores Métodos)</h1>
               <p className="text-xl text-slate-300">
                 ¿Necesitas extraer texto de un PDF en tu teléfono? Aquí te explicamos cómo hacerlo sin instalar ninguna aplicación — funciona en iPhone y Android.
@@ -101,17 +101,17 @@ export default function ExtraerTextoDePdfEnMovilPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileText className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">¿En tu teléfono ahora mismo? Extrae texto al instante en tu navegador.</p>
             </div>
             <Link
               href="/es/pdf-a-texto"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               PDF a TXT Ahora <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function ExtraerTextoDePdfEnMovilPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>La selección de texto es imprecisa.</strong> Seleccionar párrafos específicos con el dedo es difícil. A menudo terminas seleccionando demasiado o muy poco.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Los visores PDF móviles son limitados.</strong> Los visores de PDF predeterminados en iPhone y Android manejan bien la visualización básica, pero la selección y copia de texto son funciones secundarias.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>La selección de múltiples páginas es casi imposible.</strong> Seleccionar texto a través de múltiples páginas en un teléfono es una experiencia frustrante — la vista se desplaza de forma impredecible.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Los resultados al pegar son desordenados.</strong> Incluso cuando logras seleccionar texto, pegarlo en Notas o Mensajes produce líneas rotas y formato aleatorio.</span>
                 </li>
               </ul>
@@ -173,7 +173,7 @@ export default function ExtraerTextoDePdfEnMovilPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -207,7 +207,7 @@ export default function ExtraerTextoDePdfEnMovilPage() {
                 </div>
               </div>
               <p className="text-slate-600 mt-4 text-sm">
-                <strong>Limitación:</strong> Los visores integrados no pueden manejar PDFs escaneados, selección de múltiples páginas o diseños complejos. Para cualquier cosa más allá de un párrafo rápido, usa <Link href="/es/pdf-a-texto" className="text-orange-600 hover:underline">PDF a TXT</Link>.
+                <strong>Limitación:</strong> Los visores integrados no pueden manejar PDFs escaneados, selección de múltiples páginas o diseños complejos. Para cualquier cosa más allá de un párrafo rápido, usa <Link href="/es/pdf-a-texto" className="text-[#14D8C4] hover:underline">PDF a TXT</Link>.
               </p>
             </section>
 
@@ -218,7 +218,7 @@ export default function ExtraerTextoDePdfEnMovilPage() {
                 Si tu PDF es un documento escaneado (fotos de páginas de papel), la extracción de texto estándar no funcionará — ni copiar y pegar ni PDF a TXT. Necesitas OCR (Reconocimiento Óptico de Caracteres).
               </p>
               <p className="text-slate-600 mb-4">
-                El <Link href="/es/escaner-ocr" className="text-orange-600 hover:underline">Escáner OCR</Link> de PDF.it funciona en tu navegador móvil igual que PDF a TXT:
+                El <Link href="/es/escaner-ocr" className="text-[#14D8C4] hover:underline">Escáner OCR</Link> de PDF.it funciona en tu navegador móvil igual que PDF a TXT:
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#x2713; Sube tu PDF escaneado desde tu teléfono</li>
@@ -226,7 +226,7 @@ export default function ExtraerTextoDePdfEnMovilPage() {
                 <li>&#x2713; Descarga el texto extraído o un PDF con búsqueda</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                <strong>Consejo:</strong> Si acabas de tomar una foto de un documento con la cámara de tu teléfono, usa <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo de Teléfono</Link> primero para mejorar la calidad de imagen, luego ejecuta OCR para mayor precisión.
+                <strong>Consejo:</strong> Si acabas de tomar una foto de un documento con la cámara de tu teléfono, usa <Link href="/es/limpiar-escaneo" className="text-[#14D8C4] hover:underline">Limpieza de Escaneo de Teléfono</Link> primero para mejorar la calidad de imagen, luego ejecuta OCR para mayor precisión.
               </p>
             </section>
 
@@ -260,14 +260,14 @@ export default function ExtraerTextoDePdfEnMovilPage() {
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
                       <td className="py-3 px-4 font-semibold">Mejor para extracción completa</td>
-                      <td className="py-3 px-4 font-semibold text-orange-600">PDF.it en Safari</td>
-                      <td className="py-3 px-4 font-semibold text-orange-600">PDF.it en Chrome</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">PDF.it en Safari</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">PDF.it en Chrome</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
               <p className="text-slate-600 mt-4 text-sm">
-                Las funciones OCR integradas de ambas plataformas (Live Text y Google Lens) funcionan con fotos pero no con archivos PDF. Para extracción de texto de PDF, una herramienta web como <Link href="/es/pdf-a-texto" className="text-orange-600 hover:underline">PDF.it</Link> es la opción más confiable en ambas plataformas.
+                Las funciones OCR integradas de ambas plataformas (Live Text y Google Lens) funcionan con fotos pero no con archivos PDF. Para extracción de texto de PDF, una herramienta web como <Link href="/es/pdf-a-texto" className="text-[#14D8C4] hover:underline">PDF.it</Link> es la opción más confiable en ambas plataformas.
               </p>
             </section>
 
@@ -311,7 +311,7 @@ export default function ExtraerTextoDePdfEnMovilPage() {
             <p className="text-slate-300 mb-6">Sin aplicación que instalar. Sube tu PDF en tu navegador móvil y descarga texto limpio en segundos.</p>
             <Link
               href="/es/pdf-a-texto"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileText className="h-5 w-5" /> PDF a TXT Ahora
             </Link>
@@ -331,10 +331,10 @@ export default function ExtraerTextoDePdfEnMovilPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

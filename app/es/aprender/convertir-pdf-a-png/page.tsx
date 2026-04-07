@@ -91,7 +91,7 @@ export default function ConvertirPdfAPngPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF a PNG</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF a PNG</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Cómo Convertir PDF a PNG Online (Texto Nítido + Gráficos Limpios)</h1>
               <p className="text-xl text-slate-300">
                 ¿Necesitas tus páginas PDF como imágenes con texto perfectamente nítido y gráficos limpios? PNG es el formato que necesitas. Aquí te mostramos cómo convertir en segundos — gratis, online, sin software.
@@ -101,17 +101,17 @@ export default function ConvertirPdfAPngPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Image className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">¿Listo para convertir? Salta la guía y ve directo a la herramienta.</p>
             </div>
             <Link
               href="/es/pdf-a-png"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Convertir PDF a PNG <ArrowRight className="h-4 w-4" />
             </Link>
@@ -129,19 +129,19 @@ export default function ConvertirPdfAPngPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Texto y tipografía.</strong> PNG usa compresión sin pérdida, así que cada letra se mantiene nítida. JPG introduce artefactos de compresión alrededor de los bordes del texto, haciéndolos ver difusos.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Logos, iconos y arte lineal.</strong> Bordes limpios con colores sólidos son la fortaleza de PNG. No hay borrosidad ni sangrado de color alrededor de los límites nítidos.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>Gráficos con transparencia.</strong> PNG soporta transparencia alfa — perfecto para superponer imágenes sobre fondos de color o en herramientas de diseño como <Link href="/es/aprender/pdf-a-png-para-diseno" className="text-orange-600 hover:underline">Figma y Canva</Link>.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
+                  <span><strong>Gráficos con transparencia.</strong> PNG soporta transparencia alfa — perfecto para superponer imágenes sobre fondos de color o en herramientas de diseño como <Link href="/es/aprender/pdf-a-png-para-diseno" className="text-[#14D8C4] hover:underline">Figma y Canva</Link>.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Capturas de pantalla y mockups de UI.</strong> Cualquier contenido con colores planos y bordes duros se ve dramáticamente mejor como PNG que como JPG.</span>
                 </li>
               </ul>
@@ -165,7 +165,7 @@ export default function ConvertirPdfAPngPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -180,7 +180,7 @@ export default function ConvertirPdfAPngPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">¿Cuándo Debes Usar PNG en Lugar de JPG?</h2>
               <p className="text-slate-600 mb-4">
-                ¿No estás seguro si necesitas PNG o JPG? Aquí tienes una guía rápida. Para una comparación más profunda, consulta <Link href="/es/aprender/pdf-a-jpg-vs-png" className="text-orange-600 hover:underline">PDF a JPG vs PNG: ¿Cuál Debes Usar?</Link>
+                ¿No estás seguro si necesitas PNG o JPG? Aquí tienes una guía rápida. Para una comparación más profunda, consulta <Link href="/es/aprender/pdf-a-jpg-vs-png" className="text-[#14D8C4] hover:underline">PDF a JPG vs PNG: ¿Cuál Debes Usar?</Link>
               </p>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm border border-gray-200 rounded-xl overflow-hidden">
@@ -211,7 +211,7 @@ export default function ConvertirPdfAPngPage() {
                 </table>
               </div>
               <p className="text-slate-500 text-sm mt-3">
-                ¿Necesitas JPG? Usa nuestra herramienta <Link href="/es/pdf-a-jpg" className="text-orange-600 hover:underline">PDF a JPG</Link>.
+                ¿Necesitas JPG? Usa nuestra herramienta <Link href="/es/pdf-a-jpg" className="text-[#14D8C4] hover:underline">PDF a JPG</Link>.
               </p>
             </section>
 
@@ -231,17 +231,17 @@ export default function ConvertirPdfAPngPage() {
                   </thead>
                   <tbody className="text-slate-700">
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">72-100</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">72-100</td>
                       <td className="py-3 px-4">Vistas previas rápidas, miniaturas</td>
                       <td className="py-3 px-4">Pequeño (50-200KB)</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">150</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">150</td>
                       <td className="py-3 px-4">Páginas web, blogs, redes sociales</td>
                       <td className="py-3 px-4">Mediano (200KB-1MB)</td>
                     </tr>
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">300</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">300</td>
                       <td className="py-3 px-4">Presentaciones, impresión, trabajo de diseño</td>
                       <td className="py-3 px-4">Grande (1-5MB)</td>
                     </tr>
@@ -249,7 +249,7 @@ export default function ConvertirPdfAPngPage() {
                 </table>
               </div>
               <p className="text-slate-500 text-sm mt-3">
-                Si tus archivos PNG resultan muy grandes, siempre puedes <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">comprimir el PDF original</Link> primero, luego convertir.
+                Si tus archivos PNG resultan muy grandes, siempre puedes <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">comprimir el PDF original</Link> primero, luego convertir.
               </p>
             </section>
 
@@ -259,19 +259,19 @@ export default function ConvertirPdfAPngPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Comienza con un PDF limpio</h3>
                   <p className="text-slate-600">
-                    Si tu PDF tiene anotaciones, campos de formulario o capas, considera <Link href="/es/aplanar-pdf" className="text-orange-600 hover:underline">aplanarlo</Link> primero. Esto asegura que lo que ves en el PDF es exactamente lo que aparece en el PNG.
+                    Si tu PDF tiene anotaciones, campos de formulario o capas, considera <Link href="/es/aplanar-pdf" className="text-[#14D8C4] hover:underline">aplanarlo</Link> primero. Esto asegura que lo que ves en el PDF es exactamente lo que aparece en el PNG.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Convierte solo páginas específicas</h3>
                   <p className="text-slate-600">
-                    ¿No necesitas todas las páginas? Convierte solo las páginas que necesitas para ahorrar tiempo y almacenamiento. Si tu PDF es grande, <Link href="/es/dividir-pdf" className="text-orange-600 hover:underline">divídelo primero</Link> para aislar las páginas que deseas.
+                    ¿No necesitas todas las páginas? Convierte solo las páginas que necesitas para ahorrar tiempo y almacenamiento. Si tu PDF es grande, <Link href="/es/dividir-pdf" className="text-[#14D8C4] hover:underline">divídelo primero</Link> para aislar las páginas que deseas.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Usa PNG para todo lo que va a software de diseño</h3>
                   <p className="text-slate-600">
-                    Si estás importando páginas a Figma, Canva, Photoshop o un sitio web, PNG preserva la calidad mucho mejor que JPG. Lee más en nuestra guía sobre <Link href="/es/aprender/pdf-a-png-para-diseno" className="text-orange-600 hover:underline">convertir PDF a PNG para trabajo de diseño</Link>.
+                    Si estás importando páginas a Figma, Canva, Photoshop o un sitio web, PNG preserva la calidad mucho mejor que JPG. Lee más en nuestra guía sobre <Link href="/es/aprender/pdf-a-png-para-diseno" className="text-[#14D8C4] hover:underline">convertir PDF a PNG para trabajo de diseño</Link>.
                   </p>
                 </div>
               </div>
@@ -287,7 +287,7 @@ export default function ConvertirPdfAPngPage() {
             <p className="text-slate-300 mb-6">Sube tu archivo y obtén imágenes PNG nítidas y sin pérdida en segundos — gratis, sin registro.</p>
             <Link
               href="/es/pdf-a-png"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Image className="h-5 w-5" /> Convertir PDF a PNG Ahora
             </Link>
@@ -308,10 +308,10 @@ export default function ConvertirPdfAPngPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

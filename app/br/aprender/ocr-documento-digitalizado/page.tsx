@@ -44,20 +44,20 @@ export default function OCRDocumentoDigitalizadoPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / OCR PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / OCR PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">OCR para Documento Digitalizado</h1>
               <p className="text-xl text-slate-300">Transforme documentos digitalizados em texto pesquisavel e editavel. Guia completo com passo a passo e dicas para obter os melhores resultados com OCR.</p>
             </div>
           </div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><ScanText className="h-5 w-5 text-white" /></div>
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><ScanText className="h-5 w-5 text-white" /></div>
               <p className="text-slate-700 font-semibold">Aplique OCR no seu documento agora.</p>
             </div>
-            <Link href="/br/scanner-ocr" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Scanner OCR <ArrowRight className="h-4 w-4" /></Link>
+            <Link href="/br/scanner-ocr" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Scanner OCR <ArrowRight className="h-4 w-4" /></Link>
           </div>
         </section>
 
@@ -82,7 +82,7 @@ export default function OCRDocumentoDigitalizadoPage() {
                   { title: "Baixe e verifique", desc: "Baixe o PDF pesquisavel. Abra o documento e use Ctrl+F para verificar se o texto foi reconhecido corretamente." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                   </div>
                 ))}
@@ -95,17 +95,17 @@ export default function OCRDocumentoDigitalizadoPage() {
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">Resolucao Minima de 300 DPI</h3><p className="text-slate-600">Digitalizacoes abaixo de 200 DPI resultam em texto borrado que o OCR tem dificuldade de reconhecer. 300 DPI e o padrao recomendado; 600 DPI e ideal para documentos com texto pequeno.</p></div>
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">Bom Contraste</h3><p className="text-slate-600">Texto escuro em fundo claro produz os melhores resultados. Evite digitalizacoes com sombras, manchas ou fundo colorido escuro.</p></div>
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">Documento Alinhado</h3><p className="text-slate-600">Paginas tortas reduzem a precisao do OCR. Se o documento ficou inclinado na digitalizacao, muitos scanners oferecem correcao automatica de alinhamento.</p></div>
-                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Limpe a Digitalizacao</h3><p className="text-slate-600">Se digitalizou com celular, use a ferramenta <Link href="/br/limpeza-digitalizacao" className="text-orange-600 hover:underline">Limpeza de Digitalizacao</Link> antes de aplicar OCR para melhorar contraste e remover sombras.</p></div>
+                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Limpe a Digitalizacao</h3><p className="text-slate-600">Se digitalizou com celular, use a ferramenta <Link href="/br/limpeza-digitalizacao" className="text-[#14D8C4] hover:underline">Limpeza de Digitalizacao</Link> antes de aplicar OCR para melhorar contraste e remover sombras.</p></div>
               </div>
             </section>
 
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Tipos de Documentos Ideais para OCR</h2>
               <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Contratos e documentos legais:</strong> Torne clausulas e termos pesquisaveis para revisao rapida.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Notas fiscais e recibos:</strong> Extraia valores, datas e numeros de nota para contabilidade.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Documentos de identidade:</strong> Digitalize RG, CPF, CNH e torne os dados pesquisaveis.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Livros e artigos:</strong> Converta material impresso em texto pesquisavel para pesquisa academica.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Contratos e documentos legais:</strong> Torne clausulas e termos pesquisaveis para revisao rapida.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Notas fiscais e recibos:</strong> Extraia valores, datas e numeros de nota para contabilidade.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Documentos de identidade:</strong> Digitalize RG, CPF, CNH e torne os dados pesquisaveis.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Livros e artigos:</strong> Converta material impresso em texto pesquisavel para pesquisa academica.</span></li>
               </ul>
             </section>
 
@@ -115,8 +115,8 @@ export default function OCRDocumentoDigitalizadoPage() {
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; Buscar palavras-chave com Ctrl+F em qualquer leitor de PDF.</li>
                 <li>&#10003; Copiar trechos de texto para outros documentos.</li>
-                <li>&#10003; Converter o PDF para <Link href="/br/pdf-para-texto" className="text-orange-600 hover:underline">texto simples</Link> com resultados muito superiores.</li>
-                <li>&#10003; Usar <Link href="/br/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> para reduzir o tamanho antes de enviar ou arquivar.</li>
+                <li>&#10003; Converter o PDF para <Link href="/br/pdf-para-texto" className="text-[#14D8C4] hover:underline">texto simples</Link> com resultados muito superiores.</li>
+                <li>&#10003; Usar <Link href="/br/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para reduzir o tamanho antes de enviar ou arquivar.</li>
               </ul>
             </section>
           </div>
@@ -126,7 +126,7 @@ export default function OCRDocumentoDigitalizadoPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Torne Seus Documentos Pesquisaveis</h2>
             <p className="text-slate-300 mb-6">Faca upload de um PDF digitalizado e aplique OCR em segundos.</p>
-            <Link href="/br/scanner-ocr" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><ScanText className="h-5 w-5" /> Scanner OCR (Pro)</Link>
+            <Link href="/br/scanner-ocr" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><ScanText className="h-5 w-5" /> Scanner OCR (Pro)</Link>
           </div>
         </section>
 
@@ -141,9 +141,9 @@ export default function OCRDocumentoDigitalizadoPage() {
                 { title: "OCR de PDF no Celular", href: "/br/aprender/ocr-pdf-no-celular" },
                 { title: "OCR para Texto Manuscrito", href: "/br/aprender/ocr-texto-manuscrito" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

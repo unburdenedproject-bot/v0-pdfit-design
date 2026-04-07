@@ -91,7 +91,7 @@ export default function MejoresPracticasCodigoQRPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Codigo QR</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Codigo QR</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Mejores Practicas de Codigo QR (Tamano, Ubicacion y Pruebas)</h1>
               <p className="text-xl text-slate-300">
                 Un codigo QR que no se escanea es peor que no tener codigo QR. Sigue estas mejores practicas para asegurarte de que tus codigos QR funcionen perfectamente cada vez — en impresion, en pantalla y en cualquier condicion de iluminacion.
@@ -101,17 +101,17 @@ export default function MejoresPracticasCodigoQRPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <QrCode className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Necesitas crear un codigo QR? Usa nuestra herramienta generadora.</p>
             </div>
             <Link
               href="/es/codigo-qr"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Crear Codigo QR <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,23 +130,23 @@ export default function MejoresPracticasCodigoQRPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>La regla 10:1.</strong> El codigo QR debe ser al menos 1/10 de la distancia de escaneo esperada. Si alguien escaneara desde 1 metro, el codigo QR necesita ser al menos 10cm de ancho. Desde 30cm (una mesa), al menos 3cm.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
-                  <span><strong>Tarjetas de presentacion:</strong> Minimo 2cm x 2cm. Idealmente 2.5cm. Consulta nuestra <Link href="/es/aprender/codigo-qr-para-tarjeta-de-presentacion" className="text-orange-600 hover:underline">guia de codigo QR para tarjetas de presentacion</Link> para consejos de ubicacion.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
+                  <span><strong>Tarjetas de presentacion:</strong> Minimo 2cm x 2cm. Idealmente 2.5cm. Consulta nuestra <Link href="/es/aprender/codigo-qr-para-tarjeta-de-presentacion" className="text-[#14D8C4] hover:underline">guia de codigo QR para tarjetas de presentacion</Link> para consejos de ubicacion.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>Carpas de mesa y stickers:</strong> Al menos 3cm x 3cm. Los <Link href="/es/aprender/codigo-qr-para-menu-de-restaurante" className="text-orange-600 hover:underline">codigos QR de menu</Link> de restaurante deben ser faciles de escanear incluso con poca luz.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
+                  <span><strong>Carpas de mesa y stickers:</strong> Al menos 3cm x 3cm. Los <Link href="/es/aprender/codigo-qr-para-menu-de-restaurante" className="text-[#14D8C4] hover:underline">codigos QR de menu</Link> de restaurante deben ser faciles de escanear incluso con poca luz.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Posters y vallas publicitarias:</strong> Aumenta significativamente. Un poster en una pared debe tener un codigo QR de al menos 15-20cm de ancho. Las vallas publicitarias necesitan codigos aun mas grandes.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Pantallas digitales:</strong> En sitios web y presentaciones, asegurate de que el codigo QR sea al menos 200x200 pixeles. En telefonos, debe ser lo suficientemente grande para que la camara de otro telefono lo lea.</span>
                 </li>
               </ul>
@@ -171,7 +171,7 @@ export default function MejoresPracticasCodigoQRPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -244,7 +244,7 @@ export default function MejoresPracticasCodigoQRPage() {
                 <li>&#10003; <strong>Escanea con luz brillante.</strong> Prueba en iluminacion interior normal.</li>
                 <li>&#10003; <strong>Escanea con poca luz.</strong> Prueba en el ambiente real — un restaurante con poca luz, un stand oscuro de feria comercial, etc.</li>
                 <li>&#10003; <strong>Escanea desde la distancia esperada.</strong> Parate tan lejos como lo haria una persona real e intenta escanear.</li>
-                <li>&#10003; <strong>Verifica el destino.</strong> Asegurate de que la URL cargue correctamente, el <Link href="/es/aprender/codigo-qr-para-pdf" className="text-orange-600 hover:underline">PDF se abra</Link>, o la vCard se guarde correctamente.</li>
+                <li>&#10003; <strong>Verifica el destino.</strong> Asegurate de que la URL cargue correctamente, el <Link href="/es/aprender/codigo-qr-para-pdf" className="text-[#14D8C4] hover:underline">PDF se abra</Link>, o la vCard se guarde correctamente.</li>
                 <li>&#10003; <strong>Revisa la calidad de impresion.</strong> Asegurate de que la impresora no haya difuminado o distorsionado los modulos del codigo QR. Las impresoras inkjet a baja resolucion pueden hacer que los codigos QR sean imposibles de escanear.</li>
               </ul>
             </section>
@@ -259,7 +259,7 @@ export default function MejoresPracticasCodigoQRPage() {
             <p className="text-slate-300 mb-6">Genera codigos QR con la configuracion correcta para tu caso de uso. Funcion Pro — actualiza para codigos QR ilimitados y todas las herramientas PDF.</p>
             <Link
               href="/es/codigo-qr"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <QrCode className="h-5 w-5" /> Crear Codigo QR Ahora
             </Link>
@@ -282,10 +282,10 @@ export default function MejoresPracticasCodigoQRPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

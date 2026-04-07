@@ -31,14 +31,14 @@ export default function MelhoresPraticasSenhaPdfPage() {
       <HeaderBr />
       <main>
         <section className="bg-[#191B4D] text-white py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-          <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Proteger PDF</p>
+          <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Proteger PDF</p>
           <h1 className="text-4xl lg:text-5xl font-black mb-4">Melhores Praticas para Senha de PDF</h1>
           <p className="text-xl text-slate-300">Proteger um PDF com senha so e eficaz se a senha for forte. Aprenda a criar senhas seguras, evitar erros comuns e compartilhar senhas de forma protegida.</p>
         </div></div></section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><Key className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Pronto para proteger seu PDF? Va direto para a ferramenta.</p></div>
-          <Link href="/br/proteger-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Proteger PDF <ArrowRight className="h-4 w-4" /></Link>
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><Key className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Pronto para proteger seu PDF? Va direto para a ferramenta.</p></div>
+          <Link href="/br/proteger-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Proteger PDF <ArrowRight className="h-4 w-4" /></Link>
         </div></section>
 
         <article className="py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -46,10 +46,10 @@ export default function MelhoresPraticasSenhaPdfPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-4">O que faz uma senha ser forte?</h2>
             <p className="text-slate-600 mb-4">Uma senha forte e a diferenca entre protecao real e uma falsa sensacao de seguranca. Aqui estao os criterios essenciais:</p>
             <ul className="space-y-3 text-slate-700">
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Comprimento minimo de 12 caracteres.</strong> Cada caractere adicional multiplica exponencialmente o tempo necessario para quebrar a senha.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Mistura de tipos de caracteres.</strong> Combine letras maiusculas (A-Z), minusculas (a-z), numeros (0-9) e simbolos (!@#$%&*).</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Sem palavras do dicionario.</strong> Ferramentas de quebra de senha testam palavras comuns primeiro. "Cachorro123" e muito mais fraca que "kX9#mP2&qL5!".</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Sem informacoes pessoais.</strong> Evite nomes, datas de nascimento, telefones ou qualquer informacao que possa ser adivinhada.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span><strong>Comprimento minimo de 12 caracteres.</strong> Cada caractere adicional multiplica exponencialmente o tempo necessario para quebrar a senha.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span><strong>Mistura de tipos de caracteres.</strong> Combine letras maiusculas (A-Z), minusculas (a-z), numeros (0-9) e simbolos (!@#$%&*).</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">3.</span><span><strong>Sem palavras do dicionario.</strong> Ferramentas de quebra de senha testam palavras comuns primeiro. "Cachorro123" e muito mais fraca que "kX9#mP2&qL5!".</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">4.</span><span><strong>Sem informacoes pessoais.</strong> Evite nomes, datas de nascimento, telefones ou qualquer informacao que possa ser adivinhada.</span></li>
             </ul>
           </section>
 
@@ -87,7 +87,7 @@ export default function MelhoresPraticasSenhaPdfPage() {
               <li>&#10007; <strong>Usar a mesma senha para tudo.</strong> Se uma senha vazar, todos os documentos ficam vulneraveis.</li>
               <li>&#10007; <strong>Enviar senha e PDF juntos.</strong> Isso anula completamente a protecao.</li>
               <li>&#10007; <strong>Usar apenas senha de permissoes.</strong> A senha de permissoes pode ser removida com ferramentas gratuitas. Use sempre senha de abertura para documentos confidenciais.</li>
-              <li>&#10007; <strong>Esquecer a senha.</strong> Anote em um gerenciador de senhas. Se perder, veja nosso guia de <Link href="/br/aprender/desbloquear-pdf-senha-esquecida" className="text-orange-600 hover:underline">desbloquear PDF com senha esquecida</Link>.</li>
+              <li>&#10007; <strong>Esquecer a senha.</strong> Anote em um gerenciador de senhas. Se perder, veja nosso guia de <Link href="/br/aprender/desbloquear-pdf-senha-esquecida" className="text-[#14D8C4] hover:underline">desbloquear PDF com senha esquecida</Link>.</li>
             </ul>
           </section>
 
@@ -95,7 +95,7 @@ export default function MelhoresPraticasSenhaPdfPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-4">Protecao adicional</h2>
             <p className="text-slate-600 mb-4">Alem de senha, considere estas camadas extras de protecao:</p>
             <ul className="space-y-2 text-slate-700">
-              <li>&#10003; <Link href="/br/aprender/como-adicionar-marca-dagua-em-pdf" className="text-orange-600 hover:underline">Marca d agua</Link> — identifica o documento e desencoraja vazamentos.</li>
+              <li>&#10003; <Link href="/br/aprender/como-adicionar-marca-dagua-em-pdf" className="text-[#14D8C4] hover:underline">Marca d agua</Link> — identifica o documento e desencoraja vazamentos.</li>
               <li>&#10003; <strong>Senha de permissoes</strong> — bloqueia impressao e copia de texto alem da senha de abertura.</li>
               <li>&#10003; <strong>Enviar por canais seguros</strong> — use servicos de email criptografados quando possivel.</li>
             </ul>
@@ -105,7 +105,7 @@ export default function MelhoresPraticasSenhaPdfPage() {
         <section className="py-12 bg-[#191B4D]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
           <h2 className="text-2xl font-black text-white mb-3">Proteja seu PDF com uma senha forte</h2>
           <p className="text-slate-300 mb-6">Criptografia AES-256, gratis, sem cadastro. Proteja em segundos.</p>
-          <Link href="/br/proteger-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><Key className="h-5 w-5" /> Proteger PDF Agora</Link>
+          <Link href="/br/proteger-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><Key className="h-5 w-5" /> Proteger PDF Agora</Link>
         </div></section>
 
         <section className="py-16 bg-gray-50"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -116,7 +116,7 @@ export default function MelhoresPraticasSenhaPdfPage() {
               { title: "Proteger PDF antes de enviar por email", href: "/br/aprender/proteger-pdf-antes-de-enviar" },
               { title: "Proteger PDF no celular", href: "/br/aprender/proteger-pdf-no-celular" },
               { title: "Como desbloquear PDF", href: "/br/aprender/como-desbloquear-pdf" },
-            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" /></Link>))}
+            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" /></Link>))}
           </div>
         </div></section>
 

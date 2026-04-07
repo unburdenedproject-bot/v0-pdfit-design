@@ -33,14 +33,14 @@ export default function PptAPdfAnimacionesPage() {
       <HeaderEs />
       <main>
         <section className="bg-[#191B4D] text-white py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-          <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PowerPoint a PDF</p>
+          <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PowerPoint a PDF</p>
           <h1 className="text-4xl lg:text-5xl font-black mb-4">Las animaciones de PowerPoint funcionan en PDF? Que se convierte (y que no)</h1>
           <p className="text-xl text-slate-300">Creaste una presentacion con animaciones impresionantes y transiciones. Pero cuando la conviertas a PDF, sobrevivira algo de eso? Aqui esta la respuesta honesta — y que puedes hacer al respecto.</p>
         </div></div></section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><PlayCircle className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Necesitas convertir de todas formas? Ve directo a la herramienta.</p></div>
-          <Link href="/es/powerpoint-a-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Convertir PPT a PDF <ArrowRight className="h-4 w-4" /></Link>
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><PlayCircle className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Necesitas convertir de todas formas? Ve directo a la herramienta.</p></div>
+          <Link href="/es/powerpoint-a-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Convertir PPT a PDF <ArrowRight className="h-4 w-4" /></Link>
         </div></section>
 
         <article className="py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -78,7 +78,7 @@ export default function PptAPdfAnimacionesPage() {
                 { title: "Para compartir animado, exporta como video", desc: "En PowerPoint, ve a Archivo > Exportar > Crear un video. Elige Full HD (1080p) para calidad. Esto crea un MP4 que incluye todas las animaciones, transiciones y hasta tiempos de narracion." },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                   <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                 </div>
               ))}
@@ -108,7 +108,7 @@ export default function PptAPdfAnimacionesPage() {
               <li>&#10003; <strong>Entregar tareas o reportes</strong> — profesores y revisores esperan PDF.</li>
               <li>&#10003; <strong>Adjuntar a emails</strong> — PDF es universalmente visible y mas pequeno que PPTX.</li>
               <li>&#10003; <strong>Subir a portales</strong> — solicitudes de empleo, becas y tramites regulatorios usualmente requieren PDF.</li>
-              <li>&#10003; <strong>Imprimir folletos</strong> — para copias fisicas, PDF da los <Link href="/es/aprender/ppt-a-pdf-para-imprimir" className="text-orange-600 hover:underline">resultados de impresion mas confiables</Link>.</li>
+              <li>&#10003; <strong>Imprimir folletos</strong> — para copias fisicas, PDF da los <Link href="/es/aprender/ppt-a-pdf-para-imprimir" className="text-[#14D8C4] hover:underline">resultados de impresion mas confiables</Link>.</li>
               <li>&#10003; <strong>Archivar presentaciones</strong> — PDF asegura que el contenido sea legible anos despues, en cualquier dispositivo.</li>
             </ul>
           </section>
@@ -117,7 +117,7 @@ export default function PptAPdfAnimacionesPage() {
         <section className="py-12 bg-[#191B4D]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
           <h2 className="text-2xl font-black text-white mb-3">Listo para convertir tu PowerPoint?</h2>
           <p className="text-slate-300 mb-6">Animaciones aparte, tu contenido se vera perfecto. Sube y convierte en segundos.</p>
-          <Link href="/es/powerpoint-a-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><PlayCircle className="h-5 w-5" /> Convertir PPT a PDF Ahora</Link>
+          <Link href="/es/powerpoint-a-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><PlayCircle className="h-5 w-5" /> Convertir PPT a PDF Ahora</Link>
         </div></section>
 
         <section className="py-16 bg-gray-50"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -128,7 +128,7 @@ export default function PptAPdfAnimacionesPage() {
               { title: "PPT a PDF para imprimir: mejores consejos de diseno y calidad", href: "/es/aprender/ppt-a-pdf-para-imprimir" },
               { title: "PPTX a PDF fuentes faltantes? Soluciona incrustacion y sustituciones", href: "/es/aprender/pptx-a-pdf-fuentes-faltantes" },
               { title: "Convertir PPT a PDF en iPhone (metodo rapido)", href: "/es/aprender/ppt-a-pdf-en-iphone" },
-            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" /></Link>))}
+            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" /></Link>))}
           </div>
         </div></section>
 

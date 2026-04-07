@@ -224,13 +224,13 @@ export function PhoneScanCleanupInterface() {
         <section className="py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto text-center">
-              <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Crown className="h-10 w-10 text-orange-500" />
+              <div className="w-20 h-20 bg-[#F0FDFA] rounded-full flex items-center justify-center mx-auto mb-6">
+                <Crown className="h-10 w-10 text-[#14D8C4]" />
               </div>
               <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-2">
                 {isUpgradeError ? "This Feature Requires an Upgrade" : "You're out of free conversions"}
               </h2>
-              <p className="text-xl sm:text-2xl font-bold text-orange-600 mb-4">Upgrade to Pro</p>
+              <p className="text-xl sm:text-2xl font-bold text-[#14D8C4] mb-4">Upgrade to Pro</p>
               <p className="text-base sm:text-lg text-slate-600 mb-8">
                 {isUpgradeError
                   ? "This tool is available on the Pro plan. Upgrade to unlock unlimited access to all PDF tools."
@@ -239,7 +239,7 @@ export function PhoneScanCleanupInterface() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <Button
                   onClick={() => router.push("/pricing")}
-                  className="bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl px-6 py-3"
+                  className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold rounded-xl px-6 py-3"
                 >
                   Upgrade to Pro
                 </Button>
@@ -274,7 +274,7 @@ export function PhoneScanCleanupInterface() {
             <p className="text-slate-600 mb-8">{errorMessage}</p>
             <Button
               onClick={resetInterface}
-              className="bg-orange-500 hover:bg-orange-600 text-white"
+              className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E]"
             >
               Try Again
             </Button>
@@ -343,7 +343,7 @@ export function PhoneScanCleanupInterface() {
                 Clean Another Scan
               </Button>
               <Button
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3"
+                className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] px-8 py-3"
                 onClick={() => (window.location.href = "/")}
               >
                 Try Another Tool
@@ -372,8 +372,8 @@ export function PhoneScanCleanupInterface() {
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
-            <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Loader2 className="h-10 w-10 text-orange-600 animate-spin" />
+            <div className="w-20 h-20 bg-[#F0FDFA] rounded-full flex items-center justify-center mx-auto mb-6">
+              <Loader2 className="h-10 w-10 text-[#14D8C4] animate-spin" />
             </div>
             <h2 className="text-3xl font-bold text-slate-900 mb-4">
               Cleaning Your Scan...
@@ -383,7 +383,7 @@ export function PhoneScanCleanupInterface() {
             </p>
             <div className="w-full bg-gray-200 rounded-full h-3 mb-8">
               <div
-                className="bg-orange-500 h-3 rounded-full transition-all duration-300 ease-out"
+                className="bg-[#14D8C4] h-3 rounded-full transition-all duration-300 ease-out"
                 style={{ width: `${progress}%` }}
               />
             </div>
@@ -409,8 +409,8 @@ export function PhoneScanCleanupInterface() {
             className={cn(
               "border-2 border-dashed rounded-xl p-12 transition-all duration-200 cursor-pointer",
               isDragOver
-                ? "border-orange-500 bg-orange-50"
-                : "border-gray-300 hover:border-orange-400 hover:bg-gray-50"
+                ? "border-[#14D8C4] bg-[#F0FDFA]"
+                : "border-gray-300 hover:border-[#14D8C4]/40 hover:bg-gray-50"
             )}
             onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
@@ -420,14 +420,14 @@ export function PhoneScanCleanupInterface() {
             }
           >
             <div className="text-center">
-              <Camera className="h-12 w-12 text-orange-500 mx-auto mb-4" />
+              <Camera className="h-12 w-12 text-[#14D8C4] mx-auto mb-4" />
               <h3 className="text-xl font-bold text-slate-900 mb-2">
                 Drop your phone scan here
               </h3>
               <p className="text-slate-600 mb-6">or click to browse files</p>
               <Button
                 size="lg"
-                className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8"
+                className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-semibold px-8"
               >
                 Choose Image
               </Button>
@@ -473,7 +473,7 @@ export function PhoneScanCleanupInterface() {
                   </Button>
                 </div>
                 <div className="flex items-center gap-3 mt-2 text-sm text-slate-500">
-                  <Camera className="h-4 w-4 text-orange-500" />
+                  <Camera className="h-4 w-4 text-[#14D8C4]" />
                   <span>{file.name}</span>
                   <span>({(file.size / 1024 / 1024).toFixed(1)} MB)</span>
                 </div>
@@ -498,12 +498,12 @@ export function PhoneScanCleanupInterface() {
                     className={cn(
                       "flex flex-col items-center gap-2 rounded-xl border-2 p-5 transition-all",
                       mode === "bw"
-                        ? "border-orange-500 bg-orange-50 shadow-sm"
-                        : "border-gray-200 hover:border-orange-300 hover:bg-gray-50"
+                        ? "border-[#14D8C4] bg-[#F0FDFA] shadow-sm"
+                        : "border-gray-200 hover:border-[#14D8C4]/30 hover:bg-gray-50"
                     )}
                   >
-                    <ScanLine className={cn("h-8 w-8", mode === "bw" ? "text-orange-600" : "text-slate-400")} />
-                    <span className={cn("font-bold text-sm", mode === "bw" ? "text-orange-700" : "text-slate-700")}>
+                    <ScanLine className={cn("h-8 w-8", mode === "bw" ? "text-[#14D8C4]" : "text-slate-400")} />
+                    <span className={cn("font-bold text-sm", mode === "bw" ? "text-[#0FBFB0]" : "text-slate-700")}>
                       Black & White
                     </span>
                     <span className="text-xs text-slate-500 text-center">
@@ -517,12 +517,12 @@ export function PhoneScanCleanupInterface() {
                     className={cn(
                       "flex flex-col items-center gap-2 rounded-xl border-2 p-5 transition-all",
                       mode === "color"
-                        ? "border-orange-500 bg-orange-50 shadow-sm"
-                        : "border-gray-200 hover:border-orange-300 hover:bg-gray-50"
+                        ? "border-[#14D8C4] bg-[#F0FDFA] shadow-sm"
+                        : "border-gray-200 hover:border-[#14D8C4]/30 hover:bg-gray-50"
                     )}
                   >
-                    <Palette className={cn("h-8 w-8", mode === "color" ? "text-orange-600" : "text-slate-400")} />
-                    <span className={cn("font-bold text-sm", mode === "color" ? "text-orange-700" : "text-slate-700")}>
+                    <Palette className={cn("h-8 w-8", mode === "color" ? "text-[#14D8C4]" : "text-slate-400")} />
+                    <span className={cn("font-bold text-sm", mode === "color" ? "text-[#0FBFB0]" : "text-slate-700")}>
                       Color Cleanup
                     </span>
                     <span className="text-xs text-slate-500 text-center">
@@ -535,7 +535,7 @@ export function PhoneScanCleanupInterface() {
               {/* Submit */}
               <Button
                 onClick={processFile}
-                className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold"
+                className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-semibold"
                 size="lg"
               >
                 <ScanLine className="h-4 w-4 mr-2" />

@@ -91,7 +91,7 @@ export default function OfficeToPDFConverterPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Office to PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Office to PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Office to PDF Converter: DOCX, XLSX, PPTX to PDF</h1>
               <p className="text-xl text-slate-300">
                 Convert any Microsoft Office file to PDF — Word documents, Excel spreadsheets, and PowerPoint presentations — all from one tool, no software required.
@@ -101,17 +101,17 @@ export default function OfficeToPDFConverterPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileText className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to convert? Skip the guide and go straight to the tool.</p>
             </div>
             <Link
               href="/office-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Office to PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -129,7 +129,7 @@ export default function OfficeToPDFConverterPage() {
                 An Office to PDF converter takes Microsoft Office files — <strong>DOCX, XLSX, PPTX</strong> (and their older counterparts DOC, XLS, PPT) — and turns them into universally readable PDF documents. PDFs look the same on every device and can't be accidentally edited, which makes them the standard for sharing final versions of documents.
               </p>
               <p className="text-slate-600">
-                PDF.it's <Link href="/office-to-pdf" className="text-orange-600 hover:underline">Office to PDF converter</Link> handles all three formats in one place. Upload a Word doc, an Excel spreadsheet, or a PowerPoint deck — you get a properly formatted PDF back in seconds.
+                PDF.it's <Link href="/office-to-pdf" className="text-[#14D8C4] hover:underline">Office to PDF converter</Link> handles all three formats in one place. Upload a Word doc, an Excel spreadsheet, or a PowerPoint deck — you get a properly formatted PDF back in seconds.
               </p>
             </section>
 
@@ -147,19 +147,19 @@ export default function OfficeToPDFConverterPage() {
                   </thead>
                   <tbody className="text-slate-700">
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Microsoft Word</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Microsoft Word</td>
                       <td className="py-3 px-4">.docx, .doc</td>
-                      <td className="py-3 px-4"><Link href="/word-to-pdf" className="text-orange-600 hover:underline">Word to PDF</Link></td>
+                      <td className="py-3 px-4"><Link href="/word-to-pdf" className="text-[#14D8C4] hover:underline">Word to PDF</Link></td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Microsoft Excel</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Microsoft Excel</td>
                       <td className="py-3 px-4">.xlsx, .xls</td>
-                      <td className="py-3 px-4"><Link href="/excel-to-pdf" className="text-orange-600 hover:underline">Excel to PDF</Link></td>
+                      <td className="py-3 px-4"><Link href="/excel-to-pdf" className="text-[#14D8C4] hover:underline">Excel to PDF</Link></td>
                     </tr>
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Microsoft PowerPoint</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Microsoft PowerPoint</td>
                       <td className="py-3 px-4">.pptx, .ppt</td>
-                      <td className="py-3 px-4"><Link href="/powerpoint-to-pdf" className="text-orange-600 hover:underline">PowerPoint to PDF</Link></td>
+                      <td className="py-3 px-4"><Link href="/powerpoint-to-pdf" className="text-[#14D8C4] hover:underline">PowerPoint to PDF</Link></td>
                     </tr>
                   </tbody>
                 </table>
@@ -170,24 +170,24 @@ export default function OfficeToPDFConverterPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">All-in-One Converter vs. Individual Tools</h2>
               <p className="text-slate-600 mb-4">
-                PDF.it offers both a unified <Link href="/office-to-pdf" className="text-orange-600 hover:underline">Office to PDF</Link> tool and separate tools for each format. Here's when to use which:
+                PDF.it offers both a unified <Link href="/office-to-pdf" className="text-[#14D8C4] hover:underline">Office to PDF</Link> tool and separate tools for each format. Here's when to use which:
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Use the all-in-one converter</strong> when you have a mix of Word, Excel, and PowerPoint files to convert in a single batch. One upload, multiple formats, all converted at once.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
-                  <span><strong>Use <Link href="/word-to-pdf" className="text-orange-600 hover:underline">Word to PDF</Link></strong> when you need specific Word formatting options or want to fine-tune margins and layout.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
+                  <span><strong>Use <Link href="/word-to-pdf" className="text-[#14D8C4] hover:underline">Word to PDF</Link></strong> when you need specific Word formatting options or want to fine-tune margins and layout.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>Use <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">Excel to PDF</Link></strong> when you need to control page fitting, column widths, or landscape orientation for wide spreadsheets.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
+                  <span><strong>Use <Link href="/excel-to-pdf" className="text-[#14D8C4] hover:underline">Excel to PDF</Link></strong> when you need to control page fitting, column widths, or landscape orientation for wide spreadsheets.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
-                  <span><strong>Use <Link href="/powerpoint-to-pdf" className="text-orange-600 hover:underline">PowerPoint to PDF</Link></strong> when you want control over slide layout, handout formatting, or notes pages.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
+                  <span><strong>Use <Link href="/powerpoint-to-pdf" className="text-[#14D8C4] hover:underline">PowerPoint to PDF</Link></strong> when you want control over slide layout, handout formatting, or notes pages.</span>
                 </li>
               </ul>
             </section>
@@ -211,7 +211,7 @@ export default function OfficeToPDFConverterPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -251,14 +251,14 @@ export default function OfficeToPDFConverterPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Prevent Accidental Edits</h3>
                   <p className="text-slate-600">
-                    Sending a Word document invites edits. PDFs are read-only by default, making them ideal for contracts, proposals, and final reports. For extra security, you can <Link href="/protect-pdf" className="text-orange-600 hover:underline">add a password</Link>.
+                    Sending a Word document invites edits. PDFs are read-only by default, making them ideal for contracts, proposals, and final reports. For extra security, you can <Link href="/protect-pdf" className="text-[#14D8C4] hover:underline">add a password</Link>.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Smaller File Sizes</h3>
                   <p className="text-slate-600">
-                    PDF conversion often reduces file size compared to the original Office file, especially for image-heavy documents. If the PDF is still large, run it through <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> for further reduction.
+                    PDF conversion often reduces file size compared to the original Office file, especially for image-heavy documents. If the PDF is still large, run it through <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> for further reduction.
                   </p>
                 </div>
               </div>
@@ -274,7 +274,7 @@ export default function OfficeToPDFConverterPage() {
             <p className="text-slate-300 mb-6">Upload any Word, Excel, or PowerPoint file and get a perfect PDF in seconds — free, no signup required.</p>
             <Link
               href="/office-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileText className="h-5 w-5" /> Convert to PDF Now
             </Link>
@@ -295,10 +295,10 @@ export default function OfficeToPDFConverterPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

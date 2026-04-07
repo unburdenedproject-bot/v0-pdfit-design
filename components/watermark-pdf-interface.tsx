@@ -287,13 +287,13 @@ export function WatermarkPdfInterface() {
         <section className="py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto text-center">
-              <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Crown className="h-10 w-10 text-orange-500" />
+              <div className="w-20 h-20 bg-[#F0FDFA] rounded-full flex items-center justify-center mx-auto mb-6">
+                <Crown className="h-10 w-10 text-[#14D8C4]" />
               </div>
               <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-2">
                 {isUpgradeError ? "This Feature Requires an Upgrade" : "You're out of free conversions"}
               </h2>
-              <p className="text-xl sm:text-2xl font-bold text-orange-600 mb-4">Upgrade to Pro</p>
+              <p className="text-xl sm:text-2xl font-bold text-[#14D8C4] mb-4">Upgrade to Pro</p>
               <p className="text-base sm:text-lg text-slate-600 mb-8">
                 {isUpgradeError
                   ? "This tool is available on the Pro plan. Upgrade to unlock unlimited access to all PDF tools."
@@ -302,7 +302,7 @@ export function WatermarkPdfInterface() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <Button
                   onClick={() => window.location.href = pricingUrl}
-                  className="bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl px-6 py-3"
+                  className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold rounded-xl px-6 py-3"
                 >
                   Upgrade to Pro
                 </Button>
@@ -333,7 +333,7 @@ export function WatermarkPdfInterface() {
             <p className="text-muted-foreground mb-8">{errorMessage}</p>
             <Button
               onClick={resetInterface}
-              className="bg-orange-500 hover:bg-orange-600 text-white"
+              className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E]"
             >
               Try Again
             </Button>
@@ -394,7 +394,7 @@ export function WatermarkPdfInterface() {
                 </div>
               </div>
             ) : (
-              <div className="border-2 border-orange-400 rounded-xl p-6 mb-8 bg-card">
+              <div className="border-2 border-[#14D8C4]/40 rounded-xl p-6 mb-8 bg-card">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-[60px] h-[80px] rounded border border-border shadow-sm bg-red-50 flex flex-col items-center justify-center flex-shrink-0">
                     <FileText className="h-8 w-8 text-red-500" />
@@ -427,7 +427,7 @@ export function WatermarkPdfInterface() {
                   </span>
                 </div>
                 <Link href={pricingUrl}>
-                  <Button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3">
+                  <Button className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-semibold px-6 py-3">
                     Upgrade to Pro
                   </Button>
                 </Link>
@@ -443,7 +443,7 @@ export function WatermarkPdfInterface() {
                 Watermark Another PDF
               </Button>
               <Button
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3"
+                className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] px-8 py-3"
                 onClick={() => (window.location.href = "/")}
               >
                 Try Another Tool
@@ -472,8 +472,8 @@ export function WatermarkPdfInterface() {
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
-            <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Loader2 className="h-10 w-10 text-orange-600 animate-spin" />
+            <div className="w-20 h-20 bg-[#F0FDFA] rounded-full flex items-center justify-center mx-auto mb-6">
+              <Loader2 className="h-10 w-10 text-[#14D8C4] animate-spin" />
             </div>
             <h2 className="text-3xl font-bold text-foreground mb-4">
               Adding Watermark...
@@ -483,7 +483,7 @@ export function WatermarkPdfInterface() {
             </p>
             <div className="w-full bg-muted rounded-full h-3 mb-8">
               <div
-                className="bg-orange-500 h-3 rounded-full transition-all duration-300 ease-out"
+                className="bg-[#14D8C4] h-3 rounded-full transition-all duration-300 ease-out"
                 style={{ width: `${progress}%` }}
               />
             </div>
@@ -509,8 +509,8 @@ export function WatermarkPdfInterface() {
             className={cn(
               "border-2 border-dashed rounded-xl p-12 transition-all duration-200 cursor-pointer",
               isDragOver
-                ? "border-orange-500 bg-orange-50"
-                : "border-border hover:border-orange-400 hover:bg-muted/50"
+                ? "border-[#14D8C4] bg-[#F0FDFA]"
+                : "border-border hover:border-[#14D8C4]/40 hover:bg-muted/50"
             )}
             onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
@@ -520,14 +520,14 @@ export function WatermarkPdfInterface() {
             }
           >
             <div className="text-center">
-              <Upload className="h-12 w-12 text-orange-500 mx-auto mb-4" />
+              <Upload className="h-12 w-12 text-[#14D8C4] mx-auto mb-4" />
               <h3 className="text-xl font-bold text-foreground mb-2">
                 Drop your PDF here
               </h3>
               <p className="text-muted-foreground mb-6">or click to browse files</p>
               <Button
                 size="lg"
-                className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8"
+                className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-semibold px-8"
               >
                 Choose File
               </Button>
@@ -556,7 +556,7 @@ export function WatermarkPdfInterface() {
                 </h3>
                 <div className="flex items-center justify-between bg-card border border-border rounded-lg p-4">
                   <div className="flex items-center gap-3">
-                    <FileText className="h-5 w-5 text-orange-500" />
+                    <FileText className="h-5 w-5 text-[#14D8C4]" />
                     <div>
                       <div className="font-medium text-foreground">
                         {file.name}
@@ -586,7 +586,7 @@ export function WatermarkPdfInterface() {
                   htmlFor="watermark-text"
                   className="text-lg font-bold text-foreground mb-2 flex items-center gap-2"
                 >
-                  <Type className="h-5 w-5 text-orange-500" />
+                  <Type className="h-5 w-5 text-[#14D8C4]" />
                   Watermark Text
                 </Label>
                 <p className="text-sm text-muted-foreground mb-3">
@@ -605,7 +605,7 @@ export function WatermarkPdfInterface() {
               {/* Transparency */}
               <div>
                 <Label className="text-lg font-bold text-foreground mb-2 flex items-center gap-2">
-                  <Droplets className="h-5 w-5 text-orange-500" />
+                  <Droplets className="h-5 w-5 text-[#14D8C4]" />
                   Transparency: {transparency}%
                 </Label>
                 <p className="text-sm text-muted-foreground mb-3">
@@ -695,7 +695,7 @@ export function WatermarkPdfInterface() {
               <Button
                 onClick={processFile}
                 disabled={!text.trim()}
-                className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold"
+                className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-semibold"
                 size="lg"
               >
                 <Droplets className="h-4 w-4 mr-2" />

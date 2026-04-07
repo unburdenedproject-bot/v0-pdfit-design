@@ -42,19 +42,19 @@ export default function DividirPDFParaEmailPage() {
       <main>
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-            <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Dividir PDF</p>
+            <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Dividir PDF</p>
             <h1 className="text-4xl lg:text-5xl font-black mb-4">Dividir un PDF para Email (Bajo Límites de Adjuntos)</h1>
             <p className="text-xl text-slate-300">¿Tu PDF es muy grande para adjuntarlo a un email? Aquí te explicamos cómo dividirlo en partes más pequeñas que quepan bajo el límite de 25MB de Gmail, 20MB de Outlook, y más.</p>
           </div></div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><Scissors className="h-5 w-5 text-white" /></div>
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><Scissors className="h-5 w-5 text-white" /></div>
               <p className="text-slate-700 font-semibold">¿Necesitas dividir tu PDF ahora mismo? Salta la guía y usa la herramienta.</p>
             </div>
-            <Link href="/es/dividir-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
+            <Link href="/es/dividir-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
               Dividir PDF Ahora <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -67,13 +67,13 @@ export default function DividirPDFParaEmailPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">Límites de Adjuntos de Email que Debes Conocer</h2>
               <p className="text-slate-600 mb-4">Cada proveedor de email tiene un tamaño máximo de archivo para adjuntos. Si tu PDF excede el límite, el email rebotará o se negará a enviar. Aquí están los límites más comunes:</p>
               <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Gmail:</strong> 25MB por email (total para todos los adjuntos combinados)</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Outlook / Hotmail:</strong> 20MB por email</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Yahoo Mail:</strong> 25MB por email</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Apple iCloud Mail:</strong> 20MB por email</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Servidores de email corporativo:</strong> Frecuentemente 10MB o incluso 5MB, dependiendo de la política de la empresa</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Gmail:</strong> 25MB por email (total para todos los adjuntos combinados)</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Outlook / Hotmail:</strong> 20MB por email</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Yahoo Mail:</strong> 25MB por email</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Apple iCloud Mail:</strong> 20MB por email</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Servidores de email corporativo:</strong> Frecuentemente 10MB o incluso 5MB, dependiendo de la política de la empresa</span></li>
               </ul>
-              <p className="text-slate-600 mt-4">Si tu destinatario usa un sistema de email corporativo, apunta a archivos menores de 10MB para estar seguro. También puedes intentar <Link href="/es/comprimir-pdf-para-email" className="text-orange-600 hover:underline">comprimir tu PDF para email</Link> antes de dividir.</p>
+              <p className="text-slate-600 mt-4">Si tu destinatario usa un sistema de email corporativo, apunta a archivos menores de 10MB para estar seguro. También puedes intentar <Link href="/es/comprimir-pdf-para-email" className="text-[#14D8C4] hover:underline">comprimir tu PDF para email</Link> antes de dividir.</p>
             </section>
 
             <section className="mb-12">
@@ -85,7 +85,7 @@ export default function DividirPDFParaEmailPage() {
                   { title: "Descarga y envía cada parte por separado", desc: "Descarga cada archivo dividido. Adjunta la Parte 1 a tu primer email, la Parte 2 a un segundo email, y así sucesivamente. Nombra los asuntos claramente: \"Documento - Parte 1 de 3\", \"Documento - Parte 2 de 3\", etc." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div>
                       <h3 className="font-bold text-slate-900 mb-1">{step.title}</h3>
                       <p className="text-slate-600 text-sm">{step.desc}</p>
@@ -101,7 +101,7 @@ export default function DividirPDFParaEmailPage() {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Intenta comprimir primero</h3>
-                  <p className="text-slate-600">Usa <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> para reducir el tamaño del archivo. Si tu PDF de 30MB se comprime a 18MB, puedes enviarlo por Gmail sin dividir. Para compresión más específica, prueba <Link href="/es/comprimir-pdf-a-5mb" className="text-orange-600 hover:underline">Comprimir a 5MB</Link> o <Link href="/es/comprimir-pdf-a-2mb" className="text-orange-600 hover:underline">Comprimir a 2MB</Link>.</p>
+                  <p className="text-slate-600">Usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para reducir el tamaño del archivo. Si tu PDF de 30MB se comprime a 18MB, puedes enviarlo por Gmail sin dividir. Para compresión más específica, prueba <Link href="/es/comprimir-pdf-a-5mb" className="text-[#14D8C4] hover:underline">Comprimir a 5MB</Link> o <Link href="/es/comprimir-pdf-a-2mb" className="text-[#14D8C4] hover:underline">Comprimir a 2MB</Link>.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Divide si la compresión no es suficiente</h3>
@@ -119,7 +119,7 @@ export default function DividirPDFParaEmailPage() {
               <p className="text-slate-600 mb-4">Después de enviar PDFs divididos, el destinatario necesitará unirlos de nuevo en un documento. Incluye una nota en tu email con estas instrucciones:</p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Descarga todas las partes</strong> de cada email a la misma carpeta.</li>
-                <li>&#10003; <strong>Ve a <Link href="/es/unir-pdf" className="text-orange-600 hover:underline">PDF.it Unir PDF</Link></strong> y sube todas las partes.</li>
+                <li>&#10003; <strong>Ve a <Link href="/es/unir-pdf" className="text-[#14D8C4] hover:underline">PDF.it Unir PDF</Link></strong> y sube todas las partes.</li>
                 <li>&#10003; <strong>Ordénalas</strong> (Parte 1 primero, Parte 2 segundo, etc.).</li>
                 <li>&#10003; <strong>Haz clic en Unir</strong> y descarga el documento completo.</li>
               </ul>
@@ -129,10 +129,10 @@ export default function DividirPDFParaEmailPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Consejos Pro para Enviar PDFs Grandes por Email</h2>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Aplana antes de dividir.</strong> Si tu PDF tiene campos de formulario o anotaciones, usa <Link href="/es/aplanar-pdf" className="text-orange-600 hover:underline">Aplanar PDF</Link> primero para reducir datos incrustados.</li>
-                <li>&#10003; <strong>Convierte imágenes a JPG.</strong> Si solo necesitas compartir páginas visuales (no texto editable), convierte las páginas a <Link href="/es/pdf-a-jpg" className="text-orange-600 hover:underline">imágenes JPG</Link> — frecuentemente son mucho más pequeñas que las páginas PDF.</li>
+                <li>&#10003; <strong>Aplana antes de dividir.</strong> Si tu PDF tiene campos de formulario o anotaciones, usa <Link href="/es/aplanar-pdf" className="text-[#14D8C4] hover:underline">Aplanar PDF</Link> primero para reducir datos incrustados.</li>
+                <li>&#10003; <strong>Convierte imágenes a JPG.</strong> Si solo necesitas compartir páginas visuales (no texto editable), convierte las páginas a <Link href="/es/pdf-a-jpg" className="text-[#14D8C4] hover:underline">imágenes JPG</Link> — frecuentemente son mucho más pequeñas que las páginas PDF.</li>
                 <li>&#10003; <strong>Usa nombres de archivo claros.</strong> Nombra tus archivos &quot;Informe_Parte1de3.pdf&quot;, &quot;Informe_Parte2de3.pdf&quot;, etc. para que el destinatario sepa el orden.</li>
-                <li>&#10003; <strong>Extrae solo lo necesario.</strong> Si el destinatario solo necesita ciertas páginas, <Link href="/es/aprender/extraer-paginas-de-pdf-guia" className="text-orange-600 hover:underline">extrae esas páginas</Link> en vez de enviar el documento completo.</li>
+                <li>&#10003; <strong>Extrae solo lo necesario.</strong> Si el destinatario solo necesita ciertas páginas, <Link href="/es/aprender/extraer-paginas-de-pdf-guia" className="text-[#14D8C4] hover:underline">extrae esas páginas</Link> en vez de enviar el documento completo.</li>
                 <li>&#10003; <strong>Prueba contigo mismo primero.</strong> Envía los archivos divididos a tu propio email para asegurarte de que todo se ve bien antes de enviar al destinatario.</li>
               </ul>
             </section>
@@ -144,7 +144,7 @@ export default function DividirPDFParaEmailPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">¿PDF Muy Grande para Email?</h2>
             <p className="text-slate-300 mb-6">Divídelo en archivos más pequeños que quepan bajo cualquier límite de adjuntos — gratis, sin registro.</p>
-            <Link href="/es/dividir-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors">
+            <Link href="/es/dividir-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors">
               <Scissors className="h-5 w-5" /> Dividir PDF Ahora
             </Link>
           </div>
@@ -160,9 +160,9 @@ export default function DividirPDFParaEmailPage() {
                 { title: "Dividir PDF en Páginas Individuales (Un Archivo por Página)", href: "/es/aprender/dividir-pdf-en-paginas-individuales" },
                 { title: "Cómo Dividir un PDF en tu Teléfono (iPhone y Android)", href: "/es/aprender/dividir-pdf-en-movil" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

@@ -91,7 +91,7 @@ export default function CodigoQRParaPDFPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Codigo QR</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Codigo QR</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Crear un Codigo QR que Enlace a un Documento PDF</h1>
               <p className="text-xl text-slate-300">
                 Necesitas compartir un PDF con un simple escaneo? Ya sea un folleto, manual, menu o volante — aqui te explicamos como crear un codigo QR que abra tu PDF al instante en cualquier telefono.
@@ -101,17 +101,17 @@ export default function CodigoQRParaPDFPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <QrCode className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Tienes la URL de tu PDF lista? Genera un codigo QR ahora.</p>
             </div>
             <Link
               href="/es/codigo-qr"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Crear Codigo QR <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,23 +130,23 @@ export default function CodigoQRParaPDFPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Manuales de producto.</strong> Imprime un codigo QR en el empaque del producto que enlace al manual PDF completo. Los clientes obtienen la version mas reciente sin que tu envies folletos gruesos.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Folletos de eventos.</strong> Los organizadores de conferencias imprimen codigos QR en letreros que enlazan al programa completo del evento, biografias de ponentes o materiales de las sesiones como PDFs.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>Menus de restaurante.</strong> Enlaza a un <Link href="/es/aprender/codigo-qr-para-menu-de-restaurante" className="text-orange-600 hover:underline">menu PDF</Link> desde un codigo QR en la mesa. Actualiza el PDF en cualquier momento sin reimprimir el codigo.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
+                  <span><strong>Menus de restaurante.</strong> Enlaza a un <Link href="/es/aprender/codigo-qr-para-menu-de-restaurante" className="text-[#14D8C4] hover:underline">menu PDF</Link> desde un codigo QR en la mesa. Actualiza el PDF en cualquier momento sin reimprimir el codigo.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Volantes inmobiliarios.</strong> Imprime un codigo QR en un volante de propiedad que abra los detalles completos, planos y fotos como PDF.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Materiales educativos.</strong> Profesores y catedraticos imprimen codigos QR en hojas de trabajo que enlazan a lecturas complementarias en PDF o claves de respuestas.</span>
                 </li>
               </ul>
@@ -171,7 +171,7 @@ export default function CodigoQRParaPDFPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -215,11 +215,11 @@ export default function CodigoQRParaPDFPage() {
                 Las personas que escanean codigos QR estan en sus telefonos, a menudo con datos moviles. Un PDF de 50MB tardara una eternidad en cargar y la mayoria se dara por vencida. Asi es como mantener tu PDF ligero:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Comprime primero.</strong> Usa <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> para reducir el tamano del archivo. La mayoria de los PDFs pueden comprimirse un 50-80% sin perdida visible de calidad.</li>
-                <li>&#10003; <strong>Apunta a un tamano especifico.</strong> Usa <Link href="/es/comprimir-pdf-a-5mb" className="text-orange-600 hover:underline">Comprimir a 5MB</Link> para limites de tamano garantizados.</li>
-                <li>&#10003; <strong>Aplana capas.</strong> Si tu PDF tiene campos de formulario, anotaciones o capas de transparencia, <Link href="/es/aplanar-pdf" className="text-orange-600 hover:underline">aplanalo</Link> para eliminar datos innecesarios.</li>
+                <li>&#10003; <strong>Comprime primero.</strong> Usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para reducir el tamano del archivo. La mayoria de los PDFs pueden comprimirse un 50-80% sin perdida visible de calidad.</li>
+                <li>&#10003; <strong>Apunta a un tamano especifico.</strong> Usa <Link href="/es/comprimir-pdf-a-5mb" className="text-[#14D8C4] hover:underline">Comprimir a 5MB</Link> para limites de tamano garantizados.</li>
+                <li>&#10003; <strong>Aplana capas.</strong> Si tu PDF tiene campos de formulario, anotaciones o capas de transparencia, <Link href="/es/aplanar-pdf" className="text-[#14D8C4] hover:underline">aplanalo</Link> para eliminar datos innecesarios.</li>
                 <li>&#10003; <strong>Reduce la resolucion de imagenes.</strong> Los PDFs con imagenes de alta resolucion son los principales culpables. La compresion maneja esto automaticamente, pero tambien puedes reducir la calidad de imagen manualmente antes de crear el PDF.</li>
-                <li>&#10003; <strong>Divide si es necesario.</strong> Si tu PDF es muy largo, considera usar <Link href="/es/dividir-pdf" className="text-orange-600 hover:underline">Dividir PDF</Link> para separarlo en secciones y enlazar solo la parte relevante.</li>
+                <li>&#10003; <strong>Divide si es necesario.</strong> Si tu PDF es muy largo, considera usar <Link href="/es/dividir-pdf" className="text-[#14D8C4] hover:underline">Dividir PDF</Link> para separarlo en secciones y enlazar solo la parte relevante.</li>
               </ul>
             </section>
 
@@ -246,7 +246,7 @@ export default function CodigoQRParaPDFPage() {
             <p className="text-slate-300 mb-6">Enlaza cualquier documento PDF a un codigo QR escaneable en segundos. Funcion Pro — actualiza para codigos QR ilimitados y todas las herramientas PDF.</p>
             <Link
               href="/es/codigo-qr"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <QrCode className="h-5 w-5" /> Crear Codigo QR para PDF
             </Link>
@@ -269,10 +269,10 @@ export default function CodigoQRParaPDFPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

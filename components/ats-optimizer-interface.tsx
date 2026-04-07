@@ -549,7 +549,7 @@ export function AtsOptimizerInterface() {
             {/* Improvements — selectable */}
             <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 mb-6">
               <h3 className="text-lg font-bold text-slate-900 mb-1 flex items-center gap-2">
-                <TrendingUp className="h-5 w-5 text-orange-500" />
+                <TrendingUp className="h-5 w-5 text-[#14D8C4]" />
                 {labels.improvements}
               </h3>
               <p className="text-xs text-slate-400 mb-4">Click to select which improvements the AI should apply when fixing your resume.</p>
@@ -561,10 +561,10 @@ export function AtsOptimizerInterface() {
                       onClick={() => setSelectedImprovements(prev => isSelected ? prev.filter(s => s !== item) : [...prev, item])}
                       className={cn(
                         "flex items-start gap-3 p-3 rounded-xl cursor-pointer transition-all border",
-                        isSelected ? "bg-orange-50 border-orange-300" : "bg-slate-50 border-slate-200 opacity-60"
+                        isSelected ? "bg-[#F0FDFA] border-[#14D8C4]/30" : "bg-slate-50 border-slate-200 opacity-60"
                       )}
                     >
-                      <div className={cn("w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5", isSelected ? "bg-orange-500" : "bg-slate-300")}>
+                      <div className={cn("w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5", isSelected ? "bg-[#14D8C4]" : "bg-slate-300")}>
                         {isSelected && <CheckCircle className="h-3.5 w-3.5 text-white" />}
                       </div>
                       <span className="text-slate-700 text-sm">{item}</span>
@@ -664,7 +664,7 @@ export function AtsOptimizerInterface() {
             {analysis.section_improvements && analysis.section_improvements.length > 0 && (
               <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 mb-6">
                 <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
-                  <AlertCircle className="h-5 w-5 text-orange-500" />
+                  <AlertCircle className="h-5 w-5 text-[#14D8C4]" />
                   {labels.sectionImprovements}
                 </h3>
                 <div className="space-y-3">
@@ -742,7 +742,7 @@ export function AtsOptimizerInterface() {
             {/* Actions */}
             {isGenerating ? (
               <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8 text-center">
-                <Loader2 className="h-8 w-8 text-orange-500 animate-spin mx-auto mb-3" />
+                <Loader2 className="h-8 w-8 text-[#14D8C4] animate-spin mx-auto mb-3" />
                 <p className="text-slate-700 font-medium">{labels.generating}</p>
               </div>
             ) : showFixForm ? (
@@ -933,7 +933,7 @@ export function AtsOptimizerInterface() {
               <div
                 className={cn(
                   "border-2 border-dashed rounded-xl p-12 text-center transition-colors cursor-pointer",
-                  isDragOver ? "border-orange-400 bg-orange-50" : "border-slate-300 hover:border-orange-300 hover:bg-slate-50"
+                  isDragOver ? "border-[#14D8C4]/40 bg-[#F0FDFA]" : "border-slate-300 hover:border-[#14D8C4]/30 hover:bg-slate-50"
                 )}
                 onDragOver={(e) => { e.preventDefault(); setIsDragOver(true) }}
                 onDragLeave={() => setIsDragOver(false)}
@@ -953,8 +953,8 @@ export function AtsOptimizerInterface() {
                 {/* File info */}
                 <div className="flex items-center justify-between bg-slate-50 rounded-xl p-4 mb-6">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
-                      <FileText className="h-5 w-5 text-orange-600" />
+                    <div className="w-10 h-10 bg-[#F0FDFA] rounded-lg flex items-center justify-center">
+                      <FileText className="h-5 w-5 text-[#14D8C4]" />
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-slate-800 truncate max-w-[200px] sm:max-w-[400px]">{file.name}</p>
@@ -976,7 +976,7 @@ export function AtsOptimizerInterface() {
                     onChange={(e) => setJobDescription(e.target.value)}
                     placeholder={labels.jobPlaceholder}
                     rows={4}
-                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 text-slate-800 text-sm resize-vertical"
+                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-[#14D8C4] focus:border-[#14D8C4] text-slate-800 text-sm resize-vertical"
                   />
                 </div>
 
@@ -991,14 +991,14 @@ export function AtsOptimizerInterface() {
                 {/* Processing */}
                 {isProcessing && (
                   <div className="mb-6 flex items-center gap-3">
-                    <Loader2 className="h-5 w-5 text-orange-500 animate-spin" />
+                    <Loader2 className="h-5 w-5 text-[#14D8C4] animate-spin" />
                     <span className="text-sm font-medium text-slate-700">{labels.analyzing}</span>
                   </div>
                 )}
 
                 {/* Analyze button */}
                 {!isProcessing && (
-                  <Button onClick={handleAnalyze} className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-xl text-lg" disabled={isProcessing}>
+                  <Button onClick={handleAnalyze} className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 rounded-xl text-lg" disabled={isProcessing}>
                     <Target className="h-5 w-5 mr-2" />
                     {labels.analyze}
                   </Button>

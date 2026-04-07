@@ -1093,7 +1093,7 @@ export function PdfCompareInterface({ locale = "en" }: { locale?: ToolLocale }) 
   const diffColor =
     totalChanges === 0 ? "text-green-600" :
     totalChanges <= 20 ? "text-yellow-600" :
-    totalChanges <= 80 ? "text-orange-600" :
+    totalChanges <= 80 ? "text-[#14D8C4]" :
     "text-red-600"
 
   return (
@@ -1215,7 +1215,7 @@ export function PdfCompareInterface({ locale = "en" }: { locale?: ToolLocale }) 
                         currentPage === index && "ring-2 ring-indigo-500",
                         changes === 0 && "bg-green-50 border-green-200 text-green-700",
                         changes > 0 && changes <= 20 && "bg-yellow-50 border-yellow-200 text-yellow-700",
-                        changes > 20 && changes <= 80 && "bg-orange-50 border-orange-200 text-orange-700",
+                        changes > 20 && changes <= 80 && "bg-[#F0FDFA] border-[#14D8C4]/20 text-[#0FBFB0]",
                         changes > 80 && "bg-red-50 border-red-200 text-red-700"
                       )}
                     >

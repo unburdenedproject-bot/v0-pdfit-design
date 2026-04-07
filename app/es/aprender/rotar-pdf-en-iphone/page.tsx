@@ -90,7 +90,7 @@ export default function RotarPDFEnIPhonePage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Rotar PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Rotar PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Como Rotar un PDF en iPhone (Sin App)</h1>
               <p className="text-xl text-slate-300">
                 Tienes un PDF de lado en tu telefono? No necesitas descargar una app ni transferir el archivo a una computadora. Aqui te mostramos como rotar paginas de PDF directamente en Safari en menos de 30 segundos.
@@ -99,17 +99,17 @@ export default function RotarPDFEnIPhonePage() {
           </div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <RotateCw className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Estas en tu iPhone ahora? Ve directo a la herramienta.</p>
             </div>
             <Link
               href="/es/rotar-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Rotar PDF Ahora <ArrowRight className="h-4 w-4" />
             </Link>
@@ -126,19 +126,19 @@ export default function RotarPDFEnIPhonePage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Documentos escaneados.</strong> Si alguien escaneo un documento y coloco el papel en el angulo incorrecto, el PDF resultante tiene paginas rotadas. Esto es extremadamente comun con recibos, contratos y formularios gubernamentales.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
-                  <span><strong>Escaneos con camara del telefono.</strong> Usar la camara de tu iPhone o una app de escaneo puede producir paginas rotadas si no sostenias el telefono perfectamente recto. <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> puede corregir el contraste y la calidad, pero aun puedes necesitar rotar.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
+                  <span><strong>Escaneos con camara del telefono.</strong> Usar la camara de tu iPhone o una app de escaneo puede producir paginas rotadas si no sostenias el telefono perfectamente recto. <Link href="/es/limpiar-escaneo" className="text-[#14D8C4] hover:underline">Limpieza de Escaneo de Telefono</Link> puede corregir el contraste y la calidad, pero aun puedes necesitar rotar.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Adjuntos de correo electronico.</strong> Los PDFs recibidos como adjuntos de correo a veces se muestran de lado en la app Mail de iPhone o la vista previa de Archivos, aunque se vean bien en una computadora.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Paginas con orientacion mixta.</strong> Un documento que combina paginas de texto vertical con graficos o tablas horizontales tendra algunas paginas que aparecen de lado al desplazarte en tu telefono.</span>
                 </li>
               </ul>
@@ -162,7 +162,7 @@ export default function RotarPDFEnIPhonePage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -196,19 +196,19 @@ export default function RotarPDFEnIPhonePage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Comprimir para Correo Electronico</h3>
                   <p className="text-slate-600">
-                    Necesitas enviar el PDF por correo pero es muy grande? Usa <Link href="/es/comprimir-pdf-para-email" className="text-orange-600 hover:underline">Comprimir PDF para Email</Link> para reducirlo por debajo del limite de adjuntos. Funciona genial en iPhone — comprime y envia sin tocar una computadora.
+                    Necesitas enviar el PDF por correo pero es muy grande? Usa <Link href="/es/comprimir-pdf-para-email" className="text-[#14D8C4] hover:underline">Comprimir PDF para Email</Link> para reducirlo por debajo del limite de adjuntos. Funciona genial en iPhone — comprime y envia sin tocar una computadora.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Unir Documentos</h3>
                   <p className="text-slate-600">
-                    Recibiste multiples PDFs que necesitan combinarse en uno? Usa <Link href="/es/unir-pdf" className="text-orange-600 hover:underline">Unir PDF</Link> para combinarlos directamente en tu telefono. Perfecto para solicitudes de empleo o entregas escolares sobre la marcha.
+                    Recibiste multiples PDFs que necesitan combinarse en uno? Usa <Link href="/es/unir-pdf" className="text-[#14D8C4] hover:underline">Unir PDF</Link> para combinarlos directamente en tu telefono. Perfecto para solicitudes de empleo o entregas escolares sobre la marcha.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Convertir Fotos a PDF</h3>
                   <p className="text-slate-600">
-                    Tomaste fotos de un documento con tu iPhone? Convierte imagenes a PDF usando <Link href="/es/word-a-pdf" className="text-orange-600 hover:underline">nuestras herramientas de conversion</Link> o limpia las fotos con <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> para resultados con aspecto profesional.
+                    Tomaste fotos de un documento con tu iPhone? Convierte imagenes a PDF usando <Link href="/es/word-a-pdf" className="text-[#14D8C4] hover:underline">nuestras herramientas de conversion</Link> o limpia las fotos con <Link href="/es/limpiar-escaneo" className="text-[#14D8C4] hover:underline">Limpieza de Escaneo de Telefono</Link> para resultados con aspecto profesional.
                   </p>
                 </div>
               </div>
@@ -236,7 +236,7 @@ export default function RotarPDFEnIPhonePage() {
             <p className="text-slate-300 mb-6">Abre esta pagina en tu iPhone, toca el boton de abajo y corrige tu PDF en segundos.</p>
             <Link
               href="/es/rotar-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <RotateCw className="h-5 w-5" /> Rotar PDF Ahora
             </Link>
@@ -255,10 +255,10 @@ export default function RotarPDFEnIPhonePage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

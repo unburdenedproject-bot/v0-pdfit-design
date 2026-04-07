@@ -91,7 +91,7 @@ export default function ComoAgregarMarcaDeAguaAPDFPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Marca de Agua PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Marca de Agua PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Como Agregar una Marca de Agua a un PDF en Linea</h1>
               <p className="text-xl text-slate-300">
                 Necesitas estampar un documento como Borrador, Confidencial o agregar el logo de tu empresa? Aqui te explicamos como agregar una marca de agua a cualquier PDF en segundos — sin necesidad de instalar software.
@@ -101,17 +101,17 @@ export default function ComoAgregarMarcaDeAguaAPDFPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Stamp className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Listo para marcar? Salta la guia y ve directo a la herramienta.</p>
             </div>
             <Link
               href="/es/marca-de-agua-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Marca de Agua PDF Ahora <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,23 +130,23 @@ export default function ComoAgregarMarcaDeAguaAPDFPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Marcar documentos como Borrador.</strong> Al compartir versiones tempranas de un informe o propuesta, una marca de agua BORRADOR les dice a los destinatarios que el contenido no es final y puede cambiar.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Etiquetar archivos sensibles como Confidencial.</strong> Los contratos legales, informes financieros y documentos de recursos humanos a menudo necesitan un sello CONFIDENCIAL para desalentar el compartir no autorizado.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Marcar documentos con tu logo.</strong> Las propuestas, facturas y presentaciones se ven mas profesionales cuando llevan el logo de tu empresa como una marca de agua sutil de fondo.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Desalentar la copia no autorizada.</strong> Una marca de agua NO COPIAR o MUESTRA deja claro que el documento no debe ser redistribuido.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Rastrear destinatarios del documento.</strong> Algunos equipos agregan marcas de agua unicas por destinatario para que los documentos filtrados puedan rastrearse hasta la fuente.</span>
                 </li>
               </ul>
@@ -156,7 +156,7 @@ export default function ComoAgregarMarcaDeAguaAPDFPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-6">Como Agregar una Marca de Agua a un PDF (Paso a Paso)</h2>
               <p className="text-slate-600 mb-4">
-                Marca de Agua PDF esta disponible para usuarios Pro y Business. <Link href="/es/precios" className="text-orange-600 hover:underline">Ver precios</Link> para mas detalles.
+                Marca de Agua PDF esta disponible para usuarios Pro y Business. <Link href="/es/precios" className="text-[#14D8C4] hover:underline">Ver precios</Link> para mas detalles.
               </p>
               <div className="space-y-4">
                 {[
@@ -174,7 +174,7 @@ export default function ComoAgregarMarcaDeAguaAPDFPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -215,8 +215,8 @@ export default function ComoAgregarMarcaDeAguaAPDFPage() {
                 Una marca de agua estandar es una superposicion que se coloca encima del contenido de la pagina. Alguien con las herramientas adecuadas podria potencialmente eliminarla. Aqui te explicamos como hacer tu marca de agua mas permanente:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Aplana el PDF despues.</strong> Usa <Link href="/es/aplanar-pdf" className="text-orange-600 hover:underline">Aplanar PDF</Link> despues de agregar la marca de agua. Esto integra la marca de agua en el contenido de la pagina para que no pueda separarse del texto e imagenes originales.</li>
-                <li>&#10003; <strong>Agrega proteccion con contrasena.</strong> Usa <Link href="/es/proteger-pdf" className="text-orange-600 hover:underline">Proteger PDF</Link> para restringir permisos de edicion. Esto impide que usuarios casuales modifiquen o eliminen la marca de agua.</li>
+                <li>&#10003; <strong>Aplana el PDF despues.</strong> Usa <Link href="/es/aplanar-pdf" className="text-[#14D8C4] hover:underline">Aplanar PDF</Link> despues de agregar la marca de agua. Esto integra la marca de agua en el contenido de la pagina para que no pueda separarse del texto e imagenes originales.</li>
+                <li>&#10003; <strong>Agrega proteccion con contrasena.</strong> Usa <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link> para restringir permisos de edicion. Esto impide que usuarios casuales modifiquen o eliminen la marca de agua.</li>
                 <li>&#10003; <strong>Combina ambos enfoques.</strong> Aplana primero, luego protege con contrasena. Esto te da la proteccion mas fuerte contra la eliminacion no autorizada.</li>
               </ul>
             </section>
@@ -228,7 +228,7 @@ export default function ComoAgregarMarcaDeAguaAPDFPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Documentos Legales y Financieros</h3>
                   <p className="text-slate-600">
-                    Las firmas de abogados y departamentos de contabilidad agregan marcas de agua CONFIDENCIAL a contratos, informes de auditoria y declaraciones fiscales antes de compartirlos externamente. Lee nuestra guia dedicada sobre <Link href="/es/aprender/marca-de-agua-pdf-confidencial" className="text-orange-600 hover:underline">agregar una marca de agua Confidencial</Link>.
+                    Las firmas de abogados y departamentos de contabilidad agregan marcas de agua CONFIDENCIAL a contratos, informes de auditoria y declaraciones fiscales antes de compartirlos externamente. Lee nuestra guia dedicada sobre <Link href="/es/aprender/marca-de-agua-pdf-confidencial" className="text-[#14D8C4] hover:underline">agregar una marca de agua Confidencial</Link>.
                   </p>
                 </div>
                 <div>
@@ -240,7 +240,7 @@ export default function ComoAgregarMarcaDeAguaAPDFPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Educacion y Publicacion</h3>
                   <p className="text-slate-600">
-                    Los profesores marcan examenes con MUESTRA para prevenir la redistribucion. Los editores marcan copias de revision con el nombre del revisor para responsabilidad. Despues de marcar, puedes <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">comprimir el PDF</Link> para mantener tamanos de archivo manejables para distribucion por correo.
+                    Los profesores marcan examenes con MUESTRA para prevenir la redistribucion. Los editores marcan copias de revision con el nombre del revisor para responsabilidad. Despues de marcar, puedes <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">comprimir el PDF</Link> para mantener tamanos de archivo manejables para distribucion por correo.
                   </p>
                 </div>
               </div>
@@ -256,7 +256,7 @@ export default function ComoAgregarMarcaDeAguaAPDFPage() {
             <p className="text-slate-300 mb-6">Sube tu archivo, agrega una marca de agua de texto o imagen, y descarga el resultado en segundos. Disponible para usuarios Pro y Business.</p>
             <Link
               href="/es/marca-de-agua-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Stamp className="h-5 w-5" /> Marca de Agua PDF Ahora
             </Link>
@@ -276,10 +276,10 @@ export default function ComoAgregarMarcaDeAguaAPDFPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

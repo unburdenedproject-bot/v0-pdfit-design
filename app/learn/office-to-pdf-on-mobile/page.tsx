@@ -91,7 +91,7 @@ export default function OfficeToQdfOnMobilePage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Office to PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Office to PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convert Office Files to PDF on Mobile (iPhone & Android)</h1>
               <p className="text-xl text-slate-300">
                 You are on your phone, someone just asked for a PDF version of your document, and you do not have a computer nearby. No problem — here is how to convert any Office file to PDF right from your phone.
@@ -101,17 +101,17 @@ export default function OfficeToQdfOnMobilePage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileText className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">On your phone right now? Convert directly in your browser.</p>
             </div>
             <Link
               href="/office-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Convert to PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function OfficeToQdfOnMobilePage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Urgent email requests.</strong> Your boss or client needs a PDF version of a report right now, and you only have your phone. Convert and reply in under a minute.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Job applications on the go.</strong> You found a job posting with a tight deadline and need to submit your Word resume as a PDF. Convert it from your phone without waiting to get home.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Uploading to portals.</strong> Government, university, and insurance portals often require PDF uploads. If the file is on your phone, convert it right there instead of transferring it to a computer first.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Sharing via messaging apps.</strong> PDFs are easier to view in WhatsApp, Telegram, and iMessage than raw Office files. Convert before sharing for a better experience.</span>
                 </li>
               </ul>
@@ -167,7 +167,7 @@ export default function OfficeToQdfOnMobilePage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -222,10 +222,10 @@ export default function OfficeToQdfOnMobilePage() {
                 Once you have your PDF on your phone, you might need a few additional steps:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Compress the PDF</strong> if it is too large for email or a portal. Use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> or <Link href="/compress-pdf-for-email" className="text-orange-600 hover:underline">Compress PDF for Email</Link> — both work on mobile.</li>
-                <li>&#10003; <strong>Merge multiple PDFs</strong> into one document using <Link href="/merge-pdf" className="text-orange-600 hover:underline">Merge PDF</Link>. This works on mobile too — upload all your files and combine them.</li>
-                <li>&#10003; <strong>Add password protection</strong> with <Link href="/protect-pdf" className="text-orange-600 hover:underline">Protect PDF</Link> before sharing sensitive documents.</li>
-                <li>&#10003; <strong>Check formatting.</strong> Open the PDF on your phone to make sure everything looks right. If you see formatting issues, read our guide on <Link href="/learn/office-to-pdf-keep-formatting" className="text-orange-600 hover:underline">keeping formatting when converting to PDF</Link>.</li>
+                <li>&#10003; <strong>Compress the PDF</strong> if it is too large for email or a portal. Use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> or <Link href="/compress-pdf-for-email" className="text-[#14D8C4] hover:underline">Compress PDF for Email</Link> — both work on mobile.</li>
+                <li>&#10003; <strong>Merge multiple PDFs</strong> into one document using <Link href="/merge-pdf" className="text-[#14D8C4] hover:underline">Merge PDF</Link>. This works on mobile too — upload all your files and combine them.</li>
+                <li>&#10003; <strong>Add password protection</strong> with <Link href="/protect-pdf" className="text-[#14D8C4] hover:underline">Protect PDF</Link> before sharing sensitive documents.</li>
+                <li>&#10003; <strong>Check formatting.</strong> Open the PDF on your phone to make sure everything looks right. If you see formatting issues, read our guide on <Link href="/learn/office-to-pdf-keep-formatting" className="text-[#14D8C4] hover:underline">keeping formatting when converting to PDF</Link>.</li>
               </ul>
             </section>
 
@@ -239,7 +239,7 @@ export default function OfficeToQdfOnMobilePage() {
             <p className="text-slate-300 mb-6">No app needed. Open PDF.it in your mobile browser, upload your file, and get a PDF in seconds.</p>
             <Link
               href="/office-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileText className="h-5 w-5" /> Convert to PDF Now
             </Link>
@@ -260,10 +260,10 @@ export default function OfficeToQdfOnMobilePage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

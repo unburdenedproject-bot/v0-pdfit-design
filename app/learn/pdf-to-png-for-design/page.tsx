@@ -91,7 +91,7 @@ export default function PDFtoPNGforDesignPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to PNG</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to PNG</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convert PDF to PNG for Design Work (Figma, Canva, Web)</h1>
               <p className="text-xl text-slate-300">
                 Designers constantly need PDF content as images — for mockups, presentations, web pages, and social media. Here's how to get the sharpest, most flexible PNG output for your design workflow.
@@ -101,17 +101,17 @@ export default function PDFtoPNGforDesignPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Image className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Need design-ready PNGs now? Convert your PDF in seconds.</p>
             </div>
             <Link
               href="/pdf-to-png"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Convert PDF to PNG <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function PDFtoPNGforDesignPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Using client assets in Figma or Sketch.</strong> Clients often send logos, brand guidelines, or layouts as PDFs. Most design tools can't import PDFs directly, so converting to PNG is the fastest path to getting that content into your canvas.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Creating social media content from documents.</strong> Marketing teams frequently need to turn report pages, infographics, or one-pagers into Instagram posts, LinkedIn carousels, or Twitter images.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Building web pages with document previews.</strong> Embedding a PNG preview of a PDF on a website is far more performant and accessible than embedding the PDF itself.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Creating mockups and case studies.</strong> Designers often need to show PDF documents inside device frames, browser windows, or portfolio layouts. A high-quality PNG drops right into these compositions.</span>
                 </li>
               </ul>
@@ -164,26 +164,26 @@ export default function PDFtoPNGforDesignPage() {
                   </thead>
                   <tbody className="text-slate-700">
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Lossless quality</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Lossless quality</td>
                       <td className="py-3 px-4">No compression artifacts around text, logos, or edges. What you convert is exactly what you get.</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Transparency</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Transparency</td>
                       <td className="py-3 px-4">Layer PNG images over backgrounds without white rectangles. Essential for overlays, mockups, and compositions.</td>
                     </tr>
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Sharp text</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Sharp text</td>
                       <td className="py-3 px-4">Text in PDFs stays perfectly crisp as PNG. JPG smudges text edges, which is immediately visible in design presentations.</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Color accuracy</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Color accuracy</td>
                       <td className="py-3 px-4">PNG preserves exact colors without the subtle color shifts that JPG compression introduces. Critical for brand work.</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
               <p className="text-slate-500 text-sm mt-3">
-                Want a deeper comparison? Read our full <Link href="/learn/pdf-to-jpg-vs-png" className="text-orange-600 hover:underline">JPG vs PNG guide</Link>.
+                Want a deeper comparison? Read our full <Link href="/learn/pdf-to-jpg-vs-png" className="text-[#14D8C4] hover:underline">JPG vs PNG guide</Link>.
               </p>
             </section>
 
@@ -205,27 +205,27 @@ export default function PDFtoPNGforDesignPage() {
                   <tbody className="text-slate-700">
                     <tr className="border-t border-gray-200">
                       <td className="py-3 px-4 font-semibold">Web pages & blogs</td>
-                      <td className="py-3 px-4 text-orange-600 font-semibold">150 DPI</td>
+                      <td className="py-3 px-4 text-[#14D8C4] font-semibold">150 DPI</td>
                       <td className="py-3 px-4">Balances quality and page load speed</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
                       <td className="py-3 px-4 font-semibold">Social media posts</td>
-                      <td className="py-3 px-4 text-orange-600 font-semibold">150-200 DPI</td>
+                      <td className="py-3 px-4 text-[#14D8C4] font-semibold">150-200 DPI</td>
                       <td className="py-3 px-4">Platforms compress images anyway; 200 DPI gives headroom</td>
                     </tr>
                     <tr className="border-t border-gray-200">
                       <td className="py-3 px-4 font-semibold">Figma / Canva projects</td>
-                      <td className="py-3 px-4 text-orange-600 font-semibold">300 DPI</td>
+                      <td className="py-3 px-4 text-[#14D8C4] font-semibold">300 DPI</td>
                       <td className="py-3 px-4">Enough pixels for zooming and Retina displays</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
                       <td className="py-3 px-4 font-semibold">Print materials</td>
-                      <td className="py-3 px-4 text-orange-600 font-semibold">300 DPI</td>
+                      <td className="py-3 px-4 text-[#14D8C4] font-semibold">300 DPI</td>
                       <td className="py-3 px-4">Industry standard for professional print quality</td>
                     </tr>
                     <tr className="border-t border-gray-200">
                       <td className="py-3 px-4 font-semibold">Large format / posters</td>
-                      <td className="py-3 px-4 text-orange-600 font-semibold">300-600 DPI</td>
+                      <td className="py-3 px-4 text-[#14D8C4] font-semibold">300-600 DPI</td>
                       <td className="py-3 px-4">Viewed from a distance, but higher DPI avoids visible pixels</td>
                     </tr>
                   </tbody>
@@ -243,7 +243,7 @@ export default function PDFtoPNGforDesignPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Convert at 300 DPI for flexibility</h3>
                   <p className="text-slate-600">
-                    Use <Link href="/pdf-to-png" className="text-orange-600 hover:underline">PDF.it's converter</Link> at 300 DPI. This gives you enough resolution to scale the image up or down within Figma without losing quality. An A4 page at 300 DPI produces a PNG that's roughly 2480 x 3508 pixels.
+                    Use <Link href="/pdf-to-png" className="text-[#14D8C4] hover:underline">PDF.it's converter</Link> at 300 DPI. This gives you enough resolution to scale the image up or down within Figma without losing quality. An A4 page at 300 DPI produces a PNG that's roughly 2480 x 3508 pixels.
                   </p>
                 </div>
                 <div>
@@ -305,7 +305,7 @@ export default function PDFtoPNGforDesignPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Optimize file size for web</h3>
                   <p className="text-slate-600">
-                    For web use, 150 DPI is typically enough. If the PNGs are still large, <Link href="/compress-pdf" className="text-orange-600 hover:underline">compress the original PDF</Link> before converting to reduce embedded image data. You can also use WebP conversion for even smaller files.
+                    For web use, 150 DPI is typically enough. If the PNGs are still large, <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">compress the original PDF</Link> before converting to reduce embedded image data. You can also use WebP conversion for even smaller files.
                   </p>
                 </div>
               </div>
@@ -318,8 +318,8 @@ export default function PDFtoPNGforDesignPage() {
                 Sometimes you don't need the full page as an image — you just need specific graphics embedded in the PDF:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>✓ <strong>Need a logo from a PDF?</strong> Use <Link href="/extract-images-from-pdf" className="text-orange-600 hover:underline">Extract Images from PDF</Link> to pull out individual images at their original resolution.</li>
-                <li>✓ <strong>Need the full page layout?</strong> Use <Link href="/pdf-to-png" className="text-orange-600 hover:underline">PDF to PNG</Link> to capture the entire page as rendered.</li>
+                <li>✓ <strong>Need a logo from a PDF?</strong> Use <Link href="/extract-images-from-pdf" className="text-[#14D8C4] hover:underline">Extract Images from PDF</Link> to pull out individual images at their original resolution.</li>
+                <li>✓ <strong>Need the full page layout?</strong> Use <Link href="/pdf-to-png" className="text-[#14D8C4] hover:underline">PDF to PNG</Link> to capture the entire page as rendered.</li>
                 <li>✓ <strong>Need both?</strong> Extract individual images for logo and photo assets, then convert full pages for layout reference. Both tools are free on PDF.it.</li>
               </ul>
             </section>
@@ -334,7 +334,7 @@ export default function PDFtoPNGforDesignPage() {
             <p className="text-slate-300 mb-6">High-resolution, lossless PNG images ready for Figma, Canva, or any design tool. Free and instant.</p>
             <Link
               href="/pdf-to-png"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Image className="h-5 w-5" /> Convert PDF to PNG Now
             </Link>
@@ -355,10 +355,10 @@ export default function PDFtoPNGforDesignPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

@@ -91,7 +91,7 @@ export default function UnlockPDFForPrintingPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Unlock PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Unlock PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Unlock a PDF for Printing (Remove Print Restrictions)</h1>
               <p className="text-xl text-slate-300">
                 Hit &quot;Print&quot; and nothing happened? Your PDF probably has a print restriction. Here&apos;s how to remove it in under a minute.
@@ -101,17 +101,17 @@ export default function UnlockPDFForPrintingPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Unlock className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Need to print right now? Skip the guide and unlock your PDF.</p>
             </div>
             <Link
               href="/unlock-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Unlock PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -133,19 +133,19 @@ export default function UnlockPDFForPrintingPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Print button is grayed out</strong> in Adobe Reader, Chrome&apos;s PDF viewer, or Preview on Mac.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Error message appears</strong> saying &quot;Printing is not allowed&quot; or &quot;This document has restrictions that prevent printing.&quot;</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Ctrl+P or Cmd+P does nothing</strong> when the PDF is open in your viewer.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>You can view and scroll</strong> through the document normally, but any attempt to print fails.</span>
                 </li>
               </ul>
@@ -173,7 +173,7 @@ export default function UnlockPDFForPrintingPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -193,19 +193,19 @@ export default function UnlockPDFForPrintingPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Students printing lecture notes.</strong> Professors sometimes distribute PDFs with print restrictions to discourage redistribution. If you need a physical copy for studying, unlock the PDF first.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Employees printing reports.</strong> Company reports, HR documents, or training manuals may have print restrictions that make it impossible to hand out physical copies in meetings.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>People printing government forms.</strong> Some government agencies distribute PDF forms that must be filled out and submitted on paper, but accidentally leave print restrictions enabled.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Anyone printing receipts or tickets.</strong> E-tickets, booking confirmations, and invoices sometimes come as print-restricted PDFs, making it impossible to produce a hard copy.</span>
                 </li>
               </ul>
@@ -221,8 +221,8 @@ export default function UnlockPDFForPrintingPage() {
                 <li>✓ <strong>Check the page size.</strong> Make sure your printer is set to the same page size as the PDF (usually A4 or Letter). Mismatched sizes can cut off content or add unwanted margins.</li>
                 <li>✓ <strong>Use &quot;Fit to page&quot; in print settings.</strong> This ensures the entire page content prints without being cut off, even if the PDF dimensions don&apos;t exactly match your paper size.</li>
                 <li>✓ <strong>Print a test page first.</strong> Before printing a 50-page document, print page 1 to check that everything looks correct.</li>
-                <li>✓ <strong>Compress before printing large files.</strong> If the PDF is very large (50MB+), it may take a long time to send to the printer. Use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> to reduce the file size first — this won&apos;t affect print quality.</li>
-                <li>✓ <strong>Flatten forms before printing.</strong> If the PDF has form fields, use <Link href="/flatten-pdf" className="text-orange-600 hover:underline">Flatten PDF</Link> to make sure all filled-in data prints correctly.</li>
+                <li>✓ <strong>Compress before printing large files.</strong> If the PDF is very large (50MB+), it may take a long time to send to the printer. Use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> to reduce the file size first — this won&apos;t affect print quality.</li>
+                <li>✓ <strong>Flatten forms before printing.</strong> If the PDF has form fields, use <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">Flatten PDF</Link> to make sure all filled-in data prints correctly.</li>
               </ul>
             </section>
 
@@ -233,14 +233,14 @@ export default function UnlockPDFForPrintingPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Convert to an Image</h3>
                   <p className="text-slate-600">
-                    If you only need to print a few pages, you can convert the PDF to images using <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">PDF to JPG</Link> or <Link href="/pdf-to-png" className="text-orange-600 hover:underline">PDF to PNG</Link>, then print the images. This works as a workaround but the quality may be slightly lower than printing the PDF directly.
+                    If you only need to print a few pages, you can convert the PDF to images using <Link href="/pdf-to-jpg" className="text-[#14D8C4] hover:underline">PDF to JPG</Link> or <Link href="/pdf-to-png" className="text-[#14D8C4] hover:underline">PDF to PNG</Link>, then print the images. This works as a workaround but the quality may be slightly lower than printing the PDF directly.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Convert to Word</h3>
                   <p className="text-slate-600">
-                    Another option is to convert the PDF to a Word document using <Link href="/pdf-to-word" className="text-orange-600 hover:underline">PDF to Word</Link> and print from Microsoft Word. This is useful if you also need to edit the content before printing.
+                    Another option is to convert the PDF to a Word document using <Link href="/pdf-to-word" className="text-[#14D8C4] hover:underline">PDF to Word</Link> and print from Microsoft Word. This is useful if you also need to edit the content before printing.
                   </p>
                 </div>
 
@@ -263,7 +263,7 @@ export default function UnlockPDFForPrintingPage() {
             <p className="text-slate-300 mb-6">Remove the print restriction and get your document printed in seconds — free, no signup required.</p>
             <Link
               href="/unlock-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Unlock className="h-5 w-5" /> Unlock PDF Now
             </Link>
@@ -283,10 +283,10 @@ export default function UnlockPDFForPrintingPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

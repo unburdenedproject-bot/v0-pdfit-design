@@ -91,7 +91,7 @@ export default function WhatIsOCRPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / OCR PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / OCR PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">What Is OCR? (Optical Character Recognition Explained)</h1>
               <p className="text-xl text-slate-300">
                 OCR is the technology that turns scanned documents and images into text you can search, copy, and edit. Here is everything you need to know about how it works and why it matters.
@@ -101,17 +101,17 @@ export default function WhatIsOCRPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <ScanText className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Want to try OCR right now? Use PDF.it's OCR Scanner (Pro).</p>
             </div>
             <Link
               href="/ocr-scanner"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               OCR Scanner <ArrowRight className="h-4 w-4" />
             </Link>
@@ -132,7 +132,7 @@ export default function WhatIsOCRPage() {
                 Without OCR, a scanned PDF is just a picture. You cannot search for a word, copy a paragraph, or select any text. The file looks like a document, but to your computer it is just a flat image — no different from a photograph of a sunset.
               </p>
               <p className="text-slate-600">
-                After OCR processing, an invisible text layer is placed on top of the image. Now you can press Ctrl+F to find words, copy text into another document, or extract the content into a <Link href="/pdf-to-txt" className="text-orange-600 hover:underline">plain text file</Link> or <Link href="/pdf-to-word" className="text-orange-600 hover:underline">Word document</Link>.
+                After OCR processing, an invisible text layer is placed on top of the image. Now you can press Ctrl+F to find words, copy text into another document, or extract the content into a <Link href="/pdf-to-txt" className="text-[#14D8C4] hover:underline">plain text file</Link> or <Link href="/pdf-to-word" className="text-[#14D8C4] hover:underline">Word document</Link>.
               </p>
             </section>
 
@@ -155,7 +155,7 @@ export default function WhatIsOCRPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -175,24 +175,24 @@ export default function WhatIsOCRPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Searchability.</strong> Without OCR, you cannot find a specific word in a 50-page scanned contract. With OCR, press Ctrl+F and find it instantly.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Copy and paste.</strong> Need a quote, a number, or a paragraph from a scanned document? OCR lets you select and copy text instead of manually retyping it.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Accessibility.</strong> Screen readers cannot read image-only PDFs. OCR makes your documents accessible to people who use assistive technology.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Archiving and compliance.</strong> Many organizations require searchable PDFs for legal and regulatory compliance. OCR transforms archived scans into properly indexed documents.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
-                  <span><strong>Format conversion.</strong> Once a PDF has a text layer, you can convert it to <Link href="/pdf-to-word" className="text-orange-600 hover:underline">Word</Link>, <Link href="/pdf-to-excel" className="text-orange-600 hover:underline">Excel</Link>, or <Link href="/pdf-to-txt" className="text-orange-600 hover:underline">plain text</Link> with much better results.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
+                  <span><strong>Format conversion.</strong> Once a PDF has a text layer, you can convert it to <Link href="/pdf-to-word" className="text-[#14D8C4] hover:underline">Word</Link>, <Link href="/pdf-to-excel" className="text-[#14D8C4] hover:underline">Excel</Link>, or <Link href="/pdf-to-txt" className="text-[#14D8C4] hover:underline">plain text</Link> with much better results.</span>
                 </li>
               </ul>
             </section>
@@ -211,7 +211,7 @@ export default function WhatIsOCRPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Receipts and Financial Records</h3>
                   <p className="text-slate-600">
-                    Scanning receipts for expense reports or tax records? OCR lets you extract amounts and dates. If you also need to clean up phone-scanned receipts, try the <Link href="/phone-scan-cleanup" className="text-orange-600 hover:underline">Phone Scan Cleanup</Link> tool first.
+                    Scanning receipts for expense reports or tax records? OCR lets you extract amounts and dates. If you also need to clean up phone-scanned receipts, try the <Link href="/phone-scan-cleanup" className="text-[#14D8C4] hover:underline">Phone Scan Cleanup</Link> tool first.
                   </p>
                 </div>
 
@@ -225,7 +225,7 @@ export default function WhatIsOCRPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Photos of Whiteboards or Notes</h3>
                   <p className="text-slate-600">
-                    Took a photo of meeting notes on a whiteboard? Convert the image to PDF, then run OCR to extract the text. Keep in mind that <Link href="/learn/ocr-handwritten-text" className="text-orange-600 hover:underline">handwritten text</Link> is harder for OCR to read accurately.
+                    Took a photo of meeting notes on a whiteboard? Convert the image to PDF, then run OCR to extract the text. Keep in mind that <Link href="/learn/ocr-handwritten-text" className="text-[#14D8C4] hover:underline">handwritten text</Link> is harder for OCR to read accurately.
                   </p>
                 </div>
               </div>
@@ -235,17 +235,17 @@ export default function WhatIsOCRPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">How to Run OCR on PDF.it</h2>
               <p className="text-slate-600 mb-4">
-                PDF.it's <Link href="/ocr-scanner" className="text-orange-600 hover:underline">OCR Scanner</Link> is a Pro feature that converts scanned PDFs into searchable documents. Here is what you get:
+                PDF.it's <Link href="/ocr-scanner" className="text-[#14D8C4] hover:underline">OCR Scanner</Link> is a Pro feature that converts scanned PDFs into searchable documents. Here is what you get:
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; Upload any scanned PDF — the tool detects image-only pages automatically.</li>
                 <li>&#10003; Select the document language for better recognition accuracy.</li>
                 <li>&#10003; Download a searchable PDF with an invisible text layer on top of the original scan.</li>
                 <li>&#10003; Process files up to 200MB with a Pro subscription ($3.99/month).</li>
-                <li>&#10003; After OCR, use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> if the file is too large for email or upload portals.</li>
+                <li>&#10003; After OCR, use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> if the file is too large for email or upload portals.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                OCR Scanner is available on the <Link href="/pricing" className="text-orange-600 hover:underline">Pro and Business plans</Link>. Free users can explore all other PDF.it tools with generous daily limits.
+                OCR Scanner is available on the <Link href="/pricing" className="text-[#14D8C4] hover:underline">Pro and Business plans</Link>. Free users can explore all other PDF.it tools with generous daily limits.
               </p>
             </section>
 
@@ -259,7 +259,7 @@ export default function WhatIsOCRPage() {
             <p className="text-slate-300 mb-6">Upload a scanned PDF and let OCR Scanner extract every word — so you can search, copy, and edit your documents.</p>
             <Link
               href="/ocr-scanner"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <ScanText className="h-5 w-5" /> Try OCR Scanner (Pro)
             </Link>
@@ -281,10 +281,10 @@ export default function WhatIsOCRPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

@@ -91,7 +91,7 @@ export default function CopiarTextoDePdfANotasPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF a Texto</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF a Texto</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Cómo Copiar Texto de un PDF a Notas o Documentos (Limpiamente)</h1>
               <p className="text-xl text-slate-300">
                 Intentaste Ctrl+C, Ctrl+V y obtuviste un desastre de líneas rotas, espacios aleatorios y párrafos fusionados. Aquí te explicamos por qué — y cómo obtener texto limpio siempre.
@@ -101,17 +101,17 @@ export default function CopiarTextoDePdfANotasPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileText className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">¿Necesitas texto limpio ahora? Salta la guía y extráelo al instante.</p>
             </div>
             <Link
               href="/es/pdf-a-texto"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               PDF a TXT Ahora <ArrowRight className="h-4 w-4" />
             </Link>
@@ -133,23 +133,23 @@ export default function CopiarTextoDePdfANotasPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Saltos de línea donde no deberían estar.</strong> Los PDFs almacenan cada línea por separado. Al pegar, cada línea visual se convierte en un salto de línea forzado — así que un párrafo se convierte en docenas de líneas cortas.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Las columnas se fusionan.</strong> Los diseños de dos columnas se pegan como líneas alternadas de cada columna, haciendo el texto ilegible.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Encabezados y pies de página se mezclan.</strong> Números de página, encabezados y notas al pie aparecen en medio de tu texto.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>El formato oculto se transfiere.</strong> Al pegar en Google Docs o Word, estilos de fuente invisibles, tamaños y colores del PDF crean formato inconsistente.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Los caracteres especiales se rompen.</strong> Ligaduras (fi, fl), comillas tipográficas y guiones largos a menudo se pegan como caracteres ilegibles o signos de interrogación.</span>
                 </li>
               </ul>
@@ -159,7 +159,7 @@ export default function CopiarTextoDePdfANotasPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-6">La Forma Limpia: Convierte PDF a TXT Primero</h2>
               <p className="text-slate-600 mb-4">
-                En lugar de luchar con copiar y pegar, convierte todo el PDF a un archivo TXT limpio usando la <Link href="/es/pdf-a-texto" className="text-orange-600 hover:underline">herramienta PDF a TXT de PDF.it</Link>. Este enfoque te da texto correctamente ordenado sin formato oculto:
+                En lugar de luchar con copiar y pegar, convierte todo el PDF a un archivo TXT limpio usando la <Link href="/es/pdf-a-texto" className="text-[#14D8C4] hover:underline">herramienta PDF a TXT de PDF.it</Link>. Este enfoque te da texto correctamente ordenado sin formato oculto:
               </p>
               <div className="space-y-4">
                 {[
@@ -177,7 +177,7 @@ export default function CopiarTextoDePdfANotasPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -220,7 +220,7 @@ export default function CopiarTextoDePdfANotasPage() {
                 </table>
               </div>
               <p className="text-slate-600 mt-4 text-sm">
-                Esto ayuda con el formato pero no arregla saltos de línea rotos o mezcla de columnas. Para un resultado verdaderamente limpio, usa <Link href="/es/pdf-a-texto" className="text-orange-600 hover:underline">PDF a TXT</Link>.
+                Esto ayuda con el formato pero no arregla saltos de línea rotos o mezcla de columnas. Para un resultado verdaderamente limpio, usa <Link href="/es/pdf-a-texto" className="text-[#14D8C4] hover:underline">PDF a TXT</Link>.
               </p>
             </section>
 
@@ -234,21 +234,21 @@ export default function CopiarTextoDePdfANotasPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">¿Necesitas editar el diseño del documento?</h3>
                   <p className="text-slate-600">
-                    Usa <Link href="/es/pdf-a-word" className="text-orange-600 hover:underline">PDF a Word</Link> para obtener un archivo .docx editable que preserve tablas, imágenes, encabezados y formato. Luego puedes editarlo en Word o Google Docs.
+                    Usa <Link href="/es/pdf-a-word" className="text-[#14D8C4] hover:underline">PDF a Word</Link> para obtener un archivo .docx editable que preserve tablas, imágenes, encabezados y formato. Luego puedes editarlo en Word o Google Docs.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">¿Necesitas extraer una tabla a una hoja de cálculo?</h3>
                   <p className="text-slate-600">
-                    Usa <Link href="/es/pdf-a-excel" className="text-orange-600 hover:underline">PDF a Excel</Link> para convertir tablas directamente al formato de hoja de cálculo con filas y columnas intactas.
+                    Usa <Link href="/es/pdf-a-excel" className="text-[#14D8C4] hover:underline">PDF a Excel</Link> para convertir tablas directamente al formato de hoja de cálculo con filas y columnas intactas.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">¿No puedes seleccionar nada de texto?</h3>
                   <p className="text-slate-600">
-                    Tu PDF probablemente es una imagen escaneada. Usa <Link href="/es/escaner-ocr" className="text-orange-600 hover:underline">Escáner OCR</Link> para convertir las páginas escaneadas en texto seleccionable y copiable.
+                    Tu PDF probablemente es una imagen escaneada. Usa <Link href="/es/escaner-ocr" className="text-[#14D8C4] hover:underline">Escáner OCR</Link> para convertir las páginas escaneadas en texto seleccionable y copiable.
                   </p>
                 </div>
               </div>
@@ -261,7 +261,7 @@ export default function CopiarTextoDePdfANotasPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Google Docs</h3>
                   <p className="text-slate-600">
-                    Google Docs puede abrir PDFs directamente (Archivo &gt; Abrir), pero el resultado a menudo es desordenado. Para texto limpio, convierte a TXT primero con <Link href="/es/pdf-a-texto" className="text-orange-600 hover:underline">PDF a TXT</Link>, luego pega en un documento nuevo.
+                    Google Docs puede abrir PDFs directamente (Archivo &gt; Abrir), pero el resultado a menudo es desordenado. Para texto limpio, convierte a TXT primero con <Link href="/es/pdf-a-texto" className="text-[#14D8C4] hover:underline">PDF a TXT</Link>, luego pega en un documento nuevo.
                   </p>
                 </div>
 
@@ -275,7 +275,7 @@ export default function CopiarTextoDePdfANotasPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Microsoft Word</h3>
                   <p className="text-slate-600">
-                    Word puede abrir PDFs directamente pero a menudo malinterpreta los diseños. Para una conversión más limpia, usa <Link href="/es/pdf-a-word" className="text-orange-600 hover:underline">PDF a Word</Link> que produce mejores resultados que el convertidor integrado de Word.
+                    Word puede abrir PDFs directamente pero a menudo malinterpreta los diseños. Para una conversión más limpia, usa <Link href="/es/pdf-a-word" className="text-[#14D8C4] hover:underline">PDF a Word</Link> que produce mejores resultados que el convertidor integrado de Word.
                   </p>
                 </div>
               </div>
@@ -291,7 +291,7 @@ export default function CopiarTextoDePdfANotasPage() {
             <p className="text-slate-300 mb-6">Deja de luchar con copiar y pegar. Convierte tu PDF a texto limpio en segundos — gratis, sin registro.</p>
             <Link
               href="/es/pdf-a-texto"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileText className="h-5 w-5" /> PDF a TXT Ahora
             </Link>
@@ -311,10 +311,10 @@ export default function CopiarTextoDePdfANotasPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

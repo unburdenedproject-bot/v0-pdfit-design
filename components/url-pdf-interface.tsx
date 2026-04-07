@@ -241,7 +241,7 @@ export function UrlPdfInterface() {
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Button
                   onClick={handleDownload}
-                  className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3 rounded-xl inline-flex items-center gap-2"
+                  className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold px-8 py-3 rounded-xl inline-flex items-center gap-2"
                 >
                   <Download className="h-4 w-4" />
                   {labels.download}
@@ -269,7 +269,7 @@ export function UrlPdfInterface() {
                     value={url}
                     onChange={(e) => setUrl(e.target.value)}
                     placeholder={labels.urlPlaceholder}
-                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 text-slate-800"
+                    className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-[#14D8C4] focus:border-[#14D8C4] text-slate-800"
                   />
                 </div>
                 <p className="text-xs text-slate-400 mt-2">
@@ -288,7 +288,7 @@ export function UrlPdfInterface() {
               {/* Processing */}
               {isProcessing && (
                 <div className="mb-6 flex items-center gap-3">
-                  <Loader2 className="h-5 w-5 text-orange-500 animate-spin" />
+                  <Loader2 className="h-5 w-5 text-[#14D8C4] animate-spin" />
                   <span className="text-sm font-medium text-slate-700">
                     {labels.converting}
                   </span>
@@ -298,7 +298,7 @@ export function UrlPdfInterface() {
               {/* Convert Button */}
               <Button
                 onClick={handleProcess}
-                className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-xl text-lg"
+                className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 rounded-xl text-lg"
                 disabled={isProcessing || !url}
               >
                 <Globe className="h-5 w-5 mr-2" />

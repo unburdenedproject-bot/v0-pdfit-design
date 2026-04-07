@@ -91,7 +91,7 @@ export default function MarcaDeAguaPDFEnMovilPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Marca de Agua PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Marca de Agua PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Agregar una Marca de Agua a un PDF en Tu Telefono (iPhone y Android)</h1>
               <p className="text-xl text-slate-300">
                 Necesitas agregar una marca de agua a un PDF pero no tienes tu computadora? PDF.it funciona en cualquier navegador movil — sin necesidad de descargar aplicaciones. Aqui te explicamos como estampar un PDF desde tu telefono en menos de un minuto.
@@ -101,17 +101,17 @@ export default function MarcaDeAguaPDFEnMovilPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Stamp className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">En tu telefono ahora mismo? Ve directo a la herramienta.</p>
             </div>
             <Link
               href="/es/marca-de-agua-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Marca de Agua PDF Ahora <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function MarcaDeAguaPDFEnMovilPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Correo electronico urgente mientras viajas.</strong> Un cliente necesita una propuesta marcada como BORRADOR antes de una reunion, y estas en un tren o en un aeropuerto. Agrega la marca de agua desde tu telefono y enviala inmediatamente.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Marcar documentos en un sitio de trabajo.</strong> Gerentes de construccion, agentes inmobiliarios e ingenieros de campo a menudo necesitan estampar documentos como CONFIDENCIAL o agregar un logo de empresa mientras estan en el lugar.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Requisitos de envio de ultimo minuto.</strong> Te diste cuenta de que un documento necesita una marca de agua justo antes de una fecha limite, y tu laptop no esta disponible. El navegador de tu telefono es todo lo que necesitas.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Trabajar desde una tablet.</strong> iPads y tablets Android funcionan igual de bien. La interfaz responsiva se adapta a pantallas mas grandes, dandote una experiencia cercana al escritorio.</span>
                 </li>
               </ul>
@@ -152,7 +152,7 @@ export default function MarcaDeAguaPDFEnMovilPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-6">Como Agregar una Marca de Agua a un PDF en Tu Telefono (Paso a Paso)</h2>
               <p className="text-slate-600 mb-4">
-                Marca de Agua PDF esta disponible para usuarios Pro y Business. <Link href="/es/precios" className="text-orange-600 hover:underline">Ver precios</Link> para mas detalles.
+                Marca de Agua PDF esta disponible para usuarios Pro y Business. <Link href="/es/precios" className="text-[#14D8C4] hover:underline">Ver precios</Link> para mas detalles.
               </p>
               <div className="space-y-4">
                 {[
@@ -170,7 +170,7 @@ export default function MarcaDeAguaPDFEnMovilPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -217,14 +217,14 @@ export default function MarcaDeAguaPDFEnMovilPage() {
                 PDF.it esta disenado para funcionar completamente en movil con todas sus herramientas, no solo marcas de agua. Aqui hay algunas herramientas que combinan bien con marcas de agua en tu telefono:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Aplana tu marca de agua.</strong> Despues de agregar la marca de agua, usa <Link href="/es/aplanar-pdf" className="text-orange-600 hover:underline">Aplanar PDF</Link> en tu telefono para hacer la marca de agua permanente — todo desde la misma sesion del navegador.</li>
-                <li>&#10003; <strong>Comprime antes de enviar por correo.</strong> Los PDF grandes pueden ser lentos de enviar desde movil. Usa <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> para reducir el tamano del archivo antes de adjuntarlo a un correo.</li>
-                <li>&#10003; <strong>Protege con contrasena.</strong> Agrega una capa extra de seguridad con <Link href="/es/proteger-pdf" className="text-orange-600 hover:underline">Proteger PDF</Link> — establece una contrasena de apertura o restringe la edicion e impresion.</li>
-                <li>&#10003; <strong>Une documentos.</strong> Necesitas combinar un documento marcado con otros archivos? Usa <Link href="/es/unir-pdf" className="text-orange-600 hover:underline">Unir PDF</Link> directamente desde tu telefono.</li>
-                <li>&#10003; <strong>Limpia escaneos de telefono.</strong> Si escaneaste un documento con la camara de tu telefono, usa <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> para mejorar la calidad de imagen antes de agregar la marca de agua.</li>
+                <li>&#10003; <strong>Aplana tu marca de agua.</strong> Despues de agregar la marca de agua, usa <Link href="/es/aplanar-pdf" className="text-[#14D8C4] hover:underline">Aplanar PDF</Link> en tu telefono para hacer la marca de agua permanente — todo desde la misma sesion del navegador.</li>
+                <li>&#10003; <strong>Comprime antes de enviar por correo.</strong> Los PDF grandes pueden ser lentos de enviar desde movil. Usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para reducir el tamano del archivo antes de adjuntarlo a un correo.</li>
+                <li>&#10003; <strong>Protege con contrasena.</strong> Agrega una capa extra de seguridad con <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link> — establece una contrasena de apertura o restringe la edicion e impresion.</li>
+                <li>&#10003; <strong>Une documentos.</strong> Necesitas combinar un documento marcado con otros archivos? Usa <Link href="/es/unir-pdf" className="text-[#14D8C4] hover:underline">Unir PDF</Link> directamente desde tu telefono.</li>
+                <li>&#10003; <strong>Limpia escaneos de telefono.</strong> Si escaneaste un documento con la camara de tu telefono, usa <Link href="/es/limpiar-escaneo" className="text-[#14D8C4] hover:underline">Limpieza de Escaneo de Telefono</Link> para mejorar la calidad de imagen antes de agregar la marca de agua.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Para las mejores practicas sobre configuraciones de marca de agua como opacidad y ubicacion, consulta nuestra <Link href="/es/aprender/marca-de-agua-pdf-mejores-practicas" className="text-orange-600 hover:underline">guia de mejores practicas de marcas de agua</Link>.
+                Para las mejores practicas sobre configuraciones de marca de agua como opacidad y ubicacion, consulta nuestra <Link href="/es/aprender/marca-de-agua-pdf-mejores-practicas" className="text-[#14D8C4] hover:underline">guia de mejores practicas de marcas de agua</Link>.
               </p>
             </section>
 
@@ -238,7 +238,7 @@ export default function MarcaDeAguaPDFEnMovilPage() {
             <p className="text-slate-300 mb-6">Abre PDF.it en tu navegador movil, sube tu PDF y agrega una marca de agua en segundos. Sin necesidad de descargar aplicaciones. Disponible para usuarios Pro y Business.</p>
             <Link
               href="/es/marca-de-agua-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Stamp className="h-5 w-5" /> Marca de Agua PDF Ahora
             </Link>
@@ -258,10 +258,10 @@ export default function MarcaDeAguaPDFEnMovilPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

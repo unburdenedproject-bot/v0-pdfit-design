@@ -91,7 +91,7 @@ export default function ProtectPDFOnMobilePage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Protect PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Protect PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Password-Protect a PDF on Your Phone (iPhone & Android)</h1>
               <p className="text-xl text-slate-300">
                 Need to lock a PDF right from your phone? Whether you are on an iPhone or Android, you can add password protection in under a minute — no app required.
@@ -101,17 +101,17 @@ export default function ProtectPDFOnMobilePage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Shield className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">On your phone now? Go straight to the tool.</p>
             </div>
             <Link
               href="/protect-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Protect PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function ProtectPDFOnMobilePage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Sharing documents on the go.</strong> You receive a PDF via WhatsApp or email and need to forward it securely to someone else — adding a password before sharing.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Protecting phone scans.</strong> You just scanned a document with your phone camera and need to lock it before uploading to a portal or sending by email.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Quick business tasks.</strong> A client asks for a protected version of a proposal while you are away from your computer. Handle it in 60 seconds from your phone.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Travel documents.</strong> Protect passport copies, boarding passes with personal information, and hotel booking confirmations before storing them on your device.</span>
                 </li>
               </ul>
@@ -167,7 +167,7 @@ export default function ProtectPDFOnMobilePage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -189,7 +189,7 @@ export default function ProtectPDFOnMobilePage() {
                 <li>&#10003; <strong>Use Safari for the best experience.</strong> Safari integrates with the Files app, making it easy to upload PDFs from iCloud Drive, On My iPhone, or third-party cloud storage.</li>
                 <li>&#10003; <strong>Find your downloads.</strong> After downloading the protected PDF, open the Files app and go to "On My iPhone" &gt; "Downloads" to find it.</li>
                 <li>&#10003; <strong>Share directly from Files.</strong> Tap the protected PDF in Files, then use the share button to send it via Mail, Messages, WhatsApp, or AirDrop.</li>
-                <li>&#10003; <strong>Protect scanned documents.</strong> If you scanned a document using the iPhone camera or Notes app, save it as a PDF first, then upload it to PDF.it. For better scan quality, try <Link href="/phone-scan-cleanup" className="text-orange-600 hover:underline">Phone Scan Cleanup</Link> before protecting.</li>
+                <li>&#10003; <strong>Protect scanned documents.</strong> If you scanned a document using the iPhone camera or Notes app, save it as a PDF first, then upload it to PDF.it. For better scan quality, try <Link href="/phone-scan-cleanup" className="text-[#14D8C4] hover:underline">Phone Scan Cleanup</Link> before protecting.</li>
               </ul>
             </section>
 
@@ -217,25 +217,25 @@ export default function ProtectPDFOnMobilePage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Compress Before Protecting</h3>
                   <p className="text-slate-600">
-                    Mobile email apps often have stricter attachment limits. Use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> to shrink your file before adding password protection. Or go directly to <Link href="/compress-pdf-for-email" className="text-orange-600 hover:underline">Compress PDF for Email</Link> for automatic optimization.
+                    Mobile email apps often have stricter attachment limits. Use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> to shrink your file before adding password protection. Or go directly to <Link href="/compress-pdf-for-email" className="text-[#14D8C4] hover:underline">Compress PDF for Email</Link> for automatic optimization.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Clean Up Phone Scans</h3>
                   <p className="text-slate-600">
-                    Photos of documents taken with your phone camera often look unprofessional. Use <Link href="/phone-scan-cleanup" className="text-orange-600 hover:underline">Phone Scan Cleanup</Link> to straighten, brighten, and sharpen the scan, then protect the cleaned-up version.
+                    Photos of documents taken with your phone camera often look unprofessional. Use <Link href="/phone-scan-cleanup" className="text-[#14D8C4] hover:underline">Phone Scan Cleanup</Link> to straighten, brighten, and sharpen the scan, then protect the cleaned-up version.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Merge Then Protect</h3>
                   <p className="text-slate-600">
-                    Need to send multiple documents securely? Use <Link href="/merge-pdf" className="text-orange-600 hover:underline">Merge PDF</Link> to combine them into one file, then <Link href="/protect-pdf" className="text-orange-600 hover:underline">protect the merged result</Link>. One password covers all documents.
+                    Need to send multiple documents securely? Use <Link href="/merge-pdf" className="text-[#14D8C4] hover:underline">Merge PDF</Link> to combine them into one file, then <Link href="/protect-pdf" className="text-[#14D8C4] hover:underline">protect the merged result</Link>. One password covers all documents.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Unlock a Protected PDF</h3>
                   <p className="text-slate-600">
-                    Received a locked PDF and have the password? Use <Link href="/unlock-pdf" className="text-orange-600 hover:underline">Unlock PDF</Link> on your phone to remove the password and save an unprotected copy.
+                    Received a locked PDF and have the password? Use <Link href="/unlock-pdf" className="text-[#14D8C4] hover:underline">Unlock PDF</Link> on your phone to remove the password and save an unprotected copy.
                   </p>
                 </div>
               </div>
@@ -251,7 +251,7 @@ export default function ProtectPDFOnMobilePage() {
             <p className="text-slate-300 mb-6">Works on any phone — iPhone, Android, or tablet. No app needed, just your browser.</p>
             <Link
               href="/protect-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Shield className="h-5 w-5" /> Protect PDF Now
             </Link>
@@ -271,10 +271,10 @@ export default function ProtectPDFOnMobilePage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

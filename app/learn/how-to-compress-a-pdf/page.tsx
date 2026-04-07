@@ -91,7 +91,7 @@ export default function HowToCompressPDFPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Compress PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Compress PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">How to Compress a PDF (Reduce File Size Fast)</h1>
               <p className="text-xl text-slate-300">
                 Your PDF is too large for email, an upload portal, or a submission form. Here's how to compress it in under 30 seconds — no software, no signup.
@@ -101,17 +101,17 @@ export default function HowToCompressPDFPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Compress className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to compress? Skip the guide and go straight to the tool.</p>
             </div>
             <Link
               href="/compress-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Compress PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,20 +130,20 @@ export default function HowToCompressPDFPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Scanned pages.</strong> Each scanned page is stored as a full-page image (often 2-5MB per page). A 10-page scanned document can easily hit 20-50MB.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>High-resolution images.</strong> Photos, charts, and graphics embedded at print quality (300 DPI) take up significant space.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Embedded fonts.</strong> PDFs that include custom fonts embed the full font file, adding hundreds of KB per font.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
-                  <span><strong>Layers and annotations.</strong> Form fields, comments, and interactive elements add extra data. <Link href="/flatten-pdf" className="text-orange-600 hover:underline">Flattening your PDF</Link> removes these.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
+                  <span><strong>Layers and annotations.</strong> Form fields, comments, and interactive elements add extra data. <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">Flattening your PDF</Link> removes these.</span>
                 </li>
               </ul>
             </section>
@@ -167,7 +167,7 @@ export default function HowToCompressPDFPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -193,17 +193,17 @@ export default function HowToCompressPDFPage() {
                   </thead>
                   <tbody className="text-slate-700">
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Light</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Light</td>
                       <td className="py-3 px-4">Sharing documents where quality matters (reports, portfolios)</td>
                       <td className="py-3 px-4">Near-original</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Medium</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Medium</td>
                       <td className="py-3 px-4">Email attachments, general sharing, most upload portals</td>
                       <td className="py-3 px-4">Good — text stays sharp</td>
                     </tr>
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Extreme</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Extreme</td>
                       <td className="py-3 px-4">Strict upload limits (1MB, 2MB, 5MB), government portals, visa forms</td>
                       <td className="py-3 px-4">Reduced — images may lose detail</td>
                     </tr>
@@ -219,10 +219,10 @@ export default function HowToCompressPDFPage() {
                 If compression alone doesn't get your file small enough, try these approaches:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>✓ <strong>Split the PDF</strong> into smaller parts using <Link href="/split-pdf" className="text-orange-600 hover:underline">Split PDF</Link>, then compress each part separately.</li>
-                <li>✓ <strong>Flatten the PDF</strong> first with <Link href="/flatten-pdf" className="text-orange-600 hover:underline">Flatten PDF</Link> to remove form fields and annotations before compressing.</li>
+                <li>✓ <strong>Split the PDF</strong> into smaller parts using <Link href="/split-pdf" className="text-[#14D8C4] hover:underline">Split PDF</Link>, then compress each part separately.</li>
+                <li>✓ <strong>Flatten the PDF</strong> first with <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">Flatten PDF</Link> to remove form fields and annotations before compressing.</li>
                 <li>✓ <strong>Try Extreme compression</strong> if you haven't already — it gives the maximum size reduction.</li>
-                <li>✓ <strong>Remove unnecessary pages</strong> using <Link href="/remove-pages-from-pdf" className="text-orange-600 hover:underline">Remove Pages</Link> before compressing.</li>
+                <li>✓ <strong>Remove unnecessary pages</strong> using <Link href="/remove-pages-from-pdf" className="text-[#14D8C4] hover:underline">Remove Pages</Link> before compressing.</li>
               </ul>
             </section>
 
@@ -234,21 +234,21 @@ export default function HowToCompressPDFPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">For Email Attachments</h3>
                   <p className="text-slate-600">
-                    Gmail, Outlook, and Yahoo cap attachments at 20-25MB. Medium compression usually gets PDFs under this limit. For tighter limits, try our <Link href="/compress-pdf-for-email" className="text-orange-600 hover:underline">Compress for Email</Link> tool which is optimized for email services.
+                    Gmail, Outlook, and Yahoo cap attachments at 20-25MB. Medium compression usually gets PDFs under this limit. For tighter limits, try our <Link href="/compress-pdf-for-email" className="text-[#14D8C4] hover:underline">Compress for Email</Link> tool which is optimized for email services.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">For Upload Portals (Government, Visa, Exams)</h3>
                   <p className="text-slate-600">
-                    Many portals require PDFs under 2MB or 5MB. Use Extreme compression, and if the file is still too large, split it into individual pages first. See our dedicated tools for <Link href="/compress-pdf-to-2mb" className="text-orange-600 hover:underline">2MB limits</Link> and <Link href="/compress-pdf-to-5mb" className="text-orange-600 hover:underline">5MB limits</Link>.
+                    Many portals require PDFs under 2MB or 5MB. Use Extreme compression, and if the file is still too large, split it into individual pages first. See our dedicated tools for <Link href="/compress-pdf-to-2mb" className="text-[#14D8C4] hover:underline">2MB limits</Link> and <Link href="/compress-pdf-to-5mb" className="text-[#14D8C4] hover:underline">5MB limits</Link>.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">For Scanned Documents</h3>
                   <p className="text-slate-600">
-                    Scanned PDFs compress dramatically because they're mostly images. Extreme compression can reduce a 20MB scanned document to 2-4MB while keeping text readable. See <Link href="/compress-scanned-pdf" className="text-orange-600 hover:underline">Compress Scanned PDF</Link> for more tips.
+                    Scanned PDFs compress dramatically because they're mostly images. Extreme compression can reduce a 20MB scanned document to 2-4MB while keeping text readable. See <Link href="/compress-scanned-pdf" className="text-[#14D8C4] hover:underline">Compress Scanned PDF</Link> for more tips.
                   </p>
                 </div>
               </div>
@@ -264,7 +264,7 @@ export default function HowToCompressPDFPage() {
             <p className="text-slate-300 mb-6">Upload your file and reduce the size in seconds — free, no signup required.</p>
             <Link
               href="/compress-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Compress className="h-5 w-5" /> Compress PDF Now
             </Link>
@@ -285,10 +285,10 @@ export default function HowToCompressPDFPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

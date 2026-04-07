@@ -44,20 +44,20 @@ export default function DicasPrecisaoOCRPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / OCR PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / OCR PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Dicas para Melhorar a Precisao do OCR</h1>
               <p className="text-xl text-slate-300">Obtenha os melhores resultados de reconhecimento de texto com estas dicas praticas. Da digitalizacao ao processamento, cada detalhe faz diferenca na precisao.</p>
             </div>
           </div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><ScanText className="h-5 w-5 text-white" /></div>
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><ScanText className="h-5 w-5 text-white" /></div>
               <p className="text-slate-700 font-semibold">Aplique OCR com maxima precisao.</p>
             </div>
-            <Link href="/br/scanner-ocr" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Scanner OCR <ArrowRight className="h-4 w-4" /></Link>
+            <Link href="/br/scanner-ocr" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Scanner OCR <ArrowRight className="h-4 w-4" /></Link>
           </div>
         </section>
 
@@ -91,9 +91,9 @@ export default function DicasPrecisaoOCRPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Dica 2: Contraste e Iluminacao</h2>
               <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Texto escuro em fundo claro</strong> e a combinacao ideal. Evite papel colorido escuro ou texto em cor clara.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Iluminacao uniforme</strong> ao digitalizar com celular. Sombras no documento prejudicam o reconhecimento.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Limpeza de Digitalizacao</strong> do PDF.it pode <Link href="/br/limpeza-digitalizacao" className="text-orange-600 hover:underline">melhorar o contraste automaticamente</Link> se a digitalizacao ficou escura ou com sombras.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Texto escuro em fundo claro</strong> e a combinacao ideal. Evite papel colorido escuro ou texto em cor clara.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Iluminacao uniforme</strong> ao digitalizar com celular. Sombras no documento prejudicam o reconhecimento.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Limpeza de Digitalizacao</strong> do PDF.it pode <Link href="/br/limpeza-digitalizacao" className="text-[#14D8C4] hover:underline">melhorar o contraste automaticamente</Link> se a digitalizacao ficou escura ou com sombras.</span></li>
               </ul>
             </section>
 
@@ -122,7 +122,7 @@ export default function DicasPrecisaoOCRPage() {
               <div className="space-y-6">
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">Remova Grampos e Dobras</h3><p className="text-slate-600">Grampos criam sombras e dobras distorcem o texto. Remova-os antes de digitalizar para uma imagem mais limpa.</p></div>
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">Vidro do Scanner Limpo</h3><p className="text-slate-600">Poeira e manchas no vidro do scanner aparecem como ruido na digitalizacao e podem ser confundidas com caracteres pelo OCR.</p></div>
-                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Documentos Antigos ou Desbotados</h3><p className="text-slate-600">Use 600 DPI, digitalize em escala de cinza e aplique <Link href="/br/limpeza-digitalizacao" className="text-orange-600 hover:underline">Limpeza de Digitalizacao</Link> para maximizar o contraste antes do OCR.</p></div>
+                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Documentos Antigos ou Desbotados</h3><p className="text-slate-600">Use 600 DPI, digitalize em escala de cinza e aplique <Link href="/br/limpeza-digitalizacao" className="text-[#14D8C4] hover:underline">Limpeza de Digitalizacao</Link> para maximizar o contraste antes do OCR.</p></div>
               </div>
             </section>
 
@@ -144,7 +144,7 @@ export default function DicasPrecisaoOCRPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Aplique OCR com Maxima Precisao</h2>
             <p className="text-slate-300 mb-6">Use estas dicas e obtenha resultados de reconhecimento quase perfeitos.</p>
-            <Link href="/br/scanner-ocr" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><ScanText className="h-5 w-5" /> Scanner OCR (Pro)</Link>
+            <Link href="/br/scanner-ocr" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><ScanText className="h-5 w-5" /> Scanner OCR (Pro)</Link>
           </div>
         </section>
 
@@ -159,9 +159,9 @@ export default function DicasPrecisaoOCRPage() {
                 { title: "OCR para Texto Manuscrito", href: "/br/aprender/ocr-texto-manuscrito" },
                 { title: "OCR de PDF no Celular", href: "/br/aprender/ocr-pdf-no-celular" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

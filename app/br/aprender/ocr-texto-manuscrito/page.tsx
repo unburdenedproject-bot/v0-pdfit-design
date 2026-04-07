@@ -44,20 +44,20 @@ export default function OCRTextoManuscritoPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / OCR PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / OCR PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">OCR para Texto Manuscrito</h1>
               <p className="text-xl text-slate-300">O OCR pode ler letra de mao? Descubra quando funciona, quais sao as limitacoes e como obter os melhores resultados possiveis com documentos manuscritos.</p>
             </div>
           </div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><ScanText className="h-5 w-5 text-white" /></div>
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><ScanText className="h-5 w-5 text-white" /></div>
               <p className="text-slate-700 font-semibold">Experimente o Scanner OCR do PDF.it.</p>
             </div>
-            <Link href="/br/scanner-ocr" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Scanner OCR <ArrowRight className="h-4 w-4" /></Link>
+            <Link href="/br/scanner-ocr" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Scanner OCR <ArrowRight className="h-4 w-4" /></Link>
           </div>
         </section>
 
@@ -74,20 +74,20 @@ export default function OCRTextoManuscritoPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Quando o OCR Funciona Bem em Manuscrito</h2>
               <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#10003;</span><span><strong>Letras de forma (maiusculas)</strong> — Letras separadas e bem definidas sao muito mais faceis de reconhecer do que cursiva.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#10003;</span><span><strong>Caneta escura em papel branco</strong> — Bom contraste e essencial para o reconhecimento.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#10003;</span><span><strong>Espacamento consistente</strong> — Palavras e letras bem separadas facilitam a identificacao individual.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#10003;</span><span><strong>Formularios preenchidos</strong> — Campos com texto manuscrito em formularios impressos geralmente funcionam bem.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#10003;</span><span><strong>Letras de forma (maiusculas)</strong> — Letras separadas e bem definidas sao muito mais faceis de reconhecer do que cursiva.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#10003;</span><span><strong>Caneta escura em papel branco</strong> — Bom contraste e essencial para o reconhecimento.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#10003;</span><span><strong>Espacamento consistente</strong> — Palavras e letras bem separadas facilitam a identificacao individual.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#10003;</span><span><strong>Formularios preenchidos</strong> — Campos com texto manuscrito em formularios impressos geralmente funcionam bem.</span></li>
               </ul>
             </section>
 
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Quando o OCR Tem Dificuldade</h2>
               <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#10007;</span><span><strong>Letra cursiva conectada</strong> — Letras que se conectam sao dificeis de separar e identificar individualmente.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#10007;</span><span><strong>Caligrafia medica</strong> — Abreviacoes, velocidade e estilo pessoal tornam quase impossivel para OCR automatico.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#10007;</span><span><strong>Caneta clara ou lapis</strong> — Baixo contraste reduz drasticamente a precisao.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#10007;</span><span><strong>Papel pautado ou quadriculado</strong> — As linhas do papel podem confundir o motor OCR.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#10007;</span><span><strong>Letra cursiva conectada</strong> — Letras que se conectam sao dificeis de separar e identificar individualmente.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#10007;</span><span><strong>Caligrafia medica</strong> — Abreviacoes, velocidade e estilo pessoal tornam quase impossivel para OCR automatico.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#10007;</span><span><strong>Caneta clara ou lapis</strong> — Baixo contraste reduz drasticamente a precisao.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#10007;</span><span><strong>Papel pautado ou quadriculado</strong> — As linhas do papel podem confundir o motor OCR.</span></li>
               </ul>
             </section>
 
@@ -101,7 +101,7 @@ export default function OCRTextoManuscritoPage() {
                   { title: "Revise manualmente o resultado", desc: "Sempre revise o texto reconhecido. Corrija erros, especialmente em nomes proprios, numeros e termos tecnicos." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                   </div>
                 ))}
@@ -124,7 +124,7 @@ export default function OCRTextoManuscritoPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Experimente o OCR Agora</h2>
             <p className="text-slate-300 mb-6">Funciona melhor com texto impresso, mas vale testar com manuscrito tambem.</p>
-            <Link href="/br/scanner-ocr" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><ScanText className="h-5 w-5" /> Scanner OCR (Pro)</Link>
+            <Link href="/br/scanner-ocr" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><ScanText className="h-5 w-5" /> Scanner OCR (Pro)</Link>
           </div>
         </section>
 
@@ -138,9 +138,9 @@ export default function OCRTextoManuscritoPage() {
                 { title: "OCR para Documento Digitalizado", href: "/br/aprender/ocr-documento-digitalizado" },
                 { title: "OCR de PDF no Celular", href: "/br/aprender/ocr-pdf-no-celular" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

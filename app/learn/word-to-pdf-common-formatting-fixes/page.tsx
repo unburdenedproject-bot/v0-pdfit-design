@@ -91,7 +91,7 @@ export default function WordToPdfFormattingFixesPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Word to PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Word to PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Word to PDF Formatting Changed? Fix These 7 Causes</h1>
               <p className="text-xl text-slate-300">
                 You converted your Word document to PDF and the formatting is wrong — fonts changed, tables broke, images moved. Here are the 7 most common causes and the exact fix for each one.
@@ -101,17 +101,17 @@ export default function WordToPdfFormattingFixesPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileText className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Need a reliable converter? PDF.it preserves formatting accurately.</p>
             </div>
             <Link
               href="/word-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Word to PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -221,7 +221,7 @@ export default function WordToPdfFormattingFixesPage() {
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; Insert links properly: select text &gt; right-click &gt; Hyperlink (or Ctrl+K) &gt; paste URL.</li>
                 <li>&#10003; Don't just paste URLs as text and rely on auto-linking.</li>
-                <li>&#10003; Use <Link href="/word-to-pdf" className="text-orange-600 hover:underline">PDF.it's Word to PDF tool</Link> instead of "Print to PDF" — it preserves hyperlinks.</li>
+                <li>&#10003; Use <Link href="/word-to-pdf" className="text-[#14D8C4] hover:underline">PDF.it's Word to PDF tool</Link> instead of "Print to PDF" — it preserves hyperlinks.</li>
               </ul>
             </section>
 
@@ -255,31 +255,31 @@ export default function WordToPdfFormattingFixesPage() {
                   </thead>
                   <tbody className="text-slate-700">
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Missing fonts</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Missing fonts</td>
                       <td className="py-3 px-4">Use standard fonts or embed custom ones</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Broken tables</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Broken tables</td>
                       <td className="py-3 px-4">Set fixed column widths, avoid nesting</td>
                     </tr>
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Header/footer shifts</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Header/footer shifts</td>
                       <td className="py-3 px-4">Keep layouts simple, set explicit distances</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Blurry images</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Blurry images</td>
                       <td className="py-3 px-4">Disable Word compression, insert at correct size</td>
                     </tr>
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Margin changes</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Margin changes</td>
                       <td className="py-3 px-4">Set custom margins with exact values</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Dead hyperlinks</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Dead hyperlinks</td>
                       <td className="py-3 px-4">Insert with Ctrl+K, don't paste as text</td>
                     </tr>
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Page break shifts</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Page break shifts</td>
                       <td className="py-3 px-4">Insert manual page breaks, fix fonts first</td>
                     </tr>
                   </tbody>
@@ -294,7 +294,7 @@ export default function WordToPdfFormattingFixesPage() {
                 If you've tried the fixes above and your PDF still doesn't match your Word document, consider these additional steps:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Flatten the PDF</strong> after conversion using <Link href="/flatten-pdf" className="text-orange-600 hover:underline">Flatten PDF</Link> to lock all elements in place and remove any interactive layers.</li>
+                <li>&#10003; <strong>Flatten the PDF</strong> after conversion using <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">Flatten PDF</Link> to lock all elements in place and remove any interactive layers.</li>
                 <li>&#10003; <strong>Try converting from a different Word version.</strong> Word 365 (online) sometimes produces different output than Word 2019 or 2016. Save the file, re-open it, and try converting again.</li>
                 <li>&#10003; <strong>Simplify the document.</strong> The more complex your layout (multiple columns, text boxes, SmartArt, embedded objects), the more likely something will shift. Simplify where you can.</li>
               </ul>
@@ -310,7 +310,7 @@ export default function WordToPdfFormattingFixesPage() {
             <p className="text-slate-300 mb-6">PDF.it handles fonts, tables, images, and layout accurately. Try it free.</p>
             <Link
               href="/word-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileText className="h-5 w-5" /> Word to PDF Now
             </Link>
@@ -331,10 +331,10 @@ export default function WordToPdfFormattingFixesPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

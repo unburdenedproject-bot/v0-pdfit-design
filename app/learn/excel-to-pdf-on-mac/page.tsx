@@ -91,7 +91,7 @@ export default function ExcelToPDFOnMacPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Excel to PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Excel to PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convert Excel to PDF on Mac (Quick, Reliable Workflow)</h1>
               <p className="text-xl text-slate-300">
                 Converting Excel to PDF on a Mac can produce unexpected results — different fonts, shifted columns, odd page breaks. Here's how to get clean, consistent PDFs every time.
@@ -101,17 +101,17 @@ export default function ExcelToPDFOnMacPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileSpreadsheet className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Skip the Mac quirks — convert online for consistent results.</p>
             </div>
             <Link
               href="/excel-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Excel to PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -168,7 +168,7 @@ export default function ExcelToPDFOnMacPage() {
                     For the most consistent results:
                   </p>
                   <ol className="space-y-1 text-slate-700 list-decimal list-inside ml-2">
-                    <li>Open Safari or Chrome and go to <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">PDF.it's Excel to PDF tool</Link></li>
+                    <li>Open Safari or Chrome and go to <Link href="/excel-to-pdf" className="text-[#14D8C4] hover:underline">PDF.it's Excel to PDF tool</Link></li>
                     <li>Upload your .xlsx file</li>
                     <li>Click Convert and download the PDF</li>
                   </ol>
@@ -190,7 +190,7 @@ export default function ExcelToPDFOnMacPage() {
                     If your Excel file was created on Windows using fonts like Calibri or Cambria, Mac may substitute different fonts. This changes column widths and can push data off the page.
                   </p>
                   <p className="text-slate-700">
-                    <strong>Fix:</strong> Use cross-platform fonts (Arial, Times New Roman, Verdana, Tahoma) in your spreadsheet. Or convert online with <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">PDF.it</Link>, which uses its own font library for consistent rendering.
+                    <strong>Fix:</strong> Use cross-platform fonts (Arial, Times New Roman, Verdana, Tahoma) in your spreadsheet. Or convert online with <Link href="/excel-to-pdf" className="text-[#14D8C4] hover:underline">PDF.it</Link>, which uses its own font library for consistent rendering.
                   </p>
                 </div>
 
@@ -210,7 +210,7 @@ export default function ExcelToPDFOnMacPage() {
                     Some advanced Excel features behave differently on Mac — particularly complex charts, pivot tables with custom formatting, and VBA macros.
                   </p>
                   <p className="text-slate-700">
-                    <strong>Fix:</strong> For complex spreadsheets, upload to <Link href="/office-to-pdf" className="text-orange-600 hover:underline">PDF.it's Office to PDF converter</Link>, which handles these features server-side.
+                    <strong>Fix:</strong> For complex spreadsheets, upload to <Link href="/office-to-pdf" className="text-[#14D8C4] hover:underline">PDF.it's Office to PDF converter</Link>, which handles these features server-side.
                   </p>
                 </div>
 
@@ -236,7 +236,7 @@ export default function ExcelToPDFOnMacPage() {
                 <li>✓ <strong>Use standard fonts</strong> — Arial, Times New Roman, and Verdana are safe choices that render identically on both platforms.</li>
                 <li>✓ <strong>Set explicit column widths</strong> — Don't rely on auto-fit, which calculates differently on each platform. Set fixed pixel widths for important columns.</li>
                 <li>✓ <strong>Define the print area</strong> — This removes ambiguity about which cells to include in the PDF.</li>
-                <li>✓ <strong>Use an online converter</strong> — <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">PDF.it</Link> processes files server-side, producing identical output regardless of whether you upload from Mac, Windows, or mobile.</li>
+                <li>✓ <strong>Use an online converter</strong> — <Link href="/excel-to-pdf" className="text-[#14D8C4] hover:underline">PDF.it</Link> processes files server-side, producing identical output regardless of whether you upload from Mac, Windows, or mobile.</li>
                 <li>✓ <strong>Test with Print Preview</strong> — Always check Cmd+P before converting locally to catch layout issues early.</li>
               </ul>
             </section>
@@ -248,7 +248,7 @@ export default function ExcelToPDFOnMacPage() {
                 You don't need Microsoft Excel to convert .xlsx files to PDF. Here are your options:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>✓ <strong>PDF.it online</strong> — Upload the .xlsx file directly at <Link href="/excel-to-pdf" className="text-orange-600 hover:underline">Excel to PDF</Link>. No software needed.</li>
+                <li>✓ <strong>PDF.it online</strong> — Upload the .xlsx file directly at <Link href="/excel-to-pdf" className="text-[#14D8C4] hover:underline">Excel to PDF</Link>. No software needed.</li>
                 <li>✓ <strong>Apple Numbers</strong> — Free on every Mac. Open the .xlsx file in Numbers, then go to File → Export To → PDF.</li>
                 <li>✓ <strong>Google Sheets</strong> — Upload to Google Drive, open in Sheets, then File → Download → PDF. Formatting may shift slightly.</li>
               </ul>
@@ -261,7 +261,7 @@ export default function ExcelToPDFOnMacPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">After Converting: Compress or Share</h2>
               <p className="text-slate-600">
-                Once you have your PDF, you might want to reduce its size before emailing. Use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> to shrink the file. PDFs downloaded on Mac open automatically in Preview, where you can quickly verify the output before sending.
+                Once you have your PDF, you might want to reduce its size before emailing. Use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> to shrink the file. PDFs downloaded on Mac open automatically in Preview, where you can quickly verify the output before sending.
               </p>
             </section>
 
@@ -275,7 +275,7 @@ export default function ExcelToPDFOnMacPage() {
             <p className="text-slate-300 mb-6">Upload your Excel file and get a consistent, professional PDF — works in Safari, Chrome, or any browser.</p>
             <Link
               href="/excel-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileSpreadsheet className="h-5 w-5" /> Excel to PDF Now
             </Link>
@@ -296,10 +296,10 @@ export default function ExcelToPDFOnMacPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

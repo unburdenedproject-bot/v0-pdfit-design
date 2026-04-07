@@ -33,21 +33,21 @@ export default function OfficeAPdfConvertidorPage() {
       <HeaderEs />
       <main>
         <section className="bg-[#191B4D] text-white py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-          <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Office a PDF</p>
+          <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Office a PDF</p>
           <h1 className="text-4xl lg:text-5xl font-black mb-4">Office a PDF convertidor: DOCX, XLSX, PPTX a PDF</h1>
           <p className="text-xl text-slate-300">Convierte cualquier archivo de Microsoft Office a PDF — documentos Word, hojas de calculo Excel y presentaciones PowerPoint — todo desde una sola herramienta, sin software necesario.</p>
         </div></div></section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><FileText className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Listo para convertir? Salta la guia y ve directo a la herramienta.</p></div>
-          <Link href="/es/office-a-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Office a PDF Ahora <ArrowRight className="h-4 w-4" /></Link>
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><FileText className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Listo para convertir? Salta la guia y ve directo a la herramienta.</p></div>
+          <Link href="/es/office-a-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Office a PDF Ahora <ArrowRight className="h-4 w-4" /></Link>
         </div></section>
 
         <article className="py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
           <section className="mb-12">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Que es un convertidor Office a PDF?</h2>
             <p className="text-slate-600 mb-4">Un convertidor Office a PDF toma archivos de Microsoft Office — <strong>DOCX, XLSX, PPTX</strong> (y sus equivalentes antiguos DOC, XLS, PPT) — y los convierte en documentos PDF universalmente legibles. Los PDFs se ven igual en cualquier dispositivo y no pueden ser editados accidentalmente, lo que los hace el estandar para compartir versiones finales de documentos.</p>
-            <p className="text-slate-600">El <Link href="/es/office-a-pdf" className="text-orange-600 hover:underline">convertidor Office a PDF</Link> de PDF.it maneja los tres formatos en un solo lugar. Sube un documento Word, una hoja Excel o una presentacion PowerPoint — obtendras un PDF correctamente formateado en segundos.</p>
+            <p className="text-slate-600">El <Link href="/es/office-a-pdf" className="text-[#14D8C4] hover:underline">convertidor Office a PDF</Link> de PDF.it maneja los tres formatos en un solo lugar. Sube un documento Word, una hoja Excel o una presentacion PowerPoint — obtendras un PDF correctamente formateado en segundos.</p>
           </section>
 
           <section className="mb-12">
@@ -60,9 +60,9 @@ export default function OfficeAPdfConvertidorPage() {
                   <th className="text-left py-3 px-4 font-bold">Herramienta dedicada</th>
                 </tr></thead>
                 <tbody className="text-slate-700">
-                  <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold text-orange-600">Microsoft Word</td><td className="py-3 px-4">.docx, .doc</td><td className="py-3 px-4"><Link href="/es/word-a-pdf" className="text-orange-600 hover:underline">Word a PDF</Link></td></tr>
-                  <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold text-orange-600">Microsoft Excel</td><td className="py-3 px-4">.xlsx, .xls</td><td className="py-3 px-4"><Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">Excel a PDF</Link></td></tr>
-                  <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold text-orange-600">Microsoft PowerPoint</td><td className="py-3 px-4">.pptx, .ppt</td><td className="py-3 px-4"><Link href="/es/powerpoint-a-pdf" className="text-orange-600 hover:underline">PowerPoint a PDF</Link></td></tr>
+                  <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold text-[#14D8C4]">Microsoft Word</td><td className="py-3 px-4">.docx, .doc</td><td className="py-3 px-4"><Link href="/es/word-a-pdf" className="text-[#14D8C4] hover:underline">Word a PDF</Link></td></tr>
+                  <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold text-[#14D8C4]">Microsoft Excel</td><td className="py-3 px-4">.xlsx, .xls</td><td className="py-3 px-4"><Link href="/es/excel-a-pdf" className="text-[#14D8C4] hover:underline">Excel a PDF</Link></td></tr>
+                  <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold text-[#14D8C4]">Microsoft PowerPoint</td><td className="py-3 px-4">.pptx, .ppt</td><td className="py-3 px-4"><Link href="/es/powerpoint-a-pdf" className="text-[#14D8C4] hover:underline">PowerPoint a PDF</Link></td></tr>
                 </tbody>
               </table>
             </div>
@@ -70,12 +70,12 @@ export default function OfficeAPdfConvertidorPage() {
 
           <section className="mb-12">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Convertidor todo-en-uno vs. herramientas individuales</h2>
-            <p className="text-slate-600 mb-4">PDF.it ofrece tanto una herramienta unificada <Link href="/es/office-a-pdf" className="text-orange-600 hover:underline">Office a PDF</Link> como herramientas separadas para cada formato. Aqui te decimos cuando usar cual:</p>
+            <p className="text-slate-600 mb-4">PDF.it ofrece tanto una herramienta unificada <Link href="/es/office-a-pdf" className="text-[#14D8C4] hover:underline">Office a PDF</Link> como herramientas separadas para cada formato. Aqui te decimos cuando usar cual:</p>
             <ul className="space-y-3 text-slate-700">
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Usa el convertidor todo-en-uno</strong> cuando tengas una mezcla de archivos Word, Excel y PowerPoint para convertir en un solo lote. Una carga, multiples formatos, todos convertidos a la vez.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Usa <Link href="/es/word-a-pdf" className="text-orange-600 hover:underline">Word a PDF</Link></strong> cuando necesites opciones especificas de formato Word o quieras ajustar margenes y diseno.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Usa <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">Excel a PDF</Link></strong> cuando necesites controlar el ajuste de pagina, anchos de columna u orientacion horizontal para hojas anchas.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Usa <Link href="/es/powerpoint-a-pdf" className="text-orange-600 hover:underline">PowerPoint a PDF</Link></strong> cuando quieras control sobre el diseno de diapositivas, formato de folletos o paginas de notas.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span><strong>Usa el convertidor todo-en-uno</strong> cuando tengas una mezcla de archivos Word, Excel y PowerPoint para convertir en un solo lote. Una carga, multiples formatos, todos convertidos a la vez.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span><strong>Usa <Link href="/es/word-a-pdf" className="text-[#14D8C4] hover:underline">Word a PDF</Link></strong> cuando necesites opciones especificas de formato Word o quieras ajustar margenes y diseno.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">3.</span><span><strong>Usa <Link href="/es/excel-a-pdf" className="text-[#14D8C4] hover:underline">Excel a PDF</Link></strong> cuando necesites controlar el ajuste de pagina, anchos de columna u orientacion horizontal para hojas anchas.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">4.</span><span><strong>Usa <Link href="/es/powerpoint-a-pdf" className="text-[#14D8C4] hover:underline">PowerPoint a PDF</Link></strong> cuando quieras control sobre el diseno de diapositivas, formato de folletos o paginas de notas.</span></li>
             </ul>
           </section>
 
@@ -88,7 +88,7 @@ export default function OfficeAPdfConvertidorPage() {
                 { title: "Descarga tu PDF", desc: "Descarga el PDF convertido. Desde aqui puedes comprimirlo, unirlo con otros archivos, agregar contrasena o compartirlo — todo dentro de PDF.it." },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                   <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                 </div>
               ))}
@@ -110,8 +110,8 @@ export default function OfficeAPdfConvertidorPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-4">Por que convertir archivos Office a PDF?</h2>
             <div className="space-y-6">
               <div><h3 className="text-lg font-bold text-slate-900 mb-2">Compatibilidad universal</h3><p className="text-slate-600">No todos tienen Microsoft Office. Los PDFs se abren en cualquier dispositivo, cualquier sistema operativo, en cualquier navegador. Tu destinatario ve exactamente lo que tu ves — sin fuentes faltantes, sin diseno desplazado.</p></div>
-              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Previene ediciones accidentales</h3><p className="text-slate-600">Enviar un documento Word invita ediciones. Los PDFs son de solo lectura por defecto, haciendolos ideales para contratos, propuestas y reportes finales. Para seguridad extra, puedes <Link href="/es/proteger-pdf" className="text-orange-600 hover:underline">agregar una contrasena</Link>.</p></div>
-              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Tamanos de archivo mas pequenos</h3><p className="text-slate-600">La conversion a PDF a menudo reduce el tamano del archivo comparado con el archivo Office original, especialmente para documentos con muchas imagenes. Si el PDF sigue siendo grande, pasalo por <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> para reduccion adicional.</p></div>
+              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Previene ediciones accidentales</h3><p className="text-slate-600">Enviar un documento Word invita ediciones. Los PDFs son de solo lectura por defecto, haciendolos ideales para contratos, propuestas y reportes finales. Para seguridad extra, puedes <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">agregar una contrasena</Link>.</p></div>
+              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Tamanos de archivo mas pequenos</h3><p className="text-slate-600">La conversion a PDF a menudo reduce el tamano del archivo comparado con el archivo Office original, especialmente para documentos con muchas imagenes. Si el PDF sigue siendo grande, pasalo por <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para reduccion adicional.</p></div>
             </div>
           </section>
         </div></article>
@@ -119,7 +119,7 @@ export default function OfficeAPdfConvertidorPage() {
         <section className="py-12 bg-[#191B4D]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
           <h2 className="text-2xl font-black text-white mb-3">Listo para convertir tus archivos Office?</h2>
           <p className="text-slate-300 mb-6">Sube cualquier archivo Word, Excel o PowerPoint y obtiene un PDF perfecto en segundos — gratis, sin registro.</p>
-          <Link href="/es/office-a-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><FileText className="h-5 w-5" /> Convertir a PDF Ahora</Link>
+          <Link href="/es/office-a-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><FileText className="h-5 w-5" /> Convertir a PDF Ahora</Link>
         </div></section>
 
         <section className="py-16 bg-gray-50"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -129,7 +129,7 @@ export default function OfficeAPdfConvertidorPage() {
               { title: "Convertir DOCX, XLSX y PPTX a PDF (un flujo de trabajo)", href: "/es/aprender/convertir-docx-xlsx-pptx-a-pdf" },
               { title: "Office a PDF sin cambios de diseno (soluciones comunes)", href: "/es/aprender/office-a-pdf-mantener-formato" },
               { title: "Convertir archivos Office a PDF en movil (iPhone/Android)", href: "/es/aprender/office-a-pdf-en-movil" },
-            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" /></Link>))}
+            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" /></Link>))}
           </div>
         </div></section>
 

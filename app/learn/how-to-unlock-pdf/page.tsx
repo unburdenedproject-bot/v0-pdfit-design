@@ -91,7 +91,7 @@ export default function HowToUnlockPDFPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Unlock PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Unlock PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">How to Unlock a PDF Online (Remove Restrictions)</h1>
               <p className="text-xl text-slate-300">
                 Stuck with a PDF you can&apos;t print, copy, or edit? Here&apos;s how to remove PDF restrictions in seconds — no software needed.
@@ -101,17 +101,17 @@ export default function HowToUnlockPDFPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Unlock className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to unlock? Skip the guide and go straight to the tool.</p>
             </div>
             <Link
               href="/unlock-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Unlock PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,16 +130,16 @@ export default function HowToUnlockPDFPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Open password (user password).</strong> This prevents anyone from opening the PDF without entering the correct password. You must know this password to view the file at all.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Permissions password (owner password).</strong> This lets you view the PDF but blocks specific actions like printing, copying text, editing, or annotating. This is the most common type of restriction people need to remove.</span>
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Most locked PDFs you encounter have permissions restrictions — you can open and read them, but you can&apos;t print or copy text. PDF.it&apos;s <Link href="/unlock-pdf" className="text-orange-600 hover:underline">Unlock PDF</Link> tool handles both types.
+                Most locked PDFs you encounter have permissions restrictions — you can open and read them, but you can&apos;t print or copy text. PDF.it&apos;s <Link href="/unlock-pdf" className="text-[#14D8C4] hover:underline">Unlock PDF</Link> tool handles both types.
               </p>
             </section>
 
@@ -162,7 +162,7 @@ export default function HowToUnlockPDFPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -182,24 +182,24 @@ export default function HowToUnlockPDFPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Printing for a meeting.</strong> Your colleague sent a report as a restricted PDF and you need to print copies for a presentation. Use PDF.it to remove the print restriction.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Copying text for research.</strong> Academic papers or government documents sometimes have copy restrictions. Unlock the PDF, then copy the text you need for citations.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>Editing a document you created.</strong> You set a password on a PDF months ago and now need to make changes. Upload it to the <Link href="/unlock-pdf" className="text-orange-600 hover:underline">Unlock PDF</Link> tool, enter your password, and get an editable version.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
+                  <span><strong>Editing a document you created.</strong> You set a password on a PDF months ago and now need to make changes. Upload it to the <Link href="/unlock-pdf" className="text-[#14D8C4] hover:underline">Unlock PDF</Link> tool, enter your password, and get an editable version.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Filling out forms.</strong> Some PDF forms are locked, preventing you from typing in the fields. Unlocking the PDF lets you fill in the form and save your changes.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
-                  <span><strong>Converting to another format.</strong> If you need to convert a locked PDF to Word or Excel, unlock it first with PDF.it, then use <Link href="/pdf-to-word" className="text-orange-600 hover:underline">PDF to Word</Link> or <Link href="/pdf-to-excel" className="text-orange-600 hover:underline">PDF to Excel</Link> for the conversion.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
+                  <span><strong>Converting to another format.</strong> If you need to convert a locked PDF to Word or Excel, unlock it first with PDF.it, then use <Link href="/pdf-to-word" className="text-[#14D8C4] hover:underline">PDF to Word</Link> or <Link href="/pdf-to-excel" className="text-[#14D8C4] hover:underline">PDF to Excel</Link> for the conversion.</span>
                 </li>
               </ul>
             </section>
@@ -211,11 +211,11 @@ export default function HowToUnlockPDFPage() {
                 Once your PDF is unlocked, you have full control. Here are some useful next steps:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>✓ <strong>Edit the content.</strong> Convert it to Word using <Link href="/pdf-to-word" className="text-orange-600 hover:underline">PDF to Word</Link>, make your changes, then convert back to PDF with <Link href="/word-to-pdf" className="text-orange-600 hover:underline">Word to PDF</Link>.</li>
-                <li>✓ <strong>Compress the file.</strong> If the unlocked PDF is too large for email, use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> to reduce the file size.</li>
-                <li>✓ <strong>Add new protection.</strong> Need to re-protect the file with a different password? Use <Link href="/protect-pdf" className="text-orange-600 hover:underline">Protect PDF</Link> to set your own permissions.</li>
-                <li>✓ <strong>Flatten the file.</strong> If the PDF has form fields or annotations, use <Link href="/flatten-pdf" className="text-orange-600 hover:underline">Flatten PDF</Link> to lock those elements in place before sharing.</li>
-                <li>✓ <strong>Extract images.</strong> Use <Link href="/extract-images-from-pdf" className="text-orange-600 hover:underline">Extract Images</Link> to pull out photos, charts, or diagrams from the unlocked file.</li>
+                <li>✓ <strong>Edit the content.</strong> Convert it to Word using <Link href="/pdf-to-word" className="text-[#14D8C4] hover:underline">PDF to Word</Link>, make your changes, then convert back to PDF with <Link href="/word-to-pdf" className="text-[#14D8C4] hover:underline">Word to PDF</Link>.</li>
+                <li>✓ <strong>Compress the file.</strong> If the unlocked PDF is too large for email, use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> to reduce the file size.</li>
+                <li>✓ <strong>Add new protection.</strong> Need to re-protect the file with a different password? Use <Link href="/protect-pdf" className="text-[#14D8C4] hover:underline">Protect PDF</Link> to set your own permissions.</li>
+                <li>✓ <strong>Flatten the file.</strong> If the PDF has form fields or annotations, use <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">Flatten PDF</Link> to lock those elements in place before sharing.</li>
+                <li>✓ <strong>Extract images.</strong> Use <Link href="/extract-images-from-pdf" className="text-[#14D8C4] hover:underline">Extract Images</Link> to pull out photos, charts, or diagrams from the unlocked file.</li>
               </ul>
             </section>
 
@@ -240,7 +240,7 @@ export default function HowToUnlockPDFPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">When to Use Protect Instead</h3>
                   <p className="text-slate-600">
-                    If you&apos;re creating PDFs and want to control who can print or edit them, use <Link href="/protect-pdf" className="text-orange-600 hover:underline">Protect PDF</Link> to add your own password and permissions. This gives you full control over your document security.
+                    If you&apos;re creating PDFs and want to control who can print or edit them, use <Link href="/protect-pdf" className="text-[#14D8C4] hover:underline">Protect PDF</Link> to add your own password and permissions. This gives you full control over your document security.
                   </p>
                 </div>
               </div>
@@ -256,7 +256,7 @@ export default function HowToUnlockPDFPage() {
             <p className="text-slate-300 mb-6">Remove restrictions and get full access to your document in seconds — free, no signup required.</p>
             <Link
               href="/unlock-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Unlock className="h-5 w-5" /> Unlock PDF Now
             </Link>
@@ -276,10 +276,10 @@ export default function HowToUnlockPDFPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

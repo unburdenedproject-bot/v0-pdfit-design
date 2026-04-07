@@ -213,7 +213,7 @@ export function ResumeBuilderInterface() {
                 </div>
               )}
 
-              <Button onClick={handleBuild} className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-xl text-lg" disabled={isGenerating || !info.fullName || !info.experience}>
+              <Button onClick={handleBuild} className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 rounded-xl text-lg" disabled={isGenerating || !info.fullName || !info.experience}>
                 {isGenerating ? <Loader2 className="h-5 w-5 mr-2 animate-spin" /> : <Sparkles className="h-5 w-5 mr-2" />}
                 {isGenerating ? labels.generating : labels.buildBtn}
               </Button>

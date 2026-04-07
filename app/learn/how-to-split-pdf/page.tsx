@@ -91,7 +91,7 @@ export default function HowToSplitPDFPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Split PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Split PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">How to Split a PDF Online (Extract Pages or Ranges)</h1>
               <p className="text-xl text-slate-300">
                 Need to pull out a few pages from a large PDF? Here's how to split any PDF into smaller files by page range — in seconds, no software required.
@@ -101,17 +101,17 @@ export default function HowToSplitPDFPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Scissors className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to split? Skip the guide and go straight to the tool.</p>
             </div>
             <Link
               href="/split-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Split PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function HowToSplitPDFPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Extracting a chapter or section.</strong> You have a 200-page report but only need pages 45-60. Split those out instead of sending the whole file.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Removing unwanted pages.</strong> A contract has 15 pages of appendices you don't need. Split out just the pages that matter.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Breaking a file for email.</strong> Your PDF is too large for email attachments. Split it into 2-3 smaller files and send them separately.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Organizing multi-document PDFs.</strong> Someone scanned invoices, receipts, and forms into one file. Split them into individual documents for filing.</span>
                 </li>
               </ul>
@@ -167,7 +167,7 @@ export default function HowToSplitPDFPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -195,19 +195,19 @@ export default function HowToSplitPDFPage() {
                   </thead>
                   <tbody className="text-slate-700">
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">1-5</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">1-5</td>
                       <td className="py-3 px-4">One file with pages 1 through 5</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">1-5, 10-15</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">1-5, 10-15</td>
                       <td className="py-3 px-4">Two files: one with pages 1-5, another with pages 10-15</td>
                     </tr>
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">3, 7, 12</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">3, 7, 12</td>
                       <td className="py-3 px-4">Three separate single-page files</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">1-3, 8, 10-15</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">1-3, 8, 10-15</td>
                       <td className="py-3 px-4">Three files: pages 1-3, page 8 alone, and pages 10-15</td>
                     </tr>
                   </tbody>
@@ -225,7 +225,7 @@ export default function HowToSplitPDFPage() {
                 Nothing. Splitting is a non-destructive operation. PDF.it creates <strong>new files</strong> from the pages you select — your original PDF is never modified, renamed, or deleted. Think of it like photocopying specific pages from a book. The book stays intact.
               </p>
               <p className="text-slate-600">
-                If you later realize you need those pages back together, use <Link href="/merge-pdf" className="text-orange-600 hover:underline">Merge PDF</Link> to combine files into one document.
+                If you later realize you need those pages back together, use <Link href="/merge-pdf" className="text-[#14D8C4] hover:underline">Merge PDF</Link> to combine files into one document.
               </p>
             </section>
 
@@ -244,7 +244,7 @@ export default function HowToSplitPDFPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Splitting for Email Attachments</h3>
                   <p className="text-slate-600">
-                    Divide the total page count into roughly equal parts. For a 30-page PDF, try "1-10, 11-20, 21-30" to create three smaller files. After splitting, <Link href="/compress-pdf" className="text-orange-600 hover:underline">compress each part</Link> to reduce the file size even further. See our full guide on <Link href="/learn/split-pdf-for-email" className="text-orange-600 hover:underline">splitting PDFs for email</Link>.
+                    Divide the total page count into roughly equal parts. For a 30-page PDF, try "1-10, 11-20, 21-30" to create three smaller files. After splitting, <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">compress each part</Link> to reduce the file size even further. See our full guide on <Link href="/learn/split-pdf-for-email" className="text-[#14D8C4] hover:underline">splitting PDFs for email</Link>.
                   </p>
                 </div>
 
@@ -258,7 +258,7 @@ export default function HowToSplitPDFPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Pulling Out a Single Form or Receipt</h3>
                   <p className="text-slate-600">
-                    If you need just one page — say page 4 — type "4" and you'll get a single-page PDF. Learn more in our guide on <Link href="/learn/extract-pages-from-pdf" className="text-orange-600 hover:underline">extracting pages from a PDF</Link>.
+                    If you need just one page — say page 4 — type "4" and you'll get a single-page PDF. Learn more in our guide on <Link href="/learn/extract-pages-from-pdf" className="text-[#14D8C4] hover:underline">extracting pages from a PDF</Link>.
                   </p>
                 </div>
               </div>
@@ -275,7 +275,7 @@ export default function HowToSplitPDFPage() {
                 <li>✓ <strong>Extract</strong> pulls specific pages into a single new file (one output file with selected pages).</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                PDF.it's <Link href="/split-pdf" className="text-orange-600 hover:underline">Split PDF</Link> tool handles both — enter one range for extraction, or multiple ranges to split into parts. You can also use the dedicated <Link href="/extract-pages-from-pdf" className="text-orange-600 hover:underline">Extract Pages</Link> tool for a simpler interface focused on pulling out specific pages.
+                PDF.it's <Link href="/split-pdf" className="text-[#14D8C4] hover:underline">Split PDF</Link> tool handles both — enter one range for extraction, or multiple ranges to split into parts. You can also use the dedicated <Link href="/extract-pages-from-pdf" className="text-[#14D8C4] hover:underline">Extract Pages</Link> tool for a simpler interface focused on pulling out specific pages.
               </p>
             </section>
 
@@ -289,7 +289,7 @@ export default function HowToSplitPDFPage() {
             <p className="text-slate-300 mb-6">Upload your file and extract the pages you need in seconds — free, no signup required.</p>
             <Link
               href="/split-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Scissors className="h-5 w-5" /> Split PDF Now
             </Link>
@@ -310,10 +310,10 @@ export default function HowToSplitPDFPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

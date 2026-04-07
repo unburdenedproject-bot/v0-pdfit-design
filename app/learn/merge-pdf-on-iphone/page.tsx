@@ -91,7 +91,7 @@ export default function MergePDFOnIPhonePage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Merge PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Merge PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Merge PDF Files on iPhone (Fast Browser Method)</h1>
               <p className="text-xl text-slate-300">
                 No app needed. Open Safari, upload your PDFs, combine them, and download the merged file — all in under a minute, right from your iPhone.
@@ -101,17 +101,17 @@ export default function MergePDFOnIPhonePage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Merge className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">On your iPhone right now? Go straight to the tool.</p>
             </div>
             <Link
               href="/merge-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Merge PDFs Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function MergePDFOnIPhonePage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>No installation needed.</strong> Most PDF apps are 50-200MB and require creating yet another account. PDF.it works instantly in Safari.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>No storage wasted.</strong> Your iPhone storage stays clean. The browser tool doesn't take up any space on your device.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>No subscriptions traps.</strong> Many "free" PDF apps lock basic features behind weekly subscriptions. PDF.it lets you merge files for free with no hidden costs.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Works on any device.</strong> The same tool works on your iPhone, iPad, Android phone, or computer — no switching between apps.</span>
                 </li>
               </ul>
@@ -156,23 +156,23 @@ export default function MergePDFOnIPhonePage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Files app.</strong> Open the Files app and check "On My iPhone" and "iCloud Drive." This is the main place Apple stores downloaded documents.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Safari Downloads.</strong> If you downloaded a PDF from a website, tap the download arrow icon (next to the address bar in Safari) to see recent downloads.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Email attachments.</strong> PDFs received via email can be saved to the Files app. Open the email, long-press the attachment, and tap "Save to Files."</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Messaging apps.</strong> PDFs shared via WhatsApp, iMessage, or Telegram are stored in those apps. Save them to the Files app first for easy access.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Cloud storage.</strong> Google Drive, Dropbox, and OneDrive files are accessible through the Files app if you've connected those services.</span>
                 </li>
               </ul>
@@ -197,7 +197,7 @@ export default function MergePDFOnIPhonePage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -243,8 +243,8 @@ export default function MergePDFOnIPhonePage() {
                 Email attachments and upload portals have size limits. If your merged PDF is too large:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>✓ <strong>Compress it.</strong> Go to <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> in Safari and upload the merged file. Compression can reduce the size by 50-80%.</li>
-                <li>✓ <strong>Split if needed.</strong> If compression isn't enough, use <Link href="/split-pdf" className="text-orange-600 hover:underline">Split PDF</Link> to break the document into smaller parts.</li>
+                <li>✓ <strong>Compress it.</strong> Go to <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> in Safari and upload the merged file. Compression can reduce the size by 50-80%.</li>
+                <li>✓ <strong>Split if needed.</strong> If compression isn't enough, use <Link href="/split-pdf" className="text-[#14D8C4] hover:underline">Split PDF</Link> to break the document into smaller parts.</li>
                 <li>✓ <strong>All from your iPhone.</strong> Every PDF.it tool works in Safari — you don't need to switch to a computer.</li>
               </ul>
             </section>
@@ -286,7 +286,7 @@ export default function MergePDFOnIPhonePage() {
             <p className="text-slate-300 mb-6">Open the tool in Safari and combine your files in under a minute — free, no app needed.</p>
             <Link
               href="/merge-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Merge className="h-5 w-5" /> Merge PDFs Now
             </Link>
@@ -307,10 +307,10 @@ export default function MergePDFOnIPhonePage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

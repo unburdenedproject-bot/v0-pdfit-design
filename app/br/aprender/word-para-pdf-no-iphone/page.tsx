@@ -43,7 +43,7 @@ export default function WordParaPdfNoIphonePage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Word para PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Word para PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Word para PDF no iPhone (Sem Apps)</h1>
               <p className="text-xl text-slate-300">
                 Precisa converter um documento Word para PDF direto no iPhone? Veja como fazer em segundos usando apenas o Safari — sem instalar nada.
@@ -52,15 +52,15 @@ export default function WordParaPdfNoIphonePage() {
           </div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileIcon className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Funciona direto no Safari do iPhone.</p>
             </div>
-            <Link href="/br/word-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
+            <Link href="/br/word-para-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
               Converter Word para PDF <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -72,10 +72,10 @@ export default function WordParaPdfNoIphonePage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Quando Você Precisa Disso?</h2>
               <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Enviar currículo por email.</strong> Recrutadores pedem PDF — e você só tem o .docx no celular.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Compartilhar documento no WhatsApp.</strong> PDFs são mais profissionais e abrem igual em qualquer celular.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Preencher formulário online.</strong> Muitos sites pedem upload de documento em PDF, não Word.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Urgência.</strong> Quando está longe do computador e precisa converter agora.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span><strong>Enviar currículo por email.</strong> Recrutadores pedem PDF — e você só tem o .docx no celular.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span><strong>Compartilhar documento no WhatsApp.</strong> PDFs são mais profissionais e abrem igual em qualquer celular.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">3.</span><span><strong>Preencher formulário online.</strong> Muitos sites pedem upload de documento em PDF, não Word.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">4.</span><span><strong>Urgência.</strong> Quando está longe do computador e precisa converter agora.</span></li>
               </ul>
             </section>
 
@@ -88,7 +88,7 @@ export default function WordParaPdfNoIphonePage() {
                   { title: "Converta e baixe o PDF", desc: "Toque em Converter. Em segundos, o PDF será gerado com toda a formatação do Word mantida. Baixe o PDF — ele vai para a pasta Downloads." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                   </div>
                 ))}
@@ -129,7 +129,7 @@ export default function WordParaPdfNoIphonePage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Converter Word para PDF no iPhone</h2>
             <p className="text-slate-300 mb-6">Direto no Safari — sem app, sem cadastro, formatação mantida.</p>
-            <Link href="/br/word-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors">
+            <Link href="/br/word-para-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors">
               <FileIcon className="h-5 w-5" /> Converter Word para PDF
             </Link>
           </div>
@@ -145,9 +145,9 @@ export default function WordParaPdfNoIphonePage() {
                 { title: "PDF para JPG no iPhone (Sem Apps)", href: "/br/aprender/pdf-para-jpg-no-iphone" },
                 { title: "Extrair Texto de PDF no Celular", href: "/br/aprender/extrair-texto-de-pdf-no-celular" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

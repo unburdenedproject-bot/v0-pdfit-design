@@ -91,7 +91,7 @@ export default function WatermarkPDFBestPracticesPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Watermark PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Watermark PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">PDF Watermark Best Practices (Size, Opacity & Placement)</h1>
               <p className="text-xl text-slate-300">
                 A good watermark protects your document without ruining readability. Here are the best practices for opacity, font size, placement, and color — so your watermarks look professional every time.
@@ -101,17 +101,17 @@ export default function WatermarkPDFBestPracticesPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Stamp className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to watermark? Skip the guide and go straight to the tool.</p>
             </div>
             <Link
               href="/watermark-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Watermark PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function WatermarkPDFBestPracticesPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>10-15% opacity — Subtle branding.</strong> Best for logo watermarks on client-facing documents like proposals and invoices. The logo is visible but does not compete with the text. Readers can comfortably read the document without noticing the watermark at first glance.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>15-25% opacity — Standard protection.</strong> The sweet spot for most watermarks. CONFIDENTIAL, DRAFT, and DO NOT COPY stamps are clearly readable at this range while keeping the document content fully legible. This is the range we recommend for most users.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>30-40% opacity — Strong deterrence.</strong> Use this for documents where the watermark is the primary message — review copies, expired documents, or preview samples. The watermark dominates the page and makes it very clear the document has restrictions.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>50%+ opacity — Avoid in most cases.</strong> At this level, the watermark makes the document difficult to read. Only use this for documents that should be visible but intentionally hard to use, like expired certificates or voided contracts.</span>
                 </li>
               </ul>
@@ -158,13 +158,13 @@ export default function WatermarkPDFBestPracticesPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Diagonal (45 Degrees)</h3>
                   <p className="text-slate-600">
-                    The classic watermark position. The text or image stretches diagonally from one corner to the other. This is the hardest placement to crop out, making it ideal for security watermarks like CONFIDENTIAL, DRAFT, and DO NOT COPY. Use a large font size (60-100pt for text) so the watermark spans the entire page. Read our guide on <Link href="/learn/watermark-pdf-confidential" className="text-orange-600 hover:underline">adding confidential watermarks</Link> for specific settings.
+                    The classic watermark position. The text or image stretches diagonally from one corner to the other. This is the hardest placement to crop out, making it ideal for security watermarks like CONFIDENTIAL, DRAFT, and DO NOT COPY. Use a large font size (60-100pt for text) so the watermark spans the entire page. Read our guide on <Link href="/learn/watermark-pdf-confidential" className="text-[#14D8C4] hover:underline">adding confidential watermarks</Link> for specific settings.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Center (No Rotation)</h3>
                   <p className="text-slate-600">
-                    Place the watermark in the center of the page without rotation. This works best for logo watermarks at low opacity — it creates a clean, symmetrical background brand presence. Scale the logo to 30-50% of the page width. See our <Link href="/learn/watermark-pdf-with-logo" className="text-orange-600 hover:underline">logo watermark guide</Link> for detailed instructions.
+                    Place the watermark in the center of the page without rotation. This works best for logo watermarks at low opacity — it creates a clean, symmetrical background brand presence. Scale the logo to 30-50% of the page width. See our <Link href="/learn/watermark-pdf-with-logo" className="text-[#14D8C4] hover:underline">logo watermark guide</Link> for detailed instructions.
                   </p>
                 </div>
                 <div>
@@ -219,7 +219,7 @@ export default function WatermarkPDFBestPracticesPage() {
                   },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -238,12 +238,12 @@ export default function WatermarkPDFBestPracticesPage() {
                 Even the best watermark is useless if someone can easily remove it. Follow these steps after watermarking to lock it in:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Flatten the PDF.</strong> Use <Link href="/flatten-pdf" className="text-orange-600 hover:underline">Flatten PDF</Link> to merge the watermark permanently into the page content. Once flattened, the watermark becomes part of the page image and cannot be selected or deleted separately.</li>
-                <li>&#10003; <strong>Add password protection.</strong> Use <Link href="/protect-pdf" className="text-orange-600 hover:underline">Protect PDF</Link> to restrict editing, copying, and printing. This prevents someone from opening the file in an editor and attempting to remove the watermark.</li>
-                <li>&#10003; <strong>Compress the final file.</strong> Flattening and watermarking can increase file size. Run the final result through <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> to keep it manageable for email or upload.</li>
+                <li>&#10003; <strong>Flatten the PDF.</strong> Use <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">Flatten PDF</Link> to merge the watermark permanently into the page content. Once flattened, the watermark becomes part of the page image and cannot be selected or deleted separately.</li>
+                <li>&#10003; <strong>Add password protection.</strong> Use <Link href="/protect-pdf" className="text-[#14D8C4] hover:underline">Protect PDF</Link> to restrict editing, copying, and printing. This prevents someone from opening the file in an editor and attempting to remove the watermark.</li>
+                <li>&#10003; <strong>Compress the final file.</strong> Flattening and watermarking can increase file size. Run the final result through <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> to keep it manageable for email or upload.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Watermark PDF is available to Pro and Business users. <Link href="/pricing" className="text-orange-600 hover:underline">See pricing</Link> for details.
+                Watermark PDF is available to Pro and Business users. <Link href="/pricing" className="text-[#14D8C4] hover:underline">See pricing</Link> for details.
               </p>
             </section>
 
@@ -257,7 +257,7 @@ export default function WatermarkPDFBestPracticesPage() {
             <p className="text-slate-300 mb-6">Upload your PDF, configure your watermark with the best settings, and download the result in seconds. Available for Pro and Business users.</p>
             <Link
               href="/watermark-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Stamp className="h-5 w-5" /> Watermark PDF Now
             </Link>
@@ -278,10 +278,10 @@ export default function WatermarkPDFBestPracticesPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

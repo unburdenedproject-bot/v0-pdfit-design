@@ -91,7 +91,7 @@ export default function CodigoQRParaTarjetaPresentacionPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Codigo QR</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Codigo QR</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Codigo QR para Tarjetas de Presentacion (Enlaza a Tu Sitio Web o vCard)</h1>
               <p className="text-xl text-slate-300">
                 Un codigo QR en tu tarjeta de presentacion conecta el mundo fisico con el digital. Un escaneo y tu nuevo contacto tiene tu sitio web, LinkedIn o todos tus datos de contacto guardados en su telefono.
@@ -101,17 +101,17 @@ export default function CodigoQRParaTarjetaPresentacionPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <QrCode className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Listo para crear el codigo QR de tu tarjeta? Ve directo a la herramienta.</p>
             </div>
             <Link
               href="/es/codigo-qr"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Crear Codigo QR <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function CodigoQRParaTarjetaPresentacionPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Guardado instantaneo de contacto.</strong> Un codigo QR de vCard permite que las personas guarden tu nombre, correo, telefono y empresa en sus contactos con un solo escaneo. Sin escribir manualmente, sin errores tipograficos.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Genera trafico a tu sitio web.</strong> Enlaza a tu portafolio, tienda en linea o sitio web de tu empresa. Las personas son mucho mas propensas a visitar cuando pueden escanear en lugar de escribir una URL.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Impresion profesional.</strong> Un codigo QR senala que eres experto en tecnologia y atento al hacer las cosas faciles para tus contactos.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Eficiencia de espacio.</strong> En lugar de amontonar tu URL de LinkedIn, sitio web y perfiles sociales en una tarjeta diminuta, pon todo detras de un solo codigo QR.</span>
                 </li>
               </ul>
@@ -167,7 +167,7 @@ export default function CodigoQRParaTarjetaPresentacionPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -200,7 +200,7 @@ export default function CodigoQRParaTarjetaPresentacionPage() {
                 </div>
               </div>
               <p className="text-slate-600 mt-4">
-                Aprende mas sobre los diferentes tipos en nuestra guia <Link href="/es/aprender/tipos-de-codigo-qr-explicados" className="text-orange-600 hover:underline">Tipos de Codigo QR Explicados</Link>.
+                Aprende mas sobre los diferentes tipos en nuestra guia <Link href="/es/aprender/tipos-de-codigo-qr-explicados" className="text-[#14D8C4] hover:underline">Tipos de Codigo QR Explicados</Link>.
               </p>
             </section>
 
@@ -213,7 +213,7 @@ export default function CodigoQRParaTarjetaPresentacionPage() {
                 <li>&#10003; <strong>Deja espacio blanco.</strong> El codigo QR necesita una "zona tranquila" — al menos 3mm de espacio en blanco alrededor de todos los lados. Esto ayuda a los escaneres a distinguir el codigo de los elementos de diseno circundantes.</li>
                 <li>&#10003; <strong>La parte trasera de la tarjeta es ideal.</strong> Manten el frente limpio con tu nombre, titulo e informacion clave. El codigo QR en la parte trasera obtiene su propio espacio y atencion.</li>
                 <li>&#10003; <strong>Agrega un llamado a la accion.</strong> Imprime "Escanea para guardar mi contacto" o "Escanea para ver mi portafolio" junto al codigo QR para que las personas sepan que esperar.</li>
-                <li>&#10003; <strong>Prueba antes de imprimir en masa.</strong> Imprime una tarjeta y escanea el codigo QR con al menos dos telefonos diferentes. Consulta nuestras <Link href="/es/aprender/mejores-practicas-codigo-qr" className="text-orange-600 hover:underline">mejores practicas de codigo QR</Link> para mas consejos.</li>
+                <li>&#10003; <strong>Prueba antes de imprimir en masa.</strong> Imprime una tarjeta y escanea el codigo QR con al menos dos telefonos diferentes. Consulta nuestras <Link href="/es/aprender/mejores-practicas-codigo-qr" className="text-[#14D8C4] hover:underline">mejores practicas de codigo QR</Link> para mas consejos.</li>
               </ul>
             </section>
 
@@ -229,7 +229,7 @@ export default function CodigoQRParaTarjetaPresentacionPage() {
                 <li>&#10003; <strong>Evita JPEG.</strong> La compresion JPEG puede difuminar los detalles finos de los codigos QR, haciendolos mas dificiles de escanear. Quedate con PNG o SVG.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Si necesitas incrustar tu codigo QR en una version PDF de tu tarjeta, puedes usar <Link href="/es/word-a-pdf" className="text-orange-600 hover:underline">Word a PDF</Link> o disenar tu tarjeta y convertirla. Necesitas comprimir el archivo final? Usa <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> para mantenerlo amigable para correo.
+                Si necesitas incrustar tu codigo QR en una version PDF de tu tarjeta, puedes usar <Link href="/es/word-a-pdf" className="text-[#14D8C4] hover:underline">Word a PDF</Link> o disenar tu tarjeta y convertirla. Necesitas comprimir el archivo final? Usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para mantenerlo amigable para correo.
               </p>
             </section>
 
@@ -243,7 +243,7 @@ export default function CodigoQRParaTarjetaPresentacionPage() {
             <p className="text-slate-300 mb-6">Genera un codigo QR de vCard o URL en segundos. Funcion Pro — actualiza para codigos QR ilimitados y todas las herramientas premium.</p>
             <Link
               href="/es/codigo-qr"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <QrCode className="h-5 w-5" /> Crear Codigo QR Ahora
             </Link>
@@ -266,10 +266,10 @@ export default function CodigoQRParaTarjetaPresentacionPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

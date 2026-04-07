@@ -91,7 +91,7 @@ export default function CompressLargePDFPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Compress PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Compress PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">How to Compress a Large PDF (50MB, 100MB, or More)</h1>
               <p className="text-xl text-slate-300">
                 Your PDF is enormous — too big for email, upload portals, or even cloud storage limits. Here&apos;s how to shrink massive files down to a manageable size.
@@ -101,17 +101,17 @@ export default function CompressLargePDFPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileDown className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to compress? Skip the guide and go straight to the tool.</p>
             </div>
             <Link
               href="/compress-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Compress PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,20 +130,20 @@ export default function CompressLargePDFPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Scanned documents.</strong> Every scanned page is a full-page image at 200-400 DPI. A 50-page scanned document can easily reach 100-200MB. This is the most common cause of oversized PDFs.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Embedded photographs.</strong> Reports with product photos, real estate listings with property images, and portfolios with high-res artwork all create massive files.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>CAD drawings and technical diagrams.</strong> Engineering PDFs with vector graphics and detailed schematics can be 50-100MB per page.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
-                  <span><strong>Merged files.</strong> When you <Link href="/merge-pdf" className="text-orange-600 hover:underline">merge multiple PDFs</Link> together, the sizes stack up. A set of 10 reports at 10MB each becomes a 100MB monster.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
+                  <span><strong>Merged files.</strong> When you <Link href="/merge-pdf" className="text-[#14D8C4] hover:underline">merge multiple PDFs</Link> together, the sizes stack up. A set of 10 reports at 10MB each becomes a 100MB monster.</span>
                 </li>
               </ul>
             </section>
@@ -167,7 +167,7 @@ export default function CompressLargePDFPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -187,16 +187,16 @@ export default function CompressLargePDFPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
-                  <span><strong>Split the PDF into sections.</strong> Use <Link href="/split-pdf" className="text-orange-600 hover:underline">Split PDF</Link> to break your large file into chunks of 10-20 pages each.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
+                  <span><strong>Split the PDF into sections.</strong> Use <Link href="/split-pdf" className="text-[#14D8C4] hover:underline">Split PDF</Link> to break your large file into chunks of 10-20 pages each.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
-                  <span><strong>Compress each section separately.</strong> Upload each chunk to <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> and apply Extreme or Medium compression. Pro users can batch-process all sections at once.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
+                  <span><strong>Compress each section separately.</strong> Upload each chunk to <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> and apply Extreme or Medium compression. Pro users can batch-process all sections at once.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>Merge the compressed sections.</strong> Use <Link href="/merge-pdf" className="text-orange-600 hover:underline">Merge PDF</Link> to combine the compressed chunks back into a single file. The result is often 50-70% smaller than direct compression alone.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
+                  <span><strong>Merge the compressed sections.</strong> Use <Link href="/merge-pdf" className="text-[#14D8C4] hover:underline">Merge PDF</Link> to combine the compressed chunks back into a single file. The result is often 50-70% smaller than direct compression alone.</span>
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
@@ -221,24 +221,24 @@ export default function CompressLargePDFPage() {
                   </thead>
                   <tbody className="text-slate-700">
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Under 25MB</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Under 25MB</td>
                       <td className="py-3 px-4">Extreme compression, flatten first</td>
-                      <td className="py-3 px-4"><Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link></td>
+                      <td className="py-3 px-4"><Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link></td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Under 5MB</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Under 5MB</td>
                       <td className="py-3 px-4">Split + Extreme + merge, or dedicated tool</td>
-                      <td className="py-3 px-4"><Link href="/compress-pdf-to-5mb" className="text-orange-600 hover:underline">Compress to 5MB</Link></td>
+                      <td className="py-3 px-4"><Link href="/compress-pdf-to-5mb" className="text-[#14D8C4] hover:underline">Compress to 5MB</Link></td>
                     </tr>
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Under 2MB</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Under 2MB</td>
                       <td className="py-3 px-4">Split into individual pages, extreme compression on each</td>
-                      <td className="py-3 px-4"><Link href="/compress-pdf-to-2mb" className="text-orange-600 hover:underline">Compress to 2MB</Link></td>
+                      <td className="py-3 px-4"><Link href="/compress-pdf-to-2mb" className="text-[#14D8C4] hover:underline">Compress to 2MB</Link></td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">Email-friendly</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">Email-friendly</td>
                       <td className="py-3 px-4">Medium or Extreme, target under 20MB</td>
-                      <td className="py-3 px-4"><Link href="/compress-pdf-for-email" className="text-orange-600 hover:underline">Compress for Email</Link></td>
+                      <td className="py-3 px-4"><Link href="/compress-pdf-for-email" className="text-[#14D8C4] hover:underline">Compress for Email</Link></td>
                     </tr>
                   </tbody>
                 </table>
@@ -252,25 +252,25 @@ export default function CompressLargePDFPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Flatten Before Compressing</h3>
                   <p className="text-slate-600">
-                    Large PDFs from design software often contain layers, annotations, and form fields that add significant overhead. Use <Link href="/flatten-pdf" className="text-orange-600 hover:underline">Flatten PDF</Link> first to merge everything into flat page content, then compress. This alone can cut 10-20% off file size before compression even starts.
+                    Large PDFs from design software often contain layers, annotations, and form fields that add significant overhead. Use <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">Flatten PDF</Link> first to merge everything into flat page content, then compress. This alone can cut 10-20% off file size before compression even starts.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Extract and Replace Images</h3>
                   <p className="text-slate-600">
-                    If your PDF has a few extremely large images driving up the file size, use <Link href="/extract-images-from-pdf" className="text-orange-600 hover:underline">Extract Images</Link> to pull them out, resize them externally, and rebuild the document. Sometimes one or two photos account for 80% of the file size.
+                    If your PDF has a few extremely large images driving up the file size, use <Link href="/extract-images-from-pdf" className="text-[#14D8C4] hover:underline">Extract Images</Link> to pull them out, resize them externally, and rebuild the document. Sometimes one or two photos account for 80% of the file size.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Convert Scanned Pages to Searchable Text</h3>
                   <p className="text-slate-600">
-                    If your large PDF is a scanned document, run it through <Link href="/ocr-scanner" className="text-orange-600 hover:underline">OCR Scanner</Link> to convert images to searchable text. While this doesn&apos;t always reduce size on its own, it enables better compression in subsequent passes because text compresses far more efficiently than images.
+                    If your large PDF is a scanned document, run it through <Link href="/ocr-scanner" className="text-[#14D8C4] hover:underline">OCR Scanner</Link> to convert images to searchable text. While this doesn&apos;t always reduce size on its own, it enables better compression in subsequent passes because text compresses far more efficiently than images.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Use Upload Ready PDF</h3>
                   <p className="text-slate-600">
-                    Our <Link href="/upload-ready-pdf" className="text-orange-600 hover:underline">Upload Ready PDF</Link> tool chains flattening and compression in a single step — perfect for getting large files ready for upload portals quickly.
+                    Our <Link href="/upload-ready-pdf" className="text-[#14D8C4] hover:underline">Upload Ready PDF</Link> tool chains flattening and compression in a single step — perfect for getting large files ready for upload portals quickly.
                   </p>
                 </div>
               </div>
@@ -286,7 +286,7 @@ export default function CompressLargePDFPage() {
             <p className="text-slate-300 mb-6">Upload your oversized file and compress it in seconds — Pro users can handle files up to 200MB.</p>
             <Link
               href="/compress-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileDown className="h-5 w-5" /> Compress PDF Now
             </Link>
@@ -307,10 +307,10 @@ export default function CompressLargePDFPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

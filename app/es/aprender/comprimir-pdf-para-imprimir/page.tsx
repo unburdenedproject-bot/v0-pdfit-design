@@ -90,7 +90,7 @@ export default function ComprimirPDFParaImprimirPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Comprimir PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Comprimir PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir un PDF para Imprimir (Mantener Calidad de Impresión)</h1>
               <p className="text-xl text-slate-300">
                 Tu archivo de impresión es demasiado grande para enviar, pero no puedes permitir imágenes pixeladas. Aquí te explicamos cómo reducir el tamaño del archivo manteniendo la resolución de 300 DPI para impresión profesional.
@@ -99,15 +99,15 @@ export default function ComprimirPDFParaImprimirPage() {
           </div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileDown className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">¿Listo para comprimir? Salta la guía y ve directo a la herramienta.</p>
             </div>
-            <Link href="/es/comprimir-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
+            <Link href="/es/comprimir-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
               Comprimir PDF Ahora <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -123,19 +123,19 @@ export default function ComprimirPDFParaImprimirPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Imágenes a 300 DPI.</strong> La calidad de impresión requiere 300 puntos por pulgada. Una sola imagen de página completa a 300 DPI puede pesar 5-15MB. Multiplica eso por el número de páginas y los archivos crecen rápido.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Fuentes incrustadas.</strong> Los PDFs de impresión incrustan familias completas de fuentes para asegurar que la impresora reproduzca el texto exactamente. Cada fuente puede añadir 100-500KB.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Perfiles de color.</strong> Los espacios de color CMYK y los perfiles ICC son más grandes que RGB. Los archivos de impresión profesional incluyen estos para reproducción precisa del color.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Sangrado y marcas de corte.</strong> Los archivos de impresión incluyen contenido extra más allá del borde de la página (sangrado) y marcas de alineación. Estos añaden al tamaño del archivo.</span>
                 </li>
               </ul>
@@ -150,7 +150,7 @@ export default function ComprimirPDFParaImprimirPage() {
                   { title: "Descarga y verifica la calidad de impresión", desc: "Descarga el archivo comprimido. Haz zoom al 200-400% en las páginas con muchas imágenes para verificar cualquier pérdida de calidad. Si todo se ve nítido, tu archivo está listo para la impresora." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div>
                       <h3 className="font-bold text-slate-900 mb-1">{step.title}</h3>
                       <p className="text-slate-600 text-sm">{step.desc}</p>
@@ -176,17 +176,17 @@ export default function ComprimirPDFParaImprimirPage() {
                   </thead>
                   <tbody className="text-slate-700">
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">300 DPI</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">300 DPI</td>
                       <td className="py-3 px-4">Calidad de impresión profesional</td>
                       <td className="py-3 px-4">Folletos, tarjetas de presentación, impresiones fotográficas, revistas</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">150 DPI</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">150 DPI</td>
                       <td className="py-3 px-4">Buena para borradores y uso interno</td>
                       <td className="py-3 px-4">Documentos de oficina, informes internos, pósters vistos a distancia</td>
                     </tr>
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">72 DPI</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">72 DPI</td>
                       <td className="py-3 px-4">Calidad solo para pantalla</td>
                       <td className="py-3 px-4">Visualización web, adjuntos de email — no adecuado para impresión</td>
                     </tr>
@@ -202,10 +202,10 @@ export default function ComprimirPDFParaImprimirPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">Preparando Tu PDF para la Imprenta</h2>
               <p className="text-slate-600 mb-4">Antes de comprimir, toma estos pasos para asegurar que tu archivo de impresión esté limpio y optimizado:</p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Aplana el PDF.</strong> Usa <Link href="/es/aplanar-pdf" className="text-orange-600 hover:underline">Aplanar PDF</Link> para fusionar capas, anotaciones y campos de formulario en el contenido de la página. Esto previene problemas de renderizado en la impresora.</li>
-                <li>&#10003; <strong>Elimina páginas innecesarias.</strong> Si tu archivo tiene páginas de borrador, notas o páginas en blanco, usa <Link href="/es/dividir-pdf" className="text-orange-600 hover:underline">Dividir PDF</Link> para eliminarlas antes de enviar a la imprenta.</li>
-                <li>&#10003; <strong>Verifica la orientación.</strong> Asegúrate de que todas las páginas estén orientadas correctamente. Usa <Link href="/es/rotar-pdf" className="text-orange-600 hover:underline">Rotar PDF</Link> para corregir páginas de lado o al revés.</li>
-                <li>&#10003; <strong>Une archivos separados.</strong> Si tu diseño está distribuido en múltiples archivos (portada, interior, contraportada), usa <Link href="/es/unir-pdf" className="text-orange-600 hover:underline">Unir PDF</Link> para combinarlos en un solo documento listo para impresión.</li>
+                <li>&#10003; <strong>Aplana el PDF.</strong> Usa <Link href="/es/aplanar-pdf" className="text-[#14D8C4] hover:underline">Aplanar PDF</Link> para fusionar capas, anotaciones y campos de formulario en el contenido de la página. Esto previene problemas de renderizado en la impresora.</li>
+                <li>&#10003; <strong>Elimina páginas innecesarias.</strong> Si tu archivo tiene páginas de borrador, notas o páginas en blanco, usa <Link href="/es/dividir-pdf" className="text-[#14D8C4] hover:underline">Dividir PDF</Link> para eliminarlas antes de enviar a la imprenta.</li>
+                <li>&#10003; <strong>Verifica la orientación.</strong> Asegúrate de que todas las páginas estén orientadas correctamente. Usa <Link href="/es/rotar-pdf" className="text-[#14D8C4] hover:underline">Rotar PDF</Link> para corregir páginas de lado o al revés.</li>
+                <li>&#10003; <strong>Une archivos separados.</strong> Si tu diseño está distribuido en múltiples archivos (portada, interior, contraportada), usa <Link href="/es/unir-pdf" className="text-[#14D8C4] hover:underline">Unir PDF</Link> para combinarlos en un solo documento listo para impresión.</li>
               </ul>
             </section>
 
@@ -218,15 +218,15 @@ export default function ComprimirPDFParaImprimirPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Pósters y Banners de Gran Formato</h3>
-                  <p className="text-slate-600">Los pósters se ven a distancia, así que puedes usar 150 DPI. La compresión Media frecuentemente está bien aquí, y puede cortar los tamaños de archivo en 40-60%. Para archivos de banner muy grandes, considera dividirlos en secciones con <Link href="/es/dividir-pdf" className="text-orange-600 hover:underline">Dividir PDF</Link>.</p>
+                  <p className="text-slate-600">Los pósters se ven a distancia, así que puedes usar 150 DPI. La compresión Media frecuentemente está bien aquí, y puede cortar los tamaños de archivo en 40-60%. Para archivos de banner muy grandes, considera dividirlos en secciones con <Link href="/es/dividir-pdf" className="text-[#14D8C4] hover:underline">Dividir PDF</Link>.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Libros de Fotos y Portafolios</h3>
-                  <p className="text-slate-600">Los archivos de impresión con muchas fotos frecuentemente son los más grandes. Usa compresión Ligera para preservar la calidad de las fotos. Si el archivo es mayor de 100MB, considera convertir las imágenes a <Link href="/es/pdf-a-jpg" className="text-orange-600 hover:underline">JPG</Link> a la resolución correcta antes de incrustarlas.</p>
+                  <p className="text-slate-600">Los archivos de impresión con muchas fotos frecuentemente son los más grandes. Usa compresión Ligera para preservar la calidad de las fotos. Si el archivo es mayor de 100MB, considera convertir las imágenes a <Link href="/es/pdf-a-jpg" className="text-[#14D8C4] hover:underline">JPG</Link> a la resolución correcta antes de incrustarlas.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Documentos de Oficina para Impresión Interna</h3>
-                  <p className="text-slate-600">Los informes internos, material para reuniones y memorandos no necesitan 300 DPI. La compresión Media funciona genial y hace los archivos mucho más fáciles de compartir por email. Usa <Link href="/es/comprimir-pdf-para-email" className="text-orange-600 hover:underline">Comprimir para Email</Link> si también necesitas enviar el archivo por correo.</p>
+                  <p className="text-slate-600">Los informes internos, material para reuniones y memorandos no necesitan 300 DPI. La compresión Media funciona genial y hace los archivos mucho más fáciles de compartir por email. Usa <Link href="/es/comprimir-pdf-para-email" className="text-[#14D8C4] hover:underline">Comprimir para Email</Link> si también necesitas enviar el archivo por correo.</p>
                 </div>
               </div>
             </section>
@@ -238,7 +238,7 @@ export default function ComprimirPDFParaImprimirPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">¿Listo para Comprimir para Impresión?</h2>
             <p className="text-slate-300 mb-6">Reduce el tamaño de tu archivo de impresión manteniendo la calidad de 300 DPI — gratis, sin registro.</p>
-            <Link href="/es/comprimir-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors">
+            <Link href="/es/comprimir-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors">
               <FileDown className="h-5 w-5" /> Comprimir PDF Ahora
             </Link>
           </div>
@@ -254,9 +254,9 @@ export default function ComprimirPDFParaImprimirPage() {
                 { title: "Comprimir un PDF Grande (50MB, 100MB o Más)", href: "/es/aprender/comprimir-pdf-grande" },
                 { title: "Comprimir un PDF con Imágenes (Fotos, Escaneos, Gráficos)", href: "/es/aprender/comprimir-pdf-con-imagenes" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

@@ -91,7 +91,7 @@ export default function ProtectPDFBeforeSendingPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Protect PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Protect PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">How to Protect a PDF Before Sending by Email</h1>
               <p className="text-xl text-slate-300">
                 Email is not as secure as most people think. Before you hit send on that contract, tax return, or confidential report — here is how to properly secure your PDF.
@@ -101,17 +101,17 @@ export default function ProtectPDFBeforeSendingPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Lock className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to protect? Skip the guide and go straight to the tool.</p>
             </div>
             <Link
               href="/protect-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Protect PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function ProtectPDFBeforeSendingPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Interception during transit.</strong> Emails pass through multiple servers before reaching the recipient. Without encryption, attachments can be read at any point along the way.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Compromised accounts.</strong> If the recipient's email account is hacked, every unprotected attachment they have ever received is exposed.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Wrong recipient.</strong> It happens more often than you think. Autocomplete fills in the wrong email address, and your confidential document lands in a stranger's inbox.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Forwarding.</strong> Even if you send the file to the right person, they might forward it to someone else. A password ensures only authorized people can open it.</span>
                 </li>
               </ul>
@@ -170,7 +170,7 @@ export default function ProtectPDFBeforeSendingPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -189,13 +189,13 @@ export default function ProtectPDFBeforeSendingPage() {
                 Many people skip this step, but flattening is critical for true document security. Here is what flattening does and why it matters:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Removes form fields.</strong> Filled-in form data can sometimes be extracted even from password-protected PDFs. <Link href="/flatten-pdf" className="text-orange-600 hover:underline">Flattening</Link> converts form data into static page content.</li>
+                <li>&#10003; <strong>Removes form fields.</strong> Filled-in form data can sometimes be extracted even from password-protected PDFs. <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">Flattening</Link> converts form data into static page content.</li>
                 <li>&#10003; <strong>Bakes in annotations.</strong> Comments, highlights, and sticky notes are removed as separate objects and rendered directly onto the page.</li>
                 <li>&#10003; <strong>Eliminates layers.</strong> Multi-layer PDFs (common from design software) can contain hidden content. Flattening merges everything into a single layer.</li>
                 <li>&#10003; <strong>Reduces file size.</strong> Removing interactive elements often makes the file smaller, which helps with email attachment limits.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Think of flattening as cleaning your document before locking it. Use <Link href="/flatten-pdf" className="text-orange-600 hover:underline">PDF.it's Flatten tool</Link>, then immediately <Link href="/protect-pdf" className="text-orange-600 hover:underline">protect the result</Link>.
+                Think of flattening as cleaning your document before locking it. Use <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">PDF.it's Flatten tool</Link>, then immediately <Link href="/protect-pdf" className="text-[#14D8C4] hover:underline">protect the result</Link>.
               </p>
             </section>
 
@@ -212,7 +212,7 @@ export default function ProtectPDFBeforeSendingPage() {
                 <li>&#10003; <strong>Corporate email:</strong> Often 5MB to 10MB for security reasons</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                If your file exceeds these limits, use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> to reduce it. For specific targets, try <Link href="/compress-pdf-to-5mb" className="text-orange-600 hover:underline">Compress PDF to 5MB</Link> or <Link href="/compress-pdf-to-2mb" className="text-orange-600 hover:underline">Compress PDF to 2MB</Link>. You can also use <Link href="/compress-pdf-for-email" className="text-orange-600 hover:underline">Compress PDF for Email</Link> for automatic optimization.
+                If your file exceeds these limits, use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> to reduce it. For specific targets, try <Link href="/compress-pdf-to-5mb" className="text-[#14D8C4] hover:underline">Compress PDF to 5MB</Link> or <Link href="/compress-pdf-to-2mb" className="text-[#14D8C4] hover:underline">Compress PDF to 2MB</Link>. You can also use <Link href="/compress-pdf-for-email" className="text-[#14D8C4] hover:underline">Compress PDF for Email</Link> for automatic optimization.
               </p>
             </section>
 
@@ -223,10 +223,10 @@ export default function ProtectPDFBeforeSendingPage() {
                 Before you attach that PDF to your email, run through this quick checklist:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Flattened?</strong> Remove form fields, annotations, and layers with <Link href="/flatten-pdf" className="text-orange-600 hover:underline">Flatten PDF</Link>.</li>
-                <li>&#10003; <strong>Redacted?</strong> If the document contains information that should not be shared, use <Link href="/pdf-redaction" className="text-orange-600 hover:underline">PDF Redaction</Link> to permanently remove it before protecting.</li>
-                <li>&#10003; <strong>Password protected?</strong> Add a strong open password with <Link href="/protect-pdf" className="text-orange-600 hover:underline">Protect PDF</Link>. Use 256-bit AES encryption.</li>
-                <li>&#10003; <strong>Under size limit?</strong> Use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> if the file exceeds your email provider's attachment limit.</li>
+                <li>&#10003; <strong>Flattened?</strong> Remove form fields, annotations, and layers with <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">Flatten PDF</Link>.</li>
+                <li>&#10003; <strong>Redacted?</strong> If the document contains information that should not be shared, use <Link href="/pdf-redaction" className="text-[#14D8C4] hover:underline">PDF Redaction</Link> to permanently remove it before protecting.</li>
+                <li>&#10003; <strong>Password protected?</strong> Add a strong open password with <Link href="/protect-pdf" className="text-[#14D8C4] hover:underline">Protect PDF</Link>. Use 256-bit AES encryption.</li>
+                <li>&#10003; <strong>Under size limit?</strong> Use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> if the file exceeds your email provider's attachment limit.</li>
                 <li>&#10003; <strong>Tested?</strong> Open the protected file yourself and enter the password to confirm it works.</li>
                 <li>&#10003; <strong>Password shared separately?</strong> Send the password via text, phone call, or secure messaging — never in the same email.</li>
               </ul>
@@ -239,19 +239,19 @@ export default function ProtectPDFBeforeSendingPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Add a Watermark</h3>
                   <p className="text-slate-600">
-                    If you are sharing confidential documents that might be redistributed, add a watermark with the recipient's name or "CONFIDENTIAL" using <Link href="/watermark-pdf" className="text-orange-600 hover:underline">Watermark PDF</Link>. This discourages unauthorized sharing and helps trace leaks.
+                    If you are sharing confidential documents that might be redistributed, add a watermark with the recipient's name or "CONFIDENTIAL" using <Link href="/watermark-pdf" className="text-[#14D8C4] hover:underline">Watermark PDF</Link>. This discourages unauthorized sharing and helps trace leaks.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Merge Before Protecting</h3>
                   <p className="text-slate-600">
-                    Sending multiple documents? Use <Link href="/merge-pdf" className="text-orange-600 hover:underline">Merge PDF</Link> to combine them into a single file first, then protect the merged result. This is easier for the recipient and requires only one password for all documents.
+                    Sending multiple documents? Use <Link href="/merge-pdf" className="text-[#14D8C4] hover:underline">Merge PDF</Link> to combine them into a single file first, then protect the merged result. This is easier for the recipient and requires only one password for all documents.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Use Upload-Ready PDF for Submissions</h3>
                   <p className="text-slate-600">
-                    If you are sending a PDF for a formal submission (visa, job application, university portal), use <Link href="/upload-ready-pdf" className="text-orange-600 hover:underline">Upload-Ready PDF</Link> to flatten and compress in one step before adding password protection.
+                    If you are sending a PDF for a formal submission (visa, job application, university portal), use <Link href="/upload-ready-pdf" className="text-[#14D8C4] hover:underline">Upload-Ready PDF</Link> to flatten and compress in one step before adding password protection.
                   </p>
                 </div>
               </div>
@@ -267,7 +267,7 @@ export default function ProtectPDFBeforeSendingPage() {
             <p className="text-slate-300 mb-6">Flatten, protect, and compress your PDF for safe email sharing — all in one place.</p>
             <Link
               href="/protect-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Lock className="h-5 w-5" /> Protect PDF Now
             </Link>
@@ -287,10 +287,10 @@ export default function ProtectPDFBeforeSendingPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

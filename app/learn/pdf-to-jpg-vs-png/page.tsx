@@ -91,7 +91,7 @@ export default function PDFtoJPGvsPNGPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to PNG</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to PNG</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">PDF to JPG vs PNG: Which Should You Use?</h1>
               <p className="text-xl text-slate-300">
                 JPG and PNG both turn your PDF pages into images — but they produce very different results. Here's when to use each, with real examples and a practical decision guide.
@@ -101,10 +101,10 @@ export default function PDFtoJPGvsPNGPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Image className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Already know what you need? Jump straight to the converter.</p>
@@ -112,7 +112,7 @@ export default function PDFtoJPGvsPNGPage() {
             <div className="flex gap-3">
               <Link
                 href="/pdf-to-png"
-                className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+                className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
               >
                 PDF to PNG <ArrowRight className="h-4 w-4" />
               </Link>
@@ -138,11 +138,11 @@ export default function PDFtoJPGvsPNGPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>JPG uses lossy compression.</strong> It throws away some visual data to create smaller files. This works great for photos where tiny details don't matter, but it creates visible "artifacts" around text, logos, and sharp edges.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>PNG uses lossless compression.</strong> Every pixel is preserved exactly. The file is larger, but the quality is perfect. Text stays razor-sharp, edges stay clean, and transparency is preserved.</span>
                 </li>
               </ul>
@@ -171,23 +171,23 @@ export default function PDFtoJPGvsPNGPage() {
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
                       <td className="py-3 px-4 font-semibold">File Size</td>
-                      <td className="py-3 px-4 text-orange-600 font-semibold">Smaller</td>
+                      <td className="py-3 px-4 text-[#14D8C4] font-semibold">Smaller</td>
                       <td className="py-3 px-4">Larger (2-5x bigger)</td>
                     </tr>
                     <tr className="border-t border-gray-200">
                       <td className="py-3 px-4 font-semibold">Text Quality</td>
                       <td className="py-3 px-4">Artifacts around edges</td>
-                      <td className="py-3 px-4 text-orange-600 font-semibold">Perfect, crisp text</td>
+                      <td className="py-3 px-4 text-[#14D8C4] font-semibold">Perfect, crisp text</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
                       <td className="py-3 px-4 font-semibold">Photo Quality</td>
-                      <td className="py-3 px-4 text-orange-600 font-semibold">Excellent (designed for photos)</td>
+                      <td className="py-3 px-4 text-[#14D8C4] font-semibold">Excellent (designed for photos)</td>
                       <td className="py-3 px-4">Excellent (but overkill)</td>
                     </tr>
                     <tr className="border-t border-gray-200">
                       <td className="py-3 px-4 font-semibold">Transparency</td>
                       <td className="py-3 px-4">Not supported</td>
-                      <td className="py-3 px-4 text-orange-600 font-semibold">Full alpha support</td>
+                      <td className="py-3 px-4 text-[#14D8C4] font-semibold">Full alpha support</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
                       <td className="py-3 px-4 font-semibold">Best For</td>
@@ -221,7 +221,7 @@ export default function PDFtoJPGvsPNGPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Storage-constrained situations</h3>
                   <p className="text-slate-600">
-                    If you're converting hundreds of pages and need to keep total storage low, JPG saves significant space. Use our <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">PDF to JPG</Link> tool for batch conversions.
+                    If you're converting hundreds of pages and need to keep total storage low, JPG saves significant space. Use our <Link href="/pdf-to-jpg" className="text-[#14D8C4] hover:underline">PDF to JPG</Link> tool for batch conversions.
                   </p>
                 </div>
               </div>
@@ -243,7 +243,7 @@ export default function PDFtoJPGvsPNGPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Graphics and design work</h3>
                   <p className="text-slate-600">
-                    Logos, charts, diagrams, and illustrations all have sharp edges and solid colors — exactly the type of content where JPG artifacts are most visible. PNG preserves these perfectly. Learn more in our guide on <Link href="/learn/pdf-to-png-for-design" className="text-orange-600 hover:underline">PDF to PNG for design work</Link>.
+                    Logos, charts, diagrams, and illustrations all have sharp edges and solid colors — exactly the type of content where JPG artifacts are most visible. PNG preserves these perfectly. Learn more in our guide on <Link href="/learn/pdf-to-png-for-design" className="text-[#14D8C4] hover:underline">PDF to PNG for design work</Link>.
                   </p>
                 </div>
                 <div>
@@ -268,8 +268,8 @@ export default function PDFtoJPGvsPNGPage() {
                 Still not sure? Ask yourself these three questions:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>✓ <strong>Does your PDF have text?</strong> Go with <Link href="/pdf-to-png" className="text-orange-600 hover:underline">PNG</Link>.</li>
-                <li>✓ <strong>Is it mostly photographs?</strong> Go with <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">JPG</Link>.</li>
+                <li>✓ <strong>Does your PDF have text?</strong> Go with <Link href="/pdf-to-png" className="text-[#14D8C4] hover:underline">PNG</Link>.</li>
+                <li>✓ <strong>Is it mostly photographs?</strong> Go with <Link href="/pdf-to-jpg" className="text-[#14D8C4] hover:underline">JPG</Link>.</li>
                 <li>✓ <strong>Do you need transparency?</strong> Only PNG supports it.</li>
                 <li>✓ <strong>Is file size your top concern?</strong> JPG is 2-5x smaller.</li>
                 <li>✓ <strong>Going into design software?</strong> PNG every time.</li>
@@ -290,7 +290,7 @@ export default function PDFtoJPGvsPNGPage() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 href="/pdf-to-png"
-                className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+                className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
               >
                 <Image className="h-5 w-5" /> Convert to PNG
               </Link>
@@ -318,10 +318,10 @@ export default function PDFtoJPGvsPNGPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

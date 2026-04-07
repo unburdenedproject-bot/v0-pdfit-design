@@ -91,7 +91,7 @@ export default function HowToAddWatermarkToPDFPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Watermark PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Watermark PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">How to Add a Watermark to a PDF Online</h1>
               <p className="text-xl text-slate-300">
                 Need to stamp a document as Draft, Confidential, or add your company logo? Here is how to add a watermark to any PDF in seconds — no software to install.
@@ -101,17 +101,17 @@ export default function HowToAddWatermarkToPDFPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Stamp className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to watermark? Skip the guide and go straight to the tool.</p>
             </div>
             <Link
               href="/watermark-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Watermark PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,23 +130,23 @@ export default function HowToAddWatermarkToPDFPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Mark documents as Draft.</strong> When sharing early versions of a report or proposal, a DRAFT watermark tells recipients the content is not final and may change.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Label sensitive files as Confidential.</strong> Legal contracts, financial reports, and HR documents often need a CONFIDENTIAL stamp to discourage unauthorized sharing.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Brand documents with your logo.</strong> Proposals, invoices, and presentations look more professional when they carry your company logo as a subtle background watermark.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Discourage unauthorized copying.</strong> A DO NOT COPY or SAMPLE watermark makes it clear the document should not be redistributed.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Track document recipients.</strong> Some teams add unique watermarks per recipient so leaked documents can be traced back to the source.</span>
                 </li>
               </ul>
@@ -156,7 +156,7 @@ export default function HowToAddWatermarkToPDFPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-6">How to Add a Watermark to a PDF (Step by Step)</h2>
               <p className="text-slate-600 mb-4">
-                Watermark PDF is available to Pro and Business users. <Link href="/pricing" className="text-orange-600 hover:underline">See pricing</Link> for details.
+                Watermark PDF is available to Pro and Business users. <Link href="/pricing" className="text-[#14D8C4] hover:underline">See pricing</Link> for details.
               </p>
               <div className="space-y-4">
                 {[
@@ -174,7 +174,7 @@ export default function HowToAddWatermarkToPDFPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -202,7 +202,7 @@ export default function HowToAddWatermarkToPDFPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Image Watermarks</h3>
                   <p className="text-slate-600">
-                    Best for branding. Upload your company logo as a PNG with a transparent background for the cleanest look. Image watermarks are great on proposals, invoices, and client-facing documents. Set the opacity to 10-20% so the logo is visible but does not interfere with reading. Learn more in our guide on <Link href="/learn/watermark-pdf-with-logo" className="text-orange-600 hover:underline">adding a logo watermark to a PDF</Link>.
+                    Best for branding. Upload your company logo as a PNG with a transparent background for the cleanest look. Image watermarks are great on proposals, invoices, and client-facing documents. Set the opacity to 10-20% so the logo is visible but does not interfere with reading. Learn more in our guide on <Link href="/learn/watermark-pdf-with-logo" className="text-[#14D8C4] hover:underline">adding a logo watermark to a PDF</Link>.
                   </p>
                 </div>
               </div>
@@ -215,8 +215,8 @@ export default function HowToAddWatermarkToPDFPage() {
                 A standard watermark is an overlay that sits on top of the page content. Someone with the right tools could potentially remove it. Here is how to make your watermark more permanent:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Flatten the PDF afterward.</strong> Use <Link href="/flatten-pdf" className="text-orange-600 hover:underline">Flatten PDF</Link> after watermarking. This bakes the watermark into the page content so it cannot be separated from the original text and images.</li>
-                <li>&#10003; <strong>Add password protection.</strong> Use <Link href="/protect-pdf" className="text-orange-600 hover:underline">Protect PDF</Link> to restrict editing permissions. This prevents casual users from modifying or removing the watermark.</li>
+                <li>&#10003; <strong>Flatten the PDF afterward.</strong> Use <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">Flatten PDF</Link> after watermarking. This bakes the watermark into the page content so it cannot be separated from the original text and images.</li>
+                <li>&#10003; <strong>Add password protection.</strong> Use <Link href="/protect-pdf" className="text-[#14D8C4] hover:underline">Protect PDF</Link> to restrict editing permissions. This prevents casual users from modifying or removing the watermark.</li>
                 <li>&#10003; <strong>Combine both approaches.</strong> Flatten first, then password-protect. This gives you the strongest protection against unauthorized removal.</li>
               </ul>
             </section>
@@ -228,7 +228,7 @@ export default function HowToAddWatermarkToPDFPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Legal and Financial Documents</h3>
                   <p className="text-slate-600">
-                    Law firms and accounting departments add CONFIDENTIAL watermarks to contracts, audit reports, and tax filings before sharing them externally. Read our dedicated guide on <Link href="/learn/watermark-pdf-confidential" className="text-orange-600 hover:underline">adding a Confidential watermark</Link>.
+                    Law firms and accounting departments add CONFIDENTIAL watermarks to contracts, audit reports, and tax filings before sharing them externally. Read our dedicated guide on <Link href="/learn/watermark-pdf-confidential" className="text-[#14D8C4] hover:underline">adding a Confidential watermark</Link>.
                   </p>
                 </div>
                 <div>
@@ -240,7 +240,7 @@ export default function HowToAddWatermarkToPDFPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Education and Publishing</h3>
                   <p className="text-slate-600">
-                    Teachers watermark exam papers with SAMPLE to prevent redistribution. Publishers watermark review copies with the reviewer's name for accountability. After watermarking, you can <Link href="/compress-pdf" className="text-orange-600 hover:underline">compress the PDF</Link> to keep file sizes manageable for email distribution.
+                    Teachers watermark exam papers with SAMPLE to prevent redistribution. Publishers watermark review copies with the reviewer's name for accountability. After watermarking, you can <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">compress the PDF</Link> to keep file sizes manageable for email distribution.
                   </p>
                 </div>
               </div>
@@ -256,7 +256,7 @@ export default function HowToAddWatermarkToPDFPage() {
             <p className="text-slate-300 mb-6">Upload your file, add a text or image watermark, and download the result in seconds. Available for Pro and Business users.</p>
             <Link
               href="/watermark-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Stamp className="h-5 w-5" /> Watermark PDF Now
             </Link>
@@ -277,10 +277,10 @@ export default function HowToAddWatermarkToPDFPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

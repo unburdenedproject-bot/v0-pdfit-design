@@ -91,7 +91,7 @@ export default function TiposCodigoQRExplicadosPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Codigo QR</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Codigo QR</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Tipos de Codigo QR Explicados (URL, Texto, WiFi, vCard y Mas)</h1>
               <p className="text-xl text-slate-300">
                 No todos los codigos QR son iguales. El tipo que elijas determina que sucede cuando alguien lo escanea — abrir un sitio web, guardar un contacto, conectarse al WiFi o mostrar un mensaje. Aqui tienes una guia completa de cada tipo.
@@ -101,17 +101,17 @@ export default function TiposCodigoQRExplicadosPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <QrCode className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Sabes que tipo necesitas? Crea tu codigo QR ahora.</p>
             </div>
             <Link
               href="/es/codigo-qr"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Crear Codigo QR <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,28 +130,28 @@ export default function TiposCodigoQRExplicadosPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Enlaces a sitios web.</strong> Enlaza a tu pagina principal, pagina de destino, pagina de producto o cualquier URL. El telefono del escaner abre la pagina en su navegador predeterminado.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
-                  <span><strong>Perfiles de redes sociales.</strong> Enlaza a tu Instagram, LinkedIn, Twitter o canal de YouTube. Genial para <Link href="/es/aprender/codigo-qr-para-tarjeta-de-presentacion" className="text-orange-600 hover:underline">tarjetas de presentacion</Link> y materiales de marketing.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
+                  <span><strong>Perfiles de redes sociales.</strong> Enlaza a tu Instagram, LinkedIn, Twitter o canal de YouTube. Genial para <Link href="/es/aprender/codigo-qr-para-tarjeta-de-presentacion" className="text-[#14D8C4] hover:underline">tarjetas de presentacion</Link> y materiales de marketing.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>Documentos PDF.</strong> Enlaza a un <Link href="/es/aprender/codigo-qr-para-pdf" className="text-orange-600 hover:underline">archivo PDF alojado</Link> — menus, folletos, manuales o volantes. El PDF se abre directamente en el navegador del telefono.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
+                  <span><strong>Documentos PDF.</strong> Enlaza a un <Link href="/es/aprender/codigo-qr-para-pdf" className="text-[#14D8C4] hover:underline">archivo PDF alojado</Link> — menus, folletos, manuales o volantes. El PDF se abre directamente en el navegador del telefono.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Enlaces de descarga de apps.</strong> Enlaza a tu app en la App Store o Google Play. Los usuarios escanean y van directamente a la pagina de descarga.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Ubicaciones de Google Maps.</strong> Comparte un enlace de Google Maps para que las personas obtengan direcciones a tu negocio, lugar de evento o punto de encuentro.</span>
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
-                <strong>Mejor practica:</strong> Manten las URLs cortas. Las URLs largas crean codigos QR mas densos que son mas dificiles de escanear en tamanos pequenos. Usa un acortador de URL si es necesario. Aprende mas en nuestra guia de <Link href="/es/aprender/como-crear-codigo-qr" className="text-orange-600 hover:underline">como crear un codigo QR</Link>.
+                <strong>Mejor practica:</strong> Manten las URLs cortas. Las URLs largas crean codigos QR mas densos que son mas dificiles de escanear en tamanos pequenos. Usa un acortador de URL si es necesario. Aprende mas en nuestra guia de <Link href="/es/aprender/como-crear-codigo-qr" className="text-[#14D8C4] hover:underline">como crear un codigo QR</Link>.
               </p>
             </section>
 
@@ -171,7 +171,7 @@ export default function TiposCodigoQRExplicadosPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Mejores Casos de Uso</h3>
                   <p className="text-slate-600">
-                    Las tarjetas de presentacion son el caso de uso mas comun. En lugar de esperar que alguien escriba manualmente tu numero de telefono de una tarjeta, escanean y guardan. Tambien genial para credenciales de conferencias, gafetes y eventos de networking. Lee nuestra guia completa sobre <Link href="/es/aprender/codigo-qr-para-tarjeta-de-presentacion" className="text-orange-600 hover:underline">codigos QR para tarjetas de presentacion</Link>.
+                    Las tarjetas de presentacion son el caso de uso mas comun. En lugar de esperar que alguien escriba manualmente tu numero de telefono de una tarjeta, escanean y guardan. Tambien genial para credenciales de conferencias, gafetes y eventos de networking. Lee nuestra guia completa sobre <Link href="/es/aprender/codigo-qr-para-tarjeta-de-presentacion" className="text-[#14D8C4] hover:underline">codigos QR para tarjetas de presentacion</Link>.
                   </p>
                 </div>
               </div>
@@ -187,7 +187,7 @@ export default function TiposCodigoQRExplicadosPage() {
                 Este tipo es perfecto para restaurantes, cafeterias, hoteles, Airbnbs, oficinas y hogares. En lugar de escribir la contrasena WiFi en un pizarron o repetirla a cada invitado, exhibe un codigo QR y deja que las personas se conecten con un escaneo.
               </p>
               <p className="text-slate-600">
-                <strong>Importante:</strong> La contrasena esta codificada en el codigo QR, asi que usa una red de invitados para espacios publicos. Lee nuestra guia detallada sobre <Link href="/es/aprender/codigo-qr-para-wifi" className="text-orange-600 hover:underline">crear codigos QR de WiFi</Link> para consejos de seguridad e instrucciones de configuracion.
+                <strong>Importante:</strong> La contrasena esta codificada en el codigo QR, asi que usa una red de invitados para espacios publicos. Lee nuestra guia detallada sobre <Link href="/es/aprender/codigo-qr-para-wifi" className="text-[#14D8C4] hover:underline">crear codigos QR de WiFi</Link> para consejos de seguridad e instrucciones de configuracion.
               </p>
             </section>
 
@@ -248,15 +248,15 @@ export default function TiposCodigoQRExplicadosPage() {
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Quieres que la gente visite un sitio web?</strong> Usa tipo URL.</li>
-                <li>&#10003; <strong>Quieres que la gente guarde tu informacion de contacto?</strong> Usa tipo vCard. Mejor para <Link href="/es/aprender/codigo-qr-para-tarjeta-de-presentacion" className="text-orange-600 hover:underline">tarjetas de presentacion</Link>.</li>
-                <li>&#10003; <strong>Quieres que la gente se conecte al WiFi?</strong> Usa tipo <Link href="/es/aprender/codigo-qr-para-wifi" className="text-orange-600 hover:underline">WiFi</Link>.</li>
-                <li>&#10003; <strong>Quieres compartir un PDF?</strong> Usa tipo URL enlazando a un <Link href="/es/aprender/codigo-qr-para-pdf" className="text-orange-600 hover:underline">PDF alojado</Link>.</li>
+                <li>&#10003; <strong>Quieres que la gente guarde tu informacion de contacto?</strong> Usa tipo vCard. Mejor para <Link href="/es/aprender/codigo-qr-para-tarjeta-de-presentacion" className="text-[#14D8C4] hover:underline">tarjetas de presentacion</Link>.</li>
+                <li>&#10003; <strong>Quieres que la gente se conecte al WiFi?</strong> Usa tipo <Link href="/es/aprender/codigo-qr-para-wifi" className="text-[#14D8C4] hover:underline">WiFi</Link>.</li>
+                <li>&#10003; <strong>Quieres compartir un PDF?</strong> Usa tipo URL enlazando a un <Link href="/es/aprender/codigo-qr-para-pdf" className="text-[#14D8C4] hover:underline">PDF alojado</Link>.</li>
                 <li>&#10003; <strong>Quieres que la gente te llame?</strong> Usa tipo Telefono.</li>
                 <li>&#10003; <strong>Quieres mostrar un codigo o mensaje?</strong> Usa tipo Texto.</li>
                 <li>&#10003; <strong>Quieres retroalimentacion por correo?</strong> Usa tipo Correo.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Sin importar que tipo elijas, sigue nuestras <Link href="/es/aprender/mejores-practicas-codigo-qr" className="text-orange-600 hover:underline">mejores practicas de codigo QR</Link> para tamano, contraste y pruebas para asegurar un escaneo confiable.
+                Sin importar que tipo elijas, sigue nuestras <Link href="/es/aprender/mejores-practicas-codigo-qr" className="text-[#14D8C4] hover:underline">mejores practicas de codigo QR</Link> para tamano, contraste y pruebas para asegurar un escaneo confiable.
               </p>
             </section>
 
@@ -270,7 +270,7 @@ export default function TiposCodigoQRExplicadosPage() {
             <p className="text-slate-300 mb-6">Genera codigos QR de tipo URL, vCard, WiFi, texto y mas en segundos. Funcion Pro — actualiza para codigos QR ilimitados.</p>
             <Link
               href="/es/codigo-qr"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <QrCode className="h-5 w-5" /> Crear Codigo QR Ahora
             </Link>
@@ -293,10 +293,10 @@ export default function TiposCodigoQRExplicadosPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

@@ -42,19 +42,19 @@ export default function UnirPDFsEnOrdenPage() {
       <main>
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-            <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Unir PDF</p>
+            <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Unir PDF</p>
             <h1 className="text-4xl lg:text-5xl font-black mb-4">Unir PDFs en el Orden Correcto (Sin Errores de Páginas)</h1>
             <p className="text-xl text-slate-300">No hay nada peor que enviar un PDF unido con las páginas desordenadas. Aquí te explicamos cómo hacerlo bien cada vez — con trucos simples de nombres y un flujo de arrastrar y soltar.</p>
           </div></div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><Merge className="h-5 w-5 text-white" /></div>
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><Merge className="h-5 w-5 text-white" /></div>
               <p className="text-slate-700 font-semibold">¿Listo para unir en orden? Salta la guía y ve directo a la herramienta.</p>
             </div>
-            <Link href="/es/unir-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
+            <Link href="/es/unir-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
               Unir PDFs Ahora <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -68,15 +68,15 @@ export default function UnirPDFsEnOrdenPage() {
               <p className="text-slate-600 mb-4">Cuando combinas múltiples PDFs en uno, la herramienta los procesa en una secuencia específica. Si no controlas esa secuencia, puedes terminar con:</p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Una carta de presentación después de tu currículum</strong> en vez de antes — causando una mala primera impresión en los reclutadores.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Documentos de respaldo antes del formulario principal de solicitud</strong> — confundiendo a la persona que revisa tu envío.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Anexos mezclados en el cuerpo de un informe</strong> — haciendo que tu documento luzca poco profesional.</span>
                 </li>
               </ul>
@@ -108,7 +108,7 @@ export default function UnirPDFsEnOrdenPage() {
                   { title: "Une, descarga y verifica", desc: "Haz clic en Unir PDF, descarga el resultado, y revisa cada página para confirmar que todo está en el orden correcto. Esta verificación final toma 30 segundos y previene errores de envío." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div>
                       <h3 className="font-bold text-slate-900 mb-1">{step.title}</h3>
                       <p className="text-slate-600 text-sm">{step.desc}</p>
@@ -122,9 +122,9 @@ export default function UnirPDFsEnOrdenPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">¿Ya Uniste en el Orden Incorrecto?</h2>
               <p className="text-slate-600 mb-4">Si ya uniste tus PDFs y las páginas están desordenadas, no necesitas empezar de nuevo. Así puedes arreglarlo:</p>
               <ul className="space-y-2 text-slate-700">
-                <li>✓ <strong>Usa Dividir PDF</strong> para separar el documento unido en páginas individuales usando <Link href="/es/dividir-pdf" className="text-orange-600 hover:underline">Dividir PDF</Link>.</li>
+                <li>✓ <strong>Usa Dividir PDF</strong> para separar el documento unido en páginas individuales usando <Link href="/es/dividir-pdf" className="text-[#14D8C4] hover:underline">Dividir PDF</Link>.</li>
                 <li>✓ <strong>Reorganiza las páginas</strong> y únelas nuevamente en el orden correcto.</li>
-                <li>✓ <strong>O usa Reordenar Páginas PDF</strong> — las <Link href="/es/dividir-pdf" className="text-orange-600 hover:underline">herramientas de gestión de páginas</Link> te permiten arrastrar páginas a la posición correcta dentro de un solo PDF sin dividir.</li>
+                <li>✓ <strong>O usa Reordenar Páginas PDF</strong> — las <Link href="/es/dividir-pdf" className="text-[#14D8C4] hover:underline">herramientas de gestión de páginas</Link> te permiten arrastrar páginas a la posición correcta dentro de un solo PDF sin dividir.</li>
               </ul>
             </section>
 
@@ -153,7 +153,7 @@ export default function UnirPDFsEnOrdenPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">¿Listo para Unir Tus PDFs en Orden?</h2>
             <p className="text-slate-300 mb-6">Sube tus archivos, arrástralos a la secuencia correcta, y combínalos — gratis, sin registro.</p>
-            <Link href="/es/unir-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors">
+            <Link href="/es/unir-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors">
               <Merge className="h-5 w-5" /> Unir PDFs Ahora
             </Link>
           </div>
@@ -169,9 +169,9 @@ export default function UnirPDFsEnOrdenPage() {
                 { title: "Combinar PDFs para Envíos (Escuela, Visa, Portales de Empleo)", href: "/es/aprender/combinar-pdfs-para-envio" },
                 { title: "Unir Archivos PDF en iPhone (Método Rápido por Navegador)", href: "/es/aprender/unir-pdf-en-iphone" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

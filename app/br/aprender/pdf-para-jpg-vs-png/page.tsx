@@ -43,7 +43,7 @@ export default function PdfParaJpgVsPngPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF para JPG</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF para JPG</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">PDF para JPG vs PNG: Qual Escolher?</h1>
               <p className="text-xl text-slate-300">
                 Converter PDF para imagem, mas não sabe se deve usar JPG ou PNG? Veja a comparação completa e descubra o formato ideal para cada situação.
@@ -52,15 +52,15 @@ export default function PdfParaJpgVsPngPage() {
           </div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <ImageIcon className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Já sabe qual formato? Converta agora.</p>
             </div>
-            <Link href="/br/pdf-para-jpg" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
+            <Link href="/br/pdf-para-jpg" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
               Converter PDF para JPG <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -73,8 +73,8 @@ export default function PdfParaJpgVsPngPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">A Diferença Fundamental</h2>
               <p className="text-slate-600 mb-4">A principal diferença entre JPG e PNG está na compressão:</p>
               <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">-</span><span><strong>JPG (JPEG):</strong> Compressão com perda. Descarta alguns dados da imagem para criar arquivos menores. Ideal para fotos e imagens complexas.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">-</span><span><strong>PNG:</strong> Compressão sem perda. Mantém todos os dados da imagem, gerando arquivos maiores mas com qualidade perfeita. Ideal para texto, gráficos e transparência.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">-</span><span><strong>JPG (JPEG):</strong> Compressão com perda. Descarta alguns dados da imagem para criar arquivos menores. Ideal para fotos e imagens complexas.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">-</span><span><strong>PNG:</strong> Compressão sem perda. Mantém todos os dados da imagem, gerando arquivos maiores mas com qualidade perfeita. Ideal para texto, gráficos e transparência.</span></li>
               </ul>
             </section>
 
@@ -106,7 +106,7 @@ export default function PdfParaJpgVsPngPage() {
                 <li>- Quando o tamanho do arquivo é prioridade</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                <Link href="/br/pdf-para-jpg" className="text-orange-600 hover:underline font-semibold">Converter PDF para JPG agora</Link>
+                <Link href="/br/pdf-para-jpg" className="text-[#14D8C4] hover:underline font-semibold">Converter PDF para JPG agora</Link>
               </p>
             </section>
 
@@ -120,7 +120,7 @@ export default function PdfParaJpgVsPngPage() {
                 <li>- Quando a qualidade é prioridade sobre o tamanho</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                <Link href="/br/pdf-para-png" className="text-orange-600 hover:underline font-semibold">Converter PDF para PNG agora</Link>
+                <Link href="/br/pdf-para-png" className="text-[#14D8C4] hover:underline font-semibold">Converter PDF para PNG agora</Link>
               </p>
             </section>
 
@@ -139,7 +139,7 @@ export default function PdfParaJpgVsPngPage() {
             <h2 className="text-2xl font-black text-white mb-3">Escolheu o Formato? Converta Agora</h2>
             <p className="text-slate-300 mb-6">Converta seu PDF para JPG ou PNG em segundos — grátis e sem cadastro.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link href="/br/pdf-para-jpg" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors">
+              <Link href="/br/pdf-para-jpg" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors">
                 <ImageIcon className="h-5 w-5" /> PDF para JPG
               </Link>
               <Link href="/br/pdf-para-png" className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-slate-900 font-bold py-3 px-8 rounded-xl transition-colors">
@@ -159,9 +159,9 @@ export default function PdfParaJpgVsPngPage() {
                 { title: "PDF para PNG para Design", href: "/br/aprender/pdf-para-png-para-design" },
                 { title: "Por Que PDF para JPG Fica Borrado", href: "/br/aprender/por-que-pdf-para-jpg-fica-borrado" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

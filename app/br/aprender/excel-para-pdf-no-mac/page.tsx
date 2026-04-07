@@ -44,20 +44,20 @@ export default function ExcelParaPDFMacPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Excel para PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Excel para PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Excel para PDF no Mac</h1>
               <p className="text-xl text-slate-300">Converta planilhas Excel para PDF no Mac sem colunas cortadas ou fontes trocadas. Tres metodos: Excel para Mac, Preview e PDF.it online.</p>
             </div>
           </div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><FileSpreadsheet className="h-5 w-5 text-white" /></div>
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><FileSpreadsheet className="h-5 w-5 text-white" /></div>
               <p className="text-slate-700 font-semibold">Converta Excel para PDF online agora.</p>
             </div>
-            <Link href="/br/excel-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Excel para PDF <ArrowRight className="h-4 w-4" /></Link>
+            <Link href="/br/excel-para-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Excel para PDF <ArrowRight className="h-4 w-4" /></Link>
           </div>
         </section>
 
@@ -74,7 +74,7 @@ export default function ExcelParaPDFMacPage() {
                   { title: "Salve como PDF", desc: "Arquivo > Salvar como > Escolha 'PDF' no formato. Ou use Arquivo > Imprimir > botao 'PDF' no canto inferior esquerdo > Salvar como PDF." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                   </div>
                 ))}
@@ -85,7 +85,7 @@ export default function ExcelParaPDFMacPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">Metodo 2: PDF.it Online</h2>
               <p className="text-slate-600 mb-4">Se nao tem Excel instalado ou quer uma conversao mais consistente:</p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; Acesse <Link href="/br/excel-para-pdf" className="text-orange-600 hover:underline">Excel para PDF</Link> no PDF.it.</li>
+                <li>&#10003; Acesse <Link href="/br/excel-para-pdf" className="text-[#14D8C4] hover:underline">Excel para PDF</Link> no PDF.it.</li>
                 <li>&#10003; Faca upload do arquivo .xlsx.</li>
                 <li>&#10003; Baixe o PDF convertido.</li>
                 <li>&#10003; Funciona no Safari e Chrome — sem instalacao.</li>
@@ -107,7 +107,7 @@ export default function ExcelParaPDFMacPage() {
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; Use Visualizacao de Quebra de Pagina no Excel para ver exatamente como a planilha sera dividida em paginas.</li>
                 <li>&#10003; Defina a area de impressao manualmente se so precisa exportar parte da planilha.</li>
-                <li>&#10003; Apos converter, use <Link href="/br/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> se o arquivo ficou grande (especialmente com graficos).</li>
+                <li>&#10003; Apos converter, use <Link href="/br/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> se o arquivo ficou grande (especialmente com graficos).</li>
                 <li>&#10003; O Preview do Mac pode abrir e verificar o PDF sem instalar nenhum leitor adicional.</li>
               </ul>
             </section>
@@ -118,7 +118,7 @@ export default function ExcelParaPDFMacPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Converta Excel para PDF</h2>
             <p className="text-slate-300 mb-6">Funciona no Mac, Windows e celular — direto no navegador.</p>
-            <Link href="/br/excel-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><FileSpreadsheet className="h-5 w-5" /> Excel para PDF</Link>
+            <Link href="/br/excel-para-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><FileSpreadsheet className="h-5 w-5" /> Excel para PDF</Link>
           </div>
         </section>
 
@@ -129,9 +129,9 @@ export default function ExcelParaPDFMacPage() {
               {[
                 { title: "Relatorio Excel para PDF", href: "/br/aprender/relatorio-excel-para-pdf" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

@@ -91,7 +91,7 @@ export default function CompressPDFForPrintingPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Compress PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Compress PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Compress a PDF for Printing (Keep Print Quality)</h1>
               <p className="text-xl text-slate-300">
                 Your print file is too large to send, but you can&apos;t afford pixelated images. Here&apos;s how to shrink the file size while keeping 300 DPI resolution for professional printing.
@@ -101,17 +101,17 @@ export default function CompressPDFForPrintingPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileDown className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to compress? Skip the guide and go straight to the tool.</p>
             </div>
             <Link
               href="/compress-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Compress PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function CompressPDFForPrintingPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>300 DPI images.</strong> Print quality requires 300 dots per inch. A single full-page image at 300 DPI can be 5-15MB. Multiply that by page count and files grow fast.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Embedded fonts.</strong> Print PDFs embed full font families to ensure the printer reproduces text exactly. Each font can add 100-500KB.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Color profiles.</strong> CMYK color spaces and ICC profiles are larger than RGB. Professional print files include these for accurate color reproduction.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Bleed and crop marks.</strong> Print files include extra content beyond the page edge (bleed) and alignment marks. These add to file size.</span>
                 </li>
               </ul>
@@ -167,7 +167,7 @@ export default function CompressPDFForPrintingPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -196,17 +196,17 @@ export default function CompressPDFForPrintingPage() {
                   </thead>
                   <tbody className="text-slate-700">
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">300 DPI</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">300 DPI</td>
                       <td className="py-3 px-4">Professional print quality</td>
                       <td className="py-3 px-4">Brochures, business cards, photo prints, magazines</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">150 DPI</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">150 DPI</td>
                       <td className="py-3 px-4">Good for drafts and internal use</td>
                       <td className="py-3 px-4">Office documents, internal reports, posters viewed from a distance</td>
                     </tr>
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">72 DPI</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">72 DPI</td>
                       <td className="py-3 px-4">Screen-only quality</td>
                       <td className="py-3 px-4">Web viewing, email attachments — not suitable for printing</td>
                     </tr>
@@ -225,10 +225,10 @@ export default function CompressPDFForPrintingPage() {
                 Before compressing, take these steps to ensure your print file is clean and optimized:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Flatten the PDF.</strong> Use <Link href="/flatten-pdf" className="text-orange-600 hover:underline">Flatten PDF</Link> to merge layers, annotations, and form fields into the page content. This prevents rendering issues at the printer.</li>
-                <li>&#10003; <strong>Remove unnecessary pages.</strong> If your file has draft pages, notes, or blank pages, use <Link href="/split-pdf" className="text-orange-600 hover:underline">Split PDF</Link> to remove them before sending to the print shop.</li>
-                <li>&#10003; <strong>Check orientation.</strong> Make sure all pages are oriented correctly. Use <Link href="/rotate-pdf" className="text-orange-600 hover:underline">Rotate PDF</Link> to fix any sideways or upside-down pages.</li>
-                <li>&#10003; <strong>Merge separate files.</strong> If your design is spread across multiple files (cover, interior, back), use <Link href="/merge-pdf" className="text-orange-600 hover:underline">Merge PDF</Link> to combine them into one print-ready document.</li>
+                <li>&#10003; <strong>Flatten the PDF.</strong> Use <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">Flatten PDF</Link> to merge layers, annotations, and form fields into the page content. This prevents rendering issues at the printer.</li>
+                <li>&#10003; <strong>Remove unnecessary pages.</strong> If your file has draft pages, notes, or blank pages, use <Link href="/split-pdf" className="text-[#14D8C4] hover:underline">Split PDF</Link> to remove them before sending to the print shop.</li>
+                <li>&#10003; <strong>Check orientation.</strong> Make sure all pages are oriented correctly. Use <Link href="/rotate-pdf" className="text-[#14D8C4] hover:underline">Rotate PDF</Link> to fix any sideways or upside-down pages.</li>
+                <li>&#10003; <strong>Merge separate files.</strong> If your design is spread across multiple files (cover, interior, back), use <Link href="/merge-pdf" className="text-[#14D8C4] hover:underline">Merge PDF</Link> to combine them into one print-ready document.</li>
               </ul>
             </section>
 
@@ -245,19 +245,19 @@ export default function CompressPDFForPrintingPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Large Format Posters and Banners</h3>
                   <p className="text-slate-600">
-                    Posters are viewed from a distance, so you can get away with 150 DPI. Medium compression is often fine here, and it can cut file sizes by 40-60%. For very large banner files, consider splitting into sections with <Link href="/split-pdf" className="text-orange-600 hover:underline">Split PDF</Link>.
+                    Posters are viewed from a distance, so you can get away with 150 DPI. Medium compression is often fine here, and it can cut file sizes by 40-60%. For very large banner files, consider splitting into sections with <Link href="/split-pdf" className="text-[#14D8C4] hover:underline">Split PDF</Link>.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Photo Books and Portfolios</h3>
                   <p className="text-slate-600">
-                    Photo-heavy print files are often the largest. Stick with Light compression to preserve photo quality. If the file is over 100MB, consider converting images to <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">JPG</Link> at the right resolution before embedding them.
+                    Photo-heavy print files are often the largest. Stick with Light compression to preserve photo quality. If the file is over 100MB, consider converting images to <Link href="/pdf-to-jpg" className="text-[#14D8C4] hover:underline">JPG</Link> at the right resolution before embedding them.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Office Documents for Internal Printing</h3>
                   <p className="text-slate-600">
-                    Internal reports, meeting handouts, and memos don&apos;t need 300 DPI. Medium compression works great and makes files much easier to share via email. Use <Link href="/compress-pdf-for-email" className="text-orange-600 hover:underline">Compress for Email</Link> if you also need to email the file.
+                    Internal reports, meeting handouts, and memos don&apos;t need 300 DPI. Medium compression works great and makes files much easier to share via email. Use <Link href="/compress-pdf-for-email" className="text-[#14D8C4] hover:underline">Compress for Email</Link> if you also need to email the file.
                   </p>
                 </div>
               </div>
@@ -273,7 +273,7 @@ export default function CompressPDFForPrintingPage() {
             <p className="text-slate-300 mb-6">Reduce your print file size while keeping 300 DPI quality — free, no signup required.</p>
             <Link
               href="/compress-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileDown className="h-5 w-5" /> Compress PDF Now
             </Link>
@@ -294,10 +294,10 @@ export default function CompressPDFForPrintingPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

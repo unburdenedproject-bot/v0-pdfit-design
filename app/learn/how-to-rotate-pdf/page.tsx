@@ -91,7 +91,7 @@ export default function HowToRotatePDFPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Rotate PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Rotate PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">How to Rotate a PDF Online (90°, 180°, or Custom)</h1>
               <p className="text-xl text-slate-300">
                 Got a PDF with sideways or upside-down pages? Whether it is a single page or the entire document, here is how to fix PDF rotation in seconds — no software required.
@@ -101,17 +101,17 @@ export default function HowToRotatePDFPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <RotateCw className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to rotate? Skip the guide and go straight to the tool.</p>
             </div>
             <Link
               href="/rotate-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Rotate PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,24 +130,24 @@ export default function HowToRotatePDFPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Scanner orientation mismatch.</strong> When you scan a document at a different angle than expected, the scanner saves the page sideways or upside down. This happens frequently with office multifunction printers.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Landscape pages in portrait documents.</strong> Spreadsheets, charts, and wide tables are often created in landscape mode but get embedded into a portrait PDF without rotating.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>Phone camera scans.</strong> Taking photos of documents with your phone can result in rotated pages depending on how you held the device. Tools like <Link href="/phone-scan-cleanup" className="text-orange-600 hover:underline">Phone Scan Cleanup</Link> can help, but you may still need to rotate.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
+                  <span><strong>Phone camera scans.</strong> Taking photos of documents with your phone can result in rotated pages depending on how you held the device. Tools like <Link href="/phone-scan-cleanup" className="text-[#14D8C4] hover:underline">Phone Scan Cleanup</Link> can help, but you may still need to rotate.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>PDF export bugs.</strong> Some applications export pages with incorrect rotation metadata, causing viewers to display them sideways even though the content was created correctly.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
-                  <span><strong>Merged documents with mixed orientations.</strong> When you <Link href="/merge-pdf" className="text-orange-600 hover:underline">merge multiple PDFs</Link>, some files may have different page orientations that need correcting.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
+                  <span><strong>Merged documents with mixed orientations.</strong> When you <Link href="/merge-pdf" className="text-[#14D8C4] hover:underline">merge multiple PDFs</Link>, some files may have different page orientations that need correcting.</span>
                 </li>
               </ul>
             </section>
@@ -171,7 +171,7 @@ export default function HowToRotatePDFPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -192,7 +192,7 @@ export default function HowToRotatePDFPage() {
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Rotate all pages</strong> when the entire document was scanned at the wrong angle. This is the most common case with scanned PDFs — select all pages and apply a single rotation.</li>
                 <li>&#10003; <strong>Rotate individual pages</strong> when only certain pages are sideways. This happens when a document mixes portrait text pages with landscape charts or spreadsheets.</li>
-                <li>&#10003; <strong>Use Split + Rotate + Merge</strong> for complex documents. If you need different rotations for different sections, <Link href="/split-pdf" className="text-orange-600 hover:underline">split the PDF</Link> into groups, rotate each group separately, then <Link href="/merge-pdf" className="text-orange-600 hover:underline">merge them</Link> back together.</li>
+                <li>&#10003; <strong>Use Split + Rotate + Merge</strong> for complex documents. If you need different rotations for different sections, <Link href="/split-pdf" className="text-[#14D8C4] hover:underline">split the PDF</Link> into groups, rotate each group separately, then <Link href="/merge-pdf" className="text-[#14D8C4] hover:underline">merge them</Link> back together.</li>
                 <li>&#10003; <strong>Check the result</strong> by opening the downloaded file in any PDF viewer. Scroll through every page to confirm the orientation is correct before submitting or sharing.</li>
               </ul>
             </section>
@@ -219,7 +219,7 @@ export default function HowToRotatePDFPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">180°</h3>
                   <p className="text-slate-600">
-                    Flips the page completely upside down. Use this when a page is inverted — text that reads bottom-to-top needs a 180° rotation. Common with double-sided scanning errors. See our dedicated guide on <Link href="/learn/fix-upside-down-pdf" className="text-orange-600 hover:underline">fixing upside-down PDFs</Link>.
+                    Flips the page completely upside down. Use this when a page is inverted — text that reads bottom-to-top needs a 180° rotation. Common with double-sided scanning errors. See our dedicated guide on <Link href="/learn/fix-upside-down-pdf" className="text-[#14D8C4] hover:underline">fixing upside-down PDFs</Link>.
                   </p>
                 </div>
               </div>
@@ -232,10 +232,10 @@ export default function HowToRotatePDFPage() {
                 Once your pages are correctly oriented, consider these follow-up steps to get the best result:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Compress the file.</strong> If the rotated PDF is too large for email or upload portals, use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> to reduce the size. You can even target specific sizes like <Link href="/compress-pdf-to-5mb" className="text-orange-600 hover:underline">5MB</Link> or <Link href="/compress-pdf-to-2mb" className="text-orange-600 hover:underline">2MB</Link>.</li>
-                <li>&#10003; <strong>Run OCR on scanned pages.</strong> If the rotated document is a scan without selectable text, use <Link href="/ocr-scanner" className="text-orange-600 hover:underline">OCR Scanner</Link> to make the text searchable and copyable.</li>
-                <li>&#10003; <strong>Flatten the PDF.</strong> If you plan to submit the file to a portal, <Link href="/flatten-pdf" className="text-orange-600 hover:underline">flatten it</Link> to remove any hidden layers, form fields, or annotations that could cause compatibility issues.</li>
-                <li>&#10003; <strong>Protect sensitive documents.</strong> Add a password using <Link href="/protect-pdf" className="text-orange-600 hover:underline">Protect PDF</Link> if the document contains personal or confidential information.</li>
+                <li>&#10003; <strong>Compress the file.</strong> If the rotated PDF is too large for email or upload portals, use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> to reduce the size. You can even target specific sizes like <Link href="/compress-pdf-to-5mb" className="text-[#14D8C4] hover:underline">5MB</Link> or <Link href="/compress-pdf-to-2mb" className="text-[#14D8C4] hover:underline">2MB</Link>.</li>
+                <li>&#10003; <strong>Run OCR on scanned pages.</strong> If the rotated document is a scan without selectable text, use <Link href="/ocr-scanner" className="text-[#14D8C4] hover:underline">OCR Scanner</Link> to make the text searchable and copyable.</li>
+                <li>&#10003; <strong>Flatten the PDF.</strong> If you plan to submit the file to a portal, <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">flatten it</Link> to remove any hidden layers, form fields, or annotations that could cause compatibility issues.</li>
+                <li>&#10003; <strong>Protect sensitive documents.</strong> Add a password using <Link href="/protect-pdf" className="text-[#14D8C4] hover:underline">Protect PDF</Link> if the document contains personal or confidential information.</li>
               </ul>
             </section>
 
@@ -249,7 +249,7 @@ export default function HowToRotatePDFPage() {
             <p className="text-slate-300 mb-6">Upload your file and fix the page orientation in seconds — free, no signup required.</p>
             <Link
               href="/rotate-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <RotateCw className="h-5 w-5" /> Rotate PDF Now
             </Link>
@@ -269,10 +269,10 @@ export default function HowToRotatePDFPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

@@ -91,7 +91,7 @@ export default function MarcaDeAguaPDFConfidencialPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Marca de Agua PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Marca de Agua PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Agregar una Marca de Agua &quot;Confidencial&quot; a un PDF (Guia Rapida)</h1>
               <p className="text-xl text-slate-300">
                 Necesitas marcar un documento como CONFIDENCIAL, BORRADOR o NO COPIAR antes de compartirlo? Aqui te explicamos como estampar cualquier PDF con una marca de agua de seguridad en segundos.
@@ -101,17 +101,17 @@ export default function MarcaDeAguaPDFConfidencialPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Stamp className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Listo para estampar tu PDF? Salta la guia y ve directo a la herramienta.</p>
             </div>
             <Link
               href="/es/marca-de-agua-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Marca de Agua PDF Ahora <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,23 +130,23 @@ export default function MarcaDeAguaPDFConfidencialPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Contratos y acuerdos legales.</strong> Las firmas de abogados marcan contratos, acuerdos de confidencialidad y documentos de acuerdos como CONFIDENCIAL antes de enviarlos a clientes o a la parte contraria.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Informes financieros.</strong> Los estados financieros internos, informes de auditoria y previsiones presupuestarias a menudo se estampan como CONFIDENCIAL para prevenir la distribucion no autorizada dentro o fuera de la organizacion.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Documentos de recursos humanos.</strong> Los registros de empleados, hojas de salario y evaluaciones de desempeno contienen informacion sensible que debe marcarse claramente como restringida.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Propuestas e informes en borrador.</strong> Al circular un documento no terminado para revision, una marca de agua BORRADOR les dice a los lectores que el contenido no es final y no debe citarse ni reenviarse.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Examenes y evaluaciones.</strong> Las instituciones educativas estampan materiales de examen con NO COPIAR para prevenir la distribucion no autorizada entre estudiantes.</span>
                 </li>
               </ul>
@@ -156,7 +156,7 @@ export default function MarcaDeAguaPDFConfidencialPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-6">Como Agregar una Marca de Agua Confidencial (Paso a Paso)</h2>
               <p className="text-slate-600 mb-4">
-                Marca de Agua PDF esta disponible para usuarios Pro y Business. <Link href="/es/precios" className="text-orange-600 hover:underline">Ver precios</Link> para mas detalles.
+                Marca de Agua PDF esta disponible para usuarios Pro y Business. <Link href="/es/precios" className="text-[#14D8C4] hover:underline">Ver precios</Link> para mas detalles.
               </p>
               <div className="space-y-4">
                 {[
@@ -174,7 +174,7 @@ export default function MarcaDeAguaPDFConfidencialPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -227,9 +227,9 @@ export default function MarcaDeAguaPDFConfidencialPage() {
                 Una superposicion de marca de agua a veces puede ser eliminada por alguien con las herramientas adecuadas. Para prevenir esto, toma estos pasos extra despues de marcar:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Aplana el PDF.</strong> Usa <Link href="/es/aplanar-pdf" className="text-orange-600 hover:underline">Aplanar PDF</Link> para fusionar la marca de agua permanentemente en el contenido de la pagina. Despues de aplanar, la marca de agua no puede separarse del documento original.</li>
-                <li>&#10003; <strong>Protege el archivo con contrasena.</strong> Usa <Link href="/es/proteger-pdf" className="text-orange-600 hover:underline">Proteger PDF</Link> para agregar una contrasena que restrinja la edicion e impresion. Esto agrega otra barrera contra la manipulacion.</li>
-                <li>&#10003; <strong>Comprime antes de compartir.</strong> Despues de agregar la marca de agua y aplanar, usa <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> para mantener el tamano del archivo manejable, especialmente si lo vas a enviar por correo.</li>
+                <li>&#10003; <strong>Aplana el PDF.</strong> Usa <Link href="/es/aplanar-pdf" className="text-[#14D8C4] hover:underline">Aplanar PDF</Link> para fusionar la marca de agua permanentemente en el contenido de la pagina. Despues de aplanar, la marca de agua no puede separarse del documento original.</li>
+                <li>&#10003; <strong>Protege el archivo con contrasena.</strong> Usa <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link> para agregar una contrasena que restrinja la edicion e impresion. Esto agrega otra barrera contra la manipulacion.</li>
+                <li>&#10003; <strong>Comprime antes de compartir.</strong> Despues de agregar la marca de agua y aplanar, usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para mantener el tamano del archivo manejable, especialmente si lo vas a enviar por correo.</li>
               </ul>
             </section>
 
@@ -243,7 +243,7 @@ export default function MarcaDeAguaPDFConfidencialPage() {
                 Los usuarios Pro y Business pueden subir multiples PDF a la vez, configurar las opciones de marca de agua una sola vez, y aplicar la misma marca de agua a cada archivo simultaneamente. Cada archivo se procesa individualmente y esta disponible para descarga individual o masiva como archivo ZIP.
               </p>
               <p className="text-slate-600">
-                Esto es especialmente util para equipos legales preparando documentos de descubrimiento, firmas de contabilidad distribuyendo informes confidenciales, o departamentos de recursos humanos procesando registros de empleados. En lugar de marcar archivos uno por uno, hazlos todos en un solo lote. Despues de marcar, puedes <Link href="/es/unir-pdf" className="text-orange-600 hover:underline">unirlos en un solo documento</Link> si es necesario.
+                Esto es especialmente util para equipos legales preparando documentos de descubrimiento, firmas de contabilidad distribuyendo informes confidenciales, o departamentos de recursos humanos procesando registros de empleados. En lugar de marcar archivos uno por uno, hazlos todos en un solo lote. Despues de marcar, puedes <Link href="/es/unir-pdf" className="text-[#14D8C4] hover:underline">unirlos en un solo documento</Link> si es necesario.
               </p>
             </section>
 
@@ -257,7 +257,7 @@ export default function MarcaDeAguaPDFConfidencialPage() {
             <p className="text-slate-300 mb-6">Sube tu PDF y agrega una marca de agua CONFIDENCIAL, BORRADOR o personalizada en segundos. Disponible para usuarios Pro y Business.</p>
             <Link
               href="/es/marca-de-agua-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Stamp className="h-5 w-5" /> Marca de Agua PDF Ahora
             </Link>
@@ -277,10 +277,10 @@ export default function MarcaDeAguaPDFConfidencialPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

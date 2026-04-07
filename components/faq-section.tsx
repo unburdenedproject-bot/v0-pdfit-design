@@ -72,14 +72,14 @@ function FAQItem({ question, answer, isOpen, onToggle, index }: FAQItemProps) {
     <div className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-200">
       <button
         onClick={onToggle}
-        className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-inset"
+        className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#14D8C4] focus:ring-inset"
         aria-expanded={isOpen}
         aria-controls={`faq-answer-${index}`}
       >
         <h3 className="text-lg font-bold text-slate-900 pr-4 leading-relaxed">{question}</h3>
         <div className="flex-shrink-0">
           {isOpen ? (
-            <ChevronUp className="h-5 w-5 text-orange-500 transition-transform duration-200" />
+            <ChevronUp className="h-5 w-5 text-[#14D8C4] transition-transform duration-200" />
           ) : (
             <ChevronDown className="h-5 w-5 text-slate-600 transition-transform duration-200" />
           )}
@@ -137,15 +137,15 @@ export function FAQSection() {
           <div className="max-w-4xl mx-auto">
             {/* Header */}
             <div className="text-center mb-16">
-              <div className="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-6">
-                <HelpCircle className="h-8 w-8 text-orange-600" />
+              <div className="w-16 h-16 bg-[#F0FDFA] rounded-xl flex items-center justify-center mx-auto mb-6">
+                <HelpCircle className="h-8 w-8 text-[#14D8C4]" />
               </div>
               <h2 id="faq-heading" className="text-4xl lg:text-5xl font-black text-slate-900 mb-4">
                 Frequently Asked Questions
               </h2>
               <p className="text-xl text-slate-600 max-w-2xl mx-auto">
                 Everything you need to know about PDF.it. Can't find what you're looking for?{" "}
-                <a href="/contact" className="text-orange-500 hover:text-orange-600 font-medium underline">
+                <a href="/contact" className="text-[#14D8C4] hover:text-[#2EE6D6] font-medium underline">
                   Contact us
                 </a>
                 .

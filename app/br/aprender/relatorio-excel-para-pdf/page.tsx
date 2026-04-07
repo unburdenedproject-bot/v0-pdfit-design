@@ -44,20 +44,20 @@ export default function RelatorioExcelParaPDFPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Excel para PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Excel para PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Relatorio Excel para PDF</h1>
               <p className="text-xl text-slate-300">Converta relatorios Excel para PDF com aparencia profissional. Cabecalhos, rodapes, graficos, margens e numeracao de paginas — tudo no lugar certo.</p>
             </div>
           </div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><FileSpreadsheet className="h-5 w-5 text-white" /></div>
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><FileSpreadsheet className="h-5 w-5 text-white" /></div>
               <p className="text-slate-700 font-semibold">Converta seu relatorio agora.</p>
             </div>
-            <Link href="/br/excel-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Excel para PDF <ArrowRight className="h-4 w-4" /></Link>
+            <Link href="/br/excel-para-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Excel para PDF <ArrowRight className="h-4 w-4" /></Link>
           </div>
         </section>
 
@@ -68,10 +68,10 @@ export default function RelatorioExcelParaPDFPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que Converter Relatorios para PDF?</h2>
               <p className="text-slate-600 mb-4">Relatorios financeiros, de vendas, de desempenho e gerenciais frequentemente sao criados no Excel. Mas para apresentacao, distribuicao e arquivamento, PDF e o formato ideal:</p>
               <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Formatacao fixa:</strong> O relatorio fica identico em qualquer computador, celular ou impressora.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Protecao de dados:</strong> O destinatario nao pode alterar os numeros ou formulas acidentalmente.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Profissionalismo:</strong> PDFs bem formatados passam uma impressao de seriedade e cuidado.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Facilidade de compartilhamento:</strong> PDFs sao menores e mais faceis de enviar por e-mail.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Formatacao fixa:</strong> O relatorio fica identico em qualquer computador, celular ou impressora.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Protecao de dados:</strong> O destinatario nao pode alterar os numeros ou formulas acidentalmente.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Profissionalismo:</strong> PDFs bem formatados passam uma impressao de seriedade e cuidado.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Facilidade de compartilhamento:</strong> PDFs sao menores e mais faceis de enviar por e-mail.</span></li>
               </ul>
             </section>
 
@@ -86,7 +86,7 @@ export default function RelatorioExcelParaPDFPage() {
                   { title: "Verifique com quebra de pagina", desc: "Va em Exibicao > Visualizacao de Quebra de Pagina para ver exatamente como o relatorio sera dividido em paginas no PDF." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                   </div>
                 ))}
@@ -109,16 +109,16 @@ export default function RelatorioExcelParaPDFPage() {
               <p className="text-slate-600 mb-4">Com o relatorio preparado, voce tem duas opcoes:</p>
               <div className="space-y-6">
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">Opcao 1: No Excel</h3><p className="text-slate-600">Arquivo &gt; Salvar como &gt; PDF. Ou Arquivo &gt; Imprimir &gt; Impressora: Microsoft Print to PDF (Windows) ou Salvar como PDF (Mac).</p></div>
-                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Opcao 2: PDF.it Online</h3><p className="text-slate-600">Faca upload do .xlsx no <Link href="/br/excel-para-pdf" className="text-orange-600 hover:underline">Excel para PDF</Link> do PDF.it. Funciona em qualquer navegador, sem necessidade de ter Excel instalado.</p></div>
+                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Opcao 2: PDF.it Online</h3><p className="text-slate-600">Faca upload do .xlsx no <Link href="/br/excel-para-pdf" className="text-[#14D8C4] hover:underline">Excel para PDF</Link> do PDF.it. Funciona em qualquer navegador, sem necessidade de ter Excel instalado.</p></div>
               </div>
             </section>
 
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Toques Finais</h2>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; Apos converter, use <Link href="/br/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> se o relatorio com graficos ficou pesado para e-mail.</li>
-                <li>&#10003; Para relatorios confidenciais, adicione <Link href="/br/proteger-pdf" className="text-orange-600 hover:underline">protecao por senha</Link> ao PDF.</li>
-                <li>&#10003; Para relatorios internos, considere adicionar <Link href="/br/marca-dagua-pdf" className="text-orange-600 hover:underline">marca d&apos;agua</Link> como &quot;USO INTERNO&quot; ou &quot;CONFIDENCIAL&quot;.</li>
+                <li>&#10003; Apos converter, use <Link href="/br/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> se o relatorio com graficos ficou pesado para e-mail.</li>
+                <li>&#10003; Para relatorios confidenciais, adicione <Link href="/br/proteger-pdf" className="text-[#14D8C4] hover:underline">protecao por senha</Link> ao PDF.</li>
+                <li>&#10003; Para relatorios internos, considere adicionar <Link href="/br/marca-dagua-pdf" className="text-[#14D8C4] hover:underline">marca d&apos;agua</Link> como &quot;USO INTERNO&quot; ou &quot;CONFIDENCIAL&quot;.</li>
                 <li>&#10003; Nome o arquivo de forma clara: &quot;Relatorio_Vendas_Jan2026.pdf&quot;.</li>
               </ul>
             </section>
@@ -129,7 +129,7 @@ export default function RelatorioExcelParaPDFPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Converta Seu Relatorio Agora</h2>
             <p className="text-slate-300 mb-6">Excel para PDF com formatacao profissional em segundos.</p>
-            <Link href="/br/excel-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><FileSpreadsheet className="h-5 w-5" /> Excel para PDF</Link>
+            <Link href="/br/excel-para-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><FileSpreadsheet className="h-5 w-5" /> Excel para PDF</Link>
           </div>
         </section>
 
@@ -140,9 +140,9 @@ export default function RelatorioExcelParaPDFPage() {
               {[
                 { title: "Excel para PDF no Mac", href: "/br/aprender/excel-para-pdf-no-mac" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

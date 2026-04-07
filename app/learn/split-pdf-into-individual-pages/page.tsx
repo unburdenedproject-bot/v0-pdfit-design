@@ -91,7 +91,7 @@ export default function SplitPDFIntoIndividualPagesPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Split PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Split PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Split a PDF into Individual Pages (One Page per File)</h1>
               <p className="text-xl text-slate-300">
                 Need every page of your PDF as its own separate file? Here's how to break a multi-page document into individual single-page PDFs — instantly, for free.
@@ -101,17 +101,17 @@ export default function SplitPDFIntoIndividualPagesPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Scissors className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to split? Skip the guide and go straight to the tool.</p>
             </div>
             <Link
               href="/split-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Split PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,23 +130,23 @@ export default function SplitPDFIntoIndividualPagesPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Uploading to portals that accept single pages.</strong> Some government and application portals require each supporting document as a separate file — one page for your ID, one for proof of address, one for your bank statement.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Distributing pages to different people.</strong> Split a 10-page questionnaire so each team member gets their assigned page to fill out independently.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>Creating slide-by-slide image exports.</strong> Split a presentation PDF into individual pages, then convert each one to <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">JPG</Link> or <Link href="/pdf-to-png" className="text-orange-600 hover:underline">PNG</Link> for social media or website use.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
+                  <span><strong>Creating slide-by-slide image exports.</strong> Split a presentation PDF into individual pages, then convert each one to <Link href="/pdf-to-jpg" className="text-[#14D8C4] hover:underline">JPG</Link> or <Link href="/pdf-to-png" className="text-[#14D8C4] hover:underline">PNG</Link> for social media or website use.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Archiving individual receipts or invoices.</strong> A monthly statement PDF with 30 invoices can be split into 30 files — one per invoice — for organized record-keeping.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Processing pages separately.</strong> When you need to apply different edits to different pages — rotate some, compress others — splitting first makes each operation easier.</span>
                 </li>
               </ul>
@@ -171,7 +171,7 @@ export default function SplitPDFIntoIndividualPagesPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -193,25 +193,25 @@ export default function SplitPDFIntoIndividualPagesPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Convert pages to images</h3>
                   <p className="text-slate-600">
-                    Use <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">PDF to JPG</Link> or <Link href="/pdf-to-png" className="text-orange-600 hover:underline">PDF to PNG</Link> to turn each page into an image file. This is perfect for sharing on social media, embedding in presentations, or posting on a website.
+                    Use <Link href="/pdf-to-jpg" className="text-[#14D8C4] hover:underline">PDF to JPG</Link> or <Link href="/pdf-to-png" className="text-[#14D8C4] hover:underline">PDF to PNG</Link> to turn each page into an image file. This is perfect for sharing on social media, embedding in presentations, or posting on a website.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Recombine specific pages</h3>
                   <p className="text-slate-600">
-                    After splitting, you might want to reassemble some pages in a different order. Use <Link href="/merge-pdf" className="text-orange-600 hover:underline">Merge PDF</Link> to combine selected page files into a new document with a custom page order.
+                    After splitting, you might want to reassemble some pages in a different order. Use <Link href="/merge-pdf" className="text-[#14D8C4] hover:underline">Merge PDF</Link> to combine selected page files into a new document with a custom page order.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Compress individual pages</h3>
                   <p className="text-slate-600">
-                    If specific pages are too large (common with scanned documents), use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> on those pages individually for better control over file sizes.
+                    If specific pages are too large (common with scanned documents), use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> on those pages individually for better control over file sizes.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Extract text from specific pages</h3>
                   <p className="text-slate-600">
-                    Need the text from just one page? Convert it using <Link href="/pdf-to-txt" className="text-orange-600 hover:underline">PDF to TXT</Link> to get a plain text version you can copy, edit, or paste elsewhere.
+                    Need the text from just one page? Convert it using <Link href="/pdf-to-txt" className="text-[#14D8C4] hover:underline">PDF to TXT</Link> to get a plain text version you can copy, edit, or paste elsewhere.
                   </p>
                 </div>
               </div>
@@ -238,10 +238,10 @@ export default function SplitPDFIntoIndividualPagesPage() {
                 Splitting into individual pages is the most granular option, but sometimes a different approach is more practical:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Need only a few specific pages?</strong> Use the <Link href="/learn/extract-pages-from-pdf-guide" className="text-orange-600 hover:underline">extract pages</Link> approach instead — select only the pages you need and get a single PDF.</li>
+                <li>&#10003; <strong>Need only a few specific pages?</strong> Use the <Link href="/learn/extract-pages-from-pdf-guide" className="text-[#14D8C4] hover:underline">extract pages</Link> approach instead — select only the pages you need and get a single PDF.</li>
                 <li>&#10003; <strong>Need to split into chapters or sections?</strong> Use page ranges (e.g., 1-10, 11-25, 26-40) instead of individual pages. This keeps related content together.</li>
-                <li>&#10003; <strong>Need smaller files for email?</strong> Check out our guide on <Link href="/learn/split-pdf-for-email" className="text-orange-600 hover:underline">splitting PDFs for email</Link> for the best approach to meeting attachment size limits.</li>
-                <li>&#10003; <strong>Need images, not PDFs?</strong> Skip splitting entirely and go straight to <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">PDF to JPG</Link> — it converts every page to an image in one step.</li>
+                <li>&#10003; <strong>Need smaller files for email?</strong> Check out our guide on <Link href="/learn/split-pdf-for-email" className="text-[#14D8C4] hover:underline">splitting PDFs for email</Link> for the best approach to meeting attachment size limits.</li>
+                <li>&#10003; <strong>Need images, not PDFs?</strong> Skip splitting entirely and go straight to <Link href="/pdf-to-jpg" className="text-[#14D8C4] hover:underline">PDF to JPG</Link> — it converts every page to an image in one step.</li>
               </ul>
             </section>
 
@@ -255,7 +255,7 @@ export default function SplitPDFIntoIndividualPagesPage() {
             <p className="text-slate-300 mb-6">Upload your file and get one PDF per page — free, no signup required.</p>
             <Link
               href="/split-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Scissors className="h-5 w-5" /> Split PDF Now
             </Link>
@@ -276,10 +276,10 @@ export default function SplitPDFIntoIndividualPagesPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

@@ -1102,7 +1102,7 @@ export function ProcessingInterface({
                 : "Processing Failed"}
             </h2>
             <p className="text-slate-600 mb-8">{errorMessage}</p>
-            <Button onClick={resetInterface} className="bg-orange-500 hover:bg-orange-600 text-white">
+            <Button onClick={resetInterface} className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E]">
               Try Again
             </Button>
           </div>
@@ -1177,9 +1177,9 @@ export function ProcessingInterface({
                               type="text"
                               value={editedNames[index] ?? file.name}
                               onChange={(e) => setEditedNames((prev) => ({ ...prev, [index]: e.target.value }))}
-                              className="font-bold text-slate-900 text-base sm:text-lg border-b border-dashed border-slate-300 focus:border-orange-500 focus:outline-none bg-transparent w-full max-w-[200px] sm:max-w-sm truncate"
+                              className="font-bold text-slate-900 text-base sm:text-lg border-b border-dashed border-slate-300 focus:border-[#14D8C4] focus:outline-none bg-transparent w-full max-w-[200px] sm:max-w-sm truncate"
                             />
-                            <Pencil className="h-4 w-4 text-orange-400 flex-shrink-0 cursor-pointer hover:text-orange-600 transition-colors" onClick={(e) => { const input = (e.currentTarget.previousElementSibling as HTMLInputElement); input?.focus(); input?.select() }} />
+                            <Pencil className="h-4 w-4 text-[#14D8C4] flex-shrink-0 cursor-pointer hover:text-[#2EE6D6] transition-colors" onClick={(e) => { const input = (e.currentTarget.previousElementSibling as HTMLInputElement); input?.focus(); input?.select() }} />
                           </div>
                           <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-slate-500 mt-1">
                             <span>{(convertedSize / 1024 / 1024).toFixed(2)} MB</span>
@@ -1273,7 +1273,7 @@ export function ProcessingInterface({
                 Process More Files
               </Button>
               <Button
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 w-full sm:w-auto"
+                className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] px-8 py-3 w-full sm:w-auto"
                 onClick={() => (window.location.href = "/")}
               >
                 Try Another Tool
@@ -1306,8 +1306,8 @@ export function ProcessingInterface({
       <section className="py-16 min-h-[60vh]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
-            <div className="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Loader2 className="h-10 w-10 text-orange-600 animate-spin" />
+            <div className="w-20 h-20 bg-[#F0FDFA] rounded-full flex items-center justify-center mx-auto mb-6">
+              <Loader2 className="h-10 w-10 text-[#14D8C4] animate-spin" />
             </div>
             <h2 className="text-3xl font-bold text-slate-900 mb-4">{processingMessage}</h2>
             {files.length > 1 ? (
@@ -1318,7 +1318,7 @@ export function ProcessingInterface({
 
             <div className="w-full bg-gray-200 rounded-full h-3 mb-8">
               <div
-                className="bg-orange-500 h-3 rounded-full transition-all duration-300 ease-out"
+                className="bg-[#14D8C4] h-3 rounded-full transition-all duration-300 ease-out"
                 style={{ width: `${progress}%` }}
               />
             </div>
@@ -1327,7 +1327,7 @@ export function ProcessingInterface({
               {files.map((file, index) => (
                 <div key={index} className={cn(
                   "flex items-center justify-center gap-3",
-                  index < processingIndex ? "text-green-600" : index === processingIndex ? "text-orange-600 font-medium" : "text-slate-400"
+                  index < processingIndex ? "text-green-600" : index === processingIndex ? "text-[#14D8C4] font-medium" : "text-slate-400"
                 )}>
                   {index < processingIndex ? <CheckCircle className="h-4 w-4" /> : index === processingIndex ? <Loader2 className="h-4 w-4 animate-spin" /> : <FileText className="h-4 w-4" />}
                   <span>{file.name}</span>
@@ -1352,8 +1352,8 @@ export function ProcessingInterface({
               className={cn(
                 "border-2 border-dashed rounded-xl p-12 transition-all duration-200 cursor-pointer",
                 isDragOver
-                  ? "border-orange-500 bg-orange-50"
-                  : "border-gray-300 hover:border-orange-400 hover:bg-gray-50",
+                  ? "border-[#14D8C4] bg-[#F0FDFA]"
+                  : "border-gray-300 hover:border-[#14D8C4]/40 hover:bg-gray-50",
               )}
               onDragOver={handleDragOver}
               onDragLeave={handleDragLeave}
@@ -1361,10 +1361,10 @@ export function ProcessingInterface({
               onClick={() => document.getElementById("file-upload")?.click()}
             >
               <div className="text-center">
-                <Upload className="h-12 w-12 text-orange-500 mx-auto mb-4" />
+                <Upload className="h-12 w-12 text-[#14D8C4] mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-slate-900 mb-2">Drop your files here</h3>
                 <p className="text-slate-600 mb-6">or click to browse files</p>
-                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8">
+                <Button size="lg" className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-semibold px-8">
                   Choose Files
                 </Button>
                 <p className="text-sm text-slate-500 mt-4">Supported formats: {acceptedFiles}</p>
@@ -1383,14 +1383,14 @@ export function ProcessingInterface({
           />
 
           {!isPaidUser && files.length > 0 && (
-            <div className="mt-6 bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200 rounded-xl p-4 flex items-center justify-between gap-4">
+            <div className="mt-6 bg-gradient-to-r from-[#F0FDFA] to-[#F0FDFA] border border-[#14D8C4]/20 rounded-xl p-4 flex items-center justify-between gap-4">
               <div>
                 <p className="text-sm font-bold text-slate-900">Want to process multiple files at once?</p>
                 <p className="text-xs text-slate-600">Upgrade to Pro for batch processing — convert up to 50 files in one go.</p>
               </div>
               <Button
                 size="sm"
-                className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs px-4 flex-shrink-0"
+                className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold text-xs px-4 flex-shrink-0"
                 onClick={(e) => { e.stopPropagation(); window.location.href = `${pricingUrl}?source=batch` }}
               >
                 <Crown className="h-3 w-3 mr-1" />
@@ -1408,7 +1408,7 @@ export function ProcessingInterface({
                   className="flex items-center justify-between bg-white border border-gray-200 rounded-lg p-4"
                 >
                   <div className="flex items-center gap-3">
-                    <FileText className="h-5 w-5 text-orange-500" />
+                    <FileText className="h-5 w-5 text-[#14D8C4]" />
                     <div>
                       <div className="font-medium text-slate-900 truncate max-w-[200px] sm:max-w-xs">{file.name}</div>
                       <div className="text-sm text-slate-500">{(file.size / 1024 / 1024).toFixed(1)} MB</div>
@@ -1428,23 +1428,23 @@ export function ProcessingInterface({
               {/* Add more / Change file button */}
               {allowMultiple ? (
                 <div
-                  className="border-2 border-dashed border-gray-300 hover:border-orange-400 rounded-xl p-4 cursor-pointer transition-all duration-200 hover:bg-gray-50"
+                  className="border-2 border-dashed border-gray-300 hover:border-[#14D8C4]/40 rounded-xl p-4 cursor-pointer transition-all duration-200 hover:bg-gray-50"
                   onDragOver={handleDragOver}
                   onDragLeave={handleDragLeave}
                   onDrop={handleDrop}
                   onClick={() => document.getElementById("file-upload")?.click()}
                 >
-                  <div className="flex items-center justify-center gap-2 text-orange-500">
+                  <div className="flex items-center justify-center gap-2 text-[#14D8C4]">
                     <Upload className="h-5 w-5" />
                     <span className="font-semibold">Add more files</span>
                   </div>
                 </div>
               ) : (
                 <div
-                  className="border-2 border-dashed border-gray-300 hover:border-orange-400 rounded-xl p-3 cursor-pointer transition-all duration-200 hover:bg-gray-50"
+                  className="border-2 border-dashed border-gray-300 hover:border-[#14D8C4]/40 rounded-xl p-3 cursor-pointer transition-all duration-200 hover:bg-gray-50"
                   onClick={() => document.getElementById("file-upload")?.click()}
                 >
-                  <div className="flex items-center justify-center gap-2 text-slate-500 hover:text-orange-500 transition-colors">
+                  <div className="flex items-center justify-center gap-2 text-slate-500 hover:text-[#14D8C4] transition-colors">
                     <Upload className="h-4 w-4" />
                     <span className="text-sm font-medium">Choose a different file</span>
                   </div>
@@ -1466,13 +1466,13 @@ export function ProcessingInterface({
                         className={cn(
                           "flex flex-col items-center gap-1 rounded-xl border-2 p-4 transition-all",
                           selectedCompressionLevel === level.value
-                            ? "border-orange-500 bg-orange-50 shadow-sm"
-                            : "border-gray-200 hover:border-orange-300 hover:bg-gray-50"
+                            ? "border-[#14D8C4] bg-[#F0FDFA] shadow-sm"
+                            : "border-gray-200 hover:border-[#14D8C4]/30 hover:bg-gray-50"
                         )}
                       >
                         <span className={cn(
                           "font-bold text-sm",
-                          selectedCompressionLevel === level.value ? "text-orange-700" : "text-slate-700"
+                          selectedCompressionLevel === level.value ? "text-[#0FBFB0]" : "text-slate-700"
                         )}>
                           {level.label}
                         </span>
@@ -1484,7 +1484,7 @@ export function ProcessingInterface({
               )}
               <Button
                 onClick={processFiles}
-                className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold"
+                className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-semibold"
                 size="lg"
                 disabled={files.length === 0}
               >

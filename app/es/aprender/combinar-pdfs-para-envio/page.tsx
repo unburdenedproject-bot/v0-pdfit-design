@@ -42,19 +42,19 @@ export default function CombinarPDFsParaEnvioPage() {
       <main>
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-            <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Unir PDF</p>
+            <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Unir PDF</p>
             <h1 className="text-4xl lg:text-5xl font-black mb-4">Combinar PDFs para Envíos (Escuela, Visa, Portales de Empleo)</h1>
             <p className="text-xl text-slate-300">Los portales de carga quieren un solo PDF con todos tus documentos. Aquí te explicamos cómo armar, combinar, comprimir y enviar — sin ser rechazado por problemas de formato o tamaño.</p>
           </div></div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><Merge className="h-5 w-5 text-white" /></div>
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><Merge className="h-5 w-5 text-white" /></div>
               <p className="text-slate-700 font-semibold">¿Listo para combinar tus documentos? Ve directo a la herramienta.</p>
             </div>
-            <Link href="/es/unir-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
+            <Link href="/es/unir-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
               Unir PDFs Ahora <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -68,19 +68,19 @@ export default function CombinarPDFsParaEnvioPage() {
               <p className="text-slate-600 mb-4">Ya sea que estés aplicando para un empleo, un programa universitario o una visa, la mayoría de los portales de envío comparten las mismas restricciones:</p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Carga de un solo archivo.</strong> La mayoría de los portales solo aceptan un archivo PDF — no múltiples adjuntos. Necesitas combinar todos tus documentos en uno.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Límites de tamaño de archivo.</strong> Los límites comunes son 2MB, 5MB, 10MB o 25MB. Los portales gubernamentales tienden a tener los límites más estrictos (frecuentemente 2-5MB).</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Orden específico de documentos.</strong> Muchas solicitudes indican el orden exacto en que quieren los documentos. No seguir este orden puede resultar en retrasos o rechazo.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Solo formato PDF.</strong> La mayoría de los portales requieren PDF específicamente (no Word, JPG, ni PNG). Asegúrate de que todos tus documentos estén en formato PDF antes de combinar.</span>
                 </li>
               </ul>
@@ -95,7 +95,7 @@ export default function CombinarPDFsParaEnvioPage() {
                   { title: "Une, comprime y verifica", desc: "Haz clic en Unir para combinar. Si el archivo excede el límite de tamaño, comprímelo. Abre el PDF unido y revisa cada página para confirmar que todos los documentos están presentes y en el orden correcto." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div>
                       <h3 className="font-bold text-slate-900 mb-1">{step.title}</h3>
                       <p className="text-slate-600 text-sm">{step.desc}</p>
@@ -109,12 +109,12 @@ export default function CombinarPDFsParaEnvioPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">Cumplir con Límites de Tamaño de Archivo</h2>
               <p className="text-slate-600 mb-4">Después de unir, tu PDF combinado podría ser demasiado grande para el portal de envío. Así puedes reducirlo bajo el límite:</p>
               <ul className="space-y-2 text-slate-700">
-                <li>✓ <strong>Comprime el archivo unido</strong> usando <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link>. La compresión media funciona para la mayoría de los portales.</li>
-                <li>✓ <strong>Para límites de 2MB,</strong> usa la herramienta dedicada <Link href="/es/comprimir-pdf-a-2mb" className="text-orange-600 hover:underline">Comprimir a 2MB</Link> que apunta a ese tamaño específico.</li>
-                <li>✓ <strong>Aplana antes de comprimir.</strong> Usa <Link href="/es/aplanar-pdf" className="text-orange-600 hover:underline">Aplanar PDF</Link> para eliminar campos de formulario y anotaciones, lo que reduce el tamaño del archivo y hace la compresión más efectiva.</li>
+                <li>✓ <strong>Comprime el archivo unido</strong> usando <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link>. La compresión media funciona para la mayoría de los portales.</li>
+                <li>✓ <strong>Para límites de 2MB,</strong> usa la herramienta dedicada <Link href="/es/comprimir-pdf-a-2mb" className="text-[#14D8C4] hover:underline">Comprimir a 2MB</Link> que apunta a ese tamaño específico.</li>
+                <li>✓ <strong>Aplana antes de comprimir.</strong> Usa <Link href="/es/aplanar-pdf" className="text-[#14D8C4] hover:underline">Aplanar PDF</Link> para eliminar campos de formulario y anotaciones, lo que reduce el tamaño del archivo y hace la compresión más efectiva.</li>
                 <li>✓ <strong>Si la compresión no es suficiente,</strong> verifica si las páginas escaneadas son las culpables. Una página escaneada puede ser 2-5MB. Re-escanea a una resolución menor o usa Limpieza de Escaneo de Teléfono para optimizar.</li>
               </ul>
-              <div className="bg-orange-50 border border-orange-200 rounded-xl p-5 mt-4">
+              <div className="bg-[#F0FDFA] border border-[#14D8C4]/20 rounded-xl p-5 mt-4">
                 <p className="text-slate-700 text-sm"><strong>Consejo pro:</strong> Muchos portales gubernamentales y de visa tienen un límite de 2MB o 5MB. Siempre verifica el límite <em>antes</em> de escanear y armar tus documentos. Si el límite es muy estricto, escanea a 150 DPI en vez de 300 DPI para mantener los tamaños manejables.</p>
               </div>
             </section>
@@ -128,14 +128,14 @@ export default function CombinarPDFsParaEnvioPage() {
                 <li>✓ <strong>Reduce tamaño de archivo.</strong> Los campos de formulario, anotaciones y capas agregan datos ocultos. Aplanar los elimina, haciendo el archivo más pequeño.</li>
                 <li>✓ <strong>Mejora compatibilidad.</strong> Algunos lectores PDF antiguos no muestran campos de formulario o anotaciones correctamente. Un PDF aplanado se ve igual en todas partes.</li>
               </ul>
-              <p className="text-slate-600 mt-4">Usa <Link href="/es/aplanar-pdf" className="text-orange-600 hover:underline">Aplanar PDF</Link> después de unir y antes de comprimir para mejores resultados.</p>
+              <p className="text-slate-600 mt-4">Usa <Link href="/es/aplanar-pdf" className="text-[#14D8C4] hover:underline">Aplanar PDF</Link> después de unir y antes de comprimir para mejores resultados.</p>
             </section>
 
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">¿Deberías Proteger con Contraseña Tu Envío?</h2>
               <p className="text-slate-600 mb-4">Si tu PDF unido contiene información sensible (copias de pasaporte, estados de cuenta bancarios, registros médicos), podrías querer agregar una contraseña:</p>
               <ul className="space-y-2 text-slate-700">
-                <li>✓ <strong>Usa <Link href="/es/proteger-pdf" className="text-orange-600 hover:underline">Proteger PDF</Link></strong> para agregar una contraseña a tu archivo unido.</li>
+                <li>✓ <strong>Usa <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link></strong> para agregar una contraseña a tu archivo unido.</li>
                 <li>✓ <strong>Pero verifica los requisitos de envío primero.</strong> Muchos portales de carga no pueden abrir PDFs protegidos con contraseña. Si el portal no menciona protección con contraseña, no la agregues.</li>
                 <li>✓ <strong>Para envíos por email,</strong> la protección con contraseña es más apropiada. Envía el PDF en un email y la contraseña en un mensaje separado.</li>
               </ul>
@@ -166,7 +166,7 @@ export default function CombinarPDFsParaEnvioPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">¿Listo para Combinar Tus Documentos?</h2>
             <p className="text-slate-300 mb-6">Sube todos tus archivos, únelos en un PDF, y envía con confianza — gratis, sin registro.</p>
-            <Link href="/es/unir-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors">
+            <Link href="/es/unir-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors">
               <Merge className="h-5 w-5" /> Unir PDFs Ahora
             </Link>
           </div>
@@ -182,9 +182,9 @@ export default function CombinarPDFsParaEnvioPage() {
                 { title: "Cómo Unir PDFs Escaneados (Y Mantenerlos Legibles)", href: "/es/aprender/unir-pdfs-escaneados" },
                 { title: "Unir Archivos PDF en iPhone (Método Rápido por Navegador)", href: "/es/aprender/unir-pdf-en-iphone" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

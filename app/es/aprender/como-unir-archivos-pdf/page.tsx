@@ -42,19 +42,19 @@ export default function ComoUnirArchivosPDFPage() {
       <main>
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-            <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Unir PDF</p>
+            <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Unir PDF</p>
             <h1 className="text-4xl lg:text-5xl font-black mb-4">Cómo Unir Archivos PDF en Línea (Combinar PDFs en Uno)</h1>
             <p className="text-xl text-slate-300">¿Necesitas combinar múltiples PDFs en un solo documento? Ya sea para una solicitud de empleo, un envío escolar o un informe de negocios — aquí te explicamos cómo unir PDFs en segundos.</p>
           </div></div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><Merge className="h-5 w-5 text-white" /></div>
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><Merge className="h-5 w-5 text-white" /></div>
               <p className="text-slate-700 font-semibold">¿Listo para unir? Salta la guía y ve directo a la herramienta.</p>
             </div>
-            <Link href="/es/unir-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Unir PDFs Ahora <ArrowRight className="h-4 w-4" /></Link>
+            <Link href="/es/unir-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Unir PDFs Ahora <ArrowRight className="h-4 w-4" /></Link>
           </div>
         </section>
 
@@ -64,11 +64,11 @@ export default function ComoUnirArchivosPDFPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">¿Por Qué Necesitarías Unir PDFs?</h2>
               <p className="text-slate-600 mb-4">Hay muchas situaciones donde combinar múltiples PDFs en un solo archivo facilita la vida. Estas son las razones más comunes:</p>
               <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Solicitudes de empleo.</strong> Muchos empleadores piden un solo PDF con tu currículum, carta de presentación y referencias combinados. Enviar tres archivos separados se ve desorganizado.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Envíos escolares y universitarios.</strong> Los portales de tareas frecuentemente aceptan solo una carga de archivo. Une tu ensayo, bibliografía y apéndice en un solo documento.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Informes y propuestas.</strong> Combina una portada, resumen ejecutivo, páginas de datos y apéndices en un documento pulido para clientes o interesados.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Portafolios.</strong> Diseñadores, fotógrafos y arquitectos necesitan compilar muestras de trabajo en un solo portafolio PDF para compartir.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">5.</span><span><strong>Solicitudes de visa y gobierno.</strong> Los formularios de inmigración frecuentemente requieren un solo PDF con tu pasaporte, fotos, estados de cuenta bancarios y cartas de apoyo.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span><strong>Solicitudes de empleo.</strong> Muchos empleadores piden un solo PDF con tu currículum, carta de presentación y referencias combinados. Enviar tres archivos separados se ve desorganizado.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span><strong>Envíos escolares y universitarios.</strong> Los portales de tareas frecuentemente aceptan solo una carga de archivo. Une tu ensayo, bibliografía y apéndice en un solo documento.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">3.</span><span><strong>Informes y propuestas.</strong> Combina una portada, resumen ejecutivo, páginas de datos y apéndices en un documento pulido para clientes o interesados.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">4.</span><span><strong>Portafolios.</strong> Diseñadores, fotógrafos y arquitectos necesitan compilar muestras de trabajo en un solo portafolio PDF para compartir.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">5.</span><span><strong>Solicitudes de visa y gobierno.</strong> Los formularios de inmigración frecuentemente requieren un solo PDF con tu pasaporte, fotos, estados de cuenta bancarios y cartas de apoyo.</span></li>
               </ul>
             </section>
 
@@ -81,7 +81,7 @@ export default function ComoUnirArchivosPDFPage() {
                   { title: "Descarga el PDF unido", desc: "Haz clic en Unir PDF y espera unos segundos. Descarga tu documento combinado — todos tus archivos están ahora en un solo PDF. Si el resultado es muy grande, comprímelo después." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                   </div>
                 ))}
@@ -95,7 +95,7 @@ export default function ComoUnirArchivosPDFPage() {
                 <li>&#10003; <strong>Nombra tus archivos lógicamente</strong> antes de subir (por ejemplo, "01-carta-presentacion.pdf", "02-curriculum.pdf", "03-referencias.pdf"). Esto facilita el ordenamiento.</li>
                 <li>&#10003; <strong>Usa arrastrar y soltar</strong> en PDF.it para reordenar archivos visualmente antes de unir.</li>
                 <li>&#10003; <strong>Previsualiza el resultado unido</strong> antes de descargar para asegurarte de que todo está en el orden correcto.</li>
-                <li>&#10003; Si necesitas reordenar páginas individuales (no solo archivos), usa <Link href="/es/dividir-pdf" className="text-orange-600 hover:underline">Dividir PDF</Link> para extraer páginas, luego únelas de nuevo en el orden correcto.</li>
+                <li>&#10003; Si necesitas reordenar páginas individuales (no solo archivos), usa <Link href="/es/dividir-pdf" className="text-[#14D8C4] hover:underline">Dividir PDF</Link> para extraer páginas, luego únelas de nuevo en el orden correcto.</li>
               </ul>
             </section>
 
@@ -103,9 +103,9 @@ export default function ComoUnirArchivosPDFPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">Gestionando el Tamaño del Archivo Después de Unir</h2>
               <p className="text-slate-600 mb-4">Cuando unes múltiples PDFs, el archivo resultante es aproximadamente la suma de todos los tamaños individuales. Un currículum de 3MB + una transcripción de 5MB + una carta de presentación de 2MB = aproximadamente 10MB. Si eso es muy grande para tus necesidades:</p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Comprime después de unir.</strong> Usa <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> para reducir el tamaño del archivo unido significativamente — frecuentemente en 50-80%.</li>
-                <li>&#10003; <strong>Aplana antes de unir.</strong> Si alguno de tus PDFs tiene campos de formulario, anotaciones o capas, <Link href="/es/aplanar-pdf" className="text-orange-600 hover:underline">aplánalo primero</Link> para eliminar datos innecesarios.</li>
-                <li>&#10003; <strong>Elimina páginas extra.</strong> Usa <Link href="/es/dividir-pdf" className="text-orange-600 hover:underline">Dividir PDF</Link> para eliminar páginas en blanco o secciones innecesarias antes de unir.</li>
+                <li>&#10003; <strong>Comprime después de unir.</strong> Usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para reducir el tamaño del archivo unido significativamente — frecuentemente en 50-80%.</li>
+                <li>&#10003; <strong>Aplana antes de unir.</strong> Si alguno de tus PDFs tiene campos de formulario, anotaciones o capas, <Link href="/es/aplanar-pdf" className="text-[#14D8C4] hover:underline">aplánalo primero</Link> para eliminar datos innecesarios.</li>
+                <li>&#10003; <strong>Elimina páginas extra.</strong> Usa <Link href="/es/dividir-pdf" className="text-[#14D8C4] hover:underline">Dividir PDF</Link> para eliminar páginas en blanco o secciones innecesarias antes de unir.</li>
               </ul>
             </section>
 
@@ -114,7 +114,7 @@ export default function ComoUnirArchivosPDFPage() {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Verifica la Orientación de las Páginas</h3>
-                  <p className="text-slate-600">Los documentos escaneados a veces tienen páginas rotadas incorrectamente. Antes de unir, asegúrate de que todas las páginas estén orientadas correctamente. Puedes corregir páginas rotadas usando la herramienta <Link href="/es/rotar-pdf" className="text-orange-600 hover:underline">Rotar PDF</Link> de PDF.it.</p>
+                  <p className="text-slate-600">Los documentos escaneados a veces tienen páginas rotadas incorrectamente. Antes de unir, asegúrate de que todas las páginas estén orientadas correctamente. Puedes corregir páginas rotadas usando la herramienta <Link href="/es/rotar-pdf" className="text-[#14D8C4] hover:underline">Rotar PDF</Link> de PDF.it.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Siempre Revisa el Documento Final</h3>
@@ -122,7 +122,7 @@ export default function ComoUnirArchivosPDFPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Considera la Protección con Contraseña</h3>
-                  <p className="text-slate-600">Si tu PDF unido contiene información sensible (documentos financieros, copias de identificación, registros médicos), considera agregar una contraseña después de unir. La herramienta <Link href="/es/proteger-pdf" className="text-orange-600 hover:underline">Proteger PDF</Link> de PDF.it te permite proteger tu archivo.</p>
+                  <p className="text-slate-600">Si tu PDF unido contiene información sensible (documentos financieros, copias de identificación, registros médicos), considera agregar una contraseña después de unir. La herramienta <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link> de PDF.it te permite proteger tu archivo.</p>
                 </div>
               </div>
             </section>
@@ -133,7 +133,7 @@ export default function ComoUnirArchivosPDFPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">¿Listo para Unir Tus PDFs?</h2>
             <p className="text-slate-300 mb-6">Sube tus archivos y combínalos en un documento en segundos — gratis, sin registro.</p>
-            <Link href="/es/unir-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><Merge className="h-5 w-5" /> Unir PDFs Ahora</Link>
+            <Link href="/es/unir-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><Merge className="h-5 w-5" /> Unir PDFs Ahora</Link>
           </div>
         </section>
 
@@ -147,9 +147,9 @@ export default function ComoUnirArchivosPDFPage() {
                 { title: "Combinar PDFs para Envíos (Escuela, Visa, Portales de Empleo)", href: "/es/aprender/combinar-pdfs-para-envio" },
                 { title: "Unir Archivos PDF en iPhone (Método Rápido por Navegador)", href: "/es/aprender/unir-pdf-en-iphone" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

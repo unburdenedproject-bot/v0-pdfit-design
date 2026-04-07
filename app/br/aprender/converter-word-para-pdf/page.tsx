@@ -44,7 +44,7 @@ export default function ConverterWordParaPdfPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Word para PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Word para PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Como Converter Word para PDF Online (Mantendo a Formatação)</h1>
               <p className="text-xl text-slate-300">
                 Precisa enviar um documento Word como PDF? Veja como converter .docx para PDF em segundos, mantendo fontes, imagens e layout intactos.
@@ -53,15 +53,15 @@ export default function ConverterWordParaPdfPage() {
           </div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileIcon className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Pronto para converter? Vá direto para a ferramenta.</p>
             </div>
-            <Link href="/br/word-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
+            <Link href="/br/word-para-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
               Converter Word para PDF <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -74,10 +74,10 @@ export default function ConverterWordParaPdfPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que Converter Word para PDF?</h2>
               <p className="text-slate-600 mb-4">PDF é o formato padrão para documentos profissionais. Motivos comuns para converter:</p>
               <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Formatação consistente.</strong> PDFs aparecem igual em qualquer dispositivo. Documentos Word podem mudar de aparência dependendo da versão do Office e das fontes instaladas.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Envio profissional.</strong> Currículos, propostas, contratos e relatórios devem ser enviados em PDF para garantir apresentação profissional.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Proteção do conteúdo.</strong> PDFs não são facilmente editáveis, protegendo seu conteúdo contra alterações acidentais.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Universalidade.</strong> Todo mundo pode abrir PDFs. Nem todo mundo tem Microsoft Word instalado.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span><strong>Formatação consistente.</strong> PDFs aparecem igual em qualquer dispositivo. Documentos Word podem mudar de aparência dependendo da versão do Office e das fontes instaladas.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span><strong>Envio profissional.</strong> Currículos, propostas, contratos e relatórios devem ser enviados em PDF para garantir apresentação profissional.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">3.</span><span><strong>Proteção do conteúdo.</strong> PDFs não são facilmente editáveis, protegendo seu conteúdo contra alterações acidentais.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">4.</span><span><strong>Universalidade.</strong> Todo mundo pode abrir PDFs. Nem todo mundo tem Microsoft Word instalado.</span></li>
               </ul>
             </section>
 
@@ -90,7 +90,7 @@ export default function ConverterWordParaPdfPage() {
                   { title: "Baixe o PDF", desc: "Em segundos, seu PDF está pronto. Baixe e verifique que a formatação ficou correta. O resultado é fiel ao documento Word original." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                   </div>
                 ))}
@@ -110,18 +110,18 @@ export default function ConverterWordParaPdfPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Comprima Depois se Necessário</h3>
-                  <p className="text-slate-600">Se o PDF ficou grande demais para enviar por email, use <Link href="/br/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> para reduzir o tamanho sem perda significativa de qualidade.</p>
+                  <p className="text-slate-600">Se o PDF ficou grande demais para enviar por email, use <Link href="/br/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para reduzir o tamanho sem perda significativa de qualidade.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Proteja o PDF</h3>
-                  <p className="text-slate-600">Para documentos confidenciais, use <Link href="/br/proteger-pdf" className="text-orange-600 hover:underline">Proteger PDF</Link> para adicionar senha após a conversão.</p>
+                  <p className="text-slate-600">Para documentos confidenciais, use <Link href="/br/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link> para adicionar senha após a conversão.</p>
                 </div>
               </div>
             </section>
 
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Erros Comuns de Formatação</h2>
-              <p className="text-slate-600 mb-4">Se seu PDF não ficou como esperado, veja os <Link href="/br/aprender/word-para-pdf-erros-comuns-de-formato" className="text-orange-600 hover:underline">erros comuns de formato</Link> e como resolvê-los. Os problemas mais frequentes incluem:</p>
+              <p className="text-slate-600 mb-4">Se seu PDF não ficou como esperado, veja os <Link href="/br/aprender/word-para-pdf-erros-comuns-de-formato" className="text-[#14D8C4] hover:underline">erros comuns de formato</Link> e como resolvê-los. Os problemas mais frequentes incluem:</p>
               <ul className="space-y-2 text-slate-700">
                 <li>- Fontes substituídas por fontes padrão</li>
                 <li>- Imagens fora de posição</li>
@@ -137,7 +137,7 @@ export default function ConverterWordParaPdfPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Converta Seu Word para PDF Agora</h2>
             <p className="text-slate-300 mb-6">Mantenha a formatação perfeita — grátis, sem cadastro.</p>
-            <Link href="/br/word-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors">
+            <Link href="/br/word-para-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors">
               <FileIcon className="h-5 w-5" /> Converter Word para PDF
             </Link>
           </div>
@@ -153,9 +153,9 @@ export default function ConverterWordParaPdfPage() {
                 { title: "Converter Excel para PDF", href: "/br/aprender/converter-excel-para-pdf" },
                 { title: "Como Comprimir PDF", href: "/br/aprender/converter-pdf-para-jpg" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

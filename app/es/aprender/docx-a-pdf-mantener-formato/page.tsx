@@ -91,7 +91,7 @@ export default function DocxAPdfMantenerFormatoPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Word a PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Word a PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">DOCX a PDF sin problemas de formato</h1>
               <p className="text-xl text-slate-300">
                 Las fuentes se ven mal, el espaciado cambio, las imagenes se movieron... te suena familiar? Asi es como puedes convertir Word a PDF y mantener tu formato exactamente como lo disenaste.
@@ -101,17 +101,17 @@ export default function DocxAPdfMantenerFormatoPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileText className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Listo para convertir? Salta la guia y ve directo a la herramienta.</p>
             </div>
             <Link
               href="/es/word-a-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Word a PDF Ahora <ArrowRight className="h-4 w-4" />
             </Link>
@@ -132,15 +132,15 @@ export default function DocxAPdfMantenerFormatoPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Sustitucion de fuentes</strong>: la herramienta reemplaza tu fuente con una similar que tiene anchos de caracteres diferentes, causando que el texto se redistribuya en lineas y paginas.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Cambios de espaciado y margenes</strong>: el espaciado de parrafos, la altura de linea y los margenes pueden interpretarse ligeramente diferente por el motor de conversion.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Desplazamiento de imagenes y objetos</strong>: las imagenes flotantes, cuadros de texto y formas pueden moverse cuando el texto circundante se redistribuye.</span>
                 </li>
               </ul>
@@ -179,7 +179,7 @@ export default function DocxAPdfMantenerFormatoPage() {
                 <li>&#10003; <strong>Usa ajuste "En linea con el texto".</strong> Esto ancla la imagen a una posicion especifica en el flujo del texto. Clic derecho en la imagen &gt; Ajustar texto &gt; En linea con el texto.</li>
                 <li>&#10003; <strong>Ancla imagenes flotantes.</strong> Si necesitas ajuste de texto, bloquea la posicion del ancla: clic derecho &gt; Tamano y posicion &gt; pestana Posicion &gt; marca "Bloquear ancla".</li>
                 <li>&#10003; <strong>Inserta a la resolucion correcta.</strong> No redimensiones imagenes arrastrando los controladores en Word: esto almacena la imagen a tamano completo y solo la muestra mas pequena. Redimensiona las imagenes en un editor de imagenes antes de insertar.</li>
-                <li>&#10003; <strong>No comprimas imagenes en Word.</strong> La compresion integrada de Word puede reducir la calidad inesperadamente. Si necesitas un archivo mas pequeno, convierte a PDF primero y luego <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">comprime el PDF</Link>.</li>
+                <li>&#10003; <strong>No comprimas imagenes en Word.</strong> La compresion integrada de Word puede reducir la calidad inesperadamente. Si necesitas un archivo mas pequeno, convierte a PDF primero y luego <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">comprime el PDF</Link>.</li>
               </ul>
             </section>
 
@@ -201,7 +201,7 @@ export default function DocxAPdfMantenerFormatoPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -216,9 +216,9 @@ export default function DocxAPdfMantenerFormatoPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Errores comunes a evitar</h2>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>No uses "Guardar como PDF" de Word.</strong> La exportacion integrada de Word puede producir resultados inconsistentes dependiendo de tu version de Word y sistema operativo. Un convertidor dedicado como <Link href="/es/word-a-pdf" className="text-orange-600 hover:underline">Word a PDF de PDF.it</Link> da resultados mas confiables.</li>
+                <li>&#10003; <strong>No uses "Guardar como PDF" de Word.</strong> La exportacion integrada de Word puede producir resultados inconsistentes dependiendo de tu version de Word y sistema operativo. Un convertidor dedicado como <Link href="/es/word-a-pdf" className="text-[#14D8C4] hover:underline">Word a PDF de PDF.it</Link> da resultados mas confiables.</li>
                 <li>&#10003; <strong>Evita "Imprimir a PDF" en Windows.</strong> El controlador Microsoft Print to PDF a menudo cambia los margenes y puede eliminar hipervinculos. Es un ultimo recurso, no una primera opcion.</li>
-                <li>&#10003; <strong>No mezcles formatos de Office.</strong> Si tu documento de Word tiene graficos de Excel o diapositivas de PowerPoint incrustados, convierte cada elemento por separado y usa <Link href="/es/office-a-pdf" className="text-orange-600 hover:underline">Office a PDF</Link> para mejores resultados.</li>
+                <li>&#10003; <strong>No mezcles formatos de Office.</strong> Si tu documento de Word tiene graficos de Excel o diapositivas de PowerPoint incrustados, convierte cada elemento por separado y usa <Link href="/es/office-a-pdf" className="text-[#14D8C4] hover:underline">Office a PDF</Link> para mejores resultados.</li>
               </ul>
             </section>
 
@@ -248,7 +248,7 @@ export default function DocxAPdfMantenerFormatoPage() {
             <p className="text-slate-300 mb-6">Sube tu documento de Word y obtiene un PDF perfectamente formateado en segundos.</p>
             <Link
               href="/es/word-a-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileText className="h-5 w-5" /> Word a PDF Ahora
             </Link>
@@ -269,10 +269,10 @@ export default function DocxAPdfMantenerFormatoPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

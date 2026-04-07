@@ -31,14 +31,14 @@ export default function MarcaDaguaPdfComLogoPage() {
       <HeaderBr />
       <main>
         <section className="bg-[#191B4D] text-white py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-          <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Marca d&apos;Agua PDF</p>
+          <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Marca d&apos;Agua PDF</p>
           <h1 className="text-4xl lg:text-5xl font-black mb-4">Marca d&apos;Agua em PDF com Logo</h1>
           <p className="text-xl text-slate-300">Quer adicionar o logo da sua empresa em todos os documentos PDF? Aprenda a usar imagem como marca d&apos;agua com configuracoes ideais de posicao e transparencia.</p>
         </div></div></section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><Image className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Pronto para adicionar seu logo? Va direto para a ferramenta.</p></div>
-          <Link href="/br/marca-dagua-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Marca d&apos;Agua PDF <ArrowRight className="h-4 w-4" /></Link>
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><Image className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Pronto para adicionar seu logo? Va direto para a ferramenta.</p></div>
+          <Link href="/br/marca-dagua-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Marca d&apos;Agua PDF <ArrowRight className="h-4 w-4" /></Link>
         </div></section>
 
         <article className="py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -46,10 +46,10 @@ export default function MarcaDaguaPdfComLogoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-4">Por que usar logo como marca d&apos;agua?</h2>
             <p className="text-slate-600 mb-4">Adicionar o logo da empresa como marca d&apos;agua em PDFs traz beneficios profissionais importantes:</p>
             <ul className="space-y-3 text-slate-700">
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Branding consistente.</strong> Todos os documentos enviados reforcam a identidade visual da empresa.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Profissionalismo.</strong> Documentos com logo transmitem seriedade e confianca.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Protecao contra copias.</strong> O logo dificulta que terceiros se apropriem do conteudo.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Rastreabilidade.</strong> Documentos com logo sao facilmente identificaveis como seus.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span><strong>Branding consistente.</strong> Todos os documentos enviados reforcam a identidade visual da empresa.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span><strong>Profissionalismo.</strong> Documentos com logo transmitem seriedade e confianca.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">3.</span><span><strong>Protecao contra copias.</strong> O logo dificulta que terceiros se apropriem do conteudo.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">4.</span><span><strong>Rastreabilidade.</strong> Documentos com logo sao facilmente identificaveis como seus.</span></li>
             </ul>
           </section>
 
@@ -74,7 +74,7 @@ export default function MarcaDaguaPdfComLogoPage() {
                 { title: "Aplique e baixe", desc: "Clique em Aplicar. O logo sera adicionado em todas as paginas. Baixe o PDF com a marca d'agua do seu logo." },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                   <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                 </div>
               ))}
@@ -105,8 +105,8 @@ export default function MarcaDaguaPdfComLogoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-4">Combinando logo com outras protecoes</h2>
             <p className="text-slate-600 mb-4">Para protecao maxima dos seus documentos, combine marca d&apos;agua com outras medidas:</p>
             <ul className="space-y-2 text-slate-700">
-              <li>&#10003; <Link href="/br/aprender/como-proteger-pdf-com-senha" className="text-orange-600 hover:underline">Proteger com senha</Link> — impede acesso nao autorizado.</li>
-              <li>&#10003; <Link href="/br/aprender/como-adicionar-marca-dagua-em-pdf" className="text-orange-600 hover:underline">Marca d&apos;agua de texto</Link> — adicione "CONFIDENCIAL" alem do logo.</li>
+              <li>&#10003; <Link href="/br/aprender/como-proteger-pdf-com-senha" className="text-[#14D8C4] hover:underline">Proteger com senha</Link> — impede acesso nao autorizado.</li>
+              <li>&#10003; <Link href="/br/aprender/como-adicionar-marca-dagua-em-pdf" className="text-[#14D8C4] hover:underline">Marca d&apos;agua de texto</Link> — adicione "CONFIDENCIAL" alem do logo.</li>
               <li>&#10003; <strong>Restricao de permissoes</strong> — bloqueie impressao e copia de texto.</li>
             </ul>
           </section>
@@ -115,7 +115,7 @@ export default function MarcaDaguaPdfComLogoPage() {
         <section className="py-12 bg-[#191B4D]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
           <h2 className="text-2xl font-black text-white mb-3">Adicione seu logo em todos os PDFs</h2>
           <p className="text-slate-300 mb-6">Marca d&apos;agua com logo profissional — personalize posicao e opacidade. Para usuarios Pro.</p>
-          <Link href="/br/marca-dagua-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><Image className="h-5 w-5" /> Marca d&apos;Agua PDF Agora</Link>
+          <Link href="/br/marca-dagua-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><Image className="h-5 w-5" /> Marca d&apos;Agua PDF Agora</Link>
         </div></section>
 
         <section className="py-16 bg-gray-50"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -126,7 +126,7 @@ export default function MarcaDaguaPdfComLogoPage() {
               { title: "Como proteger PDF com senha", href: "/br/aprender/como-proteger-pdf-com-senha" },
               { title: "Proteger PDF antes de enviar por email", href: "/br/aprender/proteger-pdf-antes-de-enviar" },
               { title: "Melhor formato para enviar documentos", href: "/br/aprender/melhor-formato-para-enviar-documentos" },
-            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" /></Link>))}
+            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" /></Link>))}
           </div>
         </div></section>
 

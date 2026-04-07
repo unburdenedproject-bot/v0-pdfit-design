@@ -44,20 +44,20 @@ export default function MelhoresPraticasQRPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Codigo QR</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Codigo QR</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Melhores Praticas para Codigo QR</h1>
               <p className="text-xl text-slate-300">Crie codigos QR que funcionam perfeitamente: tamanho correto, contraste adequado, testes essenciais e erros comuns a evitar.</p>
             </div>
           </div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><QrCode className="h-5 w-5 text-white" /></div>
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><QrCode className="h-5 w-5 text-white" /></div>
               <p className="text-slate-700 font-semibold">Crie QR codes profissionais com o PDF.it.</p>
             </div>
-            <Link href="/br/codigo-qr" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Gerador QR <ArrowRight className="h-4 w-4" /></Link>
+            <Link href="/br/codigo-qr" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Gerador QR <ArrowRight className="h-4 w-4" /></Link>
           </div>
         </section>
 
@@ -67,10 +67,10 @@ export default function MelhoresPraticasQRPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Tamanho e Resolucao</h2>
               <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Cartao de visita:</strong> Minimo 1.5x1.5 cm, ideal 2x2 cm.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Flyer ou cardapio:</strong> Minimo 2x2 cm, ideal 3x3 cm.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Poster ou banner:</strong> Pelo menos 5x5 cm.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Outdoor:</strong> Regra do 10:1 — para cada 1 metro de distancia de leitura, o QR precisa de 1 cm de lado.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Cartao de visita:</strong> Minimo 1.5x1.5 cm, ideal 2x2 cm.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Flyer ou cardapio:</strong> Minimo 2x2 cm, ideal 3x3 cm.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Poster ou banner:</strong> Pelo menos 5x5 cm.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Outdoor:</strong> Regra do 10:1 — para cada 1 metro de distancia de leitura, o QR precisa de 1 cm de lado.</span></li>
               </ul>
               <p className="text-slate-600 mt-4">Para impressao, sempre use formato SVG — ele nao perde qualidade ao redimensionar. PNG funciona bem para telas digitais.</p>
             </section>
@@ -87,10 +87,10 @@ export default function MelhoresPraticasQRPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Conteudo e Dados</h2>
               <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Use URLs curtas.</strong> URLs longas geram QR mais densos e dificeis de escanear. Use encurtadores se necessario.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Inclua https://.</strong> Sempre inclua o protocolo completo na URL para garantir que o navegador abra corretamente.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Campos essenciais no vCard.</strong> Inclua apenas nome, telefone, e-mail e empresa. Endereco e notas aumentam a densidade do QR.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Verifique o destino.</strong> Se o QR aponta para uma URL, certifique-se de que a pagina e responsiva e carrega rapido no celular.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span><strong>Use URLs curtas.</strong> URLs longas geram QR mais densos e dificeis de escanear. Use encurtadores se necessario.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span><strong>Inclua https://.</strong> Sempre inclua o protocolo completo na URL para garantir que o navegador abra corretamente.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">3.</span><span><strong>Campos essenciais no vCard.</strong> Inclua apenas nome, telefone, e-mail e empresa. Endereco e notas aumentam a densidade do QR.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">4.</span><span><strong>Verifique o destino.</strong> Se o QR aponta para uma URL, certifique-se de que a pagina e responsiva e carrega rapido no celular.</span></li>
               </ul>
             </section>
 
@@ -123,7 +123,7 @@ export default function MelhoresPraticasQRPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Crie QR Codes Profissionais</h2>
             <p className="text-slate-300 mb-6">Aplique estas praticas e gere codigos QR que funcionam perfeitamente.</p>
-            <Link href="/br/codigo-qr" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><QrCode className="h-5 w-5" /> Gerador de Codigo QR</Link>
+            <Link href="/br/codigo-qr" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><QrCode className="h-5 w-5" /> Gerador de Codigo QR</Link>
           </div>
         </section>
 
@@ -138,9 +138,9 @@ export default function MelhoresPraticasQRPage() {
                 { title: "Codigo QR para WiFi", href: "/br/aprender/codigo-qr-para-wifi" },
                 { title: "Codigo QR para Cardapio de Restaurante", href: "/br/aprender/codigo-qr-para-cardapio-de-restaurante" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

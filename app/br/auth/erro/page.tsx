@@ -38,7 +38,7 @@ export default async function AuthErrorPagePt({
               <div className="mt-6 text-center">
                 <Link
                   href="/br/login"
-                  className="text-sm text-orange-500 hover:text-orange-600 font-medium underline underline-offset-4"
+                  className="text-sm text-[#14D8C4] hover:text-[#14D8C4] font-medium underline underline-offset-4"
                 >
                   Voltar para login
                 </Link>

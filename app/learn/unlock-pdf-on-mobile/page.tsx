@@ -91,7 +91,7 @@ export default function UnlockPDFOnMobilePage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Unlock PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Unlock PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Unlock a PDF on Your Phone (iPhone &amp; Android)</h1>
               <p className="text-xl text-slate-300">
                 Need to unlock a PDF but only have your phone? No problem. Here&apos;s how to remove PDF restrictions right from your mobile browser — no app needed.
@@ -101,17 +101,17 @@ export default function UnlockPDFOnMobilePage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Unlock className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">On your phone right now? Unlock your PDF in seconds.</p>
             </div>
             <Link
               href="/unlock-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Unlock PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function UnlockPDFOnMobilePage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Someone emailed you a restricted PDF</strong> and you need to copy a section of text for a quick reply. You&apos;re on the subway with only your phone.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>You received a PDF you need to print</strong> at a nearby print shop, but the print restriction is blocking you. No laptop available.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>You need to forward an unlocked version</strong> of a document to a colleague or client, and your laptop isn&apos;t accessible.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>You&apos;re traveling</strong> and need to access a password-protected document for a meeting or appointment. Your phone is your only device.</span>
                 </li>
               </ul>
@@ -170,7 +170,7 @@ export default function UnlockPDFOnMobilePage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -201,7 +201,7 @@ export default function UnlockPDFOnMobilePage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -223,8 +223,8 @@ export default function UnlockPDFOnMobilePage() {
                 <li>✓ <strong>Print from your phone.</strong> On iPhone, use AirPrint (tap Share, then Print). On Android, use the built-in print option in your PDF viewer or the Share menu.</li>
                 <li>✓ <strong>Copy text.</strong> Open the unlocked PDF, long-press on the text you want to copy, and paste it into any app — email, notes, messages.</li>
                 <li>✓ <strong>Share via messaging.</strong> Tap the share button to send the unlocked PDF through WhatsApp, Telegram, email, or any messaging app.</li>
-                <li>✓ <strong>Compress for easy sharing.</strong> If the PDF is too large to send via email, use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> from your phone to reduce the file size.</li>
-                <li>✓ <strong>Convert to images.</strong> Need just one page as an image? Use <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">PDF to JPG</Link> or <Link href="/pdf-to-png" className="text-orange-600 hover:underline">PDF to PNG</Link> — both work on mobile.</li>
+                <li>✓ <strong>Compress for easy sharing.</strong> If the PDF is too large to send via email, use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> from your phone to reduce the file size.</li>
+                <li>✓ <strong>Convert to images.</strong> Need just one page as an image? Use <Link href="/pdf-to-jpg" className="text-[#14D8C4] hover:underline">PDF to JPG</Link> or <Link href="/pdf-to-png" className="text-[#14D8C4] hover:underline">PDF to PNG</Link> — both work on mobile.</li>
               </ul>
             </section>
 
@@ -238,28 +238,28 @@ export default function UnlockPDFOnMobilePage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Compress PDF</h3>
                   <p className="text-slate-600">
-                    Phone photos and scans create large PDFs. Use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> to reduce file size before sharing via email or messaging apps. You can also target specific sizes like <Link href="/compress-pdf-to-5mb" className="text-orange-600 hover:underline">5MB</Link> or <Link href="/compress-pdf-to-2mb" className="text-orange-600 hover:underline">2MB</Link>.
+                    Phone photos and scans create large PDFs. Use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> to reduce file size before sharing via email or messaging apps. You can also target specific sizes like <Link href="/compress-pdf-to-5mb" className="text-[#14D8C4] hover:underline">5MB</Link> or <Link href="/compress-pdf-to-2mb" className="text-[#14D8C4] hover:underline">2MB</Link>.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Phone Scan Cleanup</h3>
                   <p className="text-slate-600">
-                    Took a photo of a document with your phone camera? Use <Link href="/phone-scan-cleanup" className="text-orange-600 hover:underline">Phone Scan Cleanup</Link> to straighten, sharpen, and convert it into a clean, professional-looking PDF.
+                    Took a photo of a document with your phone camera? Use <Link href="/phone-scan-cleanup" className="text-[#14D8C4] hover:underline">Phone Scan Cleanup</Link> to straighten, sharpen, and convert it into a clean, professional-looking PDF.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Protect PDF</h3>
                   <p className="text-slate-600">
-                    Need to add a password to a PDF before sharing it from your phone? Use <Link href="/protect-pdf" className="text-orange-600 hover:underline">Protect PDF</Link> to set an open password or permissions restrictions — all from your mobile browser.
+                    Need to add a password to a PDF before sharing it from your phone? Use <Link href="/protect-pdf" className="text-[#14D8C4] hover:underline">Protect PDF</Link> to set an open password or permissions restrictions — all from your mobile browser.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Merge PDF</h3>
                   <p className="text-slate-600">
-                    Need to combine multiple PDFs on your phone? Use <Link href="/merge-pdf" className="text-orange-600 hover:underline">Merge PDF</Link> to join documents together. Great for combining receipts, tickets, or document pages into a single file.
+                    Need to combine multiple PDFs on your phone? Use <Link href="/merge-pdf" className="text-[#14D8C4] hover:underline">Merge PDF</Link> to join documents together. Great for combining receipts, tickets, or document pages into a single file.
                   </p>
                 </div>
               </div>
@@ -290,7 +290,7 @@ export default function UnlockPDFOnMobilePage() {
             <p className="text-slate-300 mb-6">Works on iPhone, Android, and any device with a browser. No app needed — just upload, unlock, and download.</p>
             <Link
               href="/unlock-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Unlock className="h-5 w-5" /> Unlock PDF Now
             </Link>
@@ -310,10 +310,10 @@ export default function UnlockPDFOnMobilePage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

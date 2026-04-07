@@ -599,7 +599,7 @@ export function WorkflowInterface({ locale = "en" }: { locale?: ToolLocale }) {
             </div>
             <h2 className="text-3xl font-bold text-slate-900 mb-4">{copy.failedTitle}</h2>
             <p className="text-slate-600 mb-8">{errorMessage}</p>
-            <Button onClick={resetInterface} className="bg-orange-500 hover:bg-orange-600 text-white">
+            <Button onClick={resetInterface} className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E]">
               {copy.tryAgain}
             </Button>
           </div>
@@ -652,7 +652,7 @@ export function WorkflowInterface({ locale = "en" }: { locale?: ToolLocale }) {
               <Button onClick={resetInterface} variant="outline" className="border-slate-300">
                 {copy.runAnother}
               </Button>
-              <Button onClick={() => (window.location.href = copy.homePath)} className="bg-orange-500 hover:bg-orange-600 text-white">
+              <Button onClick={() => (window.location.href = copy.homePath)} className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E]">
                 {copy.backToTools}
               </Button>
             </div>

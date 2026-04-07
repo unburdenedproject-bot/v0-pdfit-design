@@ -91,7 +91,7 @@ export default function PorQuePdfAJpgSeVeBorrosoPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF a JPG</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF a JPG</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Por Qué Tu PDF a JPG Se Ve Borroso (Y Cómo Solucionarlo)</h1>
               <p className="text-xl text-slate-300">
                 Convertiste un PDF a JPG y el resultado se ve difuso, pixelado o lavado. Aquí te explicamos por qué sucede y exactamente cómo solucionarlo.
@@ -101,17 +101,17 @@ export default function PorQuePdfAJpgSeVeBorrosoPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <ImageIcon className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">¿Quieres JPGs nítidos? Convierte con control sobre DPI y calidad.</p>
             </div>
             <Link
               href="/es/pdf-a-jpg"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Convertir PDF a JPG <ArrowRight className="h-4 w-4" />
             </Link>
@@ -136,7 +136,7 @@ export default function PorQuePdfAJpgSeVeBorrosoPage() {
                     DPI significa "puntos por pulgada" — controla cuántos píxeles componen cada pulgada de la imagen. Muchas herramientas gratuitas convierten a 72 o 96 DPI por defecto. A 72 DPI, una página tamaño carta estándar se convierte en solo unos 612 x 792 píxeles — eso es diminuto para los estándares actuales.
                   </p>
                   <p className="text-slate-600">
-                    <strong>La solución:</strong> Convierte a un mínimo de 200 DPI. Para impresión o presentaciones, usa 300 DPI. La herramienta <Link href="/es/pdf-a-jpg" className="text-orange-600 hover:underline">PDF a JPG</Link> de PDF.it te permite elegir tu DPI antes de convertir.
+                    <strong>La solución:</strong> Convierte a un mínimo de 200 DPI. Para impresión o presentaciones, usa 300 DPI. La herramienta <Link href="/es/pdf-a-jpg" className="text-[#14D8C4] hover:underline">PDF a JPG</Link> de PDF.it te permite elegir tu DPI antes de convertir.
                   </p>
                 </div>
 
@@ -146,7 +146,7 @@ export default function PorQuePdfAJpgSeVeBorrosoPage() {
                     JPG es un formato "con pérdida" — reduce el tamaño del archivo descartando datos de imagen. Esto crea artefactos visibles: halos difusos alrededor del texto, áreas en bloques en degradados y bordes suaves en líneas nítidas. Cuanta más compresión se aplica, peor se ve.
                   </p>
                   <p className="text-slate-600">
-                    <strong>La solución:</strong> Usa configuraciones de alta calidad (baja compresión) al convertir. O cambia al formato PNG — es sin pérdida, lo que significa cero pérdida de calidad. Usa nuestra herramienta <Link href="/es/pdf-a-png" className="text-orange-600 hover:underline">PDF a PNG</Link> para documentos con mucho texto.
+                    <strong>La solución:</strong> Usa configuraciones de alta calidad (baja compresión) al convertir. O cambia al formato PNG — es sin pérdida, lo que significa cero pérdida de calidad. Usa nuestra herramienta <Link href="/es/pdf-a-png" className="text-[#14D8C4] hover:underline">PDF a PNG</Link> para documentos con mucho texto.
                   </p>
                 </div>
 
@@ -206,20 +206,20 @@ export default function PorQuePdfAJpgSeVeBorrosoPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Tu PDF es mayormente texto.</strong> La compresión JPG crea artefactos visibles alrededor de los bordes de las letras. PNG preserva el texto perfectamente — cada letra permanece perfectamente nítida.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Tu PDF tiene diagramas, gráficos o arte lineal.</strong> Las líneas nítidas y colores sólidos se comprimen mal en JPG. PNG los maneja perfectamente.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Necesitas precisión pixel por pixel.</strong> Documentos legales, dibujos técnicos o cualquier imagen donde la precisión importa — PNG es la única opción.</span>
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
-                La compensación es el tamaño del archivo: los archivos PNG son 2-5x más grandes que los JPGs. Si eso no es un problema, <Link href="/es/pdf-a-png" className="text-orange-600 hover:underline">convierte a PNG</Link> para la mejor calidad.
+                La compensación es el tamaño del archivo: los archivos PNG son 2-5x más grandes que los JPGs. Si eso no es un problema, <Link href="/es/pdf-a-png" className="text-[#14D8C4] hover:underline">convierte a PNG</Link> para la mejor calidad.
               </p>
             </section>
 
@@ -240,22 +240,22 @@ export default function PorQuePdfAJpgSeVeBorrosoPage() {
                   </thead>
                   <tbody className="text-slate-700">
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">72 DPI</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">72 DPI</td>
                       <td className="py-3 px-4">612 x 792 px</td>
                       <td className="py-3 px-4">Pobre — el texto se ve difuso, las imágenes pixeladas</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">150 DPI</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">150 DPI</td>
                       <td className="py-3 px-4">1275 x 1650 px</td>
                       <td className="py-3 px-4">Decente — bien para web y correo electrónico</td>
                     </tr>
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold text-orange-600">200 DPI</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">200 DPI</td>
                       <td className="py-3 px-4">1700 x 2200 px</td>
                       <td className="py-3 px-4">Bueno — nítido en pantallas, limpio en presentaciones</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
-                      <td className="py-3 px-4 font-semibold text-orange-600">300 DPI</td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]">300 DPI</td>
                       <td className="py-3 px-4">2550 x 3300 px</td>
                       <td className="py-3 px-4">Excelente — calidad de impresión, máximo detalle</td>
                     </tr>
@@ -275,7 +275,7 @@ export default function PorQuePdfAJpgSeVeBorrosoPage() {
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>1. Convierte a 200 DPI con configuración de alta calidad — esto te da imágenes nítidas.</li>
-                <li>2. Si el tamaño del archivo es muy grande, <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">comprime el PDF original primero</Link>, luego convierte a JPG.</li>
+                <li>2. Si el tamaño del archivo es muy grande, <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">comprime el PDF original primero</Link>, luego convierte a JPG.</li>
                 <li>3. Usa 150 DPI como compromiso — aún lo suficientemente nítido para pantallas, pero archivos significativamente más pequeños.</li>
               </ul>
               <p className="text-slate-600 mt-4">
@@ -293,7 +293,7 @@ export default function PorQuePdfAJpgSeVeBorrosoPage() {
             <p className="text-slate-300 mb-6">Convierte a 200+ DPI con control total de calidad — sin resultados borrosos.</p>
             <Link
               href="/es/pdf-a-jpg"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <ImageIcon className="h-5 w-5" /> Convertir PDF a JPG
             </Link>
@@ -314,10 +314,10 @@ export default function PorQuePdfAJpgSeVeBorrosoPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

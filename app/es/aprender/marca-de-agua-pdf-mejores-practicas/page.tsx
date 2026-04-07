@@ -91,7 +91,7 @@ export default function MarcaDeAguaPDFMejoresPracticasPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Marca de Agua PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Marca de Agua PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Mejores Practicas de Marca de Agua en PDF (Tamano, Opacidad y Ubicacion)</h1>
               <p className="text-xl text-slate-300">
                 Una buena marca de agua protege tu documento sin arruinar la legibilidad. Aqui estan las mejores practicas para opacidad, tamano de fuente, ubicacion y color — para que tus marcas de agua se vean profesionales siempre.
@@ -101,17 +101,17 @@ export default function MarcaDeAguaPDFMejoresPracticasPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Stamp className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Listo para marcar? Salta la guia y ve directo a la herramienta.</p>
             </div>
             <Link
               href="/es/marca-de-agua-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Marca de Agua PDF Ahora <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function MarcaDeAguaPDFMejoresPracticasPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>10-15% de opacidad — Marca sutil.</strong> Ideal para marcas de agua con logo en documentos para clientes como propuestas y facturas. El logo es visible pero no compite con el texto. Los lectores pueden leer comodamente el documento sin notar la marca de agua a primera vista.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>15-25% de opacidad — Proteccion estandar.</strong> El punto ideal para la mayoria de las marcas de agua. Los sellos CONFIDENCIAL, BORRADOR y NO COPIAR son claramente legibles en este rango mientras mantienen el contenido del documento completamente legible. Este es el rango que recomendamos para la mayoria de los usuarios.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>30-40% de opacidad — Disuasion fuerte.</strong> Usa esto para documentos donde la marca de agua es el mensaje principal — copias de revision, documentos vencidos o muestras de vista previa. La marca de agua domina la pagina y deja muy claro que el documento tiene restricciones.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>50%+ de opacidad — Evitar en la mayoria de los casos.</strong> A este nivel, la marca de agua hace que el documento sea dificil de leer. Solo usa esto para documentos que deben ser visibles pero intencionalmente dificiles de usar, como certificados vencidos o contratos anulados.</span>
                 </li>
               </ul>
@@ -158,7 +158,7 @@ export default function MarcaDeAguaPDFMejoresPracticasPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Diagonal (45 Grados)</h3>
                   <p className="text-slate-600">
-                    La posicion clasica de marca de agua. El texto o imagen se extiende diagonalmente de una esquina a la otra. Esta es la ubicacion mas dificil de recortar, haciendola ideal para marcas de agua de seguridad como CONFIDENCIAL, BORRADOR y NO COPIAR. Usa un tamano de fuente grande (60-100pt para texto) para que la marca de agua abarque toda la pagina. Lee nuestra guia sobre <Link href="/es/aprender/marca-de-agua-pdf-confidencial" className="text-orange-600 hover:underline">agregar marcas de agua confidenciales</Link> para configuraciones especificas.
+                    La posicion clasica de marca de agua. El texto o imagen se extiende diagonalmente de una esquina a la otra. Esta es la ubicacion mas dificil de recortar, haciendola ideal para marcas de agua de seguridad como CONFIDENCIAL, BORRADOR y NO COPIAR. Usa un tamano de fuente grande (60-100pt para texto) para que la marca de agua abarque toda la pagina. Lee nuestra guia sobre <Link href="/es/aprender/marca-de-agua-pdf-confidencial" className="text-[#14D8C4] hover:underline">agregar marcas de agua confidenciales</Link> para configuraciones especificas.
                   </p>
                 </div>
                 <div>
@@ -219,7 +219,7 @@ export default function MarcaDeAguaPDFMejoresPracticasPage() {
                   },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -238,12 +238,12 @@ export default function MarcaDeAguaPDFMejoresPracticasPage() {
                 Incluso la mejor marca de agua es inutil si alguien puede eliminarla facilmente. Sigue estos pasos despues de marcar para fijarla:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Aplana el PDF.</strong> Usa <Link href="/es/aplanar-pdf" className="text-orange-600 hover:underline">Aplanar PDF</Link> para fusionar la marca de agua permanentemente en el contenido de la pagina. Una vez aplanada, la marca de agua se convierte en parte de la imagen de la pagina y no puede seleccionarse ni eliminarse por separado.</li>
-                <li>&#10003; <strong>Agrega proteccion con contrasena.</strong> Usa <Link href="/es/proteger-pdf" className="text-orange-600 hover:underline">Proteger PDF</Link> para restringir la edicion, copia e impresion. Esto previene que alguien abra el archivo en un editor e intente eliminar la marca de agua.</li>
-                <li>&#10003; <strong>Comprime el archivo final.</strong> Aplanar y agregar marca de agua puede aumentar el tamano del archivo. Ejecuta el resultado final a traves de <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> para mantenerlo manejable para correo electronico o carga.</li>
+                <li>&#10003; <strong>Aplana el PDF.</strong> Usa <Link href="/es/aplanar-pdf" className="text-[#14D8C4] hover:underline">Aplanar PDF</Link> para fusionar la marca de agua permanentemente en el contenido de la pagina. Una vez aplanada, la marca de agua se convierte en parte de la imagen de la pagina y no puede seleccionarse ni eliminarse por separado.</li>
+                <li>&#10003; <strong>Agrega proteccion con contrasena.</strong> Usa <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link> para restringir la edicion, copia e impresion. Esto previene que alguien abra el archivo en un editor e intente eliminar la marca de agua.</li>
+                <li>&#10003; <strong>Comprime el archivo final.</strong> Aplanar y agregar marca de agua puede aumentar el tamano del archivo. Ejecuta el resultado final a traves de <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para mantenerlo manejable para correo electronico o carga.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Marca de Agua PDF esta disponible para usuarios Pro y Business. <Link href="/es/precios" className="text-orange-600 hover:underline">Ver precios</Link> para mas detalles.
+                Marca de Agua PDF esta disponible para usuarios Pro y Business. <Link href="/es/precios" className="text-[#14D8C4] hover:underline">Ver precios</Link> para mas detalles.
               </p>
             </section>
 
@@ -257,7 +257,7 @@ export default function MarcaDeAguaPDFMejoresPracticasPage() {
             <p className="text-slate-300 mb-6">Sube tu PDF, configura tu marca de agua con las mejores opciones, y descarga el resultado en segundos. Disponible para usuarios Pro y Business.</p>
             <Link
               href="/es/marca-de-agua-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Stamp className="h-5 w-5" /> Marca de Agua PDF Ahora
             </Link>
@@ -277,10 +277,10 @@ export default function MarcaDeAguaPDFMejoresPracticasPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

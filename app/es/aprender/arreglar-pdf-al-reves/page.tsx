@@ -91,7 +91,7 @@ export default function ArreglarPDFAlRevesPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Rotar PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Rotar PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Arreglar un PDF al Reves (Rotar 180° al Instante)</h1>
               <p className="text-xl text-slate-300">
                 Abriste un PDF y la pagina completa esta al reves? Este es uno de los problemas de escaneo mas comunes. Aqui te mostramos como voltearlo correctamente en segundos.
@@ -101,17 +101,17 @@ export default function ArreglarPDFAlRevesPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <RotateCw className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Necesitas una solucion rapida? Salta la guia y voltea tu PDF ahora.</p>
             </div>
             <Link
               href="/es/rotar-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Arreglar PDF Ahora <ArrowRight className="h-4 w-4" />
             </Link>
@@ -129,19 +129,19 @@ export default function ArreglarPDFAlRevesPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Documento colocado al reves en el escaner.</strong> La causa mas comun. Cuando pones una pagina boca abajo en un escaner de cama plana con la orientacion incorrecta, el escaneo sale invertido. Esto sucede constantemente en oficinas ocupadas.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Errores de escaneo a doble cara.</strong> Los alimentadores automaticos de documentos (ADF) en impresoras de oficina pueden voltear el lado trasero de las paginas incorrectamente, resultando en paginas alternadas entre correctas y al reves.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>Orientacion de camara del telefono.</strong> Tomar una foto de un documento mientras sostienes tu telefono al reves (o en un angulo de 180°) produce una imagen invertida. Incluso <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> no siempre puede detectar esto automaticamente.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
+                  <span><strong>Orientacion de camara del telefono.</strong> Tomar una foto de un documento mientras sostienes tu telefono al reves (o en un angulo de 180°) produce una imagen invertida. Incluso <Link href="/es/limpiar-escaneo" className="text-[#14D8C4] hover:underline">Limpieza de Escaneo de Telefono</Link> no siempre puede detectar esto automaticamente.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Errores de exportacion de software.</strong> Algunas herramientas de creacion de PDF ocasionalmente aplican metadatos de rotacion incorrectos, causando que las paginas se muestren al reves aunque el contenido fue creado correctamente.</span>
                 </li>
               </ul>
@@ -165,7 +165,7 @@ export default function ArreglarPDFAlRevesPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -192,7 +192,7 @@ export default function ArreglarPDFAlRevesPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">De Lado a la Izquierda (Necesita Rotacion de 90° en Sentido Horario)</h3>
                   <p className="text-slate-600">
-                    El texto va de abajo hacia arriba a lo largo del lado izquierdo de la pagina. Necesitarias inclinar tu cabeza a la derecha para leerlo. Aplica una rotacion de 90° en sentido horario. Consulta nuestra guia completa sobre <Link href="/es/aprender/como-rotar-pdf" className="text-orange-600 hover:underline">como rotar un PDF</Link>.
+                    El texto va de abajo hacia arriba a lo largo del lado izquierdo de la pagina. Necesitarias inclinar tu cabeza a la derecha para leerlo. Aplica una rotacion de 90° en sentido horario. Consulta nuestra guia completa sobre <Link href="/es/aprender/como-rotar-pdf" className="text-[#14D8C4] hover:underline">como rotar un PDF</Link>.
                   </p>
                 </div>
                 <div>
@@ -213,7 +213,7 @@ export default function ArreglarPDFAlRevesPage() {
                 <li>&#10003; <strong>Selecciona solo las paginas al reves.</strong> En PDF.it, puedes hacer clic en las miniaturas de paginas individuales para seleccionar solo las paginas invertidas. Luego aplica rotacion de 180° solo a esas paginas.</li>
                 <li>&#10003; <strong>Verifica el patron.</strong> Con escaneres ADF, el problema generalmente es consistente — cada otra pagina esta volteada. Selecciona todas las paginas pares (o todas las impares, las que esten mal) y rotalas juntas.</li>
                 <li>&#10003; <strong>Re-escanea si es posible.</strong> Si tienes acceso a los documentos originales y al escaner, puede ser mas rapido re-escanear con la configuracion duplex correcta. Pero si los originales no estan disponibles, PDF.it lo corrige al instante.</li>
-                <li>&#10003; <strong>Ejecuta OCR despues de corregir.</strong> Si el documento escaneado necesita texto buscable, corrige la rotacion primero, luego usa <Link href="/es/escaner-ocr" className="text-orange-600 hover:underline">Escaner OCR</Link>. El OCR funciona mucho mejor cuando las paginas estan correctamente orientadas.</li>
+                <li>&#10003; <strong>Ejecuta OCR despues de corregir.</strong> Si el documento escaneado necesita texto buscable, corrige la rotacion primero, luego usa <Link href="/es/escaner-ocr" className="text-[#14D8C4] hover:underline">Escaner OCR</Link>. El OCR funciona mucho mejor cuando las paginas estan correctamente orientadas.</li>
               </ul>
             </section>
 
@@ -223,11 +223,11 @@ export default function ArreglarPDFAlRevesPage() {
                 Una vez que tus paginas estan correctas, puedes tomar pasos adicionales para preparar el documento:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Comprime el archivo.</strong> Los PDFs escaneados suelen ser innecesariamente grandes. Usa <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> para reducir el tamano — especialmente util si necesitas enviarlo por correo electronico o subirlo a un portal con limites de tamano.</li>
-                <li>&#10003; <strong>Extrae paginas especificas.</strong> Si solo necesitas ciertas paginas del documento, usa <Link href="/es/dividir-pdf" className="text-orange-600 hover:underline">Dividir PDF</Link> para extraerlas en un archivo separado.</li>
-                <li>&#10003; <strong>Une con otros documentos.</strong> Necesitas combinar este PDF corregido con otros archivos? Usa <Link href="/es/unir-pdf" className="text-orange-600 hover:underline">Unir PDF</Link> para crear un solo documento.</li>
-                <li>&#10003; <strong>Hazlo listo para enviar.</strong> Para envios a gobiernos o instituciones, usa <Link href="/es/pdf-listo-para-subir" className="text-orange-600 hover:underline">PDF Listo para Subir</Link> para aplanar y optimizar el archivo en un solo paso.</li>
-                <li>&#10003; <strong>Agrega proteccion con contrasena.</strong> Si el documento contiene informacion sensible, usa <Link href="/es/proteger-pdf" className="text-orange-600 hover:underline">Proteger PDF</Link> para agregar una contrasena antes de compartir.</li>
+                <li>&#10003; <strong>Comprime el archivo.</strong> Los PDFs escaneados suelen ser innecesariamente grandes. Usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para reducir el tamano — especialmente util si necesitas enviarlo por correo electronico o subirlo a un portal con limites de tamano.</li>
+                <li>&#10003; <strong>Extrae paginas especificas.</strong> Si solo necesitas ciertas paginas del documento, usa <Link href="/es/dividir-pdf" className="text-[#14D8C4] hover:underline">Dividir PDF</Link> para extraerlas en un archivo separado.</li>
+                <li>&#10003; <strong>Une con otros documentos.</strong> Necesitas combinar este PDF corregido con otros archivos? Usa <Link href="/es/unir-pdf" className="text-[#14D8C4] hover:underline">Unir PDF</Link> para crear un solo documento.</li>
+                <li>&#10003; <strong>Hazlo listo para enviar.</strong> Para envios a gobiernos o instituciones, usa <Link href="/es/pdf-listo-para-subir" className="text-[#14D8C4] hover:underline">PDF Listo para Subir</Link> para aplanar y optimizar el archivo en un solo paso.</li>
+                <li>&#10003; <strong>Agrega proteccion con contrasena.</strong> Si el documento contiene informacion sensible, usa <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link> para agregar una contrasena antes de compartir.</li>
               </ul>
             </section>
 
@@ -241,7 +241,7 @@ export default function ArreglarPDFAlRevesPage() {
             <p className="text-slate-300 mb-6">Sube tu archivo y voltealo correctamente en segundos — gratis, sin registro.</p>
             <Link
               href="/es/rotar-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <RotateCw className="h-5 w-5" /> Arreglar PDF Ahora
             </Link>
@@ -261,10 +261,10 @@ export default function ArreglarPDFAlRevesPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

@@ -91,7 +91,7 @@ export default function FixUpsideDownPDFPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Rotate PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Rotate PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Fix an Upside-Down PDF (Rotate 180° Instantly)</h1>
               <p className="text-xl text-slate-300">
                 Opened a PDF and the entire page is upside down? This is one of the most common scanning problems. Here is how to flip it right-side up in seconds.
@@ -101,17 +101,17 @@ export default function FixUpsideDownPDFPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <RotateCw className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Need a quick fix? Skip the guide and flip your PDF now.</p>
             </div>
             <Link
               href="/rotate-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Fix PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,19 +130,19 @@ export default function FixUpsideDownPDFPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Document placed upside down in scanner.</strong> The most common cause. When you put a page face-down in a flatbed scanner at the wrong orientation, the scan comes out inverted. This happens constantly in busy offices.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Double-sided scanning errors.</strong> Automatic document feeders (ADF) on office printers can flip the back side of pages incorrectly, resulting in alternating right-side-up and upside-down pages.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
-                  <span><strong>Phone camera orientation.</strong> Taking a photo of a document while holding your phone upside down (or at a 180° angle) produces an inverted image. Even <Link href="/phone-scan-cleanup" className="text-orange-600 hover:underline">Phone Scan Cleanup</Link> cannot always detect this automatically.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
+                  <span><strong>Phone camera orientation.</strong> Taking a photo of a document while holding your phone upside down (or at a 180° angle) produces an inverted image. Even <Link href="/phone-scan-cleanup" className="text-[#14D8C4] hover:underline">Phone Scan Cleanup</Link> cannot always detect this automatically.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Software export bugs.</strong> Some PDF creation tools occasionally apply incorrect rotation metadata, causing pages to display upside down even though the content was created correctly.</span>
                 </li>
               </ul>
@@ -167,7 +167,7 @@ export default function FixUpsideDownPDFPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -195,7 +195,7 @@ export default function FixUpsideDownPDFPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Sideways Left (Needs 90° Clockwise Rotation)</h3>
                   <p className="text-slate-600">
-                    The text runs from bottom to top along the left side of the page. You would need to tilt your head to the right to read it. Apply a 90° clockwise rotation. See our full guide on <Link href="/learn/how-to-rotate-pdf" className="text-orange-600 hover:underline">how to rotate a PDF</Link>.
+                    The text runs from bottom to top along the left side of the page. You would need to tilt your head to the right to read it. Apply a 90° clockwise rotation. See our full guide on <Link href="/learn/how-to-rotate-pdf" className="text-[#14D8C4] hover:underline">how to rotate a PDF</Link>.
                   </p>
                 </div>
                 <div>
@@ -217,7 +217,7 @@ export default function FixUpsideDownPDFPage() {
                 <li>&#10003; <strong>Select only the upside-down pages.</strong> In PDF.it, you can click individual page thumbnails to select just the inverted pages. Then apply 180° rotation only to those pages.</li>
                 <li>&#10003; <strong>Check the pattern.</strong> With ADF scanners, the problem is usually consistent — every other page is flipped. Select all even-numbered pages (or all odd-numbered pages, whichever are wrong) and rotate them together.</li>
                 <li>&#10003; <strong>Re-scan if possible.</strong> If you have access to the original documents and scanner, it may be faster to re-scan with the correct duplex settings. But if the originals are not available, PDF.it fixes it instantly.</li>
-                <li>&#10003; <strong>Run OCR after fixing.</strong> If the scanned document needs searchable text, fix the rotation first, then use <Link href="/ocr-scanner" className="text-orange-600 hover:underline">OCR Scanner</Link>. OCR works much better when pages are correctly oriented.</li>
+                <li>&#10003; <strong>Run OCR after fixing.</strong> If the scanned document needs searchable text, fix the rotation first, then use <Link href="/ocr-scanner" className="text-[#14D8C4] hover:underline">OCR Scanner</Link>. OCR works much better when pages are correctly oriented.</li>
               </ul>
             </section>
 
@@ -228,11 +228,11 @@ export default function FixUpsideDownPDFPage() {
                 Once your pages are right-side up, you might want to take additional steps to prepare the document:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Compress the file.</strong> Scanned PDFs are often unnecessarily large. Use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> to reduce the size — especially useful if you need to email it or upload to a portal with size limits.</li>
-                <li>&#10003; <strong>Extract specific pages.</strong> If you only need certain pages from the document, use <Link href="/split-pdf" className="text-orange-600 hover:underline">Split PDF</Link> to extract them into a separate file.</li>
-                <li>&#10003; <strong>Merge with other documents.</strong> Need to combine this corrected PDF with other files? Use <Link href="/merge-pdf" className="text-orange-600 hover:underline">Merge PDF</Link> to create a single document.</li>
-                <li>&#10003; <strong>Make it submission-ready.</strong> For government or institutional submissions, use <Link href="/upload-ready-pdf" className="text-orange-600 hover:underline">Upload Ready PDF</Link> to flatten and optimize the file in one step.</li>
-                <li>&#10003; <strong>Add password protection.</strong> If the document contains sensitive information, use <Link href="/protect-pdf" className="text-orange-600 hover:underline">Protect PDF</Link> to add a password before sharing.</li>
+                <li>&#10003; <strong>Compress the file.</strong> Scanned PDFs are often unnecessarily large. Use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> to reduce the size — especially useful if you need to email it or upload to a portal with size limits.</li>
+                <li>&#10003; <strong>Extract specific pages.</strong> If you only need certain pages from the document, use <Link href="/split-pdf" className="text-[#14D8C4] hover:underline">Split PDF</Link> to extract them into a separate file.</li>
+                <li>&#10003; <strong>Merge with other documents.</strong> Need to combine this corrected PDF with other files? Use <Link href="/merge-pdf" className="text-[#14D8C4] hover:underline">Merge PDF</Link> to create a single document.</li>
+                <li>&#10003; <strong>Make it submission-ready.</strong> For government or institutional submissions, use <Link href="/upload-ready-pdf" className="text-[#14D8C4] hover:underline">Upload Ready PDF</Link> to flatten and optimize the file in one step.</li>
+                <li>&#10003; <strong>Add password protection.</strong> If the document contains sensitive information, use <Link href="/protect-pdf" className="text-[#14D8C4] hover:underline">Protect PDF</Link> to add a password before sharing.</li>
               </ul>
             </section>
 
@@ -246,7 +246,7 @@ export default function FixUpsideDownPDFPage() {
             <p className="text-slate-300 mb-6">Upload your file and flip it right-side up in seconds — free, no signup required.</p>
             <Link
               href="/rotate-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <RotateCw className="h-5 w-5" /> Fix PDF Now
             </Link>
@@ -266,10 +266,10 @@ export default function FixUpsideDownPDFPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

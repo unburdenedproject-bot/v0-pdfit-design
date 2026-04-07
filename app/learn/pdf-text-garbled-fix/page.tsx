@@ -91,7 +91,7 @@ export default function PdfTextGarbledFixPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to TXT</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / PDF to TXT</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Why PDF-to-Text Output Looks Garbled (And How to Fix It)</h1>
               <p className="text-xl text-slate-300">
                 You converted your PDF to text and got a mess of strange symbols, blank pages, or unreadable characters. Here's what went wrong and exactly how to fix it.
@@ -101,17 +101,17 @@ export default function PdfTextGarbledFixPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileText className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Try extracting text with PDF.it — it handles most encoding issues.</p>
             </div>
             <Link
               href="/pdf-to-txt"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               PDF to TXT Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,23 +130,23 @@ export default function PdfTextGarbledFixPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Random symbols and squares.</strong> Text like "&#x25A1;&#x25A1;&#x25A1;" or "&#xFFFD;&#xFFFD;&#xFFFD;" — this indicates a font encoding problem.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Wrong letters.</strong> Real words but with incorrect characters — "Hfmmp Xpsme" instead of "Hello World" — caused by custom character mapping.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Completely blank output.</strong> The TXT file is empty or contains only whitespace — typical of scanned PDFs with no embedded text.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Jumbled word order.</strong> Words appear but in the wrong sequence — caused by complex layouts, text boxes, or columns.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Missing sections.</strong> Some text extracts fine but other parts are missing — usually a mix of digital text and embedded images.</span>
                 </li>
               </ul>
@@ -162,7 +162,7 @@ export default function PdfTextGarbledFixPage() {
                 <strong>How to check:</strong> Open the PDF and try to select a single word with your cursor. If you can only select the entire page as a block (or nothing at all), it's scanned.
               </p>
               <p className="text-slate-600">
-                <strong>The fix:</strong> Use <Link href="/ocr-scanner" className="text-orange-600 hover:underline">OCR (Optical Character Recognition)</Link>. OCR reads text visually from the page image and converts it to selectable, editable text. PDF.it's OCR Scanner handles this automatically — upload your scanned PDF, and it returns the extracted text.
+                <strong>The fix:</strong> Use <Link href="/ocr-scanner" className="text-[#14D8C4] hover:underline">OCR (Optical Character Recognition)</Link>. OCR reads text visually from the page image and converts it to selectable, editable text. PDF.it's OCR Scanner handles this automatically — upload your scanned PDF, and it returns the extracted text.
               </p>
             </section>
 
@@ -176,7 +176,7 @@ export default function PdfTextGarbledFixPage() {
                 <strong>How to check:</strong> If text looks perfect in your PDF viewer but becomes garbled when you copy-paste or convert to TXT, it's almost certainly a font encoding issue.
               </p>
               <p className="text-slate-600">
-                <strong>The fix:</strong> Try <Link href="/pdf-to-word" className="text-orange-600 hover:underline">PDF to Word</Link>, which uses a different extraction method that can sometimes decode custom fonts. If that doesn't work, use <Link href="/ocr-scanner" className="text-orange-600 hover:underline">OCR</Link> as a fallback — OCR reads the visual appearance and bypasses encoding entirely.
+                <strong>The fix:</strong> Try <Link href="/pdf-to-word" className="text-[#14D8C4] hover:underline">PDF to Word</Link>, which uses a different extraction method that can sometimes decode custom fonts. If that doesn't work, use <Link href="/ocr-scanner" className="text-[#14D8C4] hover:underline">OCR</Link> as a fallback — OCR reads the visual appearance and bypasses encoding entirely.
               </p>
             </section>
 
@@ -190,7 +190,7 @@ export default function PdfTextGarbledFixPage() {
                 <strong>How to check:</strong> Look for a lock icon in your PDF viewer, or try selecting text — if the cursor changes but nothing highlights, copy restrictions are active.
               </p>
               <p className="text-slate-600">
-                <strong>The fix:</strong> Use <Link href="/unlock-pdf" className="text-orange-600 hover:underline">Unlock PDF</Link> to remove restrictions (you'll need the owner password if one was set), then convert to TXT normally with <Link href="/pdf-to-txt" className="text-orange-600 hover:underline">PDF to TXT</Link>.
+                <strong>The fix:</strong> Use <Link href="/unlock-pdf" className="text-[#14D8C4] hover:underline">Unlock PDF</Link> to remove restrictions (you'll need the owner password if one was set), then convert to TXT normally with <Link href="/pdf-to-txt" className="text-[#14D8C4] hover:underline">PDF to TXT</Link>.
               </p>
             </section>
 
@@ -201,7 +201,7 @@ export default function PdfTextGarbledFixPage() {
                 <strong>The problem:</strong> PDFs with multi-column layouts, floating text boxes, sidebars, or tables cause text extraction tools to guess the reading order wrong. The result is words in a jumbled sequence.
               </p>
               <p className="text-slate-600 mb-4">
-                <strong>The fix:</strong> PDF.it's <Link href="/pdf-to-txt" className="text-orange-600 hover:underline">PDF to TXT tool</Link> handles most multi-column layouts correctly. If the layout is extremely complex (like magazine pages), try <Link href="/pdf-to-word" className="text-orange-600 hover:underline">PDF to Word</Link> which preserves the visual structure, making it easier to identify and reorganize sections.
+                <strong>The fix:</strong> PDF.it's <Link href="/pdf-to-txt" className="text-[#14D8C4] hover:underline">PDF to TXT tool</Link> handles most multi-column layouts correctly. If the layout is extremely complex (like magazine pages), try <Link href="/pdf-to-word" className="text-[#14D8C4] hover:underline">PDF to Word</Link> which preserves the visual structure, making it easier to identify and reorganize sections.
               </p>
             </section>
 
@@ -212,7 +212,7 @@ export default function PdfTextGarbledFixPage() {
                 <strong>The problem:</strong> Some PDFs contain a mix of digital text (typed) and scanned images (photographed pages). Text extraction works on the digital pages but returns nothing from the scanned pages.
               </p>
               <p className="text-slate-600">
-                <strong>The fix:</strong> Run the entire document through <Link href="/ocr-scanner" className="text-orange-600 hover:underline">OCR Scanner</Link>. It processes all pages — for digital pages, it uses the existing text; for scanned pages, it reads the text from the image. You get complete text from the entire document.
+                <strong>The fix:</strong> Run the entire document through <Link href="/ocr-scanner" className="text-[#14D8C4] hover:underline">OCR Scanner</Link>. It processes all pages — for digital pages, it uses the existing text; for scanned pages, it reads the text from the image. You get complete text from the entire document.
               </p>
             </section>
 
@@ -232,27 +232,27 @@ export default function PdfTextGarbledFixPage() {
                     <tr className="border-t border-gray-200">
                       <td className="py-3 px-4">Blank output</td>
                       <td className="py-3 px-4">Scanned PDF</td>
-                      <td className="py-3 px-4 font-semibold text-orange-600"><Link href="/ocr-scanner" className="hover:underline">OCR Scanner</Link></td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]"><Link href="/ocr-scanner" className="hover:underline">OCR Scanner</Link></td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
                       <td className="py-3 px-4">Random symbols / gibberish</td>
                       <td className="py-3 px-4">Font encoding</td>
-                      <td className="py-3 px-4 font-semibold text-orange-600"><Link href="/pdf-to-word" className="hover:underline">PDF to Word</Link> or <Link href="/ocr-scanner" className="hover:underline">OCR</Link></td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]"><Link href="/pdf-to-word" className="hover:underline">PDF to Word</Link> or <Link href="/ocr-scanner" className="hover:underline">OCR</Link></td>
                     </tr>
                     <tr className="border-t border-gray-200">
                       <td className="py-3 px-4">Can't select text</td>
                       <td className="py-3 px-4">Protected PDF</td>
-                      <td className="py-3 px-4 font-semibold text-orange-600"><Link href="/unlock-pdf" className="hover:underline">Unlock PDF</Link> then <Link href="/pdf-to-txt" className="hover:underline">PDF to TXT</Link></td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]"><Link href="/unlock-pdf" className="hover:underline">Unlock PDF</Link> then <Link href="/pdf-to-txt" className="hover:underline">PDF to TXT</Link></td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
                       <td className="py-3 px-4">Words in wrong order</td>
                       <td className="py-3 px-4">Complex layout</td>
-                      <td className="py-3 px-4 font-semibold text-orange-600"><Link href="/pdf-to-txt" className="hover:underline">PDF to TXT</Link> or <Link href="/pdf-to-word" className="hover:underline">PDF to Word</Link></td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]"><Link href="/pdf-to-txt" className="hover:underline">PDF to TXT</Link> or <Link href="/pdf-to-word" className="hover:underline">PDF to Word</Link></td>
                     </tr>
                     <tr className="border-t border-gray-200">
                       <td className="py-3 px-4">Some pages missing text</td>
                       <td className="py-3 px-4">Mixed content</td>
-                      <td className="py-3 px-4 font-semibold text-orange-600"><Link href="/ocr-scanner" className="hover:underline">OCR Scanner</Link></td>
+                      <td className="py-3 px-4 font-semibold text-[#14D8C4]"><Link href="/ocr-scanner" className="hover:underline">OCR Scanner</Link></td>
                     </tr>
                   </tbody>
                 </table>
@@ -269,7 +269,7 @@ export default function PdfTextGarbledFixPage() {
             <p className="text-slate-300 mb-6">Try PDF.it's extraction tools — they handle encoding issues, scanned pages, and complex layouts automatically.</p>
             <Link
               href="/pdf-to-txt"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileText className="h-5 w-5" /> PDF to TXT Now
             </Link>
@@ -290,10 +290,10 @@ export default function PdfTextGarbledFixPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

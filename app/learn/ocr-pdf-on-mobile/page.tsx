@@ -91,7 +91,7 @@ export default function OCRPDFOnMobilePage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / OCR PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / OCR PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">OCR a PDF on Your Phone (iPhone & Android)</h1>
               <p className="text-xl text-slate-300">
                 No computer? No problem. You can scan a document with your phone camera and run OCR on it right from your browser — no app needed.
@@ -101,17 +101,17 @@ export default function OCRPDFOnMobilePage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <ScanText className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Open OCR Scanner on your phone right now (Pro feature).</p>
             </div>
             <Link
               href="/ocr-scanner"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               OCR Scanner <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,23 +130,23 @@ export default function OCRPDFOnMobilePage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>On-the-go document capture.</strong> You receive a printed document at a meeting, scan it with your phone camera, and immediately OCR it so you can search the text later.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Receipts and expenses.</strong> Photograph a receipt at a restaurant or store, convert it to PDF, and run OCR to extract amounts and dates for expense reports.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Quick text extraction.</strong> Need to copy a paragraph from a printed page into a text message or email? Scan, OCR, copy, and paste — all from your phone.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Travel documents.</strong> Scan boarding passes, hotel confirmations, or visa documents while traveling and make them searchable for easy reference.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Student notes and textbooks.</strong> Photograph textbook pages or class handouts and OCR them so you can search for specific terms when studying.</span>
                 </li>
               </ul>
@@ -171,7 +171,7 @@ export default function OCRPDFOnMobilePage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -244,11 +244,11 @@ export default function OCRPDFOnMobilePage() {
                 Phone-scanned documents often have quality issues that reduce OCR accuracy. Here is how to get the best results:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Use Phone Scan Cleanup first.</strong> Before running OCR, upload your phone scan to PDF.it&apos;s <Link href="/phone-scan-cleanup" className="text-orange-600 hover:underline">Phone Scan Cleanup</Link> tool. It automatically corrects shadows, improves contrast, and straightens the image.</li>
+                <li>&#10003; <strong>Use Phone Scan Cleanup first.</strong> Before running OCR, upload your phone scan to PDF.it&apos;s <Link href="/phone-scan-cleanup" className="text-[#14D8C4] hover:underline">Phone Scan Cleanup</Link> tool. It automatically corrects shadows, improves contrast, and straightens the image.</li>
                 <li>&#10003; <strong>Scan in good lighting.</strong> Natural daylight works best. Avoid scanning under fluorescent lights which can create flickering shadows, and never use flash, which creates bright hotspots.</li>
                 <li>&#10003; <strong>Hold the phone directly above.</strong> Shooting at an angle creates perspective distortion that reduces OCR accuracy. Hold your phone parallel to the document surface.</li>
                 <li>&#10003; <strong>Use the built-in scanner apps.</strong> Notes (iPhone) and Google Drive (Android) have document scanning modes that automatically crop, straighten, and enhance the scan. These always produce better results than a regular camera photo.</li>
-                <li>&#10003; <strong>Select the right language.</strong> This is just as important on mobile as on desktop. Always set the correct document language in the OCR Scanner settings. For more tips, see our <Link href="/learn/ocr-accuracy-tips" className="text-orange-600 hover:underline">OCR Accuracy Tips</Link> guide.</li>
+                <li>&#10003; <strong>Select the right language.</strong> This is just as important on mobile as on desktop. Always set the correct document language in the OCR Scanner settings. For more tips, see our <Link href="/learn/ocr-accuracy-tips" className="text-[#14D8C4] hover:underline">OCR Accuracy Tips</Link> guide.</li>
               </ul>
             </section>
 
@@ -262,7 +262,7 @@ export default function OCRPDFOnMobilePage() {
             <p className="text-slate-300 mb-6">Open PDF.it in your mobile browser, upload a scanned PDF, and get a searchable version in seconds. No app needed.</p>
             <Link
               href="/ocr-scanner"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <ScanText className="h-5 w-5" /> Try OCR Scanner (Pro)
             </Link>
@@ -284,10 +284,10 @@ export default function OCRPDFOnMobilePage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

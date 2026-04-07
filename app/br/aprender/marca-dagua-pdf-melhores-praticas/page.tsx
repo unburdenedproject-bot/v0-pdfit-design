@@ -45,20 +45,20 @@ export default function MelhoresPraticasMarcaDaguaPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Marca d&apos;Agua PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Marca d&apos;Agua PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Melhores Praticas para Marca d&apos;Agua em PDF</h1>
               <p className="text-xl text-slate-300">Aprenda a criar marcas d&apos;agua profissionais e eficazes: posicao ideal, opacidade correta, cores adequadas e quando usar cada tipo.</p>
             </div>
           </div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><Stamp className="h-5 w-5 text-white" /></div>
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><Stamp className="h-5 w-5 text-white" /></div>
               <p className="text-slate-700 font-semibold">Aplique marcas d&apos;agua profissionais com o PDF.it.</p>
             </div>
-            <Link href="/br/marca-dagua-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Marca d&apos;Agua PDF <ArrowRight className="h-4 w-4" /></Link>
+            <Link href="/br/marca-dagua-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Marca d&apos;Agua PDF <ArrowRight className="h-4 w-4" /></Link>
           </div>
         </section>
 
@@ -74,9 +74,9 @@ export default function MelhoresPraticasMarcaDaguaPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Opacidade: O Equilibrio Perfeito</h2>
               <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>30-50% de opacidade</strong> e o padrao ideal. Visivel sem dificultar a leitura do conteudo.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Abaixo de 20%</strong> — a marca d&apos;agua pode ser quase invisivel, especialmente em impressoes ou telas com brilho baixo.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Acima de 60%</strong> — dificulta a leitura e da aparencia pouco profissional ao documento.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span><strong>30-50% de opacidade</strong> e o padrao ideal. Visivel sem dificultar a leitura do conteudo.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span><strong>Abaixo de 20%</strong> — a marca d&apos;agua pode ser quase invisivel, especialmente em impressoes ou telas com brilho baixo.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">3.</span><span><strong>Acima de 60%</strong> — dificulta a leitura e da aparencia pouco profissional ao documento.</span></li>
               </ul>
             </section>
 
@@ -92,17 +92,17 @@ export default function MelhoresPraticasMarcaDaguaPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Escolha de Cores</h2>
               <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Cinza claro:</strong> A opcao mais profissional e discreta. Funciona bem em documentos com texto preto.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Vermelho:</strong> Ideal para avisos como CONFIDENCIAL, URGENTE ou RASCUNHO. Chama atencao imediatamente.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Azul:</strong> Boa opcao para branding corporativo ou documentos oficiais.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Preto:</strong> Muito forte para a maioria dos usos. Use apenas em documentos com fundo claro e opacidade muito baixa.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Cinza claro:</strong> A opcao mais profissional e discreta. Funciona bem em documentos com texto preto.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Vermelho:</strong> Ideal para avisos como CONFIDENCIAL, URGENTE ou RASCUNHO. Chama atencao imediatamente.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Azul:</strong> Boa opcao para branding corporativo ou documentos oficiais.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Preto:</strong> Muito forte para a maioria dos usos. Use apenas em documentos com fundo claro e opacidade muito baixa.</span></li>
               </ul>
             </section>
 
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Quando Usar Cada Tipo de Marca d&apos;Agua</h2>
               <div className="space-y-6">
-                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Marca d&apos;Agua de Texto</h3><p className="text-slate-600">Use para indicar status do documento: <Link href="/br/aprender/marca-dagua-pdf-confidencial" className="text-orange-600 hover:underline">CONFIDENCIAL</Link>, RASCUNHO, NAO COPIAR, USO INTERNO. E a opcao mais rapida e direta.</p></div>
+                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Marca d&apos;Agua de Texto</h3><p className="text-slate-600">Use para indicar status do documento: <Link href="/br/aprender/marca-dagua-pdf-confidencial" className="text-[#14D8C4] hover:underline">CONFIDENCIAL</Link>, RASCUNHO, NAO COPIAR, USO INTERNO. E a opcao mais rapida e direta.</p></div>
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">Marca d&apos;Agua com Logo</h3><p className="text-slate-600">Use para branding corporativo, protecao de propriedade intelectual e identificacao de origem do documento.</p></div>
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">Combinacao (Texto + Logo)</h3><p className="text-slate-600">Para protecao maxima, combine o logo da empresa com um texto de status. Isso identifica a origem e o nivel de restricao simultaneamente.</p></div>
               </div>
@@ -112,8 +112,8 @@ export default function MelhoresPraticasMarcaDaguaPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">Protecao Adicional</h2>
               <p className="text-slate-600 mb-4">A marca d&apos;agua e uma camada visual de protecao. Para seguranca completa, combine com:</p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <Link href="/br/proteger-pdf" className="text-orange-600 hover:underline">Protecao por senha</Link> — impede abertura ou edicao nao autorizada.</li>
-                <li>&#10003; <Link href="/br/comprimir-pdf" className="text-orange-600 hover:underline">Compressao de PDF</Link> — reduz o tamanho antes de enviar por e-mail.</li>
+                <li>&#10003; <Link href="/br/proteger-pdf" className="text-[#14D8C4] hover:underline">Protecao por senha</Link> — impede abertura ou edicao nao autorizada.</li>
+                <li>&#10003; <Link href="/br/comprimir-pdf" className="text-[#14D8C4] hover:underline">Compressao de PDF</Link> — reduz o tamanho antes de enviar por e-mail.</li>
                 <li>&#10003; Restricoes de impressao e copia — limita o que o destinatario pode fazer com o documento.</li>
               </ul>
             </section>
@@ -124,7 +124,7 @@ export default function MelhoresPraticasMarcaDaguaPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Crie Marcas d&apos;Agua Profissionais</h2>
             <p className="text-slate-300 mb-6">Aplique marcas d&apos;agua com controle total de texto, cor, opacidade e posicao.</p>
-            <Link href="/br/marca-dagua-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><Stamp className="h-5 w-5" /> Marca d&apos;Agua PDF (Pro)</Link>
+            <Link href="/br/marca-dagua-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><Stamp className="h-5 w-5" /> Marca d&apos;Agua PDF (Pro)</Link>
           </div>
         </section>
 
@@ -136,9 +136,9 @@ export default function MelhoresPraticasMarcaDaguaPage() {
                 { title: "Marca d'Agua 'Confidencial' em PDF", href: "/br/aprender/marca-dagua-pdf-confidencial" },
                 { title: "Marca d'Agua em PDF no Celular", href: "/br/aprender/marca-dagua-pdf-no-celular" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

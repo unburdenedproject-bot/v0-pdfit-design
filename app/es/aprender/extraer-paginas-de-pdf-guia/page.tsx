@@ -42,19 +42,19 @@ export default function ExtraerPaginasDePDFGuiaPage() {
       <main>
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-            <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Dividir PDF</p>
+            <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Dividir PDF</p>
             <h1 className="text-4xl lg:text-5xl font-black mb-4">Cómo Extraer Páginas de un PDF (Conserva Solo Lo Que Necesitas)</h1>
             <p className="text-xl text-slate-300">¿Tienes un informe de 50 páginas pero solo necesitas las páginas 3, 7 y 12? Aquí te explicamos cómo sacar exactamente las páginas que necesitas de cualquier PDF — sin instalar software ni perder calidad.</p>
           </div></div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><Scissors className="h-5 w-5 text-white" /></div>
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><Scissors className="h-5 w-5 text-white" /></div>
               <p className="text-slate-700 font-semibold">¿Listo para extraer páginas? Salta la guía y ve directo a la herramienta.</p>
             </div>
-            <Link href="/es/dividir-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
+            <Link href="/es/dividir-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
               Dividir PDF Ahora <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -68,23 +68,23 @@ export default function ExtraerPaginasDePDFGuiaPage() {
               <p className="text-slate-600 mb-4">La mayoría de los PDFs contienen más contenido del que realmente necesitas. Extraer páginas específicas te permite crear un documento más pequeño y enfocado. Razones comunes incluyen:</p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Enviar secciones específicas.</strong> Un empleador pide la página 2 de tu certificado de estudios, no el documento completo de 15 páginas. Extrae solo esa página.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Compartir capítulos relevantes.</strong> Saca el capítulo 4 de un PDF de libro de texto para compartirlo con un grupo de estudio, en vez de enviar el libro completo.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Eliminar contenido sensible.</strong> Extrae solo las páginas que quieres compartir y deja atrás las páginas con información privada o confidencial.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
-                  <span><strong>Reducir tamaño de archivo para email.</strong> En vez de comprimir un PDF grande, extrae solo las páginas que necesitas para que el archivo sea lo suficientemente pequeño para <Link href="/es/comprimir-pdf-para-email" className="text-orange-600 hover:underline">enviar como adjunto de email</Link>.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
+                  <span><strong>Reducir tamaño de archivo para email.</strong> En vez de comprimir un PDF grande, extrae solo las páginas que necesitas para que el archivo sea lo suficientemente pequeño para <Link href="/es/comprimir-pdf-para-email" className="text-[#14D8C4] hover:underline">enviar como adjunto de email</Link>.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Crear materiales de referencia.</strong> Saca unas páginas clave de un manual de presentación para crear un material de referencia para una reunión o clase.</span>
                 </li>
               </ul>
@@ -99,7 +99,7 @@ export default function ExtraerPaginasDePDFGuiaPage() {
                   { title: "Descarga tu nuevo PDF", desc: "Haz clic en Dividir PDF y descarga el resultado. Tu nuevo archivo contiene solo las páginas que seleccionaste, en el orden que especificaste. El archivo original no se modifica." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div>
                       <h3 className="font-bold text-slate-900 mb-1">{step.title}</h3>
                       <p className="text-slate-600 text-sm">{step.desc}</p>
@@ -127,15 +127,15 @@ export default function ExtraerPaginasDePDFGuiaPage() {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Unir páginas extraídas con otros documentos</h3>
-                  <p className="text-slate-600">Si extrajiste páginas de múltiples PDFs, usa <Link href="/es/unir-pdf" className="text-orange-600 hover:underline">Unir PDF</Link> para combinarlas en un solo documento. Por ejemplo, saca la página 1 de tu PDF de currículum y las páginas 3-5 de un portafolio de proyectos, luego únelos.</p>
+                  <p className="text-slate-600">Si extrajiste páginas de múltiples PDFs, usa <Link href="/es/unir-pdf" className="text-[#14D8C4] hover:underline">Unir PDF</Link> para combinarlas en un solo documento. Por ejemplo, saca la página 1 de tu PDF de currículum y las páginas 3-5 de un portafolio de proyectos, luego únelos.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Comprimir el resultado</h3>
-                  <p className="text-slate-600">Incluso unas pocas páginas extraídas pueden ser grandes si contienen imágenes de alta resolución o escaneos. Usa <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> para reducir el tamaño del archivo antes de compartir.</p>
+                  <p className="text-slate-600">Incluso unas pocas páginas extraídas pueden ser grandes si contienen imágenes de alta resolución o escaneos. Usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para reducir el tamaño del archivo antes de compartir.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Convertir a otro formato</h3>
-                  <p className="text-slate-600">¿Necesitas las páginas extraídas como imágenes? Usa <Link href="/es/pdf-a-jpg" className="text-orange-600 hover:underline">PDF a JPG</Link> o <Link href="/es/pdf-a-png" className="text-orange-600 hover:underline">PDF a PNG</Link> para convertirlas. Si necesitas texto editable, prueba <Link href="/es/pdf-a-texto" className="text-orange-600 hover:underline">PDF a TXT</Link>.</p>
+                  <p className="text-slate-600">¿Necesitas las páginas extraídas como imágenes? Usa <Link href="/es/pdf-a-jpg" className="text-[#14D8C4] hover:underline">PDF a JPG</Link> o <Link href="/es/pdf-a-png" className="text-[#14D8C4] hover:underline">PDF a PNG</Link> para convertirlas. Si necesitas texto editable, prueba <Link href="/es/pdf-a-texto" className="text-[#14D8C4] hover:underline">PDF a TXT</Link>.</p>
                 </div>
               </div>
             </section>
@@ -145,8 +145,8 @@ export default function ExtraerPaginasDePDFGuiaPage() {
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Verifica el conteo de páginas primero.</strong> Abre tu PDF y anota el total de páginas y cuáles necesitas antes de subir.</li>
                 <li>&#10003; <strong>Usa rangos de páginas para mayor velocidad.</strong> En vez de escribir &quot;5, 6, 7, 8, 9&quot;, usa &quot;5-9&quot; para ahorrar tiempo.</li>
-                <li>&#10003; <strong>Desbloquea PDFs protegidos primero.</strong> Si el PDF está protegido con contraseña, usa <Link href="/es/desbloquear-pdf" className="text-orange-600 hover:underline">Desbloquear PDF</Link> antes de intentar extraer páginas.</li>
-                <li>&#10003; <strong>Corrige problemas de rotación.</strong> Si algunas páginas están rotadas incorrectamente, usa <Link href="/es/rotar-pdf" className="text-orange-600 hover:underline">Rotar PDF</Link> después de extraer para corregirlas.</li>
+                <li>&#10003; <strong>Desbloquea PDFs protegidos primero.</strong> Si el PDF está protegido con contraseña, usa <Link href="/es/desbloquear-pdf" className="text-[#14D8C4] hover:underline">Desbloquear PDF</Link> antes de intentar extraer páginas.</li>
+                <li>&#10003; <strong>Corrige problemas de rotación.</strong> Si algunas páginas están rotadas incorrectamente, usa <Link href="/es/rotar-pdf" className="text-[#14D8C4] hover:underline">Rotar PDF</Link> después de extraer para corregirlas.</li>
                 <li>&#10003; <strong>Extracción por lotes para múltiples archivos.</strong> Los usuarios Pro pueden procesar múltiples PDFs a la vez usando procesamiento por lotes, extrayendo páginas de varios documentos en una sola operación.</li>
               </ul>
             </section>
@@ -158,7 +158,7 @@ export default function ExtraerPaginasDePDFGuiaPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">¿Listo para Extraer Páginas de Tu PDF?</h2>
             <p className="text-slate-300 mb-6">Sube tu archivo y conserva solo las páginas que necesitas — gratis, sin registro.</p>
-            <Link href="/es/dividir-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors">
+            <Link href="/es/dividir-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors">
               <Scissors className="h-5 w-5" /> Dividir PDF Ahora
             </Link>
           </div>
@@ -174,9 +174,9 @@ export default function ExtraerPaginasDePDFGuiaPage() {
                 { title: "Dividir PDF en Páginas Individuales (Un Archivo por Página)", href: "/es/aprender/dividir-pdf-en-paginas-individuales" },
                 { title: "Cómo Dividir un PDF en tu Teléfono (iPhone y Android)", href: "/es/aprender/dividir-pdf-en-movil" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

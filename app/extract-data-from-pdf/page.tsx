@@ -61,7 +61,7 @@ export default function ExtractDataFromPDFPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <FileSpreadsheet className="h-10 w-10 text-white" />
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Extract Data from PDF</h1>
@@ -69,9 +69,9 @@ export default function ExtractDataFromPDFPage() {
                 Pull text, tables, images, and structured data from any PDF. Whether you need financial figures, research data, or document content, PDF.it has the right extraction tool for the job.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Multiple Extraction Tools</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-orange-500" /><span>Files Deleted After Session</span></div>
-                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-orange-500" /><span>Browser-Based Processing</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Multiple Extraction Tools</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Files Deleted After Session</span></div>
+                <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Browser-Based Processing</span></div>
               </div>
             </div>
           </div>
@@ -83,8 +83,8 @@ export default function ExtractDataFromPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-4">Choose Your Extraction Tool</h2>
             <p className="text-slate-600 mb-8">PDF.it offers multiple ways to extract data from PDFs:</p>
             <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
-              <Link href="/pdf-to-txt" className="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm">Extract Text</Link>
-              <Link href="/pdf-to-excel" className="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm">Extract Tables</Link>
+              <Link href="/pdf-to-txt" className="inline-flex items-center justify-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-6 rounded-xl transition-colors text-sm">Extract Text</Link>
+              <Link href="/pdf-to-excel" className="inline-flex items-center justify-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-6 rounded-xl transition-colors text-sm">Extract Tables</Link>
               <Link href="/extract-images-from-pdf" className="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm">Extract Images</Link>
               <Link href="/ocr-scanner" className="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm">OCR Scanner</Link>
             </div>
@@ -143,7 +143,7 @@ export default function ExtractDataFromPDFPage() {
                 "Download the extracted data in your preferred format and start working with it.",
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                     {i + 1}
                   </div>
                   <p className="text-slate-700 pt-1">{step}</p>

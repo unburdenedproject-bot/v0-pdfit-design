@@ -28,13 +28,13 @@ export default function ComprimirPDFPara500KBPagePt() {
       <main>
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-4xl mx-auto text-center">
-            <div className="w-20 h-20 bg-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6"><Compress className="h-10 w-10 text-white" /></div>
+            <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6"><Compress className="h-10 w-10 text-white" /></div>
             <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF para Limites de 500KB</h1>
             <p className="text-xl text-slate-300 mb-8">Aplique compressao forte para reduzir seu PDF para portais com limites de 500KB. Ideal para candidaturas de emprego, formularios governamentais, portais educacionais e envios de documentos online.</p>
             <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-              <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-orange-500" /><span>Compressao Forte</span></div>
-              <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-orange-500" /><span>Arquivos Excluidos Apos a Sessao</span></div>
-              <div className="flex items-center gap-2"><Download className="h-4 w-4 text-orange-500" /><span>Sem Cadastro</span></div>
+              <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compressao Forte</span></div>
+              <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Arquivos Excluidos Apos a Sessao</span></div>
+              <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sem Cadastro</span></div>
             </div>
           </div></div>
         </section>
@@ -72,7 +72,7 @@ export default function ComprimirPDFPara500KBPagePt() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Como Comprimir um PDF para Limites de 500KB</h2>
             <div className="space-y-4">
               {["Envie ou arraste seu PDF ao PDF.it.", "Clique em Comprimir PDF — a compressao forte e aplicada automaticamente.", "Baixe seu PDF menor. Se continuar acima de 500KB, tente dividi-lo em secoes menores primeiro."].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200"><div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div><p className="text-slate-700 pt-1">{step}</p></div>
+                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200"><div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div><p className="text-slate-700 pt-1">{step}</p></div>
               ))}
             </div>
           </div>
@@ -92,9 +92,9 @@ export default function ComprimirPDFPara500KBPagePt() {
                 { name: "Achatar PDF", desc: "Remove campos.", href: "/br/achatar-pdf", icon: FileText },
                 { name: "Girar PDF", desc: "Corrige a orientacao.", href: "/br/girar-pdf", icon: RotateCw },
               ].map((tool) => (
-                <Link key={tool.href} href={tool.href} className="group flex flex-col items-center text-center rounded-xl border border-gray-200 bg-white p-4 hover:border-orange-200 hover:bg-orange-50/40 hover:shadow-md transition-all duration-200">
-                  <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200 shadow-sm"><tool.icon className="h-5 w-5 text-white" /></div>
-                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-orange-600 transition-colors mb-1">{tool.name}</h4>
+                <Link key={tool.href} href={tool.href} className="group flex flex-col items-center text-center rounded-xl border border-gray-200 bg-white p-4 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] hover:shadow-md transition-all duration-200">
+                  <div className="w-10 h-10 bg-gradient-to-br from-[#14D8C4] to-[#0FBFB0] rounded-lg flex items-center justify-center mb-2 group-hover:scale-110 transition-transform duration-200 shadow-sm"><tool.icon className="h-5 w-5 text-white" /></div>
+                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-[#14D8C4] transition-colors mb-1">{tool.name}</h4>
                   <p className="text-xs text-slate-500 leading-relaxed">{tool.desc}</p>
                 </Link>
               ))}
@@ -124,7 +124,7 @@ export default function ComprimirPDFPara500KBPagePt() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <h2 className="text-2xl font-black mb-4">Precisa Comprimir PDF para 500KB?</h2>
             <p className="text-slate-300 text-lg mb-8">Envie seu PDF e aplique compressao forte em segundos. Sem cadastro, sem instalacao, sem espera.</p>
-            <Link href="/br/comprimir-pdf-para-500kb" className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl text-lg transition-colors shadow-lg">Comprimir para 500KB Agora</Link>
+            <Link href="/br/comprimir-pdf-para-500kb" className="inline-block bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl text-lg transition-colors shadow-lg">Comprimir para 500KB Agora</Link>
           </div>
         </section>
       </main>

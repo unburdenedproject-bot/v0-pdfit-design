@@ -91,7 +91,7 @@ export default function UnlockPDFForgotPasswordPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Unlock PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Unlock PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Forgot Your PDF Password? Here&apos;s What You Can Do</h1>
               <p className="text-xl text-slate-300">
                 Locked out of your own PDF? Don&apos;t panic. Your options depend on what type of password was set. Here&apos;s a clear breakdown of what you can (and can&apos;t) do.
@@ -101,17 +101,17 @@ export default function UnlockPDFForgotPasswordPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Unlock className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Have a permissions-only lock? Remove it instantly.</p>
             </div>
             <Link
               href="/unlock-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Unlock PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,16 +130,16 @@ export default function UnlockPDFForgotPasswordPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Open password (user password).</strong> This password is required to open and view the PDF. When you double-click the file, a dialog box asks for the password before showing any content. Without this password, you cannot see anything in the document. This is the harder type to deal with if forgotten.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Permissions password (owner password).</strong> This password restricts specific actions — printing, copying text, editing, or annotating — but still lets you view the PDF. You can open the file and read it, but certain features are locked. This type is much easier to handle if forgotten.</span>
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
-                <strong>Quick test:</strong> Can you open and read the PDF? If yes, you have a permissions password — and PDF.it&apos;s <Link href="/unlock-pdf" className="text-orange-600 hover:underline">Unlock PDF</Link> tool can remove those restrictions without needing the password.
+                <strong>Quick test:</strong> Can you open and read the PDF? If yes, you have a permissions password — and PDF.it&apos;s <Link href="/unlock-pdf" className="text-[#14D8C4] hover:underline">Unlock PDF</Link> tool can remove those restrictions without needing the password.
               </p>
             </section>
 
@@ -165,7 +165,7 @@ export default function UnlockPDFForgotPasswordPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -185,23 +185,23 @@ export default function UnlockPDFForgotPasswordPage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Check your email.</strong> Search your inbox for the PDF filename or keywords like &quot;password&quot; or &quot;protected.&quot; The password is often sent in a separate email from the document itself.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Check your password manager.</strong> If you use a password manager (1Password, LastPass, Bitwarden), search for entries related to the PDF or the sender.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Try common passwords.</strong> Think about passwords you commonly use for documents. Try your name, date of birth, company name, or simple passwords like &quot;1234&quot; or &quot;password.&quot;</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Check chat and text messages.</strong> If someone sent you the PDF, search your WhatsApp, Slack, Teams, or SMS history for the password.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Contact the sender.</strong> If the PDF came from a colleague, client, bank, or government agency, ask them to resend the password or provide an unprotected version of the document.</span>
                 </li>
               </ul>
@@ -218,7 +218,7 @@ export default function UnlockPDFForgotPasswordPage() {
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>✓ <strong>Use a password manager.</strong> Store every PDF password in your password manager with a note about which file it belongs to. This is the most reliable method.</li>
-                <li>✓ <strong>Use permissions restrictions instead of open passwords.</strong> If you only need to prevent editing or printing (not viewing), use a permissions password via <Link href="/protect-pdf" className="text-orange-600 hover:underline">Protect PDF</Link>. These are easier to remove if you forget them.</li>
+                <li>✓ <strong>Use permissions restrictions instead of open passwords.</strong> If you only need to prevent editing or printing (not viewing), use a permissions password via <Link href="/protect-pdf" className="text-[#14D8C4] hover:underline">Protect PDF</Link>. These are easier to remove if you forget them.</li>
                 <li>✓ <strong>Keep an unprotected backup.</strong> Before adding a password to a PDF, save an unprotected copy in a secure location (encrypted folder, secure cloud storage).</li>
                 <li>✓ <strong>Use consistent passwords.</strong> For non-critical documents, use a consistent password format you&apos;ll remember (but never reuse passwords from important accounts).</li>
                 <li>✓ <strong>Document your passwords.</strong> Keep a secure note (digital or physical, stored safely) listing which files have passwords and what they are.</li>
@@ -232,28 +232,28 @@ export default function UnlockPDFForgotPasswordPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Unlock PDF — Remove Restrictions</h3>
                   <p className="text-slate-600">
-                    Use <Link href="/unlock-pdf" className="text-orange-600 hover:underline">Unlock PDF</Link> to remove permissions restrictions (print, copy, edit locks) from PDFs. Works without the owner password for permissions-only restrictions.
+                    Use <Link href="/unlock-pdf" className="text-[#14D8C4] hover:underline">Unlock PDF</Link> to remove permissions restrictions (print, copy, edit locks) from PDFs. Works without the owner password for permissions-only restrictions.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Protect PDF — Add Your Own Password</h3>
                   <p className="text-slate-600">
-                    Use <Link href="/protect-pdf" className="text-orange-600 hover:underline">Protect PDF</Link> to add a new password to any PDF. Set open passwords, permissions restrictions, or both. Choose exactly which actions to allow or block.
+                    Use <Link href="/protect-pdf" className="text-[#14D8C4] hover:underline">Protect PDF</Link> to add a new password to any PDF. Set open passwords, permissions restrictions, or both. Choose exactly which actions to allow or block.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Flatten PDF — Lock Content in Place</h3>
                   <p className="text-slate-600">
-                    If you want to prevent editing without using passwords, <Link href="/flatten-pdf" className="text-orange-600 hover:underline">Flatten PDF</Link> permanently merges form fields, annotations, and layers into the page. The content becomes part of the background — no password to remember.
+                    If you want to prevent editing without using passwords, <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">Flatten PDF</Link> permanently merges form fields, annotations, and layers into the page. The content becomes part of the background — no password to remember.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">PDF to Word — Edit Without the Password</h3>
                   <p className="text-slate-600">
-                    If you can view a PDF but can&apos;t edit it, another option is converting it to Word using <Link href="/pdf-to-word" className="text-orange-600 hover:underline">PDF to Word</Link>. Make your edits in Word, then convert back with <Link href="/word-to-pdf" className="text-orange-600 hover:underline">Word to PDF</Link>.
+                    If you can view a PDF but can&apos;t edit it, another option is converting it to Word using <Link href="/pdf-to-word" className="text-[#14D8C4] hover:underline">PDF to Word</Link>. Make your edits in Word, then convert back with <Link href="/word-to-pdf" className="text-[#14D8C4] hover:underline">Word to PDF</Link>.
                   </p>
                 </div>
               </div>
@@ -269,7 +269,7 @@ export default function UnlockPDFForgotPasswordPage() {
             <p className="text-slate-300 mb-6">If your PDF has permissions restrictions (not an open password), PDF.it can remove them instantly — free, no signup required.</p>
             <Link
               href="/unlock-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Unlock className="h-5 w-5" /> Unlock PDF Now
             </Link>
@@ -289,10 +289,10 @@ export default function UnlockPDFForgotPasswordPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

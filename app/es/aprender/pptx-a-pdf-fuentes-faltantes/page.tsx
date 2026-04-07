@@ -33,14 +33,14 @@ export default function PptxAPdfFuentesFaltantesPage() {
       <HeaderEs />
       <main>
         <section className="bg-[#191B4D] text-white py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-          <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PowerPoint a PDF</p>
+          <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PowerPoint a PDF</p>
           <h1 className="text-4xl lg:text-5xl font-black mb-4">PPTX a PDF fuentes faltantes? Soluciona incrustacion y sustituciones</h1>
           <p className="text-xl text-slate-300">Tu PowerPoint se ve perfecto en tu computadora, pero la salida PDF tiene fuentes incorrectas, espaciado roto o texto ilegible. Aqui te explicamos por que sucede y como solucionarlo.</p>
         </div></div></section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><Type className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Fuentes incrustadas y listas? Convierte tu archivo ahora.</p></div>
-          <Link href="/es/powerpoint-a-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Convertir PPT a PDF <ArrowRight className="h-4 w-4" /></Link>
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><Type className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Fuentes incrustadas y listas? Convierte tu archivo ahora.</p></div>
+          <Link href="/es/powerpoint-a-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Convertir PPT a PDF <ArrowRight className="h-4 w-4" /></Link>
         </div></section>
 
         <article className="py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -48,10 +48,10 @@ export default function PptxAPdfFuentesFaltantesPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-4">Por que faltan las fuentes en el PDF?</h2>
             <p className="text-slate-600 mb-4">Cuando usas una fuente en PowerPoint, el software referencia un archivo de fuente instalado en <strong>tu</strong> computadora. Pero ese archivo de fuente no se incluye automaticamente en el PPTX. Cuando el archivo se abre o convierte en un sistema diferente, la fuente podria no existir alli.</p>
             <ul className="space-y-3 text-slate-700">
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Fuentes personalizadas no incrustadas.</strong> Fuentes decorativas, de marca o compradas solo estan en tu maquina. Sin incrustar, no viajan con el archivo.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Fuentes especificas del sistema.</strong> Algunas fuentes solo existen en Windows (ej. Segoe UI) o solo en Mac (ej. San Francisco). Conversiones multiplataforma pueden provocar sustituciones.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Herramientas de conversion en linea.</strong> Cuando subes un PPTX a un convertidor en linea (incluyendo PDF.it), el servidor puede no tener tus fuentes personalizadas. Incrustar lo soluciona.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Restricciones de licencia de fuentes.</strong> Algunas fuentes comerciales bloquean la incrustacion debido a sus terminos de licencia. PowerPoint no las incluira aunque marques la opcion de incrustar.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span><strong>Fuentes personalizadas no incrustadas.</strong> Fuentes decorativas, de marca o compradas solo estan en tu maquina. Sin incrustar, no viajan con el archivo.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span><strong>Fuentes especificas del sistema.</strong> Algunas fuentes solo existen en Windows (ej. Segoe UI) o solo en Mac (ej. San Francisco). Conversiones multiplataforma pueden provocar sustituciones.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">3.</span><span><strong>Herramientas de conversion en linea.</strong> Cuando subes un PPTX a un convertidor en linea (incluyendo PDF.it), el servidor puede no tener tus fuentes personalizadas. Incrustar lo soluciona.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">4.</span><span><strong>Restricciones de licencia de fuentes.</strong> Algunas fuentes comerciales bloquean la incrustacion debido a sus terminos de licencia. PowerPoint no las incluira aunque marques la opcion de incrustar.</span></li>
             </ul>
           </section>
 
@@ -64,7 +64,7 @@ export default function PptxAPdfFuentesFaltantesPage() {
                 { title: "Guarda y convierte", desc: "Guarda el archivo. El PPTX ahora sera mas grande (los datos de fuente estan incluidos). Subelo a la herramienta PowerPoint a PDF de PDF.it — las fuentes incrustadas se renderizaran correctamente durante la conversion." },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                   <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                 </div>
               ))}
@@ -83,12 +83,12 @@ export default function PptxAPdfFuentesFaltantesPage() {
                   <th className="text-left py-3 px-4 font-bold">Disponible en</th>
                 </tr></thead>
                 <tbody className="text-slate-700">
-                  <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold text-orange-600">Arial</td><td className="py-3 px-4">Sans-serif, limpia</td><td className="py-3 px-4">Windows, Mac, Linux</td></tr>
-                  <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold text-orange-600">Calibri</td><td className="py-3 px-4">Sans-serif, moderna (predeterminada Office)</td><td className="py-3 px-4">Windows, Mac (con Office)</td></tr>
-                  <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold text-orange-600">Times New Roman</td><td className="py-3 px-4">Serif, tradicional</td><td className="py-3 px-4">Windows, Mac, Linux</td></tr>
-                  <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold text-orange-600">Verdana</td><td className="py-3 px-4">Sans-serif, optimizada para pantalla</td><td className="py-3 px-4">Windows, Mac, Linux</td></tr>
-                  <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold text-orange-600">Georgia</td><td className="py-3 px-4">Serif, elegante</td><td className="py-3 px-4">Windows, Mac, Linux</td></tr>
-                  <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold text-orange-600">Tahoma</td><td className="py-3 px-4">Sans-serif, compacta</td><td className="py-3 px-4">Windows, Mac</td></tr>
+                  <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold text-[#14D8C4]">Arial</td><td className="py-3 px-4">Sans-serif, limpia</td><td className="py-3 px-4">Windows, Mac, Linux</td></tr>
+                  <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold text-[#14D8C4]">Calibri</td><td className="py-3 px-4">Sans-serif, moderna (predeterminada Office)</td><td className="py-3 px-4">Windows, Mac (con Office)</td></tr>
+                  <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold text-[#14D8C4]">Times New Roman</td><td className="py-3 px-4">Serif, tradicional</td><td className="py-3 px-4">Windows, Mac, Linux</td></tr>
+                  <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold text-[#14D8C4]">Verdana</td><td className="py-3 px-4">Sans-serif, optimizada para pantalla</td><td className="py-3 px-4">Windows, Mac, Linux</td></tr>
+                  <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold text-[#14D8C4]">Georgia</td><td className="py-3 px-4">Serif, elegante</td><td className="py-3 px-4">Windows, Mac, Linux</td></tr>
+                  <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold text-[#14D8C4]">Tahoma</td><td className="py-3 px-4">Sans-serif, compacta</td><td className="py-3 px-4">Windows, Mac</td></tr>
                 </tbody>
               </table>
             </div>
@@ -120,9 +120,9 @@ export default function PptxAPdfFuentesFaltantesPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-4">Problemas de fuentes en otros formatos Office</h2>
             <p className="text-slate-600 mb-4">Los mismos principios de incrustacion de fuentes aplican a otros archivos de Microsoft Office:</p>
             <ul className="space-y-2 text-slate-700">
-              <li>&#10003; <Link href="/es/word-a-pdf" className="text-orange-600 hover:underline">Word a PDF</Link> — Incrusta fuentes en Word de la misma manera (Archivo &gt; Opciones &gt; Guardar).</li>
-              <li>&#10003; <Link href="/es/office-a-pdf" className="text-orange-600 hover:underline">Office a PDF</Link> — Nuestro convertidor universal maneja archivos Word, Excel y PowerPoint.</li>
-              <li>&#10003; <Link href="/es/excel-a-pdf" className="text-orange-600 hover:underline">Excel a PDF</Link> — Excel tiene menos problemas de fuentes ya que las hojas de calculo tipicamente usan fuentes estandar.</li>
+              <li>&#10003; <Link href="/es/word-a-pdf" className="text-[#14D8C4] hover:underline">Word a PDF</Link> — Incrusta fuentes en Word de la misma manera (Archivo &gt; Opciones &gt; Guardar).</li>
+              <li>&#10003; <Link href="/es/office-a-pdf" className="text-[#14D8C4] hover:underline">Office a PDF</Link> — Nuestro convertidor universal maneja archivos Word, Excel y PowerPoint.</li>
+              <li>&#10003; <Link href="/es/excel-a-pdf" className="text-[#14D8C4] hover:underline">Excel a PDF</Link> — Excel tiene menos problemas de fuentes ya que las hojas de calculo tipicamente usan fuentes estandar.</li>
             </ul>
           </section>
         </div></article>
@@ -130,7 +130,7 @@ export default function PptxAPdfFuentesFaltantesPage() {
         <section className="py-12 bg-[#191B4D]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
           <h2 className="text-2xl font-black text-white mb-3">Fuentes arregladas? Convierte tu PowerPoint ahora</h2>
           <p className="text-slate-300 mb-6">Incrusta tus fuentes, sube el PPTX y obtiene un PDF perfecto en segundos.</p>
-          <Link href="/es/powerpoint-a-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><Type className="h-5 w-5" /> Convertir PPT a PDF Ahora</Link>
+          <Link href="/es/powerpoint-a-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><Type className="h-5 w-5" /> Convertir PPT a PDF Ahora</Link>
         </div></section>
 
         <section className="py-16 bg-gray-50"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -141,7 +141,7 @@ export default function PptxAPdfFuentesFaltantesPage() {
               { title: "PPT a PDF para imprimir: mejores consejos de diseno y calidad", href: "/es/aprender/ppt-a-pdf-para-imprimir" },
               { title: "Las animaciones de PowerPoint funcionan en PDF?", href: "/es/aprender/ppt-a-pdf-animaciones" },
               { title: "Convertir PPT a PDF en iPhone (metodo rapido)", href: "/es/aprender/ppt-a-pdf-en-iphone" },
-            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" /></Link>))}
+            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" /></Link>))}
           </div>
         </div></section>
 

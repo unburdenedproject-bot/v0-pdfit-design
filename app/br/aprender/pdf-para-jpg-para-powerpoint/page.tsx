@@ -43,7 +43,7 @@ export default function PdfParaJpgParaPowerpointPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF para JPG</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF para JPG</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">PDF para JPG para PowerPoint (Melhores Configurações + Dicas)</h1>
               <p className="text-xl text-slate-300">
                 Precisa inserir conteúdo de um PDF em uma apresentação? Veja como converter PDF para JPG com a qualidade perfeita para PowerPoint e Google Slides.
@@ -52,15 +52,15 @@ export default function PdfParaJpgParaPowerpointPage() {
           </div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <ImageIcon className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Converta agora e insira no PowerPoint em minutos.</p>
             </div>
-            <Link href="/br/pdf-para-jpg" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
+            <Link href="/br/pdf-para-jpg" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">
               Converter PDF para JPG <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -73,9 +73,9 @@ export default function PdfParaJpgParaPowerpointPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que Converter PDF para JPG para Apresentações?</h2>
               <p className="text-slate-600 mb-4">O PowerPoint não lida bem com PDFs diretamente. Converter para JPG resolve vários problemas:</p>
               <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Compatibilidade total.</strong> JPGs funcionam em PowerPoint, Google Slides, Keynote e qualquer ferramenta de apresentação.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Exibição inline.</strong> A imagem aparece diretamente no slide, sem precisar abrir outro programa.</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Fácil de posicionar.</strong> Você pode redimensionar, recortar e posicionar a imagem livremente no slide.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span><strong>Compatibilidade total.</strong> JPGs funcionam em PowerPoint, Google Slides, Keynote e qualquer ferramenta de apresentação.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span><strong>Exibição inline.</strong> A imagem aparece diretamente no slide, sem precisar abrir outro programa.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">3.</span><span><strong>Fácil de posicionar.</strong> Você pode redimensionar, recortar e posicionar a imagem livremente no slide.</span></li>
               </ul>
             </section>
 
@@ -88,7 +88,7 @@ export default function PdfParaJpgParaPowerpointPage() {
                   { title: "Ajuste o tamanho e posição", desc: "Arraste os cantos da imagem para redimensionar (segure Shift para manter a proporção). Posicione no slide conforme necessário. Evite ampliar a imagem além do tamanho original para não perder qualidade." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                     <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                   </div>
                 ))}
@@ -101,9 +101,9 @@ export default function PdfParaJpgParaPowerpointPage() {
                 <table className="w-full text-sm border border-gray-200 rounded-xl overflow-hidden">
                   <thead><tr className="bg-slate-900 text-white"><th className="text-left py-3 px-4 font-bold">DPI</th><th className="text-left py-3 px-4 font-bold">Uso</th><th className="text-left py-3 px-4 font-bold">Resultado</th></tr></thead>
                   <tbody className="text-slate-700">
-                    <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold text-orange-600">150 DPI</td><td className="py-3 px-4">Compartilhar por email, apresentações casuais</td><td className="py-3 px-4">Arquivo leve, qualidade OK</td></tr>
-                    <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold text-orange-600">200 DPI</td><td className="py-3 px-4">Apresentações profissionais (recomendado)</td><td className="py-3 px-4">Boa qualidade, arquivo moderado</td></tr>
-                    <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold text-orange-600">300 DPI</td><td className="py-3 px-4">Projeção em tela grande, impressão</td><td className="py-3 px-4">Máxima qualidade, arquivo grande</td></tr>
+                    <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold text-[#14D8C4]">150 DPI</td><td className="py-3 px-4">Compartilhar por email, apresentações casuais</td><td className="py-3 px-4">Arquivo leve, qualidade OK</td></tr>
+                    <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold text-[#14D8C4]">200 DPI</td><td className="py-3 px-4">Apresentações profissionais (recomendado)</td><td className="py-3 px-4">Boa qualidade, arquivo moderado</td></tr>
+                    <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold text-[#14D8C4]">300 DPI</td><td className="py-3 px-4">Projeção em tela grande, impressão</td><td className="py-3 px-4">Máxima qualidade, arquivo grande</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -114,7 +114,7 @@ export default function PdfParaJpgParaPowerpointPage() {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Use PNG para Gráficos e Tabelas</h3>
-                  <p className="text-slate-600">Se seu PDF contém gráficos, tabelas ou texto fino, considere converter para <Link href="/br/pdf-para-png" className="text-orange-600 hover:underline">PNG</Link> em vez de JPG. O PNG mantém linhas e texto mais nítidos.</p>
+                  <p className="text-slate-600">Se seu PDF contém gráficos, tabelas ou texto fino, considere converter para <Link href="/br/pdf-para-png" className="text-[#14D8C4] hover:underline">PNG</Link> em vez de JPG. O PNG mantém linhas e texto mais nítidos.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Converta Apenas as Páginas Necessárias</h3>
@@ -134,7 +134,7 @@ export default function PdfParaJpgParaPowerpointPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Converta Seu PDF para PowerPoint Agora</h2>
             <p className="text-slate-300 mb-6">Obtenha imagens JPG de alta qualidade prontas para inserir em qualquer apresentação.</p>
-            <Link href="/br/pdf-para-jpg" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors">
+            <Link href="/br/pdf-para-jpg" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors">
               <ImageIcon className="h-5 w-5" /> Converter PDF para JPG
             </Link>
           </div>
@@ -150,9 +150,9 @@ export default function PdfParaJpgParaPowerpointPage() {
                 { title: "Por Que PDF para JPG Fica Borrado (E Como Resolver)", href: "/br/aprender/por-que-pdf-para-jpg-fica-borrado" },
                 { title: "PDF para PNG para Design", href: "/br/aprender/pdf-para-png-para-design" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

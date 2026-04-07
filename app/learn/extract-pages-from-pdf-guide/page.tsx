@@ -91,7 +91,7 @@ export default function ExtractPagesFromPDFGuidePage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Split PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Split PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">How to Extract Pages from a PDF (Keep Only What You Need)</h1>
               <p className="text-xl text-slate-300">
                 Got a 50-page report but only need pages 3, 7, and 12? Here's how to pull exactly the pages you need from any PDF — without installing software or losing quality.
@@ -101,17 +101,17 @@ export default function ExtractPagesFromPDFGuidePage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Scissors className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to extract pages? Skip the guide and go straight to the tool.</p>
             </div>
             <Link
               href="/split-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Split PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -130,23 +130,23 @@ export default function ExtractPagesFromPDFGuidePage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Submitting specific sections.</strong> An employer asks for page 2 of your transcript, not the entire 15-page document. Extract just that page.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Sharing relevant chapters.</strong> Pull out chapter 4 from a textbook PDF to share with a study group, instead of sending the whole book.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Removing sensitive content.</strong> Extract only the pages you want to share and leave behind pages with private or confidential information.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
-                  <span><strong>Reducing file size for email.</strong> Instead of compressing a large PDF, extract only the pages you need so the file is small enough to <Link href="/compress-pdf-for-email" className="text-orange-600 hover:underline">email as an attachment</Link>.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
+                  <span><strong>Reducing file size for email.</strong> Instead of compressing a large PDF, extract only the pages you need so the file is small enough to <Link href="/compress-pdf-for-email" className="text-[#14D8C4] hover:underline">email as an attachment</Link>.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>Creating handouts.</strong> Pull a few key pages from a presentation deck to create a handout for a meeting or class.</span>
                 </li>
               </ul>
@@ -171,7 +171,7 @@ export default function ExtractPagesFromPDFGuidePage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -210,19 +210,19 @@ export default function ExtractPagesFromPDFGuidePage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Merge extracted pages with other documents</h3>
                   <p className="text-slate-600">
-                    If you extracted pages from multiple PDFs, use <Link href="/merge-pdf" className="text-orange-600 hover:underline">Merge PDF</Link> to combine them into a single document. For example, pull page 1 from your resume PDF and pages 3-5 from a project portfolio, then merge them.
+                    If you extracted pages from multiple PDFs, use <Link href="/merge-pdf" className="text-[#14D8C4] hover:underline">Merge PDF</Link> to combine them into a single document. For example, pull page 1 from your resume PDF and pages 3-5 from a project portfolio, then merge them.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Compress the result</h3>
                   <p className="text-slate-600">
-                    Even a few extracted pages can be large if they contain high-resolution images or scans. Use <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> to shrink the file size before sharing.
+                    Even a few extracted pages can be large if they contain high-resolution images or scans. Use <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> to shrink the file size before sharing.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Convert to another format</h3>
                   <p className="text-slate-600">
-                    Need the extracted pages as images? Use <Link href="/pdf-to-jpg" className="text-orange-600 hover:underline">PDF to JPG</Link> or <Link href="/pdf-to-png" className="text-orange-600 hover:underline">PDF to PNG</Link> to convert them. If you need editable text, try <Link href="/pdf-to-txt" className="text-orange-600 hover:underline">PDF to TXT</Link>.
+                    Need the extracted pages as images? Use <Link href="/pdf-to-jpg" className="text-[#14D8C4] hover:underline">PDF to JPG</Link> or <Link href="/pdf-to-png" className="text-[#14D8C4] hover:underline">PDF to PNG</Link> to convert them. If you need editable text, try <Link href="/pdf-to-txt" className="text-[#14D8C4] hover:underline">PDF to TXT</Link>.
                   </p>
                 </div>
               </div>
@@ -234,8 +234,8 @@ export default function ExtractPagesFromPDFGuidePage() {
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Check the page count first.</strong> Open your PDF and note the total pages and which ones you need before uploading.</li>
                 <li>&#10003; <strong>Use page ranges for speed.</strong> Instead of typing &quot;5, 6, 7, 8, 9&quot;, use &quot;5-9&quot; to save time.</li>
-                <li>&#10003; <strong>Unlock protected PDFs first.</strong> If the PDF is password-protected, use <Link href="/unlock-pdf" className="text-orange-600 hover:underline">Unlock PDF</Link> before trying to extract pages.</li>
-                <li>&#10003; <strong>Fix rotation issues.</strong> If some pages are rotated the wrong way, use <Link href="/rotate-pdf" className="text-orange-600 hover:underline">Rotate PDF</Link> after extracting to fix them.</li>
+                <li>&#10003; <strong>Unlock protected PDFs first.</strong> If the PDF is password-protected, use <Link href="/unlock-pdf" className="text-[#14D8C4] hover:underline">Unlock PDF</Link> before trying to extract pages.</li>
+                <li>&#10003; <strong>Fix rotation issues.</strong> If some pages are rotated the wrong way, use <Link href="/rotate-pdf" className="text-[#14D8C4] hover:underline">Rotate PDF</Link> after extracting to fix them.</li>
                 <li>&#10003; <strong>Batch extract for multiple files.</strong> Pro users can process multiple PDFs at once using batch processing, extracting pages from several documents in a single operation.</li>
               </ul>
             </section>
@@ -250,7 +250,7 @@ export default function ExtractPagesFromPDFGuidePage() {
             <p className="text-slate-300 mb-6">Upload your file and keep only the pages you need — free, no signup required.</p>
             <Link
               href="/split-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Scissors className="h-5 w-5" /> Split PDF Now
             </Link>
@@ -271,10 +271,10 @@ export default function ExtractPagesFromPDFGuidePage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

@@ -91,7 +91,7 @@ export default function WordToPdfOnIphonePage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Word to PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Word to PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convert Word to PDF on iPhone</h1>
               <p className="text-xl text-slate-300">
                 Need to convert a Word document to PDF right from your iPhone? No app needed — just Safari, your file, and 60 seconds.
@@ -101,17 +101,17 @@ export default function WordToPdfOnIphonePage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileText className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to convert? Open this link on your iPhone.</p>
             </div>
             <Link
               href="/word-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Word to PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -155,7 +155,7 @@ export default function WordToPdfOnIphonePage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -175,19 +175,19 @@ export default function WordToPdfOnIphonePage() {
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>Email attachment.</strong> Open the email with the Word file, tap and hold the attachment, then tap "Share" and choose "Save to Files." Now you can find it in the Files app when uploading to PDF.it.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>Files app.</strong> Open the Files app and check "On My iPhone," "iCloud Drive," or any connected cloud storage. If someone sent you the file via AirDrop or Messages, it's usually in the Downloads folder.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>Cloud storage apps.</strong> If the file is in Google Drive, Dropbox, or OneDrive, you can access it directly from the iOS file picker when uploading to PDF.it — these services integrate with the Files app.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>Microsoft Word app.</strong> If you created the document in the Word app, open it there, tap Share, and choose "Save to Files" to make it accessible for upload.</span>
                 </li>
               </ul>
@@ -224,7 +224,7 @@ export default function WordToPdfOnIphonePage() {
                 <li>&#10003; <strong>Metadata is lost.</strong> Document properties like title, author, and keywords are stripped.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                For a quick internal note, the print trick is fine. For anything professional — resumes, contracts, client deliverables — use <Link href="/word-to-pdf" className="text-orange-600 hover:underline">PDF.it's Word to PDF converter</Link> for accurate results.
+                For a quick internal note, the print trick is fine. For anything professional — resumes, contracts, client deliverables — use <Link href="/word-to-pdf" className="text-[#14D8C4] hover:underline">PDF.it's Word to PDF converter</Link> for accurate results.
               </p>
             </section>
 
@@ -235,10 +235,10 @@ export default function WordToPdfOnIphonePage() {
                 PDF.it's tools all work in mobile Safari, so you can handle your entire PDF workflow from your phone:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <Link href="/compress-pdf" className="text-orange-600 hover:underline">Compress PDF</Link> — reduce file size if the PDF is too large to email or upload.</li>
-                <li>&#10003; <Link href="/office-to-pdf" className="text-orange-600 hover:underline">Office to PDF</Link> — convert Excel spreadsheets and PowerPoint presentations too.</li>
-                <li>&#10003; <Link href="/merge-pdf" className="text-orange-600 hover:underline">Merge PDF</Link> — combine multiple PDFs into one document.</li>
-                <li>&#10003; <Link href="/protect-pdf" className="text-orange-600 hover:underline">Protect PDF</Link> — add a password to sensitive documents before sharing.</li>
+                <li>&#10003; <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">Compress PDF</Link> — reduce file size if the PDF is too large to email or upload.</li>
+                <li>&#10003; <Link href="/office-to-pdf" className="text-[#14D8C4] hover:underline">Office to PDF</Link> — convert Excel spreadsheets and PowerPoint presentations too.</li>
+                <li>&#10003; <Link href="/merge-pdf" className="text-[#14D8C4] hover:underline">Merge PDF</Link> — combine multiple PDFs into one document.</li>
+                <li>&#10003; <Link href="/protect-pdf" className="text-[#14D8C4] hover:underline">Protect PDF</Link> — add a password to sensitive documents before sharing.</li>
               </ul>
             </section>
 
@@ -263,7 +263,7 @@ export default function WordToPdfOnIphonePage() {
             <p className="text-slate-300 mb-6">Open this link in Safari on your iPhone — upload, convert, and share in under a minute.</p>
             <Link
               href="/word-to-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <FileText className="h-5 w-5" /> Word to PDF Now
             </Link>
@@ -284,10 +284,10 @@ export default function WordToPdfOnIphonePage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

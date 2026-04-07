@@ -33,14 +33,14 @@ export default function ProtegerPDFEnMovilPage() {
       <HeaderEs />
       <main>
         <section className="bg-[#191B4D] text-white py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-          <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Proteger PDF</p>
+          <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Proteger PDF</p>
           <h1 className="text-4xl lg:text-5xl font-black mb-4">Proteger un PDF con Contrasena en Tu Telefono (iPhone y Android)</h1>
           <p className="text-xl text-slate-300">Necesitas bloquear un PDF directamente desde tu telefono? Ya sea que estes en un iPhone o Android, puedes agregar proteccion con contrasena en menos de un minuto — sin app requerida.</p>
         </div></div></section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><Shield className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Estas en tu telefono ahora? Ve directo a la herramienta.</p></div>
-          <Link href="/es/proteger-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Proteger PDF Ahora <ArrowRight className="h-4 w-4" /></Link>
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><Shield className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Estas en tu telefono ahora? Ve directo a la herramienta.</p></div>
+          <Link href="/es/proteger-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Proteger PDF Ahora <ArrowRight className="h-4 w-4" /></Link>
         </div></section>
 
         <article className="py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -48,10 +48,10 @@ export default function ProtegerPDFEnMovilPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que Necesitarias Proteger un PDF en Tu Telefono</h2>
             <p className="text-slate-600 mb-4">Cada vez mas trabajo sucede en dispositivos moviles. Puedes recibir un contrato mientras viajas, recibir una notificacion de documento fiscal estando fuera de tu escritorio, o necesitar enviar archivos sensibles mientras viajas. Estos son escenarios comunes:</p>
             <ul className="space-y-3 text-slate-700">
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Compartir documentos sobre la marcha.</strong> Recibes un PDF por WhatsApp o correo y necesitas reenviarlo de forma segura a alguien mas — agregando una contrasena antes de compartir.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Proteger escaneos del telefono.</strong> Acabas de escanear un documento con la camara de tu telefono y necesitas bloquearlo antes de subirlo a un portal o enviarlo por correo.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Tareas de negocio rapidas.</strong> Un cliente pide una version protegida de una propuesta mientras estas lejos de tu computadora. Manejalo en 60 segundos desde tu telefono.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Documentos de viaje.</strong> Protege copias de pasaporte, pases de abordar con informacion personal y confirmaciones de hotel antes de almacenarlas en tu dispositivo.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span><strong>Compartir documentos sobre la marcha.</strong> Recibes un PDF por WhatsApp o correo y necesitas reenviarlo de forma segura a alguien mas — agregando una contrasena antes de compartir.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span><strong>Proteger escaneos del telefono.</strong> Acabas de escanear un documento con la camara de tu telefono y necesitas bloquearlo antes de subirlo a un portal o enviarlo por correo.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">3.</span><span><strong>Tareas de negocio rapidas.</strong> Un cliente pide una version protegida de una propuesta mientras estas lejos de tu computadora. Manejalo en 60 segundos desde tu telefono.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">4.</span><span><strong>Documentos de viaje.</strong> Protege copias de pasaporte, pases de abordar con informacion personal y confirmaciones de hotel antes de almacenarlas en tu dispositivo.</span></li>
             </ul>
           </section>
 
@@ -64,7 +64,7 @@ export default function ProtegerPDFEnMovilPage() {
                 { title: "Descarga el archivo protegido", desc: "Toca Proteger PDF. Tu archivo encriptado se descargara en segundos. En iPhone, encuentralo en Archivos > Descargas. En Android, revisa tu carpeta Descargas o la notificacion de descarga. Ahora puedes compartir el PDF protegido por correo, WhatsApp o cualquier otra app." },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                   <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                 </div>
               ))}
@@ -77,7 +77,7 @@ export default function ProtegerPDFEnMovilPage() {
               <li>&#10003; <strong>Usa Safari para la mejor experiencia.</strong> Safari se integra con la app Archivos, facilitando subir PDFs desde iCloud Drive, En Mi iPhone o almacenamiento en la nube de terceros.</li>
               <li>&#10003; <strong>Encuentra tus descargas.</strong> Despues de descargar el PDF protegido, abre la app Archivos y ve a "En Mi iPhone" &gt; "Descargas" para encontrarlo.</li>
               <li>&#10003; <strong>Comparte directamente desde Archivos.</strong> Toca el PDF protegido en Archivos, luego usa el boton de compartir para enviarlo por Mail, Mensajes, WhatsApp o AirDrop.</li>
-              <li>&#10003; <strong>Protege documentos escaneados.</strong> Si escaneaste un documento usando la camara del iPhone o la app Notas, guardalo como PDF primero, luego subelo a PDF.it. Para mejor calidad de escaneo, prueba <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> antes de proteger.</li>
+              <li>&#10003; <strong>Protege documentos escaneados.</strong> Si escaneaste un documento usando la camara del iPhone o la app Notas, guardalo como PDF primero, luego subelo a PDF.it. Para mejor calidad de escaneo, prueba <Link href="/es/limpiar-escaneo" className="text-[#14D8C4] hover:underline">Limpieza de Escaneo de Telefono</Link> antes de proteger.</li>
             </ul>
           </section>
 
@@ -94,10 +94,10 @@ export default function ProtegerPDFEnMovilPage() {
           <section className="mb-12">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Otras Herramientas PDF que Funcionan en Movil</h2>
             <div className="space-y-6">
-              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Comprimir Antes de Proteger</h3><p className="text-slate-600">Las apps de correo movil a menudo tienen limites de adjuntos mas estrictos. Usa <Link href="/es/comprimir-pdf" className="text-orange-600 hover:underline">Comprimir PDF</Link> para reducir tu archivo antes de agregar proteccion con contrasena. O ve directamente a <Link href="/es/comprimir-pdf-para-email" className="text-orange-600 hover:underline">Comprimir PDF para Email</Link> para optimizacion automatica.</p></div>
-              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Limpiar Escaneos de Telefono</h3><p className="text-slate-600">Las fotos de documentos tomadas con la camara de tu telefono a menudo se ven poco profesionales. Usa <Link href="/es/limpiar-escaneo" className="text-orange-600 hover:underline">Limpieza de Escaneo de Telefono</Link> para enderezar, aclarar y mejorar el escaneo, luego protege la version limpia.</p></div>
-              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Unir y Luego Proteger</h3><p className="text-slate-600">Necesitas enviar multiples documentos de forma segura? Usa <Link href="/es/unir-pdf" className="text-orange-600 hover:underline">Unir PDF</Link> para combinarlos en un solo archivo, luego <Link href="/es/proteger-pdf" className="text-orange-600 hover:underline">protege el resultado unido</Link>. Una contrasena cubre todos los documentos.</p></div>
-              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Desbloquear un PDF Protegido</h3><p className="text-slate-600">Recibiste un PDF bloqueado y tienes la contrasena? Usa <Link href="/es/desbloquear-pdf" className="text-orange-600 hover:underline">Desbloquear PDF</Link> en tu telefono para quitar la contrasena y guardar una copia sin proteccion.</p></div>
+              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Comprimir Antes de Proteger</h3><p className="text-slate-600">Las apps de correo movil a menudo tienen limites de adjuntos mas estrictos. Usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para reducir tu archivo antes de agregar proteccion con contrasena. O ve directamente a <Link href="/es/comprimir-pdf-para-email" className="text-[#14D8C4] hover:underline">Comprimir PDF para Email</Link> para optimizacion automatica.</p></div>
+              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Limpiar Escaneos de Telefono</h3><p className="text-slate-600">Las fotos de documentos tomadas con la camara de tu telefono a menudo se ven poco profesionales. Usa <Link href="/es/limpiar-escaneo" className="text-[#14D8C4] hover:underline">Limpieza de Escaneo de Telefono</Link> para enderezar, aclarar y mejorar el escaneo, luego protege la version limpia.</p></div>
+              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Unir y Luego Proteger</h3><p className="text-slate-600">Necesitas enviar multiples documentos de forma segura? Usa <Link href="/es/unir-pdf" className="text-[#14D8C4] hover:underline">Unir PDF</Link> para combinarlos en un solo archivo, luego <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">protege el resultado unido</Link>. Una contrasena cubre todos los documentos.</p></div>
+              <div><h3 className="text-lg font-bold text-slate-900 mb-2">Desbloquear un PDF Protegido</h3><p className="text-slate-600">Recibiste un PDF bloqueado y tienes la contrasena? Usa <Link href="/es/desbloquear-pdf" className="text-[#14D8C4] hover:underline">Desbloquear PDF</Link> en tu telefono para quitar la contrasena y guardar una copia sin proteccion.</p></div>
             </div>
           </section>
         </div></article>
@@ -105,7 +105,7 @@ export default function ProtegerPDFEnMovilPage() {
         <section className="py-12 bg-[#191B4D]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
           <h2 className="text-2xl font-black text-white mb-3">Protege Tu PDF Ahora Mismo</h2>
           <p className="text-slate-300 mb-6">Funciona en cualquier telefono — iPhone, Android o tablet. No necesitas app, solo tu navegador.</p>
-          <Link href="/es/proteger-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><Shield className="h-5 w-5" /> Proteger PDF Ahora</Link>
+          <Link href="/es/proteger-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><Shield className="h-5 w-5" /> Proteger PDF Ahora</Link>
         </div></section>
 
         <section className="py-16 bg-gray-50"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -116,9 +116,9 @@ export default function ProtegerPDFEnMovilPage() {
               { title: "Mejores Practicas de Contrasena para PDF (Contrasenas Fuertes y Permisos)", href: "/es/aprender/mejores-practicas-contrasena-pdf" },
               { title: "Como Proteger un PDF Antes de Enviar por Correo", href: "/es/aprender/proteger-pdf-antes-de-enviar" },
             ].map((article) => (
-              <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+              <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
               </Link>
             ))}
           </div>

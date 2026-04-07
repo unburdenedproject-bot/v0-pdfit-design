@@ -31,14 +31,14 @@ export default function OfficeParaPdfConversorPage() {
       <HeaderBr />
       <main>
         <section className="bg-[#191B4D] text-white py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
-          <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Office para PDF</p>
+          <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Office para PDF</p>
           <h1 className="text-4xl lg:text-5xl font-black mb-4">Conversor Office para PDF</h1>
           <p className="text-xl text-slate-300">Converta qualquer arquivo do Microsoft Office — Word, Excel ou PowerPoint — para PDF em segundos. Uma unica ferramenta para todos os seus documentos.</p>
         </div></div></section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><FileText className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Pronto para converter? Pule o guia e va direto para a ferramenta.</p></div>
-          <Link href="/br/office-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Converter Office para PDF <ArrowRight className="h-4 w-4" /></Link>
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3"><div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><FileText className="h-5 w-5 text-white" /></div><p className="text-slate-700 font-semibold">Pronto para converter? Pule o guia e va direto para a ferramenta.</p></div>
+          <Link href="/br/office-para-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Converter Office para PDF <ArrowRight className="h-4 w-4" /></Link>
         </div></section>
 
         <article className="py-16"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -46,10 +46,10 @@ export default function OfficeParaPdfConversorPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-4">Por que usar um conversor Office para PDF?</h2>
             <p className="text-slate-600 mb-4">Documentos do Office sao otimos para edicao, mas PDF e o formato ideal para compartilhar e distribuir. Veja as vantagens:</p>
             <ul className="space-y-3 text-slate-700">
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">1.</span><span><strong>Uma ferramenta para tudo.</strong> Em vez de usar conversores separados para Word, Excel e PowerPoint, o PDF.it aceita todos os formatos em uma unica ferramenta.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">2.</span><span><strong>Formatacao preservada.</strong> Texto, tabelas, graficos e imagens sao convertidos fielmente para PDF.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">3.</span><span><strong>Sem software necessario.</strong> Funciona direto no navegador — nao precisa ter o Microsoft Office instalado.</span></li>
-              <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">4.</span><span><strong>Seguranca.</strong> Seus arquivos sao processados com seguranca e deletados automaticamente apos a conversao.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span><strong>Uma ferramenta para tudo.</strong> Em vez de usar conversores separados para Word, Excel e PowerPoint, o PDF.it aceita todos os formatos em uma unica ferramenta.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span><strong>Formatacao preservada.</strong> Texto, tabelas, graficos e imagens sao convertidos fielmente para PDF.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">3.</span><span><strong>Sem software necessario.</strong> Funciona direto no navegador — nao precisa ter o Microsoft Office instalado.</span></li>
+              <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">4.</span><span><strong>Seguranca.</strong> Seus arquivos sao processados com seguranca e deletados automaticamente apos a conversao.</span></li>
             </ul>
           </section>
 
@@ -62,7 +62,7 @@ export default function OfficeParaPdfConversorPage() {
                 { title: "Baixe o PDF", desc: "Baixe o PDF pronto. Compartilhe por email, envie para clientes ou imprima — o resultado e identico em qualquer dispositivo." },
               ].map((step, i) => (
                 <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
+                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
                   <div><h3 className="font-bold text-slate-900 mb-1">{step.title}</h3><p className="text-slate-600 text-sm">{step.desc}</p></div>
                 </div>
               ))}
@@ -79,9 +79,9 @@ export default function OfficeParaPdfConversorPage() {
                   <th className="text-left py-3 px-4 font-bold">Ferramenta dedicada</th>
                 </tr></thead>
                 <tbody className="text-slate-700">
-                  <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold">DOCX / DOC</td><td className="py-3 px-4">Microsoft Word</td><td className="py-3 px-4"><Link href="/br/word-para-pdf" className="text-orange-600 hover:underline">Word para PDF</Link></td></tr>
-                  <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold">XLSX / XLS</td><td className="py-3 px-4">Microsoft Excel</td><td className="py-3 px-4"><Link href="/br/excel-para-pdf" className="text-orange-600 hover:underline">Excel para PDF</Link></td></tr>
-                  <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold">PPTX / PPT</td><td className="py-3 px-4">Microsoft PowerPoint</td><td className="py-3 px-4"><Link href="/br/powerpoint-para-pdf" className="text-orange-600 hover:underline">PowerPoint para PDF</Link></td></tr>
+                  <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold">DOCX / DOC</td><td className="py-3 px-4">Microsoft Word</td><td className="py-3 px-4"><Link href="/br/word-para-pdf" className="text-[#14D8C4] hover:underline">Word para PDF</Link></td></tr>
+                  <tr className="border-t border-gray-200 bg-gray-50"><td className="py-3 px-4 font-semibold">XLSX / XLS</td><td className="py-3 px-4">Microsoft Excel</td><td className="py-3 px-4"><Link href="/br/excel-para-pdf" className="text-[#14D8C4] hover:underline">Excel para PDF</Link></td></tr>
+                  <tr className="border-t border-gray-200"><td className="py-3 px-4 font-semibold">PPTX / PPT</td><td className="py-3 px-4">Microsoft PowerPoint</td><td className="py-3 px-4"><Link href="/br/powerpoint-para-pdf" className="text-[#14D8C4] hover:underline">PowerPoint para PDF</Link></td></tr>
                 </tbody>
               </table>
             </div>
@@ -90,23 +90,23 @@ export default function OfficeParaPdfConversorPage() {
           <section className="mb-12">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Dicas para melhor conversao</h2>
             <ul className="space-y-2 text-slate-700">
-              <li>&#10003; <strong>Incorpore fontes</strong> nos arquivos do Office antes de converter para evitar <Link href="/br/aprender/pptx-para-pdf-fontes-faltando" className="text-orange-600 hover:underline">fontes faltando</Link>.</li>
+              <li>&#10003; <strong>Incorpore fontes</strong> nos arquivos do Office antes de converter para evitar <Link href="/br/aprender/pptx-para-pdf-fontes-faltando" className="text-[#14D8C4] hover:underline">fontes faltando</Link>.</li>
               <li>&#10003; <strong>Verifique a formatacao</strong> — revise margens, quebras de pagina e tamanho de papel antes de enviar.</li>
               <li>&#10003; <strong>Use o formato mais recente</strong> (DOCX, XLSX, PPTX) em vez dos antigos (DOC, XLS, PPT) para melhor compatibilidade.</li>
-              <li>&#10003; <strong>Para arquivos grandes</strong>, considere <Link href="/br/comprimir-pdf" className="text-orange-600 hover:underline">comprimir o PDF</Link> apos a conversao.</li>
+              <li>&#10003; <strong>Para arquivos grandes</strong>, considere <Link href="/br/comprimir-pdf" className="text-[#14D8C4] hover:underline">comprimir o PDF</Link> apos a conversao.</li>
             </ul>
           </section>
 
           <section className="mb-12">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Converter no celular</h2>
-            <p className="text-slate-600 mb-4">O conversor funciona perfeitamente em celulares. Veja nosso guia de <Link href="/br/aprender/office-para-pdf-no-celular" className="text-orange-600 hover:underline">Office para PDF no celular</Link> para dicas especificas de conversao em smartphones Android e iPhone.</p>
+            <p className="text-slate-600 mb-4">O conversor funciona perfeitamente em celulares. Veja nosso guia de <Link href="/br/aprender/office-para-pdf-no-celular" className="text-[#14D8C4] hover:underline">Office para PDF no celular</Link> para dicas especificas de conversao em smartphones Android e iPhone.</p>
           </section>
         </div></article>
 
         <section className="py-12 bg-[#191B4D]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
           <h2 className="text-2xl font-black text-white mb-3">Converta seus documentos do Office para PDF</h2>
           <p className="text-slate-300 mb-6">Envie qualquer arquivo Word, Excel ou PowerPoint e obtenha um PDF perfeito — gratis, sem cadastro.</p>
-          <Link href="/br/office-para-pdf" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><FileText className="h-5 w-5" /> Converter Office para PDF Agora</Link>
+          <Link href="/br/office-para-pdf" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><FileText className="h-5 w-5" /> Converter Office para PDF Agora</Link>
         </div></section>
 
         <section className="py-16 bg-gray-50"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
@@ -117,7 +117,7 @@ export default function OfficeParaPdfConversorPage() {
               { title: "Office para PDF — como manter o formato original", href: "/br/aprender/office-para-pdf-manter-formato" },
               { title: "Converter DOCX, XLSX, PPTX para PDF de uma vez", href: "/br/aprender/converter-docx-xlsx-pptx-para-pdf" },
               { title: "Melhor formato para enviar documentos profissionais", href: "/br/aprender/melhor-formato-para-enviar-documentos" },
-            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" /></Link>))}
+            ].map((a) => (<Link key={a.href} href={a.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"><span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{a.title}</span><ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" /></Link>))}
           </div>
         </div></section>
 

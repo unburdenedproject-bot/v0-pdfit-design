@@ -44,20 +44,20 @@ export default function TiposCodigoQRPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Codigo QR</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Codigo QR</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Tipos de Codigo QR Explicados</h1>
               <p className="text-xl text-slate-300">Entenda os diferentes tipos de QR code — estatico vs dinamico, URL, WiFi, vCard e mais. Saiba qual usar para cada situacao.</p>
             </div>
           </div>
         </section>
 
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0"><QrCode className="h-5 w-5 text-white" /></div>
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><QrCode className="h-5 w-5 text-white" /></div>
               <p className="text-slate-700 font-semibold">Gere qualquer tipo de QR code com o PDF.it.</p>
             </div>
-            <Link href="/br/codigo-qr" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Gerador QR <ArrowRight className="h-4 w-4" /></Link>
+            <Link href="/br/codigo-qr" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Gerador QR <ArrowRight className="h-4 w-4" /></Link>
           </div>
         </section>
 
@@ -82,10 +82,10 @@ export default function TiposCodigoQRPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Tipos por Conteudo</h2>
               <div className="space-y-6">
-                <div><h3 className="text-lg font-bold text-slate-900 mb-2">URL (Link)</h3><p className="text-slate-600">O tipo mais comum. Ao escanear, abre uma pagina da web no navegador. Ideal para sites, landing pages, <Link href="/br/aprender/codigo-qr-para-pdf" className="text-orange-600 hover:underline">PDFs hospedados</Link>, redes sociais e lojas online.</p></div>
+                <div><h3 className="text-lg font-bold text-slate-900 mb-2">URL (Link)</h3><p className="text-slate-600">O tipo mais comum. Ao escanear, abre uma pagina da web no navegador. Ideal para sites, landing pages, <Link href="/br/aprender/codigo-qr-para-pdf" className="text-[#14D8C4] hover:underline">PDFs hospedados</Link>, redes sociais e lojas online.</p></div>
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">Texto</h3><p className="text-slate-600">Armazena uma mensagem de texto livre. Ao escanear, o texto aparece na tela. Util para mensagens curtas, instrucoes ou codigos.</p></div>
-                <div><h3 className="text-lg font-bold text-slate-900 mb-2">WiFi</h3><p className="text-slate-600">Codifica nome da rede, tipo de seguranca e senha. Ao escanear, o celular se conecta automaticamente. Perfeito para <Link href="/br/aprender/codigo-qr-para-wifi" className="text-orange-600 hover:underline">restaurantes, hoteis e escritorios</Link>.</p></div>
-                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Contato (vCard)</h3><p className="text-slate-600">Armazena dados de contato: nome, telefone, e-mail, empresa, cargo. Ao escanear, o celular oferece salvar na agenda. Ideal para <Link href="/br/aprender/codigo-qr-para-cartao-de-visita" className="text-orange-600 hover:underline">cartoes de visita</Link>.</p></div>
+                <div><h3 className="text-lg font-bold text-slate-900 mb-2">WiFi</h3><p className="text-slate-600">Codifica nome da rede, tipo de seguranca e senha. Ao escanear, o celular se conecta automaticamente. Perfeito para <Link href="/br/aprender/codigo-qr-para-wifi" className="text-[#14D8C4] hover:underline">restaurantes, hoteis e escritorios</Link>.</p></div>
+                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Contato (vCard)</h3><p className="text-slate-600">Armazena dados de contato: nome, telefone, e-mail, empresa, cargo. Ao escanear, o celular oferece salvar na agenda. Ideal para <Link href="/br/aprender/codigo-qr-para-cartao-de-visita" className="text-[#14D8C4] hover:underline">cartoes de visita</Link>.</p></div>
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">E-mail</h3><p className="text-slate-600">Abre o aplicativo de e-mail com destinatario, assunto e corpo pre-preenchidos. Util para formularios de contato e feedback.</p></div>
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">Telefone</h3><p className="text-slate-600">Inicia uma chamada para o numero codificado. Ao escanear, o celular pergunta se deseja ligar. Simples e direto.</p></div>
               </div>
@@ -94,12 +94,12 @@ export default function TiposCodigoQRPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Qual Tipo Usar?</h2>
               <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Para compartilhar seu site:</strong> URL</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Para compartilhar um documento:</strong> URL (com link para o <Link href="/br/aprender/codigo-qr-para-pdf" className="text-orange-600 hover:underline">PDF hospedado</Link>)</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Para WiFi de visitantes:</strong> WiFi</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Para cartao de visita:</strong> vCard</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Para <Link href="/br/aprender/codigo-qr-para-cardapio-de-restaurante" className="text-orange-600 hover:underline">cardapio de restaurante</Link>:</strong> URL (com link para o cardapio em PDF)</span></li>
-                <li className="flex items-start gap-3"><span className="text-orange-500 font-bold mt-0.5">&#8226;</span><span><strong>Para suporte ao cliente:</strong> E-mail ou Telefone</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Para compartilhar seu site:</strong> URL</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Para compartilhar um documento:</strong> URL (com link para o <Link href="/br/aprender/codigo-qr-para-pdf" className="text-[#14D8C4] hover:underline">PDF hospedado</Link>)</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Para WiFi de visitantes:</strong> WiFi</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Para cartao de visita:</strong> vCard</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Para <Link href="/br/aprender/codigo-qr-para-cardapio-de-restaurante" className="text-[#14D8C4] hover:underline">cardapio de restaurante</Link>:</strong> URL (com link para o cardapio em PDF)</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">&#8226;</span><span><strong>Para suporte ao cliente:</strong> E-mail ou Telefone</span></li>
               </ul>
             </section>
 
@@ -119,7 +119,7 @@ export default function TiposCodigoQRPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Crie Qualquer Tipo de QR</h2>
             <p className="text-slate-300 mb-6">URL, WiFi, vCard, texto e mais. Tudo em um gerador.</p>
-            <Link href="/br/codigo-qr" className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"><QrCode className="h-5 w-5" /> Gerador de Codigo QR</Link>
+            <Link href="/br/codigo-qr" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><QrCode className="h-5 w-5" /> Gerador de Codigo QR</Link>
           </div>
         </section>
 
@@ -134,9 +134,9 @@ export default function TiposCodigoQRPage() {
                 { title: "Codigo QR para Cartao de Visita", href: "/br/aprender/codigo-qr-para-cartao-de-visita" },
                 { title: "Melhores Praticas para Codigo QR", href: "/br/aprender/melhores-praticas-codigo-qr" },
               ].map((article) => (
-                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group">
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>

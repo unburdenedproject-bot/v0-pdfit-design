@@ -91,7 +91,7 @@ export default function PDFPasswordBestPracticesPage() {
         <section className="bg-[#191B4D] text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-orange-400 font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Protect PDF</p>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Learn / Protect PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">PDF Password Best Practices (Strong Passwords & Permissions)</h1>
               <p className="text-xl text-slate-300">
                 A weak password is almost as bad as no password at all. Learn how to choose strong passwords, set the right permissions, and avoid the most common PDF security mistakes.
@@ -101,17 +101,17 @@ export default function PDFPasswordBestPracticesPage() {
         </section>
 
         {/* CTA — Tool Link */}
-        <section className="py-8 bg-orange-50 border-b border-orange-100">
+        <section className="py-8 bg-[#F0FDFA] border-b border-[#14D8C4]/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Shield className="h-5 w-5 text-white" />
               </div>
               <p className="text-slate-700 font-semibold">Ready to secure your PDF? Skip the guide and go straight to the tool.</p>
             </div>
             <Link
               href="/protect-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
               Protect PDF Now <ArrowRight className="h-4 w-4" />
             </Link>
@@ -155,7 +155,7 @@ export default function PDFPasswordBestPracticesPage() {
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
-                    <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
                       {i + 1}
                     </div>
                     <div>
@@ -165,7 +165,7 @@ export default function PDFPasswordBestPracticesPage() {
                   </div>
                 ))}
               </div>
-              <div className="mt-6 bg-orange-50 border border-orange-200 rounded-xl p-5">
+              <div className="mt-6 bg-[#F0FDFA] border border-[#14D8C4]/20 rounded-xl p-5">
                 <p className="text-slate-700 text-sm">
                   <strong>Pro tip:</strong> Use a passphrase instead of a single word. For example, "BlueCoffee$Rain42!" is easy to remember but extremely hard to crack. Even better, use a password manager to generate and store random passwords.
                 </p>
@@ -176,27 +176,27 @@ export default function PDFPasswordBestPracticesPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Setting the Right PDF Permissions</h2>
               <p className="text-slate-600 mb-4">
-                Beyond locking a file with a password, you can control exactly what people can do with your PDF. PDF.it's <Link href="/protect-pdf" className="text-orange-600 hover:underline">Protect PDF tool</Link> lets you restrict the following actions:
+                Beyond locking a file with a password, you can control exactly what people can do with your PDF. PDF.it's <Link href="/protect-pdf" className="text-[#14D8C4] hover:underline">Protect PDF tool</Link> lets you restrict the following actions:
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">1.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
                   <span><strong>No printing.</strong> Prevents the recipient from printing the document. Useful for draft reports, confidential memos, and materials shared for review only.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">2.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
                   <span><strong>No copying text.</strong> Blocks text selection and copy-paste. This protects intellectual property, legal language, and original content from being lifted.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">3.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
                   <span><strong>No editing.</strong> Prevents modifications to the document content. Essential for finalized contracts and official records.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">4.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
                   <span><strong>No extracting pages.</strong> Stops users from pulling individual pages out of the document using PDF tools.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-orange-500 font-bold mt-0.5">5.</span>
+                  <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
                   <span><strong>No annotations.</strong> Prevents adding comments, highlights, or sticky notes. Use this when you want the document to remain clean and unmodified.</span>
                 </li>
               </ul>
@@ -221,13 +221,13 @@ export default function PDFPasswordBestPracticesPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Relying Only on Permissions Without an Open Password</h3>
                   <p className="text-slate-600">
-                    A permissions-only password can be bypassed by some PDF tools. For truly sensitive documents, always set an open password (required to view the file) in addition to any permission restrictions. Learn how in our <Link href="/learn/how-to-password-protect-pdf" className="text-orange-600 hover:underline">step-by-step protection guide</Link>.
+                    A permissions-only password can be bypassed by some PDF tools. For truly sensitive documents, always set an open password (required to view the file) in addition to any permission restrictions. Learn how in our <Link href="/learn/how-to-password-protect-pdf" className="text-[#14D8C4] hover:underline">step-by-step protection guide</Link>.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Forgetting to Flatten Before Protecting</h3>
                   <p className="text-slate-600">
-                    PDFs with form fields, comments, or layers may contain hidden data that a password alone cannot protect. <Link href="/flatten-pdf" className="text-orange-600 hover:underline">Flatten your PDF</Link> before adding a password to ensure all content is baked into the pages and nothing can be extracted separately.
+                    PDFs with form fields, comments, or layers may contain hidden data that a password alone cannot protect. <Link href="/flatten-pdf" className="text-[#14D8C4] hover:underline">Flatten your PDF</Link> before adding a password to ensure all content is baked into the pages and nothing can be extracted separately.
                   </p>
                 </div>
               </div>
@@ -244,7 +244,7 @@ export default function PDFPasswordBestPracticesPage() {
                 <li>&#10003; <strong>256-bit AES:</strong> Maximum security. Use this for legal contracts, financial records, medical data, government documents, and anything with regulatory compliance requirements.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                If you are unsure, go with 256-bit AES. The processing time difference is negligible, and you get the strongest protection available. After protecting your PDF, you can also <Link href="/compress-pdf" className="text-orange-600 hover:underline">compress it</Link> if the file is too large to send by email.
+                If you are unsure, go with 256-bit AES. The processing time difference is negligible, and you get the strongest protection available. After protecting your PDF, you can also <Link href="/compress-pdf" className="text-[#14D8C4] hover:underline">compress it</Link> if the file is too large to send by email.
               </p>
             </section>
 
@@ -258,7 +258,7 @@ export default function PDFPasswordBestPracticesPage() {
             <p className="text-slate-300 mb-6">Upload your file, set a strong password and permissions, and download the protected PDF in seconds.</p>
             <Link
               href="/protect-pdf"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
               <Shield className="h-5 w-5" /> Protect PDF Now
             </Link>
@@ -278,10 +278,10 @@ export default function PDFPasswordBestPracticesPage() {
                 <Link
                   key={article.href}
                   href={article.href}
-                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-orange-200 hover:bg-orange-50/40 transition-all group"
+                  className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group"
                 >
-                  <span className="font-semibold text-slate-900 text-sm group-hover:text-orange-600 transition-colors">{article.title}</span>
-                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-3" />
+                  <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
+                  <ArrowRight className="h-4 w-4 text-slate-400 group-hover:text-[#14D8C4] transition-colors flex-shrink-0 ml-3" />
                 </Link>
               ))}
             </div>
