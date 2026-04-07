@@ -2,6 +2,7 @@ import Link from "next/link"
 import Script from "next/script"
 import { HeaderBr } from "@/components/header-br"
 import { FooterBr } from "@/components/footer-br"
+import { NewsletterSignup } from "@/components/newsletter-signup"
 import { Calendar, ArrowRight, BookOpen, Shield } from "lucide-react"
 import type { Metadata } from "next"
 
@@ -195,20 +196,8 @@ export default function BlogPageBr() {
           <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto">
               <div className="rounded-2xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.3), rgba(30,111,217,0.2))" }}>
-                <div className="rounded-2xl p-8 text-center" style={{ background: "rgba(255,255,255,0.05)", backdropFilter: "blur(12px)" }}>
-                  <h2 className="text-2xl font-black text-white mb-3">Fique Atualizado</h2>
-                  <p className="text-slate-400 mb-6">
-                    Receba dicas PDF, atualizacoes de produto e melhores praticas da equipe PDF.it.
-                  </p>
-                  <Link
-                    href="/br/blog"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all duration-200 hover:brightness-110"
-                    style={{ background: "linear-gradient(135deg, #14D8C4, #0A4A5C)" }}
-                  >
-                    Siga Nosso Blog
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                  <p className="text-slate-500 text-sm mt-4">Respeitamos sua caixa de entrada. Sem spam, nunca.</p>
+                <div className="rounded-2xl p-8" style={{ background: "rgba(255,255,255,0.05)", backdropFilter: "blur(12px)" }}>
+                  <NewsletterSignup locale="br" />
                 </div>
               </div>
             </div>
