@@ -26,6 +26,16 @@
 - OG image metadata dimensions: updated from 1200×630 to 1736×846 (matching actual file) across 8 files
 - Accessibility fix: removed conflicting `text-white` from Dashboard button (contrast ratio 2.9:1 → 10.2:1)
 
+### QA Bug Verification — All 24 Issues Code-Verified
+- 2 verification agents read every fix in the actual codebase (not trusting labels)
+- 17 bugs: FIXED and verified in code
+- 3 issues: NOT A BUG / BY DESIGN (OP_017 anchor scroll, OP_018 SPA logo, OP_019 FAQ accordion)
+- 1 issue: WON'T FIX (OP_011 — copy email is intentional design)
+- 1 issue: FEATURE REQUEST (OP_022 — split edit option)
+- 1 issue: DEFERRED (OP_023 — file persistence on refresh, excluded by owner)
+- 1 issue: was already handled (OP_024 = same fix as OP_012)
+- Updated Excel sheet `manual-tests/AI PDF Tools Bug Document (2).xlsx` with Status + DEV comments for all 24 rows
+
 ### Sentry Status Update
 - @sentry/nextjs removed from package.json — incompatible with Node.js v24 (local dev)
 - Sentry DSN still configured on Vercel (Vercel uses Node 20, where it works)
