@@ -15,6 +15,10 @@
     {
       "path": "/api/cron/cleanup-usage-logs",
       "schedule": "0 3 1 * *"
+    },
+    {
+      "path": "/api/cron/process-jobs",
+      "schedule": "* * * * *"
     }
   ]
 }
