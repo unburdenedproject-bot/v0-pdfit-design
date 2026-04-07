@@ -15,10 +15,13 @@
 - Zero orange Tailwind classes remaining in entire codebase
 - Patterns: bg-orange-500 → bg-[#14D8C4], text-orange-500 → text-[#14D8C4], icon boxes → dark gradient with teal glow
 
-### 5 Tool Pages Fully Rewritten (15 files = 5 tools × 3 languages)
-- add-page-to-pdf, batch-merge-pdf, compress-pdf-fast, combine-images-into-pdf, combine-pdf-files
-- Each rewritten from old layout (flat hero, vertical steps, white FAQ) to canonical Page_Format.md layout
-- Now match compress-pdf: cinematic dark hero, glassmorphism feature cards, horizontal steps, metallic Related Tools, wave-color FAQ
+### 149 Tool Pages Fully Rewritten to Canonical Format (April 6-7, 2026)
+- **49 EN pages**: all tool pages rewritten from old flat layout to Page_Format.md canonical format
+- **50 ES pages**: all Spanish tool pages rewritten with HeaderEs/FooterEs, natively Spanish text, /es/ hrefs, alternates metadata
+- **50 BR pages**: all Portuguese tool pages rewritten with HeaderBr/FooterBr, natively Brazilian Portuguese text, /br/ hrefs, alternates metadata
+- Each page now has: cinematic dark hero (#0E0F1E + radial gradients + noise grain), intro section, ProcessingInterface, 3 glassmorphism feature cards, 3 horizontal steps, 4 metallic Related Tools, wave-color FAQ with frosted glass cards, JSON-LD schema at bottom
+- Convergence audit: sampled 26 pages (10 EN + 8 ES + 8 BR) — all passed except 14 BR pages missing canonical in alternates (fixed)
+- Remaining with old layout: ~243 learn articles (EN/ES/BR) + 3 blog posts — need separate format approach
 
 ### Design Audit Fixes
 - 404 page: replaced all orange OmnisPDF colors with brand teal
