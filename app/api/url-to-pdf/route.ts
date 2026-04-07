@@ -1,13 +1,13 @@
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
-import { NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 
-function errorResponse(message, status = 500) {
+function errorResponse(message: string, status: number = 500): Response {
   return Response.json({ error: message }, { status });
 }
 
-export async function POST(request) {
+export async function POST(request: NextRequest): Promise<NextResponse | Response> {
   try {
     // Auth: Pro/Business/Enterprise only
     const { createClient } = await import("@/lib/supabase/server");
@@ -39,7 +39,7 @@ export async function POST(request) {
 
     // Parse request
     const body = await request.json();
-    const url = body.url;
+    const url: string = body.url;
 
     if (!url || typeof url !== "string") {
       return errorResponse("Missing URL.", 400);
@@ -52,7 +52,7 @@ export async function POST(request) {
       return errorResponse(validation.reason, 400);
     }
 
-    const apiKey = process.env.CLOUDCONVERT_API_KEY;
+    const apiKey: string | undefined = process.env.CLOUDCONVERT_API_KEY;
     if (!apiKey) {
       console.error("CLOUDCONVERT_API_KEY is not set");
       return errorResponse("The conversion service is temporarily unavailable. Please try again later.", 500);
@@ -92,17 +92,17 @@ export async function POST(request) {
 
     if (!jobRes.ok) {
       const err = await jobRes.json().catch(() => ({}));
-      console.error("Conversion job creation failed:", err.message || jobRes.status);
+      console.error("Conversion job creation failed:", (err as any).message || jobRes.status);
       throw new Error("An error occurred while converting the URL. Please try again.");
     }
 
     const job = await jobRes.json();
-    const jobId = job.data.id;
+    const jobId: string = job.data.id;
 
     // Step 2: Poll for job completion
-    let finished = null;
+    let finished: any = null;
     for (let i = 0; i < 60; i++) {
-      await new Promise((r) => setTimeout(r, 2000));
+      await new Promise<void>((r) => setTimeout(r, 2000));
 
       const pollRes = await fetch(
         `https://api.cloudconvert.com/v2/jobs/${jobId}`,
@@ -111,14 +111,14 @@ export async function POST(request) {
       if (!pollRes.ok) continue;
 
       const pollData = await pollRes.json();
-      const status = pollData.data.status;
+      const status: string = pollData.data.status;
 
       if (status === "finished") {
         finished = pollData.data;
         break;
       }
       if (status === "error") {
-        const failedTask = pollData.data.tasks?.find((t) => t.status === "error");
+        const failedTask = pollData.data.tasks?.find((t: any) => t.status === "error");
         console.error("URL conversion failed:", failedTask?.message || "Unknown error");
         throw new Error("Conversion failed. The URL may be inaccessible or the page took too long to load.");
       }
@@ -129,8 +129,8 @@ export async function POST(request) {
     }
 
     // Step 3: Download the result
-    const exportTask = finished.tasks.find((t) => t.name === "export-1");
-    const fileUrl = exportTask?.result?.files?.[0]?.url;
+    const exportTask = finished.tasks.find((t: any) => t.name === "export-1");
+    const fileUrl: string | undefined = exportTask?.result?.files?.[0]?.url;
     if (!fileUrl) {
       throw new Error("No output file was produced.");
     }
@@ -141,7 +141,7 @@ export async function POST(request) {
       throw new Error("An error occurred while processing the converted file. Please try again.");
     }
 
-    const pdfBuffer = await fileRes.arrayBuffer();
+    const pdfBuffer: ArrayBuffer = await fileRes.arrayBuffer();
 
     // Log usage
     const { logUsage } = await import("@/lib/usage-check");
@@ -164,11 +164,11 @@ export async function POST(request) {
         "Cache-Control": "no-store",
       },
     });
-  } catch (err) {
+  } catch (err: unknown) {
     console.error("url-to-pdf route error:", err);
 
-    const raw = err && typeof err === "object" && err.message ? err.message : "";
-    const safe = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob\.vercel/i.test(raw)
+    const raw: string = err && typeof err === "object" && (err as Error).message ? (err as Error).message : "";
+    const safe: string = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob\.vercel/i.test(raw)
       ? "An error occurred while converting the URL. Please try again."
       : (raw || "An unexpected error occurred.");
 

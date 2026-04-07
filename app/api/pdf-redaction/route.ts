@@ -4,14 +4,20 @@ import { pipeline } from "stream/promises";
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
-import { NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
 import { isValidBlobUrl } from "@/lib/validate-blob-url";
 
-async function blobUrlToTmp(blobUrl) {
+interface BlobToTmpResult {
+  tmpPath: string;
+  name: string;
+  buffer: Buffer;
+}
+
+async function blobUrlToTmp(blobUrl: string): Promise<BlobToTmpResult> {
   const res = await fetch(blobUrl);
   if (!res.ok) {
     console.error(`Failed to fetch blob URL (${res.status}): ${blobUrl}`);
@@ -29,14 +35,27 @@ async function blobUrlToTmp(blobUrl) {
     // keep default name
   }
 
-  const id = randomUUID();
-  const tmpPath = join("/tmp", `${id}-${name}`);
-  if (res.body) { const nodeStream = Readable.fromWeb(res.body); await pipeline(nodeStream, createWriteStream(tmpPath)); } else { const buf = Buffer.from(await res.arrayBuffer()); await writeFile(tmpPath, buf); }
-  return { tmpPath, name, buffer };
+  const id: string = randomUUID();
+  const tmpPath: string = join("/tmp", `${id}-${name}`);
+  if (res.body) { const nodeStream = Readable.fromWeb(res.body as any); await pipeline(nodeStream, createWriteStream(tmpPath)); } else { const buf = Buffer.from(await res.arrayBuffer()); await writeFile(tmpPath, buf); }
+  return { tmpPath, name, buffer: Buffer.alloc(0) };
 }
 
-function errorResponse(message, status = 500) {
+function errorResponse(message: string, status: number = 500): Response {
   return Response.json({ error: message }, { status });
+}
+
+interface RedactedPageInput {
+  page: number;
+  blobUrl: string;
+  width: number;
+  height: number;
+}
+
+interface ReplacementData {
+  imageBytes: ArrayBuffer;
+  width: number;
+  height: number;
 }
 
 /**
@@ -57,10 +76,10 @@ function errorResponse(message, status = 500) {
  *   }>
  * }
  */
-export async function POST(request) {
-  let tmpPath = null;
-  let uploadedBlobUrl = null;
-  let uploadedPageBlobUrls = [];
+export async function POST(request: NextRequest): Promise<NextResponse | Response> {
+  let tmpPath: string | null = null;
+  let uploadedBlobUrl: string | null = null;
+  let uploadedPageBlobUrls: string[] = [];
 
   try {
     // Auth: Business plan only
@@ -77,7 +96,7 @@ export async function POST(request) {
 
     // Parse request
     const body = await request.json();
-    const blobUrl = body.blobUrl;
+    const blobUrl: string = body.blobUrl;
     uploadedBlobUrl = blobUrl;
 
     if (!blobUrl || typeof blobUrl !== "string") {
@@ -87,36 +106,36 @@ export async function POST(request) {
       return errorResponse("Invalid file URL.", 400);
     }
 
-    const redactedPages = body.redactedPages;
+    const redactedPages: RedactedPageInput[] = body.redactedPages;
     if (!Array.isArray(redactedPages) || redactedPages.length === 0) {
       return errorResponse("No redacted page renders were provided.", 400);
     }
     uploadedPageBlobUrls = redactedPages
       .map((page) => page?.blobUrl)
-      .filter((value) => typeof value === "string");
+      .filter((value): value is string => typeof value === "string");
 
     // Download file
     const result = await blobUrlToTmp(blobUrl);
     tmpPath = result.tmpPath;
-    const originalName = (body.originalName && typeof body.originalName === "string")
+    const originalName: string = (body.originalName && typeof body.originalName === "string")
       ? body.originalName
       : result.name;
 
     const { PDFDocument } = await import("pdf-lib");
     const sourcePdf = await PDFDocument.load(result.buffer);
     const outputPdf = await PDFDocument.create();
-    const replacementPages = new Map();
+    const replacementPages = new Map<number, ReplacementData>();
 
     for (const redactedPage of redactedPages) {
-      const pageIndex = redactedPage?.page;
-      const pageBlobUrl = redactedPage?.blobUrl;
-      const pageWidth = redactedPage?.width;
-      const pageHeight = redactedPage?.height;
+      const pageIndex: number | undefined = redactedPage?.page;
+      const pageBlobUrl: string | undefined = redactedPage?.blobUrl;
+      const pageWidth: number | undefined = redactedPage?.width;
+      const pageHeight: number | undefined = redactedPage?.height;
 
       if (
         !Number.isInteger(pageIndex) ||
-        pageIndex < 0 ||
-        pageIndex >= sourcePdf.getPageCount()
+        (pageIndex as number) < 0 ||
+        (pageIndex as number) >= sourcePdf.getPageCount()
       ) {
         return errorResponse(`Invalid page index: ${pageIndex}`, 400);
       }
@@ -128,7 +147,7 @@ export async function POST(request) {
         pageWidth <= 0 ||
         pageHeight <= 0
       ) {
-        return errorResponse(`Invalid redacted page payload for page ${pageIndex + 1}.`, 400);
+        return errorResponse(`Invalid redacted page payload for page ${(pageIndex as number) + 1}.`, 400);
       }
       if (!isValidBlobUrl(pageBlobUrl)) {
         return errorResponse("Invalid file URL.", 400);
@@ -136,12 +155,12 @@ export async function POST(request) {
 
       const imageResponse = await fetch(pageBlobUrl);
       if (!imageResponse.ok) {
-        console.error(`Failed to fetch redacted page ${pageIndex + 1} (${imageResponse.status})`);
-        throw new Error(`Failed to process page ${pageIndex + 1}. Please try again.`);
+        console.error(`Failed to fetch redacted page ${(pageIndex as number) + 1} (${imageResponse.status})`);
+        throw new Error(`Failed to process page ${(pageIndex as number) + 1}. Please try again.`);
       }
 
-      const imageBytes = await imageResponse.arrayBuffer();
-      replacementPages.set(pageIndex, {
+      const imageBytes: ArrayBuffer = await imageResponse.arrayBuffer();
+      replacementPages.set(pageIndex as number, {
         imageBytes,
         width: pageWidth,
         height: pageHeight,
@@ -167,7 +186,7 @@ export async function POST(request) {
       outputPdf.addPage(copiedPage);
     }
 
-    const redactedBytes = await outputPdf.save();
+    const redactedBytes: Uint8Array = await outputPdf.save();
 
     // Clean up
     if (uploadedBlobUrl) {
@@ -177,7 +196,7 @@ export async function POST(request) {
     await unlink(tmpPath).catch(() => {});
     tmpPath = null;
 
-    const baseName = originalName.replace(/\.[^/.]+$/, "").replace(/-[a-zA-Z0-9]{20,}$/g, "");
+    const baseName: string = originalName.replace(/\.[^/.]+$/, "").replace(/-[a-zA-Z0-9]{20,}$/g, "");
 
     // Log usage
     const { logUsage } = await import("@/lib/usage-check");
@@ -191,11 +210,11 @@ export async function POST(request) {
         "Cache-Control": "no-store",
       },
     });
-  } catch (err) {
+  } catch (err: unknown) {
     console.error("pdf-redaction route error:", err);
 
-    const raw = err && typeof err === "object" && err.message ? err.message : "";
-    const safe = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob.vercel/i.test(raw)
+    const raw: string = err && typeof err === "object" && (err as Error).message ? (err as Error).message : "";
+    const safe: string = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob.vercel/i.test(raw)
       ? "An error occurred while processing your file. Please try again."
       : (raw || "An unexpected error occurred.");
 

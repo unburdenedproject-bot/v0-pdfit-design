@@ -4,14 +4,20 @@ import { pipeline } from "stream/promises";
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
-import { NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
 import { isValidBlobUrl } from "@/lib/validate-blob-url";
 
-async function blobUrlToTmp(blobUrl) {
+interface BlobToTmpResult {
+  tmpPath: string;
+  name: string;
+  buffer: Buffer;
+}
+
+async function blobUrlToTmp(blobUrl: string): Promise<BlobToTmpResult> {
   const res = await fetch(blobUrl);
   if (!res.ok) {
     console.error(`Failed to fetch blob URL (${res.status}): ${blobUrl}`);
@@ -29,14 +35,23 @@ async function blobUrlToTmp(blobUrl) {
     // keep default name
   }
 
-  const id = randomUUID();
-  const tmpPath = join("/tmp", `${id}-${name}`);
-  if (res.body) { const nodeStream = Readable.fromWeb(res.body); await pipeline(nodeStream, createWriteStream(tmpPath)); } else { const buf = Buffer.from(await res.arrayBuffer()); await writeFile(tmpPath, buf); }
-  return { tmpPath, name, buffer };
+  const id: string = randomUUID();
+  const tmpPath: string = join("/tmp", `${id}-${name}`);
+  if (res.body) { const nodeStream = Readable.fromWeb(res.body as any); await pipeline(nodeStream, createWriteStream(tmpPath)); } else { const buf = Buffer.from(await res.arrayBuffer()); await writeFile(tmpPath, buf); }
+  return { tmpPath, name, buffer: Buffer.alloc(0) };
 }
 
-function errorResponse(message, status = 500) {
+function errorResponse(message: string, status: number = 500): Response {
   return Response.json({ error: message }, { status });
+}
+
+interface SignatureInput {
+  page: number;
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  signatureSource: string;
 }
 
 /**
@@ -58,9 +73,9 @@ function errorResponse(message, status = 500) {
  *   }>
  * }
  */
-export async function POST(request) {
-  let tmpPath = null;
-  let uploadedBlobUrl = null;
+export async function POST(request: NextRequest): Promise<NextResponse | Response> {
+  let tmpPath: string | null = null;
+  let uploadedBlobUrl: string | null = null;
 
   try {
     // Auth: Business plan only
@@ -77,7 +92,7 @@ export async function POST(request) {
 
     // Parse request
     const body = await request.json();
-    const blobUrl = body.blobUrl;
+    const blobUrl: string = body.blobUrl;
     uploadedBlobUrl = blobUrl;
 
     if (!blobUrl || typeof blobUrl !== "string") {
@@ -87,7 +102,7 @@ export async function POST(request) {
       return errorResponse("Invalid file URL.", 400);
     }
 
-    const signatures = body.signatures;
+    const signatures: SignatureInput[] = body.signatures;
     if (!Array.isArray(signatures) || signatures.length === 0) {
       return errorResponse("No signatures specified.", 400);
     }
@@ -95,7 +110,7 @@ export async function POST(request) {
     // Download PDF
     const result = await blobUrlToTmp(blobUrl);
     tmpPath = result.tmpPath;
-    const originalName = (body.originalName && typeof body.originalName === "string")
+    const originalName: string = (body.originalName && typeof body.originalName === "string")
       ? body.originalName
       : result.name;
 
@@ -105,13 +120,13 @@ export async function POST(request) {
     const pages = pdfDoc.getPages();
 
     for (const sig of signatures) {
-      const pageIndex = sig.page;
+      const pageIndex: number = sig.page;
       if (pageIndex < 0 || pageIndex >= pages.length) continue;
 
       const page = pages[pageIndex];
       const { width: pageWidth, height: pageHeight } = page.getSize();
 
-      const sigBytes = await signatureSourceToBytes(sig.signatureSource);
+      const sigBytes: Uint8Array = await signatureSourceToBytes(sig.signatureSource);
 
       // Embed as PNG (signatures are uploaded as PNG)
       let sigImage;
@@ -123,11 +138,11 @@ export async function POST(request) {
       }
 
       // Convert ratios to actual coordinates
-      const x = sig.x * pageWidth;
-      const w = sig.width * pageWidth;
-      const h = sig.height * pageHeight;
+      const x: number = sig.x * pageWidth;
+      const w: number = sig.width * pageWidth;
+      const h: number = sig.height * pageHeight;
       // y ratio is from top, but PDF y is from bottom
-      const y = pageHeight - (sig.y * pageHeight) - h;
+      const y: number = pageHeight - (sig.y * pageHeight) - h;
 
       page.drawImage(sigImage, {
         x,
@@ -138,7 +153,7 @@ export async function POST(request) {
     }
 
     // Save the signed PDF
-    const signedBytes = await pdfDoc.save();
+    const signedBytes: Uint8Array = await pdfDoc.save();
 
     // Clean up
     if (uploadedBlobUrl) {
@@ -147,7 +162,7 @@ export async function POST(request) {
     await unlink(tmpPath).catch(() => {});
     tmpPath = null;
 
-    const baseName = originalName.replace(/\.[^/.]+$/, "").replace(/-[a-zA-Z0-9]{20,}$/g, "");
+    const baseName: string = originalName.replace(/\.[^/.]+$/, "").replace(/-[a-zA-Z0-9]{20,}$/g, "");
 
     // Log usage
     const { logUsage } = await import("@/lib/usage-check");
@@ -161,11 +176,11 @@ export async function POST(request) {
         "Cache-Control": "no-store",
       },
     });
-  } catch (err) {
+  } catch (err: unknown) {
     console.error("esign route error:", err);
 
-    const raw = err && typeof err === "object" && err.message ? err.message : "";
-    const safe = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob.vercel/i.test(raw)
+    const raw: string = err && typeof err === "object" && (err as Error).message ? (err as Error).message : "";
+    const safe: string = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob.vercel/i.test(raw)
       ? "An error occurred while processing your file. Please try again."
       : (raw || "An unexpected error occurred.");
 
@@ -180,7 +195,7 @@ export async function POST(request) {
   }
 }
 
-async function signatureSourceToBytes(signatureSource) {
+async function signatureSourceToBytes(signatureSource: string): Promise<Uint8Array> {
   if (!signatureSource || typeof signatureSource !== "string") {
     throw new Error("Missing signature image data.");
   }

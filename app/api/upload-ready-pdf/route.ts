@@ -4,14 +4,14 @@ import { pipeline } from "stream/promises";
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
-import { NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 import { writeFile, unlink, readFile } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
 import { isValidBlobUrl } from "@/lib/validate-blob-url";
 
-async function blobUrlToTmp(blobUrl) {
+async function blobUrlToTmp(blobUrl: string): Promise<{ tmpPath: string; name: string }> {
   const res = await fetch(blobUrl);
   if (!res.ok) {
     console.error(`Failed to fetch blob URL (${res.status}): ${blobUrl}`);
@@ -29,13 +29,13 @@ async function blobUrlToTmp(blobUrl) {
     // keep default name
   }
 
-  const id = randomUUID();
-  const tmpPath = join("/tmp", `${id}-${name}`);
-  if (res.body) { const nodeStream = Readable.fromWeb(res.body); await pipeline(nodeStream, createWriteStream(tmpPath)); } else { const buf = Buffer.from(await res.arrayBuffer()); await writeFile(tmpPath, buf); }
+  const id: string = randomUUID();
+  const tmpPath: string = join("/tmp", `${id}-${name}`);
+  if (res.body) { const nodeStream = Readable.fromWeb(res.body as any); await pipeline(nodeStream, createWriteStream(tmpPath)); } else { const buf = Buffer.from(await res.arrayBuffer()); await writeFile(tmpPath, buf); }
   return { tmpPath, name };
 }
 
-function errorResponse(message, status = 500) {
+function errorResponse(message: string, status: number = 500): Response {
   return Response.json({ error: message }, { status });
 }
 
@@ -49,10 +49,10 @@ function errorResponse(message, status = 500) {
  * Free: automatic flatten + recommended compression
  * Pro:  optional flatten toggle, compression level, target size
  */
-export async function POST(request) {
-  let tmpPath = null;
-  let flattenedPath = null;
-  let uploadedBlobUrl = null;
+export async function POST(request: NextRequest): Promise<NextResponse | Response> {
+  let tmpPath: string | null = null;
+  let flattenedPath: string | null = null;
+  let uploadedBlobUrl: string | null = null;
 
   try {
     // Auth & usage check
@@ -62,16 +62,16 @@ export async function POST(request) {
       return NextResponse.json({ error: usage.error || "Daily limit reached." }, { status: 403 });
     }
 
-    const publicKey = process.env.ILOVEAPI_PUBLIC_KEY;
-    const secretKey = process.env.ILOVEAPI_SECRET_KEY;
+    const publicKey: string | undefined = process.env.ILOVEAPI_PUBLIC_KEY;
+    const secretKey: string | undefined = process.env.ILOVEAPI_SECRET_KEY;
 
     if (!publicKey || !secretKey) {
       return errorResponse("The processing service is temporarily unavailable. Please try again later.", 500);
     }
 
     // Parse request
-    const contentType = request.headers.get("content-type") || "";
-    const isJson = contentType.includes("application/json");
+    const contentType: string = request.headers.get("content-type") || "";
+    const isJson: boolean = contentType.includes("application/json");
 
     let originalName = "input.pdf";
     let compressionLevel = "recommended";
@@ -79,7 +79,7 @@ export async function POST(request) {
 
     if (isJson) {
       const body = await request.json();
-      const blobUrl = body.blobUrl;
+      const blobUrl: string = body.blobUrl;
       uploadedBlobUrl = blobUrl;
 
       if (!blobUrl || typeof blobUrl !== "string") {
@@ -106,16 +106,16 @@ export async function POST(request) {
       }
 
       originalName = file.name || "input.pdf";
-      const id = randomUUID();
+      const id: string = randomUUID();
       tmpPath = join("/tmp", `${id}-${originalName}`);
-      const buffer = Buffer.from(await file.arrayBuffer());
+      const buffer: Buffer = Buffer.from(await file.arrayBuffer());
       await writeFile(tmpPath, buffer);
     }
 
     const ILovePDFApi = (await import("@ilovepdf/ilovepdf-nodejs")).default;
     const ILovePDFFile = (await import("@ilovepdf/ilovepdf-nodejs/ILovePDFFile")).default;
 
-    let currentPath = tmpPath;
+    let currentPath: string = tmpPath;
 
     // Step 1: Flatten (PDF/A conversion) — merges forms, annotations, layers
     if (shouldFlatten) {
@@ -154,7 +154,7 @@ export async function POST(request) {
       flattenedPath = null;
     }
 
-    const baseName = originalName.replace(/\.[^/.]+$/, "").replace(/-[a-zA-Z0-9]{20,}$/g, "");
+    const baseName: string = originalName.replace(/\.[^/.]+$/, "").replace(/-[a-zA-Z0-9]{20,}$/g, "");
 
     if (usage) await logUsage(usage.userId, "upload-ready-pdf");
 
@@ -170,11 +170,11 @@ export async function POST(request) {
       res.cookies.set(usage.anonCookie.name, usage.anonCookie.value, usage.anonCookie.options);
     }
     return res;
-  } catch (err) {
+  } catch (err: unknown) {
     console.error("upload-ready-pdf route error:", err);
 
-    const raw = err && typeof err === "object" && err.message ? err.message : "";
-    const safe = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob.vercel/i.test(raw)
+    const raw: string = err && typeof err === "object" && (err as Error).message ? (err as Error).message : "";
+    const safe: string = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob.vercel/i.test(raw)
       ? "An error occurred while processing your file. Please try again."
       : (raw || "An unexpected error occurred.");
 

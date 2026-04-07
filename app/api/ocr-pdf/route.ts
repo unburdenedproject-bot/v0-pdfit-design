@@ -4,20 +4,21 @@ import { pipeline } from "stream/promises";
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
+import { type NextRequest } from "next/server";
 import { del } from "@vercel/blob";
 import { isValidBlobUrl } from "@/lib/validate-blob-url";
 
 const API_BASE = "https://api.ilovepdf.com/v1";
 
-function jsonError(message, status = 500, details) {
-  const body = { error: message };
+function jsonError(message: string, status: number = 500, details?: string): Response {
+  const body: { error: string; details?: string } = { error: message };
   if (details) body.details = details;
   return Response.json(body, { status });
 }
 
-async function readUpstreamError(res) {
+async function readUpstreamError(res: Response): Promise<string> {
   try {
-    const ct = res.headers.get("content-type") || "";
+    const ct: string = res.headers.get("content-type") || "";
     if (ct.includes("application/json")) {
       const j = await res.json();
       return JSON.stringify(j);
@@ -28,19 +29,35 @@ async function readUpstreamError(res) {
   }
 }
 
+interface ResolvedInput {
+  buffer: Buffer;
+  originalName: string;
+  lang: string;
+  uploadedBlobUrl?: string;
+  error?: never;
+}
+
+interface ResolvedInputError {
+  error: Response;
+  buffer?: never;
+  originalName?: never;
+  lang?: never;
+  uploadedBlobUrl?: never;
+}
+
 /**
  * Resolve input to { buffer, originalName, lang }.
  * Accepts either JSON { blobUrl, lang? } or multipart form-data.
  */
-async function resolveInput(request) {
-  const contentType = request.headers.get("content-type") || "";
-  const isJson = contentType.includes("application/json");
+async function resolveInput(request: NextRequest): Promise<ResolvedInput | ResolvedInputError> {
+  const contentType: string = request.headers.get("content-type") || "";
+  const isJson: boolean = contentType.includes("application/json");
 
   if (isJson) {
     // ---- JSON path: { blobUrl, lang? } ----
     const body = await request.json();
-    const blobUrl = body.blobUrl;
-    const lang = body.lang || "eng";
+    const blobUrl: string = body.blobUrl;
+    const lang: string = body.lang || "eng";
 
     if (!blobUrl || typeof blobUrl !== "string") {
       return { error: jsonError('JSON body must include "blobUrl".', 400) };
@@ -67,13 +84,13 @@ async function resolveInput(request) {
       // keep default
     }
 
-    const buffer = Buffer.from(await res.arrayBuffer());
+    const buffer: Buffer = Buffer.from(await res.arrayBuffer());
     return { buffer, originalName, lang, uploadedBlobUrl: blobUrl };
   } else {
     // ---- Multipart path (backwards compat) ----
     const incoming = await request.formData();
 
-    let file = incoming.get("file");
+    let file: FormDataEntryValue | null = incoming.get("file");
     if (!file || typeof file === "string") file = incoming.get("pdf");
 
     if (!file || typeof file === "string") {
@@ -85,25 +102,25 @@ async function resolveInput(request) {
       };
     }
 
-    const originalName = file.name || "input.pdf";
-    const ext = originalName.split(".").pop()?.toLowerCase() || "";
+    const originalName: string = file.name || "input.pdf";
+    const ext: string = originalName.split(".").pop()?.toLowerCase() || "";
     if (file.type !== "application/pdf" && ext !== "pdf") {
       return { error: jsonError("Please upload a PDF", 400) };
     }
 
     const langField = incoming.get("lang");
-    const lang =
+    const lang: string =
       langField && typeof langField === "string" && langField.trim().length > 0
         ? langField.trim()
         : "eng";
 
-    const buffer = Buffer.from(await file.arrayBuffer());
+    const buffer: Buffer = Buffer.from(await file.arrayBuffer());
     return { buffer, originalName, lang };
   }
 }
 
-export async function POST(request) {
-  let uploadedBlobUrl = null;
+export async function POST(request: NextRequest): Promise<Response> {
+  let uploadedBlobUrl: string | null = null;
 
   try {
     // Usage check: auth + daily limit
@@ -118,8 +135,8 @@ export async function POST(request) {
       return Response.json({ error: "upgrade_required" }, { status: 403 });
     }
 
-    const publicKey = process.env.ILOVEAPI_PUBLIC_KEY;
-    const secretKey = process.env.ILOVEAPI_SECRET_KEY;
+    const publicKey: string | undefined = process.env.ILOVEAPI_PUBLIC_KEY;
+    const secretKey: string | undefined = process.env.ILOVEAPI_SECRET_KEY;
     if (!publicKey || !secretKey) {
       return jsonError("The processing service is temporarily unavailable. Please try again later.", 500);
     }
@@ -144,7 +161,7 @@ export async function POST(request) {
       return jsonError("This file appears to be empty or unreadable. Please upload a PDF with content.", 400);
     }
 
-    const region = (process.env.ILOVEAPI_REGION || "us").toLowerCase();
+    const region: string = (process.env.ILOVEAPI_REGION || "us").toLowerCase();
 
     // 1) AUTH -> token
     const authRes = await fetch(`${API_BASE}/auth`, {
@@ -154,17 +171,17 @@ export async function POST(request) {
     });
 
     if (!authRes.ok) {
-      const details = await readUpstreamError(authRes);
+      const details: string = await readUpstreamError(authRes);
       return jsonError("OCR failed: auth error", 500, details || `HTTP ${authRes.status}`);
     }
 
     const authJson = await authRes.json();
-    const token = authJson?.token;
+    const token: string | undefined = authJson?.token;
     if (!token) {
       return jsonError("OCR failed: auth response missing token", 500, JSON.stringify(authJson));
     }
 
-    const authHeaders = { Authorization: `Bearer ${token}` };
+    const authHeaders: Record<string, string> = { Authorization: `Bearer ${token}` };
 
     // 2) START -> server + task
     const startUrl = `${API_BASE}/start/pdfocr/${region}`;
@@ -174,13 +191,13 @@ export async function POST(request) {
     }
 
     if (!startRes.ok) {
-      const details = await readUpstreamError(startRes);
+      const details: string = await readUpstreamError(startRes);
       return jsonError("OCR failed: start error", 500, details || `HTTP ${startRes.status}`);
     }
 
     const startJson = await startRes.json();
-    const server = startJson?.server;
-    const task = startJson?.task;
+    const server: string | undefined = startJson?.server;
+    const task: string | undefined = startJson?.task;
     if (!server || !task) {
       return jsonError("OCR failed: start response missing server/task", 500, JSON.stringify(startJson));
     }
@@ -201,12 +218,12 @@ export async function POST(request) {
     });
 
     if (!uploadRes.ok) {
-      const details = await readUpstreamError(uploadRes);
+      const details: string = await readUpstreamError(uploadRes);
       return jsonError("OCR failed: upload error", 500, details || `HTTP ${uploadRes.status}`);
     }
 
     const uploadJson = await uploadRes.json();
-    const serverFilename = uploadJson?.server_filename;
+    const serverFilename: string | undefined = uploadJson?.server_filename;
     if (!serverFilename) {
       return jsonError("OCR failed: upload response missing server_filename", 500, JSON.stringify(uploadJson));
     }
@@ -226,7 +243,7 @@ export async function POST(request) {
     });
 
     if (!processRes.ok) {
-      const details = await readUpstreamError(processRes);
+      const details: string = await readUpstreamError(processRes);
       return jsonError("OCR failed: process error", 500, details || `HTTP ${processRes.status}`);
     }
 
@@ -237,18 +254,18 @@ export async function POST(request) {
     });
 
     if (!downloadRes.ok) {
-      const details = await readUpstreamError(downloadRes);
+      const details: string = await readUpstreamError(downloadRes);
       return jsonError("OCR failed: download error", 500, details || `HTTP ${downloadRes.status}`);
     }
 
-    const out = Buffer.from(await downloadRes.arrayBuffer());
+    const out: Buffer = Buffer.from(await downloadRes.arrayBuffer());
 
     // Clean up uploaded blob from Vercel Blob storage
     if (uploadedBlobUrl) {
       await del(uploadedBlobUrl).catch(() => {});
     }
 
-    const baseName = originalName.replace(/\.[^/.]+$/, "").replace(/-[a-zA-Z0-9]{20,}$/, "");
+    const baseName: string = originalName.replace(/\.[^/.]+$/, "").replace(/-[a-zA-Z0-9]{20,}$/, "");
 
     // Log successful usage
     const { logUsage } = await import("@/lib/usage-check");
@@ -262,8 +279,8 @@ export async function POST(request) {
         "Cache-Control": "no-store",
       },
     });
-  } catch (err) {
-    console.error("OCR route failed:", err?.stack || err);
+  } catch (err: unknown) {
+    console.error("OCR route failed:", (err as Error)?.stack || err);
     return jsonError("An error occurred while processing your file. Please try again.", 500);
   } finally {
     if (uploadedBlobUrl) {

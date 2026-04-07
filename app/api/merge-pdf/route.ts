@@ -4,7 +4,7 @@ import { pipeline } from "stream/promises";
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
-import { NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
@@ -15,7 +15,7 @@ import { areValidBlobUrls } from "@/lib/validate-blob-url";
  * Fetch a Vercel Blob URL and write it to /tmp.
  * Returns { tmpPath, name }.
  */
-async function blobUrlToTmp(blobUrl, index) {
+async function blobUrlToTmp(blobUrl: string, index: number): Promise<{ tmpPath: string; name: string }> {
   const res = await fetch(blobUrl);
   if (!res.ok) {
     console.error(`Failed to fetch blob URL (${res.status}): ${blobUrl}`);
@@ -41,9 +41,9 @@ async function blobUrlToTmp(blobUrl, index) {
   return { tmpPath, name };
 }
 
-export async function POST(request) {
-  const tmpPaths = [];
-  let uploadedBlobUrls = [];
+export async function POST(request: NextRequest): Promise<NextResponse | Response> {
+  const tmpPaths: string[] = [];
+  let uploadedBlobUrls: string[] = [];
 
   try {
     // Usage check: auth + daily limit
@@ -53,8 +53,8 @@ export async function POST(request) {
       return NextResponse.json({ error: usage.error || "Daily limit reached." }, { status: 403 });
     }
 
-    const publicKey = process.env.ILOVEAPI_PUBLIC_KEY;
-    const secretKey = process.env.ILOVEAPI_SECRET_KEY;
+    const publicKey: string | undefined = process.env.ILOVEAPI_PUBLIC_KEY;
+    const secretKey: string | undefined = process.env.ILOVEAPI_SECRET_KEY;
 
     if (!publicKey || !secretKey) {
       return Response.json(
@@ -66,15 +66,15 @@ export async function POST(request) {
     // -----------------------------------------------------------
     // Detect request type: JSON (blob URLs) or multipart (files)
     // -----------------------------------------------------------
-    const contentType = request.headers.get("content-type") || "";
-    const isJson = contentType.includes("application/json");
+    const contentType: string = request.headers.get("content-type") || "";
+    const isJson: boolean = contentType.includes("application/json");
 
     if (isJson) {
       // ---- JSON path: { blobUrls: string[] } ----
       const body = await request.json();
-      const blobUrls = body.blobUrls || body.blobUrl;
+      const blobUrls: string | string[] = body.blobUrls || body.blobUrl;
 
-      const urls = Array.isArray(blobUrls) ? blobUrls : blobUrls ? [blobUrls] : [];
+      const urls: string[] = Array.isArray(blobUrls) ? blobUrls : blobUrls ? [blobUrls] : [];
       uploadedBlobUrls = urls;
 
       if (urls.length < 2) {
@@ -122,8 +122,8 @@ export async function POST(request) {
             { status: 400 }
           );
         }
-        const name = file.name || "unknown";
-        const ext = name.split(".").pop()?.toLowerCase() || "";
+        const name: string = file.name || "unknown";
+        const ext: string = name.split(".").pop()?.toLowerCase() || "";
         if (ext !== "pdf") {
           return Response.json(
             { error: `Invalid file type ".${ext}" for "${name}". Only PDF files are accepted.` },
@@ -133,12 +133,12 @@ export async function POST(request) {
       }
 
       // Write all files to /tmp
-      const id = randomUUID();
+      const id: string = randomUUID();
       for (let i = 0; i < files.length; i++) {
-        const file = files[i];
-        const name = file.name || `file-${i}.pdf`;
-        const tmpPath = join("/tmp", `${id}-${i}-${name}`);
-        const buffer = Buffer.from(await file.arrayBuffer());
+        const file = files[i] as File;
+        const name: string = file.name || `file-${i}.pdf`;
+        const tmpPath: string = join("/tmp", `${id}-${i}-${name}`);
+        const buffer: Buffer = Buffer.from(await file.arrayBuffer());
         await writeFile(tmpPath, buffer);
         tmpPaths.push(tmpPath);
       }
