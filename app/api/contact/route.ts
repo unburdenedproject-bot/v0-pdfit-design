@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server"
 import { createClient } from "@supabase/supabase-js"
 import { Ratelimit } from "@upstash/ratelimit"
 import { Redis } from "@upstash/redis"
+import { checkCsrf } from "@/lib/csrf"
 
 // Rate limit: 3 contact submissions per hour per IP
 const ratelimit =
@@ -15,6 +16,10 @@ const ratelimit =
 
 export async function POST(request: NextRequest) {
   try {
+    // CSRF protection
+    const csrfError = checkCsrf(request)
+    if (csrfError) return csrfError
+
     // Rate limiting
     if (ratelimit) {
       const ip =

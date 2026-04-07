@@ -1,8 +1,12 @@
 import { NextRequest, NextResponse } from "next/server"
 import { createClient } from "@supabase/supabase-js"
+import { checkCsrf } from "@/lib/csrf"
 
 export async function POST(request: NextRequest) {
   try {
+    const csrfError = checkCsrf(request)
+    if (csrfError) return csrfError
+
     const { email } = await request.json()
 
     if (!email || !email.includes("@")) {
