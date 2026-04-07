@@ -1,6 +1,7 @@
 import Script from "next/script"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { ProcessingInterface } from "@/components/processing-interface"
 import { Layers, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
@@ -10,59 +11,46 @@ export const metadata = {
     "Batch organize multiple PDF files with PDF.it Pro. Merge, split, rotate, and compress PDFs in bulk — save time with batch processing.",
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What does batch organize PDFs mean?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Batch organizing means processing multiple PDF files at once — merging, splitting, rotating, or compressing them in bulk instead of one at a time. PDF.it Pro lets you upload multiple files and apply operations to all of them simultaneously." }
-    },
-    {
-      "@type": "Question",
-      "name": "What operations can I perform in batch?",
-      "acceptedAnswer": { "@type": "Answer", "text": "With PDF.it Pro, you can batch merge (combine multiple PDFs), batch split (separate multiple PDFs into pages), batch rotate (fix orientation on multiple files), and batch compress (reduce file sizes in bulk). All operations support multi-file upload and Download All as ZIP." }
-    },
-    {
-      "@type": "Question",
-      "name": "Is batch processing available on the free plan?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Free users can process one file at a time with files up to 25MB. Batch processing — working with multiple files simultaneously — is a Pro feature available for $3.99/month, which also includes files up to 200MB and unlimited conversions." }
-    },
-    {
-      "@type": "Question",
-      "name": "How many files can I process at once?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Pro users can upload and process dozens of files in a single batch. There is no fixed file count limit — the main constraint is the per-file size limit (200MB for Pro, 1GB for Business). All files are processed in parallel for maximum speed." }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I automate PDF workflows with PDF.it?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Business plan users ($13.99/month) get access to Workflow Automation, which lets you chain multiple operations together — for example, split PDFs, then compress each part, then merge selected pages. Visit the Workflow Automation page to learn more." }
-    },
-    {
-      "@type": "Question",
-      "name": "Are my files secure during batch processing?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. All files are processed securely and deleted automatically after your session ends. PDF.it does not store or share your documents. Processing happens in isolated sessions for each user." }
-    }
-  ]
-}
-
 export default function BatchOrganizePDFPage() {
+  const faqs = [
+    { q: "What does batch organize PDFs mean?", a: "Batch organizing means processing multiple PDF files at once — merging, splitting, rotating, or compressing them in bulk instead of one at a time. PDF.it Pro lets you upload multiple files and apply operations to all of them simultaneously." },
+    { q: "What operations can I perform in batch?", a: "With PDF.it Pro, you can batch merge (combine multiple PDFs), batch split (separate multiple PDFs into pages), batch rotate (fix orientation on multiple files), and batch compress (reduce file sizes in bulk). All operations support multi-file upload and Download All as ZIP." },
+    { q: "Is batch processing available on the free plan?", a: "Free users can process one file at a time with files up to 25MB. Batch processing — working with multiple files simultaneously — is a Pro feature available for $3.99/month, which also includes files up to 200MB and unlimited conversions." },
+    { q: "How many files can I process at once?", a: "Pro users can upload and process dozens of files in a single batch. There is no fixed file count limit — the main constraint is the per-file size limit (200MB for Pro, 1GB for Business). All files are processed in parallel for maximum speed." },
+    { q: "Can I automate PDF workflows with PDF.it?", a: "Yes. Business plan users ($13.99/month) get access to Workflow Automation, which lets you chain multiple operations together — for example, split PDFs, then compress each part, then merge selected pages. Visit the Workflow Automation page to learn more." },
+    { q: "Are my files secure during batch processing?", a: "Yes. All files are processed securely and deleted automatically after your session ends. PDF.it does not store or share your documents. Processing happens in isolated sessions for each user." },
+  ]
+
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <Header />
       <main>
         {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section
+          className="text-white py-16 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#heroGrain)" />
+          </svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Layers className="h-10 w-10 text-white" />
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                  boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)",
+                }}
+              >
+                <Layers className="h-10 w-10 text-[#14D8C4]" />
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Batch Organize PDFs</h1>
               <p className="text-xl text-slate-300 mb-8">
@@ -77,77 +65,101 @@ export default function BatchOrganizePDFPage() {
           </div>
         </section>
 
-        {/* Pro Upsell CTA */}
-        <section className="py-12 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
-            <h2 className="text-2xl font-black text-slate-900 mb-4">Batch Processing Requires Pro</h2>
-            <p className="text-slate-600 mb-6">Free users can process files one at a time. Upgrade to Pro for batch processing, larger files, and unlimited conversions.</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/merge-pdf" className="inline-flex items-center justify-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors">
-                Try Free Tools
-              </Link>
-              <Link href="/pricing" className="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-8 rounded-xl transition-colors">
-                Upgrade to Pro
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* About */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <p className="text-lg text-slate-600 mb-8">
+        {/* Intro */}
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <p className="text-lg text-slate-600 leading-relaxed">
               Managing a large library of PDF files is time-consuming when you can only process one at a time. PDF.it Pro gives you batch processing across all major tools — upload multiple files, apply operations in bulk, and download everything as a ZIP.
             </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>&#10003; Batch merge, split, rotate, and compress PDFs</li>
-              <li>&#10003; Upload multiple files simultaneously</li>
-              <li>&#10003; Files up to 200MB each with Pro</li>
-              <li>&#10003; Per-file progress tracking and Download All as ZIP</li>
-              <li>&#10003; Works on Mac, Windows, iOS, Android, and Linux</li>
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">✓ Batch merge, split, rotate, and compress PDFs</li>
+              <li className="flex items-center gap-2">✓ Upload multiple files simultaneously</li>
+              <li className="flex items-center gap-2">✓ Files up to 200MB each with Pro</li>
+              <li className="flex items-center gap-2">✓ Download all results as a ZIP file</li>
             </ul>
           </div>
         </section>
 
-        {/* Feature Sections */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Organize Document Libraries</h2>
-              <p className="text-slate-600">
-                When your document folder is overflowing with PDFs that need merging, splitting, or compressing, batch processing is the answer. Upload your entire batch, choose the operation, and let PDF.it process everything in parallel — no more clicking through files one by one.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Process Office Files in Bulk</h2>
-              <p className="text-slate-600">
-                Teams that handle large volumes of documents — HR departments processing applications, legal teams organizing case files, accounting teams managing invoices — can save hours every week with batch PDF processing. Upload, process, and download in minutes instead of hours.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Automate PDF Workflows</h2>
-              <p className="text-slate-600">
-                For even more power, Business plan users can access Workflow Automation to chain multiple operations together. Split a batch of PDFs, compress each result, then merge selected pages — all in a single automated workflow. Perfect for recurring document processing tasks.
-              </p>
+        {/* Processing Interface */}
+        <ProcessingInterface
+          acceptedFiles=".pdf"
+          toolName="Organize PDF"
+          outputFormat="PDF"
+          processingMessage="Organizing your PDFs..."
+          successMessage="Your organized PDFs are ready!"
+          requiresPlan="pro"
+        />
+
+        {/* Feature Blocks */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                { title: "Organize Document Libraries", desc: "Upload your entire batch of PDFs that need merging, splitting, or compressing. PDF.it processes everything in parallel — no more clicking through files one by one." },
+                { title: "Process Office Files in Bulk", desc: "HR departments, legal teams, and accounting teams handling large volumes of documents can save hours every week with batch PDF processing." },
+                { title: "Automate PDF Workflows", desc: "Business plan users can chain multiple operations together — split, compress, then merge — all in a single automated workflow for recurring tasks." },
+              ].map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <div
+                    className="rounded-[11px] p-6 h-full"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* How To */}
-        <section className="py-16 bg-gray-50">
+        {/* How It Works */}
+        <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Batch Organize PDFs</h2>
-            <div className="space-y-4">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">How to Batch Organize PDFs</h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
               {[
-                "Choose your tool — Merge, Split, Rotate, or Compress PDF.",
-                "Upload multiple files at once (Pro feature — free users process one file at a time).",
-                "Click process and download all results as a ZIP file.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
+                { num: "1", title: "Choose your tool", desc: "Merge, Split, Rotate, or Compress" },
+                { num: "2", title: "Upload multiple files", desc: "Select all files to process at once" },
+                { num: "3", title: "Download as ZIP", desc: "Get all results in a single download" },
+              ].map((step) => (
+                <div key={step.num} className="flex-1">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                      border: "1px solid rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <span className="text-[#14D8C4] font-black text-lg">{step.num}</span>
                   </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
+                  <p className="font-semibold text-slate-900">{step.title}</p>
+                  <p className="text-sm text-slate-500 mt-1">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -165,40 +177,79 @@ export default function BatchOrganizePDFPage() {
                 { name: "Compress PDF", href: "/compress-pdf", desc: "Reduce file size" },
                 { name: "Workflow Automation", href: "/workflow-automation", desc: "Chain operations" },
               ].map((tool) => (
-                <Link
+                <div
                   key={tool.href}
-                  href={tool.href}
-                  className="rounded-xl p-4 transition-all text-center flex flex-col justify-center min-h-[80px] hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(20,216,196,0.25)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.2)" }}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
                 >
-                  <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
-                  <div className="text-xs text-slate-400">{tool.desc}</div>
-                </Link>
+                  <Link
+                    href={tool.href}
+                    className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
+                    <div className="text-xs text-slate-400">{tool.desc}</div>
+                  </Link>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-gray-50">
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
-            <div className="space-y-6">
-              {[
-                { q: "What does batch organize PDFs mean?", a: "Batch organizing means processing multiple PDF files at once — merging, splitting, rotating, or compressing them in bulk instead of one at a time. PDF.it Pro lets you upload multiple files and apply operations to all of them simultaneously." },
-                { q: "What operations can I perform in batch?", a: "With PDF.it Pro, you can batch merge (combine multiple PDFs), batch split (separate multiple PDFs into pages), batch rotate (fix orientation on multiple files), and batch compress (reduce file sizes in bulk). All operations support multi-file upload and Download All as ZIP." },
-                { q: "Is batch processing available on the free plan?", a: "Free users can process one file at a time with files up to 25MB. Batch processing — working with multiple files simultaneously — is a Pro feature available for $3.99/month, which also includes files up to 200MB and unlimited conversions." },
-                { q: "How many files can I process at once?", a: "Pro users can upload and process dozens of files in a single batch. There is no fixed file count limit — the main constraint is the per-file size limit (200MB for Pro, 1GB for Business). All files are processed in parallel for maximum speed." },
-                { q: "Can I automate PDF workflows with PDF.it?", a: "Yes. Business plan users ($13.99/month) get access to Workflow Automation, which lets you chain multiple operations together — for example, split PDFs, then compress each part, then merge selected pages. Visit the Workflow Automation page to learn more." },
-                { q: "Are my files secure during batch processing?", a: "Yes. All files are processed securely and deleted automatically after your session ends. PDF.it does not store or share your documents. Processing happens in isolated sessions for each user." },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
+            <h2 className="text-3xl font-black text-white mb-10 text-center">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl p-6"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
+
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+          }))
+        })}} />
       </main>
       <Footer />
     </div>
