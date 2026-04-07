@@ -72,7 +72,7 @@
 - **Fix applied:** `webhook_events` table created, event ID checked before processing, recorded after.
 - **Effort:** 3 hours
 
-### [ ] 8. Orphaned Blob Files Never Cleaned Up
+### [x] 8. Orphaned Blob Files Never Cleaned Up — FIXED April 7 (29 routes)
 - **Files:** All API routes that upload to Vercel Blob
 - **Issue:** If processing fails after upload, files remain in storage forever. No cleanup cron exists.
 - **Risk:** Storage cost accumulation ($0.03/GB/month × thousands of files)
@@ -105,7 +105,7 @@
 
 ## MEDIUM — Fix Within First Month
 
-### [ ] 13. CSRF Protection Missing on POST Endpoints
+### [x] 13. CSRF Protection Missing on POST Endpoints — FIXED April 7
 - **Files:** `/api/contact`, `/api/newsletter`, `/api/forgot-password`, `/api/create-checkout`
 - **Issue:** No origin validation. Cross-site form submissions possible.
 - **Fix:** Check `Origin` header matches your domain
@@ -117,7 +117,7 @@
 - **Fix:** Generic user-facing errors, detailed server-side logging
 - **Effort:** 3 hours
 
-### [ ] 15. No Stripe-Supabase Reconciliation
+### [x] 15. No Stripe-Supabase Reconciliation — FIXED April 7
 - **Issue:** No way to detect when Stripe says "paid" but Supabase says "free"
 - **Fix:** Weekly cron comparing Stripe subscriptions vs DB plans, emails Paula on mismatch
 - **Effort:** 4 hours
@@ -133,7 +133,7 @@
 - **Fix:** Ensure all error paths unlink temp files, use auto-cleanup patterns
 - **Effort:** 2 hours
 
-### [ ] 18. SSRF Validation Fails Open on DNS Error
+### [x] 18. SSRF Validation Fails Open on DNS Error — FIXED April 7
 - **File:** `lib/url-validation.js` lines 111-113
 - **Issue:** If DNS resolution fails, URL is allowed through instead of blocked
 - **Fix:** Change catch block to return `{ valid: false }`
@@ -163,7 +163,7 @@
 - **Fix:** Postgres trigger that logs plan changes to `user_audit_log` table
 - **Effort:** 3 hours
 
-### [ ] 23. Enable Image Optimization
+### [x] 23. Enable Image Optimization — FIXED April 7
 - **File:** `next.config.mjs` line 19: `images: { unoptimized: true }`
 - **Issue:** Every image served at full resolution — kills mobile performance
 - **Fix:** Set to `false` or remove the line
