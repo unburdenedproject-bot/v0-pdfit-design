@@ -214,7 +214,7 @@ export default function UnirPDFsEscaneadosPage() {
                 { q: "¿Debo comprimir antes o después de unir PDFs escaneados?", a: "Comprime después de unir. Es más eficiente porque la herramienta de compresión puede optimizar todo el documento a la vez. Si los archivos individuales son demasiado grandes para subir (más de 25MB en el plan gratuito), comprime cada uno primero, luego únelos." },
                 { q: "¿Cómo limpio PDFs escaneados con teléfono antes de unir?", a: "Usa la herramienta Limpieza de Escaneo de Teléfono de PDF.it para corregir iluminación, eliminar sombras, enderezar páginas y mejorar el contraste. Limpia cada escaneo primero, luego une los archivos mejorados en un documento." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

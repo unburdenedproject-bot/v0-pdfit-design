@@ -168,7 +168,7 @@ export default function PdfParaJpgParaPowerpointPage() {
                 { q: "Posso inserir um PDF diretamente no PowerPoint?", a: "O PowerPoint permite inserir PDFs como objetos, mas não exibe o conteúdo diretamente nos slides. Converter para JPG primeiro é a solução mais prática e compatível." },
                 { q: "A imagem JPG fica desfocada no PowerPoint?", a: "Se a imagem fica desfocada, provavelmente o DPI está baixo demais. Use 200-300 DPI na conversão. Também evite redimensionar a imagem no PowerPoint para muito maior que o tamanho original." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

@@ -190,7 +190,7 @@ export default function UnirPDFsEnOrdenPage() {
                 { q: "¿PDF.it me permite previsualizar antes de unir?", a: "Sí. Puedes ver la lista de archivos subidos y su orden antes de hacer clic en Unir. Arrastra y suelta para reorganizarlos hasta que el orden sea exactamente correcto, luego procede con la unión." },
                 { q: "¿Puedo unir PDFs en orden desde mi teléfono?", a: "Sí. PDF.it funciona en navegadores móviles. Sube tus archivos, reorganízalos arrastrando al orden correcto, y únelos — todo desde el navegador de tu teléfono sin instalar ninguna app." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

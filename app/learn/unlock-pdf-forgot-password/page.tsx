@@ -312,7 +312,7 @@ export default function UnlockPDFForgotPasswordPage() {
                 { q: "Can I remove permissions restrictions without a password?", a: "Yes, in many cases. If you can open and view the PDF (no open password), PDF.it can remove permissions restrictions like print, copy, and edit locks without needing the owner password." },
                 { q: "How do I prevent losing my PDF password in the future?", a: "Use a password manager to store PDF passwords. Keep a record of which files are password-protected and what passwords you used. Consider using permissions restrictions instead of open passwords when you only need to control editing and printing." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

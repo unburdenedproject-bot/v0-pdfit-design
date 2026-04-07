@@ -290,7 +290,7 @@ export default function OCRAccuracyTipsPage() {
                 { q: "Does the font type affect OCR accuracy?", a: "Yes. Standard fonts like Arial, Times New Roman, and Calibri produce the highest OCR accuracy. Decorative, script, or very thin fonts are harder to recognize. Handwritten text is the most challenging — see our guide on OCR and handwriting." },
                 { q: "How accurate is modern OCR?", a: "On clean, high-resolution scans with standard printed text, modern OCR achieves 95-99% character accuracy. This means on a page of 2,000 characters, you might see 20-100 that need correction. Accuracy drops with poor scan quality, unusual fonts, or complex layouts." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

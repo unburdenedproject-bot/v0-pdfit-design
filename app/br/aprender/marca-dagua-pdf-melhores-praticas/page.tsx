@@ -156,7 +156,7 @@ export default function MelhoresPraticasMarcaDaguaPage() {
                 { q: "A marca d'agua protege legalmente meu documento?", a: "A marca d'agua serve como indicacao visual de restricao, mas nao substitui protecao legal formal. Para seguranca adicional, combine com protecao por senha." },
                 { q: "Posso adicionar marca d'agua a varios PDFs de uma vez?", a: "Sim. Com o plano Pro do PDF.it, voce pode usar processamento em lote para adicionar marca d'agua a multiplos PDFs simultaneamente." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

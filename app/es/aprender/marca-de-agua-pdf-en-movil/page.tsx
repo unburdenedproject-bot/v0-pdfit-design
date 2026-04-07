@@ -281,7 +281,7 @@ export default function MarcaDeAguaPDFEnMovilPage() {
                 { q: "Donde se guarda el PDF con marca de agua en mi telefono?", a: "El PDF con marca de agua se descarga en la ubicacion de descarga predeterminada de tu telefono. En iPhone, revisa la aplicacion Archivos en Descargas. En Android, revisa la carpeta Descargas o el gestor de descargas de tu navegador." },
                 { q: "La herramienta Marca de Agua PDF es gratis en movil?", a: "Marca de Agua PDF esta disponible para usuarios Pro ($3.99/mes) y Business ($13.99/mes) en todos los dispositivos, incluyendo movil. Ambos niveles incluyen marcas de agua ilimitadas y archivos de hasta 200MB." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

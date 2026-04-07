@@ -299,7 +299,7 @@ export default function DocxToPdfKeepFormattingPage() {
                 { q: "Why did my table formatting break in the PDF?", a: "Complex table layouts with merged cells, nested tables, or auto-fit columns are the most common source of formatting breaks. Simplify your tables where possible — use fixed column widths instead of auto-fit, and avoid deeply nested tables." },
                 { q: "How do I check if my PDF matches the original Word document?", a: "Open both files side by side and compare page by page. Pay special attention to the last line on each page (text reflow often pushes content to the next page), table alignments, and image positions. Check headers and footers separately." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

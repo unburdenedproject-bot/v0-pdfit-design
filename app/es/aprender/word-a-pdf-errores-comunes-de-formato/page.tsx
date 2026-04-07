@@ -213,7 +213,7 @@ export default function WordAPdfErroresComunesDeFormatoPage() {
                 { q: "Como prevengo cambios de margenes al convertir Word a PDF?", a: "Establece margenes personalizados explicitos en Diseno de pagina > Margenes > Margenes personalizados en lugar de usar preajustes." },
                 { q: "Puedo hacer que mis hipervinculos funcionen en el PDF convertido?", a: "Si. Asegurate de que los hipervinculos esten correctamente insertados usando la funcion de hipervinculo de Word (Ctrl+K o clic derecho > Hipervinculo). PDF.it preserva los hipervinculos correctamente formateados." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

@@ -214,7 +214,7 @@ export default function DividirPDFEmPaginasIndividuaisPage() {
                 { q: "Posso baixar todas as paginas de uma vez?", a: "Sim. Apos dividir, voce pode baixar cada pagina individualmente ou todas de uma vez como arquivo ZIP." },
                 { q: "Para que serve dividir em paginas individuais?", a: "E util para documentos digitalizados onde cada pagina e um documento diferente, para portais que aceitam apenas um documento por campo, ou para enviar paginas especificas por email." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

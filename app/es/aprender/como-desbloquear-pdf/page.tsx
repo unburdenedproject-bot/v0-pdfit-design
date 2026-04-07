@@ -297,7 +297,7 @@ export default function ComoDesbloquearPDFPage() {
                 { q: "Puedo desbloquear un PDF sin la contrasena?", a: "Si el PDF solo tiene restricciones de permisos (sin contrasena de apertura), PDF.it puede eliminar esas restricciones sin necesitar una contrasena. Si el PDF requiere una contrasena para abrirse, deberas proporcionarla." },
                 { q: "El desbloqueo funciona en todos los archivos PDF?", a: "PDF.it funciona con cifrado PDF estandar (40 bits, 128 bits y AES de 256 bits). Maneja la mayoria de los PDF creados por Adobe Acrobat, Microsoft Office, escaneres y otras herramientas comunes." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

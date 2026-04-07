@@ -202,7 +202,7 @@ export default function DividirPDFEnMovilPage() {
                 { q: "¿Dónde se descarga el PDF dividido en mi teléfono?", a: "En iPhone, los archivos divididos se descargan a tu app Archivos (generalmente en la carpeta Descargas). En Android, los archivos van a tu carpeta Descargas, accesible a través de la app Archivos o la barra de notificaciones." },
                 { q: "¿Puedo dividir un PDF grande en móvil?", a: "Sí. Los usuarios gratuitos pueden dividir PDFs de hasta 25MB en móvil. Los usuarios Pro pueden manejar archivos de hasta 200MB. El procesamiento ocurre en los servidores de PDF.it, así que el almacenamiento y velocidad de tu teléfono no afectan el resultado." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

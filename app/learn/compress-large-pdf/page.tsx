@@ -330,7 +330,7 @@ export default function CompressLargePDFPage() {
                 { q: "How long does it take to compress a 100MB PDF?", a: "Typically 30-90 seconds depending on page count and content type. Image-heavy files take longer. Pro users get priority processing for faster results." },
                 { q: "Can I compress a large PDF on my phone?", a: "Yes, but uploading large files on mobile can be slow depending on your connection. PDF.it works in any mobile browser — no app installation needed." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

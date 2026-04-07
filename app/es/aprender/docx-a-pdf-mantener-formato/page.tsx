@@ -292,7 +292,7 @@ export default function DocxAPdfMantenerFormatoPage() {
                 { q: "Por que se rompio el formato de mi tabla en el PDF?", a: "Los disenos de tablas complejos con celdas combinadas, tablas anidadas o columnas de ajuste automatico son la fuente mas comun de problemas de formato. Simplifica tus tablas cuando sea posible: usa anchos de columna fijos en lugar de ajuste automatico y evita las tablas profundamente anidadas." },
                 { q: "Como verifico si mi PDF coincide con el documento original de Word?", a: "Abre ambos archivos lado a lado y compara pagina por pagina. Presta especial atencion a la ultima linea de cada pagina (la redistribucion del texto a menudo empuja contenido a la siguiente pagina), alineaciones de tablas y posiciones de imagenes." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

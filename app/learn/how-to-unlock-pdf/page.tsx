@@ -299,7 +299,7 @@ export default function HowToUnlockPDFPage() {
                 { q: "Can I unlock a PDF without the password?", a: "If the PDF only has permissions restrictions (no open password), PDF.it can remove those restrictions without needing a password. If the PDF requires a password to open, you'll need to provide that password." },
                 { q: "Does unlocking work on all PDF files?", a: "PDF.it works with standard PDF encryption (40-bit, 128-bit, and 256-bit AES). It handles most PDFs created by Adobe Acrobat, Microsoft Office, scanners, and other common tools." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

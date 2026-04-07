@@ -213,7 +213,7 @@ export default function UnirPDFsDigitalizadosPage() {
                 { q: "O arquivo combinado fica muito grande?", a: "PDFs digitalizados ja sao grandes individualmente. Ao combinar, o tamanho sera a soma dos originais. Recomendamos comprimir o resultado usando a ferramenta Comprimir PDF apos unir." },
                 { q: "Posso unir PDFs digitalizados com PDFs normais?", a: "Sim. Voce pode misturar PDFs digitalizados e PDFs criados digitalmente no mesmo documento. A qualidade de cada pagina e mantida individualmente." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

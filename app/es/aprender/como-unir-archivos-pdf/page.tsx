@@ -168,7 +168,7 @@ export default function ComoUnirArchivosPDFPage() {
                 { q: "¿Es seguro unir PDFs en línea?", a: "PDF.it procesa los archivos de forma segura y los elimina del servidor después del procesamiento. Tus documentos nunca se almacenan permanentemente ni se comparten con terceros." },
                 { q: "¿Puedo unir PDFs en mi teléfono?", a: "Sí. PDF.it funciona en cualquier navegador móvil — Safari, Chrome o Firefox. Sube tus PDFs, únelos y descarga el resultado directamente en tu teléfono. No necesitas instalar ninguna app." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

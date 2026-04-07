@@ -348,7 +348,7 @@ export default function ConvertScannedPdfToTextPage() {
                 { q: "Can I OCR a phone photo of a document?", a: "Yes, but phone photos often have perspective distortion, shadows, and lower resolution than flatbed scans. Use PDF.it's Phone Scan Cleanup tool first to straighten and enhance the image, then run OCR for better results." },
                 { q: "Is OCR free on PDF.it?", a: "OCR Scanner is a Pro feature on PDF.it. Free users can try basic PDF to TXT (which works on digital PDFs). For scanned documents that require OCR, a Pro subscription ($3.99/month) unlocks the OCR Scanner with unlimited conversions." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

@@ -306,7 +306,7 @@ export default function PPTToPDFOnIPhonePage() {
                 { q: "Can I share the PDF directly from my iPhone after converting?", a: "Yes. After downloading the PDF, open it from the Files app and tap the share button. You can send it via email, iMessage, AirDrop, WhatsApp, Slack, or any other app that accepts file sharing." },
                 { q: "Is there a file size limit for converting on iPhone?", a: "Free users can convert files up to 25MB. Pro users can upload files up to 200MB. If your PPTX is very large and you're on a slow connection, consider using Wi-Fi for a faster upload." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

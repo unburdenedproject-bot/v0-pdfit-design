@@ -299,7 +299,7 @@ export default function QRCodeForWiFiPage() {
                 { q: "Do I need to update the QR code if I change my WiFi password?", a: "Yes. WiFi QR codes are static — the password is encoded directly in the QR code pattern. If you change your WiFi password, you need to generate a new QR code." },
                 { q: "Is this tool free?", a: "PDF.it's QR Code generator is a Pro feature at $3.99/month. Pro users get unlimited QR code generation including WiFi, URL, vCard, and all other types." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

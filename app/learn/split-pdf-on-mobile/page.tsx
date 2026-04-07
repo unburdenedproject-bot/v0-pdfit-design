@@ -310,7 +310,7 @@ export default function SplitPDFOnMobilePage() {
                 { q: "Where does the split PDF download to on my phone?", a: "On iPhone, split files download to your Files app (usually in the Downloads folder). On Android, files go to your Downloads folder, accessible through the Files app or notification tray." },
                 { q: "Can I split a large PDF on mobile?", a: "Yes. Free users can split PDFs up to 25MB on mobile. Pro users can handle files up to 200MB. The processing happens on PDF.it's servers, so your phone's storage and speed don't affect the result." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

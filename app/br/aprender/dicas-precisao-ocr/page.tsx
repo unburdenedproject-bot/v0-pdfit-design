@@ -178,7 +178,7 @@ export default function DicasPrecisaoOCRPage() {
                 { q: "O que mais afeta a precisao do OCR?", a: "Resolucao, contraste, alinhamento, qualidade da fonte original e selecao correta do idioma." },
                 { q: "Como lidar com documentos antigos?", a: "Use Limpeza de Digitalizacao para melhorar contraste. Digitalize em 600 DPI e selecione o idioma correto." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

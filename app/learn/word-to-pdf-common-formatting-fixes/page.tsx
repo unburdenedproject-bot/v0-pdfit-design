@@ -354,7 +354,7 @@ export default function WordToPdfFormattingFixesPage() {
                 { q: "How do I prevent margin changes when converting Word to PDF?", a: "Set explicit custom margins in Page Layout > Margins > Custom Margins instead of using presets. Avoid 'Mirror margins' unless you specifically need them for booklet printing, as some converters don't handle them well." },
                 { q: "Can I get my hyperlinks to work in the converted PDF?", a: "Yes. Make sure hyperlinks are properly inserted using Word's hyperlink feature (Ctrl+K or right-click > Hyperlink) rather than pasted as plain text URLs. PDF.it preserves properly formatted hyperlinks during conversion." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

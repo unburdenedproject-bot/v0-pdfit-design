@@ -153,7 +153,7 @@ export default function TiposCodigoQRPage() {
                 { q: "QR code estatico expira?", a: "Nao. A informacao esta na imagem. Funciona enquanto a imagem existir." },
                 { q: "Qual tipo usar?", a: "Depende do objetivo: URL para sites, WiFi para rede, vCard para contatos, e-mail para comunicacao." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

@@ -290,7 +290,7 @@ export default function ConvertDocxXlsxPptxToPdfPage() {
                 { q: "What Office file formats does PDF.it support?", a: "PDF.it supports .docx (Word), .xlsx (Excel), .pptx (PowerPoint), and legacy formats like .doc, .xls, and .ppt through the Office to PDF converter." },
                 { q: "Can I convert Office files to PDF on my phone?", a: "Yes. PDF.it works in any mobile browser. Upload your Office file, convert it, and download the PDF — no app installation needed." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

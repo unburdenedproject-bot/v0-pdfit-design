@@ -337,7 +337,7 @@ export default function WhyPdfToJpgLooksBlurryPage() {
                 { q: "Why is my scanned PDF blurry when converted to JPG?", a: "If the original scan was done at low resolution (below 200 DPI), the PDF itself contains a low-quality image. No converter can add detail that isn't there. If possible, rescan the document at 300 DPI." },
                 { q: "Does file size affect JPG quality?", a: "Yes. Smaller JPG files use more compression, which reduces quality. A 50KB JPG will look much worse than a 500KB JPG of the same page. If you need both small size and good quality, consider PNG format instead." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

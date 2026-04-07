@@ -283,7 +283,7 @@ export default function MejorFormatoParaEnviarDocumentosPage() {
                 { q: "Debo enviar documentos como PDF o como enlace de Google Docs?", a: "Para documentos finales, PDF es mejor ya que no requiere acceso a internet ni una cuenta de Google para ver. Los enlaces de Google Docs son mejores para edicion colaborativa donde varias personas necesitan hacer cambios." },
                 { q: "Como me aseguro de que mi PDF se vea bien antes de enviarlo?", a: "Despues de convertir a PDF, abre el archivo y revisa cada pagina por problemas de formato. Usa la herramienta de aplanar de PDF.it para eliminar campos de formulario o capas que podrian mostrarse diferente en otros dispositivos." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

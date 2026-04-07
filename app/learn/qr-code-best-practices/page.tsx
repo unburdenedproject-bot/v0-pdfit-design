@@ -305,7 +305,7 @@ export default function QRCodeBestPracticesPage() {
                 { q: "How should I test a QR code before printing?", a: "Test with at least 3 different phones (iPhone and Android), in different lighting conditions, and from the expected scanning distance. Print a test copy first before doing a bulk print run." },
                 { q: "Can I add a logo inside a QR code?", a: "Yes, but only with high error correction (level H, 30%). Keep the logo small — no more than 10-15% of the QR code area — and always test thoroughly after adding it." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

@@ -355,7 +355,7 @@ export default function ExtractTextFromPdfOnMobilePage() {
                 { q: "Why does copy-paste from a PDF on mobile give me broken text?", a: "Mobile PDF viewers have limited text selection capabilities. They often break lines at visual line endings, merge columns, and include headers/footers. Converting to TXT with PDF.it gives you properly ordered text without these issues." },
                 { q: "Can I save extracted text directly to my Notes app?", a: "Yes. After downloading the TXT file from PDF.it, open it on your phone and use the share button to send it to Notes (iPhone), Google Keep (Android), or any other notes app. You can also copy all the text and paste it directly." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

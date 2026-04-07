@@ -288,7 +288,7 @@ export default function CodigoQRParaMenuRestaurantePage() {
                 { q: "Como actualizo mi menu sin reimprimir los codigos QR?", a: "Usa un acortador de URL o servicio de redireccion. El codigo QR apunta a una URL corta, y cambias a donde redirige esa URL corta cada vez que actualizas tu menu. De esta manera el codigo QR sigue siendo el mismo." },
                 { q: "Es una herramienta gratuita?", a: "El generador de Codigo QR de PDF.it es una funcion Pro a $3.99/mes. Pro incluye codigos QR ilimitados mas todas las herramientas PDF — perfecto para restaurantes que tambien necesitan comprimir, convertir o gestionar menus en PDF." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

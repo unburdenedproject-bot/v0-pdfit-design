@@ -203,7 +203,7 @@ export default function CombinarPDFsParaEnvioPage() {
                 { q: "¿Puedo proteger con contraseña mi envío combinado?", a: "Sí. Usa la herramienta Proteger PDF de PDF.it para agregar una contraseña después de unir. Sin embargo, solo agrega una contraseña si las pautas de envío lo permiten — algunos portales no pueden abrir archivos protegidos con contraseña." },
                 { q: "¿Cómo combino PDFs para una solicitud de visa?", a: "Sigue la lista de verificación de la embajada exactamente. Generalmente: formulario de solicitud, copia de pasaporte, fotos, documentos financieros (estados de cuenta bancarios), y cartas de respaldo. Únelos en ese orden, comprime para cumplir con los límites de tamaño, y aplana antes de subir." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

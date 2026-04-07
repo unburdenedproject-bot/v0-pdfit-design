@@ -246,7 +246,7 @@ export default function ComprimirPDFGrandePage() {
                 { q: "Qual o tamanho maximo de PDF que posso comprimir?", a: "Usuarios gratuitos podem comprimir PDFs ate 25MB. Usuarios Pro podem enviar arquivos ate 200MB para compressao." },
                 { q: "Por que meu PDF tem mais de 100MB?", a: "PDFs com mais de 100MB geralmente contem muitas paginas digitalizadas em alta resolucao, imagens nao comprimidas ou multiplas camadas de graficos." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

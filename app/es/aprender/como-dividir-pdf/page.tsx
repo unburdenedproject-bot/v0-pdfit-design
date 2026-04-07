@@ -221,7 +221,7 @@ export default function ComoDividirPDFPage() {
                 { q: "¿Cómo divido un PDF grande para email?", a: "Divide tu PDF en partes más pequeñas que quepan bajo el límite de adjuntos de tu proveedor de email (generalmente 20-25MB). Divide el PDF en rangos de 2-3 páginas, luego comprime cada parte por separado si es necesario." },
                 { q: "¿Es posible dividir un PDF protegido con contraseña?", a: "Necesitas desbloquear el PDF primero. Usa la herramienta Desbloquear PDF de PDF.it para eliminar la contraseña, luego divide el archivo desbloqueado en las páginas o rangos que necesites." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

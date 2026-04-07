@@ -284,7 +284,7 @@ export default function ArreglarPDFAlRevesPage() {
                 { q: "Puedo arreglar un PDF al reves en mi telefono?", a: "Si. PDF.it funciona en cualquier navegador movil. Abre pdf.it.com/rotate-pdf en Safari o Chrome, sube el PDF, rota 180° y descarga la version corregida directamente en tu telefono." },
                 { q: "Como se si mi PDF esta al reves o solo de lado?", a: "Si el texto se lee de abajo hacia arriba (completamente invertido), esta al reves y necesita una rotacion de 180°. Si el texto se lee de lado, esta de costado y necesita una rotacion de 90°. La vista previa de PDF.it te muestra la orientacion actual antes de aplicar la correccion." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

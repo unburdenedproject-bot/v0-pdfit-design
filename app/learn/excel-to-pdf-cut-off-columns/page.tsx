@@ -299,7 +299,7 @@ export default function ExcelToPDFCutOffColumnsPage() {
                 { q: "Can I split a wide Excel sheet into multiple PDFs?", a: "Yes. Convert your Excel file to PDF using PDF.it, then use the Split PDF tool to separate pages. Alternatively, in Excel, manually split your data into two sheets before converting." },
                 { q: "Why do my columns look fine in Excel but get cut off in the PDF?", a: "Excel's normal view doesn't show page boundaries. Switch to Page Layout view (View → Page Layout) or use Print Preview (Ctrl+P) to see exactly where page breaks fall. This reveals which columns will be cut off before you convert." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

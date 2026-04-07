@@ -137,7 +137,7 @@ export default function OCRPDFEnMovilPage() {
               { q: "El OCR en movil es mas lento que en computadora?", a: "No. El procesamiento ocurre en los servidores de PDF.it. La velocidad es la misma en cualquier dispositivo." },
               { q: "El OCR en movil es gratuito?", a: "El Escaner OCR es una funcion Pro en PDF.it, disponible por $3.99/mes. Aplica tanto para uso movil como de escritorio." },
             ].map((faq, i) => (
-              <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+              <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                 <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                 <p className="text-slate-600 text-sm">{faq.a}</p>
               </div>

@@ -347,7 +347,7 @@ export default function ConvertPdfToJpgPage() {
                 { q: "Should I convert to JPG or PNG?", a: "Use JPG for photos, scanned documents, and when file size matters. Use PNG for text-heavy pages, diagrams, screenshots, or when you need transparency. PNG files are larger but have no quality loss." },
                 { q: "Can I convert PDF to JPG on my phone?", a: "Yes. PDF.it works in any mobile browser including Safari on iPhone and Chrome on Android. Upload your PDF, convert it, and save the JPG images directly to your phone. No app needed." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

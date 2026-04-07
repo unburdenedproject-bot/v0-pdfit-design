@@ -323,7 +323,7 @@ export default function RotateScannedPDFPage() {
                 { q: "Can I fix multiple scanned pages at once?", a: "Yes. You can select all pages that need rotation and apply the same angle to all of them at once. If different pages need different rotations, you can apply them in separate batches." },
                 { q: "How do I prevent scanned PDFs from being rotated?", a: "Place documents straight on the scanner bed, aligned with the edges. Use the alignment marks printed on most scanners. For automatic document feeders, make sure pages are stacked neatly and the paper guides are snug against the edges." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

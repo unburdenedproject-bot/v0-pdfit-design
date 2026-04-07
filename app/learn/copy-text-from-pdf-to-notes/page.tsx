@@ -335,7 +335,7 @@ export default function CopyTextFromPdfToNotesPage() {
                 { q: "Does converting PDF to TXT keep paragraph breaks?", a: "PDF to TXT preserves basic line breaks and paragraph spacing, but it removes all other formatting. The result is clean, readable text that you can paste into any app without hidden formatting issues." },
                 { q: "Can I copy text from a PDF on my phone?", a: "Yes, but copy-paste on mobile is even more unreliable than on desktop. For the best results, upload your PDF to PDF.it's PDF to TXT tool in your mobile browser and download the clean text file." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

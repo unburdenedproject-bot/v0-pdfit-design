@@ -324,7 +324,7 @@ export default function CompressPDFWithImagesPage() {
                 { q: "What compression level is best for PDFs with photos?", a: "For sharing on-screen: Medium gives the best balance. For printing: use Light to preserve full resolution. For strict upload limits: Extreme gets the smallest file, but photos may lose some detail." },
                 { q: "Can I extract images before compressing to save more space?", a: "Yes. Use PDF.it's Extract Images tool to pull out oversized images, resize or compress them separately, then rebuild the PDF. This gives you precise control over which images get compressed." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

@@ -173,7 +173,7 @@ export default function ComoProtegerPDFConContrasenaPage() {
                 { q: "Proteger un PDF con contrasena cambiara su contenido?", a: "No. La proteccion con contrasena agrega una capa de encriptacion alrededor del archivo pero no altera el contenido, formato o diseno de tu PDF de ninguna manera." },
                 { q: "Puedo proteger un PDF con contrasena en mi telefono?", a: "Si. PDF.it funciona en cualquier navegador movil. Sube tu PDF, establece una contrasena y descarga el archivo protegido directamente en tu telefono — no necesitas app." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

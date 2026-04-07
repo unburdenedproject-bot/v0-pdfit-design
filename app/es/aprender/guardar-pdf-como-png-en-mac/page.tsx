@@ -340,7 +340,7 @@ export default function GuardarPdfComoPngEnMacPage() {
                 { q: "¿Por qué mi PDF se ve borroso al guardarlo como PNG en Mac?", a: "Esto generalmente sucede porque la resolución de exportación es muy baja. Vista Previa de Mac usa 72 DPI por defecto. Aumenta la resolución a 150 DPI (web) o 300 DPI (impresión) para resultados nítidos." },
                 { q: "¿Puedo convertir un PDF a PNG en Mac sin instalar software?", a: "Sí. Vista Previa viene integrada en macOS y maneja exportaciones básicas de una página. Para conversiones de múltiples páginas o por lotes sin instalar nada, usa PDF.it en tu navegador." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

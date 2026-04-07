@@ -292,7 +292,7 @@ export default function ComoRotarPDFPage() {
                 { q: "Puedo rotar un PDF protegido con contrasena?", a: "Primero necesitas desbloquear el PDF. Usa la herramienta Desbloquear PDF de PDF.it para quitar la contrasena, luego rota las paginas. Puedes volver a agregar proteccion con contrasena despues usando la herramienta Proteger PDF." },
                 { q: "Puedo rotar un PDF en mi telefono?", a: "Si. PDF.it funciona en cualquier navegador movil — Safari, Chrome o Firefox. Sube tu PDF, rota las paginas y descarga el archivo corregido directamente en tu telefono. No necesitas instalar ninguna app." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

@@ -305,7 +305,7 @@ export default function MejoresPracticasCodigoQRPage() {
                 { q: "Como debo probar un codigo QR antes de imprimir?", a: "Prueba con al menos 3 telefonos diferentes (iPhone y Android), en diferentes condiciones de iluminacion, y desde la distancia de escaneo esperada. Imprime una copia de prueba primero antes de hacer una tirada masiva." },
                 { q: "Puedo agregar un logo dentro de un codigo QR?", a: "Si, pero solo con alta correccion de errores (nivel H, 30%). Manten el logo pequeno — no mas del 10-15% del area del codigo QR — y siempre prueba exhaustivamente despues de agregarlo." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

@@ -181,7 +181,7 @@ export default function DividirPDFParaEmailPage() {
                 { q: "¿Puedo dividir un PDF en partes de un tamaño específico?", a: "Sí. PDF.it te permite dividir por rangos de páginas, así puedes estimar cuántas páginas caben bajo tu tamaño objetivo. Para control preciso, divide en secciones pequeñas y verifica el tamaño de cada archivo." },
                 { q: "¿Cómo recombino los PDFs divididos después de enviar?", a: "El destinatario puede usar la herramienta Unir PDF de PDF.it para combinar todas las partes en un solo documento. Comparte este enlace: pdf.it.com/es/unir-pdf" },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

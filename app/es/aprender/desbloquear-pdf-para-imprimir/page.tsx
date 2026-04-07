@@ -299,7 +299,7 @@ export default function DesbloquearPDFParaImprimirPage() {
                 { q: "Puedo desbloquear un PDF para imprimir desde mi telefono?", a: "Si. PDF.it funciona en cualquier navegador movil. Sube el PDF, desbloquealo y descarga la version imprimible. Luego puedes imprimirlo usando la funcion de impresion integrada de tu telefono o transferirlo a una computadora." },
                 { q: "Es legal eliminar restricciones de impresion de un PDF?", a: "Si tienes acceso legitimo al documento y necesitas imprimirlo para uso personal, educativo o empresarial, eliminar la restriccion de impresion es legal. PDF.it esta disenado para usuarios que necesitan imprimir sus propios documentos o archivos compartidos con ellos." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

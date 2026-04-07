@@ -166,7 +166,7 @@ export default function QueEsOCRPage() {
                 { q: "Necesito instalar software para usar OCR?", a: "No. El Escaner OCR de PDF.it funciona completamente en tu navegador. Sube tu PDF escaneado, selecciona el idioma y descarga un PDF buscable — sin instalacion requerida." },
                 { q: "Es OCR una funcion Pro en PDF.it?", a: "Si. El Escaner OCR esta disponible para suscriptores Pro y Business. Pro cuesta $3.99/mes e incluye conversiones ilimitadas, archivos hasta 200MB, procesamiento por lotes y todas las herramientas avanzadas." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

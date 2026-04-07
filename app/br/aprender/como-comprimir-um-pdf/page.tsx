@@ -300,7 +300,7 @@ export default function ComoComprimirUmPDFPage() {
                 { q: "Quanto posso reduzir o tamanho de um PDF?", a: "Depende do conteudo. Um PDF digitalizado de 10MB pode ser comprimido para 1-3MB. Um PDF de 5MB com muito texto pode cair para 500KB. A compressao Extrema oferece a maxima reducao." },
                 { q: "Qual a diferenca entre compressao Leve, Media e Extrema?", a: "Leve mantem as imagens em alta qualidade (menor reducao). Media equilibra qualidade e tamanho (boa para a maioria dos usos). Extrema reduz agressivamente a qualidade das imagens para maxima reducao de tamanho." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

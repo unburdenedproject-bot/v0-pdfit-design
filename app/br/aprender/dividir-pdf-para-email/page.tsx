@@ -247,7 +247,7 @@ export default function DividirPDFParaEmailPage() {
                 { q: "Qual o limite de anexo do Gmail?", a: "O Gmail aceita anexos de ate 25MB. O Outlook aceita ate 20MB. Se seu PDF e maior, divida em partes ou comprima antes de enviar." },
                 { q: "E melhor dividir ou comprimir para email?", a: "Depende. Se o PDF e levemente acima do limite, tente comprimir primeiro. Se for muito grande (50MB+), divida em partes." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

@@ -155,7 +155,7 @@ export default function CopiarTextoDePdfParaNotasPage() {
                 { q: "Como copiar texto de PDF para Notas no iPhone?", a: "Use a ferramenta PDF para Texto do PDF.it no Safari, converta o PDF, copie o texto extraído e cole no app Notas." },
                 { q: "Funciona com PDF protegido?", a: "Se o PDF está protegido contra cópia, a ferramenta PDF para Texto pode conseguir extrair o conteúdo. Para PDFs com senha, use Desbloquear PDF primeiro." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

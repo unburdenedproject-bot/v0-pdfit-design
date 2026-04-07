@@ -327,7 +327,7 @@ export default function ConvertirPdfATextoPage() {
                 { q: "¿Por qué mi salida de PDF a TXT tiene texto faltante?", a: "El texto faltante generalmente significa que el PDF está escaneado (texto almacenado como imagen) o usa fuentes personalizadas/incrustadas que no se pueden decodificar. Prueba el Escáner OCR para PDFs escaneados, o PDF a Word para documentos con fuentes inusuales." },
                 { q: "¿Puedo convertir un PDF a TXT en mi teléfono?", a: "Sí. PDF.it funciona en cualquier navegador móvil — sube tu PDF, conviértelo a TXT y descarga el archivo de texto directamente en iPhone o Android. No necesitas instalar ninguna aplicación." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

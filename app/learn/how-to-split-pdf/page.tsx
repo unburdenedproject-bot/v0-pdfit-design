@@ -333,7 +333,7 @@ export default function HowToSplitPDFPage() {
                 { q: "How do I split a large PDF for email?", a: "Divide your PDF into smaller parts that fit under your email provider's attachment limit (usually 20-25MB). Split the PDF into 2-3 page ranges, then compress each part separately if needed." },
                 { q: "Is it possible to split a password-protected PDF?", a: "You need to unlock the PDF first. Use PDF.it's Unlock PDF tool to remove the password, then split the unlocked file into the pages or ranges you need." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

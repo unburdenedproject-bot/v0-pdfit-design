@@ -279,7 +279,7 @@ export default function ConvertirCurriculumWordAPdfPage() {
                 { q: "Como reduzco el tamano de mi curriculum en PDF?", a: "La mayoria de los curriculos basados en texto ya son pequenos (menos de 500KB). Si el tuyo es mas grande, generalmente por una foto o graficos, usa la herramienta Comprimir PDF de PDF.it para reducir el tamano." },
                 { q: "Debo proteger con contrasena mi curriculum en PDF?", a: "No. Los PDFs protegidos con contrasena no pueden ser analizados por los sistemas ATS, lo que significa que tu curriculum no sera buscable por los reclutadores." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

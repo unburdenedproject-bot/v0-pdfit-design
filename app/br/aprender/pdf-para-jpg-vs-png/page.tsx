@@ -126,7 +126,7 @@ export default function PdfParaJpgVsPngPage() {
 
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Resumo Rápido</h2>
-              <div className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+              <div className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                 <p className="text-slate-700"><strong>Regra simples:</strong> Se seu PDF tem fotos e você quer arquivo pequeno, use JPG. Se tem texto/gráficos e quer qualidade perfeita, use PNG. Na dúvida? Comece com JPG a 200 DPI — funciona bem para a maioria dos casos.</p>
               </div>
             </section>
@@ -177,7 +177,7 @@ export default function PdfParaJpgVsPngPage() {
                 { q: "Qual formato é menor: JPG ou PNG?", a: "JPG geralmente produz arquivos 2-5x menores que PNG. Se o tamanho do arquivo importa (email, WhatsApp, upload), JPG é a melhor escolha." },
                 { q: "Quando devo usar PNG em vez de JPG?", a: "Use PNG quando seu PDF tem texto nítido, diagramas, gráficos, arte linear ou quando precisa de fundo transparente. PNG mantém a nitidez de linhas e texto sem artefatos." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

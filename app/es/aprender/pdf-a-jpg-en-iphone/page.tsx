@@ -118,7 +118,7 @@ export default function PdfAJpgEnIphonePage() {
               { q: "Como comparto un JPG convertido desde mi iPhone?", a: "Despues de descargar el JPG, abrelo en Archivos o Fotos y toca el boton compartir. Puedes enviarlo por iMessage, WhatsApp, email, AirDrop o cualquier otra opcion." },
               { q: "Hay un limite de tamano de archivo para convertir en iPhone?", a: "Los usuarios gratuitos pueden convertir PDFs de hasta 25MB. Los usuarios Pro pueden manejar archivos de hasta 200MB." },
               { q: "Puedo convertir multiples paginas PDF a JPGs en iPhone?", a: "Si. Cuando conviertes un PDF de varias paginas, cada pagina se convierte en un JPG separado. Puedes descargarlos todos como archivo ZIP." },
-            ].map((faq, i) => (<div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}"><h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3><p className="text-slate-600 text-sm">{faq.a}</p></div>))}
+            ].map((faq, i) => (<div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}><h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3><p className="text-slate-600 text-sm">{faq.a}</p></div>))}
           </div>
         </div></section>
       </main>

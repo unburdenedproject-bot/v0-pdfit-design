@@ -334,7 +334,7 @@ export default function CopiarTextoDePdfANotasPage() {
                 { q: "¿Convertir PDF a TXT conserva los saltos de párrafo?", a: "PDF a TXT preserva los saltos de línea básicos y el espaciado de párrafos, pero elimina todo el demás formato. El resultado es texto limpio y legible que puedes pegar en cualquier aplicación sin problemas de formato oculto." },
                 { q: "¿Puedo copiar texto de un PDF en mi teléfono?", a: "Sí, pero copiar y pegar en móvil es aún menos confiable que en escritorio. Para mejores resultados, sube tu PDF a la herramienta PDF a TXT de PDF.it en tu navegador móvil y descarga el archivo de texto limpio." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

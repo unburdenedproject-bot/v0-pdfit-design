@@ -295,7 +295,7 @@ export default function HowToPasswordProtectPDFPage() {
                 { q: "Will password-protecting a PDF change its contents?", a: "No. Password protection adds an encryption layer around the file but does not alter the content, formatting, or layout of your PDF in any way." },
                 { q: "Can I password-protect a PDF on my phone?", a: "Yes. PDF.it works in any mobile browser. Upload your PDF, set a password, and download the protected file directly on your phone — no app needed." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

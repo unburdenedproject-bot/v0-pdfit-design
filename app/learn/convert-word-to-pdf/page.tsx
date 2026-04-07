@@ -314,7 +314,7 @@ export default function ConvertWordToPDFPage() {
                 { q: "Is it safe to upload my Word document for conversion?", a: "Yes. PDF.it processes your file securely and deletes it from servers after conversion. Your document is never stored, shared, or used for any purpose beyond the conversion you requested." },
                 { q: "Why should I convert Word to PDF instead of sharing the .docx file?", a: "PDFs look the same on every device and operating system. Word documents can shift formatting depending on the version of Word, installed fonts, and screen size. PDFs also prevent accidental edits, making them ideal for final versions of contracts, resumes, and reports." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

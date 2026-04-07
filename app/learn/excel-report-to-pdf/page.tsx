@@ -304,7 +304,7 @@ export default function ExcelReportToPDFPage() {
                 { q: "Should I password-protect my Excel report PDF?", a: "If the report contains sensitive financial data, yes. Use PDF.it's Protect PDF tool to add a password after converting. This prevents unauthorized access if the email is forwarded or the file is shared accidentally." },
                 { q: "Can I merge multiple Excel reports into one PDF?", a: "Yes. Convert each Excel report to PDF separately, then use PDF.it's Merge PDF tool to combine them into a single document. This is great for quarterly packages that include multiple monthly reports." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

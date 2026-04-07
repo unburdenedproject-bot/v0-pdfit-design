@@ -153,7 +153,7 @@ export default function SalvarPaginaPdfComoJpgPage() {
                 { q: "Posso salvar várias páginas específicas como JPG?", a: "Sim. No PDF.it, você pode selecionar múltiplas páginas específicas (ex: páginas 1, 3 e 5) para converter, em vez de converter todas as páginas." },
                 { q: "A qualidade da imagem é boa?", a: "Sim, desde que use DPI adequado. Use 150 DPI para uso web, 200 DPI para documentos e 300 DPI para impressão." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

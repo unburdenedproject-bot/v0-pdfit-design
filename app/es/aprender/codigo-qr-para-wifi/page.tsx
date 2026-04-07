@@ -299,7 +299,7 @@ export default function CodigoQRParaWiFiPage() {
                 { q: "Necesito actualizar el codigo QR si cambio mi contrasena WiFi?", a: "Si. Los codigos QR de WiFi son estaticos — la contrasena esta codificada directamente en el patron del codigo QR. Si cambias tu contrasena WiFi, necesitas generar un nuevo codigo QR." },
                 { q: "Esta herramienta es gratuita?", a: "El generador de Codigo QR de PDF.it es una funcion Pro a $3.99/mes. Los usuarios Pro obtienen generacion ilimitada de codigos QR incluyendo WiFi, URL, vCard y todos los demas tipos." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

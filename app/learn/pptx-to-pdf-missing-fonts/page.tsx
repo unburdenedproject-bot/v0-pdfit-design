@@ -330,7 +330,7 @@ export default function PPTXToPDFMissingFontsPage() {
                 { q: "Why does my PDF look different from my PowerPoint?", a: "The most common cause is font substitution — a different font is used because the original wasn't available during conversion. This can change text spacing, line breaks, and overall layout. Embedding fonts before conversion prevents this." },
                 { q: "Do Google Fonts work when converting PPTX to PDF?", a: "Google Fonts (Open Sans, Roboto, Lato, Montserrat, etc.) work well if they're installed on your system and embedded in the PPTX. Since they're free and widely available, they're a good alternative to commercial fonts." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

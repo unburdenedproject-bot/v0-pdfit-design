@@ -308,7 +308,7 @@ export default function ConvertirWordAPdfPage() {
                 { q: "¿Es seguro subir mi documento Word para conversión?", a: "Sí. PDF.it procesa tu archivo de forma segura y lo elimina de los servidores después de la conversión. Tu documento nunca se almacena, comparte o usa para ningún propósito más allá de la conversión que solicitaste." },
                 { q: "¿Por qué debería convertir Word a PDF en lugar de compartir el archivo .docx?", a: "Los PDFs se ven igual en cada dispositivo y sistema operativo. Los documentos Word pueden cambiar de formato dependiendo de la versión de Word, las fuentes instaladas y el tamaño de pantalla. Los PDFs también previenen ediciones accidentales, siendo ideales para versiones finales de contratos, currículos e informes." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

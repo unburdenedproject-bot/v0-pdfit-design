@@ -172,7 +172,7 @@ export default function ConverterWordParaPdfPage() {
                 { q: "Posso converter Word para PDF no celular?", a: "Sim. O PDF.it funciona em qualquer navegador móvel. Envie o arquivo Word e baixe o PDF diretamente no celular." },
                 { q: "Qual o tamanho máximo de arquivo?", a: "Usuários gratuitos podem converter arquivos até 25MB. Usuários Pro podem converter até 200MB e fazer conversões em lote." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

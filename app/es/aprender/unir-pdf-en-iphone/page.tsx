@@ -179,7 +179,7 @@ export default function UnirPDFEnIPhonePage() {
                 { q: "¿Puedo compartir el PDF unido directamente desde mi iPhone?", a: "Sí. Después de descargar, abre el PDF unido desde la app Archivos, toca el botón compartir y envíalo por email, AirDrop, WhatsApp, iMessage o cualquier otra opción." },
                 { q: "¿Hay un límite de tamaño al unir PDFs en iPhone?", a: "Los usuarios gratuitos pueden subir archivos de hasta 25MB cada uno. Los usuarios Pro pueden subir archivos de hasta 200MB. Si tu archivo unido es muy grande, usa la herramienta Comprimir PDF para reducir el tamaño." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

@@ -331,7 +331,7 @@ export default function ConvertPPTToPDFPage() {
                 { q: "Will my PowerPoint fonts look the same in the PDF?", a: "If you use standard fonts (Arial, Calibri, Times New Roman), yes. Custom or uncommon fonts may be substituted if they aren't embedded. To avoid this, embed fonts in PowerPoint before converting." },
                 { q: "Can I convert the PDF back to PowerPoint later?", a: "Yes. PDF.it offers a PDF to PowerPoint tool that converts your PDF back into an editable PPTX file. Keep in mind that complex layouts may need minor adjustments after conversion." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

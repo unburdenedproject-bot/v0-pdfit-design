@@ -289,7 +289,7 @@ export default function FixUpsideDownPDFPage() {
                 { q: "Can I fix an upside-down PDF on my phone?", a: "Yes. PDF.it works in any mobile browser. Open pdf.it.com/rotate-pdf in Safari or Chrome, upload the PDF, rotate 180°, and download the fixed version directly on your phone." },
                 { q: "How do I know if my PDF is upside down or just sideways?", a: "If the text reads bottom-to-top (completely inverted), it is upside down and needs a 180° rotation. If the text reads from the side, it is sideways and needs a 90° rotation. PDF.it's preview shows you the current orientation before you apply the fix." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

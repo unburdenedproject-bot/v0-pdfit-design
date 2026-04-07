@@ -312,7 +312,7 @@ export default function PdfTextoIlegibleSolucionPage() {
                 { q: "¿Cómo sé si mi PDF es escaneado o digital?", a: "Intenta seleccionar texto en tu visor de PDF. Si puedes resaltar palabras individuales, es digital (basado en texto). Si solo puedes seleccionar la página completa como un bloque o no puedes seleccionar nada, es una imagen escaneada. También puedes hacer zoom — las páginas escaneadas se ven pixeladas con zoom alto." },
                 { q: "¿Desbloquear un PDF protegido con contraseña arregla el texto ilegible?", a: "Si el PDF tiene restricciones de copia (puedes ver pero no seleccionar texto), desbloquearlo permitirá la extracción de texto. Pero si la salida ilegible es causada por problemas de codificación de fuente, desbloquearlo no lo arreglará — necesitarás usar OCR o PDF a Word en su lugar." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

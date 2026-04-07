@@ -312,7 +312,7 @@ export default function SavePdfPageAsJpgPage() {
                 { q: "What quality should I use when saving a PDF page as JPG?", a: "For most uses (email, social media, messaging), 150 DPI is plenty. For inserting into documents or presentations, use 200 DPI. For printing, use 300 DPI. Higher DPI means sharper images but larger files." },
                 { q: "Can I save multiple specific pages as separate JPGs?", a: "Yes. You can select multiple individual pages (for example, pages 1, 3, and 7) and convert just those to JPGs. Each selected page becomes its own JPG file that you can download separately." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

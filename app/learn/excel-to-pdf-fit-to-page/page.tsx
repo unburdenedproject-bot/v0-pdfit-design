@@ -323,7 +323,7 @@ export default function ExcelToPDFFitToPagePage() {
                 { q: "How do I check if my Excel fits on the page before converting to PDF?", a: "Use Print Preview (Ctrl+P on Windows, Cmd+P on Mac) or switch to Page Layout view (View → Page Layout). Both show exactly how your spreadsheet will look when printed or converted to PDF, including page breaks." },
                 { q: "Why does my Excel shrink to tiny text when I use Fit to Page?", a: "Fit to Page scales everything proportionally. If your spreadsheet has too many columns or rows, the text gets very small. Fix this by fitting only columns to one page (not rows), reducing the number of columns, or splitting the sheet into sections." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

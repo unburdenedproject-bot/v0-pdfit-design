@@ -333,7 +333,7 @@ export default function UnlockPDFOnMobilePage() {
                 { q: "Is the file size limited on mobile?", a: "Free users can upload PDFs up to 25MB, which covers most documents you'd have on your phone. Pro users can upload files up to 200MB. Mobile data or Wi-Fi speed may affect upload time for larger files." },
                 { q: "Can I print the unlocked PDF from my phone?", a: "Yes. After downloading the unlocked PDF, open it on your phone and use the share button to print. On iPhone, use AirPrint to send it to a nearby printer. On Android, use the built-in print option or Google Cloud Print." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

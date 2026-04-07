@@ -237,7 +237,7 @@ export default function ComprimirPDFParaImprimirPage() {
                 { q: "Qual nivel de compressao usar para impressao?", a: "Para impressao profissional, use sempre a compressao Leve. Ela reduz o tamanho do arquivo sem afetar visivelmente a qualidade das imagens e textos quando impressos." },
                 { q: "A compressao afeta a resolucao DPI?", a: "A compressao Leve mantem a resolucao original. A compressao Media pode reduzir levemente a resolucao. A Extrema reduz significativamente a resolucao e nao e recomendada para impressao profissional." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

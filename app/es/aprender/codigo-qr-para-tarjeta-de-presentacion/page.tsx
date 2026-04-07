@@ -289,7 +289,7 @@ export default function CodigoQRParaTarjetaPresentacionPage() {
                 { q: "Puedo actualizar el destino del codigo QR mas tarde?", a: "Los codigos QR estaticos no se pueden actualizar — la URL o datos estan integrados en el patron. Si crees que podrias cambiar la URL de tu sitio web, usa un servicio de enlaces cortos que te permita redirigir el destino sin cambiar el codigo QR." },
                 { q: "El generador de Codigo QR es una funcion Pro?", a: "Si. La herramienta de Codigo QR de PDF.it es una funcion Pro disponible por $3.99/mes. Los usuarios Pro obtienen generacion ilimitada de codigos QR mas todas las herramientas premium de PDF." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

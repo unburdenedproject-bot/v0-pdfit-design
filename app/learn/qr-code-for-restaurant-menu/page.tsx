@@ -288,7 +288,7 @@ export default function QRCodeForRestaurantMenuPage() {
                 { q: "How do I update my menu without reprinting QR codes?", a: "Use a URL shortener or redirect service. The QR code points to a short URL, and you change where that short URL redirects to whenever you update your menu. This way the QR code stays the same." },
                 { q: "Is this a free tool?", a: "PDF.it's QR Code generator is a Pro feature at $3.99/month. Pro includes unlimited QR codes plus all PDF tools — perfect for restaurants that also need to compress, convert, or manage PDF menus." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

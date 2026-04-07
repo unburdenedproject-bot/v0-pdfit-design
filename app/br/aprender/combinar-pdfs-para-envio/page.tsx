@@ -242,7 +242,7 @@ export default function CombinarPDFsParaEnvioPage() {
                 { q: "Qual o tamanho ideal para envio por email?", a: "Gmail aceita ate 25MB, Outlook ate 20MB e Yahoo ate 25MB. Recomendamos manter o PDF abaixo de 10MB para envio rapido." },
                 { q: "Posso combinar e comprimir ao mesmo tempo?", a: "O PDF.it processa uma tarefa por vez. Primeiro, use Unir PDF para combinar. Depois, use Comprimir PDF para reduzir o tamanho do resultado." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

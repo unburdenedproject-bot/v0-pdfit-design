@@ -160,7 +160,7 @@ export default function OCRDocumentoDigitalizadoPage() {
                 { q: "Qual resolucao e ideal para OCR?", a: "A resolucao ideal e 300 DPI ou superior. Digitalizacoes abaixo de 200 DPI podem resultar em menor precisao." },
                 { q: "O OCR funciona em documentos coloridos?", a: "Sim. O motor OCR converte internamente para escala de cinza. Documentos com bom contraste entre texto e fundo produzem os melhores resultados." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

@@ -319,7 +319,7 @@ export default function ExcelToPDFOnMacPage() {
                 { q: "Why are my fonts different in the Mac-generated PDF?", a: "Mac doesn't include some Windows-standard fonts (like Calibri prior to macOS Ventura). If Excel for Mac substitutes a font, the column widths and spacing change. Use cross-platform fonts (Arial, Times New Roman) or convert online with PDF.it." },
                 { q: "How do I get consistent Excel-to-PDF output across Mac and Windows?", a: "Use an online converter like PDF.it. It processes the file server-side with consistent fonts and rendering, so the output looks the same whether you upload from Mac, Windows, or a phone." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

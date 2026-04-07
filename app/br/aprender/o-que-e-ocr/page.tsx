@@ -166,7 +166,7 @@ export default function OQueEOCRPage() {
                 { q: "Preciso instalar software para usar OCR?", a: "Nao. O Scanner OCR do PDF.it funciona completamente no navegador. Faca upload do PDF digitalizado, selecione o idioma e baixe um PDF pesquisavel — sem instalacao necessaria." },
                 { q: "OCR e uma funcao Pro no PDF.it?", a: "Sim. O Scanner OCR esta disponivel para assinantes Pro e Business. Pro custa $3.99/mes e inclui conversoes ilimitadas, arquivos ate 200MB, processamento em lote e todas as ferramentas avancadas." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

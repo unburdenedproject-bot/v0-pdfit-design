@@ -291,7 +291,7 @@ export default function HowToMergePDFFilesPage() {
                 { q: "Is it safe to merge PDFs online?", a: "PDF.it processes files securely and deletes them from the server after processing. Your documents are never stored permanently or shared with third parties." },
                 { q: "Can I merge PDFs on my phone?", a: "Yes. PDF.it works in any mobile browser — Safari, Chrome, or Firefox. Upload your PDFs, merge them, and download the result directly on your phone. No app installation needed." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

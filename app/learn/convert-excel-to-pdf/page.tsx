@@ -302,7 +302,7 @@ export default function ConvertExcelToPDFPage() {
                 { q: "Why should I convert Excel to PDF instead of sharing the .xlsx file?", a: "PDFs look the same on every device, can't be accidentally edited, and don't require Excel to open. They're better for sharing reports, invoices, and any spreadsheet where the layout needs to stay fixed." },
                 { q: "Can I convert Excel to PDF on my phone?", a: "Yes. PDF.it works in any mobile browser. Upload your Excel file, convert it, and download the PDF directly on iPhone or Android — no app needed." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

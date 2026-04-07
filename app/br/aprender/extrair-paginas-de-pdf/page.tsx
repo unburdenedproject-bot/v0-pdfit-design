@@ -242,7 +242,7 @@ export default function ExtrairPaginasDePDFPage() {
                 { q: "Extrair paginas altera o PDF original?", a: "Nao. O PDF original permanece intacto. A ferramenta cria um novo PDF apenas com as paginas que voce selecionou." },
                 { q: "Qual a diferenca entre extrair e dividir paginas?", a: "Extrair cria um unico PDF com as paginas selecionadas. Dividir separa o PDF inteiro em multiplas partes." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

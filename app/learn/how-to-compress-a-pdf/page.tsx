@@ -308,7 +308,7 @@ export default function HowToCompressPDFPage() {
                 { q: "How small can I make a PDF?", a: "It depends on the content. A 10MB scanned PDF might compress to 1-3MB. A text-heavy 5MB PDF might drop to 500KB. Extreme compression gives the maximum reduction." },
                 { q: "What's the difference between Light, Medium, and Extreme compression?", a: "Light keeps images at high quality (smallest size reduction). Medium balances quality and size (good for most uses). Extreme aggressively reduces image quality for maximum file size reduction." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

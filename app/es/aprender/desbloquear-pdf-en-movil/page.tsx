@@ -332,7 +332,7 @@ export default function DesbloquearPDFEnMovilPage() {
                 { q: "Hay limite de tamano de archivo en movil?", a: "Los usuarios gratuitos pueden subir PDF de hasta 25MB, lo que cubre la mayoria de los documentos que tendrias en tu telefono. Los usuarios Pro pueden subir archivos de hasta 200MB. La velocidad de datos moviles o Wi-Fi puede afectar el tiempo de carga para archivos mas grandes." },
                 { q: "Puedo imprimir el PDF desbloqueado desde mi telefono?", a: "Si. Despues de descargar el PDF desbloqueado, abrelo en tu telefono y usa el boton de compartir para imprimir. En iPhone, usa AirPrint para enviarlo a una impresora cercana. En Android, usa la opcion de impresion integrada o Google Cloud Print." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

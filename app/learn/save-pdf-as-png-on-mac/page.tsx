@@ -346,7 +346,7 @@ export default function SavePDFasPNGonMacPage() {
                 { q: "Why does my PDF look blurry when saved as PNG on Mac?", a: "This usually happens because the export resolution is too low. Mac Preview defaults to 72 DPI. Increase the resolution to 150 DPI (web) or 300 DPI (print) for sharp results." },
                 { q: "Can I convert a PDF to PNG on Mac without installing software?", a: "Yes. Preview is built into macOS and handles basic single-page exports. For multi-page or batch conversions without installing anything, use PDF.it in your browser." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

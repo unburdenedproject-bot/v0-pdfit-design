@@ -305,7 +305,7 @@ export default function DesbloquearPDFContrasenaOlvidadaPage() {
                 { q: "Puedo eliminar restricciones de permisos sin contrasena?", a: "Si, en muchos casos. Si puedes abrir y ver el PDF (sin contrasena de apertura), PDF.it puede eliminar las restricciones de permisos como bloqueos de impresion, copia y edicion sin necesitar la contrasena del propietario." },
                 { q: "Como evito perder mi contrasena de PDF en el futuro?", a: "Usa un gestor de contrasenas para almacenar contrasenas de PDF. Mantien un registro de que archivos estan protegidos con contrasena y que contrasenas usaste. Considera usar restricciones de permisos en lugar de contrasenas de apertura cuando solo necesites controlar la edicion e impresion." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

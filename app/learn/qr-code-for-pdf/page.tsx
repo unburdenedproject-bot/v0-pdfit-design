@@ -292,7 +292,7 @@ export default function QRCodeForPDFPage() {
                 { q: "Can I password-protect the PDF behind the QR code?", a: "Yes, but the person scanning will need to enter the password to open the PDF. Use PDF.it's Protect PDF tool to add a password. Share the password separately — don't put it next to the QR code." },
                 { q: "Is the QR Code tool free?", a: "PDF.it's QR Code generator is a Pro feature ($3.99/month). Pro includes unlimited QR codes, PDF compression, conversion tools, and more." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

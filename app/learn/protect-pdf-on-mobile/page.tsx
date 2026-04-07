@@ -294,7 +294,7 @@ export default function ProtectPDFOnMobilePage() {
                 { q: "Can I protect a PDF I received via WhatsApp or email?", a: "Yes. Save the PDF to your phone first (tap and hold the file, then save to Files or Downloads), then upload it to PDF.it's Protect PDF tool in your browser." },
                 { q: "Is the mobile version of PDF.it free?", a: "Yes. You get 3 free conversions without signing up, and 10 per day with a free account. Files up to 25MB are supported on the free tier. Pro users get unlimited conversions and files up to 200MB." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

@@ -162,7 +162,7 @@ export default function ConverterPdfParaPngNoIphonePage() {
                 { q: "As imagens PNG ficam com boa qualidade no iPhone?", a: "Sim. PNG é um formato sem perda de qualidade. As imagens convertidas pelo PDF.it mantêm toda a nitidez do PDF original." },
                 { q: "Onde encontro as imagens PNG baixadas no iPhone?", a: "As imagens ficam na pasta Downloads do app Arquivos. Se baixou como ZIP, toque no arquivo para descompactar. Para salvar no app Fotos, abra a imagem e toque em Compartilhar > Salvar Imagem." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

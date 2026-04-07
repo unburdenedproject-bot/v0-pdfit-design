@@ -378,7 +378,7 @@ export default function PDFtoPNGforDesignPage() {
                 { q: "How do I use PDF content in Canva?", a: "Canva can import PDFs directly, but for better control over quality and placement, convert your PDF to PNG first using PDF.it. Then upload the PNG to Canva as an image." },
                 { q: "Should I extract images from a PDF instead of converting pages?", a: "If you only need specific images embedded in the PDF (photos, logos), use PDF.it's Extract Images tool. If you need the full page layout as an image, convert the page to PNG." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

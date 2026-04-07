@@ -162,7 +162,7 @@ export default function ExtrairTextoDePdfNoCelularPage() {
                 { q: "Funciona com PDF escaneado no celular?", a: "Para PDFs escaneados, use o Scanner OCR do PDF.it que reconhece texto em imagens. Funciona da mesma forma no celular." },
                 { q: "Posso extrair texto offline no celular?", a: "O PDF.it precisa de internet, mas funciona bem com 4G/5G. A conversão é rápida mesmo em conexões mais lentas." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

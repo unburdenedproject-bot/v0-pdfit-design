@@ -310,7 +310,7 @@ export default function ProtectPDFBeforeSendingPage() {
                 { q: "How should I share the password with the recipient?", a: "Never include the password in the same email as the PDF. Send it through a different channel — a text message, phone call, or encrypted messaging app like Signal or WhatsApp." },
                 { q: "Does PDF.it remove metadata from PDFs?", a: "Flattening a PDF with PDF.it removes interactive elements and embedded data. For additional metadata cleanup, flatten the file and then re-protect it to create a clean, secure version." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

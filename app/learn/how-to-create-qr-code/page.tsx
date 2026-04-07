@@ -305,7 +305,7 @@ export default function HowToCreateQRCodePage() {
                 { q: "What file format should I download my QR code in?", a: "Use PNG for digital use (websites, emails, social media). Use SVG if you need to print the QR code at large sizes without losing quality — SVG scales infinitely without pixelation." },
                 { q: "Is the QR Code tool free on PDF.it?", a: "The QR Code generator is a Pro feature on PDF.it. Pro users ($3.99/month) get unlimited QR code generation along with all other premium PDF tools." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

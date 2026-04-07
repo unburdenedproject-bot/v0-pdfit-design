@@ -331,7 +331,7 @@ export default function ConvertirPdfAPngPage() {
                 { q: "¿Puedo convertir un PDF de múltiples páginas a PNG?", a: "Sí. PDF.it convierte cada página de tu PDF en una imagen PNG separada. Puedes descargarlas individualmente o como archivo ZIP. Los usuarios Pro pueden convertir por lotes múltiples PDFs a la vez." },
                 { q: "¿El texto se mantiene nítido al convertir PDF a PNG?", a: "Sí. PNG usa compresión sin pérdida, así que el texto renderizado de un PDF se mantiene nítido y legible a cualquier nivel de zoom. Esta es una de las principales ventajas que PNG tiene sobre JPG." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

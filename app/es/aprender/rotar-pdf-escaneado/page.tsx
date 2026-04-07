@@ -219,7 +219,7 @@ export default function RotarPDFEscaneadoPage() {
                 { q: "Puedo corregir multiples paginas escaneadas a la vez?", a: "Si. Puedes seleccionar todas las paginas que necesitan rotacion y aplicar el mismo angulo a todas a la vez. Si diferentes paginas necesitan diferentes rotaciones, puedes aplicarlas en lotes separados." },
                 { q: "Como evito que los PDFs escaneados salgan rotados?", a: "Coloca los documentos rectos en la cama del escaner, alineados con los bordes. Usa las marcas de alineacion impresas en la mayoria de los escaneres. Para alimentadores automaticos de documentos, asegurate de que las paginas esten apiladas ordenadamente y las guias de papel esten ajustadas contra los bordes." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

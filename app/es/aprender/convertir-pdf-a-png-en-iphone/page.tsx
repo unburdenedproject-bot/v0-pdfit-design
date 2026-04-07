@@ -312,7 +312,7 @@ export default function ConvertirPdfAPngEnIphonePage() {
                 { q: "¿La calidad del PNG será buena en iPhone?", a: "Sí. PDF.it produce imágenes PNG de alta resolución con texto nítido y gráficos limpios. PNG usa compresión sin pérdida, así que no hay pérdida de calidad durante la conversión." },
                 { q: "¿Cómo comparto un PDF como imagen en iPhone?", a: "Convierte tu PDF a PNG usando PDF.it en Safari, guarda las imágenes en tu app Fotos, luego compártelas por iMessage, WhatsApp, correo electrónico o cualquier otra app." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

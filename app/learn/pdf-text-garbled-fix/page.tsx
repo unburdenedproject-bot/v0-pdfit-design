@@ -313,7 +313,7 @@ export default function PdfTextGarbledFixPage() {
                 { q: "How do I know if my PDF is scanned or digital?", a: "Try selecting text in your PDF viewer. If you can highlight individual words, it's digital (text-based). If you can only select the entire page as a block or can't select anything, it's a scanned image. You can also zoom in — scanned pages look pixelated at high zoom." },
                 { q: "Does unlocking a password-protected PDF fix garbled text?", a: "If the PDF has copy restrictions (you can view but not select text), unlocking it will allow text extraction. But if the garbled output is caused by font encoding issues, unlocking won't fix it — you'll need to use OCR or PDF to Word instead." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

@@ -308,7 +308,7 @@ export default function OCRScannedDocumentPage() {
                 { q: "Is the original scan preserved after OCR?", a: "Yes. OCR adds an invisible text layer on top of your original scan. The visual appearance of every page remains exactly the same — only the searchability changes." },
                 { q: "Can I OCR a document in Spanish or another language?", a: "Yes. PDF.it's OCR Scanner supports dozens of languages including Spanish, French, German, Portuguese, Italian, and many more. Select the correct language before processing for the best accuracy." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

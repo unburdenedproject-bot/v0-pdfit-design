@@ -317,7 +317,7 @@ export default function CompressPDFForPrintingPage() {
                 { q: "Should I flatten my PDF before printing?", a: "Yes. Flattening removes form fields, annotations, and layers, which prevents printing errors. Use PDF.it's Flatten PDF tool before compressing for the cleanest print output." },
                 { q: "My print file is too large to send to the print shop. What should I do?", a: "Use Light compression first. If it's still too large, flatten the PDF to remove layers, then compress again. If you need to split a large document, use Split PDF to break it into sections." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

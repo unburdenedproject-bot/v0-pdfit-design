@@ -151,7 +151,7 @@ export default function ProtegerPDFAntesDeEnviarPage() {
               { q: "Como debo compartir la contrasena con el destinatario?", a: "Nunca incluyas la contrasena en el mismo correo que el PDF. Enviala por un canal diferente — un mensaje de texto, llamada telefonica o app de mensajeria encriptada como Signal o WhatsApp." },
               { q: "PDF.it elimina los metadatos de los PDFs?", a: "Aplanar un PDF con PDF.it elimina elementos interactivos y datos embebidos. Para limpieza adicional de metadatos, aplana el archivo y luego vuelve a protegerlo para crear una version limpia y segura." },
             ].map((faq, i) => (
-              <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}"><h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3><p className="text-slate-600 text-sm">{faq.a}</p></div>
+              <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}><h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3><p className="text-slate-600 text-sm">{faq.a}</p></div>
             ))}
           </div>
         </div></section>

@@ -315,7 +315,7 @@ export default function PdfToJpgOnIphonePage() {
                 { q: "Is there a file size limit for converting on iPhone?", a: "Free users can convert PDFs up to 25MB. Pro users can handle files up to 200MB. Most PDFs people convert on their phones are well under 25MB, so the free tier works for the majority of use cases." },
                 { q: "Can I convert multiple PDF pages to JPGs on iPhone?", a: "Yes. When you convert a multi-page PDF, each page becomes a separate JPG. You can download them all as a ZIP file and then unzip it in your Files app to access each image individually." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

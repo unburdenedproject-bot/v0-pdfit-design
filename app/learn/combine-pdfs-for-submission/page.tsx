@@ -309,7 +309,7 @@ export default function CombinePDFsForSubmissionPage() {
                 { q: "Can I password-protect my combined submission?", a: "Yes. Use PDF.it's Protect PDF tool to add a password after merging. However, only add a password if the submission guidelines allow it — some portals can't open password-protected files." },
                 { q: "How do I combine PDFs for a visa application?", a: "Follow the embassy's document checklist exactly. Typically: application form, passport copy, photos, financial documents (bank statements), and supporting letters. Merge them in that order, compress to meet any size limits, and flatten before uploading." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

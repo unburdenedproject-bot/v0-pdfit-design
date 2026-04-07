@@ -299,7 +299,7 @@ export default function SplitPDFIntoIndividualPagesPage() {
                 { q: "Will splitting a PDF reduce the quality of each page?", a: "No. Splitting a PDF simply separates pages into individual files without re-encoding. Text, images, and formatting stay exactly the same." },
                 { q: "How do I name the individual page files?", a: "PDF.it automatically names each file with the original filename plus the page number (e.g., document_page1.pdf, document_page2.pdf). You can rename them after downloading." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

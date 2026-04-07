@@ -316,7 +316,7 @@ export default function QRCodeTypesExplainedPage() {
                 { q: "Do all phones support all QR code types?", a: "Most modern smartphones support URL, text, WiFi, and vCard QR codes natively through their built-in camera. Some older phones may not support automatic WiFi connection or vCard saving." },
                 { q: "Is the QR Code generator free?", a: "PDF.it's QR Code tool is a Pro feature at $3.99/month. Pro users get unlimited generation of all QR code types plus access to all premium PDF tools." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

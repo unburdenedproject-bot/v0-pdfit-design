@@ -341,7 +341,7 @@ export default function PdfAJpgVsPngPage() {
                 { q: "¿Qué formato es mejor para redes sociales?", a: "Para publicaciones con fotos, JPG está bien y mantiene los tamaños de archivo pequeños. Para infografías, imágenes con mucho texto o logos, PNG se ve significativamente mejor. La mayoría de las plataformas sociales aceptan ambos formatos." },
                 { q: "¿Puedo convertir el mismo PDF tanto a JPG como a PNG?", a: "Sí. Con PDF.it puedes convertir el mismo PDF a JPG y PNG por separado. Esto es útil cuando necesitas un PNG de alta calidad para trabajo de diseño y un JPG más pequeño para compartir." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

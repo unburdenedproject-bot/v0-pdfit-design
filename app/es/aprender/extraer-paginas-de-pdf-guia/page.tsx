@@ -195,7 +195,7 @@ export default function ExtraerPaginasDePDFGuiaPage() {
                 { q: "¿Cómo extraigo páginas de un PDF protegido con contraseña?", a: "Primero, usa la herramienta Desbloquear PDF de PDF.it para eliminar la protección con contraseña, luego usa la herramienta Dividir PDF para extraer las páginas que necesitas." },
                 { q: "¿Puedo extraer páginas de un PDF en mi teléfono?", a: "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, selecciona las páginas a extraer, y descarga el resultado — sin app necesaria." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

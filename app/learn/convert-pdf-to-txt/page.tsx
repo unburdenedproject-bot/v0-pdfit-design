@@ -328,7 +328,7 @@ export default function ConvertPdfToTxtPage() {
                 { q: "Why is my PDF to TXT output missing text?", a: "Missing text usually means the PDF is scanned (text stored as an image) or uses custom/embedded fonts that can't be decoded. Try the OCR Scanner for scanned PDFs, or PDF to Word for documents with unusual fonts." },
                 { q: "Can I convert a PDF to TXT on my phone?", a: "Yes. PDF.it works in any mobile browser — upload your PDF, convert it to TXT, and download the text file directly on iPhone or Android. No app installation needed." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

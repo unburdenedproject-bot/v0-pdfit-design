@@ -173,7 +173,7 @@ export default function PorQuePdfParaJpgFicaBorradoPage() {
                 { q: "Qual DPI usar para evitar imagens borradas?", a: "Para uso geral, 200 DPI é suficiente. Para impressão ou quando precisa de máxima nitidez, use 300 DPI. Evite 72 DPI a menos que precise apenas de miniaturas." },
                 { q: "PNG é melhor que JPG para evitar borrões?", a: "Sim, para textos e gráficos. PNG usa compressão sem perda, então mantém linhas e texto nítidos. JPG pode criar artefatos visíveis ao redor de texto e bordas nítidas." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

@@ -168,7 +168,7 @@ export default function ConverterExcelParaPdfPage() {
                 { q: "Posso converter Excel para PDF no celular?", a: "Sim. O PDF.it funciona em qualquer navegador móvel. Envie o Excel e baixe o PDF diretamente no celular." },
                 { q: "As fórmulas são mantidas?", a: "O PDF mostra os valores calculados, não as fórmulas. PDF captura o que está visível na planilha." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

@@ -290,7 +290,7 @@ export default function ConsejoPrecisionOCRPage() {
                 { q: "El tipo de fuente afecta la precision del OCR?", a: "Si. Fuentes estandar como Arial, Times New Roman y Calibri producen la mayor precision OCR. Las fuentes decorativas, cursivas o muy delgadas son mas dificiles de reconocer. El texto manuscrito es el mas desafiante — consulta nuestra guia sobre OCR y escritura a mano." },
                 { q: "Que tan preciso es el OCR moderno?", a: "En escaneos limpios y de alta resolucion con texto impreso estandar, el OCR moderno alcanza una precision del 95-99% por caracter. Esto significa que en una pagina de 2,000 caracteres, podrias ver 20-100 que necesitan correccion." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

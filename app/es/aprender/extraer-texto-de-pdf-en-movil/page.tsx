@@ -354,7 +354,7 @@ export default function ExtraerTextoDePdfEnMovilPage() {
                 { q: "¿Por qué copiar y pegar desde un PDF en móvil me da texto roto?", a: "Los visores de PDF móviles tienen capacidades limitadas de selección de texto. A menudo rompen líneas en los finales de línea visuales, fusionan columnas e incluyen encabezados/pies de página. Convertir a TXT con PDF.it te da texto correctamente ordenado sin estos problemas." },
                 { q: "¿Puedo guardar el texto extraído directamente en mi app de Notas?", a: "Sí. Después de descargar el archivo TXT de PDF.it, ábrelo en tu teléfono y usa el botón de compartir para enviarlo a Notas (iPhone), Google Keep (Android) o cualquier otra app de notas. También puedes copiar todo el texto y pegarlo directamente." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

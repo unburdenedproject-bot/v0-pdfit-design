@@ -297,7 +297,7 @@ export default function SplitPDFForEmailPage() {
                 { q: "Can I split a PDF into parts of a specific file size?", a: "Yes. PDF.it lets you split by page ranges, so you can estimate how many pages fit under your target size. For precise control, split into small sections and check each file's size." },
                 { q: "How do I recombine the split PDFs after sending?", a: "The recipient can use PDF.it's Merge PDF tool to combine all the parts back into a single document. Share this link with them: pdf.it.com/merge-pdf" },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

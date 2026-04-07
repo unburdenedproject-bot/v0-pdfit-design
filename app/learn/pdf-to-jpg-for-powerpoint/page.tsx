@@ -343,7 +343,7 @@ export default function PdfToJpgForPowerpointPage() {
                 { q: "How do I convert a multi-page PDF for a PowerPoint presentation?", a: "Convert the entire PDF to JPG — each page becomes a separate image. Then insert each JPG onto its own PowerPoint slide. This gives you one slide per PDF page with full visual fidelity." },
                 { q: "Can I convert the PDF directly to PowerPoint instead?", a: "Yes, if you want editable slides. PDF.it offers a PDF to PowerPoint converter that creates a .pptx file with editable text and layouts. However, if you just want the PDF pages as static images in your slides, converting to JPG is simpler and more reliable." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

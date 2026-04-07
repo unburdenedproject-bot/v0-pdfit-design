@@ -323,7 +323,7 @@ export default function ConvertResumeWordToPDFPage() {
                 { q: "How do I reduce my resume PDF file size?", a: "Most text-based resumes are already small (under 500KB). If yours is larger — usually because of a photo or graphics — use PDF.it's Compress PDF tool to reduce the file size while keeping text sharp and readable." },
                 { q: "Should I password-protect my resume PDF?", a: "No. Password-protected PDFs cannot be parsed by ATS systems, which means your resume won't be searchable by recruiters. Only protect a resume if you're sending it directly to a specific person and don't want it forwarded." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

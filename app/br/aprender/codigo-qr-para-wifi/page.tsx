@@ -147,7 +147,7 @@ export default function CodigoQRWiFiPage() {
                 { q: "Funciona em iPhone e Android?", a: "Sim. iPhones com iOS 11+ e Android recentes reconhecem QR de WiFi pela camera." },
                 { q: "Se eu mudar a senha, o QR funciona?", a: "Nao. Voce precisa gerar um novo QR com a senha atualizada." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

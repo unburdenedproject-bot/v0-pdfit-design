@@ -304,7 +304,7 @@ export default function WordAPdfEnIphonePage() {
                 { q: "¿Cómo comparto el PDF convertido desde mi iPhone?", a: "Después de descargar el PDF de PDF.it, toca el ícono de compartir para enviarlo por correo electrónico, iMessage, AirDrop, WhatsApp o cualquier otra app. También puedes guardarlo en la app Archivos o subirlo a almacenamiento en la nube." },
                 { q: "¿Hay un límite de tamaño de archivo para convertir en iPhone?", a: "Los usuarios gratuitos pueden subir archivos de hasta 25MB. Los usuarios Pro pueden subir hasta 200MB. La mayoría de los documentos Word están muy por debajo de 25MB, así que el nivel gratuito funciona para la gran mayoría de las conversiones." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

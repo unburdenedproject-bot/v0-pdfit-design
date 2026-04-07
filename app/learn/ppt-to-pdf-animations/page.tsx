@@ -331,7 +331,7 @@ export default function PPTToPDFAnimationsPage() {
                 { q: "How can I share an animated presentation without using PowerPoint?", a: "You have several options: export as a video (MP4) from PowerPoint, use PowerPoint Online for free viewing, share via Google Slides, or upload to SlideShare. Each method preserves animations better than PDF." },
                 { q: "If I convert a PDF back to PowerPoint, will the animations come back?", a: "No. Once a presentation is converted to PDF, the animation data is permanently lost. Converting the PDF back to PowerPoint gives you editable slides, but you would need to re-add animations manually." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

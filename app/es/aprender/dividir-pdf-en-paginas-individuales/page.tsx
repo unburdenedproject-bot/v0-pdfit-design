@@ -198,7 +198,7 @@ export default function DividirPDFEnPaginasIndividualesPage() {
                 { q: "¿Dividir un PDF reducirá la calidad de cada página?", a: "No. Dividir un PDF simplemente separa páginas en archivos individuales sin re-codificar. Texto, imágenes y formato permanecen exactamente iguales." },
                 { q: "¿Cómo se nombran los archivos de páginas individuales?", a: "PDF.it automáticamente nombra cada archivo con el nombre del archivo original más el número de página (ej., documento_pagina1.pdf, documento_pagina2.pdf). Puedes renombrarlos después de descargar." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

@@ -144,7 +144,7 @@ export default function MarcaDaguaCelularPage() {
                 { q: "Funciona no iPhone e no Android?", a: "Sim. O PDF.it funciona em qualquer navegador moderno, incluindo Safari no iPhone e Chrome no Android." },
                 { q: "O arquivo fica salvo no celular?", a: "Sim. Apos o processamento, voce pode baixar o PDF com marca d'agua diretamente para a pasta de downloads do seu celular." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

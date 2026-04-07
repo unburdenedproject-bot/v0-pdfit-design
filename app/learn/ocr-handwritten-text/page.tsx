@@ -309,7 +309,7 @@ export default function OCRHandwrittenTextPage() {
                 { q: "How can I improve OCR accuracy on handwritten documents?", a: "Use dark ink (not pencil), write on clean white paper, use block letters instead of cursive, leave space between letters, scan at 400+ DPI, and clean up the scan using Phone Scan Cleanup before running OCR. Even with these optimizations, expect some errors that need manual correction." },
                 { q: "Should I use OCR or retype handwritten documents?", a: "For neat block-letter handwriting, OCR can save time even if you need to correct 15-30% of the output. For cursive or messy handwriting, manual retyping is usually faster and more accurate than trying to fix a heavily garbled OCR output." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

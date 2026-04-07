@@ -277,7 +277,7 @@ export default function RotarPDFEnIPhonePage() {
                 { q: "Esto funciona en iPad tambien?", a: "Si. PDF.it funciona en cualquier dispositivo con navegador web — iPhone, iPad, telefonos Android, tablets y computadoras de escritorio. La experiencia es la misma en todos los dispositivos." },
                 { q: "Hay un limite de tamano de archivo en iPhone?", a: "Los usuarios gratuitos pueden rotar PDFs de hasta 25MB. Los usuarios Pro obtienen un limite de 200MB. La mayoria de los documentos que manejas en un telefono estan muy por debajo de 25MB." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

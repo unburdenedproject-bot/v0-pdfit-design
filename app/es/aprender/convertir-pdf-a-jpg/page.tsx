@@ -215,7 +215,7 @@ export default function ConvertirPdfAJpgPage() {
                 { q: "¿Debo convertir a JPG o PNG?", a: "Usa JPG para fotos, documentos escaneados y cuando el tamaño del archivo importa. Usa PNG para páginas con mucho texto, diagramas, capturas de pantalla o cuando necesitas transparencia." },
                 { q: "¿Puedo convertir PDF a JPG en mi teléfono?", a: "Sí. PDF.it funciona en cualquier navegador móvil incluyendo Safari en iPhone y Chrome en Android. Sube tu PDF, conviértelo y guarda las imágenes JPG directamente en tu teléfono. No necesitas ninguna app." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

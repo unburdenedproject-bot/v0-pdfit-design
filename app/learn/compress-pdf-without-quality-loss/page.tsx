@@ -314,7 +314,7 @@ export default function CompressPDFWithoutQualityLossPage() {
                 { q: "Should I use Light or Medium compression to keep quality?", a: "Use Light if quality is your top priority — it keeps images at their original resolution. Medium is a good middle ground that slightly reduces image resolution but remains visually indistinguishable for most documents." },
                 { q: "Can I compress a PDF without losing quality on my phone?", a: "Yes. PDF.it works in any mobile browser. Upload your PDF, select Light compression, and download the result. No app needed — works on iPhone and Android." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

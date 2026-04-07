@@ -280,7 +280,7 @@ export default function ConvertirPdfEscaneadoATextoPage() {
                 { q: "Puedo hacer OCR a una foto de telefono de un documento?", a: "Si, pero las fotos de telefono suelen tener distorsion de perspectiva, sombras y menor resolucion. Usa la herramienta de Limpieza de Escaneo de Telefono primero para enderezar y mejorar la imagen." },
                 { q: "El OCR es gratis en PDF.it?", a: "El Escaner OCR es una funcion Pro en PDF.it. Los usuarios gratuitos pueden probar PDF a TXT basico. Para documentos escaneados que requieren OCR, una suscripcion Pro ($3.99/mes) desbloquea el Escaner OCR con conversiones ilimitadas." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

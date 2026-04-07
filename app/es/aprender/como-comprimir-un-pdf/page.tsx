@@ -308,7 +308,7 @@ export default function ComoComprimirUnPDFPage() {
                 { q: "¿Qué tan pequeño puedo hacer un PDF?", a: "Depende del contenido. Un PDF escaneado de 10MB podría comprimirse a 1-3MB. Un PDF de 5MB con mucho texto podría bajar a 500KB. La compresión Extrema da la máxima reducción." },
                 { q: "¿Cuál es la diferencia entre compresión Ligera, Media y Extrema?", a: "Ligera mantiene las imágenes en alta calidad (menor reducción). Media equilibra calidad y tamaño (buena para la mayoría de usos). Extrema reduce agresivamente la calidad de las imágenes para máxima reducción de tamaño." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

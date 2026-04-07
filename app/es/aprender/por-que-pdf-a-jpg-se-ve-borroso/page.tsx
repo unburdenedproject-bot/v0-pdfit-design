@@ -337,7 +337,7 @@ export default function PorQuePdfAJpgSeVeBorrosoPage() {
                 { q: "¿Por qué mi PDF escaneado se ve borroso al convertirlo a JPG?", a: "Si el escaneo original se hizo a baja resolución (menos de 200 DPI), el PDF mismo contiene una imagen de baja calidad. Ningún convertidor puede agregar detalle que no existe. Si es posible, vuelve a escanear a 300 DPI." },
                 { q: "¿El tamaño del archivo afecta la calidad del JPG?", a: "Sí. Los archivos JPG más pequeños usan más compresión, lo que reduce la calidad. Un JPG de 50KB se verá mucho peor que un JPG de 500KB de la misma página. Si necesitas tamaño pequeño y buena calidad, considera el formato PNG." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

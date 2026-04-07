@@ -316,7 +316,7 @@ export default function TiposCodigoQRExplicadosPage() {
                 { q: "Todos los telefonos soportan todos los tipos de codigos QR?", a: "La mayoria de los smartphones modernos soportan codigos QR de URL, texto, WiFi y vCard de forma nativa a traves de su camara integrada. Algunos telefonos mas antiguos pueden no soportar la conexion WiFi automatica o el guardado de vCard." },
                 { q: "El generador de Codigo QR es gratuito?", a: "La herramienta de Codigo QR de PDF.it es una funcion Pro a $3.99/mes. Los usuarios Pro obtienen generacion ilimitada de todos los tipos de codigos QR mas acceso a todas las herramientas premium de PDF." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

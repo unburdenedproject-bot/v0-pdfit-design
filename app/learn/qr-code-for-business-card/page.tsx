@@ -289,7 +289,7 @@ export default function QRCodeForBusinessCardPage() {
                 { q: "Can I update the QR code destination later?", a: "Static QR codes cannot be updated — the URL or data is baked into the pattern. If you think you might change your website URL, use a short link service that lets you redirect the destination without changing the QR code." },
                 { q: "Is the QR Code generator a Pro feature?", a: "Yes. PDF.it's QR Code tool is a Pro feature available at $3.99/month. Pro users get unlimited QR code generation plus all premium PDF tools." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

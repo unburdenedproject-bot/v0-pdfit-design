@@ -224,7 +224,7 @@ export default function ComprimirPDFSemPerderQualidadePage() {
                 { q: "Quanto posso reduzir sem perder qualidade?", a: "Com compressao Leve, reducoes de 15-30% sao comuns sem perda de qualidade perceptivel. Para reducoes maiores, a compressao Media oferece um bom equilibrio, com minima perda visual." },
                 { q: "A compressao sem perda funciona para todos os PDFs?", a: "A compressao sem perda e mais eficaz em PDFs que contem metadados extras, fontes duplicadas ou estrutura nao otimizada. PDFs ja otimizados terao menor reducao de tamanho." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

@@ -248,7 +248,7 @@ export default function ExtrairPaginasDePDFGuiaPage() {
                 { q: "Posso mudar a ordem das paginas extraidas?", a: "As paginas sao extraidas na ordem em que voce as seleciona. Se precisar reordenar, extraia primeiro e depois use a ferramenta de reorganizar paginas." },
                 { q: "A extracao mantem a qualidade das paginas?", a: "Sim. Extrair paginas nao envolve compressao — as paginas extraidas mantem exatamente a mesma qualidade do PDF original." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

@@ -301,7 +301,7 @@ export default function PDFPasswordBestPracticesPage() {
                 { q: "Can someone bypass PDF permissions?", a: "Permissions passwords are less secure than open passwords — some tools can bypass them. For maximum security, always set an open password in addition to permissions restrictions." },
                 { q: "How should I share the password with the recipient?", a: "Never send the password in the same email as the PDF. Share the password through a different channel — a text message, phone call, or secure messaging app. This way, even if the email is intercepted, the file stays locked." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

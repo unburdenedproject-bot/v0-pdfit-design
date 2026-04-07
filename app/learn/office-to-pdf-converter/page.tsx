@@ -318,7 +318,7 @@ export default function OfficeToPDFConverterPage() {
                 { q: "Can I convert multiple Office files to PDF at once?", a: "Yes. Pro users can batch-convert multiple Office files in a single upload. Each file is converted independently and you can download them all as a ZIP file." },
                 { q: "Do I need Microsoft Office installed to convert files?", a: "No. PDF.it is a fully online tool — everything runs in the cloud. You don't need Office, LibreOffice, or any software installed. Just upload your file from any browser." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

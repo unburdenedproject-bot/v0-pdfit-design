@@ -284,7 +284,7 @@ export default function OfficeToQdfKeepFormattingPage() {
                 { q: "Can I convert Office files to PDF without losing hyperlinks?", a: "Yes. PDF.it preserves clickable hyperlinks during conversion. Links to websites, email addresses, and bookmarks within the document remain functional in the PDF." },
                 { q: "What fonts should I use to avoid formatting issues?", a: "Use standard fonts like Arial, Calibri, Times New Roman, Verdana, or Helvetica. These are available on virtually every system and will render correctly in any PDF converter." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

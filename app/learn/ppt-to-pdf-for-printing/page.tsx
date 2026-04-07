@@ -321,7 +321,7 @@ export default function PPTToPDFForPrintingPage() {
                 { q: "Why do my printed slides look blurry?", a: "Blurry prints are almost always caused by low-resolution images. Images that look fine on screen (72 or 96 DPI) look pixelated when printed at 300 DPI. Replace low-res images with higher-resolution originals before converting to PDF." },
                 { q: "Can I print multiple slides per page from a PDF?", a: "Yes. In PowerPoint, select File > Print > choose a multi-slide layout (e.g., 2 Slides, 4 Slides, 6 Slides per page) before exporting to PDF. Alternatively, print the PDF using your PDF viewer's 'Multiple pages per sheet' option." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

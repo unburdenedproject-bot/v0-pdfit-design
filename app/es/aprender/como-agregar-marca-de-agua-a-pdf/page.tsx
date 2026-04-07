@@ -299,7 +299,7 @@ export default function ComoAgregarMarcaDeAguaAPDFPage() {
                 { q: "Alguien puede quitar mi marca de agua?", a: "Una marca de agua agregada como superposicion a veces puede eliminarse con herramientas avanzadas. Para mayor proteccion, combina la marca de agua con proteccion por contrasena usando la herramienta Proteger PDF de PDF.it, o aplana el PDF despues para integrar la marca de agua en el contenido de la pagina." },
                 { q: "Puedo agregar una marca de agua a un PDF desde mi telefono?", a: "Si. PDF.it funciona en cualquier navegador movil. Sube tu PDF, agrega tu marca de agua de texto o imagen, y descarga el resultado — sin necesidad de aplicacion." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

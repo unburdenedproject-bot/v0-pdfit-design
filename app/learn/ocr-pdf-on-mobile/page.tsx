@@ -307,7 +307,7 @@ export default function OCRPDFOnMobilePage() {
                 { q: "Will OCR on mobile be slower than on a computer?", a: "No. OCR processing happens on PDF.it's servers, not on your device. The speed is the same whether you use a phone, tablet, or desktop computer. The only difference is upload and download speed, which depends on your internet connection." },
                 { q: "Is OCR on mobile a free feature?", a: "OCR Scanner is a Pro feature on PDF.it, available for $3.99/month. This applies to both mobile and desktop use. Pro includes unlimited conversions, files up to 200MB, batch processing, and all advanced tools." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

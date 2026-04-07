@@ -156,7 +156,7 @@ export default function ConverterCurriculoWordPDFPage() {
                 { q: "Como tornar o PDF compativel com ATS?", a: "Fontes padrao, layout simples, sem tabelas complexas, informacoes no corpo (nao cabecalho/rodape), titulos de secao claros." },
                 { q: "O PDF.it mantem a formatacao?", a: "Sim. Se o documento Word estiver bem formatado, o PDF sera identico ao original." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

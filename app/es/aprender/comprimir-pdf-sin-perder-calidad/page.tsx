@@ -203,7 +203,7 @@ export default function ComprimirPDFSinPerderCalidadPage() {
                 { q: "¿Debería usar compresión Ligera o Media para mantener la calidad?", a: "Usa Ligera si la calidad es tu máxima prioridad — mantiene las imágenes en su resolución original. Media es un buen punto medio que reduce ligeramente la resolución de imagen pero sigue siendo visualmente indistinguible para la mayoría de los documentos." },
                 { q: "¿Puedo comprimir un PDF sin perder calidad en mi teléfono?", a: "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, selecciona compresión Ligera y descarga el resultado. No necesitas app — funciona en iPhone y Android." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>

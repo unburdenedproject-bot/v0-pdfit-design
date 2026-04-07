@@ -300,7 +300,7 @@ export default function HowToAddWatermarkToPDFPage() {
                 { q: "Can someone remove my watermark?", a: "A watermark added as an overlay can sometimes be removed with advanced tools. For stronger protection, combine watermarking with password protection using PDF.it's Protect PDF tool, or flatten the PDF afterward to bake the watermark into the page content." },
                 { q: "Can I watermark a PDF on my phone?", a: "Yes. PDF.it works in any mobile browser. Upload your PDF, add your watermark text or image, and download the result — no app needed." },
               ].map((faq, i) => (
-                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}">
+                <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
                   <p className="text-slate-600 text-sm">{faq.a}</p>
                 </div>
