@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { getJobStatus } from "@/lib/job-queue"
+import { createClient } from "@/lib/supabase/server"
 
 export const runtime = "nodejs"
 
@@ -8,6 +9,7 @@ export const runtime = "nodejs"
  *
  * Returns the current status of a processing job.
  * Frontend polls this every 2 seconds until status is "completed" or "failed".
+ * Users can only see their own jobs.
  */
 export async function GET(
   request: NextRequest,
@@ -25,7 +27,16 @@ export async function GET(
     return NextResponse.json({ error: "Job not found" }, { status: 404 })
   }
 
-  // Return relevant fields for the frontend
+  // Auth check: users can only see their own jobs
+  if (job.user_id) {
+    const supabase = await createClient()
+    const { data: { user } } = await supabase.auth.getUser()
+
+    if (!user || user.id !== job.user_id) {
+      return NextResponse.json({ error: "Job not found" }, { status: 404 })
+    }
+  }
+
   return NextResponse.json({
     id: job.id,
     status: job.status,

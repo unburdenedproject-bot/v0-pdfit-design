@@ -56,9 +56,27 @@ export async function GET(request: NextRequest) {
     const deleted = count ?? 0
     console.log(`usage_logs cleanup: deleted ${deleted} rows older than ${cutoffISO}`)
 
+    // Also clean up expired processing jobs (older than 24 hours)
+    let jobsDeleted = 0
+    try {
+      const jobCutoff = new Date()
+      jobCutoff.setHours(jobCutoff.getHours() - 24)
+      const { count: jobCount } = await supabase
+        .from("processing_jobs")
+        .delete()
+        .lt("created_at", jobCutoff.toISOString())
+        .in("status", ["completed", "failed"])
+        .select("id", { count: "exact", head: true })
+      jobsDeleted = jobCount ?? 0
+      console.log(`processing_jobs cleanup: deleted ${jobsDeleted} expired jobs`)
+    } catch (jobErr) {
+      console.error("processing_jobs cleanup failed:", jobErr)
+    }
+
     return NextResponse.json({
       ok: true,
       deleted,
+      jobsDeleted,
       cutoff: cutoffISO,
     })
   } catch (err) {

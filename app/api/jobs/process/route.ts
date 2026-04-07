@@ -16,6 +16,13 @@ export const maxDuration = 300
  * Claims the highest-priority pending job and processes it.
  */
 export async function POST(request: NextRequest) {
+  // Only allow internal calls (from cron or server-side)
+  const authHeader = request.headers.get("authorization")
+  const cronSecret = process.env.CRON_SECRET
+  if (cronSecret && authHeader !== `Bearer ${cronSecret}`) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+  }
+
   const startTime = Date.now()
   let tmpPath: string | null = null
   let inputBlobUrl: string | null = null
