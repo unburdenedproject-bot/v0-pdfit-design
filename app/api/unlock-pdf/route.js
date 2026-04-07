@@ -185,10 +185,6 @@ export async function POST(request) {
     }
     return res;
   } catch (err) {
-    if (tmpPath) {
-      await unlink(tmpPath).catch(() => {});
-    }
-
     console.error("unlock-pdf route error:", err);
 
     const rawMessage =
@@ -217,5 +213,12 @@ export async function POST(request) {
       { error: "Unlock failed", details: rawMessage },
       { status: 502 }
     );
+  } finally {
+    if (uploadedBlobUrl) {
+      await del(uploadedBlobUrl).catch(() => {});
+    }
+    if (tmpPath) {
+      await unlink(tmpPath).catch(() => {});
+    }
   }
 }

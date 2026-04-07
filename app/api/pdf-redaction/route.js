@@ -181,9 +181,6 @@ export async function POST(request) {
       },
     });
   } catch (err) {
-    if (tmpPath) await unlink(tmpPath).catch(() => {});
-    await Promise.allSettled(uploadedPageBlobUrls.map((url) => del(url)));
-
     console.error("pdf-redaction route error:", err);
 
     const message = err && typeof err === "object" && err.message
@@ -191,5 +188,13 @@ export async function POST(request) {
       : "An unexpected error occurred.";
 
     return errorResponse(message, 500);
+  } finally {
+    if (uploadedBlobUrl) {
+      await del(uploadedBlobUrl).catch(() => {});
+    }
+    await Promise.allSettled(uploadedPageBlobUrls.map((url) => del(url)));
+    if (tmpPath) {
+      await unlink(tmpPath).catch(() => {});
+    }
   }
 }

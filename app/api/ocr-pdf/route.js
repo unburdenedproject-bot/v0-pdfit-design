@@ -95,6 +95,8 @@ async function resolveInput(request) {
 }
 
 export async function POST(request) {
+  let uploadedBlobUrl = null;
+
   try {
     // Usage check: auth + daily limit
     const { createClient } = await import("@/lib/supabase/server");
@@ -120,7 +122,8 @@ export async function POST(request) {
     const input = await resolveInput(request);
     if (input.error) return input.error;
 
-    const { buffer, originalName, lang, uploadedBlobUrl } = input;
+    const { buffer, originalName, lang } = input;
+    uploadedBlobUrl = input.uploadedBlobUrl || null;
 
     // ── Reject blank PDFs before hitting paid API ──
     try {
@@ -254,5 +257,9 @@ export async function POST(request) {
   } catch (err) {
     console.error("OCR route failed:", err?.stack || err);
     return jsonError("OCR failed", 500, err?.message || String(err));
+  } finally {
+    if (uploadedBlobUrl) {
+      await del(uploadedBlobUrl).catch(() => {});
+    }
   }
 }

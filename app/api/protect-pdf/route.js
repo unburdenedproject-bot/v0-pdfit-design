@@ -181,10 +181,6 @@ export async function POST(request) {
     }
     return res;
   } catch (err) {
-    if (tmpPath) {
-      await unlink(tmpPath).catch(() => {});
-    }
-
     console.error("protect-pdf route error:", err);
 
     const message =
@@ -193,5 +189,12 @@ export async function POST(request) {
         : "An unexpected error occurred.";
 
     return errorResponse(message, 502);
+  } finally {
+    if (uploadedBlobUrl) {
+      await del(uploadedBlobUrl).catch(() => {});
+    }
+    if (tmpPath) {
+      await unlink(tmpPath).catch(() => {});
+    }
   }
 }

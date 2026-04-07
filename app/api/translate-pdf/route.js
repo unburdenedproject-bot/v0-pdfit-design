@@ -181,10 +181,15 @@ Rules:
       targetLanguage: targetLanguageName,
     });
   } catch (err) {
-    if (tmpPath) await unlink(tmpPath).catch(() => {});
-    if (uploadedBlobUrl) await del(uploadedBlobUrl).catch(() => {});
     console.error("translate-pdf route error:", err);
     const message = err && typeof err === "object" && err.message ? err.message : "An unexpected error occurred.";
     return errorResponse(message, 500);
+  } finally {
+    if (uploadedBlobUrl) {
+      await del(uploadedBlobUrl).catch(() => {});
+    }
+    if (tmpPath) {
+      await unlink(tmpPath).catch(() => {});
+    }
   }
 }

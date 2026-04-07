@@ -145,10 +145,6 @@ export async function POST(request) {
     }
     return res;
   } catch (err) {
-    if (tmpPath) {
-      await unlink(tmpPath).catch(() => {});
-    }
-
     console.error("pdf-to-txt route error:", err);
 
     const rawMessage =
@@ -162,5 +158,12 @@ export async function POST(request) {
     }
 
     return errorResponse("Something went wrong while extracting text. Please try again or upload a different file.", 500);
+  } finally {
+    if (uploadedBlobUrl) {
+      await del(uploadedBlobUrl).catch(() => {});
+    }
+    if (tmpPath) {
+      await unlink(tmpPath).catch(() => {});
+    }
   }
 }

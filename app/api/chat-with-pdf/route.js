@@ -214,8 +214,6 @@ ${documentText}`;
       pdfText: documentText, // Return extracted text so client can cache it
     });
   } catch (err) {
-    if (tmpPath) await unlink(tmpPath).catch(() => {});
-
     console.error("chat-with-pdf route error:", err);
 
     const message =
@@ -224,5 +222,12 @@ ${documentText}`;
         : "An unexpected error occurred.";
 
     return errorResponse(message, 500);
+  } finally {
+    if (uploadedBlobUrl) {
+      await del(uploadedBlobUrl).catch(() => {});
+    }
+    if (tmpPath) {
+      await unlink(tmpPath).catch(() => {});
+    }
   }
 }

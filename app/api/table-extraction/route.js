@@ -374,9 +374,6 @@ export async function POST(request) {
       },
     });
   } catch (err) {
-    if (tmpPath) await unlink(tmpPath).catch(() => {});
-    if (uploadedBlobUrl) await del(uploadedBlobUrl).catch(() => {});
-
     console.error("table-extraction route error:", err);
 
     const message =
@@ -385,6 +382,13 @@ export async function POST(request) {
         : "An unexpected error occurred.";
 
     return errorResponse(message, 500);
+  } finally {
+    if (uploadedBlobUrl) {
+      await del(uploadedBlobUrl).catch(() => {});
+    }
+    if (tmpPath) {
+      await unlink(tmpPath).catch(() => {});
+    }
   }
 }
 

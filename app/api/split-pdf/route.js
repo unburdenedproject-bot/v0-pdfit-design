@@ -225,10 +225,6 @@ export async function POST(request) {
     }
     return res;
   } catch (err) {
-    if (tmpPath) {
-      await unlink(tmpPath).catch(() => {});
-    }
-
     console.error("split-pdf route error:", err);
 
     const rawMessage =
@@ -241,5 +237,12 @@ export async function POST(request) {
     }
 
     return errorResponse("Something went wrong while splitting your PDF. Please try again or upload a different file.", 500);
+  } finally {
+    if (uploadedBlobUrl) {
+      await del(uploadedBlobUrl).catch(() => {});
+    }
+    if (tmpPath) {
+      await unlink(tmpPath).catch(() => {});
+    }
   }
 }

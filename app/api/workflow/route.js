@@ -196,10 +196,6 @@ export async function POST(request) {
       },
     });
   } catch (err) {
-    for (const f of tempFiles) {
-      await unlink(f).catch(() => {});
-    }
-
     console.error("workflow route error:", err);
 
     const message = err && typeof err === "object" && err.message
@@ -207,5 +203,12 @@ export async function POST(request) {
       : "An unexpected error occurred.";
 
     return errorResponse(message, 500);
+  } finally {
+    if (uploadedBlobUrl) {
+      await del(uploadedBlobUrl).catch(() => {});
+    }
+    for (const f of tempFiles) {
+      await unlink(f).catch(() => {});
+    }
   }
 }

@@ -390,9 +390,6 @@ ${resumeText.substring(0, MAX_RESUME_TEXT_CHARS)}`;
 
     return NextResponse.json(analysis);
   } catch (err) {
-    if (tmpPath) await unlink(tmpPath).catch(() => {});
-    if (uploadedBlobUrl) await del(uploadedBlobUrl).catch(() => {});
-
     console.error("ats-optimizer route error:", err);
 
     const message =
@@ -401,5 +398,12 @@ ${resumeText.substring(0, MAX_RESUME_TEXT_CHARS)}`;
         : "An unexpected error occurred.";
 
     return errorResponse(message, 500);
+  } finally {
+    if (uploadedBlobUrl) {
+      await del(uploadedBlobUrl).catch(() => {});
+    }
+    if (tmpPath) {
+      await unlink(tmpPath).catch(() => {});
+    }
   }
 }

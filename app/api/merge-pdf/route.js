@@ -181,11 +181,6 @@ export async function POST(request) {
     }
     return res;
   } catch (err) {
-    // Clean up temp files on error
-    for (const tmpPath of tmpPaths) {
-      await unlink(tmpPath).catch(() => {});
-    }
-
     console.error("merge-pdf route error:", err);
 
     let message = "Merge failed";
@@ -209,5 +204,12 @@ export async function POST(request) {
     }
 
     return Response.json({ error: message, details }, { status: httpStatus });
+  } finally {
+    for (const url of uploadedBlobUrls) {
+      if (url) await del(url).catch(() => {});
+    }
+    for (const tmpPath of tmpPaths) {
+      await unlink(tmpPath).catch(() => {});
+    }
   }
 }

@@ -204,9 +204,6 @@ Rules:
 
     return NextResponse.json({ summary: summary.trim() });
   } catch (err) {
-    if (tmpPath) await unlink(tmpPath).catch(() => {});
-    if (uploadedBlobUrl) await del(uploadedBlobUrl).catch(() => {});
-
     console.error("pdf-summarizer route error:", err);
 
     const message =
@@ -215,5 +212,12 @@ Rules:
         : "An unexpected error occurred.";
 
     return errorResponse(message, 500);
+  } finally {
+    if (uploadedBlobUrl) {
+      await del(uploadedBlobUrl).catch(() => {});
+    }
+    if (tmpPath) {
+      await unlink(tmpPath).catch(() => {});
+    }
   }
 }
