@@ -32,6 +32,12 @@
 - Fixed missing Download import in 5 files (office-to-pdf EN/ES/BR, pdf-a-google-sheets, pdf-a-google-docs)
 - Zero bg-[#191B4D] remaining in codebase (except tools index page)
 
+### Learn Index Pages (April 7, 2026)
+- Created `/learn` index page — 81 articles organized by 9 categories (Compress, Merge & Split, Convert, Office to PDF, Rotate, Protect & Unlock, Watermark, OCR, QR Codes)
+- Created `/es/aprender` index page — same 81 articles in Spanish with translated category names
+- Created `/br/aprender` index page — same 81 articles in Brazilian Portuguese
+- Previously `/learn` returned 404 — individual articles existed but no landing page
+
 ### Newsletter Signup (April 7, 2026)
 - New API route: `/api/newsletter` — saves email to Supabase `newsletter_subscribers` table (upsert)
 - New component: `newsletter-signup.tsx` — trilingual form (EN/ES/BR) with email input, loading/success/error states
