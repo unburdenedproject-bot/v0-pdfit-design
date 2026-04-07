@@ -20,7 +20,7 @@ export async function POST() {
     const priceId = process.env.STRIPE_PRICE_ID
     if (!priceId) {
       return NextResponse.json(
-        { error: "Stripe price not configured." },
+        { error: "The payment service is temporarily unavailable. Please try again later." },
         { status: 500 }
       )
     }

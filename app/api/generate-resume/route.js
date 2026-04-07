@@ -29,7 +29,7 @@ async function callOpenAI(apiKey, prompt) {
 
   if (!openaiRes.ok) {
     if (openaiRes.status === 429) throw new Error("AI service is temporarily busy. Please try again.");
-    throw new Error(`AI generation failed (${openaiRes.status})`);
+    console.error("AI generation request failed:", openaiRes.status); throw new Error("An error occurred while generating your resume. Please try again.");
   }
 
   const data = await openaiRes.json();
@@ -175,7 +175,10 @@ export async function POST(request) {
     }
 
     const apiKey = process.env.OPENAI_API_KEY;
-    if (!apiKey) return errorResponse("OpenAI API is not configured.", 500);
+    if (!apiKey) {
+      console.error("OPENAI_API_KEY is not set");
+      return errorResponse("The service is temporarily unavailable. Please try again later.", 500);
+    }
 
     const body = await request.json();
     const mode = body.mode;

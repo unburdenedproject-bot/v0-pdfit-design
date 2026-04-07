@@ -55,7 +55,7 @@ export async function POST(request) {
 
     const apiKey = process.env.OPENAI_API_KEY;
     if (!apiKey) {
-      return errorResponse("AI service is not configured.", 500);
+      return errorResponse("The service is temporarily unavailable. Please try again later.", 500);
     }
 
     const body = await request.json();
@@ -74,7 +74,10 @@ export async function POST(request) {
 
     // Download PDF from blob
     const res = await fetch(blobUrl);
-    if (!res.ok) throw new Error(`Failed to fetch PDF (${res.status})`);
+    if (!res.ok) {
+      console.error("Failed to fetch PDF:", res.status);
+      throw new Error("Failed to retrieve your uploaded file. Please try uploading again.");
+    }
     const buffer = Buffer.from(await res.arrayBuffer());
     const id = randomUUID();
     tmpPath = join("/tmp", `${id}-translate.pdf`);
@@ -167,7 +170,7 @@ Rules:
       const errBody = await openaiRes.text();
       console.error("OpenAI API error:", openaiRes.status, errBody);
       if (openaiRes.status === 429) throw new Error("AI service is temporarily busy. Please try again in a few seconds.");
-      throw new Error(`AI service failed (${openaiRes.status})`);
+      console.error("AI service request failed:", openaiRes.status); throw new Error("An error occurred while processing your request. Please try again.");
     }
 
     const openaiData = await openaiRes.json();

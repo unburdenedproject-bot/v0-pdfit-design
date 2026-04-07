@@ -134,7 +134,8 @@ export async function POST(request) {
 
       const imageResponse = await fetch(pageBlobUrl);
       if (!imageResponse.ok) {
-        throw new Error(`Failed to fetch redacted page ${pageIndex + 1} (${imageResponse.status}).`);
+        console.error(`Failed to fetch redacted page ${pageIndex + 1} (${imageResponse.status})`);
+        throw new Error(`Failed to process page ${pageIndex + 1}. Please try again.`);
       }
 
       const imageBytes = await imageResponse.arrayBuffer();

@@ -57,7 +57,7 @@ export async function POST(request) {
     const secretKey = process.env.ILOVEAPI_SECRET_KEY;
 
     if (!publicKey || !secretKey) {
-      return errorResponse("Missing ILOVEAPI keys", 500);
+      return errorResponse("The processing service is temporarily unavailable. Please try again later.", 500);
     }
 
     // -----------------------------------------------------------
@@ -215,8 +215,8 @@ export async function POST(request) {
     }
 
     return Response.json(
-      { error: "Unlock failed", details: rawMessage },
-      { status: 502 }
+      { error: "An error occurred while unlocking your PDF. Please try again." },
+      { status: 500 }
     );
   } finally {
     if (uploadedBlobUrl) {

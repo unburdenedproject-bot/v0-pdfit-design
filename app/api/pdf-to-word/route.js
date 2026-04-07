@@ -144,7 +144,8 @@ async function convertWithCloudConvert(fileBuffer, fileName) {
 
   const downloadRes = await fetch(fileUrl);
   if (!downloadRes.ok) {
-    throw new Error(`Failed to download converted file (${downloadRes.status})`);
+    console.error("Failed to download converted file:", downloadRes.status);
+    throw new Error("An error occurred while retrieving the converted file. Please try again.");
   }
 
   return Buffer.from(await downloadRes.arrayBuffer());

@@ -26,7 +26,7 @@ export async function POST() {
     const customerId = profile?.stripe_customer_id
     if (!customerId) {
       return NextResponse.json(
-        { error: "No Stripe subscription found. Please contact support." },
+        { error: "No active subscription found. Please contact support." },
         { status: 400 },
       )
     }

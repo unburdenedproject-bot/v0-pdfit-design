@@ -57,7 +57,7 @@ export async function POST(request) {
     const secretKey = process.env.ILOVEAPI_SECRET_KEY;
 
     if (!publicKey || !secretKey) {
-      return errorResponse("Missing ILOVEAPI keys", 500);
+      return errorResponse("The processing service is temporarily unavailable. Please try again later.", 500);
     }
 
     // -----------------------------------------------------------
@@ -193,7 +193,7 @@ export async function POST(request) {
       ? "An error occurred while processing your file. Please try again."
       : (raw || "An unexpected error occurred.");
 
-    return errorResponse(message, 502);
+    return errorResponse(safe, 500);
   } finally {
     if (uploadedBlobUrl) {
       await del(uploadedBlobUrl).catch(() => {});

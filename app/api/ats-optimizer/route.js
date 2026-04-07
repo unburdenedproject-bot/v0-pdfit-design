@@ -172,7 +172,8 @@ export async function POST(request) {
 
     const apiKey = process.env.OPENAI_API_KEY;
     if (!apiKey) {
-      return errorResponse("OpenAI API is not configured.", 500);
+      console.error("OPENAI_API_KEY is not set");
+      return errorResponse("The analysis service is temporarily unavailable. Please try again later.", 500);
     }
 
     // Parse request
@@ -369,7 +370,7 @@ ${resumeText.substring(0, MAX_RESUME_TEXT_CHARS)}`;
       if (openaiRes.status === 429) {
         throw new Error("AI service is temporarily busy. Please try again in a few seconds.");
       }
-      throw new Error(`AI analysis failed (${openaiRes.status})`);
+      console.error("AI analysis request failed:", openaiRes.status); throw new Error("An error occurred while analyzing your file. Please try again.");
     }
 
     const openaiData = await openaiRes.json();

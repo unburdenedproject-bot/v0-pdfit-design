@@ -190,7 +190,8 @@ async function signatureSourceToBytes(signatureSource) {
 
   const sigRes = await fetch(signatureSource);
   if (!sigRes.ok) {
-    throw new Error(`Failed to fetch signature image (${sigRes.status})`);
+    console.error(`Failed to fetch signature image (${sigRes.status})`);
+    throw new Error("Failed to load the signature. Please try again.");
   }
 
   return new Uint8Array(await sigRes.arrayBuffer());
