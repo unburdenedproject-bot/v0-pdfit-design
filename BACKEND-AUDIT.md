@@ -62,18 +62,14 @@
 
 ## HIGH — Fix Within 2 Weeks
 
-### [ ] 6. Usage Limits Bypassable (Race Condition + Cookie Spoofing)
-- **File:** `lib/usage-check.ts` lines 68-89 (cookies) and 106-155 (race condition)
-- **Issue:** Anonymous limit uses client-side cookie (clearable). Free user limit has read-modify-write race condition.
-- **Risk:** Free tier abuse, lost revenue
-- **Fix:** Atomic Postgres increment function + Upstash Redis for anonymous tracking
+### [x] 6. Usage Limits Bypassable (Race Condition) — FIXED April 7
+- **File:** `lib/usage-check.ts`
+- **Fix applied:** Atomic Postgres `increment_usage()` function replaces read-modify-write. Cookie spoofing still possible (tracked for future Redis fix).
 - **Effort:** 2 hours
 
-### [ ] 7. Webhook Has No Idempotency Protection
+### [x] 7. Webhook Has No Idempotency Protection — FIXED April 7
 - **File:** `app/api/webhook/route.ts`
-- **Issue:** Stripe retries process the same event multiple times (duplicate welcome emails, duplicate DB writes)
-- **Risk:** Duplicate emails, data inconsistency
-- **Fix:** Store processed event IDs in `webhook_events` table, skip duplicates
+- **Fix applied:** `webhook_events` table created, event ID checked before processing, recorded after.
 - **Effort:** 3 hours
 
 ### [ ] 8. Orphaned Blob Files Never Cleaned Up
@@ -83,18 +79,13 @@
 - **Fix:** try/finally cleanup in all routes + weekly cleanup cron for files >24h old
 - **Effort:** 3 hours
 
-### [ ] 9. No Retry Logic for External APIs
-- **Files:** All iLoveAPI, CloudConvert, Document AI routes
-- **Issue:** Transient API failures (timeout, 429, 502) immediately fail with no retry
-- **Risk:** 100% user failure during any 5-minute API blip
-- **Fix:** Exponential backoff with 3 retries
-- **Effort:** 3 hours
+### [x] 9. No Retry Logic for External APIs — PARTIALLY FIXED April 7
+- **Fix applied:** Created `lib/retry.ts` with exponential backoff + jitter. Needs to be imported and applied to individual API routes.
+- **Effort remaining:** 2 hours (apply to ~20 routes)
 
-### [ ] 10. Contact Form Has No Rate Limiting
+### [x] 10. Contact Form Has No Rate Limiting — FIXED April 7
 - **File:** `app/api/contact/route.ts`
-- **Issue:** No per-IP throttle. Attacker can spam thousands of messages.
-- **Risk:** Database spam, storage costs
-- **Fix:** Upstash Redis rate limit: 3 per hour per IP
+- **Fix applied:** Upstash Redis rate limit: 3 submissions per hour per IP. Falls back gracefully if Redis not configured.
 - **Effort:** 1 hour
 
 ### [ ] 11. Memory Will Crash at ~50 Concurrent Users
@@ -104,9 +95,9 @@
 - **Fix:** Use Node.js streams instead of full-file buffering
 - **Effort:** 4 hours
 
-### [ ] 12. Missing Foreign Keys on usage_logs
+### [x] 12. Missing Foreign Keys on usage_logs — FIXED April 7 (SQL run in Supabase)
 - **File:** `scripts/004_create_usage_logs.sql`
-- **Issue:** `usage_logs.user_id` has no REFERENCES constraint — orphaned records after user deletion
+- **Fix applied:** `ALTER TABLE usage_logs ADD CONSTRAINT fk_usage_logs_user_id FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE`
 - **Fix:** `ALTER TABLE usage_logs ADD CONSTRAINT fk_usage_logs_user_id FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE`
 - **Effort:** 30 minutes
 
