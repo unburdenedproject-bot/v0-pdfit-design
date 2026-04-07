@@ -101,6 +101,11 @@ export async function POST(request: NextRequest) {
 
       if (error) {
         console.error("Failed to update user plan:", error)
+        // Return 500 so Stripe retries — user paid but plan didn't update
+        return NextResponse.json(
+          { error: "Database update failed" },
+          { status: 500 }
+        )
       }
 
       // Send welcome email
@@ -230,6 +235,10 @@ export async function POST(request: NextRequest) {
 
         if (error) {
           console.error("Failed to update subscription:", error)
+          return NextResponse.json(
+            { error: "Database update failed" },
+            { status: 500 }
+          )
         }
       }
     }

@@ -26,11 +26,12 @@ export async function GET(
       )
     }
 
-    // Validate the URL looks like a Vercel Blob URL
-    if (
-      !blobUrl.startsWith("https://") ||
-      !blobUrl.includes("blob")
-    ) {
+    // Validate the URL is a legitimate Vercel Blob URL (prevent SSRF/data exfil)
+    const isVercelBlob =
+      blobUrl.includes(".vercel-storage.com") ||
+      blobUrl.includes(".blob.vercel-storage.com")
+
+    if (!blobUrl.startsWith("https://") || !isVercelBlob) {
       return NextResponse.json(
         { error: "Invalid blob URL." },
         { status: 400 },
