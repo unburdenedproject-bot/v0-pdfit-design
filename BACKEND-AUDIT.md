@@ -148,7 +148,7 @@
 - **Fix:** Create `lib/api/blob-handler.ts`, `lib/api/error-handler.ts`, API route factory
 - **Effort:** 2 days
 
-### [ ] 20. Convert .js API Routes to TypeScript
+### [x] 20. Convert .js API Routes to TypeScript — FIXED April 7 (all 32 routes converted)
 - **Issue:** 32 of 48 routes are untyped .js — no IDE support, no compile-time safety
 - **Fix:** Rename + add types incrementally
 - **Effort:** 3-5 days
