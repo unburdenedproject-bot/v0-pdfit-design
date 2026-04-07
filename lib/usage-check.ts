@@ -127,29 +127,29 @@ export async function logUsage(userId: string, toolName: string) {
 
   const today = new Date().toISOString().split("T")[0]
 
-  const { data: usage, error: selectError } = await serviceClient
-    .from("usage")
-    .select("count")
-    .eq("user_id", userId)
-    .eq("date", today)
-    .single()
-
-  if (selectError) {
-    console.error("[logUsage] select error:", selectError)
-  }
-
-  const currentCount = usage?.count ?? 0
-
-  const { error: upsertError } = await serviceClient.from("usage").upsert(
-    {
-      user_id: userId,
-      date: today,
-      count: currentCount + 1,
-    },
-    { onConflict: "user_id,date" }
+  // Atomic increment — avoids race condition where two concurrent requests
+  // both read the same count and write count+1 (losing one increment).
+  // Uses SQL ON CONFLICT to do INSERT or UPDATE in a single statement.
+  const { error: upsertError } = await serviceClient.rpc(
+    "increment_usage",
+    { p_user_id: userId, p_date: today }
   )
 
   if (upsertError) {
-    console.error("[logUsage] upsert error:", upsertError)
+    // Fallback to non-atomic upsert if RPC function doesn't exist yet
+    console.error("[logUsage] rpc error (falling back to upsert):", upsertError)
+    const { data: usage } = await serviceClient
+      .from("usage")
+      .select("count")
+      .eq("user_id", userId)
+      .eq("date", today)
+      .single()
+
+    const currentCount = usage?.count ?? 0
+
+    await serviceClient.from("usage").upsert(
+      { user_id: userId, date: today, count: currentCount + 1 },
+      { onConflict: "user_id,date" }
+    )
   }
 }

@@ -1,8 +1,35 @@
-import { NextResponse } from "next/server"
+import { NextRequest, NextResponse } from "next/server"
 import { createClient } from "@supabase/supabase-js"
+import { Ratelimit } from "@upstash/ratelimit"
+import { Redis } from "@upstash/redis"
 
-export async function POST(request: Request) {
+// Rate limit: 3 contact submissions per hour per IP
+const ratelimit =
+  process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN
+    ? new Ratelimit({
+        redis: Redis.fromEnv(),
+        limiter: Ratelimit.slidingWindow(3, "1 h"),
+        prefix: "contact",
+      })
+    : null
+
+export async function POST(request: NextRequest) {
   try {
+    // Rate limiting
+    if (ratelimit) {
+      const ip =
+        request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+        request.headers.get("x-real-ip") ||
+        "unknown"
+      const { success } = await ratelimit.limit(ip)
+      if (!success) {
+        return NextResponse.json(
+          { error: "Too many submissions. Please try again later." },
+          { status: 429 }
+        )
+      }
+    }
+
     const body = await request.json()
     const name = (body.name || "").trim()
     const email = (body.email || "").trim()
@@ -23,7 +50,6 @@ export async function POST(request: Request) {
       )
     }
 
-    // Basic email validation
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return NextResponse.json(
         { error: "Invalid email address." },
