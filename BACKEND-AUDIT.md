@@ -111,7 +111,7 @@
 - **Fix:** Check `Origin` header matches your domain
 - **Effort:** 2 hours
 
-### [ ] 14. Error Messages Leak Internal Details
+### [x] 14. Error Messages Leak Internal Details — FIXED April 7 (34 routes)
 - **Files:** Multiple API routes
 - **Issue:** Errors expose "CloudConvert job creation failed", "Document AI API error (403)"
 - **Fix:** Generic user-facing errors, detailed server-side logging
@@ -122,7 +122,7 @@
 - **Fix:** Weekly cron comparing Stripe subscriptions vs DB plans, emails Paula on mismatch
 - **Effort:** 4 hours
 
-### [ ] 16. Unvalidated Blob URL Fetch (Cross-User File Access)
+### [x] 16. Unvalidated Blob URL Fetch (Cross-User File Access) — FIXED April 7 (32 routes)
 - **Files:** All routes that fetch blobUrl from request body
 - **Issue:** User A can pass User B's blob URL to any processing route
 - **Fix:** Validate blob URL ownership before processing
