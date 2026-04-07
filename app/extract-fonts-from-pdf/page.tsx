@@ -10,59 +10,46 @@ export const metadata = {
     "Learn how to identify and extract fonts used in PDF documents. PDF.it helps you work with PDF content including text extraction and document conversion.",
 }
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Can I extract fonts directly from a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PDFs embed font data for rendering, but extracting usable font files requires specialized tools. You can identify which fonts are used by examining PDF properties or converting the PDF to an editable format like Word, which preserves font names." }
-    },
-    {
-      "@type": "Question",
-      "name": "Is it legal to extract fonts from a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Font licensing varies. Most commercial fonts are licensed per user or per device. Extracting and reusing embedded fonts without a proper license may violate the font's EULA. Always check the font license before reusing extracted fonts." }
-    },
-    {
-      "@type": "Question",
-      "name": "How can I identify which fonts are used in a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "You can check PDF properties in most readers (File > Properties > Fonts), convert the PDF to Word to see font names in the editor, or extract the text and compare it visually using font identification services like WhatTheFont or Font Squirrel." }
-    },
-    {
-      "@type": "Question",
-      "name": "What happens to fonts when I convert a PDF to Word?",
-      "acceptedAnswer": { "@type": "Answer", "text": "When you convert a PDF to Word, the converter identifies the fonts used and references them in the Word document. If the font is installed on your system, it displays correctly. If not, Word substitutes a similar font." }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I extract fonts from a scanned PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Scanned PDFs contain images, not text or font data. You would first need to run OCR to extract the text, then use a visual font identification tool to match the typeface used in the scanned document." }
-    },
-    {
-      "@type": "Question",
-      "name": "What are embedded fonts in a PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Embedded fonts are font files included within a PDF so the document displays correctly on any device, even if the reader doesn't have the font installed. Most professional PDFs embed fonts to ensure consistent rendering." }
-    }
-  ]
-}
-
 export default function ExtractFontsFromPDFPage() {
+  const faqs = [
+    { q: "Can I extract fonts directly from a PDF?", a: "PDFs embed font data for rendering, but extracting usable font files requires specialized tools. You can identify which fonts are used by examining PDF properties or converting the PDF to an editable format like Word, which preserves font names." },
+    { q: "Is it legal to extract fonts from a PDF?", a: "Font licensing varies. Most commercial fonts are licensed per user or per device. Extracting and reusing embedded fonts without a proper license may violate the font's EULA. Always check the font license before reusing extracted fonts." },
+    { q: "How can I identify which fonts are used in a PDF?", a: "You can check PDF properties in most readers (File > Properties > Fonts), convert the PDF to Word to see font names in the editor, or extract the text and compare it visually using font identification services like WhatTheFont or Font Squirrel." },
+    { q: "What happens to fonts when I convert a PDF to Word?", a: "When you convert a PDF to Word, the converter identifies the fonts used and references them in the Word document. If the font is installed on your system, it displays correctly. If not, Word substitutes a similar font." },
+    { q: "Can I extract fonts from a scanned PDF?", a: "Scanned PDFs contain images, not text or font data. You would first need to run OCR to extract the text, then use a visual font identification tool to match the typeface used in the scanned document." },
+    { q: "What are embedded fonts in a PDF?", a: "Embedded fonts are font files included within a PDF so the document displays correctly on any device, even if the reader doesn't have the font installed. Most professional PDFs embed fonts to ensure consistent rendering." },
+  ]
+
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
       <Header />
       <main>
         {/* Hero */}
-        <section className="bg-[#191B4D] text-white py-16">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section
+          className="text-white py-16 relative overflow-hidden"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%),
+              #0E0F1E
+            `,
+          }}
+        >
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ opacity: 0.04 }}>
+            <filter id="heroGrain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter>
+            <rect width="100%" height="100%" filter="url(#heroGrain)" />
+          </svg>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#1a1f5e] to-[#252A6A] rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Type className="h-10 w-10 text-white" />
+              <div
+                className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6"
+                style={{
+                  background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                  boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)",
+                }}
+              >
+                <Type className="h-10 w-10 text-[#14D8C4]" />
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Extract Fonts from PDF</h1>
               <p className="text-xl text-slate-300 mb-8">
@@ -77,7 +64,22 @@ export default function ExtractFontsFromPDFPage() {
           </div>
         </section>
 
-        {/* CTA */}
+        {/* Intro */}
+        <section className="py-10 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Fonts are a critical part of any PDF's visual identity. Whether you're trying to match a brand's typography, recreate a document layout, or simply identify what font was used, understanding how fonts are embedded in PDFs is the first step. Convert your PDF to Word to reveal font names, or extract text for visual font matching.
+            </p>
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
+              <li className="flex items-center gap-2">✓ Identify fonts embedded in any PDF document</li>
+              <li className="flex items-center gap-2">✓ Convert PDFs to Word to reveal font names</li>
+              <li className="flex items-center gap-2">✓ Extract text content for visual font matching</li>
+              <li className="flex items-center gap-2">✓ No installation — use PDF.it in your browser</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* CTA — Work with PDF Text Content */}
         <section className="py-12 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-slate-900 mb-4">Work with PDF Text Content</h2>
@@ -89,61 +91,76 @@ export default function ExtractFontsFromPDFPage() {
           </div>
         </section>
 
-        {/* About */}
-        <section className="py-16 bg-gray-50">
+        {/* Feature Blocks */}
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <p className="text-lg text-slate-600 mb-8">
-              Fonts are a critical part of any PDF's visual identity. Whether you're trying to match a brand's typography, recreate a document layout, or simply identify what font was used, understanding how fonts are embedded in PDFs is the first step.
-            </p>
-            <ul className="space-y-2 text-slate-700 mb-8">
-              <li>✓ Identify fonts embedded in any PDF document</li>
-              <li>✓ Convert PDFs to Word to reveal font names and styling</li>
-              <li>✓ Extract text content for visual font matching</li>
-              <li>✓ Works with any PDF — reports, brochures, books, and more</li>
-              <li>✓ No installation — use PDF.it tools directly in your browser</li>
-            </ul>
-          </div>
-        </section>
-
-        {/* Feature Sections */}
-        <section className="py-16 bg-[#F3F4FF]">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl space-y-12">
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Why People Extract Fonts from PDFs</h2>
-              <p className="text-slate-600">
-                Designers need to match typography across projects. Marketers want to maintain brand consistency. Developers need to identify fonts for web projects. Whatever your reason, identifying the fonts in a PDF is a common workflow that starts with understanding how fonts are embedded in the document format.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">How to Identify Fonts in a PDF</h2>
-              <p className="text-slate-600">
-                The fastest way to identify fonts is to convert your PDF to Word using PDF.it. The converted document preserves font names, so you can select any text and see the typeface in the font menu. Alternatively, extract the text and use a visual font identification service like WhatTheFont or Font Squirrel Matcherator.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-black text-slate-900 mb-3">Font Licensing and Legal Considerations</h2>
-              <p className="text-slate-600">
-                Just because a font is embedded in a PDF doesn't mean you can freely use it. Most commercial fonts require a license for each use case — desktop, web, app, or server. Always verify the font's license terms before using it in your own projects. Many excellent free alternatives exist on Google Fonts and Font Squirrel.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* How To */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">How to Identify Fonts in a PDF</h2>
-            <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                "Upload your PDF to PDF.it and convert it to Word format.",
-                "Open the Word document and select any text to see the font name.",
-                "Search for the font online to find licensing options or free alternatives.",
-              ].map((step, i) => (
-                <div key={i} className="flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-200">
-                  <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">
-                    {i + 1}
+                { title: "Why People Extract Fonts from PDFs", desc: "Designers match typography across projects, marketers maintain brand consistency, and developers identify fonts for web projects. Identifying PDF fonts is a common workflow." },
+                { title: "How to Identify Fonts in a PDF", desc: "Convert your PDF to Word using PDF.it. The converted document preserves font names so you can select any text and see the typeface. Or use WhatTheFont for visual matching." },
+                { title: "Font Licensing Considerations", desc: "Just because a font is embedded in a PDF doesn't mean you can freely use it. Most commercial fonts require a license. Many excellent free alternatives exist on Google Fonts." },
+              ].map((feature) => (
+                <div
+                  key={feature.title}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
+                >
+                  <div
+                    className="rounded-[11px] p-6 h-full"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <h3 className="text-lg font-bold text-white mb-2">{feature.title}</h3>
+                    <p className="text-slate-400 text-sm leading-relaxed">{feature.desc}</p>
                   </div>
-                  <p className="text-slate-700 pt-1">{step}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works */}
+        <section className="py-16 bg-[#F3F4FF]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">How to Identify Fonts in a PDF</h2>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
+              {[
+                { num: "1", title: "Convert PDF to Word", desc: "Upload your PDF and convert it to Word format" },
+                { num: "2", title: "Check font names", desc: "Select any text to see the font in the menu" },
+                { num: "3", title: "Find the font online", desc: "Search for licensing options or free alternatives" },
+              ].map((step) => (
+                <div key={step.num} className="flex-1">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1a1f5e, #252A6A)",
+                      boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)",
+                      border: "1px solid rgba(20,216,196,0.25)",
+                    }}
+                  >
+                    <span className="text-[#14D8C4] font-black text-lg">{step.num}</span>
+                  </div>
+                  <p className="font-semibold text-slate-900">{step.title}</p>
+                  <p className="text-sm text-slate-500 mt-1">{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -161,40 +178,79 @@ export default function ExtractFontsFromPDFPage() {
                 { name: "Extract Text", href: "/extract-text-from-pdf", desc: "Pull all text from PDFs" },
                 { name: "Extract Images", href: "/extract-images-from-pdf", desc: "Get embedded images" },
               ].map((tool) => (
-                <Link
+                <div
                   key={tool.href}
-                  href={tool.href}
-                  className="rounded-xl p-4 transition-all text-center flex flex-col justify-center min-h-[80px] hover:-translate-y-1" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(20,216,196,0.25)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.2)" }}
+                  className="rounded-xl p-[1px]"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))",
+                  }}
                 >
-                  <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
-                  <div className="text-xs text-slate-400">{tool.desc}</div>
-                </Link>
+                  <Link
+                    href={tool.href}
+                    className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]"
+                    style={{
+                      background: `
+                        radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%),
+                        rgba(255, 255, 255, 0.07)
+                      `,
+                      backdropFilter: "blur(12px)",
+                      WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <div className="font-bold text-[#14D8C4] text-sm mb-1">{tool.name}</div>
+                    <div className="text-xs text-slate-400">{tool.desc}</div>
+                  </Link>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-gray-50">
+        <section
+          className="py-16"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 40% at 30% 20%, rgba(232,129,58,0.07) 0%, transparent 55%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(20,216,196,0.06) 0%, transparent 55%),
+              radial-gradient(ellipse 50% 40% at 60% 0%, rgba(107,124,255,0.05) 0%, transparent 50%),
+              radial-gradient(ellipse 40% 30% at 10% 70%, rgba(232,129,58,0.04) 0%, transparent 50%),
+              #0E0F1E
+            `,
+          }}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
-            <div className="space-y-6">
-              {[
-                { q: "Can I extract fonts directly from a PDF?", a: "PDFs embed font data for rendering, but extracting usable font files requires specialized tools. You can identify which fonts are used by examining PDF properties or converting the PDF to an editable format like Word, which preserves font names." },
-                { q: "Is it legal to extract fonts from a PDF?", a: "Font licensing varies. Most commercial fonts are licensed per user or per device. Extracting and reusing embedded fonts without a proper license may violate the font's EULA. Always check the font license before reusing extracted fonts." },
-                { q: "How can I identify which fonts are used in a PDF?", a: "You can check PDF properties in most readers (File > Properties > Fonts), convert the PDF to Word to see font names in the editor, or extract the text and compare it visually using font identification services like WhatTheFont or Font Squirrel." },
-                { q: "What happens to fonts when I convert a PDF to Word?", a: "When you convert a PDF to Word, the converter identifies the fonts used and references them in the Word document. If the font is installed on your system, it displays correctly. If not, Word substitutes a similar font." },
-                { q: "Can I extract fonts from a scanned PDF?", a: "Scanned PDFs contain images, not text or font data. You would first need to run OCR to extract the text, then use a visual font identification tool to match the typeface used in the scanned document." },
-                { q: "What are embedded fonts in a PDF?", a: "Embedded fonts are font files included within a PDF so the document displays correctly on any device, even if the reader doesn't have the font installed. Most professional PDFs embed fonts to ensure consistent rendering." },
-              ].map((faq, i) => (
-                <div key={i} className="bg-white rounded-xl p-6 border border-gray-200">
-                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-                  <p className="text-slate-600 text-sm">{faq.a}</p>
+            <h2 className="text-3xl font-black text-white mb-10 text-center">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl p-6"
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                  }}
+                >
+                  <h3 className="text-lg font-bold text-white mb-2">{faq.q}</h3>
+                  <p className="text-slate-300 leading-relaxed text-sm">{faq.a}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
+
+        <Script id="faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+          }))
+        })}} />
       </main>
       <Footer />
     </div>
