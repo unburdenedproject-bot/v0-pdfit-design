@@ -11,6 +11,10 @@
     {
       "path": "/api/cron/reconcile-stripe",
       "schedule": "0 6 * * 0"
+    },
+    {
+      "path": "/api/cron/cleanup-usage-logs",
+      "schedule": "0 3 1 * *"
     }
   ]
 }
