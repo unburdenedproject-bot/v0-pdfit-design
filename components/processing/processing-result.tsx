@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { FileText, Download, CheckCircle, Pencil, Shield } from "lucide-react"
+import { ShareResult } from "@/components/share-result"
 import { FeedbackPrompt } from "@/components/feedback-prompt"
 
 interface ProcessedFile {
@@ -219,6 +220,16 @@ export function ProcessingResult({
             <p className="text-xs text-slate-400 max-w-2xl mx-auto">
               For your privacy, files are not saved between sessions. If you refresh this page, you will need to upload your document again.
             </p>
+
+            {/* Share result — turns every user into an advertiser */}
+            <div className="max-w-md mx-auto">
+              <ShareResult
+                toolName={toolName}
+                toolSlug={toolName.toLowerCase().replace(/\s+/g, "-")}
+                originalSize={files.reduce((sum, f) => sum + f.size, 0)}
+                resultSize={processedFiles.reduce((sum, f) => sum + f.size, 0)}
+              />
+            </div>
 
             {/* Feedback prompt — appears after successful processing */}
             {showFeedback && (
