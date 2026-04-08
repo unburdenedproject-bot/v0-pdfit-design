@@ -9,6 +9,7 @@ import { Upload, FileText, X, Download, CheckCircle, Loader2, AlertCircle, Shiel
 import { cn } from "@/lib/utils"
 import { FileProcessor } from "@/lib/file-processor"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
+import { useJobPolling } from "@/lib/use-job-polling"
 import { TierGateCard } from "@/components/processing/tier-gate-card"
 import { ProcessingResult } from "@/components/processing/processing-result"
 import { FileDropzone } from "@/components/processing/file-dropzone"
@@ -67,6 +68,29 @@ async function uploadResultToBlob(blob: Blob, filename: string): Promise<string 
   }
 }
 
+/** Enable async job queue mode for tools that support it */
+const ASYNC_ENABLED_TOOLS = new Set([
+  "Compress PDF",
+  "Merge PDF",
+  "Split PDF",
+  "Flatten PDF",
+  "Rotate PDF",
+  "Watermark PDF",
+  "Protect PDF",
+  "Unlock PDF",
+  "Extract Images",
+  "PDF to JPG",
+  "PDF to PNG",
+  "PDF to TXT",
+  "PDF to Word",
+  "PDF to Excel",
+  "PDF to PowerPoint",
+  "Word to PDF",
+  "Excel to PDF",
+  "PowerPoint to PDF",
+  "OCR Scanner",
+])
+
 export function ProcessingInterface({
   acceptedFiles,
   toolName,
@@ -101,6 +125,38 @@ export function ProcessingInterface({
   const isMergeTool = toolName === "Merge PDF"
   const allowMultiple = isPaidUser || isMergeTool
   const freeFileLimit = isMergeTool ? 2 : 1
+  const useAsyncMode = ASYNC_ENABLED_TOOLS.has(toolName)
+
+  // Job polling for async mode
+  const { startPolling, jobStatus, isPolling } = useJobPolling(
+    // onComplete
+    (job) => {
+      if (job.outputUrl && job.outputFilename) {
+        setProcessedFiles([{
+          name: job.outputFilename,
+          url: `/api/download/${encodeURIComponent(job.outputFilename)}?url=${encodeURIComponent(job.outputUrl)}`,
+          blobUrl: job.outputUrl,
+          size: 0,
+        }])
+      }
+      setIsComplete(true)
+      setIsProcessing(false)
+      setProgress(100)
+    },
+    // onError
+    (error) => {
+      setHasError(true)
+      setErrorMessage(error)
+      setIsProcessing(false)
+    }
+  )
+
+  // Sync job progress to UI when polling
+  useEffect(() => {
+    if (isPolling && jobStatus) {
+      setProgress(jobStatus.progress)
+    }
+  }, [isPolling, jobStatus])
 
   useEffect(() => {
     fetch("/api/user-plan")
@@ -201,6 +257,51 @@ export function ProcessingInterface({
 
       // Track input blob URLs for cleanup
       const inputBlobUrls: string[] = []
+
+      // ---- ASYNC MODE: Upload file, create job, poll for result ----
+      if (useAsyncMode && files.length === 1) {
+        setProgress(10)
+        const file = files[0]
+        const inputUrl = await uploadFileToBlob(file)
+        inputBlobUrls.push(inputUrl)
+        setProgress(30)
+
+        // Determine the API route name from toolName
+        const toolSlug = toolName.toLowerCase().replace(/\s+/g, "-")
+        const apiRoute = `/api/${toolSlug}`
+
+        // Create job via the tool's API with async: true
+        const response = await fetch(apiRoute, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            blobUrl: inputUrl,
+            async: true,
+            compression_level: compressionLevel,
+            fileName: file.name,
+          }),
+        })
+
+        if (!response.ok) {
+          let message = "Processing failed"
+          try {
+            const errorData = await response.json()
+            if (errorData.error) message = errorData.error
+            if (message.includes("upgrade_required")) { router.push(pricingUrl); return }
+            if (message.includes("signup_required")) { router.push(signupRequiredUrl); return }
+            if (message.includes("daily_limit_reached")) { message = "daily_limit_reached_anon" }
+          } catch { }
+          throw new Error(message)
+        }
+
+        const data = await response.json()
+        if (data.jobId) {
+          // Start polling — the hook will update progress and call onComplete/onError
+          startPolling(data.jobId)
+          return // Exit processFiles — polling takes over
+        }
+        // If no jobId returned, fall through to sync processing
+      }
 
       // Handle merge PDF case (process all files together via real API)
       if (toolName === "Merge PDF") {
