@@ -78,10 +78,10 @@ export function TrustSection() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
             <div>
               <div className="text-3xl font-black text-[#14D8C4]">
-                {stats.totalConversions > 0 ? formatNumber(stats.totalConversions) : "30+"}
+                {stats.totalConversions >= 10000 ? formatNumber(stats.totalConversions) : "30+"}
               </div>
               <div className="text-sm text-slate-400">
-                {stats.totalConversions > 0 ? "Files processed" : "PDF tools"}
+                {stats.totalConversions >= 10000 ? "Files processed" : "PDF tools available"}
               </div>
             </div>
             <div>
