@@ -1,6 +1,3 @@
-import { createWriteStream } from "fs";
-import { Readable } from "stream";
-import { pipeline } from "stream/promises";
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
@@ -11,38 +8,8 @@ import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
 import { isValidBlobUrl } from "@/lib/validate-blob-url";
-
-/**
- * Fetch a Vercel Blob URL and write it to /tmp.
- * Returns { tmpPath, name }.
- */
-async function blobUrlToTmp(blobUrl: string): Promise<{ tmpPath: string; name: string }> {
-  const res = await fetch(blobUrl);
-  if (!res.ok) {
-    console.error(`Failed to fetch blob URL (${res.status}): ${blobUrl}`);
-    throw new Error("Failed to retrieve your uploaded file. Please try uploading again.");
-  }
-
-  let name: string = "input.pdf";
-  try {
-    const pathname: string = new URL(blobUrl).pathname;
-    const segments: string[] = pathname.split("/").filter(Boolean);
-    if (segments.length > 0) {
-      name = decodeURIComponent(segments[segments.length - 1]);
-    }
-  } catch {
-    // keep default name
-  }
-
-  const id: string = randomUUID();
-  const tmpPath: string = join("/tmp", `${id}-${name}`);
-  if (res.body) { const nodeStream = Readable.fromWeb(res.body as any); await pipeline(nodeStream, createWriteStream(tmpPath)); } else { const buf: Buffer = Buffer.from(await res.arrayBuffer()); await writeFile(tmpPath, buf); }
-  return { tmpPath, name };
-}
-
-function errorResponse(message: string, status: number = 500): Response {
-  return Response.json({ error: message }, { status });
-}
+import { blobUrlToTmp, cleanupTmp } from "@/lib/api/blob-handler";
+import { errorResponse } from "@/lib/api/error-handler";
 
 export async function POST(request: NextRequest) {
   const startTime = Date.now();
@@ -271,8 +238,6 @@ export async function POST(request: NextRequest) {
     if (uploadedBlobUrl) {
       await del(uploadedBlobUrl).catch(() => {});
     }
-    if (tmpPath) {
-      await unlink(tmpPath).catch(() => {});
-    }
+    await cleanupTmp(tmpPath);
   }
 }

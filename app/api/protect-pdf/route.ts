@@ -1,6 +1,3 @@
-import { createWriteStream } from "fs";
-import { Readable } from "stream";
-import { pipeline } from "stream/promises";
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
@@ -10,38 +7,8 @@ import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
 import { isValidBlobUrl } from "@/lib/validate-blob-url";
-
-/**
- * Fetch a Vercel Blob URL and write it to /tmp.
- * Returns { tmpPath, name }.
- */
-async function blobUrlToTmp(blobUrl: string): Promise<{ tmpPath: string; name: string }> {
-  const res = await fetch(blobUrl);
-  if (!res.ok) {
-    console.error(`Failed to fetch blob URL (${res.status}): ${blobUrl}`);
-    throw new Error("Failed to retrieve your uploaded file. Please try uploading again.");
-  }
-
-  let name: string = "input.pdf";
-  try {
-    const pathname: string = new URL(blobUrl).pathname;
-    const segments: string[] = pathname.split("/").filter(Boolean);
-    if (segments.length > 0) {
-      name = decodeURIComponent(segments[segments.length - 1]);
-    }
-  } catch {
-    // keep default name
-  }
-
-  const id: string = randomUUID();
-  const tmpPath: string = join("/tmp", `${id}-${name}`);
-  if (res.body) { const nodeStream = Readable.fromWeb(res.body as any); await pipeline(nodeStream, createWriteStream(tmpPath)); } else { const buf: Buffer = Buffer.from(await res.arrayBuffer()); await writeFile(tmpPath, buf); }
-  return { tmpPath, name };
-}
-
-function errorResponse(message: string, status: number = 500): Response {
-  return Response.json({ error: message }, { status });
-}
+import { blobUrlToTmp, cleanupTmp } from "@/lib/api/blob-handler";
+import { errorResponse, safeMessageFrom } from "@/lib/api/error-handler";
 
 export async function POST(request: NextRequest) {
   let tmpPath: string | null = null;
@@ -206,19 +173,11 @@ export async function POST(request: NextRequest) {
     return res;
   } catch (err) {
     console.error("protect-pdf route error:", err);
-
-    const raw: string = err && typeof err === "object" && (err as any).message ? (err as any).message : "";
-    const safe: string = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob.vercel/i.test(raw)
-      ? "An error occurred while processing your file. Please try again."
-      : (raw || "An unexpected error occurred.");
-
-    return errorResponse(safe, 500);
+    return errorResponse(safeMessageFrom(err), 500);
   } finally {
     if (uploadedBlobUrl) {
       await del(uploadedBlobUrl).catch(() => {});
     }
-    if (tmpPath) {
-      await unlink(tmpPath).catch(() => {});
-    }
+    await cleanupTmp(tmpPath);
   }
 }
