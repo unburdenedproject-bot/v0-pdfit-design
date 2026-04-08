@@ -25,6 +25,20 @@
 - Full icon set: favicon.ico, favicon.svg, favicon-96x96.png, apple-touch-icon.png
 - Clean "PDF" text with teal swirl on dark background
 
+### Shareable Result Cards (April 8, 2026)
+- After every file download, users see share buttons (Twitter/X, LinkedIn, Copy Link)
+- Compression tools show stats: "You saved 72% (5.8MB → 1.6MB)"
+- Pre-written tweets with stats + tool URL. Does NOT share user files.
+- Every happy user becomes a free marketing channel
+
+### Cookie Consent Banner (April 8, 2026)
+- GDPR/LGPD compliant consent on every page
+- Google Consent Mode v2 — analytics blocked until user clicks Accept
+- Returning visitors not prompted again (localStorage)
+
+### Sitemap Index Fix (April 8, 2026)
+- /sitemap.xml was returning 404. Added manual sitemap index route.
+
 ### Footer Fix
 - © 2024 (was showing dynamic year 2026)
 
