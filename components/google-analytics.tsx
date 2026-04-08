@@ -5,6 +5,30 @@ import Script from "next/script"
 export const GoogleTagManager = () => {
   return (
     <>
+      {/* Google Consent Mode v2 — default to denied until user accepts */}
+      <Script
+        id="gtm-consent-default"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              'analytics_storage': 'denied',
+              'ad_storage': 'denied',
+              'wait_for_update': 500
+            });
+            // If user previously accepted, update immediately
+            if (localStorage.getItem('pdfit_cookie_consent') === 'accepted') {
+              gtag('consent', 'update', {
+                'analytics_storage': 'granted',
+                'ad_storage': 'granted'
+              });
+            }
+          `,
+        }}
+      />
+      {/* GTM loads after consent defaults are set */}
       <Script
         id="gtm-script"
         strategy="lazyOnload"
@@ -18,7 +42,6 @@ export const GoogleTagManager = () => {
           `,
         }}
       />
-      {/* GA4 is configured inside GTM — no separate gtag.js needed */}
     </>
   )
 }

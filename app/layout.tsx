@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import { GoogleTagManager, GoogleTagManagerNoScript } from "@/components/google-analytics"
+import { CookieConsent } from "@/components/cookie-consent"
 import { Suspense } from "react"
 import "./globals.css"
 
@@ -63,6 +64,7 @@ export default function RootLayout({
           <ScrollToTop />
         </Suspense>
         {children}
+        <CookieConsent />
       </body>
     </html>
   )
