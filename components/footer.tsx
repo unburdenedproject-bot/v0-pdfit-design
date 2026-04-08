@@ -124,7 +124,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-[#252A6A] mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-[#A5B4FC] text-sm">© {new Date().getFullYear()} PDF.it. Built for professionals, trusted by professionals.</p>
+          <p className="text-[#A5B4FC] text-sm">© 2024 PDF.it. Built for professionals, trusted by professionals.</p>
         </div>
       </div>
     </footer>

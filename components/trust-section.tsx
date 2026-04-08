@@ -93,8 +93,8 @@ export function TrustSection() {
               <div className="text-sm text-slate-400">Languages supported</div>
             </div>
             <div>
-              <div className="text-3xl font-black text-[#14D8C4]">0s</div>
-              <div className="text-sm text-slate-400">Files stored after download</div>
+              <div className="text-3xl font-black text-[#14D8C4]">100%</div>
+              <div className="text-sm text-slate-400">Private — no files stored</div>
             </div>
           </div>
         </div>
