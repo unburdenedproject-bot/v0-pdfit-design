@@ -1,4 +1,8 @@
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
+import { ToolSearch } from "@/components/tool-search"
 import {
   FileText,
   FileSpreadsheet,
@@ -447,6 +451,27 @@ function PricingCTA() {
 }
 
 export function FeaturesGrid() {
+  const [searchQuery, setSearchQuery] = useState("")
+  const [tierFilter, setTierFilter] = useState<string | null>(null)
+
+  const query = searchQuery.toLowerCase().trim()
+
+  const filteredCategories = categories
+    .map((category) => ({
+      ...category,
+      tools: category.tools.filter((tool) => {
+        const matchesSearch = !query ||
+          tool.name.toLowerCase().includes(query) ||
+          tool.description.toLowerCase().includes(query) ||
+          category.name.toLowerCase().includes(query)
+        const matchesTier = !tierFilter || tool.tier === tierFilter
+        return matchesSearch && matchesTier
+      }),
+    }))
+    .filter((category) => category.tools.length > 0)
+
+  const totalVisible = filteredCategories.reduce((sum, c) => sum + c.tools.length, 0)
+
   return (
     <section
       id="tools"
@@ -470,8 +495,26 @@ export function FeaturesGrid() {
           </p>
         </div>
 
+        <ToolSearch
+          onSearch={setSearchQuery}
+          onFilterTier={setTierFilter}
+          activeTier={tierFilter}
+        />
+
+        {totalVisible === 0 && (
+          <div className="text-center py-12">
+            <p className="text-slate-400 text-lg">No tools match "{searchQuery}"</p>
+            <button
+              onClick={() => { setSearchQuery(""); setTierFilter(null) }}
+              className="mt-3 text-[#14D8C4] hover:text-[#2EE6D6] font-semibold text-sm"
+            >
+              Clear search
+            </button>
+          </div>
+        )}
+
         <div className="max-w-6xl mx-auto space-y-8">
-          {categories.map((category, categoryIndex) => (
+          {filteredCategories.map((category, categoryIndex) => (
             <div key={categoryIndex}>
               {/* Category Header */}
               <div className="mb-3">
