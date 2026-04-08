@@ -71,7 +71,7 @@ export async function mergePdfProcessor(
     const { put } = await import("@vercel/blob")
     const outputFilename = "merged.pdf"
 
-    const blob = await put(outputFilename, data, {
+    const blob = await put(outputFilename, Buffer.from(data), {
       access: "public",
       contentType: "application/pdf",
     })

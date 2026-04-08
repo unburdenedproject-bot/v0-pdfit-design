@@ -73,7 +73,7 @@ export async function uploadReadyPdfProcessor(
     const baseName = originalName.replace(/\.[^/.]+$/, "").replace(/-[a-zA-Z0-9]{20,}$/g, "")
     const outputFilename = `${baseName}-upload-ready.pdf`
 
-    const blob = await put(outputFilename, data, {
+    const blob = await put(outputFilename, Buffer.from(data), {
       access: "public",
       contentType: "application/pdf",
     })

@@ -49,7 +49,7 @@ export async function pdfSummarizerProcessor(
     await task.addFile(new ILovePDFFile(tmpPath))
     await task.process()
     const txtData = await task.download()
-    documentText = txtData.toString("utf-8")
+    documentText = Buffer.from(txtData).toString("utf-8")
   }
 
   if (!documentText || documentText.trim().length < 50) {
