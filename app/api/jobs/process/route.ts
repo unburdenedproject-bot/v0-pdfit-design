@@ -42,14 +42,26 @@ export async function POST(request: NextRequest) {
     inputBlobUrl = job.input_blob_url
 
     try {
-      // Download input file to /tmp
-      if (!inputBlobUrl) {
-        throw new Error("Job has no input file")
-      }
+      // Some tools manage their own file downloads (merge-pdf uses blobUrls array in params,
+      // chat-with-pdf may use pdfText without a file)
+      const selfManagedTools = ["merge-pdf"]
+      const optionalFileTools = ["chat-with-pdf"]
 
-      await updateJobProgress(job.id, 10)
-      const { tmpPath: path } = await blobUrlToTmp(inputBlobUrl)
-      tmpPath = path
+      if (selfManagedTools.includes(job.tool)) {
+        // These processors download files themselves from input_params
+        await updateJobProgress(job.id, 10)
+      } else if (optionalFileTools.includes(job.tool) && !inputBlobUrl) {
+        // chat-with-pdf can work with pdfText alone (no file needed)
+        await updateJobProgress(job.id, 10)
+      } else {
+        // Standard: download single input file to /tmp
+        if (!inputBlobUrl) {
+          throw new Error("Job has no input file")
+        }
+        await updateJobProgress(job.id, 10)
+        const { tmpPath: path } = await blobUrlToTmp(inputBlobUrl)
+        tmpPath = path
+      }
       await updateJobProgress(job.id, 30)
 
       // Route to the correct processor based on tool name

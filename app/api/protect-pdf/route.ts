@@ -89,6 +89,23 @@ export async function POST(request: NextRequest) {
         return errorResponse("Password required (min 4 chars)", 400);
       }
 
+      // ---- Async mode: create a job and return immediately ----
+      if (body.async === true) {
+        const { createJob } = await import("@/lib/job-queue");
+        const result = await createJob({
+          userId: usage.userId === "anonymous" ? null : usage.userId,
+          userPlan: (usage as any).plan,
+          tool: "protect-pdf",
+          inputBlobUrl: blobUrl,
+          inputParams: { password, original_name: body.fileName || "input.pdf" },
+        });
+        if ("error" in result) {
+          return errorResponse(result.error, 500);
+        }
+        await logUsage(usage.userId, "protect-pdf");
+        return NextResponse.json({ jobId: result.jobId, status: "pending" }, { status: 202 });
+      }
+
       const result = await blobUrlToTmp(blobUrl);
       tmpPath = result.tmpPath;
       originalName = result.name;
