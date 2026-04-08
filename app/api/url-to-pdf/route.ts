@@ -56,6 +56,31 @@ export async function POST(request: NextRequest): Promise<NextResponse | Respons
       return errorResponse(validation.reason, 400);
     }
 
+    // ---- Async mode: create a job and return immediately ----
+    // url-to-pdf has no input file — we pass a placeholder blob and the real URL in params
+    if (body.async === true) {
+      const { createJob } = await import("@/lib/job-queue");
+      const { put } = await import("@vercel/blob");
+      const placeholder = await put("url-to-pdf-placeholder.txt", url, {
+        access: "public",
+        contentType: "text/plain",
+      });
+      const jobResult = await createJob({
+        userId: user.id,
+        userPlan: profile?.plan,
+        tool: "url-to-pdf",
+        inputBlobUrl: placeholder.url,
+        inputParams: { url },
+      });
+      if ("error" in jobResult) {
+        return errorResponse(jobResult.error, 500);
+      }
+      const { logUsage } = await import("@/lib/usage-check");
+      await logUsage(user.id, "url-to-pdf");
+      logger.info("job_queued", { requestId, jobId: jobResult.jobId, tool: "url-to-pdf" });
+      return NextResponse.json({ jobId: jobResult.jobId, status: "pending" }, { status: 202 });
+    }
+
     const apiKey: string | undefined = process.env.CLOUDCONVERT_API_KEY;
     if (!apiKey) {
       console.error("CLOUDCONVERT_API_KEY is not set");

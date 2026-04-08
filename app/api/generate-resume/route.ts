@@ -202,6 +202,39 @@ export async function POST(request: NextRequest): Promise<Response> {
     const selectedImprovements: string[] = body.selectedImprovements || [];
     const selectedKeywords: string[] = body.selectedKeywords || [];
 
+    // ---- Async mode: create a job and return immediately ----
+    // generate-resume has no input file upload — we create a placeholder blob
+    if (body.async === true) {
+      const { createJob } = await import("@/lib/job-queue");
+      const { put } = await import("@vercel/blob");
+      const placeholder = await put("generate-resume-placeholder.txt", mode, {
+        access: "public",
+        contentType: "text/plain",
+      });
+      const jobResult = await createJob({
+        userId: user.id,
+        userPlan: profile?.plan,
+        tool: "generate-resume",
+        inputBlobUrl: placeholder.url,
+        inputParams: {
+          mode,
+          include_cover_letter: includeCoverLetter,
+          selected_improvements: selectedImprovements,
+          selected_keywords: selectedKeywords,
+          resume_text: body.resumeText || "",
+          job_description: body.jobDescription || "",
+          analysis_feedback: body.analysisFeedback || "",
+          info: body.info || null,
+        },
+      });
+      if ("error" in jobResult) {
+        return errorResponse(jobResult.error, 500);
+      }
+      const { logUsage } = await import("@/lib/usage-check");
+      await logUsage(user.id, "generate-resume");
+      return NextResponse.json({ jobId: jobResult.jobId, status: "pending" }, { status: 202 });
+    }
+
     // Build the improvement instructions
     let improvementInstructions: string = "";
     if (selectedImprovements.length > 0) {

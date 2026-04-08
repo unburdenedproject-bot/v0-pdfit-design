@@ -151,6 +151,27 @@ export async function POST(request: NextRequest): Promise<NextResponse | Respons
       }
     }
 
+    // ---- Async mode: create a job and return immediately ----
+    if (body.async === true) {
+      const { createJob } = await import("@/lib/job-queue");
+      const jobResult = await createJob({
+        userId: user.id,
+        userPlan: profile?.plan,
+        tool: "workflow",
+        inputBlobUrl: blobUrl,
+        inputParams: {
+          steps,
+          original_name: body.originalName || "input.pdf",
+        },
+      });
+      if ("error" in jobResult) {
+        return errorResponse(jobResult.error, 500);
+      }
+      const { logUsage } = await import("@/lib/usage-check");
+      await logUsage(user.id, "workflow-automation");
+      return NextResponse.json({ jobId: jobResult.jobId, status: "pending" }, { status: 202 });
+    }
+
     // Download input file
     const result = await blobUrlToTmp(blobUrl);
     tmpPath = result.tmpPath;

@@ -230,6 +230,34 @@ async function getProcessor(tool: string): Promise<Processor | null> {
       const { unlockPdfProcessor } = await import("@/lib/processors/unlock-pdf")
       return unlockPdfProcessor
     }
+    case "esign": {
+      const { esignProcessor } = await import("@/lib/processors/esign")
+      return esignProcessor
+    }
+    case "workflow": {
+      const { workflowProcessor } = await import("@/lib/processors/workflow")
+      return workflowProcessor
+    }
+    case "pdf-redaction": {
+      const { pdfRedactionProcessor } = await import("@/lib/processors/pdf-redaction")
+      return pdfRedactionProcessor
+    }
+    case "table-extraction": {
+      const { tableExtractionProcessor } = await import("@/lib/processors/table-extraction")
+      return tableExtractionProcessor
+    }
+    case "url-to-pdf": {
+      const { urlToPdfProcessor } = await import("@/lib/processors/url-to-pdf")
+      return urlToPdfProcessor
+    }
+    case "ats-optimizer": {
+      const { atsOptimizerProcessor } = await import("@/lib/processors/ats-optimizer")
+      return atsOptimizerProcessor
+    }
+    case "generate-resume": {
+      const { generateResumeProcessor } = await import("@/lib/processors/generate-resume")
+      return generateResumeProcessor
+    }
     default:
       return null
   }

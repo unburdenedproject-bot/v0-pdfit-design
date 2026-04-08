@@ -265,6 +265,27 @@ export async function POST(request: NextRequest): Promise<Response> {
       return errorResponse("Invalid file URL.", 400);
     }
 
+    // ---- Async mode: create a job and return immediately ----
+    if (body.async === true) {
+      const { createJob } = await import("@/lib/job-queue");
+      const jobResult = await createJob({
+        userId: user.id,
+        userPlan: profile?.plan,
+        tool: "ats-optimizer",
+        inputBlobUrl: blobUrl,
+        inputParams: {
+          original_name: "resume.pdf",
+          job_description: jobDescription,
+        },
+      });
+      if ("error" in jobResult) {
+        return errorResponse(jobResult.error, 500);
+      }
+      const { logUsage } = await import("@/lib/usage-check");
+      await logUsage(user.id, "ats-optimizer");
+      return NextResponse.json({ jobId: jobResult.jobId, status: "pending" }, { status: 202 });
+    }
+
     // Download PDF from blob
     const res: globalThis.Response = await fetch(blobUrl);
     if (!res.ok) {
