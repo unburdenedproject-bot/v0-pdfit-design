@@ -192,6 +192,24 @@ export async function POST(request: NextRequest) {
         return errorResponse("Invalid file URL.", 400);
       }
 
+      // ---- Async mode: create a job and return immediately ----
+      if (body.async === true) {
+        const { createJob } = await import("@/lib/job-queue");
+        const result = await createJob({
+          userId: user.id,
+          userPlan: profile?.plan,
+          tool: "pdf-to-word",
+          inputBlobUrl: blobUrl,
+          inputParams: { original_name: body.originalName || originalName },
+        });
+        if ("error" in result) {
+          return errorResponse(result.error, 500);
+        }
+        await logUsage(user.id, "pdf-to-word");
+        logger.info("job_queued", { requestId, jobId: result.jobId, tool: "pdf-to-word" });
+        return NextResponse.json({ jobId: result.jobId, status: "pending" }, { status: 202 });
+      }
+
       const result = await blobUrlToTmp(blobUrl);
       tmpPath = result.tmpPath;
       originalName = (body.originalName && typeof body.originalName === "string")

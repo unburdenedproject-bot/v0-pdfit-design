@@ -122,9 +122,102 @@ async function getProcessor(tool: string): Promise<Processor | null> {
       const { compressPdfProcessor } = await import("@/lib/processors/compress-pdf")
       return compressPdfProcessor
     }
-    // Add more tools here as they are migrated:
-    // case "merge-pdf": { ... }
-    // case "split-pdf": { ... }
+    case "pdf-to-word": {
+      const { pdfToWordProcessor } = await import("@/lib/processors/pdf-to-word")
+      return pdfToWordProcessor
+    }
+    case "pdf-to-excel": {
+      const { pdfToExcelProcessor } = await import("@/lib/processors/pdf-to-excel")
+      return pdfToExcelProcessor
+    }
+    case "pdf-to-powerpoint": {
+      const { pdfToPowerpointProcessor } = await import("@/lib/processors/pdf-to-powerpoint")
+      return pdfToPowerpointProcessor
+    }
+    case "pdf-to-txt": {
+      const { pdfToTxtProcessor } = await import("@/lib/processors/pdf-to-txt")
+      return pdfToTxtProcessor
+    }
+    case "excel-to-pdf": {
+      const { excelToPdfProcessor } = await import("@/lib/processors/excel-to-pdf")
+      return excelToPdfProcessor
+    }
+    case "powerpoint-to-pdf": {
+      const { powerpointToPdfProcessor } = await import("@/lib/processors/powerpoint-to-pdf")
+      return powerpointToPdfProcessor
+    }
+    case "office-to-pdf": {
+      const { officeToPdfProcessor } = await import("@/lib/processors/office-to-pdf")
+      return officeToPdfProcessor
+    }
+    case "split-pdf": {
+      const { splitPdfProcessor } = await import("@/lib/processors/split-pdf")
+      return splitPdfProcessor
+    }
+    case "merge-pdf": {
+      const { mergePdfProcessor } = await import("@/lib/processors/merge-pdf")
+      return mergePdfProcessor
+    }
+    case "ocr-pdf": {
+      const { ocrPdfProcessor } = await import("@/lib/processors/ocr-pdf")
+      return ocrPdfProcessor
+    }
+    case "upload-ready-pdf": {
+      const { uploadReadyPdfProcessor } = await import("@/lib/processors/upload-ready-pdf")
+      return uploadReadyPdfProcessor
+    }
+    case "chat-with-pdf": {
+      const { chatWithPdfProcessor } = await import("@/lib/processors/chat-with-pdf")
+      return chatWithPdfProcessor
+    }
+    case "translate-pdf": {
+      const { translatePdfProcessor } = await import("@/lib/processors/translate-pdf")
+      return translatePdfProcessor
+    }
+    case "pdf-summarizer": {
+      const { pdfSummarizerProcessor } = await import("@/lib/processors/pdf-summarizer")
+      return pdfSummarizerProcessor
+    }
+    case "question-generator": {
+      const { questionGeneratorProcessor } = await import("@/lib/processors/question-generator")
+      return questionGeneratorProcessor
+    }
+    case "smart-extraction": {
+      const { smartExtractionProcessor } = await import("@/lib/processors/smart-extraction")
+      return smartExtractionProcessor
+    }
+    case "flatten-pdf": {
+      const { flattenPdfProcessor } = await import("@/lib/processors/flatten-pdf")
+      return flattenPdfProcessor
+    }
+    case "rotate-pdf": {
+      const { rotatePdfProcessor } = await import("@/lib/processors/rotate-pdf")
+      return rotatePdfProcessor
+    }
+    case "watermark-pdf": {
+      const { watermarkPdfProcessor } = await import("@/lib/processors/watermark-pdf")
+      return watermarkPdfProcessor
+    }
+    case "extract-images-from-pdf": {
+      const { extractImagesFromPdfProcessor } = await import("@/lib/processors/extract-images-from-pdf")
+      return extractImagesFromPdfProcessor
+    }
+    case "pdf-to-jpg": {
+      const { pdfToJpgProcessor } = await import("@/lib/processors/pdf-to-jpg")
+      return pdfToJpgProcessor
+    }
+    case "pdf-to-png": {
+      const { pdfToPngProcessor } = await import("@/lib/processors/pdf-to-png")
+      return pdfToPngProcessor
+    }
+    case "protect-pdf": {
+      const { protectPdfProcessor } = await import("@/lib/processors/protect-pdf")
+      return protectPdfProcessor
+    }
+    case "unlock-pdf": {
+      const { unlockPdfProcessor } = await import("@/lib/processors/unlock-pdf")
+      return unlockPdfProcessor
+    }
     default:
       return null
   }

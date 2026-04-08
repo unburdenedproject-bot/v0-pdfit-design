@@ -98,6 +98,24 @@ export async function POST(request: NextRequest) {
         return errorResponse("Invalid file URL.", 400);
       }
 
+      // ---- Async mode: create a job and return immediately ----
+      if (body.async === true) {
+        const { createJob } = await import("@/lib/job-queue");
+        const result = await createJob({
+          userId: user.id,
+          userPlan: profile?.plan,
+          tool: "excel-to-pdf",
+          inputBlobUrl: blobUrl,
+          inputParams: { original_name: body.originalName || "input.xlsx" },
+        });
+        if ("error" in result) {
+          return errorResponse(result.error, 500);
+        }
+        const { logUsage } = await import("@/lib/usage-check");
+        await logUsage(user.id, "excel-to-pdf");
+        return Response.json({ jobId: result.jobId, status: "pending" }, { status: 202 });
+      }
+
       const result = await blobUrlToTmp(blobUrl);
       tmpPath = result.tmpPath;
       originalName = result.name;
