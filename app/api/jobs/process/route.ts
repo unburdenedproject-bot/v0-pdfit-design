@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
       await updateJobProgress(job.id, 30)
 
       // Route to the correct processor based on tool name
-      const processor = getProcessor(job.tool)
+      const processor = await getProcessor(job.tool)
       if (!processor) {
         throw new Error(`Unknown tool: ${job.tool}`)
       }
@@ -116,13 +116,16 @@ type Processor = (
  * 2. Register it here
  * 3. Update the route to create a job instead of processing directly
  */
-function getProcessor(tool: string): Processor | null {
-  const processors: Record<string, Processor> = {
-    // Phase 2: Register processors here as tools are migrated
-    // "compress-pdf": compressPdfProcessor,
-    // "merge-pdf": mergePdfProcessor,
-    // etc.
+async function getProcessor(tool: string): Promise<Processor | null> {
+  switch (tool) {
+    case "compress-pdf": {
+      const { compressPdfProcessor } = await import("@/lib/processors/compress-pdf")
+      return compressPdfProcessor
+    }
+    // Add more tools here as they are migrated:
+    // case "merge-pdf": { ... }
+    // case "split-pdf": { ... }
+    default:
+      return null
   }
-
-  return processors[tool] || null
 }

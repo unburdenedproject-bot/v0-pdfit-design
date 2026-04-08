@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
     let compressionLevel: string = "recommended";
 
     if (isJson) {
-      // ---- JSON path: { blobUrl, compression_level? } ----
+      // ---- JSON path: { blobUrl, compression_level?, async? } ----
       const body = await request.json();
       const blobUrl: string = body.blobUrl;
       uploadedBlobUrl = blobUrl;
@@ -61,6 +61,24 @@ export async function POST(request: NextRequest) {
 
       if (body.compression_level && ALLOWED_LEVELS.has(body.compression_level)) {
         compressionLevel = body.compression_level;
+      }
+
+      // ---- Async mode: create a job and return immediately ----
+      if (body.async === true) {
+        const { createJob } = await import("@/lib/job-queue");
+        const result = await createJob({
+          userId: usage.userId === "anonymous" ? null : usage.userId,
+          userPlan: (usage as any).plan,
+          tool: "compress-pdf",
+          inputBlobUrl: blobUrl,
+          inputParams: { compression_level: compressionLevel, original_name: body.fileName || "input.pdf" },
+        });
+        if ("error" in result) {
+          return errorResponse(result.error, 500);
+        }
+        await logUsage(usage.userId, "compress-pdf");
+        logger.info("job_queued", { requestId, jobId: result.jobId, tool: "compress-pdf" });
+        return NextResponse.json({ jobId: result.jobId, status: "pending" }, { status: 202 });
       }
 
       const result = await blobUrlToTmp(blobUrl);
