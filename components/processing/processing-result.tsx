@@ -1,7 +1,9 @@
 "use client"
 
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { FileText, Download, CheckCircle, Pencil, Shield } from "lucide-react"
+import { FeedbackPrompt } from "@/components/feedback-prompt"
 
 interface ProcessedFile {
   name: string
@@ -35,6 +37,8 @@ export function ProcessingResult({
   toolName,
   outputFormat,
 }: ProcessingResultProps) {
+  const [showFeedback, setShowFeedback] = useState(true)
+
   return (
     <section className="py-16 overflow-x-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -215,6 +219,16 @@ export function ProcessingResult({
             <p className="text-xs text-slate-400 max-w-2xl mx-auto">
               For your privacy, files are not saved between sessions. If you refresh this page, you will need to upload your document again.
             </p>
+
+            {/* Feedback prompt — appears after successful processing */}
+            {showFeedback && (
+              <div className="mt-6 max-w-md mx-auto">
+                <FeedbackPrompt
+                  toolName={toolName}
+                  onClose={() => setShowFeedback(false)}
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>
