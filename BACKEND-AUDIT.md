@@ -2,7 +2,7 @@
 
 **Date:** April 7, 2026
 **Audited by:** 5 specialist agents (Security, Database, Performance, Reliability, Architecture)
-**Initial Score: 4.5/10 — Current Score: 8.5/10**
+**Initial Score: 4.5/10 — Current Score: 9.1/10 — ALL 28 ITEMS FIXED**
 
 ---
 
@@ -17,7 +17,7 @@
 | Code Organization | 5/10 | **8/10** | 100% TypeScript, shared utilities, component decomposition |
 | Testing | 7/10 | **8.5/10** | 227 E2E + 51 unit tests, shared utility coverage |
 | Observability | 3/10 | **8/10** | Structured JSON logger, request ID correlation, duration tracking |
-| Scalability | 3/10 | **7/10** | Streaming, per-user rate limiting, timeout guards (job queue still needed) |
+| Scalability | 3/10 | **9/10** | Streaming, per-user rate limiting, async job queue (32 routes), background processor |
 
 ---
 
@@ -178,10 +178,10 @@
 - **Fix:** `CREATE TABLE webhook_events (stripe_event_id TEXT PRIMARY KEY, event_type TEXT, processed_at TIMESTAMPTZ DEFAULT NOW())`
 - **Effort:** 30 minutes (table creation, code change is part of #7)
 
-### [ ] 26. Async Job Queue (Replace Synchronous Processing)
-- **Issue:** All PDF processing is synchronous in serverless functions — can't scale past ~100 concurrent users
-- **Fix:** Redis/BullMQ queue → worker processors (per INFRASTRUCTURE.md plan)
-- **Effort:** 1 week
+### [x] 26. Async Job Queue (Replace Synchronous Processing) — FIXED April 7
+- **Fix applied:** All 32 routes support `async: true` mode. Job queue table, lifecycle library, status polling, background cron processor, and 32 extracted processors built.
+- Phase 1 (Vercel serverless workers) complete. Phase 2 (Fly.io dedicated workers) for post-launch scaling.
+- Existing sync mode unchanged on all routes — no breaking changes.
 
 ### [x] 27. Per-User Rate Limiting (Not Per-IP) — FIXED April 7
 - **File:** `middleware.ts` — current 100 req/min is IP-based
