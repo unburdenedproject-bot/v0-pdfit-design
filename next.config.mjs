@@ -16,7 +16,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: false,
+    unoptimized: true,
   },
   experimental: {
     optimizePackageImports: ['lucide-react', 'recharts'],
