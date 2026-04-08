@@ -119,6 +119,41 @@ async function resolveInput(request: NextRequest): Promise<ResolvedInput | Resol
   }
 }
 
+/**
+ * Resolve input from an already-parsed JSON body (used when async check consumed the request body).
+ */
+async function resolveInputFromParsedBody(body: any): Promise<ResolvedInput | ResolvedInputError> {
+  const blobUrl: string = body.blobUrl;
+  const lang: string = body.lang || "eng";
+
+  if (!blobUrl || typeof blobUrl !== "string") {
+    return { error: jsonError('JSON body must include "blobUrl".', 400) };
+  }
+  if (!isValidBlobUrl(blobUrl)) {
+    return { error: jsonError("Invalid file URL.", 400) };
+  }
+
+  const res = await fetch(blobUrl);
+  if (!res.ok) {
+    console.error(`Failed to fetch blob URL (${res.status})`);
+    return { error: jsonError("Failed to retrieve your uploaded file. Please try uploading again.", 502) };
+  }
+
+  let originalName = "input.pdf";
+  try {
+    const pathname = new URL(blobUrl).pathname;
+    const segments = pathname.split("/").filter(Boolean);
+    if (segments.length > 0) {
+      originalName = decodeURIComponent(segments[segments.length - 1]);
+    }
+  } catch {
+    // keep default
+  }
+
+  const buffer: Buffer = Buffer.from(await res.arrayBuffer());
+  return { buffer, originalName, lang, uploadedBlobUrl: blobUrl };
+}
+
 export async function POST(request: NextRequest): Promise<Response> {
   let uploadedBlobUrl: string | null = null;
 
@@ -142,9 +177,50 @@ export async function POST(request: NextRequest): Promise<Response> {
     }
 
     // -----------------------------------------------------------
-    // Resolve input from JSON or multipart
+    // Check for async mode (JSON requests only)
     // -----------------------------------------------------------
-    const input = await resolveInput(request);
+    const contentType: string = request.headers.get("content-type") || "";
+    const isJsonRequest: boolean = contentType.includes("application/json");
+    let parsedBody: any = null;
+
+    if (isJsonRequest) {
+      parsedBody = await request.json();
+
+      if (parsedBody.async === true) {
+        const blobUrl = parsedBody.blobUrl;
+        if (!blobUrl || typeof blobUrl !== "string") {
+          return jsonError('JSON body must include "blobUrl".', 400);
+        }
+        if (!isValidBlobUrl(blobUrl)) {
+          return jsonError("Invalid file URL.", 400);
+        }
+
+        const { createJob } = await import("@/lib/job-queue");
+        const result = await createJob({
+          userId: user.id,
+          userPlan: profile?.plan,
+          tool: "ocr-pdf",
+          inputBlobUrl: blobUrl,
+          inputParams: {
+            lang: parsedBody.lang || "eng",
+            original_name: parsedBody.fileName || "input.pdf",
+          },
+        });
+        if ("error" in result) {
+          return jsonError(result.error, 500);
+        }
+        const { logUsage } = await import("@/lib/usage-check");
+        await logUsage(user.id, "ocr-pdf");
+        return Response.json({ jobId: result.jobId, status: "pending" }, { status: 202 });
+      }
+    }
+
+    // -----------------------------------------------------------
+    // Resolve input from JSON or multipart (sync mode)
+    // -----------------------------------------------------------
+    const input = isJsonRequest
+      ? await resolveInputFromParsedBody(parsedBody)
+      : await resolveInput(request);
     if (input.error) return input.error;
 
     const { buffer, originalName, lang } = input;

@@ -76,6 +76,29 @@ export async function POST(request: NextRequest): Promise<Response> {
       return errorResponse(`Question is too long. Maximum ${MAX_QUESTION_CHARS} characters.`, 400);
     }
 
+    // ---- Async mode: create a job and return immediately ----
+    if (body.async === true) {
+      const { createJob } = await import("@/lib/job-queue");
+      const result = await createJob({
+        userId: user.id,
+        userPlan: profile?.plan,
+        tool: "chat-with-pdf",
+        inputBlobUrl: blobUrl || "none",
+        inputParams: {
+          question,
+          pdfText: pdfText || undefined,
+          history: history || [],
+          blobUrl: blobUrl || undefined,
+        },
+      });
+      if ("error" in result) {
+        return errorResponse(result.error, 500);
+      }
+      const { logUsage } = await import("@/lib/usage-check");
+      await logUsage(user.id, "chat-with-pdf");
+      return NextResponse.json({ jobId: result.jobId, status: "pending" }, { status: 202 });
+    }
+
     // Get PDF text — either from pre-extracted text or extract now
     let documentText: string = "";
 

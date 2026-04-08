@@ -89,15 +89,36 @@ export async function POST(request: NextRequest): Promise<NextResponse | Respons
         return errorResponse("Invalid file URL.", 400);
       }
 
+      // Pro options
+      if (body.compression_level) compressionLevel = body.compression_level;
+      if (body.flatten === false) shouldFlatten = false;
+
+      // ---- Async mode: create a job and return immediately ----
+      if (body.async === true) {
+        const { createJob } = await import("@/lib/job-queue");
+        const jobResult = await createJob({
+          userId: usage.userId === "anonymous" ? null : (usage.userId || null),
+          userPlan: (usage as any).plan,
+          tool: "upload-ready-pdf",
+          inputBlobUrl: blobUrl,
+          inputParams: {
+            original_name: body.originalName || body.fileName || "input.pdf",
+            compression_level: compressionLevel,
+            flatten: shouldFlatten,
+          },
+        });
+        if ("error" in jobResult) {
+          return errorResponse(jobResult.error, 500);
+        }
+        await logUsage(usage.userId || "anonymous", "upload-ready-pdf");
+        return Response.json({ jobId: jobResult.jobId, status: "pending" }, { status: 202 });
+      }
+
       const result = await blobUrlToTmp(blobUrl);
       tmpPath = result.tmpPath;
       originalName = (body.originalName && typeof body.originalName === "string")
         ? body.originalName
         : result.name;
-
-      // Pro options (ignored for free users — handled client-side)
-      if (body.compression_level) compressionLevel = body.compression_level;
-      if (body.flatten === false) shouldFlatten = false;
     } else {
       const formData = await request.formData();
       const file = formData.get("file");

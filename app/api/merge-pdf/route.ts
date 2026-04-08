@@ -94,6 +94,24 @@ export async function POST(request: NextRequest): Promise<NextResponse | Respons
         );
       }
 
+      // ---- Async mode: create a job and return immediately ----
+      if (body.async === true) {
+        const { createJob } = await import("@/lib/job-queue");
+        const result = await createJob({
+          userId: usage.userId === "anonymous" ? null : (usage.userId || null),
+          userPlan: (usage as any).plan,
+          tool: "merge-pdf",
+          inputBlobUrl: urls[0],
+          inputParams: { blobUrls: urls },
+        });
+        if ("error" in result) {
+          return Response.json({ error: result.error }, { status: 500 });
+        }
+        await logUsage(usage.userId || "anonymous", "merge-pdf");
+        logger.info("job_queued", { requestId, jobId: result.jobId, tool: "merge-pdf" });
+        return Response.json({ jobId: result.jobId, status: "pending" }, { status: 202 });
+      }
+
       // Fetch each blob URL and write to /tmp
       for (let i = 0; i < urls.length; i++) {
         const { tmpPath } = await blobUrlToTmp(urls[i], i);
