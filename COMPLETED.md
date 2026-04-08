@@ -1,8 +1,38 @@
 # PDF.it - Accomplished Work
 
+## UX Improvements & Social Proof (April 8, 2026)
+
+### Homepage Tool Search & Filter
+- Search bar with real-time filtering by tool name, description, and category
+- Tier filter pills (All/Free/Pro/Business) for quick plan-based browsing
+- Empty state with "No tools match" and clear button
+
+### Trust Section Redesign
+- Live stats bar pulls real data from /api/stats (cached 1 hour)
+- Shows "30+ PDF tools" until 10K+ processed, then switches to live count
+- "100% Private — no files stored" replaces misleading "0s stored"
+- "Built for Professionals" with 6 industry icons (Law, Accounting, Consulting, Students, Healthcare, Small Business)
+- Stronger feature cards: Zero File Storage, Instant Processing, Pro When You Need It, Professional Quality
+
+### Post-Download Feedback System
+- Star rating prompt appears after every successful file download
+- 4-5 stars → asks for testimonial quote (name + role optional)
+- Saves to Supabase `user_feedback` table with `approved` flag
+- Manual approval in Supabase before displaying on homepage
+- CSRF protected, graceful failure
+
+### Favicon Upgrade
+- Full icon set: favicon.ico, favicon.svg, favicon-96x96.png, apple-touch-icon.png
+- Clean "PDF" text with teal swirl on dark background
+
+### Footer Fix
+- © 2024 (was showing dynamic year 2026)
+
+---
+
 ## Backend Architecture Hardening (April 7, 2026)
 
-### 27 of 28 Audit Items Fixed (Score: 4.5/10 → 8/10)
+### 28 of 28 Audit Items Fixed (Score: 4.5/10 → 9.1/10)
 Full audit by 5 specialist agents (security, database, performance, reliability, architecture).
 
 ### Security Fixes

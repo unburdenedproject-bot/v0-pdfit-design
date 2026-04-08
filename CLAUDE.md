@@ -179,6 +179,9 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 - **All POST endpoints must check CSRF** — use `checkCsrf()` from `lib/csrf.ts`
 - **Error messages must never expose service names** — use `errorResponse()` from `lib/api/error-handler.js`
 - **Webhook must return 500 on DB failure** (so Stripe retries) and check `webhook_events` for idempotency
+- **Footer copyright must say © 2024** — PDF.it was established in 2024. Never use dynamic dates.
+- **Never show low usage numbers as social proof** — live stats only display "Files processed" when count exceeds 10,000. Below that, shows "30+ PDF tools available"
+- **Feedback table requires manual approval** — set `approved = true` in Supabase before testimonials display on homepage
 - Paula is non-technical — explain things simply
 
 ## Deployment Process
