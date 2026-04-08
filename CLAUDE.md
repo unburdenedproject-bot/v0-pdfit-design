@@ -157,6 +157,7 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 - See LOCALIZATION.md
 
 ## Rules - Always Follow
+- **CRITICAL: If something is NOT broken, DO NOT touch it.** Only modify working systems if there is a proven weakness or gap that will hurt the business. On April 8, 2026, the sitemap (robots.txt) was modified unnecessarily, breaking Google's ability to fetch it and delaying page indexing. This must NEVER happen again. Always ask before changing SEO-critical files (robots.txt, sitemap.ts, canonical URLs, redirects, domain config).
 - Never break already indexed pages
 - Use iLoveAPI for PDF processing (except pdf-to-word/excel/powerpoint which use CloudConvert)
 - Table extraction uses Google Document AI Form Parser
