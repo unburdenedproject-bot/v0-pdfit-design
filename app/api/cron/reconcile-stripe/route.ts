@@ -150,8 +150,48 @@ export async function GET(request: NextRequest) {
     mismatches.push(mismatch)
   }
 
-  // --- Send email report if there were any mismatches ---
-  if (mismatches.length > 0) {
+  // --- Sweep: downgrade paid users whose Stripe subscription is no longer active/trialing ---
+  const activeCustomerIds = new Set(
+    allSubscriptions.map((sub) => {
+      const customer = sub.customer as Stripe.Customer
+      return customer?.id
+    }).filter(Boolean)
+  )
+
+  const { data: paidUsers } = await supabase
+    .from("users")
+    .select("id, email, plan, stripe_customer_id")
+    .neq("plan", "free")
+    .not("stripe_customer_id", "is", null)
+
+  const downgrades: { email: string; old_plan: string; stripe_customer_id: string }[] = []
+
+  if (paidUsers) {
+    for (const pu of paidUsers) {
+      if (activeCustomerIds.has(pu.stripe_customer_id)) continue
+
+      // This user has a paid plan but no active/trialing subscription in Stripe — downgrade
+      const { error: dgError } = await supabase.from("users").update({
+        plan: "free",
+        cancel_at_period_end: false,
+        current_period_end: null,
+        updated_at: new Date().toISOString(),
+      }).eq("id", pu.id)
+
+      if (!dgError) {
+        downgrades.push({
+          email: pu.email || "unknown",
+          old_plan: pu.plan,
+          stripe_customer_id: pu.stripe_customer_id,
+        })
+      } else {
+        console.error(`Reconcile: Failed to downgrade user ${pu.id}:`, dgError)
+      }
+    }
+  }
+
+  // --- Send email report if there were any mismatches or downgrades ---
+  if (mismatches.length > 0 || downgrades.length > 0) {
     const resendKey = process.env.RESEND_API_KEY
     if (resendKey) {
       try {
@@ -172,11 +212,13 @@ export async function GET(request: NextRequest) {
         await resend.emails.send({
           from: "PDF.it <noreply@pdf.it.com>",
           to: "paula.vargas3@gmail.com",
-          subject: `PDF.it Reconciliation: ${mismatches.length} mismatch${mismatches.length > 1 ? "es" : ""} found`,
+          subject: `PDF.it Reconciliation: ${mismatches.length + downgrades.length} issue${(mismatches.length + downgrades.length) > 1 ? "s" : ""} found`,
           html: `
             <div style="font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:600px;margin:0 auto;padding:24px;">
               <h2 style="color:#0E0F1E;">Stripe–Supabase Reconciliation Report</h2>
-              <p style="color:#475569;">Ran at ${new Date().toISOString()}. Checked ${checked} users, found ${mismatches.length} mismatch${mismatches.length > 1 ? "es" : ""}.</p>
+              <p style="color:#475569;">Ran at ${new Date().toISOString()}. Checked ${checked} active subscriptions.${mismatches.length > 0 ? ` Found ${mismatches.length} plan mismatch${mismatches.length > 1 ? "es" : ""}.` : ""}${downgrades.length > 0 ? ` Downgraded ${downgrades.length} user${downgrades.length > 1 ? "s" : ""} with expired subscriptions.` : ""}</p>
+              ${mismatches.length > 0 ? `
+              <h3 style="color:#0E0F1E;margin-top:16px;">Plan Mismatches</h3>
               <table style="width:100%;border-collapse:collapse;font-size:14px;">
                 <thead>
                   <tr style="background:#F5F7FB;">
@@ -187,7 +229,23 @@ export async function GET(request: NextRequest) {
                   </tr>
                 </thead>
                 <tbody>${rows}</tbody>
-              </table>
+              </table>` : ""}
+              ${downgrades.length > 0 ? `
+              <h3 style="color:#0E0F1E;margin-top:16px;">Expired Subscription Downgrades</h3>
+              <table style="width:100%;border-collapse:collapse;font-size:14px;">
+                <thead>
+                  <tr style="background:#F5F7FB;">
+                    <th style="padding:8px;border:1px solid #E2E8F0;text-align:left;">Email</th>
+                    <th style="padding:8px;border:1px solid #E2E8F0;text-align:left;">Was</th>
+                    <th style="padding:8px;border:1px solid #E2E8F0;text-align:left;">Now</th>
+                  </tr>
+                </thead>
+                <tbody>${downgrades.map((d) => `<tr>
+                  <td style="padding:8px;border:1px solid #E2E8F0;">${d.email}</td>
+                  <td style="padding:8px;border:1px solid #E2E8F0;">${d.old_plan}</td>
+                  <td style="padding:8px;border:1px solid #E2E8F0;">free</td>
+                </tr>`).join("")}</tbody>
+              </table>` : ""}
               <p style="color:#94A3B8;font-size:12px;margin-top:24px;">This is an automated report from the weekly Stripe reconciliation cron.</p>
             </div>
           `,
@@ -202,6 +260,7 @@ export async function GET(request: NextRequest) {
     checked,
     mismatches: mismatches.length,
     fixed: mismatches.filter((m) => m.fixed).length,
-    details: mismatches,
+    downgrades: downgrades.length,
+    details: { mismatches, downgrades },
   })
 }

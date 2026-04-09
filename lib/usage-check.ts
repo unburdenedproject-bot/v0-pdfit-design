@@ -99,7 +99,9 @@ export async function checkUsageAndAuth(toolName: string) {
     .eq("id", user.id)
     .single()
 
-  if (profile?.plan === "pro" || profile?.plan === "business" || profile?.plan === "enterprise") return { allowed: true, userId: user.id }
+  const userPlan = profile?.plan || "free"
+
+  if (userPlan === "pro" || userPlan === "business" || userPlan === "enterprise") return { allowed: true, userId: user.id, plan: userPlan }
 
   const today = new Date().toISOString().split("T")[0]
 
@@ -117,7 +119,7 @@ export async function checkUsageAndAuth(toolName: string) {
     return { allowed: false, error: "Daily limit reached. Upgrade to Pro." }
   }
 
-  return { allowed: true, userId: user.id, currentCount }
+  return { allowed: true, userId: user.id, currentCount, plan: "free" }
 }
 
 export async function logUsage(userId: string, toolName: string) {

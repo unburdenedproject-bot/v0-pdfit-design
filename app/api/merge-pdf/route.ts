@@ -55,6 +55,7 @@ export async function POST(request: NextRequest): Promise<NextResponse | Respons
     if (!usage.allowed) {
       return NextResponse.json({ error: usage.error || "Daily limit reached." }, { status: 403 });
     }
+    const userPlan = (usage as any).plan || "free"
     logger.info("auth_passed", { requestId, userId: usage.userId, tool: "merge-pdf" });
 
     const publicKey: string | undefined = process.env.ILOVEAPI_PUBLIC_KEY;
@@ -85,6 +86,13 @@ export async function POST(request: NextRequest): Promise<NextResponse | Respons
         return Response.json(
           { error: "At least 2 blob URLs are required to merge." },
           { status: 400 }
+        );
+      }
+      // Batch processing (3+ files) requires a paid plan
+      if (urls.length > 2 && userPlan === "free") {
+        return Response.json(
+          { error: "Batch merging (3+ files) requires a Pro plan or higher. Upgrade to unlock batch processing." },
+          { status: 403 }
         );
       }
       if (!areValidBlobUrls(urls)) {
@@ -133,6 +141,13 @@ export async function POST(request: NextRequest): Promise<NextResponse | Respons
         return Response.json(
           { error: "At least 2 PDF files are required to merge." },
           { status: 400 }
+        );
+      }
+      // Batch processing (3+ files) requires a paid plan
+      if (files.length > 2 && userPlan === "free") {
+        return Response.json(
+          { error: "Batch merging (3+ files) requires a Pro plan or higher. Upgrade to unlock batch processing." },
+          { status: 403 }
         );
       }
 
