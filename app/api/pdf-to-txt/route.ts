@@ -93,10 +93,9 @@ export async function POST(request) {
         tmpPath = null;
         return errorResponse("This file appears to be empty. Please upload a PDF with content.", 400);
       }
-    } catch {
-      await unlink(tmpPath).catch(() => {});
-      tmpPath = null;
-      return errorResponse("This file appears to be empty or unreadable. Please upload a PDF with content.", 400);
+    } catch (blankCheckErr) {
+      console.error("Blank PDF check failed (skipping):", blankCheckErr);
+      // Continue processing — let the API handle invalid files
     }
 
     const ILovePDFApi = (await import("@ilovepdf/ilovepdf-nodejs")).default;

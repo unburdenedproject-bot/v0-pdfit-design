@@ -233,8 +233,9 @@ export async function POST(request: NextRequest): Promise<Response> {
       if (blank) {
         return jsonError("This file appears to be empty. Please upload a PDF with content.", 400);
       }
-    } catch {
-      return jsonError("This file appears to be empty or unreadable. Please upload a PDF with content.", 400);
+    } catch (blankCheckErr) {
+      console.error("Blank PDF check failed (skipping):", blankCheckErr);
+      // Continue processing — let the API handle invalid files
     }
 
     const region: string = (process.env.ILOVEAPI_REGION || "us").toLowerCase();

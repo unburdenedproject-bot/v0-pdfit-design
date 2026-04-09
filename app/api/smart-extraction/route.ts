@@ -104,9 +104,9 @@ export async function POST(request: NextRequest): Promise<Response> {
         if (tmpPath) { await unlink(tmpPath).catch(() => {}); tmpPath = null; }
         return errorResponse("This file appears to be empty. Please upload a PDF with content.", 400);
       }
-    } catch {
-      if (tmpPath) { await unlink(tmpPath).catch(() => {}); tmpPath = null; }
-      return errorResponse("This file appears to be empty or unreadable. Please upload a PDF with content.", 400);
+    } catch (blankCheckErr) {
+      console.error("Blank PDF check failed (skipping):", blankCheckErr);
+      // Continue processing — let the API handle invalid files
     }
 
     // Extract text using iLoveAPI
