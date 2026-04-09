@@ -240,6 +240,11 @@ export async function POST(request: NextRequest) {
           plan = "pro"
         }
 
+        // Downgrade to free if payment failed — keeps user data intact
+        if (subscription.status === "past_due" || subscription.status === "unpaid") {
+          plan = "free"
+        }
+
         const { error } = await supabaseAdmin.from("users").update({
           plan,
           stripe_customer_id: customerId,
