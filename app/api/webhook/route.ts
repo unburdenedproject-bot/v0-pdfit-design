@@ -299,6 +299,74 @@ export async function POST(request: NextRequest) {
     }
   }
 
+  // Handle refunds — downgrade user so they don't keep paid access after getting money back
+  if (event.type === "charge.refunded") {
+    const charge = event.data.object as Stripe.Charge
+    const customerId =
+      typeof charge.customer === "string"
+        ? charge.customer
+        : charge.customer?.toString() || null
+
+    if (customerId) {
+      const { data: users } = await supabaseAdmin
+        .from("users")
+        .select("id")
+        .eq("stripe_customer_id", customerId)
+        .limit(1)
+
+      if (users && users.length > 0) {
+        const { error } = await supabaseAdmin.from("users").update({
+          plan: "free",
+          updated_at: new Date().toISOString(),
+        }).eq("id", users[0].id)
+
+        if (error) {
+          console.error("Failed to downgrade user on refund:", error)
+          return NextResponse.json(
+            { error: "Database update failed" },
+            { status: 500 }
+          )
+        }
+      }
+    }
+  }
+
+  // Handle disputes/chargebacks — immediately downgrade
+  if (event.type === "charge.dispute.created") {
+    const dispute = event.data.object as Stripe.Dispute
+    // Resolve the customer ID from the dispute
+    let customerId: string | null = null
+
+    if (typeof dispute.customer === "string") {
+      customerId = dispute.customer
+    } else if (dispute.customer && typeof (dispute.customer as any).id === "string") {
+      customerId = (dispute.customer as any).id
+    }
+
+    if (customerId) {
+      const { data: users } = await supabaseAdmin
+        .from("users")
+        .select("id")
+        .eq("stripe_customer_id", customerId)
+        .limit(1)
+
+      if (users && users.length > 0) {
+        const { error } = await supabaseAdmin.from("users").update({
+          plan: "free",
+          updated_at: new Date().toISOString(),
+        }).eq("id", users[0].id)
+
+        if (error) {
+          console.error("Failed to downgrade user on dispute:", error)
+          return NextResponse.json(
+            { error: "Database update failed" },
+            { status: 500 }
+          )
+        }
+      }
+    }
+  }
+
   logger.requestEnd(requestId, "webhook", "success", Date.now() - startTime)
 
   // Record this event as processed (idempotency protection)
