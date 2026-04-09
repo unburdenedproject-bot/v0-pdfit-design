@@ -62,16 +62,6 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ received: true }) // Already processed
   }
 
-  // Record event BEFORE processing to prevent duplicate handling on concurrent retries
-  await supabaseAdmin.from("webhook_events").insert({
-    stripe_event_id: event.id,
-    event_type: event.type,
-    processed_at: new Date().toISOString(),
-  }).catch((err: unknown) => {
-    // If insert fails (e.g. unique constraint), another worker is handling it — bail out
-    console.error("Failed to record webhook event:", err)
-  })
-
   if (event.type === "checkout.session.completed") {
     const session = event.data.object
 
@@ -524,6 +514,15 @@ export async function POST(request: NextRequest) {
   }
 
   logger.requestEnd(requestId, "webhook", "success", Date.now() - startTime)
+
+  // Record event AFTER successful processing — so Stripe retries if processing failed
+  await supabaseAdmin.from("webhook_events").insert({
+    stripe_event_id: event.id,
+    event_type: event.type,
+    processed_at: new Date().toISOString(),
+  }).catch((err: unknown) => {
+    console.error("Failed to record webhook event:", err)
+  })
 
   return NextResponse.json({ received: true })
 }
