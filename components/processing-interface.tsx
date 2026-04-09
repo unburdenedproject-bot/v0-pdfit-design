@@ -68,28 +68,14 @@ async function uploadResultToBlob(blob: Blob, filename: string): Promise<string 
   }
 }
 
-/** Enable async job queue mode for tools that support it */
-const ASYNC_ENABLED_TOOLS = new Set([
-  "Compress PDF",
-  "Merge PDF",
-  "Split PDF",
-  "Flatten PDF",
-  "Rotate PDF",
-  "Watermark PDF",
-  "Protect PDF",
-  "Unlock PDF",
-  "Extract Images",
-  "PDF to JPG",
-  "PDF to PNG",
-  "PDF to TXT",
-  "PDF to Word",
-  "PDF to Excel",
-  "PDF to PowerPoint",
-  "Word to PDF",
-  "Excel to PDF",
-  "PowerPoint to PDF",
-  "OCR Scanner",
-])
+/**
+ * Async job queue mode — DISABLED for launch.
+ * The async path depends on a cron/fire-and-forget chain that has multiple
+ * failure points (CRON_SECRET auth, self-fetch, slug mismatches, progress
+ * resetting to 0 during polling). The sync path in each API route works
+ * reliably. Re-enable post-launch after the job queue is battle-tested.
+ */
+const ASYNC_ENABLED_TOOLS = new Set<string>([])
 
 export function ProcessingInterface({
   acceptedFiles,
