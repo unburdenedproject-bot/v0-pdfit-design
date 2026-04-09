@@ -67,21 +67,24 @@ export async function GET(request: NextRequest) {
   const stripe = getStripe()
   const supabase = getSupabaseAdmin()
 
-  // --- Fetch all active + trialing subscriptions from Stripe ---
-  const [activeList, trialingList] = await Promise.all([
-    stripe.subscriptions.list({
-      status: "active",
-      limit: 100,
-      expand: ["data.customer"],
-    }),
-    stripe.subscriptions.list({
-      status: "trialing",
-      limit: 100,
-      expand: ["data.customer"],
-    }),
-  ])
+  // --- Fetch ALL active + trialing subscriptions from Stripe (paginated) ---
+  const allSubscriptions: Stripe.Subscription[] = []
 
-  const allSubscriptions = [...activeList.data, ...trialingList.data]
+  for await (const sub of stripe.subscriptions.list({
+    status: "active",
+    limit: 100,
+    expand: ["data.customer"],
+  })) {
+    allSubscriptions.push(sub)
+  }
+
+  for await (const sub of stripe.subscriptions.list({
+    status: "trialing",
+    limit: 100,
+    expand: ["data.customer"],
+  })) {
+    allSubscriptions.push(sub)
+  }
 
   let checked = 0
   const mismatches: MismatchRecord[] = []

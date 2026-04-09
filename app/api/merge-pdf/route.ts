@@ -91,7 +91,7 @@ export async function POST(request: NextRequest): Promise<NextResponse | Respons
       // Batch processing (3+ files) requires a paid plan
       if (urls.length > 2 && userPlan === "free") {
         return Response.json(
-          { error: "Batch merging (3+ files) requires a Pro plan or higher. Upgrade to unlock batch processing." },
+          { error: "Merging more than 2 files requires Pro ($3.99/mo). Upgrade to unlock this feature." },
           { status: 403 }
         );
       }
@@ -146,7 +146,7 @@ export async function POST(request: NextRequest): Promise<NextResponse | Respons
       // Batch processing (3+ files) requires a paid plan
       if (files.length > 2 && userPlan === "free") {
         return Response.json(
-          { error: "Batch merging (3+ files) requires a Pro plan or higher. Upgrade to unlock batch processing." },
+          { error: "Merging more than 2 files requires Pro ($3.99/mo). Upgrade to unlock this feature." },
           { status: 403 }
         );
       }

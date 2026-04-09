@@ -32,17 +32,23 @@ interface UseJobPollingReturn {
 export function useJobPolling(
   onComplete: (job: JobStatus) => void,
   onError: (error: string) => void,
-  pollIntervalMs = 2000
+  pollIntervalMs = 2000,
+  maxTimeoutMs = 5 * 60 * 1000 // 5 minutes max
 ): UseJobPollingReturn {
   const [jobId, setJobId] = useState<string | null>(null)
   const [jobStatus, setJobStatus] = useState<JobStatus | null>(null)
   const [isPolling, setIsPolling] = useState(false)
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   const stopPolling = useCallback(() => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current)
       intervalRef.current = null
+    }
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+      timeoutRef.current = null
     }
     setIsPolling(false)
   }, [])
@@ -56,6 +62,15 @@ export function useJobPolling(
       if (intervalRef.current) {
         clearInterval(intervalRef.current)
       }
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+
+      // Safety timeout — stop polling after maxTimeoutMs
+      timeoutRef.current = setTimeout(() => {
+        stopPolling()
+        onError("Processing is taking too long. Please try again.")
+      }, maxTimeoutMs)
 
       const poll = async () => {
         try {
@@ -87,7 +102,7 @@ export function useJobPolling(
       poll()
       intervalRef.current = setInterval(poll, pollIntervalMs)
     },
-    [onComplete, onError, pollIntervalMs, stopPolling]
+    [onComplete, onError, pollIntervalMs, maxTimeoutMs, stopPolling]
   )
 
   return { jobId, jobStatus, isPolling, startPolling, stopPolling }

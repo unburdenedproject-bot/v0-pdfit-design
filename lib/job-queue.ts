@@ -72,6 +72,23 @@ export async function createJob(opts: {
   }
 
   logger.info("job_created", { jobId: data.id, tool: opts.tool, priority })
+
+  // Trigger processing immediately (fire-and-forget) instead of waiting for cron
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+  const cronSecret = process.env.CRON_SECRET
+  if (cronSecret) {
+    fetch(`${siteUrl}/api/jobs/process`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${cronSecret}`,
+      },
+      body: JSON.stringify({ tool: opts.tool }),
+    }).catch(() => {
+      // Non-fatal: cron will pick it up as fallback
+    })
+  }
+
   return { jobId: data.id }
 }
 

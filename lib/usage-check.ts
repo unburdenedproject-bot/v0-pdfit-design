@@ -72,20 +72,25 @@ export async function checkUsageAndAuth(toolName: string) {
       return { allowed: false, error: "signup_required" }
     }
 
+    // Set the cookie immediately so it's always written — even if the route
+    // returns early (async path), throws an error, or uses Response.json()
+    // instead of NextResponse. Previously the cookie was returned for routes
+    // to set manually, which many routes failed to do on error/async paths.
+    try {
+      cookieStore.set(cookieKey, String(current + 1), {
+        path: "/",
+        maxAge: 60 * 60 * 24 * 30,
+        httpOnly: true,
+        sameSite: "lax" as const,
+      })
+    } catch {
+      // Server Component context — can be ignored in Route Handlers
+    }
+
     return {
       allowed: true,
       userId: "anonymous",
       currentCount: current,
-      anonCookie: {
-        name: cookieKey,
-        value: String(current + 1),
-        options: {
-          path: "/",
-          maxAge: 60 * 60 * 24 * 30,
-          httpOnly: true,
-          sameSite: "lax" as const,
-        }
-      }
     }
   }
 
