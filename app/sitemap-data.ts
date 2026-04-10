@@ -1,7 +1,6 @@
 import { MetadataRoute } from "next"
 
-// Split into chunks for sitemap index
-const URLS_PER_SITEMAP = 200
+// 557 URLs — well under the 50,000 single-sitemap limit, no need to split
 
 const baseUrl = "https://pdf.it.com"
 
@@ -728,12 +727,4 @@ const allUrls: MetadataRoute.Sitemap = [
   { url: `${baseUrl}/br/termos-e-condicoes`, lastModified: new Date(), changeFrequency: "yearly" as const, priority: 0.3 },
 ]
 
-export async function generateSitemaps() {
-  const numSitemaps = Math.ceil(allUrls.length / URLS_PER_SITEMAP)
-  return Array.from({ length: numSitemaps }, (_, i) => ({ id: i }))
-}
-
-export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
-  const start = id * URLS_PER_SITEMAP
-  return allUrls.slice(start, start + URLS_PER_SITEMAP)
-}
+export { allUrls }
