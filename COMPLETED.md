@@ -1,5 +1,42 @@
 # PDF.it - Accomplished Work
 
+## Payment Gating, Sitemap Fix & Launch Prep (April 9, 2026)
+
+### Stripe Webhook Hardening
+- Added `charge.refunded` handler (full refunds only — partial refunds don't downgrade)
+- Added `charge.dispute.created` handler with charge-object fallback for customer resolution
+- Added `invoice.payment_failed` → sends "update your card" email via Resend
+- Added `customer.subscription.trial_will_end` → sends "trial ends in 3 days" email
+- Removed aggressive `past_due` instant downgrade — users keep access while Stripe retries
+- `unpaid` status still triggers downgrade (all retries exhausted)
+- Idempotency record inserted AFTER processing (not before) so Stripe retries work on failure
+
+### Reconcile Cron Improvements
+- Full Stripe auto-pagination (was capped at 100 subscribers, would silently miss users)
+- Sweep: paid users in Supabase with no active Stripe subscription → auto-downgrade to free
+- Email report to Paula now includes both mismatches and expired subscription downgrades
+
+### Server-Side Batch Gate
+- Merge PDF: free users limited to 2 files, 3+ requires Pro
+- Plan returned from `checkUsageAndAuth()` so API routes can check tier
+
+### Anonymous Usage Fix
+- Cookie changed from `pdfit_uses` (30-day, never reset) to `pdfit_uses_YYYY-MM-DD` (daily reset)
+- Cookie set directly inside `checkUsageAndAuth()` — works on all code paths (async, error, success)
+
+### Blank PDF Check Fix
+- 20 API routes: catch block now logs and continues instead of rejecting valid PDFs
+- If pdfjs-dist throws for any reason, file passes through to iLoveAPI
+
+### Async Job Queue Disabled
+- `ASYNC_ENABLED_TOOLS` set to empty — all tools use sync processing for launch reliability
+- Polling timeout added to `useJobPolling` (5 min max) as safety net
+
+### Sitemap 404 Fixed
+- Deleted conflicting Next.js convention-based `app/sitemap.ts` (renamed to `app/sitemap-data.ts`)
+- Created explicit route handler at `app/sitemap.xml/route.ts` that generates XML from URL data
+- Middleware updated to exclude `sitemap.xml` and `robots.txt` from Supabase auth processing
+
 ## UX Improvements & Social Proof (April 8, 2026)
 
 ### Homepage Tool Search & Filter

@@ -154,10 +154,14 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 - Homepage shows 2 resume tools: "Optimize Your Resume" → /ats-optimizer, "Create a Resume" → /create-resume
 - eSign signatures are privacy-first and session-only: never persist reusable signature libraries server-side
 - Phone scan cleanup uses division-based adaptive background removal (blur(50) background estimate → pixel division). DO NOT replace with global threshold, CLAHE, or modulate — these were tested and produced unusable output. Current parameters are locked as the benchmark.
+- Sitemap: explicit route handler at `app/sitemap.xml/route.ts` imports `allUrls` from `app/sitemap-data.ts`. NOT using Next.js convention-based sitemap. Middleware excludes sitemap.xml and robots.txt.
+- Stripe webhook lifecycle: checkout → subscription.updated → past_due (no downgrade, email only) → unpaid (downgrade) → subscription.deleted (downgrade). Refunds only downgrade on full refund. Disputes resolve customer via charge object fallback.
+- Reconcile cron (`app/api/cron/reconcile-stripe/route.ts`): uses Stripe auto-pagination (no limit:100 cap), sweeps paid users with no active subscription → downgrades to free, emails Paula a report.
 - See LOCALIZATION.md
 
 ## Rules - Always Follow
-- **CRITICAL: If something is NOT broken, DO NOT touch it.** Only modify working systems if there is a proven weakness or gap that will hurt the business. On April 8, 2026, the sitemap (robots.txt) was modified unnecessarily, breaking Google's ability to fetch it and delaying page indexing. This must NEVER happen again. Always ask before changing SEO-critical files (robots.txt, sitemap.ts, canonical URLs, redirects, domain config).
+- **CRITICAL: If something is NOT broken, DO NOT touch it.** Only modify working systems if there is a proven weakness or gap that will hurt the business. Always ask before changing SEO-critical files (robots.txt, sitemap, canonical URLs, redirects, domain config).
+- **NEVER touch the sitemap.** The sitemap at `/sitemap.xml` was broken THREE times (April 8-9, 2026) before being fixed. It is now an explicit route handler at `app/sitemap.xml/route.ts` that imports URL data from `app/sitemap-data.ts`. It works. Do NOT rename, refactor, move, or "improve" these files. Do NOT switch to Next.js convention-based sitemap (`app/sitemap.ts`) — that approach was tried and failed. The middleware at `middleware.ts` excludes `sitemap.xml` and `robots.txt` from processing — do NOT remove those exclusions.
 - Never break already indexed pages
 - Use iLoveAPI for PDF processing (except pdf-to-word/excel/powerpoint which use CloudConvert)
 - Table extraction uses Google Document AI Form Parser
@@ -179,7 +183,12 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 - **All API routes must have finally blocks** for blob + /tmp cleanup
 - **All POST endpoints must check CSRF** — use `checkCsrf()` from `lib/csrf.ts`
 - **Error messages must never expose service names** — use `errorResponse()` from `lib/api/error-handler.js`
-- **Webhook must return 500 on DB failure** (so Stripe retries) and check `webhook_events` for idempotency
+- **Webhook must return 500 on DB failure** (so Stripe retries) and check `webhook_events` for idempotency. Idempotency record must be inserted AFTER successful processing, never before — otherwise Stripe retries are silently dropped on failure.
+- **Webhook handles 7 Stripe events:** `checkout.session.completed`, `customer.subscription.updated`, `customer.subscription.deleted`, `charge.refunded` (full refunds only), `charge.dispute.created`, `invoice.payment_failed` (sends "update your card" email), `customer.subscription.trial_will_end` (sends "trial ends in 3 days" email). All 7 must be enabled in Stripe dashboard.
+- **Do NOT downgrade on `past_due`** — Stripe is still retrying the charge. Only `unpaid` (all retries exhausted) triggers downgrade. `subscription.deleted` is the final safety net.
+- **Blank PDF check (`lib/blank-pdf-check.js`) must never reject valid files** — if the check itself throws (pdfjs-dist failure), log the error and continue processing. Let iLoveAPI handle truly invalid files.
+- **Async job queue is DISABLED for launch** — `ASYNC_ENABLED_TOOLS` in `processing-interface.tsx` is an empty Set. All tools use sync processing. Do NOT re-enable without thorough testing of the job queue, cron trigger, and polling timeout.
+- **Anonymous usage limit is 3/day** — tracked via cookie `pdfit_uses_YYYY-MM-DD` (daily reset). Cookie is set inside `checkUsageAndAuth()` directly, not returned for routes to set.
 - **Footer copyright must say © 2024** — PDF.it was established in 2024. Never use dynamic dates.
 - **Never show low usage numbers as social proof** — live stats only display "Files processed" when count exceeds 10,000. Below that, shows "30+ PDF tools available"
 - **Feedback table requires manual approval** — set `approved = true` in Supabase before testimonials display on homepage
