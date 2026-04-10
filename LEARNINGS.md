@@ -1,5 +1,35 @@
 # Project Learnings
 
+## 2026-04-09 — Never enable async job queue without end-to-end testing
+
+**What:** The `ASYNC_ENABLED_TOOLS` set in `processing-interface.tsx` was populated with 19 tools, routing them through the async job queue (create job → poll → cron processes). This caused infinite spinners because: (1) the cron only runs every minute, (2) the fire-and-forget trigger to `/api/jobs/process` requires `CRON_SECRET` auth which may fail silently, (3) polling resets progress to 0% when the job is still "pending", (4) some tool name slugs don't match API route names.
+**Why it matters:** The async queue added 3 failure points (job creation, processing trigger, polling) to what was a simple direct API call. The sync path works reliably for all tools. The tester reported "Loading forever" on every tool.
+**Apply when:** `ASYNC_ENABLED_TOOLS` is empty and must stay empty until the job queue is battle-tested with real traffic. The sync path is the production path.
+
+## 2026-04-09 — Blank PDF check catch blocks must never reject valid files
+
+**What:** 20 API routes had `try { isBlankPdf() } catch { return error("empty or unreadable") }`. If `pdfjs-dist` throws for ANY reason (module loading, memory, PDF parsing quirk), the catch block rejects the file. Valid PDFs were being rejected as "empty."
+**Why it matters:** The blank check is a cost optimization, not a hard requirement. If it fails, let iLoveAPI handle the file — it will reject truly bad files on its end.
+**Apply when:** The catch block must log and continue, never reject. This is now fixed in all 20 routes.
+
+## 2026-04-09 — Webhook idempotency record must be inserted AFTER processing
+
+**What:** Moving the `webhook_events` insert to before processing seemed safer (prevents duplicate handling). But if the insert succeeds and processing fails (DB error → 500), Stripe retries the event and finds the existing record → skips processing. The user's plan is never updated.
+**Why it matters:** A user who paid could be permanently stuck on the free plan with no way for Stripe to fix it. The idempotency check is a read-only guard; the insert must happen after success.
+**Apply when:** Any webhook idempotency pattern. Read the guard first, process, then write the record.
+
+## 2026-04-09 — Stripe partial refunds fire charge.refunded too
+
+**What:** `charge.refunded` fires on ANY refund including partial refunds (e.g., proration credits from upgrading plans). The original handler downgraded the user on every refund event — even $2 partial refunds on $13.99 subscriptions.
+**Why it matters:** Users who upgrade mid-cycle get a partial refund from Stripe. The handler was nuking their plan AND giving money back.
+**Apply when:** Always check `charge.amount_refunded >= charge.amount_captured` before downgrading on refund. Partial refunds should be ignored.
+
+## 2026-04-09 — Anonymous cookie must be set server-side, not returned for routes to set
+
+**What:** `checkUsageAndAuth()` returned an `anonCookie` object for routes to manually attach to their responses. But async paths (return early with jobId), error paths (return error response), and routes using `Response.json()` (not NextResponse) never set the cookie. The counter never incremented.
+**Why it matters:** Anonymous users got unlimited free conversions because the cookie was never written.
+**Apply when:** The cookie is now set directly inside `checkUsageAndAuth()` via `cookieStore.set()`. Routes no longer need to handle it. The old `anonCookie` references in routes are dead code (harmless).
+
 ## 2026-04-07 — Webhook must return 500 on DB failure, not 200
 
 **What:** The Stripe webhook was returning 200 OK even when the Supabase plan update failed. This meant Stripe thought the webhook succeeded and wouldn't retry. Users who paid during a Supabase blip were charged but stayed on the free plan.
@@ -162,11 +192,12 @@
 **Why it matters:** Paula reviews changes on the live site, not in code. Batching hides problems behind later commits. Small, frequent deploys let her verify each change immediately.
 **Apply when:** Always. When the user says "deploy" or when a task is complete, commit and push immediately. Don't wait to batch with the next task.
 
-## 2026-03-26 — Sitemap index pattern required for 200+ URL sites
+## 2026-03-26 → 2026-04-09 — Sitemap: use explicit route handler, NOT Next.js convention
 
-**What:** A single Next.js `sitemap()` function with 536 URLs resulted in Google Search Console only discovering 200 pages. Converting to `generateSitemaps()` with 200-URL chunks solved it — Google now gets a sitemap index pointing to `/sitemap/0.xml`, `/sitemap/1.xml`, `/sitemap/2.xml`.
-**Why it matters:** Google may silently truncate large single sitemaps. The Next.js 15 `generateSitemaps()` pattern is the correct approach for any site over ~200 pages.
-**Apply when:** Any time the sitemap exceeds 200 URLs. Use the chunk pattern: `const URLS_PER_SITEMAP = 200`, export `generateSitemaps()` returning `[{id: 0}, {id: 1}, ...]`, and `sitemap({id})` returning `allUrls.slice(start, start + URLS_PER_SITEMAP)`.
+**What:** Originally used Next.js `generateSitemaps()` convention. This broke 3 times on April 8-9: (1) a manual `app/sitemap.xml/route.ts` conflicted with the convention file, (2) deleting the manual route didn't fix it because middleware was intercepting `/sitemap.xml` and running Supabase auth on it, (3) even with middleware exclusion, Next.js convention-based generation was unreliable on Vercel.
+**Final fix:** Renamed `app/sitemap.ts` to `app/sitemap-data.ts` (exports URL data only). Created `app/sitemap.xml/route.ts` as an explicit route handler that generates XML directly. Added `sitemap.xml` and `robots.txt` to middleware exclusions.
+**Why it matters:** The sitemap was broken for Google for 2 days during pre-launch. Convention-based sitemap generation in Next.js 15 proved fragile — it conflicts with custom routes, middleware, and not-found pages. An explicit route handler is guaranteed to work.
+**Apply when:** NEVER switch back to convention-based sitemap (`app/sitemap.ts`). The explicit route handler at `app/sitemap.xml/route.ts` is locked. Add new URLs to `app/sitemap-data.ts` only.
 
 ## 2026-03-26 — Always audit API + UI gates together, not separately
 
@@ -176,9 +207,9 @@
 
 ## 2026-03-26 — New pages must be added to the sitemap manually
 
-**What:** Three new pages (`/high-volume-table-extraction` EN/ES/BR) and 3 blog articles were created but not added to the sitemap. The sitemap is a static array in `app/sitemap.ts`, not auto-generated from the filesystem.
+**What:** Three new pages (`/high-volume-table-extraction` EN/ES/BR) and 3 blog articles were created but not added to the sitemap. The sitemap is a static array, not auto-generated from the filesystem.
 **Why it matters:** New pages that aren't in the sitemap won't be discovered by Google. Since the sitemap is manually maintained, every new page creation must include a sitemap entry.
-**Apply when:** Every time a new page is created. Add its URL (and ES/BR equivalents) to the `allUrls` array in `app/sitemap.ts`.
+**Apply when:** Every time a new page is created. Add its URL (and ES/BR equivalents) to the `allUrls` array in `app/sitemap-data.ts` (NOT `app/sitemap.ts` — that file no longer exists).
 
 ## 2026-03-25 — Page_Format.md must document processing interface variants
 

@@ -17,7 +17,7 @@
 | Code Organization | 5/10 | **8/10** | 100% TypeScript, shared utilities, component decomposition |
 | Testing | 7/10 | **8.5/10** | 227 E2E + 51 unit tests, shared utility coverage |
 | Observability | 3/10 | **8/10** | Structured JSON logger, request ID correlation, duration tracking |
-| Scalability | 3/10 | **9/10** | Streaming, per-user rate limiting, async job queue (32 routes), background processor |
+| Scalability | 3/10 | **8/10** | Streaming, per-user rate limiting, sync processing (async queue disabled for launch reliability) |
 
 ---
 
