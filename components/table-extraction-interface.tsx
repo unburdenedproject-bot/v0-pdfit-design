@@ -31,7 +31,6 @@ export function TableExtractionInterface({ enterpriseMode = false }: { enterpris
   const [resultUrl, setResultUrl] = useState<string | null>(null)
   const [resultFilename, setResultFilename] = useState("")
   const [userPlan, setUserPlan] = useState<string>("free")
-  const [tablesFound, setTablesFound] = useState(0)
 
   // Locale detection
   const localePrefix = pathname.startsWith("/es")
@@ -171,7 +170,6 @@ export function TableExtractionInterface({ enterpriseMode = false }: { enterpris
     setProgress(0)
     setResultUrl(null)
     setResultFilename("")
-    setTablesFound(0)
   }, [resultUrl])
 
   // Labels by locale

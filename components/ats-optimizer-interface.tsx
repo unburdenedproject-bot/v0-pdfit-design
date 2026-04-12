@@ -153,6 +153,7 @@ export function AtsOptimizerInterface() {
   const [jobDescription, setJobDescription] = useState("")
   const [isDragOver, setIsDragOver] = useState(false)
   const [isProcessing, setIsProcessing] = useState(false)
+  const [progress, setProgress] = useState(0)
   const [hasError, setHasError] = useState(false)
   const [errorMessage, setErrorMessage] = useState("")
   const [analysis, setAnalysis] = useState<ATSAnalysis | null>(null)
@@ -220,12 +221,21 @@ export function AtsOptimizerInterface() {
     if (!file) return
 
     setIsProcessing(true)
+    setProgress(5)
     setHasError(false)
 
     let blobUrl: string | null = null
+    let progressTimer: ReturnType<typeof setInterval> | null = null
 
     try {
+      setProgress(15)
       blobUrl = await uploadFileToBlob(file)
+      setProgress(40)
+
+      // Simulate gradual progress during the long AI call (maxDuration 300s)
+      progressTimer = setInterval(() => {
+        setProgress((p) => (p < 90 ? p + 2 : p))
+      }, 1500)
 
       const response = await fetch("/api/ats-optimizer", {
         method: "POST",
@@ -259,6 +269,8 @@ export function AtsOptimizerInterface() {
       setHasError(true)
       setErrorMessage(msg)
     } finally {
+      if (progressTimer) clearInterval(progressTimer)
+      setProgress(100)
       setIsProcessing(false)
       if (blobUrl) deleteBlobUrl(blobUrl)
     }
@@ -268,6 +280,7 @@ export function AtsOptimizerInterface() {
     setFile(null)
     setJobDescription("")
     setIsProcessing(false)
+    setProgress(0)
     setHasError(false)
     setErrorMessage("")
     setAnalysis(null)
@@ -990,9 +1003,18 @@ export function AtsOptimizerInterface() {
 
                 {/* Processing */}
                 {isProcessing && (
-                  <div className="mb-6 flex items-center gap-3">
-                    <Loader2 className="h-5 w-5 text-[#14D8C4] animate-spin" />
-                    <span className="text-sm font-medium text-slate-700">{labels.analyzing}</span>
+                  <div className="mb-6">
+                    <div className="flex items-center gap-3 mb-2">
+                      <Loader2 className="h-5 w-5 text-[#14D8C4] animate-spin" />
+                      <span className="text-sm font-medium text-slate-700">{labels.analyzing}</span>
+                      <span className="ml-auto text-sm font-semibold text-[#14D8C4]">{progress}%</span>
+                    </div>
+                    <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-[#14D8C4] transition-all duration-300"
+                        style={{ width: `${progress}%` }}
+                      />
+                    </div>
                   </div>
                 )}
 

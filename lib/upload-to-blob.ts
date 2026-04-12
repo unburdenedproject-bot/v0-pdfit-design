@@ -30,9 +30,20 @@ export async function uploadFileToBlob(file: File): Promise<string> {
 }
 
 async function getMaxUploadBytes(): Promise<{ maxBytes: number; errorMessage: string }> {
-  // Fetch the user's plan to determine the size limit
-  const planRes = await fetch("/api/user-plan")
-  const { plan } = (await planRes.json()) as { plan: string }
+  // Fetch the user's plan to determine the size limit.
+  // A slow /api/user-plan response must not block the upload UI -- fall back to "free" limits after 3s.
+  let plan = "free"
+  try {
+    const controller = new AbortController()
+    const timeoutId = setTimeout(() => controller.abort(), 3000)
+    const planRes = await fetch("/api/user-plan", { signal: controller.signal })
+    clearTimeout(timeoutId)
+    const data = (await planRes.json()) as { plan?: string }
+    plan = data.plan || "free"
+  } catch {
+    // timeout or network error -- assume free tier limits (safest)
+    plan = "free"
+  }
   const maxBytes = plan === "enterprise" ? ENTERPRISE_MAX_BYTES : plan === "business" ? BUSINESS_MAX_BYTES : plan === "pro" ? PRO_MAX_BYTES : FREE_MAX_BYTES
   const maxLabel = plan === "enterprise" ? "1GB" : plan === "business" ? "1GB" : plan === "pro" ? "200MB" : "25MB"
   const planLabel = plan === "enterprise" ? "Enterprise" : plan === "business" ? "Business" : plan === "pro" ? "Pro" : "Free"
