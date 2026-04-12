@@ -9,6 +9,7 @@ import { Upload, FileText, X, Download, CheckCircle, Loader2, AlertCircle, Shiel
 import { cn } from "@/lib/utils"
 import { FileProcessor } from "@/lib/file-processor"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
+import { validateClientFile, getSizeLimitLabel } from "@/lib/client-file-validator"
 import { useJobPolling } from "@/lib/use-job-polling"
 import { TierGateCard } from "@/components/processing/tier-gate-card"
 import { ProcessingResult } from "@/components/processing/processing-result"
@@ -171,30 +172,37 @@ export function ProcessingInterface({
     setIsDragOver(false)
   }, [])
 
+  const acceptFiles = useCallback(async (incoming: File[]) => {
+    if (!incoming.length) return
+    // Validate each file client-side before accepting any of them
+    for (const f of incoming) {
+      const r = await validateClientFile(f, userPlan)
+      if (!r.ok) {
+        setHasError(true)
+        setErrorMessage(r.error || "This file cannot be used.")
+        return
+      }
+    }
+    setHasError(false)
+    setErrorMessage("")
+    if (isPaidUser) {
+      setFiles((prev) => [...prev, ...incoming])
+    } else {
+      setFiles(incoming.slice(0, freeFileLimit))
+    }
+  }, [isPaidUser, freeFileLimit, userPlan])
+
   const handleDrop = useCallback((e: React.DragEvent) => {
     e.preventDefault()
     setIsDragOver(false)
-
-    const droppedFiles = Array.from(e.dataTransfer.files)
-    if (isPaidUser) {
-      setFiles((prev) => [...prev, ...droppedFiles])
-    } else {
-      // Free users: replace file(s) with new selection (keeps latest up to limit)
-      setFiles(droppedFiles.slice(0, freeFileLimit))
-    }
-  }, [isPaidUser, freeFileLimit])
+    acceptFiles(Array.from(e.dataTransfer.files))
+  }, [acceptFiles])
 
   const handleFileSelect = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
-      const selectedFiles = Array.from(e.target.files)
-      if (isPaidUser) {
-        setFiles((prev) => [...prev, ...selectedFiles])
-      } else {
-        // Free users: replace file(s) with new selection (keeps latest up to limit)
-        setFiles(selectedFiles.slice(0, freeFileLimit))
-      }
+      acceptFiles(Array.from(e.target.files))
     }
-  }, [isPaidUser, freeFileLimit])
+  }, [acceptFiles])
 
   const removeFile = useCallback((index: number) => {
     setFiles((prev) => {
@@ -1239,6 +1247,7 @@ export function ProcessingInterface({
             hasFiles={files.length > 0}
             isPaidUser={isPaidUser}
             pricingUrl={pricingUrl}
+            sizeLimitLabel={getSizeLimitLabel(userPlan)}
           />
 
           <FileList

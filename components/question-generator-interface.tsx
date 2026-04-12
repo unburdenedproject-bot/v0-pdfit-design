@@ -19,6 +19,7 @@ import {
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
+import { validateClientFile, getSizeLimitLabel } from "@/lib/client-file-validator"
 import { TrustBadges } from "@/components/trust-badges"
 
 interface Question {
@@ -146,29 +147,25 @@ export function QuestionGeneratorInterface() {
             hard: "Hard",
           }
 
+  const acceptFile = useCallback(async (f: File | undefined) => {
+    if (!f) return
+    if (f.type && f.type !== "application/pdf" && !f.name.toLowerCase().endsWith(".pdf")) {
+      setHasError(true); setErrorMessage("Please upload a PDF file."); setFile(null); setQuestions([]); setRevealedAnswers(new Set()); return
+    }
+    const r = await validateClientFile(f, userPlan)
+    if (!r.ok) { setHasError(true); setErrorMessage(r.error || "This file cannot be used."); setFile(null); setQuestions([]); setRevealedAnswers(new Set()); return }
+    setFile(f); setHasError(false); setErrorMessage(""); setQuestions([]); setRevealedAnswers(new Set())
+  }, [userPlan])
+
   const handleDrop = useCallback((e: React.DragEvent) => {
     e.preventDefault()
     setIsDragOver(false)
-    const droppedFile = e.dataTransfer.files[0]
-    if (droppedFile && droppedFile.type === "application/pdf") {
-      setFile(droppedFile)
-      setHasError(false)
-      setErrorMessage("")
-      setQuestions([])
-      setRevealedAnswers(new Set())
-    }
-  }, [])
+    acceptFile(e.dataTransfer.files[0])
+  }, [acceptFile])
 
   const handleFileSelect = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const selectedFile = e.target.files?.[0]
-    if (selectedFile) {
-      setFile(selectedFile)
-      setHasError(false)
-      setErrorMessage("")
-      setQuestions([])
-      setRevealedAnswers(new Set())
-    }
-  }, [])
+    acceptFile(e.target.files?.[0])
+  }, [acceptFile])
 
   const handleProcess = useCallback(async () => {
     if (!file) return
@@ -402,6 +399,7 @@ export function QuestionGeneratorInterface() {
                 <Button variant="outline" className="font-semibold" onClick={(e) => { e.stopPropagation(); document.getElementById("qgen-file-input")?.click() }}>
                   {labels.browse}
                 </Button>
+                <p className="text-xs text-slate-400 mt-4">PDF only &middot; up to {getSizeLimitLabel(userPlan)}</p>
               </div>
             ) : (
               <div>

@@ -18,6 +18,7 @@ import {
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
+import { validateClientFile, getSizeLimitLabel } from "@/lib/client-file-validator"
 import { TrustBadges } from "@/components/trust-badges"
 
 const LANGUAGE_OPTIONS = [
@@ -87,16 +88,24 @@ export function TranslatePdfInterface() {
             upgradeBtn: "View Business Plan",
           }
 
+  const acceptFile = useCallback(async (f: File | undefined) => {
+    if (!f) return
+    if (f.type && f.type !== "application/pdf" && !f.name.toLowerCase().endsWith(".pdf")) {
+      setHasError(true); setErrorMessage("Please upload a PDF file."); setFile(null); setTranslation(null); return
+    }
+    const r = await validateClientFile(f, userPlan)
+    if (!r.ok) { setHasError(true); setErrorMessage(r.error || "This file cannot be used."); setFile(null); setTranslation(null); return }
+    setFile(f); setHasError(false); setErrorMessage(""); setTranslation(null)
+  }, [userPlan])
+
   const handleDrop = useCallback((e: React.DragEvent) => {
     e.preventDefault(); setIsDragOver(false)
-    const f = e.dataTransfer.files[0]
-    if (f && f.type === "application/pdf") { setFile(f); setHasError(false); setErrorMessage(""); setTranslation(null) }
-  }, [])
+    acceptFile(e.dataTransfer.files[0])
+  }, [acceptFile])
 
   const handleFileSelect = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const f = e.target.files?.[0]
-    if (f) { setFile(f); setHasError(false); setErrorMessage(""); setTranslation(null) }
-  }, [])
+    acceptFile(e.target.files?.[0])
+  }, [acceptFile])
 
   const handleProcess = useCallback(async () => {
     if (!file) return
@@ -225,6 +234,7 @@ export function TranslatePdfInterface() {
                 <h3 className="text-lg font-bold text-slate-800 mb-2">{labels.uploadTitle}</h3>
                 <p className="text-sm text-slate-500 mb-4">{labels.uploadDesc}</p>
                 <Button variant="outline" className="font-semibold" onClick={(e) => { e.stopPropagation(); document.getElementById("translate-file-input")?.click() }}>{labels.browse}</Button>
+                <p className="text-xs text-slate-400 mt-4">PDF only &middot; up to {getSizeLimitLabel(userPlan)}</p>
               </div>
             ) : (
               <div>

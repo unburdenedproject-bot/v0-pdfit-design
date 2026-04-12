@@ -16,6 +16,7 @@ import {
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
+import { validateClientFile, getSizeLimitLabel } from "@/lib/client-file-validator"
 import { TrustBadges } from "@/components/trust-badges"
 
 interface ChatMessage {
@@ -116,25 +117,25 @@ export function ChatWithPdfInterface() {
             upgradeBtn: "View Business Plan",
           }
 
+  const acceptFile = useCallback(async (f: File | undefined) => {
+    if (!f) return
+    if (f.type && f.type !== "application/pdf" && !f.name.toLowerCase().endsWith(".pdf")) {
+      setHasError(true); setErrorMessage("Please upload a PDF file."); setFile(null); return
+    }
+    const r = await validateClientFile(f, userPlan)
+    if (!r.ok) { setHasError(true); setErrorMessage(r.error || "This file cannot be used."); setFile(null); return }
+    setFile(f); setHasError(false); setErrorMessage("")
+  }, [userPlan])
+
   const handleDrop = useCallback((e: React.DragEvent) => {
     e.preventDefault()
     setIsDragOver(false)
-    const droppedFile = e.dataTransfer.files[0]
-    if (droppedFile && droppedFile.type === "application/pdf") {
-      setFile(droppedFile)
-      setHasError(false)
-      setErrorMessage("")
-    }
-  }, [])
+    acceptFile(e.dataTransfer.files[0])
+  }, [acceptFile])
 
   const handleFileSelect = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const selectedFile = e.target.files?.[0]
-    if (selectedFile) {
-      setFile(selectedFile)
-      setHasError(false)
-      setErrorMessage("")
-    }
-  }, [])
+    acceptFile(e.target.files?.[0])
+  }, [acceptFile])
 
   // Upload file and send first extraction request
   const handleUpload = useCallback(async () => {
@@ -511,6 +512,7 @@ export function ChatWithPdfInterface() {
                 >
                   {labels.browse}
                 </Button>
+                <p className="text-xs text-slate-400 mt-4">PDF only &middot; up to {getSizeLimitLabel(userPlan)}</p>
               </div>
             )}
           </div>

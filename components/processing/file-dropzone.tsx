@@ -20,6 +20,8 @@ interface FileDropzoneProps {
   isPaidUser: boolean
   /** URL to pricing page */
   pricingUrl: string
+  /** Size limit label to display (e.g. "25MB", "200MB", "1GB") */
+  sizeLimitLabel?: string
 }
 
 export function FileDropzone({
@@ -33,6 +35,7 @@ export function FileDropzone({
   hasFiles,
   isPaidUser,
   pricingUrl,
+  sizeLimitLabel,
 }: FileDropzoneProps) {
   return (
     <>
@@ -59,6 +62,9 @@ export function FileDropzone({
               Choose Files
             </Button>
             <p className="text-sm text-slate-500 mt-4">Supported formats: {acceptedFiles}</p>
+            {sizeLimitLabel && (
+              <p className="text-xs text-slate-400 mt-1">Max file size: {sizeLimitLabel}</p>
+            )}
           </div>
         </div>
       )}

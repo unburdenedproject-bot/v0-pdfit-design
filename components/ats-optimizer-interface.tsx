@@ -19,6 +19,7 @@ import {
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
+import { validateClientFile, getSizeLimitLabel } from "@/lib/client-file-validator"
 import { TrustBadges } from "@/components/trust-badges"
 
 interface SectionScore {
@@ -197,25 +198,38 @@ export function AtsOptimizerInterface() {
   const isPaidUser =
     userPlan === "pro" || userPlan === "business" || userPlan === "enterprise"
 
+  const acceptFile = useCallback(async (selected: File | undefined) => {
+    if (!selected) return
+    if (selected.type && selected.type !== "application/pdf" && !selected.name.toLowerCase().endsWith(".pdf")) {
+      setHasError(true)
+      setErrorMessage("Please upload a PDF resume.")
+      setFile(null)
+      setAnalysis(null)
+      return
+    }
+    const result = await validateClientFile(selected, userPlan)
+    if (!result.ok) {
+      setHasError(true)
+      setErrorMessage(result.error || "This file cannot be used.")
+      setFile(null)
+      setAnalysis(null)
+      return
+    }
+    setFile(selected)
+    setHasError(false)
+    setErrorMessage("")
+    setAnalysis(null)
+  }, [userPlan])
+
   const handleDrop = useCallback((e: React.DragEvent) => {
     e.preventDefault()
     setIsDragOver(false)
-    const droppedFile = e.dataTransfer.files[0]
-    if (droppedFile && droppedFile.type === "application/pdf") {
-      setFile(droppedFile)
-      setHasError(false)
-      setAnalysis(null)
-    }
-  }, [])
+    acceptFile(e.dataTransfer.files[0])
+  }, [acceptFile])
 
   const handleFileSelect = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const selectedFile = e.target.files?.[0]
-    if (selectedFile) {
-      setFile(selectedFile)
-      setHasError(false)
-      setAnalysis(null)
-    }
-  }, [])
+    acceptFile(e.target.files?.[0])
+  }, [acceptFile])
 
   const handleAnalyze = useCallback(async () => {
     if (!file) return
@@ -960,6 +974,7 @@ export function AtsOptimizerInterface() {
                 <Button variant="outline" className="font-semibold" onClick={(e) => { e.stopPropagation(); document.getElementById("ats-file-input")?.click() }}>
                   {labels.browse}
                 </Button>
+                <p className="text-xs text-slate-400 mt-4">PDF only &middot; up to {getSizeLimitLabel(userPlan)}</p>
               </div>
             ) : (
               <div>
