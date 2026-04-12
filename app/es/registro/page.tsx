@@ -61,6 +61,12 @@ export default function SignUpPageEs() {
       return
     }
 
+    if (!/[A-Z]/.test(password) || !/[a-z]/.test(password) || !/\d/.test(password) || !/[^A-Za-z0-9]/.test(password)) {
+      setError("La contraseña debe incluir mayúsculas, minúsculas, un número y un carácter especial.")
+      setIsLoading(false)
+      return
+    }
+
     if (!captchaToken) {
       setError("Por favor completa la verificación captcha")
       setIsLoading(false)
@@ -82,6 +88,13 @@ export default function SignUpPageEs() {
         },
       })
       if (error) throw error
+
+      if (data.user && Array.isArray(data.user.identities) && data.user.identities.length === 0) {
+        setError("Ya existe una cuenta con este correo. Inicia sesión o restablece tu contraseña.")
+        setIsLoading(false)
+        captchaRef.current?.resetCaptcha()
+        return
+      }
 
       if (data.user) {
         await supabase.from("users").upsert(

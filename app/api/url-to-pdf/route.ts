@@ -50,10 +50,21 @@ export async function POST(request: NextRequest): Promise<NextResponse | Respons
     }
 
     // URL validation — blocks SSRF (internal IPs, cloud metadata, non-HTTP schemes)
-    const { validateUrlForCapture } = await import("@/lib/url-validation");
+    const { validateUrlForCapture, checkUrlSafety } = await import("@/lib/url-validation");
     const validation = await validateUrlForCapture(url);
     if (!validation.valid) {
       return errorResponse(validation.reason, 400);
+    }
+
+    // Google Safe Browsing check -- blocks known phishing, malware, and social engineering URLs.
+    // Skipped (returns safe) if GOOGLE_SAFE_BROWSING_API_KEY is not set.
+    const safety = await checkUrlSafety(url);
+    if (!safety.safe) {
+      logger.warn("unsafe_url_blocked", { requestId, tool: "url-to-pdf", threatType: safety.threatType });
+      return errorResponse(
+        "This URL is unsafe and cannot be processed. It has been flagged as phishing or malware.",
+        400
+      );
     }
 
     // ---- Async mode: create a job and return immediately ----

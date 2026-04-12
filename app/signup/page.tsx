@@ -61,6 +61,13 @@ export default function SignUpPage() {
       return
     }
 
+    // Strong password: at least one uppercase, one lowercase, one digit, one special char.
+    if (!/[A-Z]/.test(password) || !/[a-z]/.test(password) || !/\d/.test(password) || !/[^A-Za-z0-9]/.test(password)) {
+      setError("Password must include uppercase, lowercase, a number, and a special character.")
+      setIsLoading(false)
+      return
+    }
+
     if (!captchaToken) {
       setError("Please complete the captcha verification")
       setIsLoading(false)
@@ -82,6 +89,17 @@ export default function SignUpPage() {
         },
       })
       if (error) throw error
+
+      // Supabase returns data.user with an empty identities array when the
+      // email is already registered (to prevent email enumeration). Detect
+      // that case and show a clear error instead of the misleading "check
+      // your email" success screen.
+      if (data.user && Array.isArray(data.user.identities) && data.user.identities.length === 0) {
+        setError("An account with this email already exists. Please log in or reset your password.")
+        setIsLoading(false)
+        captchaRef.current?.resetCaptcha()
+        return
+      }
 
       if (data.user) {
         await supabase.from("users").upsert(
@@ -198,6 +216,7 @@ export default function SignUpPage() {
                         {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                       </button>
                     </div>
+                    <p className="text-xs text-slate-400">At least 8 characters, with uppercase, lowercase, a number, and a special character.</p>
                   </div>
                   <div className="grid gap-2">
                     <Label htmlFor="confirm-password" className="text-slate-300">Confirm Password <span className="text-red-400">*</span></Label>
