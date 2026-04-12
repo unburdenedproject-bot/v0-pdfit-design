@@ -31,6 +31,7 @@ import {
   Lightbulb,
 } from "lucide-react"
 import Link from "next/link"
+import { DashboardSearch } from "@/components/dashboard-search"
 
 interface RecentActivity {
   tool: string
@@ -277,6 +278,9 @@ export function DashboardClient({
           </div>
         </div>
       )}
+
+      {/* Tool Search */}
+      <DashboardSearch locale="en" />
 
       {/* Stats Row */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
