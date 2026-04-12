@@ -16,7 +16,32 @@ function errorResponse(message: string, status: number = 500): Response {
   return Response.json({ error: message }, { status });
 }
 
-const MAX_PDF_TEXT_CHARS: number = 12000;
+/**
+ * Split text into chunks of at most `maxChars`, preferring to break at
+ * paragraph boundaries (double newlines), then line breaks, then spaces.
+ * Preserves reading order so the joined translation reads naturally.
+ */
+function splitIntoChunks(text: string, maxChars: number): string[] {
+  if (text.length <= maxChars) return [text];
+  const chunks: string[] = [];
+  let remaining = text;
+  while (remaining.length > maxChars) {
+    let breakAt = remaining.lastIndexOf("\n\n", maxChars);
+    if (breakAt < maxChars * 0.5) breakAt = remaining.lastIndexOf("\n", maxChars);
+    if (breakAt < maxChars * 0.5) breakAt = remaining.lastIndexOf(" ", maxChars);
+    if (breakAt < maxChars * 0.5) breakAt = maxChars;
+    chunks.push(remaining.slice(0, breakAt).trim());
+    remaining = remaining.slice(breakAt).trim();
+  }
+  if (remaining.length > 0) chunks.push(remaining);
+  return chunks;
+}
+
+const MAX_PDF_TEXT_CHARS: number = 40000;
+// Chunk the document before translating so long PDFs don't get silently
+// truncated by the model's max_tokens output cap.
+const CHUNK_CHARS: number = 3000;
+const MAX_PARALLEL_CHUNKS: number = 4;
 
 const LANGUAGES: Record<string, string> = {
   english: "English",
@@ -162,44 +187,57 @@ Rules:
 - Keep proper nouns, company names, and technical terms that don't have standard translations in the original language.
 - Keep numbers, dates, and currencies in their original format unless the target language has a different standard.
 - Use formal/professional register appropriate for business documents.
-- Output only the translated text. No commentary, no notes, no "Translation:" prefix.`;
+- Output only the translated text. No commentary, no notes, no "Translation:" prefix.
+- This may be one chunk of a longer document. Translate only what you are given, and do not add "continued" markers or commentary.`;
 
-    // Call OpenAI with retry
-    let openaiRes: globalThis.Response | undefined;
-    for (let attempt = 0; attempt < 3; attempt++) {
-      openaiRes = await fetch("https://api.openai.com/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          "Authorization": `Bearer ${apiKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          model: "gpt-4o-mini",
-          messages: [
-            { role: "system", content: systemPrompt },
-            { role: "user", content: documentText },
-          ],
-          temperature: 0.2,
-          max_tokens: 4000,
-        }),
-      });
+    // Split the document into chunks at paragraph boundaries so nothing is
+    // silently truncated by the model's max_tokens output cap.
+    const chunks: string[] = splitIntoChunks(documentText, CHUNK_CHARS);
 
-      if (openaiRes.ok || openaiRes.status !== 429) break;
-      const waitMs: number = (attempt + 1) * 5000;
-      await new Promise((r) => setTimeout(r, waitMs));
+    async function translateChunk(chunk: string): Promise<string> {
+      let openaiRes: globalThis.Response | undefined;
+      for (let attempt = 0; attempt < 3; attempt++) {
+        openaiRes = await fetch("https://api.openai.com/v1/chat/completions", {
+          method: "POST",
+          headers: {
+            "Authorization": `Bearer ${apiKey}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            model: "gpt-4o-mini",
+            messages: [
+              { role: "system", content: systemPrompt },
+              { role: "user", content: chunk },
+            ],
+            temperature: 0.2,
+            max_tokens: 4000,
+          }),
+        });
+        if (openaiRes.ok || openaiRes.status !== 429) break;
+        const waitMs: number = (attempt + 1) * 5000;
+        await new Promise((r) => setTimeout(r, waitMs));
+      }
+      if (!openaiRes!.ok) {
+        if (openaiRes!.status === 429) throw new Error("AI service is temporarily busy. Please try again in a few seconds.");
+        console.error("AI service request failed:", openaiRes!.status);
+        throw new Error("An error occurred while processing your request. Please try again.");
+      }
+      const data = await openaiRes!.json();
+      const out: string | undefined = data.choices?.[0]?.message?.content;
+      if (!out) throw new Error("AI returned no response.");
+      return out.trim();
     }
 
-    if (!openaiRes!.ok) {
-      const errBody: string = await openaiRes!.text();
-      console.error("OpenAI API error:", openaiRes!.status, errBody);
-      if (openaiRes!.status === 429) throw new Error("AI service is temporarily busy. Please try again in a few seconds.");
-      console.error("AI service request failed:", openaiRes!.status); throw new Error("An error occurred while processing your request. Please try again.");
+    // Translate chunks in bounded-parallel batches -- preserves order, caps concurrency.
+    const translatedChunks: string[] = new Array(chunks.length);
+    for (let i = 0; i < chunks.length; i += MAX_PARALLEL_CHUNKS) {
+      const batch = chunks.slice(i, i + MAX_PARALLEL_CHUNKS);
+      const results = await Promise.all(batch.map((c) => translateChunk(c)));
+      for (let j = 0; j < results.length; j++) {
+        translatedChunks[i + j] = results[j];
+      }
     }
-
-    const openaiData = await openaiRes!.json();
-    const translation: string | undefined = openaiData.choices?.[0]?.message?.content;
-
-    if (!translation) throw new Error("AI returned no response.");
+    const translation: string = translatedChunks.join("\n\n");
 
     // Log usage
     const { logUsage } = await import("@/lib/usage-check");
