@@ -86,20 +86,23 @@ export default function PrecosPage() {
 
                 {/* Gratis */}
                 <div className="rounded-2xl p-[1px] flex" style={{ background: "linear-gradient(135deg, rgba(148,163,184,0.4), rgba(148,163,184,0.2), rgba(148,163,184,0.3))" }}>
-                  <div className="rounded-[15px] p-8 flex flex-col w-full" style={{ background: "radial-gradient(ellipse 70% 60% at 95% 90%, rgba(148,163,184,0.06) 0%, transparent 70%), rgba(255, 255, 255, 0.05)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(148,163,184,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                  <div className="rounded-[15px] p-8 pt-10 flex flex-col w-full relative" style={{ background: "radial-gradient(ellipse 70% 60% at 95% 90%, rgba(148,163,184,0.06) 0%, transparent 70%), rgba(255, 255, 255, 0.05)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(148,163,184,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #94A3B8, #CBD5E1)", color: "#0E0F1E" }}>Gratis para Sempre</div>
                     <div className="text-center mb-6">
                       <h2 className="text-2xl font-black text-white mb-2">Gratis</h2>
-                      <p className="text-sm text-slate-400 mb-4">Comece com ferramentas PDF essenciais</p>
+                      <p className="text-sm text-slate-300 mb-4">Comece com ferramentas PDF essenciais</p>
                       <div className="mb-2">
-                        <span className="text-5xl font-black text-slate-400">$0</span>
-                        <span className="text-lg text-slate-500">/mes</span>
+                        <span className="text-5xl font-black text-white">$0</span>
+                        <span className="text-lg text-slate-300">/mes</span>
                       </div>
+                      <div className="min-h-[20px]"></div>
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
+                      <p className="text-sm text-slate-300 font-medium">O que voce ganha de graca:</p>
                       {["10 conversoes por dia", "Arquivos ate 25MB", "Ferramentas PDF basicas (comprimir, unir, dividir, girar, converter)", "Processamento de arquivo unico", "Velocidade padrao"].map((item) => (
                         <div key={item} className="flex items-center gap-3">
-                          <span className="text-slate-400 flex-shrink-0">&#10003;</span>
-                          <span className="text-slate-300 text-sm">{item}</span>
+                          <span className="text-[#14D8C4] flex-shrink-0">&#10003;</span>
+                          <span className="text-slate-200 text-sm">{item}</span>
                         </div>
                       ))}
                     </div>
@@ -115,25 +118,25 @@ export default function PrecosPage() {
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #D6B36A, #E0C27A)", color: "#0E0F1E" }}>Mais Popular</div>
                     <div className="text-center mb-6">
                       <h2 className="text-2xl font-black text-white mb-2">Pro</h2>
-                      <p className="text-sm text-slate-400 mb-4">Desbloqueie todas as ferramentas sem limites diarios</p>
+                      <p className="text-sm text-slate-300 mb-4">Desbloqueie todas as ferramentas sem limites diarios</p>
                       <div className="mb-2">
                         <span className="text-5xl font-black text-[#E0C27A]">{billing === "monthly" ? "$3.99" : "$39.90"}</span>
-                        <span className="text-lg text-slate-400">{billing === "monthly" ? "/mes" : "/ano"}</span>
+                        <span className="text-lg text-slate-300">{billing === "monthly" ? "/mes" : "/ano"}</span>
                       </div>
-                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-400">Equivale a $3.33/mes cobrado anualmente</p>}</div>
+                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-300">Equivale a $3.33/mes cobrado anualmente</p>}</div>
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
-                      <p className="text-sm text-[#6B7CFF] font-medium">Tudo no Gratis, mais:</p>
+                      <p className="text-sm text-[#E0C27A] font-medium">Tudo no Gratis, mais:</p>
                       {["Conversoes ilimitadas", "Arquivos ate 200MB", "Todas as ferramentas PDF (OCR, QR code, PDF para Word/Excel/PowerPoint)", "Gerador de Perguntas com IA", "Processamento em lote (varios arquivos)", "Velocidade de processamento prioritaria"].map((item) => (
                         <div key={item} className="flex items-center gap-3">
                           <span className="text-[#E0C27A] flex-shrink-0">&#10003;</span>
-                          <span className="text-slate-300 text-sm font-medium">{item}</span>
+                          <span className="text-slate-200 text-sm font-medium">{item}</span>
                         </div>
                       ))}
                     </div>
                     <Button className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl" asChild>
                       <Link href={billing === "monthly" ? "/upgrade" : "/upgrade?billing=annual"}>
-                        {billing === "monthly" ? "Atualizar para Pro" : "Economize 2 Meses — Anual"}
+                        Iniciar Teste Gratuito de 30 Dias
                       </Link>
                     </Button>
                   </div>
@@ -145,25 +148,25 @@ export default function PrecosPage() {
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #6B7CFF, #8B9AFF)", color: "#0E0F1E" }}>Ideal para Equipes</div>
                     <div className="text-center mb-6">
                       <h2 className="text-2xl font-black text-white mb-2">Business</h2>
-                      <p className="text-sm text-slate-400 mb-4">Ferramentas avancadas para profissionais e equipes</p>
+                      <p className="text-sm text-slate-300 mb-4">Ferramentas avancadas para profissionais e equipes</p>
                       <div className="mb-2">
                         <span className="text-5xl font-black text-[#6B7CFF]">{billing === "monthly" ? "$13.99" : "$139.90"}</span>
-                        <span className="text-lg text-slate-400">{billing === "monthly" ? "/mes" : "/ano"}</span>
+                        <span className="text-lg text-slate-300">{billing === "monthly" ? "/mes" : "/ano"}</span>
                       </div>
-                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-400">Equivale a $11.66/mes cobrado anualmente</p>}</div>
+                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-300">Equivale a $11.66/mes cobrado anualmente</p>}</div>
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
                       <p className="text-sm text-[#6B7CFF] font-medium">Tudo no Pro, mais:</p>
                       {["Arquivos ate 1GB", "Chat com PDF (perguntas com IA)", "Resumidor de PDF com IA", "Extracao Inteligente de Dados", "Traduzir PDF (13 idiomas)", "Extracao de tabelas para Excel (200 paginas/mes)", "Comparacao de PDFs (diferenca lado a lado)", "Assinatura eletronica de documentos", "Redacao de PDFs (remocao permanente)"].map((item) => (
                         <div key={item} className="flex items-center gap-3">
                           <span className="text-[#6B7CFF] flex-shrink-0">&#10003;</span>
-                          <span className="text-slate-300 text-sm font-medium">{item}</span>
+                          <span className="text-slate-200 text-sm font-medium">{item}</span>
                         </div>
                       ))}
                     </div>
                     <Button className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl" asChild>
                       <Link href={billing === "monthly" ? "/upgrade?plan=business" : "/upgrade?plan=business&billing=annual"}>
-                        {billing === "monthly" ? "Atualizar para Business" : "Economize 2 Meses — Anual"}
+                        Iniciar Teste Gratuito de 30 Dias
                       </Link>
                     </Button>
                   </div>
@@ -175,25 +178,25 @@ export default function PrecosPage() {
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #C0C5CE, #14D8C4)", color: "#0E0F1E" }}>Melhor Valor</div>
                     <div className="text-center mb-6">
                       <h2 className="text-2xl font-black text-white mb-2">Enterprise</h2>
-                      <p className="text-sm text-slate-400 mb-4">Feito para escritorios de advocacia, contadores e laboratorios</p>
+                      <p className="text-sm text-slate-300 mb-4">Feito para escritorios de advocacia, contadores e laboratorios</p>
                       <div className="mb-2">
                         <span className="text-5xl font-black text-[#C0C5CE]">{billing === "monthly" ? "$49.99" : "$499.90"}</span>
-                        <span className="text-lg text-slate-400">{billing === "monthly" ? "/mes" : "/ano"}</span>
+                        <span className="text-lg text-slate-300">{billing === "monthly" ? "/mes" : "/ano"}</span>
                       </div>
-                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-400">Equivale a $41.66/mes cobrado anualmente</p>}</div>
+                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-300">Equivale a $41.66/mes cobrado anualmente</p>}</div>
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
-                      <p className="text-sm text-[#6B7CFF] font-medium">Tudo no Business, mais:</p>
+                      <p className="text-sm text-[#C0C5CE] font-medium">Tudo no Business, mais:</p>
                       {["Extracao de tabelas para Excel (2.000 paginas/mes)", "Fila de processamento prioritario", "Suporte dedicado por email (resposta em 24h)", "Acesso antecipado a novos recursos", "Modelos de fluxo de trabalho personalizados"].map((item) => (
                         <div key={item} className="flex items-center gap-3">
                           <span className="text-[#C0C5CE] flex-shrink-0">&#10003;</span>
-                          <span className="text-slate-300 text-sm font-medium">{item}</span>
+                          <span className="text-slate-200 text-sm font-medium">{item}</span>
                         </div>
                       ))}
                     </div>
                     <Button className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl" asChild>
                       <Link href={billing === "monthly" ? "/upgrade?plan=enterprise" : "/upgrade?plan=enterprise&billing=annual"}>
-                        {billing === "monthly" ? "Atualizar para Enterprise" : "Economize 2 Meses — Anual"}
+                        Iniciar Teste Gratuito de 30 Dias
                       </Link>
                     </Button>
                   </div>

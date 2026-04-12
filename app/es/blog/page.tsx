@@ -112,9 +112,10 @@ export default function BlogPageEs() {
               <p className="text-lg text-slate-400 max-w-2xl mx-auto mb-6">
                 Noticias, actualizaciones de producto y consejos practicos para trabajar con PDFs — del equipo de PDF.it.
               </p>
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium" style={{ background: "rgba(20,216,196,0.1)", border: "1px solid rgba(20,216,196,0.25)", color: "#14D8C4" }}>
-                {posts.length} articulos
-              </div>
+              <a href="#articles" className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium transition-colors hover:bg-[#14D8C4]/20" style={{ background: "rgba(20,216,196,0.1)", border: "1px solid rgba(20,216,196,0.25)", color: "#14D8C4" }}>
+                Ver los {posts.length} articulos
+                <ArrowRight className="h-3.5 w-3.5" />
+              </a>
             </div>
           </div>
         </section>
@@ -151,7 +152,7 @@ export default function BlogPageEs() {
         </section>
 
         {/* Blog Grid */}
-        <section className="relative bg-[#0E0F1E] pb-20">
+        <section id="articles" className="relative bg-[#0E0F1E] pb-20 scroll-mt-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
               {remaining.map((post) => (

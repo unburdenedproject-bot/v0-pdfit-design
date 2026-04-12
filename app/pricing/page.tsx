@@ -87,20 +87,23 @@ export default function PricingPage() {
 
                 {/* Free Plan */}
                 <div className="rounded-2xl p-[1px] flex" style={{ background: "linear-gradient(135deg, rgba(148,163,184,0.4), rgba(148,163,184,0.2), rgba(148,163,184,0.3))" }}>
-                  <div className="rounded-[15px] p-8 flex flex-col w-full" style={{ background: "radial-gradient(ellipse 70% 60% at 95% 90%, rgba(148,163,184,0.06) 0%, transparent 70%), rgba(255, 255, 255, 0.05)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(148,163,184,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                  <div className="rounded-[15px] p-8 pt-10 flex flex-col w-full relative" style={{ background: "radial-gradient(ellipse 70% 60% at 95% 90%, rgba(148,163,184,0.06) 0%, transparent 70%), rgba(255, 255, 255, 0.05)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(148,163,184,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #94A3B8, #CBD5E1)", color: "#0E0F1E" }}>Free Forever</div>
                     <div className="text-center mb-6">
                       <h2 className="text-2xl font-black text-white mb-2">Free</h2>
-                      <p className="text-sm text-slate-400 mb-4">Get started with essential PDF tools</p>
+                      <p className="text-sm text-slate-300 mb-4">Get started with essential PDF tools</p>
                       <div className="mb-2">
-                        <span className="text-5xl font-black text-slate-400">$0</span>
-                        <span className="text-lg text-slate-500">/month</span>
+                        <span className="text-5xl font-black text-white">$0</span>
+                        <span className="text-lg text-slate-300">/month</span>
                       </div>
+                      <div className="min-h-[20px]"></div>
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
+                      <p className="text-sm text-slate-300 font-medium">What you get for free:</p>
                       {["10 conversions per day", "Files up to 25MB", "Basic PDF tools (compress, merge, split, rotate, convert)", "Single file processing", "Standard speed"].map((item) => (
                         <div key={item} className="flex items-center gap-3">
-                          <span className="text-slate-400 flex-shrink-0">&#10003;</span>
-                          <span className="text-slate-300 text-sm">{item}</span>
+                          <span className="text-[#14D8C4] flex-shrink-0">&#10003;</span>
+                          <span className="text-slate-200 text-sm">{item}</span>
                         </div>
                       ))}
                     </div>
@@ -116,25 +119,25 @@ export default function PricingPage() {
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #D6B36A, #E0C27A)", color: "#0E0F1E" }}>Most Popular</div>
                     <div className="text-center mb-6">
                       <h2 className="text-2xl font-black text-white mb-2">Pro</h2>
-                      <p className="text-sm text-slate-400 mb-4">Unlock all tools with no daily limits</p>
+                      <p className="text-sm text-slate-300 mb-4">Unlock all tools with no daily limits</p>
                       <div className="mb-2">
                         <span className="text-5xl font-black text-[#E0C27A]">{billing === "monthly" ? "$3.99" : "$39.90"}</span>
-                        <span className="text-lg text-slate-400">{billing === "monthly" ? "/month" : "/year"}</span>
+                        <span className="text-lg text-slate-300">{billing === "monthly" ? "/month" : "/year"}</span>
                       </div>
-                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-400">Equivalent to $3.33/mo billed annually</p>}</div>
+                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-300">Equivalent to $3.33/mo billed annually</p>}</div>
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
-                      <p className="text-sm text-[#6B7CFF] font-medium">Everything in Free, plus:</p>
+                      <p className="text-sm text-[#E0C27A] font-medium">Everything in Free, plus:</p>
                       {["Unlimited conversions", "Files up to 200MB", "All PDF tools (OCR, QR code, PDF to Word/Excel/PowerPoint)", "AI Question Generator", "Batch processing (multiple files at once)", "Priority processing speed"].map((item) => (
                         <div key={item} className="flex items-center gap-3">
                           <span className="text-[#E0C27A] flex-shrink-0">&#10003;</span>
-                          <span className="text-slate-300 text-sm font-medium">{item}</span>
+                          <span className="text-slate-200 text-sm font-medium">{item}</span>
                         </div>
                       ))}
                     </div>
                     <Button className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl" asChild>
                       <Link href={billing === "monthly" ? "/upgrade" : "/upgrade?billing=annual"}>
-                        {billing === "monthly" ? "Upgrade to Pro" : "Save 2 Months — Annual"}
+                        Start 30-Day Free Trial
                       </Link>
                     </Button>
                   </div>
@@ -146,25 +149,25 @@ export default function PricingPage() {
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #6B7CFF, #8B9AFF)", color: "#0E0F1E" }}>Best for Teams</div>
                     <div className="text-center mb-6">
                       <h2 className="text-2xl font-black text-white mb-2">Business</h2>
-                      <p className="text-sm text-slate-400 mb-4">Advanced tools for professionals and teams</p>
+                      <p className="text-sm text-slate-300 mb-4">Advanced tools for professionals and teams</p>
                       <div className="mb-2">
                         <span className="text-5xl font-black text-[#6B7CFF]">{billing === "monthly" ? "$13.99" : "$139.90"}</span>
-                        <span className="text-lg text-slate-400">{billing === "monthly" ? "/month" : "/year"}</span>
+                        <span className="text-lg text-slate-300">{billing === "monthly" ? "/month" : "/year"}</span>
                       </div>
-                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-400">Equivalent to $11.66/mo billed annually</p>}</div>
+                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-300">Equivalent to $11.66/mo billed annually</p>}</div>
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
                       <p className="text-sm text-[#6B7CFF] font-medium">Everything in Pro, plus:</p>
                       {["Files up to 1GB", "Chat with PDF (AI Q&A)", "AI PDF Summarizer", "Smart Data Extraction", "Translate PDF (13 languages)", "Table extraction to Excel (200 pages/month)", "PDF comparison (side-by-side diff)", "eSign documents", "PDF redaction (permanent removal)"].map((item) => (
                         <div key={item} className="flex items-center gap-3">
                           <span className="text-[#6B7CFF] flex-shrink-0">&#10003;</span>
-                          <span className="text-slate-300 text-sm font-medium">{item}</span>
+                          <span className="text-slate-200 text-sm font-medium">{item}</span>
                         </div>
                       ))}
                     </div>
                     <Button className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl" asChild>
                       <Link href={billing === "monthly" ? "/upgrade?plan=business" : "/upgrade?plan=business&billing=annual"}>
-                        {billing === "monthly" ? "Upgrade to Business" : "Save 2 Months — Annual"}
+                        Start 30-Day Free Trial
                       </Link>
                     </Button>
                   </div>
@@ -176,25 +179,25 @@ export default function PricingPage() {
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #C0C5CE, #14D8C4)", color: "#0E0F1E" }}>Best Value</div>
                     <div className="text-center mb-6">
                       <h2 className="text-2xl font-black text-white mb-2">Enterprise</h2>
-                      <p className="text-sm text-slate-400 mb-4">Built for law firms, accountants, and labs</p>
+                      <p className="text-sm text-slate-300 mb-4">Built for law firms, accountants, and labs</p>
                       <div className="mb-2">
                         <span className="text-5xl font-black text-[#C0C5CE]">{billing === "monthly" ? "$49.99" : "$499.90"}</span>
-                        <span className="text-lg text-slate-400">{billing === "monthly" ? "/month" : "/year"}</span>
+                        <span className="text-lg text-slate-300">{billing === "monthly" ? "/month" : "/year"}</span>
                       </div>
-                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-400">Equivalent to $41.66/mo billed annually</p>}</div>
+                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-300">Equivalent to $41.66/mo billed annually</p>}</div>
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
-                      <p className="text-sm text-[#6B7CFF] font-medium">Everything in Business, plus:</p>
+                      <p className="text-sm text-[#C0C5CE] font-medium">Everything in Business, plus:</p>
                       {["Table extraction to Excel (2,000 pages/month)", "Workflow automation", "Priority processing queue", "Dedicated email support (24h response)", "Custom workflow templates"].map((item) => (
                         <div key={item} className="flex items-center gap-3">
                           <span className="text-[#C0C5CE] flex-shrink-0">&#10003;</span>
-                          <span className="text-slate-300 text-sm font-medium">{item}</span>
+                          <span className="text-slate-200 text-sm font-medium">{item}</span>
                         </div>
                       ))}
                     </div>
                     <Button className="w-full bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 text-lg rounded-xl" asChild>
                       <Link href={billing === "monthly" ? "/upgrade?plan=enterprise" : "/upgrade?plan=enterprise&billing=annual"}>
-                        {billing === "monthly" ? "Upgrade to Enterprise" : "Save 2 Months — Annual"}
+                        Start 30-Day Free Trial
                       </Link>
                     </Button>
                   </div>
