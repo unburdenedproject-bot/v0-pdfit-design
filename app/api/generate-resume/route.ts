@@ -279,35 +279,74 @@ Return the complete rewritten resume as plain text with clear section headings. 
       const info: ResumeInfo = body.info;
       if (!info) return errorResponse("Missing resume information.", 400);
 
-      resumePrompt = `You are an expert resume writer. Create a professional ATS-optimized resume from this information.
+      // Server-side required-field + format validation (belt-and-braces with the UI).
+      const missing: string[] = []
+      if (!info.fullName || !info.fullName.trim()) missing.push("Full Name")
+      if (!info.email || !info.email.trim()) missing.push("Email")
+      if (!info.experience || !info.experience.trim()) missing.push("Work Experience")
+      if (!info.education || !info.education.trim()) missing.push("Education")
+      if (!info.skills || !info.skills.trim()) missing.push("Skills")
+      if (missing.length > 0) {
+        return errorResponse(`Please fill in the required fields: ${missing.join(", ")}.`, 400);
+      }
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+      if (!emailPattern.test((info.email || "").trim())) {
+        return errorResponse("Please enter a valid email address.", 400);
+      }
+
+      if (info.phone && info.phone.trim()) {
+        // Accept digits, spaces, (), +, -, and dots. 7-20 characters after stripping.
+        const digits = info.phone.replace(/[^\d]/g, "")
+        if (digits.length < 7 || digits.length > 20 || !/^[\d\s().+\-]+$/.test(info.phone.trim())) {
+          return errorResponse("Please enter a valid phone number.", 400);
+        }
+      }
+
+      // Detect literal "no X" / "none" / "n/a" inputs -- user is telling us a section is empty, not asking us to invent.
+      const isEmptyIntent = (v?: string): boolean => {
+        if (!v) return false
+        const s = v.trim().toLowerCase()
+        return s === "none" || s === "n/a" || s === "na" || s === "-" || /^no\s+\w+$/.test(s)
+      }
+      const skillsIntentEmpty = isEmptyIntent(info.skills)
+      const certsIntentEmpty = isEmptyIntent(info.certifications)
+      const langsIntentEmpty = isEmptyIntent(info.languages)
+
+      resumePrompt = `You are an expert resume writer. Create a professional ATS-optimized resume STRICTLY from the information the candidate provided below.
 
 RULES:
 - Use clean formatting with ALL CAPS section headings
 - Standard sections: CONTACT INFORMATION, PROFESSIONAL SUMMARY, EXPERIENCE, EDUCATION, SKILLS, CERTIFICATIONS
-- Include quantified achievements (create realistic metrics)
-- Use bullet points (•) for experience items (3-5 per job)
+- Use bullet points (•) for experience items
 - Reverse chronological order
 - No tables, columns, or special characters
 - Professional, confident tone
-- Write a compelling 2-3 sentence Professional Summary
+
+STRICT CONTENT RULES (critical):
+- Use ONLY the information the candidate provided. Do NOT invent employers, job titles, dates, schools, metrics, skills, or achievements that were not given.
+- If a field is empty or the candidate indicated they have none (e.g. "No skills", "None", "N/A"), OMIT that section entirely instead of filling it with defaults.
+- If the candidate wrote something literal like "No Skills", honor that — do NOT add skills.
+- You may rephrase and polish the candidate's words, but do not fabricate new facts.
+- If EXPERIENCE is sparse, keep it sparse. Do not invent bullet points the candidate didn't mention.
 
 ${info.jobTarget ? `TARGET JOB: "${info.jobTarget}"` : ""}
 ${improvementInstructions}
 
-CANDIDATE INFORMATION:
+CANDIDATE INFORMATION (use exactly what is provided):
 Full Name: ${info.fullName || "Not provided"}
 Email: ${info.email || "Not provided"}
 Phone: ${info.phone || "Not provided"}
 Location: ${info.location || "Not provided"}
 LinkedIn: ${info.linkedin || "Not provided"}
 
-SUMMARY: ${info.summary || "Generate based on experience"}
-EXPERIENCE: ${info.experience || "Not provided"}
-EDUCATION: ${info.education || "Not provided"}
-SKILLS: ${info.skills || "Not provided"}
-CERTIFICATIONS: ${info.certifications || "None"}
-LANGUAGES: ${info.languages || "Not provided"}
-ADDITIONAL: ${info.additional || "None"}
+SUMMARY (write from the candidate's experience -- do not invent new facts): ${info.summary || "(none provided)"}
+EXPERIENCE: ${info.experience || "(none provided)"}
+EDUCATION: ${info.education || "(none provided)"}
+SKILLS: ${skillsIntentEmpty ? "(candidate indicated none -- OMIT the SKILLS section entirely)" : (info.skills || "(none provided)")}
+CERTIFICATIONS: ${certsIntentEmpty ? "(candidate indicated none -- OMIT the CERTIFICATIONS section entirely)" : (info.certifications || "(none provided)")}
+LANGUAGES: ${langsIntentEmpty ? "(candidate indicated none -- OMIT the LANGUAGES section entirely)" : (info.languages || "(none provided)")}
+ADDITIONAL: ${info.additional || "(none provided)"}
 
 Return the complete resume as plain text. No explanation.`
     } else {

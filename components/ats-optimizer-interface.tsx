@@ -388,6 +388,21 @@ export function AtsOptimizerInterface() {
   }, [file, analysis, jobDescription, fixExtras, includeCoverLetter, selectedImprovements, selectedKeywords])
 
   const handleBuildResume = useCallback(async () => {
+    // Frontend validation (matches server rules)
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!buildInfo.fullName.trim())  { setHasError(true); setErrorMessage("Please enter your full name."); return }
+    if (!buildInfo.email.trim())     { setHasError(true); setErrorMessage("Please enter your email address."); return }
+    if (!emailPattern.test(buildInfo.email.trim())) { setHasError(true); setErrorMessage("Please enter a valid email address."); return }
+    if (buildInfo.phone.trim()) {
+      const digits = buildInfo.phone.replace(/[^\d]/g, "")
+      if (digits.length < 7 || digits.length > 20 || !/^[\d\s().+\-]+$/.test(buildInfo.phone.trim())) {
+        setHasError(true); setErrorMessage("Please enter a valid phone number (digits, spaces, (), +, -)."); return
+      }
+    }
+    if (!buildInfo.experience.trim()) { setHasError(true); setErrorMessage("Please add your work experience."); return }
+    if (!buildInfo.education.trim())  { setHasError(true); setErrorMessage("Please add your education."); return }
+    if (!buildInfo.skills.trim())     { setHasError(true); setErrorMessage("Please add your skills (or type 'No Skills' if none)."); return }
+
     setIsGenerating(true)
     setHasError(false)
 
@@ -866,11 +881,11 @@ export function AtsOptimizerInterface() {
                     </div>
                     <div>
                       <label className="block text-xs font-bold text-slate-600 mb-1">Email *</label>
-                      <input type="email" value={buildInfo.email} onChange={(e) => setBuildInfo({ ...buildInfo, email: e.target.value })} className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm" placeholder="john@example.com" />
+                      <input type="email" required value={buildInfo.email} onChange={(e) => setBuildInfo({ ...buildInfo, email: e.target.value })} className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm" placeholder="john@example.com" />
                     </div>
                     <div>
                       <label className="block text-xs font-bold text-slate-600 mb-1">Phone</label>
-                      <input type="tel" value={buildInfo.phone} onChange={(e) => setBuildInfo({ ...buildInfo, phone: e.target.value })} className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm" placeholder="+1 (555) 123-4567" />
+                      <input type="tel" inputMode="tel" pattern="[\d\s().+\-]{7,20}" value={buildInfo.phone} onChange={(e) => setBuildInfo({ ...buildInfo, phone: e.target.value })} className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm" placeholder="+1 (555) 123-4567" />
                     </div>
                     <div>
                       <label className="block text-xs font-bold text-slate-600 mb-1">Location</label>
@@ -933,7 +948,7 @@ export function AtsOptimizerInterface() {
                   )}
 
                   <div className="flex gap-3">
-                    <Button onClick={handleBuildResume} className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl" disabled={isGenerating || !buildInfo.fullName || !buildInfo.experience}>
+                    <Button onClick={handleBuildResume} className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl" disabled={isGenerating || !buildInfo.fullName.trim() || !buildInfo.email.trim() || !buildInfo.experience.trim() || !buildInfo.education.trim() || !buildInfo.skills.trim()}>
                       {isGenerating ? <Loader2 className="h-4 w-4 mr-2 animate-spin" /> : <FileText className="h-4 w-4 mr-2" />}
                       {isGenerating ? labels.generating : labels.buildResume}
                     </Button>
