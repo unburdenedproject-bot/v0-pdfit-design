@@ -16,6 +16,7 @@ import {
   ChevronUp,
   Check,
   Copy,
+  Download,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
@@ -79,6 +80,7 @@ export function QuestionGeneratorInterface() {
           startNew: "Nuevo documento",
           copyAll: "Copiar todo",
           copied: "Copiado",
+          download: "Descargar",
           showAnswer: "Ver respuesta",
           hideAnswer: "Ocultar",
           upgradeTitle: "Funcion Pro",
@@ -105,6 +107,7 @@ export function QuestionGeneratorInterface() {
             startNew: "Novo documento",
             copyAll: "Copiar tudo",
             copied: "Copiado",
+            download: "Baixar",
             showAnswer: "Ver resposta",
             hideAnswer: "Ocultar",
             upgradeTitle: "Funcao Pro",
@@ -130,6 +133,7 @@ export function QuestionGeneratorInterface() {
             startNew: "New document",
             copyAll: "Copy all",
             copied: "Copied",
+            download: "Download",
             showAnswer: "Show answer",
             hideAnswer: "Hide",
             upgradeTitle: "Pro Feature",
@@ -221,8 +225,8 @@ export function QuestionGeneratorInterface() {
     })
   }, [])
 
-  const handleCopyAll = useCallback(() => {
-    const text = questions
+  const formatQuestionsAsText = useCallback((): string => {
+    return questions
       .map((q, i) => {
         let str = `${i + 1}. ${q.question}`
         if (q.options) str += "\n" + q.options.join("\n")
@@ -231,10 +235,27 @@ export function QuestionGeneratorInterface() {
         return str
       })
       .join("\n\n")
-    navigator.clipboard.writeText(text)
+  }, [questions])
+
+  const handleCopyAll = useCallback(() => {
+    navigator.clipboard.writeText(formatQuestionsAsText())
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
-  }, [questions])
+  }, [formatQuestionsAsText])
+
+  const handleDownload = useCallback(() => {
+    const text = formatQuestionsAsText()
+    const blob = new Blob([text], { type: "text/plain;charset=utf-8" })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement("a")
+    a.href = url
+    const base = file?.name.replace(/\.pdf$/i, "") || "questions"
+    a.download = `${base}-questions.txt`
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+    URL.revokeObjectURL(url)
+  }, [file, formatQuestionsAsText])
 
   const handleReset = useCallback(() => {
     setFile(null)
@@ -302,6 +323,13 @@ export function QuestionGeneratorInterface() {
                   >
                     {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
                     {copied ? labels.copied : labels.copyAll}
+                  </button>
+                  <button
+                    onClick={handleDownload}
+                    className="flex items-center gap-1.5 text-sm text-indigo-600 hover:text-indigo-700 transition-colors font-medium"
+                  >
+                    <Download className="h-3.5 w-3.5" />
+                    {labels.download}
                   </button>
                   <button
                     onClick={handleReset}

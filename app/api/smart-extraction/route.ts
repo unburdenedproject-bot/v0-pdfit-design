@@ -181,7 +181,9 @@ Output JSON matching this structure exactly:
 }
 
 Rules:
-- Extract ONLY data that is clearly present in the document. Do not guess or infer.
+- Extract ONLY data that is clearly present in the document. Do not guess, infer, or hallucinate.
+- Use the EXACT strings from the document for names, numbers, dates, and amounts. Do not paraphrase values.
+- If a field is ambiguous, leave it out rather than guessing.
 - people: names of individuals mentioned, with role if stated (e.g. "Buyer", "Signatory", "Manager")
 - organizations: company names, institutions, agencies
 - dates: labeled dates (e.g. "Invoice Date", "Due Date", "Effective Date", "Date of Birth")
@@ -209,8 +211,9 @@ Rules:
             { role: "system", content: systemPrompt },
             { role: "user", content: userPrompt },
           ],
-          temperature: 0.1,
+          temperature: 0,
           max_tokens: 2000,
+          response_format: { type: "json_object" },
         }),
       });
 
