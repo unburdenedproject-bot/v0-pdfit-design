@@ -18,6 +18,7 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [hasError, setHasError] = useState(false)
+  const [errorMessage, setErrorMessage] = useState("")
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -31,6 +32,7 @@ export default function ContactPage() {
     e.preventDefault()
     setIsSubmitting(true)
     setHasError(false)
+    setErrorMessage("")
 
     try {
       const response = await fetch("/api/contact", {
@@ -39,12 +41,20 @@ export default function ContactPage() {
         body: JSON.stringify(formData),
       })
       if (!response.ok) {
-        throw new Error("Failed to send")
+        let msg = "Failed to send message."
+        try {
+          const data = await response.json()
+          if (data?.error) msg = data.error
+        } catch {
+          // non-JSON response -- keep default
+        }
+        throw new Error(msg)
       }
       setIsSubmitted(true)
       setFormData({ name: "", email: "", subject: "", message: "" })
     } catch (error) {
       setHasError(true)
+      setErrorMessage(error instanceof Error ? error.message : "Failed to send message.")
     } finally {
       setIsSubmitting(false)
     }
@@ -259,13 +269,14 @@ export default function ContactPage() {
                         </div>
 
                         {hasError && (
-                          <div className="flex items-center gap-2 text-red-600 bg-red-50 border border-red-200 rounded-lg p-3">
-                            <AlertCircle className="h-5 w-5 flex-shrink-0" />
+                          <div className="flex items-start gap-2 text-red-600 bg-red-50 border border-red-200 rounded-lg p-3">
+                            <AlertCircle className="h-5 w-5 flex-shrink-0 mt-0.5" />
                             <span className="text-sm">
-                              There was an error sending your message. Please try again or email us directly at{" "}
+                              {errorMessage || "There was an error sending your message."} If the problem persists, please email us at{" "}
                               <a href="mailto:contact@pdf.it.com" className="underline">
                                 contact@pdf.it.com
                               </a>
+                              .
                             </span>
                           </div>
                         )}

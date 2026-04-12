@@ -26,21 +26,57 @@ export async function POST() {
     const customerId = profile?.stripe_customer_id
     if (!customerId) {
       return NextResponse.json(
-        { error: "No active subscription found. Please contact support." },
+        {
+          error:
+            "Your billing account isn't linked to the self-service portal yet. Please email paula.vargas3@gmail.com and we'll sort it out in a few minutes.",
+        },
         { status: 400 },
       )
     }
 
-    const session = await getStripe().billingPortal.sessions.create({
-      customer: customerId,
-      return_url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://pdf.it.com"}/dashboard`,
-    })
+    try {
+      const session = await getStripe().billingPortal.sessions.create({
+        customer: customerId,
+        return_url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://pdf.it.com"}/dashboard`,
+      })
+      return NextResponse.json({ url: session.url })
+    } catch (stripeErr: unknown) {
+      // Surface Stripe-specific messages so Paula can see the real cause in logs
+      // while still showing the user something actionable.
+      const message =
+        stripeErr instanceof Error ? stripeErr.message : String(stripeErr)
+      console.error("Stripe billing portal error:", message)
 
-    return NextResponse.json({ url: session.url })
+      if (/No configuration provided|No such portal configuration/i.test(message)) {
+        return NextResponse.json(
+          {
+            error:
+              "Our billing portal is being set up. Please email paula.vargas3@gmail.com to manage your plan while we finish configuring it.",
+          },
+          { status: 503 },
+        )
+      }
+      if (/No such customer/i.test(message)) {
+        return NextResponse.json(
+          {
+            error:
+              "We couldn't find your Stripe account. Please email paula.vargas3@gmail.com so we can re-link your subscription.",
+          },
+          { status: 400 },
+        )
+      }
+      return NextResponse.json(
+        {
+          error:
+            "Could not open the billing portal. Please try again in a moment, or email paula.vargas3@gmail.com if the problem persists.",
+        },
+        { status: 500 },
+      )
+    }
   } catch (error) {
     console.error("Portal session error:", error)
     return NextResponse.json(
-      { error: "Failed to create billing portal session." },
+      { error: "Could not open the billing portal. Please try again in a moment." },
       { status: 500 },
     )
   }
