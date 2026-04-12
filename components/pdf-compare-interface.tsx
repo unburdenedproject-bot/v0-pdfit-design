@@ -553,8 +553,12 @@ export function PdfCompareInterface({ locale = "en" }: { locale?: ToolLocale }) 
 
   const handlePdfLoad = useCallback(
     async (file: File, side: "left" | "right") => {
-      if (file.type !== "application/pdf") {
+      if (file.type !== "application/pdf" && !file.name.toLowerCase().endsWith(".pdf")) {
         setErrorMessage(copy.invalidPdf)
+        return
+      }
+      if (file.size === 0) {
+        setErrorMessage("This file is empty. Please upload a PDF with content.")
         return
       }
 
@@ -579,8 +583,19 @@ export function PdfCompareInterface({ locale = "en" }: { locale?: ToolLocale }) 
         }
 
         setCurrentPage(0)
-      } catch {
-        setErrorMessage(side === "left" ? copy.originalPdfReadFailed : copy.modifiedPdfReadFailed)
+      } catch (err: unknown) {
+        // Surface specific pdfjs errors so the user knows what's wrong.
+        const errName = (err as { name?: string })?.name || ""
+        const errMsg = err instanceof Error ? err.message : String(err)
+        let friendly: string
+        if (errName === "PasswordException" || /password/i.test(errMsg)) {
+          friendly = "This PDF is password-protected. Remove the password and try again."
+        } else if (errName === "InvalidPDFException" || /invalid\s*pdf/i.test(errMsg)) {
+          friendly = "This file is not a valid PDF. Please upload a real PDF."
+        } else {
+          friendly = side === "left" ? copy.originalPdfReadFailed : copy.modifiedPdfReadFailed
+        }
+        setErrorMessage(friendly)
       } finally {
         setLoading(false)
       }

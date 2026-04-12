@@ -15,6 +15,7 @@ import {
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
+import { validateClientFile, getSizeLimitLabel } from "@/lib/client-file-validator"
 import { TrustBadges } from "@/components/trust-badges"
 
 export function TableExtractionInterface({ enterpriseMode = false }: { enterpriseMode?: boolean } = {}) {
@@ -56,29 +57,27 @@ export function TableExtractionInterface({ enterpriseMode = false }: { enterpris
   const isBusinessUser = userPlan === "business" || userPlan === "enterprise"
   const isEnterpriseUser = userPlan === "enterprise"
 
+  const acceptFile = useCallback(async (f: File | undefined) => {
+    if (!f) return
+    if (f.type && f.type !== "application/pdf" && !f.name.toLowerCase().endsWith(".pdf")) {
+      setHasError(true); setErrorMessage("Please upload a PDF file."); setFile(null); setIsComplete(false); setResultUrl(null); return
+    }
+    const r = await validateClientFile(f, userPlan)
+    if (!r.ok) {
+      setHasError(true); setErrorMessage(r.error || "This file cannot be used."); setFile(null); setIsComplete(false); setResultUrl(null); return
+    }
+    setFile(f); setHasError(false); setErrorMessage(""); setIsComplete(false); setResultUrl(null)
+  }, [userPlan])
+
   const handleDrop = useCallback((e: React.DragEvent) => {
     e.preventDefault()
     setIsDragOver(false)
-    const droppedFile = e.dataTransfer.files[0]
-    if (droppedFile && droppedFile.type === "application/pdf") {
-      setFile(droppedFile)
-      setHasError(false)
-      setErrorMessage("")
-      setIsComplete(false)
-      setResultUrl(null)
-    }
-  }, [])
+    acceptFile(e.dataTransfer.files[0])
+  }, [acceptFile])
 
   const handleFileSelect = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const selectedFile = e.target.files?.[0]
-    if (selectedFile) {
-      setFile(selectedFile)
-      setHasError(false)
-      setErrorMessage("")
-      setIsComplete(false)
-      setResultUrl(null)
-    }
-  }, [])
+    acceptFile(e.target.files?.[0])
+  }, [acceptFile])
 
   const handleProcess = useCallback(async () => {
     if (!file) return
@@ -346,6 +345,7 @@ export function TableExtractionInterface({ enterpriseMode = false }: { enterpris
                   >
                     {labels.browse}
                   </Button>
+                  <p className="text-xs text-slate-400 mt-4">PDF only &middot; up to {getSizeLimitLabel(userPlan)}</p>
                 </div>
               ) : (
                 <div>
