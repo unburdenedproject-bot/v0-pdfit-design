@@ -56,7 +56,7 @@ export function CookieConsent() {
           <p className="text-sm text-slate-300 leading-relaxed">
             We use cookies and analytics (Google Analytics) to understand how you use PDF.it and improve our tools.
             Your uploaded files are <strong className="text-white">never stored</strong> — this only applies to browsing data.{" "}
-            <a href="/privacy-policy" className="text-[#14D8C4] hover:text-[#2EE6D6] underline">
+            <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#14D8C4] hover:text-[#2EE6D6] underline">
               Privacy Policy
             </a>
           </p>

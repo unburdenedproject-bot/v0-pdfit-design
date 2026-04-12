@@ -228,12 +228,14 @@ export default function SignUpPageEs() {
                       </button>
                     </div>
                   </div>
-                  <HCaptcha
-                    sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY!}
-                    onVerify={(token) => setCaptchaToken(token)}
-                    onExpire={() => setCaptchaToken(null)}
-                    ref={captchaRef}
-                  />
+                  <div className="flex justify-center">
+                    <HCaptcha
+                      sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY!}
+                      onVerify={(token) => setCaptchaToken(token)}
+                      onExpire={() => setCaptchaToken(null)}
+                      ref={captchaRef}
+                    />
+                  </div>
                   {error && (
                     <p className="text-sm text-red-400 bg-red-500/10 border border-red-500/20 rounded-md px-3 py-2">
                       {error}

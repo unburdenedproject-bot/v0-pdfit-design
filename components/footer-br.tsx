@@ -1,5 +1,13 @@
 import Link from "next/link"
-import { Facebook, Twitter, Instagram, Linkedin, Mail } from "lucide-react"
+import { Facebook, Instagram, Linkedin, Mail } from "lucide-react"
+
+function XLogo({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" className={className}>
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  )
+}
 
 export function FooterBr() {
   return (
@@ -18,8 +26,8 @@ export function FooterBr() {
               <a href="https://www.facebook.com/pdfit" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors" aria-label="Siga-nos no Facebook">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="https://x.com/pdfit" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors" aria-label="Siga-nos no Twitter">
-                <Twitter className="h-5 w-5" />
+              <a href="https://x.com/pdfit" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors" aria-label="Siga-nos no X">
+                <XLogo className="h-5 w-5" />
               </a>
               <a href="https://www.instagram.com/pdfit" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors" aria-label="Siga-nos no Instagram">
                 <Instagram className="h-5 w-5" />
@@ -91,14 +99,14 @@ export function FooterBr() {
             <h3 className="font-bold text-white mb-4 mt-6">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/br/politica-de-privacidade" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors text-sm">
+                <a href="/br/politica-de-privacidade" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors text-sm">
                   Politica de Privacidade
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/br/termos-e-condicoes" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors text-sm">
+                <a href="/br/termos-e-condicoes" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors text-sm">
                   Termos e Condicoes
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -122,12 +130,12 @@ export function FooterBr() {
         <div className="border-t border-[#252A6A] mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-[#A5B4FC] text-sm">&copy; 2024 PDF.it. Feito para profissionais, escolhido por profissionais.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/br/politica-de-privacidade" className="text-[#A5B4FC] hover:text-[#14D8C4] text-sm transition-colors">
+            <a href="/br/politica-de-privacidade" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] text-sm transition-colors">
               Privacidade
-            </Link>
-            <Link href="/br/termos-e-condicoes" className="text-[#A5B4FC] hover:text-[#14D8C4] text-sm transition-colors">
+            </a>
+            <a href="/br/termos-e-condicoes" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] text-sm transition-colors">
               Termos
-            </Link>
+            </a>
             <Link href="/" className="text-[#A5B4FC] hover:text-[#14D8C4] text-sm transition-colors">
               English
             </Link>
