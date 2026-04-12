@@ -10,6 +10,7 @@ import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
 import { isValidBlobUrl } from "@/lib/validate-blob-url";
+import { guardPdfContent } from "@/lib/pdf-content-guard";
 
 function errorResponse(message: string, status: number = 500): Response {
   return Response.json({ error: message }, { status });
@@ -145,14 +146,11 @@ export async function POST(request: NextRequest): Promise<Response> {
       uploadedBlobUrl = null;
     }
 
-    if (!documentText || documentText.trim().length < 50) {
-      return errorResponse(
-        "Could not extract text from this PDF. Try a text-based PDF (not a scanned image). Run OCR first if needed.",
-        422
-      );
+    const guardResult = guardPdfContent(documentText);
+    if (!guardResult.ok) {
+      return errorResponse(guardResult.userMessage!, 422);
     }
-
-    documentText = documentText.substring(0, MAX_PDF_TEXT_CHARS);
+    documentText = guardResult.sanitized.substring(0, MAX_PDF_TEXT_CHARS);
 
     // Call OpenAI to extract structured data
     const systemPrompt: string = `You are a document data extraction assistant. Extract ALL structured data from the document text below. Return only valid JSON. No markdown. No code fences. No commentary.

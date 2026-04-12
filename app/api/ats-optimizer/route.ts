@@ -10,6 +10,7 @@ import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
 import { isValidBlobUrl } from "@/lib/validate-blob-url";
+import { guardPdfContent } from "@/lib/pdf-content-guard";
 
 function errorResponse(message: string, status: number = 500): Response {
   return Response.json({ error: message }, { status });
@@ -297,6 +298,22 @@ export async function POST(request: NextRequest): Promise<Response> {
     tmpPath = join("/tmp", `${id}-resume.pdf`);
     await writeFile(tmpPath, buffer);
 
+    // ── Reject blank PDFs before hitting paid API ──
+    try {
+      const { isBlankPdf } = await import("@/lib/blank-pdf-check");
+      const { blank } = await isBlankPdf(buffer);
+      if (blank) {
+        if (uploadedBlobUrl) await del(uploadedBlobUrl).catch(() => {});
+        if (tmpPath) { await unlink(tmpPath).catch(() => {}); tmpPath = null; }
+        return errorResponse("This resume appears to be empty. Please upload a resume with content.", 400);
+      }
+    } catch (blankCheckErr) {
+      console.error("Blank PDF check failed:", blankCheckErr);
+      if (uploadedBlobUrl) await del(uploadedBlobUrl).catch(() => {});
+      if (tmpPath) { await unlink(tmpPath).catch(() => {}); tmpPath = null; }
+      return errorResponse("Could not read this PDF. The file may be corrupted or password-protected.", 400);
+    }
+
     // Extract text from PDF using iLoveAPI pdftxt
     const publicKey: string | undefined = process.env.ILOVEAPI_PUBLIC_KEY;
     const secretKey: string | undefined = process.env.ILOVEAPI_SECRET_KEY;
@@ -322,14 +339,13 @@ export async function POST(request: NextRequest): Promise<Response> {
       resumeText = buffer.toString("utf-8").replace(/[^\x20-\x7E\n\r\t]/g, " ").trim();
     }
 
-    if (!resumeText || resumeText.trim().length < 50) {
+    const guardResult = guardPdfContent(resumeText);
+    if (!guardResult.ok) {
       if (uploadedBlobUrl) await del(uploadedBlobUrl).catch(() => {});
       if (tmpPath) await unlink(tmpPath).catch(() => {});
-      return errorResponse(
-        "Could not extract text from this PDF. Try a text-based resume (not a scanned image). Run OCR first if needed.",
-        422
-      );
+      return errorResponse(guardResult.userMessage!, 422);
     }
+    resumeText = guardResult.sanitized;
 
     // Clean up temp file and blob
     if (tmpPath) {
