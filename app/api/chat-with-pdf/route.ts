@@ -130,8 +130,9 @@ export async function POST(request: NextRequest): Promise<Response> {
           return errorResponse("This file appears to be empty. Please upload a PDF with content.", 400);
         }
       } catch (blankCheckErr) {
-        console.error("Blank PDF check failed (skipping):", blankCheckErr);
-        // Continue processing — let the API handle invalid files
+        console.error("Blank PDF check failed:", blankCheckErr);
+        if (tmpPath) { await unlink(tmpPath).catch(() => {}); tmpPath = null; }
+        return errorResponse("Could not read this PDF. The file may be corrupted or password-protected.", 400);
       }
 
       const publicKey: string | undefined = process.env.ILOVEAPI_PUBLIC_KEY;
