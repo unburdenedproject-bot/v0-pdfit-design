@@ -1,5 +1,14 @@
 # PDF.it - Accomplished Work
 
+## Footer Social Links Fixed (April 13, 2026)
+
+Footer social icons were pointing at non-existent handles (`/pdfit`). Replaced with Paula's real accounts in all 3 footers (EN/ES/BR):
+- Instagram: `https://www.instagram.com/pdf_it/`
+- LinkedIn: `https://www.linkedin.com/company/pdf-it/about/`
+- Facebook: `https://www.facebook.com/profile.php?id=61573353488905`
+
+Also removed stray `N2N-2024-question-list-compressed.pdf` test file that had been accidentally committed to the repo root.
+
 ## Launch Day Prep — 30 QA Bugs + Dashboard Search + Mobile Perf (April 12, 2026)
 
 Shipped 12 commits closing the final QA round from `manual-tests/AI PDF Tools Bug Document (3).xlsx` tab `10042026`. All 30 OP_xxx issues resolved and documented in the xlsx (Status + DEV comments columns).
