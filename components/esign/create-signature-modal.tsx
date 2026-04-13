@@ -427,7 +427,7 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved, locale = "en
                         </div>
                         <div className="rounded-xl border border-dashed border-slate-200 bg-slate-50 px-3 py-5 min-h-[112px] flex items-center justify-center">
                           {variantSvg ? (
-                            <img src={svgToDataUrl(variantSvg)} alt={variant.label} className="max-h-20 w-auto" />
+                            <img src={svgToDataUrl(variantSvg)} alt={variant.label} width={240} height={80} loading="lazy" decoding="async" className="max-h-20 w-auto" />
                           ) : (
                             <span className="text-sm text-slate-400">{signatureKind === "signature" ? modalCopy.enterPreviewName : modalCopy.enterPreviewInitials}</span>
                           )}
@@ -525,6 +525,10 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved, locale = "en
                       <img
                         src={uploadPreview}
                         alt="Uploaded signature preview"
+                        width={384}
+                        height={192}
+                        loading="lazy"
+                        decoding="async"
                         className="pointer-events-none max-w-none"
                         style={{
                           transform: `translate(${uploadOffsetX}px, ${uploadOffsetY}px) scale(${uploadScale})`,
@@ -551,7 +555,7 @@ export function CreateSignatureModal({ open, onOpenChange, onSaved, locale = "en
 
               <div className="mb-4 rounded-2xl border border-dashed border-slate-300 bg-slate-50 min-h-[200px] flex items-center justify-center p-4">
                 {activeTab === "type" && typedPreviewUrl ? (
-                  <img src={typedPreviewUrl} alt="Typed signature preview" className="max-h-28 w-auto" />
+                  <img src={typedPreviewUrl} alt="Typed signature preview" width={320} height={112} loading="lazy" decoding="async" className="max-h-28 w-auto" />
                 ) : activeTab === "upload" && uploadPreview ? (
                   <img
                     src={uploadPreview}

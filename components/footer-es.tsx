@@ -17,7 +17,7 @@ export function FooterEs() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/es" className="inline-block mb-4">
-              <img src="/logo.svg" alt="PDF.it" style={{height: '28px', width: 'auto'}} />
+              <img src="/logo.svg" alt="PDF.it" width={57} height={28} loading="lazy" decoding="async" style={{height: '28px', width: 'auto'}} />
             </Link>
             <p className="text-[#A5B4FC] mb-6 leading-relaxed">
               Convierte, comprime, une, divide, escanea y protege archivos PDF en segundos. Herramientas simples que funcionan en cualquier dispositivo.

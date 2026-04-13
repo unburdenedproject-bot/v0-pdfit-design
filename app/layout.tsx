@@ -1,10 +1,19 @@
 import type React from "react"
 import type { Metadata } from "next"
+import { Inter } from "next/font/google"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import { GoogleTagManager, GoogleTagManagerNoScript } from "@/components/google-analytics"
-import { CookieConsent } from "@/components/cookie-consent"
+import { DeferredCookieConsent } from "@/components/deferred-cookie-consent"
 import { Suspense } from "react"
 import "./globals.css"
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  display: "swap",
+  variable: "--font-inter",
+  preload: true,
+})
 
 export const metadata: Metadata = {
   title: "PDF.it — Fix Any Document Problem Instantly",
@@ -49,11 +58,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.variable}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onLoad="this.media='all'" />
         <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       </head>
@@ -64,7 +70,7 @@ export default function RootLayout({
           <ScrollToTop />
         </Suspense>
         {children}
-        <CookieConsent />
+        <DeferredCookieConsent />
       </body>
     </html>
   )

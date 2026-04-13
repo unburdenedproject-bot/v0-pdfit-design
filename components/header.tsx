@@ -114,7 +114,7 @@ export function Header() {
               </button>
             )}
             <Link href="/" className="flex items-center">
-              <img src="/logo.svg" alt="PDF.it" style={{height: '28px', width: 'auto'}} />
+              <img src="/logo.svg" alt="PDF.it" width={57} height={28} fetchPriority="high" decoding="async" style={{height: '28px', width: 'auto'}} />
             </Link>
           </div>
 

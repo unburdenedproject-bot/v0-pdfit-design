@@ -147,7 +147,7 @@ export default function SignUpPagePt() {
             <div className="rounded-[15px] p-8" style={{ background: "rgba(255,255,255,0.07)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)" }}>
               {/* Logo & Title */}
               <div className="mb-6 text-center">
-                <div className="mx-auto mb-3"><img src="/logo.svg" alt="PDF.it" style={{height: '32px', width: 'auto', display: 'inline-block'}} /></div>
+                <div className="mx-auto mb-3"><img src="/logo.svg" alt="PDF.it" width={66} height={32} fetchPriority="high" decoding="async" style={{height: '32px', width: 'auto', display: 'inline-block'}} /></div>
                 <h1 className="text-xl font-bold text-white">Crie sua conta</h1>
                 <p className="mt-1 text-sm text-slate-400">Receba 10 conversões grátis por dia</p>
               </div>

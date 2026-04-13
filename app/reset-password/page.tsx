@@ -84,7 +84,7 @@ export default function ResetPasswordPage() {
           <div className="rounded-2xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(20,216,196,0.2))" }}>
             <div className="rounded-[15px] p-8" style={{ background: "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.06) 0%, transparent 50%), rgba(255, 255, 255, 0.07)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)", boxShadow: "inset 0 1px 1px rgba(20,216,196,0.08), 0 4px 24px rgba(0,0,0,0.3)" }}>
               <div className="text-center mb-6">
-                <div className="mx-auto mb-2"><img src="/logo.svg" alt="PDF.it" style={{height: '32px', width: 'auto', display: 'inline-block'}} /></div>
+                <div className="mx-auto mb-2"><img src="/logo.svg" alt="PDF.it" width={66} height={32} fetchPriority="high" decoding="async" style={{height: '32px', width: 'auto', display: 'inline-block'}} /></div>
                 <h1 className="text-xl font-bold text-white">Set New Password</h1>
                 <p className="text-slate-400 text-sm mt-1">Enter your new password below</p>
               </div>

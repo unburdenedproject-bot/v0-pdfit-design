@@ -799,7 +799,7 @@ export function EsignInterface({ locale = "en" }: { locale?: EsignLocale }) {
                             </div>
 
                             <div className="rounded-xl border border-dashed border-slate-200 bg-white p-4 min-h-[100px] flex items-center justify-center">
-                              <img src={signature.previewUrl || signature.assetUrl} alt={`${signature.kind} preview`} className="max-h-16 w-auto" />
+                              <img src={signature.previewUrl || signature.assetUrl} alt={`${signature.kind} preview`} width={200} height={64} loading="lazy" decoding="async" className="max-h-16 w-auto" />
                             </div>
 
                             <p className="mt-3 text-xs text-slate-500">
