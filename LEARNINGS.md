@@ -1,5 +1,11 @@
 # Project Learnings
 
+## 2026-04-13 — `git add .` sweeps untracked files into commits
+
+**What:** Running `git add .` after a small edit to 3 footer files also staged 42 untracked files that were sitting loose in the project root — Lighthouse HTML reports, logo folders, a `.rar` archive, a stray test PDF (`N2N-2024-question-list-compressed.pdf`), and manual-test xlsx files. All got pushed to the repo in commit `2610532` (+20,591 lines).
+**Why it matters:** Repo bloat, leaked test artifacts, and potentially sensitive files in public git history. Paula thought `git add .` meant "add my changes" — it actually means "stage everything not in `.gitignore`".
+**Apply when:** Staging commits. Prefer explicit paths (`git add components/footer.tsx`) over `git add .`. If `.` is needed, `git status` first and remove unintended files. Long-term: add a `.gitignore` rule covering common test-artifact patterns (`Lighthouse Report*`, `*.rar`, `manual-tests/*.xlsx`, large binary assets in root).
+
 ## 2026-04-12 — Supabase signup hides duplicate email, we must surface it
 
 **What:** When `supabase.auth.signUp()` is called with an email that already exists, Supabase does NOT return an error. It returns a "success" response with `data.user` populated but with an empty `identities` array. This is intentional (prevents email enumeration attacks). Our signup UI treated this as success and showed the "check your email" screen, even though no confirmation email was sent.
