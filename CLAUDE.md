@@ -192,6 +192,15 @@ Not urgent yet — current system works but won't scale past ~100 concurrent use
 - **Footer copyright must say © 2024** — PDF.it was established in 2024. Never use dynamic dates.
 - **Never show low usage numbers as social proof** — live stats only display "Files processed" when count exceeds 10,000. Below that, shows "30+ PDF tools available"
 - **Feedback table requires manual approval** — set `approved = true` in Supabase before testimonials display on homepage
+- **New tool interfaces must use the shared client-side validator** — import `validateClientFile` from `lib/client-file-validator.ts` in the drop/select handler and render `getSizeLimitLabel(userPlan)` under the dropzone. Exception: `pdf-compare-interface.tsx` uses inline validation (dual-file flow is different).
+- **AI content prompts must forbid invention** — any prompt that produces user-authored content (resumes, summaries, cover letters) must say "Use ONLY the info provided. Do NOT invent employers, titles, dates, metrics, skills, or achievements." Detect literal "No X" / "None" / "N/A" inputs and instruct the model to OMIT the section entirely. Applies to `/api/generate-resume` and any future AI content route.
+- **AI route input must pass `guardPdfContent()`** — the shared helper in `lib/pdf-content-guard.ts` strips metadata, detects binary streams, and enforces word-density. Wired into all 6 AI routes. Required before sending text to OpenAI.
+- **URL-to-PDF must run `checkUrlSafety()`** — Google Safe Browsing v4 check after SSRF validation. Env var: `GOOGLE_SAFE_BROWSING_API_KEY`. Fails open (logs warning) if missing.
+- **Signup must detect empty-identities response** — Supabase hides duplicate emails by returning success with `data.user.identities = []`. Check this explicitly and show "account already exists" on all 3 locales.
+- **Password must be strong** — uppercase + lowercase + digit + special char on signup (EN/ES/BR) and reset-password, in addition to 8-char minimum.
+- **Third-party widgets (CookieConsent etc.) must be deferred** — wrap in `DeferredCookieConsent` pattern using `dynamic({ ssr: false })` + `requestIdleCallback`. Keeps them out of initial JS bundle.
+- **Fonts must use `next/font/google`** — self-hosted, not loaded via `<link>`. The `onLoad="this.media='all'"` pattern does not reliably fire in React Server Components.
+- **Every new `<img>` tag needs explicit `width` and `height`** — prevents CLS. Above-fold also gets `fetchPriority="high"`; below-fold gets `loading="lazy" decoding="async"`.
 - Paula is non-technical — explain things simply
 
 ## Deployment Process

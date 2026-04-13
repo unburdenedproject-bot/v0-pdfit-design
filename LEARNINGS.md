@@ -1,5 +1,29 @@
 # Project Learnings
 
+## 2026-04-12 — Supabase signup hides duplicate email, we must surface it
+
+**What:** When `supabase.auth.signUp()` is called with an email that already exists, Supabase does NOT return an error. It returns a "success" response with `data.user` populated but with an empty `identities` array. This is intentional (prevents email enumeration attacks). Our signup UI treated this as success and showed the "check your email" screen, even though no confirmation email was sent.
+**Why it matters:** Users thought they created a new account and waited for a confirmation email that never came. We learned about this during QA round 3 (OP_014). The enumeration risk is far outweighed by the UX bug.
+**Apply when:** After every `supabase.auth.signUp()` call, check `data.user.identities.length === 0` and show "An account with this email already exists" explicitly. Fixed in EN/ES/BR signup pages.
+
+## 2026-04-12 — Client-side upload validation belongs in a shared helper, not per-interface
+
+**What:** Every tool interface had its own `handleDrop`/`handleFileSelect` that did minimal validation (`file.type === "application/pdf"` at best). Empty files, over-limit files, and non-PDFs reached the upload step before failing. QA reported the same class of bug across 8 different tools (OP_001, OP_005, OP_009, OP_018, OP_030).
+**Why it matters:** Per-interface validation drifts. One tool rejects empty files, another doesn't. Size limits aren't shown. Error messages are inconsistent.
+**Apply when:** Any new tool interface. Import `validateClientFile` from `lib/client-file-validator.ts`, call it in the accept handler, show `getSizeLimitLabel(userPlan)` under the dropzone. Exception: `pdf-compare-interface.tsx` uses inline validation because its dual-file flow is different — still validated, just not via the shared helper.
+
+## 2026-04-12 — AI resume prompts must say "do NOT invent" or the model will
+
+**What:** Our resume-builder prompt said "Include quantified achievements (create realistic metrics)." The model dutifully invented employers, job titles, percentages, and dates. User-provided facts were overridden with plausible-sounding fiction (OP_006, OP_011).
+**Why it matters:** A resume with made-up metrics is not just wrong, it's fraud if the user submits it. The "create realistic metrics" instruction was the single line that caused it — removing it alone fixed most of the problem.
+**Apply when:** Any prompt that produces user-authored content (resumes, summaries, cover letters). Explicit rules: "Use ONLY the info provided. Do NOT invent employers, titles, dates, metrics, skills, or achievements. If a field is sparse, keep it sparse." Detect literal "No X" / "None" / "N/A" inputs and instruct the model to OMIT that section entirely.
+
+## 2026-04-12 — Image size/font loading are the cheapest mobile PSI wins
+
+**What:** PSI mobile was 81, desktop 100. Fixing only 3 things took it to 93 mobile with zero desktop regression: (1) explicit `width`/`height` on every `<img>` tag (17 total), (2) replacing the Google Fonts `<link>` with `next/font/google` (self-hosted Inter), (3) wrapping CookieConsent in `dynamic({ ssr: false })` + `requestIdleCallback`.
+**Why it matters:** No route changes, no design changes, no behavioral changes — just fixed the CLS contributors and took font requests off the critical path. The `onLoad="this.media='all'"` pattern on `<link>` does not reliably fire in React Server Components, so that was effectively a render-blocking stylesheet despite appearing non-blocking.
+**Apply when:** Any new `<img>` gets `width`/`height` from day one. All fonts go through `next/font`. Heavy third-party widgets (consent banners, chat widgets) wrap in `DeferredMount` components that render after `requestIdleCallback`.
+
 ## 2026-04-09 — Never enable async job queue without end-to-end testing
 
 **What:** The `ASYNC_ENABLED_TOOLS` set in `processing-interface.tsx` was populated with 19 tools, routing them through the async job queue (create job → poll → cron processes). This caused infinite spinners because: (1) the cron only runs every minute, (2) the fire-and-forget trigger to `/api/jobs/process` requires `CRON_SECRET` auth which may fail silently, (3) polling resets progress to 0% when the job is still "pending", (4) some tool name slugs don't match API route names.

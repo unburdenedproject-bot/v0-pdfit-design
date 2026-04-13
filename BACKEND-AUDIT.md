@@ -4,6 +4,13 @@
 **Audited by:** 5 specialist agents (Security, Database, Performance, Reliability, Architecture)
 **Initial Score: 4.5/10 — Current Score: 9.1/10 — ALL 28 ITEMS FIXED**
 
+**Launch Day Update (April 12, 2026):** Pre-launch audit by 4 parallel specialists. All sacred systems (sitemap, robots, webhook, crons, blank-pdf-check) confirmed untouched by the 30-bug-fix push. Mobile PSI 81 → 93 (self-hosted fonts, explicit img dimensions, deferred cookie consent). Google Safe Browsing live on url-to-pdf. Anonymous cookie tracking live-verified against production. Site launched April 13, 2026.
+
+**Known non-blockers deferred post-launch:**
+- `lib/retry.ts` not applied to AI routes — if OpenAI has a 10-minute outage, all 6 AI tools 5xx with no retry. Mitigation plan: post a banner + temporarily disable AI endpoints.
+- `checkUsageAndAuth` not wired on paid-tier AI routes (Pro/Business users have unmetered AI usage). Cost risk, not a reliability risk. Plan: add per-plan quota after watching real usage for a week.
+- Server-side batch gate for `/api/merge-pdf` still missing — free users can POST multiple files directly via script. Plan: add `files.length > 1 && plan === 'free'` guard in route.
+
 ---
 
 ## Scorecard (Before → After)

@@ -1,5 +1,88 @@
 # PDF.it - Accomplished Work
 
+## Launch Day Prep — 30 QA Bugs + Dashboard Search + Mobile Perf (April 12, 2026)
+
+Shipped 12 commits closing the final QA round from `manual-tests/AI PDF Tools Bug Document (3).xlsx` tab `10042026`. All 30 OP_xxx issues resolved and documented in the xlsx (Status + DEV comments columns).
+
+### Batches A–B — AI route content guard
+- New `lib/pdf-content-guard.ts`: strips PDF metadata, detects binary streams, enforces word-density and 150-char content floor
+- Wired into all 6 AI routes: `ats-optimizer`, `chat-with-pdf`, `pdf-summarizer`, `question-generator`, `smart-extraction`, `translate-pdf`
+- Replaces the old weak `length < 50` check — prevents binary PDF data from reaching OpenAI
+- Strict `isBlankPdf()` guard added to all 6 routes (was missing on ats-optimizer)
+- Fixes OP_012, OP_013, OP_018, OP_020, OP_021, OP_022
+
+### Batch C — Client-side upload validation + size-limit label
+- New `lib/client-file-validator.ts`: validates empty/too-large/not-a-PDF BEFORE upload
+- Wired into processing-interface (generic) + 6 AI-tool interfaces
+- `components/processing/file-dropzone.tsx` now shows "Max file size: 25MB/200MB/1GB" (plan-aware)
+- Fixes OP_009, OP_018, OP_030, upload-side of OP_001
+
+### Batch D — Resume builder validation + prompt fidelity
+- `app/api/generate-resume/route.ts` prompt rewritten: "Use ONLY the information provided. Do NOT invent employers, titles, dates, metrics, skills." Removed "create realistic metrics" instruction
+- Server-side required-field check (Full Name, Email, Experience, Education, Skills), email regex, phone pattern (7-20 digits)
+- Client-side mirror validation in `resume-builder-interface.tsx` + `ats-optimizer-interface.tsx`
+- `isEmptyIntent()` helper: literal "No Skills" / "None" / "N/A" inputs cause that section to be OMITTED from the generated resume (instead of AI adding defaults)
+- Fixes OP_006, OP_007, OP_008, OP_010, OP_011
+
+### Batch E — Upload reliability + specific PDF-read errors
+- Table Extraction: pre-upload validation + size-limit label
+- PDF Compare: pdfjs `PasswordException` → "This PDF is password-protected"; `InvalidPDFException` → "Not a valid PDF"
+- Fixes OP_003, OP_005
+
+### Batch F — Signup + URL-to-PDF security hardening
+- Strong password (uppercase + lowercase + digit + special char) enforced on EN/ES/BR signup + reset-password. Hint text added under password field
+- Duplicate-email detection via `data.user.identities.length === 0` on all 3 signup pages (Supabase hides this to prevent enumeration; we surface it)
+- Google Safe Browsing v4 integration via new `checkUrlSafety()` helper. Blocks phishing/malware/social-engineering URLs in url-to-pdf. Env var: `GOOGLE_SAFE_BROWSING_API_KEY` (set on Vercel and verified live with `testsafebrowsing.appspot.com/s/phishing.html`)
+- Fixes OP_002, OP_014, OP_015
+
+### Batch G — Translation chunking
+- `app/api/translate-pdf/route.ts` now splits input at 3000-char paragraph boundaries, translates up to 4 chunks in parallel, rejoins. Input cap raised 12k → 40k chars
+- Eliminates silent truncation by model's max_tokens output cap on long documents
+- Fixes OP_017, improves OP_019 (parallel = faster)
+
+### Batch H — Billing portal + contact form clarity
+- `create-portal-session` returns tailored messages for null `stripe_customer_id` (enterprise manual upgrade), missing portal configuration, and missing Stripe customer — all instruct users to email Paula
+- Contact form now surfaces the actual API error (rate-limit, validation, Supabase status) instead of generic "Failed to send"
+- Fixes OP_004, OP_016
+
+### Batch I — AI output quality + question download
+- Question Generator: Download button added next to Copy All. Generates `<original-pdf>-questions.txt` with all questions + answers + explanations
+- Smart Extraction: `response_format: { type: "json_object" }` enforced, temperature dropped 0.1→0, prompt hardened ("Use EXACT strings, don't paraphrase, leave ambiguous fields out")
+- Fixes OP_023, OP_024
+
+### Batch J — Polish (X logo, legal links, captcha centering)
+- Twitter icon replaced with inline X logo SVG in all 3 footers
+- Privacy Policy + Terms links now `target="_blank" rel="noopener noreferrer"` in footers + cookie banner (EN/ES/BR) — prevents form-state loss mid-flow
+- hCaptcha widget centered via `<div className="flex justify-center">` on all 3 signup pages
+- Fixes OP_026, OP_027, OP_029
+
+### Batch K — Pricing card alignment + blog CTA
+- Pricing (EN/ES/BR): Free plan gets "Free Forever" badge with `pt-10` matching Pro/Business/Enterprise. Equal-height cards via `min-h-[20px]` placeholder on Free. Contrast bumped (slate-400 → slate-300, "$0" → white). "Everything in X, plus:" now uses plan accent color. All paid CTAs unified to "Start 30-Day Free Trial"
+- Blog "N articles" pill (all 3 locales) converted from static `<div>` to `<a href="#articles">` with hover state and smooth-scroll to the articles grid
+- Fixes OP_025, OP_028
+
+### Dashboard Tool Search
+- New `lib/dashboard-tool-catalog.ts`: 38 primary tools with EN/ES/BR labels, hrefs, and cross-language keywords
+- New `components/dashboard-search.tsx`: live filtering, keyboard support (Enter = open top match, Escape = clear), diacritic-insensitive matching
+- Wired into all 3 dashboard clients above the Stats Row
+
+### Mobile Performance (81 → 93 on PSI Mobile)
+- All 17 `<img>` tags got explicit `width` + `height` attributes (fixes CLS)
+- Above-fold logos get `fetchPriority="high" decoding="async"`; below-fold get `loading="lazy"`
+- Removed render-blocking Google Fonts `<link>` — switched to `next/font/google` (self-hosted Inter, weights 400-900). Eliminated the ~200ms render-blocking request
+- Dropped Sora from font stylesheet (was loaded but never referenced anywhere in code)
+- New `components/deferred-cookie-consent.tsx` wraps CookieConsent in `next/dynamic({ ssr: false })` + `requestIdleCallback` — keeps the banner code out of initial JS bundle
+
+### Anonymous cookie tracking verification
+- Live-tested `pdfit_uses_YYYY-MM-DD` cookie against production. Confirmed: calls 1-3 set cookie correctly with `HttpOnly`, `SameSite=lax`, 24h expiry. Call 4 blocked with `signup_required` 403.
+
+### Pre-launch audit (4 parallel specialist agents)
+- Sacred systems (sitemap, robots, webhook, crons, blank-pdf-check) all confirmed untouched by today's 12 commits
+- All 30 bug fixes traced end-to-end in code; 9/10 highest-risk fixes PASS; 1 cosmetic consistency note on pdf-compare using inline validation instead of shared helper (non-blocker — fix is in place)
+- 4 production confirmations all green: env vars on Vercel, Stripe webhook URL + 7 events, sitemap live, compress-PDF smoke test
+
+---
+
 ## Payment Gating, Sitemap Fix & Launch Prep (April 9, 2026)
 
 ### Stripe Webhook Hardening
