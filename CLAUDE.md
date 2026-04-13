@@ -65,41 +65,9 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 
 ---
 
-## TODO — By Priority
+## What's Next
 
-### Priority 0: Pre-Launch Fixes (ALL DONE)
-- ~~Contact form~~ DONE — saves to Supabase contact_messages table
-- ~~Stripe portal fallback domain~~ DONE — changed from pdfit.io to pdf.it.com
-- ~~ILOVEAPI_SECRET_KEY~~ DONE — confirmed on Vercel
-- ~~robots.txt~~ DONE — app/robots.ts already existed
-- ~~FAQ section~~ DONE — updated with current product info (all 4 tiers, eSign, table extraction)
-- ~~GA4 measurement ID~~ DONE — updated to G-PWD4YNY710
-- ~~Sitemap~~ DONE — 1,130+ URLs including URL to PDF
-- ~~Performance~~ DONE — Mobile LCP 1.8s, Desktop LCP 0.4s, CLS 0
-- ~~Upgrade flow~~ DONE — existing subscribers upgrade instantly with proration
-- ~~Database constraint~~ DONE — added "enterprise" to users_plan_check
-- ~~All API timeouts~~ DONE — 26 routes at 300s for Enterprise large files
-- ~~Workflow validation~~ DONE — inline warnings instead of "Workflow Failed"
-- ~~Social proof~~ DONE — added to homepage
-
-### Still needs Paula's verification:
-- ~~Verify GA4 Realtime is recording data~~ DONE
-- Test full payment flow end-to-end
-- Test table extraction with a real PDF
-- Verify NEXT_PUBLIC_SITE_URL=https://pdf.it.com on Vercel
-- Verify Stripe webhook endpoint is https://pdf.it.com/api/webhook
-
-### Priority 1: Remaining Tools
-- ~~Resume ATS Optimizer~~ DONE — /ats-optimizer (Optimize Your Resume) + /create-resume (Create a Resume)
-  - v1.1 upgrade: matched keywords, format risks, bullet rewrites, section rewrites, Word .docx output, cover letter generation
-  - Standalone resume builder at /create-resume (no upload needed)
-  - Uses /api/ats-optimizer (analysis) and /api/generate-resume (rewrite/build, Word output via docx npm package)
-
-### Priority 2: Infrastructure Migration
-Full plan in INFRASTRUCTURE.md.
-Move from Vercel serverless → R2 storage → Redis/BullMQ queue → Worker processors (Fly.io).
-Processing libraries: Ghostscript, PDFium, Poppler, OpenCV, Tesseract.
-Not urgent yet — current system works but won't scale past ~100 concurrent users.
+**Launched April 13, 2026.** All pre-launch TODOs completed. For post-launch work, see `POST-LAUNCH.md`. For future infrastructure migration (R2 + Redis + Fly.io workers), see `INFRASTRUCTURE.md` — not urgent until ~100 concurrent users.
 
 ---
 

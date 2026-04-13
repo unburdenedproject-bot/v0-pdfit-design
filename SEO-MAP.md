@@ -1,5 +1,7 @@
 # PDF.it — 120-Page SEO Map
 
+**STATUS: BUILD COMPLETE** — all 6 clusters shipped. Reference map, not a to-do list.
+
 Goal: Dominate the PDF niche through intent coverage.
 Target: 100k–500k monthly visitors → 1k–10k subscribers
 

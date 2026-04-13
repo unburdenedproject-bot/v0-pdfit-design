@@ -1,23 +1,18 @@
-# PDF.it & PDF.it — Marketing Brief
+# PDF.it — Marketing Brief
 
-Created: March 23, 2026
+Last updated: April 12, 2026
 Prepared for: Marketing Department
 
 ---
 
 ## The Business
 
-Two sister products, same engine, different visual identity:
+PDF.it (pdf.it.com) is a privacy-first PDF tools SaaS. Premium domain, modern UI, trilingual (English + Spanish + Brazilian Portuguese).
 
-| | PDF.it | PDF.it |
-|---|---|---|
-| Domain | pdf.it.com | omnispdf.com |
-| Identity | Premium, modern, consumer-facing | Professional, business-facing |
-| Colors | Indigo + Teal | Navy + Orange |
-| Target | General public, students, freelancers | Legal, accounting, business teams |
-| Languages | EN + ES + BR | EN + ES + BR |
-
-Both products offer identical tools. The differentiation is in positioning and visual identity.
+- **Positioning:** "Fix any document problem instantly" — not just "PDF tools"
+- **Brand feel:** Premium, modern, professional — serves both consumers and business teams
+- **Colors:** Indigo + Teal (see `BRAND.md` for exact values)
+- **Target:** General public, students, freelancers, business teams (legal/accounting/ops)
 
 ---
 
@@ -48,7 +43,7 @@ None of them prove it.
 | Smallpdf | "We protect your privacy" |
 | Adobe | "Your files are secure" |
 | SodaPDF | "256-bit encryption" |
-| **PDF.it / PDF.it** | **"Files deleted immediately after your session"** |
+| **PDF.it** | **"Files deleted immediately after your session"** |
 
 We don't promise privacy. We prove it.
 - Files are deleted the moment the session ends
@@ -83,6 +78,14 @@ Browser-based, instant processing. No desktop app to download, no plugin require
 
 ---
 
+## Fourth Differentiator: Trilingual from Day One
+
+EN + ES + BR with native URL slugs and native SEO content (not machine-translated UI). Competitors have UI translations but almost zero native SEO depth in LATAM or Brazil.
+
+**The message:** "Built for professionals across the Americas, not just translated for them."
+
+---
+
 ## Positioning Statement
 
 **For:** Anyone who needs to handle a PDF right now
@@ -105,7 +108,7 @@ Browser-based, instant processing. No desktop app to download, no plugin require
 
 ## Target Audiences
 
-### PDF.it — Consumer & General Public
+### Consumers & general public
 - **Students** — preparing submissions, converting Word to PDF, compressing large files
 - **Freelancers** — quick document work without committing to a subscription
 - **Job seekers** — converting resumes, compressing files for email
@@ -113,13 +116,15 @@ Browser-based, instant processing. No desktop app to download, no plugin require
 
 **Pain points:** Don't want to create accounts, worried about privacy, need it done now
 
-### PDF.it — Business & Professional
+### Business & professional teams
 - **Legal teams** — redacting, protecting, and organizing case documents
 - **Accounting teams** — extracting tables, converting invoices, batch processing
 - **Operations teams** — workflow automation, document management at scale
 - **HR departments** — ATS resume optimization, document processing
 
 **Pain points:** Need bulk processing, compliance concerns, team access, reliable uptime
+
+Both audiences are served by the same product and the same domain. Pro tier captures consumers who need more than 10 conversions/day; Business and Enterprise tiers capture professional teams.
 
 ---
 
@@ -157,8 +162,7 @@ Browser-based, instant processing. No desktop app to download, no plugin require
 ```
                     HIGH PRIVACY PROOF
                            |
-              PDF.it       |      PDF.it
-              (consumer)   |      (business)
+                        PDF.it
                            |
 SIMPLE ——————————————————————————————————— POWERFUL
                            |
@@ -197,8 +201,10 @@ We own the top half. No competitor is credibly claiming verified, immediate file
 |------|-------|-------------|
 | Free | $0 | 10 tasks/day, no account needed for first 3 |
 | Pro | $3.99/month | All tools, 200MB files, no daily limit |
-| Business | $13.99/month | Pro + invoice, eSign, 1GB files |
-| Enterprise | $49.99/month | Business + 2,000 pages table extraction, workflows |
+| Business | $13.99/month | Pro + eSign, Chat with PDF, Table Extraction, 1GB files |
+| Enterprise | $49.99/month | Business + 2,000 pages table extraction, workflow automation |
+
+All paid tiers include a **30-day free trial**.
 
 **Key pricing message:** "Start free. Upgrade when you need more — not before."
 
@@ -208,9 +214,9 @@ We own the top half. No competitor is credibly claiming verified, immediate file
 
 1. **Privacy proof** — immediate deletion is a technical fact, not a marketing claim
 2. **No friction** — anonymous use before any account request
-3. **Three languages** — EN + ES + BR from day one (competitors have UI translations but no native SEO content depth)
-4. **Two brands** — PDF.it captures consumer traffic, PDF.it captures business traffic
-5. **Domain** — pdf.it is a premium, memorable domain that competitors cannot replicate
+3. **Three native languages** — EN + ES + BR from day one with native SEO content (competitors have UI translations but shallow SEO depth in those markets)
+4. **Premium domain** — pdf.it is memorable and short; competitors cannot replicate it
+5. **AI tools at consumer price** — Chat with PDF, Smart Extraction, Translate PDF, Summarizer, Question Generator, ATS Optimizer at $3.99–$13.99/month vs Adobe at $23+
 
 ---
 

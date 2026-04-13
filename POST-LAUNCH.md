@@ -1,6 +1,6 @@
 # PDF.it — Post-Launch Roadmap
 
-Last updated: March 23, 2026
+Last updated: April 12, 2026 (day before launch)
 Status: Planning — do not build any of this before reaching 1,000 paid subscribers.
 
 ---
@@ -18,14 +18,15 @@ Status: Planning — do not build any of this before reaching 1,000 paid subscri
 
 ## Phase 1 — After 1,000 Paid Subscribers
 
-### 1A. Deferred Code Fixes (from March 23 audit)
+### 1A. Deferred Code Fixes
 
 These were intentionally skipped pre-launch. Fix in this order:
 
-- **Batch server-side guard** — free users can bypass the UI and call /api/merge-pdf directly with multiple files. Add a file count check inside the route.
+- **Batch server-side guard** — free users can bypass the UI and call `/api/merge-pdf` directly with multiple files. Add a file-count check inside the route.
 - **File size re-validation in processing routes** — all 26 routes trust the blobUrl without re-checking size. Add a size check after blob fetch.
-- **Enterprise dashboard badge color** — dashboard-client.tsx, dashboard-client-es.tsx, dashboard-client-br.tsx line 296. Enterprise shows orange (Pro color) instead of amber/gold. Fix all 3 files.
-- **Paid users logging unnecessary DB writes** — logUsage fires for paid users even though it's never checked. Minor cleanup, low priority.
+- **Apply `lib/retry.ts` to AI routes** — all 6 AI routes currently have no retry on OpenAI failures. If OpenAI has a 10-minute outage, every AI tool returns 5xx. Wrap each OpenAI call in the retry helper.
+- **Per-plan AI quota** — paid-tier AI routes (ats-optimizer, chat-with-pdf, pdf-summarizer, translate-pdf, smart-extraction, question-generator, generate-resume) have auth check but no `checkUsageAndAuth` quota. Paid users have unmetered usage. Cost risk, not reliability.
+- **Paid users logging unnecessary DB writes** — `logUsage` fires for paid users even though it's never checked. Minor cleanup, low priority.
 
 ### 1B. New Language — Indonesian 🇮🇩
 

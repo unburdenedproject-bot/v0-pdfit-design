@@ -1,5 +1,7 @@
 # PDF.it — Setup Guide for External Services
 
+**STATUS: SETUP COMPLETE** — all services configured as of April 7, 2026. Keep this file as reference for re-configuration if any service breaks.
+
 This guide covers services that need manual account creation. Each takes 5-15 minutes.
 
 ---
