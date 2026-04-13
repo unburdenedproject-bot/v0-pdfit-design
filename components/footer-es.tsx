@@ -29,7 +29,7 @@ export function FooterEs() {
               <a href="https://x.com/pdfit" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors" aria-label="Síguenos en X">
                 <XLogo className="h-5 w-5" />
               </a>
-              <a href="https://www.instagram.com/pdfit" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors" aria-label="Síguenos en Instagram">
+              <a href="https://www.instagram.com/pdf_it/" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors" aria-label="Síguenos en Instagram">
                 <Instagram className="h-5 w-5" />
               </a>
               <a href="https://www.linkedin.com/company/pdfit" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors" aria-label="Síguenos en LinkedIn">

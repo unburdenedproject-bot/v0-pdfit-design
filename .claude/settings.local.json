@@ -9,7 +9,11 @@
       "Bash(powershell.exe:*)",
       "Bash(pnpm add:*)",
       "Bash(npx.cmd:*)",
-      "Bash(/c/Users/paula/Node/node-v24.14.0-win-x64/npm.cmd install:*)"
+      "Bash(grep -E \"\\\\.\\(ts|tsx|js|jsx\\)$\")",
+      "Bash(ls -la .next/server/app/sitemap*)",
+      "Bash(ls -la .next/server/app/sitemap/)",
+      "Bash(ls -la app/sitemap*)",
+      "Bash(ls *.md)"
     ]
   }
 }
