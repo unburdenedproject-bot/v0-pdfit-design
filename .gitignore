@@ -24,3 +24,15 @@ e2e/fixtures/storage-*.json
 
 # Test env
 .env.test
+
+# Claude Code local project memory (keep local, never commit)
+.claude/projects/
+
+# Local-only assets and test artifacts (never commit)
+Lighthouse Report*
+*.rar
+PDFit-ok/
+PDFit_LOGOS/
+manual-tests/AI PDF Tools Bug Document (1).xlsx
+manual-tests/AI PDF Tools Bug Document (2).xlsx
+N2N-*.pdf
