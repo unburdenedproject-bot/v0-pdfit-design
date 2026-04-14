@@ -313,22 +313,28 @@ Return the complete rewritten resume as plain text with clear section headings. 
       const certsIntentEmpty = isEmptyIntent(info.certifications)
       const langsIntentEmpty = isEmptyIntent(info.languages)
 
+      const allowedSections: string[] = ["CONTACT INFORMATION", "PROFESSIONAL SUMMARY", "EXPERIENCE", "EDUCATION"]
+      if (!skillsIntentEmpty && info.skills && info.skills.trim()) allowedSections.push("SKILLS")
+      if (!certsIntentEmpty && info.certifications && info.certifications.trim()) allowedSections.push("CERTIFICATIONS")
+      if (!langsIntentEmpty && info.languages && info.languages.trim()) allowedSections.push("LANGUAGES")
+
       resumePrompt = `You are an expert resume writer. Create a professional ATS-optimized resume STRICTLY from the information the candidate provided below.
 
-RULES:
-- Use clean formatting with ALL CAPS section headings
-- Standard sections: CONTACT INFORMATION, PROFESSIONAL SUMMARY, EXPERIENCE, EDUCATION, SKILLS, CERTIFICATIONS
+ABSOLUTE CONTENT RULES — these override everything else below:
+- Use ONLY the information the candidate provided. Do NOT invent employers, job titles, dates, schools, metrics, skills, certifications, languages, or achievements that were not given.
+- If the candidate wrote "No Skills", "No Certifications", "None", "N/A", or similar, treat that section as EMPTY and do NOT include the heading or any content for it. Do not substitute generic or default values.
+- If EXPERIENCE is sparse, keep it sparse. Do not invent bullet points the candidate didn't mention.
+- You may rephrase and polish the candidate's words, but do not fabricate new facts.
+
+SECTIONS TO INCLUDE (in this order, and ONLY these — do not add any section not listed here):
+${allowedSections.map((s) => `- ${s}`).join("\n")}
+
+FORMATTING RULES:
+- Use ALL CAPS for section headings
 - Use bullet points (•) for experience items
 - Reverse chronological order
 - No tables, columns, or special characters
 - Professional, confident tone
-
-STRICT CONTENT RULES (critical):
-- Use ONLY the information the candidate provided. Do NOT invent employers, job titles, dates, schools, metrics, skills, or achievements that were not given.
-- If a field is empty or the candidate indicated they have none (e.g. "No skills", "None", "N/A"), OMIT that section entirely instead of filling it with defaults.
-- If the candidate wrote something literal like "No Skills", honor that — do NOT add skills.
-- You may rephrase and polish the candidate's words, but do not fabricate new facts.
-- If EXPERIENCE is sparse, keep it sparse. Do not invent bullet points the candidate didn't mention.
 
 ${info.jobTarget ? `TARGET JOB: "${info.jobTarget}"` : ""}
 ${improvementInstructions}
