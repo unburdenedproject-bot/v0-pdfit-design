@@ -1,5 +1,13 @@
 # PDF.it - Accomplished Work
 
+## Repo Cleanup — Removed Committed Junk (April 14, 2026)
+
+Commit `d722e8b` removed 20,582 lines of accidentally-committed artifacts from the repo (result of a prior `git add .` sweep):
+- **Hard deleted**: Lighthouse HTML reports (Desktop + Mobile April 8 + `_files/`), `PDFit-ok.rar`
+- **Untracked but kept on disk**: `PDFit-ok/` logo source folder, `PDFit_LOGOS/`, `manual-tests/AI PDF Tools Bug Document (1).xlsx` + `(2).xlsx` (kept `(3).xlsx` — active QA doc), `.claude/projects/` (Claude Code local memory)
+
+Updated `.gitignore` to block future recurrence. New patterns ignored: `Lighthouse Report*`, `*.rar`, `PDFit-ok/`, `PDFit_LOGOS/`, `manual-tests/AI PDF Tools Bug Document (1).xlsx`, `manual-tests/AI PDF Tools Bug Document (2).xlsx`, `N2N-*.pdf`, `.claude/projects/`.
+
 ## Footer Social Links Fixed (April 13, 2026)
 
 Footer social icons were pointing at non-existent handles (`/pdfit`). Replaced with Paula's real accounts in all 3 footers (EN/ES/BR):
