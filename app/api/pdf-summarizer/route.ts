@@ -121,17 +121,21 @@ export async function POST(request: NextRequest): Promise<Response> {
     let documentText: string = "";
 
     if (publicKey && secretKey) {
-      const ILovePDFApi = (await import("@ilovepdf/ilovepdf-nodejs")).default;
-      const ILovePDFFile = (await import("@ilovepdf/ilovepdf-nodejs/ILovePDFFile")).default;
+      try {
+        const ILovePDFApi = (await import("@ilovepdf/ilovepdf-nodejs")).default;
+        const ILovePDFFile = (await import("@ilovepdf/ilovepdf-nodejs/ILovePDFFile")).default;
 
-      const instance = new ILovePDFApi(publicKey, secretKey);
-      const task = instance.newTask("extract");
-      await task.start();
-      const pdfFile = new ILovePDFFile(tmpPath);
-      await task.addFile(pdfFile);
-      await task.process();
-      const txtData = await task.download();
-      documentText = txtData.toString("utf-8");
+        const instance = new ILovePDFApi(publicKey, secretKey);
+        const task = instance.newTask("extract");
+        await task.start();
+        const pdfFile = new ILovePDFFile(tmpPath);
+        await task.addFile(pdfFile);
+        await task.process();
+        const txtData = await task.download();
+        documentText = txtData.toString("utf-8");
+      } catch (extractErr) {
+        console.error("iLoveAPI extract failed (falling back to buffer):", extractErr);
+      }
     }
 
     if (!documentText || documentText.trim().length < 50) {
