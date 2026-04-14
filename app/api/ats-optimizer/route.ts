@@ -311,11 +311,16 @@ export async function POST(request: NextRequest): Promise<Response> {
     }
 
     // Analyze with OpenAI using a compact JSON contract.
-    const systemPrompt: string = "You are an ATS resume analyzer. Return only valid JSON. No markdown. No commentary. No code fences. Be concise. If evidence is weak, use fewer items rather than guessing.";
+    const systemPrompt: string = "You are an ATS resume analyzer. Return only valid JSON. No markdown. No commentary. No code fences. Be concise. If evidence is weak, use fewer items rather than guessing. NEVER invent content. If the PDF is blank, empty, unreadable, or not a resume, return {\"is_valid_resume\": false, \"reason\": string} and nothing else.";
     const userPrompt: string = `Analyze this resume for ATS compatibility.
 
-Output JSON matching this structure exactly:
+If the attached PDF is blank, contains no readable text, is a scanned image without OCR, or is not a resume, output exactly:
+{"is_valid_resume": false, "reason": "<short explanation>"}
+Do NOT invent a score or fabricate feedback.
+
+Otherwise, output JSON matching this structure exactly:
 {
+  "is_valid_resume": true,
   "version": "ats_v1_1",
   "job_description_provided": boolean,
   "score": integer,
@@ -453,13 +458,23 @@ Analyze the attached resume PDF.`;
 
     // Parse the JSON response
     let analysis: NormalizedAnalysis;
+    let rawParsed: any;
     try {
       const cleaned: string = content.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
-      analysis = normalizeAnalysis(JSON.parse(cleaned), Boolean(jobDescription.trim()));
+      rawParsed = JSON.parse(cleaned);
     } catch {
       console.error("Failed to parse AI response:", content);
       throw new Error("AI returned invalid analysis format.");
     }
+
+    if (rawParsed?.is_valid_resume === false) {
+      return errorResponse(
+        "This PDF doesn't appear to be a readable resume. Please upload a resume with text content (not blank or scanned images).",
+        422
+      );
+    }
+
+    analysis = normalizeAnalysis(rawParsed, Boolean(jobDescription.trim()));
 
     // Log usage
     const { logUsage } = await import("@/lib/usage-check");
