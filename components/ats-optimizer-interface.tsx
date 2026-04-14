@@ -157,6 +157,7 @@ export function AtsOptimizerInterface() {
   const [progress, setProgress] = useState(0)
   const [hasError, setHasError] = useState(false)
   const [errorMessage, setErrorMessage] = useState("")
+  const [isInvalidResume, setIsInvalidResume] = useState(false)
   const [analysis, setAnalysis] = useState<ATSAnalysis | null>(null)
   const [userPlan, setUserPlan] = useState<string>("free")
   const [resumeText, setResumeText] = useState("")
@@ -218,6 +219,7 @@ export function AtsOptimizerInterface() {
     setFile(selected)
     setHasError(false)
     setErrorMessage("")
+    setIsInvalidResume(false)
     setAnalysis(null)
   }, [userPlan])
 
@@ -270,6 +272,11 @@ export function AtsOptimizerInterface() {
             return
           }
         } catch {}
+        if (response.status === 422) {
+          setIsInvalidResume(true)
+          setErrorMessage(message)
+          return
+        }
         throw new Error(message)
       }
 
@@ -297,6 +304,7 @@ export function AtsOptimizerInterface() {
     setProgress(0)
     setHasError(false)
     setErrorMessage("")
+    setIsInvalidResume(false)
     setAnalysis(null)
     setShowBuildForm(false)
     setShowFixForm(false)
@@ -1022,6 +1030,26 @@ export function AtsOptimizerInterface() {
                     className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-[#14D8C4] focus:border-[#14D8C4] text-slate-800 text-sm resize-vertical"
                   />
                 </div>
+
+                {/* Invalid resume — premium-feel informational card */}
+                {isInvalidResume && (
+                  <div className="rounded-2xl p-5 mb-6 flex items-start gap-4" style={{ background: "linear-gradient(135deg, #F0F9FF 0%, #F5F3FF 100%)", border: "1px solid #DBEAFE" }}>
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, #14D8C4, #6B7CFF)" }}>
+                      <FileText className="h-5 w-5 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-bold text-slate-900 mb-1">We couldn't read this resume</h4>
+                      <p className="text-sm text-slate-600 leading-relaxed mb-3">
+                        The PDF appears to be blank, a scanned image, or not a resume. For the best analysis, please upload a resume that has selectable text.
+                      </p>
+                      <ul className="text-xs text-slate-500 space-y-1 list-disc pl-5">
+                        <li>Try exporting from Word or Google Docs as PDF</li>
+                        <li>If it's a scan, run it through our OCR tool first</li>
+                        <li>Make sure the file isn't password-protected</li>
+                      </ul>
+                    </div>
+                  </div>
+                )}
 
                 {/* Error */}
                 {hasError && (
