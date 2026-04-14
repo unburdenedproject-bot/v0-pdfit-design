@@ -1,22 +1,13 @@
-import { createWriteStream } from "fs";
-import { Readable } from "stream";
-import { pipeline } from "stream/promises";
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
 import { NextRequest, NextResponse } from "next/server";
-import { writeFile, unlink, readFile } from "fs/promises";
-import { join } from "path";
-import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
 import { isValidBlobUrl } from "@/lib/validate-blob-url";
-import { guardPdfContent } from "@/lib/pdf-content-guard";
 
 function errorResponse(message: string, status: number = 500): Response {
   return Response.json({ error: message }, { status });
 }
-
-const MAX_RESUME_TEXT_CHARS: number = 7000;
 
 function clampScore(value: unknown, fallback: number = 0): number {
   const num = Number(value);
@@ -215,8 +206,9 @@ function normalizeAnalysis(rawAnalysis: any, jobDescriptionProvided: boolean): N
 }
 
 export async function POST(request: NextRequest): Promise<Response> {
-  let tmpPath: string | null = null;
   let uploadedBlobUrl: string | null = null;
+  let openaiFileId: string | null = null;
+  let apiKey: string | undefined;
 
   try {
     // Auth: Pro/Business/Enterprise only
@@ -247,7 +239,7 @@ export async function POST(request: NextRequest): Promise<Response> {
       );
     }
 
-    const apiKey: string | undefined = process.env.OPENAI_API_KEY;
+    apiKey = process.env.OPENAI_API_KEY;
     if (!apiKey) {
       console.error("OPENAI_API_KEY is not set");
       return errorResponse("The analysis service is temporarily unavailable. Please try again later.", 500);
@@ -287,73 +279,32 @@ export async function POST(request: NextRequest): Promise<Response> {
       return NextResponse.json({ jobId: jobResult.jobId, status: "pending" }, { status: 202 });
     }
 
-    // Download PDF from blob
+    // Download PDF from blob and upload directly to OpenAI Files API
     const res: globalThis.Response = await fetch(blobUrl);
     if (!res.ok) {
       console.error(`Failed to fetch blob URL (${res.status})`);
       throw new Error("Failed to retrieve your uploaded file. Please try uploading again.");
     }
     const buffer: Buffer = Buffer.from(await res.arrayBuffer());
-    const id: string = randomUUID();
-    tmpPath = join("/tmp", `${id}-resume.pdf`);
-    await writeFile(tmpPath, buffer);
 
-    // ── Reject blank PDFs before hitting paid API ──
-    try {
-      const { isBlankPdf } = await import("@/lib/blank-pdf-check");
-      const { blank } = await isBlankPdf(buffer);
-      if (blank) {
-        if (uploadedBlobUrl) await del(uploadedBlobUrl).catch(() => {});
-        if (tmpPath) { await unlink(tmpPath).catch(() => {}); tmpPath = null; }
-        return errorResponse("This resume appears to be empty. Please upload a resume with content.", 400);
-      }
-    } catch (blankCheckErr) {
-      console.error("Blank PDF check failed (skipping):", blankCheckErr);
-      // Continue processing — let the API handle invalid files
+    const form = new FormData();
+    form.append("purpose", "user_data");
+    form.append("file", new Blob([new Uint8Array(buffer)], { type: "application/pdf" }), "resume.pdf");
+
+    const fileUploadRes = await fetch("https://api.openai.com/v1/files", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${apiKey}` },
+      body: form,
+    });
+    if (!fileUploadRes.ok) {
+      const errBody = await fileUploadRes.text();
+      console.error("OpenAI file upload failed:", fileUploadRes.status, errBody);
+      throw new Error("An error occurred while preparing your file. Please try again.");
     }
+    const fileData = await fileUploadRes.json();
+    openaiFileId = fileData.id;
 
-    // Extract text from PDF using iLoveAPI pdftxt
-    const publicKey: string | undefined = process.env.ILOVEAPI_PUBLIC_KEY;
-    const secretKey: string | undefined = process.env.ILOVEAPI_SECRET_KEY;
-
-    let resumeText: string = "";
-
-    if (publicKey && secretKey) {
-      try {
-        const ILovePDFApi = (await import("@ilovepdf/ilovepdf-nodejs")).default;
-        const ILovePDFFile = (await import("@ilovepdf/ilovepdf-nodejs/ILovePDFFile")).default;
-
-        const instance = new ILovePDFApi(publicKey, secretKey);
-        const task = instance.newTask("extract");
-        await task.start();
-        const pdfFile = new ILovePDFFile(tmpPath);
-        await task.addFile(pdfFile);
-        await task.process();
-        const txtData = await task.download();
-        resumeText = txtData.toString("utf-8");
-      } catch (extractErr) {
-        console.error("iLoveAPI extract failed (falling back to buffer):", extractErr);
-      }
-    }
-
-    if (!resumeText || resumeText.trim().length < 50) {
-      const { extractPdfText } = await import("@/lib/pdf-text-extract");
-      resumeText = await extractPdfText(buffer);
-    }
-
-    const guardResult = guardPdfContent(resumeText);
-    if (!guardResult.ok) {
-      if (uploadedBlobUrl) await del(uploadedBlobUrl).catch(() => {});
-      if (tmpPath) await unlink(tmpPath).catch(() => {});
-      return errorResponse(guardResult.userMessage!, 422);
-    }
-    resumeText = guardResult.sanitized;
-
-    // Clean up temp file and blob
-    if (tmpPath) {
-      await unlink(tmpPath).catch(() => {});
-      tmpPath = null;
-    }
+    // Clean up Vercel blob now that OpenAI has the file
     if (uploadedBlobUrl) {
       await del(uploadedBlobUrl).catch(() => {});
       uploadedBlobUrl = null;
@@ -448,8 +399,7 @@ Rules:
 JOB DESCRIPTION:
 ${jobDescription.trim() || "(none)"}
 
-RESUME TEXT:
-${resumeText.substring(0, MAX_RESUME_TEXT_CHARS)}`;
+Analyze the attached resume PDF.`;
 
     // Call OpenAI with retry for rate limits
     let openaiRes: globalThis.Response | undefined;
@@ -464,7 +414,13 @@ ${resumeText.substring(0, MAX_RESUME_TEXT_CHARS)}`;
           model: "gpt-4o-mini",
           messages: [
             { role: "system", content: systemPrompt },
-            { role: "user", content: userPrompt },
+            {
+              role: "user",
+              content: [
+                { type: "file", file: { file_id: openaiFileId } },
+                { type: "text", text: userPrompt },
+              ],
+            },
           ],
           temperature: 0.1,
           max_tokens: 1800,
@@ -514,7 +470,7 @@ ${resumeText.substring(0, MAX_RESUME_TEXT_CHARS)}`;
     console.error("ats-optimizer route error:", err);
 
     const raw: string = err && typeof err === "object" && (err as Error).message ? (err as Error).message : "";
-    const safe: string = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob.vercel/i.test(raw)
+    const safe: string = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|OpenAI|blob.vercel/i.test(raw)
       ? "An error occurred while processing your file. Please try again."
       : (raw || "An unexpected error occurred.");
 
@@ -523,8 +479,11 @@ ${resumeText.substring(0, MAX_RESUME_TEXT_CHARS)}`;
     if (uploadedBlobUrl) {
       await del(uploadedBlobUrl).catch(() => {});
     }
-    if (tmpPath) {
-      await unlink(tmpPath).catch(() => {});
+    if (openaiFileId && apiKey) {
+      await fetch(`https://api.openai.com/v1/files/${openaiFileId}`, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${apiKey}` },
+      }).catch(() => {});
     }
   }
 }
