@@ -164,8 +164,10 @@ export async function POST(request: NextRequest): Promise<Response> {
       uploadedBlobUrl = null;
     }
 
+    console.log("[question-generator] extracted text length:", documentText.length, "preview:", documentText.slice(0, 300));
     const guardResult = guardPdfContent(documentText);
     if (!guardResult.ok) {
+      console.log("[question-generator] guard rejected:", guardResult.reason, "sanitized length:", guardResult.sanitized.length);
       return errorResponse(guardResult.userMessage!, 422);
     }
     documentText = guardResult.sanitized.substring(0, MAX_PDF_TEXT_CHARS);
