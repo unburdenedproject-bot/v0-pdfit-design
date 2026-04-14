@@ -337,14 +337,8 @@ export async function POST(request: NextRequest): Promise<Response> {
     }
 
     if (!resumeText || resumeText.trim().length < 50) {
-      try {
-        const pdfParse = (await import("pdf-parse/lib/pdf-parse.js")).default;
-        const parsed = await pdfParse(buffer);
-        resumeText = (parsed.text || "").trim();
-      } catch (parseErr) {
-        console.error("pdf-parse fallback failed:", parseErr);
-        resumeText = "";
-      }
+      const { extractPdfText } = await import("@/lib/pdf-text-extract");
+      resumeText = await extractPdfText(buffer);
     }
 
     const guardResult = guardPdfContent(resumeText);

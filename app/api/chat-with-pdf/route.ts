@@ -157,14 +157,8 @@ export async function POST(request: NextRequest): Promise<Response> {
       }
 
       if (!documentText || documentText.trim().length < 50) {
-        try {
-          const pdfParse = (await import("pdf-parse/lib/pdf-parse.js")).default;
-          const parsed = await pdfParse(buffer);
-          documentText = (parsed.text || "").trim();
-        } catch (parseErr) {
-          console.error("pdf-parse fallback failed:", parseErr);
-          documentText = "";
-        }
+        const { extractPdfText } = await import("@/lib/pdf-text-extract");
+        documentText = await extractPdfText(buffer);
       }
 
       // Clean up temp file
