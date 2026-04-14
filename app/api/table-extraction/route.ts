@@ -271,11 +271,7 @@ export async function POST(request: NextRequest): Promise<Response> {
     if (!docAiResponse.ok) {
       const errBody: string = await docAiResponse.text();
       console.error("Document AI API error:", docAiResponse.status, errBody);
-      // DEBUG: return the raw Google error directly so Paula sees it without Vercel logs.
-      // REMOVE this branch after diagnosis — it exposes internal service details.
-      if (uploadedBlobUrl) await del(uploadedBlobUrl).catch(() => {});
-      if (tmpPath) await unlink(tmpPath).catch(() => {});
-      return errorResponse(`DEBUG ${docAiResponse.status}: ${errBody.slice(0, 600)}`, 500);
+      throw new Error("Table extraction failed. Please try again or use a different file.");
     }
 
     const result = await docAiResponse.json();
