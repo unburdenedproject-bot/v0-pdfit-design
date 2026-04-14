@@ -337,8 +337,14 @@ export async function POST(request: NextRequest): Promise<Response> {
     }
 
     if (!resumeText || resumeText.trim().length < 50) {
-      // Fallback: try reading raw text from buffer
-      resumeText = buffer.toString("utf-8").replace(/[^\x20-\x7E\n\r\t]/g, " ").trim();
+      try {
+        const pdfParse = (await import("pdf-parse/lib/pdf-parse.js")).default;
+        const parsed = await pdfParse(buffer);
+        resumeText = (parsed.text || "").trim();
+      } catch (parseErr) {
+        console.error("pdf-parse fallback failed:", parseErr);
+        resumeText = "";
+      }
     }
 
     const guardResult = guardPdfContent(resumeText);
