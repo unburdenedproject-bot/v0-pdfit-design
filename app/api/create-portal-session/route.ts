@@ -28,7 +28,7 @@ export async function POST() {
       return NextResponse.json(
         {
           error:
-            "Your billing account isn't linked to the self-service portal yet. Please email paula.vargas3@gmail.com and we'll sort it out in a few minutes.",
+            "Your billing account isn't linked to the self-service portal yet. Please email contact@pdf.it.com and we'll sort it out in a few minutes.",
         },
         { status: 400 },
       )
@@ -51,7 +51,7 @@ export async function POST() {
         return NextResponse.json(
           {
             error:
-              "Our billing portal is being set up. Please email paula.vargas3@gmail.com to manage your plan while we finish configuring it.",
+              "Our billing portal is being set up. Please email contact@pdf.it.com to manage your plan while we finish configuring it.",
           },
           { status: 503 },
         )
@@ -60,7 +60,7 @@ export async function POST() {
         return NextResponse.json(
           {
             error:
-              "We couldn't find your Stripe account. Please email paula.vargas3@gmail.com so we can re-link your subscription.",
+              "We couldn't find your Stripe account. Please email contact@pdf.it.com so we can re-link your subscription.",
           },
           { status: 400 },
         )
@@ -68,7 +68,7 @@ export async function POST() {
       return NextResponse.json(
         {
           error:
-            "Could not open the billing portal. Please try again in a moment, or email paula.vargas3@gmail.com if the problem persists.",
+            "Could not open the billing portal. Please try again in a moment, or email contact@pdf.it.com if the problem persists.",
         },
         { status: 500 },
       )
