@@ -308,10 +308,8 @@ export async function POST(request: NextRequest): Promise<Response> {
         return errorResponse("This resume appears to be empty. Please upload a resume with content.", 400);
       }
     } catch (blankCheckErr) {
-      console.error("Blank PDF check failed:", blankCheckErr);
-      if (uploadedBlobUrl) await del(uploadedBlobUrl).catch(() => {});
-      if (tmpPath) { await unlink(tmpPath).catch(() => {}); tmpPath = null; }
-      return errorResponse("Could not read this PDF. The file may be corrupted or password-protected.", 400);
+      console.error("Blank PDF check failed (skipping):", blankCheckErr);
+      // Continue processing — let the API handle invalid files
     }
 
     // Extract text from PDF using iLoveAPI pdftxt
