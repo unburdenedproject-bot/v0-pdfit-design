@@ -80,7 +80,8 @@ export function QuestionGeneratorInterface() {
           startNew: "Nuevo documento",
           copyAll: "Copiar todo",
           copied: "Copiado",
-          download: "Descargar",
+          downloadTxt: "Descargar TXT",
+          downloadPdf: "Descargar PDF",
           showAnswer: "Ver respuesta",
           hideAnswer: "Ocultar",
           upgradeTitle: "Funcion Pro",
@@ -107,7 +108,8 @@ export function QuestionGeneratorInterface() {
             startNew: "Novo documento",
             copyAll: "Copiar tudo",
             copied: "Copiado",
-            download: "Baixar",
+            downloadTxt: "Baixar TXT",
+            downloadPdf: "Baixar PDF",
             showAnswer: "Ver resposta",
             hideAnswer: "Ocultar",
             upgradeTitle: "Funcao Pro",
@@ -133,7 +135,8 @@ export function QuestionGeneratorInterface() {
             startNew: "New document",
             copyAll: "Copy all",
             copied: "Copied",
-            download: "Download",
+            downloadTxt: "Download TXT",
+            downloadPdf: "Download PDF",
             showAnswer: "Show answer",
             hideAnswer: "Hide",
             upgradeTitle: "Pro Feature",
@@ -243,7 +246,7 @@ export function QuestionGeneratorInterface() {
     setTimeout(() => setCopied(false), 2000)
   }, [formatQuestionsAsText])
 
-  const handleDownload = useCallback(() => {
+  const handleDownloadTxt = useCallback(() => {
     const text = formatQuestionsAsText()
     const blob = new Blob([text], { type: "text/plain;charset=utf-8" })
     const url = URL.createObjectURL(blob)
@@ -256,6 +259,82 @@ export function QuestionGeneratorInterface() {
     document.body.removeChild(a)
     URL.revokeObjectURL(url)
   }, [file, formatQuestionsAsText])
+
+  const handleDownloadPdf = useCallback(async () => {
+    const { PDFDocument, StandardFonts, rgb } = await import("pdf-lib")
+    const pdfDoc = await PDFDocument.create()
+    const font = await pdfDoc.embedFont(StandardFonts.Helvetica)
+    const bold = await pdfDoc.embedFont(StandardFonts.HelveticaBold)
+
+    const pageWidth = 595.28
+    const pageHeight = 841.89
+    const margin = 50
+    const maxWidth = pageWidth - margin * 2
+    const lineHeight = 14
+    const fontSize = 11
+
+    let page = pdfDoc.addPage([pageWidth, pageHeight])
+    let y = pageHeight - margin
+
+    const wrapText = (text: string, f: any, size: number): string[] => {
+      const words = text.split(/\s+/)
+      const lines: string[] = []
+      let current = ""
+      for (const word of words) {
+        const trial = current ? `${current} ${word}` : word
+        if (f.widthOfTextAtSize(trial, size) > maxWidth) {
+          if (current) lines.push(current)
+          current = word
+        } else {
+          current = trial
+        }
+      }
+      if (current) lines.push(current)
+      return lines
+    }
+
+    const drawLine = (text: string, f: any, size: number, color = rgb(0.1, 0.1, 0.15)) => {
+      const lines = wrapText(text, f, size)
+      for (const line of lines) {
+        if (y < margin + lineHeight) {
+          page = pdfDoc.addPage([pageWidth, pageHeight])
+          y = pageHeight - margin
+        }
+        page.drawText(line, { x: margin, y, size, font: f, color })
+        y -= lineHeight
+      }
+    }
+
+    const title = file?.name.replace(/\.pdf$/i, "") || "Questions"
+    drawLine(`Questions: ${title}`, bold, 14)
+    y -= 6
+
+    questions.forEach((q, i) => {
+      if (y < margin + lineHeight * 6) {
+        page = pdfDoc.addPage([pageWidth, pageHeight])
+        y = pageHeight - margin
+      }
+      drawLine(`${i + 1}. ${q.question}`, bold, fontSize)
+      if (q.options) {
+        for (const opt of q.options) drawLine(`   ${opt}`, font, fontSize)
+      }
+      drawLine(`Answer: ${q.answer}`, font, fontSize, rgb(0.05, 0.4, 0.35))
+      drawLine(`Explanation: ${q.explanation}`, font, fontSize, rgb(0.35, 0.35, 0.4))
+      y -= 8
+    })
+
+    const bytes = await pdfDoc.save()
+    const blob = new Blob([new Uint8Array(bytes)], { type: "application/pdf" })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement("a")
+    a.href = url
+    const base = file?.name.replace(/\.pdf$/i, "") || "questions"
+    a.download = `${base}-questions.pdf`
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+    URL.revokeObjectURL(url)
+  }, [file, questions])
 
   const handleReset = useCallback(() => {
     setFile(null)
@@ -325,11 +404,18 @@ export function QuestionGeneratorInterface() {
                     {copied ? labels.copied : labels.copyAll}
                   </button>
                   <button
-                    onClick={handleDownload}
+                    onClick={handleDownloadTxt}
                     className="flex items-center gap-1.5 text-sm text-indigo-600 hover:text-indigo-700 transition-colors font-medium"
                   >
                     <Download className="h-3.5 w-3.5" />
-                    {labels.download}
+                    {labels.downloadTxt}
+                  </button>
+                  <button
+                    onClick={handleDownloadPdf}
+                    className="flex items-center gap-1.5 text-sm text-indigo-600 hover:text-indigo-700 transition-colors font-medium"
+                  >
+                    <Download className="h-3.5 w-3.5" />
+                    {labels.downloadPdf}
                   </button>
                   <button
                     onClick={handleReset}
