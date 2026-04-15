@@ -182,6 +182,14 @@ export function ChatWithPdfInterface() {
           setBlobUrl(null)
           return
         }
+        if (response.status === 503) {
+          // Tool disabled via feature flag — show the "Temporarily Unavailable" soft card.
+          setHasError(true)
+          setErrorMessage(message)
+          setFile(null)
+          setBlobUrl(null)
+          return
+        }
         throw new Error(message)
       }
 

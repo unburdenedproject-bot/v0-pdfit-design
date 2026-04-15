@@ -1,0 +1,143 @@
+# PDF.it — Solo Builder Priorities
+
+Suggestions I made to Paula on April 15, 2026 about things a solo non-technical founder tends to miss. Items are ordered by value for her situation (2 days post-launch, pushing for 10K paid subscribers).
+
+**Owner:** Paula. **Implementation help:** Claude, when asked.
+
+---
+
+## 1. Observability beyond errors
+
+**Problem:** Sentry catches crashes, BetterUptime catches downtime — neither tells us what users are actually *doing*. We're flying blind on:
+- The upload → process → download funnel (where do people drop off?)
+- Re-upload rate (sign the result was unsatisfactory)
+- Cost per user per tier (is one Free user burning $0.40/mo in iLoveAPI credits?)
+- Which tools convert Free → Pro (not just which tools are used most)
+
+**First step:** Add a `trackToolEvent(tool, event, data)` helper (`lib/analytics.ts`) that wraps `gtag("event", ...)` and emit: `tool_opened`, `file_selected`, `process_start`, `process_complete`, `result_downloaded`, `error_shown`, `upgrade_clicked`. Then build a funnel in GA4 Explore.
+
+**Status:** ☐ Not started
+
+---
+
+## 2. Emergency runbook
+
+**Problem:** As a non-technical solo operator, the scariest failure mode is *not knowing what to do at 2 a.m.* when something is on fire.
+
+**First step:** Write a single-page Notion doc (or a `RUNBOOK.md` in this repo) with:
+- Stripe webhook failing → verify signing secret, check Stripe dashboard > Webhooks > Recent deliveries
+- Vercel deploy broken → `vercel rollback` command + how to revert to previous commit on GitHub
+- OpenAI API key leaked → rotate key in OpenAI dashboard + update in Vercel env vars + redeploy
+- Supabase down → status.supabase.com, temporarily disable signup, email affected users
+- iLoveAPI quota exhausted → temporary soft-disable tools via feature flags (see #3)
+- Domain/DNS issue → Vercel > Settings > Domains, Cloudflare records
+- Database corruption → Supabase daily backups location + restore steps
+
+**Status:** ☐ Not started (Paula to write)
+
+---
+
+## 3. Kill switch per tool (feature flags)
+
+**Problem:** If iLoveAPI or OpenAI has a 3-hour outage, every affected tool throws red errors and users churn. Currently the only way to disable a tool is a code change + redeploy.
+
+**First step:**
+- Create Supabase table `feature_flags` (`tool_slug` text PK, `enabled` boolean default true, `disabled_message` text, `updated_at` timestamp)
+- `lib/feature-flags.ts` helper exposes `isToolEnabled(slug)` → `{enabled, message}`
+- Each API route calls the check first; returns 503 with a friendly message if disabled
+- Client-side: render the premium soft card ("Temporarily unavailable — usually restored within an hour") instead of a red error
+- Paula flips the flag in Supabase dashboard (no redeploy needed) and the tool goes dark gracefully
+
+**Status:** ◐ In progress — infrastructure shipped April 15, reference impl on `chat-with-pdf`. Remaining: wire the flag into the other 31 API routes.
+
+**What's done:**
+- `scripts/008_create_feature_flags.sql` — new table `public.feature_flags` seeded with all 32 tool slugs
+- `lib/feature-flags.ts` — `isToolEnabled(slug)` helper with 30s in-memory cache + fail-open on Supabase errors
+- `components/processing/soft-error-card.tsx` — new `variant="unavailable"` renders "Temporarily Unavailable" heading with Clock icon
+- **Reference impl:** `app/api/chat-with-pdf/route.ts` checks the flag at the top and returns 503 with the soft-card-friendly message. Client already shows inline soft card for any error, so the 503 renders correctly.
+
+**How to flip the kill switch (Paula):**
+1. Open Supabase dashboard → Table editor → `feature_flags`
+2. Find the row for the tool slug (e.g., `chat-with-pdf`)
+3. Toggle `enabled` to `false` and optionally set `disabled_message` (user-facing) and `reason` (your note)
+4. Within 30 seconds, the tool will start returning a soft "Temporarily Unavailable" card on every request. No redeploy, no code change.
+
+**To replicate in a new API route:**
+```ts
+import { isToolEnabled } from "@/lib/feature-flags"
+
+// At the very top of POST(), before auth/body parsing:
+const flag = await isToolEnabled("<tool-slug>")
+if (!flag.enabled) {
+  return NextResponse.json({ error: flag.message }, { status: 503 })
+}
+```
+Then in the corresponding interface component, add a `503` branch that sets `hasError`/`errorMessage` (same as 422 handling). If the tool uses the full-page `<SoftErrorCard />` via `isUserInputError`, add a separate check for `response.status === 503` and render `<SoftErrorCard variant="unavailable" ... />`.
+
+**Routes still to wire** (31): ats-optimizer, compress-pdf, create-resume, esign, image-to-pdf, merge-pdf, ocr-pdf, pdf-compare, pdf-summarizer, pdf-to-excel, pdf-to-jpg, pdf-to-png, pdf-to-powerpoint, pdf-to-txt, pdf-to-word, phone-scan-cleanup, protect-pdf, qr-code, question-generator, redact-pdf, rotate-pdf, smart-extraction, split-pdf, table-extraction, translate-pdf, unlock-pdf, url-to-pdf, watermark-pdf, workflow.
+
+---
+
+## 4. Dashboard as growth asset
+
+**Problem:** The dashboard currently shows billing info. It's a wasted opportunity for retention + upsell.
+
+**Ideas to add:**
+- "You processed 47 PDFs this month (saved ~3 hours)" — stickiness
+- "Your favorite tool: Compress PDF" — personalization
+- "New in Business: PDF Compare — try it" — upsell on logged-in users who haven't upgraded
+- Recent activity: last 10 files processed with quick re-download (if still cached)
+- Usage graph: conversions per day over last 30 days
+- Next billing date + "Save 17% with annual" button for monthly subscribers
+
+**Status:** ☐ Not started
+
+---
+
+## 5. Real user conversations + cancel survey
+
+**Problem:** Solo builders drift into building features nobody asked for. We have zero structured feedback.
+
+**First step:**
+- One-question prompt after the 3rd tool use: "30-second feedback? Reply to this email and Paula reads every one" → routes to `contact@pdf.it.com`
+- Cancel flow in Stripe customer portal: require a dropdown reason (too expensive / didn't use it / missing feature X / found alternative / other), save to Supabase `cancellation_reasons` table
+- Monthly review: open that table, read every reason, ship one thing in response
+
+**Status:** ☐ Not started
+
+---
+
+## 6. Cost alerts + spend caps
+
+**Problem:** Vercel / OpenAI / iLoveAPI can spike 10× overnight if a bot finds your endpoints, a Free user scripts abuse, or an AI route has a runaway loop.
+
+**First step (today, 15 min total):**
+- Vercel: Settings > Billing > Usage Alerts → $50, $100, $200 thresholds
+- OpenAI: Settings > Billing > Usage Limits → hard monthly cap (e.g., $300) + email alert at $150
+- iLoveAPI: Dashboard > Alerts → email at 80% of monthly quota
+- Stripe: Settings > Notifications → alert on any refund/dispute event
+
+**Status:** ☐ Not started (Paula to configure in each dashboard — I can't do this from code)
+
+---
+
+## 7. Weekly operations ritual
+
+**Problem:** Solo builders without discipline drift into busy-work.
+
+**First step:** Every Monday, 60-minute block:
+- Revenue delta vs. last week
+- Churn count + cancellation reasons (when #5 exists)
+- Top 3 support emails
+- Top 3 Sentry error types
+- Ship **one** thing based on what you saw — not three, not ten — one
+
+**Status:** ☐ Not started (behavioral, not code)
+
+---
+
+## Implementation plan (when asked)
+
+Claude starts with #3 (stability-critical, non-breaking to today's UX work). Then #1 (observability). Items #2 and #6 are Paula's to do directly (they're account config + personal runbook — not code). Items #4, #5, #7 are bigger and can be phased later based on business priorities.
+
+When implementing any of these, rule: **do not touch or regress the April 15 UX polish wave** (soft error cards, header search, size limits, premium cards, no-red rule). All new work should be additive.

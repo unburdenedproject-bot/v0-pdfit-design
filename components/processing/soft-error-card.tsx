@@ -1,12 +1,13 @@
 "use client"
 
-import { FileText } from "lucide-react"
+import { FileText, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 interface SoftErrorCardProps {
   errorMessage: string
   onReset: () => void
   retryLabel?: string
+  variant?: "input-error" | "unavailable"
 }
 
 /**
@@ -16,13 +17,16 @@ interface SoftErrorCardProps {
  * summarizer / question-generator. Never use the red AlertCircle look for
  * user-input errors — see BRAND.md.
  */
-export function SoftErrorCard({ errorMessage, onReset, retryLabel = "Try Again" }: SoftErrorCardProps) {
+export function SoftErrorCard({ errorMessage, onReset, retryLabel = "Try Again", variant = "input-error" }: SoftErrorCardProps) {
   const lower = errorMessage.toLowerCase()
-  const heading = lower.includes("too large") || lower.includes("size limit")
-    ? "File Too Large"
-    : lower.includes("appears to be empty") || lower.includes("is empty") || lower.includes("empty and cannot")
-      ? "Empty File"
-      : "Unsupported File Type"
+  const heading = variant === "unavailable"
+    ? "Temporarily Unavailable"
+    : lower.includes("too large") || lower.includes("size limit")
+      ? "File Too Large"
+      : lower.includes("appears to be empty") || lower.includes("is empty") || lower.includes("empty and cannot")
+        ? "Empty File"
+        : "Unsupported File Type"
+  const Icon = variant === "unavailable" ? Clock : FileText
 
   return (
     <section className="py-16">
@@ -39,7 +43,7 @@ export function SoftErrorCard({ errorMessage, onReset, retryLabel = "Try Again" 
               className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
               style={{ background: "linear-gradient(135deg, #14D8C4, #6B7CFF)" }}
             >
-              <FileText className="h-6 w-6 text-white" />
+              <Icon className="h-6 w-6 text-white" />
             </div>
             <div className="flex-1">
               <h4 className="font-bold text-slate-900 mb-1 text-lg">{heading}</h4>

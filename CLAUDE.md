@@ -174,6 +174,10 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - **Download buttons must be visually prominent — never small text links.** Any tool that produces a result the user downloads (PDF, Excel, CSV, JSON, TXT, DOCX, etc.) must render the download options as filled or outlined buttons in their own visible bar/section, not as tiny link-style buttons in a header. If multiple formats are offered, the recommended/most-common format gets the filled brand-teal button; secondary formats get outlined buttons. Apply this rule to every tool, in all 3 languages.
 - Paula is non-technical — explain things simply
 
+## Feature Flags (Kill Switch Per Tool)
+- Every API route MUST check `isToolEnabled(slug)` from `lib/feature-flags.ts` before starting work. Returns 503 with the user-facing disabled message if the flag is off. Paula flips flags in Supabase `feature_flags` table — no redeploy needed. See SOLO-PRIORITIES.md #3 for replication pattern. Reference implementation: `app/api/chat-with-pdf/route.ts`.
+- Client-side: handle `response.status === 503` in the interface. Either render the inline soft card (if the tool uses inline errors) or `<SoftErrorCard variant="unavailable" />` for full-page tools.
+
 ## Deployment Process
 - After every fix or change, remind Paula to run:
   git add .
