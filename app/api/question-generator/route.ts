@@ -146,13 +146,17 @@ export async function POST(request: NextRequest): Promise<Response> {
           ? "Questions should test critical thinking, analysis, and deeper understanding. Include questions that require combining multiple concepts."
           : "Questions should test understanding and application. A mix of factual and analytical questions.";
 
-    const systemPrompt: string = `You are an educational question generator. Generate ${count} questions based on the attached PDF document. Return only valid JSON. No markdown. No code fences.
+    const systemPrompt: string = `You are an educational question generator. Generate ${count} questions based on the attached PDF document. Return ONLY valid JSON. No markdown. No code fences. No prose outside the JSON.
 
 ${typeInstruction}
 ${difficultyInstruction}
 
-Output JSON matching this structure exactly:
+If the attached PDF is blank, a scanned image, or contains no readable text, return EXACTLY this JSON and nothing else:
+{"is_valid": false}
+
+Otherwise, output JSON matching this structure exactly:
 {
+  "is_valid": true,
   "questions": [
     {
       "type": "multiple_choice" | "short_answer" | "true_false",
@@ -165,7 +169,7 @@ Output JSON matching this structure exactly:
 }
 
 Rules:
-- Generate exactly ${count} questions.
+- Generate exactly ${count} questions when is_valid is true.
 - All questions must be based ONLY on information in the attached PDF. Do not use outside knowledge.
 - For multiple choice: exactly 4 options, answer is the letter (e.g. "B").
 - For short answer: answer is 1-3 sentences.
@@ -197,6 +201,7 @@ Rules:
           ],
           temperature: 0.5,
           max_tokens: 3000,
+          response_format: { type: "json_object" },
         }),
       });
 
@@ -228,14 +233,24 @@ Rules:
       result = JSON.parse(cleaned);
     } catch {
       console.error("Failed to parse AI response:", content);
-      throw new Error("AI returned invalid format.");
+      return errorResponse(
+        "We couldn't read this PDF. It appears to be blank, scanned, or image-only. Please upload a PDF with selectable text.",
+        422
+      );
+    }
+
+    if (result?.is_valid === false || !Array.isArray(result?.questions) || result.questions.length === 0) {
+      return errorResponse(
+        "We couldn't read this PDF. It appears to be blank, scanned, or image-only. Please upload a PDF with selectable text.",
+        422
+      );
     }
 
     // Log usage
     const { logUsage } = await import("@/lib/usage-check");
     await logUsage(user.id, "question-generator");
 
-    return NextResponse.json(result);
+    return NextResponse.json({ questions: result.questions });
   } catch (err: unknown) {
     console.error("question-generator route error:", err);
 
