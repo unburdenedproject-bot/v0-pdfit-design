@@ -233,6 +233,16 @@ export default function AboutPage() {
                   </div>
                 </div>
               </div>
+
+              <div className="mt-10 text-center">
+                <Link
+                  href="/pricing"
+                  className="inline-flex items-center justify-center bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 text-base rounded-xl transition-colors shadow-sm"
+                >
+                  Compare all plans &rarr;
+                </Link>
+                <p className="text-sm text-slate-400 mt-3">30-day free trial on every paid plan. No commitment.</p>
+              </div>
             </div>
           </div>
         </section>
