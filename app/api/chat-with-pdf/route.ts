@@ -196,6 +196,20 @@ export async function POST(request: NextRequest): Promise<Response> {
       throw new Error("AI returned no response.");
     }
 
+    // On the INITIAL summary call (no prior history), detect blank/unreadable PDFs
+    // by spotting refusal patterns from the model. Downstream messages are
+    // allowed to say "I don't know" without triggering this.
+    if (recentHistory.length === 0) {
+      const refusalPatterns = /\b(no (content|readable text)|can'?t (access|read)|cannot (access|read)|unable to (access|read)|provide (specific|the) (information|text)|happy to help)\b/i;
+      if (answer.trim().length < 600 && refusalPatterns.test(answer)) {
+        console.log("[chat-with-pdf] detected refusal on initial summary, treating as invalid PDF");
+        return errorResponse(
+          "We couldn't read this PDF. It may be blank, image-only, or password-protected.",
+          422
+        );
+      }
+    }
+
     // Log usage
     const { logUsage } = await import("@/lib/usage-check");
     await logUsage(user.id, "chat-with-pdf");

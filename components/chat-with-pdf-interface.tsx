@@ -40,6 +40,7 @@ export function ChatWithPdfInterface() {
   const [isThinking, setIsThinking] = useState(false)
   const [hasError, setHasError] = useState(false)
   const [errorMessage, setErrorMessage] = useState("")
+  const [isInvalidPdf, setIsInvalidPdf] = useState(false)
   const [userPlan, setUserPlan] = useState<string>("free")
 
   // Locale detection
@@ -144,6 +145,7 @@ export function ChatWithPdfInterface() {
     setIsUploading(true)
     setHasError(false)
     setErrorMessage("")
+    setIsInvalidPdf(false)
 
     try {
       const url = await uploadFileToBlob(file)
@@ -171,6 +173,13 @@ export function ChatWithPdfInterface() {
           }
         } catch {
           // response might not be JSON
+        }
+        if (response.status === 422) {
+          setIsInvalidPdf(true)
+          setErrorMessage(message)
+          setFile(null)
+          setBlobUrl(null)
+          return
         }
         throw new Error(message)
       }
@@ -209,6 +218,7 @@ export function ChatWithPdfInterface() {
     setQuestion("")
     setHasError(false)
     setErrorMessage("")
+    setIsInvalidPdf(false)
 
     const newMessages: ChatMessage[] = [
       ...messages,
@@ -281,6 +291,7 @@ export function ChatWithPdfInterface() {
     setIsThinking(false)
     setHasError(false)
     setErrorMessage("")
+    setIsInvalidPdf(false)
     setIsUploading(false)
   }, [blobUrl])
 
@@ -456,6 +467,26 @@ export function ChatWithPdfInterface() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto">
           <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8">
+            {/* Invalid PDF — premium informational card */}
+            {isInvalidPdf && (
+              <div className="rounded-2xl p-5 mb-6 flex items-start gap-4" style={{ background: "linear-gradient(135deg, #F0F9FF 0%, #F5F3FF 100%)", border: "1px solid #DBEAFE" }}>
+                <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, #14D8C4, #6B7CFF)" }}>
+                  <FileText className="h-5 w-5 text-white" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-bold text-slate-900 mb-1">We couldn't read this PDF</h4>
+                  <p className="text-sm text-slate-600 leading-relaxed mb-3">
+                    The PDF appears to be blank, a scanned image, or image-only. To chat with a document, please upload a PDF that has selectable text.
+                  </p>
+                  <ul className="text-xs text-slate-500 space-y-1 list-disc pl-5">
+                    <li>Try exporting from Word or Google Docs as PDF</li>
+                    <li>If it's a scan, run it through our OCR tool first</li>
+                    <li>Make sure the file isn't password-protected</li>
+                  </ul>
+                </div>
+              </div>
+            )}
+
             {/* Error message */}
             {hasError && (
               <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-6 flex items-start gap-3">
