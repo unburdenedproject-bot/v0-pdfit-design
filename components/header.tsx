@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X, User, LogIn, ArrowLeft, ChevronDown, Globe } from "lucide-react"
+import { Menu, X, User, LogIn, ArrowLeft, ChevronDown, Globe, Search } from "lucide-react"
 import { useRouter, usePathname } from "next/navigation"
 import { useEffect, useState, useRef } from "react"
 import { createClient } from "@/lib/supabase/client"
@@ -18,6 +18,15 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [langDropdownOpen, setLangDropdownOpen] = useState(false)
   const langDropdownRef = useRef<HTMLDivElement>(null)
+  const [searchQuery, setSearchQuery] = useState("")
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    const q = searchQuery.trim()
+    router.push(`/tools${q ? `?q=${encodeURIComponent(q)}` : ""}`)
+    setMobileMenuOpen(false)
+    setSearchQuery("")
+  }
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -118,15 +127,9 @@ export function Header() {
             </Link>
           </div>
 
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             <Link href="/" className={`${isActive("/") ? "text-[#14D8C4]" : "text-white/80"} hover:text-white font-medium transition-colors`}>
               Home
-            </Link>
-            <Link href="/about" className={`${isActive("/about") ? "text-[#14D8C4]" : "text-white/80"} hover:text-white font-medium transition-colors`}>
-              About
-            </Link>
-            <Link href="/contact" className={`${isActive("/contact") ? "text-[#14D8C4]" : "text-white/80"} hover:text-white font-medium transition-colors`}>
-              Contact
             </Link>
             <Link href="/pricing" className={`${isActive("/pricing") ? "text-[#14D8C4]" : "text-white/80"} hover:text-white font-medium transition-colors`}>
               Pricing
@@ -140,6 +143,19 @@ export function Header() {
             <Link href="/blog" className={`${isActive("/blog") || pathname.startsWith("/blog/") ? "text-[#14D8C4]" : "text-white/80"} hover:text-white font-medium transition-colors`}>
               Blog
             </Link>
+
+            {/* Tool search */}
+            <form onSubmit={handleSearchSubmit} className="relative" role="search">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 pointer-events-none" />
+              <input
+                type="search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search tools..."
+                aria-label="Search tools"
+                className="w-44 lg:w-52 pl-9 pr-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#14D8C4] focus:border-transparent"
+              />
+            </form>
 
             {/* Language dropdown */}
             <div className="relative" ref={langDropdownRef}>
@@ -238,26 +254,24 @@ export function Header() {
       {mobileMenuOpen && (
         <nav className="fixed top-16 left-0 right-0 z-40 bg-[#0E0F1E]/95 backdrop-blur-xl border-b border-white/10 shadow-lg md:hidden">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-3">
+            {/* Tool search */}
+            <form onSubmit={handleSearchSubmit} className="relative" role="search">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 pointer-events-none" />
+              <input
+                type="search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search tools..."
+                aria-label="Search tools"
+                className="w-full pl-9 pr-3 py-2 rounded-lg bg-white/10 border border-white/15 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#14D8C4] focus:border-transparent"
+              />
+            </form>
             <Link
               href="/"
               onClick={() => setMobileMenuOpen(false)}
               className="text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors"
             >
               Home
-            </Link>
-            <Link
-              href="/about"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors"
-            >
-              About
-            </Link>
-            <Link
-              href="/contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors"
-            >
-              Contact
             </Link>
             <Link
               href="/pricing"

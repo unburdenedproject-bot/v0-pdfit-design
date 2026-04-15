@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X, User, LogIn, ArrowLeft, ChevronDown, Globe } from "lucide-react"
+import { Menu, X, User, LogIn, ArrowLeft, ChevronDown, Globe, Search } from "lucide-react"
 import { useRouter, usePathname } from "next/navigation"
 import { useEffect, useState, useRef } from "react"
 import { createClient } from "@/lib/supabase/client"
@@ -17,6 +17,15 @@ export function HeaderBr() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [langDropdownOpen, setLangDropdownOpen] = useState(false)
+  const [searchQuery, setSearchQuery] = useState("")
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    const q = searchQuery.trim()
+    router.push(`/br/ferramentas${q ? `?q=${encodeURIComponent(q)}` : ""}`)
+    setMobileMenuOpen(false)
+    setSearchQuery("")
+  }
   const langDropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -111,15 +120,9 @@ export function HeaderBr() {
             </Link>
           </div>
 
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             <Link href="/br" className="text-white/80 hover:text-white font-medium transition-colors">
               Inicio
-            </Link>
-            <Link href="/br/sobre" className="text-white/80 hover:text-white font-medium transition-colors">
-              Sobre
-            </Link>
-            <Link href="/br/contato" className="text-white/80 hover:text-white font-medium transition-colors">
-              Contato
             </Link>
             <Link href="/br/precos" className="text-white/80 hover:text-white font-medium transition-colors">
               Precos
@@ -133,6 +136,19 @@ export function HeaderBr() {
             <Link href="/br/blog" className="text-white/80 hover:text-white font-medium transition-colors">
               Blog
             </Link>
+
+            {/* Busca de ferramentas */}
+            <form onSubmit={handleSearchSubmit} className="relative" role="search">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 pointer-events-none" />
+              <input
+                type="search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Buscar ferramentas..."
+                aria-label="Buscar ferramentas"
+                className="w-44 lg:w-52 pl-9 pr-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#14D8C4] focus:border-transparent"
+              />
+            </form>
 
             {/* Language dropdown */}
             <div className="relative" ref={langDropdownRef}>
@@ -228,14 +244,20 @@ export function HeaderBr() {
       {mobileMenuOpen && (
         <nav className="fixed top-16 left-0 right-0 z-40 bg-[#0E0F1E]/95 backdrop-blur-xl border-b border-white/10 shadow-lg md:hidden">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-3">
+            {/* Busca de ferramentas */}
+            <form onSubmit={handleSearchSubmit} className="relative" role="search">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 pointer-events-none" />
+              <input
+                type="search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Buscar ferramentas..."
+                aria-label="Buscar ferramentas"
+                className="w-full pl-9 pr-3 py-2 rounded-lg bg-white/10 border border-white/15 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#14D8C4] focus:border-transparent"
+              />
+            </form>
             <Link href="/br" onClick={() => setMobileMenuOpen(false)} className="text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
               Inicio
-            </Link>
-            <Link href="/br/sobre" onClick={() => setMobileMenuOpen(false)} className="text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
-              Sobre
-            </Link>
-            <Link href="/br/contato" onClick={() => setMobileMenuOpen(false)} className="text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
-              Contato
             </Link>
             <Link href="/br/precos" onClick={() => setMobileMenuOpen(false)} className="text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
               Precos

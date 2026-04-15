@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import { useSearchParams } from "next/navigation"
 import { ToolSearch } from "@/components/tool-search"
 import {
   FileText,
@@ -451,7 +452,9 @@ function PricingCTA() {
 }
 
 export function FeaturesGrid() {
-  const [searchQuery, setSearchQuery] = useState("")
+  const searchParams = useSearchParams()
+  const initialQuery = searchParams?.get("q") ?? ""
+  const [searchQuery, setSearchQuery] = useState(initialQuery)
   const [tierFilter, setTierFilter] = useState<string | null>(null)
 
   const query = searchQuery.toLowerCase().trim()
@@ -499,6 +502,7 @@ export function FeaturesGrid() {
           onSearch={setSearchQuery}
           onFilterTier={setTierFilter}
           activeTier={tierFilter}
+          initialQuery={initialQuery}
         />
 
         {totalVisible === 0 && (

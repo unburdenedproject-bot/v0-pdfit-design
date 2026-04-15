@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FeaturesGrid } from "@/components/features-grid"
@@ -24,7 +25,9 @@ export default function ToolsPage() {
         </section>
 
         {/* Tools Grid */}
-        <FeaturesGrid />
+        <Suspense fallback={null}>
+          <FeaturesGrid />
+        </Suspense>
       </main>
       <Footer />
     </div>

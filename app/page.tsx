@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import dynamic from "next/dynamic"
+import { Suspense } from "react"
 import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
 import { FeaturesGrid } from "@/components/features-grid"
@@ -97,7 +98,9 @@ export default function HomePage() {
       <Header />
       <main>
         <HeroSection />
-        <FeaturesGrid />
+        <Suspense fallback={null}>
+          <FeaturesGrid />
+        </Suspense>
         <TrustSection />
         <ComprehensiveFAQSection />
       </main>

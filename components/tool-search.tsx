@@ -1,16 +1,25 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Search, X } from "lucide-react"
 
 interface ToolSearchProps {
   onSearch: (query: string) => void
   onFilterTier: (tier: string | null) => void
   activeTier: string | null
+  initialQuery?: string
 }
 
-export function ToolSearch({ onSearch, onFilterTier, activeTier }: ToolSearchProps) {
-  const [query, setQuery] = useState("")
+export function ToolSearch({ onSearch, onFilterTier, activeTier, initialQuery = "" }: ToolSearchProps) {
+  const [query, setQuery] = useState(initialQuery)
+
+  useEffect(() => {
+    if (initialQuery) {
+      setQuery(initialQuery)
+      onSearch(initialQuery)
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [initialQuery])
 
   const handleChange = (value: string) => {
     setQuery(value)
