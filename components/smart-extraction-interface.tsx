@@ -452,34 +452,39 @@ export function SmartExtractionInterface() {
                     <p className="text-xs text-slate-500 capitalize">{extraction.document_type}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-2 flex-wrap">
+                <button
+                  onClick={handleReset}
+                  className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-slate-700 transition-colors"
+                >
+                  <RotateCcw className="h-3.5 w-3.5" />
+                  {labels.startNew}
+                </button>
+              </div>
+
+              {/* Prominent download bar */}
+              <div className="px-4 py-4 border-b border-slate-200" style={{ background: "linear-gradient(135deg, #F0FDFA 0%, #EEF2FF 100%)" }}>
+                <p className="text-xs font-bold text-slate-600 uppercase tracking-wider mb-2">Download extracted data</p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                   <button
                     onClick={handleDownloadExcel}
-                    className="flex items-center gap-1.5 text-sm text-indigo-600 hover:text-indigo-700 transition-colors font-medium"
+                    className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold text-sm transition-colors shadow-sm"
                   >
-                    <Download className="h-3.5 w-3.5" />
+                    <Download className="h-4 w-4" />
                     {labels.downloadExcel}
                   </button>
                   <button
                     onClick={handleDownloadCsv}
-                    className="flex items-center gap-1.5 text-sm text-indigo-600 hover:text-indigo-700 transition-colors font-medium"
+                    className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-white border-2 border-[#14D8C4] text-[#0E0F1E] hover:bg-[#F0FDFA] font-bold text-sm transition-colors"
                   >
-                    <Download className="h-3.5 w-3.5" />
+                    <Download className="h-4 w-4" />
                     {labels.downloadCsv}
                   </button>
                   <button
                     onClick={handleDownloadJson}
-                    className="flex items-center gap-1.5 text-sm text-indigo-600 hover:text-indigo-700 transition-colors font-medium"
+                    className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-white border-2 border-slate-300 text-slate-700 hover:bg-slate-50 font-bold text-sm transition-colors"
                   >
-                    <Download className="h-3.5 w-3.5" />
+                    <Download className="h-4 w-4" />
                     {labels.downloadJson}
-                  </button>
-                  <button
-                    onClick={handleReset}
-                    className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-slate-700 transition-colors"
-                  >
-                    <RotateCcw className="h-3.5 w-3.5" />
-                    {labels.startNew}
                   </button>
                 </div>
               </div>
