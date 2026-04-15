@@ -135,7 +135,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - Table extraction uses Google Document AI Form Parser
 - **All API routes that call paid APIs (iLoveAPI, CloudConvert) must check for blank PDFs using `lib/blank-pdf-check.js` before making the call**
 - **Never use "Processing Failed" as an error heading — use specific headings: "Unsupported File Type", "File Too Large", "Empty File"**
-- **Never use the red alert-dot style (`bg-red-100` circle + `AlertCircle`) for user-input errors** (File Too Large, Unsupported, Empty, blank PDF). Use the shared premium soft card at `components/processing/soft-error-card.tsx` (teal→indigo gradient circle + pastel background). Red alerts are reserved for real processing failures (server crashes, API outages). See BRAND.md > Error Messages.
+- **Never use red to communicate with the user** — no `bg-red-*`, no `text-red-*`, no red icons or borders in any user-facing message (errors, warnings, tips, info, empty states). Red reads as a system failure. Always use the premium soft card pattern: pastel gradient background + teal→indigo gradient icon circle + specific slate heading. Shared component: `components/processing/soft-error-card.tsx` (`<SoftErrorCard />` + `isUserInputError(msg)` guard). Inline banners must replicate the same gradient-circle + pastel-bg look — don't fall back to `bg-red-50 + AlertTriangle`. See BRAND.md > Error & Info Messages.
 - **Minimum password length is 8 characters** (enforced on signup and reset password pages)
 - **Always use `pnpm install` / `pnpm add`, NEVER `npm install`** — npm breaks pnpm-lock.yaml and silently prevents Vercel deploys
 - See LOCALIZATION.md

@@ -68,12 +68,12 @@ Copy written for each locale should feel native, not localized.
 - Never hide tools behind a login wall before the 3-free-anonymous-conversion limit
 - Free tier is a funnel, not a full product — scarcity drives Pro upgrades
 
-## Error Messages
-- **Never use a red alert-dot / `bg-red-100 + AlertCircle` circle for user-input errors** (File Too Large, Unsupported File Type, Empty File, blank/image-only PDF). A red alert reads as a system failure — the user just picked the wrong file.
-- Use the **premium soft card** pattern instead: pastel gradient background (`linear-gradient(135deg, #F0F9FF 0%, #F5F3FF 100%)`), `#DBEAFE` border, a small teal→indigo gradient circle (`linear-gradient(135deg, #14D8C4, #6B7CFF)`) with a white `FileText` icon, bold slate-900 heading, slate-600 body text. Same aesthetic as the invalid-PDF cards on ats-optimizer / translate-pdf / summarizer / question-generator.
-- Shared component: `components/processing/soft-error-card.tsx` — use `<SoftErrorCard />` with `isUserInputError(message)` guard.
-- Red alert styling is reserved for **real processing failures** (server error, API failure, corrupted file during processing) — things the user couldn't have prevented.
-- Error headings must be specific: "File Too Large", "Unsupported File Type", "Empty File" — never the generic "Processing Failed" / "Protection Failed" / "Conversion Failed" for user-input issues.
+## Error & Info Messages
+- **Never use red to communicate with the user.** No `bg-red-*`, no `text-red-*`, no red icons (AlertCircle in red), no red borders. Red reads as a system failure or broken state — even when the user just picked the wrong file or made a small mistake. Use it only for truly critical backend failures that are rare and unrecoverable.
+- Use the **premium soft card** pattern for every user-facing message — errors, warnings, tips, info, empty states. Pastel gradient background (`linear-gradient(135deg, #F0F9FF 0%, #F5F3FF 100%)`), `#DBEAFE` border, a small teal→indigo gradient circle (`linear-gradient(135deg, #14D8C4, #6B7CFF)`) with a white icon (`FileText`, `Info`, or context-appropriate), bold slate-900 heading, slate-600 body text. Same aesthetic as the invalid-PDF cards on ats-optimizer / translate-pdf / summarizer / question-generator.
+- Shared component: `components/processing/soft-error-card.tsx` — use `<SoftErrorCard />` with `isUserInputError(message)` guard. For inline banners (not full-page), replicate the same gradient-circle + pastel-background pattern rather than falling back to `bg-red-50 + AlertTriangle`.
+- Error headings must be specific: "File Too Large", "Unsupported File Type", "Empty File", "We couldn't read this PDF" — never the generic "Processing Failed" / "Protection Failed" / "Conversion Failed".
+- Toned-down language: "We couldn't read this PDF" beats "ERROR: PDF INVALID". Lead with what the user should do, not what broke.
 
 ## Analytics
 - GTM ID: GTM-PNR9LXC2
