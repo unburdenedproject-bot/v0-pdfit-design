@@ -1,10 +1,18 @@
 # PDF.it — Post-Launch Roadmap
 
-Last updated: April 14, 2026 (+1 day post-launch)
+Last updated: April 15, 2026 (+2 days post-launch)
 Status: Planning — do not build any of this before reaching 1,000 paid subscribers.
 
 ## Already Shipped Post-Launch (not part of the Phase 1–4 gates)
 
+- **April 15, 2026 — No-red audit sweep (38 files).** Brand rule expanded: red is no longer used for any user-facing message (errors, warnings, tips, validation). New shared component `components/processing/soft-error-card.tsx` plus an `isUserInputError` guard rolled into 13 tool interfaces. Auth pages (EN/ES/BR), contact forms (EN/ES/BR), dashboard billing errors, newsletter, and every inline error banner now use the premium soft card. Red is reserved for genuine backend failures only. Documented in BRAND.md > Error & Info Messages and CLAUDE.md.
+- **April 15, 2026 — Header redesign:** removed About/Contact links from nav (moved to footer only), added compact tool search in all 3 locales that routes to the tools page with `?q=`. EN `/tools` filters by the query; ES/BR lands on tools page (filtering gap on those locales — follow-up only if requested).
+- **April 15, 2026 — About CTA:** added "Compare all plans →" teal button on `/about`, `/es/acerca`, `/br/sobre` below the plan preview cards.
+- **April 15, 2026 — Upload size-limit labels:** every dropzone now shows plan-aware max file size. Added to 4 tools (esign, pdf-compare, workflow, phone-scan-cleanup) that didn't have it.
+- **April 15, 2026 — Specific error headings:** "File Too Large" / "Unsupported File Type" / "Empty File" now fires correctly across every tool (validator messages prepended with "File too large" so the matcher picks them up). No more generic "Protection Failed" / "Processing Failed" for user-input issues.
+- **April 15, 2026 — Pdf-summarizer + question-generator premium cards.** Summarizer shows "We couldn't read this PDF" soft card for blank/image-only PDFs (EN/ES/BR). Question-generator's OpenAI call now forces JSON response and returns 422 with the soft card for unreadable PDFs (replaces "AI returned invalid format" red banner).
+- **April 15, 2026 — Question-generator prominent download bar** (TXT + PDF promoted from tiny header links to filled-teal primary + outlined secondary in a bottom action bar).
+- **April 15, 2026 — Footer: X (Twitter) removed** in all 3 locales (no X account yet).
 - **April 14, 2026 — AI tools migrated to OpenAI Files API** (`question-generator`, `ats-optimizer`, `smart-extraction`, `chat-with-pdf`, `translate-pdf`). Previous text-extraction chain was failing on Vercel for real user resumes and PDFs with custom fonts. See COMPLETED.md for the full changelog.
 - **April 14, 2026 — Table-extraction upgraded to Layout Parser** (was Form Parser — accuracy now correct on borderless/merged-cell tables).
 - **April 14, 2026 — Smart-extraction multi-format downloads** (Excel, CSV, JSON — Excel is the new primary).

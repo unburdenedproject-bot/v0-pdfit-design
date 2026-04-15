@@ -1,5 +1,58 @@
 # PDF.it - Accomplished Work
 
+## UX Polish Wave — No-Red Messages, Header Search, About CTA, File-Size Labels (April 15, 2026)
+
+End-to-end polish pass focused on tester feedback and the "no red for user messages" brand rule.
+
+### No-Red Audit Sweep (commits `ee81ead`, `3e31c31`, `429791b`)
+Removed red alert-dot styling from **every user-facing message** across the codebase. Red reads as a system failure; Paula's rule is now: red is reserved for truly unrecoverable backend failures only.
+
+- **New shared component:** `components/processing/soft-error-card.tsx` — exports `<SoftErrorCard />` and `isUserInputError(msg)` guard. Teal→indigo gradient icon circle on pastel-blue background, matching the invalid-PDF cards on ats-optimizer / translate-pdf / summarizer / question-generator.
+- **38 files total in the sweep** (commit `429791b`):
+  - Auth pages (EN/ES/BR): signup, login, reset-password, register/registro/cadastro — dark-theme variant of the soft card
+  - Auth error pages (EN/ES/BR): full-page red circle → teal→indigo gradient circle
+  - Contact forms (EN/ES/BR), dashboard billing errors (EN/ES/BR), newsletter signup
+  - 13 tool interfaces with inline red banners (ats-optimizer had 5 instances)
+- **Soft-card guard added to 9 more tools** (esign, ocr-pdf, phone-scan-cleanup, redaction, split-pdf, rotate-pdf, unlock-pdf, watermark-pdf, workflow) so user-input errors (File Too Large, Unsupported, Empty) never hit their red full-page failure screen. Red screens now only fire for genuine backend failures.
+- **Error heading matcher** now routes "File too large" messages to the specific "File Too Large" heading (commits `f2f2d3d`, `4135385`) by prepending the string to both `lib/client-file-validator.ts` and `lib/upload-to-blob.ts` error messages — so every tool's `isUserInputError` picks it up correctly.
+- **Documented in 3 places** for permanence: new "Error & Info Messages" section in BRAND.md, new rule line in CLAUDE.md, and a feedback memory file (`memory/feedback_soft_error_card.md`) that survives across sessions.
+
+### Header redesign (commit `26bbc3c`)
+- **Removed About + Contact** from desktop + mobile nav in all 3 locales (they remain in the footer, which is the conventional placement)
+- **Added compact tool search** in all 3 headers — Search icon + input (`w-44 lg:w-52`) between Blog and the Language dropdown. On Enter, navigates to the locale's tools page with `?q=<query>`:
+  - EN → `/tools?q=...`
+  - ES → `/es/herramientas?q=...`
+  - BR → `/br/ferramentas?q=...`
+- `components/tool-search.tsx` now accepts an `initialQuery` prop; `components/features-grid.tsx` reads `?q=` via `useSearchParams` and seeds the in-page filter. Wrapped `<FeaturesGrid />` in `<Suspense>` on `/` and `/tools` (Next.js requirement when a client child uses `useSearchParams`).
+- Known gap: ES/BR `features-grid` components don't yet have an in-page search, so `?q=` is ignored on those locales for now (user still lands on the tools page). Follow-up only if requested.
+
+### About page CTA (commit `1c1b8f3`)
+Added a **"Compare all plans →"** teal button below the 4 plan cards on `/about`, `/es/acerca`, `/br/sobre`, linking to the relevant `/pricing` route. Subtitle reminds about the 30-day free trial. Gives users a clear next step instead of a dead end after reading the plan previews.
+
+### Upload size-limit labels (commit `aa35254`)
+Every upload dropzone now displays the plan-aware max file size (`up to 25MB` / `up to 200MB` / `up to 1GB`). Added `getSizeLimitLabel(userPlan)` rendering to the 4 tools that didn't already have it:
+- `esign-interface.tsx`
+- `pdf-compare-interface.tsx` (both dropzones)
+- `workflow-interface.tsx`
+- `phone-scan-cleanup-interface.tsx` (added `userPlan` fetch since it wasn't tracking plan)
+
+All other tools (8 AI + everything using `processing-interface.tsx`) already had it via the shared `file-dropzone.tsx`.
+
+### Pdf-summarizer premium card (commit `294d97e`)
+Added `isInvalidPdf` state + premium soft card (EN/ES/BR copy) so blank/image-only PDFs show "We couldn't read this PDF" with export/OCR tips instead of a harsh error. Matches the pattern already used on ats-optimizer and translate-pdf.
+
+### Question-generator hardening + download bar (commits `9952992`, `7a55a10`)
+- **Forced JSON response** from OpenAI by adding `response_format: { type: "json_object" }` + prompt-level instruction to return `{"is_valid": false}` for blank/unreadable PDFs
+- Parse-failure OR `is_valid: false` OR empty questions array now returns HTTP 422 with friendly message → client renders the premium soft card (EN/ES/BR copy) instead of the old "AI returned invalid format" red banner
+- **Download bar promoted** from tiny text-link buttons in the header to a prominent `bg-slate-50 border-t` footer bar inside the result card: PDF as filled brand-teal primary, TXT as outlined teal secondary. Set the pattern documented in CLAUDE.md's "download buttons must be visually prominent" rule.
+
+### Footer cleanup (commit `f3fb70e`)
+Removed the X (Twitter) icon + link from all 3 footers (`footer.tsx`, `footer-es.tsx`, `footer-br.tsx`) plus the unused `XLogo` helper. Facebook, Instagram, LinkedIn remain.
+
+### BRAND.md updates (commits `ee81ead`, `3e31c31`)
+- New "Error & Info Messages" section documenting the no-red rule, the soft-card pattern (exact colors, component reference), specific-heading requirements, and toned-down voice ("We couldn't read this PDF" over "ERROR: PDF INVALID")
+- CLAUDE.md "Rules - Always Follow" updated with a mirror line so future sessions don't regress
+
 ## AI Tools Migrated to OpenAI Files API + Bug Sweep (April 14, 2026)
 
 A large post-launch stability pass. Root cause of most AI-tool failures: text-extraction chain (iLoveAPI → pdf-parse → pdfjs-dist → Document AI) is fragile on Vercel serverless. Custom fonts, scanned pages, or unusual PDFs consistently broke all four extractors. Fix: send the PDF directly to OpenAI's Files API and let GPT-4o-mini read it natively.
