@@ -127,8 +127,7 @@ Rules:
 - Keep proper nouns, company names, and technical terms that don't have standard translations in the original language.
 - Keep numbers, dates, and currencies in their original format unless the target language has a different standard.
 - Use formal/professional register appropriate for business documents.
-- Output ONLY the translated text. No commentary, no notes, no "Translation:" prefix, no explanation.
-- If the PDF is blank, unreadable, or contains no extractable text, output exactly: {"is_valid_document": false}`;
+- Output ONLY the translated text. No commentary, no notes, no "Translation:" prefix, no explanation.`;
 
     // Single-call translation with file input
     let openaiRes: globalThis.Response | undefined;
@@ -171,14 +170,10 @@ Rules:
 
     const data = await openaiRes!.json();
     const translation: string = (data.choices?.[0]?.message?.content || "").trim();
-    if (!translation) {
-      throw new Error("AI returned no translation.");
-    }
-
-    // Detect the "blank/invalid PDF" sentinel response
-    if (/^\s*\{\s*"is_valid_document"\s*:\s*false\s*\}\s*$/.test(translation)) {
+    console.log("[translate-pdf] response length:", translation.length, "preview:", translation.slice(0, 200));
+    if (!translation || translation.length < 10) {
       return errorResponse(
-        "This PDF doesn't appear to contain readable text. Please upload a PDF with text content (not blank or scanned images).",
+        "We couldn't translate this PDF. It may be empty or contain only images. Try a different file or run OCR first.",
         422
       );
     }
