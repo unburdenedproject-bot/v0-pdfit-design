@@ -46,6 +46,7 @@ export function TranslatePdfInterface() {
   const [isProcessing, setIsProcessing] = useState(false)
   const [hasError, setHasError] = useState(false)
   const [errorMessage, setErrorMessage] = useState("")
+  const [isInvalidPdf, setIsInvalidPdf] = useState(false)
   const [translation, setTranslation] = useState<string | null>(null)
   const [targetLanguage, setTargetLanguage] = useState("english")
   const [targetLanguageName, setTargetLanguageName] = useState("")
@@ -109,7 +110,7 @@ export function TranslatePdfInterface() {
 
   const handleProcess = useCallback(async () => {
     if (!file) return
-    setIsProcessing(true); setHasError(false); setErrorMessage("")
+    setIsProcessing(true); setHasError(false); setErrorMessage(""); setIsInvalidPdf(false)
     let blobUrl: string | null = null
     try {
       blobUrl = await uploadFileToBlob(file)
@@ -120,6 +121,9 @@ export function TranslatePdfInterface() {
       if (!response.ok) {
         let message = `Processing failed (HTTP ${response.status})`
         try { const d = await response.json(); if (d.error) message = d.error; if (message.includes("upgrade_required")) { router.push(pricingUrl); return } } catch {}
+        if (response.status === 422) {
+          setIsInvalidPdf(true); setErrorMessage(message); return
+        }
         throw new Error(message)
       }
       const data = await response.json()
@@ -149,7 +153,7 @@ export function TranslatePdfInterface() {
   }, [translation, file, targetLanguage])
 
   const handleReset = useCallback(() => {
-    setFile(null); setIsProcessing(false); setHasError(false); setErrorMessage(""); setTranslation(null); setCopied(false)
+    setFile(null); setIsProcessing(false); setHasError(false); setErrorMessage(""); setIsInvalidPdf(false); setTranslation(null); setCopied(false)
   }, [])
 
   // Business tier gate
@@ -220,6 +224,24 @@ export function TranslatePdfInterface() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto">
           <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8">
+            {isInvalidPdf && (
+              <div className="rounded-2xl p-5 mb-6 flex items-start gap-4" style={{ background: "linear-gradient(135deg, #F0F9FF 0%, #F5F3FF 100%)", border: "1px solid #DBEAFE" }}>
+                <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, #14D8C4, #6B7CFF)" }}>
+                  <FileText className="h-5 w-5 text-white" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-bold text-slate-900 mb-1">We couldn't read this PDF</h4>
+                  <p className="text-sm text-slate-600 leading-relaxed mb-3">
+                    The PDF appears to be blank, a scanned image, or image-only. For the best translation, please upload a PDF that has selectable text.
+                  </p>
+                  <ul className="text-xs text-slate-500 space-y-1 list-disc pl-5">
+                    <li>Try exporting from Word or Google Docs as PDF</li>
+                    <li>If it's a scan, run it through our OCR tool first</li>
+                    <li>Make sure the file isn't password-protected</li>
+                  </ul>
+                </div>
+              </div>
+            )}
             {hasError && (
               <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-6 flex items-start gap-3">
                 <AlertTriangle className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" /><p className="text-sm text-red-700">{errorMessage}</p>

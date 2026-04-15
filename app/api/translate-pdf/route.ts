@@ -178,6 +178,16 @@ Rules:
       );
     }
 
+    // Detect refusal/meta-replies (model explaining instead of translating)
+    const refusalPatterns = /\b(can'?t access|cannot access|unable to (access|read|view)|no (content|readable text)|provide the text|happy to help)\b/i;
+    if (translation.length < 600 && refusalPatterns.test(translation)) {
+      console.log("[translate-pdf] detected refusal response, treating as invalid PDF");
+      return errorResponse(
+        "We couldn't read this PDF. It may be blank, image-only, or password-protected.",
+        422
+      );
+    }
+
     // Log usage
     const { logUsage } = await import("@/lib/usage-check");
     await logUsage(user.id, "translate-pdf");
