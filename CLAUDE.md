@@ -169,6 +169,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - **Third-party widgets (CookieConsent etc.) must be deferred** — wrap in `DeferredCookieConsent` pattern using `dynamic({ ssr: false })` + `requestIdleCallback`. Keeps them out of initial JS bundle.
 - **Fonts must use `next/font/google`** — self-hosted, not loaded via `<link>`. The `onLoad="this.media='all'"` pattern does not reliably fire in React Server Components.
 - **Every new `<img>` tag needs explicit `width` and `height`** — prevents CLS. Above-fold also gets `fetchPriority="high"`; below-fold gets `loading="lazy" decoding="async"`.
+- **Download buttons must be visually prominent — never small text links.** Any tool that produces a result the user downloads (PDF, Excel, CSV, JSON, TXT, DOCX, etc.) must render the download options as filled or outlined buttons in their own visible bar/section, not as tiny link-style buttons in a header. If multiple formats are offered, the recommended/most-common format gets the filled brand-teal button; secondary formats get outlined buttons. Apply this rule to every tool, in all 3 languages.
 - Paula is non-technical — explain things simply
 
 ## Deployment Process
