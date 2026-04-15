@@ -1,5 +1,25 @@
 # PDF.it — Infrastructure Architecture Plan
 
+## AI Routes — Current Architecture (April 14, 2026)
+
+The 5 AI-over-PDF routes (`question-generator`, `ats-optimizer`, `smart-extraction`, `chat-with-pdf`, `translate-pdf`) no longer use the text-extraction chain. They upload PDFs directly to OpenAI's Files API:
+
+```
+User uploads PDF
+  ↓
+Vercel Blob (via @vercel/blob/client, multipart — bypasses 4.5MB function body limit)
+  ↓
+API route fetches blob → streams to OpenAI Files API (POST /v1/files, purpose=user_data)
+  ↓
+OpenAI returns file_id
+  ↓
+Chat Completions call with {type:"file", file:{file_id}} + text prompt
+  ↓
+Response returned to user; file_id either deleted (one-shot tools) or cached for reuse (chat-with-pdf)
+```
+
+This bypasses iLoveAPI / pdf-parse / pdfjs-dist / Document AI for AI tools. The text-extraction chain remains in use for non-AI tools (`pdf-to-txt`, etc.) and for tools that need the raw text for non-AI post-processing.
+
 ## Target Architecture
 
 ```

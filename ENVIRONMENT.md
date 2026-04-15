@@ -38,6 +38,7 @@ All set on Vercel for Production and Preview:
 ## Google Cloud Credentials
 - Service Account: omnispdf-docai@project-5fe73bdf-4333-442f-840.iam.gserviceaccount.com
 - Project ID: project-5fe73bdf-4333-442f-840
-- Processor ID: 41cccb5fc88aa541 (Form Parser)
+- Processor: **Layout Parser** (switched from Form Parser on April 14, 2026 — Layout Parser handles borderless/merged-cell tables much better; Form Parser was collapsing multi-column tables into a single column). Processor ID rotated at the same time — check Vercel env var `GOOGLE_CLOUD_PROCESSOR_ID` for the current value.
 - Location: us
 - JSON key stored in: C:\Users\paula\Dropbox\Paula\V. A. M. Outfitters, LLC\PDF.it\Credentials_Google Cloud
+- **Private key format note:** the `GOOGLE_CLOUD_PRIVATE_KEY` env var MUST include the `-----BEGIN PRIVATE KEY-----` and `-----END PRIVATE KEY-----` markers with literal `\n` between lines. Re-paste from the raw JSON `private_key` field if you see `error:1E08010C:DECODER routines::unsupported` — that means OpenSSL can't parse the key because the markers are missing.

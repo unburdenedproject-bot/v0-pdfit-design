@@ -2,6 +2,8 @@
 
 **STATUS: SETUP COMPLETE** — all services configured as of April 7, 2026. Keep this file as reference for re-configuration if any service breaks.
 
+**April 14, 2026 update — Google Document AI:** the `/table-extraction` tool now uses Google's **Layout Parser** (not Form Parser). If you re-create the processor, pick `Layout Parser` under "General" when creating, region `US (multi-region)`, then copy the processor ID into Vercel env var `GOOGLE_CLOUD_PROCESSOR_ID` with NO trailing spaces. See ENVIRONMENT.md for the private-key format gotcha that caused an OpenSSL decoder error.
+
 This guide covers services that need manual account creation. Each takes 5-15 minutes.
 
 ---

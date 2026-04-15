@@ -1,7 +1,17 @@
 # PDF.it — Post-Launch Roadmap
 
-Last updated: April 12, 2026 (day before launch)
+Last updated: April 14, 2026 (+1 day post-launch)
 Status: Planning — do not build any of this before reaching 1,000 paid subscribers.
+
+## Already Shipped Post-Launch (not part of the Phase 1–4 gates)
+
+- **April 14, 2026 — AI tools migrated to OpenAI Files API** (`question-generator`, `ats-optimizer`, `smart-extraction`, `chat-with-pdf`, `translate-pdf`). Previous text-extraction chain was failing on Vercel for real user resumes and PDFs with custom fonts. See COMPLETED.md for the full changelog.
+- **April 14, 2026 — Table-extraction upgraded to Layout Parser** (was Form Parser — accuracy now correct on borderless/merged-cell tables).
+- **April 14, 2026 — Smart-extraction multi-format downloads** (Excel, CSV, JSON — Excel is the new primary).
+- **April 14, 2026 — Premium error cards** on ats-optimizer, translate-pdf, chat-with-pdf for blank/unreadable PDFs (replaces red system-error banners).
+- **April 14, 2026 — Contact form fail-soft rate limiter** (Upstash outage no longer blocks submissions).
+
+---
 
 ---
 
