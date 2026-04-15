@@ -55,7 +55,7 @@ async function getMaxUploadBytes(): Promise<{ maxBytes: number; errorMessage: st
 
   return {
     maxBytes,
-    errorMessage: `File exceeds the ${maxLabel} limit for your ${planLabel} plan. Please choose a smaller file.${upgradeHint}`,
+    errorMessage: `File too large. This file exceeds the ${maxLabel} limit for your ${planLabel} plan. Please choose a smaller file.${upgradeHint}`,
   }
 }
 
