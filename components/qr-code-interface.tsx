@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { QrCode, Loader2, Download, AlertCircle, Crown } from "lucide-react"
+import { QrCode, Loader2, Download, AlertCircle, Crown, Info } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
 import Link from "next/link"
 
@@ -217,9 +217,11 @@ export function QrCodeInterface() {
                 </Button>
 
                 {error && (
-                  <div className="flex items-center gap-2 text-sm text-red-400">
-                    <AlertCircle className="h-4 w-4 shrink-0" />
-                    <p>{error}</p>
+                  <div className="rounded-2xl p-4 flex items-start gap-3" style={{ background: "linear-gradient(135deg, #F0F9FF 0%, #F5F3FF 100%)", border: "1px solid #DBEAFE" }}>
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, #14D8C4, #6B7CFF)" }}>
+                      <Info className="h-4 w-4 text-white" />
+                    </div>
+                    <p className="text-sm text-slate-700 leading-relaxed flex-1">{error}</p>
                   </div>
                 )}
               </div>

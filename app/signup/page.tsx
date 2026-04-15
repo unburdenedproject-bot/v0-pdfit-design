@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState, useRef } from "react"
-import { Eye, EyeOff, Shield, CheckCircle2 } from "lucide-react"
+import { Eye, EyeOff, Shield, CheckCircle2, Info } from "lucide-react"
 import HCaptcha from "@hcaptcha/react-hcaptcha"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -248,9 +248,12 @@ export default function SignUpPage() {
                     />
                   </div>
                   {error && (
-                    <p className="text-sm text-red-400 bg-red-500/10 border border-red-500/20 rounded-md px-3 py-2">
-                      {error}
-                    </p>
+                    <div className="rounded-xl p-4 flex items-start gap-3" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(107,124,255,0.25)" }}>
+                      <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, #14D8C4, #6B7CFF)" }}>
+                        <Info className="h-4 w-4 text-white" />
+                      </div>
+                      <p className="text-sm text-white/90 leading-relaxed flex-1">{error}</p>
+                    </div>
                   )}
                   <Button
                     type="submit"

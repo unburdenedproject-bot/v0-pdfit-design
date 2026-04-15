@@ -22,6 +22,7 @@ import {
   RotateCcw,
   Download,
   Scale,
+  Info,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
@@ -639,9 +640,11 @@ export function SmartExtractionInterface() {
         <div className="max-w-2xl mx-auto">
           <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8">
             {hasError && (
-              <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-6 flex items-start gap-3">
-                <AlertTriangle className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
-                <p className="text-sm text-red-700">{errorMessage}</p>
+              <div className="rounded-2xl p-4 mb-6 flex items-start gap-3" style={{ background: "linear-gradient(135deg, #F0F9FF 0%, #F5F3FF 100%)", border: "1px solid #DBEAFE" }}>
+                <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, #14D8C4, #6B7CFF)" }}>
+                  <Info className="h-4 w-4 text-white" />
+                </div>
+                <p className="text-sm text-slate-700 leading-relaxed flex-1">{errorMessage}</p>
               </div>
             )}
 

@@ -31,6 +31,7 @@ import {
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
+import { SoftErrorCard, isUserInputError } from "@/components/processing/soft-error-card"
 
 interface ProcessedFile {
   name: string
@@ -318,6 +319,10 @@ export function WatermarkPdfInterface() {
           </div>
         </section>
       )
+    }
+
+    if (isUserInputError(errorMessage)) {
+      return <SoftErrorCard errorMessage={errorMessage} onReset={resetInterface} />
     }
 
     return (

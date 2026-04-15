@@ -29,6 +29,7 @@ import {
   BarChart3,
   Clock,
   Lightbulb,
+  Info,
 } from "lucide-react"
 import Link from "next/link"
 import { DashboardSearch } from "@/components/dashboard-search"
@@ -541,7 +542,12 @@ export function DashboardClient({
                 </Button>
               )}
               {billingError && (
-                <p className="text-sm text-red-400">{billingError}</p>
+                <div className="rounded-xl p-4 flex items-start gap-3" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(107,124,255,0.25)" }}>
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, #14D8C4, #6B7CFF)" }}>
+                    <Info className="h-4 w-4 text-white" />
+                  </div>
+                  <p className="text-sm text-white/90 leading-relaxed flex-1">{billingError}</p>
+                </div>
               )}
             </div>
           </div>

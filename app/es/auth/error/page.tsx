@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { HeaderEs } from "@/components/header-es"
 import { FooterEs } from "@/components/footer-es"
-import { AlertTriangle } from "lucide-react"
+import { FileText } from "lucide-react"
 import Link from "next/link"
 
 export default async function AuthErrorPageEs({
@@ -18,8 +18,8 @@ export default async function AuthErrorPageEs({
         <div className="w-full max-w-md">
           <Card className="border-slate-200 shadow-sm">
             <CardHeader className="text-center">
-              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-red-100">
-                <AlertTriangle className="h-6 w-6 text-red-500" />
+              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full" style={{ background: "linear-gradient(135deg, #14D8C4, #6B7CFF)" }}>
+                <FileText className="h-6 w-6 text-white" />
               </div>
               <CardTitle className="text-xl text-slate-800">
                 Algo salió mal

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Mail, CheckCircle, Loader2 } from "lucide-react"
+import { Mail, CheckCircle, Loader2, Info } from "lucide-react"
 
 export function NewsletterSignup({ locale = "en" }: { locale?: "en" | "es" | "br" }) {
   const [email, setEmail] = useState("")
@@ -106,7 +106,12 @@ export function NewsletterSignup({ locale = "en" }: { locale?: "en" | "es" | "br
         </button>
       </form>
       {status === "error" && (
-        <p className="text-red-400 text-sm mt-3">{errorMsg}</p>
+        <div className="rounded-2xl p-4 mt-3 flex items-start gap-3" style={{ background: "linear-gradient(135deg, #F0F9FF 0%, #F5F3FF 100%)", border: "1px solid #DBEAFE" }}>
+          <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, #14D8C4, #6B7CFF)" }}>
+            <Info className="h-4 w-4 text-white" />
+          </div>
+          <p className="text-sm text-slate-700 leading-relaxed flex-1">{errorMsg}</p>
+        </div>
       )}
       <p className="text-slate-500 text-sm mt-4">{t.privacy}</p>
     </div>

@@ -15,6 +15,7 @@ import {
   Shield,
   Image as ImageIcon,
   Crown,
+  Info,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
@@ -573,8 +574,11 @@ export function ImageToPdfInterface({
 
               {/* Error inline */}
               {hasError && errorMessage && (
-                <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
-                  {errorMessage}
+                <div className="rounded-2xl p-4 flex items-start gap-3" style={{ background: "linear-gradient(135deg, #F0F9FF 0%, #F5F3FF 100%)", border: "1px solid #DBEAFE" }}>
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, #14D8C4, #6B7CFF)" }}>
+                    <Info className="h-4 w-4 text-white" />
+                  </div>
+                  <p className="text-sm text-slate-700 leading-relaxed flex-1">{errorMessage}</p>
                 </div>
               )}
 

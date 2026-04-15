@@ -9,6 +9,7 @@ import {
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { uploadBlobToBlob, uploadFileToBlob } from "@/lib/upload-to-blob"
+import { SoftErrorCard, isUserInputError } from "@/components/processing/soft-error-card"
 import { TrustBadges } from "@/components/trust-badges"
 
 type ToolLocale = "en" | "es" | "br"
@@ -590,6 +591,10 @@ export function RedactionInterface({ locale = "en" }: { locale?: ToolLocale }) {
           </div>
         </section>
       )
+    }
+
+    if (isUserInputError(errorMessage)) {
+      return <SoftErrorCard errorMessage={errorMessage} onReset={resetInterface} />
     }
 
     return (

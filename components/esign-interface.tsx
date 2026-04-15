@@ -22,6 +22,7 @@ import {
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob } from "@/lib/upload-to-blob"
 import { getSizeLimitLabel } from "@/lib/client-file-validator"
+import { SoftErrorCard, isUserInputError } from "@/components/processing/soft-error-card"
 import { TrustBadges } from "@/components/trust-badges"
 import { CreateSignatureModal } from "@/components/esign/create-signature-modal"
 import type { SignatureSessionAsset } from "@/lib/esign/types"
@@ -601,6 +602,10 @@ export function EsignInterface({ locale = "en" }: { locale?: EsignLocale }) {
           </div>
         </section>
       )
+    }
+
+    if (isUserInputError(errorMessage)) {
+      return <SoftErrorCard errorMessage={errorMessage} onReset={resetInterface} />
     }
 
     return (

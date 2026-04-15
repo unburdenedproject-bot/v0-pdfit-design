@@ -11,6 +11,7 @@ import {
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
 import { getSizeLimitLabel } from "@/lib/client-file-validator"
+import { SoftErrorCard, isUserInputError } from "@/components/processing/soft-error-card"
 import { TrustBadges } from "@/components/trust-badges"
 
 type ToolLocale = "en" | "es" | "br"
@@ -589,6 +590,10 @@ export function WorkflowInterface({ locale = "en" }: { locale?: ToolLocale }) {
           </div>
         </section>
       )
+    }
+
+    if (isUserInputError(errorMessage)) {
+      return <SoftErrorCard errorMessage={errorMessage} onReset={resetInterface} />
     }
 
     return (

@@ -17,6 +17,7 @@ import {
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
+import { SoftErrorCard, isUserInputError } from "@/components/processing/soft-error-card"
 import { PDFDocument } from "pdf-lib"
 
 interface ProcessedFile {
@@ -220,6 +221,10 @@ export function SplitPdfInterface() {
           </div>
         </section>
       )
+    }
+
+    if (isUserInputError(errorMessage)) {
+      return <SoftErrorCard errorMessage={errorMessage} onReset={resetInterface} />
     }
 
     return (
