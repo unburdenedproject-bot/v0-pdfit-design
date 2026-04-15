@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState, useCallback } from "react"
+import { useState, useCallback, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import {
@@ -20,6 +20,7 @@ import {
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
+import { getSizeLimitLabel } from "@/lib/client-file-validator"
 
 interface ProcessedFile {
   name: string
@@ -43,7 +44,15 @@ export function PhoneScanCleanupInterface() {
   const [errorMessage, setErrorMessage] = useState("")
   const [progress, setProgress] = useState(0)
   const [processedFile, setProcessedFile] = useState<ProcessedFile | null>(null)
+  const [userPlan, setUserPlan] = useState<string>("free")
   const router = useRouter()
+
+  useEffect(() => {
+    fetch("/api/user-plan")
+      .then((res) => res.json())
+      .then((data) => setUserPlan(data.plan || "free"))
+      .catch(() => setUserPlan("free"))
+  }, [])
 
   const handleFile = useCallback(async (f: File) => {
     if (!ACCEPTED_TYPES.includes(f.type)) {
@@ -432,7 +441,7 @@ export function PhoneScanCleanupInterface() {
                 Choose Image
               </Button>
               <p className="text-sm text-slate-500 mt-4">
-                Supported formats: JPG, PNG, WEBP
+                Supported formats: JPG, PNG, WEBP &middot; up to {getSizeLimitLabel(userPlan)}
               </p>
             </div>
           </div>

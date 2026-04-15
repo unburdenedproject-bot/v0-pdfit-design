@@ -19,6 +19,7 @@ import {
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { TrustBadges } from "@/components/trust-badges"
+import { getSizeLimitLabel } from "@/lib/client-file-validator"
 
 type ToolLocale = "en" | "es" | "br"
 
@@ -1043,6 +1044,7 @@ export function PdfCompareInterface({ locale = "en" }: { locale?: ToolLocale }) 
                     <Upload className="h-10 w-10 text-indigo-500 mx-auto mb-3" />
                     <p className="font-bold text-slate-900 mb-1">{copy.uploadOriginalPdf}</p>
                     <p className="text-sm text-slate-500">{copy.dragAndDrop}</p>
+                    <p className="text-xs text-slate-400 mt-3">PDF only &middot; up to {getSizeLimitLabel(userPlan)}</p>
                   </div>
                 )}
                 <input id="compare-file-a" type="file" accept=".pdf,application/pdf" className="hidden" onChange={(e) => { const f = e.target.files?.[0]; if (f) void handlePdfLoad(f, "left") }} />
@@ -1083,6 +1085,7 @@ export function PdfCompareInterface({ locale = "en" }: { locale?: ToolLocale }) 
                     <Upload className="h-10 w-10 text-indigo-500 mx-auto mb-3" />
                     <p className="font-bold text-slate-900 mb-1">{copy.uploadModifiedPdf}</p>
                     <p className="text-sm text-slate-500">{copy.dragAndDrop}</p>
+                    <p className="text-xs text-slate-400 mt-3">PDF only &middot; up to {getSizeLimitLabel(userPlan)}</p>
                   </div>
                 )}
                 <input id="compare-file-b" type="file" accept=".pdf,application/pdf" className="hidden" onChange={(e) => { const f = e.target.files?.[0]; if (f) void handlePdfLoad(f, "right") }} />

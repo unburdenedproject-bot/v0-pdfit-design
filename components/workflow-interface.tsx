@@ -10,6 +10,7 @@ import {
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
+import { getSizeLimitLabel } from "@/lib/client-file-validator"
 import { TrustBadges } from "@/components/trust-badges"
 
 type ToolLocale = "en" | "es" | "br"
@@ -878,6 +879,7 @@ export function WorkflowInterface({ locale = "en" }: { locale?: ToolLocale }) {
                   <Upload className="h-10 w-10 text-indigo-500 mx-auto mb-3" />
                   <p className="text-slate-900 font-bold mb-1">{copy.dropPdf}</p>
                   <p className="text-sm text-slate-500">{copy.browse}</p>
+                  <p className="text-xs text-slate-400 mt-3">PDF only &middot; up to {getSizeLimitLabel(userPlan)}</p>
                 </div>
               ) : (
                 <div className="flex items-center justify-between bg-white border border-gray-200 rounded-xl p-4">

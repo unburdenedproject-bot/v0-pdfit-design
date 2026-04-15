@@ -21,6 +21,7 @@ import {
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob } from "@/lib/upload-to-blob"
+import { getSizeLimitLabel } from "@/lib/client-file-validator"
 import { TrustBadges } from "@/components/trust-badges"
 import { CreateSignatureModal } from "@/components/esign/create-signature-modal"
 import type { SignatureSessionAsset } from "@/lib/esign/types"
@@ -713,7 +714,7 @@ export function EsignInterface({ locale = "en" }: { locale?: EsignLocale }) {
                   <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8">
                     {copy.choosePdf}
                   </Button>
-                  <p className="text-sm text-slate-500 mt-4">{copy.supportedFormat}</p>
+                  <p className="text-sm text-slate-500 mt-4">{copy.supportedFormat} &middot; up to {getSizeLimitLabel(userPlan)}</p>
                 </div>
                 <input id="esign-file-upload" type="file" accept=".pdf" className="hidden" onClick={(e) => { (e.target as HTMLInputElement).value = "" }} onChange={handleFileSelect} />
                 <TrustBadges />
