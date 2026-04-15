@@ -34,7 +34,7 @@ export function ChatWithPdfInterface() {
   const [isDragOver, setIsDragOver] = useState(false)
   const [isUploading, setIsUploading] = useState(false)
   const [blobUrl, setBlobUrl] = useState<string | null>(null)
-  const [pdfText, setPdfText] = useState<string | null>(null)
+  const [fileId, setFileId] = useState<string | null>(null)
   const [messages, setMessages] = useState<ChatMessage[]>([])
   const [question, setQuestion] = useState("")
   const [isThinking, setIsThinking] = useState(false)
@@ -176,7 +176,7 @@ export function ChatWithPdfInterface() {
       }
 
       const data = await response.json()
-      setPdfText(data.pdfText || null)
+      setFileId(data.fileId || null)
       setMessages([
         { role: "assistant", content: labels.welcome },
         { role: "assistant", content: data.answer },
@@ -203,7 +203,7 @@ export function ChatWithPdfInterface() {
   }, [file, blobUrl, isUploading, handleUpload])
 
   const handleSend = useCallback(async () => {
-    if (!question.trim() || isThinking || !pdfText) return
+    if (!question.trim() || isThinking || !fileId) return
 
     const userQuestion = question.trim()
     setQuestion("")
@@ -227,7 +227,7 @@ export function ChatWithPdfInterface() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          pdfText,
+          fileId,
           question: userQuestion,
           history: history.slice(-10), // Last 10 messages
         }),
@@ -259,7 +259,7 @@ export function ChatWithPdfInterface() {
       setIsThinking(false)
       inputRef.current?.focus()
     }
-  }, [question, isThinking, pdfText, messages])
+  }, [question, isThinking, fileId, messages])
 
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
@@ -275,7 +275,7 @@ export function ChatWithPdfInterface() {
     if (blobUrl) deleteBlobUrl(blobUrl)
     setFile(null)
     setBlobUrl(null)
-    setPdfText(null)
+    setFileId(null)
     setMessages([])
     setQuestion("")
     setIsThinking(false)
@@ -354,7 +354,7 @@ export function ChatWithPdfInterface() {
   }
 
   // Chat active state
-  if (pdfText && messages.length > 0) {
+  if (fileId && messages.length > 0) {
     return (
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

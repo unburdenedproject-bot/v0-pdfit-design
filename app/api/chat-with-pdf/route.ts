@@ -1,22 +1,14 @@
-import { createWriteStream } from "fs";
-import { Readable } from "stream";
-import { pipeline } from "stream/promises";
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
 import { NextRequest, NextResponse } from "next/server";
-import { writeFile, unlink } from "fs/promises";
-import { join } from "path";
-import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
 import { isValidBlobUrl } from "@/lib/validate-blob-url";
-import { guardPdfContent } from "@/lib/pdf-content-guard";
 
 function errorResponse(message: string, status: number = 500): Response {
   return Response.json({ error: message }, { status });
 }
 
-const MAX_PDF_TEXT_CHARS: number = 12000;
 const MAX_QUESTION_CHARS: number = 500;
 const MAX_HISTORY_MESSAGES: number = 10;
 
@@ -26,8 +18,8 @@ interface ChatMessage {
 }
 
 export async function POST(request: NextRequest): Promise<Response> {
-  let tmpPath: string | null = null;
   let uploadedBlobUrl: string | null = null;
+  let apiKey: string | undefined;
 
   try {
     // Auth: Business/Enterprise only
@@ -57,27 +49,26 @@ export async function POST(request: NextRequest): Promise<Response> {
       );
     }
 
-    const apiKey: string | undefined = process.env.OPENAI_API_KEY;
+    apiKey = process.env.OPENAI_API_KEY;
     if (!apiKey) {
       return errorResponse("The service is temporarily unavailable. Please try again later.", 500);
     }
 
     // Parse request
     const body = await request.json();
-    const blobUrl: string = body.blobUrl;
+    const blobUrl: string | undefined = body.blobUrl;
+    let fileId: string | undefined = body.fileId;
     const question: string = body.question;
-    const pdfText: string | undefined = body.pdfText; // Pre-extracted text from client (optional)
-    const history: ChatMessage[] = body.history || []; // Previous Q&A pairs
+    const history: ChatMessage[] = body.history || [];
 
     if (!question || typeof question !== "string" || question.trim().length === 0) {
       return errorResponse("Please enter a question.", 400);
     }
-
     if (question.length > MAX_QUESTION_CHARS) {
       return errorResponse(`Question is too long. Maximum ${MAX_QUESTION_CHARS} characters.`, 400);
     }
 
-    // ---- Async mode: create a job and return immediately ----
+    // ---- Async mode (preserved) ----
     if (body.async === true) {
       const { createJob } = await import("@/lib/job-queue");
       const result = await createJob({
@@ -87,7 +78,7 @@ export async function POST(request: NextRequest): Promise<Response> {
         inputBlobUrl: blobUrl || "none",
         inputParams: {
           question,
-          pdfText: pdfText || undefined,
+          fileId: fileId || undefined,
           history: history || [],
           blobUrl: blobUrl || undefined,
         },
@@ -100,14 +91,11 @@ export async function POST(request: NextRequest): Promise<Response> {
       return NextResponse.json({ jobId: result.jobId, status: "pending" }, { status: 202 });
     }
 
-    // Get PDF text — either from pre-extracted text or extract now
-    let documentText: string = "";
-
-    if (pdfText && typeof pdfText === "string" && pdfText.trim().length > 50) {
-      // Client already extracted text — use it
-      documentText = pdfText.substring(0, MAX_PDF_TEXT_CHARS);
-    } else if (blobUrl && typeof blobUrl === "string") {
-      // Extract text from PDF via iLoveAPI
+    // First message in conversation: upload PDF to OpenAI Files API
+    if (!fileId) {
+      if (!blobUrl || typeof blobUrl !== "string") {
+        return errorResponse("Missing PDF content. Please upload a PDF first.", 400);
+      }
       if (!isValidBlobUrl(blobUrl)) {
         return errorResponse("Invalid file URL.", 400);
       }
@@ -115,78 +103,40 @@ export async function POST(request: NextRequest): Promise<Response> {
 
       const res: globalThis.Response = await fetch(blobUrl);
       if (!res.ok) {
-        console.error("Failed to fetch PDF:", res.status); throw new Error("Failed to retrieve your uploaded file. Please try uploading again.");
+        console.error("Failed to fetch PDF:", res.status);
+        throw new Error("Failed to retrieve your uploaded file. Please try uploading again.");
       }
       const buffer: Buffer = Buffer.from(await res.arrayBuffer());
-      const id: string = randomUUID();
-      tmpPath = join("/tmp", `${id}-chat.pdf`);
-      await writeFile(tmpPath, buffer);
 
-      // ── Reject blank PDFs before hitting paid API ──
-      try {
-        const { isBlankPdf } = await import("@/lib/blank-pdf-check");
-        const { blank } = await isBlankPdf(buffer);
-        if (blank) {
-          if (tmpPath) { await unlink(tmpPath).catch(() => {}); tmpPath = null; }
-          return errorResponse("This file appears to be empty. Please upload a PDF with content.", 400);
-        }
-      } catch (blankCheckErr) {
-        console.error("Blank PDF check failed (skipping):", blankCheckErr);
-        // Continue processing — let the API handle invalid files
+      const form = new FormData();
+      form.append("purpose", "user_data");
+      form.append("file", new Blob([new Uint8Array(buffer)], { type: "application/pdf" }), "document.pdf");
+
+      const fileUploadRes = await fetch("https://api.openai.com/v1/files", {
+        method: "POST",
+        headers: { Authorization: `Bearer ${apiKey}` },
+        body: form,
+      });
+      if (!fileUploadRes.ok) {
+        const errBody = await fileUploadRes.text();
+        console.error("OpenAI file upload failed:", fileUploadRes.status, errBody);
+        throw new Error("An error occurred while preparing your file. Please try again.");
       }
+      const fileData = await fileUploadRes.json();
+      fileId = fileData.id;
 
-      const publicKey: string | undefined = process.env.ILOVEAPI_PUBLIC_KEY;
-      const secretKey: string | undefined = process.env.ILOVEAPI_SECRET_KEY;
-
-      if (publicKey && secretKey) {
-        try {
-          const ILovePDFApi = (await import("@ilovepdf/ilovepdf-nodejs")).default;
-          const ILovePDFFile = (await import("@ilovepdf/ilovepdf-nodejs/ILovePDFFile")).default;
-
-          const instance = new ILovePDFApi(publicKey, secretKey);
-          const task = instance.newTask("extract");
-          await task.start();
-          const pdfFile = new ILovePDFFile(tmpPath);
-          await task.addFile(pdfFile);
-          await task.process();
-          const txtData = await task.download();
-          documentText = txtData.toString("utf-8");
-        } catch (extractErr) {
-          console.error("iLoveAPI extract failed (falling back to buffer):", extractErr);
-        }
+      // Free the Vercel blob now that OpenAI has the file
+      if (uploadedBlobUrl) {
+        await del(uploadedBlobUrl).catch(() => {});
+        uploadedBlobUrl = null;
       }
-
-      if (!documentText || documentText.trim().length < 50) {
-        const { extractPdfText } = await import("@/lib/pdf-text-extract");
-        documentText = await extractPdfText(buffer);
-      }
-
-      // Clean up temp file
-      if (tmpPath) {
-        await unlink(tmpPath).catch(() => {});
-        tmpPath = null;
-      }
-
-      const guardResult = guardPdfContent(documentText);
-      if (!guardResult.ok) {
-        return errorResponse(guardResult.userMessage!, 422);
-      }
-      documentText = guardResult.sanitized.substring(0, MAX_PDF_TEXT_CHARS);
-    } else {
-      return errorResponse("Missing PDF content. Please upload a PDF first.", 400);
     }
 
-    // Build conversation messages for OpenAI
-    const systemPrompt: string = `You are a helpful PDF document assistant. The user has uploaded a PDF document and wants to ask questions about it. Answer based ONLY on the document content provided below. If the answer is not in the document, say so clearly. Be concise, accurate, and helpful. Format your answers in plain text — no markdown headers or code blocks.
+    // Build messages — system + history + current question (with file attached)
+    const systemPrompt: string = "You are a helpful PDF document assistant. Answer based ONLY on the attached PDF document. If the answer is not in the document, say so clearly. Be concise, accurate, and helpful. Format your answers in plain text — no markdown headers or code blocks.";
 
-DOCUMENT CONTENT:
-${documentText}`;
+    const messages: any[] = [{ role: "system", content: systemPrompt }];
 
-    const messages: { role: string; content: string }[] = [
-      { role: "system", content: systemPrompt },
-    ];
-
-    // Add conversation history (limited)
     const recentHistory: ChatMessage[] = Array.isArray(history)
       ? history.slice(-MAX_HISTORY_MESSAGES)
       : [];
@@ -199,8 +149,14 @@ ${documentText}`;
       }
     }
 
-    // Add current question
-    messages.push({ role: "user", content: question.trim() });
+    // Current question with the PDF attached as file content
+    messages.push({
+      role: "user",
+      content: [
+        { type: "file", file: { file_id: fileId } },
+        { type: "text", text: question.trim() },
+      ],
+    });
 
     // Call OpenAI with retry for rate limits
     let openaiRes: globalThis.Response | undefined;
@@ -208,7 +164,7 @@ ${documentText}`;
       openaiRes = await fetch("https://api.openai.com/v1/chat/completions", {
         method: "POST",
         headers: {
-          "Authorization": `Bearer ${apiKey}`,
+          Authorization: `Bearer ${apiKey}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
@@ -220,7 +176,6 @@ ${documentText}`;
       });
 
       if (openaiRes.ok || openaiRes.status !== 429) break;
-
       const waitMs: number = (attempt + 1) * 5000;
       console.log(`OpenAI rate limited, retrying in ${waitMs}ms...`);
       await new Promise((r) => setTimeout(r, waitMs));
@@ -232,12 +187,11 @@ ${documentText}`;
       if (openaiRes!.status === 429) {
         throw new Error("AI service is temporarily busy. Please try again in a few seconds.");
       }
-      console.error("AI service request failed:", openaiRes!.status); throw new Error("An error occurred while processing your request. Please try again.");
+      throw new Error("An error occurred while processing your request. Please try again.");
     }
 
     const openaiData = await openaiRes!.json();
     const answer: string | undefined = openaiData.choices?.[0]?.message?.content;
-
     if (!answer) {
       throw new Error("AI returned no response.");
     }
@@ -248,13 +202,13 @@ ${documentText}`;
 
     return NextResponse.json({
       answer: answer.trim(),
-      pdfText: documentText, // Return extracted text so client can cache it
+      fileId, // client caches and re-sends for subsequent messages
     });
   } catch (err: unknown) {
     console.error("chat-with-pdf route error:", err);
 
     const raw: string = err && typeof err === "object" && (err as Error).message ? (err as Error).message : "";
-    const safe: string = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob.vercel/i.test(raw)
+    const safe: string = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|OpenAI|blob.vercel/i.test(raw)
       ? "An error occurred while processing your file. Please try again."
       : (raw || "An unexpected error occurred.");
 
@@ -263,8 +217,7 @@ ${documentText}`;
     if (uploadedBlobUrl) {
       await del(uploadedBlobUrl).catch(() => {});
     }
-    if (tmpPath) {
-      await unlink(tmpPath).catch(() => {});
-    }
+    // Note: OpenAI file is intentionally NOT deleted here — it must persist
+    // across chat turns. Files auto-expire from OpenAI after a period of inactivity.
   }
 }
