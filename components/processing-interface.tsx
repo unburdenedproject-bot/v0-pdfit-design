@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils"
 import { FileProcessor } from "@/lib/file-processor"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
 import { validateClientFile, getSizeLimitLabel } from "@/lib/client-file-validator"
+import { SoftErrorCard, isUserInputError } from "@/components/processing/soft-error-card"
 import { useJobPolling } from "@/lib/use-job-polling"
 import { TierGateCard } from "@/components/processing/tier-gate-card"
 import { ProcessingResult } from "@/components/processing/processing-result"
@@ -1154,6 +1155,10 @@ export function ProcessingInterface({
       )
     }
 
+    if (isUserInputError(errorMessage)) {
+      return <SoftErrorCard errorMessage={errorMessage} onReset={resetInterface} />
+    }
+
     return (
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -1161,15 +1166,7 @@ export function ProcessingInterface({
             <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <AlertCircle className="h-10 w-10 text-red-600" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              {errorMessage.toLowerCase().includes("invalid file type") || errorMessage.toLowerCase().includes("not supported") || errorMessage.toLowerCase().includes("file format")
-                ? "Unsupported File Type"
-                : errorMessage.toLowerCase().includes("size limit") || errorMessage.toLowerCase().includes("too large")
-                ? "File Too Large"
-                : errorMessage.toLowerCase().includes("appears to be empty") || errorMessage.toLowerCase().includes("empty and cannot") || errorMessage.toLowerCase().includes("is empty and contains")
-                ? "Empty File"
-                : "Processing Failed"}
-            </h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Processing Failed</h2>
             <p className="text-slate-600 mb-8">{errorMessage}</p>
             <Button onClick={resetInterface} className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E]">
               Try Again

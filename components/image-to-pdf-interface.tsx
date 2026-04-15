@@ -18,6 +18,7 @@ import {
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
+import { SoftErrorCard, isUserInputError } from "@/components/processing/soft-error-card"
 
 interface ImageToPdfInterfaceProps {
   acceptedTypes: string[]
@@ -333,6 +334,10 @@ export function ImageToPdfInterface({
       )
     }
 
+    if (isUserInputError(errorMessage)) {
+      return <SoftErrorCard errorMessage={errorMessage} onReset={resetInterface} />
+    }
+
     return (
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -340,13 +345,7 @@ export function ImageToPdfInterface({
             <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <AlertCircle className="h-10 w-10 text-red-600" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              {errorMessage.toLowerCase().includes("invalid file type") || errorMessage.toLowerCase().includes("not supported") || errorMessage.toLowerCase().includes("file format")
-                ? "Unsupported File Type"
-                : errorMessage.toLowerCase().includes("size limit") || errorMessage.toLowerCase().includes("too large")
-                ? "File Too Large"
-                : "Conversion Failed"}
-            </h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Conversion Failed</h2>
             <p className="text-slate-600 mb-8">{errorMessage}</p>
             <Button
               onClick={resetInterface}

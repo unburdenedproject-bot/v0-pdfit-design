@@ -20,6 +20,7 @@ import {
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
+import { SoftErrorCard, isUserInputError } from "@/components/processing/soft-error-card"
 
 interface ProcessedFile {
   name: string
@@ -212,6 +213,10 @@ export function ProtectPdfInterface() {
       )
     }
 
+    if (isUserInputError(errorMessage)) {
+      return <SoftErrorCard errorMessage={errorMessage} onReset={resetInterface} />
+    }
+
     return (
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -220,13 +225,7 @@ export function ProtectPdfInterface() {
               <AlertCircle className="h-10 w-10 text-red-600" />
             </div>
             <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              {errorMessage.toLowerCase().includes("invalid file type") || errorMessage.toLowerCase().includes("not supported") || errorMessage.toLowerCase().includes("file format")
-                ? "Unsupported File Type"
-                : errorMessage.toLowerCase().includes("size limit") || errorMessage.toLowerCase().includes("too large")
-                ? "File Too Large"
-                : errorMessage.toLowerCase().includes("appears to be empty") || errorMessage.toLowerCase().includes("empty and cannot") || errorMessage.toLowerCase().includes("is empty and contains")
-                ? "Empty File"
-                : "Protection Failed"}
+              Protection Failed
             </h2>
             <p className="text-slate-600 mb-8">{errorMessage}</p>
             <Button
