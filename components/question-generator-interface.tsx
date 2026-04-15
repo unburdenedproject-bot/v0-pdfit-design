@@ -404,20 +404,6 @@ export function QuestionGeneratorInterface() {
                     {copied ? labels.copied : labels.copyAll}
                   </button>
                   <button
-                    onClick={handleDownloadTxt}
-                    className="flex items-center gap-1.5 text-sm text-indigo-600 hover:text-indigo-700 transition-colors font-medium"
-                  >
-                    <Download className="h-3.5 w-3.5" />
-                    {labels.downloadTxt}
-                  </button>
-                  <button
-                    onClick={handleDownloadPdf}
-                    className="flex items-center gap-1.5 text-sm text-indigo-600 hover:text-indigo-700 transition-colors font-medium"
-                  >
-                    <Download className="h-3.5 w-3.5" />
-                    {labels.downloadPdf}
-                  </button>
-                  <button
                     onClick={handleReset}
                     className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-slate-700 transition-colors"
                   >
@@ -472,6 +458,26 @@ export function QuestionGeneratorInterface() {
                     </div>
                   </div>
                 ))}
+              </div>
+
+              {/* Download bar */}
+              <div className="border-t border-slate-200 bg-slate-50 px-4 py-4 sm:px-6">
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <button
+                    onClick={handleDownloadPdf}
+                    className="flex-1 flex items-center justify-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-5 rounded-xl transition-colors shadow-sm"
+                  >
+                    <Download className="h-4 w-4" />
+                    {labels.downloadPdf}
+                  </button>
+                  <button
+                    onClick={handleDownloadTxt}
+                    className="flex-1 flex items-center justify-center gap-2 bg-white border-2 border-[#14D8C4] text-[#0E0F1E] hover:bg-[#14D8C4]/5 font-bold py-3 px-5 rounded-xl transition-colors"
+                  >
+                    <Download className="h-4 w-4" />
+                    {labels.downloadTxt}
+                  </button>
+                </div>
               </div>
             </div>
 
