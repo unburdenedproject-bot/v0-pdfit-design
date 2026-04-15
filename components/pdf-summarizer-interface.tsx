@@ -29,6 +29,7 @@ export function PdfSummarizerInterface() {
   const [isProcessing, setIsProcessing] = useState(false)
   const [hasError, setHasError] = useState(false)
   const [errorMessage, setErrorMessage] = useState("")
+  const [isInvalidPdf, setIsInvalidPdf] = useState(false)
   const [summary, setSummary] = useState<string | null>(null)
   const [length, setLength] = useState<"short" | "medium" | "detailed">("medium")
   const [language, setLanguage] = useState<"same" | "english" | "spanish" | "portuguese">("same")
@@ -79,6 +80,11 @@ export function PdfSummarizerInterface() {
           english: "Ingles",
           spanish: "Espanol",
           portuguese: "Portugues",
+          invalidTitle: "No pudimos leer este PDF",
+          invalidDesc: "El PDF parece estar en blanco, escaneado o contener solo imagenes. Para resumirlo, necesitamos un PDF con texto seleccionable.",
+          invalidTip1: "Exporta desde Word o Google Docs como PDF",
+          invalidTip2: "Si es un escaneo, pasalo primero por nuestra herramienta OCR",
+          invalidTip3: "Verifica que el archivo no tenga contrasena",
         }
       : localePrefix === "/br"
         ? {
@@ -102,6 +108,11 @@ export function PdfSummarizerInterface() {
             english: "Ingles",
             spanish: "Espanhol",
             portuguese: "Portugues",
+            invalidTitle: "Nao conseguimos ler este PDF",
+            invalidDesc: "O PDF parece estar em branco, escaneado ou conter apenas imagens. Para resumi-lo, precisamos de um PDF com texto selecionavel.",
+            invalidTip1: "Exporte do Word ou Google Docs como PDF",
+            invalidTip2: "Se for um scan, passe antes pela nossa ferramenta OCR",
+            invalidTip3: "Verifique se o arquivo nao esta protegido por senha",
           }
         : {
             uploadTitle: "Upload your PDF",
@@ -124,6 +135,11 @@ export function PdfSummarizerInterface() {
             english: "English",
             spanish: "Spanish",
             portuguese: "Portuguese",
+            invalidTitle: "We couldn't read this PDF",
+            invalidDesc: "The PDF appears to be blank, a scan, or image-only. To summarize it, we need a PDF that has selectable text.",
+            invalidTip1: "Try exporting from Word or Google Docs as PDF",
+            invalidTip2: "If it's a scan, run it through our OCR tool first",
+            invalidTip3: "Make sure the file isn't password-protected",
           }
 
   const acceptFile = useCallback(async (f: File | undefined) => {
@@ -152,6 +168,7 @@ export function PdfSummarizerInterface() {
     setIsProcessing(true)
     setHasError(false)
     setErrorMessage("")
+    setIsInvalidPdf(false)
 
     let blobUrl: string | null = null
 
@@ -175,6 +192,10 @@ export function PdfSummarizerInterface() {
           }
         } catch {
           // response might not be JSON
+        }
+        if (response.status === 422 || response.status === 400) {
+          setIsInvalidPdf(true)
+          return
         }
         throw new Error(message)
       }
@@ -203,6 +224,7 @@ export function PdfSummarizerInterface() {
     setIsProcessing(false)
     setHasError(false)
     setErrorMessage("")
+    setIsInvalidPdf(false)
     setSummary(null)
     setCopied(false)
   }, [])
@@ -324,6 +346,22 @@ export function PdfSummarizerInterface() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto">
           <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8">
+            {isInvalidPdf && (
+              <div className="rounded-2xl p-5 mb-6 flex items-start gap-4" style={{ background: "linear-gradient(135deg, #F0F9FF 0%, #F5F3FF 100%)", border: "1px solid #DBEAFE" }}>
+                <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(135deg, #14D8C4, #6B7CFF)" }}>
+                  <FileText className="h-5 w-5 text-white" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-bold text-slate-900 mb-1">{labels.invalidTitle}</h4>
+                  <p className="text-sm text-slate-600 leading-relaxed mb-3">{labels.invalidDesc}</p>
+                  <ul className="text-xs text-slate-500 space-y-1 list-disc pl-5">
+                    <li>{labels.invalidTip1}</li>
+                    <li>{labels.invalidTip2}</li>
+                    <li>{labels.invalidTip3}</li>
+                  </ul>
+                </div>
+              </div>
+            )}
             {hasError && (
               <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-6 flex items-start gap-3">
                 <AlertTriangle className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
