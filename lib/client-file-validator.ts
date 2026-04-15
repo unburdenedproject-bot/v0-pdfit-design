@@ -62,7 +62,7 @@ export async function validateClientFile(file: File, plan?: string): Promise<Cli
         : " Upgrade to Pro for files up to 200MB, or Business for up to 1GB."
     return {
       ok: false,
-      error: `File exceeds the ${limit} limit for your ${planLabel} plan. Please choose a smaller file.${upgradeHint}`,
+      error: `File too large. This file exceeds the ${limit} limit for your ${planLabel} plan. Please choose a smaller file.${upgradeHint}`,
     }
   }
 
