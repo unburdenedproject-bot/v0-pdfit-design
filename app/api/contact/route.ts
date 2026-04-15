@@ -23,18 +23,23 @@ export async function POST(request: NextRequest) {
     const csrfError = checkCsrf(request)
     if (csrfError) return csrfError
 
-    // Rate limiting
+    // Rate limiting (fail-soft if Upstash is unreachable)
     if (ratelimit) {
       const ip =
         request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
         request.headers.get("x-real-ip") ||
         "unknown"
-      const { success } = await ratelimit.limit(ip)
-      if (!success) {
-        return NextResponse.json(
-          { error: "Too many submissions. Please try again later." },
-          { status: 429 }
-        )
+      try {
+        const { success } = await ratelimit.limit(ip)
+        if (!success) {
+          return NextResponse.json(
+            { error: "Too many submissions. Please try again later." },
+            { status: 429 }
+          )
+        }
+      } catch (rlErr) {
+        console.error("Contact rate limit check failed (allowing request):", rlErr)
+        // Continue — better to accept a contact form than block legit users on Upstash outage
       }
     }
 
