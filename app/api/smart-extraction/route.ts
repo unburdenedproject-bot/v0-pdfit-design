@@ -1,26 +1,18 @@
-import { createWriteStream } from "fs";
-import { Readable } from "stream";
-import { pipeline } from "stream/promises";
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
 import { NextRequest, NextResponse } from "next/server";
-import { writeFile, unlink } from "fs/promises";
-import { join } from "path";
-import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
 import { isValidBlobUrl } from "@/lib/validate-blob-url";
-import { guardPdfContent } from "@/lib/pdf-content-guard";
 
 function errorResponse(message: string, status: number = 500): Response {
   return Response.json({ error: message }, { status });
 }
 
-const MAX_PDF_TEXT_CHARS: number = 10000;
-
 export async function POST(request: NextRequest): Promise<Response> {
-  let tmpPath: string | null = null;
   let uploadedBlobUrl: string | null = null;
+  let openaiFileId: string | null = null;
+  let apiKey: string | undefined;
 
   try {
     // Auth: Business/Enterprise only
@@ -50,7 +42,7 @@ export async function POST(request: NextRequest): Promise<Response> {
       );
     }
 
-    const apiKey: string | undefined = process.env.OPENAI_API_KEY;
+    apiKey = process.env.OPENAI_API_KEY;
     if (!apiKey) {
       return errorResponse("The service is temporarily unavailable. Please try again later.", 500);
     }
@@ -87,73 +79,38 @@ export async function POST(request: NextRequest): Promise<Response> {
       return NextResponse.json({ jobId: result.jobId, status: "pending" }, { status: 202 });
     }
 
-    // Download PDF from blob
+    // Download PDF from blob and upload directly to OpenAI Files API
     const res: globalThis.Response = await fetch(blobUrl);
     if (!res.ok) {
-      console.error("Failed to fetch PDF:", res.status); throw new Error("Failed to retrieve your uploaded file. Please try uploading again.");
+      console.error("Failed to fetch PDF:", res.status);
+      throw new Error("Failed to retrieve your uploaded file. Please try uploading again.");
     }
     const buffer: Buffer = Buffer.from(await res.arrayBuffer());
-    const id: string = randomUUID();
-    tmpPath = join("/tmp", `${id}-extract.pdf`);
-    await writeFile(tmpPath, buffer);
 
-    // ── Reject blank PDFs before hitting paid API ──
-    try {
-      const { isBlankPdf } = await import("@/lib/blank-pdf-check");
-      const { blank } = await isBlankPdf(buffer);
-      if (blank) {
-        if (tmpPath) { await unlink(tmpPath).catch(() => {}); tmpPath = null; }
-        return errorResponse("This file appears to be empty. Please upload a PDF with content.", 400);
-      }
-    } catch (blankCheckErr) {
-      console.error("Blank PDF check failed:", blankCheckErr);
-      if (tmpPath) { await unlink(tmpPath).catch(() => {}); tmpPath = null; }
-      return errorResponse("Could not read this PDF. The file may be corrupted or password-protected.", 400);
+    const form = new FormData();
+    form.append("purpose", "user_data");
+    form.append("file", new Blob([new Uint8Array(buffer)], { type: "application/pdf" }), body.fileName || "document.pdf");
+
+    const fileUploadRes = await fetch("https://api.openai.com/v1/files", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${apiKey}` },
+      body: form,
+    });
+    if (!fileUploadRes.ok) {
+      const errBody = await fileUploadRes.text();
+      console.error("OpenAI file upload failed:", fileUploadRes.status, errBody);
+      throw new Error("An error occurred while preparing your file. Please try again.");
     }
+    const fileData = await fileUploadRes.json();
+    openaiFileId = fileData.id;
 
-    // Extract text using iLoveAPI
-    const publicKey: string | undefined = process.env.ILOVEAPI_PUBLIC_KEY;
-    const secretKey: string | undefined = process.env.ILOVEAPI_SECRET_KEY;
-
-    let documentText: string = "";
-
-    if (publicKey && secretKey) {
-      const ILovePDFApi = (await import("@ilovepdf/ilovepdf-nodejs")).default;
-      const ILovePDFFile = (await import("@ilovepdf/ilovepdf-nodejs/ILovePDFFile")).default;
-
-      const instance = new ILovePDFApi(publicKey, secretKey);
-      const task = instance.newTask("extract");
-      await task.start();
-      const pdfFile = new ILovePDFFile(tmpPath);
-      await task.addFile(pdfFile);
-      await task.process();
-      const txtData = await task.download();
-      documentText = txtData.toString("utf-8");
-    }
-
-    if (!documentText || documentText.trim().length < 50) {
-      // Fallback: try reading raw text from buffer
-      documentText = buffer.toString("utf-8").replace(/[^\x20-\x7E\n\r\t]/g, " ").trim();
-    }
-
-    // Clean up temp file and blob
-    if (tmpPath) {
-      await unlink(tmpPath).catch(() => {});
-      tmpPath = null;
-    }
     if (uploadedBlobUrl) {
       await del(uploadedBlobUrl).catch(() => {});
       uploadedBlobUrl = null;
     }
 
-    const guardResult = guardPdfContent(documentText);
-    if (!guardResult.ok) {
-      return errorResponse(guardResult.userMessage!, 422);
-    }
-    documentText = guardResult.sanitized.substring(0, MAX_PDF_TEXT_CHARS);
-
     // Call OpenAI to extract structured data
-    const systemPrompt: string = `You are a document data extraction assistant. Extract ALL structured data from the document text below. Return only valid JSON. No markdown. No code fences. No commentary.
+    const systemPrompt: string = `You are a document data extraction assistant. Extract ALL structured data from the attached PDF. Return only valid JSON. No markdown. No code fences. No commentary. If the PDF is blank, unreadable, or contains no extractable content, return {"is_valid_document": false, "reason": "<short explanation>"} and nothing else.
 
 Output JSON matching this structure exactly:
 {
@@ -194,7 +151,7 @@ Rules:
 - If a category has no data, return an empty array or object
 - Keep all strings concise and production-safe`;
 
-    const userPrompt: string = `Extract all structured data from this document:\n\n${documentText}`;
+    const userPrompt: string = `Extract all structured data from the attached PDF.`;
 
     // Call OpenAI with retry for rate limits
     let openaiRes: globalThis.Response | undefined;
@@ -209,7 +166,13 @@ Rules:
           model: "gpt-4o-mini",
           messages: [
             { role: "system", content: systemPrompt },
-            { role: "user", content: userPrompt },
+            {
+              role: "user",
+              content: [
+                { type: "file", file: { file_id: openaiFileId } },
+                { type: "text", text: userPrompt },
+              ],
+            },
           ],
           temperature: 0,
           max_tokens: 2000,
@@ -250,6 +213,13 @@ Rules:
       throw new Error("AI returned invalid extraction format.");
     }
 
+    if (extraction?.is_valid_document === false) {
+      return errorResponse(
+        "This PDF doesn't appear to contain extractable content. Please upload a PDF with text (not blank or scanned images).",
+        422
+      );
+    }
+
     // Log usage
     const { logUsage } = await import("@/lib/usage-check");
     await logUsage(user.id, "smart-extraction");
@@ -259,7 +229,7 @@ Rules:
     console.error("smart-extraction route error:", err);
 
     const raw: string = err && typeof err === "object" && (err as Error).message ? (err as Error).message : "";
-    const safe: string = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|blob.vercel/i.test(raw)
+    const safe: string = /CloudConvert|iLoveAPI|ILovePDF|Document AI|Google Cloud|OpenAI|blob.vercel/i.test(raw)
       ? "An error occurred while processing your file. Please try again."
       : (raw || "An unexpected error occurred.");
 
@@ -268,8 +238,11 @@ Rules:
     if (uploadedBlobUrl) {
       await del(uploadedBlobUrl).catch(() => {});
     }
-    if (tmpPath) {
-      await unlink(tmpPath).catch(() => {});
+    if (openaiFileId && apiKey) {
+      await fetch(`https://api.openai.com/v1/files/${openaiFileId}`, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${apiKey}` },
+      }).catch(() => {});
     }
   }
 }
