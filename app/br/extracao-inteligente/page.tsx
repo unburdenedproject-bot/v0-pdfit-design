@@ -23,7 +23,7 @@ const faqs = [
   { q: "O que é a Extração Inteligente de Dados?", a: "A Extração Inteligente usa IA para identificar e extrair automaticamente dados estruturados de qualquer PDF — nomes, datas, valores monetários, informações de contato, campos chave e cláusulas importantes. Sem copiar manualmente." },
   { q: "Que tipos de documentos funcionam melhor?", a: "Contratos, faturas, recibos, demonstrações financeiras, documentos legais, formulários, relatórios e cartas. Qualquer documento com informações estruturadas como nomes, datas ou valores." },
   { q: "Como é diferente da Extração de Tabelas?", a: "A Extração de Tabelas extrai dados tabulares (linhas e colunas) para Excel. A Extração Inteligente encontra dados espalhados pelo documento — nomes em cabeçalhos, datas em parágrafos, valores em cláusulas — e os organiza em categorias estruturadas." },
-  { q: "Posso baixar os dados extraídos?", a: "Sim. Todos os dados extraídos podem ser baixados como arquivo JSON, compatível com planilhas, bancos de dados e ferramentas de automação." },
+  { q: "Posso baixar os dados extraídos?", a: "Sim. Você pode baixar todos os dados extraídos como Excel, CSV ou JSON — prontos para planilhas, bancos de dados e ferramentas de automação." },
   { q: "Qual plano eu preciso?", a: "A Extração Inteligente é uma função do plano Business a $13.99/mês. Inclui todas as outras ferramentas Business como Chat com PDF, Extração de Tabelas, Comparar PDF, Assinatura Eletrônica e Redação de PDF." },
   { q: "Meu documento está seguro?", a: "Sim. Seu PDF é processado com segurança e excluído imediatamente após a extração. Nunca armazenamos seus documentos em nossos servidores." },
 ]
@@ -83,7 +83,7 @@ export default function ExtracaoInteligentePage() {
               <li className="flex items-center gap-2">✓ Extraia nomes, funções e organizações</li>
               <li className="flex items-center gap-2">✓ Identifique datas, valores e moedas</li>
               <li className="flex items-center gap-2">✓ Encontre emails, telefones e endereços</li>
-              <li className="flex items-center gap-2">✓ Baixe como JSON para qualquer fluxo</li>
+              <li className="flex items-center gap-2">✓ Baixe como Excel, CSV ou JSON</li>
             </ul>
           </div>
         </section>
@@ -118,7 +118,7 @@ export default function ExtracaoInteligentePage() {
               {[
                 { num: "1", title: "Envie seu PDF", desc: "Arraste e solte ou clique para selecionar" },
                 { num: "2", title: "A IA extrai dados", desc: "Nomes, datas, valores e mais" },
-                { num: "3", title: "Revise e baixe", desc: "Obtenha dados estruturados como JSON" },
+                { num: "3", title: "Revise e baixe", desc: "Excel, CSV ou JSON" },
               ].map((step) => (
                 <div key={step.num} className="flex-1">
                   <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 20px rgba(20, 216, 196, 0.3), 0 4px 8px rgba(232,129,58,0.1)", border: "1px solid rgba(20,216,196,0.25)" }}>

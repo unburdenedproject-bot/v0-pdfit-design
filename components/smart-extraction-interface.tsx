@@ -86,7 +86,9 @@ export function SmartExtractionInterface() {
           process: "Extraer Datos",
           processing: "Extrayendo datos con IA...",
           startNew: "Nuevo documento",
-          download: "Descargar JSON",
+          downloadExcel: "Descargar Excel",
+          downloadCsv: "Descargar CSV",
+          downloadJson: "Descargar JSON",
           upgradeTitle: "Funcion Business",
           upgradeDesc: "Extraccion Inteligente de Datos esta disponible en el plan Business ($13.99/mes). Extrae automaticamente nombres, fechas, montos y datos clave de cualquier documento.",
           upgradeBtn: "Ver Plan Business",
@@ -108,7 +110,9 @@ export function SmartExtractionInterface() {
             process: "Extrair Dados",
             processing: "Extraindo dados com IA...",
             startNew: "Novo documento",
-            download: "Baixar JSON",
+            downloadExcel: "Baixar Excel",
+            downloadCsv: "Baixar CSV",
+            downloadJson: "Baixar JSON",
             upgradeTitle: "Funcao Business",
             upgradeDesc: "Extracao Inteligente de Dados esta disponivel no plano Business ($13.99/mes). Extraia automaticamente nomes, datas, valores e dados chave de qualquer documento.",
             upgradeBtn: "Ver Plano Business",
@@ -129,7 +133,9 @@ export function SmartExtractionInterface() {
             process: "Extract Data",
             processing: "Extracting data with AI...",
             startNew: "New document",
-            download: "Download JSON",
+            downloadExcel: "Download Excel",
+            downloadCsv: "Download CSV",
+            downloadJson: "Download JSON",
             upgradeTitle: "Business Feature",
             upgradeDesc: "Smart Data Extraction is available on the Business plan ($13.99/month). Automatically pull names, dates, amounts, and key data from any document.",
             upgradeBtn: "View Business Plan",
@@ -209,19 +215,143 @@ export function SmartExtractionInterface() {
     }
   }, [file, pricingUrl, router])
 
-  const handleDownload = useCallback(() => {
-    if (!extraction) return
-    const json = JSON.stringify(extraction, null, 2)
-    const blob = new Blob([json], { type: "application/json" })
+  const baseFilename = useCallback((ext: string): string => {
+    const base = file?.name?.replace(/\.pdf$/i, "") || "extraction"
+    return `${base}-extracted.${ext}`
+  }, [file])
+
+  const triggerDownload = useCallback((blob: Blob, filename: string) => {
     const url = URL.createObjectURL(blob)
     const link = document.createElement("a")
     link.href = url
-    link.download = file?.name?.replace(/\.pdf$/i, "-extracted.json") || "extraction.json"
+    link.download = filename
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
     URL.revokeObjectURL(url)
-  }, [extraction, file])
+  }, [])
+
+  const handleDownloadJson = useCallback(() => {
+    if (!extraction) return
+    const json = JSON.stringify(extraction, null, 2)
+    triggerDownload(new Blob([json], { type: "application/json" }), baseFilename("json"))
+  }, [extraction, baseFilename, triggerDownload])
+
+  const buildRows = useCallback((): { sheet: string; rows: (string | number)[][] }[] => {
+    if (!extraction) return []
+    const sheets: { sheet: string; rows: (string | number)[][] }[] = []
+
+    sheets.push({
+      sheet: "Summary",
+      rows: [
+        ["Field", "Value"],
+        ["Document Type", extraction.document_type || ""],
+        ["Summary", extraction.summary || ""],
+      ],
+    })
+
+    if (Array.isArray(extraction.people) && extraction.people.length) {
+      sheets.push({
+        sheet: "People",
+        rows: [["Name", "Role"], ...extraction.people.map((p: any) => [p?.name || "", p?.role || ""])],
+      })
+    }
+    if (Array.isArray(extraction.organizations) && extraction.organizations.length) {
+      sheets.push({
+        sheet: "Organizations",
+        rows: [["Organization"], ...extraction.organizations.map((o: any) => [String(o)])],
+      })
+    }
+    if (Array.isArray(extraction.dates) && extraction.dates.length) {
+      sheets.push({
+        sheet: "Dates",
+        rows: [["Label", "Value"], ...extraction.dates.map((d: any) => [d?.label || "", d?.value || ""])],
+      })
+    }
+    if (Array.isArray(extraction.amounts) && extraction.amounts.length) {
+      sheets.push({
+        sheet: "Amounts",
+        rows: [
+          ["Label", "Value", "Currency"],
+          ...extraction.amounts.map((a: any) => [a?.label || "", a?.value || "", a?.currency || ""]),
+        ],
+      })
+    }
+    const ci = extraction.contact_info || {}
+    const contactRows: (string | number)[][] = [["Type", "Value"]]
+    for (const e of ci.emails || []) contactRows.push(["Email", e])
+    for (const p of ci.phones || []) contactRows.push(["Phone", p])
+    for (const a of ci.addresses || []) contactRows.push(["Address", a])
+    if (contactRows.length > 1) sheets.push({ sheet: "Contact Info", rows: contactRows })
+
+    if (Array.isArray(extraction.key_values) && extraction.key_values.length) {
+      sheets.push({
+        sheet: "Key Fields",
+        rows: [["Key", "Value"], ...extraction.key_values.map((k: any) => [k?.key || "", k?.value || ""])],
+      })
+    }
+    if (Array.isArray(extraction.important_clauses) && extraction.important_clauses.length) {
+      sheets.push({
+        sheet: "Important Clauses",
+        rows: [["Clause"], ...extraction.important_clauses.map((c: any) => [String(c)])],
+      })
+    }
+
+    return sheets
+  }, [extraction])
+
+  const handleDownloadExcel = useCallback(async () => {
+    if (!extraction) return
+    const ExcelJS = await import("exceljs")
+    const wb = new ExcelJS.default.Workbook()
+    wb.creator = "PDF.it"
+    wb.created = new Date()
+
+    for (const { sheet, rows } of buildRows()) {
+      const ws = wb.addWorksheet(sheet.substring(0, 31))
+      rows.forEach((row, i) => {
+        const r = ws.addRow(row)
+        if (i === 0) {
+          r.eachCell((cell: any) => {
+            cell.font = { bold: true, color: { argb: "FFFFFFFF" } }
+            cell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FF4338CA" } }
+            cell.alignment = { horizontal: "center", vertical: "middle" }
+          })
+        }
+      })
+      ws.columns.forEach((col: any) => {
+        let max = 12
+        col.eachCell({ includeEmpty: true }, (cell: any) => {
+          const v = cell.value ? String(cell.value) : ""
+          max = Math.max(max, Math.min(v.length + 4, 60))
+        })
+        col.width = max
+      })
+    }
+
+    const buffer = await wb.xlsx.writeBuffer()
+    triggerDownload(
+      new Blob([new Uint8Array(buffer as ArrayBuffer)], {
+        type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      }),
+      baseFilename("xlsx")
+    )
+  }, [extraction, buildRows, baseFilename, triggerDownload])
+
+  const handleDownloadCsv = useCallback(() => {
+    if (!extraction) return
+    const escape = (v: string | number): string => {
+      const s = String(v ?? "")
+      return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s
+    }
+    const lines: string[] = []
+    for (const { sheet, rows } of buildRows()) {
+      lines.push(`# ${sheet}`)
+      for (const row of rows) lines.push(row.map(escape).join(","))
+      lines.push("")
+    }
+    triggerDownload(new Blob([lines.join("\n")], { type: "text/csv;charset=utf-8" }), baseFilename("csv"))
+  }, [extraction, buildRows, baseFilename, triggerDownload])
 
   const handleReset = useCallback(() => {
     setFile(null)
@@ -322,13 +452,27 @@ export function SmartExtractionInterface() {
                     <p className="text-xs text-slate-500 capitalize">{extraction.document_type}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 flex-wrap">
                   <button
-                    onClick={handleDownload}
+                    onClick={handleDownloadExcel}
                     className="flex items-center gap-1.5 text-sm text-indigo-600 hover:text-indigo-700 transition-colors font-medium"
                   >
                     <Download className="h-3.5 w-3.5" />
-                    {labels.download}
+                    {labels.downloadExcel}
+                  </button>
+                  <button
+                    onClick={handleDownloadCsv}
+                    className="flex items-center gap-1.5 text-sm text-indigo-600 hover:text-indigo-700 transition-colors font-medium"
+                  >
+                    <Download className="h-3.5 w-3.5" />
+                    {labels.downloadCsv}
+                  </button>
+                  <button
+                    onClick={handleDownloadJson}
+                    className="flex items-center gap-1.5 text-sm text-indigo-600 hover:text-indigo-700 transition-colors font-medium"
+                  >
+                    <Download className="h-3.5 w-3.5" />
+                    {labels.downloadJson}
                   </button>
                   <button
                     onClick={handleReset}

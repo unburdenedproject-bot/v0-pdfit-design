@@ -22,7 +22,7 @@ const faqs = [
   { q: "What is Smart Data Extraction?", a: "Smart Data Extraction uses AI to automatically identify and pull structured data from any PDF — names, dates, monetary amounts, contact information, key-value fields, and important clauses. No manual copying needed." },
   { q: "What types of documents work best?", a: "Contracts, invoices, receipts, financial statements, legal documents, forms, reports, and letters. Any document with structured information like names, dates, or amounts." },
   { q: "How is this different from Table Extraction?", a: "Table Extraction pulls tabular data (rows and columns) into Excel. Smart Data Extraction finds data scattered throughout the document — names in headers, dates in paragraphs, amounts in clauses — and organizes it into structured categories." },
-  { q: "Can I download the extracted data?", a: "Yes. All extracted data can be downloaded as a JSON file, which is compatible with spreadsheets, databases, and automation tools." },
+  { q: "Can I download the extracted data?", a: "Yes. You can download the extracted data as Excel, CSV, or JSON — ready for spreadsheets, databases, and automation tools." },
   { q: "What plan do I need?", a: "Smart Data Extraction is a Business plan feature at $13.99/month. It includes all other Business tools like Chat with PDF, Table Extraction, PDF Compare, eSign, and PDF Redaction." },
   { q: "Is my document secure?", a: "Yes. Your PDF is processed securely and deleted immediately after extraction. We never store your documents on our servers." },
 ]
@@ -92,7 +92,7 @@ export default function SmartExtractionPage() {
               <li className="flex items-center gap-2">✓ Extract names, roles, and organizations</li>
               <li className="flex items-center gap-2">✓ Pull dates, amounts, and currencies</li>
               <li className="flex items-center gap-2">✓ Find emails, phones, and addresses</li>
-              <li className="flex items-center gap-2">✓ Download as JSON for any workflow</li>
+              <li className="flex items-center gap-2">✓ Download as Excel, CSV, or JSON</li>
             </ul>
           </div>
         </section>
@@ -155,7 +155,7 @@ export default function SmartExtractionPage() {
               {[
                 { num: "1", title: "Upload your PDF", desc: "Drag and drop or click to choose a file" },
                 { num: "2", title: "AI extracts data", desc: "Names, dates, amounts, and more" },
-                { num: "3", title: "Review and download", desc: "Get structured data as JSON" },
+                { num: "3", title: "Review and download", desc: "Excel, CSV, or JSON" },
               ].map((step) => (
                 <div key={step.num} className="flex-1">
                   <div
