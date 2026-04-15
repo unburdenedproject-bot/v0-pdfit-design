@@ -971,9 +971,15 @@ export function ProcessingInterface({
     setHasError(false)
     setErrorMessage("")
     setProgress(0)
-    // Scroll to upload area on mobile
+    // Scroll to upload area — use "start" so the zone is at the top of view,
+    // not centered (which was pushing the page past the interface on tall screens).
     setTimeout(() => {
-      document.getElementById("file-upload-zone")?.scrollIntoView({ behavior: "smooth", block: "center" })
+      const el = document.getElementById("file-upload-zone")
+      if (el) {
+        const headerOffset = 80
+        const top = el.getBoundingClientRect().top + window.scrollY - headerOffset
+        window.scrollTo({ top, behavior: "smooth" })
+      }
     }, 100)
   }, [processedFiles])
 

@@ -1,5 +1,35 @@
 # Project Learnings
 
+## 2026-04-14 — pdfjs-dist can't load its worker on Vercel serverless
+
+**What:** `pdfjs-dist@3.x` tries to dynamically require `./pdf.worker.js` at runtime, even when `GlobalWorkerOptions.workerSrc = ""`. On Vercel's nodejs runtime, Next.js strips the worker file from the function bundle, so the fake-worker fallback throws `Cannot find module './pdf.worker.js'`. Any route using `lib/blank-pdf-check.js` (which imports pdfjs-dist directly) will fail.
+**Why it matters:** Our blank-PDF guard was rejecting legitimate PDFs as "corrupted or password-protected" because the guard itself was throwing. Users couldn't use 5 AI tools on any PDF.
+**Apply when:** Never rely on pdfjs-dist throwing to mean "bad PDF" on Vercel. Wrap any pdfjs-dist call in try/catch and CONTINUE on error — log the failure, don't block the user. Better: avoid pdfjs-dist entirely on serverless. For text extraction, OpenAI Files API or Google Document AI are the reliable paths.
+
+## 2026-04-14 — OpenAI Files API is the right primitive for AI-over-PDF tools
+
+**What:** iLoveAPI's `extract` task returns HTTP 400 on PDFs with custom fonts or unusual structure, even when the PDF is readable in any viewer. pdf-parse and pdfjs-dist both struggle on Vercel. Document AI works but costs $0.03/page. OpenAI's Files API (`POST /v1/files` with `purpose=user_data`, then `{type:"file", file:{file_id}}` in chat-completions content) accepts PDFs natively up to 32MB / ~100 pages, handles scanned pages, and bills per input/output token rather than per-page.
+**Why it matters:** Our original architecture (extract text → send text to OpenAI) had four failure modes stacked. Direct upload has one. After migrating 5 AI routes (question-generator, ats-optimizer, smart-extraction, chat-with-pdf, translate-pdf), reliability jumped from "fails on most resumes" to "works on every PDF tested".
+**Apply when:** Building any new AI-over-PDF feature. Default to file-upload. Only extract text on our side if the AI output needs post-processing that requires the raw text stream (rare).
+
+## 2026-04-14 — OpenAI will hallucinate scores on blank PDFs unless told not to
+
+**What:** ats-optimizer gave a confident 45/100 ATS score for an empty PDF with invented feedback like "lacks quantifiable achievements". The model fills the requested JSON schema regardless of input quality.
+**Why it matters:** Users see a plausible-looking result and trust it, then act on fake feedback. Same risk in any AI route that outputs a structured JSON.
+**Apply when:** Add an explicit "is this valid input?" gate to the system prompt and the output schema. For ats-optimizer: `{"is_valid_resume": false, "reason": string}` as an alternate return shape. Check for it in the route and return 422 before normalizing. Also forbid invention explicitly ("NEVER invent content. Use ONLY what's provided.").
+
+## 2026-04-14 — Document AI processor choice matters more than code
+
+**What:** `/table-extraction` used Form Parser, which collapsed multi-cell tables into single columns for any PDF without clean borders. Switching the `GOOGLE_CLOUD_PROCESSOR_ID` env var to a newly-created Layout Parser processor (same project, same auth, same code) restored proper column detection immediately.
+**Why it matters:** We spent time diagnosing a "code" bug that was actually a GCP configuration choice. Google ships multiple processors with very different accuracy profiles on the same input.
+**Apply when:** Before blaming extraction code, confirm which processor ID is active and whether a newer/better processor type exists for the document shape. Layout Parser > Form Parser for tables-in-the-wild.
+
+## 2026-04-14 — Upstash rate limiter must fail-soft or it becomes a DoS
+
+**What:** `@upstash/ratelimit` throws `TypeError: fetch failed` when the KV endpoint is unreachable. The contact form's try/catch caught it as "An unexpected error occurred", blocking all submissions site-wide during the outage.
+**Why it matters:** A third-party service outage should degrade gracefully (allow the request, log the failure) rather than take down first-party functionality.
+**Apply when:** Any route using Upstash must wrap `.limit()` in try/catch and continue on error. Same principle for any non-critical third-party call in a request hot-path.
+
 ## 2026-04-13 — `git add .` sweeps untracked files into commits
 
 **What:** Running `git add .` after a small edit to 3 footer files also staged 42 untracked files that were sitting loose in the project root — Lighthouse HTML reports, logo folders, a `.rar` archive, a stray test PDF (`N2N-2024-question-list-compressed.pdf`), and manual-test xlsx files. All got pushed to the repo in commit `2610532` (+20,591 lines).

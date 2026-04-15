@@ -1,5 +1,35 @@
 # PDF.it - Accomplished Work
 
+## AI Tools Migrated to OpenAI Files API + Bug Sweep (April 14, 2026)
+
+A large post-launch stability pass. Root cause of most AI-tool failures: text-extraction chain (iLoveAPI → pdf-parse → pdfjs-dist → Document AI) is fragile on Vercel serverless. Custom fonts, scanned pages, or unusual PDFs consistently broke all four extractors. Fix: send the PDF directly to OpenAI's Files API and let GPT-4o-mini read it natively.
+
+### Routes rewritten to OpenAI Files API (no more text extraction)
+- `app/api/question-generator/route.ts` — commit `2b2b938`
+- `app/api/ats-optimizer/route.ts` — commit `f0f37b9` (+ premium "invalid resume" card, commit `7b9c9f5`)
+- `app/api/smart-extraction/route.ts` — commit `4faf6c1`
+- `app/api/chat-with-pdf/route.ts` — commit `51715b2` (file uploaded once, reused via `fileId` across chat turns)
+- `app/api/translate-pdf/route.ts` — commits `d12bc55`, `f36f4a6`, `09c8565`
+
+Pattern: `POST /v1/files` with `purpose=user_data` → reference via `{type:"file", file:{file_id}}` in chat completions → `DELETE /v1/files/{id}` in finally block. Error-sanitizer regex now scrubs "OpenAI" alongside iLoveAPI/Document AI/CloudConvert.
+
+### New user-visible features
+- **Question-generator:** PDF + TXT download options (commit `141147a`)
+- **Smart-extraction:** Excel + CSV + JSON downloads with a prominent download bar (commits `1862870`, `c8f61ad`)
+- **Premium "can't read" cards:** ats-optimizer and translate-pdf now show a soft gradient card with tips (Word/Docs export, OCR first, password check) instead of red system-error banners when the PDF is blank/scanned
+
+### Bug fixes in this wave
+- **Generate-resume hallucinations** — SKILLS section was being invented when user typed "No Skills". Fixed with dynamic section whitelist: only sections with real content are passed to the model (commit `211ce68`).
+- **Table-extraction 500 → working** — resolved a chain of issues: OpenSSL decoder error from malformed `GOOGLE_CLOUD_PRIVATE_KEY` (missing `-----BEGIN PRIVATE KEY-----` markers), trailing space in `GOOGLE_CLOUD_PROCESSOR_ID`, and Form Parser's poor accuracy on borderless/merged-cell tables. Fixed by re-pasting the service account key, trimming the processor ID, and switching the processor to Google's **Layout Parser**.
+- **Contact form "An unexpected error occurred"** — Upstash Redis rate-limit fetch was throwing. Made rate limiter fail-soft so contact form submits even during Upstash outages (commit `f7ea16f`).
+- **Billing portal error messages** — replaced hardcoded `paula.vargas3@gmail.com` with `contact@pdf.it.com` in user-facing errors (commit `2ba6ef0`). Internal cron-job alert emails still route to Paula's personal address.
+- **Blank-PDF check fail-soft** — `lib/blank-pdf-check.js` relies on pdfjs-dist, which can't load its worker on Vercel. When the check threw, routes were rejecting valid PDFs as "corrupted or password-protected". All 5 AI routes now log and continue when the check fails.
+- **Broken pdf-parse v2 import** — earlier fallback used `pdf-parse/lib/pdf-parse.js` which is a removed export in v2. Replaced with new `lib/pdf-text-extract.ts` helper (three-tier: pdf-parse v2 → pdfjs-dist → Document AI).
+
+### Docs & tooling
+- **New CLAUDE.md rule:** download buttons must be visually prominent (filled/outlined) in a dedicated bar, never tiny text-links in a header (commit `7599122`).
+- **Layout Parser** is now the Document AI processor of record for `/table-extraction` (config change only, no code).
+
 ## Repo Cleanup — Removed Committed Junk (April 14, 2026)
 
 Commit `d722e8b` removed 20,582 lines of accidentally-committed artifacts from the repo (result of a prior `git add .` sweep):
