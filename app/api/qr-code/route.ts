@@ -1,9 +1,16 @@
 import { NextResponse } from "next/server"
 import QRCode from "qrcode"
 import { createClient } from "@/lib/supabase/server"
+import { isToolEnabled } from "@/lib/feature-flags"
 
 export async function POST(request: Request) {
   try {
+    // Kill switch: Paula can disable this tool instantly via Supabase dashboard (no redeploy).
+    const flag = await isToolEnabled("qr-code")
+    if (!flag.enabled) {
+      return NextResponse.json({ error: flag.message }, { status: 503 })
+    }
+
     // Auth check
     const supabase = await createClient()
     const { data: { user } } = await supabase.auth.getUser()

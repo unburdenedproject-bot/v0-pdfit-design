@@ -11,6 +11,7 @@ import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
 import { isValidBlobUrl } from "@/lib/validate-blob-url";
 import { guardPdfContent } from "@/lib/pdf-content-guard";
+import { isToolEnabled } from "@/lib/feature-flags";
 
 function errorResponse(message: string, status: number = 500): Response {
   return Response.json({ error: message }, { status });
@@ -23,6 +24,12 @@ export async function POST(request: NextRequest): Promise<Response> {
   let uploadedBlobUrl: string | null = null;
 
   try {
+    // Kill switch: Paula can disable this tool instantly via Supabase dashboard (no redeploy).
+    const flag = await isToolEnabled("pdf-summarizer");
+    if (!flag.enabled) {
+      return NextResponse.json({ error: flag.message }, { status: 503 });
+    }
+
     // Auth: Business/Enterprise only
     const { createClient } = await import("@/lib/supabase/server");
     const supabase = await createClient();

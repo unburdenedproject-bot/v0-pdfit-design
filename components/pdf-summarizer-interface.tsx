@@ -19,6 +19,7 @@ import {
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
 import { validateClientFile, getSizeLimitLabel } from "@/lib/client-file-validator"
+import { trackToolEvent, classifyError } from "@/lib/analytics"
 import { TrustBadges } from "@/components/trust-badges"
 
 export function PdfSummarizerInterface() {
@@ -150,6 +151,11 @@ export function PdfSummarizerInterface() {
     }
     const r = await validateClientFile(f, userPlan)
     if (!r.ok) { setHasError(true); setErrorMessage(r.error || "This file cannot be used."); setFile(null); setSummary(null); return }
+    trackToolEvent("pdf-summarizer", "file_selected", {
+      tier: userPlan,
+      file_size_mb: f.size / (1024 * 1024),
+      file_type: f.type || "pdf",
+    })
     setFile(f); setHasError(false); setErrorMessage(""); setSummary(null)
   }, [userPlan])
 
@@ -172,6 +178,13 @@ export function PdfSummarizerInterface() {
     setIsInvalidPdf(false)
 
     let blobUrl: string | null = null
+    const t0 = Date.now()
+    trackToolEvent("pdf-summarizer", "process_start", {
+      tier: userPlan,
+      file_size_mb: file.size / (1024 * 1024),
+      length,
+      language,
+    })
 
     try {
       blobUrl = await uploadFileToBlob(file)
@@ -196,6 +209,12 @@ export function PdfSummarizerInterface() {
         }
         if (response.status === 422 || response.status === 400) {
           setIsInvalidPdf(true)
+          trackToolEvent("pdf-summarizer", "process_error", {
+            tier: userPlan,
+            latency_ms: Date.now() - t0,
+            error_type: classifyError(response.status, message),
+            error_code: response.status,
+          })
           return
         }
         throw new Error(message)
@@ -203,10 +222,19 @@ export function PdfSummarizerInterface() {
 
       const data = await response.json()
       setSummary(data.summary)
+      trackToolEvent("pdf-summarizer", "process_complete", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+      })
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : "An unexpected error occurred."
       setHasError(true)
       setErrorMessage(msg)
+      trackToolEvent("pdf-summarizer", "process_error", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+        error_type: classifyError(undefined, msg),
+      })
     } finally {
       setIsProcessing(false)
       if (blobUrl) deleteBlobUrl(blobUrl)

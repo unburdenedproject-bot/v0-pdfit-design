@@ -11,6 +11,7 @@ import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
 import { isValidBlobUrl } from "@/lib/validate-blob-url";
+import { isToolEnabled } from "@/lib/feature-flags";
 
 // Monthly page limits for table extraction
 // Business: 200 pages/mo ($6.00 cost at $0.03/page vs $13.99 revenue)
@@ -113,6 +114,12 @@ export async function POST(request: NextRequest): Promise<Response> {
   let uploadedBlobUrl: string | null = null;
 
   try {
+    // Kill switch: Paula can disable this tool instantly via Supabase dashboard (no redeploy).
+    const flag = await isToolEnabled("table-extraction");
+    if (!flag.enabled) {
+      return NextResponse.json({ error: flag.message }, { status: 503 });
+    }
+
     // Auth: Business plan only
     const { createClient } = await import("@/lib/supabase/server");
     const supabase = await createClient();

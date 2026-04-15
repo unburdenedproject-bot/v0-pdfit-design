@@ -6,6 +6,7 @@ import sharp from "sharp"
 import { PDFDocument } from "pdf-lib"
 import { del } from "@vercel/blob"
 import { areValidBlobUrls } from "@/lib/validate-blob-url"
+import { isToolEnabled } from "@/lib/feature-flags"
 
 function jsonError(message: string, status = 500) {
   return NextResponse.json({ error: message }, { status })
@@ -15,6 +16,12 @@ export async function POST(req: NextRequest) {
   let blobUrl: string | undefined
 
   try {
+    // Kill switch: Paula can disable this tool instantly via Supabase dashboard (no redeploy).
+    const flag = await isToolEnabled("image-to-pdf")
+    if (!flag.enabled) {
+      return NextResponse.json({ error: flag.message }, { status: 503 })
+    }
+
     // ── Usage check ──
     const { checkUsageAndAuth, logUsage } = await import("@/lib/usage-check")
     const usage = await checkUsageAndAuth("image-to-pdf")

@@ -9,6 +9,7 @@ import { del } from "@vercel/blob";
 import { isValidBlobUrl } from "@/lib/validate-blob-url";
 import { blobUrlToTmp, cleanupTmp } from "@/lib/api/blob-handler";
 import { errorResponse, safeMessageFrom } from "@/lib/api/error-handler";
+import { isToolEnabled } from "@/lib/feature-flags";
 
 /**
  * Convert PDF to XLSX using CloudConvert REST API.
@@ -123,6 +124,12 @@ export async function POST(request: NextRequest) {
   let uploadedBlobUrl: string | null = null;
 
   try {
+    // Kill switch: Paula can disable this tool instantly via Supabase dashboard (no redeploy).
+    const flag = await isToolEnabled("pdf-to-excel");
+    if (!flag.enabled) {
+      return NextResponse.json({ error: flag.message }, { status: 503 });
+    }
+
     // Pro/Business-only gate
     const { createClient } = await import("@/lib/supabase/server");
     const { logUsage } = await import("@/lib/usage-check");

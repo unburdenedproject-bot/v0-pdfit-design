@@ -10,6 +10,7 @@ import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
 import { isValidBlobUrl } from "@/lib/validate-blob-url";
+import { isToolEnabled } from "@/lib/feature-flags";
 
 async function blobUrlToTmp(blobUrl: string): Promise<{ tmpPath: string; name: string }> {
   const res = await fetch(blobUrl);
@@ -104,6 +105,12 @@ export async function POST(request: NextRequest): Promise<NextResponse | Respons
   let uploadedBlobUrl: string | null = null;
 
   try {
+    // Kill switch: Paula can disable this tool instantly via Supabase dashboard (no redeploy).
+    const flag = await isToolEnabled("workflow");
+    if (!flag.enabled) {
+      return NextResponse.json({ error: flag.message }, { status: 503 });
+    }
+
     // Auth: Business or Enterprise plan
     const { createClient } = await import("@/lib/supabase/server");
     const supabase = await createClient();

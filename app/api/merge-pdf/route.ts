@@ -11,6 +11,7 @@ import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
 import { areValidBlobUrls } from "@/lib/validate-blob-url";
+import { isToolEnabled } from "@/lib/feature-flags";
 
 /**
  * Fetch a Vercel Blob URL and write it to /tmp.
@@ -49,6 +50,12 @@ export async function POST(request: NextRequest): Promise<NextResponse | Respons
   let uploadedBlobUrls: string[] = [];
 
   try {
+    // Kill switch: Paula can disable this tool instantly via Supabase dashboard (no redeploy).
+    const flag = await isToolEnabled("merge-pdf");
+    if (!flag.enabled) {
+      return NextResponse.json({ error: flag.message }, { status: 503 });
+    }
+
     // Usage check: auth + daily limit
     const { checkUsageAndAuth, logUsage } = await import("@/lib/usage-check");
     const usage = await checkUsageAndAuth("merge-pdf");

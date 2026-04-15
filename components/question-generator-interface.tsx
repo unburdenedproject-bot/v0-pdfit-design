@@ -22,6 +22,7 @@ import {
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
 import { validateClientFile, getSizeLimitLabel } from "@/lib/client-file-validator"
+import { trackToolEvent, classifyError } from "@/lib/analytics"
 import { TrustBadges } from "@/components/trust-badges"
 
 interface Question {
@@ -178,6 +179,11 @@ export function QuestionGeneratorInterface() {
     }
     const r = await validateClientFile(f, userPlan)
     if (!r.ok) { setHasError(true); setErrorMessage(r.error || "This file cannot be used."); setFile(null); setQuestions([]); setRevealedAnswers(new Set()); return }
+    trackToolEvent("question-generator", "file_selected", {
+      tier: userPlan,
+      file_size_mb: f.size / (1024 * 1024),
+      file_type: f.type || "pdf",
+    })
     setFile(f); setHasError(false); setErrorMessage(""); setQuestions([]); setRevealedAnswers(new Set())
   }, [userPlan])
 
@@ -200,6 +206,14 @@ export function QuestionGeneratorInterface() {
     setIsInvalidPdf(false)
 
     let blobUrl: string | null = null
+    const t0 = Date.now()
+    trackToolEvent("question-generator", "process_start", {
+      tier: userPlan,
+      file_size_mb: file.size / (1024 * 1024),
+      question_type: questionType,
+      count,
+      difficulty,
+    })
 
     try {
       blobUrl = await uploadFileToBlob(file)
@@ -224,6 +238,12 @@ export function QuestionGeneratorInterface() {
         }
         if (response.status === 422 || response.status === 400) {
           setIsInvalidPdf(true)
+          trackToolEvent("question-generator", "process_error", {
+            tier: userPlan,
+            latency_ms: Date.now() - t0,
+            error_type: classifyError(response.status, message),
+            error_code: response.status,
+          })
           return
         }
         throw new Error(message)
@@ -231,15 +251,25 @@ export function QuestionGeneratorInterface() {
 
       const data = await response.json()
       setQuestions(data.questions || [])
+      trackToolEvent("question-generator", "process_complete", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+        output_count: (data.questions || []).length,
+      })
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : "An unexpected error occurred."
       setHasError(true)
       setErrorMessage(msg)
+      trackToolEvent("question-generator", "process_error", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+        error_type: classifyError(undefined, msg),
+      })
     } finally {
       setIsProcessing(false)
       if (blobUrl) deleteBlobUrl(blobUrl)
     }
-  }, [file, questionType, count, difficulty, pricingUrl, router])
+  }, [file, questionType, count, difficulty, pricingUrl, router, userPlan])
 
   const toggleAnswer = useCallback((index: number) => {
     setRevealedAnswers((prev) => {
@@ -269,6 +299,7 @@ export function QuestionGeneratorInterface() {
   }, [formatQuestionsAsText])
 
   const handleDownloadTxt = useCallback(() => {
+    trackToolEvent("question-generator", "result_downloaded", { tier: userPlan, format: "txt" })
     const text = formatQuestionsAsText()
     const blob = new Blob([text], { type: "text/plain;charset=utf-8" })
     const url = URL.createObjectURL(blob)
@@ -280,9 +311,10 @@ export function QuestionGeneratorInterface() {
     a.click()
     document.body.removeChild(a)
     URL.revokeObjectURL(url)
-  }, [file, formatQuestionsAsText])
+  }, [file, formatQuestionsAsText, userPlan])
 
   const handleDownloadPdf = useCallback(async () => {
+    trackToolEvent("question-generator", "result_downloaded", { tier: userPlan, format: "pdf" })
     const { PDFDocument, StandardFonts, rgb } = await import("pdf-lib")
     const pdfDoc = await PDFDocument.create()
     const font = await pdfDoc.embedFont(StandardFonts.Helvetica)
@@ -356,7 +388,7 @@ export function QuestionGeneratorInterface() {
     a.click()
     document.body.removeChild(a)
     URL.revokeObjectURL(url)
-  }, [file, questions])
+  }, [file, questions, userPlan])
 
   const handleReset = useCallback(() => {
     setFile(null)

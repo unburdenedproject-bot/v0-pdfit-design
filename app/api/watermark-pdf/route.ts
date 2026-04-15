@@ -1,7 +1,8 @@
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
-import { type NextRequest } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
+import { isToolEnabled } from "@/lib/feature-flags";
 import { writeFile, unlink } from "fs/promises";
 import { join } from "path";
 import { randomUUID } from "crypto";
@@ -15,6 +16,12 @@ export async function POST(request: NextRequest) {
   let uploadedBlobUrl: string | null = null;
 
   try {
+    // Kill switch: Paula can disable this tool instantly via Supabase dashboard (no redeploy).
+    const flag = await isToolEnabled("watermark-pdf");
+    if (!flag.enabled) {
+      return NextResponse.json({ error: flag.message }, { status: 503 });
+    }
+
     // Usage check: auth + daily limit
     const { createClient } = await import("@/lib/supabase/server");
     const { logUsage } = await import("@/lib/usage-check");

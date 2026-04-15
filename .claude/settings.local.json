@@ -13,7 +13,9 @@
       "Bash(ls -la .next/server/app/sitemap*)",
       "Bash(ls -la .next/server/app/sitemap/)",
       "Bash(ls -la app/sitemap*)",
-      "Bash(ls *.md)"
+      "Bash(ls *.md)",
+      "Read(//c/Users/paula/.claude/**)",
+      "Read(//c/Users/paula/.claude/projects/**)"
     ]
   }
 }

@@ -11,6 +11,7 @@ import { FileProcessor } from "@/lib/file-processor"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
 import { validateClientFile, getSizeLimitLabel } from "@/lib/client-file-validator"
 import { SoftErrorCard, isUserInputError } from "@/components/processing/soft-error-card"
+import { trackToolEvent, classifyError } from "@/lib/analytics"
 import { useJobPolling } from "@/lib/use-job-polling"
 import { TierGateCard } from "@/components/processing/tier-gate-card"
 import { ProcessingResult } from "@/components/processing/processing-result"
@@ -181,17 +182,28 @@ export function ProcessingInterface({
       if (!r.ok) {
         setHasError(true)
         setErrorMessage(r.error || "This file cannot be used.")
+        trackToolEvent(toolName, "process_error", {
+          tier: userPlan,
+          error_type: classifyError(undefined, r.error),
+        })
         return
       }
     }
     setHasError(false)
     setErrorMessage("")
+    incoming.forEach((f) => {
+      trackToolEvent(toolName, "file_selected", {
+        tier: userPlan,
+        file_size_mb: f.size / (1024 * 1024),
+        file_type: f.type || f.name.split(".").pop(),
+      })
+    })
     if (isPaidUser) {
       setFiles((prev) => [...prev, ...incoming])
     } else {
       setFiles(incoming.slice(0, freeFileLimit))
     }
-  }, [isPaidUser, freeFileLimit, userPlan])
+  }, [isPaidUser, freeFileLimit, userPlan, toolName])
 
   const handleDrop = useCallback((e: React.DragEvent) => {
     e.preventDefault()
@@ -246,6 +258,13 @@ export function ProcessingInterface({
     setIsProcessing(true)
     setHasError(false)
     setProgress(0)
+
+    const processStartedAt = Date.now()
+    trackToolEvent(toolName, "process_start", {
+      tier: userPlan,
+      file_size_mb: files.reduce((s, f) => s + f.size, 0) / (1024 * 1024),
+      file_count: files.length,
+    })
 
     try {
       const processed: ProcessedFile[] = []
@@ -883,6 +902,11 @@ export function ProcessingInterface({
       setProcessedFiles(processed)
       setIsProcessing(false)
       setIsComplete(true)
+      trackToolEvent(toolName, "process_complete", {
+        tier: userPlan,
+        latency_ms: Date.now() - processStartedAt,
+        output_count: processed.length,
+      })
     } catch (error) {
       setHasError(true)
       let message = error instanceof Error ? error.message : "An unknown error occurred"
@@ -895,10 +919,19 @@ export function ProcessingInterface({
       }
       setErrorMessage(message)
       setIsProcessing(false)
+      trackToolEvent(toolName, "process_error", {
+        tier: userPlan,
+        latency_ms: Date.now() - processStartedAt,
+        error_type: classifyError(undefined, message),
+      })
     }
-  }, [files, toolName])
+  }, [files, toolName, userPlan])
 
   const downloadFile = useCallback(async (fileUrl: string, fileName: string) => {
+    trackToolEvent(toolName, "result_downloaded", {
+      tier: userPlan,
+      format: fileName.split(".").pop()?.toLowerCase() || "unknown",
+    })
     try {
       const response = await fetch(fileUrl)
       const blob = await response.blob()

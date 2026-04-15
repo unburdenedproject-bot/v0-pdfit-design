@@ -9,6 +9,7 @@ import { del } from "@vercel/blob";
 import { isValidBlobUrl } from "@/lib/validate-blob-url";
 import { blobUrlToTmp, cleanupTmp } from "@/lib/api/blob-handler";
 import { errorResponse, safeMessageFrom } from "@/lib/api/error-handler";
+import { isToolEnabled } from "@/lib/feature-flags";
 
 /**
  * Upload-Ready PDF Optimizer
@@ -26,6 +27,12 @@ export async function POST(request: NextRequest): Promise<NextResponse | Respons
   let uploadedBlobUrl: string | null = null;
 
   try {
+    // Kill switch: Paula can disable this tool instantly via Supabase dashboard (no redeploy).
+    const flag = await isToolEnabled("upload-ready-pdf");
+    if (!flag.enabled) {
+      return NextResponse.json({ error: flag.message }, { status: 503 });
+    }
+
     // Auth & usage check
     const { checkUsageAndAuth, logUsage } = await import("@/lib/usage-check");
     const usage = await checkUsageAndAuth("upload-ready-pdf");

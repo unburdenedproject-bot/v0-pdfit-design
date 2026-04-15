@@ -10,6 +10,7 @@ import { del } from "@vercel/blob";
 import { isValidBlobUrl } from "@/lib/validate-blob-url";
 import { blobUrlToTmp, cleanupTmp } from "@/lib/api/blob-handler";
 import { errorResponse, safeMessageFrom } from "@/lib/api/error-handler";
+import { isToolEnabled } from "@/lib/feature-flags";
 
 const ALLOWED_LEVELS = new Set(["low", "recommended", "extreme"]);
 
@@ -20,6 +21,12 @@ export async function POST(request: NextRequest) {
   let uploadedBlobUrl: string | null = null;
 
   try {
+    // Kill switch: Paula can disable this tool instantly via Supabase dashboard (no redeploy).
+    const flag = await isToolEnabled("compress-pdf");
+    if (!flag.enabled) {
+      return NextResponse.json({ error: flag.message }, { status: 503 });
+    }
+
     const { checkUsageAndAuth, logUsage } = await import("@/lib/usage-check");
     const usage = await checkUsageAndAuth("compress-pdf");
     if (!usage.allowed) {

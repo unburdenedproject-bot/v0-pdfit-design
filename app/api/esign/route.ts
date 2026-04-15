@@ -11,6 +11,7 @@ import { join } from "path";
 import { randomUUID } from "crypto";
 import { del } from "@vercel/blob";
 import { isValidBlobUrl } from "@/lib/validate-blob-url";
+import { isToolEnabled } from "@/lib/feature-flags";
 
 interface BlobToTmpResult {
   tmpPath: string;
@@ -81,6 +82,12 @@ export async function POST(request: NextRequest): Promise<NextResponse | Respons
   let uploadedBlobUrl: string | null = null;
 
   try {
+    // Kill switch: Paula can disable this tool instantly via Supabase dashboard (no redeploy).
+    const flag = await isToolEnabled("esign");
+    if (!flag.enabled) {
+      return NextResponse.json({ error: flag.message }, { status: 503 });
+    }
+
     // Auth: Business plan only
     const { createClient } = await import("@/lib/supabase/server");
     const supabase = await createClient();

@@ -2,6 +2,7 @@ export const runtime = "nodejs";
 export const maxDuration = 300;
 
 import { NextRequest, NextResponse } from "next/server";
+import { isToolEnabled } from "@/lib/feature-flags";
 
 function errorResponse(message: string, status: number = 500): Response {
   return Response.json({ error: message }, { status });
@@ -178,6 +179,12 @@ function buildDocx(resumeText: string, coverLetterText: string): Promise<Buffer>
 
 export async function POST(request: NextRequest): Promise<Response> {
   try {
+    // Kill switch: Paula can disable this tool instantly via Supabase dashboard (no redeploy).
+    const flag = await isToolEnabled("generate-resume");
+    if (!flag.enabled) {
+      return NextResponse.json({ error: flag.message }, { status: 503 });
+    }
+
     // Auth: Pro/Business/Enterprise only
     const { createClient } = await import("@/lib/supabase/server");
     const supabase = await createClient();

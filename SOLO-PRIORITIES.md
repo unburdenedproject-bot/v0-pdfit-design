@@ -16,7 +16,21 @@ Suggestions I made to Paula on April 15, 2026 about things a solo non-technical 
 
 **First step:** Add a `trackToolEvent(tool, event, data)` helper (`lib/analytics.ts`) that wraps `gtag("event", ...)` and emit: `tool_opened`, `file_selected`, `process_start`, `process_complete`, `result_downloaded`, `error_shown`, `upgrade_clicked`. Then build a funnel in GA4 Explore.
 
-**Status:** ☐ Not started
+**Status:** ◐ In progress — helper shipped + instrumented in the 3 highest-traffic files (covers 28 tools).
+
+**What's done:**
+- `lib/analytics.ts` — `trackToolEvent(tool, event, data)` helper + `classifyError(status, message)` categorizer. Pushes to the existing GTM dataLayer under a single event name `tool_event` with dimensions `tool`, `tool_event`, `tier`, plus optional `file_size_mb`, `latency_ms`, `error_type`, `format`, etc.
+- **Instrumented: `components/processing-interface.tsx`** — fires `file_selected`, `process_start`, `process_complete`, `process_error`, `result_downloaded`. Covers ~26 tools that use this shared component (compress, merge, split, rotate, protect, unlock, watermark, OCR, pdf-to-word/excel/ppt/jpg/png/txt, image-to-pdf, flatten, office-to-pdf, powerpoint-to-pdf, excel-to-pdf, extract-images, etc.)
+- **Instrumented: `components/pdf-summarizer-interface.tsx`** — full lifecycle on the AI Business tool
+- **Instrumented: `components/question-generator-interface.tsx`** — full lifecycle including `result_downloaded` with `format: "pdf" | "txt"`
+
+**Still to wire (follow-up):** chat-with-pdf, translate-pdf, ats-optimizer, smart-extraction, table-extraction, resume-builder, esign, pdf-compare, phone-scan-cleanup, redaction, workflow, url-pdf, qr-code. Pattern is identical to pdf-summarizer — copy-paste.
+
+**How to use in GA4:**
+1. Wait 24h for events to flow
+2. Explore → Blank → add `tool_event` as the event name filter
+3. Funnel: `file_selected` → `process_start` → `process_complete` → `result_downloaded`, segmented by `tier`
+4. Drop-off from `process_start` → `process_complete` is the error funnel — pivot by `error_type` to see which tools have the highest real-failure rate
 
 ---
 
@@ -48,7 +62,7 @@ Suggestions I made to Paula on April 15, 2026 about things a solo non-technical 
 - Client-side: render the premium soft card ("Temporarily unavailable — usually restored within an hour") instead of a red error
 - Paula flips the flag in Supabase dashboard (no redeploy needed) and the tool goes dark gracefully
 
-**Status:** ◐ In progress — infrastructure shipped April 15, reference impl on `chat-with-pdf`. Remaining: wire the flag into the other 31 API routes.
+**Status:** ✅ Complete — all 35 tool API routes now check the flag at the top and return 503 with a soft-card message if disabled. Client automatically renders the "Temporarily Unavailable" soft card via auto-detection in `SoftErrorCard`.
 
 **What's done:**
 - `scripts/008_create_feature_flags.sql` — new table `public.feature_flags` seeded with all 32 tool slugs
@@ -74,7 +88,7 @@ if (!flag.enabled) {
 ```
 Then in the corresponding interface component, add a `503` branch that sets `hasError`/`errorMessage` (same as 422 handling). If the tool uses the full-page `<SoftErrorCard />` via `isUserInputError`, add a separate check for `response.status === 503` and render `<SoftErrorCard variant="unavailable" ... />`.
 
-**Routes still to wire** (31): ats-optimizer, compress-pdf, create-resume, esign, image-to-pdf, merge-pdf, ocr-pdf, pdf-compare, pdf-summarizer, pdf-to-excel, pdf-to-jpg, pdf-to-png, pdf-to-powerpoint, pdf-to-txt, pdf-to-word, phone-scan-cleanup, protect-pdf, qr-code, question-generator, redact-pdf, rotate-pdf, smart-extraction, split-pdf, table-extraction, translate-pdf, unlock-pdf, url-to-pdf, watermark-pdf, workflow.
+**All 35 tool routes wired** (see `scripts/009_fix_feature_flag_slugs.sql` for the canonical slug list matching `/app/api/<slug>/` directory names).
 
 ---
 
@@ -132,7 +146,9 @@ Then in the corresponding interface component, add a `503` branch that sets `has
 - Top 3 Sentry error types
 - Ship **one** thing based on what you saw — not three, not ten — one
 
-**Status:** ☐ Not started (behavioral, not code)
+**Status:** ◐ Skill shipped — `/weekly-review` slash command available in Claude Code. Run it every Monday. Paula still needs to form the ritual (behavioral).
+
+**How to use:** In Claude Code, type `/weekly-review` every Monday morning. Claude will produce the report in the format documented in `~/.claude/commands/weekly-review.md`. Skim in under 60 seconds, pick one experiment, and ship it.
 
 ---
 

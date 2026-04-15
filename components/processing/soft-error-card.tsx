@@ -17,16 +17,21 @@ interface SoftErrorCardProps {
  * summarizer / question-generator. Never use the red AlertCircle look for
  * user-input errors — see BRAND.md.
  */
-export function SoftErrorCard({ errorMessage, onReset, retryLabel = "Try Again", variant = "input-error" }: SoftErrorCardProps) {
+export function SoftErrorCard({ errorMessage, onReset, retryLabel = "Try Again", variant }: SoftErrorCardProps) {
   const lower = errorMessage.toLowerCase()
-  const heading = variant === "unavailable"
+  // Auto-detect "temporarily unavailable" messages (from 503 responses via feature flags)
+  // so callers don't have to pass variant="unavailable" explicitly.
+  const effectiveVariant = variant || (lower.includes("temporarily unavailable") || lower.includes("usually comes back")
+    ? "unavailable"
+    : "input-error")
+  const heading = effectiveVariant === "unavailable"
     ? "Temporarily Unavailable"
     : lower.includes("too large") || lower.includes("size limit")
       ? "File Too Large"
       : lower.includes("appears to be empty") || lower.includes("is empty") || lower.includes("empty and cannot")
         ? "Empty File"
         : "Unsupported File Type"
-  const Icon = variant === "unavailable" ? Clock : FileText
+  const Icon = effectiveVariant === "unavailable" ? Clock : FileText
 
   return (
     <section className="py-16">
@@ -74,6 +79,9 @@ export function isUserInputError(errorMessage: string): boolean {
     lower.includes("appears to be empty") ||
     lower.includes("is empty") ||
     lower.includes("empty and cannot") ||
-    lower.includes("empty and contains")
+    lower.includes("empty and contains") ||
+    // Feature-flag 503 messages — route to soft card in "unavailable" variant
+    lower.includes("temporarily unavailable") ||
+    lower.includes("usually comes back")
   )
 }
