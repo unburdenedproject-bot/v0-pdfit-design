@@ -109,9 +109,10 @@ export async function GET(request: NextRequest) {
     })
     if (homeRes.ok) {
       const html = await homeRes.text()
-      if (!html.includes('og:title')) issues.push("[META] Homepage missing og:title")
-      if (!html.includes('canonical')) issues.push("[META] Homepage missing canonical")
-      if (!html.includes('hreflang')) issues.push("[META] Homepage missing hreflang")
+      const htmlLower = html.toLowerCase()
+      if (!htmlLower.includes('og:title')) issues.push("[META] Homepage missing og:title")
+      if (!htmlLower.includes('canonical')) issues.push("[META] Homepage missing canonical")
+      if (!htmlLower.includes('hreflang')) issues.push("[META] Homepage missing hreflang")
     }
   } catch {
     issues.push("[META] Failed to fetch homepage for meta check")
