@@ -85,7 +85,7 @@ export async function GET(request: NextRequest): Promise<Response> {
         from: "Paula from PDF.it <noreply@pdf.it.com>",
         to: sub.email,
         subject: eligible.subject,
-        text: eligible.body(),
+        html: eligible.html(),
       });
 
       // Record the send

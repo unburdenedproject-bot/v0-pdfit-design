@@ -57,7 +57,7 @@ export async function POST(request: NextRequest) {
             from: "Paula from PDF.it <noreply@pdf.it.com>",
             to: cleanEmail,
             subject: welcome.subject,
-            text: welcome.body(),
+            html: welcome.html(),
           })
           // Mark as sent so the drip cron doesn't re-send
           await supabase.from("newsletter_emails_sent").upsert(
