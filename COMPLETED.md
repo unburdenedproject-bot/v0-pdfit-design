@@ -1,5 +1,45 @@
 # PDF.it - Accomplished Work
 
+## Solo Builder Priorities — Kill Switch, Observability, Weekly Review (April 15, 2026 — evening)
+
+Second session of the day, focused on solo-operator infrastructure gaps identified in a strategy conversation.
+
+### New doc: `SOLO-PRIORITIES.md`
+Framework of 7 priorities a non-technical solo founder tends to miss: observability, emergency runbook, kill switches, dashboard as growth asset, cancel survey, cost alerts, weekly ritual. Each with status, first step, and replication pattern.
+
+### Priority #3 — Kill switch per tool (COMPLETE)
+Paula can now disable any tool instantly from Supabase without a redeploy. Fails open if Supabase is unreachable.
+- `scripts/008_create_feature_flags.sql` — Supabase table `feature_flags` seeded with all tool slugs (32 rows)
+- `scripts/009_fix_feature_flag_slugs.sql` — amendment to align seed slugs with actual `/api/<slug>/` directory names (removed 4 wrong, added 9 missing)
+- `lib/feature-flags.ts` — `isToolEnabled(slug)` helper with 30s in-memory cache + fail-open on Supabase errors
+- 35 tool API routes wired with the flag check at the top (one agent-driven sweep — commit `a8e32de`)
+- `components/processing/soft-error-card.tsx` — new optional `variant` prop + auto-detection of "temporarily unavailable" messages so 503 responses route to the "Temporarily Unavailable" Clock-icon card automatically. No caller changes needed.
+- Reference implementation: `app/api/chat-with-pdf/route.ts`
+
+### Priority #1 — Observability (PARTIAL)
+- `lib/analytics.ts` — `trackToolEvent(tool, event, data)` + `classifyError(status, message)` helpers. Pushes to the existing GTM dataLayer under a single event name `tool_event` with dimensions `tool`, `tool_event`, `tier`, `file_size_mb`, `latency_ms`, `error_type`, `format`.
+- **Instrumented:** `processing-interface.tsx` (covers ~26 tools), `pdf-summarizer-interface.tsx`, `question-generator-interface.tsx`.
+- **Remaining to wire** (mechanical copy-paste): chat-with-pdf, translate-pdf, ats-optimizer, smart-extraction, table-extraction, resume-builder, esign, pdf-compare, phone-scan-cleanup, redaction, workflow, url-pdf, qr-code.
+- **How to use in GA4:** Wait 24h, then GA4 → Explore → filter event name `tool_event` → build a funnel `file_selected → process_start → process_complete → result_downloaded` segmented by `tier`.
+
+### Priority #7 — Weekly review skill (SHIPPED)
+- `~/.claude/commands/weekly-review.md` — new `/weekly-review` slash command. Produces a structured Monday ops report (revenue delta, top tools, top errors, support themes, costs, one experiment for the week). Instructions tell Claude to be honest, keep experiment to one thing, and end with specific pep not generic motivation.
+
+### SEO cron false-positive fix
+`app/api/cron/seo-health/route.ts` was reporting "Homepage missing hreflang" because it checked lowercase but Next.js emits `hrefLang` (camelCase). Changed to case-insensitive check. Also applies to og:title and canonical for future framework updates. Commit `d31f941`.
+
+### Upstash rate limiter gap discovered
+The Upstash Redis DB `pdfit-ratelimit` (internal name `decent-bobcat`) is marked DELETED. Rate limiting is silently OFF across the site (middleware is fail-open by design). Documented in `CONTINUE-HERE.md` as urgent. Fix: create new DB via Vercel's Upstash integration → env vars auto-populate → redeploy.
+
+### New docs created
+- `CONTINUE-HERE.md` — single-source status brief and to-do list for resuming in the next session
+- `SOLO-PRIORITIES.md` — the 7-priority framework + per-item status
+
+### CLAUDE.md updates
+- Added "Feature Flags (Kill Switch Per Tool)" section: every new API route must check `isToolEnabled(slug)`
+
+---
+
 ## UX Polish Wave — No-Red Messages, Header Search, About CTA, File-Size Labels (April 15, 2026)
 
 End-to-end polish pass focused on tester feedback and the "no red for user messages" brand rule.

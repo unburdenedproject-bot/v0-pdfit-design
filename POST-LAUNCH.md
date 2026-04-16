@@ -1,10 +1,12 @@
 # PDF.it — Post-Launch Roadmap
 
-Last updated: April 15, 2026 (+2 days post-launch)
+Last updated: April 15, 2026 (+2 days post-launch, evening)
 Status: Planning — do not build any of this before reaching 1,000 paid subscribers.
 
 ## Already Shipped Post-Launch (not part of the Phase 1–4 gates)
 
+- **April 15, 2026 (evening) — Solo builder priorities kickoff.** New SOLO-PRIORITIES.md doc. Kill switch infrastructure: `feature_flags` Supabase table + `lib/feature-flags.ts` + all 35 tool API routes wired with `isToolEnabled` check + SoftErrorCard auto-detects 503 "unavailable" messages. Paula can now disable any tool from Supabase with no redeploy. Observability helper `lib/analytics.ts` shipped and instrumented in 3 interfaces (covers 28 tools). `/weekly-review` Claude Code slash command created. SEO cron false-positive fix (hreflang case sensitivity). See COMPLETED.md for details.
+- **April 15, 2026 (evening) — Discovered Upstash rate limiter DB deleted.** Rate limiting silently off. Paula will recreate before driving traffic. Documented in CONTINUE-HERE.md.
 - **April 15, 2026 — No-red audit sweep (38 files).** Brand rule expanded: red is no longer used for any user-facing message (errors, warnings, tips, validation). New shared component `components/processing/soft-error-card.tsx` plus an `isUserInputError` guard rolled into 13 tool interfaces. Auth pages (EN/ES/BR), contact forms (EN/ES/BR), dashboard billing errors, newsletter, and every inline error banner now use the premium soft card. Red is reserved for genuine backend failures only. Documented in BRAND.md > Error & Info Messages and CLAUDE.md.
 - **April 15, 2026 — Header redesign:** removed About/Contact links from nav (moved to footer only), added compact tool search in all 3 locales that routes to the tools page with `?q=`. EN `/tools` filters by the query; ES/BR lands on tools page (filtering gap on those locales — follow-up only if requested).
 - **April 15, 2026 — About CTA:** added "Compare all plans →" teal button on `/about`, `/es/acerca`, `/br/sobre` below the plan preview cards.
