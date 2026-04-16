@@ -32,7 +32,7 @@ All set on Vercel for Production and Preview:
 - NEXT_PUBLIC_SENTRY_DSN — Sentry error tracking DSN (configured on Vercel; @sentry/nextjs package removed from codebase due to Node 24 incompatibility)
 - CRON_SECRET — protects cron job endpoints from unauthorized access (LIVE)
 - GOOGLE_SAFE_BROWSING_API_KEY — Google Safe Browsing v4 key for url-to-pdf phishing/malware check (LIVE, verified April 12, 2026 with testsafebrowsing.appspot.com/s/phishing.html → returns 400 "URL is unsafe"). If unset, check is skipped and a console warning is logged; SSRF protection still runs.
-- KV_REST_API_URL, KV_REST_API_TOKEN — Upstash Redis for rate limiting on contact form (fallback: skip rate limit if unset)
+- Rate limiting Redis (Upstash) — set EITHER `KV_REST_API_URL` + `KV_REST_API_TOKEN` (legacy Vercel KV marketplace) OR `UPSTASH_REDIS_REST_URL` + `UPSTASH_REDIS_REST_TOKEN` (current Upstash marketplace). The code accepts either naming. If both are unset, rate limiting silently disables (fail-open) and a warning is logged at middleware startup.
 - RESEND_API_KEY — transactional emails (trial drip, payment failed, welcome)
 
 ## Google Cloud Credentials

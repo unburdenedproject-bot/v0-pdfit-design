@@ -4,8 +4,17 @@ import { Ratelimit } from "@upstash/ratelimit"
 import { Redis } from "@upstash/redis/cloudflare"
 import { createServerClient } from "@supabase/ssr"
 
-const kvUrl = process.env.KV_REST_API_URL
-const kvToken = process.env.KV_REST_API_TOKEN
+// Accept either Vercel KV env vars (legacy marketplace) or Upstash direct env vars
+// (current marketplace). Whichever pair is present wins.
+const kvUrl = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL
+const kvToken = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN
+
+if (!kvUrl || !kvToken) {
+  console.warn(
+    "[middleware] Rate limiter is DISABLED — no Upstash credentials found. " +
+    "Set KV_REST_API_URL + KV_REST_API_TOKEN or UPSTASH_REDIS_REST_URL + UPSTASH_REDIS_REST_TOKEN."
+  )
+}
 
 // Authenticated users: 300 req/min (avoids blocking shared office IPs)
 const authenticatedRatelimit =

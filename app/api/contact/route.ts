@@ -5,11 +5,14 @@ import { Ratelimit } from "@upstash/ratelimit"
 import { Redis } from "@upstash/redis"
 import { checkCsrf } from "@/lib/csrf"
 
-// Rate limit: 3 contact submissions per hour per IP
+// Rate limit: 3 contact submissions per hour per IP.
+// Accept either legacy Vercel KV or current Upstash env var names.
+const upstashUrl = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL
+const upstashToken = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN
 const ratelimit =
-  process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN
+  upstashUrl && upstashToken
     ? new Ratelimit({
-        redis: Redis.fromEnv(),
+        redis: new Redis({ url: upstashUrl, token: upstashToken }),
         limiter: Ratelimit.slidingWindow(3, "1 h"),
         prefix: "contact",
       })
