@@ -45,10 +45,10 @@
 
 ## 🔴 Paula's to-do list (open items)
 
-### ✅ Everything else done. Only one item left:
+### ✅ Everything done.
 
-### Write the runbook (~1 hour)
-- [ ] Create `RUNBOOK.md` with crisis steps: Stripe webhook failure, Vercel deploy broken, OpenAI key leaked, Supabase down, iLoveAPI quota exhausted, DNS issue, database restore. You know what *you'd* do — Claude can scaffold a template on request.
+### ✅ Runbook — DONE (April 16, 2026)
+Paula wrote a thorough `RUNBOOK.md` covering 13 incident types (Vercel down, Stripe webhook failure, OpenAI key leaked, Supabase outage, iLoveAPI quota, DNS, database restore, Resend down, Upstash down, bot attack, user-paid-no-access, high Vercel bill, OpenAI 429). Claude reviewed and fixed factual errors (env var names, webhook path, X/Twitter removed) + added Quick Tool Disable section + OpenAI 429 section + weekly-review ritual.
 
 ### Optional nice-to-haves
 - [ ] Verify SPF/DKIM/DMARC green in Resend dashboard → Domains → `pdf.it.com` (reduces spam flagging)

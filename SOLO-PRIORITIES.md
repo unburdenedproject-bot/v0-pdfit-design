@@ -47,7 +47,7 @@ Suggestions I made to Paula on April 15, 2026 about things a solo non-technical 
 - Domain/DNS issue → Vercel > Settings > Domains, Cloudflare records
 - Database corruption → Supabase daily backups location + restore steps
 
-**Status:** ☐ Not started (Paula to write)
+**Status:** ✅ Complete (April 16, 2026) — `RUNBOOK.md` in repo root covers 13 incident types with symptom → steps → verification pattern. Starts with a "Quick Tool Disable" section so a single-tool issue can be defused in 30 seconds before debugging.
 
 ---
 
