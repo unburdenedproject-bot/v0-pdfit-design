@@ -45,30 +45,35 @@
 
 ## 🔴 Paula's to-do list (open items)
 
-### ✅ Everything done.
+**All 7 solo-builder priorities are complete.** Nothing on your plate.
 
-### ✅ Runbook — DONE (April 16, 2026)
-Paula wrote a thorough `RUNBOOK.md` covering 13 incident types (Vercel down, Stripe webhook failure, OpenAI key leaked, Supabase outage, iLoveAPI quota, DNS, database restore, Resend down, Upstash down, bot attack, user-paid-no-access, high Vercel bill, OpenAI 429). Claude reviewed and fixed factual errors (env var names, webhook path, X/Twitter removed) + added Quick Tool Disable section + OpenAI 429 section + weekly-review ritual.
+### ✅ All completed April 16, 2026
+- Runbook (`RUNBOOK.md`) — 13 incident types, reviewed by Claude for factual errors
+- Dashboard growth features — time saved, favorite tool, AI discovery banner (EN/ES/BR)
+- Cancel survey — `cancellation_reasons` table + webhook capture + Stripe portal configured
 
-### Optional nice-to-haves
-- [ ] Verify SPF/DKIM/DMARC green in Resend dashboard → Domains → `pdf.it.com` (reduces spam flagging)
-- [ ] GA4 Explore: after 24h of data, build the `tool_event` funnel (`file_selected → process_start → process_complete`) segmented by tier
+### Optional nice-to-haves (no rush)
+- [ ] Verify SPF/DKIM/DMARC green in Resend dashboard → Domains → `pdf.it.com`
+- [ ] GA4 Explore: after 24h of data, build the `tool_event` funnel segmented by tier
 
 ### Recurring reminders
 - **Every Monday:** type `/weekly-review` in Claude Code for the weekly ops report
+- **Monthly:** query `cancellation_reasons` in Supabase to see churn drivers (see SOLO-PRIORITIES.md #5)
 - **Before July 15, 2026:** run `stripe login` to re-auth CLI (90-day key expiry)
 
 ---
 
 ## 🟡 Next session tasks for Claude
 
-Pick in order — each is self-contained:
+All 7 priorities are shipped. When you're ready for a new direction:
 
-1. **Priority #4 — Dashboard as growth asset.** Add usage graph, favorite tool, "saved X hours" stat, new-tool-unlocked upsell, save-for-annual CTA on monthly subscribers. Medium UI work.
+1. **Optional follow-ups on observability:** add `result_downloaded` events to each tool's download handler; add per-turn events to chat-with-pdf chat sends; add rewrite-step events to ats-optimizer.
 
-2. **Priority #5 — Cancel survey + feedback prompt.** Supabase `cancellation_reasons` table + dropdown in Stripe portal. One-question in-app prompt after 3rd tool use routing to `contact@pdf.it.com`.
+2. **In-app feedback prompt** (the deferred part of #5): add a one-question "How was this?" prompt after a user's Nth tool use. Deferred because it touches `processing-interface.tsx` (load-bearing). Revisit if `cancellation_reasons` data surfaces patterns we can't explain.
 
-3. **Scaffold RUNBOOK.md** if Paula asks for a template.
+3. **Scaffold RUNBOOK.md** if Paula asks for a template (already written, but could evolve).
+
+4. **New product work** — resume any feature/growth work from POST-LAUNCH.md Phase 1–4 when appropriate.
 
 4. **Optional follow-ups on observability:** add `result_downloaded` events to each tool's download handler; add per-turn events to chat-with-pdf chat sends; add rewrite-step events to ats-optimizer.
 

@@ -104,7 +104,7 @@ Then in the corresponding interface component, add a `503` branch that sets `has
 - Usage graph: conversions per day over last 30 days
 - Next billing date + "Save 17% with annual" button for monthly subscribers
 
-**Status:** ☐ Not started
+**Status:** ✅ Complete (April 16, 2026) — Monthly stat card shows "~X hours saved" and "Favorite: [tool]"; AI discovery banner surfaces for paid users who haven't tried any AI tool yet; all 3 locales (EN/ES/BR). Recent activity, usage graph, and annual-upsell are deferred — revisit if engagement data (via #1 observability) shows Pro users aren't returning.
 
 ---
 
@@ -117,7 +117,15 @@ Then in the corresponding interface component, add a `503` branch that sets `has
 - Cancel flow in Stripe customer portal: require a dropdown reason (too expensive / didn't use it / missing feature X / found alternative / other), save to Supabase `cancellation_reasons` table
 - Monthly review: open that table, read every reason, ship one thing in response
 
-**Status:** ☐ Not started
+**Status:** ✅ Cancel survey complete (April 16, 2026) — `cancellation_reasons` table live, webhook captures Stripe's `cancellation_details.feedback` + `.comment`, Stripe Customer Portal configured to ask reason + comment on every cancellation. In-app "3rd use" feedback prompt deferred (would touch `processing-interface.tsx` which is load-bearing; revisit if cancellation data shows patterns we can't explain).
+
+**Monthly ritual:** Query `cancellation_reasons` monthly to see top churn drivers:
+```sql
+SELECT reason_code, COUNT(*) FROM cancellation_reasons
+WHERE cancelled_at > NOW() - INTERVAL '30 days'
+GROUP BY reason_code ORDER BY count DESC;
+```
+Then read the `reason_comment` field on the most common code for the actual user voice.
 
 ---
 
@@ -131,7 +139,7 @@ Then in the corresponding interface component, add a `503` branch that sets `has
 - iLoveAPI: Dashboard > Alerts → email at 80% of monthly quota
 - Stripe: Settings > Notifications → alert on any refund/dispute event
 
-**Status:** ☐ Not started (Paula to configure in each dashboard — I can't do this from code)
+**Status:** ✅ Complete (April 16, 2026) — Vercel $200→$300 budget + alerts; OpenAI $100 cap + 80/100% alerts; iLoveAPI low-credits alerts; Stripe alerts on disputes, unexpected refunds, Radar fraud, negative balance, elevated-risk payments + $10 minimum balance.
 
 ---
 
