@@ -27,6 +27,7 @@ import {
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
 import { validateClientFile, getSizeLimitLabel } from "@/lib/client-file-validator"
+import { trackToolEvent, classifyError } from "@/lib/analytics"
 import { TrustBadges } from "@/components/trust-badges"
 
 interface Extraction {
@@ -158,6 +159,11 @@ export function SmartExtractionInterface() {
     }
     const r = await validateClientFile(f, userPlan)
     if (!r.ok) { setHasError(true); setErrorMessage(r.error || "This file cannot be used."); setFile(null); setExtraction(null); return }
+    trackToolEvent("smart-extraction", "file_selected", {
+      tier: userPlan,
+      file_size_mb: f.size / (1024 * 1024),
+      file_type: f.type || "pdf",
+    })
     setFile(f); setHasError(false); setErrorMessage(""); setExtraction(null)
   }, [userPlan])
 
@@ -179,6 +185,11 @@ export function SmartExtractionInterface() {
     setErrorMessage("")
 
     let blobUrl: string | null = null
+    const t0 = Date.now()
+    trackToolEvent("smart-extraction", "process_start", {
+      tier: userPlan,
+      file_size_mb: file.size / (1024 * 1024),
+    })
 
     try {
       blobUrl = await uploadFileToBlob(file)
@@ -206,15 +217,24 @@ export function SmartExtractionInterface() {
 
       const data = await response.json()
       setExtraction(data)
+      trackToolEvent("smart-extraction", "process_complete", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+      })
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : "An unexpected error occurred."
       setHasError(true)
       setErrorMessage(msg)
+      trackToolEvent("smart-extraction", "process_error", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+        error_type: classifyError(undefined, msg),
+      })
     } finally {
       setIsProcessing(false)
       if (blobUrl) deleteBlobUrl(blobUrl)
     }
-  }, [file, pricingUrl, router])
+  }, [file, pricingUrl, router, userPlan])
 
   const baseFilename = useCallback((ext: string): string => {
     const base = file?.name?.replace(/\.pdf$/i, "") || "extraction"

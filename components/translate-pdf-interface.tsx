@@ -20,6 +20,7 @@ import {
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
 import { validateClientFile, getSizeLimitLabel } from "@/lib/client-file-validator"
+import { trackToolEvent, classifyError } from "@/lib/analytics"
 import { TrustBadges } from "@/components/trust-badges"
 
 const LANGUAGE_OPTIONS = [
@@ -97,6 +98,11 @@ export function TranslatePdfInterface() {
     }
     const r = await validateClientFile(f, userPlan)
     if (!r.ok) { setHasError(true); setErrorMessage(r.error || "This file cannot be used."); setFile(null); setTranslation(null); return }
+    trackToolEvent("translate-pdf", "file_selected", {
+      tier: userPlan,
+      file_size_mb: f.size / (1024 * 1024),
+      file_type: f.type || "pdf",
+    })
     setFile(f); setHasError(false); setErrorMessage(""); setTranslation(null)
   }, [userPlan])
 
@@ -113,6 +119,12 @@ export function TranslatePdfInterface() {
     if (!file) return
     setIsProcessing(true); setHasError(false); setErrorMessage(""); setIsInvalidPdf(false)
     let blobUrl: string | null = null
+    const t0 = Date.now()
+    trackToolEvent("translate-pdf", "process_start", {
+      tier: userPlan,
+      file_size_mb: file.size / (1024 * 1024),
+      targetLanguage,
+    })
     try {
       blobUrl = await uploadFileToBlob(file)
       const response = await fetch("/api/translate-pdf", {
@@ -123,20 +135,36 @@ export function TranslatePdfInterface() {
         let message = `Processing failed (HTTP ${response.status})`
         try { const d = await response.json(); if (d.error) message = d.error; if (message.includes("upgrade_required")) { router.push(pricingUrl); return } } catch {}
         if (response.status === 422) {
-          setIsInvalidPdf(true); setErrorMessage(message); return
+          setIsInvalidPdf(true); setErrorMessage(message)
+          trackToolEvent("translate-pdf", "process_error", {
+            tier: userPlan,
+            latency_ms: Date.now() - t0,
+            error_type: classifyError(response.status, message),
+            error_code: response.status,
+          })
+          return
         }
         throw new Error(message)
       }
       const data = await response.json()
       setTranslation(data.translation)
       setTargetLanguageName(data.targetLanguage)
+      trackToolEvent("translate-pdf", "process_complete", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+      })
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : "An unexpected error occurred."
       setHasError(true); setErrorMessage(msg)
+      trackToolEvent("translate-pdf", "process_error", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+        error_type: classifyError(undefined, msg),
+      })
     } finally {
       setIsProcessing(false); if (blobUrl) deleteBlobUrl(blobUrl)
     }
-  }, [file, targetLanguage, pricingUrl, router])
+  }, [file, targetLanguage, pricingUrl, router, userPlan])
 
   const handleCopy = useCallback(() => {
     if (!translation) return

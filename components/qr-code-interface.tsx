@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { QrCode, Loader2, Download, AlertCircle, Crown, Info } from "lucide-react"
 import { createClient } from "@/lib/supabase/client"
+import { trackToolEvent, classifyError } from "@/lib/analytics"
 import Link from "next/link"
 
 const localeLabels = {
@@ -110,6 +111,11 @@ export function QrCodeInterface() {
     setError(null)
     setImage(null)
 
+    const t0 = Date.now()
+    trackToolEvent("qr-code", "process_start", {
+      tier: userPlan,
+    })
+
     try {
       const res = await fetch("/api/qr-code", {
         method: "POST",
@@ -119,12 +125,22 @@ export function QrCodeInterface() {
       const data = await res.json()
       if (!res.ok) throw new Error(data.error || labels.failError)
       setImage(data.image)
+      trackToolEvent("qr-code", "process_complete", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+      })
     } catch (err) {
-      setError(err instanceof Error ? err.message : labels.genericError)
+      const msg = err instanceof Error ? err.message : labels.genericError
+      setError(msg)
+      trackToolEvent("qr-code", "process_error", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+        error_type: classifyError(undefined, msg),
+      })
     } finally {
       setIsLoading(false)
     }
-  }, [text, labels, pricingUrl, router])
+  }, [text, labels, pricingUrl, router, userPlan])
 
   const handleDownload = useCallback(() => {
     if (!image) return

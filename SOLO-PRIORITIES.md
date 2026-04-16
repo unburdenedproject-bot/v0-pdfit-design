@@ -16,7 +16,7 @@ Suggestions I made to Paula on April 15, 2026 about things a solo non-technical 
 
 **First step:** Add a `trackToolEvent(tool, event, data)` helper (`lib/analytics.ts`) that wraps `gtag("event", ...)` and emit: `tool_opened`, `file_selected`, `process_start`, `process_complete`, `result_downloaded`, `error_shown`, `upgrade_clicked`. Then build a funnel in GA4 Explore.
 
-**Status:** ◐ In progress — helper shipped + instrumented in the 3 highest-traffic files (covers 28 tools).
+**Status:** ✅ Complete (April 16, 2026) — helper shipped and instrumented across all 16 tool interfaces. Every tool now fires `file_selected`, `process_start`, `process_complete`, `process_error` to GA4.
 
 **What's done:**
 - `lib/analytics.ts` — `trackToolEvent(tool, event, data)` helper + `classifyError(status, message)` categorizer. Pushes to the existing GTM dataLayer under a single event name `tool_event` with dimensions `tool`, `tool_event`, `tier`, plus optional `file_size_mb`, `latency_ms`, `error_type`, `format`, etc.
@@ -24,7 +24,7 @@ Suggestions I made to Paula on April 15, 2026 about things a solo non-technical 
 - **Instrumented: `components/pdf-summarizer-interface.tsx`** — full lifecycle on the AI Business tool
 - **Instrumented: `components/question-generator-interface.tsx`** — full lifecycle including `result_downloaded` with `format: "pdf" | "txt"`
 
-**Still to wire (follow-up):** chat-with-pdf, translate-pdf, ats-optimizer, smart-extraction, table-extraction, resume-builder, esign, pdf-compare, phone-scan-cleanup, redaction, workflow, url-pdf, qr-code. Pattern is identical to pdf-summarizer — copy-paste.
+**All 16 tool interfaces now instrumented.** Full list in COMPLETED.md. Follow-ups (lower priority): add `result_downloaded` events to download handlers; add per-turn events to chat-with-pdf chat sends; add rewrite-step events to ats-optimizer.
 
 **How to use in GA4:**
 1. Wait 24h for events to flow

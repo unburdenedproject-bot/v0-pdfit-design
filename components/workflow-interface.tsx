@@ -11,6 +11,7 @@ import {
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
 import { getSizeLimitLabel } from "@/lib/client-file-validator"
+import { trackToolEvent, classifyError } from "@/lib/analytics"
 import { SoftErrorCard, isUserInputError } from "@/components/processing/soft-error-card"
 import { TrustBadges } from "@/components/trust-badges"
 
@@ -418,14 +419,28 @@ export function WorkflowInterface({ locale = "en" }: { locale?: ToolLocale }) {
     e.preventDefault()
     setIsDragOver(false)
     const droppedFiles = Array.from(e.dataTransfer.files)
-    if (droppedFiles.length > 0) setFile(droppedFiles[0])
-  }, [])
+    if (droppedFiles.length > 0) {
+      const f = droppedFiles[0]
+      trackToolEvent("workflow", "file_selected", {
+        tier: userPlan,
+        file_size_mb: f.size / (1024 * 1024),
+        file_type: f.type || "pdf",
+      })
+      setFile(f)
+    }
+  }, [userPlan])
 
   const handleFileSelect = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
-      setFile(e.target.files[0])
+      const f = e.target.files[0]
+      trackToolEvent("workflow", "file_selected", {
+        tier: userPlan,
+        file_size_mb: f.size / (1024 * 1024),
+        file_type: f.type || "pdf",
+      })
+      setFile(f)
     }
-  }, [])
+  }, [userPlan])
 
   const runWorkflow = useCallback(async () => {
     if (!file || steps.length < 2) return
@@ -455,6 +470,13 @@ export function WorkflowInterface({ locale = "en" }: { locale?: ToolLocale }) {
     setHasError(false)
     setValidationMessage("")
     setProcessingStep(0)
+
+    const t0 = Date.now()
+    trackToolEvent("workflow", "process_start", {
+      tier: userPlan,
+      file_size_mb: file.size / (1024 * 1024),
+      step_count: steps.length,
+    })
 
     try {
       // Upload file
@@ -498,12 +520,22 @@ export function WorkflowInterface({ locale = "en" }: { locale?: ToolLocale }) {
       setResultName(`${baseName}-workflow.pdf`)
       setIsComplete(true)
       setIsProcessing(false)
+      trackToolEvent("workflow", "process_complete", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+      })
     } catch (error) {
+      const msg = error instanceof Error ? error.message : copy.unknownError
       setHasError(true)
-      setErrorMessage(error instanceof Error ? error.message : copy.unknownError)
+      setErrorMessage(msg)
+      trackToolEvent("workflow", "process_error", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+        error_type: classifyError(undefined, msg),
+      })
       setIsProcessing(false)
     }
-  }, [copy.passwordRequired, copy.pricingSourcePath, copy.protectLast, copy.unknownError, copy.watermarkRequired, file, router, steps])
+  }, [copy.passwordRequired, copy.pricingSourcePath, copy.protectLast, copy.unknownError, copy.watermarkRequired, file, router, steps, userPlan])
 
   const downloadResult = useCallback(() => {
     const link = document.createElement("a")

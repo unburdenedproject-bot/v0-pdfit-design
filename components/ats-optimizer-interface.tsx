@@ -21,6 +21,7 @@ import {
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
 import { validateClientFile, getSizeLimitLabel } from "@/lib/client-file-validator"
+import { trackToolEvent, classifyError } from "@/lib/analytics"
 import { TrustBadges } from "@/components/trust-badges"
 
 interface SectionScore {
@@ -217,6 +218,11 @@ export function AtsOptimizerInterface() {
       setAnalysis(null)
       return
     }
+    trackToolEvent("ats-optimizer", "file_selected", {
+      tier: userPlan,
+      file_size_mb: selected.size / (1024 * 1024),
+      file_type: selected.type || "pdf",
+    })
     setFile(selected)
     setHasError(false)
     setErrorMessage("")
@@ -243,6 +249,11 @@ export function AtsOptimizerInterface() {
 
     let blobUrl: string | null = null
     let progressTimer: ReturnType<typeof setInterval> | null = null
+    const t0 = Date.now()
+    trackToolEvent("ats-optimizer", "process_start", {
+      tier: userPlan,
+      file_size_mb: file.size / (1024 * 1024),
+    })
 
     try {
       setProgress(15)
@@ -276,6 +287,12 @@ export function AtsOptimizerInterface() {
         if (response.status === 422) {
           setIsInvalidResume(true)
           setErrorMessage(message)
+          trackToolEvent("ats-optimizer", "process_error", {
+            tier: userPlan,
+            latency_ms: Date.now() - t0,
+            error_type: classifyError(response.status, message),
+            error_code: response.status,
+          })
           return
         }
         throw new Error(message)
@@ -286,17 +303,26 @@ export function AtsOptimizerInterface() {
       // Auto-select all improvements and keywords
       setSelectedImprovements(data.improvements || [])
       setSelectedKeywords(data.missing_keywords || [])
+      trackToolEvent("ats-optimizer", "process_complete", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+      })
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : "An unexpected error occurred."
       setHasError(true)
       setErrorMessage(msg)
+      trackToolEvent("ats-optimizer", "process_error", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+        error_type: classifyError(undefined, msg),
+      })
     } finally {
       if (progressTimer) clearInterval(progressTimer)
       setProgress(100)
       setIsProcessing(false)
       if (blobUrl) deleteBlobUrl(blobUrl)
     }
-  }, [file, jobDescription, pricingUrl, router])
+  }, [file, jobDescription, pricingUrl, router, userPlan])
 
   const handleReset = useCallback(() => {
     setFile(null)

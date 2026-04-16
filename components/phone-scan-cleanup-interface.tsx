@@ -22,6 +22,7 @@ import {
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
 import { getSizeLimitLabel } from "@/lib/client-file-validator"
+import { trackToolEvent, classifyError } from "@/lib/analytics"
 import { SoftErrorCard, isUserInputError } from "@/components/processing/soft-error-card"
 
 interface ProcessedFile {
@@ -80,11 +81,16 @@ export function PhoneScanCleanupInterface() {
       return
     }
 
+    trackToolEvent("phone-scan-cleanup", "file_selected", {
+      tier: userPlan,
+      file_size_mb: f.size / (1024 * 1024),
+      file_type: f.type || "image",
+    })
     setFile(f)
     setPreviewUrl(URL.createObjectURL(f))
     setHasError(false)
     setErrorMessage("")
-  }, [])
+  }, [userPlan])
 
   const handleDragOver = useCallback((e: React.DragEvent) => {
     e.preventDefault()
@@ -131,6 +137,12 @@ export function PhoneScanCleanupInterface() {
     setProgress(10)
 
     let inputBlobUrl: string | undefined
+    const t0 = Date.now()
+    trackToolEvent("phone-scan-cleanup", "process_start", {
+      tier: userPlan,
+      file_size_mb: file.size / (1024 * 1024),
+      mode,
+    })
 
     try {
       // Step 1: Upload to Vercel Blob
@@ -181,16 +193,24 @@ export function PhoneScanCleanupInterface() {
       setProgress(100)
       setIsProcessing(false)
       setIsComplete(true)
+      trackToolEvent("phone-scan-cleanup", "process_complete", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+      })
     } catch (error) {
       // Clean up the uploaded blob if API failed
       if (inputBlobUrl) deleteBlobUrl(inputBlobUrl)
+      const msg = error instanceof Error ? error.message : "An unknown error occurred"
       setHasError(true)
-      setErrorMessage(
-        error instanceof Error ? error.message : "An unknown error occurred"
-      )
+      setErrorMessage(msg)
+      trackToolEvent("phone-scan-cleanup", "process_error", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+        error_type: classifyError(undefined, msg),
+      })
       setIsProcessing(false)
     }
-  }, [file, mode, router])
+  }, [file, mode, router, userPlan])
 
   const downloadFile = useCallback((fileUrl: string, fileName: string) => {
     const link = document.createElement("a")

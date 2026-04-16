@@ -9,6 +9,7 @@ import {
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { uploadBlobToBlob, uploadFileToBlob } from "@/lib/upload-to-blob"
+import { trackToolEvent, classifyError } from "@/lib/analytics"
 import { SoftErrorCard, isUserInputError } from "@/components/processing/soft-error-card"
 import { TrustBadges } from "@/components/trust-badges"
 
@@ -308,17 +309,29 @@ export function RedactionInterface({ locale = "en" }: { locale?: ToolLocale }) {
     setIsDragOver(false)
     const droppedFiles = Array.from(e.dataTransfer.files)
     if (droppedFiles.length > 0) {
-      setFile(droppedFiles[0])
-      loadPdf(droppedFiles[0])
+      const f = droppedFiles[0]
+      trackToolEvent("pdf-redaction", "file_selected", {
+        tier: userPlan,
+        file_size_mb: f.size / (1024 * 1024),
+        file_type: f.type || "pdf",
+      })
+      setFile(f)
+      loadPdf(f)
     }
-  }, [loadPdf])
+  }, [loadPdf, userPlan])
 
   const handleFileSelect = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
-      setFile(e.target.files[0])
-      loadPdf(e.target.files[0])
+      const f = e.target.files[0]
+      trackToolEvent("pdf-redaction", "file_selected", {
+        tier: userPlan,
+        file_size_mb: f.size / (1024 * 1024),
+        file_type: f.type || "pdf",
+      })
+      setFile(f)
+      loadPdf(f)
     }
-  }, [loadPdf])
+  }, [loadPdf, userPlan])
 
   // Mouse handlers for drawing redaction rectangles
   const getCanvasCoords = (e: React.MouseEvent<HTMLCanvasElement>) => {
@@ -445,6 +458,12 @@ export function RedactionInterface({ locale = "en" }: { locale?: ToolLocale }) {
     setIsProcessing(true)
     setHasError(false)
 
+    const t0 = Date.now()
+    trackToolEvent("pdf-redaction", "process_start", {
+      tier: userPlan,
+      file_size_mb: file.size / (1024 * 1024),
+    })
+
     try {
       const inputUrl = await uploadFileToBlob(file)
       const redactedPageIndexes = Array.from(new Set(redactions.map((item) => item.page))).sort((a, b) => a - b)
@@ -493,12 +512,22 @@ export function RedactionInterface({ locale = "en" }: { locale?: ToolLocale }) {
       setResultName(`${baseName}-redacted.pdf`)
       setIsComplete(true)
       setIsProcessing(false)
+      trackToolEvent("pdf-redaction", "process_complete", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+      })
     } catch (error) {
+      const msg = error instanceof Error ? error.message : copy.unknownError
       setHasError(true)
-      setErrorMessage(error instanceof Error ? error.message : copy.unknownError)
+      setErrorMessage(msg)
+      trackToolEvent("pdf-redaction", "process_error", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+        error_type: classifyError(undefined, msg),
+      })
       setIsProcessing(false)
     }
-  }, [copy.pricingSourcePath, copy.unknownError, createRedactedPageBlob, file, redactions, router])
+  }, [copy.pricingSourcePath, copy.unknownError, createRedactedPageBlob, file, redactions, router, userPlan])
 
   const downloadResult = useCallback(() => {
     const link = document.createElement("a")

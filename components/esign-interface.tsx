@@ -22,6 +22,7 @@ import {
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob } from "@/lib/upload-to-blob"
 import { getSizeLimitLabel } from "@/lib/client-file-validator"
+import { trackToolEvent, classifyError } from "@/lib/analytics"
 import { SoftErrorCard, isUserInputError } from "@/components/processing/soft-error-card"
 import { TrustBadges } from "@/components/trust-badges"
 import { CreateSignatureModal } from "@/components/esign/create-signature-modal"
@@ -373,21 +374,33 @@ export function EsignInterface({ locale = "en" }: { locale?: EsignLocale }) {
       setIsDragOver(false)
       const droppedFiles = Array.from(event.dataTransfer.files)
       if (droppedFiles.length > 0) {
-        setFile(droppedFiles[0])
-        loadPdf(droppedFiles[0])
+        const f = droppedFiles[0]
+        trackToolEvent("esign", "file_selected", {
+          tier: userPlan,
+          file_size_mb: f.size / (1024 * 1024),
+          file_type: f.type || "pdf",
+        })
+        setFile(f)
+        loadPdf(f)
       }
     },
-    [loadPdf]
+    [loadPdf, userPlan]
   )
 
   const handleFileSelect = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
       if (event.target.files && event.target.files.length > 0) {
-        setFile(event.target.files[0])
-        loadPdf(event.target.files[0])
+        const f = event.target.files[0]
+        trackToolEvent("esign", "file_selected", {
+          tier: userPlan,
+          file_size_mb: f.size / (1024 * 1024),
+          file_type: f.type || "pdf",
+        })
+        setFile(f)
+        loadPdf(f)
       }
     },
-    [loadPdf]
+    [loadPdf, userPlan]
   )
 
   const getCanvasCoords = (event: React.MouseEvent<HTMLCanvasElement>) => {
@@ -460,6 +473,12 @@ export function EsignInterface({ locale = "en" }: { locale?: EsignLocale }) {
     setIsProcessing(true)
     setHasError(false)
 
+    const t0 = Date.now()
+    trackToolEvent("esign", "process_start", {
+      tier: userPlan,
+      file_size_mb: file.size / (1024 * 1024),
+    })
+
     try {
       const inputUrl = await uploadFileToBlob(file)
       const signaturesPayload = placedSignatures.map((signature) => ({
@@ -502,13 +521,23 @@ export function EsignInterface({ locale = "en" }: { locale?: EsignLocale }) {
       setResultUrl(url)
       setResultName(`${baseName}-signed.pdf`)
       setIsComplete(true)
+      trackToolEvent("esign", "process_complete", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+      })
     } catch (error) {
+      const msg = error instanceof Error ? error.message : "An unknown error occurred"
       setHasError(true)
-      setErrorMessage(error instanceof Error ? error.message : "An unknown error occurred")
+      setErrorMessage(msg)
+      trackToolEvent("esign", "process_error", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+        error_type: classifyError(undefined, msg),
+      })
     } finally {
       setIsProcessing(false)
     }
-  }, [file, placedSignatures, router])
+  }, [file, placedSignatures, router, userPlan])
 
   const downloadResult = useCallback(() => {
     const link = document.createElement("a")

@@ -21,6 +21,7 @@ import {
 import { cn } from "@/lib/utils"
 import { TrustBadges } from "@/components/trust-badges"
 import { getSizeLimitLabel } from "@/lib/client-file-validator"
+import { trackToolEvent, classifyError } from "@/lib/analytics"
 
 type ToolLocale = "en" | "es" | "br"
 
@@ -568,11 +569,30 @@ export function PdfCompareInterface({ locale = "en" }: { locale?: ToolLocale }) 
       setLoading(true)
       setErrorMessage("")
 
+      trackToolEvent("pdf-compare", "file_selected", {
+        tier: userPlan,
+        file_size_mb: file.size / (1024 * 1024),
+        file_type: file.type || "pdf",
+        side,
+      })
+      const t0 = Date.now()
+      trackToolEvent("pdf-compare", "process_start", {
+        tier: userPlan,
+        file_size_mb: file.size / (1024 * 1024),
+        side,
+      })
+
       try {
         const pages = await extractPages(file)
 
         if (pages.length === 0) {
           setErrorMessage(side === "left" ? copy.originalPdfEmpty : copy.modifiedPdfEmpty)
+          trackToolEvent("pdf-compare", "process_error", {
+            tier: userPlan,
+            latency_ms: Date.now() - t0,
+            error_type: "input",
+            side,
+          })
           return
         }
 
@@ -585,6 +605,11 @@ export function PdfCompareInterface({ locale = "en" }: { locale?: ToolLocale }) 
         }
 
         setCurrentPage(0)
+        trackToolEvent("pdf-compare", "process_complete", {
+          tier: userPlan,
+          latency_ms: Date.now() - t0,
+          side,
+        })
       } catch (err: unknown) {
         // Surface specific pdfjs errors so the user knows what's wrong.
         const errName = (err as { name?: string })?.name || ""
@@ -598,11 +623,17 @@ export function PdfCompareInterface({ locale = "en" }: { locale?: ToolLocale }) 
           friendly = side === "left" ? copy.originalPdfReadFailed : copy.modifiedPdfReadFailed
         }
         setErrorMessage(friendly)
+        trackToolEvent("pdf-compare", "process_error", {
+          tier: userPlan,
+          latency_ms: Date.now() - t0,
+          error_type: classifyError(undefined, errMsg),
+          side,
+        })
       } finally {
         setLoading(false)
       }
     },
-    [copy.invalidPdf, copy.modifiedPdfEmpty, copy.modifiedPdfReadFailed, copy.originalPdfEmpty, copy.originalPdfReadFailed, extractPages]
+    [copy.invalidPdf, copy.modifiedPdfEmpty, copy.modifiedPdfReadFailed, copy.originalPdfEmpty, copy.originalPdfReadFailed, extractPages, userPlan]
   )
 
   const pageResults = useMemo(

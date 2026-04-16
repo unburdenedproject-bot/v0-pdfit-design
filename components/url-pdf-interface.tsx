@@ -12,6 +12,7 @@ import {
   AlertTriangle,
   Info,
 } from "lucide-react"
+import { trackToolEvent, classifyError } from "@/lib/analytics"
 import { TrustBadges } from "@/components/trust-badges"
 
 export function UrlPdfInterface() {
@@ -56,6 +57,16 @@ export function UrlPdfInterface() {
     setHasError(false)
     setErrorMessage("")
 
+    const t0 = Date.now()
+    let hostname = ""
+    try {
+      hostname = new URL(url.startsWith("http") ? url : `https://${url}`).hostname
+    } catch {}
+    trackToolEvent("url-to-pdf", "process_start", {
+      tier: userPlan,
+      hostname,
+    })
+
     try {
       const response = await fetch("/api/url-to-pdf", {
         method: "POST",
@@ -86,15 +97,24 @@ export function UrlPdfInterface() {
       setResultUrl(blobUrl)
       setResultFilename(downloadName)
       setIsComplete(true)
+      trackToolEvent("url-to-pdf", "process_complete", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+      })
     } catch (err: unknown) {
       const msg =
         err instanceof Error ? err.message : "An unexpected error occurred."
       setHasError(true)
       setErrorMessage(msg)
+      trackToolEvent("url-to-pdf", "process_error", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+        error_type: classifyError(undefined, msg),
+      })
     } finally {
       setIsProcessing(false)
     }
-  }, [url, pricingUrl, router])
+  }, [url, pricingUrl, router, userPlan])
 
   const handleDownload = useCallback(() => {
     if (!resultUrl) return

@@ -17,6 +17,7 @@ import {
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
 import { validateClientFile, getSizeLimitLabel } from "@/lib/client-file-validator"
+import { trackToolEvent, classifyError } from "@/lib/analytics"
 import { TrustBadges } from "@/components/trust-badges"
 
 export function TableExtractionInterface({ enterpriseMode = false }: { enterpriseMode?: boolean } = {}) {
@@ -67,6 +68,11 @@ export function TableExtractionInterface({ enterpriseMode = false }: { enterpris
     if (!r.ok) {
       setHasError(true); setErrorMessage(r.error || "This file cannot be used."); setFile(null); setIsComplete(false); setResultUrl(null); return
     }
+    trackToolEvent("table-extraction", "file_selected", {
+      tier: userPlan,
+      file_size_mb: f.size / (1024 * 1024),
+      file_type: f.type || "pdf",
+    })
     setFile(f); setHasError(false); setErrorMessage(""); setIsComplete(false); setResultUrl(null)
   }, [userPlan])
 
@@ -89,6 +95,11 @@ export function TableExtractionInterface({ enterpriseMode = false }: { enterpris
     setErrorMessage("")
 
     let blobUrl: string | null = null
+    const t0 = Date.now()
+    trackToolEvent("table-extraction", "process_start", {
+      tier: userPlan,
+      file_size_mb: file.size / (1024 * 1024),
+    })
 
     try {
       // Step 1: Upload to blob
@@ -137,10 +148,19 @@ export function TableExtractionInterface({ enterpriseMode = false }: { enterpris
       setResultFilename(downloadName)
       setProgress(100)
       setIsComplete(true)
+      trackToolEvent("table-extraction", "process_complete", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+      })
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : "An unexpected error occurred."
       setHasError(true)
       setErrorMessage(msg)
+      trackToolEvent("table-extraction", "process_error", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+        error_type: classifyError(undefined, msg),
+      })
     } finally {
       setIsProcessing(false)
       // Clean up blob if it was uploaded
@@ -148,7 +168,7 @@ export function TableExtractionInterface({ enterpriseMode = false }: { enterpris
         deleteBlobUrl(blobUrl)
       }
     }
-  }, [file, pricingUrl, router])
+  }, [file, pricingUrl, router, userPlan])
 
   const handleDownload = useCallback(() => {
     if (!resultUrl) return

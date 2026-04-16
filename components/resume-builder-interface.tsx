@@ -11,6 +11,7 @@ import {
   Sparkles,
   Info,
 } from "lucide-react"
+import { trackToolEvent, classifyError } from "@/lib/analytics"
 import { TrustBadges } from "@/components/trust-badges"
 
 export function ResumeBuilderInterface() {
@@ -67,6 +68,13 @@ export function ResumeBuilderInterface() {
     setIsGenerating(true)
     setHasError(false)
 
+    const t0 = Date.now()
+    trackToolEvent("create-resume", "process_start", {
+      tier: userPlan,
+      mode: "build",
+      includeCoverLetter,
+    })
+
     try {
       const response = await fetch("/api/generate-resume", {
         method: "POST",
@@ -96,14 +104,23 @@ export function ResumeBuilderInterface() {
       link.click()
       document.body.removeChild(link)
       URL.revokeObjectURL(url)
+      trackToolEvent("create-resume", "process_complete", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+      })
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : "An unexpected error occurred."
       setHasError(true)
       setErrorMessage(msg)
+      trackToolEvent("create-resume", "process_error", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+        error_type: classifyError(undefined, msg),
+      })
     } finally {
       setIsGenerating(false)
     }
-  }, [info, includeCoverLetter, pricingUrl, router])
+  }, [info, includeCoverLetter, pricingUrl, router, userPlan])
 
   const labels =
     localePrefix === "/es"

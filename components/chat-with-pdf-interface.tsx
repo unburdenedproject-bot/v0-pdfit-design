@@ -18,6 +18,7 @@ import {
 import { cn } from "@/lib/utils"
 import { uploadFileToBlob, deleteBlobUrl } from "@/lib/upload-to-blob"
 import { validateClientFile, getSizeLimitLabel } from "@/lib/client-file-validator"
+import { trackToolEvent, classifyError } from "@/lib/analytics"
 import { TrustBadges } from "@/components/trust-badges"
 
 interface ChatMessage {
@@ -126,6 +127,11 @@ export function ChatWithPdfInterface() {
     }
     const r = await validateClientFile(f, userPlan)
     if (!r.ok) { setHasError(true); setErrorMessage(r.error || "This file cannot be used."); setFile(null); return }
+    trackToolEvent("chat-with-pdf", "file_selected", {
+      tier: userPlan,
+      file_size_mb: f.size / (1024 * 1024),
+      file_type: f.type || "pdf",
+    })
     setFile(f); setHasError(false); setErrorMessage("")
   }, [userPlan])
 
@@ -147,6 +153,12 @@ export function ChatWithPdfInterface() {
     setHasError(false)
     setErrorMessage("")
     setIsInvalidPdf(false)
+
+    const t0 = Date.now()
+    trackToolEvent("chat-with-pdf", "process_start", {
+      tier: userPlan,
+      file_size_mb: file.size / (1024 * 1024),
+    })
 
     try {
       const url = await uploadFileToBlob(file)
@@ -180,6 +192,12 @@ export function ChatWithPdfInterface() {
           setErrorMessage(message)
           setFile(null)
           setBlobUrl(null)
+          trackToolEvent("chat-with-pdf", "process_error", {
+            tier: userPlan,
+            latency_ms: Date.now() - t0,
+            error_type: classifyError(response.status, message),
+            error_code: response.status,
+          })
           return
         }
         if (response.status === 503) {
@@ -188,6 +206,12 @@ export function ChatWithPdfInterface() {
           setErrorMessage(message)
           setFile(null)
           setBlobUrl(null)
+          trackToolEvent("chat-with-pdf", "process_error", {
+            tier: userPlan,
+            latency_ms: Date.now() - t0,
+            error_type: classifyError(response.status, message),
+            error_code: response.status,
+          })
           return
         }
         throw new Error(message)
@@ -199,6 +223,10 @@ export function ChatWithPdfInterface() {
         { role: "assistant", content: labels.welcome },
         { role: "assistant", content: data.answer },
       ])
+      trackToolEvent("chat-with-pdf", "process_complete", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+      })
 
       // Clean up blob after text extraction
       deleteBlobUrl(url)
@@ -208,10 +236,15 @@ export function ChatWithPdfInterface() {
       setErrorMessage(msg)
       setFile(null)
       setBlobUrl(null)
+      trackToolEvent("chat-with-pdf", "process_error", {
+        tier: userPlan,
+        latency_ms: Date.now() - t0,
+        error_type: classifyError(undefined, msg),
+      })
     } finally {
       setIsUploading(false)
     }
-  }, [file, labels.welcome, pricingUrl, router])
+  }, [file, labels.welcome, pricingUrl, router, userPlan])
 
   // Auto-upload when file is selected
   useEffect(() => {
