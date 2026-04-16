@@ -5,6 +5,9 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  # Allow manual trigger from GitHub Actions tab — useful for running E2E + Integration
+  # tests before a release without waiting for a push.
+  workflow_dispatch:
 
 jobs:
   build:
@@ -57,6 +60,9 @@ jobs:
     name: E2E Tests
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    # Skip on every push. Run manually via Actions tab when needed before a release.
+    # Re-enable by removing this `if` line.
+    if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
 
     steps:
       - uses: actions/checkout@v4
@@ -96,6 +102,11 @@ jobs:
     name: Integration Tests
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    # Needs real Supabase/Stripe test secrets (not yet configured in GitHub Actions Secrets).
+    # Only runs on PRs or manual workflow_dispatch; skipped on every push to silence
+    # false-failure email noise. To enable on push again, add secrets TEST_SUPABASE_URL,
+    # STRIPE_TEST_SECRET_KEY etc. and remove this `if` line.
+    if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
 
     steps:
       - uses: actions/checkout@v4
