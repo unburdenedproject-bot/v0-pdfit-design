@@ -29,12 +29,8 @@ This is the single source of truth for "where we left off." Read this first tomo
 
 ## 🔴 Paula's to-do list (things ONLY you can do — from most urgent)
 
-### 🚨 Urgent: Rate limiter is off
-**Upstash `pdfit-ratelimit` DB was deleted.** Rate limiting is silently disabled across the entire site. Cost exposure risk.
-- [ ] Create new Upstash Redis DB → name `pdfit-ratelimit-v2` → Region `us-east-1`
-- [ ] Connect via Vercel's Upstash marketplace integration (auto-sets `KV_REST_API_URL` + `KV_REST_API_TOKEN`)
-- [ ] Redeploy
-- [ ] Verify: `curl -H "Authorization: Bearer $TOKEN" "$URL/ping"` returns `PONG`
+### ✅ Rate limiter — DONE (April 16, 2026)
+Paula recreated the Upstash DB and reconnected it to PDF.it. Env vars are live, rate limiting is active.
 
 ### Activate the kill switch
 - [ ] Supabase → SQL Editor → run `scripts/008_create_feature_flags.sql`
