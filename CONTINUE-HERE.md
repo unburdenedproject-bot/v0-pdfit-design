@@ -41,11 +41,9 @@ Both SQL migrations ran successfully in Supabase. 37 rows in `feature_flags`, al
 - [ ] iLoveAPI → Dashboard → Alerts → email at 80% of monthly quota
 - [ ] Stripe → Notifications → alert on any refund/dispute event
 
-### Install CLIs locally (5 min, free, one-time)
-- [ ] Install Stripe CLI (https://stripe.com/docs/stripe-cli)
-- [ ] Install Vercel CLI (`npm i -g vercel`)
-- [ ] Stripe CLI lets you test webhooks + tail logs during incidents
-- [ ] Vercel CLI lets you run `vercel rollback` when a deploy breaks
+### ✅ CLIs installed (April 16, 2026)
+- Vercel CLI v50.32.5, authenticated as `unburdenedproject-6143`
+- Stripe CLI authenticated to PDF.it (`acct_1TEHiFAokxMtvyQq`). Expires ~July 15, 2026 — re-auth with `stripe login`.
 
 ### Gmail spam filter
 - [ ] Create Gmail filter: From `noreply@pdf.it.com` → Never send to spam
