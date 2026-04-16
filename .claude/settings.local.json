@@ -15,7 +15,8 @@
       "Bash(ls -la app/sitemap*)",
       "Bash(ls *.md)",
       "Read(//c/Users/paula/.claude/**)",
-      "Read(//c/Users/paula/.claude/projects/**)"
+      "Read(//c/Users/paula/.claude/projects/**)",
+      "Skill(schedule)"
     ]
   }
 }

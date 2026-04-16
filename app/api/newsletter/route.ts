@@ -27,10 +27,12 @@ export async function POST(request: NextRequest) {
 
     const supabase = createClient(supabaseUrl, supabaseKey)
 
+    const cleanEmail = email.toLowerCase().trim()
+
     // Upsert to avoid duplicate errors — if email exists, just update timestamp
     const { error } = await supabase.from("newsletter_subscribers").upsert(
       {
-        email: email.toLowerCase().trim(),
+        email: cleanEmail,
         subscribed_at: new Date().toISOString(),
       },
       { onConflict: "email" }
@@ -40,6 +42,32 @@ export async function POST(request: NextRequest) {
       console.error("Newsletter signup failed:", error)
       // Still return success to user — don't expose DB errors
       return NextResponse.json({ success: true })
+    }
+
+    // Send welcome email immediately via Resend (non-blocking — don't fail the signup if email fails)
+    try {
+      const resendKey = process.env.RESEND_API_KEY
+      if (resendKey) {
+        const { Resend } = await import("resend")
+        const { DRIP_EMAILS } = await import("@/lib/newsletter-emails")
+        const welcome = DRIP_EMAILS.find((e) => e.slug === "welcome")
+        if (welcome) {
+          const resend = new Resend(resendKey)
+          await resend.emails.send({
+            from: "Paula from PDF.it <noreply@pdf.it.com>",
+            to: cleanEmail,
+            subject: welcome.subject,
+            text: welcome.body(),
+          })
+          // Mark as sent so the drip cron doesn't re-send
+          await supabase.from("newsletter_emails_sent").upsert(
+            { subscriber_email: cleanEmail, email_slug: "welcome" },
+            { onConflict: "subscriber_email,email_slug" }
+          )
+        }
+      }
+    } catch (emailErr) {
+      console.error("Welcome email failed (non-blocking):", emailErr)
     }
 
     return NextResponse.json({ success: true })
