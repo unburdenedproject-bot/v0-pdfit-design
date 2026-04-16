@@ -264,6 +264,32 @@ export async function POST(request: NextRequest) {
             { status: 500 }
           )
         }
+
+        // Capture cancellation reason when the user just marked for cancellation.
+        // `previous_attributes` is included on update events — we check it to avoid
+        // re-inserting on subsequent updates after the initial cancellation.
+        const justMarkedForCancellation =
+          subscription.cancel_at_period_end === true &&
+          (event.data as any).previous_attributes?.cancel_at_period_end === false
+        if (justMarkedForCancellation) {
+          const cd = (subscription as any).cancellation_details
+          await supabaseAdmin
+            .from("cancellation_reasons")
+            .insert({
+              stripe_event_id: event.id,
+              user_id: users[0].id,
+              stripe_customer_id: customerId,
+              stripe_subscription_id: subscription.id,
+              plan_at_cancellation: plan,
+              reason_code: cd?.feedback ?? null,
+              reason_comment: cd?.comment ?? null,
+            })
+            .then((res) => {
+              if (res.error && !res.error.message.includes("duplicate")) {
+                console.error("Failed to record cancellation reason (non-blocking):", res.error)
+              }
+            })
+        }
       }
     }
   }

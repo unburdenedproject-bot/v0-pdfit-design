@@ -83,6 +83,15 @@ export default async function DashboardPageEs() {
     .eq("allowed", true)
     .gte("created_at", monthStart.toISOString())
 
+  let favoriteTool: string | null = null
+  if (recentActivity && recentActivity.length > 0) {
+    const counts = new Map<string, number>()
+    for (const item of recentActivity) counts.set(item.tool, (counts.get(item.tool) || 0) + 1)
+    favoriteTool = Array.from(counts.entries()).sort((a, b) => b[1] - a[1])[0]?.[0] ?? null
+  }
+  const AI_TOOLS = new Set(["ats-optimizer", "create-resume", "generate-resume", "chat-with-pdf", "pdf-summarizer", "translate-pdf", "smart-extraction", "question-generator"])
+  const hasUsedAiTool = (recentActivity || []).some((item) => AI_TOOLS.has(item.tool))
+
   return (
     <div
       className="flex min-h-screen flex-col"
@@ -111,6 +120,8 @@ export default async function DashboardPageEs() {
             displayName={firstName}
             recentActivity={recentActivity || []}
             monthlyCount={monthlyCount || 0}
+            favoriteTool={favoriteTool}
+            hasUsedAiTool={hasUsedAiTool}
           />
         </Suspense>
       </main>

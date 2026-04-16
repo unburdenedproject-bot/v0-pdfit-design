@@ -48,6 +48,8 @@ interface DashboardClientProps {
   displayName?: string
   recentActivity?: RecentActivity[]
   monthlyCount?: number
+  favoriteTool?: string | null
+  hasUsedAiTool?: boolean
 }
 
 const toolDisplayNames: Record<string, { label: string; icon: typeof FileText }> = {
@@ -134,6 +136,8 @@ export function DashboardClient({
   displayName,
   recentActivity = [],
   monthlyCount = 0,
+  favoriteTool = null,
+  hasUsedAiTool = false,
 }: DashboardClientProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -322,7 +326,23 @@ export function DashboardClient({
               <p className="text-2xl font-black text-white">{monthlyCount}</p>
             </div>
           </div>
-          <p className="text-xs text-slate-500 mt-3">Files processed</p>
+          <p className="text-xs text-slate-500 mt-3">
+            Files processed
+            {monthlyCount > 0 && (() => {
+              const minutesSaved = monthlyCount * 3
+              const hours = Math.floor(minutesSaved / 60)
+              const mins = minutesSaved % 60
+              const label = hours > 0
+                ? (mins > 0 ? `${hours}h ${mins}m` : `${hours}h`)
+                : `${mins}m`
+              return <span className="text-[#14D8C4]"> · ~{label} saved</span>
+            })()}
+          </p>
+          {favoriteTool && toolDisplayNames[favoriteTool] && (
+            <p className="text-xs text-slate-500 mt-1">
+              Favorite: <span className="text-slate-300 font-medium">{toolDisplayNames[favoriteTool].label}</span>
+            </p>
+          )}
         </div>
 
         {/* Plan Status */}
@@ -381,6 +401,61 @@ export function DashboardClient({
           )}
         </div>
       </div>
+
+      {/* AI tool discovery banner — shown only when a paid user hasn't tried any AI tool yet */}
+      {isPro && !hasUsedAiTool && (
+        <div
+          className="rounded-xl p-5 mb-8 flex items-start gap-4"
+          style={{
+            background: "linear-gradient(135deg, rgba(20,216,196,0.08), rgba(107,124,255,0.08))",
+            border: "1px solid rgba(107,124,255,0.25)",
+          }}
+        >
+          <div
+            className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
+            style={{ background: "linear-gradient(135deg, #14D8C4, #6B7CFF)" }}
+          >
+            <Lightbulb className="h-5 w-5 text-white" />
+          </div>
+          <div className="flex-1">
+            <h4 className="font-bold text-white mb-1">You have AI tools unlocked</h4>
+            <p className="text-sm text-slate-300 leading-relaxed mb-3">
+              {currentPlan === "business" || currentPlan === "enterprise"
+                ? "Try Chat with PDF to ask questions about any document, or use Smart Data Extraction to pull structured data into Excel/CSV."
+                : "Try the ATS Resume Optimizer to fix your resume for applicant tracking systems, or AI Question Generator to turn any PDF into a study quiz."}
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {(currentPlan === "business" || currentPlan === "enterprise") ? (
+                <>
+                  <Link href="/chat-with-pdf">
+                    <Button size="sm" className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold">
+                      Try Chat with PDF
+                    </Button>
+                  </Link>
+                  <Link href="/smart-extraction">
+                    <Button size="sm" variant="outline" className="border-white/20 text-slate-200 hover:bg-white/10">
+                      Smart Extraction
+                    </Button>
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Link href="/ats-optimizer">
+                    <Button size="sm" className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold">
+                      Try ATS Optimizer
+                    </Button>
+                  </Link>
+                  <Link href="/question-generator">
+                    <Button size="sm" variant="outline" className="border-white/20 text-slate-200 hover:bg-white/10">
+                      Question Generator
+                    </Button>
+                  </Link>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Main Content Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
