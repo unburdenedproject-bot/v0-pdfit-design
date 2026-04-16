@@ -32,11 +32,8 @@ This is the single source of truth for "where we left off." Read this first tomo
 ### ✅ Rate limiter — DONE (April 16, 2026)
 Paula recreated the Upstash DB and reconnected it to PDF.it. Env vars are live, rate limiting is active.
 
-### Activate the kill switch
-- [ ] Supabase → SQL Editor → run `scripts/008_create_feature_flags.sql`
-- [ ] Then run `scripts/009_fix_feature_flag_slugs.sql`
-- [ ] Test `/chat-with-pdf` once (should behave normally — all flags default to enabled)
-- [ ] Tell Claude when confirmed so he continues the observability sweep
+### ✅ Kill switch — ACTIVATED (April 16, 2026)
+Both SQL migrations ran successfully in Supabase. 37 rows in `feature_flags`, all `enabled = true`. Paula can now disable any tool from the Supabase Table Editor without a redeploy.
 
 ### Cost alerts (priority #6, 15 min total)
 - [ ] Vercel → Settings → Billing → Usage Alerts → set $50 / $100 / $200 thresholds

@@ -62,7 +62,7 @@ Suggestions I made to Paula on April 15, 2026 about things a solo non-technical 
 - Client-side: render the premium soft card ("Temporarily unavailable — usually restored within an hour") instead of a red error
 - Paula flips the flag in Supabase dashboard (no redeploy needed) and the tool goes dark gracefully
 
-**Status:** ✅ Complete — all 35 tool API routes now check the flag at the top and return 503 with a soft-card message if disabled. Client automatically renders the "Temporarily Unavailable" soft card via auto-detection in `SoftErrorCard`.
+**Status:** ✅ Complete + ACTIVATED (April 16, 2026) — all 35 tool API routes now check the flag at the top and return 503 with a soft-card message if disabled. Client automatically renders the "Temporarily Unavailable" soft card via auto-detection in `SoftErrorCard`. Migrations `008` + `009` executed in Supabase; 37 rows in `feature_flags` all default to `enabled = true`.
 
 **What's done:**
 - `scripts/008_create_feature_flags.sql` — new table `public.feature_flags` seeded with all 32 tool slugs
