@@ -120,7 +120,8 @@ export default function PreciosPage() {
                         <span className="text-5xl font-black text-[#E0C27A]">{billing === "monthly" ? "$3.99" : "$39.90"}</span>
                         <span className="text-lg text-slate-300">{billing === "monthly" ? "/mes" : "/ano"}</span>
                       </div>
-                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-300">Equivale a $3.33/mes facturado anualmente</p>}</div>
+                      <p className="text-xs text-slate-400">Precio introductorio del primer ano</p>
+                      <p className="text-xs text-slate-500">{billing === "monthly" ? "Luego $5.99/mes despues del primer ano" : "Luego $59.99/ano despues del primer ano"}</p>
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
                       <p className="text-sm text-[#E0C27A] font-medium">Todo en Gratis, mas:</p>
@@ -150,7 +151,8 @@ export default function PreciosPage() {
                         <span className="text-5xl font-black text-[#6B7CFF]">{billing === "monthly" ? "$13.99" : "$139.90"}</span>
                         <span className="text-lg text-slate-300">{billing === "monthly" ? "/mes" : "/ano"}</span>
                       </div>
-                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-300">Equivale a $11.66/mes facturado anualmente</p>}</div>
+                      <p className="text-xs text-slate-400">Precio introductorio del primer ano</p>
+                      <p className="text-xs text-slate-500">{billing === "monthly" ? "Luego $16.99/mes despues del primer ano" : "Luego $169.90/ano despues del primer ano"}</p>
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
                       <p className="text-sm text-[#6B7CFF] font-medium">Todo en Pro, mas:</p>
@@ -180,7 +182,8 @@ export default function PreciosPage() {
                         <span className="text-5xl font-black text-[#C0C5CE]">{billing === "monthly" ? "$49.99" : "$499.90"}</span>
                         <span className="text-lg text-slate-300">{billing === "monthly" ? "/mes" : "/ano"}</span>
                       </div>
-                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-300">Equivale a $41.66/mes facturado anualmente</p>}</div>
+                      <p className="text-xs text-slate-400">Precio introductorio del primer ano</p>
+                      <p className="text-xs text-slate-500">{billing === "monthly" ? "Luego $59.99/mes despues del primer ano" : "Luego $599.00/ano despues del primer ano"}</p>
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
                       <p className="text-sm text-[#C0C5CE] font-medium">Todo en Business, mas:</p>

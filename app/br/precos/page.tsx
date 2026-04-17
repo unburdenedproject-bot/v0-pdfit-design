@@ -123,7 +123,8 @@ export default function PrecosPage() {
                         <span className="text-5xl font-black text-[#E0C27A]">{billing === "monthly" ? "$3.99" : "$39.90"}</span>
                         <span className="text-lg text-slate-300">{billing === "monthly" ? "/mes" : "/ano"}</span>
                       </div>
-                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-300">Equivale a $3.33/mes cobrado anualmente</p>}</div>
+                      <p className="text-xs text-slate-400">Preco introdutorio do primeiro ano</p>
+                      <p className="text-xs text-slate-500">{billing === "monthly" ? "Depois $5.99/mes apos o primeiro ano" : "Depois $59.99/ano apos o primeiro ano"}</p>
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
                       <p className="text-sm text-[#E0C27A] font-medium">Tudo no Gratis, mais:</p>
@@ -153,7 +154,8 @@ export default function PrecosPage() {
                         <span className="text-5xl font-black text-[#6B7CFF]">{billing === "monthly" ? "$13.99" : "$139.90"}</span>
                         <span className="text-lg text-slate-300">{billing === "monthly" ? "/mes" : "/ano"}</span>
                       </div>
-                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-300">Equivale a $11.66/mes cobrado anualmente</p>}</div>
+                      <p className="text-xs text-slate-400">Preco introdutorio do primeiro ano</p>
+                      <p className="text-xs text-slate-500">{billing === "monthly" ? "Depois $16.99/mes apos o primeiro ano" : "Depois $169.90/ano apos o primeiro ano"}</p>
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
                       <p className="text-sm text-[#6B7CFF] font-medium">Tudo no Pro, mais:</p>
@@ -183,7 +185,8 @@ export default function PrecosPage() {
                         <span className="text-5xl font-black text-[#C0C5CE]">{billing === "monthly" ? "$49.99" : "$499.90"}</span>
                         <span className="text-lg text-slate-300">{billing === "monthly" ? "/mes" : "/ano"}</span>
                       </div>
-                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-300">Equivale a $41.66/mes cobrado anualmente</p>}</div>
+                      <p className="text-xs text-slate-400">Preco introdutorio do primeiro ano</p>
+                      <p className="text-xs text-slate-500">{billing === "monthly" ? "Depois $59.99/mes apos o primeiro ano" : "Depois $599.00/ano apos o primeiro ano"}</p>
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
                       <p className="text-sm text-[#C0C5CE] font-medium">Tudo no Business, mais:</p>

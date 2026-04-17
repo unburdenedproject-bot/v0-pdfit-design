@@ -124,7 +124,8 @@ export default function PricingPage() {
                         <span className="text-5xl font-black text-[#E0C27A]">{billing === "monthly" ? "$3.99" : "$39.90"}</span>
                         <span className="text-lg text-slate-300">{billing === "monthly" ? "/month" : "/year"}</span>
                       </div>
-                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-300">Equivalent to $3.33/mo billed annually</p>}</div>
+                      <p className="text-xs text-slate-400">First year introductory price</p>
+                      <p className="text-xs text-slate-500">{billing === "monthly" ? "Then $5.99/mo after first year" : "Then $59.99/yr after first year"}</p>
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
                       <p className="text-sm text-[#E0C27A] font-medium">Everything in Free, plus:</p>
@@ -154,7 +155,8 @@ export default function PricingPage() {
                         <span className="text-5xl font-black text-[#6B7CFF]">{billing === "monthly" ? "$13.99" : "$139.90"}</span>
                         <span className="text-lg text-slate-300">{billing === "monthly" ? "/month" : "/year"}</span>
                       </div>
-                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-300">Equivalent to $11.66/mo billed annually</p>}</div>
+                      <p className="text-xs text-slate-400">First year introductory price</p>
+                      <p className="text-xs text-slate-500">{billing === "monthly" ? "Then $16.99/mo after first year" : "Then $169.90/yr after first year"}</p>
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
                       <p className="text-sm text-[#6B7CFF] font-medium">Everything in Pro, plus:</p>
@@ -184,7 +186,8 @@ export default function PricingPage() {
                         <span className="text-5xl font-black text-[#C0C5CE]">{billing === "monthly" ? "$49.99" : "$499.90"}</span>
                         <span className="text-lg text-slate-300">{billing === "monthly" ? "/month" : "/year"}</span>
                       </div>
-                      <div className="min-h-[20px]">{billing === "annual" && <p className="text-sm text-slate-300">Equivalent to $41.66/mo billed annually</p>}</div>
+                      <p className="text-xs text-slate-400">First year introductory price</p>
+                      <p className="text-xs text-slate-500">{billing === "monthly" ? "Then $59.99/mo after first year" : "Then $599.00/yr after first year"}</p>
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
                       <p className="text-sm text-[#C0C5CE] font-medium">Everything in Business, plus:</p>
