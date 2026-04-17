@@ -29,7 +29,7 @@ PDF.it launches next week. All infrastructure is hardened, all 7 solo-builder pr
 
 ---
 
-## 🔴 Paula's to-do list (before launch)
+## 🔴 Paula's to-do list (before Sunday)
 
 ### Spam fix — CRITICAL (5 min)
 Newsletter emails are landing in spam. This MUST be fixed before launch.
@@ -37,9 +37,6 @@ Newsletter emails are landing in spam. This MUST be fixed before launch.
 - [ ] Verify SPF, DKIM, and DMARC all show **green/verified**
 - [ ] If any are pending → add the DNS records Resend shows you at your domain registrar
 - [ ] Without this, all marketing emails go to spam. Blocks everything.
-
-### Run SQL migration for broadcast campaigns
-- [ ] Supabase SQL Editor → paste and run `scripts/012_newsletter_campaigns.sql`
 
 ### Save launch-day posts
 - [ ] Copy the launch email + Product Hunt + LinkedIn + Reddit + Hacker News posts from April 16 chat into a Google Doc
@@ -71,7 +68,12 @@ Create `/for/lawyers`, `/for/accountants`, `/for/hr-teams`, `/for/students`, `/f
 - Include testimonial slots (fill when feedback comes in)
 - CTA to Business/Enterprise plans
 
-**Priority 4: Portuguese grammar audit**
+**Priority 4: Activate weekly newsletter**
+- Run `scripts/012_newsletter_campaigns.sql` in Supabase
+- Test by sending Week 1 email ("Tool of the Week: Compress PDF") via `/send-newsletter`
+- 6 pre-written weekly emails ready in `lib/weekly-newsletters.ts` — one per week for first 6 weeks
+
+**Priority 5: Portuguese grammar audit**
 Same sweep we did for Spanish — check all BR Portuguese for missing accents (ã, ç, é, ê, í, ó, ô, ú, à). The BR layer likely has similar issues.
 
 ### Phase 3: Retention (week 2+, after launch data comes in)
