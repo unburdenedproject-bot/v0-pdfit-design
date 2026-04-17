@@ -1,5 +1,50 @@
 # PDF.it - Accomplished Work
 
+## Launch Finalization — Phase 1 Complete, Spanish Grammar, Auth Emails, Pricing Update (April 17, 2026)
+
+Final pre-launch session. Every user-facing system is now polished and production-ready.
+
+### Phase 1 launch prep (COMPLETE)
+- **Unsubscribe page + API** (`/unsubscribe?email=...`) — CAN-SPAM compliant one-click unsubscribe with branded dark-theme confirmation page. Removes from `newsletter_subscribers` + clears `newsletter_emails_sent` tracking.
+- **Homepage newsletter signup** (EN/ES/BR) — `NewsletterSignup` component added between Trust Section and FAQ on all 3 homepages. Dark section, teal CTA, matches site aesthetic.
+- **Weekly broadcast mechanism** — `newsletter_campaigns` Supabase table + `/api/send-broadcast` endpoint. Paula creates a campaign row (subject + HTML), triggers the endpoint, it sends to all subscribers in rate-limit-friendly batches with auto-injected unsubscribe links.
+
+### Pricing update
+- **Introductory pricing model** added to all 3 pricing pages (EN/ES/BR):
+  - Year 1: $3.99/$13.99/$49.99 (current prices)
+  - Year 2+: $5.99/$16.99/$59.99 (new regular prices)
+  - Each card shows "First year introductory price" + "Then $X/mo after first year"
+- Stripe Year 2 pricing reminder scheduled for March 31, 2027 (remote trigger)
+- CLAUDE.md updated with dual-tier pricing structure
+
+### Supabase auth email redesign (7 templates)
+All Supabase authentication emails redesigned to match the PDF.it™ LinkSplasher-style brand aesthetic:
+- Confirm signup, Invite user, Change email confirmation, Reset password, Verification code/magic link, Password changed notification, Email changed notification
+- Subject format: `PDF.it™ ◆ [Action]`
+- Bold gradient header (navy→indigo), clean white body, teal pill CTA, minimal footer
+- Templates provided as HTML for paste into Supabase → Authentication → Email Templates
+
+### Spanish grammar sweep (~100+ fixes)
+Full audit and fix of missing diacritical marks across the entire Spanish layer:
+- 9 tool interface components (ES locale labels)
+- hero-section-es, features-grid-es, dashboard-client-es, newsletter-signup
+- ES pricing, about, homepage, ~60 /learn/ articles
+- Brand guide HTML + regenerated PDF
+- Fixes: á/é/í/ó/ú accents, ñ (contraseña, diseñado, pequeñas, año, tamaño), interrogatives (qué, cómo, cuál), language names (español, inglés, portugués, francés, alemán), professional terms (electrónica, extracción, redacción, información, automatización)
+
+### Brand guide PDF
+- `PDF.it-Guía-de-Marca.pdf` — 6-page brand guide in Spanish with correct grammar, generated via Playwright
+- Includes color swatches, typography specimens, button styles, pricing tables, email spec, do/don't rules
+- ™ added to PDF.it across all footers + emails
+- Copyright updated to © 2025 PDF.it™
+
+### Scheduled triggers (5 total now)
+- Daily health check (8am PT)
+- Weekly review reminder (Mon 9am PT)
+- Monthly churn query (1st of month 9am PT)
+- Stripe CLI re-auth (July 10, 2026)
+- Stripe Year 2 pricing (March 31, 2027)
+
 ## Launch Week Prep — Newsletter Automation, Dashboard Growth, Cancel Survey, Marketing, Brand (April 16, 2026)
 
 Massive ops + marketing day. All 7 solo-builder priorities completed, newsletter email system built, launch-week deliverables drafted.
