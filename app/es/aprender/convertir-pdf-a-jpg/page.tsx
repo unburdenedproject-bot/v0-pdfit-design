@@ -16,7 +16,7 @@ const faqSchema = {
   "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "¿Cómo convierto un PDF a JPG gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta PDF a JPG de PDF.it, elige la configuración de calidad, haz clic en Convertir y descarga tus imágenes JPG. No se requiere registro para tus primeros 3 archivos." } },
-    { "@type": "Question", "name": "¿Convertir PDF a JPG pierde calidad?", "acceptedAnswer": { "@type": "Answer", "text": "JPG usa compresión con pérdida, así que siempre hay algo de pérdida de calidad comparado con el PDF original. Sin embargo, con configuraciones de alta calidad (200-300 DPI), la diferencia es apenas notable para la mayoría de usos como presentaciones, redes sociales o páginas web." } },
+    { "@type": "Question", "name": "¿Convertir PDF a JPG pierde calidad?", "acceptedAnswer": { "@type": "Answer", "text": "JPG usa compresión con pérdida, así que siempre hay algo de pérdida de calidad comparado con el PDF original. Sin embargo, con configuraciónes de alta calidad (200-300 DPI), la diferencia es apenas notable para la mayoría de usos como presentaciones, redes sociales o páginas web." } },
     { "@type": "Question", "name": "¿Qué DPI debo usar para PDF a JPG?", "acceptedAnswer": { "@type": "Answer", "text": "Para visualización en pantalla y uso web, 150 DPI es suficiente. Para presentaciones y documentos, 200 DPI funciona bien. Para impresión o cuando necesitas máximo detalle, usa 300 DPI. Mayor DPI significa archivos más grandes." } },
     { "@type": "Question", "name": "¿Puedo convertir un PDF de varias páginas a JPG?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Cuando conviertes un PDF de varias páginas, cada página se convierte en una imagen JPG separada. PDF.it convierte todas las páginas a la vez y te permite descargarlas individualmente o como archivo ZIP." } },
     { "@type": "Question", "name": "¿Debo convertir a JPG o PNG?", "acceptedAnswer": { "@type": "Answer", "text": "Usa JPG para fotos, documentos escaneados y cuando el tamaño del archivo importa. Usa PNG para páginas con mucho texto, diagramas, capturas de pantalla o cuando necesitas transparencia. Los archivos PNG son más grandes pero sin pérdida de calidad." } },
@@ -191,7 +191,7 @@ export default function ConvertirPdfAJpgPage() {
               {[
                 { title: "Cómo Guardar una Página de PDF como JPG (Windows, Mac, Móvil)", href: "/es/aprender/guardar-pagina-pdf-como-jpg" },
                 { title: "Convertir PDF a JPG para PowerPoint (Mejores Configuraciones + Consejos)", href: "/es/aprender/pdf-a-jpg-para-powerpoint" },
-                { title: "Por Qué Tu PDF a JPG Se Ve Borroso (Y Cómo Solucionarlo)", href: "/es/aprender/por-que-pdf-a-jpg-se-ve-borroso" },
+                { title: "Por Qué Tu PDF a JPG Se Ve Borroso (Y Cómo Soluciónarlo)", href: "/es/aprender/por-que-pdf-a-jpg-se-ve-borroso" },
                 { title: "Convertir PDF a JPG en iPhone (Sin Apps)", href: "/es/aprender/pdf-a-jpg-en-iphone" },
               ].map((article) => (
                 <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
@@ -209,7 +209,7 @@ export default function ConvertirPdfAJpgPage() {
             <div className="space-y-6">
               {[
                 { q: "¿Cómo convierto un PDF a JPG gratis?", a: "Sube tu PDF a la herramienta PDF a JPG de PDF.it, elige la configuración de calidad, haz clic en Convertir y descarga tus imágenes JPG. No se requiere registro para tus primeros 3 archivos." },
-                { q: "¿Convertir PDF a JPG pierde calidad?", a: "JPG usa compresión con pérdida, así que siempre hay algo de pérdida de calidad comparado con el PDF original. Sin embargo, con configuraciones de alta calidad (200-300 DPI), la diferencia es apenas notable para la mayoría de usos." },
+                { q: "¿Convertir PDF a JPG pierde calidad?", a: "JPG usa compresión con pérdida, así que siempre hay algo de pérdida de calidad comparado con el PDF original. Sin embargo, con configuraciónes de alta calidad (200-300 DPI), la diferencia es apenas notable para la mayoría de usos." },
                 { q: "¿Qué DPI debo usar para PDF a JPG?", a: "Para visualización en pantalla y uso web, 150 DPI es suficiente. Para presentaciones y documentos, 200 DPI funciona bien. Para impresión o cuando necesitas máximo detalle, usa 300 DPI." },
                 { q: "¿Puedo convertir un PDF de varias páginas a JPG?", a: "Sí. Cuando conviertes un PDF de varias páginas, cada página se convierte en una imagen JPG separada. PDF.it convierte todas las páginas a la vez y te permite descargarlas individualmente o como archivo ZIP." },
                 { q: "¿Debo convertir a JPG o PNG?", a: "Usa JPG para fotos, documentos escaneados y cuando el tamaño del archivo importa. Usa PNG para páginas con mucho texto, diagramas, capturas de pantalla o cuando necesitas transparencia." },

@@ -112,7 +112,7 @@ const routes: [string, string, string][] = [
   ["/batch-organize-pdf", "/es/organizar-pdf-por-lotes", "/br/organizar-pdf-em-lote"],
   ["/reorder-pdf", "/es/reordenar-pdf", "/br/reordenar-pdf"],
   ["/reorder-pdf-pages", "/es/reordenar-paginas-pdf", "/br/reordenar-paginas-pdf"],
-  // Conversion cluster
+  // Conversión cluster
   ["/pdf-to-docx", "/es/pdf-a-docx", "/br/pdf-para-docx"],
   ["/pdf-to-xlsx", "/es/pdf-a-xlsx", "/br/pdf-para-xlsx"],
   ["/pdf-to-google-docs", "/es/pdf-a-google-docs", "/br/pdf-para-google-docs"],

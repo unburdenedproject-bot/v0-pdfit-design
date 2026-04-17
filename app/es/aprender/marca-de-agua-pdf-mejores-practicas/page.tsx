@@ -5,10 +5,10 @@ import Link from "next/link"
 import { Stamp, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Mejores Practicas de Marca de Agua en PDF (Tamano, Opacidad y Ubicacion) | PDF.it",
+  title: "Mejores Prácticas de Marca de Agua en PDF (Tamaño, Opacidad y Ubicacion) | PDF.it",
   description:
-    "Aprende las mejores practicas para agregar marcas de agua a PDF — opacidad optima, tamano de fuente, ubicacion, color, y cuando usar marcas de agua diagonales vs centradas. Consejos profesionales de PDF.it.",
-  keywords: "mejores practicas marca de agua pdf, opacidad marca de agua, ubicacion marca de agua, marca de agua pdf profesional",
+    "Aprende las mejores prácticas para agregar marcas de agua a PDF — opacidad óptima, tamaño de fuente, ubicacion, color, y cuando usar marcas de agua diagonales vs centradas. Consejos profesionales de PDF.it.",
+  keywords: "mejores prácticas marca de agua pdf, opacidad marca de agua, ubicacion marca de agua, marca de agua pdf profesional",
 }
 
 const faqSchema = {
@@ -18,32 +18,32 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Que opacidad debo usar para una marca de agua en PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Para la mayoria de los documentos, 15-25% de opacidad es ideal. Esto hace que la marca de agua sea claramente visible sin dificultar la lectura del texto subyacente. Usa menor opacidad (10-15%) para marcas sutiles y mayor opacidad (30-40%) para sellos de seguridad como CONFIDENCIAL." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Para la mayoría de los documentos, 15-25% de opacidad es ideal. Esto hace que la marca de agua sea claramente visible sin dificultar la lectura del texto subyacente. Usa menor opacidad (10-15%) para marcas sutiles y mayor opacidad (30-40%) para sellos de seguridad como CONFIDENCIAL." }
     },
     {
       "@type": "Question",
       "name": "Debo usar una marca de agua diagonal o centrada?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Las marcas de agua diagonales (45 grados) son ideales para sellos de seguridad como BORRADOR o CONFIDENCIAL — son dificiles de recortar. Las marcas de agua centradas a baja opacidad funcionan mejor para logos de marca. La ubicacion en esquina es ideal para marcas sutiles y profesionales." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Las marcas de agua diagonales (45 grados) son ideales para sellos de seguridad como BORRADOR o CONFIDENCIAL — son difíciles de recortar. Las marcas de agua centradas a baja opacidad funcionan mejor para logos de marca. La ubicacion en esquina es ideal para marcas sutiles y profesionales." }
     },
     {
       "@type": "Question",
-      "name": "Que tamano de fuente funciona mejor para marcas de agua de texto?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Para marcas de agua diagonales que abarcan la pagina, usa una fuente grande (60-100pt) para que el texto se extienda de esquina a esquina. Para sellos de esquina, usa una fuente mas pequena (24-36pt). El objetivo es legibilidad sin abrumar el contenido del documento." }
+      "name": "Que tamaño de fuente funciona mejor para marcas de agua de texto?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Para marcas de agua diagonales que abarcan la página, usa una fuente grande (60-100pt) para que el texto se extienda de esquina a esquina. Para sellos de esquina, usa una fuente más pequeña (24-36pt). El objetivo es legibilidad sin abrumar el contenido del documento." }
     },
     {
       "@type": "Question",
       "name": "Que color debe tener mi marca de agua?",
-      "acceptedAnswer": { "@type": "Answer", "text": "El gris es la opcion mas profesional y versatil para marcas de agua de texto. El rojo funciona bien para sellos CONFIDENCIAL o urgentes. Para marcas de agua con logo, usa los colores de tu marca a opacidad reducida. Evita colores que choquen con el contenido del documento." }
+      "acceptedAnswer": { "@type": "Answer", "text": "El gris es la opción más profesional y versatil para marcas de agua de texto. El rojo funciona bien para sellos CONFIDENCIAL o urgentes. Para marcas de agua con logo, usa los colores de tu marca a opacidad reducida. Evita colores que choquen con el contenido del documento." }
     },
     {
       "@type": "Question",
       "name": "Como hago una marca de agua que no se pueda eliminar?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Despues de agregar tu marca de agua, aplana el PDF usando la herramienta Aplanar PDF de PDF.it. Esto fusiona la marca de agua con el contenido de la pagina de forma permanente. Luego protege el archivo con contrasena para prevenir mas ediciones." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Después de agregar tu marca de agua, aplana el PDF usando la herramienta Aplanar PDF de PDF.it. Esto fusiona la marca de agua con el contenido de la página de forma permanente. Luego protege el archivo con contraseña para prevenir más ediciónes." }
     },
     {
       "@type": "Question",
       "name": "La herramienta Marca de Agua PDF es gratis?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Marca de Agua PDF esta disponible para usuarios Pro ($3.99/mes) y Business ($13.99/mes). Ambos niveles incluyen marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Marca de Agua PDF está disponible para usuarios Pro ($3.99/mes) y Business ($13.99/mes). Ambos niveles incluyen marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." }
     }
   ]
 }
@@ -52,22 +52,22 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Crear una Marca de Agua Profesional en PDF",
-  "description": "Sigue estas mejores practicas para agregar una marca de agua limpia y profesional a cualquier PDF con PDF.it.",
+  "description": "Sigue estas mejores prácticas para agregar una marca de agua limpia y profesional a cualquier PDF con PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Elige tu tipo de marca de agua",
-      "text": "Decide entre una marca de agua de texto (BORRADOR, CONFIDENCIAL) o una marca de agua de imagen (logo de empresa). El texto es mas rapido de configurar; las imagenes agregan una marca mas fuerte."
+      "text": "Decide entre una marca de agua de texto (BORRADOR, CONFIDENCIAL) o una marca de agua de imagen (logo de empresa). El texto es más rápido de configurar; las imágenes agregan una marca más fuerte."
     },
     {
       "@type": "HowToStep",
       "name": "Establece opacidad y ubicacion optimas",
-      "text": "Usa 15-25% de opacidad para legibilidad. Coloca sellos de seguridad en diagonal, logos de marca en el centro, y marcas sutiles en una esquina. Prueba en una pagina primero."
+      "text": "Usa 15-25% de opacidad para legibilidad. Coloca sellos de seguridad en diagonal, logos de marca en el centro, y marcas sutiles en una esquina. Prueba en una página primero."
     },
     {
       "@type": "HowToStep",
       "name": "Aplica, aplana y protege",
-      "text": "Aplica la marca de agua a todas las paginas. Para marcas de agua permanentes, aplana el PDF y agrega proteccion con contrasena para prevenir la eliminacion."
+      "text": "Aplica la marca de agua a todas las páginas. Para marcas de agua permanentes, aplana el PDF y agrega protección con contraseña para prevenir la eliminación."
     }
   ]
 }
@@ -92,9 +92,9 @@ export default function MarcaDeAguaPDFMejoresPracticasPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
               <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Marca de Agua PDF</p>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Mejores Practicas de Marca de Agua en PDF (Tamano, Opacidad y Ubicacion)</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Mejores Prácticas de Marca de Agua en PDF (Tamaño, Opacidad y Ubicacion)</h1>
               <p className="text-xl text-slate-300">
-                Una buena marca de agua protege tu documento sin arruinar la legibilidad. Aqui estan las mejores practicas para opacidad, tamano de fuente, ubicacion y color — para que tus marcas de agua se vean profesionales siempre.
+                Una buena marca de agua protege tu documento sin arruinar la legibilidad. Aqui están las mejores prácticas para opacidad, tamaño de fuente, ubicacion y color — para que tus marcas de agua se vean profesionales siempre.
               </p>
             </div>
           </div>
@@ -126,7 +126,7 @@ export default function MarcaDeAguaPDFMejoresPracticasPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Elegir la Opacidad Correcta</h2>
               <p className="text-slate-600 mb-4">
-                La opacidad es la configuracion mas importante de una marca de agua. Si es demasiado alta, bloquea el contenido; si es demasiado baja, nadie la nota. Aqui estan los rangos recomendados:
+                La opacidad es la configuración más importante de una marca de agua. Si es demasiado alta, bloquea el contenido; si es demasiado baja, nadie la nota. Aqui están los rangos recomendados:
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
@@ -135,87 +135,87 @@ export default function MarcaDeAguaPDFMejoresPracticasPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
-                  <span><strong>15-25% de opacidad — Proteccion estandar.</strong> El punto ideal para la mayoria de las marcas de agua. Los sellos CONFIDENCIAL, BORRADOR y NO COPIAR son claramente legibles en este rango mientras mantienen el contenido del documento completamente legible. Este es el rango que recomendamos para la mayoria de los usuarios.</span>
+                  <span><strong>15-25% de opacidad — Protección estándar.</strong> El punto ideal para la mayoría de las marcas de agua. Los sellos CONFIDENCIAL, BORRADOR y NO COPIAR son claramente legibles en este rango mientras mantienen el contenido del documento completamente legible. Este es el rango que recomendamos para la mayoría de los usuarios.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
-                  <span><strong>30-40% de opacidad — Disuasion fuerte.</strong> Usa esto para documentos donde la marca de agua es el mensaje principal — copias de revision, documentos vencidos o muestras de vista previa. La marca de agua domina la pagina y deja muy claro que el documento tiene restricciones.</span>
+                  <span><strong>30-40% de opacidad — Disuasion fuerte.</strong> Usa esto para documentos donde la marca de agua es el mensaje principal — copias de revision, documentos vencidos o muestras de vista previa. La marca de agua domina la página y deja muy claro que el documento tiene restricciones.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
-                  <span><strong>50%+ de opacidad — Evitar en la mayoria de los casos.</strong> A este nivel, la marca de agua hace que el documento sea dificil de leer. Solo usa esto para documentos que deben ser visibles pero intencionalmente dificiles de usar, como certificados vencidos o contratos anulados.</span>
+                  <span><strong>50%+ de opacidad — Evitar en la mayoría de los casos.</strong> A este nivel, la marca de agua hace que el documento sea difícil de leer. Solo usa esto para documentos que deben ser visibles pero intencionalmente difíciles de usar, como certificados vencidos o contratos anulados.</span>
                 </li>
               </ul>
             </section>
 
             {/* Ubicacion */}
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Ubicacion de la Marca de Agua: Donde en la Pagina?</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Ubicacion de la Marca de Agua: Donde en la Página?</h2>
               <p className="text-slate-600 mb-4">
-                La posicion de tu marca de agua afecta tanto su visibilidad como cuanto interfiere con la lectura. Aqui estan las tres principales estrategias de ubicacion:
+                La posición de tu marca de agua afecta tanto su visibilidad como cuanto interfiere con la lectura. Aqui están las tres principales estrategias de ubicacion:
               </p>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Diagonal (45 Grados)</h3>
                   <p className="text-slate-600">
-                    La posicion clasica de marca de agua. El texto o imagen se extiende diagonalmente de una esquina a la otra. Esta es la ubicacion mas dificil de recortar, haciendola ideal para marcas de agua de seguridad como CONFIDENCIAL, BORRADOR y NO COPIAR. Usa un tamano de fuente grande (60-100pt para texto) para que la marca de agua abarque toda la pagina. Lee nuestra guia sobre <Link href="/es/aprender/marca-de-agua-pdf-confidencial" className="text-[#14D8C4] hover:underline">agregar marcas de agua confidenciales</Link> para configuraciones especificas.
+                    La posición clásica de marca de agua. El texto o imagen se extiende diagonalmente de una esquina a la otra. Esta es la ubicacion más difícil de recortar, haciendola ideal para marcas de agua de seguridad como CONFIDENCIAL, BORRADOR y NO COPIAR. Usa un tamaño de fuente grande (60-100pt para texto) para que la marca de agua abarque toda la página. Lee nuestra guia sobre <Link href="/es/aprender/marca-de-agua-pdf-confidencial" className="text-[#14D8C4] hover:underline">agregar marcas de agua confidenciales</Link> para configuraciónes específicas.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">Centro (Sin Rotacion)</h3>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">Centro (Sin Rotación)</h3>
                   <p className="text-slate-600">
-                    Coloca la marca de agua en el centro de la pagina sin rotacion. Esto funciona mejor para marcas de agua con logo a baja opacidad — crea una presencia de marca de fondo limpia y simetrica. Escala el logo al 30-50% del ancho de la pagina.
+                    Coloca la marca de agua en el centro de la página sin rotación. Esto funciona mejor para marcas de agua con logo a baja opacidad — crea una presencia de marca de fondo limpia y simetrica. Escala el logo al 30-50% del ancho de la página.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Esquina (Inferior Derecha o Inferior Izquierda)</h3>
                   <p className="text-slate-600">
-                    La ubicacion mas discreta. Un logo o sello de texto pequeno en una esquina funciona como un pie de pagina o membrete. Usa opacidad ligeramente mayor (20-30%) ya que la marca es pequena. Esto es profesional y no intrusivo, ideal para facturas, informes y correspondencia formal.
+                    La ubicacion más discreta. Un logo o sello de texto pequeño en una esquina funciona como un pie de página o membrete. Usa opacidad ligeramente mayor (20-30%) ya que la marca es pequeña. Esto es profesional y no intrusivo, ideal para facturas, informes y correspondencia formal.
                   </p>
                 </div>
               </div>
             </section>
 
-            {/* Tamano y color */}
+            {/* Tamaño y color */}
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Guia de Tamano de Fuente y Color</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Guia de Tamaño de Fuente y Color</h2>
               <p className="text-slate-600 mb-4">
-                Para marcas de agua de texto, la combinacion de tamano de fuente y color determina como se siente la marca de agua en la pagina:
+                Para marcas de agua de texto, la combinación de tamaño de fuente y color determina como se siente la marca de agua en la página:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Texto diagonal grande (60-100pt):</strong> Usa para sellos de pagina completa como CONFIDENCIAL o BORRADOR. El texto debe extenderse de esquina a esquina. Combina con color gris o rojo claro a 15-25% de opacidad.</li>
+                <li>&#10003; <strong>Texto diagonal grande (60-100pt):</strong> Usa para sellos de página completa como CONFIDENCIAL o BORRADOR. El texto debe extenderse de esquina a esquina. Combina con color gris o rojo claro a 15-25% de opacidad.</li>
                 <li>&#10003; <strong>Texto mediano (36-48pt):</strong> Bueno para marcas de agua centradas o patrones repetidos. Funciona bien para nombres de empresa o etiquetas de estado del documento.</li>
-                <li>&#10003; <strong>Texto pequeno (24-36pt):</strong> Ideal para sellos de esquina o etiquetas sutiles. Usa opacidad ligeramente mayor (20-30%) ya que el texto es mas pequeno y necesita mantenerse legible.</li>
-                <li>&#10003; <strong>Color gris:</strong> La opcion mas profesional y versatil. Funciona en cualquier tipo de documento y no choca con los colores del contenido. Recomendado para la mayoria de las marcas de agua.</li>
+                <li>&#10003; <strong>Texto pequeño (24-36pt):</strong> Ideal para sellos de esquina o etiquetas sutiles. Usa opacidad ligeramente mayor (20-30%) ya que el texto es más pequeño y necesita mantenerse legible.</li>
+                <li>&#10003; <strong>Color gris:</strong> La opción más profesional y versatil. Funciona en cualquier tipo de documento y no choca con los colores del contenido. Recomendado para la mayoría de las marcas de agua.</li>
                 <li>&#10003; <strong>Color rojo:</strong> Transmite urgencia e importancia. Ideal para sellos CONFIDENCIAL, NO COPIAR y relacionados con seguridad. Usar con moderacion — el rojo puede sentirse agresivo.</li>
                 <li>&#10003; <strong>Colores de marca:</strong> Si usas el nombre de tu empresa como marca de agua de texto, combina los colores de tu marca a baja opacidad. Esto refuerza la identidad de marca sin chocar.</li>
               </ul>
             </section>
 
-            {/* Referencia rapida */}
+            {/* Referencia rápida */}
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Referencia Rapida: Que Configuracion para Que Proposito?</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Referencia Rápida: Que Configuración para Que Propósito?</h2>
               <div className="space-y-4">
                 {[
                   {
                     title: "Documento borrador para revision interna",
-                    desc: "Texto: BORRADOR | Color: Gris | Opacidad: 20% | Posicion: Diagonal | Fuente: 80pt. Esto marca claramente el documento como no terminado sin dificultar el proceso de revision.",
+                    desc: "Texto: BORRADOR | Color: Gris | Opacidad: 20% | Posición: Diagonal | Fuente: 80pt. Esto marca claramente el documento como no terminado sin dificultar el proceso de revision.",
                   },
                   {
                     title: "Informe financiero confidencial",
-                    desc: "Texto: CONFIDENCIAL | Color: Rojo | Opacidad: 20-25% | Posicion: Diagonal | Fuente: 72pt. Fuerte visibilidad para seguridad. Aplana y protege con contrasena despues de marcar.",
+                    desc: "Texto: CONFIDENCIAL | Color: Rojo | Opacidad: 20-25% | Posición: Diagonal | Fuente: 72pt. Fuerte visibilidad para seguridad. Aplana y protege con contraseña después de marcar.",
                   },
                   {
                     title: "Propuesta de cliente con marca empresarial",
-                    desc: "Imagen: Logo de empresa (PNG) | Opacidad: 10-15% | Posicion: Centro | Escala: 40% del ancho de pagina. Marca sutil y profesional que no distrae del contenido.",
+                    desc: "Imagen: Logo de empresa (PNG) | Opacidad: 10-15% | Posición: Centro | Escala: 40% del ancho de página. Marca sutil y profesional que no distrae del contenido.",
                   },
                   {
                     title: "Factura o contrato",
-                    desc: "Imagen: Logo de empresa (PNG) | Opacidad: 20-25% | Posicion: Esquina inferior derecha | Escala: 15% del ancho de pagina. Marca de empresa discreta pero visible, similar a un membrete.",
+                    desc: "Imagen: Logo de empresa (PNG) | Opacidad: 20-25% | Posición: Esquina inferior derecha | Escala: 15% del ancho de página. Marca de empresa discreta pero visible, similar a un membrete.",
                   },
                   {
                     title: "Copia de vista previa o muestra",
-                    desc: "Texto: MUESTRA | Color: Gris | Opacidad: 30-35% | Posicion: Diagonal | Fuente: 90pt. Marca claramente el documento como una vista previa para prevenir el uso no autorizado del contenido.",
+                    desc: "Texto: MUESTRA | Color: Gris | Opacidad: 30-35% | Posición: Diagonal | Fuente: 90pt. Marca claramente el documento como una vista previa para prevenir el uso no autorizado del contenido.",
                   },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -235,15 +235,15 @@ export default function MarcaDeAguaPDFMejoresPracticasPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Hacer Tu Marca de Agua Permanente y Segura</h2>
               <p className="text-slate-600 mb-4">
-                Incluso la mejor marca de agua es inutil si alguien puede eliminarla facilmente. Sigue estos pasos despues de marcar para fijarla:
+                Incluso la mejor marca de agua es inutil si alguien puede eliminarla fácilmente. Sigue estos pasos después de marcar para fijarla:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Aplana el PDF.</strong> Usa <Link href="/es/aplanar-pdf" className="text-[#14D8C4] hover:underline">Aplanar PDF</Link> para fusionar la marca de agua permanentemente en el contenido de la pagina. Una vez aplanada, la marca de agua se convierte en parte de la imagen de la pagina y no puede seleccionarse ni eliminarse por separado.</li>
-                <li>&#10003; <strong>Agrega proteccion con contrasena.</strong> Usa <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link> para restringir la edicion, copia e impresion. Esto previene que alguien abra el archivo en un editor e intente eliminar la marca de agua.</li>
-                <li>&#10003; <strong>Comprime el archivo final.</strong> Aplanar y agregar marca de agua puede aumentar el tamano del archivo. Ejecuta el resultado final a traves de <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para mantenerlo manejable para correo electronico o carga.</li>
+                <li>&#10003; <strong>Aplana el PDF.</strong> Usa <Link href="/es/aplanar-pdf" className="text-[#14D8C4] hover:underline">Aplanar PDF</Link> para fusionar la marca de agua permanentemente en el contenido de la página. Una vez aplanada, la marca de agua se convierte en parte de la imagen de la página y no puede selecciónarse ni eliminarse por separado.</li>
+                <li>&#10003; <strong>Agrega protección con contraseña.</strong> Usa <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link> para restringir la edición, copia e impresión. Esto previene que alguien abra el archivo en un editor e intente eliminar la marca de agua.</li>
+                <li>&#10003; <strong>Comprime el archivo final.</strong> Aplanar y agregar marca de agua puede aumentar el tamaño del archivo. Ejecuta el resultado final a traves de <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para mantenerlo manejable para correo electrónico o carga.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Marca de Agua PDF esta disponible para usuarios Pro y Business. <Link href="/es/precios" className="text-[#14D8C4] hover:underline">Ver precios</Link> para mas detalles.
+                Marca de Agua PDF está disponible para usuarios Pro y Business. <Link href="/es/precios" className="text-[#14D8C4] hover:underline">Ver precios</Link> para más detalles.
               </p>
             </section>
 
@@ -267,12 +267,12 @@ export default function MarcaDeAguaPDFMejoresPracticasPage() {
         {/* Related Articles */}
         <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-6">Articulos Relacionados</h2>
+            <h2 className="text-2xl font-black text-slate-900 mb-6">Artículos Relacionados</h2>
             <div className="grid gap-3">
               {[
-                { title: "Como Agregar una Marca de Agua a un PDF en Linea", href: "/es/aprender/como-agregar-marca-de-agua-a-pdf" },
-                { title: "Agregar una Marca de Agua 'Confidencial' a un PDF (Guia Rapida)", href: "/es/aprender/marca-de-agua-pdf-confidencial" },
-                { title: "Agregar una Marca de Agua a un PDF en Tu Telefono (iPhone y Android)", href: "/es/aprender/marca-de-agua-pdf-en-movil" },
+                { title: "Como Agregar una Marca de Agua a un PDF en Línea", href: "/es/aprender/como-agregar-marca-de-agua-a-pdf" },
+                { title: "Agregar una Marca de Agua 'Confidencial' a un PDF (Guia Rápida)", href: "/es/aprender/marca-de-agua-pdf-confidencial" },
+                { title: "Agregar una Marca de Agua a un PDF en Tu Teléfono (iPhone y Android)", href: "/es/aprender/marca-de-agua-pdf-en-movil" },
               ].map((article) => (
                 <Link
                   key={article.href}
@@ -293,12 +293,12 @@ export default function MarcaDeAguaPDFMejoresPracticasPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Que opacidad debo usar para una marca de agua en PDF?", a: "Para la mayoria de los documentos, 15-25% de opacidad es ideal. Esto hace que la marca de agua sea claramente visible sin dificultar la lectura del texto subyacente. Usa menor opacidad (10-15%) para marcas sutiles y mayor opacidad (30-40%) para sellos de seguridad como CONFIDENCIAL." },
-                { q: "Debo usar una marca de agua diagonal o centrada?", a: "Las marcas de agua diagonales (45 grados) son ideales para sellos de seguridad como BORRADOR o CONFIDENCIAL — son dificiles de recortar. Las marcas de agua centradas a baja opacidad funcionan mejor para logos de marca. La ubicacion en esquina es ideal para marcas sutiles y profesionales." },
-                { q: "Que tamano de fuente funciona mejor para marcas de agua de texto?", a: "Para marcas de agua diagonales que abarcan la pagina, usa una fuente grande (60-100pt) para que el texto se extienda de esquina a esquina. Para sellos de esquina, usa una fuente mas pequena (24-36pt). El objetivo es legibilidad sin abrumar el contenido del documento." },
-                { q: "Que color debe tener mi marca de agua?", a: "El gris es la opcion mas profesional y versatil para marcas de agua de texto. El rojo funciona bien para sellos CONFIDENCIAL o urgentes. Para marcas de agua con logo, usa los colores de tu marca a opacidad reducida. Evita colores que choquen con el contenido del documento." },
-                { q: "Como hago una marca de agua que no se pueda eliminar?", a: "Despues de agregar tu marca de agua, aplana el PDF usando la herramienta Aplanar PDF de PDF.it. Esto fusiona la marca de agua con el contenido de la pagina de forma permanente. Luego protege el archivo con contrasena para prevenir mas ediciones." },
-                { q: "La herramienta Marca de Agua PDF es gratis?", a: "Marca de Agua PDF esta disponible para usuarios Pro ($3.99/mes) y Business ($13.99/mes). Ambos niveles incluyen marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." },
+                { q: "Que opacidad debo usar para una marca de agua en PDF?", a: "Para la mayoría de los documentos, 15-25% de opacidad es ideal. Esto hace que la marca de agua sea claramente visible sin dificultar la lectura del texto subyacente. Usa menor opacidad (10-15%) para marcas sutiles y mayor opacidad (30-40%) para sellos de seguridad como CONFIDENCIAL." },
+                { q: "Debo usar una marca de agua diagonal o centrada?", a: "Las marcas de agua diagonales (45 grados) son ideales para sellos de seguridad como BORRADOR o CONFIDENCIAL — son difíciles de recortar. Las marcas de agua centradas a baja opacidad funcionan mejor para logos de marca. La ubicacion en esquina es ideal para marcas sutiles y profesionales." },
+                { q: "Que tamaño de fuente funciona mejor para marcas de agua de texto?", a: "Para marcas de agua diagonales que abarcan la página, usa una fuente grande (60-100pt) para que el texto se extienda de esquina a esquina. Para sellos de esquina, usa una fuente más pequeña (24-36pt). El objetivo es legibilidad sin abrumar el contenido del documento." },
+                { q: "Que color debe tener mi marca de agua?", a: "El gris es la opción más profesional y versatil para marcas de agua de texto. El rojo funciona bien para sellos CONFIDENCIAL o urgentes. Para marcas de agua con logo, usa los colores de tu marca a opacidad reducida. Evita colores que choquen con el contenido del documento." },
+                { q: "Como hago una marca de agua que no se pueda eliminar?", a: "Después de agregar tu marca de agua, aplana el PDF usando la herramienta Aplanar PDF de PDF.it. Esto fusiona la marca de agua con el contenido de la página de forma permanente. Luego protege el archivo con contraseña para prevenir más ediciónes." },
+                { q: "La herramienta Marca de Agua PDF es gratis?", a: "Marca de Agua PDF está disponible para usuarios Pro ($3.99/mes) y Business ($13.99/mes). Ambos niveles incluyen marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." },
               ].map((faq, i) => (
                 <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

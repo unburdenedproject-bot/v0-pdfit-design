@@ -8,7 +8,7 @@ import Link from "next/link"
 export const metadata = {
   title: "Convertir Excel a PDF Online — XLSX a PDF Gratis | PDF.it",
   description:
-    "Convierte Excel a PDF en segundos con PDF.it. Transforma hojas de calculo XLS o XLSX en un PDF limpio y listo para compartir — rapido, facil y desde tu navegador.",
+    "Convierte Excel a PDF en segundos con PDF.it. Transforma hojas de cálculo XLS o XLSX en un PDF limpio y listo para compartir — rápido, fácil y desde tu navegador.",
   alternates: {
     canonical: "https://pdf.it.com/es/excel-a-pdf",
     languages: {
@@ -53,7 +53,7 @@ export default function ExcelaPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convertir Excel a PDF Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Convierte XLS/XLSX a PDF con PDF.it — ideal para compartir reportes, facturas y hojas de calculo en un formato consistente y listo para imprimir.
+                Convierte XLS/XLSX a PDF con PDF.it — ideal para compartir reportes, facturas y hojas de cálculo en un formato consistente y listo para imprimir.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2">
@@ -62,7 +62,7 @@ export default function ExcelaPDFPage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Shield className="h-4 w-4 text-[#14D8C4]" />
-                  <span>Archivos Eliminados Tras la Sesion</span>
+                  <span>Archivos Eliminados Tras la Sesión</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Download className="h-4 w-4 text-[#14D8C4]" />
@@ -77,14 +77,14 @@ export default function ExcelaPDFPage() {
         <section className="py-10 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <p className="text-lg text-slate-600 leading-relaxed">
-              Usa el convertidor de Excel a PDF de PDF.it para transformar una hoja de calculo XLS o XLSX en un PDF que puedes compartir con cualquier persona. Ideal para reportes, impresion, envio por correo y entrega de archivos — convierte en segundos y descarga tu PDF al instante.
+              Usa el convertidor de Excel a PDF de PDF.it para transformar una hoja de cálculo XLS o XLSX en un PDF que puedes compartir con cualquier persona. Ideal para reportes, impresión, envio por correo y entrega de archivos — convierte en segundos y descarga tu PDF al instante.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
               <li className="flex items-center gap-2">✓ Convierte Excel a PDF online en segundos</li>
-              <li className="flex items-center gap-2">✓ Soporta hojas de calculo .xls y .xlsx</li>
+              <li className="flex items-center gap-2">✓ Soporta hojas de cálculo .xls y .xlsx</li>
               <li className="flex items-center gap-2">✓ Crea PDFs listos para compartir, imprimir y enviar por correo</li>
               <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li className="flex items-center gap-2">✓ Sin instalacion — conversion desde tu navegador</li>
+              <li className="flex items-center gap-2">✓ Sin instalación — conversión desde tu navegador</li>
             </ul>
           </div>
         </section>
@@ -113,9 +113,9 @@ export default function ExcelaPDFPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { title: "Exporta XLSX a PDF para Compartir Facilmente", desc: "PDF es la forma mas sencilla de compartir hojas de calculo sin sorpresas de diseno. Convierte Excel a PDF para que los destinatarios lo vean de manera consistente — sin necesitar Excel." },
-                { title: "PDFs Listos para Imprimir para Reportes y Facturas", desc: "Transforma hojas de calculo en PDFs que son mas faciles de imprimir, adjuntar a correos o subir a portales para contabilidad, escuela y trabajo." },
-                { title: "Mantiene las Tablas Legibles", desc: "PDF.it convierte tus hojas en un PDF optimizado para visualizacion e impresion estandar, manteniendo tus datos claros y organizados." },
+                { title: "Exporta XLSX a PDF para Compartir Fácilmente", desc: "PDF es la forma más sencilla de compartir hojas de cálculo sin sorpresas de diseño. Convierte Excel a PDF para que los destinatarios lo vean de manera consistente — sin necesitar Excel." },
+                { title: "PDFs Listos para Imprimir para Reportes y Facturas", desc: "Transforma hojas de cálculo en PDFs que son más fáciles de imprimir, adjuntar a correos o subir a portales para contabilidad, escuela y trabajo." },
+                { title: "Mantiene las Tablas Legibles", desc: "PDF.it convierte tus hojas en un PDF optimizado para visualización e impresión estándar, manteniendo tus datos claros y organizados." },
               ].map((feature) => (
                 <div
                   key={feature.title}
@@ -152,7 +152,7 @@ export default function ExcelaPDFPage() {
             <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Convertir Excel a PDF</h2>
             <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
               {[
-                { num: "1", title: "Sube tu hoja de calculo", desc: "Arrastra o haz clic para elegir un archivo" },
+                { num: "1", title: "Sube tu hoja de cálculo", desc: "Arrastra o haz clic para elegir un archivo" },
                 { num: "2", title: "Haz clic en Convertir", desc: "El procesamiento toma solo segundos" },
                 { num: "3", title: "Descarga tu PDF", desc: "Obtiene un PDF listo para imprimir" },
               ].map((step) => (
@@ -182,7 +182,7 @@ export default function ExcelaPDFPage() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
                 { name: "Word a PDF", href: "/es/word-a-pdf", desc: "Convierte documentos Word a PDF" },
-                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamano del PDF" },
+                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamaño del PDF" },
                 { name: "Unir PDF", href: "/es/unir-pdf", desc: "Combina varios PDFs en uno" },
                 { name: "PowerPoint a PDF", href: "/es/powerpoint-a-pdf", desc: "Convierte presentaciones a PDF" },
               ].map((tool) => (
@@ -234,11 +234,11 @@ export default function ExcelaPDFPage() {
             <div className="space-y-4">
               {[
                 { q: "¿PDF.it puede convertir tanto XLS como XLSX a PDF?", a: "Si. PDF.it soporta ambos formatos de archivo .xls y .xlsx." },
-                { q: "¿El formato de mi Excel se mantendra en el PDF?", a: "En la mayoria de los casos, si. Hojas de calculo complejas con columnas muy anchas o fuentes personalizadas pueden verse ligeramente diferentes segun el archivo." },
-                { q: "¿Por que las columnas se cortan en mi conversion de Excel a PDF?", a: "Esto generalmente ocurre cuando la hoja es mas ancha que la pagina PDF. Intenta usar un diseno de impresion ajustado a la pagina en Excel antes de subir el archivo." },
-                { q: "¿Puedo convertir Excel a PDF en mi celular?", a: "Si. PDF.it funciona en navegadores moviles — sube el archivo XLSX y descarga el PDF." },
-                { q: "¿Es seguro subir mi archivo Excel?", a: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." },
-                { q: "¿Cual es el tamano maximo de archivo que puedo convertir?", a: "Las cuentas Pro y Business pueden subir archivos de hasta 200MB." },
+                { q: "¿El formato de mi Excel se mantendrá en el PDF?", a: "En la mayoría de los casos, si. Hojas de cálculo complejas con columnas muy anchas o fuentes personalizadas pueden verse ligeramente diferentes segun el archivo." },
+                { q: "¿Por qué las columnas se cortan en mi conversión de Excel a PDF?", a: "Esto generalmente ocurre cuando la hoja es más ancha que la página PDF. Intenta usar un diseño de impresión ajustado a la página en Excel antes de subir el archivo." },
+                { q: "¿Puedo convertir Excel a PDF en mi celular?", a: "Si. PDF.it funciona en navegadores móviles — sube el archivo XLSX y descarga el PDF." },
+                { q: "¿Es seguro subir mi archivo Excel?", a: "Si. Todas las transferencias están cifradas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." },
+                { q: "¿Cual es el tamaño máximo de archivo que puedo convertir?", a: "Las cuentas Pro y Business pueden subir archivos de hasta 200MB." },
               ].map((faq, i) => (
                 <div
                   key={i}
@@ -262,11 +262,11 @@ export default function ExcelaPDFPage() {
           "@type": "FAQPage",
           "mainEntity": [
             { "@type": "Question", "name": "¿PDF.it puede convertir tanto XLS como XLSX a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it soporta ambos formatos de archivo .xls y .xlsx." } },
-            { "@type": "Question", "name": "¿El formato de mi Excel se mantendra en el PDF?", "acceptedAnswer": { "@type": "Answer", "text": "En la mayoria de los casos, si. Hojas de calculo complejas con columnas muy anchas o fuentes personalizadas pueden verse ligeramente diferentes segun el archivo." } },
-            { "@type": "Question", "name": "¿Por que las columnas se cortan en mi conversion de Excel a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Esto generalmente ocurre cuando la hoja es mas ancha que la pagina PDF. Intenta usar un diseno de impresion ajustado a la pagina en Excel antes de subir el archivo." } },
-            { "@type": "Question", "name": "¿Puedo convertir Excel a PDF en mi celular?", "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en navegadores moviles — sube el archivo XLSX y descarga el PDF." } },
-            { "@type": "Question", "name": "¿Es seguro subir mi archivo Excel?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." } },
-            { "@type": "Question", "name": "¿Cual es el tamano maximo de archivo que puedo convertir?", "acceptedAnswer": { "@type": "Answer", "text": "Las cuentas Pro y Business pueden subir archivos de hasta 200MB." } }
+            { "@type": "Question", "name": "¿El formato de mi Excel se mantendrá en el PDF?", "acceptedAnswer": { "@type": "Answer", "text": "En la mayoría de los casos, si. Hojas de cálculo complejas con columnas muy anchas o fuentes personalizadas pueden verse ligeramente diferentes segun el archivo." } },
+            { "@type": "Question", "name": "¿Por qué las columnas se cortan en mi conversión de Excel a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Esto generalmente ocurre cuando la hoja es más ancha que la página PDF. Intenta usar un diseño de impresión ajustado a la página en Excel antes de subir el archivo." } },
+            { "@type": "Question", "name": "¿Puedo convertir Excel a PDF en mi celular?", "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en navegadores móviles — sube el archivo XLSX y descarga el PDF." } },
+            { "@type": "Question", "name": "¿Es seguro subir mi archivo Excel?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Todas las transferencias están cifradas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." } },
+            { "@type": "Question", "name": "¿Cual es el tamaño máximo de archivo que puedo convertir?", "acceptedAnswer": { "@type": "Answer", "text": "Las cuentas Pro y Business pueden subir archivos de hasta 200MB." } }
           ]
         })}} />
       </main>

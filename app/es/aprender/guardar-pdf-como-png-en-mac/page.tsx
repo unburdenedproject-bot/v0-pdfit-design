@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo guardar un PDF como PNG usando Vista Previa de Mac?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Abre el PDF en Vista Previa, ve a Archivo > Exportar, elige PNG del menú de formato y establece tu resolución. Sin embargo, Vista Previa solo exporta una página a la vez, lo cual es lento para PDFs de múltiples páginas." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Abre el PDF en Vista Previa, ve a Archivo > Exportar, elige PNG del menú de formato y establece tu resolución. Sin embargo, Vista Previa solo exporta una página a la vez, lo cuál es lento para PDFs de múltiples páginas." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo convertir un PDF a PNG en Mac sin instalar software?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Vista Previa viene integrada en macOS y maneja exportaciones básicas de una página. Para conversiones de múltiples páginas o por lotes sin instalar nada, usa PDF.it en tu navegador — funciona en Safari, Chrome y Firefox." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Vista Previa viene integrada en macOS y maneja exportaciones básicas de una página. Para conversiónes de múltiples páginas o por lotes sin instalar nada, usa PDF.it en tu navegador — funciona en Safari, Chrome y Firefox." }
     }
   ]
 }
@@ -62,7 +62,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Exporta como PNG",
-      "text": "En Vista Previa: Archivo > Exportar, elige formato PNG, establece resolución. En PDF.it: sube el archivo, selecciona resolución, haz clic en Convertir."
+      "text": "En Vista Previa: Archivo > Exportar, elige formato PNG, establece resolución. En PDF.it: sube el archivo, seleccióna resolución, haz clic en Convertir."
     },
     {
       "@type": "HowToStep",
@@ -135,11 +135,11 @@ export default function GuardarPdfComoPngEnMacPage() {
                   },
                   {
                     title: "Navega a la página que deseas",
-                    desc: "Usa las miniaturas de la barra lateral para encontrar la página que quieres exportar. Haz clic en ella para seleccionarla.",
+                    desc: "Usa las miniaturas de la barra lateral para encontrar la página que quieres exportar. Haz clic en ella para selecciónarla.",
                   },
                   {
                     title: "Exporta como PNG",
-                    desc: "Ve a Archivo > Exportar. En el menú desplegable de Formato, selecciona PNG. Establece la resolución — auméntala del predeterminado 72 DPI a 150 o 300 DPI para resultados más nítidos. Haz clic en Guardar.",
+                    desc: "Ve a Archivo > Exportar. En el menú desplegable de Formato, seleccióna PNG. Establece la resolución — auméntala del predeterminado 72 DPI a 150 o 300 DPI para resultados más nítidos. Haz clic en Guardar.",
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -243,7 +243,7 @@ export default function GuardarPdfComoPngEnMacPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Obtener Resultados Nítidos: La Resolución Importa</h2>
               <p className="text-slate-600 mb-4">
-                La queja más común sobre conversiones de PDF a PNG en Mac es la salida borrosa. Esto casi siempre se reduce a la resolución. Aquí está lo que debes buscar:
+                La queja más común sobre conversiónes de PDF a PNG en Mac es la salida borrosa. Esto casi siempre se reduce a la resolución. Aquí está lo que debes buscar:
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>- <strong>72 DPI (predeterminado de Vista Previa):</strong> Muy bajo para la mayoría de usos. El texto se ve suave y las imágenes carecen de detalle. Evita esto a menos que solo necesites una miniatura pequeña.</li>
@@ -333,12 +333,12 @@ export default function GuardarPdfComoPngEnMacPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Puedo guardar un PDF como PNG usando Vista Previa de Mac?", a: "Sí. Abre el PDF en Vista Previa, ve a Archivo > Exportar, elige PNG del menú de formato y establece tu resolución. Sin embargo, Vista Previa solo exporta una página a la vez, lo cual es lento para PDFs de múltiples páginas." },
+                { q: "¿Puedo guardar un PDF como PNG usando Vista Previa de Mac?", a: "Sí. Abre el PDF en Vista Previa, ve a Archivo > Exportar, elige PNG del menú de formato y establece tu resolución. Sin embargo, Vista Previa solo exporta una página a la vez, lo cuál es lento para PDFs de múltiples páginas." },
                 { q: "¿Cómo convierto todas las páginas de un PDF a PNG en Mac?", a: "Vista Previa de Mac solo exporta una página a la vez. Para PDFs de múltiples páginas, usa el convertidor online de PDF.it — sube tu PDF y todas las páginas se convierten a PNG a la vez, descargables como archivo ZIP." },
                 { q: "¿Qué resolución debo usar al exportar PDF a PNG en Mac?", a: "Para uso web, 150 DPI es suficiente. Para presentaciones e impresión, usa 300 DPI. La exportación predeterminada de Vista Previa de Mac es 72 DPI lo cual puede verse borroso — auméntalo para resultados más nítidos." },
                 { q: "¿Hay una forma gratuita de convertir PDF a PNG por lotes en Mac?", a: "Puedes usar Automator de macOS para crear un flujo de trabajo, pero requiere algo de configuración. La opción gratuita más fácil es la herramienta online de PDF.it." },
                 { q: "¿Por qué mi PDF se ve borroso al guardarlo como PNG en Mac?", a: "Esto generalmente sucede porque la resolución de exportación es muy baja. Vista Previa de Mac usa 72 DPI por defecto. Aumenta la resolución a 150 DPI (web) o 300 DPI (impresión) para resultados nítidos." },
-                { q: "¿Puedo convertir un PDF a PNG en Mac sin instalar software?", a: "Sí. Vista Previa viene integrada en macOS y maneja exportaciones básicas de una página. Para conversiones de múltiples páginas o por lotes sin instalar nada, usa PDF.it en tu navegador." },
+                { q: "¿Puedo convertir un PDF a PNG en Mac sin instalar software?", a: "Sí. Vista Previa viene integrada en macOS y maneja exportaciones básicas de una página. Para conversiónes de múltiples páginas o por lotes sin instalar nada, usa PDF.it en tu navegador." },
               ].map((faq, i) => (
                 <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

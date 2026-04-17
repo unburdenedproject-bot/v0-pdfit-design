@@ -87,7 +87,7 @@ export default function UnirPDFEnIPhonePage() {
               <div className="space-y-4">
                 {[
                   { title: "Abre Safari y ve a PDF.it", desc: "Abre Safari en tu iPhone y navega a pdf.it.com/merge-pdf. La página está completamente optimizada para móvil — funciona perfectamente en cualquier tamaño de pantalla de iPhone." },
-                  { title: "Sube tus archivos PDF", desc: "Toca el área de carga. Tu iPhone mostrará un selector de archivos donde puedes explorar la app Archivos, iCloud Drive o descargas recientes. Selecciona todos los PDFs que quieres unir. Puedes subirlos uno a la vez o seleccionar múltiples archivos." },
+                  { title: "Sube tus archivos PDF", desc: "Toca el área de carga. Tu iPhone mostrará un selector de archivos donde puedes explorar la app Archivos, iCloud Drive o descargas recientes. Selecciona todos los PDFs que quieres unir. Puedes subirlos uno a la vez o selecciónar múltiples archivos." },
                   { title: "Ordena los archivos y toca Unir", desc: "Arrastra los archivos al orden correcto. El primer archivo en la lista se convierte en las primeras páginas del documento unido. Cuando el orden esté correcto, toca Unir PDF. El archivo unido se descargará a tu carpeta de Descargas en la app Archivos." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -112,7 +112,7 @@ export default function UnirPDFEnIPhonePage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">Compartiendo Tu PDF Unido</h2>
               <p className="text-slate-600 mb-4">Una vez que tengas el archivo unido, compartirlo desde tu iPhone es fácil:</p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Email.</strong> Abre la app Archivos, encuentra tu PDF unido, toca el botón compartir y selecciona Mail. El PDF se adjuntará a un nuevo email.</li>
+                <li>&#10003; <strong>Email.</strong> Abre la app Archivos, encuentra tu PDF unido, toca el botón compartir y seleccióna Mail. El PDF se adjuntará a un nuevo email.</li>
                 <li>&#10003; <strong>AirDrop.</strong> Usa el botón compartir para enviar el archivo por AirDrop a un Mac, iPad u otro iPhone cercano.</li>
                 <li>&#10003; <strong>WhatsApp o iMessage.</strong> Comparte directamente a cualquier app de mensajería usando la hoja de compartir de iOS.</li>
                 <li>&#10003; <strong>Subir a un portal.</strong> Si necesitas enviar el archivo a un sitio web, abre el portal en Safari y sube el PDF unido desde tu carpeta de Descargas.</li>
@@ -134,7 +134,7 @@ export default function UnirPDFEnIPhonePage() {
               <div className="space-y-6">
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">Guarda Primero los Adjuntos de Email</h3><p className="text-slate-600">Si tus PDFs están en el email, guárdalos en la app Archivos antes de unir. Abre el email, mantén presionado el adjunto PDF y toca &quot;Guardar en Archivos&quot;. Elige una carpeta que recuerdes (como Descargas). Luego podrás encontrarlos fácilmente al subir a PDF.it.</p></div>
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">Usa Modo Horizontal para Mejor Control</h3><p className="text-slate-600">Al ordenar archivos en la herramienta de unir, girar tu iPhone de lado te da más espacio en pantalla para ver los nombres de archivo y arrastrarlos al orden correcto.</p></div>
-                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Verifica Tu Trabajo en la App Archivos</h3><p className="text-slate-600">Después de descargar el PDF unido, ábrelo en la app Archivos y desplázate por cada página. El visor de PDF integrado del iPhone muestra una tira de miniaturas de páginas que facilita verificar que el orden sea correcto.</p></div>
+                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Verifica Tu Trabajo en la App Archivos</h3><p className="text-slate-600">Después de descargar el PDF unido, ábrelo en la app Archivos y desplázate por cada página. El visor de PDF integrado del iPhone muestra una tira de miniaturas de páginas que fácilita verificar que el orden sea correcto.</p></div>
               </div>
             </section>
           </div>

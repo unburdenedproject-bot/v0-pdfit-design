@@ -7,8 +7,8 @@ import { RotateCw, ArrowRight } from "lucide-react"
 export const metadata = {
   title: "Como Rotar un PDF en iPhone (Sin App) | PDF.it",
   description:
-    "Aprende como rotar paginas de PDF en tu iPhone usando Safari — sin necesidad de descargar una app. Corrige PDFs de lado o al reves directamente desde tu telefono en segundos.",
-  keywords: "rotar pdf iphone, rotar pdf en telefono, girar pdf iphone, rotar pdf ios",
+    "Aprende como rotar páginas de PDF en tu iPhone usando Safari — sin necesidad de descargar una app. Corrige PDFs de lado o al reves directamente desde tu teléfono en segundos.",
+  keywords: "rotar pdf iphone, rotar pdf en teléfono, girar pdf iphone, rotar pdf ios",
 }
 
 const faqSchema = {
@@ -18,32 +18,32 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Puedo rotar un PDF en mi iPhone sin una app?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona directamente en Safari o cualquier navegador de iPhone. Sube tu PDF, selecciona el angulo de rotacion y descarga el archivo corregido — no necesitas instalar ninguna app." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona directamente en Safari o cualquier navegador de iPhone. Sube tu PDF, seleccióna el ángulo de rotación y descarga el archivo corregido — no necesitas instalar ninguna app." }
     },
     {
       "@type": "Question",
       "name": "Rotar un PDF en iPhone reduce la calidad?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. La rotacion solo cambia los metadatos de orientacion de la pagina. Tu texto, imagenes y formato permanecen exactamente iguales a su calidad original." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. La rotación solo cambia los metadatos de orientación de la página. Tu texto, imágenes y formato permanecen exactamente iguales a su calidad original." }
     },
     {
       "@type": "Question",
-      "name": "Puedo rotar solo una pagina en mi iPhone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it te permite seleccionar paginas individuales para rotar. Puedes corregir solo una pagina de lado mientras dejas el resto de tu documento sin tocar." }
+      "name": "Puedo rotar solo una página en mi iPhone?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it te permite selecciónar páginas individuales para rotar. Puedes corregir solo una página de lado mientras dejas el resto de tu documento sin tocar." }
     },
     {
       "@type": "Question",
       "name": "Donde se guarda el PDF rotado en iPhone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Cuando tocas Descargar, Safari guarda el archivo en tu carpeta Descargas en la app Archivos. Tambien puedes elegir guardarlo en iCloud Drive, Google Drive o compartirlo directamente por correo electronico o Mensajes." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Cuando tocas Descargar, Safari guarda el archivo en tu carpeta Descargas en la app Archivos. También puedes elegir guardarlo en iCloud Drive, Google Drive o compartirlo directamente por correo electrónico o Mensajes." }
     },
     {
       "@type": "Question",
-      "name": "Esto funciona en iPad tambien?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en cualquier dispositivo con navegador web — iPhone, iPad, telefonos Android, tablets y computadoras de escritorio. La experiencia es la misma en todos los dispositivos." }
+      "name": "Esto funciona en iPad también?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en cualquier dispositivo con navegador web — iPhone, iPad, teléfonos Android, tablets y computadoras de escritorio. La experiencia es la misma en todos los dispositivos." }
     },
     {
       "@type": "Question",
-      "name": "Hay un limite de tamano de archivo en iPhone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Los usuarios gratuitos pueden rotar PDFs de hasta 25MB. Los usuarios Pro obtienen un limite de 200MB. La mayoria de los documentos que manejas en un telefono estan muy por debajo de 25MB." }
+      "name": "Hay un límite de tamaño de archivo en iPhone?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Los usuarios gratuitos pueden rotar PDFs de hasta 25MB. Los usuarios Pro obtienen un límite de 200MB. La mayoría de los documentos que manejas en un teléfono están muy por debajo de 25MB." }
     }
   ]
 }
@@ -52,17 +52,17 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Rotar un PDF en iPhone",
-  "description": "Corrige paginas de PDF rotadas en tu iPhone en 3 simples pasos usando PDF.it en Safari.",
+  "description": "Corrige páginas de PDF rotadas en tu iPhone en 3 simples pasos usando PDF.it en Safari.",
   "step": [
     {
       "@type": "HowToStep",
       "name": "Abre PDF.it en Safari",
-      "text": "Abre Safari en tu iPhone y ve a pdf.it.com/rotate-pdf. Toca el area de carga para seleccionar tu PDF de Archivos, iCloud u otra ubicacion."
+      "text": "Abre Safari en tu iPhone y ve a pdf.it.com/rotate-pdf. Toca el area de carga para selecciónar tu PDF de Archivos, iCloud u otra ubicacion."
     },
     {
       "@type": "HowToStep",
-      "name": "Selecciona paginas y rotacion",
-      "text": "Elige que paginas rotar y toca el angulo de rotacion — 90° en sentido horario, 90° en sentido antihorario o 180°. Previsualiza cada pagina para confirmar la direccion."
+      "name": "Selecciona páginas y rotación",
+      "text": "Elige que páginas rotar y toca el ángulo de rotación — 90° en sentido horario, 90° en sentido antihorario o 180°. Previsualiza cada página para confirmar la dirección."
     },
     {
       "@type": "HowToStep",
@@ -93,7 +93,7 @@ export default function RotarPDFEnIPhonePage() {
               <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Rotar PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Como Rotar un PDF en iPhone (Sin App)</h1>
               <p className="text-xl text-slate-300">
-                Tienes un PDF de lado en tu telefono? No necesitas descargar una app ni transferir el archivo a una computadora. Aqui te mostramos como rotar paginas de PDF directamente en Safari en menos de 30 segundos.
+                Tienes un PDF de lado en tu teléfono? No necesitas descargar una app ni transferir el archivo a una computadora. Aqui te mostramos como rotar páginas de PDF directamente en Safari en menos de 30 segundos.
               </p>
             </div>
           </div>
@@ -122,24 +122,24 @@ export default function RotarPDFEnIPhonePage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que los PDFs Aparecen de Lado en iPhone?</h2>
               <p className="text-slate-600 mb-4">
-                Hay varias razones por las que podrías abrir un PDF en tu iPhone y encontrar las paginas rotadas incorrectamente:
+                Hay varias razones por las que podrías abrir un PDF en tu iPhone y encontrar las páginas rotadas incorrectamente:
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
-                  <span><strong>Documentos escaneados.</strong> Si alguien escaneo un documento y coloco el papel en el angulo incorrecto, el PDF resultante tiene paginas rotadas. Esto es extremadamente comun con recibos, contratos y formularios gubernamentales.</span>
+                  <span><strong>Documentos escaneados.</strong> Si alguien escaneo un documento y coloco el papel en el ángulo incorrecto, el PDF resultante tiene páginas rotadas. Esto es extremadamente común con recibos, contratos y formularios gubernamentales.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
-                  <span><strong>Escaneos con camara del telefono.</strong> Usar la camara de tu iPhone o una app de escaneo puede producir paginas rotadas si no sostenias el telefono perfectamente recto. <Link href="/es/limpiar-escaneo" className="text-[#14D8C4] hover:underline">Limpieza de Escaneo de Telefono</Link> puede corregir el contraste y la calidad, pero aun puedes necesitar rotar.</span>
+                  <span><strong>Escaneos con camara del teléfono.</strong> Usar la camara de tu iPhone o una app de escaneo puede producir páginas rotadas si no sostenias el teléfono perfectamente recto. <Link href="/es/limpiar-escaneo" className="text-[#14D8C4] hover:underline">Limpieza de Escaneo de Teléfono</Link> puede corregir el contraste y la calidad, pero aun puedes necesitar rotar.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
-                  <span><strong>Adjuntos de correo electronico.</strong> Los PDFs recibidos como adjuntos de correo a veces se muestran de lado en la app Mail de iPhone o la vista previa de Archivos, aunque se vean bien en una computadora.</span>
+                  <span><strong>Adjuntos de correo electrónico.</strong> Los PDFs recibidos como adjuntos de correo a veces se muestran de lado en la app Mail de iPhone o la vista previa de Archivos, aunque se vean bien en una computadora.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
-                  <span><strong>Paginas con orientacion mixta.</strong> Un documento que combina paginas de texto vertical con graficos o tablas horizontales tendra algunas paginas que aparecen de lado al desplazarte en tu telefono.</span>
+                  <span><strong>Páginas con orientación mixta.</strong> Un documento que combina páginas de texto vertical con gráficos o tablas horizontales tendrá algunas páginas que aparecen de lado al desplazarte en tu teléfono.</span>
                 </li>
               </ul>
             </section>
@@ -150,15 +150,15 @@ export default function RotarPDFEnIPhonePage() {
                 {[
                   {
                     title: "Abre PDF.it en Safari",
-                    desc: "Abre Safari en tu iPhone y navega a pdf.it.com/rotate-pdf. Toca el area de carga y selecciona tu PDF desde tu app Archivos, iCloud Drive, adjunto de correo o cualquier otra ubicacion en tu dispositivo.",
+                    desc: "Abre Safari en tu iPhone y navega a pdf.it.com/rotate-pdf. Toca el area de carga y seleccióna tu PDF desde tu app Archivos, iCloud Drive, adjunto de correo o cualquier otra ubicacion en tu dispositivo.",
                   },
                   {
-                    title: "Selecciona el angulo de rotacion",
-                    desc: "Elige que paginas rotar — todas las paginas o solo algunas especificas. Luego toca la direccion de rotacion: 90° en sentido horario, 90° en sentido antihorario o 180°. La vista previa de la pagina te ayuda a confirmar el angulo correcto.",
+                    title: "Selecciona el ángulo de rotación",
+                    desc: "Elige que páginas rotar — todas las páginas o solo algunas específicas. Luego toca la dirección de rotación: 90° en sentido horario, 90° en sentido antihorario o 180°. La vista previa de la página te ayuda a confirmar el ángulo correcto.",
                   },
                   {
                     title: "Descarga el PDF corregido",
-                    desc: "Toca Rotar, luego toca Descargar. Safari guarda el archivo en tu carpeta Descargas en la app Archivos. Desde ahi, puedes compartirlo por correo electronico, Mensajes, AirDrop o guardarlo en iCloud Drive.",
+                    desc: "Toca Rotar, luego toca Descargar. Safari guarda el archivo en tu carpeta Descargas en la app Archivos. Desde ahi, puedes compartirlo por correo electrónico, Mensajes, AirDrop o guardarlo en iCloud Drive.",
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -177,38 +177,38 @@ export default function RotarPDFEnIPhonePage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Consejos para Rotar PDFs en iPhone</h2>
               <p className="text-slate-600 mb-4">
-                Trabajar con PDFs en una pantalla pequena puede ser complicado. Aqui tienes algunos consejos para facilitarlo:
+                Trabajar con PDFs en una pantalla pequeña puede ser complicado. Aqui tienes algunos consejos para fácilitarlo:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Gira tu telefono a horizontal</strong> para una mejor vista de las miniaturas de paginas al seleccionar cuales paginas rotar.</li>
-                <li>&#10003; <strong>Usa la app Archivos</strong> para encontrar tu PDF antes de subirlo. Si el PDF esta en un correo electronico, guardalo en Archivos primero presionando prolongadamente el adjunto y seleccionando Guardar en Archivos.</li>
-                <li>&#10003; <strong>Agrega la herramienta a tu pantalla de inicio</strong> tocando el icono de compartir y seleccionando Agregar a Pantalla de Inicio. Esto pone un acceso directo en tu pantalla de inicio para acceder a PDF.it instantaneamente la proxima vez.</li>
-                <li>&#10003; <strong>Funciona en cualquier navegador de iPhone</strong> — Safari, Chrome, Firefox o Edge. PDF.it es una herramienta web, asi que no hay nada que instalar o actualizar.</li>
+                <li>&#10003; <strong>Gira tu teléfono a horizontal</strong> para una mejor vista de las miniaturas de páginas al selecciónar cuales páginas rotar.</li>
+                <li>&#10003; <strong>Usa la app Archivos</strong> para encontrar tu PDF antes de subirlo. Si el PDF esta en un correo electrónico, guardalo en Archivos primero presionando prolongadamente el adjunto y selecciónando Guardar en Archivos.</li>
+                <li>&#10003; <strong>Agrega la herramienta a tu pantalla de inicio</strong> tocando el icono de compartir y selecciónando Agregar a Pantalla de Inicio. Esto pone un acceso directo en tu pantalla de inicio para acceder a PDF.it instantaneamente la proxima vez.</li>
+                <li>&#10003; <strong>Funciona en cualquier navegador de iPhone</strong> — Safari, Chrome, Firefox o Edge. PDF.it es una herramienta web, así que no hay nada que instalar o actualizar.</li>
               </ul>
             </section>
 
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Otras Tareas de PDF que Puedes Hacer en iPhone</h2>
               <p className="text-slate-600 mb-4">
-                Ya que estas manejando PDFs en tu telefono, aqui hay otras tareas comunes que puedes hacer con PDF.it sin salir de Safari:
+                Ya que estas manejando PDFs en tu teléfono, aquí hay otras tareas comunes que puedes hacer con PDF.it sin salir de Safari:
               </p>
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">Comprimir para Correo Electronico</h3>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">Comprimir para Correo Electrónico</h3>
                   <p className="text-slate-600">
-                    Necesitas enviar el PDF por correo pero es muy grande? Usa <Link href="/es/comprimir-pdf-para-email" className="text-[#14D8C4] hover:underline">Comprimir PDF para Email</Link> para reducirlo por debajo del limite de adjuntos. Funciona genial en iPhone — comprime y envia sin tocar una computadora.
+                    Necesitas enviar el PDF por correo pero es muy grande? Usa <Link href="/es/comprimir-pdf-para-email" className="text-[#14D8C4] hover:underline">Comprimir PDF para Email</Link> para reducirlo por debajo del límite de adjuntos. Funciona genial en iPhone — comprime y envia sin tocar una computadora.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Unir Documentos</h3>
                   <p className="text-slate-600">
-                    Recibiste multiples PDFs que necesitan combinarse en uno? Usa <Link href="/es/unir-pdf" className="text-[#14D8C4] hover:underline">Unir PDF</Link> para combinarlos directamente en tu telefono. Perfecto para solicitudes de empleo o entregas escolares sobre la marcha.
+                    Recibiste múltiples PDFs que necesitan combinarse en uno? Usa <Link href="/es/unir-pdf" className="text-[#14D8C4] hover:underline">Unir PDF</Link> para combinarlos directamente en tu teléfono. Perfecto para solicitudes de empleo o entregas escolares sobre la marcha.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Convertir Fotos a PDF</h3>
                   <p className="text-slate-600">
-                    Tomaste fotos de un documento con tu iPhone? Convierte imagenes a PDF usando <Link href="/es/word-a-pdf" className="text-[#14D8C4] hover:underline">nuestras herramientas de conversion</Link> o limpia las fotos con <Link href="/es/limpiar-escaneo" className="text-[#14D8C4] hover:underline">Limpieza de Escaneo de Telefono</Link> para resultados con aspecto profesional.
+                    Tomaste fotos de un documento con tu iPhone? Convierte imágenes a PDF usando <Link href="/es/word-a-pdf" className="text-[#14D8C4] hover:underline">nuestras herramientas de conversión</Link> o limpia las fotos con <Link href="/es/limpiar-escaneo" className="text-[#14D8C4] hover:underline">Limpieza de Escaneo de Teléfono</Link> para resultados con aspecto profesional.
                   </p>
                 </div>
               </div>
@@ -217,13 +217,13 @@ export default function RotarPDFEnIPhonePage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que No Necesitas una App de PDF</h2>
               <p className="text-slate-600 mb-4">
-                La App Store tiene docenas de apps de edicion de PDF, pero la mayoria tienen desventajas significativas:
+                La App Store tiene docenas de apps de edición de PDF, pero la mayoría tienen desventajas significativas:
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Sin espacio de almacenamiento desperdiciado.</strong> Las apps de PDF pueden ocupar 100-300MB de almacenamiento del iPhone. PDF.it funciona en tu navegador sin ocupar espacio.</li>
-                <li>&#10003; <strong>Sin suscripciones que gestionar.</strong> Muchas apps de PDF cobran mensualmente por funciones basicas como la rotacion. PDF.it te permite rotar PDFs gratis.</li>
+                <li>&#10003; <strong>Sin suscripciones que gestionar.</strong> Muchas apps de PDF cobran mensualmente por funciones básicas como la rotación. PDF.it te permite rotar PDFs gratis.</li>
                 <li>&#10003; <strong>Sin cuenta requerida.</strong> Comienza a rotar inmediatamente — tus primeros 3 archivos no necesitan registro.</li>
-                <li>&#10003; <strong>Siempre actualizado.</strong> Las herramientas web se actualizan automaticamente. Sin esperar actualizaciones de la App Store ni lidiar con problemas de compatibilidad despues de actualizar iOS.</li>
+                <li>&#10003; <strong>Siempre actualizado.</strong> Las herramientas web se actualizan automáticamente. Sin esperar actualizaciones de la App Store ni lidiar con problemas de compatibilidad después de actualizar iOS.</li>
               </ul>
             </section>
 
@@ -233,7 +233,7 @@ export default function RotarPDFEnIPhonePage() {
         <section className="py-12" style={{ background: "#0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Listo para Rotar Tu PDF en iPhone?</h2>
-            <p className="text-slate-300 mb-6">Abre esta pagina en tu iPhone, toca el boton de abajo y corrige tu PDF en segundos.</p>
+            <p className="text-slate-300 mb-6">Abre esta página en tu iPhone, toca el boton de abajo y corrige tu PDF en segundos.</p>
             <Link
               href="/es/rotar-pdf"
               className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
@@ -245,12 +245,12 @@ export default function RotarPDFEnIPhonePage() {
 
         <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-6">Articulos Relacionados</h2>
+            <h2 className="text-2xl font-black text-slate-900 mb-6">Artículos Relacionados</h2>
             <div className="grid gap-3">
               {[
                 { title: "Como Rotar un PDF Online (90°, 180° o Personalizado)", href: "/es/aprender/como-rotar-pdf" },
                 { title: "Arreglar un PDF al Reves (Rotar 180° al Instante)", href: "/es/aprender/arreglar-pdf-al-reves" },
-                { title: "Rotar un PDF Escaneado (Corregir Orientacion Despues de Escanear)", href: "/es/aprender/rotar-pdf-escaneado" },
+                { title: "Rotar un PDF Escaneado (Corregir Orientación Después de Escanear)", href: "/es/aprender/rotar-pdf-escaneado" },
               ].map((article) => (
                 <Link
                   key={article.href}
@@ -270,12 +270,12 @@ export default function RotarPDFEnIPhonePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Puedo rotar un PDF en mi iPhone sin una app?", a: "Si. PDF.it funciona directamente en Safari o cualquier navegador de iPhone. Sube tu PDF, selecciona el angulo de rotacion y descarga el archivo corregido — no necesitas instalar ninguna app." },
-                { q: "Rotar un PDF en iPhone reduce la calidad?", a: "No. La rotacion solo cambia los metadatos de orientacion de la pagina. Tu texto, imagenes y formato permanecen exactamente iguales a su calidad original." },
-                { q: "Puedo rotar solo una pagina en mi iPhone?", a: "Si. PDF.it te permite seleccionar paginas individuales para rotar. Puedes corregir solo una pagina de lado mientras dejas el resto de tu documento sin tocar." },
-                { q: "Donde se guarda el PDF rotado en iPhone?", a: "Cuando tocas Descargar, Safari guarda el archivo en tu carpeta Descargas en la app Archivos. Tambien puedes elegir guardarlo en iCloud Drive, Google Drive o compartirlo directamente por correo electronico o Mensajes." },
-                { q: "Esto funciona en iPad tambien?", a: "Si. PDF.it funciona en cualquier dispositivo con navegador web — iPhone, iPad, telefonos Android, tablets y computadoras de escritorio. La experiencia es la misma en todos los dispositivos." },
-                { q: "Hay un limite de tamano de archivo en iPhone?", a: "Los usuarios gratuitos pueden rotar PDFs de hasta 25MB. Los usuarios Pro obtienen un limite de 200MB. La mayoria de los documentos que manejas en un telefono estan muy por debajo de 25MB." },
+                { q: "Puedo rotar un PDF en mi iPhone sin una app?", a: "Si. PDF.it funciona directamente en Safari o cualquier navegador de iPhone. Sube tu PDF, seleccióna el ángulo de rotación y descarga el archivo corregido — no necesitas instalar ninguna app." },
+                { q: "Rotar un PDF en iPhone reduce la calidad?", a: "No. La rotación solo cambia los metadatos de orientación de la página. Tu texto, imágenes y formato permanecen exactamente iguales a su calidad original." },
+                { q: "Puedo rotar solo una página en mi iPhone?", a: "Si. PDF.it te permite selecciónar páginas individuales para rotar. Puedes corregir solo una página de lado mientras dejas el resto de tu documento sin tocar." },
+                { q: "Donde se guarda el PDF rotado en iPhone?", a: "Cuando tocas Descargar, Safari guarda el archivo en tu carpeta Descargas en la app Archivos. También puedes elegir guardarlo en iCloud Drive, Google Drive o compartirlo directamente por correo electrónico o Mensajes." },
+                { q: "Esto funciona en iPad también?", a: "Si. PDF.it funciona en cualquier dispositivo con navegador web — iPhone, iPad, teléfonos Android, tablets y computadoras de escritorio. La experiencia es la misma en todos los dispositivos." },
+                { q: "Hay un límite de tamaño de archivo en iPhone?", a: "Los usuarios gratuitos pueden rotar PDFs de hasta 25MB. Los usuarios Pro obtienen un límite de 200MB. La mayoría de los documentos que manejas en un teléfono están muy por debajo de 25MB." },
               ].map((faq, i) => (
                 <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

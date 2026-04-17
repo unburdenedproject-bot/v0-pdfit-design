@@ -279,7 +279,7 @@ export default function ComoComprimirUnPDFPage() {
               {[
                 { title: "Comprimir un PDF Grande (50MB, 100MB o Más)", href: "/es/aprender/comprimir-pdf-grande" },
                 { title: "Comprimir un PDF para Imprimir (Mantener Calidad de Impresión)", href: "/es/aprender/comprimir-pdf-para-imprimir" },
-                { title: "Comprimir un PDF con Imágenes (Fotos, Escaneos, Gráficos)", href: "/es/aprender/comprimir-pdf-con-imagenes" },
+                { title: "Comprimir un PDF con Imágenes (Fotos, Escaneos, Gráficos)", href: "/es/aprender/comprimir-pdf-con-imágenes" },
                 { title: "Cómo Comprimir un PDF Sin Perder Calidad", href: "/es/aprender/comprimir-pdf-sin-perder-calidad" },
               ].map((article) => (
                 <Link

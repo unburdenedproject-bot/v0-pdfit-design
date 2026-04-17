@@ -88,7 +88,7 @@ const allUrls: MetadataRoute.Sitemap = [
   { url: `${baseUrl}/compress-pdf-fast`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: `${baseUrl}/reduce-pdf-size`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
 
-  // SEO cluster pages (conversion)
+  // SEO cluster pages (conversión)
   { url: `${baseUrl}/pdf-to-docx`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: `${baseUrl}/pdf-to-xlsx`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: `${baseUrl}/pdf-to-google-docs`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
@@ -325,7 +325,7 @@ const allUrls: MetadataRoute.Sitemap = [
   { url: `${baseUrl}/es/comprimir-pdf-rapido`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: `${baseUrl}/es/reducir-tamano-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
 
-  // SEO cluster pages (conversion)
+  // SEO cluster pages (conversión)
   { url: `${baseUrl}/es/pdf-a-docx`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: `${baseUrl}/es/pdf-a-xlsx`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: `${baseUrl}/es/pdf-a-google-docs`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
@@ -563,7 +563,7 @@ const allUrls: MetadataRoute.Sitemap = [
   { url: `${baseUrl}/br/comprimir-pdf-rapido`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: `${baseUrl}/br/reduzir-tamanho-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
 
-  // SEO cluster pages (conversion)
+  // SEO cluster pages (conversión)
   { url: `${baseUrl}/br/pdf-para-docx`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: `${baseUrl}/br/pdf-para-xlsx`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
   { url: `${baseUrl}/br/pdf-para-google-docs`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },

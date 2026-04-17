@@ -8,7 +8,7 @@ import Link from "next/link"
 export const metadata = {
   title: "Combinar Archivos PDF — Une PDFs en Un Solo Documento | PDF.it",
   description:
-    "Combina multiples archivos PDF en un solo documento con PDF.it. Sube tus PDFs, ordenalos y descarga un archivo combinado — rapido, gratis y desde tu navegador.",
+    "Combina múltiples archivos PDF en un solo documento con PDF.it. Sube tus PDFs, ordenalos y descarga un archivo combinado — rápido, gratis y desde tu navegador.",
   alternates: {
     canonical: "/es/combinar-archivos-pdf",
     languages: {
@@ -21,12 +21,12 @@ export const metadata = {
 
 export default function CombinarArchivosPDFPage() {
   const faqs = [
-    { q: "¿Como combino archivos PDF en linea?", a: "Sube tus archivos PDF a PDF.it, ordenalos como prefieras y haz clic en Combinar. Tu PDF combinado estara listo para descargar en segundos — sin necesidad de instalar software." },
-    { q: "¿Hay un limite de cuantos PDFs puedo combinar?", a: "Los usuarios gratuitos pueden combinar archivos uno a la vez. Los usuarios Pro obtienen procesamiento por lotes para combinar multiples PDFs a la vez, con archivos de hasta 200MB cada uno." },
-    { q: "¿Puedo controlar el orden de los PDFs combinados?", a: "Si. Despues de subir tus archivos, puedes arrastrar y soltar para ordenarlos como quieras. El PDF final sigue la secuencia exacta que tu estableces." },
-    { q: "¿Combinar PDFs reduce la calidad?", a: "No. PDF.it combina tus PDFs sin recomprimir ni alterar el contenido. Cada pagina conserva su calidad original, fuentes y formato." },
-    { q: "¿Puedo combinar PDFs desde mi celular?", a: "Si. PDF.it funciona en cualquier navegador movil — sube tus PDFs, combinalos y descarga el resultado en iPhone o Android." },
-    { q: "¿Necesito crear una cuenta para combinar PDFs?", a: "No se necesita cuenta para uso basico. Los usuarios gratuitos obtienen hasta 3 conversiones anonimas por dia, luego una cuenta gratuita desbloquea hasta 10 conversiones diarias." },
+    { q: "¿Como combino archivos PDF en línea?", a: "Sube tus archivos PDF a PDF.it, ordenalos como prefieras y haz clic en Combinar. Tu PDF combinado estara listo para descargar en segundos — sin necesidad de instalar software." },
+    { q: "¿Hay un límite de cuantos PDFs puedo combinar?", a: "Los usuarios gratuitos pueden combinar archivos uno a la vez. Los usuarios Pro obtienen procesamiento por lotes para combinar múltiples PDFs a la vez, con archivos de hasta 200MB cada uno." },
+    { q: "¿Puedo controlar el orden de los PDFs combinados?", a: "Si. Después de subir tus archivos, puedes arrastrar y soltar para ordenarlos como quieras. El PDF final sigue la secuencia exacta que tu estableces." },
+    { q: "¿Combinar PDFs reduce la calidad?", a: "No. PDF.it combina tus PDFs sin recomprimir ni alterar el contenido. Cada página conserva su calidad original, fuentes y formato." },
+    { q: "¿Puedo combinar PDFs desde mi celular?", a: "Si. PDF.it funciona en cualquier navegador móvil — sube tus PDFs, combinalos y descarga el resultado en iPhone o Android." },
+    { q: "¿Necesito crear una cuenta para combinar PDFs?", a: "No se necesita cuenta para uso básico. Los usuarios gratuitos obtienen hasta 3 conversiónes anonimas por día, luego una cuenta gratuita desbloquea hasta 10 conversiónes diarias." },
   ]
 
   return (
@@ -62,11 +62,11 @@ export default function CombinarArchivosPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Combinar Archivos PDF</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Combina multiples archivos PDF en un solo documento. Sube tus PDFs, ordenalos y descarga un archivo combinado — rapido, gratis y desde tu navegador.
+                Combina múltiples archivos PDF en un solo documento. Sube tus PDFs, ordenalos y descarga un archivo combinado — rápido, gratis y desde tu navegador.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Combinacion Instantanea</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesion</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Combinación Instantanea</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesión</span></div>
                 <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sin Registro</span></div>
               </div>
             </div>
@@ -77,13 +77,13 @@ export default function CombinarArchivosPDFPage() {
         <section className="py-10 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <p className="text-lg text-slate-600 leading-relaxed">
-              ¿Necesitas combinar multiples archivos PDF en uno solo? PDF.it lo hace simple. Sube tus documentos, ordenalos correctamente y descarga un solo PDF combinado — perfecto para presentaciones, documentos de trabajo, solicitudes y mas.
+              ¿Necesitas combinar múltiples archivos PDF en uno solo? PDF.it lo hace simple. Sube tus documentos, ordenalos correctamente y descarga un solo PDF combinado — perfecto para presentaciones, documentos de trabajo, solicitudes y más.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
               <li className="flex items-center gap-2">✓ Combina cualquier cantidad de archivos PDF</li>
               <li className="flex items-center gap-2">✓ Sin perdida de calidad — formato original preservado</li>
               <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li className="flex items-center gap-2">✓ Sin instalacion — combina PDFs en tu navegador</li>
+              <li className="flex items-center gap-2">✓ Sin instalación — combina PDFs en tu navegador</li>
             </ul>
           </div>
         </section>
@@ -111,9 +111,9 @@ export default function CombinarArchivosPDFPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { title: "Combina Presentaciones y Propuestas", desc: "¿Armando una propuesta para un cliente o informe trimestral? Sube cada seccion como un PDF separado, ordenalos y combinalos en un documento profesional listo para compartir." },
-                { title: "Une Documentos de Solicitud", desc: "Solicitudes universitarias, tramites de visa y solicitudes de empleo frecuentemente requieren un solo PDF. Combina tu curriculum, carta de presentacion y referencias en un solo archivo." },
-                { title: "Combina y Comprime Facilmente", desc: "Despues de combinar tus PDFs, el archivo puede ser muy grande para email. Usa la herramienta Comprimir PDF de PDF.it para reducir el tamaño sin perder calidad." },
+                { title: "Combina Presentaciones y Propuestas", desc: "¿Armando una propuesta para un cliente o informe trimestral? Sube cada sección como un PDF separado, ordenalos y combinalos en un documento profesional listo para compartir." },
+                { title: "Une Documentos de Solicitud", desc: "Solicitudes universitarias, tramites de visa y solicitudes de empleo frecuentemente requieren un solo PDF. Combina tu currículum, carta de presentación y referencias en un solo archivo." },
+                { title: "Combina y Comprime Fácilmente", desc: "Después de combinar tus PDFs, el archivo puede ser muy grande para email. Usa la herramienta Comprimir PDF de PDF.it para reducir el tamaño sin perder calidad." },
               ].map((feature) => (
                 <div
                   key={feature.title}
@@ -150,7 +150,7 @@ export default function CombinarArchivosPDFPage() {
             <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Combinar Archivos PDF</h2>
             <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
               {[
-                { num: "1", title: "Sube tus PDFs", desc: "Arrastra o selecciona tus archivos" },
+                { num: "1", title: "Sube tus PDFs", desc: "Arrastra o seleccióna tus archivos" },
                 { num: "2", title: "Ordena los archivos", desc: "Reorganiza antes de combinar" },
                 { num: "3", title: "Descarga tu PDF", desc: "Obtén tu archivo combinado al instante" },
               ].map((step) => (
@@ -179,10 +179,10 @@ export default function CombinarArchivosPDFPage() {
             <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "Unir PDF", href: "/es/unir-pdf", desc: "Combina PDFs estandar" },
-                { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Separa paginas" },
+                { name: "Unir PDF", href: "/es/unir-pdf", desc: "Combina PDFs estándar" },
+                { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Separa páginas" },
                 { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce tamaño" },
-                { name: "Rotar PDF", href: "/es/rotar-pdf", desc: "Corrige orientacion" },
+                { name: "Rotar PDF", href: "/es/rotar-pdf", desc: "Corrige orientación" },
               ].map((tool) => (
                 <div
                   key={tool.href}

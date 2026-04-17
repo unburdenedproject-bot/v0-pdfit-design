@@ -8,7 +8,7 @@ export const metadata = {
   title: "Convertir Word a PDF en Línea (DOCX a PDF) | PDF.it",
   description:
     "Aprende a convertir Word a PDF en línea en segundos. Guía paso a paso sobre preservación de formato, opciones gratuitas vs Pro, y por qué PDF es el formato universal para compartir.",
-  keywords: "convertir word a pdf en linea, docx a pdf, word a pdf gratis, convertir docx a pdf en linea, documento word a pdf",
+  keywords: "convertir word a pdf en línea, docx a pdf, word a pdf gratis, convertir docx a pdf en línea, documento word a pdf",
 }
 
 const faqSchema = {
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Por qué debería convertir Word a PDF en lugar de compartir el archivo .docx?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Los PDFs se ven igual en cada dispositivo y sistema operativo. Los documentos Word pueden cambiar de formato dependiendo de la versión de Word, las fuentes instaladas y el tamaño de pantalla. Los PDFs también previenen ediciones accidentales, siendo ideales para versiones finales de contratos, currículos e informes." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Los PDFs se ven igual en cada dispositivo y sistema operativo. Los documentos Word pueden cambiar de formato dependiendo de la versión de Word, las fuentes instaladas y el tamaño de pantalla. Los PDFs también previenen ediciónes accidentales, siendo ideales para versiones finales de contratos, currículos e informes." }
     }
   ]
 }
@@ -135,7 +135,7 @@ export default function ConvertirWordAPdfPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
-                  <span><strong>Sin ediciones accidentales.</strong> Los PDFs evitan que los destinatarios cambien accidental (o intencionalmente) tu contenido. Esto importa para contratos, facturas y currículos.</span>
+                  <span><strong>Sin ediciónes accidentales.</strong> Los PDFs evitan que los destinatarios cambien accidental (o intencionalmente) tu contenido. Esto importa para contratos, facturas y currículos.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
@@ -183,7 +183,7 @@ export default function ConvertirWordAPdfPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Consejos para Preservar el Formato</h2>
               <p className="text-slate-600 mb-4">
-                La mayoría de las conversiones de Word a PDF son perfectas, pero ciertos elementos pueden desplazarse si no tienes cuidado. Sigue estos consejos para una conversión perfecta:
+                La mayoría de las conversiónes de Word a PDF son perfectas, pero ciertos elementos pueden desplazarse si no tienes cuidado. Sigue estos consejos para una conversión perfecta:
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Usa fuentes estándar</strong> como Arial, Calibri o Times New Roman. Las fuentes decorativas o personalizadas pueden no renderizarse correctamente en el PDF.</li>
@@ -207,7 +207,7 @@ export default function ConvertirWordAPdfPage() {
                   </thead>
                   <tbody className="text-slate-700">
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4 font-semibold">Conversiones por día</td>
+                      <td className="py-3 px-4 font-semibold">Conversiónes por día</td>
                       <td className="py-3 px-4">10 (3 sin cuenta)</td>
                       <td className="py-3 px-4">Ilimitadas</td>
                     </tr>
@@ -244,7 +244,7 @@ export default function ConvertirWordAPdfPage() {
               </ul>
             </section>
 
-            {/* After conversion */}
+            {/* After conversión */}
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Qué Hacer Después de Convertir</h2>
               <p className="text-slate-600 mb-4">
@@ -306,7 +306,7 @@ export default function ConvertirWordAPdfPage() {
                 { q: "¿Puedo convertir múltiples archivos Word a PDF a la vez?", a: "Sí. Los usuarios Pro pueden convertir por lotes múltiples archivos .docx a PDF en una sola sesión. Los usuarios gratuitos pueden convertir un archivo a la vez." },
                 { q: "¿Cuál es la diferencia entre .doc y .docx?", a: ".doc es el formato antiguo de Microsoft Word (Word 97-2003). .docx es el formato moderno usado desde Word 2007. Ambos se pueden convertir a PDF con PDF.it, pero los archivos .docx generalmente producen mejores resultados con formato más preciso." },
                 { q: "¿Es seguro subir mi documento Word para conversión?", a: "Sí. PDF.it procesa tu archivo de forma segura y lo elimina de los servidores después de la conversión. Tu documento nunca se almacena, comparte o usa para ningún propósito más allá de la conversión que solicitaste." },
-                { q: "¿Por qué debería convertir Word a PDF en lugar de compartir el archivo .docx?", a: "Los PDFs se ven igual en cada dispositivo y sistema operativo. Los documentos Word pueden cambiar de formato dependiendo de la versión de Word, las fuentes instaladas y el tamaño de pantalla. Los PDFs también previenen ediciones accidentales, siendo ideales para versiones finales de contratos, currículos e informes." },
+                { q: "¿Por qué debería convertir Word a PDF en lugar de compartir el archivo .docx?", a: "Los PDFs se ven igual en cada dispositivo y sistema operativo. Los documentos Word pueden cambiar de formato dependiendo de la versión de Word, las fuentes instaladas y el tamaño de pantalla. Los PDFs también previenen ediciónes accidentales, siendo ideales para versiones finales de contratos, currículos e informes." },
               ].map((faq, i) => (
                 <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

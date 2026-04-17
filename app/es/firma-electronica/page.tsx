@@ -10,10 +10,10 @@ export const metadata = {
   description:
     "Firma documentos PDF en línea con PDF.it. Dibuja, escribe o sube tu firma, colócala en cualquier página y descarga tu PDF firmado al instante. Sin imprimir ni escanear.",
   alternates: {
-    canonical: "https://pdf.it.com/es/firma-electronica",
+    canonical: "https://pdf.it.com/es/firma-electrónica",
     languages: {
       en: "https://pdf.it.com/esign",
-      es: "https://pdf.it.com/es/firma-electronica",
+      es: "https://pdf.it.com/es/firma-electrónica",
       pt: "https://pdf.it.com/br/assinatura-eletronica",
     },
   },

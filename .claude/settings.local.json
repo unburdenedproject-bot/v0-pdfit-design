@@ -17,7 +17,11 @@
       "Read(//c/Users/paula/.claude/**)",
       "Read(//c/Users/paula/.claude/projects/**)",
       "Skill(schedule)",
-      "Bash(node -e \"const{chromium}=require\\('playwright'\\);\\(async\\(\\)=>{const b=await chromium.launch\\(\\);const p=await b.newPage\\(\\);const f='file:///'+process.cwd\\(\\).split\\('\\\\\\\\\\\\\\\\'\\).join\\('/'\\)+'/PDF.it-Guia-de-Marca.html';await p.goto\\(f,{waitUntil:'networkidle'}\\);await p.pdf\\({path:'PDF.it-Guia-de-Marca.pdf',format:'Letter',printBackground:true,margin:{top:'0',right:'0',bottom:'0',left:'0'}}\\);await b.close\\(\\);console.log\\('PDF generated'\\)}\\)\\(\\)\")"
+      "Bash(node -e \"const{chromium}=require\\('playwright'\\);\\(async\\(\\)=>{const b=await chromium.launch\\(\\);const p=await b.newPage\\(\\);const f='file:///'+process.cwd\\(\\).split\\('\\\\\\\\\\\\\\\\'\\).join\\('/'\\)+'/PDF.it-Guia-de-Marca.html';await p.goto\\(f,{waitUntil:'networkidle'}\\);await p.pdf\\({path:'PDF.it-Guia-de-Marca.pdf',format:'Letter',printBackground:true,margin:{top:'0',right:'0',bottom:'0',left:'0'}}\\);await b.close\\(\\);console.log\\('PDF generated'\\)}\\)\\(\\)\")",
+      "Bash(python fix-es-accents.py)",
+      "Bash(python -c ' *)",
+      "Bash(grep -rn \"\\\\\"Funcion \\\\|Funcion Pro\\\\|Funcion Business\\\\| esta \\\\| esta \\\\\"\\\\| aqui\\\\| codigo \\\\| Ingles\\\\| Espanol\\\\| Portugues\\\\| Opcion \\\\| multiple\\\\\"\\\\| Facil\\\\| Dificil\\\\| pasalo \\\\| contrasena\\\\| Indice A\\\\| basicas\\\\| estandar\\\\| Dia\\\\\"\\\\| dias\\\\\"\\\\|/dia\\\\\"\\\\| ano\\\\\"\\\\|\\\\\"Medio\\\\\"\\\\|disponible \\\\|\\\\\"Corto\\\\\"\\\\|\\\\\"Detallado\\\\\"\\\\|\\\\\"Cantidad\\\\\"\\\\|\\\\\"Dificultad\\\\\"\\\\| imagenes\\\\| practicas\\\\| Mantente al Dia\\\\| Estas suscrito\" components/*-interface.tsx components/newsletter-signup.tsx components/pdf-summarizer-interface.tsx components/question-generator-interface.tsx)",
+      "Bash(xargs sed *)"
     ]
   }
 }

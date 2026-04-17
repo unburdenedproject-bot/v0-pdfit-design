@@ -8,7 +8,7 @@ import { FileSpreadsheet, Zap, Shield, Download } from "lucide-react"
 export const metadata = {
   title: "Convertir PDF a Excel Online — Extraer Tablas de PDF | PDF.it",
   description:
-    "Convierte PDF a Excel con PDF.it. Extrae tablas y datos de tus archivos PDF en hojas de calculo .xlsx editables — rapido, seguro y desde tu navegador.",
+    "Convierte PDF a Excel con PDF.it. Extrae tablas y datos de tus archivos PDF en hojas de cálculo .xlsx editables — rápido, seguro y desde tu navegador.",
   alternates: {
     canonical: "https://pdf.it.com/es/pdf-a-excel",
     languages: {
@@ -20,12 +20,12 @@ export const metadata = {
 
 export default function PDFaExcelPage() {
   const faqs = [
-    { q: "\u00bfComo convierto un PDF a Excel?", a: "Sube tu PDF a PDF.it, haz clic en Convertir y descarga tu hoja de calculo Excel." },
-    { q: "\u00bfLos datos de las tablas se extraen con precision?", a: "PDF.it extrae tablas y datos estructurados con la mayor precision posible. Los resultados pueden variar dependiendo de como fue creado el PDF original." },
-    { q: "\u00bfPuedo convertir un PDF escaneado a Excel?", a: "Los PDFs escaneados requieren OCR para extraer texto y tablas. Usa primero la herramienta de Escaner OCR de PDF.it y luego convierte a Excel." },
-    { q: "\u00bfPuedo convertir PDF a Excel desde mi celular?", a: "Si. PDF.it funciona en navegadores moviles — sube, convierte y descarga desde iPhone o Android." },
-    { q: "\u00bfEs seguro subir mi PDF?", a: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." },
-    { q: "\u00bfCual es el tamano maximo de archivo que puedo convertir?", a: "Las cuentas gratuitas pueden subir archivos de hasta 25MB. Las cuentas Pro y Business pueden subir archivos de hasta 200MB." },
+    { q: "\u00bfComo convierto un PDF a Excel?", a: "Sube tu PDF a PDF.it, haz clic en Convertir y descarga tu hoja de cálculo Excel." },
+    { q: "\u00bfLos datos de las tablas se extraen con precisión?", a: "PDF.it extrae tablas y datos estructurados con la mayor precisión posible. Los resultados pueden variar dependiendo de como fue creado el PDF original." },
+    { q: "\u00bfPuedo convertir un PDF escaneado a Excel?", a: "Los PDFs escaneados requieren OCR para extraer texto y tablas. Usa primero la herramienta de Escáner OCR de PDF.it y luego convierte a Excel." },
+    { q: "\u00bfPuedo convertir PDF a Excel desde mi celular?", a: "Si. PDF.it funciona en navegadores móviles — sube, convierte y descarga desde iPhone o Android." },
+    { q: "\u00bfEs seguro subir mi PDF?", a: "Si. Todas las transferencias están cifradas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." },
+    { q: "\u00bfCual es el tamaño máximo de archivo que puedo convertir?", a: "Las cuentas gratuitas pueden subir archivos de hasta 25MB. Las cuentas Pro y Business pueden subir archivos de hasta 200MB." },
   ]
 
   return (
@@ -61,16 +61,16 @@ export default function PDFaExcelPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convertir PDF a Excel Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Extrae tablas y datos de PDFs en hojas de calculo Excel editables — perfecto para reportes financieros, facturas y analisis de datos.
+                Extrae tablas y datos de PDFs en hojas de cálculo Excel editables — perfecto para reportes financieros, facturas y análisis de datos.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2">
                   <Zap className="h-4 w-4 text-[#14D8C4]" />
-                  <span>Extraccion de Tablas</span>
+                  <span>Extracción de Tablas</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Shield className="h-4 w-4 text-[#14D8C4]" />
-                  <span>Archivos Eliminados Tras la Sesion</span>
+                  <span>Archivos Eliminados Tras la Sesión</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Download className="h-4 w-4 text-[#14D8C4]" />
@@ -85,14 +85,14 @@ export default function PDFaExcelPage() {
         <section className="py-10 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <p className="text-lg text-slate-600 leading-relaxed">
-              Usa la herramienta PDF a Excel de PDF.it para extraer tablas y datos de archivos PDF en hojas de calculo editables. Sube tu PDF, conviertelo y descarga un archivo .xlsx listo para analizar — sin necesidad de software.
+              Usa la herramienta PDF a Excel de PDF.it para extraer tablas y datos de archivos PDF en hojas de cálculo editables. Sube tu PDF, conviertelo y descarga un archivo .xlsx listo para analizar — sin necesidad de software.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
-              <li className="flex items-center gap-2">✓ Convierte tablas y datos de PDF a hojas de calculo Excel</li>
+              <li className="flex items-center gap-2">✓ Convierte tablas y datos de PDF a hojas de cálculo Excel</li>
               <li className="flex items-center gap-2">✓ Ideal para reportes financieros, facturas y exportaciones de datos</li>
               <li className="flex items-center gap-2">✓ Descarga un archivo .xlsx listo para abrir en Excel o Google Sheets</li>
               <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li className="flex items-center gap-2">✓ Sin instalacion — convierte PDFs desde tu navegador</li>
+              <li className="flex items-center gap-2">✓ Sin instalación — convierte PDFs desde tu navegador</li>
             </ul>
           </div>
         </section>
@@ -121,9 +121,9 @@ export default function PDFaExcelPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { title: "Extrae Tablas de PDF a Hojas de Calculo", desc: "PDF.it detecta y extrae tablas de tus archivos PDF, convirtiendo filas y columnas en celdas de Excel que puedes editar, filtrar y analizar." },
-                { title: "Ideal para Reportes Financieros y Facturas", desc: "Convierte estados de cuenta, facturas y reportes en hojas de calculo editables. Ahorra horas de trabajo manual copiando datos." },
-                { title: "Descarga .xlsx — Compatible con Excel y Google Sheets", desc: "Tu archivo convertido se abre directamente en Microsoft Excel, Google Sheets o cualquier app de hojas de calculo. Sin necesidad de limpiar el formato." },
+                { title: "Extrae Tablas de PDF a Hojas de Cálculo", desc: "PDF.it detecta y extrae tablas de tus archivos PDF, convirtiendo filas y columnas en celdas de Excel que puedes editar, filtrar y analizar." },
+                { title: "Ideal para Reportes Financieros y Facturas", desc: "Convierte estados de cuenta, facturas y reportes en hojas de cálculo editables. Ahorra horas de trabajo manual copiando datos." },
+                { title: "Descarga .xlsx — Compatible con Excel y Google Sheets", desc: "Tu archivo convertido se abre directamente en Microsoft Excel, Google Sheets o cualquier app de hojas de cálculo. Sin necesidad de limpiar el formato." },
               ].map((feature) => (
                 <div
                   key={feature.title}
@@ -190,9 +190,9 @@ export default function PDFaExcelPage() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
                 { name: "PDF a Word", href: "/es/pdf-a-word", desc: "Convierte PDF a documento editable" },
-                { name: "PDF a JPG", href: "/es/pdf-a-jpg", desc: "Convierte paginas a imagenes" },
-                { name: "Escaner OCR", href: "/es/escaner-ocr", desc: "Extrae texto de PDFs escaneados" },
-                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamano antes de convertir" },
+                { name: "PDF a JPG", href: "/es/pdf-a-jpg", desc: "Convierte páginas a imágenes" },
+                { name: "Escáner OCR", href: "/es/escaner-ocr", desc: "Extrae texto de PDFs escaneados" },
+                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamaño antes de convertir" },
               ].map((tool) => (
                 <div
                   key={tool.href}

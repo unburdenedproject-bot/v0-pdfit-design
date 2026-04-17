@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo comprimir un PDF sin perder calidad en mi teléfono?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, selecciona compresión Ligera y descarga el resultado. No necesitas app — funciona en iPhone y Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, seleccióna compresión Ligera y descarga el resultado. No necesitas app — funciona en iPhone y Android." }
     }
   ]
 }
@@ -180,7 +180,7 @@ export default function ComprimirPDFSinPerderCalidadPage() {
                 { title: "Cómo Comprimir un PDF (Reducir Tamaño Rápidamente)", href: "/es/aprender/como-comprimir-un-pdf" },
                 { title: "Comprimir un PDF para Imprimir (Mantener Calidad de Impresión)", href: "/es/aprender/comprimir-pdf-para-imprimir" },
                 { title: "Comprimir un PDF Grande (50MB, 100MB o Más)", href: "/es/aprender/comprimir-pdf-grande" },
-                { title: "Comprimir un PDF con Imágenes (Fotos, Escaneos, Gráficos)", href: "/es/aprender/comprimir-pdf-con-imagenes" },
+                { title: "Comprimir un PDF con Imágenes (Fotos, Escaneos, Gráficos)", href: "/es/aprender/comprimir-pdf-con-imágenes" },
               ].map((article) => (
                 <Link key={article.href} href={article.href} className="flex items-center justify-between bg-white rounded-xl p-4 border border-gray-200 hover:border-[#14D8C4]/20 hover:bg-[#F0FDFA] transition-all group">
                   <span className="font-semibold text-slate-900 text-sm group-hover:text-[#14D8C4] transition-colors">{article.title}</span>
@@ -201,7 +201,7 @@ export default function ComprimirPDFSinPerderCalidadPage() {
                 { q: "¿Cuánto más pequeño será mi PDF con compresión sin pérdida?", a: "Típicamente 10-30% más pequeño. Si el PDF tiene muchos datos redundantes o fuentes incrustadas, el ahorro puede ser mayor. Para reducciones más grandes necesitas compresión con pérdida." },
                 { q: "¿El texto se mantiene nítido después de comprimir?", a: "Absolutamente. El texto del PDF se almacena como datos vectoriales, no como imágenes, así que la compresión nunca afecta la nitidez del texto. Solo las imágenes incrustadas pueden verse afectadas, y solo si eliges compresión Media o Extrema." },
                 { q: "¿Debería usar compresión Ligera o Media para mantener la calidad?", a: "Usa Ligera si la calidad es tu máxima prioridad — mantiene las imágenes en su resolución original. Media es un buen punto medio que reduce ligeramente la resolución de imagen pero sigue siendo visualmente indistinguible para la mayoría de los documentos." },
-                { q: "¿Puedo comprimir un PDF sin perder calidad en mi teléfono?", a: "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, selecciona compresión Ligera y descarga el resultado. No necesitas app — funciona en iPhone y Android." },
+                { q: "¿Puedo comprimir un PDF sin perder calidad en mi teléfono?", a: "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, seleccióna compresión Ligera y descarga el resultado. No necesitas app — funciona en iPhone y Android." },
               ].map((faq, i) => (
                 <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

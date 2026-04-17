@@ -16,7 +16,7 @@ const faqs = [
   { q: "¿Qué tipos de preguntas puede generar?", a: "Opción múltiple (4 opciones con una respuesta correcta), respuesta corta (respuestas de 1-3 oraciones) y preguntas de verdadero/falso. Puedes elegir un tipo o una mezcla de los tres." },
   { q: "¿Puedo controlar la dificultad?", a: "Sí. Elige Fácil (recuerdo básico), Medio (comprensión y aplicación) o Difícil (pensamiento crítico y análisis). También puedes elegir cuántas preguntas generar (5, 10, 15 o 20)." },
   { q: "¿Qué tipos de documentos funcionan mejor?", a: "Libros de texto, documentos de investigación, guías de estudio, manuales de capacitación, materiales de curso y cualquier PDF educativo o informativo." },
-  { q: "¿Qué plan necesito?", a: "El Generador de Preguntas es una función del plan Pro a $3.99/mes. Incluye todas las herramientas Pro como conversiones PDF, OCR, herramientas de currículum y más." },
+  { q: "¿Qué plan necesito?", a: "El Generador de Preguntas es una función del plan Pro a $3.99/mes. Incluye todas las herramientas Pro como conversiónes PDF, OCR, herramientas de currículum y más." },
   { q: "¿Puedo copiar las preguntas?", a: "Sí. Usa el botón Copiar todo para copiar todas las preguntas con respuestas y explicaciones al portapapeles." },
 ]
 

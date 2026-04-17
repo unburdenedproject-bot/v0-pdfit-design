@@ -5,10 +5,10 @@ import Link from "next/link"
 import { Unlock, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Desbloquear un PDF en Tu Telefono (iPhone y Android) | PDF.it",
+  title: "Desbloquear un PDF en Tu Teléfono (iPhone y Android) | PDF.it",
   description:
-    "Aprende como desbloquear un PDF en tu telefono — iPhone o Android. Elimina restricciones y contrasenas de PDF desde tu navegador movil. Sin necesidad de instalar aplicaciones.",
-  keywords: "desbloquear pdf en telefono, desbloquear pdf iphone, eliminar contrasena pdf android, desbloquear pdf movil",
+    "Aprende como desbloquear un PDF en tu teléfono — iPhone o Android. Elimina restricciones y contraseñas de PDF desde tu navegador móvil. Sin necesidad de instalar aplicaciónes.",
+  keywords: "desbloquear pdf en teléfono, desbloquear pdf iphone, eliminar contraseña pdf android, desbloquear pdf móvil",
 }
 
 const faqSchema = {
@@ -18,32 +18,32 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Puedo desbloquear un PDF en mi iPhone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. Abre Safari o Chrome en tu iPhone, ve a la herramienta Desbloquear PDF de PDF.it, sube tu archivo y descarga la version desbloqueada. No necesitas instalar ninguna aplicacion — funciona completamente en el navegador." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. Abre Safari o Chrome en tu iPhone, ve a la herramienta Desbloquear PDF de PDF.it, sube tu archivo y descarga la version desbloqueada. No necesitas instalar ninguna aplicación — funciona completamente en el navegador." }
     },
     {
       "@type": "Question",
       "name": "Puedo desbloquear un PDF en Android?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. Abre Chrome, Firefox o cualquier navegador en tu telefono Android, ve a la herramienta Desbloquear PDF de PDF.it, toca para subir tu PDF y descarga el archivo desbloqueado. Funciona en todos los dispositivos Android." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. Abre Chrome, Firefox o cualquier navegador en tu teléfono Android, ve a la herramienta Desbloquear PDF de PDF.it, toca para subir tu PDF y descarga el archivo desbloqueado. Funciona en todos los dispositivos Android." }
     },
     {
       "@type": "Question",
-      "name": "Necesito instalar una aplicacion para desbloquear PDF en mi telefono?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it es una herramienta basada en web que funciona en cualquier navegador movil. No necesitas descargar ni instalar ninguna aplicacion. Solo visita pdf.it.com, sube tu PDF y desbloquealo." }
+      "name": "Necesito instalar una aplicación para desbloquear PDF en mi teléfono?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it es una herramienta basada en web que funciona en cualquier navegador móvil. No necesitas descargar ni instalar ninguna aplicación. Solo visita pdf.it.com, sube tu PDF y desbloquealo." }
     },
     {
       "@type": "Question",
-      "name": "Donde se guarda el PDF desbloqueado en mi telefono?",
-      "acceptedAnswer": { "@type": "Answer", "text": "En iPhone, el archivo se guarda en la carpeta Descargas en la aplicacion Archivos. En Android, se guarda en la carpeta Descargas. Tambien puedes encontrarlo en el historial de descargas de tu navegador." }
+      "name": "Donde se guarda el PDF desbloqueado en mi teléfono?",
+      "acceptedAnswer": { "@type": "Answer", "text": "En iPhone, el archivo se guarda en la carpeta Descargas en la aplicación Archivos. En Android, se guarda en la carpeta Descargas. También puedes encontrarlo en el historial de descargas de tu navegador." }
     },
     {
       "@type": "Question",
-      "name": "Hay limite de tamano de archivo en movil?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Los usuarios gratuitos pueden subir PDF de hasta 25MB, lo que cubre la mayoria de los documentos que tendrias en tu telefono. Los usuarios Pro pueden subir archivos de hasta 200MB. La velocidad de datos moviles o Wi-Fi puede afectar el tiempo de carga para archivos mas grandes." }
+      "name": "Hay límite de tamaño de archivo en móvil?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Los usuarios gratuitos pueden subir PDF de hasta 25MB, lo que cubre la mayoría de los documentos que tendrias en tu teléfono. Los usuarios Pro pueden subir archivos de hasta 200MB. La velocidad de datos móviles o Wi-Fi puede afectar el tiempo de carga para archivos más grandes." }
     },
     {
       "@type": "Question",
-      "name": "Puedo imprimir el PDF desbloqueado desde mi telefono?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. Despues de descargar el PDF desbloqueado, abrelo en tu telefono y usa el boton de compartir para imprimir. En iPhone, usa AirPrint para enviarlo a una impresora cercana. En Android, usa la opcion de impresion integrada o Google Cloud Print." }
+      "name": "Puedo imprimir el PDF desbloqueado desde mi teléfono?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. Después de descargar el PDF desbloqueado, abrelo en tu teléfono y usa el boton de compartir para imprimir. En iPhone, usa AirPrint para enviarlo a una impresora cercana. En Android, usa la opción de impresión integrada o Google Cloud Print." }
     }
   ]
 }
@@ -51,18 +51,18 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Como Desbloquear un PDF en Tu Telefono",
+  "name": "Como Desbloquear un PDF en Tu Teléfono",
   "description": "Elimina las restricciones de PDF en iPhone o Android en 3 simples pasos con PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
-      "name": "Abre PDF.it en tu navegador movil",
+      "name": "Abre PDF.it en tu navegador móvil",
       "text": "Abre Safari (iPhone) o Chrome (Android) y ve a pdf.it.com. Toca la herramienta Desbloquear PDF."
     },
     {
       "@type": "HowToStep",
       "name": "Sube tu PDF bloqueado",
-      "text": "Toca el area de carga para seleccionar tu PDF desde Archivos (iPhone) o tu gestor de archivos (Android). Ingresa la contrasena si el PDF requiere una para abrirse."
+      "text": "Toca el area de carga para selecciónar tu PDF desde Archivos (iPhone) o tu gestor de archivos (Android). Ingresa la contraseña si el PDF requiere una para abrirse."
     },
     {
       "@type": "HowToStep",
@@ -92,9 +92,9 @@ export default function DesbloquearPDFEnMovilPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
               <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Desbloquear PDF</p>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Desbloquear un PDF en Tu Telefono (iPhone y Android)</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Desbloquear un PDF en Tu Teléfono (iPhone y Android)</h1>
               <p className="text-xl text-slate-300">
-                Necesitas desbloquear un PDF pero solo tienes tu telefono? No hay problema. Aqui te explicamos como eliminar las restricciones de PDF directamente desde tu navegador movil — sin necesidad de aplicaciones.
+                Necesitas desbloquear un PDF pero solo tienes tu teléfono? No hay problema. Aqui te explicamos como eliminar las restricciones de PDF directamente desde tu navegador móvil — sin necesidad de aplicaciónes.
               </p>
             </div>
           </div>
@@ -107,7 +107,7 @@ export default function DesbloquearPDFEnMovilPage() {
               <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <Unlock className="h-5 w-5 text-white" />
               </div>
-              <p className="text-slate-700 font-semibold">En tu telefono ahora mismo? Desbloquea tu PDF en segundos.</p>
+              <p className="text-slate-700 font-semibold">En tu teléfono ahora mismo? Desbloquea tu PDF en segundos.</p>
             </div>
             <Link
               href="/es/desbloquear-pdf"
@@ -122,20 +122,20 @@ export default function DesbloquearPDFEnMovilPage() {
         <article className="py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
 
-            {/* Por que en movil */}
+            {/* Por qué en móvil */}
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que Podrias Necesitar Desbloquear un PDF en Tu Telefono</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que Podrias Necesitar Desbloquear un PDF en Tu Teléfono</h2>
               <p className="text-slate-600 mb-4">
-                Cada vez mas personas manejan documentos completamente desde sus telefonos. Recibes un PDF por WhatsApp, correo electronico o una aplicacion de mensajeria, y necesitas hacer algo con el ahora mismo — pero el archivo esta bloqueado. Escenarios comunes:
+                Cada vez más personas manejan documentos completamente desde sus teléfonos. Recibes un PDF por WhatsApp, correo electrónico o una aplicación de mensajeria, y necesitas hacer algo con el ahora mismo — pero el archivo esta bloqueado. Escenarios comunes:
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
-                  <span><strong>Alguien te envio un PDF restringido</strong> y necesitas copiar una seccion de texto para una respuesta rapida. Estas en el metro con solo tu telefono.</span>
+                  <span><strong>Alguien te envio un PDF restringido</strong> y necesitas copiar una sección de texto para una respuesta rápida. Estas en el metro con solo tu teléfono.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
-                  <span><strong>Recibiste un PDF que necesitas imprimir</strong> en una tienda de impresion cercana, pero la restriccion de impresion te lo impide. No tienes laptop disponible.</span>
+                  <span><strong>Recibiste un PDF que necesitas imprimir</strong> en una tienda de impresión cercana, pero la restricción de impresión te lo impide. No tienes laptop disponible.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
@@ -143,11 +143,11 @@ export default function DesbloquearPDFEnMovilPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
-                  <span><strong>Estas viajando</strong> y necesitas acceder a un documento protegido con contrasena para una reunion o cita. Tu telefono es tu unico dispositivo.</span>
+                  <span><strong>Estas viajando</strong> y necesitas acceder a un documento protegido con contraseña para una reunion o cita. Tu teléfono es tu único dispositivo.</span>
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
-                PDF.it funciona en cualquier navegador movil — sin descarga de aplicacion, sin cuenta requerida para uso basico. Solo sube, desbloquea y descarga.
+                PDF.it funciona en cualquier navegador móvil — sin descarga de aplicación, sin cuenta requerida para uso básico. Solo sube, desbloquea y descarga.
               </p>
             </section>
 
@@ -162,11 +162,11 @@ export default function DesbloquearPDFEnMovilPage() {
                   },
                   {
                     title: "Sube tu PDF bloqueado",
-                    desc: "Toca el area de carga. Tu iPhone te mostrara opciones para buscar en Archivos, iCloud Drive o descargas recientes. Selecciona el PDF bloqueado. Si el PDF fue compartido via correo electronico o WhatsApp, guardalo en Archivos primero, luego subelo desde alli.",
+                    desc: "Toca el area de carga. Tu iPhone te mostrara opciones para buscar en Archivos, iCloud Drive o descargas recientes. Selecciona el PDF bloqueado. Si el PDF fue compartido via correo electrónico o WhatsApp, guardalo en Archivos primero, luego subelo desde alli.",
                   },
                   {
                     title: "Descarga el archivo desbloqueado",
-                    desc: "Toca Desbloquear y espera unos segundos. Cuando la descarga este lista, toca Descargar. El archivo se guarda en tu carpeta Descargas en la aplicacion Archivos. Abrelo para verificar — ahora puedes imprimir, copiar y compartir libremente.",
+                    desc: "Toca Desbloquear y espera unos segundos. Cuando la descarga este lista, toca Descargar. El archivo se guarda en tu carpeta Descargas en la aplicación Archivos. Abrelo para verificar — ahora puedes imprimir, copiar y compartir libremente.",
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -189,15 +189,15 @@ export default function DesbloquearPDFEnMovilPage() {
                 {[
                   {
                     title: "Abre Chrome y ve a PDF.it",
-                    desc: "Abre Chrome (o Firefox, Samsung Internet o cualquier navegador) en tu telefono Android. Ve a pdf.it.com y toca \"Desbloquear PDF\" en la lista de herramientas.",
+                    desc: "Abre Chrome (o Firefox, Samsung Internet o cualquier navegador) en tu teléfono Android. Ve a pdf.it.com y toca \"Desbloquear PDF\" en la lista de herramientas.",
                   },
                   {
                     title: "Sube tu PDF bloqueado",
-                    desc: "Toca el area de carga. Android abrira tu selector de archivos — navega a Descargas, Google Drive o donde sea que este almacenado el PDF. Selecciona el archivo. Si el PDF requiere una contrasena de apertura, ingresala cuando se te solicite.",
+                    desc: "Toca el area de carga. Android abrira tu selector de archivos — navega a Descargas, Google Drive o donde sea que este almacenado el PDF. Selecciona el archivo. Si el PDF requiere una contraseña de apertura, ingresala cuando se te solicite.",
                   },
                   {
                     title: "Descarga el archivo desbloqueado",
-                    desc: "Toca Desbloquear y espera el procesamiento. El PDF desbloqueado se descarga en tu carpeta Descargas. Puedes encontrarlo en la barra de notificaciones o en la aplicacion Archivos/Mis Archivos de tu telefono.",
+                    desc: "Toca Desbloquear y espera el procesamiento. El PDF desbloqueado se descarga en tu carpeta Descargas. Puedes encontrarlo en la barra de notificaciones o en la aplicación Archivos/Mis Archivos de tu teléfono.",
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -213,52 +213,52 @@ export default function DesbloquearPDFEnMovilPage() {
               </div>
             </section>
 
-            {/* Consejos para movil */}
+            {/* Consejos para móvil */}
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Consejos para Trabajar con PDF en Tu Telefono</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Consejos para Trabajar con PDF en Tu Teléfono</h2>
               <p className="text-slate-600 mb-4">
-                Una vez que tu PDF este desbloqueado, aqui hay algunas cosas utiles que puedes hacer con el en tu dispositivo movil:
+                Una vez que tu PDF este desbloqueado, aquí hay algunas cosas útiles que puedes hacer con el en tu dispositivo móvil:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Imprimir desde tu telefono.</strong> En iPhone, usa AirPrint (toca Compartir, luego Imprimir). En Android, usa la opcion de impresion integrada en tu visor de PDF o el menu Compartir.</li>
-                <li>&#10003; <strong>Copiar texto.</strong> Abre el PDF desbloqueado, mantien presionado el texto que quieres copiar y pegalo en cualquier aplicacion — correo, notas, mensajes.</li>
-                <li>&#10003; <strong>Compartir por mensajeria.</strong> Toca el boton de compartir para enviar el PDF desbloqueado a traves de WhatsApp, Telegram, correo electronico o cualquier aplicacion de mensajeria.</li>
-                <li>&#10003; <strong>Comprimir para compartir facilmente.</strong> Si el PDF es demasiado grande para enviar por correo, usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> desde tu telefono para reducir el tamano del archivo.</li>
+                <li>&#10003; <strong>Imprimir desde tu teléfono.</strong> En iPhone, usa AirPrint (toca Compartir, luego Imprimir). En Android, usa la opción de impresión integrada en tu visor de PDF o el menu Compartir.</li>
+                <li>&#10003; <strong>Copiar texto.</strong> Abre el PDF desbloqueado, mantien presionado el texto que quieres copiar y pegalo en cualquier aplicación — correo, notas, mensajes.</li>
+                <li>&#10003; <strong>Compartir por mensajeria.</strong> Toca el boton de compartir para enviar el PDF desbloqueado a traves de WhatsApp, Telegram, correo electrónico o cualquier aplicación de mensajeria.</li>
+                <li>&#10003; <strong>Comprimir para compartir fácilmente.</strong> Si el PDF es demasiado grande para enviar por correo, usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> desde tu teléfono para reducir el tamaño del archivo.</li>
               </ul>
             </section>
 
-            {/* Otras herramientas moviles */}
+            {/* Otras herramientas móviles */}
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Otras Herramientas de PDF que Funcionan en Tu Telefono</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Otras Herramientas de PDF que Funcionan en Tu Teléfono</h2>
               <p className="text-slate-600 mb-4">
-                PDF.it es completamente responsivo — todas las herramientas funcionan en movil. Aqui estan las mas utiles para usuarios de telefono:
+                PDF.it es completamente responsivo — todas las herramientas funcionan en móvil. Aqui están las más útiles para usuarios de teléfono:
               </p>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Comprimir PDF</h3>
                   <p className="text-slate-600">
-                    Las fotos y escaneos de telefono crean PDF grandes. Usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para reducir el tamano del archivo antes de compartir por correo o aplicaciones de mensajeria. Tambien puedes apuntar a tamanos especificos como <Link href="/es/comprimir-pdf-a-5mb" className="text-[#14D8C4] hover:underline">5MB</Link> o <Link href="/es/comprimir-pdf-a-2mb" className="text-[#14D8C4] hover:underline">2MB</Link>.
+                    Las fotos y escaneos de teléfono crean PDF grandes. Usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para reducir el tamaño del archivo antes de compartir por correo o aplicaciónes de mensajeria. También puedes apuntar a tamaños específicos como <Link href="/es/comprimir-pdf-a-5mb" className="text-[#14D8C4] hover:underline">5MB</Link> o <Link href="/es/comprimir-pdf-a-2mb" className="text-[#14D8C4] hover:underline">2MB</Link>.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">Limpieza de Escaneo de Telefono</h3>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">Limpieza de Escaneo de Teléfono</h3>
                   <p className="text-slate-600">
-                    Tomaste una foto de un documento con la camara de tu telefono? Usa <Link href="/es/limpiar-escaneo" className="text-[#14D8C4] hover:underline">Limpieza de Escaneo de Telefono</Link> para enderezar, mejorar y convertirla en un PDF limpio y profesional.
+                    Tomaste una foto de un documento con la camara de tu teléfono? Usa <Link href="/es/limpiar-escaneo" className="text-[#14D8C4] hover:underline">Limpieza de Escaneo de Teléfono</Link> para enderezar, mejorar y convertirla en un PDF limpio y profesional.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Proteger PDF</h3>
                   <p className="text-slate-600">
-                    Necesitas agregar una contrasena a un PDF antes de compartirlo desde tu telefono? Usa <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link> para establecer una contrasena de apertura o restricciones de permisos — todo desde tu navegador movil.
+                    Necesitas agregar una contraseña a un PDF antes de compartirlo desde tu teléfono? Usa <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link> para establecer una contraseña de apertura o restricciones de permisos — todo desde tu navegador móvil.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Unir PDF</h3>
                   <p className="text-slate-600">
-                    Necesitas combinar multiples PDF en tu telefono? Usa <Link href="/es/unir-pdf" className="text-[#14D8C4] hover:underline">Unir PDF</Link> para juntar documentos. Ideal para combinar recibos, boletos o paginas de documentos en un solo archivo.
+                    Necesitas combinar múltiples PDF en tu teléfono? Usa <Link href="/es/unir-pdf" className="text-[#14D8C4] hover:underline">Unir PDF</Link> para juntar documentos. Ideal para combinar recibos, boletos o páginas de documentos en un solo archivo.
                   </p>
                 </div>
               </div>
@@ -266,16 +266,16 @@ export default function DesbloquearPDFEnMovilPage() {
 
             {/* No necesitas app */}
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que No Necesitas una Aplicacion de PDF</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que No Necesitas una Aplicación de PDF</h2>
               <p className="text-slate-600 mb-4">
-                La App Store y Google Play estan llenas de aplicaciones de PDF que ocupan almacenamiento, muestran anuncios y a menudo requieren suscripciones de pago. PDF.it funciona de manera diferente:
+                La App Store y Google Play están llenas de aplicaciónes de PDF que ocupan almacenamiento, muestran anuncios y a menudo requieren suscripciones de pago. PDF.it funciona de manera diferente:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Sin descarga requerida.</strong> PDF.it funciona completamente en tu navegador. No se usa espacio de almacenamiento en tu telefono.</li>
-                <li>&#10003; <strong>Sin cuenta necesaria para uso basico.</strong> Desbloquea hasta 3 PDF sin crear una cuenta. Inicia sesion para hasta 10 desbloqueos gratis por dia.</li>
-                <li>&#10003; <strong>Funciona en cualquier telefono.</strong> iPhone, Android, Samsung, Google Pixel, OnePlus — si tiene un navegador, PDF.it funciona en el.</li>
-                <li>&#10003; <strong>Siempre actualizado.</strong> Sin actualizaciones de aplicacion que instalar. PDF.it siempre es la version mas reciente cuando visitas el sitio.</li>
-                <li>&#10003; <strong>Procesamiento seguro.</strong> Tus archivos se procesan a traves de HTTPS y se eliminan automaticamente despues del procesamiento. Nada se almacena en nuestros servidores.</li>
+                <li>&#10003; <strong>Sin descarga requerida.</strong> PDF.it funciona completamente en tu navegador. No se usa espacio de almacenamiento en tu teléfono.</li>
+                <li>&#10003; <strong>Sin cuenta necesaria para uso básico.</strong> Desbloquea hasta 3 PDF sin crear una cuenta. Inicia sesión para hasta 10 desbloqueos gratis por día.</li>
+                <li>&#10003; <strong>Funciona en cualquier teléfono.</strong> iPhone, Android, Samsung, Google Pixel, OnePlus — si tiene un navegador, PDF.it funciona en el.</li>
+                <li>&#10003; <strong>Siempre actualizado.</strong> Sin actualizaciones de aplicación que instalar. PDF.it siempre es la version más reciente cuando visitas el sitio.</li>
+                <li>&#10003; <strong>Procesamiento seguro.</strong> Tus archivos se procesan a traves de HTTPS y se eliminan automáticamente después del procesamiento. Nada se almacena en nuestros servidores.</li>
               </ul>
             </section>
 
@@ -286,7 +286,7 @@ export default function DesbloquearPDFEnMovilPage() {
         <section className="py-12" style={{ background: "#0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Desbloquea Tu PDF Ahora Mismo</h2>
-            <p className="text-slate-300 mb-6">Funciona en iPhone, Android y cualquier dispositivo con navegador. Sin necesidad de aplicacion — solo sube, desbloquea y descarga.</p>
+            <p className="text-slate-300 mb-6">Funciona en iPhone, Android y cualquier dispositivo con navegador. Sin necesidad de aplicación — solo sube, desbloquea y descarga.</p>
             <Link
               href="/es/desbloquear-pdf"
               className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
@@ -299,12 +299,12 @@ export default function DesbloquearPDFEnMovilPage() {
         {/* Related Articles */}
         <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-6">Articulos Relacionados</h2>
+            <h2 className="text-2xl font-black text-slate-900 mb-6">Artículos Relacionados</h2>
             <div className="grid gap-3">
               {[
-                { title: "Como Desbloquear un PDF en Linea (Quitar Restricciones)", href: "/es/aprender/como-desbloquear-pdf" },
-                { title: "Desbloquear un PDF para Imprimir (Quitar Restricciones de Impresion)", href: "/es/aprender/desbloquear-pdf-para-imprimir" },
-                { title: "Olvidaste Tu Contrasena de PDF? Esto Es Lo Que Puedes Hacer", href: "/es/aprender/desbloquear-pdf-contrasena-olvidada" },
+                { title: "Como Desbloquear un PDF en Línea (Quitar Restricciones)", href: "/es/aprender/como-desbloquear-pdf" },
+                { title: "Desbloquear un PDF para Imprimir (Quitar Restricciones de Impresión)", href: "/es/aprender/desbloquear-pdf-para-imprimir" },
+                { title: "Olvidaste Tu Contraseña de PDF? Esto Es Lo Que Puedes Hacer", href: "/es/aprender/desbloquear-pdf-contraseña-olvidada" },
               ].map((article) => (
                 <Link
                   key={article.href}
@@ -325,12 +325,12 @@ export default function DesbloquearPDFEnMovilPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Puedo desbloquear un PDF en mi iPhone?", a: "Si. Abre Safari o Chrome en tu iPhone, ve a la herramienta Desbloquear PDF de PDF.it, sube tu archivo y descarga la version desbloqueada. No necesitas instalar ninguna aplicacion — funciona completamente en el navegador." },
-                { q: "Puedo desbloquear un PDF en Android?", a: "Si. Abre Chrome, Firefox o cualquier navegador en tu telefono Android, ve a la herramienta Desbloquear PDF de PDF.it, toca para subir tu PDF y descarga el archivo desbloqueado. Funciona en todos los dispositivos Android." },
-                { q: "Necesito instalar una aplicacion para desbloquear PDF en mi telefono?", a: "No. PDF.it es una herramienta basada en web que funciona en cualquier navegador movil. No necesitas descargar ni instalar ninguna aplicacion. Solo visita pdf.it.com, sube tu PDF y desbloquealo." },
-                { q: "Donde se guarda el PDF desbloqueado en mi telefono?", a: "En iPhone, el archivo se guarda en la carpeta Descargas en la aplicacion Archivos. En Android, se guarda en la carpeta Descargas. Tambien puedes encontrarlo en el historial de descargas de tu navegador." },
-                { q: "Hay limite de tamano de archivo en movil?", a: "Los usuarios gratuitos pueden subir PDF de hasta 25MB, lo que cubre la mayoria de los documentos que tendrias en tu telefono. Los usuarios Pro pueden subir archivos de hasta 200MB. La velocidad de datos moviles o Wi-Fi puede afectar el tiempo de carga para archivos mas grandes." },
-                { q: "Puedo imprimir el PDF desbloqueado desde mi telefono?", a: "Si. Despues de descargar el PDF desbloqueado, abrelo en tu telefono y usa el boton de compartir para imprimir. En iPhone, usa AirPrint para enviarlo a una impresora cercana. En Android, usa la opcion de impresion integrada o Google Cloud Print." },
+                { q: "Puedo desbloquear un PDF en mi iPhone?", a: "Si. Abre Safari o Chrome en tu iPhone, ve a la herramienta Desbloquear PDF de PDF.it, sube tu archivo y descarga la version desbloqueada. No necesitas instalar ninguna aplicación — funciona completamente en el navegador." },
+                { q: "Puedo desbloquear un PDF en Android?", a: "Si. Abre Chrome, Firefox o cualquier navegador en tu teléfono Android, ve a la herramienta Desbloquear PDF de PDF.it, toca para subir tu PDF y descarga el archivo desbloqueado. Funciona en todos los dispositivos Android." },
+                { q: "Necesito instalar una aplicación para desbloquear PDF en mi teléfono?", a: "No. PDF.it es una herramienta basada en web que funciona en cualquier navegador móvil. No necesitas descargar ni instalar ninguna aplicación. Solo visita pdf.it.com, sube tu PDF y desbloquealo." },
+                { q: "Donde se guarda el PDF desbloqueado en mi teléfono?", a: "En iPhone, el archivo se guarda en la carpeta Descargas en la aplicación Archivos. En Android, se guarda en la carpeta Descargas. También puedes encontrarlo en el historial de descargas de tu navegador." },
+                { q: "Hay límite de tamaño de archivo en móvil?", a: "Los usuarios gratuitos pueden subir PDF de hasta 25MB, lo que cubre la mayoría de los documentos que tendrias en tu teléfono. Los usuarios Pro pueden subir archivos de hasta 200MB. La velocidad de datos móviles o Wi-Fi puede afectar el tiempo de carga para archivos más grandes." },
+                { q: "Puedo imprimir el PDF desbloqueado desde mi teléfono?", a: "Si. Después de descargar el PDF desbloqueado, abrelo en tu teléfono y usa el boton de compartir para imprimir. En iPhone, usa AirPrint para enviarlo a una impresora cercana. En Android, usa la opción de impresión integrada o Google Cloud Print." },
               ].map((faq, i) => (
                 <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

@@ -8,7 +8,7 @@ import Link from "next/link"
 export const metadata = {
   title: "Convertir Word a PDF Online — DOCX a PDF Gratis | PDF.it",
   description:
-    "Convierte Word a PDF en segundos con PDF.it. Transforma archivos DOC o DOCX en un PDF limpio y listo para compartir — rapido, facil y sin instalar nada.",
+    "Convierte Word a PDF en segundos con PDF.it. Transforma archivos DOC o DOCX en un PDF limpio y listo para compartir — rápido, fácil y sin instalar nada.",
   alternates: {
     canonical: "https://pdf.it.com/es/word-a-pdf",
     languages: {
@@ -52,11 +52,11 @@ export default function WordaPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convertir Word a PDF Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Convierte DOC/DOCX a PDF con PDF.it — rapido, sencillo y perfecto para documentos limpios y listos para compartir.
+                Convierte DOC/DOCX a PDF con PDF.it — rápido, sencillo y perfecto para documentos limpios y listos para compartir.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-[#14D8C4]" /><span>Formato Preservado</span></div>
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesion</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesión</span></div>
                 <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>DOC y DOCX Soportados</span></div>
               </div>
             </div>
@@ -74,7 +74,7 @@ export default function WordaPDFPage() {
               <li className="flex items-center gap-2">✓ Soporta archivos DOC y DOCX</li>
               <li className="flex items-center gap-2">✓ Crea PDFs listos para compartir por correo, imprimir y subir</li>
               <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li className="flex items-center gap-2">✓ Sin instalacion — conversion desde tu navegador</li>
+              <li className="flex items-center gap-2">✓ Sin instalación — conversión desde tu navegador</li>
             </ul>
           </div>
         </section>
@@ -103,9 +103,9 @@ export default function WordaPDFPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { title: "Convierte DOCX a PDF Manteniendo el Diseno", desc: "PDF.it convierte documentos Word en PDFs disenados para verse consistentes en todos los dispositivos. Ideal para enviar archivos donde el formato debe mantenerse estable." },
-                { title: "Haz que tus Documentos Word Sean Faciles de Compartir e Imprimir", desc: "Los PDFs son el estandar para entregas, impresion y documentos oficiales. Convierte tu archivo Word a PDF para que los destinatarios vean el mismo diseno — sin importar que software usen." },
-                { title: "Conversion Rapida Online — Sin Apps", desc: "Sube un archivo Word, convierte a PDF y descarga de inmediato — sin descargas, sin instalaciones y sin pasos complicados." },
+                { title: "Convierte DOCX a PDF Manteniendo el Diseño", desc: "PDF.it convierte documentos Word en PDFs diseñados para verse consistentes en todos los dispositivos. Ideal para enviar archivos donde el formato debe mantenerse estable." },
+                { title: "Haz que tus Documentos Word Sean Fáciles de Compartir e Imprimir", desc: "Los PDFs son el estándar para entregas, impresión y documentos oficiales. Convierte tu archivo Word a PDF para que los destinatarios vean el mismo diseño — sin importar que software usen." },
+                { title: "Conversión Rápida Online — Sin Apps", desc: "Sube un archivo Word, convierte a PDF y descarga de inmediato — sin descargas, sin instalaciones y sin pasos complicados." },
               ].map((feature) => (
                 <div
                   key={feature.title}
@@ -171,10 +171,10 @@ export default function WordaPDFPage() {
             <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "Excel a PDF", href: "/es/excel-a-pdf", desc: "Convierte hojas de calculo a PDF" },
-                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamano del PDF" },
+                { name: "Excel a PDF", href: "/es/excel-a-pdf", desc: "Convierte hojas de cálculo a PDF" },
+                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamaño del PDF" },
                 { name: "Unir PDF", href: "/es/unir-pdf", desc: "Combina varios PDFs en uno" },
-                { name: "PDF a JPG", href: "/es/pdf-a-jpg", desc: "Extrae paginas como imagenes" },
+                { name: "PDF a JPG", href: "/es/pdf-a-jpg", desc: "Extrae páginas como imágenes" },
               ].map((tool) => (
                 <div
                   key={tool.href}
@@ -224,11 +224,11 @@ export default function WordaPDFPage() {
             <div className="space-y-4">
               {[
                 { q: "¿Puedo convertir tanto DOC como DOCX a PDF?", a: "Si. PDF.it soporta ambos formatos de archivo .doc y .docx." },
-                { q: "¿El PDF mantendra el formato de mi archivo Word?", a: "En la mayoria de los casos, si — PDF.it preserva el diseno, fuentes y espaciado. Documentos complejos con fuentes personalizadas o tablas inusuales pueden variar ligeramente." },
-                { q: "¿Puedo convertir Word a PDF en mi celular?", a: "Si. PDF.it funciona en navegadores moviles — sube tu archivo Word y descarga el PDF." },
-                { q: "¿Es seguro subir mi documento Word?", a: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." },
-                { q: "¿Cual es el tamano maximo de archivo que puedo convertir?", a: "Las cuentas Pro y Business pueden subir archivos de hasta 200MB." },
-                { q: "Mi PDF se ve diferente a mi archivo Word — ¿por que?", a: "Las diferencias pueden ocurrir por fuentes incrustadas o formato complejo. Intenta simplificar el espaciado, usar fuentes estandar o exportar de nuevo." },
+                { q: "¿El PDF mantendrá el formato de mi archivo Word?", a: "En la mayoría de los casos, si — PDF.it preserva el diseño, fuentes y espaciado. Documentos complejos con fuentes personalizadas o tablas inusuales pueden variar ligeramente." },
+                { q: "¿Puedo convertir Word a PDF en mi celular?", a: "Si. PDF.it funciona en navegadores móviles — sube tu archivo Word y descarga el PDF." },
+                { q: "¿Es seguro subir mi documento Word?", a: "Si. Todas las transferencias están cifradas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." },
+                { q: "¿Cual es el tamaño máximo de archivo que puedo convertir?", a: "Las cuentas Pro y Business pueden subir archivos de hasta 200MB." },
+                { q: "Mi PDF se ve diferente a mi archivo Word — ¿por que?", a: "Las diferencias pueden ocurrir por fuentes incrustadas o formato complejo. Intenta simplificar el espaciado, usar fuentes estándar o exportar de nuevo." },
               ].map((faq, i) => (
                 <div
                   key={i}
@@ -252,11 +252,11 @@ export default function WordaPDFPage() {
           "@type": "FAQPage",
           "mainEntity": [
             { "@type": "Question", "name": "¿Puedo convertir tanto DOC como DOCX a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it soporta ambos formatos de archivo .doc y .docx." } },
-            { "@type": "Question", "name": "¿El PDF mantendra el formato de mi archivo Word?", "acceptedAnswer": { "@type": "Answer", "text": "En la mayoria de los casos, si — PDF.it preserva el diseno, fuentes y espaciado. Documentos complejos con fuentes personalizadas o tablas inusuales pueden variar ligeramente." } },
-            { "@type": "Question", "name": "¿Puedo convertir Word a PDF en mi celular?", "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en navegadores moviles — sube tu archivo Word y descarga el PDF." } },
-            { "@type": "Question", "name": "¿Es seguro subir mi documento Word?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." } },
-            { "@type": "Question", "name": "¿Cual es el tamano maximo de archivo que puedo convertir?", "acceptedAnswer": { "@type": "Answer", "text": "Las cuentas Pro y Business pueden subir archivos de hasta 200MB." } },
-            { "@type": "Question", "name": "Mi PDF se ve diferente a mi archivo Word — ¿por que?", "acceptedAnswer": { "@type": "Answer", "text": "Las diferencias pueden ocurrir por fuentes incrustadas o formato complejo. Intenta simplificar el espaciado, usar fuentes estandar o exportar de nuevo." } }
+            { "@type": "Question", "name": "¿El PDF mantendrá el formato de mi archivo Word?", "acceptedAnswer": { "@type": "Answer", "text": "En la mayoría de los casos, si — PDF.it preserva el diseño, fuentes y espaciado. Documentos complejos con fuentes personalizadas o tablas inusuales pueden variar ligeramente." } },
+            { "@type": "Question", "name": "¿Puedo convertir Word a PDF en mi celular?", "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en navegadores móviles — sube tu archivo Word y descarga el PDF." } },
+            { "@type": "Question", "name": "¿Es seguro subir mi documento Word?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Todas las transferencias están cifradas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." } },
+            { "@type": "Question", "name": "¿Cual es el tamaño máximo de archivo que puedo convertir?", "acceptedAnswer": { "@type": "Answer", "text": "Las cuentas Pro y Business pueden subir archivos de hasta 200MB." } },
+            { "@type": "Question", "name": "Mi PDF se ve diferente a mi archivo Word — ¿por que?", "acceptedAnswer": { "@type": "Answer", "text": "Las diferencias pueden ocurrir por fuentes incrustadas o formato complejo. Intenta simplificar el espaciado, usar fuentes estándar o exportar de nuevo." } }
           ]
         })}} />
       </main>

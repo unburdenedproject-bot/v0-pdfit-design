@@ -16,7 +16,7 @@ const faqSchema = {
   "mainEntity": [
     { "@type": "Question", "name": "¿Cómo divido un PDF en línea gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it, ingresa los rangos de páginas que quieres extraer (ej. 1-5, 8, 10-15), haz clic en Dividir, y descarga tus nuevos archivos. No se requiere registro para tus primeros 3 archivos." } },
     { "@type": "Question", "name": "¿Puedo dividir un PDF en rangos de páginas específicos?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Puedes ingresar cualquier combinación de rangos de páginas y páginas individuales. Por ejemplo, '1-3, 7, 10-15' creará un archivo con las páginas 1 a 3, página 7, y páginas 10 a 15." } },
-    { "@type": "Question", "name": "¿Dividir un PDF cambia el archivo original?", "acceptedAnswer": { "@type": "Answer", "text": "No. Dividir crea nuevos archivos con las páginas que seleccionas. Tu PDF original permanece exactamente como estaba — nada se modifica ni se elimina." } },
+    { "@type": "Question", "name": "¿Dividir un PDF cambia el archivo original?", "acceptedAnswer": { "@type": "Answer", "text": "No. Dividir crea nuevos archivos con las páginas que selecciónas. Tu PDF original permanece exactamente como estaba — nada se modifica ni se elimina." } },
     { "@type": "Question", "name": "¿Puedo dividir un PDF en páginas individuales?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Ingresa cada número de página separado por comas (ej. 1, 2, 3, 4) o usa la opción 'dividir cada página' de PDF.it para crear un archivo separado por cada página automáticamente." } },
     { "@type": "Question", "name": "¿Cómo divido un PDF grande para email?", "acceptedAnswer": { "@type": "Answer", "text": "Divide tu PDF en partes más pequeñas que quepan bajo el límite de adjuntos de tu proveedor de email (generalmente 20-25MB). Divide el PDF en rangos de 2-3 páginas, luego comprime cada parte por separado si es necesario." } },
     { "@type": "Question", "name": "¿Es posible dividir un PDF protegido con contraseña?", "acceptedAnswer": { "@type": "Answer", "text": "Necesitas desbloquear el PDF primero. Usa la herramienta Desbloquear PDF de PDF.it para eliminar la contraseña, luego divide el archivo desbloqueado en las páginas o rangos que necesites." } }
@@ -141,7 +141,7 @@ export default function ComoDividirPDFPage() {
 
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">¿Qué Pasa con el PDF Original?</h2>
-              <p className="text-slate-600 mb-4">Nada. Dividir es una operación no destructiva. PDF.it crea <strong>nuevos archivos</strong> con las páginas que seleccionas — tu PDF original nunca se modifica, renombra ni elimina. Piensa en ello como fotocopiar páginas específicas de un libro. El libro permanece intacto.</p>
+              <p className="text-slate-600 mb-4">Nada. Dividir es una operación no destructiva. PDF.it crea <strong>nuevos archivos</strong> con las páginas que selecciónas — tu PDF original nunca se modifica, renombra ni elimina. Piensa en ello como fotocopiar páginas específicas de un libro. El libro permanece intacto.</p>
               <p className="text-slate-600">Si más tarde te das cuenta de que necesitas esas páginas juntas de nuevo, usa <Link href="/es/unir-pdf" className="text-[#14D8C4] hover:underline">Unir PDF</Link> para combinar archivos en un documento.</p>
             </section>
 
@@ -158,7 +158,7 @@ export default function ComoDividirPDFPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Eliminar Páginas No Deseadas</h3>
-                  <p className="text-slate-600">En vez de seleccionar las páginas a eliminar, selecciona las páginas que quieres <strong>conservar</strong>. Por ejemplo, si un PDF de 20 páginas tiene contenido no deseado en las páginas 8-12, ingresa "1-7, 13-20" para obtener un archivo limpio sin esas páginas.</p>
+                  <p className="text-slate-600">En vez de selecciónar las páginas a eliminar, seleccióna las páginas que quieres <strong>conservar</strong>. Por ejemplo, si un PDF de 20 páginas tiene contenido no deseado en las páginas 8-12, ingresa "1-7, 13-20" para obtener un archivo limpio sin esas páginas.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Sacar un Solo Formulario o Recibo</h3>
@@ -172,7 +172,7 @@ export default function ComoDividirPDFPage() {
               <p className="text-slate-600 mb-4">Están estrechamente relacionados, pero piénsalo así:</p>
               <ul className="space-y-2 text-slate-700">
                 <li>✓ <strong>Dividir</strong> separa un PDF en múltiples partes (múltiples archivos de salida de una entrada).</li>
-                <li>✓ <strong>Extraer</strong> saca páginas específicas en un solo archivo nuevo (un archivo de salida con páginas seleccionadas).</li>
+                <li>✓ <strong>Extraer</strong> saca páginas específicas en un solo archivo nuevo (un archivo de salida con páginas selecciónadas).</li>
               </ul>
               <p className="text-slate-600 mt-4">La herramienta <Link href="/es/dividir-pdf" className="text-[#14D8C4] hover:underline">Dividir PDF</Link> de PDF.it maneja ambos — ingresa un rango para extracción, o múltiples rangos para dividir en partes. También puedes usar la herramienta dedicada <Link href="/es/dividir-pdf" className="text-[#14D8C4] hover:underline">Extraer Páginas</Link> para una interfaz más simple enfocada en sacar páginas específicas.</p>
             </section>
@@ -216,7 +216,7 @@ export default function ComoDividirPDFPage() {
               {[
                 { q: "¿Cómo divido un PDF en línea gratis?", a: "Sube tu PDF a PDF.it, ingresa los rangos de páginas que quieres extraer (ej. 1-5, 8, 10-15), haz clic en Dividir, y descarga tus nuevos archivos. No se requiere registro para tus primeros 3 archivos." },
                 { q: "¿Puedo dividir un PDF en rangos de páginas específicos?", a: "Sí. Puedes ingresar cualquier combinación de rangos de páginas y páginas individuales. Por ejemplo, '1-3, 7, 10-15' creará un archivo con las páginas 1 a 3, página 7, y páginas 10 a 15." },
-                { q: "¿Dividir un PDF cambia el archivo original?", a: "No. Dividir crea nuevos archivos con las páginas que seleccionas. Tu PDF original permanece exactamente como estaba — nada se modifica ni se elimina." },
+                { q: "¿Dividir un PDF cambia el archivo original?", a: "No. Dividir crea nuevos archivos con las páginas que selecciónas. Tu PDF original permanece exactamente como estaba — nada se modifica ni se elimina." },
                 { q: "¿Puedo dividir un PDF en páginas individuales?", a: "Sí. Ingresa cada número de página separado por comas (ej. 1, 2, 3, 4) o usa la opción 'dividir cada página' de PDF.it para crear un archivo separado por cada página automáticamente." },
                 { q: "¿Cómo divido un PDF grande para email?", a: "Divide tu PDF en partes más pequeñas que quepan bajo el límite de adjuntos de tu proveedor de email (generalmente 20-25MB). Divide el PDF en rangos de 2-3 páginas, luego comprime cada parte por separado si es necesario." },
                 { q: "¿Es posible dividir un PDF protegido con contraseña?", a: "Necesitas desbloquear el PDF primero. Usa la herramienta Desbloquear PDF de PDF.it para eliminar la contraseña, luego divide el archivo desbloqueado en las páginas o rangos que necesites." },

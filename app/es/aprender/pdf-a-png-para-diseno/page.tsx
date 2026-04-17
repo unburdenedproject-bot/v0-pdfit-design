@@ -33,7 +33,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Por qué PNG es mejor que JPG para trabajo de diseño?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PNG usa compresión sin pérdida, así que los bordes se mantienen nítidos y los colores precisos. JPG crea artefactos visibles alrededor de texto, logos y bordes duros. PNG también soporta transparencia, que es esencial para superponer capas en herramientas de diseño." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PNG usa compresión sin pérdida, así que los bordes se mantienen nítidos y los colores precisos. JPG crea artefactos visibles alrededor de texto, logos y bordes duros. PNG también soporta transparencia, qué es esencial para superponer capas en herramientas de diseño." }
     },
     {
       "@type": "Question",
@@ -171,7 +171,7 @@ export default function PdfAPngParaDisenoPage() {
                     </tr>
                     <tr className="border-t border-gray-200">
                       <td className="py-3 px-4 font-semibold text-[#14D8C4]">Texto nítido</td>
-                      <td className="py-3 px-4">El texto en PDFs se mantiene perfectamente nítido como PNG. JPG difumina los bordes del texto, lo cual es inmediatamente visible en presentaciones de diseño.</td>
+                      <td className="py-3 px-4">El texto en PDFs se mantiene perfectamente nítido como PNG. JPG difumina los bordes del texto, lo cuál es inmediatamente visible en presentaciones de diseño.</td>
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
                       <td className="py-3 px-4 font-semibold text-[#14D8C4]">Precisión de color</td>
@@ -287,7 +287,7 @@ export default function PdfAPngParaDisenoPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Vistas previas de documentos en sitios web</h3>
                   <p className="text-slate-600">
-                    En lugar de incrustar un visor de PDF completo (que es pesado y a menudo falla en móvil), convierte la primera página a PNG y muéstrala como imagen de vista previa con un enlace de "Descargar PDF". Esto carga más rápido y funciona en todos los dispositivos.
+                    En lugar de incrustar un visor de PDF completo (qué es pesado y a menudo falla en móvil), convierte la primera página a PNG y muéstrala como imagen de vista previa con un enlace de "Descargar PDF". Esto carga más rápido y funciona en todos los dispositivos.
                   </p>
                 </div>
                 <div>
@@ -311,7 +311,7 @@ export default function PdfAPngParaDisenoPage() {
                 A veces no necesitas la página completa como imagen — solo necesitas gráficos específicos incrustados en el PDF:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>- <strong>¿Necesitas un logo de un PDF?</strong> Usa <Link href="/es/extraer-imagenes-de-pdf" className="text-[#14D8C4] hover:underline">Extraer Imágenes de PDF</Link> para extraer imágenes individuales en su resolución original.</li>
+                <li>- <strong>¿Necesitas un logo de un PDF?</strong> Usa <Link href="/es/extraer-imágenes-de-pdf" className="text-[#14D8C4] hover:underline">Extraer Imágenes de PDF</Link> para extraer imágenes individuales en su resolución original.</li>
                 <li>- <strong>¿Necesitas el diseño completo de la página?</strong> Usa <Link href="/es/pdf-a-png" className="text-[#14D8C4] hover:underline">PDF a PNG</Link> para capturar la página completa tal como se renderiza.</li>
                 <li>- <strong>¿Necesitas ambos?</strong> Extrae imágenes individuales para activos de logos y fotos, luego convierte páginas completas para referencia de diseño. Ambas herramientas son gratuitas en PDF.it.</li>
               </ul>

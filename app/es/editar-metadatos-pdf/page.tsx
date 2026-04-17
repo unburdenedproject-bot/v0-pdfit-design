@@ -5,9 +5,9 @@ import { FileText, Zap, Settings, BookOpen } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Editar Metadatos de PDF Online — Cambia Titulo, Autor y Propiedades | PDF.it",
+  title: "Editar Metadatos de PDF Online — Cambia Título, Autor y Propiedades | PDF.it",
   description:
-    "Edita los metadatos de tu PDF con PDF.it. Cambia el titulo, autor, asunto y otras propiedades del documento antes de compartir o publicar — rapido y en tu navegador.",
+    "Edita los metadatos de tu PDF con PDF.it. Cambia el título, autor, asunto y otras propiedades del documento antes de compartir o publicar — rápido y en tu navegador.",
   alternates: {
     canonical: "https://www.pdf.it.com/es/editar-metadatos-pdf",
     languages: { en: "/edit-pdf-metadata", es: "/es/editar-metadatos-pdf" },

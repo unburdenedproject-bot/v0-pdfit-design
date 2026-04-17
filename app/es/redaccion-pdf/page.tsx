@@ -63,7 +63,7 @@ export default function PdfRedactionPageEs() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Redacción de PDFs en Línea</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Elimina permanentemente información sensible de documentos PDF. Dibuja cajas de redacción sobre contenido confidencial y, al aplicar, el texto subyacente se elimina del documento para que no pueda ser seleccionado, copiado, buscado o recuperado.
+                Elimina permanentemente información sensible de documentos PDF. Dibuja cajas de redacción sobre contenido confidencial y, al aplicar, el texto subyacente se elimina del documento para que no pueda ser selecciónado, copiado, buscado o recuperado.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Eye className="h-4 w-4 text-[#14D8C4]" /><span>Editor Visual</span></div>
@@ -78,7 +78,7 @@ export default function PdfRedactionPageEs() {
         <section className="py-10 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <p className="text-lg text-slate-600 leading-relaxed">
-              La redacción adecuada de PDF elimina permanentemente la información sensible — no solo la oculta visualmente. La herramienta de redacción de PDF.it te permite dibujar cajas sobre contenido confidencial y, al aplicar, el texto subyacente se elimina del documento para que no pueda ser seleccionado, copiado, buscado o recuperado.
+              La redacción adecuada de PDF elimina permanentemente la información sensible — no solo la oculta visualmente. La herramienta de redacción de PDF.it te permite dibujar cajas sobre contenido confidencial y, al aplicar, el texto subyacente se elimina del documento para que no pueda ser selecciónado, copiado, buscado o recuperado.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
               <li className="flex items-center gap-2">✓ Elimina permanentemente los datos de texto subyacentes</li>
@@ -174,7 +174,7 @@ export default function PdfRedactionPageEs() {
             <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "Firma Electrónica", href: "/es/firma-electronica", desc: "Agrega firmas electrónicas a cualquier documento PDF." },
+                { name: "Firma Electrónica", href: "/es/firma-electrónica", desc: "Agrega firmas electrónicas a cualquier documento PDF." },
                 { name: "Comparar PDF", href: "/es/comparar-pdf", desc: "Compara dos PDFs lado a lado y resalta diferencias." },
                 { name: "Proteger PDF", href: "/es/proteger-pdf", desc: "Agrega protección con contraseña a tus documentos." },
                 { name: "Aplanar PDF", href: "/es/aplanar-pdf", desc: "Bloquea campos de formulario y anotaciones en un PDF plano." },

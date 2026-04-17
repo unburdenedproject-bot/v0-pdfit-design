@@ -131,7 +131,7 @@ export function HeaderBr() {
               Todas as Ferramentas
             </Link>
             <Link href="/br/ferramentas-a-z" className="text-white/80 hover:text-white font-medium transition-colors">
-              Indice A–Z
+              Índice A–Z
             </Link>
             <Link href="/br/blog" className="text-white/80 hover:text-white font-medium transition-colors">
               Blog
@@ -266,7 +266,7 @@ export function HeaderBr() {
               Todas as Ferramentas
             </Link>
             <Link href="/br/ferramentas-a-z" onClick={() => setMobileMenuOpen(false)} className="text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
-              Indice A–Z
+              Índice A–Z
             </Link>
             <Link href="/br/blog" onClick={() => setMobileMenuOpen(false)} className="text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
               Blog

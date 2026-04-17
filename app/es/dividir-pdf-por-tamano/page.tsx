@@ -6,12 +6,12 @@ import { Split, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Dividir PDF Grande en Archivos Pequenos — Reduce el Tamano | PDF.it",
+  title: "Dividir PDF Grande en Archivos Pequeños — Reduce el Tamaño | PDF.it",
   description:
-    "Divide un PDF grande en archivos mas pequenos con PDF.it. Separa PDFs pesados en partes manejables para email, cargas y compartir — rapido, gratis y en tu navegador.",
+    "Divide un PDF grande en archivos más pequeños con PDF.it. Separa PDFs pesados en partes manejables para email, cargas y compartir — rápido, gratis y en tu navegador.",
   alternates: {
-    canonical: "https://www.pdf.it.com/es/dividir-pdf-por-tamano",
-    languages: { en: "/split-pdf-by-size", es: "/es/dividir-pdf-por-tamano" },
+    canonical: "https://www.pdf.it.com/es/dividir-pdf-por-tamaño",
+    languages: { en: "/split-pdf-by-size", es: "/es/dividir-pdf-por-tamaño" },
   },
 }
 
@@ -49,7 +49,7 @@ export default function DividirPDFPorTamanoPage() {
         {/* Intro */}
         <section className="py-10 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-            <p className="text-lg text-slate-600 leading-relaxed">¿Tienes un PDF demasiado grande para enviar por email, subir o compartir? PDF.it te permite dividirlo en archivos más pequeños seleccionando rangos de páginas. Por ejemplo, divide un PDF de 20 páginas en cuatro archivos de 5 páginas — cada uno lo suficientemente pequeño para adjuntar en un email o subir a un portal con límites estrictos.</p>
+            <p className="text-lg text-slate-600 leading-relaxed">¿Tienes un PDF demasiado grande para enviar por email, subir o compartir? PDF.it te permite dividirlo en archivos más pequeños selecciónando rangos de páginas. Por ejemplo, divide un PDF de 20 páginas en cuatro archivos de 5 páginas — cada uno lo suficientemente pequeño para adjuntar en un email o subir a un portal con límites estrictos.</p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
               <li className="flex items-center gap-2">✓ Divide PDFs pesados en partes aptas para email</li>
               <li className="flex items-center gap-2">✓ Crea secciones de tamaño igual por rangos de páginas</li>

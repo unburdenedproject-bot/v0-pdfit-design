@@ -67,7 +67,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Convierte con PDF.it",
-      "text": "Sube tu PDF a la herramienta PDF a PNG o PDF a JPG de PDF.it, selecciona tu resolución y descarga las imágenes convertidas."
+      "text": "Sube tu PDF a la herramienta PDF a PNG o PDF a JPG de PDF.it, seleccióna tu resolución y descarga las imágenes convertidas."
     }
   ]
 }
@@ -221,7 +221,7 @@ export default function PdfAJpgVsPngPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Situaciones con Espacio Limitado</h3>
                   <p className="text-slate-600">
-                    Si estás convirtiendo cientos de páginas y necesitas mantener el almacenamiento total bajo, JPG ahorra espacio significativo. Usa nuestra herramienta <Link href="/es/pdf-a-jpg" className="text-[#14D8C4] hover:underline">PDF a JPG</Link> para conversiones por lotes.
+                    Si estás convirtiendo cientos de páginas y necesitas mantener el almacenamiento total bajo, JPG ahorra espacio significativo. Usa nuestra herramienta <Link href="/es/pdf-a-jpg" className="text-[#14D8C4] hover:underline">PDF a JPG</Link> para conversiónes por lotes.
                   </p>
                 </div>
               </div>

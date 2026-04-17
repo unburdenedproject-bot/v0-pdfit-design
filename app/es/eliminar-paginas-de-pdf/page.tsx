@@ -31,11 +31,11 @@ export default function EliminarPaginasDePDFPage() {
     },
     {
         "q": "¿Puedo eliminar páginas de un PDF desde mi celular?",
-        "a": "Sí. PDF.it funciona en navegadores móviles — sube, selecciona las páginas a conservar y descarga el PDF limpio en iPhone o Android."
+        "a": "Sí. PDF.it funciona en navegadores móviles — sube, seleccióna las páginas a conservar y descarga el PDF limpio en iPhone o Android."
     },
     {
         "q": "¿Es gratis eliminar páginas de un PDF?",
-        "a": "Sí. Las cuentas gratuitas pueden procesar PDFs de hasta 25MB con hasta 10 conversiones por día. Las cuentas Pro obtienen procesamiento ilimitado y archivos de hasta 200MB."
+        "a": "Sí. Las cuentas gratuitas pueden procesar PDFs de hasta 25MB con hasta 10 conversiónes por día. Las cuentas Pro obtienen procesamiento ilimitado y archivos de hasta 200MB."
     }
 ]
 
@@ -60,7 +60,7 @@ export default function EliminarPaginasDePDFPage() {
 
         {/* Intro */}
         <section className="py-10 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-          <p className="text-lg text-slate-600 leading-relaxed">¿Tienes un PDF con páginas en blanco, portadas innecesarias o apéndices extra? PDF.it te permite eliminar páginas no deseadas seleccionando solo las páginas que quieres conservar. El resultado es un PDF limpio y recortado listo para compartir, subir o imprimir.</p>
+          <p className="text-lg text-slate-600 leading-relaxed">¿Tienes un PDF con páginas en blanco, portadas innecesarias o apéndices extra? PDF.it te permite eliminar páginas no deseadas selecciónando solo las páginas que quieres conservar. El resultado es un PDF limpio y recortado listo para compartir, subir o imprimir.</p>
           <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
             <li className="flex items-center gap-2">✓ Elimina páginas en blanco, portadas o apéndices</li>
             <li className="flex items-center gap-2">✓ El PDF original permanece sin cambios — se crea un archivo nuevo</li>

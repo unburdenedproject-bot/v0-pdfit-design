@@ -32,11 +32,11 @@ interface ProcessedFile {
 
 const faqs = [
   { q: "Que formatos de Office puede convertir PDF.it a PDF?", a: "PDF.it convierte Word (DOC/DOCX), Excel (XLS/XLSX), PowerPoint (PPT/PPTX) y formatos OpenDocument (ODT/ODP/ODS) a PDF." },
-  { q: "Se mantendra mi formato despues de convertir a PDF?", a: "La mayoria de los documentos se convierten sin problemas. Algunos disenos complejos con fuentes inusuales o hojas de calculo anchas pueden verse ligeramente diferentes dependiendo del archivo original." },
-  { q: "Puedo convertir archivos de Office a PDF en mi celular?", a: "Si. PDF.it funciona en navegadores moviles — sube tu archivo y descarga el PDF." },
-  { q: "Las animaciones de PowerPoint se convierten a PDF?", a: "No. Los PDFs son estaticos, asi que las animaciones y transiciones no se reproduciran — las diapositivas se exportan como paginas fijas." },
-  { q: "Es seguro subir archivos de Office?", a: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." },
-  { q: "Cual es el tamano maximo de archivo que puedo convertir?", a: "Las cuentas Pro pueden subir archivos de hasta 200MB. Las cuentas Business pueden subir archivos de hasta 1GB." },
+  { q: "Se mantendrá mi formato después de convertir a PDF?", a: "La mayoría de los documentos se convierten sin problemas. Algunos diseños complejos con fuentes inusuales o hojas de cálculo anchas pueden verse ligeramente diferentes dependiendo del archivo original." },
+  { q: "Puedo convertir archivos de Office a PDF en mi celular?", a: "Si. PDF.it funciona en navegadores móviles — sube tu archivo y descarga el PDF." },
+  { q: "Las animaciones de PowerPoint se convierten a PDF?", a: "No. Los PDFs son estaticos, así que las animaciones y transiciones no se reproduciran — las diapositivas se exportan como páginas fijas." },
+  { q: "Es seguro subir archivos de Office?", a: "Si. Todas las transferencias están cifradas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." },
+  { q: "Cual es el tamaño máximo de archivo que puedo convertir?", a: "Las cuentas Pro pueden subir archivos de hasta 200MB. Las cuentas Business pueden subir archivos de hasta 1GB." },
 ]
 
 export default function OfficeAPDFPage() {
@@ -103,7 +103,7 @@ export default function OfficeAPDFPage() {
         })
 
         if (!response.ok) {
-          let message = `La conversion fallo (HTTP ${response.status})`
+          let message = `La conversión fallo (HTTP ${response.status})`
           try {
             const errorData = await response.json()
             if (errorData.error) message = errorData.error
@@ -196,11 +196,11 @@ export default function OfficeAPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convertidor de Office a PDF</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Convierte Word, Excel, PowerPoint y otros archivos de oficina a PDF. Rapido, preciso y seguro — todo desde tu navegador.
+                Convierte Word, Excel, PowerPoint y otros archivos de oficina a PDF. Rápido, preciso y seguro — todo desde tu navegador.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Formato Preservado</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesion</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesión</span></div>
                 <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sin Registro Necesario</span></div>
               </div>
             </div>
@@ -211,13 +211,13 @@ export default function OfficeAPDFPage() {
         <section className="py-10 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <p className="text-lg text-slate-600 leading-relaxed">
-              Convierte cualquier archivo de Microsoft Office u OpenDocument a PDF con un solo clic. PDF.it preserva el formato, las fuentes y el diseno para que tus documentos se vean exactamente como los creaste — sin necesidad de instalar software.
+              Convierte cualquier archivo de Microsoft Office u OpenDocument a PDF con un solo clic. PDF.it preserva el formato, las fuentes y el diseño para que tus documentos se vean exactamente como los creaste — sin necesidad de instalar software.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
               <li className="flex items-center gap-2">&#10003; Soporta DOC, DOCX, XLS, XLSX, PPT, PPTX</li>
               <li className="flex items-center gap-2">&#10003; Formatos OpenDocument: ODT, ODP, ODS</li>
-              <li className="flex items-center gap-2">&#10003; Preserva fuentes, tablas y diseno</li>
-              <li className="flex items-center gap-2">&#10003; Sin instalacion — convierte en tu navegador</li>
+              <li className="flex items-center gap-2">&#10003; Preserva fuentes, tablas y diseño</li>
+              <li className="flex items-center gap-2">&#10003; Sin instalación — convierte en tu navegador</li>
             </ul>
           </div>
         </section>
@@ -233,7 +233,7 @@ export default function OfficeAPDFPage() {
                   <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <AlertCircle className="h-10 w-10 text-red-600" />
                   </div>
-                  <h2 className="text-3xl font-bold text-slate-900 mb-4">La Conversion Fallo</h2>
+                  <h2 className="text-3xl font-bold text-slate-900 mb-4">La Conversión Fallo</h2>
                   <p className="text-slate-600 mb-8">{errorMessage}</p>
                   <Button onClick={resetInterface} className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E]">
                     Intentar de Nuevo
@@ -248,7 +248,7 @@ export default function OfficeAPDFPage() {
                     <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                       <CheckCircle className="h-10 w-10 text-green-600" />
                     </div>
-                    <h2 className="text-3xl font-bold text-slate-900 mb-4">Conversion Completada!</h2>
+                    <h2 className="text-3xl font-bold text-slate-900 mb-4">Conversión Completada!</h2>
                     <p className="text-slate-600 text-lg">
                       {files.length > 1 ? "Tus archivos han sido" : "Tu archivo ha sido"} convertido{files.length > 1 ? "s" : ""} a PDF exitosamente.
                     </p>
@@ -305,7 +305,7 @@ export default function OfficeAPDFPage() {
                       <div className="flex items-center justify-center gap-2 text-blue-800 text-sm">
                         <Shield className="h-4 w-4" />
                         <span className="font-medium">
-                          Tus archivos se eliminan automaticamente de nuestros servidores despues de la descarga para tu privacidad y seguridad.
+                          Tus archivos se eliminan automáticamente de nuestros servidores después de la descarga para tu privacidad y seguridad.
                         </span>
                       </div>
                     </div>
@@ -357,7 +357,7 @@ export default function OfficeAPDFPage() {
                   >
                     <div className="text-center">
                       <Upload className="h-12 w-12 text-[#14D8C4] mx-auto mb-4" />
-                      <h3 className="text-xl font-bold text-slate-900 mb-2">Suelta tus archivos de oficina aqui</h3>
+                      <h3 className="text-xl font-bold text-slate-900 mb-2">Suelta tus archivos de oficina aquí</h3>
                       <p className="text-slate-600 mb-6">o haz clic para explorar archivos</p>
                       <Button size="lg" className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-semibold px-8">
                         Elegir Archivos
@@ -435,9 +435,9 @@ export default function OfficeAPDFPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { title: "Preserva Formato y Diseno", desc: "Fuentes, tablas, imagenes y diseno de pagina se reproducen fielmente en el PDF resultante. Tus documentos se ven exactamente como fueron creados." },
+                { title: "Preserva Formato y Diseño", desc: "Fuentes, tablas, imágenes y diseño de página se reproducen fielmente en el PDF resultante. Tus documentos se ven exactamente como fueron creados." },
                 { title: "Todos los Formatos de Office", desc: "Soporta Word, Excel, PowerPoint y formatos OpenDocument. Convierte cualquier archivo de oficina a un PDF universalmente legible." },
-                { title: "Conversion Rapida y Segura", desc: "Sube, convierte, descarga. Los archivos se cifran durante la transferencia y se eliminan automaticamente al terminar tu sesion." },
+                { title: "Conversión Rápida y Segura", desc: "Sube, convierte, descarga. Los archivos se cifran durante la transferencia y se eliminan automáticamente al terminar tu sesión." },
               ].map((feature) => (
                 <div
                   key={feature.title}
@@ -475,7 +475,7 @@ export default function OfficeAPDFPage() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
               {[
                 { num: "1", title: "Sube tu archivo", desc: "Arrastra y suelta o haz clic para elegir un archivo" },
-                { num: "2", title: "Haz clic en Convertir a PDF", desc: "La conversion suele tomar unos segundos" },
+                { num: "2", title: "Haz clic en Convertir a PDF", desc: "La conversión suele tomar unos segundos" },
                 { num: "3", title: "Descarga tu PDF", desc: "Obtiene tu archivo convertido al instante" },
               ].map((step) => (
                 <div key={step.num} className="flex-1">
@@ -504,9 +504,9 @@ export default function OfficeAPDFPage() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
                 { name: "Word a PDF", href: "/es/word-a-pdf", desc: "Convierte documentos Word a PDF" },
-                { name: "Excel a PDF", href: "/es/excel-a-pdf", desc: "Convierte hojas de calculo a PDF" },
+                { name: "Excel a PDF", href: "/es/excel-a-pdf", desc: "Convierte hojas de cálculo a PDF" },
                 { name: "PowerPoint a PDF", href: "/es/powerpoint-a-pdf", desc: "Convierte diapositivas a PDF" },
-                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamano despues de convertir" },
+                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamaño después de convertir" },
               ].map((tool) => (
                 <div
                   key={tool.href}

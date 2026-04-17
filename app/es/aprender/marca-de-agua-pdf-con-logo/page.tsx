@@ -18,7 +18,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo agrego mi logo como marca de agua en un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Marca de Agua PDF de PDF.it, selecciona Marca de Agua de Imagen, sube tu archivo de logo (PNG o JPG), ajusta el tamaño y la opacidad, y haz clic en Aplicar. Tu logo aparecerá en cada página." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Marca de Agua PDF de PDF.it, seleccióna Marca de Agua de Imagen, sube tu archivo de logo (PNG o JPG), ajusta el tamaño y la opacidad, y haz clic en Aplicar. Tu logo aparecerá en cada página." }
     },
     {
       "@type": "Question",
@@ -196,7 +196,7 @@ export default function MarcaDeAguaPDFConLogoPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Estrategias de Ubicación del Logo</h2>
               <p className="text-slate-600 mb-4">
-                Dónde coloques tu marca de agua con logo depende del propósito. Para una guía más detallada, consulta nuestra <Link href="/es/aprender/marca-de-agua-pdf-mejores-practicas" className="text-[#14D8C4] hover:underline">guía de mejores prácticas de marcas de agua</Link>.
+                Dónde coloques tu marca de agua con logo depende del propósito. Para una guía más detallada, consulta nuestra <Link href="/es/aprender/marca-de-agua-pdf-mejores-prácticas" className="text-[#14D8C4] hover:underline">guía de mejores prácticas de marcas de agua</Link>.
               </p>
               <div className="space-y-6">
                 <div>
@@ -258,7 +258,7 @@ export default function MarcaDeAguaPDFConLogoPage() {
               {[
                 { title: "Cómo Agregar una Marca de Agua a un PDF en Línea", href: "/es/aprender/como-agregar-marca-de-agua-a-pdf" },
                 { title: "Agregar una Marca de Agua 'Confidencial' a un PDF (Guía Rápida)", href: "/es/aprender/marca-de-agua-pdf-confidencial" },
-                { title: "Mejores Prácticas de Marca de Agua en PDF (Tamaño, Opacidad y Ubicación)", href: "/es/aprender/marca-de-agua-pdf-mejores-practicas" },
+                { title: "Mejores Prácticas de Marca de Agua en PDF (Tamaño, Opacidad y Ubicación)", href: "/es/aprender/marca-de-agua-pdf-mejores-prácticas" },
                 { title: "Agregar Marca de Agua a un PDF en tu Teléfono (iPhone y Android)", href: "/es/aprender/marca-de-agua-pdf-en-movil" },
               ].map((article) => (
                 <Link
@@ -280,7 +280,7 @@ export default function MarcaDeAguaPDFConLogoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo agrego mi logo como marca de agua en un PDF?", a: "Sube tu PDF a la herramienta Marca de Agua PDF de PDF.it, selecciona Marca de Agua de Imagen, sube tu archivo de logo (PNG o JPG), ajusta el tamaño y la opacidad, y haz clic en Aplicar. Tu logo aparecerá en cada página." },
+                { q: "¿Cómo agrego mi logo como marca de agua en un PDF?", a: "Sube tu PDF a la herramienta Marca de Agua PDF de PDF.it, seleccióna Marca de Agua de Imagen, sube tu archivo de logo (PNG o JPG), ajusta el tamaño y la opacidad, y haz clic en Aplicar. Tu logo aparecerá en cada página." },
                 { q: "¿En qué formato de imagen debe estar mi logo?", a: "PNG con fondo transparente funciona mejor. Esto asegura que solo tu logo aparezca en la página sin un rectángulo blanco alrededor. Los logos JPG funcionarán pero pueden tener un fondo visible." },
                 { q: "¿Qué tamaño y opacidad funcionan mejor para una marca de agua con logo?", a: "Para una marca de agua sutil de fondo, usa 10-20% de opacidad y escala el logo a aproximadamente 30-50% del ancho de la página. Para un sello más visible, aumenta la opacidad a 25-35%." },
                 { q: "¿Puedo poner marca de agua con mi logo en varios PDFs a la vez?", a: "Sí. Los usuarios Pro y Business pueden usar el procesamiento por lotes para aplicar la misma marca de agua con logo a múltiples PDFs simultáneamente." },

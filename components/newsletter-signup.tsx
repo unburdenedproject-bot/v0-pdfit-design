@@ -19,12 +19,12 @@ export function NewsletterSignup({ locale = "en" }: { locale?: "en" | "es" | "br
       privacy: "We respect your inbox. No spam, ever.",
     },
     es: {
-      title: "Mantente al Dia",
-      desc: "Recibe consejos sobre PDF, actualizaciones del producto y mejores practicas del equipo PDF.it.",
+      title: "Mantente al Día",
+      desc: "Recibe consejos sobre PDF, actualizaciones del producto y mejores prácticas del equipo PDF.it.",
       placeholder: "tu@ejemplo.com",
       button: "Suscribirse",
       sending: "Suscribiendo...",
-      success: "¡Estas suscrito! Revisa tu bandeja para actualizaciones.",
+      success: "¡Estás suscrito! Revisa tu bandeja para actualizaciones.",
       privacy: "Respetamos tu bandeja. Sin spam, nunca.",
     },
     br: {

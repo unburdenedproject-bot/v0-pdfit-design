@@ -5,7 +5,7 @@ export function TrustBadges() {
     {
       icon: ShieldCheck,
       label: "SECURE PROCESSING",
-      text: "Your file is protected during conversion",
+      text: "Your file is protected during conversión",
     },
     {
       icon: LockKeyhole,

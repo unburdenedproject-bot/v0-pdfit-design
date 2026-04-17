@@ -253,7 +253,7 @@ export default function ComprimirPDFGrandePage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Extraer y Reemplazar Imágenes</h3>
                   <p className="text-slate-600">
-                    Si tu PDF tiene algunas imágenes extremadamente grandes que aumentan el tamaño del archivo, usa <Link href="/es/extraer-imagenes-de-pdf" className="text-[#14D8C4] hover:underline">Extraer Imágenes</Link> para sacarlas, redimensiónalas externamente y reconstruye el documento. A veces una o dos fotos representan el 80% del tamaño del archivo.
+                    Si tu PDF tiene algunas imágenes extremadamente grandes que aumentan el tamaño del archivo, usa <Link href="/es/extraer-imágenes-de-pdf" className="text-[#14D8C4] hover:underline">Extraer Imágenes</Link> para sacarlas, redimensiónalas externamente y reconstruye el documento. A veces una o dos fotos representan el 80% del tamaño del archivo.
                   </p>
                 </div>
                 <div>
@@ -297,7 +297,7 @@ export default function ComprimirPDFGrandePage() {
                 { title: "Cómo Comprimir un PDF (Reducir Tamaño Rápidamente)", href: "/es/aprender/como-comprimir-un-pdf" },
                 { title: "Cómo Comprimir un PDF Sin Perder Calidad", href: "/es/aprender/comprimir-pdf-sin-perder-calidad" },
                 { title: "Comprimir un PDF para Imprimir (Mantener Calidad de Impresión)", href: "/es/aprender/comprimir-pdf-para-imprimir" },
-                { title: "Comprimir un PDF con Imágenes (Fotos, Escaneos, Gráficos)", href: "/es/aprender/comprimir-pdf-con-imagenes" },
+                { title: "Comprimir un PDF con Imágenes (Fotos, Escaneos, Gráficos)", href: "/es/aprender/comprimir-pdf-con-imágenes" },
               ].map((article) => (
                 <Link
                   key={article.href}

@@ -28,7 +28,7 @@ export default function SignupRequiredPageEs() {
                 <FileText className="h-8 w-8 text-[#14D8C4]" />
               </div>
               <h1 className="text-2xl font-black text-white mb-2">Crea una Cuenta para Continuar</h1>
-              <p className="text-slate-400 mb-8">{"No se requiere tarjeta de crédito. Obtén 10 conversiones gratis cada día."}</p>
+              <p className="text-slate-400 mb-8">{"No se requiere tarjeta de crédito. Obtén 10 conversiónes gratis cada día."}</p>
               <Link
                 href="/es/registro"
                 className="block w-full py-3 px-6 rounded-xl text-center font-bold transition-all duration-200 hover:scale-[1.02] mb-3"

@@ -75,7 +75,7 @@ export default function ExtraerFuentesDePDFPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl"><div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
               { title: "Por Qué la Gente Extrae Fuentes de PDFs", desc: "Los diseñadores igualan tipografía entre proyectos, los marketeros mantienen consistencia de marca y los desarrolladores identifican fuentes para proyectos web. Identificar fuentes de PDF es un flujo de trabajo común." },
-              { title: "Cómo Identificar Fuentes en un PDF", desc: "Convierte tu PDF a Word usando PDF.it. El documento convertido preserva los nombres de fuentes para que puedas seleccionar cualquier texto y ver la tipografía. O usa WhatTheFont para coincidencia visual." },
+              { title: "Cómo Identificar Fuentes en un PDF", desc: "Convierte tu PDF a Word usando PDF.it. El documento convertido preserva los nombres de fuentes para que puedas selecciónar cualquier texto y ver la tipografía. O usa WhatTheFont para coincidencia visual." },
               { title: "Consideraciones de Licencia de Fuentes", desc: "Solo porque una fuente está incrustada en un PDF no significa que puedas usarla libremente. La mayoría de fuentes comerciales requieren una licencia. Existen muchas excelentes alternativas gratuitas en Google Fonts." },
             ].map((feature) => (
               <div key={feature.title} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}>
@@ -114,7 +114,7 @@ export default function ExtraerFuentesDePDFPage() {
               { name: "PDF a TXT", href: "/es/pdf-a-txt", desc: "Extrae contenido de texto" },
               { name: "PDF a Word", href: "/es/pdf-a-word", desc: "Editable con nombres de fuentes" },
               { name: "Extraer Texto", href: "/es/extraer-texto-de-pdf", desc: "Extrae todo el texto de PDFs" },
-              { name: "Extraer Imágenes", href: "/es/extraer-imagenes-de-pdf", desc: "Obtén imágenes incrustadas" },
+              { name: "Extraer Imágenes", href: "/es/extraer-imágenes-de-pdf", desc: "Obtén imágenes incrustadas" },
             ].map((tool) => (
               <div key={tool.href} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}>
                 <Link href={tool.href} className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>

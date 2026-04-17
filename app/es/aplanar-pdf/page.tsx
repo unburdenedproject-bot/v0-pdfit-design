@@ -112,7 +112,7 @@ export default function AplanarPDFPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
                 { title: "Envía Formularios Sin Campos en Blanco", desc: "¿Llenaste un formulario PDF pero el destinatario ve campos vacíos? Aplanar bloquea todo en su lugar para que se muestre correctamente en todas partes." },
-                { title: "Finaliza Documentos Firmados", desc: "Después de firmar un PDF, aplánalo para evitar más ediciones. Las firmas, datos de formulario y anotaciones se convierten en partes permanentes del documento." },
+                { title: "Finaliza Documentos Firmados", desc: "Después de firmar un PDF, aplánalo para evitar más ediciónes. Las firmas, datos de formulario y anotaciones se convierten en partes permanentes del documento." },
                 { title: "Archiva PDFs a Largo Plazo", desc: "Los PDFs aplanados son ideales para archivado. El contenido queda bloqueado y se mostrará de forma consistente con el paso de los años en cualquier visor." },
               ].map((feature) => (
                 <div
@@ -236,7 +236,7 @@ export default function AplanarPDFPage() {
                 { q: "¿Aplanar cambiará cómo se ve mi PDF?", a: "No. La apariencia visual se mantiene igual. Aplanar solo elimina la capacidad de editar campos de formulario, anotaciones y elementos interactivos." },
                 { q: "¿Puedo aplanar un PDF con campos de formulario llenos?", a: "Sí. Todos los datos ingresados se preservan y se convierten en parte del contenido de la página. Los campos simplemente ya no se pueden editar." },
                 { q: "¿Puedo aplanar un PDF desde mi celular?", a: "Sí. PDF.it funciona en navegadores móviles — sube, aplana y descarga desde tu iPhone o Android." },
-                { q: "¿Es gratis aplanar un PDF?", a: "Sí. Las cuentas gratuitas tienen 10 conversiones por día. Las cuentas Pro tienen uso ilimitado." },
+                { q: "¿Es gratis aplanar un PDF?", a: "Sí. Las cuentas gratuitas tienen 10 conversiónes por día. Las cuentas Pro tienen uso ilimitado." },
               ].map((faq, i) => (
                 <div
                   key={i}
@@ -264,7 +264,7 @@ export default function AplanarPDFPage() {
             { "@type": "Question", "name": "¿Aplanar cambiará cómo se ve mi PDF?", "acceptedAnswer": { "@type": "Answer", "text": "No. La apariencia visual se mantiene igual. Aplanar solo elimina la capacidad de editar campos de formulario, anotaciones y elementos interactivos." } },
             { "@type": "Question", "name": "¿Puedo aplanar un PDF con campos de formulario llenos?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Todos los datos ingresados se preservan y se convierten en parte del contenido de la página. Los campos simplemente ya no se pueden editar." } },
             { "@type": "Question", "name": "¿Puedo aplanar un PDF desde mi celular?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en navegadores móviles — sube, aplana y descarga desde tu iPhone o Android." } },
-            { "@type": "Question", "name": "¿Es gratis aplanar un PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Las cuentas gratuitas tienen 10 conversiones por día. Las cuentas Pro tienen uso ilimitado." } }
+            { "@type": "Question", "name": "¿Es gratis aplanar un PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Las cuentas gratuitas tienen 10 conversiónes por día. Las cuentas Pro tienen uso ilimitado." } }
           ]
         })}} />
       </main>

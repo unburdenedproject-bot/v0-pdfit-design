@@ -5,14 +5,14 @@ import { Shield, FileOutput, Lock, Zap, GraduationCap, Building, Briefcase, Scal
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Acerca de PDF.it — Herramientas PDF en Linea con Privacidad para Equipos e Individuos",
+  title: "Acerca de PDF.it — Herramientas PDF en Línea con Privacidad para Equipos e Individuos",
   description:
-    "PDF.it es una plataforma PDF en el navegador. Convierte, comprime, firma, redacta y automatiza PDFs — los archivos se eliminan inmediatamente despues de la descarga. Planes Gratis, Pro, Business y Enterprise disponibles.",
-  keywords: ["PDF para profesionales", "PDF para abogados", "PDF para contadores", "PDF para estudiantes", "PDF para freelancers", "PDF para profesores", "PDF para inmobiliarias", "PDF para recursos humanos", "PDF para salud", "PDF para pequenas empresas", "alternativa a iLovePDF", "alternativa a SmallPDF", "alternativa a Adobe Acrobat", "herramientas PDF seguras", "PDF sin registro", "PDF con privacidad"],
+    "PDF.it es una plataforma PDF en el navegador. Convierte, comprime, firma, redacta y automatiza PDFs — los archivos se eliminan inmediatamente después de la descarga. Planes Gratis, Pro, Business y Enterprise disponibles.",
+  keywords: ["PDF para profesionales", "PDF para abogados", "PDF para contadores", "PDF para estudiantes", "PDF para freelancers", "PDF para profesores", "PDF para inmobiliarias", "PDF para recursos humanos", "PDF para salud", "PDF para pequeñas empresas", "alternativa a iLovePDF", "alternativa a SmallPDF", "alternativa a Adobe Acrobat", "herramientas PDF seguras", "PDF sin registro", "PDF con privacidad"],
   openGraph: {
-    title: "Acerca de PDF.it — Herramientas PDF en Linea con Privacidad para Equipos e Individuos",
+    title: "Acerca de PDF.it — Herramientas PDF en Línea con Privacidad para Equipos e Individuos",
     description:
-      "PDF.it es una plataforma PDF en el navegador. Convierte, comprime, firma, redacta y automatiza PDFs — los archivos se eliminan inmediatamente despues de la descarga.",
+      "PDF.it es una plataforma PDF en el navegador. Convierte, comprime, firma, redacta y automatiza PDFs — los archivos se eliminan inmediatamente después de la descarga.",
     url: "https://pdf.it.com/es/acerca",
     siteName: "PDF.it",
     images: [{ url: "https://pdf.it.com/og-logo.png", width: 1736, height: 846, alt: "PDF.it — Acerca" }],
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Acerca de PDF.it — Herramientas PDF en Linea con Privacidad para Equipos e Individuos",
+    title: "Acerca de PDF.it — Herramientas PDF en Línea con Privacidad para Equipos e Individuos",
     description:
-      "PDF.it es una plataforma PDF en el navegador. Convierte, comprime, firma, redacta y automatiza PDFs — los archivos se eliminan inmediatamente despues de la descarga.",
+      "PDF.it es una plataforma PDF en el navegador. Convierte, comprime, firma, redacta y automatiza PDFs — los archivos se eliminan inmediatamente después de la descarga.",
     images: ["https://pdf.it.com/og-logo.png"],
   },
   alternates: {
@@ -80,10 +80,10 @@ export default function AcercaPage() {
         <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <p className="text-lg text-slate-600 leading-relaxed">
-              PDF.it te ofrece un conjunto completo de herramientas PDF que funcionan directamente en el navegador. Convierte documentos, comprime archivos, agrega firmas electronicas, redacta datos sensibles, extrae tablas y automatiza flujos recurrentes — todo sin instalar software. La privacidad esta integrada en cada paso: tus archivos se procesan en tiempo real y se eliminan en cuanto descargas el resultado.
+              PDF.it te ofrece un conjunto completo de herramientas PDF que funcionan directamente en el navegador. Convierte documentos, comprime archivos, agrega firmas electrónicas, redacta datos sensibles, extrae tablas y automatiza flujos recurrentes — todo sin instalar software. La privacidad está integrada en cada paso: tus archivos se procesan en tiempo real y se eliminan en cuanto descargas el resultado.
             </p>
             <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
-              <li className="flex items-center gap-2">✓ Archivos eliminados inmediatamente despues de la descarga</li>
+              <li className="flex items-center gap-2">✓ Archivos eliminados inmediatamente después de la descarga</li>
               <li className="flex items-center gap-2">✓ Transferencias cifradas con SSL</li>
               <li className="flex items-center gap-2">✓ Sin almacenamiento de archivos — nunca</li>
               <li className="flex items-center gap-2">✓ Sin necesidad de cuenta para herramientas gratuitas</li>
@@ -108,15 +108,15 @@ export default function AcercaPage() {
               {[
                 {
                   title: "Convertir y comprimir",
-                  desc: "Convierte PDFs a Word, Excel, JPG, PNG, TXT y mas. Comprime archivos para email y limites de subida. Une, divide, rota y aplana — todo en tu navegador.",
+                  desc: "Convierte PDFs a Word, Excel, JPG, PNG, TXT y más. Comprime archivos para email y límites de subida. Une, divide, rota y aplana — todo en tu navegador.",
                 },
                 {
                   title: "Firmar, proteger y redactar",
-                  desc: "Agrega firmas electronicas, protege documentos con contrasena y redacta informacion sensible de forma permanente. Agrega marcas de agua a tus PDFs para branding y control documental.",
+                  desc: "Agrega firmas electrónicas, protege documentos con contraseña y redacta información sensible de forma permanente. Agrega marcas de agua a tus PDFs para branding y control documental.",
                 },
                 {
                   title: "Automatizar y extraer",
-                  desc: "Encadena multiples herramientas PDF en flujos automatizados. Extrae tablas de PDFs a hojas de calculo Excel. Ejecuta OCR para hacer buscables los documentos escaneados.",
+                  desc: "Encadena múltiples herramientas PDF en flujos automatizados. Extrae tablas de PDFs a hojas de cálculo Excel. Ejecuta OCR para hacer buscables los documentos escaneados.",
                 },
               ].map((feature) => (
                 <div
@@ -153,7 +153,7 @@ export default function AcercaPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
             <h2 className="text-3xl font-black text-slate-900 mb-4 text-center">Planes que crecen contigo</h2>
             <p className="text-lg text-slate-600 leading-relaxed text-center max-w-3xl mx-auto mb-10">
-              Empieza gratis y actualiza solo cuando crezca tu volumen documental, el tamano de tus archivos o la complejidad de tus flujos.
+              Empieza gratis y actualiza solo cuando crezca tu volumen documental, el tamaño de tus archivos o la complejidad de tus flujos.
             </p>
 
             <div
@@ -173,11 +173,11 @@ export default function AcercaPage() {
                     <h3 className="text-lg font-bold text-white mb-1">Gratis</h3>
                     <p className="text-slate-400 font-semibold text-sm mb-4">$0/mes</p>
                     <ul className="space-y-2">
-                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-slate-400 mt-0.5">&#10003;</span><span>10 conversiones por dia</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-slate-400 mt-0.5">&#10003;</span><span>10 conversiónes por día</span></li>
                       <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-slate-400 mt-0.5">&#10003;</span><span>Archivos hasta 25MB</span></li>
-                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-slate-400 mt-0.5">&#10003;</span><span>Herramientas PDF basicas (comprimir, unir, dividir, rotar, convertir)</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-slate-400 mt-0.5">&#10003;</span><span>Herramientas PDF básicas (comprimir, unir, dividir, rotar, convertir)</span></li>
                       <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-slate-400 mt-0.5">&#10003;</span><span>Procesamiento de un solo archivo</span></li>
-                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-slate-400 mt-0.5">&#10003;</span><span>Velocidad estandar</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-slate-400 mt-0.5">&#10003;</span><span>Velocidad estándar</span></li>
                     </ul>
                   </div>
                 </div>
@@ -188,12 +188,12 @@ export default function AcercaPage() {
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-b-md text-[9px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #D6B36A, #E0C27A)", color: "#0E0F1E" }}>Mas Popular</div>
                     <h3 className="text-lg font-bold text-white mb-1 mt-3">Pro</h3>
                     <p className="text-[#E0C27A] font-semibold text-sm mb-4">$3.99/mes</p>
-                    <p className="text-[#6B7CFF] text-xs font-medium mb-3">Todo en Gratis, mas:</p>
+                    <p className="text-[#6B7CFF] text-xs font-medium mb-3">Todo en Gratis, más:</p>
                     <ul className="space-y-2">
-                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#E0C27A] mt-0.5">&#10003;</span><span>Conversiones ilimitadas</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#E0C27A] mt-0.5">&#10003;</span><span>Conversiónes ilimitadas</span></li>
                       <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#E0C27A] mt-0.5">&#10003;</span><span>Archivos hasta 200MB</span></li>
-                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#E0C27A] mt-0.5">&#10003;</span><span>Todas las herramientas PDF (OCR, codigo QR, PDF a Word/Excel/PowerPoint)</span></li>
-                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#E0C27A] mt-0.5">&#10003;</span><span>Procesamiento por lotes (multiples archivos a la vez)</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#E0C27A] mt-0.5">&#10003;</span><span>Todas las herramientas PDF (OCR, código QR, PDF a Word/Excel/PowerPoint)</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#E0C27A] mt-0.5">&#10003;</span><span>Procesamiento por lotes (múltiples archivos a la vez)</span></li>
                       <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#E0C27A] mt-0.5">&#10003;</span><span>Velocidad de procesamiento prioritaria</span></li>
                     </ul>
                   </div>
@@ -205,13 +205,13 @@ export default function AcercaPage() {
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-b-md text-[9px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #6B7CFF, #8B9AFF)", color: "#0E0F1E" }}>Ideal para Equipos</div>
                     <h3 className="text-lg font-bold text-white mb-1 mt-3">Business</h3>
                     <p className="text-[#6B7CFF] font-semibold text-sm mb-4">$13.99/mes</p>
-                    <p className="text-[#6B7CFF] text-xs font-medium mb-3">Todo en Pro, mas:</p>
+                    <p className="text-[#6B7CFF] text-xs font-medium mb-3">Todo en Pro, más:</p>
                     <ul className="space-y-2">
                       <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#6B7CFF] mt-0.5">&#10003;</span><span>Archivos hasta 1GB</span></li>
-                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#6B7CFF] mt-0.5">&#10003;</span><span>Extraccion de tablas a Excel (200 paginas/mes)</span></li>
-                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#6B7CFF] mt-0.5">&#10003;</span><span>Comparacion de PDF (diferencias lado a lado)</span></li>
-                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#6B7CFF] mt-0.5">&#10003;</span><span>Firma electronica de documentos</span></li>
-                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#6B7CFF] mt-0.5">&#10003;</span><span>Redaccion de PDF (eliminacion permanente)</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#6B7CFF] mt-0.5">&#10003;</span><span>Extracción de tablas a Excel (200 páginas/mes)</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#6B7CFF] mt-0.5">&#10003;</span><span>Comparación de PDF (diferencias lado a lado)</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#6B7CFF] mt-0.5">&#10003;</span><span>Firma electrónica de documentos</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#6B7CFF] mt-0.5">&#10003;</span><span>Redacción de PDF (eliminación permanente)</span></li>
                     </ul>
                   </div>
                 </div>
@@ -222,10 +222,10 @@ export default function AcercaPage() {
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-b-md text-[9px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #C0C5CE, #14D8C4)", color: "#0E0F1E" }}>Mejor Valor</div>
                     <h3 className="text-lg font-bold text-white mb-1 mt-3">Enterprise</h3>
                     <p className="text-[#C0C5CE] font-semibold text-sm mb-4">$49.99/mes</p>
-                    <p className="text-[#6B7CFF] text-xs font-medium mb-3">Todo en Business, mas:</p>
+                    <p className="text-[#6B7CFF] text-xs font-medium mb-3">Todo en Business, más:</p>
                     <ul className="space-y-2">
-                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#C0C5CE] mt-0.5">&#10003;</span><span>Extraccion de tablas a Excel (2,000 paginas/mes)</span></li>
-                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#C0C5CE] mt-0.5">&#10003;</span><span>Automatizacion de flujos de trabajo</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#C0C5CE] mt-0.5">&#10003;</span><span>Extracción de tablas a Excel (2,000 páginas/mes)</span></li>
+                      <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#C0C5CE] mt-0.5">&#10003;</span><span>Automatización de flujos de trabajo</span></li>
                       <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#C0C5CE] mt-0.5">&#10003;</span><span>Plantillas de flujo personalizadas</span></li>
                       <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#C0C5CE] mt-0.5">&#10003;</span><span>Cola de procesamiento prioritario</span></li>
                       <li className="text-slate-400 text-sm leading-relaxed flex items-start gap-2"><span className="text-[#C0C5CE] mt-0.5">&#10003;</span><span>Soporte por email dedicado (respuesta en 24h)</span></li>
@@ -241,16 +241,16 @@ export default function AcercaPage() {
                 >
                   Comparar todos los planes &rarr;
                 </Link>
-                <p className="text-sm text-slate-400 mt-3">Prueba gratis de 30 dias en cada plan pago. Sin compromiso.</p>
+                <p className="text-sm text-slate-400 mt-3">Prueba gratis de 30 días en cada plan pago. Sin compromiso.</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ── 5. Disenado para ── */}
+        {/* ── 5. Diseñado para ── */}
         <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Disenado para flujos de trabajo reales</h2>
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Diseñado para flujos de trabajo reales</h2>
 
             <div
               className="rounded-2xl p-8"
@@ -272,17 +272,17 @@ export default function AcercaPage() {
                   {
                     icon: Building,
                     title: "PDF para Profesionales y Equipos",
-                    desc: "Procesa facturas, contratos y paquetes de onboarding. Usa firma electronica, redaccion y automatizacion de flujos — creado para profesionales que manejan documentos a diario.",
+                    desc: "Procesa facturas, contratos y paquetes de onboarding. Usa firma electrónica, redacción y automatización de flujos — creado para profesionales que manejan documentos a diario.",
                   },
                   {
                     icon: Briefcase,
                     title: "PDF para Freelancers y Candidatos",
-                    desc: "Prepara entregables, crea curriculos, agrega marcas de agua y protege archivos con contrasena. Elegido por freelancers que necesitan herramientas PDF rapidas y confiables.",
+                    desc: "Prepara entregables, crea curriculos, agrega marcas de agua y protege archivos con contraseña. Elegido por freelancers que necesitan herramientas PDF rápidas y confiables.",
                   },
                   {
                     icon: Scale,
                     title: "PDF para Abogados y Contadores",
-                    desc: "Redacta datos sensibles, extrae tablas de cumplimiento y automatiza flujos documentales. Disenado para abogados, contadores y equipos que exigen precision.",
+                    desc: "Redacta datos sensibles, extrae tablas de cumplimiento y automatiza flujos documentales. Diseñado para abogados, contadores y equipos que exigen precisión.",
                   },
                   {
                     icon: BookOpen,
@@ -292,7 +292,7 @@ export default function AcercaPage() {
                   {
                     icon: Home,
                     title: "PDF para Recursos Humanos e Inmobiliarias",
-                    desc: "Procesa documentos de onboarding, firma contratos online sin registro, procesa contratos de arrendamiento por lotes y extrae datos de formularios. Herramientas PDF seguras sin almacenamiento — creadas para pequenas empresas en recursos humanos, inmobiliarias y salud.",
+                    desc: "Procesa documentos de onboarding, firma contratos online sin registro, procesa contratos de arrendamiento por lotes y extrae datos de formularios. Herramientas PDF seguras sin almacenamiento — creadas para pequeñas empresas en recursos humanos, inmobiliarias y salud.",
                   },
                 ].map((card) => (
                   <div
@@ -375,7 +375,7 @@ export default function AcercaPage() {
                 </div>
                 <h2 className="text-2xl font-black text-white mb-4">Tus documentos son tu asunto</h2>
                 <p className="text-slate-400 leading-relaxed">
-                  PDF.it procesa tus archivos en tiempo real y los elimina en cuanto descargas el resultado. Nunca almacenamos, leemos, indexamos ni compartimos tus documentos. Todas las transferencias estan cifradas con SSL. Tu privacidad no es una funcion — es la base sobre la que construimos esta plataforma.
+                  PDF.it procesa tus archivos en tiempo real y los elimina en cuanto descargas el resultado. Nunca almacenamos, leemos, indexamos ni compartimos tus documentos. Todas las transferencias están cifradas con SSL. Tu privacidad no es una función — es la base sobre la que construimos esta plataforma.
                 </p>
               </div>
             </div>
@@ -387,7 +387,7 @@ export default function AcercaPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <h2 className="text-3xl font-black text-slate-900 mb-4">Empieza a convertir gratis</h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-8">
-              Sin necesidad de cuenta para herramientas gratuitas. Actualiza cuando necesites acceso ilimitado, archivos mas grandes o flujos avanzados.
+              Sin necesidad de cuenta para herramientas gratuitas. Actualiza cuando necesites acceso ilimitado, archivos más grandes o flujos avanzados.
             </p>
             <Link href="/es#tools">
               <button className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 px-8 rounded-xl text-lg transition-colors">

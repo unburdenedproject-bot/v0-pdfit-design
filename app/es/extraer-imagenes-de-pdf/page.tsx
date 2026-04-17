@@ -6,13 +6,13 @@ import { Image, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Extraer Imagenes de PDF Online — Descargar Fotos de PDF | PDF.it",
+  title: "Extraer Imágenes de PDF Online — Descargar Fotos de PDF | PDF.it",
   description:
-    "Extrae todas las imagenes de archivos PDF con PDF.it. Saca fotos, logos y graficos de cualquier PDF — rapido, desde tu navegador, sin registro.",
+    "Extrae todas las imágenes de archivos PDF con PDF.it. Saca fotos, logos y gráficos de cualquier PDF — rápido, desde tu navegador, sin registro.",
   alternates: {
     languages: {
       en: "/extract-images-from-pdf",
-      es: "/es/extraer-imagenes-de-pdf",
+      es: "/es/extraer-imágenes-de-pdf",
     },
   },
 }
@@ -49,13 +49,13 @@ export default function ExtraerImagenesDePDFPage() {
               >
                 <Image className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Extraer Imagenes de PDF</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Extraer Imágenes de PDF</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Saca todas las fotos, logos y graficos incrustados en tu PDF. Descargalos como archivo ZIP — instantaneo y desde tu navegador.
+                Saca todas las fotos, logos y gráficos incrustados en tu PDF. Descargalos como archivo ZIP — instantaneo y desde tu navegador.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Todas las Imagenes Extraidas</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesion</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Todas las Imágenes Extraidas</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesión</span></div>
                 <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sin Registro</span></div>
               </div>
             </div>
@@ -66,14 +66,14 @@ export default function ExtraerImagenesDePDFPage() {
         <section className="py-10 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <p className="text-lg text-slate-600 leading-relaxed">
-              ¿Necesitas las fotos o graficos de un PDF sin el texto y el diseno? El extractor de imagenes de PDF.it saca cada imagen incrustada — fotos, logos, graficos, diagramas — y las entrega como un archivo ZIP que puedes usar en cualquier lugar.
+              ¿Necesitas las fotos o gráficos de un PDF sin el texto y el diseño? El extractor de imágenes de PDF.it saca cada imagen incrustada — fotos, logos, gráficos, diagramas — y las entrega como un archivo ZIP que puedes usar en cualquier lugar.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
-              <li className="flex items-center gap-2">✓ Extrae todas las imagenes incrustadas de cualquier PDF</li>
-              <li className="flex items-center gap-2">✓ Imagenes guardadas en su formato original (JPG, PNG)</li>
-              <li className="flex items-center gap-2">✓ Perfecto para reutilizar fotos, logos y graficos</li>
+              <li className="flex items-center gap-2">✓ Extrae todas las imágenes incrustadas de cualquier PDF</li>
+              <li className="flex items-center gap-2">✓ Imágenes guardadas en su formato original (JPG, PNG)</li>
+              <li className="flex items-center gap-2">✓ Perfecto para reutilizar fotos, logos y gráficos</li>
               <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li className="flex items-center gap-2">✓ Sin instalacion — extrae imagenes en tu navegador</li>
+              <li className="flex items-center gap-2">✓ Sin instalación — extrae imágenes en tu navegador</li>
             </ul>
           </div>
         </section>
@@ -101,9 +101,9 @@ export default function ExtraerImagenesDePDFPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { title: "Reutiliza Fotos y Graficos de PDFs", desc: "¿Recibiste un folleto, presentacion o informe en PDF? Extrae las imagenes para reutilizarlas en tus propios documentos, diapositivas o redes sociales sin necesidad de capturas de pantalla." },
-                { title: "Extrae Logos y Recursos de Marca", desc: "Saca logos, iconos y graficos de marca de guias de estilo PDF, materiales de marketing y documentos corporativos — obten los archivos de imagen originales al instante." },
-                { title: "Diferente a PDF a JPG", desc: "PDF a JPG convierte paginas completas en imagenes. La extraccion de imagenes saca solo los graficos incrustados — fotos, graficos, logos — separados del diseno de la pagina." },
+                { title: "Reutiliza Fotos y Gráficos de PDFs", desc: "¿Recibiste un folleto, presentación o informe en PDF? Extrae las imágenes para reutilizarlas en tus propios documentos, diapositivas o redes sociales sin necesidad de capturas de pantalla." },
+                { title: "Extrae Logos y Recursos de Marca", desc: "Saca logos, iconos y gráficos de marca de guias de estilo PDF, materiales de marketing y documentos corporativos — obten los archivos de imagen originales al instante." },
+                { title: "Diferente a PDF a JPG", desc: "PDF a JPG convierte páginas completas en imágenes. La extracción de imágenes saca solo los gráficos incrustados — fotos, gráficos, logos — separados del diseño de la página." },
               ].map((feature) => (
                 <div
                   key={feature.title}
@@ -137,12 +137,12 @@ export default function ExtraerImagenesDePDFPage() {
         {/* How It Works */}
         <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Extraer Imagenes de un PDF</h2>
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Extraer Imágenes de un PDF</h2>
             <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
               {[
                 { num: "1", title: "Sube tu PDF", desc: "Sube o arrastra tu PDF a PDF.it." },
-                { num: "2", title: "Haz clic en Extraer", desc: "Todas las imagenes incrustadas se detectan automaticamente." },
-                { num: "3", title: "Descarga el ZIP", desc: "Descarga el archivo ZIP con todas las imagenes extraidas." },
+                { num: "2", title: "Haz clic en Extraer", desc: "Todas las imágenes incrustadas se detectan automáticamente." },
+                { num: "3", title: "Descarga el ZIP", desc: "Descarga el archivo ZIP con todas las imágenes extraidas." },
               ].map((step) => (
                 <div key={step.num} className="flex-1">
                   <div
@@ -169,10 +169,10 @@ export default function ExtraerImagenesDePDFPage() {
             <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "PDF a JPG", href: "/es/pdf-a-jpg", desc: "Convierte paginas a imagenes" },
-                { name: "PDF a PNG", href: "/es/pdf-a-png", desc: "Convierte paginas a PNG" },
-                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamano del archivo" },
-                { name: "Escaner OCR", href: "/ocr-scanner", desc: "Extrae texto de escaneos" },
+                { name: "PDF a JPG", href: "/es/pdf-a-jpg", desc: "Convierte páginas a imágenes" },
+                { name: "PDF a PNG", href: "/es/pdf-a-png", desc: "Convierte páginas a PNG" },
+                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamaño del archivo" },
+                { name: "Escáner OCR", href: "/ocr-scanner", desc: "Extrae texto de escaneos" },
               ].map((tool) => (
                 <div
                   key={tool.href}
@@ -221,12 +221,12 @@ export default function ExtraerImagenesDePDFPage() {
             <h2 className="text-3xl font-black text-white mb-10 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-4">
               {[
-                { q: "¿Como extraigo imagenes de un PDF?", a: "Sube tu PDF a PDF.it, haz clic en Extraer y descarga un archivo ZIP con todas las imagenes encontradas en tu PDF." },
-                { q: "¿En que formatos se extraen las imagenes?", a: "PDF.it extrae las imagenes en su formato original — generalmente JPG o PNG. Las imagenes se descargan como archivo ZIP." },
-                { q: "¿Cual es la diferencia entre extraer imagenes y convertir PDF a JPG?", a: "PDF a JPG convierte cada pagina en una imagen. Extraer Imagenes saca solo las fotos, logos y graficos incrustados — no el diseno completo de la pagina." },
-                { q: "¿Puedo extraer imagenes de un PDF escaneado?", a: "Los PDFs escaneados tratan toda la pagina como una sola imagen. Puedes extraerla, pero sera el escaneo completo de la pagina en vez de graficos individuales." },
-                { q: "¿Puedo extraer imagenes de un PDF desde mi celular?", a: "Si. PDF.it funciona en navegadores moviles — sube, extrae y descarga desde tu iPhone o Android." },
-                { q: "¿Es gratis extraer imagenes de un PDF?", a: "Si. Las cuentas gratuitas tienen 10 extracciones por dia. Las cuentas Pro tienen extracciones ilimitadas." },
+                { q: "¿Como extraigo imágenes de un PDF?", a: "Sube tu PDF a PDF.it, haz clic en Extraer y descarga un archivo ZIP con todas las imágenes encontradas en tu PDF." },
+                { q: "¿En que formatos se extraen las imágenes?", a: "PDF.it extrae las imágenes en su formato original — generalmente JPG o PNG. Las imágenes se descargan como archivo ZIP." },
+                { q: "¿Cual es la diferencia entre extraer imágenes y convertir PDF a JPG?", a: "PDF a JPG convierte cada página en una imagen. Extraer Imágenes saca solo las fotos, logos y gráficos incrustados — no el diseño completo de la página." },
+                { q: "¿Puedo extraer imágenes de un PDF escaneado?", a: "Los PDFs escaneados tratan toda la página como una sola imagen. Puedes extraerla, pero sera el escaneo completo de la página en vez de gráficos individuales." },
+                { q: "¿Puedo extraer imágenes de un PDF desde mi celular?", a: "Si. PDF.it funciona en navegadores móviles — sube, extrae y descarga desde tu iPhone o Android." },
+                { q: "¿Es gratis extraer imágenes de un PDF?", a: "Si. Las cuentas gratuitas tienen 10 extracciones por día. Las cuentas Pro tienen extracciones ilimitadas." },
               ].map((faq, i) => (
                 <div
                   key={i}
@@ -249,12 +249,12 @@ export default function ExtraerImagenesDePDFPage() {
           "@context": "https://schema.org",
           "@type": "FAQPage",
           "mainEntity": [
-            { "@type": "Question", "name": "¿Como extraigo imagenes de un PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it, haz clic en Extraer y descarga un archivo ZIP con todas las imagenes encontradas en tu PDF." } },
-            { "@type": "Question", "name": "¿En que formatos se extraen las imagenes?", "acceptedAnswer": { "@type": "Answer", "text": "PDF.it extrae las imagenes en su formato original — generalmente JPG o PNG. Las imagenes se descargan como archivo ZIP." } },
-            { "@type": "Question", "name": "¿Cual es la diferencia entre extraer imagenes y convertir PDF a JPG?", "acceptedAnswer": { "@type": "Answer", "text": "PDF a JPG convierte cada pagina en una imagen. Extraer Imagenes saca solo las fotos, logos y graficos incrustados — no el diseno completo de la pagina." } },
-            { "@type": "Question", "name": "¿Puedo extraer imagenes de un PDF escaneado?", "acceptedAnswer": { "@type": "Answer", "text": "Los PDFs escaneados tratan toda la pagina como una sola imagen. Puedes extraerla, pero sera el escaneo completo de la pagina en vez de graficos individuales." } },
-            { "@type": "Question", "name": "¿Puedo extraer imagenes de un PDF desde mi celular?", "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en navegadores moviles — sube, extrae y descarga desde tu iPhone o Android." } },
-            { "@type": "Question", "name": "¿Es gratis extraer imagenes de un PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Las cuentas gratuitas tienen 10 extracciones por dia. Las cuentas Pro tienen extracciones ilimitadas." } }
+            { "@type": "Question", "name": "¿Como extraigo imágenes de un PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it, haz clic en Extraer y descarga un archivo ZIP con todas las imágenes encontradas en tu PDF." } },
+            { "@type": "Question", "name": "¿En que formatos se extraen las imágenes?", "acceptedAnswer": { "@type": "Answer", "text": "PDF.it extrae las imágenes en su formato original — generalmente JPG o PNG. Las imágenes se descargan como archivo ZIP." } },
+            { "@type": "Question", "name": "¿Cual es la diferencia entre extraer imágenes y convertir PDF a JPG?", "acceptedAnswer": { "@type": "Answer", "text": "PDF a JPG convierte cada página en una imagen. Extraer Imágenes saca solo las fotos, logos y gráficos incrustados — no el diseño completo de la página." } },
+            { "@type": "Question", "name": "¿Puedo extraer imágenes de un PDF escaneado?", "acceptedAnswer": { "@type": "Answer", "text": "Los PDFs escaneados tratan toda la página como una sola imagen. Puedes extraerla, pero sera el escaneo completo de la página en vez de gráficos individuales." } },
+            { "@type": "Question", "name": "¿Puedo extraer imágenes de un PDF desde mi celular?", "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en navegadores móviles — sube, extrae y descarga desde tu iPhone o Android." } },
+            { "@type": "Question", "name": "¿Es gratis extraer imágenes de un PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Las cuentas gratuitas tienen 10 extracciones por día. Las cuentas Pro tienen extracciones ilimitadas." } }
           ]
         })}} />
       </main>

@@ -57,17 +57,17 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Convierte tu PDF a JPG a 200+ DPI",
-      "text": "Sube tu PDF a la herramienta PDF a JPG de PDF.it y selecciona 200 DPI (o 300 DPI para presentaciones impresas). Convierte todas las páginas o selecciona las específicas."
+      "text": "Sube tu PDF a la herramienta PDF a JPG de PDF.it y seleccióna 200 DPI (o 300 DPI para presentaciones impresas). Convierte todas las páginas o seleccióna las específicas."
     },
     {
       "@type": "HowToStep",
       "name": "Inserta las imágenes JPG en PowerPoint",
-      "text": "En PowerPoint, ve a Insertar > Imágenes y selecciona los archivos JPG convertidos. Arrastra para redimensionarlos y que llenen la diapositiva."
+      "text": "En PowerPoint, ve a Insertar > Imágenes y seleccióna los archivos JPG convertidos. Arrastra para redimensionarlos y que llenen la diapositiva."
     },
     {
       "@type": "HowToStep",
       "name": "Ajusta y alinea las imágenes",
-      "text": "Haz clic derecho en la imagen, selecciona Tamaño y Posición, y configúralo para que coincida con las dimensiones de tu diapositiva (13.33 x 7.5 pulgadas para pantalla ancha). Centra la imagen para un aspecto limpio."
+      "text": "Haz clic derecho en la imagen, seleccióna Tamaño y Posición, y configúralo para que coincida con las dimensiones de tu diapositiva (13.33 x 7.5 pulgadas para pantalla ancha). Centra la imagen para un aspecto limpio."
     }
   ]
 }
@@ -126,7 +126,7 @@ export default function PdfAJpgParaPowerpointPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">¿Por Qué Convertir PDF a JPG para PowerPoint?</h2>
               <p className="text-slate-600 mb-4">
-                PowerPoint no maneja bien los PDF de forma nativa. Puedes insertar un PDF como un "objeto", pero muestra una miniatura pequeña y requiere hacer clic para abrirlo — no es exactamente una experiencia de presentación fluida. El mejor enfoque es convertir tus páginas PDF a imágenes e insertarlas:
+                PowerPoint no maneja bien los PDF de forma nativa. Puedes insertar un PDF como un "objeto", pero muestra una miniatura pequeña y requiere hacer clic para abrirlo — no es exactamente una experiencia de presentación fluida. El mejor enfoqué es convertir tus páginas PDF a imágenes e insertarlas:
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
@@ -154,11 +154,11 @@ export default function PdfAJpgParaPowerpointPage() {
                 {[
                   {
                     title: "Convierte tu PDF a JPG a 200+ DPI",
-                    desc: "Sube tu PDF a la herramienta PDF a JPG. Configura el DPI a al menos 200 (300 si la presentación será impresa o mostrada en una pantalla 4K). Convierte todas las páginas o selecciona solo las que necesitas.",
+                    desc: "Sube tu PDF a la herramienta PDF a JPG. Configura el DPI a al menos 200 (300 si la presentación será impresa o mostrada en una pantalla 4K). Convierte todas las páginas o seleccióna solo las que necesitas.",
                   },
                   {
                     title: "Inserta las imágenes en PowerPoint",
-                    desc: "Abre PowerPoint, ve a Insertar > Imágenes > Este dispositivo y selecciona los archivos JPG. Cada imagen va en su propia diapositiva. Consejo: crea diapositivas en blanco primero, luego inserta una imagen por diapositiva.",
+                    desc: "Abre PowerPoint, ve a Insertar > Imágenes > Este dispositivo y seleccióna los archivos JPG. Cada imagen va en su propia diapositiva. Consejo: crea diapositivas en blanco primero, luego inserta una imagen por diapositiva.",
                   },
                   {
                     title: "Redimensiona para llenar la diapositiva",
@@ -314,7 +314,7 @@ export default function PdfAJpgParaPowerpointPage() {
               {[
                 { title: "Cómo Convertir PDF a JPG Online (Rápido y Alta Calidad)", href: "/es/aprender/convertir-pdf-a-jpg" },
                 { title: "Cómo Guardar Una Página PDF como JPG (Windows, Mac, Móvil)", href: "/es/aprender/guardar-pagina-pdf-como-jpg" },
-                { title: "Por Qué Tu PDF a JPG Se Ve Borroso (Y Cómo Solucionarlo)", href: "/es/aprender/por-que-pdf-a-jpg-se-ve-borroso" },
+                { title: "Por Qué Tu PDF a JPG Se Ve Borroso (Y Cómo Soluciónarlo)", href: "/es/aprender/por-que-pdf-a-jpg-se-ve-borroso" },
                 { title: "Convertir PDF a JPG en iPhone (Sin Apps)", href: "/es/aprender/pdf-a-jpg-en-iphone" },
               ].map((article) => (
                 <Link

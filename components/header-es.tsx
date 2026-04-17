@@ -131,13 +131,13 @@ export function HeaderEs() {
               Todas las Herramientas
             </Link>
             <Link href="/es/herramientas-a-z" className="text-white/80 hover:text-white font-medium transition-colors">
-              Indice A–Z
+              Índice A–Z
             </Link>
             <Link href="/es/blog" className="text-white/80 hover:text-white font-medium transition-colors">
               Blog
             </Link>
 
-            {/* Busqueda de herramientas */}
+            {/* Búsqueda de herramientas */}
             <form onSubmit={handleSearchSubmit} className="relative" role="search">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 pointer-events-none" />
               <input
@@ -245,7 +245,7 @@ export function HeaderEs() {
       {mobileMenuOpen && (
         <nav className="fixed top-16 left-0 right-0 z-40 bg-[#0E0F1E]/95 backdrop-blur-xl border-b border-white/10 shadow-lg md:hidden">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-3">
-            {/* Busqueda de herramientas */}
+            {/* Búsqueda de herramientas */}
             <form onSubmit={handleSearchSubmit} className="relative" role="search">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400 pointer-events-none" />
               <input
@@ -267,7 +267,7 @@ export function HeaderEs() {
               Todas las Herramientas
             </Link>
             <Link href="/es/herramientas-a-z" onClick={() => setMobileMenuOpen(false)} className="text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
-              Indice A–Z
+              Índice A–Z
             </Link>
             <Link href="/es/blog" onClick={() => setMobileMenuOpen(false)} className="text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors">
               Blog

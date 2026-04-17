@@ -8,7 +8,7 @@ import { FileText, Zap, Shield, Download } from "lucide-react"
 export const metadata = {
   title: "Convertir PDF a Word Online — PDF a DOCX Editable | PDF.it",
   description:
-    "Convierte PDF a Word editable con PDF.it. Transforma tus archivos PDF en documentos DOCX que puedes editar al instante — rapido, seguro y desde tu navegador.",
+    "Convierte PDF a Word editable con PDF.it. Transforma tus archivos PDF en documentos DOCX que puedes editar al instante — rápido, seguro y desde tu navegador.",
   alternates: {
     canonical: "https://pdf.it.com/es/pdf-a-word",
     languages: {
@@ -32,10 +32,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "¿Se mantiene el formato despues de la conversion?",
+      name: "¿Se mantiene el formato después de la conversión?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "PDF.it preserva el diseno, fuentes y estructura lo mejor posible. Formatos complejos pueden variar dependiendo del PDF original.",
+        text: "PDF.it preserva el diseño, fuentes y estructura lo mejor posible. Formatos complejos pueden variar dependiendo del PDF original.",
       },
     },
     {
@@ -43,7 +43,7 @@ const faqSchema = {
       name: "¿Puedo convertir un PDF escaneado a Word?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Los PDFs escaneados requieren OCR para extraer el texto. Usa primero la herramienta de Escaner OCR de PDF.it y luego convierte a Word.",
+        text: "Los PDFs escaneados requieren OCR para extraer el texto. Usa primero la herramienta de Escáner OCR de PDF.it y luego convierte a Word.",
       },
     },
     {
@@ -51,7 +51,7 @@ const faqSchema = {
       name: "¿Puedo convertir PDF a Word desde mi celular?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Si. PDF.it funciona en navegadores moviles — sube, convierte y descarga desde iPhone o Android.",
+        text: "Si. PDF.it funciona en navegadores móviles — sube, convierte y descarga desde iPhone o Android.",
       },
     },
     {
@@ -59,12 +59,12 @@ const faqSchema = {
       name: "¿Es seguro subir mi PDF?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos.",
+        text: "Si. Todas las transferencias están cifradas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos.",
       },
     },
     {
       "@type": "Question",
-      name: "¿Cual es el tamano maximo de archivo que puedo convertir?",
+      name: "¿Cual es el tamaño máximo de archivo que puedo convertir?",
       acceptedAnswer: {
         "@type": "Answer",
         text: "Las cuentas gratuitas pueden subir archivos de hasta 25MB. Las cuentas Pro y Business pueden subir archivos de hasta 200MB.",
@@ -112,7 +112,7 @@ export default function PDFaWordPage() {
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2">
                   <Zap className="h-4 w-4 text-[#14D8C4]" />
-                  <span>Conversion Rapida</span>
+                  <span>Conversión Rápida</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Shield className="h-4 w-4 text-[#14D8C4]" />
@@ -135,10 +135,10 @@ export default function PDFaWordPage() {
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
               <li className="flex items-center gap-2">✓ Convierte PDF a documentos Word editables online</li>
-              <li className="flex items-center gap-2">✓ Preserva el diseno, fuentes y estructura</li>
+              <li className="flex items-center gap-2">✓ Preserva el diseño, fuentes y estructura</li>
               <li className="flex items-center gap-2">✓ Ideal para contratos, reportes, formularios y cartas</li>
               <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li className="flex items-center gap-2">✓ Sin instalacion — convierte PDFs desde tu navegador</li>
+              <li className="flex items-center gap-2">✓ Sin instalación — convierte PDFs desde tu navegador</li>
             </ul>
           </div>
         </section>
@@ -168,8 +168,8 @@ export default function PDFaWordPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
                 { title: "Edita Cualquier PDF como Documento Word", desc: "Convierte tus PDFs en archivos DOCX completamente editables. Modifica texto, tablas y formato directamente en Word, Google Docs o cualquier procesador de texto." },
-                { title: "Formato Preservado con Precision", desc: "PDF.it mantiene el diseno, fuentes e imagenes del PDF original para que tu documento Word se vea profesional desde el primer momento." },
-                { title: "Descarga al Instante", desc: "Descarga tu documento Word inmediatamente despues de la conversion. Abrelo en Microsoft Word, Google Docs o cualquier editor compatible." },
+                { title: "Formato Preservado con Precisión", desc: "PDF.it mantiene el diseño, fuentes e imágenes del PDF original para que tu documento Word se vea profesional desde el primer momento." },
+                { title: "Descarga al Instante", desc: "Descarga tu documento Word inmediatamente después de la conversión. Abrelo en Microsoft Word, Google Docs o cualquier editor compatible." },
               ].map((feature) => (
                 <div
                   key={feature.title}
@@ -235,10 +235,10 @@ export default function PDFaWordPage() {
             <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "PDF a Excel", href: "/es/pdf-a-excel", desc: "Extrae tablas a hoja de calculo" },
-                { name: "PDF a JPG", href: "/es/pdf-a-jpg", desc: "Convierte paginas a imagenes" },
-                { name: "Escaner OCR", href: "/es/escaner-ocr", desc: "Extrae texto de PDFs escaneados" },
-                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamano antes de convertir" },
+                { name: "PDF a Excel", href: "/es/pdf-a-excel", desc: "Extrae tablas a hoja de cálculo" },
+                { name: "PDF a JPG", href: "/es/pdf-a-jpg", desc: "Convierte páginas a imágenes" },
+                { name: "Escáner OCR", href: "/es/escaner-ocr", desc: "Extrae texto de PDFs escaneados" },
+                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamaño antes de convertir" },
               ].map((tool) => (
                 <div
                   key={tool.href}
@@ -288,11 +288,11 @@ export default function PDFaWordPage() {
             <div className="space-y-4">
               {[
                 { q: "¿Como convierto un PDF a Word?", a: "Sube tu PDF a PDF.it, haz clic en Convertir y descarga tu documento Word editable." },
-                { q: "¿Se mantiene el formato despues de la conversion?", a: "PDF.it preserva el diseno, fuentes y estructura lo mejor posible. Formatos complejos pueden variar dependiendo del PDF original." },
-                { q: "¿Puedo convertir un PDF escaneado a Word?", a: "Los PDFs escaneados requieren OCR para extraer el texto. Usa primero la herramienta de Escaner OCR de PDF.it y luego convierte a Word." },
-                { q: "¿Puedo convertir PDF a Word desde mi celular?", a: "Si. PDF.it funciona en navegadores moviles — sube, convierte y descarga desde iPhone o Android." },
-                { q: "¿Es seguro subir mi PDF?", a: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." },
-                { q: "¿Cual es el tamano maximo de archivo que puedo convertir?", a: "Las cuentas gratuitas pueden subir archivos de hasta 25MB. Las cuentas Pro y Business pueden subir archivos de hasta 200MB." },
+                { q: "¿Se mantiene el formato después de la conversión?", a: "PDF.it preserva el diseño, fuentes y estructura lo mejor posible. Formatos complejos pueden variar dependiendo del PDF original." },
+                { q: "¿Puedo convertir un PDF escaneado a Word?", a: "Los PDFs escaneados requieren OCR para extraer el texto. Usa primero la herramienta de Escáner OCR de PDF.it y luego convierte a Word." },
+                { q: "¿Puedo convertir PDF a Word desde mi celular?", a: "Si. PDF.it funciona en navegadores móviles — sube, convierte y descarga desde iPhone o Android." },
+                { q: "¿Es seguro subir mi PDF?", a: "Si. Todas las transferencias están cifradas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." },
+                { q: "¿Cual es el tamaño máximo de archivo que puedo convertir?", a: "Las cuentas gratuitas pueden subir archivos de hasta 25MB. Las cuentas Pro y Business pueden subir archivos de hasta 200MB." },
               ].map((faq, i) => (
                 <div
                   key={i}

@@ -24,7 +24,7 @@ export default function MarcaDeAguaPDFPage() {
     { q: "¿Puedo agregar una marca de agua de texto como CONFIDENCIAL o BORRADOR?", a: "Sí. PDF.it puede aplicar una marca de agua de texto en todas las páginas de tu PDF para indicar claramente el estado del documento." },
     { q: "¿Puedo agregar un logo como marca de agua a un PDF?", a: "Sí. Sube una imagen y colócala como marca de agua en las páginas de tu PDF." },
     { q: "¿La marca de agua aparece en todas las páginas?", a: "Sí. La marca de agua se aplica a todas las páginas del PDF por defecto." },
-    { q: "¿La marca de agua afecta el contenido de mi PDF?", a: "No. Agregar una marca de agua solo superpone el texto o imagen seleccionado en tus páginas. Todo el contenido existente permanece intacto." },
+    { q: "¿La marca de agua afecta el contenido de mi PDF?", a: "No. Agregar una marca de agua solo superpone el texto o imagen selecciónado en tus páginas. Todo el contenido existente permanece intacto." },
     { q: "¿Es seguro subir mi PDF?", a: "Sí. Todas las transferencias están encriptadas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." },
     { q: "¿Cuál es el tamaño máximo de archivo al que puedo agregar marca de agua?", a: "Las cuentas Pro pueden subir archivos de hasta 200MB. Las cuentas Business pueden subir archivos de hasta 1GB." },
   ]

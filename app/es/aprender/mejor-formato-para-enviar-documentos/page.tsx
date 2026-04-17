@@ -7,7 +7,7 @@ import { FileText, ArrowRight } from "lucide-react"
 export const metadata = {
   title: "Mejor Formato para Enviar Documentos (PDF vs DOCX vs Otros) | PDF.it",
   description:
-    "PDF vs DOCX: cual formato debes usar para enviar documentos? Descubre por que PDF es la mejor opcion para correos, solicitudes de empleo, facturas y uso profesional.",
+    "PDF vs DOCX: cual formato debes usar para enviar documentos? Descubre por qué PDF es la mejor opción para correos, solicitudes de empleo, facturas y uso profesional.",
   keywords: "mejor formato para enviar documentos, pdf vs docx, enviar documentos como pdf, formato de documento para email, mejor formato de archivo para compartir",
 }
 
@@ -18,32 +18,32 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Es mejor PDF o DOCX para enviar documentos?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PDF es mejor para enviar documentos finales porque preserva el formato en todos los dispositivos, no puede ser editado accidentalmente y se ve profesional. DOCX es mejor cuando necesitas que el destinatario haga ediciones." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF es mejor para enviar documentos finales porque preserva el formato en todos los dispositivos, no puede ser editado accidentalmente y se ve profesional. DOCX es mejor cuando necesitas que el destinatario haga ediciónes." }
     },
     {
       "@type": "Question",
-      "name": "Por que los empleadores prefieren curriculos en PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Los curriculos en PDF se ven igual en cualquier pantalla, no cambian de formato segun el software o fuentes del lector, y lucen mas pulidos y profesionales que los archivos editables de Word." }
+      "name": "Por qué los empleadores prefieren curriculos en PDF?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Los curriculos en PDF se ven igual en cualquier pantalla, no cambian de formato segun el software o fuentes del lector, y lucen más pulidos y profesionales que los archivos editables de Word." }
     },
     {
       "@type": "Question",
       "name": "Puedo convertir mis documentos a PDF gratis?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it te permite convertir archivos de Word, Excel y PowerPoint a PDF gratis, hasta 10 conversiones por dia con archivos de hasta 25MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it te permite convertir archivos de Word, Excel y PowerPoint a PDF gratis, hasta 10 conversiónes por día con archivos de hasta 25MB." }
     },
     {
       "@type": "Question",
       "name": "Que formato debo usar para facturas?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Siempre envia facturas como PDF. Esto evita que el destinatario modifique montos o terminos, preserva tu marca y diseno, y se ve profesional." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Siempre envia facturas como PDF. Esto evita que el destinatario modifique montos o términos, preserva tu marca y diseño, y se ve profesional." }
     },
     {
       "@type": "Question",
       "name": "Debo enviar documentos como PDF o como enlace de Google Docs?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Para documentos finales, PDF es mejor ya que no requiere acceso a internet ni una cuenta de Google para ver. Los enlaces de Google Docs son mejores para edicion colaborativa donde varias personas necesitan hacer cambios." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Para documentos finales, PDF es mejor ya que no requiere acceso a internet ni una cuenta de Google para ver. Los enlaces de Google Docs son mejores para edición colaborativa donde varias personas necesitan hacer cambios." }
     },
     {
       "@type": "Question",
       "name": "Como me aseguro de que mi PDF se vea bien antes de enviarlo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Despues de convertir a PDF, abre el archivo y revisa cada pagina por problemas de formato. Usa la herramienta de aplanar de PDF.it para eliminar campos de formulario o capas que podrian mostrarse diferente en otros dispositivos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Después de convertir a PDF, abre el archivo y revisa cada página por problemas de formato. Usa la herramienta de aplanar de PDF.it para eliminar campos de formulario o capas que podrían mostrarse diferente en otros dispositivos." }
     }
   ]
 }
@@ -57,17 +57,17 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Elige PDF como tu formato",
-      "text": "Para cualquier documento que envies como version final — curriculos, facturas, informes, contratos — PDF es la mejor opcion porque preserva el formato universalmente."
+      "text": "Para cualquier documento que envies como version final — curriculos, facturas, informes, contratos — PDF es la mejor opción porque preserva el formato universalmente."
     },
     {
       "@type": "HowToStep",
       "name": "Convierte tu archivo a PDF",
-      "text": "Sube tu archivo de Word, Excel o PowerPoint al convertidor de Office a PDF de PDF.it. La herramienta preserva tu formato, fuentes e imagenes automaticamente."
+      "text": "Sube tu archivo de Word, Excel o PowerPoint al convertidor de Office a PDF de PDF.it. La herramienta preserva tu formato, fuentes e imágenes automáticamente."
     },
     {
       "@type": "HowToStep",
       "name": "Revisa y envia",
-      "text": "Abre el PDF para verificar el formato, luego envialo por correo electronico o subelo al portal requerido. Comprime el PDF primero si excede los limites de tamano del correo."
+      "text": "Abre el PDF para verificar el formato, luego envialo por correo electrónico o subelo al portal requerido. Comprime el PDF primero si excede los límites de tamaño del correo."
     }
   ]
 }
@@ -94,7 +94,7 @@ export default function MejorFormatoParaEnviarDocumentosPage() {
               <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Office a PDF</p>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Mejor Formato para Enviar Documentos (PDF vs DOCX vs Otros)</h1>
               <p className="text-xl text-slate-300">
-                Terminaste de escribir tu documento. Ahora necesitas enviarlo. Debes adjuntar el archivo .docx, exportar como PDF o compartir un enlace? Aqui te explicamos cuando usar cada formato y por que PDF gana en la mayoria de situaciones.
+                Terminaste de escribir tu documento. Ahora necesitas enviarlo. Debes adjuntar el archivo .docx, exportar como PDF o compartir un enlace? Aqui te explicamos cuando usar cada formato y por qué PDF gana en la mayoría de situaciones.
               </p>
             </div>
           </div>
@@ -130,19 +130,19 @@ export default function MejorFormatoParaEnviarDocumentosPage() {
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
-                  <span><strong>PDF es un formato de visualizacion.</strong> Muestra el documento exactamente como el autor lo diseno — mismas fuentes, mismo diseno, mismo espaciado — en cada dispositivo, sistema operativo y tamano de pantalla.</span>
+                  <span><strong>PDF es un formato de visualización.</strong> Muestra el documento exactamente como el autor lo diseño — mismas fuentes, mismo diseño, mismo espaciado — en cada dispositivo, sistema operativo y tamaño de pantalla.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
-                  <span><strong>DOCX es un formato de edicion.</strong> Esta disenado para escribir y revisar. El documento puede verse diferente dependiendo de las fuentes instaladas, la version de Word y la resolucion de pantalla del lector.</span>
+                  <span><strong>DOCX es un formato de edición.</strong> Esta diseñado para escribir y revisar. El documento puede verse diferente dependiendo de las fuentes instaladas, la version de Word y la resolución de pantalla del lector.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
-                  <span><strong>PDF no puede ser editado accidentalmente.</strong> Cuando envias un DOCX, el destinatario podria cambiar texto, eliminar una seccion o reformatear un parrafo por accidente. Los PDFs previenen esto.</span>
+                  <span><strong>PDF no puede ser editado accidentalmente.</strong> Cuando envias un DOCX, el destinatario podría cambiar texto, eliminar una sección o reformatear un parrafo por accidente. Los PDFs previenen esto.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
-                  <span><strong>PDF se abre en todas partes.</strong> Cada telefono, tableta y computadora puede abrir PDFs nativamente. DOCX requiere Microsoft Word, Google Docs o una aplicacion compatible.</span>
+                  <span><strong>PDF se abre en todas partes.</strong> Cada teléfono, tableta y computadora puede abrir PDFs nativamente. DOCX requiere Microsoft Word, Google Docs o una aplicación compatible.</span>
                 </li>
               </ul>
             </section>
@@ -152,16 +152,16 @@ export default function MejorFormatoParaEnviarDocumentosPage() {
               <div className="space-y-4">
                 {[
                   {
-                    title: "Curriculos y cartas de presentacion",
-                    desc: "Los empleadores esperan PDF. Asegura que tu diseno, margenes y tipografia cuidadosamente elaborados se vean perfectos en cualquier software de recursos humanos o pantalla. Convierte tu curriculo de Word usando la herramienta Word a PDF.",
+                    title: "Curriculos y cartas de presentación",
+                    desc: "Los empleadores esperan PDF. Asegura que tu diseño, margenes y tipografia cuidadosamente elaborados se vean perfectos en cualquier software de recursos humanos o pantalla. Convierte tu curriculo de Word usando la herramienta Word a PDF.",
                   },
                   {
                     title: "Facturas y contratos",
-                    desc: "PDF evita que los destinatarios modifiquen montos, fechas o terminos. Tambien preserva la marca de tu empresa — logos, colores y fuentes se renderizan exactamente como fueron disenados.",
+                    desc: "PDF evita que los destinatarios modifiquen montos, fechas o términos. También preserva la marca de tu empresa — logos, colores y fuentes se renderizan exactamente como fueron diseñados.",
                   },
                   {
                     title: "Informes y propuestas",
-                    desc: "Al compartir con clientes o partes interesadas, PDF asegura que graficos, tablas e imagenes se mantengan en su lugar. Sin riesgo de que un grafico se mueva a la siguiente pagina en su pantalla.",
+                    desc: "Al compartir con clientes o partes interesadas, PDF asegura que gráficos, tablas e imágenes se mantengan en su lugar. Sin riesgo de que un gráfico se mueva a la siguiente página en su pantalla.",
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -180,15 +180,15 @@ export default function MejorFormatoParaEnviarDocumentosPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Cuando DOCX (u Otros Formatos Editables) Son Mejores</h2>
               <p className="text-slate-600 mb-4">
-                Hay algunas situaciones donde enviar el archivo editable tiene mas sentido:
+                Hay algunas situaciones donde enviar el archivo editable tiene más sentido:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Edicion colaborativa.</strong> Si tu colega necesita agregar comentarios, rastrear cambios o reescribir secciones, DOCX es el formato correcto. Los enlaces de Google Docs funcionan aun mejor para colaboracion en tiempo real.</li>
+                <li>&#10003; <strong>Edición colaborativa.</strong> Si tu colega necesita agregar comentarios, rastrear cambios o reescribir secciones, DOCX es el formato correcto. Los enlaces de Google Docs funcionan aun mejor para colaboracion en tiempo real.</li>
                 <li>&#10003; <strong>Plantillas.</strong> Si estas compartiendo una plantilla que otros llenaran (como un formulario o un brief), enviala como DOCX para que puedan escribir directamente en los campos.</li>
-                <li>&#10003; <strong>Cuando se solicita especificamente.</strong> Algunas solicitudes de empleo o formularios gubernamentales piden especificamente .docx. Sigue sus instrucciones, aunque PDF suele ser superior.</li>
+                <li>&#10003; <strong>Cuando se solicita específicamente.</strong> Algunas solicitudes de empleo o formularios gubernamentales piden específicamente .docx. Sigue sus instrucciones, aunque PDF suele ser superior.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Para todo lo demas — versiones finales, envios formales, entregables a clientes — convierte a PDF primero. Puedes usar las herramientas de PDF.it: <Link href="/es/word-a-pdf" className="text-[#14D8C4] hover:underline">Word a PDF</Link>, <Link href="/es/excel-a-pdf" className="text-[#14D8C4] hover:underline">Excel a PDF</Link>, o <Link href="/es/powerpoint-a-pdf" className="text-[#14D8C4] hover:underline">PowerPoint a PDF</Link>.
+                Para todo lo demás — versiones finales, envios formales, entregables a clientes — convierte a PDF primero. Puedes usar las herramientas de PDF.it: <Link href="/es/word-a-pdf" className="text-[#14D8C4] hover:underline">Word a PDF</Link>, <Link href="/es/excel-a-pdf" className="text-[#14D8C4] hover:underline">Excel a PDF</Link>, o <Link href="/es/powerpoint-a-pdf" className="text-[#14D8C4] hover:underline">PowerPoint a PDF</Link>.
               </p>
             </section>
 
@@ -198,19 +198,19 @@ export default function MejorFormatoParaEnviarDocumentosPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Enlaces de Google Docs</h3>
                   <p className="text-slate-600">
-                    Compartir un enlace de Google Docs es conveniente para colaboracion, pero riesgoso para documentos finales. El destinatario necesita acceso a internet y una cuenta de Google. Los enlaces tambien pueden configurarse accidentalmente como &quot;cualquiera puede editar,&quot; permitiendo cambios no deseados. Para versiones finales, exporta como PDF.
+                    Compartir un enlace de Google Docs es conveniente para colaboracion, pero riesgoso para documentos finales. El destinatario necesita acceso a internet y una cuenta de Google. Los enlaces también pueden configurarse accidentalmente como &quot;cualquiera puede editar,&quot; permitiendo cambios no deseados. Para versiones finales, exporta como PDF.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Texto Plano (.txt)</h3>
                   <p className="text-slate-600">
-                    Los archivos de texto plano no tienen formato — sin negritas, sin imagenes, sin tablas. Son utiles para codigo, registros o notas rapidas, pero nunca para documentos profesionales. Si necesitas extraer texto de un PDF, usa la herramienta <Link href="/es/pdf-a-texto" className="text-[#14D8C4] hover:underline">PDF a TXT</Link> de PDF.it.
+                    Los archivos de texto plano no tienen formato — sin negritas, sin imágenes, sin tablas. Son útiles para código, registros o notas rápidas, pero nunca para documentos profesionales. Si necesitas extraer texto de un PDF, usa la herramienta <Link href="/es/pdf-a-texto" className="text-[#14D8C4] hover:underline">PDF a TXT</Link> de PDF.it.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Formatos de Imagen (JPG, PNG)</h3>
                   <p className="text-slate-600">
-                    Algunas personas toman capturas de pantalla de documentos y las envian como imagenes. Esto hace que el texto no sea buscable ni seleccionable, y la calidad suele ser pobre. Siempre envia el PDF real. Si necesitas imagenes de un PDF, usa <Link href="/es/pdf-a-jpg" className="text-[#14D8C4] hover:underline">PDF a JPG</Link> o <Link href="/es/extraer-imagenes-de-pdf" className="text-[#14D8C4] hover:underline">Extraer Imagenes de PDF</Link>.
+                    Algunas personas toman capturas de pantalla de documentos y las envian como imágenes. Esto hace que el texto no sea buscable ni selecciónable, y la calidad suele ser pobre. Siempre envia el PDF real. Si necesitas imágenes de un PDF, usa <Link href="/es/pdf-a-jpg" className="text-[#14D8C4] hover:underline">PDF a JPG</Link> o <Link href="/es/extraer-imágenes-de-pdf" className="text-[#14D8C4] hover:underline">Extraer Imágenes de PDF</Link>.
                   </p>
                 </div>
               </div>
@@ -219,13 +219,13 @@ export default function MejorFormatoParaEnviarDocumentosPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Preparando Tu PDF para Email</h2>
               <p className="text-slate-600 mb-4">
-                Incluso despues de elegir PDF como formato, hay algunos pasos adicionales para asegurar que llegue perfectamente:
+                Incluso después de elegir PDF como formato, hay algunos pasos adicionales para asegurar que llegue perfectamente:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Verifica el tamano del archivo.</strong> La mayoria de proveedores de correo limitan adjuntos a 25MB. Si tu PDF es muy grande, usa <Link href="/es/comprimir-pdf-para-email" className="text-[#14D8C4] hover:underline">Comprimir PDF para Email</Link> para reducirlo.</li>
+                <li>&#10003; <strong>Verifica el tamaño del archivo.</strong> La mayoría de proveedores de correo limitan adjuntos a 25MB. Si tu PDF es muy grande, usa <Link href="/es/comprimir-pdf-para-email" className="text-[#14D8C4] hover:underline">Comprimir PDF para Email</Link> para reducirlo.</li>
                 <li>&#10003; <strong>Aplana el PDF.</strong> Si tu documento tiene campos de formulario, capas o anotaciones, <Link href="/es/aplanar-pdf" className="text-[#14D8C4] hover:underline">aplanalo</Link> para asegurar que todo se muestre correctamente en el dispositivo del destinatario.</li>
-                <li>&#10003; <strong>Nombra el archivo claramente.</strong> Usa un nombre descriptivo como &quot;Juan-Perez-Curriculo-2026.pdf&quot; en lugar de &quot;Documento1.pdf&quot;. Esto ayuda al destinatario a encontrar tu archivo despues.</li>
-                <li>&#10003; <strong>Protege documentos sensibles con contrasena.</strong> Usa <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link> para agregar una contrasena si el documento contiene informacion financiera o personal.</li>
+                <li>&#10003; <strong>Nombra el archivo claramente.</strong> Usa un nombre descriptivo como &quot;Juan-Perez-Curriculo-2026.pdf&quot; en lugar de &quot;Documento1.pdf&quot;. Esto ayuda al destinatario a encontrar tu archivo después.</li>
+                <li>&#10003; <strong>Protege documentos sensibles con contraseña.</strong> Usa <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link> para agregar una contraseña si el documento contiene información financiera o personal.</li>
               </ul>
             </section>
 
@@ -249,13 +249,13 @@ export default function MejorFormatoParaEnviarDocumentosPage() {
         {/* Related Articles */}
         <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-6">Articulos Relacionados</h2>
+            <h2 className="text-2xl font-black text-slate-900 mb-6">Artículos Relacionados</h2>
             <div className="grid gap-3">
               {[
                 { title: "Convertir PDF Escaneado a Texto: Cuando Necesitas OCR", href: "/es/aprender/convertir-pdf-escaneado-a-texto" },
-                { title: "Que es OCR? (Reconocimiento Optico de Caracteres Explicado)", href: "/es/aprender/que-es-ocr" },
-                { title: "Como Crear un Codigo QR en Linea", href: "/es/aprender/como-crear-codigo-qr" },
-                { title: "Mejores Practicas de Codigo QR (Tamano, Ubicacion y Pruebas)", href: "/es/aprender/mejores-practicas-codigo-qr" },
+                { title: "Qué es OCR? (Reconocimiento Optico de Caracteres Explicado)", href: "/es/aprender/que-es-ocr" },
+                { title: "Como Crear un Código QR en Línea", href: "/es/aprender/como-crear-codigo-qr" },
+                { title: "Mejores Prácticas de Código QR (Tamaño, Ubicacion y Pruebas)", href: "/es/aprender/mejores-prácticas-codigo-qr" },
               ].map((article) => (
                 <Link
                   key={article.href}
@@ -276,12 +276,12 @@ export default function MejorFormatoParaEnviarDocumentosPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Es mejor PDF o DOCX para enviar documentos?", a: "PDF es mejor para enviar documentos finales porque preserva el formato en todos los dispositivos, no puede ser editado accidentalmente y se ve profesional. DOCX es mejor cuando necesitas que el destinatario haga ediciones." },
-                { q: "Por que los empleadores prefieren curriculos en PDF?", a: "Los curriculos en PDF se ven igual en cualquier pantalla, no cambian de formato segun el software o fuentes del lector, y lucen mas pulidos y profesionales que los archivos editables de Word." },
-                { q: "Puedo convertir mis documentos a PDF gratis?", a: "Si. PDF.it te permite convertir archivos de Word, Excel y PowerPoint a PDF gratis, hasta 10 conversiones por dia con archivos de hasta 25MB." },
-                { q: "Que formato debo usar para facturas?", a: "Siempre envia facturas como PDF. Esto evita que el destinatario modifique montos o terminos, preserva tu marca y diseno, y se ve profesional." },
-                { q: "Debo enviar documentos como PDF o como enlace de Google Docs?", a: "Para documentos finales, PDF es mejor ya que no requiere acceso a internet ni una cuenta de Google para ver. Los enlaces de Google Docs son mejores para edicion colaborativa donde varias personas necesitan hacer cambios." },
-                { q: "Como me aseguro de que mi PDF se vea bien antes de enviarlo?", a: "Despues de convertir a PDF, abre el archivo y revisa cada pagina por problemas de formato. Usa la herramienta de aplanar de PDF.it para eliminar campos de formulario o capas que podrian mostrarse diferente en otros dispositivos." },
+                { q: "Es mejor PDF o DOCX para enviar documentos?", a: "PDF es mejor para enviar documentos finales porque preserva el formato en todos los dispositivos, no puede ser editado accidentalmente y se ve profesional. DOCX es mejor cuando necesitas que el destinatario haga ediciónes." },
+                { q: "Por qué los empleadores prefieren curriculos en PDF?", a: "Los curriculos en PDF se ven igual en cualquier pantalla, no cambian de formato segun el software o fuentes del lector, y lucen más pulidos y profesionales que los archivos editables de Word." },
+                { q: "Puedo convertir mis documentos a PDF gratis?", a: "Si. PDF.it te permite convertir archivos de Word, Excel y PowerPoint a PDF gratis, hasta 10 conversiónes por día con archivos de hasta 25MB." },
+                { q: "Que formato debo usar para facturas?", a: "Siempre envia facturas como PDF. Esto evita que el destinatario modifique montos o términos, preserva tu marca y diseño, y se ve profesional." },
+                { q: "Debo enviar documentos como PDF o como enlace de Google Docs?", a: "Para documentos finales, PDF es mejor ya que no requiere acceso a internet ni una cuenta de Google para ver. Los enlaces de Google Docs son mejores para edición colaborativa donde varias personas necesitan hacer cambios." },
+                { q: "Como me aseguro de que mi PDF se vea bien antes de enviarlo?", a: "Después de convertir a PDF, abre el archivo y revisa cada página por problemas de formato. Usa la herramienta de aplanar de PDF.it para eliminar campos de formulario o capas que podrían mostrarse diferente en otros dispositivos." },
               ].map((faq, i) => (
                 <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

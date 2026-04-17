@@ -15,7 +15,7 @@ export default function EscanearPDFATextoPage() {
   const faqs = [
     {
         "q": "¿Cómo funciona el OCR en PDFs escaneados?",
-        "a": "El OCR (Reconocimiento Óptico de Caracteres) analiza las imágenes en tu PDF escaneado e identifica letras, palabras y párrafos. PDF.it los convierte en texto seleccionable, buscable y copiable."
+        "a": "El OCR (Reconocimiento Óptico de Caracteres) analiza las imágenes en tu PDF escaneado e identifica letras, palabras y párrafos. PDF.it los convierte en texto selecciónable, buscable y copiable."
     },
     {
         "q": "¿Qué tan preciso es el OCR en documentos escaneados?",
@@ -27,7 +27,7 @@ export default function EscanearPDFATextoPage() {
     },
     {
         "q": "¿Cuál es la diferencia entre un PDF escaneado y un PDF digital?",
-        "a": "Un PDF digital contiene datos de texto reales que se pueden seleccionar y copiar. Un PDF escaneado es esencialmente una imagen de un documento — el texto es parte de la imagen y no se puede seleccionar sin procesamiento OCR."
+        "a": "Un PDF digital contiene datos de texto reales que se pueden selecciónar y copiar. Un PDF escaneado es esencialmente una imagen de un documento — el texto es parte de la imagen y no se puede selecciónar sin procesamiento OCR."
     },
     {
         "q": "¿Es gratis el escáner OCR?",
@@ -60,7 +60,7 @@ export default function EscanearPDFATextoPage() {
 
         {/* Intro */}
         <section className="py-10 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-          <p className="text-lg text-slate-600 leading-relaxed">Los PDFs escaneados son solo imágenes — no puedes seleccionar, buscar ni copiar el texto. La tecnología OCR de PDF.it lee el texto en tus documentos escaneados y lo convierte en texto buscable, copiable y editable. Soporte para múltiples idiomas incluido.</p>
+          <p className="text-lg text-slate-600 leading-relaxed">Los PDFs escaneados son solo imágenes — no puedes selecciónar, buscar ni copiar el texto. La tecnología OCR de PDF.it lee el texto en tus documentos escaneados y lo convierte en texto buscable, copiable y editable. Soporte para múltiples idiomas incluido.</p>
           <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
             <li className="flex items-center gap-2">✓ Convierte PDFs escaneados en texto buscable</li>
             <li className="flex items-center gap-2">✓ OCR lee texto de imágenes, fotos y escaneos</li>
@@ -75,7 +75,7 @@ export default function EscanearPDFATextoPage() {
         <section className="py-16" style={{ background: `radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%), #0E0F1E` }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl"><div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
-              { title: "Digitaliza Documentos en Papel", desc: "Contratos escaneados, recibos, cartas y formularios están atrapados como imágenes. El OCR de PDF.it lee el texto de estos escaneos y lo hace seleccionable y copiable — convirtiendo papel en datos digitales." },
+              { title: "Digitaliza Documentos en Papel", desc: "Contratos escaneados, recibos, cartas y formularios están atrapados como imágenes. El OCR de PDF.it lee el texto de estos escaneos y lo hace selecciónable y copiable — convirtiendo papel en datos digitales." },
               { title: "Haz PDFs Escaneados Buscables", desc: "Después del procesamiento OCR, tu PDF escaneado se vuelve buscable. Usa Ctrl+F para encontrar palabras, nombres, fechas o cantidades específicas en documentos que antes eran solo imágenes estáticas." },
               { title: "Extrae Datos de Documentos Antiguos", desc: "¿Tienes años de facturas, registros o correspondencia escaneada? Ejecuta OCR para extraer el texto, luego cópialo en hojas de cálculo, bases de datos o sistemas de gestión documental modernos." },
             ].map((feature) => (

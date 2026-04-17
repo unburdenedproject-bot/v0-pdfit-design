@@ -24,7 +24,7 @@ export default function PdfComparePageEs() {
     { q: "¿Cómo funciona Comparar PDF?", a: "Sube dos PDFs — un original y una versión modificada. La herramienta renderiza cada página y las compara píxel por píxel. Las diferencias se resaltan en rojo para que puedas ver exactamente qué cambió entre los dos documentos." },
     { q: "¿Qué modos de vista están disponibles?", a: "Tres modos de vista: Lado a Lado muestra ambos documentos uno junto al otro, Superpuesto los mezcla con transparencia, y Diferencias resalta las áreas cambiadas en rojo contra un fondo atenuado." },
     { q: "¿Puedo comparar PDFs con diferente número de páginas?", a: "Sí. Si un PDF tiene más páginas que el otro, la herramienta compara las páginas que existen en ambos documentos y marca las páginas extras como 100% diferentes." },
-    { q: "¿Comparar PDF detecta cambios de texto?", a: "Comparar PDF realiza una comparación visual píxel por píxel. Detecta cualquier cambio visible en la página incluyendo ediciones de texto, elementos movidos, contenido agregado o eliminado, cambios de imagen y diferencias de formato." },
+    { q: "¿Comparar PDF detecta cambios de texto?", a: "Comparar PDF realiza una comparación visual píxel por píxel. Detecta cualquier cambio visible en la página incluyendo ediciónes de texto, elementos movidos, contenido agregado o eliminado, cambios de imagen y diferencias de formato." },
     { q: "¿Comparar PDF es gratis?", a: "Comparar PDF está disponible como función del plan Business por $13.99/mes. Incluye la herramienta de comparación junto con otras herramientas Business como Automatización de Flujos, Redacción de PDF, Firma Electrónica y Extracción de Tablas." },
     { q: "¿Puedo descargar un reporte de comparación?", a: "Sí. Haz clic en el botón Reporte para descargar un resumen de texto mostrando el porcentaje de diferencia para cada página, categorizado como Idéntico, Cambios menores, Cambios moderados o Cambios mayores." },
   ]
@@ -174,7 +174,7 @@ export default function PdfComparePageEs() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
                 { name: "Redacción PDF", href: "/es/redaccion-pdf", desc: "Elimina permanentemente texto sensible de PDFs." },
-                { name: "Firma Electrónica", href: "/es/firma-electronica", desc: "Agrega firmas electrónicas a PDFs." },
+                { name: "Firma Electrónica", href: "/es/firma-electrónica", desc: "Agrega firmas electrónicas a PDFs." },
                 { name: "Proteger PDF", href: "/es/proteger-pdf", desc: "Agrega protección con contraseña a tus documentos." },
                 { name: "Unir PDF", href: "/es/unir-pdf", desc: "Combina varios PDFs en un solo archivo." },
               ].map((tool) => (

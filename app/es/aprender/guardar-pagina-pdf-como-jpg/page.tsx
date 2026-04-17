@@ -18,12 +18,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo guardo solo una página de un PDF como JPG?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta PDF a JPG de PDF.it, selecciona la página específica que deseas y convierte solo esa página. Descarga la imagen JPG individual — no necesitas convertir todo el documento." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta PDF a JPG de PDF.it, seleccióna la página específica que deseas y convierte solo esa página. Descarga la imagen JPG individual — no necesitas convertir todo el documento." }
     },
     {
       "@type": "Question",
       "name": "¿Puedo guardar una página PDF como JPG en mi teléfono?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Abre PDF.it en el navegador de tu teléfono (Safari o Chrome), sube tu PDF, selecciona la página que necesitas y descarga el JPG. Se guarda directamente en la biblioteca de fotos de tu teléfono." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Abre PDF.it en el navegador de tu teléfono (Safari o Chrome), sube tu PDF, seleccióna la página que necesitas y descarga el JPG. Se guarda directamente en la biblioteca de fotos de tu teléfono." }
     },
     {
       "@type": "Question",
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Puedo guardar múltiples páginas específicas como JPGs separados?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Puedes seleccionar múltiples páginas individuales (por ejemplo, páginas 1, 3 y 7) y convertir solo esas a JPGs. Cada página seleccionada se convierte en su propio archivo JPG que puedes descargar por separado." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Puedes selecciónar múltiples páginas individuales (por ejemplo, páginas 1, 3 y 7) y convertir solo esas a JPGs. Cada página selecciónada se convierte en su propio archivo JPG que puedes descargar por separado." }
     }
   ]
 }
@@ -62,7 +62,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Selecciona la página a guardar",
-      "text": "Elige la página específica que quieres convertir a JPG. Puedes seleccionar una o múltiples páginas individuales."
+      "text": "Elige la página específica que quieres convertir a JPG. Puedes selecciónar una o múltiples páginas individuales."
     },
     {
       "@type": "HowToStep",
@@ -162,11 +162,11 @@ export default function GuardarPaginaPdfComoJpgPage() {
                   },
                   {
                     title: "Selecciona la página específica",
-                    desc: "Elige qué página(s) quieres guardar como JPGs. Puedes seleccionar páginas individuales como 1, 3 y 5 — no tienes que convertir todo el documento.",
+                    desc: "Elige qué página(s) quieres guardar como JPGs. Puedes selecciónar páginas individuales como 1, 3 y 5 — no tienes que convertir todo el documento.",
                   },
                   {
                     title: "Descarga el JPG",
-                    desc: "Haz clic en Convertir. Tu página seleccionada se guarda como una imagen JPG de alta calidad. Haz clic derecho para guardarla, o se descarga automáticamente dependiendo de tu navegador.",
+                    desc: "Haz clic en Convertir. Tu página selecciónada se guarda como una imagen JPG de alta calidad. Haz clic derecho para guardarla, o se descarga automáticamente dependiendo de tu navegador.",
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -203,7 +203,7 @@ export default function GuardarPaginaPdfComoJpgPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Mac</h3>
                   <p className="text-slate-600 mb-2">
-                    <strong>Opción 1:</strong> Abre en Vista Previa, ve a la página que deseas, luego Archivo &gt; Exportar y selecciona JPEG. Ajusta el deslizador de calidad y haz clic en Guardar. Funciona para páginas individuales.
+                    <strong>Opción 1:</strong> Abre en Vista Previa, ve a la página que deseas, luego Archivo &gt; Exportar y seleccióna JPEG. Ajusta el deslizador de calidad y haz clic en Guardar. Funciona para páginas individuales.
                   </p>
                   <p className="text-slate-600">
                     <strong>Opción 2:</strong> Usa <Link href="/es/pdf-a-jpg" className="text-[#14D8C4] hover:underline">PDF.it en línea</Link> para más control sobre DPI y para manejar múltiples páginas a la vez.
@@ -213,7 +213,7 @@ export default function GuardarPaginaPdfComoJpgPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">iPhone y iPad</h3>
                   <p className="text-slate-600">
-                    iOS no tiene una forma nativa de convertir páginas PDF a JPG. El método más fácil es abrir PDF.it en Safari, subir tu PDF, seleccionar la página y guardar el JPG resultante en tu app de Fotos. No se necesita descargar ninguna app. Consulta nuestra guía detallada: <Link href="/es/aprender/pdf-a-jpg-en-iphone" className="text-[#14D8C4] hover:underline">Convertir PDF a JPG en iPhone</Link>.
+                    iOS no tiene una forma nativa de convertir páginas PDF a JPG. El método más fácil es abrir PDF.it en Safari, subir tu PDF, selecciónar la página y guardar el JPG resultante en tu app de Fotos. No se necesita descargar ninguna app. Consulta nuestra guía detallada: <Link href="/es/aprender/pdf-a-jpg-en-iphone" className="text-[#14D8C4] hover:underline">Convertir PDF a JPG en iPhone</Link>.
                   </p>
                 </div>
 
@@ -230,7 +230,7 @@ export default function GuardarPaginaPdfComoJpgPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Por Qué una Captura de Pantalla No Es Suficiente</h2>
               <p className="text-slate-600 mb-4">
-                Tomar una captura de pantalla de una página PDF es tentador porque es rápido. Pero hay desventajas reales:
+                Tomar una captura de pantalla de una página PDF es tentador porqué es rápido. Pero hay desventajas reales:
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>- <strong>Baja resolución.</strong> Las capturas de pantalla están limitadas a la resolución de tu pantalla (generalmente 72-144 DPI). Una conversión adecuada te da 200-300 DPI — mucho más nítido.</li>
@@ -283,7 +283,7 @@ export default function GuardarPaginaPdfComoJpgPage() {
               {[
                 { title: "Cómo Convertir PDF a JPG Online (Rápido y Alta Calidad)", href: "/es/aprender/convertir-pdf-a-jpg" },
                 { title: "Convertir PDF a JPG para PowerPoint (Mejores Ajustes + Consejos)", href: "/es/aprender/pdf-a-jpg-para-powerpoint" },
-                { title: "Por Qué Tu PDF a JPG Se Ve Borroso (Y Cómo Solucionarlo)", href: "/es/aprender/por-que-pdf-a-jpg-se-ve-borroso" },
+                { title: "Por Qué Tu PDF a JPG Se Ve Borroso (Y Cómo Soluciónarlo)", href: "/es/aprender/por-que-pdf-a-jpg-se-ve-borroso" },
                 { title: "Convertir PDF a JPG en iPhone (Sin Apps)", href: "/es/aprender/pdf-a-jpg-en-iphone" },
               ].map((article) => (
                 <Link
@@ -305,12 +305,12 @@ export default function GuardarPaginaPdfComoJpgPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo guardo solo una página de un PDF como JPG?", a: "Sube tu PDF a la herramienta PDF a JPG de PDF.it, selecciona la página específica que deseas y convierte solo esa página. Descarga la imagen JPG individual — no necesitas convertir todo el documento." },
-                { q: "¿Puedo guardar una página PDF como JPG en mi teléfono?", a: "Sí. Abre PDF.it en el navegador de tu teléfono (Safari o Chrome), sube tu PDF, selecciona la página que necesitas y descarga el JPG. Se guarda directamente en la biblioteca de fotos de tu teléfono." },
+                { q: "¿Cómo guardo solo una página de un PDF como JPG?", a: "Sube tu PDF a la herramienta PDF a JPG de PDF.it, seleccióna la página específica que deseas y convierte solo esa página. Descarga la imagen JPG individual — no necesitas convertir todo el documento." },
+                { q: "¿Puedo guardar una página PDF como JPG en mi teléfono?", a: "Sí. Abre PDF.it en el navegador de tu teléfono (Safari o Chrome), sube tu PDF, seleccióna la página que necesitas y descarga el JPG. Se guarda directamente en la biblioteca de fotos de tu teléfono." },
                 { q: "¿Cómo guardo una página PDF como JPG en Windows?", a: "La forma más rápida es usar una herramienta en línea como PDF.it — no necesitas instalar software. Alternativamente, puedes tomar una captura de pantalla con la Herramienta de Recorte, pero da menor calidad que una conversión a 200-300 DPI." },
                 { q: "¿Cómo guardo una página PDF como JPG en Mac?", a: "En Mac, puedes abrir el PDF en Vista Previa y exportar como JPEG (Archivo > Exportar). Sin embargo, solo funciona para páginas individuales y las opciones de calidad son limitadas. PDF.it te da más control sobre DPI y calidad." },
                 { q: "¿Qué calidad debo usar al guardar una página PDF como JPG?", a: "Para la mayoría de usos (correo, redes sociales, mensajería), 150 DPI es suficiente. Para insertar en documentos o presentaciones, usa 200 DPI. Para impresión, usa 300 DPI. Mayor DPI significa imágenes más nítidas pero archivos más grandes." },
-                { q: "¿Puedo guardar múltiples páginas específicas como JPGs separados?", a: "Sí. Puedes seleccionar múltiples páginas individuales (por ejemplo, páginas 1, 3 y 7) y convertir solo esas a JPGs. Cada página seleccionada se convierte en su propio archivo JPG que puedes descargar por separado." },
+                { q: "¿Puedo guardar múltiples páginas específicas como JPGs separados?", a: "Sí. Puedes selecciónar múltiples páginas individuales (por ejemplo, páginas 1, 3 y 7) y convertir solo esas a JPGs. Cada página selecciónada se convierte en su propio archivo JPG que puedes descargar por separado." },
               ].map((faq, i) => (
                 <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

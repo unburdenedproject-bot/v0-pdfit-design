@@ -5,10 +5,10 @@ import Link from "next/link"
 import { Unlock, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Desbloquear un PDF para Imprimir (Quitar Restricciones de Impresion) | PDF.it",
+  title: "Desbloquear un PDF para Imprimir (Quitar Restricciones de Impresión) | PDF.it",
   description:
-    "No puedes imprimir un PDF? Aprende como eliminar las restricciones de impresion de un archivo PDF en linea. Guia paso a paso para desbloquear PDF para imprimir — rapido, gratis, sin software.",
-  keywords: "desbloquear pdf para imprimir, pdf no imprime, quitar restriccion impresion pdf, habilitar impresion pdf",
+    "No puedes imprimir un PDF? Aprende como eliminar las restricciones de impresión de un archivo PDF en línea. Guia paso a paso para desbloquear PDF para imprimir — rápido, gratis, sin software.",
+  keywords: "desbloquear pdf para imprimir, pdf no imprime, quitar restricción impresión pdf, habilitar impresión pdf",
 }
 
 const faqSchema = {
@@ -17,33 +17,33 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Por que no puedo imprimir mi PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Tu PDF probablemente tiene una restriccion de permisos establecida por el creador que desactiva la impresion. Esto se hace a traves de la configuracion de seguridad del PDF e impide que todos los usuarios impriman el documento, aunque puedan verlo en pantalla." }
+      "name": "Por qué no puedo imprimir mi PDF?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Tu PDF probablemente tiene una restricción de permisos establecida por el creador que desactiva la impresión. Esto se hace a traves de la configuración de seguridad del PDF e impide que todos los usuarios impriman el documento, aunque puedan verlo en pantalla." }
     },
     {
       "@type": "Question",
-      "name": "Como elimino las restricciones de impresion de un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube el PDF a la herramienta Desbloquear PDF de PDF.it. Detectara y eliminara automaticamente la restriccion de impresion. Descarga el archivo desbloqueado e imprimelo normalmente desde cualquier lector de PDF." }
+      "name": "Como elimino las restricciones de impresión de un PDF?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube el PDF a la herramienta Desbloquear PDF de PDF.it. Detectara y eliminara automáticamente la restricción de impresión. Descarga el archivo desbloqueado e imprimelo normalmente desde cualquier lector de PDF." }
     },
     {
       "@type": "Question",
-      "name": "Necesito la contrasena para desbloquear un PDF para imprimir?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si el PDF solo tiene restricciones de permisos (puedes ver pero no imprimir), PDF.it puede frecuentemente eliminar la restriccion de impresion sin necesitar una contrasena. Si el PDF requiere una contrasena para abrirse, necesitaras esa contrasena primero." }
+      "name": "Necesito la contraseña para desbloquear un PDF para imprimir?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si el PDF solo tiene restricciones de permisos (puedes ver pero no imprimir), PDF.it puede frecuentemente eliminar la restricción de impresión sin necesitar una contraseña. Si el PDF requiere una contraseña para abrirse, necesitaras esa contraseña primero." }
     },
     {
       "@type": "Question",
-      "name": "La calidad de impresion cambia despues de desbloquear?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. Desbloquear un PDF solo elimina la restriccion de seguridad — no cambia el contenido, la resolucion ni la calidad. Tu documento impreso se vera exactamente como el creador lo diseno." }
+      "name": "La calidad de impresión cambia después de desbloquear?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Desbloquear un PDF solo elimina la restricción de seguridad — no cambia el contenido, la resolución ni la calidad. Tu documento impreso se vera exactamente como el creador lo diseño." }
     },
     {
       "@type": "Question",
-      "name": "Puedo desbloquear un PDF para imprimir desde mi telefono?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en cualquier navegador movil. Sube el PDF, desbloquealo y descarga la version imprimible. Luego puedes imprimirlo usando la funcion de impresion integrada de tu telefono o transferirlo a una computadora." }
+      "name": "Puedo desbloquear un PDF para imprimir desde mi teléfono?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en cualquier navegador móvil. Sube el PDF, desbloquealo y descarga la version imprimible. Luego puedes imprimirlo usando la función de impresión integrada de tu teléfono o transferirlo a una computadora." }
     },
     {
       "@type": "Question",
-      "name": "Es legal eliminar restricciones de impresion de un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si tienes acceso legitimo al documento y necesitas imprimirlo para uso personal, educativo o empresarial, eliminar la restriccion de impresion es legal. PDF.it esta disenado para usuarios que necesitan imprimir sus propios documentos o archivos compartidos con ellos." }
+      "name": "Es legal eliminar restricciones de impresión de un PDF?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si tienes acceso legitimo al documento y necesitas imprimirlo para uso personal, educativo o empresarial, eliminar la restricción de impresión es legal. PDF.it esta diseñado para usuarios que necesitan imprimir sus propios documentos o archivos compartidos con ellos." }
     }
   ]
 }
@@ -52,7 +52,7 @@ const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "Como Desbloquear un PDF para Imprimir",
-  "description": "Elimina las restricciones de impresion de un PDF en 3 simples pasos con PDF.it.",
+  "description": "Elimina las restricciones de impresión de un PDF en 3 simples pasos con PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
@@ -61,8 +61,8 @@ const howToSchema = {
     },
     {
       "@type": "HowToStep",
-      "name": "Elimina la restriccion de impresion",
-      "text": "PDF.it detecta automaticamente la restriccion de impresion y la elimina. Si el archivo tiene una contrasena de apertura, ingresala cuando se te solicite."
+      "name": "Elimina la restricción de impresión",
+      "text": "PDF.it detecta automáticamente la restricción de impresión y la elimina. Si el archivo tiene una contraseña de apertura, ingresala cuando se te solicite."
     },
     {
       "@type": "HowToStep",
@@ -92,9 +92,9 @@ export default function DesbloquearPDFParaImprimirPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
               <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Desbloquear PDF</p>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Desbloquear un PDF para Imprimir (Quitar Restricciones de Impresion)</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Desbloquear un PDF para Imprimir (Quitar Restricciones de Impresión)</h1>
               <p className="text-xl text-slate-300">
-                Presionaste &quot;Imprimir&quot; y no paso nada? Tu PDF probablemente tiene una restriccion de impresion. Aqui te explicamos como eliminarla en menos de un minuto.
+                Presionaste &quot;Imprimir&quot; y no paso nada? Tu PDF probablemente tiene una restricción de impresión. Aqui te explicamos como eliminarla en menos de un minuto.
               </p>
             </div>
           </div>
@@ -122,14 +122,14 @@ export default function DesbloquearPDFParaImprimirPage() {
         <article className="py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
 
-            {/* Por que no imprime */}
+            {/* Por qué no imprime */}
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que Tu PDF No Se Imprime</h2>
               <p className="text-slate-600 mb-4">
-                Cuando intentas imprimir un PDF y no sucede nada — o la opcion de imprimir esta desactivada — es porque el creador del PDF agrego una restriccion de permisos. Esta es una funcion de seguridad integrada en el formato PDF que permite a los autores controlar lo que los lectores pueden hacer con el archivo.
+                Cuando intentas imprimir un PDF y no sucede nada — o la opción de imprimir esta desactivada — es porque el creador del PDF agrego una restricción de permisos. Esta es una función de seguridad integrada en el formato PDF que permite a los autores controlar lo que los lectores pueden hacer con el archivo.
               </p>
               <p className="text-slate-600 mb-4">
-                Sintomas comunes de un PDF con restriccion de impresion:
+                Sintomas comunes de un PDF con restricción de impresión:
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
@@ -138,7 +138,7 @@ export default function DesbloquearPDFParaImprimirPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
-                  <span><strong>Aparece un mensaje de error</strong> diciendo &quot;La impresion no esta permitida&quot; o &quot;Este documento tiene restricciones que impiden la impresion.&quot;</span>
+                  <span><strong>Aparece un mensaje de error</strong> diciendo &quot;La impresión no esta permitida&quot; o &quot;Este documento tiene restricciones que impiden la impresión.&quot;</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
@@ -150,7 +150,7 @@ export default function DesbloquearPDFParaImprimirPage() {
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
-                La buena noticia: esta es una restriccion de software, no un problema de hardware. PDF.it puede eliminarla en segundos.
+                La buena noticia: esta es una restricción de software, no un problema de hardware. PDF.it puede eliminarla en segundos.
               </p>
             </section>
 
@@ -164,12 +164,12 @@ export default function DesbloquearPDFParaImprimirPage() {
                     desc: "Ve a la herramienta Desbloquear PDF de PDF.it y arrastra tu archivo al area de carga. La herramienta acepta archivos de hasta 25MB gratis — los usuarios Pro pueden subir archivos de hasta 200MB.",
                   },
                   {
-                    title: "Deja que PDF.it elimine la restriccion",
-                    desc: "PDF.it detecta automaticamente la restriccion de impresion y la elimina. Si el PDF tambien requiere una contrasena para abrirse (no solo para imprimir), deberas ingresar esa contrasena. La mayoria de los PDF con restriccion de impresion no requieren contrasena de apertura.",
+                    title: "Deja que PDF.it elimine la restricción",
+                    desc: "PDF.it detecta automáticamente la restricción de impresión y la elimina. Si el PDF también requiere una contraseña para abrirse (no solo para imprimir), deberas ingresar esa contraseña. La mayoría de los PDF con restricción de impresión no requieren contraseña de apertura.",
                   },
                   {
                     title: "Descarga e imprime",
-                    desc: "Descarga el PDF desbloqueado y abrelo en cualquier lector de PDF — Adobe Reader, Chrome, Vista Previa o cualquier otra aplicacion. Usa Ctrl+P (Windows) o Cmd+P (Mac) para imprimir normalmente. El boton de imprimir ya no estara desactivado.",
+                    desc: "Descarga el PDF desbloqueado y abrelo en cualquier lector de PDF — Adobe Reader, Chrome, Vista Previa o cualquier otra aplicación. Usa Ctrl+P (Windows) o Cmd+P (Mac) para imprimir normalmente. El boton de imprimir ya no estara desactivado.",
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -189,24 +189,24 @@ export default function DesbloquearPDFParaImprimirPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Quien Necesita Desbloquear PDF para Imprimir?</h2>
               <p className="text-slate-600 mb-4">
-                Las restricciones de impresion son mas comunes de lo que imaginas. Aqui hay escenarios reales donde la gente encuentra este problema:
+                Las restricciones de impresión son más comunes de lo que imaginas. Aqui hay escenarios reales donde la gente encuentra este problema:
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
-                  <span><strong>Estudiantes imprimiendo apuntes.</strong> Los profesores a veces distribuyen PDF con restricciones de impresion para desalentar la redistribucion. Si necesitas una copia fisica para estudiar, desbloquea el PDF primero.</span>
+                  <span><strong>Estudiantes imprimiendo apuntes.</strong> Los profesores a veces distribuyen PDF con restricciones de impresión para desalentar la redistribucion. Si necesitas una copia fisica para estudiar, desbloquea el PDF primero.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
-                  <span><strong>Empleados imprimiendo informes.</strong> Los informes de la empresa, documentos de recursos humanos o manuales de capacitacion pueden tener restricciones de impresion que hacen imposible repartir copias fisicas en reuniones.</span>
+                  <span><strong>Empleados imprimiendo informes.</strong> Los informes de la empresa, documentos de recursos humanos o manuales de capacitacion pueden tener restricciones de impresión que hacen imposible repartir copias fisicas en reuniones.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
-                  <span><strong>Personas imprimiendo formularios gubernamentales.</strong> Algunas agencias gubernamentales distribuyen formularios PDF que deben completarse y enviarse en papel, pero accidentalmente dejan habilitadas las restricciones de impresion.</span>
+                  <span><strong>Personas imprimiendo formularios gubernamentales.</strong> Algunas agencias gubernamentales distribuyen formularios PDF que deben completarse y enviarse en papel, pero accidentalmente dejan habilitadas las restricciones de impresión.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
-                  <span><strong>Cualquiera imprimiendo recibos o boletos.</strong> Los boletos electronicos, confirmaciones de reserva y facturas a veces vienen como PDF con restriccion de impresion, haciendo imposible producir una copia fisica.</span>
+                  <span><strong>Cualquiera imprimiendo recibos o boletos.</strong> Los boletos electrónicos, confirmaciones de reserva y facturas a veces vienen como PDF con restricción de impresión, haciendo imposible producir una copia fisica.</span>
                 </li>
               </ul>
             </section>
@@ -215,32 +215,32 @@ export default function DesbloquearPDFParaImprimirPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Consejos para Imprimir Tu PDF Desbloqueado</h2>
               <p className="text-slate-600 mb-4">
-                Una vez que hayas eliminado la restriccion de impresion, aqui hay algunos consejos para obtener los mejores resultados:
+                Una vez que hayas eliminado la restricción de impresión, aquí hay algunos consejos para obtener los mejores resultados:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Verifica el tamano de pagina.</strong> Asegurate de que tu impresora este configurada con el mismo tamano de pagina que el PDF (generalmente A4 o Carta). Tamanos no coincidentes pueden cortar contenido o agregar margenes no deseados.</li>
-                <li>&#10003; <strong>Usa &quot;Ajustar a pagina&quot; en la configuracion de impresion.</strong> Esto asegura que todo el contenido de la pagina se imprima sin cortarse, incluso si las dimensiones del PDF no coinciden exactamente con el tamano de tu papel.</li>
-                <li>&#10003; <strong>Imprime una pagina de prueba primero.</strong> Antes de imprimir un documento de 50 paginas, imprime la pagina 1 para verificar que todo se ve correcto.</li>
-                <li>&#10003; <strong>Comprime antes de imprimir archivos grandes.</strong> Si el PDF es muy grande (50MB+), puede tardar mucho tiempo en enviarse a la impresora. Usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para reducir el tamano primero — esto no afectara la calidad de impresion.</li>
+                <li>&#10003; <strong>Verifica el tamaño de página.</strong> Asegurate de que tu impresora este configurada con el mismo tamaño de página que el PDF (generalmente A4 o Carta). Tamaños no coincidentes pueden cortar contenido o agregar margenes no deseados.</li>
+                <li>&#10003; <strong>Usa &quot;Ajustar a página&quot; en la configuración de impresión.</strong> Esto asegura que todo el contenido de la página se imprima sin cortarse, incluso si las dimensiones del PDF no coinciden exactamente con el tamaño de tu papel.</li>
+                <li>&#10003; <strong>Imprime una página de prueba primero.</strong> Antes de imprimir un documento de 50 páginas, imprime la página 1 para verificar que todo se ve correcto.</li>
+                <li>&#10003; <strong>Comprime antes de imprimir archivos grandes.</strong> Si el PDF es muy grande (50MB+), puede tardar mucho tiempo en enviarse a la impresora. Usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para reducir el tamaño primero — esto no afectara la calidad de impresión.</li>
                 <li>&#10003; <strong>Aplana formularios antes de imprimir.</strong> Si el PDF tiene campos de formulario, usa <Link href="/es/aplanar-pdf" className="text-[#14D8C4] hover:underline">Aplanar PDF</Link> para asegurar que todos los datos completados se impriman correctamente.</li>
               </ul>
             </section>
 
             {/* Alternativas */}
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Otras Formas de Manejar PDF con Restriccion de Impresion</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Otras Formas de Manejar PDF con Restricción de Impresión</h2>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Convertir a Imagen</h3>
                   <p className="text-slate-600">
-                    Si solo necesitas imprimir unas pocas paginas, puedes convertir el PDF a imagenes usando <Link href="/es/pdf-a-jpg" className="text-[#14D8C4] hover:underline">PDF a JPG</Link>, luego imprimir las imagenes. Esto funciona como solucion alternativa pero la calidad puede ser ligeramente menor que imprimir el PDF directamente.
+                    Si solo necesitas imprimir unas pocas páginas, puedes convertir el PDF a imágenes usando <Link href="/es/pdf-a-jpg" className="text-[#14D8C4] hover:underline">PDF a JPG</Link>, luego imprimir las imágenes. Esto funciona como solución alternativa pero la calidad puede ser ligeramente menor que imprimir el PDF directamente.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Pedir al Remitente una Version Desbloqueada</h3>
                   <p className="text-slate-600">
-                    Si el PDF vino de un colega, cliente u organizacion, puedes pedirles que reenvien el archivo sin restricciones de impresion. Muchas personas agregan restricciones por defecto sin darse cuenta.
+                    Si el PDF vino de un colega, cliente u organización, puedes pedirles que reenvien el archivo sin restricciones de impresión. Muchas personas agregan restricciones por defecto sin darse cuenta.
                   </p>
                 </div>
               </div>
@@ -253,7 +253,7 @@ export default function DesbloquearPDFParaImprimirPage() {
         <section className="py-12" style={{ background: "#0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Listo para Imprimir Tu PDF?</h2>
-            <p className="text-slate-300 mb-6">Elimina la restriccion de impresion y ten tu documento impreso en segundos — gratis, sin necesidad de registro.</p>
+            <p className="text-slate-300 mb-6">Elimina la restricción de impresión y ten tu documento impreso en segundos — gratis, sin necesidad de registro.</p>
             <Link
               href="/es/desbloquear-pdf"
               className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
@@ -266,12 +266,12 @@ export default function DesbloquearPDFParaImprimirPage() {
         {/* Related Articles */}
         <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-6">Articulos Relacionados</h2>
+            <h2 className="text-2xl font-black text-slate-900 mb-6">Artículos Relacionados</h2>
             <div className="grid gap-3">
               {[
-                { title: "Como Desbloquear un PDF en Linea (Quitar Restricciones)", href: "/es/aprender/como-desbloquear-pdf" },
-                { title: "Olvidaste Tu Contrasena de PDF? Esto Es Lo Que Puedes Hacer", href: "/es/aprender/desbloquear-pdf-contrasena-olvidada" },
-                { title: "Desbloquear un PDF en Tu Telefono (iPhone y Android)", href: "/es/aprender/desbloquear-pdf-en-movil" },
+                { title: "Como Desbloquear un PDF en Línea (Quitar Restricciones)", href: "/es/aprender/como-desbloquear-pdf" },
+                { title: "Olvidaste Tu Contraseña de PDF? Esto Es Lo Que Puedes Hacer", href: "/es/aprender/desbloquear-pdf-contraseña-olvidada" },
+                { title: "Desbloquear un PDF en Tu Teléfono (iPhone y Android)", href: "/es/aprender/desbloquear-pdf-en-movil" },
               ].map((article) => (
                 <Link
                   key={article.href}
@@ -292,12 +292,12 @@ export default function DesbloquearPDFParaImprimirPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Por que no puedo imprimir mi PDF?", a: "Tu PDF probablemente tiene una restriccion de permisos establecida por el creador que desactiva la impresion. Esto se hace a traves de la configuracion de seguridad del PDF e impide que todos los usuarios impriman el documento, aunque puedan verlo en pantalla." },
-                { q: "Como elimino las restricciones de impresion de un PDF?", a: "Sube el PDF a la herramienta Desbloquear PDF de PDF.it. Detectara y eliminara automaticamente la restriccion de impresion. Descarga el archivo desbloqueado e imprimelo normalmente desde cualquier lector de PDF." },
-                { q: "Necesito la contrasena para desbloquear un PDF para imprimir?", a: "Si el PDF solo tiene restricciones de permisos (puedes ver pero no imprimir), PDF.it puede frecuentemente eliminar la restriccion de impresion sin necesitar una contrasena. Si el PDF requiere una contrasena para abrirse, necesitaras esa contrasena primero." },
-                { q: "La calidad de impresion cambia despues de desbloquear?", a: "No. Desbloquear un PDF solo elimina la restriccion de seguridad — no cambia el contenido, la resolucion ni la calidad. Tu documento impreso se vera exactamente como el creador lo diseno." },
-                { q: "Puedo desbloquear un PDF para imprimir desde mi telefono?", a: "Si. PDF.it funciona en cualquier navegador movil. Sube el PDF, desbloquealo y descarga la version imprimible. Luego puedes imprimirlo usando la funcion de impresion integrada de tu telefono o transferirlo a una computadora." },
-                { q: "Es legal eliminar restricciones de impresion de un PDF?", a: "Si tienes acceso legitimo al documento y necesitas imprimirlo para uso personal, educativo o empresarial, eliminar la restriccion de impresion es legal. PDF.it esta disenado para usuarios que necesitan imprimir sus propios documentos o archivos compartidos con ellos." },
+                { q: "Por qué no puedo imprimir mi PDF?", a: "Tu PDF probablemente tiene una restricción de permisos establecida por el creador que desactiva la impresión. Esto se hace a traves de la configuración de seguridad del PDF e impide que todos los usuarios impriman el documento, aunque puedan verlo en pantalla." },
+                { q: "Como elimino las restricciones de impresión de un PDF?", a: "Sube el PDF a la herramienta Desbloquear PDF de PDF.it. Detectara y eliminara automáticamente la restricción de impresión. Descarga el archivo desbloqueado e imprimelo normalmente desde cualquier lector de PDF." },
+                { q: "Necesito la contraseña para desbloquear un PDF para imprimir?", a: "Si el PDF solo tiene restricciones de permisos (puedes ver pero no imprimir), PDF.it puede frecuentemente eliminar la restricción de impresión sin necesitar una contraseña. Si el PDF requiere una contraseña para abrirse, necesitaras esa contraseña primero." },
+                { q: "La calidad de impresión cambia después de desbloquear?", a: "No. Desbloquear un PDF solo elimina la restricción de seguridad — no cambia el contenido, la resolución ni la calidad. Tu documento impreso se vera exactamente como el creador lo diseño." },
+                { q: "Puedo desbloquear un PDF para imprimir desde mi teléfono?", a: "Si. PDF.it funciona en cualquier navegador móvil. Sube el PDF, desbloquealo y descarga la version imprimible. Luego puedes imprimirlo usando la función de impresión integrada de tu teléfono o transferirlo a una computadora." },
+                { q: "Es legal eliminar restricciones de impresión de un PDF?", a: "Si tienes acceso legitimo al documento y necesitas imprimirlo para uso personal, educativo o empresarial, eliminar la restricción de impresión es legal. PDF.it esta diseñado para usuarios que necesitan imprimir sus propios documentos o archivos compartidos con ellos." },
               ].map((faq, i) => (
                 <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

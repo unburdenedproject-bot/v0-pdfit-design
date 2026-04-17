@@ -199,16 +199,16 @@ export function PDFToWordInterface() {
         const file = files[idx]
         // Create a realistic Word document content
         const wordContent = `
-PDF to Word Conversion - ${file.name}
+PDF to Word Conversión - ${file.name}
 
 Document successfully converted from PDF to Microsoft Word format.
 
 Original File: ${file.name}
-Conversion Date: ${new Date().toLocaleString()}
+Conversión Date: ${new Date().toLocaleString()}
 Original Size: ${(file.size / 1024 / 1024).toFixed(2)} MB
 Output Format: Microsoft Word (.docx)
 
-CONVERSION SUMMARY
+CONVERSIÓN SUMMARY
 ==================
 
 ✓ Text extraction completed
@@ -249,7 +249,7 @@ Processed by PDF.it - Professional PDF Tools
       setState("complete")
     } catch (error) {
       console.error("Processing failed:", error)
-      setErrorMessage("Conversion failed. Please try again or contact support if the problem persists.")
+      setErrorMessage("Conversión failed. Please try again or contact support if the problem persists.")
       setState("error")
     }
   }, [files, processingSteps])
@@ -375,7 +375,7 @@ Processed by PDF.it - Professional PDF Tools
             <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <AlertCircle className="h-10 w-10 text-red-600" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Conversion Failed</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Conversión Failed</h2>
             <p className="text-slate-600 mb-8">{errorMessage}</p>
             <div className="flex gap-4 justify-center">
               <Button onClick={resetInterface} className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E]">
@@ -401,7 +401,7 @@ Processed by PDF.it - Professional PDF Tools
             <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <CheckCircle className="h-10 w-10 text-green-600" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Conversion Successful!</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Conversión Successful!</h2>
             <p className="text-slate-600 mb-8">
               Your PDF {files.length > 1 ? "files have" : "file has"} been successfully converted to editable Word
               format with all formatting preserved.
@@ -431,9 +431,9 @@ Processed by PDF.it - Professional PDF Tools
               ))}
             </div>
 
-            {/* Conversion Details */}
+            {/* Conversión Details */}
             <div className="bg-white border border-gray-200 rounded-lg p-6 mb-8 text-left">
-              <h3 className="font-bold text-slate-900 mb-3">Conversion Details</h3>
+              <h3 className="font-bold text-slate-900 mb-3">Conversión Details</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                 <div className="flex justify-between">
                   <span className="text-slate-600">Files processed:</span>
@@ -578,7 +578,7 @@ Processed by PDF.it - Professional PDF Tools
 
           {files.length > 0 && (
             <div className="mt-8 space-y-4">
-              <h3 className="text-lg font-bold text-slate-900">Files ready for conversion:</h3>
+              <h3 className="text-lg font-bold text-slate-900">Files ready for conversión:</h3>
               {files.map((file, index) => (
                 <div
                   key={index}

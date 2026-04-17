@@ -142,7 +142,7 @@ export default function ContactoPage() {
                 {/* Right Column — Contact Form (white card) */}
                 <div>
                   <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-6">Env&#237;anos un Mensaje</h2>
+                    <h2 className="text-2xl font-bold text-slate-900 mb-6">Env&#237;años un Mensaje</h2>
 
                     {isSubmitted ? (
                       <div className="text-center py-8">

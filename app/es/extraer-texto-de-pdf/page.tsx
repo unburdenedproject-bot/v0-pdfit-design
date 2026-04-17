@@ -23,11 +23,11 @@ export default function ExtraerTextoDePDFPage() {
     },
     {
         "q": "¿Puedo extraer texto de un PDF escaneado?",
-        "a": "Los PDFs escaneados contienen imágenes en lugar de texto seleccionable. Para extraer texto de escaneos, usa la herramienta Escáner OCR de PDF.it, que usa reconocimiento óptico de caracteres para leer texto de imágenes."
+        "a": "Los PDFs escaneados contienen imágenes en lugar de texto selecciónable. Para extraer texto de escaneos, usa la herramienta Escáner OCR de PDF.it, que usa reconocimiento óptico de caracteres para leer texto de imágenes."
     },
     {
         "q": "¿Qué idiomas son soportados para extracción de texto?",
-        "a": "PDF.it puede extraer texto de PDFs en cualquier idioma, incluyendo español, inglés, francés, alemán, chino, japonés, árabe y más — siempre que el PDF contenga texto seleccionable."
+        "a": "PDF.it puede extraer texto de PDFs en cualquier idioma, incluyendo español, inglés, francés, alemán, chino, japonés, árabe y más — siempre que el PDF contenga texto selecciónable."
     },
     {
         "q": "¿Puedo extraer texto de un PDF desde mi celular?",
@@ -60,9 +60,9 @@ export default function ExtraerTextoDePDFPage() {
 
         {/* Intro */}
         <section className="py-10 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-          <p className="text-lg text-slate-600 leading-relaxed">¿Necesitas el texto de un PDF sin el diseño, imágenes ni formato? PDF.it extrae todo el texto seleccionable de tu PDF y lo entrega como un archivo de texto plano limpio que puedes copiar, editar o pegar en cualquier lugar.</p>
+          <p className="text-lg text-slate-600 leading-relaxed">¿Necesitas el texto de un PDF sin el diseño, imágenes ni formato? PDF.it extrae todo el texto selecciónable de tu PDF y lo entrega como un archivo de texto plano limpio que puedes copiar, editar o pegar en cualquier lugar.</p>
           <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
-            <li className="flex items-center gap-2">✓ Extrae todo el texto seleccionable de cualquier PDF</li>
+            <li className="flex items-center gap-2">✓ Extrae todo el texto selecciónable de cualquier PDF</li>
             <li className="flex items-center gap-2">✓ Resultado como un archivo de texto plano limpio</li>
             <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
             <li className="flex items-center gap-2">✓ Sin instalación — extrae texto en tu navegador</li>
@@ -95,7 +95,7 @@ export default function ExtraerTextoDePDFPage() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
             {[
               { num: "1", title: "Sube tu PDF", desc: "Arrastra y suelta o haz clic para elegir un archivo" },
-              { num: "2", title: "Haz clic en Extraer Texto", desc: "Todo el texto seleccionable se extrae automáticamente" },
+              { num: "2", title: "Haz clic en Extraer Texto", desc: "Todo el texto selecciónable se extrae automáticamente" },
               { num: "3", title: "Descarga tu texto", desc: "Obtén el archivo de texto plano o copia directamente" },
             ].map((step) => (
               <div key={step.num} className="flex-1">
@@ -115,7 +115,7 @@ export default function ExtraerTextoDePDFPage() {
               { name: "PDF a TXT", href: "/es/pdf-a-txt", desc: "Convierte PDF a archivo de texto" },
               { name: "Escáner OCR", href: "/es/escaner-ocr", desc: "Extrae texto de escaneos" },
               { name: "PDF a Word", href: "/es/pdf-a-word", desc: "Convierte PDF a Word" },
-              { name: "Extraer Imágenes", href: "/es/extraer-imagenes-de-pdf", desc: "Extrae imágenes de PDFs" },
+              { name: "Extraer Imágenes", href: "/es/extraer-imágenes-de-pdf", desc: "Extrae imágenes de PDFs" },
             ].map((tool) => (
               <div key={tool.href} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}>
                 <Link href={tool.href} className="rounded-[11px] p-4 transition-all duration-200 hover:-translate-y-1 block h-full text-center flex flex-col justify-center min-h-[80px]" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>

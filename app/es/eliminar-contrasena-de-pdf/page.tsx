@@ -6,9 +6,9 @@ import { Unlock, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Eliminar Contrasena de PDF Online — Desbloquea PDFs Protegidos | PDF.it",
-  description: "Elimina la proteccion con contrasena de un PDF con PDF.it. Ingresa la contrasena, desbloquea tu archivo y descarga un PDF sin proteccion — rapido, gratis y en tu navegador.",
-  alternates: { canonical: "https://www.pdf.it.com/es/eliminar-contrasena-de-pdf", languages: { en: "/remove-password-from-pdf", es: "/es/eliminar-contrasena-de-pdf" } },
+  title: "Eliminar Contraseña de PDF Online — Desbloquea PDFs Protegidos | PDF.it",
+  description: "Elimina la protección con contraseña de un PDF con PDF.it. Ingresa la contraseña, desbloquea tu archivo y descarga un PDF sin protección — rápido, gratis y en tu navegador.",
+  alternates: { canonical: "https://www.pdf.it.com/es/eliminar-contraseña-de-pdf", languages: { en: "/remove-password-from-pdf", es: "/es/eliminar-contraseña-de-pdf" } },
 }
 
 export default function EliminarContrasenaDePDFPage() {

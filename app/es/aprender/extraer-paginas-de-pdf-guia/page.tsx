@@ -14,12 +14,12 @@ export const metadata = {
 const faqSchema = {
   "@context": "https://schema.org", "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "¿Cómo extraigo páginas específicas de un PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Dividir PDF de PDF.it, selecciona los números de página que quieres conservar, y descarga un nuevo PDF que contiene solo esas páginas. No se necesita instalar software." } },
+    { "@type": "Question", "name": "¿Cómo extraigo páginas específicas de un PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Dividir PDF de PDF.it, seleccióna los números de página que quieres conservar, y descarga un nuevo PDF que contiene solo esas páginas. No se necesita instalar software." } },
     { "@type": "Question", "name": "¿Puedo extraer páginas de un PDF sin perder calidad?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it extrae páginas sin re-codificarlas, así que tu texto, imágenes y formato permanecen idénticos al documento original." } },
     { "@type": "Question", "name": "¿Es gratis extraer páginas de un PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it te permite extraer páginas gratis con archivos de hasta 25MB. Obtienes 3 operaciones gratuitas sin registrarte, y 10 por día con una cuenta gratuita." } },
-    { "@type": "Question", "name": "¿Puedo extraer páginas no consecutivas de un PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Puedes seleccionar cualquier combinación de páginas — por ejemplo páginas 1, 3, 7 y 12 — y PDF.it las combinará en un solo nuevo PDF en el orden que especificaste." } },
+    { "@type": "Question", "name": "¿Puedo extraer páginas no consecutivas de un PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Puedes selecciónar cualquier combinación de páginas — por ejemplo páginas 1, 3, 7 y 12 — y PDF.it las combinará en un solo nuevo PDF en el orden que especificaste." } },
     { "@type": "Question", "name": "¿Cómo extraigo páginas de un PDF protegido con contraseña?", "acceptedAnswer": { "@type": "Answer", "text": "Primero, usa la herramienta Desbloquear PDF de PDF.it para eliminar la protección con contraseña, luego usa la herramienta Dividir PDF para extraer las páginas que necesitas." } },
-    { "@type": "Question", "name": "¿Puedo extraer páginas de un PDF en mi teléfono?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, selecciona las páginas a extraer, y descarga el resultado — sin app necesaria." } }
+    { "@type": "Question", "name": "¿Puedo extraer páginas de un PDF en mi teléfono?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, seleccióna las páginas a extraer, y descarga el resultado — sin app necesaria." } }
   ]
 }
 
@@ -28,8 +28,8 @@ const howToSchema = {
   "description": "Saca páginas específicas de un PDF y guárdalas como un nuevo archivo en 3 simples pasos usando PDF.it.",
   "step": [
     { "@type": "HowToStep", "name": "Sube tu PDF", "text": "Ve a la herramienta Dividir PDF de PDF.it y sube el documento del que quieres extraer páginas haciendo clic o arrastrándolo al área de carga." },
-    { "@type": "HowToStep", "name": "Selecciona las páginas a extraer", "text": "Ingresa los números de página o rangos de páginas que quieres conservar. Puedes seleccionar páginas individuales como 1, 3, 5 o rangos como 1-5, 10-15." },
-    { "@type": "HowToStep", "name": "Descarga tus páginas extraídas", "text": "Haz clic en Dividir PDF y descarga tu nuevo documento que contiene solo las páginas que seleccionaste. El archivo original permanece sin cambios." }
+    { "@type": "HowToStep", "name": "Selecciona las páginas a extraer", "text": "Ingresa los números de página o rangos de páginas que quieres conservar. Puedes selecciónar páginas individuales como 1, 3, 5 o rangos como 1-5, 10-15." },
+    { "@type": "HowToStep", "name": "Descarga tus páginas extraídas", "text": "Haz clic en Dividir PDF y descarga tu nuevo documento que contiene solo las páginas que selecciónaste. El archivo original permanece sin cambios." }
   ]
 }
 
@@ -95,8 +95,8 @@ export default function ExtraerPaginasDePDFGuiaPage() {
               <div className="space-y-4">
                 {[
                   { title: "Sube tu PDF", desc: "Ve a la herramienta Dividir PDF de PDF.it y arrastra tu archivo al área de carga, o haz clic para buscar. Archivos hasta 25MB son gratis — usuarios Pro pueden subir archivos hasta 200MB." },
-                  { title: "Selecciona las páginas que quieres conservar", desc: "Ingresa los números de página o rangos que necesitas. Por ejemplo, escribe \"1, 3, 7-12\" para extraer las páginas 1, 3, y 7 a 12. También puedes hacer clic en las miniaturas de páginas para seleccionarlas visualmente." },
-                  { title: "Descarga tu nuevo PDF", desc: "Haz clic en Dividir PDF y descarga el resultado. Tu nuevo archivo contiene solo las páginas que seleccionaste, en el orden que especificaste. El archivo original no se modifica." },
+                  { title: "Selecciona las páginas que quieres conservar", desc: "Ingresa los números de página o rangos que necesitas. Por ejemplo, escribe \"1, 3, 7-12\" para extraer las páginas 1, 3, y 7 a 12. También puedes hacer clic en las miniaturas de páginas para selecciónarlas visualmente." },
+                  { title: "Descarga tu nuevo PDF", desc: "Haz clic en Dividir PDF y descarga el resultado. Tu nuevo archivo contiene solo las páginas que selecciónaste, en el orden que especificaste. El archivo original no se modifica." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
                     <div className="w-8 h-8 bg-[#14D8C4] text-[#0E0F1E] rounded-full flex items-center justify-center font-black text-sm flex-shrink-0">{i + 1}</div>
@@ -111,7 +111,7 @@ export default function ExtraerPaginasDePDFGuiaPage() {
 
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Extraer Páginas No Consecutivas</h2>
-              <p className="text-slate-600 mb-4">Una de las características más útiles de la extracción de páginas es seleccionar páginas que no están en fila. Por ejemplo, de un contrato de 30 páginas podrías necesitar solo:</p>
+              <p className="text-slate-600 mb-4">Una de las características más útiles de la extracción de páginas es selecciónar páginas que no están en fila. Por ejemplo, de un contrato de 30 páginas podrías necesitar solo:</p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#10003; <strong>Página 1</strong> — la portada con nombres de las partes</li>
                 <li>&#10003; <strong>Páginas 5-8</strong> — la sección de términos de pago</li>
@@ -188,12 +188,12 @@ export default function ExtraerPaginasDePDFGuiaPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo extraigo páginas específicas de un PDF?", a: "Sube tu PDF a la herramienta Dividir PDF de PDF.it, selecciona los números de página que quieres conservar, y descarga un nuevo PDF que contiene solo esas páginas. No se necesita instalar software." },
+                { q: "¿Cómo extraigo páginas específicas de un PDF?", a: "Sube tu PDF a la herramienta Dividir PDF de PDF.it, seleccióna los números de página que quieres conservar, y descarga un nuevo PDF que contiene solo esas páginas. No se necesita instalar software." },
                 { q: "¿Puedo extraer páginas de un PDF sin perder calidad?", a: "Sí. PDF.it extrae páginas sin re-codificarlas, así que tu texto, imágenes y formato permanecen idénticos al documento original." },
                 { q: "¿Es gratis extraer páginas de un PDF?", a: "Sí. PDF.it te permite extraer páginas gratis con archivos de hasta 25MB. Obtienes 3 operaciones gratuitas sin registrarte, y 10 por día con una cuenta gratuita." },
-                { q: "¿Puedo extraer páginas no consecutivas de un PDF?", a: "Sí. Puedes seleccionar cualquier combinación de páginas — por ejemplo páginas 1, 3, 7 y 12 — y PDF.it las combinará en un solo nuevo PDF en el orden que especificaste." },
+                { q: "¿Puedo extraer páginas no consecutivas de un PDF?", a: "Sí. Puedes selecciónar cualquier combinación de páginas — por ejemplo páginas 1, 3, 7 y 12 — y PDF.it las combinará en un solo nuevo PDF en el orden que especificaste." },
                 { q: "¿Cómo extraigo páginas de un PDF protegido con contraseña?", a: "Primero, usa la herramienta Desbloquear PDF de PDF.it para eliminar la protección con contraseña, luego usa la herramienta Dividir PDF para extraer las páginas que necesitas." },
-                { q: "¿Puedo extraer páginas de un PDF en mi teléfono?", a: "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, selecciona las páginas a extraer, y descarga el resultado — sin app necesaria." },
+                { q: "¿Puedo extraer páginas de un PDF en mi teléfono?", a: "Sí. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, seleccióna las páginas a extraer, y descarga el resultado — sin app necesaria." },
               ].map((faq, i) => (
                 <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

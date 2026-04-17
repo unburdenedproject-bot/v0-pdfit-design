@@ -5,10 +5,10 @@ import Link from "next/link"
 import { Unlock, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Desbloquear un PDF en Linea (Quitar Restricciones) | PDF.it",
+  title: "Como Desbloquear un PDF en Línea (Quitar Restricciones) | PDF.it",
   description:
-    "Aprende como desbloquear un PDF y quitar restricciones de impresion, copia y edicion. Guia paso a paso para eliminar contrasenas de PDF en linea — rapido y gratis.",
-  keywords: "desbloquear pdf en linea, quitar restricciones pdf, desbloquear pdf para editar, eliminar contrasena pdf",
+    "Aprende como desbloquear un PDF y quitar restricciones de impresión, copia y edición. Guia paso a paso para eliminar contraseñas de PDF en línea — rápido y gratis.",
+  keywords: "desbloquear pdf en línea, quitar restricciones pdf, desbloquear pdf para editar, eliminar contraseña pdf",
 }
 
 const faqSchema = {
@@ -17,33 +17,33 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Como puedo desbloquear un PDF en linea gratis?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF bloqueado a la herramienta Desbloquear PDF de PDF.it, ingresa la contrasena si se te solicita, y descarga la version sin restricciones. No necesitas instalar software — funciona directamente en tu navegador." }
+      "name": "Como puedo desbloquear un PDF en línea gratis?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF bloqueado a la herramienta Desbloquear PDF de PDF.it, ingresa la contraseña si se te solicita, y descarga la version sin restricciones. No necesitas instalar software — funciona directamente en tu navegador." }
     },
     {
       "@type": "Question",
       "name": "Que restricciones de PDF se pueden eliminar?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it puede eliminar restricciones de permisos que impiden imprimir, copiar texto, editar y anotar. Si el PDF tiene una contrasena de apertura (necesaria para ver el archivo), deberas ingresarla primero." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it puede eliminar restricciones de permisos que impiden imprimir, copiar texto, editar y anotar. Si el PDF tiene una contraseña de apertura (necesaria para ver el archivo), deberas ingresarla primero." }
     },
     {
       "@type": "Question",
       "name": "Es legal desbloquear un PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si eres el propietario del documento o tienes autorizacion para acceder a el, eliminar las restricciones es perfectamente legal. PDF.it esta disenado para usuarios que necesitan desbloquear sus propios archivos — por ejemplo, cuando estableciste una contrasena y luego necesitas eliminarla." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si eres el propietario del documento o tienes autorizacion para acceder a el, eliminar las restricciones es perfectamente legal. PDF.it esta diseñado para usuarios que necesitan desbloquear sus propios archivos — por ejemplo, cuando estableciste una contraseña y luego necesitas eliminarla." }
     },
     {
       "@type": "Question",
       "name": "Desbloquear un PDF cambia su contenido?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. Desbloquear un PDF solo elimina las restricciones de seguridad. El contenido, el diseno, las imagenes y el formato permanecen exactamente iguales. Tu documento se vera identico — simplemente ya no tendra restricciones." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Desbloquear un PDF solo elimina las restricciones de seguridad. El contenido, el diseño, las imágenes y el formato permanecen exactamente iguales. Tu documento se vera identico — simplemente ya no tendrá restricciones." }
     },
     {
       "@type": "Question",
-      "name": "Puedo desbloquear un PDF sin la contrasena?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si el PDF solo tiene restricciones de permisos (sin contrasena de apertura), PDF.it puede eliminar esas restricciones sin necesitar una contrasena. Si el PDF requiere una contrasena para abrirse, deberas proporcionarla." }
+      "name": "Puedo desbloquear un PDF sin la contraseña?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si el PDF solo tiene restricciones de permisos (sin contraseña de apertura), PDF.it puede eliminar esas restricciones sin necesitar una contraseña. Si el PDF requiere una contraseña para abrirse, deberas proporcionarla." }
     },
     {
       "@type": "Question",
       "name": "El desbloqueo funciona en todos los archivos PDF?",
-      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it funciona con cifrado PDF estandar (40 bits, 128 bits y AES de 256 bits). Maneja la mayoria de los PDF creados por Adobe Acrobat, Microsoft Office, escaneres y otras herramientas comunes." }
+      "acceptedAnswer": { "@type": "Answer", "text": "PDF.it funciona con cifrado PDF estándar (40 bits, 128 bits y AES de 256 bits). Maneja la mayoría de los PDF creados por Adobe Acrobat, Microsoft Office, escáneres y otras herramientas comunes." }
     }
   ]
 }
@@ -51,7 +51,7 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Como Desbloquear un PDF en Linea",
+  "name": "Como Desbloquear un PDF en Línea",
   "description": "Elimina las restricciones de PDF en 3 simples pasos con PDF.it.",
   "step": [
     {
@@ -61,8 +61,8 @@ const howToSchema = {
     },
     {
       "@type": "HowToStep",
-      "name": "Ingresa la contrasena si es necesario",
-      "text": "Si el PDF tiene una contrasena de apertura, ingresala cuando se te solicite. Si solo tiene restricciones de permisos, PDF.it lo manejara automaticamente."
+      "name": "Ingresa la contraseña si es necesario",
+      "text": "Si el PDF tiene una contraseña de apertura, ingresala cuando se te solicite. Si solo tiene restricciones de permisos, PDF.it lo manejara automáticamente."
     },
     {
       "@type": "HowToStep",
@@ -92,7 +92,7 @@ export default function ComoDesbloquearPDFPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
               <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Desbloquear PDF</p>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Como Desbloquear un PDF en Linea (Quitar Restricciones)</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Como Desbloquear un PDF en Línea (Quitar Restricciones)</h1>
               <p className="text-xl text-slate-300">
                 Tienes un PDF que no puedes imprimir, copiar o editar? Aqui te explicamos como eliminar las restricciones de PDF en segundos — sin necesidad de software.
               </p>
@@ -126,20 +126,20 @@ export default function ComoDesbloquearPDFPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Que Son las Restricciones de PDF?</h2>
               <p className="text-slate-600 mb-4">
-                Los archivos PDF pueden tener dos tipos de proteccion con contrasena. Entender la diferencia es clave para desbloquear tu documento:
+                Los archivos PDF pueden tener dos tipos de protección con contraseña. Entender la diferencia es clave para desbloquear tu documento:
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
-                  <span><strong>Contrasena de apertura (contrasena de usuario).</strong> Esta impide que cualquier persona abra el PDF sin ingresar la contrasena correcta. Debes conocer esta contrasena para ver el archivo.</span>
+                  <span><strong>Contraseña de apertura (contraseña de usuario).</strong> Esta impide que cualquier persona abra el PDF sin ingresar la contraseña correcta. Debes conocer esta contraseña para ver el archivo.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
-                  <span><strong>Contrasena de permisos (contrasena de propietario).</strong> Esta te permite ver el PDF pero bloquea acciones especificas como imprimir, copiar texto, editar o anotar. Este es el tipo mas comun de restriccion que la gente necesita eliminar.</span>
+                  <span><strong>Contraseña de permisos (contraseña de propietario).</strong> Esta te permite ver el PDF pero bloquea acciones específicas como imprimir, copiar texto, editar o anotar. Este es el tipo más común de restricción que la gente necesita eliminar.</span>
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
-                La mayoria de los PDF bloqueados que encuentras tienen restricciones de permisos — puedes abrirlos y leerlos, pero no puedes imprimir o copiar texto. La herramienta <Link href="/es/desbloquear-pdf" className="text-[#14D8C4] hover:underline">Desbloquear PDF</Link> de PDF.it maneja ambos tipos.
+                La mayoría de los PDF bloqueados que encuentras tienen restricciones de permisos — puedes abrirlos y leerlos, pero no puedes imprimir o copiar texto. La herramienta <Link href="/es/desbloquear-pdf" className="text-[#14D8C4] hover:underline">Desbloquear PDF</Link> de PDF.it maneja ambos tipos.
               </p>
             </section>
 
@@ -153,8 +153,8 @@ export default function ComoDesbloquearPDFPage() {
                     desc: "Ve a la herramienta Desbloquear PDF y arrastra tu archivo al area de carga, o haz clic para buscar. Los archivos de hasta 25MB son gratis — los usuarios Pro pueden subir archivos de hasta 200MB.",
                   },
                   {
-                    title: "Ingresa la contrasena si es necesario",
-                    desc: "Si el PDF tiene una contrasena de apertura, se te pedira que la ingreses. Si el archivo solo tiene restricciones de permisos (puedes verlo pero no puedes imprimir o copiar), PDF.it las elimina automaticamente — no necesitas ingresar contrasena.",
+                    title: "Ingresa la contraseña si es necesario",
+                    desc: "Si el PDF tiene una contraseña de apertura, se te pedira que la ingreses. Si el archivo solo tiene restricciones de permisos (puedes verlo pero no puedes imprimir o copiar), PDF.it las elimina automáticamente — no necesitas ingresar contraseña.",
                   },
                   {
                     title: "Descarga el PDF desbloqueado",
@@ -183,19 +183,19 @@ export default function ComoDesbloquearPDFPage() {
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
-                  <span><strong>Imprimir para una reunion.</strong> Tu colega envio un informe como PDF restringido y necesitas imprimir copias para una presentacion. Usa PDF.it para eliminar la restriccion de impresion.</span>
+                  <span><strong>Imprimir para una reunion.</strong> Tu colega envio un informe como PDF restringido y necesitas imprimir copias para una presentación. Usa PDF.it para eliminar la restricción de impresión.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
-                  <span><strong>Copiar texto para investigacion.</strong> Los trabajos academicos o documentos gubernamentales a veces tienen restricciones de copia. Desbloquea el PDF, luego copia el texto que necesitas para citas.</span>
+                  <span><strong>Copiar texto para investigación.</strong> Los trabajos academicos o documentos gubernamentales a veces tienen restricciones de copia. Desbloquea el PDF, luego copia el texto que necesitas para citas.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
-                  <span><strong>Editar un documento que creaste.</strong> Pusiste una contrasena a un PDF hace meses y ahora necesitas hacer cambios. Subelo a la herramienta <Link href="/es/desbloquear-pdf" className="text-[#14D8C4] hover:underline">Desbloquear PDF</Link>, ingresa tu contrasena y obtiene una version editable.</span>
+                  <span><strong>Editar un documento que creaste.</strong> Pusiste una contraseña a un PDF hace meses y ahora necesitas hacer cambios. Subelo a la herramienta <Link href="/es/desbloquear-pdf" className="text-[#14D8C4] hover:underline">Desbloquear PDF</Link>, ingresa tu contraseña y obtiene una version editable.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
-                  <span><strong>Completar formularios.</strong> Algunos formularios PDF estan bloqueados, impidiendo que escribas en los campos. Desbloquear el PDF te permite completar el formulario y guardar tus cambios.</span>
+                  <span><strong>Completar formularios.</strong> Algunos formularios PDF están bloqueados, impidiendo que escribas en los campos. Desbloquear el PDF te permite completar el formulario y guardar tus cambios.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
@@ -204,41 +204,41 @@ export default function ComoDesbloquearPDFPage() {
               </ul>
             </section>
 
-            {/* Que hacer despues */}
+            {/* Que hacer después */}
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Que Hacer Despues de Desbloquear Tu PDF</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Que Hacer Después de Desbloquear Tu PDF</h2>
               <p className="text-slate-600 mb-4">
-                Una vez que tu PDF esta desbloqueado, tienes control total. Aqui hay algunos pasos utiles:
+                Una vez que tu PDF esta desbloqueado, tienes control total. Aqui hay algunos pasos útiles:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Comprimir el archivo.</strong> Si el PDF desbloqueado es demasiado grande para email, usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para reducir el tamano del archivo.</li>
-                <li>&#10003; <strong>Agregar nueva proteccion.</strong> Necesitas volver a proteger el archivo con una contrasena diferente? Usa <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link> para establecer tus propios permisos.</li>
+                <li>&#10003; <strong>Comprimir el archivo.</strong> Si el PDF desbloqueado es demasiado grande para email, usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para reducir el tamaño del archivo.</li>
+                <li>&#10003; <strong>Agregar nueva protección.</strong> Necesitas volver a proteger el archivo con una contraseña diferente? Usa <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link> para establecer tus propios permisos.</li>
                 <li>&#10003; <strong>Aplanar el archivo.</strong> Si el PDF tiene campos de formulario o anotaciones, usa <Link href="/es/aplanar-pdf" className="text-[#14D8C4] hover:underline">Aplanar PDF</Link> para fijar esos elementos antes de compartir.</li>
               </ul>
             </section>
 
             {/* Seguridad */}
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Es Seguro Desbloquear PDF en Linea?</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Es Seguro Desbloquear PDF en Línea?</h2>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Tus Archivos Se Procesan de Forma Segura</h3>
                   <p className="text-slate-600">
-                    PDF.it procesa tus archivos a traves de una conexion cifrada (HTTPS) y los elimina automaticamente del servidor despues del procesamiento. Tus documentos nunca se almacenan permanentemente ni se comparten con nadie.
+                    PDF.it procesa tus archivos a traves de una conexión cifrada (HTTPS) y los elimina automáticamente del servidor después del procesamiento. Tus documentos nunca se almacenan permanentemente ni se comparten con nadie.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Consideraciones Legales</h3>
                   <p className="text-slate-600">
-                    Desbloquear PDF que posees o para los que tienes autorizacion de acceso es completamente legal. PDF.it esta disenado para casos de uso legitimos — eliminar restricciones de tus propios archivos, acceder a documentos compartidos por colegas, o recuperar acceso a archivos donde olvidaste la contrasena.
+                    Desbloquear PDF que posees o para los que tienes autorizacion de acceso es completamente legal. PDF.it esta diseñado para casos de uso legitimos — eliminar restricciones de tus propios archivos, acceder a documentos compartidos por colegas, o recuperar acceso a archivos donde olvidaste la contraseña.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Cuando Usar Proteger en Su Lugar</h3>
                   <p className="text-slate-600">
-                    Si estas creando PDF y quieres controlar quien puede imprimir o editarlos, usa <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link> para agregar tu propia contrasena y permisos. Esto te da control total sobre la seguridad de tu documento.
+                    Si estas creando PDF y quieres controlar quien puede imprimir o editarlos, usa <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link> para agregar tu propia contraseña y permisos. Esto te da control total sobre la seguridad de tu documento.
                   </p>
                 </div>
               </div>
@@ -264,12 +264,12 @@ export default function ComoDesbloquearPDFPage() {
         {/* Related Articles */}
         <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-6">Articulos Relacionados</h2>
+            <h2 className="text-2xl font-black text-slate-900 mb-6">Artículos Relacionados</h2>
             <div className="grid gap-3">
               {[
-                { title: "Desbloquear un PDF para Imprimir (Quitar Restricciones de Impresion)", href: "/es/aprender/desbloquear-pdf-para-imprimir" },
-                { title: "Olvidaste Tu Contrasena de PDF? Esto Es Lo Que Puedes Hacer", href: "/es/aprender/desbloquear-pdf-contrasena-olvidada" },
-                { title: "Desbloquear un PDF en Tu Telefono (iPhone y Android)", href: "/es/aprender/desbloquear-pdf-en-movil" },
+                { title: "Desbloquear un PDF para Imprimir (Quitar Restricciones de Impresión)", href: "/es/aprender/desbloquear-pdf-para-imprimir" },
+                { title: "Olvidaste Tu Contraseña de PDF? Esto Es Lo Que Puedes Hacer", href: "/es/aprender/desbloquear-pdf-contraseña-olvidada" },
+                { title: "Desbloquear un PDF en Tu Teléfono (iPhone y Android)", href: "/es/aprender/desbloquear-pdf-en-movil" },
               ].map((article) => (
                 <Link
                   key={article.href}
@@ -290,12 +290,12 @@ export default function ComoDesbloquearPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como puedo desbloquear un PDF en linea gratis?", a: "Sube tu PDF bloqueado a la herramienta Desbloquear PDF de PDF.it, ingresa la contrasena si se te solicita, y descarga la version sin restricciones. No necesitas instalar software — funciona directamente en tu navegador." },
-                { q: "Que restricciones de PDF se pueden eliminar?", a: "PDF.it puede eliminar restricciones de permisos que impiden imprimir, copiar texto, editar y anotar. Si el PDF tiene una contrasena de apertura (necesaria para ver el archivo), deberas ingresarla primero." },
-                { q: "Es legal desbloquear un PDF?", a: "Si eres el propietario del documento o tienes autorizacion para acceder a el, eliminar las restricciones es perfectamente legal. PDF.it esta disenado para usuarios que necesitan desbloquear sus propios archivos." },
-                { q: "Desbloquear un PDF cambia su contenido?", a: "No. Desbloquear un PDF solo elimina las restricciones de seguridad. El contenido, el diseno, las imagenes y el formato permanecen exactamente iguales." },
-                { q: "Puedo desbloquear un PDF sin la contrasena?", a: "Si el PDF solo tiene restricciones de permisos (sin contrasena de apertura), PDF.it puede eliminar esas restricciones sin necesitar una contrasena. Si el PDF requiere una contrasena para abrirse, deberas proporcionarla." },
-                { q: "El desbloqueo funciona en todos los archivos PDF?", a: "PDF.it funciona con cifrado PDF estandar (40 bits, 128 bits y AES de 256 bits). Maneja la mayoria de los PDF creados por Adobe Acrobat, Microsoft Office, escaneres y otras herramientas comunes." },
+                { q: "Como puedo desbloquear un PDF en línea gratis?", a: "Sube tu PDF bloqueado a la herramienta Desbloquear PDF de PDF.it, ingresa la contraseña si se te solicita, y descarga la version sin restricciones. No necesitas instalar software — funciona directamente en tu navegador." },
+                { q: "Que restricciones de PDF se pueden eliminar?", a: "PDF.it puede eliminar restricciones de permisos que impiden imprimir, copiar texto, editar y anotar. Si el PDF tiene una contraseña de apertura (necesaria para ver el archivo), deberas ingresarla primero." },
+                { q: "Es legal desbloquear un PDF?", a: "Si eres el propietario del documento o tienes autorizacion para acceder a el, eliminar las restricciones es perfectamente legal. PDF.it esta diseñado para usuarios que necesitan desbloquear sus propios archivos." },
+                { q: "Desbloquear un PDF cambia su contenido?", a: "No. Desbloquear un PDF solo elimina las restricciones de seguridad. El contenido, el diseño, las imágenes y el formato permanecen exactamente iguales." },
+                { q: "Puedo desbloquear un PDF sin la contraseña?", a: "Si el PDF solo tiene restricciones de permisos (sin contraseña de apertura), PDF.it puede eliminar esas restricciones sin necesitar una contraseña. Si el PDF requiere una contraseña para abrirse, deberas proporcionarla." },
+                { q: "El desbloqueo funciona en todos los archivos PDF?", a: "PDF.it funciona con cifrado PDF estándar (40 bits, 128 bits y AES de 256 bits). Maneja la mayoría de los PDF creados por Adobe Acrobat, Microsoft Office, escáneres y otras herramientas comunes." },
               ].map((faq, i) => (
                 <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

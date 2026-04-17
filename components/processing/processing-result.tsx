@@ -49,7 +49,7 @@ export function ProcessingResult({
             <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <CheckCircle className="h-10 w-10 text-green-600" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Conversion Complete!</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Conversión Complete!</h2>
             <p className="text-slate-600 text-lg">
               Your {files.length > 1 ? "files have" : "file has"} been successfully processed. All formatting and
               content preserved.
@@ -111,7 +111,7 @@ export function ProcessingResult({
                         <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-slate-500 mt-1">
                           <span>{(convertedSize / 1024 / 1024).toFixed(2)} MB</span>
                           <span className="hidden sm:inline">•</span>
-                          <span className="text-green-600 font-medium">✓ Conversion successful</span>
+                          <span className="text-green-600 font-medium">✓ Conversión successful</span>
                           <span className="hidden sm:inline">•</span>
                           <span>Ready for download</span>
                         </div>
@@ -133,7 +133,7 @@ export function ProcessingResult({
                     </Button>
                   </div>
 
-                  {/* File conversion details */}
+                  {/* File conversión details */}
                   <div className="mt-4 pt-4 border-t border-gray-100">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                       <div>

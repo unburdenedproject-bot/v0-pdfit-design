@@ -97,7 +97,7 @@ export default function RotarPDFPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { title: "Rota Páginas Individuales de PDF", desc: "Corrige solo las páginas que lo necesitan. Rota una página, un rango o varias páginas seleccionadas sin cambiar el resto del documento." },
+                { title: "Rota Páginas Individuales de PDF", desc: "Corrige solo las páginas que lo necesitan. Rota una página, un rango o varias páginas selecciónadas sin cambiar el resto del documento." },
                 { title: "Corrige PDFs Escaneados y Documentos de Lado", desc: "Los escáneres a menudo guardan las páginas rotadas de forma incorrecta. PDF.it te ayuda a girar las páginas rápidamente a la dirección correcta de lectura." },
                 { title: "Guarda un PDF con la Orientación Correcta", desc: "Después de rotar, descarga un nuevo PDF con la orientación de página actualizada — listo para imprimir, enviar por email y subir." },
               ].map((feature) => (

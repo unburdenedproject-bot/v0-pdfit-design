@@ -6,7 +6,7 @@ import { Wrench } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Todas las Herramientas PDF — Convierte, Edita y Organiza | PDF.it",
-  description: "Coleccion completa de herramientas para PDF. Convierte, edita, comprime y organiza tus documentos en linea, gratis y desde tu navegador.",
+  description: "Colección completa de herramientas para PDF. Convierte, edita, comprime y organiza tus documentos en línea, gratis y desde tu navegador.",
   alternates: {
     canonical: "https://www.pdf.it.com/es/herramientas",
     languages: {
@@ -51,7 +51,7 @@ export default function HerramientasPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Todas las Herramientas PDF</h1>
               <p className="text-xl text-slate-300">
-                Coleccion completa de herramientas para PDF. Convierte, edita, comprime y organiza tus documentos.
+                Colección completa de herramientas para PDF. Convierte, edita, comprime y organiza tus documentos.
               </p>
             </div>
           </div>

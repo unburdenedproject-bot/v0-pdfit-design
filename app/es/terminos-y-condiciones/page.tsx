@@ -80,7 +80,7 @@ export default function TermsConditionsPageEs() {
 
                       <div>
                         <h3 className="text-lg font-bold text-white mb-4">2. Cuentas, Planes y Límites</h3>
-                        <p className="text-slate-400">Algunas funciones están disponibles bajo planes gratuitos y de pago. El uso gratuito incluye límites de conversiones por día (10/día) y tamaño de archivo (25MB). Los planes de pago proporcionan límites más altos y funciones adicionales (200MB, conversiones ilimitadas). Los detalles del plan y precios pueden cambiar de vez en cuando y se publicarán en el sitio web.</p>
+                        <p className="text-slate-400">Algunas funciones están disponibles bajo planes gratuitos y de pago. El uso gratuito incluye límites de conversiónes por día (10/día) y tamaño de archivo (25MB). Los planes de pago proporcionan límites más altos y funciones adicionales (200MB, conversiónes ilimitadas). Los detalles del plan y precios pueden cambiar de vez en cuando y se publicarán en el sitio web.</p>
                       </div>
 
                       <div>

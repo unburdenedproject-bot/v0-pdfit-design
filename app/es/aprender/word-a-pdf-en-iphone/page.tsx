@@ -8,7 +8,7 @@ export const metadata = {
   title: "Convertir Word a PDF en iPhone (DOCX a PDF en Minutos) | PDF.it",
   description:
     "Aprende a convertir Word a PDF en iPhone usando Safari y PDF.it. Sin necesidad de app — abre tu DOCX desde correo o Archivos, conviértelo y comparte el PDF en minutos.",
-  keywords: "word a pdf iphone, convertir docx a pdf iphone, word a pdf en telefono, docx a pdf movil, convertir documento word iphone",
+  keywords: "word a pdf iphone, convertir docx a pdf iphone, word a pdf en teléfono, docx a pdf móvil, convertir documento word iphone",
 }
 
 const faqSchema = {
@@ -43,7 +43,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Hay un límite de tamaño de archivo para convertir en iPhone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Los usuarios gratuitos pueden subir archivos de hasta 25MB. Los usuarios Pro pueden subir hasta 200MB. La mayoría de los documentos Word están muy por debajo de 25MB, así que el nivel gratuito funciona para la gran mayoría de las conversiones." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Los usuarios gratuitos pueden subir archivos de hasta 25MB. Los usuarios Pro pueden subir hasta 200MB. La mayoría de los documentos Word están muy por debajo de 25MB, así que el nivel gratuito funciona para la gran mayoría de las conversiónes." }
     }
   ]
 }
@@ -132,7 +132,7 @@ export default function WordAPdfEnIphonePage() {
                 El iPhone no tiene un convertidor integrado de Word a PDF. La app Archivos puede <em>abrir</em> archivos .docx, pero no puede <em>convertirlos</em> a PDF de forma confiable con formato preciso. Y descargar una app dedicada solo para una conversión parece excesivo.
               </p>
               <p className="text-slate-600">
-                Ahí es donde entra PDF.it. Funciona completamente en tu navegador — sin app que instalar, sin cuenta necesaria para tus primeras conversiones.
+                Ahí es donde entra PDF.it. Funciona completamente en tu navegador — sin app que instalar, sin cuenta necesaria para tus primeras conversiónes.
               </p>
             </section>
 
@@ -200,11 +200,11 @@ export default function WordAPdfEnIphonePage() {
                 Una vez que hayas descargado el PDF, compartirlo es sencillo:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Correo electrónico:</strong> Abre Mail o Gmail, crea un nuevo mensaje, toca el ícono de adjuntar y selecciona tu PDF desde la app Archivos.</li>
+                <li>&#10003; <strong>Correo electrónico:</strong> Abre Mail o Gmail, crea un nuevo mensaje, toca el ícono de adjuntar y seleccióna tu PDF desde la app Archivos.</li>
                 <li>&#10003; <strong>iMessage:</strong> Abre Mensajes, toca el botón +, elige el PDF desde Archivos y envía.</li>
-                <li>&#10003; <strong>AirDrop:</strong> Abre el PDF en Archivos, toca Compartir y selecciona el dispositivo Apple cercano.</li>
+                <li>&#10003; <strong>AirDrop:</strong> Abre el PDF en Archivos, toca Compartir y seleccióna el dispositivo Apple cercano.</li>
                 <li>&#10003; <strong>WhatsApp / Slack / Teams:</strong> Usa el botón de adjuntar en cualquier app de mensajería y busca tu PDF.</li>
-                <li>&#10003; <strong>Portal de carga:</strong> Si necesitas subir el PDF a un sitio web (como una solicitud de empleo), abre el sitio en Safari, toca el botón de subir y selecciona tu PDF desde Archivos.</li>
+                <li>&#10003; <strong>Portal de carga:</strong> Si necesitas subir el PDF a un sitio web (como una solicitud de empleo), abre el sitio en Safari, toca el botón de subir y seleccióna tu PDF desde Archivos.</li>
               </ul>
             </section>
 
@@ -302,7 +302,7 @@ export default function WordAPdfEnIphonePage() {
                 { q: "¿El PDF mantendrá el mismo formato que mi documento Word?", a: "Sí. PDF.it preserva fuentes, imágenes, tablas y diseño durante la conversión. Para mejores resultados, asegúrate de que tu documento Word use fuentes estándar como Arial o Calibri, que se convierten de forma confiable en todos los dispositivos." },
                 { q: "¿Puedo convertir Word a PDF usando la app Archivos en iPhone?", a: "La app Archivos puede abrir archivos DOCX para visualización pero no tiene un convertidor PDF integrado. Puedes usar el truco del menú Imprimir (compartir > Imprimir > pellizcar para hacer zoom en la vista previa > compartir como PDF), pero esto a menudo cambia márgenes y elimina hipervínculos. PDF.it da una conversión más precisa." },
                 { q: "¿Cómo comparto el PDF convertido desde mi iPhone?", a: "Después de descargar el PDF de PDF.it, toca el ícono de compartir para enviarlo por correo electrónico, iMessage, AirDrop, WhatsApp o cualquier otra app. También puedes guardarlo en la app Archivos o subirlo a almacenamiento en la nube." },
-                { q: "¿Hay un límite de tamaño de archivo para convertir en iPhone?", a: "Los usuarios gratuitos pueden subir archivos de hasta 25MB. Los usuarios Pro pueden subir hasta 200MB. La mayoría de los documentos Word están muy por debajo de 25MB, así que el nivel gratuito funciona para la gran mayoría de las conversiones." },
+                { q: "¿Hay un límite de tamaño de archivo para convertir en iPhone?", a: "Los usuarios gratuitos pueden subir archivos de hasta 25MB. Los usuarios Pro pueden subir hasta 200MB. La mayoría de los documentos Word están muy por debajo de 25MB, así que el nivel gratuito funciona para la gran mayoría de las conversiónes." },
               ].map((faq, i) => (
                 <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

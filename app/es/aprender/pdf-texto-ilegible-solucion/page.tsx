@@ -5,10 +5,10 @@ import Link from "next/link"
 import { FileText, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Por Qué el Texto Extraído de PDF Sale Ilegible (Y Cómo Solucionarlo) | PDF.it",
+  title: "Por Qué el Texto Extraído de PDF Sale Ilegible (Y Cómo Soluciónarlo) | PDF.it",
   description:
-    "¿Obtienes texto ilegible, caracteres extraños o resultados en blanco al convertir PDF a texto? Aprende las 5 causas más comunes y cómo solucionar cada una — guía paso a paso.",
-  keywords: "pdf a texto ilegible, texto pdf caracteres extraños, pdf copiar pegar caracteres raros, extraccion texto pdf rota, arreglar texto pdf ilegible",
+    "¿Obtienes texto ilegible, caracteres extraños o resultados en blanco al convertir PDF a texto? Aprende las 5 causas más comunes y cómo soluciónar cada una — guía paso a paso.",
+  keywords: "pdf a texto ilegible, texto pdf caracteres extraños, pdf copiar pegar caracteres raros, extracción texto pdf rota, arreglar texto pdf ilegible",
 }
 
 const faqSchema = {
@@ -23,7 +23,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Por qué mi salida de PDF a texto está completamente en blanco?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Una salida en blanco significa que el PDF no tiene texto seleccionable — probablemente es un documento escaneado donde cada página es una imagen. Usa una herramienta OCR para leer el texto de las imágenes escaneadas." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Una salida en blanco significa que el PDF no tiene texto selecciónable — probablemente es un documento escaneado donde cada página es una imagen. Usa una herramienta OCR para leer el texto de las imágenes escaneadas." }
     },
     {
       "@type": "Question",
@@ -38,12 +38,12 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo sé si mi PDF es escaneado o digital?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Intenta seleccionar texto en tu visor de PDF. Si puedes resaltar palabras individuales, es digital (basado en texto). Si solo puedes seleccionar la página completa como un bloque o no puedes seleccionar nada, es una imagen escaneada. También puedes hacer zoom — las páginas escaneadas se ven pixeladas con zoom alto." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Intenta selecciónar texto en tu visor de PDF. Si puedes resaltar palabras individuales, es digital (basado en texto). Si solo puedes selecciónar la página completa como un bloque o no puedes selecciónar nada, es una imagen escaneada. También puedes hacer zoom — las páginas escaneadas se ven pixeladas con zoom alto." }
     },
     {
       "@type": "Question",
       "name": "¿Desbloquear un PDF protegido con contraseña arregla el texto ilegible?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si el PDF tiene restricciones de copia (puedes ver pero no seleccionar texto), desbloquearlo permitirá la extracción de texto. Pero si la salida ilegible es causada por problemas de codificación de fuente, desbloquearlo no lo arreglará — necesitarás usar OCR o PDF a Word en su lugar." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si el PDF tiene restricciones de copia (puedes ver pero no selecciónar texto), desbloquearlo permitirá la extracción de texto. Pero si la salida ilegible es causada por problemas de codificación de fuente, desbloquearlo no lo arreglará — necesitarás usar OCR o PDF a Word en su lugar." }
     }
   ]
 }
@@ -57,7 +57,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Identifica la causa",
-      "text": "Intenta seleccionar texto en tu visor de PDF. Si no puedes seleccionar texto, es escaneado. Si el texto seleccionado se ve normal pero se pega como texto ilegible, es un problema de codificación de fuente. Si el PDF pide contraseña, está protegido."
+      "text": "Intenta selecciónar texto en tu visor de PDF. Si no puedes selecciónar texto, es escaneado. Si el texto selecciónado se ve normal pero se pega como texto ilegible, es un problema de codificación de fuente. Si el PDF pide contraseña, está protegido."
     },
     {
       "@type": "HowToStep",
@@ -72,7 +72,7 @@ const howToSchema = {
   ]
 }
 
-export default function PdfTextoIlegibleSolucionPage() {
+export default function PdfTextoIlegibleSoluciónPage() {
   return (
     <div className="min-h-screen bg-[#F3F4FF]">
       <Script
@@ -92,7 +92,7 @@ export default function PdfTextoIlegibleSolucionPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
               <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF a Texto</p>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Por Qué el Texto Extraído de PDF Sale Ilegible (Y Cómo Solucionarlo)</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Por Qué el Texto Extraído de PDF Sale Ilegible (Y Cómo Soluciónarlo)</h1>
               <p className="text-xl text-slate-300">
                 Convertiste tu PDF a texto y obtuviste un desastre de símbolos extraños, páginas en blanco o caracteres ilegibles. Aquí te explicamos qué salió mal y exactamente cómo arreglarlo.
               </p>
@@ -159,10 +159,10 @@ export default function PdfTextoIlegibleSolucionPage() {
                 <strong>El problema:</strong> Los PDFs escaneados son fotografías de papel. Cada página es una imagen — no hay datos de texto para que las herramientas de extracción lean. Cuando ejecutas PDF a TXT en un archivo escaneado, obtienes un resultado en blanco o casi en blanco.
               </p>
               <p className="text-slate-600 mb-4">
-                <strong>Cómo verificar:</strong> Abre el PDF e intenta seleccionar una sola palabra con tu cursor. Si solo puedes seleccionar la página completa como un bloque (o nada), es escaneado.
+                <strong>Cómo verificar:</strong> Abre el PDF e intenta selecciónar una sola palabra con tu cursor. Si solo puedes selecciónar la página completa como un bloque (o nada), es escaneado.
               </p>
               <p className="text-slate-600">
-                <strong>La solución:</strong> Usa <Link href="/es/escaner-ocr" className="text-[#14D8C4] hover:underline">OCR (Reconocimiento Óptico de Caracteres)</Link>. OCR lee texto visualmente de la imagen de la página y lo convierte en texto seleccionable y editable. El Escáner OCR de PDF.it maneja esto automáticamente — sube tu PDF escaneado y devuelve el texto extraído.
+                <strong>La solución:</strong> Usa <Link href="/es/escaner-ocr" className="text-[#14D8C4] hover:underline">OCR (Reconocimiento Óptico de Caracteres)</Link>. OCR lee texto visualmente de la imagen de la página y lo convierte en texto selecciónable y editable. El Escáner OCR de PDF.it maneja esto automáticamente — sube tu PDF escaneado y devuelve el texto extraído.
               </p>
             </section>
 
@@ -184,10 +184,10 @@ export default function PdfTextoIlegibleSolucionPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Causa 3: El PDF Está Protegido con Contraseña</h2>
               <p className="text-slate-600 mb-4">
-                <strong>El problema:</strong> La configuración de seguridad del PDF puede restringir la copia de texto sin impedir la visualización. Puedes abrir y leer el PDF, pero seleccionar y extraer texto está bloqueado por la contraseña de permisos.
+                <strong>El problema:</strong> La configuración de seguridad del PDF puede restringir la copia de texto sin impedir la visualización. Puedes abrir y leer el PDF, pero selecciónar y extraer texto está bloqueado por la contraseña de permisos.
               </p>
               <p className="text-slate-600 mb-4">
-                <strong>Cómo verificar:</strong> Busca un ícono de candado en tu visor de PDF, o intenta seleccionar texto — si el cursor cambia pero nada se resalta, las restricciones de copia están activas.
+                <strong>Cómo verificar:</strong> Busca un ícono de candado en tu visor de PDF, o intenta selecciónar texto — si el cursor cambia pero nada se resalta, las restricciones de copia están activas.
               </p>
               <p className="text-slate-600">
                 <strong>La solución:</strong> Usa <Link href="/es/desbloquear-pdf" className="text-[#14D8C4] hover:underline">Desbloquear PDF</Link> para eliminar restricciones (necesitarás la contraseña del propietario si se estableció una), luego convierte a TXT normalmente con <Link href="/es/pdf-a-texto" className="text-[#14D8C4] hover:underline">PDF a TXT</Link>.
@@ -201,7 +201,7 @@ export default function PdfTextoIlegibleSolucionPage() {
                 <strong>El problema:</strong> Los PDFs con diseños de múltiples columnas, cuadros de texto flotantes, barras laterales o tablas hacen que las herramientas de extracción de texto adivinen mal el orden de lectura. El resultado son palabras en secuencia desordenada.
               </p>
               <p className="text-slate-600 mb-4">
-                <strong>La solución:</strong> La <Link href="/es/pdf-a-texto" className="text-[#14D8C4] hover:underline">herramienta PDF a TXT</Link> de PDF.it maneja correctamente la mayoría de diseños de múltiples columnas. Si el diseño es extremadamente complejo (como páginas de revistas), prueba <Link href="/es/pdf-a-word" className="text-[#14D8C4] hover:underline">PDF a Word</Link> que preserva la estructura visual, facilitando identificar y reorganizar secciones.
+                <strong>La solución:</strong> La <Link href="/es/pdf-a-texto" className="text-[#14D8C4] hover:underline">herramienta PDF a TXT</Link> de PDF.it maneja correctamente la mayoría de diseños de múltiples columnas. Si el diseño es extremadamente complejo (como páginas de revistas), prueba <Link href="/es/pdf-a-word" className="text-[#14D8C4] hover:underline">PDF a Word</Link> que preserva la estructura visual, fácilitando identificar y reorganizar secciones.
               </p>
             </section>
 
@@ -240,7 +240,7 @@ export default function PdfTextoIlegibleSolucionPage() {
                       <td className="py-3 px-4 font-semibold text-[#14D8C4]"><Link href="/es/pdf-a-word" className="hover:underline">PDF a Word</Link> o <Link href="/es/escaner-ocr" className="hover:underline">OCR</Link></td>
                     </tr>
                     <tr className="border-t border-gray-200">
-                      <td className="py-3 px-4">No se puede seleccionar texto</td>
+                      <td className="py-3 px-4">No se puede selecciónar texto</td>
                       <td className="py-3 px-4">PDF protegido</td>
                       <td className="py-3 px-4 font-semibold text-[#14D8C4]"><Link href="/es/desbloquear-pdf" className="hover:underline">Desbloquear PDF</Link> luego <Link href="/es/pdf-a-texto" className="hover:underline">PDF a TXT</Link></td>
                     </tr>
@@ -306,11 +306,11 @@ export default function PdfTextoIlegibleSolucionPage() {
             <div className="space-y-6">
               {[
                 { q: "¿Por qué mi salida de PDF a texto parece caracteres aleatorios?", a: "Esto generalmente sucede porque el PDF usa codificación de fuente personalizada. El PDF mapea caracteres a IDs de glifos personalizados en lugar de Unicode estándar, por lo que las herramientas de extracción de texto leen los IDs de glifos y producen caracteres sin sentido. Prueba PDF a Word u OCR como alternativas." },
-                { q: "¿Por qué mi salida de PDF a texto está completamente en blanco?", a: "Una salida en blanco significa que el PDF no tiene texto seleccionable — probablemente es un documento escaneado donde cada página es una imagen. Usa una herramienta OCR para leer el texto de las imágenes escaneadas." },
+                { q: "¿Por qué mi salida de PDF a texto está completamente en blanco?", a: "Una salida en blanco significa que el PDF no tiene texto selecciónable — probablemente es un documento escaneado donde cada página es una imagen. Usa una herramienta OCR para leer el texto de las imágenes escaneadas." },
                 { q: "¿Puede el OCR arreglar texto de PDF ilegible?", a: "Sí. OCR lee texto visualmente de la imagen de la página, evitando completamente los problemas de codificación de fuente. Si la extracción de texto estándar te da resultado ilegible, OCR es a menudo la mejor alternativa — lee cómo se ve la página, no cómo está codificado el texto." },
                 { q: "¿Por qué algunos PDFs extraen texto perfectamente pero otros no?", a: "Depende de cómo se creó el PDF. Los PDFs hechos desde Word, Google Docs o software moderno usan codificación de texto estándar y se extraen limpiamente. Los PDFs creados por escáneres antiguos, software de diseño o ciertos controladores de impresora pueden usar codificación personalizada que causa salida ilegible." },
-                { q: "¿Cómo sé si mi PDF es escaneado o digital?", a: "Intenta seleccionar texto en tu visor de PDF. Si puedes resaltar palabras individuales, es digital (basado en texto). Si solo puedes seleccionar la página completa como un bloque o no puedes seleccionar nada, es una imagen escaneada. También puedes hacer zoom — las páginas escaneadas se ven pixeladas con zoom alto." },
-                { q: "¿Desbloquear un PDF protegido con contraseña arregla el texto ilegible?", a: "Si el PDF tiene restricciones de copia (puedes ver pero no seleccionar texto), desbloquearlo permitirá la extracción de texto. Pero si la salida ilegible es causada por problemas de codificación de fuente, desbloquearlo no lo arreglará — necesitarás usar OCR o PDF a Word en su lugar." },
+                { q: "¿Cómo sé si mi PDF es escaneado o digital?", a: "Intenta selecciónar texto en tu visor de PDF. Si puedes resaltar palabras individuales, es digital (basado en texto). Si solo puedes selecciónar la página completa como un bloque o no puedes selecciónar nada, es una imagen escaneada. También puedes hacer zoom — las páginas escaneadas se ven pixeladas con zoom alto." },
+                { q: "¿Desbloquear un PDF protegido con contraseña arregla el texto ilegible?", a: "Si el PDF tiene restricciones de copia (puedes ver pero no selecciónar texto), desbloquearlo permitirá la extracción de texto. Pero si la salida ilegible es causada por problemas de codificación de fuente, desbloquearlo no lo arreglará — necesitarás usar OCR o PDF a Word en su lugar." },
               ].map((faq, i) => (
                 <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

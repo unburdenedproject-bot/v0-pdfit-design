@@ -10,10 +10,10 @@ export const metadata = {
   description:
     "Automatiza flujos de trabajo PDF de múltiples pasos con PDF.it. Aplana, comprime, agrega marca de agua, rota y protege — todo en un clic. Elige flujos preestablecidos o crea flujos personalizados de hasta 5 pasos.",
   alternates: {
-    canonical: "https://pdf.it.com/es/automatizacion",
+    canonical: "https://pdf.it.com/es/automatización",
     languages: {
       en: "https://pdf.it.com/workflow-automation",
-      es: "https://pdf.it.com/es/automatizacion",
+      es: "https://pdf.it.com/es/automatización",
       pt: "https://pdf.it.com/br/automacao",
     },
   },
@@ -97,8 +97,8 @@ export default function WorkflowAutomationPageEs() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
                 { title: "Flujos Preestablecidos", desc: "Combinaciones comunes listas para usar: aplanar + comprimir, aplanar + comprimir + marca de agua, y más." },
-                { title: "Flujos Personalizados", desc: "Crea el tuyo propio seleccionando y ordenando hasta 5 pasos, cada uno configurable individualmente." },
-                { title: "Procesamiento en Un Clic", desc: "Sube tu PDF, selecciona tu flujo y descarga el resultado — todos los pasos se ejecutan automáticamente." },
+                { title: "Flujos Personalizados", desc: "Crea el tuyo propio selecciónando y ordenando hasta 5 pasos, cada uno configurable individualmente." },
+                { title: "Procesamiento en Un Clic", desc: "Sube tu PDF, seleccióna tu flujo y descarga el resultado — todos los pasos se ejecutan automáticamente." },
               ].map((feature) => (
                 <div
                   key={feature.title}
@@ -219,7 +219,7 @@ export default function WorkflowAutomationPageEs() {
                 { q: "¿Qué es la Automatización de Flujos?", a: "Te permite encadenar varias herramientas PDF en un solo proceso automatizado. Por ejemplo, aplanar formularios, comprimir el archivo y agregar una marca de agua — todo en un solo clic en vez de tres pasos separados." },
                 { q: "¿Qué herramientas puedo encadenar?", a: "Puedes combinar: Aplanar PDF, Comprimir PDF, Marca de Agua PDF, Rotar PDF y Proteger con Contraseña. Puedes usar hasta 5 pasos por flujo de trabajo." },
                 { q: "¿La Automatización de Flujos es gratis?", a: "La Automatización de Flujos está disponible en el plan Business ($13.99/mes) y superiores. Incluye flujos ilimitados junto con todas las demás herramientas Business." },
-                { q: "¿Puedo crear flujos personalizados?", a: "Sí. Puedes elegir entre flujos preestablecidos o crear tu propio flujo personalizado seleccionando y ordenando hasta 5 pasos. Cada paso se puede configurar individualmente." },
+                { q: "¿Puedo crear flujos personalizados?", a: "Sí. Puedes elegir entre flujos preestablecidos o crear tu propio flujo personalizado selecciónando y ordenando hasta 5 pasos. Cada paso se puede configurar individualmente." },
                 { q: "¿Cuántos pasos puedo encadenar?", a: "Hasta 5 pasos por flujo de trabajo. Cada paso se ejecuta en secuencia sobre tu PDF." },
                 { q: "¿Mi PDF se almacena después del procesamiento?", a: "No. Todos los archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos tus documentos." },
               ].map((faq, i) => (
@@ -248,7 +248,7 @@ export default function WorkflowAutomationPageEs() {
             { "@type": "Question", "name": "¿Qué es la Automatización de Flujos?", "acceptedAnswer": { "@type": "Answer", "text": "La Automatización de Flujos te permite encadenar varias herramientas PDF en un solo proceso automatizado. Por ejemplo, aplanar formularios, comprimir el archivo y agregar una marca de agua — todo en un solo clic en vez de tres pasos separados." } },
             { "@type": "Question", "name": "¿Qué herramientas puedo encadenar?", "acceptedAnswer": { "@type": "Answer", "text": "Puedes combinar: Aplanar PDF, Comprimir PDF, Marca de Agua PDF, Rotar PDF y Proteger con Contraseña. Puedes usar hasta 5 pasos por flujo de trabajo." } },
             { "@type": "Question", "name": "¿La Automatización de Flujos es gratis?", "acceptedAnswer": { "@type": "Answer", "text": "La Automatización de Flujos está disponible en el plan Business ($13.99/mes) y superiores. Incluye flujos ilimitados junto con todas las demás herramientas Business." } },
-            { "@type": "Question", "name": "¿Puedo crear flujos personalizados?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Puedes elegir entre flujos preestablecidos o crear tu propio flujo personalizado seleccionando y ordenando hasta 5 pasos. Cada paso se puede configurar individualmente." } },
+            { "@type": "Question", "name": "¿Puedo crear flujos personalizados?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Puedes elegir entre flujos preestablecidos o crear tu propio flujo personalizado selecciónando y ordenando hasta 5 pasos. Cada paso se puede configurar individualmente." } },
             { "@type": "Question", "name": "¿Cuántos pasos puedo encadenar?", "acceptedAnswer": { "@type": "Answer", "text": "Hasta 5 pasos por flujo de trabajo. Cada paso se ejecuta en secuencia sobre tu PDF." } },
             { "@type": "Question", "name": "¿Mi PDF se almacena después del procesamiento?", "acceptedAnswer": { "@type": "Answer", "text": "No. Todos los archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos tus documentos." } },
           ]

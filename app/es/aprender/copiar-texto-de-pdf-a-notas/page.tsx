@@ -27,7 +27,7 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "¿Por qué no puedo seleccionar texto en mi PDF?",
+      "name": "¿Por qué no puedo selecciónar texto en mi PDF?",
       "acceptedAnswer": { "@type": "Answer", "text": "Hay dos razones comunes: el PDF es una imagen escaneada (no texto real), o el PDF está bloqueado por seguridad para evitar la copia de texto. Para PDFs escaneados, usa una herramienta OCR. Para PDFs bloqueados, usa Desbloquear PDF si tienes la contraseña." }
     },
     {
@@ -126,7 +126,7 @@ export default function CopiarTextoDePdfANotasPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Por Qué Copiar y Pegar desde PDFs Casi Siempre Sale Mal</h2>
               <p className="text-slate-600 mb-4">
-                Cuando seleccionas texto en un visor de PDF y lo pegas en Notas, Google Docs o Word, el resultado a menudo se ve terrible. Esto no es un error de tu lector de PDF — es un problema fundamental con la forma en que los PDFs almacenan texto.
+                Cuando selecciónas texto en un visor de PDF y lo pegas en Notas, Google Docs o Word, el resultado a menudo se ve terrible. Esto no es un error de tu lector de PDF — es un problema fundamental con la forma en que los PDFs almacenan texto.
               </p>
               <p className="text-slate-600 mb-4">
                 A diferencia de un documento Word donde el texto fluye en párrafos, un PDF posiciona cada carácter (o grupo de caracteres) en coordenadas exactas en una página. Tu visor de PDF tiene que <em>adivinar</em> el orden de lectura mirando las posiciones. Esto es lo que sale mal:
@@ -173,7 +173,7 @@ export default function CopiarTextoDePdfANotasPage() {
                   },
                   {
                     title: "Pega en tu destino",
-                    desc: "Abre el archivo TXT, selecciona todo el texto y pégalo en tu aplicación de notas, Google Docs, Word o correo electrónico. Se verá limpio cada vez.",
+                    desc: "Abre el archivo TXT, seleccióna todo el texto y pégalo en tu aplicación de notas, Google Docs, Word o correo electrónico. Se verá limpio cada vez.",
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -214,7 +214,7 @@ export default function CopiarTextoDePdfANotasPage() {
                     </tr>
                     <tr className="border-t border-gray-200">
                       <td className="py-3 px-4 font-semibold">Word (Windows)</td>
-                      <td className="py-3 px-4"><code className="bg-gray-100 px-2 py-0.5 rounded">Ctrl + Alt + V</code> luego selecciona "Texto sin formato"</td>
+                      <td className="py-3 px-4"><code className="bg-gray-100 px-2 py-0.5 rounded">Ctrl + Alt + V</code> luego seleccióna "Texto sin formato"</td>
                     </tr>
                   </tbody>
                 </table>
@@ -246,9 +246,9 @@ export default function CopiarTextoDePdfANotasPage() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">¿No puedes seleccionar nada de texto?</h3>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">¿No puedes selecciónar nada de texto?</h3>
                   <p className="text-slate-600">
-                    Tu PDF probablemente es una imagen escaneada. Usa <Link href="/es/escaner-ocr" className="text-[#14D8C4] hover:underline">Escáner OCR</Link> para convertir las páginas escaneadas en texto seleccionable y copiable.
+                    Tu PDF probablemente es una imagen escaneada. Usa <Link href="/es/escaner-ocr" className="text-[#14D8C4] hover:underline">Escáner OCR</Link> para convertir las páginas escaneadas en texto selecciónable y copiable.
                   </p>
                 </div>
               </div>
@@ -268,7 +268,7 @@ export default function CopiarTextoDePdfANotasPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Apple Notes / Notion / Obsidian</h3>
                   <p className="text-slate-600">
-                    Estas aplicaciones aceptan texto plano perfectamente. Convierte tu PDF a TXT, luego pega directamente. El texto se adaptará al formato existente de tu nota en lugar de importar estilos del PDF.
+                    Estas aplicaciónes aceptan texto plano perfectamente. Convierte tu PDF a TXT, luego pega directamente. El texto se adaptará al formato existente de tu nota en lugar de importar estilos del PDF.
                   </p>
                 </div>
 
@@ -305,7 +305,7 @@ export default function CopiarTextoDePdfANotasPage() {
             <div className="grid gap-3">
               {[
                 { title: "Convertir PDF a TXT: Extrae Texto Plano en Segundos", href: "/es/aprender/convertir-pdf-a-texto" },
-                { title: "Por Qué el Texto Extraído de PDF Sale Ilegible (Y Cómo Solucionarlo)", href: "/es/aprender/pdf-texto-ilegible-solucion" },
+                { title: "Por Qué el Texto Extraído de PDF Sale Ilegible (Y Cómo Soluciónarlo)", href: "/es/aprender/pdf-texto-ilegible-solución" },
                 { title: "Extraer Texto de PDF en iPhone/Android (Mejores Métodos)", href: "/es/aprender/extraer-texto-de-pdf-en-movil" },
               ].map((article) => (
                 <Link
@@ -329,7 +329,7 @@ export default function CopiarTextoDePdfANotasPage() {
               {[
                 { q: "¿Por qué el texto de un PDF se pega con formato extraño?", a: "Los PDFs almacenan texto como caracteres posicionados, no como párrafos fluidos. Al copiar y pegar, tu computadora intenta reconstruir el orden de lectura pero a menudo se confunde con columnas, encabezados, pies de página y saltos de línea. El resultado es texto desordenado con saltos de línea aleatorios y palabras fusionadas." },
                 { q: "¿Cómo copio texto de un PDF sin perder el formato?", a: "Si quieres texto plano limpio, convierte el PDF a TXT usando la herramienta PDF a TXT de PDF.it — maneja el orden de lectura y elimina el formato oculto. Si necesitas texto con formato, usa PDF a Word para obtener un documento editable con el estilo intacto." },
-                { q: "¿Por qué no puedo seleccionar texto en mi PDF?", a: "Hay dos razones comunes: el PDF es una imagen escaneada (no texto real), o el PDF está bloqueado por seguridad para evitar la copia de texto. Para PDFs escaneados, usa una herramienta OCR. Para PDFs bloqueados, usa Desbloquear PDF si tienes la contraseña." },
+                { q: "¿Por qué no puedo selecciónar texto en mi PDF?", a: "Hay dos razones comunes: el PDF es una imagen escaneada (no texto real), o el PDF está bloqueado por seguridad para evitar la copia de texto. Para PDFs escaneados, usa una herramienta OCR. Para PDFs bloqueados, usa Desbloquear PDF si tienes la contraseña." },
                 { q: "¿Cómo copio una tabla de un PDF a una hoja de cálculo?", a: "Copiar y pegar casi nunca preserva la estructura de tablas de PDFs. Convierte el PDF a Excel usando la herramienta PDF a Excel de PDF.it, que reconstruye filas y columnas. Para tablas simples, PDF a Word también puede preservar la estructura." },
                 { q: "¿Convertir PDF a TXT conserva los saltos de párrafo?", a: "PDF a TXT preserva los saltos de línea básicos y el espaciado de párrafos, pero elimina todo el demás formato. El resultado es texto limpio y legible que puedes pegar en cualquier aplicación sin problemas de formato oculto." },
                 { q: "¿Puedo copiar texto de un PDF en mi teléfono?", a: "Sí, pero copiar y pegar en móvil es aún menos confiable que en escritorio. Para mejores resultados, sube tu PDF a la herramienta PDF a TXT de PDF.it en tu navegador móvil y descarga el archivo de texto limpio." },

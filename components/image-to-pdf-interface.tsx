@@ -160,7 +160,7 @@ export function ImageToPdfInterface({
 
         if (!response.ok) {
           const rawBody = await response.text()
-          let message = `Conversion failed (HTTP ${response.status})`
+          let message = `Conversión failed (HTTP ${response.status})`
           try {
             const errorData = JSON.parse(rawBody)
             if (errorData.error) message = errorData.error
@@ -197,7 +197,7 @@ export function ImageToPdfInterface({
 
           if (!response.ok) {
             const rawBody = await response.text()
-            let message = `Conversion failed (HTTP ${response.status})`
+            let message = `Conversión failed (HTTP ${response.status})`
             try {
               const errorData = JSON.parse(rawBody)
               if (errorData.error) message = errorData.error
@@ -346,7 +346,7 @@ export function ImageToPdfInterface({
             <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <AlertCircle className="h-10 w-10 text-red-600" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Conversion Failed</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Conversión Failed</h2>
             <p className="text-slate-600 mb-8">{errorMessage}</p>
             <Button
               onClick={resetInterface}

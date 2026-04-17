@@ -5,10 +5,10 @@ import Link from "next/link"
 import { Stamp, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Como Agregar una Marca de Agua a un PDF en Linea | PDF.it",
+  title: "Como Agregar una Marca de Agua a un PDF en Línea | PDF.it",
   description:
-    "Aprende como agregar una marca de agua de texto o imagen a cualquier PDF en linea. Marca documentos como Borrador, Confidencial o estampa tu logo — guia paso a paso con PDF.it.",
-  keywords: "agregar marca de agua a pdf, marca de agua pdf en linea, poner marca de agua en pdf, estampar pdf",
+    "Aprende como agregar una marca de agua de texto o imagen a cualquier PDF en línea. Marca documentos como Borrador, Confidencial o estampa tu logo — guia paso a paso con PDF.it.",
+  keywords: "agregar marca de agua a pdf, marca de agua pdf en línea, poner marca de agua en pdf, estampar pdf",
 }
 
 const faqSchema = {
@@ -17,33 +17,33 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Como agrego una marca de agua a un PDF en linea?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Marca de Agua PDF de PDF.it, escribe tu texto de marca de agua o sube una imagen, ajusta la opacidad y posicion, luego haz clic en Aplicar. Descarga tu PDF con marca de agua en segundos." }
+      "name": "Como agrego una marca de agua a un PDF en línea?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Marca de Agua PDF de PDF.it, escribe tu texto de marca de agua o sube una imagen, ajusta la opacidad y posición, luego haz clic en Aplicar. Descarga tu PDF con marca de agua en segundos." }
     },
     {
       "@type": "Question",
       "name": "Puedo agregar una marca de agua de imagen como un logo?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it admite marcas de agua de texto e imagen. Sube un logo PNG o JPG, ajusta el tamano y la opacidad, y se colocara en cada pagina de tu PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it admite marcas de agua de texto e imagen. Sube un logo PNG o JPG, ajusta el tamaño y la opacidad, y se colocara en cada página de tu PDF." }
     },
     {
       "@type": "Question",
       "name": "La herramienta Marca de Agua PDF es gratis?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Marca de Agua PDF esta disponible para usuarios Pro y Business. Pro comienza en $3.99/mes e incluye marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Marca de Agua PDF está disponible para usuarios Pro y Business. Pro comienza en $3.99/mes e incluye marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." }
     },
     {
       "@type": "Question",
-      "name": "La marca de agua aparecera en todas las paginas?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. Por defecto, la marca de agua se aplica a todas las paginas de tu PDF. Esto asegura un marcado consistente de marca o seguridad en todo el documento." }
+      "name": "La marca de agua aparecera en todas las páginas?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. Por defecto, la marca de agua se aplica a todas las páginas de tu PDF. Esto asegura un marcado consistente de marca o seguridad en todo el documento." }
     },
     {
       "@type": "Question",
       "name": "Alguien puede quitar mi marca de agua?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Una marca de agua agregada como superposicion a veces puede eliminarse con herramientas avanzadas. Para mayor proteccion, combina la marca de agua con proteccion por contrasena usando la herramienta Proteger PDF de PDF.it, o aplana el PDF despues para integrar la marca de agua en el contenido de la pagina." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Una marca de agua agregada como superposicion a veces puede eliminarse con herramientas avanzadas. Para mayor protección, combina la marca de agua con protección por contraseña usando la herramienta Proteger PDF de PDF.it, o aplana el PDF después para integrar la marca de agua en el contenido de la página." }
     },
     {
       "@type": "Question",
-      "name": "Puedo agregar una marca de agua a un PDF desde mi telefono?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en cualquier navegador movil. Sube tu PDF, agrega tu marca de agua de texto o imagen, y descarga el resultado — sin necesidad de aplicacion." }
+      "name": "Puedo agregar una marca de agua a un PDF desde mi teléfono?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, agrega tu marca de agua de texto o imagen, y descarga el resultado — sin necesidad de aplicación." }
     }
   ]
 }
@@ -51,7 +51,7 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Como Agregar una Marca de Agua a un PDF en Linea",
+  "name": "Como Agregar una Marca de Agua a un PDF en Línea",
   "description": "Agrega una marca de agua de texto o imagen a cualquier PDF en 3 simples pasos con PDF.it.",
   "step": [
     {
@@ -62,12 +62,12 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Elige tu marca de agua",
-      "text": "Escribe tu texto de marca de agua (ej., BORRADOR, CONFIDENCIAL) o sube una imagen como un logo de empresa. Ajusta la opacidad, tamano, rotacion y posicion."
+      "text": "Escribe tu texto de marca de agua (ej., BORRADOR, CONFIDENCIAL) o sube una imagen como un logo de empresa. Ajusta la opacidad, tamaño, rotación y posición."
     },
     {
       "@type": "HowToStep",
       "name": "Descarga el PDF con marca de agua",
-      "text": "Haz clic en Aplicar Marca de Agua y descarga tu PDF con la marca de agua integrada en cada pagina."
+      "text": "Haz clic en Aplicar Marca de Agua y descarga tu PDF con la marca de agua integrada en cada página."
     }
   ]
 }
@@ -92,7 +92,7 @@ export default function ComoAgregarMarcaDeAguaAPDFPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
               <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Marca de Agua PDF</p>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Como Agregar una Marca de Agua a un PDF en Linea</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Como Agregar una Marca de Agua a un PDF en Línea</h1>
               <p className="text-xl text-slate-300">
                 Necesitas estampar un documento como Borrador, Confidencial o agregar el logo de tu empresa? Aqui te explicamos como agregar una marca de agua a cualquier PDF en segundos — sin necesidad de instalar software.
               </p>
@@ -122,11 +122,11 @@ export default function ComoAgregarMarcaDeAguaAPDFPage() {
         <article className="py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
 
-            {/* Por que marca de agua */}
+            {/* Por qué marca de agua */}
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que Agregar una Marca de Agua a un PDF?</h2>
               <p className="text-slate-600 mb-4">
-                Una marca de agua es una superposicion visible en las paginas de tu documento. Puede ser texto, una imagen o un logo. La gente usa marcas de agua por muchas razones:
+                Una marca de agua es una superposicion visible en las páginas de tu documento. Puede ser texto, una imagen o un logo. La gente usa marcas de agua por muchas razones:
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
@@ -139,7 +139,7 @@ export default function ComoAgregarMarcaDeAguaAPDFPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
-                  <span><strong>Marcar documentos con tu logo.</strong> Las propuestas, facturas y presentaciones se ven mas profesionales cuando llevan el logo de tu empresa como una marca de agua sutil de fondo.</span>
+                  <span><strong>Marcar documentos con tu logo.</strong> Las propuestas, facturas y presentaciones se ven más profesionales cuando llevan el logo de tu empresa como una marca de agua sutil de fondo.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
@@ -156,21 +156,21 @@ export default function ComoAgregarMarcaDeAguaAPDFPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-6">Como Agregar una Marca de Agua a un PDF (Paso a Paso)</h2>
               <p className="text-slate-600 mb-4">
-                Marca de Agua PDF esta disponible para usuarios Pro y Business. <Link href="/es/precios" className="text-[#14D8C4] hover:underline">Ver precios</Link> para mas detalles.
+                Marca de Agua PDF está disponible para usuarios Pro y Business. <Link href="/es/precios" className="text-[#14D8C4] hover:underline">Ver precios</Link> para más detalles.
               </p>
               <div className="space-y-4">
                 {[
                   {
                     title: "Sube tu PDF",
-                    desc: "Ve a la herramienta Marca de Agua PDF y arrastra tu archivo al area de carga, o haz clic para buscar. Los usuarios Pro pueden subir archivos de hasta 200MB y procesar multiples archivos en lote.",
+                    desc: "Ve a la herramienta Marca de Agua PDF y arrastra tu archivo al area de carga, o haz clic para buscar. Los usuarios Pro pueden subir archivos de hasta 200MB y procesar múltiples archivos en lote.",
                   },
                   {
                     title: "Configura tu marca de agua",
-                    desc: "Elige entre una marca de agua de texto (escribe cualquier frase como BORRADOR, CONFIDENCIAL o el nombre de tu empresa) o una marca de agua de imagen (sube un logo PNG o JPG). Ajusta la opacidad, tamano de fuente, angulo de rotacion y posicion en la pagina.",
+                    desc: "Elige entre una marca de agua de texto (escribe cualquier frase como BORRADOR, CONFIDENCIAL o el nombre de tu empresa) o una marca de agua de imagen (sube un logo PNG o JPG). Ajusta la opacidad, tamaño de fuente, ángulo de rotación y posición en la página.",
                   },
                   {
                     title: "Aplica y descarga",
-                    desc: "Haz clic en Aplicar Marca de Agua. PDF.it estampa cada pagina de tu PDF con tu marca de agua elegida. Descarga el resultado inmediatamente.",
+                    desc: "Haz clic en Aplicar Marca de Agua. PDF.it estampa cada página de tu PDF con tu marca de agua elegida. Descarga el resultado inmediatamente.",
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -196,28 +196,28 @@ export default function ComoAgregarMarcaDeAguaAPDFPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Marcas de Agua de Texto</h3>
                   <p className="text-slate-600">
-                    Ideales para etiquetas de estado como BORRADOR, CONFIDENCIAL, NO COPIAR o MUESTRA. Las marcas de agua de texto son rapidas de configurar — solo escribe la frase, elige un color y ajusta la opacidad. Funcionan bien en un angulo diagonal a traves de la pagina para maxima visibilidad sin bloquear el contenido.
+                    Ideales para etiquetas de estado como BORRADOR, CONFIDENCIAL, NO COPIAR o MUESTRA. Las marcas de agua de texto son rápidas de configurar — solo escribe la frase, elige un color y ajusta la opacidad. Funcionan bien en un ángulo diagonal a traves de la página para máxima visibilidad sin bloquear el contenido.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Marcas de Agua de Imagen</h3>
                   <p className="text-slate-600">
-                    Ideales para marca empresarial. Sube el logo de tu empresa como PNG con fondo transparente para el aspecto mas limpio. Las marcas de agua de imagen son geniales en propuestas, facturas y documentos para clientes. Establece la opacidad al 10-20% para que el logo sea visible pero no interfiera con la lectura.
+                    Ideales para marca empresarial. Sube el logo de tu empresa como PNG con fondo transparente para el aspecto más limpio. Las marcas de agua de imagen son geniales en propuestas, facturas y documentos para clientes. Establece la opacidad al 10-20% para que el logo sea visible pero no interfiera con la lectura.
                   </p>
                 </div>
               </div>
             </section>
 
-            {/* Hacer mas segura la marca de agua */}
+            {/* Hacer más segura la marca de agua */}
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Hacer Tu Marca de Agua Mas Dificil de Eliminar</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Hacer Tu Marca de Agua Mas Difícil de Eliminar</h2>
               <p className="text-slate-600 mb-4">
-                Una marca de agua estandar es una superposicion que se coloca encima del contenido de la pagina. Alguien con las herramientas adecuadas podria potencialmente eliminarla. Aqui te explicamos como hacer tu marca de agua mas permanente:
+                Una marca de agua estándar es una superposicion que se coloca encima del contenido de la página. Alguien con las herramientas adecuadas podría potencialmente eliminarla. Aqui te explicamos como hacer tu marca de agua más permanente:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Aplana el PDF despues.</strong> Usa <Link href="/es/aplanar-pdf" className="text-[#14D8C4] hover:underline">Aplanar PDF</Link> despues de agregar la marca de agua. Esto integra la marca de agua en el contenido de la pagina para que no pueda separarse del texto e imagenes originales.</li>
-                <li>&#10003; <strong>Agrega proteccion con contrasena.</strong> Usa <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link> para restringir permisos de edicion. Esto impide que usuarios casuales modifiquen o eliminen la marca de agua.</li>
-                <li>&#10003; <strong>Combina ambos enfoques.</strong> Aplana primero, luego protege con contrasena. Esto te da la proteccion mas fuerte contra la eliminacion no autorizada.</li>
+                <li>&#10003; <strong>Aplana el PDF después.</strong> Usa <Link href="/es/aplanar-pdf" className="text-[#14D8C4] hover:underline">Aplanar PDF</Link> después de agregar la marca de agua. Esto integra la marca de agua en el contenido de la página para que no pueda separarse del texto e imágenes originales.</li>
+                <li>&#10003; <strong>Agrega protección con contraseña.</strong> Usa <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link> para restringir permisos de edición. Esto impide que usuarios casuales modifiquen o eliminen la marca de agua.</li>
+                <li>&#10003; <strong>Combina ambos enfoques.</strong> Aplana primero, luego protege con contraseña. Esto te da la protección más fuerte contra la eliminación no autorizada.</li>
               </ul>
             </section>
 
@@ -234,13 +234,13 @@ export default function ComoAgregarMarcaDeAguaAPDFPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Bienes Raices y Arquitectura</h3>
                   <p className="text-slate-600">
-                    Los agentes y arquitectos marcan planos, listados de propiedades y dibujos de diseno con el logo de su empresa para proteger la propiedad intelectual y mantener la presencia de marca.
+                    Los agentes y arquitectos marcan planos, listados de propiedades y dibujos de diseño con el logo de su empresa para proteger la propiedad intelectual y mantener la presencia de marca.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">Educacion y Publicacion</h3>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">Educación y Publicación</h3>
                   <p className="text-slate-600">
-                    Los profesores marcan examenes con MUESTRA para prevenir la redistribucion. Los editores marcan copias de revision con el nombre del revisor para responsabilidad. Despues de marcar, puedes <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">comprimir el PDF</Link> para mantener tamanos de archivo manejables para distribucion por correo.
+                    Los profesores marcan examenes con MUESTRA para prevenir la redistribucion. Los editores marcan copias de revision con el nombre del revisor para responsabilidad. Después de marcar, puedes <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">comprimir el PDF</Link> para mantener tamaños de archivo manejables para distribución por correo.
                   </p>
                 </div>
               </div>
@@ -266,12 +266,12 @@ export default function ComoAgregarMarcaDeAguaAPDFPage() {
         {/* Related Articles */}
         <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-6">Articulos Relacionados</h2>
+            <h2 className="text-2xl font-black text-slate-900 mb-6">Artículos Relacionados</h2>
             <div className="grid gap-3">
               {[
-                { title: "Agregar una Marca de Agua 'Confidencial' a un PDF (Guia Rapida)", href: "/es/aprender/marca-de-agua-pdf-confidencial" },
-                { title: "Mejores Practicas de Marca de Agua en PDF (Tamano, Opacidad y Ubicacion)", href: "/es/aprender/marca-de-agua-pdf-mejores-practicas" },
-                { title: "Agregar una Marca de Agua a un PDF en Tu Telefono (iPhone y Android)", href: "/es/aprender/marca-de-agua-pdf-en-movil" },
+                { title: "Agregar una Marca de Agua 'Confidencial' a un PDF (Guia Rápida)", href: "/es/aprender/marca-de-agua-pdf-confidencial" },
+                { title: "Mejores Prácticas de Marca de Agua en PDF (Tamaño, Opacidad y Ubicacion)", href: "/es/aprender/marca-de-agua-pdf-mejores-prácticas" },
+                { title: "Agregar una Marca de Agua a un PDF en Tu Teléfono (iPhone y Android)", href: "/es/aprender/marca-de-agua-pdf-en-movil" },
               ].map((article) => (
                 <Link
                   key={article.href}
@@ -292,12 +292,12 @@ export default function ComoAgregarMarcaDeAguaAPDFPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como agrego una marca de agua a un PDF en linea?", a: "Sube tu PDF a la herramienta Marca de Agua PDF de PDF.it, escribe tu texto de marca de agua o sube una imagen, ajusta la opacidad y posicion, luego haz clic en Aplicar. Descarga tu PDF con marca de agua en segundos." },
-                { q: "Puedo agregar una marca de agua de imagen como un logo?", a: "Si. PDF.it admite marcas de agua de texto e imagen. Sube un logo PNG o JPG, ajusta el tamano y la opacidad, y se colocara en cada pagina de tu PDF." },
-                { q: "La herramienta Marca de Agua PDF es gratis?", a: "Marca de Agua PDF esta disponible para usuarios Pro y Business. Pro comienza en $3.99/mes e incluye marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." },
-                { q: "La marca de agua aparecera en todas las paginas?", a: "Si. Por defecto, la marca de agua se aplica a todas las paginas de tu PDF. Esto asegura un marcado consistente de marca o seguridad en todo el documento." },
-                { q: "Alguien puede quitar mi marca de agua?", a: "Una marca de agua agregada como superposicion a veces puede eliminarse con herramientas avanzadas. Para mayor proteccion, combina la marca de agua con proteccion por contrasena usando la herramienta Proteger PDF de PDF.it, o aplana el PDF despues para integrar la marca de agua en el contenido de la pagina." },
-                { q: "Puedo agregar una marca de agua a un PDF desde mi telefono?", a: "Si. PDF.it funciona en cualquier navegador movil. Sube tu PDF, agrega tu marca de agua de texto o imagen, y descarga el resultado — sin necesidad de aplicacion." },
+                { q: "Como agrego una marca de agua a un PDF en línea?", a: "Sube tu PDF a la herramienta Marca de Agua PDF de PDF.it, escribe tu texto de marca de agua o sube una imagen, ajusta la opacidad y posición, luego haz clic en Aplicar. Descarga tu PDF con marca de agua en segundos." },
+                { q: "Puedo agregar una marca de agua de imagen como un logo?", a: "Si. PDF.it admite marcas de agua de texto e imagen. Sube un logo PNG o JPG, ajusta el tamaño y la opacidad, y se colocara en cada página de tu PDF." },
+                { q: "La herramienta Marca de Agua PDF es gratis?", a: "Marca de Agua PDF está disponible para usuarios Pro y Business. Pro comienza en $3.99/mes e incluye marcas de agua ilimitadas, procesamiento por lotes y archivos de hasta 200MB." },
+                { q: "La marca de agua aparecera en todas las páginas?", a: "Si. Por defecto, la marca de agua se aplica a todas las páginas de tu PDF. Esto asegura un marcado consistente de marca o seguridad en todo el documento." },
+                { q: "Alguien puede quitar mi marca de agua?", a: "Una marca de agua agregada como superposicion a veces puede eliminarse con herramientas avanzadas. Para mayor protección, combina la marca de agua con protección por contraseña usando la herramienta Proteger PDF de PDF.it, o aplana el PDF después para integrar la marca de agua en el contenido de la página." },
+                { q: "Puedo agregar una marca de agua a un PDF desde mi teléfono?", a: "Si. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, agrega tu marca de agua de texto o imagen, y descarga el resultado — sin necesidad de aplicación." },
               ].map((faq, i) => (
                 <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

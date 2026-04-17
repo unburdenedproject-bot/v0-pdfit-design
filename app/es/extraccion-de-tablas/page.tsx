@@ -6,9 +6,9 @@ import { TableExtractionInterface } from "@/components/table-extraction-interfac
 import { FileSpreadsheet, Zap, Shield } from "lucide-react"
 
 export const metadata = {
-  title: "Extraccion de Tablas — Extraer Tablas de PDF a Excel | PDF.it",
+  title: "Extracción de Tablas — Extraer Tablas de PDF a Excel | PDF.it",
   description:
-    "Extrae tablas de documentos PDF y conviertelas en hojas de calculo Excel. Detecta automaticamente datos tabulares de reportes financieros, facturas y documentos de investigacion. 200 paginas/mes en el plan Business.",
+    "Extrae tablas de documentos PDF y conviertelas en hojas de cálculo Excel. Detecta automáticamente datos tabulares de reportes financieros, facturas y documentos de investigación. 200 páginas/mes en el plan Business.",
   alternates: {
     canonical: "https://pdf.it.com/es/extraccion-de-tablas",
     languages: {
@@ -20,12 +20,12 @@ export const metadata = {
 }
 
 const faqs = [
-  { q: "¿Que es la Extraccion de Tablas?", a: "Detecta automaticamente tablas dentro de PDFs y las convierte en hojas de calculo Excel editables. Funciona con reportes financieros, facturas, datos cientificos y cualquier PDF con datos tabulares." },
-  { q: "¿Cuantas paginas puedo extraer por mes?", a: "El plan Business ($13.99/mes) incluye 200 paginas por mes. Para mayor volumen, Enterprise ($49.99/mes) ofrece 2,000 paginas por mes con procesamiento prioritario." },
-  { q: "¿Que tipos de tablas se pueden extraer?", a: "Tablas con bordes visibles, tablas sin bordes, tablas de varias paginas y tablas con encabezados combinados. Funciona mejor con tablas estructuradas y limpias." },
-  { q: "¿Puedo extraer tablas de PDFs escaneados?", a: "Para mejores resultados, primero ejecute OCR usando nuestra herramienta Scanner OCR, luego use la Extraccion de Tablas en el PDF procesado." },
+  { q: "¿Qué es la Extracción de Tablas?", a: "Detecta automáticamente tablas dentro de PDFs y las convierte en hojas de cálculo Excel editables. Funciona con reportes financieros, facturas, datos cientificos y cualquier PDF con datos tabulares." },
+  { q: "¿Cuantas páginas puedo extraer por mes?", a: "El plan Business ($13.99/mes) incluye 200 páginas por mes. Para mayor volumen, Enterprise ($49.99/mes) ofrece 2,000 páginas por mes con procesamiento prioritario." },
+  { q: "¿Que tipos de tablas se pueden extraer?", a: "Tablas con bordes visibles, tablas sin bordes, tablas de varias páginas y tablas con encabezados combinados. Funciona mejor con tablas estructuradas y limpias." },
+  { q: "¿Puedo extraer tablas de PDFs escaneados?", a: "Para mejores resultados, primero ejecute OCR usando nuestra herramienta Scanner OCR, luego use la Extracción de Tablas en el PDF procesado." },
   { q: "¿En que formato es la salida?", a: "Las tablas se exportan como archivos Excel (.xlsx) compatibles con Microsoft Excel, Google Sheets y LibreOffice Calc." },
-  { q: "¿La Extraccion de Tablas es gratis?", a: "La Extraccion de Tablas es una funcion del plan Business a $13.99/mes con 200 paginas/mes. Incluye todas las demas herramientas Business como Comparar PDF, Firma Electronica y Redaccion de PDF." },
+  { q: "¿La Extracción de Tablas es gratis?", a: "La Extracción de Tablas es una función del plan Business a $13.99/mes con 200 páginas/mes. Incluye todas las demás herramientas Business como Comparar PDF, Firma Electrónica y Redacción de PDF." },
 ]
 
 const faqSchema = {
@@ -70,14 +70,14 @@ export default function TableExtractionPageEs() {
               >
                 <FileSpreadsheet className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Extraccion de Tablas de PDF</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Extracción de Tablas de PDF</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Extrae tablas de documentos PDF y conviertelas en hojas de calculo Excel editables. Detecta automaticamente datos tabulares de reportes financieros, facturas y documentos de investigacion. 200 paginas/mes en el plan Business.
+                Extrae tablas de documentos PDF y conviertelas en hojas de cálculo Excel editables. Detecta automáticamente datos tabulares de reportes financieros, facturas y documentos de investigación. 200 páginas/mes en el plan Business.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><FileSpreadsheet className="h-4 w-4 text-[#14D8C4]" /><span>Deteccion Automatica</span></div>
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Exportacion a Excel</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>200 Paginas/Mes</span></div>
+                <div className="flex items-center gap-2"><FileSpreadsheet className="h-4 w-4 text-[#14D8C4]" /><span>Detección Automática</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Exportación a Excel</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>200 Páginas/Mes</span></div>
               </div>
             </div>
           </div>
@@ -87,13 +87,13 @@ export default function TableExtractionPageEs() {
         <section className="py-10 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <p className="text-lg text-slate-600 leading-relaxed">
-              Los PDFs bloquean tus datos dentro de paginas estaticas. Cuando necesitas numeros de un reporte financiero, partidas de una factura o datos de investigacion de un documento, copiar celda por celda es lento y propenso a errores. La Extraccion de Tablas usa IA para detectar y extraer tablas automaticamente de cualquier PDF, entregando hojas de calculo Excel limpias listas para analisis. El plan Business incluye 200 paginas por mes — ¿necesitas mas? Actualiza a Enterprise para 2,000 paginas/mes.
+              Los PDFs bloquean tus datos dentro de páginas estáticas. Cuando necesitas números de un reporte financiero, partidas de una factura o datos de investigación de un documento, copiar celda por celda es lento y propenso a errores. La Extracción de Tablas usa IA para detectar y extraer tablas automáticamente de cualquier PDF, entregando hojas de cálculo Excel limpias listas para análisis. El plan Business incluye 200 páginas por mes — ¿necesitas más? Actualiza a Enterprise para 2,000 páginas/mes.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
               <li className="flex items-center gap-2">✓ Detecta tablas con filas, columnas y celdas</li>
-              <li className="flex items-center gap-2">✓ Exporta a Excel (.xlsx) para edicion y analisis</li>
-              <li className="flex items-center gap-2">✓ 200 paginas/mes en el plan Business</li>
-              <li className="flex items-center gap-2">✓ ¿Necesitas mas? Enterprise ofrece 2,000 paginas/mes</li>
+              <li className="flex items-center gap-2">✓ Exporta a Excel (.xlsx) para edición y análisis</li>
+              <li className="flex items-center gap-2">✓ 200 páginas/mes en el plan Business</li>
+              <li className="flex items-center gap-2">✓ ¿Necesitas más? Enterprise ofrece 2,000 páginas/mes</li>
             </ul>
           </div>
         </section>
@@ -115,9 +115,9 @@ export default function TableExtractionPageEs() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { title: "Reportes Financieros y Facturas", desc: "Extrae estados financieros, balances generales y partidas de facturas directamente a Excel para analisis, modelado y contabilidad." },
-                { title: "Datos de Investigacion y Regulatorios", desc: "Extrae tablas de datos de articulos cientificos, reportes de mercado y documentos gubernamentales en hojas de calculo estructuradas para tu propio analisis." },
-                { title: "200 Paginas/Mes — Escala con Enterprise", desc: "El plan Business incluye 200 paginas de extraccion de tablas por mes. Para necesidades de alto volumen, Enterprise ofrece 2,000 paginas/mes con procesamiento prioritario." },
+                { title: "Reportes Financieros y Facturas", desc: "Extrae estados financieros, balances generales y partidas de facturas directamente a Excel para análisis, modelado y contabilidad." },
+                { title: "Datos de Investigación y Regulatorios", desc: "Extrae tablas de datos de artículos cientificos, reportes de mercado y documentos gubernamentales en hojas de cálculo estructuradas para tu propio análisis." },
+                { title: "200 Páginas/Mes — Escala con Enterprise", desc: "El plan Business incluye 200 páginas de extracción de tablas por mes. Para necesidades de alto volumen, Enterprise ofrece 2,000 páginas/mes con procesamiento prioritario." },
               ].map((feature) => (
                 <div
                   key={feature.title}
@@ -156,7 +156,7 @@ export default function TableExtractionPageEs() {
               {[
                 { num: "1", title: "Sube tu PDF", desc: "Arrastra y suelta tu archivo" },
                 { num: "2", title: "Tablas detectadas", desc: "La IA identifica las estructuras de tablas" },
-                { num: "3", title: "Descarga el Excel", desc: "Obtiene tus datos en una hoja de calculo" },
+                { num: "3", title: "Descarga el Excel", desc: "Obtiene tus datos en una hoja de cálculo" },
               ].map((step) => (
                 <div key={step.num} className="flex-1">
                   <div
@@ -183,10 +183,10 @@ export default function TableExtractionPageEs() {
             <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "Extraccion de Tablas Alto Volumen", href: "/es/extraccion-tablas-alto-volumen", desc: "2,000 paginas/mes — Enterprise" },
+                { name: "Extracción de Tablas Alto Volumen", href: "/es/extraccion-tablas-alto-volumen", desc: "2,000 páginas/mes — Enterprise" },
                 { name: "PDF a Excel", href: "/es/pdf-a-excel", desc: "Convierte PDFs completos a Excel" },
                 { name: "Scanner OCR", href: "/es/escaner-ocr", desc: "Haz PDFs escaneados buscables primero" },
-                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamano del archivo" },
+                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamaño del archivo" },
               ].map((tool) => (
                 <div
                   key={tool.href}

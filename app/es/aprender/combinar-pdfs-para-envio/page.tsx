@@ -91,7 +91,7 @@ export default function CombinarPDFsParaEnvioPage() {
               <div className="space-y-4">
                 {[
                   { title: "Recopila todos los documentos requeridos como PDFs", desc: "Reúne cada documento listado en los requisitos de envío. Si algún documento está en formato Word, conviértelo usando Word a PDF. Si tienes documentos en papel, escanéalos a PDF usando tu teléfono o escáner." },
-                  { title: "Sube y ordena en el orden requerido", desc: "Sube todos los PDFs a la herramienta Unir de PDF.it. Arrastra y suelta en el orden especificado por las pautas de envío. Si no se especifica un orden, usa: solicitud/carta de presentación primero, luego identificación, luego documentos de respaldo." },
+                  { title: "Sube y ordena en el orden requerido", desc: "Sube todos los PDFs a la herramienta Unir de PDF.it. Arrastra y suelta en el orden especificado por las pautas de envío. Si no se específica un orden, usa: solicitud/carta de presentación primero, luego identificación, luego documentos de respaldo." },
                   { title: "Une, comprime y verifica", desc: "Haz clic en Unir para combinar. Si el archivo excede el límite de tamaño, comprímelo. Abre el PDF unido y revisa cada página para confirmar que todos los documentos están presentes y en el orden correcto." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">

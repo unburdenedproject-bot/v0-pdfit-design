@@ -7,7 +7,7 @@ import { FileText, ArrowRight } from "lucide-react"
 export const metadata = {
   title: "Convertir PDF a TXT: Extrae Texto Plano en Segundos | PDF.it",
   description:
-    "Aprende a convertir PDF a TXT y extraer texto plano de cualquier archivo PDF. Guia paso a paso para entrada de datos, programacion, notas y mas — gratis, en linea, sin software.",
+    "Aprende a convertir PDF a TXT y extraer texto plano de cualquier archivo PDF. Guia paso a paso para entrada de datos, programacion, notas y más — gratis, en línea, sin software.",
   keywords: "convertir pdf a txt, pdf a texto, extraer texto de pdf, pdf a texto plano, convertidor pdf a txt",
 }
 
@@ -139,7 +139,7 @@ export default function ConvertirPdfATextoPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
-                  <span><strong>Toma de notas e investigación.</strong> Copiar texto de un PDF a aplicaciones de notas (Notion, Google Keep, Apple Notes) funciona mucho mejor con TXT limpio que con contenido copiado de PDF que lleva formato oculto.</span>
+                  <span><strong>Toma de notas e investigación.</strong> Copiar texto de un PDF a aplicaciónes de notas (Notion, Google Keep, Apple Notes) funciona mucho mejor con TXT limpio que con contenido copiado de PDF que lleva formato oculto.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
@@ -163,7 +163,7 @@ export default function ConvertirPdfATextoPage() {
                   },
                   {
                     title: "Convierte a texto plano",
-                    desc: "Haz clic en Convertir. PDF.it lee todo el texto seleccionable en tu PDF y genera un archivo .txt limpio. Esto toma solo unos segundos para la mayoría de los documentos.",
+                    desc: "Haz clic en Convertir. PDF.it lee todo el texto selecciónable en tu PDF y genera un archivo .txt limpio. Esto toma solo unos segundos para la mayoría de los documentos.",
                   },
                   {
                     title: "Descarga y usa tu texto",
@@ -191,7 +191,7 @@ export default function ConvertirPdfATextoPage() {
               </p>
               <ul className="space-y-2 text-slate-700">
                 <li>&#x2717; <strong>Todo el formato</strong> — negritas, cursivas, subrayados, tamaños de fuente y colores desaparecen.</li>
-                <li>&#x2717; <strong>Imágenes y gráficos</strong> — fotos, gráficos, logotipos y diagramas se eliminan. Usa <Link href="/es/extraer-imagenes-de-pdf" className="text-[#14D8C4] hover:underline">Extraer Imágenes</Link> si los necesitas por separado.</li>
+                <li>&#x2717; <strong>Imágenes y gráficos</strong> — fotos, gráficos, logotipos y diagramas se eliminan. Usa <Link href="/es/extraer-imágenes-de-pdf" className="text-[#14D8C4] hover:underline">Extraer Imágenes</Link> si los necesitas por separado.</li>
                 <li>&#x2717; <strong>Tablas y diseño</strong> — las estructuras de tablas se convierten en líneas de texto plano. La alineación de columnas se pierde.</li>
                 <li>&#x2717; <strong>Encabezados y pies de página</strong> — números de página, encabezados y pies pueden aparecer en línea con el texto principal.</li>
                 <li>&#x2717; <strong>Hipervínculos</strong> — los enlaces clicables se convierten en texto plano (el texto de la URL permanece, pero ya no es clicable).</li>
@@ -248,13 +248,13 @@ export default function ConvertirPdfATextoPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Cuando PDF a TXT No Funciona (Y Qué Hacer en Su Lugar)</h2>
               <p className="text-slate-600 mb-4">
-                PDF a TXT extrae texto <em>seleccionable</em> — texto que puedes resaltar y copiar en un visor de PDF. No funciona en:
+                PDF a TXT extrae texto <em>selecciónable</em> — texto que puedes resaltar y copiar en un visor de PDF. No funciona en:
               </p>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">PDFs Escaneados</h3>
                   <p className="text-slate-600">
-                    Si tu PDF es un escaneo (fotos de páginas de papel), no hay texto seleccionable para extraer. Necesitas <Link href="/es/escaner-ocr" className="text-[#14D8C4] hover:underline">OCR (Reconocimiento Óptico de Caracteres)</Link> para leer el texto de las imágenes. El Escáner OCR de PDF.it se encarga de esto automáticamente.
+                    Si tu PDF es un escaneo (fotos de páginas de papel), no hay texto selecciónable para extraer. Necesitas <Link href="/es/escaner-ocr" className="text-[#14D8C4] hover:underline">OCR (Reconocimiento Óptico de Caracteres)</Link> para leer el texto de las imágenes. El Escáner OCR de PDF.it se encarga de esto automáticamente.
                   </p>
                 </div>
 
@@ -298,7 +298,7 @@ export default function ConvertirPdfATextoPage() {
             <div className="grid gap-3">
               {[
                 { title: "Cómo Copiar Texto de un PDF a Notas o Documentos (Limpiamente)", href: "/es/aprender/copiar-texto-de-pdf-a-notas" },
-                { title: "Por Qué el Texto Extraído de PDF Sale Ilegible (Y Cómo Solucionarlo)", href: "/es/aprender/pdf-texto-ilegible-solucion" },
+                { title: "Por Qué el Texto Extraído de PDF Sale Ilegible (Y Cómo Soluciónarlo)", href: "/es/aprender/pdf-texto-ilegible-solución" },
                 { title: "Extraer Texto de PDF en iPhone/Android (Mejores Métodos)", href: "/es/aprender/extraer-texto-de-pdf-en-movil" },
               ].map((article) => (
                 <Link

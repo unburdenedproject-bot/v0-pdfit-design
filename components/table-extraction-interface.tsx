@@ -197,22 +197,22 @@ export function TableExtractionInterface({ enterpriseMode = false }: { enterpris
     localePrefix === "/es"
       ? {
           uploadTitle: "Sube tu PDF",
-          uploadDesc: "Arrastra y suelta tu archivo PDF aqui, o haz clic para seleccionar",
+          uploadDesc: "Arrastra y suelta tu archivo PDF aquí, o haz clic para seleccionar",
           browse: "Seleccionar archivo",
           process: "Extraer Tablas",
           processing: "Extrayendo tablas...",
           success: "Tablas extraidas exitosamente",
           download: "Descargar Excel",
           extractAnother: "Extraer otro",
-          upgradeTitle: "Funcion Business",
-          upgradeDesc: "La Extraccion de Tablas esta disponible en el plan Business (200 paginas/mes).",
+          upgradeTitle: "Función Business",
+          upgradeDesc: "La Extracción de Tablas está disponible en el plan Business (200 páginas/mes).",
           upgradeBtn: "Ver Plan Business",
           errorNoTables: "No se detectaron tablas en este PDF.",
         }
       : localePrefix === "/br"
         ? {
             uploadTitle: "Envie seu PDF",
-            uploadDesc: "Arraste e solte seu arquivo PDF aqui, ou clique para selecionar",
+            uploadDesc: "Arraste e solte seu arquivo PDF aquí, ou clique para selecionar",
             browse: "Selecionar arquivo",
             process: "Extrair Tabelas",
             processing: "Extraindo tabelas...",
@@ -220,7 +220,7 @@ export function TableExtractionInterface({ enterpriseMode = false }: { enterpris
             download: "Baixar Excel",
             extractAnother: "Extrair outro",
             upgradeTitle: "Funcao Business",
-            upgradeDesc: "A Extracao de Tabelas esta disponivel no plano Business (200 paginas/mes).",
+            upgradeDesc: "A Extracao de Tabelas está disponível no plano Business (200 páginas/mes).",
             upgradeBtn: "Ver Plano Business",
             errorNoTables: "Nenhuma tabela detectada neste PDF.",
           }

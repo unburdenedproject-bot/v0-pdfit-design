@@ -22,11 +22,11 @@ export default function ExtraerDatosDePDFPage() {
     },
     {
         "q": "¿Puedo extraer datos de un PDF escaneado?",
-        "a": "Sí, pero los PDFs escaneados requieren OCR primero. Usa el Escáner OCR de PDF.it para convertir páginas escaneadas en texto seleccionable y buscable. Luego usa la herramienta de extracción apropiada."
+        "a": "Sí, pero los PDFs escaneados requieren OCR primero. Usa el Escáner OCR de PDF.it para convertir páginas escaneadas en texto selecciónable y buscable. Luego usa la herramienta de extracción apropiada."
     },
     {
         "q": "¿Cuál es la diferencia entre un PDF digital y un PDF escaneado?",
-        "a": "Un PDF digital fue creado desde una aplicación de computadora y contiene texto y datos reales que se pueden seleccionar y extraer directamente. Un PDF escaneado es esencialmente una fotografía de un documento — contiene solo datos de imagen y requiere OCR para extraer texto."
+        "a": "Un PDF digital fue creado desde una aplicación de computadora y contiene texto y datos reales que se pueden selecciónar y extraer directamente. Un PDF escaneado es esencialmente una fotografía de un documento — contiene solo datos de imagen y requiere OCR para extraer texto."
     },
     {
         "q": "¿Puedo extraer datos de PDFs protegidos con contraseña?",
@@ -68,7 +68,7 @@ export default function ExtraerDatosDePDFPage() {
           </ul>
         </div></section>
 
-        <section className="py-12 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center"><h2 className="text-2xl font-black text-slate-900 mb-4">Elige tu Herramienta de Extracción</h2><p className="text-slate-600 mb-8">PDF.it ofrece múltiples formas de extraer datos de PDFs:</p><div className="grid grid-cols-2 gap-4 max-w-md mx-auto"><Link href="/es/pdf-a-txt" className="inline-flex items-center justify-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-6 rounded-xl transition-colors text-sm">Extraer Texto</Link><Link href="/es/pdf-a-excel" className="inline-flex items-center justify-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-6 rounded-xl transition-colors text-sm">Extraer Tablas</Link><Link href="/es/extraer-imagenes-de-pdf" className="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm">Extraer Imágenes</Link><Link href="/es/escaner-ocr" className="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm">Escáner OCR</Link></div></div></section>
+        <section className="py-12 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center"><h2 className="text-2xl font-black text-slate-900 mb-4">Elige tu Herramienta de Extracción</h2><p className="text-slate-600 mb-8">PDF.it ofrece múltiples formas de extraer datos de PDFs:</p><div className="grid grid-cols-2 gap-4 max-w-md mx-auto"><Link href="/es/pdf-a-txt" className="inline-flex items-center justify-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-6 rounded-xl transition-colors text-sm">Extraer Texto</Link><Link href="/es/pdf-a-excel" className="inline-flex items-center justify-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-6 rounded-xl transition-colors text-sm">Extraer Tablas</Link><Link href="/es/extraer-imágenes-de-pdf" className="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm">Extraer Imágenes</Link><Link href="/es/escaner-ocr" className="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-6 rounded-xl transition-colors text-sm">Escáner OCR</Link></div></div></section>
 
         {/* Feature Blocks */}
         <section className="py-16" style={{ background: `radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%), #0E0F1E` }}>
@@ -113,7 +113,7 @@ export default function ExtraerDatosDePDFPage() {
             {[
               { name: "PDF a TXT", href: "/es/pdf-a-txt", desc: "Extrae contenido de texto" },
               { name: "PDF a Excel", href: "/es/pdf-a-excel", desc: "Extrae tablas y datos" },
-              { name: "Extraer Imágenes", href: "/es/extraer-imagenes-de-pdf", desc: "Extrae imágenes incrustadas" },
+              { name: "Extraer Imágenes", href: "/es/extraer-imágenes-de-pdf", desc: "Extrae imágenes incrustadas" },
               { name: "Escáner OCR", href: "/es/escaner-ocr", desc: "Texto de PDFs escaneados" },
             ].map((tool) => (
               <div key={tool.href} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}>

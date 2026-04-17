@@ -6,9 +6,9 @@ import { TableExtractionInterface } from "@/components/table-extraction-interfac
 import { FileSpreadsheet, Zap, Shield, Download } from "lucide-react"
 
 export const metadata = {
-  title: "Extraccion de Tablas de Alto Volumen — 2,000 Paginas/Mes a Excel | PDF.it",
+  title: "Extracción de Tablas de Alto Volumen — 2,000 Páginas/Mes a Excel | PDF.it",
   description:
-    "Extrae hasta 2,000 paginas de tablas al mes de PDFs a hojas de calculo Excel. Disenado para bufetes de abogados, equipos contables, laboratorios y organizaciones con grandes volumenes de datos. Funcion Enterprise de PDF.it.",
+    "Extrae hasta 2,000 páginas de tablas al mes de PDFs a hojas de cálculo Excel. Diseñado para bufetes de abogados, equipos contables, laboratorios y organizaciones con grandes volumenes de datos. Función Enterprise de PDF.it.",
   alternates: {
     canonical: "https://pdf.it.com/es/extraccion-tablas-alto-volumen",
     languages: {
@@ -25,33 +25,33 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Que es la Extraccion de Tablas de Alto Volumen?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Es la version Enterprise de Extraccion de Tablas con un limite mensual de 2,000 paginas en lugar de 200. El mismo motor de extraccion preciso, pero disenado para equipos que procesan documentos a gran escala." }
+      "name": "Qué es la Extracción de Tablas de Alto Volumen?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Es la version Enterprise de Extracción de Tablas con un límite mensual de 2,000 páginas en lugar de 200. El mismo motor de extracción preciso, pero diseñado para equipos que procesan documentos a gran escala." }
     },
     {
       "@type": "Question",
-      "name": "En que se diferencia de la Extraccion de Tablas normal?",
-      "acceptedAnswer": { "@type": "Answer", "text": "La Extraccion de Tablas normal (Business, $13.99/mes) permite 200 paginas al mes. Alto Volumen (Enterprise, $49.99/mes) permite 2,000 paginas al mes con procesamiento prioritario y soporte dedicado." }
+      "name": "En que se diferencia de la Extracción de Tablas normal?",
+      "acceptedAnswer": { "@type": "Answer", "text": "La Extracción de Tablas normal (Business, $13.99/mes) permite 200 páginas al mes. Alto Volumen (Enterprise, $49.99/mes) permite 2,000 páginas al mes con procesamiento prioritario y soporte dedicado." }
     },
     {
       "@type": "Question",
       "name": "Que tipos de tablas se pueden extraer?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Tablas financieras, facturas, documentos legales, resultados de laboratorio, informes de cumplimiento — cualquier PDF con datos tabulares estructurados. La herramienta detecta filas, columnas y limites de celdas automaticamente." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Tablas financieras, facturas, documentos legales, resultados de laboratorio, informes de cumplimiento — cualquier PDF con datos tabulares estructurados. La herramienta detecta filas, columnas y límites de celdas automáticamente." }
     },
     {
       "@type": "Question",
       "name": "Funciona con PDFs escaneados?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Para PDFs escaneados, primero pasalos por nuestro Escaner OCR para convertir imagenes a texto buscable, y luego extrae las tablas." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Para PDFs escaneados, primero pasalos por nuestro Escáner OCR para convertir imágenes a texto buscable, y luego extrae las tablas." }
     },
     {
       "@type": "Question",
       "name": "Se almacenan mis datos?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. Los archivos se procesan y eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Los archivos se procesan y eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." }
     },
     {
       "@type": "Question",
       "name": "En que formato es la salida?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Las tablas se exportan como archivos Excel (.xlsx) que puedes abrir en Microsoft Excel, Google Sheets o cualquier aplicacion de hojas de calculo compatible." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Las tablas se exportan como archivos Excel (.xlsx) que puedes abrir en Microsoft Excel, Google Sheets o cualquier aplicación de hojas de cálculo compatible." }
     },
   ]
 }
@@ -88,14 +88,14 @@ export default function ExtraccionTablasAltoVolumenPage() {
               >
                 <FileSpreadsheet className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Extraccion de Tablas de Alto Volumen</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Extracción de Tablas de Alto Volumen</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Extrae hasta 2,000 paginas de tablas al mes de PDFs a Excel. Disenado para bufetes de abogados, equipos contables, laboratorios de investigacion y organizaciones con grandes volumenes de documentos.
+                Extrae hasta 2,000 páginas de tablas al mes de PDFs a Excel. Diseñado para bufetes de abogados, equipos contables, laboratorios de investigación y organizaciones con grandes volumenes de documentos.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><FileSpreadsheet className="h-4 w-4 text-[#14D8C4]" /><span>2,000 Paginas/Mes</span></div>
+                <div className="flex items-center gap-2"><FileSpreadsheet className="h-4 w-4 text-[#14D8C4]" /><span>2,000 Páginas/Mes</span></div>
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Procesamiento Prioritario</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Funcion Enterprise</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Función Enterprise</span></div>
               </div>
             </div>
           </div>
@@ -105,13 +105,13 @@ export default function ExtraccionTablasAltoVolumenPage() {
         <section className="py-10 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <p className="text-lg text-slate-600 leading-relaxed">
-              La Extraccion de Tablas estandar (Business) maneja hasta 200 paginas al mes. La Extraccion de Tablas de Alto Volumen esta disenada para equipos Enterprise que procesan miles de paginas — informes financieros, archivos legales, resultados de laboratorio y documentos de cumplimiento. Extrae datos tabulares estructurados de PDFs a Excel a gran escala con procesamiento prioritario.
+              La Extracción de Tablas estándar (Business) maneja hasta 200 páginas al mes. La Extracción de Tablas de Alto Volumen esta diseñada para equipos Enterprise que procesan miles de páginas — informes financieros, archivos legales, resultados de laboratorio y documentos de cumplimiento. Extrae datos tabulares estructurados de PDFs a Excel a gran escala con procesamiento prioritario.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
-              <li className="flex items-center gap-2">{"\u2713"} 2,000 paginas de extraccion de tablas al mes</li>
+              <li className="flex items-center gap-2">{"\u2713"} 2,000 páginas de extracción de tablas al mes</li>
               <li className="flex items-center gap-2">{"\u2713"} Cola de procesamiento prioritario</li>
-              <li className="flex items-center gap-2">{"\u2713"} El mismo motor preciso de deteccion de tablas</li>
-              <li className="flex items-center gap-2">{"\u2713"} Soporte dedicado por correo electronico</li>
+              <li className="flex items-center gap-2">{"\u2713"} El mismo motor preciso de detección de tablas</li>
+              <li className="flex items-center gap-2">{"\u2713"} Soporte dedicado por correo electrónico</li>
             </ul>
           </div>
         </section>
@@ -134,7 +134,7 @@ export default function ExtraccionTablasAltoVolumenPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
                 { title: "Bufetes de Abogados y Equipos Legales", desc: "Procesa documentos de descubrimiento, archivos judiciales y tablas de contratos en volumen. Extrae datos estructurados de cientos de PDFs legales al mes sin transcripcion manual." },
-                { title: "Contabilidad y Finanzas", desc: "Extrae tablas financieras de informes anuales, documentos fiscales y facturas a gran escala. Alimenta los datos extraidos directamente en tus hojas de calculo y software contable." },
+                { title: "Contabilidad y Finanzas", desc: "Extrae tablas financieras de informes anuales, documentos fiscales y facturas a gran escala. Alimenta los datos extraidos directamente en tus hojas de cálculo y software contable." },
                 { title: "Laboratorios e Informes de Cumplimiento", desc: "Extrae tablas de datos experimentales, informes de cumplimiento y archivos regulatorios. Maneja grandes lotes de documentos cientificos y regulatorios de manera eficiente." },
               ].map((feature) => (
                 <div
@@ -174,7 +174,7 @@ export default function ExtraccionTablasAltoVolumenPage() {
               {[
                 { num: "1", title: "Sube tu PDF", desc: "Arrastra y suelta tu archivo" },
                 { num: "2", title: "Tablas auto-detectadas", desc: "La IA identifica estructuras de tablas" },
-                { num: "3", title: "Descarga Excel", desc: "Obtiene tus datos en una hoja de calculo" },
+                { num: "3", title: "Descarga Excel", desc: "Obtiene tus datos en una hoja de cálculo" },
               ].map((step) => (
                 <div key={step.num} className="flex-1">
                   <div
@@ -201,10 +201,10 @@ export default function ExtraccionTablasAltoVolumenPage() {
             <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "Extraccion de Tablas", href: "/es/extraccion-de-tablas", desc: "200 paginas/mes — Business" },
+                { name: "Extracción de Tablas", href: "/es/extraccion-de-tablas", desc: "200 páginas/mes — Business" },
                 { name: "PDF a Excel", href: "/es/pdf-a-excel", desc: "Convierte PDFs completos a Excel" },
-                { name: "Escaner OCR", href: "/es/escaner-ocr", desc: "Haz PDFs escaneados buscables primero" },
-                { name: "Automatizacion", href: "/es/automatizacion", desc: "Encadena herramientas PDF juntas" },
+                { name: "Escáner OCR", href: "/es/escaner-ocr", desc: "Haz PDFs escaneados buscables primero" },
+                { name: "Automatización", href: "/es/automatización", desc: "Encadena herramientas PDF juntas" },
               ].map((tool) => (
                 <div
                   key={tool.href}
@@ -253,12 +253,12 @@ export default function ExtraccionTablasAltoVolumenPage() {
             <h2 className="text-3xl font-black text-white mb-10 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-4">
               {[
-                { q: "Que es la Extraccion de Tablas de Alto Volumen?", a: "Es la version Enterprise de Extraccion de Tablas con un limite mensual de 2,000 paginas en lugar de 200. El mismo motor de extraccion preciso, pero disenado para equipos que procesan documentos a gran escala." },
-                { q: "En que se diferencia de la Extraccion de Tablas normal?", a: "La Extraccion de Tablas normal (Business, $13.99/mes) permite 200 paginas al mes. Alto Volumen (Enterprise, $49.99/mes) permite 2,000 paginas al mes con procesamiento prioritario y soporte dedicado." },
-                { q: "Que tipos de tablas se pueden extraer?", a: "Tablas financieras, facturas, documentos legales, resultados de laboratorio, informes de cumplimiento — cualquier PDF con datos tabulares estructurados. La herramienta detecta filas, columnas y limites de celdas automaticamente." },
-                { q: "Funciona con PDFs escaneados?", a: "Para PDFs escaneados, primero pasalos por nuestro Escaner OCR para convertir imagenes a texto buscable, y luego extrae las tablas." },
-                { q: "Se almacenan mis datos?", a: "No. Los archivos se procesan y eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." },
-                { q: "En que formato es la salida?", a: "Las tablas se exportan como archivos Excel (.xlsx) que puedes abrir en Microsoft Excel, Google Sheets o cualquier aplicacion de hojas de calculo compatible." },
+                { q: "Qué es la Extracción de Tablas de Alto Volumen?", a: "Es la version Enterprise de Extracción de Tablas con un límite mensual de 2,000 páginas en lugar de 200. El mismo motor de extracción preciso, pero diseñado para equipos que procesan documentos a gran escala." },
+                { q: "En que se diferencia de la Extracción de Tablas normal?", a: "La Extracción de Tablas normal (Business, $13.99/mes) permite 200 páginas al mes. Alto Volumen (Enterprise, $49.99/mes) permite 2,000 páginas al mes con procesamiento prioritario y soporte dedicado." },
+                { q: "Que tipos de tablas se pueden extraer?", a: "Tablas financieras, facturas, documentos legales, resultados de laboratorio, informes de cumplimiento — cualquier PDF con datos tabulares estructurados. La herramienta detecta filas, columnas y límites de celdas automáticamente." },
+                { q: "Funciona con PDFs escaneados?", a: "Para PDFs escaneados, primero pasalos por nuestro Escáner OCR para convertir imágenes a texto buscable, y luego extrae las tablas." },
+                { q: "Se almacenan mis datos?", a: "No. Los archivos se procesan y eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." },
+                { q: "En que formato es la salida?", a: "Las tablas se exportan como archivos Excel (.xlsx) que puedes abrir en Microsoft Excel, Google Sheets o cualquier aplicación de hojas de cálculo compatible." },
               ].map((faq, i) => (
                 <div
                   key={i}

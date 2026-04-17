@@ -152,7 +152,7 @@ export default function ComprimirPDFConImagenesPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">Consejos Especiales para PDFs Escaneados</h2>
               <p className="text-slate-600 mb-4">Los documentos escaneados son el tipo más común de PDF sobredimensionado con muchas imágenes. Se comprimen extremadamente bien porque cada página es esencialmente una fotografía. Así es como obtener los mejores resultados:</p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Usa compresión Media o Extrema.</strong> El texto escaneado se mantiene legible incluso a resoluciones más bajas porque nuestros ojos pueden llenar los vacíos. La compresión Media típicamente reduce un documento escaneado de 20MB a 3-5MB.</li>
+                <li>&#10003; <strong>Usa compresión Media o Extrema.</strong> El texto escaneado se mantiene legible incluso a resoluciónes más bajas porque nuestros ojos pueden llenar los vacíos. La compresión Media típicamente reduce un documento escaneado de 20MB a 3-5MB.</li>
                 <li>&#10003; <strong>Ejecuta OCR primero.</strong> Usa el <Link href="/es/escaner-ocr" className="text-[#14D8C4] hover:underline">Escáner OCR</Link> para convertir imágenes escaneadas a texto con búsqueda. Esto hace el documento más útil y puede mejorar la eficiencia de la compresión.</li>
                 <li>&#10003; <strong>Limpia escaneos de teléfono.</strong> Si el documento fue escaneado con la cámara del teléfono, usa <Link href="/es/limpiar-escaneo" className="text-[#14D8C4] hover:underline">Limpieza de Escaneo</Link> primero para eliminar sombras y enderezar páginas, luego comprime.</li>
                 <li>&#10003; <strong>Aplana anotaciones.</strong> Si has anotado el PDF escaneado, <Link href="/es/aplanar-pdf" className="text-[#14D8C4] hover:underline">aplánalo primero</Link> para fusionar las anotaciones en la página antes de comprimir.</li>
@@ -164,7 +164,7 @@ export default function ComprimirPDFConImagenesPage() {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Extraer y Optimizar Imágenes Individuales</h3>
-                  <p className="text-slate-600">Si algunas imágenes sobredimensionadas están aumentando el tamaño de tu archivo, usa <Link href="/es/extraer-imagenes-de-pdf" className="text-[#14D8C4] hover:underline">Extraer Imágenes de PDF</Link> para sacarlas. Redimensiona o comprime cada una individualmente, luego reconstruye el documento. Esto te da control preciso sobre la calidad.</p>
+                  <p className="text-slate-600">Si algunas imágenes sobredimensionadas están aumentando el tamaño de tu archivo, usa <Link href="/es/extraer-imágenes-de-pdf" className="text-[#14D8C4] hover:underline">Extraer Imágenes de PDF</Link> para sacarlas. Redimensiona o comprime cada una individualmente, luego reconstruye el documento. Esto te da control preciso sobre la calidad.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Convertir a JPG para Compartir</h3>

@@ -15,7 +15,7 @@ export default function ExtraerPaginasDePDFPage() {
   const faqs = [
     {
         "q": "¿Cómo extraigo páginas específicas de un PDF?",
-        "a": "Sube tu PDF a PDF.it, ingresa los números de página o rangos que deseas (ej. 1, 3, 5-10), luego haz clic en Extraer Páginas. Un nuevo PDF con solo las páginas seleccionadas estará listo para descargar."
+        "a": "Sube tu PDF a PDF.it, ingresa los números de página o rangos que deseas (ej. 1, 3, 5-10), luego haz clic en Extraer Páginas. Un nuevo PDF con solo las páginas selecciónadas estará listo para descargar."
     },
     {
         "q": "¿Puedo extraer un rango de páginas de un PDF?",
@@ -23,15 +23,15 @@ export default function ExtraerPaginasDePDFPage() {
     },
     {
         "q": "¿Extraer páginas cambia mi PDF original?",
-        "a": "No. Tu PDF original nunca se modifica. PDF.it crea un PDF completamente nuevo con solo las páginas que seleccionaste. El original permanece exactamente como estaba."
+        "a": "No. Tu PDF original nunca se modifica. PDF.it crea un PDF completamente nuevo con solo las páginas que selecciónaste. El original permanece exactamente como estaba."
     },
     {
         "q": "¿Puedo extraer páginas de un PDF desde mi celular?",
-        "a": "Sí. PDF.it funciona en navegadores móviles — sube tu PDF, selecciona páginas y descarga el PDF extraído en iPhone o Android."
+        "a": "Sí. PDF.it funciona en navegadores móviles — sube tu PDF, seleccióna páginas y descarga el PDF extraído en iPhone o Android."
     },
     {
         "q": "¿Es gratis extraer páginas de un PDF?",
-        "a": "Sí. Las cuentas gratuitas pueden extraer páginas de PDFs de hasta 25MB con hasta 10 conversiones por día. Las cuentas Pro obtienen extracciones ilimitadas y archivos de hasta 200MB."
+        "a": "Sí. Las cuentas gratuitas pueden extraer páginas de PDFs de hasta 25MB con hasta 10 conversiónes por día. Las cuentas Pro obtienen extracciones ilimitadas y archivos de hasta 200MB."
     },
     {
         "q": "¿Puedo extraer páginas de un PDF protegido con contraseña?",

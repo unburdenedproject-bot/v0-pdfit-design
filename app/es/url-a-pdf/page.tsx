@@ -6,9 +6,9 @@ import { Globe, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Convertir URL a PDF Online — Guarda Cualquier Pagina Web | PDF.it",
+  title: "Convertir URL a PDF Online — Guarda Cualquier Página Web | PDF.it",
   description:
-    "Convierte cualquier pagina web en un PDF de alta calidad. Introduce una URL y descarga un PDF perfectamente formateado. Tamano, orientacion y margenes personalizables. Funcion Pro de PDF.it.",
+    "Convierte cualquier página web en un PDF de alta calidad. Introduce una URL y descarga un PDF perfectamente formateado. Tamaño, orientación y margenes personalizables. Función Pro de PDF.it.",
   alternates: {
     canonical: "https://pdf.it.com/es/url-a-pdf",
     languages: {
@@ -53,12 +53,12 @@ export default function UrlAPdfPageEs() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convertir URL a PDF</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Convierte cualquier pagina web en un PDF de alta calidad. Introduce una URL, personaliza el layout y descarga un PDF perfectamente formateado en segundos.
+                Convierte cualquier página web en un PDF de alta calidad. Introduce una URL, personaliza el layout y descarga un PDF perfectamente formateado en segundos.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2">
                   <Zap className="h-4 w-4 text-[#14D8C4]" />
-                  <span>Cualquier Pagina Publica</span>
+                  <span>Cualquier Página Pública</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Shield className="h-4 w-4 text-[#14D8C4]" />
@@ -77,14 +77,14 @@ export default function UrlAPdfPageEs() {
         <section className="py-10 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <p className="text-lg text-slate-600 leading-relaxed">
-              Las paginas web pueden cambiar, desaparecer o requerir conexion a internet. Convertir una URL a PDF te permite guardar una copia permanente del contenido exactamente como aparece — con su diseno, imagenes y formato intactos. Perfecto para archivar articulos, guardar recibos o compartir contenido offline.
+              Las páginas web pueden cambiar, desaparecer o requerir conexión a internet. Convertir una URL a PDF te permite guardar una copia permanente del contenido exactamente como aparece — con su diseño, imágenes y formato intactos. Perfecto para archivar artículos, guardar recibos o compartir contenido offline.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
-              <li className="flex items-center gap-2">✓ Convierte cualquier pagina web publica a PDF</li>
-              <li className="flex items-center gap-2">✓ Elige tamano de pagina, orientacion y margenes</li>
-              <li className="flex items-center gap-2">✓ Preserva texto, imagenes y layout de la pagina</li>
-              <li className="flex items-center gap-2">✓ Sin instalacion — funciona desde tu navegador</li>
-              <li className="flex items-center gap-2">✓ Perfecto para lectura offline, impresion y archivo</li>
+              <li className="flex items-center gap-2">✓ Convierte cualquier página web pública a PDF</li>
+              <li className="flex items-center gap-2">✓ Elige tamaño de página, orientación y margenes</li>
+              <li className="flex items-center gap-2">✓ Preserva texto, imágenes y layout de la página</li>
+              <li className="flex items-center gap-2">✓ Sin instalación — funciona desde tu navegador</li>
+              <li className="flex items-center gap-2">✓ Perfecto para lectura offline, impresión y archivo</li>
             </ul>
           </div>
         </section>
@@ -106,9 +106,9 @@ export default function UrlAPdfPageEs() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { title: "Archiva Articulos e Investigacion", desc: "Captura articulos, documentacion y publicaciones de blog como PDFs. Construye una biblioteca permanente que puedes consultar incluso cuando la pagina original desaparezca." },
-                { title: "Preserva Paginas Web Permanentemente", desc: "Conserva paginas importantes antes de que cambien o sean eliminadas. Crea registros con fecha del contenido web para cumplimiento, evidencia o referencia personal." },
-                { title: "Comparte Contenido Offline", desc: "Convierte paginas web a PDF y compartelas con colegas o clientes que no tengan acceso a internet. Los PDFs funcionan en cualquier dispositivo sin navegador." },
+                { title: "Archiva Artículos e Investigación", desc: "Captura artículos, documentación y publicaciones de blog como PDFs. Construye una biblioteca permanente que puedes consultar incluso cuando la página original desaparezca." },
+                { title: "Preserva Páginas Web Permanentemente", desc: "Conserva páginas importantes antes de que cambien o sean eliminadas. Crea registros con fecha del contenido web para cumplimiento, evidencia o referencia personal." },
+                { title: "Comparte Contenido Offline", desc: "Convierte páginas web a PDF y compartelas con colegas o clientes que no tengan acceso a internet. Los PDFs funcionan en cualquier dispositivo sin navegador." },
               ].map((feature) => (
                 <div
                   key={feature.title}
@@ -145,8 +145,8 @@ export default function UrlAPdfPageEs() {
             <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Convertir URL a PDF</h2>
             <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
               {[
-                { num: "1", title: "Introduce la URL", desc: "Pega la direccion de la pagina web" },
-                { num: "2", title: "Elige las opciones", desc: "Tamano de pagina, orientacion y margenes" },
+                { num: "1", title: "Introduce la URL", desc: "Pega la dirección de la página web" },
+                { num: "2", title: "Elige las opciones", desc: "Tamaño de página, orientación y margenes" },
                 { num: "3", title: "Descarga tu PDF", desc: "Obtiene un documento perfectamente formateado" },
               ].map((step) => (
                 <div key={step.num} className="flex-1">
@@ -174,10 +174,10 @@ export default function UrlAPdfPageEs() {
             <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "PDF a JPG", href: "/es/pdf-a-jpg", desc: "Convierte paginas PDF a imagenes" },
+                { name: "PDF a JPG", href: "/es/pdf-a-jpg", desc: "Convierte páginas PDF a imágenes" },
                 { name: "Unir PDF", href: "/es/unir-pdf", desc: "Combina varios PDFs en uno" },
-                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamano del PDF" },
-                { name: "Escaner OCR", href: "/es/escaner-ocr", desc: "Extrae texto de escaneados" },
+                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamaño del PDF" },
+                { name: "Escáner OCR", href: "/es/escaner-ocr", desc: "Extrae texto de escaneados" },
               ].map((tool) => (
                 <div
                   key={tool.href}
@@ -226,11 +226,11 @@ export default function UrlAPdfPageEs() {
             <h2 className="text-3xl font-black text-white mb-10 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-4">
               {[
-                { q: "¿Que tipos de paginas web puedo convertir a PDF?", a: "Puedes convertir cualquier pagina web publica. Funciona con articulos, blogs, documentacion y mas. Las paginas que requieren inicio de sesion pueden no renderizarse completamente." },
-                { q: "¿Puedo personalizar el tamano y orientacion del PDF?", a: "Si. Puedes elegir el tamano de pagina (Carta, A4, Legal), la orientacion (vertical u horizontal) y ajustar los margenes." },
-                { q: "¿El PDF conserva el diseno original?", a: "PDF.it renderiza la pagina web como un navegador real y captura el diseno, imagenes, fuentes y colores con alta fidelidad." },
-                { q: "¿Es seguro convertir paginas web a PDF?", a: "Si. Todas las transferencias estan cifradas con SSL y los archivos se eliminan despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." },
-                { q: "¿URL a PDF es gratis?", a: "URL a PDF es una funcion Pro disponible por $3.99/mes. El plan Pro incluye OCR, generacion de QR, procesamiento por lotes y todas las herramientas premium." },
+                { q: "¿Que tipos de páginas web puedo convertir a PDF?", a: "Puedes convertir cualquier página web pública. Funciona con artículos, blogs, documentación y más. Las páginas que requieren inicio de sesión pueden no renderizarse completamente." },
+                { q: "¿Puedo personalizar el tamaño y orientación del PDF?", a: "Si. Puedes elegir el tamaño de página (Carta, A4, Legal), la orientación (vertical u horizontal) y ajustar los margenes." },
+                { q: "¿El PDF conserva el diseño original?", a: "PDF.it renderiza la página web como un navegador real y captura el diseño, imágenes, fuentes y colores con alta fidelidad." },
+                { q: "¿Es seguro convertir páginas web a PDF?", a: "Si. Todas las transferencias están cifradas con SSL y los archivos se eliminan después de tu sesión. Nunca almacenamos ni compartimos tus documentos." },
+                { q: "¿URL a PDF es gratis?", a: "URL a PDF es una función Pro disponible por $3.99/mes. El plan Pro incluye OCR, generación de QR, procesamiento por lotes y todas las herramientas premium." },
               ].map((faq, i) => (
                 <div
                   key={i}
@@ -253,11 +253,11 @@ export default function UrlAPdfPageEs() {
           "@context": "https://schema.org",
           "@type": "FAQPage",
           "mainEntity": [
-            { "@type": "Question", "name": "¿Que tipos de paginas web puedo convertir a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Puedes convertir cualquier pagina web publica. Funciona con articulos, blogs, documentacion y mas. Las paginas que requieren inicio de sesion pueden no renderizarse completamente." } },
-            { "@type": "Question", "name": "¿Puedo personalizar el tamano y orientacion del PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Puedes elegir el tamano de pagina (Carta, A4, Legal), la orientacion (vertical u horizontal) y ajustar los margenes." } },
-            { "@type": "Question", "name": "¿El PDF conserva el diseno original?", "acceptedAnswer": { "@type": "Answer", "text": "PDF.it renderiza la pagina web como un navegador real y captura el diseno, imagenes, fuentes y colores con alta fidelidad." } },
-            { "@type": "Question", "name": "¿Es seguro convertir paginas web a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Todas las transferencias estan cifradas con SSL y los archivos se eliminan despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." } },
-            { "@type": "Question", "name": "¿URL a PDF es gratis?", "acceptedAnswer": { "@type": "Answer", "text": "URL a PDF es una funcion Pro disponible por $3.99/mes. El plan Pro incluye OCR, generacion de QR, procesamiento por lotes y todas las herramientas premium." } }
+            { "@type": "Question", "name": "¿Que tipos de páginas web puedo convertir a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Puedes convertir cualquier página web pública. Funciona con artículos, blogs, documentación y más. Las páginas que requieren inicio de sesión pueden no renderizarse completamente." } },
+            { "@type": "Question", "name": "¿Puedo personalizar el tamaño y orientación del PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Puedes elegir el tamaño de página (Carta, A4, Legal), la orientación (vertical u horizontal) y ajustar los margenes." } },
+            { "@type": "Question", "name": "¿El PDF conserva el diseño original?", "acceptedAnswer": { "@type": "Answer", "text": "PDF.it renderiza la página web como un navegador real y captura el diseño, imágenes, fuentes y colores con alta fidelidad." } },
+            { "@type": "Question", "name": "¿Es seguro convertir páginas web a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Todas las transferencias están cifradas con SSL y los archivos se eliminan después de tu sesión. Nunca almacenamos ni compartimos tus documentos." } },
+            { "@type": "Question", "name": "¿URL a PDF es gratis?", "acceptedAnswer": { "@type": "Answer", "text": "URL a PDF es una función Pro disponible por $3.99/mes. El plan Pro incluye OCR, generación de QR, procesamiento por lotes y todas las herramientas premium." } }
           ]
         })}} />
       </main>

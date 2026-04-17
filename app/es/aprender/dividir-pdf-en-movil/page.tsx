@@ -15,8 +15,8 @@ const faqSchema = {
   "@context": "https://schema.org", "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "¿Puedo dividir un PDF en mi teléfono sin una app?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it funciona completamente en el navegador de tu teléfono — Safari en iPhone, Chrome en Android, o cualquier otro navegador móvil. No se necesita instalar ninguna app." } },
-    { "@type": "Question", "name": "¿Cómo divido un PDF en iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Abre Safari, ve a pdf.it.com/es/dividir-pdf, toca para subir tu PDF desde Archivos o iCloud Drive, selecciona las páginas que quieres, y descarga los archivos divididos." } },
-    { "@type": "Question", "name": "¿Cómo divido un PDF en Android?", "acceptedAnswer": { "@type": "Answer", "text": "Abre Chrome o tu navegador preferido, ve a pdf.it.com/es/dividir-pdf, toca para subir tu PDF desde el almacenamiento de tu dispositivo o Google Drive, selecciona páginas, y descarga." } },
+    { "@type": "Question", "name": "¿Cómo divido un PDF en iPhone?", "acceptedAnswer": { "@type": "Answer", "text": "Abre Safari, ve a pdf.it.com/es/dividir-pdf, toca para subir tu PDF desde Archivos o iCloud Drive, seleccióna las páginas que quieres, y descarga los archivos divididos." } },
+    { "@type": "Question", "name": "¿Cómo divido un PDF en Android?", "acceptedAnswer": { "@type": "Answer", "text": "Abre Chrome o tu navegador preferido, ve a pdf.it.com/es/dividir-pdf, toca para subir tu PDF desde el almacenamiento de tu dispositivo o Google Drive, seleccióna páginas, y descarga." } },
     { "@type": "Question", "name": "¿Es gratis dividir un PDF en móvil?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it ofrece división de PDF gratuita con archivos de hasta 25MB. Obtienes 3 operaciones gratuitas sin cuenta, y 10 por día con una cuenta gratuita." } },
     { "@type": "Question", "name": "¿Dónde se descarga el PDF dividido en mi teléfono?", "acceptedAnswer": { "@type": "Answer", "text": "En iPhone, los archivos divididos se descargan a tu app Archivos (generalmente en la carpeta Descargas). En Android, los archivos van a tu carpeta Descargas, accesible a través de la app Archivos o la barra de notificaciones." } },
     { "@type": "Question", "name": "¿Puedo dividir un PDF grande en móvil?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Los usuarios gratuitos pueden dividir PDFs de hasta 25MB en móvil. Los usuarios Pro pueden manejar archivos de hasta 200MB. El procesamiento ocurre en los servidores de PDF.it, así que el almacenamiento y velocidad de tu teléfono no afectan el resultado." } }
@@ -28,7 +28,7 @@ const howToSchema = {
   "description": "Divide un PDF en archivos separados en iPhone o Android en 3 simples pasos usando PDF.it en tu navegador móvil.",
   "step": [
     { "@type": "HowToStep", "name": "Abre PDF.it en tu navegador móvil", "text": "Abre Safari (iPhone) o Chrome (Android) y ve a pdf.it.com/es/dividir-pdf. La herramienta funciona igual en móvil que en escritorio." },
-    { "@type": "HowToStep", "name": "Sube y selecciona páginas", "text": "Toca el área de carga para seleccionar un PDF de tu teléfono. Elige páginas de Archivos, iCloud Drive, Google Drive, o el almacenamiento de tu dispositivo. Luego selecciona qué páginas extraer o cómo dividir." },
+    { "@type": "HowToStep", "name": "Sube y seleccióna páginas", "text": "Toca el área de carga para selecciónar un PDF de tu teléfono. Elige páginas de Archivos, iCloud Drive, Google Drive, o el almacenamiento de tu dispositivo. Luego seleccióna qué páginas extraer o cómo dividir." },
     { "@type": "HowToStep", "name": "Descarga los archivos divididos", "text": "Toca Dividir PDF y descarga el resultado. Los archivos se guardan en tu carpeta Descargas donde puedes compartirlos por email, apps de mensajería o almacenamiento en la nube." }
   ]
 }
@@ -196,8 +196,8 @@ export default function DividirPDFEnMovilPage() {
             <div className="space-y-6">
               {[
                 { q: "¿Puedo dividir un PDF en mi teléfono sin una app?", a: "Sí. PDF.it funciona completamente en el navegador de tu teléfono — Safari en iPhone, Chrome en Android, o cualquier otro navegador móvil. No se necesita instalar ninguna app." },
-                { q: "¿Cómo divido un PDF en iPhone?", a: "Abre Safari, ve a pdf.it.com/es/dividir-pdf, toca para subir tu PDF desde Archivos o iCloud Drive, selecciona las páginas que quieres, y descarga los archivos divididos." },
-                { q: "¿Cómo divido un PDF en Android?", a: "Abre Chrome o tu navegador preferido, ve a pdf.it.com/es/dividir-pdf, toca para subir tu PDF desde el almacenamiento de tu dispositivo o Google Drive, selecciona páginas, y descarga." },
+                { q: "¿Cómo divido un PDF en iPhone?", a: "Abre Safari, ve a pdf.it.com/es/dividir-pdf, toca para subir tu PDF desde Archivos o iCloud Drive, seleccióna las páginas que quieres, y descarga los archivos divididos." },
+                { q: "¿Cómo divido un PDF en Android?", a: "Abre Chrome o tu navegador preferido, ve a pdf.it.com/es/dividir-pdf, toca para subir tu PDF desde el almacenamiento de tu dispositivo o Google Drive, seleccióna páginas, y descarga." },
                 { q: "¿Es gratis dividir un PDF en móvil?", a: "Sí. PDF.it ofrece división de PDF gratuita con archivos de hasta 25MB. Obtienes 3 operaciones gratuitas sin cuenta, y 10 por día con una cuenta gratuita." },
                 { q: "¿Dónde se descarga el PDF dividido en mi teléfono?", a: "En iPhone, los archivos divididos se descargan a tu app Archivos (generalmente en la carpeta Descargas). En Android, los archivos van a tu carpeta Descargas, accesible a través de la app Archivos o la barra de notificaciones." },
                 { q: "¿Puedo dividir un PDF grande en móvil?", a: "Sí. Los usuarios gratuitos pueden dividir PDFs de hasta 25MB en móvil. Los usuarios Pro pueden manejar archivos de hasta 200MB. El procesamiento ocurre en los servidores de PDF.it, así que el almacenamiento y velocidad de tu teléfono no afectan el resultado." },

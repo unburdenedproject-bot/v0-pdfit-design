@@ -6,9 +6,9 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download } from "lucide-react
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF a 10MB Online — Compresion Extrema Gratis | PDF.it",
+  title: "Comprimir PDF a 10MB Online — Compresión Extrema Gratis | PDF.it",
   description:
-    "Aplica compresion extrema a tu PDF para cumplir limites de 10MB. Perfecto para almacenamiento en la nube, LMS, plataformas de archivos y formularios en linea — rapido, desde tu navegador, gratis.",
+    "Aplica compresión extrema a tu PDF para cumplir límites de 10MB. Perfecto para almacenamiento en la nube, LMS, plataformas de archivos y formularios en línea — rápido, desde tu navegador, gratis.",
   alternates: {
     canonical: "https://www.pdf.it.com/es/comprimir-pdf-a-10mb",
     languages: {
@@ -21,12 +21,12 @@ export const metadata = {
 
 export default function ComprimirPDFA10MBPage() {
   const faqs = [
-    { q: "¿Como comprimo un PDF para un limite de 10MB?", a: "Sube tu PDF a PDF.it y haz clic en Comprimir. La herramienta aplica compresion extrema para reducir la resolucion de imagenes y optimizar la estructura interna, reduciendo drasticamente el tamano del archivo. Los resultados dependen del contenido de tu PDF." },
-    { q: "¿Mi PDF quedara definitivamente debajo de 10MB despues de comprimirlo?", a: "La compresion extrema reduce drasticamente el tamano del archivo, pero los resultados dependen del contenido del PDF. La mayoria de los documentos se comprimen bien por debajo de 10MB. Archivos muy pesados en imagenes pueden necesitar dividirse primero y luego comprimir cada parte por separado." },
-    { q: "¿Que plataformas tienen un limite de 10MB?", a: "Muchas versiones gratuitas de almacenamiento en la nube, sistemas de gestion de aprendizaje (LMS), servicios para compartir archivos, portales gubernamentales y constructores de formularios en linea imponen un limite de 10MB." },
-    { q: "¿Mi PDF seguira siendo legible despues de la compresion extrema?", a: "Si. El texto se mantiene nitido y completamente legible. Las imagenes pueden perder algo de detalle con la compresion extrema, pero el documento sigue siendo utilizable para la mayoria de los propositos." },
-    { q: "¿Puedo comprimir un PDF a 10MB desde mi celular?", a: "Si. PDF.it funciona en cualquier navegador movil. Sube tu PDF, comprimelo y descarga el archivo mas pequeno directamente en tu iPhone o Android." },
-    { q: "¿Que hago si mi PDF sigue pesando mas de 10MB despues de comprimirlo?", a: "Intenta dividir el PDF en partes mas pequenas con nuestra herramienta Dividir PDF y luego comprime cada parte individualmente. Tambien puedes aplanar el PDF o eliminar paginas innecesarias para reducir mas el tamano." },
+    { q: "¿Como comprimo un PDF para un límite de 10MB?", a: "Sube tu PDF a PDF.it y haz clic en Comprimir. La herramienta aplica compresión extrema para reducir la resolución de imágenes y optimizar la estructura interna, reduciendo drasticamente el tamaño del archivo. Los resultados dependen del contenido de tu PDF." },
+    { q: "¿Mi PDF quedara definitivamente debajo de 10MB después de comprimirlo?", a: "La compresión extrema reduce drasticamente el tamaño del archivo, pero los resultados dependen del contenido del PDF. La mayoría de los documentos se comprimen bien por debajo de 10MB. Archivos muy pesados en imágenes pueden necesitar dividirse primero y luego comprimir cada parte por separado." },
+    { q: "¿Que plataformas tienen un límite de 10MB?", a: "Muchas versiones gratuitas de almacenamiento en la nube, sistemas de gestion de aprendizaje (LMS), servicios para compartir archivos, portales gubernamentales y constructores de formularios en línea imponen un límite de 10MB." },
+    { q: "¿Mi PDF seguira siendo legible después de la compresión extrema?", a: "Si. El texto se mantiene nitido y completamente legible. Las imágenes pueden perder algo de detalle con la compresión extrema, pero el documento sigue siendo utilizable para la mayoría de los propósitos." },
+    { q: "¿Puedo comprimir un PDF a 10MB desde mi celular?", a: "Si. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, comprimelo y descarga el archivo más pequeño directamente en tu iPhone o Android." },
+    { q: "¿Que hago si mi PDF sigue pesando más de 10MB después de comprimirlo?", a: "Intenta dividir el PDF en partes más pequeñas con nuestra herramienta Dividir PDF y luego comprime cada parte individualmente. También puedes aplanar el PDF o eliminar páginas innecesarias para reducir más el tamaño." },
   ]
 
   return (
@@ -60,13 +60,13 @@ export default function ComprimirPDFA10MBPage() {
               >
                 <Compress className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF para Limites de 10MB</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF para Límites de 10MB</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Aplica compresion extrema para reducir drasticamente el tamano de tu PDF en plataformas con limites de 10MB. Perfecto para almacenamiento en la nube, subidas a LMS, plataformas para compartir archivos y formularios en linea.
+                Aplica compresión extrema para reducir drasticamente el tamaño de tu PDF en plataformas con límites de 10MB. Perfecto para almacenamiento en la nube, subidas a LMS, plataformas para compartir archivos y formularios en línea.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compresion Extrema</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesion</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compresión Extrema</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesión</span></div>
                 <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sin Registro</span></div>
               </div>
             </div>
@@ -77,13 +77,13 @@ export default function ComprimirPDFA10MBPage() {
         <section className="py-10 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <p className="text-lg text-slate-600 leading-relaxed">
-              Muchas plataformas imponen un limite de 10MB en las subidas de archivos. Las versiones gratuitas de almacenamiento en la nube, los sistemas de gestion de aprendizaje, los servicios para compartir archivos y los formularios en linea limitan los archivos a 10MB. PDF.it aplica compresion extrema para reducir drasticamente el tamano de tu PDF y ayudarte a cumplir estos requisitos.
+              Muchas plataformas imponen un límite de 10MB en las subidas de archivos. Las versiones gratuitas de almacenamiento en la nube, los sistemas de gestion de aprendizaje, los servicios para compartir archivos y los formularios en línea limitan los archivos a 10MB. PDF.it aplica compresión extrema para reducir drasticamente el tamaño de tu PDF y ayudarte a cumplir estos requisitos.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
-              <li className="flex items-center gap-2">✓ Compresion extrema para maxima reduccion de tamano</li>
+              <li className="flex items-center gap-2">✓ Compresión extrema para máxima reducción de tamaño</li>
               <li className="flex items-center gap-2">✓ Perfecto para LMS, nube y plataformas de archivos</li>
               <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li className="flex items-center gap-2">✓ Sin instalacion — comprime PDFs en tu navegador</li>
+              <li className="flex items-center gap-2">✓ Sin instalación — comprime PDFs en tu navegador</li>
             </ul>
           </div>
         </section>
@@ -113,8 +113,8 @@ export default function ComprimirPDFA10MBPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
                 { title: "Almacenamiento en la Nube y LMS", desc: "Muchas plataformas gratuitas de nube y sistemas de gestion de aprendizaje como Moodle, Canvas y Blackboard restringen las subidas a 10MB. Comprime apuntes, temarios y materiales de curso para subirlos sin errores." },
-                { title: "Compartir Archivos y Mensajeria", desc: "Servicios como WeTransfer gratuito, algunos espacios de Slack y Discord limitan el tamano de archivos. Comprime tus PDFs para que colegas y clientes los reciban sin problemas." },
-                { title: "Formularios en Linea", desc: "Solicitudes de empleo, reclamos de seguros y postulaciones a becas frecuentemente imponen un limite de 10MB en documentos adjuntos. Comprime tus archivos de soporte para enviar formularios exitosamente." },
+                { title: "Compartir Archivos y Mensajeria", desc: "Servicios como WeTransfer gratuito, algunos espacios de Slack y Discord limitan el tamaño de archivos. Comprime tus PDFs para que colegas y clientes los reciban sin problemas." },
+                { title: "Formularios en Línea", desc: "Solicitudes de empleo, reclamos de seguros y postulaciones a becas frecuentemente imponen un límite de 10MB en documentos adjuntos. Comprime tus archivos de soporte para enviar formularios exitosamente." },
               ].map((feature) => (
                 <div
                   key={feature.title}
@@ -148,11 +148,11 @@ export default function ComprimirPDFA10MBPage() {
         {/* How It Works */}
         <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Comprimir un PDF para Limites de 10MB</h2>
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Comprimir un PDF para Límites de 10MB</h2>
             <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
               {[
                 { num: "1", title: "Sube tu PDF", desc: "Arrastra y suelta o haz clic para elegir un archivo" },
-                { num: "2", title: "Haz clic en Comprimir", desc: "La compresion extrema se aplica automaticamente" },
+                { num: "2", title: "Haz clic en Comprimir", desc: "La compresión extrema se aplica automáticamente" },
                 { num: "3", title: "Descarga tu PDF", desc: "Obtiene tu archivo comprimido al instante" },
               ].map((step) => (
                 <div key={step.num} className="flex-1">
@@ -180,9 +180,9 @@ export default function ComprimirPDFA10MBPage() {
             <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "Comprimir a 5MB", href: "/es/comprimir-pdf-a-5mb", desc: "Para limites de 5MB" },
-                { name: "Comprimir a 2MB", href: "/es/comprimir-pdf-a-2mb", desc: "Para limites de 2MB" },
-                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Compresion estandar" },
+                { name: "Comprimir a 5MB", href: "/es/comprimir-pdf-a-5mb", desc: "Para límites de 5MB" },
+                { name: "Comprimir a 2MB", href: "/es/comprimir-pdf-a-2mb", desc: "Para límites de 2MB" },
+                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Compresión estándar" },
                 { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Divide si sigue grande" },
               ].map((tool) => (
                 <div

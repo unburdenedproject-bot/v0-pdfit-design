@@ -6,9 +6,9 @@ import { ResumeBuilderInterface } from "@/components/resume-builder-interface"
 import { Sparkles, Zap, FileText, Target } from "lucide-react"
 
 export const metadata = {
-  title: "Creador de Curriculum con IA — Crea un Curriculum Profesional en Linea | PDF.it",
+  title: "Creador de Currículum con IA — Crea un Currículum Profesional en Línea | PDF.it",
   description:
-    "Crea un curriculum pulido y optimizado para ATS desde cero con IA. Ingresa tus datos, obtén un curriculum escrito profesionalmente y descárgalo como archivo Word editable. Carta de presentación opcional incluida.",
+    "Crea un currículum pulido y optimizado para ATS desde cero con IA. Ingresa tus datos, obtén un currículum escrito profesionalmente y descárgalo como archivo Word editable. Carta de presentación opcional incluida.",
   alternates: {
     languages: {
       en: "/create-resume",
@@ -20,28 +20,28 @@ export const metadata = {
 
 const faqs = [
   {
-    q: "¿Cómo funciona el creador de curriculum con IA?",
-    a: "Ingresa tu información de contacto, experiencia laboral, educación y habilidades. Nuestra IA genera un curriculum escrito profesionalmente y optimizado para ATS que puedes descargar como archivo Word (.docx) y editar en cualquier momento.",
+    q: "¿Cómo funciona el creador de currículum con IA?",
+    a: "Ingresa tu información de contacto, experiencia laboral, educación y habilidades. Nuestra IA genera un currículum escrito profesionalmente y optimizado para ATS que puedes descargar como archivo Word (.docx) y editar en cualquier momento.",
   },
   {
-    q: "¿En qué formato se descarga el curriculum?",
+    q: "¿En qué formato se descarga el currículum?",
     a: "En formato Word (.docx), para que puedas editarlo en Microsoft Word, Google Docs o cualquier procesador de texto compatible. Esto te da control total sobre el resultado final.",
   },
   {
-    q: "¿El curriculum es compatible con ATS?",
+    q: "¿El currículum es compatible con ATS?",
     a: "Sí. La IA utiliza formato limpio, encabezados de sección apropiados (Experiencia, Educación, Habilidades) y contenido rico en palabras clave diseñado para pasar los Sistemas de Seguimiento de Candidatos que usan la mayoría de los empleadores.",
   },
   {
     q: "¿También puedo generar una carta de presentación?",
-    a: "Sí. Hay una función opcional que crea una carta de presentación personalizada basada en los datos de tu curriculum y el puesto al que aspiras.",
+    a: "Sí. Hay una función opcional que crea una carta de presentación personalizada basada en los datos de tu currículum y el puesto al que aspiras.",
   },
   {
     q: "¿Se almacenan mis datos personales?",
-    a: "No. Tu información se procesa en tiempo real para generar el curriculum y no se almacena en nuestros servidores. Nunca compartimos ni vendemos tus datos personales.",
+    a: "No. Tu información se procesa en tiempo real para generar el currículum y no se almacena en nuestros servidores. Nunca compartimos ni vendemos tus datos personales.",
   },
   {
-    q: "¿El Creador de Curriculum es gratuito?",
-    a: "Crear Curriculum es una función Pro a $3.99/mes. Pro incluye generación ilimitada de curriculums más todas las demás herramientas PDF.",
+    q: "¿El Creador de Currículum es gratuito?",
+    a: "Crear Currículum es una función Pro a $3.99/mes. Pro incluye generación ilimitada de curriculums más todas las demás herramientas PDF.",
   },
 ]
 
@@ -90,9 +90,9 @@ export default function CrearCurriculumPageEs() {
               >
                 <Sparkles className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Creador de Curriculum con IA</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Creador de Currículum con IA</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Completa tus datos y la IA crea un curriculum pulido y listo para ATS en segundos. Descárgalo como archivo Word editable — personalízalo cuando quieras.
+                Completa tus datos y la IA crea un currículum pulido y listo para ATS en segundos. Descárgalo como archivo Word editable — personalízalo cuando quieras.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Potenciado por IA</span></div>
@@ -107,10 +107,10 @@ export default function CrearCurriculumPageEs() {
         <section className="py-10 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <p className="text-lg text-slate-600 leading-relaxed">
-              Escribir un curriculum desde cero es estresante — elegir el formato correcto, las palabras adecuadas y la estructura mientras compites con cientos de candidatos. El Creador de Curriculum con IA de PDF.it elimina esa lucha. Completa tus datos y obtén un curriculum pulido y listo para ATS en segundos, descargado como archivo Word editable.
+              Escribir un currículum desde cero es estresante — elegir el formato correcto, las palabras adecuadas y la estructura mientras compites con cientos de candidatos. El Creador de Currículum con IA de PDF.it elimina esa lucha. Completa tus datos y obtén un currículum pulido y listo para ATS en segundos, descargado como archivo Word editable.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
-              <li className="flex items-center gap-2">✓ La IA escribe tu curriculum a partir de tus datos</li>
+              <li className="flex items-center gap-2">✓ La IA escribe tu currículum a partir de tus datos</li>
               <li className="flex items-center gap-2">✓ Formato y palabras clave optimizados para ATS</li>
               <li className="flex items-center gap-2">✓ Descarga como archivo Word (.docx) editable</li>
               <li className="flex items-center gap-2">✓ Generación opcional de carta de presentación</li>
@@ -135,9 +135,9 @@ export default function CrearCurriculumPageEs() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { title: "Primer Empleo y Cambio de Carrera", desc: "¿Creando tu primer curriculum o cambiando de industria? La IA se encarga del formato, lenguaje y estructura. Destaca habilidades transferibles y adapta el contenido a tu puesto objetivo." },
+                { title: "Primer Empleo y Cambio de Carrera", desc: "¿Creando tu primer currículum o cambiando de industria? La IA se encarga del formato, lenguaje y estructura. Destaca habilidades transferibles y adapta el contenido a tu puesto objetivo." },
                 { title: "Redacción Profesional con IA", desc: "Nuestra IA genera viñetas pulidas, verbos de acción potentes y descripciones ricas en palabras clave que coinciden con lo que buscan los reclutadores y sistemas ATS." },
-                { title: "Archivo Word Editable + Carta", desc: "Descarga tu curriculum como archivo Word que puedes personalizar aún más. Opcionalmente genera una carta de presentación personalizada basada en tu curriculum y puesto objetivo." },
+                { title: "Archivo Word Editable + Carta", desc: "Descarga tu currículum como archivo Word que puedes personalizar aún más. Opcionalmente genera una carta de presentación personalizada basada en tu currículum y puesto objetivo." },
               ].map((feature) => (
                 <div
                   key={feature.title}
@@ -171,11 +171,11 @@ export default function CrearCurriculumPageEs() {
         {/* How It Works */}
         <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Cómo Crear tu Curriculum</h2>
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Cómo Crear tu Currículum</h2>
             <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
               {[
                 { num: "1", title: "Completa tus datos", desc: "Contacto, experiencia, educación, habilidades" },
-                { num: "2", title: "La IA escribe tu curriculum", desc: "Escrito profesionalmente y optimizado para ATS" },
+                { num: "2", title: "La IA escribe tu currículum", desc: "Escrito profesionalmente y optimizado para ATS" },
                 { num: "3", title: "Descarga el archivo Word", desc: "Edita en Word, Google Docs o cualquier editor" },
               ].map((step) => (
                 <div key={step.num} className="flex-1">

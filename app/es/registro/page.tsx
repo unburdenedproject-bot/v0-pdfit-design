@@ -149,7 +149,7 @@ export default function SignUpPageEs() {
               <div className="mb-6 text-center">
                 <div className="mx-auto mb-3"><img src="/logo.svg" alt="PDF.it" width={66} height={32} fetchPriority="high" decoding="async" style={{height: '32px', width: 'auto', display: 'inline-block'}} /></div>
                 <h1 className="text-xl font-bold text-white">Crea tu cuenta</h1>
-                <p className="mt-1 text-sm text-slate-400">Obtén 10 conversiones gratis por día</p>
+                <p className="mt-1 text-sm text-slate-400">Obtén 10 conversiónes gratis por día</p>
               </div>
 
               {/* Form */}
@@ -275,7 +275,7 @@ export default function SignUpPageEs() {
           <div className="mt-4 flex items-center justify-center gap-4 flex-wrap">
             <div className="flex items-center gap-1">
               <CheckCircle2 className="h-3.5 w-3.5 text-[#14D8C4]" />
-              <span className="text-xs text-slate-400">10 conversiones gratis/día</span>
+              <span className="text-xs text-slate-400">10 conversiónes gratis/día</span>
             </div>
             <div className="flex items-center gap-1">
               <CheckCircle2 className="h-3.5 w-3.5 text-[#14D8C4]" />

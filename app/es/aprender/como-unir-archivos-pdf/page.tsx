@@ -62,7 +62,7 @@ export default function ComoUnirArchivosPDFPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">¿Por Qué Necesitarías Unir PDFs?</h2>
-              <p className="text-slate-600 mb-4">Hay muchas situaciones donde combinar múltiples PDFs en un solo archivo facilita la vida. Estas son las razones más comunes:</p>
+              <p className="text-slate-600 mb-4">Hay muchas situaciones donde combinar múltiples PDFs en un solo archivo fácilita la vida. Estas son las razones más comunes:</p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span><strong>Solicitudes de empleo.</strong> Muchos empleadores piden un solo PDF con tu currículum, carta de presentación y referencias combinados. Enviar tres archivos separados se ve desorganizado.</span></li>
                 <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span><strong>Envíos escolares y universitarios.</strong> Los portales de tareas frecuentemente aceptan solo una carga de archivo. Une tu ensayo, bibliografía y apéndice en un solo documento.</span></li>
@@ -92,7 +92,7 @@ export default function ComoUnirArchivosPDFPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">Reordenando Archivos Antes de Unir</h2>
               <p className="text-slate-600 mb-4">Obtener el orden de páginas correcto es crítico — especialmente para envíos formales. Algunos consejos:</p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Nombra tus archivos lógicamente</strong> antes de subir (por ejemplo, "01-carta-presentacion.pdf", "02-curriculum.pdf", "03-referencias.pdf"). Esto facilita el ordenamiento.</li>
+                <li>&#10003; <strong>Nombra tus archivos lógicamente</strong> antes de subir (por ejemplo, "01-carta-presentacion.pdf", "02-curriculum.pdf", "03-referencias.pdf"). Esto fácilita el ordenamiento.</li>
                 <li>&#10003; <strong>Usa arrastrar y soltar</strong> en PDF.it para reordenar archivos visualmente antes de unir.</li>
                 <li>&#10003; <strong>Previsualiza el resultado unido</strong> antes de descargar para asegurarte de que todo está en el orden correcto.</li>
                 <li>&#10003; Si necesitas reordenar páginas individuales (no solo archivos), usa <Link href="/es/dividir-pdf" className="text-[#14D8C4] hover:underline">Dividir PDF</Link> para extraer páginas, luego únelas de nuevo en el orden correcto.</li>

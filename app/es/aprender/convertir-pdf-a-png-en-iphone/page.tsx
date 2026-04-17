@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Hay un convertidor gratuito de PDF a PNG para iPhone?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it es gratis para tus primeras 3 conversiones por día sin registro. Después, crea una cuenta gratuita para 10 conversiones por día. La herramienta funciona en Safari — sin necesidad de comprar ninguna app." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it es gratis para tus primeras 3 conversiónes por día sin registro. Después, crea una cuenta gratuita para 10 conversiónes por día. La herramienta funciona en Safari — sin necesidad de comprar ninguna app." }
     },
     {
       "@type": "Question",
@@ -57,7 +57,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Abre PDF.it en Safari",
-      "text": "Abre Safari en tu iPhone y ve a pdf.it.com/pdf-to-png. Toca el área de carga para seleccionar tu PDF desde Archivos, iCloud o adjuntos de correo."
+      "text": "Abre Safari en tu iPhone y ve a pdf.it.com/pdf-to-png. Toca el área de carga para selecciónar tu PDF desde Archivos, iCloud o adjuntos de correo."
     },
     {
       "@type": "HowToStep",
@@ -251,9 +251,9 @@ export default function ConvertirPdfAPngEnIphonePage() {
                 Una vez que tus páginas PDF están guardadas como PNGs, compartirlas es sencillo:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>- <strong>iMessage / WhatsApp:</strong> Abre la conversación, toca el icono de adjunto y selecciona el PNG desde Fotos o Archivos.</li>
+                <li>- <strong>iMessage / WhatsApp:</strong> Abre la conversación, toca el icono de adjunto y seleccióna el PNG desde Fotos o Archivos.</li>
                 <li>- <strong>Correo electrónico:</strong> Redacta un nuevo mensaje, toca el icono de adjunto y agrega el PNG. Aparece como imagen en línea.</li>
-                <li>- <strong>Redes sociales:</strong> Abre Instagram, Twitter o Facebook, crea una nueva publicación y selecciona el PNG de tu biblioteca de Fotos.</li>
+                <li>- <strong>Redes sociales:</strong> Abre Instagram, Twitter o Facebook, crea una nueva publicación y seleccióna el PNG de tu biblioteca de Fotos.</li>
                 <li>- <strong>AirDrop:</strong> Abre el PNG en Archivos o Fotos, toca Compartir y envíalo por AirDrop a un Mac o iPhone cercano.</li>
               </ul>
             </section>
@@ -307,7 +307,7 @@ export default function ConvertirPdfAPngEnIphonePage() {
               {[
                 { q: "¿Puedo convertir un PDF a PNG en iPhone sin una app?", a: "Sí. Abre Safari en tu iPhone, ve a la herramienta PDF a PNG de PDF.it, sube tu PDF, conviértelo y descarga las imágenes PNG directamente. No necesitas instalar ninguna app." },
                 { q: "¿Dónde se guardan los archivos PNG convertidos en iPhone?", a: "Los archivos PNG descargados van a tu app Archivos por defecto (en la carpeta Descargas). También puedes guardarlos directamente en tu app Fotos tocando el icono de compartir y eligiendo 'Guardar Imagen'." },
-                { q: "¿Hay un convertidor gratuito de PDF a PNG para iPhone?", a: "Sí. PDF.it es gratis para tus primeras 3 conversiones por día sin registro. Después, crea una cuenta gratuita para 10 conversiones por día. La herramienta funciona en Safari." },
+                { q: "¿Hay un convertidor gratuito de PDF a PNG para iPhone?", a: "Sí. PDF.it es gratis para tus primeras 3 conversiónes por día sin registro. Después, crea una cuenta gratuita para 10 conversiónes por día. La herramienta funciona en Safari." },
                 { q: "¿Puedo convertir múltiples páginas PDF a PNG en iPhone?", a: "Sí. PDF.it convierte cada página de tu PDF en una imagen PNG separada. Puedes descargarlas individualmente o como archivo ZIP." },
                 { q: "¿La calidad del PNG será buena en iPhone?", a: "Sí. PDF.it produce imágenes PNG de alta resolución con texto nítido y gráficos limpios. PNG usa compresión sin pérdida, así que no hay pérdida de calidad durante la conversión." },
                 { q: "¿Cómo comparto un PDF como imagen en iPhone?", a: "Convierte tu PDF a PNG usando PDF.it en Safari, guarda las imágenes en tu app Fotos, luego compártelas por iMessage, WhatsApp, correo electrónico o cualquier otra app." },

@@ -5,10 +5,10 @@ import Link from "next/link"
 import { QrCode, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Codigo QR para Menus de Restaurante (Crea un Enlace Escaneable) | PDF.it",
+  title: "Código QR para Menus de Restaurante (Crea un Enlace Escaneable) | PDF.it",
   description:
-    "Aprende como crear un codigo QR para el menu de tu restaurante. Enlaza a un menu PDF o sitio web para que los clientes escaneen y vean tu menu en su telefono al instante.",
-  keywords: "codigo qr menu restaurante, menu codigo qr, menu escaneable, codigo qr para cafeteria",
+    "Aprende como crear un código QR para el menu de tu restaurante. Enlaza a un menu PDF o sitio web para que los clientes escaneen y vean tu menu en su teléfono al instante.",
+  keywords: "código qr menu restaurante, menu código qr, menu escaneable, código qr para cafeteria",
 }
 
 const faqSchema = {
@@ -17,33 +17,33 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Como creo un codigo QR para el menu de mi restaurante?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu menu como PDF a un servicio de alojamiento o tu sitio web, copia la URL, luego usa la herramienta de Codigo QR de PDF.it para generar un codigo QR para esa URL. Imprime el codigo QR en carpas de mesa, stickers o letreros." }
+      "name": "Como creo un código QR para el menu de mi restaurante?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu menu como PDF a un servicio de alojamiento o tu sitio web, copia la URL, luego usa la herramienta de Código QR de PDF.it para generar un código QR para esa URL. Imprime el código QR en carpas de mesa, stickers o letreros." }
     },
     {
       "@type": "Question",
-      "name": "Debo enlazar a un menu PDF o una pagina web?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Una pagina web es mas facil de actualizar (cambiar precios, agregar platillos) sin reimprimir codigos QR. Un menu PDF es mas simple de crear y se ve exactamente como tu menu impreso. Elige segun la frecuencia con que cambia tu menu." }
+      "name": "Debo enlazar a un menu PDF o una página web?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Una página web es más fácil de actualizar (cambiar precios, agregar platillos) sin reimprimir códigos QR. Un menu PDF es más simple de crear y se ve exactamente como tu menu impreso. Elige segun la frecuencia con que cambia tu menu." }
     },
     {
       "@type": "Question",
-      "name": "Que tamano debe tener un codigo QR de menu?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Al menos 3cm x 3cm para carpas de mesa y stickers. Para letreros de pared o posters, hazlo mas grande. La distancia de escaneo importa — los clientes deben poder escanear desde al menos 30cm en la iluminacion del restaurante." }
+      "name": "Que tamaño debe tener un código QR de menu?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Al menos 3cm x 3cm para carpas de mesa y stickers. Para letreros de pared o posters, hazlo más grande. La distancia de escaneo importa — los clientes deben poder escanear desde al menos 30cm en la iluminacion del restaurante." }
     },
     {
       "@type": "Question",
-      "name": "Los clientes pueden escanear el codigo QR sin una app?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Si. Todos los smartphones modernos (iPhone y Android) pueden escanear codigos QR directamente con su app de camara integrada. No se necesita una app separada de lectura de QR." }
+      "name": "Los clientes pueden escanear el código QR sin una app?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si. Todos los smartphones modernos (iPhone y Android) pueden escanear códigos QR directamente con su app de camara integrada. No se necesita una app separada de lectura de QR." }
     },
     {
       "@type": "Question",
-      "name": "Como actualizo mi menu sin reimprimir los codigos QR?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Usa un acortador de URL o servicio de redireccion. El codigo QR apunta a una URL corta, y cambias a donde redirige esa URL corta cada vez que actualizas tu menu. De esta manera el codigo QR sigue siendo el mismo." }
+      "name": "Como actualizo mi menu sin reimprimir los códigos QR?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Usa un acortador de URL o servicio de redireccion. El código QR apunta a una URL corta, y cambias a donde redirige esa URL corta cada vez que actualizas tu menu. De esta manera el código QR sigue siendo el mismo." }
     },
     {
       "@type": "Question",
       "name": "Es una herramienta gratuita?",
-      "acceptedAnswer": { "@type": "Answer", "text": "El generador de Codigo QR de PDF.it es una funcion Pro a $3.99/mes. Pro incluye codigos QR ilimitados mas todas las herramientas PDF — perfecto para restaurantes que tambien necesitan comprimir, convertir o gestionar menus en PDF." }
+      "acceptedAnswer": { "@type": "Answer", "text": "El generador de Código QR de PDF.it es una función Pro a $3.99/mes. Pro incluye códigos QR ilimitados más todas las herramientas PDF — perfecto para restaurantes que también necesitan comprimir, convertir o gestionar menus en PDF." }
     }
   ]
 }
@@ -51,23 +51,23 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Como Crear un Codigo QR para el Menu de Tu Restaurante",
-  "description": "Configura un codigo QR escaneable para el menu de tu restaurante en 3 simples pasos usando PDF.it.",
+  "name": "Como Crear un Código QR para el Menu de Tu Restaurante",
+  "description": "Configura un código QR escaneable para el menu de tu restaurante en 3 simples pasos usando PDF.it.",
   "step": [
     {
       "@type": "HowToStep",
-      "name": "Aloja tu menu en linea",
-      "text": "Sube tu menu PDF a tu sitio web, Google Drive o un servicio de alojamiento de archivos. Copia la URL publica donde los clientes pueden ver el menu."
+      "name": "Aloja tu menu en línea",
+      "text": "Sube tu menu PDF a tu sitio web, Google Drive o un servicio de alojamiento de archivos. Copia la URL pública donde los clientes pueden ver el menu."
     },
     {
       "@type": "HowToStep",
-      "name": "Genera el codigo QR",
-      "text": "Abre la herramienta de Codigo QR de PDF.it, selecciona tipo URL y pega el enlace de tu menu. Personaliza los colores para que coincidan con la marca de tu restaurante si lo deseas."
+      "name": "Genera el código QR",
+      "text": "Abre la herramienta de Código QR de PDF.it, seleccióna tipo URL y pega el enlace de tu menu. Personaliza los colores para que coincidan con la marca de tu restaurante si lo deseas."
     },
     {
       "@type": "HowToStep",
       "name": "Imprime y coloca en las mesas",
-      "text": "Descarga el codigo QR como SVG para calidad de impresion. Agregalo a carpas de mesa, stickers o letreros con el texto 'Escanea para ver el Menu'. Pruebalo antes de imprimir en masa."
+      "text": "Descarga el código QR como SVG para calidad de impresión. Agregalo a carpas de mesa, stickers o letreros con el texto 'Escanea para ver el Menu'. Pruebalo antes de imprimir en masa."
     }
   ]
 }
@@ -91,10 +91,10 @@ export default function CodigoQRParaMenuRestaurantePage() {
         <section className="text-white py-16 relative overflow-hidden" style={{ background: `radial-gradient(ellipse 70% 50% at 50% 0%, rgba(20,216,196,0.15) 0%, transparent 60%), radial-gradient(ellipse 50% 40% at 80% 70%, rgba(232,129,58,0.06) 0%, transparent 50%), radial-gradient(ellipse 60% 60% at 15% 80%, rgba(107,124,255,0.10) 0%, transparent 60%), #0E0F1E` }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
-              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Codigo QR</p>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Codigo QR para Menus de Restaurante (Crea un Enlace Escaneable)</h1>
+              <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / Código QR</p>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Código QR para Menus de Restaurante (Crea un Enlace Escaneable)</h1>
               <p className="text-xl text-slate-300">
-                Deja que los clientes escaneen un codigo QR en la mesa y vean tu menu completo en su telefono. Sin descargar apps, sin menus fisicos que limpiar o reimprimir. Aqui te explicamos como configurarlo.
+                Deja que los clientes escaneen un código QR en la mesa y vean tu menu completo en su teléfono. Sin descargar apps, sin menus fisicos que limpiar o reimprimir. Aqui te explicamos como configurarlo.
               </p>
             </div>
           </div>
@@ -107,13 +107,13 @@ export default function CodigoQRParaMenuRestaurantePage() {
               <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0">
                 <QrCode className="h-5 w-5 text-white" />
               </div>
-              <p className="text-slate-700 font-semibold">Listo para crear el codigo QR de tu menu? Ve directo a la herramienta.</p>
+              <p className="text-slate-700 font-semibold">Listo para crear el código QR de tu menu? Ve directo a la herramienta.</p>
             </div>
             <Link
               href="/es/codigo-qr"
               className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap"
             >
-              Crear Codigo QR <ArrowRight className="h-4 w-4" />
+              Crear Código QR <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </section>
@@ -124,46 +124,46 @@ export default function CodigoQRParaMenuRestaurantePage() {
 
             {/* Why use QR menus */}
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que los Restaurantes Estan Cambiando a Menus con Codigo QR</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Por Que los Restaurantes Están Cambiando a Menus con Código QR</h2>
               <p className="text-slate-600 mb-4">
-                Los menus con codigo QR explotaron durante la pandemia, pero llegaron para quedarse. Restaurantes, cafeterias, bares y food trucks los mantienen porque los beneficios van mucho mas alla de la higiene:
+                Los menus con código QR explotaron durante la pandemia, pero llegaron para quedarse. Restaurantes, cafeterias, bares y food trucks los mantienen porque los beneficios van mucho más alla de la higiene:
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
-                  <span><strong>Actualizaciones instantaneas.</strong> Cambia precios, agrega especiales de temporada o elimina platillos agotados sin reimprimir nada. Actualiza el menu en linea y cada codigo QR en tu restaurante refleja el cambio inmediatamente.</span>
+                  <span><strong>Actualizaciones instantaneas.</strong> Cambia precios, agrega especiales de temporada o elimina platillos agotados sin reimprimir nada. Actualiza el menu en línea y cada código QR en tu restaurante refleja el cambio inmediatamente.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
-                  <span><strong>Ahorro de costos.</strong> Los menus impresos son caros — especialmente cuando tienes multiples paginas, rotaciones de temporada o cambios frecuentes de precios. Un codigo QR no cuesta nada para actualizar.</span>
+                  <span><strong>Ahorro de costos.</strong> Los menus impresos son caros — especialmente cuando tienes múltiples páginas, rotaciones de temporada o cambios frecuentes de precios. Un código QR no cuesta nada para actualizar.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">3.</span>
-                  <span><strong>Rotacion de mesas mas rapida.</strong> Los clientes pueden ver el menu mientras esperan a un mesero. Pasan menos tiempo decidiendo y mas tiempo pidiendo, lo que aumenta la rotacion de mesas en horas pico.</span>
+                  <span><strong>Rotación de mesas más rápida.</strong> Los clientes pueden ver el menu mientras esperan a un mesero. Pasan menos tiempo decidiendo y más tiempo pidiendo, lo que aumenta la rotación de mesas en horas pico.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
-                  <span><strong>Soporte multilingue.</strong> Enlaza a una pagina web con opciones de idioma o aloja multiples menus PDF (espanol, ingles, etc.) — los clientes eligen su idioma despues de escanear.</span>
+                  <span><strong>Soporte multilingue.</strong> Enlaza a una página web con opciones de idioma o aloja múltiples menus PDF (español, inglés, etc.) — los clientes eligen su idioma después de escanear.</span>
                 </li>
               </ul>
             </section>
 
             {/* Step by step */}
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-6">Como Configurar un Codigo QR para Menu (Paso a Paso)</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-6">Como Configurar un Código QR para Menu (Paso a Paso)</h2>
               <div className="space-y-4">
                 {[
                   {
                     title: "Crea o digitaliza tu menu",
-                    desc: "Si ya tienes un menu en PDF, estas listo. Si tu menu es solo impreso, fotografialo o recrealo en Word/Google Docs y exportalo como PDF. Usa la herramienta Word a PDF de PDF.it si es necesario. Asegurate de que el texto sea legible en la pantalla de un telefono.",
+                    desc: "Si ya tienes un menu en PDF, estas listo. Si tu menu es solo impreso, fotografialo o recrealo en Word/Google Docs y exportalo como PDF. Usa la herramienta Word a PDF de PDF.it si es necesario. Asegurate de que el texto sea legible en la pantalla de un teléfono.",
                   },
                   {
-                    title: "Aloja tu menu en linea",
-                    desc: "Sube el PDF a tu sitio web, Google Drive (configura compartir como 'Cualquiera con el enlace') o un servicio de alojamiento. Copia la URL publica. Si usas Google Drive, asegurate de que el enlace abra el PDF directamente, no la interfaz de Drive.",
+                    title: "Aloja tu menu en línea",
+                    desc: "Sube el PDF a tu sitio web, Google Drive (configura compartir como 'Cualquiera con el enlace') o un servicio de alojamiento. Copia la URL pública. Si usas Google Drive, asegurate de que el enlace abra el PDF directamente, no la interfaz de Drive.",
                   },
                   {
-                    title: "Genera e imprime el codigo QR",
-                    desc: "Abre la herramienta de Codigo QR de PDF.it (funcion Pro), pega la URL de tu menu y genera el codigo. Descarga como SVG para impresion. Imprime en carpas de mesa, soportes acrilicos, letreros de pared o stickers. Agrega el texto 'Escanea para ver el Menu' para que los clientes sepan que hacer.",
+                    title: "Genera e imprime el código QR",
+                    desc: "Abre la herramienta de Código QR de PDF.it (función Pro), pega la URL de tu menu y genera el código. Descarga como SVG para impresión. Imprime en carpas de mesa, soportes acrilicos, letreros de pared o stickers. Agrega el texto 'Escanea para ver el Menu' para que los clientes sepan que hacer.",
                   },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -181,50 +181,50 @@ export default function CodigoQRParaMenuRestaurantePage() {
 
             {/* PDF vs webpage */}
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Menu PDF vs. Menu en Pagina Web: Cual Es Mejor?</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Menu PDF vs. Menu en Página Web: Cual Es Mejor?</h2>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Menu PDF</h3>
                   <p className="text-slate-600">
-                    Mejor para restaurantes con un menu estable que no cambia frecuentemente. Un PDF se ve exactamente como tu menu impreso, lo cual es familiar y facil de leer. Puedes crear uno en Word, Google Docs o Canva y convertirlo a PDF. Si el archivo es muy grande, usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para reducir el tamano y que cargue rapidamente en telefonos.
+                    Mejor para restaurantes con un menu estable que no cambia frecuentemente. Un PDF se ve exactamente como tu menu impreso, lo cuál es familiar y fácil de leer. Puedes crear uno en Word, Google Docs o Canva y convertirlo a PDF. Si el archivo es muy grande, usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link> para reducir el tamaño y que cargue rápidamente en teléfonos.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">Menu en Pagina Web</h3>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">Menu en Página Web</h3>
                   <p className="text-slate-600">
-                    Mejor para restaurantes que actualizan su menu frecuentemente — especiales del dia, platillos de temporada, cambios de precios. Una pagina web es mas facil de actualizar (sin archivo que volver a subir) y puede incluir fotos, descripciones e incluso pedidos en linea. La desventaja es que necesitas un sitio web o un servicio de creacion de menus.
+                    Mejor para restaurantes que actualizan su menu frecuentemente — especiales del día, platillos de temporada, cambios de precios. Una página web es más fácil de actualizar (sin archivo que volver a subir) y puede incluir fotos, descripciones e incluso pedidos en línea. La desventaja es que necesitas un sitio web o un servicio de creación de menus.
                   </p>
                 </div>
               </div>
               <p className="text-slate-600 mt-4">
-                De cualquier manera, el codigo QR funciona igual — enlaza a una URL. La unica diferencia es si esa URL abre un archivo PDF o una pagina web.
+                De cualquier manera, el código QR funciona igual — enlaza a una URL. La única diferencia es si esa URL abre un archivo PDF o una página web.
               </p>
             </section>
 
             {/* Placement tips */}
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Donde Colocar Tu Codigo QR de Menu</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Donde Colocar Tu Código QR de Menu</h2>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Carpas de mesa.</strong> Pequenas tarjetas dobladas que se paran sobre la mesa. Imprime el codigo QR en ambos lados para que sea visible desde cualquier angulo.</li>
-                <li>&#10003; <strong>Soportes acrilicos.</strong> Soportes transparentes de acrilico con el codigo QR impreso en una tarjeta adentro. Se ven profesionales y son faciles de limpiar.</li>
+                <li>&#10003; <strong>Carpas de mesa.</strong> Pequeñas tarjetas dobladas que se paran sobre la mesa. Imprime el código QR en ambos lados para que sea visible desde cualquier ángulo.</li>
+                <li>&#10003; <strong>Soportes acrilicos.</strong> Soportes transparentes de acrilico con el código QR impreso en una tarjeta adentro. Se ven profesionales y son fáciles de limpiar.</li>
                 <li>&#10003; <strong>Stickers en mesas.</strong> Stickers laminados aplicados directamente a la superficie de la mesa. Duraderos e imposibles de perder. Asegurate de que sean lo suficientemente grandes para escanear.</li>
                 <li>&#10003; <strong>Posters en la pared cerca de la entrada.</strong> Deja que los clientes que esperan vean el menu mientras esperan mesa.</li>
-                <li>&#10003; <strong>Calcomanias de ventana.</strong> Para restaurantes enfocados en comida para llevar, pon un codigo QR en la ventana para que los que pasen puedan escanear y ver tu menu desde afuera.</li>
+                <li>&#10003; <strong>Calcomanias de ventana.</strong> Para restaurantes enfocados en comida para llevar, pon un código QR en la ventana para que los que pasen puedan escanear y ver tu menu desde afuera.</li>
               </ul>
               <p className="text-slate-600 mt-4">
-                Para mas consejos sobre tamano y pruebas, consulta nuestra guia de <Link href="/es/aprender/mejores-practicas-codigo-qr" className="text-[#14D8C4] hover:underline">Mejores Practicas de Codigo QR</Link>.
+                Para más consejos sobre tamaño y pruebas, consulta nuestra guia de <Link href="/es/aprender/mejores-prácticas-codigo-qr" className="text-[#14D8C4] hover:underline">Mejores Prácticas de Código QR</Link>.
               </p>
             </section>
 
             {/* Keeping menu updated */}
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Como Actualizar Tu Menu Sin Reimprimir los Codigos QR</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Como Actualizar Tu Menu Sin Reimprimir los Códigos QR</h2>
               <p className="text-slate-600 mb-4">
-                El error mas grande que cometen los restaurantes es enlazar el codigo QR directamente a un archivo PDF. Cuando actualizas el menu, la URL cambia y el viejo codigo QR deja de funcionar. Asi es como evitar eso:
+                El error más grande que cometen los restaurantes es enlazar el código QR directamente a un archivo PDF. Cuando actualizas el menu, la URL cambia y el viejo código QR deja de funcionar. Asi es como evitar eso:
               </p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Usa una URL de redireccion.</strong> Servicios como Bitly o la funcion de redireccion de tu propio sitio web te permiten apuntar una URL corta permanente a cualquier destino. Cambia el destino en cualquier momento sin tocar el codigo QR.</li>
-                <li>&#10003; <strong>Usa la pagina de tu propio sitio web.</strong> Crea una pagina /menu en tu sitio web que siempre muestre el menu actual. El codigo QR enlaza a turestaurante.com/menu, y actualizas esa pagina cuando cambie el menu.</li>
+                <li>&#10003; <strong>Usa una URL de redireccion.</strong> Servicios como Bitly o la función de redireccion de tu propio sitio web te permiten apuntar una URL corta permanente a cualquier destino. Cambia el destino en cualquier momento sin tocar el código QR.</li>
+                <li>&#10003; <strong>Usa la página de tu propio sitio web.</strong> Crea una página /menu en tu sitio web que siempre muestre el menu actual. El código QR enlaza a turestaurante.com/menu, y actualizas esa página cuando cambie el menu.</li>
                 <li>&#10003; <strong>Reemplaza el archivo, no el enlace.</strong> Si alojas el PDF en Google Drive, puedes reemplazar el archivo sin cambiar el enlace de compartir. Sube el nuevo PDF con el mismo nombre a la misma carpeta.</li>
               </ul>
               <p className="text-slate-600 mt-4">
@@ -238,13 +238,13 @@ export default function CodigoQRParaMenuRestaurantePage() {
         {/* Tool CTA */}
         <section className="py-12" style={{ background: "#0E0F1E" }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
-            <h2 className="text-2xl font-black text-white mb-3">Crea el Codigo QR de Tu Menu de Restaurante</h2>
-            <p className="text-slate-300 mb-6">Genera un codigo QR escaneable para tu menu en segundos. Funcion Pro — incluye todas las herramientas PDF para gestionar tus archivos de menu.</p>
+            <h2 className="text-2xl font-black text-white mb-3">Crea el Código QR de Tu Menu de Restaurante</h2>
+            <p className="text-slate-300 mb-6">Genera un código QR escaneable para tu menu en segundos. Función Pro — incluye todas las herramientas PDF para gestionar tus archivos de menu.</p>
             <Link
               href="/es/codigo-qr"
               className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"
             >
-              <QrCode className="h-5 w-5" /> Crear Codigo QR de Menu
+              <QrCode className="h-5 w-5" /> Crear Código QR de Menu
             </Link>
           </div>
         </section>
@@ -252,15 +252,15 @@ export default function CodigoQRParaMenuRestaurantePage() {
         {/* Related Articles */}
         <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-6">Articulos Relacionados</h2>
+            <h2 className="text-2xl font-black text-slate-900 mb-6">Artículos Relacionados</h2>
             <div className="grid gap-3">
               {[
-                { title: "Como Crear un Codigo QR en Linea (Generador Gratuito)", href: "/es/aprender/como-crear-codigo-qr" },
-                { title: "Codigo QR para Tarjetas de Presentacion (Enlaza a Tu Sitio Web o vCard)", href: "/es/aprender/codigo-qr-para-tarjeta-de-presentacion" },
-                { title: "Mejores Practicas de Codigo QR (Tamano, Ubicacion y Pruebas)", href: "/es/aprender/mejores-practicas-codigo-qr" },
-                { title: "Crear un Codigo QR que Enlace a un Documento PDF", href: "/es/aprender/codigo-qr-para-pdf" },
-                { title: "Tipos de Codigo QR Explicados (URL, Texto, WiFi, vCard y Mas)", href: "/es/aprender/tipos-de-codigo-qr-explicados" },
-                { title: "Crear un Codigo QR para WiFi (Los Invitados se Conectan al Instante)", href: "/es/aprender/codigo-qr-para-wifi" },
+                { title: "Como Crear un Código QR en Línea (Generador Gratuito)", href: "/es/aprender/como-crear-codigo-qr" },
+                { title: "Código QR para Tarjetas de Presentación (Enlaza a Tu Sitio Web o vCard)", href: "/es/aprender/codigo-qr-para-tarjeta-de-presentacion" },
+                { title: "Mejores Prácticas de Código QR (Tamaño, Ubicacion y Pruebas)", href: "/es/aprender/mejores-prácticas-codigo-qr" },
+                { title: "Crear un Código QR que Enlace a un Documento PDF", href: "/es/aprender/codigo-qr-para-pdf" },
+                { title: "Tipos de Código QR Explicados (URL, Texto, WiFi, vCard y Mas)", href: "/es/aprender/tipos-de-codigo-qr-explicados" },
+                { title: "Crear un Código QR para WiFi (Los Invitados se Conectan al Instante)", href: "/es/aprender/codigo-qr-para-wifi" },
               ].map((article) => (
                 <Link
                   key={article.href}
@@ -281,12 +281,12 @@ export default function CodigoQRParaMenuRestaurantePage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Como creo un codigo QR para el menu de mi restaurante?", a: "Sube tu menu como PDF a un servicio de alojamiento o tu sitio web, copia la URL, luego usa la herramienta de Codigo QR de PDF.it para generar un codigo QR para esa URL. Imprime el codigo QR en carpas de mesa, stickers o letreros." },
-                { q: "Debo enlazar a un menu PDF o una pagina web?", a: "Una pagina web es mas facil de actualizar (cambiar precios, agregar platillos) sin reimprimir codigos QR. Un menu PDF es mas simple de crear y se ve exactamente como tu menu impreso. Elige segun la frecuencia con que cambia tu menu." },
-                { q: "Que tamano debe tener un codigo QR de menu?", a: "Al menos 3cm x 3cm para carpas de mesa y stickers. Para letreros de pared o posters, hazlo mas grande. La distancia de escaneo importa — los clientes deben poder escanear desde al menos 30cm en la iluminacion del restaurante." },
-                { q: "Los clientes pueden escanear el codigo QR sin una app?", a: "Si. Todos los smartphones modernos (iPhone y Android) pueden escanear codigos QR directamente con su app de camara integrada. No se necesita una app separada de lectura de QR." },
-                { q: "Como actualizo mi menu sin reimprimir los codigos QR?", a: "Usa un acortador de URL o servicio de redireccion. El codigo QR apunta a una URL corta, y cambias a donde redirige esa URL corta cada vez que actualizas tu menu. De esta manera el codigo QR sigue siendo el mismo." },
-                { q: "Es una herramienta gratuita?", a: "El generador de Codigo QR de PDF.it es una funcion Pro a $3.99/mes. Pro incluye codigos QR ilimitados mas todas las herramientas PDF — perfecto para restaurantes que tambien necesitan comprimir, convertir o gestionar menus en PDF." },
+                { q: "Como creo un código QR para el menu de mi restaurante?", a: "Sube tu menu como PDF a un servicio de alojamiento o tu sitio web, copia la URL, luego usa la herramienta de Código QR de PDF.it para generar un código QR para esa URL. Imprime el código QR en carpas de mesa, stickers o letreros." },
+                { q: "Debo enlazar a un menu PDF o una página web?", a: "Una página web es más fácil de actualizar (cambiar precios, agregar platillos) sin reimprimir códigos QR. Un menu PDF es más simple de crear y se ve exactamente como tu menu impreso. Elige segun la frecuencia con que cambia tu menu." },
+                { q: "Que tamaño debe tener un código QR de menu?", a: "Al menos 3cm x 3cm para carpas de mesa y stickers. Para letreros de pared o posters, hazlo más grande. La distancia de escaneo importa — los clientes deben poder escanear desde al menos 30cm en la iluminacion del restaurante." },
+                { q: "Los clientes pueden escanear el código QR sin una app?", a: "Si. Todos los smartphones modernos (iPhone y Android) pueden escanear códigos QR directamente con su app de camara integrada. No se necesita una app separada de lectura de QR." },
+                { q: "Como actualizo mi menu sin reimprimir los códigos QR?", a: "Usa un acortador de URL o servicio de redireccion. El código QR apunta a una URL corta, y cambias a donde redirige esa URL corta cada vez que actualizas tu menu. De esta manera el código QR sigue siendo el mismo." },
+                { q: "Es una herramienta gratuita?", a: "El generador de Código QR de PDF.it es una función Pro a $3.99/mes. Pro incluye códigos QR ilimitados más todas las herramientas PDF — perfecto para restaurantes que también necesitan comprimir, convertir o gestionar menus en PDF." },
               ].map((faq, i) => (
                 <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

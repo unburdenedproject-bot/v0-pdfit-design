@@ -75,7 +75,7 @@ export function UrlPdfInterface() {
       })
 
       if (!response.ok) {
-        let message = `Conversion failed (HTTP ${response.status})`
+        let message = `Conversión failed (HTTP ${response.status})`
         try {
           const errorData = await response.json()
           if (errorData.error) message = errorData.error
@@ -143,28 +143,28 @@ export function UrlPdfInterface() {
           urlPlaceholder: "https://ejemplo.com",
           convert: "Convertir a PDF",
           converting: "Convirtiendo...",
-          success: "Pagina convertida exitosamente",
+          success: "Página convertida exitosamente",
           download: "Descargar PDF",
           convertAnother: "Convertir otra",
-          upgradeTitle: "Funcion Pro",
+          upgradeTitle: "Función Pro",
           upgradeDesc:
-            "Convertir URL a PDF esta disponible en los planes Pro, Business y Enterprise.",
+            "Convertir URL a PDF está disponible en los planes Pro, Business y Enterprise.",
           upgradeBtn: "Ver Planes",
-          publicNote: "Funciona con paginas web publicas. Para paginas con inicio de sesion (facturas, paneles), usa Imprimir > Guardar como PDF en tu navegador.",
+          publicNote: "Funciona con páginas web publicas. Para páginas con inicio de sesión (facturas, paneles), usa Imprimir > Guardar como PDF en tu navegador.",
         }
       : localePrefix === "/br"
         ? {
             urlPlaceholder: "https://exemplo.com",
             convert: "Converter para PDF",
             converting: "Convertendo...",
-            success: "Pagina convertida com sucesso",
+            success: "Página convertida com sucesso",
             download: "Baixar PDF",
             convertAnother: "Converter outra",
             upgradeTitle: "Funcao Pro",
             upgradeDesc:
-              "Converter URL para PDF esta disponivel nos planos Pro, Business e Enterprise.",
+              "Converter URL para PDF está disponível nos planos Pro, Business e Enterprise.",
             upgradeBtn: "Ver Planos",
-            publicNote: "Funciona com paginas web publicas. Para paginas com login (faturas, paineis), use Imprimir > Salvar como PDF no seu navegador.",
+            publicNote: "Funciona com páginas web publicas. Para páginas com login (faturas, paineis), use Imprimir > Salvar como PDF no seu navegador.",
           }
         : {
             urlPlaceholder: "https://example.com",

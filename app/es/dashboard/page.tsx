@@ -63,7 +63,7 @@ export default async function DashboardPageEs() {
 
   if (usage?.count) usageCount = usage.count
 
-  // Fetch recent activity (last 10 successful conversions)
+  // Fetch recent activity (last 10 successful conversións)
   const { data: recentActivity } = await supabase
     .from("usage_logs")
     .select("tool, created_at")

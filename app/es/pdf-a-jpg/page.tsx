@@ -8,7 +8,7 @@ import Link from "next/link"
 export const metadata = {
   title: "Convertir PDF a JPG Online — Gratis y Sin Registro | PDF.it",
   description:
-    "Convierte PDF a JPG en segundos con PDF.it. Exporta cada pagina como imagen JPEG de alta calidad y descarga al instante — sin instalar nada.",
+    "Convierte PDF a JPG en segundos con PDF.it. Exporta cada página como imagen JPEG de alta calidad y descarga al instante — sin instalar nada.",
   alternates: {
     canonical: "https://pdf.it.com/es/pdf-a-jpg",
     languages: {
@@ -24,10 +24,10 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "¿Puedo convertir un PDF de varias paginas a JPG?",
+      name: "¿Puedo convertir un PDF de varias páginas a JPG?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Si. PDF.it convierte cada pagina del PDF en una imagen JPG individual que puedes descargar por separado.",
+        text: "Si. PDF.it convierte cada página del PDF en una imagen JPG individual que puedes descargar por separado.",
       },
     },
     {
@@ -35,15 +35,15 @@ const faqSchema = {
       name: "¿Convertir PDF a JPG reduce la calidad?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "La calidad depende del PDF original. Los PDFs de alta resolucion producen JPGs nitidos; los escaneos de baja resolucion pueden verse mas suaves.",
+        text: "La calidad depende del PDF original. Los PDFs de alta resolución producen JPGs nitidos; los escaneos de baja resolución pueden verse más suaves.",
       },
     },
     {
       "@type": "Question",
-      name: "¿Cual es la diferencia entre JPG y PNG para paginas de PDF?",
+      name: "¿Cual es la diferencia entre JPG y PNG para páginas de PDF?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "JPG generalmente crea archivos mas pequenos y es ideal para compartir. PNG es mejor para texto muy nitido y graficos. Prueba nuestra herramienta PDF a PNG si necesitas salida sin perdida.",
+        text: "JPG generalmente crea archivos más pequeños y es ideal para compartir. PNG es mejor para texto muy nitido y gráficos. Prueba nuestra herramienta PDF a PNG si necesitas salida sin perdida.",
       },
     },
     {
@@ -51,7 +51,7 @@ const faqSchema = {
       name: "¿Funciona en iPhone y Android?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Si. PDF.it funciona en navegadores moviles — sube tu PDF, convierte y descarga tus imagenes JPG.",
+        text: "Si. PDF.it funciona en navegadores móviles — sube tu PDF, convierte y descarga tus imágenes JPG.",
       },
     },
     {
@@ -59,7 +59,7 @@ const faqSchema = {
       name: "¿Es seguro subir mi PDF?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Si. Los archivos se transfieren por HTTPS y se eliminan automaticamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos.",
+        text: "Si. Los archivos se transfieren por HTTPS y se eliminan automáticamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos.",
       },
     },
     {
@@ -112,16 +112,16 @@ export default function PDFaJPGPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convertir PDF a JPG Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Convierte un PDF en imagenes JPG nitidas en segundos con PDF.it — rapido, sencillo y desde tu navegador.
+                Convierte un PDF en imágenes JPG nitidas en segundos con PDF.it — rápido, sencillo y desde tu navegador.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2">
                   <Zap className="h-4 w-4 text-[#14D8C4]" />
-                  <span>Alta Resolucion</span>
+                  <span>Alta Resolución</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Shield className="h-4 w-4 text-[#14D8C4]" />
-                  <span>Archivos Eliminados Tras la Sesion</span>
+                  <span>Archivos Eliminados Tras la Sesión</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Download className="h-4 w-4 text-[#14D8C4]" />
@@ -136,13 +136,13 @@ export default function PDFaJPGPage() {
         <section className="py-10 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <p className="text-lg text-slate-600 leading-relaxed">
-              Usa el convertidor de PDF a JPG de PDF.it para exportar las paginas de tu PDF como imagenes JPEG de alta calidad. Sube tu archivo, convierte en segundos y descarga cada pagina como imagen individual — perfecto para compartir, presentaciones, vistas previas y correos.
+              Usa el convertidor de PDF a JPG de PDF.it para exportar las páginas de tu PDF como imágenes JPEG de alta calidad. Sube tu archivo, convierte en segundos y descarga cada página como imagen individual — perfecto para compartir, presentaciones, vistas previas y correos.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
-              <li className="flex items-center gap-2">✓ Convierte paginas completas de PDF en imagenes JPG</li>
-              <li className="flex items-center gap-2">✓ Resultado nitido y legible para texto, graficos y diagramas</li>
+              <li className="flex items-center gap-2">✓ Convierte páginas completas de PDF en imágenes JPG</li>
+              <li className="flex items-center gap-2">✓ Resultado nitido y legible para texto, gráficos y diagramas</li>
               <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li className="flex items-center gap-2">✓ Sin instalacion — funciona desde tu navegador</li>
+              <li className="flex items-center gap-2">✓ Sin instalación — funciona desde tu navegador</li>
             </ul>
           </div>
         </section>
@@ -170,9 +170,9 @@ export default function PDFaJPGPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { title: "Convierte Paginas de PDF a Imagenes JPG", desc: "Transforma cada pagina de tu PDF en una imagen JPG. Cada pagina se convierte en un archivo independiente que puedes usar en presentaciones, correos, documentos o redes sociales." },
-                { title: "Mantiene los Disenos Limpios y Claros", desc: "PDF.it preserva el diseno de la pagina para que tu contenido se vea legible y profesional despues de la conversion." },
-                { title: "Descarga Instantanea", desc: "Descarga tus JPGs inmediatamente despues de la conversion. Todas las paginas se empaquetan en un archivo ZIP para descargar con un solo clic." },
+                { title: "Convierte Páginas de PDF a Imágenes JPG", desc: "Transforma cada página de tu PDF en una imagen JPG. Cada página se convierte en un archivo independiente que puedes usar en presentaciones, correos, documentos o redes sociales." },
+                { title: "Mantiene los Diseños Limpios y Claros", desc: "PDF.it preserva el diseño de la página para que tu contenido se vea legible y profesional después de la conversión." },
+                { title: "Descarga Instantanea", desc: "Descarga tus JPGs inmediatamente después de la conversión. Todas las páginas se empaquetan en un archivo ZIP para descargar con un solo clic." },
               ].map((feature) => (
                 <div
                   key={feature.title}
@@ -211,7 +211,7 @@ export default function PDFaJPGPage() {
               {[
                 { num: "1", title: "Sube tu PDF", desc: "Arrastra y suelta o haz clic para elegir un archivo" },
                 { num: "2", title: "Haz clic en Convertir", desc: "El proceso suele tardar unos segundos" },
-                { num: "3", title: "Descarga tus JPGs", desc: "Todas las paginas en un solo archivo ZIP" },
+                { num: "3", title: "Descarga tus JPGs", desc: "Todas las páginas en un solo archivo ZIP" },
               ].map((step) => (
                 <div key={step.num} className="flex-1">
                   <div
@@ -238,9 +238,9 @@ export default function PDFaJPGPage() {
             <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "PDF a PNG", href: "/es/pdf-a-png", desc: "Imagenes sin perdida de calidad" },
-                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamano antes de convertir" },
-                { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Convierte solo las paginas que necesitas" },
+                { name: "PDF a PNG", href: "/es/pdf-a-png", desc: "Imágenes sin perdida de calidad" },
+                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamaño antes de convertir" },
+                { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Convierte solo las páginas que necesitas" },
                 { name: "Unir PDF", href: "/es/unir-pdf", desc: "Combina varios PDFs en uno" },
               ].map((tool) => (
                 <div
@@ -290,11 +290,11 @@ export default function PDFaJPGPage() {
             <h2 className="text-2xl font-black text-white mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-4">
               {[
-                { q: "¿Puedo convertir un PDF de varias paginas a JPG?", a: "Si. PDF.it convierte cada pagina del PDF en una imagen JPG individual que puedes descargar por separado." },
-                { q: "¿Convertir PDF a JPG reduce la calidad?", a: "La calidad depende del PDF original. Los PDFs de alta resolucion producen JPGs nitidos; los escaneos de baja resolucion pueden verse mas suaves." },
-                { q: "¿Cual es la diferencia entre JPG y PNG para paginas de PDF?", a: "JPG generalmente crea archivos mas pequenos y es ideal para compartir. PNG es mejor para texto muy nitido y graficos. Prueba nuestra herramienta PDF a PNG si necesitas salida sin perdida." },
-                { q: "¿Funciona en iPhone y Android?", a: "Si. PDF.it funciona en navegadores moviles — sube tu PDF, convierte y descarga tus imagenes JPG." },
-                { q: "¿Es seguro subir mi PDF?", a: "Si. Los archivos se transfieren por HTTPS y se eliminan automaticamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." },
+                { q: "¿Puedo convertir un PDF de varias páginas a JPG?", a: "Si. PDF.it convierte cada página del PDF en una imagen JPG individual que puedes descargar por separado." },
+                { q: "¿Convertir PDF a JPG reduce la calidad?", a: "La calidad depende del PDF original. Los PDFs de alta resolución producen JPGs nitidos; los escaneos de baja resolución pueden verse más suaves." },
+                { q: "¿Cual es la diferencia entre JPG y PNG para páginas de PDF?", a: "JPG generalmente crea archivos más pequeños y es ideal para compartir. PNG es mejor para texto muy nitido y gráficos. Prueba nuestra herramienta PDF a PNG si necesitas salida sin perdida." },
+                { q: "¿Funciona en iPhone y Android?", a: "Si. PDF.it funciona en navegadores móviles — sube tu PDF, convierte y descarga tus imágenes JPG." },
+                { q: "¿Es seguro subir mi PDF?", a: "Si. Los archivos se transfieren por HTTPS y se eliminan automáticamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." },
                 { q: "¿PDF.it agrega marcas de agua?", a: "No. PDF.it no agrega marcas de agua a tus archivos JPG convertidos." },
               ].map((faq, i) => (
                 <div

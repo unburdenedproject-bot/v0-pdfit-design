@@ -125,23 +125,23 @@ export function ResumeBuilderInterface() {
   const labels =
     localePrefix === "/es"
       ? {
-          upgradeTitle: "Funcion Pro",
-          upgradeDesc: "Crear Curriculum esta disponible en los planes Pro, Business y Enterprise.",
+          upgradeTitle: "Función Pro",
+          upgradeDesc: "Crear Currículum está disponible en los planes Pro, Business y Enterprise.",
           upgradeBtn: "Ver Planes",
           generating: "Generando...",
-          buildBtn: "Generar Mi Curriculum",
-          coverLabel: "Incluir carta de presentacion",
-          coverDesc: "La IA genera una carta de presentacion en la segunda pagina",
+          buildBtn: "Generar Mi Currículum",
+          coverLabel: "Incluir carta de presentación",
+          coverDesc: "La IA genera una carta de presentación en la segunda página",
         }
       : localePrefix === "/br"
         ? {
             upgradeTitle: "Funcao Pro",
-            upgradeDesc: "Criar Curriculo esta disponivel nos planos Pro, Business e Enterprise.",
+            upgradeDesc: "Criar Curriculo está disponível nos planos Pro, Business e Enterprise.",
             upgradeBtn: "Ver Planos",
             generating: "Gerando...",
             buildBtn: "Gerar Meu Curriculo",
             coverLabel: "Incluir carta de apresentacao",
-            coverDesc: "A IA gera uma carta de apresentacao na segunda pagina",
+            coverDesc: "A IA gera uma carta de apresentacao na segunda página",
           }
         : {
             upgradeTitle: "Pro Feature",

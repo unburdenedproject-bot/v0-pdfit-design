@@ -177,7 +177,7 @@ export function DashboardClientBr({
             setStatusMessage({ type: "success", text: `Pagamento realizado com sucesso! Seu plano ${label} ja esta ativo.` })
             clearInterval(poll)
           } else if (attempts >= 15) {
-            setStatusMessage({ type: "success", text: "Pagamento realizado! Seu plano sera ativado em breve — atualize a pagina se necessario." })
+            setStatusMessage({ type: "success", text: "Pagamento realizado! Seu plano sera ativado em breve — atualize a página se necessario." })
             clearInterval(poll)
           }
         }, 2000)
@@ -461,7 +461,7 @@ export function DashboardClientBr({
           <div className="rounded-xl bg-white/[0.05] backdrop-blur-sm border border-white/10 h-full">
             <div className="p-6 pb-4">
               <div className="flex items-center justify-between">
-                <h3 className="text-lg font-bold text-white">Ferramentas Rapidas</h3>
+                <h3 className="text-lg font-bold text-white">Ferramentas Rápidas</h3>
                 <Link href="/br/ferramentas" className="text-sm text-[#14D8C4] hover:text-[#2EE6D6] font-medium flex items-center gap-1">
                   Ver todas <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
@@ -503,7 +503,7 @@ export function DashboardClientBr({
                   </div>
                   <p className="text-sm text-slate-500 font-medium">Sem atividade ainda</p>
                   <p className="text-xs text-slate-600 mt-1">
-                    Suas conversoes recentes aparecerão aqui
+                    Suas conversoes recentes aparecerão aquí
                   </p>
                 </div>
               ) : (

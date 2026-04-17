@@ -43,7 +43,7 @@ export function HeroSectionEs() {
               </Link>
               <span className="text-slate-500">|</span>
               <Link href="/es/crear-curriculum" className="text-sm font-semibold text-[#14D8C4] hover:text-[#2EE6D6] transition-colors">
-                Crear Curriculum
+                Crear Currículum
               </Link>
               <span className="text-slate-500">|</span>
               <Link href="/es/chat-con-pdf" className="text-sm font-semibold text-[#14D8C4] hover:text-[#2EE6D6] transition-colors">
@@ -131,7 +131,7 @@ export function HeroSectionEs() {
           <div className="flex flex-wrap justify-center gap-6 mb-12 text-sm font-semibold text-slate-300">
             <div className="flex items-center gap-2">
               <Gift className="h-4 w-4 text-green-400" />
-              <span>10 conversiones gratis/dia</span>
+              <span>10 conversiones gratis/día</span>
             </div>
             <div className="flex items-center gap-2">
               <Sparkles className="h-4 w-4 text-[#E8813A]" />
@@ -151,8 +151,8 @@ export function HeroSectionEs() {
           <div className="max-w-md mx-auto rounded-2xl p-[1px] mt-8" style={{ background: "linear-gradient(135deg, #E0C27A, #D6B36A, #E0C27A)" }}>
             <div className="rounded-[15px] px-8 py-5 text-center" style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(224,194,122,0.08) 0%, transparent 60%), rgba(14,15,30,0.95)" }}>
               <p className="text-sm sm:text-base font-black uppercase tracking-widest text-[#E0C27A] mb-2">Prueba Gratis</p>
-              <p className="text-xl sm:text-2xl font-black text-white mb-1">Prueba cualquier plan gratis por 30 dias</p>
-              <p className="text-sm text-slate-400">Sin compromiso, cancela cuando quieras. Solo agrega un metodo de pago para iniciar tu prueba sin riesgo.</p>
+              <p className="text-xl sm:text-2xl font-black text-white mb-1">Prueba cualquier plan gratis por 30 días</p>
+              <p className="text-sm text-slate-400">Sin compromiso, cancela cuando quieras. Solo agrega un método de pago para iniciar tu prueba sin riesgo.</p>
             </div>
           </div>
         </div>

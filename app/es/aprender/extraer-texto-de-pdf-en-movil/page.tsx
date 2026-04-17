@@ -8,7 +8,7 @@ export const metadata = {
   title: "Extraer Texto de PDF en iPhone/Android (Mejores Métodos) | PDF.it",
   description:
     "Aprende a extraer texto de un PDF en tu teléfono. Guía paso a paso para iPhone y Android — sin necesidad de aplicación. Funciona para PDFs digitales y escaneados.",
-  keywords: "extraer texto de pdf en iphone, extraer texto de pdf android, pdf a texto movil, copiar texto de pdf en telefono, extraccion texto pdf movil",
+  keywords: "extraer texto de pdf en iphone, extraer texto de pdf android, pdf a texto móvil, copiar texto de pdf en teléfono, extracción texto pdf móvil",
 }
 
 const faqSchema = {
@@ -23,7 +23,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo copio texto de un PDF en Android?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Abre el PDF en Google Drive o tu visor de PDF predeterminado e intenta seleccionar texto. Si no funciona bien (líneas rotas, formato extraño), usa la herramienta PDF a TXT de PDF.it en Chrome para obtener una extracción de texto limpia." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Abre el PDF en Google Drive o tu visor de PDF predeterminado e intenta selecciónar texto. Si no funciona bien (líneas rotas, formato extraño), usa la herramienta PDF a TXT de PDF.it en Chrome para obtener una extracción de texto limpia." }
     },
     {
       "@type": "Question",
@@ -62,7 +62,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Sube tu PDF",
-      "text": "Toca el área de carga y selecciona tu PDF desde Archivos (iPhone), Google Drive o tu carpeta de Descargas. El archivo se sube directamente desde tu teléfono."
+      "text": "Toca el área de carga y seleccióna tu PDF desde Archivos (iPhone), Google Drive o tu carpeta de Descargas. El archivo se sube directamente desde tu teléfono."
     },
     {
       "@type": "HowToStep",
@@ -126,12 +126,12 @@ export default function ExtraerTextoDePdfEnMovilPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Por Qué Extraer Texto de PDF en Móvil Es Más Difícil Que en Escritorio</h2>
               <p className="text-slate-600 mb-4">
-                En una computadora, puedes abrir un PDF, seleccionar texto y copiarlo — aunque incluso eso a menudo rompe el formato. En un teléfono, es aún peor:
+                En una computadora, puedes abrir un PDF, selecciónar texto y copiarlo — aunque incluso eso a menudo rompe el formato. En un teléfono, es aún peor:
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">1.</span>
-                  <span><strong>La selección de texto es imprecisa.</strong> Seleccionar párrafos específicos con el dedo es difícil. A menudo terminas seleccionando demasiado o muy poco.</span>
+                  <span><strong>La selección de texto es imprecisa.</strong> Seleccionar párrafos específicos con el dedo es difícil. A menudo terminas selecciónando demasiado o muy poco.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">2.</span>
@@ -143,7 +143,7 @@ export default function ExtraerTextoDePdfEnMovilPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">4.</span>
-                  <span><strong>Los resultados al pegar son desordenados.</strong> Incluso cuando logras seleccionar texto, pegarlo en Notas o Mensajes produce líneas rotas y formato aleatorio.</span>
+                  <span><strong>Los resultados al pegar son desordenados.</strong> Incluso cuando logras selecciónar texto, pegarlo en Notas o Mensajes produce líneas rotas y formato aleatorio.</span>
                 </li>
               </ul>
               <p className="text-slate-600 mt-4">
@@ -189,20 +189,20 @@ export default function ExtraerTextoDePdfEnMovilPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Método 2: Usa el Visor de PDF Integrado de Tu Teléfono</h2>
               <p className="text-slate-600 mb-4">
-                Para selecciones rápidas y pequeñas (una oración o párrafo), las herramientas integradas de tu teléfono pueden ser suficientes:
+                Para selecciónes rápidas y pequeñas (una oración o párrafo), las herramientas integradas de tu teléfono pueden ser suficientes:
               </p>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">iPhone (App Archivos / Safari)</h3>
                   <p className="text-slate-600">
-                    Abre el PDF en la app Archivos o Safari. Mantén presionada una palabra para iniciar la selección, luego arrastra los controles para expandir. Toca "Copiar" y pega en tu destino. Esto funciona para selecciones cortas pero se rompe en páginas completas o diseños de múltiples columnas.
+                    Abre el PDF en la app Archivos o Safari. Mantén presionada una palabra para iniciar la selección, luego arrastra los controles para expandir. Toca "Copiar" y pega en tu destino. Esto funciona para selecciónes cortas pero se rompe en páginas completas o diseños de múltiples columnas.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Android (Google Drive / Visor Predeterminado)</h3>
                   <p className="text-slate-600">
-                    Abre el PDF en Google Drive o tu visor predeterminado. Mantén presionado para seleccionar texto, arrastra para expandir y copia. El visor de PDF de Google Drive maneja la selección de texto mejor que la mayoría de las aplicaciones de terceros.
+                    Abre el PDF en Google Drive o tu visor predeterminado. Mantén presionado para selecciónar texto, arrastra para expandir y copia. El visor de PDF de Google Drive maneja la selección de texto mejor que la mayoría de las aplicaciónes de terceros.
                   </p>
                 </div>
               </div>
@@ -250,7 +250,7 @@ export default function ExtraerTextoDePdfEnMovilPage() {
                     </tr>
                     <tr className="border-t border-gray-200 bg-gray-50">
                       <td className="py-3 px-4 font-semibold">Calidad de selección de texto</td>
-                      <td className="py-3 px-4">OK para selecciones cortas</td>
+                      <td className="py-3 px-4">OK para selecciónes cortas</td>
                       <td className="py-3 px-4">Ligeramente mejor con Drive</td>
                     </tr>
                     <tr className="border-t border-gray-200">
@@ -275,13 +275,13 @@ export default function ExtraerTextoDePdfEnMovilPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Dónde Guardar Tu Texto Extraído</h2>
               <p className="text-slate-600 mb-4">
-                Una vez que hayas descargado el archivo TXT de PDF.it, así es como puedes llevarlo a tus aplicaciones favoritas:
+                Una vez que hayas descargado el archivo TXT de PDF.it, así es como puedes llevarlo a tus aplicaciónes favoritas:
               </p>
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Apple Notes</h3>
                   <p className="text-slate-600">
-                    Abre el archivo TXT, toca el ícono de compartir y selecciona Notas. O abre el archivo, selecciona todo el texto, copia y pega en una nueva nota.
+                    Abre el archivo TXT, toca el ícono de compartir y seleccióna Notas. O abre el archivo, seleccióna todo el texto, copia y pega en una nueva nota.
                   </p>
                 </div>
 
@@ -326,7 +326,7 @@ export default function ExtraerTextoDePdfEnMovilPage() {
               {[
                 { title: "Convertir PDF a TXT: Extrae Texto Plano en Segundos", href: "/es/aprender/convertir-pdf-a-texto" },
                 { title: "Cómo Copiar Texto de un PDF a Notas o Documentos (Limpiamente)", href: "/es/aprender/copiar-texto-de-pdf-a-notas" },
-                { title: "Por Qué el Texto Extraído de PDF Sale Ilegible (Y Cómo Solucionarlo)", href: "/es/aprender/pdf-texto-ilegible-solucion" },
+                { title: "Por Qué el Texto Extraído de PDF Sale Ilegible (Y Cómo Soluciónarlo)", href: "/es/aprender/pdf-texto-ilegible-solución" },
               ].map((article) => (
                 <Link
                   key={article.href}
@@ -348,7 +348,7 @@ export default function ExtraerTextoDePdfEnMovilPage() {
             <div className="space-y-6">
               {[
                 { q: "¿Puedo extraer texto de un PDF en mi iPhone sin una aplicación?", a: "Sí. Abre PDF.it.com en Safari, sube tu PDF a la herramienta PDF a TXT y descarga el archivo de texto plano. No necesitas instalar ninguna aplicación — funciona completamente en tu navegador." },
-                { q: "¿Cómo copio texto de un PDF en Android?", a: "Abre el PDF en Google Drive o tu visor de PDF predeterminado e intenta seleccionar texto. Si no funciona bien (líneas rotas, formato extraño), usa la herramienta PDF a TXT de PDF.it en Chrome para obtener una extracción de texto limpia." },
+                { q: "¿Cómo copio texto de un PDF en Android?", a: "Abre el PDF en Google Drive o tu visor de PDF predeterminado e intenta selecciónar texto. Si no funciona bien (líneas rotas, formato extraño), usa la herramienta PDF a TXT de PDF.it en Chrome para obtener una extracción de texto limpia." },
                 { q: "¿Puedo extraer texto de un PDF escaneado en mi teléfono?", a: "Sí, pero necesitas OCR. El PDF a TXT estándar no funciona en documentos escaneados. Usa el Escáner OCR de PDF.it en tu navegador móvil — sube el PDF escaneado y extraerá el texto usando reconocimiento óptico de caracteres." },
                 { q: "¿Cuál es la mejor app para extraer texto de PDF en iPhone?", a: "No necesitas una aplicación. PDF.it funciona directamente en Safari en iPhone — sube tu PDF, convierte a TXT y descarga el texto. Es más rápido que instalar una aplicación y funciona en cualquier versión de iOS." },
                 { q: "¿Por qué copiar y pegar desde un PDF en móvil me da texto roto?", a: "Los visores de PDF móviles tienen capacidades limitadas de selección de texto. A menudo rompen líneas en los finales de línea visuales, fusionan columnas e incluyen encabezados/pies de página. Convertir a TXT con PDF.it te da texto correctamente ordenado sin estos problemas." },

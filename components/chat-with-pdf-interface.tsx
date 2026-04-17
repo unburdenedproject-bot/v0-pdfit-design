@@ -78,31 +78,31 @@ export function ChatWithPdfInterface() {
     localePrefix === "/es"
       ? {
           uploadTitle: "Sube tu PDF",
-          uploadDesc: "Arrastra y suelta tu archivo PDF aqui, o haz clic para seleccionar",
+          uploadDesc: "Arrastra y suelta tu archivo PDF aquí, o haz clic para seleccionar",
           browse: "Seleccionar archivo",
           uploading: "Subiendo...",
           placeholder: "Pregunta algo sobre tu documento...",
           send: "Enviar",
           thinking: "Pensando...",
-          welcome: "Tu PDF esta listo. Pregunta lo que quieras sobre el documento.",
+          welcome: "Tu PDF está listo. Pregunta lo que quieras sobre el documento.",
           startNew: "Nuevo documento",
-          upgradeTitle: "Funcion Business",
-          upgradeDesc: "Chat con PDF esta disponible en el plan Business ($13.99/mes). Haz preguntas y obtén respuestas instantaneas de cualquier documento.",
+          upgradeTitle: "Función Business",
+          upgradeDesc: "Chat con PDF está disponible en el plan Business ($13.99/mes). Haz preguntas y obtén respuestas instantáneas de cualquier documento.",
           upgradeBtn: "Ver Plan Business",
         }
       : localePrefix === "/br"
         ? {
             uploadTitle: "Envie seu PDF",
-            uploadDesc: "Arraste e solte seu arquivo PDF aqui, ou clique para selecionar",
+            uploadDesc: "Arraste e solte seu arquivo PDF aquí, ou clique para selecionar",
             browse: "Selecionar arquivo",
             uploading: "Enviando...",
             placeholder: "Pergunte algo sobre seu documento...",
             send: "Enviar",
             thinking: "Pensando...",
-            welcome: "Seu PDF esta pronto. Pergunte o que quiser sobre o documento.",
+            welcome: "Seu PDF está pronto. Pergunte o que quiser sobre o documento.",
             startNew: "Novo documento",
             upgradeTitle: "Funcao Business",
-            upgradeDesc: "Chat com PDF esta disponivel no plano Business ($13.99/mes). Faca perguntas e obtenha respostas instantaneas de qualquer documento.",
+            upgradeDesc: "Chat com PDF está disponível no plano Business ($13.99/mes). Faca perguntas e obtenha respostas instantâneas de qualquer documento.",
             upgradeBtn: "Ver Plano Business",
           }
         : {

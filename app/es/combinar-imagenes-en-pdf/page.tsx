@@ -6,14 +6,14 @@ import { Images, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Combinar Imagenes en PDF — Convierte Multiples Fotos a Un PDF | PDF.it",
+  title: "Combinar Imágenes en PDF — Convierte Múltiples Fotos a Un PDF | PDF.it",
   description:
-    "Combina multiples imagenes en un solo PDF con PDF.it. Sube JPG, PNG u otras imagenes y crea un documento PDF — rapido, gratis y desde tu navegador.",
+    "Combina múltiples imágenes en un solo PDF con PDF.it. Sube JPG, PNG u otras imágenes y crea un documento PDF — rápido, gratis y desde tu navegador.",
   alternates: {
-    canonical: "/es/combinar-imagenes-en-pdf",
+    canonical: "/es/combinar-imágenes-en-pdf",
     languages: {
       en: "/combine-images-into-pdf",
-      es: "/es/combinar-imagenes-en-pdf",
+      es: "/es/combinar-imágenes-en-pdf",
       pt: "/br/combinar-imagens-em-pdf",
     },
   },
@@ -21,12 +21,12 @@ export const metadata = {
 
 export default function CombinarImagenesEnPDFPage() {
   const faqs = [
-    { q: "¿Que formatos de imagen puedo combinar en un PDF?", a: "PDF.it soporta imagenes JPG, JPEG, PNG y WebP. Sube cualquier combinacion de estos formatos y todas se combinaran en un solo documento PDF." },
-    { q: "¿Combinar imagenes en un PDF reduce la calidad de imagen?", a: "No. Tus imagenes se incrustan en el PDF a su resolucion original. La calidad de cada imagen permanece igual que el archivo original que subiste." },
-    { q: "¿Cuantas imagenes puedo combinar en un PDF?", a: "Los usuarios gratuitos pueden combinar imagenes de una sola carga. Los usuarios Pro obtienen procesamiento por lotes para combinar grandes conjuntos de imagenes en un PDF sin limite practico de cantidad." },
-    { q: "¿Puedo elegir el orden de las paginas de las imagenes en el PDF?", a: "Si. Las imagenes se agregan al PDF en el orden que las subes. Ordena tus archivos en la secuencia deseada antes de subir para controlar el orden de paginas." },
-    { q: "¿Puedo combinar imagenes en un PDF desde mi celular?", a: "Si. PDF.it funciona en navegadores moviles — sube fotos de tu galeria en iPhone o Android y descarga el PDF combinado al instante." },
-    { q: "¿Es gratis combinar imagenes en un PDF?", a: "Si. PDF.it te permite combinar imagenes en un PDF gratis sin registro. Los usuarios Pro obtienen funciones adicionales como procesamiento por lotes y limites de tamaño mas grandes." },
+    { q: "¿Que formatos de imagen puedo combinar en un PDF?", a: "PDF.it soporta imágenes JPG, JPEG, PNG y WebP. Sube cualquier combinación de estos formatos y todas se combinaran en un solo documento PDF." },
+    { q: "¿Combinar imágenes en un PDF reduce la calidad de imagen?", a: "No. Tus imágenes se incrustan en el PDF a su resolución original. La calidad de cada imagen permanece igual que el archivo original que subiste." },
+    { q: "¿Cuantas imágenes puedo combinar en un PDF?", a: "Los usuarios gratuitos pueden combinar imágenes de una sola carga. Los usuarios Pro obtienen procesamiento por lotes para combinar grandes conjuntos de imágenes en un PDF sin límite práctico de cantidad." },
+    { q: "¿Puedo elegir el orden de las páginas de las imágenes en el PDF?", a: "Si. Las imágenes se agregan al PDF en el orden que las subes. Ordena tus archivos en la secuencia deseada antes de subir para controlar el orden de páginas." },
+    { q: "¿Puedo combinar imágenes en un PDF desde mi celular?", a: "Si. PDF.it funciona en navegadores móviles — sube fotos de tu galeria en iPhone o Android y descarga el PDF combinado al instante." },
+    { q: "¿Es gratis combinar imágenes en un PDF?", a: "Si. PDF.it te permite combinar imágenes en un PDF gratis sin registro. Los usuarios Pro obtienen funciones adicionales como procesamiento por lotes y límites de tamaño más grandes." },
   ]
 
   return (
@@ -60,13 +60,13 @@ export default function CombinarImagenesEnPDFPage() {
               >
                 <Images className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Combinar Imagenes en PDF</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Combinar Imágenes en PDF</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Sube multiples fotos o imagenes y combinalas en un solo documento PDF. Perfecto para crear albumes de fotos, colecciones de recibos o paginas escaneadas organizadas.
+                Sube múltiples fotos o imágenes y combinalas en un solo documento PDF. Perfecto para crear albumes de fotos, colecciones de recibos o páginas escaneadas organizadas.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>JPG, PNG, WebP Soportados</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesion</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesión</span></div>
                 <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sin Registro</span></div>
               </div>
             </div>
@@ -77,13 +77,13 @@ export default function CombinarImagenesEnPDFPage() {
         <section className="py-10 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <p className="text-lg text-slate-600 leading-relaxed">
-              ¿Necesitas convertir una carpeta de fotos en un solo documento? PDF.it combina multiples imagenes — JPG, PNG o WebP — en un PDF organizado. Cada imagen se convierte en su propia pagina, facilitando compartir, imprimir o archivar colecciones de fotos, recibos o documentos escaneados.
+              ¿Necesitas convertir una carpeta de fotos en un solo documento? PDF.it combina múltiples imágenes — JPG, PNG o WebP — en un PDF organizado. Cada imagen se convierte en su propia página, fácilitando compartir, imprimir o archivar colecciones de fotos, recibos o documentos escaneados.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
               <li className="flex items-center gap-2">✓ Soporta formatos JPG, PNG y WebP</li>
               <li className="flex items-center gap-2">✓ Calidad de imagen original preservada</li>
               <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li className="flex items-center gap-2">✓ Sin instalacion — combina imagenes en tu navegador</li>
+              <li className="flex items-center gap-2">✓ Sin instalación — combina imágenes en tu navegador</li>
             </ul>
           </div>
         </section>
@@ -92,7 +92,7 @@ export default function CombinarImagenesEnPDFPage() {
         <ImageToPdfInterface
           acceptedTypes={["image/jpeg", "image/png", "image/webp"]}
           acceptedExtensions=".jpg,.jpeg,.png,.webp"
-          formatLabel="Imagenes"
+          formatLabel="Imágenes"
         />
 
         {/* Feature Blocks */}
@@ -109,9 +109,9 @@ export default function CombinarImagenesEnPDFPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { title: "Crea Portafolios Fotograficos en PDF", desc: "En vez de adjuntar docenas de archivos de imagen, combinalos en un solo PDF. Los destinatarios reciben un documento unico y facil de ver que pueden recorrer, imprimir o guardar." },
+                { title: "Crea Portafolios Fotograficos en PDF", desc: "En vez de adjuntar docenas de archivos de imagen, combinalos en un solo PDF. Los destinatarios reciben un documento único y fácil de ver que pueden recorrer, imprimir o guardar." },
                 { title: "Combina Recibos en Un Documento", desc: "Informes de gastos, declaraciones de impuestos y solicitudes de reembolso frecuentemente requieren recibos en formato PDF. Sube las fotos de tus recibos y descarga un solo PDF organizado." },
-                { title: "Organiza Imagenes Escaneadas en Paginas", desc: "Documentos escaneados, fotos de pizarra y notas manuscritas frecuentemente quedan como archivos individuales. Combinalos en un PDF limpio para archivar o enviar por email." },
+                { title: "Organiza Imágenes Escaneadas en Páginas", desc: "Documentos escaneados, fotos de pizarra y notas manuscritas frecuentemente quedan como archivos individuales. Combinalos en un PDF limpio para archivar o enviar por email." },
               ].map((feature) => (
                 <div
                   key={feature.title}
@@ -145,11 +145,11 @@ export default function CombinarImagenesEnPDFPage() {
         {/* How It Works */}
         <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Combinar Imagenes en un PDF</h2>
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Combinar Imágenes en un PDF</h2>
             <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
               {[
-                { num: "1", title: "Sube tus imagenes", desc: "Arrastra archivos JPG, PNG o WebP" },
-                { num: "2", title: "Ordena las imagenes", desc: "Reorganiza antes de combinar" },
+                { num: "1", title: "Sube tus imágenes", desc: "Arrastra archivos JPG, PNG o WebP" },
+                { num: "2", title: "Ordena las imágenes", desc: "Reorganiza antes de combinar" },
                 { num: "3", title: "Descarga tu PDF", desc: "Obtén tu PDF combinado al instante" },
               ].map((step) => (
                 <div key={step.num} className="flex-1">

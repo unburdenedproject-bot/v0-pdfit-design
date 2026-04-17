@@ -61,7 +61,7 @@ export default function PDFaPowerPointPage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Shield className="h-4 w-4 text-[#14D8C4]" />
-                  <span>Diseno Preservado</span>
+                  <span>Diseño Preservado</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Download className="h-4 w-4 text-[#14D8C4]" />
@@ -79,11 +79,11 @@ export default function PDFaPowerPointPage() {
               Usa PDF.it para convertir archivos PDF en presentaciones PowerPoint editables. Perfecto para reutilizar reportes, propuestas y documentos en diapositivas que puedes presentar y personalizar.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
-              <li className="flex items-center gap-2">✓ Convierte paginas PDF a diapositivas PowerPoint editables</li>
-              <li className="flex items-center gap-2">✓ Preserva texto, imagenes y diseno</li>
+              <li className="flex items-center gap-2">✓ Convierte páginas PDF a diapositivas PowerPoint editables</li>
+              <li className="flex items-center gap-2">✓ Preserva texto, imágenes y diseño</li>
               <li className="flex items-center gap-2">✓ Compatible con PowerPoint, Google Slides y Keynote</li>
               <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li className="flex items-center gap-2">✓ Sin instalacion — convierte desde tu navegador</li>
+              <li className="flex items-center gap-2">✓ Sin instalación — convierte desde tu navegador</li>
             </ul>
           </div>
         </section>
@@ -112,8 +112,8 @@ export default function PDFaPowerPointPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { title: "Convierte Reportes en Presentaciones", desc: "Transforma reportes PDF, propuestas y documentos en diapositivas editables. Agrega tu propio formato, animaciones y notas del orador despues de la conversion." },
-                { title: "Preserva Diseno e Imagenes", desc: "PDF.it mantiene texto, imagenes y estructura de pagina intactos para que tus diapositivas se vean profesionales desde el inicio. Disenos complejos pueden necesitar ajustes menores." },
+                { title: "Convierte Reportes en Presentaciones", desc: "Transforma reportes PDF, propuestas y documentos en diapositivas editables. Agrega tu propio formato, animaciones y notas del orador después de la conversión." },
+                { title: "Preserva Diseño e Imágenes", desc: "PDF.it mantiene texto, imágenes y estructura de página intactos para que tus diapositivas se vean profesionales desde el inicio. Diseños complejos pueden necesitar ajustes menores." },
                 { title: "Compatible con Google Slides y Keynote", desc: "El archivo .pptx es compatible con Microsoft PowerPoint, Google Slides, Apple Keynote y otros programas de presentaciones." },
               ].map((feature) => (
                 <div
@@ -183,7 +183,7 @@ export default function PDFaPowerPointPage() {
                 { name: "PDF a Word", href: "/es/pdf-a-word", desc: "Edita texto en Word" },
                 { name: "PDF a Excel", href: "/es/pdf-a-excel", desc: "Extrae tablas" },
                 { name: "PowerPoint a PDF", href: "/es/powerpoint-a-pdf", desc: "Convierte de vuelta a PDF" },
-                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamano primero" },
+                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamaño primero" },
               ].map((tool) => (
                 <div
                   key={tool.href}
@@ -232,12 +232,12 @@ export default function PDFaPowerPointPage() {
             <h2 className="text-3xl font-black text-white mb-10 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-4">
               {[
-                { q: "¿Como convierto un PDF a PowerPoint?", a: "Sube tu PDF a PDF.it, haz clic en Convertir y descarga el archivo PowerPoint editable. La conversion preserva el diseno, texto e imagenes." },
-                { q: "¿Se mantiene el formato despues de la conversion?", a: "PDF.it preserva texto, imagenes y diseno lo mejor posible. Disenos complejos pueden necesitar ajustes menores en PowerPoint." },
-                { q: "¿Puedo editar las diapositivas despues de la conversion?", a: "Si. El resultado es un archivo .pptx completamente editable que puedes abrir en PowerPoint, Google Slides o Keynote." },
-                { q: "¿PDF a PowerPoint es gratis?", a: "PDF a PowerPoint es una funcion Pro. Los usuarios gratuitos pueden probar otras herramientas como PDF a JPG o PDF a PNG." },
-                { q: "¿Puedo convertir PDF a PowerPoint desde mi celular?", a: "Si. PDF.it funciona en navegadores moviles — sube, convierte y descarga desde iPhone o Android." },
-                { q: "¿Cual es el tamano maximo de archivo que puedo convertir?", a: "Las cuentas Pro y Business pueden subir archivos de hasta 200MB." },
+                { q: "¿Como convierto un PDF a PowerPoint?", a: "Sube tu PDF a PDF.it, haz clic en Convertir y descarga el archivo PowerPoint editable. La conversión preserva el diseño, texto e imágenes." },
+                { q: "¿Se mantiene el formato después de la conversión?", a: "PDF.it preserva texto, imágenes y diseño lo mejor posible. Diseños complejos pueden necesitar ajustes menores en PowerPoint." },
+                { q: "¿Puedo editar las diapositivas después de la conversión?", a: "Si. El resultado es un archivo .pptx completamente editable que puedes abrir en PowerPoint, Google Slides o Keynote." },
+                { q: "¿PDF a PowerPoint es gratis?", a: "PDF a PowerPoint es una función Pro. Los usuarios gratuitos pueden probar otras herramientas como PDF a JPG o PDF a PNG." },
+                { q: "¿Puedo convertir PDF a PowerPoint desde mi celular?", a: "Si. PDF.it funciona en navegadores móviles — sube, convierte y descarga desde iPhone o Android." },
+                { q: "¿Cual es el tamaño máximo de archivo que puedo convertir?", a: "Las cuentas Pro y Business pueden subir archivos de hasta 200MB." },
               ].map((faq, i) => (
                 <div
                   key={i}
@@ -260,12 +260,12 @@ export default function PDFaPowerPointPage() {
           "@context": "https://schema.org",
           "@type": "FAQPage",
           "mainEntity": [
-            { "@type": "Question", "name": "¿Como convierto un PDF a PowerPoint?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it, haz clic en Convertir y descarga el archivo PowerPoint editable. La conversion preserva el diseno, texto e imagenes." } },
-            { "@type": "Question", "name": "¿Se mantiene el formato despues de la conversion?", "acceptedAnswer": { "@type": "Answer", "text": "PDF.it preserva texto, imagenes y diseno lo mejor posible. Disenos complejos pueden necesitar ajustes menores en PowerPoint." } },
-            { "@type": "Question", "name": "¿Puedo editar las diapositivas despues de la conversion?", "acceptedAnswer": { "@type": "Answer", "text": "Si. El resultado es un archivo .pptx completamente editable que puedes abrir en PowerPoint, Google Slides o Keynote." } },
-            { "@type": "Question", "name": "¿PDF a PowerPoint es gratis?", "acceptedAnswer": { "@type": "Answer", "text": "PDF a PowerPoint es una funcion Pro. Los usuarios gratuitos pueden probar otras herramientas como PDF a JPG o PDF a PNG." } },
-            { "@type": "Question", "name": "¿Puedo convertir PDF a PowerPoint desde mi celular?", "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en navegadores moviles — sube, convierte y descarga desde iPhone o Android." } },
-            { "@type": "Question", "name": "¿Cual es el tamano maximo de archivo que puedo convertir?", "acceptedAnswer": { "@type": "Answer", "text": "Las cuentas Pro y Business pueden subir archivos de hasta 200MB." } }
+            { "@type": "Question", "name": "¿Como convierto un PDF a PowerPoint?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a PDF.it, haz clic en Convertir y descarga el archivo PowerPoint editable. La conversión preserva el diseño, texto e imágenes." } },
+            { "@type": "Question", "name": "¿Se mantiene el formato después de la conversión?", "acceptedAnswer": { "@type": "Answer", "text": "PDF.it preserva texto, imágenes y diseño lo mejor posible. Diseños complejos pueden necesitar ajustes menores en PowerPoint." } },
+            { "@type": "Question", "name": "¿Puedo editar las diapositivas después de la conversión?", "acceptedAnswer": { "@type": "Answer", "text": "Si. El resultado es un archivo .pptx completamente editable que puedes abrir en PowerPoint, Google Slides o Keynote." } },
+            { "@type": "Question", "name": "¿PDF a PowerPoint es gratis?", "acceptedAnswer": { "@type": "Answer", "text": "PDF a PowerPoint es una función Pro. Los usuarios gratuitos pueden probar otras herramientas como PDF a JPG o PDF a PNG." } },
+            { "@type": "Question", "name": "¿Puedo convertir PDF a PowerPoint desde mi celular?", "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en navegadores móviles — sube, convierte y descarga desde iPhone o Android." } },
+            { "@type": "Question", "name": "¿Cual es el tamaño máximo de archivo que puedo convertir?", "acceptedAnswer": { "@type": "Answer", "text": "Las cuentas Pro y Business pueden subir archivos de hasta 200MB." } }
           ]
         })}} />
       </main>

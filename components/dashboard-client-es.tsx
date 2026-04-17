@@ -174,10 +174,10 @@ export function DashboardClientEs({
           if (data && data.plan !== "free") {
             setCurrentPlan(data.plan)
             const label = data.plan === "enterprise" ? "Enterprise" : data.plan === "business" ? "Business" : "Pro"
-            setStatusMessage({ type: "success", text: `¡Pago exitoso! Tu plan ${label} ya esta activo.` })
+            setStatusMessage({ type: "success", text: `¡Pago exitoso! Tu plan ya está activo.` })
             clearInterval(poll)
           } else if (attempts >= 15) {
-            setStatusMessage({ type: "success", text: "¡Pago exitoso! Tu plan se activara en breve — actualiza la pagina si es necesario." })
+            setStatusMessage({ type: "success", text: "¡Pago exitoso! Tu plan se activará en breve — actualiza la página si es necesario." })
             clearInterval(poll)
           }
         }, 2000)

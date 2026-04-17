@@ -11,16 +11,16 @@ export const metadata = {
 }
 
 const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
-  { "@type": "Question", "name": "Que tipos de documentos escaneados puede procesar el OCR?", "acceptedAnswer": { "@type": "Answer", "text": "OCR puede procesar virtualmente cualquier documento escaneado: contratos, recibos, facturas, documentos legales, libros viejos, cartas, formularios y documentos de identificacion. Mientras el texto sea impreso (no manuscrito) y el escaneo sea razonablemente claro, OCR lo reconocera." } },
-  { "@type": "Question", "name": "Necesito un escaner para usar OCR?", "acceptedAnswer": { "@type": "Answer", "text": "No. Puedes usar la camara de tu telefono para fotografiar un documento, guardarlo como PDF y luego ejecutar OCR. Para mejores resultados con documentos escaneados por telefono, usa la herramienta Limpieza de Escaneo de Telefono de PDF.it primero." } },
-  { "@type": "Question", "name": "Cuanto tarda el procesamiento OCR?", "acceptedAnswer": { "@type": "Answer", "text": "La mayoria de documentos se procesan en unos segundos a menos de un minuto. Documentos mas largos (50+ paginas) o archivos muy grandes pueden tomar un par de minutos. Los usuarios Pro de PDF.it obtienen procesamiento prioritario." } },
-  { "@type": "Question", "name": "Puede el OCR manejar documentos viejos o desvanecidos?", "acceptedAnswer": { "@type": "Answer", "text": "OCR puede manejar texto moderadamente desvanecido, pero documentos muy desvanecidos o danados pueden producir menor precision. Mejorar el contraste del escaneo antes de ejecutar OCR ayuda significativamente." } },
-  { "@type": "Question", "name": "Se preserva el escaneo original despues del OCR?", "acceptedAnswer": { "@type": "Answer", "text": "Si. OCR agrega una capa de texto invisible sobre tu escaneo original. La apariencia visual de cada pagina permanece exactamente igual — solo cambia la capacidad de busqueda." } },
-  { "@type": "Question", "name": "Puedo hacer OCR a un documento en espanol u otro idioma?", "acceptedAnswer": { "@type": "Answer", "text": "Si. El Escaner OCR de PDF.it soporta docenas de idiomas incluyendo espanol, frances, aleman, portugues, italiano y muchos mas. Selecciona el idioma correcto antes de procesar para la mejor precision." } }
+  { "@type": "Question", "name": "Que tipos de documentos escaneados puede procesar el OCR?", "acceptedAnswer": { "@type": "Answer", "text": "OCR puede procesar virtualmente cualquier documento escaneado: contratos, recibos, facturas, documentos legales, libros viejos, cartas, formularios y documentos de identificación. Mientras el texto sea impreso (no manuscrito) y el escaneo sea razonablemente claro, OCR lo reconocera." } },
+  { "@type": "Question", "name": "Necesito un escáner para usar OCR?", "acceptedAnswer": { "@type": "Answer", "text": "No. Puedes usar la camara de tu teléfono para fotografiar un documento, guardarlo como PDF y luego ejecutar OCR. Para mejores resultados con documentos escaneados por teléfono, usa la herramienta Limpieza de Escaneo de Teléfono de PDF.it primero." } },
+  { "@type": "Question", "name": "Cuanto tarda el procesamiento OCR?", "acceptedAnswer": { "@type": "Answer", "text": "La mayoría de documentos se procesan en unos segundos a menos de un minuto. Documentos más largos (50+ páginas) o archivos muy grandes pueden tomar un par de minutos. Los usuarios Pro de PDF.it obtienen procesamiento prioritario." } },
+  { "@type": "Question", "name": "Puede el OCR manejar documentos viejos o desvanecidos?", "acceptedAnswer": { "@type": "Answer", "text": "OCR puede manejar texto moderadamente desvanecido, pero documentos muy desvanecidos o danados pueden producir menor precisión. Mejorar el contraste del escaneo antes de ejecutar OCR ayuda significativamente." } },
+  { "@type": "Question", "name": "Se preserva el escaneo original después del OCR?", "acceptedAnswer": { "@type": "Answer", "text": "Si. OCR agrega una capa de texto invisible sobre tu escaneo original. La apariencia visual de cada página permanece exactamente igual — solo cambia la capacidad de búsqueda." } },
+  { "@type": "Question", "name": "Puedo hacer OCR a un documento en español u otro idioma?", "acceptedAnswer": { "@type": "Answer", "text": "Si. El Escáner OCR de PDF.it soporta docenas de idiomas incluyendo español, francés, alemán, portugués, italiano y muchos más. Selecciona el idioma correcto antes de procesar para la mejor precisión." } }
 ] }
 
-const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como Hacer OCR a un Documento Escaneado", "description": "Digitaliza un documento escaneado en texto buscable en 3 pasos usando el Escaner OCR de PDF.it.", "step": [
-  { "@type": "HowToStep", "name": "Escanea o sube tu documento", "text": "Escanea tu documento usando un escaner o camara de telefono. Guardalo como PDF, luego subelo a la herramienta Escaner OCR de PDF.it." },
+const howToSchema = { "@context": "https://schema.org", "@type": "HowTo", "name": "Como Hacer OCR a un Documento Escaneado", "description": "Digitaliza un documento escaneado en texto buscable en 3 pasos usando el Escáner OCR de PDF.it.", "step": [
+  { "@type": "HowToStep", "name": "Escanea o sube tu documento", "text": "Escanea tu documento usando un escáner o camara de teléfono. Guardalo como PDF, luego subelo a la herramienta Escáner OCR de PDF.it." },
   { "@type": "HowToStep", "name": "Selecciona el idioma y ejecuta OCR", "text": "Elige el idioma del texto en tu documento y haz clic en el boton OCR para iniciar el reconocimiento." },
   { "@type": "HowToStep", "name": "Descarga el documento digitalizado", "text": "Descarga tu PDF buscable. Ahora puedes encontrar texto, copiar contenido y convertir el documento a Word, Excel o texto plano." }
 ] }
@@ -36,7 +36,7 @@ export default function OCRDocumentoEscaneadoPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8"><div className="max-w-3xl mx-auto">
             <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / OCR PDF</p>
             <h1 className="text-4xl lg:text-5xl font-black mb-4">Como Hacer OCR a un Documento Escaneado (Paso a Paso)</h1>
-            <p className="text-xl text-slate-300">Recibos escaneados, contratos, documentos antiguos y documentos de identificacion son solo imagenes dentro de un PDF. Aqui esta como ejecutar OCR y convertirlos en texto real y buscable.</p>
+            <p className="text-xl text-slate-300">Recibos escaneados, contratos, documentos antiguos y documentos de identificación son solo imágenes dentro de un PDF. Aqui esta como ejecutar OCR y convertirlos en texto real y buscable.</p>
           </div></div>
         </section>
 
@@ -44,9 +44,9 @@ export default function OCRDocumentoEscaneadoPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-[#14D8C4] rounded-lg flex items-center justify-center flex-shrink-0"><ScanText className="h-5 w-5 text-white" /></div>
-              <p className="text-slate-700 font-semibold">Listo para digitalizar tu documento escaneado? Prueba el Escaner OCR (Pro).</p>
+              <p className="text-slate-700 font-semibold">Listo para digitalizar tu documento escaneado? Prueba el Escáner OCR (Pro).</p>
             </div>
-            <Link href="/es/escaner-ocr" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Escaner OCR <ArrowRight className="h-4 w-4" /></Link>
+            <Link href="/es/escaner-ocr" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-2.5 px-6 rounded-xl text-sm transition-colors whitespace-nowrap">Escáner OCR <ArrowRight className="h-4 w-4" /></Link>
           </div>
         </section>
 
@@ -54,13 +54,13 @@ export default function OCRDocumentoEscaneadoPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Que Tipos de Documentos Escaneados Puedes OCR?</h2>
-              <p className="text-slate-600 mb-4">OCR funciona en cualquier documento donde el texto fue impreso (escrito a maquina, no a mano). Estos son los tipos mas comunes de documentos escaneados en los que se ejecuta OCR:</p>
+              <p className="text-slate-600 mb-4">OCR funciona en cualquier documento donde el texto fue impreso (escrito a maquina, no a mano). Estos son los tipos más comunes de documentos escaneados en los que se ejecuta OCR:</p>
               <ul className="space-y-3 text-slate-700">
-                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span><strong>Contratos y acuerdos.</strong> Los documentos legales escaneados necesitan ser buscables para que puedas encontrar clausulas, fechas o nombres especificos sin leer 30 paginas manualmente.</span></li>
-                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span><strong>Recibos y facturas.</strong> El seguimiento de gastos y la preparacion de impuestos requieren extraer montos, fechas y nombres de proveedores de recibos escaneados.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">1.</span><span><strong>Contratos y acuerdos.</strong> Los documentos legales escaneados necesitan ser buscables para que puedas encontrar clausulas, fechas o nombres específicos sin leer 30 páginas manualmente.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">2.</span><span><strong>Recibos y facturas.</strong> El seguimiento de gastos y la preparación de impuestos requieren extraer montos, fechas y nombres de proveedores de recibos escaneados.</span></li>
                 <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">3.</span><span><strong>Informes antiguos y documentos academicos.</strong> Investigadores y empresas digitalizan documentos archivados para que puedan ser buscados y referenciados eficientemente.</span></li>
-                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">4.</span><span><strong>Documentos gubernamentales y de identificacion.</strong> Pasaportes, licencias de conducir y formularios gubernamentales frecuentemente necesitan ser escaneados y hacerse buscables para solicitudes y cumplimiento.</span></li>
-                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">5.</span><span><strong>Registros medicos.</strong> Los proveedores de salud escanean documentos de pacientes que necesitan ser indexados y buscables dentro de sistemas de registros de salud electronicos.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">4.</span><span><strong>Documentos gubernamentales y de identificación.</strong> Pasaportes, licencias de conducir y formularios gubernamentales frecuentemente necesitan ser escaneados y hacerse buscables para solicitudes y cumplimiento.</span></li>
+                <li className="flex items-start gap-3"><span className="text-[#14D8C4] font-bold mt-0.5">5.</span><span><strong>Registros médicos.</strong> Los proveedores de salud escanean documentos de pacientes que necesitan ser indexados y buscables dentro de sistemas de registros de salud electrónicos.</span></li>
               </ul>
             </section>
 
@@ -68,8 +68,8 @@ export default function OCRDocumentoEscaneadoPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-6">Como Hacer OCR a un Documento Escaneado (Paso a Paso)</h2>
               <div className="space-y-4">
                 {[
-                  { title: "Escanea o fotografiael documento", desc: "Usa un escaner plano (configurado a 300 DPI para mejores resultados) o la camara de tu telefono. Guarda el escaneo como PDF. Si usaste tu telefono, pasa el archivo por Limpieza de Escaneo de Telefono primero para mejorar el contraste y enderezar la imagen." },
-                  { title: "Sube al Escaner OCR de PDF.it", desc: "Abre la herramienta Escaner OCR (funcion Pro) y sube tu PDF escaneado. Selecciona el idioma del documento — esto es importante para la precision, especialmente para documentos que no estan en ingles." },
+                  { title: "Escanea o fotografiael documento", desc: "Usa un escáner plano (configurado a 300 DPI para mejores resultados) o la camara de tu teléfono. Guarda el escaneo como PDF. Si usaste tu teléfono, pasa el archivo por Limpieza de Escaneo de Teléfono primero para mejorar el contraste y enderezar la imagen." },
+                  { title: "Sube al Escáner OCR de PDF.it", desc: "Abre la herramienta Escáner OCR (función Pro) y sube tu PDF escaneado. Selecciona el idioma del documento — esto es importante para la precisión, especialmente para documentos que no están en inglés." },
                   { title: "Descarga y verifica tu PDF buscable", desc: "Descarga el archivo procesado. Abrelo y prueba Ctrl+F para buscar una palabra que sabes esta en el documento. Si el texto se encuentra, OCR funciono correctamente. La apariencia visual permanece identica a tu escaneo original." },
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 bg-gray-50 rounded-xl p-5 border border-gray-200">
@@ -82,38 +82,38 @@ export default function OCRDocumentoEscaneadoPage() {
 
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Preparando Tu Escaneo para Mejores Resultados OCR</h2>
-              <p className="text-slate-600 mb-4">La calidad de tu escaneo afecta directamente la precision del OCR. Estas son las cosas de mayor impacto que puedes hacer antes de ejecutar OCR:</p>
+              <p className="text-slate-600 mb-4">La calidad de tu escaneo afecta directamente la precisión del OCR. Estas son las cosas de mayor impacto que puedes hacer antes de ejecutar OCR:</p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>Escanea a 300 DPI o mas.</strong> Resoluciones menores producen caracteres borrosos que el OCR tiene dificultad para reconocer. 300 DPI es el punto ideal para documentos de texto.</li>
-                <li>&#10003; <strong>Usa buena iluminacion.</strong> Sombras desiguales a traves de la pagina causan errores de OCR. Los escaneres planos dan la iluminacion mas consistente.</li>
-                <li>&#10003; <strong>Endereza el documento.</strong> Texto torcido o rotado reduce la precision. Usa <Link href="/es/rotar-pdf" className="text-[#14D8C4] hover:underline">Rotar PDF</Link> para corregir la orientacion antes del OCR.</li>
-                <li>&#10003; <strong>Aumenta el contraste.</strong> Texto desvanecido en una pagina amarillenta es dificil para el OCR. Si el original esta desvanecido, aumenta el contraste en la configuracion de tu escaner.</li>
-                <li>&#10003; <strong>Elimina ruido de fondo.</strong> Manchas, marcas de cafe, sellos sobre texto y paginas arrugadas reducen la precision del OCR. Escanea la copia mas limpia disponible.</li>
+                <li>&#10003; <strong>Escanea a 300 DPI o más.</strong> Resoluciónes menores producen caracteres borrosos que el OCR tiene dificultad para reconocer. 300 DPI es el punto ideal para documentos de texto.</li>
+                <li>&#10003; <strong>Usa buena iluminacion.</strong> Sombras desiguales a traves de la página causan errores de OCR. Los escáneres planos dan la iluminacion más consistente.</li>
+                <li>&#10003; <strong>Endereza el documento.</strong> Texto torcido o rotado reduce la precisión. Usa <Link href="/es/rotar-pdf" className="text-[#14D8C4] hover:underline">Rotar PDF</Link> para corregir la orientación antes del OCR.</li>
+                <li>&#10003; <strong>Aumenta el contraste.</strong> Texto desvanecido en una página amarillenta es difícil para el OCR. Si el original esta desvanecido, aumenta el contraste en la configuración de tu escáner.</li>
+                <li>&#10003; <strong>Elimina ruido de fondo.</strong> Manchas, marcas de cafe, sellos sobre texto y páginas arrugadas reducen la precisión del OCR. Escanea la copia más limpia disponible.</li>
               </ul>
-              <p className="text-slate-600 mt-4">Para una guia mas detallada, lee nuestra guia completa de <Link href="/es/aprender/consejos-precision-ocr" className="text-[#14D8C4] hover:underline">Consejos de Precision OCR</Link>.</p>
+              <p className="text-slate-600 mt-4">Para una guia más detallada, lee nuestra guia completa de <Link href="/es/aprender/consejos-precision-ocr" className="text-[#14D8C4] hover:underline">Consejos de Precisión OCR</Link>.</p>
             </section>
 
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Que Hacer Despues de Ejecutar OCR</h2>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Que Hacer Después de Ejecutar OCR</h2>
               <div className="space-y-6">
                 <div><h3 className="text-lg font-bold text-slate-900 mb-2">Convertir a Word o Excel</h3><p className="text-slate-600">Ahora que tu documento tiene una capa de texto, convertir a otros formatos da mucho mejores resultados. Usa <Link href="/es/pdf-a-texto" className="text-[#14D8C4] hover:underline">PDF a TXT</Link> para documentos editables o extrae datos tabulares como facturas y estados financieros.</p></div>
-                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Extraer Texto Plano</h3><p className="text-slate-600">Necesitas solo el texto sin formato? Usa <Link href="/es/pdf-a-texto" className="text-[#14D8C4] hover:underline">PDF a TXT</Link> para extraer todo el contenido de texto de tu PDF buscable. Esto es util para analisis de datos, traduccion o alimentar texto a otro software.</p></div>
-                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Comprimir el Resultado</h3><p className="text-slate-600">El procesamiento OCR a veces puede aumentar ligeramente el tamano del archivo debido a la capa de texto agregada. Si necesitas enviar el documento por correo o subirlo a un portal con limites de tamano, usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link>.</p></div>
-                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Proteger Documentos Sensibles</h3><p className="text-slate-600">Si tu documento escaneado contiene informacion sensible (contratos, registros financieros, copias de identificacion), considera agregar proteccion con contrasena despues del OCR usando <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link>.</p></div>
+                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Extraer Texto Plano</h3><p className="text-slate-600">Necesitas solo el texto sin formato? Usa <Link href="/es/pdf-a-texto" className="text-[#14D8C4] hover:underline">PDF a TXT</Link> para extraer todo el contenido de texto de tu PDF buscable. Esto es útil para análisis de datos, traducción o alimentar texto a otro software.</p></div>
+                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Comprimir el Resultado</h3><p className="text-slate-600">El procesamiento OCR a veces puede aumentar ligeramente el tamaño del archivo debido a la capa de texto agregada. Si necesitas enviar el documento por correo o subirlo a un portal con límites de tamaño, usa <Link href="/es/comprimir-pdf" className="text-[#14D8C4] hover:underline">Comprimir PDF</Link>.</p></div>
+                <div><h3 className="text-lg font-bold text-slate-900 mb-2">Proteger Documentos Sensibles</h3><p className="text-slate-600">Si tu documento escaneado contiene información sensible (contratos, registros financieros, copias de identificación), considera agregar protección con contraseña después del OCR usando <Link href="/es/proteger-pdf" className="text-[#14D8C4] hover:underline">Proteger PDF</Link>.</p></div>
               </div>
             </section>
 
             <section className="mb-12">
-              <h2 className="text-2xl font-black text-slate-900 mb-4">Escaneando Documentos con Tu Telefono</h2>
-              <p className="text-slate-600 mb-4">No necesitas un escaner plano para digitalizar documentos. La mayoria de telefonos modernos toman fotos suficientemente buenas para OCR — especialmente si sigues algunas guias:</p>
+              <h2 className="text-2xl font-black text-slate-900 mb-4">Escaneando Documentos con Tu Teléfono</h2>
+              <p className="text-slate-600 mb-4">No necesitas un escáner plano para digitalizar documentos. La mayoría de teléfonos modernos toman fotos suficientemente buenas para OCR — especialmente si sigues algunas guias:</p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; Sostiene tu telefono directamente sobre el documento (no en angulo) para minimizar la distorsion.</li>
+                <li>&#10003; Sostiene tu teléfono directamente sobre el documento (no en ángulo) para minimizar la distorsion.</li>
                 <li>&#10003; Usa iluminacion natural y uniforme. Evita el flash, que crea puntos brillantes y reflejos.</li>
                 <li>&#10003; Coloca el documento en una superficie oscura y contrastante para que los bordes esten claramente definidos.</li>
-                <li>&#10003; Usa el escaner de documentos integrado de tu telefono (Notas en iPhone, Google Drive en Android) para recorte automatico y correccion de perspectiva.</li>
-                <li>&#10003; Pasa el resultado por la herramienta <Link href="/es/limpiar-escaneo" className="text-[#14D8C4] hover:underline">Limpieza de Escaneo de Telefono</Link> de PDF.it antes del OCR para mejorar automaticamente el contraste y enderezar la imagen.</li>
+                <li>&#10003; Usa el escáner de documentos integrado de tu teléfono (Notas en iPhone, Google Drive en Android) para recorte automático y corrección de perspectiva.</li>
+                <li>&#10003; Pasa el resultado por la herramienta <Link href="/es/limpiar-escaneo" className="text-[#14D8C4] hover:underline">Limpieza de Escaneo de Teléfono</Link> de PDF.it antes del OCR para mejorar automáticamente el contraste y enderezar la imagen.</li>
               </ul>
-              <p className="text-slate-600 mt-4">Para mas sobre usar OCR en dispositivos moviles, ve nuestra guia sobre <Link href="/es/aprender/ocr-pdf-en-movil" className="text-[#14D8C4] hover:underline">OCR un PDF en Tu Telefono</Link>.</p>
+              <p className="text-slate-600 mt-4">Para más sobre usar OCR en dispositivos móviles, ve nuestra guia sobre <Link href="/es/aprender/ocr-pdf-en-movil" className="text-[#14D8C4] hover:underline">OCR un PDF en Tu Teléfono</Link>.</p>
             </section>
           </div>
         </article>
@@ -122,18 +122,18 @@ export default function OCRDocumentoEscaneadoPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center">
             <h2 className="text-2xl font-black text-white mb-3">Digitaliza Tus Documentos Escaneados</h2>
             <p className="text-slate-300 mb-6">Sube cualquier PDF escaneado y conviertelo en un documento buscable, copiable y convertible en segundos.</p>
-            <Link href="/es/escaner-ocr" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><ScanText className="h-5 w-5" /> Probar Escaner OCR (Pro)</Link>
+            <Link href="/es/escaner-ocr" className="inline-flex items-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors"><ScanText className="h-5 w-5" /> Probar Escáner OCR (Pro)</Link>
           </div>
         </section>
 
         <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-2xl font-black text-slate-900 mb-6">Articulos Relacionados</h2>
+            <h2 className="text-2xl font-black text-slate-900 mb-6">Artículos Relacionados</h2>
             <div className="grid gap-3">
               {[
-                { title: "Que es OCR? (Reconocimiento Optico de Caracteres Explicado)", href: "/es/aprender/que-es-ocr" },
+                { title: "Qué es OCR? (Reconocimiento Optico de Caracteres Explicado)", href: "/es/aprender/que-es-ocr" },
                 { title: "OCR PDF a Texto Buscable", href: "/es/aprender/ocr-pdf-a-texto-buscable" },
-                { title: "Consejos de Precision OCR", href: "/es/aprender/consejos-precision-ocr" },
+                { title: "Consejos de Precisión OCR", href: "/es/aprender/consejos-precision-ocr" },
                 { title: "OCR PDF en Movil (iPhone y Android)", href: "/es/aprender/ocr-pdf-en-movil" },
                 { title: "Puede el OCR Leer Texto Manuscrito?", href: "/es/aprender/ocr-texto-manuscrito" },
               ].map((article) => (
@@ -151,12 +151,12 @@ export default function OCRDocumentoEscaneadoPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "Que tipos de documentos escaneados puede procesar el OCR?", a: "OCR puede procesar virtualmente cualquier documento escaneado: contratos, recibos, facturas, documentos legales, libros viejos, cartas, formularios y documentos de identificacion. Mientras el texto sea impreso y el escaneo sea claro, OCR lo reconocera." },
-                { q: "Necesito un escaner para usar OCR?", a: "No. Puedes usar la camara de tu telefono para fotografiar un documento, guardarlo como PDF y luego ejecutar OCR. Para mejores resultados, usa la herramienta Limpieza de Escaneo de Telefono de PDF.it primero." },
-                { q: "Cuanto tarda el procesamiento OCR?", a: "La mayoria de documentos se procesan en segundos a menos de un minuto. Documentos largos (50+ paginas) pueden tomar un par de minutos. Los usuarios Pro obtienen procesamiento prioritario." },
-                { q: "Puede el OCR manejar documentos viejos o desvanecidos?", a: "OCR puede manejar texto moderadamente desvanecido, pero documentos muy danados pueden producir menor precision. Mejorar el contraste antes de ejecutar OCR ayuda significativamente." },
-                { q: "Se preserva el escaneo original despues del OCR?", a: "Si. OCR agrega una capa de texto invisible sobre tu escaneo original. La apariencia visual permanece exactamente igual — solo cambia la capacidad de busqueda." },
-                { q: "Puedo hacer OCR a un documento en espanol u otro idioma?", a: "Si. El Escaner OCR de PDF.it soporta docenas de idiomas incluyendo espanol, frances, aleman, portugues, italiano y muchos mas." },
+                { q: "Que tipos de documentos escaneados puede procesar el OCR?", a: "OCR puede procesar virtualmente cualquier documento escaneado: contratos, recibos, facturas, documentos legales, libros viejos, cartas, formularios y documentos de identificación. Mientras el texto sea impreso y el escaneo sea claro, OCR lo reconocera." },
+                { q: "Necesito un escáner para usar OCR?", a: "No. Puedes usar la camara de tu teléfono para fotografiar un documento, guardarlo como PDF y luego ejecutar OCR. Para mejores resultados, usa la herramienta Limpieza de Escaneo de Teléfono de PDF.it primero." },
+                { q: "Cuanto tarda el procesamiento OCR?", a: "La mayoría de documentos se procesan en segundos a menos de un minuto. Documentos largos (50+ páginas) pueden tomar un par de minutos. Los usuarios Pro obtienen procesamiento prioritario." },
+                { q: "Puede el OCR manejar documentos viejos o desvanecidos?", a: "OCR puede manejar texto moderadamente desvanecido, pero documentos muy danados pueden producir menor precisión. Mejorar el contraste antes de ejecutar OCR ayuda significativamente." },
+                { q: "Se preserva el escaneo original después del OCR?", a: "Si. OCR agrega una capa de texto invisible sobre tu escaneo original. La apariencia visual permanece exactamente igual — solo cambia la capacidad de búsqueda." },
+                { q: "Puedo hacer OCR a un documento en español u otro idioma?", a: "Si. El Escáner OCR de PDF.it soporta docenas de idiomas incluyendo español, francés, alemán, portugués, italiano y muchos más." },
               ].map((faq, i) => (
                 <div key={i} className="rounded-xl p-6" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
                   <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>

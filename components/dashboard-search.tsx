@@ -18,7 +18,7 @@ const COPY: Record<DashboardLocale, { placeholder: string; noResults: string; hi
   },
   es: {
     placeholder: "Buscar herramientas (ej. unir, comprimir, OCR)...",
-    noResults: "Ninguna herramienta coincide con tu busqueda.",
+    noResults: "Ninguna herramienta coincide con tu búsqueda.",
     hint: "Presiona Enter para abrir el primer resultado",
   },
   br: {

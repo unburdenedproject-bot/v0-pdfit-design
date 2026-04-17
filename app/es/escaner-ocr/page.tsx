@@ -6,8 +6,8 @@ import { Scan, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Escaner OCR Online — Extraer Texto de PDF Escaneado | PDF.it",
-  description: "Ejecuta OCR en un PDF con PDF.it para extraer texto de escaneos. Haz tus PDFs buscables y copiables en segundos — rapido y desde tu navegador.",
+  title: "Escáner OCR Online — Extraer Texto de PDF Escaneado | PDF.it",
+  description: "Ejecuta OCR en un PDF con PDF.it para extraer texto de escaneos. Haz tus PDFs buscables y copiables en segundos — rápido y desde tu navegador.",
   alternates: {
     canonical: "https://pdf.it.com/es/escaner-ocr",
     languages: {
@@ -19,8 +19,8 @@ export const metadata = {
 
 export default function EscanerOCRPage() {
   const faqs = [
-    { q: "¿Qué es OCR para PDFs?", a: "OCR (Reconocimiento Óptico de Caracteres) detecta texto dentro de PDFs escaneados o basados en imágenes y lo convierte en texto seleccionable y buscable." },
-    { q: "¿Cuándo necesito OCR en vez de PDF a TXT?", a: "Si el PDF es un escaneo y no puedes seleccionar texto, necesitas OCR. Si el PDF ya contiene texto seleccionable, una conversión normal de PDF a TXT puede ser más rápida." },
+    { q: "¿Qué es OCR para PDFs?", a: "OCR (Reconocimiento Óptico de Caracteres) detecta texto dentro de PDFs escaneados o basados en imágenes y lo convierte en texto selecciónable y buscable." },
+    { q: "¿Cuándo necesito OCR en vez de PDF a TXT?", a: "Si el PDF es un escaneo y no puedes selecciónar texto, necesitas OCR. Si el PDF ya contiene texto selecciónable, una conversión normal de PDF a TXT puede ser más rápida." },
     { q: "¿Qué tan preciso es el OCR de PDF.it?", a: "La precisión depende de la claridad del escaneo, la resolución y la fuente. Escaneos limpios y de alta resolución producen los mejores resultados. Escaneos borrosos o torcidos reducen la precisión." },
     { q: "¿Qué idiomas soporta el Escáner OCR?", a: "El Escáner OCR soporta más de 16 idiomas incluyendo español, inglés, francés, alemán, portugués, italiano, holandés y más." },
     { q: "¿Es seguro subir documentos escaneados?", a: "Sí. Todas las transferencias están cifradas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." },
@@ -60,7 +60,7 @@ export default function EscanerOCRPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Escáner OCR Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Usa PDF.it para ejecutar OCR en PDFs escaneados — convierte imágenes en texto seleccionable y buscable, y descarga un PDF más limpio y útil.
+                Usa PDF.it para ejecutar OCR en PDFs escaneados — convierte imágenes en texto selecciónable y buscable, y descarga un PDF más limpio y útil.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>16+ Idiomas Soportados</span></div>
@@ -79,7 +79,7 @@ export default function EscanerOCRPage() {
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
               <li className="flex items-center gap-2">✓ Convierte PDFs escaneados en PDFs buscables</li>
-              <li className="flex items-center gap-2">✓ Haz el texto seleccionable y copiable</li>
+              <li className="flex items-center gap-2">✓ Haz el texto selecciónable y copiable</li>
               <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
               <li className="flex items-center gap-2">✓ Sin instalación — el OCR se ejecuta en tu navegador</li>
             </ul>
@@ -103,7 +103,7 @@ export default function EscanerOCRPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { title: "Haz PDFs Escaneados Buscables", desc: "Si tu PDF es un escaneo, es solo una imagen — no puedes seleccionar texto ni buscar palabras. El OCR reconoce el texto y crea un PDF buscable." },
+                { title: "Haz PDFs Escaneados Buscables", desc: "Si tu PDF es un escaneo, es solo una imagen — no puedes selecciónar texto ni buscar palabras. El OCR reconoce el texto y crea un PDF buscable." },
                 { title: "Extrae Texto de Escaneos PDF", desc: "¿Necesitas las palabras de un documento escaneado? El OCR extrae texto de páginas basadas en imágenes para que puedas copiar y pegar en notas, correo o Word." },
                 { title: "Recibos, Formularios y Contratos", desc: "El OCR es especialmente útil para documentos y archivos donde necesitas buscar, encontrar palabras clave o reutilizar texto rápidamente." },
               ].map((feature) => (

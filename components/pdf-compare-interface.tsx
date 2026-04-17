@@ -109,7 +109,7 @@ const PDF_COMPARE_COPY = {
     minorChanges: "Cambios menores",
     moderateChanges: "Cambios moderados",
     majorChanges: "Cambios mayores",
-    reportTitle: "REPORTE DE COMPARACION DE PDF",
+    reportTitle: "REPORTE DE COMPARACIÓN DE PDF",
     reportGeneratedBy: "Generado por PDF.it",
     reportStatus: "Estado",
     reportAdded: "Agregado",
@@ -158,7 +158,7 @@ const PDF_COMPARE_COPY = {
     limitTitle: "Você ficou sem conversões gratuitas",
     upgradeLabel: "Fazer upgrade para Business",
     upgradeDescription: "Esta ferramenta está disponível no plano Business. Faça upgrade para desbloquear acesso ilimitado a todas as ferramentas PDF.",
-    limitDescription: "Free inclui 10 conversões por dia. Faça upgrade para conversões ilimitadas.",
+    limitDescription: "Free inclui 10 conversões por día. Faça upgrade para conversões ilimitadas.",
     goBack: "Voltar",
     invalidPdf: "Envie um arquivo PDF válido.",
     originalPdfEmpty: "O PDF original não tem páginas legíveis.",
@@ -799,7 +799,7 @@ export function PdfCompareInterface({ locale = "en" }: { locale?: ToolLocale }) 
       y -= 80
 
       // Page-by-page overview table
-      currentCoverPage.drawText(locale === "es" ? "RESUMEN PAGINA POR PAGINA" : locale === "br" ? "RESUMO PAGINA POR PAGINA" : "PAGE-BY-PAGE OVERVIEW", { x: MARGIN, y, size: 11, font: helveticaBold, color: DARK })
+      currentCoverPage.drawText(locale === "es" ? "RESUMEN PÁGINA POR PÁGINA" : locale === "br" ? "RESUMO PÁGINA POR PÁGINA" : "PAGE-BY-PAGE OVERVIEW", { x: MARGIN, y, size: 11, font: helveticaBold, color: DARK })
       y -= 20
 
       // Table header

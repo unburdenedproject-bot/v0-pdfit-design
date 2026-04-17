@@ -69,7 +69,7 @@ export function TranslatePdfInterface() {
   const labels =
     localePrefix === "/es"
       ? {
-          uploadTitle: "Sube tu PDF", uploadDesc: "Arrastra y suelta tu archivo PDF aqui, o haz clic para seleccionar", browse: "Seleccionar archivo",
+          uploadTitle: "Sube tu PDF", uploadDesc: "Arrastra y suelta tu archivo PDF aquí, o haz clic para seleccionar", browse: "Seleccionar archivo",
           translate: "Traducir Documento", processing: "Traduciendo con IA...", startNew: "Nuevo documento", copy: "Copiar", copied: "Copiado",
           download: "Descargar TXT", targetLabel: "Traducir a",
           upgradeTitle: "Función Business", upgradeDesc: "Traducir PDF está disponible en el plan Business ($13.99/mes). Traduce documentos completos a 13 idiomas con IA.",
@@ -77,7 +77,7 @@ export function TranslatePdfInterface() {
         }
       : localePrefix === "/br"
         ? {
-            uploadTitle: "Envie seu PDF", uploadDesc: "Arraste e solte seu arquivo PDF aqui, ou clique para selecionar", browse: "Selecionar arquivo",
+            uploadTitle: "Envie seu PDF", uploadDesc: "Arraste e solte seu arquivo PDF aquí, ou clique para selecionar", browse: "Selecionar arquivo",
             translate: "Traduzir Documento", processing: "Traduzindo com IA...", startNew: "Novo documento", copy: "Copiar", copied: "Copiado",
             download: "Baixar TXT", targetLabel: "Traduzir para",
             upgradeTitle: "Função Business", upgradeDesc: "Traduzir PDF está disponível no plano Business ($13.99/mês). Traduza documentos completos para 13 idiomas com IA.",

@@ -22,11 +22,11 @@ const categories = [
   {
     name: "Comprimir PDF",
     articles: [
-      { href: "/es/aprender/como-comprimir-un-pdf", title: "Como Comprimir un PDF (Reducir Tamano Rapidamente)" },
+      { href: "/es/aprender/como-comprimir-un-pdf", title: "Como Comprimir un PDF (Reducir Tamaño Rápidamente)" },
       { href: "/es/aprender/comprimir-pdf-sin-perder-calidad", title: "Como Comprimir un PDF Sin Perder Calidad" },
       { href: "/es/aprender/comprimir-pdf-grande", title: "Como Comprimir un PDF Grande (50MB, 100MB o Mas)" },
-      { href: "/es/aprender/comprimir-pdf-con-imagenes", title: "Comprimir un PDF con Imagenes (Fotos, Escaneos, Graficos)" },
-      { href: "/es/aprender/comprimir-pdf-para-imprimir", title: "Comprimir un PDF para Imprimir (Mantener Calidad de Impresion)" },
+      { href: "/es/aprender/comprimir-pdf-con-imágenes", title: "Comprimir un PDF con Imágenes (Fotos, Escaneos, Gráficos)" },
+      { href: "/es/aprender/comprimir-pdf-para-imprimir", title: "Comprimir un PDF para Imprimir (Mantener Calidad de Impresión)" },
     ],
   },
   {
@@ -38,11 +38,11 @@ const categories = [
       { href: "/es/aprender/unir-pdfs-escaneados", title: "Unir PDFs Escaneados" },
       { href: "/es/aprender/combinar-pdfs-para-envio", title: "Combinar PDFs para Envios (Escuela, Visa, Portales)" },
       { href: "/es/aprender/como-dividir-pdf", title: "Como Dividir un PDF" },
-      { href: "/es/aprender/dividir-pdf-en-paginas-individuales", title: "Dividir un PDF en Paginas Individuales" },
+      { href: "/es/aprender/dividir-pdf-en-paginas-individuales", title: "Dividir un PDF en Páginas Individuales" },
       { href: "/es/aprender/dividir-pdf-para-email", title: "Dividir un PDF para Email" },
       { href: "/es/aprender/dividir-pdf-en-movil", title: "Dividir un PDF en el Movil" },
-      { href: "/es/aprender/extraer-paginas-de-pdf", title: "Extraer Paginas de un PDF" },
-      { href: "/es/aprender/extraer-paginas-de-pdf-guia", title: "Extraer Paginas de un PDF — Guia Completa" },
+      { href: "/es/aprender/extraer-paginas-de-pdf", title: "Extraer Páginas de un PDF" },
+      { href: "/es/aprender/extraer-paginas-de-pdf-guia", title: "Extraer Páginas de un PDF — Guia Completa" },
     ],
   },
   {
@@ -55,14 +55,14 @@ const categories = [
       { href: "/es/aprender/pdf-a-jpg-en-iphone", title: "PDF a JPG en iPhone" },
       { href: "/es/aprender/pdf-a-jpg-para-powerpoint", title: "PDF a JPG para PowerPoint" },
       { href: "/es/aprender/convertir-pdf-a-png-en-iphone", title: "Convertir PDF a PNG en iPhone" },
-      { href: "/es/aprender/pdf-a-png-para-diseno", title: "PDF a PNG para Diseno" },
-      { href: "/es/aprender/guardar-pagina-pdf-como-jpg", title: "Guardar una Pagina de PDF como JPG" },
+      { href: "/es/aprender/pdf-a-png-para-diseno", title: "PDF a PNG para Diseño" },
+      { href: "/es/aprender/guardar-pagina-pdf-como-jpg", title: "Guardar una Página de PDF como JPG" },
       { href: "/es/aprender/guardar-pdf-como-png-en-mac", title: "Guardar PDF como PNG en Mac" },
-      { href: "/es/aprender/por-que-pdf-a-jpg-se-ve-borroso", title: "Por Que PDF a JPG Se Ve Borroso (Y Como Solucionarlo)" },
+      { href: "/es/aprender/por-que-pdf-a-jpg-se-ve-borroso", title: "Por Que PDF a JPG Se Ve Borroso (Y Como Soluciónarlo)" },
       { href: "/es/aprender/convertir-pdf-escaneado-a-texto", title: "Convertir PDF Escaneado a Texto (OCR)" },
       { href: "/es/aprender/extraer-texto-de-pdf-en-movil", title: "Extraer Texto de PDF en el Movil" },
       { href: "/es/aprender/copiar-texto-de-pdf-a-notas", title: "Copiar Texto de PDF a Notas" },
-      { href: "/es/aprender/pdf-texto-ilegible-solucion", title: "Texto del PDF Ilegible? Aqui la Solucion" },
+      { href: "/es/aprender/pdf-texto-ilegible-solución", title: "Texto del PDF Ilegible? Aqui la Solución" },
     ],
   },
   {
@@ -72,18 +72,18 @@ const categories = [
       { href: "/es/aprender/convertir-excel-a-pdf", title: "Convertir Excel a PDF" },
       { href: "/es/aprender/convertir-ppt-a-pdf", title: "Convertir PowerPoint a PDF" },
       { href: "/es/aprender/convertir-docx-xlsx-pptx-a-pdf", title: "Convertir DOCX, XLSX y PPTX a PDF" },
-      { href: "/es/aprender/convertir-curriculum-word-a-pdf", title: "Convertir Curriculum de Word a PDF (Consejos ATS)" },
+      { href: "/es/aprender/convertir-curriculum-word-a-pdf", title: "Convertir Currículum de Word a PDF (Consejos ATS)" },
       { href: "/es/aprender/docx-a-pdf-mantener-formato", title: "DOCX a PDF Sin Problemas de Formato" },
       { href: "/es/aprender/word-a-pdf-errores-comunes-de-formato", title: "Word a PDF: Errores Comunes de Formato" },
       { href: "/es/aprender/word-a-pdf-en-iphone", title: "Word a PDF en iPhone" },
-      { href: "/es/aprender/excel-a-pdf-ajustar-a-pagina", title: "Excel a PDF — Ajustar a Pagina" },
-      { href: "/es/aprender/excel-a-pdf-columnas-cortadas", title: "Excel a PDF Corta las Columnas? Solucionalo" },
+      { href: "/es/aprender/excel-a-pdf-ajustar-a-pagina", title: "Excel a PDF — Ajustar a Página" },
+      { href: "/es/aprender/excel-a-pdf-columnas-cortadas", title: "Excel a PDF Corta las Columnas? Soluciónalo" },
       { href: "/es/aprender/excel-a-pdf-en-mac", title: "Excel a PDF en Mac" },
       { href: "/es/aprender/reporte-excel-a-pdf", title: "Exportar Reportes Mensuales: Excel a PDF" },
       { href: "/es/aprender/ppt-a-pdf-animaciones", title: "PowerPoint a PDF — Que Pasa con las Animaciones?" },
       { href: "/es/aprender/ppt-a-pdf-para-imprimir", title: "PowerPoint a PDF para Imprimir" },
       { href: "/es/aprender/ppt-a-pdf-en-iphone", title: "PowerPoint a PDF en iPhone" },
-      { href: "/es/aprender/pptx-a-pdf-fuentes-faltantes", title: "PPTX a PDF: Fuentes Faltantes — Solucion" },
+      { href: "/es/aprender/pptx-a-pdf-fuentes-faltantes", title: "PPTX a PDF: Fuentes Faltantes — Solución" },
       { href: "/es/aprender/office-a-pdf-convertidor", title: "Convertidor de Office a PDF" },
       { href: "/es/aprender/office-a-pdf-mantener-formato", title: "Office a PDF — Mantener Formato" },
       { href: "/es/aprender/office-a-pdf-en-movil", title: "Office a PDF en el Movil" },
@@ -102,12 +102,12 @@ const categories = [
   {
     name: "Proteger y Desbloquear PDF",
     articles: [
-      { href: "/es/aprender/como-proteger-pdf-con-contrasena", title: "Como Proteger un PDF con Contrasena" },
-      { href: "/es/aprender/mejores-practicas-contrasena-pdf", title: "Mejores Practicas de Contrasena para PDF" },
+      { href: "/es/aprender/como-proteger-pdf-con-contraseña", title: "Como Proteger un PDF con Contraseña" },
+      { href: "/es/aprender/mejores-prácticas-contraseña-pdf", title: "Mejores Prácticas de Contraseña para PDF" },
       { href: "/es/aprender/proteger-pdf-antes-de-enviar", title: "Proteger un PDF Antes de Enviar" },
       { href: "/es/aprender/proteger-pdf-en-movil", title: "Proteger un PDF en el Movil" },
       { href: "/es/aprender/como-desbloquear-pdf", title: "Como Desbloquear un PDF" },
-      { href: "/es/aprender/desbloquear-pdf-contrasena-olvidada", title: "Desbloquear PDF — Contrasena Olvidada" },
+      { href: "/es/aprender/desbloquear-pdf-contraseña-olvidada", title: "Desbloquear PDF — Contraseña Olvidada" },
       { href: "/es/aprender/desbloquear-pdf-para-imprimir", title: "Desbloquear PDF para Imprimir" },
       { href: "/es/aprender/desbloquear-pdf-en-movil", title: "Desbloquear PDF en el Movil" },
     ],
@@ -118,31 +118,31 @@ const categories = [
       { href: "/es/aprender/como-agregar-marca-de-agua-a-pdf", title: "Como Agregar una Marca de Agua a un PDF" },
       { href: "/es/aprender/marca-de-agua-pdf-con-logo", title: "Marca de Agua en PDF con Logo" },
       { href: "/es/aprender/marca-de-agua-pdf-confidencial", title: "Marca de Agua en PDF: Confidencial" },
-      { href: "/es/aprender/marca-de-agua-pdf-mejores-practicas", title: "Marca de Agua en PDF: Mejores Practicas" },
+      { href: "/es/aprender/marca-de-agua-pdf-mejores-prácticas", title: "Marca de Agua en PDF: Mejores Prácticas" },
       { href: "/es/aprender/marca-de-agua-pdf-en-movil", title: "Marca de Agua en PDF en el Movil" },
     ],
   },
   {
     name: "OCR y Escaneo",
     articles: [
-      { href: "/es/aprender/que-es-ocr", title: "Que es OCR?" },
+      { href: "/es/aprender/que-es-ocr", title: "Qué es OCR?" },
       { href: "/es/aprender/ocr-documento-escaneado", title: "OCR en un Documento Escaneado" },
       { href: "/es/aprender/ocr-pdf-a-texto-buscable", title: "OCR: PDF a Texto Buscable" },
       { href: "/es/aprender/ocr-pdf-en-movil", title: "OCR en PDF en el Movil" },
       { href: "/es/aprender/ocr-texto-manuscrito", title: "OCR de Texto Manuscrito" },
-      { href: "/es/aprender/consejos-precision-ocr", title: "Consejos de Precision para OCR" },
+      { href: "/es/aprender/consejos-precision-ocr", title: "Consejos de Precisión para OCR" },
     ],
   },
   {
-    name: "Codigos QR",
+    name: "Códigos QR",
     articles: [
-      { href: "/es/aprender/como-crear-codigo-qr", title: "Como Crear un Codigo QR" },
-      { href: "/es/aprender/tipos-de-codigo-qr-explicados", title: "Tipos de Codigo QR Explicados" },
-      { href: "/es/aprender/mejores-practicas-codigo-qr", title: "Mejores Practicas de Codigo QR" },
-      { href: "/es/aprender/codigo-qr-para-pdf", title: "Codigo QR para PDF" },
-      { href: "/es/aprender/codigo-qr-para-wifi", title: "Codigo QR para WiFi" },
-      { href: "/es/aprender/codigo-qr-para-menu-de-restaurante", title: "Codigo QR para Menu de Restaurante" },
-      { href: "/es/aprender/codigo-qr-para-tarjeta-de-presentacion", title: "Codigo QR para Tarjeta de Presentacion" },
+      { href: "/es/aprender/como-crear-codigo-qr", title: "Como Crear un Código QR" },
+      { href: "/es/aprender/tipos-de-codigo-qr-explicados", title: "Tipos de Código QR Explicados" },
+      { href: "/es/aprender/mejores-prácticas-codigo-qr", title: "Mejores Prácticas de Código QR" },
+      { href: "/es/aprender/codigo-qr-para-pdf", title: "Código QR para PDF" },
+      { href: "/es/aprender/codigo-qr-para-wifi", title: "Código QR para WiFi" },
+      { href: "/es/aprender/codigo-qr-para-menu-de-restaurante", title: "Código QR para Menu de Restaurante" },
+      { href: "/es/aprender/codigo-qr-para-tarjeta-de-presentacion", title: "Código QR para Tarjeta de Presentación" },
     ],
   },
 ]
@@ -181,9 +181,9 @@ export default function AprenderPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Aprender</h1>
               <p className="text-xl text-slate-300 mb-4">
-                Guias y tutoriales gratuitos para cada tarea con PDF. Instrucciones paso a paso, consejos y mejores practicas — sin necesidad de registrarse.
+                Guias y tutoriales gratuitos para cada tarea con PDF. Instrucciones paso a paso, consejos y mejores prácticas — sin necesidad de registrarse.
               </p>
-              <p className="text-sm text-slate-400">{categories.reduce((sum, c) => sum + c.articles.length, 0)} articulos en {categories.length} categorias</p>
+              <p className="text-sm text-slate-400">{categories.reduce((sum, c) => sum + c.articles.length, 0)} artículos en {categories.length} categorias</p>
             </div>
           </div>
         </section>

@@ -8,7 +8,7 @@ import Link from "next/link"
 export const metadata = {
   title: "Convertir PowerPoint a PDF Online — PPTX a PDF | PDF.it",
   description:
-    "Convierte PPT a PDF en segundos con PDF.it. Transforma tus diapositivas PPT/PPTX en un PDF limpio y facil de compartir — rapido, simple y desde el navegador.",
+    "Convierte PPT a PDF en segundos con PDF.it. Transforma tus diapositivas PPT/PPTX en un PDF limpio y fácil de compartir — rápido, simple y desde el navegador.",
   alternates: {
     canonical: "https://pdf.it.com/es/powerpoint-a-pdf",
     languages: {
@@ -62,7 +62,7 @@ export default function PowerPointAPDFPage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Shield className="h-4 w-4 text-[#14D8C4]" />
-                  <span>Archivos Eliminados Tras la Sesion</span>
+                  <span>Archivos Eliminados Tras la Sesión</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Download className="h-4 w-4 text-[#14D8C4]" />
@@ -77,14 +77,14 @@ export default function PowerPointAPDFPage() {
         <section className="py-10 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <p className="text-lg text-slate-600 leading-relaxed">
-              Usa el convertidor de PPT a PDF de PDF.it para transformar un PowerPoint (PPT/PPTX) en un PDF en segundos. Exporta tus diapositivas a un formato facil de ver en cualquier lugar — perfecto para correo electronico, impresion y subir a portales.
+              Usa el convertidor de PPT a PDF de PDF.it para transformar un PowerPoint (PPT/PPTX) en un PDF en segundos. Exporta tus diapositivas a un formato fácil de ver en cualquier lugar — perfecto para correo electrónico, impresión y subir a portales.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
-              <li className="flex items-center gap-2">✓ Convierte PowerPoint a PDF en linea en segundos</li>
+              <li className="flex items-center gap-2">✓ Convierte PowerPoint a PDF en línea en segundos</li>
               <li className="flex items-center gap-2">✓ Soporta archivos .ppt y .pptx</li>
               <li className="flex items-center gap-2">✓ Crea PDFs compartibles y listos para presentar</li>
               <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li className="flex items-center gap-2">✓ Sin instalacion — funciona desde tu navegador</li>
+              <li className="flex items-center gap-2">✓ Sin instalación — funciona desde tu navegador</li>
             </ul>
           </div>
         </section>
@@ -113,9 +113,9 @@ export default function PowerPointAPDFPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { title: "Convierte Diapositivas PPTX a un PDF Compartible", desc: "Los PDFs se abren de forma consistente en todos los dispositivos y no requieren PowerPoint. Convierte tu presentacion a PDF para que cualquiera pueda verla en un navegador o lector de PDF." },
-                { title: "Ideal para Imprimir y Repartir", desc: "¿Necesitas una version imprimible de tus diapositivas? Convierte PPT a PDF para imprimir rapidamente, copias de revision, o entregas de clases y trabajo." },
-                { title: "Manten el Diseno de tus Diapositivas", desc: "PDF.it convierte las diapositivas en paginas PDF para que tu texto, imagenes y graficos sean faciles de leer y compartir. Nota: las animaciones y transiciones se vuelven estaticas en formato PDF." },
+                { title: "Convierte Diapositivas PPTX a un PDF Compartible", desc: "Los PDFs se abren de forma consistente en todos los dispositivos y no requieren PowerPoint. Convierte tu presentación a PDF para que cualquiera pueda verla en un navegador o lector de PDF." },
+                { title: "Ideal para Imprimir y Repartir", desc: "¿Necesitas una version imprimible de tus diapositivas? Convierte PPT a PDF para imprimir rápidamente, copias de revision, o entregas de clases y trabajo." },
+                { title: "Manten el Diseño de tus Diapositivas", desc: "PDF.it convierte las diapositivas en páginas PDF para que tu texto, imágenes y gráficos sean fáciles de leer y compartir. Nota: las animaciones y transiciones se vuelven estáticas en formato PDF." },
               ].map((feature) => (
                 <div
                   key={feature.title}
@@ -152,7 +152,7 @@ export default function PowerPointAPDFPage() {
             <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Convertir PPT a PDF</h2>
             <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
               {[
-                { num: "1", title: "Sube tu presentacion", desc: "Arrastra o haz clic para elegir un archivo" },
+                { num: "1", title: "Sube tu presentación", desc: "Arrastra o haz clic para elegir un archivo" },
                 { num: "2", title: "Haz clic en Convertir", desc: "El procesamiento toma solo segundos" },
                 { num: "3", title: "Descarga tu PDF", desc: "Obtiene un PDF listo para compartir" },
               ].map((step) => (
@@ -182,8 +182,8 @@ export default function PowerPointAPDFPage() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
                 { name: "Word a PDF", href: "/es/word-a-pdf", desc: "Convierte documentos Word a PDF" },
-                { name: "Excel a PDF", href: "/es/excel-a-pdf", desc: "Convierte hojas de calculo a PDF" },
-                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamano del PDF" },
+                { name: "Excel a PDF", href: "/es/excel-a-pdf", desc: "Convierte hojas de cálculo a PDF" },
+                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamaño del PDF" },
                 { name: "Unir PDF", href: "/es/unir-pdf", desc: "Combina varios PDFs en uno" },
               ].map((tool) => (
                 <div
@@ -234,11 +234,11 @@ export default function PowerPointAPDFPage() {
             <div className="space-y-4">
               {[
                 { q: "¿PDF.it puede convertir tanto PPT como PPTX a PDF?", a: "Si. PDF.it soporta ambos formatos de archivo .ppt y .pptx." },
-                { q: "¿El PDF mantiene el diseno y la disposicion de mis diapositivas?", a: "En la mayoria de los casos, si. Diapositivas muy complejas, fuentes poco comunes o efectos especiales pueden renderizarse ligeramente diferente dependiendo del archivo fuente." },
-                { q: "¿Las animaciones y transiciones se pasan al PDF?", a: "No. Un PDF es un formato estatico, asi que las animaciones y transiciones no se reproducen — las diapositivas se exportan como paginas fijas." },
-                { q: "¿Puedo convertir PowerPoint a PDF desde mi celular?", a: "Si. PDF.it funciona en navegadores moviles — sube tu presentacion y descarga el PDF." },
-                { q: "¿Es seguro subir mi archivo de PowerPoint?", a: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." },
-                { q: "¿Cual es el tamano maximo de archivo que puedo convertir?", a: "Las cuentas Pro y Business pueden subir archivos de hasta 200MB." },
+                { q: "¿El PDF mantiene el diseño y la disposicion de mis diapositivas?", a: "En la mayoría de los casos, si. Diapositivas muy complejas, fuentes poco comunes o efectos especiales pueden renderizarse ligeramente diferente dependiendo del archivo fuente." },
+                { q: "¿Las animaciones y transiciones se pasan al PDF?", a: "No. Un PDF es un formato estático, así que las animaciones y transiciones no se reproducen — las diapositivas se exportan como páginas fijas." },
+                { q: "¿Puedo convertir PowerPoint a PDF desde mi celular?", a: "Si. PDF.it funciona en navegadores móviles — sube tu presentación y descarga el PDF." },
+                { q: "¿Es seguro subir mi archivo de PowerPoint?", a: "Si. Todas las transferencias están cifradas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." },
+                { q: "¿Cual es el tamaño máximo de archivo que puedo convertir?", a: "Las cuentas Pro y Business pueden subir archivos de hasta 200MB." },
               ].map((faq, i) => (
                 <div
                   key={i}
@@ -262,11 +262,11 @@ export default function PowerPointAPDFPage() {
           "@type": "FAQPage",
           "mainEntity": [
             { "@type": "Question", "name": "¿PDF.it puede convertir tanto PPT como PPTX a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it soporta ambos formatos de archivo .ppt y .pptx." } },
-            { "@type": "Question", "name": "¿El PDF mantiene el diseno y la disposicion de mis diapositivas?", "acceptedAnswer": { "@type": "Answer", "text": "En la mayoria de los casos, si. Diapositivas muy complejas, fuentes poco comunes o efectos especiales pueden renderizarse ligeramente diferente dependiendo del archivo fuente." } },
-            { "@type": "Question", "name": "¿Las animaciones y transiciones se pasan al PDF?", "acceptedAnswer": { "@type": "Answer", "text": "No. Un PDF es un formato estatico, asi que las animaciones y transiciones no se reproducen — las diapositivas se exportan como paginas fijas." } },
-            { "@type": "Question", "name": "¿Puedo convertir PowerPoint a PDF desde mi celular?", "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en navegadores moviles — sube tu presentacion y descarga el PDF." } },
-            { "@type": "Question", "name": "¿Es seguro subir mi archivo de PowerPoint?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." } },
-            { "@type": "Question", "name": "¿Cual es el tamano maximo de archivo que puedo convertir?", "acceptedAnswer": { "@type": "Answer", "text": "Las cuentas Pro y Business pueden subir archivos de hasta 200MB." } }
+            { "@type": "Question", "name": "¿El PDF mantiene el diseño y la disposicion de mis diapositivas?", "acceptedAnswer": { "@type": "Answer", "text": "En la mayoría de los casos, si. Diapositivas muy complejas, fuentes poco comunes o efectos especiales pueden renderizarse ligeramente diferente dependiendo del archivo fuente." } },
+            { "@type": "Question", "name": "¿Las animaciones y transiciones se pasan al PDF?", "acceptedAnswer": { "@type": "Answer", "text": "No. Un PDF es un formato estático, así que las animaciones y transiciones no se reproducen — las diapositivas se exportan como páginas fijas." } },
+            { "@type": "Question", "name": "¿Puedo convertir PowerPoint a PDF desde mi celular?", "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en navegadores móviles — sube tu presentación y descarga el PDF." } },
+            { "@type": "Question", "name": "¿Es seguro subir mi archivo de PowerPoint?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Todas las transferencias están cifradas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." } },
+            { "@type": "Question", "name": "¿Cual es el tamaño máximo de archivo que puedo convertir?", "acceptedAnswer": { "@type": "Answer", "text": "Las cuentas Pro y Business pueden subir archivos de hasta 200MB." } }
           ]
         })}} />
       </main>

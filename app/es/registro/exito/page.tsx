@@ -47,7 +47,7 @@ export default function SignUpSuccessPageEs() {
               </div>
               <div className="text-left space-y-3 mb-8">
                 <p className="text-slate-500 text-xs font-medium uppercase tracking-wider text-center mb-3">Lo que obtienes con tu cuenta gratis</p>
-                {["10 conversiones gratis cada día", "Comprimir, unir, dividir, rotar y más", "Sin tarjeta de crédito requerida"].map((item) => (
+                {["10 conversiónes gratis cada día", "Comprimir, unir, dividir, rotar y más", "Sin tarjeta de crédito requerida"].map((item) => (
                   <div key={item} className="flex items-center gap-2">
                     <span className="text-[#14D8C4] flex-shrink-0">&#10003;</span>
                     <span className="text-slate-300 text-sm">{item}</span>

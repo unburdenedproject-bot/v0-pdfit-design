@@ -6,9 +6,9 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download } from "lucide-react
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF a 100KB Online — Compresion Extrema Gratis | PDF.it",
+  title: "Comprimir PDF a 100KB Online — Compresión Extrema Gratis | PDF.it",
   description:
-    "Aplica compresion extrema a tu PDF para cumplir limites de 100KB. Perfecto para firmas de email, micro-adjuntos, fotos de credencial y documentos moviles — rapido, desde tu navegador, gratis.",
+    "Aplica compresión extrema a tu PDF para cumplir límites de 100KB. Perfecto para firmas de email, micro-adjuntos, fotos de credencial y documentos móviles — rápido, desde tu navegador, gratis.",
   alternates: {
     canonical: "https://www.pdf.it.com/es/comprimir-pdf-a-100kb",
     languages: {
@@ -21,12 +21,12 @@ export const metadata = {
 
 export default function ComprimirPDFA100KBPage() {
   const faqs = [
-    { q: "¿Como comprimo un PDF para un limite de 100KB?", a: "Sube tu PDF a PDF.it y haz clic en Comprimir. La herramienta aplica compresion extrema para reducir la resolucion de imagenes y optimizar la estructura interna, reduciendo drasticamente el tamano del archivo. Los resultados dependen del contenido de tu PDF." },
-    { q: "¿Mi PDF quedara definitivamente debajo de 100KB despues de comprimirlo?", a: "La compresion extrema reduce drasticamente el tamano del archivo, pero los resultados dependen del contenido del PDF. Los documentos simples de una sola pagina con texto pueden llegar a menos de 100KB. Los archivos con muchas imagenes o de varias paginas probablemente necesiten dividirse en paginas individuales primero y luego comprimir cada pagina por separado." },
-    { q: "¿Que tipos de archivos se pueden comprimir a 100KB de forma realista?", a: "Los documentos de una sola pagina con principalmente texto, firmas simples, fotos de tamano credencial y formularios pequenos pueden comprimirse a menos de 100KB. Los documentos de varias paginas o con imagenes de alta resolucion necesitaran dividirse primero." },
-    { q: "¿Mi PDF seguira siendo legible despues de comprimirlo a 100KB?", a: "El texto se mantiene nitido y legible. Las imagenes perderan detalle notable con este nivel de compresion extrema, pero para firmas, credenciales y documentos simples, el resultado sigue siendo utilizable." },
-    { q: "¿Puedo comprimir un PDF a 100KB desde mi celular?", a: "Si. PDF.it funciona en cualquier navegador movil. Sube tu PDF, comprimelo y descarga el archivo mas pequeno directamente en tu iPhone o Android." },
-    { q: "¿Que hago si mi PDF sigue pesando mas de 100KB despues de comprimirlo?", a: "Divide el PDF en paginas individuales con nuestra herramienta Dividir PDF y luego comprime cada pagina por separado. Para mejores resultados, quedate solo con la pagina que necesitas, aplana el PDF y convierte las imagenes a escala de grises antes de comprimir." },
+    { q: "¿Como comprimo un PDF para un límite de 100KB?", a: "Sube tu PDF a PDF.it y haz clic en Comprimir. La herramienta aplica compresión extrema para reducir la resolución de imágenes y optimizar la estructura interna, reduciendo drasticamente el tamaño del archivo. Los resultados dependen del contenido de tu PDF." },
+    { q: "¿Mi PDF quedara definitivamente debajo de 100KB después de comprimirlo?", a: "La compresión extrema reduce drasticamente el tamaño del archivo, pero los resultados dependen del contenido del PDF. Los documentos simples de una sola página con texto pueden llegar a menos de 100KB. Los archivos con muchas imágenes o de varias páginas probablemente necesiten dividirse en páginas individuales primero y luego comprimir cada página por separado." },
+    { q: "¿Que tipos de archivos se pueden comprimir a 100KB de forma realista?", a: "Los documentos de una sola página con principalmente texto, firmas simples, fotos de tamaño credencial y formularios pequeños pueden comprimirse a menos de 100KB. Los documentos de varias páginas o con imágenes de alta resolución necesitaran dividirse primero." },
+    { q: "¿Mi PDF seguira siendo legible después de comprimirlo a 100KB?", a: "El texto se mantiene nitido y legible. Las imágenes perderan detalle notable con este nivel de compresión extrema, pero para firmas, credenciales y documentos simples, el resultado sigue siendo utilizable." },
+    { q: "¿Puedo comprimir un PDF a 100KB desde mi celular?", a: "Si. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, comprimelo y descarga el archivo más pequeño directamente en tu iPhone o Android." },
+    { q: "¿Que hago si mi PDF sigue pesando más de 100KB después de comprimirlo?", a: "Divide el PDF en páginas individuales con nuestra herramienta Dividir PDF y luego comprime cada página por separado. Para mejores resultados, quedate solo con la página que necesitas, aplana el PDF y convierte las imágenes a escala de grises antes de comprimir." },
   ]
 
   return (
@@ -60,13 +60,13 @@ export default function ComprimirPDFA100KBPage() {
               >
                 <Compress className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF para Limites de 100KB</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF para Límites de 100KB</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Aplica compresion extrema para reducir drasticamente el tamano de tu PDF en portales con limites de 100KB. Perfecto para firmas de email, micro-adjuntos, fotos de credencial y documentos optimizados para movil.
+                Aplica compresión extrema para reducir drasticamente el tamaño de tu PDF en portales con límites de 100KB. Perfecto para firmas de email, micro-adjuntos, fotos de credencial y documentos optimizados para móvil.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compresion Extrema</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesion</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compresión Extrema</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesión</span></div>
                 <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sin Registro</span></div>
               </div>
             </div>
@@ -77,13 +77,13 @@ export default function ComprimirPDFA100KBPage() {
         <section className="py-10 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <p className="text-lg text-slate-600 leading-relaxed">
-              Algunas plataformas exigen un limite de tamano extremadamente estricto de 100KB. Los adjuntos de firma de email, subida de fotos de credencial, campos de micro-adjuntos y ciertos formularios optimizados para movil requieren archivos muy pequenos. PDF.it aplica compresion extrema para reducir drasticamente el tamano de tu PDF y ayudarte a cumplir con estos requisitos de subida tan exigentes.
+              Algunas plataformas exigen un límite de tamaño extremadamente estricto de 100KB. Los adjuntos de firma de email, subida de fotos de credencial, campos de micro-adjuntos y ciertos formularios optimizados para móvil requieren archivos muy pequeños. PDF.it aplica compresión extrema para reducir drasticamente el tamaño de tu PDF y ayudarte a cumplir con estos requisitos de subida tan exigentes.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
-              <li className="flex items-center gap-2">✓ Compresion extrema para maxima reduccion de tamano</li>
+              <li className="flex items-center gap-2">✓ Compresión extrema para máxima reducción de tamaño</li>
               <li className="flex items-center gap-2">✓ Perfecto para firmas de email y credenciales</li>
               <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li className="flex items-center gap-2">✓ Sin instalacion — comprime PDFs en tu navegador</li>
+              <li className="flex items-center gap-2">✓ Sin instalación — comprime PDFs en tu navegador</li>
             </ul>
           </div>
         </section>
@@ -112,9 +112,9 @@ export default function ComprimirPDFA100KBPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { title: "Firmas de Email y Micro-Adjuntos", desc: "Los sistemas de email corporativo y plataformas de tickets frecuentemente limitan los adjuntos a 100KB. Comprime tu logo, vCard o folleto PDF para que quepa dentro de las restricciones estrictas de tamano." },
-                { title: "Fotos de Credencial e Identificacion", desc: "Los sistemas de credenciales de empleados, registros de eventos y portales de membresia requieren fotos de menos de 100KB. Comprime tu foto de credencial en PDF para cumplir estos limites." },
-                { title: "Documentos Optimizados para Movil", desc: "Enviar PDFs por conexiones lentas o a dispositivos con almacenamiento limitado se beneficia de la compresion extrema. Reduce tu archivo para carga instantanea y minimo uso de datos." },
+                { title: "Firmas de Email y Micro-Adjuntos", desc: "Los sistemas de email corporativo y plataformas de tickets frecuentemente limitan los adjuntos a 100KB. Comprime tu logo, vCard o folleto PDF para que quepa dentro de las restricciones estrictas de tamaño." },
+                { title: "Fotos de Credencial e Identificación", desc: "Los sistemas de credenciales de empleados, registros de eventos y portales de membresia requieren fotos de menos de 100KB. Comprime tu foto de credencial en PDF para cumplir estos límites." },
+                { title: "Documentos Optimizados para Movil", desc: "Enviar PDFs por conexiones lentas o a dispositivos con almacenamiento limitado se beneficia de la compresión extrema. Reduce tu archivo para carga instantanea y mínimo uso de datos." },
               ].map((feature) => (
                 <div
                   key={feature.title}
@@ -148,11 +148,11 @@ export default function ComprimirPDFA100KBPage() {
         {/* How It Works */}
         <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Comprimir un PDF para Limites de 100KB</h2>
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Comprimir un PDF para Límites de 100KB</h2>
             <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
               {[
                 { num: "1", title: "Sube tu PDF", desc: "Arrastra y suelta o haz clic para elegir un archivo" },
-                { num: "2", title: "Haz clic en Comprimir", desc: "La compresion extrema se aplica automaticamente" },
+                { num: "2", title: "Haz clic en Comprimir", desc: "La compresión extrema se aplica automáticamente" },
                 { num: "3", title: "Descarga tu PDF", desc: "Obtiene tu archivo comprimido al instante" },
               ].map((step) => (
                 <div key={step.num} className="flex-1">
@@ -180,9 +180,9 @@ export default function ComprimirPDFA100KBPage() {
             <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "Comprimir a 200KB", href: "/es/comprimir-pdf-a-200kb", desc: "Para limites de 200KB" },
-                { name: "Comprimir a 500KB", href: "/es/comprimir-pdf-a-500kb", desc: "Para limites de 500KB" },
-                { name: "Comprimir a 1MB", href: "/es/comprimir-pdf-a-1mb", desc: "Para limites de 1MB" },
+                { name: "Comprimir a 200KB", href: "/es/comprimir-pdf-a-200kb", desc: "Para límites de 200KB" },
+                { name: "Comprimir a 500KB", href: "/es/comprimir-pdf-a-500kb", desc: "Para límites de 500KB" },
+                { name: "Comprimir a 1MB", href: "/es/comprimir-pdf-a-1mb", desc: "Para límites de 1MB" },
                 { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Divide si sigue grande" },
               ].map((tool) => (
                 <div

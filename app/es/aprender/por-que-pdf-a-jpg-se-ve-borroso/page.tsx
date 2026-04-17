@@ -5,9 +5,9 @@ import Link from "next/link"
 import { ImageIcon, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Por Qué Tu PDF a JPG Se Ve Borroso (Y Cómo Solucionarlo) | PDF.it",
+  title: "Por Qué Tu PDF a JPG Se Ve Borroso (Y Cómo Soluciónarlo) | PDF.it",
   description:
-    "¿Tu conversión de PDF a JPG se ve borrosa? Aprende las 5 causas más comunes y cómo solucionar cada una. Obtén imágenes JPG nítidas y de alta calidad de tus PDFs cada vez.",
+    "¿Tu conversión de PDF a JPG se ve borrosa? Aprende las 5 causas más comunes y cómo soluciónar cada una. Obtén imágenes JPG nítidas y de alta calidad de tus PDFs cada vez.",
   keywords: "pdf a jpg borroso, pdf a jpg baja calidad, conversión pdf borrosa, calidad pdf a imagen, arreglar pdf a jpg borroso",
 }
 
@@ -51,7 +51,7 @@ const faqSchema = {
 const howToSchema = {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "Cómo Solucionar Conversiones Borrosas de PDF a JPG",
+  "name": "Cómo Soluciónar Conversiónes Borrosas de PDF a JPG",
   "description": "Obtén imágenes JPG nítidas y de alta calidad de tus PDFs siguiendo estos 3 pasos.",
   "step": [
     {
@@ -62,7 +62,7 @@ const howToSchema = {
     {
       "@type": "HowToStep",
       "name": "Usa un convertidor de alta calidad",
-      "text": "Sube tu PDF a la herramienta PDF a JPG de PDF.it, que te permite elegir configuraciones de DPI y produce resultados de alta calidad."
+      "text": "Sube tu PDF a la herramienta PDF a JPG de PDF.it, que te permite elegir configuraciónes de DPI y produce resultados de alta calidad."
     },
     {
       "@type": "HowToStep",
@@ -92,9 +92,9 @@ export default function PorQuePdfAJpgSeVeBorrosoPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
               <p className="text-[#14D8C4] font-semibold text-sm mb-3 uppercase tracking-wide">Aprender / PDF a JPG</p>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Por Qué Tu PDF a JPG Se Ve Borroso (Y Cómo Solucionarlo)</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Por Qué Tu PDF a JPG Se Ve Borroso (Y Cómo Soluciónarlo)</h1>
               <p className="text-xl text-slate-300">
-                Convertiste un PDF a JPG y el resultado se ve difuso, pixelado o lavado. Aquí te explicamos por qué sucede y exactamente cómo solucionarlo.
+                Convertiste un PDF a JPG y el resultado se ve difuso, pixelado o lavado. Aquí te explicamos por qué sucede y exactamente cómo soluciónarlo.
               </p>
             </div>
           </div>
@@ -146,7 +146,7 @@ export default function PorQuePdfAJpgSeVeBorrosoPage() {
                     JPG es un formato "con pérdida" — reduce el tamaño del archivo descartando datos de imagen. Esto crea artefactos visibles: halos difusos alrededor del texto, áreas en bloques en degradados y bordes suaves en líneas nítidas. Cuanta más compresión se aplica, peor se ve.
                   </p>
                   <p className="text-slate-600">
-                    <strong>La solución:</strong> Usa configuraciones de alta calidad (baja compresión) al convertir. O cambia al formato PNG — es sin pérdida, lo que significa cero pérdida de calidad. Usa nuestra herramienta <Link href="/es/pdf-a-png" className="text-[#14D8C4] hover:underline">PDF a PNG</Link> para documentos con mucho texto.
+                    <strong>La solución:</strong> Usa configuraciónes de alta calidad (baja compresión) al convertir. O cambia al formato PNG — es sin pérdida, lo que significa cero pérdida de calidad. Usa nuestra herramienta <Link href="/es/pdf-a-png" className="text-[#14D8C4] hover:underline">PDF a PNG</Link> para documentos con mucho texto.
                   </p>
                 </div>
 
@@ -173,10 +173,10 @@ export default function PorQuePdfAJpgSeVeBorrosoPage() {
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">5. Compresión a Nivel de Aplicación</h3>
                   <p className="text-slate-600 mb-2">
-                    Algunas aplicaciones comprimen automáticamente las imágenes cuando las importas. PowerPoint, por ejemplo, comprime las imágenes por defecto cuando guardas el archivo. Google Docs redimensiona las imágenes. Los clientes de correo a menudo reducen la resolución de los archivos adjuntos.
+                    Algunas aplicaciónes comprimen automáticamente las imágenes cuando las importas. PowerPoint, por ejemplo, comprime las imágenes por defecto cuando guardas el archivo. Google Docs redimensiona las imágenes. Los clientes de correo a menudo reducen la resolución de los archivos adjuntos.
                   </p>
                   <p className="text-slate-600">
-                    <strong>La solución:</strong> En PowerPoint, ve a Archivo &gt; Opciones &gt; Avanzado y establece la calidad de imagen en "Alta fidelidad". En otras aplicaciones, busca las configuraciones de compresión de imagen y desactívalas.
+                    <strong>La solución:</strong> En PowerPoint, ve a Archivo &gt; Opciones &gt; Avanzado y establece la calidad de imagen en "Alta fidelidad". En otras aplicaciónes, busca las configuraciónes de compresión de imagen y desactívalas.
                   </p>
                 </div>
               </div>
@@ -193,7 +193,7 @@ export default function PorQuePdfAJpgSeVeBorrosoPage() {
                 <li>- ¿Tu convertidor está usando alta calidad de JPG? Baja calidad = más artefactos de compresión.</li>
                 <li>- ¿El PDF original es de alta calidad? Verifica haciendo zoom al 400% en un visor de PDF — si se ve borroso ahí, se verá borroso como JPG.</li>
                 <li>- ¿Estás estirando la imagen después de convertir? La imagen debe usarse a su resolución nativa o menor.</li>
-                <li>- ¿La aplicación está comprimiendo tus imágenes? Verifica las configuraciones de PowerPoint, Google Docs o correo electrónico.</li>
+                <li>- ¿La aplicación está comprimiendo tus imágenes? Verifica las configuraciónes de PowerPoint, Google Docs o correo electrónico.</li>
                 <li>- ¿Deberías estar usando PNG? Para texto y diagramas, PNG siempre se ve más nítido.</li>
               </ul>
             </section>
@@ -202,7 +202,7 @@ export default function PorQuePdfAJpgSeVeBorrosoPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Cuándo Usar PNG en Lugar de JPG</h2>
               <p className="text-slate-600 mb-4">
-                A veces la solución no es arreglar tus configuraciones de JPG — es usar un formato diferente. PNG es la mejor opción cuando:
+                A veces la solución no es arreglar tus configuraciónes de JPG — es usar un formato diferente. PNG es la mejor opción cuando:
               </p>
               <ul className="space-y-3 text-slate-700">
                 <li className="flex items-start gap-3">
@@ -227,7 +227,7 @@ export default function PorQuePdfAJpgSeVeBorrosoPage() {
             <section className="mb-12">
               <h2 className="text-2xl font-black text-slate-900 mb-4">Comparación de DPI: Cómo Se Ve Cada Configuración</h2>
               <p className="text-slate-600 mb-4">
-                Aquí hay una comparación práctica de cómo diferentes configuraciones de DPI afectan una página PDF tamaño carta estándar:
+                Aquí hay una comparación práctica de cómo diferentes configuraciónes de DPI afectan una página PDF tamaño carta estándar:
               </p>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm border border-gray-200 rounded-xl overflow-hidden">

@@ -15,7 +15,7 @@ export default function ConvertirPDFEscaneadoPage() {
   const faqs = [
     {
         "q": "¿Cómo convierto un PDF escaneado a texto buscable?",
-        "a": "Sube tu PDF escaneado a PDF.it, selecciona el idioma del documento y haz clic en Ejecutar OCR. El motor OCR de PDF.it lee el texto de las imágenes escaneadas y produce un PDF buscable y copiable."
+        "a": "Sube tu PDF escaneado a PDF.it, seleccióna el idioma del documento y haz clic en Ejecutar OCR. El motor OCR de PDF.it lee el texto de las imágenes escaneadas y produce un PDF buscable y copiable."
     },
     {
         "q": "¿Cuál es la calidad de la conversión OCR?",
@@ -60,9 +60,9 @@ export default function ConvertirPDFEscaneadoPage() {
 
         {/* Intro */}
         <section className="py-10 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-          <p className="text-lg text-slate-600 leading-relaxed">Los PDFs escaneados parecen documentos regulares, pero en realidad son imágenes — no puedes seleccionar, buscar ni copiar ningún texto. El OCR de PDF.it convierte estos PDFs basados en imagen en documentos completamente buscables y copiables con los que puedes trabajar.</p>
+          <p className="text-lg text-slate-600 leading-relaxed">Los PDFs escaneados parecen documentos regulares, pero en realidad son imágenes — no puedes selecciónar, buscar ni copiar ningún texto. El OCR de PDF.it convierte estos PDFs basados en imagen en documentos completamente buscables y copiables con los que puedes trabajar.</p>
           <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
-            <li className="flex items-center gap-2">✓ Convierte PDFs escaneados en texto buscable y seleccionable</li>
+            <li className="flex items-center gap-2">✓ Convierte PDFs escaneados en texto buscable y selecciónable</li>
             <li className="flex items-center gap-2">✓ Soporte multiidioma para documentos internacionales</li>
             <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
             <li className="flex items-center gap-2">✓ Sin instalación — convierte escaneos en tu navegador</li>
@@ -77,7 +77,7 @@ export default function ConvertirPDFEscaneadoPage() {
             {[
               { title: "Busca Archivos Antiguos al Instante", desc: "Convierte documentos escaneados en documentos buscables para que puedas encontrar información específica con Ctrl+F en lugar de desplazarte por cientos de páginas manualmente." },
               { title: "Haz Documentos Accesibles", desc: "Los PDFs escaneados no son accesibles para lectores de pantalla ni herramientas de texto a voz. El OCR agrega una capa de texto, haciendo tus documentos accesibles para personas con discapacidad visual." },
-              { title: "Prepara Escaneos para Edición", desc: "¿Quieres editar un documento escaneado? Primero conviértelo con OCR para hacer el texto seleccionable, luego usa PDF a Word para crear un documento editable que puedes modificar libremente." },
+              { title: "Prepara Escaneos para Edición", desc: "¿Quieres editar un documento escaneado? Primero conviértelo con OCR para hacer el texto selecciónable, luego usa PDF a Word para crear un documento editable que puedes modificar libremente." },
             ].map((feature) => (
               <div key={feature.title} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}>
                 <div className="rounded-[11px] p-6 h-full" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>

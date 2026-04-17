@@ -14,7 +14,7 @@ const faqs = [
   { q: "¿Qué es Traducir PDF?", a: "Traducir PDF usa IA para traducir el contenido completo de cualquier documento PDF al idioma que elijas. Soporta 13 idiomas incluyendo inglés, español, portugués, francés, alemán, chino, japonés y más." },
   { q: "¿Qué idiomas soporta?", a: "Inglés, español, portugués brasileño, francés, alemán, italiano, holandés, chino simplificado, japonés, coreano, árabe, ruso e hindi." },
   { q: "¿Preserva el diseño del PDF original?", a: "El texto traducido se entrega como texto legible que preserva la estructura de párrafos y los saltos de sección. Para traducción con diseño exacto, recomendamos copiar el texto traducido en tu plantilla de documento original." },
-  { q: "¿Qué tan precisa es la traducción?", a: "Las traducciones usan GPT-4o-mini que proporciona traducciones de calidad profesional. Maneja bien documentos comerciales, legales y técnicos. Para traducciones certificadas, siempre haz que un traductor humano revise el resultado." },
+  { q: "¿Qué tan precisa es la traducción?", a: "Las traducciónes usan GPT-4o-mini que proporciona traducciónes de calidad profesional. Maneja bien documentos comerciales, legales y técnicos. Para traducciónes certificadas, siempre haz que un traductor humano revise el resultado." },
   { q: "¿Qué plan necesito?", a: "Traducir PDF es una función del plan Business a $13.99/mes. Incluye todas las demás herramientas Business como Chat con PDF, Extracción Inteligente, Resumidor y más." },
   { q: "¿Puedo descargar la traducción?", a: "Sí. Puedes copiar la traducción al portapapeles o descargarla como archivo de texto con un clic." },
 ]

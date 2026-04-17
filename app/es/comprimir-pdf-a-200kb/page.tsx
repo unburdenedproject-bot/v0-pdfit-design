@@ -6,9 +6,9 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download } from "lucide-react
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF a 200KB Online — Compresion Extrema Gratis | PDF.it",
+  title: "Comprimir PDF a 200KB Online — Compresión Extrema Gratis | PDF.it",
   description:
-    "Aplica compresion extrema a tu PDF para cumplir limites de 200KB. Perfecto para fotos de pasaporte, subida de identificaciones, archivos de firma y portales estrictos — rapido, desde tu navegador, gratis.",
+    "Aplica compresión extrema a tu PDF para cumplir límites de 200KB. Perfecto para fotos de pasaporte, subida de identificaciones, archivos de firma y portales estrictos — rápido, desde tu navegador, gratis.",
   alternates: {
     canonical: "https://www.pdf.it.com/es/comprimir-pdf-a-200kb",
     languages: {
@@ -21,12 +21,12 @@ export const metadata = {
 
 export default function ComprimirPDFA200KBPage() {
   const faqs = [
-    { q: "¿Como comprimo un PDF para un limite de 200KB?", a: "Sube tu PDF a PDF.it y haz clic en Comprimir. La herramienta aplica compresion extrema para reducir la resolucion de imagenes y optimizar la estructura interna, reduciendo drasticamente el tamano del archivo. Los resultados dependen del contenido de tu PDF." },
-    { q: "¿Mi PDF quedara definitivamente debajo de 200KB despues de comprimirlo?", a: "La compresion extrema reduce drasticamente el tamano del archivo, pero los resultados dependen del contenido del PDF. Los documentos de una sola pagina con texto se comprimen muy bien. Los archivos de varias paginas o con muchas imagenes pueden necesitar dividirse primero y luego comprimir cada parte por separado." },
-    { q: "¿Que portales requieren PDFs de menos de 200KB?", a: "Muchos portales de envio de fotos de pasaporte, sistemas de subida de identificacion nacional, subidas de archivos de firma digital y formularios gubernamentales muy estrictos imponen un limite de 200KB por archivo." },
-    { q: "¿Mi PDF seguira siendo legible despues de comprimirlo a 200KB?", a: "Si. El texto se mantiene nitido y completamente legible. Las imagenes pueden perder detalle notable con este nivel de compresion, pero el documento sigue siendo utilizable para propositos de identificacion y envio." },
-    { q: "¿Puedo comprimir un PDF a 200KB desde mi celular?", a: "Si. PDF.it funciona en cualquier navegador movil. Sube tu PDF, comprimelo y descarga el archivo mas pequeno directamente en tu iPhone o Android." },
-    { q: "¿Que hago si mi PDF sigue pesando mas de 200KB despues de comprimirlo?", a: "Intenta dividir el PDF en paginas individuales con nuestra herramienta Dividir PDF y luego comprime cada pagina por separado. Tambien puedes aplanar el PDF, eliminar paginas innecesarias o convertir imagenes a escala de grises para reducir mas el tamano." },
+    { q: "¿Como comprimo un PDF para un límite de 200KB?", a: "Sube tu PDF a PDF.it y haz clic en Comprimir. La herramienta aplica compresión extrema para reducir la resolución de imágenes y optimizar la estructura interna, reduciendo drasticamente el tamaño del archivo. Los resultados dependen del contenido de tu PDF." },
+    { q: "¿Mi PDF quedara definitivamente debajo de 200KB después de comprimirlo?", a: "La compresión extrema reduce drasticamente el tamaño del archivo, pero los resultados dependen del contenido del PDF. Los documentos de una sola página con texto se comprimen muy bien. Los archivos de varias páginas o con muchas imágenes pueden necesitar dividirse primero y luego comprimir cada parte por separado." },
+    { q: "¿Que portales requieren PDFs de menos de 200KB?", a: "Muchos portales de envio de fotos de pasaporte, sistemas de subida de identificación nacional, subidas de archivos de firma digital y formularios gubernamentales muy estrictos imponen un límite de 200KB por archivo." },
+    { q: "¿Mi PDF seguira siendo legible después de comprimirlo a 200KB?", a: "Si. El texto se mantiene nitido y completamente legible. Las imágenes pueden perder detalle notable con este nivel de compresión, pero el documento sigue siendo utilizable para propósitos de identificación y envio." },
+    { q: "¿Puedo comprimir un PDF a 200KB desde mi celular?", a: "Si. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, comprimelo y descarga el archivo más pequeño directamente en tu iPhone o Android." },
+    { q: "¿Que hago si mi PDF sigue pesando más de 200KB después de comprimirlo?", a: "Intenta dividir el PDF en páginas individuales con nuestra herramienta Dividir PDF y luego comprime cada página por separado. También puedes aplanar el PDF, eliminar páginas innecesarias o convertir imágenes a escala de grises para reducir más el tamaño." },
   ]
 
   return (
@@ -54,11 +54,11 @@ export default function ComprimirPDFA200KBPage() {
               <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6" style={{ background: "linear-gradient(135deg, #1a1f5e, #252A6A)", boxShadow: "0 0 30px rgba(20, 216, 196, 0.35), 0 4px 12px rgba(232,129,58,0.1)" }}>
                 <Compress className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF para Limites de 200KB</h1>
-              <p className="text-xl text-slate-300 mb-8">Aplica compresion extrema para reducir drasticamente el tamano de tu PDF en portales con limites de 200KB. Perfecto para fotos de pasaporte, subida de identificaciones, archivos de firma y portales muy estrictos.</p>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF para Límites de 200KB</h1>
+              <p className="text-xl text-slate-300 mb-8">Aplica compresión extrema para reducir drasticamente el tamaño de tu PDF en portales con límites de 200KB. Perfecto para fotos de pasaporte, subida de identificaciones, archivos de firma y portales muy estrictos.</p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compresion Extrema</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesion</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compresión Extrema</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesión</span></div>
                 <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sin Registro</span></div>
               </div>
             </div>
@@ -68,12 +68,12 @@ export default function ComprimirPDFA200KBPage() {
         {/* Intro */}
         <section className="py-10 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-            <p className="text-lg text-slate-600 leading-relaxed">Algunas plataformas imponen un limite muy estricto de 200KB. Los portales de fotos de pasaporte, sistemas de envio de identificacion nacional, subidas de firma digital y formularios gubernamentales estrictos requieren archivos extremadamente pequenos. PDF.it aplica compresion extrema para reducir drasticamente el tamano de tu PDF y ayudarte a cumplir estos requisitos de subida tan exigentes.</p>
+            <p className="text-lg text-slate-600 leading-relaxed">Algunas plataformas imponen un límite muy estricto de 200KB. Los portales de fotos de pasaporte, sistemas de envio de identificación nacional, subidas de firma digital y formularios gubernamentales estrictos requieren archivos extremadamente pequeños. PDF.it aplica compresión extrema para reducir drasticamente el tamaño de tu PDF y ayudarte a cumplir estos requisitos de subida tan exigentes.</p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
-              <li className="flex items-center gap-2">✓ Compresion extrema para maxima reduccion de tamano</li>
-              <li className="flex items-center gap-2">✓ Perfecto para pasaporte, identificacion y firmas</li>
+              <li className="flex items-center gap-2">✓ Compresión extrema para máxima reducción de tamaño</li>
+              <li className="flex items-center gap-2">✓ Perfecto para pasaporte, identificación y firmas</li>
               <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li className="flex items-center gap-2">✓ Sin instalacion — comprime PDFs en tu navegador</li>
+              <li className="flex items-center gap-2">✓ Sin instalación — comprime PDFs en tu navegador</li>
             </ul>
           </div>
         </section>
@@ -85,9 +85,9 @@ export default function ComprimirPDFA200KBPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { title: "Fotos de Pasaporte e Identificacion", desc: "Los portales de renovacion de pasaporte y sistemas de subida de identificacion nacional frecuentemente requieren archivos de menos de 200KB. Comprime tu foto de pasaporte escaneada o PDF de identificacion para cumplir estos requisitos estrictos." },
-                { title: "Archivos de Firma Digital", desc: "Muchas plataformas requieren archivos de firma de menos de 200KB para la firma electronica de documentos. Comprime tu firma escaneada en PDF para cumplir los limites de tamano manteniendola legible." },
-                { title: "Portales Gubernamentales Estrictos", desc: "Algunos sistemas gubernamentales imponen limites de subida muy bajos de 200KB por documento. Comprime tus formularios, certificados y documentos de soporte para enviarlos sin errores." },
+                { title: "Fotos de Pasaporte e Identificación", desc: "Los portales de renovacion de pasaporte y sistemas de subida de identificación nacional frecuentemente requieren archivos de menos de 200KB. Comprime tu foto de pasaporte escaneada o PDF de identificación para cumplir estos requisitos estrictos." },
+                { title: "Archivos de Firma Digital", desc: "Muchas plataformas requieren archivos de firma de menos de 200KB para la firma electrónica de documentos. Comprime tu firma escaneada en PDF para cumplir los límites de tamaño manteniendola legible." },
+                { title: "Portales Gubernamentales Estrictos", desc: "Algunos sistemas gubernamentales imponen límites de subida muy bajos de 200KB por documento. Comprime tus formularios, certificados y documentos de soporte para enviarlos sin errores." },
               ].map((feature) => (
                 <div key={feature.title} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}>
                   <div className="rounded-[11px] p-6 h-full" style={{ background: `radial-gradient(ellipse 70% 60% at 95% 90%, rgba(232,129,58,0.06) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 5% 10%, rgba(20,216,196,0.04) 0%, transparent 60%), rgba(255, 255, 255, 0.07)`, backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "inset 0 -1px 1px rgba(232,129,58,0.08), 0 2px 8px rgba(0,0,0,0.3)" }}>
@@ -103,11 +103,11 @@ export default function ComprimirPDFA200KBPage() {
         {/* How It Works */}
         <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Comprimir un PDF para Limites de 200KB</h2>
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Comprimir un PDF para Límites de 200KB</h2>
             <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
               {[
                 { num: "1", title: "Sube tu PDF", desc: "Arrastra y suelta o haz clic para elegir un archivo" },
-                { num: "2", title: "Haz clic en Comprimir", desc: "La compresion extrema se aplica automaticamente" },
+                { num: "2", title: "Haz clic en Comprimir", desc: "La compresión extrema se aplica automáticamente" },
                 { num: "3", title: "Descarga tu PDF", desc: "Obtiene tu archivo comprimido al instante" },
               ].map((step) => (
                 <div key={step.num} className="flex-1">
@@ -128,9 +128,9 @@ export default function ComprimirPDFA200KBPage() {
             <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "Comprimir a 100KB", href: "/es/comprimir-pdf-a-100kb", desc: "Para limites de 100KB" },
-                { name: "Comprimir a 500KB", href: "/es/comprimir-pdf-a-500kb", desc: "Para limites de 500KB" },
-                { name: "Comprimir a 1MB", href: "/es/comprimir-pdf-a-1mb", desc: "Para limites de 1MB" },
+                { name: "Comprimir a 100KB", href: "/es/comprimir-pdf-a-100kb", desc: "Para límites de 100KB" },
+                { name: "Comprimir a 500KB", href: "/es/comprimir-pdf-a-500kb", desc: "Para límites de 500KB" },
+                { name: "Comprimir a 1MB", href: "/es/comprimir-pdf-a-1mb", desc: "Para límites de 1MB" },
                 { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Divide si sigue grande" },
               ].map((tool) => (
                 <div key={tool.href} className="rounded-xl p-[1px]" style={{ background: "linear-gradient(135deg, rgba(20,216,196,0.4), rgba(107,124,255,0.2), rgba(232,129,58,0.25), rgba(20,216,196,0.1))" }}>

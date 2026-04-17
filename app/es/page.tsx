@@ -63,7 +63,7 @@ const categories = [
       { name: "PDF a Word", description: "Convierte PDF a un documento Word editable.", icon: FileText, href: "/es/pdf-a-word", tier: "PRO" as const },
       { name: "PDF a Excel", description: "Extrae tablas de PDF a una hoja de cálculo.", icon: FileSpreadsheet, href: "/es/pdf-a-excel", tier: "PRO" as const },
       { name: "PDF a PowerPoint", description: "Convierte páginas PDF en diapositivas.", icon: Presentation, href: "/es/pdf-a-powerpoint", tier: "PRO" as const },
-      { name: "Extraer Imágenes", description: "Extrae fotos, logos y gráficos de un PDF.", icon: ImageDown, href: "/es/extraer-imagenes-de-pdf", tier: "FREE" as const },
+      { name: "Extraer Imágenes", description: "Extrae fotos, logos y gráficos de un PDF.", icon: ImageDown, href: "/es/extraer-imágenes-de-pdf", tier: "FREE" as const },
     ],
   },
   {
@@ -75,7 +75,7 @@ const categories = [
       { name: "PowerPoint a PDF", description: "Convierte presentaciones a PDF.", icon: Presentation, href: "/es/powerpoint-a-pdf", tier: "PRO" as const },
       { name: "JPG a PDF", description: "Convierte imágenes JPG a documentos PDF.", icon: Image, href: "/es/jpg-a-pdf", tier: "FREE" as const },
       { name: "PNG a PDF", description: "Convierte imágenes PNG a documentos PDF.", icon: Image, href: "/es/png-a-pdf", tier: "FREE" as const },
-      { name: "URL a PDF", description: "Convierte cualquier pagina web en un PDF.", icon: Globe, href: "/es/url-a-pdf", tier: "PRO" as const },
+      { name: "URL a PDF", description: "Convierte cualquier página web en un PDF.", icon: Globe, href: "/es/url-a-pdf", tier: "PRO" as const },
     ],
   },
   {
@@ -113,10 +113,10 @@ const categories = [
     description: "Crea recursos útiles al instante",
     tools: [
       { name: "Generador de QR", description: "Genera códigos QR desde cualquier URL o texto.", icon: QrCode, href: "/es/codigo-qr", tier: "PRO" as const },
-      { name: "Optimiza Tu Curriculum", description: "Sube tu curriculum, recibe una puntuacion y la IA lo arregla.", icon: Target, href: "/es/optimizador-ats", tier: "PRO" as const, hasAI: true },
-      { name: "Crear Curriculum", description: "Construye un curriculum profesional desde cero. Descarga en Word.", icon: FilePlus, href: "/es/crear-curriculum", tier: "PRO" as const, hasAI: true },
+      { name: "Optimiza Tu Currículum", description: "Sube tu currículum, recibe una puntuacion y la IA lo arregla.", icon: Target, href: "/es/optimizador-ats", tier: "PRO" as const, hasAI: true },
+      { name: "Crear Currículum", description: "Construye un currículum profesional desde cero. Descarga en Word.", icon: FilePlus, href: "/es/crear-curriculum", tier: "PRO" as const, hasAI: true },
       { name: "Chat con PDF", description: "Haz preguntas y obtén respuestas con IA de cualquier documento PDF.", icon: MessageCircle, href: "/es/chat-con-pdf", tier: "BUSINESS" as const, hasAI: true },
-      { name: "Extracción Inteligente", description: "Extrae automáticamente nombres, fechas, montos y datos clave de cualquier PDF.", icon: FileSearch, href: "/es/extraccion-inteligente", tier: "BUSINESS" as const, hasAI: true },
+      { name: "Extracción Inteligente", description: "Extrae automáticamente nombres, fechas, montos y datos clave de cualquier PDF.", icon: FileSearch, href: "/es/extracción-inteligente", tier: "BUSINESS" as const, hasAI: true },
       { name: "Resumidor de PDF", description: "Resume documentos largos en segundos. Elige longitud e idioma.", icon: BookOpen, href: "/es/resumidor-pdf", tier: "BUSINESS" as const, hasAI: true },
       { name: "Generador de Preguntas", description: "Genera preguntas de estudio de cualquier PDF. Opción múltiple, respuesta corta y verdadero/falso.", icon: HelpCircle, href: "/es/generador-preguntas", tier: "PRO" as const, hasAI: true },
       { name: "Traducir PDF", description: "Traduce documentos PDF completos a 13 idiomas con IA.", icon: Languages, href: "/es/traducir-pdf", tier: "BUSINESS" as const, hasAI: true },
@@ -126,13 +126,13 @@ const categories = [
     name: "Herramientas Business y Enterprise",
     description: "Herramientas avanzadas para profesionales, equipos, bufetes y laboratorios",
     tools: [
-      { name: "Automatización", description: "Encadena varias herramientas PDF en un flujo automático.", icon: Repeat, href: "/es/automatizacion", tier: "BUSINESS" as const },
-      { name: "Extracción de Tablas", description: "Extrae tablas de PDFs directamente a Excel.", icon: FileSpreadsheet, href: "/es/extraccion-de-tablas", tier: "BUSINESS" as const },
+      { name: "Automatización", description: "Encadena varias herramientas PDF en un flujo automático.", icon: Repeat, href: "/es/automatización", tier: "BUSINESS" as const },
+      { name: "Extracción de Tablas", description: "Extrae tablas de PDFs directamente a Excel.", icon: FileSpreadsheet, href: "/es/extracción-de-tablas", tier: "BUSINESS" as const },
       { name: "Comparar PDF", description: "Compara dos PDFs lado a lado y resalta diferencias.", icon: ArrowLeftRight, href: "/es/comparar-pdf", tier: "BUSINESS" as const },
-      { name: "Firma Electrónica", description: "Agrega firmas electrónicas legales a PDFs.", icon: PenTool, href: "/es/firma-electronica", tier: "BUSINESS" as const },
+      { name: "Firma Electrónica", description: "Agrega firmas electrónicas legales a PDFs.", icon: PenTool, href: "/es/firma-electrónica", tier: "BUSINESS" as const },
       { name: "Redacción PDF", description: "Elimina permanentemente texto sensible de PDFs.", icon: Shield, href: "/es/redaccion-pdf", tier: "BUSINESS" as const },
-      { name: "Plantillas de Flujos", description: "Flujos predefinidos para documentos legales, contables y de laboratorio.", icon: Layers, href: "/es/automatizacion", tier: "ENTERPRISE" as const },
-      { name: "Extracción de Alto Volumen", description: "Extrae hasta 2,000 páginas de tablas al mes a Excel.", icon: FileSpreadsheet, href: "/es/extraccion-de-tablas", tier: "ENTERPRISE" as const },
+      { name: "Plantillas de Flujos", description: "Flujos predefinidos para documentos legales, contables y de laboratorio.", icon: Layers, href: "/es/automatización", tier: "ENTERPRISE" as const },
+      { name: "Extracción de Alto Volumen", description: "Extrae hasta 2,000 páginas de tablas al mes a Excel.", icon: FileSpreadsheet, href: "/es/extracción-de-tablas", tier: "ENTERPRISE" as const },
     ],
   },
 ]
@@ -245,10 +245,10 @@ export default function HomePageEs() {
                   }}
                 >
                   <h3 className="text-xl font-black text-white mb-2 text-balance">
-                    ¿Necesitas conversiones ilimitadas o archivos más grandes?
+                    ¿Necesitas conversiónes ilimitadas o archivos más grandes?
                   </h3>
                   <p className="text-slate-400 text-sm mb-5 max-w-lg mx-auto leading-relaxed">
-                    Pasa a Pro para conversiones ilimitadas, procesamiento por lotes y todas las herramientas — $3.99/mes. ¿Necesitas firma electrónica y automatización? Prueba Business a $13.99/mes.
+                    Pasa a Pro para conversiónes ilimitadas, procesamiento por lotes y todas las herramientas — $3.99/mes. ¿Necesitas firma electrónica y automatización? Prueba Business a $13.99/mes.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <Link
@@ -301,7 +301,7 @@ export default function HomePageEs() {
                 { icon: Shield, label: "Seguridad", value: "HTTPS", description: "Transferencia cifrada con TLS" },
                 { icon: Zap, label: "Velocidad", value: "Rápido", description: "Segundos para la mayoría de archivos" },
                 { icon: Globe, label: "Límite Gratis", value: "25MB", description: "200MB Pro · 1GB Business" },
-                { icon: Gift, label: "Conversiones Gratis", value: "10/día", description: "Ilimitadas con Pro" },
+                { icon: Gift, label: "Conversiónes Gratis", value: "10/día", description: "Ilimitadas con Pro" },
               ].map((stat, index) => (
                 <div key={index} className="text-center">
                   <div
@@ -336,7 +336,7 @@ export default function HomePageEs() {
                 </div>
                 <div>
                   <div className="text-2xl font-black text-white">3 Idiomas</div>
-                  <div className="text-sm text-slate-400">Ingles, espanol, portugues</div>
+                  <div className="text-sm text-slate-400">Inglés, español, portugués</div>
                 </div>
                 <div>
                   <div className="text-2xl font-black text-white">4 Planes</div>
@@ -346,7 +346,7 @@ export default function HomePageEs() {
               <div className="mt-4 flex flex-wrap justify-center gap-3 text-xs text-slate-400">
                 <span className="px-3 py-1.5 rounded-full" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>Equipos legales</span>
                 <span className="px-3 py-1.5 rounded-full" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>Profesionales contables</span>
-                <span className="px-3 py-1.5 rounded-full" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>Laboratorios de investigacion</span>
+                <span className="px-3 py-1.5 rounded-full" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>Laboratorios de investigación</span>
                 <span className="px-3 py-1.5 rounded-full" style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>Estudiantes en todo el mundo</span>
               </div>
             </div>
@@ -362,9 +362,9 @@ export default function HomePageEs() {
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
               {[
-                { icon: Gift, title: "Gratis para Empezar", description: "10 conversiones gratis al día. Sin tarjeta de crédito." },
+                { icon: Gift, title: "Gratis para Empezar", description: "10 conversiónes gratis al día. Sin tarjeta de crédito." },
                 { icon: Zap, title: "Procesamiento Rápido", description: "Convierte PDFs en segundos — sin instalar nada." },
-                { icon: Crown, title: "Funciones Pro", description: "Conversiones ilimitadas, archivos más grandes y acceso a todas las herramientas." },
+                { icon: Crown, title: "Funciones Pro", description: "Conversiónes ilimitadas, archivos más grandes y acceso a todas las herramientas." },
                 { icon: Award, title: "Alta Calidad", description: "Diseñado para mantener texto claro, diseño limpio y formato intacto." },
               ].map((feature, index) => (
                 <div key={index} className="text-center">
@@ -394,7 +394,7 @@ export default function HomePageEs() {
               >
                 <h3 className="text-xl font-black text-white mb-2 text-balance">¿Listo para convertir tu primer archivo?</h3>
                 <p className="text-slate-400 text-sm mb-5 max-w-xl mx-auto leading-relaxed">
-                  10 conversiones gratis al día. Sin cuenta necesaria para herramientas gratuitas. Actualiza cuando quieras.
+                  10 conversiónes gratis al día. Sin cuenta necesaria para herramientas gratuitas. Actualiza cuando quieras.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <a
@@ -471,12 +471,12 @@ export default function HomePageEs() {
 
               <div className="space-y-3">
                 {[
-                  { q: "¿PDF.it es gratis?", a: "Sí. PDF.it ofrece un plan gratuito con 10 conversiones al día y archivos hasta 25MB. No necesitas cuenta para las herramientas gratuitas. Actualiza a Pro ($3.99/mes) para conversiones ilimitadas, todas las herramientas y archivos hasta 200MB." },
+                  { q: "¿PDF.it es gratis?", a: "Sí. PDF.it ofrece un plan gratuito con 10 conversiónes al día y archivos hasta 25MB. No necesitas cuenta para las herramientas gratuitas. Actualiza a Pro ($3.99/mes) para conversiónes ilimitadas, todas las herramientas y archivos hasta 200MB." },
                   { q: "¿Necesito crear una cuenta?", a: "No necesitas cuenta para usar las herramientas gratuitas — solo sube tu archivo y convierte. Se necesita cuenta para funciones Pro y administrar tu suscripción." },
                   { q: "¿Es seguro subir mis archivos?", a: "Sí. Todas las transferencias usan cifrado SSL/HTTPS. Los archivos se procesan de forma segura y se eliminan automáticamente cuando termina tu sesión. No almacenamos, revisamos ni compartimos tus documentos." },
                   { q: "¿Qué formatos de archivo soportan?", a: "PDF.it soporta PDF, JPG, PNG, TXT y formatos de Office (Word, Excel, PowerPoint). Las herramientas incluyen convertir, comprimir, unir, dividir, rotar, proteger, desbloquear, marca de agua y OCR." },
                   { q: "¿Cuál es el tamaño máximo de archivo?", a: "Las cuentas gratuitas pueden subir archivos hasta 25MB. Las cuentas Pro pueden subir hasta 200MB. Las cuentas Business pueden subir hasta 1GB." },
-                  { q: "¿Qué incluye el plan Pro?", a: "Pro ($3.99/mes) incluye conversiones ilimitadas, todas las herramientas PDF (incluyendo OCR, Marca de Agua y Office a PDF), y archivos hasta 200MB. Business ($13.99/mes) agrega firma electrónica, automatización y más." },
+                  { q: "¿Qué incluye el plan Pro?", a: "Pro ($3.99/mes) incluye conversiónes ilimitadas, todas las herramientas PDF (incluyendo OCR, Marca de Agua y Office a PDF), y archivos hasta 200MB. Business ($13.99/mes) agrega firma electrónica, automatización y más." },
                   { q: "¿Funciona en celular?", a: "Sí. PDF.it funciona en navegadores modernos incluyendo Chrome, Firefox, Safari y Edge en computadora, tablet y celular." },
                   { q: "¿Cómo puedo obtener ayuda?", a: "Visita nuestra página de Contacto o escríbenos a contact@pdf.it.com. Respondemos en menos de un día hábil." },
                 ].map((faq, i) => (

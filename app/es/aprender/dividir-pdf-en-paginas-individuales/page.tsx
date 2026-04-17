@@ -14,7 +14,7 @@ export const metadata = {
 const faqSchema = {
   "@context": "https://schema.org", "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "¿Cómo divido un PDF en páginas individuales?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Dividir PDF de PDF.it, selecciona la opción de dividir cada página en su propio archivo, y descarga un ZIP que contiene todos los archivos de páginas individuales." } },
+    { "@type": "Question", "name": "¿Cómo divido un PDF en páginas individuales?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Dividir PDF de PDF.it, seleccióna la opción de dividir cada página en su propio archivo, y descarga un ZIP que contiene todos los archivos de páginas individuales." } },
     { "@type": "Question", "name": "¿Puedo dividir un PDF en un archivo por página gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it te permite dividir PDFs gratis con archivos de hasta 25MB. Obtienes 3 operaciones gratuitas sin registrarte, y 10 por día con una cuenta gratuita." } },
     { "@type": "Question", "name": "¿En qué formato se guardan las páginas individuales?", "acceptedAnswer": { "@type": "Answer", "text": "Cada página se guarda como su propio archivo PDF. Si necesitas imágenes en su lugar, puedes convertir las páginas divididas a JPG o PNG usando las herramientas de conversión de PDF.it." } },
     { "@type": "Question", "name": "¿Puedo dividir un PDF de 100 páginas en 100 archivos separados?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. PDF.it puede dividir cualquier PDF en páginas individuales sin importar el conteo de páginas. Los archivos resultantes se empaquetan en una descarga ZIP para fácil manejo." } },
@@ -85,7 +85,7 @@ export default function DividirPDFEnPaginasIndividualesPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#14D8C4] font-bold mt-0.5">5.</span>
-                  <span><strong>Procesar páginas por separado.</strong> Cuando necesitas aplicar diferentes ediciones a diferentes páginas — rotar algunas, comprimir otras — dividir primero hace cada operación más fácil.</span>
+                  <span><strong>Procesar páginas por separado.</strong> Cuando necesitas aplicar diferentes ediciónes a diferentes páginas — rotar algunas, comprimir otras — dividir primero hace cada operación más fácil.</span>
                 </li>
               </ul>
             </section>
@@ -119,7 +119,7 @@ export default function DividirPDFEnPaginasIndividualesPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Recombinar páginas específicas</h3>
-                  <p className="text-slate-600">Después de dividir, podrías querer reensamblar algunas páginas en un orden diferente. Usa <Link href="/es/unir-pdf" className="text-[#14D8C4] hover:underline">Unir PDF</Link> para combinar archivos de páginas seleccionadas en un nuevo documento con un orden personalizado.</p>
+                  <p className="text-slate-600">Después de dividir, podrías querer reensamblar algunas páginas en un orden diferente. Usa <Link href="/es/unir-pdf" className="text-[#14D8C4] hover:underline">Unir PDF</Link> para combinar archivos de páginas selecciónadas en un nuevo documento con un orden personalizado.</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">Comprimir páginas individuales</h3>
@@ -147,7 +147,7 @@ export default function DividirPDFEnPaginasIndividualesPage() {
               <h2 className="text-2xl font-black text-slate-900 mb-4">Cuando No Necesitas Cada Página Separada</h2>
               <p className="text-slate-600 mb-4">Dividir en páginas individuales es la opción más granular, pero a veces un enfoque diferente es más práctico:</p>
               <ul className="space-y-2 text-slate-700">
-                <li>&#10003; <strong>¿Necesitas solo unas páginas específicas?</strong> Usa el enfoque de <Link href="/es/aprender/extraer-paginas-de-pdf-guia" className="text-[#14D8C4] hover:underline">extraer páginas</Link> — selecciona solo las páginas que necesitas y obtén un solo PDF.</li>
+                <li>&#10003; <strong>¿Necesitas solo unas páginas específicas?</strong> Usa el enfoque de <Link href="/es/aprender/extraer-paginas-de-pdf-guia" className="text-[#14D8C4] hover:underline">extraer páginas</Link> — seleccióna solo las páginas que necesitas y obtén un solo PDF.</li>
                 <li>&#10003; <strong>¿Necesitas dividir en capítulos o secciones?</strong> Usa rangos de páginas (ej., 1-10, 11-25, 26-40) en vez de páginas individuales. Esto mantiene el contenido relacionado junto.</li>
                 <li>&#10003; <strong>¿Necesitas archivos más pequeños para email?</strong> Consulta nuestra guía sobre <Link href="/es/aprender/dividir-pdf-para-email" className="text-[#14D8C4] hover:underline">dividir PDFs para email</Link> para el mejor enfoque para cumplir con los límites de adjuntos.</li>
                 <li>&#10003; <strong>¿Necesitas imágenes, no PDFs?</strong> Salta la división por completo y ve directo a <Link href="/es/pdf-a-jpg" className="text-[#14D8C4] hover:underline">PDF a JPG</Link> — convierte cada página a una imagen en un solo paso.</li>
@@ -191,7 +191,7 @@ export default function DividirPDFEnPaginasIndividualesPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo divido un PDF en páginas individuales?", a: "Sube tu PDF a la herramienta Dividir PDF de PDF.it, selecciona la opción de dividir cada página en su propio archivo, y descarga un ZIP que contiene todos los archivos de páginas individuales." },
+                { q: "¿Cómo divido un PDF en páginas individuales?", a: "Sube tu PDF a la herramienta Dividir PDF de PDF.it, seleccióna la opción de dividir cada página en su propio archivo, y descarga un ZIP que contiene todos los archivos de páginas individuales." },
                 { q: "¿Puedo dividir un PDF en un archivo por página gratis?", a: "Sí. PDF.it te permite dividir PDFs gratis con archivos de hasta 25MB. Obtienes 3 operaciones gratuitas sin registrarte, y 10 por día con una cuenta gratuita." },
                 { q: "¿En qué formato se guardan las páginas individuales?", a: "Cada página se guarda como su propio archivo PDF. Si necesitas imágenes en su lugar, puedes convertir las páginas divididas a JPG o PNG usando las herramientas de conversión de PDF.it." },
                 { q: "¿Puedo dividir un PDF de 100 páginas en 100 archivos separados?", a: "Sí. PDF.it puede dividir cualquier PDF en páginas individuales sin importar el conteo de páginas. Los archivos resultantes se empaquetan en una descarga ZIP para fácil manejo." },

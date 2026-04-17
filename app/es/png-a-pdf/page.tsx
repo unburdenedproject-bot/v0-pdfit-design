@@ -6,9 +6,9 @@ import { ImageIcon, Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "PNG a PDF — Convierte Imagenes PNG a PDF en Linea | PDF.it",
+  title: "PNG a PDF — Convierte Imágenes PNG a PDF en Línea | PDF.it",
   description:
-    "Convierte imagenes PNG a documentos PDF en linea gratis. Sube una o varias imagenes y obten un PDF profesional al instante. Sin software que instalar.",
+    "Convierte imágenes PNG a documentos PDF en línea gratis. Sube una o varias imágenes y obten un PDF profesional al instante. Sin software que instalar.",
   alternates: {
     canonical: "https://pdf.it.com/es/png-a-pdf",
     languages: {
@@ -53,12 +53,12 @@ export default function PngToPdfPageEs() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convertir PNG a PDF</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Convierte imagenes PNG a documentos PDF profesionales — sube una o varias imagenes y descarga al instante. Calidad completa preservada.
+                Convierte imágenes PNG a documentos PDF profesionales — sube una o varias imágenes y descarga al instante. Calidad completa preservada.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2">
                   <Zap className="h-4 w-4 text-[#14D8C4]" />
-                  <span>Multiples Imagenes</span>
+                  <span>Múltiples Imágenes</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Shield className="h-4 w-4 text-[#14D8C4]" />
@@ -66,7 +66,7 @@ export default function PngToPdfPageEs() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Download className="h-4 w-4 text-[#14D8C4]" />
-                  <span>Conversion Instantanea</span>
+                  <span>Conversión Instantanea</span>
                 </div>
               </div>
             </div>
@@ -77,13 +77,13 @@ export default function PngToPdfPageEs() {
         <section className="py-10 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <p className="text-lg text-slate-600 leading-relaxed">
-              Convierte tus imagenes PNG a PDF con PDF.it. PNG es ideal para capturas de pantalla, exportaciones de diseno e imagenes con transparencia — pero cuando necesitas compartir, imprimir o enviar documentos profesionalmente, PDF es el formato estandar que funciona en todas partes.
+              Convierte tus imágenes PNG a PDF con PDF.it. PNG es ideal para capturas de pantalla, exportaciones de diseño e imágenes con transparencia — pero cuando necesitas compartir, imprimir o enviar documentos profesionalmente, PDF es el formato estándar que funciona en todas partes.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
-              <li className="flex items-center gap-2">✓ Convierte una o varias imagenes PNG a PDF</li>
-              <li className="flex items-center gap-2">✓ Calidad y resolucion completa preservada</li>
+              <li className="flex items-center gap-2">✓ Convierte una o varias imágenes PNG a PDF</li>
+              <li className="flex items-center gap-2">✓ Calidad y resolución completa preservada</li>
               <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li className="flex items-center gap-2">✓ Sin instalacion — funciona desde tu navegador</li>
+              <li className="flex items-center gap-2">✓ Sin instalación — funciona desde tu navegador</li>
               <li className="flex items-center gap-2">✓ Areas transparentes se renderizan como blanco en el PDF</li>
             </ul>
           </div>
@@ -110,9 +110,9 @@ export default function PngToPdfPageEs() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { title: "Capturas de Pantalla y Disenos", desc: "Las capturas de pantalla y mockups de diseno suelen guardarse como PNG. Conviertelos a PDF para documentacion, reportes de errores, presentaciones o portafolios." },
-                { title: "Envia Documentos Profesionalmente", desc: "Muchos portales e instituciones requieren formato PDF. Convierte tus imagenes PNG de certificados, formularios o documentos escaneados en PDFs para enviarlos facilmente." },
-                { title: "Listo para Imprimir desde Cualquier PNG", desc: "PDF garantiza formato consistente en todos los dispositivos e impresoras. Convierte infografias, graficos y material web a PDF para impresion limpia y profesional." },
+                { title: "Capturas de Pantalla y Diseños", desc: "Las capturas de pantalla y mockups de diseño suelen guardarse como PNG. Conviertelos a PDF para documentación, reportes de errores, presentaciones o portafolios." },
+                { title: "Envia Documentos Profesionalmente", desc: "Muchos portales e instituciones requieren formato PDF. Convierte tus imágenes PNG de certificados, formularios o documentos escaneados en PDFs para enviarlos fácilmente." },
+                { title: "Listo para Imprimir desde Cualquier PNG", desc: "PDF garantiza formato consistente en todos los dispositivos e impresoras. Convierte infografias, gráficos y material web a PDF para impresión limpia y profesional." },
               ].map((feature) => (
                 <div
                   key={feature.title}
@@ -149,7 +149,7 @@ export default function PngToPdfPageEs() {
             <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Convertir PNG a PDF</h2>
             <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
               {[
-                { num: "1", title: "Sube tus imagenes PNG", desc: "Arrastra o haz clic para elegir archivos" },
+                { num: "1", title: "Sube tus imágenes PNG", desc: "Arrastra o haz clic para elegir archivos" },
                 { num: "2", title: "Haz clic en Convertir", desc: "Cada imagen se convierte en PDF en segundos" },
                 { num: "3", title: "Descarga tus PDFs", desc: "Obtenlos individualmente o como ZIP" },
               ].map((step) => (
@@ -178,10 +178,10 @@ export default function PngToPdfPageEs() {
             <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "JPG a PDF", href: "/es/jpg-a-pdf", desc: "Convierte imagenes JPG a PDF" },
-                { name: "PDF a PNG", href: "/es/pdf-a-png", desc: "Convierte paginas PDF a imagenes" },
+                { name: "JPG a PDF", href: "/es/jpg-a-pdf", desc: "Convierte imágenes JPG a PDF" },
+                { name: "PDF a PNG", href: "/es/pdf-a-png", desc: "Convierte páginas PDF a imágenes" },
                 { name: "Unir PDF", href: "/es/unir-pdf", desc: "Combina varios PDFs en uno" },
-                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamano del PDF" },
+                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamaño del PDF" },
               ].map((tool) => (
                 <div
                   key={tool.href}
@@ -230,12 +230,12 @@ export default function PngToPdfPageEs() {
             <h2 className="text-3xl font-black text-white mb-10 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-4">
               {[
-                { q: "¿Como convierto un PNG a PDF?", a: "Sube tu imagen PNG, haz clic en Convertir a PDF y descarga. Puedes subir varias imagenes y cada una se convertira en su propio PDF." },
-                { q: "¿Puedo convertir varias imagenes PNG a la vez?", a: "Si. Selecciona varios archivos PNG y cada uno se convertira en un PDF separado. Descargalos individualmente o como un archivo ZIP." },
-                { q: "¿Se mantiene la transparencia?", a: "Las imagenes PNG con fondo transparente se convierten a PDF con fondo blanco, ya que PDF no soporta transparencia de la misma manera que PNG." },
-                { q: "¿La conversion reduce la calidad?", a: "No. PDF.it preserva la resolucion y calidad completa de tu imagen PNG en el PDF resultante." },
-                { q: "¿Es seguro subir mis imagenes?", a: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." },
-                { q: "¿Cual es el tamano maximo de archivo?", a: "Los usuarios gratuitos pueden subir hasta 25MB por imagen. Los suscriptores Pro y Business pueden subir hasta 200MB por imagen." },
+                { q: "¿Como convierto un PNG a PDF?", a: "Sube tu imagen PNG, haz clic en Convertir a PDF y descarga. Puedes subir varias imágenes y cada una se convertira en su propio PDF." },
+                { q: "¿Puedo convertir varias imágenes PNG a la vez?", a: "Si. Selecciona varios archivos PNG y cada uno se convertira en un PDF separado. Descargalos individualmente o como un archivo ZIP." },
+                { q: "¿Se mantiene la transparencia?", a: "Las imágenes PNG con fondo transparente se convierten a PDF con fondo blanco, ya que PDF no soporta transparencia de la misma manera que PNG." },
+                { q: "¿La conversión reduce la calidad?", a: "No. PDF.it preserva la resolución y calidad completa de tu imagen PNG en el PDF resultante." },
+                { q: "¿Es seguro subir mis imágenes?", a: "Si. Todas las transferencias están cifradas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." },
+                { q: "¿Cual es el tamaño máximo de archivo?", a: "Los usuarios gratuitos pueden subir hasta 25MB por imagen. Los suscriptores Pro y Business pueden subir hasta 200MB por imagen." },
               ].map((faq, i) => (
                 <div
                   key={i}
@@ -258,12 +258,12 @@ export default function PngToPdfPageEs() {
           "@context": "https://schema.org",
           "@type": "FAQPage",
           "mainEntity": [
-            { "@type": "Question", "name": "¿Como convierto un PNG a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu imagen PNG, haz clic en Convertir a PDF y descarga. Puedes subir varias imagenes y cada una se convertira en su propio PDF." } },
-            { "@type": "Question", "name": "¿Puedo convertir varias imagenes PNG a la vez?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Selecciona varios archivos PNG y cada uno se convertira en un PDF separado. Descargalos individualmente o como un archivo ZIP." } },
-            { "@type": "Question", "name": "¿Se mantiene la transparencia?", "acceptedAnswer": { "@type": "Answer", "text": "Las imagenes PNG con fondo transparente se convierten a PDF con fondo blanco, ya que PDF no soporta transparencia de la misma manera que PNG." } },
-            { "@type": "Question", "name": "¿La conversion reduce la calidad?", "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it preserva la resolucion y calidad completa de tu imagen PNG en el PDF resultante." } },
-            { "@type": "Question", "name": "¿Es seguro subir mis imagenes?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." } },
-            { "@type": "Question", "name": "¿Cual es el tamano maximo de archivo?", "acceptedAnswer": { "@type": "Answer", "text": "Los usuarios gratuitos pueden subir hasta 25MB por imagen. Los suscriptores Pro y Business pueden subir hasta 200MB por imagen." } }
+            { "@type": "Question", "name": "¿Como convierto un PNG a PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu imagen PNG, haz clic en Convertir a PDF y descarga. Puedes subir varias imágenes y cada una se convertira en su propio PDF." } },
+            { "@type": "Question", "name": "¿Puedo convertir varias imágenes PNG a la vez?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Selecciona varios archivos PNG y cada uno se convertira en un PDF separado. Descargalos individualmente o como un archivo ZIP." } },
+            { "@type": "Question", "name": "¿Se mantiene la transparencia?", "acceptedAnswer": { "@type": "Answer", "text": "Las imágenes PNG con fondo transparente se convierten a PDF con fondo blanco, ya que PDF no soporta transparencia de la misma manera que PNG." } },
+            { "@type": "Question", "name": "¿La conversión reduce la calidad?", "acceptedAnswer": { "@type": "Answer", "text": "No. PDF.it preserva la resolución y calidad completa de tu imagen PNG en el PDF resultante." } },
+            { "@type": "Question", "name": "¿Es seguro subir mis imágenes?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Todas las transferencias están cifradas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." } },
+            { "@type": "Question", "name": "¿Cual es el tamaño máximo de archivo?", "acceptedAnswer": { "@type": "Answer", "text": "Los usuarios gratuitos pueden subir hasta 25MB por imagen. Los suscriptores Pro y Business pueden subir hasta 200MB por imagen." } }
           ]
         })}} />
       </main>

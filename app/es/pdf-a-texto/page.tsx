@@ -27,7 +27,7 @@ const faqSchema = {
       name: "¿Puedo convertir cualquier PDF a un archivo TXT?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "La mayoria de los PDFs con texto se convierten bien. Si tu PDF es escaneado (solo imagen), necesitaras OCR para extraer el texto.",
+        text: "La mayoría de los PDFs con texto se convierten bien. Si tu PDF es escaneado (solo imagen), necesitaras OCR para extraer el texto.",
       },
     },
     {
@@ -35,15 +35,15 @@ const faqSchema = {
       name: "¿PDF.it mantiene el formato del PDF?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "TXT es texto plano, asi que el formato como fuentes, columnas y espaciado puede no conservarse. Si necesitas mantener el diseno, usa nuestra herramienta PDF a Word.",
+        text: "TXT es texto plano, así que el formato como fuentes, columnas y espaciado puede no conservarse. Si necesitas mantener el diseño, usa nuestra herramienta PDF a Word.",
       },
     },
     {
       "@type": "Question",
-      name: "¿Por que mi texto convertido se ve desordenado?",
+      name: "¿Por qué mi texto convertido se ve desordenado?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Algunos PDFs almacenan texto en columnas o bloques posicionados. La exportacion a TXT sigue la estructura interna del PDF, lo que puede reordenar las lineas.",
+        text: "Algunos PDFs almacenan texto en columnas o bloques posicionados. La exportación a TXT sigue la estructura interna del PDF, lo que puede reordenar las líneas.",
       },
     },
     {
@@ -51,7 +51,7 @@ const faqSchema = {
       name: "¿Puedo convertir PDF a TXT en mi celular?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Si. Abre PDF.it en tu navegador movil, sube el PDF, convierte y descarga el archivo TXT.",
+        text: "Si. Abre PDF.it en tu navegador móvil, sube el PDF, convierte y descarga el archivo TXT.",
       },
     },
     {
@@ -59,7 +59,7 @@ const faqSchema = {
       name: "¿Es seguro subir mi PDF?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion.",
+        text: "Si. Todas las transferencias están cifradas con SSL y tus archivos se eliminan inmediatamente después de tu sesión.",
       },
     },
     {
@@ -107,7 +107,7 @@ export default function PDFaTextoPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convertir PDF a Texto Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Extrae texto limpio y editable de cualquier PDF. Convierte a un archivo .txt plano para copiar, tomar notas y editar rapidamente.
+                Extrae texto limpio y editable de cualquier PDF. Convierte a un archivo .txt plano para copiar, tomar notas y editar rápidamente.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2">
@@ -116,7 +116,7 @@ export default function PDFaTextoPage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Shield className="h-4 w-4 text-[#14D8C4]" />
-                  <span>Archivos Eliminados Tras la Sesion</span>
+                  <span>Archivos Eliminados Tras la Sesión</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Download className="h-4 w-4 text-[#14D8C4]" />
@@ -134,10 +134,10 @@ export default function PDFaTextoPage() {
               Usa el convertidor de PDF a TXT de PDF.it para convertir un PDF en un archivo de texto plano (.txt) en segundos. Perfecto para copiar contenido en notas, documentos, correos o herramientas de IA — sin tener que reescribir nada. Sube tu PDF, convierte y descarga el texto extraido al instante.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
-              <li className="flex items-center gap-2">✓ Convierte PDF a TXT para copiar y editar rapidamente</li>
-              <li className="flex items-center gap-2">✓ Extrae texto de reportes, articulos, facturas y formularios</li>
+              <li className="flex items-center gap-2">✓ Convierte PDF a TXT para copiar y editar rápidamente</li>
+              <li className="flex items-center gap-2">✓ Extrae texto de reportes, artículos, facturas y formularios</li>
               <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li className="flex items-center gap-2">✓ Sin instalacion — funciona desde tu navegador</li>
+              <li className="flex items-center gap-2">✓ Sin instalación — funciona desde tu navegador</li>
             </ul>
           </div>
         </section>
@@ -165,9 +165,9 @@ export default function PDFaTextoPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { title: "Extrae Texto de PDF a TXT", desc: "Convierte paginas de PDF en un archivo de texto limpio que puedes editar en cualquier lugar. PDF.it exporta tu contenido como texto plano, facilitando pegarlo en Word, Google Docs, Notion, correos o editores de codigo." },
-                { title: "Resultado Limpio y Facil de Copiar", desc: "La salida TXT es ideal cuando quieres las palabras sin el formato. Tambien es liviana y compatible con todos los dispositivos y aplicaciones." },
-                { title: "Conversion Rapida Online en Cualquier Dispositivo", desc: "Convierte PDF a texto desde cualquier navegador moderno — computadora o celular — sin descargas ni instalaciones." },
+                { title: "Extrae Texto de PDF a TXT", desc: "Convierte páginas de PDF en un archivo de texto limpio que puedes editar en cualquier lugar. PDF.it exporta tu contenido como texto plano, fácilitando pegarlo en Word, Google Docs, Notion, correos o editores de código." },
+                { title: "Resultado Limpio y Fácil de Copiar", desc: "La salida TXT es ideal cuando quieres las palabras sin el formato. También es liviana y compatible con todos los dispositivos y aplicaciónes." },
+                { title: "Conversión Rápida Online en Cualquier Dispositivo", desc: "Convierte PDF a texto desde cualquier navegador moderno — computadora o celular — sin descargas ni instalaciones." },
               ].map((feature) => (
                 <div
                   key={feature.title}
@@ -233,10 +233,10 @@ export default function PDFaTextoPage() {
             <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "PDF a JPG", href: "/es/pdf-a-jpg", desc: "Extrae paginas como imagenes" },
-                { name: "PDF a PNG", href: "/es/pdf-a-png", desc: "Imagenes sin perdida de calidad" },
-                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamano del PDF" },
-                { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Convierte solo las paginas que necesitas" },
+                { name: "PDF a JPG", href: "/es/pdf-a-jpg", desc: "Extrae páginas como imágenes" },
+                { name: "PDF a PNG", href: "/es/pdf-a-png", desc: "Imágenes sin perdida de calidad" },
+                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamaño del PDF" },
+                { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Convierte solo las páginas que necesitas" },
               ].map((tool) => (
                 <div
                   key={tool.href}
@@ -285,11 +285,11 @@ export default function PDFaTextoPage() {
             <h2 className="text-3xl font-black text-white mb-10 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-4">
               {[
-                { q: "¿Puedo convertir cualquier PDF a un archivo TXT?", a: "La mayoria de los PDFs con texto se convierten bien. Si tu PDF es escaneado (solo imagen), necesitaras OCR para extraer el texto." },
-                { q: "¿PDF.it mantiene el formato del PDF?", a: "TXT es texto plano, asi que el formato como fuentes, columnas y espaciado puede no conservarse. Si necesitas mantener el diseno, usa nuestra herramienta PDF a Word." },
-                { q: "¿Por que mi texto convertido se ve desordenado?", a: "Algunos PDFs almacenan texto en columnas o bloques posicionados. La exportacion a TXT sigue la estructura interna del PDF, lo que puede reordenar las lineas." },
-                { q: "¿Puedo convertir PDF a TXT en mi celular?", a: "Si. Abre PDF.it en tu navegador movil, sube el PDF, convierte y descarga el archivo TXT." },
-                { q: "¿Es seguro subir mi PDF?", a: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion." },
+                { q: "¿Puedo convertir cualquier PDF a un archivo TXT?", a: "La mayoría de los PDFs con texto se convierten bien. Si tu PDF es escaneado (solo imagen), necesitaras OCR para extraer el texto." },
+                { q: "¿PDF.it mantiene el formato del PDF?", a: "TXT es texto plano, así que el formato como fuentes, columnas y espaciado puede no conservarse. Si necesitas mantener el diseño, usa nuestra herramienta PDF a Word." },
+                { q: "¿Por qué mi texto convertido se ve desordenado?", a: "Algunos PDFs almacenan texto en columnas o bloques posicionados. La exportación a TXT sigue la estructura interna del PDF, lo que puede reordenar las líneas." },
+                { q: "¿Puedo convertir PDF a TXT en mi celular?", a: "Si. Abre PDF.it en tu navegador móvil, sube el PDF, convierte y descarga el archivo TXT." },
+                { q: "¿Es seguro subir mi PDF?", a: "Si. Todas las transferencias están cifradas con SSL y tus archivos se eliminan inmediatamente después de tu sesión." },
                 { q: "¿Para que sirve convertir PDF a texto?", a: "Es ideal para copiar contenido en notas, documentos, correos o herramientas de IA — sin tener que volver a escribir todo manualmente." },
               ].map((faq, i) => (
                 <div

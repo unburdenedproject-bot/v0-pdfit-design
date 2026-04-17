@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function EliminarMarcaDeAguaPDFPage() {
   const faqs = [
-    { q: "¿PDF.it puede eliminar marcas de agua de PDFs?", a: "No. PDF.it no ofrece eliminación de marcas de agua porque podría facilitar la infracción de derechos de autor y la piratería. En su lugar, PDF.it ofrece herramientas para agregar tus propias marcas de agua y proteger tus documentos." },
+    { q: "¿PDF.it puede eliminar marcas de agua de PDFs?", a: "No. PDF.it no ofrece eliminación de marcas de agua porque podría fácilitar la infracción de derechos de autor y la piratería. En su lugar, PDF.it ofrece herramientas para agregar tus propias marcas de agua y proteger tus documentos." },
     { q: "¿Es legal eliminar una marca de agua de un PDF?", a: "Depende. Si eres dueño del documento original y agregaste la marca de agua tú mismo, puedes eliminarla. Sin embargo, eliminar marcas de agua de documentos que no te pertenecen — como fotos de stock, contenido licenciado o software de prueba — generalmente viola la ley de derechos de autor y los términos de servicio." },
     { q: "¿Por qué los PDFs tienen marcas de agua?", a: "Las marcas de agua sirven para varios propósitos: proteger la propiedad intelectual, marcar documentos como borradores o confidenciales, identificar documentos con un logo de empresa, disuadir la copia no autorizada e indicar el estado del documento (ej. MUESTRA, BORRADOR, APROBADO)." },
     { q: "¿Cómo puedo obtener un PDF sin la marca de agua?", a: "La forma legítima es comprar o licenciar la versión completa del documento. Para marcas de borrador, pide al autor la versión final. Para marcas de prueba, compra la licencia del software. Para contenido de stock, compra la versión en alta resolución." },
@@ -39,7 +39,7 @@ export default function EliminarMarcaDeAguaPDFPage() {
         </section>
 
         <section className="py-10 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-          <p className="text-lg text-slate-600 leading-relaxed">Las marcas de agua en PDFs son superposiciones de texto o imagen colocadas sobre las páginas del documento para indicar propiedad, estado o licenciamiento. Aunque hay razones legítimas para eliminar una marca de agua de tus propios documentos, PDF.it no ofrece eliminación de marcas de agua como herramienta porque podría facilitar la infracción de derechos de autor. Esta página explica tus opciones.</p>
+          <p className="text-lg text-slate-600 leading-relaxed">Las marcas de agua en PDFs son superposiciones de texto o imagen colocadas sobre las páginas del documento para indicar propiedad, estado o licenciamiento. Aunque hay razones legítimas para eliminar una marca de agua de tus propios documentos, PDF.it no ofrece eliminación de marcas de agua como herramienta porque podría fácilitar la infracción de derechos de autor. Esta página explica tus opciones.</p>
           <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
             <li className="flex items-center gap-2">✓ Entiende por qué los PDFs tienen marcas de agua</li>
             <li className="flex items-center gap-2">✓ Aprende cuándo la eliminación es legítima</li>

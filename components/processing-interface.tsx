@@ -393,7 +393,7 @@ export function ProcessingInterface({
           })
 
           if (!response.ok) {
-            let message = `Conversion failed (HTTP ${response.status})`
+            let message = `Conversión failed (HTTP ${response.status})`
             try {
               const errorData = await response.json()
               if (errorData.error) message = errorData.error
@@ -448,7 +448,7 @@ export function ProcessingInterface({
           })
 
           if (!response.ok) {
-            let message = `Conversion failed (HTTP ${response.status})`
+            let message = `Conversión failed (HTTP ${response.status})`
             try {
               const errorData = await response.json()
               if (errorData.error) message = errorData.error
@@ -590,7 +590,7 @@ export function ProcessingInterface({
           })
 
           if (!response.ok) {
-            let message = `Conversion failed (HTTP ${response.status})`
+            let message = `Conversión failed (HTTP ${response.status})`
             try {
               const errorData = await response.json()
               if (errorData.error) message = errorData.error
@@ -640,7 +640,7 @@ export function ProcessingInterface({
           })
 
           if (!response.ok) {
-            let message = `Conversion failed (HTTP ${response.status})`
+            let message = `Conversión failed (HTTP ${response.status})`
             try {
               const errorData = await response.json()
               if (errorData.error) message = errorData.error
@@ -809,7 +809,7 @@ export function ProcessingInterface({
           })
 
           if (!response.ok) {
-            let message = `Conversion failed (HTTP ${response.status})`
+            let message = `Conversión failed (HTTP ${response.status})`
             try {
               const errorData = await response.json()
               if (errorData.error) message = errorData.error

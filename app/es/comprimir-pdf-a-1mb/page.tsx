@@ -6,9 +6,9 @@ import { FileArchiveIcon as Compress, Zap, Shield, Download } from "lucide-react
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF a 1MB Online — Compresion Extrema Gratis | PDF.it",
+  title: "Comprimir PDF a 1MB Online — Compresión Extrema Gratis | PDF.it",
   description:
-    "Aplica compresion extrema a tu PDF para cumplir limites de 1MB. Perfecto para formularios de visa, subidas gubernamentales y envio movil — rapido, desde tu navegador, gratis.",
+    "Aplica compresión extrema a tu PDF para cumplir límites de 1MB. Perfecto para formularios de visa, subidas gubernamentales y envio móvil — rápido, desde tu navegador, gratis.",
   alternates: {
     canonical: "https://www.pdf.it.com/es/comprimir-pdf-a-1mb",
     languages: {
@@ -21,12 +21,12 @@ export const metadata = {
 
 export default function ComprimirPDFA1MBPage() {
   const faqs = [
-    { q: "¿Como comprimo un PDF para un limite de 1MB?", a: "Sube tu PDF a PDF.it y haz clic en Comprimir. La herramienta aplica compresion extrema para reducir la resolucion de imagenes y optimizar la estructura interna, reduciendo drasticamente el tamano del archivo. Los resultados dependen del contenido de tu PDF." },
-    { q: "¿Mi PDF quedara definitivamente debajo de 1MB despues de comprimirlo?", a: "La compresion extrema reduce drasticamente el tamano del archivo, pero los resultados dependen del contenido del PDF. Los PDFs con mucho texto se comprimen muy bien. Los archivos con muchas imagenes pueden necesitar dividirse primero y luego comprimir cada parte por separado." },
-    { q: "¿Mi PDF seguira siendo legible despues de comprimirlo a 1MB?", a: "Si. El texto se mantiene nitido y completamente legible. Las imagenes pueden perder algo de detalle con la compresion extrema, pero el documento sigue siendo utilizable para la mayoria de los propositos." },
-    { q: "¿Por que necesitaria un PDF de menos de 1MB?", a: "Muchos formularios en linea, portales gubernamentales, solicitudes de visa y apps de mensajeria movil tienen limites estrictos de 1MB. Comprimir a 1MB asegura que tu documento se suba sin problemas." },
-    { q: "¿Puedo comprimir un PDF a 1MB desde mi celular?", a: "Si. PDF.it funciona en cualquier navegador movil. Sube tu PDF, comprimelo y descarga el archivo mas pequeno directamente en tu iPhone o Android." },
-    { q: "¿Cual es la diferencia entre comprimir a 1MB vs 2MB o 5MB?", a: "Los tres usan el mismo motor de compresion extrema. La diferencia es el tamano objetivo. Comprimir a 1MB aplica una optimizacion mas agresiva, lo que puede reducir ligeramente mas la calidad de imagen que los objetivos de 2MB o 5MB." },
+    { q: "¿Como comprimo un PDF para un límite de 1MB?", a: "Sube tu PDF a PDF.it y haz clic en Comprimir. La herramienta aplica compresión extrema para reducir la resolución de imágenes y optimizar la estructura interna, reduciendo drasticamente el tamaño del archivo. Los resultados dependen del contenido de tu PDF." },
+    { q: "¿Mi PDF quedara definitivamente debajo de 1MB después de comprimirlo?", a: "La compresión extrema reduce drasticamente el tamaño del archivo, pero los resultados dependen del contenido del PDF. Los PDFs con mucho texto se comprimen muy bien. Los archivos con muchas imágenes pueden necesitar dividirse primero y luego comprimir cada parte por separado." },
+    { q: "¿Mi PDF seguira siendo legible después de comprimirlo a 1MB?", a: "Si. El texto se mantiene nitido y completamente legible. Las imágenes pueden perder algo de detalle con la compresión extrema, pero el documento sigue siendo utilizable para la mayoría de los propósitos." },
+    { q: "¿Por qué necesitaria un PDF de menos de 1MB?", a: "Muchos formularios en línea, portales gubernamentales, solicitudes de visa y apps de mensajeria móvil tienen límites estrictos de 1MB. Comprimir a 1MB asegura que tu documento se suba sin problemas." },
+    { q: "¿Puedo comprimir un PDF a 1MB desde mi celular?", a: "Si. PDF.it funciona en cualquier navegador móvil. Sube tu PDF, comprimelo y descarga el archivo más pequeño directamente en tu iPhone o Android." },
+    { q: "¿Cual es la diferencia entre comprimir a 1MB vs 2MB o 5MB?", a: "Los tres usan el mismo motor de compresión extrema. La diferencia es el tamaño objetivo. Comprimir a 1MB aplica una optimización más agresiva, lo que puede reducir ligeramente más la calidad de imagen que los objetivos de 2MB o 5MB." },
   ]
 
   return (
@@ -60,13 +60,13 @@ export default function ComprimirPDFA1MBPage() {
               >
                 <Compress className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF para Limites de 1MB</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF para Límites de 1MB</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Aplica compresion extrema para reducir drasticamente el tamano de tu PDF en portales con limites de 1MB. Perfecto para solicitudes de visa, formularios gubernamentales y envio movil.
+                Aplica compresión extrema para reducir drasticamente el tamaño de tu PDF en portales con límites de 1MB. Perfecto para solicitudes de visa, formularios gubernamentales y envio móvil.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compresion Extrema</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesion</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compresión Extrema</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Tras la Sesión</span></div>
                 <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sin Registro</span></div>
               </div>
             </div>
@@ -77,13 +77,13 @@ export default function ComprimirPDFA1MBPage() {
         <section className="py-10 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <p className="text-lg text-slate-600 leading-relaxed">
-              Muchas plataformas imponen un limite estricto de 1MB. Solicitudes de visa, envio de documentos de identidad gubernamentales, formularios de becas y algunos portales de empleo requieren documentos pequenos. PDF.it aplica compresion extrema para reducir drasticamente el tamano de tu PDF y ayudarte a cumplir requisitos de subida estrictos.
+              Muchas plataformas imponen un límite estricto de 1MB. Solicitudes de visa, envio de documentos de identidad gubernamentales, formularios de becas y algunos portales de empleo requieren documentos pequeños. PDF.it aplica compresión extrema para reducir drasticamente el tamaño de tu PDF y ayudarte a cumplir requisitos de subida estrictos.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
-              <li className="flex items-center gap-2">✓ Compresion extrema para maxima reduccion de tamano</li>
+              <li className="flex items-center gap-2">✓ Compresión extrema para máxima reducción de tamaño</li>
               <li className="flex items-center gap-2">✓ Perfecto para subidas de visa y formularios gubernamentales</li>
               <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li className="flex items-center gap-2">✓ Sin instalacion — comprime PDFs en tu navegador</li>
+              <li className="flex items-center gap-2">✓ Sin instalación — comprime PDFs en tu navegador</li>
             </ul>
           </div>
         </section>
@@ -112,9 +112,9 @@ export default function ComprimirPDFA1MBPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { title: "Solicitudes de Visa e Inmigracion", desc: "Muchos portales de visa (Schengen, EE.UU., Reino Unido, Canada) requieren documentos de soporte de menos de 1MB cada uno. Comprime tus escaneos de pasaporte, estados de cuenta y cartas de presentacion para cumplir estos limites estrictos." },
+                { title: "Solicitudes de Visa e Inmigracion", desc: "Muchos portales de visa (Schengen, EE.UU., Reino Unido, Canada) requieren documentos de soporte de menos de 1MB cada uno. Comprime tus escaneos de pasaporte, estados de cuenta y cartas de presentación para cumplir estos límites estrictos." },
                 { title: "Formularios Gubernamentales y Subida de ID", desc: "Los portales gubernamentales para declaraciones de impuestos, solicitudes de permisos y envio de identificaciones frecuentemente limitan las subidas a 1MB. Comprime tus documentos para subirlos sin errores." },
-                { title: "Envio Movil y Becas", desc: "Enviar PDFs grandes por WhatsApp o Telegram es lento y a veces se bloquea. Los portales de becas y admisiones tambien requieren documentos de menos de 1MB. Comprime para entrega rapida." },
+                { title: "Envio Movil y Becas", desc: "Enviar PDFs grandes por WhatsApp o Telegram es lento y a veces se bloquea. Los portales de becas y admisiones también requieren documentos de menos de 1MB. Comprime para entrega rápida." },
               ].map((feature) => (
                 <div
                   key={feature.title}
@@ -148,11 +148,11 @@ export default function ComprimirPDFA1MBPage() {
         {/* How It Works */}
         <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Comprimir un PDF para Limites de 1MB</h2>
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Comprimir un PDF para Límites de 1MB</h2>
             <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
               {[
                 { num: "1", title: "Sube tu PDF", desc: "Arrastra y suelta o haz clic para elegir un archivo" },
-                { num: "2", title: "Haz clic en Comprimir", desc: "La compresion extrema se aplica automaticamente" },
+                { num: "2", title: "Haz clic en Comprimir", desc: "La compresión extrema se aplica automáticamente" },
                 { num: "3", title: "Descarga tu PDF", desc: "Obtiene tu archivo comprimido al instante" },
               ].map((step) => (
                 <div key={step.num} className="flex-1">
@@ -180,9 +180,9 @@ export default function ComprimirPDFA1MBPage() {
             <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "Comprimir a 500KB", href: "/es/comprimir-pdf-a-500kb", desc: "Para limites de 500KB" },
-                { name: "Comprimir a 2MB", href: "/es/comprimir-pdf-a-2mb", desc: "Para limites de 2MB" },
-                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Compresion estandar" },
+                { name: "Comprimir a 500KB", href: "/es/comprimir-pdf-a-500kb", desc: "Para límites de 500KB" },
+                { name: "Comprimir a 2MB", href: "/es/comprimir-pdf-a-2mb", desc: "Para límites de 2MB" },
+                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Compresión estándar" },
                 { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Divide si sigue grande" },
               ].map((tool) => (
                 <div

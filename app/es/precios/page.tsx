@@ -21,18 +21,18 @@ export default function PreciosPage() {
   }
 
   const comparisonFeatures = [
-    { feature: "Conversiones por dia", free: "10", pro: "Ilimitado", business: "Ilimitado", enterprise: "Ilimitado" },
-    { feature: "Tamano maximo de archivo", free: "25MB", pro: "200MB", business: "1GB", enterprise: "1GB" },
-    { feature: "Herramientas PDF basicas", free: true, pro: true, business: true, enterprise: true },
+    { feature: "Conversiónes por día", free: "10", pro: "Ilimitado", business: "Ilimitado", enterprise: "Ilimitado" },
+    { feature: "Tamaño máximo de archivo", free: "25MB", pro: "200MB", business: "1GB", enterprise: "1GB" },
+    { feature: "Herramientas PDF básicas", free: true, pro: true, business: true, enterprise: true },
     { feature: "PDF a Word/Excel/PowerPoint", free: false, pro: true, business: true, enterprise: true },
     { feature: "Scanner OCR", free: false, pro: true, business: true, enterprise: true },
-    { feature: "Generador de codigos QR", free: false, pro: true, business: true, enterprise: true },
+    { feature: "Generador de códigos QR", free: false, pro: true, business: true, enterprise: true },
     { feature: "Procesamiento por lotes", free: false, pro: true, business: true, enterprise: true },
-    { feature: "Automatizacion de flujos", free: false, pro: false, business: true, enterprise: true },
-    { feature: "Extraccion de tablas", free: false, pro: false, business: "200 paginas/mes", enterprise: "2,000 paginas/mes" },
-    { feature: "Comparacion de PDFs", free: false, pro: false, business: true, enterprise: true },
-    { feature: "Firma electronica", free: false, pro: false, business: true, enterprise: true },
-    { feature: "Redaccion de PDFs", free: false, pro: false, business: true, enterprise: true },
+    { feature: "Automatización de flujos", free: false, pro: false, business: true, enterprise: true },
+    { feature: "Extracción de tablas", free: false, pro: false, business: "200 páginas/mes", enterprise: "2,000 páginas/mes" },
+    { feature: "Comparación de PDFs", free: false, pro: false, business: true, enterprise: true },
+    { feature: "Firma electrónica", free: false, pro: false, business: true, enterprise: true },
+    { feature: "Redacción de PDFs", free: false, pro: false, business: true, enterprise: true },
     { feature: "Procesamiento prioritario", free: false, pro: false, business: false, enterprise: true },
     { feature: "Soporte dedicado", free: false, pro: false, business: false, enterprise: true },
     { feature: "Acceso anticipado a funciones", free: false, pro: false, business: false, enterprise: true },
@@ -50,15 +50,15 @@ export default function PreciosPage() {
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Elige Tu Plan</h1>
               <p className="text-xl text-slate-300 max-w-2xl mx-auto mb-6">
-                Empieza gratis, actualiza cuando necesites mas. Archivos eliminados de inmediato — tu privacidad es lo primero.
+                Empieza gratis, actualiza cuando necesites más. Archivos eliminados de inmediato — tu privacidad es lo primero.
               </p>
 
               {/* Free trial banner */}
               <div className="max-w-md mx-auto rounded-2xl p-[1px] mb-8" style={{ background: "linear-gradient(135deg, #E0C27A, #D6B36A, #E0C27A)" }}>
                 <div className="rounded-[15px] px-8 py-5 text-center" style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(224,194,122,0.08) 0%, transparent 60%), rgba(14,15,30,0.95)" }}>
                   <p className="text-sm sm:text-base font-black uppercase tracking-widest text-[#E0C27A] mb-2">Prueba Gratis</p>
-                  <p className="text-xl sm:text-2xl font-black text-white mb-1">Prueba cualquier plan gratis por 30 dias</p>
-                  <p className="text-sm text-slate-400">Sin compromiso, cancela cuando quieras. Solo agrega un metodo de pago para iniciar tu prueba sin riesgo.</p>
+                  <p className="text-xl sm:text-2xl font-black text-white mb-1">Prueba cualquier plan gratis por 30 días</p>
+                  <p className="text-sm text-slate-400">Sin compromiso, cancela cuando quieras. Solo agrega un método de pago para iniciar tu prueba sin riesgo.</p>
                 </div>
               </div>
 
@@ -96,7 +96,7 @@ export default function PreciosPage() {
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
                       <p className="text-sm text-slate-300 font-medium">Lo que obtienes gratis:</p>
-                      {["10 conversiones por dia", "Archivos hasta 25MB", "Herramientas PDF basicas (comprimir, unir, dividir, rotar, convertir)", "Procesamiento de un solo archivo", "Velocidad estandar"].map((item) => (
+                      {["10 conversiónes por día", "Archivos hasta 25MB", "Herramientas PDF básicas (comprimir, unir, dividir, rotar, convertir)", "Procesamiento de un solo archivo", "Velocidad estándar"].map((item) => (
                         <div key={item} className="flex items-center gap-3">
                           <span className="text-[#14D8C4] flex-shrink-0">&#10003;</span>
                           <span className="text-slate-200 text-sm">{item}</span>
@@ -115,17 +115,17 @@ export default function PreciosPage() {
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #D6B36A, #E0C27A)", color: "#0E0F1E" }}>Mas Popular</div>
                     <div className="text-center mb-6">
                       <h2 className="text-2xl font-black text-white mb-2">Pro</h2>
-                      <p className="text-sm text-slate-300 mb-4">Desbloquea todas las herramientas sin limites diarios</p>
+                      <p className="text-sm text-slate-300 mb-4">Desbloquea todas las herramientas sin límites diarios</p>
                       <div className="mb-2">
                         <span className="text-5xl font-black text-[#E0C27A]">{billing === "monthly" ? "$3.99" : "$39.90"}</span>
                         <span className="text-lg text-slate-300">{billing === "monthly" ? "/mes" : "/ano"}</span>
                       </div>
-                      <p className="text-xs text-slate-400">Precio introductorio del primer ano</p>
-                      <p className="text-xs text-slate-500">{billing === "monthly" ? "Luego $5.99/mes despues del primer ano" : "Luego $59.99/ano despues del primer ano"}</p>
+                      <p className="text-xs text-slate-400">Precio introductorio del primer año</p>
+                      <p className="text-xs text-slate-500">{billing === "monthly" ? "Luego $5.99/mes después del primer año" : "Luego $59.99/ano después del primer año"}</p>
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
-                      <p className="text-sm text-[#E0C27A] font-medium">Todo en Gratis, mas:</p>
-                      {["Conversiones ilimitadas", "Archivos hasta 200MB", "Todas las herramientas PDF (OCR, codigo QR, PDF a Word/Excel/PowerPoint)", "Generador de Preguntas con IA", "Procesamiento por lotes (multiples archivos a la vez)", "Velocidad de procesamiento prioritaria"].map((item) => (
+                      <p className="text-sm text-[#E0C27A] font-medium">Todo en Gratis, más:</p>
+                      {["Conversiónes ilimitadas", "Archivos hasta 200MB", "Todas las herramientas PDF (OCR, código QR, PDF a Word/Excel/PowerPoint)", "Generador de Preguntas con IA", "Procesamiento por lotes (múltiples archivos a la vez)", "Velocidad de procesamiento prioritaria"].map((item) => (
                         <div key={item} className="flex items-center gap-3">
                           <span className="text-[#E0C27A] flex-shrink-0">&#10003;</span>
                           <span className="text-slate-200 text-sm font-medium">{item}</span>
@@ -151,12 +151,12 @@ export default function PreciosPage() {
                         <span className="text-5xl font-black text-[#6B7CFF]">{billing === "monthly" ? "$13.99" : "$139.90"}</span>
                         <span className="text-lg text-slate-300">{billing === "monthly" ? "/mes" : "/ano"}</span>
                       </div>
-                      <p className="text-xs text-slate-400">Precio introductorio del primer ano</p>
-                      <p className="text-xs text-slate-500">{billing === "monthly" ? "Luego $16.99/mes despues del primer ano" : "Luego $169.90/ano despues del primer ano"}</p>
+                      <p className="text-xs text-slate-400">Precio introductorio del primer año</p>
+                      <p className="text-xs text-slate-500">{billing === "monthly" ? "Luego $16.99/mes después del primer año" : "Luego $169.90/ano después del primer año"}</p>
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
-                      <p className="text-sm text-[#6B7CFF] font-medium">Todo en Pro, mas:</p>
-                      {["Archivos hasta 1GB", "Chat con PDF (preguntas con IA)", "Resumidor de PDF con IA", "Extraccion Inteligente de Datos", "Traducir PDF (13 idiomas)", "Extraccion de tablas a Excel (200 paginas/mes)", "Comparacion de PDFs (diferencias lado a lado)", "Firma electronica de documentos", "Redaccion de PDFs (eliminacion permanente)"].map((item) => (
+                      <p className="text-sm text-[#6B7CFF] font-medium">Todo en Pro, más:</p>
+                      {["Archivos hasta 1GB", "Chat con PDF (preguntas con IA)", "Resumidor de PDF con IA", "Extracción Inteligente de Datos", "Traducir PDF (13 idiomas)", "Extracción de tablas a Excel (200 páginas/mes)", "Comparación de PDFs (diferencias lado a lado)", "Firma electrónica de documentos", "Redacción de PDFs (eliminación permanente)"].map((item) => (
                         <div key={item} className="flex items-center gap-3">
                           <span className="text-[#6B7CFF] flex-shrink-0">&#10003;</span>
                           <span className="text-slate-200 text-sm font-medium">{item}</span>
@@ -177,17 +177,17 @@ export default function PreciosPage() {
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 px-4 py-1 rounded-b-lg text-[10px] font-bold uppercase tracking-widest whitespace-nowrap" style={{ background: "linear-gradient(135deg, #C0C5CE, #14D8C4)", color: "#0E0F1E" }}>Mejor Valor</div>
                     <div className="text-center mb-6">
                       <h2 className="text-2xl font-black text-white mb-2">Enterprise</h2>
-                      <p className="text-sm text-slate-300 mb-4">Disenado para bufetes de abogados, contadores y laboratorios</p>
+                      <p className="text-sm text-slate-300 mb-4">Diseñado para bufetes de abogados, contadores y laboratorios</p>
                       <div className="mb-2">
                         <span className="text-5xl font-black text-[#C0C5CE]">{billing === "monthly" ? "$49.99" : "$499.90"}</span>
                         <span className="text-lg text-slate-300">{billing === "monthly" ? "/mes" : "/ano"}</span>
                       </div>
-                      <p className="text-xs text-slate-400">Precio introductorio del primer ano</p>
-                      <p className="text-xs text-slate-500">{billing === "monthly" ? "Luego $59.99/mes despues del primer ano" : "Luego $599.00/ano despues del primer ano"}</p>
+                      <p className="text-xs text-slate-400">Precio introductorio del primer año</p>
+                      <p className="text-xs text-slate-500">{billing === "monthly" ? "Luego $59.99/mes después del primer año" : "Luego $599.00/ano después del primer año"}</p>
                     </div>
                     <div className="space-y-3 mb-8 flex-grow">
-                      <p className="text-sm text-[#C0C5CE] font-medium">Todo en Business, mas:</p>
-                      {["Extraccion de tablas a Excel (2,000 paginas/mes)", "Cola de procesamiento prioritario", "Soporte dedicado por email (respuesta en 24h)", "Acceso anticipado a nuevas funciones", "Plantillas de flujos personalizadas"].map((item) => (
+                      <p className="text-sm text-[#C0C5CE] font-medium">Todo en Business, más:</p>
+                      {["Extracción de tablas a Excel (2,000 páginas/mes)", "Cola de procesamiento prioritario", "Soporte dedicado por email (respuesta en 24h)", "Acceso anticipado a nuevas funciones", "Plantillas de flujos personalizadas"].map((item) => (
                         <div key={item} className="flex items-center gap-3">
                           <span className="text-[#C0C5CE] flex-shrink-0">&#10003;</span>
                           <span className="text-slate-200 text-sm font-medium">{item}</span>
@@ -215,7 +215,7 @@ export default function PreciosPage() {
                 <table className="w-full border-collapse">
                   <thead>
                     <tr className="border-b-2 border-slate-200">
-                      <th className="text-left py-4 px-4 text-slate-900 font-bold text-lg w-1/3">Funcion</th>
+                      <th className="text-left py-4 px-4 text-slate-900 font-bold text-lg w-1/3">Función</th>
                       <th className="text-center py-4 px-4 text-slate-500 font-bold text-lg">Gratis</th>
                       <th className="text-center py-4 px-4 text-[#E0C27A] font-bold text-lg">Pro</th>
                       <th className="text-center py-4 px-4 text-[#6B7CFF] font-bold text-lg">Business</th>
@@ -254,7 +254,7 @@ export default function PreciosPage() {
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Listo para empezar?</h2>
               <p className="text-xl text-slate-600 mb-8">
-                Empieza con 10 conversiones gratis al dia. Sin tarjeta de credito.
+                Empieza con 10 conversiónes gratis al día. Sin tarjeta de credito.
               </p>
               <Button className="bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-4 px-8 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300" asChild>
                 <Link href="/es">Probar Herramientas Gratis</Link>

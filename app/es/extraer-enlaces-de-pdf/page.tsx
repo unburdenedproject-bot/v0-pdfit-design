@@ -22,7 +22,7 @@ export default function ExtraerEnlacesDePDFPage() {
     },
     {
         "q": "¿Cómo extraigo enlaces de un PDF escaneado?",
-        "a": "Los PDFs escaneados son imágenes, así que los enlaces no son clickeables ni están incrustados como texto. Usa el Escáner OCR de PDF.it primero para convertir las páginas escaneadas a texto seleccionable, luego extrae el texto para encontrar URLs impresas."
+        "a": "Los PDFs escaneados son imágenes, así que los enlaces no son clickeables ni están incrustados como texto. Usa el Escáner OCR de PDF.it primero para convertir las páginas escaneadas a texto selecciónable, luego extrae el texto para encontrar URLs impresas."
     },
     {
         "q": "¿Puedo extraer todos los enlaces de un PDF a la vez?",
@@ -59,7 +59,7 @@ export default function ExtraerEnlacesDePDFPage() {
 
         {/* Intro */}
         <section className="py-10 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-          <p className="text-lg text-slate-600 leading-relaxed">Los PDFs a menudo contienen docenas o incluso cientos de enlaces — referencias en papers académicos, URLs de recursos en reportes e hipervínculos en documentación. Extraer estos enlaces manualmente es tedioso. PDF.it te ayuda a extraer todo el contenido de texto de PDFs, facilitando encontrar y compilar cada URL en tu documento.</p>
+          <p className="text-lg text-slate-600 leading-relaxed">Los PDFs a menudo contienen docenas o incluso cientos de enlaces — referencias en papers académicos, URLs de recursos en reportes e hipervínculos en documentación. Extraer estos enlaces manualmente es tedioso. PDF.it te ayuda a extraer todo el contenido de texto de PDFs, fácilitando encontrar y compilar cada URL en tu documento.</p>
           <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
             <li className="flex items-center gap-2">✓ Extrae URLs visibles impresas en texto de PDF</li>
             <li className="flex items-center gap-2">✓ Convierte a Word para preservar hipervínculos clickeables</li>
@@ -68,7 +68,7 @@ export default function ExtraerEnlacesDePDFPage() {
           </ul>
         </div></section>
 
-        <section className="py-12 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center"><h2 className="text-2xl font-black text-slate-900 mb-4">Extrae Contenido de PDFs</h2><p className="text-slate-600 mb-6">Convierte tu PDF a texto para encontrar todas las URLs y enlaces incrustados en el documento. Funciona con cualquier PDF que contenga texto seleccionable.</p><div className="flex flex-col sm:flex-row gap-4 justify-center"><Link href="/es/pdf-a-txt" className="inline-flex items-center justify-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors">PDF a TXT (Gratis)</Link><Link href="/es/extraer-texto-de-pdf" className="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-8 rounded-xl transition-colors">Extraer Texto</Link></div></div></section>
+        <section className="py-12 bg-[#F3F4FF]"><div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl text-center"><h2 className="text-2xl font-black text-slate-900 mb-4">Extrae Contenido de PDFs</h2><p className="text-slate-600 mb-6">Convierte tu PDF a texto para encontrar todas las URLs y enlaces incrustados en el documento. Funciona con cualquier PDF que contenga texto selecciónable.</p><div className="flex flex-col sm:flex-row gap-4 justify-center"><Link href="/es/pdf-a-txt" className="inline-flex items-center justify-center gap-2 bg-[#14D8C4] hover:bg-[#2EE6D6] text-[#0E0F1E] font-bold py-3 px-8 rounded-xl transition-colors">PDF a TXT (Gratis)</Link><Link href="/es/extraer-texto-de-pdf" className="inline-flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-8 rounded-xl transition-colors">Extraer Texto</Link></div></div></section>
 
         {/* Feature Blocks */}
         <section className="py-16" style={{ background: `radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.04) 0%, transparent 50%), radial-gradient(ellipse 50% 50% at 100% 80%, rgba(232,129,58,0.03) 0%, transparent 50%), #0E0F1E` }}>

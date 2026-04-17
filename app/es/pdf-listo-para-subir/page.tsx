@@ -21,10 +21,10 @@ export default function PDFListoParaSubirPage() {
   const faqs = [
     { q: "¿Qué hace PDF Listo para Subir?", a: "Automáticamente aplana campos de formulario y anotaciones, comprime el tamaño del archivo y optimiza la estructura del PDF — todo en un clic. El resultado es un PDF limpio que funciona con cualquier portal de carga." },
     { q: "¿Por qué mi PDF es rechazado cuando lo subo?", a: "Las razones más comunes son: archivo muy grande, campos de formulario interactivos que no se muestran correctamente, funciones PDF no compatibles o estructura corrupta. PDF Listo para Subir corrige todo esto automáticamente." },
-    { q: "¿Con qué portales funciona?", a: "Con cualquier portal — formularios del gobierno, aplicaciones universitarias, sitios de empleo, solicitudes de visa, reclamos de seguro, trámites judiciales y más. El resultado es un PDF universalmente compatible." },
+    { q: "¿Con qué portales funciona?", a: "Con cualquier portal — formularios del gobierno, aplicaciónes universitarias, sitios de empleo, solicitudes de visa, reclamos de seguro, trámites judiciales y más. El resultado es un PDF universalmente compatible." },
     { q: "¿Se preservan los datos de mi formulario?", a: "Sí. Todos tus datos ingresados, firmas y anotaciones se fusionan permanentemente en el PDF. No se pierde nada — simplemente se vuelve no editable." },
     { q: "¿Es diferente a solo comprimir un PDF?", a: "Sí. La compresión solo reduce el tamaño del archivo. PDF Listo para Subir también aplana formularios, fusiona anotaciones y optimiza la estructura del PDF para prevenir rechazos causados por elementos interactivos." },
-    { q: "¿Es gratis?", a: "Sí. Las cuentas gratuitas tienen 10 conversiones por día con optimización automática. Las cuentas Pro tienen conversiones ilimitadas con controles avanzados como tamaño objetivo y nivel de compresión." },
+    { q: "¿Es gratis?", a: "Sí. Las cuentas gratuitas tienen 10 conversiónes por día con optimización automática. Las cuentas Pro tienen conversiónes ilimitadas con controles avanzados como tamaño objetivo y nivel de compresión." },
   ]
 
   return (
@@ -111,7 +111,7 @@ export default function PDFListoParaSubirPage() {
               {[
                 { title: "Aplanar, Comprimir y Optimizar", desc: "Los campos de formulario y anotaciones se fusionan en la página, el tamaño se reduce y la estructura del PDF se limpia — todo en un clic." },
                 { title: "Portales de Gobierno y Visas", desc: "Los portales del gobierno son estrictos con el formato y tamaño del PDF. PDF Listo para Subir asegura que tus formularios estén aplanados, comprimidos y compatibles." },
-                { title: "Empleo, Universidad y Trámites Legales", desc: "Los portales de RR.HH., sistemas universitarios y trámites judiciales frecuentemente rechazan PDFs con campos interactivos o archivos grandes. Un clic lo soluciona." },
+                { title: "Empleo, Universidad y Trámites Legales", desc: "Los portales de RR.HH., sistemas universitarios y trámites judiciales frecuentemente rechazan PDFs con campos interactivos o archivos grandes. Un clic lo solucióna." },
               ].map((feature) => (
                 <div
                   key={feature.title}

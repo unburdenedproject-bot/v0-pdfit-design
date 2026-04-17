@@ -8,7 +8,7 @@ const faqData = [
   {
     question: "Is PDF.it free to use?",
     answer:
-      "Yes! Core tools like PDF compression, merging, splitting, rotating, and image conversion are completely free with up to 10 conversions per day. Advanced tools like OCR, PDF to Word, and batch processing are available with Pro ($3.99/month).",
+      "Yes! Core tools like PDF compression, merging, splitting, rotating, and image conversión are completely free with up to 10 conversions per day. Advanced tools like OCR, PDF to Word, and batch processing are available with Pro ($3.99/month).",
   },
   {
     question: "Do I need to create an account?",

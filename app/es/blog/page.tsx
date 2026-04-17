@@ -9,10 +9,10 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Blog de PDF.it — Consejos PDF, Nuevas Funciones y Actualizaciones",
   description:
-    "Noticias, actualizaciones y consejos del equipo de PDF.it. Aprende sobre nuevas funciones, mejores practicas PDF, herramientas de curriculum con IA y extraccion de tablas.",
+    "Noticias, actualizaciones y consejos del equipo de PDF.it. Aprende sobre nuevas funciones, mejores prácticas PDF, herramientas de currículum con IA y extracción de tablas.",
   openGraph: {
     title: "Blog de PDF.it — Consejos PDF, Nuevas Funciones y Actualizaciones",
-    description: "Noticias, actualizaciones y consejos del equipo de PDF.it. Nuevas funciones y mejores practicas PDF.",
+    description: "Noticias, actualizaciones y consejos del equipo de PDF.it. Nuevas funciones y mejores prácticas PDF.",
     url: "https://pdf.it.com/es/blog",
     siteName: "PDF.it",
     images: [{ url: "https://pdf.it.com/og-logo.png", width: 1736, height: 846, alt: "Blog de PDF.it" }],
@@ -39,7 +39,7 @@ const posts = [
   {
     slug: "protect-sensitive-documents",
     title: "Como Proteger Documentos Sensibles Antes de Compartir",
-    excerpt: "Tres capas de seguridad PDF: proteccion con contrasena, redaccion permanente y marca de agua. Aprende cuando usar cada una.",
+    excerpt: "Tres capas de seguridad PDF: protección con contraseña, redacción permanente y marca de agua. Aprende cuando usar cada una.",
     date: "2025-03-20",
     category: "Seguridad",
   },
@@ -53,7 +53,7 @@ const posts = [
   {
     slug: "compress-pdf-email",
     title: "Como Comprimir un PDF para Adjuntos de Email",
-    excerpt: "Aprende a reducir el tamano de archivos PDF para cumplir los limites de Gmail, Outlook y Yahoo — paso a paso.",
+    excerpt: "Aprende a reducir el tamaño de archivos PDF para cumplir los límites de Gmail, Outlook y Yahoo — paso a paso.",
     date: "2024-10-05",
     category: "Guia",
   },
@@ -66,15 +66,15 @@ const posts = [
   },
   {
     slug: "table-extraction-excel",
-    title: "Nueva Funcion: Extrae Tablas de PDFs a Excel con IA",
-    excerpt: "Nuestra nueva herramienta de Extraccion de Tablas usa Google Document AI para detectar y exportar tablas de cualquier PDF a hojas de calculo Excel.",
+    title: "Nueva Función: Extrae Tablas de PDFs a Excel con IA",
+    excerpt: "Nuestra nueva herramienta de Extracción de Tablas usa Google Document AI para detectar y exportar tablas de cualquier PDF a hojas de cálculo Excel.",
     date: "2024-06-20",
     category: "Producto",
   },
   {
     slug: "why-three-languages",
-    title: "Por Que PDF.it Habla Ingles, Espanol y Portugues",
-    excerpt: "La mayoria de herramientas PDF solo funcionan en ingles. Construimos PDF.it para profesionales en todo el mundo.",
+    title: "Por Que PDF.it Habla Inglés, Español y Portugués",
+    excerpt: "La mayoría de herramientas PDF solo funcionan en inglés. Construimos PDF.it para profesionales en todo el mundo.",
     date: "2024-03-10",
     category: "Empresa",
   },
@@ -113,7 +113,7 @@ export default function BlogPageEs() {
                 Noticias, actualizaciones de producto y consejos practicos para trabajar con PDFs — del equipo de PDF.it.
               </p>
               <a href="#articles" className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium transition-colors hover:bg-[#14D8C4]/20" style={{ background: "rgba(20,216,196,0.1)", border: "1px solid rgba(20,216,196,0.25)", color: "#14D8C4" }}>
-                Ver los {posts.length} articulos
+                Ver los {posts.length} artículos
                 <ArrowRight className="h-3.5 w-3.5" />
               </a>
             </div>
@@ -143,7 +143,7 @@ export default function BlogPageEs() {
                   </h2>
                   <p className="text-slate-400 text-lg mb-5">{featured.excerpt}</p>
                   <div className="flex items-center gap-1 text-[#14D8C4] font-semibold text-sm">
-                    Leer mas <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    Leer más <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Link>
               </div>
@@ -176,7 +176,7 @@ export default function BlogPageEs() {
                     </h2>
                     <p className="text-slate-400 mb-4">{post.excerpt}</p>
                     <div className="flex items-center gap-1 text-[#14D8C4] font-semibold text-sm">
-                      Leer mas <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      Leer más <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </Link>
                 </div>
@@ -210,7 +210,7 @@ export default function BlogPageEs() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-center gap-2 text-slate-500 text-sm">
               <Shield className="h-4 w-4" />
-              Tus documentos nunca se almacenan. Los archivos se eliminan inmediatamente despues de la descarga.
+              Tus documentos nunca se almacenan. Los archivos se eliminan inmediatamente después de la descarga.
             </div>
           </div>
         </section>
@@ -222,7 +222,7 @@ export default function BlogPageEs() {
           "@context": "https://schema.org",
           "@type": "Blog",
           name: "Blog de PDF.it",
-          description: "Noticias, actualizaciones y consejos del equipo de PDF.it. Nuevas funciones y mejores practicas PDF.",
+          description: "Noticias, actualizaciones y consejos del equipo de PDF.it. Nuevas funciones y mejores prácticas PDF.",
           url: "https://pdf.it.com/es/blog",
           inLanguage: "es",
           publisher: {

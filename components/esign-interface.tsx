@@ -142,7 +142,7 @@ const ESIGN_COPY: Record<EsignLocale, Record<string, string>> = {
     outOfFreeTitle: "Suas conversões grátis acabaram",
     upgradeHeading: "Fazer upgrade para Business",
     upgradeBody: "Esta ferramenta está disponível no plano Business. Faça upgrade para desbloquear acesso ilimitado a todas as ferramentas PDF.",
-    limitBody: "O plano grátis inclui 10 conversões por dia. Faça upgrade para conversões ilimitadas.",
+    limitBody: "O plano grátis inclui 10 conversões por día. Faça upgrade para conversões ilimitadas.",
     upgradeButton: "Fazer upgrade para Business",
     goBack: "Voltar",
     signingFailed: "A assinatura falhou",

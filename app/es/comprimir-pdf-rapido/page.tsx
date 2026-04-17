@@ -6,27 +6,27 @@ import { Zap, Shield, Download } from "lucide-react"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Comprimir PDF Rapido — Compresion Instantanea en Linea | PDF.it",
+  title: "Comprimir PDF Rápido — Compresión Instantanea en Línea | PDF.it",
   description:
-    "Comprime archivos PDF al instante en linea. Sin software, sin cuentas. Sube, comprime, descarga — listo en segundos.",
+    "Comprime archivos PDF al instante en línea. Sin software, sin cuentas. Sube, comprime, descarga — listo en segundos.",
   alternates: {
-    canonical: "/es/comprimir-pdf-rapido",
+    canonical: "/es/comprimir-pdf-rápido",
     languages: {
       en: "/compress-pdf-fast",
-      es: "/es/comprimir-pdf-rapido",
-      pt: "/br/comprimir-pdf-rapido",
+      es: "/es/comprimir-pdf-rápido",
+      pt: "/br/comprimir-pdf-rápido",
     },
   },
 }
 
 export default function ComprimirPDFRapidoPageEs() {
   const faqs = [
-    { q: "Que tan rapida es la compresion de PDF.it?", a: "La mayoria de los PDFs se comprimen en solo unos segundos. El tiempo de procesamiento depende del tamano y la complejidad del archivo, pero los documentos tipicos estan listos para descargar casi inmediatamente despues de hacer clic en Comprimir." },
-    { q: "Necesito crear una cuenta para comprimir un PDF?", a: "No. Puedes comprimir PDFs inmediatamente sin registrarte ni iniciar sesion. Solo sube tu archivo, haz clic en Comprimir y descarga el resultado. Los usuarios gratuitos tienen hasta 10 compresiones por dia." },
+    { q: "Que tan rápida es la compresión de PDF.it?", a: "La mayoría de los PDFs se comprimen en solo unos segundos. El tiempo de procesamiento depende del tamaño y la complejidad del archivo, pero los documentos tipicos están listos para descargar casi inmediatamente después de hacer clic en Comprimir." },
+    { q: "Necesito crear una cuenta para comprimir un PDF?", a: "No. Puedes comprimir PDFs inmediatamente sin registrarte ni iniciar sesión. Solo sube tu archivo, haz clic en Comprimir y descarga el resultado. Los usuarios gratuitos tienen hasta 10 compresiónes por día." },
     { q: "Necesito instalar algun software?", a: "No. PDF.it funciona completamente en tu navegador. No hay nada que descargar o instalar. Funciona en cualquier dispositivo — Mac, Windows, iPhone, Android, Linux, Chromebook." },
-    { q: "Mi PDF esta seguro cuando lo comprimo en linea?", a: "Si. Tus archivos se procesan de forma segura y se eliminan automaticamente al finalizar tu sesion. PDF.it no almacena ni comparte tus documentos." },
-    { q: "Cuanto se comprimira mi PDF?", a: "Los resultados dependen del contenido de tu PDF. Los documentos con imagenes y estructuras no optimizadas suelen ver reducciones significativas de tamano. Los PDFs ya optimizados pueden ver reducciones menores." },
-    { q: "Puedo comprimir PDFs desde mi celular?", a: "Si. PDF.it funciona en cualquier navegador movil — Safari, Chrome, Firefox o Samsung Internet. Sube desde tu galeria o administrador de archivos, comprime y descarga el archivo mas pequeno al instante." },
+    { q: "Mi PDF esta seguro cuando lo comprimo en línea?", a: "Si. Tus archivos se procesan de forma segura y se eliminan automáticamente al finalizar tu sesión. PDF.it no almacena ni comparte tus documentos." },
+    { q: "Cuanto se comprimira mi PDF?", a: "Los resultados dependen del contenido de tu PDF. Los documentos con imágenes y estructuras no optimizadas suelen ver reducciones significativas de tamaño. Los PDFs ya optimizados pueden ver reducciones menores." },
+    { q: "Puedo comprimir PDFs desde mi celular?", a: "Si. PDF.it funciona en cualquier navegador móvil — Safari, Chrome, Firefox o Samsung Internet. Sube desde tu galeria o administrador de archivos, comprime y descarga el archivo más pequeño al instante." },
   ]
 
   return (
@@ -60,13 +60,13 @@ export default function ComprimirPDFRapidoPageEs() {
               >
                 <Zap className="h-10 w-10 text-[#14D8C4]" />
               </div>
-              <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF Rapido</h1>
+              <h1 className="text-4xl lg:text-5xl font-black mb-4">Comprimir PDF Rápido</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Sin software que instalar, sin cuentas que crear. Sube tu PDF, haz clic en Comprimir y descarga el archivo mas pequeno — listo en segundos. Funciona en cualquier dispositivo, cualquier navegador.
+                Sin software que instalar, sin cuentas que crear. Sube tu PDF, haz clic en Comprimir y descarga el archivo más pequeño — listo en segundos. Funciona en cualquier dispositivo, cualquier navegador.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
-                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compresion Instantanea</span></div>
-                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Despues de la Sesion</span></div>
+                <div className="flex items-center gap-2"><Zap className="h-4 w-4 text-[#14D8C4]" /><span>Compresión Instantanea</span></div>
+                <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-[#14D8C4]" /><span>Archivos Eliminados Después de la Sesión</span></div>
                 <div className="flex items-center gap-2"><Download className="h-4 w-4 text-[#14D8C4]" /><span>Sin Registro</span></div>
               </div>
             </div>
@@ -77,13 +77,13 @@ export default function ComprimirPDFRapidoPageEs() {
         <section className="py-10 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <p className="text-lg text-slate-600 leading-relaxed">
-              Cuando necesitas un PDF mas pequeno ahora mismo, lo ultimo que quieres es descargar software, crear una cuenta o esperar en una cola. PDF.it comprime tu PDF en segundos — sin instalacion, sin registro, sin complicaciones. Solo sube, comprime y descarga.
+              Cuando necesitas un PDF más pequeño ahora mismo, lo último que quieres es descargar software, crear una cuenta o esperar en una cola. PDF.it comprime tu PDF en segundos — sin instalación, sin registro, sin complicaciones. Solo sube, comprime y descarga.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
               <li className="flex items-center gap-2">✓ Comprime PDFs en segundos — sin esperas</li>
               <li className="flex items-center gap-2">✓ Sin software que instalar o actualizar</li>
               <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li className="flex items-center gap-2">✓ Archivos eliminados automaticamente despues de tu sesion</li>
+              <li className="flex items-center gap-2">✓ Archivos eliminados automáticamente después de tu sesión</li>
             </ul>
           </div>
         </section>
@@ -112,9 +112,9 @@ export default function ComprimirPDFRapidoPageEs() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { title: "Adjuntos de Ultimo Minuto", desc: "Tu PDF es demasiado grande para adjuntarlo y el email necesita enviarse ya. Comprimelo en segundos y adjunta la version mas pequena — sin instalar nada, sin crear cuentas." },
-                { title: "Compartir Archivos Rapido", desc: "Necesitas compartir un PDF por Slack, Teams o una app de mensajeria? Comprimelo rapidamente para que se suba y descargue mas rapido para todos." },
-                { title: "Compresion Desde el Movil", desc: "Lejos de tu computadora? Comprime PDFs directo desde tu celular o tablet usando cualquier navegador movil. No necesitas descargar ninguna app." },
+                { title: "Adjuntos de Último Minuto", desc: "Tu PDF es demasiado grande para adjuntarlo y el email necesita enviarse ya. Comprimelo en segundos y adjunta la version más pequeña — sin instalar nada, sin crear cuentas." },
+                { title: "Compartir Archivos Rápido", desc: "Necesitas compartir un PDF por Slack, Teams o una app de mensajeria? Comprimelo rápidamente para que se suba y descargue más rápido para todos." },
+                { title: "Compresión Desde el Movil", desc: "Lejos de tu computadora? Comprime PDFs directo desde tu celular o tablet usando cualquier navegador móvil. No necesitas descargar ninguna app." },
               ].map((feature) => (
                 <div
                   key={feature.title}
@@ -148,11 +148,11 @@ export default function ComprimirPDFRapidoPageEs() {
         {/* How It Works */}
         <section className="py-16 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Comprimir un PDF Rapido</h2>
+            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Como Comprimir un PDF Rápido</h2>
             <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
               {[
                 { num: "1", title: "Sube tu PDF", desc: "Arrastra y suelta o haz clic para elegir un archivo" },
-                { num: "2", title: "Elige el nivel de compresion", desc: "Ligera, Media o Extrema" },
+                { num: "2", title: "Elige el nivel de compresión", desc: "Ligera, Media o Extrema" },
                 { num: "3", title: "Descarga tu PDF", desc: "Obtiene tu archivo comprimido al instante" },
               ].map((step) => (
                 <div key={step.num} className="flex-1">
@@ -180,9 +180,9 @@ export default function ComprimirPDFRapidoPageEs() {
             <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Compresion estandar" },
-                { name: "Comprimir para Email", href: "/es/comprimir-pdf-para-email", desc: "Para limites de adjuntos" },
-                { name: "Comprimir a 1MB", href: "/es/comprimir-pdf-a-1mb", desc: "Para limites de 1MB" },
+                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Compresión estándar" },
+                { name: "Comprimir para Email", href: "/es/comprimir-pdf-para-email", desc: "Para límites de adjuntos" },
+                { name: "Comprimir a 1MB", href: "/es/comprimir-pdf-a-1mb", desc: "Para límites de 1MB" },
                 { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Divide si sigue muy grande" },
               ].map((tool) => (
                 <div

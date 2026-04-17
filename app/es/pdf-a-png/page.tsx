@@ -8,7 +8,7 @@ import Link from "next/link"
 export const metadata = {
   title: "Convertir PDF a PNG Online — Gratis y Sin Registro | PDF.it",
   description:
-    "Convierte PDF a PNG en segundos con PDF.it. Exporta cada pagina como imagen PNG de alta calidad — ideal para texto nitido, graficos y transparencia.",
+    "Convierte PDF a PNG en segundos con PDF.it. Exporta cada página como imagen PNG de alta calidad — ideal para texto nitido, gráficos y transparencia.",
   alternates: {
     canonical: "https://pdf.it.com/es/pdf-a-png",
     languages: {
@@ -53,16 +53,16 @@ export default function PDFaPNGPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Convertir PDF a PNG Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Convierte un PDF en imagenes PNG de alta calidad — perfecto para texto nitido, capturas, activos de diseno y exportaciones limpias.
+                Convierte un PDF en imágenes PNG de alta calidad — perfecto para texto nitido, capturas, activos de diseño y exportaciones limpias.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2">
                   <Zap className="h-4 w-4 text-[#14D8C4]" />
-                  <span>Alta Resolucion</span>
+                  <span>Alta Resolución</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Shield className="h-4 w-4 text-[#14D8C4]" />
-                  <span>Archivos Eliminados Tras la Sesion</span>
+                  <span>Archivos Eliminados Tras la Sesión</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Download className="h-4 w-4 text-[#14D8C4]" />
@@ -77,14 +77,14 @@ export default function PDFaPNGPage() {
         <section className="py-10 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <p className="text-lg text-slate-600 leading-relaxed">
-              Usa el convertidor de PDF a PNG de PDF.it para exportar paginas de PDF como imagenes PNG — rapido. PNG es ideal cuando necesitas texto nitido, graficos limpios y calidad consistente para presentaciones, documentos y uso web. Sube tu PDF, convierte y descarga tus PNGs al instante.
+              Usa el convertidor de PDF a PNG de PDF.it para exportar páginas de PDF como imágenes PNG — rápido. PNG es ideal cuando necesitas texto nitido, gráficos limpios y calidad consistente para presentaciones, documentos y uso web. Sube tu PDF, convierte y descarga tus PNGs al instante.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
               <li className="flex items-center gap-2">✓ Convierte PDF a PNG con resultados nitidos y legibles</li>
-              <li className="flex items-center gap-2">✓ Ideal para paginas con mucho texto, graficos y diagramas</li>
+              <li className="flex items-center gap-2">✓ Ideal para páginas con mucho texto, gráficos y diagramas</li>
               <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li className="flex items-center gap-2">✓ Sin instalacion — funciona desde tu navegador</li>
-              <li className="flex items-center gap-2">✓ Descargas faciles para paginas individuales o documentos completos</li>
+              <li className="flex items-center gap-2">✓ Sin instalación — funciona desde tu navegador</li>
+              <li className="flex items-center gap-2">✓ Descargas fáciles para páginas individuales o documentos completos</li>
             </ul>
           </div>
         </section>
@@ -112,9 +112,9 @@ export default function PDFaPNGPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { title: "Convierte Paginas de PDF a Imagenes PNG", desc: "Transforma cada pagina de un PDF en un archivo PNG separado. Cada pagina se convierte en una imagen que puedes usar en presentaciones, correos, documentos, herramientas de diseno o sitios web." },
-                { title: "¿Por Que Elegir PNG en Lugar de JPG?", desc: "PNG produce texto y graficos mas limpios que JPG porque evita artefactos de compresion agresiva. Si necesitas archivos mas pequenos, prueba nuestra herramienta PDF a JPG." },
-                { title: "Salida de Alta Calidad para Diseno y Compartir", desc: "Las exportaciones PNG son ideales para diagramas, mockups de interfaz, recibos, formularios y cualquier PDF donde la claridad es importante." },
+                { title: "Convierte Páginas de PDF a Imágenes PNG", desc: "Transforma cada página de un PDF en un archivo PNG separado. Cada página se convierte en una imagen que puedes usar en presentaciones, correos, documentos, herramientas de diseño o sitios web." },
+                { title: "¿Por Que Elegir PNG en Lugar de JPG?", desc: "PNG produce texto y gráficos más limpios que JPG porque evita artefactos de compresión agresiva. Si necesitas archivos más pequeños, prueba nuestra herramienta PDF a JPG." },
+                { title: "Salida de Alta Calidad para Diseño y Compartir", desc: "Las exportaciones PNG son ideales para diagramas, mockups de interfaz, recibos, formularios y cualquier PDF donde la claridad es importante." },
               ].map((feature) => (
                 <div
                   key={feature.title}
@@ -153,7 +153,7 @@ export default function PDFaPNGPage() {
               {[
                 { num: "1", title: "Sube tu PDF", desc: "Arrastra o haz clic para elegir un archivo" },
                 { num: "2", title: "Haz clic en Convertir", desc: "El procesamiento toma solo segundos" },
-                { num: "3", title: "Descarga tus PNGs", desc: "Todas las paginas en un archivo ZIP" },
+                { num: "3", title: "Descarga tus PNGs", desc: "Todas las páginas en un archivo ZIP" },
               ].map((step) => (
                 <div key={step.num} className="flex-1">
                   <div
@@ -180,9 +180,9 @@ export default function PDFaPNGPage() {
             <h2 className="text-2xl font-black text-white mb-6 text-center">Herramientas Relacionadas</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
-                { name: "PDF a JPG", href: "/es/pdf-a-jpg", desc: "Archivos mas pequenos" },
-                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamano antes de convertir" },
-                { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Convierte solo las paginas que necesitas" },
+                { name: "PDF a JPG", href: "/es/pdf-a-jpg", desc: "Archivos más pequeños" },
+                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce el tamaño antes de convertir" },
+                { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Convierte solo las páginas que necesitas" },
                 { name: "PDF a Texto", href: "/es/pdf-a-texto", desc: "Extrae texto del PDF" },
               ].map((tool) => (
                 <div
@@ -232,12 +232,12 @@ export default function PDFaPNGPage() {
             <h2 className="text-3xl font-black text-white mb-10 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-4">
               {[
-                { q: "¿Puedo convertir un PDF de varias paginas a PNG?", a: "Si. PDF.it convierte cada pagina del PDF en una imagen PNG individual que puedes descargar por separado." },
-                { q: "¿Por que elegir PNG en lugar de JPG?", a: "PNG es mejor para texto nitido, graficos y diagramas porque no usa compresion agresiva. JPG suele ser mas pequeno y mejor para paginas con muchas fotos." },
-                { q: "¿Puedo convertir PDF a PNG en mi celular?", a: "Si. PDF.it funciona en navegadores moviles — sube tu PDF, convierte y descarga tus imagenes PNG." },
-                { q: "¿Por que mis archivos PNG se ven borrosos?", a: "Los PNGs borrosos generalmente provienen de un PDF de baja calidad, especialmente documentos escaneados. Prueba nuestro Escaner OCR para PDFs escaneados." },
-                { q: "¿Es seguro subir mi PDF?", a: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion." },
-                { q: "¿Cual es el tamano maximo de archivo que puedo convertir?", a: "Las cuentas gratuitas pueden subir archivos de hasta 25MB. Las cuentas Pro pueden subir hasta 200MB. Las cuentas Business pueden subir hasta 1GB." },
+                { q: "¿Puedo convertir un PDF de varias páginas a PNG?", a: "Si. PDF.it convierte cada página del PDF en una imagen PNG individual que puedes descargar por separado." },
+                { q: "¿Por qué elegir PNG en lugar de JPG?", a: "PNG es mejor para texto nitido, gráficos y diagramas porque no usa compresión agresiva. JPG suele ser más pequeño y mejor para páginas con muchas fotos." },
+                { q: "¿Puedo convertir PDF a PNG en mi celular?", a: "Si. PDF.it funciona en navegadores móviles — sube tu PDF, convierte y descarga tus imágenes PNG." },
+                { q: "¿Por qué mis archivos PNG se ven borrosos?", a: "Los PNGs borrosos generalmente provienen de un PDF de baja calidad, especialmente documentos escaneados. Prueba nuestro Escáner OCR para PDFs escaneados." },
+                { q: "¿Es seguro subir mi PDF?", a: "Si. Todas las transferencias están cifradas con SSL y tus archivos se eliminan inmediatamente después de tu sesión." },
+                { q: "¿Cual es el tamaño máximo de archivo que puedo convertir?", a: "Las cuentas gratuitas pueden subir archivos de hasta 25MB. Las cuentas Pro pueden subir hasta 200MB. Las cuentas Business pueden subir hasta 1GB." },
               ].map((faq, i) => (
                 <div
                   key={i}
@@ -260,12 +260,12 @@ export default function PDFaPNGPage() {
           "@context": "https://schema.org",
           "@type": "FAQPage",
           "mainEntity": [
-            { "@type": "Question", "name": "¿Puedo convertir un PDF de varias paginas a PNG?", "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it convierte cada pagina del PDF en una imagen PNG individual que puedes descargar por separado." } },
-            { "@type": "Question", "name": "¿Por que elegir PNG en lugar de JPG?", "acceptedAnswer": { "@type": "Answer", "text": "PNG es mejor para texto nitido, graficos y diagramas porque no usa compresion agresiva. JPG suele ser mas pequeno y mejor para paginas con muchas fotos." } },
-            { "@type": "Question", "name": "¿Puedo convertir PDF a PNG en mi celular?", "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en navegadores moviles — sube tu PDF, convierte y descarga tus imagenes PNG." } },
-            { "@type": "Question", "name": "¿Por que mis archivos PNG se ven borrosos?", "acceptedAnswer": { "@type": "Answer", "text": "Los PNGs borrosos generalmente provienen de un PDF de baja calidad, especialmente documentos escaneados. Prueba nuestro Escaner OCR para PDFs escaneados." } },
-            { "@type": "Question", "name": "¿Es seguro subir mi PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion." } },
-            { "@type": "Question", "name": "¿Cual es el tamano maximo de archivo que puedo convertir?", "acceptedAnswer": { "@type": "Answer", "text": "Las cuentas gratuitas pueden subir archivos de hasta 25MB. Las cuentas Pro pueden subir hasta 200MB. Las cuentas Business pueden subir hasta 1GB." } },
+            { "@type": "Question", "name": "¿Puedo convertir un PDF de varias páginas a PNG?", "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it convierte cada página del PDF en una imagen PNG individual que puedes descargar por separado." } },
+            { "@type": "Question", "name": "¿Por qué elegir PNG en lugar de JPG?", "acceptedAnswer": { "@type": "Answer", "text": "PNG es mejor para texto nitido, gráficos y diagramas porque no usa compresión agresiva. JPG suele ser más pequeño y mejor para páginas con muchas fotos." } },
+            { "@type": "Question", "name": "¿Puedo convertir PDF a PNG en mi celular?", "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en navegadores móviles — sube tu PDF, convierte y descarga tus imágenes PNG." } },
+            { "@type": "Question", "name": "¿Por qué mis archivos PNG se ven borrosos?", "acceptedAnswer": { "@type": "Answer", "text": "Los PNGs borrosos generalmente provienen de un PDF de baja calidad, especialmente documentos escaneados. Prueba nuestro Escáner OCR para PDFs escaneados." } },
+            { "@type": "Question", "name": "¿Es seguro subir mi PDF?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Todas las transferencias están cifradas con SSL y tus archivos se eliminan inmediatamente después de tu sesión." } },
+            { "@type": "Question", "name": "¿Cual es el tamaño máximo de archivo que puedo convertir?", "acceptedAnswer": { "@type": "Answer", "text": "Las cuentas gratuitas pueden subir archivos de hasta 25MB. Las cuentas Pro pueden subir hasta 200MB. Las cuentas Business pueden subir hasta 1GB." } },
           ]
         })}} />
       </main>

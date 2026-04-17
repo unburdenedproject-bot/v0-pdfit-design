@@ -14,7 +14,7 @@ export const metadata = {
 const faqSchema = {
   "@context": "https://schema.org", "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "¿Cómo divido un PDF que es muy grande para email?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Dividir PDF de PDF.it, elige dividir por tamaño de archivo o conteo de páginas, y descarga las partes más pequeñas. Cada parte estará bajo el límite de adjuntos de email." } },
+    { "@type": "Question", "name": "¿Cómo divido un PDF qué es muy grande para email?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta Dividir PDF de PDF.it, elige dividir por tamaño de archivo o conteo de páginas, y descarga las partes más pequeñas. Cada parte estará bajo el límite de adjuntos de email." } },
     { "@type": "Question", "name": "¿Cuál es el límite de adjuntos de Gmail?", "acceptedAnswer": { "@type": "Answer", "text": "Gmail permite adjuntos de hasta 25MB por email (total para todos los adjuntos combinados). Si tu PDF es más grande, necesitas dividirlo en archivos más pequeños o comprimirlo para reducir el tamaño." } },
     { "@type": "Question", "name": "¿Cuál es el límite de adjuntos de Outlook?", "acceptedAnswer": { "@type": "Answer", "text": "Microsoft Outlook permite adjuntos de hasta 20MB por email. Outlook.com (Hotmail) tiene el mismo límite de 20MB. Para archivos más grandes, divide o comprime tu PDF." } },
     { "@type": "Question", "name": "¿Debo dividir o comprimir mi PDF para email?", "acceptedAnswer": { "@type": "Answer", "text": "Intenta comprimir primero — es más simple. Si el PDF comprimido sigue siendo muy grande, divídelo en partes. PDF.it ofrece ambas herramientas: Comprimir PDF y Dividir PDF." } },
@@ -27,7 +27,7 @@ const howToSchema = {
   "@context": "https://schema.org", "@type": "HowTo", "name": "Cómo Dividir un PDF para Email",
   "description": "Divide un PDF grande en archivos más pequeños que quepan bajo los límites de adjuntos de email en 3 simples pasos.",
   "step": [
-    { "@type": "HowToStep", "name": "Sube tu PDF grande", "text": "Ve a la herramienta Dividir PDF de PDF.it y sube el PDF que es muy grande para email." },
+    { "@type": "HowToStep", "name": "Sube tu PDF grande", "text": "Ve a la herramienta Dividir PDF de PDF.it y sube el PDF qué es muy grande para email." },
     { "@type": "HowToStep", "name": "Divide por rangos de páginas", "text": "Divide el PDF en secciones que sean lo suficientemente pequeñas para enviar por email. Por ejemplo, divide un PDF de 40 páginas en dos mitades de 20 páginas." },
     { "@type": "HowToStep", "name": "Descarga y envía cada parte", "text": "Descarga los archivos divididos y adjunta cada uno a un email separado. Etiquétalos claramente (Parte 1 de 3, Parte 2 de 3, etc.)." }
   ]
@@ -174,7 +174,7 @@ export default function DividirPDFParaEmailPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo divido un PDF que es muy grande para email?", a: "Sube tu PDF a la herramienta Dividir PDF de PDF.it, elige dividir por tamaño de archivo o conteo de páginas, y descarga las partes más pequeñas. Cada parte estará bajo el límite de adjuntos de email." },
+                { q: "¿Cómo divido un PDF qué es muy grande para email?", a: "Sube tu PDF a la herramienta Dividir PDF de PDF.it, elige dividir por tamaño de archivo o conteo de páginas, y descarga las partes más pequeñas. Cada parte estará bajo el límite de adjuntos de email." },
                 { q: "¿Cuál es el límite de adjuntos de Gmail?", a: "Gmail permite adjuntos de hasta 25MB por email (total para todos los adjuntos combinados). Si tu PDF es más grande, necesitas dividirlo en archivos más pequeños o comprimirlo para reducir el tamaño." },
                 { q: "¿Cuál es el límite de adjuntos de Outlook?", a: "Microsoft Outlook permite adjuntos de hasta 20MB por email. Outlook.com (Hotmail) tiene el mismo límite de 20MB. Para archivos más grandes, divide o comprime tu PDF." },
                 { q: "¿Debo dividir o comprimir mi PDF para email?", a: "Intenta comprimir primero — es más simple. Si el PDF comprimido sigue siendo muy grande, divídelo en partes. PDF.it ofrece ambas herramientas: Comprimir PDF y Dividir PDF." },

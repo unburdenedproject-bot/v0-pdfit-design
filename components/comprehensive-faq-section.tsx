@@ -39,7 +39,7 @@ const faqCategories = [
           "Yes. All file transfers use SSL/HTTPS encryption. Files are processed securely and deleted automatically after your session ends. We do not store, review, or share your documents.",
       },
       {
-        question: "What happens to my files after conversion?",
+        question: "What happens to my files after conversión?",
         answer:
           "Your uploaded files and converted outputs are deleted from our servers automatically after your session ends. We do not retain your document contents.",
       },
@@ -99,7 +99,7 @@ const faqCategories = [
           "Visit our Contact page or email us at contact@pdf.it.com. We aim to respond within one business day.",
       },
       {
-        question: "Why is my PDF conversion not looking right?",
+        question: "Why is my PDF conversión not looking right?",
         answer:
           "Formatting issues are most common with complex layouts, custom fonts, or wide spreadsheets. Try simplifying the source file before converting, or use a different export setting if available.",
       },

@@ -116,7 +116,7 @@ export default function ExtraccionInteligentePage() {
             <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">Cómo Funciona la Extracción Inteligente</h2>
             <div className="flex flex-col sm:flex-row gap-6 justify-center text-center">
               {[
-                { num: "1", title: "Sube tu PDF", desc: "Arrastra y suelta o haz clic para seleccionar" },
+                { num: "1", title: "Sube tu PDF", desc: "Arrastra y suelta o haz clic para selecciónar" },
                 { num: "2", title: "La IA extrae datos", desc: "Nombres, fechas, montos y más" },
                 { num: "3", title: "Revisa y descarga", desc: "Excel, CSV o JSON" },
               ].map((step) => (

@@ -8,7 +8,7 @@ import Link from "next/link"
 export const metadata = {
   title: "Unir PDF Online — Combinar Archivos PDF en Uno | PDF.it",
   description:
-    "Une archivos PDF en un solo documento con PDF.it. Combina PDFs online, reordena paginas y descarga un unico PDF — rapido y sencillo.",
+    "Une archivos PDF en un solo documento con PDF.it. Combina PDFs online, reordena páginas y descarga un único PDF — rápido y sencillo.",
   alternates: {
     canonical: "https://pdf.it.com/es/unir-pdf",
     languages: {
@@ -53,7 +53,7 @@ export default function UnirPDFPage() {
               </div>
               <h1 className="text-4xl lg:text-5xl font-black mb-4">Unir Archivos PDF Online</h1>
               <p className="text-xl text-slate-300 mb-8">
-                Combina varios PDFs en un solo archivo con PDF.it. Sube, reordena, une y descarga — rapido, limpio y desde tu navegador.
+                Combina varios PDFs en un solo archivo con PDF.it. Sube, reordena, une y descarga — rápido, limpio y desde tu navegador.
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm font-semibold">
                 <div className="flex items-center gap-2">
@@ -62,7 +62,7 @@ export default function UnirPDFPage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Shield className="h-4 w-4 text-[#14D8C4]" />
-                  <span>Archivos Eliminados Tras la Sesion</span>
+                  <span>Archivos Eliminados Tras la Sesión</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Download className="h-4 w-4 text-[#14D8C4]" />
@@ -77,14 +77,14 @@ export default function UnirPDFPage() {
         <section className="py-10 bg-[#F3F4FF]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
             <p className="text-lg text-slate-600 leading-relaxed">
-              Usa la herramienta Unir PDF de PDF.it para combinar PDFs en un solo archivo en segundos. Sube varios documentos PDF, ordenalos correctamente y descarga un unico PDF unido — perfecto para entregas, contratos, facturas e informes.
+              Usa la herramienta Unir PDF de PDF.it para combinar PDFs en un solo archivo en segundos. Sube varios documentos PDF, ordenalos correctamente y descarga un único PDF unido — perfecto para entregas, contratos, facturas e informes.
             </p>
             <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left text-slate-700 text-sm font-medium">
               <li className="flex items-center gap-2">✓ Une varios archivos PDF en un solo PDF</li>
               <li className="flex items-center gap-2">✓ Reordena archivos antes de unir para la secuencia correcta</li>
               <li className="flex items-center gap-2">✓ Ideal para informes, recibos, facturas y formularios</li>
               <li className="flex items-center gap-2">✓ Funciona en Mac, Windows, iOS, Android y Linux</li>
-              <li className="flex items-center gap-2">✓ Sin instalacion — une PDFs directamente en tu navegador</li>
+              <li className="flex items-center gap-2">✓ Sin instalación — une PDFs directamente en tu navegador</li>
             </ul>
           </div>
         </section>
@@ -114,7 +114,7 @@ export default function UnirPDFPage() {
               {[
                 { title: "Combina PDFs en un Solo Documento", desc: "Une PDFs en un solo archivo para compartir. Ideal para enviar un adjunto en vez de muchos, o entregar un paquete completo a escuelas, bancos o empleadores." },
                 { title: "Reordena Archivos PDF Antes de Unir", desc: "Sube tus archivos y ordenalos en el orden exacto que quieras. PDF.it los une en la secuencia que tu elijas." },
-                { title: "Une PDFs para Imprimir y Compartir", desc: "Crea un solo PDF limpio para imprimir, enviar por email, archivar o subir — sin manejar multiples archivos." },
+                { title: "Une PDFs para Imprimir y Compartir", desc: "Crea un solo PDF limpio para imprimir, enviar por email, archivar o subir — sin manejar múltiples archivos." },
               ].map((feature) => (
                 <div
                   key={feature.title}
@@ -181,9 +181,9 @@ export default function UnirPDFPage() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               {[
                 { name: "Dividir PDF", href: "/es/dividir-pdf", desc: "Divide un PDF en partes" },
-                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce tamano despues de unir" },
-                { name: "Rotar PDF", href: "/es/rotar-pdf", desc: "Corrige la orientacion" },
-                { name: "Proteger PDF", href: "/es/proteger-pdf", desc: "Agrega proteccion con contrasena" },
+                { name: "Comprimir PDF", href: "/es/comprimir-pdf", desc: "Reduce tamaño después de unir" },
+                { name: "Rotar PDF", href: "/es/rotar-pdf", desc: "Corrige la orientación" },
+                { name: "Proteger PDF", href: "/es/proteger-pdf", desc: "Agrega protección con contraseña" },
               ].map((tool) => (
                 <div
                   key={tool.href}
@@ -234,10 +234,10 @@ export default function UnirPDFPage() {
               {[
                 { q: "¿Como uno varios archivos PDF en uno solo?", a: "Sube tus PDFs a PDF.it, reordenalos como necesites y haz clic en Unir PDFs para descargar un solo archivo combinado." },
                 { q: "¿Puedo reordenar los PDFs antes de unirlos?", a: "Si. Sube tus archivos y ordenalos en la secuencia correcta — PDF.it los une en ese orden." },
-                { q: "¿Puedo unir PDFs desde mi celular?", a: "Si. PDF.it funciona en navegadores moviles — sube, une y descarga desde tu iPhone o Android." },
-                { q: "¿Puedo unir PDFs protegidos con contrasena?", a: "Los PDFs protegidos con contrasena necesitan ser desbloqueados antes de unirlos. Usa nuestra herramienta Desbloquear PDF primero." },
-                { q: "¿Es seguro subir mis PDFs?", a: "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." },
-                { q: "¿Cual es el tamano maximo de archivo para unir?", a: "Las cuentas gratuitas pueden subir archivos de hasta 25MB cada uno. Las cuentas Pro pueden subir archivos de hasta 200MB. Las cuentas Business pueden subir archivos de hasta 1GB." },
+                { q: "¿Puedo unir PDFs desde mi celular?", a: "Si. PDF.it funciona en navegadores móviles — sube, une y descarga desde tu iPhone o Android." },
+                { q: "¿Puedo unir PDFs protegidos con contraseña?", a: "Los PDFs protegidos con contraseña necesitan ser desbloqueados antes de unirlos. Usa nuestra herramienta Desbloquear PDF primero." },
+                { q: "¿Es seguro subir mis PDFs?", a: "Si. Todas las transferencias están cifradas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." },
+                { q: "¿Cual es el tamaño máximo de archivo para unir?", a: "Las cuentas gratuitas pueden subir archivos de hasta 25MB cada uno. Las cuentas Pro pueden subir archivos de hasta 200MB. Las cuentas Business pueden subir archivos de hasta 1GB." },
               ].map((faq, i) => (
                 <div
                   key={i}
@@ -262,10 +262,10 @@ export default function UnirPDFPage() {
           "mainEntity": [
             { "@type": "Question", "name": "¿Como uno varios archivos PDF en uno solo?", "acceptedAnswer": { "@type": "Answer", "text": "Sube tus PDFs a PDF.it, reordenalos como necesites y haz clic en Unir PDFs para descargar un solo archivo combinado." } },
             { "@type": "Question", "name": "¿Puedo reordenar los PDFs antes de unirlos?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Sube tus archivos y ordenalos en la secuencia correcta — PDF.it los une en ese orden." } },
-            { "@type": "Question", "name": "¿Puedo unir PDFs desde mi celular?", "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en navegadores moviles — sube, une y descarga desde tu iPhone o Android." } },
-            { "@type": "Question", "name": "¿Puedo unir PDFs protegidos con contrasena?", "acceptedAnswer": { "@type": "Answer", "text": "Los PDFs protegidos con contrasena necesitan ser desbloqueados antes de unirlos. Usa nuestra herramienta Desbloquear PDF primero." } },
-            { "@type": "Question", "name": "¿Es seguro subir mis PDFs?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Todas las transferencias estan cifradas con SSL y tus archivos se eliminan inmediatamente despues de tu sesion. Nunca almacenamos ni compartimos tus documentos." } },
-            { "@type": "Question", "name": "¿Cual es el tamano maximo de archivo para unir?", "acceptedAnswer": { "@type": "Answer", "text": "Las cuentas gratuitas pueden subir archivos de hasta 25MB cada uno. Las cuentas Pro pueden subir archivos de hasta 200MB. Las cuentas Business pueden subir archivos de hasta 1GB." } }
+            { "@type": "Question", "name": "¿Puedo unir PDFs desde mi celular?", "acceptedAnswer": { "@type": "Answer", "text": "Si. PDF.it funciona en navegadores móviles — sube, une y descarga desde tu iPhone o Android." } },
+            { "@type": "Question", "name": "¿Puedo unir PDFs protegidos con contraseña?", "acceptedAnswer": { "@type": "Answer", "text": "Los PDFs protegidos con contraseña necesitan ser desbloqueados antes de unirlos. Usa nuestra herramienta Desbloquear PDF primero." } },
+            { "@type": "Question", "name": "¿Es seguro subir mis PDFs?", "acceptedAnswer": { "@type": "Answer", "text": "Si. Todas las transferencias están cifradas con SSL y tus archivos se eliminan inmediatamente después de tu sesión. Nunca almacenamos ni compartimos tus documentos." } },
+            { "@type": "Question", "name": "¿Cual es el tamaño máximo de archivo para unir?", "acceptedAnswer": { "@type": "Answer", "text": "Las cuentas gratuitas pueden subir archivos de hasta 25MB cada uno. Las cuentas Pro pueden subir archivos de hasta 200MB. Las cuentas Business pueden subir archivos de hasta 1GB." } }
           ]
         })}} />
       </main>

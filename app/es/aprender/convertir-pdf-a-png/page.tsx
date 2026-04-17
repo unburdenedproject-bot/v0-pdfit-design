@@ -18,11 +18,11 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "¿Cómo convierto un PDF a PNG gratis?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta PDF a PNG de PDF.it, selecciona la resolución deseada, haz clic en Convertir y descarga las imágenes PNG. No se necesita registro para tus primeros 3 archivos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sube tu PDF a la herramienta PDF a PNG de PDF.it, seleccióna la resolución deseada, haz clic en Convertir y descarga las imágenes PNG. No se necesita registro para tus primeros 3 archivos." }
     },
     {
       "@type": "Question",
-      "name": "¿PNG es mejor que JPG para conversiones de PDF?",
+      "name": "¿PNG es mejor que JPG para conversiónes de PDF?",
       "acceptedAnswer": { "@type": "Answer", "text": "PNG es mejor cuando tu PDF contiene texto, gráficos, logos o arte lineal porque PNG usa compresión sin pérdida — no se pierde calidad. JPG es mejor para PDFs con muchas fotos donde el tamaño del archivo importa más que la nitidez perfecta." }
     },
     {
@@ -324,8 +324,8 @@ export default function ConvertirPdfAPngPage() {
             <h2 className="text-2xl font-black text-slate-900 mb-8 text-center">Preguntas Frecuentes</h2>
             <div className="space-y-6">
               {[
-                { q: "¿Cómo convierto un PDF a PNG gratis?", a: "Sube tu PDF a la herramienta PDF a PNG de PDF.it, selecciona la resolución deseada, haz clic en Convertir y descarga las imágenes PNG. No se necesita registro para tus primeros 3 archivos." },
-                { q: "¿PNG es mejor que JPG para conversiones de PDF?", a: "PNG es mejor cuando tu PDF contiene texto, gráficos, logos o arte lineal porque PNG usa compresión sin pérdida — no se pierde calidad. JPG es mejor para PDFs con muchas fotos donde el tamaño del archivo importa más que la nitidez perfecta." },
+                { q: "¿Cómo convierto un PDF a PNG gratis?", a: "Sube tu PDF a la herramienta PDF a PNG de PDF.it, seleccióna la resolución deseada, haz clic en Convertir y descarga las imágenes PNG. No se necesita registro para tus primeros 3 archivos." },
+                { q: "¿PNG es mejor que JPG para conversiónes de PDF?", a: "PNG es mejor cuando tu PDF contiene texto, gráficos, logos o arte lineal porque PNG usa compresión sin pérdida — no se pierde calidad. JPG es mejor para PDFs con muchas fotos donde el tamaño del archivo importa más que la nitidez perfecta." },
                 { q: "¿PNG soporta transparencia de PDFs?", a: "Sí. PNG soporta fondos transparentes, así que si tu PDF tiene elementos transparentes, pueden preservarse en la salida PNG. JPG no soporta transparencia — llena las áreas transparentes con blanco." },
                 { q: "¿Qué resolución debo usar para PDF a PNG?", a: "Para uso web, 150 DPI generalmente es suficiente. Para presentaciones y documentos, 200-300 DPI da resultados nítidos. Para calidad de impresión, usa 300 DPI o más." },
                 { q: "¿Puedo convertir un PDF de múltiples páginas a PNG?", a: "Sí. PDF.it convierte cada página de tu PDF en una imagen PNG separada. Puedes descargarlas individualmente o como archivo ZIP. Los usuarios Pro pueden convertir por lotes múltiples PDFs a la vez." },

@@ -89,7 +89,7 @@ export function FooterBr() {
             <ul className="space-y-2">
               <li>
                 <a href="/br/politica-de-privacidade" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] transition-colors text-sm">
-                  Politica de Privacidade
+                  Política de Privacidade
                 </a>
               </li>
               <li>

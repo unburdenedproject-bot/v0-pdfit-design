@@ -83,7 +83,7 @@ export function SmartExtractionInterface() {
     localePrefix === "/es"
       ? {
           uploadTitle: "Sube tu PDF",
-          uploadDesc: "Arrastra y suelta tu archivo PDF aqui, o haz clic para seleccionar",
+          uploadDesc: "Arrastra y suelta tu archivo PDF aquí, o haz clic para seleccionar",
           browse: "Seleccionar archivo",
           process: "Extraer Datos",
           processing: "Extrayendo datos con IA...",
@@ -91,8 +91,8 @@ export function SmartExtractionInterface() {
           downloadExcel: "Descargar Excel",
           downloadCsv: "Descargar CSV",
           downloadJson: "Descargar JSON",
-          upgradeTitle: "Funcion Business",
-          upgradeDesc: "Extraccion Inteligente de Datos esta disponible en el plan Business ($13.99/mes). Extrae automaticamente nombres, fechas, montos y datos clave de cualquier documento.",
+          upgradeTitle: "Función Business",
+          upgradeDesc: "Extracción Inteligente de Datos está disponible en el plan Business ($13.99/mes). Extrae automáticamente nombres, fechas, montos y datos clave de cualquier documento.",
           upgradeBtn: "Ver Plan Business",
           docType: "Tipo de Documento",
           summary: "Resumen",
@@ -107,7 +107,7 @@ export function SmartExtractionInterface() {
       : localePrefix === "/br"
         ? {
             uploadTitle: "Envie seu PDF",
-            uploadDesc: "Arraste e solte seu arquivo PDF aqui, ou clique para selecionar",
+            uploadDesc: "Arraste e solte seu arquivo PDF aquí, ou clique para selecionar",
             browse: "Selecionar arquivo",
             process: "Extrair Dados",
             processing: "Extraindo dados com IA...",
@@ -116,7 +116,7 @@ export function SmartExtractionInterface() {
             downloadCsv: "Baixar CSV",
             downloadJson: "Baixar JSON",
             upgradeTitle: "Funcao Business",
-            upgradeDesc: "Extracao Inteligente de Dados esta disponivel no plano Business ($13.99/mes). Extraia automaticamente nomes, datas, valores e dados chave de qualquer documento.",
+            upgradeDesc: "Extracao Inteligente de Dados está disponível no plano Business ($13.99/mes). Extraia automáticamente nomes, datas, valores e dados chave de qualquer documento.",
             upgradeBtn: "Ver Plano Business",
             docType: "Tipo de Documento",
             summary: "Resumo",
