@@ -5,6 +5,7 @@ import Link from "next/link"
 import { HeaderBr } from "@/components/header-br"
 import { HeroSectionBr } from "@/components/hero-section-br"
 import { FooterBr } from "@/components/footer-br"
+import { NewsletterSignup } from "@/components/newsletter-signup"
 import {
   Shield, Crown, Gift, Zap, Globe, Award, HelpCircle,
   FileText, FileSpreadsheet, Presentation, Image, Merge, Split, RotateCw,
@@ -422,6 +423,13 @@ export default function HomePagePt() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Newsletter */}
+        <section className="py-16" style={{ background: "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.06) 0%, transparent 50%), #0E0F1E" }}>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
+            <NewsletterSignup locale="br" />
           </div>
         </section>
 

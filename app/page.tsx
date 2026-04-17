@@ -7,6 +7,7 @@ import { FeaturesGrid } from "@/components/features-grid"
 import { TrustSection } from "@/components/trust-section"
 import { Footer } from "@/components/footer"
 import { ScrollToTools } from "@/components/scroll-to-tools"
+import { NewsletterSignup } from "@/components/newsletter-signup"
 
 const ComprehensiveFAQSection = dynamic(() => import("@/components/comprehensive-faq-section").then(mod => ({ default: mod.ComprehensiveFAQSection })), { ssr: true })
 
@@ -102,6 +103,14 @@ export default function HomePage() {
           <FeaturesGrid />
         </Suspense>
         <TrustSection />
+
+        {/* Newsletter Signup */}
+        <section className="py-16" style={{ background: "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(20,216,196,0.06) 0%, transparent 50%), #0E0F1E" }}>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
+            <NewsletterSignup locale="en" />
+          </div>
+        </section>
+
         <ComprehensiveFAQSection />
       </main>
       <Footer />

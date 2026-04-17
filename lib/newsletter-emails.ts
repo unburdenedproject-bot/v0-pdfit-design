@@ -8,7 +8,7 @@ export interface NewsletterEmail {
   slug: string
   delayDays: number
   subject: string
-  html: (name?: string) => string
+  html: (name?: string, subscriberEmail?: string) => string
 }
 
 const SITE = "https://www.pdf.it.com"
@@ -16,7 +16,7 @@ const TEAL = "#14D8C4"
 const DARK = "#0E0F1E"
 const INDIGO = "#6B7CFF"
 
-function emailWrapper(content: string, preheader: string = ""): string {
+function emailWrapper(content: string, preheader: string = "", subscriberEmail: string = ""): string {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,7 +50,7 @@ ${content}
 <tr>
 <td style="padding:0 36px 28px 36px;text-align:center;">
 <p style="margin:0;font-size:12px;line-height:18px;color:#A0A0B0;">
-You're receiving this because you signed up at <a href="${SITE}" style="color:${INDIGO};text-decoration:none;">pdf.it.com</a>
+You're receiving this because you signed up at <a href="${SITE}" style="color:${INDIGO};text-decoration:none;">pdf.it.com</a>${subscriberEmail ? ` · <a href="${SITE}/unsubscribe?email=${encodeURIComponent(subscriberEmail)}" style="color:#A0A0B0;text-decoration:underline;">Unsubscribe</a>` : ""}
 </p>
 </td>
 </tr>
@@ -75,7 +75,7 @@ export const DRIP_EMAILS: NewsletterEmail[] = [
     slug: "welcome",
     delayDays: 0,
     subject: "Welcome to PDF.it — here's how to get started",
-    html: (name) => emailWrapper(`
+    html: (name, subscriberEmail) => emailWrapper(`
 <h1 style="margin:0 0 16px 0;font-size:24px;font-weight:800;color:${DARK};line-height:1.3;">Welcome aboard${name ? `, ${name}` : ""}!</h1>
 <p style="margin:0 0 24px 0;font-size:15px;line-height:25px;color:#4A4A5A;">
 Your PDF toolkit is ready. Start converting, compressing, and editing documents — all from your browser, no account needed.
@@ -99,14 +99,14 @@ ${ctaButton("Try a tool now", SITE)}
 Questions? Just reply to this email — I read every one.
 </p>
 <p style="margin:8px 0 0 0;font-size:14px;font-weight:600;color:${DARK};">— Paula</p>
-`, "Welcome to PDF.it — 3 free tools to try right now"),
+`, "Welcome to PDF.it — 3 free tools to try right now", subscriberEmail),
   },
 
   {
     slug: "day3_nudge",
     delayDays: 3,
     subject: "Quick nudge — have you tried PDF.it yet?",
-    html: (name) => emailWrapper(`
+    html: (name, subscriberEmail) => emailWrapper(`
 <h1 style="margin:0 0 16px 0;font-size:24px;font-weight:800;color:${DARK};line-height:1.3;">Hey${name ? ` ${name}` : ""} — quick nudge</h1>
 <p style="margin:0 0 24px 0;font-size:15px;line-height:25px;color:#4A4A5A;">
 Have you had a chance to try any of the tools yet? Most people start with one of these:
@@ -132,14 +132,14 @@ ${ctaButton("Try it now — 30 seconds", SITE)}
 If something didn't work right, I'd love to hear about it — just reply.
 </p>
 <p style="margin:8px 0 0 0;font-size:14px;font-weight:600;color:${DARK};">— Paula</p>
-`, "Quick nudge — 30 seconds to try your first PDF tool"),
+`, "Quick nudge — 30 seconds to try your first PDF tool", subscriberEmail),
   },
 
   {
     slug: "day7_ai_tools",
     delayDays: 7,
     subject: "3 AI tools most people don't know PDF.it has",
-    html: (name) => emailWrapper(`
+    html: (name, subscriberEmail) => emailWrapper(`
 <h1 style="margin:0 0 16px 0;font-size:24px;font-weight:800;color:${DARK};line-height:1.3;">Did you know?</h1>
 <p style="margin:0 0 24px 0;font-size:15px;line-height:25px;color:#4A4A5A;">
 Most people find PDF.it for the basics. But we also have AI-powered tools that go way beyond compress and merge:
@@ -162,14 +162,14 @@ Available on paid plans with a <strong>30-day free trial</strong> — no charge 
 ${ctaButton("Start your free trial", `${SITE}/pricing`)}
 
 <p style="margin:24px 0 0 0;font-size:14px;font-weight:600;color:${DARK};">— Paula</p>
-`, "PDF.it has AI tools you might not know about"),
+`, "PDF.it has AI tools you might not know about", subscriberEmail),
   },
 
   {
     slug: "day14_upgrade",
     delayDays: 14,
     subject: "A quick thought on upgrading",
-    html: (name) => emailWrapper(`
+    html: (name, subscriberEmail) => emailWrapper(`
 <h1 style="margin:0 0 16px 0;font-size:24px;font-weight:800;color:${DARK};line-height:1.3;">Hey${name ? ` ${name}` : ""}</h1>
 <p style="margin:0 0 20px 0;font-size:15px;line-height:25px;color:#4A4A5A;">
 You've been on PDF.it for about two weeks. If you've been hitting the 10/day free limit or wanting to try the AI tools, every paid plan has a <strong>30-day free trial</strong>:
@@ -192,14 +192,14 @@ ${ctaButton("Start your free trial", `${SITE}/pricing`)}
 If PDF.it isn't the right fit, no hard feelings — I'd still love to hear what you were looking for. Just reply.
 </p>
 <p style="margin:8px 0 0 0;font-size:14px;font-weight:600;color:${DARK};">— Paula</p>
-`, "Upgrade to Pro or Business — 30-day free trial"),
+`, "Upgrade to Pro or Business — 30-day free trial", subscriberEmail),
   },
 
   {
     slug: "day30_recap",
     delayDays: 30,
     subject: "One month with PDF.it — how's it going?",
-    html: (name) => emailWrapper(`
+    html: (name, subscriberEmail) => emailWrapper(`
 <h1 style="margin:0 0 16px 0;font-size:24px;font-weight:800;color:${DARK};line-height:1.3;">One month in</h1>
 <p style="margin:0 0 20px 0;font-size:15px;line-height:25px;color:#4A4A5A;">
 Hey${name ? ` ${name}` : ""} — it's been about a month since you joined PDF.it. Quick question:
@@ -222,7 +222,7 @@ ${ctaButton("Visit PDF.it", SITE)}
 Thank you for being here.
 </p>
 <p style="margin:8px 0 0 0;font-size:14px;font-weight:600;color:${DARK};">— Paula</p>
-`, "One month — is there a feature you wish we had?"),
+`, "One month — is there a feature you wish we had?", subscriberEmail),
   },
 ]
 
