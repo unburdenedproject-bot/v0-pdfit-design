@@ -35,7 +35,7 @@ ${preheader ? `<div style="display:none;max-height:0;overflow:hidden;mso-hide:al
 <!-- Gradient Header -->
 <tr>
 <td style="background:linear-gradient(135deg, ${DARK} 0%, #1a1f5e 50%, ${INDIGO} 100%);padding:28px 32px;text-align:center;">
-<span style="font-size:22px;font-weight:800;color:#ffffff;letter-spacing:0.5px;">PDF</span><span style="font-size:22px;font-weight:800;color:${TEAL};letter-spacing:0.5px;">.it</span>
+<span style="font-size:22px;font-weight:800;color:#ffffff;letter-spacing:0.5px;">PDF</span><span style="font-size:22px;font-weight:800;color:${TEAL};letter-spacing:0.5px;">.it</span><span style="font-size:11px;font-weight:600;color:#ffffff;vertical-align:super;">&#8482;</span>
 </td>
 </tr>
 

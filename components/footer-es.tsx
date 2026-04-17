@@ -112,7 +112,7 @@ export function FooterEs() {
         </div>
 
         <div className="border-t border-[#252A6A] mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-[#A5B4FC] text-sm">© 2024 PDF.it. Creado para profesionales, elegido por profesionales.</p>
+          <p className="text-[#A5B4FC] text-sm">© 2025 PDF.it™. Creado para profesionales, elegido por profesionales.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="/es/politica-de-privacidad" target="_blank" rel="noopener noreferrer" className="text-[#A5B4FC] hover:text-[#14D8C4] text-sm transition-colors">
               Privacidad

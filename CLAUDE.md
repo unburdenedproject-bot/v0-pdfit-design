@@ -158,7 +158,7 @@ Positioning: "Fix any document problem instantly" — not just "PDF tools"
 - **Blank PDF check (`lib/blank-pdf-check.js`) must never reject valid files** — if the check itself throws (pdfjs-dist failure), log the error and continue processing. Let iLoveAPI handle truly invalid files.
 - **Async job queue is DISABLED for launch** — `ASYNC_ENABLED_TOOLS` in `processing-interface.tsx` is an empty Set. All tools use sync processing. Do NOT re-enable without thorough testing of the job queue, cron trigger, and polling timeout.
 - **Anonymous usage limit is 3/day** — tracked via cookie `pdfit_uses_YYYY-MM-DD` (daily reset). Cookie is set inside `checkUsageAndAuth()` directly, not returned for routes to set.
-- **Footer copyright must say © 2024** — PDF.it was established in 2024. Never use dynamic dates.
+- **Footer copyright must say © 2025 PDF.it™** — updated April 16, 2026 per Paula's instruction. Never use dynamic dates.
 - **Never show low usage numbers as social proof** — live stats only display "Files processed" when count exceeds 10,000. Below that, shows "30+ PDF tools available"
 - **Feedback table requires manual approval** — set `approved = true` in Supabase before testimonials display on homepage
 - **New tool interfaces must use the shared client-side validator** — import `validateClientFile` from `lib/client-file-validator.ts` in the drop/select handler and render `getSizeLimitLabel(userPlan)` under the dropzone. Exception: `pdf-compare-interface.tsx` uses inline validation (dual-file flow is different).
