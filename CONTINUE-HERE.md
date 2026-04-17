@@ -1,102 +1,94 @@
 # Continue Here — PDF.it Status Brief
 
-**Last updated:** April 16, 2026 (evening)
+**Last updated:** April 16, 2026 (end of day)
 **Read this first when resuming.**
 
 ---
 
-## 🟢 What's Done
+## Where we are
 
-### April 15, 2026 — UX polish + solo builder infrastructure
-- No-red audit sweep (38 files); premium soft-card pattern everywhere
-- Header redesign (EN/ES/BR): removed About/Contact, added tool search
-- About CTA "Compare all plans" (EN/ES/BR)
-- Footer: removed X icon
-- Upload dropzones: plan-aware max file size shown everywhere
-- Error headings: "File Too Large", "Unsupported File Type", "Empty File" fire correctly
-- Kill switch infra shipped (feature_flags table, `isToolEnabled` helper, 35 tool routes wired)
-- `lib/analytics.ts` + instrumentation on 3 interfaces
-- `/weekly-review` slash command created
-- SEO cron false-positive fixed
+PDF.it launches next week. All 7 solo-builder priorities are complete. Newsletter automation is live. Marketing assets are drafted. Infrastructure is hardened.
 
-### April 16, 2026 — Security hardening + infra + observability
-**Paula (security + infra):**
-- Supabase RLS enabled on `webhook_events` and `newsletter_subscribers`
-- Tightened RLS on `contact_messages` + `user_feedback` (INSERT-only)
-- Fixed mutable `search_path` on `increment_usage` and `audit_user_changes` functions
-- "Prevent use of leaked passwords" enabled in Supabase Auth (HIBP check)
-- Upstash Redis recreated (pdfit-ratelimit, Pay-as-you-go, us-east-1) + reconnected to Vercel
-- Vercel on-demand budget raised $200 → $300; email alerts on
-- OpenAI $100 monthly cap + 80/100% alerts
-- iLoveAPI low-credits alerts
-- Stripe alerts: disputes, unexpected refunds, Radar fraud, negative balance, elevated-risk payments, $10 min balance
-- Gmail filter: `noreply@pdf.it.com` → never spam
-- Ran SQL migrations 008 + 009 → 37 rows in `feature_flags`, kill switch ACTIVE
-- Vercel CLI + Stripe CLI confirmed installed and authenticated
-
-**Claude (code):**
-- Observability instrumentation complete across all 16 tool interfaces (every tool now fires file_selected / process_start / process_complete / process_error to GA4)
-- CI workflow fixed: E2E + Integration skipped on push (secrets not configured); still run on PR + manual dispatch
-- Middleware + contact route now accept BOTH `KV_REST_API_*` and `UPSTASH_REDIS_REST_*` env vars (Paula's new Upstash marketplace uses the UPSTASH_ prefix)
-- Middleware logs a warning if no Upstash credentials are found (so silent fail-open is visible)
-- ENVIRONMENT.md updated to document both env var naming conventions
+**What's working right now:**
+- 30+ PDF tools + 7 AI tools, all live on pdf.it.com
+- Kill switch on every tool (37 Supabase feature flags)
+- Rate limiting active (Upstash, middleware accepts both env var naming conventions)
+- Observability on every tool (16 interfaces → GA4 tool_event)
+- 5-email drip sequence fires automatically on newsletter signup
+- 4 scheduled remote agents (daily health check, Monday review, monthly churn, Stripe CLI reminder)
+- Cancel survey capturing reasons via Stripe webhook
+- Cost alerts on Vercel, OpenAI, iLoveAPI, Stripe
+- RUNBOOK.md covering 13 incident types
+- /weekly-review + /daily-health + /monthly-churn skills ready
 
 ---
 
-## 🔴 Paula's to-do list (open items)
+## 🔴 Paula's to-do list (before launch)
 
-**All 7 solo-builder priorities are complete.** Nothing on your plate.
+### Spam fix — Resend DNS verification (5 min, CRITICAL)
+The welcome email landed in spam. This is because SPF/DKIM/DMARC DNS records may not be configured for pdf.it.com.
+- [ ] Go to **Resend → Domains → pdf.it.com**
+- [ ] Check if SPF, DKIM, and DMARC all show **green/verified**
+- [ ] If any are pending/red → Resend shows the exact DNS records to add. Add them at your domain registrar (wherever you bought pdf.it.com)
+- [ ] Wait 1-24 hours for DNS propagation, then test by signing up with a different email
+- [ ] **Without this fix, all marketing emails will land in spam.** This blocks everything.
 
-### ✅ All completed April 16, 2026
-- Runbook (`RUNBOOK.md`) — 13 incident types, reviewed by Claude for factual errors
-- Dashboard growth features — time saved, favorite tool, AI discovery banner (EN/ES/BR)
-- Cancel survey — `cancellation_reasons` table + webhook capture + Stripe portal configured
+### Save launch-day posts (2 min)
+- [ ] Copy the launch email template + Product Hunt + LinkedIn + Reddit + Hacker News posts from today's chat into a Google Doc
+- [ ] They're ready to paste — no edits needed unless you want to personalize
 
-### Optional nice-to-haves (no rush)
-- [ ] Verify SPF/DKIM/DMARC green in Resend dashboard → Domains → `pdf.it.com`
+### Optional polish
 - [ ] GA4 Explore: after 24h of data, build the `tool_event` funnel segmented by tier
-
-### Recurring reminders
-- **Every Monday:** type `/weekly-review` in Claude Code for the weekly ops report
-- **Monthly:** query `cancellation_reasons` in Supabase to see churn drivers (see SOLO-PRIORITIES.md #5)
-- **Before July 15, 2026:** run `stripe login` to re-auth CLI (90-day key expiry)
+- [ ] Check if the ™ looks right on the live footer at pdf.it.com
+- [ ] Decide: add ™ to the SVG logo image too, or leave it text-only?
 
 ---
 
-## 🟡 Next session tasks for Claude
+## 🟡 Next session — building toward a powerful SaaS
 
-All 7 priorities are shipped. When you're ready for a new direction:
+### Phase 1: Launch week (this week)
+Claude is ready to help with:
+1. **Newsletter signup on homepage** — currently only on blog pages. Add a prominent signup section on the homepage hero or below tools grid. More signups = more drip emails = more conversions.
+2. **Unsubscribe endpoint** — the email footer links to `/unsubscribe?email=...` but the route doesn't exist yet. Build it before launch to stay CAN-SPAM compliant.
+3. **Weekly broadcast mechanism** — after launch, Paula will want to send a "tool of the week" email to all subscribers. Build a simple `/api/send-broadcast` endpoint or Supabase-based campaign table.
 
-1. **Optional follow-ups on observability:** add `result_downloaded` events to each tool's download handler; add per-turn events to chat-with-pdf chat sends; add rewrite-step events to ats-optimizer.
+### Phase 2: Growth engine (weeks 2-4)
+4. **SEO article pipeline** — use `/seo-article` skill to publish 3-5 `/learn/` articles per week targeting long-tail keywords where SmallPDF/iLovePDF don't rank. This is the #1 organic growth lever.
+5. **Comparison pages** — `/vs/smallpdf`, `/vs/ilovepdf`, `/vs/adobe-acrobat`. High-intent search traffic from people already looking for alternatives.
+6. **Industry landing pages** — `/for/lawyers`, `/for/accountants`, `/for/hr-teams`. Enterprise conversion pages tied to the workflow templates.
+7. **Product Hunt launch optimization** — Paula posts on launch day, Claude monitors + responds to comments in real-time.
 
-2. **In-app feedback prompt** (the deferred part of #5): add a one-question "How was this?" prompt after a user's Nth tool use. Deferred because it touches `processing-interface.tsx` (load-bearing). Revisit if `cancellation_reasons` data surfaces patterns we can't explain.
+### Phase 3: Retention + revenue (month 2+)
+8. **Weekly broadcast newsletter** — "Tool of the week" + tips + user stories. Keeps subscribers engaged between drip emails.
+9. **In-app feedback prompt** — after 3rd tool use, ask "How was this?" (deferred from earlier — needs processing-interface.tsx changes, medium risk)
+10. **Annual billing upsell** — detect monthly subscribers and show "Save 17% with annual" banner in dashboard + email at month 3
+11. **Referral program** — "Give 1 month free, get 1 month free" — Stripe coupon-based, simple UI
+12. **Re-engagement emails** — detect users who haven't logged in for 30 days, send a "we miss you" nudge with their favorite tool highlighted
 
-3. **Scaffold RUNBOOK.md** if Paula asks for a template (already written, but could evolve).
+### Phase 4: Scale (when you hit 1,000 subscribers)
+See POST-LAUNCH.md Phase 1-4 gates for the full roadmap (new languages, infrastructure migration, team plans, API access tier).
 
-4. **New product work** — resume any feature/growth work from POST-LAUNCH.md Phase 1–4 when appropriate.
+---
 
-4. **Optional follow-ups on observability:** add `result_downloaded` events to each tool's download handler; add per-turn events to chat-with-pdf chat sends; add rewrite-step events to ats-optimizer.
+## Recurring reminders
+- **Every morning ~8 AM PT:** daily health check email lands in your inbox (automated)
+- **Every Monday ~9 AM PT:** weekly review reminder email (automated) — open Claude Code and run `/weekly-review`
+- **Every 1st of month ~9 AM PT:** monthly churn email with SQL queries (automated)
+- **Before July 15, 2026:** run `stripe login` to re-auth CLI (reminder email will fire July 10)
 
 ---
 
 ## 📁 Where things live
 
-- **SOLO-PRIORITIES.md** — 7-priority framework with per-item status
-- **COMPLETED.md** — full changelog
-- **POST-LAUNCH.md** — post-launch roadmap with gate conditions
-- **BRAND.md** — visual + copy rules (no-red rule, download button rule)
-- **CLAUDE.md** — project memory + always-follow rules
-- **ENVIRONMENT.md** — env vars + credentials reference (includes both KV_ and UPSTASH_ naming for rate limiter)
-- **scripts/008_create_feature_flags.sql** + **009_fix_feature_flag_slugs.sql** — kill switch migrations (already run)
-
----
-
-## 🤖 Claude memory snapshot
-
-Persistent across sessions:
-- No red in user messages — always SoftErrorCard / soft-card pattern
-- Download buttons must be prominent (filled/outlined, dedicated bar)
-- Stripe CLI expires ~July 15, 2026 — remind Paula to re-auth
-- Launched April 13, 2026; site is live
-- Kill switch is active; Paula can disable any tool via Supabase Table Editor
-- Full observability instrumentation live on all 16 tools; GA4 `tool_event` funnel ready after 24h
+| Doc | What it covers |
+|---|---|
+| CONTINUE-HERE.md | This file — where to resume |
+| SOLO-PRIORITIES.md | 7-priority framework (all ✅) |
+| COMPLETED.md | Full changelog of shipped work |
+| POST-LAUNCH.md | Roadmap with subscriber gates |
+| BRAND.md | Visual rules, no-red rule, email style |
+| CLAUDE.md | Project memory + always-follow rules |
+| RUNBOOK.md | 13 incident types with step-by-step |
+| ENVIRONMENT.md | Env vars + credentials reference |
+| lib/newsletter-emails.ts | Email templates (LinkSplasher style) |
+| scripts/008-011 | Supabase migrations (all run) |

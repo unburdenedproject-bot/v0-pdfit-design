@@ -1,5 +1,60 @@
 # PDF.it - Accomplished Work
 
+## Launch Week Prep — Newsletter Automation, Dashboard Growth, Cancel Survey, Marketing, Brand (April 16, 2026)
+
+Massive ops + marketing day. All 7 solo-builder priorities completed, newsletter email system built, launch-week deliverables drafted.
+
+### Newsletter email automation (end-to-end, like LinkSplasher)
+- `lib/newsletter-emails.ts` — 5-email drip sequence with branded HTML templates (LinkSplasher aesthetic: bold gradient header, clean white body, teal numbered lists, one rounded pill CTA, minimal footer)
+- Welcome email fires instantly on newsletter signup (modified `/api/newsletter/route.ts`)
+- Daily cron `/api/cron/newsletter-drip` runs at 9 AM PT, sends the next eligible email per subscriber (Day 3 nudge, Day 7 AI tools, Day 14 upgrade prompt, Day 30 feedback ask)
+- Deduplication via `newsletter_emails_sent` Supabase table (`scripts/011_newsletter_emails_sent.sql`)
+- Added to `vercel.json` cron schedule
+- Email style iterated 3 times before Paula approved — final design matches LinkSplasher's clean aesthetic. Style preference saved to memory for all future emails.
+
+### Dashboard as growth asset (#4) — EN/ES/BR
+- Monthly stats card now shows "~X hours saved" (3 min per conversion)
+- Shows "Favorite: [tool name]" when there's activity history
+- AI discovery banner for paid users who haven't tried any AI tool yet — different CTAs for Pro vs Business/Enterprise tier
+- All 3 locale dashboards updated (dashboard-client.tsx, dashboard-client-es.tsx, dashboard-client-br.tsx) + all 3 server pages pass new props
+
+### Cancel survey (#5) — complete end-to-end
+- `scripts/010_create_cancellation_reasons.sql` — Supabase table with Stripe event ID dedupe
+- Webhook handler (`/api/webhook/route.ts`) captures `cancellation_details.feedback` + `.comment` from Stripe when user marks for cancellation
+- Non-blocking insert (doesn't break subscription flow if it fails)
+- Uses `previous_attributes` check to fire only on the actual cancellation transition
+- Stripe Customer Portal configured by Paula to ask reason + comment on every cancel
+
+### Scheduled triggers (4 remote agents)
+- Daily health check — 8 AM PT, pings homepage/sitemap/robots.txt, emails report via Gmail MCP
+- Weekly review reminder — Mondays 9 AM PT, emails dashboard links + "run /weekly-review" prompt
+- Monthly churn review — 1st of month, emails the SQL queries for cancellation_reasons
+- Stripe CLI re-auth reminder — July 10 annually, emails renewal nudge
+
+### Launch-week marketing deliverables (text, not code)
+- Personal launch email template (3 subject lines, warm-intro body for Gmail BCC batches)
+- Product Hunt listing (tagline, description, first comment)
+- LinkedIn personal post
+- Reddit post (r/Entrepreneur, r/SideProject)
+- Hacker News "Show HN" post
+- All saved in conversation history; Paula will copy-paste on launch day
+
+### Brand updates
+- ™ added to PDF.it across all emails + website footers (EN/ES/BR)
+- Copyright year updated 2024 → 2025 per Paula's instruction
+- CLAUDE.md rule updated to reflect new copyright standard
+
+### Infrastructure completed today
+- Upstash rate limiter recreated and reconnected (UPSTASH_ env vars now accepted by middleware + contact route)
+- Kill switch activated — 37 feature flags in Supabase, SQL migrations 008+009 run
+- Observability sweep completed — all 16 tool interfaces instrumented with trackToolEvent → GA4
+- CI workflow fixed — E2E + Integration tests skip on push (secrets not configured)
+- RUNBOOK.md reviewed and corrected (factual errors + new sections added)
+- Env var compatibility: middleware + contact route accept both KV_REST_API_* and UPSTASH_REDIS_REST_* naming
+- Cost alerts configured: Vercel $300 cap, OpenAI $100 cap, iLoveAPI alerts, Stripe fraud/dispute/refund alerts
+- Supabase RLS hardened: webhook_events, newsletter_subscribers, contact_messages, user_feedback
+- "Prevent leaked passwords" enabled in Supabase Auth
+
 ## Solo Builder Priorities — Kill Switch, Observability, Weekly Review (April 15, 2026 — evening)
 
 Second session of the day, focused on solo-operator infrastructure gaps identified in a strategy conversation.
