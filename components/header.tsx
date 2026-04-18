@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X, User, LogIn, ArrowLeft, ChevronDown, Globe, Search } from "lucide-react"
+import { Menu, X, User, LogIn, ArrowLeft, ChevronDown, Globe, Search, Scale, Calculator, Users } from "lucide-react"
 import { useRouter, usePathname } from "next/navigation"
 import { useEffect, useState, useRef } from "react"
 import { createClient } from "@/lib/supabase/client"
@@ -18,6 +18,8 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [langDropdownOpen, setLangDropdownOpen] = useState(false)
   const langDropdownRef = useRef<HTMLDivElement>(null)
+  const [forDropdownOpen, setForDropdownOpen] = useState(false)
+  const forDropdownRef = useRef<HTMLDivElement>(null)
   const [searchQuery, setSearchQuery] = useState("")
 
   const handleSearchSubmit = (e: React.FormEvent) => {
@@ -50,6 +52,17 @@ export function Header() {
     const handler = (e: MouseEvent) => {
       if (langDropdownRef.current && !langDropdownRef.current.contains(e.target as Node)) {
         setLangDropdownOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", handler)
+    return () => document.removeEventListener("mousedown", handler)
+  }, [])
+
+  // Close For dropdown on outside click
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (forDropdownRef.current && !forDropdownRef.current.contains(e.target as Node)) {
+        setForDropdownOpen(false)
       }
     }
     document.addEventListener("mousedown", handler)
@@ -143,6 +156,47 @@ export function Header() {
             <Link href="/blog" className={`${isActive("/blog") || pathname.startsWith("/blog/") ? "text-[#14D8C4]" : "text-white/80"} hover:text-white font-medium transition-colors`}>
               Blog
             </Link>
+
+            {/* For (industry) dropdown */}
+            <div className="relative" ref={forDropdownRef}>
+              <button
+                onClick={() => setForDropdownOpen(!forDropdownOpen)}
+                className={`${pathname.startsWith("/for/") ? "text-[#14D8C4]" : "text-white/80"} flex items-center gap-1 hover:text-white font-medium transition-colors`}
+                aria-expanded={forDropdownOpen}
+                aria-haspopup="true"
+              >
+                For
+                <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${forDropdownOpen ? "rotate-180" : ""}`} />
+              </button>
+              {forDropdownOpen && (
+                <div className="absolute right-0 top-full mt-2 w-56 rounded-xl overflow-hidden shadow-xl border border-white/10" style={{ background: "#13152A", backdropFilter: "blur(16px)" }}>
+                  <Link
+                    href="/for/lawyers"
+                    onClick={() => setForDropdownOpen(false)}
+                    className="flex items-center gap-3 px-4 py-3 text-sm text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+                  >
+                    <Scale className="h-4 w-4 text-[#14D8C4] flex-shrink-0" />
+                    Lawyers
+                  </Link>
+                  <Link
+                    href="/for/accountants"
+                    onClick={() => setForDropdownOpen(false)}
+                    className="flex items-center gap-3 px-4 py-3 text-sm text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+                  >
+                    <Calculator className="h-4 w-4 text-[#14D8C4] flex-shrink-0" />
+                    Accountants
+                  </Link>
+                  <Link
+                    href="/for/hr-teams"
+                    onClick={() => setForDropdownOpen(false)}
+                    className="flex items-center gap-3 px-4 py-3 text-sm text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+                  >
+                    <Users className="h-4 w-4 text-[#14D8C4] flex-shrink-0" />
+                    HR Teams
+                  </Link>
+                </div>
+              )}
+            </div>
 
             {/* Tool search */}
             <form onSubmit={handleSearchSubmit} className="relative" role="search">
@@ -301,6 +355,34 @@ export function Header() {
             >
               Blog
             </Link>
+
+            <div className="pt-2 border-t border-white/10">
+              <p className="text-xs text-slate-500 uppercase tracking-wider font-bold px-3 mb-2">For</p>
+              <Link
+                href="/for/lawyers"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-3 text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors"
+              >
+                <Scale className="h-4 w-4 text-[#14D8C4] flex-shrink-0" />
+                Lawyers
+              </Link>
+              <Link
+                href="/for/accountants"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-3 text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors"
+              >
+                <Calculator className="h-4 w-4 text-[#14D8C4] flex-shrink-0" />
+                Accountants
+              </Link>
+              <Link
+                href="/for/hr-teams"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-3 text-white/80 hover:text-white font-medium py-2 px-3 rounded-lg hover:bg-white/10 transition-colors"
+              >
+                <Users className="h-4 w-4 text-[#14D8C4] flex-shrink-0" />
+                HR Teams
+              </Link>
+            </div>
 
             <div className="pt-2 border-t border-white/10">
               <p className="text-xs text-slate-500 uppercase tracking-wider font-bold px-3 mb-2">Language</p>
