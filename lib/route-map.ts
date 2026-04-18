@@ -4,6 +4,10 @@ const routes: [string, string, string][] = [
   // Static pages
   ["/", "/es", "/br"],
   ["/about", "/es/acerca", "/br/sobre"],
+  // Industry landing pages
+  ["/for/lawyers", "/es/para/abogados", "/br/para/advogados"],
+  ["/for/accountants", "/es/para/contadores", "/br/para/contadores"],
+  ["/for/hr-teams", "/es/para/recursos-humanos", "/br/para/equipes-rh"],
   ["/contact", "/es/contacto", "/br/contato"],
   ["/pricing", "/es/precios", "/br/precos"],
   ["/privacy-policy", "/es/politica-de-privacidad", "/br/politica-de-privacidade"],
@@ -199,6 +203,11 @@ const routes: [string, string, string][] = [
   ["/learn/watermark-pdf-with-logo", "/es/aprender/marca-de-agua-pdf-con-logo", "/br/aprender/marca-dagua-pdf-com-logo"],
   ["/learn/what-is-ocr", "/es/aprender/que-es-ocr", "/br/aprender/o-que-e-ocr"],
   ["/learn/why-pdf-to-jpg-looks-blurry", "/es/aprender/por-que-pdf-a-jpg-se-ve-borroso", "/br/aprender/por-que-pdf-para-jpg-fica-borrado"],
+  ["/learn/why-qr-code-not-scanning", "/es/aprender/por-que-codigo-qr-no-escanea", "/br/aprender/por-que-codigo-qr-nao-escaneia"],
+  ["/learn/make-scanned-pdf-searchable", "/es/aprender/hacer-pdf-escaneado-buscable", "/br/aprender/tornar-pdf-digitalizado-pesquisavel"],
+  ["/learn/protect-pdf-vs-watermark", "/es/aprender/proteger-pdf-vs-marca-de-agua", "/br/aprender/proteger-pdf-vs-marca-dagua"],
+  ["/learn/pdf-still-too-large-after-compression", "/es/aprender/pdf-aun-muy-grande-despues-de-comprimir", "/br/aprender/pdf-ainda-muito-grande-apos-compressao"],
+  ["/learn/rotate-one-page-in-pdf", "/es/aprender/rotar-una-pagina-en-pdf", "/br/aprender/girar-uma-pagina-em-pdf"],
   ["/learn/word-to-pdf-common-formatting-fixes", "/es/aprender/word-a-pdf-errores-comunes-de-formato", "/br/aprender/word-para-pdf-erros-comuns-de-formato"],
   ["/learn/word-to-pdf-on-iphone", "/es/aprender/word-a-pdf-en-iphone", "/br/aprender/word-para-pdf-no-iphone"],
 ]

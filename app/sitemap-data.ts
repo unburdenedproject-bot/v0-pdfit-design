@@ -19,6 +19,11 @@ const allUrls: MetadataRoute.Sitemap = [
   { url: `${baseUrl}/tools`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: `${baseUrl}/tools-a-z`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
 
+  // Industry landing pages
+  { url: `${baseUrl}/for/lawyers`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: `${baseUrl}/for/accountants`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: `${baseUrl}/for/hr-teams`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
+
   // Core tool pages
   { url: `${baseUrl}/merge-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: `${baseUrl}/split-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
@@ -202,12 +207,14 @@ const allUrls: MetadataRoute.Sitemap = [
   { url: `${baseUrl}/learn/rotate-pdf-on-iphone`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
   { url: `${baseUrl}/learn/fix-upside-down-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
   { url: `${baseUrl}/learn/rotate-scanned-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
+  { url: `${baseUrl}/learn/rotate-one-page-in-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
 
   // Learn articles (Protect PDF)
   { url: `${baseUrl}/learn/how-to-password-protect-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
   { url: `${baseUrl}/learn/pdf-password-best-practices`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
   { url: `${baseUrl}/learn/protect-pdf-before-sending`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
   { url: `${baseUrl}/learn/protect-pdf-on-mobile`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
+  { url: `${baseUrl}/learn/protect-pdf-vs-watermark`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
 
   // Learn articles (Unlock PDF)
   { url: `${baseUrl}/learn/how-to-unlock-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
@@ -228,6 +235,7 @@ const allUrls: MetadataRoute.Sitemap = [
   { url: `${baseUrl}/learn/compress-pdf-for-printing`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
   { url: `${baseUrl}/learn/compress-large-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
   { url: `${baseUrl}/learn/compress-pdf-with-images`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
+  { url: `${baseUrl}/learn/pdf-still-too-large-after-compression`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
 
   // Learn articles (OCR)
   { url: `${baseUrl}/learn/what-is-ocr`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
@@ -236,6 +244,7 @@ const allUrls: MetadataRoute.Sitemap = [
   { url: `${baseUrl}/learn/ocr-accuracy-tips`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
   { url: `${baseUrl}/learn/ocr-pdf-on-mobile`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
   { url: `${baseUrl}/learn/ocr-handwritten-text`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
+  { url: `${baseUrl}/learn/make-scanned-pdf-searchable`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
 
   // Learn articles (QR Code)
   { url: `${baseUrl}/learn/how-to-create-qr-code`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
@@ -245,6 +254,7 @@ const allUrls: MetadataRoute.Sitemap = [
   { url: `${baseUrl}/learn/qr-code-best-practices`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
   { url: `${baseUrl}/learn/qr-code-for-wifi`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
   { url: `${baseUrl}/learn/qr-code-types-explained`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
+  { url: `${baseUrl}/learn/why-qr-code-not-scanning`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
 
   // Legal pages
   { url: `${baseUrl}/privacy-policy`, lastModified: new Date(), changeFrequency: "yearly" as const, priority: 0.3 },
@@ -263,6 +273,11 @@ const allUrls: MetadataRoute.Sitemap = [
   { url: `${baseUrl}/es/precios`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: `${baseUrl}/es/herramientas`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: `${baseUrl}/es/herramientas-a-z`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
+
+  // Industry landing pages
+  { url: `${baseUrl}/es/para/abogados`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: `${baseUrl}/es/para/contadores`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: `${baseUrl}/es/para/recursos-humanos`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
 
   // Core tool pages
   { url: `${baseUrl}/es/comprimir-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
@@ -501,6 +516,11 @@ const allUrls: MetadataRoute.Sitemap = [
   { url: `${baseUrl}/br/precos`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: `${baseUrl}/br/ferramentas`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
   { url: `${baseUrl}/br/ferramentas-a-z`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
+
+  // Industry landing pages
+  { url: `${baseUrl}/br/para/advogados`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: `${baseUrl}/br/para/contadores`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
+  { url: `${baseUrl}/br/para/equipes-rh`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
 
   // Core tool pages
   { url: `${baseUrl}/br/comprimir-pdf`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
