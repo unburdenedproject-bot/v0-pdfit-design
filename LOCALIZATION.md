@@ -42,4 +42,4 @@ When adding any new tool or page, update ALL of the following:
 - Do not rely on translated page wrappers alone to handle locale context
 
 ## Page Count
-- Total pages: 602 (EN/ES/BR combined)
+- Total pages: 617 (EN/ES/BR combined) — last bumped April 19, 2026 (+9 industry landing pages, +5 EN /learn/ articles, +1 route-map fix)

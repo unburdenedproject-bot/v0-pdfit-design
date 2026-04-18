@@ -1,7 +1,7 @@
 # PDF.it — Long Tail SEO Pages Plan
 
-Status: ✅ COMPLETE — ~82 articles built and deployed
-Total: ~80 pages under /learn/ (actual: 82)
+Status: ✅ Phase 1 complete — 87 articles built and deployed
+Total: ~80 planned, currently 87 live (April 19, 2026: +5 long-tail articles — pdf-still-too-large-after-compression, protect-pdf-vs-watermark, why-qr-code-not-scanning, make-scanned-pdf-searchable, rotate-one-page-in-pdf)
 
 ## A) Convert FROM PDF
 

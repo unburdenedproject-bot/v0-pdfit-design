@@ -1,5 +1,17 @@
 # Project Learnings
 
+## 2026-04-19 — Parallel sub-agents are the right tool for trilingual page rollouts
+
+**What:** Built 9 industry landing pages (3 audiences × EN/ES/BR) by writing the EN template once (~430 lines), then spawning two general-purpose translator agents in parallel (one for ES, one for BR) that each produced 3 localized files in one pass. Total wall time was bounded by the slower agent (~5.5 min) instead of 6 sequential translations.
+**Why it matters:** Trilingual rollouts have 3× the file surface but 1× the design intent. Sequential editing burns hours. The bottleneck is producing accurate translated text + remembering to swap `Header`/`Footer` → `HeaderEs`/`FooterEs` → `HeaderBr`/`FooterBr`, set `locale: "es_ES"`/`"pt_BR"`, set the localized canonical, and remap every internal link via `lib/route-map.ts`. A focused prompt can hand all of that to a sub-agent reliably.
+**Apply when:** Adding net-new pages that need EN/ES/BR coverage. Write EN first as the source of truth. Brief the translator agents with: source file paths, target paths, exact import swaps, locale-specific URL rewrites (cite `lib/route-map.ts` as the authority), accent rules (Spanish accents post April-17 sweep are required), market-specific translation choices (e.g. SSN→RFC in ES, →CPF in BR; CM/ECF→PJe in BR), and a "do NOT include the file body in your summary" instruction so the response stays small.
+
+## 2026-04-19 — Industry landing pages belong in nav, SEO articles do not
+
+**What:** Asked whether the 9 new `/for/` pages and 5 new `/learn/` articles needed nav links. Different answer for each. Industry pages are conversion content with commercial intent — they convert 3-5× better when surfaced as a top-level "For" / "Para" dropdown (HubSpot/Notion/Stripe pattern). SEO articles are long-tail editorial content — Google does the discovery, internal nav doesn't help, and including them in the main menu just clutters it.
+**Why it matters:** Easy to default to "link everything from everywhere," which dilutes the menu and confuses intent. Articles get traffic from search + contextual internal links from related tool pages. Industry pages need menu real estate because users browsing the site won't know to type the URL.
+**Apply when:** Deciding where to surface a new page. Conversion landing page → main nav. Editorial / long-tail / search-driven content → footer hub link or related-content blocks only. The `/blog` and `/learn` index pages are the discovery surfaces for editorial content; the header is the discovery surface for product and audience pages.
+
 ## 2026-04-14 — pdfjs-dist can't load its worker on Vercel serverless
 
 **What:** `pdfjs-dist@3.x` tries to dynamically require `./pdf.worker.js` at runtime, even when `GlobalWorkerOptions.workerSrc = ""`. On Vercel's nodejs runtime, Next.js strips the worker file from the function bundle, so the fake-worker fallback throws `Cannot find module './pdf.worker.js'`. Any route using `lib/blank-pdf-check.js` (which imports pdfjs-dist directly) will fail.

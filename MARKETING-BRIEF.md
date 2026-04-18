@@ -1,6 +1,6 @@
 # PDF.it — Marketing Brief
 
-Last updated: April 12, 2026
+Last updated: April 19, 2026
 Prepared for: Marketing Department
 
 ---
@@ -125,6 +125,13 @@ EN + ES + BR with native URL slugs and native SEO content (not machine-translate
 **Pain points:** Need bulk processing, compliance concerns, team access, reliable uptime
 
 Both audiences are served by the same product and the same domain. Pro tier captures consumers who need more than 10 conversions/day; Business and Enterprise tiers capture professional teams.
+
+**Industry conversion landing pages (live):**
+- `/for/lawyers` — redact, eSign, compare versions, court-filing prep (also `/es/para/abogados`, `/br/para/advogados`)
+- `/for/accountants` — table extraction, OCR statements, smart extraction for invoices (also `/es/para/contadores`, `/br/para/contadores`)
+- `/for/hr-teams` — eSign offer letters, redact PII for blind reviews, merge onboarding packets (also `/es/para/recursos-humanos`, `/br/para/equipes-rh`)
+
+These are surfaced via the header "For" / "Para" dropdown on every page, in all 3 locales. Each page funnels to the Business plan ($13.99/mo, 30-day free trial). Marketing campaigns can deep-link to these instead of the generic homepage when targeting industry-specific audiences (LinkedIn ads, industry newsletters, partnership posts). Future expansion: `/for/students`, `/for/freelancers`, `/for/educators`, `/for/healthcare`, `/for/real-estate`.
 
 ---
 

@@ -1,17 +1,24 @@
 # Continue Here — PDF.it Status Brief
 
-**Last updated:** April 17, 2026 (end of day)
-**Next session:** Sunday, April 19, 2026
+**Last updated:** April 19, 2026 (end of day, Sunday)
+**Next session:** Monday, April 20, 2026 (or whenever Paula resumes)
 **Read this first when resuming.**
 
 ---
 
 ## Where we are
 
-PDF.it launches next week. All infrastructure is hardened, all 7 solo-builder priorities are complete, Phase 1 launch prep is done, email system is live, Spanish grammar is fixed, pricing is updated, brand guide is ready for marketing team.
+PDF.it launches Wednesday April 22, 2026. All infrastructure is hardened. Phase 1 launch prep is complete. Newsletter system is live. Spanish grammar is fixed. Pricing is updated. Brand guide is ready for marketing team.
+
+**Sunday April 19 progress (Phase 2 Growth Engine kickoff):**
+- ✅ Priority 1: 5 long-tail SEO articles shipped (`/learn/pdf-still-too-large-after-compression`, `/learn/protect-pdf-vs-watermark`, `/learn/why-qr-code-not-scanning`, `/learn/make-scanned-pdf-searchable`, `/learn/rotate-one-page-in-pdf`)
+- ✅ Priority 3: 9 industry landing pages shipped (`/for/lawyers`, `/for/accountants`, `/for/hr-teams` × EN/ES/BR)
+- ✅ Bonus: "For" / "Para" dropdown added to header (EN/ES/BR), desktop + mobile
 
 **What's live and working:**
 - 30+ PDF tools + 7 AI tools on pdf.it.com
+- 9 industry landing pages surfaced via header "For" dropdown
+- 87 long-tail /learn/ articles (was 82)
 - Kill switch on every tool (37 flags, Supabase)
 - Rate limiting active (Upstash)
 - Observability on all 16 tools → GA4
@@ -21,7 +28,7 @@ PDF.it launches next week. All infrastructure is hardened, all 7 solo-builder pr
 - Broadcast campaign endpoint ready
 - Dashboard growth features (time saved, favorite tool, AI upsell banner)
 - Cancel survey capturing reasons via Stripe webhook
-- 5 scheduled remote triggers (daily health, weekly review, monthly churn, Stripe CLI, Year 2 pricing)
+- 5 scheduled remote triggers
 - 7 branded Supabase auth email templates
 - Introductory pricing (Year 1 + Year 2+) on all 3 pricing pages
 - Spanish grammar corrected across entire ES layer
@@ -29,7 +36,7 @@ PDF.it launches next week. All infrastructure is hardened, all 7 solo-builder pr
 
 ---
 
-## 🔴 Paula's to-do list (before Sunday)
+## 🔴 Paula's to-do list (before launch Wednesday)
 
 ### Spam fix — CRITICAL (5 min)
 Newsletter emails are landing in spam. This MUST be fixed before launch.
@@ -43,44 +50,40 @@ Newsletter emails are landing in spam. This MUST be fixed before launch.
 
 ---
 
-## 🟡 Sunday priorities for Claude (April 19)
+## 🟡 Next session priorities for Claude
 
-### Phase 2: Growth Engine — ready to build
+### Phase 2: Growth Engine — remaining items
 
-**Priority 1: SEO article pipeline (highest leverage)**
-Use the `/seo-article` skill to publish 3-5 `/learn/` articles targeting long-tail keywords where SmallPDF/iLovePDF don't rank. This is the #1 organic growth lever. Topics to start with:
-- "how to compress PDF for email" (high search volume, Free tool funnel)
-- "ATS resume checker free" (AI tool upsell)
-- "PDF to Word without losing formatting" (Pro tool funnel)
-- "how to merge PDF files" (Free tool funnel)
-- "extract tables from PDF to Excel" (Business tool funnel)
-
-**Priority 2: Comparison pages**
-Create `/vs/smallpdf`, `/vs/ilovepdf`, `/vs/adobe-acrobat` (+ ES/BR equivalents). These target high-intent search traffic from people actively looking for alternatives. Each page should:
+**Priority 1: Comparison pages (next highest leverage)**
+Create `/vs/smallpdf`, `/vs/ilovepdf`, `/vs/adobe-acrobat` (+ ES/BR equivalents). High-intent search traffic from people actively looking for alternatives. Each page should:
 - Compare features side-by-side
 - Highlight PDF.it™ advantages (privacy, AI tools, pricing)
 - Include CTA to try tools + start free trial
 
-**Priority 3: Industry landing pages**
-Create `/for/lawyers`, `/for/accountants`, `/for/hr-teams`, `/for/students`, `/for/freelancers` (+ ES/BR). These are enterprise conversion pages tied to the workflow templates. Each should:
-- Address industry-specific pain points
-- Show relevant tools and workflows
-- Include testimonial slots (fill when feedback comes in)
-- CTA to Business/Enterprise plans
-
-**Priority 4: Activate weekly newsletter**
+**Priority 2: Activate weekly newsletter**
 - Run `scripts/012_newsletter_campaigns.sql` in Supabase
 - Test by sending Week 1 email ("Tool of the Week: Compress PDF") via `/send-newsletter`
 - 6 pre-written weekly emails ready in `lib/weekly-newsletters.ts` — one per week for first 6 weeks
 
-**Priority 5: Portuguese grammar audit**
+**Priority 3: Portuguese grammar audit**
 Same sweep we did for Spanish — check all BR Portuguese for missing accents (ã, ç, é, ê, í, ó, ô, ú, à). The BR layer likely has similar issues.
 
+**Priority 4: More long-tail SEO articles**
+Plenty of gaps still in LONG-TAIL-PAGES.md:
+- `/learn/url-to-qr-code`
+- `/learn/ocr-receipts-and-invoices`
+- `/learn/when-to-use-ocr-vs-pdf-to-txt`
+- `/learn/reduce-pdf-size-for-upload`
+- `/learn/qr-code-size-for-printing`
+
+**Priority 5: 2 more industry pages**
+- `/for/students` and `/for/freelancers` (EN/ES/BR each = 6 more pages). Same pattern as the 3 we shipped Sunday.
+
 ### Phase 3: Retention (week 2+, after launch data comes in)
-5. Weekly broadcast newsletter — first "Tool of the week" email after 100+ subscribers
-6. Annual billing upsell — detect monthly subscribers, show "Save 17%" banner at month 3
-7. Referral program — "Give 1 month free, get 1 month free" via Stripe coupons
-8. Re-engagement emails — "We miss you" nudge after 30 days inactive
+- Weekly broadcast newsletter — first "Tool of the week" email after 100+ subscribers
+- Annual billing upsell — detect monthly subscribers, show "Save 17%" banner at month 3
+- Referral program — "Give 1 month free, get 1 month free" via Stripe coupons
+- Re-engagement emails — "We miss you" nudge after 30 days inactive
 
 ---
 
@@ -113,7 +116,7 @@ Same sweep we did for Spanish — check all BR Portuguese for missing accents (�
 
 ## Last commits
 
-- `0b656ba` — Brand guide PDF: fix all remaining Spanish accents + regenerate
-- `7372116` — Spanish accents sweep: ~100+ fixes across all ES layer
-- `b21bb82` — Pricing: Year 1 intro + Year 2+ regular pricing (EN/ES/BR)
-- `7152114` — Phase 1 launch prep: unsubscribe, homepage signup, broadcast mechanism
+- `b1df669` — Add "For" dropdown to header (EN/ES/BR)
+- `f05df78` — Add 3 industry landing pages (/for/lawyers, /for/accountants, /for/hr-teams) in EN/ES/BR + 5 long-tail SEO articles
+- `b2c0e7a` — CONTINUE-HERE: move newsletter activation + SQL migration to Sunday priorities
+- `f170a2e` — Newsletter ready to send: 6 pre-written weekly Tool of the Week templates

@@ -1,10 +1,11 @@
 # PDF.it — Post-Launch Roadmap
 
-Last updated: April 15, 2026 (+2 days post-launch, evening)
+Last updated: April 19, 2026 (Sunday, pre-launch growth engine kickoff)
 Status: Planning — do not build any of this before reaching 1,000 paid subscribers.
 
 ## Already Shipped Post-Launch (not part of the Phase 1–4 gates)
 
+- **April 19, 2026 — Phase 2 Growth Engine kickoff.** 9 industry landing pages shipped (`/for/lawyers`, `/for/accountants`, `/for/hr-teams` × EN/ES/BR), 5 long-tail SEO articles shipped (`/learn/pdf-still-too-large-after-compression`, `/learn/protect-pdf-vs-watermark`, `/learn/why-qr-code-not-scanning`, `/learn/make-scanned-pdf-searchable`, `/learn/rotate-one-page-in-pdf`), "For"/"Para" navigation dropdown added to header (EN/ES/BR — desktop + mobile). Industry pages converted from EN templates by parallel general-purpose translator agents. All 14 new URLs added to `lib/route-map.ts` and `app/sitemap-data.ts`. Page count: 602 → 617.
 - **April 15, 2026 (evening) — Solo builder priorities kickoff.** New SOLO-PRIORITIES.md doc. Kill switch infrastructure: `feature_flags` Supabase table + `lib/feature-flags.ts` + all 35 tool API routes wired with `isToolEnabled` check + SoftErrorCard auto-detects 503 "unavailable" messages. Paula can now disable any tool from Supabase with no redeploy. Observability helper `lib/analytics.ts` shipped and instrumented in 3 interfaces (covers 28 tools). `/weekly-review` Claude Code slash command created. SEO cron false-positive fix (hreflang case sensitivity). See COMPLETED.md for details.
 - **April 16, 2026 — Newsletter automation shipped.** 5-email drip (welcome, day 3, 7, 14, 30) with branded HTML templates. Daily cron sends next eligible email per subscriber. Welcome fires instantly on signup. Style: LinkSplasher aesthetic (gradient header, clean body, pill CTA).
 - **April 16, 2026 — Dashboard growth asset shipped.** Time-saved stat, favorite tool, AI discovery banner for paid users (EN/ES/BR). Cancel survey live end-to-end (Supabase table + webhook capture + Stripe portal configured).

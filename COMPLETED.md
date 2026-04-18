@@ -1,5 +1,40 @@
 # PDF.it - Accomplished Work
 
+## Phase 2 Growth — Industry Landing Pages, SEO Articles, "For" Nav Dropdown (April 19, 2026)
+
+Sunday session: shipped Priority 1 + Priority 3 from CONTINUE-HERE.md.
+
+### 9 industry landing pages (EN/ES/BR — 3 audiences × 3 locales)
+- `/for/lawyers`, `/for/accountants`, `/for/hr-teams` — premium conversion landing pages targeting Business-tier audiences. Each ~430 lines: hero, pain-point grid, six core tool cards with icons + CTAs, four real workflows, plan-pick block (Business $13.99/mo), privacy/compliance callout, FAQ with FAQ schema, final CTA.
+- ES: `/es/para/abogados`, `/es/para/contadores`, `/es/para/recursos-humanos` (uses `HeaderEs`/`FooterEs`, locale-correct internal links, full Spanish accents).
+- BR: `/br/para/advogados`, `/br/para/contadores`, `/br/para/equipes-rh` (uses `HeaderBr`/`FooterBr`, Brazilian Portuguese with ã/ç/é/ô).
+- Localization decisions captured: US-specific references mapped to LATAM/BR equivalents (CM/ECF→PJe/e-SAJ in BR; SSN→RFC/CURP in ES, CPF in BR; W-2/1099/I-9→informes de rendimentos/formulário de admissão; pricing kept as USD since Stripe IDs are USD).
+- Each page has FAQ JSON-LD schema for rich-result eligibility.
+
+### 5 long-tail SEO articles (EN /learn/)
+- `/learn/pdf-still-too-large-after-compression` — troubleshooting checklist (compress-pdf funnel)
+- `/learn/protect-pdf-vs-watermark` — comparison post (encrypt-pdf + watermark-pdf dual funnels)
+- `/learn/why-qr-code-not-scanning` — troubleshooting (create-qr-code funnel)
+- `/learn/make-scanned-pdf-searchable` — OCR step-by-step (ocr-scanner funnel)
+- `/learn/rotate-one-page-in-pdf` — specific-task tutorial (rotate-pdf funnel)
+- All follow the canonical 10-section /learn/ format. FAQPage + HowTo JSON-LD schema each. Internal links to related tools and existing /learn/ articles.
+
+### "For" navigation dropdown (EN/ES/BR)
+- Added "For" / "Para" dropdown to `header.tsx`, `header-es.tsx`, `header-br.tsx` — desktop (next to Blog) + mobile (dedicated section above Language).
+- Each dropdown item has its lucide icon (Scale/Calculator/Users) and goes straight to the industry landing page.
+- Active-state highlight when path starts with `/for/` or `/es/para/` or `/br/para/`.
+
+### Infrastructure
+- `lib/route-map.ts` — added 9 new tuples (3 industry + 5 learn + 1 fix)
+- `app/sitemap-data.ts` — added 14 new URL entries (3 EN industry + 3 ES industry + 3 BR industry + 5 EN learn)
+
+### What's left for next session (CONTINUE-HERE.md priorities)
+- **Priority 2:** Comparison pages (`/vs/smallpdf`, `/vs/ilovepdf`, `/vs/adobe-acrobat`) + ES/BR equivalents
+- **Priority 4:** Activate weekly newsletter (run `scripts/012_newsletter_campaigns.sql`, send Week 1 email via `/send-newsletter`)
+- **Priority 5:** Portuguese grammar audit (mirror April 17 Spanish sweep — check for missing ã, ç, é, ê, í, ó, ô, ú, à across BR layer)
+
+---
+
 ## Launch Finalization — Phase 1 Complete, Spanish Grammar, Auth Emails, Pricing Update (April 17, 2026)
 
 Final pre-launch session. Every user-facing system is now polished and production-ready.
